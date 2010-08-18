@@ -1,0 +1,62 @@
+# Italian translation for openobject-addons
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the openobject-addons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openobject-addons\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2009-11-25 05:35+0000\n"
+"PO-Revision-Date: 2010-08-17 14:21+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Italian <it@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-08-18 07:07+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. module: base_partner_surname
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "XML non valido per visualizzare l'Achitettura!"
+
+#. module: base_partner_surname
+#: field:res.partner.address,last_name:0
+msgid "Last Name"
+msgstr "Cognome"
+
+#. module: base_partner_surname
+#: model:ir.module.module,shortdesc:base_partner_surname.module_meta_information
+msgid "Base Partner Surname"
+msgstr "Cognome Partner di base"
+
+#. module: base_partner_surname
+#: field:res.partner.address,first_name:0
+msgid "First Name"
+msgstr "Nome"
+
+#. module: base_partner_surname
+#: model:ir.module.module,description:base_partner_surname.module_meta_information
+msgid ""
+"\n"
+"This module use for seperate surname from contact name of partner. Now You "
+"can give first name & last name on contact Name.\n"
+"This module is deprecated, it is higly recommended to use base_contact "
+"instead.\n"
+"\n"
+"    "
+msgstr ""
+"\n"
+"Questo modulo si usa per separare il cognome dal nome contatto del partner. "
+"Ora puoi dare Nome & Cognome a Nome Contatto.\n"
+"Questo modulo è obsoleto, è altamente raccomandato l'utilizzo del modulo: "
+"base_contact al suo posto.\n"
+"\n"
+"    "
+
+#. module: base_partner_surname
+#: view:res.partner:0
+msgid "Partner Contacts"
+msgstr "Contatti del partner"
