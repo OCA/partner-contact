@@ -1,0 +1,62 @@
+# Spanish translation for openobject-addons
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the openobject-addons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openobject-addons\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2009-11-25 05:35+0000\n"
+"PO-Revision-Date: 2010-09-02 11:02+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-09-03 03:57+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#. module: base_partner_surname
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "¡XML no válido para la estructura de la vista!"
+
+#. module: base_partner_surname
+#: field:res.partner.address,last_name:0
+msgid "Last Name"
+msgstr "Apellidos"
+
+#. module: base_partner_surname
+#: model:ir.module.module,shortdesc:base_partner_surname.module_meta_information
+msgid "Base Partner Surname"
+msgstr "Nombre y apellidos para contactos de empresas"
+
+#. module: base_partner_surname
+#: field:res.partner.address,first_name:0
+msgid "First Name"
+msgstr "Nombre"
+
+#. module: base_partner_surname
+#: model:ir.module.module,description:base_partner_surname.module_meta_information
+msgid ""
+"\n"
+"This module use for seperate surname from contact name of partner. Now You "
+"can give first name & last name on contact Name.\n"
+"This module is deprecated, it is higly recommended to use base_contact "
+"instead.\n"
+"\n"
+"    "
+msgstr ""
+"\n"
+"Este módulo sirve para separar nombre y apellidos en el contacto de la "
+"empresa. Permite introducir el nombre y apellidos en el nombre de contacto.\n"
+"Este módulo está obsoleto, es muy recomendable en su lugar utilizar "
+"base_contact.\n"
+"\n"
+"    "
+
+#. module: base_partner_surname
+#: view:res.partner:0
+msgid "Partner Contacts"
+msgstr "Contactos de la empresa"
