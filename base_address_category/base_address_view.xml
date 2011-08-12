@@ -1,0 +1,154 @@
+<openerp>
+    <data>
+        #---------------------------------------------------------------------------------------------------------  
+        # Search Address
+        #---------------------------------------------------------------------------------------------------------
+        <record id="view_res_partner_address_filter" model="ir.ui.view">
+            <field name="name">res.partner.address.select</field>
+            <field name="model">res.partner.address</field>
+            <field name="inherit_id" ref="base.view_res_partner_address_filter" />
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <field name="country_id" position="after" >
+                    <field name="category_id" />
+                </field>
+            </field>
+        </record>
+        
+        
+        #---------------------------------------------------------------------------------------------------------  
+        # Partner form->contact and view of address
+        #---------------------------------------------------------------------------------------------------------
+        
+        <record model="ir.ui.view" id="view_partner_address_categ_form1_inherit">
+            <field name="name">res.partner.address.form1.c2c_partner_adress</field>
+            <field name="model">res.partner.address</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_address_form1" />
+            <field name="priority" eval="17" />
+            <field name="arch" type="xml">
+                <xpath expr="/form/group[3]" position="after">
+                    <group colspan="4">
+                        <separator string="Address Categories" colspan="4"/>
+                        <field name="category_id" nolabel="1"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <!--
+            =========================================
+            the short form used in the partner form
+            =========================================
+        -->
+        
+        <record model="ir.ui.view" id="view_partner_address_form2_inerit_categ">
+            <field name="name">res.partner.address.form2_c2c_partner_address</field>
+            <field name="model">res.partner.address</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_address_form2" />
+            <field name="priority" eval="17" />
+            <field name="arch" type="xml">
+                <xpath expr="/form/field[@name='email']" position="after">
+                    <newline/>
+                    <separator string="Address Categories" colspan="4"/>
+                    <field name="category_id" nolabel="1"/>
+                </xpath>
+            </field>
+        </record>
+        
+        
+        <!--
+            =========================================
+            the short form used in the res_partner stdandard form
+            =========================================
+        -->
+        <record model="ir.ui.view" id="view_partner_form_inherite_categ_infos">
+            <field name="name">res.partner.form_partner</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <xpath expr="/form/notebook/page[@string='General']/field[@name='address']/form[@string='Partner Contacts']/group[3]" position="after">
+                    <group colspan="4" >
+                        <separator string="Address Categories" colspan="4"/>
+                        <field name="category_id" nolabel="1"/>
+                     </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!--
+            ======================
+            Adresses categories
+            ======================
+        -->
+        <record model="ir.ui.view" id="view_partner_address_category_form">
+            <field name="name">res.partner.address.category.form</field>
+            <field name="model">res.partner.address.category</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Partner categories">
+                    <field name="name" select="1"/>
+                    <field name="active" select="1" />
+                    <field name="parent_id"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_partner_address_category_list">
+            <field name="name">res.partner.address.category.list</field>
+            <field name="model">res.partner.address.category</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <tree string="Partner categories">
+                    <field name="complete_name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_partner_address_category_tree">
+            <field name="name">res.partner.address.category.tree</field>
+            <field name="model">res.partner.address.category</field>
+            <field name="type">tree</field>
+            <field name="field_parent">child_ids</field>
+            <field name="arch" type="xml">
+                <tree string="Partner Categories">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_partner_address_category">
+            <field name="name">Address categories</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.address.category</field>
+            <field name="view_type">tree</field>
+            <field name="view_id" ref="view_partner_address_category_tree"/>
+            <field name="domain">[('parent_id','=',False)]</field>
+        </record>
+        <menuitem parent="base.menu_address_book" action="action_partner_address_category" id="menu_partner_address_category"/>
+        
+        <record model="ir.actions.act_window" id="action_partner_by_category">
+            <field name="res_model">res.partner.address</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('category_id','child_of', [active_id])]</field>
+        </record>
+        <record model="ir.values" id="ir_action_partner_by_category">
+            <field name="key2" eval="'tree_but_open'"/>
+            <field name="model" eval="'res.partner.address.category'"/>
+            <field name="name">Open partners</field>
+            <field name="value" eval="'ir.actions.act_window,%d'%action_partner_by_category"/>
+            <field name="object" eval="True"/>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_partner_address_category_form">
+            <field name="name">Address categories</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.address.category</field>
+            <field name="view_type">form</field>
+        </record>
+        <menuitem parent="base.menu_config_address_book" action="action_partner_address_category_form" id="menu_partner_address_category_form"/>
+        
+    </data>
+</openerp>
