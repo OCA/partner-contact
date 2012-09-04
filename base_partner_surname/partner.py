@@ -30,34 +30,47 @@ class res_partner_address(osv.osv):
         'name' : fields.char('Name', size=128, readonly=True),
     }
     
-    def write(self, cr, uid, ids, vals, context={}):
-        first_name = ''
-        last_name = ''
-        if 'first_name' in vals and vals['first_name']:
-            first_name = vals['first_name']
-        if 'last_name' in vals and vals['last_name']:
-            last_name = vals['last_name']
+    def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        if isinstance(ids,list):
+            ids = ids[0]
+        data = self.read(cr, uid, ids, ['first_name','last_name'], context=context)
+        first_name = data['first_name'] or ''
+        if 'first_name' in vals:
+            first_name = vals['first_name'] or ''
+        
+        last_name = data['last_name'] or ''
+        if 'last_name' in vals:
+            last_name = vals['last_name'] or ''
 
-        vals['name'] = first_name + ' ' + last_name
+        if first_name or last_name:
+            vals['name'] = first_name + ' ' + last_name
         return super(res_partner_address, self).write(cr, uid, ids, vals, context)
 
-    def create(self, cr, uid, vals, context={}):
+    def create(self, cr, uid, vals, context=None):
+        if context is None:
+            context = {}
         first_name = ''
         last_name = ''
-        if 'first_name' in vals and vals['first_name']:
-            first_name = vals['first_name']
-        if 'last_name' in vals and vals['last_name']:
-            last_name = vals['last_name']
-
-        vals['name'] = first_name + ' ' + last_name
+        if 'first_name' in vals:
+            first_name = vals['first_name'] or ''
+        if 'last_name' in vals:
+            last_name = vals['last_name'] or ''
+            
+        if first_name or last_name:
+            vals['name'] = first_name + ' ' + last_name
         return super(res_partner_address, self).create(cr, uid, vals, context)
 
-    def onchange_name(self, cr, uid, id, first_name, last_name, context={}):
+    def onchange_name(self, cr, uid, id, first_name, last_name):
+        res = {}
         if not first_name:
             first_name = ''
         if not last_name:
             last_name = ''
-        return {'value': {'name': first_name + ' ' + last_name}}
+        if first_name or last_name:
+            res = {'name': first_name + ' ' + last_name}
+        return {'value': res}
 
 res_partner_address()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -21,19 +21,20 @@
 {
     "name" : "Base Partner Surname",
     "version" : "1.0",
-    "author" : "Tiny",
+    "author" : "Tiny, Serpent Consulting Services",
     "website" : "http://www.openerp.com",
     "category" : "Generic Modules/Base",
     "description": """
-This module use for seperate surname from contact name of partner. Now You can give first name & last name on contact Name.
-This module is deprecated, it is higly recommended to use base_contact instead.
+This module is used for separate surname from contact name of partner. Now You can give first name & last name on contact Name.
+This module is deprecated, it is highly recommended to use base_contact instead.
 
     """,
     "depends" : ["base"],
     "init_xml" : [ ],
     "demo_xml" : [ ],
     "update_xml" : [ "partner_view.xml" ],
-    "installable": True
+    "installable": True,
+    "auto_install": False
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
