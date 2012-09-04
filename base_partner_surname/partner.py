@@ -19,48 +19,44 @@
 #
 ##############################################################################
 
-from osv import fields,osv
-from mx import DateTime
-import tools
-import ir
-import pooler
-import time
+from osv import fields, osv
+
 
 class res_partner_address(osv.osv):
-    _name = 'res.partner.address'
-    _inherit ='res.partner.address'
+    _inherit = 'res.partner.address'
     _columns = {
         'first_name' : fields.char('First Name', size=128),
         'last_name' : fields.char('Last Name', size=128),
-        'name' : fields.char('Name', size=128,readonly=True),
+        'name' : fields.char('Name', size=128, readonly=True),
     }
+    
     def write(self, cr, uid, ids, vals, context={}):
-        first_name=''
-        last_name=''
+        first_name = ''
+        last_name = ''
         if 'first_name' in vals and vals['first_name']:
-            first_name=vals['first_name']
+            first_name = vals['first_name']
         if 'last_name' in vals and vals['last_name']:
-            last_name=vals['last_name']
+            last_name = vals['last_name']
 
-        vals['name']= first_name + ' ' + last_name
+        vals['name'] = first_name + ' ' + last_name
         return super(res_partner_address, self).write(cr, uid, ids, vals, context)
 
     def create(self, cr, uid, vals, context={}):
-        first_name=''
-        last_name=''
+        first_name = ''
+        last_name = ''
         if 'first_name' in vals and vals['first_name']:
-            first_name=vals['first_name']
+            first_name = vals['first_name']
         if 'last_name' in vals and vals['last_name']:
-            last_name=vals['last_name']
+            last_name = vals['last_name']
 
-        vals['name']= first_name + ' ' + last_name
+        vals['name'] = first_name + ' ' + last_name
         return super(res_partner_address, self).create(cr, uid, vals, context)
 
-    def onchange_name(self, cr, uid, id, first_name,last_name,context={}):
+    def onchange_name(self, cr, uid, id, first_name, last_name, context={}):
         if not first_name:
-            first_name=''
+            first_name = ''
         if not last_name:
-            last_name=''
+            last_name = ''
         return {'value': {'name': first_name + ' ' + last_name}}
 
 res_partner_address()
