@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-# Copyright (c) 2010 Camptocamp SA (http://www.camptocamp.com) 
+# Copyright (c) 2010 Camptocamp SA (http://www.camptocamp.com)
 # All Right Reserved
 #
 # Author : Nicolas Bessi (Camptocamp), Joel Grand-Guillaume
@@ -31,10 +31,6 @@
 
 
 from osv import osv, fields
-import time
-from mx import DateTime
-import netsvc
-import string
 
 class ResPartnerAdressCategory(osv.osv):
     def name_get(self, cr, uid, ids, context={}):
@@ -62,8 +58,8 @@ class ResPartnerAdressCategory(osv.osv):
                 return False
             level -= 1
         return True
-        
-    
+
+
 
     _description='Partner address Categories'
     _name = 'res.partner.address.category'
@@ -81,13 +77,13 @@ class ResPartnerAdressCategory(osv.osv):
         'active' : lambda *a: 1,
     }
     _order = 'parent_id,name'
-    
+
 ResPartnerAdressCategory()
 
 
 class ResPartnerAddress(osv.osv):
     _inherit = "res.partner.address"
-    
+
     _columns = {
         'category_id': fields.many2many('res.partner.address.category', 'res_partner_address_category_rel', 'adress_id', 'category_id', 'Adress categories'),
     }
