@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record model="res.country" id="base.ca">
+            <field name="phone_format">(XXX) XXX-XXXX x XXX</field>
+        </record>
+
+    </data>
+</openerp>

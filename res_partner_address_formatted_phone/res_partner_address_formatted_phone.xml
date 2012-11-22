@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view"
+            id="view_customer_american_phone_formatter_form">
+            <field name="name">res.partner.american_phone_formatter.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//notebook/page[@string='General']/field/form//group/field[@name='phone']"
+                        position="replace">
+                        <field name="phone" on_change="on_change_phone('phone', phone, country_id)" />
+                    </xpath>
+                    <xpath expr="//notebook/page[@string='General']/field/form//group/field[@name='mobile']"
+                        position="replace">
+                        <field name="mobile"  on_change="on_change_phone('mobile', mobile, country_id)" />
+                    </xpath>
+                    <xpath expr="//notebook/page[@string='General']/field/form//group/field[@name='fax']"
+                        position="replace">
+                        <field name="fax"  on_change="on_change_phone('fax', fax, country_id)" />
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</openerp>
