@@ -12,8 +12,8 @@
       <field name="type">form</field>
       <field name="arch" type="xml">
         <form string="Partner Identification Categories">
-          <field name="name" select="1"/>
-          <field name="code" select="1"/>
+          <field name="name" />
+          <field name="code" />
         </form>
       </field>
     </record>
@@ -62,12 +62,12 @@ Modification of Partner - Adding Tab for Idenification Numbers
       <field name="type">form</field>
       <field name="arch" type="xml">
         <form string="Partner ID Numbers">
-          <field name="category_id" select="1"/>
-          <field name="name" select="1"/>
-          <field name="partner_issued_id" select="1"/>
-          <field name="date_issued" select="1"/>
-          <field name="valid_from" select="1"/>
-          <field name="valid_until" select="1"/>
+          <field name="category_id" />
+          <field name="name" />
+          <field name="partner_issued_id" />
+          <field name="date_issued" />
+          <field name="valid_from" />
+          <field name="valid_until" />
           <separator colspan="4" string="Notes"/>
           <field name="comment" colspan="4" nolabel="1"/>
         </form>
@@ -79,12 +79,12 @@ Modification of Partner - Adding Tab for Idenification Numbers
       <field name="type">tree</field>
       <field name="arch" type="xml">
         <tree string="Partner ID Numbers">
-          <field name="category_id" select="1"/>
-          <field name="name" select="1"/>
-          <field name="partner_issued_id" select="1"/>
-          <field name="date_issued" select="1"/>
-          <field name="valid_from" select="1"/>
-          <field name="valid_until" select="1"/>
+          <field name="category_id" />
+          <field name="name" />
+          <field name="partner_issued_id" />
+          <field name="date_issued" />
+          <field name="valid_from" />
+          <field name="valid_until" />
         </tree>
       </field>
     </record>
