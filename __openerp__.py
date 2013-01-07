@@ -20,4 +20,5 @@ and certificates which are assigned to a partner and vary from country to countr
 #, "update_xml"   : ["partner_id_number_view.xml","security/ir.model.access.csv"]
 , "auto_install" : False
 , "installable"  : True
+, 'application'  : False
 }
