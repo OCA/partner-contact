@@ -64,5 +64,5 @@ Active Directory Support for Windows server 2003, try 2008 at your own risk
                   "wizard.xml"],
     "demo_xml" : [],
     "active": False,
-    "installable": True
+    "installable": False
 }
