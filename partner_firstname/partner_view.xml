@@ -1,0 +1,32 @@
+<openerp>
+  <data>
+    <record id="view_partner_simple_form_firstname" model="ir.ui.view">
+      <field name="name">res.partner.simplified.form.firstname</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_simple_form"/>
+      <field name="arch" type="xml">
+        <field name="category_id" position="before">
+          <group>
+            <field name="lastname"/>
+            <field name="firstname"/>
+          </group>
+        </field>
+      </field>
+    </record>
+
+    <record id="view_partner_form_firstname" model="ir.ui.view">
+      <field name="name">res.partner.form.firstname</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <field name="category_id" position="before">
+          <group>
+            <field name="lastname"/>
+            <field name="firstname"/>
+          </group>
+        </field>
+      </field>
+    </record>
+
+  </data>
+</openerp>
