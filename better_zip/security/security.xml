@@ -1,0 +1,13 @@
+<openerp>
+    <data>
+        <record id="ir_model_access_betterzip0" model="ir.model.access">
+            <field name="model_id" ref="better_zip.model_res_better_zip"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="&quot;&quot;&quot;better_zip&quot;&quot;&quot;" name="name"/>
+            <field eval="1" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_create"/>
+            <field name="group_id" ref="base.group_user"/>
+        </record>
+    </data>
+</openerp>
