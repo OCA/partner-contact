@@ -44,10 +44,10 @@ class ResPartnerAdressCategory(orm.Model):
 
     def _check_recursion(self, cr, uid, ids):
         level = 100
-        while len(ids):
+        while ids:
             cr.execute('select distinct parent_id '
                        'from res_partner_address_category '
-                       'where id in (%s)' % ','.join(unicode(id) for id in ids))
+                       'where id in %s',  ids)
             ids = [parent_id for (parent_id,) in cr.fetchall() if parent_id]
             if not level:
                 return False
