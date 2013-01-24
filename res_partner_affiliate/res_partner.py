@@ -18,9 +18,9 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv import osv, fields
+from openerp.osv import orm, fields
 
-class ResPartner(osv.osv):
+class ResPartner(orm.Model):
     """
     Add relation affiliate_ids
     """
@@ -30,8 +30,8 @@ class ResPartner(osv.osv):
     _columns = {
         'child_ids': fields.one2many(
             'res.partner', 'parent_id',
-            'Contacts', domain=[('is_company','=',False)]),
+            'Contacts', domain=[('is_company', '=', False)]),
         'affiliate_ids': fields.one2many(
             'res.partner', 'parent_id',
-            'Affiliates', domain=[('is_company','=', True)]),
+            'Affiliates', domain=[('is_company', '=', True)]),
         }
