@@ -34,5 +34,4 @@ class ResPartner(osv.osv):
         'affiliate_ids': fields.one2many(
             'res.partner', 'parent_id',
             'Affiliates', domain=[('is_company','=', True)]),
-        #'lot_count': fields.function(_count_related, string="Lot", type='integer', multi='count_rel'),
         }

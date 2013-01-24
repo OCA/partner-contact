@@ -18,13 +18,13 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{'name' : 'Partner Affilates',
- 'version' : '1.0',
- 'author' : 'Camptocamp',
+{'name': 'Partner Affilates',
+ 'version': '1.0',
+ 'author': 'Camptocamp',
  'maintainer': 'Camptocamp',
  'category': 'CRM',
- 'complexity': "normal",  # easy, normal, expert
- 'depends' : ['base'],
+ 'complexity': 'normal',  # easy, normal, expert
+ 'depends': ['base'],
  'description': """Allows to use parent_id in company partner to refer to a parent company
  Plus will show a tab in parent company of affiliated companies""",
  'website': 'http://www.camptocamp.com',
