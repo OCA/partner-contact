@@ -18,7 +18,7 @@ msgstr ""
 #. module: res_partner_affiliate
 #: view:res.partner:0
 msgid "Phone:"
-msgstr "Tel.:"
+msgstr "Tél. :"
 
 #. module: res_partner_affiliate
 #: view:res.partner:0
@@ -29,7 +29,7 @@ msgstr "Filiales"
 #. module: res_partner_affiliate
 #: view:res.partner:0
 msgid "Mobile:"
-msgstr "Mobile:"
+msgstr "Mobile :"
 
 #. module: res_partner_affiliate
 #: model:ir.model,name:res_partner_affiliate.model_res_partner
@@ -39,5 +39,5 @@ msgstr "Partenaire"
 #. module: res_partner_affiliate
 #: view:res.partner:0
 msgid "Fax:"
-msgstr "Fax:"
+msgstr "Fax :"
 
