@@ -40,6 +40,18 @@ class ResPartner(Model):
     def _write_name(self, cursor, uid, partner_id, field_name, field_value, arg, context=None):
         return self.write(cursor, uid, partner_id, {'lastname': field_value})
 
+    def create(self, cursor, uid, vals, context=None):
+        """To support data backward compatibility we have to keep this overwrite even if we
+        use fnct_inv else we can't create entry as lastname is mandatory and module
+        will not install if there is demo data"""
+        to_use = vals
+        if vals.get('name'):
+            corr_vals = vals.copy()
+            corr_vals['lastname'] = corr_vals['name']
+            del(corr_vals['name'])
+            to_use = corr_vals
+        return super(ResPartner, self).create(cursor, uid, to_use, context=context)
+
     _columns = {'name': fields.function(_compute_name_custom, string="Name",
                                         type="char", store=True,
                                         select=True, readonly=True,
