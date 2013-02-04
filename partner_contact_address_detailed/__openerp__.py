@@ -18,9 +18,9 @@
 #
 ##############################################################################
 
-{'name': 'All address, Contact form',
- 'description':  """Show all informations of partner address in partner contact form
-""",
+{'name': 'All address data in summarized contact form',
+ 'description':  """Show all informations of partner address
+in summarized partner contact form when creating a new partner""",
  'version': '1.0',
  'author': 'Camptocamp',
  'category': 'MISC',
@@ -32,4 +32,4 @@
  'auto_install': False,
  'installable': True,
  'images': []
-}
+ }

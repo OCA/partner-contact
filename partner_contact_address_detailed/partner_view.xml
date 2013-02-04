@@ -1,38 +1,31 @@
 <openerp>
   <data>
-
     <record id="view_partner_form_firstname" model="ir.ui.view">
       <field name="name">res.partner.form.firstname</field>
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form"/>
       <field name="arch" type="xml">
-
         <xpath expr="//page[@string='Contacts']/field/form/div/group/field[@name='mobile']" position="after">
-                <label for="type"/>
-                  <div colspan="2">
-                   <field name="type"/>
-                    <label for="street" string="Address"/>
-                    <field name="street" placeholder="Street..."/>
-                    <field name="street2"/>
-                    <div class="address_format">
-                        <field name="city" placeholder="City" style="width: 40%%"/>
-                        <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)"/>
-                        <field name="zip" placeholder="ZIP" style="width: 20%%"/>
-                    </div>
-                    <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}'/>
-                   </div>
-                <field name="website" widget="url" placeholder="e.g. www.openerp.com"/>
-                <field name="fax"/>
-                <field name="email" widget="email"/>
-                <field name="title" domain="[('domain', '=', 'contact')]"
-                    options='{"no_open": True}' />
-
+          <label for="type"/>
+          <div colspan="2">
+            <field name="type"/>
+            <label for="street" string="Address"/>
+            <field name="street" placeholder="Street..."/>
+            <field name="street2"/>
+            <div class="address_format">
+              <field name="city" placeholder="City" style="width: 40%%"/>
+              <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)"/>
+              <field name="zip" placeholder="ZIP" style="width: 20%%"/>
+            </div>
+            <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}'/>
+          </div>
+          <field name="website" widget="url" placeholder="e.g. www.openerp.com"/>
+          <field name="fax"/>
+          <field name="email" widget="email"/>
+          <field name="title" domain="[('domain', '=', 'contact')]"
+                 options='{"no_open": True}' />
         </xpath>
-
-
-
       </field>
     </record>
-
   </data>
 </openerp>
