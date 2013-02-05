@@ -42,7 +42,7 @@ class ResPartner(Model):
 
     def create(self, cursor, uid, vals, context=None):
         """To support data backward compatibility we have to keep this overwrite even if we
-        use fnct_inv else we can't create entry as lastname is mandatory and module
+        use fnct_inv: otherwise we can't create entry because lastname is mandatory and module
         will not install if there is demo data"""
         to_use = vals
         if vals.get('name'):
