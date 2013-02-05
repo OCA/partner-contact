@@ -19,8 +19,9 @@
 ##############################################################################
 
 {'name': 'Partner first name, last name',
- 'description':  """Split first name last name on res.partner.
-The field name become a stored function field concatenating lastname, firstname
+ 'description':  """Split first name and last name on res.partner.
+
+The field 'name' becomes a stored function field concatenating lastname, firstname
 """,
  'version': '1.0',
  'author': 'Camptocamp',
