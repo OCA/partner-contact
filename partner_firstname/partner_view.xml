@@ -25,7 +25,7 @@
             <field name="firstname"/>
           </group>
         </field>
-        <!-- Add fistname last name in contact for also -->
+        <!-- Add firstname last name in contact for also -->
         <xpath expr="//page[@string='Contacts']/field/form/div/group/field[@name='name']" position="after">
             <field name="lastname"/>
             <field name="firstname"/>
