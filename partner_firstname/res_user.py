@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Nicolas Bessi. Copyright Camptocamp SA
@@ -17,5 +17,15 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import partner
-from . import res_user
+from openerp.osv import orm
+
+
+class ResUsers(orm.Model):
+    """Allows user creation from user form as
+    name is not in form"""
+
+    _inherit = 'res.users'
+
+    def create(self, cursor, uid, vals, context=None):
+        vals['name'] = vals['login']
+        return super(ResUsers, self).create(cursor, uid, vals, context=context)
