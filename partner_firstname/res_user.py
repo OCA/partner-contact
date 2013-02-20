@@ -27,6 +27,6 @@ class ResUsers(orm.Model):
     _inherit = 'res.users'
 
     def create(self, cursor, uid, vals, context=None):
-        if not 'name' in vals or not vals['name']:
+        if not vals.get('name'):
             vals['name'] = vals['login']
         return super(ResUsers, self).create(cursor, uid, vals, context=context)
