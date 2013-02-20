@@ -23,12 +23,15 @@
 
 The field 'name' becomes a stored function field concatenating lastname, firstname
 """,
- 'version': '1.0',
+ 'version': '1.0.1',
  'author': 'Camptocamp',
  'category': 'MISC',
  'website': 'http://www.camptocamp.com',
  'depends': ['base'],
- 'data': ['partner_view.xml'],
+ 'data': [
+     'partner_view.xml',
+     'res_user_view.xml',
+     ],
  'demo': [],
  'test': [],
  'auto_install': False,
