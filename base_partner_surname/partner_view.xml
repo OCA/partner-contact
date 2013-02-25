@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    <record model="ir.ui.view" id="view_partner_address_form1_inherited">
+        <field name="name">res.partner.address.form1.inherit</field>
+        <field name="model">res.partner.address</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_partner_address_form1"/>
+        <field name="arch" type="xml">
+            <field name="type" position="before">
+                <field name="first_name" select="1" on_change="onchange_name(first_name,last_name)"/>
+                <field name="last_name" select="1" on_change="onchange_name(first_name,last_name)"/>
+                <newline/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_partner_form_inherited">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/notebook/page[@string='General']/field/form/group/field[@name='name']" position="before">
+                <field name="first_name" on_change="onchange_name(first_name,last_name)"/>
+                <field name="last_name" on_change="onchange_name(first_name,last_name)"/>
+                <newline />
+            </xpath>
+        </field>
+    </record>
+    </data>
+</openerp>
