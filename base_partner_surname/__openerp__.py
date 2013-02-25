@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name" : "Base Partner Surname",
-    "version" : "1.0",
+    "version" : "1.1",
     "author" : "Tiny, Serpent Consulting Services",
     "website" : "http://www.openerp.com",
     "category" : "Generic Modules/Base",
