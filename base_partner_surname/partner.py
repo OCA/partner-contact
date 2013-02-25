@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #    
 #    OpenERP, Open Source Management Solution
@@ -19,10 +19,10 @@
 #
 ##############################################################################
 
-from osv import fields, osv
+from openerp.osv import orm, fields
 
 
-class res_partner_address(osv.osv):
+class res_partner_address(orm.Model):
     _inherit = 'res.partner.address'
     _columns = {
         'first_name' : fields.char('First Name', size=128),
@@ -46,7 +46,7 @@ class res_partner_address(osv.osv):
 
         if first_name or last_name:
             vals['name'] = first_name + ' ' + last_name
-        return super(res_partner_address, self).write(cr, uid, ids, vals, context)
+        return super(res_partner_address, self).write(cr, uid, ids, vals, context=context)
 
     def create(self, cr, uid, vals, context=None):
         if context is None:
@@ -60,7 +60,7 @@ class res_partner_address(osv.osv):
             
         if first_name or last_name:
             vals['name'] = first_name + ' ' + last_name
-        return super(res_partner_address, self).create(cr, uid, vals, context)
+        return super(res_partner_address, self).create(cr, uid, vals, context=context)
 
     def onchange_name(self, cr, uid, id, first_name, last_name):
         res = {}
@@ -72,6 +72,5 @@ class res_partner_address(osv.osv):
             res = {'name': first_name + ' ' + last_name}
         return {'value': res}
 
-res_partner_address()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
