@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Nicolas Bessi. Copyright Camptocamp SA
@@ -27,5 +27,6 @@ class ResUsers(orm.Model):
     _inherit = 'res.users'
 
     def create(self, cursor, uid, vals, context=None):
-        vals['name'] = vals['login']
+        if not vals.get('name'):
+            vals['name'] = vals['login']
         return super(ResUsers, self).create(cursor, uid, vals, context=context)
