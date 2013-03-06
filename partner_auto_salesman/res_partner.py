@@ -19,11 +19,9 @@
 #
 ##############################################################################
 
-from openerp.osv import osv
+from openerp.osv import orm
 
 
-class res_partner(osv.osv):
+class res_partner(orm.Model):
     _inherit = 'res.partner'
     _defaults = {'user_id': lambda self, cr, uid, context: uid}
-
-res_partner()
