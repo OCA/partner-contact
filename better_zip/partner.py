@@ -18,19 +18,22 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{'name': 'Better zip management',
- 'version': '0.3',
- 'depends': ['base'],
- 'author': 'Camptocamp',
- 'description': """
-Introduces a better zip/npa management system.
-It enables zip/city auto-completion on partners""",
- 'website': 'http://www.camptocamp.com',
- 'data': ['better_zip_view.xml',
-          'state_view.xml',
-          'company_view.xml',
-          'partner_view.xml',
-          'security/ir.model.access.csv'],
- 'installable': True,
- 'active': False,
- }
+from openerp.osv import orm, fields
+
+
+class ResPartner(orm.Model):
+    _inherit = "res.partner"
+    _columns = {'zip_id': fields.many2one('res.better.zip', 'ZIP/PN')}
+
+    def onchange_zip_id(self, cursor, uid, ids, zip_id, context=None):
+        if not zip_id:
+            return {}
+        if isinstance(zip_id, list):
+            zip_id = zip_id[0]
+        bzip = self.pool['res.better.zip'].browse(cursor, uid, zip_id, context=context)
+        return {'value': {'zip': bzip.name,
+                          'city': bzip.city,
+                          'country_id': bzip.country_id.id if bzip.country_id else False,
+                          'state_id': bzip.state_id.id if bzip.state_id else False,
+                          }
+                }

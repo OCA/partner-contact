@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author Nicolas Bessi. Copyright Camptocamp SA
+#    Author: Nicolas Bessi. Copyright Camptocamp SA
+#    Contributor: Pedro Manuel Baeza <pedro.baeza@gmail.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,3 +19,6 @@
 #
 ##############################################################################
 from . import better_zip
+from . import partner
+from . import state
+from . import company
