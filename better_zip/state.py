@@ -18,19 +18,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{'name': 'Better zip management',
- 'version': '0.3',
- 'depends': ['base'],
- 'author': 'Camptocamp',
- 'description': """
-Introduces a better zip/npa management system.
-It enables zip/city auto-completion on partners""",
- 'website': 'http://www.camptocamp.com',
- 'data': ['better_zip_view.xml',
-          'state_view.xml',
-          'company_view.xml',
-          'partner_view.xml',
-          'security/ir.model.access.csv'],
- 'installable': True,
- 'active': False,
- }
+from openerp.osv import orm, fields
+
+
+class ResCountryState(orm.Model):
+
+    _inherit = 'res.country.state'
+
+    _columns = {'better_zip_ids': fields.one2many('res.better.zip', 'state_id', 'Cities')}
