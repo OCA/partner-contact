@@ -25,8 +25,8 @@
             <field name="firstname"/>
           </group>
         </field>
-        <!-- Add firstname last name in contact for also -->
-        <xpath expr="//page[@string='Contacts']/field/form/div/group/field[@name='name']" position="after">
+        <!-- Add firstname and last name in inner contact form of child_ids -->
+        <xpath expr="//form[@string='Contact']/sheet/div/h1/field[@name='name']" position="after">
             <field name="lastname"/>
             <field name="firstname"/>
         </xpath>
