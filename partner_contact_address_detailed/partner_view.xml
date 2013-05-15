@@ -5,7 +5,7 @@
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form"/>
       <field name="arch" type="xml">
-        <xpath expr="//page[@string='Contacts']/field/form/div/group/field[@name='mobile']" position="after">
+        <xpath expr="//page[@string='Contacts']//field[@name='mobile']" position="after">
           <label for="type"/>
           <div colspan="2">
             <field name="type"/>
