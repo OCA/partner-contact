@@ -33,7 +33,7 @@ class ResPartner(Model):
     def _compute_name_custom(self, cursor, uid, ids, fname, arg, context=None):
         res = {}
         for rec in self.read(cursor, uid, ids, ['firstname', 'lastname']):
-            name = rec['lastname'] + (u" " + rec['firstname'] if rec['firstname'] else u"")
+            name = rec['lastname'] if rec['lastname'] else u""  + (u" " + rec['firstname'] if rec['firstname'] else u"")
             res[rec['id']] = name
         return res
 
