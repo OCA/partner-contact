@@ -29,7 +29,7 @@
      'partner_firstname',
      ],
  'description': """
-Adapt computation of display name so it make it visible in tree and kanban view.
+Adapt the computation of display name so that it gets visible in tree and kanban views.
  """,
  'website': 'http://www.camptocamp.com',
  'data': [],
