@@ -27,10 +27,34 @@ class ResPartner(orm.Model):
     def _display_name_compute(self, cr, uid, ids, name, args, context=None):
         return dict(self.name_get(cr, uid, ids, context=context))
 
+    def name_get(self, cr, uid, ids, context=None):
+        """ By pass of name_get to use directly firstname and lastname
+        as we cannot ensure name as already been computed when calling this
+        method for display_name"""
+        if context is None:
+            context = {}
+        if isinstance(ids, (int, long)):
+            ids = [ids]
+        res = []
+        for record in self.browse(cr, uid, ids, context=context):
+            name = '%s %s'%(record.lastname if record.lastname else u"",
+                            record.firstname if record.firstname else u"")
+            if record.parent_id and not record.is_company:
+                name =  "%s, %s" % (record.parent_id.name, name)
+            if context.get('show_address'):
+                name = name + "\n" + self._display_address(cr, uid, record, without_company=True, context=context)
+                name = name.replace('\n\n','\n')
+                name = name.replace('\n\n','\n')
+            if context.get('show_email') and record.email:
+                name = "%s <%s>" % (name, record.email)
+            res.append((record.id, name))
+        return res
+
+
     _display_name_store_triggers = {
         'res.partner': (lambda self,cr,uid,ids,context=None: self.search(cr, uid, [('id','child_of',ids)]),
                         ['parent_id', 'is_company', 'name', 'firstname', 'lastname'], 10)
-    }
+        }
 
     # indirection to avoid passing a copy of the overridable method when declaring the function field
     _display_name = lambda self, *args, **kwargs: self._display_name_compute(*args, **kwargs)
