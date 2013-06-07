@@ -24,7 +24,7 @@ from openerp.osv import orm, fields
 
 class ResPartner(orm.Model):
     _inherit = "res.partner"
-    _columns = {'zip_id': fields.many2one('res.better.zip', 'ZIP/PN')}
+    _columns = {'zip_id': fields.many2one('res.better.zip', 'City/Location')}
 
     def onchange_zip_id(self, cursor, uid, ids, zip_id, context=None):
         if not zip_id:
