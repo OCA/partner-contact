@@ -34,7 +34,7 @@
     </record>
 
     <record id="action_zip_tree" model="ir.actions.act_window">
-      <field name="name">ZIP Management</field>
+      <field name="name">Cites/locations Management</field>
       <field name="res_model">res.better.zip</field>
       <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
@@ -42,7 +42,7 @@
     </record>
 
     <menuitem
-        name="ZIP Management"
+        name="Cities/Locations Management"
         id="zip_base"
         parent="base.menu_base_config"
         action="action_zip_tree"
