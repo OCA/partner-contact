@@ -9,7 +9,7 @@
         <field name="city" position="before">
           <field name="zip_id"
                  on_change="onchange_zip_id(zip_id)"
-                 placeholder="ZIP completion"/>
+                 placeholder="City completion"/>
         </field>
       </field>
     </record>

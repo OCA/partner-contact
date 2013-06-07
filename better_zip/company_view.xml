@@ -11,7 +11,7 @@
           <field name="better_zip_id"
                  colspan="4"
                  on_change="on_change_city(better_zip_id)"
-                 placeholder="ZIP completion" />
+                 placeholder="City completion" />
         </field>
       </field>
     </record>
