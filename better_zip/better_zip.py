@@ -47,7 +47,7 @@ class BetterZip(orm.Model):
                 name.append(bzip.state_id.name)
             if bzip.country_id:
                 name.append(bzip.country_id.name)
-            res.append((bzip.id, " ".join(name)))
+            res.append((bzip.id, ", ".join(name)))
         return res
 
     def onchange_state_id(self, cr, uid, ids, state_id=False, context={}):
