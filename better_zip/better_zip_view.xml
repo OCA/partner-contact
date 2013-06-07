@@ -44,7 +44,7 @@
     <menuitem
         name="Cities/Locations Management"
         id="zip_base"
-        parent="base.menu_base_config"
+        parent="base.menu_config_address_book"
         action="action_zip_tree"
         />
   </data>
