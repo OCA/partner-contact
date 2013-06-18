@@ -22,7 +22,7 @@
  'version': '1.0',
  'author': 'Camptocamp',
  'maintainer': 'Camptocamp',
- 'category': 'CRM',
+ 'category': 'Hidden',
  'complexity': 'normal',  # easy, normal, expert
  'depends': [
      'account_report_company',
