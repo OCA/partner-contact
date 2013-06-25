@@ -1,0 +1,107 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#       * better_zip
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-07 14:17+0000\n"
+"PO-Revision-Date: 2013-05-08 12:03+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: better_zip
+#: model:ir.actions.act_window,name:better_zip.action_zip_tree
+msgid "Cites/locations Management"
+msgstr "Cites/locations Management"
+
+#. module: better_zip
+#: field:res.better.zip,city:0
+msgid "City"
+msgstr "Ville"
+
+#. module: better_zip
+#: view:res.better.zip:0 field:res.better.zip,name:0
+msgid "ZIP"
+msgstr "ZIP"
+
+#. module: better_zip
+#: field:res.better.zip,country_id:0
+msgid "Country"
+msgstr "Pays"
+
+#. module: better_zip
+#: field:res.better.zip,priority:0
+msgid "Priority"
+msgstr "Priorité"
+
+#. module: better_zip
+#: model:ir.model,name:better_zip.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: better_zip
+#: field:res.better.zip,code:0
+msgid "City Code"
+msgstr "Code de la ville"
+
+#. module: better_zip
+#: model:ir.model,name:better_zip.model_res_better_zip
+msgid " City/locations completion object"
+msgstr " City/locations completion object"
+
+#. module: better_zip
+#: help:res.company,better_zip_id:0
+msgid "Use the city name or the zip code to search the location"
+msgstr "Utilisez le nom de la ville ou le zip lors des recherches"
+
+#. module: better_zip
+#: field:res.partner,zip_id:0
+msgid "City/Location"
+msgstr "Ville/location"
+
+#. module: better_zip
+#: field:res.better.zip,state_id:0
+msgid "State"
+msgstr "Etat"
+
+#. module: better_zip
+#: field:res.company,better_zip_id:0
+msgid "Location"
+msgstr "Location"
+
+#. module: better_zip
+#: model:ir.ui.menu,name:better_zip.zip_base
+msgid "Cities/Locations Management"
+msgstr "Cities/Locations Management"
+
+#. module: better_zip
+#: model:ir.model,name:better_zip.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: better_zip
+#: view:res.company:0 view:res.partner:0
+msgid "City completion"
+msgstr "Complétion par ville"
+
+#. module: better_zip
+#: field:res.country.state,better_zip_ids:0
+msgid "Cities"
+msgstr "Villes"
+
+#. module: better_zip
+#: model:ir.model,name:better_zip.model_res_country_state
+msgid "Country state"
+msgstr "Etat"
+
+#. module: better_zip
+#: help:res.better.zip,code:0
+msgid "The official code for the city"
+msgstr "Code officiel de la ville"
