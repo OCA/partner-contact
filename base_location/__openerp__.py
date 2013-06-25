@@ -19,7 +19,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{'name': 'Better zip management',
+{'name': 'Location management (aka Better ZIP)',
  'version': '0.3',
  'depends': ['base'],
  'author': 'Camptocamp',
