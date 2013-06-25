@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+    <record id="view_partner_form" model="ir.ui.view">
+      <field name="name">res.partner.zip_id.2</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <field name="city" position="before">
+          <field name="zip_id"
+                 on_change="onchange_zip_id(zip_id)"
+                 placeholder="City completion"/>
+        </field>
+      </field>
+    </record>
+  </data>
+</openerp>
