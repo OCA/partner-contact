@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author Nicolas Bessi. Copyright Camptocamp SA
+#    Author: Nicolas Bessi. Copyright Camptocamp SA
+#    Contributor: Pedro Manuel Baeza <pedro.baeza@serviciosbaeza.com>
+#                 Ignacio Ibeas <ignacio@acysos.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -17,35 +19,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv.orm import Model, fields
+from openerp.osv import orm, fields
 
 
-class BetterZip(Model):
-    " Zip/NPA object"
-
-    _name = "res.better.zip"
-    _description = __doc__
-    _order = "priority"
-
-    _columns = {'priority': fields.integer('Priority'),
-                'name': fields.char('ZIP', required=True),
-                'city': fields.char('City', required=True),
-                'state_id': fields.many2one('res.country.state', 'State'),
-                'country_id': fields.many2one('res.country', 'Country'),
-                }
-
-    _defaults = {'priority': 100}
-
-    def name_get(self, cursor, uid, ids, context=None):
-        res = []
-        for bzip in self.browse(cursor, uid, ids):
-            res.append((bzip.id, u"%s %s" % (bzip.name, bzip.city)))
-        return res
-
-
-class Partner(Model):
+class ResPartner(orm.Model):
     _inherit = "res.partner"
-    _columns = {'zip_id': fields.many2one('res.better.zip', 'ZIP/PN')}
+    _columns = {'zip_id': fields.many2one('res.better.zip', 'City/Location')}
 
     def onchange_zip_id(self, cursor, uid, ids, zip_id, context=None):
         if not zip_id:
@@ -53,5 +32,9 @@ class Partner(Model):
         if isinstance(zip_id, list):
             zip_id = zip_id[0]
         bzip = self.pool['res.better.zip'].browse(cursor, uid, zip_id, context=context)
-        return {'value': {'zip': bzip.name, 'city': bzip.city,
-                          'country_id': bzip.country_id.id, 'state_id': bzip.state_id.id}}
+        return {'value': {'zip': bzip.name,
+                          'city': bzip.city,
+                          'country_id': bzip.country_id.id if bzip.country_id else False,
+                          'state_id': bzip.state_id.id if bzip.state_id else False,
+                          }
+                }

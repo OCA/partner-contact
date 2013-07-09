@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
   <data>
-    <record id="view_partner_form" model="ir.ui.view">
-      <field name="name">res.partner.zip_id.2</field>
-      <field name="model">res.partner</field>
-      <field name="inherit_id" ref="base.view_partner_form"/>
-      <field name="arch" type="xml">
-        <field name="city" position="before">
-            <field name="zip_id" on_change="onchange_zip_id(zip_id)" placeholder="ZIP completion"/>
-        </field>
-      </field>
-    </record>
 
     <record model="ir.ui.view" id="better_zip_form">
       <field name="name">res.better.zip.form</field>
@@ -19,9 +9,10 @@
         <form string="ZIP" version="7.0">
           <group col="4">
             <field name="name"/>
+            <field name="code"/>
             <field name="city"/>
             <field name="priority"/>
-            <field name="state_id"/>
+            <field name="state_id" on_change="onchange_state_id(state_id)"/>
             <field name="country_id"/>
           </group>
         </form>
@@ -34,6 +25,7 @@
       <field name="arch" type="xml">
         <tree string="ZIP">
           <field name="name"/>
+          <field name="code"/>
           <field name="city"/>
           <field name="country_id"/>
           <field name="priority"/>
@@ -42,7 +34,7 @@
     </record>
 
     <record id="action_zip_tree" model="ir.actions.act_window">
-      <field name="name">ZIP Management</field>
+      <field name="name">Cites/locations Management</field>
       <field name="res_model">res.better.zip</field>
       <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
@@ -50,9 +42,9 @@
     </record>
 
     <menuitem
-        name="ZIP Management"
+        name="Cities/Locations Management"
         id="zip_base"
-        parent="base.menu_base_config"
+        parent="base.menu_localisation"
         action="action_zip_tree"
         />
   </data>

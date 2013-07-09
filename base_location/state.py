@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author Nicolas Bessi. Copyright Camptocamp SA
+#    Author: Nicolas Bessi. Copyright Camptocamp SA
+#    Contributor: Pedro Manuel Baeza <pedro.baeza@serviciosbaeza.com>
+#                 Ignacio Ibeas <ignacio@acysos.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -17,13 +19,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{'name': 'Better zip management',
- 'version': '0.3',
- 'depends': ['base',],
- 'author': 'Camptocamp',
- 'description': """Introduce a better zip/npa management system. Enable partner completion""",
- 'website': 'http://www.camptocamp.com',
- 'data': ['security/security.xml', 'better_zip_view.xml'],
- 'installable': True,
- 'active': False,
- }
+from openerp.osv import orm, fields
+
+
+class ResCountryState(orm.Model):
+
+    _inherit = 'res.country.state'
+
+    _columns = {'better_zip_ids': fields.one2many('res.better.zip', 'state_id', 'Cities')}
