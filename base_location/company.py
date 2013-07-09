@@ -26,10 +26,12 @@ class ResCompany(orm.Model):
 
     _inherit = 'res.company'
 
-    def on_change_city(self, cursor, uid, ids, zip_id):
+    def on_change_city(self, cr, uid, ids, zip_id, context=None):
         result = {}
+        if context is None:
+            context = {}
         if zip_id:
-            bzip = self.pool['res.better.zip'].browse(cursor, uid, zip_id)
+            bzip = self.pool['res.better.zip'].browse(cr, uid, zip_id, context=context)
             result = {'value': {'zip': bzip.name,
                                 'country_id': bzip.country_id.id if bzip.country_id else False,
                                 'city': bzip.city,
