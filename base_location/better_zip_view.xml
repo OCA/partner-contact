@@ -33,12 +33,24 @@
       </field>
     </record>
 
+    <record id="view_better_zip_filter" model="ir.ui.view">
+      <field name="name">res.better.zip.select</field>
+        <field name="model">res.better.zip</field>
+        <field name="arch" type="xml">
+        <search string="Search city">
+          <field name="name"/>
+          <field name="city"/>
+        </search>
+      </field>
+    </record>
+
     <record id="action_zip_tree" model="ir.actions.act_window">
       <field name="name">Cites/locations Management</field>
       <field name="res_model">res.better.zip</field>
       <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
       <field ref="better_zip_tree" name="view_id"/>
+      <field name="search_view_id" ref="view_better_zip_filter"/>
     </record>
 
     <menuitem
