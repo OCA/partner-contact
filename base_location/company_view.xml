@@ -9,6 +9,7 @@
       <field name="arch" type="xml">
         <field name="street2" position="after">
           <field name="better_zip_id"
+                 options="{'create_name_field': 'city'}"
                  colspan="4"
                  on_change="on_change_city(better_zip_id)"
                  placeholder="City completion" />
