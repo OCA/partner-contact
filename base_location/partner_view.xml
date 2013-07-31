@@ -6,11 +6,22 @@
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form"/>
       <field name="arch" type="xml">
-        <field name="city" position="before">
+        <field name="street2" position="after">
           <field name="zip_id"
+                 options="{'create_name_field': 'city'}"
                  on_change="onchange_zip_id(zip_id)"
-                 placeholder="City completion"/>
+                 placeholder="City completion"
+                 attrs="{'invisible': [('use_parent_address','=',True)]}"
+                 />
         </field>
+        <xpath expr="//field[@name='child_ids']/form//field[@name='street2']" position="after">
+          <field name="zip_id"
+                 options="{'create_name_field': 'city'}"
+                 on_change="onchange_zip_id(zip_id)"
+                 placeholder="City completion"
+                 attrs="{'invisible': [('use_parent_address','=',True)]}"
+                 />
+        </xpath>
       </field>
     </record>
   </data>
