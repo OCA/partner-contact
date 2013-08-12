@@ -41,7 +41,8 @@ class ResPartner(Model):
         return res
 
     def _write_name(self, cursor, uid, partner_id, field_name, field_value, arg, context=None):
-        return self.write(cursor, uid, partner_id, {'lastname': field_value})
+        return self.write(cursor, uid, partner_id,
+                          {'lastname': field_value}, context=context)
 
     def create(self, cursor, uid, vals, context=None):
         """To support data backward compatibility we have to keep this overwrite even if we
