@@ -32,13 +32,17 @@ class ResPartner(Model):
 
     def _compute_name_custom(self, cursor, uid, ids, fname, arg, context=None):
         res = {}
-        for rec in self.read(cursor, uid, ids, ['firstname', 'lastname']):
-            name = rec['lastname'] + (u" " + rec['firstname'] if rec['firstname'] else u"")
-            res[rec['id']] = name
+        partners = self.read(cursor, uid, ids,
+                             ['firstname', 'lastname'], context=context)
+        for rec in partners:
+            names = (rec['lastname'], rec['firstname'])
+            fullname = " ".join([s for s in names if s])
+            res[rec['id']] = fullname
         return res
 
     def _write_name(self, cursor, uid, partner_id, field_name, field_value, arg, context=None):
-        return self.write(cursor, uid, partner_id, {'lastname': field_value})
+        return self.write(cursor, uid, partner_id,
+                          {'lastname': field_value}, context=context)
 
     def create(self, cursor, uid, vals, context=None):
         """To support data backward compatibility we have to keep this overwrite even if we
