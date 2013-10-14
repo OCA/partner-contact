@@ -17,7 +17,7 @@
                 </field>
                 <page string="Contacts" position="after">
                     <page string="Affiliates" attrs="{'invisible': [('is_company','=',False)]}">
-                        <field name="affiliate_ids" context="{'default_parent_id': active_id}" mode="kanban">
+                        <field name="affiliate_ids" context="{'default_parent_id': active_id, 'default_is_company': True}" mode="kanban">
                             <kanban>
                                 <field name="color"/>
                                 <field name="name"/>
