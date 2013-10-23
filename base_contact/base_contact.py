@@ -110,10 +110,16 @@ class res_partner(osv.osv):
         return result
 
     def onchange_contact_id(self, cr, uid, ids, contact_id, context=None):
+        values = {}
         if contact_id:
-            name = self.browse(cr, uid, contact_id, context=context).name
-            return {'value': {'name': name}}
-        return {}
+            values['name'] = self.browse(cr, uid, contact_id, context=context).name
+        return {'value': values}
+
+    def onchange_contact_type(self, cr, uid, ids, contact_type, context=None):
+        values = {}
+        if contact_type == 'standalone':
+            values['contact_id'] = False
+        return {'value': values}
 
 
 class ir_actions_window(osv.osv):
