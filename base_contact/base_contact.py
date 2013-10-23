@@ -84,7 +84,7 @@ class res_partner(osv.osv):
     def create(self, cr, user, vals, context=None):
         context = self._basecontact_check_context(cr, user, 'create', context)
         if not vals.get('name') and vals.get('contact_id'):
-            vals['name'] = self.browse(cr, user, vals['contact_id'], context=context)
+            vals['name'] = self.browse(cr, user, vals['contact_id'], context=context).name
         return super(res_partner, self).create(cr, user, vals, context=context)
 
     def read(self, cr, user, ids, fields=None, context=None, load='_classic_read'):
