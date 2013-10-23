@@ -99,3 +99,38 @@ class Test_Base_Contact(common.TransactionCase):
         ctx = {'search_show_all_positions': False}
         partner_ids = self.partner.search(cr, uid, [('parent_id', 'ilike', 'Your Company')], context=ctx)
         self.assertTrue(self.bob_contact_id in partner_ids)
+
+    def test_04_contact_creation(self):
+        """Check that we're begin to create a contact"""
+        cr, uid = self.cr, self.uid
+
+        # Create a contact using only name
+        new_contact_id = self.partner.create(cr, uid, {'name': 'Bob Egnops'})
+        self.assertEqual(self.partner.browse(cr, uid, new_contact_id).contact_type, 'standalone')
+
+        # Create a contact with only contact_id
+        new_contact_id = self.partner.create(cr, uid, {'contact_id': self.bob_contact_id})
+        new_contact = self.partner.browse(cr, uid, new_contact_id)
+        self.assertEqual(new_contact.name, 'Bob Egnops')
+        self.assertEqual(new_contact.contact_type, 'attached')
+
+        # Create a contact with both contact_id and name;
+        # contact's name should override provided value in that case
+        new_contact_id = self.partner.create(cr, uid, {'contact_id': self.bob_contact_id, 'name': 'Rob Egnops'})
+        self.assertEqual(self.partner.browse(cr, uid, new_contact_id).name, 'Bob Egnops')
+
+        # Reset contact to standalone
+        self.partner.write(cr, uid, [new_contact_id], {'contact_id': False})
+        self.assertEqual(self.partner.browse(cr, uid, new_contact_id).contact_type, 'standalone')
+
+    def test_05_contact_fields_sync(self):
+        """Check that contact's fields are correctly synced between parent contact or related contacts"""
+        cr, uid = self.cr, self.uid
+
+        # Test DOWNSTREAM sync
+        self.partner.write(cr, uid, [self.bob_contact_id], {'name': 'Rob Egnops'})
+        self.assertEqual(self.partner.browse(cr, uid, self.bob_job1_id).name, 'Rob Egnops')
+
+        # Test UPSTREAM sync
+        self.partner.write(cr, uid, [self.bob_job1_id], {'name': 'Bob Egnops'})
+        self.assertEqual(self.partner.browse(cr, uid, self.bob_contact_id).name, 'Bob Egnops')

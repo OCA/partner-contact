@@ -109,6 +109,47 @@ class res_partner(osv.osv):
                 result[partner.id] = partner.contact_id.id
         return result
 
+    def _contact_fields(self, cr, uid, context=None):
+        """ Returns the list of contact fields that are synced from the parent
+        when a partner is attached to him. """
+        return ['name', 'title']
+
+    def _contact_sync_from_parent(self, cr, uid, partner, context=None):
+        """ Handle sync of contact fields when a new parent contact entity is set,
+        as if they were related fields """
+        if partner.contact_id:
+            contact_fields = self._contact_fields(cr, uid, context=context)
+            sync_vals = self._update_fields_values(cr, uid, partner.contact_id,
+                                                   contact_fields, context=context)
+            partner.write(sync_vals)
+
+    def update_contact(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
+        if context.get('__update_contact_lock'):
+            return
+        contact_fields = self._contact_fields(cr, uid, context=context)
+        contact_vals = dict((field, vals[field]) for field in contact_fields if field in vals)
+        if contact_vals:
+            ctx = dict(context, __update_contact_lock=True)
+            self.write(cr, uid, ids, contact_vals, context=ctx)
+
+    def _fields_sync(self, cr, uid, partner, update_values, context=None):
+        """ Sync commercial fields and address fields from company and to children,
+        contact fields from contact and to attached contact after create/update,
+        just as if those were all modeled as fields.related to the parent """
+        super(res_partner, self)._fields_sync(cr, uid, partner, update_values, context=context)
+        contact_fields = self._contact_fields(cr, uid, context=context)
+        # 1. From UPSTREAM: sync from parent contact
+        if update_values.get('contact_id'):
+            self._contact_sync_from_parent(cr, uid, partner, context=context)
+        # 2. To DOWNSTREAM: sync contact fields to parent or related
+        elif any(field in contact_fields for field in update_values):
+            update_ids = [c.id for c in partner.other_contact_ids if not c.is_company]
+            if partner.contact_id:
+                update_ids.append(partner.contact_id.id)
+            self.update_contact(cr, uid, update_ids, update_values, context=context)
+
     def onchange_contact_id(self, cr, uid, ids, contact_id, context=None):
         values = {}
         if contact_id:
