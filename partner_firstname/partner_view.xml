@@ -5,10 +5,13 @@
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_simple_form"/>
       <field name="arch" type="xml">
+        <field name="name" position="attributes">
+            <attribute name="attrs">{'readonly': [('is_company', '=', False)], 'required': [('is_company', '=', True)]}</attribute>
+        </field>
         <field name="category_id" position="before">
-          <group>
-            <field name="lastname"/>
-            <field name="firstname"/>
+          <group attrs="{'invisible': [('is_company', '=', True)]}">
+              <field name="lastname" attrs="{'required': [('is_company', '=', False)]}"/>
+            <field name="firstname" />
           </group>
         </field>
       </field>
@@ -19,9 +22,12 @@
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form"/>
       <field name="arch" type="xml">
+        <field name="name" position="attributes">
+            <attribute name="attrs">{'readonly': [('is_company', '=', False)], 'required': [('is_company', '=', True)]}</attribute>
+        </field>
         <field name="category_id" position="before">
-          <group>
-            <field name="lastname"/>
+          <group attrs="{'invisible': [('is_company', '=', True)]}">
+            <field name="lastname" attrs="{'required': [('is_company', '=', False)]}"/>
             <field name="firstname"/>
           </group>
         </field>
