@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>).
 #    Copyright (C) 2013 initOS GmbH & Co. KG (<http://www.initos.com>).
@@ -17,26 +17,27 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
-from osv import osv, fields
-import logging
-_logger = logging.getLogger(__name__)
+from openerp.osv import orm, fields
 
-class partner_sequence(osv.osv):
+
+class ResPartner(orm.Model):
+    """Assigns 'ref' from a sequence on creation"""
+
     _inherit = 'res.partner'
+
     def create(self, cr, uid, vals, context={}):
         # only assign a 'ref' if it is not a child object
         #  (such as a shipping/invoice address)
-        if vals.get('parent_id', 0) > 0:
+        if not vals.get('parent_id'):
             vals['ref'] = self.pool.get('ir.sequence').get(cr, uid, 'res.partner')
-        res = super(partner_sequence, self).create(cr, uid, vals, context)
-        return res
+        return super(ResPartner, self).create(cr, uid, vals, context)
+
     _columns = {
         'ref': fields.char('Code', size=64, readonly=True),
     }
-partner_sequence()
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
