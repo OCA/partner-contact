@@ -25,19 +25,42 @@ from openerp.osv import orm, fields
 
 
 class ResPartner(orm.Model):
-    """Assigns 'ref' from a sequence on creation"""
+    """Assigns 'ref' from a sequence on creation and copying"""
 
     _inherit = 'res.partner'
 
-    def create(self, cr, uid, vals, context={}):
-        # only assign a 'ref' if it is not a child object
-        #  (such as a shipping/invoice address)
-        if not vals.get('parent_id'):
+    def create(self, cr, uid, vals, context=None):
+        context = context or {}
+        if not vals.get('ref') and self._needsRef(cr, uid, None, vals, context):
             vals['ref'] = self.pool.get('ir.sequence').get(cr, uid, 'res.partner')
         return super(ResPartner, self).create(cr, uid, vals, context)
 
+    def copy(self, cr, uid, id, default=None, context=None):
+        default = default or {}
+        if not default.get('ref') and self._needsRef(cr, uid, id, None, context):
+            default['ref'] = self.pool.get('ir.sequence').get(cr, uid, 'res.partner', context=context)
+        return super(ResPartner, self).copy(cr, uid, id, default, context=context)
+
+    def _needsRef(self, cr, uid, id=None, vals=None, context=None):
+        """
+        Checks whether a sequence value should be assigned to a partner's 'ref'
+
+        :param cr: database cursor
+        :param uid: current user id
+        :param id: id of the partner object
+        :param vals: known field values of the partner object
+        :return: true iff a sequence value should be assigned to the partner's 'ref'
+        """
+        if not vals and not id:
+            raise Exception('Either field values or an id must be provided.')
+        # only assign a 'ref' if it is not a child object
+        #  (such as a shipping/invoice address)
+        if id:
+            vals = self.read(cr, uid, id, ['parent_id'], context=context)
+        return not vals.get('parent_id')
+
     _columns = {
-        'ref': fields.char('Code', size=64, readonly=True),
+        'ref': fields.char('Reference', size=64, readonly=True),
     }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
