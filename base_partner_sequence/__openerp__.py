@@ -35,9 +35,8 @@
         This module is a migration of the original base_partner_sequence
         addon to OpenERP version 7.0.
     """,
-    "demo_xml": [],
-    "init_xml": ['partner_sequence.xml'],
-    "update_xml": [],
+    "data": ['partner_sequence.xml'],
+    "demo": [],
     "active": False,
     "installable": True
 }
