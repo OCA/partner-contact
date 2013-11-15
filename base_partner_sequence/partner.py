@@ -53,10 +53,10 @@ class ResPartner(orm.Model):
         """
         if not vals and not id:
             raise Exception('Either field values or an id must be provided.')
-        # only assign a 'ref' if it is a customer or supplier and 
+        # only assign a 'ref' if it is a customer or supplier and
         # if it not a child object (such as a shipping/invoice address)
         if id:
-            vals = self.read(cr, uid, id, ['parent_id','customer','supplier'], context=context)
+            vals = self.read(cr, uid, id, ['parent_id', 'customer', 'supplier'], context=context)
         return not vals.get('parent_id') and (vals.get('customer') or vals.get('supplier'))
 
     _columns = {
