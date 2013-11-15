@@ -31,7 +31,9 @@
     "description": """
         This module adds the possibility to define a sequence for
         the partner code. This code is then set as default when you
-        create a new partner (not a contact), using the defined sequence.
+        create a new customer or supplier, using the defined sequence.
+        No codes are assigned for contacts such as shipping and
+        invoice addresses.
         This module is a migration of the original base_partner_sequence
         addon to OpenERP version 7.0.
     """,

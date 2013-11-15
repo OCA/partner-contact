@@ -31,13 +31,13 @@ class ResPartner(orm.Model):
 
     def create(self, cr, uid, vals, context=None):
         context = context or {}
-        if not vals.get('ref') and self._needsRef(cr, uid, None, vals, context):
+        if not vals.get('ref') and self._needsRef(cr, uid, vals=vals, context=context):
             vals['ref'] = self.pool.get('ir.sequence').get(cr, uid, 'res.partner')
         return super(ResPartner, self).create(cr, uid, vals, context)
 
     def copy(self, cr, uid, id, default=None, context=None):
         default = default or {}
-        if not default.get('ref') and self._needsRef(cr, uid, id, None, context):
+        if not default.get('ref') and self._needsRef(cr, uid, id=id, context=context):
             default['ref'] = self.pool.get('ir.sequence').get(cr, uid, 'res.partner', context=context)
         return super(ResPartner, self).copy(cr, uid, id, default, context=context)
 
@@ -53,11 +53,11 @@ class ResPartner(orm.Model):
         """
         if not vals and not id:
             raise Exception('Either field values or an id must be provided.')
-        # only assign a 'ref' if it is not a child object
-        #  (such as a shipping/invoice address)
+        # only assign a 'ref' if it is a customer or supplier and 
+        # if it not a child object (such as a shipping/invoice address)
         if id:
-            vals = self.read(cr, uid, id, ['parent_id'], context=context)
-        return not vals.get('parent_id')
+            vals = self.read(cr, uid, id, ['parent_id','customer','supplier'], context=context)
+        return not vals.get('parent_id') and (vals.get('customer') or vals.get('supplier'))
 
     _columns = {
         'ref': fields.char('Reference', size=64, readonly=True),
