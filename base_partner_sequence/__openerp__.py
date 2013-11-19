@@ -31,7 +31,13 @@
     "description": """
         This module adds the possibility to define a sequence for
         the partner code. This code is then set as default when you
-        create a new customer or supplier, using the defined sequence.
+        create a new commercial partner, using the defined sequence.
+
+        The reference field is treated as a commercial field, i.e. it
+        is managed from the commercial partner and then propagated to
+        the partner's contacts. The field is visible on the contacts,
+        but it can only be modified from the commercial partner.
+
         No codes are assigned for contacts such as shipping and
         invoice addresses.
         This module is a migration of the original base_partner_sequence
