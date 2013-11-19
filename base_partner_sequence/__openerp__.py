@@ -23,7 +23,7 @@
 {
     "name": "Add a sequence on customers' code",
     "version": "1.1",
-    "author": "initOS GmbH & Co. KG",
+    "author": "Tiny/initOS GmbH & Co. KG",
     "category": "Generic Modules/Base",
     "website": "http://www.initos.com",
     "depends": ["base"],
@@ -37,7 +37,10 @@
         This module is a migration of the original base_partner_sequence
         addon to OpenERP version 7.0.
     """,
-    "data": ['partner_sequence.xml'],
+    "data": [
+        'partner_sequence.xml',
+        'partner_view.xml',
+        ],
     "demo": [],
     "active": False,
     "installable": True
