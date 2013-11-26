@@ -31,15 +31,21 @@ class ResPartner(orm.Model):
 
     def create(self, cr, uid, vals, context=None):
         context = context or {}
-        if not vals.get('ref') and self._needsRef(cr, uid, vals=vals, context=context):
-            vals['ref'] = self.pool.get('ir.sequence').next_by_code(cr, uid, 'res.partner')
+        if not vals.get('ref') and self._needsRef(cr, uid, vals=vals,
+                                                  context=context):
+            vals['ref'] = self.pool.get('ir.sequence')\
+                                   .next_by_code(cr, uid, 'res.partner')
         return super(ResPartner, self).create(cr, uid, vals, context)
 
     def copy(self, cr, uid, id, default=None, context=None):
         default = default or {}
-        if not default.get('ref') and self._needsRef(cr, uid, id=id, context=context):
-            default['ref'] = self.pool.get('ir.sequence').next_by_code(cr, uid, 'res.partner', context=context)
-        return super(ResPartner, self).copy(cr, uid, id, default, context=context)
+        if not default.get('ref') and self._needsRef(cr, uid, id=id,
+                                                     context=context):
+            default['ref'] = self.pool.get('ir.sequence')\
+                                      .next_by_code(cr, uid, 'res.partner',
+                                                    context=context)
+        return super(ResPartner, self).copy(cr, uid, id, default,
+                                            context=context)
 
     def _needsRef(self, cr, uid, id=None, vals=None, context=None):
         """
@@ -49,13 +55,15 @@ class ResPartner(orm.Model):
         :param uid: current user id
         :param id: id of the partner object
         :param vals: known field values of the partner object
-        :return: true iff a sequence value should be assigned to the partner's 'ref'
+        :return: true iff a sequence value should be assigned to the\
+                      partner's 'ref'
         """
         if not vals and not id:
             raise Exception('Either field values or an id must be provided.')
         # only assign a 'ref' to commercial partners
         if id:
-            vals = self.read(cr, uid, id, ['parent_id', 'is_company'], context=context)
+            vals = self.read(cr, uid, id, ['parent_id', 'is_company'],
+                             context=context)
         return vals.get('is_company') or not vals.get('parent_id')
 
     _columns = {
