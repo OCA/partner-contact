@@ -39,8 +39,7 @@ class ResPartner(orm.Model):
 
     def copy(self, cr, uid, id, default=None, context=None):
         default = default or {}
-        if not default.get('ref') and self._needsRef(cr, uid, id=id,
-                                                     context=context):
+        if self._needsRef(cr, uid, id=id, context=context):
             default['ref'] = self.pool.get('ir.sequence')\
                                       .next_by_code(cr, uid, 'res.partner',
                                                     context=context)
