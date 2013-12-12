@@ -30,7 +30,7 @@ class BetterZip(orm.Model):
     _order = "priority"
 
     _columns = {'priority': fields.integer('Priority', deprecated=True),
-                'name': fields.char('ZIP', required=True),
+                'name': fields.char('ZIP'),
                 'city': fields.char('City', required=True),
                 'state_id': fields.many2one('res.country.state', 'State'),
                 'country_id': fields.many2one('res.country', 'Country'),
@@ -43,7 +43,10 @@ class BetterZip(orm.Model):
     def name_get(self, cursor, uid, ids, context=None):
         res = []
         for bzip in self.browse(cursor, uid, ids):
-            name = [bzip.name, bzip.city]
+            if bzip.name:
+                name = [bzip.name, bzip.city]
+            else:
+                name = [bzip.city]
             if bzip.state_id:
                 name.append(bzip.state_id.name)
             if bzip.country_id:
