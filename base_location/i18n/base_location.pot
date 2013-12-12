@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-25 08:56+0000\n"
-"PO-Revision-Date: 2013-06-25 08:56+0000\n"
+"POT-Creation-Date: 2013-12-12 22:33+0000\n"
+"PO-Revision-Date: 2013-12-12 22:33+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -29,6 +29,11 @@ msgstr ""
 #: view:res.better.zip:0
 #: field:res.better.zip,name:0
 msgid "ZIP"
+msgstr ""
+
+#. module: base_location
+#: field:res.better.zip,state_id:0
+msgid "State"
 msgstr ""
 
 #. module: base_location
@@ -67,8 +72,8 @@ msgid "City/Location"
 msgstr ""
 
 #. module: base_location
-#: field:res.better.zip,state_id:0
-msgid "State"
+#: view:res.better.zip:0
+msgid "Search city"
 msgstr ""
 
 #. module: base_location
