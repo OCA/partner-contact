@@ -20,21 +20,23 @@
 ##############################################################################
 
 
-{"name": "Continent management",
- "version": "1.0",
- "depends": ["base"],
- "author": "Camptocamp",
- "license": "AGPL-3",
- "description": """
+{'name': 'Continent management',
+ 'version': '1.0',
+ 'depends': ['base'],
+ 'author': 'Camptocamp',
+ 'license': 'AGPL-3',
+ 'description': """
 This module introduces continent management.
 ============================================
 Links continents to countries,
 adds continent field on partner form
 """,
- "category": "Generic Modules/Base",
- "init_xml": [],
- "demo_xml": [],
- "update_xml": ["base_continent_view.xml"],
- "active": False,
- "installable": True,
+ 'category': 'Generic Modules/Base',
+ 'init_xml': [],
+ 'demo_xml': [],
+ 'update_xml': [
+     'base_continent_view.xml',
+     'base_continent_data.xml'],
+ 'active': False,
+ 'installable': True,
 }
