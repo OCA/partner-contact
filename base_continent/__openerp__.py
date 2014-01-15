@@ -20,7 +20,8 @@
 ##############################################################################
 
 
-{'name': 'Continent management',
+{
+ 'name': 'Continent management',
  'version': '1.0',
  'depends': ['base'],
  'author': 'Camptocamp',
@@ -32,9 +33,7 @@ Links continents to countries,
 adds continent field on partner form
 """,
  'category': 'Generic Modules/Base',
- 'init_xml': [],
- 'demo_xml': [],
- 'update_xml': [
+ 'data': [
      'base_continent_view.xml',
      'base_continent_data.xml',
      'security/ir.model.access.csv'],
