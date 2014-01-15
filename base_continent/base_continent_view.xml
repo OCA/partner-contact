@@ -5,7 +5,6 @@
         <record model="ir.ui.view" id="view_country_tree_add_continent">
             <field name="name">res.country.tree.add_continent</field>
             <field name="model">res.country</field>
-            <field name="type">tree</field>
             <field name="inherit_id" ref="base.view_country_tree" />
             <field name="arch" type="xml">
                 <field name="code" position="after">
@@ -17,7 +16,6 @@
         <!-- add continent to res country form -->
         <record model="ir.ui.view" id="view_country_form_add_continent">
             <field name="name">res.country.form.add_continent</field>
-            <field name="type">form</field>
             <field name="model">res.country</field>
             <field name="inherit_id" ref="base.view_country_form"/>
             <field name="arch" type="xml">
@@ -62,7 +60,6 @@
         <!-- add continent to res partner form -->
         <record model="ir.ui.view" id="res_partner_form_add_continent">
             <field name="name">res.partner.form.add_continent</field>
-            <field name="type">form</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
