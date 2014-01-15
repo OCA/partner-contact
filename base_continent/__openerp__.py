@@ -36,7 +36,8 @@ adds continent field on partner form
  'demo_xml': [],
  'update_xml': [
      'base_continent_view.xml',
-     'base_continent_data.xml'],
+     'base_continent_data.xml',
+     'security/ir.model.access.csv'],
  'active': False,
  'installable': True,
 }
