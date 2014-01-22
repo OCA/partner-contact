@@ -53,9 +53,9 @@ class ResPartner(Model):
         # * if only lastname change in the new name: lastname is updated accordingly, firstname remains untouched
         """
         vals = {'lastname': field_value, 'firstname': False}
-        dict = self.read(cursor, uid, [partner_id], ['firstname', 'is_company'], context=context)[0]
-        if not dict['is_company']:
-            to_check = ' %s' % dict['firstname']
+        fields = self.read(cursor, uid, [partner_id], ['firstname', 'is_company'], context=context)[0]
+        if not fields['is_company']:
+            to_check = ' %s' % fields['firstname']
             if field_value.endswith(to_check):
                 vals['lastname'] = field_value[:-len(to_check)]
                 del(vals['firstname'])
