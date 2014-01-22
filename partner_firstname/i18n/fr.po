@@ -16,6 +16,18 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_firstname
+#: code:addons/partner_firstname/partner.py:76
+#: code:addons/partner_firstname/res_user.py:35
+#, python-format
+msgid "%s (copy)"
+msgstr "%s (copie)"
+
+#. module: partner_firstname
+#: model:ir.model,name:partner_firstname.model_res_users
+msgid "Users"
+msgstr "Utilisateur"
+
+#. module: partner_firstname
 #: field:res.partner,lastname:0
 msgid "Lastname"
 msgstr "Nom"
@@ -24,6 +36,11 @@ msgstr "Nom"
 #: field:res.partner,firstname:0
 msgid "Firstname"
 msgstr "Prénom"
+
+#. module: partner_firstname
+#: view:res.partner:0
+msgid "Is a Company?"
+msgstr "Est une société?"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner

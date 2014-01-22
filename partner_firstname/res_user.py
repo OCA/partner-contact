@@ -18,15 +18,21 @@
 #
 ##############################################################################
 from openerp.osv import orm
+from openerp.tools.translate import _
 
 
 class ResUsers(orm.Model):
-    """Allows user creation from user form as
-    name is not in form"""
 
     _inherit = 'res.users'
 
-    def create(self, cursor, uid, vals, context=None):
-        if not vals.get('name'):
-            vals['name'] = vals['login']
-        return super(ResUsers, self).create(cursor, uid, vals, context=context)
+    def copy_data(self, cr, uid, id, default=None, context=None):
+        """
+        # Avoid to replicate the firstname into the name when duplicating a user
+        """
+        default = default or {}
+        if not default.get('lastname'):
+            default = default.copy()
+            default['lastname'] = _('%s (copy)') % self.read(cr, uid, [id], ['lastname'], context=context)[0]['lastname']
+            if default.get('name'):
+                del(default['name'])
+        return super(ResUsers, self).copy_data(cr, uid, id, default, context=context)
