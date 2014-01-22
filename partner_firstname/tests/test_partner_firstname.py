@@ -29,8 +29,6 @@
 ##############################################################################
 import openerp.tests.common as common
 
-ADMIN_USER_ID = common.ADMIN_USER_ID
-
 
 class test_partner_firstname(common.TransactionCase):
 
@@ -41,12 +39,12 @@ class test_partner_firstname(common.TransactionCase):
 
         self.user_model = self.registry("res.users")
         self.partner_model = self.registry("res.partner")
-        self.dict_partner = {'lastname': 'lastname', 'firstname': 'firstname'}
-        self.dict_user = {'name': 'lastname', 'login': 'v5Ue4Tql0Pm67KX05g25A'}
+        self.fields_partner = {'lastname': 'lastname', 'firstname': 'firstname'}
+        self.fields_user = {'name': 'lastname', 'login': 'v5Ue4Tql0Pm67KX05g25A'}
 
     def test_copy_partner(self):
-        cr, uid = self.cr, ADMIN_USER_ID
-        res_id = self.partner_model.create(cr, uid, self.dict_partner, context={})
+        cr, uid = self.cr, self.uid
+        res_id = self.partner_model.create(cr, uid, self.fields_partner, context={})
         res_id = self.partner_model.copy(cr, uid, res_id, default={}, context={})
         vals = self.partner_model.read(cr, uid, [res_id], ['name', 'lastname', 'firstname'], context={})[0]
         self.assertEqual(vals['name'] == "lastname (copy) firstname" and
@@ -54,12 +52,12 @@ class test_partner_firstname(common.TransactionCase):
                          vals['firstname'] == 'firstname', True, 'Copy of the partner failed with wrong values')
 
     def test_copy_user(self):
-        cr, uid = self.cr, ADMIN_USER_ID
+        cr, uid = self.cr, self.uid
         # create a user
-        res_id = self.user_model.create(cr, uid, self.dict_user, context={})
+        res_id = self.user_model.create(cr, uid, self.fields_user, context={})
         # get the related partner id and add it a firstname
-        dict = self.user_model.read(cr, uid, [res_id], ['partner_id'], context={})[0]
-        self.partner_model.write(cr, uid, dict['partner_id'][0], {'firstname':'firstname'}, context={})
+        fields = self.user_model.read(cr, uid, [res_id], ['partner_id'], context={})[0]
+        self.partner_model.write(cr, uid, fields['partner_id'][0], {'firstname':'firstname'}, context={})
         # copy the user and compare result
         res_id = self.user_model.copy(cr, uid, res_id, default={}, context={})
         vals = self.user_model.read(cr, uid, [res_id], ['name', 'lastname', 'firstname'], context={})[0]
@@ -68,12 +66,12 @@ class test_partner_firstname(common.TransactionCase):
                          vals['firstname'] == 'firstname', True, 'Copy of the user failed with wrong values')
 
     def test_update_user_lastname(self):
-        cr, uid = self.cr, ADMIN_USER_ID
+        cr, uid = self.cr, self.uid
         # create a user
-        res_id = self.user_model.create(cr, uid, self.dict_user, context={})
+        res_id = self.user_model.create(cr, uid, self.fields_user, context={})
         # get the related partner id and add it a firstname
-        dict = self.user_model.read(cr, uid, [res_id], ['partner_id'], context={})[0]
-        self.partner_model.write(cr, uid, dict['partner_id'][0], {'firstname':'firstname'}, context={})
+        fields = self.user_model.read(cr, uid, [res_id], ['partner_id'], context={})[0]
+        self.partner_model.write(cr, uid, fields['partner_id'][0], {'firstname':'firstname'}, context={})
         self.user_model.write(cr, uid, res_id, {'name': 'change firstname'}, context={})
         vals = self.user_model.read(cr, uid, [res_id], ['name', 'lastname', 'firstname'], context={})[0]
         self.assertEqual(vals['name'] == "change firstname" and
@@ -81,12 +79,12 @@ class test_partner_firstname(common.TransactionCase):
                          vals['firstname'] == 'firstname', True, 'Update of the user lastname failed with wrong values')
 
     def test_update_user_firstname(self):
-        cr, uid = self.cr, ADMIN_USER_ID
+        cr, uid = self.cr, self.uid
         # create a user
-        res_id = self.user_model.create(cr, uid, self.dict_user, context={})
+        res_id = self.user_model.create(cr, uid, self.fields_user, context={})
         # get the related partner id and add it a firstname
-        dict = self.user_model.read(cr, uid, [res_id], ['partner_id'], context={})[0]
-        self.partner_model.write(cr, uid, dict['partner_id'][0], {'firstname':'firstname'}, context={})
+        fields = self.user_model.read(cr, uid, [res_id], ['partner_id'], context={})[0]
+        self.partner_model.write(cr, uid, fields['partner_id'][0], {'firstname':'firstname'}, context={})
         self.user_model.write(cr, uid, res_id, {'name': 'lastname other'}, context={})
         vals = self.user_model.read(cr, uid, [res_id], ['name', 'lastname', 'firstname'], context={})[0]
         self.assertEqual(vals['name'] == "lastname other" and
