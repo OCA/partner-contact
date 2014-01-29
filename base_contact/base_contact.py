@@ -19,10 +19,10 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, osv, expression
+from openerp.osv import fields, orm, expression
 
 
-class res_partner(osv.osv):
+class res_partner(orm.Model):
     _inherit = 'res.partner'
 
     _contact_type = [
@@ -41,11 +41,12 @@ class res_partner(osv.osv):
         'contact_type': fields.function(_get_contact_type, type='selection', selection=_contact_type,
                                         string='Contact Type', required=True, select=1, store=True),
         'contact_id': fields.many2one('res.partner', 'Main Contact',
-                                      domain=[('is_company','=',False),('contact_type','=','standalone')]),
+                                      domain=[('is_company', '=', False), ('contact_type', '=', 'standalone')]),
         'other_contact_ids': fields.one2many('res.partner', 'contact_id', 'Others Positions'),
 
         # Person specific fields
-        'birthdate_date': fields.date('Birthdate'),  # add a 'birthdate' as date field, i.e different from char 'birthdate' introduced v6.1!
+        # add a 'birthdate' as date field, i.e different from char 'birthdate' introduced v6.1!
+        'birthdate_date': fields.date('Birthdate'),
         'nationality_id': fields.many2one('res.country', 'Nationality'),
     }
 
@@ -54,22 +55,22 @@ class res_partner(osv.osv):
     }
 
     def _basecontact_check_context(self, cr, user, mode, context=None):
+        """ Remove 'search_show_all_positions' for non-search mode.
+        Keeping it in context can result in unexpected behaviour (ex: reading
+        one2many might return wrong result - i.e with "attached contact" removed
+        even if it's directly linked to a company). """
         if context is None:
             context = {}
-        # Remove 'search_show_all_positions' for non-search mode.
-        # Keeping it in context can result in unexpected behaviour (ex: reading
-        # one2many might return wrong result - i.e with "attached contact" removed
-        # even if it's directly linked to a company).
         if mode != 'search':
             context.pop('search_show_all_positions', None)
         return context
 
     def search(self, cr, user, args, offset=0, limit=None, order=None, context=None, count=False):
+        """ Display only standalone contact matching ``args`` or having
+        attached contact matching ``args`` """
         if context is None:
             context = {}
         if context.get('search_show_all_positions') is False:
-            # display only standalone contact matching ``args`` or having
-            # attached contact matching ``args``
             args = expression.normalize_domain(args)
             attached_contact_args = expression.AND((args, [('contact_type', '=', 'attached')]))
             attached_contact_ids = super(res_partner, self).search(cr, user, attached_contact_args,
@@ -163,7 +164,7 @@ class res_partner(osv.osv):
         return {'value': values}
 
 
-class ir_actions_window(osv.osv):
+class ir_actions_window(orm.Model):
     _inherit = 'ir.actions.act_window'
 
     def read(self, cr, user, ids, fields=None, context=None, load='_classic_read'):
@@ -177,7 +178,7 @@ class ir_actions_window(osv.osv):
                 action_context = action.get('context', '{}') or '{}'
                 if 'search_show_all_positions' not in action_context:
                     action['context'] = action_context.replace('{',
-                            "{'search_show_all_positions': False,", 1)
+                                                               "{'search_show_all_positions': False,", 1)
         if isinstance(ids, (int, long)):
             if actions:
                 return actions[0]

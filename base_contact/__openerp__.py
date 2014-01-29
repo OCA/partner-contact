@@ -22,6 +22,8 @@
 {
     'name': 'Contacts Management',
     'version': '1.0',
+    'author': 'OpenERP SA',
+    'website': 'http://www.openerp.com',
     'category': 'Customer Relationship Management',
     'complexity': "expert",
     'description': """
@@ -32,21 +34,23 @@ It lets you define groups of contacts sharing some common information, like:
     * Birthdate
     * Nationality
     * Native Language
-
-    """,
-    'author': 'OpenERP SA',
-    'website': 'http://www.openerp.com',
-    'depends': ['base', 'process', 'contacts'],
-    'init_xml': [],
-    'update_xml': [
+""",
+    'depends': [
+        'base',
+        'process',
+        'contacts'
+    ],
+    'external_dependencies': {},
+    'data': [
         'base_contact_view.xml',
     ],
-    'demo_xml': [
+    'demo': [
         'base_contact_demo.xml',
     ],
+    'test': [],
     'installable': True,
     'auto_install': False,
-    #'certificate': '0031287885469',
     'images': [],
 }
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
