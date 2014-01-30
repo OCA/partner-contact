@@ -1,0 +1,76 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <!--Redefine this part of view from firstname_partner module -->
+    <record id="view_partner_form_firstname_inherit11" model="ir.ui.view">
+      <field name="name">res.partner.form.firstname.inherit11</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="partner_firstname.view_partner_form_firstname"/>
+      <field name="arch" type="xml">
+        <!--Redefine firstname field in view partner-->
+        <field name="firstname" position="replace">
+          <group attrs="{'invisible': [('is_company', '=', True)]}">
+            <field name="firstname"/>
+          </group>
+        </field>
+        <!--Redefine firstname field in contact view-->
+        <xpath expr="//form[@string='Contact']/sheet/div//field[@name='firstname']" position="replace">
+          <field name="firstname" attrs="{'invisible': [('contact_type', '=', 'attached')]}"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!--Replace name by full name in kanban view-->
+    <record id="view_partner_form_firstname_inherit11" model="ir.ui.view">
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base_contact_function.view_contact_by_function_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='other_contact_history_ids']/kanban//field[@name='name']" position="replace">
+          <field name="lastname"/>
+        </xpath>
+        <xpath expr="//field[@name='other_contact_history_ids']/kanban/templates//t[@t-name='kanban-box']//div[@class='oe_kanban_details']//field[@name='name']"
+               position="before">
+          <field name="firstname"/>
+        </xpath>
+        <!--Display firstname and name after Image-->
+        <xpath expr="//field[@name='other_contact_history_ids']/form[@string='Contact']/sheet//field[@name='image']"
+               position="after">
+          <h1>
+            <field name="contact_id" style="width: 70%%" readonly="1"/>
+          </h1>
+        </xpath>
+      </field>
+    </record>
+
+    <!--Display firstname and name in kanban view for other position -->
+    <record id="view_partner_form_firstname_name" model="ir.ui.view">
+      <field name="name">res.partner.form.firstname.name</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base_contact_function.view_position_info_form"/>
+      <field name="arch" type="xml">
+
+        <xpath expr="//field[@name='other_contact_ids']/form//field[@name='name']"
+               position="replace"/>
+
+        <xpath expr="//field[@name='other_contact_ids']/form//field[@name='image']"
+               position="after">
+          <h1>
+            <field name="contact_id" style="width: 70%%" readonly="1"/>
+          </h1>
+        </xpath>
+
+        <!-- Don't display the label field -->
+        <xpath expr="//field[@name='other_contact_ids']/form//label[@for='name']"
+               position="replace"/>
+
+        <!-- Add firstname before name in templates view -->
+        <xpath expr="//t[@t-name='kanban-box']//div[@class='oe_kanban_details']/h4[@class='oe_partner_heading']//field[@name='name']"
+               position="before">
+          <field name="firstname"/>
+        </xpath>
+
+      </field>
+    </record>
+  </data>
+</openerp>
