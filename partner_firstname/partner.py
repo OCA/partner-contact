@@ -47,37 +47,47 @@ class ResPartner(Model):
 
     def _write_name(self, cursor, uid, partner_id, field_name, field_value, arg, context=None):
         """
-        # Try to reverse the effect of _compute_name_custom:
-        # * if is_company is True then lastname = name and firstname False
-        # * if firstname change in the new name: lastname is set to new name, firstname is reset
-        # * if only lastname change in the new name: lastname is updated accordingly, firstname remains untouched
+        Try to reverse the effect of _compute_name_custom:
+        * if the partner is not a company and the firstname does not change in the new name
+          then firstname remains untouched and lastname is updated accordingly
+        * otherwise lastname=new name and firstname=False
+        In addition an heuristic avoids to keep a firstname without a non-blank lastname
         """
+        field_value = not field_value.isspace() and field_value or False
         vals = {'lastname': field_value, 'firstname': False}
-        fields = self.read(cursor, uid, [partner_id], ['firstname', 'is_company'], context=context)[0]
-        if not fields['is_company']:
-            to_check = ' %s' % fields['firstname']
-            if field_value.endswith(to_check):
-                vals['lastname'] = field_value[:-len(to_check)]
-                del(vals['firstname'])
+        if field_value:
+            flds = self.read(cursor, uid, [partner_id], ['firstname', 'is_company'], context=context)[0]
+            if not flds['is_company']:
+                to_check = ' %s' % flds['firstname']
+                if field_value.endswith(to_check):
+                    ln = field_value[:-len(to_check)].strip()
+                    if ln:
+                        vals['lastname'] = ln
+                        del(vals['firstname'])
+                    else:
+                        # If the lastname is deleted from the new name
+                        # then the firstname becomes the lastname
+                        vals['lastname'] = flds['firstname']
+
         return self.write(cursor, uid, partner_id, vals, context=context)
 
-    def copy_data(self, cr, uid, id, default=None, context=None):
+    def copy_data(self, cr, uid, _id, default=None, context=None):
         """
-        # Avoid to replicate the firstname into the name when duplicating a partner
+        Avoid to replicate the firstname into the name when duplicating a partner
         """
         default = default or {}
         if not default.get('lastname'):
             default = default.copy()
-            default['lastname'] = _('%s (copy)') % self.read(cr, uid, [id], ['lastname'], context=context)[0]['lastname']
+            default['lastname'] = _('%s (copy)') % self.read(cr, uid, [_id], ['lastname'], context=context)[0]['lastname']
             if default.get('name'):
                 del(default['name'])
-        return super(ResPartner, self).copy_data(cr, uid, id, default, context=context)
+        return super(ResPartner, self).copy_data(cr, uid, _id, default, context=context)
 
     def create(self, cursor, uid, vals, context=None):
         """
-        # To support data backward compatibility we have to keep this overwrite even if we
-        # use fnct_inv: otherwise we can't create entry because lastname is mandatory and module
-        # will not install if there is demo data
+        To support data backward compatibility we have to keep this overwrite even if we
+        use fnct_inv: otherwise we can't create entry because lastname is mandatory and module
+        will not install if there is demo data
         """
         to_use = vals
         if vals.get('name'):
