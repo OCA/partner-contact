@@ -56,8 +56,8 @@ class test_partner_firstname(common.TransactionCase):
         # create a user
         res_id = self.user_model.create(cr, uid, self.fields_user, context={})
         # get the related partner id and add it a firstname
-        fields = self.user_model.read(cr, uid, [res_id], ['partner_id'], context={})[0]
-        self.partner_model.write(cr, uid, fields['partner_id'][0], {'firstname':'firstname'}, context={})
+        flds = self.user_model.read(cr, uid, [res_id], ['partner_id'], context={})[0]
+        self.partner_model.write(cr, uid, flds['partner_id'][0], {'firstname':'firstname'}, context={})
         # copy the user and compare result
         res_id = self.user_model.copy(cr, uid, res_id, default={}, context={})
         vals = self.user_model.read(cr, uid, [res_id], ['name', 'lastname', 'firstname'], context={})[0]
@@ -70,8 +70,8 @@ class test_partner_firstname(common.TransactionCase):
         # create a user
         res_id = self.user_model.create(cr, uid, self.fields_user, context={})
         # get the related partner id and add it a firstname
-        fields = self.user_model.read(cr, uid, [res_id], ['partner_id'], context={})[0]
-        self.partner_model.write(cr, uid, fields['partner_id'][0], {'firstname':'firstname'}, context={})
+        flds = self.user_model.read(cr, uid, [res_id], ['partner_id'], context={})[0]
+        self.partner_model.write(cr, uid, flds['partner_id'][0], {'firstname':'firstname'}, context={})
         self.user_model.write(cr, uid, res_id, {'name': 'change firstname'}, context={})
         vals = self.user_model.read(cr, uid, [res_id], ['name', 'lastname', 'firstname'], context={})[0]
         self.assertEqual(vals['name'] == "change firstname" and
@@ -83,8 +83,8 @@ class test_partner_firstname(common.TransactionCase):
         # create a user
         res_id = self.user_model.create(cr, uid, self.fields_user, context={})
         # get the related partner id and add it a firstname
-        fields = self.user_model.read(cr, uid, [res_id], ['partner_id'], context={})[0]
-        self.partner_model.write(cr, uid, fields['partner_id'][0], {'firstname':'firstname'}, context={})
+        flds = self.user_model.read(cr, uid, [res_id], ['partner_id'], context={})[0]
+        self.partner_model.write(cr, uid, flds['partner_id'][0], {'firstname':'firstname'}, context={})
         self.user_model.write(cr, uid, res_id, {'name': 'lastname other'}, context={})
         vals = self.user_model.read(cr, uid, [res_id], ['name', 'lastname', 'firstname'], context={})[0]
         self.assertEqual(vals['name'] == "lastname other" and
