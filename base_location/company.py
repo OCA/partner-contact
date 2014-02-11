@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+#
 #
 #    Author: Nicolas Bessi. Copyright Camptocamp SA
 #    Contributor: Pedro Manuel Baeza <pedro.baeza@serviciosbaeza.com>
@@ -18,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 from openerp.osv import orm, fields
 
 
@@ -31,17 +31,19 @@ class ResCompany(orm.Model):
         if context is None:
             context = {}
         if zip_id:
-            bzip = self.pool['res.better.zip'].browse(cr, uid, zip_id, context=context)
-            result = {'value': {'zip': bzip.name,
-                                'country_id': bzip.country_id.id if bzip.country_id else False,
-                                'city': bzip.city,
-                                'state_id': bzip.state_id.id if bzip.state_id else False
-                                }
-                      }
+            bzip = self.pool['res.better.zip'].browse(
+                cr, uid, zip_id, context=context)
+            result = {'value': {
+                'zip': bzip.name,
+                'country_id': bzip.country_id.id if bzip.country_id else False,
+                'city': bzip.city,
+                'state_id': bzip.state_id.id if bzip.state_id else False
+                }
+            }
         return result
 
     _columns = {
-        'better_zip_id': fields.many2one('res.better.zip', 'Location', select=1,
-                                         help=('Use the city name or the zip code'
-                                         ' to search the location')),
+        'better_zip_id': fields.many2one(
+            'res.better.zip', 'Location', select=1,
+            help=('Use the city name or the zip code to search the location')),
     }
