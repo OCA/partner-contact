@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+#
 #
 #    Author: Nicolas Bessi. Copyright Camptocamp SA
 #    Contributor: Pedro Manuel Baeza <pedro.baeza@serviciosbaeza.com>
@@ -18,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
+#
 from openerp.osv import orm, fields
 
 
@@ -31,10 +31,12 @@ class ResPartner(orm.Model):
             return {}
         if isinstance(zip_id, list):
             zip_id = zip_id[0]
-        bzip = self.pool['res.better.zip'].browse(cursor, uid, zip_id, context=context)
-        return {'value': {'zip': bzip.name,
-                          'city': bzip.city,
-                          'country_id': bzip.country_id.id if bzip.country_id else False,
-                          'state_id': bzip.state_id.id if bzip.state_id else False,
-                          }
-                }
+        bzip = self.pool['res.better.zip'].browse(
+            cursor, uid, zip_id, context=context)
+        return {'value': {
+            'zip': bzip.name,
+            'city': bzip.city,
+            'country_id': bzip.country_id.id if bzip.country_id else False,
+            'state_id': bzip.state_id.id if bzip.state_id else False,
+            }
+        }
