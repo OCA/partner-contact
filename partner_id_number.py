@@ -7,8 +7,8 @@
 #
 ###############################################
 import time
-from osv import fields,osv
-import pooler
+from openerp.osv import fields,osv
+##import pooler
 
 class res_partner_id_category(osv.osv):
     _name = "res.partner.id_category"
