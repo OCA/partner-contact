@@ -42,7 +42,7 @@ class BetterZip(orm.Model):
 
     def name_get(self, cursor, uid, ids, context=None):
         res = []
-        for bzip in self.browse(cursor, uid, ids):
+        for bzip in self.browse(cursor, uid, ids, context=context):
             if bzip.name:
                 name = [bzip.name, bzip.city]
             else:
