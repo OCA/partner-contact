@@ -8,27 +8,41 @@
       <field name="arch" type="xml">
         <notebook position="inside">
           <page string="Passport" attrs="{'invisible': ['|','|',('is_company','=',True),('contact_id','!=',False)]}">
+            <button string="Create" name="action_add_passport_form_view" type="object" class="oe_highlight"/>
             <field name="passport_ids" nolabel="1">
-              <tree string="Passport Details">
-                <field name="name"/>
-                <field name="number"/>
+              <tree string="Passport Details" create="false" version="7.0">
                 <field name="country_id"/>
+                <field name="number"/>
                 <field name="expiration_date"/>
+                <field name="name"/>
               </tree>
-              <form string="Passport" version="7.0">
-                    <group col="4">
-                        <field name="name" string="Owner name (As printed into the passport)"/>
-                        <field name="number"/>
-                        <field name="country_id"/>
-                        <field name="expiration_date"/>
-                        <field name="birth_date"/>
-                        <field name="gender"/>
-                        <field name="partner_id" invisible="1"/>
-                    </group>
-                </form>
             </field>
           </page>
         </notebook>
+      </field>
+    </record>
+
+    <!-- Form Views passport-contact-->
+    <record model="ir.ui.view" id="add_passport_form_view">
+      <field name="name">Passport Form View</field>
+      <field name="model">res.passport</field>
+      <field name="arch" type="xml">
+        <form string="Passport" version="7.0">
+          <group col="4">
+            <field name="country_id"/>
+            <field name="name" string="Owner name (As printed into the passport)"/>
+            <field name="number"/>
+            <field name="gender"/>
+            <field name="expiration_date"/>
+            <field name="birth_date"/>
+            <field name="partner_id" invisible="1"/>
+          </group>
+          <footer attrs="{'invisible': [('partner_id','=',False)]}">
+            <button string="Save and Close" name="_" type="action" class="oe_highlight" accesskey="C"/>
+            or
+            <button string="Discard" class="oe_link" special="cancel" accesskey="D"/>
+          </footer>
+        </form>
       </field>
     </record>
   </data>

@@ -42,4 +42,19 @@ class res_passport(orm.Model):
                                    help="Gender."),
     }
 
+    def name_get(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
+        if isinstance(ids, (int, long)):
+            ids = [ids]
+        res = []
+        reads = self.read(cr, uid, ids, ['name', 'country_id'], context)
+
+        for record in reads:
+            name = record['name']
+            if record['country_id']:
+                name = record['country_id'][1] + ' | ' + name
+            res.append((record['id'], name))
+        return res
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
