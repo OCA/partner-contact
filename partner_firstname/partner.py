@@ -53,7 +53,7 @@ class ResPartner(Model):
         * otherwise lastname=new name and firstname=False
         In addition an heuristic avoids to keep a firstname without a non-blank lastname
         """
-        field_value = not field_value.isspace() and field_value or False
+        field_value = field_value and not field_value.isspace() and field_value or False
         vals = {'lastname': field_value, 'firstname': False}
         if field_value:
             flds = self.read(cursor, uid, [partner_id], ['firstname', 'is_company'], context=context)[0]
@@ -90,7 +90,7 @@ class ResPartner(Model):
         will not install if there is demo data
         """
         to_use = vals
-        if vals.get('name'):
+        if 'name' in vals:
             corr_vals = vals.copy()
             corr_vals['lastname'] = corr_vals['name']
             del(corr_vals['name'])
