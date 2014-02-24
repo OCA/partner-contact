@@ -20,7 +20,7 @@
 #
 ##############################################################################
 {'name': 'Location management (aka Better ZIP)',
- 'version': '0.3',
+ 'version': '0.3.1',
  'depends': ['base'],
  'author': 'Camptocamp',
  'description': """
