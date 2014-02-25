@@ -102,7 +102,7 @@
                             <field name="partner_ids" nolabel="1">
                                 <tree string="Partners">
                                     <field name="id" />
-                                    <field name="display_name" />
+                                    <field name="name" />
                                     <field name="email" />
                                     <field name="is_company" />
                                     <field name="vat" />
