@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2013 Savoir-faire Linux
+#    This module copyright (C) 2013-2014 Savoir-faire Linux
 #    (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -26,6 +26,7 @@
     'author': 'Savoir-faire Linux',
     'maintainer': 'Savoir-faire Linux',
     'website': 'http://www.savoirfairelinux.com',
+    'license': 'AGPL-3',
     'category': 'Customer Relationship Management',
     'description': """
 Passport Management
@@ -34,19 +35,16 @@ Passport Management
 Contributors
 ------------
 * El Hadji Dem (elhadji.dem@savoirfairelinux.com)
+* Sandy Carter (sandy.carter@savoirfairelinux.com)
 """,
-    'depends': [
-        'base',
-    ],
+    'depends': [],
     'external_dependencies': {},
     'data': [
         'res_passport_view.xml',
+        "res_partner_view.xml",
         'security/ir.model.access.csv',
     ],
     'demo': [],
     'test': [],
     'installable': True,
-    'active': False,
 }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

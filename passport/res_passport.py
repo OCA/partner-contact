@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2013 Savoir-faire Linux
+#    This module copyright (C) 2013-2014 Savoir-faire Linux
 #    (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -27,34 +27,30 @@ class res_passport(orm.Model):
     _description = 'Passport'
     _name = 'res.passport'
     _columns = {
-        'name': fields.char('Owner name', size=256, select=True,
-                            help='Owner name (As printed into the passport).'),
-        'number': fields.char('Passport No', size=50,
-                              help='Passport number.'),
-        'country_id': fields.many2one('res.country', 'Delivery country',
-                                      help="Delivery country."),
-        'expiration_date': fields.date('Expiration date',
-                                       help="Expiration date."),
-        'birth_date': fields.date('Birth Date', help="Birth Date."),
-        'gender': fields.selection([('male', 'Male'),
-                                    ('female', 'Female')],
-                                   'Gender',
-                                   help="Gender."),
+        'name': fields.char(
+            'Owner name', help='Owner name (As printed into the passport).'),
+        'number': fields.char(
+            'Passport No', size=50, help='Passport number.'),
+        'country_id': fields.many2one(
+            'res.country', 'Delivery country', help="Country of deliverance."),
+        'expiration_date': fields.date(
+            'Expiration date', help="Expiration date of passport."),
+        'birth_date': fields.date('Birth Date',
+                                  help="Date of birth on passport."),
+        'gender': fields.selection(
+            [('male', 'Male'),
+             ('female', 'Female')],
+            'Gender', help="Gender."),
+        'partner_id': fields.many2one('res.partner', 'Contact'),
     }
 
     def name_get(self, cr, uid, ids, context=None):
-        if context is None:
-            context = {}
-        if isinstance(ids, (int, long)):
+        if type(ids) in (int, long):
             ids = [ids]
         res = []
-        reads = self.read(cr, uid, ids, ['name', 'country_id'], context)
-
-        for record in reads:
-            name = record['name']
-            if record['country_id']:
-                name = record['country_id'][1] + ' | ' + name
-            res.append((record['id'], name))
+        for res_passport in self.browse(cr, uid, ids, context=context):
+            name = res_passport.name
+            if res_passport.country_id and res_passport.country_id.name:
+                name = '%s | %s' % (res_passport.country_id.name, name)
+            res.append((res_passport.id, name))
         return res
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

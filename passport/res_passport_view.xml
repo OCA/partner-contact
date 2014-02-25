@@ -8,12 +8,10 @@
       <field name="type">tree</field>
       <field name="arch" type="xml">
         <tree string="PassportTree" version="7.0">
-           <field name="name"/>
-           <field name="number"/>
            <field name="country_id"/>
+           <field name="number"/>
            <field name="expiration_date"/>
-           <field name="gender"/>
-           <field name="birth_date"/>
+           <field name="name"/>
         </tree>
       </field>
     </record>
