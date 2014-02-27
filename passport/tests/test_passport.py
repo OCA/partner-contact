@@ -106,4 +106,59 @@ class Test_passport_bad(Base_Test_passport):
                                     (field, str(self.vals[field]), str(val)))
 
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+class Test_passport_name_get(TransactionCase):
+    """
+    Test name_get
+    """
+    def setUp(self):
+        """
+        Setting up passport with name, country, either and none.
+        """
+        super(Test_passport_name_get, self).setUp()
+        res_passport = self.registry('res.passport')
+        res_country = self.registry('res.country')
+        country = res_country.browse(self.cr, self.uid, 1, context=None)
+        self.name_on_passport = 'test name'
+        self.country_name = country.name_get()[0][1]
+        self.both = res_passport.create(
+            self.cr, self.uid, {'name': self.name_on_passport,
+                                'country_id': country.id, },
+            context=None)
+        self.name_only = res_passport.create(
+            self.cr, self.uid, {'name': self.name_on_passport, },
+            context=None)
+        self.country_only = res_passport.create(
+            self.cr, self.uid, {'country_id': country.id, },
+            context=None)
+        self.neither = res_passport.create(
+            self.cr, self.uid, {},
+            context=None)
+
+    def test_passport(self):
+        """
+        Checking the passport creation, assertions should all be false.
+        """
+        res_passport = self.registry('res.passport')
+        both_obj = res_passport.browse(self.cr, self.uid, self.both, context=None)
+        name_only = res_passport.browse(self.cr, self.uid, self.name_only, context=None)
+        country_only = res_passport.browse(self.cr, self.uid, self.country_only, context=None)
+        neither = res_passport.browse(self.cr, self.uid, self.neither, context=None)
+        self.assertEquals(
+            both_obj.name_get()[0][1],
+            ' | '.join((self.country_name, self.name_on_passport)),
+            'Error in passport name_get() with both country name and name on '
+            'passport.'
+        )
+        self.assertEquals(
+            name_only.name_get()[0][1], self.name_on_passport,
+            'Error in passport name_get() with only name on passport.'
+        )
+        self.assertEquals(
+            country_only.name_get()[0][1], self.country_name,
+            'Error in passport name_get() with only name of country.'
+        )
+        self.assertEquals(
+            neither.name_get()[0][1], '',
+            'Error in passport name_get() with neither country name nor name '
+            'on passport.'
+        )

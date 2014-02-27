@@ -49,8 +49,10 @@ class res_passport(orm.Model):
             ids = [ids]
         res = []
         for res_passport in self.browse(cr, uid, ids, context=context):
-            name = res_passport.name
+            name_elements = []
             if res_passport.country_id and res_passport.country_id.name:
-                name = '%s | %s' % (res_passport.country_id.name, name)
-            res.append((res_passport.id, name))
+                name_elements.append(res_passport.country_id.name)
+            if res_passport.name:
+                name_elements.append(res_passport.name)
+            res.append((res_passport.id, ' | '.join(name_elements)))
         return res
