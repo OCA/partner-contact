@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<openerp>
+  <data>
+    <!-- Tree Views passport-->
+    <record model="ir.ui.view" id="passport_tree_view">
+      <field name="name">Passport Tree View</field>
+      <field name="model">res.passport</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string="PassportTree" version="7.0">
+           <field name="country_id"/>
+           <field name="number"/>
+           <field name="expiration_date"/>
+           <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form Views passport-->
+    <record model="ir.ui.view" id="passport_form_view">
+      <field name="name">Passport Form View</field>
+      <field name="model">res.passport</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="PassportForm" version="7.0" >
+           <group col="4">
+              <field name="country_id"/>
+              <field name="name" string="Owner name (As printed into the passport)"/>
+              <field name="number"/>
+              <field name="gender"/>
+              <field name="expiration_date"/>
+              <field name="birth_date"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- Actions -->
+    <record model="ir.actions.act_window" id="action_passport_tree_list">
+        <field name="name">Passport</field>
+        <field name="view_id" ref="passport_tree_view"/>
+        <field name="res_model">res.passport</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+  </data>
+</openerp>
