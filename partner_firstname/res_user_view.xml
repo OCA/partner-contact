@@ -8,6 +8,7 @@
       <field name="arch" type="xml">
         <field name="name" position="attributes">
           <attribute name="readonly">False</attribute>
+          <attribute name="required">True</attribute>
         </field>
       </field>
     </record>

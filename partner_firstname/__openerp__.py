@@ -19,14 +19,24 @@
 ##############################################################################
 
 {'name': 'Partner first name, last name',
- 'description':  """Split first name and last name on res.partner.
+  'description': """
+This module splits first name and last name for non company partners
+====================================================================
 
-The field 'name' becomes a stored function field concatenating lastname, firstname
+The field 'name' becomes a stored function field concatenating lastname and firstname
+Note: in version 7.0, installing this module invalidates a yaml test in the 'edi' module
+
+Contributors
+============
+Jonathan Nemry <jonathan.nemry@acsone.eu>
+Olivier Laurent <olivier.laurent@acsone.eu>
+
 """,
- 'version': '1.0.1',
+ 'version': '1.1',
  'author': 'Camptocamp',
- 'category': 'MISC',
- 'website': 'http://www.camptocamp.com',
+ 'maintainer': 'Camptocamp, Acsone',
+ 'category': 'Extra Tools',
+ 'website': 'http://www.camptocamp.com, http://www.acsone.eu',
  'depends': ['base'],
  'data': [
      'partner_view.xml',
