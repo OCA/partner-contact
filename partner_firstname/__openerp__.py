@@ -32,7 +32,7 @@ Jonathan Nemry <jonathan.nemry@acsone.eu>
 Olivier Laurent <olivier.laurent@acsone.eu>
 
 """,
- 'version': '1.1',
+ 'version': '1.2',
  'author': 'Camptocamp',
  'maintainer': 'Camptocamp, Acsone',
  'category': 'Extra Tools',
