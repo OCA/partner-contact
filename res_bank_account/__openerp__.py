@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2013 Savoir-faire Linux
+#    This module copyright (C) 2010 - 2014 Savoir-faire Linux
 #    (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -26,10 +26,15 @@
     'author': 'Savoir-faire Linux',
     'maintainer': 'Savoir-faire Linux',
     'website': 'http://www.savoirfairelinux.com',
-    'category': 'MISC',
+    'category': 'Customer Relationship Management',
     'description': """
 Bank Account
 ============
+
+This module allows to manage multiple bank accounts for a specific contact.
+
+It adds a bank account object linked to a bank with a name for the account, a
+description and wheter it is active or not.
 
 
 Contributors
@@ -46,7 +51,4 @@ Contributors
     'demo': [],
     'test': [],
     'installable': True,
-    'active': False,
 }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

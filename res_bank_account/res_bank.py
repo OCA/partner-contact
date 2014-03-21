@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2013 Savoir-faire Linux
+#    This module copyright (C) 2010 - 2014 Savoir-faire Linux
 #    (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -24,13 +24,19 @@ from openerp.osv import orm, fields
 
 
 class res_partner_bank(orm.Model):
+    """Bank account"""
     _inherit = 'res.partner.bank'
-
     _columns = {
-        'title_bank_account': fields.char('Title bank account', size=256,
-                                          help="Title bank account."),
-        'observation': fields.text('Observation', help="Observation."),
-        'active': fields.boolean('Active', help="Active/Inactive."),
+        'title_bank_account': fields.char(
+            'Title bank account',
+            help="Name for the bank account.",
+        ),
+        'observation': fields.text(
+            'Observation',
+            help="Extra information about the account.",
+        ),
+        'active': fields.boolean(
+            'Active',
+            help="Whether the account is still active or not."
+        ),
     }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
