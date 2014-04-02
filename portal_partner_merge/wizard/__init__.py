@@ -19,17 +19,8 @@
 #
 ##############################################################################
 
-from openerp.osv import osv
-from openerp.tools.translate import _
 
-class wizard_user(osv.TransientModel):
-    _inherit = 'portal.wizard.user'
+from . import portal_wizard
 
-    def get_error_messages(self, cr, uid, ids, context=None):
-        error_msg = super(wizard_user, self).get_error_messages(cr, uid, ids, context)
-        if error_msg:
-            error_msg[-1] = '%s\n%s' % (error_msg[-1], _("- Merge existing contacts together using the Automatic Merge wizard, "
-                                                        "available in the More menu after selecting several contacts in the Customers list"))
-        return error_msg
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
