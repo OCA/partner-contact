@@ -6,7 +6,6 @@
     'description': """backport module, to be removed when we switch to saas2 on the private servers""",
     'depends': [
         'base',
-        'portal',
     ],
     'data': [
         'security/ir.model.access.csv',

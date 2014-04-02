@@ -1,2 +1,1 @@
 import base_partner_merge
-import wizard
