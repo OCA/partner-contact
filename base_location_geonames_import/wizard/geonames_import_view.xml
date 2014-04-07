@@ -14,9 +14,9 @@
     <field name="arch"  type="xml">
         <form string="Import Geonames" version="7.0">
             <group name="main">
-                <label string="This wizard will delete all the better zip entries for the selected country, download the latest version from geonames.org for that country and create new better zip entries."
-                    colspan="2" name="import-help"/>
                 <field name="country_id"/>
+                <label string="For the country selected above, this wizard will delete all the current better zip entries, download the latest version of the list of cities from geonames.org and create new better zip entries."
+                    colspan="2" name="import-help"/>
             </group>
             <footer>
                 <button name="run_import" type="object"
