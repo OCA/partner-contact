@@ -47,6 +47,8 @@ class better_zip_geonames_import(orm.TransientModel):
         state_id = False
         if states and row[4] and row[4] in states:
             state_id = states[row[4].upper()]
+        if row[0] == 'FR' and 'CEDEX' in row[1]:
+            return False
         vals = {
             'name': row[1],
             'city': row[2],
@@ -65,13 +67,12 @@ class better_zip_geonames_import(orm.TransientModel):
                 _("The content of the file doesn't correspond to the "
                     "selected country."))
         logger.debug('ZIP = %s - City = %s' % (row[1], row[2]))
-        if row[0] == 'FR' and 'CEDEX' in row[1]:
-            return False
         if row[1] and row[2]:
             vals = self._prepare_better_zip(
                 cr, uid, row, country_id, states, context=context)
-            bzip_id = self.pool['res.better.zip'].create(
-                cr, uid, vals, context=context)
+            if vals:
+                bzip_id = self.pool['res.better.zip'].create(
+                    cr, uid, vals, context=context)
         return bzip_id
 
     def run_import(self, cr, uid, ids, context=None):
