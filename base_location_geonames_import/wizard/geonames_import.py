@@ -93,6 +93,8 @@ class better_zip_geonames_import(orm.TransientModel):
         bzip_ids_to_delete = bzip_obj.search(
             cr, uid, [('country_id', '=', country_id)], context=context)
         if bzip_ids_to_delete:
+            cr.execute('SELECT id FROM res_better_zip WHERE id in %s '
+                'FOR UPDATE NOWAIT', (tuple(bzip_ids_to_delete), ))
             bzip_obj.unlink(cr, uid, bzip_ids_to_delete, context=context)
             logger.info(
                 '%d better zip entries deleted for country %s'
