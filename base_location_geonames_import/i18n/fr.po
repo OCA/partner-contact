@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-07 15:01+0000\n"
-"PO-Revision-Date: 2014-04-07 15:01+0000\n"
-"Last-Translator: Alexis de Lattre <alexis.delattre@akretion.com>\n"
+"POT-Creation-Date: 2014-04-11 20:56+0000\n"
+"PO-Revision-Date: 2014-04-11 20:56+0000\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,19 +26,19 @@ msgid "Country"
 msgstr "Pays"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:64
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:87
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:66
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:90
 #, python-format
 msgid "Error:"
 msgstr "Erreur :"
 
 #. module: base_location_geonames_import
 #: view:better.zip.geonames.import:0
-msgid "For the country selected above, this wizard will delete all the current better zip entries, download the latest version of the list of cities from geonames.org and create new better zip entries."
-msgstr "Pour le pays sélectionné ci-dessus, cet assistant va supprimer toutes les entrées better zip, télécharger la dernière version de la liste des villes depuis geonames.org et créer de nouveaux enregistrements better zip."
+msgid "For the country selected above, this wizard will DELETE ALL THE CURRENT BETTER ZIP ENTRIES, download the latest version of the list of cities from geonames.org and create new better zip entries."
+msgstr "Pour le pays sélectionné ci-dessus, cet assistant va SUPPRIMER TOUTES LES ENTREES BETTER ZIP, télécharger la dernière version de la liste des villes depuis geonames.org et créer de nouveaux enregistrements better zip."
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:88
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:91
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Erreur %d reçue suite à la tentative de téléchargement du fichier %s."
@@ -51,7 +51,7 @@ msgstr "Importer"
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_better_zip_geonames_import
 msgid "Import Better Zip from Geonames"
-msgstr "Import Better Zip depuis Geonames"
+msgstr "Import Better Zip from Geonames"
 
 #. module: base_location_geonames_import
 #: view:better.zip.geonames.import:0
@@ -61,8 +61,8 @@ msgid "Import Geonames"
 msgstr "Importer Geonames"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:65
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:67
 #, python-format
-msgid "The content of the file doesn't correspond to the selected country."
-msgstr "Le contenu du fichier ne correspond pas au pays sélectionné."
+msgid "The country code inside the file (%s) doesn't correspond to the selected country (%s)."
+msgstr "Le code pays utilisé à l'intérieur du fichier (%s) ne correspond pas au pays sélectionné (%s)."
 

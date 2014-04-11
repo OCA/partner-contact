@@ -64,8 +64,9 @@ class better_zip_geonames_import(orm.TransientModel):
         if row[0] != country_code:
             raise orm.except_orm(
                 _('Error:'),
-                _("The content of the file doesn't correspond to the "
-                    "selected country."))
+                _("The country code inside the file (%s) doesn't "
+                    "correspond to the selected country (%s).")
+                % (row[0], country_code))
         logger.debug('ZIP = %s - City = %s' % (row[1], row[2]))
         if row[1] and row[2]:
             vals = self._prepare_better_zip(
