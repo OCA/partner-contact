@@ -47,8 +47,6 @@ class better_zip_geonames_import(orm.TransientModel):
         state_id = False
         if states and row[4] and row[4] in states:
             state_id = states[row[4].upper()]
-        if row[0] == 'FR' and 'CEDEX' in row[1]:
-            return False
         vals = {
             'name': row[1],
             'city': row[2],
