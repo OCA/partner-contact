@@ -35,14 +35,19 @@ class ResPartner(Model):
             if cursor.fetchone():
                 cursor.execute('ALTER TABLE res_partner ALTER COLUMN lastname SET NOT NULL')
 
+    def _prepare_name_custom(self, cursor, uid, partner, context=None):
+        """
+        This function is designed to be inherited in a custom module
+        """
+        names = (partner.lastname, partner.firstname)
+        fullname = " ".join([s for s in names if s])
+        return fullname
+
     def _compute_name_custom(self, cursor, uid, ids, fname, arg, context=None):
         res = {}
-        partners = self.read(cursor, uid, ids,
-                             ['firstname', 'lastname'], context=context)
-        for rec in partners:
-            names = (rec['lastname'], rec['firstname'])
-            fullname = " ".join([s for s in names if s])
-            res[rec['id']] = fullname
+        for partner in self.browse(cursor, uid, ids, context=context):
+            res[partner.id] = self._prepare_name_custom(
+                cursor, uid, partner, context=context)
         return res
 
     def _write_name(self, cursor, uid, partner_id, field_name, field_value, arg, context=None):
