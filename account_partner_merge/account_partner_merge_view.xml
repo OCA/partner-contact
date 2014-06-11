@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+
+    <record model='ir.ui.view' id='base_partner_merge_automatic_wizard_form'>
+      <field name='name'>account.partner.merge.automatic.wizard.form</field>
+      <field name='model'>base.partner.merge.automatic.wizard</field>
+      <field name='inherit_id' ref='base_partner_merge.base_partner_merge_automatic_wizard_form'/>
+      <field name='arch' type='xml'>
+        <xpath expr="//field[@name='partner_ids']/tree/field[@name='name']" position="replace">
+          <field name="display_name" />
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</openerp>
