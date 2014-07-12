@@ -59,8 +59,7 @@ class res_partner(orm.Model):
         Keeping it in context can result in unexpected behaviour (ex: reading
         one2many might return wrong result - i.e with "attached contact" removed
         even if it's directly linked to a company). """
-        if context is None:
-            context = {}
+        context = dict(context or {})
         if mode != 'search':
             context.pop('search_show_all_positions', None)
         return context
