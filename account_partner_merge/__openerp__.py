@@ -18,14 +18,14 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{'name' : 'Account Partner Merge',
- 'version' : '1.0',
+{'name': 'Account Partner Merge',
+ 'version': '1.0',
  'category': 'Hidden',
  'description': """Update invoice commercial_partner_id""",
- 'author' : 'Camptocamp',
+ 'author': 'Camptocamp',
  'maintainer': 'Camptocamp',
  'website': 'http://www.camptocamp.com/',
- 'depends' : ['account_report_company', 'base_partner_merge'],
+ 'depends': ['account_report_company', 'base_partner_merge'],
  'data': ['account_partner_merge_view.xml'],
  'test': [],
  'installable': True,
