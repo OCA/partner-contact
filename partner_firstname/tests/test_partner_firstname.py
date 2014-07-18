@@ -52,9 +52,17 @@ class test_partner_firstname(common.TransactionCase):
         res_id = self.partner_model.create(cr, uid, self.fields_partner, context=context)
         res_id = self.partner_model.copy(cr, uid, res_id, default={}, context=context)
         vals = self.partner_model.read(cr, uid, [res_id], ['name', 'lastname', 'firstname'], context=context)[0]
-        
-        self.assertEqual(vals['name'], _('%s (copy)') % 'lastname' + " firstname", 'Copy of the partner failed with wrong name')
-        self.assertEqual(vals['lastname'], _('%s (copy)') % 'lastname', 'Copy of the partner failed with wrong lastname')
+
+        self.assertEqual(
+            vals['name'],
+            _('%s (copy)') % 'lastname' + " firstname",
+            'Copy of the partner failed with wrong name'
+        )
+        self.assertEqual(
+            vals['lastname'],
+            _('%s (copy)') % 'lastname',
+            'Copy of the partner failed with wrong lastname'
+        )
         self.assertEqual(vals['firstname'], 'firstname', 'Copy of the partner failed with wrong firstname')
 
     def test_copy_user(self):
@@ -63,12 +71,16 @@ class test_partner_firstname(common.TransactionCase):
         res_id = self.user_model.create(cr, uid, self.fields_user, context=context)
         # get the related partner id and add it a firstname
         flds = self.user_model.read(cr, uid, [res_id], ['partner_id'], context=context)[0]
-        self.partner_model.write(cr, uid, flds['partner_id'][0], {'firstname':'firstname'}, context=context)
+        self.partner_model.write(cr, uid, flds['partner_id'][0], {'firstname': 'firstname'}, context=context)
         # copy the user and compare result
         res_id = self.user_model.copy(cr, uid, res_id, default={}, context=context)
         vals = self.user_model.read(cr, uid, [res_id], ['name', 'lastname', 'firstname'], context=context)[0]
 
-        self.assertEqual(vals['name'], _('%s (copy)') % 'lastname' + ' firstname', 'Copy of the user failed with wrong name')
+        self.assertEqual(
+            vals['name'],
+            _('%s (copy)') % 'lastname' + ' firstname',
+            'Copy of the user failed with wrong name'
+        )
         self.assertEqual(vals['lastname'], _('%s (copy)') % 'lastname', 'Copy of the user failed with wrong lastname')
         self.assertEqual(vals['firstname'], 'firstname', 'Copy of the user failed with wrong firstname')
 
@@ -78,7 +90,7 @@ class test_partner_firstname(common.TransactionCase):
         res_id = self.user_model.create(cr, uid, self.fields_user, context=context)
         # get the related partner id and add it a firstname
         flds = self.user_model.read(cr, uid, [res_id], ['partner_id'], context=context)[0]
-        self.partner_model.write(cr, uid, flds['partner_id'][0], {'firstname':'firstname'}, context=context)
+        self.partner_model.write(cr, uid, flds['partner_id'][0], {'firstname': 'firstname'}, context=context)
         self.user_model.write(cr, uid, res_id, {'name': 'change firstname'}, context=context)
         vals = self.user_model.read(cr, uid, [res_id], ['name', 'lastname', 'firstname'], context=context)[0]
 
@@ -92,12 +104,10 @@ class test_partner_firstname(common.TransactionCase):
         res_id = self.user_model.create(cr, uid, self.fields_user, context=context)
         # get the related partner id and add it a firstname
         flds = self.user_model.read(cr, uid, [res_id], ['partner_id'], context=context)[0]
-        self.partner_model.write(cr, uid, flds['partner_id'][0], {'firstname':'firstname'}, context=context)
+        self.partner_model.write(cr, uid, flds['partner_id'][0], {'firstname': 'firstname'}, context=context)
         self.user_model.write(cr, uid, res_id, {'name': 'lastname other'}, context=context)
         vals = self.user_model.read(cr, uid, [res_id], ['name', 'lastname', 'firstname'], context=context)[0]
 
         self.assertEqual(vals['name'], 'lastname other', 'Update of the user firstname failed with wrong name')
         self.assertEqual(vals['lastname'], 'lastname other', 'Update of the user firstname failed with wrong lastname')
         self.assertFalse(vals['firstname'], 'Update of the user firstname failed with wrong firstname')
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

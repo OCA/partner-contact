@@ -32,7 +32,9 @@ class ResUsers(orm.Model):
         default = default or {}
         if not default.get('lastname'):
             default = default.copy()
-            default['lastname'] = _('%s (copy)') % self.read(cr, uid, [_id], ['lastname'], context=context)[0]['lastname']
+            default['lastname'] = (
+                _('%s (copy)') % self.read(cr, uid, [_id], ['lastname'], context=context)[0]['lastname']
+            )
             if default.get('name'):
                 del(default['name'])
         return super(ResUsers, self).copy_data(cr, uid, _id, default, context=context)
