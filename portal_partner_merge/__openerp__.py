@@ -18,16 +18,16 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{'name' : 'Portal Partner Merge',
- 'version' : '1.0',
+{'name': 'Portal Partner Merge',
+ 'version': '1.0',
  'category': 'Hidden',
  'description': """
 Link module for base_partner_merge which extract portal dependency
  """,
- 'author' : 'Camptocamp',
+ 'author': 'Camptocamp',
  'maintainer': 'Camptocamp',
  'website': 'http://www.camptocamp.com/',
- 'depends' : ['portal', 'base_partner_merge'],
+ 'depends': ['portal', 'base_partner_merge'],
  'data': [],
  'test': [],
  'installable': True,

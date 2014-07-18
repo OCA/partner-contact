@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-# Copyright (c) 2010-2013 Camptocamp SA (http://www.camptocamp.com) 
+# Copyright (c) 2010-2013 Camptocamp SA (http://www.camptocamp.com)
 # All Right Reserved
 #
 # Author : Nicolas Bessi (Camptocamp), Joel Grand-Guillaume
@@ -22,8 +22,8 @@
 ##############################################################################
 
 {
-    "name" : "Partner Address Category",
-    "description" : """\
+    "name": "Partner Address Category",
+    "description": """\
  res.partner.address.category
  ----------------------------
 
@@ -37,17 +37,16 @@
  res.partner.address.category records are migrated to
  res.partner.category records.
  """,
-    "version" : "1.2",
-    "author" : "Camptocamp",
-    "category" : "Generic Modules/Base",
+    "version": "1.2",
+    "author": "Camptocamp",
+    "category": "Generic Modules/Base",
     "website": "http://www.camptocamp.com",
-    "depends" : [
-                    "base",
-                ],
-    "data" : [
+    "depends": [
+        "base",
+    ],
+    "data": [
         "security/security.xml"
         'security/ir.model.access.csv',
-        ],
-    "active": False,
+    ],
     "installable": True
 }
