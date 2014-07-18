@@ -43,5 +43,5 @@ class ResCompany(orm.Model):
     _columns = {
         'better_zip_id': fields.many2one('res.better.zip', 'Location', select=1,
                                          help=('Use the city name or the zip code'
-                                         ' to search the location')),
+                                               ' to search the location')),
     }
