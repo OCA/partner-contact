@@ -18,7 +18,9 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+
 from openerp.osv import orm, fields
+
 
 class ResPartner(orm.Model):
     """
@@ -34,4 +36,4 @@ class ResPartner(orm.Model):
         'affiliate_ids': fields.one2many(
             'res.partner', 'parent_id',
             'Affiliates', domain=[('is_company', '=', True)]),
-        }
+    }

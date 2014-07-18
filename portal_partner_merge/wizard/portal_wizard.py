@@ -19,10 +19,11 @@
 #
 ##############################################################################
 
-from openerp.osv import osv
+from openerp.osv import orm
 from openerp.tools.translate import _
 
-class wizard_user(osv.TransientModel):
+
+class wizard_user(orm.TransientModel):
     _inherit = 'portal.wizard.user'
 
     def get_error_messages(self, cr, uid, ids, context=None):
@@ -35,5 +36,3 @@ class wizard_user(osv.TransientModel):
                   "Merge wizard, available in the More menu after selecting "
                   "several contacts in the Customers list"))
         return error_msg
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

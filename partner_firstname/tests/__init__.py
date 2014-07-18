@@ -32,6 +32,4 @@ import test_partner_firstname
 
 checks = [
     test_partner_firstname
-    ]
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+]
