@@ -18,24 +18,17 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-{
-    'name': 'Link module if partner_lastname and account_report_company are installed',
-    'version': '1.0',
-    'author': 'Camptocamp',
-    'maintainer': 'Camptocamp',
-    'category': 'Hidden',
-    'license': 'AGPL-3',
-    'depends': [
-        'account_report_company',
-        'partner_firstname',
-    ],
-    'description': """
-Adapt the computation of display name so that it gets visible in tree and kanban views.
-""",
-    'website': 'http://www.camptocamp.com',
-    'data': [],
-    'installable': True,
-    'auto_install': True,
-    'application': False,
-}
+{'name': 'Account Partner Merge',
+ 'version': '1.0',
+ 'category': 'Hidden',
+ 'description': """Update invoice commercial_partner_id""",
+ 'author': 'Camptocamp',
+ 'maintainer': 'Camptocamp',
+ 'website': 'http://www.camptocamp.com/',
+ 'depends': ['account_report_company', 'base_partner_merge'],
+ 'data': ['account_partner_merge_view.xml'],
+ 'test': [],
+ 'installable': False,
+ 'auto_install': True,
+ 'application': False,
+ }
