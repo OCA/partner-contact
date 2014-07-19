@@ -21,7 +21,7 @@
 ##############################################################################
 
 from openerp.tests.common import TransactionCase
-from openerp.osv.orm import browse_record
+from openerp.models import BaseModel
 from datetime import date
 
 
@@ -59,7 +59,7 @@ class Base_Test_passport(TransactionCase):
         passport_obj = res_passport.browse(self.cr, self.uid, self.passport_id, context=None)
         for field in self.vals:
             val = passport_obj[field]
-            if type(val) == browse_record:
+            if isinstance(val, BaseModel):
                 self.assertEquals(self.vals[field], val.id,
                                   "IDs for %s don't match: (%i != %i)" %
                                   (field, self.vals[field], val.id))
@@ -96,7 +96,7 @@ class Test_passport_bad(Base_Test_passport):
         passport_obj = res_passport.browse(self.cr, self.uid, self.passport_id, context=None)
         for field in self.vals:
             val = passport_obj[field]
-            if type(val) == browse_record:
+            if isinstance(val, BaseModel):
                 self.assertNotEqual(self.vals[field], val.id,
                                     "IDs for %s don't match: (%i != %i)" %
                                     (field, self.vals[field], val.id))
