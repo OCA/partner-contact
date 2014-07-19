@@ -46,7 +46,7 @@
     "data": [
         'partner_sequence.xml',
         'partner_view.xml',
-        ],
+    ],
     "demo": [],
     "active": False,
     "installable": True

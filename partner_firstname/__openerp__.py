@@ -18,8 +18,9 @@
 #
 ##############################################################################
 
-{'name': 'Partner first name, last name',
-  'description': """
+{
+    'name': 'Partner first name, last name',
+    'description': """
 This module splits first name and last name for non company partners
 ====================================================================
 
@@ -32,19 +33,19 @@ Jonathan Nemry <jonathan.nemry@acsone.eu>
 Olivier Laurent <olivier.laurent@acsone.eu>
 
 """,
- 'version': '1.2',
- 'author': 'Camptocamp',
- 'maintainer': 'Camptocamp, Acsone',
- 'category': 'Extra Tools',
- 'website': 'http://www.camptocamp.com, http://www.acsone.eu',
- 'depends': ['base'],
- 'data': [
-     'partner_view.xml',
-     'res_user_view.xml',
-     ],
- 'demo': [],
- 'test': [],
- 'auto_install': False,
- 'installable': True,
- 'images': []
+    'version': '1.2',
+    'author': 'Camptocamp',
+    'maintainer': 'Camptocamp, Acsone',
+    'category': 'Extra Tools',
+    'website': 'http://www.camptocamp.com, http://www.acsone.eu',
+    'depends': ['base'],
+    'data': [
+        'partner_view.xml',
+        'res_user_view.xml',
+    ],
+    'demo': [],
+    'test': [],
+    'auto_install': False,
+    'installable': True,
+    'images': []
 }
