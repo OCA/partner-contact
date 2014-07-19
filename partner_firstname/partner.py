@@ -17,11 +17,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv.orm import Model, fields
+from openerp.osv import orm, fields
 from openerp.tools.translate import _
 
 
-class ResPartner(Model):
+class ResPartner(orm.Model):
     """Adds lastname and firstname, name become a stored function field"""
 
     _inherit = 'res.partner'
