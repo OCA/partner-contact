@@ -1,3 +1,1 @@
 "id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-"access_base_partner_merge_line_manager","base_partner_merge_line.manager","model_base_partner_merge_line","base.group_system",1,1,1,1
-"access_base_partner_merge_manager","base_partner_merge.manager","model_base_partner_merge_automatic_wizard","base.group_system",1,1,1,1
