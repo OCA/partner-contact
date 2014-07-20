@@ -23,7 +23,8 @@
 ##############################################################################
 
 
-from openerp.osv import osv, fields, orm
+from openerp.osv import fields, orm
+
 
 class ResPartnerAdressCategory(orm.Model):
     def name_get(self, cr, uid, ids, context=None):
@@ -47,17 +48,15 @@ class ResPartnerAdressCategory(orm.Model):
         while ids:
             cr.execute('select distinct parent_id '
                        'from res_partner_address_category '
-                       'where id in %s',  ids)
+                       'where id in %s', ids)
             ids = [parent_id for (parent_id,) in cr.fetchall() if parent_id]
             if not level:
                 return False
             level -= 1
         return True
 
-
-
-    _description='Partner address Categories'
     _name = 'res.partner.address.category'
+    _description = 'Partner address Categories'
     _columns = {
         'name': fields.char('Category Name', required=True, size=64),
         'parent_id': fields.many2one('res.partner.address.category',
@@ -69,7 +68,7 @@ class ResPartnerAdressCategory(orm.Model):
         'child_ids': fields.one2many('res.partner.address.category',
                                      'parent_id',
                                      'Children Category'),
-        'active' : fields.boolean('Active'),
+        'active': fields.boolean('Active'),
     }
     _constraints = [
         (_check_recursion,
@@ -77,7 +76,7 @@ class ResPartnerAdressCategory(orm.Model):
          ['parent_id'])
     ]
     _defaults = {
-        'active' : lambda *a: 1,
+        'active': lambda *a: 1,
     }
     _order = 'parent_id,name'
 
@@ -92,4 +91,3 @@ class ResPartnerAddress(orm.Model):
                                         'category_id',
                                         'Address categories'),
     }
-

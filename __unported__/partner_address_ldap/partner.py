@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-# Copyright (c) 2010 Camptocamp SA (http://www.camptocamp.com) 
+# Copyright (c) 2010 Camptocamp SA (http://www.camptocamp.com)
 # All Right Reserved
 #
 # Author : Nicolas Bessi (Camptocamp), Thanks to Laurent Lauden for his code adaptation
+# Active directory Donor: M. Benadiba (Informatique Assistances.fr)
 # Contribution : Joel Grand-Guillaume
 #
 # WARNING: This program as such is intended to be used by professional
@@ -30,7 +31,19 @@
 #
 ##############################################################################
 
-import address
-import partner
-import company
-import wizard
+from openerp.osv import orm
+
+
+class LdapPartner(orm.Model):
+    """Ensure that when deleting a partner unlink function is called on all
+    related addresses"""
+    _inherit = 'res.partner'
+
+    def unlink(self, cursor, uid, ids, context=None):
+        context = context or {}
+        addr_obj = self.pool.get('res.partner.address')
+        if not isinstance(ids, list):
+            ids = [ids]
+        addr_ids = addr_obj.search(cursor, uid, [('partner_id', 'in', ids)])
+        addr_obj.unlink(cursor, uid, addr_ids, context=context)
+        return super(LdapPartner, self).unlink(cursor, uid, ids, context=context)

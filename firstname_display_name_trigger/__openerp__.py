@@ -18,24 +18,24 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{'name': 'Link module if partner_lastname and account_report_company are installed',
- 'version': '1.0',
- 'author': 'Camptocamp',
- 'maintainer': 'Camptocamp',
- 'category': 'Hidden',
- 'complexity': 'normal',  # easy, normal, expert
- 'depends': [
-     'account_report_company',
-     'partner_firstname',
-     ],
- 'description': """
-Adapt the computation of display name so that it gets visible in tree and kanban views.
- """,
- 'website': 'http://www.camptocamp.com',
- 'data': [],
- 'installable': True,
- 'images': [],
- 'auto_install': True,
- 'license': 'AGPL-3',
- 'application': False}
 
+{
+    'name': 'Link module if partner_lastname and account_report_company are installed',
+    'version': '1.0',
+    'author': 'Camptocamp',
+    'maintainer': 'Camptocamp',
+    'category': 'Hidden',
+    'license': 'AGPL-3',
+    'depends': [
+        'account_report_company',
+        'partner_firstname',
+    ],
+    'description': """
+Adapt the computation of display name so that it gets visible in tree and kanban views.
+""",
+    'website': 'http://www.camptocamp.com',
+    'data': [],
+    'installable': True,
+    'auto_install': True,
+    'application': False,
+}
