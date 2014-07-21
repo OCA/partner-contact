@@ -30,62 +30,68 @@
 ##############################################################################
 
 
-from osv import osv, fields
+from openerp.osv import orm, fields
 
-class ResPartnerAdressCategory(osv.osv):
+
+class ResPartnerAdressCategory(orm.Model):
     def name_get(self, cr, uid, ids, context={}):
         if not len(ids):
             return []
-        reads = self.read(cr, uid, ids, ['name','parent_id'], context)
+        reads = self.read(cr, uid, ids, ['name', 'parent_id'], context)
         res = []
         for record in reads:
             name = record['name']
             if record['parent_id']:
-                name = record['parent_id'][1]+' / '+name
+                name = record['parent_id'][1] + ' / ' + name
             res.append((record['id'], name))
         return res
 
     def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, unknow_dict):
         res = self.name_get(cr, uid, ids)
         return dict(res)
+
     def _check_recursion(self, cr, uid, ids):
         level = 100
         while len(ids):
             cr.execute('select distinct parent_id from res_partner_address_category\
-             where id in ('+','.join(map(unicode,ids))+')')
-            ids = filter(None, map(lambda x:x[0], cr.fetchall()))
+             where id in ('+','.join(map(unicode, ids))+')')
+            ids = filter(None, map(lambda x: x[0], cr.fetchall()))
             if not level:
                 return False
             level -= 1
         return True
 
-
-
-    _description='Partner address Categories'
+    _description = 'Partner address Categories'
     _name = 'res.partner.address.category'
     _columns = {
         'name': fields.char('Category Name', required=True, size=64),
         'parent_id': fields.many2one('res.partner.address.category', 'Parent Category', select=True),
         'complete_name': fields.function(_name_get_fnc, method=True, type="char", string='Name'),
         'child_ids': fields.one2many('res.partner.address.category', 'parent_id', 'Childs Category'),
-        'active' : fields.boolean('Active'),
+        'active': fields.boolean('Active'),
     }
     _constraints = [
-        (_check_recursion, 'Error ! You can not create recursive categories.', ['parent_id'])
+        (_check_recursion, 'Error! You can not create recursive categories.', ['parent_id'])
     ]
     _defaults = {
-        'active' : lambda *a: 1,
+        'active': lambda *a: 1,
     }
     _order = 'parent_id,name'
 
 ResPartnerAdressCategory()
 
 
-class ResPartnerAddress(osv.osv):
+class ResPartnerAddress(orm.Model):
     _inherit = "res.partner.address"
 
     _columns = {
-        'category_id': fields.many2many('res.partner.address.category', 'res_partner_address_category_rel', 'adress_id', 'category_id', 'Adress categories'),
+        'category_id': fields.many2many(
+            'res.partner.address.category',
+            'res_partner_address_category_rel',
+            'adress_id',
+            'category_id',
+            'Adress categories',
+        ),
     }
 
 ResPartnerAddress()

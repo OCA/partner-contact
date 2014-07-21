@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-# Copyright (c) 2010 Camptocamp SA (http://www.camptocamp.com) 
+# Copyright (c) 2010 Camptocamp SA (http://www.camptocamp.com)
 # All Right Reserved
 #
 # Author : Nicolas Bessi (Camptocamp), Thanks to Laurent Lauden for his code adaptation
@@ -33,6 +33,7 @@
 
 from osv import osv, fields
 
+
 class Res_company(osv.osv):
     """Defin ldap connexion parameters"""
 
@@ -46,7 +47,7 @@ class Res_company(osv.osv):
         'contact_dn': fields.char(
             'Bind dn',
             size=128,
-            help="Exemple: dc=ldap,dc=dcc2c -- watchout" +\
+            help="Exemple: dc=ldap,dc=dcc2c -- watchout"
                  " the OU will be automatically included inside"
         ),
         'ounit': fields.char(
@@ -69,8 +70,8 @@ class Res_company(osv.osv):
             help='The ldap is part of an Active Directory'
         ),
         'ldap_port': fields.integer('LDAP Port',
-                                     help="If not specified, the default port" 
-                                     "(389), will be used")
+                                    help="If not specified, the default port"
+                                    "(389), will be used")
     }
 
 Res_company()

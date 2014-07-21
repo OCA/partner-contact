@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-# Copyright (c) 2010 Camptocamp SA (http://www.camptocamp.com) 
+# Copyright (c) 2010 Camptocamp SA (http://www.camptocamp.com)
 # All Right Reserved
 #
 # Author : Nicolas Bessi (Camptocamp), Joel Grand-Guillaume
@@ -30,24 +30,25 @@
 ##############################################################################
 
 {
-    "name" : "Partner Adress Category",
-    "description" : """Add categories on Address like there is on Partner. This is interesting for managing mailling list based on address
-    for example.
+    "name": "Partner Adress Category",
+    "description": """
+Add categories on Address like there is on Partner.
+This is interesting for managing mailling list based on address for example.
  """,
-    "version" : "1.2",
-    "author" : "Camptocamp",
-    "category" : "Generic Modules/Base",
+    "version": "1.2",
+    "author": "Camptocamp",
+    "category": "Generic Modules/Base",
     "website": "http://www.camptocamp.com",
-    "depends" : [
-                    "base",
-                ],
-    "init_xml" : [
-                    "security/security.xml"
-                 ],
-    "update_xml" : [
-                    "base_address_view.xml",
-                    'security/ir.model.access.csv',
-                   ],
+    "depends": [
+        "base",
+    ],
+    "init_xml": [
+        "security/security.xml"
+    ],
+    "update_xml": [
+        "base_address_view.xml",
+        'security/ir.model.access.csv',
+    ],
     "active": False,
     "installable": True
 }

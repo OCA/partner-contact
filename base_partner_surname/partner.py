@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>).
 #
@@ -15,7 +15,7 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
@@ -25,21 +25,21 @@ from openerp.osv import orm, fields
 class res_partner_address(orm.Model):
     _inherit = 'res.partner.address'
     _columns = {
-        'first_name' : fields.char('First Name', size=128),
-        'last_name' : fields.char('Last Name', size=128),
-        'name' : fields.char('Name', size=128, readonly=True),
+        'first_name': fields.char('First Name', size=128),
+        'last_name': fields.char('Last Name', size=128),
+        'name': fields.char('Name', size=128, readonly=True),
     }
-    
+
     def write(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
-        if isinstance(ids,list):
+        if isinstance(ids, list):
             ids = ids[0]
-        data = self.read(cr, uid, ids, ['first_name','last_name'], context=context)
+        data = self.read(cr, uid, ids, ['first_name', 'last_name'], context=context)
         first_name = data['first_name'] or ''
         if 'first_name' in vals:
             first_name = vals['first_name'] or ''
-        
+
         last_name = data['last_name'] or ''
         if 'last_name' in vals:
             last_name = vals['last_name'] or ''
@@ -57,7 +57,7 @@ class res_partner_address(orm.Model):
             first_name = vals['first_name'] or ''
         if 'last_name' in vals:
             last_name = vals['last_name'] or ''
-            
+
         if first_name or last_name:
             vals['name'] = first_name + ' ' + last_name
         return super(res_partner_address, self).create(cr, uid, vals, context=context)
@@ -71,6 +71,3 @@ class res_partner_address(orm.Model):
         if first_name or last_name:
             res = {'name': first_name + ' ' + last_name}
         return {'value': res}
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-

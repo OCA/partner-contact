@@ -32,37 +32,43 @@
 ##############################################################################
 
 {
-    "name" : "Partner synchronization from OpenERP to ldap",
-    "version" : "1.2",
-    "author" : "Camptocamp",
-    "depends" : ["base"],
-    "category" : "Generic Modules/Misc",
+    "name": "Partner synchronization from OpenERP to ldap",
+    "version": "1.2",
+    "author": "Camptocamp",
+    "depends": ["base"],
+    "category": "Generic Modules/Misc",
     "website": "http://www.camptocamp.com",
     "description": """
 
 Live partner address synchronization through a LDAP module (inetOrgPerson).
-OpenERP becomes the master of the LDAP. Each time an address is deleted, created or updated the same is done in the ldap (a new record is pushed).
-The LDAP configuration is done in the company view. There can be one different LDAP per company. Do not forget to activate
-the LDAP link in the configuration.
+OpenERP becomes the master of the LDAP. Each time an address is deleted,
+created or updated the same is done in the ldap (a new record is pushed).
+The LDAP configuration is done in the company view. There can be one different
+LDAP per company. Do not forget to activate the LDAP link in the configuration.
 The used LDAP depends on the current user company.
 
-This module does not allows bulk batching synchronisation into the LDAP and is thus not suitable for an instant use with an existing LDAP.
-In order to use it with an existing LDAP you have to alter the uid of contact in your LDAP. The uid should be terp_ plus the OpenERP
+This module does not allows bulk batching synchronisation into the LDAP and is
+thus not suitable for an instant use with an existing LDAP.
+In order to use it with an existing LDAP you have to alter the uid of contact
+in your LDAP. The uid should be terp_ plus the OpenERP
 contact id (for example terp_10).
 
 N.B:
 The module requires the python-ldap library
-Unicode support --> As python ldap does not support unicode we try to decode string if it fails we transliterate values.
-Active Directory Support for Windows server 2003, try 2008 at your own risk 
-(AD support not tested for Version 6 of OpenERP looking for active dir test infra) 
+Unicode support --> As python ldap does not support unicode we try to decode
+string if it fails we transliterate values.
+Active Directory Support for Windows server 2003, try 2008 at your own risk
+(AD support not tested for Version 6 of OpenERP looking for active dir test infra)
 
 
 """,
-    "init_xml" : ["security/security.xml"],
-    "update_xml":['company_view.xml',
-                  'address_view.xml',
-                  "wizard.xml"],
-    "demo_xml" : [],
+    "init_xml": ["security/security.xml"],
+    "update_xml": [
+        'company_view.xml',
+        'address_view.xml',
+        "wizard.xml",
+    ],
+    "demo_xml": [],
     "active": False,
     "installable": True
 }
