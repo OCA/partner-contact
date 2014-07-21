@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Author: Yannick Vaucher
-#    Copyright 2012 Camptocamp SA
+#    Copyright 2013 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,22 +18,19 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+from openerp.osv import orm
 
-from openerp.osv import orm, fields
 
+class MergePartnerAutomatic(orm.TransientModel):
+    _inherit = 'base.partner.merge.automatic.wizard'
 
-class ResPartner(orm.Model):
-    """
-    Add relation affiliate_ids
-    """
-    _name = "res.partner"
-    _inherit = "res.partner"
+    def _update_values(self, cr, uid, src_partners, dst_partner, context=None):
+        """
+        Make sure we don't forget to update the stored value of invoice field commercial_partner_id
+        """
+        super(MergePartnerAutomatic, self)._update_values(cr, uid, src_partners, dst_partner, context=context)
 
-    _columns = {
-        'child_ids': fields.one2many(
-            'res.partner', 'parent_id',
-            'Contacts', domain=[('is_company', '=', False)]),
-        'affiliate_ids': fields.one2many(
-            'res.partner', 'parent_id',
-            'Affiliates', domain=[('is_company', '=', True)]),
-    }
+        invoice_obj = self.pool.get('account.invoice')
+        invoice_ids = invoice_obj.search(cr, uid, [('partner_id', '=', dst_partner.id)], context=context)
+        # call write to refresh stored value
+        invoice_obj.write(cr, uid, invoice_ids, {}, context=context)

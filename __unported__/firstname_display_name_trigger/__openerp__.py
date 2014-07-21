@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Author: Yannick Vaucher
-#    Copyright 2012 Camptocamp SA
+#    Copyright 2013 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,21 +19,23 @@
 #
 ##############################################################################
 
-from openerp.osv import orm, fields
-
-
-class ResPartner(orm.Model):
-    """
-    Add relation affiliate_ids
-    """
-    _name = "res.partner"
-    _inherit = "res.partner"
-
-    _columns = {
-        'child_ids': fields.one2many(
-            'res.partner', 'parent_id',
-            'Contacts', domain=[('is_company', '=', False)]),
-        'affiliate_ids': fields.one2many(
-            'res.partner', 'parent_id',
-            'Affiliates', domain=[('is_company', '=', True)]),
-    }
+{
+    'name': 'Link module if partner_lastname and account_report_company are installed',
+    'version': '1.0',
+    'author': 'Camptocamp',
+    'maintainer': 'Camptocamp',
+    'category': 'Hidden',
+    'license': 'AGPL-3',
+    'depends': [
+        'account_report_company',
+        'partner_firstname',
+    ],
+    'description': """
+Adapt the computation of display name so that it gets visible in tree and kanban views.
+""",
+    'website': 'http://www.camptocamp.com',
+    'data': [],
+    'installable': False,
+    'auto_install': True,
+    'application': False,
+}
