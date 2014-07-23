@@ -99,7 +99,8 @@ class ResPartner(orm.Model):
         to_use = vals
         if 'name' in vals:
             corr_vals = vals.copy()
-            corr_vals['lastname'] = corr_vals['name']
+            if vals.get('name'):
+                corr_vals['lastname'] = corr_vals['name']
             del(corr_vals['name'])
             to_use = corr_vals
         return super(ResPartner, self).create(cursor, uid, to_use, context=context)
