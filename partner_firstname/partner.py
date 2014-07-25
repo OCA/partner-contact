@@ -19,7 +19,9 @@
 ##############################################################################
 from openerp.osv import orm, fields
 from openerp.tools.translate import _
+import logging
 
+_logger = logging.getLogger(__name__)
 
 class ResPartner(orm.Model):
     """Adds lastname and firstname, name become a stored function field"""
@@ -33,7 +35,10 @@ class ResPartner(orm.Model):
             # Create Sql constraint if table is not empty
             cursor.execute('SELECT id FROM res_partner Limit 1')
             if cursor.fetchone():
-                cursor.execute('ALTER TABLE res_partner ALTER COLUMN lastname SET NOT NULL')
+                cursor.execute('ALTER TABLE res_partner ALTER COLUMN lastname '
+                               'SET NOT NULL')
+                _logger.info("NOT NULL constraint for res_partner.lastname "
+                             "correctly set")
 
     def _prepare_name_custom(self, cursor, uid, partner, context=None):
         """
