@@ -18,8 +18,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import res_partner
-import res_partner_relation
-import res_partner_relation_type
-import res_partner_relation_type_selection
+from . import res_partner
+from . import res_partner_relation
+from . import res_partner_relation_type
+from . import res_partner_relation_type_selection
 from . import res_partner_relation_all

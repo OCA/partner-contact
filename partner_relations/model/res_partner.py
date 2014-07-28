@@ -30,10 +30,7 @@ class ResPartner(orm.Model):
 
     def _get_relation_ids(
             self, cr, uid, ids, dummy_name, dummy_arg, context=None):
-        if context is None:
-            context = {}
-
-        #TODO: do a permission test on returned ids
+        # TODO: do a permission test on returned ids
         cr.execute(
             '''select id, left_partner_id, right_partner_id
             from res_partner_relation
@@ -90,7 +87,7 @@ class ResPartner(orm.Model):
         result = []
         for arg in args:
             if isinstance(arg, tuple) and arg[0] == name:
-                #TODO: handle {<,>}{,=}
+                # TODO: handle {<,>}{,=}
                 if arg[1] != '=':
                     continue
 
@@ -190,8 +187,8 @@ class ResPartner(orm.Model):
                context=None, count=False):
         if context is None:
             context = {}
-        #inject searching for current relation date if we search for relation
-        #properties and no explicit date was given
+        # inject searching for current relation date if we search for relation
+        # properties and no explicit date was given
         date_args = []
         for arg in args:
             if is_leaf(arg) and arg[0].startswith('search_relation'):
@@ -203,7 +200,7 @@ class ResPartner(orm.Model):
                         ('search_relation_date', '=', time.strftime(
                             DEFAULT_SERVER_DATE_FORMAT))]
 
-        #because of auto_join, we have to do the active test by hand
+        # because of auto_join, we have to do the active test by hand
         active_args = []
         if context.get('active_test', True):
             for arg in args:
