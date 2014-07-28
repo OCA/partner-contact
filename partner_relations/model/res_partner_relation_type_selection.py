@@ -55,9 +55,9 @@ class ResPartnerRelationTypeSelection(orm.Model):
 
     def _auto_init(self, cr, context=None):
         drop_view_if_exists(cr, self._table)
-        #TODO: we lose field value's translations here.
-        #probably we need to patch ir_translation.get_source for that
-        #to get res_partner_relation_type's translations
+        # TODO: we lose field value's translations here.
+        # probably we need to patch ir_translation.get_source for that
+        # to get res_partner_relation_type's translations
         cr.execute(
             '''create or replace view %s as
             select
@@ -91,7 +91,7 @@ class ResPartnerRelationTypeSelection(orm.Model):
         for arg in args:
             if isinstance(arg, tuple) and arg[0] == field_name\
                     and (arg[1] == '=' or arg[1] == 'in'):
-                #TODO don't we have an api function to eval that?
+                # TODO don't we have an api function to eval that?
                 for delta in arg[2]:
                     if delta[0] == 6:
                         category_ids.extend(delta[2])
@@ -122,7 +122,7 @@ class ResPartnerRelationTypeSelection(orm.Model):
             'res.partner.category', 'Current record\'s category'),
         'partner_category_other': fields.many2one(
             'res.partner.category', 'Other record\'s category'),
-        #search field to handle many2many deltas from the client
+        # search field to handle many2many deltas from the client
         'search_partner_category_this': fields.function(
             lambda self, cr, uid, ids, context=None: dict(
                 [(i, False) for i in ids]),
