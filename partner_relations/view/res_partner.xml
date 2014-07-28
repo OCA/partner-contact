@@ -1,0 +1,96 @@
+<openerp>
+    <data>
+        <record id="view_res_partner_filter" model="ir.ui.view">
+            <field name="inherit_id" ref="base.view_res_partner_filter" />
+            <field name="model">res.partner</field>
+            <field type="xml" name="arch">
+                <data>
+                    <field name="parent_id" position="after">
+                        <field name="search_relation_partner_id" />
+                        <field name="search_relation_id" />
+                        <field name="search_relation_date" />
+                        <field name="search_relation_partner_category_id" />
+                    </field>
+                </data>
+            </field>
+        </record>
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="model">res.partner</field>
+            <field type="xml" name="arch">
+                <data>
+                    <xpath expr="//sheet/notebook" position="inside">
+                        <page string="Relations">
+                            <field
+                                name="relation_ids"
+                                context="{
+                                    'active_model': 'res.partner',
+                                    'active_id': id, 'active_ids': [id],
+                                    'active_test': False,
+                                }"
+                            >
+                                <tree
+                                    editable="top"
+                                    colors="gray:is_relation_expired==True or not active;blue:is_relation_future==True"
+                                >
+                                    <field
+                                        name="type_selection_id"
+                                        required="True"
+                                        context="{
+                                            'parent_model': 'res.partner',
+                                            'parent_id': parent.id,
+                                        }"
+                                        domain="[
+                                            '|',
+                                                ('contact_type_this', '=', parent.is_company and 'c' or 'p'),
+                                                ('contact_type_this', '=', False),
+                                            ('search_partner_category_this', '=', parent.category_id),
+
+                                        ]
+                                        "
+                                        options="{'create': false, 'create_edit': false}"
+                                        on_change="on_change_type_selection_id(type_selection_id)"
+                                    /> 
+                                    <field name="type_id" invisible="True" />
+                                    <field
+                                        name="partner_id_display"
+                                        required="True"
+                                        attrs="{
+                                            'readonly': [('type_selection_id','=',False)],
+                                        }"
+                                        options="{'create': false, 'create_edit': false}"
+                                        widget="many2one_clickable"
+                                    />
+                                    <field
+                                        name="date_start"
+                                    />
+                                    <field
+                                        name="date_end"
+                                    />
+                                    <field
+                                        name="active"
+                                    />
+                                    <field
+                                        name="is_relation_expired"
+                                        invisible="True"
+                                    />
+                                    <field
+                                        name="is_relation_future"
+                                        invisible="True"
+                                    />
+                                </tree>
+                            </field>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <act_window id="action_show_partner_relations"
+            name="Show partner's relations"
+            src_model="res.partner"
+            res_model="res.partner.relation.all"
+            domain="[('this_partner_id', 'in', active_ids)]"
+            key2="client_action_multi" />
+    </data>
+</openerp>
