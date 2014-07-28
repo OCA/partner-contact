@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="tree_res_partner_relation_all" model="ir.ui.view">
+            <field name="model">res.partner.relation.all</field>
+            <field name="arch" type="xml">
+                <tree string="Partner relations">
+                    <field name="this_partner_id" />
+                    <field name="type_selection_id" />
+                    <field name="other_partner_id" />
+                    <field name="date_start" />
+                    <field name="date_end" />
+                </tree>
+            </field>
+        </record>
+        <record id="form_res_partner_relation_all" model="ir.ui.view">
+            <field name="model">res.partner.relation.all</field>
+            <field name="arch" type="xml">
+                <form string="Partner relation">
+                    <group>
+                        <field name="this_partner_id" />
+                        <field name="type_selection_id" />
+                        <field name="other_partner_id" />
+                    </group>
+                    <group>
+                        <field name="date_start" />
+                        <field name="date_end" />
+                        <field name="active" />
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

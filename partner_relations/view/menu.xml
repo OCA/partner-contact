@@ -1,0 +1,15 @@
+<openerp>
+    <data>
+        <act_window
+            id="action_res_partner_relation_type"
+            res_model="res.partner.relation.type"
+            view_mode="tree,form"
+            name="Partner relations"
+        />
+        <menuitem
+            id="menu_res_partner_relation_type"
+            parent="base.menu_config_address_book"
+            action="action_res_partner_relation_type"
+        />
+    </data>
+</openerp>

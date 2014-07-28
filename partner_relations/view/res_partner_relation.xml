@@ -1,0 +1,33 @@
+<openerp>
+    <data>
+        <record id="form_res_partner_relation" model="ir.ui.view">
+            <field name="model">res.partner.relation</field>
+            <field type="xml" name="arch">
+                <form version="7.0" string="Partner relation">
+                    <sheet>
+                        <field name="left_partner_id" />
+                        <field name="type_id" />
+                        <field name="right_partner_id" />
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_show_right_relation_partners" model="ir.actions.server">
+            <field name="sequence" eval="5"/>
+            <field name="state">code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_res_partner_relation"/>
+            <field name="code">action = self.get_action_related_partners(cr, uid, context.get('active_ids', []), dict(context or {}, partner_relations_show_side='right'))</field>
+            <field name="condition">True</field>
+            <field name="name">Show partners</field>
+        </record>
+        <record id="action_show_right_relation_partners_value" model="ir.values">
+            <field name="name">Show partners</field>
+            <field name="key">action</field>
+            <field name="key2">client_action_multi</field>
+            <field name="model">res.partner.relation.all</field>
+            <field name="value" eval="'ir.actions.server,%d' % ref('partner_relations.action_show_right_relation_partners')" />
+        </record>
+
+    </data>
+</openerp>
