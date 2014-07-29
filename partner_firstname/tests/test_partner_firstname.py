@@ -95,19 +95,36 @@ class test_partner_firstname(common.TransactionCase):
         vals = self.user_model.read(cr, uid, [res_id], ['name', 'lastname', 'firstname'], context=context)[0]
 
         self.assertEqual(vals['name'], 'change firstname', 'Update of the user lastname failed with wrong name')
-        self.assertEqual(vals['lastname'], 'change', 'Update of the user lastname failed with wrong lastname')
-        self.assertEqual(vals['firstname'], 'firstname', 'Update of the user lastname failed with wrong firstname')
+        self.assertEqual(
+            vals['lastname'], 'change',
+            'Update of the user lastname failed with wrong lastname')
+        self.assertEqual(
+            vals['firstname'], 'firstname',
+            'Update of the user lastname failed with wrong firstname')
 
     def test_update_user_firstname(self):
         cr, uid, context = self.cr, self.uid, self.context
         # create a user
-        res_id = self.user_model.create(cr, uid, self.fields_user, context=context)
+        res_id = self.user_model.create(
+            cr, uid, self.fields_user, context=context)
         # get the related partner id and add it a firstname
-        flds = self.user_model.read(cr, uid, [res_id], ['partner_id'], context=context)[0]
-        self.partner_model.write(cr, uid, flds['partner_id'][0], {'firstname': 'firstname'}, context=context)
-        self.user_model.write(cr, uid, res_id, {'name': 'lastname other'}, context=context)
-        vals = self.user_model.read(cr, uid, [res_id], ['name', 'lastname', 'firstname'], context=context)[0]
+        flds = self.user_model.read(
+            cr, uid, [res_id], ['partner_id'], context=context)[0]
+        self.partner_model.write(
+            cr, uid, flds['partner_id'][0], {'firstname': 'firstname'},
+            context=context)
+        self.user_model.write(
+            cr, uid, res_id, {'name': 'lastname other'}, context=context)
+        vals = self.user_model.read(
+            cr, uid, [res_id], ['name', 'lastname', 'firstname'],
+            context=context)[0]
 
-        self.assertEqual(vals['name'], 'lastname other', 'Update of the user firstname failed with wrong name')
-        self.assertEqual(vals['lastname'], 'lastname other', 'Update of the user firstname failed with wrong lastname')
-        self.assertFalse(vals['firstname'], 'Update of the user firstname failed with wrong firstname')
+        self.assertEqual(
+            vals['name'], 'lastname other',
+            'Update of the user firstname failed with wrong name')
+        self.assertEqual(
+            vals['lastname'], 'lastname other',
+            'Update of the user firstname failed with wrong lastname')
+        self.assertFalse(
+            vals['firstname'],
+            'Update of the user firstname failed with wrong firstname')

@@ -24,8 +24,10 @@
 This module splits first name and last name for non company partners
 ====================================================================
 
-The field 'name' becomes a stored function field concatenating lastname and firstname
-Note: in version 7.0, installing this module invalidates a yaml test in the 'edi' module
+The field 'name' becomes a stored function field concatenating lastname and
+firstname
+Note: in version 7.0, installing this module invalidates a yaml test in the
+'edi' module
 
 Contributors
 ============
