@@ -34,18 +34,12 @@ class ResPartner(orm.Model):
         res = super(ResPartner, self)._set_default_value_on_column(
             cr, column_name, context=context)
         if column_name == 'lastname':
-            cr.execute('SELECT id FROM res_partner WHERE lastname IS NOT NULL '
-                       'Limit 1')
-            if not cr.fetchone():
-                cr.execute('UPDATE res_partner set lastname = name WHERE name '
-                           'IS NOT NULL')
-                # Create Sql constraint if table is not empty
-                cr.execute('SELECT id FROM res_partner Limit 1')
-                if cr.fetchone():
-                    cr.execute('ALTER TABLE res_partner ALTER COLUMN lastname '
-                               'SET NOT NULL')
-                    _logger.info("NOT NULL constraint for "
-                                 "res_partner.lastname correctly set")
+            cr.execute('UPDATE res_partner SET lastname = name WHERE name '
+                       'IS NOT NULL AND lastname IS NULL')
+            cr.execute('ALTER TABLE res_partner ALTER COLUMN lastname '
+                       'SET NOT NULL')
+            _logger.info("NOT NULL constraint for "
+                         "res_partner.lastname correctly set")
         return res
 
     def _prepare_name_custom(self, cursor, uid, partner, context=None):
