@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record model="ir.ui.view" id="view_partner_form_inherit_fiscal_authetication">
+        <field name="name">partner.form.authentication</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="fiscal_id_type" placeholder="ID Document Type"></field>
+                <field name="fiscal_id" placeholder="ID Number"></field>
+                <field name="fiscal_id_doc"></field>
+            </field>
+        </field>
+    </record>
+
+    </data>
+</openerp>
