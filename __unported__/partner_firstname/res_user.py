@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Yannick Vaucher
-#    Copyright 2012 Camptocamp SA
+#    Author: Nicolas Bessi. Copyright Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,22 +17,24 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+from openerp.osv import orm
+from openerp.tools.translate import _
 
-from openerp.osv import orm, fields
 
+class ResUsers(orm.Model):
 
-class ResPartner(orm.Model):
-    """
-    Add relation affiliate_ids
-    """
-    _name = "res.partner"
-    _inherit = "res.partner"
+    _inherit = 'res.users'
 
-    _columns = {
-        'child_ids': fields.one2many(
-            'res.partner', 'parent_id',
-            'Contacts', domain=[('is_company', '=', False)]),
-        'affiliate_ids': fields.one2many(
-            'res.partner', 'parent_id',
-            'Affiliates', domain=[('is_company', '=', True)]),
-    }
+    def copy_data(self, cr, uid, _id, default=None, context=None):
+        """
+        Avoid to replicate the firstname into the name when duplicating a user
+        """
+        default = default or {}
+        if not default.get('lastname'):
+            default = default.copy()
+            default['lastname'] = (
+                _('%s (copy)') % self.read(cr, uid, [_id], ['lastname'], context=context)[0]['lastname']
+            )
+            if default.get('name'):
+                del(default['name'])
+        return super(ResUsers, self).copy_data(cr, uid, _id, default, context=context)

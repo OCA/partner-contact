@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Romain Deheele
-#    Copyright 2014 Camptocamp SA
+#    Author: Nicolas Bessi. Copyright Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,24 +18,34 @@
 #
 ##############################################################################
 
-
 {
-    'name': 'Continent management',
-    'version': '1.0',
-    'depends': ['base'],
-    'author': 'Camptocamp',
-    'license': 'AGPL-3',
+    'name': 'Partner first name, last name',
     'description': """
-This module introduces continent management.
-============================================
-Links continents to countries,
-adds continent field on partner form
+This module splits first name and last name for non company partners
+====================================================================
+
+The field 'name' becomes a stored function field concatenating lastname and firstname
+Note: in version 7.0, installing this module invalidates a yaml test in the 'edi' module
+
+Contributors
+============
+Jonathan Nemry <jonathan.nemry@acsone.eu>
+Olivier Laurent <olivier.laurent@acsone.eu>
+
 """,
-    'category': 'Generic Modules/Base',
+    'version': '1.2',
+    'author': 'Camptocamp',
+    'maintainer': 'Camptocamp, Acsone',
+    'category': 'Extra Tools',
+    'website': 'http://www.camptocamp.com, http://www.acsone.eu',
+    'depends': ['base'],
     'data': [
-        'base_continent_view.xml',
-        'base_continent_data.xml',
-        'security/ir.model.access.csv',
+        'partner_view.xml',
+        'res_user_view.xml',
     ],
+    'demo': [],
+    'test': [],
+    'auto_install': False,
     'installable': True,
+    'images': []
 }

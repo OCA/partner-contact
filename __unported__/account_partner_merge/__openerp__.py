@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Author: Yannick Vaucher
-#    Copyright 2012 Camptocamp SA
+#    Copyright 2013 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,22 +18,17 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-from openerp.osv import orm, fields
-
-
-class ResPartner(orm.Model):
-    """
-    Add relation affiliate_ids
-    """
-    _name = "res.partner"
-    _inherit = "res.partner"
-
-    _columns = {
-        'child_ids': fields.one2many(
-            'res.partner', 'parent_id',
-            'Contacts', domain=[('is_company', '=', False)]),
-        'affiliate_ids': fields.one2many(
-            'res.partner', 'parent_id',
-            'Affiliates', domain=[('is_company', '=', True)]),
-    }
+{'name': 'Account Partner Merge',
+ 'version': '1.0',
+ 'category': 'Hidden',
+ 'description': """Update invoice commercial_partner_id""",
+ 'author': 'Camptocamp',
+ 'maintainer': 'Camptocamp',
+ 'website': 'http://www.camptocamp.com/',
+ 'depends': ['account_report_company', 'base_partner_merge'],
+ 'data': ['account_partner_merge_view.xml'],
+ 'test': [],
+ 'installable': False,
+ 'auto_install': True,
+ 'application': False,
+ }

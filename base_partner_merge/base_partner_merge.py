@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from __future__ import absolute_import
 from email.utils import parseaddr
 import functools
@@ -14,7 +15,7 @@ from openerp.tools import mute_logger
 from .validate_email import validate_email
 
 import openerp
-from openerp.osv import osv, orm
+from openerp.osv import orm
 from openerp.osv import fields
 from openerp.osv.orm import browse_record
 from openerp.tools.translate import _
@@ -55,7 +56,7 @@ def is_integer_list(ids):
     return all(isinstance(i, (int, long)) for i in ids)
 
 
-class ResPartner(osv.Model):
+class ResPartner(orm.Model):
     _inherit = 'res.partner'
 
     _columns = {
@@ -64,7 +65,7 @@ class ResPartner(osv.Model):
     }
 
 
-class MergePartnerLine(osv.TransientModel):
+class MergePartnerLine(orm.TransientModel):
     _name = 'base.partner.merge.line'
 
     _columns = {
@@ -77,7 +78,7 @@ class MergePartnerLine(osv.TransientModel):
     _order = 'min_id asc'
 
 
-class MergePartnerAutomatic(osv.TransientModel):
+class MergePartnerAutomatic(orm.TransientModel):
     """
     The idea behind this wizard is to create a list of potential partners to
     merge. We use two objects, the first one is the wizard for the end-user.
@@ -326,7 +327,7 @@ class MergePartnerAutomatic(osv.TransientModel):
         if parent_id and parent_id != dst_partner.id:
             try:
                 dst_partner.write({'parent_id': parent_id})
-            except (osv.except_osv, orm.except_orm):
+            except (orm.except_orm, orm.except_orm):
                 _logger.info('Skip recursive partner hierarchies for '
                              'parent_id %s of partner: %s',
                              parent_id, dst_partner.id)
@@ -341,7 +342,7 @@ class MergePartnerAutomatic(osv.TransientModel):
             return
 
         if len(partner_ids) > 3:
-            raise osv.except_osv(
+            raise orm.except_orm(
                 _('Error'),
                 _("For safety reasons, you cannot merge more than 3 contacts "
                   "together. You can re-open the wizard several times if "
@@ -351,7 +352,7 @@ class MergePartnerAutomatic(osv.TransientModel):
                 and len(set(partner.email for partner
                             in proxy.browse(cr, uid, partner_ids,
                                             context=context))) > 1):
-            raise osv.except_osv(
+            raise orm.except_orm(
                 _('Error'),
                 _("All contacts must have the same email. Only the "
                   "Administrator can merge contacts with different emails."))
@@ -378,7 +379,7 @@ class MergePartnerAutomatic(osv.TransientModel):
                                              [partner.id for partner
                                               in src_partners])],
                                            context=context)):
-            raise osv.except_osv(
+            raise orm.except_orm(
                 _('Error'),
                 _("Only the destination contact may be linked to existing "
                   "Journal Items. Please ask the Administrator if you need to"
@@ -399,8 +400,12 @@ class MergePartnerAutomatic(osv.TransientModel):
         dst_partner.message_post(
             body='%s %s' % (
                 _("Merged with the following partners:"),
-                ", ".join('%s<%s>(ID %s)' % (p.name, p.email or 'n/a', p.id)
-                                             for p in src_partners)))
+                ", ".join(
+                    '%s<%s>(ID %s)' % (p.name, p.email or 'n/a', p.id)
+                    for p in src_partners
+                )
+            )
+        )
 
         for partner in src_partners:
             partner.unlink()
@@ -513,7 +518,7 @@ class MergePartnerAutomatic(osv.TransientModel):
         ]
 
         if not groups:
-            raise osv.except_osv(_('Error'),
+            raise orm.except_orm(_('Error'),
                                  _("You have to specify a filter for your "
                                    "selection"))
 
@@ -555,7 +560,7 @@ class MergePartnerAutomatic(osv.TransientModel):
                     cr, uid,
                     current_partner_ids,
                     context
-                    )[-1].id,
+                )[-1].id,
                 'state': 'selection',
             })
         else:

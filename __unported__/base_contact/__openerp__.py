@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Romain Deheele
-#    Copyright 2014 Camptocamp SA
+#    OpenERP, Open Source Business Applications
+#    Copyright (C) 2013-TODAY OpenERP S.A. (<http://openerp.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,24 +19,36 @@
 #
 ##############################################################################
 
-
 {
-    'name': 'Continent management',
+    'name': 'Contacts Management',
     'version': '1.0',
-    'depends': ['base'],
-    'author': 'Camptocamp',
-    'license': 'AGPL-3',
+    'author': 'OpenERP SA',
+    'website': 'http://www.openerp.com',
+    'category': 'Customer Relationship Management',
+    'complexity': "expert",
     'description': """
-This module introduces continent management.
-============================================
-Links continents to countries,
-adds continent field on partner form
+This module allows you to manage your contacts
+==============================================
+
+It lets you define groups of contacts sharing some common information, like:
+    * Birthdate
+    * Nationality
+    * Native Language
 """,
-    'category': 'Generic Modules/Base',
-    'data': [
-        'base_continent_view.xml',
-        'base_continent_data.xml',
-        'security/ir.model.access.csv',
+    'depends': [
+        'base',
+        'process',
+        'contacts'
     ],
-    'installable': True,
+    'external_dependencies': {},
+    'data': [
+        'base_contact_view.xml',
+    ],
+    'demo': [
+        'base_contact_demo.xml',
+    ],
+    'test': [],
+    'installable': False,
+    'auto_install': False,
+    'images': [],
 }
