@@ -33,6 +33,7 @@ class ResPartner(models.Model):
         'res.partner.idtype',
         string=u'Document Type',
         domain=dom,
+        compute='validateformatcopy',
     )
     fiscal_id = fields.Char(string=u'Document ID')
     fiscal_id_doc = fields.Binary(
@@ -45,11 +46,11 @@ class ResPartner(models.Model):
     )
 
     @api.one
-    @api.onchange(
+    @api.depends(
         'fiscal_id_type',
         'fiscal_id',
+        'is_company',
     )
-    # 'is_company', # https://github.com/odoo/odoo/issues/1530
     def validateformatcopy(self):
         # CASE: Current ID Type is not applicable on company
         if self.is_company and not self.fiscal_id_type.on_company:
