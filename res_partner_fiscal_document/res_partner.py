@@ -23,40 +23,33 @@
 from openerp import models, fields, api, _
 
 
-class ResPartnerIDtype(models.Model):
-    _name = 'res.partner.idtype'
-    _description = 'Identification Document Type'
-    _order = 'sequence'
-
-    name = fields.Char(required=True)
-    code = fields.Char(required=True)
-    sequence = fields.Integer()
-    active = fields.Boolean(default=True)
-    note = fields.Text()
-    on_company = fields.Boolean(string=u'On Company?')
-    on_contact = fields.Boolean(string=u'On Contact?', default=True)
-
-
-class ResPartnerIdent(models.Model):
-    _name = 'res.partner'
+class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    dom = "['|', ('on_company', '=', is_company), ('on_contact', '!=', " \
-          "is_company)]"
-    fiscal_id_type = fields.Many2one('res.partner.idtype',
-                                     string=u'Document Type', domain=dom, )
+    dom = "[  '|',                                " \
+          "    ('on_company',  '=', is_company),  " \
+          "    ('on_contact', '!=', is_company)  ]"
+    fiscal_id_type = fields.Many2one(
+        'res.partner.idtype',
+        string=u'Document Type',
+        domain=dom,
+    )
     fiscal_id = fields.Char(string=u'Document ID')
-    fiscal_id_doc = fields.Binary(string=u'Document Scan',
-                                  help="Upload the supporting Document "
-                                       "preferably as size-optimized PDF. "
-                                       "This might "
-                                       "help save disk space and PDF allows "
-                                       "you to concatenate multiple documents.")
-
+    fiscal_id_doc = fields.Binary(
+        string=u'Document Scan',
+        help="Upload the supporting Document "
+             "preferably as size-optimized PDF. "
+             "This might "
+             "help save disk space and PDF allows "
+             "you to concatenate multiple documents."
+    )
 
     @api.one
-    @api.onchange('fiscal_id_type', 'fiscal_id',
-                  # 'is_company', # https://github.com/odoo/odoo/issues/1530)
+    @api.onchange(
+        'fiscal_id_type',
+        'fiscal_id',
+    )
+    # 'is_company', # https://github.com/odoo/odoo/issues/1530
     def validateformatcopy(self):
         # CASE: Current ID Type is not applicable on company
         if self.is_company and not self.fiscal_id_type.on_company:
@@ -78,10 +71,8 @@ class ResPartnerIdent(models.Model):
                 self.fiscal_id_type, self.fiscal_id = res['output_type'], res[
                     'output_id']
             # Procedure for Copying
-            self._copyid(self)
+            _copyid(self)
 
-
-    @staticmethod
     def _validateandformatid(self):
         """
         Hook method to be inherited for custom validation methods.
@@ -100,20 +91,23 @@ class ResPartnerIdent(models.Model):
         Find below a suggested basic outline.
 
         """
-        f_type, f_id, is_company = self.fiscal_id_type, self.fiscal_id, \
-                                   self.is_company
+        f_type     = self.fiscal_id_type
+        f_id       = self.fiscal_id
+        is_company = self.is_company
 
-        def default(): return {'output_type': f_type, 'output_id': f_id}
+        def default():
+            return {'output_type': f_type, 'output_id': f_id}
 
-        return {'CODE1': {'output_type': f_type, 'output_id': f_id},
-                'CODE2': {'output_type': f_type, 'output_id': f_id},
-                """
-                Define your cases with the index being the doctype id to match
-                Note you can work inline (lambda), or call subfunctions at will
-                """
+        return {
+            # Define your cases
+            # The index to match is self.fiscal_id_type.code
+            # Note: You can change this index below.
+            # Example assignation using two functions
+            # {'output_type': func_type1(), 'output_id': funct_id1()}
+            'CODE1': {""" put your assignation here """},
+            'CODE2': {""" put your assignation here """},
         }.get(self.fiscal_id_type.code, default())
 
-    @staticmethod
     def _copyid(self):
         """
         Hook Method to be inherited for custom copy methods based on the
@@ -126,8 +120,9 @@ class ResPartnerIdent(models.Model):
         Find below a suggested basic outline.
 
         """
-        f_type, f_id, is_company = self.fiscal_id_type, self.fiscal_id, \
-                                   self.is_company
+        f_type     = self.fiscal_id_type
+        f_id       = self.fiscal_id
+        is_company = self.is_company
 
         def stringop_def(s): return s
 
@@ -140,11 +135,10 @@ class ResPartnerIdent(models.Model):
             # self.vat is a Boolean until base_vat is installed.
             # self.vat = self.country_id.code + sringop_def(f_id)
 
-        {'CODE1': {
-            # self.vat_subjected: True,
+        {
+            # Some examples to consider...
+            # seld.vat_subjected: True,
             # self.vat: self.country_id.code + stringop_1(f_id)
-        },
-         'CODE2': {
-             # seld.vat_subjected: True,
-             # self.vat: self.country_id.code + stringop_1(f_id)
-         },}.get(self.fiscal_id_type.code, default())
+            'CODE1': {""" put your statments here """},
+            'CODE2': {""" put your statments here """},
+        }.get(self.fiscal_id_type.code, default())
