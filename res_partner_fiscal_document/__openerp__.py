@@ -49,10 +49,8 @@
         'res_partner_document_view.xml',
     ],
     'demo': [
-        #,
     ],
     'test': [
-        #,
     ],
     'installable': True,
     'auto_install': False,

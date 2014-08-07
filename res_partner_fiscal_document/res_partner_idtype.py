@@ -1,18 +1,9 @@
 # -*- encoding: utf-8 -*-
-##############################################################################
+# #############################################################################
 #
 # OpenERP, Open Source Management Solution
 # Copyright (C) Odoo Colombia (Community).
-# Authors       David Arnold (devCO)
-#               Juan Pablo Aries (devCO)
-#
-# Co-Authors    Sandy Carter (Savaoirfairlinux)
-#               El Hadji Dem (Savoirfairelinux)
-#               Luis Miguel Varon
-#               Hector Ivan Valencia (TIX)
-#
-# Collaborators Nhomar Hernandez (Vauxoo)
-#               Humberto Ochoa (Vauxoo)
+# Author        David Arnold (devCO)
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
@@ -29,4 +20,18 @@
 #
 ##############################################################################
 
-from . import res_partner, res_partner_idtype
+from openerp import models, fields, api, _
+
+
+class ResPartnerIDtype(models.Model):
+    _name = 'res.partner.idtype'
+    _description = 'Identification Document Type'
+    _order = 'sequence'
+
+    name = fields.Char(required=True)
+    code = fields.Char(required=True)
+    sequence = fields.Integer()
+    active = fields.Boolean(default=True)
+    note = fields.Text()
+    on_company = fields.Boolean(string=u'On Company?')
+    on_contact = fields.Boolean(string=u'On Contact?', default=True)
