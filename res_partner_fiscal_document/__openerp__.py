@@ -48,7 +48,7 @@ corresponing document.
     ],
     'data': [
         'data/res.partner.idtype.csv',
-        'res_partner_document_view.xml',
+        'res_partner_view.xml',
     ],
     'demo': [
     ],

@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from openerp import models, fields # , api, _
+from openerp import models, fields  # 'api' & '_' (transalte) not needed here
 
 
 class ResPartnerIDtype(models.Model):
