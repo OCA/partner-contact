@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from openerp import models, fields, api, _
+from openerp import models, fields, api # , _
 
 
 class ResPartner(models.Model):
@@ -92,6 +92,7 @@ class ResPartner(models.Model):
         Find below a suggested basic outline.
 
         """
+        """
         f_type     = self.fiscal_id_type
         f_id       = self.fiscal_id
         is_company = self.is_company
@@ -105,9 +106,10 @@ class ResPartner(models.Model):
             # Note: You can change this index below.
             # Example assignation using two functions
             # {'output_type': func_type1(), 'output_id': funct_id1()}
-            'CODE1': {""" put your assignation here """},
-            'CODE2': {""" put your assignation here """},
+            'CODE1': { "put your assignation here" },
+            'CODE2': { "put your assignation here" },
         }.get(self.fiscal_id_type.code, default())
+        """
 
     def _copyid(self):
         """
@@ -120,6 +122,7 @@ class ResPartner(models.Model):
 
         Find below a suggested basic outline.
 
+        """
         """
         f_type     = self.fiscal_id_type
         f_id       = self.fiscal_id
@@ -140,6 +143,7 @@ class ResPartner(models.Model):
             # Some examples to consider...
             # seld.vat_subjected: True,
             # self.vat: self.country_id.code + stringop_1(f_id)
-            'CODE1': {""" put your statments here """},
-            'CODE2': {""" put your statments here """},
+            'CODE1': { "put your statments here" },
+            'CODE2': { "put your statments here" },
         }.get(self.fiscal_id_type.code, default())
+        """
