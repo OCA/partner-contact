@@ -33,9 +33,11 @@ class ResPartner(models.Model):
         'res.partner.idtype',
         string=u'Document Type',
         domain=dom,
+    )
+    fiscal_id = fields.Char(
+        string=u'Document ID',
         compute='validateformatcopy',
     )
-    fiscal_id = fields.Char(string=u'Document ID')
     fiscal_id_doc = fields.Binary(
         string=u'Document Scan',
         help="Upload the supporting Document "
