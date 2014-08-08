@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from openerp import models, fields, api # , _
+from openerp import models, fields, api  # '_' (translate) not needed here
 
 
 class ResPartner(models.Model):
@@ -72,7 +72,7 @@ class ResPartner(models.Model):
                 self.fiscal_id_type, self.fiscal_id = res['output_type'], res[
                     'output_id']
             # Procedure for Copying
-            _copyid(self)
+            _copyid()
 
     def _validateandformatid(self):
         """
