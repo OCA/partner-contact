@@ -33,5 +33,12 @@ class ResPartnerIDtype(models.Model):
     sequence = fields.Integer()
     active = fields.Boolean(default=True)
     note = fields.Text()
-    on_company = fields.Boolean(string=u'On Company?')
-    on_contact = fields.Boolean(string=u'On Contact?', default=True)
+    on_company = fields.Boolean(
+        string=u'On Company?',
+        help="Id type for use on Company"
+    )
+    on_contact = fields.Boolean(
+        string=u'On Contact?',
+        default=True,
+        help="Id type for use on Contacts"
+    )
