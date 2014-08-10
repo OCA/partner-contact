@@ -4,6 +4,8 @@
 #    Base Location Geonames Import module for OpenERP
 #    Copyright (C) 2014 Akretion (http://www.akretion.com)
 #    @author Alexis de Lattre <alexis.delattre@akretion.com>
+#    Copyright (C) 2014 Agile Business Group (http://www.agilebg.com)
+#    @author Lorenzo Battistini <lorenzo.battistini@agilebg.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -23,7 +25,7 @@
 
 {
     'name': 'Base Location Geonames Import',
-    'version': '0.1',
+    'version': '8.0.0.2.0',
     'category': 'Extra Tools',
     'license': 'AGPL-3',
     'summary': 'Import better zip entries from Geonames',
@@ -31,7 +33,10 @@
 Base Location Geonames Import
 =============================
 
-This module adds a wizard to import better zip entries from Geonames (http://download.geonames.org/export/zip/).
+This module adds a wizard to import better zip entries from Geonames
+(http://download.geonames.org/export/zip/).
+If want want/need to modify the URL, you can set the 'geonames.url'
+system parameter.
 
 When you start the wizard,
 it will ask you to select a country. Then, for the selected country,
@@ -54,7 +59,10 @@ Contributors
     'external_dependencies': {'python': ['requests', 'unicodecsv']},
     'data': [
         'wizard/geonames_import_view.xml',
-    ],
+        ],
+    'test': [
+        'test/import.yml'
+        ],
     'installable': True,
     'active': False,
 }
