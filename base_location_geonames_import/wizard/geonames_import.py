@@ -20,8 +20,8 @@
 #
 ##############################################################################
 
-from openerp.osv import orm, fields
-from openerp.tools.translate import _
+from openerp import models, fields, api, _
+from openerp.exceptions import Warning
 import requests
 import tempfile
 import StringIO
@@ -33,17 +33,15 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class better_zip_geonames_import(orm.TransientModel):
+class better_zip_geonames_import(models.TransientModel):
     _name = 'better.zip.geonames.import'
     _description = 'Import Better Zip from Geonames'
     _rec_name = 'country_id'
 
-    _columns = {
-        'country_id': fields.many2one('res.country', 'Country', required=True),
-    }
+    country_id = fields.Many2one('res.country', 'Country', required=True)
 
-    def _prepare_better_zip(
-            self, cr, uid, row, country_id, states, context=None):
+    @api.model
+    def _prepare_better_zip(self, row, country_id, states):
         '''This function is designed to be inherited'''
         state_id = False
         if states and row[4] and row[4] in states:
@@ -56,55 +54,51 @@ class better_zip_geonames_import(orm.TransientModel):
             }
         return vals
 
+    @api.model
     def create_better_zip(
-            self, cr, uid, row, country_id, country_code, states,
-            context=None):
+            self, row, country_id, country_code, states):
         bzip_id = False
         if row[0] != country_code:
-            raise orm.except_orm(
+            raise Warning(
                 _('Error:'),
                 _("The country code inside the file (%s) doesn't "
                     "correspond to the selected country (%s).")
                 % (row[0], country_code))
         logger.debug('ZIP = %s - City = %s' % (row[1], row[2]))
         if row[1] and row[2]:
-            vals = self._prepare_better_zip(
-                cr, uid, row, country_id, states, context=context)
+            vals = self._prepare_better_zip(row, country_id, states)
             if vals:
-                bzip_id = self.pool['res.better.zip'].create(
-                    cr, uid, vals, context=context)
+                bzip_id = self.env['res.better.zip'].create(vals)
         return bzip_id
 
-    def run_import(self, cr, uid, ids, context=None):
-        assert len(ids) == 1, 'Only one ID for the better zip import wizard'
-        bzip_obj = self.pool['res.better.zip']
-        wizard = self.browse(cr, uid, ids[0], context=context)
-        country_id = wizard.country_id.id
-        country_code = wizard.country_id.code.upper()
+    @api.one
+    def run_import(self):
+        bzip_obj = self.env['res.better.zip']
+        country_id = self.country_id.id
+        country_code = self.country_id.code.upper()
         url = 'http://download.geonames.org/export/zip/%s.zip' % country_code
         logger.info('Starting to download %s' % url)
         res_request = requests.get(url)
         if res_request.status_code != requests.codes.ok:
-            raise orm.except_orm(
+            raise Warning(
                 _('Error:'),
                 _('Got an error %d when trying to download the file %s.')
                 % (res_request.status_code, url))
-        bzip_ids_to_delete = bzip_obj.search(
-            cr, uid, [('country_id', '=', country_id)], context=context)
+        bzip_ids_to_delete = bzip_obj.search([('country_id', '=', country_id)])
         if bzip_ids_to_delete:
-            cr.execute('SELECT id FROM res_better_zip WHERE id in %s '
+            self.env.cr.execute('SELECT id FROM res_better_zip WHERE id in %s '
                 'FOR UPDATE NOWAIT', (tuple(bzip_ids_to_delete), ))
-            bzip_obj.unlink(cr, uid, bzip_ids_to_delete, context=context)
+            bzip_obj.unlink(bzip_ids_to_delete)
             logger.info(
                 '%d better zip entries deleted for country %s'
-                % (len(bzip_ids_to_delete), wizard.country_id.name))
-        state_ids = self.pool['res.country.state'].search(
-            cr, uid, [('country_id', '=', country_id)], context=context)
+                % (len(bzip_ids_to_delete), self.country_id.name))
+        state_ids = self.env['res.country.state'].search(
+            [('country_id', '=', country_id)])
         states = {}
         # key = code of the state ; value = ID of the state in OpenERP
         if state_ids:
-            states_r = self.pool['res.country.state'].read(
-                cr, uid, state_ids, ['code', 'country_id'], context=context)
+            states_r = self.env['res.country.state'].read(
+                state_ids, ['code', 'country_id'])
             for state in states_r:
                 states[state['code'].upper()] = state['id']
         f_geonames = zipfile.ZipFile(StringIO.StringIO(res_request.content))
@@ -118,9 +112,7 @@ class better_zip_geonames_import(orm.TransientModel):
             % (states and 'with' or 'without'))
         for row in unicodecsv.reader(
                 data_file, encoding='utf-8', delimiter='	'):
-            self.create_better_zip(
-                cr, uid, row, country_id, country_code, states,
-                context=context)
+            self.create_better_zip(row, country_id, country_code, states)
         data_file.close()
         logger.info(
             'The wizard to create better zip entries from geonames '
