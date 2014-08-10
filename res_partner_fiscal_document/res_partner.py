@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from openerp import models, fields, api  # '_' (translate) not needed here
+from openerp import models, fields, api # , _
 
 
 class ResPartner(models.Model):
@@ -36,7 +36,7 @@ class ResPartner(models.Model):
     )
     fiscal_id = fields.Char(
         string=u'Document ID',
-        compute='validateformatcopy',
+        # compute='validateformatcopy',
     )
     fiscal_id_doc = fields.Binary(
         string=u'Document Scan',
@@ -48,7 +48,7 @@ class ResPartner(models.Model):
     )
 
     @api.one
-    @api.depends(
+    @api.onchange(
         'fiscal_id_type',
         'fiscal_id',
         'is_company',
@@ -71,10 +71,10 @@ class ResPartner(models.Model):
             # Function for String Operations
             res = self._validateandformatid(self)
             if res['output_type'] and res['output_id']:
-                self.fiscal_id_type, self.fiscal_id = res['output_type'], res[
-                    'output_id']
+                self.fiscal_id_type = res['output_type']
+                self.fiscal_id = , res['output_id']
             # Procedure for Copying
-            _copyid()
+            _copyid(self)
 
     def _validateandformatid(self):
         """
@@ -94,6 +94,7 @@ class ResPartner(models.Model):
         Find below a suggested basic outline.
 
         """
+        return {'output_type': self.fiscal_id_type, 'output_id': self.fiscal_id}
         """
         f_type     = self.fiscal_id_type
         f_id       = self.fiscal_id
