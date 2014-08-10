@@ -36,6 +36,7 @@ logger = logging.getLogger(__name__)
 class better_zip_geonames_import(orm.TransientModel):
     _name = 'better.zip.geonames.import'
     _description = 'Import Better Zip from Geonames'
+    _rec_name = 'country_id'
 
     _columns = {
         'country_id': fields.many2one('res.country', 'Country', required=True),
