@@ -2,6 +2,7 @@
 ##############################################################################
 #
 #    Author: Nicolas Bessi. Copyright Camptocamp SA
+#    Copyright (C) 2014 Agile Business Group (<http://www.agilebg.com>)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,6 +20,9 @@
 ##############################################################################
 from openerp.osv import orm, fields
 from openerp.tools.translate import _
+import logging
+
+_logger = logging.getLogger(__name__)
 
 
 class ResPartner(orm.Model):
@@ -26,14 +30,17 @@ class ResPartner(orm.Model):
 
     _inherit = 'res.partner'
 
-    def init(self, cursor):
-        cursor.execute('SELECT id FROM res_partner WHERE lastname IS NOT NULL Limit 1')
-        if not cursor.fetchone():
-            cursor.execute('UPDATE res_partner set lastname = name WHERE name IS NOT NULL')
-            # Create Sql constraint if table is not empty
-            cursor.execute('SELECT id FROM res_partner Limit 1')
-            if cursor.fetchone():
-                cursor.execute('ALTER TABLE res_partner ALTER COLUMN lastname SET NOT NULL')
+    def _set_default_value_on_column(self, cr, column_name, context=None):
+        res = super(ResPartner, self)._set_default_value_on_column(
+            cr, column_name, context=context)
+        if column_name == 'lastname':
+            cr.execute('UPDATE res_partner SET lastname = name WHERE name '
+                       'IS NOT NULL AND lastname IS NULL')
+            cr.execute('ALTER TABLE res_partner ALTER COLUMN lastname '
+                       'SET NOT NULL')
+            _logger.info("NOT NULL constraint for "
+                         "res_partner.lastname correctly set")
+        return res
 
     def _prepare_name_custom(self, cursor, uid, partner, context=None):
         """
@@ -50,18 +57,26 @@ class ResPartner(orm.Model):
                 cursor, uid, partner, context=context)
         return res
 
-    def _write_name(self, cursor, uid, partner_id, field_name, field_value, arg, context=None):
+    def _write_name(
+        self, cursor, uid, partner_id, field_name, field_value, arg,
+        context=None
+    ):
         """
         Try to reverse the effect of _compute_name_custom:
-        * if the partner is not a company and the firstname does not change in the new name
-          then firstname remains untouched and lastname is updated accordingly
+        * if the partner is not a company and the firstname does not change in
+          the new name then firstname remains untouched and lastname is updated
+          accordingly
         * otherwise lastname=new name and firstname=False
-        In addition an heuristic avoids to keep a firstname without a non-blank lastname
+        In addition an heuristic avoids to keep a firstname without a non-blank
+        lastname
         """
-        field_value = field_value and not field_value.isspace() and field_value or False
+        field_value = (
+            field_value and not field_value.isspace() and field_value or False)
         vals = {'lastname': field_value, 'firstname': False}
         if field_value:
-            flds = self.read(cursor, uid, [partner_id], ['firstname', 'is_company'], context=context)[0]
+            flds = self.read(
+                cursor, uid, [partner_id], ['firstname', 'is_company'],
+                context=context)[0]
             if not flds['is_company']:
                 to_check = ' %s' % flds['firstname']
                 if field_value.endswith(to_check):
@@ -78,31 +93,37 @@ class ResPartner(orm.Model):
 
     def copy_data(self, cr, uid, _id, default=None, context=None):
         """
-        Avoid to replicate the firstname into the name when duplicating a partner
+        Avoid to replicate the firstname into the name when duplicating a
+        partner
         """
         default = default or {}
         if not default.get('lastname'):
             default = default.copy()
             default['lastname'] = (
-                _('%s (copy)') % self.read(cr, uid, [_id], ['lastname'], context=context)[0]['lastname']
+                _('%s (copy)') % self.read(
+                    cr, uid, [_id], ['lastname'], context=context
+                    )[0]['lastname']
             )
             if default.get('name'):
                 del(default['name'])
-        return super(ResPartner, self).copy_data(cr, uid, _id, default, context=context)
+        return super(ResPartner, self).copy_data(
+            cr, uid, _id, default, context=context)
 
     def create(self, cursor, uid, vals, context=None):
         """
-        To support data backward compatibility we have to keep this overwrite even if we
-        use fnct_inv: otherwise we can't create entry because lastname is mandatory and module
-        will not install if there is demo data
+        To support data backward compatibility we have to keep this overwrite
+        even if we use fnct_inv: otherwise we can't create entry because
+        lastname is mandatory and module will not install if there is demo data
         """
         to_use = vals
         if 'name' in vals:
             corr_vals = vals.copy()
-            corr_vals['lastname'] = corr_vals['name']
+            if vals.get('name'):
+                corr_vals['lastname'] = corr_vals['name']
             del(corr_vals['name'])
             to_use = corr_vals
-        return super(ResPartner, self).create(cursor, uid, to_use, context=context)
+        return super(ResPartner, self).create(
+            cursor, uid, to_use, context=context)
 
     _columns = {'name': fields.function(_compute_name_custom, string="Name",
                                         type="char", store=True,
