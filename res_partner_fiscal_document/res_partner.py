@@ -36,7 +36,6 @@ class ResPartner(models.Model):
     )
     fiscal_id = fields.Char(
         string=u'Document ID',
-        # compute='validateformatcopy',
     )
     fiscal_id_doc = fields.Binary(
         string=u'Document Scan',
@@ -74,7 +73,7 @@ class ResPartner(models.Model):
                 self.fiscal_id_type = res['output_type']
                 self.fiscal_id = , res['output_id']
             # Procedure for Copying
-            _copyid(self)
+            self._copyid()
 
     def _validateandformatid(self):
         """
