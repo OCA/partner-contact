@@ -33,9 +33,14 @@
 Base Location Geonames Import
 =============================
 
-This module adds a wizard to import better zip entries from Geonames (http://download.geonames.org/export/zip/). When you start the wizard, it will ask you to select a country ; then, for the selected country, it will delete all the current better zip entries, download the latest version of the list of cities from geonames.org and create new better zip entries.
+This module adds a wizard to import better zip entries from Geonames
+(http://download.geonames.org/export/zip/). When you start the wizard,
+it will ask you to select a country ; then, for the selected country,
+it will delete all the current better zip entries, download the latest version
+of the list of cities from geonames.org and create new better zip entries.
 
-Please contact Alexis de Lattre from Akretion <alexis.delattre@akretion.com> for any help or question about this module.
+Please contact Alexis de Lattre from Akretion <alexis.delattre@akretion.com>
+for any help or question about this module.
 
 
 Contributors
