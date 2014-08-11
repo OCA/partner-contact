@@ -68,7 +68,7 @@ class ResPartner(models.Model):
         # If everything is fine, call subclasses
         if self.fiscal_id_type and self.fiscal_id:
             # Function for String Operations
-            res = self._validateandformatid(self)
+            res = self._validateandformatid()
             if res['output_type'] and res['output_id']:
                 self.fiscal_id_type = res['output_type']
                 self.fiscal_id = , res['output_id']
