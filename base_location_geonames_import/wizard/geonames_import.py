@@ -4,6 +4,8 @@
 #    Base Location Geonames Import module for OpenERP
 #    Copyright (C) 2014 Akretion (http://www.akretion.com)
 #    @author Alexis de Lattre <alexis.delattre@akretion.com>
+#    Copyright (C) 2014 Agile Business Group (http://www.agilebg.com)
+#    @author Lorenzo Battistini <lorenzo.battistini@agilebg.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -41,22 +43,19 @@ class better_zip_geonames_import(models.TransientModel):
     country_id = fields.Many2one('res.country', 'Country', required=True)
 
     @api.model
-    def _prepare_better_zip(self, row, country_id, states):
-        '''This function is designed to be inherited'''
-        state_id = False
-        if states and row[4] and row[4] in states:
-            state_id = states[row[4].upper()]
+    def _prepare_better_zip(self, row, country_id):
+        state = self.select_or_create_state(row, country_id)
         vals = {
             'name': row[1],
             'city': row[2],
-            'state_id': state_id,
+            'state_id': state.id,
             'country_id': country_id,
             }
         return vals
 
     @api.model
     def create_better_zip(
-            self, row, country_id, country_code, states):
+            self, row, country_id, country_code):
         bzip_id = False
         if row[0] != country_code:
             raise Warning(
@@ -66,10 +65,31 @@ class better_zip_geonames_import(models.TransientModel):
                 % (row[0], country_code))
         logger.debug('ZIP = %s - City = %s' % (row[1], row[2]))
         if row[1] and row[2]:
-            vals = self._prepare_better_zip(row, country_id, states)
+            vals = self._prepare_better_zip(row, country_id)
             if vals:
                 bzip_id = self.env['res.better.zip'].create(vals)
         return bzip_id
+
+    @api.model
+    def select_or_create_state(
+        self, row, country_id, code_row_index=4, name_row_index=3
+    ):
+        states = self.env['res.country.state'].search([
+            ('country_id', '=', country_id),
+            ('code', '=', row[code_row_index]),
+            ])
+        if len(states) > 1:
+            raise Warning(
+                _("Too many states with code %s for counrty %s")
+                % (row[code_row_index], country_id))
+        if len(states) == 1:
+            return states[0]
+        else:
+            return self.env['res.country.state'].create({
+                'name': row[name_row_index],
+                'code': row[code_row_index],
+                'country_id': country_id
+                })
 
     @api.one
     def run_import(self):
@@ -90,15 +110,6 @@ class better_zip_geonames_import(models.TransientModel):
             logger.info(
                 '%d better zip entries deleted for country %s'
                 % (len(bzip_ids_to_delete), self.country_id.name))
-        state_ids = self.env['res.country.state'].search(
-            [('country_id', '=', country_id)])
-        states = {}
-        # key = code of the state ; value = ID of the state in OpenERP
-        if state_ids:
-            states_r = self.env['res.country.state'].read(
-                state_ids, ['code', 'country_id'])
-            for state in states_r:
-                states[state['code'].upper()] = state['id']
         f_geonames = zipfile.ZipFile(StringIO.StringIO(res_request.content))
         tempdir = tempfile.mkdtemp(prefix='openerp')
         f_geonames.extract('%s.txt' % country_code, tempdir)
@@ -106,11 +117,10 @@ class better_zip_geonames_import(models.TransientModel):
         data_file = open(os.path.join(tempdir, '%s.txt' % country_code), 'r')
         data_file.seek(0)
         logger.info(
-            'Starting to create the better zip entries %s state information'
-            % (states and 'with' or 'without'))
+            'Starting to create the better zip entries')
         for row in unicodecsv.reader(
                 data_file, encoding='utf-8', delimiter='	'):
-            self.create_better_zip(row, country_id, country_code, states)
+            self.create_better_zip(row, country_id, country_code)
         data_file.close()
         logger.info(
             'The wizard to create better zip entries from geonames '
