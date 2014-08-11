@@ -4,6 +4,8 @@
 #    Base Location Geonames Import module for OpenERP
 #    Copyright (C) 2014 Akretion (http://www.akretion.com)
 #    @author Alexis de Lattre <alexis.delattre@akretion.com>
+#    Copyright (C) 2014 Agile Business Group (http://www.agilebg.com)
+#    @author Lorenzo Battistini <lorenzo.battistini@agilebg.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -23,7 +25,7 @@
 
 {
     'name': 'Base Location Geonames Import',
-    'version': '0.1',
+    'version': '0.2',
     'category': 'Extra Tools',
     'license': 'AGPL-3',
     'summary': 'Import better zip entries from Geonames',
@@ -34,14 +36,24 @@ Base Location Geonames Import
 This module adds a wizard to import better zip entries from Geonames (http://download.geonames.org/export/zip/). When you start the wizard, it will ask you to select a country ; then, for the selected country, it will delete all the current better zip entries, download the latest version of the list of cities from geonames.org and create new better zip entries.
 
 Please contact Alexis de Lattre from Akretion <alexis.delattre@akretion.com> for any help or question about this module.
-    """,
+
+
+Contributors
+------------
+
+- Alexis de Lattre <alexis.delattre@akretion.com>
+- Lorenzo Battistini <lorenzo.battistini@agilebg.com>
+""",
     'author': 'Akretion',
     'website': 'http://www.akretion.com',
     'depends': ['base_location'],
     'external_dependencies': {'python': ['requests', 'unicodecsv']},
     'data': [
         'wizard/geonames_import_view.xml',
-    ],
+        ],
+    'test': [
+        'test/import.yml'
+        ],
     'installable': True,
     'active': False,
 }
