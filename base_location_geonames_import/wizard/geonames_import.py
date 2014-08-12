@@ -106,7 +106,7 @@ class better_zip_geonames_import(models.TransientModel):
                 % (res_request.status_code, url))
         bzip_ids_to_delete = bzip_obj.search([('country_id', '=', country_id)])
         if bzip_ids_to_delete:
-            bzip_obj.unlink(bzip_ids_to_delete)
+            bzip_ids_to_delete.unlink()
             logger.info(
                 '%d better zip entries deleted for country %s'
                 % (len(bzip_ids_to_delete), self.country_id.name))
