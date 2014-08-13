@@ -28,12 +28,10 @@ from openerp.tools import DEFAULT_SERVER_DATE_FORMAT
 class ResPartner(orm.Model):
     _inherit = 'res.partner'
 
-    def _get_relation_ids(
-            self, cr, uid, ids, dummy_name, dummy_arg, context=None):
-        if context is None:
-            context = {}
-
-        # TODO: do a permission test on returned ids
+    def _get_relation_ids_select(self, cr, uid, ids, field_name, arg,
+                                 context=None):
+        '''return the partners' relations as tuple
+        (id, left_partner_id, right_partner_id)'''
         cr.execute(
             '''select id, left_partner_id, right_partner_id
             from res_partner_relation
@@ -41,8 +39,17 @@ class ResPartner(orm.Model):
             ' order by ' + self.pool['res.partner.relation']._order,
             (tuple(ids), tuple(ids))
         )
+        return cr.fetchall()
+
+    def _get_relation_ids(
+            self, cr, uid, ids, field_name, arg, context=None):
+        '''getter for relation_ids'''
+        if context is None:
+            context = {}
         result = dict([(i, []) for i in ids])
-        for row in cr.fetchall():
+        # TODO: do a permission test on returned ids
+        for row in self._get_relation_ids_select(
+                cr, uid, ids, field_name, arg, context=context):
             if row[1] in result:
                 result[row[1]].append(row[0])
             if row[2] in result:
@@ -52,6 +59,7 @@ class ResPartner(orm.Model):
     def _set_relation_ids(
             self, cr, uid, ids, dummy_name, field_value, dummy_arg,
             context=None):
+        '''setter for relation_ids'''
         if context is None:
             context = {}
         relation_obj = self.pool.get('res.partner.relation')
