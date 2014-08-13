@@ -30,6 +30,9 @@ class ResPartner(orm.Model):
 
     def _get_relation_ids(
             self, cr, uid, ids, dummy_name, dummy_arg, context=None):
+        if context is None:
+            context = {}
+
         # TODO: do a permission test on returned ids
         cr.execute(
             '''select id, left_partner_id, right_partner_id
