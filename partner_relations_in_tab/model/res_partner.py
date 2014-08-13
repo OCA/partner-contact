@@ -27,12 +27,8 @@ from openerp.tools.translate import _
 class ResPartner(Model):
     _inherit = 'res.partner'
 
-    def _get_relation_ids(
-            self, cr, uid, ids, dummy_name, dummy_arg, context=None):
-        if context is None:
-            context = {}
-
-        #TODO: do a permission test on returned ids
+    def _get_relation_ids_select(self, cr, uid, ids, field_name, arg,
+                                 context=None):
         cr.execute(
             '''select r.id, left_partner_id, right_partner_id
             from res_partner_relation r
@@ -43,13 +39,7 @@ class ResPartner(Model):
             ' order by ' + self.pool['res.partner.relation']._order,
             (tuple(ids), tuple(ids))
         )
-        result = dict([(i, []) for i in ids])
-        for row in cr.fetchall():
-            if row[1] in result:
-                result[row[1]].append(row[0])
-            if row[2] in result:
-                result[row[2]].append(row[0])
-        return result
+        return cr.fetchall()
 
     def _create_relation_type_tab(
             self, cr, uid, rel_type, inverse, field_names, context=None):
