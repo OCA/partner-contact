@@ -110,7 +110,8 @@ class ResPartnerRelationTypeSelection(orm.Model):
     _foreign_keys = []
     _columns = {
         'record_type': fields.selection(_RECORD_TYPES, 'Record type', size=16),
-        'type_id': fields.integer('Type'),
+        'type_id': fields.many2one(
+            'res.partner.relation.type', 'Type'),
         'name': fields.char('Name', size=64),
         'contact_type_this': fields.selection(
             ResPartnerRelationType._get_partner_types.im_func,
