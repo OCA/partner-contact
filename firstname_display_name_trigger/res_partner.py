@@ -37,8 +37,7 @@ class ResPartner(orm.Model):
             ids = [ids]
         res = []
         for record in self.browse(cr, uid, ids, context=context):
-            names = (record.lastname, record.firstname)
-            name = u" ".join([s for s in names if s])
+            name = self._prepare_name_custom(cr, uid, record, context=context)
             if record.parent_id and not record.is_company:
                 name = "%s, %s" % (record.parent_id.name, name)
             if context.get('show_address'):
