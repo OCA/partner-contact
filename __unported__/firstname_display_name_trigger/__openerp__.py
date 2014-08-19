@@ -20,7 +20,8 @@
 ##############################################################################
 
 {
-    'name': 'Link module if partner_lastname and account_report_company are installed',
+    'name': ('Link module if partner_lastname and account_report_company are '
+             'installed'),
     'version': '1.0',
     'author': 'Camptocamp',
     'maintainer': 'Camptocamp',
@@ -31,7 +32,8 @@
         'partner_firstname',
     ],
     'description': """
-Adapt the computation of display name so that it gets visible in tree and kanban views.
+Adapt the computation of display name so that it gets visible in tree and
+kanban views.
 """,
     'website': 'http://www.camptocamp.com',
     'data': [],

@@ -20,7 +20,11 @@ class test_display_name(common.TransactionCase):
         })
         partner_records = self.res_partner.browse(cr, uid, [partner_id])
         p1 = partner_records[0]
-        self.assertEqual(p1.display_name, 'Lastname Firstname', 'Partner display_name incorrect')
+        self.assertEqual(
+            p1.display_name,
+            'Lastname Firstname',
+            'Partner display_name incorrect'
+        )
 
     def test_01_res_partner_write_lastname(self):
         """ Test if the display name has been correctly set """
@@ -33,7 +37,11 @@ class test_display_name(common.TransactionCase):
         partner_records = self.res_partner.browse(cr, uid, [partner_id])
         p1 = partner_records[0]
         self.res_partner.write(cr, uid, partner_id, {'lastname': 'Last'})
-        self.assertEqual(p1.display_name, 'Last Firstname', 'Partner display_name incorrect')
+        self.assertEqual(
+            p1.display_name,
+            'Last Firstname',
+            'Partner display_name incorrect'
+        )
 
 if __name__ == '__main__':
     unittest2.main()
