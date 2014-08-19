@@ -27,13 +27,20 @@ class ResPartner(orm.Model):
     _inherit = 'res.partner'
 
     def init(self, cursor):
-        cursor.execute('SELECT id FROM res_partner WHERE lastname IS NOT NULL Limit 1')
+        cursor.execute(
+            'SELECT id FROM res_partner WHERE lastname IS NOT NULL Limit 1'
+        )
         if not cursor.fetchone():
-            cursor.execute('UPDATE res_partner set lastname = name WHERE name IS NOT NULL')
+            cursor.execute(
+                'UPDATE res_partner set lastname = name WHERE name IS NOT NULL'
+            )
             # Create Sql constraint if table is not empty
             cursor.execute('SELECT id FROM res_partner Limit 1')
             if cursor.fetchone():
-                cursor.execute('ALTER TABLE res_partner ALTER COLUMN lastname SET NOT NULL')
+                cursor.execute(
+                    'ALTER TABLE res_partner '
+                    'ALTER COLUMN lastname SET NOT NULL'
+                )
 
     def _prepare_name_custom(self, cursor, uid, partner, context=None):
         """
@@ -50,18 +57,30 @@ class ResPartner(orm.Model):
                 cursor, uid, partner, context=context)
         return res
 
-    def _write_name(self, cursor, uid, partner_id, field_name, field_value, arg, context=None):
-        """
-        Try to reverse the effect of _compute_name_custom:
-        * if the partner is not a company and the firstname does not change in the new name
-          then firstname remains untouched and lastname is updated accordingly
+    def _write_name(
+            self, cursor, uid, partner_id, field_name, field_value, arg,
+            context=None):
+        """Try to reverse the effect of _compute_name_custom:
+        * if the partner is not a company and the firstname does not
+          change in the new name then firstname remains untouched and
+          lastname is updated accordingly
         * otherwise lastname=new name and firstname=False
-        In addition an heuristic avoids to keep a firstname without a non-blank lastname
+        In addition an heuristic avoids to keep a firstname without a
+        non-blank lastname
         """
-        field_value = field_value and not field_value.isspace() and field_value or False
+        field_value = (field_value
+                       and not field_value.isspace()
+                       and field_value
+                       or False)
         vals = {'lastname': field_value, 'firstname': False}
         if field_value:
-            flds = self.read(cursor, uid, [partner_id], ['firstname', 'is_company'], context=context)[0]
+            flds = self.read(
+                cursor,
+                uid,
+                [partner_id],
+                ['firstname', 'is_company'],
+                context=context
+            )[0]
             if not flds['is_company']:
                 to_check = ' %s' % flds['firstname']
                 if field_value.endswith(to_check):
@@ -77,24 +96,32 @@ class ResPartner(orm.Model):
         return self.write(cursor, uid, partner_id, vals, context=context)
 
     def copy_data(self, cr, uid, _id, default=None, context=None):
-        """
-        Avoid to replicate the firstname into the name when duplicating a partner
+        """Avoid to replicate the firstname into the name when
+        duplicating a partner
         """
         default = default or {}
         if not default.get('lastname'):
             default = default.copy()
             default['lastname'] = (
-                _('%s (copy)') % self.read(cr, uid, [_id], ['lastname'], context=context)[0]['lastname']
+                _('%s (copy)') % self.read(
+                    cr,
+                    uid,
+                    [_id],
+                    ['lastname'],
+                    context=context
+                )[0]['lastname']
             )
             if default.get('name'):
                 del(default['name'])
-        return super(ResPartner, self).copy_data(cr, uid, _id, default, context=context)
+        return super(ResPartner, self).copy_data(
+            cr, uid, _id, default, context=context
+        )
 
     def create(self, cursor, uid, vals, context=None):
-        """
-        To support data backward compatibility we have to keep this overwrite even if we
-        use fnct_inv: otherwise we can't create entry because lastname is mandatory and module
-        will not install if there is demo data
+        """To support data backward compatibility we have to keep this
+        overwrite even if we use fnct_inv: otherwise we can't create
+        entry because lastname is mandatory and module will not install
+        if there is demo data
         """
         to_use = vals
         if 'name' in vals:
@@ -102,12 +129,21 @@ class ResPartner(orm.Model):
             corr_vals['lastname'] = corr_vals['name']
             del(corr_vals['name'])
             to_use = corr_vals
-        return super(ResPartner, self).create(cursor, uid, to_use, context=context)
+        return super(ResPartner, self).create(
+            cursor, uid, to_use, context=context
+        )
 
-    _columns = {'name': fields.function(_compute_name_custom, string="Name",
-                                        type="char", store=True,
-                                        select=True, readonly=True,
-                                        fnct_inv=_write_name),
+    _columns = {
+        'name': fields.function(
+            _compute_name_custom,
+            string="Name",
+            type="char",
+            store=True,
+            select=True,
+            readonly=True,
+            fnct_inv=_write_name
+        ),
 
-                'firstname': fields.char("Firstname"),
-                'lastname': fields.char("Lastname", required=True)}
+        'firstname': fields.char("Firstname"),
+        'lastname': fields.char("Lastname", required=True),
+    }

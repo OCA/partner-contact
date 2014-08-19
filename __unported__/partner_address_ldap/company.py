@@ -4,7 +4,8 @@
 # Copyright (c) 2010 Camptocamp SA (http://www.camptocamp.com)
 # All Right Reserved
 #
-# Author : Nicolas Bessi (Camptocamp), Thanks to Laurent Lauden for his code adaptation
+# Author : Nicolas Bessi (Camptocamp),
+# Thanks to Laurent Lauden for his code adaptation
 # Active directory Donor: M. Benadiba (Informatique Assistances.fr)
 # Contribution : Joel Grand-Guillaume
 #
@@ -60,7 +61,11 @@ class Res_company(orm.Model):
             size=128,
             help="Example: ldap.camptocamp.com"
         ),
-        'passwd': fields.char('ldap password', size=128, help="Example: Mypassword1234"),
+        'passwd': fields.char(
+            'ldap password',
+            size=128,
+            help="Example: Mypassword1234"
+        ),
         'ldap_active': fields.boolean(
             'Activate ldap link for this company',
             help='If not check nothing will be reported into the ldap'
@@ -69,7 +74,8 @@ class Res_company(orm.Model):
             'Active Directory ?',
             help='The ldap is part of an Active Directory'
         ),
-        'ldap_port': fields.integer('LDAP Port',
-                                    help="If not specified, the default port"
-                                         "(389), will be used")
+        'ldap_port': fields.integer(
+            'LDAP Port',
+            help="If not specified, the default port(389), will be used"
+        ),
     }

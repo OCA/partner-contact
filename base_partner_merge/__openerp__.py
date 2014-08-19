@@ -3,7 +3,9 @@
     'author': 'OpenERP S.A.',
     'category': 'Generic Modules/Base',
     'version': '0.1',
-    'description': """backport module, to be removed when we switch to saas2 on the private servers""",
+    'description': """
+backport module, to be removed when we switch to saas2 on the private servers
+""",
     'depends': [
         'base',
     ],

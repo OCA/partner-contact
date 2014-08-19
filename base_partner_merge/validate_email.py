@@ -42,31 +42,28 @@ except:
 # even when it's not strictly necessary.  This way we don't forget
 # when it is necessary.)
 #
-WSP = r'[ \t]'                                                            # see 2.2.2. Structured Header Field Bodies
-CRLF = r'(?:\r\n)'                                                        # see 2.2.3. Long Header Fields
-NO_WS_CTL = r'\x01-\x08\x0b\x0c\x0f-\x1f\x7f'                             # see 3.2.1. Primitive Tokens
-QUOTED_PAIR = r'(?:\\.)'                                                  # see 3.2.2. Quoted characters
-FWS = r'(?:(?:{0}*{1})?{0}+)'.format(WSP, CRLF)                           # see 3.2.3. Folding white space and comments
-CTEXT = r'[{0}\x21-\x27\x2a-\x5b\x5d-\x7e]'.format(NO_WS_CTL)             # see 3.2.3
-# see 3.2.3 (NB: The RFC includes COMMENT here as well, but that would be circular.)
+WSP = r'[ \t]'
+CRLF = r'(?:\r\n)'
+NO_WS_CTL = r'\x01-\x08\x0b\x0c\x0f-\x1f\x7f'
+QUOTED_PAIR = r'(?:\\.)'
+FWS = r'(?:(?:{0}*{1})?{0}+)'.format(WSP, CRLF)
+CTEXT = r'[{0}\x21-\x27\x2a-\x5b\x5d-\x7e]'.format(NO_WS_CTL)
 CCONTENT = r'(?:{0}|{1})'.format(CTEXT, QUOTED_PAIR)
-COMMENT = r'\((?:{0}?{1})*{0}?\)'.format(FWS, CCONTENT)                   # see 3.2.3
-CFWS = r'(?:{0}?{1})*(?:{0}?{1}|{0})'.format(FWS, COMMENT)                # see 3.2.3
-ATEXT = r'[\w!#$%&\'\*\+\-/=\?\^`\{\|\}~]'                                # see 3.2.4. Atom
-ATOM = r'{0}?{1}+{0}?'.format(CFWS, ATEXT)                                # see 3.2.4
-DOT_ATOM_TEXT = r'{0}+(?:\.{0}+)*'.format(ATEXT)                          # see 3.2.4
-DOT_ATOM = r'{0}?{1}{0}?'.format(CFWS, DOT_ATOM_TEXT)                     # see 3.2.4
-QTEXT = r'[{0}\x21\x23-\x5b\x5d-\x7e]'.format(NO_WS_CTL)                  # see 3.2.5. Quoted strings
-QCONTENT = r'(?:{0}|{1})'.format(QTEXT, QUOTED_PAIR)                      # see 3.2.5
+COMMENT = r'\((?:{0}?{1})*{0}?\)'.format(FWS, CCONTENT)
+CFWS = r'(?:{0}?{1})*(?:{0}?{1}|{0})'.format(FWS, COMMENT)
+ATEXT = r'[\w!#$%&\'\*\+\-/=\?\^`\{\|\}~]'
+ATOM = r'{0}?{1}+{0}?'.format(CFWS, ATEXT)
+DOT_ATOM_TEXT = r'{0}+(?:\.{0}+)*'.format(ATEXT)
+DOT_ATOM = r'{0}?{1}{0}?'.format(CFWS, DOT_ATOM_TEXT)
+QTEXT = r'[{0}\x21\x23-\x5b\x5d-\x7e]'.format(NO_WS_CTL)
+QCONTENT = r'(?:{0}|{1})'.format(QTEXT, QUOTED_PAIR)
 QUOTED_STRING = r'{0}?"(?:{1}?{2})*{1}?"{0}?'.format(CFWS, FWS, QCONTENT)
-LOCAL_PART = r'(?:{0}|{1})'.format(DOT_ATOM, QUOTED_STRING)               # see 3.4.1. Addr-spec specification
-DTEXT = r'[{0}\x21-\x5a\x5e-\x7e]'.format(NO_WS_CTL)                      # see 3.4.1
-DCONTENT = r'(?:{0}|{1})'.format(DTEXT, QUOTED_PAIR)                      # see 3.4.1
-DOMAIN_LITERAL = r'{0}?\[(?:{1}?{2})*{1}?\]{0}?'.format(CFWS, FWS, DCONTENT)  # see 3.4.1
-DOMAIN = r'(?:{0}|{1})'.format(DOT_ATOM, DOMAIN_LITERAL)                  # see 3.4.1
-ADDR_SPEC = r'{0}@{1}'.format(LOCAL_PART, DOMAIN)                         # see 3.4.1
-
-# A valid address will match exactly the 3.4.1 addr-spec.
+LOCAL_PART = r'(?:{0}|{1})'.format(DOT_ATOM, QUOTED_STRING)
+DTEXT = r'[{0}\x21-\x5a\x5e-\x7e]'.format(NO_WS_CTL)
+DCONTENT = r'(?:{0}|{1})'.format(DTEXT, QUOTED_PAIR)
+DOMAIN_LITERAL = r'{0}?\[(?:{1}?{2})*{1}?\]{0}?'.format(CFWS, FWS, DCONTENT)
+DOMAIN = r'(?:{0}|{1})'.format(DOT_ATOM, DOMAIN_LITERAL)
+ADDR_SPEC = r'{0}@{1}'.format(LOCAL_PART, DOMAIN)
 VALID_ADDRESS_REGEXP = '^' + ADDR_SPEC + '$'
 
 
@@ -104,15 +101,11 @@ def validate_email(email, check_mx=False, verify=False):
                     if status != 250:
                         return False
                     break
-                except smtplib.SMTPServerDisconnected:  # Server not permits verify user
+                # Server not permits verify user
+                except smtplib.SMTPServerDisconnected:
                     break
                 except smtplib.SMTPConnectError:
                     continue
     except (AssertionError, ServerError):
         return False
     return True
-
-# import sys
-
-# sys.modules[__name__], sys.modules['validate_email_module'] = validate_email, sys.modules[__name__]
-# from validate_email_module import *

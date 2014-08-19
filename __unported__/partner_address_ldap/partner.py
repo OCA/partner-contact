@@ -4,7 +4,8 @@
 # Copyright (c) 2010 Camptocamp SA (http://www.camptocamp.com)
 # All Right Reserved
 #
-# Author : Nicolas Bessi (Camptocamp), Thanks to Laurent Lauden for his code adaptation
+# Author : Nicolas Bessi (Camptocamp),
+# Thanks to Laurent Lauden for his code adaptation
 # Active directory Donor: M. Benadiba (Informatique Assistances.fr)
 # Contribution : Joel Grand-Guillaume
 #
@@ -39,11 +40,11 @@ class LdapPartner(orm.Model):
     related addresses"""
     _inherit = 'res.partner'
 
-    def unlink(self, cursor, uid, ids, context=None):
+    def unlink(self, cr, uid, ids, context=None):
         context = context or {}
         addr_obj = self.pool.get('res.partner.address')
         if not isinstance(ids, list):
             ids = [ids]
-        addr_ids = addr_obj.search(cursor, uid, [('partner_id', 'in', ids)])
-        addr_obj.unlink(cursor, uid, addr_ids, context=context)
-        return super(LdapPartner, self).unlink(cursor, uid, ids, context=context)
+        addr_ids = addr_obj.search(cr, uid, [('partner_id', 'in', ids)])
+        addr_obj.unlink(cr, uid, addr_ids, context=context)
+        return super(LdapPartner, self).unlink(cr, uid, ids, context=context)

@@ -57,19 +57,25 @@ class BetterZip(orm.Model):
     def onchange_state_id(self, cr, uid, ids, state_id=False, context=None):
         result = {}
         if state_id:
-            state = self.pool['res.country.state'].browse(cr, uid, state_id, context=context)
+            state = self.pool['res.country.state'].browse(
+                cr, uid, state_id, context=context
+            )
             if state:
                 result['value'] = {'country_id': state.country_id.id}
         return result
 
-    def name_search(self, cr, uid, name, args=None, operator='ilike', context=None, limit=100):
+    def name_search(
+            self, cr, uid, name, args=None, operator='ilike', context=None,
+            limit=100):
         if args is None:
             args = []
         if context is None:
             context = {}
         ids = []
         if name:
-            ids = self.search(cr, uid, [('name', 'ilike', name)] + args, limit=limit)
+            ids = self.search(
+                cr, uid, [('name', 'ilike', name)] + args, limit=limit)
         if not ids:
-            ids = self.search(cr, uid, [('city', operator, name)] + args, limit=limit)
+            ids = self.search(
+                cr, uid, [('city', operator, name)] + args, limit=limit)
         return self.name_get(cr, uid, ids, context=context)

@@ -41,6 +41,8 @@ import re
 import wizard
 from openerp import pooler
 from openerp import netsvc
+from openerp.tools.translate import _
+from openerp.tools import ustr
 
 _FORM = '''<?xml version="1.0"?>
 <form string="Export addresses to ldap">
@@ -63,9 +65,11 @@ _FIELDS = {
 }
 
 
-# As this is a bulk batch wizard the performance process was not really taken in account ###
-# The ideal way of doing would be to modify the  connexion settings in order to have a connexion singleton
-# in the file partner.py it will avoid connexion renegotiation for each partner.
+# As this is a bulk batch wizard the performance process was not really
+# taken in account ###
+# The ideal way of doing would be to modify the  connexion settings in
+# order to have a connexion singleton in the file partner.py it will
+# avoid connexion renegotiation for each partner.
 def _action_import_addresses(self, cr, uid, data, context):
     """ This function create or update each addresses present in the database.
     It will also generate an error report"""
@@ -92,23 +96,29 @@ def _action_import_addresses(self, cr, uid, data, context):
         # Validating the mail
         if add.email:
             if re.match(
-                    "^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", add.email) is None or\
+                    "^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\."
+                    "([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", add.email) is None or\
                re.search(u"[éèàêöüäï&]", add.email) is not None:
-                msg = u'Address %s for partner  %s has email that is invalid %s' % (
-                    unicode(vals['firstname']) + ' ' + unicode(vals['lastname']),
+                msg = _(
+                    'Address %s for partner  %s has email that is invalid %s'
+                ) % (
+                    ustr(vals['firstname']) + ' ' + ustr(vals['lastname']),
                     add.partner_id.name,
-                    unicode(add.email)
+                    ustr(add.email)
                 )
                 logger.notifyChannel('ldap export', netsvc.LOG_INFO, msg)
                 error_report.append(msg)
                 vals['email'] = False
         # Validating the Phone
         for key in phone_fields:
-            if (not unicode(vals[key]).startswith('+') or unicode(vals[key]).find("\n") != -1
-                    or re.search(u"[éèàêöüä#&]", unicode(vals[key])) is not None):
+            if (not ustr(vals[key]).startswith('+')
+                    or ustr(vals[key]).find("\n") != -1
+                    or re.search(u"[éèàêöüä#&]", ustr(vals[key])) is not None):
                 vals[key] = False
-                msg = u'Addresse %s for partner  %s has %s that is invalid ' % (
-                    unicode(vals['firstname']) + ' ' + unicode(vals['lastname']),
+                msg = _(
+                    'Address %s for partner  %s has %s that is invalid '
+                ) % (
+                    ustr(vals['firstname']) + ' ' + ustr(vals['lastname']),
                     add.partner_id.name,
                     key
                 )
@@ -116,20 +126,23 @@ def _action_import_addresses(self, cr, uid, data, context):
                 error_report.append(msg)
         # Validating the CN
         if not add.lastname and add.firstname:
-            msg = (u'!!! Address %s for partner %s has no last name and first name that is valid partner name was used'
-                   % (unicode(add.id), add.partner_id.name))
+            msg = (_('!!! Address %s for partner %s has no last name and '
+                     'first name that is valid partner name was used')
+                   % (ustr(add.id), add.partner_id.name))
             logger.notifyChannel('ldap export', netsvc.LOG_INFO, msg)
             error_report.append(msg)
         # We save to LDAP
         add.write(vals, {'init_mode': True})
     # we by pass the encoding errors
-    map(lambda x: unicodedata.normalize("NFKD", x).encode('ascii', 'ignore'), error_report)
+    map(lambda x: unicodedata.normalize("NFKD", x).encode('ascii', 'ignore'),
+        error_report)
     error_report = "\n".join(error_report)
     logger.notifyChannel("MY TOPIC", netsvc.LOG_ERROR, error_report)
     try:
         data = base64.encodestring(error_report.encode())
     except:
-        data = base64.encodestring("Could not generate report file. Please look in the log for details")
+        data = base64.encodestring("Could not generate report file. "
+                                   "Please look in the log for details")
 
     return {'errors': data}
 

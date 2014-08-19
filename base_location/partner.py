@@ -24,17 +24,22 @@ from openerp.osv import orm, fields
 
 class ResPartner(orm.Model):
     _inherit = "res.partner"
-    _columns = {'zip_id': fields.many2one('res.better.zip', 'City/Location')}
+    _columns = {
+        'zip_id': fields.many2one('res.better.zip', 'City/Location'),
+    }
 
     def onchange_zip_id(self, cursor, uid, ids, zip_id, context=None):
         if not zip_id:
             return {}
         if isinstance(zip_id, list):
             zip_id = zip_id[0]
-        bzip = self.pool['res.better.zip'].browse(cursor, uid, zip_id, context=context)
-        return {'value': {'zip': bzip.name,
-                          'city': bzip.city,
-                          'country_id': bzip.country_id.id if bzip.country_id else False,
-                          'state_id': bzip.state_id.id if bzip.state_id else False,
-                          }
-                }
+        bzip_pool = self.pool['res.better.zip']
+        bzip = bzip_pool.browse(cursor, uid, zip_id, context=context)
+        return {
+            'value': {
+                'zip': bzip.name,
+                'city': bzip.city,
+                'country_id': bzip.country_id.id if bzip.country_id else False,
+                'state_id': bzip.state_id.id if bzip.state_id else False,
+            }
+        }

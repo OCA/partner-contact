@@ -29,4 +29,4 @@
 #
 ##############################################################################
 
-import wiz_import_adresses
+from . import wiz_import_adresses
