@@ -1,1 +1,1 @@
-import base_partner_merge
+from . import base_partner_merge
