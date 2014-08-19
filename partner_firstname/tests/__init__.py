@@ -28,7 +28,7 @@
 #
 ##############################################################################
 
-import test_partner_firstname
+from . import test_partner_firstname
 
 checks = [
     test_partner_firstname
