@@ -25,12 +25,16 @@ class MergePartnerAutomatic(orm.TransientModel):
     _inherit = 'base.partner.merge.automatic.wizard'
 
     def _update_values(self, cr, uid, src_partners, dst_partner, context=None):
+        """Make sure we don't forget to update the stored value of
+        invoice field commercial_partner_id
         """
-        Make sure we don't forget to update the stored value of invoice field commercial_partner_id
-        """
-        super(MergePartnerAutomatic, self)._update_values(cr, uid, src_partners, dst_partner, context=context)
+        super(MergePartnerAutomatic, self)._update_values(
+            cr, uid, src_partners, dst_partner, context=context
+        )
 
         invoice_obj = self.pool.get('account.invoice')
-        invoice_ids = invoice_obj.search(cr, uid, [('partner_id', '=', dst_partner.id)], context=context)
+        invoice_ids = invoice_obj.search(
+            cr, uid, [('partner_id', '=', dst_partner.id)], context=context
+        )
         # call write to refresh stored value
         invoice_obj.write(cr, uid, invoice_ids, {}, context=context)

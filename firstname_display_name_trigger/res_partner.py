@@ -42,7 +42,9 @@ class ResPartner(orm.Model):
             if record.parent_id and not record.is_company:
                 name = "%s, %s" % (record.parent_id.name, name)
             if context.get('show_address'):
-                name = name + "\n" + self._display_address(cr, uid, record, without_company=True, context=context)
+                name = name + "\n" + self._display_address(
+                    cr, uid, record, without_company=True, context=context
+                )
                 name = name.replace('\n\n', '\n')
                 name = name.replace('\n\n', '\n')
             if context.get('show_email') and record.email:
@@ -51,14 +53,26 @@ class ResPartner(orm.Model):
         return res
 
     _display_name_store_triggers = {
-        'res.partner': (lambda self, cr, uid, ids, context=None: self.search(cr, uid, [('id', 'child_of', ids)]),
-                        ['parent_id', 'is_company', 'name', 'firstname', 'lastname'], 10)
+        'res.partner': (
+            lambda self, cr, uid, ids, context=None:
+            self.search(cr, uid, [
+                ('id', 'child_of', ids)
+                ]),
+            ['parent_id', 'is_company', 'name', 'firstname', 'lastname'],
+            10
+        )
     }
 
-    # indirection to avoid passing a copy of the overridable method when declaring the function field
-    _display_name = lambda self, *args, **kwargs: self._display_name_compute(*args, **kwargs)
+    # indirection to avoid passing a copy of the overridable method when
+    # declaring the function field
+    _display_name = lambda self, *a, **kw: self._display_name_compute(*a, **kw)
 
     _columns = {
         # extra field to allow ORDER BY to match visible names
-        'display_name': fields.function(_display_name, type='char', string='Name', store=_display_name_store_triggers),
+        'display_name': fields.function(
+            _display_name,
+            type='char',
+            string='Name',
+            store=_display_name_store_triggers
+        ),
     }

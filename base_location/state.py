@@ -25,5 +25,10 @@ from openerp.osv import orm, fields
 class ResCountryState(orm.Model):
 
     _inherit = 'res.country.state'
-
-    _columns = {'better_zip_ids': fields.one2many('res.better.zip', 'state_id', 'Cities')}
+    _columns = {
+        'better_zip_ids': fields.one2many(
+            'res.better.zip',
+            'state_id',
+            'Cities',
+        ),
+    }

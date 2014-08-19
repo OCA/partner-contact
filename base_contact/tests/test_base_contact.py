@@ -35,14 +35,18 @@ class Test_Base_Contact(common.TransactionCase):
         for attr, module, name in [
                 ('main_partner_id', 'base', 'main_partner'),
                 ('bob_contact_id', 'base_contact', 'res_partner_contact1'),
-                ('bob_job1_id', 'base_contact', 'res_partner_contact1_work_position1'),
+                ('bob_job1_id', 'base_contact',
+                    'res_partner_contact1_work_position1'),
                 ('roger_contact_id', 'base', 'res_partner_main2'),
-                ('roger_job2_id', 'base_contact', 'res_partner_main2_position_consultant')]:
+                ('roger_job2_id', 'base_contact',
+                    'res_partner_main2_position_consultant')]:
             r = ModelData.get_object_reference(cr, uid, module, name)
             setattr(self, attr, r[1] if r else False)
 
     def test_00_show_only_standalone_contact(self):
-        """Check that only standalone contact are shown if context explicitly state to not display all positions"""
+        """Check that only standalone contact are shown if context
+        explicitly state to not display all positions
+        """
         cr, uid = self.cr, self.uid
         ctx = {'search_show_all_positions': False}
         partner_ids = self.partner.search(cr, uid, [], context=ctx)
@@ -51,7 +55,9 @@ class Test_Base_Contact(common.TransactionCase):
         self.assertTrue(self.roger_job2_id not in partner_ids)
 
     def test_01_show_all_positions(self):
-        """Check that all contact are show if context is empty or explicitly state to display all positions"""
+        """Check that all contact are show if context is empty or
+        explicitly state to display all positions
+        """
         cr, uid = self.cr, self.uid
 
         partner_ids = self.partner.search(cr, uid, [], context=None)
@@ -64,41 +70,77 @@ class Test_Base_Contact(common.TransactionCase):
         self.assertTrue(self.roger_job2_id in partner_ids)
 
     def test_02_reading_other_contact_one2many_show_all_positions(self):
-        """Check that readonly partner's ``other_contact_ids`` return all values whatever the context"""
+        """Check that readonly partner's ``other_contact_ids`` return
+        all values whatever the context
+        """
         cr, uid = self.cr, self.uid
 
         def read_other_contacts(pid, context=None):
-            return self.partner.read(cr, uid, [pid], ['other_contact_ids'], context=context)[0]['other_contact_ids']
+            return self.partner.read(
+                cr, uid, [pid], ['other_contact_ids'],
+                context=context)[0]['other_contact_ids']
 
         def read_contacts(pid, context=None):
-            return self.partner.read(cr, uid, [pid], ['child_ids'], context=context)[0]['child_ids']
+            return self.partner.read(
+                cr, uid, [pid], ['child_ids'], context=context)[0]['child_ids']
 
         ctx = None
-        self.assertEqual(read_other_contacts(self.bob_contact_id, context=ctx), [self.bob_job1_id])
+        self.assertEqual(
+            read_other_contacts(self.bob_contact_id, context=ctx),
+            [self.bob_job1_id],
+        )
         ctx = {'search_show_all_positions': False}
-        self.assertEqual(read_other_contacts(self.bob_contact_id, context=ctx), [self.bob_job1_id])
+        self.assertEqual(read_other_contacts(
+            self.bob_contact_id, context=ctx),
+            [self.bob_job1_id],
+        )
         ctx = {'search_show_all_positions': True}
-        self.assertEqual(read_other_contacts(self.bob_contact_id, context=ctx), [self.bob_job1_id])
+        self.assertEqual(
+            read_other_contacts(self.bob_contact_id, context=ctx),
+            [self.bob_job1_id],
+        )
 
         ctx = None
-        self.assertTrue(self.bob_job1_id in read_contacts(self.main_partner_id, context=ctx))
+        self.assertIn(
+            self.bob_job1_id,
+            read_contacts(self.main_partner_id, context=ctx),
+        )
         ctx = {'search_show_all_positions': False}
-        self.assertTrue(self.bob_job1_id in read_contacts(self.main_partner_id, context=ctx))
+        self.assertIn(
+            self.bob_job1_id,
+            read_contacts(self.main_partner_id, context=ctx),
+        )
         ctx = {'search_show_all_positions': True}
-        self.assertTrue(self.bob_job1_id in read_contacts(self.main_partner_id, context=ctx))
+        self.assertIn(
+            self.bob_job1_id,
+            read_contacts(self.main_partner_id, context=ctx),
+        )
 
     def test_03_search_match_attached_contacts(self):
-        """Check that searching partner also return partners having attached contacts matching search criteria"""
+        """Check that searching partner also return partners having
+        attached contacts matching search criteria
+        """
         cr, uid = self.cr, self.uid
-        # Bob's contact has one other position which is related to 'Your Company'
-        # so search for all contacts working for 'Your Company' should contain bob position.
-        partner_ids = self.partner.search(cr, uid, [('parent_id', 'ilike', 'Your Company')], context=None)
-        self.assertTrue(self.bob_job1_id in partner_ids)
+        # Bob's contact has one other position which is related to
+        # 'Your Company'
+        # so search for all contacts working for 'Your Company' should contain
+        # bob position.
+        partner_ids = self.partner.search(
+            cr, uid,
+            [('parent_id', 'ilike', 'Your Company')],
+            context=None
+        )
+        self.assertIn(self.bob_job1_id, partner_ids, )
 
-        # but when searching without 'all positions', we should get the position standalone contact instead.
+        # but when searching without 'all positions',
+        # we should get the position standalone contact instead.
         ctx = {'search_show_all_positions': False}
-        partner_ids = self.partner.search(cr, uid, [('parent_id', 'ilike', 'Your Company')], context=ctx)
-        self.assertTrue(self.bob_contact_id in partner_ids)
+        partner_ids = self.partner.search(
+            cr, uid,
+            [('parent_id', 'ilike', 'Your Company')],
+            context=ctx
+        )
+        self.assertIn(self.bob_contact_id, partner_ids, )
 
     def test_04_contact_creation(self):
         """Check that we're begin to create a contact"""
@@ -106,31 +148,54 @@ class Test_Base_Contact(common.TransactionCase):
 
         # Create a contact using only name
         new_contact_id = self.partner.create(cr, uid, {'name': 'Bob Egnops'})
-        self.assertEqual(self.partner.browse(cr, uid, new_contact_id).contact_type, 'standalone')
+        self.assertEqual(
+            self.partner.browse(cr, uid, new_contact_id).contact_type,
+            'standalone',
+        )
 
         # Create a contact with only contact_id
-        new_contact_id = self.partner.create(cr, uid, {'contact_id': self.bob_contact_id})
+        new_contact_id = self.partner.create(
+            cr, uid, {'contact_id': self.bob_contact_id}
+        )
         new_contact = self.partner.browse(cr, uid, new_contact_id)
         self.assertEqual(new_contact.name, 'Bob Egnops')
         self.assertEqual(new_contact.contact_type, 'attached')
 
         # Create a contact with both contact_id and name;
         # contact's name should override provided value in that case
-        new_contact_id = self.partner.create(cr, uid, {'contact_id': self.bob_contact_id, 'name': 'Rob Egnops'})
-        self.assertEqual(self.partner.browse(cr, uid, new_contact_id).name, 'Bob Egnops')
+        new_contact_id = self.partner.create(
+            cr, uid, {'contact_id': self.bob_contact_id, 'name': 'Rob Egnops'}
+        )
+        self.assertEqual(
+            self.partner.browse(cr, uid, new_contact_id).name,
+            'Bob Egnops'
+        )
 
         # Reset contact to standalone
         self.partner.write(cr, uid, [new_contact_id], {'contact_id': False})
-        self.assertEqual(self.partner.browse(cr, uid, new_contact_id).contact_type, 'standalone')
+        self.assertEqual(
+            self.partner.browse(cr, uid, new_contact_id).contact_type,
+            'standalone',
+        )
 
     def test_05_contact_fields_sync(self):
-        """Check that contact's fields are correctly synced between parent contact or related contacts"""
+        """Check that contact's fields are correctly synced between
+        parent contact or related contacts
+        """
         cr, uid = self.cr, self.uid
 
         # Test DOWNSTREAM sync
-        self.partner.write(cr, uid, [self.bob_contact_id], {'name': 'Rob Egnops'})
-        self.assertEqual(self.partner.browse(cr, uid, self.bob_job1_id).name, 'Rob Egnops')
+        self.partner.write(
+            cr, uid, [self.bob_contact_id], {'name': 'Rob Egnops'}
+        )
+        self.assertEqual(
+            self.partner.browse(cr, uid, self.bob_job1_id).name,
+            'Rob Egnops',
+        )
 
         # Test UPSTREAM sync
         self.partner.write(cr, uid, [self.bob_job1_id], {'name': 'Bob Egnops'})
-        self.assertEqual(self.partner.browse(cr, uid, self.bob_contact_id).name, 'Bob Egnops')
+        self.assertEqual(
+            self.partner.browse(cr, uid, self.bob_contact_id).name,
+            'Bob Egnops',
+        )

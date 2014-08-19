@@ -4,7 +4,8 @@
 # Copyright (c) 2010 Camptocamp SA (http://www.camptocamp.com)
 # All Right Reserved
 #
-# Author : Nicolas Bessi (Camptocamp), Thanks to Laurent Lauden for his code adaptation
+# Author : Nicolas Bessi (Camptocamp),
+# Thanks to Laurent Lauden for his code adaptation
 # Active directory Donor: M. Benadiba (Informatique Assistances.fr)
 # Contribution : Joel Grand-Guillaume
 #
@@ -59,7 +60,8 @@ The module requires the python-ldap library
 Unicode support --> As python ldap does not support unicode we try to decode
 string if it fails we transliterate values.
 Active Directory Support for Windows server 2003, try 2008 at your own risk
-(AD support not tested for Version 6 of OpenERP looking for active dir test infra)
+(AD support not tested for Version 6 of OpenERP looking for active dir test
+infra)
 
 """,
     "data": [

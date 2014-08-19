@@ -4,7 +4,8 @@
 # Copyright (c) 2010-2011 Camptocamp SA (http://www.camptocamp.com)
 # All Right Reserved
 #
-# Author : Nicolas Bessi (Camptocamp), Thanks to Laurent Lauden for his code adaptation
+# Author : Nicolas Bessi (Camptocamp),
+# Thanks to Laurent Lauden for his code adaptation
 # Active directory Donor: M. Benadiba (Informatique Assistances.fr)
 # Contribution : Joel Grand-Guillaume
 #
@@ -39,7 +40,8 @@ try:
     import ldap
     import ldap.modlist
 except:
-    print('python ldap not installed please install it in order to use this module')
+    print('python ldap not installed please install it in order to use this '
+          'module')
 
 
 from openerp.osv import orm, fields
@@ -49,10 +51,15 @@ logger = netsvc.Logger()
 
 
 class LdapConnMApper(object):
-    """LdapConnMApper: push specific fields from the Terp Partner_contacts to the
-        LDAP schema inetOrgPerson. Ldap bind options are stored in company.r"""
+    """LdapConnMApper: push specific fields from the Terp
+    Partner_contacts to the LDAP schema inetOrgPerson. Ldap bind options
+    are stored in company.
+    """
+
     def __init__(self, cursor, uid, osv_obj, context=None):
-        """Initialize connexion to ldap by using parameter set in the current user compagny"""
+        """Initialize connexion to ldap by using parameter set in the
+        current user compagny
+        """
         logger.notifyChannel("MY TOPIC", netsvc.LOG_DEBUG,
                              _('Initalize LDAP CONN'))
         self.USER_DN = ''
@@ -64,11 +71,10 @@ class LdapConnMApper(object):
         self.ACTIVDIR = False
 
         # Reading ldap pref
-        user = osv_obj.pool.get('res.users').browse(cursor, uid, uid, context=context)
-        company = osv_obj.pool.get('res.company').browse(cursor,
-                                                         uid,
-                                                         user.company_id.id,
-                                                         context=context)
+        user = osv_obj.pool.get('res.users').browse(
+            cursor, uid, uid, context=context
+        )
+        company = user.company_id
         self.USER_DN = company.base_dn
         self.CONTACT_DN = company.contact_dn
         self.LDAP_SERVER = company.ldap_server
@@ -77,17 +83,28 @@ class LdapConnMApper(object):
         self.OU = company.ounit
         self.ACTIVDIR = company.is_activedir
 
-        mand = (self.USER_DN, self.CONTACT_DN, self.LDAP_SERVER, self.PASS, self.OU)
+        mand = (
+            self.USER_DN,
+            self.CONTACT_DN,
+            self.LDAP_SERVER,
+            self.PASS, self.OU
+        )
         if company.ldap_active:
             for param in mand:
                 if not param:
-                    raise orm.except_orm(_('Warning !'),
-                                         _('An LDAP parameter is missing for company %s') % (company.name, ))
+                    raise orm.except_orm(
+                        _('Warning !'),
+                        _('An LDAP parameter is missing for company %s') %
+                        (company.name, )
+                    )
 
     def get_connexion(self):
         """create a new ldap connexion"""
-        logger.notifyChannel("LDAP Address", netsvc.LOG_DEBUG,
-                             _('connecting to server ldap %s') % (self.LDAP_SERVER, ))
+        logger.notifyChannel(
+            "LDAP Address",
+            netsvc.LOG_DEBUG,
+            _('connecting to server ldap %s') % (self.LDAP_SERVER, )
+        )
         if self.PORT:
             self.connexion = ldap.open(self.LDAP_SERVER, self.PORT)
         else:
@@ -104,19 +121,24 @@ class LDAPAddress(orm.Model):
     def init(self, cr):
         logger = netsvc.Logger()
         try:
-            logger.notifyChannel(_('LDAP address init'),
-                                 netsvc.LOG_INFO,
-                                 _('try to ALTER TABLE res_partner_address RENAME '
-                                   'column name to lastname ;'))
-            cr.execute('ALTER TABLE res_partner_address RENAME column name to lastname ;')
+            logger.notifyChannel(
+                _('LDAP address init'),
+                netsvc.LOG_INFO,
+                _('try to ALTER TABLE res_partner_address RENAME '
+                  'column name to lastname ;'))
+            cr.execute(
+                'ALTER TABLE res_partner_address'
+                'RENAME column name to lastname ;'
+            )
 
         except Exception:
             cr.rollback()
-            logger.notifyChannel(_('LDAP address init'),
-                                 netsvc.LOG_INFO,
-                                 _('Warning ! impossible to rename column name'
-                                   ' into lastname, this is probabely aleready'
-                                   '  done or does not exist'))
+            logger.notifyChannel(
+                _('LDAP address init'),
+                netsvc.LOG_INFO,
+                _('Warning ! impossible to rename column name into lastname, '
+                  'this is probably already done or does not exist')
+            )
 
     def _compute_name(self, firstname, lastname):
         firstname = firstname or u''
@@ -137,13 +159,16 @@ class LDAPAddress(orm.Model):
         return dict(res)
 
     # TODO get the new version of name search not vulnerable to sql injections
-    # def name_search(self, cursor, user, name, args=None, operator='ilike', context=None, limit=100):
+    # def name_search(
+    #         self, cursor, user, name, args=None, operator='ilike',
+    #         context=None, limit=100):
     #     if not context: context = {}
     #     prep_name = '.*%s.*' %(name)
-    #     cursor.execute(("select id from res_partner_address where"
-    #                     " (to_ascii(convert( lastname, 'UTF8', 'LATIN1'),'LATIN-1')  ~* '%s'"
-    #                     " or to_ascii(convert( firstname, 'UTF8', 'LATIN1'),'LATIN-1')  ~* '%s')"
-    #                     " limit %s") % (prep_name, prep_name, limit))
+    #     cursor.execute(("""
+    # select id from res_partner_address where
+    # (to_ascii(convert( lastname, 'UTF8', 'LATIN1'),'LATIN-1')  ~* '%s'
+    #  or to_ascii(convert( firstname, 'UTF8', 'LATIN1'),'LATIN-1')  ~* '%s')
+    #  limit %s""") % (prep_name, prep_name, limit))
     #     res = cursor.fetchall()
     #     if res:
     #         res = [x[0] for x in res]
@@ -153,8 +178,10 @@ class LDAPAddress(orm.Model):
     #     partner_obj=self.pool.get('res.partner')
     #     part_len = len(res)-limit
     #     if part_len > 0:
-    #         partner_res = partner_obj.search(cursor, user, [('name', 'ilike', name)],
-    #                                          limit=part_len, context=context)
+    #         partner_res = partner_obj.search(
+    #             cursor, user, [('name', 'ilike', name)],
+    #             limit=part_len, context=context
+    #         )
     #         for p in partner_res:
     #             addresses = partner_obj.browse(cursor, user, p).address
     #             # Take each contact and add it to
@@ -165,15 +192,22 @@ class LDAPAddress(orm.Model):
     _columns = {
         'firstname': fields.char('First name', size=256),
         'lastname': fields.char('Last name', size=256),
-        'name': fields.function(_name_get_fnc, method=True,
-                                type="char", size=512,
-                                store=True, string='Contact Name',
-                                help='Name generated from the first name and last name',
-                                nodrop=True),
+        'name': fields.function(
+            _name_get_fnc,
+            method=True,
+            type="char",
+            size=512,
+            store=True,
+            string='Contact Name',
+            help='Name generated from the first name and last name',
+            nodrop=True
+        ),
         'private_phone': fields.char('Private phone', size=128),
     }
 
-    def create(self, cursor, uid, vals, context={}):
+    def create(self, cursor, uid, vals, context=None):
+        if context is None:
+            context = {}
         self.getconn(cursor, uid, {})
         ids = None
         self.validate_entries(vals, cursor, uid, ids)
@@ -234,7 +268,8 @@ class LDAPAddress(orm.Model):
         mobile = vals.get('mobile', False)
         private_phone = vals.get('private_phone', False)
         if email:
-            if re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$",
+            if re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\."
+                        "([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$",
                         email) is None:
                 raise orm.except_orm(_('Warning !'),
                                      _('Please enter a valid e-mail'))
@@ -244,11 +279,13 @@ class LDAPAddress(orm.Model):
             phone_number = phone_tuple[1]
             if phone_number:
                 if not phone_number.startswith('+'):
-                    raise orm.except_orm(_('Warning !'),
-                                         _('Please enter a valid phone number in %s'
-                                           ' international format (i.e. leading +)') % phone_tuple[0])
+                    raise orm.except_orm(
+                        _('Warning !'),
+                        _('Please enter a valid phone number in %s'
+                          ' international format (i.e. leading +)')
+                        % phone_tuple[0])
 
-    def getVals(self, att_name, key, vals, dico, uid, ids, cursor, context=None):
+    def getVals(self, att_name, key, vals, dico, uid, ids, cr, context=None):
         """map to values to dict"""
         if not context:
             context = {}
@@ -258,7 +295,7 @@ class LDAPAddress(orm.Model):
         else:
             if context.get('init_mode'):
                 return False
-            tmp = self.read(cursor, uid, ids, [key], context={})
+            tmp = self.read(cr, uid, ids, [key], context={})
             if tmp.get(key, False):
                 dico[att_name] = tmp[key]
 
@@ -267,7 +304,9 @@ class LDAPAddress(orm.Model):
             try:
                 return in_buf.encode()
             except Exception:
-                return unicodedata.normalize("NFKD", in_buf).encode('ascii', 'ignore')
+                return unicodedata.normalize("NFKD", in_buf).encode(
+                    'ascii', 'ignore'
+                )
         return in_buf
 
     def unUnicodize(self, indict):
@@ -293,12 +332,12 @@ class LDAPAddress(orm.Model):
             if not vals.get(val):
                 vals[val] = previousvalue[val]
 
-    def mappLdapObject(self, id, vals, cursor, uid, context):
+    def mappLdapObject(self, id, vals, cr, uid, context):
         """Mapp ResPArtner adress to moddlist"""
-        self.addNeededFields(id, vals, cursor, uid)
-        conn = self.getconn(cursor, uid, {})
+        self.addNeededFields(id, vals, cr, uid)
+        conn = self.getconn(cr, uid, {})
         partner_obj = self.pool.get('res.partner')
-        part_name = partner_obj.browse(cursor, uid, vals['partner_id']).name
+        part_name = partner_obj.browse(cr, uid, vals['partner_id']).name
         vals['partner'] = part_name
         name = self._compute_name(vals.get('firstname'), vals.get('lastname'))
         if name:
@@ -317,16 +356,22 @@ class LDAPAddress(orm.Model):
         if not vals.get('street2'):
             vals['street2'] = u''
         street_key = 'street'
-        if self.getconn(cursor, uid, {}).ACTIVDIR:
+        if self.getconn(cr, uid, {}).ACTIVDIR:
             # ENTERING THE M$ Realm and it is weird
             # We manage the address
             street_key = 'streetAddress'
             contact_obj[street_key] = vals['street'] + "\r\n" + vals['street2']
             # we modifiy the class
-            contact_obj['objectclass'] = ['top', 'person', 'organizationalPerson', 'inetOrgPerson', 'user']
+            contact_obj['objectclass'] = [
+                'top',
+                'person',
+                'organizationalPerson',
+                'inetOrgPerson',
+                'user',
+            ]
             # we handle the country
             if vals.get('country_id'):
-                country = self.browse(cursor, uid, id, context=context).country_id
+                country = self.browse(cr, uid, id, context=context).country_id
                 if country:
                     vals['country_id'] = country.name
                     vals['c'] = country.code
@@ -334,39 +379,71 @@ class LDAPAddress(orm.Model):
                     vals['country_id'] = False
                     vals['c'] = False
             if vals.get('country_id', False):
-                self.getVals('co', 'country_id', vals, contact_obj, uid, id, cursor, context)
-                self.getVals('c', 'c', vals, contact_obj, uid, id, cursor, context)
+                self.getVals(
+                    'co', 'country_id', vals, contact_obj, uid, id, cr,
+                    context
+                )
+                self.getVals('c', 'c', vals, contact_obj, uid, id, cr, context)
             # we compute the display name
             vals['display'] = '%s %s' % (vals['partner'], contact_obj['cn'][0])
             # we get the title
-            if self.browse(cursor, uid, id).function:
-                contact_obj['description'] = self.browse(cursor, uid, id).function.name
+            if self.browse(cr, uid, id).function:
+                contact_obj['description'] = self.browse(
+                    cr, uid, id).function.name
             # we replace carriage return
             if vals.get('comment', False):
                 vals['comment'] = vals['comment'].replace("\n", "\r\n")
             # Active directory specific fields
-            self.getVals('company', 'partner', vals, contact_obj, uid, id, cursor, context)
-            self.getVals('info', 'comment', vals, contact_obj, uid, id, cursor, context)
-            self.getVals('displayName', 'partner', vals, contact_obj, uid, id, cursor, context)
+            self.getVals(
+                'company', 'partner', vals, contact_obj, uid, id, cr, context
+            )
+            self.getVals(
+                'info', 'comment', vals, contact_obj, uid, id, cr, context
+            )
+            self.getVals(
+                'displayName', 'partner', vals, contact_obj, uid, id, cr,
+                context
+            )
             # Web site management
-            if self.browse(cursor, uid, id).partner_id.website:
-                vals['website'] = self.browse(cursor, uid, id).partner_id.website
-                self.getVals('wWWHomePage', 'website', vals, contact_obj, uid, id, cursor, context)
+            if self.browse(cr, uid, id).partner_id.website:
+                vals['website'] = self.browse(cr, uid, id).partner_id.website
+                self.getVals(
+                    'wWWHomePage', 'website', vals, contact_obj, uid, id, cr,
+                    context
+                )
                 del(vals['website'])
-            self.getVals('title', 'title', vals, contact_obj, uid, id, cursor, context)
+            self.getVals(
+                'title', 'title', vals, contact_obj, uid, id, cr, context
+            )
         else:
             contact_obj[street_key] = vals['street'] + u"\n" + vals['street2']
-            self.getVals('o', 'partner', vals, contact_obj, uid, id, cursor, context)
+            self.getVals(
+                'o', 'partner', vals, contact_obj, uid, id, cr, context
+            )
 
         # Common attributes
-        self.getVals('givenName', 'firstname', vals, contact_obj, uid, id, cursor, context)
-        self.getVals('mail', 'email', vals, contact_obj, uid, id, cursor, context)
-        self.getVals('telephoneNumber', 'phone', vals, contact_obj, uid, id, cursor, context)
-        self.getVals('l', 'city', vals, contact_obj, uid, id, cursor, context)
-        self.getVals('facsimileTelephoneNumber', 'fax', vals, contact_obj, uid, id, cursor, context)
-        self.getVals('mobile', 'mobile', vals, contact_obj, uid, id, cursor, context)
-        self.getVals('homePhone', 'private_phone', vals, contact_obj, uid, id, cursor, context)
-        self.getVals('postalCode', 'zip', vals, contact_obj, uid, id, cursor, context)
+        self.getVals(
+            'givenName', 'firstname', vals, contact_obj, uid, id, cr, context
+        )
+        self.getVals('mail', 'email', vals, contact_obj, uid, id, cr, context)
+        self.getVals(
+            'telephoneNumber', 'phone', vals, contact_obj, uid, id, cr, context
+        )
+        self.getVals('l', 'city', vals, contact_obj, uid, id, cr, context)
+        self.getVals(
+            'facsimileTelephoneNumber', 'fax', vals, contact_obj, uid, id, cr,
+            context
+        )
+        self.getVals(
+            'mobile', 'mobile', vals, contact_obj, uid, id, cr, context
+        )
+        self.getVals(
+            'homePhone', 'private_phone', vals, contact_obj, uid, id, cr,
+            context
+        )
+        self.getVals(
+            'postalCode', 'zip', vals, contact_obj, uid, id, cr, context
+        )
         self.unUnicodize(contact_obj)
         return contact_obj
 
@@ -376,11 +453,18 @@ class LDAPAddress(orm.Model):
         conn = self.connectToLdap(cursor, uid, context=context)
         try:
             if self.getconn(cursor, uid, context).ACTIVDIR:
-                conn.connexion.add_s("CN=%s,OU=%s,%s" % (contact_obj['cn'][0], conn.OU, conn.CONTACT_DN),
-                                     ldap.modlist.addModlist(contact_obj))
+                conn.connexion.add_s(
+                    "CN=%s,OU=%s,%s" % (contact_obj['cn'][0],
+                                        conn.OU,
+                                        conn.CONTACT_DN),
+                    ldap.modlist.addModlist(contact_obj)
+                )
             else:
-                conn.connexion.add_s("uid=terp_%s,OU=%s,%s" % (str(id), conn.OU, conn.CONTACT_DN),
-                                     ldap.modlist.addModlist(contact_obj))
+                conn.connexion.add_s(
+                    "uid=terp_%s,OU=%s,%s" % (str(id),
+                                              conn.OU,
+                                              conn.CONTACT_DN),
+                    ldap.modlist.addModlist(contact_obj))
         except Exception:
             raise
         conn.connexion.unbind_s()
@@ -403,7 +487,10 @@ class LDAPAddress(orm.Model):
                     val = val[0]
                 modlist.append((ldap.MOD_REPLACE, key, val))
         else:
-            modlist = ldap.modlist.modifyModlist(old_contatc_obj[1], contact_obj)
+            modlist = ldap.modlist.modifyModlist(
+                old_contatc_obj[1],
+                contact_obj
+            )
         try:
             conn.connexion.modify_s(old_contatc_obj[0], modlist)
             conn.connexion.unbind_s()
@@ -429,18 +516,20 @@ class LDAPAddress(orm.Model):
             raise
 
     def getLdapContact(self, conn, id):
-        result = conn.connexion.search_ext_s("ou=%s, %s" % (conn.OU, conn.CONTACT_DN),
-                                             ldap.SCOPE_SUBTREE,
-                                             "(&(objectclass=*)(uid=terp_" + str(id) + "))")
+        result = conn.connexion.search_ext_s(
+            "ou=%s, %s" % (conn.OU, conn.CONTACT_DN),
+            ldap.SCOPE_SUBTREE,
+            "(&(objectclass=*)(uid=terp_" + str(id) + "))"
+        )
         if not result:
             raise ldap.NO_SUCH_OBJECT
         return result[0]
 
     def ldaplinkactive(self, cursor, uid, context=None):
         """Check if ldap is activated for this company"""
-        user = self.pool.get('res.users').browse(cursor, uid, uid, context=context)
-        company = self.pool.get('res.company').browse(cursor, uid, user.company_id.id, context=context)
-        return company.ldap_active
+        users_pool = self.pool['res.users']
+        user = users_pool.browse(cursor, uid, uid, context=context)
+        return user.company_id.ldap_active
 
     def getconn(self, cursor, uid, context=None):
         """LdapConnMApper"""
