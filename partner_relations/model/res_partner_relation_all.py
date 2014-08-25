@@ -64,15 +64,19 @@ class ResPartnerRelationAll(Model):
 
     _columns = {
         'record_type': fields.selection(
-            ResPartnerRelationTypeSelection._RECORD_TYPES, 'Record type'),
+            ResPartnerRelationTypeSelection._RECORD_TYPES, 'Record type',
+            readonly=True),
         'relation_id': fields.many2one(
-            'res.partner.relation', 'Relation'),
+            'res.partner.relation', 'Relation', readonly=True),
         'type_id': fields.many2one(
-            'res.partner.relation.type', 'Relation type'),
+            'res.partner.relation.type', 'Relation type', readonly=True),
         'type_selection_id': fields.many2one(
-            'res.partner.relation.type.selection', 'Relation type'),
-        'this_partner_id': fields.many2one('res.partner', 'Current partner'),
-        'other_partner_id': fields.many2one('res.partner', 'Other partner'),
+            'res.partner.relation.type.selection', 'Relation type',
+            readonly=True),
+        'this_partner_id': fields.many2one(
+            'res.partner', 'Current partner', readonly=True),
+        'other_partner_id': fields.many2one(
+            'res.partner', 'Other partner', readonly=True),
         'date_start': fields.date('Starting date'),
         'date_end': fields.date('Ending date'),
         'active': fields.boolean('Active'),
@@ -86,3 +90,13 @@ class ResPartnerRelationAll(Model):
                 this.other_partner_id.name,
             ))
             for this in self.browse(cr, uid, ids, context=context)])
+
+    def write(self, cr, uid, ids, vals, context=None):
+        '''divert non-problematic writes to underlying table'''
+        return self.pool['res.partner.relation'].write(
+            cr, uid,
+            [i / 10 for i in ids],
+            dict([(k, vals[k])
+                  for k in vals
+                  if not self._columns[k].readonly]),
+            context=context)
