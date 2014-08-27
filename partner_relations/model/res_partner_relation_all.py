@@ -30,8 +30,27 @@ class ResPartnerRelationAll(Model):
     _name = 'res.partner.relation.all'
     _description = 'All (non-inverse + inverse) relations between partners'
 
+    _additional_view_fields = []
+    '''append to this list if you added fields to res_partner_relation that
+    you need in this model and related fields are not adequate (ie for sorting)
+    You must use the same name as in res_partner_relation.
+    Don't overwrite this list in your declatarion but append in _auto_init:
+
+    def _auto_init(self, cr, context=None):
+        self._additional_view_fields.append('my_field')
+        return super(ResPartnerRelationAll, self)._auto_init(
+            cr, context=context)
+
+    _columns = {
+        'my_field': ....
+    }
+    '''
+
     def _auto_init(self, cr, context=None):
         drop_view_if_exists(cr, self._table)
+        additional_view_fields = ','.join(self._additional_view_fields)
+        additional_view_fields = (',' + additional_view_fields)\
+            if additional_view_fields else ''
         cr.execute(
             '''create or replace view %s as
             select
@@ -45,6 +64,7 @@ class ResPartnerRelationAll(Model):
                 date_end,
                 active,
                 type_id * 10 as type_selection_id
+                %s
             from res_partner_relation
             union select
                 id * 10 + 1,
@@ -57,7 +77,13 @@ class ResPartnerRelationAll(Model):
                 date_end,
                 active,
                 type_id * 10 + 1
-             from res_partner_relation''' % self._table)
+                %s
+             from res_partner_relation''' % (
+                 self._table,
+                 additional_view_fields,
+                 additional_view_fields,
+             )
+        )
 
         return super(ResPartnerRelationAll, self)._auto_init(
             cr, context=context)
