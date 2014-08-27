@@ -78,11 +78,11 @@ class ResPartnerRelationAll(Model):
                 active,
                 type_id * 10 + 1
                 %s
-             from res_partner_relation''' % (
-                 self._table,
-                 additional_view_fields,
-                 additional_view_fields,
-             )
+            from res_partner_relation''' % (
+                self._table,
+                additional_view_fields,
+                additional_view_fields,
+            )
         )
 
         return super(ResPartnerRelationAll, self)._auto_init(
