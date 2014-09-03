@@ -69,6 +69,11 @@ msgid "Has relation with"
 msgstr "Heeft koppeling met"
 
 #. module: partner_relations
+#: field:res.partner,search_relation_partner_category_id:0
+msgid "Has relation with a partner in category"
+msgstr "Heeft koppeling met relatie van de categorie"
+
+#. module: partner_relations
 #: field:res.partner.relation.type,name_inverse:0
 msgid "Inverse name"
 msgstr "Inverse naam"
@@ -82,17 +87,17 @@ msgstr "Inverse type"
 #. module: partner_relations
 #: field:res.partner.relation,left_partner_id:0
 msgid "Left partner"
-msgstr "Linker relatie"
+msgstr "Linkerrelatie"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,partner_category_left:0
 msgid "Left partner category"
-msgstr "Linker relatielabel"
+msgstr "Linker-relatielabel"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,contact_type_left:0
 msgid "Left partner type"
-msgstr "Linker relatietype"
+msgstr "Linker-relatietype"
 
 #. module: partner_relations
 #: view:res.partner.relation.type:0
@@ -121,6 +126,12 @@ msgid "Other record's partner type"
 msgstr "Type andere record"
 
 #. module: partner_relations
+#: code:addons/partner_relations/model/res_partner_relation.py:259
+#, python-format
+msgid "Overlapping relation"
+msgstr "Overlappende koppeling"
+
+#. module: partner_relations
 #: model:ir.model,name:partner_relations.model_res_partner_relation_type
 #: model:ir.model,name:partner_relations.model_res_partner_relation_type_inverse
 msgid "Parter relation type"
@@ -135,7 +146,7 @@ msgstr "Relatie"
 #. module: partner_relations
 #: model:ir.model,name:partner_relations.model_res_partner_category
 msgid "Partner Categories"
-msgstr "Relatie Categorieën"
+msgstr "Relatielabels"
 
 #. module: partner_relations
 #: model:ir.model,name:partner_relations.model_res_partner_relation
@@ -169,7 +180,7 @@ msgstr "Koppeling"
 #. module: partner_relations
 #: field:res.partner.relation,is_relation_expired:0
 msgid "Relation is expired"
-msgstr "Koppeling is afgelopen"
+msgstr "Koppeling is beëindigd"
 
 #. module: partner_relations
 #: field:res.partner.relation,is_relation_future:0
@@ -195,17 +206,17 @@ msgstr "Koppelingen"
 #. module: partner_relations
 #: field:res.partner.relation,right_partner_id:0
 msgid "Right partner"
-msgstr "Rechter relatie"
+msgstr "Rechterrelatie"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,partner_category_right:0
 msgid "Right partner category"
-msgstr "Rechter relatielabel"
+msgstr "Rechter-relatielabel"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,contact_type_right:0
 msgid "Right partner type"
-msgstr "Rechter relatietype"
+msgstr "Rechter-relatietype"
 
 #. module: partner_relations
 #: view:res.partner.relation.type:0
@@ -221,17 +232,23 @@ msgstr "Begindatum"
 #. module: partner_relations
 #: constraint:res.partner.relation:0
 msgid "The left partner is not applicable for this relation type."
-msgstr "De linker relatie is niet geldig voor dit type koppeling."
+msgstr "De linkerrelatie is niet geldig voor dit type koppeling."
 
 #. module: partner_relations
 #: constraint:res.partner.relation:0
 msgid "The right partner is not applicable for this relation type."
-msgstr "De rechter relatie is niet geldig voor dit type koppeling."
+msgstr "De rechterrelatie is niet geldig voor dit type koppeling."
 
 #. module: partner_relations
 #: constraint:res.partner.relation:0
 msgid "The starting date cannot be after the ending date."
 msgstr "De begindatum mag niet na de einddatum liggen."
+
+#. module: partner_relations
+#: code:addons/partner_relations/model/res_partner_relation.py:260
+#, python-format
+msgid "There is already a similar relation with overlapping dates"
+msgstr "Er is al een soortgelijke, overlappende koppeling."
 
 #. module: partner_relations
 #: field:res.partner.relation,type_id:0

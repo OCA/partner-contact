@@ -19,7 +19,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv.orm import Model
+from openerp.osv.orm import Model, except_orm
 from openerp.osv import fields
 from openerp.tools.translate import _
 
@@ -241,17 +241,24 @@ class ResPartnerRelation(Model):
         for this in self.browse(cr, uid, ids, context=context):
             if not this.active:
                 continue
-            if self.search(
-                    cr, uid,
-                    [
-                        ('type_id', '=', this.type_id.id),
-                        ('active', '=', True),
-                        ('id', '!=', this.id),
-                        ('left_partner_id', '=', this.left_partner_id.id),
-                        ('right_partner_id', '=', this.right_partner_id.id),
-                    ],
-                    context=context):
-                return False
+            domain = [
+                ('type_id', '=', this.type_id.id),
+                ('active', '=', True),
+                ('id', '!=', this.id),
+                ('left_partner_id', '=', this.left_partner_id.id),
+                ('right_partner_id', '=', this.right_partner_id.id),
+                ]
+            if this.date_start:
+                domain += ['|', ('date_end', '=', False),
+                                ('date_end', '>=', this.date_start)]
+            if this.date_end:
+                domain += ['|', ('date_start', '=', False),
+                                ('date_start', '<=', this.date_end)]
+            if self.search(cr, uid, domain, context=context):
+                raise except_orm(
+                    _('Overlapping relation'),
+                    _('There is already a similar relation '
+                      'with overlapping dates'))
 
         return True
 
