@@ -34,7 +34,6 @@
         <field name="name">res.partner.form.contact</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
-        <field name="type">form</field>
         <field name="arch" type="xml">
             <field name="is_company" position="after">
                 <field name="contact_type" invisible="1"/>
