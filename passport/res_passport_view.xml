@@ -5,7 +5,6 @@
     <record model="ir.ui.view" id="passport_tree_view">
       <field name="name">Passport Tree View</field>
       <field name="model">res.passport</field>
-      <field name="type">tree</field>
       <field name="arch" type="xml">
         <tree string="PassportTree" version="7.0">
            <field name="country_id"/>
@@ -20,7 +19,6 @@
     <record model="ir.ui.view" id="passport_form_view">
       <field name="name">Passport Form View</field>
       <field name="model">res.passport</field>
-      <field name="type">form</field>
       <field name="arch" type="xml">
         <form string="PassportForm" version="7.0" >
            <group col="4">
