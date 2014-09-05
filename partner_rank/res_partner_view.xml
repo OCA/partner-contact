@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <!--Add rank field-->
+    <record id="view_partner_rank_form" model="ir.ui.view">
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <field name="website" position="after">
+          <field name="rank_id"/>
+        </field>
+      </field>
+    </record>
+
+    <!--Add group for rank field -->
+    <record id="view_res_partner__rank_filter" model="ir.ui.view">
+      <field name="name">res.partner..rank.select</field>
+      <field name="inherit_id" ref="base.view_res_partner_filter" />
+      <field name="model">res.partner</field>
+      <field name="arch" type="xml">
+        <data>
+          <filter string="Country" position="after">
+            <filter string="Rank" context="{'group_by': 'rank_id'}"/>
+          </filter>
+        </data>
+      </field>
+    </record>
+
+  </data>
+</openerp>
