@@ -7,7 +7,7 @@
             <field name="name">Partner Notify on Creation</field>
             <field name="email_from">${object.company_id.email}</field>
             <field name="subject">New partner</field>
-            <field name="email_to">${(object.partner_id.user_id.email or '')|safe}</field>
+            <field name="email_to">${(object.user_id.email or '')|safe}</field>
             <field name="model_id" ref="base.model_res_partner"/>
             <field name="auto_delete" eval="True"/>
             <field name="lang"></field>
