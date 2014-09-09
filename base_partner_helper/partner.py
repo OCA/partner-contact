@@ -63,5 +63,5 @@ class ResPartner(orm.Model):
         elif street <= max_size:
             return [street] + split_char(street2, output_number - 1, max_size)
         else:
-            return split_char('%s %s' % (street, street2), output_number, max_size)
-
+            return split_char(
+                '%s %s' % (street, street2), output_number, max_size)
