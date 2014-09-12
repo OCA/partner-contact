@@ -26,15 +26,23 @@ class ResUsers(orm.Model):
     _inherit = 'res.users'
 
     def copy_data(self, cr, uid, _id, default=None, context=None):
-        """
-        Avoid to replicate the firstname into the name when duplicating a user
+        """Avoid to replicate the firstname into the name when
+         duplicating a user
         """
         default = default or {}
         if not default.get('lastname'):
             default = default.copy()
             default['lastname'] = (
-                _('%s (copy)') % self.read(cr, uid, [_id], ['lastname'], context=context)[0]['lastname']
+                _('%s (copy)') % self.read(
+                    cr,
+                    uid,
+                    [_id],
+                    ['lastname'],
+                    context=context
+                )[0]['lastname']
             )
             if default.get('name'):
                 del(default['name'])
-        return super(ResUsers, self).copy_data(cr, uid, _id, default, context=context)
+        return super(ResUsers, self).copy_data(
+            cr, uid, _id, default, context=context
+        )

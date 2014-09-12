@@ -539,11 +539,15 @@ class MergePartnerAutomatic(orm.TransientModel):
                                  ).browse(cr, uid,
                                           list(partner_ids),
                                           context=context)
-        ordered_partners = sorted(sorted(partners,
-                                         key=operator.attrgetter('create_date'),
-                                         reverse=True),
-                                  key=operator.attrgetter('active'),
-                                  reverse=True)
+        ordered_partners = sorted(
+            sorted(
+                partners,
+                key=operator.attrgetter('create_date'),
+                reverse=True
+            ),
+            key=operator.attrgetter('active'),
+            reverse=True
+        )
         return ordered_partners
 
     def _next_screen(self, cr, uid, this, context=None):

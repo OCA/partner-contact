@@ -4,7 +4,8 @@
 # Copyright (c) 2010 Camptocamp SA (http://www.camptocamp.com)
 # All Right Reserved
 #
-# Author : Nicolas Bessi (Camptocamp), Thanks to Laurent Lauden for his code adaptation
+# Author : Nicolas Bessi (Camptocamp),
+# Thanks to Laurent Lauden for his code adaptation
 # Contribution : Joel Grand-Guillaume
 #
 # WARNING: This program as such is intended to be used by professional
@@ -30,7 +31,9 @@
 #
 ##############################################################################
 
-import address
-import partner
-import company
-import wizard
+from . import (
+    address,
+    partner,
+    company,
+    wizard,
+)
