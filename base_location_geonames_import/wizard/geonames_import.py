@@ -96,7 +96,10 @@ class better_zip_geonames_import(models.TransientModel):
         bzip_obj = self.env['res.better.zip']
         country_id = self.country_id.id
         country_code = self.country_id.code.upper()
-        url = 'http://download.geonames.org/export/zip/%s.zip' % country_code
+        config_url = self.pool['ir.config_parameter'].get_param(
+            'geonames.url',
+            default='http://download.geonames.org/export/zip/%s.zip')
+        url = config_url % country_code
         logger.info('Starting to download %s' % url)
         res_request = requests.get(url)
         if res_request.status_code != requests.codes.ok:
