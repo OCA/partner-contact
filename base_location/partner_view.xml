@@ -12,6 +12,7 @@
                  on_change="onchange_zip_id(zip_id)"
                  placeholder="City completion"
                  attrs="{'invisible': [('use_parent_address','=',True)]}"
+                 class="oe_edit_only"
                  />
         </field>
         <xpath expr="//field[@name='child_ids']/form//field[@name='street2']" position="after">
@@ -20,6 +21,7 @@
                  on_change="onchange_zip_id(zip_id)"
                  placeholder="City completion"
                  attrs="{'invisible': [('use_parent_address','=',True)]}"
+                 class="oe_edit_only"
                  />
         </xpath>
       </field>
