@@ -145,5 +145,5 @@ class ResPartner(orm.Model):
         ),
 
         'firstname': fields.char("Firstname"),
-        'lastname': fields.char("Lastname", required=True),
+        'lastname': fields.char("Lastname", required=True)
     }
