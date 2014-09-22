@@ -4,6 +4,7 @@
 #    Author: Nicolas Bessi. Copyright Camptocamp SA
 #    Contributor: Pedro Manuel Baeza <pedro.baeza@serviciosbaeza.com>
 #                 Ignacio Ibeas <ignacio@acysos.com>
+#                 Franco Tampieri <franco.tampieri@abstarct.it>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
