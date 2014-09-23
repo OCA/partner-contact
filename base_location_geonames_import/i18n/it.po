@@ -32,7 +32,7 @@ msgstr "Paese"
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:90
 #, python-format
 msgid "Error:"
-msgstr "Errore :"
+msgstr "Errore:"
 
 #. module: base_location_geonames_import
 #: view:better.zip.geonames.import:0
