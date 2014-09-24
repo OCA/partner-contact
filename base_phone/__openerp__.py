@@ -76,7 +76,6 @@ for any help or question about this module.
     ],
     'js': [
         'static/src/js/*.js',
-        'static/lib/js/*.js',
     ],
     'qweb': ['static/src/xml/*.xml'],
     'demo': ['base_phone_demo.xml'],
