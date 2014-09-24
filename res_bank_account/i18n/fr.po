@@ -44,7 +44,7 @@ msgstr "Intitulé du compte bancaire"
 #. module: res_bank_account
 #: field:res.partner.bank,active:0
 msgid "Active"
-msgstr "Active"
+msgstr "Actif"
 
 #. module: res_bank_account
 #: help:res.partner.bank,title_bank_account:0
