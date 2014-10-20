@@ -56,7 +56,7 @@ class ResPartner(orm.Model):
             lambda self, cr, uid, ids, context=None:
             self.search(cr, uid, [
                 ('id', 'child_of', ids)
-                ]),
+            ]),
             ['parent_id', 'is_company', 'name', 'firstname', 'lastname'],
             10
         )
