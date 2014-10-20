@@ -21,7 +21,8 @@
 from openerp.osv.orm import Model
 from openerp.osv import fields
 from openerp.tools import drop_view_if_exists
-from res_partner_relation_type_selection import ResPartnerRelationTypeSelection
+from .res_partner_relation_type_selection\
+    import ResPartnerRelationTypeSelection
 
 
 class ResPartnerRelationAll(Model):

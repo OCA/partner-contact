@@ -45,4 +45,4 @@ class ResPartnerRelationType(Model):
             'res.partner.category', 'Left partner category'),
         'partner_category_right': fields.many2one(
             'res.partner.category', 'Right partner category'),
-        }
+    }
