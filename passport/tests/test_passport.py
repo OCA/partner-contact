@@ -31,10 +31,12 @@ class Base_Test_passport(TransactionCase):
     Inherit from this and setup values.
     """
 
-    def setUp(self, vals={}):
+    def setUp(self, vals=None):
         """
         Setting up passport.
         """
+        if vals is None:
+            vals = {}
         # Default test values
         self.vals = {'name': 'This is a test passport name',
                      'number': 'A200124789',
