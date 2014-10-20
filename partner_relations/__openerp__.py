@@ -72,6 +72,9 @@ date.""",
         'web_m2x_options',
         'web_tree_many2one_clickable',
     ],
+    "demo": [
+        "data/demo.xml",
+    ],
     "data": [
         "view/res_partner_relation_all.xml",
         'view/res_partner.xml',
