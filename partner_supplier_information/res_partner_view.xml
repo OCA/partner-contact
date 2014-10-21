@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <!--Add legal form, ong,acronym,confirmed supplier,
+      rcs number,rcs date, rcs and SIRET number fields in form view-->
+    <record id="view_partner_property_supplier_info_form" model="ir.ui.view">
+      <field name="name">res.partner.property.supplier.info.form.inherit</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="account.view_partner_property_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//page[@string='Accounting']/group[1]/group[2]"
+               position="after">
+         <group string="Supplier Information" col="4" colspan="4"
+                attrs="{'invisible': [('supplier', '=', False)]}">
+            <field name="legal_form"/>
+            <field name="ong"/>
+            <field name="acronym"/>
+            <field name="confirmed_supplier"/>
+         </group>
+         <group string="Information" col="4" colspan="4"
+                attrs="{'invisible': [('confirmed_supplier', '=', False)]}">
+              <field name="rcs_registration_number"/>
+              <field name="rcs_date"/>
+              <field name="rcs_registration_location"/>
+         </group>
+        </xpath>
+
+        <!--add matriculation number in form view-->
+        <field name="last_reconciliation_date"
+               position="after">
+          <field name="matriculation_number"
+                 attrs="{'invisible': [('confirmed_supplier', '=', False)]}"/>
+        </field>
+      </field>
+    </record>
+  </data>
+</openerp>
