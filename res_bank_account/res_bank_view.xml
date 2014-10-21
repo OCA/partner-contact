@@ -43,17 +43,19 @@
       <field name="arch" type="xml">
         <!--redefine bank_ids tree-->
         <field name="bank_ids" position="replace">
-          <field name="bank_ids"
-                 context="{'default_partner_id': active_id, 'form_view_ref': 'base.view_partner_bank_form'}">
-            <tree string="Bank Details">
-              <field name="active"/>
-              <field name="state" invisible="1"/>
-              <field name="sequence" invisible="1"/>
-              <field name="acc_number"/>
-              <field name="bank_name"/>
-              <field name="owner_name"/>
-            </tree>
-          </field>
+          <group string="Banks">
+            <field name="bank_ids"
+                   context="{'default_partner_id': active_id, 'form_view_ref': 'base.view_partner_bank_form'}">
+              <tree string="Bank Details">
+                <field name="active"/>
+                <field name="state" invisible="1"/>
+                <field name="sequence" invisible="1"/>
+                <field name="acc_number"/>
+                <field name="bank_name"/>
+                <field name="owner_name"/>
+              </tree>
+            </field>
+          </group>
         </field>
       </field>
     </record>
