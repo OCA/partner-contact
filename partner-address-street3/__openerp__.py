@@ -19,7 +19,7 @@
 #
 ##############################################################################
 {
-    'name': 'Stree3 in address',
+    'name': 'Street3 in addresses',
     'version': '0.1',
     'author': 'Camptocamp',
     'maintainer': 'Camptocamp',
