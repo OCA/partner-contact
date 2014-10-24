@@ -31,6 +31,12 @@ class res_partner(orm.Model):
         'street3': fields.char('Street 3'),
     }
 
+
+class res_country(orm.Model):
+    """Override default adresses formatting of coutries"""
+
+    _inherit = 'res.country'
+
     _defaults = {
         'address_format': ("%(street)s\n%(street2)s\n%(street3)s\n"
                            "%(city)s %(state_code)s %(zip)s\n"
