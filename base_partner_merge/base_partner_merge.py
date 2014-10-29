@@ -26,7 +26,9 @@ _logger = logging.getLogger('base.partner.merge')
 
 
 # http://www.php2python.com/wiki/function.html-entity-decode/
-def html_entity_decode_char(m, defs=htmlentitydefs.entitydefs):
+def html_entity_decode_char(m, defs=None):
+    if defs is None:
+        defs = htmlentitydefs.entitydefs
     try:
         return defs[m.group(1)]
     except KeyError:
