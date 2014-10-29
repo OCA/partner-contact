@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="add_stree3_in_form_view" model="ir.ui.view">
+      <field name="name">add stree3 in form view</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <xpath
+            expr="//form[@string='Partners']/sheet/group/group/div/field[@name='street2']"
+            position="after">
+          <field name="street3"
+                 attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+        </xpath>
+
+        <xpath expr="//form[@string='Contact']/sheet/group/div/field[@name='street2']"
+               position="after">
+          <field name="street3"/>
+        </xpath>
+
+        <xpath expr="//kanban/field[@name='street2']"
+               position="after">
+          <field name="street3"/>
+        </xpath>
+
+      </field>
+    </record>
+
+    <record id="add_street_3_in_kanban" model="ir.ui.view">
+      <field name="name">add street 3 in kanban</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+      <field name="arch" type="xml">
+        <field name="street2" position="after">
+          <field name="street3"/>
+        </field>
+      </field>
+    </record>
+
+  </data>
+</openerp>
