@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_res_partner_function","access_res_partner_function_user","model_res_partner_function","base.group_user",1,1,1,1
+"access_res_partner_category_function","access_res_partner_category_function_user","model_res_partner_category_function","base.group_user",1,1,1,1
