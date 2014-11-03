@@ -31,7 +31,29 @@
 Contacts by Functions
 =====================
 
-This module allows you to manage contacts by functions
+This module allows you to manage contacts by functions.
+
+A person can occupy many job positions in many organizations and you may need
+to retrieve all your contacts for a given job position.
+
+This module replaces the single "job position" field on a contact and gives
+the possibility to declare many functions (i.e job positions) for a contact.
+You can also manage the functions on the organization
+(res.partner is_company=True) itself.
+
+To retrieve contacts by functions, categories (tags) are used in order to group
+similar functions in a single category. Within a category, you can declare
+the sequence of functions so you could use this sequence to sort the contacts
+of this category by their function.
+
+When you have functions for your contacts and functions for the categories you
+can tag the contacts (manually or automatically with the segmentation tool) and
+search with the tag name.
+
+E.g.:
+You may need to have a category such as 'Head of State' to quickly identify
+contacts that occupies the functions 'President', 'Prime minister' or 'King'.
+For protocol reasons, you may want to have 'Kings' sorted first.
 
 Contributors
 ------------
