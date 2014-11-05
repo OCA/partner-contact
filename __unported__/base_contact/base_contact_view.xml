@@ -162,8 +162,11 @@
                     </group>
                 </page>
             </page>
-            <xpath expr="//field[@name='child_ids']/form//field[@name='name']/.." position="before">
-                <field name="contact_type" readonly="0" on_change="onchange_contact_type(contact_type)"/>
+            <xpath expr="//form[@string='Contact']/sheet//field[@name='category_id']" position="before">
+                <group>
+                    <label for="contact_type" class="oe_edit_only"/>
+                    <field name="contact_type" readonly="0" on_change="onchange_contact_type(contact_type)" nolabel="1"/>
+                </group>
             </xpath>
             <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="after">
                 <field name="contact_id" on_change="onchange_contact_id(contact_id)" string="Contact"
