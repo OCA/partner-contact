@@ -43,9 +43,8 @@
         </xpath>
         <xpath expr="//form[@string='Contact']/sheet/div/label" position="replace">
             <div class="oe_edit_only">
+                <field name="is_company" on_change="onchange_type(is_company)" invisible="1"/>
                 <label for="name"/> (
-                <field name="is_company" on_change="onchange_type(is_company)" class="oe_inline"/>
-                <label for="is_company" string="Is a Company?"/>)
             </div>
         </xpath>
         <xpath expr="//form[@string='Contact']/sheet/div/h1/field[@name='name']" position="attributes">
