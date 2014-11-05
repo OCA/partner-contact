@@ -4,7 +4,8 @@ python:
   - "2.7"
 
 env:
-  - VERSION="8.0"
+  - VERSION="8.0" ODOO_REPO="odoo/odoo" UNIT_TEST=1
+  - VERSION="8.0" ODOO_REPO="OCA/OCB" UNIT_TEST=1
 
 virtualenv:
   system_site_packages: true
@@ -18,7 +19,6 @@ install:
   - $HOME/maintainer-quality-tools/travis/travis_install_nightly ${VERSION}
 
 script:
-  - travis_run_flake8
   - travis_run_tests ${VERSION}
 
 after_success:
