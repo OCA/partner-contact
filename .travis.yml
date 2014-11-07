@@ -4,7 +4,8 @@ python:
   - "2.7"
 
 env:
-  - VERSION="8.0"
+  - VERSION="8.0" EXCLUDE="partner_address_street3"
+  - VERSION="8.0" INCLUDE="partner_address_street3"
 
 virtualenv:
   system_site_packages: true
