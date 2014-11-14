@@ -174,7 +174,7 @@ class LDAPAddress(orm.Model):
     #         res = [x[0] for x in res]
     #     else:
     #         res = []
-    #     # search in partner name to know if we are searching partner...
+    # search in partner name to know if we are searching partner...
     #     partner_obj=self.pool.get('res.partner')
     #     part_len = len(res)-limit
     #     if part_len > 0:
@@ -184,7 +184,7 @@ class LDAPAddress(orm.Model):
     #         )
     #         for p in partner_res:
     #             addresses = partner_obj.browse(cursor, user, p).address
-    #             # Take each contact and add it to
+    # Take each contact and add it to
     #             for add in addresses:
     #                 res.append(add.id)
     #     return self.name_get(cursor, user, res, context)
@@ -255,7 +255,6 @@ class LDAPAddress(orm.Model):
             except UnicodeError:
                 logger.notifyChannel('LDAP encode', netsvc.LOG_DEBUG,
                                      'cannot unicode ' + vals[val])
-                pass
 
         if ids is not None:
             if isinstance(ids, (int, long)):

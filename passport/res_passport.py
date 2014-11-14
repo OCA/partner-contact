@@ -48,11 +48,11 @@ class res_passport(orm.Model):
         if type(ids) in (int, long):
             ids = [ids]
         res = []
-        for res_passport in self.browse(cr, uid, ids, context=context):
+        for passport in self.browse(cr, uid, ids, context=context):
             name_elements = []
-            if res_passport.country_id and res_passport.country_id.name:
-                name_elements.append(res_passport.country_id.name)
-            if res_passport.name:
-                name_elements.append(res_passport.name)
-            res.append((res_passport.id, ' | '.join(name_elements)))
+            if passport.country_id and passport.country_id.name:
+                name_elements.append(passport.country_id.name)
+            if passport.name:
+                name_elements.append(passport.name)
+            res.append((passport.id, ' | '.join(name_elements)))
         return res
