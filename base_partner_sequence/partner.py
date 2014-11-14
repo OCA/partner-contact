@@ -39,14 +39,14 @@ class ResPartner(orm.Model):
 
     def copy(self, cr, uid, id, default=None, context=None):
         default = default or {}
-        if self._needsRef(cr, uid, id=id, context=context):
+        if self._needsRef(cr, uid, source_id=id, context=context):
             default['ref'] = self.pool.get('ir.sequence')\
                                       .next_by_code(cr, uid, 'res.partner',
                                                     context=context)
         return super(ResPartner, self).copy(cr, uid, id, default,
                                             context=context)
 
-    def _needsRef(self, cr, uid, id=None, vals=None, context=None):
+    def _needsRef(self, cr, uid, source_id=None, vals=None, context=None):
         """
         Checks whether a sequence value should be assigned to a partner's 'ref'
 
@@ -57,11 +57,11 @@ class ResPartner(orm.Model):
         :return: true iff a sequence value should be assigned to the\
                       partner's 'ref'
         """
-        if not vals and not id:
+        if not vals and not source_id:
             raise Exception('Either field values or an id must be provided.')
         # only assign a 'ref' to commercial partners
-        if id:
-            vals = self.read(cr, uid, id, ['parent_id', 'is_company'],
+        if source_id:
+            vals = self.read(cr, uid, source_id, ['parent_id', 'is_company'],
                              context=context)
         return vals.get('is_company') or not vals.get('parent_id')
 

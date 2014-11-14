@@ -68,7 +68,6 @@ VALID_ADDRESS_REGEXP = '^' + ADDR_SPEC + '$'
 
 
 def validate_email(email, check_mx=False, verify=False):
-
     """Indicate whether the given string is a valid email address
     according to the 'addr-spec' portion of RFC 2822 (see section
     3.4.1).  Parts of the spec that are marked obsolete are *not*
