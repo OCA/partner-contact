@@ -340,6 +340,16 @@ class MergePartnerAutomatic(orm.TransientModel):
 
         partner_ids = proxy.exists(cr, uid, list(partner_ids),
                                    context=context)
+
+        if not self.pool['res.users'].has_group(
+            cr, uid, 'base_partner_merge.group_partner_merge'
+        ):
+            raise orm.except_orm(
+                _('Error'),
+                _("You do not belong in the 'Partner Merge' group. "
+                  "Please contact the Administrator to get access to "
+                  "the partner merge functionality."))
+
         if len(partner_ids) < 2:
             return
 
@@ -350,10 +360,9 @@ class MergePartnerAutomatic(orm.TransientModel):
                   "together. You can re-open the wizard several times if "
                   "needed."))
 
-        if (openerp.SUPERUSER_ID != uid
-                and len(set(partner.email for partner
-                            in proxy.browse(cr, uid, partner_ids,
-                                            context=context))) > 1):
+        if (len(set(partner.email for partner
+                    in proxy.browse(cr, uid, partner_ids,
+                                    context=context))) > 1):
             raise orm.except_orm(
                 _('Error'),
                 _("All contacts must have the same email. Only the "
@@ -370,23 +379,6 @@ class MergePartnerAutomatic(orm.TransientModel):
             dst_partner = ordered_partners[-1]
             src_partners = ordered_partners[:-1]
         _logger.info("dst_partner: %s", dst_partner.id)
-
-        if (openerp.SUPERUSER_ID != uid
-                and self._model_is_installed(cr, uid, 'account.move.line',
-                                             context=context)
-                and self.pool.get('account.move.line'
-                                  ).search(cr, openerp.SUPERUSER_ID,
-                                           [('partner_id',
-                                             'in',
-                                             [partner.id for partner
-                                              in src_partners])],
-                                           context=context)):
-            raise orm.except_orm(
-                _('Error'),
-                _("Only the destination contact may be linked to existing "
-                  "Journal Items. Please ask the Administrator if you need to"
-                  " merge several contacts linked to existing Journal "
-                  "Items."))
 
         call_it = lambda function: function(cr, uid, src_partners,
                                             dst_partner, context=context)
