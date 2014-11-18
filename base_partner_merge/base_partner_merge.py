@@ -346,7 +346,7 @@ class MergePartnerAutomatic(orm.TransientModel):
         ):
             raise orm.except_orm(
                 _('Error'),
-                _("You do not belong in the 'Partner Merge' group. "
+                _("You do not belong to the 'Partner Merge' group. "
                   "Please contact the Administrator to get access to "
                   "the partner merge functionality."))
 
