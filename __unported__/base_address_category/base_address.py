@@ -27,6 +27,7 @@ from openerp.osv import fields, orm
 
 
 class ResPartnerAdressCategory(orm.Model):
+
     def name_get(self, cr, uid, ids, context=None):
         if not len(ids):
             return []
