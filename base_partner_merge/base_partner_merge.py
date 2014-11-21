@@ -20,7 +20,7 @@ from openerp.osv import fields
 from openerp.osv.orm import browse_record
 from openerp.tools.translate import _
 
-pattern = re.compile("&(\w+?);")
+pattern = re.compile(r"&(\w+?);")
 
 _logger = logging.getLogger('base.partner.merge')
 
@@ -360,10 +360,11 @@ class MergePartnerAutomatic(orm.TransientModel):
                   "Administrator can merge contacts with different emails."))
 
         if dst_partner and dst_partner.id in partner_ids:
-            src_partners = proxy.browse(cr, uid,
-                                        [id for id in partner_ids
-                                         if id != dst_partner.id],
-                                        context=context)
+            src_ids = [
+                partner_id for partner_id in partner_ids
+                if partner_id != dst_partner.id
+            ]
+            src_partners = proxy.browse(cr, uid, src_ids, context=context)
         else:
             ordered_partners = self._get_ordered_partner(cr, uid, partner_ids,
                                                          context)
@@ -427,15 +428,17 @@ class MergePartnerAutomatic(orm.TransientModel):
                                        [('model', '=', 'res.partner'),
                                         ('ttype', 'like', '%2many')],
                                        context=context)
-        fields = proxy_model.read(cr, uid, field_ids, context=context)
-        reset_fields = dict((field['name'], []) for field in fields)
+        field_list = proxy_model.read(cr, uid, field_ids, context=context)
+        reset_fields = dict((field['name'], []) for field in field_list)
 
         proxy_partner = self.pool['res.partner']
         context['active_test'] = False
         ids = proxy_partner.search(cr, uid, [], context=context)
 
-        fields = ['name', 'var' 'partner_id' 'is_company', 'email']
-        partners = proxy_partner.read(cr, uid, ids, fields, context=context)
+        field_list = ['name', 'var' 'partner_id' 'is_company', 'email']
+        partners = proxy_partner.read(
+            cr, uid, ids, field_list, context=context
+        )
 
         partners.sort(key=operator.itemgetter('id'))
         partners_len = len(partners)
@@ -471,11 +474,11 @@ class MergePartnerAutomatic(orm.TransientModel):
     def close_cb(self, cr, uid, ids, context=None):
         return {'type': 'ir.actions.act_window_close'}
 
-    def _generate_query(self, fields, maximum_group=100):
-        group_fields = ', '.join(fields)
+    def _generate_query(self, field_list, maximum_group=100):
+        group_fields = ', '.join(field_list)
 
         filters = []
-        for field in fields:
+        for field in field_list:
             if field in ['email', 'name']:
                 filters.append((field, 'IS NOT', 'NULL'))
 
@@ -507,7 +510,7 @@ class MergePartnerAutomatic(orm.TransientModel):
         group_by_str = 'group_by_'
         group_by_len = len(group_by_str)
 
-        fields = [
+        field_list = [
             key[group_by_len:]
             for key in self._columns.keys()
             if key.startswith(group_by_str)
@@ -515,7 +518,7 @@ class MergePartnerAutomatic(orm.TransientModel):
 
         groups = [
             field
-            for field in fields
+            for field in field_list
             if getattr(this, '%s%s' % (group_by_str, field), False)
         ]
 
@@ -800,8 +803,8 @@ class MergePartnerAutomatic(orm.TransientModel):
         ]
 
         for merge_value in list_merge:
-            id = self.create(cr, uid, merge_value, context=context)
-            self.automatic_process_cb(cr, uid, [id], context=context)
+            merge_id = self.create(cr, uid, merge_value, context=context)
+            self.automatic_process_cb(cr, uid, [merge_id], context=context)
 
         cr.execute("""
             UPDATE
@@ -870,7 +873,7 @@ class MergePartnerAutomatic(orm.TransientModel):
                         ORDER BY COUNT(a.id) DESC
                 """)
         re_email = re.compile(r".*@")
-        for id, email in cr.fetchall():
+        for partner_id, email in cr.fetchall():
             # check email domain
             email = re_email.sub("@", email or "")
             if not email or email in partner_treated:
@@ -886,7 +889,7 @@ class MergePartnerAutomatic(orm.TransientModel):
                            EXISTS (SELECT * FROM account_invoice as a
                                    WHERE p.id = a.partner_id
                                        AND a.state in ('open','paid'))
-                    """ % (id, email))
+                    """ % (partner_id, email))
 
             if len(cr.fetchall()) > 1:
                 _logger.info("%s MORE OF ONE COMPANY", email)
@@ -897,12 +900,12 @@ class MergePartnerAutomatic(orm.TransientModel):
                             FROM res_partner
                             WHERE parent_id != %s
                                 AND id != %s AND email LIKE '%%%s'
-                    """ % (id, id, email))
+                    """ % (partner_id, partner_id, email))
             _logger.info("%r", cr.fetchall())
 
             # upgrade
             cr.execute("""  UPDATE res_partner
                             SET parent_id = %s
                             WHERE id != %s AND email LIKE '%%%s'
-                    """ % (id, id, email))
+                    """ % (partner_id, partner_id, email))
         return False
