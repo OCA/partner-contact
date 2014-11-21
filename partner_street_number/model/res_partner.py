@@ -58,7 +58,7 @@ class ResPartner(orm.Model):
         street_name = value and value.strip() or False
         street_number = False
         if value:
-            match = re.search('(.+)\s+(\d.*)', value.strip())
+            match = re.search(r'(.+)\s+(\d.*)', value.strip())
             if match and len(match.group(2)) < 6:
                 street_name = match.group(1)
                 street_number = match.group(2)
