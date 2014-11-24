@@ -357,6 +357,7 @@
                    string="Parent Organisation" />
             <field name="function_id"
                    readonly="False"
+                   options="{'create': false, 'create_edit': false}"
                    domain="[('id', 'in', parent.function_ids[0][2])]"
                    string="Function"/>
           </group>
