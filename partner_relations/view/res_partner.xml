@@ -62,15 +62,9 @@
                                         options="{'create': false, 'create_edit': false}"
                                         widget="many2one_clickable"
                                     />
-                                    <field
-                                        name="date_start"
-                                    />
-                                    <field
-                                        name="date_end"
-                                    />
-                                    <field
-                                        name="active"
-                                    />
+                                    <field name="date_start" />
+                                    <field name="date_end" />
+                                    <field name="active" />
                                     <field
                                         name="is_relation_expired"
                                         invisible="True"
@@ -109,15 +103,9 @@
                                         options="{'create': false, 'create_edit': false}"
                                         widget="many2one_clickable"
                                     />
-                                    <field
-                                        name="date_start"
-                                    />
-                                    <field
-                                        name="date_end"
-                                    />
-                                    <field
-                                        name="active"
-                                    />
+                                    <field name="date_start" />
+                                    <field name="date_end" />
+                                    <field name="active" />
                                     <field
                                         name="is_relation_expired"
                                         invisible="True"
