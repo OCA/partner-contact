@@ -2,7 +2,7 @@
 <openerp>
     <data>
         <!-- the sequence of the configuration sub menu is 30 -->
-        <menuitem id='root_menu' name='Tools' parent='base.menu_base_partner' sequence="25"/>
+        <menuitem id='root_menu' name='Tools' parent='base.menu_base_partner' sequence="25" groups='group_partner_merge'/>
 
         <record model="ir.actions.act_window" id="base_partner_merge_automatic_act">
             <field name="name">Deduplicate Contacts</field>
@@ -15,7 +15,7 @@
 
         <menuitem id='partner_merge_automatic_menu'
             action='base_partner_merge_automatic_act'
-            groups='base.group_system'
+            groups='group_partner_merge'
             parent='root_menu' />
 
         <record model='ir.ui.view' id='base_partner_merge_automatic_wizard_form'>
@@ -116,7 +116,7 @@
         </record>
         
         <act_window id="action_partner_merge" res_model="base.partner.merge.automatic.wizard" src_model="res.partner"
-            target="new" multi="True" key2="client_action_multi" view_mode="form" name="Automatic Merge"/>
+            target="new" multi="True" key2="client_action_multi" view_mode="form" name="Automatic Merge" groups="group_partner_merge"/>
 
     </data>
 

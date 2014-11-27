@@ -10,7 +10,7 @@ backport module, to be removed when we switch to saas2 on the private servers
         'base',
     ],
     'data': [
-        'security/ir.model.access.csv',
+        'security/security.xml',
         'base_partner_merge_view.xml',
     ],
     'installable': True,
