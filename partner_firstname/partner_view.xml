@@ -8,12 +8,12 @@
         <field name="name" position="attributes">
             <attribute name="attrs">{'readonly': [('is_company', '=', False)], 'required': [('is_company', '=', True)]}</attribute>
         </field>
-        <field name="category_id" position="before">
+        <xpath expr="//div[@class='oe_title']" position="after">
           <group attrs="{'invisible': [('is_company', '=', True)]}">
               <field name="lastname" attrs="{'required': [('is_company', '=', False)]}"/>
             <field name="firstname" />
           </group>
-        </field>
+        </xpath>
       </field>
     </record>
 
