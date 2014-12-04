@@ -24,7 +24,7 @@ from openerp.osv import orm, fields
 
 class BetterZip(orm.Model):
 
-    " City/locations completion object"
+    "City/locations completion object"
 
     _name = "res.better.zip"
     _description = __doc__
