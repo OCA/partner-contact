@@ -21,7 +21,9 @@
 from openerp.osv import orm, fields
 from openerp.addons.base.res import res_partner
 
-ADDRESS_FIELDS = ('street', 'street2', 'street3', 'zip', 'city', 'state_id', 'country_id')
+ADDRESS_FIELDS = ('street', 'street2', 'street3', 'zip', 'city',
+                  'state_id', 'country_id')
+
 
 class res_partner(orm.Model):
     """Add third field in address"""
