@@ -21,9 +21,6 @@
 from openerp.osv import orm, fields
 from openerp.addons.base.res import res_partner
 
-ADDRESS_FIELDS = ('street', 'street2', 'street3', 'zip', 'city',
-                  'state_id', 'country_id')
-
 
 class res_partner(orm.Model):
     """Add third field in address"""
@@ -36,7 +33,11 @@ class res_partner(orm.Model):
     def _address_fields(self, cr, uid, context=None):
         """ Returns the list of address fields that are synced from the parent
         when the `use_parent_address` flag is set. """
-        return list(ADDRESS_FIELDS)
+        res = super(res_partner, self
+                    )._address_fields(cr, uid, context=context)
+        res.append('street3')
+        return res
+
 
     def _commercial_fields(self, cr, uid, context=None):
         fields = super(res_partner, self
