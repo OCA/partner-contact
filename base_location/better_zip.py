@@ -30,8 +30,7 @@ class BetterZip(orm.Model):
     _description = __doc__
     _order = "priority"
 
-    _columns = {'priority': fields.integer('Priority', deprecated=True),
-                'name': fields.char('ZIP'),
+    _columns = {'name': fields.char('ZIP'),
                 'city': fields.char('City', required=True),
                 'state_id': fields.many2one('res.country.state', 'State'),
                 'country_id': fields.many2one('res.country', 'Country'),
