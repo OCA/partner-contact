@@ -13,7 +13,7 @@
                  colspan="4"
                  nolabel="1">
             <tree editable="top">
-              <field name="name"/>
+              <field name="zip"/>
               <field name="code"/>
               <field name="city"/>
               <field name="country_id"/>

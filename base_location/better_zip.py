@@ -19,64 +19,43 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-from openerp.osv import orm, fields
+from openerp import models, fields, api
 
 
-class BetterZip(orm.Model):
+class BetterZip(models.Model):
 
     " City/locations completion object"
 
     _name = "res.better.zip"
     _description = __doc__
-    _order = "priority"
 
-    _columns = {'priority': fields.integer('Priority', deprecated=True),
-                'name': fields.char('ZIP'),
-                'city': fields.char('City', required=True),
-                'state_id': fields.many2one('res.country.state', 'State'),
-                'country_id': fields.many2one('res.country', 'Country'),
-                'code': fields.char('City Code', size=64,
-                                    help="The official code for the city"),
-                }
+    priority = fields.Integer('Priority', deprecated=True)
+    name = fields.Char('Name', compute='_get_name', store=True)
+    zip = fields.Char('ZIP')
+    city = fields.Char('City', required=True)
+    state_id = fields.Many2one('res.country.state', 'State')
+    country_id = fields.Many2one('res.country', 'Country')
+    code = fields.Char(
+        'City Code', size=64, help="The official code for the city")
 
-    _defaults = {'priority': 100}
+    @api.one
+    @api.depends(
+        'zip',
+        'city',
+        'state_id',
+        'state_id.name',
+        'country_id',
+        'country_id.name',
+        )
+    def _get_name(self):
+        self.name = ('(%s) %s, %s, %s') % (
+            self.zip or '',
+            self.city or '',
+            self.state_id and self.state_id.name or '',
+            self.country_id and self.country_id.name or '',
+            )
 
-    def name_get(self, cursor, uid, ids, context=None):
-        res = []
-        for bzip in self.browse(cursor, uid, ids, context=context):
-            if bzip.name:
-                name = [bzip.name, bzip.city]
-            else:
-                name = [bzip.city]
-            if bzip.state_id:
-                name.append(bzip.state_id.name)
-            if bzip.country_id:
-                name.append(bzip.country_id.name)
-            res.append((bzip.id, ", ".join(name)))
-        return res
-
-    def onchange_state_id(self, cr, uid, ids, state_id=False, context=None):
-        result = {}
-        if state_id:
-            state = self.pool['res.country.state'].browse(
-                cr, uid, state_id, context=context)
-            if state:
-                result['value'] = {'country_id': state.country_id.id}
-        return result
-
-    def name_search(
-        self, cr, uid, name, args=None, operator='ilike', context=None,
-        limit=100
-    ):
-        if args is None:
-            args = []
-        if context is None:
-            context = {}
-        ids = []
-        if name:
-            ids = self.search(
-                cr, uid, [('name', 'ilike', name)] + args, limit=limit)
-        if not ids:
-            ids = self.search(
-                cr, uid, [('city', operator, name)] + args, limit=limit)
-        return self.name_get(cr, uid, ids, context=context)
+    @api.onchange('state_id')
+    def onchange_state_id(self):
+        if self.state_id:
+            self.country_id = self.state_id.country_id.id
