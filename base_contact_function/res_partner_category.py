@@ -49,9 +49,11 @@ class res_partner_category(orm.Model):
             if ids:
                 child_ids = self.search(
                     cr, user, [('parent_id', 'child_of', ids)],
-                    context=context)
+                    limit=limit, context=context)
                 if child_ids:
                     ids.extend(child_ids)
+            # Remove duplicates and respect limit
+            ids = list(set(ids))[:limit]
         else:
             ids = self.search(cr, user, args, limit=limit, context=context)
         return self.name_get(cr, user, ids, context)
