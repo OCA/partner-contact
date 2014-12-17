@@ -153,7 +153,7 @@ class test_partner_category(TransactionCase):
 
     def test_name_search(self):
 
-        self.assertListEqual(
+        self.assertItemsEqual(
             self.partner_cat_model.name_search(
                 self.cr, self.uid, name='test_parent', context=self.context
             ),
@@ -164,7 +164,7 @@ class test_partner_category(TransactionCase):
                 (self.test_parent_id, 'test_parent'),
             ]
         )
-        self.assertListEqual(
+        self.assertItemsEqual(
             self.partner_cat_model.name_search(
                 self.cr, self.uid, name='test_child', context=self.context
             ),
@@ -174,7 +174,7 @@ class test_partner_category(TransactionCase):
                  'test_parent / test_child / test_grandchild'),
             ]
         )
-        self.assertListEqual(
+        self.assertItemsEqual(
             self.partner_cat_model.name_search(
                 self.cr, self.uid, name='test_grandchild', context=self.context
             ),
@@ -183,7 +183,7 @@ class test_partner_category(TransactionCase):
                  'test_parent / test_child / test_grandchild'),
             ]
         )
-        self.assertListEqual(
+        self.assertItemsEqual(
             self.partner_cat_model.name_search(
                 self.cr, self.uid, name='test_orphan', context=self.context
             ),
