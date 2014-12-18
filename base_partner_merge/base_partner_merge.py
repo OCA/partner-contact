@@ -20,7 +20,7 @@ from openerp.osv import fields
 from openerp.osv.orm import browse_record
 from openerp.tools.translate import _
 
-pattern = re.compile("&(\w+?);")
+pattern = re.compile(r"&(\w+?);")
 
 _logger = logging.getLogger('base.partner.merge')
 
