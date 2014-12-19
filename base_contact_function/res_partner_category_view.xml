@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <record id="view_partner_category_form_admin" model="ir.ui.view">
+      <field name="name">List Form</field>
+      <field name="model">res.partner.category</field>
+      <field name="arch" type="xml">
+        <tree string="List">
+          <field name="complete_name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_partner_category_list_admin" model="ir.ui.view">
+      <field name="name">List Tree</field>
+      <field name="model">res.partner.category</field>
+      <field name="field_parent">child_ids</field>
+      <field name="arch" type="xml">
+        <tree string="List">
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="partner_category_action" model="ir.actions.act_window">
+      <field name="name">List</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">res.partner.category</field>
+      <field name="domain">[('parent_id','=',False)]</field>
+      <field name="view_type">tree</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="view_partner_category_list_admin"/>
+      <field name="help" type="html">
+        <p>
+          Here is a list of all your partners classified by category.
+        </p>
+      </field>
+    </record>
+
+    <menuitem id="menu_partner_category_list_form"
+          name="Category Lists"
+          parent="mail.mail_my_stuff"
+          sequence="30"
+          action="base.action_partner_category_form"/>
+
+    <menuitem id="menu_partner_category"
+          name="Category Lists Tree"
+          action="partner_category_action"
+          parent="mail.mail_my_stuff"
+          sequence="40" />
+
+  </data>
+</openerp>

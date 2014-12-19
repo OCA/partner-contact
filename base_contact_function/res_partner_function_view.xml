@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<openerp>
+  <data>
+
+    <!-- Tree Views functions-->
+    <record id="function_tree_view" model="ir.ui.view">
+      <field name="name">Function Tree View</field>
+      <field name="model">res.partner.function</field>
+      <field name="arch" type="xml">
+
+        <tree string="Functions" version="7.0">
+           <field name="name"/>
+           <field name="acronym"/>
+        </tree>
+
+      </field>
+    </record>
+
+    <!-- Form Views functions-->
+    <record id="function_form_view" model="ir.ui.view">
+      <field name="name">Function Form View</field>
+      <field name="model">res.partner.function</field>
+      <field name="arch" type="xml">
+        <form string="Function" version="7.0" >
+           <group col="4">
+              <field name="name"/>
+              <field name="acronym"/>
+          </group>
+        </form>
+
+      </field>
+    </record>
+
+     <!-- Actions -->
+    <record id="action_function_tree_list" model="ir.actions.act_window">
+        <field name="name">Functions</field>
+        <field name="view_id" ref="function_tree_view"/>
+        <field name="res_model">res.partner.function</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</openerp>
