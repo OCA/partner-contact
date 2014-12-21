@@ -1,6 +1,7 @@
 <openerp>
     <data>
         <record id="view_res_partner_filter" model="ir.ui.view">
+            <field name="name">partner_relations.view_partner_filter</field>
             <field name="inherit_id" ref="base.view_res_partner_filter" />
             <field name="model">res.partner</field>
             <field type="xml" name="arch">
@@ -15,6 +16,7 @@
             </field>
         </record>
         <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">partner_relations.view_partner_form</field>
             <field name="inherit_id" ref="base.view_partner_form" />
             <field name="model">res.partner</field>
             <field type="xml" name="arch">
@@ -30,7 +32,6 @@
                                 }"
                             >
                                 <tree
-                                    editable="top"
                                     colors="gray:is_relation_expired==True or not active;blue:is_relation_future==True"
                                 >
                                     <field
@@ -61,15 +62,9 @@
                                         options="{'create': false, 'create_edit': false}"
                                         widget="many2one_clickable"
                                     />
-                                    <field
-                                        name="date_start"
-                                    />
-                                    <field
-                                        name="date_end"
-                                    />
-                                    <field
-                                        name="active"
-                                    />
+                                    <field name="date_start" />
+                                    <field name="date_end" />
+                                    <field name="active" />
                                     <field
                                         name="is_relation_expired"
                                         invisible="True"
@@ -79,6 +74,47 @@
                                         invisible="True"
                                     />
                                 </tree>
+                                <form>
+                                    <field
+                                        name="type_selection_id"
+                                        required="True"
+                                        context="{
+                                            'parent_model': 'res.partner',
+                                            'parent_id': parent.id,
+                                        }"
+                                        domain="[
+                                            '|',
+                                                ('contact_type_this', '=', parent.is_company and 'c' or 'p'),
+                                                ('contact_type_this', '=', False),
+                                            ('search_partner_category_this', '=', parent.category_id),
+
+                                        ]
+                                        "
+                                        options="{'create': false, 'create_edit': false}"
+                                        on_change="on_change_type_selection_id(type_selection_id)"
+                                    /> 
+                                    <field name="type_id" invisible="True" />
+                                    <field
+                                        name="partner_id_display"
+                                        required="True"
+                                        attrs="{
+                                            'readonly': [('type_selection_id','=',False)],
+                                        }"
+                                        options="{'create': false, 'create_edit': false}"
+                                        widget="many2one_clickable"
+                                    />
+                                    <field name="date_start" />
+                                    <field name="date_end" />
+                                    <field name="active" />
+                                    <field
+                                        name="is_relation_expired"
+                                        invisible="True"
+                                    />
+                                    <field
+                                        name="is_relation_future"
+                                        invisible="True"
+                                    />
+                                </form>
                             </field>
                         </page>
                     </xpath>
