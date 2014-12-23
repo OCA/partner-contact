@@ -195,3 +195,16 @@ class test_partner_firstname(common.TransactionCase):
             vals['firstname'],
             'Update of the user firstname failed with wrong firstname'
         )
+
+    def test_create_user_login_only(self):
+        """Test creation of a user with only the login supplied"""
+        cr, uid, context = self.cr, self.uid, self.context
+        # create a user
+        res_id = self.user_model.create(
+            cr, uid, {'login': 'test_login_only'}, context=context
+        )
+        # get the related partner id and add it a firstname
+        user = self.user_model.browse(cr, uid, res_id, context=context)
+        self.assertEqual(user.login, user.name)
+        self.assertEqual(user.login, user.lastname)
+        self.assertEqual(user.login, user.partner_id.lastname)

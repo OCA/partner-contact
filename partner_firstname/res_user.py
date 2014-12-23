@@ -25,6 +25,22 @@ class ResUsers(orm.Model):
 
     _inherit = 'res.users'
 
+    def create(self, cr, user, vals, context=None):
+        """To support data backward compatibility we have to keep this
+        overwrite even if we use fnct_inv: otherwise we can't create
+        entry because lastname is mandatory and module will not install
+        if there is demo data
+
+        This fixes the unittests in stock when partner_firstname is
+        installed
+        """
+        vals2 = vals.copy()
+        if 'name' in vals:
+            vals2['lastname'] = vals2['name']
+        elif 'login' in vals and 'lastname' not in vals:
+            vals2['lastname'] = vals2['login']
+        return super(ResUsers, self).create(cr, user, vals2, context=context)
+
     def copy_data(self, cr, uid, _id, default=None, context=None):
         """Avoid to replicate the firstname into the name when
          duplicating a user
