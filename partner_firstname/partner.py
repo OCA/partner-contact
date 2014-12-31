@@ -104,8 +104,10 @@ class ResPartner(orm.Model):
                     cr, uid, [_id], ['lastname'], context=context
                     )[0]['lastname']
             )
-            if default.get('name'):
-                del(default['name'])
+        
+        # force the recompute of the name ater the copy
+        # remove name from the default is not enough with store=True because the name is also copied
+        default['name'] = None
         return super(ResPartner, self).copy_data(
             cr, uid, _id, default, context=context)
 
