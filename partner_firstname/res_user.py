@@ -38,9 +38,9 @@ class ResUsers(orm.Model):
                     cr, uid, [_id], ['lastname'], context=context
                 )[0]['lastname']
             )
-
         # force the recompute of the name ater the copy
-        # remove name from the default is not enough with store=True because the name is also copied
+        # remove name from the default is not enough with store=True because
+        # the name is also copied
         default['name'] = None
         return super(ResUsers, self).copy_data(
             cr, uid, _id, default, context=context)
