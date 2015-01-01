@@ -57,9 +57,6 @@ class res_partner(orm.Model):
             vals['firstname'] = contact_info.firstname
             vals['title'] = contact_info.title.id or ''
 
-        if ('contact_id'in vals and ('reset_password' in context or
-                                     'install_mode' in context)):
-            return vals['contact_id']
         res = super(res_partner, self).create(cr, user, vals, context=context)
         return res
 
