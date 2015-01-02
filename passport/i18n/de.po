@@ -2,13 +2,13 @@
 # This file contains the translation of the following modules:
 #	* passport
 #
-# Rudolf Schnapka <schnapkar@golive-saar.de>, 2014.
+# Rudolf Schnapka <schnapkar@golive-saar.de>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-24 23:40+0000\n"
-"PO-Revision-Date: 2014-12-31 01:14+0100\n"
+"PO-Revision-Date: 2015-01-02 11:55+0100\n"
 "Last-Translator: Rudolf Schnapka <schnapkar@golive-saar.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +75,7 @@ msgstr ""
 #: code:addons/passport/res_partner.py:39
 #, python-format
 msgid "New Passport"
-msgstr ""
+msgstr "Neuer Reisepass"
 
 #. module: passport
 #: view:res.passport:0
@@ -85,45 +85,46 @@ msgstr ""
 #. module: passport
 #: field:res.passport,partner_id:0
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #. module: passport
 #: help:res.passport,number:0
 msgid "Passport number."
-msgstr ""
+msgstr "Reisepassnummer."
 
 #. module: passport
 #: selection:res.passport,gender:0
 msgid "Female"
-msgstr ""
+msgstr "Weiblich"
 
 #. module: passport
 #: help:res.passport,name:0
 msgid "Owner name (As printed into the passport)."
-msgstr ""
+msgstr "Besitzername (wie im Reisepass abgedruckt)."
 
 #. module: passport
 #: model:ir.model,name:passport.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #. module: passport
 #: selection:res.passport,gender:0
 msgid "Male"
-msgstr ""
+msgstr "Männlich"
 
 #. module: passport
 #: view:res.passport:0
 msgid "Owner name (As printed into the passport)"
-msgstr ""
+msgstr "Besitzername (wie im Reisepass abgedruckt)"
 
 #. module: passport
 #: field:res.passport,expiration_date:0
 msgid "Expiration date"
-msgstr ""
+msgstr "Ablaufdatum"
 
 #. module: passport
 #: field:res.passport,birth_date:0
 msgid "Birth Date"
-msgstr ""
+msgstr "Geburtsdatum"
+
 
