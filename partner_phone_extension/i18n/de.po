@@ -26,7 +26,7 @@ msgstr "Partner"
 #. module: partner_phone_extension
 #: field:res.partner,extension:0
 msgid "Extension"
-msgstr "Erweiterung"
+msgstr "Durchwahl"
 
 #. module: partner_phone_extension
 #: help:res.partner,extension:0
