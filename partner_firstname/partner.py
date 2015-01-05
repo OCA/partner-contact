@@ -104,7 +104,7 @@ class ResPartner(orm.Model):
                     cr, uid, [_id], ['lastname'], context=context
                     )[0]['lastname']
             )
-        # force the recompute of the name ater the copy
+        # force the recompute of the name after the copy
         # remove name from the default is not enough with store=True because
         # the name is also copied
         default['name'] = None
