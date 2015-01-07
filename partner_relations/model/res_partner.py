@@ -21,8 +21,9 @@
 ##############################################################################
 import time
 from openerp.osv import orm, fields
-from openerp.osv.expression import is_leaf
+from openerp.osv.expression import is_leaf, OR, FALSE_LEAF
 from openerp.tools import DEFAULT_SERVER_DATE_FORMAT
+from openerp.tools.translate import _
 
 
 class ResPartner(orm.Model):
@@ -78,19 +79,40 @@ class ResPartner(orm.Model):
         result = []
         for arg in args:
             if isinstance(arg, tuple) and arg[0] == name:
-                if arg[1] != '=':
-                    continue
+                if arg[1] not in ['=', 'like', 'not like', 'ilike',
+                                  'not ilike', 'in', 'not in']:
+                    raise orm.except_orm(
+                        _('Error'),
+                        _('Unsupported search operand "%s"') % arg[1])
 
-                type_id, is_inverse = self\
-                    .pool['res.partner.relation.type.selection']\
-                    .get_type_from_selection_id(cr, uid, arg[2])
+                relation_type_selection_ids = []
+                relation_type_selection = self\
+                    .pool['res.partner.relation.type.selection']
 
-                result.extend([
-                    '&',
-                    ('relation_all_ids.type_id', '=', type_id),
-                    ('relation_all_ids.record_type', '=',
-                     'b' if is_inverse else 'a')
-                ])
+                if arg[1] == '=' and isinstance(arg[2], (long, int)):
+                    relation_type_selection_ids.append(arg[2])
+                else:
+                    relation_type_selection_ids = relation_type_selection\
+                        .search(cr, uid, [('name', arg[1], arg[2])],
+                                context=context)
+
+                if not relation_type_selection_ids:
+                    result = OR([result, FALSE_LEAF])
+
+                for relation_type_selection_id in relation_type_selection_ids:
+                    type_id, is_inverse = relation_type_selection\
+                        .get_type_from_selection_id(
+                            cr, uid, relation_type_selection_id)
+
+                    result = OR([
+                        result,
+                        [
+                            '&',
+                            ('relation_all_ids.type_id', '=', type_id),
+                            ('relation_all_ids.record_type', '=',
+                             'b' if is_inverse else 'a')
+                        ],
+                    ])
 
         return result
 

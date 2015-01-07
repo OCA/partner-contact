@@ -247,6 +247,12 @@ msgstr "De begindatum mag niet na de einddatum liggen."
 #. module: partner_relations
 #: code:addons/partner_relations/model/res_partner_relation.py:260
 #, python-format
+msgid "Unsupported search operand \"%s\""
+msgstr "Operator \"%s\" is niet ondersteund"
+
+#. module: partner_relations
+#: code:addons/partner_relations/model/res_partner_relation.py:260
+#, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr "Er is al een soortgelijke, overlappende koppeling."
 
