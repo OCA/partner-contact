@@ -2,7 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/OCA/partner-contact/badge.png?branch=8.0)](https://coveralls.io/r/OCA/partner-contact?branch=8.0)
 
 OCA partner and contact management modules for Odoo
-==================================================
+===================================================
 
 This project is meant to gather all community extensions about partner and contact management for Odoo.
 
