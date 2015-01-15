@@ -19,24 +19,17 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-from openerp.osv import orm, fields
+from openerp import models, fields, api
 
 
-class ResPartner(orm.Model):
+class ResPartner(models.Model):
     _inherit = "res.partner"
-    _columns = {'zip_id': fields.many2one('res.better.zip', 'City/Location')}
+    zip_id = fields.Many2one('res.better.zip', 'City/Location')
 
-    def onchange_zip_id(self, cursor, uid, ids, zip_id, context=None):
-        if not zip_id:
-            return {}
-        if isinstance(zip_id, list):
-            zip_id = zip_id[0]
-        bzip = self.pool['res.better.zip'].browse(
-            cursor, uid, zip_id, context=context)
-        return {'value': {
-            'zip': bzip.name,
-            'city': bzip.city,
-            'country_id': bzip.country_id.id if bzip.country_id else False,
-            'state_id': bzip.state_id.id if bzip.state_id else False,
-            }
-        }
+    @api.onchange('zip_id')
+    def onchange_zip_id(self):
+        if self.zip_id:
+            self.zip = self.zip_id.zip
+            self.city = self.zip_id.city
+            self.country_id = self.zip_id.country_id
+            self.state_id = self.zip_id.state_id

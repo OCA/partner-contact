@@ -46,7 +46,7 @@ class better_zip_geonames_import(models.TransientModel):
     def _prepare_better_zip(self, row, country_id):
         state = self.select_or_create_state(row, country_id)
         vals = {
-            'name': row[1],
+            'zip': row[1],
             'city': row[2],
             'state_id': state.id,
             'country_id': country_id,
@@ -86,7 +86,7 @@ class better_zip_geonames_import(models.TransientModel):
             return states[0]
         else:
             return self.env['res.country.state'].create({
-                'name': row[name_row_index],
+                'zip': row[name_row_index],
                 'code': row[code_row_index],
                 'country_id': country_id
                 })

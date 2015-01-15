@@ -19,12 +19,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-from openerp.osv import orm, fields
+from openerp import models, fields
 
 
-class ResCountryState(orm.Model):
+class ResCountryState(models.Model):
 
     _inherit = 'res.country.state'
 
-    _columns = {'better_zip_ids': fields.one2many(
-        'res.better.zip', 'state_id', 'Cities')}
+    better_zip_ids = fields.One2many(
+        'res.better.zip', 'state_id', 'Cities')

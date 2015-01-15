@@ -19,31 +19,21 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-from openerp.osv import orm, fields
+from openerp import models, fields, api
 
 
-class ResCompany(orm.Model):
+class ResCompany(models.Model):
 
     _inherit = 'res.company'
 
-    def on_change_city(self, cr, uid, ids, zip_id, context=None):
-        result = {}
-        if context is None:
-            context = {}
-        if zip_id:
-            bzip = self.pool['res.better.zip'].browse(
-                cr, uid, zip_id, context=context)
-            result = {'value': {
-                'zip': bzip.name,
-                'country_id': bzip.country_id.id if bzip.country_id else False,
-                'city': bzip.city,
-                'state_id': bzip.state_id.id if bzip.state_id else False
-                }
-            }
-        return result
+    @api.onchange('better_zip_id')
+    def on_change_city(self):
+        if self.better_zip_id:
+            self.zip = self.better_zip_id.zip
+            self.city = self.better_zip_id.city
+            self.state_id = self.better_zip_id.state_id
+            self.country_id = self.better_zip_id.country_id
 
-    _columns = {
-        'better_zip_id': fields.many2one(
-            'res.better.zip', 'Location', select=1,
-            help=('Use the city name or the zip code to search the location')),
-    }
+    better_zip_id = fields.Many2one(
+        'res.better.zip', 'Location', select=1,
+        help=('Use the city name or the zip code to search the location'))
