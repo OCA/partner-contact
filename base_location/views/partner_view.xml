@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.zip_id.2</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <div class="address_format" position="before">
+                    <field name="zip_id"
+                        options="{'create_name_field': 'city'}"
+                        placeholder="City completion"
+                        attrs="{'invisible': [('use_parent_address','=',True)]}"
+                        class="oe_edit_only" />
+                </div>
+                <xpath expr="//field[@name='child_ids']/form//div[@class='address_format']" position="before">
+                    <field name="zip_id" options="{'create_name_field': 'city'}"
+                        placeholder="City completion"
+                        attrs="{'invisible': [('use_parent_address','=',True)]}"
+                        class="oe_edit_only" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
