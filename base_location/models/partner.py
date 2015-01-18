@@ -4,6 +4,7 @@
 #    Author: Nicolas Bessi. Copyright Camptocamp SA
 #    Contributor: Pedro Manuel Baeza <pedro.baeza@serviciosbaeza.com>
 #                 Ignacio Ibeas <ignacio@acysos.com>
+#                 Alejandro Santana <alejandrosantana@anubia.es>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,31 +20,20 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-from openerp.osv import orm, fields
+from openerp import models, fields, api
 
 
-class ResCompany(orm.Model):
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+    zip_id =  fields.Many2one('res.better.zip', 'City/Location')
 
-    _inherit = 'res.company'
-
-    def on_change_city(self, cr, uid, ids, zip_id, context=None):
-        result = {}
-        if context is None:
-            context = {}
-        if zip_id:
-            bzip = self.pool['res.better.zip'].browse(
-                cr, uid, zip_id, context=context)
-            result = {'value': {
-                'zip': bzip.name,
-                'country_id': bzip.country_id.id if bzip.country_id else False,
-                'city': bzip.city,
-                'state_id': bzip.state_id.id if bzip.state_id else False
-                }
-            }
-        return result
-
-    _columns = {
-        'better_zip_id': fields.many2one(
-            'res.better.zip', 'Location', select=1,
-            help=('Use the city name or the zip code to search the location')),
-    }
+    @api.multi
+    @api.onchange('zip_id')
+    def onchange_zip_id(self):
+        for record in self:
+            if record.zip_id:
+                bzip = record.zip_id[0]
+                record.zip = bzip.name
+                record.city = bzip.city
+                record.state_id = bzip.state_id or False
+                record.country_id = bzip.country_id or False
