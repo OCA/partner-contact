@@ -12,7 +12,7 @@
             <field name="code"/>
             <field name="city"/>
             <field name="priority"/>
-            <field name="state_id" on_change="onchange_state_id(state_id)"/>
+            <field name="state_id"/>
             <field name="country_id"/>
           </group>
         </form>
@@ -27,6 +27,7 @@
           <field name="name"/>
           <field name="code"/>
           <field name="city"/>
+          <field name="state_id"/>
           <field name="country_id"/>
           <field name="priority"/>
         </tree>
@@ -39,11 +40,18 @@
         <field name="arch" type="xml">
         <search string="Search city">
           <field name="name"/>
+          <field name="code"/>
           <field name="city"/>
+          <field name="state_id"/>
+          <field name="country_id"/>
+	            <group expand="0" string="Group By">
+	                <filter string="State" domain="[]" context="{'group_by':'state_id'}"/>
+	                <filter string="Country" domain="[]" context="{'group_by':'country_id'}"/>
+	            </group>
         </search>
       </field>
     </record>
-
+	 
     <record id="action_zip_tree" model="ir.actions.act_window">
       <field name="name">Cites/locations Management</field>
       <field name="res_model">res.better.zip</field>
