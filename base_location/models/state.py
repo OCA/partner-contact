@@ -4,6 +4,7 @@
 #    Author: Nicolas Bessi. Copyright Camptocamp SA
 #    Contributor: Pedro Manuel Baeza <pedro.baeza@serviciosbaeza.com>
 #                 Ignacio Ibeas <ignacio@acysos.com>
+#                 Alejandro Santana <alejandrosantana@anubia.es>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,24 +20,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-from openerp.osv import orm, fields
+from openerp import models, fields
 
 
-class ResPartner(orm.Model):
-    _inherit = "res.partner"
-    _columns = {'zip_id': fields.many2one('res.better.zip', 'City/Location')}
+class ResCountryState(models.Model):
 
-    def onchange_zip_id(self, cursor, uid, ids, zip_id, context=None):
-        if not zip_id:
-            return {}
-        if isinstance(zip_id, list):
-            zip_id = zip_id[0]
-        bzip = self.pool['res.better.zip'].browse(
-            cursor, uid, zip_id, context=context)
-        return {'value': {
-            'zip': bzip.name,
-            'city': bzip.city,
-            'country_id': bzip.country_id.id if bzip.country_id else False,
-            'state_id': bzip.state_id.id if bzip.state_id else False,
-            }
-        }
+    _inherit = 'res.country.state'
+
+    better_zip_ids = fields.One2many('res.better.zip', 'state_id', 'Cities')
