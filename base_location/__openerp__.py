@@ -22,12 +22,21 @@
 ##############################################################################
 {
     'name': 'Location management (aka Better ZIP)',
-    'version': '0.3.2',
+    'version': '1.0',
     'depends': ['base'],
     'author': 'Camptocamp',
+    'license': "AGPL-3",
+    'contributors': [
+        'Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>',
+        'Ignacio Ibeas (Acysos S.L.)',
+        'Alejandro Santana <alejandrosantana@anubia.es>',
+    ],
+    'summary': '''Enhanced zip/npa management system''',
     'description': '''
-    Introduces a better zip/npa management system.
-    It enables zip/city auto-completion on partners.''',
+    This module introduces a better zip/npa management system.
+    It enables zip, city, state and country auto-completion on partners and 
+    companies.
+    Also allows different search filters.''',
     'website': 'http://www.camptocamp.com',
     'data': ['views/better_zip.xml',
              'views/state.xml',
