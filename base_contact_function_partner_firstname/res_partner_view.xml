@@ -64,12 +64,6 @@
         <xpath expr="//field[@name='other_contact_ids']/form//label[@for='name']"
                position="replace"/>
 
-        <!-- Add firstname before name in templates view -->
-        <xpath expr="//t[@t-name='kanban-box']//div[@class='oe_kanban_details']/h4[@class='oe_partner_heading']//field[@name='name']"
-               position="before">
-          <field name="firstname"/>
-        </xpath>
-
       </field>
     </record>
   </data>
