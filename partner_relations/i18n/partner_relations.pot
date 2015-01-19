@@ -252,6 +252,12 @@ msgid "The starting date cannot be after the ending date."
 msgstr ""
 
 #. module: partner_relations
+#: code:addons/partner_relations/model/res_partner_relation.py:260
+#, python-format
+msgid "Unsupported search operand \"%s\""
+msgstr ""
+
+#. module: partner_relations
 #: field:res.partner.relation,type_id:0
 #: field:res.partner.relation,type_selection_id:0
 #: selection:res.partner.relation.all,record_type:0
