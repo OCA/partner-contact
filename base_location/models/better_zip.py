@@ -27,9 +27,8 @@ class BetterZip(models.Model):
 
     _name = "res.better.zip"
     _description = __doc__
-    _order = "priority"
+    _order = "name asc"
 
-    priority = fields.Integer('Priority', default=100, deprecated=True)
     name = fields.Char('ZIP')
     code = fields.Char('City Code', size=64,
                        help="The official code for the city")
