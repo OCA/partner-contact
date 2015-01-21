@@ -27,19 +27,18 @@ class ResCompany(models.Model):
 
     _inherit = 'res.company'
 
-    @api.multi
+    @api.one
     @api.onchange('better_zip_id')
     def on_change_city(self):
-        for record in self:
-            if record.better_zip_id:
-                record.zip = record.better_zip_id.name
-                record.city = record.better_zip_id.city
-                record.state_id = record.better_zip_id.state_id or False
-                record.country_id = record.better_zip_id.country_id or False
+        if self.better_zip_id:
+            self.zip = self.better_zip_id.name
+            self.city = self.better_zip_id.city
+            self.state_id = self.better_zip_id.state_id
+            self.country_id = self.better_zip_id.country_id
 
     better_zip_id = fields.Many2one(
         'res.better.zip',
         string='Location',
         select=1,
-        help=('Use the city name or the zip code to search the location'),
+        help='Use the city name or the zip code to search the location',
     )
