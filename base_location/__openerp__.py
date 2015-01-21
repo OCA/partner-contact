@@ -32,17 +32,12 @@
         'Alejandro Santana <alejandrosantana@anubia.es>',
     ],
     'summary': '''Enhanced zip/npa management system''',
-    'description': '''
-    This module introduces a better zip/npa management system.
-    It enables zip, city, state and country auto-completion on partners and 
-    companies.
-    Also allows different search filters.''',
     'website': 'http://www.camptocamp.com',
-    'data': ['views/better_zip.xml',
-             'views/state.xml',
-             'views/res_country.xml',
-             'views/company.xml',
-             'views/partner.xml',
+    'data': ['views/better_zip_view.xml',
+             'views/state_view.xml',
+             'views/res_country_view.xml',
+             'views/company_view.xml',
+             'views/partner_view.xml',
              'security/ir.model.access.csv'],
     'installable': True,
     'active': False,
