@@ -31,8 +31,7 @@ class ResPartner(models.Model):
     @api.onchange('zip_id')
     def onchange_zip_id(self):
         if self.zip_id:
-            bzip = self.zip_id[0]
-            self.zip = bzip.name
-            self.city = bzip.city
-            self.state_id = bzip.state_id
-            self.country_id = bzip.country_id
+            self.zip = self.zip_id.name
+            self.city = self.zip_id.city
+            self.state_id = self.zip_id.state_id
+            self.country_id = self.zip_id.country_id
