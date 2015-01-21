@@ -4,6 +4,7 @@
 #    Author: Nicolas Bessi. Copyright Camptocamp SA
 #    Contributor: Pedro Manuel Baeza <pedro.baeza@serviciosbaeza.com>
 #                 Ignacio Ibeas <ignacio@acysos.com>
+#                 Alejandro Santana <alejandrosantana@anubia.es>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,19 +20,25 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{'name': 'Location management (aka Better ZIP)',
- 'version': '0.3.1',
- 'depends': ['base'],
- 'author': 'Camptocamp',
- 'description': """
-Introduces a better zip/npa management system.
-It enables zip/city auto-completion on partners""",
- 'website': 'http://www.camptocamp.com',
- 'data': ['better_zip_view.xml',
-          'state_view.xml',
-          'company_view.xml',
-          'partner_view.xml',
-          'security/ir.model.access.csv'],
- 'installable': True,
- 'active': False,
- }
+{
+    'name': 'Location management (aka Better ZIP)',
+    'version': '1.0',
+    'depends': ['base'],
+    'author': 'Camptocamp',
+    'license': "AGPL-3",
+    'contributors': [
+        'Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>',
+        'Ignacio Ibeas (Acysos S.L.)',
+        'Alejandro Santana <alejandrosantana@anubia.es>',
+    ],
+    'summary': '''Enhanced zip/npa management system''',
+    'website': 'http://www.camptocamp.com',
+    'data': ['views/better_zip_view.xml',
+             'views/state_view.xml',
+             'views/res_country_view.xml',
+             'views/company_view.xml',
+             'views/partner_view.xml',
+             'security/ir.model.access.csv'],
+    'installable': True,
+    'active': False,
+}
