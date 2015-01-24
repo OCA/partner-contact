@@ -26,15 +26,6 @@
     'website': 'http://www.openerp.com',
     'category': 'Customer Relationship Management',
     'complexity': "expert",
-    'description': """
-This module allows you to manage your contacts
-==============================================
-
-It lets you define groups of contacts sharing some common information, like:
-    * Birthdate
-    * Nationality
-    * Native Language
-""",
     'depends': [
         'base',
     ],
