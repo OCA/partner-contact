@@ -46,7 +46,7 @@ It lets you define groups of contacts sharing some common information, like:
         'base_contact_demo.xml',
     ],
     'test': [],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'images': [],
 }
