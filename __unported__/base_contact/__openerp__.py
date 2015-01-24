@@ -37,8 +37,6 @@ It lets you define groups of contacts sharing some common information, like:
 """,
     'depends': [
         'base',
-        'process',
-        'contacts'
     ],
     'external_dependencies': {},
     'data': [
