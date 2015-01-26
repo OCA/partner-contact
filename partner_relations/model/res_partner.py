@@ -69,6 +69,16 @@ class ResPartner(orm.Model):
             if value[0] == 0:
                 relation_obj.create(cr, uid, value[2], context=context2)
             if value[0] == 1:
+                # if we write partner_id_display, we also need to pass
+                # type_selection_id in order to have this write end up on
+                # the correct field
+                if 'partner_id_display' in value[2] and 'type_selection_id'\
+                        not in value[2]:
+                    relation_data = relation_obj.read(
+                        cr, uid, [value[1]], ['type_selection_id'],
+                        context=context)[0]
+                    value[2]['type_selection_id'] =\
+                        relation_data['type_selection_id']
                 relation_obj.write(
                     cr, uid, value[1], value[2], context=context2)
             if value[0] == 2:
