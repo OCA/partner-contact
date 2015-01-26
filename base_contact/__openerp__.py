@@ -21,6 +21,7 @@
 
 {
     'name': 'Contacts Management',
+    'summary': u"Manage your contacts separately",
     'version': '1.0',
     'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
