@@ -21,7 +21,7 @@
 ##############################################################################
 import time
 from openerp.osv import orm, fields
-from openerp.osv.expression import is_leaf, OR, FALSE_LEAF
+from openerp.osv.expression import is_leaf, AND, OR, FALSE_LEAF
 from openerp.tools import DEFAULT_SERVER_DATE_FORMAT
 from openerp.tools.translate import _
 
@@ -107,7 +107,7 @@ class ResPartner(orm.Model):
                                 context=context)
 
                 if not relation_type_selection_ids:
-                    result = OR([result, FALSE_LEAF])
+                    result = AND([result, [FALSE_LEAF]])
 
                 for relation_type_selection_id in relation_type_selection_ids:
                     type_id, is_inverse = relation_type_selection\
