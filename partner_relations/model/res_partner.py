@@ -103,8 +103,14 @@ class ResPartner(orm.Model):
                     relation_type_selection_ids.append(arg[2])
                 else:
                     relation_type_selection_ids = relation_type_selection\
-                        .search(cr, uid, [('name', arg[1], arg[2])],
-                                context=context)
+                        .search(
+                            cr, uid,
+                            [
+                                '|',
+                                ('type_id.name', arg[1], arg[2]),
+                                ('type_id.name_inverse', arg[1], arg[2]),
+                            ],
+                            context=context)
 
                 if not relation_type_selection_ids:
                     result = AND([result, [FALSE_LEAF]])
