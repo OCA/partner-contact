@@ -91,7 +91,7 @@ class ResPartner(orm.Model):
 
         return self.write(cursor, uid, partner_id, vals, context=context)
 
-    def copy_data(self, cr, uid, _id, default=None, context=None):
+    def copy_data(self, cr, uid, id, default=None, context=None):
         """
         Avoid to replicate the firstname into the name when duplicating a
         partner
@@ -101,13 +101,13 @@ class ResPartner(orm.Model):
             default = default.copy()
             default['lastname'] = (
                 _('%s (copy)') % self.read(
-                    cr, uid, [_id], ['lastname'], context=context
+                    cr, uid, [id], ['lastname'], context=context
                     )[0]['lastname']
             )
             if default.get('name'):
                 del(default['name'])
         return super(ResPartner, self).copy_data(
-            cr, uid, _id, default, context=context)
+            cr, uid, id, default, context=context)
 
     def create(self, cursor, uid, vals, context=None):
         """
