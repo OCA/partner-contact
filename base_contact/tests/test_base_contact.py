@@ -122,12 +122,12 @@ class Test_Base_Contact(common.TransactionCase):
         """
         cr, uid = self.cr, self.uid
         # Bob's contact has one other position which is related to
-        # 'Your Company'
-        # so search for all contacts working for 'Your Company' should contain
+        # 'YourCompany'
+        # so search for all contacts working for 'YourCompany' should contain
         # bob position.
         partner_ids = self.partner.search(
             cr, uid,
-            [('parent_id', 'ilike', 'Your Company')],
+            [('parent_id', 'ilike', 'YourCompany')],
             context=None
         )
         self.assertIn(self.bob_job1_id, partner_ids, )
@@ -137,7 +137,7 @@ class Test_Base_Contact(common.TransactionCase):
         ctx = {'search_show_all_positions': False}
         partner_ids = self.partner.search(
             cr, uid,
-            [('parent_id', 'ilike', 'Your Company')],
+            [('parent_id', 'ilike', 'YourCompany')],
             context=ctx
         )
         self.assertIn(self.bob_contact_id, partner_ids, )

@@ -21,24 +21,14 @@
 
 {
     'name': 'Contacts Management',
+    'summary': u"Manage your contacts separately",
     'version': '1.0',
     'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'category': 'Customer Relationship Management',
     'complexity': "expert",
-    'description': """
-This module allows you to manage your contacts
-==============================================
-
-It lets you define groups of contacts sharing some common information, like:
-    * Birthdate
-    * Nationality
-    * Native Language
-""",
     'depends': [
         'base',
-        'process',
-        'contacts'
     ],
     'external_dependencies': {},
     'data': [
@@ -48,7 +38,7 @@ It lets you define groups of contacts sharing some common information, like:
         'base_contact_demo.xml',
     ],
     'test': [],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'images': [],
 }
