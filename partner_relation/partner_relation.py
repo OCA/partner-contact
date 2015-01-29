@@ -31,7 +31,7 @@ class res_partner_relation_type(orm.Model):
 
     _columns = {
         'name': fields.char(
-            'Relation Name', size=32, required=True, translate=True),
+            'Relation Name', required=True, translate=True),
         'reverse_id': fields.many2one(
             'res.partner.relation.type', 'Reverse Relation Type',
             help="If the relation type is asymetric, select the corresponding "
