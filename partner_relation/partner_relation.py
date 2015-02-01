@@ -87,11 +87,14 @@ class res_partner_relation_type(orm.Model):
         if (
                 'reverse_id' in vals
                 and not context.get('allow_write_reverse_id')):
-            raise orm.except_orm(
-                _('Error:'),
-                _('It is not possible to modify the reverse of a relation '
-                    'type. You should desactivate or delete this relation '
-                    'type and create a new one.'))
+            cur_reverse_id = self.browse(
+                cr, uid, ids[0], context=context).reverse_id.id
+            if vals['reverse_id'] != cur_reverse_id:
+                raise orm.except_orm(
+                    _('Error:'),
+                    _('It is not possible to modify the reverse of a relation '
+                        'type. You should desactivate or delete this relation '
+                        'type and create a new one.'))
         return super(res_partner_relation_type, self).write(
             cr, uid, ids, vals, context=context)
 
