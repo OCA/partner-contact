@@ -37,5 +37,6 @@
     'demo': [
         'partner_relation_demo.xml',
         ],
+    'test': ['test/relation.yml'],
     'installable': True,
 }

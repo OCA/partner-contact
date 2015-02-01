@@ -1,0 +1,46 @@
+-
+  Create a symetric relation type
+-
+  !record {model: res.partner.relation.type, id: friend}:
+    name: Friend of
+-
+  Create an asymetric relation type
+-
+  !record {model: res.partner.relation.type, id: parent}:
+    name: Parent of
+-
+  Create the reverse of the asymetric relation type
+-
+  !record {model: res.partner.relation.type, id: child}:
+    name: Child of
+    reverse_id: parent
+-
+  Create a symetric relation
+-
+  !record {model: res.partner.relation, id: friend1}:
+    src_partner_id: base.res_partner_address_4
+    relation_type_id: friend
+    dest_partner_id: base.res_partner_address_11
+-
+  Create asymetric relation
+-
+  !record {model: res.partner.relation, id: parent1}:
+    src_partner_id: base.res_partner_address_10
+    relation_type_id: parent
+    dest_partner_id: base.res_partner_address_14
+-
+  Check symetric and asymetric relations
+-
+  !python {model: res.partner.relation}: |
+    friend_rel_ids = self.search(cr, uid, [('relation_type_id', '=', ref('friend'))], context=context)
+    assert len(friend_rel_ids) == 2, 'Failure on creation of symetric relation'
+    friend_rels = self.browse(cr, uid, friend_rel_ids, context=context)
+    assert friend_rels[0].src_partner_id.id == friend_rels[1].dest_partner_id.id, 'Bad creation of symetric relation'
+    assert friend_rels[1].src_partner_id.id == friend_rels[0].dest_partner_id.id, 'Bad creation of symetric relation (2)'
+    parent_rel_ids = self.search(cr, uid, [('relation_type_id', '=', ref('parent'))], context=context)
+    assert len(parent_rel_ids) == 1, 'Failure on creation of asymetric relation'
+    child_rel_ids = self.search(cr, uid, [('relation_type_id', '=', ref('child'))], context=context)
+    assert len(child_rel_ids) == 1, 'Failure on creation of asymetric relation (2)'
+    child_rel = self.browse(cr, uid, child_rel_ids[0], context=context)
+    assert child_rel.src_partner_id.id == ref('base.res_partner_address_14'), 'Bad creation of asymetric relation'
+    assert child_rel.dest_partner_id.id == ref('base.res_partner_address_10'), 'Bad creation of asymetric relation (2)'
