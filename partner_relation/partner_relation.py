@@ -3,6 +3,7 @@
 #
 #    Partner Relation module for Odoo
 #    Copyright (C) 2014-2015 Artisanat Monastique de Provence (www.barroux.org)
+#    Copyright (C) 2015 Akretion France (www.akretion.com)
 #    @author: Alexis de Lattre <alexis.delattre@akretion.com>
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -20,97 +21,69 @@
 #
 ##############################################################################
 
-from openerp.osv import orm, fields
-from openerp.tools.translate import _
+from openerp import models, fields, api, _
+from openerp.exceptions import Warning
 
 
-class res_partner_relation_type(orm.Model):
+class ResPartnerRelationType(models.Model):
     _name = 'res.partner.relation.type'
     _description = "Partner Relation Type"
     _order = 'name'
 
-    _columns = {
-        'name': fields.char(
-            'Relation Name', required=True, translate=True),
-        'reverse_id': fields.many2one(
-            'res.partner.relation.type', 'Reverse Relation Type',
-            help="If the relation type is asymetric, select the corresponding "
-            "reverse relation type. For exemple, 'A recommends B' is an "
-            "asymetric relation ; it's reverse relation is 'B is recommended "
-            "by A'. If the relation type is symetric, leave the field empty. "
-            "For example, 'A is a competitor of B' is a symetric relation "
-            "because we also have 'B is the competitor of A'."),
-        'active': fields.boolean('Active'),
-        }
+    name = fields.Char(
+        string='Relation Name', required=True, translate=True)
+    reverse_id = fields.Many2one(
+        'res.partner.relation.type', string='Reverse Relation Type',
+        copy=False,
+        help="If the relation type is asymetric, select the corresponding "
+        "reverse relation type. For exemple, 'A recommends B' is an "
+        "asymetric relation ; it's reverse relation is 'B is recommended "
+        "by A'. If the relation type is symetric, leave the field empty. "
+        "For example, 'A is a competitor of B' is a symetric relation "
+        "because we also have 'B is the competitor of A'.")
+    active = fields.Boolean(string='Active', default=True)
 
-    _defaults = {
-        'active': True,
-        }
-
-    def copy(self, cr, uid, id, default=None, context=None):
-        if default is None:
-            default = {}
-        current = self.browse(cr, uid, id, context=context)
-        default.update({
-            'name': u'%s (copy)' % current.name,
-            'reverse_id': False,
-            })
-        return super(res_partner_relation_type, self).copy(
-            cr, uid, id, default=default, context=context)
-
-    def _get_reverse_relation_type_id(
-            self, cr, uid, relation_type_id, context=None):
-        relation_type = self.browse(
-            cr, uid, relation_type_id, context=context)
-        if relation_type.reverse_id:
-            reverse_relation_type_id = relation_type.reverse_id.id
+    @api.multi
+    @api.returns('self')
+    def _get_reverse_relation_type_id(self):
+        self.ensure_one()
+        if self.reverse_id:
+            return self.reverse_id
         else:
-            reverse_relation_type_id = relation_type_id
-        return reverse_relation_type_id
+            return self
 
-    def create(self, cr, uid, vals, context=None):
-        if context is None:
-            context = {}
-        new_id = super(res_partner_relation_type, self).create(
-            cr, uid, vals, context=context)
+    @api.model
+    def create(self, vals):
+        new = super(ResPartnerRelationType, self).create(vals)
         if vals.get('reverse_id'):
-            ctx_write = context.copy()
-            ctx_write['allow_write_reverse_id'] = True
-            self.write(
-                cr, uid, vals['reverse_id'],
-                {'reverse_id': new_id}, context=ctx_write)
-        return new_id
+            reverse = self.browse(vals['reverse_id'])
+            reverse.with_context(allow_write_reverse_id=True).write(
+                {'reverse_id': new.id})
+        return new
 
-    def write(self, cr, uid, ids, vals, context=None):
-        if context is None:
-            context = {}
+    @api.multi
+    def write(self, vals):
         if (
                 'reverse_id' in vals
-                and not context.get('allow_write_reverse_id')):
-            cur_reverse_id = self.browse(
-                cr, uid, ids[0], context=context).reverse_id.id
-            if vals['reverse_id'] != cur_reverse_id:
-                raise orm.except_orm(
-                    _('Error:'),
+                and not self.env.context.get('allow_write_reverse_id')):
+            if vals['reverse_id'] != self.reverse_id.id:
+                raise Warning(
                     _('It is not possible to modify the reverse of a relation '
                         'type. You should desactivate or delete this relation '
                         'type and create a new one.'))
-        return super(res_partner_relation_type, self).write(
-            cr, uid, ids, vals, context=context)
+        return super(ResPartnerRelationType, self).write(vals)
 
 
-class res_partner_relation(orm.Model):
+class ResPartnerRelation(models.Model):
     _name = 'res.partner.relation'
     _description = 'Partner Relation'
 
-    _columns = {
-        'src_partner_id': fields.many2one(
-            'res.partner', 'Source Partner', required=True),
-        'relation_type_id': fields.many2one(
-            'res.partner.relation.type', 'Relation Type', required=True),
-        'dest_partner_id': fields.many2one(
-            'res.partner', 'Destination Partner', required=True),
-        }
+    src_partner_id = fields.Many2one(
+        'res.partner', string='Source Partner', required=True)
+    relation_type_id = fields.Many2one(
+        'res.partner.relation.type', string='Relation Type', required=True)
+    dest_partner_id = fields.Many2one(
+        'res.partner', string='Destination Partner', required=True)
 
     _sql_constraints = [(
         'src_dest_partner_relation_uniq',
@@ -118,103 +91,92 @@ class res_partner_relation(orm.Model):
         'This relation already exists!'
         )]
 
-    def create(self, cr, uid, vals, context=None):
+    @api.model
+    def create(self, vals):
         '''When a user creates a relation, Odoo creates the reverse
         relation automatically'''
-        reverse_rel_type_id = self.pool['res.partner.relation.type'].\
-            _get_reverse_relation_type_id(
-                cr, uid, vals['relation_type_id'], context=context)
+        assert vals.get('relation_type_id'), 'relation_type_id is required'
+        rel_type = self.env['res.partner.relation.type'].browse(
+            vals['relation_type_id'])
+        reverse_rel_type = rel_type._get_reverse_relation_type_id()
         # Create reverse relation
-        super(res_partner_relation, self).create(
-            cr, uid, {
-                'relation_type_id': reverse_rel_type_id,
-                'src_partner_id': vals['dest_partner_id'],
-                'dest_partner_id': vals['src_partner_id'],
-                }, context=context)
-        return super(res_partner_relation, self).create(
-            cr, uid, vals, context=context)
+        super(ResPartnerRelation, self).create({
+            'relation_type_id': reverse_rel_type.id,
+            'src_partner_id': vals['dest_partner_id'],
+            'dest_partner_id': vals['src_partner_id'],
+            })
+        return super(ResPartnerRelation, self).create(vals)
 
-    def _get_reverse_relation_id(self, cr, uid, relation, context=None):
-        reverse_rel_type_id = self.pool['res.partner.relation.type'].\
-            _get_reverse_relation_type_id(
-                cr, uid, relation.relation_type_id.id, context=context)
-        reverse_rel_ids = self.search(
-            cr, uid, [
-                ('src_partner_id', '=', relation.dest_partner_id.id),
-                ('dest_partner_id', '=', relation.src_partner_id.id),
-                ('relation_type_id', '=', reverse_rel_type_id)
-                ], context=context)
-        assert len(reverse_rel_ids) == 1, \
+    @api.multi
+    @api.returns('self')
+    def _get_reverse_relation(self):
+        self.ensure_one()
+        reverse_rel_type = self.relation_type_id.\
+            _get_reverse_relation_type_id()
+        reverse_rels = self.search([
+            ('src_partner_id', '=', self.dest_partner_id.id),
+            ('dest_partner_id', '=', self.src_partner_id.id),
+            ('relation_type_id', '=', reverse_rel_type.id)
+            ])
+        assert len(reverse_rels) == 1, \
             'A relation always has one reverse relation'
-        return reverse_rel_ids[0]
+        return reverse_rels[0]
 
-    def unlink(self, cr, uid, ids, context=None):
+    @api.multi
+    def unlink(self):
         '''When a user deletes a relation, Odoo deletes the reverse
         relation automatically'''
-        for relation in self.browse(cr, uid, ids, context=None):
-            reverse_rel_id = self._get_reverse_relation_id(
-                cr, uid, relation, context=context)
-            if reverse_rel_id not in ids:
-                ids.append(reverse_rel_id)
-        return super(res_partner_relation, self).unlink(
-            cr, uid, ids, context=context)
+        for relation in self:
+            reverse_rel = relation._get_reverse_relation()
+            if reverse_rel not in self:
+                self += reverse_rel
+        return super(ResPartnerRelation, self).unlink()
 
-    def write(self, cr, uid, ids, vals, context=None):
+    @api.multi
+    def write(self, vals):
         '''When a user writes on a relation, we also have to update
         the reverse relation'''
-        reverse_relation_ids = []
-        for relation in self.browse(cr, uid, ids, context=None):
-            reverse_rel_id = self._get_reverse_relation_id(
-                cr, uid, relation, context=context)
-            if reverse_rel_id in ids:
-                raise orm.except_orm(
-                    _('Error:'),
+        reverse_relations = self.browse(False)
+        for relation in self:
+            reverse_rel = relation._get_reverse_relation()
+            if reverse_rel in self:
+                raise Warning(
                     _("You cannot write the same values on the relation "
                         "and it's reverse relation."))
-            assert reverse_rel_id not in reverse_relation_ids, \
+            assert reverse_rel not in reverse_relations, \
                 "Impossible: it's relation has it's own reverse relation."
-            reverse_relation_ids.append(reverse_rel_id)
+            reverse_relations += reverse_rel
         reverse_vals = {}
         if 'src_partner_id' in vals:
             reverse_vals['dest_partner_id'] = vals['src_partner_id']
         if 'dest_partner_id' in vals:
             reverse_vals['src_partner_id'] = vals['dest_partner_id']
         if 'relation_type_id' in vals:
+            rel_type = self.env['res.partner.relation.type'].browse(
+                vals['relation_type_id'])
             reverse_vals['relation_type_id'] = \
-                self.pool['res.partner.relation.type'].\
-                _get_reverse_relation_type_id(
-                    cr, uid, vals['relation_type_id'], context=context)
-        super(res_partner_relation, self).write(
-            cr, uid, reverse_relation_ids, reverse_vals, context=context)
-        return super(res_partner_relation, self).write(
-            cr, uid, ids, vals, context=context)
+                rel_type._get_reverse_relation_type_id().id
+        super(ResPartnerRelation, reverse_relations).write(
+            reverse_vals)
+        return super(ResPartnerRelation, self).write(vals)
 
-    def go_to_dest_partner(self, cr, uid, ids, context=None):
-        assert len(ids) == 1, 'Only 1 ID'
-        relation = self.browse(cr, uid, ids[0], context=context)
+    @api.multi
+    def go_to_dest_partner(self):
+        self.ensure_one()
         action = {
-            'name': self.pool['res.partner']._description,
+            'name': self.env['res.partner']._description,
             'type': 'ir.actions.act_window',
             'res_model': 'res.partner',
             'view_type': 'form',
             'view_mode': 'form,tree,kanban',
             'target': 'current',
-            'res_id': relation.dest_partner_id.id,
+            'res_id': self[0].dest_partner_id.id,
             }
         return action
 
 
-class res_partner(orm.Model):
+class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    _columns = {
-        'relation_ids': fields.one2many(
-            'res.partner.relation', 'src_partner_id', 'Partner Relations'),
-        }
-
-    def copy(self, cr, uid, id, default=None, context=None):
-        if default is None:
-            default = {}
-        default['relation_ids'] = False
-        return super(res_partner, self).copy(
-            cr, uid, id, default=default, context=context)
+    relation_ids = fields.One2many(
+        'res.partner.relation', 'src_partner_id', string='Partner Relations')

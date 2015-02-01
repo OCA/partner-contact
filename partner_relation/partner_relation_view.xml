@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     Copyright (C) 2014-2015 Artisanat Monastique de Provence (www.barroux.org)
+    Copyright (C) 2015 Akretion France (www.akretion.com)
     @author: Alexis de Lattre <alexis.delattre@akretion.com>
     The licence is in the file __openerp__.py
 -->
@@ -35,7 +36,7 @@
 </record>
 
 <record id="partner_relation_type_action" model="ir.actions.act_window">
-    <field name="name">Partner Relation Types</field>
+    <field name="name">Relation Types</field>
     <field name="res_model">res.partner.relation.type</field>
     <field name="view_mode">tree,form</field>
 </record>
@@ -76,7 +77,7 @@
 </record>
 
 <record id="partner_relation_action" model="ir.actions.act_window">
-    <field name="name">Partner Relations</field>
+    <field name="name">Relations</field>
     <field name="res_model">res.partner.relation</field>
     <field name="view_mode">tree</field>
 </record>

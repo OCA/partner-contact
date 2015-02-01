@@ -3,6 +3,7 @@
 #
 #    Partner Relation module for Odoo
 #    Copyright (C) 2014-2015 Artisanat Monastique de Provence (www.barroux.org)
+#    Copyright (C) 2015 Akretion France (www.akretion.com)
 #    @author: Alexis de Lattre <alexis.delattre@akretion.com>
 #
 #    This program is free software: you can redistribute it and/or modify
