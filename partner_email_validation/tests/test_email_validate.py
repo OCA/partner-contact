@@ -37,6 +37,7 @@ class TestEmailValidate(TransactionCase):
             "allô@mail.me",
             "aлrr@test.рф",
             "foo@123.com"
+            "the_under@score.com",
         ]:
             self.assertTrue(check(email))
 
