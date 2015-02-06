@@ -89,7 +89,7 @@ class ResPartner(orm.Model):
         result = []
         for arg in args:
             if isinstance(arg, tuple) and arg[0] == name:
-                if arg[1] not in ['=', 'like', 'not like', 'ilike',
+                if arg[1] not in ['=', '!=', 'like', 'not like', 'ilike',
                                   'not ilike', 'in', 'not in']:
                     raise orm.except_orm(
                         _('Error'),
