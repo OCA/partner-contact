@@ -21,7 +21,7 @@
 ##############################################################################
 import time
 from openerp.osv import orm, fields
-from openerp.osv.expression import is_leaf, OR, FALSE_LEAF
+from openerp.osv.expression import is_leaf, AND, OR, FALSE_LEAF
 from openerp.tools import DEFAULT_SERVER_DATE_FORMAT
 from openerp.tools.translate import _
 
@@ -69,6 +69,16 @@ class ResPartner(orm.Model):
             if value[0] == 0:
                 relation_obj.create(cr, uid, value[2], context=context2)
             if value[0] == 1:
+                # if we write partner_id_display, we also need to pass
+                # type_selection_id in order to have this write end up on
+                # the correct field
+                if 'partner_id_display' in value[2] and 'type_selection_id'\
+                        not in value[2]:
+                    relation_data = relation_obj.read(
+                        cr, uid, [value[1]], ['type_selection_id'],
+                        context=context)[0]
+                    value[2]['type_selection_id'] =\
+                        relation_data['type_selection_id']
                 relation_obj.write(
                     cr, uid, value[1], value[2], context=context2)
             if value[0] == 2:
@@ -93,11 +103,24 @@ class ResPartner(orm.Model):
                     relation_type_selection_ids.append(arg[2])
                 else:
                     relation_type_selection_ids = relation_type_selection\
-                        .search(cr, uid, [('name', arg[1], arg[2])],
-                                context=context)
+                        .search(
+                            cr, uid,
+                            [
+                                ('type_id.name', arg[1], arg[2]),
+                                ('record_type', '=', 'a'),
+                            ],
+                            context=context)
+                    relation_type_selection_ids.extend(
+                        relation_type_selection.search(
+                            cr, uid,
+                            [
+                                ('type_id.name_inverse', arg[1], arg[2]),
+                                ('record_type', '=', 'b'),
+                            ],
+                            context=context))
 
                 if not relation_type_selection_ids:
-                    result = OR([result, FALSE_LEAF])
+                    result = AND([result, [FALSE_LEAF]])
 
                 for relation_type_selection_id in relation_type_selection_ids:
                     type_id, is_inverse = relation_type_selection\
