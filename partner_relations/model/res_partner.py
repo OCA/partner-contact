@@ -101,6 +101,17 @@ class ResPartner(orm.Model):
 
                 if arg[1] == '=' and isinstance(arg[2], (long, int)):
                     relation_type_selection_ids.append(arg[2])
+                elif arg[1] == '!=' and isinstance(arg[2], (long, int)):
+                    type_id, is_inverse = relation_type_selection\
+                        .get_type_from_selection_id(
+                            cr, uid, arg[2])
+                    result = OR([
+                        result,
+                        [
+                            ('relation_all_ids.type_id', '!=', type_id),
+                        ]
+                    ])
+                    continue
                 else:
                     relation_type_selection_ids = relation_type_selection\
                         .search(
