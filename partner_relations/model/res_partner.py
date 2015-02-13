@@ -89,7 +89,7 @@ class ResPartner(orm.Model):
         result = []
         for arg in args:
             if isinstance(arg, tuple) and arg[0] == name:
-                if arg[1] not in ['=', 'like', 'not like', 'ilike',
+                if arg[1] not in ['=', '!=', 'like', 'not like', 'ilike',
                                   'not ilike', 'in', 'not in']:
                     raise orm.except_orm(
                         _('Error'),
@@ -101,6 +101,17 @@ class ResPartner(orm.Model):
 
                 if arg[1] == '=' and isinstance(arg[2], (long, int)):
                     relation_type_selection_ids.append(arg[2])
+                elif arg[1] == '!=' and isinstance(arg[2], (long, int)):
+                    type_id, is_inverse = relation_type_selection\
+                        .get_type_from_selection_id(
+                            cr, uid, arg[2])
+                    result = OR([
+                        result,
+                        [
+                            ('relation_all_ids.type_id', '!=', type_id),
+                        ]
+                    ])
+                    continue
                 else:
                     relation_type_selection_ids = relation_type_selection\
                         .search(
