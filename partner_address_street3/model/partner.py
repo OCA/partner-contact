@@ -19,7 +19,6 @@
 #
 ##############################################################################
 from openerp.osv import orm, fields
-from openerp.addons.base.res import res_partner
 
 
 class res_partner(orm.Model):
@@ -30,9 +29,9 @@ class res_partner(orm.Model):
         'street3': fields.char('Street 3'),
     }
 
-    def _commercial_fields(self, cr, uid, context=None):
+    def _address_fields(self, cr, uid, context=None):
         fields = super(res_partner, self
-                       )._commercial_fields(cr, uid, context=context)
+                       )._address_fields(cr, uid, context=context)
         fields.append('street3')
         return fields
 
