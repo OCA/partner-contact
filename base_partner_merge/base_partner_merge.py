@@ -58,15 +58,6 @@ def is_integer_list(ids):
     return all(isinstance(i, (int, long)) for i in ids)
 
 
-class ResPartner(orm.Model):
-    _inherit = 'res.partner'
-
-    _columns = {
-        'id': fields.integer('Id', readonly=True),
-        'create_date': fields.datetime('Create Date', readonly=True),
-    }
-
-
 class MergePartnerLine(orm.TransientModel):
     _name = 'base.partner.merge.line'
 
