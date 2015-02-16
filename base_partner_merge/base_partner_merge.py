@@ -388,8 +388,9 @@ class MergePartnerAutomatic(orm.TransientModel):
                   " merge several contacts linked to existing Journal "
                   "Items."))
 
-        call_it = lambda function: function(cr, uid, src_partners,
-                                            dst_partner, context=context)
+        def call_it(function):
+            function(cr, uid, src_partners,
+                     dst_partner, context=context)
 
         call_it(self._update_foreign_keys)
         call_it(self._update_reference_fields)
