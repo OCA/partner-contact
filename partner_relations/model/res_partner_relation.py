@@ -44,8 +44,8 @@ class ResPartnerRelation(Model):
         '''Determine wether functions are called in a situation where the
         active partner is the right partner. Default False!
         '''
-        if (context and 'active_ids' in context
-                and right_partner_id in context.get('active_ids', [])):
+        if (context and 'active_ids' in context and
+                right_partner_id in context.get('active_ids', [])):
             return True
         return False
 
@@ -77,30 +77,31 @@ class ResPartnerRelation(Model):
             self, cr, uid, ids, field_names, arg, context=None):
         '''Return a dictionary of dictionaries, with for every partner for
         ids, the computed values.'''
-        def get_values(this, dummy_field_names, dummy_arg, context=None):
+        def get_values(self, dummy_field_names, dummy_arg, context=None):
             '''Get computed values for record'''
             values = {}
             on_right_partner = self._on_right_partner(
-                cr, uid, this.right_partner_id.id, context=context)
+                cr, uid, self.right_partner_id.id, context=context)
             # type_selection_id
             values['type_selection_id'] = (
-                ((this.type_id.id) * 10) + (on_right_partner and 1 or 0))
+                ((self.type_id.id) * 10) + (on_right_partner and 1 or 0))
             # partner_id_display
             values['partner_id_display'] = (
-                on_right_partner and this.left_partner_id.id
-                or this.right_partner_id.id
+                self.left_partner_id.id
+                if on_right_partner
+                else self.right_partner_id.id
             )
             # is_relation_expired
             today = fields.date.context_today(self, cr, uid, context=context)
             values['is_relation_expired'] = (
-                this.date_end and (this.date_end < today))
+                self.date_end and (self.date_end < today))
             # is_relation_future
-            values['is_relation_future'] = this.date_start > today
+            values['is_relation_future'] = self.date_start > today
             return values
 
         return dict([
-            (this.id, get_values(this, field_names, arg, context=context))
-            for this in self.browse(cr, uid, ids, context=context)
+            (i.id, get_values(i, field_names, arg, context=context))
+            for i in self.browse(cr, uid, ids, context=context)
         ])
 
     def write(self, cr, uid, ids, vals, context=None):

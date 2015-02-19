@@ -62,14 +62,12 @@ class ResPartner(orm.Model):
         )
     }
 
-    # indirection to avoid passing a copy of the overridable method when
-    # declaring the function field
-    _display_name = lambda self, *a, **kw: self._display_name_compute(*a, **kw)
-
     _columns = {
         # extra field to allow ORDER BY to match visible names
         'display_name': fields.function(
-            _display_name,
+            # indirection to avoid passing a copy of the overridable method
+            # when declaring the function field
+            lambda self, *a, **kw: self._display_name_compute(*a, **kw),
             type='char',
             string='Name',
             store=_display_name_store_triggers
