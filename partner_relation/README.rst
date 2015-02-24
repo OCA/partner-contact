@@ -7,13 +7,13 @@ configurable ; it supports symetric and asymetric relations.
 For example, you will be able to define on the form view of partner A that :
 
 * Partner A is a competitor of Partner B
-  (symetric relation : B is a competitor of A),
+  (symetric relation : B is a competitor of A)
 
 * Partner A has been recommended by Partner C
-  (asymetric relation : C recommands A),
+  (asymetric relation : C recommands A)
 
 * Partner A is the editor of Partner D
-  (asymetric relation : D is the integrator of A).
+  (asymetric relation : D is the integrator of A)
 
 The relations that you define on Partner A towards Partner B will
 automatically be visible on the form view of Partner B.
@@ -27,8 +27,7 @@ You will have to create the type of relations in the menu
 Usage
 =====
 
-On the form view of a partner, in the *Relations* tab, you can view and
-create the relations of this partner.
+To view and update relations of a partner, open its form view and go to the *Relations* tab.
 
 Credits
 =======
