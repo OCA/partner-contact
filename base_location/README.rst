@@ -8,13 +8,33 @@ It enables zip, city, state and country auto-completion on partners and companie
 Also allows different search filters.
 
 
-Author
-------
-
-- Nicolas Bessi. (Copyright Camptocamp SA)
+Credits
+=======
 
 Contributors
 ------------
-- Ignacio Ibeas (Acysos S.L.)
-- Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
-- Alejandro Santana <alejandrosantana@anubia.es>
+
+* Nicolas Bessi. (Copyright Camptocamp SA)
+* Ignacio Ibeas (Acysos S.L.)
+* Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
+* Alejandro Santana <alejandrosantana@anubia.es>
+
+Icon
+----
+* http://icon-park.com/icon/location-map-pin-orange3/
+
+
+Maintainer
+----------
+
+.. image:: http://odoo-community.org/logo.png
+   :alt: Odoo Community Association
+   :target: http://odoo-community.org
+
+This module is maintained by the OCA.
+
+OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.
+
+To contribute to this module, please visit http://odoo-community.org.
