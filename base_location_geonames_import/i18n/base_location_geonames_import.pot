@@ -34,7 +34,7 @@ msgstr ""
 
 #. module: base_location_geonames_import
 #: view:better.zip.geonames.import:0
-msgid "For the country selected above, this wizard will DELETE ALL THE CURRENT BETTER ZIP ENTRIES, download the latest version of the list of cities from geonames.org and create new better zip entries."
+msgid "For the country selected above, this wizard will download the latest version of the list of cities from geonames.org, create new location entries if not found already in the system, and DELETE MISSING ENTRIES from new file."
 msgstr ""
 
 #. module: base_location_geonames_import
@@ -57,7 +57,7 @@ msgstr ""
 #: view:better.zip.geonames.import:0
 #: model:ir.actions.act_window,name:base_location_geonames_import.better_zip_geonames_import_action
 #: model:ir.ui.menu,name:base_location_geonames_import.better_zip_geonames_import_menu
-msgid "Import Geonames"
+msgid "Import from Geonames"
 msgstr ""
 
 #. module: base_location_geonames_import
