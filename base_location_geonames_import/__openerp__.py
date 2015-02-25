@@ -29,31 +29,11 @@
     'category': 'Extra Tools',
     'license': 'AGPL-3',
     'summary': 'Import better zip entries from Geonames',
-    'description': """
-Base Location Geonames Import
-=============================
-
-This module adds a wizard to import better zip entries from Geonames
-(http://download.geonames.org/export/zip/).
-If want want/need to modify the URL, you can set the 'geonames.url'
-system parameter.
-
-When you start the wizard,
-it will ask you to select a country. Then, for the selected country,
-it will delete all the current better zip entries, download the latest version
-of the list of cities from geonames.org and create new better zip entries.
-
-Please contact Alexis de Lattre from Akretion <alexis.delattre@akretion.com>
-for any help or question about this module.
-
-
-Contributors
-------------
-
-- Alexis de Lattre <alexis.delattre@akretion.com>
-- Lorenzo Battistini <lorenzo.battistini@agilebg.com>
-""",
-    'author': "Akretion,Odoo Community Association (OCA)",
+    'author': 'Akretion,'
+              'Agile Business Group,'
+              'Antiun Ingeniería S.L.,'
+              'Serv. Tecnol. Avanzados - Pedro M. Baeza,'
+              'Odoo Community Association (OCA)',
     'website': 'http://www.akretion.com',
     'depends': ['base_location'],
     'external_dependencies': {'python': ['requests', 'unicodecsv']},
