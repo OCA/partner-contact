@@ -1,44 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    Copyright (C) 2014 Akretion (http://www.akretion.com/)
-    @author: Alexis de Lattre <alexis.delattre@akretion.com>
-    The licence is in the file __openerp__.py
--->
-
 <openerp>
-<data>
+    <data>
 
-<record id="better_zip_geonames_import_form" model="ir.ui.view">
-    <field name="name">asterisk.server.company</field>
-    <field name="model">better.zip.geonames.import</field>
-    <field name="arch"  type="xml">
-        <form string="Import Geonames" version="7.0">
-            <group name="main">
-                <field name="country_id"/>
-                <label string="For the country selected above, this wizard will DELETE ALL THE CURRENT BETTER ZIP ENTRIES, download the latest version of the list of cities from geonames.org and create new better zip entries."
-                    colspan="2" name="import-help"/>
-            </group>
-            <footer>
-                <button name="run_import" type="object"
-                    class="oe_highlight" string="Import"/>
-                <button special="cancel" string="Cancel" class="oe_link"/>
-            </footer>
-        </form>
-    </field>
-</record>
+        <record id="better_zip_geonames_import_form" model="ir.ui.view">
+            <field name="name">asterisk.server.company</field>
+            <field name="model">better.zip.geonames.import</field>
+            <field name="arch"  type="xml">
+                <form string="Import from Geonames">
+                    <group name="main">
+                        <field name="country_id"/>
+                        <label string="For the country selected above, this wizard will download the latest version of the list of cities from geonames.org, create new location entries if not found already in the system, and DELETE MISSING ENTRIES from new file."
+                            colspan="2" name="import-help"/>
+                    </group>
+                    <footer>
+                        <button name="run_import" type="object"
+                            class="oe_highlight" string="Import"/>
+                        <button special="cancel" string="Cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
 
-<record id="better_zip_geonames_import_action" model="ir.actions.act_window">
-    <field name="name">Import Geonames</field>
-    <field name="res_model">better.zip.geonames.import</field>
-    <field name="view_type">form</field>
-    <field name="view_mode">form</field>
-    <field name="target">new</field>
-</record>
+        <record id="better_zip_geonames_import_action" model="ir.actions.act_window">
+            <field name="name">Import from Geonames</field>
+            <field name="res_model">better.zip.geonames.import</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
 
-<menuitem id="better_zip_geonames_import_menu"
-    action="better_zip_geonames_import_action"
-    parent="base.menu_localisation"
-    sequence="50"/>
+        <menuitem id="better_zip_geonames_import_menu"
+            action="better_zip_geonames_import_action"
+            parent="base.menu_localisation"
+            sequence="50"/>
 
-</data>
+    </data>
 </openerp>
