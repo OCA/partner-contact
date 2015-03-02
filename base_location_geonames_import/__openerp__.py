@@ -53,7 +53,7 @@ Contributors
 - Alexis de Lattre <alexis.delattre@akretion.com>
 - Lorenzo Battistini <lorenzo.battistini@agilebg.com>
 """,
-    'author': 'Akretion',
+    'author': "Akretion,Odoo Community Association (OCA)",
     'website': 'http://www.akretion.com',
     'depends': ['base_location'],
     'external_dependencies': {'python': ['requests', 'unicodecsv']},
