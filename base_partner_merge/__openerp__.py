@@ -1,6 +1,6 @@
 {
     'name': 'Base Partner Merge',
-    'author': 'OpenERP S.A.',
+    'author': "OpenERP S.A.,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Base',
     'version': '0.1',
     'description': """
