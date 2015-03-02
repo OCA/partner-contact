@@ -23,7 +23,7 @@
     'name': 'Contacts Management',
     'summary': u"Manage your contacts separately",
     'version': '1.0',
-    'author': 'OpenERP SA',
+    'author': "OpenERP SA,Odoo Community Association (OCA)",
     'website': 'http://www.openerp.com',
     'category': 'Customer Relationship Management',
     'complexity': "expert",

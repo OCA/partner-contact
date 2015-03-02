@@ -21,7 +21,7 @@
 {
     'name': 'Partner Affiliates',
     'version': '1.0',
-    'author': 'Camptocamp',
+    'author': "Camptocamp,Odoo Community Association (OCA)",
     'maintainer': 'Camptocamp',
     'category': 'CRM',
     'license': 'AGPL-3',

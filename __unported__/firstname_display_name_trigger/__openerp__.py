@@ -23,7 +23,7 @@
     'name': ('Link module if partner_lastname and account_report_company are '
              'installed'),
     'version': '1.0',
-    'author': 'Camptocamp',
+    'author': "Camptocamp,Odoo Community Association (OCA)",
     'maintainer': 'Camptocamp',
     'category': 'Hidden',
     'license': 'AGPL-3',
