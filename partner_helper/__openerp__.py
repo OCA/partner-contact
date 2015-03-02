@@ -22,7 +22,7 @@
 {
     'name': 'Partner Helper',
     'version': '0.1',
-    'author': 'Akretion',
+    'author': "Akretion,Odoo Community Association (OCA)",
     'maintainer': 'Akretion',
     'category': 'Warehouse',
     'depends': [
