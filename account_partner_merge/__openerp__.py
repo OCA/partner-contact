@@ -22,7 +22,7 @@
  'version': '1.0',
  'category': 'Hidden',
  'description': """Update invoice commercial_partner_id""",
- 'author': 'Camptocamp',
+ 'author': "Camptocamp,Odoo Community Association (OCA)",
  'maintainer': 'Camptocamp',
  'website': 'http://www.camptocamp.com/',
  'depends': ['account_report_company', 'base_partner_merge'],

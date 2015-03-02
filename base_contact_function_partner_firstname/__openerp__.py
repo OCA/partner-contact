@@ -33,7 +33,7 @@ Contributors
 ------------
 * El Hadji Dem (elhadji.dem@savoirfairelinux.com)
 """,
-    'author': 'Savoir-faire Linux',
+    'author': "Savoir-faire Linux,Odoo Community Association (OCA)",
     'website': 'www.savoirfairelinux.com',
     'license': 'AGPL-3',
     'depends': [
