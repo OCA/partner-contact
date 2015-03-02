@@ -36,7 +36,7 @@ Add categories on Address like there is on Partner.
 This is interesting for managing mailling list based on address for example.
  """,
     "version": "1.2",
-    "author": "Camptocamp",
+    "author": "Camptocamp,Odoo Community Association (OCA)",
     "category": "Generic Modules/Base",
     "website": "http://www.camptocamp.com",
     "depends": [

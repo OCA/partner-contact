@@ -21,7 +21,7 @@
 {
     "name": "Base Partner Surname",
     "version": "1.1",
-    "author": "Tiny, Serpent Consulting Services",
+    "author": "Tiny, Serpent Consulting Services,Odoo Community Association (OCA)",
     "website": "http://www.openerp.com",
     "category": "Generic Modules/Base",
     "description": """

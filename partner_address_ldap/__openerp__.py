@@ -34,7 +34,7 @@
 {
     "name": "Partner synchronization from OpenERP to ldap",
     "version": "1.2",
-    "author": "Camptocamp",
+    "author": "Camptocamp,Odoo Community Association (OCA)",
     "depends": ["base"],
     "category": "Generic Modules/Misc",
     "website": "http://www.camptocamp.com",
