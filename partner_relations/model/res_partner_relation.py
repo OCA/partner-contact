@@ -44,8 +44,8 @@ class ResPartnerRelation(Model):
         '''Determine wether functions are called in a situation where the
         active partner is the right partner. Default False!
         '''
-        if (context and 'active_ids' in context
-                and right_partner_id in context.get('active_ids', [])):
+        if (context and 'active_ids' in context and
+                right_partner_id in context.get('active_ids', [])):
             return True
         return False
 
@@ -87,8 +87,9 @@ class ResPartnerRelation(Model):
                 ((this.type_id.id) * 10) + (on_right_partner and 1 or 0))
             # partner_id_display
             values['partner_id_display'] = (
-                on_right_partner and this.left_partner_id.id
-                or this.right_partner_id.id
+                this.left_partner_id.id
+                if on_right_partner  # this is weird...
+                else this.right_partner_id.id
             )
             # is_relation_expired
             today = fields.date.context_today(self, cr, uid, context=context)
