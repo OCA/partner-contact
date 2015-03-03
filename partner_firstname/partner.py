@@ -68,10 +68,10 @@ class ResPartner(orm.Model):
         In addition an heuristic avoids to keep a firstname without a
         non-blank lastname
         """
-        field_value = (field_value
-                       and not field_value.isspace()
-                       and field_value
-                       or False)
+        field_value = (field_value and
+                       not field_value.isspace() and
+                       field_value or
+                       False)
         vals = {'lastname': field_value, 'firstname': False}
         if field_value:
             flds = self.read(
