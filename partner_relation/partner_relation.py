@@ -64,8 +64,8 @@ class ResPartnerRelationType(models.Model):
     @api.multi
     def write(self, vals):
         if (
-                'reverse_id' in vals
-                and not self.env.context.get('allow_write_reverse_id')):
+                'reverse_id' in vals and
+                not self.env.context.get('allow_write_reverse_id')):
             if vals['reverse_id'] != self.reverse_id.id:
                 raise Warning(
                     _('It is not possible to modify the reverse of a relation '
