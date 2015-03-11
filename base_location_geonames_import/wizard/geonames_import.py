@@ -113,8 +113,8 @@ class BetterZipGeonamesImport(models.TransientModel):
     def run_import(self):
         zip_model = self.env['res.better.zip']
         country_code = self.country_id.code
-        config_url = self.pool['ir.config_parameter'].get_param(
-            self._cr, self._uid, 'geonames.url',
+        config_url = self.env['ir.config_parameter'].get_param(
+            'geonames.url',
             default='http://download.geonames.org/export/zip/%s.zip')
         url = config_url % country_code
         logger.info('Starting to download %s' % url)
@@ -124,8 +124,8 @@ class BetterZipGeonamesImport(models.TransientModel):
                 _('Got an error %d when trying to download the file %s.')
                 % (res_request.status_code, url))
         # Store current record list
-        zip_ids_to_delete = set(zip_model.search(
-            [('country_id', '=', self.country_id.id)]).ids)
+        zips_to_delete = zip_model.search(
+            [('country_id', '=', self.country_id.id)])
         f_geonames = zipfile.ZipFile(StringIO.StringIO(res_request.content))
         tempdir = tempfile.mkdtemp(prefix='openerp')
         f_geonames.extract('%s.txt' % country_code, tempdir)
@@ -135,14 +135,14 @@ class BetterZipGeonamesImport(models.TransientModel):
         logger.info('Starting to create the better zip entries')
         for row in unicodecsv.reader(
                 data_file, encoding='utf-8', delimiter='	'):
-            zip_id = self.create_better_zip(row, self.country_id)
-            if zip_id.id in zip_ids_to_delete:
-                zip_ids_to_delete.remove(zip_id.id)
+            zip = self.create_better_zip(row, self.country_id)
+            if zip in zips_to_delete:
+                zips_to_delete -= zip
         data_file.close()
-        if zip_ids_to_delete:
-            zip_model.browse(zip_ids_to_delete).unlink()
+        if zips_to_delete:
+            zips_to_delete.unlink()
             logger.info('%d better zip entries deleted for country %s' %
-                        (len(zip_ids_to_delete), self.country_id.name))
+                        (len(zips_to_delete), self.country_id.name))
         logger.info(
             'The wizard to create better zip entries from geonames '
             'has been successfully completed.')
