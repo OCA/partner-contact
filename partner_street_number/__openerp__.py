@@ -21,7 +21,7 @@
 {
     "name": "Split street name and number",
     "version": "0.1",
-    "author": "Therp BV",
+    "author": "Therp BV,Odoo Community Association (OCA)",
     "category": 'Tools',
     "description": """
 This module introduces separate fields for street name and street number.
