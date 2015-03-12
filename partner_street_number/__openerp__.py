@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2013-2014 Therp BV (<http://therp.nl>).
+#    Odoo, an open source suite of business apps
+#    This module copyright (C) 2013-2015 Therp BV (<http://therp.nl>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,31 +19,19 @@
 #
 ##############################################################################
 {
-    "name": "Split street name and number",
+    "name": "Street name and number",
+    "summary": "Introduces separate fields for street name and street number.",
     "version": "0.1",
     "author": "Therp BV,Odoo Community Association (OCA)",
+    "website": "https://github.com/oca/partner-contact",
     "category": 'Tools',
-    "description": """
-This module introduces separate fields for street name and street number.
-
-Changes to the OpenERP datamodel
-================================
-
-- Introduce two new fields for street name and number
-- Keep 'Street' field as a function field to return street name + number
-- Data written to the 'Street' field will be parsed into street name and number
-  if possible. This will be performed upon installation of the module for
-  existing partners.
-
-Compatibility
-=============
-This module is compatible with OpenERP 7.0.
-""",
     "depends": [
         'base'
         ],
     "data": [
-        'view/res_partner.xml',
+        'views/res_partner.xml',
         ],
     'installable': True,
+    'license': 'AGPL-3',
+    'post_init_hook': 'post_init_hook',
 }
