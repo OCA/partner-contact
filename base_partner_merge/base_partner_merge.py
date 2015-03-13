@@ -58,15 +58,6 @@ def is_integer_list(ids):
     return all(isinstance(i, (int, long)) for i in ids)
 
 
-class ResPartner(orm.Model):
-    _inherit = 'res.partner'
-
-    _columns = {
-        'id': fields.integer('Id', readonly=True),
-        'create_date': fields.datetime('Create Date', readonly=True),
-    }
-
-
 class MergePartnerLine(orm.TransientModel):
     _name = 'base.partner.merge.line'
 
@@ -123,8 +114,8 @@ class MergePartnerAutomatic(orm.TransientModel):
             context = {}
         res = super(MergePartnerAutomatic, self
                     ).default_get(cr, uid, fields, context)
-        if (context.get('active_model') == 'res.partner'
-                and context.get('active_ids')):
+        if (context.get('active_model') == 'res.partner' and
+                context.get('active_ids')):
             partner_ids = context['active_ids']
             res['state'] = 'selection'
             res['partner_ids'] = partner_ids
@@ -212,8 +203,8 @@ class MergePartnerAutomatic(orm.TransientModel):
                              '%(column)s IN %%s') % query_dic
                     cr.execute(query, (dst_partner.id, partner_ids,))
 
-                    if (column == proxy._parent_name
-                            and table == 'res_partner'):
+                    if (column == proxy._parent_name and
+                            table == 'res_partner'):
                         query = """
                             WITH RECURSIVE cycle(id, parent_id) AS (
                                     SELECT id, parent_id FROM res_partner
@@ -316,8 +307,8 @@ class MergePartnerAutomatic(orm.TransientModel):
 
         values = dict()
         for column, field in columns.iteritems():
-            if (field._type not in ('many2many', 'one2many')
-                    and not isinstance(field, fields.function)):
+            if (field._type not in ('many2many', 'one2many') and
+                    not isinstance(field, fields.function)):
                 for item in itertools.chain(src_partners, [dst_partner]):
                     if item[column]:
                         values[column] = write_serializer(column,
@@ -350,10 +341,10 @@ class MergePartnerAutomatic(orm.TransientModel):
                   "together. You can re-open the wizard several times if "
                   "needed."))
 
-        if (openerp.SUPERUSER_ID != uid
-                and len(set(partner.email for partner
-                            in proxy.browse(cr, uid, partner_ids,
-                                            context=context))) > 1):
+        if (openerp.SUPERUSER_ID != uid and
+                len(set(partner.email for partner
+                        in proxy.browse(cr, uid, partner_ids,
+                                        context=context))) > 1):
             raise orm.except_orm(
                 _('Error'),
                 _("All contacts must have the same email. Only the "
@@ -371,30 +362,26 @@ class MergePartnerAutomatic(orm.TransientModel):
             src_partners = ordered_partners[:-1]
         _logger.info("dst_partner: %s", dst_partner.id)
 
-        if (openerp.SUPERUSER_ID != uid
-                and self._model_is_installed(cr, uid, 'account.move.line',
-                                             context=context)
-                and self.pool.get('account.move.line'
-                                  ).search(cr, openerp.SUPERUSER_ID,
-                                           [('partner_id',
-                                             'in',
-                                             [partner.id for partner
-                                              in src_partners])],
-                                           context=context)):
+        if (openerp.SUPERUSER_ID != uid and
+                self._model_is_installed(
+                    cr, uid, 'account.move.line', context=context) and
+                self.pool['account.move.line'].search(
+                    cr, openerp.SUPERUSER_ID,
+                    [('partner_id', 'in', [partner.id for partner
+                                           in src_partners])],
+                    context=context)):
             raise orm.except_orm(
                 _('Error'),
                 _("Only the destination contact may be linked to existing "
                   "Journal Items. Please ask the Administrator if you need to"
                   " merge several contacts linked to existing Journal "
                   "Items."))
-
-        call_it = lambda function: function(cr, uid, src_partners,
-                                            dst_partner, context=context)
-
-        call_it(self._update_foreign_keys)
-        call_it(self._update_reference_fields)
-        call_it(self._update_values)
-
+        self._update_foreign_keys(
+            cr, uid, src_partners, dst_partner, context=context)
+        self._update_reference_fields(
+            cr, uid, src_partners, dst_partner, context=context)
+        self._update_values(
+            cr, uid, src_partners, dst_partner, context=context)
         _logger.info('(uid = %s) merged the partners %r with %s',
                      uid,
                      list(map(operator.attrgetter('id'), src_partners)),
@@ -616,9 +603,9 @@ class MergePartnerAutomatic(orm.TransientModel):
         if this.exclude_contact:
             models['res.users'] = 'partner_id'
 
-        if (self._model_is_installed(cr, uid, 'account.move.line',
-                                     context=context)
-                and this.exclude_journal_item):
+        if (self._model_is_installed(
+                cr, uid, 'account.move.line', context=context) and
+                this.exclude_journal_item):
             models['account.move.line'] = 'partner_id'
 
         return models
