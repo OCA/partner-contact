@@ -34,6 +34,7 @@
         'Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>',
         'Ignacio Ibeas (Acysos S.L.)',
         'Alejandro Santana <alejandrosantana@anubia.es>',
+        'Sandy Carter <sandy.carter@savoirfairelinux.com>',
     ],
     'summary': '''Enhanced zip/npa management system''',
     'website': 'http://www.camptocamp.com',
@@ -43,6 +44,9 @@
              'views/company_view.xml',
              'views/partner_view.xml',
              'security/ir.model.access.csv'],
+    'demo': [
+        'demo/better_zip.xml',
+    ],
     'installable': True,
     'active': False,
 }
