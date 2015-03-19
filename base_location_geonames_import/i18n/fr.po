@@ -57,8 +57,8 @@ msgstr "Import Better Zip from Geonames"
 #: view:better.zip.geonames.import:0
 #: model:ir.actions.act_window,name:base_location_geonames_import.better_zip_geonames_import_action
 #: model:ir.ui.menu,name:base_location_geonames_import.better_zip_geonames_import_menu
-msgid "Import Geonames"
-msgstr "Importer Geonames"
+msgid "Import from Geonames"
+msgstr "Importer de Geonames"
 
 #. module: base_location_geonames_import
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:67
