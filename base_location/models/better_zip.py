@@ -28,7 +28,9 @@ class BetterZip(models.Model):
     _name = "res.better.zip"
     _description = __doc__
     _order = "name asc"
+    _rec_name = "display_name"
 
+    display_name = fields.Char('Name', compute='_get_display_name', store=True)
     name = fields.Char('ZIP')
     code = fields.Char('City Code', size=64,
                        help="The official code for the city")
@@ -36,32 +38,25 @@ class BetterZip(models.Model):
     state_id = fields.Many2one('res.country.state', 'State')
     country_id = fields.Many2one('res.country', 'Country')
 
-    @api.multi
-    def name_get(self):
-        res = []
-        for bzip in self:
-            if bzip.name:
-                name = [bzip.name, bzip.city]
-            else:
-                name = [bzip.city]
-            if bzip.state_id:
-                name.append(bzip.state_id.name)
-            if bzip.country_id:
-                name.append(bzip.country_id.name)
-            res.append((bzip.id, ", ".join(name)))
-        return res
+    @api.one
+    @api.depends(
+        'name',
+        'city',
+        'state_id',
+        'country_id',
+        )
+    def _get_display_name(self):
+        if self.name:
+            name = [self.name, self.city]
+        else:
+            name = [self.city]
+        if self.state_id:
+            name.append(self.state_id.name)
+        if self.country_id:
+            name.append(self.country_id.name)
+        self.display_name = ", ".join(name)
 
     @api.onchange('state_id')
     def onchange_state_id(self):
         if self.state_id:
             self.country_id = self.state_id.country_id
-
-    @api.model
-    def name_search(self, name, args=None, operator='ilike', limit=100):
-        args = args or []
-        recs = self.browse()
-        if name:
-            recs = self.search([('name', 'ilike', name)] + args, limit=limit)
-        if not recs:
-            recs = self.search([('city', operator, name)] + args, limit=limit)
-        return recs.name_get()
