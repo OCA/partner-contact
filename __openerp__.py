@@ -20,6 +20,6 @@ and certificates which are assigned to a partner and vary from country to countr
 , "data"   : ["partner_id_number_view.xml", "security/ir.model.access.csv"]
 #, "data"   : ["partner_id_number_view.xml","security/ir.model.access.csv"]
 , "auto_install" : False
-, "installable"  : True
+, 'installable': False
 , 'application'  : False
 }
