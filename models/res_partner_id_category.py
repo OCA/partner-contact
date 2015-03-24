@@ -26,4 +26,13 @@
 #
 ##############################################################################
 
-from . import models
+from openerp import models, fields
+
+
+class ResPartnerIdCategory(models.Model):
+    _name = "res.partner.id_category"
+    _order = "name"
+
+    code = fields.Char(string="Code", size=16, required=True)
+    name = fields.Char(string="ID name", required=True, translate=True)
+    active = fields.Boolean(string="Active", default=True)

@@ -26,4 +26,12 @@
 #
 ##############################################################################
 
-from . import models
+from openerp import models, fields
+
+
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    id_numbers = fields.One2many(
+        comodel_name='res.partner.id_number', inverse_name='partner_id',
+        string="Identification Numbers")

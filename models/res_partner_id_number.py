@@ -26,4 +26,23 @@
 #
 ##############################################################################
 
-from . import models
+from openerp import models, fields
+
+
+class ResPartnerIdNumber(models.Model):
+    _name = "res.partner.id_number"
+    _order = "name"
+
+    name = fields.Char(string="ID Number", required=True)
+    category_id = fields.Many2one(string="Category", required=True,
+                                  comodel_name='res.partner.id_category')
+    partner_id = fields.Many2one(string="Partner", required=True,
+                                 comodel_name='res.partner')
+    partner_issued_id = fields.Many2one(string="Issued by",
+                                        comodel_name='res.partner')
+    date_issued = fields.Date(string="Issued on")
+    valid_from = fields.Date(string="Valid from")
+    valid_until = fields.Date(string="Valid until")
+    comment = fields.Text(string="Notes")
+    state = fields.Char(string="State", size=16)
+    active = fields.Boolean(string="Active", default=True)
