@@ -27,10 +27,14 @@ from openerp.exceptions import Warning
 import requests
 import tempfile
 import StringIO
-import unicodecsv
 import zipfile
 import os
 import logging
+
+try:
+    import unicodecsv
+except ImportError:
+    unicodecsv = None
 
 logger = logging.getLogger(__name__)
 
