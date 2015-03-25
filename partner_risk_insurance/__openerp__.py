@@ -1,4 +1,3 @@
-
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
@@ -24,7 +23,11 @@
     This module adds a new tab in the partner form to introduce risk insurance
      information.
 """,
-    "author": "Factor Libre S.L, NaN·tic, AvanzOSC",
+    "author": "OdooMRP team,"
+              "AvanzOSC,"
+              "Serv. Tecnol. Avanzados - Pedro M. Baeza,"
+              "Factor Libre S.L,"
+              "NaN·tic",
     'contributors': ["Daniel Campos <danielcampos@avanzosc.es>"],
     "website": "http://www.factorlibre.com",
     "depends": [],
