@@ -105,3 +105,8 @@ msgstr "Etat"
 #: help:res.better.zip,code:0
 msgid "The official code for the city"
 msgstr "Code officiel de la ville"
+
+#. module: base_location
+#: sql_constraint:res.better.zip:0
+msgid "This location already exists !"
+msgstr "Cette localisation existe déjà !"

@@ -20,7 +20,7 @@
 #
 ##############################################################################
 {'name': 'Location management (aka Better ZIP)',
- 'version': '0.3.1',
+ 'version': '1.0',
  'depends': ['base'],
  'author': "Camptocamp,Odoo Community Association (OCA)",
  'description': """
