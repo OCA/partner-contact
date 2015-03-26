@@ -80,8 +80,7 @@ class ResPartnerRelation(Model):
         def get_values(self, dummy_field_names, dummy_arg, context=None):
             '''Get computed values for record'''
             values = {}
-            on_right_partner = self._on_right_partner(
-                cr, uid, self.right_partner_id.id, context=context)
+            on_right_partner = self._on_right_partner(self.right_partner_id.id)
             # type_selection_id
             values['type_selection_id'] = (
                 ((self.type_id.id) * 10) + (on_right_partner and 1 or 0))
