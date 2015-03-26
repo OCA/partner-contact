@@ -69,8 +69,6 @@ date.""",
     "category": "Customer Relationship Management",
     "depends": [
         'base',
-        'web_m2x_options',
-        'web_tree_many2one_clickable',
     ],
     "demo": [
         "data/demo.xml",
