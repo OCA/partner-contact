@@ -20,14 +20,25 @@
 #
 ##############################################################################
 import time
-from openerp.osv import orm, fields
+from openerp import osv, models, fields, exceptions, api
 from openerp.osv.expression import is_leaf, AND, OR, FALSE_LEAF
 from openerp.tools import DEFAULT_SERVER_DATE_FORMAT
 from openerp.tools.translate import _
 
 
-class ResPartner(orm.Model):
+class ResPartner(models.Model):
     _inherit = 'res.partner'
+
+    relation_count = fields.Integer(
+        'Relation Count',
+        compute="_count_relations"
+    )
+
+    @api.one
+    @api.depends("relation_ids")
+    def _count_relations(self):
+        """Count the number of relations this partner has for Smart Button"""
+        self.relation_count = len(self.relation_ids)
 
     def _get_relation_ids_select(self, cr, uid, ids, field_name, arg,
                                  context=None):
@@ -91,8 +102,7 @@ class ResPartner(orm.Model):
             if isinstance(arg, tuple) and arg[0] == name:
                 if arg[1] not in ['=', '!=', 'like', 'not like', 'ilike',
                                   'not ilike', 'in', 'not in']:
-                    raise orm.except_orm(
-                        _('Error'),
+                    raise exceptions.ValidationError(
                         _('Unsupported search operand "%s"') % arg[1])
 
                 relation_type_selection_ids = []
@@ -199,7 +209,7 @@ class ResPartner(orm.Model):
         return result
 
     _columns = {
-        'relation_ids': fields.function(
+        'relation_ids': osv.fields.function(
             lambda self, *args, **kwargs: self._get_relation_ids(
                 *args, **kwargs),
             fnct_inv=_set_relation_ids,
@@ -207,33 +217,33 @@ class ResPartner(orm.Model):
             string='Relations',
             selectable=False,
         ),
-        'relation_all_ids': fields.one2many(
+        'relation_all_ids': osv.fields.one2many(
             'res.partner.relation.all', 'this_partner_id',
             string='All relations with current partner',
             auto_join=True,
             selectable=False,
         ),
-        'search_relation_id': fields.function(
+        'search_relation_id': osv.fields.function(
             lambda self, cr, uid, ids, *args: dict([
                 (i, False) for i in ids]),
             fnct_search=_search_relation_id,
             string='Has relation of type',
             type='many2one', obj='res.partner.relation.type.selection'
         ),
-        'search_relation_partner_id': fields.function(
+        'search_relation_partner_id': osv.fields.function(
             lambda self, cr, uid, ids, *args: dict([
                 (i, False) for i in ids]),
             fnct_search=_search_related_partner_id,
             string='Has relation with',
             type='many2one', obj='res.partner'
         ),
-        'search_relation_date': fields.function(
+        'search_relation_date': osv.fields.function(
             lambda self, cr, uid, ids, *args: dict([
                 (i, False) for i in ids]),
             fnct_search=_search_relation_date,
             string='Relation valid', type='date'
         ),
-        'search_relation_partner_category_id': fields.function(
+        'search_relation_partner_category_id': osv.fields.function(
             lambda self, cr, uid, ids, *args: dict([
                 (i, False) for i in ids]),
             fnct_search=_search_related_partner_category_id,
