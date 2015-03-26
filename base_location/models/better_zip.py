@@ -46,12 +46,15 @@ class BetterZip(models.Model):
         'country_id',
         )
     def _get_display_name(self):
-        self.display_name = ('(%s) %s, %s, %s') % (
-            self.name or '',
-            self.city or '',
-            self.state_id and self.state_id.name or '',
-            self.country_id and self.country_id.name or '',
-            )
+        if self.name:
+            name = [self.name, self.city]
+        else:
+            name = [self.city]
+        if self.state_id:
+            name.append(self.state_id.name)
+        if self.country_id:
+            name.append(self.country_id.name)
+        self.display_name = ", ".join(name)
 
     @api.onchange('state_id')
     def onchange_state_id(self):
