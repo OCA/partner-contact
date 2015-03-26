@@ -37,8 +37,11 @@ class ResPartner(models.Model):
     @api.one
     @api.depends("relation_ids")
     def _count_relations(self):
-        """Count the number of relations this partner has for Smart Button"""
-        self.relation_count = len(self.relation_ids)
+        """Count the number of relations this partner has for Smart Button
+
+        Don't count inactive relations.
+        """
+        self.relation_count = len([r for r in self.relation_ids if r.active])
 
     def _get_relation_ids_select(self, cr, uid, ids, field_name, arg,
                                  context=None):

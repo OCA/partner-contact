@@ -62,6 +62,7 @@
                     <field name="this_partner_id"/>
                     <field name="other_partner_id"/>
                     <field name="type_id"/>
+                    <field name="active"/>
                     <group expand="0" string="Group By">
                         <filter string="Other Partner" context="{'group_by': 'other_partner_id'}"/>
                         <filter string="Relationship Type" context="{'group_by': 'type_id'}"/>
@@ -77,7 +78,7 @@
             <field name="view_mode">tree</field>
             <field name="view_id" ref="tree_res_partner_relation_all"/>
             <field name="search_view_id" ref="search_res_partner_relation_all"/>
-            <field name="context">{"search_default_this_partner_id": active_id}</field>
+            <field name="domain">[('active', '=', True)]</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     Record and track your partners' relations. Relations may be linked to other partners with a type either directly or inversely.

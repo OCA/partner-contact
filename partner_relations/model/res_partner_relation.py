@@ -44,23 +44,30 @@ class ResPartnerRelation(models.Model):
     left_contact_type = fields.Selection(
         lambda s: s.env['res.partner.relation.type']._get_partner_types(),
         'Left Partner Type',
-        compute='_get_partner_type',
+        compute='_get_partner_type_any',
         store=True,
     )
 
     right_contact_type = fields.Selection(
         lambda s: s.env['res.partner.relation.type']._get_partner_types(),
         'Right Partner Type',
-        compute='_get_partner_type',
+        compute='_get_partner_type_any',
         store=True,
+    )
+
+    any_partner_id = fields.Many2one(
+        'res.partner',
+        string='Partner',
+        compute='_get_partner_type_any',
     )
 
     @api.one
     @api.depends('left_partner_id', 'right_partner_id')
-    def _get_partner_type(self):
-
+    def _get_partner_type_any(self):
         self.left_contact_type = get_partner_type(self.left_partner_id)
         self.right_contact_type = get_partner_type(self.right_partner_id)
+
+        self.any_partner_id = self.left_partner_id + self.right_partner_id
 
     def _on_right_partner(self, cr, uid, right_partner_id, context=None):
         '''Determine wether functions are called in a situation where the

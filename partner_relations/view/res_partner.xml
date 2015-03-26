@@ -27,6 +27,7 @@
                     <button class="oe_inline oe_stat_button"
                             type="action"
                             context="{
+                                'search_default_active': True,
                                 'search_default_left_partner_id': active_id,
                                 'default_left_partner_id': active_id,
                                 'active_model': 'res.partner',
