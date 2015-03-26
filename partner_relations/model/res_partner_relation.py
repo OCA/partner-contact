@@ -96,7 +96,7 @@ class ResPartnerRelation(models.Model):
         store=True,
     )
 
-    any_partner_id = fields.Many2one(
+    any_partner_id = fields.Many2many(
         'res.partner',
         string='Partner',
         compute='_get_partner_type_any',
