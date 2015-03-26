@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp import osv, models, fields, api
+from openerp import models, fields, api
 from openerp.tools import drop_view_if_exists
 from .res_partner_relation_type_selection import \
     ResPartnerRelationTypeSelection
@@ -44,10 +44,54 @@ class ResPartnerRelationAll(models.AbstractModel):
         return super(ResPartnerRelationAll, self)._auto_init(
             cr, context=context)
 
-    _columns = {
-        'my_field': ....
-    }
+    my_field = fields...
     '''
+
+    this_partner_id = fields.Many2one(
+        'res.partner',
+        string='Current Partner',
+        required=True,
+    )
+
+    other_partner_id = fields.Many2one(
+        'res.partner',
+        string='Other Partner',
+        required=True,
+    )
+
+    type_id = fields.Many2one(
+        'res.partner.relation.type',
+        string='Relation Type',
+        required=True,
+    )
+
+    type_selection_id = fields.Many2one(
+        'res.partner.relation.type.selection',
+        string='Relation Type',
+        required=True,
+    )
+
+    relation_id = fields.Many2one(
+        'res.partner.relation',
+        'Relation',
+        readonly=True,
+    )
+
+    record_type = fields.Selection(
+        ResPartnerRelationTypeSelection._RECORD_TYPES,
+        'Record Type',
+        readonly=True,
+    )
+
+    contact_type = fields.Selection(
+        lambda s: s.env['res.partner.relation.type']._get_partner_types(),
+        'Partner Type',
+        default=lambda self: self._get_default_contact_type()
+    )
+
+    date_start = fields.Date('Starting date')
+    date_end = fields.Date('Ending date')
+    active = fields.Boolean('Active', default=True)
 
     def _auto_init(self, cr, context=None):
         drop_view_if_exists(cr, self._table)
@@ -99,32 +143,6 @@ class ResPartnerRelationAll(models.AbstractModel):
         """Get the record on which this record is overlaid"""
         return self.env[self._overlays].browse(self.id / PADDING)
 
-    contact_type = fields.Selection(
-        lambda s: s.env['res.partner.relation.type']._get_partner_types(),
-        'Partner Type',
-        default=lambda self: self._get_default_contact_type()
-    )
-
-    _columns = {
-        'record_type': osv.fields.selection(
-            ResPartnerRelationTypeSelection._RECORD_TYPES, 'Record type',
-            readonly=True),
-        'relation_id': osv.fields.many2one(
-            'res.partner.relation', 'Relation', readonly=True),
-        'type_id': osv.fields.many2one(
-            'res.partner.relation.type', 'Relation type', readonly=True),
-        'type_selection_id': osv.fields.many2one(
-            'res.partner.relation.type.selection', 'Relation type',
-        ),
-        'this_partner_id': osv.fields.many2one(
-            'res.partner', 'Current partner', readonly=True),
-        'other_partner_id': osv.fields.many2one(
-            'res.partner', 'Other partner'),
-        'date_start': osv.fields.date('Starting date'),
-        'date_end': osv.fields.date('Ending date'),
-    }
-    active = fields.Boolean('Active', default=True)
-
     def _get_default_contact_type(self):
         partner_id = self._context.get('default_this_partner_id')
         if partner_id:
@@ -132,14 +150,15 @@ class ResPartnerRelationAll(models.AbstractModel):
             return get_partner_type(partner)
         return False
 
-    def name_get(self, cr, uid, ids, context=None):
-        return dict([
-            (this.id, '%s %s %s' % (
+    @api.multi
+    def name_get(self):
+        return {
+            this.id: '%s %s %s' % (
                 this.this_partner_id.name,
                 this.type_selection_id.name_get()[0][1],
                 this.other_partner_id.name,
-            ))
-            for this in self.browse(cr, uid, ids, context=context)])
+            )
+            for this in self.browse(cr, uid, ids, context=context)}
 
     @api.one
     def write(self, vals):

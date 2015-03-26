@@ -41,6 +41,47 @@ class ResPartnerRelation(models.Model):
     _description = 'Partner relation'
     _order = 'active desc, date_start desc, date_end desc'
 
+    def _get_computed_fields(
+            self, cr, uid, ids, field_names, arg, context=None):
+        '''Return a dictionary of dictionaries, with for every partner for
+        ids, the computed values.'''
+        def get_values(self, dummy_field_names, dummy_arg, context=None):
+            '''Get computed values for record'''
+            values = {}
+            on_right_partner = self._on_right_partner(self.right_partner_id.id)
+            # type_selection_id
+            values['type_selection_id'] = (
+                ((self.type_id.id) * 10) + (on_right_partner and 1 or 0))
+            # partner_id_display
+            values['partner_id_display'] = (
+                self.left_partner_id.id
+                if on_right_partner
+                else self.right_partner_id.id
+            )
+            return values
+
+        return dict([
+            (i.id, get_values(i, field_names, arg, context=context))
+            for i in self.browse(cr, uid, ids, context=context)
+        ])
+
+    _columns = {
+        'type_selection_id': osv.fields.function(
+            _get_computed_fields,
+            multi="computed_fields",
+            fnct_inv=lambda *args: None,
+            type='many2one', obj='res.partner.relation.type.selection',
+            string='Type',
+        ),
+        'partner_id_display': osv.fields.function(
+            _get_computed_fields,
+            multi="computed_fields",
+            fnct_inv=lambda *args: None,
+            type='many2one', obj='res.partner',
+            string='Partner'
+        ),
+    }
+
     left_contact_type = fields.Selection(
         lambda s: s.env['res.partner.relation.type']._get_partner_types(),
         'Left Partner Type',
@@ -60,6 +101,33 @@ class ResPartnerRelation(models.Model):
         string='Partner',
         compute='_get_partner_type_any',
     )
+
+    left_partner_id = fields.Many2one(
+        'res.partner',
+        string='Source Partner',
+        required=True,
+        auto_join=True,
+        ondelete='cascade',
+    )
+
+    right_partner_id = fields.Many2one(
+        'res.partner',
+        string='Destination Partner',
+        required=True,
+        auto_join=True,
+        ondelete='cascade',
+    )
+
+    type_id = fields.Many2one(
+        'res.partner.relation.type',
+        string='Type',
+        required=True,
+        auto_join=True,
+    )
+
+    date_start = fields.Date('Starting date')
+    date_end = fields.Date('Ending date')
+    active = fields.Boolean('Active', default=True)
 
     @api.one
     @api.depends('left_partner_id', 'right_partner_id')
@@ -112,30 +180,6 @@ class ResPartnerRelation(models.Model):
                 del vals['contact_type']
         return vals
 
-    def _get_computed_fields(
-            self, cr, uid, ids, field_names, arg, context=None):
-        '''Return a dictionary of dictionaries, with for every partner for
-        ids, the computed values.'''
-        def get_values(self, dummy_field_names, dummy_arg, context=None):
-            '''Get computed values for record'''
-            values = {}
-            on_right_partner = self._on_right_partner(self.right_partner_id.id)
-            # type_selection_id
-            values['type_selection_id'] = (
-                ((self.type_id.id) * 10) + (on_right_partner and 1 or 0))
-            # partner_id_display
-            values['partner_id_display'] = (
-                self.left_partner_id.id
-                if on_right_partner
-                else self.right_partner_id.id
-            )
-            return values
-
-        return dict([
-            (i.id, get_values(i, field_names, arg, context=context))
-            for i in self.browse(cr, uid, ids, context=context)
-        ])
-
     @api.multi
     def write(self, vals):
         """Override write to correct values, before being stored."""
@@ -187,39 +231,6 @@ class ResPartnerRelation(models.Model):
                 ('category_id', 'child_of', check_partner_category))
         result['domain']['partner_id_display'] = partner_domain
         return result
-
-    _columns = {
-        'left_partner_id': osv.fields.many2one(
-            'res.partner', string='Left partner', required=True,
-            auto_join=True, ondelete='cascade'),
-        'right_partner_id': osv.fields.many2one(
-            'res.partner', string='Right partner', required=True,
-            auto_join=True, ondelete='cascade'),
-        'type_id': osv.fields.many2one(
-            'res.partner.relation.type', string='Type', required=True,
-            auto_join=True),
-        'date_start': osv.fields.date('Starting date'),
-        'date_end': osv.fields.date('Ending date'),
-        'type_selection_id': osv.fields.function(
-            _get_computed_fields,
-            multi="computed_fields",
-            fnct_inv=lambda *args: None,
-            type='many2one', obj='res.partner.relation.type.selection',
-            string='Type',
-        ),
-        'partner_id_display': osv.fields.function(
-            _get_computed_fields,
-            multi="computed_fields",
-            fnct_inv=lambda *args: None,
-            type='many2one', obj='res.partner',
-            string='Partner'
-        ),
-        'active': osv.fields.boolean('Active'),
-    }
-
-    _defaults = {
-        'active': True,
-    }
 
     @api.one
     @api.constrains('date_start', 'date_end')

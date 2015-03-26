@@ -20,8 +20,7 @@
 #
 ##############################################################################
 
-from openerp.osv import fields
-from openerp import models, api, _
+from openerp import models, fields, api, _
 
 
 class ResPartnerRelationType(models.Model):
@@ -30,24 +29,38 @@ class ResPartnerRelationType(models.Model):
     _description = 'Partner Relation Type'
     _order = 'name'
 
+    name = fields.Char(
+        'Name',
+        size=128,
+        required=True,
+        translate=True,
+    )
+    name_inverse = fields.Char(
+        'Inverse name',
+        size=128,
+        required=True,
+        translate=True,
+    )
+    contact_type_left = fields.Selection(
+        '_get_partner_types',
+        'Left partner type',
+    )
+    contact_type_right = fields.Selection(
+        '_get_partner_types',
+        'Right partner type',
+    )
+    partner_category_left = fields.Many2one(
+        'res.partner.category',
+        'Left partner category',
+    )
+    partner_category_right = fields.Many2one(
+        'res.partner.category',
+        'Right partner category',
+    )
+
     @api.model
     def _get_partner_types(self):
         return [
             ('c', _('Company')),
             ('p', _('Person')),
         ]
-
-    _columns = {
-        'name': fields.char(
-            'Name', size=128, required=True, translate=True),
-        'name_inverse': fields.char(
-            'Inverse name', size=128, required=True, translate=True),
-        'contact_type_left': fields.selection(
-            _get_partner_types, 'Left partner type'),
-        'contact_type_right': fields.selection(
-            _get_partner_types, 'Right partner type'),
-        'partner_category_left': fields.many2one(
-            'res.partner.category', 'Left partner category'),
-        'partner_category_right': fields.many2one(
-            'res.partner.category', 'Right partner category'),
-    }
