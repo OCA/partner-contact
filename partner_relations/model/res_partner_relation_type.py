@@ -19,18 +19,23 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv.orm import Model
+
 from openerp.osv import fields
+from openerp import models, api, _
 
 
-class ResPartnerRelationType(Model):
-    '''Model that defines relation types that might exist between partners'''
+class ResPartnerRelationType(models.Model):
+    """Model that defines relation types that might exist between partners"""
     _name = 'res.partner.relation.type'
-    _description = 'Parter relation type'
+    _description = 'Partner Relation Type'
     _order = 'name'
 
-    def _get_partner_types(self, cr, uid, context=None):
-        return (('c', 'Company'), ('p', 'Person'),)
+    @api.model
+    def _get_partner_types(self):
+        return [
+            ('c', _('Company')),
+            ('p', _('Person')),
+        ]
 
     _columns = {
         'name': fields.char(

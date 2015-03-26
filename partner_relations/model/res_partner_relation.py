@@ -19,12 +19,13 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv.orm import Model, except_orm
-from openerp.osv import fields
-from openerp.tools.translate import _
+
+from openerp import osv, models, fields, api, exceptions, _
+
+from . import get_partner_type
 
 
-class ResPartnerRelation(Model):
+class ResPartnerRelation(models.Model):
     '''Model res.partner.relation is used to describe all links or relations
     between partners in the database.
 
@@ -40,6 +41,27 @@ class ResPartnerRelation(Model):
     _description = 'Partner relation'
     _order = 'active desc, date_start desc, date_end desc'
 
+    left_contact_type = fields.Selection(
+        lambda s: s.env['res.partner.relation.type']._get_partner_types(),
+        'Left Partner Type',
+        compute='_get_partner_type',
+        store=True,
+    )
+
+    right_contact_type = fields.Selection(
+        lambda s: s.env['res.partner.relation.type']._get_partner_types(),
+        'Right Partner Type',
+        compute='_get_partner_type',
+        store=True,
+    )
+
+    @api.one
+    @api.depends('left_partner_id', 'right_partner_id')
+    def _get_partner_type(self):
+
+        self.left_contact_type = get_partner_type(self.left_partner_id)
+        self.right_contact_type = get_partner_type(self.right_partner_id)
+
     def _on_right_partner(self, cr, uid, right_partner_id, context=None):
         '''Determine wether functions are called in a situation where the
         active partner is the right partner. Default False!
@@ -49,28 +71,38 @@ class ResPartnerRelation(Model):
             return True
         return False
 
-    def _correct_vals(self, cr, uid, vals, context=None):
-        '''Fill type and left and right partner id, according to wether
-        we have a normal relation type or an inverse relation type'''
+    def _correct_vals(self, vals):
+        """Fill type and left and right partner id, according to whether
+        we have a normal relation type or an inverse relation type
+        """
         vals = vals.copy()
         # If type_selection_id ends in 1, it is a reverse relation type
         if 'type_selection_id' in vals:
-            prts_model = self.pool['res.partner.relation.type.selection']
+            prts_model = self.env['res.partner.relation.type.selection']
             type_selection_id = vals['type_selection_id']
             (type_id, is_reverse) = (
-                prts_model.get_type_from_selection_id(
-                    cr, uid, type_selection_id))
+                prts_model.browse(type_selection_id).
+                get_type_from_selection_id()
+            )
             vals['type_id'] = type_id
-            if context.get('active_id'):
+            if self._context.get('active_id'):
                 if is_reverse:
-                    vals['right_partner_id'] = context['active_id']
+                    vals['right_partner_id'] = self._context['active_id']
                 else:
-                    vals['left_partner_id'] = context['active_id']
+                    vals['left_partner_id'] = self._context['active_id']
             if vals.get('partner_id_display'):
                 if is_reverse:
                     vals['left_partner_id'] = vals['partner_id_display']
                 else:
                     vals['right_partner_id'] = vals['partner_id_display']
+            if vals.get('other_partner_id'):
+                if is_reverse:
+                    vals['left_partner_id'] = vals['other_partner_id']
+                else:
+                    vals['right_partner_id'] = vals['other_partner_id']
+                del vals['other_partner_id']
+            if vals.get('contact_type'):
+                del vals['contact_type']
         return vals
 
     def _get_computed_fields(
@@ -90,12 +122,6 @@ class ResPartnerRelation(Model):
                 if on_right_partner
                 else self.right_partner_id.id
             )
-            # is_relation_expired
-            today = fields.date.context_today(self, cr, uid, context=context)
-            values['is_relation_expired'] = (
-                self.date_end and (self.date_end < today))
-            # is_relation_future
-            values['is_relation_future'] = self.date_start > today
             return values
 
         return dict([
@@ -103,17 +129,17 @@ class ResPartnerRelation(Model):
             for i in self.browse(cr, uid, ids, context=context)
         ])
 
-    def write(self, cr, uid, ids, vals, context=None):
-        '''Override write to correct values, before being stored.'''
-        vals = self._correct_vals(cr, uid, vals, context=context)
-        return super(ResPartnerRelation, self).write(
-            cr, uid, ids, vals, context=context)
+    @api.multi
+    def write(self, vals):
+        """Override write to correct values, before being stored."""
+        vals = self._correct_vals(vals)
+        return super(ResPartnerRelation, self).write(vals)
 
-    def create(self, cr, uid, vals, context=None):
-        '''Override create to correct values, before being stored.'''
-        vals = self._correct_vals(cr, uid, vals, context=context)
-        return super(ResPartnerRelation, self).create(
-            cr, uid, vals, context=context)
+    @api.model
+    def create(self, vals):
+        """Override create to correct values, before being stored."""
+        vals = self._correct_vals(vals)
+        return super(ResPartnerRelation, self).create(vals)
 
     def on_change_type_selection_id(
             self, cr, uid, dummy_ids, type_selection_id, context=None):
@@ -156,46 +182,32 @@ class ResPartnerRelation(Model):
         return result
 
     _columns = {
-        'left_partner_id': fields.many2one(
+        'left_partner_id': osv.fields.many2one(
             'res.partner', string='Left partner', required=True,
             auto_join=True, ondelete='cascade'),
-        'right_partner_id': fields.many2one(
+        'right_partner_id': osv.fields.many2one(
             'res.partner', string='Right partner', required=True,
             auto_join=True, ondelete='cascade'),
-        'type_id': fields.many2one(
+        'type_id': osv.fields.many2one(
             'res.partner.relation.type', string='Type', required=True,
             auto_join=True),
-        'date_start': fields.date('Starting date'),
-        'date_end': fields.date('Ending date'),
-        'type_selection_id': fields.function(
+        'date_start': osv.fields.date('Starting date'),
+        'date_end': osv.fields.date('Ending date'),
+        'type_selection_id': osv.fields.function(
             _get_computed_fields,
             multi="computed_fields",
             fnct_inv=lambda *args: None,
             type='many2one', obj='res.partner.relation.type.selection',
             string='Type',
         ),
-        'partner_id_display': fields.function(
+        'partner_id_display': osv.fields.function(
             _get_computed_fields,
             multi="computed_fields",
             fnct_inv=lambda *args: None,
             type='many2one', obj='res.partner',
             string='Partner'
         ),
-        'is_relation_expired': fields.function(
-            _get_computed_fields,
-            multi="computed_fields",
-            type='boolean',
-            method=True,
-            string='Relation is expired',
-        ),
-        'is_relation_future': fields.function(
-            _get_computed_fields,
-            multi="computed_fields",
-            type='boolean',
-            method=True,
-            string='Relation is in the future',
-        ),
-        'active': fields.boolean('Active'),
+        'active': osv.fields.boolean('Active'),
     }
 
     _defaults = {
@@ -247,7 +259,7 @@ class ResPartnerRelation(Model):
                 ('id', '!=', this.id),
                 ('left_partner_id', '=', this.left_partner_id.id),
                 ('right_partner_id', '=', this.right_partner_id.id),
-                ]
+            ]
             if this.date_start:
                 domain += ['|', ('date_end', '=', False),
                                 ('date_end', '>=', this.date_start)]
@@ -255,8 +267,7 @@ class ResPartnerRelation(Model):
                 domain += ['|', ('date_start', '=', False),
                                 ('date_start', '<=', this.date_end)]
             if self.search(cr, uid, domain, context=context):
-                raise except_orm(
-                    _('Overlapping relation'),
+                raise exceptions.Warning(
                     _('There is already a similar relation '
                       'with overlapping dates'))
 

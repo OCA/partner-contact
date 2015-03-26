@@ -18,24 +18,26 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv.orm import Model
-from openerp.osv import fields
+
+from openerp import osv, models, fields, api
 from openerp.tools import drop_view_if_exists
-from .res_partner_relation_type_selection\
-    import ResPartnerRelationTypeSelection
+from .res_partner_relation_type_selection import \
+    ResPartnerRelationTypeSelection
+from . import get_partner_type, PADDING
 
 
-class ResPartnerRelationAll(Model):
+class ResPartnerRelationAll(models.AbstractModel):
     _auto = False
     _log_access = False
     _name = 'res.partner.relation.all'
+    _overlays = 'res.partner.relation'
     _description = 'All (non-inverse + inverse) relations between partners'
 
     _additional_view_fields = []
     '''append to this list if you added fields to res_partner_relation that
     you need in this model and related fields are not adequate (ie for sorting)
     You must use the same name as in res_partner_relation.
-    Don't overwrite this list in your declatarion but append in _auto_init:
+    Don't overwrite this list in your declaration but append in _auto_init:
 
     def _auto_init(self, cr, context=None):
         self._additional_view_fields.append('my_field')
@@ -53,61 +55,82 @@ class ResPartnerRelationAll(Model):
         additional_view_fields = (',' + additional_view_fields)\
             if additional_view_fields else ''
         cr.execute(
-            '''create or replace view %s as
+            '''create or replace view %(table)s as
             select
-                id * 10 as id,
+                id * %(padding)d as id,
                 id as relation_id,
                 type_id,
                 cast('a' as char(1)) as record_type,
+                left_contact_type as contact_type,
                 left_partner_id as this_partner_id,
                 right_partner_id as other_partner_id,
                 date_start,
                 date_end,
                 active,
-                type_id * 10 as type_selection_id
-                %s
-            from res_partner_relation
+                type_id * %(padding)d as type_selection_id
+                %(additional_view_fields)s
+            from %(underlying_table)s
             union select
-                id * 10 + 1,
+                id * %(padding)d + 1,
                 id,
                 type_id,
                 cast('b' as char(1)),
+                right_contact_type,
                 right_partner_id,
                 left_partner_id,
                 date_start,
                 date_end,
                 active,
-                type_id * 10 + 1
-                %s
-            from res_partner_relation''' % (
-                self._table,
-                additional_view_fields,
-                additional_view_fields,
-            )
+                type_id * %(padding)d + 1
+                %(additional_view_fields)s
+            from %(underlying_table)s''' % {
+                'table': self._table,
+                'padding': PADDING,
+                'additional_view_fields': additional_view_fields,
+                'underlying_table': 'res_partner_relation',
+            }
         )
 
         return super(ResPartnerRelationAll, self)._auto_init(
             cr, context=context)
 
+    @api.one
+    def get_underlying_object(self):
+        """Get the record on which this record is overlaid"""
+        return self.env[self._overlays].browse(self.id / PADDING)
+
+    contact_type = fields.Selection(
+        lambda s: s.env['res.partner.relation.type']._get_partner_types(),
+        'Partner Type',
+        default=lambda self: self._get_default_contact_type()
+    )
+
     _columns = {
-        'record_type': fields.selection(
+        'record_type': osv.fields.selection(
             ResPartnerRelationTypeSelection._RECORD_TYPES, 'Record type',
             readonly=True),
-        'relation_id': fields.many2one(
+        'relation_id': osv.fields.many2one(
             'res.partner.relation', 'Relation', readonly=True),
-        'type_id': fields.many2one(
+        'type_id': osv.fields.many2one(
             'res.partner.relation.type', 'Relation type', readonly=True),
-        'type_selection_id': fields.many2one(
+        'type_selection_id': osv.fields.many2one(
             'res.partner.relation.type.selection', 'Relation type',
-            readonly=True),
-        'this_partner_id': fields.many2one(
+        ),
+        'this_partner_id': osv.fields.many2one(
             'res.partner', 'Current partner', readonly=True),
-        'other_partner_id': fields.many2one(
-            'res.partner', 'Other partner', readonly=True),
-        'date_start': fields.date('Starting date'),
-        'date_end': fields.date('Ending date'),
-        'active': fields.boolean('Active'),
+        'other_partner_id': osv.fields.many2one(
+            'res.partner', 'Other partner'),
+        'date_start': osv.fields.date('Starting date'),
+        'date_end': osv.fields.date('Ending date'),
     }
+    active = fields.Boolean('Active', default=True)
+
+    def _get_default_contact_type(self):
+        partner_id = self._context.get('default_this_partner_id')
+        if partner_id:
+            partner = self.env['res.partner'].browse(partner_id)
+            return get_partner_type(partner)
+        return False
 
     def name_get(self, cr, uid, ids, context=None):
         return dict([
@@ -118,12 +141,40 @@ class ResPartnerRelationAll(Model):
             ))
             for this in self.browse(cr, uid, ids, context=context)])
 
-    def write(self, cr, uid, ids, vals, context=None):
-        '''divert non-problematic writes to underlying table'''
-        return self.pool['res.partner.relation'].write(
-            cr, uid,
-            [i / 10 for i in ids],
-            dict([(k, vals[k])
-                  for k in vals
-                  if not self._columns[k].readonly]),
-            context=context)
+    @api.one
+    def write(self, vals):
+        """divert non-problematic writes to underlying table"""
+        underlying_objs = self.get_underlying_object()
+        vals = {
+            key: val
+            for key, val in vals.iteritems()
+            if not self._columns[key].readonly
+        }
+        vals['type_selection_id'] = vals.get(
+            'type_selection_id',
+            underlying_objs.type_selection_id.id
+        )
+        return underlying_objs.write(vals)
+
+    @api.model
+    def create(self, vals):
+        """divert non-problematic creates to underlying table
+
+        Create a res.partner.relation but return the converted id
+        """
+        vals = {
+            key: val
+            for key, val in vals.iteritems()
+            if not self._columns[key].readonly
+        }
+        vals['type_selection_id'] = vals.get(
+            'type_selection_id',
+            False,
+        )
+        res = self.env[self._overlays].create(vals)
+        return self.browse(res.id * PADDING)
+
+    @api.one
+    def unlink(self):
+        """divert non-problematic creates to underlying table"""
+        return self.get_underlying_object().unlink()

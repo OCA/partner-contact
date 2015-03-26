@@ -27,11 +27,13 @@ ORDER BY ResPartnerRelationTypeSelection.customer_name asc,
 ResPartnerRelationTypeSelection.caller_name asc;
 
 '''
+
+from openerp import api
 from openerp.osv import fields
 from openerp.osv import orm
 from openerp.tools import drop_view_if_exists
-from openerp.addons.partner_relations.model.res_partner_relation_type\
-    import ResPartnerRelationType
+from .res_partner_relation_type import ResPartnerRelationType
+from . import PADDING
 
 
 class ResPartnerRelationTypeSelection(orm.Model):
@@ -45,13 +47,14 @@ class ResPartnerRelationTypeSelection(orm.Model):
     _auto = False  # Do not try to create table in _auto_init(..)
     _log_access = False
 
-    def get_type_from_selection_id(self, cr, uid, selection_id):
-        '''Selection id ic computed from id of underlying type and the
+    @api.multi
+    def get_type_from_selection_id(self):
+        """Selection id ic computed from id of underlying type and the
         kind of record. This function does the inverse computation to give
-        back the original type id, and about the record type.'''
-        type_id = selection_id / 10
-        is_reverse = (selection_id % 10) > 0
-        return (type_id, is_reverse)
+        back the original type id, and about the record type."""
+        type_id = self.id / PADDING
+        is_reverse = (self.id % PADDING) > 0
+        return type_id, is_reverse
 
     def _auto_init(self, cr, context=None):
         drop_view_if_exists(cr, self._table)
@@ -59,9 +62,9 @@ class ResPartnerRelationTypeSelection(orm.Model):
         # probably we need to patch ir_translation.get_source for that
         # to get res_partner_relation_type's translations
         cr.execute(
-            '''create or replace view %s as
+            '''create or replace view %(table)s as
             select
-                id * 10 as id,
+                id * %(padding)d as id,
                 id as type_id,
                 cast('a' as char(1)) as record_type,
                 name as name,
@@ -69,9 +72,9 @@ class ResPartnerRelationTypeSelection(orm.Model):
                 contact_type_right as contact_type_other,
                 partner_category_left as partner_category_this,
                 partner_category_right as partner_category_other
-            from res_partner_relation_type
+            from %(underlying_table)s
             union select
-                id * 10 + 1,
+                id * %(padding)d + 1,
                 id,
                 cast('b' as char(1)),
                 name_inverse,
@@ -79,7 +82,11 @@ class ResPartnerRelationTypeSelection(orm.Model):
                 contact_type_left,
                 partner_category_right,
                 partner_category_left
-             from res_partner_relation_type''' % self._table)
+             from %(underlying_table)s''' % {
+                'table': self._table,
+                'padding': PADDING,
+                'underlying_table': 'res_partner_relation_type',
+            })
 
         return super(ResPartnerRelationTypeSelection, self)._auto_init(
             cr, context=context)
@@ -161,8 +168,8 @@ class ResPartnerRelationTypeSelection(orm.Model):
             cr, uid,
             [
                 ('id', 'in',
-                 map(lambda x: x * 10, relation_ids) +
-                 map(lambda x: x * 10 + 1, inverse_relation_ids)),
+                 map(lambda x: x * PADDING, relation_ids) +
+                 map(lambda x: x * PADDING + 1, inverse_relation_ids)),
             ] + (args or []),
             context=context, limit=limit)
         return self.name_get(cr, uid, all_ids, context=context)

@@ -34,7 +34,7 @@
                                 'active_ids': [id],
                                 'active_test': False,
                             }"
-                            name="%(action_res_partner_relation)d"
+                            name="%(action_res_partner_relation_all)d"
                             icon="fa-users">
                         <field string="Relations" name="relation_count" widget="statinfo"/>
                     </button>
