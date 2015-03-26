@@ -221,92 +221,92 @@ class ResPartnerRelation(models.Model):
         'active': True,
     }
 
-    def _check_dates(self, cr, uid, ids, context=None):
-        '''End date should not be before start date, if noth filled'''
-        for line in self.browse(cr, uid, ids, context=context):
-            if line.date_start and line.date_end:
-                if line.date_start > line.date_end:
-                    return False
-        return True
+    @api.one
+    @api.constrains('date_start', 'date_end')
+    def _check_dates(self):
+        """End date should not be before start date, if not filled
 
-    def _check_partner_type_left(self, cr, uid, ids, context=None):
-        '''Check left partner for required company or person'''
-        for this in self.browse(cr, uid, ids, context=context):
-            ptype = this.type_id.contact_type_left
-            company = this.left_partner_id.is_company
-            if (ptype == 'c' and not company) or (ptype == 'p' and company):
-                return False
-        return True
+        :raises exceptions.Warning: When constraint is violated
+        """
+        if (self.date_start and self.date_end and
+                self.date_start > self.date_end):
+            raise exceptions.Warning(
+                _('The starting date cannot be after the ending date.')
+            )
 
-    def _check_partner_type_right(self, cr, uid, ids, context=None):
-        '''Check right partner for required company or person'''
-        for this in self.browse(cr, uid, ids, context=context):
-            ptype = this.type_id.contact_type_right
-            company = this.right_partner_id.is_company
-            if (ptype == 'c' and not company) or (ptype == 'p' and company):
-                return False
-        return True
+    @api.one
+    @api.constrains('left_partner_id', 'type_id')
+    def _check_partner_type_left(self):
+        """Check left partner for required company or person
 
-    def _check_not_with_self(self, cr, uid, ids, context=None):
-        '''Not allowed to link partner to same partner'''
-        for this in self.browse(cr, uid, ids, context=context):
-            if this.left_partner_id == this.right_partner_id:
-                return False
-        return True
+        :raises exceptions.Warning: When constraint is violated
+        """
+        self._check_partner_type("left")
 
-    def _check_relation_uniqueness(self, cr, uid, ids, context=None):
-        '''Forbid multiple active relations of the same type between the same
-        partners'''
-        for this in self.browse(cr, uid, ids, context=context):
-            if not this.active:
-                continue
-            domain = [
-                ('type_id', '=', this.type_id.id),
-                ('active', '=', True),
-                ('id', '!=', this.id),
-                ('left_partner_id', '=', this.left_partner_id.id),
-                ('right_partner_id', '=', this.right_partner_id.id),
-            ]
-            if this.date_start:
-                domain += ['|', ('date_end', '=', False),
-                                ('date_end', '>=', this.date_start)]
-            if this.date_end:
-                domain += ['|', ('date_start', '=', False),
-                                ('date_start', '<=', this.date_end)]
-            if self.search(cr, uid, domain, context=context):
-                raise exceptions.Warning(
-                    _('There is already a similar relation '
-                      'with overlapping dates'))
+    @api.one
+    @api.constrains('right_partner_id', 'type_id')
+    def _check_partner_type_right(self):
+        """Check right partner for required company or person
 
-        return True
+        :raises exceptions.Warning: When constraint is violated
+        """
+        self._check_partner_type("right")
 
-    _constraints = [
-        (
-            _check_dates,
-            'The starting date cannot be after the ending date.',
-            ['date_start', 'date_end']
-        ),
-        (
-            _check_partner_type_left,
-            'The left partner is not applicable for this relation type.',
-            ['left_partner_id', 'type_id']
-        ),
-        (
-            _check_partner_type_right,
-            'The right partner is not applicable for this relation type.',
-            ['right_partner_id', 'type_id']
-        ),
-        (
-            _check_not_with_self,
-            'Partners cannot have a relation with themselves.',
-            ['left_partner_id', 'right_partner_id']
-        ),
-        (
-            _check_relation_uniqueness,
-            "The same relation can't be created twice.",
-            ['left_partner_id', 'right_partner_id', 'active']
-        )
-    ]
+    @api.one
+    def _check_partner_type(self, side):
+        """Check partner to left or right for required company or person
+
+        :param str side: left or right
+        :raises exceptions.Warning: When constraint is violated
+        """
+        assert side in ['left', 'right']
+        ptype = getattr(self.type_id, "contact_type_%s" % side)
+        company = getattr(self, '%s_partner_id' % side).is_company
+        if (ptype == 'c' and not company) or (ptype == 'p' and company):
+            raise exceptions.Warning(
+                _('The %s partner is not applicable for this relation type.') %
+                side
+            )
+
+    @api.one
+    @api.constrains('left_partner_id', 'right_partner_id')
+    def _check_not_with_self(self):
+        """Not allowed to link partner to same partner
+
+        :raises exceptions.Warning: When constraint is violated
+        """
+        if self.left_partner_id == self.right_partner_id:
+            raise exceptions.Warning(
+                _('Partners cannot have a relation with themselves.')
+            )
+
+    @api.one
+    @api.constrains('left_partner_id', 'right_partner_id', 'active')
+    def _check_relation_uniqueness(self):
+        """Forbid multiple active relations of the same type between the same
+        partners
+
+        :raises exceptions.Warning: When constraint is violated
+        """
+        if not self.active:
+            return
+        domain = [
+            ('type_id', '=', self.type_id.id),
+            ('active', '=', True),
+            ('id', '!=', self.id),
+            ('left_partner_id', '=', self.left_partner_id.id),
+            ('right_partner_id', '=', self.right_partner_id.id),
+        ]
+        if self.date_start:
+            domain += ['|', ('date_end', '=', False),
+                            ('date_end', '>=', self.date_start)]
+        if self.date_end:
+            domain += ['|', ('date_start', '=', False),
+                            ('date_start', '<=', self.date_end)]
+        if self.search(domain):
+            raise exceptions.Warning(
+                _('There is already a similar relation with overlapping dates')
+            )
 
     def get_action_related_partners(self, cr, uid, ids, context=None):
         '''return a window action showing a list of partners taking part in the
