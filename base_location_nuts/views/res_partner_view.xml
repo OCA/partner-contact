@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record model="ir.ui.view" id="view_partner_form_nuts">
+    <field name="name">Partner form with NUTS</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//sheet/group//field[@name='country_id']/.." position="after">
+            <div width="1%" cell-class="oe_form_group_cell_label"
+                 attrs="{'invisible': [('use_parent_address','=',True)]}">
+                <field name="lbl_substate" class="oe_inline"/>
+            </div>
+            <div attrs="{'invisible': [('use_parent_address','=',True)]}">
+                <field name="substate"
+                       class="oe_no_button"
+                       options="{'no_open': True, 'no_create': True}"
+                       attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+            </div>
+            <div width="1%" cell-class="oe_form_group_cell_label"
+                 attrs="{'invisible': [('use_parent_address','=',True)]}">
+                <field name="lbl_region" class="oe_inline"/>
+            </div>
+            <div attrs="{'invisible': [('use_parent_address','=',True)]}">
+                <field name="region"
+                       class="oe_no_button"
+                       options="{'no_open': True, 'no_create': True}"
+                       attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+            </div>
+        </xpath>
+        <xpath expr="//field[@name='child_ids']/form//field[@name='country_id']/.." position="after">
+            <div width="1%" cell-class="oe_form_group_cell_label"
+                 attrs="{'invisible': [('use_parent_address','=',True)]}">
+                <field name="lbl_substate" class="oe_inline"/>
+            </div>
+            <div attrs="{'invisible': [('use_parent_address','=',True)]}">
+                <field name="substate"
+                       class="oe_no_button"
+                       options="{'no_open': True, 'no_create': True}"
+                       attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+            </div>
+            <div width="1%" cell-class="oe_form_group_cell_label"
+                 attrs="{'invisible': [('use_parent_address','=',True)]}">
+                <field name="lbl_region" class="oe_inline"/>
+            </div>
+            <div attrs="{'invisible': [('use_parent_address','=',True)]}">
+                <field name="region"
+                       class="oe_no_button"
+                       options="{'no_open': True, 'no_create': True}"
+                       attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+            </div>
+        </xpath>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="view_res_partner_filter_nuts">
+    <field name="name">Partner search with NUTS</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_res_partner_filter"/>
+    <field name="arch" type="xml">
+        <field name="category_id" position="after">
+            <field name="region"/>
+            <field name="substate"/>
+        </field>
+        <filter string="Salesperson" position="after">
+            <filter string="Region"
+                    domain="[]"
+                    context="{'group_by': 'region'}"/>
+            <filter string="Substate"
+                    domain="[]"
+                    context="{'group_by': 'substate'}"/>
+        </filter>
+    </field>
+</record>
+
+</data>
+</openerp>
