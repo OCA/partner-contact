@@ -30,8 +30,6 @@ import logging
 from lxml import etree
 from collections import OrderedDict
 
-from pprint import pformat
-
 logger = logging.getLogger(__name__)
 
 
@@ -133,24 +131,11 @@ class NaceImport(models.TransientModel):
             field_type = v.get('type', 'string')
             field_required = v.get('required', False)
             if field_translate == translate:
-                # logger.info("_mapping = '%s', config = '%s', node = '%s'" %
-                #             (k, pformat(v), pformat(node)))
-                # logger.info("_mapping:children = '%s'" %
-                #             (pformat(node.getchildren())))
-                # for x in node.getchildren():
-                #     logger.info("_mapping:grandchildren = '%s'" %
-                #                 (pformat(x.getchildren())))
-                # logger.info("_mapping:LabelText = '%s'" %
-                #             (pformat(node.find('./Label/LabelText'))))
                 value = ''
                 if field_xpath:
                     n = node.find(field_xpath)
-                    # logger.info("_mapping:Finding = '%s', result='%s'" %
-                    #             (field_xpath, pformat(n)))
                 else:
                     n = node
-                    # logger.info("_mapping:Using same node='%s'" %
-                    #             (pformat(n)))
                 if n is not None:
                     if field_attrib:
                         value = n.get(field_attrib, '')
@@ -269,7 +254,7 @@ class NaceImport(models.TransientModel):
         xmlcontent = self._download_nace('EN')
         dom = etree.fromstring(xmlcontent)
         for node in dom.iter('Item'):
-                logger.info('Reading level=%s, code=%s' %
+                logger.debug('Reading level=%s, code=%s' %
                             (node.get('idLevel', 'N/A'),
                              node.get('id', 'N/A')))
                 nace = self.create_or_update_nace(node)
@@ -282,7 +267,7 @@ class NaceImport(models.TransientModel):
             xmlcontent = self._download_nace(nace_lang)
             dom = etree.fromstring(xmlcontent)
             for node in dom.iter('Item'):
-                logger.info('Reading lang=%s, level=%s, code=%s' %
+                logger.debug('Reading lang=%s, level=%s, code=%s' %
                             (nace_lang, node.get('idLevel', 'N/A'),
                              node.get('id', 'N/A')))
                 self.translate_nace(node, lang)
