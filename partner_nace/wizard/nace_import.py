@@ -255,8 +255,8 @@ class NaceImport(models.TransientModel):
         dom = etree.fromstring(xmlcontent)
         for node in dom.iter('Item'):
                 logger.debug('Reading level=%s, code=%s' %
-                            (node.get('idLevel', 'N/A'),
-                             node.get('id', 'N/A')))
+                             (node.get('idLevel', 'N/A'),
+                              node.get('id', 'N/A')))
                 nace = self.create_or_update_nace(node)
                 if nace and nace in naces_to_delete:
                     naces_to_delete -= nace
@@ -268,8 +268,8 @@ class NaceImport(models.TransientModel):
             dom = etree.fromstring(xmlcontent)
             for node in dom.iter('Item'):
                 logger.debug('Reading lang=%s, level=%s, code=%s' %
-                            (nace_lang, node.get('idLevel', 'N/A'),
-                             node.get('id', 'N/A')))
+                             (nace_lang, node.get('idLevel', 'N/A'),
+                              node.get('id', 'N/A')))
                 self.translate_nace(node, lang)
         # Delete obsolete NACEs
         if naces_to_delete:
