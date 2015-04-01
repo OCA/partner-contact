@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"ir_model_access_company_logo_user","res_company_logo group_user_all","model_res_company_logo",base.group_user,1,0,0,0
+"ir_model_access_company_logo_manager","res_company_logo group_user","model_res_company_logo","base.group_partner_manager",1,1,1,1
