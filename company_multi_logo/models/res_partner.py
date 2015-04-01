@@ -41,8 +41,11 @@ class ResPartner(models.Model):
 
     @api.multi
     def get_company_logo(self, company):
-        self.ensure_one()
         logo = self.logo_ids.filtered(lambda l: l.company_id == company)
         if not logo:
             logo = company.logo_ids.filtered('is_default')
+
+        if len(logo) > 1:
+            logo = logo[0]
+
         return logo.image
