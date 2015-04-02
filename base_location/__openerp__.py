@@ -24,7 +24,11 @@
     'name': 'Location management (aka Better ZIP)',
     'version': '1.0',
     'depends': ['base'],
-    'author': "Camptocamp,Odoo Community Association (OCA)",
+    'author': "Camptocamp,"
+              "ACYSOS S.L.,"
+              "Alejandro Santana,"
+              "Serv. Tecnol. Avanzados - Pedro M. Baeza,"
+              "Odoo Community Association (OCA)",
     'license': "AGPL-3",
     'contributors': [
         'Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>',

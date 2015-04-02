@@ -29,10 +29,10 @@
     'category': 'Extra Tools',
     'license': 'AGPL-3',
     'summary': 'Import better zip entries from Geonames',
-    'author': 'Akretion, '
-              'Agile Business Group, '
-              'Antiun Ingeniería S.L., '
-              'Pedro M. Baeza, '
+    'author': 'Akretion,'
+              'Agile Business Group,'
+              'Antiun Ingeniería S.L.,'
+              'Serv. Tecnol. Avanzados - Pedro M. Baeza,'
               'Odoo Community Association (OCA)',
     'website': 'http://www.akretion.com',
     'depends': ['base_location'],
