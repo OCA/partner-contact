@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data noupdate="0">
+    <report
+      id="partner_activity_report.report_partner_activity"
+      model="res.partner"
+      string="Partner Activity"
+      report_type="qweb-pdf"
+      name="partner_activity_report.report_partner_activity_qweb"
+      file="partner_activity_report.report_partner_activity_qweb"
+      />
+  </data>
+</openerp>

@@ -1,0 +1,50 @@
+<openerp>
+  <data>
+
+    <record id="partner_print_activity_form" model="ir.ui.view">
+      <field name="name">partner.print.activity.form</field>
+      <field name="model">partner.print.activity</field>
+      <field name="arch" type="xml">
+        <form string="Print partner activity" version="7.0">
+          <separator string="Select part to print" colspan="4"/>
+          <newline/>
+          <group>
+	        <field name="partner_information" colspan="4" />
+	        <field name="partner_address_information" colspan="4" />
+	        <field name="partner_crm_renouvellement" colspan="4" />
+	        <field name="partner_invoice" colspan="4" />
+	        <field name="partner_sales_order" colspan="4" />
+	        <field name="partner_delivery_lines" colspan="4" />
+          </group>
+          <newline/>
+          <footer>
+            <button class="oe_highlight" name="print_report" string="Print" type="object"/>
+            or
+            <button class="oe_link" special="cancel" string="Cancel"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <!-- for menu -->
+    <act_window name="Print Partner details"
+                res_model="partner.print.activity"
+                src_model="res.partner"
+                view_mode="form"
+                target="new"
+                key2="client_action_multi"
+                id="open_credit_line_printer_wizard_menu_action"/>
+
+    <record id="open_credit_line_printer_wizard" model="ir.actions.act_window">
+      <field name="name">Print Partner activity</field>
+      <field name="res_model">partner.print.activity</field>
+      <field name="src_model">res.partner</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="partner_print_activity_form"/>
+      <field name="target">new</field>
+      <field name="help">Print selected lines</field>
+    </record>
+
+  </data>
+</openerp>

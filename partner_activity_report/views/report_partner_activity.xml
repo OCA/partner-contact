@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <template id="partner_activity_report.report_partner_activity_def">
+      <t t-call="report.external_layout">
+        <div class="page">
+          <p t-if="option_selected.partner_information">
+          	<h2>
+            <span>Partner Informations</span>
+            </h2>
+          <table class="table table-condensed small">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Categories</th>
+              </tr>
+            </thead>
+            <tbody class="invoice_tbody">
+				<tr>
+					<td>
+                        <span t-field="o.name"/>
+                    </td>
+                    <td>
+                        <span t-field="o.ref"/>
+                    </td>
+                    <td>
+                        <span t-field="o.category_id[0].name"/>
+					</td>            	
+                </tr>
+            </tbody>
+          </table>
+		  </p>
+          <p t-if="option_selected.partner_information">
+          	<h2>
+            <span>Adress Informations</span>
+            </h2>
+          <table class="table table-condensed small">
+            <thead>
+              <tr>
+                <th>Street</th>
+                <th>Street Aditional</th>
+                <th>PoBox</th>
+                <th>Zip</th>
+                <th>City</th>
+                <th>Country</th>
+              </tr>
+            </thead>
+            <tbody class="invoice_tbody">
+				<tr>
+					<td>
+                        <span t-field="o.street"/>
+                    </td>
+					<td>
+                        <span t-field="o.street2"/>
+                    </td>
+					<td>
+                        <span t-field="o.zip"/>
+                    </td>
+					<td>
+                        <span t-field="o.city"/>
+                    </td>
+					<td>
+                        <span t-field="o.country_id.name"/>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+		  </p>
+
+          <p t-if="option_selected.partner_address_information">
+          	<h2>
+            <span>Partner Conctacts</span>
+            </h2>
+          <table class="table table-condensed small">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Function</th>
+                <th>Phone</th>
+                <th>Mobile</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody class="invoice_tbody">
+               <tr t-foreach="o.child_ids" t-as="l">
+					<td>
+                        <span t-field="l.name"/>
+                    </td>
+					<td>
+                        <span t-field="l.function"/>
+                    </td>
+					<td>
+                        <span t-field="l.phone"/>
+                    </td>
+					<td>
+                        <span t-field="l.mobile"/>
+                    </td>
+					<td>
+                        <span t-field="l.email"/>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+		  </p>
+
+          <p t-if="option_selected.partner_crm_renouvellement">
+          	<h2>
+            <span>Partner Conctacts</span>
+            </h2>
+          <table class="table table-condensed small">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Date Deadline</th>
+                <th>Quantity</th>
+                <th>Planned revenue</th>
+                <th>Created date</th>
+              </tr>
+            </thead>
+            <tbody class="invoice_tbody">
+               <tr t-foreach="get_partner_crm_informations(o)" t-as="c">
+					<td>
+                        <span t-field="c.name"/>
+                    </td>
+					<td>
+                        <span t-field="c.date_deadline"/>
+                    </td>
+					<td>
+                        <span t-field="l.phone"/>
+                    </td>
+					<td>
+                        <span t-field="l.mobile"/>
+                    </td>
+					<td>
+                        <span t-field="l.email"/>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+		  </p>
+    	 </div>
+
+      </t>
+    </template>
+
+	 <template id="partner_activity_report.report_partner_activity_qweb">
+		 <style type="text/css">
+		 .total { border-top: 5px double darkgrey !important; }
+		 .subtotal { border-top: 2px solid darkgrey !important; }
+		 .col-separator { border-right: 3px solid lightgrey !important; }
+		 .large-text { min-height: 50px !important;}
+		 </style>
+			 <t t-call="report.html_container">
+			 <t t-foreach="doc_ids" t-as="doc_id">
+			 <t t-raw="translate_doc(doc_id, doc_model, 'user_id.lang', 'partner_activity_report.report_partner_activity_def')"/>
+			 </t>
+		 </t>
+	 </template>
+  </data>
+</openerp>
+
