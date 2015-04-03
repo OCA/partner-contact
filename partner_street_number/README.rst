@@ -33,6 +33,7 @@ Contributors
 
 * Stefan Rijnhart <stefan@therp.nl>
 * Ronald Portier <ronald@therp.nl>
+* Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
 
 Icon
 ----
