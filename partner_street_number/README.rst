@@ -34,6 +34,11 @@ Contributors
 * Stefan Rijnhart <stefan@therp.nl>
 * Ronald Portier <ronald@therp.nl>
 
+Icon
+----
+
+* Based on https://openclipart.org/detail/149575/brass-plaques-tags.
+
 Maintainer
 ----------
 
