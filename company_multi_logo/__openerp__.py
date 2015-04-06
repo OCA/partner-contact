@@ -23,8 +23,8 @@
 {
     'name': 'Company Multiple Logo',
     'version': '0.1',
-    'author': 'Savoir-faire Linux,Odoo Community Association',
-    'maintainer': 'Odoo Community Association',
+    'author': 'Savoir-faire Linux,Odoo Community Association (OCA)',
+    'maintainer': 'Odoo Community Association (OCA)',
     'website': 'http://odoo-community.org',
     'license': 'AGPL-3',
     'category': 'Others',
