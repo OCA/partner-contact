@@ -45,7 +45,4 @@ class ResPartner(models.Model):
         if not logo:
             logo = company.logo_ids.filtered('is_default')
 
-        if len(logo) > 1:
-            logo = logo[0]
-
-        return logo.image
+        return logo[0].image
