@@ -241,7 +241,8 @@ class NaceImport(models.TransientModel):
 
     @api.one
     def run_import(self):
-        nace_model = self.env['res.partner.nace']
+        nace_model = self.env['res.partner.nace'].\
+            with_context(defer_parent_store_computation=True)
         lang_model = self.env['res.lang']
         # Available lang list
         langs = lang_model.search(
