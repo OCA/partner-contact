@@ -23,33 +23,20 @@
 ##############################################################################
 
 {
-    # Addon information
     'name': 'NACE Activities',
     'category': 'Localisation/Europe',
     'version': '1.0',
     'depends': [
         'base',
     ],
-    'external_dependencies': {},
-    # Views templates, pages, menus, options and snippets
     'data': [
         'views/res_partner_nace_view.xml',
         'views/res_partner_view.xml',
         'wizard/nace_import_view.xml',
         'security/ir.model.access.csv',
     ],
-    # Qweb templates
-    'qweb': [
-    ],
-    # Your information
     'author': 'Antiun Ingeniería, SL',
-    'maintainer': 'Antiun Ingeniería, SL',
     'website': 'http://www.antiun.com',
     'license': 'AGPL-3',
-    # Technical options
-    'demo': [],
-    'test': [],
     'installable': True,
-    # 'auto_install':False,
-    # 'active':True,
 }

@@ -27,9 +27,6 @@ from openerp import models, fields
 
 class ResPartnerNace(models.Model):
     _name = 'res.partner.nace'
-    # _order = "parent_left"
-    # _parent_order = "name"
-    # _parent_store = True
     _description = "NACE Activity"
 
     # NACE fields
@@ -43,7 +40,3 @@ class ResPartnerNace(models.Model):
     exclusions = fields.Char(string="Excludes")
     # Parent hierarchy
     parent_id = fields.Many2one(comodel_name='res.partner.nace')
-    # children = fields.One2many(comodel_name='res.partner.nace',
-    #                            inverse_name='parent_id')
-    # parent_left = fields.Integer('Parent Left', select=True)
-    # parent_right = fields.Integer('Parent Right', select=True)
