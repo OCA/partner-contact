@@ -25,7 +25,6 @@
     "complexity": "normal",
     "category": "Customer Relationship Management",
     "depends": [
-        'base',
     ],
     "demo": [
         "data/demo.xml",
