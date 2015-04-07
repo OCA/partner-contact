@@ -158,7 +158,8 @@ class ResPartnerRelationAll(models.AbstractModel):
                 this.type_selection_id.name_get()[0][1],
                 this.other_partner_id.name,
             )
-            for this in self.browse(cr, uid, ids, context=context)}
+            for this in self
+        }
 
     @api.one
     def write(self, vals):
