@@ -117,6 +117,19 @@ class NaceImport(models.TransientModel):
             'type': 'string', 'translate': True, 'required': False}),
     ])
 
+    _url_base = 'http://ec.europa.eu'
+    _url_path = '/eurostat/ramon/nomenclatures/index.cfm'
+    _url_params = {
+        'TargetUrl': 'ACT_OTH_CLS_DLD',
+        'StrNom': 'NACE_REV2',
+        'StrFormat': 'XML',
+        'StrLanguageCode': 'EN',
+        # 'IntKey': '',
+        # 'IntLevel': '',
+        # 'TxtDelimiter': ';',
+        # 'bExport': '',
+    }
+
     def _check_node(self, node):
         if node.get('id') and node.get('idLevel'):
             return True
@@ -155,20 +168,10 @@ class NaceImport(models.TransientModel):
         return item
 
     def _download_nace(self, lang_code):
-        url_base = 'http://ec.europa.eu'
-        url_path = '/eurostat/ramon/nomenclatures/index.cfm'
-        url_params = {
-            'TargetUrl': 'ACT_OTH_CLS_DLD',
-            'StrNom': 'NACE_REV2',
-            'StrFormat': 'XML',
-            'StrLanguageCode': lang_code,
-            # 'IntKey': '',
-            # 'IntLevel': '',
-            # 'TxtDelimiter': ';',
-            # 'bExport': '',
-        }
-        url = url_base + url_path + '?'
-        url += '&'.join([k + '=' + v for k, v in url_params.iteritems()])
+        params = self._url_params.copy()
+        params['StrLanguageCode'] = lang_code
+        url = self._url_base + self._url_path + '?'
+        url += '&'.join([k + '=' + v for k, v in params.iteritems()])
         logger.info('Starting to download %s' % url)
         try:
             res_request = requests.get(url)
