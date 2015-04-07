@@ -161,6 +161,18 @@ class ResPartnerRelationAll(models.AbstractModel):
             for this in self
         }
 
+    @api.onchange('type_selection_id')
+    def onchange_type_selection_id(self):
+        """Add domain on other_partner_id according to category_other"""
+        if not self.type_selection_id.partner_category_other:
+            return {'domain': []}
+        is_company = self.type_selection_id.partner_category_other == 'c'
+        return {
+            'domain': {
+                'other_partner_id': [('is_company', '=', is_company)],
+            }
+        }
+
     @api.one
     def write(self, vals):
         """divert non-problematic writes to underlying table"""
