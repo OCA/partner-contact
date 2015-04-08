@@ -49,7 +49,7 @@
     'author': 'ChriCar Beteiligungs- und Beratungs- GmbH, '
               'Antiun Ingeniería, SL',
     'maintainer': 'ChriCar Beteiligungs- und Beratungs- GmbH, '
-                  'Antiun Ingeniería, SL',
+                  'Antiun Ingeniería S.L.',
     'website': 'http://www.camptocamp.at, '
                'http://www.antiun.com',
     'license': 'AGPL-3',
