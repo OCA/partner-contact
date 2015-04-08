@@ -9,8 +9,10 @@
     <field name="type">form</field>
     <field name="arch" type="xml">
         <form string="Partner Identification Categories">
-            <field name="name" />
-            <field name="code" />
+            <group>
+                <field name="name" />
+                <field name="code" />
+            </group>
         </form>
     </field>
 </record>
