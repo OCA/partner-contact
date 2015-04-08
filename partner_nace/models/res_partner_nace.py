@@ -42,7 +42,8 @@ class ResPartnerNace(models.Model):
     limit_content = fields.Text(translate=True, string="Also contents")
     exclusions = fields.Char(string="Excludes")
     # Parent hierarchy
-    parent_id = fields.Many2one(comodel_name='res.partner.nace')
+    parent_id = fields.Many2one(comodel_name='res.partner.nace',
+                                ondelete='restrict')
     children = fields.One2many(comodel_name='res.partner.nace',
                                inverse_name='parent_id')
     parent_left = fields.Integer('Parent Left', select=True)

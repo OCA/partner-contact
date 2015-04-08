@@ -29,6 +29,7 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     main_nace = fields.Many2one(comodel_name='res.partner.nace',
-                                string="Main activity")
+                                string="Main activity", ondelete='set null')
     secondary_naces = fields.Many2many(comodel_name='res.partner.nace',
-                                       string="Other activities")
+                                       string="Other activities",
+                                       ondelete='set null')
