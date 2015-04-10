@@ -62,7 +62,6 @@ class NaceImport(models.TransientModel):
         'es_SV': 'ES',  # Spanish (SV)
         'es_UY': 'ES',  # Spanish (UY)
         'es_VE': 'ES',  # Spanish (VE)
-        'es_PY': 'ES',  # Spanish (PY)
         'es_ES': 'ES',  # Spanish
         'fi_FI': 'FI',  # Finnish
         'fr_BE': 'FR',  # French (FR)
