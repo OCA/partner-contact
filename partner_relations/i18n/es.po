@@ -1,13 +1,13 @@
 # Translation of OpenERP Server.
 # This file contains the translation of the following modules:
-#	* partner_relations
+#   * partner_relations
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-19 13:02+0000\n"
-"PO-Revision-Date: 2014-06-19 13:02+0000\n"
+"POT-Creation-Date: 2014-07-01 08:52+0000\n"
+"PO-Revision-Date: 2014-07-01 08:52+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,242 +19,243 @@ msgstr ""
 #: field:res.partner.relation,active:0
 #: field:res.partner.relation.all,active:0
 msgid "Active"
-msgstr "Actief"
+msgstr "Activo"
 
 #. module: partner_relations
 #: model:ir.model,name:partner_relations.model_res_partner_relation_all
 msgid "All (non-inverse + inverse) relations between partners"
-msgstr "Alle (non-inverse + inverse) koppelingen tussen relaties"
+msgstr "Todas (no-inversas + inversas) las relaciones entre empresas"
 
 #. module: partner_relations
 #: model:ir.model,name:partner_relations.model_res_partner_relation_type_selection
 msgid "All relation types"
-msgstr "Alle relaties"
+msgstr "Todos los tipos de relaciones"
 
 #. module: partner_relations
 #: field:res.partner,relation_all_ids:0
 msgid "All relations with current partner"
-msgstr "Alle koppelingen met huidige relatie"
+msgstr "Todas las relaciones con la empresa actual"
 
 #. module: partner_relations
 #: field:res.partner.relation.all,this_partner_id:0
 msgid "Current partner"
-msgstr "Huidige relatie"
+msgstr "Empresa actual"
 
 #. module: partner_relations
 #: field:res.partner.relation.type.selection,partner_category_this:0
 #: field:res.partner.relation.type.selection,search_partner_category_this:0
 msgid "Current record's category"
-msgstr "Categorie van huidige record"
+msgstr "Etiqueta del registro actual"
 
 #. module: partner_relations
 #: field:res.partner.relation.type.selection,contact_type_this:0
 msgid "Current record's partner type"
-msgstr "Relatietype van huidige record"
+msgstr "Tipo de empresa del registro actual"
 
 #. module: partner_relations
 #: field:res.partner.relation,date_end:0
 #: field:res.partner.relation.all,date_end:0
 msgid "Ending date"
-msgstr "Einddatum"
+msgstr "Fecha fin"
 
 #. module: partner_relations
 #: field:res.partner,search_relation_id:0
 msgid "Has relation of type"
-msgstr "Heeft koppeling"
+msgstr "Tiene una relación de tipo"
 
 #. module: partner_relations
 #: field:res.partner,search_relation_partner_id:0
 msgid "Has relation with"
-msgstr "Heeft koppeling met"
+msgstr "Tiene una relación con"
 
 #. module: partner_relations
 #: field:res.partner,search_relation_partner_category_id:0
 msgid "Has relation with a partner in category"
-msgstr "Heeft koppeling met relatie van de categorie"
+msgstr "Tiene una relación con las empresas con la etiqueta"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,name_inverse:0
 msgid "Inverse name"
-msgstr "Inverse naam"
+msgstr "Nombre inverso"
 
 #. module: partner_relations
 #: selection:res.partner.relation.all,record_type:0
 #: selection:res.partner.relation.type.selection,record_type:0
 msgid "Inverse type"
-msgstr "Inverse type"
+msgstr "Tipo inverso"
 
 #. module: partner_relations
 #: field:res.partner.relation,left_partner_id:0
 msgid "Left partner"
-msgstr "Linkerrelatie"
+msgstr "Empresa izquierda"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,partner_category_left:0
 msgid "Left partner category"
-msgstr "Linker-relatielabel"
+msgstr "Etiqueta empresa izquierda"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,contact_type_left:0
 msgid "Left partner type"
-msgstr "Linker-relatietype"
+msgstr "Tipo de empresa izquierda"
 
 #. module: partner_relations
 #: view:res.partner.relation.type:0
 msgid "Left side of relation"
-msgstr "Linkerkant van de koppeling"
+msgstr "Lado izquierdo de la relación"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,name:0
 #: field:res.partner.relation.type.selection,name:0
 msgid "Name"
-msgstr "Naam"
+msgstr "Nombre"
 
 #. module: partner_relations
 #: field:res.partner.relation.all,other_partner_id:0
 msgid "Other partner"
-msgstr "Andere relatie"
+msgstr "Otra empresa"
 
 #. module: partner_relations
 #: field:res.partner.relation.type.selection,partner_category_other:0
 msgid "Other record's category"
-msgstr "Categorie andere record"
+msgstr "Etiqueta del otro registro"
 
 #. module: partner_relations
 #: field:res.partner.relation.type.selection,contact_type_other:0
 msgid "Other record's partner type"
-msgstr "Type andere record"
-
-#. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:259
-#, python-format
-msgid "Overlapping relation"
-msgstr "Overlappende koppeling"
+msgstr "Tipo de empresa del otro registro"
 
 #. module: partner_relations
 #: model:ir.model,name:partner_relations.model_res_partner_relation_type
 #: model:ir.model,name:partner_relations.model_res_partner_relation_type_inverse
 msgid "Parter relation type"
-msgstr "Type relatiekoppeling"
+msgstr "Tipo de relación de empresa"
 
 #. module: partner_relations
 #: model:ir.model,name:partner_relations.model_res_partner
 #: field:res.partner.relation,partner_id_display:0
 msgid "Partner"
-msgstr "Relatie"
+msgstr "Empresa"
 
 #. module: partner_relations
 #: model:ir.model,name:partner_relations.model_res_partner_category
 msgid "Partner Categories"
-msgstr "Relatielabels"
+msgstr "Etiquetas de empresa"
 
 #. module: partner_relations
 #: model:ir.model,name:partner_relations.model_res_partner_relation
 #: view:res.partner.relation:0
+#: view:res.partner.relation.all:0
 #: view:res.partner.relation.type:0
 msgid "Partner relation"
-msgstr "Relatiekoppeling"
+msgstr "Relación de empresa"
 
 #. module: partner_relations
 #: model:ir.actions.act_window,name:partner_relations.action_res_partner_relation_type
 #: model:ir.ui.menu,name:partner_relations.menu_res_partner_relation_type
+#: view:res.partner.relation.all:0
 msgid "Partner relations"
-msgstr "Relatiekoppelingen"
+msgstr "Relaciones de empresas"
 
 #. module: partner_relations
 #: constraint:res.partner.relation:0
 msgid "Partners cannot have a relation with themselves."
-msgstr "Relaties kunnen niet aan zichzelf gekoppeld worden."
+msgstr "Las empresas no pueden relacionarse consigo mismas."
 
 #. module: partner_relations
 #: field:res.partner.relation.all,record_type:0
 #: field:res.partner.relation.type.selection,record_type:0
 msgid "Record type"
-msgstr "Record type"
+msgstr "Tipo de registro"
 
 #. module: partner_relations
 #: field:res.partner.relation.all,relation_id:0
 msgid "Relation"
-msgstr "Koppeling"
+msgstr "Relación"
 
 #. module: partner_relations
 #: field:res.partner.relation,is_relation_expired:0
 msgid "Relation is expired"
-msgstr "Koppeling is beëindigd"
+msgstr "La relación ha expirado"
 
 #. module: partner_relations
 #: field:res.partner.relation,is_relation_future:0
 msgid "Relation is in the future"
-msgstr "Koppeling is in de toekomst"
+msgstr "La relación está en el futuro"
 
 #. module: partner_relations
 #: field:res.partner.relation.all,type_id:0
+#: field:res.partner.relation.all,type_selection_id:0
 msgid "Relation type"
-msgstr "Koppelingstype"
+msgstr "Tipo de relación"
 
 #. module: partner_relations
 #: field:res.partner,search_relation_date:0
 msgid "Relation valid"
-msgstr "Datum koppeling"
+msgstr "Relación válida"
 
 #. module: partner_relations
 #: view:res.partner:0
 #: field:res.partner,relation_ids:0
 msgid "Relations"
-msgstr "Koppelingen"
+msgstr "Relaciones"
 
 #. module: partner_relations
 #: field:res.partner.relation,right_partner_id:0
 msgid "Right partner"
-msgstr "Rechterrelatie"
+msgstr "Empresa derecha"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,partner_category_right:0
 msgid "Right partner category"
-msgstr "Rechter-relatielabel"
+msgstr "Etiqueta empresa derecha"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,contact_type_right:0
 msgid "Right partner type"
-msgstr "Rechter-relatietype"
+msgstr "Tipo empresa derecha"
 
 #. module: partner_relations
 #: view:res.partner.relation.type:0
 msgid "Right side of relation"
-msgstr "Rechterkant van de koppeling"
+msgstr "Lado derecho de la relación"
+
+#. module: partner_relations
+#: model:ir.actions.act_window,name:partner_relations.action_show_partner_relations
+msgid "Show partner's relations"
+msgstr "Mostrar la relaiones de la empresa"
 
 #. module: partner_relations
 #: field:res.partner.relation,date_start:0
 #: field:res.partner.relation.all,date_start:0
 msgid "Starting date"
-msgstr "Begindatum"
+msgstr "Fecha inicio"
 
 #. module: partner_relations
 #: constraint:res.partner.relation:0
 msgid "The left partner is not applicable for this relation type."
-msgstr "De linkerrelatie is niet geldig voor dit type koppeling."
+msgstr "La empresa de la izquierda no es aplicable para este tipo de relación."
 
 #. module: partner_relations
 #: constraint:res.partner.relation:0
 msgid "The right partner is not applicable for this relation type."
-msgstr "De rechterrelatie is niet geldig voor dit type koppeling."
+msgstr "La empresa de la derecha no es aplicable para este tipo de relación."
+
+#. module: partner_relations
+#: sql_constraint:res.partner.relation:0
+msgid "The same relation can't be created twice."
+msgstr "La misma relación no puede crearse dos veces."
 
 #. module: partner_relations
 #: constraint:res.partner.relation:0
 msgid "The starting date cannot be after the ending date."
-msgstr "De begindatum mag niet na de einddatum liggen."
+msgstr "La fecha de inicio no puede ser posterior a la fecha de fin."
 
 #. module: partner_relations
 #: code:addons/partner_relations/model/res_partner_relation.py:260
 #, python-format
 msgid "Unsupported search operand \"%s\""
-msgstr "Operator \"%s\" is niet ondersteund"
-
-#. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:260
-#, python-format
-msgid "There is already a similar relation with overlapping dates"
-msgstr "Er is al een soortgelijke, overlappende koppeling."
+msgstr "Operando de búsqueda no soportado: \"%s\""
 
 #. module: partner_relations
 #: field:res.partner.relation,type_id:0
@@ -263,29 +264,20 @@ msgstr "Er is al een soortgelijke, overlappende koppeling."
 #: selection:res.partner.relation.type.selection,record_type:0
 #: field:res.partner.relation.type.selection,type_id:0
 msgid "Type"
-msgstr "Type"
+msgstr "Tipo"
 
 #. module: partner_relations
 #: field:res.partner.category,only_for_organisation:0
 msgid "Valid for organisation only"
-msgstr "Alleen geldig voor organisaties"
+msgstr "Sólo válida para empresas"
 
 #. module: partner_relations
 #: field:res.partner.category,only_for_person:0
 msgid "Valid for person only"
-msgstr "Alleen geldig voor personen"
+msgstr "Sólo válida para contactos"
 
 #. module: partner_relations
-#: field:res.partner,search_relation_partner_category_id:0
-msgid "Has relation with a partner in category"
-msgstr "Heeft koppeling met relatie van de categorie"
+#: model:ir.model,name:partner_relations.model_ir_translation
+msgid "ir.translation"
+msgstr "ir.translation"
 
-#. module: partner_relations
-#: model:ir.actions.act_window,name:partner_relations.action_show_partner_relations
-msgid "Show partner's relations"
-msgstr "Toon relatiekoppelingen"
-
-#. module: partner_relations
-#: constraint:res.partner.relation:0
-msgid "The same relation can't be created twice."
-msgstr "Dezelfde koppeling kan niet dubbel aan worden gemaakt."
