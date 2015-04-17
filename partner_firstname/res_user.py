@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Extend res.users to be compatible with split name in res.partner."""
 ##############################################################################
 #
 #    Author: Nicolas Bessi. Copyright Camptocamp SA
@@ -17,13 +18,18 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv import orm
+from openerp import api, models
 from openerp.tools.translate import _
 
 
-class ResUsers(orm.Model):
-
+class ResUsers(models.Model):
+    """Extend res.users to be compatible with split name in res.partner."""
     _inherit = 'res.users'
+
+    @api.onchange('firstname', 'lastname')
+    def change_name(self):
+        names = [name for name in [self.firstname, self.lastname] if name]
+        self.name = ' '.join(names)
 
     def copy_data(self, cr, uid, _id, default=None, context=None):
         """
