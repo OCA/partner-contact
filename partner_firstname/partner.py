@@ -115,15 +115,12 @@ class ResPartner(orm.Model):
         even if we use fnct_inv: otherwise we can't create entry because
         lastname is mandatory and module will not install if there is demo data
         """
-        to_use = vals
-        if 'name' in vals:
-            corr_vals = vals.copy()
-            if vals.get('name'):
-                corr_vals['lastname'] = corr_vals['name']
+        corr_vals = vals.copy()
+        if corr_vals.get('name'):
+            corr_vals['lastname'] = corr_vals['name']
             del(corr_vals['name'])
-            to_use = corr_vals
         return super(ResPartner, self).create(
-            cursor, uid, to_use, context=context)
+            cursor, uid, corr_vals, context=context)
 
     _columns = {'name': fields.function(_compute_name_custom, string="Name",
                                         type="char", store=True,
