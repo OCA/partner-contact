@@ -116,7 +116,8 @@ class ResPartner(models.Model):
                     relation_type_selection_ids.append(arg[2])
                 elif arg[1] == '!=' and isinstance(arg[2], (long, int)):
                     type_id, is_inverse = (
-                        relation_type_selection.browse(arg[2])
+                        relation_type_selection.browse(cr, uid, arg[2],
+                                                       context=context)
                         .get_type_from_selection_id()
                     )
                     result = OR([
@@ -149,7 +150,10 @@ class ResPartner(models.Model):
 
                 for relation_type_selection_id in relation_type_selection_ids:
                     type_id, is_inverse = (
-                        relation_type_selection_id.get_type_from_selection_id()
+                        relation_type_selection.browse(
+                            cr, uid, relation_type_selection_id,
+                            context=context
+                        ).get_type_from_selection_id()
                     )
 
                     result = OR([
