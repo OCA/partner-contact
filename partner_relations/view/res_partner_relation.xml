@@ -21,7 +21,7 @@
                 <tree
                     string="Partner Relations"
                     colors="gray:date_end and date_end &lt; current_date or not active;blue:date_start &gt; current_date"
-                    editable="bottom"
+                    editable="top"
                 >
                     <field
                         name="left_partner_id"
