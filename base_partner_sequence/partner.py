@@ -21,7 +21,7 @@
 #
 ##############################################################################
 
-from openerp.osv import orm, fields
+from openerp.osv import orm
 
 
 class ResPartner(orm.Model):
@@ -64,10 +64,6 @@ class ResPartner(orm.Model):
             vals = self.read(cr, uid, id, ['parent_id', 'is_company'],
                              context=context)
         return vals.get('is_company') or not vals.get('parent_id')
-
-    _columns = {
-        'ref': fields.char('Reference', size=64, readonly=True),
-    }
 
     def _commercial_fields(self, cr, uid, context=None):
         """
