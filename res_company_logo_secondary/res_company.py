@@ -43,6 +43,18 @@ class ResCompany(orm.Model):
             result[obj.id] = obj.logo_secondary != False
         return result
 
+    def _get_smart_logo(self, cr, uid, ids, name, args, context=None):
+        context = context or None
+
+        res = {}
+        for obj in self.browse(cr, uid, ids, context=context):
+            if 'use_secondary_logo' in context and context['use_secondary_logo']:
+                res[obj.id] = obj.logo_secondary
+            else:
+                res[obj.id] = obj.logo
+
+        return res
+
     _columns = {
         'name_secondary': fields.char('Secondary name', size=128),
         'logo_secondary': fields.binary("Logo Secondary"),
@@ -74,5 +86,9 @@ class ResCompany(orm.Model):
         'has_logo_secondary': fields.function(
             _has_logo_secondary, type="boolean"
         ),
-
+        'smart_logo': fields.function(
+            _get_smart_logo,
+            string="Logo",
+            type="binary"
+        )
     }

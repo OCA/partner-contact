@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Nicolas Bessi. Copyright Camptocamp SA
+#    Odoo, Open Source Management Solution
+#    This module copyright (C) 2015 Savoir-faire Linux
+#    (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -17,6 +19,16 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+from openerp.osv import orm, fields
 
-from . import res_company
-from . import ir_actions_report_xml
+
+class IrActionsReportXml(orm.Model):
+    _inherit = 'ir.actions.report.xml'
+
+    _columns = {
+        'use_secondary_logo': fields.boolean('Use Secondary Logo')
+    }
+
+    _defaults = {
+        'use_secondary_logo': False
+    }

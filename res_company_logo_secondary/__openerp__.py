@@ -25,9 +25,25 @@
     'maintainer': 'Savoir-faire Linux, OCA',
     'category': 'Sales',
     'website': 'http://www.savoirfairelinux.com',
+    'license': 'AGPL-3',
+    'description': """
+Company Secondary Logo
+======================
+
+This module adds a a secondary logo to the company to be used by reports.
+It requires the commit 491eb7ee35535666de6923ee63309c316b2b847d from the
+https://github.com/savoirfairelinux/odoo/tree/7.0_res_company_secondary_logo
+branch.
+
+Contributors
+------------
+* Jordi Riera (jordi.riera@savoirfairelinux.com)
+* Joao Alfredo Gama Batista (joao.gama@savoirfairelinux.com)
+"""
     'depends': ['base'],
     'data': [
         'res_company_view.xml',
+        'ir_actions_report_xml_view.xml'
     ],
     'installable': True,
 }
