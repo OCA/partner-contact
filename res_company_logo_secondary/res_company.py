@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Nicolas Bessi. Copyright Camptocamp SA
+#    Odoo, Open Source Management Solution
+#    This module copyright (C) 2015 Savoir-faire Linux
+#    (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
