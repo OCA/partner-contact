@@ -41,7 +41,7 @@ Contributors
 ------------
 * Jordi Riera (jordi.riera@savoirfairelinux.com)
 * Joao Alfredo Gama Batista (joao.gama@savoirfairelinux.com)
-"""
+""",
     'depends': ['base'],
     'data': [
         'res_company_view.xml',
