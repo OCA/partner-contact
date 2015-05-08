@@ -39,7 +39,8 @@ class TestEmailValidate(TransactionCase):
             "foo@123.com"
             "the_under@score.com",
         ]:
-            self.assertTrue(check(email))
+            self.assertTrue(check(email),
+                           "Expected email {0} to be valid".format(email))
 
     def test_invalid_emails(self):
         check = self.registry("res.partner")._check_valid_email
@@ -54,4 +55,5 @@ class TestEmailValidate(TransactionCase):
             "symbol@in.domain!",
             "s!ymbol@in.mailbox",
         ]:
-            self.assertFalse(check(email))
+            self.assertFalse(check(email),
+                             "Expected email {0} to be invalid".format(email))
