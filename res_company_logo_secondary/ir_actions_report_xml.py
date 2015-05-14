@@ -32,3 +32,20 @@ class IrActionsReportXml(orm.Model):
     _defaults = {
         'use_secondary_logo': False
     }
+
+    def write(self, cr, uid, ids, vals, context=None):
+        context = context or {}
+
+        if 'use_secondary_logo' in vals:
+            assert len(ids) == 1, "you can only modify the report logo one at a time"
+            logo_name = self.pool['res.users'].browse(
+                cr, uid, uid, context=context).company_id.name_secondary
+            name = vals.get('name', False) or self.browse(
+                cr, uid, ids[0], context=context).name
+            if vals['use_secondary_logo']:
+                vals['name'] = ' '.join([name.strip(logo_name), logo_name])
+            else:
+                vals['name'] = name.strip(logo_name)
+
+        return super(IrActionsReportXml, self).write(
+            cr, uid, ids, vals, context=context)
