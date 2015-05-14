@@ -32,7 +32,8 @@ class ResCompany(orm.Model):
             result[obj.id] = tools.image_get_resized_images(obj.logo_secondary)
         return result
 
-    def _set_logo_secondary(self, cr, uid, id, name, value, args, context=None):
+    def _set_logo_secondary(
+            self, cr, uid, id, name, value, args, context=None):
         return self.write(
             cr, uid, [id],
             {'image': tools.image_resize_image_big(value)},
@@ -42,7 +43,7 @@ class ResCompany(orm.Model):
     def _has_logo_secondary(self, cr, uid, ids, name, args, context=None):
         result = {}
         for obj in self.browse(cr, uid, ids, context=context):
-            result[obj.id] = obj.logo_secondary != False
+            result[obj.id] = obj.logo_secondary is not False
         return result
 
     def _get_smart_logo(self, cr, uid, ids, name, args, context=None):
@@ -50,7 +51,8 @@ class ResCompany(orm.Model):
 
         res = {}
         for obj in self.browse(cr, uid, ids, context=context):
-            if 'use_secondary_logo' in context and context['use_secondary_logo']:
+            if 'use_secondary_logo' in context and context[
+                    'use_secondary_logo']:
                 res[obj.id] = obj.logo_secondary
             else:
                 res[obj.id] = obj.logo
