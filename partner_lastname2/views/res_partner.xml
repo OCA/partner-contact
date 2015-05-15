@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Odoo, Open Source Management Solution
+Copyright (C) 2014-2015  Grupo ESOC <www.grupoesoc.es>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<openerp>
+<data>
+<record id="partner_simple_form" model="ir.ui.view">
+    <field name="name">Add second last name</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="partner_firstname.partner_simple_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='firstname']" position="attributes">
+                <attribute name="attrs">{
+                    'required': [('lastname', '=', False),
+                                 ('lastname2', '=', False)]
+                }</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='lastname']" position="attributes">
+                <attribute name="attrs">{
+                    'required': [('firstname', '=', False),
+                                 ('lastname2', '=', False)]
+                }</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='lastname']" position="after">
+                <field name="lastname2"
+                       attrs="{'required': [('firstname', '=', False),
+                                            ('lastname', '=', False)]}"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="partner_form" model="ir.ui.view">
+    <field name="name">Add second last name</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="partner_firstname.partner_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <!-- Main form -->
+            <xpath expr="//field[@name='firstname']" position="attributes">
+                <attribute name="attrs">{
+                    'required': [('lastname', '=', False),
+                                 ('lastname2', '=', False)]
+                }</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='lastname']" position="attributes">
+                <attribute name="attrs">{
+                    'required': [('firstname', '=', False),
+                                 ('lastname2', '=', False)]
+                }</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='lastname']" position="after">
+                <field name="lastname2"
+                       attrs="{'required': [('firstname', '=', False),
+                                            ('lastname', '=', False)]}"/>
+            </xpath>
+
+            <!-- Inner contact form of child_ids -->
+            <xpath expr="//field[@name='child_ids']/form
+                         //field[@name='firstname']"
+                   position="attributes">
+                <attribute name="attrs">{
+                    'required': [('lastname', '=', False),
+                                 ('lastname2', '=', False)]
+                }</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='child_ids']/form
+                         //field[@name='lastname']"
+                   position="attributes">
+                <attribute name="attrs">{
+                    'required': [('firstname', '=', False),
+                                 ('lastname2', '=', False)]
+                }</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='child_ids']/form
+                         //field[@name='lastname']"
+                   position="after">
+                <field name="lastname2"
+                       attrs="{'required': [('firstname', '=', False),
+                                            ('lastname', '=', False)]}"/>
+            </xpath>
+        </data>
+  </field>
+</record>
+
+</data>
+</openerp>
