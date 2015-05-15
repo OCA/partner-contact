@@ -73,7 +73,7 @@ class ResPartner(models.Model):
 
     @api.model
     def _get_inverse_name(self, name, is_company=False):
-        """Try to revert the effect of :meth:`._compute_name`.
+        """Compute the inverted name.
 
         - If the partner is a company, save it in the lastname.
         - Otherwise, make a guess.
@@ -93,12 +93,13 @@ class ResPartner(models.Model):
             parts = name.split(" ", 1)
             while len(parts) < 2:
                 parts.append(False)
-        return parts
+        return {"lastname": parts[0], "firstname": parts[1]}
 
     @api.one
     def _inverse_name(self):
+        """Try to revert the effect of :meth:`._compute_name`."""
         parts = self._get_inverse_name(self.name, self.is_company)
-        self.lastname, self.firstname = parts
+        self.lastname, self.firstname = parts["lastname"], parts["firstname"]
 
     @api.one
     @api.constrains("firstname", "lastname")
