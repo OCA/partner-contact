@@ -36,16 +36,23 @@ class IrActionsReportXml(orm.Model):
     def write(self, cr, uid, ids, vals, context=None):
         context = context or {}
 
+        company = self.pool['res.users'].browse(
+            cr, uid, uid, context=context).company_id
+        logo_name = company.has_logo_secondary and company.name_secondary or False
+
         if 'use_secondary_logo' in vals:
-            assert len(ids) == 1, "you can only modify the report logo one at a time"
-            logo_name = self.pool['res.users'].browse(
-                cr, uid, uid, context=context).company_id.name_secondary
-            name = vals.get('name', False) or self.browse(
-                cr, uid, ids[0], context=context).name
-            if vals['use_secondary_logo']:
-                vals['name'] = ' '.join([name.strip(logo_name), logo_name])
+            if logo_name:
+                assert len(ids) == 1, "you can only modify the report logo " \
+                    "one at a time"
+                name = vals.get('name', False) or self.browse(
+                    cr, uid, ids[0], context=context).name
+                if vals['use_secondary_logo']:
+                    vals['name'] = ' '.join([name.strip(logo_name), logo_name])
+                else:
+                    vals['name'] = name.strip(logo_name)
+
             else:
-                vals['name'] = name.strip(logo_name)
+                vals.pop('use_secondary_logo')
 
         return super(IrActionsReportXml, self).write(
             cr, uid, ids, vals, context=context)
