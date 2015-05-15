@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record id="view_partner_simple_form_firstname" model="ir.ui.view">
+    <field name="name">Add firstname and lastname</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_simple_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="attrs">{
+                    'readonly': [('is_company', '=', False)],
+                    'required': [('is_company', '=', True)]
+                }</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='category_id']" position="before">
+                <group attrs="{'invisible': [('is_company', '=', True)]}">
+                    <field name="lastname" attrs=
+                        "{'required': [('firstname', '=', False),
+                                       ('is_company', '=', False)]}"/>
+                    <field name="firstname" attrs=
+                        "{'required': [('lastname', '=', False),
+                                       ('is_company', '=', False)]}"/>
+                </group>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="view_partner_form_firstname" model="ir.ui.view">
+    <field name="name">Add firstname and surnames</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="attrs">{
+                    'readonly': [('is_company', '=', False)],
+                    'required': [('is_company', '=', True)]
+                }</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='category_id']" position="before">
+                <group attrs="{'invisible': [('is_company', '=', True)]}">
+                    <field name="lastname" attrs=
+                        "{'required': [('firstname', '=', False),
+                                       ('is_company', '=', False)]}"/>
+                    <field name="firstname" attrs=
+                        "{'required': [('lastname', '=', False),
+                                       ('is_company', '=', False)]}"/>
+                </group>
+            </xpath>
+
+            <!-- Modify inner contact form of child_ids -->
+            <xpath expr="//field[@name='child_ids']/form
+                         //field[@name='category_id']"
+                   position="before">
+                <group attrs="{'invisible': [('is_company', '=', True)]}">
+                    <field name="lastname" attrs=
+                        "{'required': [('firstname', '=', False),
+                                       ('is_company', '=', False)]}"/>
+                    <field name="firstname" attrs=
+                        "{'required': [('lastname', '=', False),
+                                       ('is_company', '=', False)]}"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//field[@name='child_ids']/form
+                         //field[@name='category_id']"
+                   position="attributes">
+                <attribute name="style"/>
+            </xpath>
+
+            <xpath expr="//field[@name='child_ids']/form//label[@for='name']"
+                   position="before">
+                <div class="oe_edit_only">
+                    <field name="is_company"
+                           on_change="onchange_type(is_company)"/>
+                    <label for="is_company"
+                           string="Is a Company?"/>
+                </div>
+            </xpath>
+
+            <xpath expr="//field[@name='child_ids']/form//field[@name='name']"
+                   position="attributes">
+                <attribute name="attrs">{
+                    'readonly': [('is_company', '=', False)],
+                    'required': [('is_company', '=', True)]
+                }</attribute>
+            </xpath>
+        </data>
+  </field>
+</record>
+
+</data>
+</openerp>
