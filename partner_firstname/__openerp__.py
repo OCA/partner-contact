@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
+
 #    Author: Nicolas Bessi. Copyright Camptocamp SA
+#    Copyright (C)
+#       2014:       Agile Business Group (<http://www.agilebg.com>)
+#       2015:       Grupo ESOC <www.grupoesoc.es>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -15,35 +17,20 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
 
 {
-    'name': 'Partner first name, last name',
-    'description': """
-This module splits first name and last name for non company partners
-====================================================================
-
-The field 'name' becomes a stored function field concatenating lastname and
-firstname
-Note: in version 7.0, installing this module invalidates a yaml test in the
-'edi' module
-
-Contributors
-============
-Jonathan Nemry <jonathan.nemry@acsone.eu>
-Olivier Laurent <olivier.laurent@acsone.eu>
-
-""",
-    'version': '1.2',
+    'name': 'Partner first name and last name',
+    'summary': "Split first name and last name for non company partners",
+    'version': '2.0',
     'author': "Camptocamp,Odoo Community Association (OCA)",
     'maintainer': 'Camptocamp, Acsone',
     'category': 'Extra Tools',
     'website': 'http://www.camptocamp.com, http://www.acsone.eu',
     'depends': ['base'],
     'data': [
-        'partner_view.xml',
-        'res_user_view.xml',
+        'views/res_partner.xml',
+        'views/res_user.xml',
+        'data/res_partner.yml',
     ],
     'demo': [],
     'test': [],
