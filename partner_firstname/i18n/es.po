@@ -6,48 +6,54 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-23 14:09+0000\n"
-"PO-Revision-Date: 2014-12-23 14:09+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2015-03-30 07:53+0000\n"
+"PO-Revision-Date: 2015-03-30 10:01+0100\n"
+"Last-Translator: Jairo Llopis <j.llopis@grupoesoc.es>\n"
 "Language-Team: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"X-Generator: Poedit 1.7.5\n"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/partner.py:81
-#: code:addons/partner_firstname/res_user.py:35
-#: code:addons/partner_firstname/tests/test_partner_firstname.py:56
-#: code:addons/partner_firstname/tests/test_partner_firstname.py:57
-#: code:addons/partner_firstname/tests/test_partner_firstname.py:71
-#: code:addons/partner_firstname/tests/test_partner_firstname.py:72
+#: code:addons/partner_firstname/exceptions.py:26
 #, python-format
-msgid "%s (copy)"
-msgstr "%s (copia)"
-
-#. module: partner_firstname
-#: model:ir.model,name:partner_firstname.model_res_users
-msgid "Users"
-msgstr "Usuarios"
+msgid "Error(s) with partner %d's name."
+msgstr "Errores con el nombre de la empresa %d."
 
 #. module: partner_firstname
 #: field:res.partner,firstname:0
-msgid "Firstname"
+msgid "First name"
 msgstr "Nombre"
 
 #. module: partner_firstname
-#: field:res.partner,lastname:0
-msgid "Lastname"
-msgstr "Apellidos"
-
-#. module: partner_firstname
-#: view:res.partner:0
+#: view:res.partner:partner_firstname.partner_form
 msgid "Is a Company?"
 msgstr "¿Es una empresa?"
+
+#. module: partner_firstname
+#: field:res.partner,lastname:0
+msgid "Last name"
+msgstr "Apellido"
+
+#. module: partner_firstname
+#: code:addons/partner_firstname/exceptions.py:40
+#, python-format
+msgid "No name is set."
+msgstr "No se ha establecido ningún nombre."
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
 msgid "Partner"
 msgstr "Empresa"
 
+#~ msgid "True"
+#~ msgstr "Verdadero"
+
+#~ msgid "%s (copy)"
+#~ msgstr "%s (copia)"
+
+#~ msgid "Users"
+#~ msgstr "Usuarios"
