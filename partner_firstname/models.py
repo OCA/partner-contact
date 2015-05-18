@@ -43,7 +43,7 @@ class ResPartner(models.Model):
 
     @api.one
     def _name_inverse(self):
-        """Try to reverse the effect of _compute_name_custom.
+        """Try to reverse the effect of :meth:`._check_name`.
 
         - If the partner is a company, save it in the first name.
         - Otherwise, make a guess.
@@ -89,4 +89,4 @@ class ResPartner(models.Model):
                                ("lastname", "=", False)])
 
         # Force calculations there
-        records._write_name()
+        records._name_inverse()
