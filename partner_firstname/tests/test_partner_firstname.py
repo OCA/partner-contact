@@ -90,7 +90,7 @@ class PartnerFirstnameCase(TransactionCase):
 
     def test_no_names(self):
         """Test that you cannot set a partner without names."""
-        with self.assertRaises(ex.EmptyNames):
+        with self.assertRaises(ex.EmptyNamesError):
             self.original.firstname = self.original.lastname = False
 
 

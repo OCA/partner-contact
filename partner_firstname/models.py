@@ -74,7 +74,7 @@ class ResPartner(models.Model):
     def _check_name(self):
         """Ensure at least one name is set."""
         if not (self.firstname or self.lastname):
-            raise exceptions.EmptyNames(self)
+            raise exceptions.EmptyNamesError(self)
 
     @api.model
     def _firstname_install(self):
