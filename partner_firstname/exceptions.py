@@ -19,7 +19,7 @@
 from openerp import _, exceptions
 
 
-class EmptyNames(exceptions.ValidationError):
+class EmptyNamesError(exceptions.ValidationError):
     def __init__(self, record, value=_("No name is set.")):
         self.record = record
         self._value = value
