@@ -74,6 +74,14 @@ class PartnerFirstnameCase(TransactionCase):
         self.expect("lastname", "newfirstname")
         self.original.name = self.name
 
+    def test_whitespace_cleanup(self):
+        """Check that whitespace in name gets cleared."""
+        self.expect("newlastname", "newfirstname")
+        self.original.name = "  newlastname  newfirstname  "
+
+        # Need this to refresh the ``name`` field
+        self.original.invalidate_cache()
+
     def test_no_names(self):
         """Test that you cannot set a partner/user without names."""
         self.check_fields = False
