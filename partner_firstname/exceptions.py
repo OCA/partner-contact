@@ -19,18 +19,8 @@
 from openerp import _, exceptions
 
 
-class PartnerNameError(exceptions.ValidationError):
-    def __init__(self, record, value=None):
+class EmptyNames(exceptions.ValidationError):
+    def __init__(self, record, value=_("No name is set.")):
         self.record = record
         self._value = value
         self.name = _("Error(s) with partner %d's name.") % record.id
-
-    @property
-    def value(self):
-        raise NotImplementedError()
-
-
-class EmptyNames(PartnerNameError):
-    @property
-    def value(self):
-        return _("No name is set.")
