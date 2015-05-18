@@ -32,123 +32,57 @@ from .. import exceptions as ex
 class PartnerFirstnameCase(TransactionCase):
     def setUp(self):
         super(PartnerFirstnameCase, self).setUp()
+        self.check_fields = True
+        self.create_original()
 
+    def create_original(self):
         self.original = self.env["res.partner"].create({
             "lastname": "lastname",
             "firstname": "firstname"})
 
-    def test_copy_partner(self):
+    def expect(self, lastname, firstname, name=None):
+        """Define what is expected in each field when ending."""
+        self.lastname = lastname
+        self.firstname = firstname
+        self.name = name or "%s %s" % (lastname, firstname)
+
+    def tearDown(self):
+        if self.check_fields:
+            if not hasattr(self, "changed"):
+                self.changed = self.original
+
+            for field in ("name", "lastname", "firstname"):
+                self.assertEqual(
+                    getattr(self.changed, field),
+                    getattr(self, field),
+                    "Test failed with wrong %s" % field)
+
+        super(PartnerFirstnameCase, self).tearDown()
+
+    def test_copy(self):
         """Copy the partner and compare the result."""
-        copy = self.original.with_context(lang="en_US").copy()
+        self.expect("lastname", "firstname (copy)")
+        self.changed = self.original.with_context(lang="en_US").copy()
 
-        self.assertEqual(
-            copy.name,
-            "lastname firstname (copy)",
-            "Copy of the partner failed with wrong name")
-        self.assertEqual(
-            copy.lastname,
-            "lastname",
-            "Copy of the partner failed with wrong lastname")
-        self.assertEqual(
-            copy.firstname,
-            "firstname (copy)",
-            "Copy of the partner failed with wrong firstname")
-
-    def test_update_user_lastname(self):
+    def test_update_lastname(self):
         """Change lastname."""
-        self.original.name = "changed firstname"
+        self.expect("newlastname", "firstname")
+        self.original.name = self.name
 
-        self.assertEqual(
-            self.original.name,
-            "changed firstname",
-            "Update of the partner lastname failed with wrong name")
-        self.assertEqual(
-            self.original.lastname,
-            "changed",
-            "Update of the partner lastname failed with wrong lastname")
-        self.assertEqual(
-            self.original.firstname,
-            "firstname",
-            "Update of the partner lastname failed with wrong firstname")
-
-    def test_update_user_firstname(self):
+    def test_update_firstname(self):
         """Change firstname."""
-        self.original.name = "lastname changed"
-
-        self.assertEqual(
-            self.original.name,
-            "lastname changed",
-            "Update of the partner lastname failed with wrong name")
-        self.assertEqual(
-            self.original.lastname,
-            "lastname",
-            "Update of the partner lastname failed with wrong lastname")
-        self.assertEqual(
-            self.original.firstname,
-            "changed",
-            "Update of the partner lastname failed with wrong firstname")
+        self.expect("lastname", "newfirstname")
+        self.original.name = self.name
 
     def test_no_names(self):
-        """Test that you cannot set a partner without names."""
+        """Test that you cannot set a partner/user without names."""
+        self.check_fields = False
         with self.assertRaises(ex.EmptyNamesError):
             self.original.firstname = self.original.lastname = False
 
 
-class UserFirstnameCase(TransactionCase):
-    def setUp(self):
-        super(UserFirstnameCase, self).setUp()
-
+class UserFirstnameCase(PartnerFirstnameCase):
+    def create_original(self):
         self.original = self.env["res.users"].create({
             "name": "lastname firstname",
             "login": "firstnametest@example.com"})
-
-    def test_copy_user(self):
-        """Copy the user and compare result."""
-        copy = self.original.with_context(lang="en_US").copy()
-
-        self.assertEqual(
-            copy.name,
-            "lastname firstname (copy)",
-            "Copy of the partner failed with wrong name")
-        self.assertEqual(
-            copy.lastname,
-            "lastname",
-            "Copy of the partner failed with wrong lastname")
-        self.assertEqual(
-            copy.firstname,
-            "firstname (copy)",
-            "Copy of the partner failed with wrong firstname")
-
-    def test_update_user_lastname(self):
-        """Change lastname."""
-        self.original.name = "changed firstname"
-
-        self.assertEqual(
-            self.original.name,
-            "changed firstname",
-            "Update of the user lastname failed with wrong name")
-        self.assertEqual(
-            self.original.lastname,
-            "changed",
-            "Update of the user lastname failed with wrong lastname")
-        self.assertEqual(
-            self.original.firstname,
-            "firstname",
-            "Update of the user lastname failed with wrong firstname")
-
-    def test_update_user_firstname(self):
-        """Change firstname."""
-        self.original.name = "lastname changed"
-
-        self.assertEqual(
-            self.original.name,
-            "lastname changed",
-            "Update of the user lastname failed with wrong name")
-        self.assertEqual(
-            self.original.lastname,
-            "lastname",
-            "Update of the user lastname failed with wrong lastname")
-        self.assertEqual(
-            self.original.firstname,
-            "changed",
-            "Update of the user lastname failed with wrong firstname")
