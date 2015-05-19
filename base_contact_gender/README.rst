@@ -38,6 +38,8 @@ For further information, please visit:
 Credits
 =======
 
+* Icon from `Font Awesome <http://fontawesome.io/>`_.
+
 Contributors
 ------------
 
