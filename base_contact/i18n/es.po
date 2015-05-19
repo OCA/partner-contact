@@ -126,7 +126,7 @@ msgstr "País"
 #. module: base_contact
 #: field:res.partner,birthdate_date:0
 msgid "Birthdate"
-msgstr "Fecha de nadimiento"
+msgstr "Fecha de nacimiento"
 
 #. module: base_contact
 #: view:res.partner:0
