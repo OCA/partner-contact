@@ -17,7 +17,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 {
-    "name": "Partner gender",
+    "name": "Contact gender",
     "version": "1.0",
     "category": "Customer Relationship Management",
     "author": "Odoo Community Association (OCA), Grupo ESOC",
@@ -25,7 +25,7 @@
     "website": "https://odoo-community.org/",
     "installable": True,
     "application": False,
-    "summary": "Add gender field to partners",
+    "summary": "Add gender field to contacts",
     "depends": [
         "base_contact",
     ],
