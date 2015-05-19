@@ -1,0 +1,119 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* base_contact
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-19 10:13+0000\n"
+"PO-Revision-Date: 2015-05-19 12:15+0100\n"
+"Last-Translator: Jairo Llopis <j.llopis@grupoesoc.es>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.7.6\n"
+
+#. module: partner_contact_base
+#: view:res.partner:partner_contact_base.personal_information
+msgid "Personal Information"
+msgstr "Informations personnelles"
+
+#~ msgid "City"
+#~ msgstr "Ville"
+
+#~ msgid "other position"
+#~ msgstr "fonction"
+
+#~ msgid "Contacts"
+#~ msgstr "Contacts"
+
+#~ msgid "To see personal information about this contact, please go to to the his person form:"
+#~ msgstr "Pour voir des informations personnelles sur ce contact, s'il vous plaît aller au formulaire de la personne:"
+
+#~ msgid "Street..."
+#~ msgstr "Rue..."
+
+#~ msgid "State"
+#~ msgstr "État"
+
+#~ msgid "at"
+#~ msgstr "à"
+
+#~ msgid "Tags..."
+#~ msgstr "Étiquettes..."
+
+#~ msgid "Other Positions"
+#~ msgstr "Fonctions"
+
+#~ msgid "Phone:"
+#~ msgstr "Téléphone:"
+
+#~ msgid "Company"
+#~ msgstr "Organisme"
+
+#~ msgid "Main Contact"
+#~ msgstr "Principal contact"
+
+#~ msgid "Fax:"
+#~ msgstr "Fax :"
+
+#~ msgid "Standalone Contact"
+#~ msgstr "Contact autonome"
+
+#~ msgid "Nationality."
+#~ msgstr "Nationalité."
+
+#~ msgid "Address"
+#~ msgstr "Adresse"
+
+#~ msgid "Nationality"
+#~ msgstr "Nationalité"
+
+#~ msgid "Attached to existing Contact"
+#~ msgstr "Contact rattaché à un contact existant"
+
+#~ msgid "ZIP"
+#~ msgstr "Code postal"
+
+#~ msgid "Country"
+#~ msgstr "Pays"
+
+#~ msgid "Birthdate"
+#~ msgstr "Date de naissance"
+
+#~ msgid "Person"
+#~ msgstr "Personne"
+
+#~ msgid "Contact"
+#~ msgstr "Contact"
+
+#~ msgid "Mobile:"
+#~ msgstr "Portable :"
+
+#~ msgid "All partner positions"
+#~ msgstr "Tous les contacts"
+
+#~ msgid "All positions"
+#~ msgstr "Tous les contacts"
+
+#~ msgid "ir.actions.act_window"
+#~ msgstr "ir.actions.act_window"
+
+#~ msgid "other positions"
+#~ msgstr "fonctions"
+
+#~ msgid "Contact Type"
+#~ msgstr "Type de contact"
+
+#~ msgid "Partner"
+#~ msgstr "Partenaire"
+
+#~ msgid "Others Positions"
+#~ msgstr "Fonctions"
+
+#~ msgid "e.g. Sales Director"
+#~ msgstr "ex: Directeur des ventes"

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record id="personal_information" model="ir.ui.view">
+    <field name="name">Personal information page for contacts form</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <page name="personal_information"
+                      string="Personal Information"
+                      attrs="{'invisible': [('is_company','=',True)]}"/>
+            </xpath>
+        </data>
+  </field>
+</record>
+
+</data>
+</openerp>
