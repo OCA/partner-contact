@@ -27,7 +27,7 @@
     "application": False,
     "summary": "Add gender field to contacts",
     "depends": [
-        "base_contact",
+        "partner_contact_personal_information_page",
     ],
     "data": [
         "views/res_partner.xml",
