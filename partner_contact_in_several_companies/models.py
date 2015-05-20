@@ -62,12 +62,6 @@ class res_partner(orm.Model):
             'contact_id',
             'Others Positions',
         ),
-
-        # Person specific fields
-        # add a 'birthdate' as date field, i.e different from char
-        # 'birthdate' introduced v6.1!
-        'birthdate_date': fields.date('Birthdate'),
-        'nationality_id': fields.many2one('res.country', 'Nationality'),
     }
 
     _defaults = {

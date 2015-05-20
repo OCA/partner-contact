@@ -22,11 +22,11 @@
 from openerp.tests import common
 
 
-class Test_Base_Contact(common.TransactionCase):
+class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
     def setUp(self):
         """*****setUp*****"""
-        super(Test_Base_Contact, self).setUp()
+        super(PartnerContactInSeveralCompaniesCase, self).setUp()
         cr, uid = self.cr, self.uid
         ModelData = self.registry('ir.model.data')
         self.partner = self.registry('res.partner')
@@ -34,12 +34,16 @@ class Test_Base_Contact(common.TransactionCase):
         # Get test records reference
         for attr, module, name in [
                 ('main_partner_id', 'base', 'main_partner'),
-                ('bob_contact_id', 'base_contact', 'res_partner_contact1'),
-                ('bob_job1_id', 'base_contact',
-                    'res_partner_contact1_work_position1'),
+                ('bob_contact_id',
+                 'partner_contact_in_several_companies',
+                 'res_partner_contact1'),
+                ('bob_job1_id',
+                 'partner_contact_in_several_companies',
+                 'res_partner_contact1_work_position1'),
                 ('roger_contact_id', 'base', 'res_partner_main2'),
-                ('roger_job2_id', 'base_contact',
-                    'res_partner_main2_position_consultant')]:
+                ('roger_job2_id',
+                 'partner_contact_in_several_companies',
+                 'res_partner_main2_position_consultant')]:
             r = ModelData.get_object_reference(cr, uid, module, name)
             setattr(self, attr, r[1] if r else False)
 

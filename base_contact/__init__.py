@@ -1,8 +1,9 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
+
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2013-TODAY OpenERP SA (<http://www.openerp.com>).
+-#    Copyright (C) 2013-TODAY OpenERP SA (<http://www.openerp.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,4 +20,7 @@
 #
 ##############################################################################
 
-from . import base_contact
+import logging
+
+
+logging.getLogger(__name__).warn("This module is DEPRECATED. See README.")

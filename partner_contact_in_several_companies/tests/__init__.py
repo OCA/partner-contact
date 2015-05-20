@@ -19,8 +19,4 @@
 #
 ##############################################################################
 
-from . import test_base_contact
-
-checks = [
-    test_base_contact,
-]
+from . import test_partner_contact_in_several_companies
