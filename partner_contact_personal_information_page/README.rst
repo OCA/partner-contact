@@ -1,13 +1,13 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-Contacts' Personal Data
-=======================
+Contacts' Personal Information Page
+===================================
 
 This module was written to extend the contact management functionality.
 
 Its only purpose is to serve as a base for other modules that add personal
-information fields to contacts that are persons.
+information fields to **contacts that are persons**.
 
 Installation
 ============

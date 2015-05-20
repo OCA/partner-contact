@@ -17,8 +17,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 {
-    "name": "Base for contact modules",
-    "version": "1.0",
+    "name": "Personal information page for contacts",
+    "summary": "Add a page to contacts form to put personal information",
+    "version": "1.0.0",
     "author": "Odoo Community Association (OCA)",
     "category": "Customer Relationship Management",
     "website": "https://odoo-community.org/",
