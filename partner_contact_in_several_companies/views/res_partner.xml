@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="view_res_partner_filter_contact" model="ir.ui.view">
+        <field name="name">res.partner.select.contact</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <filter name="type_company" position="after">
+                <separator/>
+                <filter string="All positions" name="type_otherpositions"
+                        context="{'search_show_all_positions': True}"
+                        help="All partner positions"/>
+            </filter>
+            <xpath expr="/search/group/filter[@string='Company']" position="before">
+                <filter string="Person" name="group_person" context="{'group_by': 'contact_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_tree_contact" model="ir.ui.view">
+        <field name="name">res.partner.tree.contact</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="contact_id" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_partner_form_inherit">
+        <field name="name">res.partner.form.contact</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <field name="is_company" position="after">
+                <field name="contact_type" invisible="1"/>
+            </field>
+            <page string="Contacts" position="after">
+                <page string="Other Positions" attrs="{'invisible': ['|',('is_company','=',True),('contact_id','!=',False)]}">
+                    <field name="other_contact_ids" context="{'default_contact_id': active_id, 'default_name': name, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_supplier': supplier}}" mode="kanban">
+                        <kanban>
+                            <field name="color"/>
+                            <field name="name"/>
+                            <field name="title"/>
+                            <field name="email"/>
+                            <field name="parent_id"/>
+                            <field name="is_company"/>
+                            <field name="function"/>
+                            <field name="phone"/>
+                            <field name="street"/>
+                            <field name="street2"/>
+                            <field name="zip"/>
+                            <field name="city"/>
+                            <field name="country_id"/>
+                            <field name="mobile"/>
+                            <field name="fax"/>
+                            <field name="state_id"/>
+                            <field name="has_image"/>
+                            <templates>
+                                <t t-name="kanban-box">
+                                    <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
+                                    <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '')" style="position: relative">
+                                        <a t-if="! read_only_mode" type="delete" style="position: absolute; right: 0; padding: 4px; diplay: inline-block">X</a>
+                                        <div class="oe_module_vignette">
+                                        <a type="open">
+                                            <t t-if="record.has_image.raw_value === true">
+                                                <img t-att-src="kanban_image('res.partner', 'image', record.id.value, {'preview_image': 'image_small'})" class="oe_avatar oe_kanban_avatar_smallbox"/>
+                                            </t>
+                                            <t t-if="record.image and record.image.raw_value !== false">
+                                                <img t-att-src="'data:image/png;base64,'+record.image.raw_value" class="oe_avatar oe_kanban_avatar_smallbox"/>
+                                            </t>
+                                            <t t-if="record.has_image.raw_value === false and (!record.image or record.image.raw_value === false)">
+                                                <t t-if="record.is_company.raw_value === true">
+                                                    <img t-att-src='_s + "/base/static/src/img/company_image.png"' class="oe_kanban_image oe_kanban_avatar_smallbox"/>
+                                                </t>
+                                                <t t-if="record.is_company.raw_value === false">
+                                                    <img t-att-src='_s + "/base/static/src/img/avatar.png"' class="oe_kanban_image oe_kanban_avatar_smallbox"/>
+                                                </t>
+                                            </t>
+                                        </a>
+                                            <div class="oe_module_desc">
+                                                <div class="oe_kanban_box_content oe_kanban_color_bglight oe_kanban_color_border">
+                                                    <table class="oe_kanban_table">
+                                                        <tr>
+                                                            <td class="oe_kanban_title1" align="left" valign="middle">
+                                                                <h4><a type="open"><field name="name"/></a></h4>
+                                                                <i>
+                                                                    <t t-if="record.parent_id.raw_value and !record.function.raw_value"><field name="parent_id"/></t>
+                                                                    <t t-if="!record.parent_id.raw_value and record.function.raw_value"><field name="function"/></t>
+                                                                    <t t-if="record.parent_id.raw_value and record.function.raw_value"><field name="function"/> at <field name="parent_id"/></t>
+                                                                </i>
+                                                                <div><a t-if="record.email.raw_value" title="Mail" t-att-href="'mailto:'+record.email.value">
+                                                                    <field name="email"/>
+                                                                </a></div>
+                                                                <div t-if="record.phone.raw_value">Phone: <field name="phone"/></div>
+                                                                <div t-if="record.mobile.raw_value">Mobile: <field name="mobile"/></div>
+                                                                <div t-if="record.fax.raw_value">Fax: <field name="fax"/></div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </templates>
+                        </kanban>
+                        <form string="Contact" version="7.0">
+                            <sheet>
+                                <field name="image" widget='image' class="oe_avatar oe_left" options='{"preview_image": "image_medium"}'/>
+                                <div class="oe_title">
+                                    <label for="name" class="oe_edit_only"/>
+                                    <h1><field name="name" style="width: 70%%"/></h1>
+                                </div>
+                                <group>
+                                    <!-- inherited part -->
+                                    <field name="category_id" widget="many2many_tags" placeholder="Tags..." style="width: 70%%"/>
+                                    <field name="parent_id" placeholder="Company" domain="[('is_company','=',True)]"/>
+                                    <!-- inherited part end -->
+                                    <field name="function" placeholder="e.g. Sales Director"/>
+                                    <field name="email"/>
+                                    <field name="phone"/>
+                                    <field name="mobile"/>
+                                </group>
+                                <div>
+                                    <field name="use_parent_address"/><label for="use_parent_address"/>
+                                </div>
+                                <group>
+                                    <label for="type"/>
+                                    <div name="div_type">
+                                        <field class="oe_inline" name="type"/>
+                                    </div>
+                                    <label for="street" string="Address" attrs="{'invisible': [('use_parent_address','=', True)]}"/>
+                                    <div attrs="{'invisible': [('use_parent_address','=', True)]}" name="div_address">
+                                        <field name="street" placeholder="Street..."/>
+                                        <field name="street2"/>
+                                        <div class="address_format">
+                                            <field name="city" placeholder="City" style="width: 40%%"/>
+                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)"/>
+                                            <field name="zip" placeholder="ZIP" style="width: 20%%"/>
+                                        </div>
+                                        <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}'/>
+                                    </div>
+                                </group>
+                                <field name="supplier" invisible="True"/>
+                            </sheet>
+                        </form>
+                    </field>
+                </page>
+            </page>
+            <xpath expr="//form[@string='Contact']/sheet//field[@name='category_id']" position="before">
+                <group>
+                    <label for="contact_type" class="oe_edit_only"/>
+                    <field name="contact_type" readonly="0" on_change="onchange_contact_type(contact_type)" nolabel="1"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="after">
+                <field name="contact_id" on_change="onchange_contact_id(contact_id)" string="Contact"
+                       attrs="{'invisible': [('contact_type','!=','attached')], 'required': [('contact_type','=','attached')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="attributes">
+                <attribute name="attrs">{'invisible': [('contact_type','=','attached')]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_personal_information" model="ir.ui.view">
+        <field name="name">Contacts in several partners: personal info</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_personal_information_page.personal_information"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//page[@name='personal_information_page']">
+                    <p attrs="{'invisible': [('contact_id','=',False)]}">
+                        To see personal information about this contact, please
+                        go to to the his person form:
+                        <field name="contact_id" class="oe_inline"
+                               domain="[('contact_type','!=','attached')]"
+                               context="{'show_address': 1}"
+                               on_change="onchange_contact_id(contact_id)"
+                               options="{'always_reload': True}"/>
+                    </p>
+                </xpath>
+            </data>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_res_partner_kanban_contact">
+        <field name="name">res.partner.kanban.contact</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="arch" type="xml">
+            <field name="is_company" position="after">
+                <field name="other_contact_ids">
+                    <tree>
+                        <field name="parent_id"/>
+                        <field name="function"/>
+                    </tree>
+                </field>
+            </field>
+            <xpath expr="//t[@t-name='kanban-box']//div[@class='oe_kanban_details']/ul/li[3]" position="after">
+                <t t-if="record.other_contact_ids.raw_value.length &gt; 0">
+                    <li>+<t t-esc="record.other_contact_ids.raw_value.length"/>
+                         <t t-if="record.other_contact_ids.raw_value.length == 1">other position</t>
+                         <t t-if="record.other_contact_ids.raw_value.length &gt; 1">other positions</t></li>
+                </t>
+            </xpath>
+        </field>
+    </record>
+
+</data>
+</openerp>
