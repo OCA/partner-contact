@@ -17,7 +17,7 @@ Here you should find all community modules that:
 
 Translation Status
 ------------------
-[![Transifex Status](https://www.transifex.com/projects/p/OCA-partner-contact-7-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-partner-contact-7-0
+[![Transifex Status](https://www.transifex.com/projects/p/OCA-partner-contact-7-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-partner-contact-7-0)
 
 ----
 
