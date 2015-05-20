@@ -21,18 +21,33 @@ from openerp.tests.common import TransactionCase
 from datetime import date
 
 
-class BirthdateCase(TransactionCase):
+class GoodCase(TransactionCase):
     def setUp(self):
-        super(BirthdateCase, self).setUp()
+        super(GoodCase, self).setUp()
         self.partner = self.env["res.partner"].create({"name": str(self)})
         self.birthdate = date.today()
 
     def tearDown(self):
         self.assertEqual(self.partner.birthdate, self.partner.birthdate_date)
-        super(BirthdateCase, self).tearDown()
+        super(GoodCase, self).tearDown()
 
     def test_new_to_old(self):
         self.partner.birthdate_date = self.birthdate
 
     def test_old_to_new(self):
         self.partner.birthdate = fields.Date.to_string(self.birthdate)
+
+
+class BadCase(TransactionCase):
+    def setUp(self):
+        super(BadCase, self).setUp()
+        self.partner = self.env["res.partner"].create({"name": str(self)})
+        self.birthdate = date.today()
+
+    def tearDown(self):
+        self.assertNotEqual(self.partner.birthdate,
+                            self.partner.birthdate_date)
+        super(BadCase, self).tearDown()
+
+    def test_old_to_new(self):
+        self.partner.birthdate = "Not a date"
