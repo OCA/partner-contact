@@ -4,11 +4,8 @@
 Partner Gender
 ==============
 
-This module was written to extend the functionality of `base_contact`_ to
+This module was written to extend the functionality of Odoo contacts manager to
 support setting the gender of a partner.
-
-
-.. _base_contact: https://github.com/OCA/partner-contact/tree/8.0/base_contact
 
 Installation
 ============
