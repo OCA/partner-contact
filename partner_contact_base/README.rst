@@ -12,9 +12,10 @@ information fields to contacts that are persons.
 Installation
 ============
 
-**You should NOT install this module yourself**, because it does nothing by
-itself. This module should get installed automatically when you install
-other modules that actually do something useful.
+.. warning::
+    **You should NOT install this module yourself**, because it does nothing by
+    itself. This module should get installed automatically when you install
+    other modules that actually do something useful.
 
 Usage
 =====
