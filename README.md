@@ -13,6 +13,12 @@ Here you should find community modules that:
 * Manage cities and post codes.
 * Etc.
 
+
+
+Translation Status
+------------------
+[![Transifex Status](https://www.transifex.com/projects/p/OCA-partner-contact-8-0/chart/image_png)](https://www.transifex.com/projects/p/OCA-partner-contact-8-0
+
 ----
 
 OCA, or the Odoo Community Association, is a nonprofit organization whose 
