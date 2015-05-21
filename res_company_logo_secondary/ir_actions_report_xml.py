@@ -38,8 +38,11 @@ class IrActionsReportXml(orm.Model):
 
         company = self.pool['res.users'].browse(
             cr, uid, uid, context=context).company_id
-        logo_name = company.has_logo_secondary and \
-                    company.name_secondary or False
+        logo_name = (
+            company.name_secondary
+            if company.has_logo_secondary
+            else False
+        )
 
         if 'use_secondary_logo' in vals:
             if logo_name:
