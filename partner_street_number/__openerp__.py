@@ -41,9 +41,9 @@ This module is compatible with OpenERP 7.0.
 """,
     "depends": [
         'base'
-        ],
+    ],
     "data": [
         'view/res_partner.xml',
-        ],
+    ],
     'installable': True,
 }
