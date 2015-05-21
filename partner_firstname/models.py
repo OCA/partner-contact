@@ -38,8 +38,8 @@ class ResPartner(models.Model):
     @api.depends("firstname", "lastname")
     def _name_compute(self):
         """Write the 'name' field according to splitted data."""
-        self.name = " ".join((p for p in (self.lastname,
-                                          self.firstname) if p))
+        self.name = u" ".join((p for p in (self.lastname,
+                                           self.firstname) if p))
 
     @api.one
     def _name_inverse(self):
@@ -49,7 +49,7 @@ class ResPartner(models.Model):
         - Otherwise, make a guess.
         """
         # Remove unneeded whitespace
-        clean = " ".join(self.name.split(None))
+        clean = u" ".join(self.name.split(None))
 
         # Clean name avoiding infinite recursion
         if self.name != clean:

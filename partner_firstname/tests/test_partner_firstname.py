@@ -33,18 +33,19 @@ class PartnerFirstnameCase(TransactionCase):
     def setUp(self):
         super(PartnerFirstnameCase, self).setUp()
         self.check_fields = True
+        self.expect(u"Núñez", u"Fernán")
         self.create_original()
 
     def create_original(self):
         self.original = self.env["res.partner"].create({
-            "lastname": "lastname",
-            "firstname": "firstname"})
+            "lastname": self.lastname,
+            "firstname": self.firstname})
 
     def expect(self, lastname, firstname, name=None):
         """Define what is expected in each field when ending."""
         self.lastname = lastname
         self.firstname = firstname
-        self.name = name or "%s %s" % (lastname, firstname)
+        self.name = name or u"%s %s" % (lastname, firstname)
 
     def tearDown(self):
         if self.check_fields:
@@ -61,23 +62,23 @@ class PartnerFirstnameCase(TransactionCase):
 
     def test_copy(self):
         """Copy the partner and compare the result."""
-        self.expect("lastname", "firstname (copy)")
+        self.expect(self.lastname, u"%s (copy)" % self.firstname)
         self.changed = self.original.with_context(lang="en_US").copy()
 
     def test_update_lastname(self):
         """Change lastname."""
-        self.expect("newlastname", "firstname")
+        self.expect(u"newlästname", self.firstname)
         self.original.name = self.name
 
     def test_update_firstname(self):
         """Change firstname."""
-        self.expect("lastname", "newfirstname")
+        self.expect(self.lastname, u"newfïrstname")
         self.original.name = self.name
 
     def test_whitespace_cleanup(self):
         """Check that whitespace in name gets cleared."""
-        self.expect("newlastname", "newfirstname")
-        self.original.name = "  newlastname  newfirstname  "
+        self.expect(u"newlästname", u"newfïrstname")
+        self.original.name = "  newlästname  newfïrstname  "
 
         # Need this to refresh the ``name`` field
         self.original.invalidate_cache()
@@ -92,5 +93,5 @@ class PartnerFirstnameCase(TransactionCase):
 class UserFirstnameCase(PartnerFirstnameCase):
     def create_original(self):
         self.original = self.env["res.users"].create({
-            "name": "lastname firstname",
+            "name": u"%s %s" % (self.lastname, self.firstname),
             "login": "firstnametest@example.com"})
