@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-12 22:33+0000\n"
-"PO-Revision-Date: 2015-01-16 08:36+0100\n"
+"PO-Revision-Date: 2015-05-22 13:19+0100\n"
 "Last-Translator: Hans Henrik Gabelgaard <hhg@gabelgaard.org>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.3\n"
+"X-Generator: Poedit 1.8\n"
 "Language: da_DK\n"
 
 #. module: base_location
@@ -30,7 +30,7 @@ msgstr "By"
 #. module: base_location
 #: view:res.better.zip:0 field:res.better.zip,name:0
 msgid "ZIP"
-msgstr "Postnr"
+msgstr "Postnr."
 
 #. module: base_location
 #: field:res.better.zip,state_id:0
