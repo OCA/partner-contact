@@ -40,6 +40,11 @@ class BetterZip(orm.Model):
 
     _defaults = {'priority': 100}
 
+    _sql_constraints = [(
+        'location_uniq',
+        'unique(name, city, state_id, country_id)',
+        'This location already exists !')]
+
     def name_get(self, cursor, uid, ids, context=None):
         res = []
         for bzip in self.browse(cursor, uid, ids, context=context):

@@ -112,3 +112,7 @@ msgstr ""
 msgid "The official code for the city"
 msgstr ""
 
+#. module: base_location
+#: sql_constraint:res.better.zip:0
+msgid "This location already exists !"
+msgstr ""
