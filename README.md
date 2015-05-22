@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/OCA/partner-contact.svg?branch=7.0)](https://travis-ci.org/OCA/partner-contact)
-[![Coverage Status](https://coveralls.io/repos/OCA/partner-contact/badge.png?branch=7.0)](https://coveralls.io/r/OCA/partner-contact?branch=7.0)
+[![Coverage Status](https://coveralls.io/repos/OCA/partner-contact/badge.svg?branch=7.0)](https://coveralls.io/r/OCA/partner-contact?branch=7.0)
 
 OCA parter and contact management modules for OpenERP
 =====================================================
