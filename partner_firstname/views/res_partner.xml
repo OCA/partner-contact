@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
 <data>
-<record id="partner_simple_form" model="ir.ui.view">
+
+<record id="view_partner_simple_form_firstname" model="ir.ui.view">
     <field name="name">Add firstname and lastname</field>
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="base.view_partner_simple_form"/>
@@ -26,7 +27,7 @@
     </field>
 </record>
 
-<record id="partner_form" model="ir.ui.view">
+<record id="view_partner_form_firstname" model="ir.ui.view">
     <field name="name">Add firstname and surnames</field>
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="base.view_partner_form"/>
