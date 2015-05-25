@@ -30,7 +30,7 @@ class ResPartner(models.Model):
     lastname = fields.Char("Last name")
     name = fields.Char(
         compute="_name_compute",
-        inverse="_name_inverse",
+        inverse="_name_clean_inverse",
         required=False,
         store=True)
 
@@ -42,12 +42,8 @@ class ResPartner(models.Model):
                                            self.firstname) if p))
 
     @api.one
-    def _name_inverse(self):
-        """Try to reverse the effect of :meth:`._name_compute`.
-
-        - If the partner is a company, save it in the lastname.
-        - Otherwise, make a guess.
-        """
+    def _name_clean_inverse(self):
+        """Clean whitespace in ``name`` and call :meth:`._name_inverse`."""
         # Remove unneeded whitespace
         clean = u" ".join(self.name.split(None))
 
@@ -57,17 +53,31 @@ class ResPartner(models.Model):
 
         # Save name in the real fields
         else:
-            # Company name goes to the lastname
-            if self.is_company:
-                parts = [clean, False]
+            self._name_inverse()
 
-            # Guess name splitting
-            else:
-                parts = clean.split(" ", 1)
-                while len(parts) < 2:
-                    parts.append(False)
+    @api.one
+    def _name_inverse(self):
+        """Try to revert the effect of :meth:`._name_compute`.
 
-            self.lastname, self.firstname = parts
+        - If the partner is a company, save it in the lastname.
+        - Otherwise, make a guess.
+
+        This method can be easily overriden by other submodules.
+
+        When this method is called, ``self.name`` already has unified and
+        trimmed whitespace.
+        """
+        # Company name goes to the lastname
+        if self.is_company:
+            parts = [self.name, False]
+
+        # Guess name splitting
+        else:
+            parts = self.name.split(" ", 1)
+            while len(parts) < 2:
+                parts.append(False)
+
+        self.lastname, self.firstname = parts
 
     @api.one
     @api.constrains("firstname", "lastname")
