@@ -37,6 +37,7 @@ Contributors
 * Nicolas Bessi <nicolas.bessi@camptocamp.com>
 * Jonathan Nemry <jonathan.nemry@acsone.eu>
 * Olivier Laurent <olivier.laurent@acsone.eu>
+* Hans Henrik Gabelgaard <hhg@gabelgaard.org>
 * Jairo Llopis <j.llopis@grupoesoc.es>
 
 Maintainer
