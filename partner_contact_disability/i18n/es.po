@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_contact_disability
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0-20150514\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-25 10:30+0000\n"
+"PO-Revision-Date: 2015-05-25 12:33+0100\n"
+"Last-Translator: Jairo Llopis <j.llopis@grupoesoc.es>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.7.6\n"
+"Language: es_ES\n"
+
+#. module: partner_contact_disability
+#: code:addons/partner_contact_disability/exceptions.py:35
+#, python-format
+msgid "Disability %d%% of %s must be between 0 and 100."
+msgstr "Discapacidad %d%% de %s debe estar entre 0 y 100."
+
+#. module: partner_contact_disability
+#: field:res.partner,disability_percentage:0
+msgid "Disability percentage"
+msgstr "Porcentaje de discapacidad"
+
+#. module: partner_contact_disability
+#: code:addons/partner_contact_disability/exceptions.py:24
+#, python-format
+msgid "Error(s) with the disability percentage."
+msgstr "Error(es) con el porcentaje de discapacidad."
+
+#. module: partner_contact_disability
+#: model:ir.model,name:partner_contact_disability.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
