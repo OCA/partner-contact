@@ -43,9 +43,9 @@ class ResPartner(models.Model):
 
     @api.one
     def _name_inverse(self):
-        """Try to reverse the effect of :meth:`._check_name`.
+        """Try to reverse the effect of :meth:`._name_compute`.
 
-        - If the partner is a company, save it in the first name.
+        - If the partner is a company, save it in the lastname.
         - Otherwise, make a guess.
         """
         # Remove unneeded whitespace
