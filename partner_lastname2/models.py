@@ -51,41 +51,31 @@ class ResPartner(models.Model):
 
     @api.one
     def _name_inverse(self):
-        """Try to reverse the effect of _compute_name_custom.
+        """Try to revert the effect of :meth:`._name_compute`.
 
-        - If the partner is a company, save it in the firstname.
+        - If the partner is a company, save it in the lastname.
         - Otherwise, make a guess.
         """
+        # Company name goes to the lastname
+        if self.is_company:
+            parts = [False, self.name, False]
 
-        # Remove unneeded whitespace
-        clean = " ".join(self.name.split(None))
+        # The comma separates the firstname
+        elif "," in self.name:
+            lastnames, firstname = self.name.split(",", 1)
+            parts = [firstname.strip()] + lastnames.split(" ", 1)
 
-        # Clean name avoiding infinite recursion
-        if self.name != clean:
-            self.name = clean
-
-        # Save name in the real fields
+        # Without comma, the user wrote the firstname first
         else:
-            # Company name goes to the lastname
-            if self.is_company:
-                parts = [False, clean, False]
+            parts = self.name.split(" ", 2)
 
-            # The comma separates the firstname
-            elif "," in clean:
-                lastnames, firstname = clean.split(",", 1)
-                parts = [firstname.strip()] + lastnames.split(" ", 1)
+        while len(parts) < 3:
+            parts.append(False)
 
-            # Without comma, the user wrote the firstname first
-            else:
-                parts = clean.split(" ", 2)
-
-            while len(parts) < 3:
-                parts.append(False)
-
-            # Use old-api `write` to avoid conflicts with :meth:`._check_name`
-            self.write({"firstname": parts[0],
-                        "lastname": parts[1],
-                        "lastname2": parts[2]})
+        # Use old-api `write` to avoid conflicts with :meth:`._check_name`
+        self.write({"firstname": parts[0],
+                    "lastname": parts[1],
+                    "lastname2": parts[2]})
 
     @api.one
     @api.constrains("firstname", "lastname", "lastname2")
