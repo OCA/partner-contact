@@ -21,6 +21,12 @@
 ##############################################################################
 
 import logging
+import os
 
 
-logging.getLogger(__name__).warn("This module is DEPRECATED. See README.")
+_logger = logging.getLogger(__name__ + ".deprecated")
+
+# Skip warnings on runbots
+_method = _logger.info if os.environ.get("OCA_RUNBOT") else _logger.warning
+_method("This module is DEPRECATED. See %s/README.rst.",
+        os.path.dirname(__file__))
