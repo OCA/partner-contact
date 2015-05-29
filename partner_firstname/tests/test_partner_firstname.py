@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-#
-#
+
 # Authors: Nemry Jonathan
 # Copyright (c) 2014 Acsone SA/NV (http://www.acsone.eu)
 # All Rights Reserved
@@ -25,129 +24,48 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-#
-#
-import openerp.tests.common as common
 
-from openerp.tools.translate import _
+from .base import BaseCase
 
 
-class test_partner_firstname(common.TransactionCase):
+class PartnerContactCase(BaseCase):
+    def test_update_lastname(self):
+        """Change lastname."""
+        self.expect(u"newlästname", self.firstname)
+        self.original.name = self.name
 
-    def setUp(self):
-        super(test_partner_firstname, self).setUp()
+    def test_update_firstname(self):
+        """Change firstname."""
+        self.expect(self.lastname, u"newfïrstname")
+        self.original.name = self.name
 
-        self.registry('ir.model').clear_caches()
-        self.registry('ir.model.data').clear_caches()
+    def test_whitespace_cleanup(self):
+        """Check that whitespace in name gets cleared."""
+        self.expect(u"newlästname", u"newfïrstname")
+        self.original.name = "  newlästname  newfïrstname  "
 
-        self.user_model = self.registry("res.users")
-        self.partner_model = self.registry("res.partner")
-        self.fields_partner = {
-            'lastname': 'lastname', 'firstname': 'firstname'}
-        self.fields_user = {
-            'name': 'lastname', 'login': 'v5Ue4Tql0Pm67KX05g25A'}
+        # Need this to refresh the ``name`` field
+        self.original.invalidate_cache()
 
-        self.context = self.user_model.context_get(self.cr, self.uid)
 
-    def test_copy_partner(self):
-        cr, uid, context = self.cr, self.uid, self.context
-        res_id = self.partner_model.create(
-            cr, uid, self.fields_partner, context=context)
-        res_id = self.partner_model.copy(
-            cr, uid, res_id, default={}, context=context)
-        vals = self.partner_model.read(cr, uid, [res_id], [
-            'name', 'lastname', 'firstname'], context=context)[0]
+class PartnerCompanyCase(BaseCase):
+    def create_original(self):
+        super(PartnerCompanyCase, self).create_original()
+        self.original.is_company = True
 
-        self.assertEqual(
-            vals['name'],
-            _('%s (copy)') % 'lastname' + " firstname",
-            'Copy of the partner failed with wrong name'
-        )
-        self.assertEqual(
-            vals['lastname'],
-            _('%s (copy)') % 'lastname',
-            'Copy of the partner failed with wrong lastname'
-        )
-        self.assertEqual(vals['firstname'], 'firstname',
-                         'Copy of the partner failed with wrong firstname')
+    def test_copy(self):
+        super(PartnerCompanyCase, self).test_copy()
+        self.expect(self.name, False, self.name)
 
-    def test_copy_user(self):
-        cr, uid, context = self.cr, self.uid, self.context
-        # create a user
-        res_id = self.user_model.create(
-            cr, uid, self.fields_user, context=context)
-        # get the related partner id and add it a firstname
-        flds = self.user_model.read(
-            cr, uid, [res_id], ['partner_id'], context=context)[0]
-        self.partner_model.write(cr, uid, flds['partner_id'][
-            0], {'firstname': 'firstname'}, context=context)
-        # copy the user and compare result
-        res_id = self.user_model.copy(
-            cr, uid, res_id, default={}, context=context)
-        vals = self.user_model.read(
-            cr, uid, [res_id], ['name', 'lastname', 'firstname'],
-            context=context)[0]
+    def test_company_inverse(self):
+        """Test the inverse method in a company record."""
+        name = u"Thïs is a Companŷ"
+        self.expect(name, False, name)
+        self.original.name = name
 
-        self.assertEqual(
-            vals['name'],
-            _('%s (copy)') % 'lastname' + ' firstname',
-            'Copy of the user failed with wrong name'
-        )
-        self.assertEqual(
-            vals['lastname'], _('%s (copy)') %
-            'lastname', 'Copy of the user failed with wrong lastname')
-        self.assertEqual(vals['firstname'], 'firstname',
-                         'Copy of the user failed with wrong firstname')
 
-    def test_update_user_lastname(self):
-        cr, uid, context = self.cr, self.uid, self.context
-        # create a user
-        res_id = self.user_model.create(
-            cr, uid, self.fields_user, context=context)
-        # get the related partner id and add it a firstname
-        flds = self.user_model.read(
-            cr, uid, [res_id], ['partner_id'], context=context)[0]
-        self.partner_model.write(
-            cr, uid, flds['partner_id'][0], {'firstname': 'firstname'},
-            context=context)
-        self.user_model.write(
-            cr, uid, res_id, {'name': 'change firstname'}, context=context)
-        vals = self.user_model.read(
-            cr, uid, [res_id], ['name', 'lastname', 'firstname'],
-            context=context)[0]
-
-        self.assertEqual(vals['name'], 'change firstname',
-                         'Update of the user lastname failed with wrong name')
-        self.assertEqual(
-            vals['lastname'], 'change',
-            'Update of the user lastname failed with wrong lastname')
-        self.assertEqual(
-            vals['firstname'], 'firstname',
-            'Update of the user lastname failed with wrong firstname')
-
-    def test_update_user_firstname(self):
-        cr, uid, context = self.cr, self.uid, self.context
-        # create a user
-        res_id = self.user_model.create(
-            cr, uid, self.fields_user, context=context)
-        # get the related partner id and add it a firstname
-        flds = self.user_model.read(
-            cr, uid, [res_id], ['partner_id'], context=context)[0]
-        self.partner_model.write(
-            cr, uid, flds['partner_id'][0], {'firstname': 'firstname'},
-            context=context)
-        self.user_model.write(
-            cr, uid, res_id, {'name': 'lastname other'}, context=context)
-        vals = self.user_model.read(
-            cr, uid, [res_id], ['name', 'lastname', 'firstname'],
-            context=context)[0]
-
-        self.assertEqual(
-            vals['name'], 'lastname other',
-            'Update of the user firstname failed with wrong name')
-        self.assertEqual(
-            vals['lastname'], 'lastname other',
-            'Update of the user firstname failed with wrong lastname')
-        self.assertFalse(
-            vals['firstname'],
-            'Update of the user firstname failed with wrong firstname')
+class UserCase(PartnerContactCase):
+    def create_original(self):
+        self.original = self.env["res.users"].create({
+            "name": u"%s %s" % (self.lastname, self.firstname),
+            "login": "firstnametest@example.com"})
