@@ -23,7 +23,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <record id="partner_simple_form" model="ir.ui.view">
     <field name="name">Add second last name</field>
     <field name="model">res.partner</field>
-    <field name="inherit_id" ref="partner_firstname.partner_simple_form"/>
+    <field name="inherit_id"
+           ref="partner_firstname.view_partner_simple_form_firstname"/>
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='firstname']" position="attributes">
@@ -52,7 +53,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <record id="partner_form" model="ir.ui.view">
     <field name="name">Add second last name</field>
     <field name="model">res.partner</field>
-    <field name="inherit_id" ref="partner_firstname.partner_form"/>
+    <field name="inherit_id"
+           ref="partner_firstname.view_partner_form_firstname"/>
     <field name="arch" type="xml">
         <data>
             <!-- Main form -->
