@@ -35,8 +35,14 @@ class ResUsers(orm.Model):
         installed
         """
         vals2 = vals.copy()
+
+        res_partner = self.pool.get('res.partner')
+        partner = res_partner.browse(cr, user, vals2['partner_id'], context)
+
         if 'name' in vals:
             vals2['lastname'] = vals2['name']
+        elif partner.lastname:
+            vals2['lastname'] = partner.lastname
         elif 'login' in vals and 'lastname' not in vals:
             vals2['lastname'] = vals2['login']
         return super(ResUsers, self).create(cr, user, vals2, context=context)
