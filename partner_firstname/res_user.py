@@ -41,7 +41,7 @@ class ResUsers(orm.Model):
 
         if 'name' in vals:
             vals2['lastname'] = vals2['name']
-        elif partner.lastname:
+        elif partner.lastname and 'lastname' not in vals:
             vals2['lastname'] = partner.lastname
         elif 'login' in vals and 'lastname' not in vals:
             vals2['lastname'] = vals2['login']
