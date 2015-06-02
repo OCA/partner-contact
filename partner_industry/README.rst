@@ -1,5 +1,5 @@
-Segmentation of partner and lead by commercial zone
-===================================================
+Industry sector on partner
+==========================
 
 This addon adds an industry sector object and a field 'Industry sectors' after the tags on the partner form view.
 
