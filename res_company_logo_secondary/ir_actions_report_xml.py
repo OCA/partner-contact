@@ -25,13 +25,6 @@ from openerp.osv import orm, fields
 class IrActionsReportXml(orm.Model):
     _inherit = 'ir.actions.report.xml'
 
-    def _map_reports(self, cr, uid, ids, context):
-        return ids
-
-    def _map_company(self, cr, uid, ids, context):
-        return self.pool['ir.actions.report.xml'].search(cr, uid, [],
-                                                         context=context)
-
     def _compute_smart_name(self, cr, uid, ids, fields, arg, context=None):
         if context is None:
             context = {}
@@ -61,14 +54,6 @@ class IrActionsReportXml(orm.Model):
         'smart_name': fields.function(
             _compute_smart_name,
             string="Name", type="char",
-            store={
-                'ir.actions.report.xml': (_map_reports,
-                                          ['use_secondary_logo', 'name'],
-                                          10),
-                'res.company': (_map_company,
-                                ['has_logo_secondary', 'name_secondary'],
-                                10),
-            },
         ),
     }
 
@@ -77,18 +62,21 @@ class IrActionsReportXml(orm.Model):
     }
 
     def read(self, cr, uid, ids, fields, context=None, load="_classic_read"):
+        if any((context and context.get("preserve_name"),
+                fields and "name" not in fields)):
+            # Make sure not to compute smart_name unless necessary.
+            # Also: prevent infinite recursion
+            return super(IrActionsReportXml, self).read(cr, uid, ids,
+                                                        fields=fields,
+                                                        context=context,
+                                                        load=load)
+
         if fields and "name" in fields and "smart_name" not in fields:
             fields.append("smart_name")
         res = super(IrActionsReportXml, self).read(cr, uid, ids,
                                                    fields=fields,
                                                    context=context,
                                                    load=load)
-        if context and context.get("preserve_name"):
-            return res
-
-        if fields and "name" not in fields:
-            return res
-
         if isinstance(ids, (int, long)):
             target = [res]
         else:
