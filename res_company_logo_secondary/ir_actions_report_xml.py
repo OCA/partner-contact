@@ -25,16 +25,19 @@ from openerp.osv import orm, fields
 class IrActionsReportXml(orm.Model):
     _inherit = 'ir.actions.report.xml'
 
-    _columns = {
-        'use_secondary_logo': fields.boolean('Use Secondary Logo')
-    }
+    def _map_reports(self, cr, uid, ids, context):
+        return ids
 
-    _defaults = {
-        'use_secondary_logo': False
-    }
+    def _map_company(self, cr, uid, ids, context):
+        return self.pool['ir.actions.report.xml'].search(cr, uid, [],
+                                                         context=context)
 
-    def write(self, cr, uid, ids, vals, context=None):
-        context = context or {}
+    def _compute_smart_name(self, cr, uid, ids, fields, arg, context=None):
+        if context is None:
+            context = {}
+        else:
+            context = context.copy()
+        context["preserve_name"] = True
 
         company = self.pool['res.users'].browse(
             cr, uid, uid, context=context).company_id
@@ -44,19 +47,52 @@ class IrActionsReportXml(orm.Model):
             else False
         )
 
-        if 'use_secondary_logo' in vals:
-            if logo_name:
-                assert len(ids) == 1, "you can only modify the report logo " \
-                    "one at a time"
-                name = vals.get('name', False) or self.browse(
-                    cr, uid, ids[0], context=context).name
-                if vals['use_secondary_logo']:
-                    vals['name'] = ' '.join([name.strip(logo_name), logo_name])
-                else:
-                    vals['name'] = name.strip(logo_name)
-
+        res = {}
+        for rec in self.browse(cr, uid, ids, context=context):
+            if logo_name and rec.use_secondary_logo:
+                res[rec.id] = ' '.join([rec.name, logo_name])
             else:
-                vals.pop('use_secondary_logo')
+                res[rec.id] = rec.name
 
-        return super(IrActionsReportXml, self).write(
-            cr, uid, ids, vals, context=context)
+        return res
+
+    _columns = {
+        'use_secondary_logo': fields.boolean('Use Secondary Logo'),
+        'smart_name': fields.function(
+            _compute_smart_name,
+            string="Name", type="char",
+            store={
+                'ir.actions.report.xml': (_map_reports,
+                                          ['use_secondary_logo', 'name'],
+                                          10),
+                'res.company': (_map_company,
+                                ['has_logo_secondary', 'name_secondary'],
+                                10),
+            },
+        ),
+    }
+
+    _defaults = {
+        'use_secondary_logo': False
+    }
+
+    def read(self, cr, uid, ids, fields, context=None, load="_classic_read"):
+        if fields and "name" in fields and "smart_name" not in fields:
+            fields.append("smart_name")
+        res = super(IrActionsReportXml, self).read(cr, uid, ids,
+                                                   fields=fields,
+                                                   context=context,
+                                                   load=load)
+        if context and context.get("preserve_name"):
+            return res
+
+        if fields and "name" not in fields:
+            return res
+
+        if isinstance(ids, (int, long)):
+            target = [res]
+        else:
+            target = res
+        for d in target:
+            d["name"] = d["smart_name"]
+        return res
