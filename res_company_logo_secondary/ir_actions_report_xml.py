@@ -43,7 +43,7 @@ class IrActionsReportXml(orm.Model):
         res = {}
         for rec in self.browse(cr, uid, ids, context=context):
             if logo_name and rec.use_secondary_logo:
-                res[rec.id] = ' '.join([rec.name, logo_name])
+                res[rec.id] = ' '.join([rec.name.rstrip(), logo_name])
             else:
                 res[rec.id] = rec.name
 
