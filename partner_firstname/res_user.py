@@ -40,7 +40,7 @@ class ResUsers(orm.Model):
             vals2['lastname'] = vals2['name']
         elif 'lastname' not in vals and 'partner_id' in vals:
             res_partner = self.pool.get('res.partner')
-            partner = res_partner.browse(cr, user, vals2['partner_id'], 
+            partner = res_partner.browse(cr, user, vals2['partner_id'],
                                          context)
             if partner.lastname:
                 vals2['lastname'] = partner.lastname
