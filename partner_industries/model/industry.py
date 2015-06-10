@@ -22,11 +22,15 @@
 from openerp.osv import fields, orm
 
 
-class res_partner(orm.Model):
-    _inherit = 'res.partner'
+class Industry(orm.Model):
+    _name = 'res.partner.category.industry'
+    _inherit = 'res.partner.category'
+
     _columns = {
-        'industry_id': fields.many2one(
-            'res.partner.category.industry',
-            'Industry Sector',
-            ondelete='restrict'),
+        'code': fields.char('Code', size=16),
+        'parent_id': fields.many2one(_name, 'Parent Category', select=True, ondelete='cascade'),
+        'partner_ids': fields.many2many(
+            'res.partner',
+            'res_partner_industry_rel', 'industry_id', 'partner_id',
+            'Partners'),
     }

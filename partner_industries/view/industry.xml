@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_crm_industry_form">
+            <field name="name">Industry</field>
+            <field name="model">res.partner.category.industry</field>
+            <field name="arch" type="xml">
+                <form string="Industry Sector" version="7.0">
+                    <sheet>
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="code" />
+                                <field name="active" />
+                            </group>
+                            <group>
+                                <field name="parent_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_crm_industry_tree">
+            <field name="name">Industry</field>
+            <field name="model">res.partner.category.industry</field>
+            <field name="arch" type="xml">
+                <tree string="Industry Sectors">
+                    <field name="complete_name" />
+                    <field name="code" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_crm_industry">
+            <field name="name">Industry Sectors</field>
+            <field name="res_model">res.partner.category.industry</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_crm_industry_tree" />
+        </record>
+
+        <menuitem id="menu_crm_config_industry" name="Industry Sectors"
+            parent="base.menu_config_address_book" action="action_crm_industry"
+            sequence="20" groups="base.group_no_one" />
+
+    </data>
+</openerp>
+

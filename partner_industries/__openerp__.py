@@ -19,14 +19,21 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
-
-
-class res_partner(orm.Model):
-    _inherit = 'res.partner'
-    _columns = {
-        'industry_id': fields.many2one(
-            'res.partner.category.industry',
-            'Industry Sector',
-            ondelete='restrict'),
-    }
+{
+    'name': 'Partner Industry Sector',
+    'version': '1.0',
+    'author': "BCIM,Odoo Community Association (OCA)",
+    'maintainer': 'BCIM',
+    'category': 'Sales Management',
+    'complexity': 'easy',
+    'depends': ['base'],
+    'website': 'http://www.bcim.be',
+    'data': [
+        'view/industry.xml',
+        'view/partner.xml',
+    ],
+    'installable': True,
+    'auto_install': False,
+    'license': 'AGPL-3',
+    'application': False,
+}
