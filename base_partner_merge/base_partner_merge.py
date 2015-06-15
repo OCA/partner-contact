@@ -360,7 +360,8 @@ class MergePartnerAutomatic(orm.TransientModel):
                   "together. You can re-open the wizard several times if "
                   "needed."))
 
-        if (len(set(partner.email for partner
+        if (openerp.SUPERUSER_ID != uid and
+            len(set(partner.email for partner
                     in proxy.browse(cr, uid, partner_ids,
                                     context=context))) > 1):
             raise orm.except_orm(
