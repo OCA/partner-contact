@@ -24,3 +24,4 @@ class EmptyNamesError(exceptions.ValidationError):
         self.record = record
         self._value = value
         self.name = _("Error(s) with partner %d's name.") % record.id
+        self.args = (self.name, value)
