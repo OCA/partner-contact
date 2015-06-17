@@ -31,6 +31,7 @@
     'data': [
         'view/industry.xml',
         'view/partner.xml',
+        'security/ir.model.access.csv',
     ],
     'installable': True,
     'auto_install': False,
