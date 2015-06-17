@@ -177,6 +177,7 @@ class ResPartnerRelationAll(models.AbstractModel):
     def write(self, vals):
         """divert non-problematic writes to underlying table"""
         underlying_objs = self.get_underlying_object()
+        underlying_objs = underlying_objs and underlying_objs[0]
         vals = {
             key: val
             for key, val in vals.iteritems()
@@ -209,4 +210,6 @@ class ResPartnerRelationAll(models.AbstractModel):
     @api.one
     def unlink(self):
         """divert non-problematic creates to underlying table"""
-        return self.get_underlying_object().unlink()
+        underlying_objs = self.get_underlying_object()
+        underlying_objs = underlying_objs and underlying_objs[0]
+        return underlying_objs.unlink()
