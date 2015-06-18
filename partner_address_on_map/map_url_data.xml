@@ -10,12 +10,12 @@
 
 <record id="google_maps" model="map.url">
     <field name="name">Google Maps</field>
-    <field name="url">http://maps.google.com/maps?oi=map&amp;q=</field>
+    <field name="url">https://maps.google.com/maps?oi=map&amp;q=</field>
 </record>
 
 <record id="openstreetmap" model="map.url">
     <field name="name">OpenStreetMap</field>
-    <field name="url">http://nominatim.openstreetmap.org/search?q=</field>
+    <field name="url">https://nominatim.openstreetmap.org/search?q=</field>
 </record>
 
 <record id="openstreetmap_fr" model="map.url">
@@ -25,7 +25,12 @@
 
 <record id="bing_maps" model="map.url">
     <field name="name">Bing Maps</field>
-    <field name="url">http://www.bing.com/maps/default.aspx?rtp=adr.</field>
+    <field name="url">https://www.bing.com/maps/default.aspx?rtp=adr.</field>
+</record>
+
+<record id="here" model="map.url">
+    <field name="name">Here Maps</field>
+    <field name="url">https://here.com/search/</field>
 </record>
 
 </data>
