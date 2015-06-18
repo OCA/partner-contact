@@ -13,6 +13,11 @@
     <field name="url">http://maps.google.com/maps?oi=map&amp;q=</field>
 </record>
 
+<record id="openstreetmap" model="map.url">
+    <field name="name">OpenStreetMap</field>
+    <field name="url">http://nominatim.openstreetmap.org/search?q=</field>
+</record>
+
 <record id="openstreetmap_fr" model="map.url">
     <field name="name">OpenStreetMap FR</field>
     <field name="url">http://tile.openstreetmap.fr/?q=</field>
