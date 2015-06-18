@@ -38,7 +38,15 @@ class ResUsers(models.Model):
     # begin with context_ to allow user to change it by himself
     context_map_url_id = fields.Many2one(
         'map.url', string='Map Provider')
-    # TODO: Add default
+
+    # called from post-install script
+    # I can't use a default method on the field, because it would be executed
+    # before loading map_url_data.xml, so it would not be able to set a value
+    @api.model
+    def _default_map_url(self):
+        users = self.env['res.users'].search([])
+        map_url = self.env['map.url'].search([], limit=1)
+        users.write({'context_map_url_id': map_url.id})
 
 
 class ResPartner(models.Model):
@@ -47,11 +55,14 @@ class ResPartner(models.Model):
     @api.multi
     def open_map(self):
         if not self.env.user.context_map_url_id:
-            raise Warning(_(
-                'Missing Map Provider: you should set it in your Preferences.'))
+            raise Warning(
+                _('Missing map provider: '
+                  'you should set it in your preferences.'))
         url = self.env.user.context_map_url_id.url
         if self.street:
             url += self.street
+        if self.street2:
+            url += ' ' + self.street2
         if self.city:
             url += ' ' + self.city
         if self.state_id:
@@ -61,5 +72,5 @@ class ResPartner(models.Model):
         return {
             'type': 'ir.actions.act_url',
             'url': url,
-            'targer': 'new',
+            'target': 'new',
             }
