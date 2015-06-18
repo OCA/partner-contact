@@ -10,33 +10,37 @@
 
 <record id="google_maps" model="map.url">
     <field name="name">Google Maps</field>
-    <field name="address_url">https://www.google.com/maps?ie=UTF8&amp;q=</field>
+    <field name="address_url">https://www.google.com/maps?ie=UTF8&amp;q={ADDRESS}</field>
     <field name="lat_lon_url">https://www.google.com/maps?z=15&amp;q={LATITUDE},{LONGITUDE}</field>
+    <field name="route_address_url">https://www.google.com/maps?saddr={START_ADDRESS}&amp;daddr={DEST_ADDRESS}&amp;directionsmode=driving</field>
+    <field name="route_lat_lon_url">https://www.google.com/maps?saddr={START_LATITUDE},{START_LONGITUDE}&amp;daddr={DEST_LATITUDE},{DEST_LONGITUDE}&amp;directionsmode=driving</field>
 </record>
 
 <record id="openstreetmap" model="map.url">
     <field name="name">OpenStreetMap</field>
-    <field name="address_url">https://nominatim.openstreetmap.org/search?q=</field>
+    <field name="address_url">https://nominatim.openstreetmap.org/search?q={ADDRESS}</field>
     <field name="lat_lon_url">https://www.openstreetmap.org/?zoom=15&amp;mlat={LATITUDE}&amp;mlon={LONGITUDE}</field>
+    <field name="route_lat_lon_url">https://www.openstreetmap.org/directions/?engine=orsm_car&amp;route={START_LATITUDE},{START_LONGITUDE};{DEST_LATITUDE},{DEST_LONGITUDE}</field>
 </record>
 
 <record id="openstreetmap_fr" model="map.url">
     <field name="name">OpenStreetMap FR</field>
-    <field name="address_url">http://tile.openstreetmap.fr/?q=</field>
+    <field name="address_url">http://tile.openstreetmap.fr/?q={ADDRESS}</field>
     <field name="lat_lon_url">http://tile.openstreetmap.fr/?zoom=15&amp;lat={LATITUDE}&amp;lon={LONGITUDE}</field>
 </record>
 
 <record id="bing_maps" model="map.url">
     <field name="name">Bing Maps</field>
-    <field name="address_url">https://www.bing.com/maps/default.aspx?rtp=adr.</field>
+    <field name="address_url">https://www.bing.com/maps/default.aspx?where1={ADDRESS}</field>
     <field name="lat_lon_url">https://www.bing.com/maps/default.aspx?cp={LATITUDE}~{LONGITUDE}&amp;lvl=15</field>
 </record>
 
 <record id="here" model="map.url">
     <field name="name">Here Maps</field>
-    <field name="address_url">https://here.com/search/</field>
+    <field name="address_url">https://here.com/search/{ADDRESS}</field>
     <field name="lat_lon_url">https://www.here.com/?map={LATITUDE},{LONGITUDE},15,normal</field>
     <!-- TODO : for here maps, try to find a lat_lon_url with dot -->
+    <field name="route_lat_lon_url">https://www.here.com/directions/drive/:{START_LATITUDE},{START_LONGITUDE}/:{DEST_LATITUDE},{DEST_LONGITUDE}</field>
 </record>
 
 </data>

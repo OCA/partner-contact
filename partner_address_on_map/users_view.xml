@@ -15,6 +15,7 @@
     <field name="arch" type="xml">
         <group name="preferences" position="inside">
             <field name="context_map_url_id" widget="selection"/>
+            <field name="context_route_start_partner_id"/>
         </group>
     </field>
 </record>
@@ -26,6 +27,7 @@
     <field name="arch"  type="xml">
         <group name="preferences" position="inside">
             <field name="context_map_url_id" readonly="0" widget="selection"/>
+            <field name="context_route_start_partner_id" readonly="0"/>
         </group>
     </field>
 </record>
