@@ -26,7 +26,8 @@
     'version': '0.1',
     'category': 'Contacts',
     'license': 'AGPL-3',
-    'summary': 'Add Map button on partner form to open GMaps, OSM or others',
+    'summary':
+    'Add Map button on partner form to open GMaps, OSM, Bing and others',
     'author': 'Akretion,Odoo Community Association (OCA)',
     'website': 'http://www.akretion.com',
     'depends': ['base'],

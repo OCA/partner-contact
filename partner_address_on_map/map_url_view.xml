@@ -15,7 +15,8 @@
         <form string="Map Provider">
             <group name="main">
                 <field name="name"/>
-                <field name="url"/>
+                <field name="address_url"/>
+                <field name="lat_lon_url"/>
             </group>
         </form>
     </field>
@@ -27,7 +28,8 @@
     <field name="arch" type="xml">
         <tree string="Map Providers">
             <field name="name"/>
-            <field name="url"/>
+            <field name="address_url"/>
+            <field name="lat_lon_url"/>
         </tree>
     </field>
 </record>
