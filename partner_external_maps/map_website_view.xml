@@ -8,11 +8,11 @@
 <openerp>
 <data>
 
-<record id="map_url_form" model="ir.ui.view">
-    <field name="name">map.url.form</field>
-    <field name="model">map.url</field>
+<record id="map_website_form" model="ir.ui.view">
+    <field name="name">map.website.form</field>
+    <field name="model">map.website</field>
     <field name="arch" type="xml">
-        <form string="Map Provider">
+        <form string="Map Website">
             <group name="main">
                 <field name="name"/>
                 <field name="address_url"/>
@@ -24,25 +24,25 @@
     </field>
 </record>
 
-<record id="map_url_tree" model="ir.ui.view">
-    <field name="name">map.url.tree</field>
-    <field name="model">map.url</field>
+<record id="map_website_tree" model="ir.ui.view">
+    <field name="name">map.website.tree</field>
+    <field name="model">map.website</field>
     <field name="arch" type="xml">
-        <tree string="Map Providers">
+        <tree string="Map Websites">
             <field name="name"/>
             <field name="address_url"/>
         </tree>
     </field>
 </record>
 
-<record id="map_url_action" model="ir.actions.act_window">
-    <field name="name">Map Providers</field>
-    <field name="res_model">map.url</field>
+<record id="map_website_action" model="ir.actions.act_window">
+    <field name="name">Map Websites</field>
+    <field name="res_model">map.website</field>
     <field name="view_mode">tree,form</field>
 </record>
 
 <!-- Menu entry under Sales > Config > Address Book > Localization -->
-<menuitem id="map_url_menu" action="map_url_action"
+<menuitem id="map_website_menu" action="map_website_action"
     parent="base.menu_localisation" sequence="50"/>
 
 </data>
