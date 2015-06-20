@@ -56,21 +56,21 @@ class ResUsers(models.Model):
 
     # begin with context_ to allow user to change it by himself
     context_map_website_id = fields.Many2one(
-        'map.website', string='Map Website')
+        'map.website', string='Map Website',
+        domain=[
+            '|', ('address_url', '!=', False), ('lat_lon_url', '!=', False)])
     # We want to give the possibility to the user to have one map provider for
     # regular maps and another one for routing
     context_route_map_website_id = fields.Many2one(
         'map.website', string='Route Map Website',
         domain=[
-            '|', ('address_url', '!=', False), ('lat_lon_url', '!=', False)],
+            '|',
+            ('route_address_url', '!=', False),
+            ('route_lat_lon_url', '!=', False)],
         help="Map provided used when you click on the car icon on the partner "
         "form to display an itinerary.")
     context_route_start_partner_id = fields.Many2one(
-        'res.partner', string='Start Address for Route Map',
-        domain=[
-            '|',
-            ('route_address_url', '!=', False),
-            ('route_lat_lon_url', '!=', False)])
+        'res.partner', string='Start Address for Route Map')
 
     @api.model
     def _default_map_settings(self):
