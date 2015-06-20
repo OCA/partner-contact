@@ -43,5 +43,13 @@
     <field name="route_lat_lon_url">https://www.here.com/directions/drive/:{START_LATITUDE},{START_LONGITUDE}/:{DEST_LATITUDE},{DEST_LONGITUDE}</field>
 </record>
 
+<record id="mapquest" model="map.website">
+    <field name="name">MapQuest</field>
+    <field name="address_url">http://mapq.st/?q={ADDRESS}</field>
+    <field name="lat_lon_url">http://mapq.st/?q={LATITUDE},{LONGITUDE}</field>
+    <field name="route_address_url">http://mapq.st/directions?saddr={START_ADDRESS}&amp;daddr={DEST_ADDRESS}</field>
+    <field name="route_lat_lon_url">http://mapq.st/directions?saddr={START_LATITUDE},{START_LONGITUDE}&amp;daddr={DEST_LATITUDE},{DEST_LONGITUDE}</field>
+</record>
+
 </data>
 </openerp>
