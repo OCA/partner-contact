@@ -12,6 +12,8 @@ This module supports several map websites:
 * `OpenStreetMap <https://www.openstreetmap.org/>`
 * `Bing Maps <https://www.bing.com/maps/>`
 * `Here Maps <https://www.here.com/>`
+* `MapQuest <http://www.mapquest.com/>`
+* `Yahoo! Maps <https://maps.yahoo.com/>`
 
 If the module *base_geolocalize* from the official addons is installed on the system, it will use the latitude and longitude to localize the partner (instead of the address) if this information is present on the partner.
 
