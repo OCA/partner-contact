@@ -54,11 +54,27 @@ class MapWebsite(models.Model):
 class ResUsers(models.Model):
     _inherit = 'res.users'
 
+    @api.model
+    def _default_map_website(self):
+        map_website = self.env['map.website'].search([
+            '|', ('address_url', '!=', False), ('lat_lon_url', '!=', False)],
+            limit=1)
+        return map_website
+
+    @api.model
+    def _default_route_map_website(self):
+        map_route_website = self.env['map.website'].search([
+            '|',
+            ('route_address_url', '!=', False),
+            ('route_lat_lon_url', '!=', False)], limit=1)
+        return map_route_website
+
     # begin with context_ to allow user to change it by himself
     context_map_website_id = fields.Many2one(
         'map.website', string='Map Website',
         domain=[
-            '|', ('address_url', '!=', False), ('lat_lon_url', '!=', False)])
+            '|', ('address_url', '!=', False), ('lat_lon_url', '!=', False)],
+        default=_default_map_website)
     # We want to give the possibility to the user to have one map provider for
     # regular maps and another one for routing
     context_route_map_website_id = fields.Many2one(
@@ -67,6 +83,7 @@ class ResUsers(models.Model):
             '|',
             ('route_address_url', '!=', False),
             ('route_lat_lon_url', '!=', False)],
+        default=_default_route_map_website,
         help="Map provided used when you click on the car icon on the partner "
         "form to display an itinerary.")
     context_route_start_partner_id = fields.Many2one(
@@ -74,18 +91,13 @@ class ResUsers(models.Model):
 
     @api.model
     def _default_map_settings(self):
-        '''Method called from post-install script
+        """Method called from post-install script
         I can't use a default method on the field, because it would be executed
         before loading map_website_data.xml, so it would not be able to set a
-        value'''
+        value"""
         users = self.env['res.users'].search([])
-        map_website = self.env['map.website'].search([
-            '|', ('address_url', '!=', False), ('lat_lon_url', '!=', False)],
-            limit=1)
-        map_route_website = self.env['map.website'].search([
-            '|',
-            ('route_address_url', '!=', False),
-            ('route_lat_lon_url', '!=', False)], limit=1)
+        map_website = self._default_map_website()
+        map_route_website = self._default_route_map_website()
         logger.info('Updating user settings for maps...')
         for user in users:
             user.write({
@@ -100,21 +112,22 @@ class ResPartner(models.Model):
 
     @api.model
     def _address_as_string(self):
-        addr = u''
+        addr = []
         if self.street:
-            addr += self.street
+            addr.append(self.street)
         if self.street2:
-            addr += u' ' + self.street2
+            addr.append(self.street2)
         if self.city:
-            addr += u' ' + self.city
+            addr.append(self.city)
         if self.state_id:
-            addr += u' ' + self.state_id.name
+            addr.append(self.state_id.name)
         if self.country_id:
-            addr += u' ' + self.country_id.name
+            addr.append(self.country_id.name)
         if not addr:
             raise Warning(
                 _("Address missing on partner '%s'.") % self.name)
-        return addr
+        address = ' '.join(addr)
+        return address
 
     @api.model
     def _prepare_url(self, url, replace):
