@@ -17,11 +17,11 @@
         <xpath expr="//div[@name='buttons']" position="inside">
             <button class="oe_inline oe_stat_button"
                 name="open_map" type="object" string="Map"
-                attrs="{'invisible': [('street', '=', False), ('city', '=', False)]}"
+                attrs="{'invisible': [('city', '=', False)]}"
                 icon="fa-map-marker"/>
             <button class="oe_inline oe_stat_button"
                 name="open_route_map" type="object" string="Route Map"
-                attrs="{'invisible': [('street', '=', False), ('city', '=', False)]}"
+                attrs="{'invisible': [('city', '=', False)]}"
                 icon="fa-car"/>
         </xpath>
     </field>
