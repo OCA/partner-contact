@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
  
                <xpath expr="/form/sheet//div/field[@name='street']"
-                       position="replace">
+                       position="after">
                     <div>
                         <field name="street_name" style="width: 80%%"
                                placeholder="Street..."
@@ -21,9 +21,13 @@
                                />
                     </div>
                 </xpath>
+               <xpath expr="/form/sheet//div/field[@name='street']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
 
                 <xpath expr="//form[@string='Contact']/sheet/group/div/field[@name='street']"
-                       position="replace">
+                       position="after">
                     <div>
                         <field name="street_name" style="width: 80%%"
                                placeholder="Street..."
@@ -32,6 +36,10 @@
                                placeholder="Number..."
                                />
                     </div>
+                </xpath>
+                <xpath expr="//form[@string='Contact']/sheet/group/div/field[@name='street']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
                 </xpath>
 
                 <xpath expr="//field[@name='child_ids']" position="attributes">
