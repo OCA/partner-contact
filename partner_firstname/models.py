@@ -18,8 +18,12 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import logging
 from openerp import api, fields, models
 from . import exceptions
+
+
+_logger = logging.getLogger(__name__)
 
 
 class ResPartner(models.Model):
@@ -100,3 +104,4 @@ class ResPartner(models.Model):
 
         # Force calculations there
         records._name_inverse()
+        _logger.info("%d partners updated installing module.", len(records))
