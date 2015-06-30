@@ -4,6 +4,7 @@
 #    Copyright (C)
 #       2014:       Agile Business Group (<http://www.agilebg.com>)
 #       2015:       Grupo ESOC <www.grupoesoc.es>
+#       2015:       Antonio Espinosa <antonioea@antiun.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -42,8 +43,10 @@ class ResPartner(models.Model):
     @api.depends("firstname", "lastname")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
-        self.name = u" ".join((p for p in (self.lastname,
-                                           self.firstname) if p))
+        names = (self.lastname, self.firstname)
+        if self.company_id.names_order == 'first_last':
+            names = (self.firstname, self.lastname)
+        self.name = u" ".join((p for p in names if p))
 
     @api.one
     def _inverse_name_after_cleaning_whitespace(self):
@@ -80,13 +83,20 @@ class ResPartner(models.Model):
         # Company name goes to the lastname
         if self.is_company or self.name is False:
             parts = [self.name, False]
-
         # Guess name splitting
         else:
-            parts = self.name.split(" ", 1)
-            while len(parts) < 2:
-                parts.append(False)
-
+            parts = self.name.split(" ")
+            if len(parts) > 1:
+                if self.company_id.names_order == 'first_last':
+                    first = parts[:1][0]
+                    last = ' '.join(parts[1:])
+                else:
+                    first = parts[-1:][0]
+                    last = ' '.join(parts[:-1])
+                parts = [last, first]
+            else:
+                while len(parts) < 2:
+                    parts.append(False)
         self.lastname, self.firstname = parts
 
     @api.one
@@ -117,3 +127,12 @@ class ResPartner(models.Model):
         # Force calculations there
         records._inverse_name()
         _logger.info("%d partners updated installing module.", len(records))
+
+
+class ResCompany(models.Model):
+    _inherit = 'res.company'
+
+    names_order = fields.Selection([('first_last', 'Firstname Lastname'),
+                                    ('last_first', 'Lastname Firstname')],
+                                   string="Names display order",
+                                   default='last_first')

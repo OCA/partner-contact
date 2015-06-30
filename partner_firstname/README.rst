@@ -39,6 +39,7 @@ Contributors
 * Olivier Laurent <olivier.laurent@acsone.eu>
 * Hans Henrik Gabelgaard <hhg@gabelgaard.org>
 * Jairo Llopis <j.llopis@grupoesoc.es>
+* Antonio Espinosa <antonioea@antiun.com>
 
 Maintainer
 ----------
