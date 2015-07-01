@@ -47,7 +47,13 @@ class ResPartner(models.Model):
 
     @api.one
     def _inverse_name_after_cleaning_whitespace(self):
-        """Clean whitespace in ``name`` and call :meth:`._inverse_name`."""
+        """Clean whitespace in :attr:`~.name` and split it.
+
+        Removes leading, trailing and duplicated whitespace.
+
+        The splitting logic is stored separately in :meth:`~._inverse_name`, so
+        submodules can extend that method and get whitespace cleaning for free.
+        """
         # Remove unneeded whitespace
         clean = u" ".join(self.name.split(None))
 
@@ -68,7 +74,7 @@ class ResPartner(models.Model):
 
         This method can be easily overriden by other submodules.
 
-        When this method is called, ``self.name`` already has unified and
+        When this method is called, :attr:`~.name` already has unified and
         trimmed whitespace.
         """
         # Company name goes to the lastname
