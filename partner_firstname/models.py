@@ -46,7 +46,7 @@ class ResPartner(models.Model):
         names = (self.lastname, self.firstname)
         if self.company_id.names_order == 'first_last':
             names = (self.firstname, self.lastname)
-        self.name = u" ".join((p for p in names if p))
+        self.name = u" ".join(filter(None, names))
 
     @api.one
     def _inverse_name_after_cleaning_whitespace(self):
@@ -89,10 +89,10 @@ class ResPartner(models.Model):
             if len(parts) > 1:
                 if self.company_id.names_order == 'first_last':
                     first = parts[:1][0]
-                    last = ' '.join(parts[1:])
+                    last = u" ".join(parts[1:])
                 else:
                     first = parts[-1:][0]
-                    last = ' '.join(parts[:-1])
+                    last = u" ".join(parts[:-1])
                 parts = [last, first]
             else:
                 while len(parts) < 2:
