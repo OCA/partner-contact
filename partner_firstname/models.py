@@ -96,6 +96,12 @@ class ResPartner(models.Model):
         if not (self.firstname or self.lastname):
             raise exceptions.EmptyNamesError(self)
 
+    @api.one
+    @api.onchange("name")
+    def _onchange_name(self):
+        """Ensure :attr:`~.name` is inverted in the UI."""
+        self._inverse_name_after_cleaning_whitespace()
+
     @api.model
     def _install_partner_firstname(self):
         """Save names correctly in the database.
