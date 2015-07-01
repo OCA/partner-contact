@@ -33,21 +33,21 @@ class ResPartner(models.Model):
     firstname = fields.Char("First name")
     lastname = fields.Char("Last name")
     name = fields.Char(
-        compute="_name_compute",
-        inverse="_name_clean_inverse",
+        compute="_compute_name",
+        inverse="_inverse_name_after_cleaning_whitespace",
         required=False,
         store=True)
 
     @api.one
     @api.depends("firstname", "lastname")
-    def _name_compute(self):
+    def _compute_name(self):
         """Write the 'name' field according to splitted data."""
         self.name = u" ".join((p for p in (self.lastname,
                                            self.firstname) if p))
 
     @api.one
-    def _name_clean_inverse(self):
-        """Clean whitespace in ``name`` and call :meth:`._name_inverse`."""
+    def _inverse_name_after_cleaning_whitespace(self):
+        """Clean whitespace in ``name`` and call :meth:`._inverse_name`."""
         # Remove unneeded whitespace
         clean = u" ".join(self.name.split(None))
 
@@ -57,11 +57,11 @@ class ResPartner(models.Model):
 
         # Save name in the real fields
         else:
-            self._name_inverse()
+            self._inverse_name()
 
     @api.one
-    def _name_inverse(self):
-        """Try to revert the effect of :meth:`._name_compute`.
+    def _inverse_name(self):
+        """Try to revert the effect of :meth:`._compute_name`.
 
         - If the partner is a company, save it in the lastname.
         - Otherwise, make a guess.
@@ -91,7 +91,7 @@ class ResPartner(models.Model):
             raise exceptions.EmptyNamesError(self)
 
     @api.model
-    def _firstname_install(self):
+    def _install_partner_firstname(self):
         """Save names correctly in the database.
 
         Before installing the module, field ``name`` contains all full names.
@@ -103,5 +103,5 @@ class ResPartner(models.Model):
                                ("lastname", "=", False)])
 
         # Force calculations there
-        records._name_inverse()
+        records._inverse_name()
         _logger.info("%d partners updated installing module.", len(records))

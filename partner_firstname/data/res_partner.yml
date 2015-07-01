@@ -16,4 +16,4 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-- !function {model: res.partner, name: _firstname_install}
+- !function {model: res.partner, name: _install_partner_firstname}
