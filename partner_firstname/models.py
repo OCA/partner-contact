@@ -40,12 +40,12 @@ class ResPartner(models.Model):
         store=True)
 
     @api.one
-    @api.depends("firstname", "lastname")
+    @api.depends("firstname", "lastname", "company_id")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
         names = (self.lastname, self.firstname)
         if self.company_id.names_order == 'first_last':
-            names = (self.firstname, self.lastname)
+            names = reversed(names)
         self.name = u" ".join(filter(None, names))
 
     @api.one
@@ -88,10 +88,10 @@ class ResPartner(models.Model):
             parts = self.name.split(" ")
             if len(parts) > 1:
                 if self.company_id.names_order == 'first_last':
-                    first = parts[:1][0]
+                    first = parts[0]
                     last = u" ".join(parts[1:])
                 else:
-                    first = parts[-1:][0]
+                    first = parts[-1]
                     last = u" ".join(parts[:-1])
                 parts = [last, first]
             else:
@@ -132,7 +132,18 @@ class ResPartner(models.Model):
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
-    names_order = fields.Selection([('first_last', 'Firstname Lastname'),
-                                    ('last_first', 'Lastname Firstname')],
-                                   string="Names display order",
-                                   default='last_first')
+    names_order = fields.Selection(
+        [('first_last', 'Firstname Lastname'),
+         ('last_first', 'Lastname Firstname')],
+        string="Names display order", default='last_first',
+        help="Select order in which names are shown")
+
+    @api.multi
+    def action_recalculate_names(self):
+        partners = self.env['res.partner'].search([
+            ('company_id', '=', self.id)
+        ])
+        _logger.info("Recalculating names for %d partners.", len(partners))
+        partners._name_compute()
+        _logger.info("%d partners updated.", len(partners))
+        return True
