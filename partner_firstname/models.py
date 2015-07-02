@@ -144,6 +144,6 @@ class ResCompany(models.Model):
             ('company_id', '=', self.id)
         ])
         _logger.info("Recalculating names for %d partners.", len(partners))
-        partners._name_compute()
+        partners._compute_name()
         _logger.info("%d partners updated.", len(partners))
         return True
