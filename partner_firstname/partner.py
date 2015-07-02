@@ -122,10 +122,35 @@ class ResPartner(orm.Model):
         return super(ResPartner, self).create(
             cursor, uid, corr_vals, context=context)
 
+    def _compute_display_name(self, *args, **kwargs):
+        """Just proxy the original function."""
+        return self._display_name(*args, **kwargs)
+
+    # Override to also update the display name when the first or last names
+    # change (just watching the "name" field is not enough as we turn it into a
+    # computed field).
+    # Code ref: openerp/addons/base/res/res_partner.py.
+    _display_name_store_triggers = {
+        'res.partner': (
+            lambda self, cr, uid, ids, context=None: self.search(
+                cr, uid,
+                [('id', 'child_of', ids)],
+                context={'active_test': False}
+            ),
+            ['firstname', 'lastname', 'is_company', 'name', 'parent_id'],
+            10
+        ),
+    }
+
     _columns = {'name': fields.function(_compute_name_custom, string="Name",
                                         type="char", store=True,
                                         select=True, readonly=True,
                                         fnct_inv=_write_name),
+
+                # Override to change the "store" argument.
+                'display_name': fields.function(
+                    _compute_display_name, type='char', string='Name',
+                    store=_display_name_store_triggers, select=True),
 
                 'firstname': fields.char("Firstname"),
                 'lastname': fields.char("Lastname", required=True)}
