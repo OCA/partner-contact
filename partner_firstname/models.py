@@ -55,7 +55,7 @@ class ResPartner(models.Model):
         submodules can extend that method and get whitespace cleaning for free.
         """
         # Remove unneeded whitespace
-        clean = u" ".join(self.name.split(None))
+        clean = u" ".join(self.name.split(None)) if self.name else self.name
 
         # Clean name avoiding infinite recursion
         if self.name != clean:
@@ -78,7 +78,7 @@ class ResPartner(models.Model):
         trimmed whitespace.
         """
         # Company name goes to the lastname
-        if self.is_company:
+        if self.is_company or self.name is False:
             parts = [self.name, False]
 
         # Guess name splitting
