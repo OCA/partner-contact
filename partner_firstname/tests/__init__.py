@@ -28,4 +28,4 @@
 #
 ##############################################################################
 
-from . import test_partner_firstname
+from . import test_name, test_empty
