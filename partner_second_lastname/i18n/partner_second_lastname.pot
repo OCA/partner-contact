@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_lastname_second
+#	* partner_second_lastname
 #
 msgid ""
 msgstr ""
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: partner_lastname_second
-#: model:ir.model,name:partner_lastname_second.model_res_partner
+#. module: partner_second_lastname
+#: model:ir.model,name:partner_second_lastname.model_res_partner
 msgid "Partner"
 msgstr ""
 
-#. module: partner_lastname_second
+#. module: partner_second_lastname
 #: field:res.partner,lastname_second:0
 msgid "Second lastname"
 msgstr ""
