@@ -28,4 +28,4 @@
 #
 ##############################################################################
 
-from . import test_name, test_empty
+from . import test_empty, test_name, test_onchange
