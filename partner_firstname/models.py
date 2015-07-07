@@ -91,8 +91,8 @@ class ResPartner(models.Model):
                     first = parts[0]
                     last = u" ".join(parts[1:])
                 else:
-                    first = parts[-1]
-                    last = u" ".join(parts[:-1])
+                    last = parts[0]
+                    first = u" ".join(parts[1:])
                 parts = [last, first]
             else:
                 while len(parts) < 2:
