@@ -27,6 +27,29 @@ class PartnerCompanyCase(TransactionCase):
             self.assertEqual(partner.firstname, False)
             self.assertEqual(partner.lastname, name)
 
+    def test_empty_name_and_subnames(self):
+        """If the user empties ``name``, subnames must be ``False``.
+
+        Otherwise, the ``required`` attr will not work as expected.
+        """
+        with self.env.do_in_onchange():
+            # User presses ``new``
+            partner = self.env["res.partner"].create({})
+
+            # User ensures it is a company
+            partner.is_company = True
+
+            # User sets a name, which triggers onchanges
+            partner.name = u"Foó"
+            partner._onchange_name()
+
+            # User unsets name, which triggers onchanges
+            partner.name = u""
+            partner._onchange_name()
+
+            self.assertEqual(partner.firstname, False)
+            self.assertEqual(partner.lastname, False)
+
 
 class PartnerContactCase(TransactionCase):
     def test_create_from_form_only_firstname(self):
