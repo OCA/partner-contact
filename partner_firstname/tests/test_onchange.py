@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+"""These tests try to mimic the behavior of the UI form.
+
+The form operates in onchange mode, and has only some limitations that must be
+met.
+"""
 
 from openerp.tests.common import TransactionCase
 
