@@ -19,7 +19,7 @@ class PartnerCompanyCase(TransactionCase):
             # User ensures it is a company
             partner.is_company = True
 
-            # User sets a name, that triggers ``_onchange_name()``
+            # User sets a name, which triggers onchanges
             partner.name = name
             partner._onchange_name()
 
@@ -39,8 +39,9 @@ class PartnerContactCase(TransactionCase):
             # User ensures it is not a company
             partner.is_company = False
 
-            # Changes firstname, which triggers _onchange_name()
+            # Changes firstname, which triggers onchanges
             partner.firstname = firstname
+            partner._onchange_subnames()
             partner._onchange_name()
 
             self.assertEqual(partner.lastname, False)
@@ -57,8 +58,9 @@ class PartnerContactCase(TransactionCase):
             # User ensures it is not a company
             partner.is_company = False
 
-            # Changes lastname, which triggers _onchange_name()
+            # Changes lastname, which triggers onchanges
             partner.lastname = lastname
+            partner._onchange_subnames()
             partner._onchange_name()
 
             self.assertEqual(partner.firstname, False)
@@ -76,14 +78,16 @@ class PartnerContactCase(TransactionCase):
             # User ensures it is not a company
             partner.is_company = False
 
-            # Changes firstname, which triggers _onchange_name()
+            # Changes firstname, which triggers onchanges
             partner.firstname = firstname
+            partner._onchange_subnames()
             partner._onchange_name()
 
-            # Changes lastname, which triggers _onchange_name()
+            # Changes lastname, which triggers onchanges
             partner.lastname = lastname
+            partner._onchange_subnames()
             partner._onchange_name()
 
             self.assertEqual(partner.lastname, lastname)
             self.assertEqual(partner.firstname, firstname)
-            self.assertEqual(partner.name, u" ".join(lastname, firstname))
+            self.assertEqual(partner.name, u" ".join((lastname, firstname)))
