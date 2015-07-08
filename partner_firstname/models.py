@@ -97,10 +97,27 @@ class ResPartner(models.Model):
             raise exceptions.EmptyNamesError(self)
 
     @api.one
+    @api.onchange("firstname", "lastname")
+    def _onchange_subnames(self):
+        """Avoid recursion when the user changes one of these fields.
+
+        This forces to skip the :attr:`~.name` inversion when the user is
+        setting it in a not-inverted way.
+        """
+        # Modify self's context without creating a new Environment.
+        # See https://github.com/odoo/odoo/issues/7472#issuecomment-119503916.
+        self.env.context = self.with_context(skip_onchange=True).env.context
+
+    @api.one
     @api.onchange("name")
     def _onchange_name(self):
         """Ensure :attr:`~.name` is inverted in the UI."""
-        self._inverse_name_after_cleaning_whitespace()
+        if self.env.context.get("skip_onchange"):
+            # Do not skip next onchange
+            self.env.context = (
+                self.with_context(skip_onchange=False).env.context)
+        else:
+            self._inverse_name_after_cleaning_whitespace()
 
     @api.model
     def _install_partner_firstname(self):
