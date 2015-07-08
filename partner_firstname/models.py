@@ -78,8 +78,8 @@ class ResPartner(models.Model):
         trimmed whitespace.
         """
         # Company name goes to the lastname
-        if self.is_company or self.name is False:
-            parts = [self.name, False]
+        if self.is_company or not self.name:
+            parts = [self.name or False, False]
 
         # Guess name splitting
         else:
