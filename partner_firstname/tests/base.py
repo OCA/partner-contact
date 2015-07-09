@@ -76,3 +76,13 @@ class BaseCase(TransactionCase):
         self.check_fields = False
         with self.assertRaises(ex.EmptyNamesError):
             self.original.firstname = self.original.lastname = False
+
+
+class OnChangeCase(TransactionCase):
+    is_company = False
+
+    def new_partner(self):
+        """Create an empty partner. Ensure it is (or not) a company."""
+        new = self.env["res.partner"].new()
+        new.is_company = self.is_company
+        return new
