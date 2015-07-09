@@ -1,23 +1,21 @@
 # -*- coding: utf-8 -*-
 """These tests try to mimic the behavior of the UI form.
 
-The form operates in onchange mode, and has only some limitations that must be
-met.
+The form operates in onchange mode, with its limitations.
 """
 
-from openerp.tests.common import TransactionCase
+from .base import OnChangeCase
 
 
-class PartnerCompanyCase(TransactionCase):
+class PartnerCompanyCase(OnChangeCase):
+    is_company = True
+
     def test_create_from_form(self):
         """A user creates a company from the form."""
         name = u"Sôme company"
         with self.env.do_in_onchange():
             # User presses ``new``
-            partner = self.env["res.partner"].create({})
-
-            # User ensures it is a company
-            partner.is_company = True
+            partner = self.new_partner()
 
             # User sets a name, which triggers onchanges
             partner.name = name
@@ -34,10 +32,7 @@ class PartnerCompanyCase(TransactionCase):
         """
         with self.env.do_in_onchange():
             # User presses ``new``
-            partner = self.env["res.partner"].create({})
-
-            # User ensures it is a company
-            partner.is_company = True
+            partner = self.new_partner()
 
             # User sets a name, which triggers onchanges
             partner.name = u"Foó"
@@ -51,16 +46,13 @@ class PartnerCompanyCase(TransactionCase):
             self.assertEqual(partner.lastname, False)
 
 
-class PartnerContactCase(TransactionCase):
+class PartnerContactCase(OnChangeCase):
     def test_create_from_form_only_firstname(self):
         """A user creates a contact with only the firstname from the form."""
         firstname = u"Fïrst"
         with self.env.do_in_onchange():
             # User presses ``new``
-            partner = self.env["res.partner"].create({})
-
-            # User ensures it is not a company
-            partner.is_company = False
+            partner = self.new_partner()
 
             # Changes firstname, which triggers onchanges
             partner.firstname = firstname
@@ -76,10 +68,7 @@ class PartnerContactCase(TransactionCase):
         lastname = u"Läst"
         with self.env.do_in_onchange():
             # User presses ``new``
-            partner = self.env["res.partner"].create({})
-
-            # User ensures it is not a company
-            partner.is_company = False
+            partner = self.new_partner()
 
             # Changes lastname, which triggers onchanges
             partner.lastname = lastname
@@ -96,10 +85,7 @@ class PartnerContactCase(TransactionCase):
         lastname = u"Läst"
         with self.env.do_in_onchange():
             # User presses ``new``
-            partner = self.env["res.partner"].create({})
-
-            # User ensures it is not a company
-            partner.is_company = False
+            partner = self.new_partner()
 
             # Changes firstname, which triggers onchanges
             partner.firstname = firstname
