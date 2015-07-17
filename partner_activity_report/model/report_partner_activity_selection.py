@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Guewen Baconnier
+#    Author: Vincent Renaville
+#    Copyright 2014-2015 Camptocamp SA
+#
+#    Author: Damien Crier
 #    Copyright 2015 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -34,9 +37,9 @@ class PartnerActivityReport(models.AbstractModel):
         wizard_selection = partner_activity_obj.browse(self.ids)[0]
 
         docargs = {
-            'doc_ids': wizard_selection.partner_ids.ids,
+            'doc_ids': wizard_selection.ids,
             'doc_model': report.model,
-            'docs': wizard_selection.partner_ids,
+            'docs': wizard_selection,
             'option_selected': wizard_selection,
             'get_partner_crm_informations': self.get_partner_crm_informations,
             'get_partner_invoice_informations': (

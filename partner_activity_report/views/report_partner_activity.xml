@@ -4,6 +4,8 @@
     <template id="partner_activity_report.report_partner_activity_def">
       <t t-call="report.external_layout">
         <div class="page">
+        <t t-foreach="o.partner_ids" t-as="partner">
+                        
           <p t-if="option_selected.partner_information">
           	<h2>
             <span>Partner Informations</span>
@@ -19,16 +21,16 @@
             <tbody class="invoice_tbody">
 				<tr>
 					<td>
-                        <span t-field="o.name"/>
+                        <span t-field="partner.name"/>
                     </td>
                     <td>
-                        <span t-field="o.ref"/>
+                        <span t-field="partner.ref"/>
                     </td>
                     <td>
-                        <t t-if="o.category_id" t-foreach="o.category_id" t-as="categ">
+                        <t t-if="partner.category_id" t-foreach="partner.category_id" t-as="categ">
                             <p><t t-esc="categ.name"/></p>
                         </t>
-                        <span t-if="not o.category_id">/</span>
+                        <span t-if="not partner.category_id">/</span>
 					</td>            	
                 </tr>
             </tbody>
@@ -52,19 +54,19 @@
             <tbody class="invoice_tbody">
 				<tr>
 					<td>
-                        <span t-field="o.street"/>
+                        <span t-field="partner.street"/>
                     </td>
 					<td>
-                        <span t-field="o.street2"/>
+                        <span t-field="partner.street2"/>
                     </td>
 					<td>
-                        <span t-field="o.zip"/>
+                        <span t-field="partner.zip"/>
                     </td>
 					<td>
-                        <span t-field="o.city"/>
+                        <span t-field="partner.city"/>
                     </td>
 					<td>
-                        <span t-field="o.country_id.name"/>
+                        <span t-field="partner.country_id.name"/>
                     </td>
                 </tr>
             </tbody>
@@ -86,7 +88,7 @@
               </tr>
             </thead>
             <tbody class="invoice_tbody">
-               <tr t-if="len(o.child_ids) > 0" t-foreach="o.child_ids" t-as="l">
+               <tr t-if="len(partner.child_ids) > 0" t-foreach="partner.child_ids" t-as="l">
 					<td>
                         <span t-field="l.name"/>
                     </td>
@@ -103,7 +105,7 @@
                         <span t-field="l.email"/>
                     </td>
                 </tr>
-                <tr t-if="len(o.child_ids) == 0">
+                <tr t-if="len(partner.child_ids) == 0">
                     <td colspan="5"><span>No records</span></td>
                 </tr>
             </tbody>
@@ -125,7 +127,7 @@
               </tr>
             </thead>
             <tbody class="invoice_tbody">
-               <tr t-if="len(get_partner_crm_informations(o)) > 0" t-foreach="get_partner_crm_informations(o)" t-as="c">
+               <tr t-if="len(get_partner_crm_informations(partner)) > 0" t-foreach="get_partner_crm_informations(partner)" t-as="c">
 					<td>
                         <span t-field="c.name"/>
                     </td>
@@ -142,7 +144,7 @@
                         <span t-field="c.email_from"/>
                     </td>
                 </tr>
-                <tr t-if="len(get_partner_crm_informations(o)) == 0">
+                <tr t-if="len(get_partner_crm_informations(partner)) == 0">
                     <td colspan="5"><span>No records</span></td>
                 </tr>
             </tbody>
@@ -164,7 +166,7 @@
               </tr>
             </thead>
             <tbody class="invoice_tbody">
-               <tr t-if="len(get_partner_invoice_informations(o)) > 0" t-foreach="get_partner_invoice_informations(o)" t-as="i">
+               <tr t-if="len(get_partner_invoice_informations(partner)) > 0" t-foreach="get_partner_invoice_informations(partner)" t-as="i">
 					<td>
                         <span t-if="i.number" t-field="i.number"/>
                         <span t-if="not i.number">/</span>
@@ -182,7 +184,7 @@
                         <span t-field="i.amount_total"/>
                     </td>
                 </tr>
-                <tr t-if="len(get_partner_invoice_informations(o)) == 0">
+                <tr t-if="len(get_partner_invoice_informations(partner)) == 0">
                     <td colspan="5"><span>No records</span></td>
                 </tr>
             </tbody>
@@ -204,7 +206,7 @@
               </tr>
             </thead>
             <tbody class="invoice_tbody">
-               <tr t-if="len(get_partner_sales_informations(o)) > 0" t-foreach="get_partner_sales_informations(o)" t-as="s">
+               <tr t-if="len(get_partner_sales_informations(partner)) > 0" t-foreach="get_partner_sales_informations(partner)" t-as="s">
 					<td>
                         <span t-field="s.name"/>
                     </td>
@@ -221,7 +223,7 @@
                         <span t-field="s.state"/>
                     </td>
                 </tr>
-                <tr t-if="len(get_partner_sales_informations(o)) == 0">
+                <tr t-if="len(get_partner_sales_informations(partner)) == 0">
                     <td colspan="5"><span>No records</span></td>
                 </tr>
             </tbody>
@@ -241,7 +243,7 @@
               </tr>
             </thead>
             <tbody class="invoice_tbody">
-               <tr t-if="len(get_partner_deliveries_informations(o)) > 0" t-foreach="get_partner_deliveries_informations(o)" t-as="m">
+               <tr t-if="len(get_partner_deliveries_informations(partner)) > 0" t-foreach="get_partner_deliveries_informations(partner)" t-as="m">
 					<td>
                         <span t-field="m.name"/>
                     </td>
@@ -252,14 +254,15 @@
                         <span t-field="m.origin"/>
                     </td>
                 </tr>
-                <tr t-if="len(get_partner_deliveries_informations(o)) == 0">
+                <tr t-if="len(get_partner_deliveries_informations(partner)) == 0">
                     <td colspan="3"><span>No records</span></td>
                 </tr>
             </tbody>
           </table>
 		  </p>
+        <p style="page-break-after:always"></p>
+      </t>
     	 </div>
-
       </t>
     </template>
 
