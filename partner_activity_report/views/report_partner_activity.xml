@@ -8,7 +8,7 @@
           	<h2>
             <span>Partner Informations</span>
             </h2>
-          <table class="table table-condensed small">
+          <table class="table">
             <thead>
               <tr>
                 <th>Name</th>
@@ -25,7 +25,10 @@
                         <span t-field="o.ref"/>
                     </td>
                     <td>
-                        <span t-field="o.category_id[0].name"/>
+                        <t t-if="o.category_id" t-foreach="o.category_id" t-as="categ">
+                            <p><t t-esc="categ.name"/></p>
+                        </t>
+                        <span t-if="not o.category_id">/</span>
 					</td>            	
                 </tr>
             </tbody>
@@ -33,13 +36,13 @@
 		  </p>
           <p t-if="option_selected.partner_information">
           	<h2>
-            <span>Adress Informations</span>
+            <span>Address Informations</span>
             </h2>
-          <table class="table table-condensed small">
+          <table class="table">
             <thead>
               <tr>
                 <th>Street</th>
-                <th>Street Aditional</th>
+                <th>Street Additional</th>
                 <th>PoBox</th>
                 <th>Zip</th>
                 <th>City</th>
@@ -70,9 +73,9 @@
 
           <p t-if="option_selected.partner_address_information">
           	<h2>
-            <span>Partner Conctacts</span>
+            <span>Partner Contacts</span>
             </h2>
-          <table class="table table-condensed small">
+          <table class="table">
             <thead>
               <tr>
                 <th>Name</th>
@@ -83,7 +86,7 @@
               </tr>
             </thead>
             <tbody class="invoice_tbody">
-               <tr t-foreach="o.child_ids" t-as="l">
+               <tr t-if="len(o.child_ids) > 0" t-foreach="o.child_ids" t-as="l">
 					<td>
                         <span t-field="l.name"/>
                     </td>
@@ -100,15 +103,18 @@
                         <span t-field="l.email"/>
                     </td>
                 </tr>
+                <tr t-if="len(o.child_ids) == 0">
+                    <td colspan="5"><span>No records</span></td>
+                </tr>
             </tbody>
           </table>
 		  </p>
 
           <p t-if="option_selected.partner_crm_renouvellement">
           	<h2>
-            <span>Partner Conctacts</span>
+            <span>Partner Contracts Renewals</span>
             </h2>
-          <table class="table table-condensed small">
+          <table class="table">
             <thead>
               <tr>
                 <th>Description</th>
@@ -119,7 +125,7 @@
               </tr>
             </thead>
             <tbody class="invoice_tbody">
-               <tr t-foreach="get_partner_crm_informations(o)" t-as="c">
+               <tr t-if="len(get_partner_crm_informations(o)) > 0" t-foreach="get_partner_crm_informations(o)" t-as="c">
 					<td>
                         <span t-field="c.name"/>
                     </td>
@@ -127,14 +133,127 @@
                         <span t-field="c.date_deadline"/>
                     </td>
 					<td>
-                        <span t-field="l.phone"/>
+                        <span t-field="c.phone"/>
                     </td>
 					<td>
-                        <span t-field="l.mobile"/>
+                        <span t-field="c.mobile"/>
                     </td>
 					<td>
-                        <span t-field="l.email"/>
+                        <span t-field="c.email_from"/>
                     </td>
+                </tr>
+                <tr t-if="len(get_partner_crm_informations(o)) == 0">
+                    <td colspan="5"><span>No records</span></td>
+                </tr>
+            </tbody>
+          </table>
+		  </p>
+          
+          <p t-if="option_selected.partner_invoice">
+          	<h2>
+            <span>Partner Invoices</span>
+            </h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Reference</th>
+                <th>Description</th>
+                <th>State</th>
+                <th>Date</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody class="invoice_tbody">
+               <tr t-if="len(get_partner_invoice_informations(o)) > 0" t-foreach="get_partner_invoice_informations(o)" t-as="i">
+					<td>
+                        <span t-if="i.number" t-field="i.number"/>
+                        <span t-if="not i.number">/</span>
+                    </td>
+					<td>
+                        <span t-field="i.comment"/>
+                    </td>
+					<td>
+                        <span t-field="i.state"/>
+                    </td>
+					<td>
+                        <span t-field="i.date_invoice"/>
+                    </td>
+					<td>
+                        <span t-field="i.amount_total"/>
+                    </td>
+                </tr>
+                <tr t-if="len(get_partner_invoice_informations(o)) == 0">
+                    <td colspan="5"><span>No records</span></td>
+                </tr>
+            </tbody>
+          </table>
+		  </p>
+          
+          <p t-if="option_selected.partner_sales_order">
+          	<h2>
+            <span>Partner Sales Order</span>
+            </h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Salesman</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>State</th>
+              </tr>
+            </thead>
+            <tbody class="invoice_tbody">
+               <tr t-if="len(get_partner_sales_informations(o)) > 0" t-foreach="get_partner_sales_informations(o)" t-as="s">
+					<td>
+                        <span t-field="s.name"/>
+                    </td>
+					<td>
+                        <span t-field="s.user_id.name"/>
+                    </td>
+					<td>
+                        <span t-field="s.date_order"/>
+                    </td>
+					<td>
+                        <span t-field="s.amount_total"/>
+                    </td>
+					<td>
+                        <span t-field="s.state"/>
+                    </td>
+                </tr>
+                <tr t-if="len(get_partner_sales_informations(o)) == 0">
+                    <td colspan="5"><span>No records</span></td>
+                </tr>
+            </tbody>
+          </table>
+		  </p>
+          
+          <p t-if="option_selected.partner_delivery_lines">
+          	<h2>
+            <span>Partner Delivery Lines</span>
+            </h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Serial</th>
+                <th>Reference</th>
+              </tr>
+            </thead>
+            <tbody class="invoice_tbody">
+               <tr t-if="len(get_partner_deliveries_informations(o)) > 0" t-foreach="get_partner_deliveries_informations(o)" t-as="m">
+					<td>
+                        <span t-field="m.name"/>
+                    </td>
+					<td>
+                        <span t-field="m.product_id.ean13"/>
+                    </td>
+					<td>
+                        <span t-field="m.origin"/>
+                    </td>
+                </tr>
+                <tr t-if="len(get_partner_deliveries_informations(o)) == 0">
+                    <td colspan="3"><span>No records</span></td>
                 </tr>
             </tbody>
           </table>

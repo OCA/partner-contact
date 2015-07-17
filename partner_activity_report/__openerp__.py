@@ -37,11 +37,11 @@ This module give a report with recent activity on the partner
     'maintainer': 'Camptocamp',
     'category': 'Extra Tools',
     'website': 'http://www.camptocamp.com',
-    'depends': ['base','account','sale','stock'],
+    'depends': ['base', 'account', 'sale', 'stock', 'crm'],
     'data': [
-             'wizard/partner_activity_selection.xml',
-             'views/report_partner_activity.xml',
-             'report.xml'
+        'wizard/partner_activity_selection.xml',
+        'views/report_partner_activity.xml',
+        'report.xml'
     ],
     'demo': [],
     'test': [],
