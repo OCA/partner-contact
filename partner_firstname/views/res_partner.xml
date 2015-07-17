@@ -8,6 +8,9 @@
     <field name="inherit_id" ref="base.view_partner_simple_form"/>
     <field name="arch" type="xml">
         <data>
+            <xpath expr="//field[@name='is_company']" position="attributes">
+                <attribute name="on_change" eval="1"/>
+            </xpath>
             <xpath expr="//field[@name='name']" position="attributes">
                 <attribute name="attrs">{
                     'readonly': [('is_company', '=', False)],
@@ -35,6 +38,9 @@
     <field name="inherit_id" ref="base.view_partner_form"/>
     <field name="arch" type="xml">
         <data>
+            <xpath expr="//field[@name='is_company']" position="attributes">
+                <attribute name="on_change" eval="1"/>
+            </xpath>
             <xpath expr="//field[@name='name']" position="attributes">
                 <attribute name="attrs">{
                     'readonly': [('is_company', '=', False)],

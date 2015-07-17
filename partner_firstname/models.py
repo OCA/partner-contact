@@ -62,7 +62,7 @@ class ResPartner(models.Model):
             self.name = clean
 
         # Save name in the real fields
-        else:
+        elif self.is_company:
             self._inverse_name()
 
     @api.one
@@ -95,6 +95,18 @@ class ResPartner(models.Model):
         """Ensure at least one name is set."""
         if not (self.firstname or self.lastname):
             raise exceptions.EmptyNamesError(self)
+
+    @api.one
+    @api.onchange("is_company")
+    def onchange_type_new(self):
+        result = super(ResPartner, self).onchange_type(self.is_company)
+        if not self.is_company:
+            self._inverse_name_after_cleaning_whitespace()
+            self._inverse_name()
+        if 'values' in result and type(result['values']) is dict:
+            for k, v in result['values'].iteritems():
+                self.__setattr__(k, v)
+        return result
 
     @api.one
     @api.onchange("name")
