@@ -34,33 +34,35 @@ class partner_print_activity(models.TransientModel):
         return context.get('active_ids', False)
 
     partner_information = fields.Boolean(string='Print partner address',
-                                  default=True)
-    partner_address_information = fields.Boolean(string='Print partner contacts',
-                                  default=True)
-    partner_crm_renouvellement = fields.Boolean(string='Print partner recent CRM case',
-                                  default=True)
+                                         default=True)
+    partner_address_information = fields.Boolean(
+        string='Print partner contacts',
+        default=True)
+    partner_crm_renouvellement = fields.Boolean(
+        string='Print partner recent CRM case',
+        default=True)
     partner_invoice = fields.Boolean(string='Print partner recent invoices',
-                                  default=True)
-    partner_sales_order = fields.Boolean(string='Print partner recent sale orders',
-                                  default=True)
-    partner_delivery_lines = fields.Boolean(string='Print partner recent delivery lines',
-                                  default=True)
+                                     default=True)
+    partner_sales_order = fields.Boolean(
+        string='Print partner recent sale orders',
+        default=True)
+    partner_delivery_lines = fields.Boolean(
+        string='Print partner recent delivery lines',
+        default=True)
 
     partner_ids = fields.Many2many('res.partner',
-                                string='Partner ids',
-                                default=_get_partner_ids)
-
-
+                                   string='Partner ids',
+                                   default=_get_partner_ids)
 
     @api.multi
     def print_report(self):
         self.ensure_one()
-        comm_obj = self.env['partner.print.activity']
-        partner_obj = self.env['res.partner']
         if not self.partner_ids:
             raise api.Warning(_('No partner Select'))
         report_name = 'partner_activity_report.report_partner_activity_qweb'
-        report_obj = self.env['report'].with_context(active_ids=self.partner_ids.ids)
+        report_obj = self.env['report'].with_context(
+            active_ids=self.partner_ids.ids
+            )
         return report_obj.get_action(self, report_name)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

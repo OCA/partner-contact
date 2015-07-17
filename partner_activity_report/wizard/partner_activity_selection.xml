@@ -5,7 +5,7 @@
       <field name="name">partner.print.activity.form</field>
       <field name="model">partner.print.activity</field>
       <field name="arch" type="xml">
-        <form string="Print partner activity" version="7.0">
+        <form string="Print partner activity">
           <separator string="Select part to print" colspan="4"/>
           <newline/>
           <group>
@@ -35,16 +35,16 @@
                 key2="client_action_multi"
                 id="open_credit_line_printer_wizard_menu_action"/>
 
-    <record id="open_credit_line_printer_wizard" model="ir.actions.act_window">
-      <field name="name">Print Partner activity</field>
-      <field name="res_model">partner.print.activity</field>
-      <field name="src_model">res.partner</field>
-      <field name="view_type">form</field>
-      <field name="view_mode">form</field>
-      <field name="view_id" ref="partner_print_activity_form"/>
-      <field name="target">new</field>
-      <field name="help">Print selected lines</field>
-    </record>
+<!--     <record id="open_credit_line_printer_wizard" model="ir.actions.act_window"> -->
+<!--       <field name="name">Print Partner activity</field> -->
+<!--       <field name="res_model">partner.print.activity</field> -->
+<!--       <field name="src_model">res.partner</field> -->
+<!--       <field name="view_type">form</field> -->
+<!--       <field name="view_mode">form</field> -->
+<!--       <field name="view_id" ref="partner_print_activity_form"/> -->
+<!--       <field name="target">new</field> -->
+<!--       <field name="help">Print selected lines</field> -->
+<!--     </record> -->
 
   </data>
 </openerp>
