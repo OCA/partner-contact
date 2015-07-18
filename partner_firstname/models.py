@@ -20,7 +20,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import logging
-from openerp import api, fields, models
+from openerp import api, fields, models, _
 from . import exceptions
 
 
@@ -65,6 +65,7 @@ class ResPartner(models.Model):
             self.name = clean
 
         # Save name in the real fields
+        # elif self.is_company or self.env.context.get('force_inverse', False):
         elif self.is_company:
             self._inverse_name()
 
@@ -100,10 +101,12 @@ class ResPartner(models.Model):
         self.lastname, self.firstname = parts
 
     @api.one
-    @api.constrains("firstname", "lastname")
+    @api.constrains("firstname", "lastname", "name")
     def _check_name(self):
         """Ensure at least one name is set."""
         if not (self.firstname or self.lastname):
+            raise exceptions.EmptyNamesError(self)
+        if not self.name:
             raise exceptions.EmptyNamesError(self)
 
     @api.one
@@ -117,6 +120,14 @@ class ResPartner(models.Model):
             for k, v in result['values'].iteritems():
                 self.__setattr__(k, v)
         return result
+
+    @api.one
+    def copy(self, default=None):
+        if not self.is_company:
+            default = dict(default or {})
+            lastname = _('%s (copy)') % (self.lastname or '')
+            default['lastname'] = lastname.strip()
+        return super(ResPartner, self).copy(default)
 
     @api.one
     @api.onchange("name")

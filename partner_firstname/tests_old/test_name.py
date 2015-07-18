@@ -47,6 +47,40 @@ class PartnerContactCase(BaseCase):
         # Need this to refresh the ``name`` field
         self.original.invalidate_cache()
 
+    def test_only_lastname(self):
+        """Test what happens when only lastname is given."""
+        self.expect(u"lästname", False)
+        self.original.name = self.name
+
+    def test_only_firstname(self):
+        """Test what happens when only firstname is given."""
+        self.expect(False, u"fïrstname")
+        self.original.name = self.name
+
+
+class PartnerContactCaseInverse(PartnerContactCase):
+    def test_copy(self):
+        """Copy the partner and compare the result."""
+        self.expect(u"%s (copy)" % self.firstname, self.lastname)
+        self.changed = self.original.with_context(lang="en_US").copy()
+
+    def create_original(self):
+        super(PartnerContactCaseInverse, self).create_original()
+        self.original.company_id.names_order = 'first_last'
+
+    def expect(self, lastname, firstname, name=None):
+        super(PartnerContactCaseInverse, self).expect(
+            lastname, firstname, name)
+        self.name = name or u"%s %s" % (firstname, lastname)
+
+    def test_whitespace_cleanup(self):
+        """Check that whitespace in name gets cleared."""
+        self.expect(u"newlästname", u"newfïrstname")
+        self.original.name = "  newfïrstname  newlästname  "
+
+        # Need this to refresh the ``name`` field
+        self.original.invalidate_cache()
+
 
 class PartnerCompanyCase(BaseCase):
     def create_original(self):
@@ -60,6 +94,12 @@ class PartnerCompanyCase(BaseCase):
     def test_company_inverse(self):
         """Test the inverse method in a company record."""
         name = u"Thïs is a Companŷ"
+        self.expect(name, False, name)
+        self.original.name = name
+
+    def test_one_name(self):
+        """Test what happens when only one name is given."""
+        name = u"Mönty"
         self.expect(name, False, name)
         self.original.name = name
 
