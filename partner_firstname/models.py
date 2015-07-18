@@ -4,6 +4,7 @@
 #    Copyright (C)
 #       2014:       Agile Business Group (<http://www.agilebg.com>)
 #       2015:       Grupo ESOC <www.grupoesoc.es>
+#       2015:       Antonio Espinosa <antonioea@antiun.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,7 +20,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import logging
-from openerp import api, fields, models
+from openerp import api, fields, models, _
 from . import exceptions
 
 
@@ -39,11 +40,13 @@ class ResPartner(models.Model):
         store=True)
 
     @api.one
-    @api.depends("firstname", "lastname")
+    @api.depends("firstname", "lastname", "company_id")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
-        self.name = u" ".join((p for p in (self.lastname,
-                                           self.firstname) if p))
+        names = (self.lastname, self.firstname)
+        if self.company_id.names_order == 'first_last':
+            names = reversed(names)
+        self.name = u" ".join(filter(None, names))
 
     @api.one
     def _inverse_name_after_cleaning_whitespace(self):
@@ -62,7 +65,8 @@ class ResPartner(models.Model):
             self.name = clean
 
         # Save name in the real fields
-        else:
+        # elif self.is_company or self.env.context.get('force_inverse', False):
+        elif self.is_company:
             self._inverse_name()
 
     @api.one
@@ -78,23 +82,52 @@ class ResPartner(models.Model):
         trimmed whitespace.
         """
         # Company name goes to the lastname
-        if self.is_company or self.name is False:
-            parts = [self.name, False]
-
+        if self.is_company or not self.name:
+            parts = [self.name or False, False]
         # Guess name splitting
         else:
-            parts = self.name.split(" ", 1)
-            while len(parts) < 2:
-                parts.append(False)
-
+            parts = self.name.split(" ")
+            if len(parts) > 1:
+                if self.company_id.names_order == 'first_last':
+                    first = parts[0]
+                    last = u" ".join(parts[1:])
+                else:
+                    last = parts[0]
+                    first = u" ".join(parts[1:])
+                parts = [last, first]
+            else:
+                while len(parts) < 2:
+                    parts.append(False)
         self.lastname, self.firstname = parts
 
     @api.one
-    @api.constrains("firstname", "lastname")
+    @api.constrains("firstname", "lastname", "name")
     def _check_name(self):
         """Ensure at least one name is set."""
         if not (self.firstname or self.lastname):
             raise exceptions.EmptyNamesError(self)
+        if not self.name:
+            raise exceptions.EmptyNamesError(self)
+
+    @api.one
+    @api.onchange("is_company")
+    def onchange_type_new(self):
+        result = super(ResPartner, self).onchange_type(self.is_company)
+        if not self.is_company:
+            self._inverse_name_after_cleaning_whitespace()
+            self._inverse_name()
+        if 'values' in result and type(result['values']) is dict:
+            for k, v in result['values'].iteritems():
+                self.__setattr__(k, v)
+        return result
+
+    @api.one
+    def copy(self, default=None):
+        if not self.is_company:
+            default = dict(default or {})
+            lastname = _('%s (copy)') % (self.lastname or '')
+            default['lastname'] = lastname.strip()
+        return super(ResPartner, self).copy(default)
 
     @api.one
     @api.onchange("name")
@@ -117,3 +150,23 @@ class ResPartner(models.Model):
         # Force calculations there
         records._inverse_name()
         _logger.info("%d partners updated installing module.", len(records))
+
+
+class ResCompany(models.Model):
+    _inherit = 'res.company'
+
+    names_order = fields.Selection(
+        [('first_last', 'Firstname Lastname'),
+         ('last_first', 'Lastname Firstname')],
+        string="Names display order", default='last_first', required=True,
+        help="Select order in which names are shown")
+
+    @api.one
+    def action_recalculate_names(self):
+        partners = self.env['res.partner'].search([
+            ('company_id', '=', self.id)
+        ])
+        _logger.info("Recalculating names for %d partners.", len(partners))
+        partners._compute_name()
+        _logger.info("%d partners updated.", len(partners))
+        return True

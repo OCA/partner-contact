@@ -22,6 +22,6 @@ from openerp import _, exceptions
 class EmptyNamesError(exceptions.ValidationError):
     def __init__(self, record, value=_("No name is set.")):
         self.record = record
-        self._value = value
+        self.value = value
         self.name = _("Error(s) with partner %d's name.") % record.id
         self.args = (self.name, value)

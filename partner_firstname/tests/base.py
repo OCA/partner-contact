@@ -27,52 +27,58 @@
 
 from openerp.tests.common import TransactionCase
 from .. import exceptions as ex
+import logging
+from pprint import pprint, pformat
+import traceback
+_logger = logging.getLogger(__name__)
 
 
 class BaseCase(TransactionCase):
-    def setUp(self):
-        super(BaseCase, self).setUp()
-        self.check_fields = True
-        self.expect(u"Núñez", u"Fernán")
-        self.create_original()
 
-    def create_original(self):
+    def partner_contact_create(self, lastname, firstname):
         self.original = self.env["res.partner"].create({
-            "lastname": self.lastname,
-            "firstname": self.firstname})
+            "lastname": lastname,
+            "firstname": firstname,
+            "is_company": False,
+        })
+        return self.original
+
+    def partner_company_create(self, name):
+        self.original = self.env["res.partner"].create({
+            "name": name,
+            "is_company": True,
+        })
+        return self.original
+
+    def user_create(self, lastname, firstname, name=None):
+        self.original = self.env["res.users"].create({
+            "name": name or u"%s %s" % (self.lastname, self.firstname),
+            "login": "firstnametest@example.com",
+        })
+        return self.original
 
     def expect(self, lastname, firstname, name=None):
         """Define what is expected in each field when ending."""
         self.lastname = lastname
         self.firstname = firstname
-        self.name = name or u"%s %s" % (lastname, firstname)
+        if name:
+            self.name = name
+        elif not lastname and firstname:
+            self.name = u"%s" % firstname
+        elif lastname and not firstname:
+            self.name = u"%s" % lastname
+        else:
+            self.name = u"%s %s" % (lastname, firstname)
 
-    def tearDown(self):
-        if self.check_fields:
-            if not hasattr(self, "changed"):
-                self.changed = self.original
+        if not hasattr(self, "changed"):
+            self.changed = self.original
 
-            for field in ("name", "lastname", "firstname"):
-                self.assertEqual(
-                    getattr(self.changed, field),
-                    getattr(self, field),
-                    "Test failed with wrong %s" % field)
-
-        super(BaseCase, self).tearDown()
-
-    def test_copy(self):
-        """Copy the partner and compare the result."""
-        self.expect(self.lastname, u"%s (copy)" % self.firstname)
-        self.changed = self.original.with_context(lang="en_US").copy()
-
-    def test_one_name(self):
-        """Test what happens when only one name is given."""
-        name = u"Mönty"
-        self.expect(name, False, name)
-        self.original.name = name
-
-    def test_no_names(self):
-        """Test that you cannot set a partner/user without names."""
-        self.check_fields = False
-        with self.assertRaises(ex.EmptyNamesError):
-            self.original.firstname = self.original.lastname = False
+        for field in ("name", "lastname", "firstname"):
+            if getattr(self.changed, field) != getattr(self, field):
+                _logger.error('Test failed with wrong ' + pformat(field))
+                _logger.error('   self    = ' + pformat(getattr(self, field)))
+                _logger.error('   changed = ' + pformat(getattr(self.changed, field)))
+            self.assertEqual(
+                getattr(self.changed, field),
+                getattr(self, field),
+                "Test failed with wrong %s" % field)
