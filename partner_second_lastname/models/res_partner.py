@@ -23,6 +23,7 @@
 ##############################################################################
 
 from openerp import models, fields, api
+from openerp.addons.partner_firstname import exceptions
 
 
 class ResPartner(models.Model):
@@ -39,6 +40,24 @@ class ResPartner(models.Model):
         self.name = u' '.join(filter(None, names))
 
     @api.one
+    @api.onchange('firstname', 'lastname', 'lastname_second')
+    def _onchange_subnames(self):
+        """Avoid recursion when the user changes one of these fields.
+
+        This forces to skip the :attr:`~.name` inversion when the user is
+        setting it in a not-inverted way.
+        """
+        self._clean_field('lastname_second', False)
+        return super(ResPartner, self)._onchange_subnames()
+
+    @api.one
+    @api.constrains("firstname", "lastname", "lastname_second")
+    def _check_name(self):
+        """Ensure at least one name is set."""
+        if not (self.firstname or self.lastname or self.lastname_second):
+            raise exceptions.EmptyNamesError(self)
+
+    @api.one
     def _inverse_name(self):
         super(ResPartner, self)._inverse_name()
         lastname_second = False
@@ -48,3 +67,21 @@ class ResPartner(models.Model):
                 lastname_second = parts[-1]
                 self.lastname = u' '.join(parts[:-1])
         self.lastname_second = lastname_second
+
+    @api.multi
+    def _clean_names(self, vals):
+        fields = {
+            'name': '',
+            'firstname': False,
+            'lastname': False,
+            'lastname_second': False,
+        }
+        for field, default in fields.iteritems():
+            if vals.get(field, None) is not None:
+                value = vals.get(field) if vals.get(field) else default
+                if value and type(value) in (str, unicode):
+                    value = u" ".join(value.split(None))
+                    if not value:
+                        value = default
+                vals[field] = value
+        return vals
