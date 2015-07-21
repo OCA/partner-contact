@@ -29,4 +29,3 @@
 ##############################################################################
 
 from . import test_contact, test_company
-# from . import test_debug
