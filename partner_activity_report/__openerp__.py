@@ -26,15 +26,6 @@
     'name': 'Partner Activity Details',
     'summary': """
 This module give a report with recent activity on the partner
-====================================================================
-
-* Display adresses and contact of the partner
-* Display crm open for this partner
-* Display invoices related to this partner
-* Display sale order related to this customer
-* Display delivery lines related to this customer
-
-
 """,
     'version': '1.2',
     'author': "Camptocamp",
