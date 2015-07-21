@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
+#    Author: Vincent Renaville
+#    Copyright 2014-2015 Camptocamp SA
+#
+#    Author: Damien Crier
+#    Copyright 2015 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -53,6 +56,8 @@ class partner_print_activity(models.TransientModel):
     partner_ids = fields.Many2many('res.partner',
                                    string='Partner ids',
                                    default=_get_partner_ids)
+    user_id = fields.Many2one('res.users', string='User', required=False,
+                              default=1)
 
     @api.multi
     def print_report(self):
@@ -61,8 +66,6 @@ class partner_print_activity(models.TransientModel):
             raise api.Warning(_('No partner Select'))
         report_name = 'partner_activity_report.report_partner_activity_qweb'
         report_obj = self.env['report'].with_context(
-            active_ids=self.partner_ids.ids
+            active_ids=self.id
             )
         return report_obj.get_action(self, report_name)
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

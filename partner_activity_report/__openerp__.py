@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Nicolas Bessi. Copyright Camptocamp SA
+#    Author: Vincent Renaville
+#    Copyright 2014-2015 Camptocamp SA
+#
+#    Author: Damien Crier
+#    Copyright 2015 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,7 +24,7 @@
 
 {
     'name': 'Partner Activity Details',
-    'description': """
+    'summary': """
 This module give a report with recent activity on the partner
 ====================================================================
 

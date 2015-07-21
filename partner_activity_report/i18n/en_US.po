@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-17 13:44+0000\n"
-"PO-Revision-Date: 2015-07-17 13:44+0000\n"
+"POT-Creation-Date: 2015-07-17 13:45+0000\n"
+"PO-Revision-Date: 2015-07-17 13:45+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr "Address Informations"
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Amount"
-msgstr "Montant"
+msgstr "Amount"
 
 #. module: partner_activity_report
 #: view:partner.print.activity:partner_activity_report.partner_print_activity_form
@@ -83,7 +83,7 @@ msgstr "Description"
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Email"
-msgstr "Courriel"
+msgstr "Email"
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
@@ -114,7 +114,7 @@ msgstr "Mobile"
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Name"
-msgstr "Description"
+msgstr "Name"
 
 #. module: partner_activity_report
 #: code:addons/partner_activity_report/wizard/partner_activity_selection.py:66
@@ -235,17 +235,17 @@ msgstr "Print partner recent sale orders"
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Product"
-msgstr "Article"
+msgstr "Product"
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Quantity"
-msgstr "Quantité"
+msgstr "Quantity"
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Reference"
-msgstr "Référence"
+msgstr "Reference"
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
@@ -265,7 +265,7 @@ msgstr "Serial"
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "State"
-msgstr "État"
+msgstr "State"
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
