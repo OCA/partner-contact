@@ -14,12 +14,6 @@ This module give a report with recent activity on the partner
 * Display delivery lines related to this customer
 
 
-
-For further information, please visit:
-
-* https://www.odoo.com/forum/help-1
-
-
 Bug Tracker
 ===========
 

@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Vincent Renaville
+#    Author: Vincent Renaville, Damien Crier
 #    Copyright 2014-2015 Camptocamp SA
-#
-#    Author: Damien Crier
-#    Copyright 2015 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as

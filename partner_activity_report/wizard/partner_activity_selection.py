@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Vincent Renaville
+#    Author: Vincent Renaville,Damien Crier
 #    Copyright 2014-2015 Camptocamp SA
-#
-#    Author: Damien Crier
-#    Copyright 2015 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -41,7 +38,7 @@ class partner_print_activity(models.TransientModel):
     partner_address_information = fields.Boolean(
         string='Print partner contacts',
         default=True)
-    partner_crm_renouvellement = fields.Boolean(
+    partner_crm = fields.Boolean(
         string='Print partner recent CRM case',
         default=True)
     partner_invoice = fields.Boolean(string='Print partner recent invoices',
@@ -53,17 +50,17 @@ class partner_print_activity(models.TransientModel):
         string='Print partner recent delivery lines',
         default=True)
 
-    partner_ids = fields.Many2many('res.partner',
+    partner_ids = fields.Many2many(comodel_name='res.partner',
                                    string='Partner ids',
                                    default=_get_partner_ids)
-    user_id = fields.Many2one('res.users', string='User', required=False,
-                              default=1)
+    user_id = fields.Many2one(comodel_name='res.users', string='User',
+                              required=False, default=1)
 
     @api.multi
     def print_report(self):
         self.ensure_one()
         if not self.partner_ids:
-            raise api.Warning(_('No partner Select'))
+            raise api.Warning(_('No partner selected'))
         report_name = 'partner_activity_report.report_partner_activity_qweb'
         report_obj = self.env['report'].with_context(
             active_ids=self.id

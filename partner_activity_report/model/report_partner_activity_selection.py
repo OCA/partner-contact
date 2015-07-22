@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Vincent Renaville
+#    Author: Vincent Renaville, Damien Crier
 #    Copyright 2014-2015 Camptocamp SA
-#
-#    Author: Damien Crier
-#    Copyright 2015 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -41,44 +38,7 @@ class PartnerActivityReport(models.AbstractModel):
             'doc_model': report.model,
             'docs': wizard_selection,
             'option_selected': wizard_selection,
-            'get_partner_crm_informations': self.get_partner_crm_informations,
-            'get_partner_invoice_informations': (
-                self.get_partner_invoice_informations),
-            'get_partner_sales_informations': (
-                self.get_partner_sales_informations),
-            'get_partner_deliveries_informations': (
-                self.get_partner_delivery_informations),
         }
         html = report_obj.render(report_name,
                                  docargs)
         return html
-
-    def get_partner_crm_informations(self, partner):
-        crm_obj = self.env['crm.lead']
-        lead_partner_ids = crm_obj.search([('partner_id', '=', partner.id)])
-        return lead_partner_ids
-
-    def get_partner_invoice_informations(self, partner):
-        account_invoice_obj = self.env['account.invoice']
-        account_invoice_ids = account_invoice_obj.search(
-            [('partner_id', '=', partner.id)]
-            )
-        return account_invoice_ids
-
-    def get_partner_sales_informations(self, partner):
-        sales_obj = self.env['sale.order']
-        sale_ids = sales_obj.search([('partner_id', '=', partner.id)])
-        return sale_ids
-
-    def get_partner_delivery_informations(self, partner):
-        stock_location_obj = self.env['stock.location']
-        stock_moves_obj = self.env['stock.move']
-        location_ids = stock_location_obj.search([('usage', '=', 'customer')])
-        move_ids = stock_moves_obj.search(
-            [
-                ('partner_id', '=', partner.id),
-                ('location_dest_id', 'in', location_ids.ids),
-                ('state', '=', 'done')
-            ]
-            )
-        return move_ids

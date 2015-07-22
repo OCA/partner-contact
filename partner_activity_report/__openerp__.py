@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Vincent Renaville
+#    Author: Vincent Renaville, Damien Crier
 #    Copyright 2014-2015 Camptocamp SA
-#
-#    Author: Damien Crier
-#    Copyright 2015 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -24,12 +21,10 @@
 
 {
     'name': 'Partner Activity Details',
-    'summary': """
-This module give a report with recent activity on the partner
-""",
+    'summary': "This module give a report with recent activity on the partner",
     'version': '1.2',
-    'author': "Camptocamp",
-    'maintainer': 'Camptocamp',
+    'author': "Camptocamp, Odoo Community Association (OCA)",
+    'maintainer': 'Odoo Community Association (OCA)',
     'category': 'Extra Tools',
     'website': 'http://www.camptocamp.com',
     'depends': ['base', 'account', 'sale', 'stock', 'crm'],
