@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-17 13:44+0000\n"
-"PO-Revision-Date: 2015-07-17 13:44+0000\n"
+"POT-Creation-Date: 2015-07-22 11:15+0000\n"
+"PO-Revision-Date: 2015-07-22 11:15+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Address Informations"
-msgstr "Address Informations"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
@@ -28,17 +28,17 @@ msgstr "Importo"
 #. module: partner_activity_report
 #: view:partner.print.activity:partner_activity_report.partner_print_activity_form
 msgid "Cancel"
-msgstr "Cancel"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Categories"
-msgstr "Categories"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "City"
-msgstr "City"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
@@ -48,22 +48,22 @@ msgstr "Codice"
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Country"
-msgstr "Country"
+msgstr ""
 
 #. module: partner_activity_report
 #: field:partner.print.activity,create_uid:0
 msgid "Created by"
-msgstr "Created by"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Created date"
-msgstr "Created date"
+msgstr ""
 
 #. module: partner_activity_report
 #: field:partner.print.activity,create_date:0
 msgid "Created on"
-msgstr "Created on"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
@@ -73,7 +73,7 @@ msgstr "Data"
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Date Deadline"
-msgstr "Date Deadline"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
@@ -83,12 +83,12 @@ msgstr "Descrizione"
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Function"
-msgstr "Function"
+msgstr ""
 
 #. module: partner_activity_report
 #: field:partner.print.activity,id:0
@@ -99,12 +99,12 @@ msgstr "ID"
 #. module: partner_activity_report
 #: field:partner.print.activity,write_uid:0
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr ""
 
 #. module: partner_activity_report
 #: field:partner.print.activity,write_date:0
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
@@ -117,120 +117,125 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: partner_activity_report
-#: code:addons/partner_activity_report/wizard/partner_activity_selection.py:66
+#: code:addons/partner_activity_report/wizard/partner_activity_selection.py:63
 #, python-format
-msgid "No partner Select"
-msgstr "No partner Select"
+msgid "No partner selected"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "No records"
-msgstr "No records"
+msgstr ""
+
+#. module: partner_activity_report
+#: model:ir.model,name:partner_activity_report.model_res_partner
+msgid "Partner"
+msgstr ""
 
 #. module: partner_activity_report
 #: model:ir.actions.report.xml,name:partner_activity_report.report_partner_activity
 msgid "Partner Activity"
-msgstr "Partner Activity"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Partner Contacts"
-msgstr "Partner Contacts"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
-msgid "Partner Contracts Renewals"
-msgstr "Partner Contracts Renewals"
+msgid "Partner Contracts"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Partner Delivery Lines"
-msgstr "Partner Delivery Lines"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Partner Informations"
-msgstr "Partner Informations"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Partner Invoices"
-msgstr "Partner Invoices"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Partner Sales Order"
-msgstr "Partner Sales Order"
+msgstr ""
 
 #. module: partner_activity_report
 #: field:partner.print.activity,partner_ids:0
 msgid "Partner ids"
-msgstr "Partner ids"
+msgstr ""
 
 #. module: partner_activity_report
 #: model:ir.model,name:partner_activity_report.model_partner_print_activity
 msgid "Partner printing activity"
-msgstr "Partner printing activity"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Phone"
-msgstr "Phone"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Planned revenue"
-msgstr "Planned revenue"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "PoBox"
-msgstr "PoBox"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:partner.print.activity:partner_activity_report.partner_print_activity_form
 msgid "Print"
-msgstr "Print"
+msgstr ""
 
 #. module: partner_activity_report
-#: model:ir.actions.act_window,name:partner_activity_report.open_credit_line_printer_wizard_menu_action
+#: model:ir.actions.act_window,name:partner_activity_report.open_partner_activity_report_wizard_menu_action
 msgid "Print Partner details"
-msgstr "Print Partner details"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:partner.print.activity:partner_activity_report.partner_print_activity_form
 msgid "Print partner activity"
-msgstr "Print partner activity"
+msgstr ""
 
 #. module: partner_activity_report
 #: field:partner.print.activity,partner_information:0
 msgid "Print partner address"
-msgstr "Print partner address"
+msgstr ""
 
 #. module: partner_activity_report
 #: field:partner.print.activity,partner_address_information:0
 msgid "Print partner contacts"
-msgstr "Print partner contacts"
+msgstr ""
 
 #. module: partner_activity_report
-#: field:partner.print.activity,partner_crm_renouvellement:0
+#: field:partner.print.activity,partner_crm:0
 msgid "Print partner recent CRM case"
-msgstr "Print partner recent CRM case"
+msgstr ""
 
 #. module: partner_activity_report
 #: field:partner.print.activity,partner_delivery_lines:0
 msgid "Print partner recent delivery lines"
-msgstr "Print partner recent delivery lines"
+msgstr ""
 
 #. module: partner_activity_report
 #: field:partner.print.activity,partner_invoice:0
 msgid "Print partner recent invoices"
-msgstr "Print partner recent invoices"
+msgstr ""
 
 #. module: partner_activity_report
 #: field:partner.print.activity,partner_sales_order:0
 msgid "Print partner recent sale orders"
-msgstr "Print partner recent sale orders"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
@@ -250,12 +255,12 @@ msgstr "Riferimento"
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Salesman"
-msgstr "Salesman"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:partner.print.activity:partner_activity_report.partner_print_activity_form
 msgid "Select part to print"
-msgstr "Select part to print"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
@@ -270,25 +275,25 @@ msgstr "Stato"
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Street"
-msgstr "Street"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Street Additional"
-msgstr "Street Additional"
+msgstr ""
 
 #. module: partner_activity_report
 #: field:partner.print.activity,user_id:0
 msgid "User"
-msgstr "User"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:website:partner_activity_report.report_partner_activity_def
 msgid "Zip"
-msgstr "Zip"
+msgstr ""
 
 #. module: partner_activity_report
 #: view:partner.print.activity:partner_activity_report.partner_print_activity_form
 msgid "or"
-msgstr "or"
+msgstr ""
 
