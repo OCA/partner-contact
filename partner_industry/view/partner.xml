@@ -8,10 +8,10 @@
             <field name="inherit_id" ref="base.view_res_partner_filter" />
             <field name="arch" type="xml">
                 <field name="category_id" position="after">
-                    <field name="industry_id" filter_domain="[('industry_ids','ilike', self)]"/>
+                    <field name="industry_id"/>
                 </field>
                 <xpath expr="//filter[@string='Country']" position="after">
-                    <filter string="Industry" context="{'group_by': 'industry_id'}"/>
+                    <filter string="Sector" context="{'group_by': 'industry_id'}"/>
                 </xpath>
             </field>
         </record>

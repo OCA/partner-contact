@@ -25,6 +25,9 @@ from openerp.osv import fields, orm
 class Industry(orm.Model):
     _name = 'res.partner.category.industry'
     _inherit = 'res.partner.category'
+    _parent_store = True
+    _parent_order = 'name'
+    _order = 'parent_left'
 
     _columns = {
         'code': fields.char('Code', size=16),
