@@ -29,6 +29,9 @@
     "demo": [
         "data/demo.xml",
     ],
+    "test": [
+        "test/test.xml",
+    ],
     "data": [
         "view/res_partner_relation_all.xml",
         'view/res_partner_relation.xml',
