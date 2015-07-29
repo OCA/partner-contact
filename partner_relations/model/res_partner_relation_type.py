@@ -58,7 +58,8 @@ class ResPartnerRelationType(models.Model):
         'Right partner category',
     )
     allow_self = fields.Boolean(
-        'Allow both sides to be the same'
+        'Allow both sides to be the same',
+        default=False,
     )
 
     @api.model
