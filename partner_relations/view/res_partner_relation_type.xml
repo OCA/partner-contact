@@ -9,6 +9,7 @@
                     <field name="name_inverse" />
                     <field name="contact_type_left" />
                     <field name="contact_type_right" />
+                    <field name="allow_self" />
                 </tree>
             </field>
         </record>
@@ -19,6 +20,7 @@
                 <form version="7.0" string="Partner relation">
                     <sheet>
                         <group>
+                            <field name="allow_self" />
                             <group
                                 colspan="2" col="2"
                                 string="Left side of relation"

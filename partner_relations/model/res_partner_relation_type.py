@@ -57,6 +57,9 @@ class ResPartnerRelationType(models.Model):
         'res.partner.category',
         'Right partner category',
     )
+    allow_self = fields.Boolean(
+        'Allow both sides to be the same'
+    )
 
     @api.model
     def _get_partner_types(self):
