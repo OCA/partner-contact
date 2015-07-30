@@ -151,16 +151,6 @@
                         </form>
                     </field>
                 </page>
-                <page name="personal-info" string="Personal Information" attrs="{'invisible': ['|',('is_company','=',True)]}">
-                    <p attrs="{'invisible': [('contact_id','=',False)]}">
-                        To see personal information about this contact, please go to to the his person form: <field name="contact_id" class="oe_inline" domain="[('contact_type','!=','attached')]" context="{'show_address': 1}"
-                        on_change="onchange_contact_id(contact_id)" options="{'always_reload': True}"/>
-                    </p>
-                    <group attrs="{'invisible': [('contact_id','!=',False)]}">
-                        <field name="birthdate_date"/>
-                        <field name="nationality_id"/>
-                    </group>
-                </page>
             </page>
             <xpath expr="//form[@string='Contact']/sheet//field[@name='category_id']" position="before">
                 <group>
@@ -176,6 +166,27 @@
                 <attribute name="attrs">{'invisible': [('contact_type','=','attached')]}</attribute>
             </xpath>
         </field>
+    </record>
+
+    <record id="view_res_partner_personal_information" model="ir.ui.view">
+        <field name="name">Contacts in several partners: personal info</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_personal_information_page.personal_information"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//page[@name='personal_information_page']">
+                    <p attrs="{'invisible': [('contact_id','=',False)]}">
+                        To see personal information about this contact, please
+                        go to to the his person form:
+                        <field name="contact_id" class="oe_inline"
+                               domain="[('contact_type','!=','attached')]"
+                               context="{'show_address': 1}"
+                               on_change="onchange_contact_id(contact_id)"
+                               options="{'always_reload': True}"/>
+                    </p>
+                </xpath>
+            </data>
+      </field>
     </record>
 
     <record model="ir.ui.view" id="view_res_partner_kanban_contact">
