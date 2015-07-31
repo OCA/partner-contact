@@ -29,7 +29,15 @@ from openerp.tests.common import TransactionCase
 from .. import exceptions as ex
 
 
-class BaseCase(TransactionCase):
+class MailInstalled():
+    def mail_installed(self):
+        """Check if ``mail`` module is installed.``"""
+        return (self.env["ir.module.module"]
+                .search([("name", "=", "mail")])
+                .state == "installed")
+
+
+class BaseCase(TransactionCase, MailInstalled):
     def setUp(self):
         super(BaseCase, self).setUp()
         self.check_fields = True
