@@ -30,6 +30,7 @@
     'data': [
         'views/res_partner.xml',
         'views/res_user.xml',
+        'views/res_company.xml',
         'data/res_partner.yml',
     ],
     'demo': [],

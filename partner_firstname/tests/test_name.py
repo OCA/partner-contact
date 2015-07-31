@@ -48,6 +48,30 @@ class PartnerContactCase(BaseCase):
         self.original.invalidate_cache()
 
 
+class PartnerContactCaseInverse(PartnerContactCase):
+    def test_copy(self):
+        """Copy the partner and compare the result."""
+        self.expect(u"%s (copy)" % self.firstname, self.lastname)
+        self.changed = self.original.with_context(lang="en_US").copy()
+
+    def create_original(self):
+        super(PartnerContactCaseInverse, self).create_original()
+        self.original.company_id.names_order = 'first_last'
+
+    def expect(self, lastname, firstname, name=None):
+        super(PartnerContactCaseInverse, self).expect(
+            lastname, firstname, name)
+        self.name = name or u"%s %s" % (firstname, lastname)
+
+    def test_whitespace_cleanup(self):
+        """Check that whitespace in name gets cleared."""
+        self.expect(u"newlästname", u"newfïrstname")
+        self.original.name = "  newfïrstname  newlästname  "
+
+        # Need this to refresh the ``name`` field
+        self.original.invalidate_cache()
+
+
 class PartnerCompanyCase(BaseCase):
     def create_original(self):
         super(PartnerCompanyCase, self).create_original()
