@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-20 09:26+0000\n"
-"PO-Revision-Date: 2015-05-20 11:28+0100\n"
-"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"POT-Creation-Date: 2015-08-02 08:21+0200\n"
+"PO-Revision-Date: 2015-08-02 08:22+0200\n"
+"Last-Translator: Matjaz Mozetic <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian <translate@matmoz.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 1.8.2\n"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
@@ -132,11 +132,12 @@ msgstr "Oznake..."
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_personal_information
-#, fuzzy
 msgid ""
 "To see personal information about this contact, please\n"
 "                        go to to the his person form:"
-msgstr "Za ogled osebnih podatkov o tem stiku pojdite na njegov glavni obrazec:"
+msgstr ""
+"Za ogled osebnih podatkov o tem stiku\n"
+"\t\t\tpojdite na njegov glavni obrazec:"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
@@ -166,4 +167,4 @@ msgstr "drugi položaji"
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "{'invisible': [('contact_type','=','attached')]}"
-msgstr ""
+msgstr "{'invisible': [('contact_type','=','attached')]}"
