@@ -25,6 +25,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+"""Test naming logic.
+
+To have more accurate results, remove the ``mail`` module before testing.
+"""
+
 from .base import BaseCase
 
 
@@ -54,6 +59,7 @@ class PartnerCompanyCase(BaseCase):
         self.original.is_company = True
 
     def test_copy(self):
+        """Copy the partner and compare the result."""
         super(PartnerCompanyCase, self).test_copy()
         self.expect(self.name, False, self.name)
 
@@ -66,6 +72,19 @@ class PartnerCompanyCase(BaseCase):
 
 class UserCase(PartnerContactCase):
     def create_original(self):
-        self.original = self.env["res.users"].create({
-            "name": u"%s %s" % (self.lastname, self.firstname),
-            "login": "firstnametest@example.com"})
+        name = u"%s %s" % (self.lastname, self.firstname)
+
+        # Cannot create users if ``mail`` is installed
+        if self.mail_installed():
+            self.original = self.env.ref("base.user_demo")
+            self.original.name = name
+        else:
+            self.original = self.env["res.users"].create({
+                "name": name,
+                "login": "firstnametest@example.com"})
+
+    def test_copy(self):
+        """Copy the partner and compare the result."""
+        # Skip if ``mail`` is installed
+        if not self.mail_installed():
+            super(UserCase, self).test_copy()

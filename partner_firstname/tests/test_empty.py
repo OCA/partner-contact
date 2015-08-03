@@ -16,7 +16,13 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+"""Test situations where names are empty.
+
+To have more accurate results, remove the ``mail`` module before testing.
+"""
+
 from openerp.tests.common import TransactionCase
+from .base import MailInstalled
 from .. import exceptions as ex
 
 
@@ -47,7 +53,16 @@ class PersonCase(CompanyCase):
     context = {"default_is_company": False}
 
 
-class UserCase(CompanyCase):
+class UserCase(CompanyCase, MailInstalled):
     """Test ``res.users``."""
     model = "res.users"
     context = {"default_login": "user@example.com"}
+
+    def tearDown(self):
+        # Cannot create users if ``mail`` is installed
+        if self.mail_installed():
+            # Skip tests
+            super(CompanyCase, self).tearDown()
+        else:
+            # Run tests
+            super(UserCase, self).tearDown()
