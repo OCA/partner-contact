@@ -1,8 +1,8 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-Module name
-===========
+Contact's disability percentage
+===============================
 
 This module was written to extend the functionality of Odoo to support setting
 a disability percentage for your contacts.
