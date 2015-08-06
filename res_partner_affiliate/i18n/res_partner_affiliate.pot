@@ -1,50 +1,48 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* res_partner_affiliate
+#	* res_partner_affiliate
 #
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015.
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0\n"
+"Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-02 08:25+0200\n"
-"PO-Revision-Date: 2015-08-02 08:25+0200\n"
-"Last-Translator: Matjaz Mozetic <m.mozetic@matmoz.si>\n"
-"Language-Team: Slovenian <translate@matmoz.si>\n"
-"Language: sl\n"
+"POT-Creation-Date: 2015-08-02 06:24+0000\n"
+"PO-Revision-Date: 2015-08-02 06:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 1.8.2\n"
 
 #. module: res_partner_affiliate
 #: view:res.partner:res_partner_affiliate.view_partner_form_add_affiliate
 #: field:res.partner,affiliate_ids:0
 msgid "Affiliates"
-msgstr "Filiale"
+msgstr ""
 
 #. module: res_partner_affiliate
 #: view:res.partner:res_partner_affiliate.view_partner_form_add_affiliate
 msgid "Contacts"
-msgstr "Stiki"
+msgstr ""
 
 #. module: res_partner_affiliate
 #: view:res.partner:res_partner_affiliate.view_partner_form_add_affiliate
 msgid "Fax:"
-msgstr "Faks:"
+msgstr ""
 
 #. module: res_partner_affiliate
 #: view:res.partner:res_partner_affiliate.view_partner_form_add_affiliate
 msgid "Mobile:"
-msgstr "Mobilni telefon:"
+msgstr ""
 
 #. module: res_partner_affiliate
 #: model:ir.model,name:res_partner_affiliate.model_res_partner
 msgid "Partner"
-msgstr "Partner"
+msgstr ""
 
 #. module: res_partner_affiliate
 #: view:res.partner:res_partner_affiliate.view_partner_form_add_affiliate
 msgid "Phone:"
-msgstr "Telefon:"
+msgstr ""
+
