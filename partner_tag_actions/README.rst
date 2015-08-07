@@ -1,18 +1,23 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-Partner Event
-=============
+Partner Tag Actions
+===================
 
 This module was written to offer a way to attach and detach tags to a partner
-while keeping a history of those changes.
+while keeping a history of those changes. Actions may be constrained to a date
+range.
+
+The intended usage of this is for organisations wishing to use tags to manage
+contacts, and requiring that those tags be automatically added or removed based
+on series of pre-determined events.
 
 Usage
 =====
 
 To use this module, you need to :
-- Creatre a res.partner
-- create a partner event
+- Create a res.partner
+- Create a partner event
 
 Bug Tracker
 ===========
