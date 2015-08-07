@@ -6,7 +6,7 @@
     'website': 'http://www.savoirfairelinux.com',
     'license': 'AGPL-3',
     'category': 'General',
-    'summary': 'Partner Event',
+    'summary': 'Partner Tag Actions',
     'depends': [
     ],
     'external_dependencies': {
