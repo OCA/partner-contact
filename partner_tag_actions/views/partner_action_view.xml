@@ -37,6 +37,8 @@
                 <tree>
                     <field name="partner_id"/>
                     <field name="date"/>
+                    <field name="date_start" />
+                    <field name="date_end" />
                     <field name="user_id"/>
                     <field name="action_type" domain="[('is_active', '=', True)]"/>
                     <field name="details"/>
