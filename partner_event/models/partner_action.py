@@ -31,18 +31,18 @@ class PartnerAction(models.Model):
     # Getters/Setters
     def _get_done(self):
         for record in self:
-            self.done = record.state == 'done'
+            record.done = record.state == 'done'
 
     def _set_done(self):
         for record in self:
-            self.state = 'done' if self.done else 'draft'
+            record.state = 'done' if record.done else 'draft'
 
     def _get_name(self):
         for record in self:
-            self.name = u"{0} [{1}] {2}".format(
-                self.date,
-                self.action_type.name,
-                self.partner_id.name,
+            record.name = u"{0} [{1}] {2}".format(
+                record.date,
+                record.action_type.name,
+                record.partner_id.name,
             )
 
     @api.depends('action_type.is_active', 'date_start', 'date_end', 'state')
@@ -75,7 +75,7 @@ class PartnerAction(models.Model):
 
     state = fields.Selection([('draft', 'Draft'),
                               ('done', 'Done')],
-                             string='Status', reuqired=True,
+                             string='Status', required=True,
                              default='draft')
 
     action_type = fields.Many2one(
