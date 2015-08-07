@@ -132,12 +132,11 @@ class PartnerAction(models.Model):
             for tag in tag_obj.browse(changes["-"]):
                 partner.category_id -= tag
             for tag in tag_obj.browse(changes["+"]):
-                partner.category_id += tag
+                partner.category_id |= tag
 
         return True
 
     @api.multi
-    @api.depends('state')
     def apply_partner(self):
         partner = self.mapped(lambda x: x.partner_id)
         actions = self.search(
@@ -146,9 +145,16 @@ class PartnerAction(models.Model):
             order="priority DESC")
         return actions.apply_all()
 
+    # Overriden methods to make sure changes are applied
     @api.model
     @api.returns('self', lambda value: value.id)
     def create(self, vals):
         res = super(PartnerAction, self).create(vals)
         res.apply_partner()
+        return res
+
+    @api.model
+    def write(self, vals):
+        res = super(PartnerAction, self).write(vals)
+        self.apply_partner()
         return res
