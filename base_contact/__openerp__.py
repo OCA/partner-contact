@@ -21,24 +21,14 @@
 
 {
     'name': 'Contacts Management',
-    'summary': u"Manage your contacts separately",
-    'version': '1.0',
+    'summary': u"[DEPRECATED] Manage your contacts separately",
+    'version': '2.0.0',
     'author': "OpenERP SA,Odoo Community Association (OCA)",
     'website': 'http://www.openerp.com',
     'category': 'Customer Relationship Management',
-    'complexity': "expert",
     'depends': [
-        'base',
+        'partner_contact_birthdate',
+        'partner_contact_in_several_companies',
+        'partner_contact_nationality',
     ],
-    'external_dependencies': {},
-    'data': [
-        'base_contact_view.xml',
-    ],
-    'demo': [
-        'base_contact_demo.xml',
-    ],
-    'test': [],
-    'installable': True,
-    'auto_install': False,
-    'images': [],
 }
