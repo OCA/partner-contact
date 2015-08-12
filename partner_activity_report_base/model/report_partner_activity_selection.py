@@ -29,7 +29,8 @@ class PartnerActivityReport(models.AbstractModel):
     def render_html(self, data=None):
         report_obj = self.env['report']
         partner_activity_obj = self.env['partner.print.activity']
-        report_name = 'partner_activity_report_base.report_partner_activity_qweb'
+        report_name = 'partner_activity_report_base.\
+            report_partner_activity_qweb'
         report = report_obj._get_report_from_name(report_name)
         wizard_selection = partner_activity_obj.browse(self.ids)[0]
 
