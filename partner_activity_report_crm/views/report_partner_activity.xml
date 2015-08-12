@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="partner_activity_report_crm.report_partner_activity_crm"
+        	inherit_id="partner_activity_report_base.report_partner_activity_def" >
+				      <xpath expr="//p[contains(@t-if, 'option_selected.partner_address_information')]" position="after">
+                        <p t-if="option_selected.partner_crm">
+                            <h2>
+                                <span>Partner Contracts</span>
+                            </h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Date Deadline</th>
+                                        <th>Quantity</th>
+                                        <th>Planned revenue</th>
+                                        <th>Created date</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="invoice_tbody">
+                                    <tr
+                                        t-if="len(partner.get_partner_crm_informations()) > 0"
+                                        t-foreach="partner.get_partner_crm_informations()"
+                                        t-as="c">
+                                        <td>
+                                            <span t-field="c.name" />
+                                        </td>
+                                        <td>
+                                            <span t-field="c.date_deadline" />
+                                        </td>
+                                        <td>
+                                            <span t-field="c.phone" />
+                                        </td>
+                                        <td>
+                                            <span t-field="c.mobile" />
+                                        </td>
+                                        <td>
+                                            <span t-field="c.email_from" />
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        t-if="len(partner.get_partner_crm_informations()) == 0">
+                                        <td colspan="5">
+                                            <span>No records</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+				      </xpath>
+
+        </template>
+    </data>
+</openerp>
+
