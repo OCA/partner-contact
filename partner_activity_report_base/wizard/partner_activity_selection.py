@@ -29,7 +29,6 @@ class partner_print_activity(models.TransientModel):
     @api.model
     def _get_partner_ids(self):
         context = self.env.context
-        print str(context)
         if context.get('active_model') != 'res.partner':
             return False
         return context.get('active_ids', False)
