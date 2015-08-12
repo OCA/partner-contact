@@ -1,0 +1,35 @@
+<openerp>
+  <data>
+
+    <record id="partner_print_activity_form" model="ir.ui.view">
+      <field name="name">partner.print.activity.form</field>
+      <field name="model">partner.print.activity</field>
+      <field name="arch" type="xml">
+        <form string="Print partner activity">
+          <separator string="Select part to print" colspan="4"/>
+          <newline/>
+          <group>
+	        <field name="partner_information" colspan="4" />
+	        <field name="partner_address_information" colspan="4" />
+          </group>
+          <newline/>
+          <footer>
+            <button class="oe_highlight" name="print_report" string="Print" type="object"/>
+            or
+            <button class="oe_link" special="cancel" string="Cancel"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <!-- for menu -->
+    <act_window name="Print Partner details"
+                res_model="partner.print.activity"
+                src_model="res.partner"
+                view_mode="form"
+                target="new"
+                key2="client_action_multi"
+                id="open_partner_activity_report_wizard_menu_action"/>
+
+  </data>
+</openerp>

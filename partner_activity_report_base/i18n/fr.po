@@ -1,0 +1,194 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_activity_report_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-12 09:13+0000\n"
+"PO-Revision-Date: 2015-08-12 09:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Address Informations"
+msgstr "Informations sur les contacts"
+
+#. module: partner_activity_report_base
+#: view:partner.print.activity:partner_activity_report_base.partner_print_activity_form
+msgid "Cancel"
+msgstr "Annulé"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Categories"
+msgstr "Catégories"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "City"
+msgstr "Ville"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Code"
+msgstr "Code"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Country"
+msgstr "Pays"
+
+#. module: partner_activity_report_base
+#: field:partner.print.activity,create_uid:0
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: partner_activity_report_base
+#: field:partner.print.activity,create_date:0
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Email"
+msgstr "Courriel"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Function"
+msgstr "Fonction"
+
+#. module: partner_activity_report_base
+#: field:partner.print.activity,id:0
+#: field:report.partner_activity_report_base.report_partner_activity_qweb,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_activity_report_base
+#: field:partner.print.activity,write_uid:0
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: partner_activity_report_base
+#: field:partner.print.activity,write_date:0
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Mobile"
+msgstr "Portable"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Name"
+msgstr "Nom"
+
+#. module: partner_activity_report_base
+#: code:addons/partner_activity_report_base/wizard/partner_activity_selection.py:53
+#, python-format
+msgid "No partner selected"
+msgstr "Aucun partenaire sélectionné"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "No records"
+msgstr "Aucun enregistrement"
+
+#. module: partner_activity_report_base
+#: model:ir.actions.report.xml,name:partner_activity_report_base.report_partner_activity
+msgid "Partner Activity"
+msgstr "Activité du partenaire"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Partner Contacts"
+msgstr "Contacts du partenaire"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Partner Informations"
+msgstr "Informations du partenaire"
+
+#. module: partner_activity_report_base
+#: field:partner.print.activity,partner_ids:0
+msgid "Partner ids"
+msgstr "Ids du partnenaire"
+
+#. module: partner_activity_report_base
+#: model:ir.model,name:partner_activity_report_base.model_partner_print_activity
+msgid "Partner printing activity"
+msgstr "Impression de l'activité du partenaire"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "PoBox"
+msgstr "Boite postale"
+
+#. module: partner_activity_report_base
+#: view:partner.print.activity:partner_activity_report_base.partner_print_activity_form
+msgid "Print"
+msgstr "Imprimer"
+
+#. module: partner_activity_report_base
+#: model:ir.actions.act_window,name:partner_activity_report_base.open_partner_activity_report_wizard_menu_action
+msgid "Print Partner details"
+msgstr "Imprimer les details du partenaire"
+
+#. module: partner_activity_report_base
+#: view:partner.print.activity:partner_activity_report_base.partner_print_activity_form
+msgid "Print partner activity"
+msgstr "Imprimer l'activité du partenaire"
+
+#. module: partner_activity_report_base
+#: field:partner.print.activity,partner_information:0
+msgid "Print partner address"
+msgstr "Imprimer les adresses du partenaire"
+
+#. module: partner_activity_report_base
+#: field:partner.print.activity,partner_address_information:0
+msgid "Print partner contacts"
+msgstr "Imprimer les contacts du partenaire"
+
+#. module: partner_activity_report_base
+#: view:partner.print.activity:partner_activity_report_base.partner_print_activity_form
+msgid "Select part to print"
+msgstr "Selectionnez les parties à imprimer"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Street"
+msgstr "Rue"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Street Additional"
+msgstr "Rue +"
+
+#. module: partner_activity_report_base
+#: field:partner.print.activity,user_id:0
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: partner_activity_report_base
+#: view:website:partner_activity_report_base.report_partner_activity_def
+msgid "Zip"
+msgstr "Code postal"
+
+#. module: partner_activity_report_base
+#: view:partner.print.activity:partner_activity_report_base.partner_print_activity_form
+msgid "or"
+msgstr "ou"
+
