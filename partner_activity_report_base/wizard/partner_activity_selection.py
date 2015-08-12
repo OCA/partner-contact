@@ -50,8 +50,8 @@ class partner_print_activity(models.TransientModel):
         self.ensure_one()
         if not self.partner_ids:
             raise api.Warning(_('No partner selected'))
-        report_name = 'partner_activity_report_base\
-            .report_partner_activity_qweb'
+        report_name = 'partner_activity_report_base.'\
+            'report_partner_activity_qweb'
         report_obj = self.env['report'].with_context(
             active_ids=self.id
             )
