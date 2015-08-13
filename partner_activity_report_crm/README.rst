@@ -5,7 +5,6 @@ Partner Activity Details for CRM
 ================================
 
 This module give a report with recent activity in CRM for this partner
-----------------------------------------------------------------------
 
 * Display crm open for this partner
 
@@ -16,7 +15,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed feedback
-`here <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_activity_report%0Aversion:%208.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`here <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_activity_report_crm%0Aversion:%208.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 
 Credits
