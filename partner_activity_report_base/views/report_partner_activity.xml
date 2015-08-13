@@ -2,10 +2,9 @@
 <openerp>
     <data>
         <template id="partner_activity_report_base.report_partner_activity_def">
-            <t t-call="report.external_layout">
+            <t t-call="report.internal_layout">
                 <div class="page">
                     <t t-foreach="o.partner_ids" t-as="partner">
-
                         <p t-if="option_selected.partner_information">
                             <h2>
                                 <span>Partner Informations</span>
@@ -121,20 +120,16 @@
                                 </tbody>
                             </table>
                         </p>
-
-                        <p style="page-break-after:always"></p>
-                    </t>
-                </div>
+                       </t>
+					 </div>
+                  <p style="page-break-after:always"></p>
             </t>
         </template>
 
         <template id="partner_activity_report_base.report_partner_activity_qweb">
-            <style type="text/css">
-                .total { border-top: 5px double darkgrey !important; }
-                .subtotal { border-top: 2px solid darkgrey !important; }
-                .col-separator { border-right: 3px solid lightgrey !important; }
-                .large-text { min-height: 50px !important;}
-            </style>
+            <t t-set="data_report_margin_top" t-value="12"/>
+	        <t t-set="data_report_header_spacing" t-value="9"/>
+	        <t t-set="data_report_dpi" t-value="110"/>
             <t t-call="report.html_container">
                 <t t-foreach="doc_ids" t-as="doc_id">
                     <t

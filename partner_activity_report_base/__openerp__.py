@@ -21,17 +21,17 @@
 
 {
     'name': 'Partner Activity Details',
-    'summary': "This module give a report with recent activity on the partner",
+    'summary': """Base extensible report for the partner activity
+     - Addresses and contacts""",
     'version': '1.2',
     'author': "Camptocamp, Odoo Community Association (OCA)",
-    'maintainer': 'Odoo Community Association (OCA)',
-    'category': 'Extra Tools',
+    'category': 'Partner and Contact Management',
     'website': 'http://www.camptocamp.com',
     'depends': ['base'],
     'data': [
         'wizard/partner_activity_selection.xml',
         'views/report_partner_activity.xml',
-        'report.xml'
+        'views/report.xml'
     ],
     'demo': [],
     'test': [],

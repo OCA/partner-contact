@@ -22,7 +22,7 @@
 from openerp import models, fields, api, _
 
 
-class partner_print_activity(models.TransientModel):
+class PartnerPrintActivity(models.TransientModel):
     _name = 'partner.print.activity'
     _description = 'Partner printing activity'
 
