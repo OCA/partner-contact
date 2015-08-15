@@ -1,0 +1,113 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* nan_partner_risk_insurance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.6\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2009-09-23 18:14:48+0000\n"
+"PO-Revision-Date: 2015-08-15 12:52+0200\n"
+"Last-Translator: Matjaz Mozetic <m.mozetic@matmoz.si>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: sl\n"
+"X-Generator: Poedit 1.8.4\n"
+
+#. module: nan_partner_risk_insurance
+#: field:res.partner,risk_insurance_code_2:0
+msgid "Insurance Code 2"
+msgstr "Zavarovalna koda 2"
+
+#. module: nan_partner_risk_insurance
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "Neveljaven XML za arhitekturo prikaza!"
+
+#. module: nan_partner_risk_insurance
+#: help:res.partner,company_credit_limit:0
+msgid "Credit limit granted by the company."
+msgstr "Kreditni limit, ki ga je družba odobrila."
+
+#. module: nan_partner_risk_insurance
+#: field:res.partner,risk_insurance_code:0
+msgid "Insurance Code"
+msgstr "Zavarovalna koda"
+
+#. module: nan_partner_risk_insurance
+#: field:res.partner,company_credit_limit:0
+msgid "Company's Credit Limit"
+msgstr "Kreditni limit družbe"
+
+#. module: nan_partner_risk_insurance
+#: help:res.partner,risk_insurance_requested:0
+msgid "Mark this field if an insurance was requested for the credit of this partner."
+msgstr "Označite to polje, če je za kredit tega partnerja zahtevano zavarovanje."
+
+#. module: nan_partner_risk_insurance
+#: help:res.partner,risk_insurance_coverage_percent:0
+msgid "Percentage of the credit covered by the insurance."
+msgstr "Odstotek kredita, ki ga krije zavarovanje."
+
+#. module: nan_partner_risk_insurance
+#: field:res.partner,risk_insurance_grant_date:0
+msgid "Insurance Grant Date"
+msgstr "Datum odobritve zavarovanja"
+
+#. module: nan_partner_risk_insurance
+#: field:res.partner,insurance_credit_limit:0
+msgid "Insurance's Credit Limit"
+msgstr "Kreditni limit zavarovanja"
+
+#. module: nan_partner_risk_insurance
+#: field:res.partner,risk_insurance_requested:0
+msgid "Insurance Requested"
+msgstr "Zavarovanje zahtevano"
+
+#. module: nan_partner_risk_insurance
+#: help:res.partner,risk_insurance_grant_date:0
+msgid "Date when the insurance was granted by the insurance company."
+msgstr "Datum, ko je zavarovalnica odobrila zavarovanje."
+
+#. module: nan_partner_risk_insurance
+#: help:res.partner,risk_insurance_code_2:0
+msgid "This fields is needed because some risk insurance companies require a supplementary code for each partner."
+msgstr "To polje je potrebno, ker nekatere zavarovalnice zahtevajo dodatno kodo za vsakega partnerja."
+
+#. module: nan_partner_risk_insurance
+#: view:res.partner:0
+msgid "Credit Insurance"
+msgstr "Zavarovanje kredita"
+
+#. module: nan_partner_risk_insurance
+#: help:res.partner,risk_insurance_code:0
+msgid "This fields is used to store the code the risk insurance company assigns to this partner."
+msgstr "To polje se uporablja za shranjevanje kode, ki jo zavarovalnica dodeli partnerju."
+
+#. module: nan_partner_risk_insurance
+#: view:res.partner:0
+msgid "Accounting"
+msgstr "Knjigovodstvo"
+
+#. module: nan_partner_risk_insurance
+#: help:res.partner,insurance_credit_limit:0
+msgid "Credit limit granted by the insurance company."
+msgstr "Kreditni limit, ki ga je odobrila zavarovalnica."
+
+#. module: nan_partner_risk_insurance
+#: field:res.partner,risk_insurance_coverage_percent:0
+msgid "Insurance's Credit Coverage"
+msgstr "Zavarovalno kritje kredita"
+
+#. module: nan_partner_risk_insurance
+#: model:ir.module.module,description:nan_partner_risk_insurance.module_meta_information
+msgid "This module adds a new tab in the partner form to introduce risk insurance information."
+msgstr "Ta modul doda nov zavihek v obrazec partnerja za obravnavo podatkov o zavarovanju tveganj."
+
+#. module: nan_partner_risk_insurance
+#: model:ir.module.module,shortdesc:nan_partner_risk_insurance.module_meta_information
+msgid "Partner Risk Insurance"
+msgstr "Partnerjevo zavarovanje tveganj"
