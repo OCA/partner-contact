@@ -38,12 +38,16 @@ class ResPartner(models.Model):
         required=False,
         store=True)
 
+    @api.model
+    def _get_computed_name(self, lastname, firstname):
+        """Write the 'name' field according to splitted data."""
+        return u" ".join((p for p in (lastname, firstname) if p))
+
     @api.one
     @api.depends("firstname", "lastname")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
-        self.name = u" ".join((p for p in (self.lastname,
-                                           self.firstname) if p))
+        self.name = self._get_computed_name(self.lastname, self.firstname)
 
     @api.one
     def _inverse_name_after_cleaning_whitespace(self):
@@ -65,8 +69,8 @@ class ResPartner(models.Model):
         else:
             self._inverse_name()
 
-    @api.one
-    def _inverse_name(self):
+    @api.model
+    def _get_inverse_name(self, name, is_company=False):
         """Try to revert the effect of :meth:`._compute_name`.
 
         - If the partner is a company, save it in the lastname.
@@ -78,15 +82,18 @@ class ResPartner(models.Model):
         trimmed whitespace.
         """
         # Company name goes to the lastname
-        if self.is_company or not self.name:
-            parts = [self.name or False, False]
-
+        if is_company or not name:
+            parts = [name or False, False]
         # Guess name splitting
         else:
-            parts = self.name.split(" ", 1)
+            parts = name.split(" ", 1)
             while len(parts) < 2:
                 parts.append(False)
+        return parts
 
+    @api.one
+    def _inverse_name(self):
+        parts = self._get_inverse_name(self.name, self.is_company)
         self.lastname, self.firstname = parts
 
     @api.one
