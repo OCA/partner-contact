@@ -40,7 +40,9 @@ class ResPartner(models.Model):
 
     @api.model
     def _get_computed_name(self, lastname, firstname):
-        """Write the 'name' field according to splitted data."""
+        """Compute the 'name' field according to splitted data.
+        You can override this method to change the order of lastname and
+        firstname the computed name"""
         return u" ".join((p for p in (lastname, firstname) if p))
 
     @api.one
@@ -77,6 +79,8 @@ class ResPartner(models.Model):
         - Otherwise, make a guess.
 
         This method can be easily overriden by other submodules.
+        You can also override this method to change the order of name's
+        attributes
 
         When this method is called, :attr:`~.name` already has unified and
         trimmed whitespace.
