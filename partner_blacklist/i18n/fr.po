@@ -1,0 +1,61 @@
+﻿# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#   * crm_blacklist
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130825-231127\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-18 08:53+0000\n"
+"PO-Revision-Date: 2013-11-18 08:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_blacklist
+#: view:res.partner:0
+msgid "Contacts"
+msgstr "Contacts"
+
+#. module: crm_blacklist
+#: view:product.product:0
+msgid "Warnings"
+msgstr "Avertissements"
+
+#. module: crm_blacklist
+#: view:res.partner:0
+msgid "Warning on the Picking"
+msgstr "Avertissement sur les Colisages"
+
+#. module: crm_blacklist
+#: view:res.partner:0
+msgid "Warning on the Purchase Order"
+msgstr "Avertissement sur les commandes d'achat"
+
+#. module: crm_blacklist
+#: code:addons/crm_blacklist/partner_listing.py:27
+#: code:addons/crm_blacklist/partner_listing.py:35
+#: field:res.partner,blacklist:0
+#: field:res.partner.category,blacklist:0
+#: model:res.partner.category,name:crm_blacklist.category_bl
+#, python-format
+msgid "Blacklist"
+msgstr "Liste noire"
+
+#. module: crm_blacklist
+#: view:res.partner:0
+msgid "Warning on the Invoice"
+msgstr "Avertissement sur la Facture"
+
+#. module: crm_blacklist
+#: model:ir.model,name:crm_blacklist.model_res_partner_category
+msgid "Partner Categories"
+msgstr "Catégories de partenaires"
+
+#. module: crm_blacklist
+#: model:ir.model,name:crm_blacklist.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
