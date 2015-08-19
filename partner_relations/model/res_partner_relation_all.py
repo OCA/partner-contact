@@ -167,9 +167,8 @@ class ResPartnerRelationAll(models.AbstractModel):
         domain = []
         if self.type_selection_id.partner_category_other is not False:
             domain.append(
-                ('category_id', 'in',
-                self.type_selection_id.partner_category_other.id)
-            )
+                         ('category_id', 'in',
+                         self.type_selection_id.partner_category_other.id))
 
         if self.type_selection_id.contact_type_other is not False:
             is_company = self.type_selection_id.contact_type_other == 'c'
