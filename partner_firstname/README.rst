@@ -24,6 +24,10 @@ For the same reason, after installing, previous names for contacts will stay in
 the *name* field, and the first time you edit any of them you will be asked to
 supply the *last name* and *first name* (just once per contact).
 
+You can use *_get_inverse_name* method to get lastname and firstname from a simple string
+and also *_get_computed_name* to get a name form the lastname and firstname. 
+These methods can be overridden to change the format specified above
+
 For further information, please visit:
 
 * https://www.odoo.com/forum/help-1
@@ -39,6 +43,7 @@ Contributors
 * Olivier Laurent <olivier.laurent@acsone.eu>
 * Hans Henrik Gabelgaard <hhg@gabelgaard.org>
 * Jairo Llopis <j.llopis@grupoesoc.es>
+* Adrien Peiffer <adrien.peiffer@acsone.eu>
 
 Maintainer
 ----------
