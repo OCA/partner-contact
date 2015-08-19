@@ -165,10 +165,10 @@ class ResPartnerRelationAll(models.AbstractModel):
     def onchange_type_selection_id(self):
         """Add domain on other_partner_id according to category_other"""
         domain = []
-        if self.type_selection_id.partner_category_other != False:
+        if self.type_selection_id.partner_category_other is not False:
             domain.append(('category_id', 'in', self.type_selection_id.partner_category_other.id))
 
-        if self.type_selection_id.contact_type_other != False:
+        if self.type_selection_id.contact_type_other is not False:
             is_company = self.type_selection_id.contact_type_other == 'c'
             domain.append(('is_company', '=', is_company))
         return {'domain': {'other_partner_id': domain}}
