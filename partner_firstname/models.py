@@ -90,7 +90,7 @@ class ResPartner(models.Model):
             parts = [name or False, False]
         # Guess name splitting
         else:
-            parts = name.split(" ", 1)
+            parts = name.strip().split(" ", 1)
             while len(parts) < 2:
                 parts.append(False)
         return parts
