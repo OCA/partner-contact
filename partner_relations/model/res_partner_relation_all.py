@@ -138,8 +138,7 @@ class ResPartnerRelationAll(models.AbstractModel):
         return super(ResPartnerRelationAll, self)._auto_init(
             cr, context=context)
 
-    @api.one
-    def get_underlying_object(self):
+    def _get_underlying_object(self):
         """Get the record on which this record is overlaid"""
         return self.env[self._overlays].browse(self.id / PADDING)
 
@@ -176,7 +175,7 @@ class ResPartnerRelationAll(models.AbstractModel):
     @api.one
     def write(self, vals):
         """divert non-problematic writes to underlying table"""
-        underlying_objs = self.get_underlying_object()
+        underlying_objs = self._get_underlying_object()
         vals = {
             key: val
             for key, val in vals.iteritems()
@@ -209,4 +208,4 @@ class ResPartnerRelationAll(models.AbstractModel):
     @api.one
     def unlink(self):
         """divert non-problematic creates to underlying table"""
-        return self.get_underlying_object().unlink()
+        return self._get_underlying_object().unlink()
