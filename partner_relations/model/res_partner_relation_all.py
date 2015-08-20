@@ -163,14 +163,18 @@ class ResPartnerRelationAll(models.AbstractModel):
     @api.onchange('type_selection_id')
     def onchange_type_selection_id(self):
         """Add domain on other_partner_id according to category_other"""
-        if not self.type_selection_id.partner_category_other:
-            return {'domain': []}
-        is_company = self.type_selection_id.partner_category_other == 'c'
-        return {
-            'domain': {
-                'other_partner_id': [('is_company', '=', is_company)],
-            }
-        }
+        domain = []
+        if self.type_selection_id.partner_category_other is not False:
+            domain.append(
+                ('category_id',
+                    'in',
+                    self.type_selection_id.partner_category_other.id)
+            )
+
+        if self.type_selection_id.contact_type_other is not False:
+            is_company = self.type_selection_id.contact_type_other == 'c'
+            domain.append(('is_company', '=', is_company))
+        return {'domain': {'other_partner_id': domain}}
 
     @api.one
     def write(self, vals):
