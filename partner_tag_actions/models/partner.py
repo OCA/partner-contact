@@ -50,6 +50,7 @@ class Partner(models.Model):
     @api.one
     def apply_actions(self):
         actions = self.action_ids.filtered(lambda a: a.state == 'done')
+        actions = actions.sorted(reverse=True)
         actions.apply_all()
         return True
 
