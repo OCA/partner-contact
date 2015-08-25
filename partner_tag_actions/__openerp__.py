@@ -18,6 +18,7 @@
         'views/partner_action_type_view.xml',
         'views/partner_action_view.xml',
         'views/partner_view.xml',
+        'data/partner_action_data.xml',
     ],
     'demo': [],
     'test': [],

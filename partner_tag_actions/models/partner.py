@@ -46,3 +46,17 @@ class Partner(models.Model):
             'view_mode': 'tree,form',
             'domain': [('partner_id', '=', self.id)],
         }
+
+    @api.one
+    def apply_actions(self):
+        actions = self.action_ids.filtered(lambda a: a.state == 'done')
+        actions.apply_all()
+        return True
+
+    @api.multi
+    def write(self, vals):
+        res = super(Partner, self).write(vals)
+        if "category_id" in vals and "norecurse" not in self.env.context:
+            self.with_context(norecurse=True).apply_actions()
+
+        return res

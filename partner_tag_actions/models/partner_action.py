@@ -45,17 +45,6 @@ class PartnerAction(models.Model):
                 record.partner_id.name,
             )
 
-    @api.depends('action_type.is_active', 'date_start', 'date_end', 'state')
-    @api.one
-    def _get_active(self):
-        today = fields.Date.context_today(self)
-        self.action_active = all([
-            self.action_type.is_active,
-            self.state == 'done',
-            not self.date_start or self.date_start <= today,
-            not self.date_end or self.date_end >= today,
-        ])
-
     # Fields
     partner_id = fields.Many2one('res.partner', string='Partner',
                                  required=True, ondelete='cascade')
@@ -68,8 +57,7 @@ class PartnerAction(models.Model):
                        default=fields.Date.context_today)
     date_start = fields.Date('Start Date',
                              default=fields.Date.context_today)
-    date_end = fields.Date('End Date',
-                           default=fields.Date.context_today)
+    date_end = fields.Date('End Date')
 
     details = fields.Text('Details')
 
@@ -82,8 +70,8 @@ class PartnerAction(models.Model):
         'partner.action.type', string='Type', required=True,
         default=lambda self: self.env['partner.action.type'].get_default(),
     )
+    is_active = fields.Boolean(help="Currently active")
     priority = fields.Integer(related="action_type.priority", store=True)
-    action_active = fields.Boolean(compute=_get_active, store=True)
 
     done = fields.Boolean(compute=_get_done, inverse=_set_done)
 
@@ -98,11 +86,54 @@ class PartnerAction(models.Model):
         self.write({'state': 'draft'})
         self.apply_partner()
 
+    def check_date_active(self):
+        today = fields.Date.context_today(self)
+        start = self.date_start or today
+        end = self.date_end or today
+        return start <= today <= end
+
+    @api.one
+    @api.depends('date_start', 'date_end', 'state')
+    def check_is_active(self, single=False):
+        """
+        Make sure an action is in/active according to its state and
+        dates, correcting its status as required.
+
+        If `single` is True, re-apply partner rules when necessary
+        """
+        if self.state == 'done' and self.check_date_active():
+            if not self.is_active:
+                self.is_active = True
+        elif self.is_active:
+            self.action_outdated(single=single)
+
+    def action_outdated(self, single=False):
+        """
+        Event is outdated, revert its changes
+
+        if `single` is True, re-apply partner actions
+        """
+        if not self.is_active:
+            return
+
+        self.is_active = False
+        action = self.action_type
+        if action.add_tag:
+            self.partner_id.category_id -= action.add_tag
+
+        if not single:
+            # We re-apply partner actions because this action may have
+            # prevented another one from applying
+            self.apply_partner()
+        return True
+
     # Cron
     @api.model
     def apply_active_actions(self):
+        # We may want to limit this to actions that have start/end dates
+        # around today to pick up changes when appropriate
         active_actions = self.search(
-            [('action_active', '=', True)],
+            [('state', '=', 'done')],
             order="partner_id, priority DESC")
 
         return active_actions.apply_all()
@@ -115,6 +146,10 @@ class PartnerAction(models.Model):
         tag_obj = self.env["res.partner.category"]
         # Collect the result of all add/remove tags
         for action in self:
+            action.check_is_active(single=True)
+            if not action.is_active:
+                continue
+
             partner = partner_writes.setdefault(action.partner_id.id,
                                                 {"+": set(), "-": set()})
             partners.setdefault(action.partner_id.id, action.partner_id)
@@ -139,11 +174,8 @@ class PartnerAction(models.Model):
     @api.multi
     def apply_partner(self):
         partner = self.mapped(lambda x: x.partner_id)
-        actions = self.search(
-            [('action_active', '=', True),
-             ('partner_id', '=', partner.id)],
-            order="priority DESC")
-        return actions.apply_all()
+        partner.apply_actions()
+        return True
 
     # Overriden methods to make sure changes are applied
     @api.model
@@ -153,7 +185,7 @@ class PartnerAction(models.Model):
         res.apply_partner()
         return res
 
-    @api.model
+    @api.multi
     def write(self, vals):
         res = super(PartnerAction, self).write(vals)
         self.apply_partner()
