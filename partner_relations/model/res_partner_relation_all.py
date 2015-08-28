@@ -162,14 +162,40 @@ class ResPartnerRelationAll(models.AbstractModel):
 
     @api.onchange('type_selection_id')
     def onchange_type_selection_id(self):
-        """Add domain on other_partner_id according to category_other"""
-        if not self.type_selection_id.partner_category_other:
-            return {'domain': []}
-        is_company = self.type_selection_id.partner_category_other == 'c'
+        """Add domain on other_partner_id according to category_other and
+        contact_type_other"""
+        domain = []
+        if self.type_selection_id.contact_type_other:
+            domain.append(
+                ('is_company', '=',
+                 self.type_selection_id.contact_type_other == 'c'))
+        if self.type_selection_id.partner_category_other:
+            domain.append(
+                ('category_id', 'in',
+                 self.type_selection_id.partner_category_other.ids))
         return {
             'domain': {
-                'other_partner_id': [('is_company', '=', is_company)],
+                'other_partner_id': domain,
             }
+        }
+
+    @api.onchange('this_partner_id')
+    def onchange_this_partner_id(self):
+        if not self.this_partner_id:
+            return {'domain': {'type_selection_id': []}}
+        return {
+            'domain': {
+                'type_selection_id': [
+                    '|',
+                    ('contact_type_this', '=', False),
+                    ('contact_type_this', '=',
+                     'c' if self.this_partner_id else 'p'),
+                    '|',
+                    ('partner_category_this', '=', False),
+                    ('partner_category_this', 'in',
+                     self.this_partner_id.category_id.ids),
+                ],
+            },
         }
 
     @api.one
