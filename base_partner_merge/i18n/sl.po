@@ -1,0 +1,320 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_partner_merge
+# 
+# Translators:
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-28 15:54+0000\n"
+"PO-Revision-Date: 2015-05-28 07:08+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,exclude_contact:0
+msgid "A user associated to the contact"
+msgstr "Uporabnik povezan s stikom"
+
+#. module: base_partner_merge
+#: code:addons/base_partner_merge/base_partner_merge.py:350
+#, python-format
+msgid ""
+"All contacts must have the same email. Only the Administrator can merge "
+"contacts with different emails."
+msgstr "Vsi stiki morajo imeti isti e-poštni naslov. Le administrator lahko združuje stike z različnimi e-poštnimi naslovi."
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Are you sure to execute the automatic merge of your contacts ?"
+msgstr "Ste prepričani, da želite izvesti samodejno združitev svojih stikov?"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid ""
+"Are you sure to execute the list of automatic merges of your contacts ?"
+msgstr "Ste prepričani, da želite izvesti seznam samodejnih združitev svojih stikov?"
+
+#. module: base_partner_merge
+#: model:ir.actions.act_window,name:base_partner_merge.action_partner_merge
+msgid "Automatic Merge"
+msgstr "Samodejna združitev"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Automatic Merge Wizard"
+msgstr "Čarovnik za samodejno združitev"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Cancel"
+msgstr "Preklic"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Close"
+msgstr "Zaključi"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,partner_ids:0
+msgid "Contacts"
+msgstr "Stiki"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,create_uid:0
+#: field:base.partner.merge.line,create_uid:0
+msgid "Created by"
+msgstr "Ustvaril"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,create_date:0
+#: field:base.partner.merge.line,create_date:0
+msgid "Created on"
+msgstr "Ustvarjeno"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,current_line_id:0
+msgid "Current Line"
+msgstr "Trenutna postavka"
+
+#. module: base_partner_merge
+#: model:ir.actions.act_window,name:base_partner_merge.base_partner_merge_automatic_act
+#: model:ir.ui.menu,name:base_partner_merge.partner_merge_automatic_menu
+msgid "Deduplicate Contacts"
+msgstr "Razdvoji stike"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Deduplicate the other Contacts"
+msgstr "Razdvoji ostale stike"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,dst_partner_id:0
+msgid "Destination Contact"
+msgstr "Ciljni stik"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,group_by_email:0
+msgid "Email"
+msgstr "E-pošta"
+
+#. module: base_partner_merge
+#: code:addons/base_partner_merge/base_partner_merge.py:339
+#: code:addons/base_partner_merge/base_partner_merge.py:349
+#: code:addons/base_partner_merge/base_partner_merge.py:374
+#: code:addons/base_partner_merge/base_partner_merge.py:510
+#, python-format
+msgid "Error"
+msgstr "Napaka"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Exclude contacts having"
+msgstr "Izvzemi stike z"
+
+#. module: base_partner_merge
+#: selection:base.partner.merge.automatic.wizard,state:0
+msgid "Finished"
+msgstr "Končano"
+
+#. module: base_partner_merge
+#: code:addons/base_partner_merge/base_partner_merge.py:340
+#, python-format
+msgid ""
+"For safety reasons, you cannot merge more than 3 contacts together. You can "
+"re-open the wizard several times if needed."
+msgstr "Iz varnostnih razlogov ni dovoljeno združevati več kot 3 stike istočasno. Lahko pa večkrat zaženete čarovnika, če je potrebno."
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,number_group:0
+msgid "Group of Contacts"
+msgstr "Skupina stikov"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,id:0
+#: field:base.partner.merge.line,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.line,aggr_ids:0
+msgid "Ids"
+msgstr "Id-ji"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,group_by_is_company:0
+msgid "Is Company"
+msgstr "Je družba"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,exclude_journal_item:0
+msgid "Journal Items associated to the contact"
+msgstr "Dnevniške postavke povezane s stikom"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,write_uid:0
+#: field:base.partner.merge.line,write_uid:0
+msgid "Last Updated by"
+msgstr "Zadnji posodobil"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,write_date:0
+#: field:base.partner.merge.line,write_date:0
+msgid "Last Updated on"
+msgstr "Zadnjič posodobljeno"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,line_ids:0
+msgid "Lines"
+msgstr "Postavke"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,maximum_group:0
+msgid "Maximum of Group of Contacts"
+msgstr "Maksimum skupine stikov"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge Automatically"
+msgstr "Samodejno združi"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge Automatically all process"
+msgstr "Proces samodejne združitve vseh"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge Selection"
+msgstr "Združi izbor"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge the following contacts"
+msgstr "Združi sledeče stike"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge with Manual Check"
+msgstr "Združitev z ročnim preverjanjem"
+
+#. module: base_partner_merge
+#: code:addons/base_partner_merge/base_partner_merge.py:391
+#, python-format
+msgid "Merged with the following partners:"
+msgstr "Združeno s sledečimi partnerji:"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.line,min_id:0
+msgid "MinID"
+msgstr "MinID"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,group_by_name:0
+msgid "Name"
+msgstr "Naziv"
+
+#. module: base_partner_merge
+#: code:addons/base_partner_merge/base_partner_merge.py:375
+#, python-format
+msgid ""
+"Only the destination contact may be linked to existing Journal Items. Please"
+" ask the Administrator if you need to merge several contacts linked to "
+"existing Journal Items."
+msgstr "Le ciljni stik je lahko povezan z obstoječimi dnevniškimi vnosi. Če želite združiti več stikov povezanih z obstoječimi dnevniškimi vnosi, se obrnite na administratorja."
+
+#. module: base_partner_merge
+#: selection:base.partner.merge.automatic.wizard,state:0
+msgid "Option"
+msgstr "Opcija"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Options"
+msgstr "Opcije"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,group_by_parent_id:0
+msgid "Parent Company"
+msgstr "Nadrejena družba"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Partners"
+msgstr "Partnerji"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Search duplicates based on duplicated data in"
+msgstr "Iskanje duplikatov na osnovi podvojenih podatkov v"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid ""
+"Select the list of fields used to search for\n"
+"                            duplicated records. If you select several fields,\n"
+"                            OpenERP will propose you to merge only those having\n"
+"                            all these fields in common. (not one of the fields)."
+msgstr "Izberi seznam polj, ki se uporablja za iskanje\npodvojenih zapisov. Če izberete več polj, bo\nsistem predlagal združitev le tistih, ki imajo skupna\nvsa ta polja. (ne tista iz polj)."
+
+#. module: base_partner_merge
+#: selection:base.partner.merge.automatic.wizard,state:0
+msgid "Selection"
+msgstr "Izbor"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Skip these contacts"
+msgstr "Preskoči te stike"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,state:0
+msgid "State"
+msgstr "Stanje"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid ""
+"The selected contacts will be merged together. All\n"
+"                                documents linking to one of these contacts will be\n"
+"                                redirected to the aggregated contact. You can remove\n"
+"                                contacts from this list to avoid merging them."
+msgstr "Izbrani stiki bodo samodejno združeni. Vsi\ndokumenti povezani s temi stiki, bodo preusmerjeni\nna združen stik. Odstranite stike, ki jih ne želite\nzdružiti iz tega seznama"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "There is no more contacts to merge for this request..."
+msgstr "Za ta zahtevek ni več stikov za združevanje..."
+
+#. module: base_partner_merge
+#: model:ir.ui.menu,name:base_partner_merge.root_menu
+msgid "Tools"
+msgstr "Orodja"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,group_by_vat:0
+msgid "VAT"
+msgstr "DDV"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.line,wizard_id:0
+msgid "Wizard"
+msgstr "Čarovnik"
+
+#. module: base_partner_merge
+#: code:addons/base_partner_merge/base_partner_merge.py:511
+#, python-format
+msgid "You have to specify a filter for your selection"
+msgstr "Določite filter za vaš izbor"
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "or"
+msgstr "ali"
