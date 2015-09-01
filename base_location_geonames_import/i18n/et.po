@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-24 00:41+0000\n"
-"PO-Revision-Date: 2017-04-24 00:41+0000\n"
+"POT-Creation-Date: 2017-06-10 01:50+0000\n"
+"PO-Revision-Date: 2017-06-10 01:50+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
+"Language-Team: Estonian (https://www.transifex.com/oca/teams/23907/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: it\n"
+"Language: et\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_location_geonames_import
@@ -24,13 +24,11 @@ msgid ""
 ", create new location entries if not found already in the system, and "
 "<b>delete missing entries</b> from new file."
 msgstr ""
-", creare nuove voci località, se non già presenti nel sistema, e <b> "
-"eliminare le voci mancanti </ b> dal nuovo file."
 
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid "Cancel"
-msgstr "Annulla"
+msgstr "Loobu"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,help:base_location_geonames_import.field_better_zip_geonames_import_letter_case
@@ -38,29 +36,26 @@ msgid ""
 "Converts retreived city and state names to Title Case (upper case on each "
 "first letter of a word) or Upper Case (all letters upper case)."
 msgstr ""
-"Converte i nomi recuperati di città e stato con iniziale maiuscola "
-"(maiuscole su ogni prima lettera di una parola) o tutte maiuscole (con tutte"
-" lettere maiuscole)."
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_country_id
 msgid "Country"
-msgstr "Paese"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_create_uid
 msgid "Created by"
-msgstr "Creato da"
+msgstr "Loonud"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_create_date
 msgid "Created on"
-msgstr "Creato il"
+msgstr "Loodud"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_display_name
 msgid "Display Name"
-msgstr "Nome da visualizzare"
+msgstr "Näidatav nimi"
 
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
@@ -68,14 +63,12 @@ msgid ""
 "For the selected country, this wizard will download the latest version of "
 "the list of cities from"
 msgstr ""
-"Per la nazione selezionata, questo wizard scaricherà l'ultima versione della"
-" lista delle città"
 
 #. module: base_location_geonames_import
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:129
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
-msgstr "Errore %d mentre si stava scaricando il file %s."
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_id
@@ -85,39 +78,39 @@ msgstr "ID"
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid "Import"
-msgstr "Importa"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_better_zip_geonames_import
 msgid "Import Better Zip from Geonames"
-msgstr "Importa Better Zip da Geonames"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.actions.act_window,name:base_location_geonames_import.better_zip_geonames_import_action
 #: model:ir.ui.menu,name:base_location_geonames_import.better_zip_geonames_import_menu
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid "Import from Geonames"
-msgstr "Importazione da Geonames"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import___last_update
 msgid "Last Modified on"
-msgstr "Ultima modifica il"
+msgstr "Viimati muudetud"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_write_uid
 msgid "Last Updated by"
-msgstr "Ultimo caricamento il"
+msgstr "Viimati uuendatud"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_write_date
 msgid "Last Updated on"
-msgstr "Ultimo caricamento di"
+msgstr "Viimati uuendatud"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_letter_case
 msgid "Letter Case"
-msgstr "Maiuscolo/Minuscolo"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:71
@@ -126,25 +119,23 @@ msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
 "country (%s)."
 msgstr ""
-"Il codice paese all'interno del file (%s) non corrisponde al paese "
-"selezionato (%s)."
 
 #. module: base_location_geonames_import
 #: selection:better.zip.geonames.import,letter_case:0
 msgid "Title Case"
-msgstr "Iniziale Maiuscola"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: selection:better.zip.geonames.import,letter_case:0
 msgid "Unchanged"
-msgstr "Invariato"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: selection:better.zip.geonames.import,letter_case:0
 msgid "Upper Case"
-msgstr "Lettere Maiuscole"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid "geonames.org"
-msgstr "geonames.org"
+msgstr ""
