@@ -1,54 +1,65 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* partner_firstname
-#
+# * partner_firstname
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0\n"
+"Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-22 13:33+0100\n"
-"PO-Revision-Date: 2015-05-22 13:38+0100\n"
-"Last-Translator: Hans Henrik Gabelgaard <hhg@gabelgaard.org>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2015-08-28 15:54+0000\n"
+"PO-Revision-Date: 2015-07-03 11:31+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Danish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8\n"
+"Content-Transfer-Encoding: \n"
 "Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/partner.py:81
-#: code:addons/partner_firstname/res_user.py:35
-#: code:addons/partner_firstname/tests/test_partner_firstname.py:56
-#: code:addons/partner_firstname/tests/test_partner_firstname.py:57
-#: code:addons/partner_firstname/tests/test_partner_firstname.py:71
-#: code:addons/partner_firstname/tests/test_partner_firstname.py:72
+#: code:addons/partner_firstname/exceptions.py:26
 #, python-format
-msgid "%s (copy)"
-msgstr "%s (kopi)"
-
-#. module: partner_firstname
-#: model:ir.model,name:partner_firstname.model_res_users
-msgid "Users"
-msgstr "Brugere"
+msgid "Error(s) with partner %d's name."
+msgstr ""
 
 #. module: partner_firstname
 #: field:res.partner,firstname:0
-msgid "Firstname"
-msgstr "Fornavn"
+msgid "First name"
+msgstr ""
+
+#. module: partner_firstname
+#: view:res.partner:partner_firstname.view_partner_form_firstname
+msgid "Is a Company?"
+msgstr "Er et firma?"
 
 #. module: partner_firstname
 #: field:res.partner,lastname:0
-msgid "Lastname"
-msgstr "Efternavn"
+msgid "Last name"
+msgstr ""
 
 #. module: partner_firstname
-#: view:res.partner:0
-msgid "Is a Company?"
-msgstr "Er et firma?"
+#: code:addons/partner_firstname/exceptions.py:23
+#, python-format
+msgid "No name is set."
+msgstr ""
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
 msgid "Partner"
 msgstr "Partner"
+
+#. module: partner_firstname
+#: view:res.users:partner_firstname.view_users_form
+msgid "True"
+msgstr ""
+
+#. module: partner_firstname
+#: view:res.partner:partner_firstname.view_partner_form_firstname
+#: view:res.partner:partner_firstname.view_partner_simple_form_firstname
+msgid ""
+"{\n"
+"                    'readonly': [('is_company', '=', False)],\n"
+"                    'required': [('is_company', '=', True)]\n"
+"                }"
+msgstr ""

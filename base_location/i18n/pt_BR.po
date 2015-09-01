@@ -1,0 +1,150 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_location
+# 
+# Translators:
+# danimaribeiro <danimaribeiro@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-28 15:54+0000\n"
+"PO-Revision-Date: 2015-07-20 19:25+0000\n"
+"Last-Translator: danimaribeiro <danimaribeiro@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: base_location
+#: model:ir.actions.act_window,name:base_location.action_zip_tree
+msgid "Cites/locations Management"
+msgstr "Gerenciamento de Cidade/locais"
+
+#. module: base_location
+#: field:res.country.state,better_zip_ids:0
+msgid "Cities"
+msgstr "Cidades"
+
+#. module: base_location
+#: model:ir.ui.menu,name:base_location.zip_base
+msgid "Cities/Locations Management"
+msgstr "Gerenciamento Cidade/Locais"
+
+#. module: base_location
+#: field:res.better.zip,city:0
+msgid "City"
+msgstr "Cidade"
+
+#. module: base_location
+#: field:res.better.zip,code:0
+msgid "City Code"
+msgstr "Código da cidade"
+
+#. module: base_location
+#: view:res.company:base_location.view_company_form_city
+#: view:res.partner:base_location.view_partner_form
+msgid "City completion"
+msgstr "Autocompletar de cidades"
+
+#. module: base_location
+#: field:res.partner,zip_id:0
+msgid "City/Location"
+msgstr "Cidade/Localização"
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_better_zip
+msgid "City/locations completion object"
+msgstr "Objeto autocompletar de Cidades/Locais"
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: base_location
+#: view:res.better.zip:base_location.view_better_zip_filter
+#: field:res.better.zip,country_id:0
+#: view:res.country:base_location.view_country_search
+msgid "Country"
+msgstr "País"
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_country_state
+msgid "Country state"
+msgstr "Estado"
+
+#. module: base_location
+#: field:res.better.zip,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: base_location
+#: field:res.better.zip,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: base_location
+#: view:res.better.zip:base_location.view_better_zip_filter
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: base_location
+#: field:res.better.zip,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: base_location
+#: field:res.better.zip,write_uid:0
+msgid "Last Updated by"
+msgstr "Útima atualização por"
+
+#. module: base_location
+#: field:res.better.zip,write_date:0
+msgid "Last Updated on"
+msgstr "Útima atualização em"
+
+#. module: base_location
+#: field:res.company,better_zip_id:0
+msgid "Location"
+msgstr "Localização"
+
+#. module: base_location
+#: field:res.better.zip,display_name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_partner
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: base_location
+#: view:res.better.zip:base_location.view_better_zip_filter
+msgid "Search city"
+msgstr "Buscar cidade"
+
+#. module: base_location
+#: view:res.better.zip:base_location.view_better_zip_filter
+#: field:res.better.zip,state_id:0
+msgid "State"
+msgstr "Estado"
+
+#. module: base_location
+#: help:res.better.zip,code:0
+msgid "The official code for the city"
+msgstr "O código oficial da cidade"
+
+#. module: base_location
+#: help:res.company,better_zip_id:0
+msgid "Use the city name or the zip code to search the location"
+msgstr "Use o nome da cidade ou o CEP para pesquisar a localização"
+
+#. module: base_location
+#: view:res.better.zip:base_location.better_zip_form
+#: view:res.better.zip:base_location.better_zip_tree
+#: field:res.better.zip,name:0
+msgid "ZIP"
+msgstr "CEP"

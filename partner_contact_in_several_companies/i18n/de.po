@@ -1,22 +1,22 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* base_contact
-#
-# Rudolf Schnapka <schnapkar@golive-saar.de>, 2014.
+# * partner_contact_in_several_companies
+# 
+# Translators:
+# Rudolf Schnapka <schnapkar@golive-saar.de>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0\n"
+"Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-20 09:26+0000\n"
-"PO-Revision-Date: 2015-05-20 11:27+0100\n"
-"Last-Translator: Rudolf Schnapka <schnapkar@golive-saar.de>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
-"Language: de\n"
+"POT-Creation-Date: 2015-08-28 15:54+0000\n"
+"PO-Revision-Date: 2015-08-06 21:26+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"X-Generator: Poedit 1.7.6\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
@@ -132,13 +132,10 @@ msgstr "Schlagworte..."
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_personal_information
-#, fuzzy
 msgid ""
 "To see personal information about this contact, please\n"
 "                        go to to the his person form:"
 msgstr ""
-"Um persönliche Auskunft zu diesem Kontakt zu erhalten, gehen Sie bitte auf "
-"die Seite persönlich:"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit

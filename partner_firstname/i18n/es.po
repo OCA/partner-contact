@@ -1,21 +1,21 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * partner_firstname
-#
+# * partner_firstname
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0\n"
+"Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-30 07:53+0000\n"
-"PO-Revision-Date: 2015-03-30 10:01+0100\n"
-"Last-Translator: Jairo Llopis <j.llopis@grupoesoc.es>\n"
-"Language-Team: \n"
-"Language: es\n"
+"POT-Creation-Date: 2015-08-28 15:54+0000\n"
+"PO-Revision-Date: 2015-07-03 11:32+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"X-Generator: Poedit 1.7.5\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:26
@@ -29,7 +29,7 @@ msgid "First name"
 msgstr "Nombre"
 
 #. module: partner_firstname
-#: view:res.partner:partner_firstname.partner_form
+#: view:res.partner:partner_firstname.view_partner_form_firstname
 msgid "Is a Company?"
 msgstr "¿Es una empresa?"
 
@@ -39,7 +39,7 @@ msgid "Last name"
 msgstr "Apellido"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:40
+#: code:addons/partner_firstname/exceptions.py:23
 #, python-format
 msgid "No name is set."
 msgstr "No se ha establecido ningún nombre."
@@ -49,11 +49,17 @@ msgstr "No se ha establecido ningún nombre."
 msgid "Partner"
 msgstr "Empresa"
 
-#~ msgid "True"
-#~ msgstr "Verdadero"
+#. module: partner_firstname
+#: view:res.users:partner_firstname.view_users_form
+msgid "True"
+msgstr ""
 
-#~ msgid "%s (copy)"
-#~ msgstr "%s (copia)"
-
-#~ msgid "Users"
-#~ msgstr "Usuarios"
+#. module: partner_firstname
+#: view:res.partner:partner_firstname.view_partner_form_firstname
+#: view:res.partner:partner_firstname.view_partner_simple_form_firstname
+msgid ""
+"{\n"
+"                    'readonly': [('is_company', '=', False)],\n"
+"                    'required': [('is_company', '=', True)]\n"
+"                }"
+msgstr ""

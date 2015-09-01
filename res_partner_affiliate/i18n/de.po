@@ -1,33 +1,40 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* res_partner_affiliate
-#
+# * res_partner_affiliate
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0\n"
+"Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-01 12:14+0000\n"
-"PO-Revision-Date: 2013-02-01 12:14+0000\n"
-"Last-Translator: <>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2015-08-28 15:54+0000\n"
+"PO-Revision-Date: 2015-05-22 13:07+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: res_partner_affiliate
-#: view:res.partner:0
-msgid "Phone:"
-msgstr "Tel.:"
-
-#. module: res_partner_affiliate
-#: view:res.partner:0
+#: view:res.partner:res_partner_affiliate.view_partner_form_add_affiliate
 #: field:res.partner,affiliate_ids:0
 msgid "Affiliates"
 msgstr "Tochtergesellschaften"
 
 #. module: res_partner_affiliate
-#: view:res.partner:0
+#: view:res.partner:res_partner_affiliate.view_partner_form_add_affiliate
+msgid "Contacts"
+msgstr ""
+
+#. module: res_partner_affiliate
+#: view:res.partner:res_partner_affiliate.view_partner_form_add_affiliate
+msgid "Fax:"
+msgstr ""
+
+#. module: res_partner_affiliate
+#: view:res.partner:res_partner_affiliate.view_partner_form_add_affiliate
 msgid "Mobile:"
 msgstr "Mobil:"
 
@@ -37,7 +44,6 @@ msgid "Partner"
 msgstr ""
 
 #. module: res_partner_affiliate
-#: view:res.partner:0
-msgid "Fax:"
-msgstr ""
-
+#: view:res.partner:res_partner_affiliate.view_partner_form_add_affiliate
+msgid "Phone:"
+msgstr "Tel.:"
