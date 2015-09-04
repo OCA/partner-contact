@@ -18,6 +18,9 @@ system parameter.
 Usage
 =====
 
+Go to *Sales > Configuration > Address book > Localization > Import from Geonames*,
+having Sales Manager permissions, and click on it to open a wizard.
+
 When you start the wizard, it will ask you to select a country. Then, for the
 selected country, it will delete all the current better zip entries, download
 the latest version of the list of cities from geonames.org and create new
