@@ -11,12 +11,18 @@ unicodecsv.
 Configuration
 =============
 
+For seeing the menu, you need to activate *Technical features* option in your 
+user and to be *Sales manager*.
+
 If want want/need to modify the default URL
 (http://download.geonames.org/export/zip/), you can set the 'geonames.url'
 system parameter.
 
 Usage
 =====
+
+Go to *Sales > Configuration > Address book > Localization > Import from Geonames*,
+and click on it to open a wizard.
 
 When you start the wizard, it will ask you to select a country. Then, for the
 selected country, it will delete all the current better zip entries, download
