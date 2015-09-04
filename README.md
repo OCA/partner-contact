@@ -1,3 +1,4 @@
+[![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat/134/8.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-partner-contact-134)
 [![Build Status](https://travis-ci.org/OCA/partner-contact.svg?branch=8.0)](https://travis-ci.org/OCA/partner-contact)
 [![Coverage Status](https://coveralls.io/repos/OCA/partner-contact/badge.svg?branch=8.0)](https://coveralls.io/r/OCA/partner-contact?branch=8.0)
 
