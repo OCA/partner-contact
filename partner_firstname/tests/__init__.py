@@ -28,4 +28,4 @@
 #
 ##############################################################################
 
-from . import test_defaults, test_empty, test_name, test_onchange
+from . import test_defaults, test_delete, test_empty, test_name, test_onchange
