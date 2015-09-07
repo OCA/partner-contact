@@ -62,8 +62,9 @@ class CompanyCase(PersonCase):
     context = {"default_is_company": True}
 
     def setUp(self):
-        return super(CompanyCase, self).setUp()
-        self.values.update(lastname=self.values["name"], firstname=False)
+        super(CompanyCase, self).setUp()
+        self.good_values.update(lastname=self.values["name"], firstname=False)
+        self.values = self.good_values.copy()
 
 
 class UserCase(PersonCase, MailInstalled):
