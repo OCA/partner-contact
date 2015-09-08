@@ -21,12 +21,13 @@
 {
     'name': 'Partner first name and last name',
     'summary': "Split first name and last name for non company partners",
-    'version': '8.0.2.1.0',
-    'author': "Camptocamp,Odoo Community Association (OCA)",
+    'version': '8.0.2.1.1',
+    'author': "Camptocamp, Grupo ESOC, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     'maintainer': 'Camptocamp, Acsone',
     'category': 'Extra Tools',
-    'website': 'http://www.camptocamp.com, http://www.acsone.eu',
+    'website':
+        'http://www.camptocamp.com, http://www.acsone.eu, http://grupoesoc.es',
     'depends': ['base'],
     'data': [
         'views/res_partner.xml',

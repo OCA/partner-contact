@@ -40,7 +40,8 @@ class Partner(models.Model):
     @api.depends("birthdate_date")
     def _birthdate_compute(self):
         """Store a string of the new date in the old field."""
-        self.birthdate = self.birthdate_date
+        if self.exists():
+            self.birthdate = self.birthdate_date
 
     @api.one
     def _birthdate_inverse(self):

@@ -3,7 +3,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp.tests.common import TransactionCase
-from .base import MailInstalled
 
 
 class CompanyCase(TransactionCase):
@@ -18,7 +17,7 @@ class CompanyCase(TransactionCase):
 
         See https://github.com/OCA/partner-contact/issues/154.
         """
-        data = {"name": u"Söme name"}
+        data = {"name": u"Söme name", "birthdate": "2015-09-28"}
         record = self.env[self.model].with_context(**self.context).create(data)
         record.unlink()
         record.recompute()
@@ -26,13 +25,3 @@ class CompanyCase(TransactionCase):
 
 class PersonCase(CompanyCase):
     context = {"default_is_company": False}
-
-
-class UserCase(CompanyCase, MailInstalled):
-    model = "res.users"
-    context = {"default_login": "user@example.com"}
-
-    def test_computing_after_unlink(self):
-        # Cannot create users if ``mail`` is installed
-        if not self.mail_installed():
-            super(UserCase, self).test_computing_after_unlink()
