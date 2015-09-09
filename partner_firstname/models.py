@@ -99,8 +99,7 @@ class ResPartner(models.Model):
     @api.depends("firstname", "lastname")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
-        if self.exists():
-            self.name = self._get_computed_name(self.lastname, self.firstname)
+        self.name = self._get_computed_name(self.lastname, self.firstname)
 
     @api.one
     def _inverse_name_after_cleaning_whitespace(self):
