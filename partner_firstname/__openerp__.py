@@ -21,7 +21,7 @@
 {
     'name': 'Partner first name and last name',
     'summary': "Split first name and last name for non company partners",
-    'version': '8.0.2.1.1',
+    'version': '8.0.2.1.0',
     'author': "Camptocamp, Grupo ESOC, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     'maintainer': 'Camptocamp, Acsone',
