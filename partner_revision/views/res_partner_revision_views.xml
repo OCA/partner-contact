@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data noupdate="0">
+    <record id="view_res_partner_revision_tree" model="ir.ui.view">
+      <field name="name">res.partner.revision.tree</field>
+      <field name="model">res.partner.revision</field>
+      <field name="arch" type="xml">
+        <tree string="Partner Revision">
+          <field name="partner_id"/>
+          <field name="date"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_res_partner_revision_form" model="ir.ui.view">
+      <field name="name">res.partner.revision.form</field>
+      <field name="model">res.partner.revision</field>
+      <field name="arch" type="xml">
+        <form string="Partner Revision">
+          <sheet string="Partner Revision">
+            <group>
+              <field name="partner_id"/>
+              <field name="date"/>
+            </group>
+            <group>
+              <field name="note"/>
+            </group>
+            <group>
+              <field name="change_ids" nolabel="1">
+                <tree>
+                  <field name="field_id" context="{'no_open': true}"/>
+                  <field name="current_value"/>
+                  <field name="new_value"/>
+                  <field name="state"/>
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_res_partner_revision_search" model="ir.ui.view">
+      <field name="name">res.partner.revision.search</field>
+      <field name="model">res.partner.revision</field>
+      <field name="arch" type="xml">
+        <search string="Partner Revision">
+          <field name="partner_id"/>
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_res_partner_revision_view">
+      <field name="name">Partner Revision</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">res.partner.revision</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="search_view_id" ref="view_res_partner_revision_search"/>
+    </record>
+
+    <menuitem id="menu_res_partner_revision"
+      parent="base.menu_base_config"
+      sequence="20"
+      action="action_res_partner_revision_view"/>
+  </data>
+</openerp>
