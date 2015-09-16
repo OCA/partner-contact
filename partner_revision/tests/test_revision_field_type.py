@@ -1,0 +1,160 @@
+# -*- coding: utf-8 -*-
+#
+#
+#    Authors: Guewen Baconnier
+#    Copyright 2015 Camptocamp SA
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#
+
+from openerp.tests import common
+from .common import RevisionMixin
+
+
+class TestRevisionFieldType(RevisionMixin, common.TransactionCase):
+    """ Check how revision are generated and applied based on the rules.
+
+    We do not really care about the types of the fields in this test suite,
+    but we have to ensure that the general revision flows work as expected.
+    """
+
+    def _setup_behavior(self):
+        RevisionBehavior = self.env['revision.behavior']
+        partner_model_id = self.env.ref('base.model_res_partner').id
+        fields = (('char', 'ref'),
+                  ('text', 'comment'),
+                  ('boolean', 'customer'),
+                  ('date', 'date'),
+                  ('integer', 'color'),
+                  ('float', 'credit_limit'),
+                  ('selection', 'type'),
+                  ('many2one', 'country_id'),
+                  ('many2many', 'category_id'),
+                  ('one2many', 'user_ids'),
+                  ('binary', 'image'),
+                  )
+        for field_type, field in fields:
+            attr_name = 'field_%s' % field_type
+            field_record = self.env.ref('base.field_res_partner_%s' % field)
+            # set attribute such as 'self.field_char' is a
+            # ir.model.fields record of the field res_partner.ref
+            setattr(self, attr_name, field_record)
+            RevisionBehavior.create({
+                'model_id': partner_model_id,
+                'field_id': field_record.id,
+                'default_behavior': 'validate',
+            })
+
+    def setUp(self):
+        super(TestRevisionFieldType, self).setUp()
+        self._setup_behavior()
+        self.partner = self.env['res.partner'].create({
+            'name': 'Original Name',
+            'street': 'Original Street',
+        })
+
+    def test_char(self):
+        """ Apply a change on a Char field """
+        changes = [(self.field_char, 'New Ref', 'draft')]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertEqual(self.partner[self.field_char.name], 'New Ref')
+
+    def test_text(self):
+        """ Apply a change on a Text field """
+        changes = [(self.field_text, 'New comment\non 2 lines', 'draft')]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertEqual(self.partner[self.field_text.name],
+                         'New comment\non 2 lines')
+
+    def test_boolean(self):
+        """ Apply a change on a Boolean field """
+        # ensure the revision has to change the value
+        self.partner.write({self.field_boolean.name: False})
+
+        changes = [(self.field_boolean, True, 'draft')]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertEqual(self.partner[self.field_boolean.name], True)
+
+        changes = [(self.field_boolean, False, 'draft')]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertEqual(self.partner[self.field_boolean.name], False)
+
+    def test_date(self):
+        """ Apply a change on a Date field """
+        changes = [(self.field_date, '2015-09-15', 'draft')]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertAlmostEqual(self.partner[self.field_date.name],
+                               '2015-09-15')
+
+    def test_integer(self):
+        """ Apply a change on a Integer field """
+        changes = [(self.field_integer, 42, 'draft')]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertAlmostEqual(self.partner[self.field_integer.name], 42)
+
+    def test_float(self):
+        """ Apply a change on a Float field """
+        changes = [(self.field_float, 52.47, 'draft')]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertAlmostEqual(self.partner[self.field_float.name], 52.47)
+
+    def test_selection(self):
+        """ Apply a change on a Selection field """
+        changes = [(self.field_selection, 'delivery', 'draft')]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertAlmostEqual(self.partner[self.field_selection.name],
+                               'delivery')
+
+    def test_many2one(self):
+        """ Apply a change on a Many2one field """
+        changes = [(self.field_many2one,
+                    self.env.ref('base.ch').id,
+                    'draft')]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertAlmostEqual(self.partner[self.field_many2one.name],
+                               self.env.ref('base.ch').id)
+
+    def test_many2many(self):
+        """ Apply a change on a Many2many field """
+        changes = [(self.field_many2many,
+                    self.env.ref('base.ch').id,
+                    'draft')]
+        with self.assertRaises(NotImplementedError):
+            self._create_revision(self.partner, changes)
+
+    def test_one2many(self):
+        """ Apply a change on a One2many field """
+        changes = [(self.field_one2many,
+                    [self.env.ref('base.user_root').id,
+                     self.env.ref('base.user_demo').id,
+                     ],
+                    'draft')]
+        with self.assertRaises(NotImplementedError):
+            self._create_revision(self.partner, changes)
+
+    def test_binary(self):
+        """ Apply a change on a Binary field """
+        changes = [(self.field_one2many, '', 'draft')]
+        with self.assertRaises(NotImplementedError):
+            self._create_revision(self.partner, changes)
