@@ -62,47 +62,6 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
             'street2': 'street2 X',
         })
 
-    def assert_revision(self, partner, expected_changes):
-        """ Check if a revision has been created according to expected values
-
-        The partner should have no prior revision than the one created in the
-        test (so it has exactly 1 revision).
-
-        The expected changes are tuples with (field, current_value,
-        new_value, state)
-
-        :param partner: record of partner having a revision
-        :param expected_changes: contains tuples with the changes
-        :type expected_changes: list(tuple))
-        """
-        revision = self.env['res.partner.revision'].search(
-            [('partner_id', '=', partner.id)],
-        )
-        self.assertEqual(len(revision), 1,
-                         "1 revision expected, got %s" % (revision,))
-        changes = revision.change_ids
-        missing = []
-        for expected_change in expected_changes:
-            for change in changes:
-                if (change.field_id, change.current_value, change.new_value,
-                        change.state) == expected_change:
-                    changes -= change
-                    break
-            else:
-                missing.append(expected_change)
-        message = u''
-        for field, current_value, new_value, state in missing:
-            message += ("- field: '%s', current_value: '%s', "
-                        "new_value: '%s', state: '%s'\n" %
-                        (field.name, current_value, new_value, state))
-        for change in changes:
-            message += ("+ field: '%s', current_value: '%s', "
-                        "new_value: '%s', state: '%s'\n" %
-                        (change.field_id.name, change.current_value,
-                         change.new_value, change.state))
-        if message:
-            raise AssertionError('Changes do not match\n\n:%s' % message)
-
     def test_new_revision(self):
         """ Add a new revision on a partner """
         self.partner.with_context(__revision_rules=True).write({
@@ -116,6 +75,19 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
              (self.field_street, 'street X', 'street Y', 'draft'),
              (self.field_street2, 'street2 X', 'street2 Y', 'cancel'),
              ],
+        )
+        self.assertEqual(self.partner.name, 'Y')
+        self.assertEqual(self.partner.street, 'street X')
+        self.assertEqual(self.partner.street2, 'street2 X')
+
+    def test_new_revision_empty_value(self):
+        """ Create a revision change that empty a value """
+        self.partner.with_context(__revision_rules=True).write({
+            'street': False,
+        })
+        self.assert_revision(
+            self.partner,
+            [(self.field_street, 'street X', False, 'draft')]
         )
 
     def test_manual_edition(self):
@@ -135,3 +107,68 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
              (self.field_street2, 'street2 X', 'street2 Y', 'done'),
              ],
         )
+        self.assertEqual(self.partner.name, 'Y')
+        self.assertEqual(self.partner.street, 'street Y')
+        self.assertEqual(self.partner.street2, 'street2 Y')
+
+    def test_apply_change(self):
+        """ Apply a revision change on a partner """
+        changes = [
+            (self.field_name, 'Y', 'draft'),
+        ]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertEqual(self.partner.name, 'Y')
+
+    def test_apply_done_change(self):
+        """ Done changes do not apply (already applied) """
+        changes = [
+            (self.field_name, 'Y', 'done'),
+        ]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertEqual(self.partner.name, 'X')
+
+    def test_apply_cancel_change(self):
+        """ Cancel changes do not apply """
+        changes = [
+            (self.field_name, 'Y', 'cancel'),
+        ]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertEqual(self.partner.name, 'X')
+
+    def test_apply_empty_value(self):
+        """ Apply a change that empty a value """
+        changes = [
+            (self.field_street, False, 'draft'),
+        ]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertFalse(self.partner.street)
+
+    def test_apply_change_loop(self):
+        """ Test @api.multi on the changes """
+        changes = [
+            (self.field_name, 'Y', 'draft'),
+            (self.field_street, 'street Y', 'draft'),
+            (self.field_street2, 'street2 Y', 'draft'),
+        ]
+        revision = self._create_revision(self.partner, changes)
+        revision.change_ids.apply()
+        self.assertEqual(self.partner.name, 'Y')
+        self.assertEqual(self.partner.street, 'street Y')
+        self.assertEqual(self.partner.street2, 'street2 Y')
+
+    def test_apply(self):
+        """ Apply a full revision on a partner """
+        changes = [
+            (self.field_name, 'Y', 'draft'),
+            (self.field_street, 'street Y', 'draft'),
+            (self.field_street2, 'street2 Y', 'draft'),
+        ]
+        revision = self._create_revision(self.partner, changes)
+        revision.apply()
+        self.assertEqual(self.partner.name, 'Y')
+        self.assertEqual(self.partner.street, 'street Y')
+        self.assertEqual(self.partner.street2, 'street2 Y')

@@ -62,3 +62,24 @@ class RevisionMixin(object):
                          change.new_value, change.state))
         if message:
             raise AssertionError('Changes do not match\n\n:%s' % message)
+
+    def _create_revision(self, partner, changes):
+        """ Create a revision and its associated changes
+
+        :param partner: 'res.partner' record
+        :param changes: list of changes [(field, new value, state)]
+        :returns: 'res.partner.revision' record
+        """
+        change_values = [
+            (0, 0, {
+                'field_id': field.id,
+                'current_value': partner[field.name],
+                'new_value': value,
+                'state': state,
+            }) for field, value, state in changes
+        ]
+        values = {
+            'partner_id': partner.id,
+            'change_ids': change_values,
+        }
+        return self.env['res.partner.revision'].create(values)
