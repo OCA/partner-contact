@@ -35,6 +35,12 @@ class ResPartner(models.Model):
     def _add_revision(self, values):
         """ Add a revision on a partner
 
+        By default, when a partner is modified by a user or by the
+        system, the changes are applied and a validated revision is
+        created.  Callers which want to delegate the write of some
+        fields to the revision must explicitly ask for it by providing a
+        key ``__revision_rules`` in the environment's context.
+
         :param values: the values being written on the partner
         :type values: dict
 
@@ -51,8 +57,6 @@ class ResPartner(models.Model):
             if not rule:
                 continue
             if field in values:
-                # TODO: if a change is done manually, values are always
-                # written but we create 'done' changes
                 if self[field] == values[field]:
                     # TODO handle relations, types
                     continue
@@ -61,7 +65,10 @@ class ResPartner(models.Model):
                     'new_value': values[field],
                     'field_id': rule.field_id.id,
                 }
-                if rule.default_behavior == 'auto':
+                if not self.env.context.get('__revision_rules'):
+                    # by default always write on partner
+                    change['state'] = 'done'
+                elif rule.default_behavior == 'auto':
                     change['state'] = 'done'
                 elif rule.default_behavior == 'validate':
                     change['state'] = 'draft'
