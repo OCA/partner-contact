@@ -19,7 +19,7 @@
 #
 #
 
-from openerp import models, fields
+from openerp import models, fields, api
 
 
 class ResPartnerRevision(models.Model):
@@ -34,8 +34,12 @@ class ResPartnerRevision(models.Model):
     change_ids = fields.One2many(comodel_name='res.partner.revision.change',
                                  inverse_name='revision_id',
                                  string='Changes')
-    date = fields.Datetime()
+    date = fields.Datetime(default=fields.Datetime.now)
     note = fields.Text()
+
+    @api.multi
+    def apply(self):
+        self.mapped('change_ids').apply()
 
 
 class ResPartnerRevisionChange(models.Model):
@@ -61,3 +65,11 @@ class ResPartnerRevisionChange(models.Model):
         required=True,
         default='draft',
     )
+
+    @api.multi
+    def apply(self):
+        for change in self:
+            if change.state in ('cancel', 'done'):
+                continue
+            partner = change.revision_id.partner_id
+            partner.write({change.field_id.name: change.new_value})
