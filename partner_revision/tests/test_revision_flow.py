@@ -27,8 +27,16 @@ from .common import RevisionMixin
 class TestRevisionFlow(RevisionMixin, common.TransactionCase):
     """ Check how revision are generated and applied based on the rules.
 
-    We do not really care about the types of the fields in this test suite,
-    but we have to ensure that the general revision flows work as expected.
+    We do not really care about the types of the fields in this test
+    suite, so we only use 'char' fields.  We have to ensure that the
+    general revision flows work as expected, that is:
+
+    * create a 'done' revision when a manual/system write is made on partner
+    * create a revision according to the revision rules when the key
+      '__revision_rules' is passed in the context
+    * apply a revision change writes the value on the partner
+    * apply a whole revision writes all the changes' values on the partner
+    * changes in state 'cancel' or 'done' do not write on the partner
     """
 
     def _setup_behavior(self):
