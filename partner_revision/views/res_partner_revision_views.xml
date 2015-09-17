@@ -29,8 +29,9 @@
               <field name="change_ids" nolabel="1">
                 <tree>
                   <field name="field_id" context="{'no_open': true}"/>
-                  <field name="current_value"/>
-                  <field name="new_value"/>
+                  <!-- TODO show according to field ttype -->
+                  <field name="current_value_char"/>
+                  <field name="new_value_char"/>
                   <field name="state"/>
                 </tree>
               </field>

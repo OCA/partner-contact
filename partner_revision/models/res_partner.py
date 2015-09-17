@@ -27,9 +27,70 @@ class ResPartner(models.Model):
 
     @api.multi
     def write(self, values):
-        for record in self:
-            values = record._add_revision(values)
-        return super(ResPartner, self).write(values)
+        if self.env.context.get('__no_revision'):
+            return super(ResPartner, self).write(values)
+        else:
+            for record in self:
+                values = record._add_revision(values)
+                super(ResPartner, record).write(values)
+        return True
+
+    @api.multi
+    def _has_field_changed(self, field, value):
+        self.ensure_one()
+        field_def = self._fields[field]
+        return field_def.convert_to_write(self[field]) != value
+
+    @api.multi
+    def convert_field_for_revision(self, field, value):
+        field_def = self._fields[field]
+        if field_def.type == 'many2one':
+            # store as 'reference'
+            comodel = field_def.comodel_name
+            return "%s,%s" % (comodel, value) if value else False
+        else:
+            return value
+
+    @api.multi
+    def _prepare_revision_change(self, rule, field, value):
+        """ Prepare data for a revision change
+
+        It returns a dict of the values to write on the revision change
+        and a boolean that indicates if the value should be popped out
+        of the values to write on the model.
+
+        :returns: dict of values, boolean
+        """
+        field_def = self._fields[field]
+        # get a ready to write value for the type of the field,
+        # for instance takes '.id' from a many2one's record (the
+        # new value is already a value as expected for the
+        # write)
+        current_value = field_def.convert_to_write(self[field])
+        # get values ready to write as expected by the revision
+        # (for instance, a many2one is written in a reference
+        # field)
+        current_value = self.convert_field_for_revision(field,
+                                                        current_value)
+        new_value = self.convert_field_for_revision(field, value)
+        change = {
+            'current_value': current_value,
+            'new_value': new_value,
+            'field_id': rule.field_id.id,
+        }
+        pop_value = False
+        if not self.env.context.get('__revision_rules'):
+            # by default always write on partner
+            change['state'] = 'done'
+        elif rule.default_behavior == 'auto':
+            change['state'] = 'done'
+        elif rule.default_behavior == 'validate':
+            change['state'] = 'draft'
+            pop_value = True  # change to apply manually
+        elif rule.default_behavior == 'never':
+            change['state'] = 'cancel'
+            pop_value = True  # change never applied
+        return change, pop_value
 
     @api.multi
     def _add_revision(self, values):
@@ -57,25 +118,13 @@ class ResPartner(models.Model):
             if not rule:
                 continue
             if field in values:
-                if self[field] == values[field]:
-                    # TODO handle relations, types
+                if not self._has_field_changed(field, values[field]):
                     continue
-                change = {
-                    'current_value': self[field],
-                    'new_value': values[field],
-                    'field_id': rule.field_id.id,
-                }
-                if not self.env.context.get('__revision_rules'):
-                    # by default always write on partner
-                    change['state'] = 'done'
-                elif rule.default_behavior == 'auto':
-                    change['state'] = 'done'
-                elif rule.default_behavior == 'validate':
-                    change['state'] = 'draft'
-                    write_values.pop(field)  # change to apply manually
-                elif rule.default_behavior == 'never':
-                    change['state'] = 'cancel'
-                    write_values.pop(field)  # change never applied
+            change, pop_value = self._prepare_revision_change(
+                rule, field, values[field]
+            )
+            if pop_value:
+                write_values.pop(field)
             changes.append(change)
         if changes:
             self.env['res.partner.revision'].create({

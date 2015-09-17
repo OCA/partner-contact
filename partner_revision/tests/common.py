@@ -44,7 +44,9 @@ class RevisionMixin(object):
         missing = []
         for expected_change in expected_changes:
             for change in changes:
-                if (change.field_id, change.current_value, change.new_value,
+                if (change.field_id,
+                        change.get_current_value(),
+                        change.get_new_value(),
                         change.state) == expected_change:
                     changes -= change
                     break
@@ -58,8 +60,10 @@ class RevisionMixin(object):
         for change in changes:
             message += ("+ field: '%s', current_value: '%s', "
                         "new_value: '%s', state: '%s'\n" %
-                        (change.field_id.name, change.current_value,
-                         change.new_value, change.state))
+                        (change.field_id.name,
+                         change.get_current_value(),
+                         change.get_new_value(),
+                         change.state))
         if message:
             raise AssertionError('Changes do not match\n\n:%s' % message)
 
@@ -70,14 +74,22 @@ class RevisionMixin(object):
         :param changes: list of changes [(field, new value, state)]
         :returns: 'res.partner.revision' record
         """
-        change_values = [
-            (0, 0, {
+        get_field = self.env['res.partner.revision.change'].get_field_for_type
+        convert = self.env['res.partner'].convert_field_for_revision
+        change_values = []
+        for field, value, state in changes:
+            field_def = self.env['res.partner']._fields[field.name]
+            current_value = field_def.convert_to_write(partner[field.name])
+            current_value = convert(field.name, current_value)
+            change = {
                 'field_id': field.id,
-                'current_value': partner[field.name],
-                'new_value': value,
+                # write in the field of the appropriate type for the
+                # current field (char, many2one, ...)
+                get_field(field, 'current'): current_value,
+                get_field(field, 'new'): value,
                 'state': state,
-            }) for field, value, state in changes
-        ]
+            }
+            change_values.append((0, 0, change))
         values = {
             'partner_id': partner.id,
             'change_ids': change_values,
