@@ -74,13 +74,14 @@ class RevisionMixin(object):
         :param changes: list of changes [(field, new value, state)]
         :returns: 'res.partner.revision' record
         """
-        get_field = self.env['res.partner.revision.change'].get_field_for_type
-        convert = self.env['res.partner'].convert_field_for_revision
+        RevisionChange = self.env['res.partner.revision.change']
+        get_field = RevisionChange.get_field_for_type
+        convert = RevisionChange._convert_value_for_revision
         change_values = []
         for field, value, state in changes:
             field_def = self.env['res.partner']._fields[field.name]
             current_value = field_def.convert_to_write(partner[field.name])
-            current_value = convert(field.name, current_value)
+            current_value = convert(partner, field.name, current_value)
             change = {
                 'field_id': field.id,
                 # write in the field of the appropriate type for the

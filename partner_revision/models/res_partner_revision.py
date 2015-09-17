@@ -41,6 +41,55 @@ class ResPartnerRevision(models.Model):
     def apply(self):
         self.mapped('change_ids').apply()
 
+    @api.multi
+    def add_revision(self, record, values):
+        """ Add a revision on a partner
+
+        By default, when a partner is modified by a user or by the
+        system, the changes are applied and a validated revision is
+        created.  Callers which want to delegate the write of some
+        fields to the revision must explicitly ask for it by providing a
+        key ``__revision_rules`` in the environment's context.
+
+        Should be called before the execution of ``write`` on the record
+        so we can keep track of the existing value and also because the
+        returned values should be used for ``write`` as some of the
+        values may have been removed.
+
+        :param values: the values being written on the partner
+        :type values: dict
+
+        :returns: dict of values that should be wrote on the partner
+        (fields with a 'Validate' or 'Never' rule are excluded)
+
+        """
+        record.ensure_one()
+        change_model = self.env['res.partner.revision.change']
+        write_values = values.copy()
+        changes = []
+        rules = self.env['revision.behavior'].get_rules(record._model._name)
+        for field in values:
+            rule = rules.get(field)
+            if not rule:
+                continue
+            if field in values:
+                if not change_model._has_field_changed(record, field,
+                                                       values[field]):
+                    continue
+            change, pop_value = change_model._prepare_revision_change(
+                record, rule, field, values[field]
+            )
+            if pop_value:
+                write_values.pop(field)
+            changes.append(change)
+        if changes:
+            self.env['res.partner.revision'].create({
+                'partner_id': record.id,
+                'change_ids': [(0, 0, vals) for vals in changes],
+                'date': fields.Datetime.now(),
+            })
+        return write_values
+
 
 class ResPartnerRevisionChange(models.Model):
     _name = 'res.partner.revision.change'
@@ -141,12 +190,6 @@ class ResPartnerRevisionChange(models.Model):
         return self[field_name]
 
     @api.multi
-    def _convert_value_for_write(self, value):
-        model = self.env[self.field_id.model_id.model]
-        model_field_def = model._fields[self.field_id.name]
-        return model_field_def.convert_to_write(value)
-
-    @api.multi
     def apply(self):
         for change in self:
             if change.state in ('cancel', 'done'):
@@ -156,3 +199,65 @@ class ResPartnerRevisionChange(models.Model):
                 change.get_new_value()
             )
             partner.write({change.field_id.name: value_for_write})
+
+    @api.model
+    def _has_field_changed(self, record, field, value):
+        field_def = record._fields[field]
+        return field_def.convert_to_write(record[field]) != value
+
+    @api.multi
+    def _convert_value_for_write(self, value):
+        model = self.env[self.field_id.model_id.model]
+        model_field_def = model._fields[self.field_id.name]
+        return model_field_def.convert_to_write(value)
+
+    @api.model
+    def _convert_value_for_revision(self, record, field, value):
+        field_def = record._fields[field]
+        if field_def.type == 'many2one':
+            # store as 'reference'
+            comodel = field_def.comodel_name
+            return "%s,%s" % (comodel, value) if value else False
+        else:
+            return value
+
+    @api.multi
+    def _prepare_revision_change(self, record, rule, field, value):
+        """ Prepare data for a revision change
+
+        It returns a dict of the values to write on the revision change
+        and a boolean that indicates if the value should be popped out
+        of the values to write on the model.
+
+        :returns: dict of values, boolean
+        """
+        field_def = record._fields[field]
+        # get a ready to write value for the type of the field,
+        # for instance takes '.id' from a many2one's record (the
+        # new value is already a value as expected for the
+        # write)
+        current_value = field_def.convert_to_write(record[field])
+        # get values ready to write as expected by the revision
+        # (for instance, a many2one is written in a reference
+        # field)
+        current_value = self._convert_value_for_revision(record, field,
+                                                         current_value)
+        new_value = self._convert_value_for_revision(record, field, value)
+        change = {
+            'current_value': current_value,
+            'new_value': new_value,
+            'field_id': rule.field_id.id,
+        }
+        pop_value = False
+        if not self.env.context.get('__revision_rules'):
+            # by default always write on partner
+            change['state'] = 'done'
+        elif rule.default_behavior == 'auto':
+            change['state'] = 'done'
+        elif rule.default_behavior == 'validate':
+            change['state'] = 'draft'
+            pop_value = True  # change to apply manually
+        elif rule.default_behavior == 'never':
+            change['state'] = 'cancel'
+            pop_value = True  # change never applied
+        return change, pop_value
