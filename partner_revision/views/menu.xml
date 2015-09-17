@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+      <menuitem id="menu_revision"
+        name="Partner Revisions"
+        parent="base.menu_base_config"
+        sequence="20"/>
+    </data>
+</openerp>

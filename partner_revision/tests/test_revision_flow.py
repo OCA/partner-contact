@@ -127,6 +127,7 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
         revision = self._create_revision(self.partner, changes)
         revision.change_ids.apply()
         self.assertEqual(self.partner.name, 'Y')
+        self.assertEqual(revision.change_ids.state, 'done')
 
     def test_apply_done_change(self):
         """ Done changes do not apply (already applied) """

@@ -19,7 +19,10 @@
 #
 #
 
-from openerp import models, fields, api
+from lxml import etree
+
+from openerp import models, fields, api, exceptions, _
+from openerp.osv.orm import setup_modifiers
 
 
 class ResPartnerRevision(models.Model):
@@ -35,11 +38,17 @@ class ResPartnerRevision(models.Model):
                                  inverse_name='revision_id',
                                  string='Changes')
     date = fields.Datetime(default=fields.Datetime.now)
+    # TODO: add a revision state, done when all lines are done or
+    # canceled
     note = fields.Text()
 
     @api.multi
     def apply(self):
         self.mapped('change_ids').apply()
+
+    @api.multi
+    def cancel(self):
+        self.mapped('change_ids').cancel()
 
     @api.multi
     def add_revision(self, record, values):
@@ -103,6 +112,18 @@ class ResPartnerRevisionChange(models.Model):
     field_id = fields.Many2one(comodel_name='ir.model.fields',
                                string='Field',
                                required=True)
+    field_type = fields.Selection(related='field_id.ttype',
+                                  string='Field Type',
+                                  readonly=True)
+
+    current_value_display = fields.Char(
+        string='Current',
+        compute='_compute_value_display',
+    )
+    new_value_display = fields.Char(
+        string='New',
+        compute='_compute_value_display',
+    )
 
     current_value_char = fields.Char(string='Current')
     current_value_date = fields.Date(string='Current')
@@ -138,17 +159,35 @@ class ResPartnerRevisionChange(models.Model):
         models = self.env['ir.model'].search([])
         return [(model.model, model.name) for model in models]
 
-    _type_to_field = {
-        'char': 'char',
-        'date': 'date',
-        'datetime': 'datetime',
-        'float': 'float',
-        'integer': 'integer',
-        'text': 'text',
-        'boolean': 'boolean',
-        'many2one': 'reference',
-        'selection': 'char',
+    _suffix_to_types = {
+        'char': ('char', 'selection'),
+        'date': ('date',),
+        'datetime': ('datetime',),
+        'float': ('float',),
+        'integer': ('integer',),
+        'text': ('text',),
+        'boolean': ('boolean',),
+        'reference': ('many2one',),
     }
+
+    _type_to_suffix = {ftype: suffix
+                       for suffix, ftypes in _suffix_to_types.iteritems()
+                       for ftype in ftypes}
+
+    _current_value_fields = ['current_value_%s' % suffix
+                             for suffix in _suffix_to_types]
+    _new_value_fields = ['new_value_%s' % suffix
+                         for suffix in _suffix_to_types]
+    _value_fields = _current_value_fields + _new_value_fields
+
+    @api.one
+    @api.depends(lambda self: self._value_fields)
+    def _compute_value_display(self):
+        for prefix in ('current', 'new'):
+            value = getattr(self, 'get_%s_value' % prefix)()
+            if self.field_id.ttype == 'many2one' and value:
+                value = value.display_name
+            setattr(self, '%s_value_display' % prefix, value)
 
     @api.model
     def create(self, vals):
@@ -169,9 +208,8 @@ class ResPartnerRevisionChange(models.Model):
     @api.model
     def get_field_for_type(self, field, current_or_new):
         assert current_or_new in ('new', 'current')
-        field_type = self._type_to_field.get(field.ttype)
+        field_type = self._type_to_suffix.get(field.ttype)
         if not field_type:
-            # TODO: prevent to create unsupported types from the views
             raise NotImplementedError(
                 'field type %s is not supported' % field_type
             )
@@ -191,6 +229,7 @@ class ResPartnerRevisionChange(models.Model):
 
     @api.multi
     def apply(self):
+        # TODO: optimize with 1 write for all fields, group by revision
         for change in self:
             if change.state in ('cancel', 'done'):
                 continue
@@ -199,6 +238,15 @@ class ResPartnerRevisionChange(models.Model):
                 change.get_new_value()
             )
             partner.write({change.field_id.name: value_for_write})
+            change.write({'state': 'done'})
+
+    @api.multi
+    def cancel(self):
+        if any(change.state == 'done' for change in self):
+            raise exceptions.Warning(
+                _('This change has already be applied.')
+            )
+        self.write({'state': 'cancel'})
 
     @api.model
     def _has_field_changed(self, record, field, value):
@@ -261,3 +309,23 @@ class ResPartnerRevisionChange(models.Model):
             change['state'] = 'cancel'
             pop_value = True  # change never applied
         return change, pop_value
+
+    def fields_view_get(self, *args, **kwargs):
+        _super = super(ResPartnerRevisionChange, self)
+        result = _super.fields_view_get(*args, **kwargs)
+        if result['type'] != 'form':
+            return
+        doc = etree.XML(result['arch'])
+        for suffix, ftypes in self._suffix_to_types.iteritems():
+            for prefix in ('current', 'new'):
+                field_name = '%s_value_%s' % (prefix, suffix)
+                field_nodes = doc.xpath("//field[@name='%s']" % field_name)
+                for node in field_nodes:
+                    node.set(
+                        'attrs',
+                        "{'invisible': "
+                        "[('field_type', 'not in', %s)]}" % (ftypes,)
+                    )
+                    setup_modifiers(node)
+        result['arch'] = etree.tostring(doc)
+        return result
