@@ -21,7 +21,10 @@
           <sheet string="Revision Behavior">
             <group>
               <field name="model_id" invisible="1"/>
-              <field name="field_id" domain="[('model_id', '=', model_id)]"/>
+              <field name="field_id"
+                domain="[('model_id', '=', model_id),
+                ('ttype', 'in', ('char', 'selection', 'date', 'datetime', 'float', 'integer', 'text', 'boolean', 'many2one')),
+                ('readonly', '=', False)]"/>
               <field name="default_behavior"/>
             </group>
           </sheet>
@@ -51,7 +54,7 @@
     </record>
 
     <menuitem id="menu_revision_behavior"
-      parent="base.menu_base_config"
+      parent="menu_revision"
       sequence="20"
       action="action_revision_behavior_view"/>
   </data>

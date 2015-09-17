@@ -22,19 +22,81 @@
               <field name="partner_id"/>
               <field name="date"/>
             </group>
+            <group string="Changes">
+              <field name="change_ids" nolabel="1">
+                <tree string="Partner Revision Change">
+                  <field name="field_id" context="{'no_open': true}"/>
+                  <field name="field_type" invisible="1"/>
+
+                  <field name="current_value_display"/>
+                  <field name="new_value_display"/>
+
+                  <field name="state"/>
+                  <button name="apply"
+                    string="Apply" type="object"
+                    icon="gtk-apply"
+                    states="draft"/>
+                  <button name="cancel"
+                    string="Reject" type="object"
+                    icon="gtk-close"
+                    states="draft"/>
+                </tree>
+              </field>
+            </group>
             <group>
               <field name="note"/>
             </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_res_partner_revision_change_form" model="ir.ui.view">
+      <field name="name">res.partner.revision.change.form</field>
+      <field name="model">res.partner.revision.change</field>
+      <field name="arch" type="xml">
+        <form string="Partner Revision Change">
+          <header>
+            <button name="apply"
+              string="Apply" type="object"
+              class="oe_highlight"
+              states="draft"/>
+            <button name="cancel"
+              string="Reject" type="object"
+              class="oe_highlight"
+              states="draft"/>
+          </header>
+          <sheet>
             <group>
-              <field name="change_ids" nolabel="1">
-                <tree>
-                  <field name="field_id" context="{'no_open': true}"/>
-                  <!-- TODO show according to field ttype -->
-                  <field name="current_value_char"/>
-                  <field name="new_value_char"/>
-                  <field name="state"/>
-                </tree>
-              </field>
+              <field name="field_id" options="{'no_open': true}"/>
+              <field name="field_type" invisible="1"/>
+
+              <!-- attrs are added in fields_view_get -->
+              <field name="current_value_char"/>
+              <field name="new_value_char"/>
+
+              <field name="current_value_date"/>
+              <field name="new_value_date"/>
+
+              <field name="current_value_datetime"/>
+              <field name="new_value_datetime"/>
+
+              <field name="current_value_float"/>
+              <field name="new_value_float"/>
+
+              <field name="current_value_integer"/>
+              <field name="new_value_integer"/>
+
+              <field name="current_value_text"/>
+              <field name="new_value_text"/>
+
+              <field name="current_value_boolean"/>
+              <field name="new_value_boolean"/>
+
+              <field name="current_value_reference"/>
+              <field name="new_value_reference"/>
+
+              <field name="state"/>
             </group>
           </sheet>
         </form>
@@ -61,7 +123,7 @@
     </record>
 
     <menuitem id="menu_res_partner_revision"
-      parent="base.menu_base_config"
+      parent="menu_revision"
       sequence="20"
       action="action_res_partner_revision_view"/>
   </data>
