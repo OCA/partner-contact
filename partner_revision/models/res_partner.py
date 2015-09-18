@@ -29,6 +29,18 @@ class ResPartner(models.Model):
                                    inverse_name='partner_id',
                                    string='Revisions',
                                    readonly=True)
+    count_pending_revisions = fields.Integer(
+        string='Pending Revisions',
+        compute='_count_pending_revisions',
+        search='_search_count_pending_revisions')
+
+    @api.one
+    @api.depends('revision_ids', 'revision_ids.state')
+    def _count_pending_revisions(self):
+        revisions = self.revision_ids.filtered(
+            lambda rev: rev.state == 'draft' and rev.partner_id == self
+        )
+        self.count_pending_revisions = len(revisions)
 
     @api.multi
     def write(self, values):
@@ -40,3 +52,16 @@ class ResPartner(models.Model):
                 local_values = revision_model.add_revision(record, values)
                 super(ResPartner, record).write(local_values)
         return True
+
+    def _search_count_pending_revisions(self, operator, value):
+        if operator not in ('=', '!=', '<', '<=', '>', '>=', 'in', 'not in'):
+            return []
+        query = ("SELECT p.id "
+                 "FROM res_partner p "
+                 "INNER JOIN res_partner_revision r ON r.partner_id = p.id "
+                 "WHERE r.state = 'draft' "
+                 "GROUP BY p.id "
+                 "HAVING COUNT(r.id) %s %%s ") % operator
+        self.env.cr.execute(query, (value,))
+        ids = [row[0] for row in self.env.cr.fetchall()]
+        return [('id', 'in', ids)]

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data noupdate="0">
+
+    <record id="res_partner_view_buttons" model="ir.ui.view">
+      <field name="name">res.partner.view.buttons</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form" />
+      <field name="priority" eval="18"/>
+      <field name="groups_id" eval="[(4, ref('partner_revision.group_revision_user'))]"/>
+      <field name="arch" type="xml">
+        <xpath expr="//div[@name='buttons']" position="inside">
+          <button class="oe_inline oe_stat_button"
+            type="action"
+            name="%(partner_revision.action_res_partner_revision_view)d"
+            attrs="{'invisible': [('count_pending_revisions', '=', 0)]}"
+            context="{'search_default_draft': 1, 'search_default_partner_id': active_id}"
+            icon="fa-code-fork">
+            <field string="Pending Revisions"
+              name="count_pending_revisions"
+              widget="statinfo"/>
+          </button>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+      <field name="name">res.partner.select</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_res_partner_filter" />
+      <field name="arch" type="xml">
+        <filter name="customer" position="after">
+          <separator/>
+          <filter string="Pending Revisions"
+            name="pending_revisions"
+            domain="[('count_pending_revisions', '>', 0)]"/>
+        </filter>
+      </field>
+    </record>
+
+  </data>
+</openerp>
