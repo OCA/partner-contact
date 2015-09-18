@@ -7,12 +7,12 @@
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form" />
       <field name="priority" eval="18"/>
-      <field name="groups_id" eval="[(4, ref('partner_revision.group_changeset_user'))]"/>
+      <field name="groups_id" eval="[(4, ref('partner_changeset.group_changeset_user'))]"/>
       <field name="arch" type="xml">
         <xpath expr="//div[@name='buttons']" position="inside">
           <button class="oe_inline oe_stat_button"
             type="action"
-            name="%(partner_revision.action_res_partner_changeset_view)d"
+            name="%(partner_changeset.action_res_partner_changeset_view)d"
             attrs="{'invisible': [('count_pending_changesets', '=', 0)]}"
             context="{'search_default_draft': 1, 'search_default_partner_id': active_id}"
             icon="fa-code-fork">
