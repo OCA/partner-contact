@@ -82,6 +82,7 @@ class ResPartnerRelation(models.Model):
         ),
     }
 
+    allow_self = fields.Boolean(related='type_id.allow_self')
     left_contact_type = fields.Selection(
         lambda s: s.env['res.partner.relation.type']._get_partner_types(),
         'Left Partner Type',
@@ -287,9 +288,10 @@ class ResPartnerRelation(models.Model):
         :raises exceptions.Warning: When constraint is violated
         """
         if self.left_partner_id == self.right_partner_id:
-            raise exceptions.Warning(
-                _('Partners cannot have a relation with themselves.')
-            )
+            if not self.allow_self:
+                raise exceptions.Warning(
+                    _('Partners cannot have a relation with themselves.')
+                )
 
     @api.one
     @api.constrains('left_partner_id', 'right_partner_id', 'active')
