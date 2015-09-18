@@ -36,12 +36,15 @@ class ResPartnerRevision(models.Model):
     partner_id = fields.Many2one(comodel_name='res.partner',
                                  string='Partner',
                                  select=True,
-                                 required=True)
+                                 required=True,
+                                 readonly=True)
     change_ids = fields.One2many(comodel_name='res.partner.revision.change',
                                  inverse_name='revision_id',
-                                 string='Changes')
+                                 string='Changes',
+                                 readonly=True)
     date = fields.Datetime(default=fields.Datetime.now,
-                           select=True)
+                           select=True,
+                           readonly=True)
     state = fields.Selection(
         compute='_compute_state',
         selection=[('draft', 'Pending'),
@@ -126,10 +129,12 @@ class ResPartnerRevisionChange(models.Model):
     revision_id = fields.Many2one(comodel_name='res.partner.revision',
                                   required=True,
                                   string='Revision',
-                                  ondelete='cascade')
+                                  ondelete='cascade',
+                                  readonly=True)
     field_id = fields.Many2one(comodel_name='ir.model.fields',
                                string='Field',
-                               required=True)
+                               required=True,
+                               readonly=True)
     field_type = fields.Selection(related='field_id.ttype',
                                   string='Field Type',
                                   readonly=True)
@@ -143,25 +148,41 @@ class ResPartnerRevisionChange(models.Model):
         compute='_compute_value_display',
     )
 
-    current_value_char = fields.Char(string='Current')
-    current_value_date = fields.Date(string='Current')
-    current_value_datetime = fields.Datetime(string='Current')
-    current_value_float = fields.Float(string='Current')
-    current_value_integer = fields.Integer(string='Current')
-    current_value_text = fields.Text(string='Current')
-    current_value_boolean = fields.Boolean(string='Current')
+    current_value_char = fields.Char(string='Current',
+                                     readonly=True)
+    current_value_date = fields.Date(string='Current',
+                                     readonly=True)
+    current_value_datetime = fields.Datetime(string='Current',
+                                             readonly=True)
+    current_value_float = fields.Float(string='Current',
+                                       readonly=True)
+    current_value_integer = fields.Integer(string='Current',
+                                           readonly=True)
+    current_value_text = fields.Text(string='Current',
+                                     readonly=True)
+    current_value_boolean = fields.Boolean(string='Current',
+                                           readonly=True)
     current_value_reference = fields.Reference(string='Current',
-                                               selection='_reference_models')
+                                               selection='_reference_models',
+                                               readonly=True)
 
-    new_value_char = fields.Char(string='New')
-    new_value_date = fields.Date(string='New')
-    new_value_datetime = fields.Datetime(string='New')
-    new_value_float = fields.Float(string='New')
-    new_value_integer = fields.Integer(string='New')
-    new_value_text = fields.Text(string='New')
-    new_value_boolean = fields.Boolean(string='New')
+    new_value_char = fields.Char(string='New',
+                                 readonly=True)
+    new_value_date = fields.Date(string='New',
+                                 readonly=True)
+    new_value_datetime = fields.Datetime(string='New',
+                                         readonly=True)
+    new_value_float = fields.Float(string='New',
+                                   readonly=True)
+    new_value_integer = fields.Integer(string='New',
+                                       readonly=True)
+    new_value_text = fields.Text(string='New',
+                                 readonly=True)
+    new_value_boolean = fields.Boolean(string='New',
+                                       readonly=True)
     new_value_reference = fields.Reference(string='New',
-                                           selection='_reference_models')
+                                           selection='_reference_models',
+                                           readonly=True)
 
     state = fields.Selection(
         selection=[('draft', 'Pending'),
@@ -170,6 +191,7 @@ class ResPartnerRevisionChange(models.Model):
                    ],
         required=True,
         default='draft',
+        readonly=True,
     )
 
     @api.model
