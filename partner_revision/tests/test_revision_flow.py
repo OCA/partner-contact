@@ -71,7 +71,11 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
         })
 
     def test_new_revision(self):
-        """ Add a new revision on a partner """
+        """ Add a new revision on a partner
+
+        A new revision is created when we write on a partner with
+        ``__revision_rules`` in the context.
+        """
         self.partner.with_context(__revision_rules=True).write({
             'name': 'Y',
             'street': 'street Y',
@@ -181,3 +185,31 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
         self.assertEqual(self.partner.name, 'Y')
         self.assertEqual(self.partner.street, 'street Y')
         self.assertEqual(self.partner.street2, 'street2 Y')
+
+    def test_revision_state_on_done(self):
+        """ Check that revision state becomes done when changes are done """
+        changes = [(self.field_name, 'Y', 'draft')]
+        revision = self._create_revision(self.partner, changes)
+        self.assertEqual(revision.state, 'draft')
+        revision.change_ids.apply()
+        self.assertEqual(revision.state, 'done')
+
+    def test_revision_state_on_cancel(self):
+        """ Check that rev. state becomes done when changes are canceled """
+        changes = [(self.field_name, 'Y', 'draft')]
+        revision = self._create_revision(self.partner, changes)
+        self.assertEqual(revision.state, 'draft')
+        revision.change_ids.cancel()
+        self.assertEqual(revision.state, 'done')
+
+    def test_revision_state(self):
+        """ Check that revision state becomes done with multiple changes """
+        changes = [
+            (self.field_name, 'Y', 'draft'),
+            (self.field_street, 'street Y', 'draft'),
+            (self.field_street2, 'street2 Y', 'draft'),
+        ]
+        revision = self._create_revision(self.partner, changes)
+        self.assertEqual(revision.state, 'draft')
+        revision.apply()
+        self.assertEqual(revision.state, 'done')
