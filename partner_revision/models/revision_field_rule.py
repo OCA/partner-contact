@@ -23,9 +23,9 @@ from openerp import models, fields, api
 from openerp.tools.cache import ormcache
 
 
-class RevisionBehavior(models.Model):
-    _name = 'revision.behavior'
-    _description = 'Revision Behavior'
+class RevisionFieldRule(models.Model):
+    _name = 'revision.field.rule'
+    _description = 'Revision Field Rules'
     _rec_name = 'field_id'
 
     model_id = fields.Many2one(comodel_name='ir.model',
@@ -35,9 +35,9 @@ class RevisionBehavior(models.Model):
     field_id = fields.Many2one(comodel_name='ir.model.fields',
                                string='Field',
                                ondelete='cascade')
-    default_behavior = fields.Selection(
-        selection='_selection_default_behavior',
-        string='Default Behavior',
+    action = fields.Selection(
+        selection='_selection_action',
+        string='Action',
         help="Auto: always apply a change.\n"
              "Validate: manually applied by an administrator.\n"
              "Never: change never applied.",
@@ -48,7 +48,7 @@ class RevisionBehavior(models.Model):
         return self.env.ref('base.model_res_partner').id
 
     @api.model
-    def _selection_default_behavior(self):
+    def _selection_action(self):
         return [('auto', 'Auto'),
                 ('validate', 'Validate'),
                 ('never', 'Never'),
@@ -62,18 +62,18 @@ class RevisionBehavior(models.Model):
 
     @api.model
     def create(self, vals):
-        record = super(RevisionBehavior, self).create(vals)
+        record = super(RevisionFieldRule, self).create(vals)
         self.clear_caches()
         return record
 
     @api.multi
     def write(self, vals):
-        result = super(RevisionBehavior, self).write(vals)
+        result = super(RevisionFieldRule, self).write(vals)
         self.clear_caches()
         return result
 
     @api.multi
     def unlink(self):
-        result = super(RevisionBehavior, self).unlink()
+        result = super(RevisionFieldRule, self).unlink()
         self.clear_caches()
         return result

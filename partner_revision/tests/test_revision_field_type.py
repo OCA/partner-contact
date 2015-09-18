@@ -30,8 +30,8 @@ class TestRevisionFieldType(RevisionMixin, common.TransactionCase):
     but we have to ensure that the general revision flows work as expected.
     """
 
-    def _setup_behavior(self):
-        RevisionBehavior = self.env['revision.behavior']
+    def _setup_rules(self):
+        RevisionFieldRule = self.env['revision.field.rule']
         partner_model_id = self.env.ref('base.model_res_partner').id
         fields = (('char', 'ref'),
                   ('text', 'comment'),
@@ -54,15 +54,15 @@ class TestRevisionFieldType(RevisionMixin, common.TransactionCase):
             # set attribute such as 'self.field_char' is a
             # ir.model.fields record of the field res_partner.ref
             setattr(self, attr_name, field_record)
-            RevisionBehavior.create({
+            RevisionFieldRule.create({
                 'model_id': partner_model_id,
                 'field_id': field_record.id,
-                'default_behavior': 'validate',
+                'action': 'validate',
             })
 
     def setUp(self):
         super(TestRevisionFieldType, self).setUp()
-        self._setup_behavior()
+        self._setup_rules()
         self.partner = self.env['res.partner'].create({
             'name': 'Original Name',
             'street': 'Original Street',

@@ -29,7 +29,7 @@
  'website': 'http://www.camptocamp.com',
  'data': ['views/menu.xml',
           'views/res_partner_revision_views.xml',
-          'views/revision_behavior_views.xml',
+          'views/revision_field_rule_views.xml',
           ],
  'test': [],
  'installable': True,

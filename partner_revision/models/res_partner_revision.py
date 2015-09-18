@@ -94,7 +94,7 @@ class ResPartnerRevision(models.Model):
         change_model = self.env['res.partner.revision.change']
         write_values = values.copy()
         changes = []
-        rules = self.env['revision.behavior'].get_rules(record._model._name)
+        rules = self.env['revision.field.rule'].get_rules(record._model._name)
         for field in values:
             rule = rules.get(field)
             if not rule:
@@ -349,12 +349,12 @@ class ResPartnerRevisionChange(models.Model):
         if not self.env.context.get('__revision_rules'):
             # by default always write on partner
             change['state'] = 'done'
-        elif rule.default_behavior == 'auto':
+        elif rule.action == 'auto':
             change['state'] = 'done'
-        elif rule.default_behavior == 'validate':
+        elif rule.action == 'validate':
             change['state'] = 'draft'
             pop_value = True  # change to apply manually
-        elif rule.default_behavior == 'never':
+        elif rule.action == 'never':
             change['state'] = 'cancel'
             pop_value = True  # change never applied
         return change, pop_value
