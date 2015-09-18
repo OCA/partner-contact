@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data noupdate="0">
+    <record id="view_revision_field_rule_tree" model="ir.ui.view">
+      <field name="name">revision.field.rule.tree</field>
+      <field name="model">revision.field.rule</field>
+      <field name="arch" type="xml">
+        <tree string="Revision Fields Rules">
+          <field name="model_id"/>
+          <field name="field_id"/>
+          <field name="action"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_revision_field_rule_form" model="ir.ui.view">
+      <field name="name">revision.field.rule.form</field>
+      <field name="model">revision.field.rule</field>
+      <field name="arch" type="xml">
+        <form string="Revision Fields Rules">
+          <sheet string="Revision Fields Rules">
+            <group>
+              <field name="model_id" invisible="1"/>
+              <field name="field_id"
+                domain="[('model_id', '=', model_id),
+                ('ttype', 'in', ('char', 'selection', 'date', 'datetime', 'float', 'integer', 'text', 'boolean', 'many2one')),
+                ('readonly', '=', False)]"/>
+              <field name="action"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_revision_field_rule_search" model="ir.ui.view">
+      <field name="name">revision.field.rule.search</field>
+      <field name="model">revision.field.rule</field>
+      <field name="arch" type="xml">
+        <search string="Revision Fields Rules">
+          <field name="model_id"/>
+          <field name="field_id"/>
+          <field name="action"/>
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_revision_field_rule_view">
+      <field name="name">Revision Fields Rules</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">revision.field.rule</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="search_view_id" ref="view_revision_field_rule_search"/>
+    </record>
+
+    <menuitem id="menu_revision_field_rule"
+      parent="menu_revision"
+      sequence="20"
+      action="action_revision_field_rule_view"/>
+  </data>
+</openerp>

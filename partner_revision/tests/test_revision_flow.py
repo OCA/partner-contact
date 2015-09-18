@@ -41,31 +41,31 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
     * changes in state 'cancel' or 'done' do not write on the partner
     """
 
-    def _setup_behavior(self):
-        RevisionBehavior = self.env['revision.behavior']
+    def _setup_rules(self):
+        RevisionFieldRule = self.env['revision.field.rule']
         partner_model_id = self.env.ref('base.model_res_partner').id
         self.field_name = self.env.ref('base.field_res_partner_name')
         self.field_street = self.env.ref('base.field_res_partner_street')
         self.field_street2 = self.env.ref('base.field_res_partner_street2')
-        RevisionBehavior.create({
+        RevisionFieldRule.create({
             'model_id': partner_model_id,
             'field_id': self.field_name.id,
-            'default_behavior': 'auto',
+            'action': 'auto',
         })
-        RevisionBehavior.create({
+        RevisionFieldRule.create({
             'model_id': partner_model_id,
             'field_id': self.field_street.id,
-            'default_behavior': 'validate',
+            'action': 'validate',
         })
-        RevisionBehavior.create({
+        RevisionFieldRule.create({
             'model_id': partner_model_id,
             'field_id': self.field_street2.id,
-            'default_behavior': 'never',
+            'action': 'never',
         })
 
     def setUp(self):
         super(TestRevisionFlow, self).setUp()
-        self._setup_behavior()
+        self._setup_rules()
         self.partner = self.env['res.partner'].create({
             'name': 'X',
             'street': 'street X',
