@@ -25,40 +25,40 @@ from openerp import models, fields, api
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    revision_ids = fields.One2many(comodel_name='res.partner.revision',
-                                   inverse_name='partner_id',
-                                   string='Revisions',
-                                   readonly=True)
-    count_pending_revisions = fields.Integer(
-        string='Pending Revisions',
-        compute='_count_pending_revisions',
-        search='_search_count_pending_revisions')
+    changeset_ids = fields.One2many(comodel_name='res.partner.changeset',
+                                    inverse_name='partner_id',
+                                    string='Changesets',
+                                    readonly=True)
+    count_pending_changesets = fields.Integer(
+        string='Pending Changesets',
+        compute='_count_pending_changesets',
+        search='_search_count_pending_changesets')
 
     @api.one
-    @api.depends('revision_ids', 'revision_ids.state')
-    def _count_pending_revisions(self):
-        revisions = self.revision_ids.filtered(
+    @api.depends('changeset_ids', 'changeset_ids.state')
+    def _count_pending_changesets(self):
+        changesets = self.changeset_ids.filtered(
             lambda rev: rev.state == 'draft' and rev.partner_id == self
         )
-        self.count_pending_revisions = len(revisions)
+        self.count_pending_changesets = len(changesets)
 
     @api.multi
     def write(self, values):
-        if self.env.context.get('__no_revision'):
+        if self.env.context.get('__no_changeset'):
             return super(ResPartner, self).write(values)
         else:
-            revision_model = self.env['res.partner.revision']
+            changeset_model = self.env['res.partner.changeset']
             for record in self:
-                local_values = revision_model.add_revision(record, values)
+                local_values = changeset_model.add_changeset(record, values)
                 super(ResPartner, record).write(local_values)
         return True
 
-    def _search_count_pending_revisions(self, operator, value):
+    def _search_count_pending_changesets(self, operator, value):
         if operator not in ('=', '!=', '<', '<=', '>', '>=', 'in', 'not in'):
             return []
         query = ("SELECT p.id "
                  "FROM res_partner p "
-                 "INNER JOIN res_partner_revision r ON r.partner_id = p.id "
+                 "INNER JOIN res_partner_changeset r ON r.partner_id = p.id "
                  "WHERE r.state = 'draft' "
                  "GROUP BY p.id "
                  "HAVING COUNT(r.id) %s %%s ") % operator

@@ -19,7 +19,7 @@
 #
 #
 
-{'name': 'Partner Revisions',
+{'name': 'Partner Changesets',
  'version': '1.0',
  'author': 'Camptocamp',
  'license': 'AGPL-3',

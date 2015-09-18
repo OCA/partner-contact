@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
   <data noupdate="0">
-    <record id="view_res_partner_revision_tree" model="ir.ui.view">
-      <field name="name">res.partner.revision.tree</field>
-      <field name="model">res.partner.revision</field>
+    <record id="view_res_partner_changeset_tree" model="ir.ui.view">
+      <field name="name">res.partner.changeset.tree</field>
+      <field name="model">res.partner.changeset</field>
       <field name="arch" type="xml">
-        <tree string="Partner Revision" delete="false" create="false">
+        <tree string="Partner Changeset" delete="false" create="false">
           <field name="partner_id"/>
           <field name="date"/>
           <field name="state"/>
@@ -13,11 +13,11 @@
       </field>
     </record>
 
-    <record id="view_res_partner_revision_form" model="ir.ui.view">
-      <field name="name">res.partner.revision.form</field>
-      <field name="model">res.partner.revision</field>
+    <record id="view_res_partner_changeset_form" model="ir.ui.view">
+      <field name="name">res.partner.changeset.form</field>
+      <field name="model">res.partner.changeset</field>
       <field name="arch" type="xml">
-        <form string="Partner Revision" delete="false" create="false">
+        <form string="Partner Changeset" delete="false" create="false">
           <header>
             <button name="apply"
               string="Apply pending changes" type="object"
@@ -30,14 +30,14 @@
             <field name="state" widget="statusbar"
               statusbar_visible="draft,done"/>
           </header>
-          <sheet string="Partner Revision">
+          <sheet string="Partner Changeset">
             <group>
               <field name="partner_id"/>
               <field name="date"/>
             </group>
             <group string="Changes">
               <field name="change_ids" nolabel="1">
-                <tree string="Partner Revision Change">
+                <tree string="Partner Changeset Change">
                   <field name="field_id" context="{'no_open': true}"/>
                   <field name="field_type" invisible="1"/>
 
@@ -64,11 +64,11 @@
       </field>
     </record>
 
-    <record id="view_res_partner_revision_change_form" model="ir.ui.view">
-      <field name="name">res.partner.revision.change.form</field>
-      <field name="model">res.partner.revision.change</field>
+    <record id="view_res_partner_changeset_change_form" model="ir.ui.view">
+      <field name="name">res.partner.changeset.change.form</field>
+      <field name="model">res.partner.changeset.change</field>
       <field name="arch" type="xml">
-        <form string="Partner Revision Change" delete="false" create="false">
+        <form string="Partner Changeset Change" delete="false" create="false">
           <header>
             <button name="apply"
               string="Apply" type="object"
@@ -117,11 +117,11 @@
       </field>
     </record>
 
-    <record id="view_res_partner_revision_search" model="ir.ui.view">
-      <field name="name">res.partner.revision.search</field>
-      <field name="model">res.partner.revision</field>
+    <record id="view_res_partner_changeset_search" model="ir.ui.view">
+      <field name="name">res.partner.changeset.search</field>
+      <field name="model">res.partner.changeset</field>
       <field name="arch" type="xml">
-        <search string="Partner Revision">
+        <search string="Partner Changeset">
           <field name="partner_id"/>
           <filter string="Pending" name="draft"
             domain="[('state','=','draft')]"/>
@@ -139,19 +139,20 @@
       </field>
     </record>
 
-    <record model="ir.actions.act_window" id="action_res_partner_revision_view">
-      <field name="name">Partner Revision</field>
+    <record model="ir.actions.act_window" id="action_res_partner_changeset_view">
+      <field name="name">Partner Changeset</field>
       <field name="type">ir.actions.act_window</field>
-      <field name="res_model">res.partner.revision</field>
+      <field name="res_model">res.partner.changeset</field>
       <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
       <field name="context">{'search_default_draft': 1}</field>
-      <field name="search_view_id" ref="view_res_partner_revision_search"/>
+      <field name="search_view_id" ref="view_res_partner_changeset_search"/>
     </record>
 
-    <menuitem id="menu_res_partner_revision"
-      parent="menu_revision"
+    <menuitem id="menu_res_partner_changeset"
+      parent="menu_changeset"
       sequence="20"
-      action="action_res_partner_revision_view"/>
+      name="Changesets"
+      action="action_res_partner_changeset_view"/>
   </data>
 </openerp>
