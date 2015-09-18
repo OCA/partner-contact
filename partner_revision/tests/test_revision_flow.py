@@ -19,7 +19,9 @@
 #
 #
 
+from datetime import datetime, timedelta
 
+from openerp import fields, exceptions
 from openerp.tests import common
 from .common import RevisionMixin
 
@@ -213,3 +215,15 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
         self.assertEqual(revision.state, 'draft')
         revision.apply()
         self.assertEqual(revision.state, 'done')
+
+    def test_apply_revision_with_other_pending(self):
+        """ Error when applying when previous pending revisions exist """
+        changes = [(self.field_name, 'Y', 'draft')]
+        old_revision = self._create_revision(self.partner, changes)
+        # if the date is the same, both revision can be applied
+        to_string = fields.Datetime.to_string
+        old_revision.date = to_string(datetime.now() - timedelta(days=1))
+        changes = [(self.field_name, 'Z', 'draft')]
+        revision = self._create_revision(self.partner, changes)
+        with self.assertRaises(exceptions.Warning):
+            revision.change_ids.apply()

@@ -33,11 +33,13 @@ class ResPartnerRevision(models.Model):
 
     partner_id = fields.Many2one(comodel_name='res.partner',
                                  string='Partner',
+                                 select=True,
                                  required=True)
     change_ids = fields.One2many(comodel_name='res.partner.revision.change',
                                  inverse_name='revision_id',
                                  string='Changes')
-    date = fields.Datetime(default=fields.Datetime.now)
+    date = fields.Datetime(default=fields.Datetime.now,
+                           select=True)
     state = fields.Selection(
         compute='_compute_state',
         selection=[('draft', 'Pending'),
@@ -247,7 +249,24 @@ class ResPartnerRevisionChange(models.Model):
         for change in self:
             if change.state in ('cancel', 'done'):
                 continue
-            partner = change.revision_id.partner_id
+
+            revision = change.revision_id
+            previous_revisions = self.env['res.partner.revision'].search(
+                [('date', '<', revision.date),
+                 ('state', '=', 'draft'),
+                 ('partner_id', '=', revision.partner_id.id),
+                 ],
+                limit=1,
+            )
+            if previous_revisions:
+                raise exceptions.Warning(
+                    _('This change cannot be applied because a previous '
+                      'revision for the same partner is pending.\n'
+                      'Apply all the anterior revisions before applying '
+                      'this one.')
+                )
+
+            partner = revision.partner_id
             value_for_write = change._convert_value_for_write(
                 change.get_new_value()
             )
