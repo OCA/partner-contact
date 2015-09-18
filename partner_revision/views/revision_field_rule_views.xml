@@ -55,6 +55,7 @@
 
     <menuitem id="menu_revision_field_rule"
       parent="menu_revision"
+      groups="group_revision_manager"
       sequence="20"
       action="action_revision_field_rule_view"/>
   </data>
