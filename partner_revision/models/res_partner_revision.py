@@ -19,7 +19,9 @@
 #
 #
 
+from itertools import groupby
 from lxml import etree
+from operator import attrgetter
 
 from openerp import models, fields, api, exceptions, _
 from openerp.osv.orm import setup_modifiers
@@ -245,12 +247,29 @@ class ResPartnerRevisionChange(models.Model):
 
     @api.multi
     def apply(self):
-        # TODO: optimize with 1 write for all fields, group by revision
-        for change in self:
-            if change.state in ('cancel', 'done'):
+        """ Apply the change on the revision's partner
+
+        It is optimized thus that it makes only one write on the partner
+        per revision if many changes are applied at once.
+        """
+        changes_ok = self.browse()
+        key = attrgetter('revision_id')
+        for revision, changes in groupby(self.sorted(key=key), key=key):
+            values = {}
+            partner = revision.partner_id
+            for change in changes:
+                if change.state in ('cancel', 'done'):
+                    continue
+
+                value_for_write = change._convert_value_for_write(
+                    change.get_new_value()
+                )
+                values[change.field_id.name] = value_for_write
+                changes_ok |= change
+
+            if not values:
                 continue
 
-            revision = change.revision_id
             previous_revisions = self.env['res.partner.revision'].search(
                 [('date', '<', revision.date),
                  ('state', '=', 'draft'),
@@ -266,15 +285,12 @@ class ResPartnerRevisionChange(models.Model):
                       'this one.')
                 )
 
-            partner = revision.partner_id
-            value_for_write = change._convert_value_for_write(
-                change.get_new_value()
-            )
-            partner.write({change.field_id.name: value_for_write})
-            change.write({'state': 'done'})
+            partner.write(values)
+        changes_ok.write({'state': 'done'})
 
     @api.multi
     def cancel(self):
+        """ Reject the change """
         if any(change.state == 'done' for change in self):
             raise exceptions.Warning(
                 _('This change has already be applied.')
