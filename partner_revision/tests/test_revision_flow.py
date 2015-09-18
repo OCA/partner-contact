@@ -227,3 +227,25 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
         revision = self._create_revision(self.partner, changes)
         with self.assertRaises(exceptions.Warning):
             revision.change_ids.apply()
+
+    def test_apply_different_revisions(self):
+        """ Apply different revisions at once """
+        partner2 = self.env['res.partner'].create({'name': 'P2'})
+        changes = [
+            (self.field_name, 'Y', 'draft'),
+            (self.field_street, 'street Y', 'draft'),
+            (self.field_street2, 'street2 Y', 'draft'),
+        ]
+        revision = self._create_revision(self.partner, changes)
+        revision2 = self._create_revision(partner2, changes)
+        self.assertEqual(revision.state, 'draft')
+        self.assertEqual(revision2.state, 'draft')
+        (revision + revision2).apply()
+        self.assertEqual(self.partner.name, 'Y')
+        self.assertEqual(self.partner.street, 'street Y')
+        self.assertEqual(self.partner.street2, 'street2 Y')
+        self.assertEqual(partner2.name, 'Y')
+        self.assertEqual(partner2.street, 'street Y')
+        self.assertEqual(partner2.street2, 'street2 Y')
+        self.assertEqual(revision.state, 'done')
+        self.assertEqual(revision2.state, 'done')
