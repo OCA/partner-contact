@@ -28,7 +28,7 @@ class RevisionMixin(object):
         The partner should have no prior revision than the one created in the
         test (so it has exactly 1 revision).
 
-        The expected changes are tuples with (field, current_value,
+        The expected changes are tuples with (field, origin_value,
         new_value, state)
 
         :param partner: record of partner having a revision
@@ -45,7 +45,7 @@ class RevisionMixin(object):
         for expected_change in expected_changes:
             for change in changes:
                 if (change.field_id,
-                        change.get_current_value(),
+                        change.get_origin_value(),
                         change.get_new_value(),
                         change.state) == expected_change:
                     changes -= change
@@ -53,15 +53,15 @@ class RevisionMixin(object):
             else:
                 missing.append(expected_change)
         message = u''
-        for field, current_value, new_value, state in missing:
-            message += ("- field: '%s', current_value: '%s', "
+        for field, origin_value, new_value, state in missing:
+            message += ("- field: '%s', origin_value: '%s', "
                         "new_value: '%s', state: '%s'\n" %
-                        (field.name, current_value, new_value, state))
+                        (field.name, origin_value, new_value, state))
         for change in changes:
-            message += ("+ field: '%s', current_value: '%s', "
+            message += ("+ field: '%s', origin_value: '%s', "
                         "new_value: '%s', state: '%s'\n" %
                         (change.field_id.name,
-                         change.get_current_value(),
+                         change.get_origin_value(),
                          change.get_new_value(),
                          change.state))
         if message:
@@ -76,17 +76,12 @@ class RevisionMixin(object):
         """
         RevisionChange = self.env['res.partner.revision.change']
         get_field = RevisionChange.get_field_for_type
-        convert = RevisionChange._convert_value_for_revision
         change_values = []
         for field, value, state in changes:
-            field_def = self.env['res.partner']._fields[field.name]
-            current_value = field_def.convert_to_write(partner[field.name])
-            current_value = convert(partner, field.name, current_value)
             change = {
                 'field_id': field.id,
                 # write in the field of the appropriate type for the
-                # current field (char, many2one, ...)
-                get_field(field, 'current'): current_value,
+                # origin field (char, many2one, ...)
                 get_field(field, 'new'): value,
                 'state': state,
             }

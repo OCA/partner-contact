@@ -39,6 +39,8 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
     * apply a revision change writes the value on the partner
     * apply a whole revision writes all the changes' values on the partner
     * changes in state 'cancel' or 'done' do not write on the partner
+    * when all the changes are either 'cancel' or 'done', the revision
+      becomes 'done'
     """
 
     def _setup_rules(self):
