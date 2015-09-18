@@ -5,7 +5,7 @@
       <field name="name">res.partner.revision.tree</field>
       <field name="model">res.partner.revision</field>
       <field name="arch" type="xml">
-        <tree string="Partner Revision">
+        <tree string="Partner Revision" delete="false" create="false">
           <field name="partner_id"/>
           <field name="date"/>
           <field name="state"/>
@@ -17,7 +17,7 @@
       <field name="name">res.partner.revision.form</field>
       <field name="model">res.partner.revision</field>
       <field name="arch" type="xml">
-        <form string="Partner Revision">
+        <form string="Partner Revision" delete="false" create="false">
           <header>
             <button name="apply"
               string="Apply pending changes" type="object"
@@ -68,7 +68,7 @@
       <field name="name">res.partner.revision.change.form</field>
       <field name="model">res.partner.revision.change</field>
       <field name="arch" type="xml">
-        <form string="Partner Revision Change">
+        <form string="Partner Revision Change" delete="false" create="false">
           <header>
             <button name="apply"
               string="Apply" type="object"
