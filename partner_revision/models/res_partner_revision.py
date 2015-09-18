@@ -250,7 +250,7 @@ class ResPartnerRevisionChange(models.Model):
     state = fields.Selection(
         selection=[('draft', 'Pending'),
                    ('done', 'Accepted'),
-                   ('cancel', 'Refused'),
+                   ('cancel', 'Rejected'),
                    ],
         required=True,
         default='draft',
