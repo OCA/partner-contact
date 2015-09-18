@@ -19,11 +19,16 @@
 #
 #
 
-from openerp import models, api
+from openerp import models, fields, api
 
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
+
+    revision_ids = fields.One2many(comodel_name='res.partner.revision',
+                                   inverse_name='partner_id',
+                                   string='Revisions',
+                                   readonly=True)
 
     @api.multi
     def write(self, values):

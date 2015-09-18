@@ -41,7 +41,7 @@
                   <field name="field_id" context="{'no_open': true}"/>
                   <field name="field_type" invisible="1"/>
 
-                  <field name="current_value_display"/>
+                  <field name="origin_value_display" string="Previous"/>
                   <field name="new_value_display"/>
 
                   <field name="state"/>
@@ -87,28 +87,28 @@
               <field name="field_type" invisible="1"/>
 
               <!-- attrs are added in fields_view_get -->
-              <field name="current_value_char"/>
+              <field name="origin_value_char"/>
               <field name="new_value_char"/>
 
-              <field name="current_value_date"/>
+              <field name="origin_value_date"/>
               <field name="new_value_date"/>
 
-              <field name="current_value_datetime"/>
+              <field name="origin_value_datetime"/>
               <field name="new_value_datetime"/>
 
-              <field name="current_value_float"/>
+              <field name="origin_value_float"/>
               <field name="new_value_float"/>
 
-              <field name="current_value_integer"/>
+              <field name="origin_value_integer"/>
               <field name="new_value_integer"/>
 
-              <field name="current_value_text"/>
+              <field name="origin_value_text"/>
               <field name="new_value_text"/>
 
-              <field name="current_value_boolean"/>
+              <field name="origin_value_boolean"/>
               <field name="new_value_boolean"/>
 
-              <field name="current_value_reference"/>
+              <field name="origin_value_reference"/>
               <field name="new_value_reference"/>
 
             </group>

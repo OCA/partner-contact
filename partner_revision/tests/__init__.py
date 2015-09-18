@@ -2,3 +2,4 @@
 
 from . import test_revision_flow
 from . import test_revision_field_type
+from . import test_revision_origin

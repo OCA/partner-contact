@@ -24,11 +24,7 @@ from .common import RevisionMixin
 
 
 class TestRevisionFieldType(RevisionMixin, common.TransactionCase):
-    """ Check how revision are generated and applied based on the rules.
-
-    We do not really care about the types of the fields in this test suite,
-    but we have to ensure that the general revision flows work as expected.
-    """
+    """ Check that revision changes are stored expectingly to their types """
 
     def _setup_rules(self):
         RevisionFieldRule = self.env['revision.field.rule']
@@ -256,7 +252,6 @@ class TestRevisionFieldType(RevisionMixin, common.TransactionCase):
 
     def test_apply_many2one(self):
         """ Apply a change on a Many2one field """
-        self.s = True
         self.partner.with_context(__no_revision=True).write({
             self.field_many2one.name: self.env.ref('base.fr').id,
 

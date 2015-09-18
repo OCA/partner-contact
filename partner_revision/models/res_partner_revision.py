@@ -26,6 +26,10 @@ from operator import attrgetter
 from openerp import models, fields, api, exceptions, _
 from openerp.osv.orm import setup_modifiers
 
+# sentinel object to be sure that no empty value was passed to
+# ResPartnerRevisionChange._value_for_revision
+_NO_VALUE = object()
+
 
 class ResPartnerRevision(models.Model):
     _name = 'res.partner.revision'
@@ -122,6 +126,32 @@ class ResPartnerRevision(models.Model):
 
 
 class ResPartnerRevisionChange(models.Model):
+    """ Store the change of one field for one revision on one partner
+
+    This model is composed of 3 sets of fields:
+
+    * 'origin'
+    * 'old'
+    * 'new'
+
+    The 'new' fields contain the value that needs to be validated.
+    The 'old' field copies the actual value of the partner when the
+    change is either applied either canceled. This field is used as a storage
+    place but never shown by itself.
+    The 'origin' fields is a related field towards the actual values of
+    the partner until the change is either applied either canceled, past
+    that it shows the 'old' value.
+    The reason behind this is that the values may change on a partner between
+    the moment when the revision is created and when it is applied.
+
+    On the views, we show the origin fields which represent the actual
+    partner values or the old values and we show the new fields.
+
+    The 'origin' and 'new_value_display' are displayed on
+    the tree view where we need a unique of field, the other fields are
+    displayed on the form view so we benefit from their widgets.
+
+    """
     _name = 'res.partner.revision.change'
     _description = 'Partner Revision Change'
     _rec_name = 'field_id'
@@ -139,8 +169,8 @@ class ResPartnerRevisionChange(models.Model):
                                   string='Field Type',
                                   readonly=True)
 
-    current_value_display = fields.Char(
-        string='Current',
+    origin_value_display = fields.Char(
+        string='Previous',
         compute='_compute_value_display',
     )
     new_value_display = fields.Char(
@@ -148,24 +178,57 @@ class ResPartnerRevisionChange(models.Model):
         compute='_compute_value_display',
     )
 
-    current_value_char = fields.Char(string='Current',
-                                     readonly=True)
-    current_value_date = fields.Date(string='Current',
-                                     readonly=True)
-    current_value_datetime = fields.Datetime(string='Current',
-                                             readonly=True)
-    current_value_float = fields.Float(string='Current',
-                                       readonly=True)
-    current_value_integer = fields.Integer(string='Current',
-                                           readonly=True)
-    current_value_text = fields.Text(string='Current',
-                                     readonly=True)
-    current_value_boolean = fields.Boolean(string='Current',
-                                           readonly=True)
-    current_value_reference = fields.Reference(string='Current',
-                                               selection='_reference_models',
-                                               readonly=True)
+    # Fields showing the origin partner's value or the 'old' value if
+    # the change is applied or canceled.
+    origin_value_char = fields.Char(compute='_compute_origin_values',
+                                    string='Previous',
+                                    readonly=True)
+    origin_value_date = fields.Date(compute='_compute_origin_values',
+                                    string='Previous',
+                                    readonly=True)
+    origin_value_datetime = fields.Datetime(compute='_compute_origin_values',
+                                            string='Previous',
+                                            readonly=True)
+    origin_value_float = fields.Float(compute='_compute_origin_values',
+                                      string='Previous',
+                                      readonly=True)
+    origin_value_integer = fields.Integer(compute='_compute_origin_values',
+                                          string='Previous',
+                                          readonly=True)
+    origin_value_text = fields.Text(compute='_compute_origin_values',
+                                    string='Previous',
+                                    readonly=True)
+    origin_value_boolean = fields.Boolean(compute='_compute_origin_values',
+                                          string='Previous',
+                                          readonly=True)
+    origin_value_reference = fields.Reference(
+        compute='_compute_origin_values',
+        string='Previous',
+        selection='_reference_models',
+        readonly=True,
+    )
 
+    # Fields storing the previous partner's values (saved when the
+    # revision is applied)
+    old_value_char = fields.Char(string='Old',
+                                 readonly=True)
+    old_value_date = fields.Date(string='Old',
+                                 readonly=True)
+    old_value_datetime = fields.Datetime(string='Old',
+                                         readonly=True)
+    old_value_float = fields.Float(string='Old',
+                                   readonly=True)
+    old_value_integer = fields.Integer(string='Old',
+                                       readonly=True)
+    old_value_text = fields.Text(string='Old',
+                                 readonly=True)
+    old_value_boolean = fields.Boolean(string='Old',
+                                       readonly=True)
+    old_value_reference = fields.Reference(string='Old',
+                                           selection='_reference_models',
+                                           readonly=True)
+
+    # Fields storing the value applied on the partner
     new_value_char = fields.Char(string='New',
                                  readonly=True)
     new_value_date = fields.Date(string='New',
@@ -214,51 +277,50 @@ class ResPartnerRevisionChange(models.Model):
                        for suffix, ftypes in _suffix_to_types.iteritems()
                        for ftype in ftypes}
 
-    _current_value_fields = ['current_value_%s' % suffix
-                             for suffix in _suffix_to_types]
+    _origin_value_fields = ['origin_value_%s' % suffix
+                            for suffix in _suffix_to_types]
+    _old_value_fields = ['old_value_%s' % suffix
+                         for suffix in _suffix_to_types]
     _new_value_fields = ['new_value_%s' % suffix
                          for suffix in _suffix_to_types]
-    _value_fields = _current_value_fields + _new_value_fields
+    _value_fields = (_origin_value_fields +
+                     _old_value_fields +
+                     _new_value_fields)
+
+    @api.one
+    @api.depends('revision_id.partner_id.*')
+    def _compute_origin_values(self):
+        field_name = self.get_field_for_type(self.field_id, 'origin')
+        if self.state == 'draft':
+            value = self.revision_id.partner_id[self.field_id.name]
+        else:
+            old_field = self.get_field_for_type(self.field_id, 'old')
+            value = self[old_field]
+        setattr(self, field_name, value)
 
     @api.one
     @api.depends(lambda self: self._value_fields)
     def _compute_value_display(self):
-        for prefix in ('current', 'new'):
+        for prefix in ('origin', 'new'):
             value = getattr(self, 'get_%s_value' % prefix)()
             if self.field_id.ttype == 'many2one' and value:
                 value = value.display_name
             setattr(self, '%s_value_display' % prefix, value)
 
     @api.model
-    def create(self, vals):
-        vals = vals.copy()
-        field = self.env['ir.model.fields'].browse(vals.get('field_id'))
-        if 'current_value' in vals:
-            current_value = vals.pop('current_value')
-            if field:
-                current_field_name = self.get_field_for_type(field, 'current')
-                vals[current_field_name] = current_value
-        if 'new_value' in vals:
-            new_value = vals.pop('new_value')
-            if field:
-                new_field_name = self.get_field_for_type(field, 'new')
-                vals[new_field_name] = new_value
-        return super(ResPartnerRevisionChange, self).create(vals)
-
-    @api.model
-    def get_field_for_type(self, field, current_or_new):
-        assert current_or_new in ('new', 'current')
+    def get_field_for_type(self, field, prefix):
+        assert prefix in ('origin', 'old', 'new')
         field_type = self._type_to_suffix.get(field.ttype)
         if not field_type:
             raise NotImplementedError(
                 'field type %s is not supported' % field_type
             )
-        return '%s_value_%s' % (current_or_new, field_type)
+        return '%s_value_%s' % (prefix, field_type)
 
     @api.multi
-    def get_current_value(self):
+    def get_origin_value(self):
         self.ensure_one()
-        field_name = self.get_field_for_type(self.field_id, 'current')
+        field_name = self.get_field_for_type(self.field_id, 'origin')
         return self[field_name]
 
     @api.multi
@@ -266,6 +328,18 @@ class ResPartnerRevisionChange(models.Model):
         self.ensure_one()
         field_name = self.get_field_for_type(self.field_id, 'new')
         return self[field_name]
+
+    @api.multi
+    def set_old_value(self):
+        """ Copy the value of the partner to the 'old' field """
+        for change in self:
+            # copy the existing partner's value for the history
+            old_value_for_write = self._value_for_revision(
+                change.revision_id.partner_id,
+                change.field_id.name
+            )
+            old_field_name = self.get_field_for_type(change.field_id, 'old')
+            change.write({old_field_name: old_value_for_write})
 
     @api.multi
     def apply(self):
@@ -283,10 +357,14 @@ class ResPartnerRevisionChange(models.Model):
                 if change.state in ('cancel', 'done'):
                     continue
 
+                field = change.field_id
                 value_for_write = change._convert_value_for_write(
                     change.get_new_value()
                 )
-                values[change.field_id.name] = value_for_write
+                values[field.name] = value_for_write
+
+                change.set_old_value()
+
                 changes_ok |= change
 
             if not values:
@@ -307,7 +385,8 @@ class ResPartnerRevisionChange(models.Model):
                       'this one.')
                 )
 
-            partner.write(values)
+            partner.with_context(__no_revision=True).write(values)
+
         changes_ok.write({'state': 'done'})
 
     @api.multi
@@ -317,6 +396,7 @@ class ResPartnerRevisionChange(models.Model):
             raise exceptions.Warning(
                 _('This change has already be applied.')
             )
+        self.set_old_value()
         self.write({'state': 'cancel'})
 
     @api.model
@@ -331,8 +411,18 @@ class ResPartnerRevisionChange(models.Model):
         return model_field_def.convert_to_write(value)
 
     @api.model
-    def _convert_value_for_revision(self, record, field, value):
-        field_def = record._fields[field]
+    def _value_for_revision(self, record, field_name, value=_NO_VALUE):
+        """ Return a value from the record ready to write in a revision field
+
+        :param record: modified record
+        :param field_name: name of the modified field
+        :param value: if no value is given, it is read from the record
+        """
+        field_def = record._fields[field_name]
+        if value is _NO_VALUE:
+            # when the value is read from the record, we need to prepare
+            # it for the write (e.g. extract .id from a many2one record)
+            value = field_def.convert_to_write(record[field_name])
         if field_def.type == 'many2one':
             # store as 'reference'
             comodel = field_def.comodel_name
@@ -341,7 +431,7 @@ class ResPartnerRevisionChange(models.Model):
             return value
 
     @api.multi
-    def _prepare_revision_change(self, record, rule, field, value):
+    def _prepare_revision_change(self, record, rule, field_name, value):
         """ Prepare data for a revision change
 
         It returns a dict of the values to write on the revision change
@@ -350,28 +440,15 @@ class ResPartnerRevisionChange(models.Model):
 
         :returns: dict of values, boolean
         """
-        field_def = record._fields[field]
-        # get a ready to write value for the type of the field,
-        # for instance takes '.id' from a many2one's record (the
-        # new value is already a value as expected for the
-        # write)
-        current_value = field_def.convert_to_write(record[field])
-        # get values ready to write as expected by the revision
-        # (for instance, a many2one is written in a reference
-        # field)
-        current_value = self._convert_value_for_revision(record, field,
-                                                         current_value)
-        new_value = self._convert_value_for_revision(record, field, value)
+        new_field_name = self.get_field_for_type(rule.field_id, 'new')
+        new_value = self._value_for_revision(record, field_name, value=value)
         change = {
-            'current_value': current_value,
-            'new_value': new_value,
+            new_field_name: new_value,
             'field_id': rule.field_id.id,
         }
         pop_value = False
-        if not self.env.context.get('__revision_rules'):
-            # by default always write on partner
-            change['state'] = 'done'
-        elif rule.action == 'auto':
+        if (not self.env.context.get('__revision_rules') or
+                rule.action == 'auto'):
             change['state'] = 'done'
         elif rule.action == 'validate':
             change['state'] = 'draft'
@@ -379,6 +456,18 @@ class ResPartnerRevisionChange(models.Model):
         elif rule.action == 'never':
             change['state'] = 'cancel'
             pop_value = True  # change never applied
+
+        if change['state'] in ('cancel', 'done'):
+            # Normally the 'old' value is set when we use the 'apply'
+            # button, but since we short circuit the 'apply', we
+            # directly set the 'old' value here
+            old_field_name = self.get_field_for_type(rule.field_id, 'old')
+            # get values ready to write as expected by the revision
+            # (for instance, a many2one is written in a reference
+            # field)
+            origin_value = self._value_for_revision(record, field_name)
+            change[old_field_name] = origin_value
+
         return change, pop_value
 
     def fields_view_get(self, *args, **kwargs):
@@ -388,7 +477,7 @@ class ResPartnerRevisionChange(models.Model):
             return
         doc = etree.XML(result['arch'])
         for suffix, ftypes in self._suffix_to_types.iteritems():
-            for prefix in ('current', 'new'):
+            for prefix in ('origin', 'old', 'new'):
                 field_name = '%s_value_%s' % (prefix, suffix)
                 field_nodes = doc.xpath("//field[@name='%s']" % field_name)
                 for node in field_nodes:
