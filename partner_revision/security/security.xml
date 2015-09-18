@@ -2,16 +2,16 @@
 <openerp>
   <data>
 
-    <record id="group_revision_manager" model="res.groups">
-      <field name="name">Revision Configuration</field>
-      <field name="comment">The user will have an access to the configuration of the revision rules.</field>
+    <record id="group_changeset_manager" model="res.groups">
+      <field name="name">Changeset Configuration</field>
+      <field name="comment">The user will have an access to the configuration of the changeset rules.</field>
       <field name="users" eval="[(4, ref('base.user_root'))]"/>
     </record>
 
-    <record id="group_revision_user" model="res.groups">
-      <field name="name">Revisions Validations </field>
-      <field name="comment">The user will be able to apply or reject revisions.</field>
-      <field name="implied_ids" eval="[(4, ref('group_revision_manager'))]"/>
+    <record id="group_changeset_user" model="res.groups">
+      <field name="name">Changesets Validations </field>
+      <field name="comment">The user will be able to apply or reject changesets.</field>
+      <field name="implied_ids" eval="[(4, ref('group_changeset_manager'))]"/>
       <field name="users" eval="[(4, ref('base.user_root'))]"/>
     </record>
 

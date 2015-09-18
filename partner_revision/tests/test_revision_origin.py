@@ -20,10 +20,10 @@
 #
 
 from openerp.tests import common
-from .common import RevisionMixin
+from .common import ChangesetMixin
 
 
-class TestRevisionOrigin(RevisionMixin, common.TransactionCase):
+class TestChangesetOrigin(ChangesetMixin, common.TransactionCase):
     """ Check that origin - old fields are stored as expected.
 
     'origin' fields dynamically read fields from the partner when the state
@@ -33,17 +33,17 @@ class TestRevisionOrigin(RevisionMixin, common.TransactionCase):
     """
 
     def _setup_rules(self):
-        RevisionFieldRule = self.env['revision.field.rule']
+        ChangesetFieldRule = self.env['changeset.field.rule']
         partner_model_id = self.env.ref('base.model_res_partner').id
         self.field_name = self.env.ref('base.field_res_partner_name')
-        RevisionFieldRule.create({
+        ChangesetFieldRule.create({
             'model_id': partner_model_id,
             'field_id': self.field_name.id,
             'action': 'validate',
         })
 
     def setUp(self):
-        super(TestRevisionOrigin, self).setUp()
+        super(TestChangesetOrigin, self).setUp()
         self._setup_rules()
         self.partner = self.env['res.partner'].create({
             'name': 'X',
@@ -54,11 +54,11 @@ class TestRevisionOrigin(RevisionMixin, common.TransactionCase):
 
         According to the state of the change.
         """
-        self.partner.with_context(__revision_rules=True).write({
+        self.partner.with_context(__changeset_rules=True).write({
             'name': 'Y',
         })
-        revision = self.partner.revision_ids
-        change = revision.change_ids
+        changeset = self.partner.changeset_ids
+        change = changeset.change_ids
         self.assertEqual(self.partner.name, 'X')
         self.assertEqual(change.origin_value_char, 'X')
         self.assertEqual(change.origin_value_display, 'X')
@@ -77,11 +77,11 @@ class TestRevisionOrigin(RevisionMixin, common.TransactionCase):
 
         According to the state of the change.
         """
-        self.partner.with_context(__revision_rules=True).write({
+        self.partner.with_context(__changeset_rules=True).write({
             'name': 'Y',
         })
-        revision = self.partner.revision_ids
-        change = revision.change_ids
+        changeset = self.partner.changeset_ids
+        change = changeset.change_ids
         self.assertEqual(self.partner.name, 'X')
         self.assertEqual(change.origin_value_char, 'X')
         self.assertEqual(change.origin_value_display, 'X')
@@ -97,11 +97,11 @@ class TestRevisionOrigin(RevisionMixin, common.TransactionCase):
 
     def test_old_field_of_change_with_apply(self):
         """ Old field is stored when the change is applied """
-        self.partner.with_context(__revision_rules=True).write({
+        self.partner.with_context(__changeset_rules=True).write({
             'name': 'Y',
         })
-        revision = self.partner.revision_ids
-        change = revision.change_ids
+        changeset = self.partner.changeset_ids
+        change = changeset.change_ids
         self.assertEqual(self.partner.name, 'X')
         self.assertFalse(change.old_value_char)
         self.partner.write({'name': 'A'})
@@ -113,11 +113,11 @@ class TestRevisionOrigin(RevisionMixin, common.TransactionCase):
 
     def test_old_field_of_change_with_cancel(self):
         """ Old field is stored when the change is canceled """
-        self.partner.with_context(__revision_rules=True).write({
+        self.partner.with_context(__changeset_rules=True).write({
             'name': 'Y',
         })
-        revision = self.partner.revision_ids
-        change = revision.change_ids
+        changeset = self.partner.changeset_ids
+        change = changeset.change_ids
         self.assertEqual(self.partner.name, 'X')
         self.assertFalse(change.old_value_char)
         self.partner.write({'name': 'A'})

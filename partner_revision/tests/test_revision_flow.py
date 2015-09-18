@@ -23,50 +23,50 @@ from datetime import datetime, timedelta
 
 from openerp import fields, exceptions
 from openerp.tests import common
-from .common import RevisionMixin
+from .common import ChangesetMixin
 
 
-class TestRevisionFlow(RevisionMixin, common.TransactionCase):
-    """ Check how revision are generated and applied based on the rules.
+class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
+    """ Check how changeset are generated and applied based on the rules.
 
     We do not really care about the types of the fields in this test
     suite, so we only use 'char' fields.  We have to ensure that the
-    general revision flows work as expected, that is:
+    general changeset flows work as expected, that is:
 
-    * create a 'done' revision when a manual/system write is made on partner
-    * create a revision according to the revision rules when the key
-      '__revision_rules' is passed in the context
-    * apply a revision change writes the value on the partner
-    * apply a whole revision writes all the changes' values on the partner
+    * create a 'done' changeset when a manual/system write is made on partner
+    * create a changeset according to the changeset rules when the key
+      '__changeset_rules' is passed in the context
+    * apply a changeset change writes the value on the partner
+    * apply a whole changeset writes all the changes' values on the partner
     * changes in state 'cancel' or 'done' do not write on the partner
-    * when all the changes are either 'cancel' or 'done', the revision
+    * when all the changes are either 'cancel' or 'done', the changeset
       becomes 'done'
     """
 
     def _setup_rules(self):
-        RevisionFieldRule = self.env['revision.field.rule']
+        ChangesetFieldRule = self.env['changeset.field.rule']
         partner_model_id = self.env.ref('base.model_res_partner').id
         self.field_name = self.env.ref('base.field_res_partner_name')
         self.field_street = self.env.ref('base.field_res_partner_street')
         self.field_street2 = self.env.ref('base.field_res_partner_street2')
-        RevisionFieldRule.create({
+        ChangesetFieldRule.create({
             'model_id': partner_model_id,
             'field_id': self.field_name.id,
             'action': 'auto',
         })
-        RevisionFieldRule.create({
+        ChangesetFieldRule.create({
             'model_id': partner_model_id,
             'field_id': self.field_street.id,
             'action': 'validate',
         })
-        RevisionFieldRule.create({
+        ChangesetFieldRule.create({
             'model_id': partner_model_id,
             'field_id': self.field_street2.id,
             'action': 'never',
         })
 
     def setUp(self):
-        super(TestRevisionFlow, self).setUp()
+        super(TestChangesetFlow, self).setUp()
         self._setup_rules()
         self.partner = self.env['res.partner'].create({
             'name': 'X',
@@ -74,18 +74,18 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
             'street2': 'street2 X',
         })
 
-    def test_new_revision(self):
-        """ Add a new revision on a partner
+    def test_new_changeset(self):
+        """ Add a new changeset on a partner
 
-        A new revision is created when we write on a partner with
-        ``__revision_rules`` in the context.
+        A new changeset is created when we write on a partner with
+        ``__changeset_rules`` in the context.
         """
-        self.partner.with_context(__revision_rules=True).write({
+        self.partner.with_context(__changeset_rules=True).write({
             'name': 'Y',
             'street': 'street Y',
             'street2': 'street2 Y',
         })
-        self.assert_revision(
+        self.assert_changeset(
             self.partner,
             [(self.field_name, 'X', 'Y', 'done'),
              (self.field_street, 'street X', 'street Y', 'draft'),
@@ -96,12 +96,12 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
         self.assertEqual(self.partner.street, 'street X')
         self.assertEqual(self.partner.street2, 'street2 X')
 
-    def test_new_revision_empty_value(self):
-        """ Create a revision change that empty a value """
-        self.partner.with_context(__revision_rules=True).write({
+    def test_new_changeset_empty_value(self):
+        """ Create a changeset change that empty a value """
+        self.partner.with_context(__changeset_rules=True).write({
             'street': False,
         })
-        self.assert_revision(
+        self.assert_changeset(
             self.partner,
             [(self.field_street, 'street X', False, 'draft')]
         )
@@ -109,14 +109,14 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
     def test_manual_edition(self):
         """ A manual edition of a partner should always be applied
 
-        But should create a 'done' revision
+        But should create a 'done' changeset
         """
         self.partner.write({
             'name': 'Y',
             'street': 'street Y',
             'street2': 'street2 Y',
         })
-        self.assert_revision(
+        self.assert_changeset(
             self.partner,
             [(self.field_name, 'X', 'Y', 'done'),
              (self.field_street, 'street X', 'street Y', 'done'),
@@ -128,22 +128,22 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
         self.assertEqual(self.partner.street2, 'street2 Y')
 
     def test_apply_change(self):
-        """ Apply a revision change on a partner """
+        """ Apply a changeset change on a partner """
         changes = [
             (self.field_name, 'Y', 'draft'),
         ]
-        revision = self._create_revision(self.partner, changes)
-        revision.change_ids.apply()
+        changeset = self._create_changeset(self.partner, changes)
+        changeset.change_ids.apply()
         self.assertEqual(self.partner.name, 'Y')
-        self.assertEqual(revision.change_ids.state, 'done')
+        self.assertEqual(changeset.change_ids.state, 'done')
 
     def test_apply_done_change(self):
         """ Done changes do not apply (already applied) """
         changes = [
             (self.field_name, 'Y', 'done'),
         ]
-        revision = self._create_revision(self.partner, changes)
-        revision.change_ids.apply()
+        changeset = self._create_changeset(self.partner, changes)
+        changeset.change_ids.apply()
         self.assertEqual(self.partner.name, 'X')
 
     def test_apply_cancel_change(self):
@@ -151,8 +151,8 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
         changes = [
             (self.field_name, 'Y', 'cancel'),
         ]
-        revision = self._create_revision(self.partner, changes)
-        revision.change_ids.apply()
+        changeset = self._create_changeset(self.partner, changes)
+        changeset.change_ids.apply()
         self.assertEqual(self.partner.name, 'X')
 
     def test_apply_empty_value(self):
@@ -160,8 +160,8 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
         changes = [
             (self.field_street, False, 'draft'),
         ]
-        revision = self._create_revision(self.partner, changes)
-        revision.change_ids.apply()
+        changeset = self._create_changeset(self.partner, changes)
+        changeset.change_ids.apply()
         self.assertFalse(self.partner.street)
 
     def test_apply_change_loop(self):
@@ -171,83 +171,83 @@ class TestRevisionFlow(RevisionMixin, common.TransactionCase):
             (self.field_street, 'street Y', 'draft'),
             (self.field_street2, 'street2 Y', 'draft'),
         ]
-        revision = self._create_revision(self.partner, changes)
-        revision.change_ids.apply()
+        changeset = self._create_changeset(self.partner, changes)
+        changeset.change_ids.apply()
         self.assertEqual(self.partner.name, 'Y')
         self.assertEqual(self.partner.street, 'street Y')
         self.assertEqual(self.partner.street2, 'street2 Y')
 
     def test_apply(self):
-        """ Apply a full revision on a partner """
+        """ Apply a full changeset on a partner """
         changes = [
             (self.field_name, 'Y', 'draft'),
             (self.field_street, 'street Y', 'draft'),
             (self.field_street2, 'street2 Y', 'draft'),
         ]
-        revision = self._create_revision(self.partner, changes)
-        revision.apply()
+        changeset = self._create_changeset(self.partner, changes)
+        changeset.apply()
         self.assertEqual(self.partner.name, 'Y')
         self.assertEqual(self.partner.street, 'street Y')
         self.assertEqual(self.partner.street2, 'street2 Y')
 
-    def test_revision_state_on_done(self):
-        """ Check that revision state becomes done when changes are done """
+    def test_changeset_state_on_done(self):
+        """ Check that changeset state becomes done when changes are done """
         changes = [(self.field_name, 'Y', 'draft')]
-        revision = self._create_revision(self.partner, changes)
-        self.assertEqual(revision.state, 'draft')
-        revision.change_ids.apply()
-        self.assertEqual(revision.state, 'done')
+        changeset = self._create_changeset(self.partner, changes)
+        self.assertEqual(changeset.state, 'draft')
+        changeset.change_ids.apply()
+        self.assertEqual(changeset.state, 'done')
 
-    def test_revision_state_on_cancel(self):
+    def test_changeset_state_on_cancel(self):
         """ Check that rev. state becomes done when changes are canceled """
         changes = [(self.field_name, 'Y', 'draft')]
-        revision = self._create_revision(self.partner, changes)
-        self.assertEqual(revision.state, 'draft')
-        revision.change_ids.cancel()
-        self.assertEqual(revision.state, 'done')
+        changeset = self._create_changeset(self.partner, changes)
+        self.assertEqual(changeset.state, 'draft')
+        changeset.change_ids.cancel()
+        self.assertEqual(changeset.state, 'done')
 
-    def test_revision_state(self):
-        """ Check that revision state becomes done with multiple changes """
+    def test_changeset_state(self):
+        """ Check that changeset state becomes done with multiple changes """
         changes = [
             (self.field_name, 'Y', 'draft'),
             (self.field_street, 'street Y', 'draft'),
             (self.field_street2, 'street2 Y', 'draft'),
         ]
-        revision = self._create_revision(self.partner, changes)
-        self.assertEqual(revision.state, 'draft')
-        revision.apply()
-        self.assertEqual(revision.state, 'done')
+        changeset = self._create_changeset(self.partner, changes)
+        self.assertEqual(changeset.state, 'draft')
+        changeset.apply()
+        self.assertEqual(changeset.state, 'done')
 
-    def test_apply_revision_with_other_pending(self):
-        """ Error when applying when previous pending revisions exist """
+    def test_apply_changeset_with_other_pending(self):
+        """ Error when applying when previous pending changesets exist """
         changes = [(self.field_name, 'Y', 'draft')]
-        old_revision = self._create_revision(self.partner, changes)
-        # if the date is the same, both revision can be applied
+        old_changeset = self._create_changeset(self.partner, changes)
+        # if the date is the same, both changeset can be applied
         to_string = fields.Datetime.to_string
-        old_revision.date = to_string(datetime.now() - timedelta(days=1))
+        old_changeset.date = to_string(datetime.now() - timedelta(days=1))
         changes = [(self.field_name, 'Z', 'draft')]
-        revision = self._create_revision(self.partner, changes)
+        changeset = self._create_changeset(self.partner, changes)
         with self.assertRaises(exceptions.Warning):
-            revision.change_ids.apply()
+            changeset.change_ids.apply()
 
-    def test_apply_different_revisions(self):
-        """ Apply different revisions at once """
+    def test_apply_different_changesets(self):
+        """ Apply different changesets at once """
         partner2 = self.env['res.partner'].create({'name': 'P2'})
         changes = [
             (self.field_name, 'Y', 'draft'),
             (self.field_street, 'street Y', 'draft'),
             (self.field_street2, 'street2 Y', 'draft'),
         ]
-        revision = self._create_revision(self.partner, changes)
-        revision2 = self._create_revision(partner2, changes)
-        self.assertEqual(revision.state, 'draft')
-        self.assertEqual(revision2.state, 'draft')
-        (revision + revision2).apply()
+        changeset = self._create_changeset(self.partner, changes)
+        changeset2 = self._create_changeset(partner2, changes)
+        self.assertEqual(changeset.state, 'draft')
+        self.assertEqual(changeset2.state, 'draft')
+        (changeset + changeset2).apply()
         self.assertEqual(self.partner.name, 'Y')
         self.assertEqual(self.partner.street, 'street Y')
         self.assertEqual(self.partner.street2, 'street2 Y')
         self.assertEqual(partner2.name, 'Y')
         self.assertEqual(partner2.street, 'street Y')
         self.assertEqual(partner2.street2, 'street2 Y')
-        self.assertEqual(revision.state, 'done')
-        self.assertEqual(revision2.state, 'done')
+        self.assertEqual(changeset.state, 'done')
+        self.assertEqual(changeset2.state, 'done')

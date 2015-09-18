@@ -23,9 +23,9 @@ from openerp import models, fields, api
 from openerp.tools.cache import ormcache
 
 
-class RevisionFieldRule(models.Model):
-    _name = 'revision.field.rule'
-    _description = 'Revision Field Rules'
+class ChangesetFieldRule(models.Model):
+    _name = 'changeset.field.rule'
+    _description = 'Changeset Field Rules'
     _rec_name = 'field_id'
 
     model_id = fields.Many2one(comodel_name='ir.model',
@@ -62,18 +62,18 @@ class RevisionFieldRule(models.Model):
 
     @api.model
     def create(self, vals):
-        record = super(RevisionFieldRule, self).create(vals)
+        record = super(ChangesetFieldRule, self).create(vals)
         self.clear_caches()
         return record
 
     @api.multi
     def write(self, vals):
-        result = super(RevisionFieldRule, self).write(vals)
+        result = super(ChangesetFieldRule, self).write(vals)
         self.clear_caches()
         return result
 
     @api.multi
     def unlink(self):
-        result = super(RevisionFieldRule, self).unlink()
+        result = super(ChangesetFieldRule, self).unlink()
         self.clear_caches()
         return result

@@ -27,13 +27,13 @@ from openerp import models, fields, api, exceptions, _
 from openerp.osv.orm import setup_modifiers
 
 # sentinel object to be sure that no empty value was passed to
-# ResPartnerRevisionChange._value_for_revision
+# ResPartnerChangesetChange._value_for_changeset
 _NO_VALUE = object()
 
 
-class ResPartnerRevision(models.Model):
-    _name = 'res.partner.revision'
-    _description = 'Partner Revision'
+class ResPartnerChangeset(models.Model):
+    _name = 'res.partner.changeset'
+    _description = 'Partner Changeset'
     _order = 'date desc'
     _rec_name = 'date'
 
@@ -42,8 +42,8 @@ class ResPartnerRevision(models.Model):
                                  select=True,
                                  required=True,
                                  readonly=True)
-    change_ids = fields.One2many(comodel_name='res.partner.revision.change',
-                                 inverse_name='revision_id',
+    change_ids = fields.One2many(comodel_name='res.partner.changeset.change',
+                                 inverse_name='changeset_id',
                                  string='Changes',
                                  readonly=True)
     date = fields.Datetime(default=fields.Datetime.now,
@@ -76,14 +76,14 @@ class ResPartnerRevision(models.Model):
         self.mapped('change_ids').cancel()
 
     @api.multi
-    def add_revision(self, record, values):
-        """ Add a revision on a partner
+    def add_changeset(self, record, values):
+        """ Add a changeset on a partner
 
         By default, when a partner is modified by a user or by the
-        system, the changes are applied and a validated revision is
+        system, the changes are applied and a validated changeset is
         created.  Callers which want to delegate the write of some
-        fields to the revision must explicitly ask for it by providing a
-        key ``__revision_rules`` in the environment's context.
+        fields to the changeset must explicitly ask for it by providing a
+        key ``__changeset_rules`` in the environment's context.
 
         Should be called before the execution of ``write`` on the record
         so we can keep track of the existing value and also because the
@@ -98,10 +98,10 @@ class ResPartnerRevision(models.Model):
 
         """
         record.ensure_one()
-        change_model = self.env['res.partner.revision.change']
+        change_model = self.env['res.partner.changeset.change']
         write_values = values.copy()
         changes = []
-        rules = self.env['revision.field.rule'].get_rules(record._model._name)
+        rules = self.env['changeset.field.rule'].get_rules(record._model._name)
         for field in values:
             rule = rules.get(field)
             if not rule:
@@ -110,14 +110,14 @@ class ResPartnerRevision(models.Model):
                 if not change_model._has_field_changed(record, field,
                                                        values[field]):
                     continue
-            change, pop_value = change_model._prepare_revision_change(
+            change, pop_value = change_model._prepare_changeset_change(
                 record, rule, field, values[field]
             )
             if pop_value:
                 write_values.pop(field)
             changes.append(change)
         if changes:
-            self.env['res.partner.revision'].create({
+            self.env['res.partner.changeset'].create({
                 'partner_id': record.id,
                 'change_ids': [(0, 0, vals) for vals in changes],
                 'date': fields.Datetime.now(),
@@ -125,8 +125,8 @@ class ResPartnerRevision(models.Model):
         return write_values
 
 
-class ResPartnerRevisionChange(models.Model):
-    """ Store the change of one field for one revision on one partner
+class ResPartnerChangesetChange(models.Model):
+    """ Store the change of one field for one changeset on one partner
 
     This model is composed of 3 sets of fields:
 
@@ -142,7 +142,7 @@ class ResPartnerRevisionChange(models.Model):
     the partner until the change is either applied either canceled, past
     that it shows the 'old' value.
     The reason behind this is that the values may change on a partner between
-    the moment when the revision is created and when it is applied.
+    the moment when the changeset is created and when it is applied.
 
     On the views, we show the origin fields which represent the actual
     partner values or the old values and we show the new fields.
@@ -152,15 +152,15 @@ class ResPartnerRevisionChange(models.Model):
     displayed on the form view so we benefit from their widgets.
 
     """
-    _name = 'res.partner.revision.change'
-    _description = 'Partner Revision Change'
+    _name = 'res.partner.changeset.change'
+    _description = 'Partner Changeset Change'
     _rec_name = 'field_id'
 
-    revision_id = fields.Many2one(comodel_name='res.partner.revision',
-                                  required=True,
-                                  string='Revision',
-                                  ondelete='cascade',
-                                  readonly=True)
+    changeset_id = fields.Many2one(comodel_name='res.partner.changeset',
+                                   required=True,
+                                   string='Changeset',
+                                   ondelete='cascade',
+                                   readonly=True)
     field_id = fields.Many2one(comodel_name='ir.model.fields',
                                string='Field',
                                required=True,
@@ -209,7 +209,7 @@ class ResPartnerRevisionChange(models.Model):
     )
 
     # Fields storing the previous partner's values (saved when the
-    # revision is applied)
+    # changeset is applied)
     old_value_char = fields.Char(string='Old',
                                  readonly=True)
     old_value_date = fields.Date(string='Old',
@@ -288,11 +288,11 @@ class ResPartnerRevisionChange(models.Model):
                      _new_value_fields)
 
     @api.one
-    @api.depends('revision_id.partner_id.*')
+    @api.depends('changeset_id.partner_id.*')
     def _compute_origin_values(self):
         field_name = self.get_field_for_type(self.field_id, 'origin')
         if self.state == 'draft':
-            value = self.revision_id.partner_id[self.field_id.name]
+            value = self.changeset_id.partner_id[self.field_id.name]
         else:
             old_field = self.get_field_for_type(self.field_id, 'old')
             value = self[old_field]
@@ -334,8 +334,8 @@ class ResPartnerRevisionChange(models.Model):
         """ Copy the value of the partner to the 'old' field """
         for change in self:
             # copy the existing partner's value for the history
-            old_value_for_write = self._value_for_revision(
-                change.revision_id.partner_id,
+            old_value_for_write = self._value_for_changeset(
+                change.changeset_id.partner_id,
                 change.field_id.name
             )
             old_field_name = self.get_field_for_type(change.field_id, 'old')
@@ -343,16 +343,16 @@ class ResPartnerRevisionChange(models.Model):
 
     @api.multi
     def apply(self):
-        """ Apply the change on the revision's partner
+        """ Apply the change on the changeset's partner
 
         It is optimized thus that it makes only one write on the partner
-        per revision if many changes are applied at once.
+        per changeset if many changes are applied at once.
         """
         changes_ok = self.browse()
-        key = attrgetter('revision_id')
-        for revision, changes in groupby(self.sorted(key=key), key=key):
+        key = attrgetter('changeset_id')
+        for changeset, changes in groupby(self.sorted(key=key), key=key):
             values = {}
-            partner = revision.partner_id
+            partner = changeset.partner_id
             for change in changes:
                 if change.state in ('cancel', 'done'):
                     continue
@@ -370,22 +370,22 @@ class ResPartnerRevisionChange(models.Model):
             if not values:
                 continue
 
-            previous_revisions = self.env['res.partner.revision'].search(
-                [('date', '<', revision.date),
+            previous_changesets = self.env['res.partner.changeset'].search(
+                [('date', '<', changeset.date),
                  ('state', '=', 'draft'),
-                 ('partner_id', '=', revision.partner_id.id),
+                 ('partner_id', '=', changeset.partner_id.id),
                  ],
                 limit=1,
             )
-            if previous_revisions:
+            if previous_changesets:
                 raise exceptions.Warning(
                     _('This change cannot be applied because a previous '
-                      'revision for the same partner is pending.\n'
-                      'Apply all the anterior revisions before applying '
+                      'changeset for the same partner is pending.\n'
+                      'Apply all the anterior changesets before applying '
                       'this one.')
                 )
 
-            partner.with_context(__no_revision=True).write(values)
+            partner.with_context(__no_changeset=True).write(values)
 
         changes_ok.write({'state': 'done'})
 
@@ -411,8 +411,8 @@ class ResPartnerRevisionChange(models.Model):
         return model_field_def.convert_to_write(value)
 
     @api.model
-    def _value_for_revision(self, record, field_name, value=_NO_VALUE):
-        """ Return a value from the record ready to write in a revision field
+    def _value_for_changeset(self, record, field_name, value=_NO_VALUE):
+        """ Return a value from the record ready to write in a changeset field
 
         :param record: modified record
         :param field_name: name of the modified field
@@ -431,23 +431,23 @@ class ResPartnerRevisionChange(models.Model):
             return value
 
     @api.multi
-    def _prepare_revision_change(self, record, rule, field_name, value):
-        """ Prepare data for a revision change
+    def _prepare_changeset_change(self, record, rule, field_name, value):
+        """ Prepare data for a changeset change
 
-        It returns a dict of the values to write on the revision change
+        It returns a dict of the values to write on the changeset change
         and a boolean that indicates if the value should be popped out
         of the values to write on the model.
 
         :returns: dict of values, boolean
         """
         new_field_name = self.get_field_for_type(rule.field_id, 'new')
-        new_value = self._value_for_revision(record, field_name, value=value)
+        new_value = self._value_for_changeset(record, field_name, value=value)
         change = {
             new_field_name: new_value,
             'field_id': rule.field_id.id,
         }
         pop_value = False
-        if (not self.env.context.get('__revision_rules') or
+        if (not self.env.context.get('__changeset_rules') or
                 rule.action == 'auto'):
             change['state'] = 'done'
         elif rule.action == 'validate':
@@ -462,16 +462,16 @@ class ResPartnerRevisionChange(models.Model):
             # button, but since we short circuit the 'apply', we
             # directly set the 'old' value here
             old_field_name = self.get_field_for_type(rule.field_id, 'old')
-            # get values ready to write as expected by the revision
+            # get values ready to write as expected by the changeset
             # (for instance, a many2one is written in a reference
             # field)
-            origin_value = self._value_for_revision(record, field_name)
+            origin_value = self._value_for_changeset(record, field_name)
             change[old_field_name] = origin_value
 
         return change, pop_value
 
     def fields_view_get(self, *args, **kwargs):
-        _super = super(ResPartnerRevisionChange, self)
+        _super = super(ResPartnerChangesetChange, self)
         result = _super.fields_view_get(*args, **kwargs)
         if result['type'] != 'form':
             return

@@ -20,27 +20,27 @@
 #
 
 
-class RevisionMixin(object):
+class ChangesetMixin(object):
 
-    def assert_revision(self, partner, expected_changes):
-        """ Check if a revision has been created according to expected values
+    def assert_changeset(self, partner, expected_changes):
+        """ Check if a changeset has been created according to expected values
 
-        The partner should have no prior revision than the one created in the
-        test (so it has exactly 1 revision).
+        The partner should have no prior changeset than the one created in the
+        test (so it has exactly 1 changeset).
 
         The expected changes are tuples with (field, origin_value,
         new_value, state)
 
-        :param partner: record of partner having a revision
+        :param partner: record of partner having a changeset
         :param expected_changes: contains tuples with the changes
         :type expected_changes: list(tuple))
         """
-        revision = self.env['res.partner.revision'].search(
+        changeset = self.env['res.partner.changeset'].search(
             [('partner_id', '=', partner.id)],
         )
-        self.assertEqual(len(revision), 1,
-                         "1 revision expected, got %s" % (revision,))
-        changes = revision.change_ids
+        self.assertEqual(len(changeset), 1,
+                         "1 changeset expected, got %s" % (changeset,))
+        changes = changeset.change_ids
         missing = []
         for expected_change in expected_changes:
             for change in changes:
@@ -67,15 +67,15 @@ class RevisionMixin(object):
         if message:
             raise AssertionError('Changes do not match\n\n:%s' % message)
 
-    def _create_revision(self, partner, changes):
-        """ Create a revision and its associated changes
+    def _create_changeset(self, partner, changes):
+        """ Create a changeset and its associated changes
 
         :param partner: 'res.partner' record
         :param changes: list of changes [(field, new value, state)]
-        :returns: 'res.partner.revision' record
+        :returns: 'res.partner.changeset' record
         """
-        RevisionChange = self.env['res.partner.revision.change']
-        get_field = RevisionChange.get_field_for_type
+        ChangesetChange = self.env['res.partner.changeset.change']
+        get_field = ChangesetChange.get_field_for_type
         change_values = []
         for field, value, state in changes:
             change = {
@@ -90,4 +90,4 @@ class RevisionMixin(object):
             'partner_id': partner.id,
             'change_ids': change_values,
         }
-        return self.env['res.partner.revision'].create(values)
+        return self.env['res.partner.changeset'].create(values)
