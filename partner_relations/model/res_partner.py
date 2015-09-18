@@ -303,7 +303,7 @@ class ResPartner(models.Model):
             load='_classic_read'):
         return super(ResPartner, self).read(
             cr, uid, ids, fields=fields,
-            context=self._update_context(context, ids))
+            context=self._update_context(context, ids), load=load)
 
     def write(self, cr, uid, ids, vals, context=None):
         return super(ResPartner, self).write(
