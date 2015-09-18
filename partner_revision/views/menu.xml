@@ -3,6 +3,7 @@
     <data noupdate="0">
       <menuitem id="menu_revision"
         name="Partner Revisions"
+        groups="group_revision_user"
         parent="base.menu_base_config"
         sequence="20"/>
     </data>
