@@ -38,9 +38,23 @@ class ResPartnerRevision(models.Model):
                                  inverse_name='revision_id',
                                  string='Changes')
     date = fields.Datetime(default=fields.Datetime.now)
-    # TODO: add a revision state, done when all lines are done or
-    # canceled
+    state = fields.Selection(
+        compute='_compute_state',
+        selection=[('draft', 'Pending'),
+                   ('done', 'Done')],
+        string='State',
+        store=True,
+    )
     note = fields.Text()
+
+    @api.one
+    @api.depends('change_ids', 'change_ids.state')
+    def _compute_state(self):
+        if all(change.state in ('done', 'cancel') for change
+                in self.mapped('change_ids')):
+            self.state = 'done'
+        else:
+            self.state = 'draft'
 
     @api.multi
     def apply(self):
@@ -146,7 +160,7 @@ class ResPartnerRevisionChange(models.Model):
                                            selection='_reference_models')
 
     state = fields.Selection(
-        selection=[('draft', 'Waiting'),
+        selection=[('draft', 'Pending'),
                    ('done', 'Accepted'),
                    ('cancel', 'Refused'),
                    ],

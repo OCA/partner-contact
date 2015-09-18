@@ -8,6 +8,7 @@
         <tree string="Partner Revision">
           <field name="partner_id"/>
           <field name="date"/>
+          <field name="state"/>
         </tree>
       </field>
     </record>
@@ -17,6 +18,18 @@
       <field name="model">res.partner.revision</field>
       <field name="arch" type="xml">
         <form string="Partner Revision">
+          <header>
+            <button name="apply"
+              string="Apply pending changes" type="object"
+              class="oe_highlight"
+              states="draft"/>
+            <button name="cancel"
+              string="Reject pending changes" type="object"
+              class="oe_highlight"
+              states="draft"/>
+            <field name="state" widget="statusbar"
+              statusbar_visible="draft,done"/>
+          </header>
           <sheet string="Partner Revision">
             <group>
               <field name="partner_id"/>
@@ -65,6 +78,8 @@
               string="Reject" type="object"
               class="oe_highlight"
               states="draft"/>
+            <field name="state" widget="statusbar"
+              statusbar_visible="draft,done"/>
           </header>
           <sheet>
             <group>
@@ -96,7 +111,6 @@
               <field name="current_value_reference"/>
               <field name="new_value_reference"/>
 
-              <field name="state"/>
             </group>
           </sheet>
         </form>
