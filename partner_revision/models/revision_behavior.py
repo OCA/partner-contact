@@ -20,6 +20,7 @@
 #
 
 from openerp import models, fields, api
+from openerp.tools.cache import ormcache
 
 
 class RevisionBehavior(models.Model):
@@ -53,8 +54,26 @@ class RevisionBehavior(models.Model):
                 ('never', 'Never'),
                 ]
 
-    # TODO: cache
+    @ormcache()
     @api.model
     def get_rules(self, model_name):
         rules = self.search([('model_id', '=', model_name)])
         return {rule.field_id.name: rule for rule in rules}
+
+    @api.model
+    def create(self, vals):
+        record = super(RevisionBehavior, self).create(vals)
+        self.clear_caches()
+        return record
+
+    @api.multi
+    def write(self, vals):
+        result = super(RevisionBehavior, self).write(vals)
+        self.clear_caches()
+        return result
+
+    @api.multi
+    def unlink(self):
+        result = super(RevisionBehavior, self).unlink()
+        self.clear_caches()
+        return result
