@@ -123,6 +123,18 @@
       <field name="arch" type="xml">
         <search string="Partner Revision">
           <field name="partner_id"/>
+          <filter string="Pending" name="draft"
+            domain="[('state','=','draft')]"/>
+          <filter string="Done" name="done"
+            domain="[('state','=','done')]"/>
+          <group expand="0" string="Group By">
+            <filter string="Partner"
+              name="groupby_partner_id"
+              context="{'group_by': 'partner_id'}"/>
+            <filter string="State"
+              name="groupby_state"
+              context="{'group_by': 'state'}"/>
+          </group>
         </search>
       </field>
     </record>
@@ -133,6 +145,7 @@
       <field name="res_model">res.partner.revision</field>
       <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
+      <field name="context">{'search_default_draft': 1}</field>
       <field name="search_view_id" ref="view_res_partner_revision_search"/>
     </record>
 
