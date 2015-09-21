@@ -38,6 +38,7 @@ Contributors
 * Vincent Vinet <vincent.vinet@savoirfairelinux.com>
 * Mathieu Boldireff <matheu.boldireff@savoirfairelinux.com>
 * Bruno JOLIVEAU <bruno.joliveau@savoirfairelinux.com>
+* Agathe Mollé <agathe.molle@savoirfairelinux.com>
 
 Maintainer
 ----------

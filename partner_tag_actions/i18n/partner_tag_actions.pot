@@ -1,0 +1,210 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_tag_actions
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-21 15:54+0000\n"
+"PO-Revision-Date: 2015-09-21 15:54+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_tag_actions
+#: model:ir.actions.act_window,name:partner_tag_actions.action_partner_action_type_view
+#: model:ir.ui.menu,name:partner_tag_actions.menu_partner_action_type_act
+msgid "Action Types"
+msgstr ""
+
+#. module: partner_tag_actions
+#: code:addons/partner_tag_actions/models/partner.py:42
+#: model:ir.actions.act_window,name:partner_tag_actions.action_partner_action_view
+#: model:ir.ui.menu,name:partner_tag_actions.menu_partner_action
+#: view:partner.action:partner_tag_actions.view_action_form
+#: view:res.partner:partner_tag_actions.view_partner_form
+#: field:res.partner,action_ids:0
+#, python-format
+msgid "Actions"
+msgstr ""
+
+#. module: partner_tag_actions
+#: view:partner.action:partner_tag_actions.view_partner_action_filter
+msgid "Actions done by me"
+msgstr ""
+
+#. module: partner_tag_actions
+#: view:partner.action.type:partner_tag_actions.view_partner_action_type_filter
+#: field:partner.action.type,is_active:0
+msgid "Active"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action.type,add_tag:0
+msgid "Add Tag"
+msgstr ""
+
+#. module: partner_tag_actions
+#: view:partner.action:partner_tag_actions.view_action_form
+msgid "Confirm"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,create_uid:0
+#: field:partner.action.type,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,create_date:0
+#: field:partner.action.type,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: partner_tag_actions
+#: help:partner.action,is_active:0
+msgid "Currently active"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,date:0
+msgid "Date"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,details:0
+msgid "Details"
+msgstr ""
+
+#. module: partner_tag_actions
+#: view:partner.action:partner_tag_actions.view_partner_action_filter
+#: selection:partner.action,state:0
+msgid "Done"
+msgstr ""
+
+#. module: partner_tag_actions
+#: view:partner.action:partner_tag_actions.view_partner_action_filter
+#: selection:partner.action,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,date_end:0
+msgid "End Date"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,id:0
+#: field:partner.action.type,id:0
+msgid "ID"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,is_active:0
+msgid "Is active"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,write_uid:0
+#: field:partner.action.type,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,write_date:0
+#: field:partner.action.type,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_tag_actions
+#: view:partner.action:partner_tag_actions.view_partner_action_filter
+msgid "My Actions"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action.type,name:0
+msgid "Name"
+msgstr ""
+
+#. module: partner_tag_actions
+#: model:ir.model,name:partner_tag_actions.model_res_partner
+#: field:partner.action,partner_id:0
+msgid "Partner"
+msgstr ""
+
+#. module: partner_tag_actions
+#: model:ir.model,name:partner_tag_actions.model_partner_action
+msgid "Partner Action"
+msgstr ""
+
+#. module: partner_tag_actions
+#: model:res.groups,name:partner_tag_actions.group_partner_action_manager
+msgid "Partner Action Manager"
+msgstr ""
+
+#. module: partner_tag_actions
+#: model:ir.model,name:partner_tag_actions.model_partner_action_type
+msgid "Partner Action Type"
+msgstr ""
+
+#. module: partner_tag_actions
+#: model:res.groups,name:partner_tag_actions.group_partner_action_user
+msgid "Partner Action User"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,priority:0
+#: field:partner.action.type,priority:0
+msgid "Priority"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action.type,remove_tag:0
+msgid "Remove Tag"
+msgstr ""
+
+#. module: partner_tag_actions
+#: view:partner.action.type:partner_tag_actions.view_partner_action_type_filter
+msgid "Search Action Types"
+msgstr ""
+
+#. module: partner_tag_actions
+#: view:partner.action:partner_tag_actions.view_partner_action_filter
+msgid "Search Actions"
+msgstr ""
+
+#. module: partner_tag_actions
+#: view:partner.action:partner_tag_actions.view_action_form
+msgid "Set To Draft"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,date_start:0
+msgid "Start Date"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,state:0
+msgid "Status"
+msgstr ""
+
+#. module: partner_tag_actions
+#: code:addons/partner_tag_actions/models/partner_action.py:73
+#, python-format
+msgid "The end date cannot precede the start date!"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,action_type:0
+msgid "Type"
+msgstr ""
+
+#. module: partner_tag_actions
+#: field:partner.action,user_id:0
+msgid "User"
+msgstr ""
+
