@@ -20,7 +20,8 @@
 #
 ##############################################################################
 
-from openerp import models, fields, api
+from openerp import models, fields, api, _
+from openerp.exceptions import ValidationError
 
 
 class PartnerAction(models.Model):
@@ -63,6 +64,14 @@ class PartnerAction(models.Model):
     )
     is_active = fields.Boolean(help="Currently active")
     priority = fields.Integer(related="action_type.priority", store=True)
+
+    @api.constrains('date_start', 'date_end')
+    def check_dates(self):
+        if self.date_start and self.date_end and \
+                self.date_start > self.date_end:
+            raise ValidationError(
+                _('The end date cannot precede the start date!')
+            )
 
     # Button actions
     @api.multi
