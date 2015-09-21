@@ -20,10 +20,6 @@
                             <field name="date_end" />
                             <field name="action_type" domain="[('is_active', '=', True)]"/>
                             <field name="details" width="200"/>
-                            <label for="state" />
-                              <div>
-                                <field name="done" class="oe_inline" nolabel="1" /><label for="done" String="Done" />
-                              </div>
                         </group>
                     </sheet>
                 </form>

@@ -96,12 +96,12 @@ class PartnerActionTest(TransactionCase):
         })
         self.action_obj.create({
             "partner_id": self.partner.id,
-            "done": True,
+            "state": 'done',
             "action_type": add_b.id,
         })
         self.action_obj.create({
             "partner_id": self.partner.id,
-            "done": True,
+            "state": 'done',
             "action_type": add_a.id,
         })
 

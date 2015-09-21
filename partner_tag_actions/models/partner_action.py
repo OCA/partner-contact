@@ -28,15 +28,6 @@ class PartnerAction(models.Model):
     _description = 'Partner Action'
     _order = "priority"
 
-    # Getters/Setters
-    def _get_done(self):
-        for record in self:
-            record.done = record.state == 'done'
-
-    def _set_done(self):
-        for record in self:
-            record.state = 'done' if record.done else 'draft'
-
     def _get_name(self):
         for record in self:
             record.name = u"{0} [{1}] {2}".format(
@@ -72,8 +63,6 @@ class PartnerAction(models.Model):
     )
     is_active = fields.Boolean(help="Currently active")
     priority = fields.Integer(related="action_type.priority", store=True)
-
-    done = fields.Boolean(compute=_get_done, inverse=_set_done)
 
     # Button actions
     @api.multi
