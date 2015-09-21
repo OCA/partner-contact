@@ -31,4 +31,5 @@
         'partner_contact_in_several_companies',
         'partner_contact_nationality',
     ],
+    'installable': False,
 }
