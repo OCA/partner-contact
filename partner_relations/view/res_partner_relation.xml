@@ -46,7 +46,7 @@
             <field name="model">res.partner.relation</field>
             <field name="arch" type="xml">
                 <search string="Search Relations">
-                    <field name="any_partner_id"/>
+                    <field name="any_partner_id" widget="many2one"/>
                     <field name="left_partner_id"/>
                     <field name="right_partner_id"/>
                     <field name="type_id"/>
