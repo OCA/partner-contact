@@ -32,6 +32,7 @@ class TestChangesetFieldRule(common.TransactionCase):
 
     def test_get_rules(self):
         ChangesetFieldRule = self.env['changeset.field.rule']
+        ChangesetFieldRule.search([]).unlink()
         rule1 = ChangesetFieldRule.create({
             'model_id': self.partner_model_id,
             'field_id': self.field_name.id,
@@ -47,6 +48,7 @@ class TestChangesetFieldRule(common.TransactionCase):
 
     def test_get_rules_cache(self):
         ChangesetFieldRule = self.env['changeset.field.rule']
+        ChangesetFieldRule.search([]).unlink()
         rule = ChangesetFieldRule.create({
             'model_id': self.partner_model_id,
             'field_id': self.field_name.id,

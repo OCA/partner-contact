@@ -34,6 +34,8 @@
           'views/changeset_field_rule_views.xml',
           'views/res_partner_views.xml',
           ],
+ 'demo': ['demo/changeset_field_rule.xml',
+          ],
  'test': [],
  'installable': True,
  'auto_install': False,
