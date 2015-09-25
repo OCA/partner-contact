@@ -29,6 +29,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
     def _setup_rules(self):
         ChangesetFieldRule = self.env['changeset.field.rule']
         partner_model_id = self.env.ref('base.model_res_partner').id
+        ChangesetFieldRule.search([]).unlink()
         fields = (('char', 'ref'),
                   ('text', 'comment'),
                   ('boolean', 'customer'),
