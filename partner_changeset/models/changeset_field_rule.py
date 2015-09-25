@@ -43,6 +43,12 @@ class ChangesetFieldRule(models.Model):
              "Never: change never applied.",
     )
 
+    _sql_constraints = [
+        ('model_field_uniq',
+         'unique (model_id, field_id)',
+         'A rule already exists for this field.')
+    ]
+
     @api.model
     def _default_model_id(self):
         return self.env.ref('base.model_res_partner').id
