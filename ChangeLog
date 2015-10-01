@@ -1,0 +1,4 @@
+2015-10-01 - Maxime Chambreuil
+
+* removed symbolic links for better_zip. Use base_location directly in your instance. 
+  Be careful when migrating as the xml ids have changed.
