@@ -1,0 +1,68 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * better_zip
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (7.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-30 13:27+0000\n"
+"PO-Revision-Date: 2015-05-22 17:16+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-7-0/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: better_zip
+#: model:ir.actions.act_window,name:better_zip.action_zip_tree
+msgid "Cites/locations Management"
+msgstr "Gestión de ciudades/ubicaciones"
+
+#. module: better_zip
+#: view:res.better.zip:0
+msgid "ZIP"
+msgstr "C.P."
+
+#. module: better_zip
+#: sql_constraint:res.better.zip:0
+msgid "This location already exists !"
+msgstr ""
+
+#. module: better_zip
+#: model:ir.model,name:better_zip.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: better_zip
+#: model:ir.model,name:better_zip.model_res_better_zip
+msgid " City/locations completion object"
+msgstr " Objeto de completado de ciudad/ubicación"
+
+#. module: better_zip
+#: view:res.better.zip:0
+msgid "Search city"
+msgstr "Buscar ciudad"
+
+#. module: better_zip
+#: model:ir.ui.menu,name:better_zip.zip_base
+msgid "Cities/Locations Management"
+msgstr "Ciudad/Ubicaciones"
+
+#. module: better_zip
+#: model:ir.model,name:better_zip.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: better_zip
+#: view:res.company:0 view:res.partner:0
+msgid "City completion"
+msgstr "Autocompletado a partir de la ciudad"
+
+#. module: better_zip
+#: model:ir.model,name:better_zip.model_res_country_state
+msgid "Country state"
+msgstr "Provincia"
