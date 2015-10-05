@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form (partner_academic_title)</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='title']" position="after">
+                    <field name="academic_title_ids" class="oe_edit_only" widget="many2many_tags" placeholder="Academic Titles"/>
+                    <field name="academic_title_display" class="oe_read_only" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
