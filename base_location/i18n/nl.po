@@ -3,93 +3,92 @@
 # * base_location
 # 
 # Translators:
-# Francisco Palm <francisco.palm@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-23 21:40+0000\n"
-"PO-Revision-Date: 2015-09-13 13:40+0000\n"
-"Last-Translator: Francisco Palm <francisco.palm@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
+"PO-Revision-Date: 2015-10-01 19:15+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"Language-Team: Dutch (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_location
 #: model:ir.actions.act_window,name:base_location.action_zip_tree
 msgid "Cites/locations Management"
-msgstr "Gestión de ciudades/ubicaciones"
+msgstr ""
 
 #. module: base_location
 #: field:res.country.state,better_zip_ids:0
 msgid "Cities"
-msgstr "Ciudades"
+msgstr ""
 
 #. module: base_location
 #: model:ir.ui.menu,name:base_location.zip_base
 msgid "Cities/Locations Management"
-msgstr "Ciudad/Ubicaciones"
+msgstr ""
 
 #. module: base_location
 #: field:res.better.zip,city:0
 msgid "City"
-msgstr "Ciudad"
+msgstr "Stad"
 
 #. module: base_location
 #: field:res.better.zip,code:0
 msgid "City Code"
-msgstr "Código de ciudad"
+msgstr ""
 
 #. module: base_location
 #: view:res.company:base_location.view_company_form_city
 #: view:res.partner:base_location.view_partner_form
 msgid "City completion"
-msgstr "Autocompletado a partir de la ciudad"
+msgstr ""
 
 #. module: base_location
 #: field:res.partner,zip_id:0
 msgid "City/Location"
-msgstr "Ciudad/Ubicación"
+msgstr ""
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_better_zip
 msgid "City/locations completion object"
-msgstr "Autocompletado de objetos a partir de ciudades/ubicaciones"
+msgstr ""
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_company
 msgid "Companies"
-msgstr "Compañías"
+msgstr ""
 
 #. module: base_location
 #: view:res.better.zip:base_location.view_better_zip_filter
 #: field:res.better.zip,country_id:0
 #: view:res.country:base_location.view_country_search
 msgid "Country"
-msgstr "País"
+msgstr "Land"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_country_state
 msgid "Country state"
-msgstr "Provincia"
+msgstr ""
 
 #. module: base_location
 #: field:res.better.zip,create_uid:0
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Aangemaakt door"
 
 #. module: base_location
 #: field:res.better.zip,create_date:0
 msgid "Created on"
-msgstr "Creado en"
+msgstr "Aangemaakt op"
 
 #. module: base_location
 #: view:res.better.zip:base_location.view_better_zip_filter
 msgid "Group By"
-msgstr "Agrupar por"
+msgstr ""
 
 #. module: base_location
 #: field:res.better.zip,id:0
@@ -99,52 +98,52 @@ msgstr "ID"
 #. module: base_location
 #: field:res.better.zip,write_uid:0
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Laatst bijgewerkt door"
 
 #. module: base_location
 #: field:res.better.zip,write_date:0
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "Laatst bijgewerkt op"
 
 #. module: base_location
 #: field:res.company,better_zip_id:0
 msgid "Location"
-msgstr "Ubicación"
+msgstr ""
 
 #. module: base_location
 #: field:res.better.zip,display_name:0
 msgid "Name"
-msgstr "Nombre"
+msgstr ""
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_partner
 msgid "Partner"
-msgstr "Empresa"
+msgstr "Partner"
 
 #. module: base_location
 #: view:res.better.zip:base_location.view_better_zip_filter
 msgid "Search city"
-msgstr "Buscar ciudad"
+msgstr ""
 
 #. module: base_location
 #: view:res.better.zip:base_location.view_better_zip_filter
 #: field:res.better.zip,state_id:0
 msgid "State"
-msgstr "Provincia"
+msgstr ""
 
 #. module: base_location
 #: help:res.better.zip,code:0
 msgid "The official code for the city"
-msgstr "El código oficial para la ciudad"
+msgstr ""
 
 #. module: base_location
 #: help:res.company,better_zip_id:0
 msgid "Use the city name or the zip code to search the location"
-msgstr "Utilice el nombre de ciudad o el código postal para buscar la ubicación"
+msgstr ""
 
 #. module: base_location
 #: view:res.better.zip:base_location.better_zip_form
 #: view:res.better.zip:base_location.better_zip_tree
 #: field:res.better.zip,name:0
 msgid "ZIP"
-msgstr "C.P."
+msgstr ""
