@@ -4,13 +4,14 @@
 # 
 # Translators:
 # danimaribeiro <danimaribeiro@gmail.com>, 2015
+# danimaribeiro <danimaribeiro@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 15:54+0000\n"
-"PO-Revision-Date: 2015-07-22 18:39+0000\n"
-"Last-Translator: danimaribeiro <danimaribeiro@gmail.com>\n"
+"POT-Creation-Date: 2015-09-23 21:40+0000\n"
+"PO-Revision-Date: 2015-09-18 15:11+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,7 +50,12 @@ msgid "All relations with current partner"
 msgstr "Todos os relacionamentos com o parceiro atual"
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation_type.py:64
+#: field:res.partner.relation.type,allow_self:0
+msgid "Allow both sides to be the same"
+msgstr ""
+
+#. module: partner_relations
+#: code:addons/partner_relations/model/res_partner_relation_type.py:68
 #, python-format
 msgid "Company"
 msgstr "Empresa"
@@ -259,13 +265,13 @@ msgid "Partner relation"
 msgstr "Relação parceiro"
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:291
+#: code:addons/partner_relations/model/res_partner_relation.py:301
 #, python-format
 msgid "Partners cannot have a relation with themselves."
 msgstr "Parceiros não podem ter relacionamentos com ele mesmo."
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation_type.py:65
+#: code:addons/partner_relations/model/res_partner_relation_type.py:69
 #, python-format
 msgid "Person"
 msgstr "Pessoa"
@@ -281,7 +287,7 @@ msgid "Record type"
 msgstr "Tipo de registro"
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:360
+#: code:addons/partner_relations/model/res_partner_relation.py:370
 #, python-format
 msgid "Related partners"
 msgstr "Parceiros relacionados"
@@ -370,19 +376,19 @@ msgid "Starting date"
 msgstr "Data de inicio"
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:278
+#: code:addons/partner_relations/model/res_partner_relation.py:287
 #, python-format
 msgid "The %s partner is not applicable for this relation type."
 msgstr "O parceiro %s não é aplicavel a este tipo de relação."
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:245
+#: code:addons/partner_relations/model/res_partner_relation.py:254
 #, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr "A data de inicio não pode ser após a data de fim."
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:319
+#: code:addons/partner_relations/model/res_partner_relation.py:329
 #, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr "Já existe uma relação similar com datas incompativeis."

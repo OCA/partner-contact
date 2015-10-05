@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 15:54+0000\n"
-"PO-Revision-Date: 2015-05-22 15:26+0000\n"
+"POT-Creation-Date: 2015-09-23 21:40+0000\n"
+"PO-Revision-Date: 2015-09-19 08:44+0000\n"
 "Last-Translator: Hans Henrik Gabelgaard <hhg@gabelgaard.org>\n"
 "Language-Team: Danish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,12 @@ msgid "All relations with current partner"
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation_type.py:64
+#: field:res.partner.relation.type,allow_self:0
+msgid "Allow both sides to be the same"
+msgstr ""
+
+#. module: partner_relations
+#: code:addons/partner_relations/model/res_partner_relation_type.py:68
 #, python-format
 msgid "Company"
 msgstr "Virksomhed"
@@ -259,13 +264,13 @@ msgid "Partner relation"
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:291
+#: code:addons/partner_relations/model/res_partner_relation.py:301
 #, python-format
 msgid "Partners cannot have a relation with themselves."
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation_type.py:65
+#: code:addons/partner_relations/model/res_partner_relation_type.py:69
 #, python-format
 msgid "Person"
 msgstr ""
@@ -281,7 +286,7 @@ msgid "Record type"
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:360
+#: code:addons/partner_relations/model/res_partner_relation.py:370
 #, python-format
 msgid "Related partners"
 msgstr ""
@@ -370,19 +375,19 @@ msgid "Starting date"
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:278
+#: code:addons/partner_relations/model/res_partner_relation.py:287
 #, python-format
 msgid "The %s partner is not applicable for this relation type."
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:245
+#: code:addons/partner_relations/model/res_partner_relation.py:254
 #, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:319
+#: code:addons/partner_relations/model/res_partner_relation.py:329
 #, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr ""
