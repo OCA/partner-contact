@@ -23,6 +23,7 @@ addon | version | summary
 [base_continent](base_continent/) | 1.0 | Continent management
 [base_location](base_location/) | 1.0 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 0.2 | Import better zip entries from Geonames
+[base_location_nuts](base_location_nuts/) | 8.0.1.0.0 | NUTS Regions
 [base_partner_merge](base_partner_merge/) | 0.1 | Base Partner Merge
 [base_partner_sequence](base_partner_sequence/) | 1.1 | Sets customer's code from a sequence
 [partner_address_street3](partner_address_street3/) | 0.1 | Street3 in addresses
