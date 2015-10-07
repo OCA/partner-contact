@@ -274,9 +274,8 @@ class MergePartnerAutomatic(orm.TransientModel):
             if record.model == 'ir.property':
                 continue
 
-            field_type = proxy_model._columns.get(record.name).__class__._type
-
-            if field_type == 'function':
+            column = proxy_model._columns[record.name]
+            if isinstance(column, fields.function):
                 continue
 
             for partner in src_partners:
