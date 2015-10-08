@@ -27,7 +27,7 @@
     'category': 'Hidden',
     'website': 'http://www.versada.lt',
     'depends': [
-        'base',
+        'account',
     ],
     'data': [
     ],
