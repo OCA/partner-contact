@@ -30,7 +30,7 @@ class ResPartner(models.Model):
     @api.multi
     def credit_limit_reached(self, credit_increase=0.0, raise_error=True):
         """
-        Returns True (or exception) if credit limit is reched othervise False
+        Returns True (or exception) if credit limit is reached othervise False
         """
         for each in self:
             # credit_limit is synchronized between company and contacts but
