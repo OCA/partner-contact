@@ -2,7 +2,7 @@
     'name': 'Base Partner Merge',
     'author': "OpenERP S.A.,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Base',
-    'version': '0.1',
+    'version': '8.0.0.1.0',
     'description': """
 backport module, to be removed when we switch to saas2 on the private servers
 """,
