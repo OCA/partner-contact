@@ -21,7 +21,7 @@
 
 {
     'name': 'Partner auto salesman',
-    'version': '1.0',
+    'version': '8.0.1.0.0',
     'category': 'Customer Relationship Management',
     'complexity': "easy",
     'description': """Fill the salesman field with the current user id""",
