@@ -25,7 +25,7 @@
 
 {
     'name': 'Base Location Geonames Import',
-    'version': '0.2',
+    'version': '8.0.0.2.0',
     'category': 'Extra Tools',
     'license': 'AGPL-3',
     'summary': 'Import better zip entries from Geonames',
