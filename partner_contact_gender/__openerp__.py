@@ -18,7 +18,7 @@
 
 {
     "name": "Contact gender",
-    "version": "1.0",
+    "version": "8.0.1.0.0",
     "category": "Customer Relationship Management",
     "author": "Odoo Community Association (OCA), Grupo ESOC",
     "license": "AGPL-3",
