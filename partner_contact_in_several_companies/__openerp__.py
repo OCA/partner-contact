@@ -19,7 +19,7 @@
 {
     "name": "Contacts in several partners",
     "summary": "Allow to have one contact in several partners",
-    "version": "1.0.0",
+    "version": "8.0.1.0.0",
     "author": "Odoo Community Association (OCA)",
     "category": "Customer Relationship Management",
     "website": "https://odoo-community.org/",

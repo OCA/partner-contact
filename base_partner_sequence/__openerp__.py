@@ -22,7 +22,7 @@
 ##############################################################################
 {
     "name": "Add a sequence on customers' code",
-    "version": "1.1",
+    "version": "8.0.1.1.0",
     "author": "Tiny/initOS GmbH & Co. KG,Odoo Community Association (OCA)",
     "category": "Generic Modules/Base",
     "website": "http://www.initos.com",

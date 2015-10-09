@@ -22,7 +22,7 @@
     'name': 'All address data in summarized contact form',
     'description': """Show all informations of partner address
 in summarized partner contact form when creating a new partner""",
-    'version': '1.0',
+    'version': '8.0.1.0.0',
     'author': "Camptocamp,Odoo Community Association (OCA)",
     'category': 'MISC',
     'website': 'http://www.camptocamp.com',

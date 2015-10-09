@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "Partner relations",
-    "version": "1.1",
+    "version": "8.0.1.1.0",
     "author": "Therp BV,Camptocamp,Odoo Community Association (OCA)",
     "complexity": "normal",
     "category": "Customer Relationship Management",

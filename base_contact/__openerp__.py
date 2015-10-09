@@ -22,7 +22,7 @@
 {
     'name': 'Contacts Management',
     'summary': u"[DEPRECATED] Manage your contacts separately",
-    'version': '2.0.0',
+    'version': '8.0.2.0.0',
     'author': "OpenERP SA,Odoo Community Association (OCA)",
     'website': 'http://www.openerp.com',
     'category': 'Customer Relationship Management',

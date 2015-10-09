@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name': 'Street3 in addresses',
-    'version': '0.1',
+    'version': '8.0.0.1.0',
     'author': "Camptocamp,Odoo Community Association (OCA)",
     'maintainer': 'Camptocamp',
     'category': 'Sales',
