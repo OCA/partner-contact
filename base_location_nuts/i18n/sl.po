@@ -3,73 +3,74 @@
 # * base_location_nuts
 # 
 # Translators:
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-09 15:48+0000\n"
-"PO-Revision-Date: 2015-10-06 13:57+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
+"PO-Revision-Date: 2015-10-07 10:36+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #. module: base_location_nuts
 #: view:nuts.import:base_location_nuts.nuts_import_form
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Preklic"
 
 #. module: base_location_nuts
 #: field:res.partner.nuts,children:0
 msgid "Children"
-msgstr "Hijos"
+msgstr "Podrejeni"
 
 #. module: base_location_nuts
 #: field:res.partner.nuts,code:0
 msgid "Code"
-msgstr "Código"
+msgstr "Koda"
 
 #. module: base_location_nuts
 #: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
 #: field:res.partner.nuts,country_id:0
 msgid "Country"
-msgstr "País"
+msgstr "Država"
 
 #. module: base_location_nuts
 #: field:nuts.import,create_uid:0 field:res.partner.nuts,create_uid:0
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Ustvaril"
 
 #. module: base_location_nuts
 #: field:nuts.import,create_date:0 field:res.partner.nuts,create_date:0
 msgid "Created on"
-msgstr "Creado en"
+msgstr "Ustvarjeno"
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:130
 #, python-format
 msgid "Downloaded file is not a valid XML file"
-msgstr "El fichero descargado no es un fichero XML válido"
+msgstr "Prenesena datoteka ni veljavna XML datoteka"
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:122
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
-msgstr "Error %d al intentar descargar el fichero %s."
+msgstr "Napaka %d pri poskusu prenosa datoteke %s."
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:118
 #, python-format
 msgid "Got an error when trying to download the file: %s."
-msgstr "Error al intentar descargar el fichero: %s."
+msgstr "Napaka pri poskusu prenosa datoteke: %s."
 
 #. module: base_location_nuts
 #: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
 msgid "Group By"
-msgstr "Agrupar por"
+msgstr "Združi po"
 
 #. module: base_location_nuts
 #: field:nuts.import,id:0 field:res.partner.nuts,id:0
@@ -79,77 +80,77 @@ msgstr "ID"
 #. module: base_location_nuts
 #: view:nuts.import:base_location_nuts.nuts_import_form
 msgid "Import"
-msgstr "Importar"
+msgstr "Uvoz"
 
 #. module: base_location_nuts
 #: model:ir.ui.menu,name:base_location_nuts.nuts_import_menu
 msgid "Import NUTS 2013"
-msgstr "Importar NUTS 2013"
+msgstr "Uvoz NUTS 2013"
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.nuts_import_action
 #: view:nuts.import:base_location_nuts.nuts_import_form
 msgid "Import NUTS 2013 from RAMON"
-msgstr "Importar NUTS 2013 desde RAMON"
+msgstr "Uvoz NUTS 2013 iz RAMON"
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_nuts_import
 msgid "Import NUTS items from European RAMON service"
-msgstr "Importar regiones NUTS desde el servicio europeo RAMON"
+msgstr "Uvoz NUTS postavk iz evropske RAMON storitve"
 
 #. module: base_location_nuts
 #: field:nuts.import,write_uid:0 field:res.partner.nuts,write_uid:0
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Zadnji posodobil"
 
 #. module: base_location_nuts
 #: field:nuts.import,write_date:0 field:res.partner.nuts,write_date:0
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "Zadnjič posodobljeno"
 
 #. module: base_location_nuts
 #: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
 #: field:res.partner.nuts,level:0
 msgid "Level"
-msgstr "Nivel"
+msgstr "Nivo"
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_res_partner_nuts
 #: view:res.partner.nuts:base_location_nuts.res_partner_nuts_form
 msgid "NUTS Item"
-msgstr "Región NUTS"
+msgstr "NUTS postavka"
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.res_partner_nuts_action
 #: model:ir.ui.menu,name:base_location_nuts.res_partner_nuts_menu
 #: view:res.partner.nuts:base_location_nuts.res_partner_nuts_tree
 msgid "NUTS Items"
-msgstr "Regiones NUTS"
+msgstr "NUTS postavke"
 
 #. module: base_location_nuts
 #: field:res.partner.nuts,name:0
 msgid "Name"
-msgstr "Nombre"
+msgstr "Naziv"
 
 #. module: base_location_nuts
 #: field:res.partner.nuts,parent_left:0
 msgid "Parent Left"
-msgstr "Padre izquierda"
+msgstr "Levo nadrejeni"
 
 #. module: base_location_nuts
 #: field:res.partner.nuts,parent_right:0
 msgid "Parent Right"
-msgstr "Padre derecha"
+msgstr "Desno nadrejeni"
 
 #. module: base_location_nuts
 #: field:res.partner.nuts,parent_id:0
 msgid "Parent id"
-msgstr "ID del padre"
+msgstr "ID nadrejenega"
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_res_partner
 msgid "Partner"
-msgstr "Empresa"
+msgstr "Partner"
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/models/res_partner.py:34
@@ -157,22 +158,22 @@ msgstr "Empresa"
 #: field:res.partner,region:0
 #, python-format
 msgid "Region"
-msgstr "Región"
+msgstr "Regija"
 
 #. module: base_location_nuts
 #: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
 msgid "Salesperson"
-msgstr "Comercial"
+msgstr "Prodajalec"
 
 #. module: base_location_nuts
 #: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
 msgid "Search NUTS"
-msgstr "Buscar NUTS"
+msgstr "Iskanje NUTS"
 
 #. module: base_location_nuts
 #: field:res.partner.nuts,state_id:0
 msgid "State"
-msgstr "Provincia"
+msgstr "Zvezna država"
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/models/res_partner.py:35
@@ -180,7 +181,7 @@ msgstr "Provincia"
 #: field:res.partner,substate:0
 #, python-format
 msgid "Substate"
-msgstr "Estado"
+msgstr "Pod-država"
 
 #. module: base_location_nuts
 #: view:nuts.import:base_location_nuts.nuts_import_form
@@ -190,18 +191,18 @@ msgid ""
 "                Updating or creating new NUTS entries if not\n"
 "                found already in the system, and DELETING MISSING\n"
 "                ENTRIES from new downloaded file."
-msgstr "Este asistente descargará la última version de\n                NUTS 2013 desde el servicio de matadatos europeo RAMON.\n                Actualizando o creando nuevas regiones NUTS si no\n                las encuentra en el sistemma, y BORRANDO LAS QUE NO ENCUENTRE\n                en el nuevo fichero descargado."
+msgstr "Ta čarovnik bo prenesel zadnjo verzijo\n                NUTS 2013 iz evropske RAMON metadata storitve.\n                Posodabljanje ali ustvarjanje novih NUTS vnosov, če\n                niso že v sistemu in BRISANJE MANJKAJOČIH\n                VNOSOV iz prenesene datoteke."
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:97
 #, python-format
 msgid "Value not found for mandatory field %s"
-msgstr "El valor no se ha encontrado para el campo obligatorio %s"
+msgstr "Vrednost obveznega polja %s ni najdena"
 
 #. module: base_location_nuts
 #: model:ir.actions.todo,note:base_location_nuts.config_wizard_nuts
 msgid "You can import NUTS from RAMON european service."
-msgstr "Usted puede importar NUTS desde el servicion europeo RAMON."
+msgstr "Uvozite lahko NUTS iz RAMON evropske storitve."
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
@@ -209,4 +210,4 @@ msgid ""
 "You must click at import wizard to populate NUTS items\n"
 "        in Odoo database in:\n"
 "        Sales > Configuration > Address Book > Localization > Import NUTS 2013"
-msgstr "Debes clicar en el asistente de importación para crear las\n        las regiones NUTS en la base de datos de Odoo, en el menú:\n        Ventas > Configuración > Libreta de direcciones > Localización > Importar NUTS 2013"
+msgstr "Kliknite na čarovnik za uvoz za naselitev NUTS postavk\n        v Odoo podatkovno bazo v:\n        Prodaja > Nastavitve > Imenik > Lokalizacija > Uvoz NUTS 2013"
