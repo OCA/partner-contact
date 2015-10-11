@@ -1,0 +1,53 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_street_number
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-09 15:48+0000\n"
+"PO-Revision-Date: 2015-10-06 13:57+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_street_number
+#: view:res.partner:partner_street_number.view_partner_form
+msgid "Number..."
+msgstr ""
+
+#. module: partner_street_number
+#: model:ir.model,name:partner_street_number.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: partner_street_number
+#: field:res.partner,street_name:0
+msgid "Street name"
+msgstr ""
+
+#. module: partner_street_number
+#: field:res.partner,street_number:0
+msgid "Street number"
+msgstr ""
+
+#. module: partner_street_number
+#: view:res.partner:partner_street_number.view_partner_form
+msgid "Street..."
+msgstr ""
+
+#. module: partner_street_number
+#: view:res.partner:partner_street_number.view_partner_form
+msgid ""
+"{'default_parent_id': active_id, 'default_street_name': street_name, "
+"'default_street_number': street_number, 'default_street2': street2, "
+"'default_city': city, 'default_state_id': state_id, 'default_zip': zip, "
+"'default_country_id': country_id, 'default_supplier': supplier, "
+"'default_customer': customer, 'default_use_parent_address': True}"
+msgstr ""
