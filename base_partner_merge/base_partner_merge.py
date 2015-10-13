@@ -15,9 +15,9 @@ from openerp.tools import mute_logger
 from .validate_email import validate_email
 
 import openerp
-from openerp.osv import orm
-from openerp.osv import fields
-from openerp.osv.orm import browse_record
+import openerp.osv.fields as fields
+from openerp.osv.orm import TransientModel, browse_record
+from openerp.exceptions import except_orm
 from openerp.tools.translate import _
 
 pattern = re.compile(r"&(\w+?);")
@@ -58,7 +58,7 @@ def is_integer_list(ids):
     return all(isinstance(i, (int, long)) for i in ids)
 
 
-class MergePartnerLine(orm.TransientModel):
+class MergePartnerLine(TransientModel):
     _name = 'base.partner.merge.line'
 
     _columns = {
@@ -71,7 +71,7 @@ class MergePartnerLine(orm.TransientModel):
     _order = 'min_id asc'
 
 
-class MergePartnerAutomatic(orm.TransientModel):
+class MergePartnerAutomatic(TransientModel):
     """
     The idea behind this wizard is to create a list of potential partners to
     merge. We use two objects, the first one is the wizard for the end-user.
@@ -338,7 +338,7 @@ class MergePartnerAutomatic(orm.TransientModel):
         if parent_id and parent_id != dst_partner.id:
             try:
                 dst_partner.write({'parent_id': parent_id})
-            except (orm.except_orm, orm.except_orm):
+            except except_orm:
                 _logger.info('Skip recursive partner hierarchies for '
                              'parent_id %s of partner: %s',
                              parent_id, dst_partner.id)
@@ -353,7 +353,7 @@ class MergePartnerAutomatic(orm.TransientModel):
             return
 
         if len(partner_ids) > 3:
-            raise orm.except_orm(
+            raise except_orm(
                 _('Error'),
                 _("For safety reasons, you cannot merge more than 3 contacts "
                   "together. You can re-open the wizard several times if "
@@ -363,7 +363,7 @@ class MergePartnerAutomatic(orm.TransientModel):
                 len(set(partner.email for partner
                         in proxy.browse(cr, uid, partner_ids,
                                         context=context))) > 1):
-            raise orm.except_orm(
+            raise except_orm(
                 _('Error'),
                 _("All contacts must have the same email. Only the "
                   "Administrator can merge contacts with different emails."))
@@ -388,7 +388,7 @@ class MergePartnerAutomatic(orm.TransientModel):
                     [('partner_id', 'in', [partner.id for partner
                                            in src_partners])],
                     context=context)):
-            raise orm.except_orm(
+            raise except_orm(
                 _('Error'),
                 _("Only the destination contact may be linked to existing "
                   "Journal Items. Please ask the Administrator if you need to"
@@ -525,9 +525,9 @@ class MergePartnerAutomatic(orm.TransientModel):
         ]
 
         if not groups:
-            raise orm.except_orm(_('Error'),
-                                 _("You have to specify a filter for your "
-                                   "selection"))
+            raise except_orm(_('Error'),
+                             _("You have to specify a filter for your "
+                               "selection"))
 
         return groups
 
