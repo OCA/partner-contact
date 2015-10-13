@@ -47,8 +47,8 @@ Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[account_partner_merge](__unported__/account_partner_merge/) | 1.0 (unported) | Account Partner Merge
-[firstname_display_name_trigger](__unported__/firstname_display_name_trigger/) | 1.0 (unported) | Link module if partner_lastname and account_report_company are installed
+[account_partner_merge](account_partner_merge/) | 1.0 (unported) | Account Partner Merge
+[firstname_display_name_trigger](firstname_display_name_trigger/) | 1.0 (unported) | Link module if partner_lastname and account_report_company are installed
 
 [//]: # (end addons)
 
