@@ -1,21 +1,22 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* base_location
-#
+# * base_location
+# 
+# Translators:
+# Hans Henrik Gabelgaard <hhg@gabelgaard.org>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0\n"
+"Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-12 22:33+0000\n"
-"PO-Revision-Date: 2015-05-22 13:19+0100\n"
-"Last-Translator: Hans Henrik Gabelgaard <hhg@gabelgaard.org>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2015-12-17 01:36+0000\n"
+"PO-Revision-Date: 2015-12-15 11:17+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Danish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
+"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8\n"
-"Language: da_DK\n"
 
 #. module: base_location
 #: model:ir.actions.act_window,name:base_location.action_zip_tree
@@ -23,64 +24,9 @@ msgid "Cites/locations Management"
 msgstr "By/Postnummer/Lokations administration"
 
 #. module: base_location
-#: field:res.better.zip,city:0
-msgid "City"
-msgstr "By"
-
-#. module: base_location
-#: view:res.better.zip:0 field:res.better.zip,name:0
-msgid "ZIP"
-msgstr "Postnr."
-
-#. module: base_location
-#: field:res.better.zip,state_id:0
-msgid "State"
-msgstr "Delstat"
-
-#. module: base_location
-#: field:res.better.zip,country_id:0
-msgid "Country"
-msgstr "Land."
-
-#. module: base_location
-#: field:res.better.zip,priority:0
-msgid "Priority"
-msgstr "Prioritet"
-
-#. module: base_location
-#: model:ir.model,name:base_location.model_res_company
-msgid "Companies"
-msgstr "Virksomheder"
-
-#. module: base_location
-#: field:res.better.zip,code:0
-msgid "City Code"
-msgstr "Postnummer"
-
-#. module: base_location
-#: model:ir.model,name:base_location.model_res_better_zip
-msgid " City/locations completion object"
-msgstr " Slå by/postnummer op"
-
-#. module: base_location
-#: help:res.company,better_zip_id:0
-msgid "Use the city name or the zip code to search the location"
-msgstr "Søg på bynavn eller postnummer"
-
-#. module: base_location
-#: field:res.partner,zip_id:0
-msgid "City/Location"
-msgstr "Postnr/by "
-
-#. module: base_location
-#: view:res.better.zip:0
-msgid "Search city"
-msgstr "Søg by"
-
-#. module: base_location
-#: field:res.company,better_zip_id:0
-msgid "Location"
-msgstr "Postnr/by "
+#: model:ir.model.fields,field_description:base_location.field_res_country_state_better_zip_ids
+msgid "Cities"
+msgstr "Byer"
 
 #. module: base_location
 #: model:ir.ui.menu,name:base_location.zip_base
@@ -88,19 +34,42 @@ msgid "Cities/Locations Management"
 msgstr "Byer/Loaktions administration"
 
 #. module: base_location
-#: model:ir.model,name:base_location.model_res_partner
-msgid "Partner"
-msgstr "Partner"
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_city
+msgid "City"
+msgstr "By"
 
 #. module: base_location
-#: view:res.company:0 view:res.partner:0
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_code
+msgid "City Code"
+msgstr "Postnummer"
+
+#. module: base_location
+#: model:ir.ui.view,arch_db:base_location.view_company_form_city
+#: model:ir.ui.view,arch_db:base_location.view_partner_form
 msgid "City completion"
 msgstr "Slå by/postnummer op"
 
 #. module: base_location
-#: field:res.country.state,better_zip_ids:0
-msgid "Cities"
-msgstr "Byer"
+#: model:ir.model.fields,field_description:base_location.field_res_partner_zip_id
+msgid "City/Location"
+msgstr "Postnr/by "
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_better_zip
+msgid "City/locations completion object"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_company
+msgid "Companies"
+msgstr "Virksomheder"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_country_id
+#: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
+#: model:ir.ui.view,arch_db:base_location.view_country_search
+msgid "Country"
+msgstr "Land."
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_country_state
@@ -108,6 +77,79 @@ msgid "Country state"
 msgstr "Delstat/region"
 
 #. module: base_location
-#: help:res.better.zip,code:0
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: base_location
+#: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
+msgid "Group By"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_id
+msgid "ID"
+msgstr "ID"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_company_better_zip_id
+msgid "Location"
+msgstr "Postnr/by "
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_display_name
+msgid "Name"
+msgstr "Navn"
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: base_location
+#: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
+msgid "Search city"
+msgstr "Søg by"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_state_id
+#: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
+msgid "State"
+msgstr "Delstat"
+
+#. module: base_location
+#: model:ir.model.fields,help:base_location.field_res_better_zip_code
 msgid "The official code for the city"
 msgstr "Postnummer"
+
+#. module: base_location
+#: model:ir.model.fields,help:base_location.field_res_company_better_zip_id
+msgid "Use the city name or the zip code to search the location"
+msgstr "Søg på bynavn eller postnummer"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_name
+#: model:ir.ui.view,arch_db:base_location.better_zip_form
+#: model:ir.ui.view,arch_db:base_location.better_zip_tree
+msgid "ZIP"
+msgstr "Postnr."
