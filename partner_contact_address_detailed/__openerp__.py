@@ -31,6 +31,6 @@ in summarized partner contact form when creating a new partner""",
     'demo': [],
     'test': [],
     'auto_install': False,
-    'installable': True,
+    'installable': False,
     'images': [],
 }
