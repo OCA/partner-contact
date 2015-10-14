@@ -40,7 +40,8 @@ Contributors
 * Ignacio Ibeas (Acysos S.L.)
 * Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
 * Alejandro Santana <alejandrosantana@anubia.es>
-- Sandy Carter <sandy.carter@savoirfairelinux.com>
+* Sandy Carter <sandy.carter@savoirfairelinux.com>
+* Yannick Vaucher <yannick.vaucher@camptocamp.com>
 
 Icon
 ----
