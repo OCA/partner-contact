@@ -241,6 +241,24 @@ class MergePartnerAutomatic(orm.TransientModel):
                       (field_id, '=', src.id)]
             ids = proxy.search(cr, openerp.SUPERUSER_ID,
                                domain, context=context)
+            if model == 'mail.followers':
+                # mail.followers have a set semantic
+                # unlink records that whould trigger a duplicate constraint
+                # on rewrite
+                src_objs = proxy.browse(cr, openerp.SUPERUSER_ID,
+                                        ids)
+                target_domain = [(field_model, '=', 'res.partner'),
+                                 (field_id, '=', dst_partner.id)]
+                target_ids = proxy.search(cr, openerp.SUPERUSER_ID,
+                                          target_domain, context=context)
+                dst_followers = proxy.browse(cr, openerp.SUPERUSER_ID,
+                                             target_ids).mapped('partner_id')
+                to_unlink = src_objs.filtered(lambda obj:
+                                              obj.partner_id in dst_followers)
+                to_rewrite = src_objs - to_unlink
+                to_unlink.unlink()
+                ids = to_rewrite.ids
+
             return proxy.write(cr, openerp.SUPERUSER_ID, ids,
                                {field_id: dst_partner.id}, context=context)
 
