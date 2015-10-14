@@ -7,17 +7,16 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form" />
             <field name="arch" type="xml">
-                <div class="address_format" position="before">
+                <field name="city" position="before">
                     <field name="zip_id"
-                        options="{'create_name_field': 'city'}"
+                        options="{'create_name_field': 'city', 'no_open': True, 'no_create': True}"
                         placeholder="City completion"
-                        attrs="{'invisible': [('use_parent_address','=',True)]}"
                         class="oe_edit_only" />
-                </div>
-                <xpath expr="//field[@name='child_ids']/form//div[@class='address_format']" position="before">
-                    <field name="zip_id" options="{'create_name_field': 'city'}"
+                </field>
+                <xpath expr="//field[@name='child_ids']/form//field[@name='city']" position="before">
+                    <field name="zip_id"
+                        options="{'create_name_field': 'city', 'no_open': True, 'no_create': True}"
                         placeholder="City completion"
-                        attrs="{'invisible': [('use_parent_address','=',True)]}"
                         class="oe_edit_only" />
                 </xpath>
             </field>

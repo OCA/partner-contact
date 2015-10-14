@@ -6,7 +6,7 @@
             <field name="name">res.better.zip.form</field>
             <field name="model">res.better.zip</field>
             <field name="arch" type="xml">
-                <form string="ZIP" version="7.0">
+                <form string="ZIP">
                     <group col="4">
                     <field name="name"/>
                     <field name="code"/>
