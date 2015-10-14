@@ -23,7 +23,7 @@
     "author": "Odoo Community Association (OCA), Grupo ESOC",
     "license": "AGPL-3",
     "website": "https://odoo-community.org/",
-    "installable": True,
+    'installable': False,
     "application": False,
     "summary": "Add gender field to contacts",
     "depends": [
