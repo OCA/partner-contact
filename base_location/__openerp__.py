@@ -22,7 +22,7 @@
 ##############################################################################
 {
     'name': 'Location management (aka Better ZIP)',
-    'version': '8.0.1.0.0',
+    'version': '9.0.1.0.0',
     'depends': ['base'],
     'author': "Camptocamp,"
               "ACYSOS S.L.,"
@@ -31,6 +31,7 @@
               "Odoo Community Association (OCA)",
     'license': "AGPL-3",
     'contributors': [
+        'Nicolas Bessi <nicolas.bessi@camptocamp.com>',
         'Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>',
         'Ignacio Ibeas (Acysos S.L.)',
         'Alejandro Santana <alejandrosantana@anubia.es>',
@@ -47,6 +48,6 @@
     'demo': [
         'demo/better_zip.xml',
     ],
-    'installable': False,
-    'active': False,
+    'installable': True,
+    'auto_install': False,
 }
