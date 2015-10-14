@@ -30,7 +30,7 @@ Link module for base_partner_merge which extract portal dependency
  'depends': ['portal', 'base_partner_merge'],
  'data': [],
  'test': [],
- 'installable': True,
+ 'installable': False,
  'auto_install': True,
  'application': False,
  }
