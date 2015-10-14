@@ -36,6 +36,7 @@
         'Ignacio Ibeas (Acysos S.L.)',
         'Alejandro Santana <alejandrosantana@anubia.es>',
         'Sandy Carter <sandy.carter@savoirfairelinux.com>',
+        'Yannick Vaucher <yannick.vaucher@camptocamp.com>',
     ],
     'summary': '''Enhanced zip/npa management system''',
     'website': 'http://www.camptocamp.com',
