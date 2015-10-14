@@ -20,7 +20,7 @@ env:
   - secure: "R3Tr39zWkjHWyKxBuOoxtvkIZNipt+HbPccuh9+fLi5irikIN3y1+YofBbK/H/wqzg6Vv6mnmwlHfXixiDmZRzQ1GidZ3nFqZYhGREp4vuEjBEf+rUb5/Ijrn6Zspgl+CCDR7ET9E3wOLMRV4A39poPgIll0vALzrAdIbdRbDqc="
 
   matrix:
-  - LINT_CHECK="1"
+  - LINT_CHECK="1" PYLINT_EXPECTED_ERRORS="2"  # base_partner_merge uses openerp.osv
   - TRANSIFEX="1"
   - TESTS="1" ODOO_REPO="odoo/odoo" EXCLUDE="portal_partner_merge"
   - TESTS="1" ODOO_REPO="OCA/OCB" EXCLUDE="portal_partner_merge"
