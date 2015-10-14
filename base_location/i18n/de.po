@@ -4,93 +4,100 @@
 # 
 # Translators:
 # Antonio Trueba, 2016
-# Francisco Palm <francisco.palm@gmail.com>, 2015
+# Carles Antoli <carlesantoli@hotmail.com>, 2015
+# Carles Antoli <carlesantoli@hotmail.com>, 2015
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2015
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2015
+# Hotellook, 2014
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2016
+# Rudolf Schnapka <rs@techno-flex.de>, 2016
+# Rudolf Schnapka <schnapkar@golive-saar.de>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-19 20:35+0000\n"
-"PO-Revision-Date: 2016-01-01 09:03+0000\n"
-"Last-Translator: Antonio Trueba\n"
-"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/es/)\n"
+"POT-Creation-Date: 2016-04-17 04:14+0000\n"
+"PO-Revision-Date: 2016-04-21 08:44+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_location
 #: model:ir.actions.act_window,name:base_location.action_zip_tree
 msgid "Cites/locations Management"
-msgstr "Gestión de ciudades/ubicaciones"
+msgstr "Standorte-Verwaltung"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_country_state_better_zip_ids
 msgid "Cities"
-msgstr "Ciudades"
+msgstr "Orte"
 
 #. module: base_location
 #: model:ir.ui.menu,name:base_location.zip_base
 msgid "Cities/Locations Management"
-msgstr "Ciudad/Ubicaciones"
+msgstr "Standorte-Verwaltung"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_city
 msgid "City"
-msgstr "Ciudad"
+msgstr "Stadt"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_code
 msgid "City Code"
-msgstr "Código de ciudad"
+msgstr "Ortskennung"
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_company_form_city
 #: model:ir.ui.view,arch_db:base_location.view_partner_form
 msgid "City completion"
-msgstr "Autocompletado a partir de la ciudad"
+msgstr "Orts-Vervollständigung"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_partner_zip_id
 msgid "City/Location"
-msgstr "Ciudad/Ubicación"
+msgstr "Stadt/Standort"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_better_zip
 msgid "City/locations completion object"
-msgstr "Autocompletado de objetos a partir de ciudades/ubicaciones"
+msgstr "Stadt/Standorte-Vervollständungsobjekt"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_company
 msgid "Companies"
-msgstr "Compañías"
+msgstr "Unternehmen"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_country_id
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 #: model:ir.ui.view,arch_db:base_location.view_country_search
 msgid "Country"
-msgstr "País"
+msgstr "Land"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_country_state
 msgid "Country state"
-msgstr "Provincia"
+msgstr "Bundesland"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr "erstellt von"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr "erstellt am"
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 msgid "Group By"
-msgstr "Agrupar por"
+msgstr "Gruppiere"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_id
@@ -100,57 +107,57 @@ msgstr "ID"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip___last_update
 msgid "Last Modified on"
-msgstr "Modificado por última vez el"
+msgstr "Zuletzt verändert am"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "zuletzt aktualisiert von"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "zuletzt aktualisiert am"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company_better_zip_id
 msgid "Location"
-msgstr "Ubicación"
+msgstr "Standort"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_display_name
 msgid "Name"
-msgstr "Nombre"
+msgstr "Bezeichnung"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_partner
 msgid "Partner"
-msgstr "Empresa"
+msgstr "Partner"
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 msgid "Search city"
-msgstr "Buscar ciudad"
+msgstr "Suche Ort"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_state_id
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 msgid "State"
-msgstr "Provincia"
+msgstr "Bundesland"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_better_zip_code
 msgid "The official code for the city"
-msgstr "El código oficial para la ciudad"
+msgstr "Die offizielle Kennung der Stadt"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company_better_zip_id
 msgid "Use the city name or the zip code to search the location"
-msgstr "Utilice el nombre de ciudad o el código postal para buscar la ubicación"
+msgstr "Verwenden Sie den Stadtnamen oder die PLZ, um nach diesem Standort zu suchen"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_name
 #: model:ir.ui.view,arch_db:base_location.better_zip_form
 #: model:ir.ui.view,arch_db:base_location.better_zip_tree
 msgid "ZIP"
-msgstr "C.P."
+msgstr "PLZ"
