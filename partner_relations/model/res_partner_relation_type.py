@@ -63,7 +63,8 @@ class ResPartnerRelationType(models.Model):
     )
 
     _sql_constraints = [
-        ('name_unique', 'unique(name)', 'partner relation name already exists!'),
+        ('name_unique', 'unique(name)',
+         'partner relation name already exists!'),
         ('name_inverse_unique', 'unique(name_inverse)',
          'partner relation name_inverse already exists!'),
     ]
