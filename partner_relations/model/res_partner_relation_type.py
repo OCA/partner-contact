@@ -62,6 +62,13 @@ class ResPartnerRelationType(models.Model):
         default=False,
     )
 
+    _sql_constraints = [
+        ('name_unique', 'unique(name)',
+         'partner relation name already exists.'),
+        ('name_inverse_unique', 'unique(name_inverse)',
+         'partner relation name_inverse already exists.'),
+    ]
+
     @api.model
     def _get_partner_types(self):
         return [
