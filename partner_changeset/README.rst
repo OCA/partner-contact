@@ -50,6 +50,16 @@ there is nothing to do.  Addons wanting to create changeset which need a
 validation should pass the key ``_changeset_rules`` in the context when
 they write on the partner.
 
+The keys a caller should pass in the context are:
+* ``__changeset_rules``: activate the rules for the changesets
+* ``__changeset_rules_source_model``: name of the model which asks for
+  the change
+* ``__changeset_rules_source_id``: id of the record which asks for the
+  change
+
+The source is used for the application of the rules, it is also stored
+on the changeset for information.
+
 Finding changesets
 ------------------
 

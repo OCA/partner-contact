@@ -13,7 +13,6 @@
           <button class="oe_inline oe_stat_button"
             type="action"
             name="%(partner_changeset.action_res_partner_changeset_view)d"
-            attrs="{'invisible': [('count_pending_changesets', '=', 0)]}"
             context="{'search_default_draft': 1, 'search_default_partner_id': active_id}"
             icon="fa-code-fork">
             <field string="Pending Changesets"

@@ -72,6 +72,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
         })
         self.assert_changeset(
             self.partner,
+            self.env.user,
             [(self.field_char, self.partner[self.field_char.name],
               'New value', 'draft'),
              ]
@@ -84,6 +85,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
         })
         self.assert_changeset(
             self.partner,
+            self.env.user,
             [(self.field_text, self.partner[self.field_text.name],
               'New comment\non 2 lines', 'draft'),
              ]
@@ -101,6 +103,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
         })
         self.assert_changeset(
             self.partner,
+            self.env.user,
             [(self.field_boolean, self.partner[self.field_boolean.name],
               True, 'draft'),
              ]
@@ -113,6 +116,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
         })
         self.assert_changeset(
             self.partner,
+            self.env.user,
             [(self.field_date, self.partner[self.field_date.name],
               '2015-09-15', 'draft'),
              ]
@@ -125,6 +129,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
         })
         self.assert_changeset(
             self.partner,
+            self.env.user,
             [(self.field_integer, self.partner[self.field_integer.name],
               42, 'draft'),
              ]
@@ -137,6 +142,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
         })
         self.assert_changeset(
             self.partner,
+            self.env.user,
             [(self.field_float, self.partner[self.field_float.name],
               3.1415, 'draft'),
              ]
@@ -149,6 +155,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
         })
         self.assert_changeset(
             self.partner,
+            self.env.user,
             [(self.field_selection, self.partner[self.field_selection.name],
               'delivery', 'draft'),
              ]
@@ -165,6 +172,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
         })
         self.assert_changeset(
             self.partner,
+            self.env.user,
             [(self.field_many2one, self.partner[self.field_many2one.name],
               self.env.ref('base.ch'), 'draft'),
              ]

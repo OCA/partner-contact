@@ -22,7 +22,7 @@
 
 class ChangesetMixin(object):
 
-    def assert_changeset(self, partner, expected_changes):
+    def assert_changeset(self, partner, expected_source, expected_changes):
         """ Check if a changeset has been created according to expected values
 
         The partner should have no prior changeset than the one created in the
@@ -40,6 +40,7 @@ class ChangesetMixin(object):
         )
         self.assertEqual(len(changeset), 1,
                          "1 changeset expected, got %s" % (changeset,))
+        self.assertEqual(changeset.source, expected_source)
         changes = changeset.change_ids
         missing = []
         for expected_change in expected_changes:

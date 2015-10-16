@@ -88,6 +88,7 @@ class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
         })
         self.assert_changeset(
             self.partner,
+            self.env.user,
             [(self.field_name, 'X', 'Y', 'done'),
              (self.field_street, 'street X', 'street Y', 'draft'),
              (self.field_street2, 'street2 X', 'street2 Y', 'cancel'),
@@ -104,6 +105,7 @@ class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
         })
         self.assert_changeset(
             self.partner,
+            self.env.user,
             [(self.field_street, 'street X', False, 'draft')]
         )
 
@@ -119,6 +121,7 @@ class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
         })
         self.assert_changeset(
             self.partner,
+            self.env.user,
             [(self.field_name, 'X', 'Y', 'done'),
              (self.field_street, 'street X', 'street Y', 'done'),
              (self.field_street2, 'street2 X', 'street2 Y', 'done'),
@@ -252,3 +255,25 @@ class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
         self.assertEqual(partner2.street2, 'street2 Y')
         self.assertEqual(changeset.state, 'done')
         self.assertEqual(changeset2.state, 'done')
+
+    def test_new_changeset_source(self):
+        """ Source is the user who made the change """
+        self.partner.with_context(__changeset_rules=True).write({
+            'street': False,
+        })
+        changeset = self.partner.changeset_ids
+        self.assertEqual(changeset.source, self.env.user)
+
+    def test_new_changeset_source_other_model(self):
+        """ Define source from another model """
+        company = self.env.ref('base.main_company')
+        keys = {
+            '__changeset_rules': True,
+            '__changeset_rules_source_model': 'res.company',
+            '__changeset_rules_source_id': company.id,
+        }
+        self.partner.with_context(**keys).write({
+            'street': False,
+        })
+        changeset = self.partner.changeset_ids
+        self.assertEqual(changeset.source, company)
