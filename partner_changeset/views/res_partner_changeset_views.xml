@@ -33,6 +33,7 @@
           <sheet string="Partner Changeset">
             <group>
               <field name="partner_id"/>
+              <field name="source"/>
               <field name="date"/>
             </group>
             <group string="Changes">

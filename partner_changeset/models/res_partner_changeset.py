@@ -57,6 +57,16 @@ class ResPartnerChangeset(models.Model):
         store=True,
     )
     note = fields.Text()
+    source = fields.Reference(
+        string='Source of the change',
+        selection='_reference_models',
+        readonly=True,
+    )
+
+    @api.model
+    def _reference_models(self):
+        models = self.env['ir.model'].search([])
+        return [(model.model, model.name) for model in models]
 
     @api.one
     @api.depends('change_ids', 'change_ids.state')
@@ -85,6 +95,17 @@ class ResPartnerChangeset(models.Model):
         fields to the changeset must explicitly ask for it by providing a
         key ``__changeset_rules`` in the environment's context.
 
+        A caller should pass the following keys in the context:
+
+        * ``__changeset_rules``: activate the rules for the changesets
+        * ``__changeset_rules_source_model``: name of the model which
+          asks for the change
+        * ``__changeset_rules_source_id``: id of the record which asks
+        for the change
+
+        When the source model and id are not defined, the current user
+        is considered as the origin of the change.
+
         Should be called before the execution of ``write`` on the record
         so we can keep track of the existing value and also because the
         returned values should be used for ``write`` as some of the
@@ -98,6 +119,16 @@ class ResPartnerChangeset(models.Model):
 
         """
         record.ensure_one()
+
+        source_model = self.env.context.get('__changeset_rules_source_model')
+        source_id = self.env.context.get('__changeset_rules_source_id')
+        if not (source_model and source_id):
+            # if the changes source is not defined, log the user who
+            # made the change
+            source_model = 'res.users'
+            source_id = self.env.uid
+        source = '%s,%s' % (source_model, source_id)
+
         change_model = self.env['res.partner.changeset.change']
         write_values = values.copy()
         changes = []
@@ -121,6 +152,7 @@ class ResPartnerChangeset(models.Model):
                 'partner_id': record.id,
                 'change_ids': [(0, 0, vals) for vals in changes],
                 'date': fields.Datetime.now(),
+                'source': source,
             })
         return write_values
 
