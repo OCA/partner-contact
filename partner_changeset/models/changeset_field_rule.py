@@ -19,6 +19,8 @@
 #
 #
 
+from itertools import chain
+
 from openerp import models, fields, api
 from openerp.tools.cache import ormcache
 
@@ -42,12 +44,40 @@ class ChangesetFieldRule(models.Model):
              "Validate: manually applied by an administrator.\n"
              "Never: change never applied.",
     )
+    source_model_id = fields.Many2one(
+        comodel_name='ir.model',
+        string='Source Model',
+        ondelete='cascade',
+        domain=lambda self: [('id', 'in', self._domain_source_models().ids)],
+        help="If a source model is defined, the rule will be applied only "
+             "when the change is made from this origin.  "
+             "Rules without source model are global and applies to all "
+             "backends.\n"
+             "Rules with a source model have precedence over global rules, "
+             "but if a field has no rule with a source model, the global rule "
+             "is used."
+    )
 
     _sql_constraints = [
         ('model_field_uniq',
-         'unique (model_id, field_id)',
-         'A rule already exists for this field.')
+         'unique (model_id, source_model_id, field_id)',
+         'A rule already exists for this field.'),
     ]
+
+    @api.model
+    def _domain_source_models(self):
+        """ Returns the models for which we can define rules.
+
+        Example for submodules (replace by the xmlid of the model):
+
+        ::
+            models = super(ChangesetFieldRule, self)._domain_source_models()
+            return models | self.env.ref('base.model_res_users')
+
+        Rules without model are global and apply for all models.
+
+        """
+        return self.env['ir.model'].browse()
 
     @api.model
     def _default_model_id(self):
@@ -62,9 +92,36 @@ class ChangesetFieldRule(models.Model):
 
     @ormcache()
     @api.model
-    def get_rules(self, model_name):
-        rules = self.search([('model_id', '=', model_name)])
-        return {rule.field_id.name: rule for rule in rules}
+    def get_rules(self, model_name, source_model_name):
+        """ Return the rules for a model
+
+        If the key ``__changeset_rules_source_model`` is provided in the
+        context with the name of a model, rules for this specific model
+        will be searched for, if no rule is found, a generic rule
+        (without source_model_id) will be searched.
+
+        The source model is the model which ask for a change, it will be
+        for instance ``res.users``, ``lefac.backend`` or ``magellan.backend``.
+
+        The second argument (``source_model_name``) is optional but
+        cannot be an optional keyword argument otherwise it would not be
+        in the key for the cache. The callers have to pass ``None`` if
+        they want only global rules.
+        """
+        if source_model_name:
+            model_rules = self.search(
+                [('model_id', '=', model_name),
+                 ('source_model_id.model', '=', source_model_name)],
+            )
+        else:
+            model_rules = self.browse()
+
+        rules = self.search([('model_id', '=', model_name),
+                             ('source_model_id', '=', False)])
+        # model's rules have precedence over global ones so we take the
+        # global rules first, then we update them with the source
+        # model's rules
+        return {rule.field_id.name: rule for rule in chain(rules, model_rules)}
 
     @api.model
     def create(self, vals):
