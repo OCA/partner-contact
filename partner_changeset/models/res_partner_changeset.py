@@ -132,7 +132,10 @@ class ResPartnerChangeset(models.Model):
         change_model = self.env['res.partner.changeset.change']
         write_values = values.copy()
         changes = []
-        rules = self.env['changeset.field.rule'].get_rules(record._model._name)
+        rules = self.env['changeset.field.rule'].get_rules(
+            record._model._name,
+            source_model_name=source_model,
+        )
         for field in values:
             rule = rules.get(field)
             if not rule:
