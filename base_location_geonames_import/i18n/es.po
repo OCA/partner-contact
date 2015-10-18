@@ -3,13 +3,14 @@
 # * base_location_geonames_import
 # 
 # Translators:
+# Carles Antolí <carlesantoli@hotmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-09 15:48+0000\n"
-"PO-Revision-Date: 2015-10-06 13:57+0000\n"
-"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"POT-Creation-Date: 2015-10-14 11:01+0000\n"
+"PO-Revision-Date: 2015-10-12 17:50+0000\n"
+"Last-Translator: Carles Antolí <carlesantoli@hotmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -95,4 +96,4 @@ msgstr "El código de país dentro del archivo (%s) no se corresponde con el pa�
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:105
 #, python-format
 msgid "Too many states with code %s for country %s"
-msgstr ""
+msgstr "Demasiados estados con código %s para el país %s"
