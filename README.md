@@ -15,6 +15,12 @@ Here you should find community modules that:
 * Etc.
 
 [//]: # (addons)
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[base_location](base_location/) | 9.0.1.0.0 | Enhanced zip/npa management system
+
 Unported addons
 ---------------
 addon | version | summary
@@ -22,7 +28,6 @@ addon | version | summary
 [account_partner_merge](account_partner_merge/) | 1.0 (unported) | Account Partner Merge
 [base_contact](base_contact/) | 8.0.2.0.0 (unported) | [DEPRECATED] Manage your contacts separately
 [base_continent](base_continent/) | 8.0.1.0.0 (unported) | Continent management
-[base_location](base_location/) | 8.0.1.0.0 (unported) | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 8.0.0.2.0 (unported) | Import better zip entries from Geonames
 [base_location_nuts](base_location_nuts/) | 8.0.1.0.0 (unported) | NUTS Regions
 [base_partner_merge](base_partner_merge/) | 8.0.0.1.0 (unported) | Base Partner Merge
