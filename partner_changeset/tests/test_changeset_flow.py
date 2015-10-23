@@ -33,9 +33,9 @@ class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
     suite, so we only use 'char' fields.  We have to ensure that the
     general changeset flows work as expected, that is:
 
-    * create a 'done' changeset when a manual/system write is made on partner
-    * create a changeset according to the changeset rules when the key
-      '__changeset_rules' is passed in the context
+    * create a changeset when a manual/system write is made on partner
+    * create a changeset according to the changeset rules when a source model
+      is specified
     * apply a changeset change writes the value on the partner
     * apply a whole changeset writes all the changes' values on the partner
     * changes in state 'cancel' or 'done' do not write on the partner
@@ -78,10 +78,9 @@ class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
     def test_new_changeset(self):
         """ Add a new changeset on a partner
 
-        A new changeset is created when we write on a partner with
-        ``__changeset_rules`` in the context.
+        A new changeset is created when we write on a partner
         """
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             'name': 'Y',
             'street': 'street Y',
             'street2': 'street2 Y',
@@ -100,7 +99,7 @@ class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
 
     def test_new_changeset_empty_value(self):
         """ Create a changeset change that empty a value """
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             'street': False,
         })
         self.assert_changeset(
@@ -108,28 +107,6 @@ class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
             self.env.user,
             [(self.field_street, 'street X', False, 'draft')]
         )
-
-    def test_manual_edition(self):
-        """ A manual edition of a partner should always be applied
-
-        But should create a 'done' changeset
-        """
-        self.partner.write({
-            'name': 'Y',
-            'street': 'street Y',
-            'street2': 'street2 Y',
-        })
-        self.assert_changeset(
-            self.partner,
-            self.env.user,
-            [(self.field_name, 'X', 'Y', 'done'),
-             (self.field_street, 'street X', 'street Y', 'done'),
-             (self.field_street2, 'street2 X', 'street2 Y', 'done'),
-             ],
-        )
-        self.assertEqual(self.partner.name, 'Y')
-        self.assertEqual(self.partner.street, 'street Y')
-        self.assertEqual(self.partner.street2, 'street2 Y')
 
     def test_apply_change(self):
         """ Apply a changeset change on a partner """
@@ -258,7 +235,7 @@ class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
 
     def test_new_changeset_source(self):
         """ Source is the user who made the change """
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             'street': False,
         })
         changeset = self.partner.changeset_ids
@@ -268,7 +245,6 @@ class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
         """ Define source from another model """
         company = self.env.ref('base.main_company')
         keys = {
-            '__changeset_rules': True,
             '__changeset_rules_source_model': 'res.company',
             '__changeset_rules_source_id': company.id,
         }

@@ -55,7 +55,7 @@ class TestChangesetOrigin(ChangesetMixin, common.TransactionCase):
 
         According to the state of the change.
         """
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             'name': 'Y',
         })
         changeset = self.partner.changeset_ids
@@ -63,13 +63,13 @@ class TestChangesetOrigin(ChangesetMixin, common.TransactionCase):
         self.assertEqual(self.partner.name, 'X')
         self.assertEqual(change.origin_value_char, 'X')
         self.assertEqual(change.origin_value_display, 'X')
-        self.partner.write({'name': 'A'})
+        self.partner.with_context(__no_changeset=True).write({'name': 'A'})
         self.assertEqual(change.origin_value_char, 'A')
         self.assertEqual(change.origin_value_display, 'A')
         change.apply()
         self.assertEqual(change.origin_value_char, 'A')
         self.assertEqual(change.origin_value_display, 'A')
-        self.partner.write({'name': 'B'})
+        self.partner.with_context(__no_changeset=True).write({'name': 'B'})
         self.assertEqual(change.origin_value_char, 'A')
         self.assertEqual(change.origin_value_display, 'A')
 
@@ -78,7 +78,7 @@ class TestChangesetOrigin(ChangesetMixin, common.TransactionCase):
 
         According to the state of the change.
         """
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             'name': 'Y',
         })
         changeset = self.partner.changeset_ids
@@ -86,44 +86,44 @@ class TestChangesetOrigin(ChangesetMixin, common.TransactionCase):
         self.assertEqual(self.partner.name, 'X')
         self.assertEqual(change.origin_value_char, 'X')
         self.assertEqual(change.origin_value_display, 'X')
-        self.partner.write({'name': 'A'})
+        self.partner.with_context(__no_changeset=True).write({'name': 'A'})
         self.assertEqual(change.origin_value_char, 'A')
         self.assertEqual(change.origin_value_display, 'A')
         change.cancel()
         self.assertEqual(change.origin_value_char, 'A')
         self.assertEqual(change.origin_value_display, 'A')
-        self.partner.write({'name': 'B'})
+        self.partner.with_context(__no_changeset=True).write({'name': 'B'})
         self.assertEqual(change.origin_value_char, 'A')
         self.assertEqual(change.origin_value_display, 'A')
 
     def test_old_field_of_change_with_apply(self):
         """ Old field is stored when the change is applied """
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             'name': 'Y',
         })
         changeset = self.partner.changeset_ids
         change = changeset.change_ids
         self.assertEqual(self.partner.name, 'X')
         self.assertFalse(change.old_value_char)
-        self.partner.write({'name': 'A'})
+        self.partner.with_context(__no_changeset=True).write({'name': 'A'})
         self.assertFalse(change.old_value_char)
         change.apply()
         self.assertEqual(change.old_value_char, 'A')
-        self.partner.write({'name': 'B'})
+        self.partner.with_context(__no_changeset=True).write({'name': 'B'})
         self.assertEqual(change.old_value_char, 'A')
 
     def test_old_field_of_change_with_cancel(self):
         """ Old field is stored when the change is canceled """
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             'name': 'Y',
         })
         changeset = self.partner.changeset_ids
         change = changeset.change_ids
         self.assertEqual(self.partner.name, 'X')
         self.assertFalse(change.old_value_char)
-        self.partner.write({'name': 'A'})
+        self.partner.with_context(__no_changeset=True).write({'name': 'A'})
         self.assertFalse(change.old_value_char)
         change.cancel()
         self.assertEqual(change.old_value_char, 'A')
-        self.partner.write({'name': 'B'})
+        self.partner.with_context(__no_changeset=True).write({'name': 'B'})
         self.assertEqual(change.old_value_char, 'A')

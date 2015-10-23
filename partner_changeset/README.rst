@@ -39,23 +39,30 @@ The supported fields are:
 * Boolean
 * Many2one
 
+Rules can be global (no source model) or configured by source model.
+Rules by source model have the priority. If a field is not configured
+for the source model, it will use the global rule (if existing).
+
+If a field has no rule, it is written to the partner without changeset.
+
 Usage
 =====
 
 General case
 ------------
 
-When users modify the partners, new 'validated' changeset are created so
-there is nothing to do.  Addons wanting to create changeset which need a
-validation should pass the key ``_changeset_rules`` in the context when
-they write on the partner.
+The first step is to create the changeset rules, once that done,
 
-The keys a caller should pass in the context are:
-* ``__changeset_rules``: activate the rules for the changesets
+Addons wanting to create changeset with their own rules should pass the
+following keys in the context when they write on the partner:
 * ``__changeset_rules_source_model``: name of the model which asks for
   the change
 * ``__changeset_rules_source_id``: id of the record which asks for the
   change
+
+Also, they should extend the selection in
+``ChangesetFieldRule._domain_source_models`` to add their model (the
+same that is passed in ``__changeset_rules_source_model``).
 
 The source is used for the application of the rules, it is also stored
 on the changeset for information.

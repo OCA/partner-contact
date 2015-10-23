@@ -19,8 +19,6 @@
 #
 #
 
-from itertools import chain
-
 from openerp import models, fields, api
 from openerp.tools.cache import ormcache
 
@@ -77,7 +75,7 @@ class ChangesetFieldRule(models.Model):
         Rules without model are global and apply for all models.
 
         """
-        return self.env['ir.model'].browse()
+        return self.env.ref('base.model_res_users')
 
     @api.model
     def _default_model_id(self):
@@ -95,33 +93,30 @@ class ChangesetFieldRule(models.Model):
     def get_rules(self, model_name, source_model_name):
         """ Return the rules for a model
 
-        If the key ``__changeset_rules_source_model`` is provided in the
-        context with the name of a model, rules for this specific model
-        will be searched for, if no rule is found, a generic rule
-        (without source_model_id) will be searched.
+        When a model is specified, it will return the rules for this
+        model.  Fields that have no rule for this model will use the
+        global rules (those without source).
 
         The source model is the model which ask for a change, it will be
-        for instance ``res.users``, ``lefac.backend`` or ``magellan.backend``.
+        for instance ``res.users``, ``lefac.backend`` or
+        ``magellan.backend``.
 
         The second argument (``source_model_name``) is optional but
         cannot be an optional keyword argument otherwise it would not be
         in the key for the cache. The callers have to pass ``None`` if
         they want only global rules.
         """
-        if source_model_name:
-            model_rules = self.search(
-                [('model_id', '=', model_name),
-                 ('source_model_id.model', '=', source_model_name)],
-            )
-        else:
-            model_rules = self.browse()
-
-        rules = self.search([('model_id', '=', model_name),
-                             ('source_model_id', '=', False)])
-        # model's rules have precedence over global ones so we take the
-        # global rules first, then we update them with the source
-        # model's rules
-        return {rule.field_id.name: rule for rule in chain(rules, model_rules)}
+        model_rules = self.search(
+            [('model_id', '=', model_name),
+             '|', ('source_model_id.model', '=', source_model_name),
+                  ('source_model_id', '=', False)],
+            # using 'DESC' means that 'NULLS FIRST' is the default
+            order='source_model_id DESC',
+        )
+        # model's rules have precedence over global ones so we iterate
+        # over global rules first, then we update them with the rules
+        # which have a source model
+        return {rule.field_id.name: rule for rule in model_rules}
 
     @api.model
     def create(self, vals):

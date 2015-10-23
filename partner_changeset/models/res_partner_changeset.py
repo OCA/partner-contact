@@ -90,14 +90,11 @@ class ResPartnerChangeset(models.Model):
         """ Add a changeset on a partner
 
         By default, when a partner is modified by a user or by the
-        system, the changes are applied and a validated changeset is
-        created.  Callers which want to delegate the write of some
-        fields to the changeset must explicitly ask for it by providing a
-        key ``__changeset_rules`` in the environment's context.
+        system, the the changeset will follow the rules configured for
+        the 'Users' / global rules.
 
         A caller should pass the following keys in the context:
 
-        * ``__changeset_rules``: activate the rules for the changesets
         * ``__changeset_rules_source_model``: name of the model which
           asks for the change
         * ``__changeset_rules_source_id``: id of the record which asks
@@ -122,12 +119,16 @@ class ResPartnerChangeset(models.Model):
 
         source_model = self.env.context.get('__changeset_rules_source_model')
         source_id = self.env.context.get('__changeset_rules_source_id')
-        if not (source_model and source_id):
+        if not source_model:
             # if the changes source is not defined, log the user who
             # made the change
             source_model = 'res.users'
+        if not source_id:
             source_id = self.env.uid
-        source = '%s,%s' % (source_model, source_id)
+        if source_model and source_id:
+            source = '%s,%s' % (source_model, source_id)
+        else:
+            source = False
 
         change_model = self.env['res.partner.changeset.change']
         write_values = values.copy()
@@ -481,10 +482,9 @@ class ResPartnerChangesetChange(models.Model):
             new_field_name: new_value,
             'field_id': rule.field_id.id,
         }
-        pop_value = False
-        if (not self.env.context.get('__changeset_rules') or
-                rule.action == 'auto'):
+        if rule.action == 'auto':
             change['state'] = 'done'
+            pop_value = False
         elif rule.action == 'validate':
             change['state'] = 'draft'
             pop_value = True  # change to apply manually

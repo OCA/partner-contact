@@ -67,7 +67,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
 
     def test_new_changeset_char(self):
         """ Add a new changeset on a Char field """
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             self.field_char.name: 'New value',
         })
         self.assert_changeset(
@@ -80,7 +80,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
 
     def test_new_changeset_text(self):
         """ Add a new changeset on a Text field """
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             self.field_text.name: 'New comment\non 2 lines',
         })
         self.assert_changeset(
@@ -98,7 +98,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
             self.field_boolean.name: False,
         })
 
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             self.field_boolean.name: True,
         })
         self.assert_changeset(
@@ -111,7 +111,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
 
     def test_new_changeset_date(self):
         """ Add a new changeset on a Date field """
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             self.field_date.name: '2015-09-15',
         })
         self.assert_changeset(
@@ -124,7 +124,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
 
     def test_new_changeset_integer(self):
         """ Add a new changeset on a Integer field """
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             self.field_integer.name: 42,
         })
         self.assert_changeset(
@@ -137,7 +137,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
 
     def test_new_changeset_float(self):
         """ Add a new changeset on a Float field """
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             self.field_float.name: 3.1415,
         })
         self.assert_changeset(
@@ -150,7 +150,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
 
     def test_new_changeset_selection(self):
         """ Add a new changeset on a Selection field """
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             self.field_selection.name: 'delivery',
         })
         self.assert_changeset(
@@ -167,7 +167,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
             self.field_many2one.name: self.env.ref('base.fr').id,
 
         })
-        self.partner.with_context(__changeset_rules=True).write({
+        self.partner.write({
             self.field_many2one.name: self.env.ref('base.ch').id,
         })
         self.assert_changeset(
@@ -181,21 +181,21 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
     def test_new_changeset_many2many(self):
         """ Add a new changeset on a Many2many field is not supported """
         with self.assertRaises(NotImplementedError):
-            self.partner.with_context(__changeset_rules=True).write({
+            self.partner.write({
                 self.field_many2many.name: [self.env.ref('base.ch').id],
             })
 
     def test_new_changeset_one2many(self):
         """ Add a new changeset on a One2many field is not supported """
         with self.assertRaises(NotImplementedError):
-            self.partner.with_context(__changeset_rules=True).write({
+            self.partner.write({
                 self.field_one2many.name: [self.env.ref('base.user_root').id],
             })
 
     def test_new_changeset_binary(self):
         """ Add a new changeset on a Binary field is not supported """
         with self.assertRaises(NotImplementedError):
-            self.partner.with_context(__changeset_rules=True).write({
+            self.partner.write({
                 self.field_binary.name: '',
             })
 
