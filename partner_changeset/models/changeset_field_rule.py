@@ -38,6 +38,7 @@ class ChangesetFieldRule(models.Model):
     action = fields.Selection(
         selection='_selection_action',
         string='Action',
+        required=True,
         help="Auto: always apply a change.\n"
              "Validate: manually applied by an administrator.\n"
              "Never: change never applied.",
