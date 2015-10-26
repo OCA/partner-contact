@@ -91,6 +91,36 @@ class ChangesetFieldRule(models.Model):
 
     @ormcache()
     @api.model
+    def _get_rules(self, model_name, source_model_name):
+        """ Cache rules
+
+        Keep only the id of the rules, because if we keep the recordsets
+        in the ormcache, we won't be able to browse them once their
+        cursor is closed.
+
+        The public method ``get_rules`` return the rules with the recordsets
+        when called.
+
+        """
+        model_rules = self.search(
+            [('model_id', '=', model_name),
+             '|', ('source_model_id.model', '=', source_model_name),
+                  ('source_model_id', '=', False)],
+            # using 'ASC' means that 'NULLS LAST' is the default
+            order='source_model_id ASC',
+        )
+        # model's rules have precedence over global ones so we iterate
+        # over rules which have a source model first, then we complete
+        # them with the global rules
+        result = {}
+        for rule in model_rules:
+            # we already have a model's rule
+            if result.get(rule.field_id.name):
+                continue
+            result[rule.field_id.name] = rule.id
+        return result
+
+    @api.model
     def get_rules(self, model_name, source_model_name):
         """ Return the rules for a model
 
@@ -107,17 +137,11 @@ class ChangesetFieldRule(models.Model):
         in the key for the cache. The callers have to pass ``None`` if
         they want only global rules.
         """
-        model_rules = self.search(
-            [('model_id', '=', model_name),
-             '|', ('source_model_id.model', '=', source_model_name),
-                  ('source_model_id', '=', False)],
-            # using 'DESC' means that 'NULLS FIRST' is the default
-            order='source_model_id DESC',
-        )
-        # model's rules have precedence over global ones so we iterate
-        # over global rules first, then we update them with the rules
-        # which have a source model
-        return {rule.field_id.name: rule for rule in model_rules}
+        rules = {}
+        cached_rules = self._get_rules(model_name, source_model_name)
+        for field, rule_id in cached_rules.iteritems():
+            rules[field] = self.browse(rule_id)
+        return rules
 
     @api.model
     def create(self, vals):
