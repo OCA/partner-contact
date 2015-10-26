@@ -30,7 +30,7 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     def _get_separator(self):
-        return '-'
+        return ', '
 
     @api.depends('academic_title_ids', 'academic_title_ids.sequence')
     @api.one
@@ -40,7 +40,7 @@ class ResPartner(models.Model):
         title_ids = self.academic_title_ids.sorted(lambda r: r.sequence)
         for title in title_ids:
             if display_title:
-                display_title = "%s %s %s" % (display_title, separator,
+                display_title = "%s%s%s" % (display_title, separator,
                                               title.name)
             else:
                 display_title = "%s" % (title.name)
