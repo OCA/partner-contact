@@ -28,7 +28,6 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
 
     def _setup_rules(self):
         ChangesetFieldRule = self.env['changeset.field.rule']
-        partner_model_id = self.env.ref('base.model_res_partner').id
         ChangesetFieldRule.search([]).unlink()
         fields = (('char', 'ref'),
                   ('text', 'comment'),
@@ -52,7 +51,6 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
             # ir.model.fields record of the field res_partner.ref
             setattr(self, attr_name, field_record)
             ChangesetFieldRule.create({
-                'model_id': partner_model_id,
                 'field_id': field_record.id,
                 'action': 'validate',
             })

@@ -26,7 +26,6 @@ class TestChangesetFieldRule(common.TransactionCase):
 
     def setUp(self):
         super(TestChangesetFieldRule, self).setUp()
-        self.partner_model_id = self.env.ref('base.model_res_partner').id
         self.company_model_id = self.env.ref('base.model_res_company').id
         self.field_name = self.env.ref('base.field_res_partner_name')
         self.field_street = self.env.ref('base.field_res_partner_street')
@@ -35,12 +34,10 @@ class TestChangesetFieldRule(common.TransactionCase):
         ChangesetFieldRule = self.env['changeset.field.rule']
         ChangesetFieldRule.search([]).unlink()
         rule1 = ChangesetFieldRule.create({
-            'model_id': self.partner_model_id,
             'field_id': self.field_name.id,
             'action': 'validate',
         })
         rule2 = ChangesetFieldRule.create({
-            'model_id': self.partner_model_id,
             'field_id': self.field_street.id,
             'action': 'never',
         })
@@ -51,17 +48,14 @@ class TestChangesetFieldRule(common.TransactionCase):
         ChangesetFieldRule = self.env['changeset.field.rule']
         ChangesetFieldRule.search([]).unlink()
         rule1 = ChangesetFieldRule.create({
-            'model_id': self.partner_model_id,
             'field_id': self.field_name.id,
             'action': 'validate',
         })
         rule2 = ChangesetFieldRule.create({
-            'model_id': self.partner_model_id,
             'field_id': self.field_street.id,
             'action': 'never',
         })
         rule3 = ChangesetFieldRule.create({
-            'model_id': self.partner_model_id,
             'source_model_id': self.company_model_id,
             'field_id': self.field_street.id,
             'action': 'never',
@@ -76,7 +70,6 @@ class TestChangesetFieldRule(common.TransactionCase):
         ChangesetFieldRule = self.env['changeset.field.rule']
         ChangesetFieldRule.search([]).unlink()
         rule = ChangesetFieldRule.create({
-            'model_id': self.partner_model_id,
             'field_id': self.field_name.id,
             'action': 'validate',
         })

@@ -28,13 +28,17 @@ class ChangesetFieldRule(models.Model):
     _description = 'Changeset Field Rules'
     _rec_name = 'field_id'
 
-    model_id = fields.Many2one(comodel_name='ir.model',
-                               string='Model',
-                               ondelete='cascade',
-                               default=lambda self: self._default_model_id())
-    field_id = fields.Many2one(comodel_name='ir.model.fields',
-                               string='Field',
-                               ondelete='cascade')
+    field_id = fields.Many2one(
+        comodel_name='ir.model.fields',
+        string='Field',
+        domain="[('model_id.model', '=', 'res.partner'), "
+               " ('ttype', 'in', ('char', 'selection', 'date', 'datetime', "
+               "                 'float', 'integer', 'text', 'boolean', "
+               "                 'many2one')), "
+               " ('readonly', '=', False)]",
+        ondelete='cascade',
+        required=True,
+    )
     action = fields.Selection(
         selection='_selection_action',
         string='Action',
@@ -59,7 +63,7 @@ class ChangesetFieldRule(models.Model):
 
     _sql_constraints = [
         ('model_field_uniq',
-         'unique (model_id, source_model_id, field_id)',
+         'unique (source_model_id, field_id)',
          'A rule already exists for this field.'),
     ]
 
@@ -103,8 +107,7 @@ class ChangesetFieldRule(models.Model):
 
         """
         model_rules = self.search(
-            [('model_id', '=', model_name),
-             '|', ('source_model_id.model', '=', source_model_name),
+            ['|', ('source_model_id.model', '=', source_model_name),
                   ('source_model_id', '=', False)],
             # using 'ASC' means that 'NULLS LAST' is the default
             order='source_model_id ASC',

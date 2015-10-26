@@ -46,22 +46,18 @@ class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
     def _setup_rules(self):
         ChangesetFieldRule = self.env['changeset.field.rule']
         ChangesetFieldRule.search([]).unlink()
-        partner_model_id = self.env.ref('base.model_res_partner').id
         self.field_name = self.env.ref('base.field_res_partner_name')
         self.field_street = self.env.ref('base.field_res_partner_street')
         self.field_street2 = self.env.ref('base.field_res_partner_street2')
         ChangesetFieldRule.create({
-            'model_id': partner_model_id,
             'field_id': self.field_name.id,
             'action': 'auto',
         })
         ChangesetFieldRule.create({
-            'model_id': partner_model_id,
             'field_id': self.field_street.id,
             'action': 'validate',
         })
         ChangesetFieldRule.create({
-            'model_id': partner_model_id,
             'field_id': self.field_street2.id,
             'action': 'never',
         })
