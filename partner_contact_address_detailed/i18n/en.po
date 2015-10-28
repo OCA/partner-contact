@@ -1,0 +1,53 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_address_detailed
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-28 15:54+0000\n"
+"PO-Revision-Date: 2015-05-22 13:07+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"Language-Team: English (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_contact_address_detailed
+#: view:res.partner:partner_contact_address_detailed.view_partner_form_firstname
+msgid "Address"
+msgstr "Address"
+
+#. module: partner_contact_address_detailed
+#: view:res.partner:partner_contact_address_detailed.view_partner_form_firstname
+msgid "City"
+msgstr "City"
+
+#. module: partner_contact_address_detailed
+#: view:res.partner:partner_contact_address_detailed.view_partner_form_firstname
+msgid "Country"
+msgstr "Country"
+
+#. module: partner_contact_address_detailed
+#: view:res.partner:partner_contact_address_detailed.view_partner_form_firstname
+msgid "State"
+msgstr "State"
+
+#. module: partner_contact_address_detailed
+#: view:res.partner:partner_contact_address_detailed.view_partner_form_firstname
+msgid "Street..."
+msgstr "Street..."
+
+#. module: partner_contact_address_detailed
+#: view:res.partner:partner_contact_address_detailed.view_partner_form_firstname
+msgid "ZIP"
+msgstr "ZIP"
+
+#. module: partner_contact_address_detailed
+#: view:res.partner:partner_contact_address_detailed.view_partner_form_firstname
+msgid "e.g. www.openerp.com"
+msgstr "e.g. www.openerp.com"

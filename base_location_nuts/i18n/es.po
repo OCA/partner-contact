@@ -1,0 +1,212 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_location_nuts
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-09 15:48+0000\n"
+"PO-Revision-Date: 2015-10-06 13:57+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: base_location_nuts
+#: view:nuts.import:base_location_nuts.nuts_import_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,children:0
+msgid "Children"
+msgstr "Hijos"
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,code:0
+msgid "Code"
+msgstr "Código"
+
+#. module: base_location_nuts
+#: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
+#: field:res.partner.nuts,country_id:0
+msgid "Country"
+msgstr "País"
+
+#. module: base_location_nuts
+#: field:nuts.import,create_uid:0 field:res.partner.nuts,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: base_location_nuts
+#: field:nuts.import,create_date:0 field:res.partner.nuts,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:130
+#, python-format
+msgid "Downloaded file is not a valid XML file"
+msgstr "El fichero descargado no es un fichero XML válido"
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:122
+#, python-format
+msgid "Got an error %d when trying to download the file %s."
+msgstr "Error %d al intentar descargar el fichero %s."
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:118
+#, python-format
+msgid "Got an error when trying to download the file: %s."
+msgstr "Error al intentar descargar el fichero: %s."
+
+#. module: base_location_nuts
+#: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: base_location_nuts
+#: field:nuts.import,id:0 field:res.partner.nuts,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: base_location_nuts
+#: view:nuts.import:base_location_nuts.nuts_import_form
+msgid "Import"
+msgstr "Importar"
+
+#. module: base_location_nuts
+#: model:ir.ui.menu,name:base_location_nuts.nuts_import_menu
+msgid "Import NUTS 2013"
+msgstr "Importar NUTS 2013"
+
+#. module: base_location_nuts
+#: model:ir.actions.act_window,name:base_location_nuts.nuts_import_action
+#: view:nuts.import:base_location_nuts.nuts_import_form
+msgid "Import NUTS 2013 from RAMON"
+msgstr "Importar NUTS 2013 desde RAMON"
+
+#. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_nuts_import
+msgid "Import NUTS items from European RAMON service"
+msgstr "Importar regiones NUTS desde el servicio europeo RAMON"
+
+#. module: base_location_nuts
+#: field:nuts.import,write_uid:0 field:res.partner.nuts,write_uid:0
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: base_location_nuts
+#: field:nuts.import,write_date:0 field:res.partner.nuts,write_date:0
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: base_location_nuts
+#: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
+#: field:res.partner.nuts,level:0
+msgid "Level"
+msgstr "Nivel"
+
+#. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_res_partner_nuts
+#: view:res.partner.nuts:base_location_nuts.res_partner_nuts_form
+msgid "NUTS Item"
+msgstr "Región NUTS"
+
+#. module: base_location_nuts
+#: model:ir.actions.act_window,name:base_location_nuts.res_partner_nuts_action
+#: model:ir.ui.menu,name:base_location_nuts.res_partner_nuts_menu
+#: view:res.partner.nuts:base_location_nuts.res_partner_nuts_tree
+msgid "NUTS Items"
+msgstr "Regiones NUTS"
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,parent_left:0
+msgid "Parent Left"
+msgstr "Padre izquierda"
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,parent_right:0
+msgid "Parent Right"
+msgstr "Padre derecha"
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,parent_id:0
+msgid "Parent id"
+msgstr "ID del padre"
+
+#. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/models/res_partner.py:34
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,region:0
+#, python-format
+msgid "Region"
+msgstr "Región"
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+msgid "Salesperson"
+msgstr "Comercial"
+
+#. module: base_location_nuts
+#: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
+msgid "Search NUTS"
+msgstr "Buscar NUTS"
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,state_id:0
+msgid "State"
+msgstr "Provincia"
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/models/res_partner.py:35
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,substate:0
+#, python-format
+msgid "Substate"
+msgstr "Estado"
+
+#. module: base_location_nuts
+#: view:nuts.import:base_location_nuts.nuts_import_form
+msgid ""
+"This wizard will download the lastest version of\n"
+"                NUTS 2013 from Europe RAMON metadata service.\n"
+"                Updating or creating new NUTS entries if not\n"
+"                found already in the system, and DELETING MISSING\n"
+"                ENTRIES from new downloaded file."
+msgstr "Este asistente descargará la última version de\n                NUTS 2013 desde el servicio de matadatos europeo RAMON.\n                Actualizando o creando nuevas regiones NUTS si no\n                las encuentra en el sistemma, y BORRANDO LAS QUE NO ENCUENTRE\n                en el nuevo fichero descargado."
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:97
+#, python-format
+msgid "Value not found for mandatory field %s"
+msgstr "El valor no se ha encontrado para el campo obligatorio %s"
+
+#. module: base_location_nuts
+#: model:ir.actions.todo,note:base_location_nuts.config_wizard_nuts
+msgid "You can import NUTS from RAMON european service."
+msgstr "Usted puede importar NUTS desde el servicion europeo RAMON."
+
+#. module: base_location_nuts
+#: model:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
+msgid ""
+"You must click at import wizard to populate NUTS items\n"
+"        in Odoo database in:\n"
+"        Sales > Configuration > Address Book > Localization > Import NUTS 2013"
+msgstr "Debes clicar en el asistente de importación para crear las\n        las regiones NUTS en la base de datos de Odoo, en el menú:\n        Ventas > Configuración > Libreta de direcciones > Localización > Importar NUTS 2013"

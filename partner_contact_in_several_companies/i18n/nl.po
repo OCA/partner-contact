@@ -1,0 +1,167 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_in_several_companies
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-23 21:40+0000\n"
+"PO-Revision-Date: 2015-08-06 21:25+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Dutch (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/nl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Address"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_res_partner_filter_contact
+msgid "All partner positions"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_res_partner_filter_contact
+msgid "All positions"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: code:addons/partner_contact_in_several_companies/models.py:32
+#, python-format
+msgid "Attached to existing Contact"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "City"
+msgstr "Stad"
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Contact"
+msgstr "Contact"
+
+#. module: partner_contact_in_several_companies
+#: field:res.partner,contact_type:0
+msgid "Contact Type"
+msgstr "Contact type"
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Contacts"
+msgstr "Contacten"
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Country"
+msgstr "Land"
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Fax:"
+msgstr "Fax:"
+
+#. module: partner_contact_in_several_companies
+#: field:res.partner,contact_id:0
+msgid "Main Contact"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Mobile:"
+msgstr "Mobiel:"
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Other Positions"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: field:res.partner,other_contact_ids:0
+msgid "Others Positions"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model,name:partner_contact_in_several_companies.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_res_partner_filter_contact
+msgid "Person"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Phone:"
+msgstr "Telefoon:"
+
+#. module: partner_contact_in_several_companies
+#: code:addons/partner_contact_in_several_companies/models.py:31
+#, python-format
+msgid "Standalone Contact"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "State"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Street..."
+msgstr "Straat..."
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Tags..."
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_res_partner_personal_information
+msgid ""
+"To see personal information about this contact, please\n"
+"                        go to to the his person form:"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "ZIP"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "at"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "e.g. Sales Director"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_res_partner_kanban_contact
+msgid "other position"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_res_partner_kanban_contact
+msgid "other positions"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "{'invisible': [('contact_type','=','attached')]}"
+msgstr ""

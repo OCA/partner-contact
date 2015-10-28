@@ -1,0 +1,183 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_contact
+# 
+# Translators:
+# lfreeke <lfreeke@therp.nl>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-25 00:33+0000\n"
+"PO-Revision-Date: 2015-10-01 19:24+0000\n"
+"Last-Translator: lfreeke <lfreeke@therp.nl>\n"
+"Language-Team: Dutch (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/nl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "Address"
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_res_partner_filter_contact
+msgid "All partner positions"
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_res_partner_filter_contact
+msgid "All positions"
+msgstr ""
+
+#. module: base_contact
+#: code:addons/base_contact/base_contact.py:32
+#, python-format
+msgid "Attached to existing Contact"
+msgstr ""
+
+#. module: base_contact
+#: field:res.partner,birthdate_date:0
+msgid "Birthdate"
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "City"
+msgstr "Stad"
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "Contact"
+msgstr "Contact"
+
+#. module: base_contact
+#: field:res.partner,contact_type:0
+msgid "Contact Type"
+msgstr "Contact type"
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "Contacts"
+msgstr "Contacten"
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "Country"
+msgstr "Land"
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "Fax:"
+msgstr "Fax:"
+
+#. module: base_contact
+#: field:res.partner,contact_id:0
+msgid "Main Contact"
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "Mobile:"
+msgstr "Mobiel:"
+
+#. module: base_contact
+#: field:res.partner,nationality_id:0
+msgid "Nationality"
+msgstr "Nationaliteit"
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "Other Positions"
+msgstr ""
+
+#. module: base_contact
+#: field:res.partner,other_contact_ids:0
+msgid "Others Positions"
+msgstr ""
+
+#. module: base_contact
+#: model:ir.model,name:base_contact.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_res_partner_filter_contact
+msgid "Person"
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "Personal Information"
+msgstr "Persoonlijke informatie"
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "Phone:"
+msgstr "Telefoon:"
+
+#. module: base_contact
+#: code:addons/base_contact/base_contact.py:31
+#, python-format
+msgid "Standalone Contact"
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "State"
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "Street..."
+msgstr "Straat..."
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "Tags..."
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid ""
+"To see personal information about this contact, please go to to the his "
+"person form:"
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "ZIP"
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "at"
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "e.g. Sales Director"
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_res_partner_kanban_contact
+msgid "other position"
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_res_partner_kanban_contact
+msgid "other positions"
+msgstr ""
+
+#. module: base_contact
+#: view:res.partner:base_contact.view_partner_form_inherit
+msgid "{'invisible': [('contact_type','=','attached')]}"
+msgstr ""

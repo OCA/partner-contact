@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name': 'Street3 in addresses',
-    'version': '0.1',
+    'version': '8.0.0.1.0',
     'author': "Camptocamp,Odoo Community Association (OCA)",
     'maintainer': 'Camptocamp',
     'category': 'Sales',
@@ -31,7 +31,7 @@
     'data': ['view/partner_view.xml'],
     'demo': [],
     'test': [],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'license': 'AGPL-3',
     'application': False,

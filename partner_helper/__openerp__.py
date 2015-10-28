@@ -21,7 +21,7 @@
 
 {
     'name': 'Partner Helper',
-    'version': '0.1',
+    'version': '8.0.0.1.0',
     'author': "Akretion,Odoo Community Association (OCA)",
     'maintainer': 'Akretion',
     'category': 'Warehouse',
@@ -58,7 +58,7 @@ Contributors
     'website': 'http://www.akretion.com/',
     'data': [],
     'tests': [],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'license': 'AGPL-3',
     'application': False,

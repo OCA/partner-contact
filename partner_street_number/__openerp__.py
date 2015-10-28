@@ -21,7 +21,7 @@
 {
     "name": "Street name and number",
     "summary": "Introduces separate fields for street name and street number.",
-    "version": "0.1",
+    "version": "8.0.0.1.0",
     "author": "Therp BV,Odoo Community Association (OCA)",
     "website": "https://github.com/oca/partner-contact",
     "category": 'Tools',
@@ -31,7 +31,7 @@
     "data": [
         'views/res_partner.xml',
         ],
-    'installable': True,
+    'installable': False,
     'license': 'AGPL-3',
     'post_init_hook': 'post_init_hook',
 }

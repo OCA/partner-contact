@@ -1,0 +1,146 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * passport
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-28 15:54+0000\n"
+"PO-Revision-Date: 2015-05-22 13:07+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"Language-Team: English (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: passport
+#: field:res.passport,birth_date:0
+msgid "Birth Date"
+msgstr "Birth Date"
+
+#. module: passport
+#: field:res.passport,partner_id:0
+msgid "Contact"
+msgstr "Contact"
+
+#. module: passport
+#: help:res.passport,country_id:0
+msgid "Country of deliverance."
+msgstr "Country of deliverance."
+
+#. module: passport
+#: field:res.passport,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: passport
+#: field:res.passport,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: passport
+#: help:res.passport,birth_date:0
+msgid "Date of birth on passport."
+msgstr "Date of birth on passport."
+
+#. module: passport
+#: field:res.passport,country_id:0
+msgid "Delivery country"
+msgstr "Delivery country"
+
+#. module: passport
+#: field:res.passport,expiration_date:0
+msgid "Expiration date"
+msgstr "Expiration date"
+
+#. module: passport
+#: help:res.passport,expiration_date:0
+msgid "Expiration date of passport."
+msgstr "Expiration date of passport."
+
+#. module: passport
+#: selection:res.passport,gender:0
+msgid "Female"
+msgstr "Female"
+
+#. module: passport
+#: field:res.passport,gender:0
+msgid "Gender"
+msgstr "Gender"
+
+#. module: passport
+#: help:res.passport,gender:0
+msgid "Gender."
+msgstr "Gender."
+
+#. module: passport
+#: field:res.passport,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: passport
+#: field:res.passport,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: passport
+#: field:res.passport,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: passport
+#: selection:res.passport,gender:0
+msgid "Male"
+msgstr "Male"
+
+#. module: passport
+#: field:res.passport,name:0
+msgid "Owner name"
+msgstr "Owner name"
+
+#. module: passport
+#: view:res.passport:passport.passport_form_view
+msgid "Owner name (As printed into the passport)"
+msgstr "Owner name (As printed into the passport)"
+
+#. module: passport
+#: help:res.passport,name:0
+msgid "Owner name (As printed into the passport)."
+msgstr "Owner name (As printed into the passport)."
+
+#. module: passport
+#: model:ir.model,name:passport.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: passport
+#: model:ir.actions.act_window,name:passport.action_passport_tree_list
+#: model:ir.model,name:passport.model_res_passport
+#: view:res.partner:passport.view_partner_form
+#: field:res.partner,passport_ids:0
+msgid "Passport"
+msgstr "Passport"
+
+#. module: passport
+#: field:res.passport,number:0
+msgid "Passport No"
+msgstr "Passport No"
+
+#. module: passport
+#: help:res.passport,number:0
+msgid "Passport number."
+msgstr "Passport number."
+
+#. module: passport
+#: view:res.passport:passport.passport_form_view
+msgid "PassportForm"
+msgstr "PassportForm"
+
+#. module: passport
+#: view:res.passport:passport.passport_tree_view
+msgid "PassportTree"
+msgstr "PassportTree"

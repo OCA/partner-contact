@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name': 'Partner Affiliates',
-    'version': '1.0',
+    'version': '8.0.1.0.0',
     'author': "Camptocamp,Odoo Community Association (OCA)",
     'maintainer': 'Camptocamp',
     'category': 'CRM',
@@ -34,7 +34,7 @@
         'res_partner_view.xml',
     ],
     'demo': [],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': True
 }
