@@ -3,13 +3,14 @@
 # * partner_contact_address_detailed
 # 
 # Translators:
+# Carles Antolí <carlesantoli@hotmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-09 15:48+0000\n"
-"PO-Revision-Date: 2015-10-06 13:57+0000\n"
-"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"POT-Creation-Date: 2015-10-14 11:01+0000\n"
+"PO-Revision-Date: 2015-10-12 17:56+0000\n"
+"Last-Translator: Carles Antolí <carlesantoli@hotmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,12 +21,12 @@ msgstr ""
 #. module: partner_contact_address_detailed
 #: view:res.partner:partner_contact_address_detailed.view_partner_form_firstname
 msgid "Address"
-msgstr ""
+msgstr "Dirección"
 
 #. module: partner_contact_address_detailed
 #: view:res.partner:partner_contact_address_detailed.view_partner_form_firstname
 msgid "City"
-msgstr ""
+msgstr "Ciudad"
 
 #. module: partner_contact_address_detailed
 #: view:res.partner:partner_contact_address_detailed.view_partner_form_firstname
@@ -40,14 +41,14 @@ msgstr "Provincia"
 #. module: partner_contact_address_detailed
 #: view:res.partner:partner_contact_address_detailed.view_partner_form_firstname
 msgid "Street..."
-msgstr ""
+msgstr "Dirección..."
 
 #. module: partner_contact_address_detailed
 #: view:res.partner:partner_contact_address_detailed.view_partner_form_firstname
 msgid "ZIP"
-msgstr ""
+msgstr "Código Postal"
 
 #. module: partner_contact_address_detailed
 #: view:res.partner:partner_contact_address_detailed.view_partner_form_firstname
 msgid "e.g. www.openerp.com"
-msgstr ""
+msgstr "e.j. www.openerp.com"
