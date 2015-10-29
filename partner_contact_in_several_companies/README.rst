@@ -1,11 +1,11 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-Partner Conact in Several Companies
-===================================
+Partner Contact in Several Companies
+====================================
 
-This module was written to extend the contact management functionality. It
-allows you to set several job positions in different companies per contact.
+This module extends the contact management functionality. It allows you to set
+several job positions in different companies per contact.
 
 Installation
 ============
