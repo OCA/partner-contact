@@ -42,9 +42,6 @@ coverage.xml
 # Translations
 *.mo
 
-# Pycharm
-.idea
-
 # Project
 .project
 .pydevproject
