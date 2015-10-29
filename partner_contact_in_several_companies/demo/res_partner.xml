@@ -7,7 +7,6 @@
             <field name="function">Consultant</field>
             <field name="parent_id" ref="base.res_partner_11"/>
             <field name="contact_id" ref="base.res_partner_main2"/>
-            <field name="use_parent_address" eval="True"/>
         </record>
 
         <record id="res_partner_contact1" model="res.partner">
@@ -22,7 +21,6 @@
             <field name="email">bob@yourcompany.com</field>
             <field name="parent_id" ref="base.main_partner"/>
             <field name="contact_id" ref="res_partner_contact1"/>
-            <field name="use_parent_address" eval="True"/>
         </record>
 
     </data>
