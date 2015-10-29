@@ -5,7 +5,7 @@
         <record id="res_partner_main2_position_consultant" model="res.partner">
             <field name="name">Roger Scott</field>
             <field name="function">Consultant</field>
-            <field name="parent_id" ref="base.res_partner_11"/>
+            <field name="parent_id" ref="base.res_partner_4"/>
             <field name="contact_id" ref="base.res_partner_main2"/>
         </record>
 
