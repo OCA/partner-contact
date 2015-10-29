@@ -19,8 +19,19 @@
 {
     "name": "Contacts in several partners",
     "summary": "Allow to have one contact in several partners",
-    "version": "8.0.1.0.0",
+    "version": "9.0.1.0.0",
     "author": "Odoo Community Association (OCA)",
+    "license": "AGPL-3",
+    "contributors": [
+        'Xavier ALT <xal@openerp.com>',
+        'El Hadji Dem <elhadji.dem@savoirfairelinux.com>',
+        'TheCloneMaster <the.clone.master@gmail.com>',
+        'Sandy Carter <bwrsandman@gmail.com>',
+        'Rudolf Schnapka <rs@techno-flex.de>',
+        'Sebastien Alix <sebastien.alix@osiell.com>',
+        'Jairo Llopis <j.llopis@grupoesoc.es>',
+        'Richard deMeester <richard@willowit.com.au>',
+    ],
     "category": "Customer Relationship Management",
     "website": "https://odoo-community.org/",
     "depends": [
@@ -32,5 +43,6 @@
     "demo": [
         "demo/res_partner.xml",
     ],
-    'installable': False,
+    'installable': True,
+    'auto_install': False,
 }

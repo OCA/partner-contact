@@ -52,7 +52,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         explicitly state to not display all positions
         """
         cr, uid = self.cr, self.uid
-        ctx = {'search_show_all_positions': False}
+        ctx = {'search_show_all_positions': {'is_set': True, 'set_value': False}}
         partner_ids = self.partner.search(cr, uid, [], context=ctx)
         partner_ids.sort()
         self.assertTrue(self.bob_job1_id not in partner_ids)
@@ -60,7 +60,8 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
     def test_01_show_all_positions(self):
         """Check that all contact are show if context is empty or
-        explicitly state to display all positions
+        explicitly state to display all positions or the "is_set"
+        value has been set to False.
         """
         cr, uid = self.cr, self.uid
 
@@ -68,7 +69,12 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         self.assertTrue(self.bob_job1_id in partner_ids)
         self.assertTrue(self.roger_job2_id in partner_ids)
 
-        ctx = {'search_show_all_positions': True}
+        ctx = {'search_show_all_positions': {'is_set': False}}
+        partner_ids = self.partner.search(cr, uid, [], context=ctx)
+        self.assertTrue(self.bob_job1_id in partner_ids)
+        self.assertTrue(self.roger_job2_id in partner_ids)
+
+        ctx = {'search_show_all_positions': {'is_set': True, 'set_value': True}}
         partner_ids = self.partner.search(cr, uid, [], context=ctx)
         self.assertTrue(self.bob_job1_id in partner_ids)
         self.assertTrue(self.roger_job2_id in partner_ids)
@@ -93,12 +99,17 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
             read_other_contacts(self.bob_contact_id, context=ctx),
             [self.bob_job1_id],
         )
-        ctx = {'search_show_all_positions': False}
+        ctx = {'search_show_all_positions': {'is_set': False}}
         self.assertEqual(read_other_contacts(
             self.bob_contact_id, context=ctx),
             [self.bob_job1_id],
         )
-        ctx = {'search_show_all_positions': True}
+        ctx = {'search_show_all_positions': {'is_set': True, 'set_value': False}}
+        self.assertEqual(read_other_contacts(
+            self.bob_contact_id, context=ctx),
+            [self.bob_job1_id],
+        )
+        ctx = {'search_show_all_positions': {'is_set': True, 'set_value': True}}
         self.assertEqual(
             read_other_contacts(self.bob_contact_id, context=ctx),
             [self.bob_job1_id],
@@ -109,12 +120,17 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
             self.bob_job1_id,
             read_contacts(self.main_partner_id, context=ctx),
         )
-        ctx = {'search_show_all_positions': False}
+        ctx = {'search_show_all_positions': {'is_set': False}}
         self.assertIn(
             self.bob_job1_id,
             read_contacts(self.main_partner_id, context=ctx),
         )
-        ctx = {'search_show_all_positions': True}
+        ctx = {'search_show_all_positions': {'is_set': True, 'set_value': False}}
+        self.assertIn(
+            self.bob_job1_id,
+            read_contacts(self.main_partner_id, context=ctx),
+        )
+        ctx = {'search_show_all_positions': {'is_set': True, 'set_value': True}}
         self.assertIn(
             self.bob_job1_id,
             read_contacts(self.main_partner_id, context=ctx),
@@ -138,7 +154,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
         # but when searching without 'all positions',
         # we should get the position standalone contact instead.
-        ctx = {'search_show_all_positions': False}
+        ctx = {'search_show_all_positions': {'is_set': True, 'set_value': False}}
         partner_ids = self.partner.search(
             cr, uid,
             [('parent_id', 'ilike', 'YourCompany')],
