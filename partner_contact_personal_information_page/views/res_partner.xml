@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
 <data>
 
-<record id="personal_information" model="ir.ui.view">
+<!-- Declared the same in every module that may need it -->
+<record id="base.personal_contact_information" model="ir.ui.view">
     <field name="name">Personal information page for contacts form</field>
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="base.view_partner_form"/>
@@ -17,8 +18,8 @@
                 </page>
             </xpath>
         </data>
-  </field>
+    </field>
 </record>
 
 </data>
-</openerp>
+</odoo>
