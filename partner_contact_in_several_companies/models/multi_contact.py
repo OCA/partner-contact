@@ -26,14 +26,18 @@ from openerp.osv import expression
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    contact_type = fields.Selection([('standalone', _('Standalone Contact')),('attached', _('Attached to existing Contact'))],
-                                    compute='_get_contact_type', required=True, select=1, store=True)
+    contact_type = fields.Selection([('standalone', _('Standalone Contact')),
+                                     ('attached', _('Attached to existing Contact')),
+                                     ],
+                                    compute='_get_contact_type',
+                                    required=True, select=1, store=True)
     contact_id = fields.Many2one('res.partner', string='Main Contact',
                                  domain=[('is_company', '=', False),
                                          ('contact_type', '=', 'standalone'),
                                          ],
                                  )
-    other_contact_ids = fields.One2many('res.partner', 'contact_id', string='Others Positions')
+    other_contact_ids = fields.One2many('res.partner', 'contact_id',
+                                        string='Others Positions')
 
     @api.one
     @api.depends('contact_id')
@@ -49,10 +53,12 @@ class ResPartner(models.Model):
         Keeping it in context can result in unexpected behaviour (ex: reading
         one2many might return wrong result - i.e with "attached contact"
         removed even if it's directly linked to a company).
-        Actually, is easier to override the value to indicate it should be ignored...
+        Actually, is easier to override a dictionary value to indicate it
+        should be ignored...
         """
-        if mode != 'search' and 'search_show_all_positions' in self.env.context:
-            result = self.with_context(search_show_all_positions = {'is_set': False})
+        if mode != 'search' \
+                and 'search_show_all_positions' in self.env.context:
+            result = self.with_context(search_show_all_positions={'is_set': False})
         else:
             result = self
         return result
@@ -61,7 +67,8 @@ class ResPartner(models.Model):
     def search(self, args, offset=0, limit=None, order=None, count=False):
         """ Display only standalone contact matching ``args`` or having
         attached contact matching ``args`` """
-        if self.env.context.get('search_show_all_positions', {}).get('is_set') and not self.env.context['search_show_all_positions']['set_value']:
+        if self.env.context.get('search_show_all_positions', {}).get('is_set') \
+                and not self.env.context['search_show_all_positions']['set_value']:
             args = expression.normalize_domain(args)
             attached_contact_args = expression.AND(
                 (args, [('contact_type', '=', 'attached')])
@@ -71,7 +78,9 @@ class ResPartner(models.Model):
                 expression.AND(([('contact_type', '=', 'standalone')], args)),
                 [('other_contact_ids', 'in', attached_contacts.ids)],
             ))
-        return super(ResPartner, self).search(args, offset=offset, limit=limit, order=order, count=count)
+        return super(ResPartner, self).search(args, offset=offset,
+                                              limit=limit, order=order,
+                                              count=count)
 
     @api.model
     def create(self, vals):
@@ -100,7 +109,8 @@ class ResPartner(models.Model):
         """ Returns the partner that is considered the commercial
         entity of this partner. The commercial entity holds the master data
         for all commercial fields (see :py:meth:`~_commercial_fields`) """
-        result = super(ResPartner, self)._commercial_partner_compute(name, args)
+        result = super(ResPartner, self)._commercial_partner_compute(name,
+                                                                     args)
         for partner in self:
             if partner.contact_type == 'attached' and not partner.parent_id:
                 result[partner.id] = partner.contact_id.id
@@ -118,7 +128,8 @@ class ResPartner(models.Model):
         self.ensure_one()
         if self.contact_id:
             contact_fields = self._contact_fields()
-            sync_vals = self._update_fields_values(self.contact_id, contact_fields)
+            sync_vals = self._update_fields_values(self.contact_id,
+                                                   contact_fields)
             self.write(sync_vals)
 
     def update_contact(self, vals):
@@ -175,6 +186,8 @@ class IRActionsWindow(models.Model):
                 action_context = action.get('context', '{}') or '{}'
                 if 'search_show_all_positions' not in action_context:
                     action['context'] = action_context.replace(
-                        '{', "{'search_show_all_positions': {'is_set': True, 'set_value': False},", 1
+                        '{',
+                        "{'search_show_all_positions': {'is_set': True, 'set_value': False},",
+                        1
                     )
         return actions

@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-import multi_contact
+from . import multi_contact
