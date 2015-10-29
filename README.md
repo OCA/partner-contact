@@ -20,7 +20,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [base_location](base_location/) | 9.0.1.0.0 | Enhanced zip/npa management system
-[partner_contact_personal_information_page](partner_contact_personal_information_page/) | 8.0.1.0.0 (unported) | Add a page to contacts form to put personal information
+[partner_contact_personal_information_page](partner_contact_personal_information_page/) | 9.0.1.0.0 | Add a page to contacts form to put personal information
 
 Unported addons
 ---------------
