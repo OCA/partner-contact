@@ -20,7 +20,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [base_location](base_location/) | 9.0.1.0.0 | Enhanced zip/npa management system
-[partner_contact_in_several_companies](partner_contact_in_several_companies/) | 8.0.1.0.0 (unported) | Allow to have one contact in several partners
+[partner_contact_in_several_companies](partner_contact_in_several_companies/) | 9.0.1.0.0 | Allow to have one contact in several partners
 
 Unported addons
 ---------------
