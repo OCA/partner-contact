@@ -19,8 +19,16 @@
 {
     "name": "Personal information page for contacts",
     "summary": "Add a page to contacts form to put personal information",
-    "version": "8.0.1.0.0",
+    "version": "9.0.1.0.0",
     "author": "Odoo Community Association (OCA)",
+    "license": "AGPL-3",
+    "contributors": [
+        'EL Hadji DEM <elhadji.dem@savoirfairelinux.com>',
+        'Jairo Llopis <j.llopis@grupoesoc.es>',
+        'Matjaž Mozetič <m.mozetic@matmoz.si>',
+        'Rudolf Schnapka <schnapkar@golive-saar.de>',
+        'Richard deMeester <richard@willowit.com.au>',
+    ],
     "category": "Customer Relationship Management",
     "website": "https://odoo-community.org/",
     "depends": [
@@ -29,5 +37,6 @@
     "data": [
         "views/res_partner.xml",
     ],
-    'installable': False,
+    'installable': True,
+    'auto_install': False,
 }
