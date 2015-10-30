@@ -27,7 +27,8 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     contact_type = fields.Selection([('standalone', _('Standalone Contact')),
-                                     ('attached', _('Attached to existing Contact')),
+                                     ('attached',
+                                        _('Attached to existing Contact')),
                                      ],
                                     compute='_get_contact_type',
                                     required=True, select=1, store=True)
@@ -58,7 +59,8 @@ class ResPartner(models.Model):
         """
         if mode != 'search' \
                 and 'search_show_all_positions' in self.env.context:
-            result = self.with_context(search_show_all_positions={'is_set': False})
+            result = self.with_context(
+                search_show_all_positions={'is_set': False})
         else:
             result = self
         return result
@@ -68,12 +70,14 @@ class ResPartner(models.Model):
         """ Display only standalone contact matching ``args`` or having
         attached contact matching ``args`` """
         if self.env.context.get('search_show_all_positions', {}).get('is_set') \
-                and not self.env.context['search_show_all_positions']['set_value']:
+                and not self.env.context['search_show_all_positions'] \
+                                            ['set_value']:
             args = expression.normalize_domain(args)
             attached_contact_args = expression.AND(
                 (args, [('contact_type', '=', 'attached')])
             )
-            attached_contacts = super(ResPartner, self).search(attached_contact_args)
+            attached_contacts = super(ResPartner, self).search(
+                attached_contact_args)
             args = expression.OR((
                 expression.AND(([('contact_type', '=', 'standalone')], args)),
                 [('other_contact_ids', 'in', attached_contacts.ids)],
@@ -186,8 +190,7 @@ class IRActionsWindow(models.Model):
                 action_context = action.get('context', '{}') or '{}'
                 if 'search_show_all_positions' not in action_context:
                     action['context'] = action_context.replace(
-                        '{',
-                        "{'search_show_all_positions': {'is_set': True, 'set_value': False},",
-                        1
-                    )
+        '{',
+        "{'search_show_all_positions': {'is_set': True, 'set_value': False},",
+        1)
         return actions

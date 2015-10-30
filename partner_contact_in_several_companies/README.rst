@@ -12,9 +12,7 @@ allows you to set several job positions in different companies per contact.
 Installation
 ============
 
-To install this module, you need to:
-
-* Install the OCA repository `partner-contact`_.
+There are no special instructions regarding installation.
 
 Configuration
 =============
