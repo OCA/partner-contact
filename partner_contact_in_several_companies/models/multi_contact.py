@@ -28,7 +28,7 @@ class ResPartner(models.Model):
 
     contact_type = fields.Selection([('standalone', _('Standalone Contact')),
                                      ('attached',
-                                        _('Attached to existing Contact')),
+                                      _('Attached to existing Contact')),
                                      ],
                                     compute='_get_contact_type',
                                     required=True, select=1, store=True)
@@ -70,8 +70,8 @@ class ResPartner(models.Model):
         """ Display only standalone contact matching ``args`` or having
         attached contact matching ``args`` """
         if self.env.context.get('search_show_all_positions', {}).get('is_set') \
-                and not self.env.context['search_show_all_positions'] \
-                                            ['set_value']:
+                and not self.env.context['search_show_all_positions']\
+                            ['set_value']:
             args = expression.normalize_domain(args)
             attached_contact_args = expression.AND(
                 (args, [('contact_type', '=', 'attached')])
@@ -190,7 +190,7 @@ class IRActionsWindow(models.Model):
                 action_context = action.get('context', '{}') or '{}'
                 if 'search_show_all_positions' not in action_context:
                     action['context'] = action_context.replace(
-        '{',
-        "{'search_show_all_positions': {'is_set': True, 'set_value': False},",
-        1)
+                        '{',
+                        "{'search_show_all_positions': {'is_set': True, 'set_value': False},",
+                        1)
         return actions
