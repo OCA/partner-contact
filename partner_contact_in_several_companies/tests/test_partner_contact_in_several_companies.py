@@ -1,23 +1,5 @@
-# -*- coding: utf-8 ⁻*-
-##############################################################################
-#
-#    OpenERP, Open Source Business Applications
-#    Copyright (C) 2013-TODAY OpenERP S.A. (<http://openerp.com>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# -*- coding: utf-8 -*-
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp.tests import common
 
@@ -30,6 +12,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         cr, uid = self.cr, self.uid
         ModelData = self.registry('ir.model.data')
         self.partner = self.registry('res.partner')
+        self.action = self.registry('ir.actions.act_window')
 
         # Get test records reference
         for attr, module, name in [
@@ -43,7 +26,12 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
                 ('roger_contact_id', 'base', 'res_partner_main2'),
                 ('roger_job2_id',
                  'partner_contact_in_several_companies',
-                 'res_partner_main2_position_consultant')]:
+                 'res_partner_main2_position_consultant'),
+                ('base_partner_action_id', 'base', 'action_partner_form'),
+                ('custom_partner_action_id',
+                 'partner_contact_in_several_companies',
+                 'action_partner_form'),
+                ]:
             r = ModelData.get_object_reference(cr, uid, module, name)
             setattr(self, attr, r[1] if r else False)
 
@@ -52,7 +40,9 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         explicitly state to not display all positions
         """
         cr, uid = self.cr, self.uid
-        ctx = {'search_show_all_positions': False}
+        ctx = {'search_show_all_positions': {'is_set': True,
+                                             'set_value': False
+                                             }}
         partner_ids = self.partner.search(cr, uid, [], context=ctx)
         partner_ids.sort()
         self.assertTrue(self.bob_job1_id not in partner_ids)
@@ -60,7 +50,8 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
     def test_01_show_all_positions(self):
         """Check that all contact are show if context is empty or
-        explicitly state to display all positions
+        explicitly state to display all positions or the "is_set"
+        value has been set to False.
         """
         cr, uid = self.cr, self.uid
 
@@ -68,7 +59,14 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         self.assertTrue(self.bob_job1_id in partner_ids)
         self.assertTrue(self.roger_job2_id in partner_ids)
 
-        ctx = {'search_show_all_positions': True}
+        ctx = {'search_show_all_positions': {'is_set': False}}
+        partner_ids = self.partner.search(cr, uid, [], context=ctx)
+        self.assertTrue(self.bob_job1_id in partner_ids)
+        self.assertTrue(self.roger_job2_id in partner_ids)
+
+        ctx = {'search_show_all_positions': {'is_set': True,
+                                             'set_value': True
+                                             }}
         partner_ids = self.partner.search(cr, uid, [], context=ctx)
         self.assertTrue(self.bob_job1_id in partner_ids)
         self.assertTrue(self.roger_job2_id in partner_ids)
@@ -93,12 +91,21 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
             read_other_contacts(self.bob_contact_id, context=ctx),
             [self.bob_job1_id],
         )
-        ctx = {'search_show_all_positions': False}
+        ctx = {'search_show_all_positions': {'is_set': False}}
         self.assertEqual(read_other_contacts(
             self.bob_contact_id, context=ctx),
             [self.bob_job1_id],
         )
-        ctx = {'search_show_all_positions': True}
+        ctx = {'search_show_all_positions': {'is_set': True,
+                                             'set_value': False
+                                             }}
+        self.assertEqual(read_other_contacts(
+            self.bob_contact_id, context=ctx),
+            [self.bob_job1_id],
+        )
+        ctx = {'search_show_all_positions': {'is_set': True,
+                                             'set_value': True
+                                             }}
         self.assertEqual(
             read_other_contacts(self.bob_contact_id, context=ctx),
             [self.bob_job1_id],
@@ -109,12 +116,21 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
             self.bob_job1_id,
             read_contacts(self.main_partner_id, context=ctx),
         )
-        ctx = {'search_show_all_positions': False}
+        ctx = {'search_show_all_positions': {'is_set': False}}
         self.assertIn(
             self.bob_job1_id,
             read_contacts(self.main_partner_id, context=ctx),
         )
-        ctx = {'search_show_all_positions': True}
+        ctx = {'search_show_all_positions': {'is_set': True,
+                                             'set_value': False
+                                             }}
+        self.assertIn(
+            self.bob_job1_id,
+            read_contacts(self.main_partner_id, context=ctx),
+        )
+        ctx = {'search_show_all_positions': {'is_set': True,
+                                             'set_value': True
+                                             }}
         self.assertIn(
             self.bob_job1_id,
             read_contacts(self.main_partner_id, context=ctx),
@@ -127,8 +143,8 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         cr, uid = self.cr, self.uid
         # Bob's contact has one other position which is related to
         # 'YourCompany'
-        # so search for all contacts working for 'YourCompany' should contain
-        # bob position.
+        # so search for all contacts working for 'YourCompany'
+        # should contain Bob position.
         partner_ids = self.partner.search(
             cr, uid,
             [('parent_id', 'ilike', 'YourCompany')],
@@ -138,7 +154,9 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
         # but when searching without 'all positions',
         # we should get the position standalone contact instead.
-        ctx = {'search_show_all_positions': False}
+        ctx = {'search_show_all_positions': {'is_set': True,
+                                             'set_value': False
+                                             }}
         partner_ids = self.partner.search(
             cr, uid,
             [('parent_id', 'ilike', 'YourCompany')],
@@ -182,6 +200,19 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
             'standalone',
         )
 
+        # Reset contact to attached, and ensure only it is unlinked (i.e.
+        # context is ignored).
+        self.partner.write(cr, uid, [new_contact_id],
+                           {'contact_id': self.bob_contact_id})
+        ctx = {'search_show_all_positions': {'is_set': True,
+                                             'set_value': True
+                                             }}
+        self.partner.unlink(cr, uid, [new_contact_id], context=ctx)
+        partner_ids = self.partner.search(
+            cr, uid, [('id', 'in', [new_contact_id, self.bob_contact_id])])
+        self.assertIn(self.bob_contact_id, partner_ids)
+        self.assertNotIn(new_contact_id, partner_ids)
+
     def test_05_contact_fields_sync(self):
         """Check that contact's fields are correctly synced between
         parent contact or related contacts
@@ -202,4 +233,30 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         self.assertEqual(
             self.partner.browse(cr, uid, self.bob_contact_id).name,
             'Bob Egnops',
+        )
+
+    def test_06_ir_action(self):
+        """Check ir_action context is auto updated.
+        """
+        cr, uid = self.cr, self.uid
+
+        new_context_val = "'search_show_all_positions': " \
+            "{'is_set': True, 'set_value': False},"
+
+        details = self.action.read(
+            cr, uid, [self.base_partner_action_id]
+        )
+        self.assertIn(
+            new_context_val,
+            details[0]['context'],
+            msg='Default actions not updated with new context'
+        )
+
+        details = self.action.read(
+            cr, uid, [self.custom_partner_action_id]
+        )
+        self.assertNotIn(
+            new_context_val,
+            details[0]['context'],
+            msg='Custom actions incorrectly updated with new context'
         )
