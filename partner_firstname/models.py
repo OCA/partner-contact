@@ -39,6 +39,36 @@ class ResPartner(models.Model):
         store=True)
 
     @api.model
+    def create(self, vals):
+        """Add inverted names at creation if unavailable."""
+        if "name" in vals:
+            inverted = self._get_inverse_name(
+                vals.get("name"),
+                vals.get("is_company",
+                         self.default_get(["is_company"])["is_company"]))
+
+            for key, value in inverted.iteritems():
+                if not vals.get(key):
+                    vals[key] = value
+
+        return super(ResPartner, self).create(vals)
+
+    @api.model
+    def default_get(self, fields_list):
+        """Invert name when getting default values."""
+        result = super(ResPartner, self).default_get(fields_list)
+
+        inverted = self._get_inverse_name(
+            result.get("name", ""),
+            result.get("is_company", False))
+
+        for field in inverted.keys():
+            if field in fields_list:
+                result[field] = inverted.get(field)
+
+        return result
+
+    @api.model
     def _get_computed_name(self, lastname, firstname):
         """Compute the 'name' field according to splitted data.
         You can override this method to change the order of lastname and
