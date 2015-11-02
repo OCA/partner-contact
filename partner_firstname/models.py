@@ -41,17 +41,37 @@ class ResPartner(models.Model):
     @api.model
     def create(self, vals):
         """Add inverted names at creation if unavailable."""
-        if "name" in vals:
+        context = dict(self.env.context)
+        name = vals.get("name", context.get("default_name"))
+
+        if name is not None:
+            # Calculate the splitted fields
             inverted = self._get_inverse_name(
-                vals.get("name"),
+                self._get_whitespace_cleaned_name(name),
                 vals.get("is_company",
                          self.default_get(["is_company"])["is_company"]))
 
             for key, value in inverted.iteritems():
-                if not vals.get(key):
+                if not vals.get(key) or context.get("copy"):
                     vals[key] = value
 
-        return super(ResPartner, self).create(vals)
+            # Remove the combined fields
+            if "name" in vals:
+                del vals["name"]
+            if "default_name" in context:
+                del context["default_name"]
+
+        return super(ResPartner, self.with_context(context)).create(vals)
+
+    @api.multi
+    def copy(self, default=None):
+        """Ensure partners are copied right.
+
+        Odoo adds ``(copy)`` to the end of :attr:`~.name`, but that would get
+        ignored in :meth:`~.create` because it also copies explicitly firstname
+        and lastname fields.
+        """
+        return super(ResPartner, self.with_context(copy=True)).copy(default)
 
     @api.model
     def default_get(self, fields_list):
@@ -59,7 +79,7 @@ class ResPartner(models.Model):
         result = super(ResPartner, self).default_get(fields_list)
 
         inverted = self._get_inverse_name(
-            result.get("name", ""),
+            self._get_whitespace_cleaned_name(result.get("name", "")),
             result.get("is_company", False))
 
         for field in inverted.keys():
@@ -85,13 +105,11 @@ class ResPartner(models.Model):
     def _inverse_name_after_cleaning_whitespace(self):
         """Clean whitespace in :attr:`~.name` and split it.
 
-        Removes leading, trailing and duplicated whitespace.
-
         The splitting logic is stored separately in :meth:`~._inverse_name`, so
         submodules can extend that method and get whitespace cleaning for free.
         """
         # Remove unneeded whitespace
-        clean = u" ".join(self.name.split(None)) if self.name else self.name
+        clean = self._get_whitespace_cleaned_name(self.name)
 
         # Clean name avoiding infinite recursion
         if self.name != clean:
@@ -100,6 +118,14 @@ class ResPartner(models.Model):
         # Save name in the real fields
         else:
             self._inverse_name()
+
+    @api.model
+    def _get_whitespace_cleaned_name(self, name):
+        """Remove redundant whitespace from :param:`name`.
+
+        Removes leading, trailing and duplicated whitespace.
+        """
+        return u" ".join(name.split(None)) if name else name
 
     @api.model
     def _get_inverse_name(self, name, is_company=False):
