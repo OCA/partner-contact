@@ -8,7 +8,7 @@ Base Partner Merge
 
 
 This module implements merging of multiple partners
-depending on thier similarity
+depending on their similarity
 
 Bug Tracker
 ===========
@@ -25,8 +25,7 @@ Credits
 Contributors
 ------------
 
-* Firstname Lastname <email.address@example.org>
-* Second Person <second.person@example.org>
+* Charbel Jacquin <charbel.jacquin@camptocamp.com>
 
 Maintainer
 ----------
