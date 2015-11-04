@@ -51,6 +51,10 @@ class ResPartner(models.Model):
         """Write the 'name' field according to splitted data."""
         self.name = self._get_computed_name(self.lastname, self.firstname)
 
+    _sql_constraints = [
+        ('check_name', "CHECK( (type='contact' AND lastname IS NOT NULL) or (type!='contact') )", 'Contacts require a name.'),
+    ]
+
     @api.one
     def _inverse_name_after_cleaning_whitespace(self):
         """Clean whitespace in :attr:`~.name` and split it.
@@ -145,3 +149,10 @@ class ResPartner(models.Model):
         # Force calculations there
         records._inverse_name()
         _logger.info("%d partners updated installing module.", len(records))
+
+    @api.model
+    def create(self, vals):
+        if 'lastname' not in vals and 'name' in vals:
+            parts = self._get_inverse_name(vals['name'], vals.get('is_company'))
+            vals['lastname'], vals['firstname'] = parts
+        return super(ResPartner, self).create(vals)
