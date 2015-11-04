@@ -3,55 +3,46 @@
   <data noupdate="1">
 
     <record model="changeset.field.rule" id="changeset_field_rule_name">
-      <field name="model_id" ref="base.model_res_partner"/>
       <field name="field_id" ref="base.field_res_partner_name"/>
       <field name="action">auto</field>
     </record>
 
     <record model="changeset.field.rule" id="changeset_field_rule_street">
-      <field name="model_id" ref="base.model_res_partner"/>
       <field name="field_id" ref="base.field_res_partner_street"/>
       <field name="action">validate</field>
     </record>
 
     <record model="changeset.field.rule" id="changeset_field_rule_street2">
-      <field name="model_id" ref="base.model_res_partner"/>
       <field name="field_id" ref="base.field_res_partner_street2"/>
       <field name="action">validate</field>
     </record>
 
     <record model="changeset.field.rule" id="changeset_field_rule_zip">
-      <field name="model_id" ref="base.model_res_partner"/>
       <field name="field_id" ref="base.field_res_partner_zip"/>
       <field name="action">validate</field>
     </record>
 
     <record model="changeset.field.rule" id="changeset_field_rule_city">
-      <field name="model_id" ref="base.model_res_partner"/>
       <field name="field_id" ref="base.field_res_partner_city"/>
       <field name="action">validate</field>
     </record>
 
     <record model="changeset.field.rule" id="changeset_field_rule_email">
-      <field name="model_id" ref="base.model_res_partner"/>
       <field name="field_id" ref="base.field_res_partner_email"/>
       <field name="action">never</field>
     </record>
 
     <record model="changeset.field.rule" id="changeset_field_rule_ref">
-      <field name="model_id" ref="base.model_res_partner"/>
       <field name="field_id" ref="base.field_res_partner_ref"/>
       <field name="action">validate</field>
     </record>
 
     <record model="changeset.field.rule" id="changeset_field_rule_country_id">
-      <field name="model_id" ref="base.model_res_partner"/>
       <field name="field_id" ref="base.field_res_partner_country_id"/>
       <field name="action">validate</field>
     </record>
 
     <record model="changeset.field.rule" id="changeset_field_rule_credit_limit">
-      <field name="model_id" ref="base.model_res_partner"/>
       <field name="field_id" ref="base.field_res_partner_credit_limit"/>
       <field name="action">validate</field>
     </record>
