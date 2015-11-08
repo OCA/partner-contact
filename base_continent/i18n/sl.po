@@ -3,13 +3,13 @@
 # * base_continent
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 15:54+0000\n"
-"PO-Revision-Date: 2015-05-24 04:54+0000\n"
+"POT-Creation-Date: 2016-07-03 07:56+0000\n"
+"PO-Revision-Date: 2016-07-04 06:44+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -36,8 +36,9 @@ msgstr "Azija"
 #. module: base_continent
 #: model:ir.model,name:base_continent.model_res_continent
 #: view:res.continent:base_continent.view_continent_form
-#: view:res.continent:base_continent.view_continent_tree
-#: field:res.country,continent_id:0 field:res.partner,continent_id:0
+#: field:res.country,continent_id:0
+#: view:res.partner:base_continent.view_res_partner_filter
+#: field:res.partner,continent_id:0
 msgid "Continent"
 msgstr "Celina"
 
@@ -49,8 +50,15 @@ msgstr "Naziv celine"
 #. module: base_continent
 #: model:ir.actions.act_window,name:base_continent.action_continent
 #: model:ir.ui.menu,name:base_continent.menu_continent_partner
+#: view:res.continent:base_continent.view_continent_tree
 msgid "Continents"
 msgstr "Celine"
+
+#. module: base_continent
+#: view:res.continent:base_continent.view_continent_form
+#: field:res.continent,country_ids:0
+msgid "Countries"
+msgstr "Države"
 
 #. module: base_continent
 #: model:ir.model,name:base_continent.model_res_country
@@ -68,6 +76,11 @@ msgid "Created on"
 msgstr "Ustvarjeno"
 
 #. module: base_continent
+#: field:res.continent,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: base_continent
 #: model:ir.actions.act_window,help:base_continent.action_continent
 msgid ""
 "Display and manage the list of all continents that can be assigned to your "
@@ -83,6 +96,11 @@ msgstr "Evropa"
 #: field:res.continent,id:0
 msgid "ID"
 msgstr "ID"
+
+#. module: base_continent
+#: field:res.continent,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
 
 #. module: base_continent
 #: field:res.continent,write_uid:0
