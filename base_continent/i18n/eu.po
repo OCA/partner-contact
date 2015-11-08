@@ -3,19 +3,19 @@
 # * base_continent
 # 
 # Translators:
-# lfreeke <lfreeke@therp.nl>, 2015
+# Esther Martín Menéndez <esthermartin001@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-23 21:40+0000\n"
-"PO-Revision-Date: 2015-10-01 12:32+0000\n"
-"Last-Translator: lfreeke <lfreeke@therp.nl>\n"
-"Language-Team: Dutch (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/nl/)\n"
+"POT-Creation-Date: 2017-02-21 16:57+0000\n"
+"PO-Revision-Date: 2017-02-23 15:56+0000\n"
+"Last-Translator: Esther Martín Menéndez <esthermartin001@gmail.com>\n"
+"Language-Team: Basque (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: nl\n"
+"Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_continent
@@ -26,46 +26,59 @@ msgstr "Afrika"
 #. module: base_continent
 #: model:res.continent,name:base_continent.an
 msgid "Antarctica"
-msgstr "Antarctica"
+msgstr ""
 
 #. module: base_continent
 #: model:res.continent,name:base_continent.as
 msgid "Asia"
-msgstr "Azië"
+msgstr ""
 
 #. module: base_continent
 #: model:ir.model,name:base_continent.model_res_continent
 #: view:res.continent:base_continent.view_continent_form
-#: view:res.continent:base_continent.view_continent_tree
-#: field:res.country,continent_id:0 field:res.partner,continent_id:0
+#: field:res.country,continent_id:0
+#: view:res.partner:base_continent.view_res_partner_filter
+#: field:res.partner,continent_id:0
 msgid "Continent"
-msgstr "Continent"
+msgstr ""
 
 #. module: base_continent
 #: field:res.continent,name:0
 msgid "Continent Name"
-msgstr "Continent naam"
+msgstr ""
 
 #. module: base_continent
 #: model:ir.actions.act_window,name:base_continent.action_continent
 #: model:ir.ui.menu,name:base_continent.menu_continent_partner
+#: view:res.continent:base_continent.view_continent_tree
 msgid "Continents"
-msgstr "Continenten"
+msgstr ""
+
+#. module: base_continent
+#: view:res.continent:base_continent.view_continent_form
+#: field:res.continent,country_ids:0
+msgid "Countries"
+msgstr ""
 
 #. module: base_continent
 #: model:ir.model,name:base_continent.model_res_country
 msgid "Country"
-msgstr "Land"
+msgstr ""
 
 #. module: base_continent
 #: field:res.continent,create_uid:0
 msgid "Created by"
-msgstr "Aangemaakt door"
+msgstr ""
 
 #. module: base_continent
 #: field:res.continent,create_date:0
 msgid "Created on"
-msgstr "Aangemaakt op"
+msgstr ""
+
+#. module: base_continent
+#: field:res.continent,display_name:0
+msgid "Display Name"
+msgstr "Izena erakutsi"
 
 #. module: base_continent
 #: model:ir.actions.act_window,help:base_continent.action_continent
@@ -77,44 +90,49 @@ msgstr ""
 #. module: base_continent
 #: model:res.continent,name:base_continent.eu
 msgid "Europe"
-msgstr "Europa"
+msgstr ""
 
 #. module: base_continent
 #: field:res.continent,id:0
 msgid "ID"
-msgstr "ID"
+msgstr ""
+
+#. module: base_continent
+#: field:res.continent,__last_update:0
+msgid "Last Modified on"
+msgstr ""
 
 #. module: base_continent
 #: field:res.continent,write_uid:0
 msgid "Last Updated by"
-msgstr "Laatst bijgewerkt door"
+msgstr ""
 
 #. module: base_continent
 #: field:res.continent,write_date:0
 msgid "Last Updated on"
-msgstr "Laatst bijgewerkt op"
+msgstr ""
 
 #. module: base_continent
 #: model:res.continent,name:base_continent.na
 msgid "North America"
-msgstr "Noord-Amerika"
+msgstr ""
 
 #. module: base_continent
 #: model:res.continent,name:base_continent.oc
 msgid "Oceania"
-msgstr "Oceanië"
+msgstr ""
 
 #. module: base_continent
 #: model:ir.model,name:base_continent.model_res_partner
 msgid "Partner"
-msgstr "Partner"
+msgstr "Kidea"
 
 #. module: base_continent
 #: model:res.continent,name:base_continent.sa
 msgid "South America"
-msgstr "Zuid-Amerika"
+msgstr ""
 
 #. module: base_continent
 #: help:res.continent,name:0
 msgid "The full name of the continent."
-msgstr "De volledige naam van het continent"
+msgstr ""
