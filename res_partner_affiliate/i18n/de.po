@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 15:54+0000\n"
-"PO-Revision-Date: 2015-05-22 13:07+0000\n"
+"POT-Creation-Date: 2015-10-31 10:35+0000\n"
+"PO-Revision-Date: 2015-11-06 18:13+0000\n"
 "Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Tochtergesellschaften"
 #. module: res_partner_affiliate
 #: view:res.partner:res_partner_affiliate.view_partner_form_add_affiliate
 msgid "Contacts"
-msgstr ""
+msgstr "Kontakte"
 
 #. module: res_partner_affiliate
 #: view:res.partner:res_partner_affiliate.view_partner_form_add_affiliate
