@@ -298,12 +298,11 @@ class ResPartner(models.Model):
             cr, uid, args + date_args + active_args, offset=offset,
             limit=limit, order=order, context=context, count=count)
 
-    def read(
-            self, cr, uid, ids, fields=None, context=None,
-            load='_classic_read'):
-        return super(ResPartner, self).read(
-            cr, uid, ids, fields=fields,
-            context=self._update_context(context, ids), load=load)
+    @api.multi
+    def read(self, fields=None, load='_classic_read'):
+        self.env.context = self._update_context(
+            self.env.context, [r.id for r in self])
+        return super(ResPartner, self).read(fields=fields, load=load)
 
     def write(self, cr, uid, ids, vals, context=None):
         return super(ResPartner, self).write(
