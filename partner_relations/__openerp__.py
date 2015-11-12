@@ -24,6 +24,7 @@
     "author": "Therp BV,Camptocamp,Odoo Community Association (OCA)",
     "complexity": "normal",
     "category": "Customer Relationship Management",
+    "license": "AGPL-3",
     "depends": [
         'base',
     ],
@@ -32,7 +33,6 @@
     ],
     "test": [
         "test/test_allow.yml",
-        # "test/test_disallow.yml",
     ],
     "data": [
         "view/res_partner_relation_all.xml",
@@ -42,15 +42,6 @@
         'view/menu.xml',
         'security/ir.model.access.csv',
     ],
-    "js": [
-    ],
-    "css": [
-    ],
-    "qweb": [
-    ],
     "auto_install": False,
     "installable": True,
-    "external_dependencies": {
-        'python': [],
-    },
 }

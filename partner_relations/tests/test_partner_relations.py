@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #    Author: Charbel Jacquin
 #    Copyright 2015 Camptocamp SA
 #
