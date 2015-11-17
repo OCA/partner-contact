@@ -71,7 +71,8 @@ class BaseCase(TransactionCase, MailInstalled):
     def test_copy(self):
         """Copy the partner and compare the result."""
         self.expect(self.lastname, u"%s (copy)" % self.firstname)
-        self.changed = self.original.with_context(lang="en_US").copy()
+        self.changed = (self.original.with_context(copy=True, lang="en_US")
+                        .copy())
 
     def test_one_name(self):
         """Test what happens when only one name is given."""

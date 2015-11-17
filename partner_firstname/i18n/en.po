@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 15:54+0000\n"
+"POT-Creation-Date: 2015-10-31 10:35+0000\n"
 "PO-Revision-Date: 2015-07-03 11:31+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/en/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:26
+#: code:addons/partner_firstname/exceptions.py:25
 #, python-format
 msgid "Error(s) with partner %d's name."
 msgstr "Error(s) with partner %d's name."
@@ -39,7 +39,7 @@ msgid "Last name"
 msgstr "Last name"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:23
+#: code:addons/partner_firstname/exceptions.py:22
 #, python-format
 msgid "No name is set."
 msgstr "No name is set."

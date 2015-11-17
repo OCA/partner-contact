@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-23 21:40+0000\n"
+"POT-Creation-Date: 2015-10-31 10:35+0000\n"
 "PO-Revision-Date: 2015-09-13 13:41+0000\n"
 "Last-Translator: Francisco Palm <francisco.palm@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:26
+#: code:addons/partner_firstname/exceptions.py:25
 #, python-format
 msgid "Error(s) with partner %d's name."
 msgstr "Errores con el nombre de la empresa %d."
@@ -40,7 +40,7 @@ msgid "Last name"
 msgstr "Apellido"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:23
+#: code:addons/partner_firstname/exceptions.py:22
 #, python-format
 msgid "No name is set."
 msgstr "No se ha establecido ningún nombre."
