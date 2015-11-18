@@ -78,7 +78,8 @@ class ResPartner(models.Model):
         if context is None:
             context = {}
         relation_obj = self.pool.get('res.partner.relation')
-        context2 = self._update_context(context, ids)
+        context2 = self.with_partner_relations_context(
+            cr, uid, ids, context=context).env.context
         for value in field_value:
             if value[0] == 0:
                 relation_obj.create(cr, uid, value[2], context=context2)
@@ -298,23 +299,23 @@ class ResPartner(models.Model):
             cr, uid, args + date_args + active_args, offset=offset,
             limit=limit, order=order, context=context, count=count)
 
-    def read(
-            self, cr, uid, ids, fields=None, context=None,
-            load='_classic_read'):
-        return super(ResPartner, self).read(
-            cr, uid, ids, fields=fields,
-            context=self._update_context(context, ids), load=load)
+    @api.multi
+    def read(self, fields=None, load='_classic_read'):
+        return super(ResPartner, self.with_partner_relations_context())\
+            .read(fields=fields, load=load)
 
-    def write(self, cr, uid, ids, vals, context=None):
-        return super(ResPartner, self).write(
-            cr, uid, ids, vals, context=self._update_context(context, ids))
+    @api.multi
+    def write(self, vals):
+        return super(ResPartner, self.with_partner_relations_context())\
+            .write(vals)
 
-    def _update_context(self, context, ids):
-        if context is None:
-            context = {}
-        ids = ids if isinstance(ids, list) else [ids] if ids else []
-        result = context.copy()
-        result.setdefault('active_id', ids[0] if ids else None)
-        result.setdefault('active_ids', ids)
-        result.setdefault('active_model', self._name)
-        return result
+    @api.multi
+    def with_partner_relations_context(self):
+        context = dict(self.env.context)
+        if context.get('active_model', self._name) == self._name:
+            existing = self.exists()
+            context.setdefault(
+                'active_id', existing.ids[0] if existing.ids else None)
+            context.setdefault('active_ids', existing.ids)
+            context.setdefault('active_model', self._name)
+        return self.with_context(context)
