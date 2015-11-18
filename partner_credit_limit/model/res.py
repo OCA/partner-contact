@@ -40,8 +40,10 @@ class ResPartner(models.Model):
             if each.credit_limit > 0 and credit_increased > each.credit_limit:
                 if raise_error:
                     raise ValidationError(
-                        "Credit Limit exceeded for partner %s!\n\n"
+                        "Credit Limit exceeded for partner %s%s!\n\n"
                         "Credit Limit: %.2f\nExceeding Credit: %.2f\n" % (
-                            self.display_name, each.credit_limit,
+                            self.display_name,
+                            self.ref and ' (%s)' % self.ref or '',
+                            each.credit_limit,
                             credit_increased))
                 return True
