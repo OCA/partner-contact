@@ -312,7 +312,10 @@ class ResPartner(models.Model):
     @api.multi
     def with_partner_relations_context(self):
         context = dict(self.env.context)
-        context.setdefault('active_id', self.ids[0] if self.ids else None)
-        context.setdefault('active_ids', self.ids)
-        context.setdefault('active_model', self._name)
+        if context.get('active_model', self._name) == self._name:
+            existing = self.exists()
+            context.setdefault(
+                'active_id', existing.ids[0] if existing.ids else None)
+            context.setdefault('active_ids', existing.ids)
+            context.setdefault('active_model', self._name)
         return self.with_context(context)
