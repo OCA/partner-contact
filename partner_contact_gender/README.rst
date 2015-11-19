@@ -1,46 +1,64 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-    :alt: License: AGPL-3
+   :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+   :alt: License: AGPL-3
 
+==============
 Partner Gender
 ==============
 
-This module was written to extend the functionality of Odoo contacts manager to
-support setting the gender of a partner.
+This module extends the contact management functionality. It allows recording
+of a partner's gender.
 
 Installation
 ============
 
-To install this module, you need to:
+There are no special instructions regarding installation.
 
-* Install the `partner-contact`_ repository.
+Configuration
+=============
 
-
-.. _partner-contact: https://github.com/OCA/partner-contact/
+No configuration is needed.
 
 Usage
 =====
 
-To use this module, you need to:
-
-* Edit a partner or create a new one.
-* Ensure the partner is **not** a company.
-* Go to the *Personal information* sheet.
-* Set the gender there.
+New item for 'Gender' can be edited on the 'Personal Information' tab of
+the partner contact form.
 
 For further information, please visit:
 
 * https://www.odoo.com/forum/help-1
 * https://github.com/OCA/partner-contact/
 
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/134/9.0
+
+Known issues / Roadmap
+======================
+
+* No known issues.
+
+Bug Tracker
+===========
+
+Bugs are tracked on `GitHub Issues <https://github.com/OCA/
+partner-contact/issues>`_.
+In case of trouble, please check there if your issue has already been reported.
+If you spotted it first, help us smashing it by providing a detailed and welcomed feedback `here <https://github.com/OCA/
+partner-contact/issues/new?body=module:%20
+partner_contact_gender%0Aversion:%20
+9.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+
+
 Credits
 =======
-
-* Icon from `Font Awesome <http://fontawesome.io/>`_.
 
 Contributors
 ------------
 
 * Jairo Llopis <j.llopis@grupoesoc.es>
+* Richard deMeester <richard@willowit.com.au>
 
 Maintainer
 ----------
