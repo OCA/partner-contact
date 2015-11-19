@@ -1,7 +1,6 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 # Odoo, Open Source Management Solution
-# Copyright (C) 2014-2015  Grupo ESOC <www.grupoesoc.es>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -18,18 +17,22 @@
 
 {
     "name": "Contact gender",
-    "version": "8.0.1.0.0",
-    "category": "Customer Relationship Management",
-    "author": "Odoo Community Association (OCA), Grupo ESOC",
-    "license": "AGPL-3",
-    "website": "https://odoo-community.org/",
-    'installable': False,
-    "application": False,
     "summary": "Add gender field to contacts",
+    "version": "9.0.1.0.0",
+    "author": "Odoo Community Association (OCA)",
+    "license": "AGPL-3",
+    "contributors": [
+        'Jairo Llopis <j.llopis@grupoesoc.es>',
+        'Richard deMeester <richard@willowit.com.au>',
+    ],
+    "category": "Customer Relationship Management",
+    "website": "https://odoo-community.org/",
     "depends": [
         "partner_contact_personal_information_page",
     ],
     "data": [
         "views/res_partner.xml",
     ],
+    'installable': True,
+    'auto_install': False,
 }
