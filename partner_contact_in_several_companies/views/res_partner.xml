@@ -129,8 +129,9 @@
                     <field name="contact_type" readonly="0" nolabel="1"/>
                 </group>
             </xpath>
-            <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="after">
-                <field name="contact_id" on_change="onchange_contact_id(contact_id)" string="Contact"
+            <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="before">
+                <field name='contact_type' readonly='0'/>
+                <field name="contact_id" string="Contact"
                        attrs="{'invisible': [('contact_type','!=','attached')], 'required': [('contact_type','=','attached')]}"/>
             </xpath>
             <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="attributes">
@@ -145,7 +146,12 @@
         <field name="inherit_id" ref="partner_contact_personal_information_page.personal_information"/>
         <field name="arch" type="xml">
             <data>
-                <xpath expr="//page[@name='personal_information_page']">
+                <xpath expr="//page[@name='personal_information_page']/group[@name='personal_information_group']"
+                        position='attributes'>
+                    <attribute name='attrs'>{'invisible': [('contact_id','!=',False)]}</attribute>
+                </xpath>
+                <xpath expr="//page[@name='personal_information_page']/group[@name='personal_information_group']"
+                        position='after'>
                     <p attrs="{'invisible': [('contact_id','=',False)]}">
                         To see personal information about this contact, please
                         go to to the this person form:
