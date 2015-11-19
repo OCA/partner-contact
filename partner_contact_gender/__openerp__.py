@@ -1,33 +1,24 @@
-# -*- encoding: utf-8 -*-
-
-# Odoo, Open Source Management Solution
+# -*- coding: utf-8 -*-
 # Copyright (C) 2014-2015  Grupo ESOC <www.grupoesoc.es>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
     "name": "Contact gender",
-    "version": "8.0.1.0.0",
-    "category": "Customer Relationship Management",
-    "author": "Odoo Community Association (OCA), Grupo ESOC",
-    "license": "AGPL-3",
-    "website": "https://odoo-community.org/",
-    "installable": True,
-    "application": False,
     "summary": "Add gender field to contacts",
+    "version": "9.0.1.0.0",
+    "category": "Customer Relationship Management",
+    "website": "https://odoo-community.org/",
+    "author": "Grupo ESOC, Odoo Community Association (OCA)",
+    "contributors": [
+        'Jairo Llopis <j.llopis@grupoesoc.es>',
+        'Richard deMeester <richard@willowit.com.au>',
+    ],
+    "license": "AGPL-3",
+    'application': False,
+    'installable': True,
+    'auto_install': False,
     "depends": [
-        "partner_contact_personal_information_page",
+        "base",
     ],
     "data": [
         "views/res_partner.xml",
