@@ -35,7 +35,7 @@ addon | version | summary
 [partner_contact_nationality](partner_contact_nationality/) | 8.0.1.0.0 | Contact's nationality
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 8.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_external_maps](partner_external_maps/) | 8.0.0.1.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
-[partner_firstname](partner_firstname/) | 8.0.2.0.1 | Split first name and last name for non company partners
+[partner_firstname](partner_firstname/) | 8.0.2.1.0 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 8.0.0.1.0 | Partner Helper
 [partner_relations](partner_relations/) | 8.0.1.1.0 | Partner relations
 [partner_second_lastname](partner_second_lastname/) | 8.0.4.0.0 | Partner second last name
