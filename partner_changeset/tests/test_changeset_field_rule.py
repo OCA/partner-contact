@@ -41,7 +41,7 @@ class TestChangesetFieldRule(common.TransactionCase):
             'field_id': self.field_street.id,
             'action': 'never',
         })
-        get_rules = ChangesetFieldRule.get_rules('res.partner', None)
+        get_rules = ChangesetFieldRule.get_rules(None)
         self.assertEqual(get_rules, {'name': rule1, 'street': rule2})
 
     def test_get_rules_source(self):
@@ -61,10 +61,10 @@ class TestChangesetFieldRule(common.TransactionCase):
             'action': 'never',
         })
         model = ChangesetFieldRule
-        rules = model.get_rules('res.partner', None)
-        self.assertEqual(rules, {'name': rule1, 'street': rule2})
-        rules = model.get_rules('res.partner', 'res.company')
-        self.assertEqual(rules, {'name': rule1, 'street': rule3})
+        rules = model.get_rules(None)
+        self.assertEqual(rules, {u'name': rule1, u'street': rule2})
+        rules = model.get_rules('res.company')
+        self.assertEqual(rules, {u'name': rule1, u'street': rule3})
 
     def test_get_rules_cache(self):
         ChangesetFieldRule = self.env['changeset.field.rule']
@@ -74,7 +74,7 @@ class TestChangesetFieldRule(common.TransactionCase):
             'action': 'validate',
         })
         self.assertEqual(
-            ChangesetFieldRule.get_rules('res.partner', None)['name'].action,
+            ChangesetFieldRule.get_rules(None)['name'].action,
             'validate',
         )
         # Write on cursor to bypass the cache invalidation for the
@@ -83,13 +83,13 @@ class TestChangesetFieldRule(common.TransactionCase):
                             "SET action = 'never' "
                             "WHERE id = %s", (rule.id,))
         self.assertEqual(
-            ChangesetFieldRule.get_rules('res.partner', None)['name'].action,
+            ChangesetFieldRule.get_rules(None)['name'].action,
             'validate',
         )
         rule.action = 'auto'
         self.assertEqual(
-            ChangesetFieldRule.get_rules('res.partner', None)['name'].action,
+            ChangesetFieldRule.get_rules(None)['name'].action,
             'auto',
         )
         rule.unlink()
-        self.assertFalse(ChangesetFieldRule.get_rules('res.partner', None))
+        self.assertFalse(ChangesetFieldRule.get_rules(None))
