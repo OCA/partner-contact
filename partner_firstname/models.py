@@ -38,6 +38,11 @@ class ResPartner(models.Model):
         required=False,
         store=True)
 
+    # Disable sql name checking constraint
+    _sql_constraints = [
+        ('check_name', 'check(1=1)', 'Contacts require a name.'),
+    ]
+
     @api.model
     def _get_computed_name(self, lastname, firstname):
         """Compute the 'name' field according to splitted data.
