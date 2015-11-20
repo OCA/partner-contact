@@ -83,19 +83,15 @@ class ChangesetFieldRule(models.Model):
         return self.env.ref('base.model_res_users')
 
     @api.model
-    def _default_model_id(self):
-        return self.env.ref('base.model_res_partner').id
-
-    @api.model
     def _selection_action(self):
         return [('auto', 'Auto'),
                 ('validate', 'Validate'),
                 ('never', 'Never'),
                 ]
 
-    @ormcache()
+    @ormcache(skiparg=1)
     @api.model
-    def _get_rules(self, model_name, source_model_name):
+    def _get_rules(self, source_model_name):
         """ Cache rules
 
         Keep only the id of the rules, because if we keep the recordsets
@@ -124,7 +120,7 @@ class ChangesetFieldRule(models.Model):
         return result
 
     @api.model
-    def get_rules(self, model_name, source_model_name):
+    def get_rules(self, source_model_name):
         """ Return the rules for a model
 
         When a model is specified, it will return the rules for this
@@ -141,7 +137,7 @@ class ChangesetFieldRule(models.Model):
         they want only global rules.
         """
         rules = {}
-        cached_rules = self._get_rules(model_name, source_model_name)
+        cached_rules = self._get_rules(source_model_name)
         for field, rule_id in cached_rules.iteritems():
             rules[field] = self.browse(rule_id)
         return rules

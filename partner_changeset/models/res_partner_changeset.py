@@ -134,7 +134,6 @@ class ResPartnerChangeset(models.Model):
         write_values = values.copy()
         changes = []
         rules = self.env['changeset.field.rule'].get_rules(
-            record._model._name,
             source_model_name=source_model,
         )
         for field in values:
