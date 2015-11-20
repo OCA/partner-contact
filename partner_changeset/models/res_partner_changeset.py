@@ -441,6 +441,8 @@ class ResPartnerChangesetChange(models.Model):
 
     @api.multi
     def _convert_value_for_write(self, value):
+        if not value:
+            return value
         model = self.env[self.field_id.model_id.model]
         model_field_def = model._fields[self.field_id.name]
         return model_field_def.convert_to_write(value)
