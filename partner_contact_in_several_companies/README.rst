@@ -6,8 +6,8 @@
 Partner Contact in Several Companies
 ====================================
 
-This module was written to extend the contact management functionality. It
-allows you to set several job positions in different companies per contact.
+This module extends the contact management functionality. It allows you to
+set several job positions in different companies per contact.
 
 Installation
 ============
@@ -47,7 +47,7 @@ partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed feedback `here <https://github.com/OCA/
 partner-contact/issues/new?body=module:%20
-partner_contact_in_serverl_companies%0Aversion:%20
+partner_contact_in_serveral_companies%0Aversion:%20
 9.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 

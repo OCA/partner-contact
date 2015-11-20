@@ -138,7 +138,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         # Bob's contact has one other position which is related to
         # 'YourCompany'
         # so search for all contacts working for 'YourCompany'
-        # should contain bob position.
+        # should contain Bob position.
         partner_ids = self.partner.search(
             cr, uid,
             [('parent_id', 'ilike', 'YourCompany')],
