@@ -12,9 +12,9 @@ class ResPartner(models.Model):
         [('standalone', _('Standalone Contact')),
          ('attached', _('Attached to existing Contact')),
          ],
-                                    compute='_get_contact_type',
-                                    required=True, select=1, store=True,
-                                    default='standalone')
+        compute='_get_contact_type',
+        required=True, select=1, store=True,
+        default='standalone')
     contact_id = fields.Many2one('res.partner', string='Main Contact',
                                  domain=[('is_company', '=', False),
                                          ('contact_type', '=', 'standalone'),
