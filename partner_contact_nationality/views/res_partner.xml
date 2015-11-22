@@ -1,19 +1,22 @@
+</data>
+</openerp>
+
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
 <data>
 
-<record id="form" model="ir.ui.view">
-    <field name="name">Nationality field</field>
+<record id="view_res_partner_personal_information" model="ir.ui.view">
+    <field name="name">Partner nationality: personal info</field>
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="partner_contact_personal_information_page.personal_information"/>
     <field name="arch" type="xml">
         <data>
-            <xpath expr="//group[@name='personal_information_group']">
-                <field name="nationality_id"/>
+            <xpath expr="//page[@name='personal_information_page']/group[@name='personal_information_group']">
+                <field name='nationality_id'/>
             </xpath>
         </data>
-  </field>
+    </field>
 </record>
 
 </data>
-</openerp>
+</odoo>
