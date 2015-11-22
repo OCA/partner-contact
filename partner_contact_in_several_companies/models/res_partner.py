@@ -8,12 +8,13 @@ from openerp.osv import expression
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    contact_type = fields.Selection([('standalone', _('Standalone Contact')),
-                                     ('attached',
-                                      _('Attached to existing Contact')),
-                                     ],
+    contact_type = fields.Selection(
+        [('standalone', _('Standalone Contact')),
+         ('attached', _('Attached to existing Contact')),
+         ],
                                     compute='_get_contact_type',
-                                    required=True, select=1, store=True)
+                                    required=True, select=1, store=True,
+                                    default='standalone')
     contact_id = fields.Many2one('res.partner', string='Main Contact',
                                  domain=[('is_company', '=', False),
                                          ('contact_type', '=', 'standalone'),
@@ -26,10 +27,6 @@ class ResPartner(models.Model):
     @api.depends('contact_id')
     def _get_contact_type(self):
         self.contact_type = self.contact_id and 'attached' or 'standalone'
-
-    _defaults = {
-        'contact_type': 'standalone',
-    }
 
     def _basecontact_check_context(self, mode):
         """ Remove 'search_show_all_positions' for non-search mode.
@@ -70,6 +67,10 @@ class ResPartner(models.Model):
 
     @api.model
     def create(self, vals):
+        """ When creating, use a modified self to alter the context (see
+        comment in _basecontact_check_context).  Also, we need to ensure
+        that the name on an attached contact is the same as the name on the
+        contact it is attached to."""
         modified_self = self._basecontact_check_context('create')
         if not vals.get('name') and vals.get('contact_id'):
             vals['name'] = modified_self.browse(vals['contact_id']).name
@@ -158,22 +159,3 @@ class ResPartner(models.Model):
     def _onchange_contact_type(self):
         if self.contact_type == 'standalone':
             self.contact_id = False
-
-
-class IRActionsWindow(models.Model):
-    _inherit = 'ir.actions.act_window'
-
-    @api.multi
-    def read(self, fields=None, context=None, load='_classic_read'):
-        actions = super(IRActionsWindow, self).read(fields=fields, load=load)
-        for action in actions:
-            if action.get('res_model', '') == 'res.partner':
-                # By default, only show standalone contact
-                action_context = action.get('context', '{}') or '{}'
-                if 'search_show_all_positions' not in action_context:
-                    action['context'] = action_context.replace(
-                        '{',
-                        ("{'search_show_all_positions': "
-                         "{'is_set': True, 'set_value': False},"),
-                        1)
-        return actions
