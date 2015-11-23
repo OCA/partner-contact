@@ -6,8 +6,8 @@
 Partner Gender
 ==============
 
-This module was written to extend the contact management functionality. It
-allows recording of a partner's gender.
+This module extends the contact management functionality. It allows recording
+of a partner's gender.
 
 Installation
 ============
