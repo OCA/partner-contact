@@ -6,8 +6,8 @@
 Partner Contact in Several Companies
 ====================================
 
-This module extends the contact management functionality. It allows you to
-set several job positions in different companies per contact.
+This module extends the contact management functionality. It allows one
+contact to have several job positions in different companies.
 
 Installation
 ============
