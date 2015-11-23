@@ -29,7 +29,7 @@ from openerp import models, fields
 class PartnerAcademicTitle(models.Model):
     _name = 'partner.academic.title'
 
-    name = fields.Char(required=True)
+    name = fields.Char(required=True, translate=True)
     sequence = fields.Integer(required=True,
                               help="""defines the order to display titles""")
     active = fields.Boolean(default=True)
