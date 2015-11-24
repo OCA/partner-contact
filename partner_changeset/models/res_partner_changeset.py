@@ -41,7 +41,8 @@ class ResPartnerChangeset(models.Model):
                                  string='Partner',
                                  select=True,
                                  required=True,
-                                 readonly=True)
+                                 readonly=True,
+                                 ondelete='cascade')
     change_ids = fields.One2many(comodel_name='res.partner.changeset.change',
                                  inverse_name='changeset_id',
                                  string='Changes',
