@@ -21,7 +21,7 @@
 {
     'name': 'Partner first name and last name',
     'summary': "Split first name and last name for non company partners",
-    'version': '8.0.2.0.0',
+    'version': '9.0.2.0.0',
     'author': "Camptocamp,Odoo Community Association (OCA)",
     'maintainer': 'Camptocamp, Acsone',
     'category': 'Extra Tools',
@@ -35,6 +35,6 @@
     'demo': [],
     'test': [],
     'auto_install': False,
-    'installable': False,
+    'installable': True,
     'images': []
 }
