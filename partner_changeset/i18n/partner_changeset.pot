@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-18 14:48+0000\n"
-"PO-Revision-Date: 2015-09-18 14:48+0000\n"
+"POT-Creation-Date: 2015-11-25 08:31+0000\n"
+"PO-Revision-Date: 2015-11-25 08:31+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: partner_changeset
+#: sql_constraint:changeset.field.rule:0
+msgid "A rule already exists for this field."
+msgstr ""
 
 #. module: partner_changeset
 #: selection:res.partner.changeset.change,state:0
@@ -132,6 +137,12 @@ msgid "ID"
 msgstr ""
 
 #. module: partner_changeset
+#: help:changeset.field.rule,source_model_id:0
+msgid "If a source model is defined, the rule will be applied only when the change is made from this origin.  Rules without source model are global and applies to all backends.\n"
+"Rules with a source model have precedence over global rules, but if a field has no rule with a source model, the global rule is used."
+msgstr ""
+
+#. module: partner_changeset
 #: field:changeset.field.rule,write_uid:0
 #: field:res.partner.changeset,write_uid:0
 #: field:res.partner.changeset.change,write_uid:0
@@ -143,11 +154,6 @@ msgstr ""
 #: field:res.partner.changeset,write_date:0
 #: field:res.partner.changeset.change,write_date:0
 msgid "Last Updated on"
-msgstr ""
-
-#. module: partner_changeset
-#: field:changeset.field.rule,model_id:0
-msgid "Model"
 msgstr ""
 
 #. module: partner_changeset
@@ -242,6 +248,16 @@ msgid "Rejected"
 msgstr ""
 
 #. module: partner_changeset
+#: field:changeset.field.rule,source_model_id:0
+msgid "Source Model"
+msgstr ""
+
+#. module: partner_changeset
+#: field:res.partner.changeset,source:0
+msgid "Source of the change"
+msgstr ""
+
+#. module: partner_changeset
 #: view:res.partner.changeset:partner_changeset.view_res_partner_changeset_search
 #: field:res.partner.changeset,state:0
 #: field:res.partner.changeset.change,state:0
@@ -259,14 +275,14 @@ msgid "The user will have an access to the configuration of the changeset rules.
 msgstr ""
 
 #. module: partner_changeset
-#: code:addons/partner_changeset/models/res_partner_changeset.py:382
+#: code:addons/partner_changeset/models/res_partner_changeset.py:418
 #, python-format
 msgid "This change cannot be applied because a previous changeset for the same partner is pending.\n"
 "Apply all the anterior changesets before applying this one."
 msgstr ""
 
 #. module: partner_changeset
-#: code:addons/partner_changeset/models/res_partner_changeset.py:397
+#: code:addons/partner_changeset/models/res_partner_changeset.py:433
 #, python-format
 msgid "This change has already be applied."
 msgstr ""
