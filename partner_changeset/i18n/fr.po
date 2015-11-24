@@ -1,19 +1,25 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_changeset
+# 	* partner_changeset
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-18 14:48+0000\n"
+"POT-Creation-Date: 2015-11-25 08:31+0000\n"
 "PO-Revision-Date: 2015-09-18 14:48+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: partner_changeset
+#: sql_constraint:changeset.field.rule:0
+msgid "A rule already exists for this field."
+msgstr "Une règle existe déjà pour ce champ."
 
 #. module: partner_changeset
 #: selection:res.partner.changeset.change,state:0
@@ -38,10 +44,12 @@ msgstr "Appliquer les modifications en attente"
 
 #. module: partner_changeset
 #: help:changeset.field.rule,action:0
-msgid "Auto: always apply a change.\n"
+msgid ""
+"Auto: always apply a change.\n"
 "Validate: manually applied by an administrator.\n"
 "Never: change never applied."
-msgstr "Auto: toujours appliquer une modification.\n"
+msgstr ""
+"Auto: toujours appliquer une modification.\n"
 "Validation: modification manuellement appliquée par un administrateur.\n"
 "Jamais: modification jamais appliquée."
 
@@ -127,11 +135,25 @@ msgid "Group By"
 msgstr "Grouper par"
 
 #. module: partner_changeset
-#: field:changeset.field.rule,id:0
-#: field:res.partner.changeset,id:0
+#: field:changeset.field.rule,id:0 field:res.partner.changeset,id:0
 #: field:res.partner.changeset.change,id:0
 msgid "ID"
 msgstr "Id."
+
+#. module: partner_changeset
+#: help:changeset.field.rule,source_model_id:0
+msgid ""
+"If a source model is defined, the rule will be applied only when the change "
+"is made from this origin.  Rules without source model are global and applies "
+"to all backends.\n"
+"Rules with a source model have precedence over global rules, but if a field "
+"has no rule with a source model, the global rule is used."
+msgstr ""
+"Si un modèle source est défini, la règle ne sera appliquée que lorsque le "
+"changement vient de cette source.  Les règles sans modèle source sont "
+"globales et sont appliquées à toutes les sources.\n "
+"Les règles avec une souce ont la précédence sur les règles globales.  Si un "
+"champ n'a pas de règle avec source, la règle globale est utilisée."
 
 #. module: partner_changeset
 #: field:changeset.field.rule,write_uid:0
@@ -146,11 +168,6 @@ msgstr ""
 #: field:res.partner.changeset.change,write_date:0
 msgid "Last Updated on"
 msgstr ""
-
-#. module: partner_changeset
-#: field:changeset.field.rule,model_id:0
-msgid "Model"
-msgstr "Modèle"
 
 #. module: partner_changeset
 #: field:res.partner.changeset.change,new_value_boolean:0
@@ -244,6 +261,16 @@ msgid "Rejected"
 msgstr "Rejeté"
 
 #. module: partner_changeset
+#: field:changeset.field.rule,source_model_id:0
+msgid "Source Model"
+msgstr "Modèle source"
+
+#. module: partner_changeset
+#: field:res.partner.changeset,source:0
+msgid "Source of the change"
+msgstr "Source du changement"
+
+#. module: partner_changeset
 #: view:res.partner.changeset:partner_changeset.view_res_partner_changeset_search
 #: field:res.partner.changeset,state:0
 #: field:res.partner.changeset.change,state:0
@@ -257,20 +284,30 @@ msgstr "L'utilisateur pourra appliquer ou rejeter les jeux de modifications."
 
 #. module: partner_changeset
 #: model:res.groups,comment:partner_changeset.group_changeset_manager
-msgid "The user will have an access to the configuration of the changeset rules."
-msgstr "L'utilisateur aura accès à la configuration des règles de jeux de modifications."
+msgid ""
+"The user will have an access to the configuration of the changeset rules."
+msgstr ""
+"L'utilisateur aura accès à la configuration des règles de jeux de "
+"modifications."
 
 #. module: partner_changeset
-#: code:addons/partner_changeset/models/res_partner_changeset.py:382
+#: code:addons/partner_changeset/models/res_partner_changeset.py:418
 #, python-format
-msgid "This change cannot be applied because a previous changeset for the same partner is pending.\n"
+msgid ""
+"This change cannot be applied because a previous changeset for the same "
+"partner is pending.\n"
 "Apply all the anterior changesets before applying this one."
-msgstr "The changement ne peux pas être appliqué car un précédent jeu de modification pour le même partenaire est toujours en attente.\n"
-"Il est nécessaire d'appliquer tous les précédents jeux de modification avant d'applique celui-ci."
+msgstr ""
+"The changement ne peux pas être appliqué car un précédent jeu de "
+"modification pour le même partenaire est toujours en attente.\n"
+"Il est nécessaire d'appliquer tous les précédents jeux de modification avant "
+"d'applique celui-ci."
 
 #. module: partner_changeset
-#: code:addons/partner_changeset/models/res_partner_changeset.py:397
+#: code:addons/partner_changeset/models/res_partner_changeset.py:433
 #, python-format
 msgid "This change has already be applied."
 msgstr "The changement est déjà appliqué."
 
+#~ msgid "Model"
+#~ msgstr "Modèle"
