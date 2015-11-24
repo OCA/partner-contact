@@ -41,7 +41,7 @@ class ResPartner(models.Model):
         for title in title_ids:
             if display_title:
                 display_title = "%s%s%s" % (display_title, separator,
-                                              title.name)
+                                            title.name)
             else:
                 display_title = "%s" % (title.name)
         self.academic_title_display = display_title
