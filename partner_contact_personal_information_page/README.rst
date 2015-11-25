@@ -11,13 +11,15 @@ This module extends the contact management functionality.
 Its only purpose is to serve as a base for other modules that add personal
 information fields to **contacts that are persons**.
 
+Ultimately, this module is no longer required in version 9, as each module
+that was previously dependent upon it will declare what it needs for itself.
+
 Installation
 ============
 
-.. warning::
-    **You should NOT install this module yourself**, because it does nothing by
-    itself. This module should get installed automatically when you install
-    other modules that actually do something useful.
+This module exists to ensure that upgraded databases continue to work.
+There should be no reason to install it directly, and there should be no
+modules depending on it.
 
 Configuration
 =============
