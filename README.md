@@ -26,6 +26,7 @@ addon | version | summary
 [base_location_nuts](base_location_nuts/) | 8.0.1.0.0 | NUTS Regions
 [base_partner_merge](base_partner_merge/) | 8.0.0.1.0 | Base Partner Merge
 [base_partner_sequence](base_partner_sequence/) | 8.0.1.1.0 | Sets customer's code from a sequence
+[partner_academic_title](partner_academic_title/) | 8.0.1.0.0 | Add possibility to define some academic title
 [partner_address_street3](partner_address_street3/) | 8.0.0.1.0 | Street3 in addresses
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 | Partner auto salesman
 [partner_contact_address_detailed](partner_contact_address_detailed/) | 8.0.1.0.0 | All address data in summarized contact form
