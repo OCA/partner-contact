@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <openerp>
 	<data>
-		<template id="website_partner_contact_checkout" inherit_id="website_sale.checkout">
-			 <xpath expr="//div[contains(@class,'oe_cart')]/div[@class='row']/div" position="replace">
+		<template id="checkout" inherit_id="website_sale.checkout">
+			 <xpath expr="//input[@name='name']/parent::div" position="replace">
 		          <div t-attf-class="form-group #{error.get('firstname') and 'has-error' or ''} col-lg-6">
 		              <label class="control-label" for="firstname">First Name</label>
 		              <input type="text" name="firstname" class="form-control" t-att-value="checkout.get('firstname')"/>
@@ -13,7 +13,7 @@
 		          </div>
       		</xpath>
 
-			 <xpath expr="//div[contains(@class,'js_shipping')]/div" position="replace">
+			 <xpath expr="//input[@name='shipping_name']/parent::div" position="replace">
 		          <div t-attf-class="form-group #{error.get('shipping_firstname') and 'has-error' or ''} col-lg-6">
 		              <label class="control-label" for="shipping_firstname">First Name</label>
 		              <input type="text" name="shipping_firstname" class="form-control" t-att-value="checkout.get('shipping_firstname')"/>
