@@ -25,7 +25,7 @@
                 />
               <field name="action"/>
               <field name="source_model_id"
-                options="{'no_create_edit': True, 'no_open': True}"/>
+                widget="selection" />
             </group>
           </sheet>
         </form>
