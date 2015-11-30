@@ -1,6 +1,14 @@
+.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+   :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+   :alt: License: AGPL-3
+
 ==================
 Partner Changesets
 ==================
+
+This module extends the functionality of partners. It allows to create
+changesets that must be validated when a partner is modified instead of direct
+modifications. Rules allow to configure which field must be validated.
 
 Configuration
 =============
@@ -51,26 +59,13 @@ Usage
 General case
 ------------
 
-The first step is to create the changeset rules, once that done,
-
-Addons wanting to create changeset with their own rules should pass the
-following keys in the context when they write on the partner:
-* ``__changeset_rules_source_model``: name of the model which asks for
-  the change
-* ``__changeset_rules_source_id``: id of the record which asks for the
-  change
-
-Also, they should extend the selection in
-``ChangesetFieldRule._domain_source_models`` to add their model (the
-same that is passed in ``__changeset_rules_source_model``).
-
-The source is used for the application of the rules, it is also stored
-on the changeset for information.
+The first step is to create the changeset rules, once that done, writes on
+partners will be created as changesets.
 
 Finding changesets
 ------------------
 
-A menu shows all the changesets in ``Sales > Configuration > Partner
+A menu lists all the changesets in ``Sales > Configuration > Partner
 Changesets > Changesets``.
 
 However, it is more convenient to access them directly from the
@@ -94,3 +89,70 @@ links for relations can be clicked on.
 
 A button on a changeset allows to apply or reject all the changes at
 once.
+
+Custom source rules in your addon
+---------------------------------
+
+Addons wanting to create changeset with their own rules should pass the
+following keys in the context when they write on the partner:
+* ``__changeset_rules_source_model``: name of the model which asks for
+  the change
+* ``__changeset_rules_source_id``: id of the record which asks for the
+  change
+
+Also, they should extend the selection in
+``ChangesetFieldRule._domain_source_models`` to add their model (the
+same that is passed in ``__changeset_rules_source_model``).
+
+The source is used for the application of the rules, allowing to have a
+different rule for a different source. It is also stored on the changeset for
+information.
+
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/134/8.0
+
+Known issues / Roadmap
+======================
+
+* Only a subset of the type of fields is actually supported
+
+Bug Tracker
+===========
+
+Bugs are tracked on `GitHub Issues
+<https://github.com/OCA/partner-contact/issues>`_. In case of trouble, please
+check there if your issue has already been reported. If you spotted it first,
+help us smashing it by providing a detailed and welcomed `feedback
+<https://github.com/OCA/
+partner-contact/issues/new?body=module:%20
+partner_changeset%0Aversion:%20
+8.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+
+Credits
+=======
+
+Images
+------
+
+* Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+
+Contributors
+------------
+
+* Guewen Baconnier <guewen.baconnier@camptocamp.com>
+
+Maintainer
+----------
+
+.. image:: https://odoo-community.org/logo.png
+   :alt: Odoo Community Association
+   :target: https://odoo-community.org
+
+This module is maintained by the OCA.
+
+OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.
+
+To contribute to this module, please visit https://odoo-community.org.
