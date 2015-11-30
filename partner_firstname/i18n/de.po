@@ -3,13 +3,14 @@
 # * partner_firstname
 # 
 # Translators:
+# Rudolf Schnapka <rs@techno-flex.de>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 15:54+0000\n"
-"PO-Revision-Date: 2015-07-03 11:31+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2015-11-25 01:50+0000\n"
+"PO-Revision-Date: 2015-11-25 11:28+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,15 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:26
+#: code:addons/partner_firstname/exceptions.py:25
 #, python-format
 msgid "Error(s) with partner %d's name."
-msgstr ""
+msgstr "Fehler beim Namen des Partner %d."
 
 #. module: partner_firstname
 #: field:res.partner,firstname:0
 msgid "First name"
-msgstr ""
+msgstr "Vorname"
 
 #. module: partner_firstname
 #: view:res.partner:partner_firstname.view_partner_form_firstname
@@ -36,13 +37,13 @@ msgstr "Ist ein Unternehmen?"
 #. module: partner_firstname
 #: field:res.partner,lastname:0
 msgid "Last name"
-msgstr ""
+msgstr "Nachname"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:23
+#: code:addons/partner_firstname/exceptions.py:22
 #, python-format
 msgid "No name is set."
-msgstr ""
+msgstr "Kein Name festgelegt."
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
@@ -52,7 +53,7 @@ msgstr "Partner"
 #. module: partner_firstname
 #: view:res.users:partner_firstname.view_users_form
 msgid "True"
-msgstr ""
+msgstr "Wahr"
 
 #. module: partner_firstname
 #: view:res.partner:partner_firstname.view_partner_form_firstname

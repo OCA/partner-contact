@@ -3,14 +3,15 @@
 # * partner_contact_in_several_companies
 # 
 # Translators:
+# Rudolf Schnapka <rs@techno-flex.de>, 2015
 # Rudolf Schnapka <schnapkar@golive-saar.de>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 15:54+0000\n"
-"PO-Revision-Date: 2015-08-06 21:26+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2015-11-25 01:50+0000\n"
+"PO-Revision-Date: 2015-11-25 12:08+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -135,7 +136,7 @@ msgstr "Schlagworte..."
 msgid ""
 "To see personal information about this contact, please\n"
 "                        go to to the his person form:"
-msgstr ""
+msgstr "Um persönliche Information zu diesem Kontakt zu erhalten, gehen Sie bitte auf das Person-Formular:"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit

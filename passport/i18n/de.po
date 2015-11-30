@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-31 10:35+0000\n"
-"PO-Revision-Date: 2015-11-06 18:18+0000\n"
+"POT-Creation-Date: 2015-11-25 01:50+0000\n"
+"PO-Revision-Date: 2015-11-25 11:10+0000\n"
 "Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -65,12 +65,12 @@ msgstr ""
 #. module: passport
 #: selection:res.passport,gender:0
 msgid "Female"
-msgstr ""
+msgstr "Weiblich"
 
 #. module: passport
 #: field:res.passport,gender:0
 msgid "Gender"
-msgstr ""
+msgstr "Geschlecht"
 
 #. module: passport
 #: help:res.passport,gender:0
@@ -95,7 +95,7 @@ msgstr "zuletzt aktualisiert am"
 #. module: passport
 #: selection:res.passport,gender:0
 msgid "Male"
-msgstr ""
+msgstr "Männlich"
 
 #. module: passport
 #: field:res.passport,name:0
@@ -115,7 +115,7 @@ msgstr ""
 #. module: passport
 #: model:ir.model,name:passport.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #. module: passport
 #: model:ir.actions.act_window,name:passport.action_passport_tree_list

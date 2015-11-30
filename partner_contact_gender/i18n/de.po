@@ -1,10 +1,9 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_contact_birthdate
+# * partner_contact_gender
 # 
 # Translators:
 # Rudolf Schnapka <rs@techno-flex.de>, 2015
-# Rudolf Schnapka <schnapkar@golive-saar.de>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
@@ -19,20 +18,22 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. module: partner_contact_birthdate
-#: field:res.partner,birthdate_date:0
-msgid "Birthdate"
-msgstr "Geburtsdatum"
+#. module: partner_contact_gender
+#: selection:res.partner,gender:0
+msgid "Female"
+msgstr "Weiblich"
 
-#. module: partner_contact_birthdate
-#: code:addons/partner_contact_birthdate/models.py:52
-#, python-format
-msgid ""
-"Could not convert '{0.birthdate}' to date in res.partner {0.id} ({0.name}). "
-"Skipping."
-msgstr "Konnte '{0.birthdate}' nicht zu Datum in res.partner {0.id} ({0.name}) umwandeln. Übersprungen."
+#. module: partner_contact_gender
+#: field:res.partner,gender:0
+msgid "Gender"
+msgstr "Geschlecht"
 
-#. module: partner_contact_birthdate
-#: model:ir.model,name:partner_contact_birthdate.model_res_partner
+#. module: partner_contact_gender
+#: selection:res.partner,gender:0
+msgid "Male"
+msgstr "Männlich"
+
+#. module: partner_contact_gender
+#: model:ir.model,name:partner_contact_gender.model_res_partner
 msgid "Partner"
 msgstr "Partner"

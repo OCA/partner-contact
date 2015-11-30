@@ -3,13 +3,14 @@
 # * partner_relations
 # 
 # Translators:
+# Rudolf Schnapka <rs@techno-flex.de>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-31 10:35+0000\n"
-"PO-Revision-Date: 2015-11-06 18:20+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2015-11-25 01:50+0000\n"
+"PO-Revision-Date: 2015-11-25 12:08+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,38 +26,38 @@ msgid ""
 "                    Record and track your partners' relations. Relations may be linked to other partners with a type either directly or inversely.\n"
 "                </p>\n"
 "            "
-msgstr ""
+msgstr "<p class=\"oe_view_nocontent_create\">\n                    Aufzeichnen und Beobachten der Beziehungen des Partners. Beziehungen mit anderen Partnern können entweder direkt oder rückwirkend hergestellt werden.\n                </p>\n            "
 
 #. module: partner_relations
 #: field:res.partner.relation,active:0 field:res.partner.relation.all,active:0
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #. module: partner_relations
 #: model:ir.model,name:partner_relations.model_res_partner_relation_all
 msgid "All (non-inverse + inverse) relations between partners"
-msgstr ""
+msgstr "Alle (direkten und rückwirkenden) Beziehungen zwischen Partnern"
 
 #. module: partner_relations
 #: model:ir.model,name:partner_relations.model_res_partner_relation_type_selection
 msgid "All relation types"
-msgstr ""
+msgstr "Alle Beziehungsarten"
 
 #. module: partner_relations
 #: field:res.partner,relation_all_ids:0
 msgid "All relations with current partner"
-msgstr ""
+msgstr "Alle Beziehungen mit diesem Partner"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,allow_self:0
 msgid "Allow both sides to be the same"
-msgstr ""
+msgstr "Erlaube beide Seiten gleich zu sein"
 
 #. module: partner_relations
 #: code:addons/partner_relations/model/res_partner_relation_type.py:68
 #, python-format
 msgid "Company"
-msgstr ""
+msgstr "Unternehmen"
 
 #. module: partner_relations
 #: field:res.partner.relation,create_uid:0
@@ -73,23 +74,23 @@ msgstr "erstellt am"
 #. module: partner_relations
 #: field:res.partner.relation.all,this_partner_id:0
 msgid "Current Partner"
-msgstr ""
+msgstr "Aktueller Partner"
 
 #. module: partner_relations
 #: field:res.partner.relation.type.selection,partner_category_this:0
 #: field:res.partner.relation.type.selection,search_partner_category_this:0
 msgid "Current record's category"
-msgstr ""
+msgstr "Kategorie des aktuellen Datensatzes"
 
 #. module: partner_relations
 #: field:res.partner.relation.type.selection,contact_type_this:0
 msgid "Current record's partner type"
-msgstr ""
+msgstr "Partnerart des aktuellen Datensatzes"
 
 #. module: partner_relations
 #: field:res.partner.relation,right_partner_id:0
 msgid "Destination Partner"
-msgstr ""
+msgstr "Zielpartner"
 
 #. module: partner_relations
 #: field:res.partner.relation,date_end:0
@@ -101,7 +102,7 @@ msgstr ""
 #: view:res.partner.relation:partner_relations.search_res_partner_relation
 #: view:res.partner.relation.all:partner_relations.search_res_partner_relation_all
 msgid "Group By"
-msgstr ""
+msgstr "Gruppieren"
 
 #. module: partner_relations
 #: model:res.partner.relation.type,name_inverse:partner_relations.rel_type_assistant
@@ -225,7 +226,7 @@ msgstr ""
 #: model:ir.model,name:partner_relations.model_res_partner
 #: field:res.partner.relation,partner_id_display:0
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #. module: partner_relations
 #: view:res.partner.relation:partner_relations.form_res_partner_relation
@@ -401,7 +402,7 @@ msgid "Type"
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner.py:109
+#: code:addons/partner_relations/model/res_partner.py:110
 #, python-format
 msgid "Unsupported search operand \"%s\""
 msgstr ""
