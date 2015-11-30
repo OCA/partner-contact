@@ -1,0 +1,143 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_academic_title
+# 
+# Translators:
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-07 07:18+0000\n"
+"PO-Revision-Date: 2016-05-07 07:14+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#. module: partner_academic_title
+#: model:ir.actions.act_window,name:partner_academic_title.open_academic_title
+#: model:ir.ui.menu,name:partner_academic_title.menu_academic_title
+#: view:res.partner:partner_academic_title.view_partner_form
+#: field:res.partner,academic_title_display:0
+#: field:res.partner,academic_title_ids:0
+msgid "Academic Titles"
+msgstr "Akademski nazivi"
+
+#. module: partner_academic_title
+#: field:partner.academic.title,active:0
+msgid "Active"
+msgstr "Aktivno"
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_bs
+msgid "B.S."
+msgstr "Dipl.ing."
+
+#. module: partner_academic_title
+#: field:partner.academic.title,create_uid:0
+msgid "Created by"
+msgstr "Ustvaril"
+
+#. module: partner_academic_title
+#: field:partner.academic.title,create_date:0
+msgid "Created on"
+msgstr "Ustvarjeno"
+
+#. module: partner_academic_title
+#: field:partner.academic.title,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_edd
+msgid "Ed.D"
+msgstr "dr. docent"
+
+#. module: partner_academic_title
+#: field:partner.academic.title,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_jd
+msgid "J.D."
+msgstr "dr. prava"
+
+#. module: partner_academic_title
+#: field:partner.academic.title,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
+
+#. module: partner_academic_title
+#: field:partner.academic.title,write_uid:0
+msgid "Last Updated by"
+msgstr "Zadnji posodobil"
+
+#. module: partner_academic_title
+#: field:partner.academic.title,write_date:0
+msgid "Last Updated on"
+msgstr "Zadnjič posodobljeno"
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_mba
+msgid "M.B.A."
+msgstr "M.B.A."
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_md
+msgid "M.D."
+msgstr "dr.med."
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_mph
+msgid "M.P.H."
+msgstr "mag.jav.zdr."
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_ms
+msgid "M.S."
+msgstr "mag.znan."
+
+#. module: partner_academic_title
+#: field:partner.academic.title,name:0
+msgid "Name"
+msgstr "Naziv"
+
+#. module: partner_academic_title
+#: model:ir.model,name:partner_academic_title.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_phd
+msgid "Ph.D."
+msgstr "dr. filoz."
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_pharmd
+msgid "Pharm.D."
+msgstr "dr. farm."
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_psyd
+msgid "Psy.D."
+msgstr "dr. psih."
+
+#. module: partner_academic_title
+#: field:partner.academic.title,sequence:0
+msgid "Sequence"
+msgstr "Zaporedje"
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_thd
+msgid "Th.D."
+msgstr "dr. teolog."
+
+#. module: partner_academic_title
+#: help:partner.academic.title,sequence:0
+msgid "defines the order to display titles"
+msgstr "določi zaporedje prikaza nazivov"
