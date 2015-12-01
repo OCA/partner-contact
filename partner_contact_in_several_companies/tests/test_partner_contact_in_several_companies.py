@@ -203,13 +203,13 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         # Reset contact to attached, and ensure only it is unlinked (i.e.
         # context is ignored).
         self.partner.write(cr, uid, [new_contact_id],
-            {'contact_id': self.bob_contact_id})
+                           {'contact_id': self.bob_contact_id})
         ctx = {'search_show_all_positions': {'is_set': True,
                                              'set_value': True
                                              }}
         self.partner.unlink(cr, uid, [new_contact_id], context=ctx)
-        partner_ids = self.partner.search(cr, uid,
-            [('id', 'in', [new_contact_id, self.bob_contact_id])])
+        partner_ids = self.partner.search(
+            cr, uid, [('id', 'in', [new_contact_id, self.bob_contact_id])])
         self.assertIn(self.bob_contact_id, partner_ids)
         self.assertNotIn(new_contact_id, partner_ids)
 
