@@ -15,7 +15,7 @@
             name="%(partner_changeset.action_res_partner_changeset_view)d"
             context="{'search_default_draft': 1, 'search_default_partner_id': active_id}"
             icon="fa-code-fork">
-            <field string="Pending Changesets"
+            <field string="Changes"
               name="count_pending_changesets"
               widget="statinfo"/>
           </button>

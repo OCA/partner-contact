@@ -13,7 +13,7 @@ class ResPartner(models.Model):
                                     string='Changesets',
                                     readonly=True)
     count_pending_changesets = fields.Integer(
-        string='Pending Changesets',
+        string='Changes',
         compute='_count_pending_changesets',
         search='_search_count_pending_changesets')
 

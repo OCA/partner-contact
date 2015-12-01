@@ -50,6 +50,7 @@ msgstr ""
 
 #. module: partner_changeset
 #: view:res.partner.changeset:partner_changeset.view_res_partner_changeset_form
+#: view:res.partner:partner_changeset.res_partner_view_buttons
 #: field:res.partner.changeset,change_ids:0
 msgid "Changes"
 msgstr ""
@@ -221,7 +222,6 @@ msgid "Pending"
 msgstr ""
 
 #. module: partner_changeset
-#: view:res.partner:partner_changeset.res_partner_view_buttons
 #: view:res.partner:partner_changeset.view_res_partner_filter
 msgid "Pending Changesets"
 msgstr ""
