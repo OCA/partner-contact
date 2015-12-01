@@ -12,6 +12,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         cr, uid = self.cr, self.uid
         ModelData = self.registry('ir.model.data')
         self.partner = self.registry('res.partner')
+        self.action = self.registry('ir.actions.act_window')
 
         # Get test records reference
         for attr, module, name in [
@@ -25,7 +26,12 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
                 ('roger_contact_id', 'base', 'res_partner_main2'),
                 ('roger_job2_id',
                  'partner_contact_in_several_companies',
-                 'res_partner_main2_position_consultant')]:
+                 'res_partner_main2_position_consultant'),
+                ('base_partner_action_id', 'base', 'action_partner_form'),
+                ('custom_partner_action_id',
+                 'partner_contact_in_several_companies',
+                 'action_partner_form'),
+                ]:
             r = ModelData.get_object_reference(cr, uid, module, name)
             setattr(self, attr, r[1] if r else False)
 
@@ -214,4 +220,30 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         self.assertEqual(
             self.partner.browse(cr, uid, self.bob_contact_id).name,
             'Bob Egnops',
+        )
+
+    def test_06_ir_action(self):
+        """Check ir_action context is auto updated.
+        """
+        cr, uid = self.cr, self.uid
+
+        new_context_val = "'search_show_all_positions': " \
+            "{'is_set': True, 'set_value': False},"
+
+        details = self.action.read(
+            cr, uid, [self.base_partner_action_id]
+        )
+        self.assertIn(
+            new_context_val,
+            details[0]['context'],
+            msg='Default actions not updated with new context'
+        )
+
+        details = self.action.read(
+            cr, uid, [self.custom_partner_action_id]
+        )
+        self.assertNotIn(
+            new_context_val,
+            details[0]['context'],
+            msg='Custom actions incorrectly updated with new context'
         )
