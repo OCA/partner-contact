@@ -30,5 +30,6 @@
     ],
     "demo": [
         "demo/res_partner.xml",
+        "demo/ir_actions.xml",
     ],
 }
