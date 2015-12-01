@@ -55,6 +55,7 @@ msgstr ""
 
 #. module: partner_changeset
 #: view:res.partner.changeset:partner_changeset.view_res_partner_changeset_form
+#: view:res.partner:partner_changeset.res_partner_view_buttons
 #: field:res.partner.changeset,change_ids:0
 msgid "Changes"
 msgstr "Modifications"
@@ -86,12 +87,12 @@ msgstr "Règles de modifications par champ"
 #: model:ir.ui.menu,name:partner_changeset.menu_res_partner_changeset
 #: field:res.partner,changeset_ids:0
 msgid "Changesets"
-msgstr "Jeux de modifications"
+msgstr "Modifications"
 
 #. module: partner_changeset
 #: model:res.groups,name:partner_changeset.group_changeset_user
 msgid "Changesets Validations "
-msgstr "Validations des jeux de modifications"
+msgstr "Validations des modifications"
 
 #. module: partner_changeset
 #: field:changeset.field.rule,create_uid:0
@@ -212,7 +213,7 @@ msgstr "Partenaire"
 #: view:res.partner.changeset:partner_changeset.view_res_partner_changeset_search
 #: view:res.partner.changeset:partner_changeset.view_res_partner_changeset_tree
 msgid "Partner Changeset"
-msgstr "Jeu de modification de partenaire"
+msgstr "Modifications de partenaire"
 
 #. module: partner_changeset
 #: model:ir.model,name:partner_changeset.model_res_partner_changeset_change
@@ -224,7 +225,7 @@ msgstr "Modification de partenaire"
 #. module: partner_changeset
 #: model:ir.ui.menu,name:partner_changeset.menu_changeset
 msgid "Partner Changesets"
-msgstr "Jeux de modifications de partenaire"
+msgstr "Modifications de partenaire"
 
 #. module: partner_changeset
 #: view:res.partner.changeset:partner_changeset.view_res_partner_changeset_search
@@ -234,10 +235,9 @@ msgid "Pending"
 msgstr "En attente"
 
 #. module: partner_changeset
-#: view:res.partner:partner_changeset.res_partner_view_buttons
 #: view:res.partner:partner_changeset.view_res_partner_filter
 msgid "Pending Changesets"
-msgstr "Jeux de modifications en attente"
+msgstr "Modifications en attente"
 
 #. module: partner_changeset
 #: view:res.partner.changeset:partner_changeset.view_res_partner_changeset_form
