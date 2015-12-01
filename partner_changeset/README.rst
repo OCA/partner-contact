@@ -95,6 +95,7 @@ Custom source rules in your addon
 
 Addons wanting to create changeset with their own rules should pass the
 following keys in the context when they write on the partner:
+
 * ``__changeset_rules_source_model``: name of the model which asks for
   the change
 * ``__changeset_rules_source_id``: id of the record which asks for the
@@ -107,6 +108,18 @@ same that is passed in ``__changeset_rules_source_model``).
 The source is used for the application of the rules, allowing to have a
 different rule for a different source. It is also stored on the changeset for
 information.
+
+Screenshot:
+-----------
+
+* Configuration of rules
+
+  .. image:: partner_changeset/static/src/img/rules.png
+
+* Changeset waiting for validation
+
+  .. image:: partner_changeset/static/src/img/changeset.png
+
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
