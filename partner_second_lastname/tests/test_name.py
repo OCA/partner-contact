@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 # © 2015 Grupo ESOC Ingeniería de Servicios, S.L.U.
+# © 2015 Antiun Ingenieria S.L. - Antonio Espinosa
 
 from openerp.tests.common import TransactionCase
 from openerp.addons.partner_firstname.tests.base import MailInstalled
@@ -8,6 +9,11 @@ from openerp.addons.partner_firstname.tests.base import MailInstalled
 
 class CompanyCase(TransactionCase):
     """Test ``res.partner`` when it is a company."""
+    def setUp(self):
+        super(CompanyCase, self).setUp()
+        self.env['ir.config_parameter'].set_param(
+            'partner_names_order', 'first_last')
+
     def tearDown(self):
         try:
             new = self.env["res.partner"].create({
@@ -75,6 +81,8 @@ class PersonCase(TransactionCase):
 
     def setUp(self):
         super(PersonCase, self).setUp()
+        self.env['ir.config_parameter'].set_param(
+            'partner_names_order', 'last_first_comma')
 
         self.firstname = u"Fírstname"
         self.lastname = u"Làstname1"
@@ -113,6 +121,9 @@ class PersonCase(TransactionCase):
 
     def test_firstname_first(self):
         """Create a person setting his first name first."""
+        self.env['ir.config_parameter'].set_param(
+            'partner_names_order', 'first_last')
+        self.template = "%(first)s %(last1)s %(last2)s"
         self.params = {
             "is_company": False,
             "name": "%s %s %s" % (self.firstname,
@@ -121,7 +132,7 @@ class PersonCase(TransactionCase):
         }
 
     def test_firstname_last(self):
-        """Create a persong setting his first name last."""
+        """Create a person setting his first name last."""
         self.params = {
             "is_company": False,
             "name": "%s %s, %s" % (self.lastname,
@@ -130,25 +141,29 @@ class PersonCase(TransactionCase):
         }
 
     def test_firstname_only(self):
-        """Create a persong setting his first name only."""
-        self.lastname = self.lastname2 = False
-        self.template = "%(first)s"
+        """Create a person setting his first name only."""
+        self.env['ir.config_parameter'].set_param(
+            'partner_names_order', 'first_last')
+        self.firstname = self.lastname2 = False
+        self.template = "%(last1)s"
         self.params = {
             "is_company": False,
-            "name": self.firstname,
+            "name": self.lastname,
         }
 
     def test_firstname_lastname_only(self):
-        """Create a persong setting his first name and last name 1 only."""
+        """Create a person setting his first name and last name 1 only."""
+        self.env['ir.config_parameter'].set_param(
+            'partner_names_order', 'first_last')
         self.lastname2 = False
-        self.template = "%(last1)s, %(first)s"
+        self.template = "%(first)s %(last1)s"
         self.params = {
             "is_company": False,
             "name": "%s %s" % (self.firstname, self.lastname),
         }
 
     def test_lastname_firstname_only(self):
-        """Create a persong setting his last name 1 and first name only."""
+        """Create a person setting his last name 1 and first name only."""
         self.lastname2 = False
         self.template = "%(last1)s, %(first)s"
         self.params = {
