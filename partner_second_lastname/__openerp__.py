@@ -4,12 +4,14 @@
 
 {
     "name": "Partner second last name",
-    "version": "8.0.4.0.0",
-    "author": "Grupo ESOC, Odoo Community Association (OCA)",
+    "summary": "Have split first and second lastnames",
+    "version": "8.0.4.1.0",
     "license": "AGPL-3",
+    "website": "https://grupoesoc.es",
+    "author": "Grupo ESOC Ingeniería de Servicios, "
+              "Odoo Community Association (OCA)",
     "maintainer": "Odoo Community Association (OCA)",
     "category": "Extra Tools",
-    "website": "http://www.grupoesoc.es",
     "depends": [
         "partner_firstname"
     ],
@@ -18,4 +20,5 @@
         "views/res_user.xml",
     ],
     "installable": True,
+    'images': [],
 }
