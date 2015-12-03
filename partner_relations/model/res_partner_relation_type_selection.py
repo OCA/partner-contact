@@ -1,65 +1,59 @@
 # -*- coding: UTF-8 -*-
-'''
-Created on 23 may 2014
-
-@author: Ronald Portier, Therp
-
-rportier@therp.nl
-http://www.therp.nl
-
-For the model defined here _auto is set to False to prevent creating a
-database file. All i/o operations are overridden to use a sql SELECT that
-takes data from res_partner_connection_type where each type is included in the
-result set twice, so it appears that the connection type and the inverse
-type are separate records..
-
-The original function _auto_init is still called because this function
-normally (if _auto == True) not only creates the db tables, but it also takes
-care of registering all fields in ir_model_fields. This is needed to make
-the field labels translatable.
-
-example content for last lines of _statement:
-select id, record_type,
-  customer_id, customer_name, customer_city, customer_zip, customer_street,
-  caller_id, caller_name, caller_phone, caller_fax, caller_email
-from FULL_LIST as ResPartnerRelationTypeSelection where record_type = 'c'
-ORDER BY ResPartnerRelationTypeSelection.customer_name asc,
-ResPartnerRelationTypeSelection.caller_name asc;
-
-'''
+# © 2014-2017 Therp BV <http://therp.nl>.
+# License AGPL-3.0 or later <http://www.gnu.org/licenses/agpl.html>.
 from openerp.osv import fields
 from openerp.osv import orm
 from openerp.tools import drop_view_if_exists
-from openerp.addons.partner_relations.model.res_partner_relation_type\
-    import ResPartnerRelationType
+from .res_partner_relation_type import ResPartnerRelationType
+
+
+_RECORD_TYPES = [
+    ('a', 'Type'),
+    ('b', 'Inverse type'),
+]
 
 
 class ResPartnerRelationTypeSelection(orm.Model):
-    '''Virtual relation types'''
+    """Virtual relation types.
 
-    _RECORD_TYPES = [
-        ('a', 'Type'),
-        ('b', 'Inverse type'),
-    ]
+    For the model defined here _auto is set to False to prevent creating a
+    database file. All i/o operations are overridden to use a sql SELECT that
+    takes data from res_partner_connection_type where each type is included
+    in the result set twice, so it appears that the connection type and
+    the inverse type are separate records..
 
+    The original function _auto_init is still called because this function
+    normally (if _auto == True) not only creates the db tables, but it also
+    takes care of registering all fields in ir_model_fields. This is needed
+    to make the field labels translatable.
+
+    example content for last lines of _statement:
+    select id, record_type,
+    customer_id, customer_name, customer_city, customer_zip, customer_street,
+    caller_id, caller_name, caller_phone, caller_fax, caller_email
+    from FULL_LIST as ResPartnerRelationTypeSelection where record_type = 'c'
+    ORDER BY ResPartnerRelationTypeSelection.customer_name asc,
+    ResPartnerRelationTypeSelection.caller_name asc;
+    """
     _auto = False  # Do not try to create table in _auto_init(..)
     _log_access = False
 
     def get_type_from_selection_id(self, cr, uid, selection_id):
-        '''Selection id ic computed from id of underlying type and the
+        """Selection id ic computed from id of underlying type and the
         kind of record. This function does the inverse computation to give
-        back the original type id, and about the record type.'''
+        back the original type id, and about the record type."""
         type_id = selection_id / 10
         is_reverse = (selection_id % 10) > 0
         return (type_id, is_reverse)
 
     def _auto_init(self, cr, context=None):
+        """Create view instead of table."""
         drop_view_if_exists(cr, self._table)
         # TODO: we lose field value's translations here.
         # probably we need to patch ir_translation.get_source for that
         # to get res_partner_relation_type's translations
         cr.execute(
-            '''create or replace view %s as
+            """create or replace view %s as
             select
                 id * 10 as id,
                 id as type_id,
@@ -79,15 +73,18 @@ class ResPartnerRelationTypeSelection(orm.Model):
                 contact_type_left,
                 partner_category_right,
                 partner_category_left
-             from res_partner_relation_type''' % self._table)
-
+             from res_partner_relation_type
+            """,
+            params=(
+                self._table,
+            )
+        )
         return super(ResPartnerRelationTypeSelection, self)._auto_init(
             cr, context=context)
 
-    def _search_partner_category_this(self, cr, uid, obj, field_name, args,
-                                      context=None):
+    def _search_partner_category_this(
+            self, cr, uid, obj, field_name, args, context=None):
         category_ids = []
-
         for arg in args:
             if isinstance(arg, tuple) and arg[0] == field_name\
                     and (arg[1] == '=' or arg[1] == 'in'):
@@ -95,7 +92,6 @@ class ResPartnerRelationTypeSelection(orm.Model):
                 for delta in arg[2]:
                     if delta[0] == 6:
                         category_ids.extend(delta[2])
-
         if category_ids:
             return [
                 '|',
