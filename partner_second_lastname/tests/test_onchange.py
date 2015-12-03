@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 # © 2015 Grupo ESOC Ingeniería de Servicios, S.L.U.
+# © 2015 Antiun Ingenieria S.L. - Antonio Espinosa
+
 """These tests try to mimic the behavior of the UI form.
 
 The form operates in onchange mode, with its limitations.
@@ -11,6 +13,11 @@ from openerp.tests.common import TransactionCase
 
 class OnChangeCase(TransactionCase):
     is_company = False
+
+    def setUp(self):
+        super(OnChangeCase, self).setUp()
+        self.env['ir.config_parameter'].set_param(
+            'partner_names_order', 'last_first_comma')
 
     def new_partner(self):
         """Create an empty partner. Ensure it is (or not) a company."""
