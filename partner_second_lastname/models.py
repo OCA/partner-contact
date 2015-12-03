@@ -11,7 +11,7 @@ class ResPartner(models.Model):
 
     _inherit = "res.partner"
 
-    lastname2 = fields.Char("Second last name")
+    lastname2 = fields.Char("Second last name", oldname="lastname_second")
 
     @api.model
     def _get_computed_name(self, lastname, firstname, lastname2=None):
