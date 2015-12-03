@@ -1,6 +1,8 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 
+=======================
 Partner second lastname
 =======================
 
@@ -11,6 +13,26 @@ In some countries, it's important to have a second last name for contacts.
 
 Contact partners will need to fulfill at least one of the name fields
 (*First name*, *First last name* or *Second last name*).
+
+Configuration
+=============
+
+You can configure some common name patterns for the inverse function
+in Settings > Configuration > General settings:
+
+* Lastname SecondLastname Firstname: For example 'Anderson Lavarge Robert'
+* Lastname SecondLastname, Firstname: For example 'Anderson Lavarge, Robert'
+* Firstname Lastname SecondLastname: For example 'Robert Anderson Lavarge'
+
+After applying the changes, you can recalculate all partners name clicking
+"Recalculate names" button. Note: This process could take so much time depending
+how many partners there are in database.
+
+You can use *_get_inverse_name* method to get firstname, lastname and
+second lastname from a simple string and also *_get_computed_name* to get a
+name form the firstname, lastname and second lastname.
+These methods can be overridden to change the format specified above.
+
 
 Usage
 =====
@@ -24,11 +46,7 @@ To use this module, you need to:
 If you directly enter the full name instead of entering the other fields
 separately (maybe from other form), this module will try to guess the best
 match for your input and split it between firstname, lastname and second
-lastname.
-
-If the name you enter is in the form *Firstname Lastname1 Lastname2*, it will
-be split as such. If you use a comma, it will understand it as *Lastname1
-Lastname2, Firstname*.
+lastname using an inverse function.
 
 If you can, always enter it manually please. Automatic guessing could fail for
 you easily in some corner cases.
@@ -36,6 +54,15 @@ you easily in some corner cases.
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/134/8.0
+
+
+Known issues / Roadmap
+======================
+
+Patterns for the inverse function are configurable only at system level. Maybe
+this configuration could depend on partner language, country or company,
+as discussed at `this OCA issue <https://github.com/OCA/partner-contact/issues/210>`_
+
 
 Bug Tracker
 ===========
@@ -55,6 +82,8 @@ Contributors
 
 * `Grupo ESOC <http://grupoesoc.es>`_:
     * `Jairo Llopis <mailto:j.llopis@grupoesoc.es>`_.
+* `Antiun Ingeniería S.L. <http://www.antiun.com>`_:
+    * `Antonio Espinosa <mailto:antonioea@antiun.com>`_.
 
 Maintainer
 ----------
