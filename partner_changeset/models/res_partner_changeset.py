@@ -307,7 +307,7 @@ class ResPartnerChangesetChange(models.Model):
                      _new_value_fields)
 
     @api.one
-    @api.depends('changeset_id.partner_id.*')
+    #@api.depends('changeset_id.partner_id.*')
     def _compute_origin_values(self):
         field_name = self.get_field_for_type(self.field_id, 'origin')
         if self.state == 'draft':
