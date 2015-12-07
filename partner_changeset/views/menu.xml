@@ -4,7 +4,7 @@
       <menuitem id="menu_changeset"
         name="Partner Changesets"
         groups="group_changeset_user"
-        parent="base.menu_base_config"
+        parent="base.menu_sale_config"
         sequence="20"/>
     </data>
 </openerp>
