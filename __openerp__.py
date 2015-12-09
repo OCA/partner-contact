@@ -47,7 +47,7 @@
     ],
     # Your information
     'author': 'ChriCar Beteiligungs- und Beratungs- GmbH, '
-              'Antiun Ingeniería, SL',
+              'Antiun Ingeniería S.L.',
     'maintainer': 'ChriCar Beteiligungs- und Beratungs- GmbH, '
                   'Antiun Ingeniería S.L.',
     'website': 'http://www.camptocamp.at, '
