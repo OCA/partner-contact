@@ -421,7 +421,10 @@ class ResPartnerChangesetChange(models.Model):
     @api.model
     def _has_field_changed(self, record, field, value):
         field_def = record._fields[field]
-        return field_def.convert_to_write(record[field]) != value
+        current_value = field_def.convert_to_write(record[field])
+        if not (current_value or value):
+            return False
+        return current_value != value
 
     @api.multi
     def _convert_value_for_write(self, value):

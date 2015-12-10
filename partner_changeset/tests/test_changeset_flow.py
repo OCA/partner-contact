@@ -87,6 +87,18 @@ class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
             [(self.field_street, 'street X', False, 'draft')]
         )
 
+    def test_no_changeset_empty_value_both_sides(self):
+        """ No changeset created when both sides have an empty value """
+        # we have to ensure that even if we write '' to a False field, we won't
+        # write a changeset
+        self.partner.with_context(__no_changeset=True).write({
+            'street': False,
+        })
+        self.partner.write({
+            'street': '',
+        })
+        self.assertFalse(self.partner.changeset_ids)
+
     def test_apply_change(self):
         """ Apply a changeset change on a partner """
         changes = [

@@ -177,7 +177,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
         """ Add a new changeset on a Binary field is not supported """
         with self.assertRaises(NotImplementedError):
             self.partner.write({
-                self.field_binary.name: '',
+                self.field_binary.name: 'xyz',
             })
 
     def test_apply_char(self):
