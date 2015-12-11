@@ -31,7 +31,6 @@ class ResPartner(models.Model):
             # Complete country field based on country code
             self.country_id = self.env['res.country'].search(
                 [('code', 'ilike', vat_country)])[0].id
-            })
             from stdnum.eu.vat import check_vies
             result = check_vies(self.vat)
             # Check if partner is listed on Vies
