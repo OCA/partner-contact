@@ -12,20 +12,23 @@ class ResPartner(models.Model):
     name = fields.Char('Name', required=True, select=True, default=' ')
 
     @api.one
-    def button_get_partner_data(self):
+    def check_vat_name(self):
         # If the partner doesn't have the vat field completed, check if the
         # name field is a valid vat number.
         if not self.vat:
             if self.name and self.name != " ":
-                try:
-                    name = self.name.strip()
-                    vat_country, vat_number = self._split_vat(name)
-                    if self.vies_vat_check(vat_country, vat_number):
-                        self.vat = name.upper()
-                except:
+                self.name = self.name.strip()
+                vat_country, vat_number = self._split_vat(self.name)
+                if self.vies_vat_check(vat_country, vat_number):
+                    self.vat = self.name.upper()
+                else:
                     raise except_orm(_('Error!'),
-                                     _("No valid VAT number found"))
+                                     _("The partner is not listed on Vies "
+                                       "Webservice."))
 
+    @api.one
+    def button_get_partner_data(self):
+        self.check_vat_name()
         vat_country, vat_number = self._split_vat(self.vat)
         if vat_number and vat_country:
             # Complete country field based on country code
