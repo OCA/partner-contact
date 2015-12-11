@@ -19,12 +19,11 @@ class ResPartner(models.Model):
             if self.name and self.name != " ":
                 self.name = self.name.strip()
                 vat_country, vat_number = self._split_vat(self.name)
-                if self.vies_vat_check(vat_country, vat_number):
+                if self.simple_vat_check(vat_country, vat_number):
                     self.vat = self.name.upper()
                 else:
                     raise except_orm(_('Error!'),
-                                     _("The partner is not listed on Vies "
-                                       "Webservice."))
+                                     _("VAT number invalid."))
 
     @api.one
     def button_get_partner_data(self):
