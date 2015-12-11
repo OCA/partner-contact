@@ -31,8 +31,7 @@ Pushing the button will fetch datas from the VIES Webservice, for most of
 the countries from EU, the datas are available, only Germany and UK
 doesn't provide all the datas.
 
-* Note: When creating a new partner, you can put the VAT number in the name field
-and the method will get it from there.
+* Note: When creating a new partner, you can put the VAT number in the name field and the method will get it from there.
       
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
