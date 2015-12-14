@@ -32,7 +32,8 @@ class Industry(orm.Model):
 
     _columns = {
         'code': fields.char('Code', size=16),
-        'parent_id': fields.many2one(_name,
+        'parent_id': fields.many2one(
+            _name,
             'Parent %s' % _description, select=True, ondelete='cascade'),
         'partner_ids': fields.many2many(
             'res.partner',
