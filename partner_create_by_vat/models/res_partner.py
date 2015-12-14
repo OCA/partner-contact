@@ -33,7 +33,7 @@ class ResPartner(models.Model):
     @api.one
     def button_get_partner_data(self):
         if not self.vat:
-            self.check_vat_name()        
+            self.check_vat_name()
         vat_country, vat_number = self._split_vat(self.vat)
         # Complete country field based on country code
         self.country_id = self.env['res.country'].search(
