@@ -28,8 +28,7 @@ Usage
 On the partner form view you will have a button in the header, called
 "Get Partner Data", available only on companies (is_company field set to True).
 Pushing the button will fetch datas from the VIES Webservice, for most of
-the countries from EU, the datas are available, only Germany and UK
-doesn't provide all the datas.
+the countries from EU, the datas are available.
 
 * Note: When creating a new partner, you can put the VAT number in the name field and the method will get it from there.
       
