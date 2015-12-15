@@ -29,7 +29,7 @@ class TestPartnerCreatebyVAT(TransactionCase):
 
     def test_create_from_vat(self):
         # Create an partner with VAT number in name field
-        self.partner2_id = self.partner_model.create({'name': ' ',
+        self.partner2_id = self.partner_model.create({'name': '1',
                                                       'vat': 'be0477472701'})
 
         # Push the button to fetch partner's data
