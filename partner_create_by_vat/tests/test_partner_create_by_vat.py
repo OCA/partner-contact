@@ -12,7 +12,8 @@ class TestPartnerCreatebyVAT(TransactionCase):
 
     def test_create_from_name(self):
         # Create an partner with VAT number in name field
-        self.partner1_id = self.partner_model.create({'name': 'BE0477472701'})
+        self.partner1_id = self.partner_model.create({'name': 'BE0477472701',
+                                                      'is_company': True})
 
         # Push the button to fetch partner's data
         self.partner1_id.button_get_partner_data()
@@ -30,7 +31,8 @@ class TestPartnerCreatebyVAT(TransactionCase):
     def test_create_from_vat(self):
         # Create an partner with VAT number in name field
         self.partner2_id = self.partner_model.create({'name': '1',
-                                                      'vat': 'be0477472701'})
+                                                      'vat': 'be0477472701'
+                                                      'is_company': True})
 
         # Push the button to fetch partner's data
         self.partner2_id.button_get_partner_data()
