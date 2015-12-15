@@ -34,6 +34,8 @@ class ResPartner(models.Model):
     def button_get_partner_data(self):
         if not self.vat:
             self.check_vat_name()
+        else:
+            self.vat = self.vat.strip().upper()
         vat_country, vat_number = self._split_vat(self.vat)
         # Complete country field based on country code
         self.country_id = self.env['res.country'].search(
@@ -46,7 +48,7 @@ class ResPartner(models.Model):
             if result.name != '---':
                 new_name = result.name.upper()
                 if result.address != '---':
-                    new_address = result.address.title()
+                    new_address = result.address.replace('\n', ' ').replace('\r', '').title()
                 self.write({
                     'name': new_name,
                     'street': new_address,
