@@ -38,7 +38,6 @@ class res_partner(orm.Model):
         res.append('street3')
         return res
 
-
     def _commercial_fields(self, cr, uid, context=None):
         fields = super(res_partner, self
                        )._commercial_fields(cr, uid, context=context)
@@ -56,5 +55,3 @@ class res_country(orm.Model):
                            "%(city)s %(state_code)s %(zip)s\n"
                            "%(country_name)s"),
     }
-
-
