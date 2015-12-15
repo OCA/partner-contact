@@ -48,7 +48,8 @@ class ResPartner(models.Model):
             if result.name != '---':
                 new_name = result.name.upper()
                 if result.address != '---':
-                    new_address = result.address.replace('\n', ' ').replace('\r', '').title()
+                    new_address = result.address.replace(
+                        '\n', ' ').replace('\r', '').title()
                 self.write({
                     'name': new_name,
                     'street': new_address,
