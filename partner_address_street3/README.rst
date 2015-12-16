@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-=======================
-partner address street3
-=======================
+===========================
+3rd line on partner address
+===========================
 
 This module extends the base res.partner model by supplying a 3rd line on
 addresses (`street3`)
@@ -39,8 +39,7 @@ Images
 Contributors
 ------------
 
-* Firstname Lastname <email.address@example.org>
-* Second Person <second.person@example.org>
+* Nicolas Bessi <nicolas.bessi@camptocamp.com>
 
 Maintainer
 ----------
