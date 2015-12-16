@@ -26,7 +26,6 @@
     'category': 'Sales',
     'complexity': 'easy',
     'depends': ['base'],
-    'description': """Add a third field to the address""",
     'website': 'http://www.camptocamp.com',
     'data': ['view/partner_view.xml'],
     'demo': [],
