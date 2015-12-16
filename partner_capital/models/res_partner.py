@@ -1,7 +1,9 @@
-# -*- encoding: utf-8 -*-
-##############################################################################
-# For copyright and license notices, see __openerp__.py file in root directory
-##############################################################################
+# -*- coding: utf-8 -*-
+#    Copyright (c) 2015 Antiun Ingeniería S.L. (http://www.antiun.com)
+#                       Antonio Espinosa <antonioea@antiun.com>
+# © 2015 Antiun Ingeniería S.L. - Jairo Llopis
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
 from openerp import models, fields
 
 
@@ -9,11 +11,16 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     capital_country = fields.Many2one(
-        'res.country', string="Capital country",
-        help="Country of origin of the capital of this company")
-    capital_registered = fields.Integer(string="Capital registered")
-    turnover_range = fields.Many2one(comodel_name='crm.turnover_range')
-    turnover_number = fields.Integer()
+        'res.country',
+        "Capital country",
+        help="Country of origin of this company's capital.")
+    capital_amount = fields.Float(
+        "Capital amount",
+        help="Publicly registered capital amount.")
+    turnover_range_id = fields.Many2one(
+        'res.partner.turnover_range',
+        "Turnover range")
+    turnover_amount = fields.Float()
     company_size = fields.Selection(
         string="Company size",
         selection=[('micro', 'Micro'), ('small', 'Small'),
