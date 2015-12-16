@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Author: Nicolas Bessi
-#    Copyright 2014 Camptocamp SA
+#    Copyright 2014-2015 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,31 +18,31 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv import orm, fields
+from openerp import models, fields, api
 
 
-class res_partner(orm.Model):
+class ResPartner(models.Model):
     """Add third field in address"""
 
     _inherit = "res.partner"
-    _columns = {
-        'street3': fields.char('Street 3'),
-    }
+    street3 = fields.Char('Street 3')
 
-    def _address_fields(self, cr, uid, context=None):
-        fields = super(res_partner, self
-                       )._address_fields(cr, uid, context=context)
+    @api.model
+    def _address_fields(self):
+        fields = super(ResPartner, self)._address_fields()
         fields.append('street3')
         return fields
 
 
-class res_country(orm.Model):
-    """Override default adresses formatting of coutries"""
+class res_country(models.Model):
+    """Override default adresses formatting of countries"""
 
     _inherit = 'res.country'
 
-    _defaults = {
-        'address_format': ("%(street)s\n%(street2)s\n%(street3)s\n"
-                           "%(city)s %(state_code)s %(zip)s\n"
-                           "%(country_name)s"),
-    }
+    address_format = fields.Text(
+        default=(
+            "%(street)s\n%(street2)s\n%(street3)s\n"
+            "%(city)s %(state_code)s %(zip)s\n"
+            "%(country_name)s"
+        )
+    )
