@@ -1,0 +1,138 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_capital
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-19 01:46+0000\n"
+"PO-Revision-Date: 2015-12-22 17:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Finnish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/fi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_capital
+#: selection:res.partner,company_size:0
+msgid "Big"
+msgstr ""
+
+#. module: partner_capital
+#: view:res.partner:partner_capital.view_partner_form_capital
+msgid "Capital"
+msgstr ""
+
+#. module: partner_capital
+#: field:res.partner,capital_amount:0
+msgid "Capital amount"
+msgstr ""
+
+#. module: partner_capital
+#: view:res.partner:partner_capital.view_res_partner_filter_capital
+#: field:res.partner,capital_country_id:0
+msgid "Capital country"
+msgstr ""
+
+#. module: partner_capital
+#: field:res.partner,capital_currency_id:0
+msgid "Capital currency"
+msgstr ""
+
+#. module: partner_capital
+#: view:res.partner:partner_capital.view_res_partner_filter_capital
+#: field:res.partner,company_size:0
+msgid "Company size"
+msgstr ""
+
+#. module: partner_capital
+#: help:res.partner,capital_country_id:0
+msgid "Country of origin of this company's capital."
+msgstr ""
+
+#. module: partner_capital
+#: field:res.partner.turnover_range,create_uid:0
+msgid "Created by"
+msgstr "Luonut"
+
+#. module: partner_capital
+#: field:res.partner.turnover_range,create_date:0
+msgid "Created on"
+msgstr "Luotu"
+
+#. module: partner_capital
+#: field:res.partner.turnover_range,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_capital
+#: field:res.partner.turnover_range,write_uid:0
+msgid "Last Updated by"
+msgstr "Viimeksi päivitetty"
+
+#. module: partner_capital
+#: field:res.partner.turnover_range,write_date:0
+msgid "Last Updated on"
+msgstr "Viimeksi päivittänyt"
+
+#. module: partner_capital
+#: selection:res.partner,company_size:0
+msgid "Medium"
+msgstr ""
+
+#. module: partner_capital
+#: selection:res.partner,company_size:0
+msgid "Micro"
+msgstr ""
+
+#. module: partner_capital
+#: field:res.partner.turnover_range,name:0
+msgid "Name"
+msgstr "Nimi"
+
+#. module: partner_capital
+#: model:ir.model,name:partner_capital.model_res_partner
+msgid "Partner"
+msgstr "Kumppani"
+
+#. module: partner_capital
+#: help:res.partner,capital_amount:0
+msgid "Publicly registered capital amount."
+msgstr ""
+
+#. module: partner_capital
+#: view:res.partner:partner_capital.view_res_partner_filter_capital
+msgid "Salesperson"
+msgstr "Myyjä"
+
+#. module: partner_capital
+#: selection:res.partner,company_size:0
+msgid "Small"
+msgstr ""
+
+#. module: partner_capital
+#: view:res.partner:partner_capital.view_res_partner_filter_capital
+msgid "Turnover"
+msgstr ""
+
+#. module: partner_capital
+#: field:res.partner,turnover_amount:0
+msgid "Turnover amount"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model,name:partner_capital.model_res_partner_turnover_range
+#: field:res.partner,turnover_range_id:0
+msgid "Turnover range"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.actions.act_window,name:partner_capital.res_partner_turnover_range_action
+#: model:ir.ui.menu,name:partner_capital.menu_res_partner_turnover_range
+#: view:res.partner.turnover_range:partner_capital.res_partner_turnover_range_tree_view
+msgid "Turnover ranges"
+msgstr ""
