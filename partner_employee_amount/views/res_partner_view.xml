@@ -7,13 +7,14 @@
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="base.view_partner_form"/>
     <field name="arch" type="xml">
-        <field name="phone" position="before">
-            <field name="employees_range" placeholder="Employees range"
-                   attrs="{'invisible': [('is_company', '=', False)]}"
-                   options='{"no_open": True}'/>
-            <field name="employees_number"
-                   attrs="{'invisible': [('is_company', '=', False)]}"/>
-        </field>
+        <xpath expr="//page[@name='sales_purchases']/group">
+            <group name="employee_amount"
+                   string="Employee amount"
+                   attrs="{'invisible': [('is_company', '=', False)]}">
+                <field name="employee_amount"/>
+                <field name="employee_amount_range_id"/>
+            </group>
+        </xpath>
     </field>
 </record>
 
@@ -23,9 +24,9 @@
     <field name="inherit_id" ref="base.view_res_partner_filter"/>
     <field name="arch" type="xml">
         <filter string="Salesperson" position="after">
-            <filter string="Emplooyees"
+            <filter string="Employees"
                     domain="[('is_company','=', True)]"
-                    context="{'group_by': 'employees_range'}"/>
+                    context="{'group_by': 'employee_amount_range_id'}"/>
         </filter>
     </field>
 </record>
