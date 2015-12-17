@@ -2,12 +2,12 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-===============
+================
 Partners Capital
-===============
+================
 
-This module extends the functionality of partners to support setting capital
-country, registered capital amount and turnover.
+This module extends the functionality of partners to support setting the
+country of origin of capital, registered capital amount and turnover.
 
 By capital country we mean country of origin of the capital of the company.
 

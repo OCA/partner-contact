@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-#    Copyright (c) 2015 Antiun Ingeniería S.L. (http://www.antiun.com)
-#                       Antonio Espinosa <antonioea@antiun.com>
+# © 2015 Antiun Ingeniería S.L. - Antonio Espinosa
 # © 2015 Antiun Ingeniería S.L. - Jairo Llopis
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -16,11 +15,14 @@ class ResPartner(models.Model):
         help="Country of origin of this company's capital.")
     capital_amount = fields.Float(
         "Capital amount",
+        oldname="capital_amount",
         help="Publicly registered capital amount.")
     turnover_range_id = fields.Many2one(
         'res.partner.turnover_range',
-        "Turnover range")
-    turnover_amount = fields.Float()
+        "Turnover range",
+        oldname="turnover_range")
+    turnover_amount = fields.Float(
+        oldname="turnover_number")
     company_size = fields.Selection(
         string="Company size",
         selection=[('micro', 'Micro'), ('small', 'Small'),
