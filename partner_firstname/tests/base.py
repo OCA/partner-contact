@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests.common import TransactionCase
-from .. import exceptions as ex
+from ..models import exceptions as ex
 
 
 class MailInstalled():
