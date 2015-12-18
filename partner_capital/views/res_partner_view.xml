@@ -11,18 +11,16 @@
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="base.view_partner_form"/>
     <field name="arch" type="xml">
-        <xpath expr="//page[@name='sales_purchases']" position="inside">
-            <group name="captial" string="Capital">
-                <field name="capital_country"
-                       attrs="{'invisible': [('is_company', '=', False)]}"/>
-                <field name="capital_amount"
-                       attrs="{'invisible': [('is_company', '=', False)]}"/>
-                <field name="turnover_range_id"
-                       attrs="{'invisible': [('is_company', '=', False)]}"/>
-                <field name="turnover_amount"
-                       attrs="{'invisible': [('is_company', '=', False)]}"/>
-                <field name="company_size"
-                       attrs="{'invisible': [('is_company', '=', False)]}"/>
+        <xpath expr="//page[@name='sales_purchases']/group">
+            <group name="captial"
+                   string="Capital"
+                   attrs="{'invisible': [('is_company', '=', False)]}">
+                <field name="capital_country_id"/>
+                <field name="capital_amount"/>
+                <field name="capital_currency_id"/>
+                <field name="turnover_range_id"/>
+                <field name="turnover_amount"/>
+                <field name="company_size"/>
             </group>
         </xpath>
     </field>

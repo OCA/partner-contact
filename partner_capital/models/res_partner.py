@@ -9,14 +9,18 @@ from openerp import models, fields
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    capital_country = fields.Many2one(
+    capital_country_id = fields.Many2one(
         'res.country',
         "Capital country",
+        oldname="capital_country",
         help="Country of origin of this company's capital.")
     capital_amount = fields.Float(
         "Capital amount",
         oldname="capital_amount",
         help="Publicly registered capital amount.")
+    capital_currency_id = fields.Many2one(
+        "res.currency",
+        string="Capital currency")
     turnover_range_id = fields.Many2one(
         'res.partner.turnover_range',
         "Turnover range",
