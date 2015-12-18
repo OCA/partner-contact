@@ -8,7 +8,7 @@ To have more accurate results, remove the ``mail`` module before testing.
 """
 from odoo.tests.common import TransactionCase
 from .base import MailInstalled
-from .. import exceptions as ex
+from ..models import exceptions as ex
 
 
 class CompanyCase(TransactionCase):

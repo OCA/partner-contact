@@ -7,17 +7,19 @@
 {
     'name': 'Partner first name and last name',
     'summary': "Split first name and last name for non company partners",
-    'version': '10.0.1.0.0',
+    'version': '10.0.2.0.0',
     'author': "Camptocamp, "
               "Grupo ESOC Ingeniería de Servicios, "
               "Odoo Community Association (OCA)",
     'license': "AGPL-3",
     'maintainer': 'Camptocamp, Acsone',
     'category': 'Extra Tools',
-    'website':
-        'http://www.camptocamp.com, http://www.acsone.eu, http://grupoesoc.es',
-    'depends': ['base'],
+    'website': 'http://www.camptocamp.com, '
+               'http://www.acsone.eu, '
+               'http://grupoesoc.es',
+    'depends': ['base_setup'],
     'data': [
+        'views/base_config_view.xml',
         'views/res_partner.xml',
         'views/res_user.xml',
         'data/res_partner.yml',
