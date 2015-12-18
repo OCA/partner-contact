@@ -3,6 +3,7 @@
 # © 2014 Agile Business Group (<http://www.agilebg.com>)
 # © 2015 Grupo ESOC (<http://www.grupoesoc.es>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
 import logging
 from odoo import api, fields, models
 from .. import exceptions
@@ -74,11 +75,29 @@ class ResPartner(models.Model):
         return result
 
     @api.model
+    def _names_order_default(self):
+        return 'last_first'
+
+    @api.model
+    def _get_names_order(self):
+        """Get names order configuration from system parameters.
+        You can override this method to read configuration from language,
+        country, company or other"""
+        return self.env['ir.config_parameter'].get_param(
+            'partner_names_order', self._names_order_default())
+
+    @api.model
     def _get_computed_name(self, lastname, firstname):
         """Compute the 'name' field according to splitted data.
         You can override this method to change the order of lastname and
         firstname the computed name"""
-        return u" ".join((p for p in (lastname, firstname) if p))
+        order = self._get_names_order()
+        if order == 'last_first_comma':
+            return u", ".join((p for p in (lastname, firstname) if p))
+        elif order == 'first_last':
+            return u" ".join((p for p in (firstname, lastname) if p))
+        else:
+            return u" ".join((p for p in (lastname, firstname) if p))
 
     @api.one
     @api.depends("firstname", "lastname")
@@ -105,12 +124,17 @@ class ResPartner(models.Model):
             self._inverse_name()
 
     @api.model
-    def _get_whitespace_cleaned_name(self, name):
+    def _get_whitespace_cleaned_name(self, name, comma=False):
         """Remove redundant whitespace from :param:`name`.
 
         Removes leading, trailing and duplicated whitespace.
         """
-        return u" ".join(name.split(None)) if name else name
+        if name:
+            name = u" ".join(name.split(None))
+            if comma:
+                name = name.replace(" ,", ",")
+                name = name.replace(", ", ",")
+        return name
 
     @api.model
     def _get_inverse_name(self, name, is_company=False):
@@ -131,9 +155,19 @@ class ResPartner(models.Model):
             parts = [name or False, False]
         # Guess name splitting
         else:
-            parts = name.strip().split(" ", 1)
-            while len(parts) < 2:
-                parts.append(False)
+            order = self._get_names_order()
+            # Remove redundant spaces
+            name = self._get_whitespace_cleaned_name(
+                name, comma=(order == 'last_first_comma'))
+            parts = name.split("," if order == 'last_first_comma' else " ", 1)
+            if len(parts) > 1:
+                if order == 'first_last':
+                    parts = [u" ".join(parts[1:]), parts[0]]
+                else:
+                    parts = [parts[0], u" ".join(parts[1:])]
+            else:
+                while len(parts) < 2:
+                    parts.append(False)
         return {"lastname": parts[0], "firstname": parts[1]}
 
     @api.one
