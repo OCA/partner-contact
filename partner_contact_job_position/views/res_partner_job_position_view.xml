@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record id="res_partner_job_position_action" model="ir.actions.act_window">
+    <field name="name">Job Positions</field>
+    <field name="res_model">res.partner.job_position</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree</field>
+</record>
+
+<record id="res_partner_job_position_tree_view" model="ir.ui.view">
+    <field name="name">Job position tree</field>
+    <field name="model">res.partner.job_position</field>
+    <field name="arch" type="xml">
+        <tree string="Job positions" editable="top">
+            <field name="name"/>
+            <field name="parent_id"/>
+        </tree>
+    </field>
+</record>
+
+<record id="res_partner_job_position_form_view" model="ir.ui.view">
+    <field name="name">Job position form</field>
+    <field name="model">res.partner.job_position</field>
+    <field name="arch" type="xml">
+        <form string="Job positions">
+            <group>
+                <field name="name"/>
+                <field name="parent_id"/>
+                <field name="child_ids"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+<menuitem action="res_partner_job_position_action"
+          id="menu_res_partner_job_position"
+          parent="base.menu_config_address_book"/>
+
+</data>
+</openerp>
