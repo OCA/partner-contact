@@ -35,5 +35,6 @@ from . import (
     test_defaults,
     test_empty,
     test_name,
-    test_onchange
+    test_onchange,
+    test_order,
 )

@@ -5,7 +5,7 @@
 {
     "name": "Partner second last name",
     "summary": "Have split first and second lastnames",
-    "version": "8.0.4.0.0",
+    "version": "8.0.4.1.0",
     "license": "AGPL-3",
     "website": "https://grupoesoc.es",
     "author": "Grupo ESOC Ingeniería de Servicios, "
@@ -20,4 +20,5 @@
         "views/res_user.xml",
     ],
     "installable": True,
+    'images': [],
 }
