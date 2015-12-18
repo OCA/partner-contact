@@ -9,5 +9,6 @@ from . import (
     test_empty,
     test_name,
     test_onchange,
-    test_user_onchange
+    test_user_onchange,
+    test_order,
 )
