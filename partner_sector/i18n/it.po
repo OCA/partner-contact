@@ -3,40 +3,35 @@
 # * partner_sector
 # 
 # Translators:
-# Oihane Crucelaegui <oihanecruce@gmail.com>, 2016
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-25 11:58+0000\n"
-"PO-Revision-Date: 2016-07-14 09:04+0000\n"
-"Last-Translator: Oihane Crucelaegui <oihanecruce@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
+"POT-Creation-Date: 2016-03-13 00:57+0000\n"
+"PO-Revision-Date: 2016-03-13 17:22+0000\n"
+"Last-Translator: Paolo Valier\n"
+"Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
+"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_sector
 #: field:res.partner.sector,child_ids:0
 msgid "Children"
-msgstr "Hijos"
+msgstr "Figlio"
 
 #. module: partner_sector
 #: field:res.partner.sector,create_uid:0
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Creato da"
 
 #. module: partner_sector
 #: field:res.partner.sector,create_date:0
 msgid "Created on"
-msgstr "Creado en"
-
-#. module: partner_sector
-#: field:res.partner.sector,display_name:0
-msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr "Creato il"
 
 #. module: partner_sector
 #: field:res.partner.sector,id:0
@@ -44,76 +39,71 @@ msgid "ID"
 msgstr "ID"
 
 #. module: partner_sector
-#: field:res.partner.sector,__last_update:0
-msgid "Last Modified on"
-msgstr "Última modificación el"
-
-#. module: partner_sector
 #: field:res.partner.sector,write_uid:0
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Ultimo aggiornamento di"
 
 #. module: partner_sector
 #: field:res.partner.sector,write_date:0
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "Ultimo aggiornamento il"
 
 #. module: partner_sector
 #: field:res.partner,sector_id:0
 msgid "Main Sector"
-msgstr "Sector principal"
+msgstr ""
 
 #. module: partner_sector
 #: field:res.partner.sector,name:0
 msgid "Name"
-msgstr "Nombre"
+msgstr "Nome"
 
 #. module: partner_sector
 #: field:res.partner.sector,parent_left:0
 msgid "Parent Left"
-msgstr "Padre izquierdo"
+msgstr ""
 
 #. module: partner_sector
 #: field:res.partner.sector,parent_right:0
 msgid "Parent Right"
-msgstr "Padre derecho"
+msgstr ""
 
 #. module: partner_sector
 #: field:res.partner.sector,parent_id:0
 msgid "Parent id"
-msgstr "ID del padre"
+msgstr ""
 
 #. module: partner_sector
 #: model:ir.model,name:partner_sector.model_res_partner
 msgid "Partner"
-msgstr "Empresa"
+msgstr "Partner"
 
 #. module: partner_sector
 #: view:res.partner:partner_sector.view_res_partner_filter_sector
 msgid "Salesperson"
-msgstr "Comercial"
+msgstr ""
 
 #. module: partner_sector
 #: field:res.partner,secondary_sector_ids:0
 msgid "Secondary Sectors"
-msgstr "Sectores secundarios"
+msgstr ""
 
 #. module: partner_sector
 #: model:ir.model,name:partner_sector.model_res_partner_sector
 #: view:res.partner:partner_sector.view_partner_form_sector
 #: view:res.partner:partner_sector.view_res_partner_filter_sector
 msgid "Sector"
-msgstr "Sector"
+msgstr ""
 
 #. module: partner_sector
 #: model:ir.actions.act_window,name:partner_sector.res_partner_sector_action
 #: model:ir.ui.menu,name:partner_sector.menu_res_partner_sector
 #: view:res.partner.sector:partner_sector.res_partner_sector_tree_view
 msgid "Sectors"
-msgstr "Sectores"
+msgstr ""
 
 #. module: partner_sector
 #: code:addons/partner_sector/models/res_partner.py:21
 #, python-format
 msgid "The main sector must be different from the secondary sectors."
-msgstr "El sector principal debe ser diferente a los sectores secundarios."
+msgstr ""
