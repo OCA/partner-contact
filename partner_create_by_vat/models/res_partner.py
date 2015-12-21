@@ -9,15 +9,11 @@ from openerp.exceptions import except_orm
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    name = fields.Char('Name', required=True, select=True, default=' ')
-
     @api.one
     def check_vat_name(self):
         # If the partner doesn't have the vat field completed, check if the
         # name field is a valid vat number.
-        if self.vat:
-            return
-        elif self.name:
+        if self.name:
             self.name = self.name.strip().upper()
             try:
                 from stdnum.eu.vat import validate

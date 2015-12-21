@@ -6,6 +6,7 @@ from openerp.tests.common import TransactionCase
 
 
 class TestPartnerCreatebyVAT(TransactionCase):
+    
     def setUp(self):
         super(TestPartnerCreatebyVAT, self).setUp()
         self.partner_model = self.env['res.partner']
