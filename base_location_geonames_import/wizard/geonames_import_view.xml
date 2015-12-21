@@ -12,6 +12,9 @@
                         <label string="For the country selected above, this wizard will download the latest version of the list of cities from geonames.org, create new location entries if not found already in the system, and DELETE MISSING ENTRIES from new file."
                             colspan="2" name="import-help"/>
                     </group>
+                    <group name="options">
+                        <field name="title_case"/>
+                    </group>
                     <footer>
                         <button name="run_import" type="object"
                             class="oe_highlight" string="Import"/>
