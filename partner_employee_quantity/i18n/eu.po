@@ -1,0 +1,102 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_employee_quantity
+# 
+# Translators:
+# Esther Martín Menéndez <esthermartin001@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-21 16:57+0000\n"
+"PO-Revision-Date: 2017-02-23 15:56+0000\n"
+"Last-Translator: Esther Martín Menéndez <esthermartin001@gmail.com>\n"
+"Language-Team: Basque (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/eu/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: eu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,display_name:0
+msgid "Display Name"
+msgstr "Izena erakutsi"
+
+#. module: partner_employee_quantity
+#: view:res.partner:partner_employee_quantity.view_res_partner_filter_employees
+msgid "Employee Quantity"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: view:res.partner:partner_employee_quantity.view_partner_form_employees
+#: field:res.partner,employee_quantity:0
+msgid "Employee quantity"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: field:res.partner,employee_quantity_range_id:0
+msgid "Employee quantity range"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,name:0
+msgid "Name"
+msgstr "Izena"
+
+#. module: partner_employee_quantity
+#: model:ir.model,name:partner_employee_quantity.model_res_partner
+msgid "Partner"
+msgstr "Kidea"
+
+#. module: partner_employee_quantity
+#: model:ir.model,name:partner_employee_quantity.model_res_partner_employee_quantity_range
+msgid "Partner employee quantity range"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: help:res.partner,employee_quantity_range_id:0
+msgid "Range of this partner depending on the employee quantity."
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model:ir.actions.act_window,name:partner_employee_quantity.employees_range_action
+#: model:ir.ui.menu,name:partner_employee_quantity.menu_employees_range
+#: view:res.partner.employee_quantity_range:partner_employee_quantity.employees_range_tree_view
+msgid "Ranges by quantity of employees"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: view:res.partner:partner_employee_quantity.view_res_partner_filter_employees
+msgid "Salesperson"
+msgstr ""
