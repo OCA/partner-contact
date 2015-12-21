@@ -15,11 +15,11 @@
             <group name="captial"
                    string="Capital"
                    attrs="{'invisible': [('is_company', '=', False)]}">
-                <field name="capital_country_id"/>
                 <field name="capital_amount"/>
                 <field name="capital_currency_id"/>
-                <field name="turnover_range_id"/>
+                <field name="capital_country_id"/>
                 <field name="turnover_amount"/>
+                <field name="turnover_range_id"/>
                 <field name="company_size"/>
             </group>
         </xpath>
