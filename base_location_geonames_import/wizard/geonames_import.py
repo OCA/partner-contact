@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Base Location Geonames Import module for OpenERP
@@ -45,6 +45,10 @@ class BetterZipGeonamesImport(models.TransientModel):
     _rec_name = 'country_id'
 
     country_id = fields.Many2one('res.country', 'Country', required=True)
+    title_case = fields.Boolean(
+        string='Title Case',
+        help='Converts retreived city and state names to Title Case.',
+    )
 
     @api.model
     def transform_city_name(self, city, country):
@@ -80,6 +84,9 @@ class BetterZipGeonamesImport(models.TransientModel):
                     "correspond to the selected country (%s).")
                 % (row[0], country.code))
         logger.debug('ZIP = %s - City = %s' % (row[1], row[2]))
+        if (self.title_case):
+            row[2] = row[2].title()
+            row[3] = row[3].title()
         if row[1] and row[2]:
             zip_model = self.env['res.better.zip']
             zips = zip_model.search(self._domain_search_better_zip(
