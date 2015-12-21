@@ -1,42 +1,29 @@
-# -*- encoding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Odoo Source Management Solution
+# -*- coding: utf-8 -*-
 #    Copyright (c) 2014 Serv. Tecnol. Avanzados (http://www.serviciosbaeza.com)
 #                       Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
 #    Copyright (c) 2015 Antiun Ingeniería S.L. (http://www.antiun.com)
 #                       Antonio Espinosa <antonioea@antiun.com>
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published
-#    by the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# © 2015 Antiun Ingeniería S.L. - Jairo Llopis
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'Department field in CRM contact',
-    'version': '1.0',
+    'name': 'Contact department',
+    "summary": "Assign contacts to departments",
+    'version': '8.0.1.0.0',
     'category': 'Customer Relationship Management',
     'author': 'Serv. Tecnol. Avanzados - Pedro M. Baeza, '
-              'Antiun Ingeniería S.L.',
-    'website': 'http://www.serviciosbaeza.com, http://www.antiun.com',
+              'Antiun Ingeniería S.L., '
+              "Odoo Community Association (OCA)",
+    "license": "AGPL-3",
+    'website': 'http://www.antiun.com',
+    "application": False,
     'depends': [
-        'crm',
+        'base',
     ],
     'data': [
-        'views/crm_department_view.xml',
-        'views/crm_lead_view.xml',
-        'views/res_partner_view.xml',
         'security/ir.model.access.csv',
+        'views/res_partner_department_view.xml',
+        'views/res_partner_view.xml',
     ],
     "installable": True,
 }
