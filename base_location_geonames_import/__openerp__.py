@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Base Location Geonames Import module for OpenERP
@@ -25,7 +25,7 @@
 
 {
     'name': 'Base Location Geonames Import',
-    'version': '8.0.0.2.0',
+    'version': '8.0.0.3.0',
     'category': 'Extra Tools',
     'license': 'AGPL-3',
     'summary': 'Import better zip entries from Geonames',
