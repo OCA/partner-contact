@@ -16,7 +16,7 @@ class ResPartner(models.Model):
         help="Country of origin of this company's capital.")
     capital_amount = fields.Float(
         "Capital amount",
-        oldname="capital_amount",
+        oldname="capital_registered",
         help="Publicly registered capital amount.")
     capital_currency_id = fields.Many2one(
         "res.currency",

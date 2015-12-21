@@ -34,10 +34,10 @@
         <filter string="Salesperson" position="after">
             <filter string="Capital country"
                     domain="[('is_company', '=', True)]"
-                    context="{'group_by': 'capital_country'}"/>
+                    context="{'group_by': 'capital_country_id'}"/>
             <filter string="Turnover"
                     domain="[('is_company', '=', True)]"
-                    context="{'group_by': 'turnover_number'}"/>
+                    context="{'group_by': 'turnover_range_id'}"/>
             <filter string="Company size"
                     domain="[('is_company', '=', True)]"
                     context="{'group_by': 'company_size'}"/>
