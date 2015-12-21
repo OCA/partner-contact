@@ -2,7 +2,7 @@
 # ©  2015 Forest and Biomass Services Romania
 # See README.rst file on addons root folder for license details
 
-from openerp import models, fields, api, _
+from openerp import models, api, _
 from openerp.exceptions import except_orm
 
 
