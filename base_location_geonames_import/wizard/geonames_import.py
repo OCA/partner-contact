@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Base Location Geonames Import module for OpenERP
@@ -46,8 +46,8 @@ class BetterZipGeonamesImport(models.TransientModel):
 
     country_id = fields.Many2one('res.country', 'Country', required=True)
     title_case = fields.Boolean(
-      string='Title Case',
-      help='Converts retreived city and state names to Title Case.'
+        string='Title Case',
+        help='Converts retreived city and state names to Title Case.',
     )
 
     @api.model
