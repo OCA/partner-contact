@@ -25,6 +25,7 @@ Usage
 To use this module, you need to:
 
 * Go to any partner's form.
+* You will find the new *Department* field below *Job Position*.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
