@@ -23,7 +23,7 @@ To use this module, you need to:
 
 * Go to any partner's form.
 * Enable *Is company?*.
-* Go to *Sales & Purchases > Employee quantity*.
+* You will see a new group of fields called *Employee quantity*.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
