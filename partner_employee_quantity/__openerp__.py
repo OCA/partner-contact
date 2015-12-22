@@ -8,7 +8,9 @@
     'summary': 'Know how many employees a partner has',
     'version': '8.0.1.0.0',
     'category': 'Customer Relationship Management',
-    'author': 'Antiun Ingeniería S.L.',
+    "author": "Antiun Ingeniería S.L., Odoo Community Association (OCA)",
+    "license": "AGPL-3",
+    "application": False,
     'website': 'http://www.antiun.com',
     'depends': [
         'base',
