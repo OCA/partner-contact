@@ -4,6 +4,7 @@
 #    Copyright (C)
 #       2014:       Agile Business Group (<http://www.agilebg.com>)
 #       2015:       Grupo ESOC <www.grupoesoc.es>
+#       2015:       SYLEAM <www.syleam.fr>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -21,7 +22,7 @@
 {
     'name': 'Partner first name and last name',
     'summary': "Split first name and last name for non company partners",
-    'version': '8.0.2.0.0',
+    'version': '9.0.2.0.0',
     'author': "Camptocamp,Odoo Community Association (OCA)",
     'maintainer': 'Camptocamp, Acsone',
     'category': 'Extra Tools',
@@ -35,6 +36,6 @@
     'demo': [],
     'test': [],
     'auto_install': False,
-    'installable': False,
+    'installable': True,
     'images': []
 }
