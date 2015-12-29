@@ -13,7 +13,7 @@
                 <field name="lbl_substate" class="oe_inline"/>
             </div>
             <div attrs="{'invisible': [('use_parent_address','=',True)]}">
-                <field name="substate"
+                <field name="substate_id"
                        class="oe_no_button"
                        options="{'no_open': True, 'no_create': True}"
                        attrs="{'readonly': [('use_parent_address','=',True)]}"/>
@@ -23,7 +23,7 @@
                 <field name="lbl_region" class="oe_inline"/>
             </div>
             <div attrs="{'invisible': [('use_parent_address','=',True)]}">
-                <field name="region"
+                <field name="region_id"
                        class="oe_no_button"
                        options="{'no_open': True, 'no_create': True}"
                        attrs="{'readonly': [('use_parent_address','=',True)]}"/>
@@ -35,7 +35,7 @@
                 <field name="lbl_substate" class="oe_inline"/>
             </div>
             <div attrs="{'invisible': [('use_parent_address','=',True)]}">
-                <field name="substate"
+                <field name="substate_id"
                        class="oe_no_button"
                        options="{'no_open': True, 'no_create': True}"
                        attrs="{'readonly': [('use_parent_address','=',True)]}"/>
@@ -45,7 +45,7 @@
                 <field name="lbl_region" class="oe_inline"/>
             </div>
             <div attrs="{'invisible': [('use_parent_address','=',True)]}">
-                <field name="region"
+                <field name="region_id"
                        class="oe_no_button"
                        options="{'no_open': True, 'no_create': True}"
                        attrs="{'readonly': [('use_parent_address','=',True)]}"/>
@@ -60,16 +60,16 @@
     <field name="inherit_id" ref="base.view_res_partner_filter"/>
     <field name="arch" type="xml">
         <field name="category_id" position="after">
-            <field name="region"/>
-            <field name="substate"/>
+            <field name="region_id"/>
+            <field name="substate_id"/>
         </field>
         <filter string="Salesperson" position="after">
             <filter string="Region"
                     domain="[]"
-                    context="{'group_by': 'region'}"/>
+                    context="{'group_by': 'region_id'}"/>
             <filter string="Substate"
                     domain="[]"
-                    context="{'group_by': 'substate'}"/>
+                    context="{'group_by': 'substate_id'}"/>
         </filter>
     </field>
 </record>
