@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- © 2015 Antiun Ingeniería S.L. - Jairo Llopis
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<openerp>
+<data>
+
+<record id="view_country_form" model="ir.ui.view">
+    <field name="name">NUTS fields</field>
+    <field name="model">res.country</field>
+    <field name="inherit_id" ref="base.view_country_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="/form">
+            <group name="nuts" string="NUTS">
+                <group>
+                    <field name="state_label"/>
+                    <field name="state_level"/>
+                </group>
+                <group>
+                    <field name="substate_label"/>
+                    <field name="substate_level"/>
+                </group>
+                <group>
+                    <field name="region_label"/>
+                    <field name="region_level"/>
+                </group>
+            </group>
+        </xpath>
+    </field>
+</record>
+
+</data>
+</openerp>
