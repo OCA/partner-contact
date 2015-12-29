@@ -44,6 +44,13 @@ l10n_de_location_nuts, ...) will inherit this wizard and
 relate each NUTS item with states. So if you install a new localization addon
 you must re-build NUTS clicking this wizard again.
 
+To configure lables and levels per country, you should install a l10n module,
+but if you want to do it manually, you need to:
+
+* Have *Sales / Responsible permissions*.
+* Go to *Sales > Configuration > Address Book > Localization > Countries*.
+* Choose one.
+* Use the fields under the *NUTS* section.
 
 Usage
 =====
@@ -55,7 +62,6 @@ in order to allow to assign them to partner object.
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/134/{branch}
-
 
 Bug Tracker
 ===========
@@ -74,6 +80,7 @@ Contributors
 
 * Rafael Blasco <rafabn@antiun.com>
 * Antonio Espinosa <antonioea@antiun.com>
+* Jairo Llopis <yajo.sk8@gmail.com>
 
 Maintainer
 ----------

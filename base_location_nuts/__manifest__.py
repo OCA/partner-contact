@@ -24,11 +24,12 @@
 {
     'name': 'NUTS Regions',
     'category': 'Localisation/Europe',
-    'version': '8.0.1.0.0',
+    'version': '8.0.2.0.0',
     'depends': [
         'base',
     ],
     'data': [
+        'views/res_country_view.xml',
         'views/res_partner_nuts_view.xml',
         'views/res_partner_view.xml',
         'wizard/nuts_import_view.xml',
