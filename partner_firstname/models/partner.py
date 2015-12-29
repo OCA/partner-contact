@@ -146,7 +146,8 @@ class ResPartner(models.Model):
     @api.constrains("firstname", "lastname")
     def _check_name(self):
         """Ensure at least one name is set."""
-        if not (self.firstname or self.lastname):
+        if (self.type == 'contact' or self.company_type == 'company') \
+           and not (self.firstname or self.lastname):
             raise exceptions.EmptyNamesError(self)
 
     @api.one
