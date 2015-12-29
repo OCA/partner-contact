@@ -24,7 +24,10 @@ class ResPartnerNuts(models.Model):
     # Parent hierarchy
     parent_id = fields.Many2one(comodel_name='res.partner.nuts',
                                 ondelete='restrict')
-    children = fields.One2many(comodel_name='res.partner.nuts',
-                               inverse_name='parent_id')
+    child_ids = fields.One2many(
+        'res.partner.nuts',
+        'parent_id',
+        "Children",
+        oldname="children")
     parent_left = fields.Integer('Parent Left', select=True)
     parent_right = fields.Integer('Parent Right', select=True)
