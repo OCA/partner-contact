@@ -5,57 +5,69 @@
 
 from openerp import models, fields, api
 from openerp.tools.translate import _
-import collections
-
-
-def dict_recursive_update(d, u):
-    for k, v in u.iteritems():
-        if isinstance(v, collections.Mapping):
-            r = dict_recursive_update(d.get(k, {}), v)
-            d[k] = r
-        else:
-            d[k] = u[k]
-    return d
 
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    region = fields.Many2one(comodel_name='res.partner.nuts',
-                             string="Region")
-    substate = fields.Many2one(comodel_name='res.partner.nuts',
-                               string="Substate")
-    lbl_region = fields.Char(compute='_labels_get')
-    lbl_substate = fields.Char(compute='_labels_get')
-
-    @api.one
-    @api.depends('country_id')
-    def _labels_get(self):
-        self.lbl_region = _('Region')
-        self.lbl_substate = _('Substate')
+    region_id = fields.Many2one(
+        'res.partner.nuts',
+        "Region",
+        oldname="region")
+    substate_id = fields.Many2one(
+        'res.partner.nuts',
+        "Substate",
+        oldname="substate")
+    lbl_region = fields.Char(
+        default=_("Region"),
+        compute='_labels_get')
+    lbl_substate = fields.Char(
+        default=_("Substate"),
+        compute='_labels_get')
 
     @api.multi
-    def onchange_state(self, state_id):
-        result = super(ResPartner, self).onchange_state(state_id)
-        if not state_id:
-            changes = {
-                'domain': {
-                    'substate': [],
-                    'region': [],
-                },
-                'value': {
-                    'substate': False,
-                    'region': False,
-                }
-            }
-            dict_recursive_update(result, changes)
-        return result
+    @api.depends('country_id')
+    def _labels_get(self):
+        for s in self:
+            s.lbl_region = s.country_id.region_label or _('Region')
+            s.lbl_substate = s.country_id.substate_label or _('Substate')
 
-    @api.onchange('substate', 'region')
-    def onchange_substate_or_region(self):
-        result = {'domain': {}}
-        if not self.substate:
-            result['domain']['substate'] = []
-        if not self.region:
-            result['domain']['region'] = []
-        return result
+    @api.multi
+    @api.onchange("substate_id")
+    def _onchange_substate_id(self):
+        if self.substate_id.country_id:
+            self.country_id = self.substate_id.country_id
+        return dict()
+
+    @api.multi
+    @api.onchange("region_id")
+    def _onchange_region_id(self):
+        if self.region_id.country_id:
+            self.country_id = self.region_id.country_id
+        return dict()
+
+    @api.multi
+    @api.onchange("country_id")
+    def _onchange_country_id(self):
+        """Sensible values and domains for related fields."""
+        fields = {"state", "region", "substate"}
+        country_domain = ([("country_id", "=", self.country_id.id)]
+                          if self.country_id else [])
+
+        domain = dict()
+        for field in fields:
+            field += "_id"
+            if self.country_id and self[field].country_id != self.country_id:
+                self[field] = False
+            domain[field] = list(country_domain)  # Using list() to copy
+
+        fields.remove("state")
+        for field in fields:
+            level = self.country_id["%s_level" % field]
+            field += "_id"
+            if level:
+                domain[field].append(("level", "=", level))
+
+        return {
+            "domain": domain,
+        }
