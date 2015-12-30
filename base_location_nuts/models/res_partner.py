@@ -50,19 +50,21 @@ class ResPartner(models.Model):
     @api.onchange("country_id")
     def _onchange_country_id(self):
         """Sensible values and domains for related fields."""
-        fields = {"state_id", "region_id", "substate_id"}
+        fields = {"state", "region", "substate"}
         country_domain = ([("country_id", "=", self.country_id.id)]
                           if self.country_id else [])
 
         domain = dict()
         for field in fields:
+            field += "_id"
             if self.country_id and self[field].country_id != self.country_id:
                 self[field] = False
             domain[field] = list(country_domain)  # Using list() to copy
 
-        fields.remove("state_id")
+        fields.remove("state")
         for field in fields:
             level = self.country_id["%s_level" % field]
+            field += "_id"
             if level:
                 domain[field].append(("level", "=", level))
 
