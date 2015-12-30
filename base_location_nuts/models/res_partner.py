@@ -35,16 +35,16 @@ class ResPartner(models.Model):
     @api.multi
     @api.onchange("substate_id")
     def _onchange_substate_id(self):
-        for s in self:
-            if s.substate_id.country_id:
-                s.country_id = s.substate_id.country_id
+        if self.substate_id.country_id:
+            self.country_id = self.substate_id.country_id
+        return dict()
 
     @api.multi
     @api.onchange("region_id")
     def _onchange_region_id(self):
-        for s in self:
-            if s.region_id.country_id:
-                s.country_id = s.region_id.country_id
+        if self.region_id.country_id:
+            self.country_id = self.region_id.country_id
+        return dict()
 
     @api.multi
     @api.onchange("country_id")
