@@ -8,8 +8,7 @@
     "version": "8.0.1.0.0",
     "category": "Customer Relationship Management",
     "website": "http://www.antiun.com",
-    "author": "Antiun Ingeniería, "
-              "Odoo Community Association (OCA)",
+    "author": "Antiun Ingeniería S.L., Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
