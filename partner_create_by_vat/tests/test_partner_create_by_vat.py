@@ -30,7 +30,7 @@ class TestPartnerCreatebyVAT(TransactionCase):
         self.assertEqual(self.partner1_id.vat_subjected, True)
 
     def test_create_from_vat(self):
-        # Create an partner with VAT number in name field
+        # Create an partner from VAT number field
         self.partner2_id = self.partner_model.create({'name': '1',
                                                       'vat': 'be0477472701',
                                                       'is_company': True})
