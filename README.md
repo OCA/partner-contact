@@ -43,7 +43,7 @@ addon | version | summary
 [partner_firstname](partner_firstname/) | 8.0.2.1.0 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 8.0.0.1.0 | Partner Helper
 [partner_relations](partner_relations/) | 8.0.1.1.0 | Partner relations
-[partner_second_lastname](partner_second_lastname/) | 8.0.4.0.0 | Partner second last name
+[partner_second_lastname](partner_second_lastname/) | 8.0.4.0.0 | Have split first and second lastnames
 [partner_sector](partner_sector/) | 8.0.1.0.0 | Add partner sectors
 [partner_street_number](partner_street_number/) | 8.0.0.1.0 | Introduces separate fields for street name and street number.
 [passport](passport/) | 8.0.0.1.0 | Passport Management
