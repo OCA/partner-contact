@@ -1,0 +1,101 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_job_position
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-08 01:38+0000\n"
+"PO-Revision-Date: 2015-12-22 15:01+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: English (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_contact_job_position
+#: field:res.partner,job_position_id:0
+msgid "Categorized job position"
+msgstr "Categorized job position"
+
+#. module: partner_contact_job_position
+#: field:res.partner.job_position,child_ids:0
+msgid "Children"
+msgstr "Children"
+
+#. module: partner_contact_job_position
+#: field:res.partner.job_position,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: partner_contact_job_position
+#: field:res.partner.job_position,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: partner_contact_job_position
+#: field:res.partner.job_position,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_contact_job_position
+#: model:ir.actions.act_window,name:partner_contact_job_position.res_partner_job_position_action
+#: model:ir.ui.menu,name:partner_contact_job_position.menu_res_partner_job_position
+msgid "Job Positions"
+msgstr "Job Positions"
+
+#. module: partner_contact_job_position
+#: model:ir.model,name:partner_contact_job_position.model_res_partner_job_position
+#: view:res.partner:partner_contact_job_position.view_res_partner_filter_job_position
+msgid "Job position"
+msgstr "Job position"
+
+#. module: partner_contact_job_position
+#: view:res.partner.job_position:partner_contact_job_position.res_partner_job_position_form_view
+#: view:res.partner.job_position:partner_contact_job_position.res_partner_job_position_tree_view
+msgid "Job positions"
+msgstr "Job positions"
+
+#. module: partner_contact_job_position
+#: field:res.partner.job_position,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: partner_contact_job_position
+#: field:res.partner.job_position,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: partner_contact_job_position
+#: field:res.partner.job_position,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: partner_contact_job_position
+#: field:res.partner.job_position,parent_id:0
+msgid "Parent"
+msgstr "Parent"
+
+#. module: partner_contact_job_position
+#: field:res.partner.job_position,parent_left:0
+msgid "Parent left"
+msgstr "Parent left"
+
+#. module: partner_contact_job_position
+#: field:res.partner.job_position,parent_right:0
+msgid "Parent right"
+msgstr "Parent right"
+
+#. module: partner_contact_job_position
+#: model:ir.model,name:partner_contact_job_position.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: partner_contact_job_position
+#: view:res.partner:partner_contact_job_position.view_res_partner_filter_job_position
+msgid "Salesperson"
+msgstr "Salesperson"
