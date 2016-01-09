@@ -3,72 +3,72 @@
 # * partner_capital
 # 
 # Translators:
-# Oihane Crucelaegui <oihanecruce@gmail.com>, 2016
+# Rudolf Schnapka <rs@techno-flex.de>, 2016-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-25 11:58+0000\n"
-"PO-Revision-Date: 2016-07-14 09:05+0000\n"
-"Last-Translator: Oihane Crucelaegui <oihanecruce@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
+"POT-Creation-Date: 2017-02-21 16:57+0000\n"
+"PO-Revision-Date: 2017-02-24 22:39+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_capital
 #: selection:res.partner,company_size:0
 msgid "Big"
-msgstr "Grande"
+msgstr "Gross"
 
 #. module: partner_capital
 #: view:res.partner:partner_capital.view_partner_form_capital
 msgid "Capital"
-msgstr "Capital"
+msgstr "Kapital"
 
 #. module: partner_capital
 #: field:res.partner,capital_amount:0
 msgid "Capital amount"
-msgstr "Capital amount"
+msgstr "Kapitalbetrag"
 
 #. module: partner_capital
 #: view:res.partner:partner_capital.view_res_partner_filter_capital
 #: field:res.partner,capital_country_id:0
 msgid "Capital country"
-msgstr "Nacionalidad del capital"
+msgstr "Land der Hauptstadt"
 
 #. module: partner_capital
 #: field:res.partner,capital_currency_id:0
 msgid "Capital currency"
-msgstr ""
+msgstr "Währung in Hauptstadt"
 
 #. module: partner_capital
 #: view:res.partner:partner_capital.view_res_partner_filter_capital
 #: field:res.partner,company_size:0
 msgid "Company size"
-msgstr "Tamaño de la companía"
+msgstr "Unternehmensgrösse"
 
 #. module: partner_capital
 #: help:res.partner,capital_country_id:0
 msgid "Country of origin of this company's capital."
-msgstr "País de origen del capital de esta empresa."
+msgstr "Herkunftsland des Kapitals dieses Unternehmen."
 
 #. module: partner_capital
 #: field:res.partner.turnover_range,create_uid:0
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Angelegt durch"
 
 #. module: partner_capital
 #: field:res.partner.turnover_range,create_date:0
 msgid "Created on"
-msgstr "Creado en"
+msgstr "Angelegt am"
 
 #. module: partner_capital
 #: field:res.partner.turnover_range,display_name:0
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr "Anzeigebezeichnung"
 
 #. module: partner_capital
 #: field:res.partner.turnover_range,id:0
@@ -78,72 +78,72 @@ msgstr "ID"
 #. module: partner_capital
 #: field:res.partner.turnover_range,__last_update:0
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr "Zuletzt verändert am"
 
 #. module: partner_capital
 #: field:res.partner.turnover_range,write_uid:0
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Zuletzt aktualisiert durch"
 
 #. module: partner_capital
 #: field:res.partner.turnover_range,write_date:0
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "Zuletzt aktualisiert am"
 
 #. module: partner_capital
 #: selection:res.partner,company_size:0
 msgid "Medium"
-msgstr "Medio"
+msgstr "Mittel"
 
 #. module: partner_capital
 #: selection:res.partner,company_size:0
 msgid "Micro"
-msgstr "Micro"
+msgstr "Kleinst"
 
 #. module: partner_capital
 #: field:res.partner.turnover_range,name:0
 msgid "Name"
-msgstr "Nombre"
+msgstr "Bezeichnung"
 
 #. module: partner_capital
 #: model:ir.model,name:partner_capital.model_res_partner
 msgid "Partner"
-msgstr "Empresa"
+msgstr "Partner"
 
 #. module: partner_capital
 #: help:res.partner,capital_amount:0
 msgid "Publicly registered capital amount."
-msgstr "Importe del capital públicamente registrado."
+msgstr "Veröffentlichter Kapitalbetrag"
 
 #. module: partner_capital
 #: view:res.partner:partner_capital.view_res_partner_filter_capital
 msgid "Salesperson"
-msgstr "Comercial"
+msgstr "Verkäufer"
 
 #. module: partner_capital
 #: selection:res.partner,company_size:0
 msgid "Small"
-msgstr "Pequeño"
+msgstr "Klein"
 
 #. module: partner_capital
 #: view:res.partner:partner_capital.view_res_partner_filter_capital
 msgid "Turnover"
-msgstr "Facturación"
+msgstr "Umsatz"
 
 #. module: partner_capital
 #: field:res.partner,turnover_amount:0
 msgid "Turnover amount"
-msgstr "Cantidad de facturación"
+msgstr "Umsatzbetrag"
 
 #. module: partner_capital
 #: model:ir.model,name:partner_capital.model_res_partner_turnover_range
 #: field:res.partner,turnover_range_id:0
 msgid "Turnover range"
-msgstr "Rango de facturación"
+msgstr "Umsatzspanne"
 
 #. module: partner_capital
 #: model:ir.actions.act_window,name:partner_capital.res_partner_turnover_range_action
 #: model:ir.ui.menu,name:partner_capital.menu_res_partner_turnover_range
 #: view:res.partner.turnover_range:partner_capital.res_partner_turnover_range_tree_view
 msgid "Turnover ranges"
-msgstr "Rangos de facturación"
+msgstr "Umsatzspannen"
