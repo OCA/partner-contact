@@ -3,14 +3,15 @@
 # * partner_contact_in_several_companies
 # 
 # Translators:
+# Antonio Trueba, 2016
 # Francisco Palm <francisco.palm@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-17 01:36+0000\n"
-"PO-Revision-Date: 2015-12-15 11:18+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2015-12-19 20:35+0000\n"
+"PO-Revision-Date: 2016-01-07 14:19+0000\n"
+"Last-Translator: Antonio Trueba\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +27,7 @@ msgstr "Dirección"
 #. module: partner_contact_in_several_companies
 #: model:ir.actions.act_window,name:partner_contact_in_several_companies.action_partner_form
 msgid "All Customers in All Positions"
-msgstr ""
+msgstr "Todos los clientes en todas las posiciones"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
@@ -58,12 +59,12 @@ msgstr "Contacto"
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Contact Name"
-msgstr ""
+msgstr "Nombre del contacto"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_contact_type
 msgid "Contact type"
-msgstr ""
+msgstr "Tipo del contacto"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -125,7 +126,7 @@ msgstr "Provincia"
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Street 2..."
-msgstr ""
+msgstr "Calle 2..."
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -137,7 +138,7 @@ msgstr "Calle..."
 msgid ""
 "To see personal information about this contact, please\n"
 "                    go to to the this person form:"
-msgstr ""
+msgstr "Para ver información personal de este contacto, vaya al\nformulario de esta persona:"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -147,7 +148,7 @@ msgstr "C.P."
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "e.g. Mr."
-msgstr ""
+msgstr "p.e., Sr."
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -157,7 +158,7 @@ msgstr "ej.: Director de ventas"
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "internal note..."
-msgstr ""
+msgstr "nota interna..."
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model,name:partner_contact_in_several_companies.model_ir_actions_act_window
