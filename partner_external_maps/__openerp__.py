@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Partner External Maps module for Odoo
@@ -23,7 +23,7 @@
 
 {
     'name': 'Partner External Maps',
-    'version': '8.0.0.1.0',
+    'version': '9.0.0.1.0',
     'category': 'Extra Tools',
     'license': 'AGPL-3',
     'summary': 'Add Map and Map Routing buttons on partner form to '
@@ -39,5 +39,5 @@
         'security/ir.model.access.csv',
     ],
     'post_init_hook': 'set_default_map_settings',
-    'installable': False,
+    'installable': True,
 }
