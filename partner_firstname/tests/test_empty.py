@@ -23,7 +23,7 @@ To have more accurate results, remove the ``mail`` module before testing.
 
 from openerp.tests.common import TransactionCase
 from .base import MailInstalled
-from .. import exceptions as ex
+from openerp.addons.partner_firstname.models import exceptions as ex
 
 
 class CompanyCase(TransactionCase):
@@ -50,7 +50,7 @@ class CompanyCase(TransactionCase):
 
 class PersonCase(CompanyCase):
     """Test ``res.partner`` when it is a person."""
-    context = {"default_is_company": False}
+    context = {"default_is_company": False, "default_type": 'contact'}
 
 
 class UserCase(CompanyCase, MailInstalled):
@@ -66,3 +66,15 @@ class UserCase(CompanyCase, MailInstalled):
         else:
             # Run tests
             super(UserCase, self).tearDown()
+
+
+class AddressCase(TransactionCase):
+    """Test ``res.partner`` when it is a address."""
+
+    def test_new_empty_address(self):
+        """Create an empty partner."""
+        self.original = self.env["res.partner"].create({
+            "is_company": False,
+            "type": 'invoice',
+            "lastname": "",
+            "firstname": ""})

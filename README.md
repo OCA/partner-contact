@@ -23,6 +23,7 @@ addon | version | summary
 [partner_contact_gender](partner_contact_gender/) | 9.0.1.1.0 | Add gender field to contacts
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 9.0.1.0.0 | Allow to have one contact in several partners
 [partner_contact_nationality](partner_contact_nationality/) | 9.0.1.0.0 | Add nationality field to contacts
+[partner_firstname](partner_firstname/) | 9.0.2.0.0 | Split first name and last name for non company partners
 
 Unported addons
 ---------------
