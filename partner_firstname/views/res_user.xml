@@ -4,7 +4,7 @@
 
 <!-- Required before modifying `base.vew_users_form`.
      https://github.com/odoo/odoo/issues/6324#issuecomment-93534579 -->
-<function model="res.groups" name="update_user_groups_view" />
+<!--<function model="res.groups" name="update_user_groups_view" />-->
 
 <record id="view_users_form" model="ir.ui.view">
     <field name="name">Add firstname and surnames</field>
