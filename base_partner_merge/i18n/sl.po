@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 15:54+0000\n"
-"PO-Revision-Date: 2015-05-28 07:08+0000\n"
+"POT-Creation-Date: 2016-01-08 01:37+0000\n"
+"PO-Revision-Date: 2015-12-23 14:13+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgid "A user associated to the contact"
 msgstr "Uporabnik povezan s stikom"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:350
+#: code:addons/base_partner_merge/base_partner_merge.py:369
 #, python-format
 msgid ""
 "All contacts must have the same email. Only the Administrator can merge "
@@ -106,10 +106,10 @@ msgid "Email"
 msgstr "E-pošta"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:339
-#: code:addons/base_partner_merge/base_partner_merge.py:349
-#: code:addons/base_partner_merge/base_partner_merge.py:374
-#: code:addons/base_partner_merge/base_partner_merge.py:510
+#: code:addons/base_partner_merge/base_partner_merge.py:358
+#: code:addons/base_partner_merge/base_partner_merge.py:368
+#: code:addons/base_partner_merge/base_partner_merge.py:393
+#: code:addons/base_partner_merge/base_partner_merge.py:529
 #, python-format
 msgid "Error"
 msgstr "Napaka"
@@ -125,7 +125,7 @@ msgid "Finished"
 msgstr "Končano"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:340
+#: code:addons/base_partner_merge/base_partner_merge.py:359
 #, python-format
 msgid ""
 "For safety reasons, you cannot merge more than 3 contacts together. You can "
@@ -206,7 +206,7 @@ msgid "Merge with Manual Check"
 msgstr "Združitev z ročnim preverjanjem"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:391
+#: code:addons/base_partner_merge/base_partner_merge.py:410
 #, python-format
 msgid "Merged with the following partners:"
 msgstr "Združeno s sledečimi partnerji:"
@@ -222,7 +222,7 @@ msgid "Name"
 msgstr "Naziv"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:375
+#: code:addons/base_partner_merge/base_partner_merge.py:394
 #, python-format
 msgid ""
 "Only the destination contact may be linked to existing Journal Items. Please"
@@ -309,7 +309,7 @@ msgid "Wizard"
 msgstr "Čarovnik"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:511
+#: code:addons/base_partner_merge/base_partner_merge.py:530
 #, python-format
 msgid "You have to specify a filter for your selection"
 msgstr "Določite filter za vaš izbor"

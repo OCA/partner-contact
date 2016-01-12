@@ -1,0 +1,91 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_employee_quantity
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-08 01:38+0000\n"
+"PO-Revision-Date: 2015-12-22 17:25+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: English (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: partner_employee_quantity
+#: view:res.partner:partner_employee_quantity.view_res_partner_filter_employees
+msgid "Employee Quantity"
+msgstr "Employee Quantity"
+
+#. module: partner_employee_quantity
+#: view:res.partner:partner_employee_quantity.view_partner_form_employees
+#: field:res.partner,employee_quantity:0
+msgid "Employee quantity"
+msgstr "Employee quantity"
+
+#. module: partner_employee_quantity
+#: field:res.partner,employee_quantity_range_id:0
+msgid "Employee quantity range"
+msgstr "Employee quantity range"
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: partner_employee_quantity
+#: model:ir.model,name:partner_employee_quantity.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: partner_employee_quantity
+#: model:ir.model,name:partner_employee_quantity.model_res_partner_employee_quantity_range
+msgid "Partner employee quantity range"
+msgstr "Partner employee quantity range"
+
+#. module: partner_employee_quantity
+#: help:res.partner,employee_quantity_range_id:0
+msgid "Range of this partner depending on the employee quantity."
+msgstr "Range of this partner depending on the employee quantity."
+
+#. module: partner_employee_quantity
+#: model:ir.actions.act_window,name:partner_employee_quantity.employees_range_action
+#: model:ir.ui.menu,name:partner_employee_quantity.menu_employees_range
+#: view:res.partner.employee_quantity_range:partner_employee_quantity.employees_range_tree_view
+msgid "Ranges by quantity of employees"
+msgstr "Ranges by quantity of employees"
+
+#. module: partner_employee_quantity
+#: view:res.partner:partner_employee_quantity.view_res_partner_filter_employees
+msgid "Salesperson"
+msgstr "Salesperson"
