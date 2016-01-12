@@ -48,7 +48,7 @@ class ResPartner(models.Model):
             raise ValidationError(_("The partner is not listed on Vies "
                                     "Webservice."))
         return res
-    
+
     @api.multi
     def vat_change(self, value):
         res = super(ResPartner, self).vat_change(value)
@@ -59,7 +59,7 @@ class ResPartner(models.Model):
                 result = self._get_partner_data(value)
                 res['value'].update(result)
         return res
-    
+
     @api.one
     def get_partner_data(self):
         res = self._get_partner_data(self.vat)

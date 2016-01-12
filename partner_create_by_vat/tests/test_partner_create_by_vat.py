@@ -5,6 +5,7 @@
 from openerp.tests.common import TransactionCase
 from openerp.exceptions import ValidationError
 
+
 class TestPartnerCreatebyVAT(TransactionCase):
 
     def setUp(self):
@@ -29,7 +30,7 @@ class TestPartnerCreatebyVAT(TransactionCase):
         self.assertEqual(self.partner1_id.country_id.name, 'Belgium')
         self.assertEqual(self.partner1_id.vat, 'BE0477472701')
         self.assertEqual(self.partner1_id.vat_subjected, True)
-        
+
     def test_create_from_vat2(self):
         # Create an partner from VAT number field
         self.partner2_id = self.partner_model.create({'name': '1',
@@ -39,7 +40,7 @@ class TestPartnerCreatebyVAT(TransactionCase):
         # Check VAT number not listed on VIES
         with self.assertRaises(ValidationError):
             self.partner2_id.get_partner_data()
-            
+
     def test_create_from_vat3(self):
         # Create an partner from VAT number field
         self.partner3_id = self.partner_model.create({'name': '1',
@@ -49,4 +50,3 @@ class TestPartnerCreatebyVAT(TransactionCase):
         # Check VAT number is listed on VIES but don't have name and address
         with self.assertRaises(ValidationError):
             self.partner3_id.get_partner_data()
-            
