@@ -3,60 +3,64 @@
 # See README.rst file on addons root folder for license details
 
 from openerp import models, api, _
-from openerp.exceptions import except_orm
+from openerp.exceptions import ValidationError
 
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    @api.one
-    def check_vat_name(self):
-        # If the partner doesn't have the vat field completed, check if the
-        # name field is a valid vat number.
-        if self.name:
-            self.name = self.name.strip().upper()
-            try:
-                from stdnum.eu.vat import validate
-                validate(self.name)
-                self.vat = self.name
-            except:
-                raise except_orm(_('Error!'),
-                                 _("VAT number invalid."))
-        else:
-            raise except_orm(_('Error!'),
-                             _("No VAT number inputted."))
-
-    @api.one
-    def button_get_partner_data(self):
-        if not self.vat:
-            self.check_vat_name()
-        else:
-            self.vat = self.vat.strip().upper()
-        vat_country, vat_number = self._split_vat(self.vat)
-        # Complete country field based on country code
-        self.country_id = self.env['res.country'].search(
-            [('code', 'ilike', vat_country)])[0].id
-        from stdnum.eu.vat import check_vies
-        result = check_vies(self.vat)
+    @api.model
+    def _get_partner_data(self, vat):
+        try:
+            from stdnum.eu.vat import check_vies
+        except:
+            ValidationError(_('Error!'),
+                            _("There was an error importing check_vies "
+                              "method from python stdnum."))
+        res = {}
+        vat = vat.strip().upper()
+        vat_country, vat_number = self._split_vat(vat)
+        result = check_vies(vat)
         # Check if partner is listed on Vies
         if result.name is not None:
             # Check is the partner have the name and adress listed on VIES
             if result.name != '---':
+                # Get country by country code
+                country = self.env['res.country'].search(
+                    [('code', 'ilike', vat_country)])
                 new_name = result.name.upper()
                 if result.address != '---':
                     new_address = result.address.replace(
                         '\n', ' ').replace('\r', '').title()
-                self.write({
+                res.update({
                     'name': new_name,
+                    'vat': vat,
                     'street': new_address,
+                    'country_id': country and country[0].id,
                     'vat_subjected':  result.valid
                 })
             else:
-                self.vat_subjected = result.valid
-                raise except_orm(_('Error!'),
-                                 _("The partner doesn't have the name and "
-                                   "address listed on Vies Webservice."))
+                res['vat_subjected'] = result.valid
+                raise ValidationError(_("The partner doesn't have the name "
+                                        "and address listed on Vies "
+                                        "Webservice."))
         else:
-            raise except_orm(_('Error!'),
-                             _("The partner is not listed on Vies "
-                               "Webservice."))
+            raise ValidationError(_("The partner is not listed on Vies "
+                                    "Webservice."))
+        return res
+    
+    @api.multi
+    def vat_change(self, value):
+        res = super(ResPartner, self).vat_change(value)
+        # Update fields with the values available in the upper method
+        # Skip required name error
+        with self.env.do_in_onchange():
+            if value:
+                result = self._get_partner_data(value)
+                res['value'].update(result)
+        return res
+    
+    @api.one
+    def get_partner_data(self):
+        res = self._get_partner_data(self.vat)
+        self.update(res)

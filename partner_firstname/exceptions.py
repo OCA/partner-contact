@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+1# -*- coding: utf-8 -*-
 # Odoo, Open Source Management Solution
 # Copyright (C) 2014-2015  Grupo ESOC <www.grupoesoc.es>
 #
