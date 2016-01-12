@@ -33,7 +33,8 @@ virtualenv:
 install:
   - pip install requests
   - pip install unicodecsv
-  - pip install stdnum
+  - pip install python-stdnum==1.1
+  - pip install suds
   - git clone https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
