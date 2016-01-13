@@ -36,8 +36,8 @@ class ResPartner(models.Model):
         Actually, is easier to override a dictionary value to indicate it
         should be ignored...
         """
-        if mode != 'search' \
-                and 'search_show_all_positions' in self.env.context:
+        if (mode != 'search' and
+                'search_show_all_positions' in self.env.context):
             result = self.with_context(
                 search_show_all_positions={'is_set': False})
         else:
@@ -48,9 +48,9 @@ class ResPartner(models.Model):
     def search(self, args, offset=0, limit=None, order=None, count=False):
         """ Display only standalone contact matching ``args`` or having
         attached contact matching ``args`` """
-        if self.env.context.get('search_show_all_positions', {}).get('is_set') \
-                and not self.env.context[
-                    'search_show_all_positions']['set_value']:
+        ctx = self.env.context
+        if (ctx.get('search_show_all_positions', {}).get('is_set') and
+                not ctx['search_show_all_positions']['set_value']):
             args = expression.normalize_domain(args)
             attached_contact_args = expression.AND(
                 (args, [('contact_type', '=', 'attached')])
