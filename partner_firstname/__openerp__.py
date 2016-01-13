@@ -11,7 +11,7 @@
     'author': "Camptocamp, "
               "Grupo ESOC Ingeniería de Servicios, "
               "Odoo Community Association (OCA)",
-    "license": "AGPL-3",
+    'license': "AGPL-3",
     'maintainer': 'Camptocamp, Acsone',
     'category': 'Extra Tools',
     'website':
