@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 # © 2014-2015 Grupo ESOC <www.grupoesoc.es>
+# © 2016 Yannick Vaucher (Camptocamp)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Test situations where names are empty.
 
 To have more accurate results, remove the ``mail`` module before testing.
 """
+import psycopg2
 
 from openerp.tests.common import TransactionCase
 from .base import MailInstalled
@@ -19,8 +21,13 @@ class CompanyCase(TransactionCase):
     def tearDown(self):
         try:
             data = {"name": self.name}
-            with self.assertRaises(ex.EmptyNamesError):
-                self.env[self.model].with_context(**self.context).create(data)
+            model = self.env[self.model].with_context(**self.context)
+            if self.name is False:
+                with self.assertRaises(psycopg2.IntegrityError):
+                    model.create(data)
+            else:
+                with self.assertRaises(ex.EmptyNamesError):
+                    model.create(data)
         finally:
             super(CompanyCase, self).tearDown()
 
