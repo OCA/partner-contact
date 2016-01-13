@@ -2,25 +2,6 @@
 <odoo>
 <data>
 
-<!-- Declared the same in every module that may need it -->
-<record id="base.personal_contact_information" model="ir.ui.view">
-    <field name="name">Personal information page for contacts form</field>
-    <field name="model">res.partner</field>
-    <field name="inherit_id" ref="base.view_partner_form"/>
-    <field name="priority">2</field>
-    <field name="arch" type="xml">
-        <data>
-            <xpath expr="//page[@name='internal_notes']" position="after">
-                <page name="personal_information_page"
-                      string="Personal Information"
-                      attrs="{'invisible': [('is_company','=',True)]}">
-                    <group name="personal_information_group"/>
-                </page>
-            </xpath>
-        </data>
-    </field>
-</record>
-
 <record id="view_res_partner_filter_contact" model="ir.ui.view">
     <field name="name">res.partner.select.contact</field>
     <field name="model">res.partner</field>
@@ -162,7 +143,7 @@
 <record id="personal_contact_information" model="ir.ui.view">
     <field name="name">Contacts in several partners: personal info</field>
     <field name="model">res.partner</field>
-    <field name="inherit_id" ref="base.personal_contact_information"/>
+    <field name="inherit_id" ref="partner_contact_personal_information_page.personal_information"/>
     <field name="arch" type="xml">
         <data>
             <xpath expr="//page[@name='personal_information_page']/group[@name='personal_information_group']"
