@@ -18,15 +18,15 @@
 
 {
     "name": "Contact's birthdate",
-    "version": "8.0.1.0.0",
+    "version": "9.0.1.0.0",
     "author": "Odoo Community Association (OCA)",
     "category": "Customer Relationship Management",
     "website": "https://odoo-community.org/",
     "depends": [
-        "partner_contact_personal_information_page",
+        "base",
     ],
     "data": [
         "views/res_partner.xml",
     ],
-    'installable': False,
+    'installable': True,
 }
