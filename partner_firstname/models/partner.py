@@ -146,8 +146,8 @@ class ResPartner(models.Model):
     @api.constrains("firstname", "lastname")
     def _check_name(self):
         """Ensure at least one name is set."""
-        if (self.type == 'contact' or self.company_type == 'company') \
-           and not (self.firstname or self.lastname):
+        if ((self.type == 'contact' or self.is_company) and
+                not (self.firstname or self.lastname)):
             raise exceptions.EmptyNamesError(self)
 
     @api.one
@@ -189,11 +189,10 @@ class ResPartner(models.Model):
         records._inverse_name()
         _logger.info("%d partners updated installing module.", len(records))
 
-    # As name is computed after sql_constraint check, we modify it to accept
-    # to write when at least one name field is filled
-    _sql_constraints = [
-        ('check_name',
-         "CHECK( (type='contact' AND (name IS NOT NULL OR"
-         " firstname IS NOT NULL OR lastname IS NOT NULL)) or"
-         " (type!='contact') )", 'Contacts require a name.'),
-    ]
+    # Disabling SQL constraint givint a more explicit error using a Python
+    # contstraint
+    _sql_constraints = [(
+        'check_name',
+        "CHECK( 1=1 )",
+        'Contacts require a name.'
+    )]
