@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <openerp>
 <data>
 
-<record id="form" model="ir.ui.view">
+<record id="view_personal_information_gender" model="ir.ui.view">
     <field name="name">Partner gender</field>
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="partner_contact_personal_information_page.personal_information"/>
