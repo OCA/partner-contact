@@ -2,7 +2,7 @@
 <openerp>
 <data>
 
-<record id="birthdate_date" model="ir.ui.view">
+<record id="view_personal_information_birthdate_date" model="ir.ui.view">
     <field name="name">Birthdate Date field</field>
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="partner_contact_personal_information_page.personal_information"/>
