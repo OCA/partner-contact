@@ -23,7 +23,7 @@
     'installable': True,
     'auto_install': False,
     "depends": [
-        "partner_contact_personal_information_page"
+        "base"
     ],
     "data": [
         "views/res_partner.xml",
