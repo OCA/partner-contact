@@ -9,7 +9,7 @@
     <field name="arch" type="xml">
         <data>
             <xpath expr="//group[@name='personal_information_group']">
-                <field name="gender"/>
+                <field name="nationality_id"/>
             </xpath>
         </data>
     </field>
