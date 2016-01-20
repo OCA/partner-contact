@@ -299,7 +299,13 @@ class ResPartner(models.Model):
             cr, uid, args + date_args + active_args, offset=offset,
             limit=limit, order=order, context=context, count=count)
 
-    @api.multi
+    @api.v7
+    def read(self, cr, user, ids, fields=None, context=None,
+             load='_classic_read'):
+        return super(ResPartner, self).read(
+            cr, user, ids, fields=fields, context=context, load=load)
+
+    @api.v8
     def read(self, fields=None, load='_classic_read'):
         return super(ResPartner, self.with_partner_relations_context())\
             .read(fields=fields, load=load)
