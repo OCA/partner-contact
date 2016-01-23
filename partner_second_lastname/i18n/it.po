@@ -3,19 +3,19 @@
 # * partner_second_lastname
 # 
 # Translators:
-# Rudolf Schnapka <rs@techno-flex.de>, 2016-2017
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-21 16:57+0000\n"
-"PO-Revision-Date: 2017-02-24 22:09+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
+"POT-Creation-Date: 2016-03-13 00:57+0000\n"
+"PO-Revision-Date: 2016-03-13 12:57+0000\n"
+"Last-Translator: Paolo Valier\n"
+"Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
+"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_second_lastname
@@ -26,7 +26,7 @@ msgstr "Partner"
 #. module: partner_second_lastname
 #: field:res.partner,lastname2:0
 msgid "Second last name"
-msgstr "Zweiter Nachname"
+msgstr "Secondo cognome"
 
 #. module: partner_second_lastname
 #: view:res.partner:partner_second_lastname.partner_form
@@ -37,7 +37,7 @@ msgid ""
 "                                 ('lastname2', '=', False),\n"
 "                                 ('is_company', '=', False)]\n"
 "                }"
-msgstr "{\n                    'required': [('firstname', '=', False),\n                                 ('lastname2', '=', False),\n                                 ('is_company', '=', False)]\n                }"
+msgstr ""
 
 #. module: partner_second_lastname
 #: view:res.users:partner_second_lastname.users_form
@@ -46,7 +46,7 @@ msgid ""
 "                    'required': [('firstname', '=', False),\n"
 "                                 ('lastname2', '=', False)]\n"
 "                }"
-msgstr "{\n                    'required': [('firstname', '=', False),\n                                 ('lastname2', '=', False)]\n                }"
+msgstr ""
 
 #. module: partner_second_lastname
 #: view:res.partner:partner_second_lastname.partner_form
@@ -57,7 +57,7 @@ msgid ""
 "                                 ('lastname2', '=', False),\n"
 "                                 ('is_company', '=', False)]\n"
 "                }"
-msgstr "{\n                    'required': [('lastname', '=', False),\n                                 ('lastname2', '=', False),\n                                 ('is_company', '=', False)]\n                }"
+msgstr ""
 
 #. module: partner_second_lastname
 #: view:res.users:partner_second_lastname.users_form
@@ -66,4 +66,4 @@ msgid ""
 "                    'required': [('lastname', '=', False),\n"
 "                                 ('lastname2', '=', False)]\n"
 "                }"
-msgstr "{\n                    'required': [('lastname', '=', False),\n                                 ('lastname2', '=', False)]\n                }"
+msgstr ""
