@@ -3,13 +3,14 @@
 # * passport
 # 
 # Translators:
+# Antonio Trueba, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-09 15:48+0000\n"
-"PO-Revision-Date: 2015-10-06 13:57+0000\n"
-"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"POT-Creation-Date: 2016-01-19 01:46+0000\n"
+"PO-Revision-Date: 2016-01-16 15:09+0000\n"
+"Last-Translator: Antonio Trueba\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,12 +21,12 @@ msgstr ""
 #. module: passport
 #: field:res.passport,birth_date:0
 msgid "Birth Date"
-msgstr ""
+msgstr "Fecha de nacimiento"
 
 #. module: passport
 #: field:res.passport,partner_id:0
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: passport
 #: help:res.passport,country_id:0
@@ -45,7 +46,7 @@ msgstr "Creado en"
 #. module: passport
 #: help:res.passport,birth_date:0
 msgid "Date of birth on passport."
-msgstr ""
+msgstr "Fecha de nacimiento en el pasaporte."
 
 #. module: passport
 #: field:res.passport,country_id:0
@@ -55,27 +56,27 @@ msgstr ""
 #. module: passport
 #: field:res.passport,expiration_date:0
 msgid "Expiration date"
-msgstr ""
+msgstr "Fecha de caducidad"
 
 #. module: passport
 #: help:res.passport,expiration_date:0
 msgid "Expiration date of passport."
-msgstr ""
+msgstr "Fecha de caducidad del pasaporte."
 
 #. module: passport
 #: selection:res.passport,gender:0
 msgid "Female"
-msgstr ""
+msgstr "Mujer"
 
 #. module: passport
 #: field:res.passport,gender:0
 msgid "Gender"
-msgstr ""
+msgstr "Sexo"
 
 #. module: passport
 #: help:res.passport,gender:0
 msgid "Gender."
-msgstr ""
+msgstr "Sexo."
 
 #. module: passport
 #: field:res.passport,id:0
@@ -95,7 +96,7 @@ msgstr "Última actualización en"
 #. module: passport
 #: selection:res.passport,gender:0
 msgid "Male"
-msgstr ""
+msgstr "Hombre"
 
 #. module: passport
 #: field:res.passport,name:0
@@ -110,7 +111,7 @@ msgstr ""
 #. module: passport
 #: help:res.passport,name:0
 msgid "Owner name (As printed into the passport)."
-msgstr ""
+msgstr "Nombre del propietario (tal y como aparezca en el pasaporte),"
 
 #. module: passport
 #: model:ir.model,name:passport.model_res_partner
@@ -123,17 +124,17 @@ msgstr "Empresa"
 #: view:res.partner:passport.view_partner_form
 #: field:res.partner,passport_ids:0
 msgid "Passport"
-msgstr ""
+msgstr "Pasaporte"
 
 #. module: passport
 #: field:res.passport,number:0
 msgid "Passport No"
-msgstr ""
+msgstr "Número de pasaporte"
 
 #. module: passport
 #: help:res.passport,number:0
 msgid "Passport number."
-msgstr ""
+msgstr "Número de pasaporte."
 
 #. module: passport
 #: view:res.passport:passport.passport_form_view

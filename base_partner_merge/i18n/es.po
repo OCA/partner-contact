@@ -3,13 +3,14 @@
 # * base_partner_merge
 # 
 # Translators:
+# Antonio Trueba, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-09 15:48+0000\n"
-"PO-Revision-Date: 2015-10-06 13:57+0000\n"
-"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"POT-Creation-Date: 2016-01-19 01:46+0000\n"
+"PO-Revision-Date: 2016-01-16 15:12+0000\n"
+"Last-Translator: Antonio Trueba\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgid "A user associated to the contact"
 msgstr ""
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:350
+#: code:addons/base_partner_merge/base_partner_merge.py:369
 #, python-format
 msgid ""
 "All contacts must have the same email. Only the Administrator can merge "
@@ -64,7 +65,7 @@ msgstr ""
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,partner_ids:0
 msgid "Contacts"
-msgstr ""
+msgstr "Contactos"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,create_uid:0
@@ -105,13 +106,13 @@ msgid "Email"
 msgstr ""
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:339
-#: code:addons/base_partner_merge/base_partner_merge.py:349
-#: code:addons/base_partner_merge/base_partner_merge.py:374
-#: code:addons/base_partner_merge/base_partner_merge.py:510
+#: code:addons/base_partner_merge/base_partner_merge.py:358
+#: code:addons/base_partner_merge/base_partner_merge.py:368
+#: code:addons/base_partner_merge/base_partner_merge.py:393
+#: code:addons/base_partner_merge/base_partner_merge.py:529
 #, python-format
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -124,7 +125,7 @@ msgid "Finished"
 msgstr ""
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:340
+#: code:addons/base_partner_merge/base_partner_merge.py:359
 #, python-format
 msgid ""
 "For safety reasons, you cannot merge more than 3 contacts together. You can "
@@ -134,7 +135,7 @@ msgstr ""
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,number_group:0
 msgid "Group of Contacts"
-msgstr ""
+msgstr "Grupo de contactos"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,id:0
@@ -150,7 +151,7 @@ msgstr ""
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,group_by_is_company:0
 msgid "Is Company"
-msgstr ""
+msgstr "Es empresa."
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,exclude_journal_item:0
@@ -182,7 +183,7 @@ msgstr ""
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Merge Automatically"
-msgstr ""
+msgstr "Combinar automáticamente"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -192,12 +193,12 @@ msgstr ""
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Merge Selection"
-msgstr ""
+msgstr "Combinar selección"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Merge the following contacts"
-msgstr ""
+msgstr "Combinar los siguientes contactos"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -205,10 +206,10 @@ msgid "Merge with Manual Check"
 msgstr ""
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:391
+#: code:addons/base_partner_merge/base_partner_merge.py:410
 #, python-format
 msgid "Merged with the following partners:"
-msgstr ""
+msgstr "Combinado con los siguientes terceros:"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.line,min_id:0
@@ -221,7 +222,7 @@ msgid "Name"
 msgstr "Nombre"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:375
+#: code:addons/base_partner_merge/base_partner_merge.py:394
 #, python-format
 msgid ""
 "Only the destination contact may be linked to existing Journal Items. Please"
@@ -232,17 +233,17 @@ msgstr ""
 #. module: base_partner_merge
 #: selection:base.partner.merge.automatic.wizard,state:0
 msgid "Option"
-msgstr ""
+msgstr "Opción"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Options"
-msgstr ""
+msgstr "Opciones"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,group_by_parent_id:0
 msgid "Parent Company"
-msgstr ""
+msgstr "Empresa matriz"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -266,7 +267,7 @@ msgstr ""
 #. module: base_partner_merge
 #: selection:base.partner.merge.automatic.wizard,state:0
 msgid "Selection"
-msgstr ""
+msgstr "Selección"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -295,25 +296,25 @@ msgstr ""
 #. module: base_partner_merge
 #: model:ir.ui.menu,name:base_partner_merge.root_menu
 msgid "Tools"
-msgstr ""
+msgstr "Herramientas"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,group_by_vat:0
 msgid "VAT"
-msgstr ""
+msgstr "IVA"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.line,wizard_id:0
 msgid "Wizard"
-msgstr ""
+msgstr "Asistente"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:511
+#: code:addons/base_partner_merge/base_partner_merge.py:530
 #, python-format
 msgid "You have to specify a filter for your selection"
-msgstr ""
+msgstr "Debe especificar un filtro para su selección"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "or"
-msgstr ""
+msgstr "o"
