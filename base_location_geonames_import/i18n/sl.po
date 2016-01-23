@@ -3,13 +3,13 @@
 # * base_location_geonames_import
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 15:54+0000\n"
-"PO-Revision-Date: 2015-05-28 07:12+0000\n"
+"POT-Creation-Date: 2016-01-19 01:46+0000\n"
+"PO-Revision-Date: 2016-01-19 13:13+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -22,6 +22,11 @@ msgstr ""
 #: view:better.zip.geonames.import:base_location_geonames_import.better_zip_geonames_import_form
 msgid "Cancel"
 msgstr "Preklic"
+
+#. module: base_location_geonames_import
+#: help:better.zip.geonames.import,title_case:0
+msgid "Converts retreived city and state names to Title Case."
+msgstr "Pretvori pridobljene nazive mest in držav v naslovno začetnico."
 
 #. module: base_location_geonames_import
 #: field:better.zip.geonames.import,country_id:0
@@ -47,7 +52,7 @@ msgid ""
 msgstr "Za zgoraj izbrane države, bo čarovnik prenesel seznam krajev iz geonames.org, ustvaril nove vnose lokacij, če ne bodo najdeni v sistemu in IZBRISAL MANJKAJOČE VNOSE iz nove datoteke."
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:128
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:135
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Pri prenosu datoteke %s je prišlo do napake %d."
@@ -85,7 +90,7 @@ msgid "Last Updated on"
 msgstr "Zadnjič posodobljeno"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:79
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:83
 #, python-format
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
@@ -93,7 +98,12 @@ msgid ""
 msgstr "Koda države v datoteki (%s) ne ustreza izbrani državi (%s)."
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:105
+#: field:better.zip.geonames.import,title_case:0
+msgid "Title Case"
+msgstr "Naslovna začetnica"
+
+#. module: base_location_geonames_import
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:112
 #, python-format
 msgid "Too many states with code %s for country %s"
 msgstr "Preveč regij s kodo %s za državo %s"
