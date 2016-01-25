@@ -29,7 +29,7 @@ class ResPartnerDepartment(models.Model):
     parent_id = fields.Many2one(
         "res.partner.department",
         "Parent department",
-        ondelete='cascade')
+        ondelete='restrict')
     child_ids = fields.One2many(
         "res.partner.department",
         "parent_id",
