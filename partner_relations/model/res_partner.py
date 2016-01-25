@@ -37,6 +37,7 @@ def get_partner_type(partner):
     """
     return 'c' if partner.is_company else 'p'
 
+
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
