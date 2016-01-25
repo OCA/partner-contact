@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # ©  2015 Forest and Biomass Services Romania
-# See README.rst file on addons root folder for license details
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, api, _
 from openerp.exceptions import ValidationError

@@ -1,12 +1,12 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-Partner Create by VAT
-=====================
+==============================================
+Automatic partner creation based on VAT number
+==============================================
 
-This module allows you to create the partners (companies) based on their
-VAT number. It will complete the name, address of the partner from
-VIES Webservice.
+This module allows you to create the partners (companies) based on their VAT number.
+Name and address of the partner will automatically be completed via VIES Webservice.
 
 VIES Service (based on stdnum python)
 http://ec.europa.eu/taxation_customs/vies/vieshome.do
@@ -25,10 +25,10 @@ To install this module, you need to:
 Usage
 =====
 
-On the partner form view you will have a button in the header, called
+On the partner's form view you will have a button in the header, called
 "Get Partner Data", available only on companies (is_company field set to True).
-Pushing the button will fetch datas from the VIES Webservice, for most of
-the countries from EU, the datas are available.
+Clicking the button will fetch data, when available, from the VIES Webservice, for most of
+the EU countries.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
@@ -45,6 +45,11 @@ If you spotted it first, help us smashing it by providing a detailed and welcome
 Credits
 =======
 
+Images
+------
+
+* Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+
 Contributors
 ------------
 
@@ -53,9 +58,9 @@ Contributors
 Maintainer
 ----------
 
-.. image:: http://odoo-community.org/logo.png
+.. image:: https://odoo-community.org/logo.png
    :alt: Odoo Community Association
-   :target: http://odoo-community.org
+   :target: https://odoo-community.org
 
 This module is maintained by the OCA.
 
@@ -63,4 +68,4 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-To contribute to this module, please visit http://odoo-community.org.
+To contribute to this module, please visit https://odoo-community.org.
