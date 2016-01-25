@@ -28,7 +28,7 @@ class ResPartnerJobPosition(models.Model):
     name = fields.Char(required=True, translate=True)
     parent_id = fields.Many2one(
         "res.partner.job_position",
-        "Parent")
+        "Parent", ondelete='restrict')
     child_ids = fields.One2many(
         "res.partner.job_position",
         "parent_id",
