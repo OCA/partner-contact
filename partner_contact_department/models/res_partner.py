@@ -28,7 +28,8 @@ class ResPartnerDepartment(models.Model):
     name = fields.Char(required=True, translate=True)
     parent_id = fields.Many2one(
         "res.partner.department",
-        "Parent department")
+        "Parent department",
+        ondelete='restrict')
     child_ids = fields.One2many(
         "res.partner.department",
         "parent_id",
