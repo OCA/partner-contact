@@ -22,7 +22,7 @@
 
 from openerp import osv, models, fields, api, exceptions, _
 
-from . import get_partner_type
+from .res_partner import get_partner_type
 
 
 class ResPartnerRelation(models.Model):

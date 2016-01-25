@@ -24,15 +24,3 @@ from . import res_partner_relation
 from . import res_partner_relation_type
 from . import res_partner_relation_all
 from . import res_partner_relation_type_selection
-
-PADDING = 10
-
-
-def get_partner_type(partner):
-    """Get partner type for relation.
-
-    :param partner: a res.partner either a company or not
-    :return: 'c' for company or 'p' for person
-    :rtype: str
-    """
-    return 'c' if partner.is_company else 'p'

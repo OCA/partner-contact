@@ -23,7 +23,7 @@ from openerp import models, fields, api
 from openerp.tools import drop_view_if_exists
 from .res_partner_relation_type_selection import \
     ResPartnerRelationTypeSelection
-from . import get_partner_type, PADDING
+from .res_partner import get_partner_type, PADDING
 
 
 class ResPartnerRelationAll(models.AbstractModel):
