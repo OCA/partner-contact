@@ -1,0 +1,999 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"set",
+				"set_trace"
+			],
+			[
+				"a",
+				"account"
+			],
+			[
+				"title",
+				"title"
+			],
+			[
+				"cou",
+				"course_id"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "views/res_partner.xml",
+			"settings":
+			{
+				"buffer_size": 704,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_gender/views/res_partner.xml",
+			"settings":
+			{
+				"buffer_size": 602,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_nationality/views/res_partner.xml",
+			"settings":
+			{
+				"buffer_size": 624,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_nationality/__openerp__.py",
+			"settings":
+			{
+				"buffer_size": 796,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "__openerp__.py",
+			"settings":
+			{
+				"buffer_size": 491,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_in_several_companies/__openerp__.py",
+			"settings":
+			{
+				"buffer_size": 1150,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_personal_information_page/views/res_partner.xml",
+			"settings":
+			{
+				"buffer_size": 864,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_gender/__openerp__.py",
+			"settings":
+			{
+				"buffer_size": 786,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "models.py",
+			"settings":
+			{
+				"buffer_size": 1372,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "__init__.py",
+			"settings":
+			{
+				"buffer_size": 140,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_gender/models/__init__.py",
+			"settings":
+			{
+				"buffer_size": 177,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_gender/models/res_partner.py",
+			"settings":
+			{
+				"buffer_size": 436,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_gender/__init__.py",
+			"settings":
+			{
+				"buffer_size": 172,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_gender/README.rst",
+			"settings":
+			{
+				"buffer_size": 1984,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tests/test_birthdate.py",
+			"settings":
+			{
+				"buffer_size": 1249,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_in_several_companies/views/res_partner.xml",
+			"settings":
+			{
+				"buffer_size": 10945,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"packe",
+				"Package Control: Install Package"
+			],
+			[
+				"con",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Discover Packages"
+			],
+			[
+				"control",
+				"Package Control: Install Package"
+			],
+			[
+				"package contro",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/dleemann/nobackup/dev/partner-contact/partner_firstname/views/res_partner.xml",
+		"/home/dleemann/nobackup/dev/partner-contact/partner_contact_in_several_companies/__init__.py",
+		"/home/dleemann/nobackup/dev/partner-contact/partner_contact_in_several_companies/views/res_partner.xml",
+		"/home/dleemann/nobackup/dev/partner-contact/partner_contact_birthdate/tests/__init__.py",
+		"/home/dleemann/nobackup/dev/partner-contact/partner_contact_birthdate/data/res_partner.yml",
+		"/home/dleemann/nobackup/dev/partner-contact/partner_contact_birthdate/README.rst",
+		"/home/dleemann/nobackup/dev/partner-contact/partner_contact_birthdate/__openerp__.py",
+		"/home/dleemann/nobackup/instance/bwi_odoo/parts/partner-contact/partner_contact_personal_information_page/i18n/partner_contact_personal_information_page.pot",
+		"/home/dleemann/nobackup/instance/bwi_odoo/parts/partner-contact/partner_contact_birthdate/__openerp__.py",
+		"/home/dleemann/nobackup/codesamples/openerp-addons-bundle/lunch/lunch_demo.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/wizard/print_hours_block.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/openerp/osv/orm.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/hr-timesheet/timesheet_task/__openerp__.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/hr-timesheet/hr_timesheet_task/__openerp__.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/hr-timesheet/timesheet_task/test/task_timesheet_indicators.yml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/addons/project/project.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/specific-parts/specific-addons/specific_fct/wizard/associate_aal.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/addons/analytic/analytic.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/addons/mail/mail_thread.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-reporting/project_billing_utils/__openerp__.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/addons/hr_timesheet/hr_timesheet.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-financial-reporting/account_financial_report_webkit/report/common_reports.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/report.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-budgeting/budget/budget_line.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/addons/pad_project/project_task.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/addons/hr_timesheet/hr_timesheet_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/addons/analytic/analytic_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/openerp/osv/osv.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/openerp/addons/base/res/res_partner_demo.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/openerp/addons/base/res/res_users_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/openerp/addons/base/base_demo.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/openerp/addons/base/res/res_users.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/project_manager_invoicing/models/project.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic/analytic_secondaxis/analytic_secondaxis.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-reporting/project_indicators/project_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/addons/stock/stock.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic/account_analytic_line_list/wizard/account_analytic_line.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic/analytic_secondaxis_project/analytic_secondaxis.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-budgeting/budget/budget_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/report/hours_block.rml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/addons/account/installer.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic/analytic_multicurrency/account_analytic_line.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/report/hours_block.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-reporting/project_billing_utils/analytic.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-invoicing/invoice_validation_wkfl/invoice_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic/analytic_secondaxis_project/analytic_secondaxis_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/department/analytic_department/analytic_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/openerp/osv/orm.pyc",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic/account_analytic_line_list/wizard/account_analytic_line.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_cutoff_base/account_cutoff.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/project_manager_invoicing/models/account_analytic_line.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic/account_analytic_plan_required/account.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/addons/hr_timesheet_invoice/wizard/hr_timesheet_invoice_create.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/addons/hr_timesheet_invoice/wizard/hr_timesheet_final_invoice_create.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic/account_analytic_required/account.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-budgeting/budget_crm/wizard/crm_to_budget.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic/analytic_multicurrency/analytic_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/server/addons/hr_timesheet_invoice/hr_timesheet_invoice_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/report/__init__.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-reporting/project_billing_utils/wizard/associate_aal.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/project_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/hours_block.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/account_analytic.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/__init__.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/__openerp__.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/hours_block_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/report/original.hours_block_original.rml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/.gitignore",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/hours_block_data.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/etc/openerp.cfg",
+		"/home/dleemann/nobackup/camptocamp_openerp/common.cfg",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/hours_block_menu.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/wizard/print_hours_block.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/security/hours_block_security.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/wizard/print_currency_unrealized_report_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/wizard/__init__.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/project.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/security/ir.model.access.csv",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/account_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/report/__init__.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/wizard/__init__.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/res_currency_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/res_currency.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/report/report.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/wizard/print_currency_unrealized_report.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/__init__.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/wizard/wizard_currency_revaluation_view.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/wizard/wizard_currency_revaluation.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/report/currency_unrealized_report.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/account.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation/res_company.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/wizard/hours_block_wizard.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic/account_analytic_line_list/__openerp__.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/wizard/report_block_hours_state.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/wizard/hours_block_wizard.rml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic/account_analytic_line_list/wizard/__init__.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block/wizard/hours_block_wizard.xml",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic/account_analytic_line_list/__init__.py",
+		"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic/account_analytic_required/account_view.xml",
+		"/home/dleemann/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/dleemann/nobackup/testV9/parts/openacademy/module_test/views/views.xml"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/home/dleemann/nobackup/dev/partner-contact/partner_contact_birthdate",
+			"/home/dleemann/nobackup/instance/bwi_odoo",
+			"/home/dleemann/nobackup/instance/bwi_odoo/parts",
+			"/home/dleemann/nobackup/instance/bwi_odoo",
+			"/home/dleemann/nobackup/instance/bwi_odoo/specific-parts",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts/hr-timesheet",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts/account-analytic",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts/server",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts/account-closing/account_multicurrency_revaluation",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service/analytic_hours_block",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts",
+			"/home/dleemann/nobackup/camptocamp_openerp/parts/project-service"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"person",
+			"perso",
+			"persona",
+			"__unported",
+			"string",
+			"position",
+			"parsonal.",
+			"personal_contact",
+			"partner_con",
+			"base.personal_conta",
+			"personal_contact_information",
+			"death",
+			"personal_information_page",
+			"personal_information",
+			"personal_information_page",
+			"personal information",
+			"personal informations",
+			"partner_contact_nationality_",
+			"individual",
+			"unlink",
+			"confirm",
+			"state",
+			"new_id_order_line",
+			"cashmove",
+			"new_id_order_line",
+			"get_",
+			"get",
+			"_store_set_values",
+			"hours",
+			"_progress",
+			"task_id",
+			"unit_amount",
+			"_set_remaining_hours_create",
+			"_name = \"project.task",
+			"_name = 'project.task",
+			"_name = \"project.task",
+			"planned_hours",
+			"account.analytic.line",
+			"_set_remaining_hours_create",
+			"set_rem¨",
+			"set_rem",
+			"import pdb; pdb.set_trace()",
+			"pdb",
+			"_trigger_projects",
+			"_set_remaining_hours_write",
+			"_set_remaining_hours_create",
+			"hr.analytic",
+			"delay_hours",
+			"planned_hours",
+			"super",
+			"progress",
+			"_hours_get",
+			"WATCHERS",
+			"TASK_WATCHERS",
+			"TIMESHEET_WATCHERS",
+			"timesh",
+			"project_task_work",
+			"get_hou",
+			"_name = \"project.task\"",
+			"total_hours",
+			"tota_hours",
+			"_name = \"project.task\"",
+			"_name = 'project.task'",
+			"_name = 'project",
+			"unction",
+			"store={",
+			"sotre={",
+			"write",
+			"_name",
+			"project.task",
+			"project",
+			"project.task",
+			"write",
+			"_name = \"project.task\"",
+			"_name = 'project.task'",
+			"_name = 'project.task",
+			"_name = project.task",
+			"project.task",
+			"You cannot modify an invoiced analytic line!",
+			"amount=",
+			"amount",
+			"set to drafttt",
+			"invoice_cost_create",
+			"invoice_id",
+			"invoice_iod",
+			"factor",
+			"_prepare_cost_invoice_line",
+			"xpath",
+			"on_change_unit_amount",
+			"hr_timesheet_line_tree",
+			"line.tree",
+			"line_tree",
+			"view_account_analytic_line_form",
+			"'state':",
+			"state",
+			"check",
+			"_check",
+			"osv",
+			"create",
+			"SELF_WRITEABLE_FIELDS",
+			"set",
+			"user",
+			"user_",
+			"user_demo",
+			"user",
+			"partner_12",
+			"_getEmployeeProduct",
+			"def _get_analytic_line(",
+			"write",
+			"create",
+			"def _check(",
+			"_check(",
+			"_check",
+			"raise orm.except_orm",
+			"res_users.has",
+			"res_users.",
+			"res_user",
+			"Confirm draft",
+			"button",
+			"Hours Block",
+			"menu_block_hours",
+			"menu_hours_block",
+			"hours block",
+			"project_timesheet_bill_task",
+			"action_project_timesheet_bill_task",
+			"Invoice Task",
+			"string=\"Invoiced\"",
+			"group_time"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 15,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "views/res_partner.xml",
+					"settings":
+					{
+						"buffer_size": 704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								704,
+								704
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_gender/views/res_partner.xml",
+					"settings":
+					{
+						"buffer_size": 602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								321,
+								321
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_nationality/views/res_partner.xml",
+					"settings":
+					{
+						"buffer_size": 624,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								336,
+								336
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_nationality/__openerp__.py",
+					"settings":
+					{
+						"buffer_size": 796,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								732,
+								732
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "__openerp__.py",
+					"settings":
+					{
+						"buffer_size": 491,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								337,
+								337
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_in_several_companies/__openerp__.py",
+					"settings":
+					{
+						"buffer_size": 1150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								949,
+								949
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_personal_information_page/views/res_partner.xml",
+					"settings":
+					{
+						"buffer_size": 864,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								54,
+								54
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_gender/__openerp__.py",
+					"settings":
+					{
+						"buffer_size": 786,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								722,
+								722
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 51.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "models.py",
+					"settings":
+					{
+						"buffer_size": 1372,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								149,
+								149
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "__init__.py",
+					"settings":
+					{
+						"buffer_size": 140,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_gender/models/__init__.py",
+					"settings":
+					{
+						"buffer_size": 177,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								177,
+								177
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_gender/models/res_partner.py",
+					"settings":
+					{
+						"buffer_size": 436,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_gender/__init__.py",
+					"settings":
+					{
+						"buffer_size": 172,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_gender/README.rst",
+					"settings":
+					{
+						"buffer_size": 1984,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/RestructuredText/reStructuredText.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 357.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "tests/test_birthdate.py",
+					"settings":
+					{
+						"buffer_size": 1249,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								81,
+								81
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/home/dleemann/nobackup/dev/partner-contact/partner_contact_in_several_companies/views/res_partner.xml",
+					"settings":
+					{
+						"buffer_size": 10945,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8777,
+								8877
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2127.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.770636626906,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 338.0,
+	"status_bar_visible": true
+}
