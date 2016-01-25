@@ -9,7 +9,7 @@
     "category": "Customer Relationship Management",
     "website": "https://odoo-community.org/",
     "depends": [
-        "base",
+        "partner_contact_personal_information_page",
     ],
     "data": [
         "views/res_partner.xml",
