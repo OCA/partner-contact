@@ -3,13 +3,14 @@
 # * partner_academic_title
 # 
 # Translators:
+# Antonio Trueba, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-19 01:36+0000\n"
-"PO-Revision-Date: 2015-11-24 19:52+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2016-01-19 01:46+0000\n"
+"PO-Revision-Date: 2016-01-16 15:08+0000\n"
+"Last-Translator: Antonio Trueba\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,12 +25,12 @@ msgstr ""
 #: field:res.partner,academic_title_display:0
 #: field:res.partner,academic_title_ids:0
 msgid "Academic Titles"
-msgstr ""
+msgstr "Títulos académicos"
 
 #. module: partner_academic_title
 #: field:partner.academic.title,active:0
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 #. module: partner_academic_title
 #: model:partner.academic.title,name:partner_academic_title.academic_title_bs
@@ -119,7 +120,7 @@ msgstr ""
 #. module: partner_academic_title
 #: field:partner.academic.title,sequence:0
 msgid "Sequence"
-msgstr ""
+msgstr "Secuencia"
 
 #. module: partner_academic_title
 #: model:partner.academic.title,name:partner_academic_title.academic_title_thd

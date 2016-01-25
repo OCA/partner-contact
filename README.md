@@ -22,7 +22,7 @@ addon | version | summary
 [base_contact](base_contact/) | 8.0.2.0.0 | [DEPRECATED] Manage your contacts separately
 [base_continent](base_continent/) | 8.0.1.0.0 | Continent management
 [base_location](base_location/) | 8.0.1.0.0 | Enhanced zip/npa management system
-[base_location_geonames_import](base_location_geonames_import/) | 8.0.0.2.0 | Import better zip entries from Geonames
+[base_location_geonames_import](base_location_geonames_import/) | 8.0.0.3.0 | Import better zip entries from Geonames
 [base_location_nuts](base_location_nuts/) | 8.0.1.0.0 | NUTS Regions
 [base_partner_merge](base_partner_merge/) | 8.0.0.1.0 | Base Partner Merge
 [base_partner_sequence](base_partner_sequence/) | 8.0.1.1.1 | Sets customer's code from a sequence
@@ -42,7 +42,7 @@ addon | version | summary
 [partner_external_maps](partner_external_maps/) | 8.0.0.1.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_firstname](partner_firstname/) | 8.0.2.1.0 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 8.0.0.1.0 | Partner Helper
-[partner_relations](partner_relations/) | 8.0.1.1.0 | Partner relations
+[partner_relations](partner_relations/) | 8.0.1.1.1 | Partner relations
 [partner_second_lastname](partner_second_lastname/) | 8.0.4.0.0 | Have split first and second lastnames
 [partner_sector](partner_sector/) | 8.0.1.0.0 | Add partner sectors
 [partner_street_number](partner_street_number/) | 8.0.0.1.0 | Introduces separate fields for street name and street number.

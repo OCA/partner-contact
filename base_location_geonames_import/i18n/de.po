@@ -3,13 +3,13 @@
 # * base_location_geonames_import
 # 
 # Translators:
-# Rudolf Schnapka <rs@techno-flex.de>, 2015
+# Rudolf Schnapka <rs@techno-flex.de>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-25 01:50+0000\n"
-"PO-Revision-Date: 2015-11-25 11:07+0000\n"
+"POT-Creation-Date: 2016-01-19 01:46+0000\n"
+"PO-Revision-Date: 2016-01-20 12:03+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -22,6 +22,11 @@ msgstr ""
 #: view:better.zip.geonames.import:base_location_geonames_import.better_zip_geonames_import_form
 msgid "Cancel"
 msgstr "abbrechen"
+
+#. module: base_location_geonames_import
+#: help:better.zip.geonames.import,title_case:0
+msgid "Converts retreived city and state names to Title Case."
+msgstr ""
 
 #. module: base_location_geonames_import
 #: field:better.zip.geonames.import,country_id:0
@@ -47,7 +52,7 @@ msgid ""
 msgstr "Für das oben gewählte Land lädt der Assitent das aktuellste Städteverzeichnis von geonames.org, Legt neue Ortbezeichnungen an, wenn sie nicht bereits im System hinterlegt sind und löscht nicht vorhandene Einträge aus der neuen Datei. "
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:128
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:135
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Erhielt einen Fehler %d beim Versuch die Datei %s herunter zu laden."
@@ -85,15 +90,20 @@ msgid "Last Updated on"
 msgstr "zuletzt aktualisiert am"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:79
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:83
 #, python-format
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
 "country (%s)."
-msgstr ""
+msgstr "Die Landeskennung in der Datei (%s) passt nicht zum gewählten Land (%s)."
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:105
+#: field:better.zip.geonames.import,title_case:0
+msgid "Title Case"
+msgstr "Fall-Bezeichnung"
+
+#. module: base_location_geonames_import
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:112
 #, python-format
 msgid "Too many states with code %s for country %s"
 msgstr "Zu viele Bundesländer mit Schlüssel %s im Land %s"
