@@ -3,15 +3,15 @@
 # * base_partner_sequence
 # 
 # Translators:
-# Bruno JOLIVEAU, 2015
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (8.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 15:54+0000\n"
-"PO-Revision-Date: 2015-08-19 15:15+0000\n"
-"Last-Translator: Bruno JOLIVEAU\n"
-"Language-Team: French (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/fr/)\n"
+"POT-Creation-Date: 2017-11-21 01:48+0000\n"
+"PO-Revision-Date: 2017-11-21 01:48+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -19,14 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: base_partner_sequence
-#: model:ir.model,name:base_partner_sequence.model_res_partner
-msgid "Partner"
-msgstr "Partenaire"
+#: code:addons/base_partner_sequence/models/partner.py:73
+#, python-format
+msgid "Either field values or an id must be provided."
+msgstr ""
 
 #. module: base_partner_sequence
-#: view:res.partner:base_partner_sequence.view_partner_form
-msgid ""
-"{\n"
-"                    'readonly': [('is_company', '=', False),\n"
-"                                 ('parent_id', '!=', False)]}"
-msgstr ""
+#: model:ir.model,name:base_partner_sequence.model_res_partner
+msgid "Partner"
+msgstr "Contact"
