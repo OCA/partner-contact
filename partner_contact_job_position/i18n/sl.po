@@ -3,13 +3,13 @@
 # * partner_contact_job_position
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-08 01:38+0000\n"
-"PO-Revision-Date: 2015-12-23 15:13+0000\n"
+"POT-Creation-Date: 2016-05-07 07:18+0000\n"
+"PO-Revision-Date: 2016-05-07 07:15+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -39,6 +39,11 @@ msgid "Created on"
 msgstr "Ustvarjeno"
 
 #. module: partner_contact_job_position
+#: field:res.partner.job_position,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: partner_contact_job_position
 #: field:res.partner.job_position,id:0
 msgid "ID"
 msgstr "ID"
@@ -60,6 +65,11 @@ msgstr "Delovni položaj"
 #: view:res.partner.job_position:partner_contact_job_position.res_partner_job_position_tree_view
 msgid "Job positions"
 msgstr "Delovni položaji"
+
+#. module: partner_contact_job_position
+#: field:res.partner.job_position,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
 
 #. module: partner_contact_job_position
 #: field:res.partner.job_position,write_uid:0
