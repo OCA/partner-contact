@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-# For copyright and license notices, see __openerp__.py file in root directory
-##############################################################################
+# © 2015 Antiun Ingeniería S.L. - Antonio Espinosa
+# © 2015 Antiun Ingeniería S.L. - Jairo Llopis
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, api, _
 from openerp.exceptions import Warning
@@ -140,7 +140,6 @@ class NutsImport(models.TransientModel):
         #   UK => GB (United Kingdom)
         self._countries['EL'] = self._countries['GR']
         self._countries['UK'] = self._countries['GB']
-        logger.info('_load_countries = %s' % pformat(self._countries))
 
     @api.model
     def state_mapping(self, data, node):
@@ -184,11 +183,11 @@ class NutsImport(models.TransientModel):
         nuts_to_delete = nuts_model.search(
             [('country_id', 'in', [x.id for x in self._countries.values()])])
         # Download NUTS in english, create or update
-        logger.info('Import NUTS 2013 English')
+        logger.info('Importing NUTS 2013 English')
         xmlcontent = self._download_nuts()
         dom = etree.fromstring(xmlcontent)
         for node in dom.iter('Item'):
-                logger.info('Reading level=%s, id=%s' %
+                logger.debug('Reading level=%s, id=%s' %
                             (node.get('idLevel', 'N/A'),
                              node.get('id', 'N/A')))
                 nuts = self.create_or_update_nuts(node)
