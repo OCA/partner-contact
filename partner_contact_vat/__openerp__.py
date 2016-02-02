@@ -17,6 +17,10 @@
         "base_vat",
         "partner_contact_personal_information_page",
     ],
+    "images": [
+        "images/constraint.png",
+        "images/field.png",
+    ],
     "data": [
         "view/res_partner.xml",
     ],
