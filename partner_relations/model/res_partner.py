@@ -25,6 +25,18 @@ from openerp.osv.expression import is_leaf, AND, OR, FALSE_LEAF
 from openerp.tools import DEFAULT_SERVER_DATE_FORMAT
 from openerp.tools.translate import _
 
+PADDING = 10
+
+
+def get_partner_type(partner):
+    """Get partner type for relation.
+
+    :param partner: a res.partner either a company or not
+    :return: 'c' for company or 'p' for person
+    :rtype: str
+    """
+    return 'c' if partner.is_company else 'p'
+
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
