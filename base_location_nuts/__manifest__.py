@@ -35,6 +35,9 @@
         'wizard/nuts_import_view.xml',
         'security/ir.model.access.csv',
     ],
+    'images': [
+        'images/new_fields.png',
+    ],
     'author': 'Antiun Ingeniería S.L., '
               'Odoo Community Association (OCA)',
     'website': 'http://www.antiun.com',
