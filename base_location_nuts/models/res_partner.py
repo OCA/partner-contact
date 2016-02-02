@@ -23,16 +23,16 @@ class ResPartner(models.Model):
         string="NUTS L4")
 
     @api.multi
-    def _onchange_nuts(self, field):
-        country_id = self[field].country_id.id
-        state_id = self[field].state_id.id
+    def _onchange_nuts(self, level):
+        field = self["nuts%d_id" % level]
+        country_id = field.country_id.id
+        state_id = field.state_id.id
         if country_id and self.country_id.id != country_id:
             self.country_id = country_id
         if state_id and self.state_id.id != state_id:
             self.state_id = state_id
-        level = int(field[:5][-1])
         if (level - 1) > 0:
-            parent_id = self[field].parent_id.id
+            parent_id = field.parent_id.id
             if parent_id:
                 parent_field = 'nuts%d_id' % (level - 1)
                 if self[parent_field].id != parent_id:
@@ -54,22 +54,22 @@ class ResPartner(models.Model):
     @api.multi
     @api.onchange('nuts4_id')
     def _onchange_nuts4_id(self):
-        return self._onchange_nuts('nuts4_id')
+        return self._onchange_nuts(4)
 
     @api.multi
     @api.onchange('nuts3_id')
     def _onchange_nuts3_id(self):
-        return self._onchange_nuts('nuts3_id')
+        return self._onchange_nuts(3)
 
     @api.multi
     @api.onchange('nuts2_id')
     def _onchange_nuts2_id(self):
-        return self._onchange_nuts('nuts2_id')
+        return self._onchange_nuts(2)
 
     @api.multi
     @api.onchange('nuts1_id')
     def _onchange_nuts1_id(self):
-        return self._onchange_nuts('nuts1_id')
+        return self._onchange_nuts(1)
 
     @api.multi
     @api.onchange('country_id')
