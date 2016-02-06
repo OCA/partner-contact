@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Antonio Trueba, 2016
+# Antonio Trueba, 2016
 # Francisco Palm <francisco.palm@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-19 20:35+0000\n"
-"PO-Revision-Date: 2016-01-07 14:19+0000\n"
+"POT-Creation-Date: 2016-01-18 01:36+0000\n"
+"PO-Revision-Date: 2016-02-01 09:57+0000\n"
 "Last-Translator: Antonio Trueba\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -163,7 +164,7 @@ msgstr "nota interna..."
 #. module: partner_contact_in_several_companies
 #: model:ir.model,name:partner_contact_in_several_companies.model_ir_actions_act_window
 msgid "ir.actions.act_window"
-msgstr ""
+msgstr "ir.actions.act_window"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_kanban_contact
