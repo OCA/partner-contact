@@ -57,10 +57,18 @@ class UserCase(CompanyCase, MailInstalled):
 class AddressCase(TransactionCase):
     """Test ``res.partner`` when it is a address."""
 
-    def test_new_empty_address(self):
-        """Create an empty partner."""
+    def test_new_empty_invoice_address(self):
+        """Create an invoice patner without name."""
         self.original = self.env["res.partner"].create({
             "is_company": False,
             "type": 'invoice',
+            "lastname": "",
+            "firstname": ""})
+
+    def test_new_empty_shipping_address(self):
+        """Create an shipping patner without name."""
+        self.original = self.env["res.partner"].create({
+            "is_company": False,
+            "type": 'delivery',
             "lastname": "",
             "firstname": ""})
