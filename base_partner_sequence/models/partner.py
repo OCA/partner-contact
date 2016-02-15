@@ -27,7 +27,7 @@ class ResPartner(models.Model):
         # only assign a 'ref' to commercial partners
         if partner_id:
             partner = self.browse(partner_id)
-            vals.setdefault('is_company',  partner.is_company)
+            vals.setdefault('is_company', partner.is_company)
             vals.setdefault('parent_id', partner.parent_id.id)
         return vals.get('is_company') or not vals.get('parent_id')
 

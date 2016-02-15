@@ -104,7 +104,7 @@ class ResUsers(models.Model):
                 'context_map_website_id': map_website.id or False,
                 'context_route_map_website_id': map_route_website.id or False,
                 'context_route_start_partner_id': user.partner_id.id or False,
-                })
+            })
 
 
 class ResPartner(models.Model):
@@ -167,7 +167,7 @@ class ResPartner(models.Model):
             'type': 'ir.actions.act_url',
             'url': url,
             'target': 'new',
-            }
+        }
 
     @api.multi
     def open_route_map(self):
@@ -207,4 +207,4 @@ class ResPartner(models.Model):
             'type': 'ir.actions.act_url',
             'url': url,
             'target': 'new',
-            }
+        }

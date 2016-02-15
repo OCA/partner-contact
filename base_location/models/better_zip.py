@@ -44,7 +44,7 @@ class BetterZip(models.Model):
         'city',
         'state_id',
         'country_id',
-        )
+    )
     def _get_display_name(self):
         if self.name:
             name = [self.name, self.city]

@@ -30,7 +30,7 @@ class TestPartnerRelation(common.TransactionCase):
         self.relation_model = self.env['res.partner.relation']
 
         self.partner_1 = self.partner_model.create({
-            'name':  'Test User 1',
+            'name': 'Test User 1',
             'is_company': False
         })
 
