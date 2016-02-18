@@ -28,3 +28,10 @@ class ResUser(models.Model):
                 result[field] = inverted.get(field)
 
         return result
+
+    @api.onchange("firstname", "lastname")
+    def _compute_name(self):
+        """Write the 'name' field according to splitted data."""
+        for rec in self:
+            rec.name = rec.partner_id._get_computed_name(
+                rec.lastname, rec.firstname)
