@@ -14,5 +14,5 @@ class IrModel(models.Model):
     @api.cr
     def _register_hook(self, cr):
         """Only warn in installed instances."""
-        _logger.warning("This module is DEPRECATED. See README.")
+        _logger.info("WARNING: This module is DEPRECATED. See README.")
         return super(IrModel, self)._register_hook(cr)
