@@ -3,8 +3,11 @@
 # © 2015 Antiun Ingeniería S.L. - Jairo Llopis
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from . import (
-    res_country,
-    res_partner_nuts,
-    res_partner,
-)
+from openerp import models, fields
+
+
+class ResCountry(models.Model):
+    _inherit = "res.country"
+
+    state_level = fields.Integer(
+        help="Level for the state NUTS category.")

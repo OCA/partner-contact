@@ -7,28 +7,22 @@ NUTS Regions
 
 This module allows to import NUTS locations.
 
-Creates two new fields in Partner object:
+Creates four new fields in Partner object, one per NUTS level
 
-* Region (res.partner.region): Classification over state, automatically
-  calculated when state is selected
-* Substate (res.partner.substate): Classification above state, user must select
-  one from available for selected state
+* NUTS L1: Country level
+* NUTS L2: Normally state or big region level
+* NUTS L3: Normally substate or state level
+* NUTS L4: Normally small region or province level
 
 
 Installation
 ============
 
-You need to install another addon (one for each country) in order to use
-these NUTS, for example:
+We recommend to install another addon (one for each country) in order to relate
+NUTS with states defined by each localization addon, for example:
 
-* l10n_es_location_nuts :
-    * Spanish Provinces (NUTS level 4) as Partner State
-    * Spanish Autonomous communities (NUTS level 3) as Partner Substate
-    * Spanish Regions (NUTS level 2) as Partner Region
-* l10n_de_location_nuts :
-    * German states (NUTS level 2) as Partner State
-    * German districts (NUTS level 3) as Partner Substate
-    * German regions (NUTS level 4) as Partner Region
+* l10n_es_location_nuts : Spanish Provinces (NUTS level 4) related to Partner State
+* l10n_de_location_nuts : German states (NUTS level 2) related to Partner State
 
 
 Configuration
@@ -54,8 +48,7 @@ in order to allow to assign them to partner object.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/{branch}
-
+   :target: https://runbot.odoo-community.org/runbot/134/8.0
 
 Bug Tracker
 ===========
@@ -74,6 +67,7 @@ Contributors
 
 * Rafael Blasco <rafabn@antiun.com>
 * Antonio Espinosa <antonioea@antiun.com>
+* Jairo Llopis <yajo.sk8@gmail.com>
 
 Maintainer
 ----------

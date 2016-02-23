@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- © 2015 Antiun Ingeniería S.L. - Jairo Llopis
+     © 2015 Antiun Ingeniería S.L. - Antonio Espinosa
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
 <openerp>
 <data>
 
@@ -8,48 +11,16 @@
     <field name="inherit_id" ref="base.view_partner_form"/>
     <field name="arch" type="xml">
         <xpath expr="//sheet/group//field[@name='country_id']/.." position="after">
-            <div width="1%" cell-class="oe_form_group_cell_label"
-                 attrs="{'invisible': [('use_parent_address','=',True)]}">
-                <field name="lbl_substate" class="oe_inline"/>
-            </div>
-            <div attrs="{'invisible': [('use_parent_address','=',True)]}">
-                <field name="substate"
-                       class="oe_no_button"
-                       options="{'no_open': True, 'no_create': True}"
-                       attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-            </div>
-            <div width="1%" cell-class="oe_form_group_cell_label"
-                 attrs="{'invisible': [('use_parent_address','=',True)]}">
-                <field name="lbl_region" class="oe_inline"/>
-            </div>
-            <div attrs="{'invisible': [('use_parent_address','=',True)]}">
-                <field name="region"
-                       class="oe_no_button"
-                       options="{'no_open': True, 'no_create': True}"
-                       attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-            </div>
+            <field name="nuts1_id"/>
+            <field name="nuts2_id"/>
+            <field name="nuts3_id"/>
+            <field name="nuts4_id"/>
         </xpath>
         <xpath expr="//field[@name='child_ids']/form//field[@name='country_id']/.." position="after">
-            <div width="1%" cell-class="oe_form_group_cell_label"
-                 attrs="{'invisible': [('use_parent_address','=',True)]}">
-                <field name="lbl_substate" class="oe_inline"/>
-            </div>
-            <div attrs="{'invisible': [('use_parent_address','=',True)]}">
-                <field name="substate"
-                       class="oe_no_button"
-                       options="{'no_open': True, 'no_create': True}"
-                       attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-            </div>
-            <div width="1%" cell-class="oe_form_group_cell_label"
-                 attrs="{'invisible': [('use_parent_address','=',True)]}">
-                <field name="lbl_region" class="oe_inline"/>
-            </div>
-            <div attrs="{'invisible': [('use_parent_address','=',True)]}">
-                <field name="region"
-                       class="oe_no_button"
-                       options="{'no_open': True, 'no_create': True}"
-                       attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-            </div>
+            <field name="nuts1_id"/>
+            <field name="nuts2_id"/>
+            <field name="nuts3_id"/>
+            <field name="nuts4_id"/>
         </xpath>
     </field>
 </record>
@@ -60,16 +31,24 @@
     <field name="inherit_id" ref="base.view_res_partner_filter"/>
     <field name="arch" type="xml">
         <field name="category_id" position="after">
-            <field name="region"/>
-            <field name="substate"/>
+            <field name="nuts1_id"/>
+            <field name="nuts2_id"/>
+            <field name="nuts3_id"/>
+            <field name="nuts4_id"/>
         </field>
         <filter string="Salesperson" position="after">
-            <filter string="Region"
+            <filter string="NUTS L1"
                     domain="[]"
-                    context="{'group_by': 'region'}"/>
-            <filter string="Substate"
+                    context="{'group_by': 'nuts1_id'}"/>
+            <filter string="NUTS L2"
                     domain="[]"
-                    context="{'group_by': 'substate'}"/>
+                    context="{'group_by': 'nuts2_id'}"/>
+            <filter string="NUTS L3"
+                    domain="[]"
+                    context="{'group_by': 'nuts3_id'}"/>
+            <filter string="NUTS L4"
+                    domain="[]"
+                    context="{'group_by': 'nuts4_id'}"/>
         </filter>
     </field>
 </record>
