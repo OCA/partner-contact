@@ -19,14 +19,3 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-import logging
-import os
-
-
-_logger = logging.getLogger(__name__ + ".deprecated")
-
-# Skip warnings on runbots
-_method = _logger.info if "OCA_RUNBOT" in os.environ else _logger.warning
-_method("This module is DEPRECATED. See %s/README.rst.",
-        os.path.dirname(__file__))
