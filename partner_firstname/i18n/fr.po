@@ -26,7 +26,7 @@ msgstr ""
 #. module: partner_firstname
 #: field:res.partner,firstname:0
 msgid "First name"
-msgstr ""
+msgstr "Prénom"
 
 #. module: partner_firstname
 #: view:res.partner:partner_firstname.view_partner_form_firstname
@@ -36,13 +36,13 @@ msgstr "Est une société?"
 #. module: partner_firstname
 #: field:res.partner,lastname:0
 msgid "Last name"
-msgstr ""
+msgstr "Nom de famille"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:23
 #, python-format
 msgid "No name is set."
-msgstr ""
+msgstr "Pas de nom défini"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
