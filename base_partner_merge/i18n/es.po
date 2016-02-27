@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 01:46+0000\n"
-"PO-Revision-Date: 2016-02-16 12:43+0000\n"
+"POT-Creation-Date: 2016-02-26 01:49+0000\n"
+"PO-Revision-Date: 2016-02-23 12:23+0000\n"
 "Last-Translator: Antonio Trueba\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -41,12 +41,12 @@ msgstr "¿Seguro que quiere combinar automáticamente sus contactos?"
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid ""
 "Are you sure to execute the list of automatic merges of your contacts ?"
-msgstr ""
+msgstr "¿Seguro que quiere ejecutar la lista de combinaciones automáticas sobre sus contactos?"
 
 #. module: base_partner_merge
 #: model:ir.actions.act_window,name:base_partner_merge.action_partner_merge
 msgid "Automatic Merge"
-msgstr ""
+msgstr "Combinación automática"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -118,12 +118,12 @@ msgstr "Error"
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Exclude contacts having"
-msgstr ""
+msgstr "Excluir contactos que cumplan"
 
 #. module: base_partner_merge
 #: selection:base.partner.merge.automatic.wizard,state:0
 msgid "Finished"
-msgstr ""
+msgstr "Finalizado"
 
 #. module: base_partner_merge
 #: code:addons/base_partner_merge/base_partner_merge.py:359
@@ -263,7 +263,7 @@ msgid ""
 "                            duplicated records. If you select several fields,\n"
 "                            OpenERP will propose you to merge only those having\n"
 "                            all these fields in common. (not one of the fields)."
-msgstr ""
+msgstr "Marque la lista de campos sobre los que buscar registros duplicados. Si selecciona varios campos, OpenERP le propondrá combinar solo los que tengan todos esos campos en común (no uno solo de los campos)."
 
 #. module: base_partner_merge
 #: selection:base.partner.merge.automatic.wizard,state:0
@@ -287,7 +287,7 @@ msgid ""
 "                                documents linking to one of these contacts will be\n"
 "                                redirected to the aggregated contact. You can remove\n"
 "                                contacts from this list to avoid merging them."
-msgstr ""
+msgstr "Los contactos seleccionados se combinarán. Todos los documentos que apunten a uno de esos contactos se redirigirán al contacto agregado. Puede quitar contactos de esta lista para evitar su combinación."
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form

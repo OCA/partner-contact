@@ -3,13 +3,13 @@
 # * base_location_nuts
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-09 15:48+0000\n"
-"PO-Revision-Date: 2015-10-07 10:36+0000\n"
+"POT-Creation-Date: 2016-02-26 01:49+0000\n"
+"PO-Revision-Date: 2016-02-27 16:56+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgid "Cancel"
 msgstr "Preklic"
 
 #. module: base_location_nuts
-#: field:res.partner.nuts,children:0
+#: field:res.partner.nuts,child_ids:0
 msgid "Children"
 msgstr "Podrejeni"
 
@@ -34,6 +34,7 @@ msgid "Code"
 msgstr "Koda"
 
 #. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_res_country
 #: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
 #: field:res.partner.nuts,country_id:0
 msgid "Country"
@@ -50,19 +51,19 @@ msgid "Created on"
 msgstr "Ustvarjeno"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:130
+#: code:addons/base_location_nuts/wizard/nuts_import.py:128
 #, python-format
 msgid "Downloaded file is not a valid XML file"
 msgstr "Prenesena datoteka ni veljavna XML datoteka"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:122
+#: code:addons/base_location_nuts/wizard/nuts_import.py:120
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Napaka %d pri poskusu prenosa datoteke %s."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:118
+#: code:addons/base_location_nuts/wizard/nuts_import.py:116
 #, python-format
 msgid "Got an error when trying to download the file: %s."
 msgstr "Napaka pri poskusu prenosa datoteke: %s."
@@ -115,6 +116,16 @@ msgid "Level"
 msgstr "Nivo"
 
 #. module: base_location_nuts
+#: help:res.country,state_level:0
+msgid "Level for the state NUTS category."
+msgstr "Nivo NUTS kategorije za zvezno državo"
+
+#. module: base_location_nuts
+#: view:res.country:base_location_nuts.view_country_form
+msgid "NUTS"
+msgstr "NUTS"
+
+#. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_res_partner_nuts
 #: view:res.partner.nuts:base_location_nuts.res_partner_nuts_form
 msgid "NUTS Item"
@@ -126,6 +137,30 @@ msgstr "NUTS postavka"
 #: view:res.partner.nuts:base_location_nuts.res_partner_nuts_tree
 msgid "NUTS Items"
 msgstr "NUTS postavke"
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts1_id:0
+msgid "NUTS L1"
+msgstr "NUTS L1"
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts2_id:0
+msgid "NUTS L2"
+msgstr "NUTS L2"
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts3_id:0
+msgid "NUTS L3"
+msgstr "NUTS L3"
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts4_id:0
+msgid "NUTS L4"
+msgstr "NUTS L4"
 
 #. module: base_location_nuts
 #: field:res.partner.nuts,name:0
@@ -153,14 +188,6 @@ msgid "Partner"
 msgstr "Partner"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/models/res_partner.py:34
-#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
-#: field:res.partner,region:0
-#, python-format
-msgid "Region"
-msgstr "Regija"
-
-#. module: base_location_nuts
 #: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
 msgid "Salesperson"
 msgstr "Prodajalec"
@@ -176,12 +203,9 @@ msgid "State"
 msgstr "Zvezna država"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/models/res_partner.py:35
-#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
-#: field:res.partner,substate:0
-#, python-format
-msgid "Substate"
-msgstr "Pod-država"
+#: field:res.country,state_level:0
+msgid "State level"
+msgstr "Nivo zvezne države"
 
 #. module: base_location_nuts
 #: view:nuts.import:base_location_nuts.nuts_import_form
@@ -194,7 +218,7 @@ msgid ""
 msgstr "Ta čarovnik bo prenesel zadnjo verzijo\n                NUTS 2013 iz evropske RAMON metadata storitve.\n                Posodabljanje ali ustvarjanje novih NUTS vnosov, če\n                niso že v sistemu in BRISANJE MANJKAJOČIH\n                VNOSOV iz prenesene datoteke."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:97
+#: code:addons/base_location_nuts/wizard/nuts_import.py:95
 #, python-format
 msgid "Value not found for mandatory field %s"
 msgstr "Vrednost obveznega polja %s ni najdena"

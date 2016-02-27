@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-08 01:38+0000\n"
-"PO-Revision-Date: 2015-12-22 18:57+0000\n"
+"POT-Creation-Date: 2016-02-26 01:49+0000\n"
+"PO-Revision-Date: 2016-01-16 15:06+0000\n"
 "Last-Translator: Ivan Todorovich <ivan.todorovich@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -402,7 +402,7 @@ msgid "Type"
 msgstr "Tipo"
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner.py:110
+#: code:addons/partner_relations/model/res_partner.py:122
 #, python-format
 msgid "Unsupported search operand \"%s\""
 msgstr "Operando de búsqueda no soportado: \"%s\""
