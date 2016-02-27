@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 01:46+0000\n"
-"PO-Revision-Date: 2016-01-20 12:03+0000\n"
+"POT-Creation-Date: 2016-02-26 01:49+0000\n"
+"PO-Revision-Date: 2016-02-25 13:03+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "abbrechen"
 #. module: base_location_geonames_import
 #: help:better.zip.geonames.import,title_case:0
 msgid "Converts retreived city and state names to Title Case."
-msgstr ""
+msgstr "Wandelt ermittelte Stadt und Bundesländer in Fall-Titel um"
 
 #. module: base_location_geonames_import
 #: field:better.zip.geonames.import,country_id:0
