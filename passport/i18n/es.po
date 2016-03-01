@@ -4,12 +4,13 @@
 # 
 # Translators:
 # Antonio Trueba, 2016
+# Antonio Trueba, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 01:46+0000\n"
-"PO-Revision-Date: 2016-01-16 15:09+0000\n"
+"POT-Creation-Date: 2016-02-26 01:49+0000\n"
+"PO-Revision-Date: 2016-02-23 12:20+0000\n"
 "Last-Translator: Antonio Trueba\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +32,7 @@ msgstr "Contacto"
 #. module: passport
 #: help:res.passport,country_id:0
 msgid "Country of deliverance."
-msgstr ""
+msgstr "Pais de entrega."
 
 #. module: passport
 #: field:res.passport,create_uid:0
@@ -101,12 +102,12 @@ msgstr "Hombre"
 #. module: passport
 #: field:res.passport,name:0
 msgid "Owner name"
-msgstr ""
+msgstr "Nombre del propietario"
 
 #. module: passport
 #: view:res.passport:passport.passport_form_view
 msgid "Owner name (As printed into the passport)"
-msgstr ""
+msgstr "Nombre del propietario (tal y como aparezca en el pasaporte),"
 
 #. module: passport
 #: help:res.passport,name:0

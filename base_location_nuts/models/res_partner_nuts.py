@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-# For copyright and license notices, see __openerp__.py file in root directory
-##############################################################################
+# © 2015 Antiun Ingeniería S.L. - Antonio Espinosa
+# © 2015 Antiun Ingeniería S.L. - Jairo Llopis
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, fields
 
@@ -24,7 +24,10 @@ class ResPartnerNuts(models.Model):
     # Parent hierarchy
     parent_id = fields.Many2one(comodel_name='res.partner.nuts',
                                 ondelete='restrict')
-    children = fields.One2many(comodel_name='res.partner.nuts',
-                               inverse_name='parent_id')
+    child_ids = fields.One2many(
+        'res.partner.nuts',
+        'parent_id',
+        "Children",
+        oldname="children")
     parent_left = fields.Integer('Parent Left', select=True)
     parent_right = fields.Integer('Parent Right', select=True)

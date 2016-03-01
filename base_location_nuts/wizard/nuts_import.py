@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-# For copyright and license notices, see __openerp__.py file in root directory
-##############################################################################
+# © 2015 Antiun Ingeniería S.L. - Antonio Espinosa
+# © 2015 Antiun Ingeniería S.L. - Jairo Llopis
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, api, _
-from openerp.exceptions import Warning
+from openerp.exceptions import Warning as UserError
 import requests
 import re
 import logging
 from lxml import etree
 from collections import OrderedDict
-
-from pprint import pformat
 
 logger = logging.getLogger(__name__)
 
@@ -93,7 +91,7 @@ class NutsImport(models.TransientModel):
             else:
                 logger.debug("xpath = '%s', not found" % field_xpath)
             if field_required and not value:
-                raise Warning(
+                raise UserError(
                     _('Value not found for mandatory field %s' % k))
             item[k] = value
         return item
@@ -114,11 +112,11 @@ class NutsImport(models.TransientModel):
         try:
             res_request = requests.get(url)
         except Exception, e:
-            raise Warning(
+            raise UserError(
                 _('Got an error when trying to download the file: %s.') %
                 str(e))
         if res_request.status_code != requests.codes.ok:
-            raise Warning(
+            raise UserError(
                 _('Got an error %d when trying to download the file %s.')
                 % (res_request.status_code, url))
         logger.info('Download successfully %d bytes' %
@@ -127,7 +125,7 @@ class NutsImport(models.TransientModel):
         pattern = re.compile(r'^.*<\?xml', re.DOTALL)
         content_fixed = re.sub(pattern, '<?xml', res_request.content)
         if not re.match(r'<\?xml', content_fixed):
-            raise Warning(_('Downloaded file is not a valid XML file'))
+            raise UserError(_('Downloaded file is not a valid XML file'))
         return content_fixed
 
     @api.model
@@ -140,7 +138,6 @@ class NutsImport(models.TransientModel):
         #   UK => GB (United Kingdom)
         self._countries['EL'] = self._countries['GR']
         self._countries['UK'] = self._countries['GB']
-        logger.info('_load_countries = %s' % pformat(self._countries))
 
     @api.model
     def state_mapping(self, data, node):
@@ -184,13 +181,14 @@ class NutsImport(models.TransientModel):
         nuts_to_delete = nuts_model.search(
             [('country_id', 'in', [x.id for x in self._countries.values()])])
         # Download NUTS in english, create or update
-        logger.info('Import NUTS 2013 English')
+        logger.info('Importing NUTS 2013 English')
         xmlcontent = self._download_nuts()
         dom = etree.fromstring(xmlcontent)
         for node in dom.iter('Item'):
-                logger.info('Reading level=%s, id=%s' %
-                            (node.get('idLevel', 'N/A'),
-                             node.get('id', 'N/A')))
+                logger.debug(
+                    'Reading level=%s, id=%s',
+                    node.get('idLevel', 'N/A'),
+                    node.get('id', 'N/A'))
                 nuts = self.create_or_update_nuts(node)
                 if nuts and nuts in nuts_to_delete:
                     nuts_to_delete -= nuts

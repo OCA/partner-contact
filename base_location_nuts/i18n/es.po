@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-09 15:48+0000\n"
-"PO-Revision-Date: 2015-10-06 13:57+0000\n"
+"POT-Creation-Date: 2016-02-26 01:49+0000\n"
+"PO-Revision-Date: 2016-02-25 17:29+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: base_location_nuts
-#: field:res.partner.nuts,children:0
+#: field:res.partner.nuts,child_ids:0
 msgid "Children"
 msgstr "Hijos"
 
@@ -33,6 +33,7 @@ msgid "Code"
 msgstr "Código"
 
 #. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_res_country
 #: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
 #: field:res.partner.nuts,country_id:0
 msgid "Country"
@@ -49,19 +50,19 @@ msgid "Created on"
 msgstr "Creado en"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:130
+#: code:addons/base_location_nuts/wizard/nuts_import.py:128
 #, python-format
 msgid "Downloaded file is not a valid XML file"
 msgstr "El fichero descargado no es un fichero XML válido"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:122
+#: code:addons/base_location_nuts/wizard/nuts_import.py:120
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Error %d al intentar descargar el fichero %s."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:118
+#: code:addons/base_location_nuts/wizard/nuts_import.py:116
 #, python-format
 msgid "Got an error when trying to download the file: %s."
 msgstr "Error al intentar descargar el fichero: %s."
@@ -114,17 +115,51 @@ msgid "Level"
 msgstr "Nivel"
 
 #. module: base_location_nuts
+#: help:res.country,state_level:0
+msgid "Level for the state NUTS category."
+msgstr "Nivel para la categoría estado NUTS."
+
+#. module: base_location_nuts
+#: view:res.country:base_location_nuts.view_country_form
+msgid "NUTS"
+msgstr "NUTS"
+
+#. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_res_partner_nuts
 #: view:res.partner.nuts:base_location_nuts.res_partner_nuts_form
 msgid "NUTS Item"
-msgstr "Región NUTS"
+msgstr "Objeto NUTS"
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.res_partner_nuts_action
 #: model:ir.ui.menu,name:base_location_nuts.res_partner_nuts_menu
 #: view:res.partner.nuts:base_location_nuts.res_partner_nuts_tree
 msgid "NUTS Items"
-msgstr "Regiones NUTS"
+msgstr "Objetos NUTS"
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts1_id:0
+msgid "NUTS L1"
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts2_id:0
+msgid "NUTS L2"
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts3_id:0
+msgid "NUTS L3"
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts4_id:0
+msgid "NUTS L4"
+msgstr ""
 
 #. module: base_location_nuts
 #: field:res.partner.nuts,name:0
@@ -152,14 +187,6 @@ msgid "Partner"
 msgstr "Empresa"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/models/res_partner.py:34
-#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
-#: field:res.partner,region:0
-#, python-format
-msgid "Region"
-msgstr "Región"
-
-#. module: base_location_nuts
 #: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
 msgid "Salesperson"
 msgstr "Comercial"
@@ -175,12 +202,9 @@ msgid "State"
 msgstr "Provincia"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/models/res_partner.py:35
-#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
-#: field:res.partner,substate:0
-#, python-format
-msgid "Substate"
-msgstr "Estado"
+#: field:res.country,state_level:0
+msgid "State level"
+msgstr "Nivel de estado"
 
 #. module: base_location_nuts
 #: view:nuts.import:base_location_nuts.nuts_import_form
@@ -190,10 +214,10 @@ msgid ""
 "                Updating or creating new NUTS entries if not\n"
 "                found already in the system, and DELETING MISSING\n"
 "                ENTRIES from new downloaded file."
-msgstr "Este asistente descargará la última version de\n                NUTS 2013 desde el servicio de matadatos europeo RAMON.\n                Actualizando o creando nuevas regiones NUTS si no\n                las encuentra en el sistemma, y BORRANDO LAS QUE NO ENCUENTRE\n                en el nuevo fichero descargado."
+msgstr "Este asistente descargará la última version de\n                NUTS 2013 desde el servicio de metadatos europeo RAMON.\n                Actualizando o creando nuevas regiones NUTS si no\n                las encuentra en el sistema, y BORRANDO LAS QUE NO ENCUENTRE\n                en el nuevo fichero descargado."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:97
+#: code:addons/base_location_nuts/wizard/nuts_import.py:95
 #, python-format
 msgid "Value not found for mandatory field %s"
 msgstr "El valor no se ha encontrado para el campo obligatorio %s"

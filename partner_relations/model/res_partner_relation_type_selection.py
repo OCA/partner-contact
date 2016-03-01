@@ -33,7 +33,7 @@ from openerp.osv import fields
 from openerp.osv import orm
 from openerp.tools import drop_view_if_exists
 from .res_partner_relation_type import ResPartnerRelationType
-from . import PADDING
+from .res_partner import PADDING
 
 
 class ResPartnerRelationTypeSelection(orm.Model):

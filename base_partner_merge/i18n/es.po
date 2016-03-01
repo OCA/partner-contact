@@ -4,12 +4,13 @@
 # 
 # Translators:
 # Antonio Trueba, 2016
+# Antonio Trueba, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 01:46+0000\n"
-"PO-Revision-Date: 2016-01-16 15:12+0000\n"
+"POT-Creation-Date: 2016-02-26 01:49+0000\n"
+"PO-Revision-Date: 2016-02-23 12:23+0000\n"
 "Last-Translator: Antonio Trueba\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +22,7 @@ msgstr ""
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,exclude_contact:0
 msgid "A user associated to the contact"
-msgstr ""
+msgstr "Un usuario asociado al contrato"
 
 #. module: base_partner_merge
 #: code:addons/base_partner_merge/base_partner_merge.py:369
@@ -29,28 +30,28 @@ msgstr ""
 msgid ""
 "All contacts must have the same email. Only the Administrator can merge "
 "contacts with different emails."
-msgstr ""
+msgstr "Todos los contactos deben tener la misma dirección de correo electrónico. Únicamente el administrador puede combinar contactos con direcciones diferentes."
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Are you sure to execute the automatic merge of your contacts ?"
-msgstr ""
+msgstr "¿Seguro que quiere combinar automáticamente sus contactos?"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid ""
 "Are you sure to execute the list of automatic merges of your contacts ?"
-msgstr ""
+msgstr "¿Seguro que quiere ejecutar la lista de combinaciones automáticas sobre sus contactos?"
 
 #. module: base_partner_merge
 #: model:ir.actions.act_window,name:base_partner_merge.action_partner_merge
 msgid "Automatic Merge"
-msgstr ""
+msgstr "Combinación automática"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Automatic Merge Wizard"
-msgstr ""
+msgstr "Asistente de combinación automática"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -82,28 +83,28 @@ msgstr "Creado en"
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,current_line_id:0
 msgid "Current Line"
-msgstr ""
+msgstr "Linea actual"
 
 #. module: base_partner_merge
 #: model:ir.actions.act_window,name:base_partner_merge.base_partner_merge_automatic_act
 #: model:ir.ui.menu,name:base_partner_merge.partner_merge_automatic_menu
 msgid "Deduplicate Contacts"
-msgstr ""
+msgstr "Deduplicar contactos"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Deduplicate the other Contacts"
-msgstr ""
+msgstr "Deduplicar los otros contactos"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,dst_partner_id:0
 msgid "Destination Contact"
-msgstr ""
+msgstr "Contacto de destino"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,group_by_email:0
 msgid "Email"
-msgstr ""
+msgstr "e-mail"
 
 #. module: base_partner_merge
 #: code:addons/base_partner_merge/base_partner_merge.py:358
@@ -117,12 +118,12 @@ msgstr "Error"
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Exclude contacts having"
-msgstr ""
+msgstr "Excluir contactos que cumplan"
 
 #. module: base_partner_merge
 #: selection:base.partner.merge.automatic.wizard,state:0
 msgid "Finished"
-msgstr ""
+msgstr "Finalizado"
 
 #. module: base_partner_merge
 #: code:addons/base_partner_merge/base_partner_merge.py:359
@@ -130,7 +131,7 @@ msgstr ""
 msgid ""
 "For safety reasons, you cannot merge more than 3 contacts together. You can "
 "re-open the wizard several times if needed."
-msgstr ""
+msgstr "Por motivos de seguridad no se permite combinar más de 3 contactos de una vez. Puede repetir el asistente varias veces si es necesario."
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,number_group:0
@@ -156,7 +157,7 @@ msgstr "Es empresa."
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,exclude_journal_item:0
 msgid "Journal Items associated to the contact"
-msgstr ""
+msgstr "Entradas de diario asociadas al contacto"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,write_uid:0
@@ -173,7 +174,7 @@ msgstr "Última actualización en"
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,line_ids:0
 msgid "Lines"
-msgstr ""
+msgstr "Lineas"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,maximum_group:0
@@ -203,7 +204,7 @@ msgstr "Combinar los siguientes contactos"
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Merge with Manual Check"
-msgstr ""
+msgstr "Combinar con verificación manual"
 
 #. module: base_partner_merge
 #: code:addons/base_partner_merge/base_partner_merge.py:410
@@ -248,12 +249,12 @@ msgstr "Empresa matriz"
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Partners"
-msgstr ""
+msgstr "Empresas"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Search duplicates based on duplicated data in"
-msgstr ""
+msgstr "Buscar duplicados en base a información duplicada en"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -262,7 +263,7 @@ msgid ""
 "                            duplicated records. If you select several fields,\n"
 "                            OpenERP will propose you to merge only those having\n"
 "                            all these fields in common. (not one of the fields)."
-msgstr ""
+msgstr "Marque la lista de campos sobre los que buscar registros duplicados. Si selecciona varios campos, OpenERP le propondrá combinar solo los que tengan todos esos campos en común (no uno solo de los campos)."
 
 #. module: base_partner_merge
 #: selection:base.partner.merge.automatic.wizard,state:0
@@ -272,7 +273,7 @@ msgstr "Selección"
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Skip these contacts"
-msgstr ""
+msgstr "Omitir esos contactos"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,state:0
@@ -286,12 +287,12 @@ msgid ""
 "                                documents linking to one of these contacts will be\n"
 "                                redirected to the aggregated contact. You can remove\n"
 "                                contacts from this list to avoid merging them."
-msgstr ""
+msgstr "Los contactos seleccionados se combinarán. Todos los documentos que apunten a uno de esos contactos se redirigirán al contacto agregado. Puede quitar contactos de esta lista para evitar su combinación."
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "There is no more contacts to merge for this request..."
-msgstr ""
+msgstr "No hay más contactos que combinar para esta petición..."
 
 #. module: base_partner_merge
 #: model:ir.ui.menu,name:base_partner_merge.root_menu

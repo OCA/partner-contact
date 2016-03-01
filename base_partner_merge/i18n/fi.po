@@ -1,0 +1,319 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_partner_merge
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-19 01:46+0000\n"
+"PO-Revision-Date: 2015-05-21 21:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Finnish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/fi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,exclude_contact:0
+msgid "A user associated to the contact"
+msgstr ""
+
+#. module: base_partner_merge
+#: code:addons/base_partner_merge/base_partner_merge.py:369
+#, python-format
+msgid ""
+"All contacts must have the same email. Only the Administrator can merge "
+"contacts with different emails."
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Are you sure to execute the automatic merge of your contacts ?"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid ""
+"Are you sure to execute the list of automatic merges of your contacts ?"
+msgstr ""
+
+#. module: base_partner_merge
+#: model:ir.actions.act_window,name:base_partner_merge.action_partner_merge
+msgid "Automatic Merge"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Automatic Merge Wizard"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Close"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,partner_ids:0
+msgid "Contacts"
+msgstr "Kontaktit"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,create_uid:0
+#: field:base.partner.merge.line,create_uid:0
+msgid "Created by"
+msgstr "Luonut"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,create_date:0
+#: field:base.partner.merge.line,create_date:0
+msgid "Created on"
+msgstr "Luotu"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,current_line_id:0
+msgid "Current Line"
+msgstr ""
+
+#. module: base_partner_merge
+#: model:ir.actions.act_window,name:base_partner_merge.base_partner_merge_automatic_act
+#: model:ir.ui.menu,name:base_partner_merge.partner_merge_automatic_menu
+msgid "Deduplicate Contacts"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Deduplicate the other Contacts"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,dst_partner_id:0
+msgid "Destination Contact"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,group_by_email:0
+msgid "Email"
+msgstr ""
+
+#. module: base_partner_merge
+#: code:addons/base_partner_merge/base_partner_merge.py:358
+#: code:addons/base_partner_merge/base_partner_merge.py:368
+#: code:addons/base_partner_merge/base_partner_merge.py:393
+#: code:addons/base_partner_merge/base_partner_merge.py:529
+#, python-format
+msgid "Error"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Exclude contacts having"
+msgstr ""
+
+#. module: base_partner_merge
+#: selection:base.partner.merge.automatic.wizard,state:0
+msgid "Finished"
+msgstr ""
+
+#. module: base_partner_merge
+#: code:addons/base_partner_merge/base_partner_merge.py:359
+#, python-format
+msgid ""
+"For safety reasons, you cannot merge more than 3 contacts together. You can "
+"re-open the wizard several times if needed."
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,number_group:0
+msgid "Group of Contacts"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,id:0
+#: field:base.partner.merge.line,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.line,aggr_ids:0
+msgid "Ids"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,group_by_is_company:0
+msgid "Is Company"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,exclude_journal_item:0
+msgid "Journal Items associated to the contact"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,write_uid:0
+#: field:base.partner.merge.line,write_uid:0
+msgid "Last Updated by"
+msgstr "Viimeksi päivitetty"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,write_date:0
+#: field:base.partner.merge.line,write_date:0
+msgid "Last Updated on"
+msgstr "Viimeksi päivittänyt"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,line_ids:0
+msgid "Lines"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,maximum_group:0
+msgid "Maximum of Group of Contacts"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge Automatically"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge Automatically all process"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge Selection"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge the following contacts"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge with Manual Check"
+msgstr ""
+
+#. module: base_partner_merge
+#: code:addons/base_partner_merge/base_partner_merge.py:410
+#, python-format
+msgid "Merged with the following partners:"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.line,min_id:0
+msgid "MinID"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,group_by_name:0
+msgid "Name"
+msgstr "Nimi"
+
+#. module: base_partner_merge
+#: code:addons/base_partner_merge/base_partner_merge.py:394
+#, python-format
+msgid ""
+"Only the destination contact may be linked to existing Journal Items. Please"
+" ask the Administrator if you need to merge several contacts linked to "
+"existing Journal Items."
+msgstr ""
+
+#. module: base_partner_merge
+#: selection:base.partner.merge.automatic.wizard,state:0
+msgid "Option"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Options"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,group_by_parent_id:0
+msgid "Parent Company"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Partners"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Search duplicates based on duplicated data in"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid ""
+"Select the list of fields used to search for\n"
+"                            duplicated records. If you select several fields,\n"
+"                            OpenERP will propose you to merge only those having\n"
+"                            all these fields in common. (not one of the fields)."
+msgstr ""
+
+#. module: base_partner_merge
+#: selection:base.partner.merge.automatic.wizard,state:0
+msgid "Selection"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Skip these contacts"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,state:0
+msgid "State"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid ""
+"The selected contacts will be merged together. All\n"
+"                                documents linking to one of these contacts will be\n"
+"                                redirected to the aggregated contact. You can remove\n"
+"                                contacts from this list to avoid merging them."
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "There is no more contacts to merge for this request..."
+msgstr ""
+
+#. module: base_partner_merge
+#: model:ir.ui.menu,name:base_partner_merge.root_menu
+msgid "Tools"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,group_by_vat:0
+msgid "VAT"
+msgstr ""
+
+#. module: base_partner_merge
+#: field:base.partner.merge.line,wizard_id:0
+msgid "Wizard"
+msgstr ""
+
+#. module: base_partner_merge
+#: code:addons/base_partner_merge/base_partner_merge.py:530
+#, python-format
+msgid "You have to specify a filter for your selection"
+msgstr ""
+
+#. module: base_partner_merge
+#: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "or"
+msgstr ""

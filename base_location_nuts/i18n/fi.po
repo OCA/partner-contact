@@ -1,19 +1,21 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* base_location_nuts
-#
+# * base_location_nuts
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-11 15:26+0000\n"
-"PO-Revision-Date: 2015-06-11 15:26+0000\n"
-"Last-Translator: <>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2016-02-26 01:49+0000\n"
+"PO-Revision-Date: 2016-02-25 17:29+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Finnish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_location_nuts
 #: view:nuts.import:base_location_nuts.nuts_import_form
@@ -21,7 +23,7 @@ msgid "Cancel"
 msgstr ""
 
 #. module: base_location_nuts
-#: field:res.partner.nuts,children:0
+#: field:res.partner.nuts,child_ids:0
 msgid "Children"
 msgstr ""
 
@@ -31,37 +33,36 @@ msgid "Code"
 msgstr ""
 
 #. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_res_country
 #: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
 #: field:res.partner.nuts,country_id:0
 msgid "Country"
-msgstr ""
+msgstr "Maa"
 
 #. module: base_location_nuts
-#: field:nuts.import,create_uid:0
-#: field:res.partner.nuts,create_uid:0
+#: field:nuts.import,create_uid:0 field:res.partner.nuts,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Luonut"
 
 #. module: base_location_nuts
-#: field:nuts.import,create_date:0
-#: field:res.partner.nuts,create_date:0
+#: field:nuts.import,create_date:0 field:res.partner.nuts,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Luotu"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:149
+#: code:addons/base_location_nuts/wizard/nuts_import.py:128
 #, python-format
 msgid "Downloaded file is not a valid XML file"
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:141
+#: code:addons/base_location_nuts/wizard/nuts_import.py:120
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:137
+#: code:addons/base_location_nuts/wizard/nuts_import.py:116
 #, python-format
 msgid "Got an error when trying to download the file: %s."
 msgstr ""
@@ -72,10 +73,9 @@ msgid "Group By"
 msgstr ""
 
 #. module: base_location_nuts
-#: field:nuts.import,id:0
-#: field:res.partner.nuts,id:0
+#: field:nuts.import,id:0 field:res.partner.nuts,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: base_location_nuts
 #: view:nuts.import:base_location_nuts.nuts_import_form
@@ -99,21 +99,29 @@ msgid "Import NUTS items from European RAMON service"
 msgstr ""
 
 #. module: base_location_nuts
-#: field:nuts.import,write_uid:0
-#: field:res.partner.nuts,write_uid:0
+#: field:nuts.import,write_uid:0 field:res.partner.nuts,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Viimeksi päivitetty"
 
 #. module: base_location_nuts
-#: field:nuts.import,write_date:0
-#: field:res.partner.nuts,write_date:0
+#: field:nuts.import,write_date:0 field:res.partner.nuts,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Viimeksi päivittänyt"
 
 #. module: base_location_nuts
 #: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
 #: field:res.partner.nuts,level:0
 msgid "Level"
+msgstr ""
+
+#. module: base_location_nuts
+#: help:res.country,state_level:0
+msgid "Level for the state NUTS category."
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.country:base_location_nuts.view_country_form
+msgid "NUTS"
 msgstr ""
 
 #. module: base_location_nuts
@@ -130,9 +138,33 @@ msgid "NUTS Items"
 msgstr ""
 
 #. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts1_id:0
+msgid "NUTS L1"
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts2_id:0
+msgid "NUTS L2"
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts3_id:0
+msgid "NUTS L3"
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts4_id:0
+msgid "NUTS L4"
+msgstr ""
+
+#. module: base_location_nuts
 #: field:res.partner.nuts,name:0
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #. module: base_location_nuts
 #: field:res.partner.nuts,parent_left:0
@@ -152,20 +184,12 @@ msgstr ""
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_res_partner
 msgid "Partner"
-msgstr ""
-
-#. module: base_location_nuts
-#: code:addons/base_location_nuts/models/res_partner.py:53
-#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
-#: field:res.partner,region:0
-#, python-format
-msgid "Region"
-msgstr ""
+msgstr "Kumppani"
 
 #. module: base_location_nuts
 #: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
 msgid "Salesperson"
-msgstr ""
+msgstr "Myyjä"
 
 #. module: base_location_nuts
 #: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
@@ -178,16 +202,14 @@ msgid "State"
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/models/res_partner.py:54
-#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
-#: field:res.partner,substate:0
-#, python-format
-msgid "Substate"
+#: field:res.country,state_level:0
+msgid "State level"
 msgstr ""
 
 #. module: base_location_nuts
 #: view:nuts.import:base_location_nuts.nuts_import_form
-msgid "This wizard will download the lastest version of\n"
+msgid ""
+"This wizard will download the lastest version of\n"
 "                NUTS 2013 from Europe RAMON metadata service.\n"
 "                Updating or creating new NUTS entries if not\n"
 "                found already in the system, and DELETING MISSING\n"
@@ -195,7 +217,7 @@ msgid "This wizard will download the lastest version of\n"
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:116
+#: code:addons/base_location_nuts/wizard/nuts_import.py:95
 #, python-format
 msgid "Value not found for mandatory field %s"
 msgstr ""
@@ -207,8 +229,8 @@ msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
-msgid "You must click at import wizard to populate NUTS items\n"
+msgid ""
+"You must click at import wizard to populate NUTS items\n"
 "        in Odoo database in:\n"
 "        Sales > Configuration > Address Book > Localization > Import NUTS 2013"
 msgstr ""
-
