@@ -10,7 +10,7 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     @api.model
-    def _get_partner_data(self, vat):
+    def _get_vies_data(self, vat):
         try:
             from stdnum.eu.vat import check_vies
         except:
@@ -56,11 +56,11 @@ class ResPartner(models.Model):
         # Skip required name error
         with self.env.do_in_onchange():
             if value:
-                result = self._get_partner_data(value)
+                result = self._get_vies_data(value)
                 res['value'].update(result)
         return res
 
     @api.one
-    def get_partner_data(self):
-        res = self._get_partner_data(self.vat)
+    def get_vies_data_from_vat(self):
+        res = self._get_vies_data(self.vat)
         self.update(res)

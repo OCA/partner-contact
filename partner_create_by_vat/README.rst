@@ -26,7 +26,7 @@ Usage
 =====
 
 On the partner's form view you will have a button in the header, called
-"Get Partner Data", available only on companies (is_company field set to True).
+"Get Vies Data", available only on companies (is_company field set to True).
 Clicking the button will fetch data, when available, from the VIES Webservice, for most of
 the EU countries.
 

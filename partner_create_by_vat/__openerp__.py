@@ -5,7 +5,7 @@
 {
     'name': 'Automatic partner creation based on VAT number',
     'summary': 'Using VIES webservice, name and address information will '
-               'be fetched and added to the company information.',
+               'be fetched and added to the partner.',
     'version': '8.0.1.0.0',
     'category': 'Customer Relationship Management',
     'author': 'Forest and Biomass Services Romania, '
@@ -15,12 +15,11 @@
     'application': False,
     'installable': True,
     'external_dependencies': {
-        'python': ['stdnum'],
+        'python': ['stdnum', 'suds'],
     },
     'depends': ['base_vat'],
     'data': ['views/res_partner_view.xml'],
     'images': ['static/description/customer.png',
-               'static/description/customer1.png',
-               'static/description/customer2.png'],
+               'static/description/customer1.png'],
     'auto_install': False,
 }
