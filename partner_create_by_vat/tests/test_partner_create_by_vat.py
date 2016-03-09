@@ -19,7 +19,7 @@ class TestPartnerCreatebyVAT(TransactionCase):
                                                       'is_company': True})
 
         # Push the button to fetch partner's data
-        self.partner1_id.get_partner_data()
+        self.partner1_id.get_vies_data_from_vat()
 
         # Check if the datas fetch correspond with the datas from VIES.
         self.assertEqual(self.partner1_id.name, 'SA ODOO')
@@ -39,7 +39,7 @@ class TestPartnerCreatebyVAT(TransactionCase):
 
         # Check VAT number not listed on VIES
         with self.assertRaises(ValidationError):
-            self.partner2_id.get_partner_data()
+            self.partner2_id.get_vies_data_from_vat()
 
     def test_create_from_vat3(self):
         # Create an partner from VAT number field
@@ -49,4 +49,4 @@ class TestPartnerCreatebyVAT(TransactionCase):
 
         # Check VAT number is listed on VIES but don't have name and address
         with self.assertRaises(ValidationError):
-            self.partner3_id.get_partner_data()
+            self.partner3_id.get_vies_data_from_vat()
