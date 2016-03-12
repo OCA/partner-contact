@@ -1,29 +1,11 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Base Location Geonames Import module for OpenERP
-#    Copyright (C) 2014 Akretion (http://www.akretion.com)
-#    @author Alexis de Lattre <alexis.delattre@akretion.com>
-#    Copyright (C) 2014 Agile Business Group (http://www.agilebg.com)
-#    @author Lorenzo Battistini <lorenzo.battistini@agilebg.com>
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# © 2014 Alexis de Lattre <alexis.delattre@akretion.com>
+# © 2014 Lorenzo Battistini <lorenzo.battistini@agilebg.com>
+# © 2016 Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, fields, api, _
-from openerp.exceptions import Warning
+from openerp.exceptions import UserError
 import requests
 import tempfile
 import StringIO
@@ -79,7 +61,7 @@ class BetterZipGeonamesImport(models.TransientModel):
     @api.model
     def create_better_zip(self, row, country):
         if row[0] != country.code:
-            raise Warning(
+            raise UserError(
                 _("The country code inside the file (%s) doesn't "
                     "correspond to the selected country (%s).")
                 % (row[0], country.code))
@@ -108,7 +90,7 @@ class BetterZipGeonamesImport(models.TransientModel):
             ('code', '=', row[code_row_index]),
             ])
         if len(states) > 1:
-            raise Warning(
+            raise UserError(
                 _("Too many states with code %s for country %s")
                 % (row[code_row_index], country.code))
         if len(states) == 1:
@@ -120,8 +102,9 @@ class BetterZipGeonamesImport(models.TransientModel):
                 'country_id': country.id
                 })
 
-    @api.one
+    @api.multi
     def run_import(self):
+        self.ensure_one()
         zip_model = self.env['res.better.zip']
         country_code = self.country_id.code
         config_url = self.env['ir.config_parameter'].get_param(
@@ -131,7 +114,7 @@ class BetterZipGeonamesImport(models.TransientModel):
         logger.info('Starting to download %s' % url)
         res_request = requests.get(url)
         if res_request.status_code != requests.codes.ok:
-            raise Warning(
+            raise UserError(
                 _('Got an error %d when trying to download the file %s.')
                 % (res_request.status_code, url))
         # Store current record list
@@ -144,13 +127,16 @@ class BetterZipGeonamesImport(models.TransientModel):
         data_file = open(os.path.join(tempdir, '%s.txt' % country_code), 'r')
         data_file.seek(0)
         logger.info('Starting to create the better zip entries')
-        for row in unicodecsv.reader(
-                data_file, encoding='utf-8', delimiter='	'):
-            zip = self.create_better_zip(row, self.country_id)
-            if zip in zips_to_delete:
-                zips_to_delete -= zip
+        max_import = self.env.context.get('max_import', 0)
+        reader = unicodecsv.reader(data_file, encoding='utf-8', delimiter='	')
+        for i, row in enumerate(reader):
+            zip_code = self.create_better_zip(row, self.country_id)
+            if zip_code in zips_to_delete:
+                zips_to_delete -= zip_code
+            if max_import and (i + 1) == max_import:
+                break
         data_file.close()
-        if zips_to_delete:
+        if zips_to_delete and not max_import:
             zips_to_delete.unlink()
             logger.info('%d better zip entries deleted for country %s' %
                         (len(zips_to_delete), self.country_id.name))
