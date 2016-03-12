@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # © 2014 Alexis de Lattre <alexis.delattre@akretion.com>
 # © 2014 Lorenzo Battistini <lorenzo.battistini@agilebg.com>
+# © 2016 Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, fields, api, _
@@ -101,8 +102,9 @@ class BetterZipGeonamesImport(models.TransientModel):
                 'country_id': country.id
                 })
 
-    @api.one
+    @api.multi
     def run_import(self):
+        self.ensure_one()
         zip_model = self.env['res.better.zip']
         country_code = self.country_id.code
         config_url = self.env['ir.config_parameter'].get_param(
@@ -125,13 +127,16 @@ class BetterZipGeonamesImport(models.TransientModel):
         data_file = open(os.path.join(tempdir, '%s.txt' % country_code), 'r')
         data_file.seek(0)
         logger.info('Starting to create the better zip entries')
-        for row in unicodecsv.reader(
-                data_file, encoding='utf-8', delimiter='	'):
-            zip = self.create_better_zip(row, self.country_id)
-            if zip in zips_to_delete:
-                zips_to_delete -= zip
+        max_import = self.env.context.get('max_import', 0)
+        reader = unicodecsv.reader(data_file, encoding='utf-8', delimiter='	')
+        for i, row in enumerate(reader):
+            zip_code = self.create_better_zip(row, self.country_id)
+            if zip_code in zips_to_delete:
+                zips_to_delete -= zip_code
+            if max_import and i == max_import:
+                break
         data_file.close()
-        if zips_to_delete:
+        if zips_to_delete and not max_import:
             zips_to_delete.unlink()
             logger.info('%d better zip entries deleted for country %s' %
                         (len(zips_to_delete), self.country_id.name))
