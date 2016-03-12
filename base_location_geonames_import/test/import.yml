@@ -7,20 +7,22 @@
   I run the import
 -
   !python {model: better.zip.geonames.import}: |
-    self.run_import(cr, uid, [ref('import_wizard_1')], context=context)
+    ctx = context.copy()
+    ctx['max_import'] = 10
+    self.run_import(cr, uid, [ref('import_wizard_1')], context=ctx)
 -
   I check the data
 -
   !python {model: res.better.zip}: |
     state_obj = self.pool['res.country.state']
     state_ids = state_obj.search(cr, uid, [
-        ('code', '=', 'LG'),
+        ('code', '=', 'AB'),
         ('country_id', '=', ref('base.it')),
         ], context=context)
     assert len(state_ids) == 1, "There must be 1 LG"
     zip_ids = self.search(cr, uid, [
-        ('name', '=', '16017'),
-        ('city', '=', 'Isola Del Cantone'),
+        ('name', '=', '67010'),
+        ('city', '=', 'Barete'),
         ('state_id', '=', state_ids[0]),
         ('country_id', '=', ref('base.it'))
         ], context=context)
@@ -34,20 +36,22 @@
   I run the import again
 -
   !python {model: better.zip.geonames.import}: |
-    self.run_import(cr, uid, [ref('import_wizard_2')], context=context)
+    ctx = context.copy()
+    ctx['max_import'] = 10
+    self.run_import(cr, uid, [ref('import_wizard_2')], context=ctx)
 -
   I check the data
 -
   !python {model: res.better.zip}: |
     state_obj = self.pool['res.country.state']
     state_ids = state_obj.search(cr, uid, [
-        ('code', '=', 'LG'),
+        ('code', '=', 'AB'),
         ('country_id', '=', ref('base.it')),
         ], context=context)
     assert len(state_ids) == 1, "There must be 1 LG"
     zip_ids = self.search(cr, uid, [
-        ('name', '=', '16017'),
-        ('city', '=', 'Isola Del Cantone'),
+        ('name', '=', '67010'),
+        ('city', '=', 'Barete'),
         ('state_id', '=', state_ids[0]),
         ('country_id', '=', ref('base.it'))
         ], context=context)
