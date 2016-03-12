@@ -34,7 +34,7 @@ addon | version | summary
 [account_partner_merge](account_partner_merge/) | 1.0 (unported) | Account Partner Merge
 [base_contact](base_contact/) | 8.0.2.0.0 (unported) | [DEPRECATED] Manage your contacts separately
 [base_continent](base_continent/) | 8.0.1.0.0 (unported) | Continent management
-[base_location_geonames_import](base_location_geonames_import/) | 8.0.0.2.0 (unported) | Import better zip entries from Geonames
+[base_location_geonames_import](base_location_geonames_import/) | 8.0.0.3.0 (unported) | Import better zip entries from Geonames
 [base_location_nuts](base_location_nuts/) | 8.0.1.0.0 (unported) | NUTS Regions
 [base_partner_merge](base_partner_merge/) | 8.0.0.1.0 (unported) | Base Partner Merge
 [base_partner_sequence](base_partner_sequence/) | 8.0.1.1.0 (unported) | Sets customer's code from a sequence
