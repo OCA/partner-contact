@@ -1,29 +1,10 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Base Location Geonames Import module for OpenERP
-#    Copyright (C) 2014 Akretion (http://www.akretion.com)
-#    @author Alexis de Lattre <alexis.delattre@akretion.com>
-#    Copyright (C) 2014 Agile Business Group (http://www.agilebg.com)
-#    @author Lorenzo Battistini <lorenzo.battistini@agilebg.com>
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# © 2014 Alexis de Lattre <alexis.delattre@akretion.com>
+# © 2014 Lorenzo Battistini <lorenzo.battistini@agilebg.com>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, fields, api, _
-from openerp.exceptions import Warning
+from openerp.exceptions import Warning as UserError
 import requests
 import tempfile
 import StringIO
@@ -79,7 +60,7 @@ class BetterZipGeonamesImport(models.TransientModel):
     @api.model
     def create_better_zip(self, row, country):
         if row[0] != country.code:
-            raise Warning(
+            raise UserError(
                 _("The country code inside the file (%s) doesn't "
                     "correspond to the selected country (%s).")
                 % (row[0], country.code))
@@ -108,7 +89,7 @@ class BetterZipGeonamesImport(models.TransientModel):
             ('code', '=', row[code_row_index]),
             ])
         if len(states) > 1:
-            raise Warning(
+            raise UserError(
                 _("Too many states with code %s for country %s")
                 % (row[code_row_index], country.code))
         if len(states) == 1:
@@ -131,7 +112,7 @@ class BetterZipGeonamesImport(models.TransientModel):
         logger.info('Starting to download %s' % url)
         res_request = requests.get(url)
         if res_request.status_code != requests.codes.ok:
-            raise Warning(
+            raise UserError(
                 _('Got an error %d when trying to download the file %s.')
                 % (res_request.status_code, url))
         # Store current record list
