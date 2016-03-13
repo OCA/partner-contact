@@ -1,0 +1,237 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_location_nuts
+# 
+# Translators:
+# Paolo Valier, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-13 00:57+0000\n"
+"PO-Revision-Date: 2016-03-13 17:23+0000\n"
+"Last-Translator: Paolo Valier\n"
+"Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: base_location_nuts
+#: view:nuts.import:base_location_nuts.nuts_import_form
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,child_ids:0
+msgid "Children"
+msgstr "Figlio"
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,code:0
+msgid "Code"
+msgstr "Codice"
+
+#. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_res_country
+#: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
+#: field:res.partner.nuts,country_id:0
+msgid "Country"
+msgstr "Nazione"
+
+#. module: base_location_nuts
+#: field:nuts.import,create_uid:0 field:res.partner.nuts,create_uid:0
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: base_location_nuts
+#: field:nuts.import,create_date:0 field:res.partner.nuts,create_date:0
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:128
+#, python-format
+msgid "Downloaded file is not a valid XML file"
+msgstr "Il file scaricato non è un file XML valido"
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:120
+#, python-format
+msgid "Got an error %d when trying to download the file %s."
+msgstr ""
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:116
+#, python-format
+msgid "Got an error when trying to download the file: %s."
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
+msgid "Group By"
+msgstr "Raggruppa per"
+
+#. module: base_location_nuts
+#: field:nuts.import,id:0 field:res.partner.nuts,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: base_location_nuts
+#: view:nuts.import:base_location_nuts.nuts_import_form
+msgid "Import"
+msgstr "Importa"
+
+#. module: base_location_nuts
+#: model:ir.ui.menu,name:base_location_nuts.nuts_import_menu
+msgid "Import NUTS 2013"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.actions.act_window,name:base_location_nuts.nuts_import_action
+#: view:nuts.import:base_location_nuts.nuts_import_form
+msgid "Import NUTS 2013 from RAMON"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_nuts_import
+msgid "Import NUTS items from European RAMON service"
+msgstr ""
+
+#. module: base_location_nuts
+#: field:nuts.import,write_uid:0 field:res.partner.nuts,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: base_location_nuts
+#: field:nuts.import,write_date:0 field:res.partner.nuts,write_date:0
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: base_location_nuts
+#: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
+#: field:res.partner.nuts,level:0
+msgid "Level"
+msgstr "Livello"
+
+#. module: base_location_nuts
+#: help:res.country,state_level:0
+msgid "Level for the state NUTS category."
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.country:base_location_nuts.view_country_form
+msgid "NUTS"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_res_partner_nuts
+#: view:res.partner.nuts:base_location_nuts.res_partner_nuts_form
+msgid "NUTS Item"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.actions.act_window,name:base_location_nuts.res_partner_nuts_action
+#: model:ir.ui.menu,name:base_location_nuts.res_partner_nuts_menu
+#: view:res.partner.nuts:base_location_nuts.res_partner_nuts_tree
+msgid "NUTS Items"
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts1_id:0
+msgid "NUTS L1"
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts2_id:0
+msgid "NUTS L2"
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts3_id:0
+msgid "NUTS L3"
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+#: field:res.partner,nuts4_id:0
+msgid "NUTS L4"
+msgstr ""
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,parent_left:0
+msgid "Parent Left"
+msgstr ""
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,parent_right:0
+msgid "Parent Right"
+msgstr ""
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,parent_id:0
+msgid "Parent id"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: base_location_nuts
+#: view:res.partner:base_location_nuts.view_res_partner_filter_nuts
+msgid "Salesperson"
+msgstr ""
+
+#. module: base_location_nuts
+#: view:res.partner.nuts:base_location_nuts.view_res_partner_nuts_filter
+msgid "Search NUTS"
+msgstr ""
+
+#. module: base_location_nuts
+#: field:res.partner.nuts,state_id:0
+msgid "State"
+msgstr "Provincia"
+
+#. module: base_location_nuts
+#: field:res.country,state_level:0
+msgid "State level"
+msgstr ""
+
+#. module: base_location_nuts
+#: view:nuts.import:base_location_nuts.nuts_import_form
+msgid ""
+"This wizard will download the lastest version of\n"
+"                NUTS 2013 from Europe RAMON metadata service.\n"
+"                Updating or creating new NUTS entries if not\n"
+"                found already in the system, and DELETING MISSING\n"
+"                ENTRIES from new downloaded file."
+msgstr ""
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:95
+#, python-format
+msgid "Value not found for mandatory field %s"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.actions.todo,note:base_location_nuts.config_wizard_nuts
+msgid "You can import NUTS from RAMON european service."
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
+msgid ""
+"You must click at import wizard to populate NUTS items\n"
+"        in Odoo database in:\n"
+"        Sales > Configuration > Address Book > Localization > Import NUTS 2013"
+msgstr ""
