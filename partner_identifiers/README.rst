@@ -76,9 +76,12 @@ Credits
 
 Contributors
 ------------
-* Antonio Espinosa <antonioea@antiun.com>
-* Laurent Mignon <laurent.mignon@acsone.eu>
 
+* Antonio Espinosa <antonioea@antiun.com>
+* Ferdinand Gassauer <office@chrcar.at>
+* Gerhard Könighofer <gerhard.koenighofer@swing-system.com>
+* Laurent Mignon <laurent.mignon@acsone.eu>
+* Yajo <Yajo@users.noreply.github.com>
 
 Maintainer
 ----------
