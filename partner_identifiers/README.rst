@@ -32,7 +32,7 @@ For example, we create a category 'Driver License':
 
 * Name : Name of this ID type. For example, 'Driver License'
 * Code : Code, abbreviation or acronym of this ID type. For example, 'driver_license'
-
+* Python validation code: Optional python code called to validate ID numbers of this ID type.
 
 Usage
 =====
@@ -77,4 +77,22 @@ Credits
 Contributors
 ------------
 * Antonio Espinosa <antonioea@antiun.com>
+* Laurent Mignon <laurent.mignon@acsone.eu>
+
+
+Maintainer
+----------
+
+.. image:: https://odoo-community.org/logo.png
+   :alt: Odoo Community Association
+   :target: https://odoo-community.org
+
+This module is maintained by the OCA.
+
+OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.
+
+To contribute to this module, please visit https://odoo-community.org.
+
 

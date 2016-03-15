@@ -9,12 +9,16 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 
-from openerp import models, fields
+from openerp import api, models, fields
 
 
 class ResPartnerIdNumber(models.Model):
     _name = "res.partner.id_number"
     _order = "name"
+
+    @api.constrains('name')
+    def validate_id_number(self):
+        self.category_id.validate_id_number(self)
 
     name = fields.Char(string="ID Number", required=True)
     category_id = fields.Many2one(string="Category", required=True,
