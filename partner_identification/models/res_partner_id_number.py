@@ -31,5 +31,5 @@ class ResPartnerIdNumber(models.Model):
     valid_from = fields.Date(string="Valid from")
     valid_until = fields.Date(string="Valid until")
     comment = fields.Text(string="Notes")
-    state = fields.Char(string="State", size=16)
+    status = fields.Char(string="Status")
     active = fields.Boolean(string="Active", default=True)
