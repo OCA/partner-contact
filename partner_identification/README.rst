@@ -23,6 +23,7 @@ Installation
 
 No specific installation step required
 
+
 Configuration
 =============
 
@@ -35,6 +36,7 @@ Code:
   Code, abbreviation or acronym of this ID type. For example, 'driver_license'
 Python validation code:
   Optional python code called to validate ID numbers of this ID type.
+
 
 Usage
 =====
@@ -67,8 +69,8 @@ Notes:
 Known issues / Roadmap
 ======================
 
- * If you want to search a partner by ID you will use advance search form.
-You can't search by issuer, valid dates, category or notes.
+* If you want to search a partner by ID you will use advance search form.
+  You can't search by issuer, valid dates, category or notes.
 
 
 Bug Tracker
@@ -82,6 +84,7 @@ help us smashing it by providing a detailed and welcomed `feedback
 partner_contact/issues/new?body=module:%20
 partner_identifiers%0Aversion:%20
 9.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+
 
 Credits
 =======
@@ -109,5 +112,4 @@ mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
 To contribute to this module, please visit https://odoo-community.org.
-
 
