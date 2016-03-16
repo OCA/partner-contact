@@ -9,18 +9,15 @@
 # © 2016 ACSONE SA/NV (<http://acsone.eu>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
-    # Addon information
     'name': 'Partner Identification Numbers',
     'category': 'Customer Relationship Management',
     'version': '9.0.1.0.0',
-    # Views templates, pages, menus, options and snippets
     'data': [
         'views/res_partner_id_category_view.xml',
         'views/res_partner_id_number_view.xml',
         'views/res_partner_view.xml',
         'security/ir.model.access.csv',
     ],
-    # Your information
     'author': 'ChriCar Beteiligungs- und Beratungs- GmbH, '
               'Antiun Ingeniería S.L.',
               'Camptocamp,'
@@ -29,5 +26,4 @@
     'website': 'https://odoo-community.org/',
     'license': 'AGPL-3',
     'installable': True,
-
 }
