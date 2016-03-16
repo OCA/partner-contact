@@ -16,7 +16,7 @@ class ResPartnerIdNumber(models.Model):
     _name = "res.partner.id_number"
     _order = "name"
 
-    @api.constrains('name')
+    @api.constrains('name', 'category_id')
     def validate_id_number(self):
         self.category_id.validate_id_number(self)
 
