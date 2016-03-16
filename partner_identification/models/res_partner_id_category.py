@@ -28,8 +28,13 @@ class ResPartnerIdCategory(models.Model):
                  "browse_record\n"
                  "#  - id_number: browse_record of ID number to validate")
 
-    code = fields.Char(string="Code", size=16, required=True)
-    name = fields.Char(string="ID name", required=True, translate=True)
+    code = fields.Char(
+        string="Code", size=16, required=True,
+        help="Abbreviation or acronym of this ID type. For example, "
+             "'driver_license'")
+    name = fields.Char(
+        string="ID name", required=True, translate=True,
+        help="Name of this ID type. For example, 'Driver License'")
     active = fields.Boolean(string="Active", default=True)
     validation_code = fields.Text(
         'Python validation code',
