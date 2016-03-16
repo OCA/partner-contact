@@ -32,5 +32,9 @@ class ResPartnerIdNumber(models.Model):
     valid_from = fields.Date(string="Valid from")
     valid_until = fields.Date(string="Valid until")
     comment = fields.Text(string="Notes")
-    status = fields.Char(string="Status")
+    status = fields.Selection(
+        [('draft', 'New'),
+         ('open', 'Running'),
+         ('pending', 'To Renew'),
+         ('close', 'Expired')])
     active = fields.Boolean(string="Active", default=True)
