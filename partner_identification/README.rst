@@ -48,6 +48,8 @@ ID Number:
   The ID itself. For example, Driver License number of this person
 Issued by:
   Another partner, who issued this ID. For example, Traffic National Institution
+Place of Issuance:
+  The place where the ID has been issued. For example the country for passports and visa
 Valid from:
   Issued date. For example, date when person approved his driving exam, 21/10/2009
 Valid until:
