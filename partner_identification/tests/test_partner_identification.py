@@ -6,7 +6,7 @@ import openerp.tests.common as common
 from openerp.exceptions import ValidationError
 
 
-class TestPartnerIdentifierBase(common.TransactionCase):
+class TestPartnerIdentificationBase(common.TransactionCase):
 
     def test_base_functionalities(self):
         """Dummy CRUD test
