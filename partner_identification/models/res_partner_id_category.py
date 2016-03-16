@@ -27,7 +27,7 @@ class ResPartnerIdCategory(models.Model):
         'Python validation code',
         help="Python code called to validate an id number.",
         default="""
-# Python code. Use failed = True to .
+# Python code. Use failed = True to specify that the id number is not valid.
 # You can use the following variables :
 #  - self: browse_record of the current ID Category browse_record
 #  - id_number: browse_record of ID number to validte
