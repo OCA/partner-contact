@@ -16,20 +16,43 @@ class ResPartnerIdNumber(models.Model):
     _name = "res.partner.id_number"
     _order = "name"
 
-    @api.constrains('name')
+    @api.constrains('name', 'category_id')
     def validate_id_number(self):
         self.category_id.validate_id_number(self)
 
-    name = fields.Char(string="ID Number", required=True)
-    category_id = fields.Many2one(string="Category", required=True,
-                                  comodel_name='res.partner.id_category')
+    name = fields.Char(
+        string="ID Number", required=True,
+        help="The ID itself. For example, Driver License number of this "
+             "person")
+    category_id = fields.Many2one(
+        string="Category", required=True,
+        comodel_name='res.partner.id_category',
+        help="ID type defined in configuration. For example, Driver License")
     partner_id = fields.Many2one(string="Partner", required=True,
                                  comodel_name='res.partner')
-    partner_issued_id = fields.Many2one(string="Issued by",
-                                        comodel_name='res.partner')
-    date_issued = fields.Date(string="Issued on")
-    valid_from = fields.Date(string="Valid from")
-    valid_until = fields.Date(string="Valid until")
+    partner_issued_id = fields.Many2one(
+        string="Issued by", comodel_name='res.partner',
+        help="Another partner, who issued this ID. For example, Traffic "
+             "National Institution")
+    place_issuance = fields.Char(
+        string="Place of Issuance",
+        help="The place where the ID has been issued. For example the country "
+             "for passports and visa")
+    date_issued = fields.Date(
+        string="Issued on",
+        help="Issued date. For example, date when person approved his driving "
+             "exam, 21/10/2009")
+    valid_from = fields.Date(
+        string="Valid from",
+        help="Validation period stating date.")
+    valid_until = fields.Date(
+        string="Valid until",
+        help="Expiration date. For example, date when person needs to renew "
+             "his driver license, 21/10/2019")
     comment = fields.Text(string="Notes")
-    state = fields.Char(string="State", size=16)
+    status = fields.Selection(
+        [('draft', 'New'),
+         ('open', 'Running'),
+         ('pending', 'To Renew'),
+         ('close', 'Expired')])
     active = fields.Boolean(string="Active", default=True)
