@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_res_partner_id_number_group_user","res.partner.id_number","model_res_partner_id_number","base.group_user",1,0,0,0
+"access_res_partner_id_number_group_partner_manager","res.partner.id_number","model_res_partner_id_number","base.group_partner_manager",1,1,1,1
+"access_res_partner_id_category_group_user","res.partner.id_category","model_res_partner_id_category","base.group_user",1,0,0,0
+"access_res_partner_id_category_group_partner_manager","res.partner.id_category","model_res_partner_id_category","base.group_partner_manager",1,1,1,1
