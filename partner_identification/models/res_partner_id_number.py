@@ -27,6 +27,7 @@ class ResPartnerIdNumber(models.Model):
                                  comodel_name='res.partner')
     partner_issued_id = fields.Many2one(string="Issued by",
                                         comodel_name='res.partner')
+    place_issuance = fields.Char(string="Place of Issuance")
     date_issued = fields.Date(string="Issued on")
     valid_from = fields.Date(string="Valid from")
     valid_until = fields.Date(string="Valid until")

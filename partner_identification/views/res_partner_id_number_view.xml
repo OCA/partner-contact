@@ -13,6 +13,7 @@
                 <field name="name" />
                 <field name="partner_issued_id" />
                 <field name="date_issued" />
+                <field name="place_issuance" />
                 <field name="valid_from" />
                 <field name="valid_until" />
                 <field name="status" />
