@@ -3,12 +3,13 @@
 # * base_location
 # 
 # Translators:
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-17 01:36+0000\n"
-"PO-Revision-Date: 2015-12-15 11:17+0000\n"
+"POT-Creation-Date: 2016-03-20 01:37+0000\n"
+"PO-Revision-Date: 2016-03-19 05:58+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -78,37 +79,37 @@ msgstr "Provincia Paese"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creato da"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creato il"
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 msgid "Group By"
-msgstr ""
+msgstr "Raggruppa per"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultimo caricamento il"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultimo caricamento di"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company_better_zip_id
@@ -118,7 +119,7 @@ msgstr "Locazione"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_display_name
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_partner
@@ -128,7 +129,7 @@ msgstr "Partner"
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 msgid "Search city"
-msgstr ""
+msgstr "Ricerca città"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_state_id
