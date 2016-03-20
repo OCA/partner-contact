@@ -26,6 +26,7 @@ addon | version | summary
 [partner_contact_nationality](partner_contact_nationality/) | 9.0.1.0.0 | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 9.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_firstname](partner_firstname/) | 9.0.1.0.0 | Split first name and last name for non company partners
+[partner_identification](partner_identification/) | 9.0.1.0.0 | Partner Identification Numbers
 
 Unported addons
 ---------------
