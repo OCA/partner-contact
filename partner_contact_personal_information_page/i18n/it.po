@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_contact_birthdate
+# * partner_contact_personal_information_page
 # 
 # Translators:
 # Paolo Valier, 2016
@@ -18,20 +18,7 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. module: partner_contact_birthdate
-#: field:res.partner,birthdate_date:0
-msgid "Birthdate"
-msgstr "Data di Nascita"
-
-#. module: partner_contact_birthdate
-#: code:addons/partner_contact_birthdate/models.py:52
-#, python-format
-msgid ""
-"Could not convert '{0.birthdate}' to date in res.partner {0.id} ({0.name}). "
-"Skipping."
-msgstr ""
-
-#. module: partner_contact_birthdate
-#: model:ir.model,name:partner_contact_birthdate.model_res_partner
-msgid "Partner"
-msgstr "Partner"
+#. module: partner_contact_personal_information_page
+#: view:res.partner:partner_contact_personal_information_page.personal_information
+msgid "Personal Information"
+msgstr "Informazioni personali"

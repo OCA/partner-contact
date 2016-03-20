@@ -3,13 +3,14 @@
 # * partner_street_number
 # 
 # Translators:
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-27 23:26+0000\n"
-"PO-Revision-Date: 2016-03-11 15:30+0000\n"
-"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"POT-Creation-Date: 2016-03-13 00:57+0000\n"
+"PO-Revision-Date: 2016-03-13 13:09+0000\n"
+"Last-Translator: Paolo Valier\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +21,7 @@ msgstr ""
 #. module: partner_street_number
 #: view:res.partner:partner_street_number.view_partner_form
 msgid "Number..."
-msgstr ""
+msgstr "Numero..."
 
 #. module: partner_street_number
 #: model:ir.model,name:partner_street_number.model_res_partner
@@ -35,7 +36,7 @@ msgstr ""
 #. module: partner_street_number
 #: field:res.partner,street_number:0
 msgid "Street number"
-msgstr ""
+msgstr "Numero civico"
 
 #. module: partner_street_number
 #: view:res.partner:partner_street_number.view_partner_form

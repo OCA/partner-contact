@@ -4,12 +4,13 @@
 # 
 # Translators:
 # Paolo Valier, 2016
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-27 23:26+0000\n"
-"PO-Revision-Date: 2016-03-11 15:30+0000\n"
+"POT-Creation-Date: 2016-03-13 00:57+0000\n"
+"PO-Revision-Date: 2016-03-13 17:24+0000\n"
 "Last-Translator: Paolo Valier\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +23,7 @@ msgstr ""
 #: code:addons/partner_firstname/exceptions.py:25
 #, python-format
 msgid "Error(s) with partner %d's name."
-msgstr ""
+msgstr "Errore(i) con il nome del partner %d."
 
 #. module: partner_firstname
 #: field:res.partner,firstname:0

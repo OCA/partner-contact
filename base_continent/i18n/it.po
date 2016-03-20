@@ -4,12 +4,13 @@
 # 
 # Translators:
 # Paolo Valier, 2016
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-27 23:26+0000\n"
-"PO-Revision-Date: 2016-03-11 15:31+0000\n"
+"POT-Creation-Date: 2016-03-13 00:57+0000\n"
+"PO-Revision-Date: 2016-03-13 17:22+0000\n"
 "Last-Translator: Paolo Valier\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -72,7 +73,7 @@ msgstr "Creato il"
 msgid ""
 "Display and manage the list of all continents that can be assigned to your "
 "partner records."
-msgstr ""
+msgstr "Mostra e gestisci la lista di tutti i continenti che sono stati assegnati ai documenti del partner."
 
 #. module: base_continent
 #: model:res.continent,name:base_continent.eu
