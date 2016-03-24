@@ -10,6 +10,7 @@
         <data>
             <xpath expr="//field[@name='name']" position="attributes">
                 <attribute name="readonly">True</attribute>
+                <attribute name="required">False</attribute>
             </xpath>
 
             <xpath expr="//field[@name='email']" position="after">
