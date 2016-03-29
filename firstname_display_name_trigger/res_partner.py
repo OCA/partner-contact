@@ -57,7 +57,7 @@ class ResPartner(orm.Model):
             lambda self, cr, uid, ids, context=None:
             self.search(cr, uid, [
                 ('id', 'child_of', ids)
-                ]),
+            ]),
             ['parent_id', 'is_company', 'name', 'firstname', 'lastname'],
             10
         )
@@ -65,7 +65,8 @@ class ResPartner(orm.Model):
 
     # indirection to avoid passing a copy of the overridable method when
     # declaring the function field
-    _display_name = lambda self, *a, **kw: self._display_name_compute(*a, **kw)
+    def _display_name(self, *a, **kw):
+        return self._display_name_compute(*a, **kw)
 
     _columns = {
         # extra field to allow ORDER BY to match visible names

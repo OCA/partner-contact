@@ -39,9 +39,9 @@
     'external_dependencies': {'python': ['requests', 'unicodecsv']},
     'data': [
         'wizard/geonames_import_view.xml',
-        ],
+    ],
     'test': [
         'test/import.yml'
-        ],
+    ],
     'installable': True
 }

@@ -73,7 +73,7 @@ class BetterZipGeonamesImport(models.TransientModel):
             'city': self.transform_city_name(row[2], country),
             'state_id': state.id,
             'country_id': country.id,
-            }
+        }
         return vals
 
     @api.model
@@ -106,7 +106,7 @@ class BetterZipGeonamesImport(models.TransientModel):
         states = self.env['res.country.state'].search([
             ('country_id', '=', country.id),
             ('code', '=', row[code_row_index]),
-            ])
+        ])
         if len(states) > 1:
             raise Warning(
                 _("Too many states with code %s for country %s")
@@ -118,7 +118,7 @@ class BetterZipGeonamesImport(models.TransientModel):
                 'name': row[name_row_index],
                 'code': row[code_row_index],
                 'country_id': country.id
-                })
+            })
 
     @api.one
     def run_import(self):
