@@ -40,3 +40,13 @@ class ResUsers(models.Model):
              "form to display an itinerary.")
     context_route_start_partner_id = fields.Many2one(
         'res.partner', string='Start Address for Route Map')
+
+    @api.model
+    def create(self, vals):
+        """On creation, if no starting partner is provided, assign the current
+        created one.
+        """
+        user = super(ResUsers, self).create(vals)
+        if not vals.get('context_route_start_partner_id'):
+            user.context_route_start_partner_id = user.partner_id.id
+        return user
