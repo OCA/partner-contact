@@ -57,6 +57,12 @@ or a route map.
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/134/9.0
 
+Known issues / Roadmap
+======================
+
+* Let decide if the user prefers to use addresses instead coordinates when
+  *base_geolocalize* is installed.
+
 Bug Tracker
 ===========
 
