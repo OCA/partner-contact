@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Copyright (C) 2015 Akretion (www.akretion.com)
-  @author: Alexis de Lattre <alexis.delattre@akretion.com>
-  The licence is in the file __openerp__.py
--->
+<!-- © 2015 Alexis de Lattre <alexis.delattre@akretion.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3). -->
 
-<openerp>
-<data>
+<odoo>
 
 <!-- Interesting source of information: http://northwestspatial.com/wp/?p=38 -->
 <record id="google_maps" model="map.website">
@@ -59,6 +55,4 @@
     <field name="route_address_url">https://maps.yahoo.com/directions/?o={START_ADDRESS}&amp;d={DEST_ADDRESS}</field>
 </record>
 
-
-</data>
-</openerp>
+</odoo>
