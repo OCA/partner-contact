@@ -10,7 +10,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def set_default_map_settings(cr, pool):
+def set_default_map_settings(cr, registry):
     """Method called as post-install script
     The default method on the field can't be used, because it would be executed
     before loading map_website_data.xml, so it would not be able to set a
@@ -18,7 +18,7 @@ def set_default_map_settings(cr, pool):
     with api.Environment.manage():
         env = api.Environment(cr, SUPERUSER_ID, {})
         user_model = env['res.users']
-        users = user_model.search([])
+        users = user_model.search([('context_map_website_id', '=', False)])
         logger.info('Updating user settings for maps...')
         users.write({
             'context_map_website_id': user_model._default_map_website().id,
