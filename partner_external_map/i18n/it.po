@@ -3,19 +3,18 @@
 # * partner_external_map
 # 
 # Translators:
-# Hans Henrik Gabelgaard <hhg@gabelgaard.org>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-14 11:14+0000\n"
-"PO-Revision-Date: 2016-04-05 10:01+0000\n"
+"POT-Creation-Date: 2016-08-20 23:45+0000\n"
+"PO-Revision-Date: 2016-09-09 12:25+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Danish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/da/)\n"
+"Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: da\n"
+"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_external_map
@@ -27,32 +26,22 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_zip_id
 msgid "City/Location"
-msgstr "Postnr/by "
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_contact_type
-msgid "Contact type"
-msgstr ""
+msgstr "Città/Locazione"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creato da"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creato il"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_display_name
 msgid "Display Name"
-msgstr ""
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_gender
-msgid "Gender"
-msgstr ""
+msgstr "Nome da visualizzare"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_id
@@ -89,27 +78,22 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultimo caricamento il"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_write_date
 msgid "Last Updated on"
-msgstr ""
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_contact_id
-msgid "Main Contact"
-msgstr ""
+msgstr "Ultimo caricamento di"
 
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
 msgid "Map"
-msgstr "Kort"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_map_website
@@ -174,16 +158,6 @@ msgid ""
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_nationality_id
-msgid "Nationality"
-msgstr ""
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_other_contact_ids
-msgid "Others Positions"
-msgstr ""
-
-#. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_partner
 msgid "Partner"
 msgstr "Partner"
@@ -191,7 +165,7 @@ msgstr "Partner"
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
 msgid "Route Map"
-msgstr "Rutekort"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_context_route_map_website_id
@@ -211,7 +185,7 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_context_route_start_partner_id
 msgid "Start Address for Route Map"
-msgstr "Start adresse ved rutevejledning"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_street3
@@ -231,4 +205,4 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Utenti"
