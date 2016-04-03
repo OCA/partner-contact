@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-26 01:49+0000\n"
+"POT-Creation-Date: 2016-04-03 00:58+0000\n"
 "PO-Revision-Date: 2016-02-25 13:03+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
@@ -52,7 +52,7 @@ msgid ""
 msgstr "Für das oben gewählte Land lädt der Assitent das aktuellste Städteverzeichnis von geonames.org, Legt neue Ortbezeichnungen an, wenn sie nicht bereits im System hinterlegt sind und löscht nicht vorhandene Einträge aus der neuen Datei. "
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:135
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:118
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Erhielt einen Fehler %d beim Versuch die Datei %s herunter zu laden."
@@ -90,7 +90,7 @@ msgid "Last Updated on"
 msgstr "zuletzt aktualisiert am"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:83
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:65
 #, python-format
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
@@ -103,7 +103,7 @@ msgid "Title Case"
 msgstr "Fall-Bezeichnung"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:112
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:94
 #, python-format
 msgid "Too many states with code %s for country %s"
 msgstr "Zu viele Bundesländer mit Schlüssel %s im Land %s"

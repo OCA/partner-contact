@@ -4,12 +4,13 @@
 # 
 # Translators:
 # Paolo Valier, 2016
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-27 23:26+0000\n"
-"PO-Revision-Date: 2016-03-11 15:30+0000\n"
+"POT-Creation-Date: 2016-04-03 00:58+0000\n"
+"PO-Revision-Date: 2016-03-13 17:22+0000\n"
 "Last-Translator: Paolo Valier\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +53,7 @@ msgid ""
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:135
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:118
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Errore %d mentre si stava scaricando il file %s."
@@ -90,7 +91,7 @@ msgid "Last Updated on"
 msgstr "Ultimo aggiornamento il"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:83
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:65
 #, python-format
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
@@ -103,7 +104,7 @@ msgid "Title Case"
 msgstr "Maiuscoletto"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:112
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:94
 #, python-format
 msgid "Too many states with code %s for country %s"
 msgstr "Troppe provincie con il codice %s per la nazione %s"
