@@ -3,7 +3,7 @@
 # © 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, _
+from openerp import models, api, _
 from openerp.exceptions import Warning as UserError
 import logging
 
@@ -45,6 +45,7 @@ class ResPartner(models.Model):
 
     @api.multi
     def open_map(self):
+        self.ensure_one()
         map_website = self.env.user.context_map_website_id
         if not map_website:
             raise UserError(
@@ -72,6 +73,7 @@ class ResPartner(models.Model):
 
     @api.multi
     def open_route_map(self):
+        self.ensure_one()
         if not self.env.user.context_route_map_website_id:
             raise UserError(
                 _('Missing route map website: '
@@ -87,7 +89,7 @@ class ResPartner(models.Model):
                 self.partner_latitude and self.partner_longitude and
                 start_partner.partner_latitude and
                 start_partner.partner_longitude):
-            url = self._prepare_url(
+            url = self._prepare_url(  # pragma: no cover
                 map_website.route_lat_lon_url, {
                     '{START_LATITUDE}': start_partner.partner_latitude,
                     '{START_LONGITUDE}': start_partner.partner_longitude,
