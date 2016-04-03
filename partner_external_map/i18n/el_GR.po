@@ -3,19 +3,18 @@
 # * partner_external_map
 # 
 # Translators:
-# Hans Henrik Gabelgaard <hhg@gabelgaard.org>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-14 11:14+0000\n"
-"PO-Revision-Date: 2016-04-05 10:01+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Danish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/da/)\n"
+"POT-Creation-Date: 2016-08-20 23:45+0000\n"
+"PO-Revision-Date: 2016-04-05 10:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Greek (Greece) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/el_GR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: da\n"
+"Language: el_GR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_external_map
@@ -27,22 +26,17 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_zip_id
 msgid "City/Location"
-msgstr "Postnr/by "
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_contact_type
-msgid "Contact type"
 msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Δημιουργήθηκε από "
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Δημιουργήθηκε στις"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_display_name
@@ -50,14 +44,9 @@ msgid "Display Name"
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_gender
-msgid "Gender"
-msgstr ""
-
-#. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_id
 msgid "ID"
-msgstr "ID"
+msgstr "Κωδικός"
 
 #. module: partner_external_map
 #: model:ir.model.fields,help:partner_external_map.field_map_website_address_url
@@ -94,22 +83,17 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Τελευταία ενημέρωση από"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_write_date
 msgid "Last Updated on"
-msgstr ""
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_contact_id
-msgid "Main Contact"
-msgstr ""
+msgstr "Τελευταία ενημέρωση στις"
 
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
 msgid "Map"
-msgstr "Kort"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_map_website
@@ -174,24 +158,14 @@ msgid ""
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_nationality_id
-msgid "Nationality"
-msgstr ""
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_other_contact_ids
-msgid "Others Positions"
-msgstr ""
-
-#. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_partner
 msgid "Partner"
-msgstr "Partner"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
 msgid "Route Map"
-msgstr "Rutekort"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_context_route_map_website_id
@@ -211,7 +185,7 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_context_route_start_partner_id
 msgid "Start Address for Route Map"
-msgstr "Start adresse ved rutevejledning"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_street3
