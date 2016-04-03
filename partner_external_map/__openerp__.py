@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# © 2015 Akretion (http://www.akretion.com)
+# © 2015 Alexis de Lattre <alexis.delattre@akretion.com>
+# © 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-# @author Alexis de Lattre <alexis.delattre@akretion.com>
 
 {
     'name': 'Partner External Maps',
@@ -10,14 +10,16 @@
     'license': 'AGPL-3',
     'summary': 'Add Map and Map Routing buttons on partner form to '
                'open GMaps, OSM, Bing and others',
-    'author': 'Akretion,Odoo Community Association (OCA)',
+    'author': 'Akretion, '
+              'Tecnativa, '
+              'Odoo Community Association (OCA)',
     'website': 'http://www.akretion.com',
     'depends': ['base'],
     'data': [
-        'partner_view.xml',
-        'map_website_data.xml',
-        'map_website_view.xml',
-        'users_view.xml',
+        'views/res_partner_view.xml',
+        'views/map_website_view.xml',
+        'data/map_website_data.xml',
+        'views/res_users_view.xml',
         'security/ir.model.access.csv',
     ],
     'post_init_hook': 'set_default_map_settings',
