@@ -25,6 +25,7 @@ addon | version | summary
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 9.0.1.0.0 | Allow to have one contact in several partners
 [partner_contact_nationality](partner_contact_nationality/) | 9.0.1.0.0 | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 9.0.1.0.0 | Add a page to contacts form to put personal information
+[partner_external_map](partner_external_map/) | 9.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_firstname](partner_firstname/) | 9.0.1.0.0 | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 9.0.1.0.0 | Partner Identification Numbers
 
@@ -43,7 +44,6 @@ addon | version | summary
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 (unported) | Partner auto salesman
 [partner_contact_address_detailed](partner_contact_address_detailed/) | 8.0.1.0.0 (unported) | All address data in summarized contact form
 [partner_contact_birthdate](partner_contact_birthdate/) | 8.0.1.0.0 (unported) | Contact's birthdate
-[partner_external_maps](partner_external_maps/) | 8.0.0.1.0 (unported) | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_helper](partner_helper/) | 8.0.0.1.0 (unported) | Partner Helper
 [partner_relations](partner_relations/) | 8.0.1.1.0 (unported) | Partner relations
 [partner_street_number](partner_street_number/) | 8.0.0.1.0 (unported) | Introduces separate fields for street name and street number.
