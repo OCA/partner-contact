@@ -3,13 +3,18 @@
 # * partner_firstname
 # 
 # Translators:
+# Antonio Trueba, 2016
+# Francisco Palm <francisco.palm@gmail.com>, 2015
+# Hotellook, 2014
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2016
+# Paolo Valier, 2016
 # Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-20 01:37+0000\n"
-"PO-Revision-Date: 2016-03-19 05:58+0000\n"
+"POT-Creation-Date: 2016-04-14 11:14+0000\n"
+"PO-Revision-Date: 2016-04-05 10:01+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -17,16 +22,6 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_zip_id
-msgid "City/Location"
-msgstr "Città/Locazione"
-
-#. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_contact_type
-msgid "Contact type"
-msgstr "Tipo di contatto"
 
 #. module: partner_firstname
 #: sql_constraint:res.partner:0
@@ -46,25 +41,10 @@ msgid "First name"
 msgstr "Nome"
 
 #. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_gender
-msgid "Gender"
-msgstr "Genere"
-
-#. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner_lastname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users_lastname
 msgid "Last name"
 msgstr "Cognome"
-
-#. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_contact_id
-msgid "Main Contact"
-msgstr "Contatto principale"
-
-#. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_nationality_id
-msgid "Nationality"
-msgstr "Nazionalità"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:8
@@ -73,19 +53,9 @@ msgid "No name is set."
 msgstr "Il nome è impostato."
 
 #. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_other_contact_ids
-msgid "Others Positions"
-msgstr "Altre Posizioni"
-
-#. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
 msgid "Partner"
 msgstr "Partner"
-
-#. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_street3
-msgid "Street 3"
-msgstr ""
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_users

@@ -4,12 +4,14 @@
 # 
 # Translators:
 # Francisco Palm <francisco.palm@gmail.com>, 2015
+# Hotellook, 2014
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-12 01:43+0000\n"
-"PO-Revision-Date: 2016-03-11 23:18+0000\n"
+"POT-Creation-Date: 2016-04-14 11:14+0000\n"
+"PO-Revision-Date: 2016-04-05 10:01+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,16 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_zip_id
-msgid "City/Location"
-msgstr "Ciudad/Ubicación"
-
-#. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_contact_type
-msgid "Contact type"
-msgstr "Tipo del contacto"
 
 #. module: partner_firstname
 #: sql_constraint:res.partner:0
@@ -46,25 +38,10 @@ msgid "First name"
 msgstr "Nombre"
 
 #. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_gender
-msgid "Gender"
-msgstr "Género"
-
-#. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner_lastname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users_lastname
 msgid "Last name"
 msgstr "Apellido"
-
-#. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_contact_id
-msgid "Main Contact"
-msgstr "Contacto principal"
-
-#. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_nationality_id
-msgid "Nationality"
-msgstr "Nacionalidad"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:8
@@ -73,21 +50,11 @@ msgid "No name is set."
 msgstr "No se ha establecido ningún nombre."
 
 #. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_other_contact_ids
-msgid "Others Positions"
-msgstr "Otras posiciones"
-
-#. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
 msgid "Partner"
 msgstr "Empresa"
 
 #. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_users_street3
-msgid "Street 3"
-msgstr ""
-
-#. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Usuarios"
