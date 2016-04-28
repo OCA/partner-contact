@@ -13,7 +13,7 @@
     'author': 'Akretion,'
               'Agile Business Group,'
               'Antiun Ingeniería S.L.,'
-              'Serv. Tecnol. Avanzados - Pedro M. Baeza,'
+              'Tecnativa,'
               'Odoo Community Association (OCA)',
     'website': 'http://www.akretion.com',
     'depends': ['base_location'],
