@@ -3,15 +3,14 @@
 # * base_location_geonames_import
 # 
 # Translators:
-# Rudolf Schnapka <rs@techno-flex.de>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (8.0)\n"
+"Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-26 01:49+0000\n"
-"PO-Revision-Date: 2016-02-25 13:03+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
+"POT-Creation-Date: 2016-04-30 12:05+0000\n"
+"PO-Revision-Date: 2016-04-28 11:56+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -19,32 +18,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_location_geonames_import
-#: view:better.zip.geonames.import:base_location_geonames_import.better_zip_geonames_import_form
+#: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid "Cancel"
 msgstr "abbrechen"
 
 #. module: base_location_geonames_import
-#: help:better.zip.geonames.import,title_case:0
+#: model:ir.model.fields,help:base_location_geonames_import.field_better_zip_geonames_import_title_case
 msgid "Converts retreived city and state names to Title Case."
 msgstr "Wandelt ermittelte Stadt und Bundesländer in Fall-Titel um"
 
 #. module: base_location_geonames_import
-#: field:better.zip.geonames.import,country_id:0
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_country_id
 msgid "Country"
 msgstr "Land"
 
 #. module: base_location_geonames_import
-#: field:better.zip.geonames.import,create_uid:0
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_create_uid
 msgid "Created by"
 msgstr "erstellt von"
 
 #. module: base_location_geonames_import
-#: field:better.zip.geonames.import,create_date:0
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_create_date
 msgid "Created on"
 msgstr "erstellt am"
 
 #. module: base_location_geonames_import
-#: view:better.zip.geonames.import:base_location_geonames_import.better_zip_geonames_import_form
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: base_location_geonames_import
+#: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid ""
 "For the country selected above, this wizard will download the latest version"
 " of the list of cities from geonames.org, create new location entries if not"
@@ -52,18 +56,18 @@ msgid ""
 msgstr "Für das oben gewählte Land lädt der Assitent das aktuellste Städteverzeichnis von geonames.org, Legt neue Ortbezeichnungen an, wenn sie nicht bereits im System hinterlegt sind und löscht nicht vorhandene Einträge aus der neuen Datei. "
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:135
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:118
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Erhielt einen Fehler %d beim Versuch die Datei %s herunter zu laden."
 
 #. module: base_location_geonames_import
-#: field:better.zip.geonames.import,id:0
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_id
 msgid "ID"
 msgstr "ID"
 
 #. module: base_location_geonames_import
-#: view:better.zip.geonames.import:base_location_geonames_import.better_zip_geonames_import_form
+#: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid "Import"
 msgstr "Import"
 
@@ -73,24 +77,29 @@ msgid "Import Better Zip from Geonames"
 msgstr "Importiere bessere PLZ von geonames.org"
 
 #. module: base_location_geonames_import
-#: view:better.zip.geonames.import:base_location_geonames_import.better_zip_geonames_import_form
 #: model:ir.actions.act_window,name:base_location_geonames_import.better_zip_geonames_import_action
 #: model:ir.ui.menu,name:base_location_geonames_import.better_zip_geonames_import_menu
+#: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid "Import from Geonames"
 msgstr "Importiere von Geonames"
 
 #. module: base_location_geonames_import
-#: field:better.zip.geonames.import,write_uid:0
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import___last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_write_uid
 msgid "Last Updated by"
 msgstr "zuletzt aktualisiert von"
 
 #. module: base_location_geonames_import
-#: field:better.zip.geonames.import,write_date:0
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_write_date
 msgid "Last Updated on"
 msgstr "zuletzt aktualisiert am"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:83
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:65
 #, python-format
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
@@ -98,12 +107,12 @@ msgid ""
 msgstr "Die Landeskennung in der Datei (%s) passt nicht zum gewählten Land (%s)."
 
 #. module: base_location_geonames_import
-#: field:better.zip.geonames.import,title_case:0
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_title_case
 msgid "Title Case"
 msgstr "Fall-Bezeichnung"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:112
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:94
 #, python-format
 msgid "Too many states with code %s for country %s"
 msgstr "Zu viele Bundesländer mit Schlüssel %s im Land %s"
