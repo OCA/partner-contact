@@ -109,7 +109,7 @@ class BetterZipGeonamesImport(models.TransientModel):
         country_code = self.country_id.code
         config_url = self.env['ir.config_parameter'].get_param(
             'geonames.url',
-            default='http://download.geonames.org/export/zip/%s.zip')
+            default='http://download.geonames.org/export/dump/%s.zip')
         url = config_url % country_code
         logger.info('Starting to download %s' % url)
         res_request = requests.get(url)
