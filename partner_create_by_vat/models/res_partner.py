@@ -14,8 +14,7 @@ class ResPartner(models.Model):
         try:
             from stdnum.eu.vat import check_vies
         except:
-            ValidationError(_('Error!'),
-                            _("There was an error importing check_vies "
+            ValidationError(_("There was an error importing check_vies "
                               "method from python stdnum."))
         res = {}
         vat = vat.strip().upper()

@@ -16,11 +16,11 @@ Installation
 
 To install this module, you need to:
 
-* clone the branch 8.0 of the repository https://github.com/OCA/partner-contact
-* add the path to this repository in your configuration (addons-path)
-* update the module list
-* search for "Partner Create by VAT" in your addons
-* install the module
+#. Clone the branch 8.0 of the repository https://github.com/OCA/partner-contact
+#. Add the path to this repository in your configuration (addons-path)
+#. Update the module list
+#. Search for "Partner Create by VAT" in your addons
+#. install the module
 
 Usage
 =====
