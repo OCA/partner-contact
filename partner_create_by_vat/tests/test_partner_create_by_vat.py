@@ -31,6 +31,25 @@ class TestPartnerCreatebyVAT(TransactionCase):
         self.assertEqual(self.partner1_id.vat, 'BE0477472701')
         self.assertEqual(self.partner1_id.vat_subjected, True)
 
+    def test_vat_change1(self):
+        # Create an partner from VAT number field
+        self.partner11_id = self.partner_model.create({'name': '1',
+                                                      'is_company': True})
+
+        with self.env.do_in_onchange():
+            res = self.partner11_id.vat_change('be0477472701')
+            self.partner1_id.write(res)
+
+            # Check if the datas fetch correspond with the datas from VIES.
+            self.assertEqual(self.partner11_id.name, 'SA ODOO')
+            self.assertEqual(
+                unicode(self.partner11_id.street),
+                u'Chaussée De Namur 40 1367 Ramillies'
+            )
+            self.assertEqual(self.partner11_id.country_id.name, 'Belgium')
+            self.assertEqual(self.partner11_id.vat, 'BE0477472701')
+            self.assertEqual(self.partner11_id.vat_subjected, True)
+
     def test_create_from_vat2(self):
         # Create an partner from VAT number field
         self.partner2_id = self.partner_model.create({'name': '1',
@@ -40,13 +59,3 @@ class TestPartnerCreatebyVAT(TransactionCase):
         # Check VAT number not listed on VIES
         with self.assertRaises(ValidationError):
             self.partner2_id.get_vies_data_from_vat()
-
-    def test_create_from_vat3(self):
-        # Create an partner from VAT number field
-        self.partner3_id = self.partner_model.create({'name': '1',
-                                                      'vat': 'DE276199490',
-                                                      'is_company': True})
-
-        # Check VAT number is listed on VIES but don't have name and address
-        with self.assertRaises(ValidationError):
-            self.partner3_id.get_vies_data_from_vat()

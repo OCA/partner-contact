@@ -2,8 +2,17 @@
 # ©  2015 Forest and Biomass Services Romania
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api, _
+import logging
+
+from openerp import api, models, _
 from openerp.exceptions import ValidationError
+
+_logger = logging.getLogger(__name__)
+
+try:
+    from stdnum.eu.vat import check_vies
+except ImportError:
+    _logger.debug("Cannot import check_vies method from python stdnum.")
 
 
 class ResPartner(models.Model):
@@ -11,41 +20,29 @@ class ResPartner(models.Model):
 
     @api.model
     def _get_vies_data(self, vat):
-        try:
-            from stdnum.eu.vat import check_vies
-        except:
-            ValidationError(_("There was an error importing check_vies "
-                              "method from python stdnum."))
         res = {}
         vat = vat.strip().upper()
         vat_country, vat_number = self._split_vat(vat)
         result = check_vies(vat)
-        # Check if partner is listed on Vies
-        if result.name is not None:
-            # Check is the partner have the name and adress listed on VIES
-            if result.name != '---':
-                # Get country by country code
-                country = self.env['res.country'].search(
-                    [('code', 'ilike', vat_country)])
-                new_name = result.name.upper()
-                if result.address != '---':
-                    new_address = result.address.replace(
-                        '\n', ' ').replace('\r', '').title()
-                res.update({
-                    'name': new_name,
-                    'vat': vat,
-                    'street': new_address,
-                    'country_id': country and country[0].id,
-                    'vat_subjected':  result.valid
-                })
-            else:
-                res['vat_subjected'] = result.valid
-                raise ValidationError(_("The partner doesn't have the name "
-                                        "and address listed on Vies "
-                                        "Webservice."))
-        else:
+        # Raise error if partner is not listed on Vies
+        if result.name is None:
             raise ValidationError(_("The partner is not listed on Vies "
                                     "Webservice."))
+        res['vat'] = vat
+        res['vat_subjected'] = result.valid
+        new_name = new_address = False
+        # Update partner name if listed on VIES
+        if result.name != '---':
+            res['name'] = result.name.upper()
+        # Update partner address if listed on VIES
+        if result.address != '---':
+            res['street'] = \
+                result.address.replace('\n', ' ').replace('\r', '').title()
+        # Get country by country code
+        country = self.env['res.country'].search(
+            [('code', 'ilike', vat_country)])
+        if country:
+            res['country_id'] = country[0].id
         return res
 
     @api.multi
