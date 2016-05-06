@@ -30,7 +30,6 @@ class ResPartner(models.Model):
                                     "Webservice."))
         res['vat'] = vat
         res['vat_subjected'] = result.valid
-        new_name = new_address = False
         # Update partner name if listed on VIES
         if result.name != '---':
             res['name'] = result.name.upper()
