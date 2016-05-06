@@ -61,5 +61,6 @@ class ResPartner(models.Model):
 
     @api.one
     def get_vies_data_from_vat(self):
-        res = self._get_vies_data(self.vat)
-        self.update(res)
+        if self.vat:
+            res = self._get_vies_data(self.vat)
+            self.update(res)
