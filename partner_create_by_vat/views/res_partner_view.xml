@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_partner_create_by_vat" model="ir.ui.view">
+            <field name="name">res.partner.create.by.vat</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base_vat.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="vat" position="after">
+           		    <button name="get_vies_data_from_vat"
+ 				            attrs="{'invisible': [
+ 				                ('vat', '=', False),
+ 				                ('is_company', '=', False )]}"
+ 				            colspan="2" string="Get Vies Data"
+ 				            type="object" icon="gtk-execute"/>
+           	    </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+
