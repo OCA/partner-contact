@@ -20,5 +20,5 @@ class ResPartnerLAU(models.Model):
     # Parent hierarchy
     parent_id = fields.Many2one('res.partner.lau', ondelete='restrict')
     child_ids = fields.One2many('res.partner.lau', 'parent_id', 'Children')
-    parent_left = fields.Integer('Parent Left', select=True)
-    parent_right = fields.Integer('Parent Right', select=True)
+    parent_left = fields.Integer('Parent Left', index=True)
+    parent_right = fields.Integer('Parent Right', index=True)
