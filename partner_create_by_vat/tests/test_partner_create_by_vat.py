@@ -38,7 +38,7 @@ class TestPartnerCreatebyVAT(TransactionCase):
 
         with self.env.do_in_onchange():
             res = self.partner11_id.vat_change('be0477472701')
-            self.partner1_id.write(res)
+            self.partner11_id.write(res)
 
             # Check if the datas fetch correspond with the datas from VIES.
             self.assertEqual(self.partner11_id.name, 'SA ODOO')
