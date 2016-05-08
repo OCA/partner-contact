@@ -3,13 +3,13 @@
 # * partner_employee_quantity
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-08 01:38+0000\n"
-"PO-Revision-Date: 2015-12-23 14:13+0000\n"
+"POT-Creation-Date: 2016-05-07 07:18+0000\n"
+"PO-Revision-Date: 2016-05-07 07:16+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -27,6 +27,11 @@ msgstr "Ustvaril"
 #: field:res.partner.employee_quantity_range,create_date:0
 msgid "Created on"
 msgstr "Ustvarjeno"
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
 
 #. module: partner_employee_quantity
 #: view:res.partner:partner_employee_quantity.view_res_partner_filter_employees
@@ -48,6 +53,11 @@ msgstr "Razpon količine kadrov"
 #: field:res.partner.employee_quantity_range,id:0
 msgid "ID"
 msgstr "ID"
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
 
 #. module: partner_employee_quantity
 #: field:res.partner.employee_quantity_range,write_uid:0

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-08 01:38+0000\n"
-"PO-Revision-Date: 2015-12-22 15:01+0000\n"
+"POT-Creation-Date: 2016-05-07 07:18+0000\n"
+"PO-Revision-Date: 2016-05-06 15:15+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -38,6 +38,11 @@ msgid "Created on"
 msgstr "Created on"
 
 #. module: partner_contact_job_position
+#: field:res.partner.job_position,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: partner_contact_job_position
 #: field:res.partner.job_position,id:0
 msgid "ID"
 msgstr "ID"
@@ -59,6 +64,11 @@ msgstr "Job position"
 #: view:res.partner.job_position:partner_contact_job_position.res_partner_job_position_tree_view
 msgid "Job positions"
 msgstr "Job positions"
+
+#. module: partner_contact_job_position
+#: field:res.partner.job_position,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
 
 #. module: partner_contact_job_position
 #: field:res.partner.job_position,write_uid:0

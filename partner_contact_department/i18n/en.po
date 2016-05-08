@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-08 01:38+0000\n"
-"PO-Revision-Date: 2015-12-22 15:56+0000\n"
+"POT-Creation-Date: 2016-05-07 07:18+0000\n"
+"PO-Revision-Date: 2016-05-06 15:14+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -48,9 +48,19 @@ msgid "Departments"
 msgstr "Departments"
 
 #. module: partner_contact_department
+#: field:res.partner.department,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: partner_contact_department
 #: field:res.partner.department,id:0
 msgid "ID"
 msgstr "ID"
+
+#. module: partner_contact_department
+#: field:res.partner.department,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
 
 #. module: partner_contact_department
 #: field:res.partner.department,write_uid:0

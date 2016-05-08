@@ -3,13 +3,13 @@
 # * partner_academic_title
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-25 01:50+0000\n"
-"PO-Revision-Date: 2015-11-25 06:57+0000\n"
+"POT-Creation-Date: 2016-05-07 07:18+0000\n"
+"PO-Revision-Date: 2016-05-07 07:14+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -48,6 +48,11 @@ msgid "Created on"
 msgstr "Ustvarjeno"
 
 #. module: partner_academic_title
+#: field:partner.academic.title,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: partner_academic_title
 #: model:partner.academic.title,name:partner_academic_title.academic_title_edd
 msgid "Ed.D"
 msgstr "dr. docent"
@@ -61,6 +66,11 @@ msgstr "ID"
 #: model:partner.academic.title,name:partner_academic_title.academic_title_jd
 msgid "J.D."
 msgstr "dr. prava"
+
+#. module: partner_academic_title
+#: field:partner.academic.title,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
 
 #. module: partner_academic_title
 #: field:partner.academic.title,write_uid:0

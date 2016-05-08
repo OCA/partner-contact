@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-26 01:49+0000\n"
-"PO-Revision-Date: 2015-09-18 15:11+0000\n"
+"POT-Creation-Date: 2016-05-07 07:18+0000\n"
+"PO-Revision-Date: 2016-05-06 15:15+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -48,6 +48,7 @@ msgid "All relations with current partner"
 msgstr "All relations with current partner"
 
 #. module: partner_relations
+#: field:res.partner.relation,allow_self:0
 #: field:res.partner.relation.type,allow_self:0
 msgid "Allow both sides to be the same"
 msgstr "Allow both sides to be the same"
@@ -90,6 +91,14 @@ msgstr "Current record's partner type"
 #: field:res.partner.relation,right_partner_id:0
 msgid "Destination Partner"
 msgstr "Destination Partner"
+
+#. module: partner_relations
+#: field:res.partner.relation,display_name:0
+#: field:res.partner.relation.all,display_name:0
+#: field:res.partner.relation.type,display_name:0
+#: field:res.partner.relation.type.selection,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
 
 #. module: partner_relations
 #: field:res.partner.relation,date_end:0
@@ -163,6 +172,14 @@ msgid "Is competitor of"
 msgstr "Is competitor of"
 
 #. module: partner_relations
+#: field:res.partner.relation,__last_update:0
+#: field:res.partner.relation.all,__last_update:0
+#: field:res.partner.relation.type,__last_update:0
+#: field:res.partner.relation.type.selection,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: partner_relations
 #: field:res.partner.relation,write_uid:0
 #: field:res.partner.relation.type,write_uid:0
 msgid "Last Updated by"
@@ -223,6 +240,7 @@ msgstr "Other record's partner type"
 
 #. module: partner_relations
 #: model:ir.model,name:partner_relations.model_res_partner
+#: field:res.partner.relation,any_partner_id:0
 #: field:res.partner.relation,partner_id_display:0
 msgid "Partner"
 msgstr "Partner"
@@ -294,6 +312,11 @@ msgstr "Related partners"
 #: field:res.partner.relation.all,relation_id:0
 msgid "Relation"
 msgstr "Relation"
+
+#. module: partner_relations
+#: field:res.partner,relation_count:0
+msgid "Relation Count"
+msgstr "Relation Count"
 
 #. module: partner_relations
 #: field:res.partner.relation.all,type_id:0

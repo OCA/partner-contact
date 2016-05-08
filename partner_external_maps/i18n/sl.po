@@ -3,14 +3,14 @@
 # * partner_external_maps
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 15:54+0000\n"
-"PO-Revision-Date: 2015-08-19 17:44+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2016-05-07 07:18+0000\n"
+"PO-Revision-Date: 2016-05-07 07:20+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,6 +25,46 @@ msgid "Address missing on partner '%s'."
 msgstr "Pri partnerju '%s' manjka naslov."
 
 #. module: partner_external_maps
+#: field:res.users,capital_amount:0
+msgid "Capital amount"
+msgstr "Znesek kapitala"
+
+#. module: partner_external_maps
+#: field:res.users,capital_country_id:0
+msgid "Capital country"
+msgstr "Država kapitala"
+
+#. module: partner_external_maps
+#: field:res.users,capital_currency_id:0
+msgid "Capital currency"
+msgstr "Valuta kapitala"
+
+#. module: partner_external_maps
+#: field:res.users,job_position_id:0
+msgid "Categorized job position"
+msgstr "Kategorizirani delovni položaj"
+
+#. module: partner_external_maps
+#: field:res.users,zip_id:0
+msgid "City/Location"
+msgstr "Kraj/lokacija"
+
+#. module: partner_external_maps
+#: field:res.users,company_size:0
+msgid "Company size"
+msgstr "Velikost družbe"
+
+#. module: partner_external_maps
+#: field:res.users,continent_id:0
+msgid "Continent"
+msgstr "Celina"
+
+#. module: partner_external_maps
+#: help:res.users,capital_country_id:0
+msgid "Country of origin of this company's capital."
+msgstr "Država izvora kapitala te družbe."
+
+#. module: partner_external_maps
 #: field:map.website,create_uid:0
 msgid "Created by"
 msgstr "Ustvaril"
@@ -33,6 +73,26 @@ msgstr "Ustvaril"
 #: field:map.website,create_date:0
 msgid "Created on"
 msgstr "Ustvaril"
+
+#. module: partner_external_maps
+#: field:res.users,department_id:0
+msgid "Department"
+msgstr "Oddelek"
+
+#. module: partner_external_maps
+#: field:map.website,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: partner_external_maps
+#: field:res.users,employee_quantity:0
+msgid "Employee quantity"
+msgstr "Število zaposlenih"
+
+#. module: partner_external_maps
+#: field:res.users,employee_quantity_range_id:0
+msgid "Employee quantity range"
+msgstr "Razpon števila zaposlenih"
 
 #. module: partner_external_maps
 #: field:map.website,id:0
@@ -65,6 +125,11 @@ msgid ""
 "{DEST_LONGITUDE} will be replaced by the latitude and longitude of the start"
 " and destination adresses (requires the module 'base_geolocalize')."
 msgstr "V tej URL povezavi bodo {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} in {DEST_LONGITUDE} zamenjani z geografsko širino in dolžino začetnega in ciljnega naslova (potreben je modul 'base_geolocalize')."
+
+#. module: partner_external_maps
+#: field:map.website,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
 
 #. module: partner_external_maps
 #: field:map.website,write_uid:0
@@ -144,9 +209,39 @@ msgid ""
 msgstr "Manjkajoč začetni naslov za progo: nastavite ga v svojih nastavitvah."
 
 #. module: partner_external_maps
+#: field:res.users,nuts1_id:0
+msgid "NUTS L1"
+msgstr "NUTS L1"
+
+#. module: partner_external_maps
+#: field:res.users,nuts2_id:0
+msgid "NUTS L2"
+msgstr "NUTS L2"
+
+#. module: partner_external_maps
+#: field:res.users,nuts3_id:0
+msgid "NUTS L3"
+msgstr "NUTS L3"
+
+#. module: partner_external_maps
+#: field:res.users,nuts4_id:0
+msgid "NUTS L4"
+msgstr "NUTS L4"
+
+#. module: partner_external_maps
 #: model:ir.model,name:partner_external_maps.model_res_partner
 msgid "Partner"
 msgstr "Partner"
+
+#. module: partner_external_maps
+#: help:res.users,capital_amount:0
+msgid "Publicly registered capital amount."
+msgstr "Znesek javno registriranega kapitala."
+
+#. module: partner_external_maps
+#: help:res.users,employee_quantity_range_id:0
+msgid "Range of this partner depending on the employee quantity."
+msgstr "Razpon partnerja glede na število zaposlenih."
 
 #. module: partner_external_maps
 #: view:res.partner:partner_external_maps.view_partner_form
@@ -172,6 +267,21 @@ msgstr "URL proge, ki uporablja naslove"
 #: field:res.users,context_route_start_partner_id:0
 msgid "Start Address for Route Map"
 msgstr "Začetni naslov za zemljevid proge"
+
+#. module: partner_external_maps
+#: field:res.users,street3:0
+msgid "Street 3"
+msgstr "Ulica 3"
+
+#. module: partner_external_maps
+#: field:res.users,turnover_amount:0
+msgid "Turnover amount"
+msgstr "Znesek prometa"
+
+#. module: partner_external_maps
+#: field:res.users,turnover_range_id:0
+msgid "Turnover range"
+msgstr "Razpon prometa"
 
 #. module: partner_external_maps
 #: field:map.website,lat_lon_url:0

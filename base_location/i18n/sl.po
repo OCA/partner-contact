@@ -3,13 +3,13 @@
 # * base_location
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 15:54+0000\n"
-"PO-Revision-Date: 2015-05-24 05:01+0000\n"
+"POT-Creation-Date: 2016-05-07 07:18+0000\n"
+"PO-Revision-Date: 2016-05-07 07:14+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -95,6 +95,11 @@ msgstr "Združi po"
 #: field:res.better.zip,id:0
 msgid "ID"
 msgstr "ID"
+
+#. module: base_location
+#: field:res.better.zip,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
 
 #. module: base_location
 #: field:res.better.zip,write_uid:0
