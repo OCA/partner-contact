@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record id="res_partner_lau_tree" model="ir.ui.view">
+    <field name="name">LAU Items tree</field>
+    <field name="model">res.partner.lau</field>
+    <field name="arch" type="xml">
+        <tree string="LAU Items">
+            <field name="level"/>
+            <field name="code"/>
+            <field name="name"/>
+        </tree>
+    </field>
+</record>
+
+<record id="res_partner_lau_form" model="ir.ui.view">
+    <field name="name">LAU Items form</field>
+    <field name="model">res.partner.lau</field>
+    <field name="arch" type="xml">
+        <form string="LAU Item">
+            <group>
+                <group>
+                    <field name="level"/>
+                    <field name="code"/>
+                    <field name="parent_id"/>
+                    <field name="name"/>
+                </group>
+                <group>
+                    <field name="country_id"/>
+                    <field name="state_id"/>
+                </group>
+            </group>
+        </form>
+    </field>
+</record>
+
+<record id="res_partner_lau_action" model="ir.actions.act_window">
+    <field name="name">LAU Items</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">res.partner.lau</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<record model="ir.ui.view" id="view_res_partner_lau_filter">
+    <field name="name">LAU search filters</field>
+    <field name="model">res.partner.lau</field>
+    <field name="arch" type="xml">
+        <search string="Search LAU">
+            <field name="name"/>
+            <field name="country_id"/>
+            <field name="state_id"/>
+            <group expand="0" string="Group By">
+                <filter string="Country"
+                        domain="[]"
+                        context="{'group_by': 'country_id'}"/>
+                <filter string="Level"
+                        domain="[]"
+                        context="{'group_by': 'level'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<menuitem action="res_partner_lau_action"
+          id="res_partner_lau_menu"
+          name="LAU Items"
+          parent="base.menu_localisation"
+          sequence="45"/>
+
+</data>
+</openerp>
