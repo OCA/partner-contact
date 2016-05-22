@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-07 07:18+0000\n"
-"PO-Revision-Date: 2016-05-07 07:20+0000\n"
+"POT-Creation-Date: 2016-05-19 02:42+0000\n"
+"PO-Revision-Date: 2016-05-19 05:09+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -140,6 +140,16 @@ msgstr "Zadnji posodobil"
 #: field:map.website,write_date:0
 msgid "Last Updated on"
 msgstr "Zadnjič posodobljeno"
+
+#. module: partner_external_maps
+#: field:res.users,lau1_id:0
+msgid "Local Admin. Unit 1"
+msgstr "Lokalna upravna enota 1"
+
+#. module: partner_external_maps
+#: field:res.users,lau2_id:0
+msgid "Local Admin. Unit 2"
+msgstr "Lokalna upravna enota 2"
 
 #. module: partner_external_maps
 #: view:res.partner:partner_external_maps.view_partner_form

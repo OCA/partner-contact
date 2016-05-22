@@ -1,0 +1,139 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_location_lau
+# 
+# Translators:
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-19 02:42+0000\n"
+"PO-Revision-Date: 2016-05-19 05:11+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#. module: base_location_lau
+#: field:res.partner.lau,child_ids:0
+msgid "Children"
+msgstr "Podrejeni"
+
+#. module: base_location_lau
+#: field:res.partner.lau,code:0
+msgid "Code"
+msgstr "Koda"
+
+#. module: base_location_lau
+#: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
+#: field:res.partner.lau,country_id:0
+msgid "Country"
+msgstr "Država"
+
+#. module: base_location_lau
+#: field:res.partner.lau,create_uid:0
+msgid "Created by"
+msgstr "Ustvaril"
+
+#. module: base_location_lau
+#: field:res.partner.lau,create_date:0
+msgid "Created on"
+msgstr "Ustvarjeno"
+
+#. module: base_location_lau
+#: field:res.partner.lau,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: base_location_lau
+#: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
+msgid "Group By"
+msgstr "Združi po"
+
+#. module: base_location_lau
+#: field:res.partner.lau,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: base_location_lau
+#: model:ir.model,name:base_location_lau.model_res_partner_lau
+#: view:res.partner.lau:base_location_lau.res_partner_lau_form
+msgid "LAU Item"
+msgstr "LAU postavka"
+
+#. module: base_location_lau
+#: model:ir.actions.act_window,name:base_location_lau.res_partner_lau_action
+#: model:ir.ui.menu,name:base_location_lau.res_partner_lau_menu
+#: view:res.partner.lau:base_location_lau.res_partner_lau_tree
+msgid "LAU Items"
+msgstr "LAU postavke"
+
+#. module: base_location_lau
+#: field:res.partner.lau,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
+
+#. module: base_location_lau
+#: field:res.partner.lau,write_uid:0
+msgid "Last Updated by"
+msgstr "Zadnji posodobil"
+
+#. module: base_location_lau
+#: field:res.partner.lau,write_date:0
+msgid "Last Updated on"
+msgstr "Zadnjič posodobljeno"
+
+#. module: base_location_lau
+#: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
+#: field:res.partner.lau,level:0
+msgid "Level"
+msgstr "Nivo"
+
+#. module: base_location_lau
+#: field:res.partner,lau1_id:0
+msgid "Local Admin. Unit 1"
+msgstr "Lokalna upravna enota 1"
+
+#. module: base_location_lau
+#: field:res.partner,lau2_id:0
+msgid "Local Admin. Unit 2"
+msgstr "Lokalna upravna enota 2"
+
+#. module: base_location_lau
+#: field:res.partner.lau,name:0
+msgid "Name"
+msgstr "Naziv"
+
+#. module: base_location_lau
+#: field:res.partner.lau,parent_left:0
+msgid "Parent Left"
+msgstr "Levo nadrejeni"
+
+#. module: base_location_lau
+#: field:res.partner.lau,parent_right:0
+msgid "Parent Right"
+msgstr "Desno nadrejeni"
+
+#. module: base_location_lau
+#: field:res.partner.lau,parent_id:0
+msgid "Parent id"
+msgstr "ID nadrejenega"
+
+#. module: base_location_lau
+#: model:ir.model,name:base_location_lau.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: base_location_lau
+#: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
+msgid "Search LAU"
+msgstr "Iskanje LAU"
+
+#. module: base_location_lau
+#: field:res.partner.lau,state_id:0
+msgid "State"
+msgstr "Zvezna država"
