@@ -3,13 +3,14 @@
 # * partner_contact_in_several_companies
 # 
 # Translators:
+# Jarmo Kortetjärvi <jarmo.kortetjarvi@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-19 01:46+0000\n"
-"PO-Revision-Date: 2015-08-06 21:25+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2016-05-22 05:52+0000\n"
+"PO-Revision-Date: 2016-05-23 10:09+0000\n"
+"Last-Translator: Jarmo Kortetjärvi <jarmo.kortetjarvi@gmail.com>\n"
 "Language-Team: Finnish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,43 +21,43 @@ msgstr ""
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Address"
-msgstr ""
+msgstr "Osoite"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "All partner positions"
-msgstr ""
+msgstr "Kumppanin kaikki toimet"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "All positions"
-msgstr ""
+msgstr "Kaikki toimet"
 
 #. module: partner_contact_in_several_companies
 #: code:addons/partner_contact_in_several_companies/models.py:32
 #, python-format
 msgid "Attached to existing Contact"
-msgstr ""
+msgstr "Liittyy olemassolevaan kontaktiin"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "City"
-msgstr ""
+msgstr "Kaupunki"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Company"
-msgstr ""
+msgstr "Yritys"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Contact"
-msgstr ""
+msgstr "Kontakti"
 
 #. module: partner_contact_in_several_companies
 #: field:res.partner,contact_type:0
 msgid "Contact Type"
-msgstr ""
+msgstr "Kontaktin tyyppi"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
@@ -76,7 +77,7 @@ msgstr "Faksi:"
 #. module: partner_contact_in_several_companies
 #: field:res.partner,contact_id:0
 msgid "Main Contact"
-msgstr ""
+msgstr "Pääkontakti"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
@@ -86,12 +87,12 @@ msgstr "Kännykkä:"
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Other Positions"
-msgstr ""
+msgstr "Muut toimet"
 
 #. module: partner_contact_in_several_companies
 #: field:res.partner,other_contact_ids:0
 msgid "Others Positions"
-msgstr ""
+msgstr "Muut toimet"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model,name:partner_contact_in_several_companies.model_res_partner
@@ -101,7 +102,7 @@ msgstr "Kumppani"
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "Person"
-msgstr ""
+msgstr "Henkilö"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
@@ -112,56 +113,56 @@ msgstr "Puhelin:"
 #: code:addons/partner_contact_in_several_companies/models.py:31
 #, python-format
 msgid "Standalone Contact"
-msgstr ""
+msgstr "Itsenäinen kontakti"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "State"
-msgstr ""
+msgstr "Tila"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Street..."
-msgstr ""
+msgstr "Katu..."
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Tags..."
-msgstr ""
+msgstr "Tunnisteet..."
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_personal_information
 msgid ""
 "To see personal information about this contact, please\n"
 "                        go to to the his person form:"
-msgstr ""
+msgstr "Nähdäksesi kontaktin henkilökohtaiset tiedot, mene henkilön lomakenäkymään:"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "ZIP"
-msgstr ""
+msgstr "Postinumero"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "at"
-msgstr ""
+msgstr "yrityksessä"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "e.g. Sales Director"
-msgstr ""
+msgstr "esim. Myyntipäällikkö"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_kanban_contact
 msgid "other position"
-msgstr ""
+msgstr "muu toimi"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_kanban_contact
 msgid "other positions"
-msgstr ""
+msgstr "muut toimet"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "{'invisible': [('contact_type','=','attached')]}"
-msgstr ""
+msgstr "{'invisible': [('contact_type','=','attached')]}"
