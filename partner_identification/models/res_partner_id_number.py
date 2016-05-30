@@ -29,7 +29,8 @@ class ResPartnerIdNumber(models.Model):
         comodel_name='res.partner.id_category',
         help="ID type defined in configuration. For example, Driver License")
     partner_id = fields.Many2one(string="Partner", required=True,
-                                 comodel_name='res.partner')
+                                 comodel_name='res.partner',
+                                 ondelete='cascade')
     partner_issued_id = fields.Many2one(
         string="Issued by", comodel_name='res.partner',
         help="Another partner, who issued this ID. For example, Traffic "
