@@ -23,4 +23,8 @@ class Partner(models.Model):
     """Partners with gender."""
     _inherit = "res.partner"
 
-    gender = fields.Selection([('male', 'Male'), ('female', 'Female')])
+    gender = fields.Selection([
+        ('male', 'Male'),
+        ('female', 'Female'),
+        ('other', 'Other'),
+    ])
