@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_contact_gender
+# * base_vat_sanitized
 # 
 # Translators:
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-01 02:41+0000\n"
-"PO-Revision-Date: 2016-06-01 00:04+0000\n"
+"PO-Revision-Date: 2016-05-31 06:39+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -17,27 +17,17 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. module: partner_contact_gender
-#: selection:res.partner,gender:0
-msgid "Female"
-msgstr "Female"
-
-#. module: partner_contact_gender
-#: field:res.partner,gender:0
-msgid "Gender"
-msgstr "Gender"
-
-#. module: partner_contact_gender
-#: selection:res.partner,gender:0
-msgid "Male"
-msgstr "Male"
-
-#. module: partner_contact_gender
-#: selection:res.partner,gender:0
-msgid "Other"
-msgstr "Other"
-
-#. module: partner_contact_gender
-#: model:ir.model,name:partner_contact_gender.model_res_partner
+#. module: base_vat_sanitized
+#: model:ir.model,name:base_vat_sanitized.model_res_partner
 msgid "Partner"
 msgstr "Partner"
+
+#. module: base_vat_sanitized
+#: field:res.partner,sanitized_vat:0
+msgid "Sanitized TIN"
+msgstr "Sanitized TIN"
+
+#. module: base_vat_sanitized
+#: help:res.partner,sanitized_vat:0
+msgid "TIN in uppercase without spaces nor special caracters."
+msgstr "TIN in uppercase without spaces nor special caracters."
