@@ -1,0 +1,29 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * crm_deduplicate_by_ref
+#
+# Translators:
+# Erwin van der Ploeg <erwin@odooexperts.nl>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-16 03:45+0000\n"
+"PO-Revision-Date: 2017-03-16 03:45+0000\n"
+"Last-Translator: Erwin van der Ploeg <erwin@odooexperts.nl>, 2017\n"
+"Language-Team: Dutch (https://www.transifex.com/oca/teams/23907/nl/)\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: crm_deduplicate_by_ref
+#: model:ir.model.fields,field_description:crm_deduplicate_by_ref.field_base_partner_merge_automatic_wizard_group_by_ref
+msgid "Reference"
+msgstr "Referentie"
+
+#. module: crm_deduplicate_by_ref
+#: model:ir.model,name:crm_deduplicate_by_ref.model_base_partner_merge_automatic_wizard
+msgid "base.partner.merge.automatic.wizard"
+msgstr ""
