@@ -9,12 +9,6 @@
     'depends': ['base'],
     'author': "Camptocamp,Odoo Community Association (OCA)",
     'license': 'AGPL-3',
-    'description': """
-This module introduces continent management
-============================================
-Links continents to countries,
-adds continent field on partner form
-""",
     'category': 'Generic Modules/Base',
     'data': [
         'views/continent.xml',
