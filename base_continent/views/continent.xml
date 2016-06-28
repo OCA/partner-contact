@@ -34,7 +34,10 @@
             <field name="help">Display and manage the list of all continents that can be assigned to your partner records.</field>
         </record>
 
-        <menuitem action="action_continent" id="menu_continent_partner" parent="base.menu_localisation" sequence="1" groups="base.group_no_one"/>
+        <menuitem id="menu_continent_partner"
+            action="action_continent"
+            parent="base.menu_localisation"
+            sequence="1" groups="base.group_no_one"/>
 
 
   </data>

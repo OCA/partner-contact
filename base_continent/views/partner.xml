@@ -2,7 +2,7 @@
 <openerp>
   <data>
 
-        <record model="ir.ui.view" id="res_partner_form_add_continent">
+        <record id="res_partner_form_add_continent" model="ir.ui.view">
             <field name="name">res.partner.form.add_continent</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
@@ -14,7 +14,7 @@
         </record>
 
         <record id="view_res_partner_filter" model="ir.ui.view">
-            <field name="name">res.partner.form.add_continent</field>
+            <field name="name">res.partner.filter.add_continent</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_res_partner_filter"/>
             <field name="arch" type="xml">

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
   <data>
-        <!-- add continent to res country tree -->
-        <record model="ir.ui.view" id="view_country_tree_add_continent">
+
+        <record id="view_country_tree_add_continent" model="ir.ui.view">
             <field name="name">res.country.tree.add_continent</field>
             <field name="model">res.country</field>
-            <field name="inherit_id" ref="base.view_country_tree" />
+            <field name="inherit_id" ref="base.view_country_tree"/>
             <field name="arch" type="xml">
                 <field name="code" position="after">
                     <field name="continent_id"/>
@@ -13,8 +13,7 @@
             </field>
         </record>
 
-        <!-- add continent to res country form -->
-        <record model="ir.ui.view" id="view_country_form_add_continent">
+        <record id="view_country_form_add_continent" model="ir.ui.view">
             <field name="name">res.country.form.add_continent</field>
             <field name="model">res.country</field>
             <field name="inherit_id" ref="base.view_country_form"/>
