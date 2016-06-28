@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 # © 2015 Grupo ESOC Ingeniería de Servicios, S.L.U.
+# © 2015 Antiun Ingenieria S.L. - Antonio Espinosa
 
 from openerp import api, fields, models
-from openerp.addons.partner_firstname import exceptions
+from openerp.addons.partner_firstname.models import exceptions
 
 
 class ResPartner(models.Model):
@@ -20,17 +21,24 @@ class ResPartner(models.Model):
         We have 2 lastnames, so lastnames and firstname will be separated by a
         comma.
         """
+        order = self._get_names_order()
         names = list()
-
-        if lastname:
-            names.append(lastname)
-        if lastname2:
-            names.append(lastname2)
-        if names and firstname:
-            names[-1] = names[-1] + ","
-        if firstname:
-            names.append(firstname)
-
+        if order == 'first_last':
+            if firstname:
+                names.append(firstname)
+            if lastname:
+                names.append(lastname)
+            if lastname2:
+                names.append(lastname2)
+        else:
+            if lastname:
+                names.append(lastname)
+            if lastname2:
+                names.append(lastname2)
+            if names and firstname and order == 'last_first_comma':
+                names[-1] = names[-1] + ","
+            if firstname:
+                names.append(firstname)
         return u" ".join(names)
 
     @api.one
@@ -61,24 +69,31 @@ class ResPartner(models.Model):
         - Otherwise, make a guess.
         """
         # Company name goes to the lastname
-        if is_company or not name:
-            parts = [False, name or False, False]
-
-        # The comma separates the firstname
-        elif "," in name:
-            lastnames, firstname = name.split(",", 1)
-            parts = [firstname.strip()] + lastnames.split(" ", 1)
-
-        # Without comma, the user wrote the firstname first
-        else:
-            parts = name.split(" ", 2)
-
-        while len(parts) < 3:
-            parts.append(False)
-
-        return {"firstname": parts[0],
-                "lastname": parts[1],
-                "lastname2": parts[2]}
+        result = {
+            'firstname': False,
+            'lastname': name or False,
+            'lastname2': False,
+        }
+        if not is_company and name:
+            order = self._get_names_order()
+            result = super(ResPartner, self)._get_inverse_name(
+                name, is_company)
+            parts = []
+            if order == 'last_first':
+                if result['firstname']:
+                    parts = result['firstname'].split(" ", 1)
+                while len(parts) < 2:
+                    parts.append(False)
+                result['lastname2'] = parts[0]
+                result['firstname'] = parts[1]
+            else:
+                if result['lastname']:
+                    parts = result['lastname'].split(" ", 1)
+                while len(parts) < 2:
+                    parts.append(False)
+                result['lastname'] = parts[0]
+                result['lastname2'] = parts[1]
+        return result
 
     @api.one
     @api.constrains("firstname", "lastname", "lastname2")
