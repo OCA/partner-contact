@@ -15,6 +15,7 @@
         'views/country.xml',
         'views/partner.xml',
         'data/continent_data.xml',
+        'data/country_data.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,
