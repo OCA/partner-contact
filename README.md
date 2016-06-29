@@ -44,10 +44,10 @@ addon | version | summary
 [partner_create_by_vat](partner_create_by_vat/) | 8.0.1.0.0 | Using VIES webservice, name and address information will be fetched and added to the partner.
 [partner_employee_quantity](partner_employee_quantity/) | 8.0.1.0.0 | Know how many employees a partner has
 [partner_external_maps](partner_external_maps/) | 8.0.0.1.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
-[partner_firstname](partner_firstname/) | 8.0.2.1.0 | Split first name and last name for non company partners
+[partner_firstname](partner_firstname/) | 8.0.2.2.0 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 8.0.0.1.0 | Partner Helper
 [partner_relations](partner_relations/) | 8.0.1.1.1 | Partner relations
-[partner_second_lastname](partner_second_lastname/) | 8.0.4.0.0 | Have split first and second lastnames
+[partner_second_lastname](partner_second_lastname/) | 8.0.4.1.0 | Have split first and second lastnames
 [partner_sector](partner_sector/) | 8.0.1.0.0 | Add partner sectors
 [partner_street_number](partner_street_number/) | 8.0.0.1.0 | Introduces separate fields for street name and street number.
 [passport](passport/) | 8.0.0.1.0 | Passport Management
