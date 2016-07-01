@@ -63,8 +63,7 @@ Images
 Contributors
 ------------
 
-* Firstname Lastname <email.address@example.org>
-* Second Person <second.person@example.org>
+* Ronald Portier <ronald@therp.nl>
 
 Maintainer
 ----------
