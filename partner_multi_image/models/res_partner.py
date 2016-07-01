@@ -21,13 +21,3 @@ class ResPartner(models.Model):
         store=False,
         multi=False
     )
-    image_medium = fields.Binary(
-        related='image_main_medium',
-        store=False,
-        multi=False
-    )
-    image_small = fields.Binary(
-        related='image_main_small',
-        store=False,
-        multi=False
-    )
