@@ -23,13 +23,15 @@ class ResPartner(models.Model):
         """
         if not vals and not partner_id:
             raise Exception('Either field values or an id must be provided.')
-        vals = vals or {}
+        if vals is None:
+            vals = {}
+        values = vals.copy()
         # only assign a 'ref' to commercial partners
         if partner_id:
             partner = self.browse(partner_id)
-            vals.setdefault('is_company',  partner.is_company)
-            vals.setdefault('parent_id', partner.parent_id.id)
-        return vals.get('is_company') or not vals.get('parent_id')
+            values.setdefault('is_company',  partner.is_company)
+            values.setdefault('parent_id', partner.parent_id.id)
+        return values.get('is_company') or not values.get('parent_id')
 
     @api.model
     def _commercial_fields(self):
