@@ -1,41 +1,21 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Author: Romain Deheele
-#    Copyright 2014 Camptocamp SA
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# © 2014-2016 Camptocamp SA (Author: Romain Deheele)
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
 {
     'name': 'Continent management',
-    'version': '8.0.1.0.0',
+    'version': '8.0.1.0.1',
     'depends': ['base'],
     'author': "Camptocamp,Odoo Community Association (OCA)",
     'license': 'AGPL-3',
-    'description': """
-This module introduces continent management.
-============================================
-Links continents to countries,
-adds continent field on partner form
-""",
     'category': 'Generic Modules/Base',
     'data': [
-        'base_continent_view.xml',
-        'base_continent_data.xml',
+        'views/continent.xml',
+        'views/country.xml',
+        'views/partner.xml',
+        'data/continent_data.xml',
+        'data/country_data.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,
