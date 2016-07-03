@@ -3,13 +3,14 @@
 # * partner_identification
 # 
 # Translators:
+# Bole <bole@dajmi5.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-08 05:38+0000\n"
-"PO-Revision-Date: 2016-03-19 05:58+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2016-06-28 11:23+0000\n"
+"PO-Revision-Date: 2016-06-13 08:18+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>\n"
 "Language-Team: Croatian (Croatia) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/hr_HR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -226,12 +227,12 @@ msgstr ""
 #. module: partner_identification
 #: selection:res.partner.id_number,status:0
 msgid "Running"
-msgstr ""
+msgstr "Pokrenuto"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_status
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_name
@@ -248,17 +249,17 @@ msgstr ""
 #. module: partner_identification
 #: selection:res.partner.id_number,status:0
 msgid "To Renew"
-msgstr ""
+msgstr "Za obnoviti"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_valid_from
 msgid "Valid from"
-msgstr ""
+msgstr "Vrijedi od"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_valid_until
 msgid "Valid until"
-msgstr ""
+msgstr "Vrijedi do"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_valid_from
@@ -268,9 +269,9 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner_id_category
 msgid "res.partner.id_category"
-msgstr ""
+msgstr "res.partner.id_category"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner_id_number
 msgid "res.partner.id_number"
-msgstr ""
+msgstr "res.partner.id_number"
