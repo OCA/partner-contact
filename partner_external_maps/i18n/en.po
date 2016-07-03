@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-19 02:42+0000\n"
-"PO-Revision-Date: 2016-05-18 11:15+0000\n"
+"POT-Creation-Date: 2016-07-03 00:45+0000\n"
+"PO-Revision-Date: 2016-07-02 21:38+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,16 @@ msgstr "Capital currency"
 #: field:res.users,job_position_id:0
 msgid "Categorized job position"
 msgstr "Categorized job position"
+
+#. module: partner_external_maps
+#: field:res.users,count_pending_changesets:0
+msgid "Changes"
+msgstr "Changes"
+
+#. module: partner_external_maps
+#: field:res.users,changeset_ids:0
+msgid "Changesets"
+msgstr "Changesets"
 
 #. module: partner_external_maps
 #: field:res.users,zip_id:0

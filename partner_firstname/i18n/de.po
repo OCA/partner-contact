@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-25 01:50+0000\n"
-"PO-Revision-Date: 2015-11-25 11:28+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
+"POT-Creation-Date: 2016-07-03 00:45+0000\n"
+"PO-Revision-Date: 2016-07-02 21:38+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:25
+#: code:addons/partner_firstname/models/exceptions.py:25
 #, python-format
 msgid "Error(s) with partner %d's name."
 msgstr "Fehler beim Namen des Partner %d."
@@ -40,15 +40,42 @@ msgid "Last name"
 msgstr "Nachname"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:22
+#: code:addons/partner_firstname/models/exceptions.py:22
 #, python-format
 msgid "No name is set."
 msgstr "Kein Name festgelegt."
 
 #. module: partner_firstname
+#: help:base.config.settings,partner_names_order:0
+msgid "Order to compose partner fullname"
+msgstr ""
+
+#. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
 msgid "Partner"
 msgstr "Partner"
+
+#. module: partner_firstname
+#: field:base.config.settings,partner_names_order:0
+msgid "Partner names order"
+msgstr ""
+
+#. module: partner_firstname
+#: field:base.config.settings,partner_names_order_changed:0
+msgid "Partner names order changed"
+msgstr ""
+
+#. module: partner_firstname
+#: view:base.config.settings:partner_firstname.view_general_configuration
+msgid "Recalculate names"
+msgstr ""
+
+#. module: partner_firstname
+#: view:base.config.settings:partner_firstname.view_general_configuration
+msgid ""
+"Recalculate names for all partners. This process could take so much time if "
+"there are more than 10,000 active partners"
+msgstr ""
 
 #. module: partner_firstname
 #: view:res.users:partner_firstname.view_users_form

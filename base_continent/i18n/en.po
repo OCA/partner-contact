@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-07 07:18+0000\n"
-"PO-Revision-Date: 2016-05-06 15:13+0000\n"
+"POT-Creation-Date: 2016-07-03 00:45+0000\n"
+"PO-Revision-Date: 2016-07-02 21:36+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: English (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/en/)\n"
 "MIME-Version: 1.0\n"
@@ -35,8 +35,9 @@ msgstr "Asia"
 #. module: base_continent
 #: model:ir.model,name:base_continent.model_res_continent
 #: view:res.continent:base_continent.view_continent_form
-#: view:res.continent:base_continent.view_continent_tree
-#: field:res.country,continent_id:0 field:res.partner,continent_id:0
+#: field:res.country,continent_id:0
+#: view:res.partner:base_continent.view_res_partner_filter
+#: field:res.partner,continent_id:0
 msgid "Continent"
 msgstr "Continent"
 
@@ -48,8 +49,15 @@ msgstr "Continent Name"
 #. module: base_continent
 #: model:ir.actions.act_window,name:base_continent.action_continent
 #: model:ir.ui.menu,name:base_continent.menu_continent_partner
+#: view:res.continent:base_continent.view_continent_tree
 msgid "Continents"
 msgstr "Continents"
+
+#. module: base_continent
+#: view:res.continent:base_continent.view_continent_form
+#: field:res.continent,country_ids:0
+msgid "Countries"
+msgstr "Countries"
 
 #. module: base_continent
 #: model:ir.model,name:base_continent.model_res_country
