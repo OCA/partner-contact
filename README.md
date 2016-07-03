@@ -20,7 +20,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [base_contact](base_contact/) | 8.0.2.0.1 | [DEPRECATED] Manage your contacts separately
-[base_continent](base_continent/) | 8.0.1.0.0 | Continent management
+[base_continent](base_continent/) | 8.0.1.0.1 | Continent management
 [base_location](base_location/) | 8.0.1.0.0 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 8.0.1.0.0 | Import better zip entries from Geonames
 [base_location_lau](base_location_lau/) | 8.0.1.0.0 | Local Administrative Units
