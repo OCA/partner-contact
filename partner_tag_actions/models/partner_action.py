@@ -107,7 +107,7 @@ class PartnerAction(models.Model):
 
     def action_outdated(self, single=False):
         """
-        Event is outdated, revert its changes
+        Tag action is outdated, revert its changes
 
         if `single` is True, re-apply partner actions
         """

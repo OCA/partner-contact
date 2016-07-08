@@ -17,7 +17,7 @@ Usage
 
 To use this module, you need to :
 - Create a res.partner
-- Create a partner event
+- Create a partner tag action
 
 Bug Tracker
 ===========
