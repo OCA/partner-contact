@@ -1,16 +1,15 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * base_contact
+# * partner_create_by_vat
 # 
 # Translators:
-# Francisco Palm <francisco.palm@gmail.com>, 2015
 # Oihane Crucelaegui <oihanecruce@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-03 07:56+0000\n"
-"PO-Revision-Date: 2016-07-04 07:44+0000\n"
+"PO-Revision-Date: 2016-07-04 07:42+0000\n"
 "Last-Translator: Oihane Crucelaegui <oihanecruce@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +18,18 @@ msgstr ""
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. module: base_contact
-#: model:ir.model,name:base_contact.model_ir_model
-msgid "Models"
-msgstr "Modelos"
+#. module: partner_create_by_vat
+#: view:res.partner:partner_create_by_vat.view_partner_create_by_vat
+msgid "Get Vies Data"
+msgstr ""
+
+#. module: partner_create_by_vat
+#: model:ir.model,name:partner_create_by_vat.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: partner_create_by_vat
+#: code:addons/partner_create_by_vat/models/res_partner.py:29
+#, python-format
+msgid "The partner is not listed on Vies Webservice."
+msgstr ""

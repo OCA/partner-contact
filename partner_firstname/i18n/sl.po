@@ -3,14 +3,14 @@
 # * partner_firstname
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-03 00:45+0000\n"
-"PO-Revision-Date: 2016-07-02 21:38+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2016-07-03 07:56+0000\n"
+"PO-Revision-Date: 2016-07-04 06:45+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,7 +48,7 @@ msgstr "Ime ni nastavljeno."
 #. module: partner_firstname
 #: help:base.config.settings,partner_names_order:0
 msgid "Order to compose partner fullname"
-msgstr ""
+msgstr "Vrstni red za sestavo polnega naziva partnerja"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
@@ -58,24 +58,24 @@ msgstr "Partner"
 #. module: partner_firstname
 #: field:base.config.settings,partner_names_order:0
 msgid "Partner names order"
-msgstr ""
+msgstr "Vrstni red nazivov partnerja"
 
 #. module: partner_firstname
 #: field:base.config.settings,partner_names_order_changed:0
 msgid "Partner names order changed"
-msgstr ""
+msgstr "Vrstni red nazivov partnerja spremenjen"
 
 #. module: partner_firstname
 #: view:base.config.settings:partner_firstname.view_general_configuration
 msgid "Recalculate names"
-msgstr ""
+msgstr "Preračunaj nazive"
 
 #. module: partner_firstname
 #: view:base.config.settings:partner_firstname.view_general_configuration
 msgid ""
 "Recalculate names for all partners. This process could take so much time if "
 "there are more than 10,000 active partners"
-msgstr ""
+msgstr "Preračunaj nazive za vse partnerje. Proces lahko traja zelo dolgo če je več kot 10,000 aktivnih partnerjev"
 
 #. module: partner_firstname
 #: view:res.users:partner_firstname.view_users_form
