@@ -1,0 +1,50 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * crm_deduplicate_acl
+# 
+# Translators:
+# gebri <gebri@inmail.sk>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-17 01:29+0000\n"
+"PO-Revision-Date: 2016-12-17 01:29+0000\n"
+"Last-Translator: gebri <gebri@inmail.sk>, 2016\n"
+"Language-Team: Slovak (https://www.transifex.com/oca/teams/23907/sk/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: sk\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. module: crm_deduplicate_acl
+#: model:res.groups,name:crm_deduplicate_acl.group_automatically
+msgid "Automatically"
+msgstr "Automaticky"
+
+#. module: crm_deduplicate_acl
+#: model:ir.module.category,name:crm_deduplicate_acl.category
+#: model:ir.ui.menu,name:crm_deduplicate_acl.partner_merge_automatic_menu
+msgid "Deduplicate Contacts"
+msgstr "Odduplikovať Kontakty"
+
+#. module: crm_deduplicate_acl
+#: model:res.groups,name:crm_deduplicate_acl.group_manually
+msgid "Manually"
+msgstr "Manuálne"
+
+#. module: crm_deduplicate_acl
+#: model:ir.ui.menu,name:crm_deduplicate_acl.root_menu
+msgid "Tools"
+msgstr "Nástroje"
+
+#. module: crm_deduplicate_acl
+#: model:res.groups,name:crm_deduplicate_acl.group_unrestricted
+msgid "Without restrictions"
+msgstr "Bez obmedzení"
+
+#. module: crm_deduplicate_acl
+#: model:ir.model,name:crm_deduplicate_acl.model_base_partner_merge_automatic_wizard
+msgid "base.partner.merge.automatic.wizard"
+msgstr "base.partner.merge.automatic.wizard"
