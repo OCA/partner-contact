@@ -1,8 +1,12 @@
+# -*- coding: utf-8 -*-
+# Copyright 2016 Savoir-faire Linux
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
 {
     'name': 'Partner Tag Actions',
-    'version': '0.1',
-    'author': 'Savoir-faire Linux',
-    'maintainer': 'Savoir-faire Linux,Odoo Community Association (OCA)',
+    'version': '8.0.1.0.0',
+    'author': 'Savoir-faire Linux, Odoo Community Association (OCA)',
+    'maintainer': 'Odoo Community Association (OCA)',
     'website': 'http://www.savoirfairelinux.com',
     'license': 'AGPL-3',
     'category': 'General',
