@@ -7,8 +7,8 @@
             <field name="inherit_id" ref="base.view_partner_form" />
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='title']" position="after">
-                    <field name="academic_title_ids" class="oe_edit_only" widget="many2many_tags" placeholder="Academic Titles"/>
-                    <field name="academic_title_display" class="oe_read_only" />
+                    <field name="academic_title_ids" class="oe_edit_only" widget="many2many_tags" placeholder="Academic Titles" attrs="{'invisible': [('is_company', '=', True)]}"/>
+                    <field name="academic_title_display" class="oe_read_only" attrs="{'invisible': [('is_company', '=', True)]}" />
                 </xpath>
             </field>
         </record>
