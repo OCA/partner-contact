@@ -1,23 +1,9 @@
 # -*- coding: utf-8 -*-
-
-#    Author: Nicolas Bessi. Copyright Camptocamp SA
-#    Copyright (C)
-#       2014:       Agile Business Group (<http://www.agilebg.com>)
-#       2015:       Grupo ESOC <www.grupoesoc.es>
-#       2015:       Antiun Ingenieria S.L. - Antonio Espinosa
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# Copyright 2014 Agile Business Group (<http://www.agilebg.com>)
+# Copyright 2015 Grupo ESOC <www.grupoesoc.es>
+# Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
+# Copyright 2016 Antonio Espinosa <antonio.espinosa@tecnativa.com>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import logging
 from openerp import api, fields, models
@@ -29,6 +15,7 @@ _logger = logging.getLogger(__name__)
 
 class ResPartner(models.Model):
     """Adds last name and first name; name becomes a stored function field."""
+
     _inherit = 'res.partner'
 
     firstname = fields.Char("First name")
@@ -96,16 +83,20 @@ class ResPartner(models.Model):
     @api.model
     def _get_names_order(self):
         """Get names order configuration from system parameters.
+
         You can override this method to read configuration from language,
-        country, company or other"""
+        country, company or other
+        """
         return self.env['ir.config_parameter'].get_param(
             'partner_names_order', self._names_order_default())
 
     @api.model
     def _get_computed_name(self, lastname, firstname):
         """Compute the 'name' field according to splitted data.
+
         You can override this method to change the order of lastname and
-        firstname the computed name"""
+        firstname the computed name
+        """
         order = self._get_names_order()
         if order == 'last_first_comma':
             return u", ".join((p for p in (lastname, firstname) if p))
