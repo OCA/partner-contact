@@ -245,5 +245,5 @@ class ResPartner(models.Model):
         name = vals.get('name')
         if name and all(name == partner.name for partner in self):
             vals.pop('name', None)
-        if vals:
-            return super(ResPartner, self).write(vals)
+        this = self.sudo() if not vals else self
+        return super(ResPartner, this).write(vals)
