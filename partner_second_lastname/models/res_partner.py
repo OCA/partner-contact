@@ -45,9 +45,8 @@ class ResPartner(models.Model):
     @api.depends("firstname", "lastname", "lastname2")
     def _compute_name(self):
         """Write :attr:`~.name` according to splitted data."""
-        self.name = self._get_computed_name(self.lastname,
-                                            self.firstname,
-                                            self.lastname2)
+        self.name = self._get_computed_name(
+            self.lastname, self.firstname, self.lastname2)
 
     @api.one
     def _inverse_name(self):
@@ -58,8 +57,10 @@ class ResPartner(models.Model):
         before, after = dict(), dict()
         for key, value in parts.iteritems():
             (before if value else after)[key] = value
-        self.update(before)
-        self.update(after)
+        if any([before[k] != self[k] for k in before.keys()]):
+            self.update(before)
+        if any([after[k] != self[k] for k in after.keys()]):
+            self.update(after)
 
     @api.model
     def _get_inverse_name(self, name, is_company=False):

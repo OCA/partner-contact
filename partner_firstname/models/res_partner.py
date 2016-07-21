@@ -189,7 +189,10 @@ class ResPartner(models.Model):
     def _inverse_name(self):
         """Try to revert the effect of :meth:`._compute_name`."""
         parts = self._get_inverse_name(self.name, self.is_company)
-        self.lastname, self.firstname = parts["lastname"], parts["firstname"]
+        if parts["lastname"] != self.lastname:
+            self.lastname = parts["lastname"]
+        if parts["firstname"] != self.firstname:
+            self.firstname = parts["firstname"]
 
     @api.one
     @api.constrains("firstname", "lastname")
@@ -236,3 +239,10 @@ class ResPartner(models.Model):
         # Force calculations there
         records._inverse_name()
         _logger.info("%d partners updated installing module.", len(records))
+
+    @api.multi
+    def write(self, vals):
+        if vals.get('name') == self.name:
+            vals.pop('name', None)
+        if vals:
+            return super(ResPartner, self).write(vals)
