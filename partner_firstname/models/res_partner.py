@@ -236,5 +236,10 @@ class ResPartner(models.Model):
         name = vals.get('name')
         if name and all(name == partner.name for partner in self):
             vals.pop('name', None)
+        # If vals is empty (only write name field and with the same value)
+        # Avoid access checking here
+        # https://github.com/odoo/odoo/blob/
+        #   8b83119fad7ccae9f091f12b6ac89c2c31e4bac3/openerp/addons/base/res/
+        #   res_partner.py#L569
         this = self.sudo() if not vals else self
         return super(ResPartner, this).write(vals)
