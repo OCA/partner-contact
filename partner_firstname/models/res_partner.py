@@ -242,7 +242,8 @@ class ResPartner(models.Model):
 
     @api.multi
     def write(self, vals):
-        if vals.get('name') == self.name:
+        name = vals.get('name')
+        if name and all(name == partner.name for partner in self):
             vals.pop('name', None)
         if vals:
             return super(ResPartner, self).write(vals)
