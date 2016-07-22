@@ -37,4 +37,5 @@ from . import (
     test_name,
     test_onchange,
     test_order,
+    test_access_check,
 )
