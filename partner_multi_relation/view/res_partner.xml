@@ -3,7 +3,7 @@
     <data>
 
         <record id="view_res_partner_filter" model="ir.ui.view">
-            <field name="name">partner_relations.view_partner_filter</field>
+            <field name="name">partner_multi_relation.view_partner_filter</field>
             <field name="inherit_id" ref="base.view_res_partner_filter" />
             <field name="model">res.partner</field>
             <field type="xml" name="arch">
@@ -19,7 +19,7 @@
         </record>
 
         <record id="view_partner_form" model="ir.ui.view">
-            <field name="name">partner_relations.view_partner_form</field>
+            <field name="name">partner_multi_relation.view_partner_form</field>
             <field name="inherit_id" ref="base.view_partner_form" />
             <field name="model">res.partner</field>
             <field type="xml" name="arch">
