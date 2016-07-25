@@ -49,7 +49,6 @@
     "qweb": [
     ],
     "auto_install": False,
-    'installable': False,
     "external_dependencies": {
         'python': [],
     },
