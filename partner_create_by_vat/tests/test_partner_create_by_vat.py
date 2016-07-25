@@ -2,8 +2,12 @@
 # ©  2015 Forest and Biomass Services Romania
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+import mock
 from openerp.tests.common import TransactionCase
 from openerp.exceptions import ValidationError
+
+mock_vies = 'openerp.addons.partner_create_by_vat.' \
+            'models.res_partner.check_vies'
 
 
 class TestPartnerCreatebyVAT(TransactionCase):
@@ -11,6 +15,11 @@ class TestPartnerCreatebyVAT(TransactionCase):
     def setUp(self):
         super(TestPartnerCreatebyVAT, self).setUp()
         self.partner_model = self.env['res.partner']
+        self.sample_1 = {
+            'valid': True,
+            'name': u'SA ODOO',
+            'address': u'Chaussée De Namur 40 1367 Ramillies',
+        }
 
     def test_create_from_vat1(self):
         # Create an partner from VAT number field
@@ -18,15 +27,16 @@ class TestPartnerCreatebyVAT(TransactionCase):
                                                       'vat': 'be0477472701',
                                                       'is_company': True})
 
-        # Push the button to fetch partner's data
-        self.partner1_id.get_vies_data_from_vat()
+        with mock.patch(mock_vies) as mock_func:
+            mock_func.return_value = type('obj', (object,), self.sample_1)
+            # Push the button to fetch partner's data
+            self.partner1_id.get_vies_data_from_vat()
 
         # Check if the datas fetch correspond with the datas from VIES.
-        self.assertEqual(self.partner1_id.name, 'SA ODOO')
         self.assertEqual(
-            unicode(self.partner1_id.street),
-            u'Chaussée De Namur 40 1367 Ramillies'
-        )
+            unicode(self.partner1_id.name), self.sample_1['name'])
+        self.assertEqual(
+            unicode(self.partner1_id.street), self.sample_1['address'])
         self.assertEqual(self.partner1_id.country_id.name, 'Belgium')
         self.assertEqual(self.partner1_id.vat, 'BE0477472701')
         self.assertEqual(self.partner1_id.vat_subjected, True)
@@ -37,15 +47,16 @@ class TestPartnerCreatebyVAT(TransactionCase):
                                                       'is_company': True})
 
         with self.env.do_in_onchange():
-            res = self.partner11_id.vat_change('be0477472701')
+            with mock.patch(mock_vies) as mock_func:
+                mock_func.return_value = type('obj', (object,), self.sample_1)
+                res = self.partner11_id.vat_change('be0477472701')
             self.partner11_id.update(res['value'])
 
             # Check if the datas fetch correspond with the datas from VIES.
-            self.assertEqual(self.partner11_id.name, 'SA ODOO')
             self.assertEqual(
-                unicode(self.partner11_id.street),
-                u'Chaussée De Namur 40 1367 Ramillies'
-            )
+                unicode(self.partner11_id.name), self.sample_1['name'])
+            self.assertEqual(
+                unicode(self.partner11_id.street), self.sample_1['address'])
             self.assertEqual(self.partner11_id.country_id.name, 'Belgium')
             self.assertEqual(self.partner11_id.vat, 'BE0477472701')
             self.assertEqual(self.partner11_id.vat_subjected, True)
