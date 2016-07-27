@@ -6,7 +6,7 @@
     "name": "Contact's birthdate",
     "version": "9.0.1.0.0",
     "author": "Jairo Llopis",
-              "doo Community Association (OCA)",
+              "Odoo Community Association (OCA)",
     "category": "Customer Relationship Management",
     "website": "https://odoo-community.org/",
     "depends": [
