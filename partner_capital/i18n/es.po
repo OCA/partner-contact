@@ -3,13 +3,14 @@
 # * partner_capital
 # 
 # Translators:
+# Oihane Crucelaegui <oihanecruce@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-08 01:38+0000\n"
-"PO-Revision-Date: 2015-12-22 18:57+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2016-07-25 11:58+0000\n"
+"PO-Revision-Date: 2016-07-14 09:05+0000\n"
+"Last-Translator: Oihane Crucelaegui <oihanecruce@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,9 +66,19 @@ msgid "Created on"
 msgstr "Creado en"
 
 #. module: partner_capital
+#: field:res.partner.turnover_range,display_name:0
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: partner_capital
 #: field:res.partner.turnover_range,id:0
 msgid "ID"
 msgstr "ID"
+
+#. module: partner_capital
+#: field:res.partner.turnover_range,__last_update:0
+msgid "Last Modified on"
+msgstr "Última modificación el"
 
 #. module: partner_capital
 #: field:res.partner.turnover_range,write_uid:0

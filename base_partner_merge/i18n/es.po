@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-03 07:56+0000\n"
-"PO-Revision-Date: 2016-07-04 07:43+0000\n"
+"POT-Creation-Date: 2016-07-25 11:58+0000\n"
+"PO-Revision-Date: 2016-07-14 09:05+0000\n"
 "Last-Translator: Oihane Crucelaegui <oihanecruce@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -106,7 +106,7 @@ msgstr "Contacto de destino"
 #: field:base.partner.merge.automatic.wizard,display_name:0
 #: field:base.partner.merge.line,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre mostrado"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,group_by_email:0
@@ -170,7 +170,7 @@ msgstr "Entradas de diario asociadas al contacto"
 #: field:base.partner.merge.automatic.wizard,__last_update:0
 #: field:base.partner.merge.line,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación el"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,write_uid:0

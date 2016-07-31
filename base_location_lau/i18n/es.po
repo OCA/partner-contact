@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-03 07:56+0000\n"
-"PO-Revision-Date: 2016-07-04 07:43+0000\n"
+"POT-Creation-Date: 2016-07-25 11:58+0000\n"
+"PO-Revision-Date: 2016-07-14 09:08+0000\n"
 "Last-Translator: Oihane Crucelaegui <oihanecruce@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -21,12 +21,12 @@ msgstr ""
 #. module: base_location_lau
 #: field:res.partner.lau,child_ids:0
 msgid "Children"
-msgstr ""
+msgstr "Hijos"
 
 #. module: base_location_lau
 #: field:res.partner.lau,code:0
 msgid "Code"
-msgstr ""
+msgstr "Código"
 
 #. module: base_location_lau
 #: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
@@ -47,12 +47,12 @@ msgstr "Creado en"
 #. module: base_location_lau
 #: field:res.partner.lau,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre mostrado"
 
 #. module: base_location_lau
 #: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
 msgid "Group By"
-msgstr ""
+msgstr "Agrupar por"
 
 #. module: base_location_lau
 #: field:res.partner.lau,id:0
@@ -75,7 +75,7 @@ msgstr ""
 #. module: base_location_lau
 #: field:res.partner.lau,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación el"
 
 #. module: base_location_lau
 #: field:res.partner.lau,write_uid:0

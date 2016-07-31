@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Francisco Palm <francisco.palm@gmail.com>, 2015
+# Oihane Crucelaegui <oihanecruce@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-23 21:40+0000\n"
-"PO-Revision-Date: 2015-09-13 14:18+0000\n"
-"Last-Translator: Francisco Palm <francisco.palm@gmail.com>\n"
+"POT-Creation-Date: 2016-07-25 11:58+0000\n"
+"PO-Revision-Date: 2016-07-14 09:10+0000\n"
+"Last-Translator: Oihane Crucelaegui <oihanecruce@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,6 +26,56 @@ msgid "Address missing on partner '%s'."
 msgstr "Falta la dirección del socio '%s'."
 
 #. module: partner_external_maps
+#: field:res.users,capital_amount:0
+msgid "Capital amount"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,capital_country_id:0
+msgid "Capital country"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,capital_currency_id:0
+msgid "Capital currency"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,job_position_id:0
+msgid "Categorized job position"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,count_pending_changesets:0
+msgid "Changes"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,changeset_ids:0
+msgid "Changesets"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,zip_id:0
+msgid "City/Location"
+msgstr "Ciudad/Ubicación"
+
+#. module: partner_external_maps
+#: field:res.users,company_size:0
+msgid "Company size"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,continent_id:0
+msgid "Continent"
+msgstr ""
+
+#. module: partner_external_maps
+#: help:res.users,capital_country_id:0
+msgid "Country of origin of this company's capital."
+msgstr ""
+
+#. module: partner_external_maps
 #: field:map.website,create_uid:0
 msgid "Created by"
 msgstr "Creado por"
@@ -33,6 +84,26 @@ msgstr "Creado por"
 #: field:map.website,create_date:0
 msgid "Created on"
 msgstr "Creado en"
+
+#. module: partner_external_maps
+#: field:res.users,department_id:0
+msgid "Department"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:map.website,display_name:0
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: partner_external_maps
+#: field:res.users,employee_quantity:0
+msgid "Employee quantity"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,employee_quantity_range_id:0
+msgid "Employee quantity range"
+msgstr ""
 
 #. module: partner_external_maps
 #: field:map.website,id:0
@@ -67,6 +138,11 @@ msgid ""
 msgstr "En este URL, {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} y {DEST_LONGITUDE} serán reemplazados por las latitudes y longitudes de las direcciones de origen y destino (requiere el módulo 'base_geolocalize')."
 
 #. module: partner_external_maps
+#: field:map.website,__last_update:0
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: partner_external_maps
 #: field:map.website,write_uid:0
 msgid "Last Updated by"
 msgstr "Última actualización por"
@@ -75,6 +151,16 @@ msgstr "Última actualización por"
 #: field:map.website,write_date:0
 msgid "Last Updated on"
 msgstr "Última actualización en"
+
+#. module: partner_external_maps
+#: field:res.users,lau1_id:0
+msgid "Local Admin. Unit 1"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,lau2_id:0
+msgid "Local Admin. Unit 2"
+msgstr ""
 
 #. module: partner_external_maps
 #: view:res.partner:partner_external_maps.view_partner_form
@@ -144,9 +230,39 @@ msgid ""
 msgstr "Falta la dirección de origen para el mapa de la ruta: debes establecerlo en tus preferencias."
 
 #. module: partner_external_maps
+#: field:res.users,nuts1_id:0
+msgid "NUTS L1"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,nuts2_id:0
+msgid "NUTS L2"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,nuts3_id:0
+msgid "NUTS L3"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,nuts4_id:0
+msgid "NUTS L4"
+msgstr ""
+
+#. module: partner_external_maps
 #: model:ir.model,name:partner_external_maps.model_res_partner
 msgid "Partner"
 msgstr "Socio"
+
+#. module: partner_external_maps
+#: help:res.users,capital_amount:0
+msgid "Publicly registered capital amount."
+msgstr ""
+
+#. module: partner_external_maps
+#: help:res.users,employee_quantity_range_id:0
+msgid "Range of this partner depending on the employee quantity."
+msgstr ""
 
 #. module: partner_external_maps
 #: view:res.partner:partner_external_maps.view_partner_form
@@ -172,6 +288,21 @@ msgstr "URL de la Ruta que utiliza las direcciones"
 #: field:res.users,context_route_start_partner_id:0
 msgid "Start Address for Route Map"
 msgstr "Dirección de Origen para el Mapa de Ruta"
+
+#. module: partner_external_maps
+#: field:res.users,street3:0
+msgid "Street 3"
+msgstr "Calle 3"
+
+#. module: partner_external_maps
+#: field:res.users,turnover_amount:0
+msgid "Turnover amount"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,turnover_range_id:0
+msgid "Turnover range"
+msgstr ""
 
 #. module: partner_external_maps
 #: field:map.website,lat_lon_url:0
