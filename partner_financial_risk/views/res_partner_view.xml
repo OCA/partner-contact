@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3). -->
+<odoo>
+    <record id="res_partner_view_risk" model="ir.ui.view">
+        <field name="name">res.partner.view.risk</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority" eval="20"/>
+        <field name="groups_id" eval="[(4, ref('base.group_sale_salesman'))]"/>
+        <field name="arch" type="xml">
+            <page name="sales_purchases" position="after">
+                <page name="financial_risk" string="Financial Risk" groups="account.group_account_invoice">
+                    <group name="container_risk_1">
+                        <group name="risk_sale_orders" string="Sale Orders">
+                            <field name="eval_risk_sale_order"/>
+                            <field name="max_risk_sale_order"/>
+                            <field name="risk_sale_order"/>
+                        </group>
+                        <group name="risk_draft_invoices" string="Not Validate Invoices">
+                            <field name="eval_risk_invoice_draft"/>
+                            <field name="max_risk_invoice_draft"/>
+                            <field name="risk_invoice_draft"/>
+                        </group>
+                        <group name="risk_open_invoices" string="Open Invoices">
+                            <field name="eval_risk_invoice_open"/>
+                            <field name="max_risk_invoice_open"/>
+                            <field name="risk_invoice_open"/>
+                        </group>
+                        <group name="risk_unpaid_invoices" string="Unpaid Invoices">
+                            <field name="eval_risk_invoice_unpaid"/>
+                            <field name="max_risk_invoice_unpaid"/>
+                            <field name="risk_invoice_unpaid"/>
+                        </group>
+                        <group name="risk_other_account" string="Other Account">
+                            <field name="eval_risk_account_amount"/>
+                            <field name="max_risk_account_amount"/>
+                            <field name="risk_account_amount"/>
+                        </group>
+                        <group name="risk_misc" string="Misc">
+                            <field name="credit_limit"/>
+                            <field name="risk_total"/>
+                            <field name="risk_exception"/>
+                        </group>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>
