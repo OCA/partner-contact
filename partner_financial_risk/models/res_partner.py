@@ -16,41 +16,50 @@ class ResPartner(models.Model):
         string='Limit Sale Orders', help='Set 0 if it not lock')
     risk_sale_order = fields.Monetary(
         compute='_compute_risk_sale_order', store=True,
-        string='Sale Order Not Invoiced')
-
+        string='Sale Order Not Invoiced',
+        help='Total not invoiced of sale order in *Sale Order* state')
     risk_invoice_draft_include = fields.Boolean(
         string='Include Draft Invoices', help='Compute in total risk')
     risk_invoice_draft_limit = fields.Monetary(
         string='Limit In Draft Invoices', help='Set 0 if it not lock')
     risk_invoice_draft = fields.Monetary(
         compute='_compute_risk_invoice', store=True,
-        string='Not Validated Invoice')
-
+        string='Not Validated Invoice',
+        help='Total amount of invoices in Draft or Pro-forma state')
     risk_invoice_open_include = fields.Boolean(
         string='Include Open Invoices', help='Compute in total risk')
     risk_invoice_open_limit = fields.Monetary(
         string='Limit In Open Invoices', help='Set 0 if it not lock')
     risk_invoice_open = fields.Monetary(
         compute='_compute_risk_invoice', store=True,
-        string='Open Invoice')
+        string='Open Invoice',
+        help='Residual amount of invoices in Open state and the date due is '
+             'not exceeded, considering Maturity Margin set in account '
+             'settings')
     risk_invoice_unpaid_include = fields.Boolean(
         string='Include Unpaid Invoices', help='Compute in total risk')
     risk_invoice_unpaid_limit = fields.Monetary(
         string='Limit In Unpaid Invoices', help='Set 0 if it not lock')
     risk_invoice_unpaid = fields.Monetary(
         compute='_compute_risk_invoice', store=True,
-        string='Unpaid Invoice')
+        string='Unpaid Invoice',
+        help='Residual amount of invoices in Open state and the date due is '
+             'exceeded, considering Maturity Margin set in account settings')
     risk_account_amount_include = fields.Boolean(
         string='Include Other Account Amount', help='Compute in total risk')
     risk_account_amount_limit = fields.Monetary(
         string='Limit Other Account Amount', help='Set 0 if it not lock')
     risk_account_amount = fields.Monetary(
         compute='_compute_risk_account_amount',
-        string='Other Account Amount')
-
+        string='Other Account Amount',
+        help='Difference between accounting credit and rest of totals')
     risk_total = fields.Monetary(
-        string='Total Risk', compute='_compute_risk_exception')
-    risk_exception = fields.Boolean(compute='_compute_risk_exception')
+        compute='_compute_risk_exception',
+        string='Total Risk', help='Sum of total risk included')
+    risk_exception = fields.Boolean(
+        compute='_compute_risk_exception',
+        string='Risk Exception',
+        help='It Indicate if partner risk exceeded')
 
     @api.multi
     @api.depends('sale_order_ids', 'sale_order_ids.invoice_pending_amount')
