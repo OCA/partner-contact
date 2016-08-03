@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import fields
-from openerp.exceptions import Warning
+from openerp.exceptions import UserError
 from openerp.tests.common import TransactionCase
 
 
@@ -74,5 +74,5 @@ class TestPartnerFinancialRisk(TransactionCase):
         self.partner.risk_invoice_unpaid_include = True
         self.assertAlmostEqual(self.partner.risk_total, 500.0)
         self.partner.risk_total = 100.0
-        with self.assertRaises(Warning):
+        with self.assertRaises(UserError):
             self.sale_order.action_confirm()

@@ -26,14 +26,14 @@ class SaleOrder(models.Model):
     def action_confirm(self):
         partner = self.partner_id
         if partner.risk_exception:
-            raise exceptions.Warning(_(
+            raise exceptions.UserError(_(
                 "Financial risk exceeded.\n"
                 "You can not confirm this sale order"
             ))
         elif partner.risk_sale_order_include and (
                 (partner.risk_total + self.amount_total) >
                 partner.credit_limit):
-            raise exceptions.Warning(_(
+            raise exceptions.UserError(_(
                 "This sale order exceeds the financial risk.\n"
                 "You can not confirm this sale order"
             ))
