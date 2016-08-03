@@ -88,12 +88,12 @@ class ResPartner(models.Model):
     @api.depends(
         'risk_sale_order', 'risk_sale_order_include', 'risk_sale_order_limit',
         'risk_invoice_draft', 'risk_invoice_draft_include',
-        'risk_invoice_draft_limit',
-        'risk_invoice_open', 'risk_invoice_open_include', 'risk_invoice_open_limit',
+        'risk_invoice_draft_limit', 'risk_invoice_open',
+        'risk_invoice_open_include', 'risk_invoice_open_limit',
         'risk_invoice_unpaid', 'risk_invoice_unpaid_include',
-        'risk_invoice_unpaid_limit',
-        'risk_account_amount', 'risk_account_amount_include',
-        'risk_account_amount_limit')
+        'risk_invoice_unpaid_limit', 'risk_account_amount',
+        'risk_account_amount_include', 'risk_account_amount_limit',
+        'credit_limit',)
     def _compute_risk_exception(self):
         risk_field_list = self._risk_field_list()
         for partner in self:
