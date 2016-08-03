@@ -6,8 +6,9 @@
 Partner Financial Risk
 ======================
 
-Adds a new page in partner to manage the partner's *Financial Risk*
-If any limit is exceed the the partner is blocked to confirm sale orders.
+Adds a new page in partner to manage its *Financial Risk*.
+
+If any limit is exceed the partner gets forbidden to confirm sale orders.
 
 Configuration
 =============

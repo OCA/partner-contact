@@ -30,7 +30,7 @@ class SaleOrder(models.Model):
                 "Financial risk exceeded.\n"
                 "You can not confirm this sale order"
             ))
-        elif partner.eval_risk_sale_order and (
+        elif partner.risk_sale_order_include and (
                 (partner.risk_total + self.amount_total) >
                 partner.credit_limit):
             raise exceptions.Warning(_(

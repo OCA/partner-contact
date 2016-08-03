@@ -13,28 +13,28 @@
                 <page name="financial_risk" string="Financial Risk" groups="account.group_account_invoice">
                     <group name="container_risk_1">
                         <group name="risk_sale_orders" string="Sale Orders">
-                            <field name="eval_risk_sale_order"/>
-                            <field name="max_risk_sale_order"/>
+                            <field name="risk_sale_order_include"/>
+                            <field name="risk_sale_order_limit"/>
                             <field name="risk_sale_order"/>
                         </group>
                         <group name="risk_draft_invoices" string="Not Validate Invoices">
-                            <field name="eval_risk_invoice_draft"/>
-                            <field name="max_risk_invoice_draft"/>
+                            <field name="risk_invoice_draft_include"/>
+                            <field name="risk_invoice_draft_limit"/>
                             <field name="risk_invoice_draft"/>
                         </group>
                         <group name="risk_open_invoices" string="Open Invoices">
-                            <field name="eval_risk_invoice_open"/>
-                            <field name="max_risk_invoice_open"/>
+                            <field name="risk_invoice_open_include"/>
+                            <field name="risk_invoice_open_limit"/>
                             <field name="risk_invoice_open"/>
                         </group>
                         <group name="risk_unpaid_invoices" string="Unpaid Invoices">
-                            <field name="eval_risk_invoice_unpaid"/>
-                            <field name="max_risk_invoice_unpaid"/>
+                            <field name="risk_invoice_unpaid_include"/>
+                            <field name="risk_invoice_unpaid_limit"/>
                             <field name="risk_invoice_unpaid"/>
                         </group>
                         <group name="risk_other_account" string="Other Account">
-                            <field name="eval_risk_account_amount"/>
-                            <field name="max_risk_account_amount"/>
+                            <field name="risk_account_amount_include"/>
+                            <field name="risk_account_amount_limit"/>
                             <field name="risk_account_amount"/>
                         </group>
                         <group name="risk_misc" string="Misc">

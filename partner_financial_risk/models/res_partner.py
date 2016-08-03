@@ -10,46 +10,46 @@ from openerp import api, fields, models
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    eval_risk_sale_order = fields.Boolean(
-        string="Eval Sale Orders", help="Compute in total risk")
-    max_risk_sale_order = fields.Monetary(
-        string='Max In Sale Orders', help="Set 0 if it not lock")
+    risk_sale_order_include = fields.Boolean(
+        string='Include Sale Orders', help='Compute in total risk')
+    risk_sale_order_limit = fields.Monetary(
+        string='Limit Sale Orders', help='Set 0 if it not lock')
     risk_sale_order = fields.Monetary(
         compute='_compute_risk_sale_order', store=True,
-        string="Sale Order Not Invoiced")
+        string='Sale Order Not Invoiced')
 
-    eval_risk_invoice_draft = fields.Boolean(
-        string="Eval Draft Invoices", help="Compute in total risk")
-    max_risk_invoice_draft = fields.Monetary(
-        string='Max In Draft Invoices', help="Set 0 if it not lock")
+    risk_invoice_draft_include = fields.Boolean(
+        string='Include Draft Invoices', help='Compute in total risk')
+    risk_invoice_draft_limit = fields.Monetary(
+        string='Limit In Draft Invoices', help='Set 0 if it not lock')
     risk_invoice_draft = fields.Monetary(
         compute='_compute_risk_invoice', store=True,
-        string="Not Validated Invoice")
+        string='Not Validated Invoice')
 
-    eval_risk_invoice_open = fields.Boolean(
-        string="Eval Open Invoices", help="Compute in total risk")
-    max_risk_invoice_open = fields.Monetary(
-        string='Max In Open Invoices', help="Set 0 if it not lock")
+    risk_invoice_open_include = fields.Boolean(
+        string='Include Open Invoices', help='Compute in total risk')
+    risk_invoice_open_limit = fields.Monetary(
+        string='Limit In Open Invoices', help='Set 0 if it not lock')
     risk_invoice_open = fields.Monetary(
         compute='_compute_risk_invoice', store=True,
-        string="Open Invoice")
-    eval_risk_invoice_unpaid = fields.Boolean(
-        string="Eval Unpaid Invoices", help="Compute in total risk")
-    max_risk_invoice_unpaid = fields.Monetary(
-        string='Max In Unpaid Invoices', help="Set 0 if it not lock")
+        string='Open Invoice')
+    risk_invoice_unpaid_include = fields.Boolean(
+        string='Include Unpaid Invoices', help='Compute in total risk')
+    risk_invoice_unpaid_limit = fields.Monetary(
+        string='Limit In Unpaid Invoices', help='Set 0 if it not lock')
     risk_invoice_unpaid = fields.Monetary(
         compute='_compute_risk_invoice', store=True,
-        string="Unpaid Invoice")
-    eval_risk_account_amount = fields.Boolean(
-        string="Eval Other Account Amount", help="Compute in total risk")
-    max_risk_account_amount = fields.Monetary(
-        string='Max Other Account Amount', help="Set 0 if it not lock")
+        string='Unpaid Invoice')
+    risk_account_amount_include = fields.Boolean(
+        string='Include Other Account Amount', help='Compute in total risk')
+    risk_account_amount_limit = fields.Monetary(
+        string='Limit Other Account Amount', help='Set 0 if it not lock')
     risk_account_amount = fields.Monetary(
         compute='_compute_risk_account_amount',
-        string="Other Account Amount")
+        string='Other Account Amount')
 
     risk_total = fields.Monetary(
-        string="Total Risk", compute='_compute_risk_exception')
+        string='Total Risk', compute='_compute_risk_exception')
     risk_exception = fields.Boolean(compute='_compute_risk_exception')
 
     @api.multi
@@ -86,24 +86,24 @@ class ResPartner(models.Model):
 
     @api.multi
     @api.depends(
-        'risk_sale_order', 'eval_risk_sale_order', 'max_risk_sale_order',
-        'risk_invoice_draft', 'eval_risk_invoice_draft',
-        'max_risk_invoice_draft',
-        'risk_invoice_open', 'eval_risk_invoice_open', 'max_risk_invoice_open',
-        'risk_invoice_unpaid', 'eval_risk_invoice_unpaid',
-        'max_risk_invoice_unpaid',
-        'risk_account_amount', 'eval_risk_account_amount',
-        'max_risk_account_amount')
+        'risk_sale_order', 'risk_sale_order_include', 'risk_sale_order_limit',
+        'risk_invoice_draft', 'risk_invoice_draft_include',
+        'risk_invoice_draft_limit',
+        'risk_invoice_open', 'risk_invoice_open_include', 'risk_invoice_open_limit',
+        'risk_invoice_unpaid', 'risk_invoice_unpaid_include',
+        'risk_invoice_unpaid_limit',
+        'risk_account_amount', 'risk_account_amount_include',
+        'risk_account_amount_limit')
     def _compute_risk_exception(self):
         risk_field_list = self._risk_field_list()
         for partner in self:
             amount = 0.0
             for risk_field in risk_field_list:
                 field_value = getattr(partner, risk_field, 0.0)
-                max_value = getattr(partner, 'max_%s' % risk_field, 0.0)
+                max_value = getattr(partner, '%s_limit' % risk_field, 0.0)
                 if max_value and field_value > max_value:
                     partner.risk_exception = True
-                if getattr(partner, 'eval_%s' % risk_field, False):
+                if getattr(partner, '%s_include' % risk_field, False):
                     amount += field_value
             partner.risk_total = amount
             if amount > partner.credit_limit:
