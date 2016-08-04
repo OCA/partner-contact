@@ -8,6 +8,6 @@ from openerp import fields, models
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
-    invoice_maturity_margin = fields.Integer(
+    invoice_due_margin = fields.Integer(
         string="Maturity Margin",
         help="Days after due date to set an invoice as unpaid")

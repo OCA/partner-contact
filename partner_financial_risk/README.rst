@@ -15,8 +15,9 @@ Configuration
 
 To configure this module, you need to:
 
-#. Go to *Invoicing > Configuration > Settings > Invoicing & Payments >
-   Financial Risk* and set *Maturity Margin*.
+#. Go to *Invoicing > Configuration > Settings > Invoicing & Payments*
+#. Go to *Financial Risk* and set *Due Margin* (This field adds days of margin
+   before that a invoice is consider as unpaid)
 
 Usage
 =====

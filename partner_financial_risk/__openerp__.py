@@ -15,6 +15,7 @@
         'views/res_config_view.xml',
         'views/res_partner_view.xml',
         'views/sale_view.xml',
+        'wizard/sale_order_risk_exceeded_view.xml',
     ],
     'installable': True,
 }
