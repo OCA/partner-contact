@@ -10,15 +10,6 @@ from openerp import api, fields, models
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    risk_sale_order_include = fields.Boolean(
-        string='Include Sales Orders', help='Full risk computation')
-    risk_sale_order_limit = fields.Monetary(
-        string='Limit Sales Orders', help='Set 0 if it is not locked')
-    risk_sale_order = fields.Monetary(
-        compute='_compute_risk_sale_order', store=True,
-        string='Total Sales Orders Not Invoiced',
-        help='Total not invoiced of sales orders in Sale Order state')
-
     risk_invoice_draft_include = fields.Boolean(
         string='Include Draft Invoices', help='Full risk computation')
     risk_invoice_draft_limit = fields.Monetary(
@@ -65,26 +56,21 @@ class ResPartner(models.Model):
         help='It Indicate if partner risk exceeded')
 
     @api.multi
-    @api.depends('sale_order_ids', 'sale_order_ids.invoice_pending_amount')
-    def _compute_risk_sale_order(self):
-        for partner in self:
-            partner.risk_sale_order = sum(
-                partner.sale_order_ids.mapped('invoice_pending_amount'))
-
-    @api.multi
     @api.depends('invoice_ids', 'invoice_ids.state',
                  'invoice_ids.amount_total', 'invoice_ids.residual',
                  'invoice_ids.company_id.invoice_due_margin')
     def _compute_risk_invoice(self):
         max_date = self._max_risk_date_due()
         for partner in self:
-            invoices = partner.invoice_ids.filtered(
+            invoices_out = partner.invoice_ids.filtered(
+                lambda x: x.type == 'out_invoice')
+            invoices = invoices_out.filtered(
                 lambda x: x.state in ['draft', 'proforma', 'proforma2'])
             partner.risk_invoice_draft = sum(invoices.mapped('amount_total'))
-            invoices = partner.invoice_ids.filtered(
+            invoices = invoices_out.filtered(
                 lambda x: x.state == 'open' and x.date_due >= max_date)
             partner.risk_invoice_open = sum(invoices.mapped('residual'))
-            invoices = partner.invoice_ids.filtered(
+            invoices = invoices_out.filtered(
                 lambda x: x.state == 'open' and x.date_due < max_date)
             partner.risk_invoice_unpaid = sum(invoices.mapped('residual'))
 
@@ -97,16 +83,7 @@ class ResPartner(models.Model):
                 partner.risk_invoice_unpaid)
 
     @api.multi
-    @api.depends('risk_sale_order', 'risk_sale_order_include',
-                 'risk_sale_order_limit',
-                 'risk_invoice_draft', 'risk_invoice_draft_include',
-                 'risk_invoice_draft_limit', 'risk_invoice_open',
-                 'risk_invoice_open_include', 'risk_invoice_open_limit',
-                 'risk_invoice_unpaid', 'risk_invoice_unpaid_include',
-                 'risk_invoice_unpaid_limit', 'risk_account_amount',
-                 'risk_account_amount_include', 'risk_account_amount_limit',
-                 'credit_limit')
-    # @api.depends(lambda x: x._depends_list)
+    @api.depends(lambda x: x._get_depends_compute_risk_exception())
     def _compute_risk_exception(self):
         risk_field_list = self._risk_field_list()
         for partner in self:
@@ -130,27 +107,22 @@ class ResPartner(models.Model):
     @api.model
     def _risk_field_list(self):
         return [
-            ('risk_sale_order', 'risk_sale_order_limit',
-            'risk_sale_order_include'),
             ('risk_invoice_draft', 'risk_invoice_draft_limit',
-            'risk_invoice_draft_include'),
+             'risk_invoice_draft_include'),
             ('risk_invoice_open', 'risk_invoice_open_limit',
              'risk_invoice_open_include'),
             ('risk_invoice_unpaid', 'risk_invoice_unpaid_limit',
-            'risk_invoice_unpaid_include'),
+             'risk_invoice_unpaid_include'),
             ('risk_account_amount', 'risk_account_amount_limit',
              'risk_account_amount_include'),
         ]
 
     @api.model
-    def _depends_list(self):
-        ss = (
-            'risk_sale_order', 'risk_sale_order_include', 'risk_sale_order_limit',
-            'risk_invoice_draft', 'risk_invoice_draft_include',
-            'risk_invoice_draft_limit', 'risk_invoice_open',
-            'risk_invoice_open_include', 'risk_invoice_open_limit',
-            'risk_invoice_unpaid', 'risk_invoice_unpaid_include',
-            'risk_invoice_unpaid_limit', 'risk_account_amount',
-            'risk_account_amount_include', 'risk_account_amount_limit',
-            'credit_limit')
-        return ss
+    def _get_depends_compute_risk_exception(self):
+        # TODO: Improve code without lose performance
+        tuple_list = self._risk_field_list()
+        res = [x[0] for x in tuple_list]
+        res.extend([x[1] for x in tuple_list])
+        res.extend([x[2] for x in tuple_list])
+        res.append('credit_limit')
+        return res

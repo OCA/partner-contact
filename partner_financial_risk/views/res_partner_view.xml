@@ -12,14 +12,12 @@
             <page name="sales_purchases" position="after">
                 <page name="financial_risk" string="Financial Risk" attrs="{'invisible': [('customer','=',False)]}">
                     <div>
-                        <group name="risk_misc" col="3">
+                        <group name="risk_general" col="3">
                             <group name="risk_include" col="3" colspan="2" class="oe_subtotal_footer">
                                 <div colspan="3">
                                     <h2>General Limits</h2>
                                     <br/>
                                 </div>
-                                <field name="risk_sale_order_include"/>
-                                <field name="risk_sale_order" nolabel="1"/>
                                 <field name="risk_invoice_draft_include"/>
                                 <field name="risk_invoice_draft" nolabel="1"/>
                                 <field name="risk_invoice_open_include"/>
@@ -34,12 +32,11 @@
                                     <field name="credit_limit" colspan="2" groups="account.group_account_invoice"/>
                                 </group>
                             </group>
-                            <group name="risk_sale_orders"  colspan="1" class="oe_subtotal_footer">
+                            <group name="risk_limits"  colspan="1" class="oe_subtotal_footer">
                                 <div colspan="2">
                                     <h2>Specific Limits</h2>
                                     <br/>
                                 </div>
-                                <field name="risk_sale_order_limit"/>
                                 <field name="risk_invoice_draft_limit"/>
                                 <field name="risk_invoice_open_limit"/>
                                 <field name="risk_invoice_unpaid_limit"/>
@@ -47,24 +44,6 @@
                             </group>
                         </group>
                     </div>
-                        <!--<group name="risk_sale_orders" string="Sales Order">-->
-                        <!--</group>-->
-                        <!--<group name="risk_draft_invoices" string="Not Validate Invoices">-->
-                            <!--<field name="risk_invoice_draft_limit"/>-->
-                            <!--<field name="risk_invoice_draft"/>-->
-                        <!--</group>-->
-                        <!--<group name="risk_open_invoices" string="Open Invoices">-->
-                            <!--<field name="risk_invoice_open_limit"/>-->
-                            <!--<field name="risk_invoice_open"/>-->
-                        <!--</group>-->
-                        <!--<group name="risk_unpaid_invoices" string="Unpaid Invoices">-->
-                            <!--<field name="risk_invoice_unpaid_limit"/>-->
-                            <!--<field name="risk_invoice_unpaid"/>-->
-                        <!--</group>-->
-                        <!--<group name="risk_other_account" string="Other Account">-->
-                            <!--<field name="risk_account_amount_limit"/>-->
-                            <!--<field name="risk_account_amount"/>-->
-                        <!--</group>-->
                 </page>
             </page>
         </field>

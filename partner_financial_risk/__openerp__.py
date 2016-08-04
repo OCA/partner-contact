@@ -3,19 +3,17 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Partner Risk',
+    'name': 'Partner Financial Risk',
     'summary': 'Manage partner risk',
     'version': '9.0.1.0.0',
     'category': 'Sales Management',
     'license': 'AGPL-3',
     'author': 'Tecnativa, Odoo Community Association (OCA)',
     'website': 'https://www.tecnativa.com',
-    'depends': ['sale'],
+    'depends': ['account'],
     'data': [
         'views/res_config_view.xml',
         'views/res_partner_view.xml',
-        'views/sale_view.xml',
-        'wizard/sale_order_risk_exceeded_view.xml',
     ],
     'installable': True,
 }
