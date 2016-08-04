@@ -2,7 +2,7 @@
 # © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import api, exceptions, fields, models, _
+from openerp import api, fields, models, _
 
 
 class SaleOrder(models.Model):
@@ -24,18 +24,36 @@ class SaleOrder(models.Model):
 
     @api.multi
     def action_confirm(self):
-        partner = self.partner_id
-        if partner.risk_exception:
-            raise exceptions.UserError(_(
-                "Financial risk exceeded.\n"
-                "You can not confirm this sale order"
-            ))
-        elif partner.risk_sale_order_include and (
-                (partner.risk_total + self.amount_total) >
-                partner.credit_limit):
-            raise exceptions.UserError(_(
-                "This sale order exceeds the financial risk.\n"
-                "You can not confirm this sale order"
-            ))
-
+        if not self.env.context.get('bypass_risk', False):
+            partner = self.partner_id
+            risk_exception = False
+            if partner.risk_exception:
+                risk_exception = True
+                exception_msg = _("Financial risk exceeded.\n")
+            elif partner.risk_sale_order_limit and (
+                    (partner.risk_sale_order + self.amount_total) >
+                    partner.risk_sale_order_limit):
+                risk_exception = True
+                exception_msg = _(
+                    "This sale order exceeds the sales orders risk.\n")
+            elif partner.risk_sale_order_include and (
+                    (partner.risk_total + self.amount_total) >
+                    partner.credit_limit):
+                risk_exception = True
+                exception_msg = _(
+                    "This sale order exceeds the financial risk.\n")
+            if risk_exception:
+                wizard = self.env['sale.order.risk.exceeded'].create({
+                    'exception_msg': exception_msg,
+                    'partner_id': partner.id,
+                    'amount': self.amount_total})
+                return {
+                    'type': 'ir.actions.act_window',
+                    'name': _('Partner risk exceeded'),
+                    'res_model': wizard._name,
+                    'res_id': wizard.id,
+                    'view_type': 'form',
+                    'view_mode': 'form',
+                    'target': 'new',
+                }
         return super(SaleOrder, self).action_confirm()

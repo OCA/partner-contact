@@ -9,7 +9,7 @@
         <field name="model">res.company</field>
         <field name="arch" type="xml">
             <field name="overdue_msg" position="before">
-                <field name="invoice_maturity_margin"/>
+                <field name="invoice_due_margin"/>
             </field>
         </field>
     </record>

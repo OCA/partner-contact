@@ -11,8 +11,8 @@
             <xpath expr="//div[@name='payment_acquirer']/.." position="after">
                 <label for="id" string="Financial Risk"/>
                 <div name="financial_risk" string="Financial Risk div">
-                    <label for="invoice_maturity_margin"/>
-                    <field name="invoice_maturity_margin" class="oe_inline"/>
+                    <label for="invoice_due_margin"/>
+                    <field name="invoice_due_margin" class="oe_inline"/>
                 </div>
             </xpath>
         </field>

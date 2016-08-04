@@ -11,48 +11,51 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     risk_sale_order_include = fields.Boolean(
-        string='Include Sale Orders', help='Compute in total risk')
+        string='Include Sales Orders', help='Full risk computation')
     risk_sale_order_limit = fields.Monetary(
-        string='Limit Sale Orders', help='Set 0 if it not lock')
+        string='Limit Sales Orders', help='Set 0 if it is not locked')
     risk_sale_order = fields.Monetary(
         compute='_compute_risk_sale_order', store=True,
-        string='Sale Order Not Invoiced',
-        help='Total not invoiced of sale order in *Sale Order* state')
+        string='Total Sales Orders Not Invoiced',
+        help='Total not invoiced of sales orders in Sale Order state')
+
     risk_invoice_draft_include = fields.Boolean(
-        string='Include Draft Invoices', help='Compute in total risk')
+        string='Include Draft Invoices', help='Full risk computation')
     risk_invoice_draft_limit = fields.Monetary(
-        string='Limit In Draft Invoices', help='Set 0 if it not lock')
+        string='Limit In Draft Invoices', help='Set 0 if it is not locked')
     risk_invoice_draft = fields.Monetary(
         compute='_compute_risk_invoice', store=True,
-        string='Not Validated Invoice',
+        string='Total Draft Invoices',
         help='Total amount of invoices in Draft or Pro-forma state')
     risk_invoice_open_include = fields.Boolean(
-        string='Include Open Invoices', help='Compute in total risk')
+        string='Include Open Invoices', help='Full risk computation')
     risk_invoice_open_limit = fields.Monetary(
-        string='Limit In Open Invoices', help='Set 0 if it not lock')
+        string='Limit In Open Invoices', help='Set 0 if it is not locked')
     risk_invoice_open = fields.Monetary(
         compute='_compute_risk_invoice', store=True,
-        string='Open Invoice',
+        string='Total Open Invoices',
         help='Residual amount of invoices in Open state and the date due is '
-             'not exceeded, considering Maturity Margin set in account '
+             'not exceeded, considering Due Margin set in account '
              'settings')
     risk_invoice_unpaid_include = fields.Boolean(
-        string='Include Unpaid Invoices', help='Compute in total risk')
+        string='Include Due Invoices', help='Full risk computation')
     risk_invoice_unpaid_limit = fields.Monetary(
-        string='Limit In Unpaid Invoices', help='Set 0 if it not lock')
+        string='Limit In Due Invoices', help='Set 0 if it is not locked')
     risk_invoice_unpaid = fields.Monetary(
         compute='_compute_risk_invoice', store=True,
-        string='Unpaid Invoice',
+        string='Total Due Invoices',
         help='Residual amount of invoices in Open state and the date due is '
-             'exceeded, considering Maturity Margin set in account settings')
+             'exceeded, considering Due Margin set in account settings')
+
     risk_account_amount_include = fields.Boolean(
-        string='Include Other Account Amount', help='Compute in total risk')
+        string='Include Other Account Amount', help='Full risk computation')
     risk_account_amount_limit = fields.Monetary(
-        string='Limit Other Account Amount', help='Set 0 if it not lock')
+        string='Limit Other Account Amount', help='Set 0 if it is not locked')
     risk_account_amount = fields.Monetary(
         compute='_compute_risk_account_amount',
         string='Other Account Amount',
         help='Difference between accounting credit and rest of totals')
+
     risk_total = fields.Monetary(
         compute='_compute_risk_exception',
         string='Total Risk', help='Sum of total risk included')
@@ -71,7 +74,7 @@ class ResPartner(models.Model):
     @api.multi
     @api.depends('invoice_ids', 'invoice_ids.state',
                  'invoice_ids.amount_total', 'invoice_ids.residual',
-                 'invoice_ids.company_id.invoice_maturity_margin')
+                 'invoice_ids.company_id.invoice_due_margin')
     def _compute_risk_invoice(self):
         max_date = self._max_risk_date_due()
         for partner in self:
@@ -94,25 +97,26 @@ class ResPartner(models.Model):
                 partner.risk_invoice_unpaid)
 
     @api.multi
-    @api.depends(
-        'risk_sale_order', 'risk_sale_order_include', 'risk_sale_order_limit',
-        'risk_invoice_draft', 'risk_invoice_draft_include',
-        'risk_invoice_draft_limit', 'risk_invoice_open',
-        'risk_invoice_open_include', 'risk_invoice_open_limit',
-        'risk_invoice_unpaid', 'risk_invoice_unpaid_include',
-        'risk_invoice_unpaid_limit', 'risk_account_amount',
-        'risk_account_amount_include', 'risk_account_amount_limit',
-        'credit_limit',)
+    @api.depends('risk_sale_order', 'risk_sale_order_include',
+                 'risk_sale_order_limit',
+                 'risk_invoice_draft', 'risk_invoice_draft_include',
+                 'risk_invoice_draft_limit', 'risk_invoice_open',
+                 'risk_invoice_open_include', 'risk_invoice_open_limit',
+                 'risk_invoice_unpaid', 'risk_invoice_unpaid_include',
+                 'risk_invoice_unpaid_limit', 'risk_account_amount',
+                 'risk_account_amount_include', 'risk_account_amount_limit',
+                 'credit_limit')
+    # @api.depends(lambda x: x._depends_list)
     def _compute_risk_exception(self):
         risk_field_list = self._risk_field_list()
         for partner in self:
             amount = 0.0
             for risk_field in risk_field_list:
-                field_value = getattr(partner, risk_field, 0.0)
-                max_value = getattr(partner, '%s_limit' % risk_field, 0.0)
+                field_value = getattr(partner, risk_field[0], 0.0)
+                max_value = getattr(partner, risk_field[1], 0.0)
                 if max_value and field_value > max_value:
                     partner.risk_exception = True
-                if getattr(partner, '%s_include' % risk_field, False):
+                if getattr(partner, risk_field[2], False):
                     amount += field_value
             partner.risk_total = amount
             if amount > partner.credit_limit:
@@ -121,9 +125,32 @@ class ResPartner(models.Model):
     @api.model
     def _max_risk_date_due(self):
         return fields.Date.to_string(datetime.today().date() - relativedelta(
-            days=self.env.user.company_id.invoice_maturity_margin))
+            days=self.env.user.company_id.invoice_due_margin))
 
     @api.model
     def _risk_field_list(self):
-        return ['risk_sale_order', 'risk_invoice_draft', 'risk_invoice_open',
-                'risk_invoice_unpaid', 'risk_account_amount']
+        return [
+            ('risk_sale_order', 'risk_sale_order_limit',
+            'risk_sale_order_include'),
+            ('risk_invoice_draft', 'risk_invoice_draft_limit',
+            'risk_invoice_draft_include'),
+            ('risk_invoice_open', 'risk_invoice_open_limit',
+             'risk_invoice_open_include'),
+            ('risk_invoice_unpaid', 'risk_invoice_unpaid_limit',
+            'risk_invoice_unpaid_include'),
+            ('risk_account_amount', 'risk_account_amount_limit',
+             'risk_account_amount_include'),
+        ]
+
+    @api.model
+    def _depends_list(self):
+        ss = (
+            'risk_sale_order', 'risk_sale_order_include', 'risk_sale_order_limit',
+            'risk_invoice_draft', 'risk_invoice_draft_include',
+            'risk_invoice_draft_limit', 'risk_invoice_open',
+            'risk_invoice_open_include', 'risk_invoice_open_limit',
+            'risk_invoice_unpaid', 'risk_invoice_unpaid_include',
+            'risk_invoice_unpaid_limit', 'risk_account_amount',
+            'risk_account_amount_include', 'risk_account_amount_limit',
+            'credit_limit')
+        return ss
