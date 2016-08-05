@@ -11,7 +11,7 @@
 
 
 from openerp import api, models, fields
-from openerp.exceptions import ValidationError, UserError
+from openerp.exceptions import ValidationError, Warning
 from openerp.tools.safe_eval import safe_eval
 from openerp.tools.translate import _
 
@@ -62,7 +62,7 @@ class ResPartnerIdCategory(models.Model):
                       mode='exec',
                       nocopy=True)
         except Exception as e:
-            raise UserError(
+            raise Warning(
                 _('Error when evaluating the id_category validation code:'
                   ':\n %s \n(%s)') % (self.name, e))
         if eval_context.get('failed', False):

@@ -11,7 +11,7 @@
 {
     'name': 'Partner Identification Numbers',
     'category': 'Customer Relationship Management',
-    'version': '9.0.1.0.0',
+    'version': '8.0.1.0.0',
     'data': [
         'views/res_partner_id_category_view.xml',
         'views/res_partner_id_number_view.xml',
