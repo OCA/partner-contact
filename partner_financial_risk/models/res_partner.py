@@ -54,6 +54,17 @@ class ResPartner(models.Model):
         compute='_compute_risk_exception',
         string='Risk Exception',
         help='It Indicate if partner risk exceeded')
+    credit_policy = fields.Char()
+    risk_allow_edit = fields.Boolean(compute='_compute_risk_allow_edit')
+
+    @api.multi
+    @api.depends()
+    def _compute_risk_allow_edit(self):
+        is_editable = self.env.user.has_group(
+            'base.group_sale_manager') or self.env.user.has_group(
+            'account.group_account_manager')
+        for partner in self:
+            partner.risk_allow_edit = is_editable
 
     @api.multi
     @api.depends('invoice_ids', 'invoice_ids.state',
