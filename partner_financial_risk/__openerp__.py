@@ -14,6 +14,8 @@
     'data': [
         'views/res_config_view.xml',
         'views/res_partner_view.xml',
+        'views/account_invoice_view.xml',
+        'wizard/partner_risk_exceeded_view.xml',
     ],
     'installable': True,
 }

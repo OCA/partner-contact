@@ -8,7 +8,7 @@ Partner Financial Risk
 
 Adds a new page in partner to manage its *Financial Risk*.
 
-If any limit is exceed the partner gets forbidden to confirm sale orders.
+If any limit is exceed the partner gets forbidden to confirm customer invoice.
 
 Configuration
 =============
@@ -26,7 +26,8 @@ To use this module, you need to:
 
 #. Go to *Customers > Financial Risk*
 #. Set limits and choose options to compute in credit limit.
-#. Go to *Sales -> Sales Orders* and create a new Sales Orders.
+#. Go to *Invoicing > Sales > Customer invoices* and create new customer
+   invoices.
 
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
