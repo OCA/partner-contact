@@ -11,13 +11,9 @@
         <field name="arch" type="xml">
             <page name="sales_purchases" position="after">
                 <page name="financial_risk" string="Financial Risk" attrs="{'invisible': [('customer','=',False)]}">
-                    <div>
-                        <group name="risk_general" col="3">
-                            <group name="risk_include" col="3" colspan="2" class="oe_subtotal_footer">
-                                <div colspan="3">
-                                    <h2>General Limits</h2>
-                                    <br/>
-                                </div>
+                    <group name="risk_general" col="3">
+                        <group string="General Limits" name="risk_include" col="1" colspan="2">
+                            <group col="3" class="oe_subtotal_footer">
                                 <field name="risk_invoice_draft_include"
                                        attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
                                 <field name="risk_invoice_draft" nolabel="1"/>
@@ -31,20 +27,10 @@
                                        attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
                                 <field name="risk_account_amount" nolabel="1"/>
                                 <field name="risk_total" colspan="3" class="oe_subtotal_footer_separator"/>
-                                <group col="4" colspan="3">
-                                    <field name="credit_policy" colspan="2"
-                                           attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
-                                    <field name="credit_limit" colspan="2"
-                                           widget="monetary"
-                                           attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
-                                </group>
-                                <field name="risk_exception" colspan="2"/>
                             </group>
-                            <group name="risk_limits"  colspan="1" class="oe_subtotal_footer">
-                                <div colspan="2">
-                                    <h2>Specific Limits</h2>
-                                    <br/>
-                                </div>
+                        </group>
+                        <group string="Specific Limits" name="risk_limits" col="1">
+                            <group class="oe_subtotal_footer">
                                 <field name="risk_invoice_draft_limit"
                                        attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
                                 <field name="risk_invoice_open_limit"
@@ -56,7 +42,15 @@
                                 <field name="risk_allow_edit" invisible="1"/>
                             </group>
                         </group>
-                    </div>
+                    </group>
+                    <group string="Info" col="4">
+                        <field name="credit_limit"
+                               widget="monetary"
+                               attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                        <field name="credit_policy"
+                               attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                        <field name="risk_exception"/>
+                    </group>
                 </page>
             </page>
         </field>
