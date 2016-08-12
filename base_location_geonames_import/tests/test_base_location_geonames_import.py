@@ -23,7 +23,7 @@ class TestBaseLocationGeonamesImport(common.TransactionCase):
         self.assertEqual(len(states), 1)
         zip_domain = [
             ('name', '=', '98000'),
-            ('city', '=', 'Jardin Japonais'),
+            ('city', '=', 'Jardin Exotique'),
             ('state_id', '=', states[0].id),
             ('country_id', '=', self.country.id),
         ]
