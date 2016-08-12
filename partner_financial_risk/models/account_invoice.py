@@ -30,7 +30,8 @@ class AccountInvoice(models.Model):
                     return self.env['partner.risk.exceeded.wiz'].create({
                         'exception_msg': exception_msg,
                         'partner_id': partner.id,
-                        'origin_reference': 'account.invoice,%s' % invoice.id,
+                        'origin_reference':
+                            '%s,%s' % (self._model, invoice.id),
                         'continue_method': 'invoice_open',
                     }).action_show()
         return self.signal_workflow('invoice_open')

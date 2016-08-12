@@ -3,11 +3,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp.tests.common import TransactionCase
+from openerp import fields
 
 
 class TestPartnerFinancialRisk(TransactionCase):
     def setUp(self):
         super(TestPartnerFinancialRisk, self).setUp()
+        self.env.user.groups_id |= self.env.ref('base.group_sale_manager')
         self.partner = self.env['res.partner'].create({
             'name': 'Partner test',
             'customer': True,
@@ -47,3 +49,27 @@ class TestPartnerFinancialRisk(TransactionCase):
         self.assertFalse(self.partner.risk_exception)
         self.partner.risk_invoice_unpaid_limit = 499.0
         self.assertTrue(self.partner.risk_exception)
+        invoice2 = self.invoice.copy()
+        wiz_dic = invoice2.invoice_open()
+        wiz = self.env[wiz_dic['res_model']].browse(wiz_dic['res_id'])
+        self.assertEqual(wiz.exception_msg, "Financial risk exceeded.\n")
+        self.partner.risk_invoice_unpaid_limit = 0.0
+        self.assertFalse(self.partner.risk_exception)
+        self.partner.risk_invoice_open_limit = 300.0
+        invoice2.date_due = fields.Date.today()
+        wiz_dic = invoice2.invoice_open()
+        wiz = self.env[wiz_dic['res_model']].browse(wiz_dic['res_id'])
+        self.assertEqual(wiz.exception_msg,
+                         "This invoice exceeds the open invoices risk.\n")
+        self.partner.risk_invoice_open_limit = 0.0
+        self.partner.risk_invoice_draft_include = False
+        self.partner.risk_invoice_open_include = True
+        self.partner.credit_limit = 900.0
+        wiz_dic = invoice2.invoice_open()
+        wiz = self.env[wiz_dic['res_model']].browse(wiz_dic['res_id'])
+        self.assertEqual(wiz.exception_msg,
+                         "This invoice exceeds the financial risk.\n")
+        self.assertAlmostEqual(self.partner.risk_invoice_open, 0.0)
+        wiz.button_continue()
+        self.assertAlmostEqual(self.partner.risk_invoice_open, 500.0)
+        self.assertTrue(self.partner.risk_allow_edit)

@@ -58,7 +58,6 @@ class ResPartner(models.Model):
     risk_allow_edit = fields.Boolean(compute='_compute_risk_allow_edit')
 
     @api.multi
-    @api.depends()
     def _compute_risk_allow_edit(self):
         is_editable = self.env.user.has_group(
             'base.group_sale_manager') or self.env.user.has_group(
