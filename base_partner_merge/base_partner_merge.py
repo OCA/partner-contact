@@ -4,13 +4,13 @@
 from openerp.addons.crm.base_partner_merge import *  # noqa
 
 
-class NoCRMResPartner(ResPartner):
+class NoCRMResPartner(ResPartner):  # noqa
     _module = 'base_partner_merge'
 
 
-class NoCRMMergePartnerLine(MergePartnerLine):
+class NoCRMMergePartnerLine(MergePartnerLine):  # noqa
     _module = 'base_partner_merge'
 
 
-class NoCRMMergePartnerAutomatic(MergePartnerAutomatic):
+class NoCRMMergePartnerAutomatic(MergePartnerAutomatic):  # noqa
     _module = 'base_partner_merge'
