@@ -72,7 +72,8 @@ Credits
 Images
 ------
 
-* Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+* `Arrow <https://openclipart.org/detail/131875/convergent>`_.
+* `Lock <http://fontawesome.io/icon/unlock-alt/>`_.
 
 Contributors
 ------------
