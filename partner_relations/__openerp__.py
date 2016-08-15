@@ -31,15 +31,12 @@
     "demo": [
         "data/demo.xml",
     ],
-    "test": [
-        "test/test_allow.yml",
-    ],
     "data": [
-        "view/res_partner_relation_all.xml",
-        'view/res_partner_relation.xml',
-        'view/res_partner.xml',
-        'view/res_partner_relation_type.xml',
-        'view/menu.xml',
+        "views/res_partner_relation_all.xml",
+        'views/res_partner_relation.xml',
+        'views/res_partner.xml',
+        'views/res_partner_relation_type.xml',
+        'views/menu.xml',
         'security/ir.model.access.csv',
     ],
     "auto_install": False,

@@ -1,28 +1,9 @@
 # -*- coding: utf-8 -*-
-'''Define model res.partner.relation'''
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2013 Therp BV (<http://therp.nl>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
-
-from openerp import osv, models, fields, api, exceptions, _
-
-from .res_partner import get_partner_type
+# © 2013-2016 Therp BV <http://therp.nl>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+from openerp import models, fields, api, exceptions, _
+from openerp.osv.expression import FALSE_LEAF
+from .res_partner import PADDING
 
 
 class ResPartnerRelation(models.Model):
@@ -41,73 +22,40 @@ class ResPartnerRelation(models.Model):
     _description = 'Partner relation'
     _order = 'active desc, date_start desc, date_end desc'
 
-    def _search_any_partner_id(self, operator, value):
-        return [
-            '|',
-            ('left_partner_id', operator, value),
-            ('right_partner_id', operator, value),
-        ]
+    type_selection_id = fields.Many2one(
+        'res.partner.relation.type.selection',
+        compute='_compute_fields',
+        fnct_inv=lambda *args: None,
+        string='Type',
+    )
 
-    def _get_computed_fields(
-            self, cr, uid, ids, field_names, arg, context=None):
-        '''Return a dictionary of dictionaries, with for every partner for
-        ids, the computed values.'''
-        def get_values(self, dummy_field_names, dummy_arg, context=None):
-            '''Get computed values for record'''
-            values = {}
-            on_right_partner = self._on_right_partner(self.right_partner_id.id)
-            # type_selection_id
-            values['type_selection_id'] = (
-                ((self.type_id.id) * 10) + (on_right_partner and 1 or 0))
-            # partner_id_display
-            values['partner_id_display'] = (
-                self.left_partner_id.id
-                if on_right_partner
-                else self.right_partner_id.id
-            )
-            return values
-
-        return dict([
-            (i.id, get_values(i, field_names, arg, context=context))
-            for i in self.browse(cr, uid, ids, context=context)
-        ])
-
-    _columns = {
-        'type_selection_id': osv.fields.function(
-            _get_computed_fields,
-            multi="computed_fields",
-            fnct_inv=lambda *args: None,
-            type='many2one', obj='res.partner.relation.type.selection',
-            string='Type',
-        ),
-        'partner_id_display': osv.fields.function(
-            _get_computed_fields,
-            multi="computed_fields",
-            fnct_inv=lambda *args: None,
-            type='many2one', obj='res.partner',
-            string='Partner'
-        ),
-    }
+    partner_id_display = fields.Many2one(
+        'res.partner',
+        compute='_compute_fields',
+        fnct_inv=lambda *args: None,
+        string='Partner',
+    )
 
     allow_self = fields.Boolean(related='type_id.allow_self')
+
     left_contact_type = fields.Selection(
         lambda s: s.env['res.partner.relation.type']._get_partner_types(),
         'Left Partner Type',
-        compute='_get_partner_type_any',
+        compute='_compute_any_partner_id',
         store=True,
     )
 
     right_contact_type = fields.Selection(
         lambda s: s.env['res.partner.relation.type']._get_partner_types(),
         'Right Partner Type',
-        compute='_get_partner_type_any',
+        compute='_compute_any_partner_id',
         store=True,
     )
 
     any_partner_id = fields.Many2many(
         'res.partner',
         string='Partner',
-        compute='_get_partner_type_any',
+        compute='_compute_any_partner_id',
         search='_search_any_partner_id'
     )
 
@@ -138,55 +86,111 @@ class ResPartnerRelation(models.Model):
     date_end = fields.Date('Ending date')
     active = fields.Boolean('Active', default=True)
 
+    @api.multi
+    def _compute_fields(self):
+        for this in self:
+            on_right_partner = this._on_right_partner()
+            this.type_selection_id = self\
+                .env['res.partner.relation.type.selection']\
+                .browse(this.type_id.id * PADDING +
+                        (on_right_partner and 1 or 0))
+            this.partner_id_display = (
+                this.left_partner_id
+                if on_right_partner
+                else this.right_partner_id
+            )
+
+    @api.onchange('type_selection_id')
+    def _onchange_type_selection_id(self):
+        '''Set domain on partner_id_display, when selection a relation type'''
+        result = {
+            'domain': {'partner_id_display': [FALSE_LEAF]},
+        }
+        if not self.type_selection_id:
+            return result
+        type_id, is_reverse = self.type_selection_id\
+            .get_type_from_selection_id()
+        self.type_id = self.env['res.partner.relation.type'].browse(type_id)
+        partner_domain = []
+        check_contact_type = self.type_id.contact_type_right
+        check_partner_category = self.type_id.partner_category_right
+        if is_reverse:
+            # partner_id_display is left partner
+            check_contact_type = self.type_id.contact_type_left
+            check_partner_category = self.type_id.partner_category_left
+        if check_contact_type == 'c':
+            partner_domain.append(('is_company', '=', True))
+        if check_contact_type == 'p':
+            partner_domain.append(('is_company', '=', False))
+        if check_partner_category:
+            partner_domain.append(
+                ('category_id', 'child_of', check_partner_category.ids))
+        result['domain']['partner_id_display'] = partner_domain
+        return result
+
     @api.one
     @api.depends('left_partner_id', 'right_partner_id')
-    def _get_partner_type_any(self):
-        self.left_contact_type = get_partner_type(self.left_partner_id)
-        self.right_contact_type = get_partner_type(self.right_partner_id)
-
+    def _compute_any_partner_id(self):
+        self.left_contact_type = self.left_partner_id.get_partner_type()
+        self.right_contact_type = self.right_partner_id.get_partner_type()
         self.any_partner_id = self.left_partner_id + self.right_partner_id
 
-    def _on_right_partner(self, cr, uid, right_partner_id, context=None):
+    @api.model
+    def _search_any_partner_id(self, operator, value):
+        return [
+            '|',
+            ('left_partner_id', operator, value),
+            ('right_partner_id', operator, value),
+        ]
+
+    @api.multi
+    def _on_right_partner(self):
         '''Determine wether functions are called in a situation where the
         active partner is the right partner. Default False!
         '''
-        if (context and 'active_ids' in context and
-                right_partner_id in context.get('active_ids', [])):
-            return True
-        return False
+        return set(self.mapped('right_partner_id').ids) &\
+            set(self.env.context.get('active_ids', []))
 
+    @api.model
     def _correct_vals(self, vals):
         """Fill type and left and right partner id, according to whether
         we have a normal relation type or an inverse relation type
         """
         vals = vals.copy()
-        # If type_selection_id ends in 1, it is a reverse relation type
-        if 'type_selection_id' in vals:
-            prts_model = self.env['res.partner.relation.type.selection']
-            type_selection_id = vals['type_selection_id']
-            (type_id, is_reverse) = (
-                prts_model.browse(type_selection_id).
-                get_type_from_selection_id()
-            )
-            vals['type_id'] = type_id
-            if self._context.get('active_id'):
-                if is_reverse:
-                    vals['right_partner_id'] = self._context['active_id']
-                else:
-                    vals['left_partner_id'] = self._context['active_id']
-            if vals.get('partner_id_display'):
-                if is_reverse:
-                    vals['left_partner_id'] = vals['partner_id_display']
-                else:
-                    vals['right_partner_id'] = vals['partner_id_display']
-            if vals.get('other_partner_id'):
-                if is_reverse:
-                    vals['left_partner_id'] = vals['other_partner_id']
-                else:
-                    vals['right_partner_id'] = vals['other_partner_id']
-                del vals['other_partner_id']
-            if vals.get('contact_type'):
-                del vals['contact_type']
+        if 'type_selection_id' not in vals:
+            return vals
+
+        type_id, is_reverse = self\
+            .env['res.partner.relation.type.selection']\
+            .browse(vals['type_selection_id'])\
+            .get_type_from_selection_id()
+
+        vals['type_id'] = type_id
+
+        if self._context.get('active_id'):
+            if is_reverse:
+                vals['right_partner_id'] = self._context['active_id']
+            else:
+                vals['left_partner_id'] = self._context['active_id']
+        if vals.get('partner_id_display'):
+            if is_reverse:
+                vals['left_partner_id'] = vals['partner_id_display']
+            else:
+                vals['right_partner_id'] = vals['partner_id_display']
+        if vals.get('other_partner_id'):
+            if is_reverse:
+                vals['left_partner_id'] = vals['other_partner_id']
+            else:
+                vals['right_partner_id'] = vals['other_partner_id']
+            del vals['other_partner_id']
+        if vals.get('this_partner_id'):
+            if is_reverse:
+                vals['right_partner_id'] = vals['this_partner_id']
+            else:
+                vals['left_partner_id'] = vals['this_partner_id']
+            del vals['this_partner_id']
+        if vals.get('contact_type'):
+            del vals['contact_type']
         return vals
 
     @api.multi
@@ -200,46 +204,6 @@ class ResPartnerRelation(models.Model):
         """Override create to correct values, before being stored."""
         vals = self._correct_vals(vals)
         return super(ResPartnerRelation, self).create(vals)
-
-    def on_change_type_selection_id(
-            self, cr, uid, dummy_ids, type_selection_id, context=None):
-        '''Set domain on partner_id_display, when selection a relation type'''
-        result = {
-            'domain': {'partner_id_display': []},
-            'value': {'type_id': False}
-        }
-        if not type_selection_id:
-            return result
-        prts_model = self.pool['res.partner.relation.type.selection']
-        type_model = self.pool['res.partner.relation.type']
-        (type_id, is_reverse) = (
-            prts_model.get_type_from_selection_id(
-                cr, uid, type_selection_id)
-        )
-        result['value']['type_id'] = type_id
-        type_obj = type_model.browse(cr, uid, type_id, context=context)
-        partner_domain = []
-        check_contact_type = type_obj.contact_type_right
-        check_partner_category = (
-            type_obj.partner_category_right and
-            type_obj.partner_category_right.id
-        )
-        if is_reverse:
-            # partner_id_display is left partner
-            check_contact_type = type_obj.contact_type_left
-            check_partner_category = (
-                type_obj.partner_category_left and
-                type_obj.partner_category_left.id
-            )
-        if check_contact_type == 'c':
-            partner_domain.append(('is_company', '=', True))
-        if check_contact_type == 'p':
-            partner_domain.append(('is_company', '=', False))
-        if check_partner_category:
-            partner_domain.append(
-                ('category_id', 'child_of', check_partner_category))
-        result['domain']['partner_id_display'] = partner_domain
-        return result
 
     @api.one
     @api.constrains('date_start', 'date_end')
@@ -329,25 +293,24 @@ class ResPartnerRelation(models.Model):
                 _('There is already a similar relation with overlapping dates')
             )
 
-    def get_action_related_partners(self, cr, uid, ids, context=None):
+    @api.multi
+    def get_action_related_partners(self):
         '''return a window action showing a list of partners taking part in the
         relations names by ids. Context key 'partner_relations_show_side'
         determines if we show 'left' side, 'right' side or 'all' (default)
         partners.
         If active_model is res.partner.relation.all, left=this and
         right=other'''
-        if context is None:
-            context = {}
-
         field_names = {}
 
-        if context.get('active_model', self._name) == self._name:
+        if self.env.context.get('active_model', self._name) == self._name:
             field_names = {
                 'left': ['left'],
                 'right': ['right'],
                 'all': ['left', 'right']
             }
-        elif context.get('active_model') == 'res.partner.relation.all':
+        elif self.env.context.get('active_model') ==\
+                'res.partner.relation.all':
             field_names = {
                 'left': ['this'],
                 'right': ['other'],
@@ -356,21 +319,22 @@ class ResPartnerRelation(models.Model):
         else:
             assert False, 'Unknown active_model!'
 
-        partner_ids = []
+        partners = self.env['res.partner'].browse([])
         field_names = field_names[
-            context.get('partner_relations_show_side', 'all')]
+            self.env.context.get('partner_relations_show_side', 'all')
+        ]
         field_names = ['%s_partner_id' % n for n in field_names]
 
-        for relation in self.pool[context.get('active_model')].read(
-                cr, uid, ids, context=context, load='_classic_write'):
+        for relation in self.env[self.env.context.get('active_model')].browse(
+                self.ids):
             for name in field_names:
-                partner_ids.append(relation[name])
+                partners += relation[name]
 
         return {
             'name': _('Related partners'),
             'type': 'ir.actions.act_window',
             'res_model': 'res.partner',
-            'domain': [('id', 'in', partner_ids)],
+            'domain': [('id', 'in', partners.ids)],
             'views': [(False, 'tree'), (False, 'form')],
             'view_type': 'form'
         }

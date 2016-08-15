@@ -12,6 +12,7 @@
             <field name="name_inverse">Is competitor of</field>
             <field name="contact_type_left">c</field>
             <field name="contact_type_right">c</field>
+            <field name="symmetric" eval="True" />
         </record>
         <record id="rel_type_has_worked_for" model="res.partner.relation.type">
             <field name="name">Has worked for</field>

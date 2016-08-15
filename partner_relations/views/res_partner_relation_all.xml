@@ -12,16 +12,11 @@
                 >
                     <field
                         name="this_partner_id"
-                        readonly="1"
+                        invisible="1"
                     />
                     <field
                         name="type_selection_id"
                         required="True"
-                        domain="[
-                            '|',
-                            ('contact_type_this', '=', False),
-                            ('contact_type_this', '=', contact_type),
-                        ]"
                         options="{'create': false, 'create_edit': false}"
                     />
                     <field
@@ -34,7 +29,6 @@
                     <field name="date_start" />
                     <field name="date_end" />
                     <field name="active" />
-                    <field name="contact_type" invisible="1"/>
                 </tree>
             </field>
         </record>

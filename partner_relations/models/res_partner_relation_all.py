@@ -1,29 +1,12 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2014 Therp BV (<http://therp.nl>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
-
+# © 2014-2016 Therp BV <http://therp.nl>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+from psycopg2.extensions import AsIs
 from openerp import models, fields, api
 from openerp.tools import drop_view_if_exists
-from .res_partner_relation_type_selection import \
+from .res_partner_relation_type_selection import\
     ResPartnerRelationTypeSelection
-from .res_partner import get_partner_type, PADDING
+from .res_partner import PADDING
 
 
 class ResPartnerRelationAll(models.AbstractModel):
@@ -101,7 +84,7 @@ class ResPartnerRelationAll(models.AbstractModel):
         cr.execute(
             '''create or replace view %(table)s as
             select
-                id * %(padding)d as id,
+                id * %(padding)s as id,
                 id as relation_id,
                 type_id,
                 cast('a' as char(1)) as record_type,
@@ -111,11 +94,11 @@ class ResPartnerRelationAll(models.AbstractModel):
                 date_start,
                 date_end,
                 active,
-                type_id * %(padding)d as type_selection_id
+                type_id * %(padding)s as type_selection_id
                 %(additional_view_fields)s
             from %(underlying_table)s
             union select
-                id * %(padding)d + 1,
+                id * %(padding)s + 1,
                 id,
                 type_id,
                 cast('b' as char(1)),
@@ -125,28 +108,32 @@ class ResPartnerRelationAll(models.AbstractModel):
                 date_start,
                 date_end,
                 active,
-                type_id * %(padding)d + 1
+                type_id * %(padding)s + 1
                 %(additional_view_fields)s
-            from %(underlying_table)s''' % {
-                'table': self._table,
+            from %(underlying_table)s''',
+            {
+                'table': AsIs(self._table),
                 'padding': PADDING,
-                'additional_view_fields': additional_view_fields,
-                'underlying_table': 'res_partner_relation',
+                'additional_view_fields': AsIs(additional_view_fields),
+                'underlying_table': AsIs('res_partner_relation'),
             }
         )
 
         return super(ResPartnerRelationAll, self)._auto_init(
             cr, context=context)
 
+    @api.multi
     def _get_underlying_object(self):
         """Get the record on which this record is overlaid"""
-        return self.env[self._overlays].browse(self.id / PADDING)
+        return self.env[self._overlays].browse(
+            i / PADDING for i in self.ids)
 
+    @api.multi
     def _get_default_contact_type(self):
         partner_id = self._context.get('default_this_partner_id')
         if partner_id:
             partner = self.env['res.partner'].browse(partner_id)
-            return get_partner_type(partner)
+            return partner.get_partner_type()
         return False
 
     @api.multi
@@ -154,7 +141,7 @@ class ResPartnerRelationAll(models.AbstractModel):
         return {
             this.id: '%s %s %s' % (
                 this.this_partner_id.name,
-                this.type_selection_id.name_get()[0][1],
+                this.type_selection_id.display_name,
                 this.other_partner_id.name,
             )
             for this in self
@@ -189,7 +176,7 @@ class ResPartnerRelationAll(models.AbstractModel):
                     '|',
                     ('contact_type_this', '=', False),
                     ('contact_type_this', '=',
-                     'c' if self.this_partner_id else 'p'),
+                     self.this_partner_id.get_partner_type()),
                     '|',
                     ('partner_category_this', '=', False),
                     ('partner_category_this', 'in',
@@ -198,19 +185,15 @@ class ResPartnerRelationAll(models.AbstractModel):
             },
         }
 
-    @api.one
+    @api.multi
     def write(self, vals):
         """divert non-problematic writes to underlying table"""
         underlying_objs = self._get_underlying_object()
         vals = {
             key: val
             for key, val in vals.iteritems()
-            if not self._columns[key].readonly
+            if not self._fields[key].readonly
         }
-        vals['type_selection_id'] = vals.get(
-            'type_selection_id',
-            underlying_objs.type_selection_id.id
-        )
         return underlying_objs.write(vals)
 
     @api.model
@@ -222,16 +205,12 @@ class ResPartnerRelationAll(models.AbstractModel):
         vals = {
             key: val
             for key, val in vals.iteritems()
-            if not self._columns[key].readonly
+            if not self._fields[key].readonly
         }
-        vals['type_selection_id'] = vals.get(
-            'type_selection_id',
-            False,
-        )
         res = self.env[self._overlays].create(vals)
         return self.browse(res.id * PADDING)
 
-    @api.one
+    @api.multi
     def unlink(self):
         """divert non-problematic creates to underlying table"""
         return self._get_underlying_object().unlink()
