@@ -20,37 +20,25 @@
 ##############################################################################
 {
     "name": "Partner relations",
-    "version": "8.0.1.1.0",
+    "version": "8.0.1.1.1",
     "author": "Therp BV,Camptocamp,Odoo Community Association (OCA)",
     "complexity": "normal",
     "category": "Customer Relationship Management",
+    "license": "AGPL-3",
     "depends": [
         'base',
     ],
     "demo": [
         "data/demo.xml",
     ],
-    "test": [
-        "test/test_allow.yml",
-        # "test/test_disallow.yml",
-    ],
     "data": [
-        "view/res_partner_relation_all.xml",
-        'view/res_partner_relation.xml',
-        'view/res_partner.xml',
-        'view/res_partner_relation_type.xml',
-        'view/menu.xml',
+        "views/res_partner_relation_all.xml",
+        'views/res_partner_relation.xml',
+        'views/res_partner.xml',
+        'views/res_partner_relation_type.xml',
+        'views/menu.xml',
         'security/ir.model.access.csv',
     ],
-    "js": [
-    ],
-    "css": [
-    ],
-    "qweb": [
-    ],
     "auto_install": False,
-    'installable': False,
-    "external_dependencies": {
-        'python': [],
-    },
+    "installable": True,
 }

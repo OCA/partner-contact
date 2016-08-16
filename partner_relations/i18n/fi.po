@@ -10,11 +10,11 @@ msgstr ""
 "POT-Creation-Date: 2016-05-07 07:18+0000\n"
 "PO-Revision-Date: 2016-05-06 15:15+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Dutch (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/nl/)\n"
+"Language-Team: Finnish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: nl\n"
+"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_relations
@@ -57,19 +57,19 @@ msgstr ""
 #: code:addons/partner_relations/model/res_partner_relation_type.py:68
 #, python-format
 msgid "Company"
-msgstr "Bedrijf"
+msgstr ""
 
 #. module: partner_relations
 #: field:res.partner.relation,create_uid:0
 #: field:res.partner.relation.type,create_uid:0
 msgid "Created by"
-msgstr "Aangemaakt door"
+msgstr "Luonut"
 
 #. module: partner_relations
 #: field:res.partner.relation,create_date:0
 #: field:res.partner.relation.type,create_date:0
 msgid "Created on"
-msgstr "Aangemaakt op"
+msgstr "Luotu"
 
 #. module: partner_relations
 #: field:res.partner.relation.all,this_partner_id:0
@@ -183,13 +183,13 @@ msgstr ""
 #: field:res.partner.relation,write_uid:0
 #: field:res.partner.relation.type,write_uid:0
 msgid "Last Updated by"
-msgstr "Laatst bijgewerkt door"
+msgstr "Viimeksi päivitetty"
 
 #. module: partner_relations
 #: field:res.partner.relation,write_date:0
 #: field:res.partner.relation.type,write_date:0
 msgid "Last Updated on"
-msgstr "Laatst bijgewerkt op"
+msgstr "Viimeksi päivittänyt"
 
 #. module: partner_relations
 #: view:res.partner.relation:partner_relations.search_res_partner_relation
@@ -220,7 +220,7 @@ msgstr ""
 #: field:res.partner.relation.type,name:0
 #: field:res.partner.relation.type.selection,name:0
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #. module: partner_relations
 #: view:res.partner.relation.all:partner_relations.search_res_partner_relation_all
@@ -243,7 +243,7 @@ msgstr ""
 #: field:res.partner.relation,any_partner_id:0
 #: field:res.partner.relation,partner_id_display:0
 msgid "Partner"
-msgstr "Partner"
+msgstr "Kumppani"
 
 #. module: partner_relations
 #: view:res.partner.relation:partner_relations.form_res_partner_relation
