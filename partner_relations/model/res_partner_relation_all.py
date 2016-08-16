@@ -189,7 +189,7 @@ class ResPartnerRelationAll(models.AbstractModel):
                     '|',
                     ('contact_type_this', '=', False),
                     ('contact_type_this', '=',
-                     'c' if self.this_partner_id else 'p'),
+                     get_partner_type(self.this_partner_id)),
                     '|',
                     ('partner_category_this', '=', False),
                     ('partner_category_this', 'in',
