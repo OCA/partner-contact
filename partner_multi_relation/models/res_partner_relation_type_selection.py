@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # © 2014-2016 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-'''
+"""
 Created on 23 may 2014
 
 @author: Ronald Portier, Therp
@@ -28,7 +28,7 @@ from FULL_LIST as ResPartnerRelationTypeSelection where record_type = 'c'
 ORDER BY ResPartnerRelationTypeSelection.customer_name asc,
 ResPartnerRelationTypeSelection.caller_name asc;
 
-'''
+"""
 from psycopg2.extensions import AsIs
 from openerp import api, fields, models
 from openerp.tools import drop_view_if_exists
@@ -37,7 +37,7 @@ from .res_partner import PADDING
 
 
 class ResPartnerRelationTypeSelection(models.Model):
-    '''Virtual relation types'''
+    """Virtual relation types"""
     _name = 'res.partner.relation.type.selection'
     _description = 'All relation types'
     _auto = False  # Do not try to create table in _auto_init(..)
@@ -67,7 +67,7 @@ class ResPartnerRelationTypeSelection(models.Model):
     def _auto_init(self, cr, context=None):
         drop_view_if_exists(cr, self._table)
         cr.execute(
-            '''create or replace view %(table)s as
+            """create or replace view %(table)s as
             select
                 id * %(padding)s as id,
                 id as type_id,
@@ -87,7 +87,7 @@ class ResPartnerRelationTypeSelection(models.Model):
                 contact_type_left,
                 partner_category_right,
                 partner_category_left
-             from %(underlying_table)s''',
+             from %(underlying_table)s""",
             {
                 'table': AsIs(self._table),
                 'padding': PADDING,

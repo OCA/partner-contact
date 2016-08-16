@@ -7,7 +7,7 @@ from .res_partner import PADDING
 
 
 class ResPartnerRelation(models.Model):
-    '''Model res.partner.relation is used to describe all links or relations
+    """Model res.partner.relation is used to describe all links or relations
     between partners in the database.
 
     In many parts of the code we have to know whether the active partner is
@@ -17,7 +17,7 @@ class ResPartnerRelation(models.Model):
     Because the active partner is crucial for the working of partner
     relationships, we make sure on the res.partner model that the partner id
     is set in the context where needed.
-    '''
+    """
     _name = 'res.partner.relation'
     _description = 'Partner relation'
     _order = 'active desc, date_start desc, date_end desc'
@@ -102,7 +102,7 @@ class ResPartnerRelation(models.Model):
 
     @api.onchange('type_selection_id')
     def _onchange_type_selection_id(self):
-        '''Set domain on partner_id_display, when selection a relation type'''
+        """Set domain on partner_id_display, when selection a relation type"""
         result = {
             'domain': {'partner_id_display': [FALSE_LEAF]},
         }
@@ -145,9 +145,9 @@ class ResPartnerRelation(models.Model):
 
     @api.multi
     def _on_right_partner(self):
-        '''Determine wether functions are called in a situation where the
+        """Determine wether functions are called in a situation where the
         active partner is the right partner. Default False!
-        '''
+        """
         return set(self.mapped('right_partner_id').ids) &\
             set(self.env.context.get('active_ids', []))
 
@@ -295,12 +295,12 @@ class ResPartnerRelation(models.Model):
 
     @api.multi
     def get_action_related_partners(self):
-        '''return a window action showing a list of partners taking part in the
+        """return a window action showing a list of partners taking part in the
         relations names by ids. Context key 'partner_multi_relation_show_side'
         determines if we show 'left' side, 'right' side or 'all' (default)
         partners.
         If active_model is res.partner.relation.all, left=this and
-        right=other'''
+        right=other"""
         field_names = {}
 
         if self.env.context.get('active_model', self._name) == self._name:

@@ -60,7 +60,7 @@ class ResPartner(models.Model):
 
     @api.multi
     def _compute_relation_ids(self):
-        '''getter for relation_ids'''
+        """getter for relation_ids"""
         self.env.cr.execute(
             "select p.id, array_agg(r.id) "
             "from res_partner p join res_partner_relation r "
