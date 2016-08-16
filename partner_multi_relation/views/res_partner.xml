@@ -3,7 +3,7 @@
     <data>
 
         <record id="view_res_partner_filter" model="ir.ui.view">
-            <field name="name">partner_relations.view_partner_filter</field>
+            <field name="name">partner_multi_relation.view_partner_filter</field>
             <field name="inherit_id" ref="base.view_res_partner_filter" />
             <field name="model">res.partner</field>
             <field type="xml" name="arch">
@@ -19,11 +19,11 @@
         </record>
 
         <record id="view_partner_form" model="ir.ui.view">
-            <field name="name">partner_relations.view_partner_form</field>
+            <field name="name">partner_multi_relation.view_partner_form</field>
             <field name="inherit_id" ref="base.view_partner_form" />
             <field name="model">res.partner</field>
             <field type="xml" name="arch">
-                <xpath expr="//div[@name='buttons']" position="inside">
+                <xpath expr="//div[@name='button_box']" position="inside">
                     <button class="oe_inline oe_stat_button"
                             type="action"
                             context="{
@@ -42,7 +42,7 @@
             </field>
         </record>
 
-        <act_window id="action_show_partner_relations"
+        <act_window id="action_show_partner_multi_relation"
             name="Show partner's relations"
             src_model="res.partner"
             res_model="res.partner.relation.all"

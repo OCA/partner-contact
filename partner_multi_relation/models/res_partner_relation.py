@@ -296,7 +296,7 @@ class ResPartnerRelation(models.Model):
     @api.multi
     def get_action_related_partners(self):
         '''return a window action showing a list of partners taking part in the
-        relations names by ids. Context key 'partner_relations_show_side'
+        relations names by ids. Context key 'partner_multi_relation_show_side'
         determines if we show 'left' side, 'right' side or 'all' (default)
         partners.
         If active_model is res.partner.relation.all, left=this and
@@ -321,7 +321,7 @@ class ResPartnerRelation(models.Model):
 
         partners = self.env['res.partner'].browse([])
         field_names = field_names[
-            self.env.context.get('partner_relations_show_side', 'all')
+            self.env.context.get('partner_multi_relation_show_side', 'all')
         ]
         field_names = ['%s_partner_id' % n for n in field_names]
 

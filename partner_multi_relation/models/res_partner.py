@@ -184,16 +184,16 @@ class ResPartner(models.Model):
 
     @api.multi
     def read(self, fields=None, load='_classic_read'):
-        return super(ResPartner, self.with_partner_relations_context())\
+        return super(ResPartner, self.with_partner_multi_relation_context())\
             .read(fields=fields, load=load)
 
     @api.multi
     def write(self, vals):
-        return super(ResPartner, self.with_partner_relations_context())\
+        return super(ResPartner, self.with_partner_multi_relation_context())\
             .write(vals)
 
     @api.multi
-    def with_partner_relations_context(self):
+    def with_partner_multi_relation_context(self):
         context = dict(self.env.context)
         if context.get('active_model', self._name) == self._name:
             existing = self.exists()

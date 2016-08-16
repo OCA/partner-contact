@@ -80,7 +80,7 @@
             <field name="state">code</field>
             <field name="type">ir.actions.server</field>
             <field name="model_id" ref="model_res_partner_relation"/>
-            <field name="code">action = self.get_action_related_partners(cr, uid, context.get('active_ids', []), dict(context or {}, partner_relations_show_side='right'))</field>
+            <field name="code">action = self.get_action_related_partners(cr, uid, context.get('active_ids', []), dict(context or {}, partner_multi_relation_show_side='right'))</field>
             <field name="condition">True</field>
             <field name="name">Show partners</field>
         </record>
@@ -90,7 +90,7 @@
             <field name="key">action</field>
             <field name="key2">client_action_multi</field>
             <field name="model">res.partner.relation.all</field>
-            <field name="value" eval="'ir.actions.server,%d' % ref('partner_relations.action_show_right_relation_partners')" />
+            <field name="value" eval="'ir.actions.server,%d' % ref('partner_multi_relation.action_show_right_relation_partners')" />
         </record>
 
     </data>
