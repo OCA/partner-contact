@@ -73,3 +73,7 @@ class TestPartnerFinancialRisk(TransactionCase):
         wiz.button_continue()
         self.assertAlmostEqual(self.partner.risk_invoice_open, 500.0)
         self.assertTrue(self.partner.risk_allow_edit)
+        self.partner.process_due_invoice()
+        self.assertEqual(self.env['ir.config_parameter'].get_param(
+            'partner_financial_risk.last_check'),
+            fields.Date.today())

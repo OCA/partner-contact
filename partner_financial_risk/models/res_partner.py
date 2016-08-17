@@ -136,3 +136,15 @@ class ResPartner(models.Model):
         res.extend([x[2] for x in tuple_list])
         res.append('credit_limit')
         return res
+
+    @api.model
+    def process_due_invoice(self):
+        today = fields.Date.today()
+        ConfigParameter = self.env['ir.config_parameter']
+        last_check = ConfigParameter.get_param(
+            'partner_financial_risk.last_check', default='2016-01-01')
+        invoices = self.env['account.invoice'].search([
+            ('date_due', '>=', last_check), ('date_due', '<', today)])
+        invoices.mapped('partner_id')._compute_risk_invoice()
+        ConfigParameter.set_param('partner_financial_risk.last_check', today)
+        return True

@@ -12,6 +12,7 @@
     'website': 'https://www.tecnativa.com',
     'depends': ['account'],
     'data': [
+        'data/partner_financial_risk_data.xml',
         'views/res_config_view.xml',
         'views/res_partner_view.xml',
         'views/account_invoice_view.xml',
