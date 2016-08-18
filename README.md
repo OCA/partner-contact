@@ -23,6 +23,7 @@ addon | version | summary
 [base_location_geonames_import](base_location_geonames_import/) | 9.0.1.0.0 | Import better zip entries from Geonames
 [base_partner_merge](base_partner_merge/) | 9.0.1.0.0 | Partner merge wizard without dependency on CRM
 [partner_address_street3](partner_address_street3/) | 8.0.0.1.0 | Street3 in addresses
+[partner_contact_birthdate](partner_contact_birthdate/) | 9.0.1.0.0 | Contact's birthdate
 [partner_contact_gender](partner_contact_gender/) | 9.0.1.1.0 | Add gender field to contacts
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 9.0.1.0.0 | Allow to have one contact in several partners
 [partner_contact_nationality](partner_contact_nationality/) | 9.0.1.0.0 | Add nationality field to contacts
@@ -43,7 +44,6 @@ addon | version | summary
 [firstname_display_name_trigger](firstname_display_name_trigger/) | 1.0 (unported) | Link module if partner_lastname and account_report_company are installed
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 (unported) | Partner auto salesman
 [partner_contact_address_detailed](partner_contact_address_detailed/) | 8.0.1.0.0 (unported) | All address data in summarized contact form
-[partner_contact_birthdate](partner_contact_birthdate/) | 8.0.1.0.0 (unported) | Contact's birthdate
 [partner_helper](partner_helper/) | 8.0.0.1.0 (unported) | Partner Helper
 [partner_relations](partner_relations/) | 8.0.1.1.0 (unported) | Partner relations
 [partner_street_number](partner_street_number/) | 8.0.0.1.0 (unported) | Introduces separate fields for street name and street number.
