@@ -7,47 +7,28 @@
             <field name="arch" type="xml">
                 <tree
                     string="Partner Relations"
-                    colors="gray:(date_end and date_end &lt; current_date) or not active;blue:date_start &gt; current_date"
+                    colors="gray:not active; blue:date_start &gt; current_date"
                     editable="top"
-                >
+                    >
                     <field
                         name="this_partner_id"
-                        invisible="1"
-                    />
+                        required="True"
+                        options="{'no_create': True}"
+                        />
                     <field
                         name="type_selection_id"
                         required="True"
-                        options="{'create': false, 'create_edit': false}"
-                    />
+                        options="{'no_create': True}"
+                        />
                     <field
                         name="other_partner_id"
-                        attrs="{
-                            'readonly': [('type_selection_id', '=', False)],
-                        }"
-                        options="{'create': false, 'create_edit': false}"
-                    />
+                        required="True"
+                        options="{'no_create': True}"
+                        />
                     <field name="date_start" />
                     <field name="date_end" />
-                    <field name="active" />
+                    <field name="active" invisible="1" />
                 </tree>
-            </field>
-        </record>
-
-        <record id="form_res_partner_relation_all" model="ir.ui.view">
-            <field name="model">res.partner.relation.all</field>
-            <field name="arch" type="xml">
-                <form string="Partner relation">
-                    <group>
-                        <field name="this_partner_id" />
-                        <field name="type_selection_id" />
-                        <field name="other_partner_id" />
-                    </group>
-                    <group>
-                        <field name="date_start" />
-                        <field name="date_end" />
-                        <field name="active" />
-                    </group>
-                </form>
             </field>
         </record>
 
@@ -55,29 +36,58 @@
             <field name="model">res.partner.relation.all</field>
             <field name="arch" type="xml">
                 <search string="Search Relations">
+                    <field name="any_partner_id" widget="many2one"/>
                     <field name="this_partner_id"/>
                     <field name="other_partner_id"/>
-                    <field name="type_id"/>
-                    <field name="active"/>
+                    <field name="type_selection_id"/>
+                    <filter
+                        string="Left to right"
+                        domain="[('record_type', '=', 'a')]"
+                        />
+                    <filter
+                        string="Right to left"
+                        domain="[('record_type', '=', 'b')]"
+                        />
+                    <filter
+                        string="Include past records"
+                        context="{'active_test': False}"
+                        />
                     <group expand="0" string="Group By">
-                        <filter string="Other Partner" context="{'group_by': 'other_partner_id'}"/>
-                        <filter string="Relationship Type" context="{'group_by': 'type_id'}"/>
+                        <filter
+                            string="One Partner"
+                            context="{'group_by': 'this_partner_id'}"
+                            />
+                        <filter
+                            string="Relationship Type"
+                            context="{'group_by': 'type_selection_id'}"
+                            />
+                        <filter
+                            string="Other Partner"
+                            context="{'group_by': 'other_partner_id'}"
+                            />
                     </group>
                 </search>
             </field>
         </record>
 
-        <record id="action_res_partner_relation_all" model="ir.actions.act_window">
+        <record
+            id="action_res_partner_relation_all"
+            model="ir.actions.act_window"
+            >
             <field name="name">Relations</field>
             <field name="res_model">res.partner.relation.all</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree</field>
             <field name="view_id" ref="tree_res_partner_relation_all"/>
-            <field name="search_view_id" ref="search_res_partner_relation_all"/>
-            <field name="domain">[('active', '=', True)]</field>
+            <field
+                name="search_view_id"
+                ref="search_res_partner_relation_all"
+                />
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    Record and track your partners' relations. Relations may be linked to other partners with a type either directly or inversely.
+                    Record and track your partners' relations. Relations may
+                    be linked to other partners with a type either directly
+                    or inversely.
                 </p>
             </field>
         </record>

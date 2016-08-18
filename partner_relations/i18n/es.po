@@ -125,7 +125,7 @@ msgid "Has former employee"
 msgstr "Tiene ex-empleado"
 
 #. module: partner_relations
-#: field:res.partner,search_relation_id:0
+#: field:res.partner,search_relation_type_id:0
 msgid "Has relation of type"
 msgstr "Tiene una relación de tipo"
 
