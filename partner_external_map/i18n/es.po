@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-14 11:14+0000\n"
-"PO-Revision-Date: 2016-04-05 10:01+0000\n"
+"POT-Creation-Date: 2016-08-18 02:46+0000\n"
+"PO-Revision-Date: 2016-08-17 06:56+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -30,11 +30,6 @@ msgid "City/Location"
 msgstr "Ciudad/Ubicación"
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_contact_type
-msgid "Contact type"
-msgstr "Tipo del contacto"
-
-#. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_uid
 msgid "Created by"
 msgstr "Creado por"
@@ -48,11 +43,6 @@ msgstr "Creado en"
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_display_name
 msgid "Display Name"
 msgstr ""
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_gender
-msgid "Gender"
-msgstr "Género"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_id
@@ -100,11 +90,6 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_contact_id
-msgid "Main Contact"
-msgstr "Contacto principal"
 
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
@@ -172,16 +157,6 @@ msgstr "Falta sitio web del mapa de la ruta: debes establecerlo en tus preferenc
 msgid ""
 "Missing start address for route map: you should set it in your preferences."
 msgstr "Falta la dirección de origen para el mapa de la ruta: debes establecerlo en tus preferencias."
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_nationality_id
-msgid "Nationality"
-msgstr "Nacionalidad"
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_other_contact_ids
-msgid "Others Positions"
-msgstr "Otras posiciones"
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_partner

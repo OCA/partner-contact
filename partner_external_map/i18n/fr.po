@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-14 11:14+0000\n"
-"PO-Revision-Date: 2016-04-05 10:00+0000\n"
+"POT-Creation-Date: 2016-08-18 02:46+0000\n"
+"PO-Revision-Date: 2016-08-17 06:56+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: French (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -29,11 +29,6 @@ msgid "City/Location"
 msgstr "Ville/location"
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_contact_type
-msgid "Contact type"
-msgstr ""
-
-#. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_uid
 msgid "Created by"
 msgstr "Créé par"
@@ -47,11 +42,6 @@ msgstr "Créé le"
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_display_name
 msgid "Display Name"
 msgstr "Intitulé"
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_gender
-msgid "Gender"
-msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_id
@@ -99,11 +89,6 @@ msgstr "Mis à jour par"
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_write_date
 msgid "Last Updated on"
 msgstr "Mis à jour le"
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_contact_id
-msgid "Main Contact"
-msgstr "Principal contact"
 
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
@@ -171,16 +156,6 @@ msgstr ""
 msgid ""
 "Missing start address for route map: you should set it in your preferences."
 msgstr ""
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_nationality_id
-msgid "Nationality"
-msgstr "Nationalité"
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_other_contact_ids
-msgid "Others Positions"
-msgstr "Fonctions"
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_partner
