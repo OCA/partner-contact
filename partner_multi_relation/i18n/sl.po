@@ -55,7 +55,7 @@ msgid "Allow both sides to be the same"
 msgstr "Dovoli, da sta obe strani enaki"
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation_type.py:68
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:68
 #, python-format
 msgid "Company"
 msgstr "Družba"
@@ -124,7 +124,7 @@ msgid "Has former employee"
 msgstr "Ima bivšega zaposlenega"
 
 #. module: partner_multi_relation
-#: field:res.partner,search_relation_id:0
+#: field:res.partner,search_relation_type_id:0
 msgid "Has relation of type"
 msgstr "Ima odnos tipa"
 
@@ -282,13 +282,13 @@ msgid "Partner relation"
 msgstr "Partnerski odnos"
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation.py:301
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:301
 #, python-format
 msgid "Partners cannot have a relation with themselves."
 msgstr "Partnerji ne morejo biti v odnosu sami s seboj."
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation_type.py:69
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:69
 #, python-format
 msgid "Person"
 msgstr "Oseba"
@@ -304,7 +304,7 @@ msgid "Record type"
 msgstr "Tip zapisa"
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation.py:370
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:370
 #, python-format
 msgid "Related partners"
 msgstr "Povezani partnerji"
@@ -398,19 +398,19 @@ msgid "Starting date"
 msgstr "Začetni datum"
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation.py:287
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:287
 #, python-format
 msgid "The %s partner is not applicable for this relation type."
 msgstr "Partner %s ni ustrezen za ta tip odnosa."
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation.py:254
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:254
 #, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr "Začetni datum ne more biti za končnim datumom."
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation.py:329
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:329
 #, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr "Podoben odnos s prekrivajočimi se datumi že obstaja."
@@ -425,7 +425,7 @@ msgid "Type"
 msgstr "Tip"
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner.py:122
+#: code:addons/partner_multi_relation/models/res_partner.py:122
 #, python-format
 msgid "Unsupported search operand \"%s\""
 msgstr "Nepodprt iskalni operand \"%s\""

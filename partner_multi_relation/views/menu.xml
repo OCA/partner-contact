@@ -5,7 +5,7 @@
             id="menu_res_partner_relation_sales"
             sequence="2"
             parent="base.menu_sales"
-            action="action_res_partner_relation"
+            action="action_res_partner_relation_all"
         />
 
         <act_window

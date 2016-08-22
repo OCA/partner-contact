@@ -56,7 +56,7 @@ msgid "Allow both sides to be the same"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation_type.py:68
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:68
 #, python-format
 msgid "Company"
 msgstr "Empresa"
@@ -125,7 +125,7 @@ msgid "Has former employee"
 msgstr "Tem ex-empregado"
 
 #. module: partner_multi_relation
-#: field:res.partner,search_relation_id:0
+#: field:res.partner,search_relation_type_id:0
 msgid "Has relation of type"
 msgstr "Tem relação do tipo"
 
@@ -283,13 +283,13 @@ msgid "Partner relation"
 msgstr "Relação parceiro"
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation.py:301
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:301
 #, python-format
 msgid "Partners cannot have a relation with themselves."
 msgstr "Parceiros não podem ter relacionamentos com ele mesmo."
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation_type.py:69
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:69
 #, python-format
 msgid "Person"
 msgstr "Pessoa"
@@ -305,7 +305,7 @@ msgid "Record type"
 msgstr "Tipo de registro"
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation.py:370
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:370
 #, python-format
 msgid "Related partners"
 msgstr "Parceiros relacionados"
@@ -399,19 +399,19 @@ msgid "Starting date"
 msgstr "Data de inicio"
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation.py:287
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:287
 #, python-format
 msgid "The %s partner is not applicable for this relation type."
 msgstr "O parceiro %s não é aplicavel a este tipo de relação."
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation.py:254
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:254
 #, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr "A data de inicio não pode ser após a data de fim."
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner_relation.py:329
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:329
 #, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr "Já existe uma relação similar com datas incompativeis."
@@ -426,7 +426,7 @@ msgid "Type"
 msgstr "Tipo"
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/model/res_partner.py:122
+#: code:addons/partner_multi_relation/models/res_partner.py:122
 #, python-format
 msgid "Unsupported search operand \"%s\""
 msgstr "Operador de busca não suportado \"%s\""
