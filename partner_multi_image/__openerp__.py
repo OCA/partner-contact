@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-# © 2009 Sharoon Thomas Open Labs Business Solutions
-# © 2014 Serv. Tecnol. Avanzados Pedro M. Baeza
-# © 2015 Antiun Ingeniería S.L. - Jairo Llopis
-# © 2016 Sodexis
+# Copyright 2009 Sharoon Thomas Open Labs Business Solutions
+# Copyright 2014 Serv. Tecnol. Avanzados Pedro M. Baeza
+# Copyright 2015 Antiun Ingeniería S.L. - Jairo Llopis
+# Copyright 2016 Sodexis
+# Copyright 2017 Tecmativa - Sergio Teruel
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
@@ -22,10 +23,4 @@
         'views/res_partner_view.xml',
     ],
     'installable': True,
-    "images": [
-        "images/product.png",
-        "images/db.png",
-        "images/file.png",
-        "images/url.png",
-    ],
 }

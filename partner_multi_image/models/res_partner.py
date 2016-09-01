@@ -8,7 +8,7 @@
 """Reference core image fields to multi-image variants."""
 
 
-from openerp import models, fields
+from openerp import fields, models
 
 
 class ResPartner(models.Model):
@@ -19,5 +19,12 @@ class ResPartner(models.Model):
     image = fields.Binary(
         related='image_main',
         store=False,
-        multi=False
+    )
+    image_medium = fields.Binary(
+        related='image_main_medium',
+        store=False,
+    )
+    image_small = fields.Binary(
+        related='image_main_small',
+        store=False,
     )
