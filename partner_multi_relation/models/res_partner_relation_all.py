@@ -74,7 +74,7 @@ class ResPartnerRelationAll(models.AbstractModel):
     any_partner_id = fields.Many2many(
         comodel_name='res.partner',
         string='Partner',
-        compute='_compute_any_partner_id',
+        compute=lambda self: None,
         search='_search_any_partner_id'
     )
 
@@ -124,14 +124,6 @@ CREATE OR REPLACE VIEW %(table)s AS
         return super(ResPartnerRelationAll, self)._auto_init(
             cr, context=context
         )
-
-    @api.depends('this_partner_id', 'other_partner_id')
-    def _compute_any_partner_id(self):
-        """Compute any_partner_id, used for searching for partner, independent
-        wether it is the one partner or the other partner in the relation.
-        """
-        for rec in self:
-            rec.any_partner_id = rec.this_partner_id + rec.other_partner_id
 
     @api.model
     def _search_any_partner_id(self, operator, value):
