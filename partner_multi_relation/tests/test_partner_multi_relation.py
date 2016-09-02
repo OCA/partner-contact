@@ -28,12 +28,6 @@ class TestPartnerRelation(common.TransactionCase):
             'is_company': True,
             'ref': 'PR02',
         })
-        self.type_company2person = self.type_model.create({
-            'name': 'mixed',
-            'name_inverse': 'mixed_inverse',
-            'contact_type_left': 'c',
-            'contact_type_right': 'p',
-        })
         # Create partners with specific categories:
         self.category_01_ngo = self.category_model.create({
             'name': 'NGO',
@@ -53,8 +47,14 @@ class TestPartnerRelation(common.TransactionCase):
             'ref': 'PR04',
             'category_id': [(4, self.category_02_volunteer.id)],
         })
-        # Determine the two records in res.partner.type.selection that came
-        # into existance by creating one res.partner.relation.type:
+        # Create a new relation type and then determine find the two
+        # resulting records in the relation type selection model:
+        self.type_company2person = self.type_model.create({
+            'name': 'mixed',
+            'name_inverse': 'mixed_inverse',
+            'contact_type_left': 'c',
+            'contact_type_right': 'p',
+        })
         selection_types = self.selection_model.search([
             ('type_id', '=', self.type_company2person.id),
         ])
@@ -92,6 +92,17 @@ class TestPartnerRelation(common.TransactionCase):
         )
         assert self.selection_ngo2volunteer, (
             "Failed to create NGO to volunteer selection in setup."
+        )
+
+    def test_selection_name_search(self):
+        """Test wether we can find type selection on reverse name."""
+        selection_types = self.selection_model.name_search(
+            name=self.selection_person2company.name
+        )
+        self.assertTrue(selection_types)
+        self.assertTrue(
+            (self.selection_person2company.id,
+             self.selection_person2company.name) in selection_types
         )
 
     def test_self_allowed(self):
@@ -190,6 +201,11 @@ class TestPartnerRelation(common.TransactionCase):
             ('search_relation_type_id', '=', 'unknown relation')
         ])
         self.assertFalse(partners)
+        # Check error with invalid search operator:
+        with self.assertRaises(ValidationError):
+            partners = self.partner_model.search([
+                ('search_relation_type_id', 'child_of', 'some parent')
+            ])
         partners = self.partner_model.search([
             ('search_relation_partner_id', '=', self.partner_02_company.id),
         ])
@@ -203,6 +219,17 @@ class TestPartnerRelation(common.TransactionCase):
             ('any_partner_id', '=', self.partner_02_company.id),
         ])
         self.assertEqual(len(both_relations), 2)
+        relation_ngo_volunteer = self.relation_all_model.create({
+            'this_partner_id': self.partner_03_ngo.id,
+            'type_selection_id': self.selection_ngo2volunteer.id,
+            'other_partner_id': self.partner_04_volunteer.id,
+        })
+        self.assertTrue(relation_ngo_volunteer)
+        partners = self.partner_model.search([
+            ('search_relation_partner_category_id', '=',
+             self.category_02_volunteer.id)
+        ])
+        self.assertTrue(self.partner_03_ngo in partners)
 
     def test_relation_all(self):
         """Test interactions through res.partner.relation.all."""
@@ -223,6 +250,21 @@ class TestPartnerRelation(common.TransactionCase):
                 self.partner_01_person.name,
             )
         )
+        # Partner should have one relation now:
+        self.assertEqual(self.partner_01_person.relation_count, 1)
+        # Check validation on overlapping dates:
+        with self.assertRaises(ValidationError):
+            relation_all_record.write({
+                'date_start': '2016-09-01',
+                'date_end': '2016-08-01',
+            })
+        # Check validation on overlapping records:
+        with self.assertRaises(ValidationError):
+            self.relation_all_model.create({
+                'this_partner_id': self.partner_02_company.id,
+                'type_selection_id': self.selection_company2person.id,
+                'other_partner_id': self.partner_01_person.id,
+            })
         # Check wether the inverse record is present and looks like expected:
         inverse_relation = self.relation_all_model.search([
             ('this_partner_id', '=', self.partner_01_person.id),
@@ -242,27 +284,92 @@ class TestPartnerRelation(common.TransactionCase):
         self.assertTrue(
             ('contact_type_this', '=', 'c') in domain['type_selection_id']
         )
-        relation_all_record.write({
-            'type_id': self.type_company2person.id,
-        })
         # Check wether underlying record is removed when record is removed:
         relation = relation_all_record.relation_id
         relation_all_record.unlink()
         self.assertFalse(relation.exists())
         # Check wether we can also create the relation using inverse type:
+        partner_another_person = self.partner_model.create({
+            'name': 'Another person',
+            'is_company': False,
+            'ref': 'AP',
+        })
         relation_all_record = self.relation_all_model.create({
-            'this_partner_id': self.partner_01_person.id,
+            'this_partner_id': partner_another_person.id,
             'type_selection_id': self.selection_person2company.id,
             'other_partner_id': self.partner_02_company.id,
         })
         # Check wether display name is what we should expect:
         self.assertEqual(
             relation_all_record.display_name, '%s %s %s' % (
-                self.partner_01_person.name,
+                partner_another_person.name,
                 self.selection_person2company.name,
                 self.partner_02_company.name,
             )
         )
+        # Check domain selections that result in errors, or that lead to
+        # empty selections. Use a new relation_all record for this:
+        category_nobody = self.category_model.create({
+            'name': 'Nobody',
+        })
+        type_nobody = self.type_model.create({
+            'name': 'has relation with nobody',
+            'name_inverse': 'nobody has relation with',
+            'contact_type_left': 'c',
+            'contact_type_right': 'p',
+            'partner_category_right': category_nobody.id,
+        })
+        selection_nobody = self.selection_model.search([
+            ('type_id', '=', type_nobody.id),
+            ('is_inverse', '=', False),
+        ])
+        relation_nobody = self.relation_all_model.with_context(
+            lang='en_US',  # Need English, because we will compare text
+        ).new({
+            'this_partner_id': self.partner_02_company.id,
+            'type_selection_id': selection_nobody.id,
+        })
+        warning = relation_nobody.onchange_type_selection_id()['warning']
+        self.assertTrue('message' in warning)
+        self.assertTrue('No other partner available' in warning['message'])
+        with self.env.do_in_draft():
+            relation_nobody.other_partner_id = self.partner_01_person
+        warning = relation_nobody.onchange_type_selection_id()['warning']
+        self.assertTrue('message' in warning)
+        self.assertTrue('incompatible' in warning['message'])
+        warning = relation_nobody.onchange_partner_id()['warning']
+        self.assertTrue('message' in warning)
+        self.assertTrue('incompatible' in warning['message'])
+        # check the other side as wel:
+        empty_category = self.category_model.browse([])
+        empty_partner = self.partner_model.browse([])
+        type_nobody.write({
+            'partner_category_left': category_nobody.id,
+            'partner_category_right': empty_category,
+        })
+        selection_nobody.invalidate_cache(ids=selection_nobody.ids)
+        with self.env.do_in_draft():
+            relation_nobody.this_partner_id = empty_partner
+            relation_nobody.other_partner_id = empty_partner
+        warning = relation_nobody.onchange_type_selection_id()['warning']
+        self.assertTrue('message' in warning)
+        self.assertTrue('No this partner available' in warning['message'])
+        with self.env.do_in_draft():
+            relation_nobody.this_partner_id = self.partner_02_company
+        warning = relation_nobody.onchange_type_selection_id()['warning']
+        self.assertTrue('message' in warning)
+        self.assertTrue('incompatible' in warning['message'])
+        # And finally check with empty values as well:
+        empty_selection = self.selection_model.browse([])
+        with self.env.do_in_draft():
+            relation_nobody.this_partner_id = empty_partner
+            relation_nobody.type_selection_id = empty_selection
+            relation_nobody.other_partner_id = empty_partner
+        result = relation_nobody.onchange_partner_id()
+        self.assertTrue('domain' in result)
+        self.assertFalse('warning' in result)
+        self.assertTrue('type_selection_id' in result['domain'])
+        self.assertFalse(result['domain']['type_selection_id'])
 
     def test_symmetric(self):
         """Test creating symmetric relation."""

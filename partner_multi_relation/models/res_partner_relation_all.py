@@ -155,8 +155,6 @@ CREATE OR REPLACE VIEW %(table)s AS
             for partner, or wrong selection of partner already selected.
             """
             warning = {}
-            if not partner_domain:
-                return warning
             if partner:
                 test_domain = [('id', '=', partner.id)] + partner_domain
             else:
@@ -164,16 +162,17 @@ CREATE OR REPLACE VIEW %(table)s AS
             partner_model = self.env['res.partner']
             partners_found = partner_model.search(test_domain, limit=1)
             if not partners_found:
+                warning['title'] = _('Error!')
                 if partner:
-                    message = _(
-                        '%s partner incompatible with relation type.' %
+                    warning['message'] = (
+                        _('%s partner incompatible with relation type.') %
                         side.title()
                     )
                 else:
-                    message = _(
-                        'No %s partner available for relation type.' % side
+                    warning['message'] = (
+                        _('No %s partner available for relation type.') %
+                        side
                     )
-                warning = {'title': _('Error!'), 'message': message}
             return warning
 
         this_partner_domain = []
@@ -203,17 +202,17 @@ CREATE OR REPLACE VIEW %(table)s AS
             'other_partner_id': other_partner_domain,
         }}
         # Check wether domain results in no choice or wrong choice of partners:
-        warning = check_partner_domain(
-            self.this_partner_id, this_partner_domain, _('this')
-        )
-        if warning:
-            result['warning'] = warning
-        else:
+        warning = {}
+        if this_partner_domain:
+            warning = check_partner_domain(
+                self.this_partner_id, this_partner_domain, _('this')
+            )
+        if not warning and other_partner_domain:
             warning = check_partner_domain(
                 self.other_partner_id, other_partner_domain, _('other')
             )
-            if warning:
-                result['warning'] = warning
+        if warning:
+            result['warning'] = warning
         return result
 
     @api.onchange(
@@ -224,31 +223,25 @@ CREATE OR REPLACE VIEW %(table)s AS
         """Set domain on type_selection_id based on partner(s) selected."""
 
         def check_type_selection_domain(type_selection_domain):
-            """Check wether type_selection_domain results in empty selection
-            for type_selection_id, or wrong selection if already selected.
+            """If type_selection_id already selected, check wether it
+            is compatible with the computed type_selection_domain. An empty
+            selection can practically only occur in a practically empty
+            database, and will not lead to problems. Therefore not tested.
             """
             warning = {}
-            if not type_selection_domain:
+            if not (type_selection_domain and self.type_selection_id):
                 return warning
-            if self.type_selection_id:
-                test_domain = (
-                    [('id', '=', self.type_selection_id.id)] +
-                    type_selection_domain
-                )
-            else:
-                test_domain = type_selection_domain
+            test_domain = (
+                [('id', '=', self.type_selection_id.id)] +
+                type_selection_domain
+            )
             type_model = self.env['res.partner.relation.type.selection']
             types_found = type_model.search(test_domain, limit=1)
             if not types_found:
-                if self.type_selection_id:
-                    message = _(
-                        'Relation type incompatible with selected partner(s).'
-                    )
-                else:
-                    message = _(
-                        'No relation type available for selected partners.'
-                    )
-                warning = {'title': _('Error!'), 'message': message}
+                warning['title'] = _('Error!')
+                warning['message'] = _(
+                    'Relation type incompatible with selected partner(s).'
+                )
             return warning
 
         type_selection_domain = []

@@ -116,9 +116,6 @@ class ResPartner(models.Model):
     def _search_relation_date(self, operator, value):
         """Look only for relations valid at date of search."""
         # pylint: disable=no-self-use
-        if operator != '=':
-            raise exceptions.ValidationError(
-                _('Unsupported search operator "%s"') % operator)
         return [
             '&',
             '|',
