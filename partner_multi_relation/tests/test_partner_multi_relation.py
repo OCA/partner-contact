@@ -199,6 +199,10 @@ class TestPartnerRelation(common.TransactionCase):
         ])
         self.assertTrue(self.partner_01_person in partners)
         self.assertTrue(self.partner_02_company in partners)
+        both_relations = self.relation_all_model.search([
+            ('any_partner_id', '=', self.partner_02_company.id),
+        ])
+        self.assertEqual(len(both_relations), 2)
 
     def test_relation_all(self):
         """Test interactions through res.partner.relation.all."""
@@ -245,6 +249,20 @@ class TestPartnerRelation(common.TransactionCase):
         relation = relation_all_record.relation_id
         relation_all_record.unlink()
         self.assertFalse(relation.exists())
+        # Check wether we can also create the relation using inverse type:
+        relation_all_record = self.relation_all_model.create({
+            'this_partner_id': self.partner_01_person.id,
+            'type_selection_id': self.selection_person2company.id,
+            'other_partner_id': self.partner_02_company.id,
+        })
+        # Check wether display name is what we should expect:
+        self.assertEqual(
+            relation_all_record.display_name, '%s %s %s' % (
+                self.partner_01_person.name,
+                self.selection_person2company.name,
+                self.partner_02_company.name,
+            )
+        )
 
     def test_symmetric(self):
         """Test creating symmetric relation."""
