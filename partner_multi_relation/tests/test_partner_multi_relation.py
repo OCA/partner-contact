@@ -265,6 +265,19 @@ class TestPartnerRelation(common.TransactionCase):
                 'type_selection_id': self.selection_company2person.id,
                 'other_partner_id': self.partner_01_person.id,
             })
+        # Check wether we can create non overlapping records:
+        relation_all_record.write({
+            'date_start': '2015-09-01',
+            'date_end': '2016-08-31',
+        })
+        relation_another_record = self.relation_all_model.create({
+            'this_partner_id': self.partner_02_company.id,
+            'type_selection_id': self.selection_company2person.id,
+            'other_partner_id': self.partner_01_person.id,
+            'date_start': '2016-09-01',
+            'date_end': '2017-08-31',
+        })
+        self.assertTrue(relation_another_record)
         # Check wether the inverse record is present and looks like expected:
         inverse_relation = self.relation_all_model.search([
             ('this_partner_id', '=', self.partner_01_person.id),
