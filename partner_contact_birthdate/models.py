@@ -51,8 +51,3 @@ class Partner(models.Model):
             _logger.warn(
                 _("Could not convert '{0.birthdate}' to date in "
                   "res.partner {0.id} ({0.name}). Skipping.").format(self))
-
-    @api.model
-    def _birthdate_install(self):
-        """Export all old birthdates to the new format."""
-        self.search([('birthdate', "!=", False)])._inverse_birthdate()
