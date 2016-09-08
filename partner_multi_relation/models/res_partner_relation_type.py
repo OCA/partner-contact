@@ -4,6 +4,7 @@
 """Define the type of relations that can exist between partners."""
 from openerp import _, api, fields, models
 from openerp.exceptions import ValidationError
+from openerp.osv.expression import AND, OR
 
 
 HANDLE_INVALID_ONCHANGE = [
@@ -97,6 +98,30 @@ class ResPartnerRelationType(models.Model):
     def check_existing(self, vals):
         """Check wether records exist that do not fit new criteria."""
         relation_model = self.env['res.partner.relation']
+
+        def get_type_condition(vals, side):
+            """Add if needed check for contact type."""
+            fieldname1 = 'contact_type_%s' % side
+            fieldname2 = '%s_partner_id.is_company' % side
+            contact_type = fieldname1 in vals and vals[fieldname1] or False
+            if contact_type == 'c':
+                # Records that are not companies are invalid:
+                return [(fieldname2, '=', False)]
+            if contact_type == 'p':
+                # Records that are companies are invalid:
+                return [(fieldname2, '=', True)]
+            return []
+
+        def get_category_condition(vals, side):
+            """Add if needed check for partner category."""
+            fieldname1 = 'partner_category_%s' % side
+            fieldname2 = '%s_partner_id.category_id' % side
+            category_id = fieldname1 in vals and vals[fieldname1] or False
+            if category_id:
+                # Records that do not have the specified category are invalid:
+                return [(fieldname2, 'not in', [category_id])]
+            return []
+
         for rec in self:
             handling = (
                 'handle_invalid_onchange' in vals and
@@ -105,60 +130,22 @@ class ResPartnerRelationType(models.Model):
             )
             if handling == 'ignore':
                 continue
+            invalid_conditions = []
+            for side in ['left', 'right']:
+                invalid_conditions = OR([
+                    invalid_conditions,
+                    get_type_condition(vals, side),
+                ])
+                invalid_conditions = OR([
+                    invalid_conditions,
+                    get_category_condition(vals, side),
+                ])
+            if not invalid_conditions:
+                return
             # only look at relations for this type
-            invalid_domain = [
-                ('type_id', '=', rec.id),
-            ]
-            contact_type_left = (
-                'contact_type_left' in vals and vals['contact_type_left'] or
-                False
-            )
-            if contact_type_left == 'c':
-                # Valid records are companies:
-                invalid_domain.append(
-                    ('left_partner_id.is_company', '=', False)
-                )
-            if contact_type_left == 'p':
-                # Valid records are persons:
-                invalid_domain.append(
-                    ('left_partner_id.is_company', '=', True)
-                )
-            contact_type_right = (
-                'contact_type_right' in vals and vals['contact_type_right'] or
-                False
-            )
-            if contact_type_right == 'c':
-                # Valid records are companies:
-                invalid_domain.append(
-                    ('right_partner_id.is_company', '=', False)
-                )
-            if contact_type_right == 'p':
-                # Valid records are persons:
-                invalid_domain.append(
-                    ('right_partner_id.is_company', '=', True)
-                )
-            partner_category_left = (
-                'partner_category_left' in vals and
-                vals['partner_category_left'] or
-                False
-            )
-            if partner_category_left:
-                # records that do not have the specified category are invalid:
-                invalid_domain.append(
-                    ('left_partner_id.category_id', 'not in',
-                     partner_category_left)
-                )
-            partner_category_right = (
-                'partner_category_right' in vals and
-                vals['partner_category_right'] or
-                False
-            )
-            if partner_category_right:
-                # records that do not have the specified category are invalid:
-                invalid_domain.append(
-                    ('right_partner_id.category_id', 'not in',
-                     partner_category_right)
-                )
+            invalid_domain = AND([
+                [('type_id', '=', rec.id)], invalid_conditions
+            ])
             invalid_relations = relation_model.with_context(
                 active_test=False
             ).search(invalid_domain)
