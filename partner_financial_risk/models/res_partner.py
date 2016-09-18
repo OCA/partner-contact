@@ -29,14 +29,14 @@ class ResPartner(models.Model):
              'not exceeded, considering Due Margin set in account '
              'settings')
     risk_invoice_unpaid_include = fields.Boolean(
-        string='Include Due Invoices', help='Full risk computation')
+        string='Include Unpaid Invoices', help='Full risk computation')
     risk_invoice_unpaid_limit = fields.Monetary(
-        string='Limit In Due Invoices', help='Set 0 if it is not locked')
+        string='Limit In Unpaid Invoices', help='Set 0 if it is not locked')
     risk_invoice_unpaid = fields.Monetary(
         compute='_compute_risk_invoice', store=True,
-        string='Total Due Invoices',
+        string='Total Unpaid Invoices',
         help='Residual amount of invoices in Open state and the date due is '
-             'exceeded, considering Due Margin set in account settings')
+             'exceeded, considering Unpaid Margin set in account settings')
 
     risk_account_amount_include = fields.Boolean(
         string='Include Other Account Amount', help='Full risk computation')
@@ -68,7 +68,7 @@ class ResPartner(models.Model):
     @api.multi
     @api.depends('invoice_ids', 'invoice_ids.state',
                  'invoice_ids.amount_total', 'invoice_ids.residual',
-                 'invoice_ids.company_id.invoice_due_margin')
+                 'invoice_ids.company_id.invoice_unpaid_margin')
     def _compute_risk_invoice(self):
         max_date = self._max_risk_date_due()
         for partner in self:
@@ -112,7 +112,7 @@ class ResPartner(models.Model):
     @api.model
     def _max_risk_date_due(self):
         return fields.Date.to_string(datetime.today().date() - relativedelta(
-            days=self.env.user.company_id.invoice_due_margin))
+            days=self.env.user.company_id.invoice_unpaid_margin))
 
     @api.model
     def _risk_field_list(self):
@@ -129,7 +129,7 @@ class ResPartner(models.Model):
 
     @api.model
     def _get_depends_compute_risk_exception(self):
-        # TODO: Improve code without lose performance
+        # TODO: Improve code without performance loss
         tuple_list = self._risk_field_list()
         res = [x[0] for x in tuple_list]
         res.extend([x[1] for x in tuple_list])
@@ -138,7 +138,7 @@ class ResPartner(models.Model):
         return res
 
     @api.model
-    def process_due_invoice(self):
+    def process_unpaid_invoices(self):
         today = fields.Date.today()
         ConfigParameter = self.env['ir.config_parameter']
         last_check = ConfigParameter.get_param(

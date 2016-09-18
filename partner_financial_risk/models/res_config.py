@@ -8,5 +8,5 @@ from openerp import fields, models
 class AccountConfigSettings(models.TransientModel):
     _inherit = 'account.config.settings'
 
-    invoice_due_margin = fields.Integer(
-        related='company_id.invoice_due_margin')
+    invoice_unpaid_margin = fields.Integer(
+        related='company_id.invoice_unpaid_margin')

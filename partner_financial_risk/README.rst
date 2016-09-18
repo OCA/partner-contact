@@ -8,27 +8,31 @@ Partner Financial Risk
 
 Adds a new page in partner to manage its *Financial Risk*.
 
-If any limit is exceed the partner gets forbidden to confirm customer invoice.
+If any limit is exceeded, you won't be able to confirm any of its invoices
+unless you are authorized (Account Adviser group).
 
 Configuration
 =============
 
 To configure this module, you need to:
 
-#. Go to *Invoicing > Configuration > Settings > Invoicing & Payments*
-#. Go to *Financial Risk* and set *Due Margin* (This field adds days of margin
-   before that a invoice is consider as unpaid)
+#. Go to *Invoicing/Accounting > Configuration > Settings > Invoicing & Payments*
+#. In the *Financial Risk* section, fill *Unpaid Margin* for setting the number
+   of days to last after the due date to consider an invoice as unpaid.
 
 Usage
 =====
 
 To use this module, you need to:
 
-#. Go to *Customers > Financial Risk*
+#. Go to *Invoicing/Accounting > Sales > Customers*.
+#. Select an existing customer or create a new one.
+#. Open the *Financial Risk* tab.
 #. Set limits and choose options to compute in credit limit.
-#. Go to *Invoicing > Sales > Customer invoices* and create new customer
-   invoices.
-
+#. Go to *Invoicing/Accounting > Sales > Customer invoices* and create new
+   customer invoices.
+#. Test the restriction trying to create an invoice for the partner for an
+   amount higher of the limit you have set.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot

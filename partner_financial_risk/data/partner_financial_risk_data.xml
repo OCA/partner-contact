@@ -9,7 +9,7 @@
         <field name="numbercall">-1</field>
         <field name="doall" eval="False"/>
         <field name="model" eval="'res.partner'"/>
-        <field name="function" eval="'process_due_invoice'"/>
+        <field name="function" eval="'process_unpaid_invoices'"/>
         <field name="args" eval="'()'"/>
     </record>
 </odoo>
