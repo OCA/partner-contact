@@ -3,13 +3,14 @@
 # * partner_contact_in_several_companies
 # 
 # Translators:
+# Antonio Trueba, 2016
 # Erwin van der Ploeg <erwin@odooexperts.nl>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-20 01:52+0000\n"
-"PO-Revision-Date: 2016-03-25 12:34+0000\n"
+"POT-Creation-Date: 2016-08-20 23:45+0000\n"
+"PO-Revision-Date: 2016-09-17 18:43+0000\n"
 "Last-Translator: Erwin van der Ploeg <erwin@odooexperts.nl>\n"
 "Language-Team: Dutch (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -103,7 +104,7 @@ msgstr "Relatie"
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "Person"
-msgstr ""
+msgstr "Persoon"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit

@@ -3,11 +3,15 @@
 # * partner_identification
 # 
 # Translators:
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2015
+# Hotellook, 2014
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-20 01:37+0000\n"
+"POT-Creation-Date: 2016-08-20 23:45+0000\n"
 "PO-Revision-Date: 2016-03-19 05:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/it/)\n"
@@ -78,7 +82,7 @@ msgstr "Creato il"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome da visualizzare"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:66

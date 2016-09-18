@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-30 12:05+0000\n"
+"POT-Creation-Date: 2016-08-20 23:45+0000\n"
 "PO-Revision-Date: 2016-03-19 05:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Finnish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/fi/)\n"
@@ -78,7 +78,7 @@ msgstr "Luotu"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nimi"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:66
@@ -153,7 +153,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category___last_update
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Viimeksi muokattu"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_uid
@@ -175,7 +175,7 @@ msgstr ""
 #. module: partner_identification
 #: selection:res.partner.id_number,status:0
 msgid "New"
-msgstr ""
+msgstr "Uusi"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_comment
