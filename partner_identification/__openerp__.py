@@ -25,5 +25,5 @@
               'Odoo Community Association (OCA)'
     'website': 'https://odoo-community.org/',
     'license': 'AGPL-3',
-    'installable': True,
+    'installable': False,
 }
