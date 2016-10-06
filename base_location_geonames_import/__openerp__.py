@@ -21,5 +21,5 @@
     'data': [
         'wizard/geonames_import_view.xml',
         ],
-    'installable': True,
+    'installable': False,
 }
