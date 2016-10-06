@@ -4,7 +4,7 @@
 # © 2015 Grupo ESOC (<http://www.grupoesoc.es>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 import logging
-from openerp import api, fields, models
+from odoo import api, fields, models
 from .. import exceptions
 
 
@@ -150,7 +150,6 @@ class ResPartner(models.Model):
                 not (self.firstname or self.lastname)):
             raise exceptions.EmptyNamesError(self)
 
-    @api.one
     @api.onchange("firstname", "lastname")
     def _onchange_subnames(self):
         """Avoid recursion when the user changes one of these fields.
@@ -162,7 +161,6 @@ class ResPartner(models.Model):
         # See https://github.com/odoo/odoo/issues/7472#issuecomment-119503916.
         self.env.context = self.with_context(skip_onchange=True).env.context
 
-    @api.one
     @api.onchange("name")
     def _onchange_name(self):
         """Ensure :attr:`~.name` is inverted in the UI."""

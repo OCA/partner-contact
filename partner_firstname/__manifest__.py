@@ -7,7 +7,7 @@
 {
     'name': 'Partner first name and last name',
     'summary': "Split first name and last name for non company partners",
-    'version': '9.0.1.0.0',
+    'version': '10.0.1.0.0',
     'author': "Camptocamp, "
               "Grupo ESOC Ingeniería de Servicios, "
               "Odoo Community Association (OCA)",
@@ -22,9 +22,6 @@
         'views/res_user.xml',
         'data/res_partner.yml',
     ],
-    'demo': [],
-    'test': [],
     'auto_install': False,
-    'installable': False,
-    'images': []
+    'installable': True,
 }
