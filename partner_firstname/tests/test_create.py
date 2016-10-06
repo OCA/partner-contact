@@ -4,7 +4,7 @@
 
 """Test default values for models."""
 
-from openerp.tests.common import TransactionCase
+from odoo.tests.common import TransactionCase
 from .base import MailInstalled
 
 
