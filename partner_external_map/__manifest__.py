@@ -23,5 +23,5 @@
         'security/ir.model.access.csv',
     ],
     'post_init_hook': 'set_default_map_settings',
-    'installable': True,
+    'installable': False,
 }
