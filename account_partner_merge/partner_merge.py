@@ -18,10 +18,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv import orm
+from odoo import models
 
 
-class MergePartnerAutomatic(orm.TransientModel):
+class MergePartnerAutomatic(models.TransientModel):
     _inherit = 'base.partner.merge.automatic.wizard'
 
     def _update_values(self, cr, uid, src_partners, dst_partner, context=None):

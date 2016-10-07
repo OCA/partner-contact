@@ -29,14 +29,14 @@ ResPartnerRelationTypeSelection.caller_name asc;
 '''
 
 from openerp import api
-from openerp.osv import fields
-from openerp.osv import orm
+from openerp import fields
+from odoo import models
 from openerp.tools import drop_view_if_exists
 from .res_partner_relation_type import ResPartnerRelationType
 from . import PADDING
 
 
-class ResPartnerRelationTypeSelection(orm.Model):
+class ResPartnerRelationTypeSelection(models.Model):
     '''Virtual relation types'''
 
     _RECORD_TYPES = [

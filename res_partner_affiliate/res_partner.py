@@ -19,10 +19,10 @@
 #
 ##############################################################################
 
-from openerp.osv import orm, fields
+from openerp import fields
 
 
-class ResPartner(orm.Model):
+class ResPartner(models.Model):
     """
     Add relation affiliate_ids
     """

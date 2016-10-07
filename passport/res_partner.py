@@ -20,10 +20,10 @@
 #
 ##############################################################################
 
-from openerp.osv import orm, fields
+from openerp import fields
 
 
-class res_partner(orm.Model):
+class res_partner(models.Model):
     _inherit = 'res.partner'
     _columns = {
         'passport_ids': fields.one2many(

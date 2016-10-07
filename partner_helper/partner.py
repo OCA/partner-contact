@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp.osv import orm
+from odoo import models
 
 
 def split_char(char, output_number, size):
@@ -39,7 +39,7 @@ def split_char(char, output_number, size):
     return result
 
 
-class ResPartner(orm.Model):
+class ResPartner(models.Model):
     _inherit = "res.partner"
 
     def _get_split_address(
