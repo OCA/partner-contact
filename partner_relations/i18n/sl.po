@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-17 18:40+0000\n"
-"PO-Revision-Date: 2016-09-17 18:43+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"POT-Creation-Date: 2016-09-18 00:18+0000\n"
+"PO-Revision-Date: 2016-09-18 08:44+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: code:addons/partner_relations/models/res_partner_relation_all.py:170
 #, python-format
 msgid "%s partner incompatible with relation type."
-msgstr ""
+msgstr "Partner %s ni združljiv s tipom odnosa."
 
 #. module: partner_relations
 #: model:ir.actions.act_window,help:partner_relations.action_res_partner_relation_all
@@ -33,7 +33,7 @@ msgid ""
 "                    or inversely.\n"
 "                </p>\n"
 "            "
-msgstr ""
+msgstr "<p class=\"oe_view_nocontent_create\">\n                    Beležite in sledite odnosom med partnerji. Odnosi so\n                    lahko povezani z ostalimi partnerji neposredno\n                    ali inverzno.\n                </p>\n            "
 
 #. module: partner_relations
 #: field:res.partner.relation.all,active:0
@@ -60,7 +60,7 @@ msgstr "Vsi odnosi s trenutnim partnerjem"
 #: selection:res.partner.relation.type,handle_invalid_onchange:0
 #, python-format
 msgid "Allow existing relations that do not fit changed conditions"
-msgstr ""
+msgstr "Dovoli obstoječa razmerja, ki ne ustrezajo spremenjenim pogojem."
 
 #. module: partner_relations
 #: field:res.partner.relation,create_uid:0
@@ -89,7 +89,7 @@ msgstr "Tip partnerja na trenutnem zapisu"
 #: selection:res.partner.relation.type,handle_invalid_onchange:0
 #, python-format
 msgid "Delete relations that do not fit changed conditions"
-msgstr ""
+msgstr "Izbriši razmerja, ki ne ustrezajo spremenjenim pogojem."
 
 #. module: partner_relations
 #: field:res.partner.relation,right_partner_id:0
@@ -109,14 +109,14 @@ msgstr "Prikazni naziv"
 #: selection:res.partner.relation.type,handle_invalid_onchange:0
 #, python-format
 msgid "Do not allow change that will result in invalid relations"
-msgstr ""
+msgstr "Ne dovoli sprememb, ki bi vodile v neveljavne odnose"
 
 #. module: partner_relations
 #: code:addons/partner_relations/models/res_partner_relation_type.py:16
 #: selection:res.partner.relation.type,handle_invalid_onchange:0
 #, python-format
 msgid "End relations per today, if they do not fit changed conditions"
-msgstr ""
+msgstr "Zaključi razmerja do danes, ki ne ustrezajo spremenjenim pogojem"
 
 #. module: partner_relations
 #: field:res.partner.relation,date_end:0
@@ -129,7 +129,7 @@ msgstr "Končni datum"
 #: code:addons/partner_relations/models/res_partner_relation_all.py:243
 #, python-format
 msgid "Error!"
-msgstr ""
+msgstr "Napaka!"
 
 #. module: partner_relations
 #: view:res.partner.relation.all:partner_relations.search_res_partner_relation_all
@@ -161,12 +161,12 @@ msgstr "ID"
 #. module: partner_relations
 #: view:res.partner.relation.all:partner_relations.search_res_partner_relation_all
 msgid "Include past records"
-msgstr ""
+msgstr "Vključi pretekle zapise"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,handle_invalid_onchange:0
 msgid "Invalid relation handling"
-msgstr ""
+msgstr "Ravnanje z neveljavnimi odnosi"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,name_inverse:0
@@ -176,12 +176,12 @@ msgstr "Inverzni naziv"
 #. module: partner_relations
 #: help:res.partner.relation.type.selection,is_inverse:0
 msgid "Inverse relations are from right to left partner."
-msgstr ""
+msgstr "Inverzni odnosi so od desnega proti levemu partnerju."
 
 #. module: partner_relations
 #: field:res.partner.relation.type.selection,is_inverse:0
 msgid "Is reverse type?"
-msgstr ""
+msgstr "Vzvratni tip?"
 
 #. module: partner_relations
 #: field:res.partner.relation,__last_update:0
@@ -211,7 +211,7 @@ msgstr "Kategorija levega partnerja"
 #. module: partner_relations
 #: selection:res.partner.relation.all,record_type:0
 msgid "Left partner to right partner"
-msgstr ""
+msgstr "Levi partner proti desnemu"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,contact_type_left:0
@@ -226,7 +226,7 @@ msgstr "Leva stran odnosa"
 #. module: partner_relations
 #: view:res.partner.relation.all:partner_relations.search_res_partner_relation_all
 msgid "Left to right"
-msgstr ""
+msgstr "Levi proti desnemu"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,name:0
@@ -238,19 +238,19 @@ msgstr "Naziv"
 #: code:addons/partner_relations/models/res_partner_relation_all.py:175
 #, python-format
 msgid "No %s partner available for relation type."
-msgstr ""
+msgstr "Ni partnerja %s na voljo za tip odnosa."
 
 #. module: partner_relations
 #: view:res.partner.relation.all:partner_relations.search_res_partner_relation_all
 #: field:res.partner.relation.all,this_partner_id:0
 msgid "One Partner"
-msgstr ""
+msgstr "En partner"
 
 #. module: partner_relations
 #: code:addons/partner_relations/models/res_partner_relation_type.py:84
 #, python-format
 msgid "Organisation"
-msgstr ""
+msgstr "Organizacija"
 
 #. module: partner_relations
 #: view:res.partner.relation.all:partner_relations.search_res_partner_relation_all
@@ -310,7 +310,7 @@ msgstr "Oseba"
 #. module: partner_relations
 #: view:res.partner.relation.type:partner_relations.form_res_partner_relation_type
 msgid "Properties"
-msgstr ""
+msgstr "Lastnosti"
 
 #. module: partner_relations
 #: field:res.partner.relation.all,record_type:0
@@ -320,13 +320,13 @@ msgstr "Tip zapisa"
 #. module: partner_relations
 #: help:res.partner.relation.all,active:0
 msgid "Records with date_end in the past are inactive"
-msgstr ""
+msgstr "Zapisi z datumom zaključka v preteklosti so neaktivni."
 
 #. module: partner_relations
 #: field:res.partner.relation.type,allow_self:0
 #: field:res.partner.relation.type.selection,allow_self:0
 msgid "Reflexive"
-msgstr ""
+msgstr "Povratni"
 
 #. module: partner_relations
 #: field:res.partner.relation.all,relation_id:0
@@ -347,7 +347,7 @@ msgstr "Tip odnosa"
 #: code:addons/partner_relations/models/res_partner_relation_all.py:244
 #, python-format
 msgid "Relation type incompatible with selected partner(s)."
-msgstr ""
+msgstr "Tip odnosa nezdružljiv z izborom partnerja(ev)."
 
 #. module: partner_relations
 #: field:res.partner,search_relation_date:0
@@ -374,7 +374,7 @@ msgstr "Kategorija desnega partnerja"
 #. module: partner_relations
 #: selection:res.partner.relation.all,record_type:0
 msgid "Right partner to left partner"
-msgstr ""
+msgstr "Desni partner proti levemu"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,contact_type_right:0
@@ -389,7 +389,7 @@ msgstr "Desna stran odnosa"
 #. module: partner_relations
 #: view:res.partner.relation.all:partner_relations.search_res_partner_relation_all
 msgid "Right to left"
-msgstr ""
+msgstr "Desni proti levemu"
 
 #. module: partner_relations
 #: view:res.partner.relation.all:partner_relations.search_res_partner_relation_all
@@ -416,13 +416,13 @@ msgstr "Začetni datum"
 #: field:res.partner.relation.type,is_symmetric:0
 #: field:res.partner.relation.type.selection,is_symmetric:0
 msgid "Symmetric"
-msgstr ""
+msgstr "Simetrični"
 
 #. module: partner_relations
 #: code:addons/partner_relations/models/res_partner_relation.py:102
 #, python-format
 msgid "The %s partner does not have category %s."
-msgstr ""
+msgstr "Partner %s nima kategorije %s."
 
 #. module: partner_relations
 #: code:addons/partner_relations/models/res_partner_relation.py:96
@@ -442,7 +442,7 @@ msgstr "Začetni datum ne more biti za končnim datumom."
 msgid ""
 "There are already relations not satisfying the conditions for partner type "
 "or category."
-msgstr ""
+msgstr "Nekateri odnosi že zdaj ne izpolnjujejo pogojev za tip partnerja ali kategorijo."
 
 #. module: partner_relations
 #: code:addons/partner_relations/models/res_partner_relation.py:155
@@ -453,12 +453,12 @@ msgstr "Podoben odnos s prekrivajočimi se datumi že obstaja."
 #. module: partner_relations
 #: help:res.partner.relation.type,allow_self:0
 msgid "This relation can be set up with the same partner left and right"
-msgstr ""
+msgstr "Ta odnos se lahko nastavi z istim partnerjem na levi in desni."
 
 #. module: partner_relations
 #: help:res.partner.relation.type,is_symmetric:0
 msgid "This relation is the same from right to left as from left to right"
-msgstr ""
+msgstr "Ta odnos je enak tako iz desne proti levi, kakor iz leve proti desni."
 
 #. module: partner_relations
 #: field:res.partner.relation,type_id:0
@@ -470,7 +470,7 @@ msgstr "Tip"
 #: code:addons/partner_relations/models/res_partner.py:80
 #, python-format
 msgid "Unsupported search operator \"%s\""
-msgstr ""
+msgstr "Nepodprt iskalni operand \"%s\""
 
 #. module: partner_relations
 #: help:res.partner.relation.type,handle_invalid_onchange:0
@@ -478,42 +478,42 @@ msgid ""
 "When adding relations criteria like partner type and category are checked.\n"
 "However when you change the criteria, there might be relations that do not fit the new criteria.\n"
 "Specify how this situation should be handled."
-msgstr ""
+msgstr "Pri dodajanju kriterijev odnosa kot tip partnerja in kategorija so označeni,\na ob spremembi kriterija lahko pride do odnosov, ki niso skladni z novim kriterijem.\nDoločite, kako naj se v primeru take situacije ravna."
 
 #. module: partner_relations
 #: model:res.partner.relation.type,name_inverse:partner_relations.rel_type_assistant
 msgid "has assistant"
-msgstr ""
+msgstr "ima asistenta"
 
 #. module: partner_relations
 #: model:res.partner.relation.type,name_inverse:partner_relations.rel_type_has_worked_for
 msgid "has employee"
-msgstr ""
+msgstr "ima zaposlenega"
 
 #. module: partner_relations
 #: model:res.partner.relation.type,name:partner_relations.rel_type_assistant
 msgid "is assistant of"
-msgstr ""
+msgstr "je asistent"
 
 #. module: partner_relations
 #: model:res.partner.relation.type,name:partner_relations.rel_type_competitor
 #: model:res.partner.relation.type,name_inverse:partner_relations.rel_type_competitor
 msgid "is competitor of"
-msgstr ""
+msgstr "je konkurent"
 
 #. module: partner_relations
 #: code:addons/partner_relations/models/res_partner_relation_all.py:214
 #, python-format
 msgid "other"
-msgstr ""
+msgstr "drugo"
 
 #. module: partner_relations
 #: code:addons/partner_relations/models/res_partner_relation_all.py:210
 #, python-format
 msgid "this"
-msgstr ""
+msgstr "ta"
 
 #. module: partner_relations
 #: model:res.partner.relation.type,name:partner_relations.rel_type_has_worked_for
 msgid "works for"
-msgstr ""
+msgstr "dela za"
