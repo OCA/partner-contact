@@ -10,12 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2016-10-06 12:10+0000\n"
 "PO-Revision-Date: 2016-03-19 05:58+0000\n"
 "Last-Translator: <>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/pt_BR/)\n"
+"Language-Team: Croatian (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt_BR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:24
@@ -66,19 +66,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_uid
 msgid "Created by"
-msgstr "Criado por"
+msgstr "Kreirao"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_date
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_date
 msgid "Created on"
-msgstr "Criado em"
+msgstr "Kreirano"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_display_name
 msgid "Display Name"
-msgstr "Nome para Mostrar"
+msgstr "Naziv "
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:66
@@ -153,19 +153,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category___last_update
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number___last_update
 msgid "Last Modified on"
-msgstr "Última atualização em"
+msgstr "Zadnje modificirano"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_uid
 msgid "Last Updated by"
-msgstr "Útima atualização por"
+msgstr "Zadnji ažurirao"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_date
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_date
 msgid "Last Updated on"
-msgstr "Útima atualização em"
+msgstr "Zadnje ažuriranje"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category_name
@@ -181,13 +181,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_comment
 #: model:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 msgid "Notes"
-msgstr ""
+msgstr "Bilješke"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_partner_id
 msgid "Partner"
-msgstr "Parceiro"
+msgstr "Partner"
 
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
