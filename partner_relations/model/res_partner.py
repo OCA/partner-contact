@@ -20,8 +20,8 @@
 #
 ##############################################################################
 import time
-from openerp import osv, models, fields, exceptions, api
-from openerp.osv.expression import is_leaf, AND, OR, FALSE_LEAF
+from openerp import models, models, fields, exceptions, api
+from openerp.models.expression import is_leaf, AND, OR, FALSE_LEAF
 from openerp.tools import DEFAULT_SERVER_DATE_FORMAT
 from openerp.tools.translate import _
 
@@ -217,7 +217,7 @@ class ResPartner(models.Model):
         return result
 
     _columns = {
-        'relation_ids': osv.fields.function(
+        'relation_ids': models.fields.function(
             lambda self, *args, **kwargs: self._get_relation_ids(
                 *args, **kwargs),
             fnct_inv=_set_relation_ids,
@@ -225,33 +225,33 @@ class ResPartner(models.Model):
             string='Relations',
             selectable=False,
         ),
-        'relation_all_ids': osv.fields.one2many(
+        'relation_all_ids': models.fields.one2many(
             'res.partner.relation.all', 'this_partner_id',
             string='All relations with current partner',
             auto_join=True,
             selectable=False,
         ),
-        'search_relation_id': osv.fields.function(
+        'search_relation_id': models.fields.function(
             lambda self, cr, uid, ids, *args: dict([
                 (i, False) for i in ids]),
             fnct_search=_search_relation_id,
             string='Has relation of type',
             type='many2one', obj='res.partner.relation.type.selection'
         ),
-        'search_relation_partner_id': osv.fields.function(
+        'search_relation_partner_id': models.fields.function(
             lambda self, cr, uid, ids, *args: dict([
                 (i, False) for i in ids]),
             fnct_search=_search_related_partner_id,
             string='Has relation with',
             type='many2one', obj='res.partner'
         ),
-        'search_relation_date': osv.fields.function(
+        'search_relation_date': models.fields.function(
             lambda self, cr, uid, ids, *args: dict([
                 (i, False) for i in ids]),
             fnct_search=_search_relation_date,
             string='Relation valid', type='date'
         ),
-        'search_relation_partner_category_id': osv.fields.function(
+        'search_relation_partner_category_id': models.fields.function(
             lambda self, cr, uid, ids, *args: dict([
                 (i, False) for i in ids]),
             fnct_search=_search_related_partner_category_id,

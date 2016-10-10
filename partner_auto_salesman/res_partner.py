@@ -19,9 +19,9 @@
 #
 ##############################################################################
 
-from openerp.osv import orm
+from odoo import models
 
 
-class res_partner(orm.Model):
+class res_partner(models.Model):
     _inherit = 'res.partner'
     _defaults = {'user_id': lambda self, cr, uid, context: uid}

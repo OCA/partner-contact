@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from openerp import osv, models, fields, api, exceptions, _
+from openerp import models, models, fields, api, exceptions, _
 
 from . import get_partner_type
 
@@ -73,14 +73,14 @@ class ResPartnerRelation(models.Model):
         ])
 
     _columns = {
-        'type_selection_id': osv.fields.function(
+        'type_selection_id': models.fields.function(
             _get_computed_fields,
             multi="computed_fields",
             fnct_inv=lambda *args: None,
             type='many2one', obj='res.partner.relation.type.selection',
             string='Type',
         ),
-        'partner_id_display': osv.fields.function(
+        'partner_id_display': models.fields.function(
             _get_computed_fields,
             multi="computed_fields",
             fnct_inv=lambda *args: None,

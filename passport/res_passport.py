@@ -20,10 +20,10 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import fields
 
 
-class res_passport(orm.Model):
+class res_passport(models.Model):
     _description = 'Passport'
     _name = 'res.passport'
     _columns = {

@@ -19,11 +19,11 @@
 #
 ##############################################################################
 
-from openerp.osv import orm
+from odoo import models
 from openerp.tools.translate import _
 
 
-class wizard_user(orm.TransientModel):
+class wizard_user(models.TransientModel):
     _inherit = 'portal.wizard.user'
 
     def get_error_messages(self, cr, uid, ids, context=None):

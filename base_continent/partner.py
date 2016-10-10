@@ -19,8 +19,8 @@
 #
 ##############################################################################
 
-from openerp.osv.orm import Model
-from openerp.osv import fields
+from openerp.models.orm import Model
+from openerp import fields
 
 
 class Partner(Model):
