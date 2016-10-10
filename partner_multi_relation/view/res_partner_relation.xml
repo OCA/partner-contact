@@ -90,7 +90,7 @@
             <field name="key">action</field>
             <field name="key2">client_action_multi</field>
             <field name="model">res.partner.relation.all</field>
-            <field name="value" eval="'ir.actions.server,%d' % ref('partner_relations.action_show_right_relation_partners')" />
+            <field name="value" eval="'ir.actions.server,%d' % ref('partner_multi_relation.action_show_right_relation_partners')" />
         </record>
 
     </data>

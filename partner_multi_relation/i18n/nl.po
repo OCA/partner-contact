@@ -1,42 +1,44 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_relations
-#
+# * partner_relations
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-15 16:09+0000\n"
-"PO-Revision-Date: 2015-04-15 16:09+0000\n"
-"Last-Translator: <>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2015-09-23 21:40+0000\n"
+"PO-Revision-Date: 2015-10-01 19:24+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Dutch (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_relations
-#: model:ir.actions.act_window,help:partner_relations.action_res_partner_relation
-#: model:ir.actions.act_window,help:partner_relations.action_res_partner_relation_all
-msgid "<p class=\"oe_view_nocontent_create\">\n"
+#: model:ir.actions.act_window,help:partner_multi_relation.action_res_partner_relation
+#: model:ir.actions.act_window,help:partner_multi_relation.action_res_partner_relation_all
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
 "                    Record and track your partners' relations. Relations may be linked to other partners with a type either directly or inversely.\n"
 "                </p>\n"
 "            "
 msgstr ""
 
 #. module: partner_relations
-#: field:res.partner.relation,active:0
-#: field:res.partner.relation.all,active:0
+#: field:res.partner.relation,active:0 field:res.partner.relation.all,active:0
 msgid "Active"
 msgstr ""
 
 #. module: partner_relations
-#: model:ir.model,name:partner_relations.model_res_partner_relation_all
+#: model:ir.model,name:partner_multi_relation.model_res_partner_relation_all
 msgid "All (non-inverse + inverse) relations between partners"
 msgstr ""
 
 #. module: partner_relations
-#: model:ir.model,name:partner_relations.model_res_partner_relation_type_selection
+#: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type_selection
 msgid "All relation types"
 msgstr ""
 
@@ -46,22 +48,27 @@ msgid "All relations with current partner"
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation_type.py:64
+#: field:res.partner.relation.type,allow_self:0
+msgid "Allow both sides to be the same"
+msgstr ""
+
+#. module: partner_relations
+#: code:addons/partner_relations/model/res_partner_relation_type.py:68
 #, python-format
 msgid "Company"
-msgstr ""
+msgstr "Bedrijf"
 
 #. module: partner_relations
 #: field:res.partner.relation,create_uid:0
 #: field:res.partner.relation.type,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Aangemaakt door"
 
 #. module: partner_relations
 #: field:res.partner.relation,create_date:0
 #: field:res.partner.relation.type,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Aangemaakt op"
 
 #. module: partner_relations
 #: field:res.partner.relation.all,this_partner_id:0
@@ -91,9 +98,19 @@ msgid "Ending date"
 msgstr ""
 
 #. module: partner_relations
-#: view:res.partner.relation:partner_relations.search_res_partner_relation
-#: view:res.partner.relation.all:partner_relations.search_res_partner_relation_all
+#: view:res.partner.relation:partner_multi_relation.search_res_partner_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
 msgid "Group By"
+msgstr ""
+
+#. module: partner_relations
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_assistant
+msgid "Has assistant"
+msgstr ""
+
+#. module: partner_relations
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_has_worked_for
+msgid "Has former employee"
 msgstr ""
 
 #. module: partner_relations
@@ -112,12 +129,16 @@ msgid "Has relation with a partner in category"
 msgstr ""
 
 #. module: partner_relations
-#: field:res.partner.relation,id:0
-#: field:res.partner.relation.all,id:0
+#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_has_worked_for
+msgid "Has worked for"
+msgstr ""
+
+#. module: partner_relations
+#: field:res.partner.relation,id:0 field:res.partner.relation.all,id:0
 #: field:res.partner.relation.type,id:0
 #: field:res.partner.relation.type.selection,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_relations
 #: field:res.partner.relation.type,name_inverse:0
@@ -131,19 +152,30 @@ msgid "Inverse type"
 msgstr ""
 
 #. module: partner_relations
+#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_assistant
+msgid "Is assistant of"
+msgstr ""
+
+#. module: partner_relations
+#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_competitor
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_competitor
+msgid "Is competitor of"
+msgstr ""
+
+#. module: partner_relations
 #: field:res.partner.relation,write_uid:0
 #: field:res.partner.relation.type,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Laatst bijgewerkt door"
 
 #. module: partner_relations
 #: field:res.partner.relation,write_date:0
 #: field:res.partner.relation.type,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Laatst bijgewerkt op"
 
 #. module: partner_relations
-#: view:res.partner.relation:partner_relations.search_res_partner_relation
+#: view:res.partner.relation:partner_multi_relation.search_res_partner_relation
 msgid "Left Partner"
 msgstr ""
 
@@ -163,7 +195,7 @@ msgid "Left partner type"
 msgstr ""
 
 #. module: partner_relations
-#: view:res.partner.relation.type:partner_relations.form_res_partner_relation_type
+#: view:res.partner.relation.type:partner_multi_relation.form_res_partner_relation_type
 msgid "Left side of relation"
 msgstr ""
 
@@ -174,7 +206,7 @@ msgid "Name"
 msgstr ""
 
 #. module: partner_relations
-#: view:res.partner.relation.all:partner_relations.search_res_partner_relation_all
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
 #: field:res.partner.relation.all,other_partner_id:0
 msgid "Other Partner"
 msgstr ""
@@ -190,30 +222,30 @@ msgid "Other record's partner type"
 msgstr ""
 
 #. module: partner_relations
-#: model:ir.model,name:partner_relations.model_res_partner
+#: model:ir.model,name:partner_multi_relation.model_res_partner
 #: field:res.partner.relation,partner_id_display:0
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #. module: partner_relations
-#: view:res.partner.relation:partner_relations.form_res_partner_relation
+#: view:res.partner.relation:partner_multi_relation.form_res_partner_relation
 msgid "Partner Relation"
 msgstr ""
 
 #. module: partner_relations
-#: model:ir.model,name:partner_relations.model_res_partner_relation_type
+#: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type
 msgid "Partner Relation Type"
 msgstr ""
 
 #. module: partner_relations
-#: view:res.partner.relation:partner_relations.tree_res_partner_relation
-#: view:res.partner.relation.all:partner_relations.tree_res_partner_relation_all
+#: view:res.partner.relation:partner_multi_relation.tree_res_partner_relation
+#: view:res.partner.relation.all:partner_multi_relation.tree_res_partner_relation_all
 msgid "Partner Relations"
 msgstr ""
 
 #. module: partner_relations
-#: model:ir.actions.act_window,name:partner_relations.action_res_partner_relation_type
-#: model:ir.ui.menu,name:partner_relations.menu_res_partner_relation_type
+#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
 msgid "Partner Relations Types"
 msgstr ""
 
@@ -223,21 +255,21 @@ msgid "Partner Type"
 msgstr ""
 
 #. module: partner_relations
-#: model:ir.model,name:partner_relations.model_res_partner_relation
-#: view:res.partner.relation.all:partner_relations.form_res_partner_relation_all
-#: view:res.partner.relation.type:partner_relations.form_res_partner_relation_type
-#: view:res.partner.relation.type:partner_relations.tree_res_partner_relation_type
+#: model:ir.model,name:partner_multi_relation.model_res_partner_relation
+#: view:res.partner.relation.all:partner_multi_relation.form_res_partner_relation_all
+#: view:res.partner.relation.type:partner_multi_relation.form_res_partner_relation_type
+#: view:res.partner.relation.type:partner_multi_relation.tree_res_partner_relation_type
 msgid "Partner relation"
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:291
+#: code:addons/partner_relations/model/res_partner_relation.py:301
 #, python-format
 msgid "Partners cannot have a relation with themselves."
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation_type.py:65
+#: code:addons/partner_relations/model/res_partner_relation_type.py:69
 #, python-format
 msgid "Person"
 msgstr ""
@@ -253,7 +285,7 @@ msgid "Record type"
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:360
+#: code:addons/partner_relations/model/res_partner_relation.py:370
 #, python-format
 msgid "Related partners"
 msgstr ""
@@ -275,22 +307,22 @@ msgid "Relation valid"
 msgstr ""
 
 #. module: partner_relations
-#: model:ir.actions.act_window,name:partner_relations.action_res_partner_relation
-#: model:ir.actions.act_window,name:partner_relations.action_res_partner_relation_all
-#: model:ir.ui.menu,name:partner_relations.menu_res_partner_relation_sales
-#: view:res.partner:partner_relations.view_partner_form
+#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation
+#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_all
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_sales
+#: view:res.partner:partner_multi_relation.view_partner_form
 #: field:res.partner,relation_ids:0
 msgid "Relations"
 msgstr ""
 
 #. module: partner_relations
-#: view:res.partner.relation:partner_relations.search_res_partner_relation
-#: view:res.partner.relation.all:partner_relations.search_res_partner_relation_all
+#: view:res.partner.relation:partner_multi_relation.search_res_partner_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
 msgid "Relationship Type"
 msgstr ""
 
 #. module: partner_relations
-#: view:res.partner.relation:partner_relations.search_res_partner_relation
+#: view:res.partner.relation:partner_multi_relation.search_res_partner_relation
 msgid "Right Partner"
 msgstr ""
 
@@ -310,23 +342,23 @@ msgid "Right partner type"
 msgstr ""
 
 #. module: partner_relations
-#: view:res.partner.relation.type:partner_relations.form_res_partner_relation_type
+#: view:res.partner.relation.type:partner_multi_relation.form_res_partner_relation_type
 msgid "Right side of relation"
 msgstr ""
 
 #. module: partner_relations
-#: view:res.partner.relation:partner_relations.search_res_partner_relation
-#: view:res.partner.relation.all:partner_relations.search_res_partner_relation_all
+#: view:res.partner.relation:partner_multi_relation.search_res_partner_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
 msgid "Search Relations"
 msgstr ""
 
 #. module: partner_relations
-#: model:ir.actions.act_window,name:partner_relations.action_show_partner_relations
+#: model:ir.actions.act_window,name:partner_multi_relation.action_show_partner_relations
 msgid "Show partner's relations"
 msgstr ""
 
 #. module: partner_relations
-#: model:ir.actions.server,name:partner_relations.action_show_right_relation_partners
+#: model:ir.actions.server,name:partner_multi_relation.action_show_right_relation_partners
 msgid "Show partners"
 msgstr ""
 
@@ -342,19 +374,19 @@ msgid "Starting date"
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:278
+#: code:addons/partner_relations/model/res_partner_relation.py:287
 #, python-format
 msgid "The %s partner is not applicable for this relation type."
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:245
+#: code:addons/partner_relations/model/res_partner_relation.py:254
 #, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr ""
 
 #. module: partner_relations
-#: code:addons/partner_relations/model/res_partner_relation.py:319
+#: code:addons/partner_relations/model/res_partner_relation.py:329
 #, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr ""
@@ -373,4 +405,3 @@ msgstr ""
 #, python-format
 msgid "Unsupported search operand \"%s\""
 msgstr ""
-
