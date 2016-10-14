@@ -1,0 +1,11 @@
+.o_address_street_name {
+	   float: left !important;
+       margin-right: 2% !important;
+       width: 75% !important;
+   }
+
+.o_address_street_number {
+       margin-right: 0% !important;
+       width: 25% !important;
+   }
+ 

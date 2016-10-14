@@ -3,25 +3,24 @@
 # * partner_street_number
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (10.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-08-28 15:54+0000\n"
-"PO-Revision-Date: 2015-05-28 07:17+0000\n"
-"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
-"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
+"PO-Revision-Date: 2015-05-22 13:07+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"Language-Team: English (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/en/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_street_number
 #: view:res.partner:partner_street_number.view_partner_form
 msgid "Number..."
-msgstr "Številka..."
+msgstr "Number..."
 
 #. module: partner_street_number
 #: model:ir.model,name:partner_street_number.model_res_partner
@@ -31,17 +30,17 @@ msgstr "Partner"
 #. module: partner_street_number
 #: field:res.partner,street_name:0
 msgid "Street name"
-msgstr "Naziv ulice"
+msgstr "Street name"
 
 #. module: partner_street_number
 #: field:res.partner,street_number:0
 msgid "Street number"
-msgstr "Hišna številka"
+msgstr "Street number"
 
 #. module: partner_street_number
 #: view:res.partner:partner_street_number.view_partner_form
 msgid "Street..."
-msgstr "Ulica..."
+msgstr "Street..."
 
 #. module: partner_street_number
 #: view:res.partner:partner_street_number.view_partner_form

@@ -18,10 +18,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import models
 
+from . import models
 import logging
-from openerp import SUPERUSER_ID
+from odoo import SUPERUSER_ID
 
 
 def post_init_hook(cr, registry):
