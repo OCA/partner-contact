@@ -21,7 +21,7 @@
 
 from . import models
 import logging
-from odoo import SUPERUSER_ID
+from odoo import SUPERUSER_ID, api
 
 
 def post_init_hook(cr, registry):
@@ -33,11 +33,11 @@ def post_init_hook(cr, registry):
     """
     logging.getLogger('openerp.addons.partner_street_number').info(
         'Migrating existing street names')
-    cr.execute(
-        'SELECT id, street FROM res_partner '
-        'WHERE street IS NOT NULL and street_name IS NULL'
-        )
-    partner_obj = registry['res.partner']
-    for partner in cr.fetchall():
-        partner_obj.write(
-            cr, SUPERUSER_ID, partner[0], {'street': partner[1]})
+
+    env = api.Environment(cr, SUPERUSER_ID, {})
+    partners = env['res.partner'].search(
+        [('street', '!=', False),
+         ('street_name', '=', False)])
+
+    for partner in partners:
+        partner.sudo().write({'street': partner.street})
