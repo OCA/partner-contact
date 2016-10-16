@@ -8,7 +8,7 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-class Partner(models.Model):
+class ResPartner(models.Model):
     """Partner with birth date in date format."""
     _inherit = "res.partner"
 
@@ -40,4 +40,4 @@ class Partner(models.Model):
     @api.model
     def _birthdate_install(self):
         """Export all old birthdates to the new format."""
-        self.search([('birthdate', "!=", False)])._inverse_birthdate()
+        self.search([('birthdate', "!=", False)])._birthdate_inverse()
