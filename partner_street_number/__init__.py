@@ -35,9 +35,8 @@ def post_init_hook(cr, registry):
         'Migrating existing street names')
 
     env = api.Environment(cr, SUPERUSER_ID, {})
-    partners = env['res.partner'].search(
-        [('street', '!=', False),
-         ('street_name', '=', False)])
-
-    for partner in partners:
-        partner.sudo().write({'street': partner.street})
+    partners = env['res.partner'].with_context(active_test=False).search([
+        ('street', '!=', False),
+        ('street_name', '=', False)
+    ])
+    partners._write_street()
