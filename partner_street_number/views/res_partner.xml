@@ -7,32 +7,32 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-               <xpath expr="//div[@class='o_address_format']//field[@name='street']"
+                <xpath expr="//div[@class='o_address_format']//field[@name='street']"
                        position="after">
-                        <field name="street_name" class="o_address_street o_address_street_name"
+                        <field name="street_name" class="o_address_street_name"
                                 placeholder="Street..."
                                 attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
                                />
-                        <field name="street_number" class="o_address_street o_address_street_number"
+                        <field name="street_number" class="o_address_street_number"
                                 placeholder="Number..."
                                 attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
                                />
                 </xpath>
-               <xpath expr="//div[@class='o_address_format']//field[@name='street']"
+                <xpath expr="//div[@class='o_address_format']//field[@name='street']"
                        position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
 
                 <xpath expr="//div[@name='div_address']//field[@name='street']"
                        position="after">
-                        <field name="street_name" class="o_address_street o_address_street_name"
+                        <field name="street_name" class="o_address_street_name"
                                placeholder="Street..."
                                />
-                        <field name="street_number" class="o_address_street o_address_street_number"
+                        <field name="street_number" class="o_address_street_number"
                                placeholder="Number..."
                                />
                 </xpath>
-               <xpath expr="//div[@name='div_address']//field[@name='street']"
+                <xpath expr="//div[@name='div_address']//field[@name='street']"
                        position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
@@ -51,14 +51,14 @@
             <field name="arch" type="xml">
                 <xpath expr="//div[@class='o_address_format']//field[@name='street']"
                        position="after">
-                       <field name="street_name" class="o_address_street o_address_street_name"
+                       <field name="street_name" class="o_address_street_name"
                                 placeholder="Street..."
                                />
-                       <field name="street_number" class="o_address_street o_address_street_number"
+                       <field name="street_number" class="o_address_street_number"
                                 placeholder="Number..."
                                />
                 </xpath>
-               <xpath expr="//div[@class='o_address_format']//field[@name='street']"
+                <xpath expr="//div[@class='o_address_format']//field[@name='street']"
                        position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>

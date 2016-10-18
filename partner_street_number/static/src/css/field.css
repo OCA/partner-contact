@@ -1,11 +1,19 @@
-.o_address_street_name {
-	   float: left !important;
-       margin-right: 2% !important;
-       width: 75% !important;
+.o_form_view .o_address_format > .o_form_input.o_address_street_name.o_form_field {
+	   float: left;
+       margin-right: 2%;
+       width: 73%;
    }
 
-.o_address_street_number {
-       margin-right: 0% !important;
-       width: 25% !important;
+.o_form_view .o_address_format > .o_form_input.o_address_street_number.o_form_field {
+       margin-right: 0%;
+       width: 25%;
    }
- 
+
+.o_form_view .o_address_format > span.o_address_street_name.o_form_field {
+	   float: left;
+       margin-right: 2%;
+   }
+
+.o_form_view .o_address_format > span.o_address_street_number.o_form_field {
+       margin-right: 2%;
+   }
