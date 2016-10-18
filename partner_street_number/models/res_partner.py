@@ -28,11 +28,12 @@ from odoo import models, fields, api
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    @api.one
+    @api.multi
     @api.depends('street_name', 'street_number')
     def _get_street(self):
-        self.street = ' '.join(
-            filter(None, [self.street_name, self.street_number]))
+        for partner in self:
+            partner.street = ' '.join(
+                filter(None, [partner.street_name, partner.street_number]))
 
     def _write_street(self):
         """
@@ -44,8 +45,8 @@ class ResPartner(models.Model):
         for partner in self:
             street_name = partner.street and partner.street.strip() or False
             street_number = False
-            if partner.street:
-                match = re.search(r'(.+)\s+(\d.*)', partner.street.strip())
+            if street_name:
+                match = re.search(r'(.+)\s+(\d.*)', street_name)
                 if match and len(match.group(2)) < 6:
                     street_name = match.group(1)
                     street_number = match.group(2)
