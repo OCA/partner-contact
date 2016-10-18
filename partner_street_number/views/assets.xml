@@ -4,7 +4,7 @@
 
     <template id="assets_backend" name="partner_street_number backend assets" inherit_id="web.assets_backend">
       <xpath expr="." position="inside">
-        <link rel="stylesheet" href="/partner_street_number/static/src/css/field.css"/>
+        <link rel="stylesheet" href="/partner_street_number/static/src/css/field.less"/>
       </xpath>
     </template>
 
