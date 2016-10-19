@@ -1,0 +1,549 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_multi_relation
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-02 12:39+0000\n"
+"PO-Revision-Date: 2016-09-02 15:03+0200\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Dutch (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/nl/)\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:178
+#, python-format
+msgid "%s partner incompatible with relation type."
+msgstr "%s relatie is onverenigbaar met gekozen connectietype."
+
+#. module: partner_multi_relation
+#: model:ir.actions.act_window,help:partner_multi_relation.action_res_partner_relation_all
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                    Record and track your partners' relations. Relations "
+"may\n"
+"                    be linked to other partners with a type either directly\n"
+"                    or inversely.\n"
+"                </p>\n"
+"            "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"Onderhoud de connecties tussen uw relaties. Relaties mogen gekoppeld\n"
+"worden zowel via een normale connectie, als met een omgekeerde\n"
+"connectie.</p>"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.all,active:0
+msgid "Active"
+msgstr "Actief"
+
+#. module: partner_multi_relation
+#: model:ir.model,name:partner_multi_relation.model_res_partner_relation_all
+msgid "All (non-inverse + inverse) relations between partners"
+msgstr "Alle connecties tussen relaties (gewoon en omgekeerd)."
+
+#. module: partner_multi_relation
+#: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type_selection
+msgid "All relation types"
+msgstr "Alle connectietypes"
+
+#. module: partner_multi_relation
+#: field:res.partner,relation_all_ids:0
+msgid "All relations with current partner"
+msgstr "Alle connecties vanuit de huidige relatie"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:13
+#: selection:res.partner.relation.type,handle_invalid_onchange:0
+#, python-format
+msgid "Allow existing relations that do not fit changed conditions"
+msgstr ""
+"Sta bestaande connecties toe die niet voldoen aan de gewijzigde criteria"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,create_uid:0
+#: field:res.partner.relation.type,create_uid:0
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,create_date:0
+#: field:res.partner.relation.type,create_date:0
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type.selection,partner_category_this:0
+msgid "Current record's category"
+msgstr "Categorie van het huidige record"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type.selection,contact_type_this:0
+msgid "Current record's partner type"
+msgstr "Type van de huidige relatie"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:17
+#: selection:res.partner.relation.type,handle_invalid_onchange:0
+#, python-format
+msgid "Delete relations that do not fit changed conditions"
+msgstr "Verwijder connecties die niet voldoen aan de gewijzigde condities"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,right_partner_id:0
+msgid "Destination Partner"
+msgstr "Doel relatie"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,display_name:0
+#: field:res.partner.relation.all,display_name:0
+#: field:res.partner.relation.type,display_name:0
+#: field:res.partner.relation.type.selection,display_name:0
+msgid "Display Name"
+msgstr "Te tonen naam"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:11
+#: selection:res.partner.relation.type,handle_invalid_onchange:0
+#, python-format
+msgid "Do not allow change that will result in invalid relations"
+msgstr "Sta geen wijziging toe die zal resulteren in ongeldige connecties"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:15
+#: selection:res.partner.relation.type,handle_invalid_onchange:0
+#, python-format
+msgid "End relations per today, if they do not fit changed conditions"
+msgstr ""
+"Beëindig wijzigingen per vandaag indien ze niet voldoen aan de gewijzigde "
+"condities"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,date_end:0
+#: field:res.partner.relation.all,date_end:0
+msgid "Ending date"
+msgstr "Einddatum"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:184
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:259
+#, python-format
+msgid "Error!"
+msgstr "Fout!"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
+msgid "Group By"
+msgstr "Groepeer op"
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_assistant
+msgid "Has assistant"
+msgstr "Heeft assistent"
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_has_worked_for
+msgid "Has former employee"
+msgstr "Heeft voormalig werknemer"
+
+#. module: partner_multi_relation
+#: field:res.partner,search_relation_type_id:0
+msgid "Has relation of type"
+msgstr "heeft connectie van type"
+
+#. module: partner_multi_relation
+#: field:res.partner,search_relation_partner_id:0
+msgid "Has relation with"
+msgstr "Heeft connectie met"
+
+#. module: partner_multi_relation
+#: field:res.partner,search_relation_partner_category_id:0
+msgid "Has relation with a partner in category"
+msgstr "Heeft connectie met een relatie in de categorie"
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_has_worked_for
+msgid "Has worked for"
+msgstr "Heeft gewerkt voor"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,id:0 field:res.partner.relation.all,id:0
+#: field:res.partner.relation.type,id:0
+#: field:res.partner.relation.type.selection,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
+msgid "Include past records"
+msgstr "Inclusief beëindigde connecties"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,handle_invalid_onchange:0
+msgid "Invalid relation handling"
+msgstr "Afhandeling van ongeldige connecties"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,name_inverse:0
+msgid "Inverse name"
+msgstr "Omgekeerde naam"
+
+#. module: partner_multi_relation
+#: help:res.partner.relation.type.selection,is_inverse:0
+msgid "Inverse relations are from right to left partner."
+msgstr "Omgekeerde connecties zijn vanaf de rechter relatie naar de linker."
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_assistant
+msgid "Is assistant of"
+msgstr "Is assistent van"
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_competitor
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_competitor
+msgid "Is competitor of"
+msgstr "Is concurrent van"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type.selection,is_inverse:0
+msgid "Is reverse type?"
+msgstr "Is omgekeerd type?"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,__last_update:0
+#: field:res.partner.relation.all,__last_update:0
+#: field:res.partner.relation.type,__last_update:0
+#: field:res.partner.relation.type.selection,__last_update:0
+msgid "Last Modified on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,write_uid:0
+#: field:res.partner.relation.type,write_uid:0
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,write_date:0
+#: field:res.partner.relation.type,write_date:0
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,partner_category_left:0
+msgid "Left partner category"
+msgstr "Categorie linkerrelatie"
+
+#. module: partner_multi_relation
+#: selection:res.partner.relation.all,record_type:0
+msgid "Left partner to right partner"
+msgstr "Van linker naar rechterrelatie"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,contact_type_left:0
+msgid "Left partner type"
+msgstr "Type linkerrelatie"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.type:partner_multi_relation.form_res_partner_relation_type
+msgid "Left side of relation"
+msgstr "Linkerkant van relatie"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
+msgid "Left to right"
+msgstr "Links naar rechts"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,name:0
+#: field:res.partner.relation.type.selection,name:0
+msgid "Name"
+msgstr "Naam"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:181
+#, python-format
+msgid "No %s partner available for relation type."
+msgstr "Geen %s relatie beschikbaar voor dit connectietype."
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:256
+#, python-format
+msgid "No relation type available for selected partners."
+msgstr "Geen connectietype beschikbaar voor verbinden van deze relaties."
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
+#: field:res.partner.relation.all,this_partner_id:0
+msgid "One Partner"
+msgstr "De ene relatie"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:82
+#, python-format
+msgid "Organisation"
+msgstr "Organisatie"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
+#: field:res.partner.relation.all,other_partner_id:0
+msgid "Other Partner"
+msgstr "De andere relatie"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type.selection,partner_category_other:0
+msgid "Other record's category"
+msgstr "Categorie andere relatie"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type.selection,contact_type_other:0
+msgid "Other record's partner type"
+msgstr "Type andere relatie"
+
+#. module: partner_multi_relation
+#: model:ir.model,name:partner_multi_relation.model_res_partner
+#: field:res.partner.relation.all,any_partner_id:0
+msgid "Partner"
+msgstr "Relatie"
+
+#. module: partner_multi_relation
+#: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type
+msgid "Partner Relation Type"
+msgstr "Type connectie"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.all:partner_multi_relation.tree_res_partner_relation_all
+msgid "Partner Relations"
+msgstr "Connecties"
+
+#. module: partner_multi_relation
+#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
+msgid "Partner Relations Types"
+msgstr "Connectietypes"
+
+#. module: partner_multi_relation
+#: model:ir.model,name:partner_multi_relation.model_res_partner_relation
+msgid "Partner relation"
+msgstr "Connectie"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:115
+#, python-format
+msgid "Partners cannot have a relation with themselves."
+msgstr "Relaties kunnen geen connectie met zichzelf hebben"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:83
+#, python-format
+msgid "Person"
+msgstr "Persoon"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.type:partner_multi_relation.form_res_partner_relation_type
+msgid "Properties"
+msgstr "Eigenschappen"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.all,record_type:0
+msgid "Record Type"
+msgstr "Recordtype"
+
+#. module: partner_multi_relation
+#: help:res.partner.relation.all,active:0
+msgid "Records with date_end in the past are inactive"
+msgstr "Connecties met een datum in het verleden zijn inactief"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,allow_self:0
+#: field:res.partner.relation.type.selection,allow_self:0
+msgid "Reflexive"
+msgstr "Wederkerig"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.all,relation_id:0
+msgid "Relation"
+msgstr "Connectie"
+
+#. module: partner_multi_relation
+#: field:res.partner,relation_count:0
+msgid "Relation Count"
+msgstr "Aantal connecties"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.all,type_selection_id:0
+msgid "Relation Type"
+msgstr "Type connectie"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:252
+#, python-format
+msgid "Relation type incompatible with selected partner(s)."
+msgstr "Type connectie komt niet overeen met geselecteerde relatie(s)."
+
+#. module: partner_multi_relation
+#: field:res.partner,search_relation_date:0
+msgid "Relation valid"
+msgstr "Geldige connectie"
+
+#. module: partner_multi_relation
+#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_all
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_sales
+#: view:res.partner:partner_multi_relation.view_partner_form
+msgid "Relations"
+msgstr "Connecties"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
+msgid "Relationship Type"
+msgstr "Type connectie"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,partner_category_right:0
+msgid "Right partner category"
+msgstr "Categorie rechterrelatie"
+
+#. module: partner_multi_relation
+#: selection:res.partner.relation.all,record_type:0
+msgid "Right partner to left partner"
+msgstr "Rechter naar linkerrelatie"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,contact_type_right:0
+msgid "Right partner type"
+msgstr "Type rechterrelatie"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.type:partner_multi_relation.form_res_partner_relation_type
+msgid "Right side of relation"
+msgstr "Rechterkant van de connectie"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
+msgid "Right to left"
+msgstr "Rechts naar links"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
+msgid "Search Relations"
+msgstr "Zoek connecties"
+
+#. module: partner_multi_relation
+#: model:ir.actions.act_window,name:partner_multi_relation.action_show_partner_multi_relation
+msgid "Show partner's relations"
+msgstr "Toon connecties van relatie"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,left_partner_id:0
+msgid "Source Partner"
+msgstr "Bron relatie"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,date_start:0
+#: field:res.partner.relation.all,date_start:0
+msgid "Starting date"
+msgstr "Datum ingang"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,is_symmetric:0
+#: field:res.partner.relation.type.selection,is_symmetric:0
+msgid "Symmetric"
+msgstr "Symmetrisch"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:101
+#, fuzzy, python-format
+msgid "The %s partner does not have category %s."
+msgstr "De %s relatie is niet geldig voor dit type connectie."
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:95
+#, python-format
+msgid "The %s partner is not applicable for this relation type."
+msgstr "De %s relatie is niet geldig voor dit type connectie."
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:61
+#, python-format
+msgid "The starting date cannot be after the ending date."
+msgstr "De ingangsdatum kan niet na de einddatum liggen."
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:168
+#, python-format
+msgid ""
+"There are already relations not satisfying the conditions for partner type "
+"or category."
+msgstr ""
+"Er zijn al connecties die niet voldoen aan de criteria voor type relatie of "
+"categorie."
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:154
+#, python-format
+msgid "There is already a similar relation with overlapping dates"
+msgstr "Er is al een gelijkaardige connectie met overlappende geldigheid"
+
+#. module: partner_multi_relation
+#: help:res.partner.relation.type,allow_self:0
+msgid "This relation can be set up with the same partner left and right"
+msgstr "Deze connectie kan een relatie met zichzelf verbinden"
+
+#. module: partner_multi_relation
+#: help:res.partner.relation.type,is_symmetric:0
+msgid "This relation is the same from right to left as from left to right"
+msgstr ""
+"Deze connectie is van rechts naar links hetzelfde als van links naar rechts"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,type_id:0
+#: field:res.partner.relation.type.selection,type_id:0
+msgid "Type"
+msgstr "Type"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner.py:80
+#: code:addons/partner_multi_relation/models/res_partner.py:121
+#, python-format
+msgid "Unsupported search operator \"%s\""
+msgstr "Zoek operator \"%s\" wordt niet ondersteund "
+
+#. module: partner_multi_relation
+#: help:res.partner.relation.type,handle_invalid_onchange:0
+msgid ""
+"When adding relations criteria like partner type and category are checked.\n"
+"However when you change the criteria, there might be relations that do not "
+"fit the new criteria.\n"
+"Specify how this situation should be handled."
+msgstr ""
+"Bij het aanmaken van connecties vinden controles plaats op type en categorie "
+"van de relatie.\n"
+"Echter, wanneer u de criteria verandert, dan kunnen er al connecties bestaan "
+"die daar niet aan voldoen.\n"
+"Geef aan hoe zo'n situatie moet worden afgehandeld. "
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:221
+#, python-format
+msgid "other"
+msgstr "andere"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:215
+#, python-format
+msgid "this"
+msgstr "deze"
+
+#~ msgid "Company"
+#~ msgstr "Bedrijf"
