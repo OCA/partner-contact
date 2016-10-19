@@ -17,5 +17,6 @@
         "views/res_partner.xml",
     ],
     "post_init_hook": "post_init_hook",
+    "license": "AGPL-3",
     'installable': True,
 }
