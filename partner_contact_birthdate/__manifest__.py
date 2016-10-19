@@ -6,7 +6,7 @@
     "name": "Contact's birthdate",
     "version": "10.0.1.0.0",
     "author": "Jairo Llopis,"
-              "Tecnativa",
+              "Tecnativa,"
               "Odoo Community Association (OCA)",
     "category": "Customer Relationship Management",
     "website": "https://www.tecnativa.com/",
