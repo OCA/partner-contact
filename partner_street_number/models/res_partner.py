@@ -43,7 +43,7 @@ class ResPartner(models.Model):
         installed on a database that already contains addresses).
         """
         for partner in self:
-            street_name = partner.street and partner.street.strip() or False
+            street_name = partner.street.strip() if partner.street else False
             street_number = False
             if street_name:
                 match = re.search(r'(.+)\s+(\d.*)', street_name)
