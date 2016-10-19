@@ -6,14 +6,16 @@
     "name": "Contact's birthdate",
     "version": "10.0.1.0.0",
     "author": "Jairo Llopis,"
+              "Tecnativa",
               "Odoo Community Association (OCA)",
     "category": "Customer Relationship Management",
-    "website": "https://odoo-community.org/",
+    "website": "https://www.tecnativa.com/",
     "depends": [
         "partner_contact_personal_information_page",
     ],
     "data": [
         "views/res_partner.xml",
     ],
+    "post_init_hook": "post_init_hook",
     'installable': True,
 }
