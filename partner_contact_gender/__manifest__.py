@@ -7,8 +7,8 @@
     "summary": "Add gender field to contacts",
     "version": "10.0.1.1.0",
     "category": "Customer Relationship Management",
-    "website": "https://odoo-community.org/",
-    "author": "Grupo ESOC, Odoo Community Association (OCA)",
+    "website": "https://www.tecnativa.com/",
+    "author": "Grupo ESOC, Tecnativa, Odoo Community Association (OCA)",
     "contributors": [
         'Jairo Llopis <j.llopis@grupoesoc.es>',
         'Richard deMeester <richard@willowit.com.au>',
