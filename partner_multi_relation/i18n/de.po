@@ -1,0 +1,431 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_multi_relation
+# 
+# Translators:
+# Rudolf Schnapka <rs@techno-flex.de>, 2015-2016
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-07 07:18+0000\n"
+"PO-Revision-Date: 2016-05-06 15:15+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_multi_relation
+#: model:ir.actions.act_window,help:partner_multi_relation.action_res_partner_relation
+#: model:ir.actions.act_window,help:partner_multi_relation.action_res_partner_relation_all
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                    Record and track your partners' relations. Relations may be linked to other partners with a type either directly or inversely.\n"
+"                </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                    Aufzeichnen und Beobachten der Beziehungen des Partners. Beziehungen mit anderen Partnern können entweder direkt oder rückwirkend hergestellt werden.\n                </p>\n            "
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,active:0 field:res.partner.relation.all,active:0
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: partner_multi_relation
+#: model:ir.model,name:partner_multi_relation.model_res_partner_relation_all
+msgid "All (non-inverse + inverse) relations between partners"
+msgstr "Alle (direkten und rückwirkenden) Beziehungen zwischen Partnern"
+
+#. module: partner_multi_relation
+#: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type_selection
+msgid "All relation types"
+msgstr "Alle Beziehungsarten"
+
+#. module: partner_multi_relation
+#: field:res.partner,relation_all_ids:0
+msgid "All relations with current partner"
+msgstr "Alle Beziehungen mit diesem Partner"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,allow_self:0
+#: field:res.partner.relation.type,allow_self:0
+msgid "Allow both sides to be the same"
+msgstr "Erlaube beide Seiten gleich zu sein"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:68
+#, python-format
+msgid "Company"
+msgstr "Unternehmen"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,create_uid:0
+#: field:res.partner.relation.type,create_uid:0
+msgid "Created by"
+msgstr "erstellt von"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,create_date:0
+#: field:res.partner.relation.type,create_date:0
+msgid "Created on"
+msgstr "erstellt am"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.all,this_partner_id:0
+msgid "Current Partner"
+msgstr "Aktueller Partner"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type.selection,partner_category_this:0
+#: field:res.partner.relation.type.selection,search_partner_category_this:0
+msgid "Current record's category"
+msgstr "Kategorie des aktuellen Datensatzes"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type.selection,contact_type_this:0
+msgid "Current record's partner type"
+msgstr "Partnerart des aktuellen Datensatzes"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,right_partner_id:0
+msgid "Destination Partner"
+msgstr "Zielpartner"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,display_name:0
+#: field:res.partner.relation.all,display_name:0
+#: field:res.partner.relation.type,display_name:0
+#: field:res.partner.relation.type.selection,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,date_end:0
+#: field:res.partner.relation.all,date_end:0
+msgid "Ending date"
+msgstr "Enddatum"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation:partner_multi_relation.search_res_partner_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
+msgid "Group By"
+msgstr "Gruppieren"
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_assistant
+msgid "Has assistant"
+msgstr "Hat Assistent"
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_has_worked_for
+msgid "Has former employee"
+msgstr "Hat ehemaligen Mitarbeiter"
+
+#. module: partner_multi_relation
+#: field:res.partner,search_relation_type_id:0
+msgid "Has relation of type"
+msgstr "Hat Beziehungsart"
+
+#. module: partner_multi_relation
+#: field:res.partner,search_relation_partner_id:0
+msgid "Has relation with"
+msgstr "Hat Beziehung mit"
+
+#. module: partner_multi_relation
+#: field:res.partner,search_relation_partner_category_id:0
+msgid "Has relation with a partner in category"
+msgstr "Hat Beziehung mit Partner der Kategorie"
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_has_worked_for
+msgid "Has worked for"
+msgstr "Hat gearbeitet für"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,id:0 field:res.partner.relation.all,id:0
+#: field:res.partner.relation.type,id:0
+#: field:res.partner.relation.type.selection,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,name_inverse:0
+msgid "Inverse name"
+msgstr "Umgekehrte Bezeichnung"
+
+#. module: partner_multi_relation
+#: selection:res.partner.relation.all,record_type:0
+#: selection:res.partner.relation.type.selection,record_type:0
+msgid "Inverse type"
+msgstr "Art der Umkehrung"
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_assistant
+msgid "Is assistant of"
+msgstr "Ist Assistent von"
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_competitor
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_competitor
+msgid "Is competitor of"
+msgstr "Ist Mitbewerber von"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,__last_update:0
+#: field:res.partner.relation.all,__last_update:0
+#: field:res.partner.relation.type,__last_update:0
+#: field:res.partner.relation.type.selection,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,write_uid:0
+#: field:res.partner.relation.type,write_uid:0
+msgid "Last Updated by"
+msgstr "zuletzt aktualisiert von"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,write_date:0
+#: field:res.partner.relation.type,write_date:0
+msgid "Last Updated on"
+msgstr "zuletzt aktualisiert am"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation:partner_multi_relation.search_res_partner_relation
+msgid "Left Partner"
+msgstr "Linker Partner"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,left_contact_type:0
+msgid "Left Partner Type"
+msgstr "Art des linken Partners"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,partner_category_left:0
+msgid "Left partner category"
+msgstr "Kategorie des linken Partners"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,contact_type_left:0
+msgid "Left partner type"
+msgstr "Art des linken Partners"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.type:partner_multi_relation.form_res_partner_relation_type
+msgid "Left side of relation"
+msgstr "Linker Zweig der Beziehung"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,name:0
+#: field:res.partner.relation.type.selection,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
+#: field:res.partner.relation.all,other_partner_id:0
+msgid "Other Partner"
+msgstr "Anderer Partner"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type.selection,partner_category_other:0
+msgid "Other record's category"
+msgstr "Kategorie des anderen Satzes"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type.selection,contact_type_other:0
+msgid "Other record's partner type"
+msgstr "Partnerart des anderen Satzes"
+
+#. module: partner_multi_relation
+#: model:ir.model,name:partner_multi_relation.model_res_partner
+#: field:res.partner.relation,any_partner_id:0
+#: field:res.partner.relation,partner_id_display:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation:partner_multi_relation.form_res_partner_relation
+msgid "Partner Relation"
+msgstr "Partnerbeziehung"
+
+#. module: partner_multi_relation
+#: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type
+msgid "Partner Relation Type"
+msgstr "Art der Partnerbeziehung"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation:partner_multi_relation.tree_res_partner_relation
+#: view:res.partner.relation.all:partner_multi_relation.tree_res_partner_relation_all
+msgid "Partner Relations"
+msgstr "Partnerbeziehungen"
+
+#. module: partner_multi_relation
+#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
+msgid "Partner Relations Types"
+msgstr "Arten von Partnerbeziehungen"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.all,contact_type:0
+msgid "Partner Type"
+msgstr "Partnerart"
+
+#. module: partner_multi_relation
+#: model:ir.model,name:partner_multi_relation.model_res_partner_relation
+#: view:res.partner.relation.all:partner_multi_relation.form_res_partner_relation_all
+#: view:res.partner.relation.type:partner_multi_relation.form_res_partner_relation_type
+#: view:res.partner.relation.type:partner_multi_relation.tree_res_partner_relation_type
+msgid "Partner relation"
+msgstr "Partnerbeziehung"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:301
+#, python-format
+msgid "Partners cannot have a relation with themselves."
+msgstr "Partner dürfen nicht mit sich selbst in Beziehung stehen."
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:69
+#, python-format
+msgid "Person"
+msgstr "Person"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.all,record_type:0
+msgid "Record Type"
+msgstr "Satzart"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type.selection,record_type:0
+msgid "Record type"
+msgstr "Satzart"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:370
+#, python-format
+msgid "Related partners"
+msgstr "Partner mit Beziehung"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.all,relation_id:0
+msgid "Relation"
+msgstr "Beziehung"
+
+#. module: partner_multi_relation
+#: field:res.partner,relation_count:0
+msgid "Relation Count"
+msgstr ""
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.all,type_id:0
+#: field:res.partner.relation.all,type_selection_id:0
+msgid "Relation Type"
+msgstr "Art der Beziehung"
+
+#. module: partner_multi_relation
+#: field:res.partner,search_relation_date:0
+msgid "Relation valid"
+msgstr "Beziehung zulässig"
+
+#. module: partner_multi_relation
+#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation
+#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_all
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_sales
+#: view:res.partner:partner_multi_relation.view_partner_form
+#: field:res.partner,relation_ids:0
+msgid "Relations"
+msgstr "Beziehungen"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation:partner_multi_relation.search_res_partner_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
+msgid "Relationship Type"
+msgstr "Art der Beziehung"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation:partner_multi_relation.search_res_partner_relation
+msgid "Right Partner"
+msgstr "Rechter Partner"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,right_contact_type:0
+msgid "Right Partner Type"
+msgstr "Art des rechten Partners"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,partner_category_right:0
+msgid "Right partner category"
+msgstr "Kategorie des rechten Partners"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation.type,contact_type_right:0
+msgid "Right partner type"
+msgstr "Art des rechten Partners"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation.type:partner_multi_relation.form_res_partner_relation_type
+msgid "Right side of relation"
+msgstr "Rechter Zweig der Beziehung"
+
+#. module: partner_multi_relation
+#: view:res.partner.relation:partner_multi_relation.search_res_partner_relation
+#: view:res.partner.relation.all:partner_multi_relation.search_res_partner_relation_all
+msgid "Search Relations"
+msgstr "Suche in Beziehungen"
+
+#. module: partner_multi_relation
+#: model:ir.actions.act_window,name:partner_multi_relation.action_show_partner_multi_relation
+msgid "Show partner's relations"
+msgstr "Zeige Beziehungen des Partners"
+
+#. module: partner_multi_relation
+#: model:ir.actions.server,name:partner_multi_relation.action_show_right_relation_partners
+msgid "Show partners"
+msgstr "Zeige Partner"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,left_partner_id:0
+msgid "Source Partner"
+msgstr "Partnerentstehung"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,date_start:0
+#: field:res.partner.relation.all,date_start:0
+msgid "Starting date"
+msgstr "Anfangsdatum"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:287
+#, python-format
+msgid "The %s partner is not applicable for this relation type."
+msgstr "Der %s Partner ist für diese Beziehungsart nicht geeignet."
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:254
+#, python-format
+msgid "The starting date cannot be after the ending date."
+msgstr "Das Anfangsdatum darf nicht nach dem Enddatum liegen."
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:329
+#, python-format
+msgid "There is already a similar relation with overlapping dates"
+msgstr "Es gibt bereits eine ähnliche Beziehung mit überlappenden Daten"
+
+#. module: partner_multi_relation
+#: field:res.partner.relation,type_id:0
+#: field:res.partner.relation,type_selection_id:0
+#: selection:res.partner.relation.all,record_type:0
+#: selection:res.partner.relation.type.selection,record_type:0
+#: field:res.partner.relation.type.selection,type_id:0
+msgid "Type"
+msgstr "Art"
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner.py:122
+#, python-format
+msgid "Unsupported search operand \"%s\""
+msgstr "Nicht unterstützter Such-Operand \"%s\""
