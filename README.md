@@ -31,6 +31,7 @@ addon | version | summary
 [partner_external_map](partner_external_map/) | 9.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_firstname](partner_firstname/) | 9.0.1.0.0 | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 9.0.1.0.0 | Partner Identification Numbers
+[partner_multi_relation](partner_multi_relation/) | 9.0.1.1.1 | Partner relations
 
 Unported addons
 ---------------
@@ -45,9 +46,7 @@ addon | version | summary
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 (unported) | Partner auto salesman
 [partner_contact_address_detailed](partner_contact_address_detailed/) | 8.0.1.0.0 (unported) | All address data in summarized contact form
 [partner_helper](partner_helper/) | 8.0.0.1.0 (unported) | Partner Helper
-[partner_relations](partner_relations/) | 8.0.1.1.0 (unported) | Partner relations
 [partner_street_number](partner_street_number/) | 8.0.0.1.0 (unported) | Introduces separate fields for street name and street number.
-[passport](passport/) | 8.0.0.1.0 (unported) | Passport Management
 [portal_partner_merge](portal_partner_merge/) | 8.0.1.0.0 (unported) | Portal Partner Merge
 [res_partner_affiliate](res_partner_affiliate/) | 8.0.1.0.0 (unported) | Partner Affiliates
 
