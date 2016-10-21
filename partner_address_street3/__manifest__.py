@@ -14,6 +14,7 @@
     'depends': ['base'],
     'website': 'http://www.camptocamp.com',
     'data': ['view/partner_view.xml'],
-    'post_init_hook': 'update_street3_on_countries',
+    'post_init_hook': 'street3_post_init_hook',
+    'uninstall_hook': 'street3_uninstall_hook',
     'installable': True,
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
 
 from . import model
-from .post_install import update_street3_on_countries
+from .hooks import street3_post_init_hook
+from .hooks import street3_uninstall_hook

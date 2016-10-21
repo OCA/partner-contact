@@ -10,17 +10,9 @@ from odoo.tests.common import TransactionCase
 class TestStreet3(TransactionCase):
 
     def test_partner(self):
-        # Create a new country to test the default address format
-        country = self.env['res.country'].create({
-            'name': 'Donut Land',
-            'code': 'DL',
-            })
-        self.assertEqual(
-            country.address_format,
-            ("%(street)s\n%(street2)s\n%(street3)s\n"
-             "%(city)s %(state_code)s %(zip)s\n"
-             "%(country_name)s")
-        )
+        # Test address_format has been updated on existing countries
+        us_country = self.env.ref('base.us')
+        self.assertTrue('%(street3)s' in us_country.address_format)
 
         homer = self.env['res.partner'].create({
             'name': 'Homer Simpson',
@@ -28,7 +20,7 @@ class TestStreet3(TransactionCase):
             'street': '742 Evergreen Terrace',
             'street2': 'Donut Lane',
             'street3': 'Tho',
-            'country_id': country.id,
+            'country_id': us_country.id,
             })
 
         # test synchro of street3 on create
