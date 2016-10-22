@@ -2,8 +2,8 @@
 # © 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp.tests import common
-from openerp.exceptions import Warning as UserError
+from odoo.tests import common
+from odoo.exceptions import UserError
 from ..hooks import set_default_map_settings
 
 
