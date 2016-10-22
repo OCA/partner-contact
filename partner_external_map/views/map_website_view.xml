@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright (C) 2015 Akretion France (www.akretion.com)
-    @author: Alexis de Lattre <alexis.delattre@akretion.com>
-    The licence is in the file __openerp__.py
+  © 2015-2016 Akretion (Alexis de Lattre <alexis.delattre@akretion.com>)
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 -->
 
-<openerp>
-<data>
+<odoo>
 
 <record id="map_website_form" model="ir.ui.view">
     <field name="name">map.website.form</field>
@@ -41,9 +39,13 @@
     <field name="view_mode">tree,form</field>
 </record>
 
-<!-- Menu entry under Sales > Config > Address Book > Localization -->
-<menuitem id="map_website_menu" action="map_website_action"
-    parent="base.menu_localisation" sequence="50"/>
+<!-- Menu entry under Settings > Technical
+We prefered the menu entry of previous Odoo versions under
+Sales > Config > Address Book > Localization, but in v10 that
+would required a dependency on sales_team, and we don't want that -->
+<menuitem id="root_map_website_menu" name="Map Websites" parent="base.menu_custom" sequence="100"/>
 
-</data>
-</openerp>
+<menuitem id="map_website_menu" action="map_website_action"
+    parent="root_map_website_menu"/>
+
+</odoo>

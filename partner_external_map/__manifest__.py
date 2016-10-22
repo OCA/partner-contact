@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# © 2015 Alexis de Lattre <alexis.delattre@akretion.com>
+# © 2015-2016 Akretion (Alexis de Lattre <alexis.delattre@akretion.com>)
 # © 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
     'name': 'Partner External Maps',
-    'version': '9.0.1.0.0',
+    'version': '10.0.1.0.0',
     'category': 'Extra Tools',
     'license': 'AGPL-3',
     'summary': 'Add Map and Map Routing buttons on partner form to '
@@ -23,5 +23,5 @@
         'security/ir.model.access.csv',
     ],
     'post_init_hook': 'set_default_map_settings',
-    'installable': False,
+    'installable': True,
 }
