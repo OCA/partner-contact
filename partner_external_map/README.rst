@@ -26,7 +26,6 @@ This module supports several map websites:
 * `Bing Maps <https://www.bing.com/maps/>`
 * `Here Maps <https://www.here.com/>`
 * `MapQuest <http://www.mapquest.com/>`
-* `Yahoo! Maps <https://maps.yahoo.com/>`
 
 If the module *base_geolocalize* from the official addons is installed on the
 system, it will use the latitude and longitude to localize the partner (instead
@@ -36,9 +35,9 @@ Configuration
 =============
 
 If you want to create additionnal map websites, go to the menu
-*Sales > Configuration > Address Book > Localization > Map Websites*. You are
+*Settings > Technical > Map Websites > Map Websites*. You are
 invited to send the configuration information of your additionnal map websites
-to the author of the module, so that the module can be updated with more
+to one of the authors of the module, so that the module can be updated with more
 pre-configured map websites.
 
 Usage
@@ -55,7 +54,7 @@ or a route map.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/9.0
+   :target: https://runbot.odoo-community.org/runbot/134/10.0
 
 Known issues / Roadmap
 ======================
@@ -69,11 +68,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues
 <https://github.com/OCA/partner-contact/issues>`_. In case of trouble, please
 check there if your issue has already been reported. If you spotted it first,
-help us smashing it by providing a detailed and welcomed `feedback
-<https://github.com/OCA/
-partner-contact/issues/new?body=module:%20
-partner_external_map%0Aversion:%20
-9.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+help us smashing it by providing a detailed and welcomed feedback.
 
 Credits
 =======
@@ -87,9 +82,9 @@ Contributors
 Maintainer
 ----------
 
-.. image:: http://odoo-community.org/logo.png
+.. image:: https://odoo-community.org/logo.png
    :alt: Odoo Community Association
-   :target: http://odoo-community.org
+   :target: https://odoo-community.org
 
 This module is maintained by the OCA.
 
