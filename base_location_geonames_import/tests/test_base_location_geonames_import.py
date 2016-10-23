@@ -14,27 +14,28 @@ class TestBaseLocationGeonamesImport(common.TransactionCase):
         })
 
     def test_import_country(self):
-        self.wizard.with_context(max_import=10).run_import()
-        state_domain = [
-            ('code', '=', '01'),
+        max_import = 10
+        self.wizard.with_context(max_import=max_import).run_import()
+        # Look if there are imported states for the country
+        state_count = self.env['res.country.state'].search_count([
             ('country_id', '=', self.country.id)
-        ]
-        states = self.env['res.country.state'].search(state_domain)
-        self.assertEqual(len(states), 1)
-        zip_domain = [
-            ('name', '=', '98000'),
-            ('city', '=', 'Jardin Exotique'),
-            ('state_id', '=', states[0].id),
-            ('country_id', '=', self.country.id),
-        ]
-        zips = self.env['res.better.zip'].search(zip_domain)
-        self.assertEqual(len(zips), 1)
+        ])
+        self.assertTrue(state_count)
+        # Look if the are imported zips
+        zip_count = self.env['res.better.zip'].search_count([
+            ('country_id', '=', self.country.id)
+        ])
+        self.assertEqual(zip_count, max_import)
         # Reimport again to see that there's no duplicates
-        self.wizard.with_context(max_import=10).run_import()
-        states = self.env['res.country.state'].search(state_domain)
-        self.assertEqual(len(states), 1)
-        zips = self.env['res.better.zip'].search(zip_domain)
-        self.assertEqual(len(zips), 1)
+        self.wizard.with_context(max_import=max_import).run_import()
+        state_count2 = self.env['res.country.state'].search_count([
+            ('country_id', '=', self.country.id)
+        ])
+        self.assertEqual(state_count, state_count2)
+        zip_count = self.env['res.better.zip'].search_count([
+            ('country_id', '=', self.country.id)
+        ])
+        self.assertEqual(zip_count, max_import)
 
     def test_delete_old_entries(self):
         zip_entry = self.env['res.better.zip'].create({
