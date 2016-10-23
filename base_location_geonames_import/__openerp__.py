@@ -6,7 +6,7 @@
 
 {
     'name': 'Base Location Geonames Import',
-    'version': '8.0.1.0.0',
+    'version': '8.0.1.0.1',
     'category': 'Partner Management',
     'license': 'AGPL-3',
     'summary': 'Import better zip entries from Geonames',

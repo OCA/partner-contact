@@ -133,7 +133,7 @@ class BetterZipGeonamesImport(models.TransientModel):
             zip_code = self.create_better_zip(row, self.country_id)
             if zip_code in zips_to_delete:
                 zips_to_delete -= zip_code
-            if max_import and i == max_import:
+            if max_import and (i + 1) == max_import:
                 break
         data_file.close()
         if zips_to_delete and not max_import:
