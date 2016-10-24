@@ -20,7 +20,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [base_location](base_location/) | 9.0.1.0.0 | Enhanced zip/npa management system
-[base_location_geonames_import](base_location_geonames_import/) | 9.0.1.0.0 | Import better zip entries from Geonames
+[base_location_geonames_import](base_location_geonames_import/) | 9.0.1.0.1 | Import better zip entries from Geonames
 [base_partner_merge](base_partner_merge/) | 9.0.1.0.0 | Partner merge wizard without dependency on CRM
 [partner_address_street3](partner_address_street3/) | 9.0.0.1.0 | Street3 in addresses
 [partner_contact_birthdate](partner_contact_birthdate/) | 9.0.1.0.0 | Contact's birthdate
@@ -29,6 +29,7 @@ addon | version | summary
 [partner_contact_nationality](partner_contact_nationality/) | 9.0.1.0.0 | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 9.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_external_map](partner_external_map/) | 9.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
+[partner_financial_risk](partner_financial_risk/) | 9.0.1.0.0 | Manage partner risk
 [partner_firstname](partner_firstname/) | 9.0.1.0.0 | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 9.0.1.0.0 | Partner Identification Numbers
 [partner_multi_relation](partner_multi_relation/) | 9.0.1.1.1 | Partner relations
