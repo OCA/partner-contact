@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3). -->
+<odoo>
+    <record id="res_partner_view_risk" model="ir.ui.view">
+        <field name="name">res.partner.view.risk</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_financial_risk.res_partner_view_risk"/>
+        <field name="arch" type="xml">
+            <field name="risk_invoice_draft_include" position="before">
+                <field name="risk_sale_order_include"
+                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                <field name="risk_sale_order" nolabel="1"/>
+            </field>
+            <field name="risk_invoice_draft_limit" position="before">
+                <field name="risk_sale_order_limit"
+                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>
