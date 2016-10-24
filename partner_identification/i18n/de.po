@@ -1,0 +1,139 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* chricar_partner_id_number
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 17:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Translate Toolkit 1.11.0\n"
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_category,active:0
+#: field:res.partner.id_number,active:0
+msgid "Active"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_number,category_id:0
+msgid "Category"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_category,code:0
+msgid "Code"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_category,create_uid:0
+#: field:res.partner.id_number,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_category,create_date:0
+#: field:res.partner.id_number,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_category,id:0
+#: field:res.partner.id_number,id:0
+msgid "ID"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_number,name:0
+msgid "ID Number"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: view:res.partner:chricar_partner_id_number.view_partner_form
+msgid "ID Numbers"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_category,name:0
+msgid "ID name"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner,id_numbers:0
+msgid "Identification Numbers"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_number,partner_issued_id:0
+msgid "Issued by"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_number,date_issued:0
+msgid "Issued on"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_category,write_uid:0
+#: field:res.partner.id_number,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_category,write_date:0
+#: field:res.partner.id_number,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: view:res.partner.id_number:chricar_partner_id_number.view_partner_id_numbers_form
+#: field:res.partner.id_number,comment:0
+msgid "Notes"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: model:ir.model,name:chricar_partner_id_number.model_res_partner
+#: field:res.partner.id_number,partner_id:0
+msgid "Partner"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: model:ir.actions.act_window,name:chricar_partner_id_number.action_partner_id_category
+#: model:ir.ui.menu,name:chricar_partner_id_number.menu_partner_id_category
+msgid "Partner ID Categories"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: model:ir.actions.act_window,name:chricar_partner_id_number.action_partner_id_numbers_form
+#: view:res.partner.id_number:chricar_partner_id_number.view_partner_id_numbers_form
+#: view:res.partner.id_number:chricar_partner_id_number.view_partner_id_numbers_tree
+msgid "Partner ID Numbers"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: view:res.partner.id_category:chricar_partner_id_number.view_partner_id_category_form
+#: view:res.partner.id_category:chricar_partner_id_number.view_partner_id_category_tree
+msgid "Partner Identification Categories"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_number,state:0
+msgid "State"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_number,valid_from:0
+msgid "Valid from"
+msgstr ""
+
+#. module: chricar_partner_id_number
+#: field:res.partner.id_number,valid_until:0
+msgid "Valid until"
+msgstr ""
