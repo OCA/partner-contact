@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# © 2014 Alexis de Lattre <alexis.delattre@akretion.com>
+# © 2014-2016 Akretion (Alexis de Lattre <alexis.delattre@akretion.com>)
 # © 2014 Lorenzo Battistini <lorenzo.battistini@agilebg.com>
 # © 2016 Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, _
-from openerp.exceptions import UserError
+from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 import requests
 import tempfile
 import StringIO
@@ -27,10 +27,14 @@ class BetterZipGeonamesImport(models.TransientModel):
     _rec_name = 'country_id'
 
     country_id = fields.Many2one('res.country', 'Country', required=True)
-    title_case = fields.Boolean(
-        string='Title Case',
-        help='Converts retreived city and state names to Title Case.',
-    )
+    letter_case = fields.Selection([
+        ('unchanged', 'Unchanged'),
+        ('title', 'Title Case'),
+        ('upper', 'Upper Case'),
+        ], string='Letter Case', default='unchanged',
+        help="Converts retreived city and state names to Title Case "
+        "(upper case on each first letter of a word) or Upper Case "
+        "(all letters upper case).")
 
     @api.model
     def transform_city_name(self, city, country):
@@ -66,9 +70,12 @@ class BetterZipGeonamesImport(models.TransientModel):
                     "correspond to the selected country (%s).")
                 % (row[0], country.code))
         logger.debug('ZIP = %s - City = %s' % (row[1], row[2]))
-        if (self.title_case):
+        if self.letter_case.title:
             row[2] = row[2].title()
             row[3] = row[3].title()
+        elif self.letter_case.upper:
+            row[2] = row[2].upper()
+            row[3] = row[3].upper()
         if row[1] and row[2]:
             zip_model = self.env['res.better.zip']
             zips = zip_model.search(self._domain_search_better_zip(

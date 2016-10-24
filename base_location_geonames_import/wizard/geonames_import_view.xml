@@ -1,41 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
 
-        <record id="better_zip_geonames_import_form" model="ir.ui.view">
-            <field name="name">asterisk.server.company</field>
-            <field name="model">better.zip.geonames.import</field>
-            <field name="arch"  type="xml">
-                <form string="Import from Geonames">
-                    <group name="main">
-                        <field name="country_id"/>
-                        <label string="For the country selected above, this wizard will download the latest version of the list of cities from geonames.org, create new location entries if not found already in the system, and DELETE MISSING ENTRIES from new file."
-                            colspan="2" name="import-help"/>
-                    </group>
-                    <group name="options">
-                        <field name="title_case"/>
-                    </group>
-                    <footer>
-                        <button name="run_import" type="object"
-                            class="oe_highlight" string="Import"/>
-                        <button special="cancel" string="Cancel" class="oe_link"/>
-                    </footer>
-                </form>
-            </field>
-        </record>
+    <record id="better_zip_geonames_import_form" model="ir.ui.view">
+        <field name="name">Import from Geonames form view</field>
+        <field name="model">better.zip.geonames.import</field>
+        <field name="arch"  type="xml">
+            <form string="Import from Geonames">
+                <group name="help">
+                    <div>
+                        <p>For the selected country, this wizard will download the latest version of the list of cities from <a href="http://www.geonames.org/">geonames.org</a>, create new location entries if not found already in the system, and <b>delete missing entries</b> from new file.</p>
+                    </div>
+                </group>
+                <group name="main">
+                    <field name="country_id"/>
+                    <field name="letter_case"/>
+                </group>
+                <footer>
+                    <button name="run_import" type="object"
+                        class="oe_highlight" string="Import"/>
+                    <button special="cancel" string="Cancel" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
 
-        <record id="better_zip_geonames_import_action" model="ir.actions.act_window">
-            <field name="name">Import from Geonames</field>
-            <field name="res_model">better.zip.geonames.import</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">form</field>
-            <field name="target">new</field>
-        </record>
+    <record id="better_zip_geonames_import_action" model="ir.actions.act_window">
+        <field name="name">Import from Geonames</field>
+        <field name="res_model">better.zip.geonames.import</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
 
-        <menuitem id="better_zip_geonames_import_menu"
-            action="better_zip_geonames_import_action"
-            parent="base.menu_localisation"
-            sequence="50"/>
+    <menuitem id="better_zip_geonames_import_menu"
+        action="better_zip_geonames_import_action"
+        parent="sales_team.menu_localisation"
+        sequence="50"/>
 
-    </data>
-</openerp>
+</odoo>
