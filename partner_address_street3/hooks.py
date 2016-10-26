@@ -17,14 +17,25 @@ def post_init_hook(cr, registry):
     cr.execute(query)
 
 
-def uninstall_hook(cr, registry):
+def uninstall_hook(cr, registry):  # pragma: no-cover
     """ Remove street3 from address format """
-    # Remove %(street3)s\n format
+    # Remove %(street3)s\n from address_format
     query = """
         UPDATE res_country
         SET address_format = replace(
         address_format,
         E'%(street3)s\n',
+        ''
+        )
+    """
+    cr.execute(query)
+
+    # Remove %(street3)s from address_format
+    query = """
+        UPDATE res_country
+        SET address_format = replace(
+        address_format,
+        E'%(street3)s',
         ''
         )
     """
