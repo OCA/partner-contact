@@ -1,35 +1,20 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Author: Nicolas Bessi
-#    Copyright 2014 Camptocamp SA
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright 2014 Nicolas Bessi, Alexandre Fayolle, Camptocamp SA
+# Copyright 2016 Sodexis
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
 {
     'name': 'Street3 in addresses',
-    'version': '9.0.0.1.0',
-    'author': "Camptocamp,Odoo Community Association (OCA)",
+    'version': '9.0.1.1.0',
+    'author': "Camptocamp,Sodexis,Odoo Community Association (OCA)",
     'maintainer': 'Camptocamp',
     'category': 'Sales',
     'complexity': 'easy',
     'depends': ['base'],
     'website': 'http://www.camptocamp.com',
     'data': ['view/partner_view.xml'],
-    'demo': [],
-    'test': [],
+    'post_init_hook': 'post_init_hook',
+    'uninstall_hook': 'uninstall_hook',
     'installable': True,
     'auto_install': False,
     'license': 'AGPL-3',
