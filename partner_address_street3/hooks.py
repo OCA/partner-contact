@@ -17,7 +17,7 @@ def post_init_hook(cr, registry):
     cr.execute(query)
 
 
-def uninstall_hook(cr, registry):  # pragma: no-cover
+def uninstall_hook(cr, registry):
     """ Remove street3 from address format """
     # Remove %(street3)s\n from address_format
     query = """
