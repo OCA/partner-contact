@@ -22,7 +22,7 @@ addon | version | summary
 [base_location](base_location/) | 9.0.1.0.0 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 9.0.1.0.1 | Import better zip entries from Geonames
 [base_partner_merge](base_partner_merge/) | 9.0.1.0.0 | Partner merge wizard without dependency on CRM
-[partner_address_street3](partner_address_street3/) | 9.0.0.1.0 | Street3 in addresses
+[partner_address_street3](partner_address_street3/) | 9.0.1.1.0 | Street3 in addresses
 [partner_contact_birthdate](partner_contact_birthdate/) | 9.0.1.0.0 | Contact's birthdate
 [partner_contact_gender](partner_contact_gender/) | 9.0.1.1.0 | Add gender field to contacts
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 9.0.1.0.0 | Allow to have one contact in several partners
