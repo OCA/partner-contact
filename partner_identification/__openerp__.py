@@ -12,6 +12,9 @@
     'name': 'Partner Identification Numbers',
     'category': 'Customer Relationship Management',
     'version': '9.0.1.0.0',
+    'depends': [
+        'sales_team',
+    ],
     'data': [
         'views/res_partner_id_category_view.xml',
         'views/res_partner_id_number_view.xml',
