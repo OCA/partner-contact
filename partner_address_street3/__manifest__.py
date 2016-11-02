@@ -1,37 +1,20 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Author: Nicolas Bessi
-#    Copyright 2014 Camptocamp SA
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# © 2014-2016 Camptocamp SA
+# @author: Nicolas Bessi
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
 {
     'name': 'Street3 in addresses',
-    'version': '8.0.0.1.0',
+    'summary': 'Add a third address line on partners',
+    'license': 'AGPL-3',
+    'version': '10.0.1.0.0',
     'author': "Camptocamp,Odoo Community Association (OCA)",
     'maintainer': 'Camptocamp',
     'category': 'Sales',
-    'complexity': 'easy',
     'depends': ['base'],
     'website': 'http://www.camptocamp.com',
     'data': ['view/partner_view.xml'],
-    'demo': [],
-    'test': [],
-    'installable': False,
-    'auto_install': False,
-    'license': 'AGPL-3',
-    'application': False,
+    'post_init_hook': 'post_init_hook',
+    'uninstall_hook': 'uninstall_hook',
+    'installable': True,
 }
