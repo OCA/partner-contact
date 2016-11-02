@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-  <data>
-    <record id="add_stree3_in_form_view" model="ir.ui.view">
-      <field name="name">add stree3 in form view</field>
+<odoo>
+
+    <record id="add_street3_in_form_view" model="ir.ui.view">
+      <field name="name">add street3 in form view</field>
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form"/>
       <field name="arch" type="xml">
@@ -22,7 +22,7 @@
           'default_supplier': supplier, 'default_customer': customer,
           'default_lang': lang,}</attribute>
         </xpath>
-        <xpath expr="/form//field[@name='child_ids']//field[@name='street2']"
+        <xpath expr="/form//field[@name='child_ids']/form//field[@name='street2']"
                position="after">
           <field name="street3" placeholder="Street 3..." class="o_address_street"/>
         </xpath>
@@ -57,5 +57,4 @@
       </field>
     </record>
 
-  </data>
-</openerp>
+</odoo>
