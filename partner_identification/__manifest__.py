@@ -22,7 +22,7 @@
         'security/ir.model.access.csv',
     ],
     'author': 'ChriCar Beteiligungs- und Beratungs- GmbH, '
-              'Antiun Ingeniería S.L.,'
+              'Tecnativa,'
               'Camptocamp,'
               'ACSONE SA/NV,'
               'Odoo Community Association (OCA)',
