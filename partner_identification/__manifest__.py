@@ -11,7 +11,7 @@
 {
     'name': 'Partner Identification Numbers',
     'category': 'Customer Relationship Management',
-    'version': '9.0.1.0.0',
+    'version': '10.0.1.0.0',
     'depends': [
         'sales_team',
     ],
@@ -22,10 +22,10 @@
         'security/ir.model.access.csv',
     ],
     'author': 'ChriCar Beteiligungs- und Beratungs- GmbH, '
-              'Antiun Ingeniería S.L.',
+              'Antiun Ingeniería S.L.,'
               'Camptocamp,'
               'ACSONE SA/NV,'
-              'Odoo Community Association (OCA)'
+              'Odoo Community Association (OCA)',
     'website': 'https://odoo-community.org/',
     'license': 'AGPL-3',
     'installable': True,
