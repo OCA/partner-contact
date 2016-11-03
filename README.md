@@ -19,6 +19,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[partner_address_street3](partner_address_street3/) | 10.0.1.0.0 | Add a third address line on partners
 [partner_firstname](partner_firstname/) | 10.0.1.0.0 | Split first name and last name for non company partners
 
 Unported addons
@@ -34,7 +35,6 @@ addon | version | summary
 [base_partner_merge](base_partner_merge/) | 9.0.1.0.0 (unported) | Partner merge wizard without dependency on CRM
 [base_partner_sequence](base_partner_sequence/) | 8.0.1.1.0 (unported) | Sets customer's code from a sequence
 [firstname_display_name_trigger](firstname_display_name_trigger/) | 1.0 (unported) | Link module if partner_lastname and account_report_company are installed
-[partner_address_street3](partner_address_street3/) | 8.0.0.1.0 (unported) | Street3 in addresses
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 (unported) | Partner auto salesman
 [partner_contact_address_detailed](partner_contact_address_detailed/) | 8.0.1.0.0 (unported) | All address data in summarized contact form
 [partner_contact_birthdate](partner_contact_birthdate/) | 9.0.1.0.0 (unported) | Contact's birthdate
