@@ -92,11 +92,11 @@ Credits
 Contributors
 ------------
 
-* Antonio Espinosa <antonioea@antiun.com>
+* Antonio Espinosa <antonio.espinosa@tecnativa.com>
 * Ferdinand Gassauer <office@chrcar.at>
 * Gerhard Könighofer <gerhard.koenighofer@swing-system.com>
 * Laurent Mignon <laurent.mignon@acsone.eu>
-* Yajo <Yajo@users.noreply.github.com>
+* Jairo Llopis <jairo.llopis@tecnativa.com>
 
 Maintainer
 ----------
