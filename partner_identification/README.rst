@@ -15,7 +15,7 @@ and vary from country to country.
 * Fiscal ID's
 * Membership numbers
 * Driver license
-* ...
+* etc
 
 
 Installation
@@ -27,7 +27,7 @@ No specific installation step required
 Configuration
 =============
 
-Configure all ID types you need in Sales > Configuration > Address Book > Partner ID Categories.
+Configure all ID types you need in Sales > Configuration > Contacts > Partner ID Categories.
 For example, we create a category 'Driver License':
 
 Name:
@@ -63,7 +63,7 @@ Notes:
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/9.0
+   :target: https://runbot.odoo-community.org/runbot/134/10.0
 
 
 Known issues / Roadmap
@@ -92,11 +92,11 @@ Credits
 Contributors
 ------------
 
-* Antonio Espinosa <antonioea@antiun.com>
+* Antonio Espinosa <antonio.espinosa@tecnativa.com>
 * Ferdinand Gassauer <office@chrcar.at>
 * Gerhard Könighofer <gerhard.koenighofer@swing-system.com>
 * Laurent Mignon <laurent.mignon@acsone.eu>
-* Yajo <Yajo@users.noreply.github.com>
+* Jairo Llopis <jairo.llopis@tecnativa.com>
 
 Maintainer
 ----------
