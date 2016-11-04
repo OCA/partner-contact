@@ -31,12 +31,8 @@ class SaleOrder(models.Model):
         xml_discount = eview.xpath("//field[@name='default_sale_discount']")
         if xml_order_line and xml_discount:
             # This should be handled in "string" mode
-            context = xml_order_line[0].get('context', '{}')
-            index = context.find('{')
-            context = (
-                context[:index + 1] +
-                "'default_discount': default_sale_discount, " +
-                context[index + 1:]
+            context = xml_order_line[0].get('context', '{}').replace(
+                "{", "{'default_discount': default_sale_discount, ", 1
             )
             xml_order_line[0].set('context', context)
             res['arch'] = etree.tostring(eview)
