@@ -19,6 +19,8 @@
     },
     'depends': ['base_vat'],
     'data': ['views/res_partner_view.xml'],
-    'images': [],
+    'images': ['static/description/icon.png',
+               'static/description/customer.png',
+               'static/description/customer1.png'],    
     'auto_install': False,
 }
