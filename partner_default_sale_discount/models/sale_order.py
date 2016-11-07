@@ -30,7 +30,9 @@ class SaleOrder(models.Model):
         xml_order_line = eview.xpath("//field[@name='order_line']")
         xml_discount = eview.xpath("//field[@name='default_sale_discount']")
         if xml_order_line and xml_discount:
-            # This should be handled in "string" mode
+            # This should be handled in "string" mode, as the context can
+            # contain a expression that can only be evaled on execution time
+            # on the JS web client
             context = xml_order_line[0].get('context', '{}').replace(
                 "{", "{'default_discount': default_sale_discount, ", 1
             )
