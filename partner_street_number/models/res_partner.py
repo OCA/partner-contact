@@ -22,17 +22,18 @@
 ##############################################################################
 
 import re
-from openerp import models, fields, api
+from odoo import models, fields, api
 
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    @api.one
+    @api.multi
     @api.depends('street_name', 'street_number')
     def _get_street(self):
-        self.street = ' '.join(
-            filter(None, [self.street_name, self.street_number]))
+        for partner in self:
+            partner.street = ' '.join(
+                filter(None, [partner.street_name, partner.street_number]))
 
     def _write_street(self):
         """
@@ -41,26 +42,26 @@ class ResPartner(models.Model):
         us with a way of easily restoring the data when this module is
         installed on a database that already contains addresses).
         """
-        street_name = self.street and self.street.strip() or False
-        street_number = False
-        if self.street:
-            match = re.search(r'(.+)\s+(\d.*)', self.street.strip())
-            if match and len(match.group(2)) < 6:
-                street_name = match.group(1)
-                street_number = match.group(2)
         for partner in self:
-            self.street_name = street_name
-            self.street_number = street_number
+            street_name = partner.street.strip() if partner.street else False
+            street_number = False
+            if street_name:
+                match = re.search(r'(.+)\s+(\d.*)', street_name)
+                if match and len(match.group(2)) < 6:
+                    street_name = match.group(1)
+                    street_number = match.group(2)
+            partner.street_name = street_name
+            partner.street_number = street_number
 
-    @api.model
-    def _display_address(self, address, without_company=False):
+    @api.multi
+    def _display_address(self, without_company=False):
         """
         Inject a context key to prevent the 'street' name to be
         deleted from the result of _address_fields when called from
         the super.
         """
         return super(ResPartner, self.with_context(display_address=True)).\
-            _display_address(address, without_company=without_company)
+            _display_address(without_company=without_company)
 
     @api.model
     def _address_fields(self):
