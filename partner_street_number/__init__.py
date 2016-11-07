@@ -18,26 +18,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+
 from . import models
-
-import logging
-from openerp import SUPERUSER_ID
-
-
-def post_init_hook(cr, registry):
-    """
-    Post-install script. Because 'street' is now a stored function field, we
-    should be able to retrieve its values from the cursor. We use those to
-    fill the new name/number fields using the street field's inverse function,
-    which does a basic street name/number split.
-    """
-    logging.getLogger('openerp.addons.partner_street_number').info(
-        'Migrating existing street names')
-    cr.execute(
-        'SELECT id, street FROM res_partner '
-        'WHERE street IS NOT NULL and street_name IS NULL'
-        )
-    partner_obj = registry['res.partner']
-    for partner in cr.fetchall():
-        partner_obj.write(
-            cr, SUPERUSER_ID, partner[0], {'street': partner[1]})
+from .hooks import post_init_hook

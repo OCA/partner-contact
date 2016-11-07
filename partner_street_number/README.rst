@@ -1,6 +1,8 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-    :alt: License
+   :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+   :alt: License: AGPL-3
 
+============================
 Split street name and number
 ============================
 
@@ -16,7 +18,7 @@ Changes to the Odoo datamodel
 
 Compatibility
 =============
-This module is compatible with OpenERP 8.0.
+This module is compatible with Odoo 10.0.
 
 
 Installation
@@ -24,6 +26,31 @@ Installation
 
 Upon installation, the module will do a simple migration of existing values in
 the street column to split up the street name and number.
+
+Usage
+=====
+
+To use this module, you need to:
+
+#. Open a partner form
+#. Fill fields street name and number
+
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/134/10.0
+
+Known issues / Roadmap
+======================
+
+* Add more unit tests
+
+Bug Tracker
+===========
+
+Bugs are tracked on `GitHub Issues
+<https://github.com/OCA/partner-contact/issues>`_. In case of trouble, please
+check there if your issue has already been reported. If you spotted it first,
+help us smashing it by providing a detailed and welcomed feedback.
 
 Credits
 =======
@@ -34,6 +61,7 @@ Contributors
 * Stefan Rijnhart <stefan@therp.nl>
 * Ronald Portier <ronald@therp.nl>
 * Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
+* Andrea Stirpe <a.stirpe@onestein.nl>
 
 Icon
 ----
