@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="assets_backend" name="partner_street_number backend assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/partner_street_number/static/src/css/field.less"/>
+        </xpath>
+    </template>
+
+</odoo>

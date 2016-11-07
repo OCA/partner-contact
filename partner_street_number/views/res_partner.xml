@@ -1,52 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-    <data>
+<odoo>
 
         <record id="view_partner_form" model="ir.ui.view">
             <field name="name">Add separate fields for street name and number</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
- 
-               <xpath expr="/form/sheet//div/field[@name='street']"
+                <xpath expr="//div[@class='o_address_format']//field[@name='street']"
                        position="after">
-                    <div>
-                        <field name="street_name" style="width: 80%%"
-                               placeholder="Street..."
-                               attrs="{'readonly': [('use_parent_address','=',True)]}"
+                        <field name="street_name" class="o_address_street_name"
+                                placeholder="Street..."
+                                attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
                                />
-                        <field name="street_number" style="width: 19%%"
-                               placeholder="Number..."
-                               attrs="{'readonly': [('use_parent_address','=',True)]}"
+                        <field name="street_number" class="o_address_street_number"
+                                placeholder="Number..."
+                                attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
                                />
-                    </div>
                 </xpath>
-               <xpath expr="/form/sheet//div/field[@name='street']"
+                <xpath expr="//div[@class='o_address_format']//field[@name='street']"
                        position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
 
-                <xpath expr="//form[@string='Contact']/sheet/group/div/field[@name='street']"
+                <xpath expr="//div[@name='div_address']//field[@name='street']"
                        position="after">
-                    <div>
-                        <field name="street_name" style="width: 80%%"
+                        <field name="street_name" class="o_address_street_name"
                                placeholder="Street..."
                                />
-                        <field name="street_number" style="width: 19%%"
+                        <field name="street_number" class="o_address_street_number"
                                placeholder="Number..."
                                />
-                    </div>
                 </xpath>
-                <xpath expr="//form[@string='Contact']/sheet/group/div/field[@name='street']"
+                <xpath expr="//div[@name='div_address']//field[@name='street']"
                        position="attributes">
                     <attribute name="invisible">1</attribute>
                 </xpath>
 
                 <xpath expr="//field[@name='child_ids']" position="attributes">
-                    <attribute name="context">{'default_parent_id': active_id, 'default_street_name': street_name, 'default_street_number': street_number, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_supplier': supplier, 'default_customer': customer, 'default_use_parent_address': True}</attribute>
+                    <attribute name="context">{'default_parent_id': active_id, 'default_street_name': street_name, 'default_street_number': street_number, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_supplier': supplier, 'default_customer': customer}</attribute>
                 </xpath>
 
             </field>
         </record>
-    </data>
-</openerp>
+
+        <record id="view_partner_address_form" model="ir.ui.view">
+            <field name="name">Add separate fields for street name and number in address form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_address_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='o_address_format']//field[@name='street']"
+                       position="after">
+                       <field name="street_name" class="o_address_street_name"
+                                placeholder="Street..."
+                               />
+                       <field name="street_number" class="o_address_street_number"
+                                placeholder="Number..."
+                               />
+                </xpath>
+                <xpath expr="//div[@class='o_address_format']//field[@name='street']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+</odoo>
