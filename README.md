@@ -28,6 +28,7 @@ addon | version | summary
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 9.0.1.0.0 | Allow to have one contact in several partners
 [partner_contact_nationality](partner_contact_nationality/) | 9.0.1.0.0 | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 9.0.1.0.0 | Add a page to contacts form to put personal information
+[partner_default_sale_discount](partner_default_sale_discount/) | 9.0.1.0.0 | Default sales discount per partner
 [partner_external_map](partner_external_map/) | 9.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_financial_risk](partner_financial_risk/) | 9.0.1.0.0 | Manage partner risk
 [partner_firstname](partner_firstname/) | 9.0.1.0.0 | Split first name and last name for non company partners
