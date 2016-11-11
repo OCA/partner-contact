@@ -27,7 +27,7 @@ No specific installation step required
 Configuration
 =============
 
-Configure all ID types you need in Sales > Configuration > Address Book > Partner ID Categories.
+Configure all ID types you need in Sales > Configuration > Contacts > Partner ID Categories.
 For example, we create a category 'Driver License':
 
 Name:
