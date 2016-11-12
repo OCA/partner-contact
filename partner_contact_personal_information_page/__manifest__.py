@@ -4,7 +4,7 @@
 {
     "name": "Personal information page for contacts",
     "summary": "Add a page to contacts form to put personal information",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "category": "Customer Relationship Management",
     "website": "https://odoo-community.org/",
     "author": "Odoo Community Association (OCA)",
@@ -17,7 +17,7 @@
     ],
     "license": "AGPL-3",
     'application': False,
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     "depends": [
         "base"
