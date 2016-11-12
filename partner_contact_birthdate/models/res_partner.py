@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2014-2015  Grupo ESOC <www.grupoesoc.es>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from openerp import _, api, fields, models
+from odoo import _, api, fields, models
 import logging
 
 
@@ -21,21 +21,24 @@ class Partner(models.Model):
         inverse="_birthdate_inverse",
         store=True)
 
-    @api.one
+    @api.multi
     @api.depends("birthdate_date")
     def _birthdate_compute(self):
         """Store a string of the new date in the old field."""
-        self.birthdate = self.birthdate_date
+        for partner in self:
+            partner.birthdate = partner.birthdate_date
 
-    @api.one
+    @api.multi
     def _birthdate_inverse(self):
         """Convert the old Char date to the new Date format."""
-        try:
-            self.birthdate_date = self.birthdate
-        except ValueError:
-            _logger.warn(
-                _("Could not convert '{0.birthdate}' to date in "
-                  "res.partner {0.id} ({0.name}). Skipping.").format(self))
+        for partner in self:
+            try:
+                partner.birthdate_date = partner.birthdate
+            except ValueError:
+                _logger.warn(_(
+                    "Could not convert '{0.birthdate}' to date in "
+                    "res.partner {0.id} ({0.name}). Skipping."
+                ).format(partner))
 
     @api.model
     def _birthdate_install(self):
