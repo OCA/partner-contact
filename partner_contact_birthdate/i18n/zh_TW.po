@@ -3,29 +3,26 @@
 # * partner_contact_birthdate
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
-# Albert Vonpupp <vonpupp@gmail.com>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 20:42+0000\n"
-"PO-Revision-Date: 2017-05-01 20:42+0000\n"
-"Last-Translator: Albert Vonpupp <vonpupp@gmail.com>, 2016\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"POT-Creation-Date: 2017-03-10 03:39+0000\n"
+"PO-Revision-Date: 2017-03-10 03:39+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Chinese (Taiwan) (https://www.transifex.com/oca/teams/23907/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt_BR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: partner_contact_birthdate
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner_birthdate
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner_birthdate_date
-#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users_birthdate
-#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users_birthdate_date
 msgid "Birthdate"
-msgstr "Data de nascimento"
+msgstr ""
 
 #. module: partner_contact_birthdate
 #: code:addons/partner_contact_birthdate/models/res_partner.py:37
@@ -34,10 +31,8 @@ msgid ""
 "Could not convert '{0.birthdate}' to date in res.partner {0.id} ({0.name}). "
 "Skipping."
 msgstr ""
-"Não foi possível converter '{0.birthdate}' a uma data em res.partner {0.id} "
-"({0.name}). Ignorando."
 
 #. module: partner_contact_birthdate
 #: model:ir.model,name:partner_contact_birthdate.model_res_partner
 msgid "Partner"
-msgstr "Parceiro"
+msgstr "夥伴"
