@@ -1,0 +1,119 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_sector
+# 
+# Translators:
+# Oihane Crucelaegui <oihanecruce@gmail.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-25 11:58+0000\n"
+"PO-Revision-Date: 2016-07-14 09:04+0000\n"
+"Last-Translator: Oihane Crucelaegui <oihanecruce@gmail.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_sector
+#: field:res.partner.sector,child_ids:0
+msgid "Children"
+msgstr "Hijos"
+
+#. module: partner_sector
+#: field:res.partner.sector,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: partner_sector
+#: field:res.partner.sector,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: partner_sector
+#: field:res.partner.sector,display_name:0
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: partner_sector
+#: field:res.partner.sector,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_sector
+#: field:res.partner.sector,__last_update:0
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: partner_sector
+#: field:res.partner.sector,write_uid:0
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: partner_sector
+#: field:res.partner.sector,write_date:0
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: partner_sector
+#: field:res.partner,sector_id:0
+msgid "Main Sector"
+msgstr "Sector principal"
+
+#. module: partner_sector
+#: field:res.partner.sector,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: partner_sector
+#: field:res.partner.sector,parent_left:0
+msgid "Parent Left"
+msgstr "Padre izquierdo"
+
+#. module: partner_sector
+#: field:res.partner.sector,parent_right:0
+msgid "Parent Right"
+msgstr "Padre derecho"
+
+#. module: partner_sector
+#: field:res.partner.sector,parent_id:0
+msgid "Parent id"
+msgstr "ID del padre"
+
+#. module: partner_sector
+#: model:ir.model,name:partner_sector.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: partner_sector
+#: view:res.partner:partner_sector.view_res_partner_filter_sector
+msgid "Salesperson"
+msgstr "Comercial"
+
+#. module: partner_sector
+#: field:res.partner,secondary_sector_ids:0
+msgid "Secondary Sectors"
+msgstr "Sectores secundarios"
+
+#. module: partner_sector
+#: model:ir.model,name:partner_sector.model_res_partner_sector
+#: view:res.partner:partner_sector.view_partner_form_sector
+#: view:res.partner:partner_sector.view_res_partner_filter_sector
+msgid "Sector"
+msgstr "Sector"
+
+#. module: partner_sector
+#: model:ir.actions.act_window,name:partner_sector.res_partner_sector_action
+#: model:ir.ui.menu,name:partner_sector.menu_res_partner_sector
+#: view:res.partner.sector:partner_sector.res_partner_sector_tree_view
+msgid "Sectors"
+msgstr "Sectores"
+
+#. module: partner_sector
+#: code:addons/partner_sector/models/res_partner.py:21
+#, python-format
+msgid "The main sector must be different from the secondary sectors."
+msgstr "El sector principal debe ser diferente a los sectores secundarios."
