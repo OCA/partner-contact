@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
-#    Copyright (c) 2014 Serv. Tecnol. Avanzados (http://www.serviciosbaeza.com)
-#                       Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
-#    Copyright (c) 2015 Antiun Ingeniería S.L. (http://www.antiun.com)
-#                       Antonio Espinosa <antonioea@antiun.com>
-# © 2015 Antiun Ingeniería S.L. - Jairo Llopis
+# © 2014-2015 Tecnativa S.L. - Jairo Llopis
+# © 2016 Tecnativa S.L. - Vicent Cubells
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields
+from openerp import models, fields, api, _
+from openerp.exceptions import ValidationError
 
 
 class ResPartner(models.Model):
@@ -37,3 +35,9 @@ class ResPartnerDepartment(models.Model):
         oldname="children")
     parent_left = fields.Integer(index=True)
     parent_right = fields.Integer(index=True)
+
+    @api.constrains('parent_id')
+    def _check_parent_id(self):
+        if not self._check_recursion():
+            raise ValidationError(
+                _('Error! You cannot create recursive departments.'))
