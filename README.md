@@ -21,6 +21,7 @@ addon | version | summary
 --- | --- | ---
 [partner_address_street3](partner_address_street3/) | 10.0.1.0.0 | Add a third address line on partners
 [partner_firstname](partner_firstname/) | 10.0.1.0.0 | Split first name and last name for non company partners
+[partner_identification](partner_identification/) | 10.0.1.0.0 | Partner Identification Numbers
 [partner_street_number](partner_street_number/) | 10.0.1.0.0 | Introduces separate fields for street name and street number.
 
 Unported addons
@@ -45,7 +46,6 @@ addon | version | summary
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 9.0.1.0.0 (unported) | Add a page to contacts form to put personal information
 [partner_external_map](partner_external_map/) | 9.0.1.0.0 (unported) | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_helper](partner_helper/) | 8.0.0.1.0 (unported) | Partner Helper
-[partner_identification](partner_identification/) | 9.0.1.0.0 (unported) | Partner Identification Numbers
 [partner_relations](partner_relations/) | 8.0.1.1.0 (unported) | Partner relations
 [portal_partner_merge](portal_partner_merge/) | 8.0.1.0.0 (unported) | Portal Partner Merge
 [res_partner_affiliate](res_partner_affiliate/) | 8.0.1.0.0 (unported) | Partner Affiliates
