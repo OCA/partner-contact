@@ -59,6 +59,7 @@ Contributors
 * Matjaž Mozetič <m.mozetic@matmoz.si>
 * Rudolf Schnapka <schnapkar@golive-saar.de>
 * Denis Leemann <denis.leemann@camptocamp.com>
+* Dave Lasley <dave@laslabs.com>
 
 Maintainer
 ----------

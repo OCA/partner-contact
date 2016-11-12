@@ -4,7 +4,7 @@
 
 {
     "name": "Contact's birthdate",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "author": "Jairo Llopis,"
               "Odoo Community Association (OCA)",
     "category": "Customer Relationship Management",
