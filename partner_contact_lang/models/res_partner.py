@@ -10,15 +10,13 @@ class ResPartner(models.Model):
 
     @api.multi
     def write(self, vals):
-        if 'lang' in vals and vals['lang']:
-            if 'child_ids' in vals:
-                childs = self.browse(vals['child_ids'])
-            else:
-                childs = self.mapped('child_ids')
-            childs = childs.filtered(lambda x: not x.lang)
+        """Propagate a language change in the partner to the child contacts."""
+        res = super(ResPartner, self).write(vals)
+        if vals.get('lang'):
+            childs = self.mapped('child_ids').filtered(lambda x: not x.lang)
             if childs:
                 childs.write({'lang': vals['lang']})
-        return super(ResPartner, self).write(vals)
+        return res
 
     @api.multi
     def onchange_address(self, use_parent_address, parent_id):
