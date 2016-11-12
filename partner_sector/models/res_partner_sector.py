@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 # © 2015 Antiun Ingenieria S.L. - Javier Iniesta
 # © 2016 Tecnativa S.L. - Vicent Cubells
+# © 2016 Tecnativa S.L. - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from openerp import _, api, fields, exceptions, models
 
 
 class ResPartnerSector(models.Model):
@@ -33,3 +34,9 @@ class ResPartnerSector(models.Model):
             return res
 
         return [(cat.id, " / ".join(reversed(get_names(cat)))) for cat in self]
+
+    @api.constrains('parent_id')
+    def _check_parent_id(self):
+        if not self._check_recursion():
+            raise exceptions.ValidationError(
+                _('Error! You cannot create recursive sectors.'))
