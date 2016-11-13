@@ -99,29 +99,33 @@ class ResPartner(models.Model):
         else:
             return u" ".join((p for p in (lastname, firstname) if p))
 
-    @api.one
+    @api.multi
     @api.depends("firstname", "lastname")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
-        self.name = self._get_computed_name(self.lastname, self.firstname)
+        for record in self:
+            record.name = record._get_computed_name(
+                record.lastname, record.firstname,
+            )
 
-    @api.one
+    @api.multi
     def _inverse_name_after_cleaning_whitespace(self):
         """Clean whitespace in :attr:`~.name` and split it.
 
         The splitting logic is stored separately in :meth:`~._inverse_name`, so
         submodules can extend that method and get whitespace cleaning for free.
         """
-        # Remove unneeded whitespace
-        clean = self._get_whitespace_cleaned_name(self.name)
+        for record in self:
+            # Remove unneeded whitespace
+            clean = record._get_whitespace_cleaned_name(record.name)
 
-        # Clean name avoiding infinite recursion
-        if self.name != clean:
-            self.name = clean
+            # Clean name avoiding infinite recursion
+            if record.name != clean:
+                record.name = clean
 
-        # Save name in the real fields
-        else:
-            self._inverse_name()
+            # Save name in the real fields
+            else:
+                record._inverse_name()
 
     @api.model
     def _get_whitespace_cleaned_name(self, name, comma=False):
@@ -170,19 +174,24 @@ class ResPartner(models.Model):
                     parts.append(False)
         return {"lastname": parts[0], "firstname": parts[1]}
 
-    @api.one
+    @api.multi
     def _inverse_name(self):
         """Try to revert the effect of :meth:`._compute_name`."""
-        parts = self._get_inverse_name(self.name, self.is_company)
-        self.lastname, self.firstname = parts["lastname"], parts["firstname"]
+        for record in self:
+            parts = record._get_inverse_name(record.name, record.is_company)
+            record.lastname = parts['lastname']
+            record.firstname = parts['firstname']
 
-    @api.one
+    @api.multi
     @api.constrains("firstname", "lastname")
     def _check_name(self):
         """Ensure at least one name is set."""
-        if ((self.type == 'contact' or self.is_company) and
-                not (self.firstname or self.lastname)):
-            raise exceptions.EmptyNamesError(self)
+        for record in self:
+            if all((
+                record.type == 'contact' or record.is_company,
+                not (record.firstname or record.lastname)
+            )):
+                raise exceptions.EmptyNamesError(record)
 
     @api.onchange("firstname", "lastname")
     def _onchange_subnames(self):
