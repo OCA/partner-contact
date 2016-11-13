@@ -35,6 +35,7 @@ addon | version | summary
 [partner_firstname](partner_firstname/) | 9.0.1.0.0 | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 9.0.1.0.0 | Partner Identification Numbers
 [partner_multi_relation](partner_multi_relation/) | 9.0.1.1.1 | Partner relations
+[partner_sector](partner_sector/) | 9.0.1.0.1 | Add partner sectors
 
 Unported addons
 ---------------
