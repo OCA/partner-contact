@@ -1,25 +1,21 @@
 # -*- coding: utf-8 -*-
-# © 2016 Antiun Ingeniería S.L. - Jairo Llopis
+# © 2016 Tecnativa, S.L. - Jairo Llopis
+# © 2016 Tecnativa, S.L. - Vicent Cubells
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import SUPERUSER_ID, api, models
+from openerp import api, models
 
 
 class BasePartnerMergeAutomaticWizard(models.TransientModel):
     _inherit = "base.partner.merge.automatic.wizard"
 
-    @api.cr_uid_context
-    def _merge(self, cr, uid, partner_ids, dst_partner=None, context=None):
+    @api.model
+    def _merge(self, partner_ids, dst_partner=None):
         """Allow non-admins to merge partners with different emails."""
         # Know if user has unrestricted access
-        group_unrestricted = self.pool["ir.model.data"].xmlid_to_object(
-            cr, uid, "crm_deduplicate_acl.group_unrestricted", context)
-        user = self.pool["res.users"].browse(cr, uid, uid, context)
-
-        # Run as admin if so
+        if self.env.user.has_group('crm_deduplicate_acl.group_unrestricted'):
+            # Run as admin if so
+            self = self.sudo()
         return super(BasePartnerMergeAutomaticWizard, self)._merge(
-            cr,
-            SUPERUSER_ID if group_unrestricted in user.groups_id else uid,
-            partner_ids,
-            dst_partner,
-            context)
+            partner_ids=partner_ids, dst_partner=dst_partner
+        )
