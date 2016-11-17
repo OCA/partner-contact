@@ -11,13 +11,6 @@ This module adds the following information to a contact:
 * Height and its unit of measure
 * Weight and its unit of measure
 
-Installation
-============
-
-To install this module, you need to:
-
-#. Do this ...
-
 Usage
 =====
 
