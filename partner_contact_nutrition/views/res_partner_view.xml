@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <data>
                 <xpath expr="//page[@name='sales_purchases']" position="before">
-                    <page name="nutrition">
+                    <page name="nutrition" string="Nutrition">
                         <group string="Intake">
                             <label for="caloric_intake"/>
                             <div>
