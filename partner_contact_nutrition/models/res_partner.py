@@ -12,7 +12,8 @@ class ResPartner(models.Model):
     caloric_intake = fields.Float("Calories")
     caloric_intake_uom = fields.Many2one("product.uom", "Calories UoM")
     carbohydrate_intake = fields.Float("Carbohydrate")
-    carbohydrate_intake_uom = fields.Many2one("product.uom", "Carbohydrate UoM")
+    carbohydrate_intake_uom = fields.Many2one("product.uom",
+                                              "Carbohydrate UoM")
     fat_intake = fields.Float("Fat")
     fat_intake_uom = fields.Many2one("product.uom", "Fat UoM")
     protein_intake = fields.Float("Protein")
