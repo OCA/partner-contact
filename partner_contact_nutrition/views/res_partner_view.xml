@@ -9,7 +9,7 @@
             <data>
                 <xpath expr="//page[@name='sales_purchases']" position="before">
                     <page name="nutrition" string="Nutrition">
-                        <group string="Intake">
+                        <group name="intake" string="Intake">
                             <label for="caloric_intake"/>
                             <div>
                                 <field name='caloric_intake' class="oe_inline"/>
@@ -43,6 +43,7 @@
                                        domain="[('category_id', '=', %(product.product_uom_categ_kgm)d)]"/>
                             </div>
                         </group>
+                        <group name="group2"/>
                     </page>
                 </xpath>
             </data>
