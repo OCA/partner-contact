@@ -44,7 +44,7 @@
                                            domain="[('category_id', '=', %(product.product_uom_categ_kgm)d)]"/>
                                 </div>
                             </group>
-                            <group name="group2" string=""/>
+                            <group name="group2" string="Other info"/>
                         </group>
                     </page>
                 </xpath>
