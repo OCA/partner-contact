@@ -11,5 +11,3 @@ class ResPartner(models.Model):
 
     height = fields.Float("Height")
     height_uom = fields.Many2one("product.uom", "Height UoM")
-    weight = fields.Float("Weight")
-    weight_uom = fields.Many2one("product.uom", "Weight UoM")

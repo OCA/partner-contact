@@ -2,14 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-====================
-Personal Information
-====================
+======================
+Partner Contact Weight
+======================
 
-This module adds the following information to a contact:
-
-* Height and its unit of measure
-* Weight and its unit of measure
+This module adds the weight to a contact.
 
 Usage
 =====
@@ -18,7 +15,7 @@ To use this module, you need to:
 
 #. Go to Contacts
 #. Create or select a contact
-#. In the Personal Information tab, enter its height and weight
+#. In the Personal Information tab, enter its weight and the unit of measure
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
