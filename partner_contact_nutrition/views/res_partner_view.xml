@@ -16,32 +16,28 @@
                                     <field name='caloric_intake' class="oe_inline"/>
                                     <field name='caloric_intake_uom'
                                            class="oe_inline"
-                                           placeholder="UoM"
-                                           domain="[('category_id', '=', %(product_uom.product_category_energy)d)]"/>
+                                           placeholder="UoM"/>
                                 </div>
                                 <label for="carbohydrate_intake"/>
                                 <div>
                                     <field name='carbohydrate_intake' class="oe_inline"/>
                                     <field name='carbohydrate_intake_uom'
                                            class="oe_inline"
-                                           placeholder="UoM"
-                                           domain="[('category_id', '=', %(product.product_uom_categ_kgm)d)]"/>
+                                           placeholder="UoM"/>
                                 </div>
                                 <label for="fat_intake"/>
                                 <div>
                                     <field name='fat_intake' class="oe_inline"/>
                                     <field name='fat_intake_uom'
                                            class="oe_inline"
-                                           placeholder="UoM"
-                                           domain="[('category_id', '=', %(product.product_uom_categ_kgm)d)]"/>
+                                           placeholder="UoM"/>
                                 </div>
                                 <label for="protein_intake"/>
                                 <div>
                                     <field name='protein_intake' class="oe_inline"/>
                                     <field name='protein_intake_uom'
                                            class="oe_inline"
-                                           placeholder="UoM"
-                                           domain="[('category_id', '=', %(product.product_uom_categ_kgm)d)]"/>
+                                           placeholder="UoM"/>
                                 </div>
                             </group>
                             <group name="group2" string="Other info"/>
