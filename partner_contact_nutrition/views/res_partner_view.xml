@@ -40,7 +40,7 @@
                                            placeholder="UoM"/>
                                 </div>
                             </group>
-                            <group name="group2" string="Other info"/>
+                            <group name="other_info" string="Other info"/>
                         </group>
                     </page>
                 </xpath>
