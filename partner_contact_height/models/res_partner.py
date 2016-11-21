@@ -10,4 +10,7 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     height = fields.Float("Height")
-    height_uom = fields.Many2one("product.uom", "Height UoM")
+    height_uom = fields.Many2one("product.uom", "Height UoM",
+                                 domain="[('category_id', '=', "
+                                        "self.env.ref('product.\
+                                        uom_categ_length').id)]")

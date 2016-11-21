@@ -13,8 +13,7 @@
                         <field name='height' class="oe_inline"/>
                         <field name='height_uom'
                                class="oe_inline"
-                               placeholder="UoM"
-                               domain="[('category_id', '=', %(product.uom_categ_length)d)]"/>
+                               placeholder="UoM"/>
                     </div>
                 </xpath>
             </data>
