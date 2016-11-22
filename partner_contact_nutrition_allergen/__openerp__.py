@@ -13,6 +13,7 @@
     "installable": True,
     "depends": [
         "partner_contact_nutrition",
+        "stock",
     ],
     "data": [
         "views/res_partner_view.xml",
