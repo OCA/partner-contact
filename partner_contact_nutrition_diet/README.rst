@@ -18,7 +18,7 @@ Usage
 
 * Go to Contacts
 * Create or select a contact
-* Go to the Nutrition tab to select his nutrition diet
+* Go to the Nutrition tab to select their diet
 
 
 Known issues / Roadmap

@@ -17,4 +17,8 @@
          <field name="name">Vegetarian</field>
      </record>
 
+     <record id="nutrition_diet_vegan" model="nutrition.diet">
+         <field name="name">Vegan</field>
+     </record>
+
  </odoo>
