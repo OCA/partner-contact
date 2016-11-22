@@ -7,14 +7,14 @@ Partner Contact Nutrition Exclusion
 ===================================
 
 This module adds the list of product that a partner contact want to exclude
-from his diet. Exclusions should be created as stockable products.
+from their diet. Exclusions should be created as stockable products.
 
 Usage
 =====
 
 * Go to Contacts
 * Create or select a contact
-* Go to the Nutrition tab to select his exclusions
+* Go to the Nutrition tab to select their exclusions
 
 
 Known issues / Roadmap
