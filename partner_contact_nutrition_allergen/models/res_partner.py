@@ -9,7 +9,7 @@ from openerp import fields, models
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    nutrition_allergen_ids = fields.Many2many('product.product',
-                                              'Allergens',
+    nutrition_allergen_ids = fields.Many2many(comodel_name='product.product',
+                                              string='Allergens',
                                               domain="[('type', '=',"
                                                      " 'stockable')]")
