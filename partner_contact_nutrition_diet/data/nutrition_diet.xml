@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <odoo>
+
+     <record id="nutrition_diet_lifestyle" model="nutrition.diet">
+         <field name="name">Lifestyle</field>
+     </record>
+
+     <record id="nutrition_diet_carnivore" model="nutrition.diet">
+         <field name="name">Carnivore</field>
+     </record>
+
+     <record id="nutrition_diet_pescatarian" model="nutrition.diet">
+         <field name="name">Pescatarian</field>
+     </record>
+
+     <record id="nutrition_diet_vegetarian" model="nutrition.diet">
+         <field name="name">Vegetarian</field>
+     </record>
+
+     <record id="nutrition_diet_vegan" model="nutrition.diet">
+         <field name="name">Vegan</field>
+     </record>
+
+ </odoo>
