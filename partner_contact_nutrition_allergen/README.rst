@@ -14,7 +14,7 @@ Usage
 
 * Go to Contacts
 * Create or select a contact
-* Go to the Nutrition tab to select his allergens
+* Go to the Nutrition tab to select their allergens
 
 
 Known issues / Roadmap
