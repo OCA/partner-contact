@@ -6,45 +6,43 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <data>
-                <xpath expr="//page[@name='sales_purchases']" position="before">
-                    <page name="nutrition" string="Nutrition">
-                        <group>
-                            <group name="intake" string="Intake">
-                                <label for="caloric_intake"/>
-                                <div>
-                                    <field name='caloric_intake' class="oe_inline"/>
-                                    <field name='caloric_intake_uom'
-                                           class="oe_inline"
-                                           placeholder="UoM"/>
-                                </div>
-                                <label for="carbohydrate_intake"/>
-                                <div>
-                                    <field name='carbohydrate_intake' class="oe_inline"/>
-                                    <field name='carbohydrate_intake_uom'
-                                           class="oe_inline"
-                                           placeholder="UoM"/>
-                                </div>
-                                <label for="fat_intake"/>
-                                <div>
-                                    <field name='fat_intake' class="oe_inline"/>
-                                    <field name='fat_intake_uom'
-                                           class="oe_inline"
-                                           placeholder="UoM"/>
-                                </div>
-                                <label for="protein_intake"/>
-                                <div>
-                                    <field name='protein_intake' class="oe_inline"/>
-                                    <field name='protein_intake_uom'
-                                           class="oe_inline"
-                                           placeholder="UoM"/>
-                                </div>
-                            </group>
-                            <group name="other_info" string="Other info"/>
+            <xpath expr="//page[@name='sales_purchases']" position="before">
+                <page name="nutrition" string="Nutrition">
+                    <group>
+                        <group name="intake" string="Intake">
+                            <label for="caloric_intake"/>
+                            <div>
+                                <field name='caloric_intake' class="oe_inline"/>
+                                <field name='caloric_intake_uom'
+                                       class="oe_inline"
+                                       placeholder="UoM"/>
+                            </div>
+                            <label for="carbohydrate_intake"/>
+                            <div>
+                                <field name='carbohydrate_intake' class="oe_inline"/>
+                                <field name='carbohydrate_intake_uom'
+                                       class="oe_inline"
+                                       placeholder="UoM"/>
+                            </div>
+                            <label for="fat_intake"/>
+                            <div>
+                                <field name='fat_intake' class="oe_inline"/>
+                                <field name='fat_intake_uom'
+                                       class="oe_inline"
+                                       placeholder="UoM"/>
+                            </div>
+                            <label for="protein_intake"/>
+                            <div>
+                                <field name='protein_intake' class="oe_inline"/>
+                                <field name='protein_intake_uom'
+                                       class="oe_inline"
+                                       placeholder="UoM"/>
+                            </div>
                         </group>
-                    </page>
-                </xpath>
-            </data>
+                        <group name="other_info" string="Other info"/>
+                    </group>
+                </page>
+            </xpath>
         </field>
     </record>
 

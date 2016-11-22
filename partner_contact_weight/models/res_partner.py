@@ -11,6 +11,5 @@ class ResPartner(models.Model):
 
     weight = fields.Float("Weight")
     weight_uom = fields.Many2one("product.uom", "Weight UoM",
-                                 domain="[('category_id', '=', "
-                                        "self.env.ref('product.\
-                                        product_uom_categ_kgm').id)]")
+                                 domain=lambda self: [('category_id', '=', self.env.ref('product.product_uom_categ_kgm').id)] # noqa
+                                 )

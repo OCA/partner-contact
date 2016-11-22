@@ -11,6 +11,5 @@ class ResPartner(models.Model):
 
     height = fields.Float("Height")
     height_uom = fields.Many2one("product.uom", "Height UoM",
-                                 domain="[('category_id', '=', "
-                                        "self.env.ref('product.\
-                                        uom_categ_length').id)]")
+                                 domain=lambda self: [('category_id', '=', self.env.ref('product.uom_categ_length').id)] # noqa
+                                 )
