@@ -10,7 +10,7 @@
                 <group name="allergen" string="Allergens">
                     <field name="nutrition_allergen_ids" nolabel="1"/>
                 </group>
-            </data>
+            </xpath>
         </field>
     </record>
 
