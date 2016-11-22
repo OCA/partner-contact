@@ -10,6 +10,8 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     height = fields.Float("Height")
-    height_uom = fields.Many2one("product.uom", "Height UoM",
-                                 domain=lambda self: [('category_id', '=', self.env.ref('product.uom_categ_length').id)] # noqa
-                                 )
+    height_uom = fields.Many2one(
+        "product.uom", "Height UoM",
+        domain=lambda self: [('category_id', '=',
+                              self.env.ref('product.uom_categ_length').id)]
+    )
