@@ -5,7 +5,7 @@
     "name": "Partner Contact Activity Level",
     "summary": "Set the activity level of your contacts",
     "version": "9.0.1.0.0",
-    "category": "Uncategorized",
+    "category": "Health",
     "website": "http://ursainfosystems.com",
     "author": "Ursa Information Systems, Odoo Community Association (OCA)",
     "license": "AGPL-3",
