@@ -31,6 +31,7 @@ addon | version | summary
 [partner_contact_job_position](partner_contact_job_position/) | 9.0.1.0.0 | Categorize job positions for contacts
 [partner_contact_nationality](partner_contact_nationality/) | 9.0.1.0.0 | Add nationality field to contacts
 [partner_contact_nutrition](partner_contact_nutrition/) | 9.0.1.0.0 | Provide caloric intake
+[partner_contact_nutrition_diet](partner_contact_nutrition_diet/) | 9.0.1.0.0 | Set the nutrition diet of your contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 9.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_contact_weight](partner_contact_weight/) | 9.0.1.0.0 | Provide contact weight
 [partner_default_sale_discount](partner_default_sale_discount/) | 9.0.1.0.0 | Default sales discount per partner
