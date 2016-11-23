@@ -41,13 +41,14 @@ class StockPicking(models.Model):
 
     @api.multi
     def action_assign(self):
-        if not self.env.context.get('bypass_risk', False):
-            if (self.location_dest_id.usage == 'customer' and
-                    self.partner_id.risk_exception):
-                exception_msg = _("Financial risk exceeded \n")
+        if not self.env.context.get('bypass_risk', False) and any(
+                self.mapped('partner_id.risk_exception')):
+            exception_msg = _("Financial risk exceeded \n")
+            params = self.env.context.get('params', {})
+            if 'purchase.order' not in params and 'sale.order' not in params:
                 return self.env['partner.risk.exceeded.wiz'].create({
                     'exception_msg': exception_msg,
-                    'partner_id': self.partner_id.id,
+                    'partner_id': self.mapped('partner_id')[:1].id,
                     'origin_reference': '%s,%s' % (self._model, self.id),
                     'continue_method': 'action_assign',
                 }).action_show()
