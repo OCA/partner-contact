@@ -13,7 +13,10 @@ class ResPartner(models.Model):
         """Propagate a language change in the partner to the child contacts."""
         res = super(ResPartner, self).write(vals)
         if vals.get('lang'):
-            childs = self.mapped('child_ids').filtered(lambda x: not x.lang)
+            childs = self.search([
+                ('id', 'child_of', self.ids),
+                ('lang', '=', False),
+            ])
             if childs:
                 childs.write({'lang': vals['lang']})
         return res
