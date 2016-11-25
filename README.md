@@ -39,6 +39,7 @@ addon | version | summary
 [partner_contact_gender](partner_contact_gender/) | 8.0.1.0.0 | Add gender field to contacts
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 8.0.1.0.0 | Allow to have one contact in several partners
 [partner_contact_job_position](partner_contact_job_position/) | 8.0.1.0.0 | Categorize job positions for contacts
+[partner_contact_lang](partner_contact_lang/) | 8.0.1.0.0 | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 8.0.1.0.0 | Contact's nationality
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 8.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_create_by_vat](partner_create_by_vat/) | 8.0.1.0.0 | Using VIES webservice, name and address information will be fetched and added to the partner.
