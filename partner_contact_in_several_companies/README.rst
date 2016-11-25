@@ -32,7 +32,7 @@ For further information, please visit:
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/9.0
+   :target: https://runbot.odoo-community.org/runbot/134/10.0
 
 Known issues / Roadmap
 ======================
@@ -48,7 +48,7 @@ In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed feedback `here <https://github.com/OCA/
 partner-contact/issues/new?body=module:%20
 partner_contact_in_serveral_companies%0Aversion:%20
-9.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+10.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 
 Credits
@@ -57,7 +57,7 @@ Credits
 Contributors
 ------------
 
-* Xavier ALT <xal@openerp.com> (original author)
+* Xavier ALT <xal@odoo.com> (original author)
 * El Hadji Dem <elhadji.dem@savoirfairelinux.com>
 * TheCloneMaster <the.clone.master@gmail.com>
 * Sandy Carter <bwrsandman@gmail.com>
@@ -65,6 +65,7 @@ Contributors
 * Sebastien Alix <sebastien.alix@osiell.com>
 * Jairo Llopis <j.llopis@grupoesoc.es>
 * Richard deMeester <richard@willowit.com.au>
+* Nicolas JEUDY <https://github.com/njeudy>
 
 Maintainer
 ----------

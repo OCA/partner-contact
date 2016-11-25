@@ -75,7 +75,7 @@
                                     </div>
                                     <div class="oe_kanban_details">
                                         <field name="name"/>
-                                        <div t-if="record.function.raw_value"><field name="function"/></div>
+                                        <div t-if="record.function.raw_value"><field name="function"/> at <field name="parent_id"/></div>
                                         <div t-if="record.email.raw_value"><field name="email"/></div>
                                         <div t-if="record.phone.raw_value">Phone: <field name="phone"/></div>
                                         <div t-if="record.mobile.raw_value">Mobile: <field name="mobile"/></div>
@@ -123,12 +123,12 @@
                 </field>
             </page>
         </page>
-        <xpath expr="//field[@name='category_id']" position="before">
-            <group>
+        <!-- <xpath expr="//field[@name='category_id']" position="before">
+            <group attrs="{'invisible': [('is_company','=',True)]}">
                 <label for="contact_type" class="oe_edit_only"/>
                 <field name="contact_type" readonly="0" nolabel="1"/>
             </group>
-        </xpath>
+        </xpath> -->
         <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="before">
             <field name='contact_type' readonly='0'/>
             <field name="contact_id" string="Contact"
