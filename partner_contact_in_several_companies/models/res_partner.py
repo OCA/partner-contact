@@ -12,6 +12,8 @@ class ResPartner(models.Model):
         [('standalone', _('Standalone Contact')),
          ('attached', _('Attached to existing Contact')),
          ],
+        comptute='_get_contact_type',
+        store=True,
         required=True,
         default='standalone')
     contact_id = fields.Many2one('res.partner', string='Main Contact',
@@ -22,7 +24,7 @@ class ResPartner(models.Model):
     other_contact_ids = fields.One2many('res.partner', 'contact_id',
                                         string='Others Positions')
 
-    @api.onchange('contact_id')
+    @api.depends('contact_id')
     def _get_contact_type(self):
         for record in self:
             record.contact_type = record.contact_id and 'attached' or 'standalone'
