@@ -129,7 +129,7 @@ class ResPartner(models.Model):
         if contact_vals:
             self.with_context(__update_contact_lock=True).write(contact_vals)
 
-    @api.model
+    @api.multi
     def _fields_sync(self, update_values):
         """Sync commercial fields and address fields from company and to
         children, contact fields from contact and to attached contact
@@ -137,18 +137,17 @@ class ResPartner(models.Model):
         fields.related to the parent
         """
         super(ResPartner, self)._fields_sync(update_values)
-        contact_fields = self._contact_fields()
-        # 1. From UPSTREAM: sync from parent contact
-        if update_values.get('contact_id'):
-            self._contact_sync_from_parent()
-        # 2. To DOWNSTREAM: sync contact fields to parent or related
-        elif any(field in contact_fields for field in update_values):
-            update_ids = [
-                c.id for c in self.other_contact_ids if not c.is_company
-            ]
-            if self.contact_id:
-                update_ids.append(self.contact_id.id)
-            self.browse(update_ids).update_contact(update_values)
+        for record in self:
+            contact_fields = record._contact_fields()
+            # 1. From UPSTREAM: sync from parent contact
+            if update_values.get('contact_id'):
+                record._contact_sync_from_parent()
+            # 2. To DOWNSTREAM: sync contact fields to parent or related
+            elif any(field in contact_fields for field in update_values):
+                update_ids = record.other_contact_ids.filter(lambda p: not p.is_company)
+                if record.contact_id:
+                    update_ids |= record.contact_id
+                update_ids.update_contact(update_values)
 
     @api.onchange('contact_id')
     def _onchange_contact_id(self):
