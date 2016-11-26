@@ -79,7 +79,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
         def read_other_contacts(pid, context=None):
             return self.partner.read(
-                cr, uid, [pid], ['other_contact_ids'])[0]['other_contact_ids']
+                [pid], ['other_contact_ids'])[0]['other_contact_ids']
 
         def read_contacts(pid, context=None):
             return self.partner.read(
@@ -180,25 +180,25 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
             {'contact_id': self.bob_contact_id, 'name': 'Rob Egnops'}
         )
         self.assertEqual(
-            self.partner.browse(new_contact_id).name,
+            new_contact_id.name,
             'Bob Egnops'
         )
 
         # Reset contact to standalone
-        self.partner.write(cr, uid, [new_contact_id], {'contact_id': False})
+        new_contact_id.write({'contact_id': False})
         self.assertEqual(
-            self.partner.browse(new_contact_id).contact_type,
+            new_contact_id.contact_type,
             'standalone',
         )
 
         # Reset contact to attached, and ensure only it is unlinked (i.e.
         # context is ignored).
-        self.partner.write(cr, uid, [new_contact_id],
+        new_contact_id.write([
                            {'contact_id': self.bob_contact_id})
         ctx = {'search_show_all_positions': {'is_set': True,
                                              'set_value': True
                                              }}
-        self.partner.unlink([new_contact_id])
+        new_contact_id.with_context(ctx).unlink()
         partner_ids = self.partner.search(
             [('id', 'in', [new_contact_id, self.bob_contact_id])])
         self.assertIn(self.bob_contact_id, partner_ids)
@@ -210,8 +210,8 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         """
 
         # Test DOWNSTREAM sync
-        self.partner.write(
-            [self.bob_contact_id], {'name': 'Rob Egnops'}
+        self.bob_contact_id.write(
+            {'name': 'Rob Egnops'}
         )
         self.assertEqual(
             self.partner.browse(self.bob_job1_id).name,
@@ -219,7 +219,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         )
 
         # Test UPSTREAM sync
-        self.partner.write([self.bob_job1_id], {'name': 'Bob Egnops'})
+        self.bob_job1_id.write({'name': 'Bob Egnops'})
         self.assertEqual(
             self.partner.browse(self.bob_contact_id).name,
             'Bob Egnops',
