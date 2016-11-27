@@ -11,13 +11,16 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         super(PartnerContactInSeveralCompaniesCase, self).setUp()
         self.partner = self.env['res.partner']
         self.action = self.env['ir.actions.act_window']
-
+        current_module = 'partner_contact_in_several_companies'
         # Get test records reference
         self.main_partner = self.env.ref('base.main_partner')
-        self.bob_contact = self.env.ref('partner_contact_in_several_companies.res_partner_contact1')
-        self.bob_job1 = self.env.ref('partner_contact_in_several_companies.res_partner_contact1_work_position1')
+        self.bob_contact = self.env.ref(
+            current_module + 'res_partner_contact1')
+        self.bob_job1 = self.env.ref(
+            current_module + 'res_partner_contact1_work_position1')
         self.roger_contact = self.env.ref('base.res_partner_main2')
-        self.roger_job2 = self.env.ref('partner_contact_in_several_companies.res_partner_main2_position_consultant')
+        self.roger_job2 = self.env.ref(
+            current_module + 'res_partner_main2_position_consultant')
 
     def test_00_show_only_standalone_contact(self):
         """Check that only standalone contact are shown if context
@@ -127,7 +130,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         """Check that we're begin to create a contact"""
 
         # Create a contact using only name
-        new_contact=self.partner.create({'name': 'Bob Egnops'})
+        new_contact = self.partner.create({'name': 'Bob Egnops'})
         self.assertEqual(
             new_contact.contact_type,
             'standalone',
@@ -204,7 +207,8 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
             msg='Default actions not updated with new context'
         )
 
-        details = self.env.ref('partner_contact_in_several_companies.action_partner_form')
+        details = self.env.ref(
+            'partner_contact_in_several_companies.action_partner_form')
 
         self.assertNotIn(
             new_context_val,
