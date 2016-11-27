@@ -117,7 +117,7 @@ class ResPartner(models.Model):
         self.ensure_one()
         if self.contact_id:
             contact_fields = self._contact_fields()
-            sync_vals = self._update_fields_values(contact_fields)
+            sync_vals = self.contact_id._update_fields_values(contact_fields)
             self.write(sync_vals)
 
     def update_contact(self, vals):
