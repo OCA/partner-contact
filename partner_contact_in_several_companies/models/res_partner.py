@@ -12,7 +12,7 @@ class ResPartner(models.Model):
         [('standalone', _('Standalone Contact')),
          ('attached', _('Attached to existing Contact')),
          ],
-        comptute='_get_contact_type',
+        compute='_get_contact_type',
         store=True,
         required=True,
         default='standalone')
@@ -24,6 +24,7 @@ class ResPartner(models.Model):
     other_contact_ids = fields.One2many('res.partner', 'contact_id',
                                         string='Others Positions')
 
+    @api.multi
     @api.depends('contact_id')
     def _get_contact_type(self):
         for record in self:
@@ -144,7 +145,7 @@ class ResPartner(models.Model):
                 record._contact_sync_from_parent()
             # 2. To DOWNSTREAM: sync contact fields to parent or related
             elif any(field in contact_fields for field in update_values):
-                update_ids = record.other_contact_ids.filter(lambda p: not p.is_company)
+                update_ids = record.other_contact_ids.filtered(lambda p: not p.is_company)
                 if record.contact_id:
                     update_ids |= record.contact_id
                 update_ids.update_contact(update_values)
