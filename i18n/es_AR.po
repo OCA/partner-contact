@@ -11,11 +11,11 @@ msgstr ""
 "POT-Creation-Date: 2016-11-24 01:41+0000\n"
 "PO-Revision-Date: 2016-11-24 01:41+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Danish (https://www.transifex.com/oca/teams/23907/da/)\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/teams/23907/es_AR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: da\n"
+"Language: es_AR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_multi_relation
@@ -27,7 +27,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_active
 msgid "Active"
-msgstr "Aktiv"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation_all
@@ -55,13 +55,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_create_uid
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_create_uid
 msgid "Created by"
-msgstr "Oprettet af"
+msgstr "Creado por"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_create_date
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_create_date
 msgid "Created on"
-msgstr "Oprettet den"
+msgstr "Creado en"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_partner_category_this
@@ -91,7 +91,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_display_name
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_display_name
 msgid "Display Name"
-msgstr "Vist navn"
+msgstr "Mostrar Nombre"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:12
@@ -111,7 +111,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_date_end
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_date_end
 msgid "Ending date"
-msgstr "Slut dato"
+msgstr ""
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:165
@@ -123,7 +123,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "Group By"
-msgstr "Gruppér efter"
+msgstr "Agrupar por"
 
 #. module: partner_multi_relation
 #: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_assistant
@@ -161,7 +161,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_1385
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_id
 msgid "ID"
-msgstr "Id"
+msgstr "ID"
 
 #. module: partner_multi_relation
 #: model:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
@@ -205,19 +205,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type___last_update
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection___last_update
 msgid "Last Modified on"
-msgstr "Sidst ændret den"
+msgstr "Última modificación en"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_write_uid
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_write_uid
 msgid "Last Updated by"
-msgstr "Sidst opdateret af"
+msgstr "Última actualización realizada por"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_write_date
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_write_date
 msgid "Last Updated on"
-msgstr "Sidst opdateret den"
+msgstr "Última actualización el"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_partner_category_left
@@ -248,7 +248,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_name
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_name
 msgid "Name"
-msgstr "Navn"
+msgstr "Nombre"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:173
@@ -288,7 +288,7 @@ msgstr ""
 #: model:ir.model,name:partner_multi_relation.model_res_partner
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_any_partner_id
 msgid "Partner"
-msgstr "Partner"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type
@@ -488,7 +488,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_type_id
 msgid "Type"
-msgstr "Type"
+msgstr "Tipo"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner.py:80
