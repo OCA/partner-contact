@@ -5,6 +5,7 @@
 # Translators:
 # Armando Vulcano Junior <vulcano@uol.com.br>, 2015
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2015
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2015
 # danimaribeiro <danimaribeiro@gmail.com>, 2015
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014
 # Hans Henrik Gabelgaard <hhg@gabelgaard.org>, 2015
@@ -14,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-14 11:14+0000\n"
-"PO-Revision-Date: 2016-04-05 10:01+0000\n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
+"PO-Revision-Date: 2016-10-24 09:24+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -61,4 +62,4 @@ msgstr "Parceiro"
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Usuários"

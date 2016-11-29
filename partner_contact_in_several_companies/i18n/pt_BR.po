@@ -3,11 +3,15 @@
 # * partner_contact_in_several_companies
 # 
 # Translators:
+# Antonio Trueba, 2016
+# Armando Vulcano Junior <vulcano@uol.com.br>, 2015
+# Erwin van der Ploeg <erwin@odooexperts.nl>, 2016
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-17 01:36+0000\n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
 "PO-Revision-Date: 2015-12-15 11:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/pt_BR/)\n"
@@ -102,7 +106,7 @@ msgstr "Parceiro"
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "Person"
-msgstr ""
+msgstr "Pessoa"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit

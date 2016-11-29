@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 23:45+0000\n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
 "PO-Revision-Date: 2015-12-15 11:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Finnish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/fi/)\n"
@@ -97,7 +97,7 @@ msgstr ""
 #. module: partner_contact_in_several_companies
 #: model:ir.model,name:partner_contact_in_several_companies.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Kumppani"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact

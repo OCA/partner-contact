@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 23:45+0000\n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
 "PO-Revision-Date: 2016-04-28 11:44+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Arabic (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/ar/)\n"
@@ -35,17 +35,17 @@ msgstr ""
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "أنشئ بواسطة"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_create_date
 msgid "Created on"
-msgstr ""
+msgstr "أنشئ في"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "اسم العرض"
 
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
@@ -64,7 +64,7 @@ msgstr ""
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_id
 msgid "ID"
-msgstr ""
+msgstr "المعرف"
 
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
@@ -86,17 +86,17 @@ msgstr ""
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "آخر تعديل في"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "آخر تحديث بواسطة"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "آخر تحديث في"
 
 #. module: base_location_geonames_import
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:65

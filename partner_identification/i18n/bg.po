@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-06 12:10+0000\n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
 "PO-Revision-Date: 2016-03-19 05:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/bg/)\n"
@@ -55,7 +55,7 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_category_id
 msgid "Category"
-msgstr ""
+msgstr "Категория"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_code
@@ -78,7 +78,7 @@ msgstr "Създадено на"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Име за Показване"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:66

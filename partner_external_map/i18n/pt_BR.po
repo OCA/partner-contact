@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-06 12:09+0000\n"
-"PO-Revision-Date: 2016-10-04 09:43+0000\n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
+"PO-Revision-Date: 2016-11-25 14:55+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -21,6 +21,11 @@ msgstr ""
 #: code:addons/partner_external_map/models/res_partner.py:32
 #, python-format
 msgid "Address missing on partner '%s'."
+msgstr ""
+
+#. module: partner_external_map
+#: model:ir.model.fields,field_description:partner_external_map.field_res_users_job_position_id
+msgid "Categorized job position"
 msgstr ""
 
 #. module: partner_external_map
@@ -37,6 +42,11 @@ msgstr "Criado por"
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_date
 msgid "Created on"
 msgstr "Criado em"
+
+#. module: partner_external_map
+#: model:ir.model.fields,field_description:partner_external_map.field_res_users_department_id
+msgid "Department"
+msgstr "Departamento"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_display_name
@@ -205,4 +215,4 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Usuários"

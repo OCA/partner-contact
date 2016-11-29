@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2015
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2015
 # Hotellook, 2014
 # Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
 # Rudolf Schnapka <rs@techno-flex.de>, 2016
@@ -11,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 23:45+0000\n"
-"PO-Revision-Date: 2016-09-07 16:45+0000\n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
+"PO-Revision-Date: 2016-10-14 08:28+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -230,12 +231,12 @@ msgstr ""
 #. module: partner_identification
 #: selection:res.partner.id_number,status:0
 msgid "Running"
-msgstr ""
+msgstr "Ejecutándose"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_status
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_name

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-06 12:09+0000\n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
 "PO-Revision-Date: 2016-04-28 11:44+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/bg/)\n"
@@ -45,7 +45,7 @@ msgstr "Създадено на"
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Име за Показване"
 
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form

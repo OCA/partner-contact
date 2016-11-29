@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-06 12:09+0000\n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
 "PO-Revision-Date: 2015-12-15 11:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/zh_CN/)\n"
@@ -88,7 +88,7 @@ msgstr "创建时间"
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 msgid "Group By"
-msgstr ""
+msgstr "分组"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_id
@@ -98,7 +98,7 @@ msgstr "ID"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "最后修改时间"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_uid
@@ -118,7 +118,7 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_display_name
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_partner

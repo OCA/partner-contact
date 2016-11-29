@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 23:45+0000\n"
-"PO-Revision-Date: 2016-08-20 23:45+0000\n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
+"PO-Revision-Date: 2016-11-24 01:41+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Estonian (https://www.transifex.com/oca/teams/23907/et/)\n"
 "MIME-Version: 1.0\n"
@@ -58,13 +58,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_create_uid
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Loonud"
 
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_create_date
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Loodud"
 
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_current_line_id
@@ -90,7 +90,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_display_name
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Näidatav nimi"
 
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_email
@@ -116,7 +116,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_id
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_aggr_ids
@@ -137,19 +137,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard___last_update
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Viimati muudetud"
 
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_write_uid
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Viimati uuendatud"
 
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_write_date
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Viimati uuendatud"
 
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_line_ids
@@ -199,7 +199,7 @@ msgstr ""
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_name
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #. module: base_partner_merge
 #: selection:base.partner.merge.automatic.wizard,state:0
@@ -292,4 +292,4 @@ msgstr ""
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "or"
-msgstr ""
+msgstr "või"
