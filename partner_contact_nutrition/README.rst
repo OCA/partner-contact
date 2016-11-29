@@ -20,7 +20,7 @@ To use this module, you need to:
 
 #. Go to Contacts
 #. Create or select a contact
-#. In the Nutrition tab, enter its intake information
+#. In the Nutrition tab, enter their intake information
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot

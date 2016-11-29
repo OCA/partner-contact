@@ -15,7 +15,7 @@ To use this module, you need to:
 
 #. Go to Contacts
 #. Create or select a contact
-#. In the Personal Information tab, enter its height and the unit of measure
+#. In the Personal Information tab, enter their height and the unit of measure
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
