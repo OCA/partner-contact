@@ -198,9 +198,8 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         """
 
         new_context_val = "'search_show_all_positions': " \
-            "{'is_set': True, 'set_value': False},"
+            "{'is_set': True, 'set_value': False}"
         details = self.env.ref('base.action_partner_form')
-
         self.assertIn(
             new_context_val,
             details.context,

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <function model="ir.actions.act_window" name="_enable_context"/>
+</odoo>
