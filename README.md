@@ -26,17 +26,18 @@ addon | version | summary
 [partner_contact_birthdate](partner_contact_birthdate/) | 9.0.1.0.0 | Contact's birthdate
 [partner_contact_department](partner_contact_department/) | 9.0.1.0.0 | Assign contacts to departments
 [partner_contact_gender](partner_contact_gender/) | 9.0.1.1.0 | Add gender field to contacts
-[partner_contact_height](partner_contact_height/) | 9.0.1.0.0 | Provide contact height.
+[partner_contact_height](partner_contact_height/) | 9.0.1.0.1 | Provide contact height.
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 9.0.1.0.0 | Allow to have one contact in several partners
 [partner_contact_job_position](partner_contact_job_position/) | 9.0.1.0.0 | Categorize job positions for contacts
 [partner_contact_nationality](partner_contact_nationality/) | 9.0.1.0.0 | Add nationality field to contacts
-[partner_contact_nutrition](partner_contact_nutrition/) | 9.0.1.0.0 | Provide caloric intake
+[partner_contact_nutrition](partner_contact_nutrition/) | 9.0.1.0.1 | Provide caloric intake
 [partner_contact_nutrition_activity_level](partner_contact_nutrition_activity_level/) | 9.0.1.0.0 | Set the activity level of your contacts
 [partner_contact_nutrition_allergen](partner_contact_nutrition_allergen/) | 9.0.1.0.0 | Set the nutrition allergens of your contacts
 [partner_contact_nutrition_diet](partner_contact_nutrition_diet/) | 9.0.1.0.0 | Set the nutrition diet of your contacts
+[partner_contact_nutrition_exclusion](partner_contact_nutrition_exclusion/) | 9.0.1.0.0 | Set the nutrition exclusions of your contacts
 [partner_contact_nutrition_goal](partner_contact_nutrition_goal/) | 9.0.1.0.0 | Set the nutrition goal of your contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 9.0.1.0.0 | Add a page to contacts form to put personal information
-[partner_contact_weight](partner_contact_weight/) | 9.0.1.0.0 | Provide contact weight
+[partner_contact_weight](partner_contact_weight/) | 9.0.1.0.1 | Provide contact weight
 [partner_default_sale_discount](partner_default_sale_discount/) | 9.0.1.0.0 | Default sales discount per partner
 [partner_external_map](partner_external_map/) | 9.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_financial_risk](partner_financial_risk/) | 9.0.1.0.0 | Manage partner risk
