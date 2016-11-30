@@ -115,7 +115,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         # should contain Bob position.
         partner_ids = self.partner.search(
             [('parent_id', 'ilike', 'YourCompany')])
-        self.assertTrue(len(self.bob_job1 & partner_ids) != 0)
+        self.assertTrue(self.bob_job1 in partner_ids)
 
         # but when searching without 'all positions',
         # we should get the position standalone contact instead.
@@ -124,7 +124,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
                                              }}
         partner_ids = self.partner.with_context(ctx).search(
             [('parent_id', 'ilike', 'YourCompany')])
-        self.assertTrue(len(self.bob_contact & partner_ids) == 0)
+        self.assertTrue(self.bob_contact not in partner_ids)
 
     def test_04_contact_creation(self):
         """Check that we're begin to create a contact"""
