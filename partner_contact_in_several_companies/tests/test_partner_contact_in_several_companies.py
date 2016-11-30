@@ -30,8 +30,8 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
                                              'set_value': False
                                              }}
         partner_ids = self.partner.with_context(ctx).search([])
-        self.assertTrue(len(self.bob_job1 & partner_ids) != 0)
-        self.assertTrue(len(self.roger_job2 & partner_ids) != 0)
+        self.assertTrue(self.bob_job1 in partner_ids)
+        self.assertTrue(self.roger_job2 in partner_ids)
 
     def test_01_show_all_positions(self):
         """Check that all contact are show if context is empty or
