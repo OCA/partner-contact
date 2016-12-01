@@ -30,8 +30,8 @@ class ResPartner(models.Model):
     def _get_contact_type(self):
         for record in self:
             record.contact_type = record.contact_id \
-                                  and 'attached' \
-                                  or 'standalone'
+                and 'attached' \
+                or 'standalone'
 
     def _basecontact_check_context(self, mode):
         """ Remove 'search_show_all_positions' for non-search mode.
