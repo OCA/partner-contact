@@ -30,8 +30,8 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
                                              'set_value': False
                                              }}
         partner_ids = self.partner.with_context(ctx).search([])
-        self.assertTrue(self.bob_job1 in partner_ids)
-        self.assertTrue(self.roger_job2 in partner_ids)
+        self.assertTrue(self.bob_job1 not in partner_ids)
+        self.assertTrue(self.roger_job2 not in partner_ids)
 
     def test_01_show_all_positions(self):
         """Check that all contact are show if context is empty or
@@ -52,8 +52,8 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
                                              'set_value': True
                                              }}
         partner_ids = self.partner.with_context(ctx).search([])
-        self.assertTrue(self.bob_job1 not in partner_ids)
-        self.assertTrue(self.roger_job2 not in partner_ids)
+        self.assertTrue(self.bob_job1 in partner_ids)
+        self.assertTrue(self.roger_job2 in partner_ids)
 
     def test_02_reading_other_contact_one2many_show_all_positions(self):
         """Check that readonly partner's ``other_contact_ids`` return
