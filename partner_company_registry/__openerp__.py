@@ -3,12 +3,11 @@
 # License: AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 {
     'name': 'Partner Company Registry',
-    'version': '8.0.1.0.0',
+    'version': '8.0.1.0.1',
     'category': 'CRM',
-    'description': """Partner Company Registry
-    Adds a Partner Registry field to the partner object.
-    """,
-    'author': 'ICTSTUDIO, André Schenkels',
+    'author': "ICTSTUDIO, "
+              "Odoo Community Association (OCA)",
+    'maintainer': 'ICTSTUDIO',
     'license': 'AGPL-3',
     'website': 'http://www.ictstudio.eu',
     'depends': [
