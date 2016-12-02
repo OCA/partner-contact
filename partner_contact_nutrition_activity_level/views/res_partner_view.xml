@@ -6,7 +6,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="partner_contact_nutrition.view_nutrition_information"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='nutrition']/group/group[@name='other_info']" position="inside">
+            <xpath expr="//group[@name='other_info']" position="inside">
                 <field name="activity_level"/>
             </xpath>
         </field>
