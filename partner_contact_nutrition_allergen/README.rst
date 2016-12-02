@@ -16,6 +16,10 @@ Usage
 * Create or select a contact
 * Go to the Nutrition tab to select their allergens
 
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/134/10.0
+
 
 Known issues / Roadmap
 ======================
@@ -42,6 +46,7 @@ Contributors
 ------------
 
 * Maxime Chambreuil <mchambreuil@ursainfosystems.com>
+* Dave Lasley <dave@laslabs.com>
 
 Maintainer
 ----------
