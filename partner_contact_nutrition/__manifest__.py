@@ -4,7 +4,7 @@
 {
     "name": "Partner Contact Nutrition Information",
     "summary": "Provide caloric intake",
-    "version": "9.0.1.0.1",
+    "version": "10.0.1.0.0",
     "category": "Health",
     "website": "http://ursainfosystems.com",
     "author": "Ursa Information Systems, Odoo Community Association (OCA)",
@@ -13,6 +13,7 @@
     "installable": True,
     "depends": [
         "product_uom",
+        "partner_contact_personal_information_page",
     ],
     "data": [
         "views/res_partner_view.xml",
