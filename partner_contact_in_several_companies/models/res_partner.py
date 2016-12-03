@@ -28,10 +28,8 @@ class ResPartner(models.Model):
     @api.multi
     @api.depends('contact_id')
     def _get_contact_type(self):
-        for record in self:
-            record.contact_type = record.contact_id \
-                and 'attached' \
-                or 'standalone'
+        for rec in self:
+            rec.contact_type = 'attached' if rec.contact_id else 'standalone'
 
     def _basecontact_check_context(self, mode):
         """ Remove 'search_show_all_positions' for non-search mode.
