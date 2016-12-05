@@ -62,7 +62,7 @@
         <menuitem
             name="Cities/Locations Management"
             id="zip_base"
-            parent="base.menu_localisation"
+            parent="contacts.menu_contacts"
             action="action_zip_tree"
             />
 
