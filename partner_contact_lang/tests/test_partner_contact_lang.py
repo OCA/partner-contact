@@ -21,7 +21,7 @@ class TestPartnerContactLang(common.TransactionCase):
 
     def test_onchange_parent_id(self):
         self.contact.parent_id = False
-        res = self.contact.onchange_address(False, self.partner.id)
+        res = self.contact.onchange_parent_id(self.partner.id)
         self.assertEqual(res.get('value', {}).get('lang'), 'en_US')
 
     def test_write_parent_lang(self):
