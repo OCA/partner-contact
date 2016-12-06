@@ -4,7 +4,7 @@
 
 {
     'name': 'Manage language in contacts',
-    'version': '8.0.1.0.0',
+    'version': '9.0.1.0.0',
     'category': 'Partner Management',
     'license': 'AGPL-3',
     'author': 'Tecnativa,'
@@ -16,5 +16,5 @@
     'data': [
         'views/res_partner_view.xml',
     ],
-    'installable': True
+    'installable': True,
 }
