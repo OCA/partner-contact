@@ -25,7 +25,7 @@ and you will be able to edit the language.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/8.0
+   :target: https://runbot.odoo-community.org/runbot/134/9.0
 
 Bug Tracker
 ===========
@@ -52,7 +52,7 @@ Maintainer
 
 .. image:: https://odoo-community.org/logo.png
    :alt: Odoo Community Association
-   :target: http://odoo-community.org
+   :target: https://odoo-community.org
 
 This module is maintained by the OCA.
 
