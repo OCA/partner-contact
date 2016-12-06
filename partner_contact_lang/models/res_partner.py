@@ -22,11 +22,10 @@ class ResPartner(models.Model):
         return res
 
     @api.multi
-    def onchange_address(self, use_parent_address, parent_id):
+    def onchange_parent_id(self, parent_id):
         """Change language if the parent company changes and there's no
         language defined yet"""
-        res = super(ResPartner, self).onchange_address(
-            use_parent_address, parent_id)
+        res = super(ResPartner, self).onchange_parent_id(parent_id)
         if parent_id and self.parent_id.id != parent_id and not self.lang:
             parent = self.browse(parent_id)
             val = res.setdefault('value', {})
