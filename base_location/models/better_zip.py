@@ -30,7 +30,8 @@ class BetterZip(models.Model):
     _order = "name asc"
     _rec_name = "display_name"
 
-    display_name = fields.Char('Name', compute='_compute_display_name', store=True)
+    display_name = fields.Char('Name', compute='_compute_display_name',
+                                store=True)
     name = fields.Char('ZIP')
     code = fields.Char('City Code', size=64,
                        help="The official code for the city")
