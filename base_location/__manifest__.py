@@ -22,7 +22,7 @@
 ##############################################################################
 {
     'name': 'Location management (aka Better ZIP)',
-    'version': '10.0.0.1',
+    'version': '10.0.0.0.1',
     'depends': ['contacts'],
     'author': "Camptocamp,"
               "ACYSOS S.L.,"
