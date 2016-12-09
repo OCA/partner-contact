@@ -27,14 +27,16 @@ class ResCompany(models.Model):
 
     _inherit = 'res.company'
 
-    @api.one
+    @api.multi
     @api.onchange('better_zip_id')
     def on_change_city(self):
-        if self.better_zip_id:
-            self.zip = self.better_zip_id.name
-            self.city = self.better_zip_id.city
-            self.state_id = self.better_zip_id.state_id
-            self.country_id = self.better_zip_id.country_id
+        for company in self:
+            if company.better_zip_id:
+                bz = company.better_zip_id
+                company.zip = bz.name
+                company.city = bz.city
+                company.state_id = bz.state_id
+                company.country_id = bz.country_id
 
     better_zip_id = fields.Many2one(
         'res.better.zip',

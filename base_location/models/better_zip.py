@@ -30,7 +30,7 @@ class BetterZip(models.Model):
     _order = "name asc"
     _rec_name = "display_name"
 
-    display_name = fields.Char('Name', compute='_get_display_name', store=True)
+    display_name = fields.Char('Name', compute='_compute_display_name', store=True)
     name = fields.Char('ZIP')
     code = fields.Char('City Code', size=64,
                        help="The official code for the city")
@@ -38,23 +38,24 @@ class BetterZip(models.Model):
     state_id = fields.Many2one('res.country.state', 'State')
     country_id = fields.Many2one('res.country', 'Country')
 
-    @api.one
+    @api.multi
     @api.depends(
         'name',
         'city',
         'state_id',
         'country_id',
         )
-    def _get_display_name(self):
-        if self.name:
-            name = [self.name, self.city]
-        else:
-            name = [self.city]
-        if self.state_id:
-            name.append(self.state_id.name)
-        if self.country_id:
-            name.append(self.country_id.name)
-        self.display_name = ", ".join(name)
+    def _compute_display_name(self):
+        for bz in self:
+            if bz.name:
+                name = [bz.name, bz.city]
+            else:
+                name = [bz.city]
+            if bz.state_id:
+                name.append(bz.state_id.name)
+            if bz.country_id:
+                name.append(bz.country_id.name)
+            bz.display_name = ", ".join(name)
 
     @api.onchange('state_id')
     def onchange_state_id(self):
