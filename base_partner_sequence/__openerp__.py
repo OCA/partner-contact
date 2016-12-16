@@ -21,34 +21,19 @@
 #
 ##############################################################################
 {
-    "name": "Add a sequence on customers' code",
-    "version": "8.0.1.1.0",
-    "author": "Tiny/initOS GmbH & Co. KG,Odoo Community Association (OCA)",
+    "name": "Add a sequence on customer's and vendors's ref",
+    "version": "9.0.1.0.0",
+    "author": "Tiny/initOS GmbH & Co. KG, "
+              "ACSONE SA/NV, "
+              "syscoon GmbH, "
+              "Odoo Community Association (OCA)",
     "category": "Generic Modules/Base",
     "website": "http://www.initos.com",
-    "depends": ["base"],
-    "summary": "Sets customer's code from a sequence",
-    "description": """
-        This module adds the possibility to define a sequence for
-        the partner code. This code is then set as default when you
-        create a new commercial partner, using the defined sequence.
-
-        The reference field is treated as a commercial field, i.e. it
-        is managed from the commercial partner and then propagated to
-        the partner's contacts. The field is visible on the contacts,
-        but it can only be modified from the commercial partner.
-
-        No codes are assigned for contacts such as shipping and
-        invoice addresses.
-        This module is a migration of the original base_partner_sequence
-        addon to OpenERP version 7.0.
-    """,
+    "summary": "Sets customer's and vendor's ref from a sequence",
     "data": [
-        'partner_sequence.xml',
-        'partner_view.xml',
+        'data/partner_sequence.xml',
+        'views/partner_view.xml',
     ],
-    "demo": [],
     "active": False,
-    'installable': False
+    "installable": True
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
