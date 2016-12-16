@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-# © 2004-2009 Tiny SPRL (<http://tiny.be>).
-# © 2013 initOS GmbH & Co. KG (<http://www.initos.com>).
+# Copyright 2004-2009 Tiny SPRL (<http://tiny.be>).
+# Copyright 2013 initOS GmbH & Co. KG (<http://www.initos.com>).
+# Copyright 2016 Tecnativa - Vicent Cubells
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api
+from openerp import models, api, exceptions, _
 
 
 class ResPartner(models.Model):
@@ -16,20 +17,24 @@ class ResPartner(models.Model):
         """
         Checks whether a sequence value should be assigned to a partner's 'ref'
 
-        :param parnter_id: id of the partner object
+        :param partner_id: id of the partner object
         :param vals: known field values of the partner object
-        :return: true iff a sequence value should be assigned to the\
-                      partner's 'ref'
+        :return: true if a sequence value should be assigned to the
+            partner's 'ref'
         """
         if not vals and not partner_id:
-            raise Exception('Either field values or an id must be provided.')
-        vals = vals or {}
+            raise exceptions.Warning(
+                _('Either field values or an id must be provided.')
+            )
+        if vals is None:
+            vals = {}
+        values = vals.copy()
         # only assign a 'ref' to commercial partners
         if partner_id:
             partner = self.browse(partner_id)
-            vals.setdefault('is_company',  partner.is_company)
-            vals.setdefault('parent_id', partner.parent_id.id)
-        return vals.get('is_company') or not vals.get('parent_id')
+            values.setdefault('is_company',  partner.is_company)
+            values.setdefault('parent_id', partner.parent_id.id)
+        return values.get('is_company') or not values.get('parent_id')
 
     @api.model
     def _commercial_fields(self):
@@ -41,7 +46,7 @@ class ResPartner(models.Model):
 
     @api.model
     def _get_next_ref(self, partner=None, vals=None):
-        return self.env['ir.sequence'].get('res.partner')
+        return self.env['ir.sequence'].next_by_code('res.partner')
 
     @api.model
     def create(self, vals):
@@ -58,12 +63,13 @@ class ResPartner(models.Model):
             super(ResPartner, partner).write(vals)
         return True
 
-    @api.one
+    @api.multi
     def copy(self, default=None):
-        default = default or {}
-        if self._needsRef(self.id):
-            default.update({
-                'ref': self._get_next_ref(),
-            })
+        for partner in self:
+            default = default or {}
+            if self._needsRef(self.id):
+                default.update({
+                    'ref': self._get_next_ref(),
+                })
 
         return super(ResPartner, self).copy(default)
