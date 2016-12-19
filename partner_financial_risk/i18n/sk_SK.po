@@ -1,0 +1,310 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_financial_risk
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (9.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
+"PO-Revision-Date: 2016-10-23 16:16+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Slovak (Slovakia) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/sk_SK/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: sk_SK\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. module: partner_financial_risk
+#: model:ir.ui.view,arch_db:partner_financial_risk.partner_risk_exceeded_wizard
+msgid "Cancel"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model,name:partner_financial_risk.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.ui.view,arch_db:partner_financial_risk.partner_risk_exceeded_wizard
+msgid "Continue"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_continue_method
+msgid "Continue method"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_credit_policy
+msgid "Credit policy"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_partner_id
+msgid "Customer"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_account_config_settings_invoice_unpaid_margin
+#: model:ir.model.fields,help:partner_financial_risk.field_res_company_invoice_unpaid_margin
+msgid "Days after due date to set an invoice as unpaid"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount
+msgid "Difference between accounting credit and rest of totals"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_exception_msg
+msgid "Exception msg"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.ui.view,arch_db:partner_financial_risk.res_partner_view_risk
+#: model:ir.ui.view,arch_db:partner_financial_risk.view_account_config
+msgid "Financial Risk"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.ui.view,arch_db:partner_financial_risk.view_account_config
+msgid "Financial Risk div"
+msgstr ""
+
+#. module: partner_financial_risk
+#: code:addons/partner_financial_risk/models/account_invoice.py:19
+#, python-format
+msgid "Financial risk exceeded.\n"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount_include
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_draft_include
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_open_include
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_unpaid_include
+msgid "Full risk computation"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.ui.view,arch_db:partner_financial_risk.res_partner_view_risk
+msgid "General Limits"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_id
+msgid "ID"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_draft_include
+msgid "Include Draft Invoices"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_open_include
+msgid "Include Open Invoices"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_account_amount_include
+msgid "Include Other Account Amount"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_unpaid_include
+msgid "Include Unpaid Invoices"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.ui.view,arch_db:partner_financial_risk.res_partner_view_risk
+msgid "Info"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model,name:partner_financial_risk.model_account_invoice
+msgid "Invoice"
+msgstr "Faktúra"
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_exception
+msgid "It Indicate if partner risk exceeded"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_draft_limit
+msgid "Limit In Draft Invoices"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_open_limit
+msgid "Limit In Open Invoices"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_unpaid_limit
+msgid "Limit In Unpaid Invoices"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_account_amount_limit
+msgid "Limit Other Account Amount"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_account_config_settings_invoice_unpaid_margin
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_company_invoice_unpaid_margin
+msgid "Maturity Margin"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_origin_reference
+msgid "Object"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_account_amount
+msgid "Other Account Amount"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model,name:partner_financial_risk.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: partner_financial_risk
+#: code:addons/partner_financial_risk/wizard/parner_risk_exceeded.py:25
+#, python-format
+msgid "Partner risk exceeded"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_unpaid
+msgid ""
+"Residual amount of invoices in Open state and the date due is exceeded, "
+"considering Unpaid Margin set in account settings"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_open
+msgid ""
+"Residual amount of invoices in Open state and the date due is not exceeded, "
+"considering Due Margin set in account settings"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_exception
+msgid "Risk Exception"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_allow_edit
+msgid "Risk allow edit"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.ui.view,arch_db:partner_financial_risk.partner_risk_exceeded_wizard
+msgid "Risk exceeded"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount_limit
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_draft_limit
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_open_limit
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_unpaid_limit
+msgid "Set 0 if it is not locked"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.ui.view,arch_db:partner_financial_risk.res_partner_view_risk
+msgid "Specific Limits"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_total
+msgid "Sum of total risk included"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.ui.view,arch_db:partner_financial_risk.partner_risk_exceeded_wizard
+msgid "The partner has exceeded his risk"
+msgstr ""
+
+#. module: partner_financial_risk
+#: code:addons/partner_financial_risk/models/account_invoice.py:28
+#, python-format
+msgid "This invoice exceeds the financial risk.\n"
+msgstr ""
+
+#. module: partner_financial_risk
+#: code:addons/partner_financial_risk/models/account_invoice.py:23
+#, python-format
+msgid "This invoice exceeds the open invoices risk.\n"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_draft
+msgid "Total Draft Invoices"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_open
+msgid "Total Open Invoices"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_total
+msgid "Total Risk"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_unpaid
+msgid "Total Unpaid Invoices"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_draft
+msgid "Total amount of invoices in Draft or Pro-forma state"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model,name:partner_financial_risk.model_account_config_settings
+msgid "account.config.settings"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model,name:partner_financial_risk.model_partner_risk_exceeded_wiz
+msgid "partner.risk.exceeded.wiz"
+msgstr ""
