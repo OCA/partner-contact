@@ -4,14 +4,13 @@
 
 from odoo import api, models, _
 
-
 class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
     @api.multi
-    def invoice_open(self):
+    def action_invoice_open(self):
         if self.env.context.get('bypass_risk', False):
-            return self.signal_workflow('invoice_open')
+            return super(AccountInvoice, self).action_invoice_open()
         for invoice in self:
             partner = invoice.partner_id
             exception_msg = ""
@@ -32,7 +31,8 @@ class AccountInvoice(models.Model):
                     'exception_msg': exception_msg,
                     'partner_id': partner.id,
                     'origin_reference':
-                        '%s,%s' % (self._model, invoice.id),
-                    'continue_method': 'invoice_open',
+                        '%s,%s' % ('account.invoice', invoice.id),
+                    'continue_method': 'action_invoice_open',
                 }).action_show()
-        return self.signal_workflow('invoice_open')
+        return super(AccountInvoice, self).action_invoice_open()
+
