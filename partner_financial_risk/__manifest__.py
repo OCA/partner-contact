@@ -2,6 +2,9 @@
 # © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+# © 2016 Salvatore Josué Trimarchi Pinto <trimarchi@bacgroup.net>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
 {
     'name': 'Partner Financial Risk',
     'summary': 'Manage partner risk',
