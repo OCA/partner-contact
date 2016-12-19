@@ -1,0 +1,51 @@
+3e8e73a - Pedro M. Baeza <pedro.baeza@gmail.com>, 4 weeks ago : [MIG] Rename manifest files
+9c081d7 - Pedro M. Baeza <pedro.baeza@gmail.com>, 4 weeks ago : [MIG] Make modules uninstallable
+267bfc5 - OCA Transbot <transbot@odoo-community.org>, 7 weeks ago : OCA Transbot updated translations from Transifex
+edb5fb9 - Stéphane Bidoul (ACSONE) <stephane.bidoul@acsone.eu>, 3 months ago : [FIX] remove en.po that was erroneously created by transbot
+77f8cbe - OCA Transbot <transbot@odoo-community.org>, 5 months ago : OCA Transbot updated translations from Transifex
+157682b - OCA Transbot <transbot@odoo-community.org>, 6 months ago : OCA Transbot updated translations from Transifex
+fde972c - OCA Transbot <transbot@odoo-community.org>, 6 months ago : OCA Transbot updated translations from Transifex
+d032724 - OCA Transbot <transbot@odoo-community.org>, 7 months ago : OCA Transbot updated translations from Transifex
+1e3537d - OCA Transbot <transbot@odoo-community.org>, 7 months ago : OCA Transbot updated translations from Transifex
+5ed8572 - OCA Transbot <transbot@odoo-community.org>, 8 months ago : OCA Transbot updated translations from Transifex
+bcfdf8a - OCA Transbot <transbot@odoo-community.org>, 10 months ago : OCA Transbot updated translations from Transifex
+720086e - OCA Transbot <transbot@odoo-community.org>, 11 months ago : OCA Transbot updated translations from Transifex
+0afaa22 - Yannick Vaucher <yannick.vaucher@camptocamp.com>, 1 year, 1 month ago : Add tests on onchanges
+76e71c7 - Yannick Vaucher <yannick.vaucher@camptocamp.com>, 1 year, 1 month ago : base_location - Adapt views to 9.0
+d39125a - Yannick Vaucher <yannick.vaucher@camptocamp.com>, 1 year, 1 month ago : base_location - Update README.rst
+2fae2ac - Yannick Vaucher <yannick.vaucher@camptocamp.com>, 1 year, 1 month ago : Set base_location as installable
+0ba1b25 - Pedro M. Baeza <pedro.baeza@gmail.com>, 1 year, 1 month ago : [MIG] Make modules uninstallable
+53275d3 - Stéphane Bidoul <stephane.bidoul@acsone.eu>, 1 year, 1 month ago : [UPD] prefix versions with 8.0
+5df1b51 - OCA Transbot <transbot@odoo-community.org>, 1 year, 1 month ago : OCA Transbot updated translations from Transifex
+d88c9a8 - OCA Transbot <transbot@odoo-community.org>, 1 year, 2 months ago : OCA Transbot updated translations from Transifex
+69cbd81 - Alex Comba <alex.comba@agilebg.com>, 1 year, 5 months ago : Merge pull request #124 from hhgabelgaard/8.0
+728f1af - Hans Henrik Gabelgaard <hhg@gabelgaard.org>, 1 year, 5 months ago : Translated to Danish
+3a70103 - Pedro M. Baeza <pedro.baeza@gmail.com>, 1 year, 7 months ago : Merge pull request #99 from jjscarafia/8.0
+e60b6c7 - Pedro M. Baeza <pedro.baeza@gmail.com>, 1 year, 7 months ago : Merge pull request #97 from savoirfairelinux/base_location_data
+fb671fc - Pedro M. Baeza <pedro.baeza@gmail.com>, 1 year, 7 months ago : [IMP] base_location*: Expand authors
+49cdf3a - Juan Jose Scarafia <scarafia.juanjose@gmail.com>, 1 year, 7 months ago : FIX Use old name_get method to compute display_name field
+3d580c6 - Juan Jose Scarafia <scarafia.juanjose@gmail.com>, 1 year, 7 months ago : IMP Create new computed stored field 'display_name' that use zip, city, state and country in order to allow search using '%' from the m2o widget
+d6c7d39 - Sandy Carter <sandy.carter@savoirfairelinux.com>, 1 year, 8 months ago : Add demo data
+a52694d - Pedro M. Baeza <pedro.baeza@gmail.com>, 1 year, 8 months ago : [IMP] base_location_geonames_import: Several improvements and added hooks * Added Icon. * Improve module description and extracted to README.rst. * Pass country instead of country_id for advance comparisons. * Allow to transform city name. * Some code style. * Do not remove all entries of a country, but only not found. * Include hooks for transforming some things. * Include spanish translation.
+de1b5b2 - Alexandre Fayolle <alexandre.fayolle@camptocamp.com>, 1 year, 8 months ago : Add OCA as author of OCA addons
+9724307 - Alejandro Santana <alejandrosantana@anubia.es>, 1 year, 9 months ago : [FIX] base_location: Removed unnecesary temporary variable.
+f7f02a6 - Alejandro Santana <alejandrosantana@anubia.es>, 1 year, 9 months ago : [FIX] base_location: Fix flake8 error, views naming, removing deprecated fields. Also use @api.one in onchanges. Using now spaces instead of tabs in xml files.
+ff3c3bd - Alejandro Santana <alejandrosantana@anubia.es>, 1 year, 10 months ago : [FIX] base_contact: Fixed PEP8. [IMP] base_location: Removed non-relevan currency_id column on country tree view, enhanced description and manidest, addded README.rst file.
+9c82d94 - Alejandro Santana <alejandrosantana@anubia.es>, 1 year, 10 months ago : [IMP] base_location: Updated to v8 syntax and uses. Added filters in some views. Added two columns in respective tree views.
+7f5e990 - Hans Henrik Gabelgaard <hhg@gabelgaard.org>, 1 year, 10 months ago : Danish translation
+a366a5a - Alexis de Lattre <alexis@via.ecp.fr>, 1 year, 10 months ago : base_location: Don't position zip_id after street2, to avoid layout issues with module partner_address_street3
+6263461 - Franco Tampieri <franco.tampieri@abstract.it>, 2 years, 1 month ago : [Fix] Removed my contributor lines
+17c8d43 - Franco Tampieri <franco.tampieri@abstract.it>, 2 years, 1 month ago : [Add] Add italian translation, change field class to edit-only for better-zip field
+9db6903 - Sandy Carter <bwrsandman@gmail.com>, 2 years, 2 months ago : Fix pep8 (line length)
+65603cc - Lorenzo Battistini <lorenzo.battistini@agilebg.com>, 2 years, 3 months ago : [FIX] base_location PEP8
+43f85b7 - Sandy Carter <sandy.carter@savoirfairelinux.com>, 2 years, 4 months ago : Fix pep8
+08a8d15 - unknown <sandy.carter@savoirfairelinux.com>, 2 years, 8 months ago : [FIX] base_location - Add context propagation to base_location
+de58ee7 - Sandy Carter <sandy.carter@savoirfairelinux.com>, 2 years, 9 months ago : [FIX] Add context propagation to base_location
+85ba316 - Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>, 2 years, 10 months ago : [IMP] base_location: create_name_field for zip_id and added field for contact form.
+52af681 - Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>, 2 years, 11 months ago : [IMP] base_location: Make ZIP code optional
+0a1f7ad - Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>, 3 years, 3 months ago : [FIX] base_location: Changed partner view to avoid extrange behaviour when company country is filled.
+9d1a803 - unknown <nicolas.bessi@camptocamp.com>, 3 years, 4 months ago : [FIX] variable name cursor -> cr
+8948352 - unknown <nicolas.bessi@camptocamp.com>, 3 years, 4 months ago : [FIX] pass context to default get
+0a58746 - unknown <nicolas.bessi@camptocamp.com>, 3 years, 4 months ago : [FIX] mutable default in function signature
+66da1be - Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>, 3 years, 4 months ago : base_location: [IMP] Spanish translation and translation template.
+02839b3 - unknown <nicolas.bessi@camptocamp.com>, 3 years, 4 months ago : [MV] rename better_zip to base_location
