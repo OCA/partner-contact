@@ -56,7 +56,7 @@ Contributors
 
 * Carlos Dauden <carlos.dauden@tecnativa.com>
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
-
+* Salvatore J. Trimarchi <trimarchi@bacgroup.net>
 
 Maintainer
 ----------
