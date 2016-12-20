@@ -19,10 +19,12 @@
                 <group attrs="{'invisible': [('is_company', '=', True)]}">
                     <field name="lastname" attrs=
                         "{'required': [('firstname', '=', False),
-                                       ('is_company', '=', False)]}"/>
+                                       ('is_company', '=', False),
+                                       ('type', '=', 'contact')]}"/>
                     <field name="firstname" attrs=
                         "{'required': [('lastname', '=', False),
-                                       ('is_company', '=', False)]}"/>
+                                       ('is_company', '=', False),
+                                       ('type', '=', 'contact')]}"/>
                 </group>
             </xpath>
         </data>
@@ -47,10 +49,12 @@
                   <group attrs="{'invisible': [('is_company', '=', True)]}">
                       <field name="lastname" attrs=
                           "{'required': [('firstname', '=', False),
-                                         ('is_company', '=', False)]}"/>
+                                         ('is_company', '=', False),
+                                         ('type', '=', 'contact')]}"/>
                       <field name="firstname" attrs=
                           "{'required': [('lastname', '=', False),
-                                         ('is_company', '=', False)]}"/>
+                                         ('is_company', '=', False),
+                                         ('type', '=', 'contact')]}"/>
                   </group>
                 </div>
             </xpath>
@@ -71,10 +75,12 @@
                   <group attrs="{'invisible': [('is_company', '=', True)]}">
                       <field name="lastname" attrs=
                           "{'required': [('firstname', '=', False),
-                                         ('is_company', '=', False)]}"/>
+                                         ('is_company', '=', False),
+                                         ('type', '=', 'contact')]}"/>
                       <field name="firstname" attrs=
                           "{'required': [('lastname', '=', False),
-                                         ('is_company', '=', False)]}"/>
+                                         ('is_company', '=', False),
+                                         ('type', '=', 'contact')]}"/>
                   </group>
                 </div>
             </xpath>
