@@ -1,10 +1,11 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>).
 #    Copyright (C) 2013 initOS GmbH & Co. KG (<http://www.initos.com>).
 #    Author Thomas Rehn <thomas.rehn at initos.com>
+#    Copyright (C) 2016 Camptocamp SA (<http://www.camptocamp.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -21,32 +22,39 @@
 #
 ##############################################################################
 
-from openerp.osv import orm
+from odoo import api, models, exceptions, _
 
 
-class ResPartner(orm.Model):
+class ResPartner(models.Model):
     """Assigns 'ref' from a sequence on creation and copying"""
 
     _inherit = 'res.partner'
 
-    def create(self, cr, uid, vals, context=None):
-        context = context or {}
-        if not vals.get('ref') and self._needsRef(cr, uid, vals=vals,
-                                                  context=context):
-            vals['ref'] = self.pool.get('ir.sequence')\
-                                   .next_by_code(cr, uid, 'res.partner')
-        return super(ResPartner, self).create(cr, uid, vals, context)
+    @api.model
+    def create(self, vals):
+        if not vals.get('ref') and self._needsRef(vals=vals):
+            vals['ref'] = self.env['ir.sequence'].next_by_code('res.partner')
+        return super(ResPartner, self).create(vals)
 
-    def copy(self, cr, uid, id, default=None, context=None):
+    @api.multi
+    def copy(self, default=None):
         default = default or {}
-        if self._needsRef(cr, uid, id=id, context=context):
-            default['ref'] = self.pool.get('ir.sequence')\
-                                      .next_by_code(cr, uid, 'res.partner',
-                                                    context=context)
-        return super(ResPartner, self).copy(cr, uid, id, default,
-                                            context=context)
+        if self._needsRef():
+            default['ref'] = self.env['ir.sequence'].\
+                next_by_code('res.partner')
+        return super(ResPartner, self).copy(default)
 
-    def _needsRef(self, cr, uid, id=None, vals=None, context=None):
+    @api.multi
+    def write(self, vals):
+        for partner in self:
+            if not vals.get('ref') and partner._needsRef(vals):
+                vals['ref'] = self.env['ir.sequence'].\
+                    next_by_code('res.partner')
+            super(ResPartner, partner).write(vals)
+        return True
+
+    @api.multi
+    def _needsRef(self, vals=None):
         """
         Checks whether a sequence value should be assigned to a partner's 'ref'
 
@@ -57,20 +65,20 @@ class ResPartner(orm.Model):
         :return: true iff a sequence value should be assigned to the\
                       partner's 'ref'
         """
-        if not vals and not id:
-            raise Exception('Either field values or an id must be provided.')
+        if not vals and not self:  # pragma: no cover
+            raise exceptions.UserError(_(
+                'Either field values or an id must be provided.'))
         # only assign a 'ref' to commercial partners
-        if id:
-            vals = self.read(cr, uid, id, ['parent_id', 'is_company'],
-                             context=context)
+        if self:
+            vals = {}
+            vals['is_company'] = self.is_company
+            vals['parent_id'] = self.parent_id
         return vals.get('is_company') or not vals.get('parent_id')
 
-    def _commercial_fields(self, cr, uid, context=None):
+    @api.model
+    def _commercial_fields(self):
         """
         Make the partner reference a field that is propagated
         to the partner's contacts
         """
-        return super(ResPartner, self)._commercial_fields(
-            cr, uid, context=context) + ['ref']
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+        return super(ResPartner, self)._commercial_fields() + ['ref']
