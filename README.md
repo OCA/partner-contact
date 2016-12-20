@@ -22,6 +22,7 @@ addon | version | summary
 [base_location](base_location/) | 9.0.1.0.0 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 9.0.1.0.1 | Import better zip entries from Geonames
 [base_partner_merge](base_partner_merge/) | 9.0.1.0.0 | Partner merge wizard without dependency on CRM
+[base_partner_sequence](base_partner_sequence/) | 9.0.0.1.0 | Sets customer's code from a sequence
 [partner_address_street3](partner_address_street3/) | 9.0.1.1.0 | Street3 in addresses
 [partner_changeset](partner_changeset/) | 9.0.1.0.0 | Partner Changesets
 [partner_contact_birthdate](partner_contact_birthdate/) | 9.0.1.0.0 | Contact's birthdate
@@ -55,7 +56,6 @@ addon | version | summary
 [base_contact](base_contact/) | 8.0.2.0.0 (unported) | [DEPRECATED] Manage your contacts separately
 [base_continent](base_continent/) | 8.0.1.0.0 (unported) | Continent management
 [base_location_nuts](base_location_nuts/) | 8.0.1.0.0 (unported) | NUTS Regions
-[base_partner_sequence](base_partner_sequence/) | 8.0.1.1.0 (unported) | Sets customer's code from a sequence
 [firstname_display_name_trigger](firstname_display_name_trigger/) | 1.0 (unported) | Link module if partner_lastname and account_report_company are installed
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 (unported) | Partner auto salesman
 [partner_contact_address_detailed](partner_contact_address_detailed/) | 8.0.1.0.0 (unported) | All address data in summarized contact form
