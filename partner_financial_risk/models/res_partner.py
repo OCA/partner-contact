@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
+# Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import datetime
@@ -12,17 +12,17 @@ class ResPartner(models.Model):
 
     risk_invoice_draft_include = fields.Boolean(
         string='Include Draft Invoices', help='Full risk computation')
-    risk_invoice_draft_limit = fields.Monetary(
+    risk_invoice_draft_limit = fields.Float(
         string='Limit In Draft Invoices', help='Set 0 if it is not locked')
-    risk_invoice_draft = fields.Monetary(
+    risk_invoice_draft = fields.Float(
         compute='_compute_risk_invoice', store=True,
         string='Total Draft Invoices',
         help='Total amount of invoices in Draft or Pro-forma state')
     risk_invoice_open_include = fields.Boolean(
         string='Include Open Invoices', help='Full risk computation')
-    risk_invoice_open_limit = fields.Monetary(
+    risk_invoice_open_limit = fields.Float(
         string='Limit In Open Invoices', help='Set 0 if it is not locked')
-    risk_invoice_open = fields.Monetary(
+    risk_invoice_open = fields.Float(
         compute='_compute_risk_invoice', store=True,
         string='Total Open Invoices',
         help='Residual amount of invoices in Open state and the date due is '
@@ -30,9 +30,9 @@ class ResPartner(models.Model):
              'settings')
     risk_invoice_unpaid_include = fields.Boolean(
         string='Include Unpaid Invoices', help='Full risk computation')
-    risk_invoice_unpaid_limit = fields.Monetary(
+    risk_invoice_unpaid_limit = fields.Float(
         string='Limit In Unpaid Invoices', help='Set 0 if it is not locked')
-    risk_invoice_unpaid = fields.Monetary(
+    risk_invoice_unpaid = fields.Float(
         compute='_compute_risk_invoice', store=True,
         string='Total Unpaid Invoices',
         help='Residual amount of invoices in Open state and the date due is '
@@ -40,14 +40,14 @@ class ResPartner(models.Model):
 
     risk_account_amount_include = fields.Boolean(
         string='Include Other Account Amount', help='Full risk computation')
-    risk_account_amount_limit = fields.Monetary(
+    risk_account_amount_limit = fields.Float(
         string='Limit Other Account Amount', help='Set 0 if it is not locked')
-    risk_account_amount = fields.Monetary(
+    risk_account_amount = fields.Float(
         compute='_compute_risk_account_amount',
         string='Other Account Amount',
         help='Difference between accounting credit and rest of totals')
 
-    risk_total = fields.Monetary(
+    risk_total = fields.Float(
         compute='_compute_risk_exception',
         string='Total Risk', help='Sum of total risk included')
     risk_exception = fields.Boolean(
