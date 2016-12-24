@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_address_street3
+# * partner_contact_gender
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
@@ -18,23 +18,27 @@ msgstr ""
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. module: partner_address_street3
-#: model:ir.model,name:partner_address_street3.model_res_country
-msgid "Country"
-msgstr "Maa"
+#. module: partner_contact_gender
+#: selection:res.partner,gender:0
+msgid "Female"
+msgstr ""
 
-#. module: partner_address_street3
-#: model:ir.model,name:partner_address_street3.model_res_partner
+#. module: partner_contact_gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner_gender
+msgid "Gender"
+msgstr ""
+
+#. module: partner_contact_gender
+#: selection:res.partner,gender:0
+msgid "Male"
+msgstr ""
+
+#. module: partner_contact_gender
+#: selection:res.partner,gender:0
+msgid "Other"
+msgstr ""
+
+#. module: partner_contact_gender
+#: model:ir.model,name:partner_contact_gender.model_res_partner
 msgid "Partner"
 msgstr "Kumppani"
-
-#. module: partner_address_street3
-#: model:ir.model.fields,field_description:partner_address_street3.field_res_partner_street3
-msgid "Street 3"
-msgstr ""
-
-#. module: partner_address_street3
-#: model:ir.ui.view,arch_db:partner_address_street3.add_street3_in_form_view
-#: model:ir.ui.view,arch_db:partner_address_street3.view_partner_address_form
-msgid "Street 3..."
-msgstr ""
