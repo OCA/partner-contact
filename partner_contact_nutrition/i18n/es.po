@@ -3,15 +3,15 @@
 # * partner_contact_nutrition
 # 
 # Translators:
-# Pedro M. Baeza <pedro.baeza@gmail.com>, 2016
 # OCA Transbot <transbot@odoo-community.org>, 2016
+# Pedro M. Baeza <pedro.baeza@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 01:41+0000\n"
-"PO-Revision-Date: 2016-11-24 01:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2016-12-20 03:39+0000\n"
+"PO-Revision-Date: 2016-12-20 03:39+0000\n"
+"Last-Translator: Pedro M. Baeza <pedro.baeza@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,27 +22,27 @@ msgstr ""
 #. module: partner_contact_nutrition
 #: model:ir.model.fields,field_description:partner_contact_nutrition.field_res_partner_caloric_intake
 msgid "Calories"
-msgstr ""
+msgstr "Calorías"
 
 #. module: partner_contact_nutrition
 #: model:ir.model.fields,field_description:partner_contact_nutrition.field_res_partner_caloric_intake_uom
 msgid "Calories UoM"
-msgstr ""
+msgstr "UdM calorías"
 
 #. module: partner_contact_nutrition
 #: model:ir.model.fields,field_description:partner_contact_nutrition.field_res_partner_carbohydrate_intake
 msgid "Carbohydrate"
-msgstr ""
+msgstr "Carbohidrato"
 
 #. module: partner_contact_nutrition
 #: model:ir.model.fields,field_description:partner_contact_nutrition.field_res_partner_carbohydrate_intake_uom
 msgid "Carbohydrate UoM"
-msgstr ""
+msgstr "UdM del carbohidrato"
 
 #. module: partner_contact_nutrition
 #: model:ir.model.fields,field_description:partner_contact_nutrition.field_res_partner_fat_intake
 msgid "Fat"
-msgstr ""
+msgstr "Grasa"
 
 #. module: partner_contact_nutrition
 #: model:ir.model.fields,field_description:partner_contact_nutrition.field_res_partner_fat_intake_uom

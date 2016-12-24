@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
+# Pedro M. Baeza <pedro.baeza@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 01:41+0000\n"
-"PO-Revision-Date: 2016-11-24 01:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2016-12-20 03:39+0000\n"
+"PO-Revision-Date: 2016-12-20 03:39+0000\n"
+"Last-Translator: Pedro M. Baeza <pedro.baeza@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,17 +22,17 @@ msgstr ""
 #. module: partner_contact_nutrition_activity_level
 #: model:ir.model.fields,field_description:partner_contact_nutrition_activity_level.field_res_partner_activity_level
 msgid "Activity Level"
-msgstr ""
+msgstr "Nivel de actividad"
 
 #. module: partner_contact_nutrition_activity_level
 #: selection:res.partner,activity_level:0
 msgid "Extremely active"
-msgstr ""
+msgstr "Extremadamente activo"
 
 #. module: partner_contact_nutrition_activity_level
 #: selection:res.partner,activity_level:0
 msgid "Moderately active"
-msgstr ""
+msgstr "Moderadamente activo"
 
 #. module: partner_contact_nutrition_activity_level
 #: model:ir.model,name:partner_contact_nutrition_activity_level.model_res_partner
@@ -41,7 +42,7 @@ msgstr "Empresa"
 #. module: partner_contact_nutrition_activity_level
 #: selection:res.partner,activity_level:0
 msgid "Sedentary"
-msgstr ""
+msgstr "Sedentario"
 
 #. module: partner_contact_nutrition_activity_level
 #: selection:res.partner,activity_level:0

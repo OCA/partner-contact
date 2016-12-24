@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-16 03:39+0000\n"
-"PO-Revision-Date: 2016-12-16 03:39+0000\n"
+"POT-Creation-Date: 2016-12-20 03:39+0000\n"
+"PO-Revision-Date: 2016-12-20 03:39+0000\n"
 "Last-Translator: Iván Todorovich <ivan.todorovich@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr ""
 #. module: partner_changeset
 #: sql_constraint:changeset.field.rule:0
 msgid "A rule already exists for this field."
-msgstr ""
+msgstr "Ya existe una regla para este campo."
 
 #. module: partner_changeset
 #: selection:res.partner.changeset.change,state:0
@@ -47,7 +47,7 @@ msgstr "Aplicar"
 #. module: partner_changeset
 #: model:ir.ui.view,arch_db:partner_changeset.view_res_partner_changeset_form
 msgid "Apply pending changes"
-msgstr ""
+msgstr "Aplicar cambios pendientes"
 
 #. module: partner_changeset
 #: model:ir.model.fields,help:partner_changeset.field_changeset_field_rule_action
