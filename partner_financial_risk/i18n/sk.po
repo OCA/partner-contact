@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 01:41+0000\n"
+"POT-Creation-Date: 2016-12-20 03:40+0000\n"
 "PO-Revision-Date: 2016-10-23 16:16+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Slovak (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/sk/)\n"
@@ -55,7 +55,7 @@ msgstr ""
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_partner_id
 msgid "Customer"
-msgstr ""
+msgstr "Zákazník"
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_account_config_settings_invoice_unpaid_margin
@@ -202,7 +202,7 @@ msgstr ""
 #. module: partner_financial_risk
 #: model:ir.model,name:partner_financial_risk.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #. module: partner_financial_risk
 #: code:addons/partner_financial_risk/wizard/parner_risk_exceeded.py:25
