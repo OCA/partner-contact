@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3). -->
+<openerp>
+<data>
+<record id="partner_risk_exceeded_wizard" model="ir.ui.view">
+    <field name="name">Partner risk exceeded</field>
+    <field name="model">partner.risk.exceeded.wiz</field>
+    <field name="arch" type="xml">
+        <form string="Risk exceeded">
+            <p>The partner has exceeded his risk</p>
+            <field name="exception_msg" colspan="2" nolabel="1"/>
+            <group>
+                <field name="partner_id"/>
+            </group>
+            <footer>
+                <button string="Continue"
+                        class="oe_highlight"
+                        name="button_continue"
+                        type="object"
+                        groups="base.group_sale_manager,account.group_account_manager"
+                        />
+                <button string="Cancel"
+                        class="oe_link"
+                        special="cancel"
+                        />
+            </footer>
+        </form>
+    </field>
+</record>
+</data>
+</openerp>

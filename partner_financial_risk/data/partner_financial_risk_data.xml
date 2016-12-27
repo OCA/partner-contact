@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3). -->
+<openerp>
+<data>
+<record id="ir_cron_due_invoice_every_day" model="ir.cron">
+    <field name="name">Financial risk: Process due invoices</field>
+    <field name="interval_number">1</field>
+    <field name="interval_type">days</field>
+    <field name="numbercall">-1</field>
+    <field name="doall" eval="False"/>
+    <field name="model" eval="'res.partner'"/>
+    <field name="function" eval="'process_unpaid_invoices'"/>
+    <field name="args" eval="'()'"/>
+</record>
+</data>
+</openerp>

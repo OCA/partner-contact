@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3). -->
+<openerp>
+<data>
+<record id="view_account_config" model="ir.ui.view">
+    <field name="name">account settings</field>
+    <field name="model">account.config.settings</field>
+    <field name="inherit_id" ref="account.view_account_config_settings"/>
+    <field name="arch" type="xml">
+        <xpath expr="//div[@name='payment_acquirer']/.." position="after">
+            <label for="id" string="Financial Risk"/>
+            <div name="financial_risk" string="Financial Risk div">
+                <label for="invoice_unpaid_margin"/>
+                <field name="invoice_unpaid_margin" class="oe_inline"/>
+            </div>
+        </xpath>
+    </field>
+</record>
+</data>
+</openerp>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3). -->
+<openerp>
+<data>
+<record id="res_partner_view_risk" model="ir.ui.view">
+    <field name="name">res.partner.view.risk</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form" />
+    <field name="priority" eval="20"/>
+    <field name="groups_id" eval="[(4, ref('base.group_sale_salesman')), (4, ref('account.group_account_manager'))]"/>
+    <field name="arch" type="xml">
+        <page name="sales_purchases" position="after">
+            <page name="financial_risk" string="Financial Risk" attrs="{'invisible': [('customer','=',False)]}">
+                <group name="risk_general" col="3">
+                    <group string="General Limits" name="risk_include" col="1" colspan="2">
+                        <group col="3" class="oe_subtotal_footer">
+                            <field name="risk_invoice_draft_include"
+                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                            <field name="risk_invoice_draft" nolabel="1"/>
+                            <field name="risk_invoice_open_include"
+                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                            <field name="risk_invoice_open" nolabel="1"/>
+                            <field name="risk_invoice_unpaid_include"
+                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                            <field name="risk_invoice_unpaid" nolabel="1"/>
+                            <field name="risk_account_amount_include"
+                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                            <field name="risk_account_amount" nolabel="1"/>
+                            <field name="risk_total" colspan="3" class="oe_subtotal_footer_separator"/>
+                        </group>
+                    </group>
+                    <group string="Specific Limits" name="risk_limits" col="1">
+                        <group class="oe_subtotal_footer">
+                            <field name="risk_invoice_draft_limit"
+                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                            <field name="risk_invoice_open_limit"
+                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                            <field name="risk_invoice_unpaid_limit"
+                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                            <field name="risk_account_amount_limit"
+                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                            <field name="risk_allow_edit" invisible="1"/>
+                        </group>
+                    </group>
+                </group>
+                <group string="Info" col="4">
+                    <field name="credit_limit"
+                            widget="monetary"
+                            attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                    <field name="credit_policy"
+                            attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                    <field name="risk_exception"/>
+                </group>
+            </page>
+        </page>
+    </field>
+</record>
+</data>
+</openerp>
