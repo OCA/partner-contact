@@ -22,8 +22,8 @@
 ##############################################################################
 {
     'name': 'Location management (aka Better ZIP)',
-    'version': '9.0.1.0.0',
-    'depends': ['base'],
+    'version': '10.0.0.0.1',
+    'depends': ['contacts'],
     'author': "Camptocamp,"
               "ACYSOS S.L.,"
               "Alejandro Santana,"
@@ -49,6 +49,6 @@
     'demo': [
         'demo/better_zip.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
 }
