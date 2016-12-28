@@ -5,6 +5,7 @@
 #    Contributor: Pedro Manuel Baeza <pedro.baeza@serviciosbaeza.com>
 #                 Ignacio Ibeas <ignacio@acysos.com>
 #                 Alejandro Santana <alejandrosantana@anubia.es>
+#                 Jose Maria Alzaga <jose.alzaga@aselcis.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -22,12 +23,13 @@
 ##############################################################################
 {
     'name': 'Location management (aka Better ZIP)',
-    'version': '9.0.1.0.0',
+    'version': '10.0.1.0.1',
     'depends': ['base'],
     'author': "Camptocamp,"
               "ACYSOS S.L.,"
               "Alejandro Santana,"
               "Serv. Tecnol. Avanzados - Pedro M. Baeza,"
+              "Aselcis Consulting,"
               "Odoo Community Association (OCA)",
     'license': "AGPL-3",
     'contributors': [
@@ -37,6 +39,7 @@
         'Alejandro Santana <alejandrosantana@anubia.es>',
         'Sandy Carter <sandy.carter@savoirfairelinux.com>',
         'Yannick Vaucher <yannick.vaucher@camptocamp.com>',
+        'Jose Maria Alzaga <jose.alzaga@aselcis.com>',
     ],
     'summary': '''Enhanced zip/npa management system''',
     'website': 'http://www.camptocamp.com',
@@ -49,6 +52,6 @@
     'demo': [
         'demo/better_zip.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
 }

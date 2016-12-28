@@ -2,11 +2,12 @@
 # © 2014 Alexis de Lattre <alexis.delattre@akretion.com>
 # © 2014 Lorenzo Battistini <lorenzo.battistini@agilebg.com>
 # © 2016 Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
+# © 2016 Jose Maria Alzaga <jose.alzaga@asecis.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
     'name': 'Base Location Geonames Import',
-    'version': '9.0.1.0.1',
+    'version': '10.0.1.0.1',
     'category': 'Partner Management',
     'license': 'AGPL-3',
     'summary': 'Import better zip entries from Geonames',
@@ -14,6 +15,7 @@
               'Agile Business Group,'
               'Antiun Ingeniería S.L.,'
               'Tecnativa,'
+              'Aselcis Consulting,'
               'Odoo Community Association (OCA)',
     'website': 'http://www.akretion.com',
     'depends': ['base_location'],
@@ -21,5 +23,5 @@
     'data': [
         'wizard/geonames_import_view.xml',
         ],
-    'installable': False,
+    'installable': True,
 }

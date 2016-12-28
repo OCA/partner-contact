@@ -42,6 +42,7 @@ Contributors
 * Alejandro Santana <alejandrosantana@anubia.es>
 * Sandy Carter <sandy.carter@savoirfairelinux.com>
 * Yannick Vaucher <yannick.vaucher@camptocamp.com>
+* Jose Maria Alzaga <jose.alzaga@aselcis.com>
 
 Icon
 ----
