@@ -31,9 +31,11 @@
         <field name="target">new</field>
     </record>
 
-    <menuitem id="better_zip_geonames_import_menu"
-        action="better_zip_geonames_import_action"
-        parent="sales_team.menu_localisation"
-        sequence="50"/>
+    <menuitem
+            id="better_zip_geonames_import_menu"
+            action="better_zip_geonames_import_action"
+            parent="base_location.locations_root_menu"
+            sequence="50"
+    />
 
 </odoo>
