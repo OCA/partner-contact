@@ -11,7 +11,7 @@
     'author': "Camptocamp,"
               "ACYSOS S.L.,"
               "Alejandro Santana,"
-              "Serv. Tecnol. Avanzados - Pedro M. Baeza,"
+              "Tecnativa,"
               "Odoo Community Association (OCA)",
     'license': "AGPL-3",
     'summary': '''Enhanced zip/npa management system''',
