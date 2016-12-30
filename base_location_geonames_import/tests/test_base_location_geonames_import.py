@@ -5,12 +5,13 @@
 from odoo.tests import common
 
 
-class TestBaseLocationGeonamesImport(common.TransactionCase):
-    def setUp(self):
-        super(TestBaseLocationGeonamesImport, self).setUp()
-        self.country = self.env.ref('base.mc')
-        self.wizard = self.env['better.zip.geonames.import'].create({
-            'country_id': self.country.id,
+class TestBaseLocationGeonamesImport(common.SavepointCase):
+    @classmethod
+    def setUpClass(cls):
+        super(TestBaseLocationGeonamesImport, cls).setUpClass()
+        cls.country = cls.env.ref('base.mc')
+        cls.wizard = cls.env['better.zip.geonames.import'].create({
+            'country_id': cls.country.id,
         })
 
     def test_import_country(self):
@@ -21,7 +22,7 @@ class TestBaseLocationGeonamesImport(common.TransactionCase):
             ('country_id', '=', self.country.id)
         ])
         self.assertTrue(state_count)
-        # Look if the are imported zips
+        # Look if there are imported zips
         zip_count = self.env['res.better.zip'].search_count([
             ('country_id', '=', self.country.id)
         ])
@@ -44,3 +45,19 @@ class TestBaseLocationGeonamesImport(common.TransactionCase):
         })
         self.wizard.run_import()
         self.assertFalse(zip_entry.exists())
+
+    def test_import_title(self):
+        self.wizard.letter_case = 'title'
+        self.wizard.with_context(max_import=1).run_import()
+        zip = self.env['res.better.zip'].search(
+            [('country_id', '=', self.country.id)], limit=1
+        )
+        self.assertEqual(zip.city, zip.city.title())
+
+    def test_import_upper(self):
+        self.wizard.letter_case = 'upper'
+        self.wizard.with_context(max_import=1).run_import()
+        zip = self.env['res.better.zip'].search(
+            [('country_id', '=', self.country.id)], limit=1
+        )
+        self.assertEqual(zip.city, zip.city.upper())
