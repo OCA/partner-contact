@@ -11,7 +11,7 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     sanitized_vat = fields.Char(
-        compute='compute_sanitized_vat', string='Sanitized TIN',
+        compute='_compute_sanitized_vat', string='Sanitized TIN',
         store=True, readonly=True,
         help='TIN in uppercase without spaces nor special caracters.')
 
@@ -20,6 +20,6 @@ class ResPartner(models.Model):
 
     @api.multi
     @api.depends('vat')
-    def compute_sanitized_vat(self):
+    def _compute_sanitized_vat(self):
         for partner in self:
             partner.sanitized_vat = self._sanitize_vat(partner.vat)
