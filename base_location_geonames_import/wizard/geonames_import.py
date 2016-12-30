@@ -70,10 +70,10 @@ class BetterZipGeonamesImport(models.TransientModel):
                     "correspond to the selected country (%s).")
                 % (row[0], country.code))
         logger.debug('ZIP = %s - City = %s' % (row[1], row[2]))
-        if self.letter_case.title:
+        if self.letter_case == 'title':
             row[2] = row[2].title()
             row[3] = row[3].title()
-        elif self.letter_case.upper:
+        elif self.letter_case == 'upper':
             row[2] = row[2].upper()
             row[3] = row[3].upper()
         if row[1] and row[2]:
