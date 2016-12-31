@@ -19,6 +19,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[base_location](base_location/) | 10.0.1.0.0 | Enhanced zip/npa management system
 [base_partner_sequence](base_partner_sequence/) | 10.0.1.0.0 | Sets customer's code from a sequence
 [partner_address_street3](partner_address_street3/) | 10.0.1.0.0 | Add a third address line on partners
 [partner_contact_birthdate](partner_contact_birthdate/) | 10.0.1.0.0 | Contact's birthdate
@@ -36,7 +37,6 @@ addon | version | summary
 [account_partner_merge](account_partner_merge/) | 1.0 (unported) | Account Partner Merge
 [base_contact](base_contact/) | 8.0.2.0.0 (unported) | [DEPRECATED] Manage your contacts separately
 [base_continent](base_continent/) | 8.0.1.0.0 (unported) | Continent management
-[base_location](base_location/) | 9.0.1.0.0 (unported) | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 9.0.1.0.1 (unported) | Import better zip entries from Geonames
 [base_location_nuts](base_location_nuts/) | 8.0.1.0.0 (unported) | NUTS Regions
 [base_partner_merge](base_partner_merge/) | 9.0.1.0.0 (unported) | Partner merge wizard without dependency on CRM
