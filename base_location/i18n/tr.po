@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 01:41+0000\n"
-"PO-Revision-Date: 2015-12-15 11:17+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2016-12-31 00:05+0000\n"
+"PO-Revision-Date: 2016-12-30 22:03+0000\n"
+"Last-Translator: Ahmet Altinisik <aaltinisik@altinkaya.com.tr>\n"
 "Language-Team: Turkish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,14 +61,14 @@ msgstr ""
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Şirketler"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_country_id
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 #: model:ir.ui.view,arch_db:base_location.view_country_search
 msgid "Country"
-msgstr ""
+msgstr "Ülke"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_country_state
@@ -98,7 +98,7 @@ msgstr "ID"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Son değişiklik"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_uid
@@ -123,7 +123,7 @@ msgstr "Adı"
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "İş Ortağı"
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter

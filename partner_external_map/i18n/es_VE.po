@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 01:41+0000\n"
-"PO-Revision-Date: 2016-11-13 12:25+0000\n"
+"POT-Creation-Date: 2016-12-31 00:06+0000\n"
+"PO-Revision-Date: 2016-12-27 08:22+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Spanish (Venezuela) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/es_VE/)\n"
 "MIME-Version: 1.0\n"
@@ -170,7 +170,7 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Empresa"
 
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form

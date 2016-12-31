@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
+# Ahmet Altinisik <aaltinisik@altinkaya.com.tr>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 01:41+0000\n"
-"PO-Revision-Date: 2016-11-24 01:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2016-12-31 00:05+0000\n"
+"PO-Revision-Date: 2016-12-31 00:05+0000\n"
+"Last-Translator: Ahmet Altinisik <aaltinisik@altinkaya.com.tr>, 2016\n"
 "Language-Team: Turkish (https://www.transifex.com/oca/teams/23907/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,12 +22,12 @@ msgstr ""
 #. module: partner_contact_height
 #: model:ir.model.fields,field_description:partner_contact_height.field_res_partner_height
 msgid "Height"
-msgstr ""
+msgstr "Yükseklik"
 
 #. module: partner_contact_height
 #: model:ir.model.fields,field_description:partner_contact_height.field_res_partner_height_uom
 msgid "Height UoM"
-msgstr ""
+msgstr "Yükseklik Ölçü Birimi"
 
 #. module: partner_contact_height
 #: model:ir.model,name:partner_contact_height.model_res_partner
@@ -36,4 +37,4 @@ msgstr "İş Ortağı"
 #. module: partner_contact_height
 #: model:ir.ui.view,arch_db:partner_contact_height.view_partner_contact_height
 msgid "UoM"
-msgstr ""
+msgstr "Ölçü Birimi"

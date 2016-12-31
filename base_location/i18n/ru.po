@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 01:41+0000\n"
+"POT-Creation-Date: 2016-12-31 00:05+0000\n"
 "PO-Revision-Date: 2015-12-15 11:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Russian (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/ru/)\n"
@@ -78,12 +78,12 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Создано"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Создан"
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
@@ -93,7 +93,7 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip___last_update
@@ -103,12 +103,12 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Последний раз обновлено"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Последний раз обновлено"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company_better_zip_id
@@ -123,7 +123,7 @@ msgstr "Название"
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Контрагент"
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
