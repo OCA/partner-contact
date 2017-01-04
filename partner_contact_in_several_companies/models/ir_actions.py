@@ -21,16 +21,3 @@ class IRActionsWindow(models.Model):
                          "{'is_set': True, 'set_value': False},"),
                         1)
         return actions
-
-    @api.model
-    def _enable_context(self):
-        action = self.env.ref('base.action_partner_form')
-        if 'search_show_all_positions' not in action.context:
-
-            action_ctx = action.context.replace(
-                '{',
-                ("{'search_show_all_positions': "
-                 "{'is_set': True, 'set_value': False},"),
-                1)
-            action.write({'context': action_ctx})
-        return True

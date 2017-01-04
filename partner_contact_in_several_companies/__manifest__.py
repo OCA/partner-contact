@@ -29,7 +29,6 @@
     ],
     "data": [
         "views/res_partner.xml",
-        "data/ir_actions.xml",
     ],
     "demo": [
         "demo/res_partner.xml",

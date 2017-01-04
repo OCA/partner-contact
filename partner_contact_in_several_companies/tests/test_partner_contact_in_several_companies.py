@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+import logging
 
 from odoo.tests import common
 
+_logger = logging.getLogger(__name__)
 
 class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
@@ -199,18 +201,24 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
         new_context_val = "'search_show_all_positions': " \
             "{'is_set': True, 'set_value': False}"
-        details = self.env.ref('base.action_partner_form')
+        details = self.env['ir.actions.act_window'].for_xml_id(
+            'base',
+            'action_partner_form')
+        _logger.debug(details['context'])
+
         self.assertIn(
             new_context_val,
-            details.context,
+            details['context'],
             msg='Default actions not updated with new context'
         )
 
-        details = self.env.ref(
-            'partner_contact_in_several_companies.action_partner_form')
+        details = self.env['ir.actions.act_window'].for_xml_id(
+            'partner_contact_in_several_companies',
+            'action_partner_form')
+        _logger.debug(details['context'])
 
         self.assertNotIn(
             new_context_val,
-            details.context,
+            details['context'],
             msg='Custom actions incorrectly updated with new context'
         )
