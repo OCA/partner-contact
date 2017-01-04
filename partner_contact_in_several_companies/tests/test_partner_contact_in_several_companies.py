@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-import logging
-
 from odoo.tests import common
 
-_logger = logging.getLogger(__name__)
 
 class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
@@ -204,7 +201,6 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         details = self.env['ir.actions.act_window'].for_xml_id(
             'base',
             'action_partner_form')
-        _logger.debug(details['context'])
 
         self.assertIn(
             new_context_val,
@@ -215,7 +211,6 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         details = self.env['ir.actions.act_window'].for_xml_id(
             'partner_contact_in_several_companies',
             'action_partner_form')
-        _logger.debug(details['context'])
 
         self.assertNotIn(
             new_context_val,
