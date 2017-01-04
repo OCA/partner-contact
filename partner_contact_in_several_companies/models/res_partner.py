@@ -12,7 +12,7 @@ class ResPartner(models.Model):
         [('standalone', _('Standalone Contact')),
          ('attached', _('Attached to existing Contact')),
          ],
-        compute='_get_contact_type',
+        compute='_compute_contact_type',
         store=True,
         required=True,
         index=True,
@@ -27,7 +27,7 @@ class ResPartner(models.Model):
 
     @api.multi
     @api.depends('contact_id')
-    def _get_contact_type(self):
+    def _compute_contact_type(self):
         for rec in self:
             rec.contact_type = 'attached' if rec.contact_id else 'standalone'
 
