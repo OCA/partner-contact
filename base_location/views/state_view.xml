@@ -10,7 +10,7 @@
             <field name="country_id" position="after">
                 <field name="better_zip_ids"
                     context="{'country_id': country_id}"
-                    colspan="4"
+                    colspan="2"
                     nolabel="1">
                     <tree editable="top">
                         <field name="name"/>
