@@ -23,6 +23,7 @@ addon | version | summary
 [base_location_geonames_import](base_location_geonames_import/) | 9.0.1.0.1 | Import better zip entries from Geonames
 [base_partner_merge](base_partner_merge/) | 9.0.1.0.0 | Partner merge wizard without dependency on CRM
 [base_partner_sequence](base_partner_sequence/) | 9.0.0.1.0 | Sets customer's code from a sequence
+[base_vat_sanitized](base_vat_sanitized/) | 9.0.1.0.0 | Adds field sanitized_vat on partners
 [partner_address_street3](partner_address_street3/) | 9.0.1.1.0 | Street3 in addresses
 [partner_changeset](partner_changeset/) | 9.0.1.0.0 | Partner Changesets
 [partner_contact_birthdate](partner_contact_birthdate/) | 9.0.1.0.0 | Contact's birthdate
