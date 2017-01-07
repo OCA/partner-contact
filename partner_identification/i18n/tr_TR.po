@@ -3,20 +3,19 @@
 # * partner_identification
 # 
 # Translators:
-# Ahmet Altinisik <aaltinisik@altinkaya.com.tr>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-06 03:40+0000\n"
-"PO-Revision-Date: 2017-01-05 20:44+0000\n"
-"Last-Translator: Ahmet Altinisik <aaltinisik@altinkaya.com.tr>\n"
-"Language-Team: Turkish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/tr/)\n"
+"PO-Revision-Date: 2016-03-19 05:58+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Turkish (Turkey) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: tr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:24
@@ -44,7 +43,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_active
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_active
 msgid "Active"
-msgstr "Aktif"
+msgstr "Etkin"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_partner_issued_id
@@ -56,12 +55,12 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_category_id
 msgid "Category"
-msgstr "Kategori"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_code
 msgid "Code"
-msgstr "Kod"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_uid
@@ -73,13 +72,13 @@ msgstr "Oluşturan"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_date
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_date
 msgid "Created on"
-msgstr "Oluşturuldu"
+msgstr "Oluşturulma tarihi"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_display_name
 msgid "Display Name"
-msgstr "Görünen İsim"
+msgstr "Görünen ad"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:66
@@ -106,7 +105,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_id
 msgid "ID"
-msgstr "ID"
+msgstr "Kimlik"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_name
@@ -136,7 +135,7 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_partner_issued_id
 msgid "Issued by"
-msgstr "Düzenleyen"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_date_issued
@@ -154,19 +153,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category___last_update
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number___last_update
 msgid "Last Modified on"
-msgstr "Son değişiklik"
+msgstr "En son güncelleme tarihi"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_uid
 msgid "Last Updated by"
-msgstr "Son güncelleyen"
+msgstr "En son güncelleyen "
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_date
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_date
 msgid "Last Updated on"
-msgstr "Son güncelleme"
+msgstr "En son güncelleme tarihi"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category_name
@@ -188,7 +187,7 @@ msgstr "Notlar"
 #: model:ir.model,name:partner_identification.model_res_partner
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_partner_id
 msgid "Partner"
-msgstr "İş Ortağı"
+msgstr "Ortak"
 
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
@@ -232,7 +231,7 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_status
 msgid "Status"
-msgstr ""
+msgstr "Durum"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_name
