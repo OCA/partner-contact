@@ -3,15 +3,15 @@
 # * base_location_geonames_import
 # 
 # Translators:
-# Bole <bole@dajmi5.com>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-08 05:38+0000\n"
-"PO-Revision-Date: 2016-05-31 18:47+0000\n"
-"Last-Translator: Bole <bole@dajmi5.com>\n"
-"Language-Team: Croatian (Croatia) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/hr_HR/)\n"
+"POT-Creation-Date: 2017-01-01 03:36+0000\n"
+"PO-Revision-Date: 2017-01-01 03:36+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"Language-Team: Croatian (Croatia) (https://www.transifex.com/oca/teams/23907/hr_HR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -20,13 +20,22 @@ msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
+msgid ""
+", create new location entries if not found already in the system, and "
+"<b>delete missing entries</b> from new file."
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid "Cancel"
 msgstr "Otkaži"
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,help:base_location_geonames_import.field_better_zip_geonames_import_title_case
-msgid "Converts retreived city and state names to Title Case."
-msgstr "Pretvara upisana imena gradova i oblasti u Početna Velika."
+#: model:ir.model.fields,help:base_location_geonames_import.field_better_zip_geonames_import_letter_case
+msgid ""
+"Converts retreived city and state names to Title Case (upper case on each "
+"first letter of a word) or Upper Case (all letters upper case)."
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_country_id
@@ -51,13 +60,12 @@ msgstr "Naziv"
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid ""
-"For the country selected above, this wizard will download the latest version"
-" of the list of cities from geonames.org, create new location entries if not"
-" found already in the system, and DELETE MISSING ENTRIES from new file."
-msgstr "Za državu odabranu iznad, ovaj će čarobnjak preuzeti posljednju verziju popisa gradova sa geonames.org, kreirati nove zapise lokacija, ukoliko već nisu pronađeni u sustavu i obrisati nedostajuće zapise iz nove datoteke."
+"For the selected country, this wizard will download the latest version of "
+"the list of cities from"
+msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:118
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:125
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Pogreška : %d pri pokušaju preuzimanja datoteke %s."
@@ -100,20 +108,41 @@ msgid "Last Updated on"
 msgstr "Zadnje ažurirano"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:65
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_letter_case
+msgid "Letter Case"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:69
 #, python-format
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
 "country (%s)."
-msgstr "Šifra države unutar datoteke (%s) ne odgovara šifri odabrane države (%s)."
+msgstr ""
+"Šifra države unutar datoteke (%s) ne odgovara šifri odabrane države (%s)."
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_title_case
+#: selection:better.zip.geonames.import,letter_case:0
 msgid "Title Case"
 msgstr "Početna Velika "
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:94
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:101
 #, python-format
 msgid "Too many states with code %s for country %s"
 msgstr "Previše županija/regija sa šifrom %s za državu %s"
+
+#. module: base_location_geonames_import
+#: selection:better.zip.geonames.import,letter_case:0
+msgid "Unchanged"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: selection:better.zip.geonames.import,letter_case:0
+msgid "Upper Case"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
+msgid "geonames.org"
+msgstr ""

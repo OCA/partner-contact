@@ -11,11 +11,11 @@ msgstr ""
 "POT-Creation-Date: 2017-01-01 03:36+0000\n"
 "PO-Revision-Date: 2017-01-01 03:36+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
+"Language-Team: Bulgarian (https://www.transifex.com/oca/teams/23907/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: it\n"
+"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_location_geonames_import
@@ -28,7 +28,7 @@ msgstr ""
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid "Cancel"
-msgstr "Annulla"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,help:base_location_geonames_import.field_better_zip_geonames_import_letter_case
@@ -40,22 +40,22 @@ msgstr ""
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_country_id
 msgid "Country"
-msgstr "Paese"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_create_uid
 msgid "Created by"
-msgstr "Creato da"
+msgstr "Създадено от"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_create_date
 msgid "Created on"
-msgstr "Creato il"
+msgstr "Създадено на"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_display_name
 msgid "Display Name"
-msgstr "Nome da visualizzare"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
@@ -68,7 +68,7 @@ msgstr ""
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:125
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
-msgstr "Errore %d mentre si stava scaricando il file %s."
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_id
@@ -78,12 +78,12 @@ msgstr "ID"
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid "Import"
-msgstr "Importa"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_better_zip_geonames_import
 msgid "Import Better Zip from Geonames"
-msgstr "Importa Better Zip da Geonames"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.actions.act_window,name:base_location_geonames_import.better_zip_geonames_import_action
@@ -95,17 +95,17 @@ msgstr ""
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import___last_update
 msgid "Last Modified on"
-msgstr "Ultima modifica il"
+msgstr "Последно обновено на"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_write_uid
 msgid "Last Updated by"
-msgstr "Ultimo caricamento il"
+msgstr "Последно обновено от"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_write_date
 msgid "Last Updated on"
-msgstr "Ultimo caricamento di"
+msgstr "Последно обновено на"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_letter_case
@@ -119,8 +119,6 @@ msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
 "country (%s)."
 msgstr ""
-"Il codice paese all'interno del file (%s) non corrisponde al paese "
-"selezionato (%s)."
 
 #. module: base_location_geonames_import
 #: selection:better.zip.geonames.import,letter_case:0
