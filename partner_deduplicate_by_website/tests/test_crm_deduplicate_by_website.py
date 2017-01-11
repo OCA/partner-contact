@@ -12,15 +12,32 @@ class TestDeduplicateByWebsite(common.TransactionCase):
         self.partner_1 = self.env['res.partner'].create({
             'name': 'Partner 1',
             'website': 'www.test-deduplicate.com',
+            'email': 'test@deduplicate.com',
         })
         self.partner_2 = self.env['res.partner'].create({
             'name': 'Partner 2',
             'website': 'www.test-deduplicate.com',
+            'email': 'test@deduplicate.com',
         })
 
     def test_deduplicate_by_website(self):
         wizard = self.env['base.partner.merge.automatic.wizard'].create({
             'group_by_website': True,
+        })
+        wizard.start_process_cb()
+        found_match = False
+        for line in wizard.line_ids:
+            match_ids = safe_eval(line.aggr_ids)
+            if (self.partner_1.id in match_ids and
+                    self.partner_2.id in match_ids):
+                found_match = True
+                break
+        self.assertTrue(found_match)
+
+    def test_deduplicate_by_website_and_is_company(self):
+        wizard = self.env['base.partner.merge.automatic.wizard'].create({
+            'group_by_website': True,
+            'group_by_email': True,
         })
         wizard.start_process_cb()
         found_match = False
