@@ -43,5 +43,6 @@ class test_display_name(common.TransactionCase):
             'Partner display_name incorrect'
         )
 
+
 if __name__ == '__main__':
     unittest2.main()
