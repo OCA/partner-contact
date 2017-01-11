@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # © 2014-2017 Therp BV <http://therp.nl>.
 # License AGPL-3.0 or later <http://www.gnu.org/licenses/agpl.html>.
+from psycopg2.extensions import AsIs
+
 from openerp.osv import fields
 from openerp.osv import orm
 from openerp.tools import drop_view_if_exists
@@ -76,7 +78,7 @@ class ResPartnerRelationTypeSelection(orm.Model):
              from res_partner_relation_type
             """,
             params=(
-                self._table,
+                AsIs(self._table),
             )
         )
         return super(ResPartnerRelationTypeSelection, self)._auto_init(

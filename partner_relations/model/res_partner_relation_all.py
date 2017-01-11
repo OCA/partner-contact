@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # © 2013-2017 Therp BV <http://therp.nl>.
 # License AGPL-3.0 or later <http://www.gnu.org/licenses/agpl.html>.
+from psycopg2.extensions import AsIs
+
 from openerp.osv.orm import Model
 from openerp.osv import fields
 from openerp.tools import drop_view_if_exists
@@ -65,9 +67,9 @@ class ResPartnerRelationAll(Model):
             from res_partner_relation
             """,
             params=(
-                self._table,
-                additional_view_fields,
-                additional_view_fields,
+                AsIs(self._table),
+                AsIs(additional_view_fields),
+                AsIs(additional_view_fields),
             )
         )
         return super(ResPartnerRelationAll, self)._auto_init(
