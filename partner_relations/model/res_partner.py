@@ -1,25 +1,8 @@
 # -*- coding: utf-8 -*-
-'''Extend res.partner model'''
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2013 Therp BV (<http://therp.nl>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# © 2013-2017 Therp BV <http://therp.nl>.
+# License AGPL-3.0 or later <http://www.gnu.org/licenses/agpl.html>.
 import time
+
 from openerp.osv import orm, fields
 from openerp.osv.expression import is_leaf, AND, OR, FALSE_LEAF
 from openerp.tools import DEFAULT_SERVER_DATE_FORMAT
@@ -31,12 +14,12 @@ class ResPartner(orm.Model):
 
     def _get_relation_ids_select(self, cr, uid, ids, field_name, arg,
                                  context=None):
-        '''return the partners' relations as tuple
-        (id, left_partner_id, right_partner_id)'''
+        """return the partners' relations as tuple
+        (id, left_partner_id, right_partner_id)"""
         cr.execute(
-            '''select id, left_partner_id, right_partner_id
+            """select id, left_partner_id, right_partner_id
             from res_partner_relation
-            where (left_partner_id in %s or right_partner_id in %s)''' +
+            where (left_partner_id in %s or right_partner_id in %s)""" +
             ' order by ' + self.pool['res.partner.relation']._order,
             (tuple(ids), tuple(ids))
         )
@@ -44,7 +27,7 @@ class ResPartner(orm.Model):
 
     def _get_relation_ids(
             self, cr, uid, ids, field_name, arg, context=None):
-        '''getter for relation_ids'''
+        """getter for relation_ids"""
         if context is None:
             context = {}
         result = dict([(i, []) for i in ids])
@@ -60,7 +43,7 @@ class ResPartner(orm.Model):
     def _set_relation_ids(
             self, cr, uid, ids, dummy_name, field_value, dummy_arg,
             context=None):
-        '''setter for relation_ids'''
+        """setter for relation_ids"""
         if context is None:
             context = {}
         relation_obj = self.pool.get('res.partner.relation')
