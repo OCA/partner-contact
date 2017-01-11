@@ -107,6 +107,7 @@ class ResPartnerRelationAll(Model):
 
     def write(self, cr, uid, ids, vals, context=None):
         """divert non-problematic writes to underlying table"""
+        # pylint: disable=W8106
         return self.pool['res.partner.relation'].write(
             cr, uid,
             [i / 10 for i in ids],
