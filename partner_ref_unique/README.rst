@@ -8,27 +8,52 @@ Partner unique reference
 
 Add an unique constraint to partner ref field
 
+Usage
+=====
+
+To use this module, you need to:
+
+* Go to your company settings and choose an option on section *Partner* in tab
+  *Configuration*.
+* Try to create two partners with the same ref.
+
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/134/9.0
+
+Bug Tracker
+===========
+
+Bugs are tracked on `GitHub Issues
+<https://github.com/OCA/partner-contact/issues>`_. In case of trouble, please
+check there if your issue has already been reported. If you spotted it first,
+help us smashing it by providing a detailed and welcomed feedback.
+
 Credits
 =======
+
+Images
+------
+
+* Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
 
 Contributors
 ------------
 
 * Antonio Espinosa <antonioea@antiun.com>
+* Vicent Cubells <vicent.cubells@tecnativa.com>
 
 Maintainer
 ----------
 
-.. image:: http://www.antiun.com/images/logo-b.png
-   :alt: Antiun Ingeniería S.L.
-   :target: http://www.antiun.com
+.. image:: https://odoo-community.org/logo.png
+   :alt: Odoo Community Association
+   :target: https://odoo-community.org
 
-This module is maintained by Antiun Ingeniería S.L.
+This module is maintained by the OCA.
 
-Antiun Ingeniería S.L. is an IT consulting company especialized in Odoo
-and provides Odoo development, install, maintenance and hosting
-services.
+OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.
 
-To contribute to this module, please visit https://github.com/Antiun
-or contact us at odoo@antiun.com
-
+To contribute to this module, please visit https://odoo-community.org.
