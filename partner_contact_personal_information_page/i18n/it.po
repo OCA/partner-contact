@@ -1,9 +1,8 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * base_partner_sequence
+# * partner_contact_personal_information_page
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
 # Giuliano Lotta <giuliano.lotta@gmail.com>, 2017
 msgid ""
 msgstr ""
@@ -19,13 +18,7 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. module: base_partner_sequence
-#: code:addons/base_partner_sequence/models/partner.py:69
-#, python-format
-msgid "Either field values or an id must be provided."
-msgstr "Devono essere forniti i valori dei campi o un identificativo"
-
-#. module: base_partner_sequence
-#: model:ir.model,name:base_partner_sequence.model_res_partner
-msgid "Partner"
-msgstr "Partner"
+#. module: partner_contact_personal_information_page
+#: model:ir.ui.view,arch_db:partner_contact_personal_information_page.personal_information
+msgid "Personal Information"
+msgstr "Informazioni personali"
