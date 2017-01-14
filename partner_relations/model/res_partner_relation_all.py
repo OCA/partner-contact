@@ -98,17 +98,17 @@ class ResPartnerRelationAll(Model):
     }
 
     def name_get(self, cr, uid, ids, context=None):
-        """Create name from both partners and relation."""
-        return dict([
+        """Name of relation is names of partners involved + type."""
+        return [
             (this.id, '%s %s %s' % (
                 this.this_partner_id.name,
                 this.type_selection_id.name_get()[0][1],
                 this.other_partner_id.name,
             ))
-            for this in self.browse(cr, uid, ids, context=context)])
+            for this in self.browse(cr, uid, ids, context=context)]
 
     def write(self, cr, uid, ids, vals, context=None):
-        """divert non-problematic writes to underlying table"""
+        """Divert non-problematic writes to underlying table."""
         # pylint: disable=W8106
         return self.pool['res.partner.relation'].write(
             cr, uid,

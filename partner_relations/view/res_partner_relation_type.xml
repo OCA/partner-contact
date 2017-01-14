@@ -2,7 +2,6 @@
     <data>
         <record id="tree_res_partner_relation_type" model="ir.ui.view">
             <field name="model">res.partner.relation.type</field>
-            <field name="type">tree</field>
             <field type="xml" name="arch">
                 <tree version="7.0" string="Partner relation">
                     <field name="name" />
@@ -14,7 +13,6 @@
         </record>
         <record id="form_res_partner_relation_type" model="ir.ui.view">
             <field name="model">res.partner.relation.type</field>
-            <field name="type">form</field>
             <field type="xml" name="arch">
                 <form version="7.0" string="Partner relation">
                     <sheet>

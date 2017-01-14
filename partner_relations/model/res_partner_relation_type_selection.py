@@ -133,6 +133,7 @@ class ResPartnerRelationTypeSelection(orm.Model):
 
     def name_get(self, cr, uid, ids, context=None):
         'translate name using translations from res.partner.relation.type'
+        context = context or {'lang': 'en_US'}  # prevent crash later
         result = super(ResPartnerRelationTypeSelection, self).name_get(
             cr, uid, ids, context=context)
         ir_translation = self.pool['ir.translation']

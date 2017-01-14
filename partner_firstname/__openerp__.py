@@ -17,7 +17,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
 {
     'name': 'Partner first name, last name',
     'description': """
@@ -35,8 +34,9 @@ Jonathan Nemry <jonathan.nemry@acsone.eu>
 Olivier Laurent <olivier.laurent@acsone.eu>
 
 """,
-    'version': '1.2',
+    'version': '7.0.1.2.0',
     'author': "Camptocamp,Odoo Community Association (OCA)",
+    "license": "AGPL-3",
     'maintainer': 'Camptocamp, Acsone',
     'category': 'Extra Tools',
     'website': 'http://www.camptocamp.com, http://www.acsone.eu',
