@@ -41,7 +41,7 @@ Usage
 
 To use this module, you need to:
 
-#. Ask your admin to give you the new rigts.
+#. Ask your admin to give you the new rights.
 #. Go to *Sales > Tools > Deduplicate Contacts* as usual.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
@@ -76,8 +76,9 @@ Contributors
 ------------
 
 * Rafael Blasco <rafabn@antiun.com>
-* Jairo Llopis <yajo.sk8@gmail.com>
+* Jairo Llopis <jairo.llopis@tecnativa.com>
 * Vicent Cubells <vicent.cubells@tecnativa.com>
+* Pedro M. Baeza <pedro.baeza@tecnativa.com>
 
 Maintainer
 ----------
