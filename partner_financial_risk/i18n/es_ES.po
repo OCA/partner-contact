@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 01:41+0000\n"
+"POT-Creation-Date: 2017-01-07 04:30+0000\n"
 "PO-Revision-Date: 2016-10-23 16:16+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/es_ES/)\n"
@@ -25,7 +25,7 @@ msgstr "Cancelar"
 #. module: partner_financial_risk
 #: model:ir.model,name:partner_financial_risk.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Compañías"
 
 #. module: partner_financial_risk
 #: model:ir.ui.view,arch_db:partner_financial_risk.partner_risk_exceeded_wizard
