@@ -16,8 +16,10 @@ Usage
 To use this module, you need to:
 
 #. Go to *Customers > Financial Risk*
-#. Set limits and choose options to compute in credit limit.
-#. Go to **
+#. Set limits and choose options to compute in credit limit
+#. Go to *Inventory > All Operations*
+#. Try transfer a risk exceed partner picking
+
 
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
