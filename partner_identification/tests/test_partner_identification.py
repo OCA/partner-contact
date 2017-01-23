@@ -102,7 +102,7 @@ if id_number.name != '1234' #  missing :
 """
         })
         partner_1 = self.env.ref('base.res_partner_1').with_context(
-            __id_no_validate__=True,
+            id_no_validate=True,
         )
         partner_1.write({'id_numbers': [(0, 0,  {
             'name': '1234',

@@ -40,7 +40,7 @@ Python validation code:
 
   .. code-block:: python
 
-   partner.with_context(__id_no_validate__=True).write({
+   partner.with_context(id_no_validate=True).write({
       'name': 'Bad Value',
       'category_id': self.env.ref('id_category_only_numerics').id,
    })
