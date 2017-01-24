@@ -36,7 +36,7 @@ Code:
   Code, abbreviation or acronym of this ID type. For example, 'driver_license'
 Python validation code:
   Optional python code called to validate ID numbers of this ID type. This functionality can be
-  overridden by setting ``__id_no_validate__`` to ``True`` in the context, such as:
+  overridden by setting ``id_no_validate`` to ``True`` in the context, such as:
 
   .. code-block:: python
 
