@@ -55,6 +55,8 @@ class ResPartnerIdCategory(models.Model):
         python validation code fails
         """
         self.ensure_one()
+        if self.env.context.get('id_no_validate'):
+            return
         eval_context = self._validation_eval_context(id_number)
         try:
             safe_eval(self.validation_code,
