@@ -35,8 +35,15 @@ Name:
 Code:
   Code, abbreviation or acronym of this ID type. For example, 'driver_license'
 Python validation code:
-  Optional python code called to validate ID numbers of this ID type.
+  Optional python code called to validate ID numbers of this ID type. This functionality can be
+  overridden by setting ``id_no_validate`` to ``True`` in the context, such as:
 
+  .. code-block:: python
+
+   partner.with_context(id_no_validate=True).write({
+      'name': 'Bad Value',
+      'category_id': self.env.ref('id_category_only_numerics').id,
+   })
 
 Usage
 =====
@@ -97,6 +104,7 @@ Contributors
 * Gerhard Könighofer <gerhard.koenighofer@swing-system.com>
 * Laurent Mignon <laurent.mignon@acsone.eu>
 * Jairo Llopis <jairo.llopis@tecnativa.com>
+* Dave Lasley <dave@laslabs.com>
 
 Maintainer
 ----------
