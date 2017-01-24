@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority">9999</field>
+        <field name="arch" type="xml">
+            <!-- we have to replace it because it's not inside a group -->
+            <xpath expr="//field[@name='child_ids']/form//field[@name='lang']" position="replace"/>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='mobile']" position="after">
+                <field name="lang"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
