@@ -28,7 +28,7 @@ addon | version | summary
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 10.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_external_map](partner_external_map/) | 10.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_firstname](partner_firstname/) | 10.0.1.0.0 | Split first name and last name for non company partners
-[partner_identification](partner_identification/) | 10.0.1.0.0 | Partner Identification Numbers
+[partner_identification](partner_identification/) | 10.0.1.0.1 | Partner Identification Numbers
 [partner_street_number](partner_street_number/) | 10.0.1.0.0 | Introduces separate fields for street name and street number.
 
 Unported addons
@@ -36,7 +36,6 @@ Unported addons
 addon | version | summary
 --- | --- | ---
 [account_partner_merge](account_partner_merge/) | 1.0 (unported) | Account Partner Merge
-[base_contact](base_contact/) | 8.0.2.0.0 (unported) | [DEPRECATED] Manage your contacts separately
 [base_continent](base_continent/) | 8.0.1.0.0 (unported) | Continent management
 [base_location_nuts](base_location_nuts/) | 8.0.1.0.0 (unported) | NUTS Regions
 [base_partner_merge](base_partner_merge/) | 9.0.1.0.0 (unported) | Partner merge wizard without dependency on CRM
