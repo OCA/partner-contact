@@ -32,6 +32,7 @@ addon | version | summary
 [partner_contact_height](partner_contact_height/) | 9.0.1.0.1 | Provide contact height.
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 9.0.1.0.0 | Allow to have one contact in several partners
 [partner_contact_job_position](partner_contact_job_position/) | 9.0.1.0.0 | Categorize job positions for contacts
+[partner_contact_lang](partner_contact_lang/) | 9.0.1.0.0 | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 9.0.1.0.0 | Add nationality field to contacts
 [partner_contact_nutrition](partner_contact_nutrition/) | 9.0.1.0.1 | Provide caloric intake
 [partner_contact_nutrition_activity_level](partner_contact_nutrition_activity_level/) | 9.0.1.0.0 | Set the activity level of your contacts
@@ -47,14 +48,15 @@ addon | version | summary
 [partner_firstname](partner_firstname/) | 9.0.1.0.0 | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 9.0.1.0.0 | Partner Identification Numbers
 [partner_multi_relation](partner_multi_relation/) | 9.0.1.1.1 | Partner relations
+[partner_ref_unique](partner_ref_unique/) | 9.0.1.0.0 | Add an unique constraint to partner ref field
 [partner_sector](partner_sector/) | 9.0.1.0.1 | Add partner sectors
+[res_partner_affiliate](res_partner_affiliate/) | 9.0.1.0.0 | Partner Affiliates
 
 Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
 [account_partner_merge](account_partner_merge/) | 1.0 (unported) | Account Partner Merge
-[base_contact](base_contact/) | 8.0.2.0.0 (unported) | [DEPRECATED] Manage your contacts separately
 [base_continent](base_continent/) | 8.0.1.0.0 (unported) | Continent management
 [base_location_nuts](base_location_nuts/) | 8.0.1.0.0 (unported) | NUTS Regions
 [firstname_display_name_trigger](firstname_display_name_trigger/) | 1.0 (unported) | Link module if partner_lastname and account_report_company are installed
@@ -63,7 +65,6 @@ addon | version | summary
 [partner_helper](partner_helper/) | 8.0.0.1.0 (unported) | Partner Helper
 [partner_street_number](partner_street_number/) | 8.0.0.1.0 (unported) | Introduces separate fields for street name and street number.
 [portal_partner_merge](portal_partner_merge/) | 8.0.1.0.0 (unported) | Portal Partner Merge
-[res_partner_affiliate](res_partner_affiliate/) | 8.0.1.0.0 (unported) | Partner Affiliates
 
 [//]: # (end addons)
 
