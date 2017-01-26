@@ -11,7 +11,8 @@
     'license': 'AGPL-3',
     'author': 'ACSONE SA/NV,Odoo Community Association (OCA)',
     'website': 'https://acsone.eu',
-    'depends': ['contacts'
+    'depends': ['base',
+                'contacts'
                 ],
     'data': ['views/partner_contact.xml'
              ],
