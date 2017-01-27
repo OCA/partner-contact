@@ -5,12 +5,13 @@
 from odoo.tests import common
 
 
-class TestBaseLocationGeonamesImport(common.TransactionCase):
-    def setUp(self):
-        super(TestBaseLocationGeonamesImport, self).setUp()
-        self.country = self.env.ref('base.mc')
-        self.wizard = self.env['better.zip.geonames.import'].create({
-            'country_id': self.country.id,
+class TestBaseLocationGeonamesImport(common.SavepointCase):
+    @classmethod
+    def setUpClass(cls):
+        super(TestBaseLocationGeonamesImport, cls).setUpClass()
+        cls.country = cls.env.ref('base.mc')
+        cls.wizard = cls.env['better.zip.geonames.import'].create({
+            'country_id': cls.country.id,
         })
 
     def test_import_country(self):
