@@ -4,14 +4,13 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
-# Giuliano Lotta <giuliano.lotta@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-07 04:23+0000\n"
-"PO-Revision-Date: 2017-01-07 04:23+0000\n"
-"Last-Translator: Giuliano Lotta <giuliano.lotta@gmail.com>, 2016\n"
+"POT-Creation-Date: 2017-01-25 01:45+0000\n"
+"PO-Revision-Date: 2017-01-25 01:45+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +35,7 @@ msgstr ""
 "#  - id_number: browse_record del numero documento da validare"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:70
+#: code:addons/partner_identification/models/res_partner_id_category.py:72
 #, python-format
 msgid "%s is not a valid %s identifier"
 msgstr "%s non è un valido %s identificatore"
@@ -91,7 +90,7 @@ msgid "Display Name"
 msgstr "Nome da visualizzare"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:66
+#: code:addons/partner_identification/models/res_partner_id_category.py:68
 #, python-format
 msgid ""
 "Error when evaluating the id_category validation code::\n"

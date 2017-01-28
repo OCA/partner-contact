@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-20 18:18+0000\n"
-"PO-Revision-Date: 2017-01-20 18:18+0000\n"
+"POT-Creation-Date: 2017-01-25 01:45+0000\n"
+"PO-Revision-Date: 2017-01-25 01:45+0000\n"
 "Last-Translator: Tiago Baptista <tiago@baptista.net>, 2017\n"
 "Language-Team: Portuguese (Portugal) (https://www.transifex.com/oca/teams/23907/pt_PT/)\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr "Criado em"
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_id
