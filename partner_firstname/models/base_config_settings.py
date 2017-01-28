@@ -36,10 +36,15 @@ class BaseConfigSettings(models.TransientModel):
         }
 
     @api.multi
+    @api.depends('partner_names_order')
     def _compute_names_order_changed(self):
         current = self.env['ir.config_parameter'].get_param(
-            'partner_names_order', self._partner_names_order_default())
-        return self.partner_names_order != current
+            'partner_names_order', self._partner_names_order_default(),
+        )
+        for record in self:
+            record.partner_names_order_changed = bool(
+                record.partner_names_order != current
+            )
 
     @api.onchange('partner_names_order')
     def _onchange_partner_names_order(self):
