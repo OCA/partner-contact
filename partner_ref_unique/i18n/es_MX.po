@@ -1,0 +1,60 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_ref_unique
+# 
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-25 03:42+0000\n"
+"PO-Revision-Date: 2017-01-25 03:42+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/oca/teams/23907/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_ref_unique
+#: selection:res.company,partner_ref_unique:0
+msgid "All partners"
+msgstr ""
+
+#. module: partner_ref_unique
+#: model:ir.model,name:partner_ref_unique.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: partner_ref_unique
+#: selection:res.company,partner_ref_unique:0
+msgid "None"
+msgstr ""
+
+#. module: partner_ref_unique
+#: selection:res.company,partner_ref_unique:0
+msgid "Only companies"
+msgstr ""
+
+#. module: partner_ref_unique
+#: model:ir.model,name:partner_ref_unique.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: partner_ref_unique
+#: model:ir.ui.view,arch_db:partner_ref_unique.view_company_form
+msgid "Partners"
+msgstr ""
+
+#. module: partner_ref_unique
+#: code:addons/partner_ref_unique/models/res_partner.py:33
+#, python-format
+msgid "This reference is equal to partner '%s'"
+msgstr ""
+
+#. module: partner_ref_unique
+#: model:ir.model.fields,field_description:partner_ref_unique.field_res_company_partner_ref_unique
+msgid "Unique partner reference for"
+msgstr ""
