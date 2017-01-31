@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="res_partner_alias_view_tree" model="ir.ui.view">
+        <field name="name">res.partner.alias.view.tree</field>
+        <field name="model">res.partner.alias</field>
+        <field name="arch" type="xml">
+            <tree string="Partner Aliases">
+                <field name="firstname" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_partner_alias_view_form" model="ir.ui.view">
+        <field name="name">res.partner.alias.view.form</field>
+        <field name="model">res.partner.alias</field>
+        <field name="arch" type="xml">
+            <form string="Partner Alias">
+                <group>
+                    <group>
+                        <field name="firstname" />
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_partner_alias_view_search" model="ir.ui.view">
+        <field name="name">res.partner.alias.view.search</field>
+        <field name="model">res.partner.alias</field>
+        <field name="arch" type="xml">
+            <search string="Partner Aliases">
+                <field name="firstname" />
+            </search>
+        </field>
+    </record>
+
+    <record id="res_partner_alias_action" model="ir.actions.act_window">
+        <field name="name">Aliases</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner.alias</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="res_partner_alias_view_search" />
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+</odoo>
