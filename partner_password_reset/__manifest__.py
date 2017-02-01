@@ -6,7 +6,7 @@
     "name": "Partner User Password Reset",
     "summary": "Add Action to allow resetting of a Partner's associated user "
                "password from within the partner view.",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "category": "Customer Relationship Management",
     "website": "https://laslabs.com/",
     "author": "LasLabs, "
