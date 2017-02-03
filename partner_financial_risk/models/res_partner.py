@@ -73,7 +73,7 @@ class ResPartner(models.Model):
         max_date = self._max_risk_date_due()
         for partner in self:
             invoices_out = partner.invoice_ids.filtered(
-                lambda x: x.type == 'out_invoice')
+                lambda x: x.type in ['out_invoice', 'out_refund'])
             invoices = invoices_out.filtered(
                 lambda x: x.state in ['draft', 'proforma', 'proforma2'])
             partner.risk_invoice_draft = sum(invoices.mapped('amount_total'))
