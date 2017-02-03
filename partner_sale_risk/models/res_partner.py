@@ -18,11 +18,21 @@ class ResPartner(models.Model):
         help='Total not invoiced of sales orders in Sale Order state')
 
     @api.multi
-    @api.depends('sale_order_ids', 'sale_order_ids.invoice_pending_amount')
+    @api.depends('sale_order_ids', 'sale_order_ids.invoice_pending_amount',
+                 'child_ids.sale_order_ids',
+                 'child_ids.sale_order_ids.invoice_pending_amount')
     def _compute_risk_sale_order(self):
-        for partner in self:
+        customers = self.filtered('customer')
+        partners = customers | customers.mapped('child_ids')
+        orders_group = self.env['sale.order'].read_group(
+            [('state', '=', 'sale'), ('partner_id', 'in', partners.ids)],
+            ['partner_id', 'invoice_pending_amount'],
+            ['partner_id'])
+        for partner in customers:
+            partner_ids = (partner | partner.mapped('child_ids')).ids
             partner.risk_sale_order = sum(
-                partner.sale_order_ids.mapped('invoice_pending_amount'))
+                [x['invoice_pending_amount']
+                 for x in orders_group if x['partner_id'][0] in partner_ids])
 
     @api.model
     def _risk_field_list(self):

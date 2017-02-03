@@ -16,17 +16,26 @@ class SaleOrder(models.Model):
     @api.multi
     @api.depends('state', 'order_line.invoice_lines.invoice_id.amount_total')
     def _compute_invoice_amount(self):
+        AccountInvoice = self.env['account.invoice']
         for order in self.filtered(lambda x: x.state == 'sale'):
-            order.invoice_amount = sum(
-                order.invoice_ids.mapped('amount_total'))
-            order.invoice_pending_amount = (
-                order.amount_total > order.invoice_amount and
-                order.amount_total - order.invoice_amount or 0.0)
+            invoice_ids = order.order_line.mapped('invoice_lines').mapped(
+                'invoice_id').ids
+            if not invoice_ids:
+                continue
+            amount = AccountInvoice.read_group(
+                [('id', 'in', invoice_ids),
+                 ('type', 'in', ['out_invoice', 'out_refund'])],
+                ['amount_total'],
+                []
+            )[0]['amount_total']
+            order.invoice_amount = amount
+            if order.amount_total > amount:
+                order.invoice_pending_amount = order.amount_total - amount
 
     @api.multi
     def action_confirm(self):
         if not self.env.context.get('bypass_risk', False):
-            partner = self.partner_id
+            partner = self.partner_id.commercial_partner_id
             exception_msg = ""
             if partner.risk_exception:
                 exception_msg = _("Financial risk exceeded.\n")
