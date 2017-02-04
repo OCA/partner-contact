@@ -4,14 +4,13 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
-# Giuliano Lotta <giuliano.lotta@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-07 04:23+0000\n"
-"PO-Revision-Date: 2017-01-07 04:23+0000\n"
-"Last-Translator: Giuliano Lotta <giuliano.lotta@gmail.com>, 2017\n"
+"POT-Creation-Date: 2017-01-28 04:19+0000\n"
+"PO-Revision-Date: 2017-01-28 04:19+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,7 +72,7 @@ msgstr ""
 " lista delle città"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:125
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:127
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Errore %d mentre si stava scaricando il file %s."
@@ -134,12 +133,6 @@ msgstr ""
 #: selection:better.zip.geonames.import,letter_case:0
 msgid "Title Case"
 msgstr "Iniziale Maiuscola"
-
-#. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:101
-#, python-format
-msgid "Too many states with code %s for country %s"
-msgstr "Troppe provincie con codice  %s per la nazione %s"
 
 #. module: base_location_geonames_import
 #: selection:better.zip.geonames.import,letter_case:0

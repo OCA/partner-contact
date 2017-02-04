@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 03:36+0000\n"
-"PO-Revision-Date: 2017-01-01 03:36+0000\n"
+"POT-Creation-Date: 2017-01-28 04:19+0000\n"
+"PO-Revision-Date: 2017-01-28 04:19+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgid ""
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:125
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:127
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Erhielt einen Fehler %d beim Versuch die Datei %s herunter zu laden."
@@ -125,12 +125,6 @@ msgstr ""
 #: selection:better.zip.geonames.import,letter_case:0
 msgid "Title Case"
 msgstr "Fall-Bezeichnung"
-
-#. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:101
-#, python-format
-msgid "Too many states with code %s for country %s"
-msgstr "Zu viele Bundesländer mit Schlüssel %s im Land %s"
 
 #. module: base_location_geonames_import
 #: selection:better.zip.geonames.import,letter_case:0
