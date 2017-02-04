@@ -68,21 +68,38 @@ class ResPartner(models.Model):
     @api.multi
     @api.depends('invoice_ids', 'invoice_ids.state',
                  'invoice_ids.amount_total', 'invoice_ids.residual',
-                 'invoice_ids.company_id.invoice_unpaid_margin')
+                 'invoice_ids.company_id.invoice_unpaid_margin',
+                 'child_ids.invoice_ids', 'child_ids.invoice_ids.state',
+                 'child_ids.invoice_ids.amount_total',
+                 'child_ids.invoice_ids.residual',
+                 'child_ids.invoice_ids.company_id.invoice_unpaid_margin')
     def _compute_risk_invoice(self):
+        def sum_group(group, field):
+            return sum([x[field] for x in group if
+                        x['partner_id'][0] in partner_ids])
         max_date = self._max_risk_date_due()
+        AccountInvoice = self.env['account.invoice']
+        partners = self | self.mapped('child_ids')
+        domain = [('type', 'in', ['out_invoice', 'out_refund']),
+                  ('partner_id', 'in', partners.ids)]
+        draft_group = AccountInvoice.read_group(
+            domain + [('state', 'in', ['draft', 'proforma', 'proforma2'])],
+            ['partner_id', 'amount_total'],
+            ['partner_id'])
+        open_group = AccountInvoice.read_group(
+            domain + [('state', '=', 'open'), ('date_due', '>=', max_date)],
+            ['partner_id', 'residual'],
+            ['partner_id'])
+        unpaid_group = AccountInvoice.read_group(
+            domain + [('state', '=', 'open'), ('date_due', '<', max_date)],
+            ['partner_id', 'residual'],
+            ['partner_id'])
+
         for partner in self:
-            invoices_out = partner.invoice_ids.filtered(
-                lambda x: x.type in ['out_invoice', 'out_refund'])
-            invoices = invoices_out.filtered(
-                lambda x: x.state in ['draft', 'proforma', 'proforma2'])
-            partner.risk_invoice_draft = sum(invoices.mapped('amount_total'))
-            invoices = invoices_out.filtered(
-                lambda x: x.state == 'open' and x.date_due >= max_date)
-            partner.risk_invoice_open = sum(invoices.mapped('residual'))
-            invoices = invoices_out.filtered(
-                lambda x: x.state == 'open' and x.date_due < max_date)
-            partner.risk_invoice_unpaid = sum(invoices.mapped('residual'))
+            partner_ids = (partner | partner.child_ids).ids
+            partner.risk_invoice_draft = sum_group(draft_group, 'amount_total')
+            partner.risk_invoice_open = sum_group(open_group, 'residual')
+            partner.risk_invoice_unpaid = sum_group(unpaid_group, 'residual')
 
     @api.multi
     @api.depends('credit', 'risk_invoice_open', 'risk_invoice_unpaid')
