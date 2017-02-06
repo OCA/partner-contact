@@ -62,7 +62,7 @@ class ResPartner(models.Model):
         is_editable = self.env.user.has_group(
             'base.group_sale_manager') or self.env.user.has_group(
             'account.group_account_manager')
-        for partner in self:
+        for partner in self.filtered('customer'):
             partner.risk_allow_edit = is_editable
 
     @api.multi
@@ -77,9 +77,12 @@ class ResPartner(models.Model):
         def sum_group(group, field):
             return sum([x[field] for x in group if
                         x['partner_id'][0] in partner_ids])
+        customers = self.filtered('customer')
+        if not customers:
+            return
         max_date = self._max_risk_date_due()
         AccountInvoice = self.env['account.invoice']
-        partners = self | self.mapped('child_ids')
+        partners = customers | customers.mapped('child_ids')
         domain = [('type', 'in', ['out_invoice', 'out_refund']),
                   ('partner_id', 'in', partners.ids)]
         draft_group = AccountInvoice.read_group(
@@ -91,20 +94,22 @@ class ResPartner(models.Model):
             ['partner_id', 'residual'],
             ['partner_id'])
         unpaid_group = AccountInvoice.read_group(
-            domain + [('state', '=', 'open'), ('date_due', '<', max_date)],
+            domain + [('state', '=', 'open'), '|',
+                      ('date_due', '=', False), ('date_due', '<', max_date)],
             ['partner_id', 'residual'],
             ['partner_id'])
-
-        for partner in self:
+        for partner in customers:
             partner_ids = (partner | partner.child_ids).ids
             partner.risk_invoice_draft = sum_group(draft_group, 'amount_total')
             partner.risk_invoice_open = sum_group(open_group, 'residual')
             partner.risk_invoice_unpaid = sum_group(unpaid_group, 'residual')
 
     @api.multi
-    @api.depends('credit', 'risk_invoice_open', 'risk_invoice_unpaid')
+    @api.depends('credit', 'risk_invoice_open', 'risk_invoice_unpaid',
+                 'child_ids.credit', 'child_ids.risk_invoice_open',
+                 'child_ids.risk_invoice_unpaid')
     def _compute_risk_account_amount(self):
-        for partner in self:
+        for partner in self.filtered('customer'):
             partner.risk_account_amount = (
                 partner.credit - partner.risk_invoice_open -
                 partner.risk_invoice_unpaid)
@@ -113,7 +118,7 @@ class ResPartner(models.Model):
     @api.depends(lambda x: x._get_depends_compute_risk_exception())
     def _compute_risk_exception(self):
         risk_field_list = self._risk_field_list()
-        for partner in self:
+        for partner in self.filtered('customer'):
             amount = 0.0
             for risk_field in risk_field_list:
                 field_value = getattr(partner, risk_field[0], 0.0)
@@ -123,7 +128,7 @@ class ResPartner(models.Model):
                 if getattr(partner, risk_field[2], False):
                     amount += field_value
             partner.risk_total = amount
-            if amount > partner.credit_limit:
+            if partner.credit_limit and amount > partner.credit_limit:
                 partner.risk_exception = True
 
     @api.model
@@ -146,12 +151,11 @@ class ResPartner(models.Model):
 
     @api.model
     def _get_depends_compute_risk_exception(self):
-        # TODO: Improve code without performance loss
-        tuple_list = self._risk_field_list()
-        res = [x[0] for x in tuple_list]
-        res.extend([x[1] for x in tuple_list])
-        res.extend([x[2] for x in tuple_list])
-        res.append('credit_limit')
+        res = []
+        for x in self._risk_field_list():
+            res.extend((x[0], x[1], x[2], 'child_ids.%s' % x[0],
+                        'child_ids.%s' % x[1], 'child_ids.%s' % x[2]))
+        res.extend(('credit_limit', 'child_ids.credit_limit'))
         return res
 
     @api.model
