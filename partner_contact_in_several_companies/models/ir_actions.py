@@ -11,7 +11,7 @@ class IRActionsWindow(models.Model):
     def read(self, fields=None, context=None, load='_classic_read'):
         actions = super(IRActionsWindow, self).read(fields=fields, load=load)
         for action in actions:
-            if action.get('res_model', '') == u'res.partner':
+            if action.get('res_model', '') == 'res.partner':
                 # By default, only show standalone contact
                 action_context = action.get('context', '{}') or '{}'
                 if 'search_show_all_positions' not in action_context:
