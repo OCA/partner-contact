@@ -5,7 +5,7 @@
 {
     "name": "Deduplicate Contacts ACL",
     "summary": "Contact deduplication with fine-grained permission control",
-    "version": "9.0.1.0.0",
+    "version": "9.0.1.1.0",
     "category": "Tools",
     "website": "http://www.tecnativa.com",
     "author": "Tecnativa, "
