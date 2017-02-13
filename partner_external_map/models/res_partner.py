@@ -11,8 +11,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class ResPartner(models.Model):
-    _inherit = 'res.partner'
+class ExternalMap(models.AbstractModel):
+    _name = 'external.map'
 
     @api.multi
     def _address_as_string(self):
@@ -26,6 +26,8 @@ class ResPartner(models.Model):
             addr.append(self.city)
         if self.state_id:
             addr.append(self.state_id.name)
+        if self.zip:
+            addr.append(self.zip)
         if self.country_id:
             addr.append(self.country_id.name)
         if not addr:
@@ -109,3 +111,8 @@ class ResPartner(models.Model):
             'url': url,
             'target': 'new',
         }
+
+
+class ResPartner(models.Model):
+    _name = 'res.partner'
+    _inherit = ['res.partner', 'external.map']
