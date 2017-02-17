@@ -13,8 +13,7 @@
                 <group string="Aliases" name="aliases">
                     <field name="alias_ids" nolabel="1">
                         <tree editable="bottom"
-                              context="{'default_partner_id': id}"
-                              >
+                              context="{'default_partner_id': id}">
                             <field name="firstname" />
                         </tree>
                     </field>
