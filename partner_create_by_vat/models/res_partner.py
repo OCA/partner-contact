@@ -18,7 +18,7 @@ except ImportError:
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    vat_subjected = fields.Boolean('VAT Subjected')
+    vat_subjected = fields.Boolean('VAT Legal Statement')
 
     @api.model
     def _get_vies_data(self):
