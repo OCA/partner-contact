@@ -64,7 +64,7 @@ class TestPartnerCreatebyVAT(TransactionCase):
     def test_create_from_vat2(self):
         # Create an partner from VAT number field
         self.partner2_id = self.partner_model.create({'name': '1',
-                                                      'vat': 'ro16507426',
+                                                      'vat': 'ro4400972',
                                                       'is_company': True})
 
         # Check VAT number not listed on VIES
