@@ -1,0 +1,69 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* res_bank_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-21 18:33+0000\n"
+"PO-Revision-Date: 2014-10-21 14:36-0500\n"
+"Last-Translator: Sandy Carter <sandy.carter@savoirfairelinux.com>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.6.10\n"
+
+#. module: res_bank_account
+#: view:res.partner:0
+msgid "Bank Details"
+msgstr "Détails banquaires"
+
+#. module: res_bank_account
+#: field:res.partner.bank,observation:0
+msgid "Observation"
+msgstr "Remarque"
+
+#. module: res_bank_account
+#: help:res.partner.bank,title_bank_account:0
+msgid "Name for the bank account."
+msgstr "Intitulé du compte bancaire."
+
+#. module: res_bank_account
+#: model:ir.model,name:res_bank_account.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Comptes bancaires"
+
+#. module: res_bank_account
+#: view:res.partner:0
+msgid "Banks"
+msgstr "Banques"
+
+#. module: res_bank_account
+#: field:res.partner.bank,title_bank_account:0
+msgid "Title bank account"
+msgstr "Intitulé du compte bancaire"
+
+#. module: res_bank_account
+#: help:res.partner.bank,observation:0
+msgid "Extra information about the account."
+msgstr "Informations supplémentaires du compte."
+
+#. module: res_bank_account
+#: field:res.partner.bank,active:0
+msgid "Active"
+msgstr "Actif"
+
+#. module: res_bank_account
+#: help:res.partner.bank,active:0
+msgid "Whether the account is still active or not."
+msgstr "Si le compte est actif."
+
+#~ msgid "Active/Inactive."
+#~ msgstr "Actif/Inactif."
+
+#~ msgid "Observation."
+#~ msgstr "Remarque."
