@@ -4,6 +4,7 @@
 #    Author: Nicolas Bessi. Copyright Camptocamp SA
 #    Contributor: Pedro Manuel Baeza <pedro.baeza@serviciosbaeza.com>
 #                 Ignacio Ibeas <ignacio@acysos.com>
+#                 Cesar Andres <cesar-andres.sanchez@brain-tec.ch>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,7 +21,7 @@
 #
 ##############################################################################
 from openerp.osv import orm, fields
-
+from openerp import tools
 
 class BetterZip(orm.Model):
     " City/locations completion object"
@@ -56,6 +57,7 @@ class BetterZip(orm.Model):
                 name.append(bzip.state_id.name)
             if bzip.country_id:
                 name.append(bzip.country_id.name)
+            name = [tools.ustr(x) for x in name if x]
             res.append((bzip.id, ", ".join(name)))
         return res
 
