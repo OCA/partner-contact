@@ -1,0 +1,35 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_create_by_vat
+# 
+# Translators:
+# Rudolf Schnapka <rs@techno-flex.de>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-21 16:57+0000\n"
+"PO-Revision-Date: 2017-02-24 20:44+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_create_by_vat
+#: view:res.partner:partner_create_by_vat.view_partner_create_by_vat
+msgid "Get Vies Data"
+msgstr "Hole MIAS-Daten"
+
+#. module: partner_create_by_vat
+#: model:ir.model,name:partner_create_by_vat.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: partner_create_by_vat
+#: code:addons/partner_create_by_vat/models/res_partner.py:29
+#, python-format
+msgid "The partner is not listed on Vies Webservice."
+msgstr "Der Partner ist nicht im MIAS-Webdienst eingetragen."
