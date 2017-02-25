@@ -1,0 +1,139 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_location_lau
+# 
+# Translators:
+# Esther Martín Menéndez <esthermartin001@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-21 16:57+0000\n"
+"PO-Revision-Date: 2017-02-23 15:56+0000\n"
+"Last-Translator: Esther Martín Menéndez <esthermartin001@gmail.com>\n"
+"Language-Team: Basque (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/eu/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: eu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: base_location_lau
+#: field:res.partner.lau,child_ids:0
+msgid "Children"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner.lau,code:0
+msgid "Code"
+msgstr "Kodea"
+
+#. module: base_location_lau
+#: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
+#: field:res.partner.lau,country_id:0
+msgid "Country"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner.lau,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner.lau,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner.lau,display_name:0
+msgid "Display Name"
+msgstr "Izena erakutsi"
+
+#. module: base_location_lau
+#: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
+msgid "Group By"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner.lau,id:0
+msgid "ID"
+msgstr ""
+
+#. module: base_location_lau
+#: model:ir.model,name:base_location_lau.model_res_partner_lau
+#: view:res.partner.lau:base_location_lau.res_partner_lau_form
+msgid "LAU Item"
+msgstr ""
+
+#. module: base_location_lau
+#: model:ir.actions.act_window,name:base_location_lau.res_partner_lau_action
+#: model:ir.ui.menu,name:base_location_lau.res_partner_lau_menu
+#: view:res.partner.lau:base_location_lau.res_partner_lau_tree
+msgid "LAU Items"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner.lau,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner.lau,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner.lau,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: base_location_lau
+#: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
+#: field:res.partner.lau,level:0
+msgid "Level"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner,lau1_id:0
+msgid "Local Admin. Unit 1"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner,lau2_id:0
+msgid "Local Admin. Unit 2"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner.lau,name:0
+msgid "Name"
+msgstr "Izena"
+
+#. module: base_location_lau
+#: field:res.partner.lau,parent_left:0
+msgid "Parent Left"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner.lau,parent_right:0
+msgid "Parent Right"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner.lau,parent_id:0
+msgid "Parent id"
+msgstr ""
+
+#. module: base_location_lau
+#: model:ir.model,name:base_location_lau.model_res_partner
+msgid "Partner"
+msgstr "Kidea"
+
+#. module: base_location_lau
+#: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
+msgid "Search LAU"
+msgstr ""
+
+#. module: base_location_lau
+#: field:res.partner.lau,state_id:0
+msgid "State"
+msgstr ""

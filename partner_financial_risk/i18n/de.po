@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
+# Rudolf Schnapka <rs@techno-flex.de>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-28 03:43+0000\n"
-"PO-Revision-Date: 2016-12-28 03:43+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2017-02-21 16:57+0000\n"
+"PO-Revision-Date: 2017-02-21 16:57+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>, 2017\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +37,7 @@ msgstr "Fortsetzen"
 #. module: partner_financial_risk
 #: field:partner.risk.exceeded.wiz,continue_method:0
 msgid "Continue method"
-msgstr ""
+msgstr "Verfahren fortsetzen"
 
 #. module: partner_financial_risk
 #: field:partner.risk.exceeded.wiz,create_uid:0
@@ -62,12 +63,12 @@ msgstr "Kunde"
 #: help:account.config.settings,invoice_unpaid_margin:0
 #: help:res.company,invoice_unpaid_margin:0
 msgid "Days after due date to set an invoice as unpaid"
-msgstr ""
+msgstr "Tage nach der Fälligkeit, um eine Rechnung als unbezahlt zu setzen"
 
 #. module: partner_financial_risk
 #: help:res.partner,risk_account_amount:0
 msgid "Difference between accounting credit and rest of totals"
-msgstr ""
+msgstr "Differenz zwischen Kreditlinie und Restsummen"
 
 #. module: partner_financial_risk
 #: field:partner.risk.exceeded.wiz,display_name:0
@@ -77,24 +78,24 @@ msgstr "Anzeigename"
 #. module: partner_financial_risk
 #: field:partner.risk.exceeded.wiz,exception_msg:0
 msgid "Exception msg"
-msgstr ""
+msgstr "Fehlermeldung"
 
 #. module: partner_financial_risk
 #: view:account.config.settings:partner_financial_risk.view_account_config
 #: view:res.partner:partner_financial_risk.res_partner_view_risk
 msgid "Financial Risk"
-msgstr ""
+msgstr "Finanzielles Risiko"
 
 #. module: partner_financial_risk
 #: view:account.config.settings:partner_financial_risk.view_account_config
 msgid "Financial Risk div"
-msgstr ""
+msgstr "Finanzielles Risiko div"
 
 #. module: partner_financial_risk
 #: code:addons/partner_financial_risk/models/account_invoice.py:19
 #, python-format
 msgid "Financial risk exceeded.\n"
-msgstr ""
+msgstr "Finanzrisiko überschritten\n"
 
 #. module: partner_financial_risk
 #: help:res.partner,risk_account_amount_include:0
@@ -102,12 +103,12 @@ msgstr ""
 #: help:res.partner,risk_invoice_open_include:0
 #: help:res.partner,risk_invoice_unpaid_include:0
 msgid "Full risk computation"
-msgstr ""
+msgstr "Risikoermittlung"
 
 #. module: partner_financial_risk
 #: view:res.partner:partner_financial_risk.res_partner_view_risk
 msgid "General Limits"
-msgstr ""
+msgstr "Allgemeine Eingrenzung"
 
 #. module: partner_financial_risk
 #: field:partner.risk.exceeded.wiz,id:0
@@ -117,27 +118,27 @@ msgstr "ID"
 #. module: partner_financial_risk
 #: field:res.partner,risk_invoice_draft_include:0
 msgid "Include Draft Invoices"
-msgstr ""
+msgstr "Rechnungsentwürfe einbeziehen"
 
 #. module: partner_financial_risk
 #: field:res.partner,risk_invoice_open_include:0
 msgid "Include Open Invoices"
-msgstr ""
+msgstr "Offene Rechnungen einbeziehen"
 
 #. module: partner_financial_risk
 #: field:res.partner,risk_account_amount_include:0
 msgid "Include Other Account Amount"
-msgstr ""
+msgstr "Schliesse andere Kontenbeträge ein"
 
 #. module: partner_financial_risk
 #: field:res.partner,risk_invoice_unpaid_include:0
 msgid "Include Unpaid Invoices"
-msgstr ""
+msgstr "Schliesse unbezahlte Rechnungen ein"
 
 #. module: partner_financial_risk
 #: view:res.partner:partner_financial_risk.res_partner_view_risk
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 #. module: partner_financial_risk
 #: model:ir.model,name:partner_financial_risk.model_account_invoice
@@ -147,7 +148,7 @@ msgstr "Rechnung"
 #. module: partner_financial_risk
 #: help:res.partner,risk_exception:0
 msgid "It Indicate if partner risk exceeded"
-msgstr ""
+msgstr "Zeigt Risikoüberschreitung auf"
 
 #. module: partner_financial_risk
 #: field:partner.risk.exceeded.wiz,__last_update:0
@@ -167,28 +168,28 @@ msgstr "zuletzt aktualisiert am"
 #. module: partner_financial_risk
 #: field:res.partner,risk_invoice_draft_limit:0
 msgid "Limit In Draft Invoices"
-msgstr ""
+msgstr "Beschränkung bei Rechnungsentwürfen"
 
 #. module: partner_financial_risk
 #: field:res.partner,risk_invoice_open_limit:0
 msgid "Limit In Open Invoices"
-msgstr ""
+msgstr "Beschränkung bei Offenen Rechnungen"
 
 #. module: partner_financial_risk
 #: field:res.partner,risk_invoice_unpaid_limit:0
 msgid "Limit In Unpaid Invoices"
-msgstr ""
+msgstr "Beschränkung bei unbezahlten Rechnungen"
 
 #. module: partner_financial_risk
 #: field:res.partner,risk_account_amount_limit:0
 msgid "Limit Other Account Amount"
-msgstr ""
+msgstr "Beschränke anderen Kontobetrag"
 
 #. module: partner_financial_risk
 #: field:account.config.settings,invoice_unpaid_margin:0
 #: field:res.company,invoice_unpaid_margin:0
 msgid "Maturity Margin"
-msgstr ""
+msgstr "Fälligkeitsgrenze"
 
 #. module: partner_financial_risk
 #: field:partner.risk.exceeded.wiz,origin_reference:0
@@ -198,7 +199,7 @@ msgstr "Objekt"
 #. module: partner_financial_risk
 #: field:res.partner,risk_account_amount:0
 msgid "Other Account Amount"
-msgstr ""
+msgstr "Anderer Kontobetrag"
 
 #. module: partner_financial_risk
 #: model:ir.model,name:partner_financial_risk.model_res_partner
@@ -209,7 +210,7 @@ msgstr "Partner"
 #: code:addons/partner_financial_risk/wizard/parner_risk_exceeded.py:25
 #, python-format
 msgid "Partner risk exceeded"
-msgstr ""
+msgstr "Partnerrisiko überschritten"
 
 #. module: partner_financial_risk
 #: help:res.partner,risk_invoice_unpaid:0
@@ -217,6 +218,8 @@ msgid ""
 "Residual amount of invoices in Open state and the date due is exceeded, "
 "considering Unpaid Margin set in account settings"
 msgstr ""
+"Restbetrag von offenen Rechnungen mit überschrittenem Fälligkeitsdatum unter"
+" Berücksichtigung der Limit-Einstellung im Konto"
 
 #. module: partner_financial_risk
 #: help:res.partner,risk_invoice_open:0
@@ -224,21 +227,23 @@ msgid ""
 "Residual amount of invoices in Open state and the date due is not exceeded, "
 "considering Due Margin set in account settings"
 msgstr ""
+"Restbetrag von offenen Rechnungen mit nicht überschrittenem "
+"Fälligkeitsdatum, unter Berücksichtigung der Limit-Einstellung im Konto"
 
 #. module: partner_financial_risk
 #: field:res.partner,risk_exception:0
 msgid "Risk Exception"
-msgstr ""
+msgstr "Risikoausnahme"
 
 #. module: partner_financial_risk
 #: field:res.partner,risk_allow_edit:0
 msgid "Risk allow edit"
-msgstr ""
+msgstr "Erlaube Bearbeitung"
 
 #. module: partner_financial_risk
 #: view:partner.risk.exceeded.wiz:partner_financial_risk.partner_risk_exceeded_wizard
 msgid "Risk exceeded"
-msgstr ""
+msgstr "Risikoüberschreitung"
 
 #. module: partner_financial_risk
 #: help:res.partner,risk_account_amount_limit:0
@@ -246,61 +251,61 @@ msgstr ""
 #: help:res.partner,risk_invoice_open_limit:0
 #: help:res.partner,risk_invoice_unpaid_limit:0
 msgid "Set 0 if it is not locked"
-msgstr ""
+msgstr "Setze 0, wenn nicht gesperrt"
 
 #. module: partner_financial_risk
 #: view:res.partner:partner_financial_risk.res_partner_view_risk
 msgid "Specific Limits"
-msgstr ""
+msgstr "Bestimmte Limits"
 
 #. module: partner_financial_risk
 #: help:res.partner,risk_total:0
 msgid "Sum of total risk included"
-msgstr ""
+msgstr "Summe des Gesamtrisikos eingeschlossen"
 
 #. module: partner_financial_risk
 #: view:partner.risk.exceeded.wiz:partner_financial_risk.partner_risk_exceeded_wizard
 msgid "The partner has exceeded his risk"
-msgstr ""
+msgstr "Der Partner überschreitet sein Risiko"
 
 #. module: partner_financial_risk
 #: code:addons/partner_financial_risk/models/account_invoice.py:28
 #, python-format
 msgid "This invoice exceeds the financial risk.\n"
-msgstr ""
+msgstr "Diese Rechnung überschreitet das finanzielle Risiko.\n"
 
 #. module: partner_financial_risk
 #: code:addons/partner_financial_risk/models/account_invoice.py:23
 #, python-format
 msgid "This invoice exceeds the open invoices risk.\n"
-msgstr ""
+msgstr "Diese Rechnung überschreitet das Risko offener Rechnungen.\n"
 
 #. module: partner_financial_risk
 #: field:res.partner,risk_invoice_draft:0
 msgid "Total Draft Invoices"
-msgstr ""
+msgstr "Rechnungsentürfe Gesamt"
 
 #. module: partner_financial_risk
 #: field:res.partner,risk_invoice_open:0
 msgid "Total Open Invoices"
-msgstr ""
+msgstr "Offene Rechnung Gesamt"
 
 #. module: partner_financial_risk
 #: field:res.partner,risk_total:0
 msgid "Total Risk"
-msgstr ""
+msgstr "Gesamtrisiko"
 
 #. module: partner_financial_risk
 #: field:res.partner,risk_invoice_unpaid:0
 msgid "Total Unpaid Invoices"
-msgstr ""
+msgstr "Unbezahlte Rechnungen Gesamt"
 
 #. module: partner_financial_risk
 #: help:res.partner,risk_invoice_draft:0
 msgid "Total amount of invoices in Draft or Pro-forma state"
-msgstr ""
+msgstr "Gesamtbetrag aller Rechnungen im Status Enturf oder Proforma"
 
 #. module: partner_financial_risk
 #: view:account.invoice:partner_financial_risk.invoice_partner_risk_form
 msgid "object"
-msgstr ""
+msgstr "object"

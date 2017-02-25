@@ -1,0 +1,139 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_location_lau
+# 
+# Translators:
+# Rudolf Schnapka <rs@techno-flex.de>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-21 16:57+0000\n"
+"PO-Revision-Date: 2017-02-24 23:37+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: base_location_lau
+#: field:res.partner.lau,child_ids:0
+msgid "Children"
+msgstr "Kinder"
+
+#. module: base_location_lau
+#: field:res.partner.lau,code:0
+msgid "Code"
+msgstr "Schlüssel"
+
+#. module: base_location_lau
+#: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
+#: field:res.partner.lau,country_id:0
+msgid "Country"
+msgstr "Land"
+
+#. module: base_location_lau
+#: field:res.partner.lau,create_uid:0
+msgid "Created by"
+msgstr "Angelegt durch"
+
+#. module: base_location_lau
+#: field:res.partner.lau,create_date:0
+msgid "Created on"
+msgstr "Angelegt am"
+
+#. module: base_location_lau
+#: field:res.partner.lau,display_name:0
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: base_location_lau
+#: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
+msgid "Group By"
+msgstr "Gruppiert nach"
+
+#. module: base_location_lau
+#: field:res.partner.lau,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: base_location_lau
+#: model:ir.model,name:base_location_lau.model_res_partner_lau
+#: view:res.partner.lau:base_location_lau.res_partner_lau_form
+msgid "LAU Item"
+msgstr "LAU-Position"
+
+#. module: base_location_lau
+#: model:ir.actions.act_window,name:base_location_lau.res_partner_lau_action
+#: model:ir.ui.menu,name:base_location_lau.res_partner_lau_menu
+#: view:res.partner.lau:base_location_lau.res_partner_lau_tree
+msgid "LAU Items"
+msgstr "LAU-Positionen"
+
+#. module: base_location_lau
+#: field:res.partner.lau,__last_update:0
+msgid "Last Modified on"
+msgstr "Zuletzt verändert am"
+
+#. module: base_location_lau
+#: field:res.partner.lau,write_uid:0
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: base_location_lau
+#: field:res.partner.lau,write_date:0
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: base_location_lau
+#: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
+#: field:res.partner.lau,level:0
+msgid "Level"
+msgstr "Ebene"
+
+#. module: base_location_lau
+#: field:res.partner,lau1_id:0
+msgid "Local Admin. Unit 1"
+msgstr "Lokale Adm.-Einheit (LAU) 1"
+
+#. module: base_location_lau
+#: field:res.partner,lau2_id:0
+msgid "Local Admin. Unit 2"
+msgstr "Lokale Adm.Einheit 2"
+
+#. module: base_location_lau
+#: field:res.partner.lau,name:0
+msgid "Name"
+msgstr "Bezeichnung"
+
+#. module: base_location_lau
+#: field:res.partner.lau,parent_left:0
+msgid "Parent Left"
+msgstr "Übergeordnet links"
+
+#. module: base_location_lau
+#: field:res.partner.lau,parent_right:0
+msgid "Parent Right"
+msgstr "Übergeordnet rechts"
+
+#. module: base_location_lau
+#: field:res.partner.lau,parent_id:0
+msgid "Parent id"
+msgstr "ID Übergeordneter"
+
+#. module: base_location_lau
+#: model:ir.model,name:base_location_lau.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: base_location_lau
+#: view:res.partner.lau:base_location_lau.view_res_partner_lau_filter
+msgid "Search LAU"
+msgstr "Suche LAU"
+
+#. module: base_location_lau
+#: field:res.partner.lau,state_id:0
+msgid "State"
+msgstr "Bundesland"

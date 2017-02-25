@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * base_partner_sequence
+# * base_vat_sanitized
 # 
 # Translators:
 # Rudolf Schnapka <rs@techno-flex.de>, 2017
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-02-21 16:57+0000\n"
-"PO-Revision-Date: 2017-02-24 19:54+0000\n"
+"PO-Revision-Date: 2017-02-24 20:44+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -18,15 +18,17 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. module: base_partner_sequence
-#: model:ir.model,name:base_partner_sequence.model_res_partner
+#. module: base_vat_sanitized
+#: model:ir.model,name:base_vat_sanitized.model_res_partner
 msgid "Partner"
 msgstr "Partner"
 
-#. module: base_partner_sequence
-#: view:res.partner:base_partner_sequence.view_partner_form
-msgid ""
-"{\n"
-"                    'readonly': [('is_company', '=', False),\n"
-"                                 ('parent_id', '!=', False)]}"
-msgstr "{\n                    'readonly': [('is_company', '=', False),\n                                 ('parent_id', '!=', False)]}"
+#. module: base_vat_sanitized
+#: field:res.partner,sanitized_vat:0
+msgid "Sanitized TIN"
+msgstr "Normalisierte UStID"
+
+#. module: base_vat_sanitized
+#: help:res.partner,sanitized_vat:0
+msgid "TIN in uppercase without spaces nor special caracters."
+msgstr "UStID mit Grossbuchstaben, ohne Leerzeichen oder Sonderzeichen."
