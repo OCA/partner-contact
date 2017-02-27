@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<!-- Copyright 2015-2017 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
     <data>
         <record id="view_partner_form" model="ir.ui.view">
             <field name="name">res.partner.form (partner_academic_title)</field>
@@ -13,4 +15,4 @@
             </field>
         </record>
     </data>
-</openerp>
+</odoo>
