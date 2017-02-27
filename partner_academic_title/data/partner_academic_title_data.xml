@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<!-- Copyright 2015-2017 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
     <data noupdate="1">
         <record id="academic_title_bs" model="partner.academic.title">
             <field name="name">B.S.</field>
@@ -46,4 +48,4 @@
             <field name="sequence">11</field>
         </record>
     </data>
-</openerp>
+</odoo>
