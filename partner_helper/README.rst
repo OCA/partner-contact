@@ -3,7 +3,7 @@
    :alt: License: AGPL-3
 
 ==============
-partner_helper
+Partner Helper
 ==============
 
 The purpose of this module is to gather generic partner methods.
@@ -29,7 +29,7 @@ Bug Tracker
 ===========
 
 Bugs are tracked on `GitHub Issues
-<https://github.com/OCA/{project_repo}/issues>`_. In case of trouble, please
+<https://github.com/OCA/partner_contact/issues>`_. In case of trouble, please
 check there if your issue has already been reported. If you spotted it first,
 help us smash it by providing detailed and welcomed feedback.
 
@@ -38,6 +38,7 @@ Images
 ------
 
 * Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+
 
 Contributors
 ------------
