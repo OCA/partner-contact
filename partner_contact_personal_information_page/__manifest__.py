@@ -8,6 +8,13 @@
     "category": "Customer Relationship Management",
     "website": "https://odoo-community.org/",
     "author": "Odoo Community Association (OCA)",
+    "contributors": [
+        'EL Hadji DEM <elhadji.dem@savoirfairelinux.com>',
+        'Jairo Llopis <j.llopis@grupoesoc.es>',
+        'Matjaž Mozetič <m.mozetic@matmoz.si>',
+        'Rudolf Schnapka <schnapkar@golive-saar.de>',
+        'Richard deMeester <richard@willowit.com.au>',
+    ],
     "license": "AGPL-3",
     'application': False,
     'installable': True,
