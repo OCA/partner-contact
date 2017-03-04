@@ -346,6 +346,8 @@ msgid ""
 "                    be linked to other partners with a type either directly\n"
 "                    or inversely."
 msgstr ""
+"Notieren und Verfolgen von Beziehungen Ihrer Partner. \n"
+"Beziehungen werden über die Art entweder direkt oder rückwirkend verknüpft."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all_active
@@ -508,22 +510,22 @@ msgstr "Nicht unterstützter Such-operator \"%s\""
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_0
 msgid "Washing Companies"
-msgstr ""
+msgstr "Wäschereien"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_4
 msgid "Washing Gold"
-msgstr ""
+msgstr "Goldwäsche"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_11
 msgid "Washing Services"
-msgstr ""
+msgstr "Wäschereidienste"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_5
 msgid "Washing Silver"
-msgstr ""
+msgstr "Silberwäsche"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type_handle_invalid_onchange
