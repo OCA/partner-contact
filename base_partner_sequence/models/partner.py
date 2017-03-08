@@ -47,9 +47,11 @@ class ResPartner(models.Model):
     @api.multi
     def write(self, vals):
         for partner in self:
-            if not vals.get('ref') and partner._needsRef(vals):
+            if not vals.get('ref') and partner._needsRef(vals) and \
+               not partner.ref:
                 vals['ref'] = self.env['ir.sequence'].\
                     next_by_code('res.partner')
+
             super(ResPartner, partner).write(vals)
         return True
 
