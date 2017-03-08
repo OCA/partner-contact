@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-<data>
-
     <record id="res_partner_main2_position_consultant" model="res.partner">
         <field name="name">Roger Scott</field>
         <field name="function">Consultant</field>
@@ -21,6 +19,4 @@
         <field name="parent_id" ref="base.main_partner"/>
         <field name="contact_id" ref="res_partner_contact1"/>
     </record>
-
-</data>
 </odoo>
