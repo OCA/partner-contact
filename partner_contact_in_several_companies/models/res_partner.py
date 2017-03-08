@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, _, api
-from openerp.osv import expression
+from odoo import api, fields, models, _
+from odoo.osv import expression
 
 
 class ResPartner(models.Model):
@@ -12,8 +12,9 @@ class ResPartner(models.Model):
         [('standalone', _('Standalone Contact')),
          ('attached', _('Attached to existing Contact')),
          ],
-        compute='_get_contact_type',
-        required=True, select=1, store=True,
+        compute='_compute_contact_type',
+        store=True,
+        index=True,
         default='standalone')
     contact_id = fields.Many2one('res.partner', string='Main Contact',
                                  domain=[('is_company', '=', False),
@@ -23,10 +24,11 @@ class ResPartner(models.Model):
     other_contact_ids = fields.One2many('res.partner', 'contact_id',
                                         string='Others Positions')
 
-    @api.one
+    @api.multi
     @api.depends('contact_id')
-    def _get_contact_type(self):
-        self.contact_type = self.contact_id and 'attached' or 'standalone'
+    def _compute_contact_type(self):
+        for rec in self:
+            rec.contact_type = 'attached' if rec.contact_id else 'standalone'
 
     def _basecontact_check_context(self, mode):
         """ Remove 'search_show_all_positions' for non-search mode.
@@ -115,8 +117,7 @@ class ResPartner(models.Model):
         self.ensure_one()
         if self.contact_id:
             contact_fields = self._contact_fields()
-            sync_vals = self._update_fields_values(self.contact_id,
-                                                   contact_fields)
+            sync_vals = self.contact_id._update_fields_values(contact_fields)
             self.write(sync_vals)
 
     def update_contact(self, vals):
@@ -129,26 +130,26 @@ class ResPartner(models.Model):
         if contact_vals:
             self.with_context(__update_contact_lock=True).write(contact_vals)
 
-    @api.model
-    def _fields_sync(self, partner, update_values):
+    @api.multi
+    def _fields_sync(self, update_values):
         """Sync commercial fields and address fields from company and to
         children, contact fields from contact and to attached contact
         after create/update, just as if those were all modeled as
         fields.related to the parent
         """
-        super(ResPartner, self)._fields_sync(partner, update_values)
+        self.ensure_one()
+        super(ResPartner, self)._fields_sync(update_values)
         contact_fields = self._contact_fields()
         # 1. From UPSTREAM: sync from parent contact
         if update_values.get('contact_id'):
-            partner._contact_sync_from_parent()
+            self._contact_sync_from_parent()
         # 2. To DOWNSTREAM: sync contact fields to parent or related
         elif any(field in contact_fields for field in update_values):
-            update_ids = [
-                c.id for c in partner.other_contact_ids if not c.is_company
-            ]
-            if partner.contact_id:
-                update_ids.append(partner.contact_id.id)
-            self.browse(update_ids).update_contact(update_values)
+            update_ids = self.other_contact_ids.filtered(
+                lambda p: not p.is_company)
+            if self.contact_id:
+                update_ids |= self.contact_id
+            update_ids.update_contact(update_values)
 
     @api.onchange('contact_id')
     def _onchange_contact_id(self):
