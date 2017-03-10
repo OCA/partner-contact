@@ -29,6 +29,7 @@ addon | version | summary
 [partner_contact_gender](partner_contact_gender/) | 10.0.1.1.0 | Add gender field to contacts
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 10.0.1.0.0 | Allow to have one contact in several partners
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 10.0.1.0.0 | Add a page to contacts form to put personal information
+[partner_contact_weight](partner_contact_weight/) | 10.0.1.0.0 | Provide contact weight
 [partner_external_map](partner_external_map/) | 10.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_firstname](partner_firstname/) | 10.0.1.0.0 | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 10.0.1.0.1 | Partner Identification Numbers
