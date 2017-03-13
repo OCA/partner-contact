@@ -24,6 +24,7 @@ addon | version | summary
 [base_partner_sequence](base_partner_sequence/) | 10.0.1.0.0 | Sets customer's code from a sequence
 [base_vat_sanitized](base_vat_sanitized/) | 10.0.1.0.0 | Adds field sanitized_vat on partners
 [partner_address_street3](partner_address_street3/) | 10.0.1.0.0 | Add a third address line on partners
+[partner_alias](partner_alias/) | 10.0.1.0.0 | Adds aliases to partner names.
 [partner_contact_birthdate](partner_contact_birthdate/) | 10.0.1.0.0 | Contact's birthdate
 [partner_contact_configuration](partner_contact_configuration/) | 10.0.1.0.0 | Adds menu configuration access through the 'contacts' module main menu
 [partner_contact_gender](partner_contact_gender/) | 10.0.1.1.0 | Add gender field to contacts
