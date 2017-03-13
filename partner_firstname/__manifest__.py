@@ -12,6 +12,7 @@
               "Grupo ESOC Ingeniería de Servicios, "
               "Tecnativa, "
               "LasLabs, "
+              "ACSONE SA/NV, "
               "Odoo Community Association (OCA)",
     'license': "AGPL-3",
     'maintainer': 'Camptocamp, Acsone',
