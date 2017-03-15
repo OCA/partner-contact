@@ -35,6 +35,7 @@ class ResPartner(models.Model):
             example:
             res = self.env['res.partner']._get_split_address(
                  picking.partner_id, 3, 35)
+            street1, street2, street3 = res
         """
         street = partner.street or ''
         street2 = partner.street2 or ''
