@@ -21,12 +21,12 @@
 {
     "name": "Street name and number",
     "summary": "Introduces separate fields for street name and street number.",
-    "version": "8.0.0.1.0",
+    "version": "9.0.0.1.0",
     "author": "Therp BV,Odoo Community Association (OCA)",
     "website": "https://github.com/oca/partner-contact",
     "category": 'Tools',
     "depends": [
-        'base'
+        'web',
         ],
     "data": [
         'views/res_partner.xml',
