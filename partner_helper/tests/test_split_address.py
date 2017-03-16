@@ -15,7 +15,7 @@ class TestSplit(TransactionCase):
                   u" l'ours qui fuit les chasseurs"
         partner = self.partnerX
         partner.street = address
-        address1, address2 = partner._get_split_address(partner, 2, 40)
+        address1, address2 = partner._get_split_address(2, 40)
         self.assertEqual('278 route pitoresque de la vallee de', address1)
         self.assertEqual(u"l'ours qui fuit les chasseurs ", address2)
         self.assertTrue(len(address1) <= 40)

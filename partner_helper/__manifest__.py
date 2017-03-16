@@ -10,7 +10,7 @@
     'depends': [
         'base',
     ],
-
+    'summary': "Add specific helper methods",
     'website': 'http://www.akretion.com/',
     'data': [],
     'tests': [],
