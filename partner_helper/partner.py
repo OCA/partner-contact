@@ -26,8 +26,7 @@ def split_char(char, output_number, size):
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    def _get_split_address(
-            self, output_number, max_size):
+    def _get_split_address(self, output_number, max_size):
         """ This method allows to get a number of street fields according to
             your choice. Default is 2 large fields in Odoo (128 chars).
             In some countries you may use 3 or 4 shorter street fields.
