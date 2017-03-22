@@ -3,4 +3,10 @@
 #   (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from . import models
+from openerp import fields, models
+
+
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    extension = fields.Char('Extension', help="Phone Number Extension.")

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Add phone number extension fields for partner -->
+        <record id="view_partner_simple_number_extension_form" model="ir.ui.view">
+            <field name="name">view.partner.simple.number.extension.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_simple_form"/>
+            <field name="arch" type="xml">
+                <field name="phone" position="after">
+                    <field name="extension"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partner_number_extension_form" model="ir.ui.view">
+            <field name="name">view.partner.number.extension.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="phone" position="after">
+                    <field name="extension"/>
+                </field>
+                <xpath expr="//form[@string='Contact']//field[@name='phone']" position="after">
+                    <field name="extension"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
