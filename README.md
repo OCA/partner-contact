@@ -15,6 +15,7 @@ Here you should find community modules that:
 * Etc.
 
 [//]: # (addons)
+
 Available addons
 ----------------
 addon | version | summary
