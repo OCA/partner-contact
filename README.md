@@ -53,6 +53,7 @@ addon | version | summary
 [partner_sector](partner_sector/) | 9.0.1.0.1 | Add partner sectors
 [res_partner_affiliate](res_partner_affiliate/) | 9.0.1.0.0 | Partner Affiliates
 
+
 Unported addons
 ---------------
 addon | version | summary
