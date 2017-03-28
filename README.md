@@ -58,6 +58,7 @@ addon | version | summary
 [portal_partner_merge](portal_partner_merge/) | 8.0.1.0.0 | Portal Partner Merge
 [res_partner_affiliate](res_partner_affiliate/) | 8.0.1.0.0 | Partner Affiliates
 
+
 Unported addons
 ---------------
 addon | version | summary
