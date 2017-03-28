@@ -37,6 +37,7 @@ addon | version | summary
 [partner_identification](partner_identification/) | 10.0.1.0.1 | Partner Identification Numbers
 [partner_street_number](partner_street_number/) | 10.0.1.0.0 | Introduces separate fields for street name and street number.
 
+
 Unported addons
 ---------------
 addon | version | summary
