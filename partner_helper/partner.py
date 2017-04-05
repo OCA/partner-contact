@@ -1,25 +1,9 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
+#    Copyright (C) 2016 Akretion (http://www.akretion.com)
 #    Author: Sébastien BEAU <sebastien.beau@akretion.com>
-#    Copyright 2014 Akretion
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp.osv import orm
+from odoo import models
 
 
 def split_char(char, output_number, size):
@@ -39,22 +23,21 @@ def split_char(char, output_number, size):
     return result
 
 
-class ResPartner(orm.Model):
+class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    def _get_split_address(
-            self, cr, uid, partner, output_number, max_size, context=None):
+    def _get_split_address(self, output_number, max_size):
         """ This method allows to get a number of street fields according to
             your choice. Default is 2 large fields in Odoo (128 chars).
             In some countries you may use 3 or 4 shorter street fields.
 
             example:
-            res = self.pool['res.partner']._get_split_address(
-                cr, uid, picking.partner_id, 3, 35, context=context)
-            address['street'], address['street2'], address['street3'] = res
+            res = self.env['res.partner']._get_split_address( 3, 35)
+            street1, street2, street3 = res
         """
-        street = partner.street or ''
-        street2 = partner.street2 or ''
+        self.ensure_one()
+        street = self.street or ''
+        street2 = self.street2 or ''
         if len(street) <= max_size and len(street2) <= max_size:
             result = ['' for i in range(0, output_number)]
             result[0] = street
