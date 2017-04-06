@@ -65,7 +65,9 @@ class ResPartnerRelationTypeSelection(models.Model):
         string='Symmetric',
     )
 
-    def _auto_init(self, cr, context=None):
+    @api.model_cr_context
+    def _auto_init(self):
+        cr = self._cr
         drop_view_if_exists(cr, self._table)
         cr.execute(
             """CREATE OR REPLACE VIEW %(table)s AS
@@ -100,8 +102,7 @@ class ResPartnerRelationTypeSelection(models.Model):
                 'padding': PADDING,
                 'underlying_table': AsIs('res_partner_relation_type'),
             })
-        return super(ResPartnerRelationTypeSelection, self)._auto_init(
-            cr, context=context)
+        return super(ResPartnerRelationTypeSelection, self)._auto_init()
 
     @api.multi
     def name_get(self):
