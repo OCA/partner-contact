@@ -4,7 +4,7 @@
         <menuitem
             id="menu_res_partner_relation_sales"
             sequence="2"
-            parent="base.menu_sales"
+            parent="sales_team.menu_sales"
             action="action_res_partner_relation_all"
         />
 
@@ -17,7 +17,7 @@
 
         <menuitem
             id="menu_res_partner_relation_type"
-            parent="base.menu_config_address_book"
+            parent="sales_team.menu_config_address_book"
             action="action_res_partner_relation_type"
         />
 
