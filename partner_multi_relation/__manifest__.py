@@ -10,6 +10,7 @@
     "license": "AGPL-3",
     "depends": [
         'base',
+        'sales_team',
     ],
     "demo": [
         "data/demo.xml",

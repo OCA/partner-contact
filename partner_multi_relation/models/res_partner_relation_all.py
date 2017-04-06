@@ -32,10 +32,10 @@ class ResPartnerRelationAll(models.AbstractModel):
     You must use the same name as in res_partner_relation.
     Don't overwrite this list in your declaration but append in _auto_init:
 
-    def _auto_init(self, cr, context=None):
+    @api.model_cr_context
+    def _auto_init(self):
         self._additional_view_fields.append('my_field')
-        return super(ResPartnerRelationAll, self)._auto_init(
-            cr, context=context)
+        return super(ResPartnerRelationAll, self)._auto_init()
 
     my_field = fields...
     """
@@ -78,7 +78,9 @@ class ResPartnerRelationAll(models.AbstractModel):
         search='_search_any_partner_id'
     )
 
-    def _auto_init(self, cr, context=None):
+    @api.model_cr_context
+    def _auto_init(self):
+        cr = self._cr
         drop_view_if_exists(cr, self._table)
         additional_view_fields = ','.join(self._additional_view_fields)
         additional_view_fields = (',' + additional_view_fields)\
@@ -121,9 +123,7 @@ CREATE OR REPLACE VIEW %(table)s AS
                 'additional_view_fields': AsIs(additional_view_fields),
             }
         )
-        return super(ResPartnerRelationAll, self)._auto_init(
-            cr, context=context
-        )
+        return super(ResPartnerRelationAll, self)._auto_init()
 
     @api.model
     def _search_any_partner_id(self, operator, value):
