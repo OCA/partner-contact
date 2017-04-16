@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<openerp>
+  <data>
+    <!-- Tree Views rank-->
+    <record model="ir.ui.view" id="rank_tree_view">
+      <field name="name">Rank Tree View</field>
+      <field name="model">res.rank</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string="RankTree" version="7.0">
+           <field name="name"/>
+           <field name="priority"/>
+           <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form Views rank-->
+    <record model="ir.ui.view" id="rank_form_view">
+      <field name="name">Rank Form View</field>
+      <field name="model">res.rank</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="RankForm" version="7.0" >
+           <group col="4">
+              <field name="name"/>
+              <field name="priority"/>
+              <field name="description"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- Actions -->
+    <record id="action_res_rank_form" model="ir.actions.act_window">
+      <field name="name">Partner's rank</field>
+      <field name="res_model">res.rank</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+        <menuitem action="action_res_rank_form"
+            id="menu_action_res_rank"
+            parent="base.menu_config_address_book"
+            groups="base.group_no_one"
+            sequence="16"/>
+
+  </data>
+</openerp>
