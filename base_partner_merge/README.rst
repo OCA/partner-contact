@@ -2,13 +2,21 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==================
-Base Partner Merge
-==================
+============================
+Deduplicate contact (No CRM)
+============================
+
+This module installs the deduplicate wizard from CRM without the dependency on CRM.
+
+If you have CRM installed you don't need this module.
 
 
-This module implements merging of multiple partners
-depending on their similarity
+Installation
+============
+
+To install this module, you need to have crm module present (but not installed).
+This is because we reuse the existing wizard without installing CRM.
+
 
 Bug Tracker
 ===========
@@ -26,6 +34,15 @@ Contributors
 ------------
 
 * Charbel Jacquin <charbel.jacquin@camptocamp.com>
+* Tom Blauwendraat <tom@sunflowerweb.nl>
+* Terrence Nzaywa  <terrence@sunflowerweb.nl>
+
+Author
+------
+
+Yannick Vaucher
+Based on Holger Brunn's idea.
+Backport to 8.0 by Tom Blauwendraat and Terrence Nzaywa
 
 Maintainer
 ----------
