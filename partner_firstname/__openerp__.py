@@ -24,13 +24,12 @@
     'version': '8.0.2.2.0',
     "author": "Camptocamp, "
               "Grupo ESOC Ingeniería de Servicios, "
+              "ACSONE SA/NV, "
               "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     'maintainer': 'Camptocamp, Acsone',
     'category': 'Extra Tools',
-    'website': 'http://www.camptocamp.com, '
-               'http://www.acsone.eu, '
-               'http://grupoesoc.es',
+    'website': 'https://odoo-community.org',
     'depends': ['base_setup'],
     'data': [
         'views/base_config_view.xml',
