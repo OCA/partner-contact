@@ -20,8 +20,8 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[base_location](base_location/) | 10.0.1.0.0 | Enhanced zip/npa management system
-[base_location_geonames_import](base_location_geonames_import/) | 10.0.1.0.0 | Import better zip entries from Geonames
+[base_location](base_location/) | 10.0.1.0.1 | Enhanced zip/npa management system
+[base_location_geonames_import](base_location_geonames_import/) | 10.0.1.0.1 | Import better zip entries from Geonames
 [base_partner_sequence](base_partner_sequence/) | 10.0.1.0.0 | Sets customer's code from a sequence
 [base_vat_sanitized](base_vat_sanitized/) | 10.0.1.0.0 | Adds field sanitized_vat on partners
 [partner_address_street3](partner_address_street3/) | 10.0.1.0.0 | Add a third address line on partners
