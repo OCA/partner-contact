@@ -43,6 +43,7 @@ Contributors
 * Sandy Carter <sandy.carter@savoirfairelinux.com>
 * Yannick Vaucher <yannick.vaucher@camptocamp.com>
 * Francesco Apruzzese <f.apruzzese@apuliasoftware.it>
+* Dave Lasley <dave@laslabs.com>
 
 Icon
 ----
