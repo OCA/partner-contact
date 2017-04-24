@@ -20,6 +20,8 @@ class BetterZip(models.Model):
     city = fields.Char('City', required=True)
     state_id = fields.Many2one('res.country.state', 'State')
     country_id = fields.Many2one('res.country', 'Country')
+    latitude = fields.Float()
+    longitude = fields.Float()
 
     @api.one
     @api.depends(
