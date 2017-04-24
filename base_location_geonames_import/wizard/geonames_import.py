@@ -59,6 +59,8 @@ class BetterZipGeonamesImport(models.TransientModel):
             'city': self.transform_city_name(row[2], country),
             'state_id': state.id,
             'country_id': country.id,
+            'latitude': row[9],
+            'longitude': row[10],
             }
         return vals
 
