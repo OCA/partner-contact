@@ -1,45 +1,26 @@
-# -*- encoding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2013-2014 Savoir-faire Linux
-#    (<http://www.savoirfairelinux.com>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# -*- coding: utf-8 -*-
+# Copyright 2013-2014 Savoir-faire Linux
+#   (<http://www.savoirfairelinux.com>).
+# Copyright 2017 Eficent Business and IT Consulting Services S.L.
+#   (http://www.eficent.com)
+# Copyright 2017 Serpent Consulting Services Pvt. Ltd.
+#   (<http://www.serpentcs.com>)
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 {
     'name': 'Partner Phone Number Extension',
-    'version': '1.1',
+    'version': '9.0.1.0.0',
     'category': 'Customer Relationship Management',
     'summary': 'Partner Phone Number Extension',
-    'description': """
-Partner Phone Number Extension
-==============================
-
-This module allows to add a phone number extension field in partner form view.
-
-Contributors
-------------
-* El Hadji Dem (elhadji.dem@savoirfairelinux.com)
-""",
-    'author': "Savoir-faire Linux,Odoo Community Association (OCA)",
-    'website': 'www.savoirfairelinux.com',
+    'author': "Savoir-faire Linux, "
+              "Eficent, "
+              "SerpentCS, "
+              "Odoo Community Association (OCA)",
+    'website': 'http://www.savoirfairelinux.com',
     'license': 'AGPL-3',
+    "depends": ["base"],
     'data': [
-        'res_partner_view.xml',
+        'views/res_partner_view.xml',
     ],
     'installable': True,
 }
