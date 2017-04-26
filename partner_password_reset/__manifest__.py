@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "Partner User Password Reset",
+    "name": "Partner Password Reset",
     "summary": "Add Action to allow resetting of a Partner's associated user "
                "password from within the partner view.",
     "version": "10.0.1.0.0",
