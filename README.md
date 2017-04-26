@@ -47,6 +47,7 @@ addon | version | summary
 [partner_external_map](partner_external_map/) | 9.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_financial_risk](partner_financial_risk/) | 9.0.1.0.0 | Manage partner risk
 [partner_firstname](partner_firstname/) | 9.0.2.0.0 | Split first name and last name for non company partners
+[partner_helper](partner_helper/) | 9.0.0.1.0 | Partner Helper
 [partner_identification](partner_identification/) | 9.0.1.0.0 | Partner Identification Numbers
 [partner_multi_relation](partner_multi_relation/) | 9.0.1.1.1 | Partner relations
 [partner_ref_unique](partner_ref_unique/) | 9.0.1.0.0 | Add an unique constraint to partner ref field
@@ -64,7 +65,6 @@ addon | version | summary
 [firstname_display_name_trigger](firstname_display_name_trigger/) | 1.0 (unported) | Link module if partner_lastname and account_report_company are installed
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 (unported) | Partner auto salesman
 [partner_contact_address_detailed](partner_contact_address_detailed/) | 8.0.1.0.0 (unported) | All address data in summarized contact form
-[partner_helper](partner_helper/) | 8.0.0.1.0 (unported) | Partner Helper
 [partner_street_number](partner_street_number/) | 8.0.0.1.0 (unported) | Introduces separate fields for street name and street number.
 [portal_partner_merge](portal_partner_merge/) | 8.0.1.0.0 (unported) | Portal Partner Merge
 
