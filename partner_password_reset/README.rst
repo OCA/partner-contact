@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-=====================
-Parner Password Reset
-=====================
+======================
+Partner Password Reset
+======================
 
 This module provides an action that allows users to send a password reset
 email from the Partner view.
@@ -19,6 +19,10 @@ Usage
 
 To use this module, simply select "Send password reset email" under the partner
 view.
+
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/134/9.0
 
 
 Bug Tracker

@@ -10,7 +10,7 @@
                 <header>
                     <button name="action_reset_user_password" type="object"
                             string="Send Password Reset Email"
-                            attrs="{'invisible': [('user_ids', '=', '')]}"
+                            attrs="{'invisible': [('user_ids', '=', [])]}"
                             groups="base.group_user" />
                 </header>
             </xpath>
