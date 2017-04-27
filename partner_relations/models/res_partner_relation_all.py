@@ -28,20 +28,6 @@ class ResPartnerRelationAll(models.AbstractModel):
 
     _overlays = 'res.partner.relation'
 
-    _additional_view_fields = []
-    """append to this list if you added fields to res_partner_relation that
-    you need in this model and related fields are not adequate (ie for sorting)
-    You must use the same name as in res_partner_relation.
-    Don't overwrite this list in your declaration but append in _auto_init:
-
-    def _auto_init(self, cr, context=None):
-        self._additional_view_fields.append('my_field')
-        return super(ResPartnerRelationAll, self)._auto_init(
-            cr, context=context)
-
-    my_field = fields...
-    """
-
     this_partner_id = fields.Many2one(
         comodel_name='res.partner',
         string='One Partner',
@@ -80,9 +66,23 @@ class ResPartnerRelationAll(models.AbstractModel):
         search='_search_any_partner_id'
     )
 
+    def _get_additional_view_fields(self):
+        """
+        append to this list if you added fields to res_partner_relation that
+        you need in this model and related fields are not adequate
+        (ie for sorting)
+        You must use the same name as in res_partner_relation.
+
+        def _get_additional_view_fields(self):
+            res = super(
+                ResPartnerRelationAll, self)._get_additional_view_fields()
+            return res + ['my_field1', 'my_field2']
+        """
+        return []
+
     def _auto_init(self, cr, context=None):
         drop_view_if_exists(cr, self._table)
-        additional_view_fields = ','.join(self._additional_view_fields)
+        additional_view_fields = ','.join(self._get_additional_view_fields())
         additional_view_fields = (',' + additional_view_fields)\
             if additional_view_fields else ''
         cr.execute(
