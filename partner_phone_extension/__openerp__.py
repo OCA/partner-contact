@@ -12,9 +12,13 @@
     'version': '8.0.1.0.0',
     'category': 'Customer Relationship Management',
     'summary': 'Partner Phone Number Extension',
-    'author': "Savoir-faire Linux,Odoo Community Association (OCA)",
+    'author': "Savoir-faire Linux, "
+              "Eficent, "
+              "SerpentCS, "
+              "Odoo Community Association (OCA)",
     'website': 'www.savoirfairelinux.com',
     'license': 'AGPL-3',
+    "depends": ["base"],
     'data': [
         'views/res_partner_view.xml',
     ],
