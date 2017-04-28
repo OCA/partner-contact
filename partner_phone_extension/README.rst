@@ -6,7 +6,7 @@
 Partner Phone Number Extension
 ===============================
 
-This module allows to add a phone number extension field in partner form view.
+This module adds a phone number extension field in partner form view.
 
 
 Usage
