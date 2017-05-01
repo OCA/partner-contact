@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
+# Bole <bole@dajmi5.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-28 04:19+0000\n"
-"PO-Revision-Date: 2017-01-28 04:19+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2017-04-24 00:41+0000\n"
+"PO-Revision-Date: 2017-04-24 00:41+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>, 2017\n"
 "Language-Team: Croatian (Croatia) (https://www.transifex.com/oca/teams/23907/hr_HR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,7 +66,7 @@ msgid ""
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:127
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:129
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Pogreška : %d pri pokušaju preuzimanja datoteke %s."
@@ -113,7 +114,7 @@ msgid "Letter Case"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:69
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:71
 #, python-format
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
@@ -139,4 +140,4 @@ msgstr ""
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid "geonames.org"
-msgstr ""
+msgstr "geonames.org"

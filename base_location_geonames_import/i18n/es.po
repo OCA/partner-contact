@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-28 04:19+0000\n"
-"PO-Revision-Date: 2017-01-28 04:19+0000\n"
+"POT-Creation-Date: 2017-04-24 00:41+0000\n"
+"PO-Revision-Date: 2017-04-24 00:41+0000\n"
 "Last-Translator: Pedro M. Baeza <pedro.baeza@gmail.com>, 2017\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
@@ -73,7 +73,7 @@ msgstr ""
 "país seleccionado."
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:127
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:129
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Se obtuvo un error %d cuando se descargaba el archivo %s."
@@ -121,7 +121,7 @@ msgid "Letter Case"
 msgstr "Capitalización"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:69
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:71
 #, python-format
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
