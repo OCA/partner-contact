@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-06 03:40+0000\n"
-"PO-Revision-Date: 2017-01-05 20:44+0000\n"
+"POT-Creation-Date: 2017-04-26 02:52+0000\n"
+"PO-Revision-Date: 2017-04-25 10:39+0000\n"
 "Last-Translator: Ahmet Altinisik <aaltinisik@altinkaya.com.tr>\n"
 "Language-Team: Turkish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -232,7 +232,7 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_status
 msgid "Status"
-msgstr ""
+msgstr "Durum"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_name

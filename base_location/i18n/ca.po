@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-14 05:19+0000\n"
+"POT-Creation-Date: 2017-04-26 02:52+0000\n"
 "PO-Revision-Date: 2015-12-15 11:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Catalan (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/ca/)\n"
@@ -61,7 +61,7 @@ msgstr ""
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Empreses"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_country_id
@@ -113,7 +113,7 @@ msgstr "Darrera Actualització el"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company_better_zip_id
 msgid "Location"
-msgstr ""
+msgstr "Ubicació "
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_display_name

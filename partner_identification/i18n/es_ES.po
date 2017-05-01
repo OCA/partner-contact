@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-04 04:29+0000\n"
+"POT-Creation-Date: 2017-04-26 02:52+0000\n"
 "PO-Revision-Date: 2016-03-19 05:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/es_ES/)\n"
@@ -231,7 +231,7 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_status
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_name
