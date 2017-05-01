@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-07 04:30+0000\n"
+"POT-Creation-Date: 2017-04-26 02:52+0000\n"
 "PO-Revision-Date: 2016-10-23 16:16+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Catalan (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/ca/)\n"
@@ -25,7 +25,7 @@ msgstr "Cancel·la"
 #. module: partner_financial_risk
 #: model:ir.model,name:partner_financial_risk.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Empreses"
 
 #. module: partner_financial_risk
 #: model:ir.ui.view,arch_db:partner_financial_risk.partner_risk_exceeded_wizard
@@ -55,7 +55,7 @@ msgstr ""
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_partner_id
 msgid "Customer"
-msgstr ""
+msgstr "Client "
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_account_config_settings_invoice_unpaid_margin
@@ -192,7 +192,7 @@ msgstr ""
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_origin_reference
 msgid "Object"
-msgstr ""
+msgstr "Objecte "
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_account_amount
@@ -302,7 +302,7 @@ msgstr ""
 #. module: partner_financial_risk
 #: model:ir.model,name:partner_financial_risk.model_account_config_settings
 msgid "account.config.settings"
-msgstr ""
+msgstr "account.config.settings"
 
 #. module: partner_financial_risk
 #: model:ir.model,name:partner_financial_risk.model_partner_risk_exceeded_wiz
