@@ -20,10 +20,16 @@ class ResPartner(models.Model):
     @api.multi
     @api.depends('invoice_ids.state', 'invoice_ids.returned_payment')
     def _compute_risk_payment_return(self):
+        AccountInvoice = self.env['account.invoice']
         for partner in self:
-            invoices = partner.invoice_ids.filtered(
-                lambda x: x.returned_payment and x.state == 'open')
-            partner.risk_payment_return = sum(invoices.mapped('residual'))
+            partner.risk_payment_return = AccountInvoice.read_group(
+                [('id', '=', partner.id),
+                 ('returned_payment', '=', True),
+                 ('state', '=', 'open'),
+                 ],
+                ['residual'],
+                []
+            )[0]['residual']
 
     @api.model
     def _risk_field_list(self):
