@@ -6,7 +6,7 @@
 Partner Password Reset
 ======================
 
-This module provides an action that allows users to send a password reset
+This module provides a wizard that allows users to send a password reset
 email from the Partner view.
 
 Configuration

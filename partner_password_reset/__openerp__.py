@@ -4,7 +4,7 @@
 
 {
     "name": "Partner Password Reset",
-    "summary": "Add Action to allow resetting of a Partner's associated user "
+    "summary": "Add Wizard to allow resetting of a Partner's associated user "
                "password from within the partner view.",
     "version": "9.0.1.0.0",
     "category": "Customer Relationship Management",
@@ -15,8 +15,9 @@
     "installable": True,
     'depends': [
         'auth_signup',
+        'portal',
     ],
     'data': [
-        'views/res_partner_view.xml',
+        'wizard/res_partner_password_reset_wizard_view.xml',
     ],
 }
