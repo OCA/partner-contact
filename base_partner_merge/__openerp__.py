@@ -14,4 +14,5 @@
         'views/base_partner_merge.xml',
     ],
     'installable': True,
+    'post_load': 'post_load_hook',
 }
