@@ -39,5 +39,4 @@ class ResPartnerPasswordResetWizard(models.TransientModel):
     @api.multi
     def action_submit(self):
         """ Reset the user passwords on submission """
-        for rec in self:
-            rec.user_ids.action_reset_password()
+        self.mapped('user_ids').action_reset_password()
