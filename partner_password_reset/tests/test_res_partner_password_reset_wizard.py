@@ -17,6 +17,16 @@ class TestResPartnerPasswordResetWizard(TransactionCase):
         with self.assertRaises(Warning):
             wizard.fields_view_get()
 
+    def test_fields_view_get(self):
+        """ It should return the wizard correctly """
+        partner = self.env.ref('portal.partner_demo_portal')
+        wizard = self.env['res.partner.password.reset.wizard'].with_context(
+            active_ids=partner.id
+        )
+        output = wizard.fields_view_get()
+        self.assertEquals(output.get('name'), 'Send Password Reset Email')
+        self.assertEquals(type(output.get('fields').get('user_ids')), dict)
+
     def test_action_submit(self):
         """ It should call user_ids.action_reset_password """
         self.env['res.users']._patch_method(
