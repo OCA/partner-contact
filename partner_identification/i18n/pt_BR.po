@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-03 03:23+0000\n"
-"PO-Revision-Date: 2016-12-03 03:23+0000\n"
+"POT-Creation-Date: 2017-05-01 20:43+0000\n"
+"PO-Revision-Date: 2017-05-01 20:43+0000\n"
 "Last-Translator: Albert Vonpupp <vonpupp@gmail.com>, 2016\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:70
+#: code:addons/partner_identification/models/res_partner_id_category.py:72
 #, python-format
 msgid "%s is not a valid %s identifier"
 msgstr ""
@@ -83,7 +83,7 @@ msgid "Display Name"
 msgstr "Nome a mostrar"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:66
+#: code:addons/partner_identification/models/res_partner_id_category.py:68
 #, python-format
 msgid ""
 "Error when evaluating the id_category validation code::\n"
@@ -132,7 +132,9 @@ msgid "ID type defined in configuration. For example, Driver License"
 msgstr ""
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_alias_id_numbers
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_numbers
+#: model:ir.model.fields,field_description:partner_identification.field_res_users_id_numbers
 msgid "Identification Numbers"
 msgstr "Números de identificação"
 

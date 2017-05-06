@@ -3,20 +3,15 @@
 # * partner_contact_in_several_companies
 # 
 # Translators:
-# Antonio Trueba, 2016
-# Armando Vulcano Junior <vulcano@uol.com.br>, 2015
-# Erwin van der Ploeg <erwin@odooexperts.nl>, 2016
-# Paolo Valier, 2016
-# Rudolf Schnapka <rs@techno-flex.de>, 2016
-# Rudolf Schnapka <schnapkar@golive-saar.de>, 2014
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-17 04:15+0000\n"
-"PO-Revision-Date: 2016-04-21 08:44+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/de/)\n"
+"POT-Creation-Date: 2017-05-01 20:43+0000\n"
+"PO-Revision-Date: 2017-05-01 20:43+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -67,6 +62,7 @@ msgstr "Kontaktname"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_contact_type
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_users_contact_type
 msgid "Contact type"
 msgstr "Kontakt-Art"
 
@@ -82,6 +78,7 @@ msgstr "Fax:"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_contact_id
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_users_contact_id
 msgid "Main Contact"
 msgstr "Hauptkontakt"
 
@@ -97,6 +94,7 @@ msgstr "Andere Positionen"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_other_contact_ids
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_users_other_contact_ids
 msgid "Others Positions"
 msgstr "Andere Positionen"
 
@@ -142,12 +140,19 @@ msgstr "Straße..."
 msgid ""
 "To see personal information about this contact, please\n"
 "                    go to to the this person form:"
-msgstr "Um persönliche Information dieses Kontakts zu sehen,\ngehen Sie bitte auf diese Sicht zur Person:"
+msgstr ""
+"Um persönliche Information dieses Kontakts zu sehen,\n"
+"gehen Sie bitte auf diese Sicht zur Person:"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "ZIP"
 msgstr "PLZ"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "at"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit

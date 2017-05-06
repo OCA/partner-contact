@@ -4,14 +4,13 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
-# Giuliano Lotta <giuliano.lotta@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-07 04:23+0000\n"
-"PO-Revision-Date: 2017-01-07 04:23+0000\n"
-"Last-Translator: Giuliano Lotta <giuliano.lotta@gmail.com>, 2016\n"
+"POT-Creation-Date: 2017-05-01 20:43+0000\n"
+"PO-Revision-Date: 2017-05-01 20:43+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,6 +25,7 @@ msgstr "Femmina"
 
 #. module: partner_contact_gender
 #: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner_gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_users_gender
 msgid "Gender"
 msgstr "Genere"
 

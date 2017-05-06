@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-25 01:45+0000\n"
-"PO-Revision-Date: 2017-01-25 01:45+0000\n"
+"POT-Creation-Date: 2017-05-01 20:43+0000\n"
+"PO-Revision-Date: 2017-05-01 20:43+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "MIME-Version: 1.0\n"
@@ -143,7 +143,9 @@ msgstr ""
 "Tipo di documento definito in configurazione. Per esempio, Patente di Guida"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_alias_id_numbers
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_numbers
+#: model:ir.model.fields,field_description:partner_identification.field_res_users_id_numbers
 msgid "Identification Numbers"
 msgstr "Numeri di identificazione"
 
