@@ -23,7 +23,7 @@ class ResPartner(models.Model):
         AccountInvoice = self.env['account.invoice']
         for partner in self:
             partner.risk_payment_return = AccountInvoice.read_group(
-                [('id', '=', partner.id),
+                [('partner_id', '=', partner.id),
                  ('returned_payment', '=', True),
                  ('state', '=', 'open'),
                  ],
