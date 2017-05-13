@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-31 00:05+0000\n"
+"POT-Creation-Date: 2017-05-02 12:11+0000\n"
 "PO-Revision-Date: 2015-12-15 11:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Russian (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/ru/)\n"
@@ -35,7 +35,7 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_city
 msgid "City"
-msgstr ""
+msgstr "Город"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_code
@@ -68,7 +68,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 #: model:ir.ui.view,arch_db:base_location.view_country_search
 msgid "Country"
-msgstr ""
+msgstr "Страна"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_country_state

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-31 00:05+0000\n"
+"POT-Creation-Date: 2017-05-02 12:11+0000\n"
 "PO-Revision-Date: 2016-03-11 23:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Russian (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/ru/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: partner_address_street3
 #: model:ir.model,name:partner_address_street3.model_res_country
 msgid "Country"
-msgstr ""
+msgstr "Страна"
 
 #. module: partner_address_street3
 #: model:ir.model,name:partner_address_street3.model_res_partner
