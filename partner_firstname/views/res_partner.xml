@@ -43,7 +43,7 @@
                 }</attribute>
             </xpath>
 
-            <xpath expr="//h1//field[@name='name']/.." position="after">
+            <xpath expr="//field[@name='parent_id']/.." position="after">
                 <div class="oe_edit_only">
                   <group attrs="{'invisible': [('is_company', '=', True)]}">
                       <field name="lastname" attrs=
