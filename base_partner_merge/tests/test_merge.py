@@ -33,32 +33,38 @@ class PartnerMergeTestCase(TransactionCase):
                 field2: value2,
             })
 
-    def test_10_all_functionality(self):
-        """ All functionality """
-
-        # Create users with duplicate names
+    def test_10_name_merge(self):
+        """ Merge users with duplicate names """
         self._unlink_all()
-        self._create_duplicates('name', 'Donald Duck', 'email',
-                                ['donald@therp.nl', 'donald@sunflowerweb.nl'])
-        self._create_duplicates('name', 'Mickey Mouse', 'email',
-                                ['mickey@therp.nl', 'mickey@sunflowerweb.nl'])
-        # Test if there are two Donald Ducks and Mickey Mouses
+        self._create_duplicates('name', 'Donald Duck',
+            'email', ['donald@therp.nl', 'donald@sunflowerweb.nl'])
+        self._create_duplicates('name', 'Mickey Mouse',
+            'email', ['mickey@therp.nl', 'mickey@sunflowerweb.nl'])
         self._count_donalds_mickeys(2, 2)
-
         # Merge all names that start with 'D',
-        self.partner.deduplicate_on_field('name',
-                                          domain=[('name', 'like', 'D%')])
-        # Test if there is one Donald but still two Mickeys
+        self.partner.deduplicate_on_fields(['name'],
+            domain=[('name', 'like', 'D%')])
         self._count_donalds_mickeys(1, 2)
 
-        # Create users with duplicate references
+    def test_20_ref_merge(self):
+        """ Merge users with duplicate references """
         self._unlink_all()
         self._create_duplicates('ref', 'DD123',
-                                'name', ['Donald Duck', 'Mickey Mouse'])
-
+            'name', ['Donald Duck', 'Mickey Mouse'])
         # Merge on reference, leaving out guys that have no ref
-        self.partner.deduplicate_on_field('ref',
-                                          domain=[('ref', '!=', False)])
+        self.partner.deduplicate_on_fields(['ref'],
+            domain=[('ref', '!=', False)])
         # Test if only one remains after
-        self.assertEquals(len(self.partner.search([
-            ('ref', '=', 'DD123')])), 1)
+        partners = self.partner.search([('ref', '=', 'DD123')])
+        self.assertEquals(len(partners), 1)
+
+    def test_30_ref_merge(self):
+        """ Fringe case: three guys, two to merge """
+        self._unlink_all()
+        self._create_duplicates('ref', 'DD123',
+            'name', ['Donald Duck', 'Donald Duck', 'Mickey Mouse'])
+        self.partner.deduplicate_on_fields(['ref'],
+            domain=[('name', '=', 'Donald Duck')])
+        self._count_donalds_mickeys(1, 1)
+
+
