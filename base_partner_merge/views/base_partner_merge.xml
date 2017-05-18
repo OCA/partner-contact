@@ -79,6 +79,7 @@
                             <field name='group_by_is_company' />
                             <field name='group_by_vat' />
                             <field name='group_by_parent_id' />
+                            <field name='group_by_ref' />
                         </group>
                         <group string="Exclude contacts having"
                             attrs="{'invisible': [('state', 'not in', ('option',))]}">

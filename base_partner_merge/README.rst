@@ -2,20 +2,38 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-============================
-Deduplicate contact (No CRM)
-============================
+========================
+Deduplicate contacts OCA
+========================
 
-This module installs the deduplicate wizard from CRM without the dependency on CRM.
+This module installs the deduplicate wizard from Odoo CRM, but without the
+dependency on the CRM module and with some extra features.
 
-If you have CRM installed you don't need this module.
+The extra features are:
 
+- Can be installed with or without the CRM module
+- Deduplicate also on `ref` (partner reference)
+- To deduplicate only a subset of partners (eg. one category), the context
+  variable `extra_domain` may contain a domain string to search on before
+  deduplicating. (TODO: offer this in the wizard)
+- A function `deduplicate_on_field(self, field, domain=[]):` is added to the
+  `res.partner` object. It takes the field to deduplicate on as a parameter,
+  as well as the domain mentioned above. It can be called from `ir.cron`
+  Automated Actions.
 
 Installation
 ============
 
-To install this module, you need to have crm module present (but not installed).
-This is because we reuse the existing wizard without installing CRM.
+To install this module, you need to have `crm` module present on the system.
+This is because we reuse the existing code from Odoo CRM.
+
+
+Known issues
+============
+
+If this module is installed, `crm` module installation gives an error.
+Workaround for this is to remove this module, install `crm`, then install
+this module again.
 
 
 Bug Tracker
@@ -34,6 +52,7 @@ Contributors
 ------------
 
 * Charbel Jacquin <charbel.jacquin@camptocamp.com>
+* Holger Brunn <hbrunn@therp.nl>
 * Tom Blauwendraat <tom@sunflowerweb.nl>
 * Terrence Nzaywa  <terrence@sunflowerweb.nl>
 
@@ -41,8 +60,9 @@ Author
 ------
 
 Yannick Vaucher
-Based on Holger Brunn's idea.
-Backport to 8.0 by Tom Blauwendraat and Terrence Nzaywa
+Based on Holger Brunn's idea
+Backported to 8.0 by Tom Blauwendraat and Terrence Nzaywa
+Features added by Tom Blauwendraat
 
 Maintainer
 ----------

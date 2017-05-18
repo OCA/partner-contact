@@ -2,8 +2,8 @@
 # © 2017 Sunflower IT <http://sunflowerweb.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-import os
 from openerp.tests.common import TransactionCase
+
 
 class PartnerMergeTestCase(TransactionCase):
     """Tests for Partner Merge"""
@@ -13,40 +13,52 @@ class PartnerMergeTestCase(TransactionCase):
         self.partner = self.env['res.partner']
         self.merge_wizard = \
             self.env['base.partner.merge.automatic.wizard']
+        self.donald_domain = [('name', '=', 'Donald Duck')]
+        self.mickey_domain = [('name', '=', 'Mickey Mouse')]
+
+    def _unlink_all(self):
+        self.partner.search(self.donald_domain).unlink()
+        self.partner.search(self.mickey_domain).unlink()
+
+    def _count_donalds_mickeys(self, donalds, mickeys):
+        self.assertEquals(
+            len(self.partner.search(self.donald_domain)), donalds)
+        self.assertEquals(
+            len(self.partner.search(self.mickey_domain)), mickeys)
+
+    def _create_duplicates(self, field1, value1, field2, values2):
+        for value2 in values2:
+            self.partner.create({
+                field1: value1,
+                field2: value2,
+            })
 
     def test_10_all_functionality(self):
-        # Delete all Donald Ducks
-        donald_domain = [('name', '=', 'Donald Duck')]
-        self.partner.search(donald_domain).unlink()
+        """ All functionality """
 
-        # Create two partners called Donald Duck
-        partner_donald = self.partner.create({
-            'name': 'Donald Duck',
-            'email': 'donald@sunflowerweb.nl',
-        })
-        partner_donald2 = self.partner.create({
-            'name': 'Donald Duck',
-            'email': 'donald@therp.nl',
-        })
+        # Create users with duplicate names
+        self._unlink_all()
+        self._create_duplicates('name', 'Donald Duck', 'email',
+                                ['donald@therp.nl', 'donald@sunflowerweb.nl'])
+        self._create_duplicates('name', 'Mickey Mouse', 'email',
+                                ['mickey@therp.nl', 'mickey@sunflowerweb.nl'])
+        # Test if there are two Donald Ducks and Mickey Mouses
+        self._count_donalds_mickeys(2, 2)
 
-        # Test if there are two Donald Ducks
-        donalds = self.partner.search(donald_domain)
-        self.assertEquals(len(donalds), 2)
+        # Merge all names that start with 'D',
+        self.partner.deduplicate_on_field('name',
+                                          domain=[('name', 'like', 'D%')])
+        # Test if there is one Donald but still two Mickeys
+        self._count_donalds_mickeys(1, 2)
 
-        # Merge them,
-        wizard_id = self.merge_wizard.create({
-            'group_by_name': True,
-            'state': "option"
-        })
-        wizard_id.automatic_process_cb()
+        # Create users with duplicate references
+        self._unlink_all()
+        self._create_duplicates('ref', 'DD123',
+                                'name', ['Donald Duck', 'Mickey Mouse'])
 
-        # Test if there is now one Donald Duck
-        donalds = self.partner.search(donald_domain)
-        self.assertEquals(len(donalds), 1)
-
-        # Delete all Donald Ducks
-        self.partner.search(donald_domain).unlink()
-
-
-
-
+        # Merge on reference, leaving out guys that have no ref
+        self.partner.deduplicate_on_field('ref',
+                                          domain=[('ref', '!=', False)])
+        # Test if only one remains after
+        self.assertEquals(len(self.partner.search([
+            ('ref', '=', 'DD123')])), 1)

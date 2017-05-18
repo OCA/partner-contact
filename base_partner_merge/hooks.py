@@ -6,7 +6,8 @@ from openerp.models import MetaModel
 
 
 def post_load_hook():
-    """We try to be smart here: If the crm module is to be loaded too
+    """
+    We try to be smart here: If the crm module is to be loaded too
     (or is already loaded), we remove our own models again in order not to
     clash with the CRM ones: https://github.com/OCA/partner-contact/issues/283
     """
@@ -15,6 +16,7 @@ def post_load_hook():
         if 'graph' in frame.f_locals:
             graph = frame.f_locals['graph']
             package = frame.f_locals['package']
+            package.data['data'].remove('views/base_partner_merge.xml')
             if any(p.name == 'crm' for p in graph):
                 # so crm is installed, then we need to remove your model
                 # from the list of models to be registered
@@ -22,5 +24,7 @@ def post_load_hook():
                 # to be ditched (if crm is in their mro)
                 MetaModel.module_to_models['base_partner_merge'] = []
                 # and in this case, we also don't want to load our xml files
+            else:
+                # if crm is not installed, we
                 package.data['data'].remove('views/base_partner_merge.xml')
             break
