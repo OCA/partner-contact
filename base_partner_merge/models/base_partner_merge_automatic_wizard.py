@@ -17,13 +17,14 @@ class MergePartnerAutomatic(models.TransientModel):
         ret = super(MergePartnerAutomatic, self)._process_query(query)
 
         # If 'extra_domain', deduplicate only the records matching the domain
-        extra_domain = self.env.context.get('extra_domain', [])
+        extra_domain = self.env.context.get('partner_merge_domain', [])
         if extra_domain:
             for line in self.line_ids:
-                aggr_ids = literal_eval(line.aggr_ids)
-                domain = [('id', 'in', aggr_ids)]
+                domain = [('id', 'in', literal_eval(line.aggr_ids))]
                 domain.extend(extra_domain)
-                records = self.env['res.partner'].search(domain)
-                if len(records) < len(aggr_ids):
+                aggr_ids = self.env['res.partner'].search(domain).ids
+                if len(aggr_ids) > 1:
+                    line.aggr_ids = str(aggr_ids)
+                else:
                     line.unlink()
         return ret
