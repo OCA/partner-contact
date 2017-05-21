@@ -15,5 +15,17 @@
   </field>
 </record>
 
+<record id="res_partner_view_search" model="ir.ui.view">
+    <field name="name">res.partner.view.search</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_res_partner_filter"/>
+    <field name="arch" type="xml">
+        <filter string="Suppliers" position="after">
+            <separator/>
+            <filter string="This month birthdates" name="this_month_birthdates" domain="[('birthdate_month','=', context_today().strftime('%%m'))]"/>
+        </filter>
+    </field>
+</record>
+
 </data>
 </openerp>

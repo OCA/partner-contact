@@ -16,6 +16,8 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+from datetime import datetime
+
 from openerp import _, api, fields, models
 import logging
 
@@ -29,6 +31,10 @@ class Partner(models.Model):
 
     # New birthdate field in date format
     birthdate_date = fields.Date("Birthdate")
+    birthdate_month = fields.Char(
+        'Birthdate month', compute='_birthdate_compute', store=True,
+        help='Helper field to get current month birthdate partners',
+    )
 
     # Make the old Char field to reflect the new Date field
     birthdate = fields.Char(
@@ -41,6 +47,10 @@ class Partner(models.Model):
     def _birthdate_compute(self):
         """Store a string of the new date in the old field."""
         self.birthdate = self.birthdate_date
+        if self.birthdate_date:
+            self.birthdate_month = datetime.strptime(
+                self.birthdate_date, '%Y-%m-%d',
+            ).strftime('%m')
 
     @api.one
     def _birthdate_inverse(self):
