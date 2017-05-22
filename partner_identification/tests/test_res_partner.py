@@ -2,11 +2,57 @@
 # Copyright 2017 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from odoo import fields, models
 from odoo.tests import common
 from odoo.exceptions import ValidationError
 
 
-class TestResPartner(common.TransactionCase):
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    social_security = fields.Char(
+        compute=lambda s: s._compute_identification(
+            'social_security', 'SSN',
+        ),
+        inverse=lambda s: s._inverse_identification(
+            'social_security', 'SSN',
+        ),
+        search=lambda s, *a: s._search_identification(
+            'social_security', 'SSN', *a
+        ),
+    )
+
+
+class TestResPartner(common.SavepointCase):
+
+    @classmethod
+    def _init_test_model(cls, model_cls):
+        """ Build a model from model_cls in order to test abstract models.
+        Note that this does not actually create a table in the database, so
+        there may be some unidentified edge cases.
+        Args:
+            model_cls (openerp.models.BaseModel): Class of model to initialize
+        Returns:
+            model_cls: Instance
+        """
+        registry = cls.env.registry
+        cr = cls.env.cr
+        inst = model_cls._build_model(registry, cr)
+        model = cls.env[model_cls._inherit].with_context(todo=[])
+        model._prepare_setup()
+        model._setup_base(partial=False)
+        model._setup_fields(partial=False)
+        model._setup_complete()
+        model._auto_init()
+        model.init()
+        model._auto_end()
+        return inst
+
+    @classmethod
+    def setUpClass(cls):
+        super(TestResPartner, cls).setUpClass()
+        cls.env.registry.enter_test_mode()
+        cls._init_test_model(ResPartner)
 
     def setUp(self):
         super(TestResPartner, self).setUp()
@@ -70,3 +116,11 @@ class TestResPartner(common.TransactionCase):
         })
         with self.assertRaises(ValidationError):
             self.partner._inverse_identification('name', 'id_code')
+
+    def test_search_identification(self):
+        """ It should return the right record when searched by ID. """
+        self.partner.social_security = 'Test'
+        partner = self.env['res.partner'].search([
+            ('social_security', '=', 'Test'),
+        ])
+        self.assertEqual(partner, self.partner)

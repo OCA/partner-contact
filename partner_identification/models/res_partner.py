@@ -36,13 +36,15 @@ class ResPartner(models.Model):
 
             .. code-block:: python
 
-            social_security_id = fields.Char(
-                string='Social Security',
+            social_security = fields.Char(
                 compute=lambda s: s._compute_identification(
-                    'social_security_id', 'SSN',
+                    'social_security', 'SSN',
                 ),
                 inverse=lambda s: s._inverse_identification(
-                    'social_security_id', 'SSN',
+                    'social_security', 'SSN',
+                ),
+                search=lambda s, *a: s._search_identification(
+                    'social_security', 'SSN', *a
                 ),
             )
 
@@ -76,13 +78,15 @@ class ResPartner(models.Model):
 
             .. code-block:: python
 
-            social_security_id = fields.Char(
-                string='Social Security',
+            social_security = fields.Char(
                 compute=lambda s: s._compute_identification(
-                    'social_security_id', 'SSN',
+                    'social_security', 'SSN',
                 ),
                 inverse=lambda s: s._inverse_identification(
-                    'social_security_id', 'SSN',
+                    'social_security', 'SSN',
+                ),
+                search=lambda s, *a: s._search_identification(
+                    'social_security', 'SSN', *a
                 ),
             )
 
@@ -130,3 +134,37 @@ class ResPartner(models.Model):
                 ) % (
                     record._name, category_code, field_name,
                 ))
+
+    @api.model
+    def _search_identification(self, field_name, category_code,
+                               operator, value):
+        """ Search method for an identification field.
+
+        Example:
+
+            .. code-block:: python
+
+            social_security = fields.Char(
+                compute=lambda s: s._compute_identification(
+                    'social_security', 'SSN',
+                ),
+                inverse=lambda s: s._inverse_identification(
+                    'social_security', 'SSN',
+                ),
+                search=lambda s, *a: s._search_identification(
+                    'social_security', 'SSN', *a
+                ),
+            )
+
+        Args:
+            field_name (str): Name of field to set.
+            category_code (str): Category code of the Identification type.
+
+        Returns:
+            list: Domain to search with.
+        """
+
+        return [
+            (field_name, operator, value),
+            ('category_id.code', '=', category_code),
+        ]
