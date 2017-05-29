@@ -6,7 +6,7 @@
 # Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (8.0)\n"
+"Project-Id-Version: partner-contact (10.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-07 07:18+0000\n"
 "PO-Revision-Date: 2016-05-07 07:15+0000\n"
