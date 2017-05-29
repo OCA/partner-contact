@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-<data>
+<odoo>
 
 <record id="res_partner_job_position_action" model="ir.actions.act_window">
     <field name="name">Job Positions</field>
@@ -36,7 +35,6 @@
 
 <menuitem action="res_partner_job_position_action"
           id="menu_res_partner_job_position"
-          parent="base.menu_config_address_book"/>
+          parent="sales_team.menu_config_address_book"/>
 
-</data>
-</openerp>
+</odoo>

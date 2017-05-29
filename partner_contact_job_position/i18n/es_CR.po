@@ -11,11 +11,11 @@ msgstr ""
 "POT-Creation-Date: 2017-08-17 02:52+0000\n"
 "PO-Revision-Date: 2017-08-17 02:52+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
+"Language-Team: Spanish (Costa Rica) (https://www.transifex.com/oca/teams/23907/es_CR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
+"Language: es_CR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_contact_job_position
@@ -23,7 +23,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_id
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_users_job_position_id
 msgid "Categorized job position"
-msgstr "Puesto de trabajo categorizado"
+msgstr ""
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_child_ids
@@ -43,7 +43,7 @@ msgstr "Creado en"
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr ""
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_id_4639
@@ -54,34 +54,34 @@ msgstr "ID"
 #: model:ir.actions.act_window,name:partner_contact_job_position.res_partner_job_position_action
 #: model:ir.ui.menu,name:partner_contact_job_position.menu_res_partner_job_position
 msgid "Job Positions"
-msgstr "Puestos de trabajo"
+msgstr ""
 
 #. module: partner_contact_job_position
 #: model:ir.model,name:partner_contact_job_position.model_res_partner_job_position
 #: model:ir.ui.view,arch_db:partner_contact_job_position.view_res_partner_filter_job_position
 msgid "Job position"
-msgstr "Puesto de trabajo"
+msgstr ""
 
 #. module: partner_contact_job_position
 #: model:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_form_view
 #: model:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_tree_view
 msgid "Job positions"
-msgstr "Puestos de trabajo"
+msgstr ""
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position___last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr ""
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Ultima actualización por"
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "Ultima actualización en"
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_name
@@ -91,17 +91,17 @@ msgstr "Nombre"
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_parent_id
 msgid "Parent"
-msgstr "Padre"
+msgstr ""
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_parent_left
 msgid "Parent left"
-msgstr "Padre izquierdo"
+msgstr ""
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_parent_right
 msgid "Parent right"
-msgstr "Padre derecho"
+msgstr ""
 
 #. module: partner_contact_job_position
 #: model:ir.model,name:partner_contact_job_position.model_res_partner
