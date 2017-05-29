@@ -30,18 +30,21 @@ class ResPartner(models.Model):
 
     _inherit = 'res.partner'
 
+    @api.multi
+    def _get_next_ref(self, vals=None):
+        return self.env['ir.sequence'].next_by_code('res.partner')
+
     @api.model
     def create(self, vals):
         if not vals.get('ref') and self._needsRef(vals=vals):
-            vals['ref'] = self.env['ir.sequence'].next_by_code('res.partner')
+            vals['ref'] = self._get_next_ref(vals=vals)
         return super(ResPartner, self).create(vals)
 
     @api.multi
     def copy(self, default=None):
         default = default or {}
         if self._needsRef():
-            default['ref'] = self.env['ir.sequence'].\
-                next_by_code('res.partner')
+            default['ref'] = self._get_next_ref()
         return super(ResPartner, self).copy(default)
 
     @api.multi
@@ -49,8 +52,7 @@ class ResPartner(models.Model):
         for partner in self:
             if not vals.get('ref') and partner._needsRef(vals) and \
                not partner.ref:
-                vals['ref'] = self.env['ir.sequence'].\
-                    next_by_code('res.partner')
+                vals['ref'] = self._get_next_ref(vals=vals)
 
             super(ResPartner, partner).write(vals)
         return True
