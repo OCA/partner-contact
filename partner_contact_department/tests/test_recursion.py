@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # © 2016 Tecnativa - Vicent Cubells
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0).
-from openerp.tests import common
-from openerp.exceptions import ValidationError
+from odoo.tests import common
+from odoo.exceptions import ValidationError
 
 
 class TestRecursion(common.SavepointCase):
