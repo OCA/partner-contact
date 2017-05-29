@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-<data>
+<odoo>
 
 <record id="employees_range_action" model="ir.actions.act_window">
     <field name="name">Ranges by quantity of employees</field>
@@ -21,7 +20,6 @@
 
 <menuitem action="employees_range_action"
           id="menu_employees_range"
-          parent="base.menu_config_address_book"/>
+          parent="sales_team.menu_config_address_book"/>
 
-</data>
-</openerp>
+</odoo>
