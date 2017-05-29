@@ -79,7 +79,7 @@ class ResPartner(models.Model):
                         x['partner_id'][0] in partner_ids])
         customers = self.filtered('customer')
         if not customers:
-            return
+            return  # pragma: no cover
         max_date = self._max_risk_date_due()
         AccountInvoice = self.env['account.invoice']
         partners = customers | customers.mapped('child_ids')
