@@ -14,7 +14,7 @@ Configuration
 
 To manage available ranges, you need to:
 
-* Go to *Sales > Configuration > Address Book > Ranges by quantity of employees*.
+* Go to *Sales > Configuration > Contacts > Ranges by quantity of employees*.
 
 Usage
 =====
@@ -27,7 +27,7 @@ To use this module, you need to:
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/8.0
+   :target: https://runbot.odoo-community.org/runbot/134/10.0
 
 Bug Tracker
 ===========
@@ -44,17 +44,13 @@ partner_employee_quantity%0Aversion:%20
 Credits
 =======
 
-Images
-------
-
-* `Antiun Ingeniería S.L. <http://www.antiun.com>`_: Icon.
-
 Contributors
 ------------
 
-* Antonio Espinosa <antonioea@antiun.com>
-* Rafael Blasco <rafabn@antiun.com>
-* Jairo Llopis <yajo.sk8@gmail.com>
+* Antonio Espinosa <antonio.espinosa@tecnativa.com>
+* Rafael Blasco <rafael.blasco@tecnativa.com>
+* Jairo Llopis <jairo.llopis@tecnativa.com>
+* David Vidal <david.vidal@tecnativa.com>
 
 Maintainer
 ----------
