@@ -3,8 +3,8 @@
 # © 2016 Tecnativa S.L. - Vicent Cubells
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, _
-from openerp.exceptions import ValidationError
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 
 class ResPartner(models.Model):
@@ -31,8 +31,7 @@ class ResPartnerDepartment(models.Model):
     child_ids = fields.One2many(
         "res.partner.department",
         "parent_id",
-        "Child departments",
-        oldname="children")
+        "Child departments")
     parent_left = fields.Integer(index=True)
     parent_right = fields.Integer(index=True)
 
