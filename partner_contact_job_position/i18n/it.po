@@ -6,7 +6,7 @@
 # Paolo Valier, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (8.0)\n"
+"Project-Id-Version: partner-contact (10.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-13 00:57+0000\n"
 "PO-Revision-Date: 2016-03-13 17:22+0000\n"

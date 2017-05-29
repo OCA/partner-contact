@@ -28,7 +28,7 @@ To use this module, you need to:
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/8.0
+   :target: https://runbot.odoo-community.org/runbot/134/10.0
 
 Bug Tracker
 ===========
@@ -40,23 +40,19 @@ help us smashing it by providing a detailed and welcomed `feedback
 <https://github.com/OCA/
 partner-contact/issues/new?body=module:%20
 {module_name}%0Aversion:%20
-8.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+10.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Credits
 =======
 
-Images
-------
-
-* `Antiun Ingeniería S.L. <http://www.antiun.com>`_: Icon.
-
 Contributors
 ------------
 
-* Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
+* Pedro M. Baeza <pedro.baeza@tecnativa.com>
 * Antonio Espinosa <antonioea@antiun.com>
-* Rafael Blasco <rafabn@antiun.com>
+* Rafael Blasco <rafael.blasco@tecnativa.com>
 * Jairo Llopis <yajo.sk8@gmail.com>
+* David Vidal <david.vidal@tecnativa.com>
 
 Maintainer
 ----------
