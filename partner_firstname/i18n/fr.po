@@ -42,7 +42,7 @@ msgstr "Nom de famille"
 #: code:addons/partner_firstname/exceptions.py:23
 #, python-format
 msgid "No name is set."
-msgstr "Pas de nom défini"
+msgstr "Pas de nom défini."
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
