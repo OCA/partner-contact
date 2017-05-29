@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
-#    Copyright (c) 2014 Serv. Tecnol. Avanzados (http://www.serviciosbaeza.com)
-#                       Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
-#    Copyright (c) 2015 Antiun Ingeniería S.L. (http://www.antiun.com)
-#                       Antonio Espinosa <antonioea@antiun.com>
-# © 2015 Antiun Ingeniería S.L. - Jairo Llopis
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2014 Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2015 Antonio Espinosa <antonioea@antiun.com>
+# Copyright 2015 Jairo Llopis <jairo.llopis@tecnativa.com>
+# License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
-from openerp import models, fields
+from odoo import models, fields
 
 
 class ResPartner(models.Model):
@@ -14,8 +12,7 @@ class ResPartner(models.Model):
 
     job_position_id = fields.Many2one(
         "res.partner.job_position",
-        "Categorized job position",
-        oldname="job_position")
+        "Categorized job position",)
 
 
 class ResPartnerJobPosition(models.Model):
