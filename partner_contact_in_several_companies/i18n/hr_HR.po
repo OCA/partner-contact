@@ -1,0 +1,175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_in_several_companies
+# 
+# Translators:
+# Bole <bole@dajmi5.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (9.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-28 11:23+0000\n"
+"PO-Revision-Date: 2016-06-14 10:50+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>\n"
+"Language-Team: Croatian (Croatia) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/hr_HR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: hr_HR\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Address"
+msgstr "Adresa"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.actions.act_window,name:partner_contact_in_several_companies.action_partner_form
+msgid "All Customers in All Positions"
+msgstr "Svi kupci na svim pozicijama"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
+msgid "All partner positions"
+msgstr "Sve pozicije partnera"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
+msgid "All positions"
+msgstr "Sve pozicije"
+
+#. module: partner_contact_in_several_companies
+#: code:addons/partner_contact_in_several_companies/models/res_partner.py:13
+#: selection:res.partner,contact_type:0
+#, python-format
+msgid "Attached to existing Contact"
+msgstr "Pridruženo postojećem kontaktu"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "City"
+msgstr "Grad"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Contact Name"
+msgstr "Naziv kontakta"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_contact_type
+msgid "Contact type"
+msgstr "Vrsta kontakta"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Country"
+msgstr "Država"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Fax:"
+msgstr "Fax:"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_contact_id
+msgid "Main Contact"
+msgstr "Glavni kontakt"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Mobile:"
+msgstr "Mobitel:"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Other Positions"
+msgstr "Ostale pozicije"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_other_contact_ids
+msgid "Others Positions"
+msgstr "Ostale pozicije"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model,name:partner_contact_in_several_companies.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
+msgid "Person"
+msgstr "Osoba"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Phone:"
+msgstr "Telefon:"
+
+#. module: partner_contact_in_several_companies
+#: code:addons/partner_contact_in_several_companies/models/res_partner.py:12
+#: selection:res.partner,contact_type:0
+#, python-format
+msgid "Standalone Contact"
+msgstr "Samostalni kontakt"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "State"
+msgstr "Oblast/Županija"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Street 2..."
+msgstr "Ulica 2..."
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Street..."
+msgstr "Ulica..."
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.personal_contact_information
+msgid ""
+"To see personal information about this contact, please\n"
+"                    go to to the this person form:"
+msgstr "Da bi vidjeli sve informacije o ovom kontaktu, molimo\npogledajte ih na formi ove osobe:"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "ZIP"
+msgstr "ZIP"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "e.g. Mr."
+msgstr "npr. Gdin."
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "e.g. Sales Director"
+msgstr "npr. Direktor prodaje"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "internal note..."
+msgstr "interna bilješka ..."
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model,name:partner_contact_in_several_companies.model_ir_actions_act_window
+msgid "ir.actions.act_window"
+msgstr "ir.actions.act_window"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_kanban_contact
+msgid "other position"
+msgstr "druga pozicija"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_kanban_contact
+msgid "other positions"
+msgstr "ostale pozicije"

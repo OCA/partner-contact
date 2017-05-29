@@ -18,9 +18,10 @@
     'installable': True,
     'auto_install': False,
     "depends": [
-        "base",
+        "partner_contact_personal_information_page",
     ],
     "data": [
         "views/res_partner.xml",
     ],
+    'post_init_hook': 'post_init_hook',
 }

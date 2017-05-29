@@ -1,0 +1,307 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_partner_merge
+# 
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2016
+# Rudolf Schnapka <rs@techno-flex.de>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-25 04:48+0000\n"
+"PO-Revision-Date: 2017-02-25 04:48+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>, 2017\n"
+"Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_exclude_contact
+msgid "A user associated to the contact"
+msgstr "Ein dem Kontakt zugeordneter Anwender"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Are you sure to execute the automatic merge of your contacts ?"
+msgstr ""
+"Sind Sie sicher, dass Sie die Kontakte automatisch zusammenführen möchten?"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid ""
+"Are you sure to execute the list of automatic merges of your contacts ?"
+msgstr ""
+"Sind Sie sicher, dass Sie Liste der Kontakte-Zusammenführungen ausführen "
+"möchten?"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Automatic Merge Wizard"
+msgstr "Automatische Zusammenführung"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Cancel"
+msgstr "abbrechen"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Close"
+msgstr "Schließen"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_partner_ids
+msgid "Contacts"
+msgstr "Kontakte"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_create_uid
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_create_date
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_create_date
+msgid "Created on"
+msgstr "Angelegt am"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_current_line_id
+msgid "Current Line"
+msgstr "Aktuelle Zeile"
+
+#. module: base_partner_merge
+#: model:ir.actions.act_window,name:base_partner_merge.action_partner_deduplicate
+msgid "Deduplicate Contacts"
+msgstr "Doppelte Kontakte"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Deduplicate the other Contacts"
+msgstr "Deduplizieren der anderen Kontakte"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_dst_partner_id
+msgid "Destination Contact"
+msgstr "Zielkontakt"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_display_name
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_email
+msgid "Email"
+msgstr "Email"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Exclude contacts having"
+msgstr "Ausschliessen von Kontaken mit"
+
+#. module: base_partner_merge
+#: selection:base.partner.merge.automatic.wizard,state:0
+msgid "Finished"
+msgstr "Abgeschlossen"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_number_group
+msgid "Group of Contacts"
+msgstr "Gruppe von Kontakten"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_id
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_aggr_ids
+msgid "Ids"
+msgstr "IDs"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_is_company
+msgid "Is Company"
+msgstr "Ist Unternehmen"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_exclude_journal_item
+msgid "Journal Items associated to the contact"
+msgstr "Journalposten mit Bezug auf Kontakt"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard___last_update
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line___last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_write_uid
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_write_uid
+msgid "Last Updated by"
+msgstr "zuletzt aktualisiert von"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_write_date
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_write_date
+msgid "Last Updated on"
+msgstr "zuletzt aktualisiert am"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_line_ids
+msgid "Lines"
+msgstr "Positionen"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_maximum_group
+msgid "Maximum of Group of Contacts"
+msgstr "Maximum der Kontaktgruppe"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge Automatically"
+msgstr "Automatisch zusammenführen"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge Automatically all process"
+msgstr "Automatisch alle zusammenführen"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge Contacts"
+msgstr "Kontakte zusammenführen"
+
+#. module: base_partner_merge
+#: model:ir.actions.act_window,name:base_partner_merge.action_partner_merge
+msgid "Merge Selected Contacts"
+msgstr "Ausgewählte Kontakte zusammenführen"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge the following contacts"
+msgstr "Die folgenden Kontakte zusammenführen"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Merge with Manual Check"
+msgstr "Zusammenführen nach manueller Prüfung"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_min_id
+msgid "MinID"
+msgstr "MinID"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_name
+msgid "Name"
+msgstr "Bezeichnung"
+
+#. module: base_partner_merge
+#: selection:base.partner.merge.automatic.wizard,state:0
+msgid "Option"
+msgstr "Option"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Options"
+msgstr "Optionen"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_parent_id
+msgid "Parent Company"
+msgstr "Mutterunternehmen"
+
+#. module: base_partner_merge
+#: model:ir.model,name:base_partner_merge.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Partners"
+msgstr "Partner"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Search duplicates based on duplicated data in"
+msgstr "Suche Duplikate basierend auf duplizierten Daten in"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid ""
+"Select the list of fields used to search for\n"
+"                            duplicated records. If you select several fields,\n"
+"                            Odoo will propose you to merge only those having\n"
+"                            all these fields in common. (not one of the fields)."
+msgstr ""
+"Wählen Sie die Liste der zu vergleichenden Felder bei der Dupblettensuche. "
+"Wenn Sie mehrere Felder auswählen, wird Odoo Ihnen nur die anbieten, die "
+"alle Felder gemeinsam haben (nicht einzelne Übereinstimmungen)"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid ""
+"Selected contacts will be merged together.\n"
+"                                All documents linked to one of these contacts\n"
+"                                will be redirected to the destination contact.\n"
+"                                You can remove contacts from this list to avoid merging them."
+msgstr ""
+"Die ausgewählten Kontakte werden zusammengeführt. Alle Dokumente, die auf "
+"diese Kontakte verweisen, werden auf den zusammengeführten Kontakt umgelegt."
+" Sie können Kontakte aus der Liste entfernen, um die Zusammenführung für "
+"diese zu unterbinden."
+
+#. module: base_partner_merge
+#: selection:base.partner.merge.automatic.wizard,state:0
+msgid "Selection"
+msgstr "Auswahl"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "Skip these contacts"
+msgstr "Überspringe diese Kontakte"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_state
+msgid "State"
+msgstr "Bundesland"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "There is no more contacts to merge for this request..."
+msgstr ""
+"Es gibt keine weiteren zusammenzuführende Kontakte zu dieser Anforderung..."
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_vat
+msgid "VAT"
+msgstr "USt-ID"
+
+#. module: base_partner_merge
+#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_wizard_id
+msgid "Wizard"
+msgstr "Assistent"
+
+#. module: base_partner_merge
+#: model:ir.model,name:base_partner_merge.model_base_partner_merge_automatic_wizard
+msgid "base.partner.merge.automatic.wizard"
+msgstr "base.partner.merge.automatic.wizard"
+
+#. module: base_partner_merge
+#: model:ir.model,name:base_partner_merge.model_base_partner_merge_line
+msgid "base.partner.merge.line"
+msgstr "base.partner.merge.line"
+
+#. module: base_partner_merge
+#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
+msgid "or"
+msgstr "oder"
