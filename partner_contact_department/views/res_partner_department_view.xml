@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  © 2014-2015 Tecnativa S.L. - Jairo Llopis
-      © 2016 Tecnativa S.L. - Vicent Cubells
-      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
 
 <odoo>
 
@@ -39,6 +36,6 @@
 
     <menuitem action="res_partner_department_action"
               id="menu_res_partner_department"
-              parent="base.menu_config_address_book"/>
+              parent="sales_team.menu_config_address_book"/>
 
 </odoo>
