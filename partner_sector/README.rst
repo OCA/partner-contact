@@ -14,7 +14,7 @@ Configuration
 
 To manage sectors, you need to:
 
-* Go to *Sales > Configuration > Address Book > Sectors*.
+* Go to *Sales > Configuration > Sectors*.
 
 
 Usage
@@ -29,7 +29,7 @@ Only companies have sectors.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/9.0
+   :target: https://runbot.odoo-community.org/runbot/134/10.0
 
 Known issues / Roadmap
 ======================
@@ -55,6 +55,7 @@ Contributors
 * Javier Iniesta <javieria@antiun.com>
 * Vicent Cubells <vicent.cubells@tecnativa.com>
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
+* Luis M. Ontalba <luis.martinez@tecnativa.com>
 
 Maintainer
 ----------

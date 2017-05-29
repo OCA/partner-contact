@@ -4,7 +4,7 @@
 # © 2016 Tecnativa S.L. - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import _, api, fields, exceptions, models
+from odoo import _, api, fields, exceptions, models
 
 
 class ResPartnerSector(models.Model):
@@ -20,8 +20,10 @@ class ResPartnerSector(models.Model):
     child_ids = fields.One2many(comodel_name='res.partner.sector',
                                 inverse_name='parent_id',
                                 string="Children")
-    parent_left = fields.Integer('Parent Left', select=True)
-    parent_right = fields.Integer('Parent Right', select=True)
+    # parent_left = fields.Integer('Parent Left', select=True)
+    parent_left = fields.Integer('Parent Left', index=True)
+    # parent_right = fields.Integer('Parent Right', select=True)
+    parent_right = fields.Integer('Parent Right', index=True)
 
     @api.multi
     def name_get(self):
