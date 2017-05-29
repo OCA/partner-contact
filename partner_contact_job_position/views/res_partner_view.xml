@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-<data>
+<odoo>
 
 <record model="ir.ui.view" id="view_partner_form_job_position">
     <field name="name">Partner form with job position</field>
@@ -29,7 +28,7 @@
         <field name="category_id" position="after">
             <field name="job_position_id"/>
         </field>
-        <filter string="Salesperson" position="after">
+        <filter name="salesperson" position="after">
             <filter string="Job position"
                     domain="[('is_company','=', True)]"
                     context="{'group_by': 'job_position_id'}"/>
@@ -37,5 +36,4 @@
     </field>
 </record>
 
-</data>
-</openerp>
+</odoo>
