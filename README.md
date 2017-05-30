@@ -30,12 +30,14 @@ addon | version | summary
 [partner_contact_configuration](partner_contact_configuration/) | 10.0.1.0.0 | Adds menu configuration access through the 'contacts' module main menu
 [partner_contact_gender](partner_contact_gender/) | 10.0.1.1.0 | Add gender field to contacts
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 10.0.1.0.0 | Allow to have one contact in several partners
+[partner_contact_nationality](partner_contact_nationality/) | 10.0.1.0.0 | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 10.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_contact_weight](partner_contact_weight/) | 10.0.1.0.0 | Provide contact weight
 [partner_external_map](partner_external_map/) | 10.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_firstname](partner_firstname/) | 10.0.2.0.0 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 10.0.0.1.0 | Add specific helper methods
 [partner_identification](partner_identification/) | 10.0.1.0.1 | Partner Identification Numbers
+[partner_password_reset](partner_password_reset/) | 10.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
 [partner_street_number](partner_street_number/) | 10.0.1.0.0 | Introduces separate fields for street name and street number.
 
 
@@ -50,7 +52,6 @@ addon | version | summary
 [firstname_display_name_trigger](firstname_display_name_trigger/) | 1.0 (unported) | Link module if partner_lastname and account_report_company are installed
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 (unported) | Partner auto salesman
 [partner_contact_address_detailed](partner_contact_address_detailed/) | 8.0.1.0.0 (unported) | All address data in summarized contact form
-[partner_contact_nationality](partner_contact_nationality/) | 9.0.1.0.0 (unported) | Add nationality field to contacts
 [partner_relations](partner_relations/) | 8.0.1.1.0 (unported) | Partner relations
 [portal_partner_merge](portal_partner_merge/) | 8.0.1.0.0 (unported) | Portal Partner Merge
 [res_partner_affiliate](res_partner_affiliate/) | 8.0.1.0.0 (unported) | Partner Affiliates
