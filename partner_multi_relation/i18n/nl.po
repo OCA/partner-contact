@@ -3,14 +3,14 @@
 # * partner_multi_relation
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 01:41+0000\n"
-"PO-Revision-Date: 2016-11-24 01:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2017-07-08 02:42+0000\n"
+"PO-Revision-Date: 2017-07-08 02:42+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Dutch (https://www.transifex.com/oca/teams/23907/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +40,9 @@ msgid "All relation types"
 msgstr "Alle connectietypes"
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_relation_all_ids
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_ids
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_relation_all_ids
 msgid "All relations with current partner"
 msgstr "Alle connecties vanuit de huidige relatie"
 
@@ -139,17 +141,23 @@ msgid "Has former employee"
 msgstr "Heeft voormalig werknemer"
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_search_relation_type_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_search_relation_type_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_search_relation_type_id
 msgid "Has relation of type"
 msgstr "heeft connectie van type"
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_search_relation_partner_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_search_relation_partner_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_search_relation_partner_id
 msgid "Has relation with"
 msgstr "Heeft connectie met"
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_search_relation_partner_category_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_search_relation_partner_category_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_search_relation_partner_category_id
 msgid "Has relation with a partner in category"
 msgstr "Heeft connectie met een relatie in de categorie"
 
@@ -161,7 +169,7 @@ msgstr "Heeft gewerkt voor"
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_id
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_1385
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_4082
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_id
 msgid "ID"
 msgstr "ID"
@@ -361,7 +369,9 @@ msgid "Relation"
 msgstr "Connectie"
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_relation_count
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_count
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_relation_count
 msgid "Relation Count"
 msgstr "Aantal connecties"
 
@@ -377,7 +387,9 @@ msgid "Relation type incompatible with selected partner(s)."
 msgstr "Type connectie komt niet overeen met geselecteerde relatie(s)."
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_search_relation_date
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_search_relation_date
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_search_relation_date
 msgid "Relation valid"
 msgstr "Geldige connectie"
 
