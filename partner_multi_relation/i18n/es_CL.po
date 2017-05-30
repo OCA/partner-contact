@@ -3,14 +3,14 @@
 # * partner_multi_relation
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 01:41+0000\n"
-"PO-Revision-Date: 2016-11-24 01:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2017-07-08 02:42+0000\n"
+"PO-Revision-Date: 2017-07-08 02:42+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Spanish (Chile) (https://www.transifex.com/oca/teams/23907/es_CL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +40,9 @@ msgid "All relation types"
 msgstr ""
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_relation_all_ids
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_ids
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_relation_all_ids
 msgid "All relations with current partner"
 msgstr ""
 
@@ -136,17 +138,23 @@ msgid "Has former employee"
 msgstr ""
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_search_relation_type_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_search_relation_type_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_search_relation_type_id
 msgid "Has relation of type"
 msgstr ""
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_search_relation_partner_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_search_relation_partner_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_search_relation_partner_id
 msgid "Has relation with"
 msgstr ""
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_search_relation_partner_category_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_search_relation_partner_category_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_search_relation_partner_category_id
 msgid "Has relation with a partner in category"
 msgstr ""
 
@@ -158,7 +166,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_id
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_1385
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_4082
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_id
 msgid "ID"
 msgstr "ID (identificación)"
@@ -358,7 +366,9 @@ msgid "Relation"
 msgstr ""
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_relation_count
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_count
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_relation_count
 msgid "Relation Count"
 msgstr ""
 
@@ -374,7 +384,9 @@ msgid "Relation type incompatible with selected partner(s)."
 msgstr ""
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_search_relation_date
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_search_relation_date
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_search_relation_date
 msgid "Relation valid"
 msgstr ""
 
