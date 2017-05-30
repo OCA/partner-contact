@@ -3,21 +3,20 @@
 # * crm_deduplicate_acl
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
-# Bole <bole@dajmi5.com>, 2017
+# Peter Hageman <hageman.p@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-08 01:22+0000\n"
-"PO-Revision-Date: 2017-07-08 01:22+0000\n"
-"Last-Translator: Bole <bole@dajmi5.com>, 2017\n"
-"Language-Team: Croatian (https://www.transifex.com/oca/teams/23907/hr/)\n"
+"POT-Creation-Date: 2017-12-04 15:47+0000\n"
+"PO-Revision-Date: 2017-12-04 15:47+0000\n"
+"Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
+"Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: hr\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: crm_deduplicate_acl
 #: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:46
@@ -26,19 +25,17 @@ msgid ""
 "All contacts must have the same email. Only the Administrator can merge "
 "contacts with different emails."
 msgstr ""
-"Svi kontakti moraju imati isti e-mail, samo administrator može spajati "
-"kontakte sa različitim mailovima."
 
 #. module: crm_deduplicate_acl
 #: model:res.groups,name:crm_deduplicate_acl.group_automatically
 msgid "Automatically"
-msgstr "Automatski"
+msgstr "Automatisch"
 
 #. module: crm_deduplicate_acl
 #: model:ir.module.category,name:crm_deduplicate_acl.category
 #: model:ir.ui.menu,name:crm_deduplicate_acl.partner_merge_automatic_menu
 msgid "Deduplicate Contacts"
-msgstr "Ukloni duple kontakte"
+msgstr "Ontdubbel Relaties"
 
 #. module: crm_deduplicate_acl
 #: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:28
@@ -47,19 +44,17 @@ msgid ""
 "For safety reasons, you cannot merge more than 3 contacts together. You can "
 "re-open the wizard several times if needed."
 msgstr ""
-"Iz sigurnosnih razloga nije moguće spajati više od 3 kontakta. Možete "
-"pokrenuti čarobnjaka za spajanje više puta ukoliko je potrebno."
 
 #. module: crm_deduplicate_acl
 #: model:res.groups,name:crm_deduplicate_acl.group_manually
 msgid "Manually"
-msgstr "Ručno"
+msgstr "Handmatig"
 
 #. module: crm_deduplicate_acl
 #: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:81
 #, python-format
 msgid "Merged with the following partners:"
-msgstr "Spojen sa sljedećim partnerima:"
+msgstr "Samengevoegd met de volgende contacten:"
 
 #. module: crm_deduplicate_acl
 #: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:69
@@ -69,25 +64,22 @@ msgid ""
 " ask the Administrator if you need to merge several contacts linked to "
 "existing Journal Items."
 msgstr ""
-"Samo odredišni kontakt može biti povezan sa postojećim stavkama dnevnika. "
-"Molimo zamolite administratora ukoliko je potrebno spojiti nekoliko "
-"kontakata povezanih sa postojećim stavkama dnevnika."
 
 #. module: crm_deduplicate_acl
 #: model:ir.ui.menu,name:crm_deduplicate_acl.root_menu
 msgid "Tools"
-msgstr "Alati"
+msgstr ""
 
 #. module: crm_deduplicate_acl
 #: model:res.groups,name:crm_deduplicate_acl.group_unrestricted
 msgid "Without restrictions"
-msgstr "Bez ograničenja"
+msgstr "Zonder beperkingen"
 
 #. module: crm_deduplicate_acl
 #: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:38
 #, python-format
 msgid "You cannot merge a contact with one of his parent."
-msgstr "Nije moguće spojiti kontakt sa svojim nadređenim."
+msgstr "Je kan geen relatie samenvoegen met één van haar ouders."
 
 #. module: crm_deduplicate_acl
 #: model:ir.model,name:crm_deduplicate_acl.model_base_partner_merge_automatic_wizard

@@ -42,17 +42,15 @@ Usage
 To use this module, you need to:
 
 #. Ask your admin to give you the new rights.
-#. Go to *Sales > Tools > Deduplicate Contacts* as usual.
+#. Go to *CRM > Tools > Deduplicate Contacts* as usual.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/111/9.0
+   :target: https://runbot.odoo-community.org/runbot/111/10.0
 
 Known issues / Roadmap
 ======================
 
-* Wizard's code is partially written in old API because somehow [possibly]
-  the upstream's ``@mute_logger`` decorator prevents API from doing its magic.
 
 Bug Tracker
 ===========
@@ -79,6 +77,7 @@ Contributors
 * Jairo Llopis <jairo.llopis@tecnativa.com>
 * Vicent Cubells <vicent.cubells@tecnativa.com>
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
+* Luis M. Ontalba <luis.martinez@tecnativa.com>
 
 Maintainer
 ----------
