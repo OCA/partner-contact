@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- © 2015 Antiun Ingeniería S.L. - Antonio Espinosa
-     © 2015 Antiun Ingeniería S.L. - Jairo Llopis
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
 
-<openerp>
-<data>
+<odoo>
 
 <record model="ir.ui.view" id="view_partner_form_capital">
     <field name="name">Partner form with capital info</field>
@@ -31,7 +27,7 @@
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="base.view_res_partner_filter"/>
     <field name="arch" type="xml">
-        <filter string="Salesperson" position="after">
+        <filter name="salesperson" position="after">
             <filter string="Capital country"
                     domain="[('is_company', '=', True)]"
                     context="{'group_by': 'capital_country_id'}"/>
@@ -45,5 +41,4 @@
     </field>
 </record>
 
-</data>
-</openerp>
+</odoo>
