@@ -3,15 +3,15 @@
 # * crm_deduplicate_acl
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
-# danimaribeiro <danimaribeiro@gmail.com>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
+# falexandresilva <falexandresilva@gmail.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-07 03:39+0000\n"
-"PO-Revision-Date: 2016-12-07 03:39+0000\n"
-"Last-Translator: danimaribeiro <danimaribeiro@gmail.com>, 2016\n"
+"POT-Creation-Date: 2017-06-19 02:41+0000\n"
+"PO-Revision-Date: 2017-06-19 02:41+0000\n"
+"Last-Translator: falexandresilva <falexandresilva@gmail.com>, 2017\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,9 +20,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: crm_deduplicate_acl
+#: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:46
+#, python-format
+msgid ""
+"All contacts must have the same email. Only the Administrator can merge "
+"contacts with different emails."
+msgstr ""
+
+#. module: crm_deduplicate_acl
 #: model:res.groups,name:crm_deduplicate_acl.group_automatically
 msgid "Automatically"
-msgstr ""
+msgstr "Automaticamente"
 
 #. module: crm_deduplicate_acl
 #: model:ir.module.category,name:crm_deduplicate_acl.category
@@ -31,8 +39,31 @@ msgid "Deduplicate Contacts"
 msgstr "Deduplicar contatos"
 
 #. module: crm_deduplicate_acl
+#: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:28
+#, python-format
+msgid ""
+"For safety reasons, you cannot merge more than 3 contacts together. You can "
+"re-open the wizard several times if needed."
+msgstr ""
+
+#. module: crm_deduplicate_acl
 #: model:res.groups,name:crm_deduplicate_acl.group_manually
 msgid "Manually"
+msgstr "Manualmente"
+
+#. module: crm_deduplicate_acl
+#: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:81
+#, python-format
+msgid "Merged with the following partners:"
+msgstr ""
+
+#. module: crm_deduplicate_acl
+#: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:69
+#, python-format
+msgid ""
+"Only the destination contact may be linked to existing Journal Items. Please"
+" ask the Administrator if you need to merge several contacts linked to "
+"existing Journal Items."
 msgstr ""
 
 #. module: crm_deduplicate_acl
@@ -43,6 +74,12 @@ msgstr "Ferramentas"
 #. module: crm_deduplicate_acl
 #: model:res.groups,name:crm_deduplicate_acl.group_unrestricted
 msgid "Without restrictions"
+msgstr "Sem restrições"
+
+#. module: crm_deduplicate_acl
+#: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:38
+#, python-format
+msgid "You cannot merge a contact with one of his parent."
 msgstr ""
 
 #. module: crm_deduplicate_acl

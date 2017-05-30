@@ -3,14 +3,15 @@
 # * crm_deduplicate_acl
 # 
 # Translators:
-# Ahmet Altinisik <aaltinisik@altinkaya.com.tr>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
+# Ediz Duman <neps1192@gmail.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-24 01:15+0000\n"
-"PO-Revision-Date: 2016-12-24 01:15+0000\n"
-"Last-Translator: Ahmet Altinisik <aaltinisik@altinkaya.com.tr>, 2016\n"
+"POT-Creation-Date: 2017-06-10 03:36+0000\n"
+"PO-Revision-Date: 2017-06-10 03:36+0000\n"
+"Last-Translator: Ediz Duman <neps1192@gmail.com>, 2017\n"
 "Language-Team: Turkish (https://www.transifex.com/oca/teams/23907/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,30 +20,69 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: crm_deduplicate_acl
+#: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:46
+#, python-format
+msgid ""
+"All contacts must have the same email. Only the Administrator can merge "
+"contacts with different emails."
+msgstr ""
+
+#. module: crm_deduplicate_acl
 #: model:res.groups,name:crm_deduplicate_acl.group_automatically
 msgid "Automatically"
-msgstr ""
+msgstr "Otomatikman"
 
 #. module: crm_deduplicate_acl
 #: model:ir.module.category,name:crm_deduplicate_acl.category
 #: model:ir.ui.menu,name:crm_deduplicate_acl.partner_merge_automatic_menu
 msgid "Deduplicate Contacts"
-msgstr "Çift kayıtlı kişileri birleştir"
+msgstr "Çift Kayıtlı Kontakları Birleştir"
+
+#. module: crm_deduplicate_acl
+#: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:28
+#, python-format
+msgid ""
+"For safety reasons, you cannot merge more than 3 contacts together. You can "
+"re-open the wizard several times if needed."
+msgstr ""
+"Güvenlik nedeniyle, en fazla 3 kişiyi birleştirebilirsiniz. Gerekirse birkaç"
+" kez sihirbazını yeniden açabilirsiniz."
 
 #. module: crm_deduplicate_acl
 #: model:res.groups,name:crm_deduplicate_acl.group_manually
 msgid "Manually"
+msgstr "Manuel"
+
+#. module: crm_deduplicate_acl
+#: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:81
+#, python-format
+msgid "Merged with the following partners:"
+msgstr "Aşağıdaki iş ortaklarla birleştirildi:"
+
+#. module: crm_deduplicate_acl
+#: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:69
+#, python-format
+msgid ""
+"Only the destination contact may be linked to existing Journal Items. Please"
+" ask the Administrator if you need to merge several contacts linked to "
+"existing Journal Items."
 msgstr ""
 
 #. module: crm_deduplicate_acl
 #: model:ir.ui.menu,name:crm_deduplicate_acl.root_menu
 msgid "Tools"
-msgstr ""
+msgstr "Araçlar"
 
 #. module: crm_deduplicate_acl
 #: model:res.groups,name:crm_deduplicate_acl.group_unrestricted
 msgid "Without restrictions"
-msgstr ""
+msgstr "Kısıtlama olmaksızın"
+
+#. module: crm_deduplicate_acl
+#: code:addons/crm_deduplicate_acl/wizards/partner_merge.py:38
+#, python-format
+msgid "You cannot merge a contact with one of his parent."
+msgstr "Bir kontağın kendi üst kontağı ile birleştiremezsiniz."
 
 #. module: crm_deduplicate_acl
 #: model:ir.model,name:crm_deduplicate_acl.model_base_partner_merge_automatic_wizard
