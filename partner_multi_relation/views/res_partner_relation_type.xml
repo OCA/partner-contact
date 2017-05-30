@@ -1,5 +1,6 @@
-<openerp>
-    <data>
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
         <record id="tree_res_partner_relation_type" model="ir.ui.view">
             <field name="model">res.partner.relation.type</field>
             <field type="xml" name="arch">
@@ -47,5 +48,5 @@
                 </form>
             </field>
         </record>
-    </data>
-</openerp>
+
+</odoo>

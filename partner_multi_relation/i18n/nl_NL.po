@@ -11,11 +11,11 @@ msgstr ""
 "POT-Creation-Date: 2017-07-08 02:42+0000\n"
 "PO-Revision-Date: 2017-07-08 02:42+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Bulgarian (https://www.transifex.com/oca/teams/23907/bg/)\n"
+"Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: bg\n"
+"Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_multi_relation
@@ -27,7 +27,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_active
 msgid "Active"
-msgstr "Активен"
+msgstr "Actief"
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation_all
@@ -57,13 +57,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_create_uid
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_create_uid
 msgid "Created by"
-msgstr "Създадено от"
+msgstr "Aangemaakt door"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_create_date
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_create_date
 msgid "Created on"
-msgstr "Създадено на"
+msgstr "Aangemaakt op"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_partner_category_this
@@ -93,7 +93,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_display_name
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_display_name
 msgid "Display Name"
-msgstr "Име за показване"
+msgstr "Weergavenaam"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:12
@@ -113,19 +113,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_date_end
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_date_end
 msgid "Ending date"
-msgstr ""
+msgstr "Einddatum"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:165
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:241
 #, python-format
 msgid "Error!"
-msgstr ""
+msgstr "Fout!"
 
 #. module: partner_multi_relation
 #: model:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "Group By"
-msgstr "Групиране по"
+msgstr "Groepeer op"
 
 #. module: partner_multi_relation
 #: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_assistant
@@ -213,19 +213,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type___last_update
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection___last_update
 msgid "Last Modified on"
-msgstr "Последно променено на"
+msgstr "Laatst gewijzigd op"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_write_uid
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_write_uid
 msgid "Last Updated by"
-msgstr "Последно обновено от"
+msgstr "Laatst bijgewerkt door"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_write_date
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_write_date
 msgid "Last Updated on"
-msgstr "Последно обновено на"
+msgstr "Laatst bijgewerkt op"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_partner_category_left
@@ -256,7 +256,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_name
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_name
 msgid "Name"
-msgstr "Име"
+msgstr "Naam"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:173
@@ -274,7 +274,7 @@ msgstr ""
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:83
 #, python-format
 msgid "Organisation"
-msgstr ""
+msgstr "Organisatie"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_other_partner_id
@@ -296,7 +296,7 @@ msgstr ""
 #: model:ir.model,name:partner_multi_relation.model_res_partner
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_any_partner_id
 msgid "Partner"
-msgstr "Партньор"
+msgstr "Relatie"
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type
@@ -329,7 +329,7 @@ msgstr ""
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:84
 #, python-format
 msgid "Person"
-msgstr ""
+msgstr "Persoon"
 
 #. module: partner_multi_relation
 #: model:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
@@ -500,7 +500,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_type_id
 msgid "Type"
-msgstr "Вид"
+msgstr ""
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner.py:80
