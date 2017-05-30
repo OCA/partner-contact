@@ -16,7 +16,7 @@
               "Eficent, "
               "SerpentCS, "
               "Odoo Community Association (OCA)",
-    'website': 'www.savoirfairelinux.com',
+    'website': 'http://www.savoirfairelinux.com',
     'license': 'AGPL-3',
     "depends": ["base"],
     'data': [
