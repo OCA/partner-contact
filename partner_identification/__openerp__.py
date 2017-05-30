@@ -11,7 +11,7 @@
 {
     'name': 'Partner Identification Numbers',
     'category': 'Customer Relationship Management',
-    'version': '10.0.1.0.1',
+    'version': '10.0.1.1.0',
     'depends': [
         'sales_team',
     ],
@@ -25,6 +25,7 @@
               'Tecnativa,'
               'Camptocamp,'
               'ACSONE SA/NV,'
+              'LasLabs,'
               'Odoo Community Association (OCA)',
     'website': 'https://odoo-community.org/',
     'license': 'AGPL-3',
