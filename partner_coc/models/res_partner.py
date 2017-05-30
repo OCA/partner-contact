@@ -5,7 +5,7 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     coc_registration_number = fields.Char(
-        string='Chamber Of Commerce Registration Number',
+        string='CoC Registration Number',
         compute=lambda s: s._compute_identification(
             'coc_registration_number', 'coc',
         ),
