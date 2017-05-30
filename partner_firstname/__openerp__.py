@@ -21,7 +21,7 @@
 {
     'name': 'Partner first name and last name',
     'summary': "Split first name and last name for non company partners",
-    'version': '8.0.2.2.0',
+    'version': '8.0.2.2.1',
     "author": "Camptocamp, "
               "Grupo ESOC Ingeniería de Servicios, "
               "ACSONE SA/NV, "
