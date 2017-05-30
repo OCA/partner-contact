@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- © 2015 Antiun Ingeniería S.L. - Antonio Espinosa
-     © 2015 Antiun Ingeniería S.L. - Jairo Llopis
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
 
-<openerp>
-<data>
+<odoo>
 
 <record id="res_partner_turnover_range_action" model="ir.actions.act_window">
     <field name="name">Turnover ranges</field>
@@ -25,7 +21,6 @@
 
 <menuitem action="res_partner_turnover_range_action"
           id="menu_res_partner_turnover_range"
-          parent="base.menu_config_address_book"/>
+          parent="sales_team.menu_config_address_book"/>
 
-</data>
-</openerp>
+</odoo>
