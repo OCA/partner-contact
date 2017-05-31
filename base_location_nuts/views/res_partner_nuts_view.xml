@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- © 2015 Antiun Ingeniería S.L. - Jairo Llopis
-     © 2015 Antiun Ingeniería S.L. - Antonio Espinosa
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
-<openerp>
-<data>
+<odoo>
 
 <record id="res_partner_nuts_tree" model="ir.ui.view">
     <field name="name">NUTS Items tree</field>
@@ -72,8 +68,7 @@
 <menuitem action="res_partner_nuts_action"
           id="res_partner_nuts_menu"
           name="NUTS Items"
-          parent="base.menu_localisation"
+          parent="sales_team.menu_localisation"
           sequence="40"/>
 
-</data>
-</openerp>
+</odoo>
