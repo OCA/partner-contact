@@ -4,7 +4,7 @@
 
 {
     "name": "Contact's birthdate",
-    "version": "10.0.1.0.0",
+    "version": "10.0.1.1.0",
     "author": "Tecnativa,"
               "Odoo Community Association (OCA)",
     "category": "Customer Relationship Management",
