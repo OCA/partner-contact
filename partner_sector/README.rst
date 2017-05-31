@@ -14,7 +14,7 @@ Configuration
 
 To manage sectors, you need to:
 
-* Go to *Sales > Configuration > Sectors*.
+* Go to *Sales > Configuration > Contacts > Sectors*.
 
 
 Usage

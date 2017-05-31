@@ -24,7 +24,7 @@
     <menuitem action="res_partner_sector_action"
               id="menu_res_partner_sector"
               name="Sectors"
-              parent="sales_team.menu_sale_config"
+              parent="sales_team.menu_config_address_book"
               sequence="3"/>
 
 </odoo>

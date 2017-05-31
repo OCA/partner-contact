@@ -6,7 +6,7 @@
 {
     "name": "Partner Sector",
     "summary": "Add partner sectors",
-    "version": "10.0.1.0.1",
+    "version": "10.0.1.0.0",
     "category": "Customer Relationship Management",
     "website": "http://www.tecnativa.com",
     "author": "Tecnativa, Odoo Community Association (OCA)",
@@ -14,7 +14,7 @@
     "application": False,
     "installable": True,
     "depends": [
-        "sale",
+        "sales_team",
     ],
     "data": [
         "security/ir.model.access.csv",

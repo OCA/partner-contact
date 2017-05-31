@@ -20,9 +20,7 @@ class ResPartnerSector(models.Model):
     child_ids = fields.One2many(comodel_name='res.partner.sector',
                                 inverse_name='parent_id',
                                 string="Children")
-    # parent_left = fields.Integer('Parent Left', select=True)
     parent_left = fields.Integer('Parent Left', index=True)
-    # parent_right = fields.Integer('Parent Right', select=True)
     parent_right = fields.Integer('Parent Right', index=True)
 
     @api.multi
