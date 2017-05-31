@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_action_form" model="ir.ui.view">
+            <field name="name">partner.action.form</field>
+            <field name="model">partner.action</field>
+            <field name="arch" type="xml">
+                <form string="Actions">
+                    <header>
+                        <button string="Confirm" name="button_confirm" type="object" states="draft" class="oe_highlight"/>
+                        <button string="Set To Draft" name="button_draft" type="object" states="done"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="date"/>
+                            <field name="user_id"/>
+                            <field name="date_start" />
+                            <field name="date_end" />
+                            <field name="action_type" domain="[('is_active', '=', True)]"/>
+                            <field name="details" width="200"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_action_tree" model="ir.ui.view">
+            <field name="name">partner.action.tree</field>
+            <field name="model">partner.action</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="partner_id"/>
+                    <field name="date"/>
+                    <field name="date_start" />
+                    <field name="date_end" />
+                    <field name="user_id"/>
+                    <field name="action_type" domain="[('is_active', '=', True)]"/>
+                    <field name="details"/>
+                    <field name="state" readonly="True" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_partner_action_filter" model="ir.ui.view">
+            <field name="name">Partner Actions</field>
+            <field name="model">partner.action</field>
+            <field name="arch" type="xml">
+                <search string="Search Actions">
+                    <field name="partner_id"/>
+                    <field name="date"/>
+                    <field name="user_id"/>
+                    <separator/>
+                    <filter string="Draft" name="draft_only"
+                            domain="[('state', '=', 'draft')]"/>
+                    <filter string="Done" name="done_only"
+                            domain="[('state', '=', 'done')]"/>
+                    <separator/>
+                    <filter string="My Actions" name="user_me"
+                            domain="[('user_id', '=', uid)]"
+                            help="Actions done by me"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_partner_action_view">
+            <field name="name">Actions</field>
+            <field name="res_model">partner.action</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="view_partner_action_filter"/>
+            <field name="context">{'search_default_user_me':1}</field>
+        </record>
+
+        <menuitem name="Actions" id="menu_partner_action" parent="base.menu_sales" sequence="5"
+        action="action_partner_action_view"
+        groups="group_partner_action_user,group_partner_action_manager"/>
+
+    </data>
+</openerp>

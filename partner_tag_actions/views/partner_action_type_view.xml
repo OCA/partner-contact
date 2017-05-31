@@ -1,0 +1,45 @@
+<?xm version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_action_type_tree" model="ir.ui.view">
+            <field name="name">partner.action.type.tree</field>
+            <field name="model">partner.action.type</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="name"/>
+                    <field name="priority"/>
+                    <field name="is_active"/>
+                    <field name="add_tag" />
+                    <field name="remove_tag" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_partner_action_type_filter" model="ir.ui.view">
+            <field name="name">Partner - Actions</field>
+            <field name="model">partner.action.type</field>
+            <field name="arch" type="xml">
+                <search string="Search Action Types">
+                    <field name="name"/>
+                    <filter string="Active" name="active_only"
+                            domain="[('is_active', '=', True)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_partner_action_type_view"  model="ir.actions.act_window">
+            <field name="name">Action Types</field>
+            <field name="res_model">partner.action.type</field>
+            <field name="view_id" eval="view_action_type_tree"/>
+            <field name="search_view_id" ref="view_partner_action_type_filter"/>
+        </record>
+
+        <menuitem 
+            action="action_partner_action_type_view" id="menu_partner_action_type_act"
+            name="Action Types" sequence="0"
+            parent="base.menu_base_config"
+            groups="group_partner_action_manager"/>
+
+    </data>
+</openerp>

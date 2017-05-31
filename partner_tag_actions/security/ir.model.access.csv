@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_partner_action_user,partner.action.user,model_partner_action,group_partner_action_user,1,1,1,0
+access_partner_action_manager,partner.action.manager,model_partner_action,group_partner_action_manager,1,1,1,1
+access_partner_action_type_user,partner.action.type.user,model_partner_action_type,group_partner_action_user,1,0,0,0
+access_partner_action_type_manager,partner.action.type.manager,model_partner_action_type,group_partner_action_manager,1,1,1,1
