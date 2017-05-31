@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+<record model="ir.ui.view" id="view_partner_form_capital">
+    <field name="name">Partner form with capital info</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="/form/sheet/group">
+            <group name="captial"
+                   string="Capital"
+                   attrs="{'invisible': [('is_company', '=', False)]}">
+                <field name="capital_amount"/>
+                <field name="capital_currency_id"/>
+                <field name="capital_country_id"/>
+                <field name="turnover_amount"/>
+                <field name="turnover_range_id"/>
+                <field name="company_size"/>
+            </group>
+        </xpath>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="view_res_partner_filter_capital">
+    <field name="name">Partner search with capital</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_res_partner_filter"/>
+    <field name="arch" type="xml">
+        <filter name="salesperson" position="after">
+            <filter string="Capital country"
+                    domain="[('is_company', '=', True)]"
+                    context="{'group_by': 'capital_country_id'}"/>
+            <filter string="Turnover"
+                    domain="[('is_company', '=', True)]"
+                    context="{'group_by': 'turnover_range_id'}"/>
+            <filter string="Company size"
+                    domain="[('is_company', '=', True)]"
+                    context="{'group_by': 'company_size'}"/>
+        </filter>
+    </field>
+</record>
+
+</odoo>
