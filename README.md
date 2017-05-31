@@ -51,6 +51,7 @@ addon | version | summary
 [partner_identification](partner_identification/) | 9.0.1.0.0 | Partner Identification Numbers
 [partner_multi_relation](partner_multi_relation/) | 9.0.1.1.1 | Partner relations
 [partner_password_reset](partner_password_reset/) | 9.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
+[partner_payment_return_risk](partner_payment_return_risk/) | 9.0.1.0.0 | Partner Payment Return Risk
 [partner_phone_extension](partner_phone_extension/) | 9.0.1.0.0 | Partner Phone Number Extension
 [partner_ref_unique](partner_ref_unique/) | 9.0.1.0.0 | Add an unique constraint to partner ref field
 [partner_sector](partner_sector/) | 9.0.1.0.1 | Add partner sectors
