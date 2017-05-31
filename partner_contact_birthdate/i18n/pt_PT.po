@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 20:42+0000\n"
-"PO-Revision-Date: 2017-05-01 20:42+0000\n"
+"POT-Creation-Date: 2017-06-10 01:50+0000\n"
+"PO-Revision-Date: 2017-06-10 01:50+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Portuguese (Portugal) (https://www.transifex.com/oca/teams/23907/pt_PT/)\n"
 "MIME-Version: 1.0\n"
@@ -25,16 +25,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users_birthdate_date
 msgid "Birthdate"
 msgstr "Data de Nascimento"
-
-#. module: partner_contact_birthdate
-#: code:addons/partner_contact_birthdate/models/res_partner.py:37
-#, python-format
-msgid ""
-"Could not convert '{0.birthdate}' to date in res.partner {0.id} ({0.name}). "
-"Skipping."
-msgstr ""
-"Não foi possível converter '{0.birthdate}' para um formato de data em "
-"res.partner {0.id} ({0.name}). Ignorado."
 
 #. module: partner_contact_birthdate
 #: model:ir.model,name:partner_contact_birthdate.model_res_partner
