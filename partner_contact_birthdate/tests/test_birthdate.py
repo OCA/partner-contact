@@ -28,12 +28,7 @@ class BadCase(TransactionCase):
     def setUp(self):
         super(BadCase, self).setUp()
         self.partner = self.env["res.partner"].create({"name": str(self)})
-        self.birthdate = date.today()
-
-    def tearDown(self):
-        self.assertNotEqual(self.partner.birthdate,
-                            self.partner.birthdate_date)
-        super(BadCase, self).tearDown()
 
     def test_old_to_new(self):
-        self.partner.birthdate = "Not a date"
+        with self.assertRaises(ValueError):
+            self.partner.birthdate = "Not a date"
