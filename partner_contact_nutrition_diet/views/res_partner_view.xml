@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_contact_nutrition_diet" model="ir.ui.view">
+        <field name="name">Partner Contact Nutrition Diet</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_nutrition.view_nutrition_information"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='nutrition']/group/group[@name='other_info']" position="inside">
+                <field name="nutrition_diet_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

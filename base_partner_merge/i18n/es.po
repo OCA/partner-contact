@@ -3,14 +3,15 @@
 # * base_partner_merge
 # 
 # Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (8.0)\n"
+"Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-09 15:48+0000\n"
-"PO-Revision-Date: 2015-10-06 13:57+0000\n"
-"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
+"POT-Creation-Date: 2017-03-04 04:35+0000\n"
+"PO-Revision-Date: 2017-03-04 04:35+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -20,22 +21,24 @@ msgstr ""
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_exclude_contact
 msgid "A user associated to the contact"
-msgstr ""
+msgstr "Un usuario asociado al contacto"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Are you sure to execute the automatic merge of your contacts ?"
-msgstr ""
+msgstr "¿Está seguro de realizar la fusión automática de sus contactos?"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
-msgid "Are you sure to execute the list of automatic merges of your contacts ?"
+msgid ""
+"Are you sure to execute the list of automatic merges of your contacts ?"
 msgstr ""
+"¿Está seguro de realizar la fusión automática de la lista de contactos?"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Automatic Merge Wizard"
-msgstr ""
+msgstr "Asistente de fusión automática"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -45,12 +48,12 @@ msgstr "Cancelar"
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Close"
-msgstr ""
+msgstr "Cerrar"
 
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_partner_ids
 msgid "Contacts"
-msgstr ""
+msgstr "Contactos"
 
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_create_uid
@@ -88,12 +91,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_display_name
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre mostrado"
 
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_email
 msgid "Email"
-msgstr ""
+msgstr "Correo electrónico"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -135,7 +138,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard___last_update
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación el"
 
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_write_uid
@@ -207,7 +210,7 @@ msgstr ""
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Options"
-msgstr ""
+msgstr "Opciones"
 
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_parent_id
@@ -217,7 +220,7 @@ msgstr ""
 #. module: base_partner_merge
 #: model:ir.model,name:base_partner_merge.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Empresa"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -231,7 +234,8 @@ msgstr ""
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
-msgid "Select the list of fields used to search for\n"
+msgid ""
+"Select the list of fields used to search for\n"
 "                            duplicated records. If you select several fields,\n"
 "                            Odoo will propose you to merge only those having\n"
 "                            all these fields in common. (not one of the fields)."
@@ -239,7 +243,8 @@ msgstr ""
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
-msgid "Selected contacts will be merged together.\n"
+msgid ""
+"Selected contacts will be merged together.\n"
 "                                All documents linked to one of these contacts\n"
 "                                will be redirected to the destination contact.\n"
 "                                You can remove contacts from this list to avoid merging them."
@@ -278,7 +283,7 @@ msgstr ""
 #. module: base_partner_merge
 #: model:ir.model,name:base_partner_merge.model_base_partner_merge_automatic_wizard
 msgid "base.partner.merge.automatic.wizard"
-msgstr ""
+msgstr "base.partner.merge.automatic.wizard"
 
 #. module: base_partner_merge
 #: model:ir.model,name:base_partner_merge.model_base_partner_merge_line
@@ -288,5 +293,4 @@ msgstr ""
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "or"
-msgstr ""
-
+msgstr "o"

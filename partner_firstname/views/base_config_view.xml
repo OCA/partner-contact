@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- © 2015 Antiun Ingenieria S.L. - Antonio Espinosa
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+<record id="view_general_configuration" model="ir.ui.view">
+    <field name="name">Add partner_names_order config parameter</field>
+    <field name="model">base.config.settings</field>
+    <field name="inherit_id" ref="base_setup.view_general_configuration"/>
+    <field name="arch" type="xml">
+        <xpath expr="//label[@name='email_label']/.." position='after'>
+            <group>
+                <label for="partner_names_order" />
+                <div>
+                    <div>
+                        <field name="partner_names_order" class="oe_inline" />
+                        <field name="partner_names_order_changed" invisible="1"/>
+                        <button name="action_recalculate_partners_name"
+                                string="Recalculate names"
+                                icon="fa-play"
+                                type="object"
+                                help="Recalculate names for all partners. This process could take so much time if there are more than 10,000 active partners"
+                                attrs="{'invisible': [('partner_names_order_changed', '=', True)]}"/>
+                    </div>
+                </div>
+            </group>
+        </xpath>
+    </field>
+</record>
+
+</odoo>

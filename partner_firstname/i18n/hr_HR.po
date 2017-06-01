@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-08 05:38+0000\n"
-"PO-Revision-Date: 2016-05-31 18:47+0000\n"
+"POT-Creation-Date: 2016-06-28 11:23+0000\n"
+"PO-Revision-Date: 2016-06-14 10:58+0000\n"
 "Last-Translator: Bole <bole@dajmi5.com>\n"
 "Language-Team: Croatian (Croatia) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/hr_HR/)\n"
 "MIME-Version: 1.0\n"
@@ -27,25 +27,25 @@ msgstr "Kontakti moraju imati naziv."
 #: code:addons/partner_firstname/exceptions.py:11
 #, python-format
 msgid "Error(s) with partner %d's name."
-msgstr ""
+msgstr "Greška(e) u nazivu partnera %d."
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users_firstname
 msgid "First name"
-msgstr ""
+msgstr "Ime"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner_lastname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users_lastname
 msgid "Last name"
-msgstr ""
+msgstr "Prezime"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:8
 #, python-format
 msgid "No name is set."
-msgstr ""
+msgstr "Ime nije unešeno."
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
@@ -55,4 +55,4 @@ msgstr "Partner"
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Korisnici"

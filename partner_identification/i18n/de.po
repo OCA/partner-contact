@@ -5,13 +5,13 @@
 # Translators:
 # Antonio Trueba, 2016
 # Paolo Valier, 2016
-# Rudolf Schnapka <rs@techno-flex.de>, 2016
+# Rudolf Schnapka <rs@techno-flex.de>, 2016-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-17 04:15+0000\n"
-"PO-Revision-Date: 2016-04-21 08:44+0000\n"
+"POT-Creation-Date: 2017-02-18 04:59+0000\n"
+"PO-Revision-Date: 2017-02-27 10:19+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -271,9 +271,9 @@ msgstr "Anfangsdatum der Prüfperiode."
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner_id_category
 msgid "res.partner.id_category"
-msgstr ""
+msgstr "res.partner.id_category"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner_id_number
 msgid "res.partner.id_number"
-msgstr ""
+msgstr "res.partner.id_number"

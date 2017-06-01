@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-30 12:05+0000\n"
+"POT-Creation-Date: 2017-05-02 12:11+0000\n"
 "PO-Revision-Date: 2015-12-15 11:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Finnish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/fi/)\n"
@@ -61,7 +61,7 @@ msgstr ""
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Yritykset"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_country_id
@@ -88,7 +88,7 @@ msgstr "Luotu"
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 msgid "Group By"
-msgstr ""
+msgstr "Ryhmittele"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_id
@@ -98,7 +98,7 @@ msgstr "ID"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Viimeksi muokattu"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_uid
@@ -113,17 +113,17 @@ msgstr "Viimeksi päivittänyt"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company_better_zip_id
 msgid "Location"
-msgstr ""
+msgstr "Sijainti"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_display_name
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Kumppani"
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
@@ -134,7 +134,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_state_id
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 msgid "State"
-msgstr ""
+msgstr "Tila"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_better_zip_code

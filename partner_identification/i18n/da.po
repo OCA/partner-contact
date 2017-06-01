@@ -3,11 +3,14 @@
 # * partner_identification
 # 
 # Translators:
+# Francisco Palm <francisco.palm@gmail.com>, 2015
+# Hotellook, 2014
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-20 01:37+0000\n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
 "PO-Revision-Date: 2016-03-19 05:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Danish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/da/)\n"
@@ -43,7 +46,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_active
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_active
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_partner_issued_id
@@ -55,7 +58,7 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_category_id
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_code
@@ -66,19 +69,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Oprettet af"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_date
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Oprettet den"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Vist navn"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:66
@@ -153,19 +156,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category___last_update
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Sidst ændret den"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Sidst opdateret af"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_date
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Sidst opdateret den"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category_name

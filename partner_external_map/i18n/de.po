@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-17 04:15+0000\n"
-"PO-Revision-Date: 2016-04-21 08:44+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
+"PO-Revision-Date: 2016-11-25 14:55+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,14 +25,14 @@ msgid "Address missing on partner '%s'."
 msgstr "Adresse zum Partner '%s' fehlt."
 
 #. module: partner_external_map
+#: model:ir.model.fields,field_description:partner_external_map.field_res_users_job_position_id
+msgid "Categorized job position"
+msgstr "Kategorisierte Stelle"
+
+#. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_zip_id
 msgid "City/Location"
 msgstr "Ort/Standort"
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_contact_type
-msgid "Contact type"
-msgstr "Kontakt-Art"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_uid
@@ -45,14 +45,14 @@ msgid "Created on"
 msgstr "erstellt am"
 
 #. module: partner_external_map
+#: model:ir.model.fields,field_description:partner_external_map.field_res_users_department_id
+msgid "Department"
+msgstr "Abteilung"
+
+#. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_display_name
 msgid "Display Name"
 msgstr "Anzeigename"
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_gender
-msgid "Gender"
-msgstr "Geschlecht"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_id
@@ -100,11 +100,6 @@ msgstr "zuletzt aktualisiert von"
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_write_date
 msgid "Last Updated on"
 msgstr "zuletzt aktualisiert am"
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_contact_id
-msgid "Main Contact"
-msgstr "Hauptkontakt"
 
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
@@ -172,16 +167,6 @@ msgstr "Fehlende Webseite der Routen-Karte: Sie müssen diesen in Ihren Präfere
 msgid ""
 "Missing start address for route map: you should set it in your preferences."
 msgstr "Fehlender Ausgangsadresse in Routenkarte: Sie müssen diesen in Ihren Präferenzen einstellen."
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_nationality_id
-msgid "Nationality"
-msgstr "Nationalität"
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_other_contact_ids
-msgid "Others Positions"
-msgstr "Andere Positionen"
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_partner

@@ -3,13 +3,14 @@
 # * partner_external_map
 # 
 # Translators:
+# Bole <bole@dajmi5.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-08 05:38+0000\n"
-"PO-Revision-Date: 2016-04-05 10:00+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2016-08-18 02:46+0000\n"
+"PO-Revision-Date: 2016-08-17 06:56+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Croatian (Croatia) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/hr_HR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,17 +22,12 @@ msgstr ""
 #: code:addons/partner_external_map/models/res_partner.py:32
 #, python-format
 msgid "Address missing on partner '%s'."
-msgstr ""
+msgstr "Nedostaje adresa na partneru : '%s'."
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_zip_id
 msgid "City/Location"
 msgstr "Grad/Lokacija"
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_contact_type
-msgid "Contact type"
-msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_uid
@@ -47,11 +43,6 @@ msgstr "Kreirano"
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_display_name
 msgid "Display Name"
 msgstr "Naziv"
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_gender
-msgid "Gender"
-msgstr "Spol"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_id
@@ -101,33 +92,28 @@ msgid "Last Updated on"
 msgstr "Zadnje ažurirano"
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_contact_id
-msgid "Main Contact"
-msgstr ""
-
-#. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
 msgid "Map"
-msgstr ""
+msgstr "Karta"
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_map_website
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_context_map_website_id
 #: model:ir.ui.view,arch_db:partner_external_map.map_website_form
 msgid "Map Website"
-msgstr ""
+msgstr "Webstranice kartiranja"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_name
 msgid "Map Website Name"
-msgstr ""
+msgstr "Naziv stranice kartiranja"
 
 #. module: partner_external_map
 #: model:ir.actions.act_window,name:partner_external_map.map_website_action
 #: model:ir.ui.menu,name:partner_external_map.map_website_menu
 #: model:ir.ui.view,arch_db:partner_external_map.map_website_tree
 msgid "Map Websites"
-msgstr ""
+msgstr "Webstranice kartiranja"
 
 #. module: partner_external_map
 #: model:ir.model.fields,help:partner_external_map.field_res_users_context_route_map_website_id
@@ -139,7 +125,7 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_users_form
 msgid "Maps"
-msgstr ""
+msgstr "Karte"
 
 #. module: partner_external_map
 #: code:addons/partner_external_map/models/res_partner.py:52
@@ -170,16 +156,6 @@ msgstr ""
 #, python-format
 msgid ""
 "Missing start address for route map: you should set it in your preferences."
-msgstr ""
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_nationality_id
-msgid "Nationality"
-msgstr "Nacionalnost"
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_other_contact_ids
-msgid "Others Positions"
 msgstr ""
 
 #. module: partner_external_map
@@ -230,4 +206,4 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Korisnici"

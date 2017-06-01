@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- © 2015 Antiun Ingenieria S.L. - Javier Iniesta
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record model="ir.ui.view" id="view_partner_form_sector">
+        <field name="name">Partner form with sector</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="phone" position="before">
+                <field name="sector_id" placeholder="Sector"
+                       options='{"no_open": True}'
+                       attrs="{'invisible': [('is_company', '=', False)]}"/>
+                <field name="secondary_sector_ids" widget="many2many_tags"
+                       attrs="{'invisible': [('is_company', '=', False)]}"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_partner_tree_sector">
+        <field name="name">Partner tree with sector</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <field name="email" position="after">
+                <field name="sector_id"
+                       attrs="{'invisible': [('is_company', '=', False)]}"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_res_partner_filter_sector">
+        <field name="name">Partner search with sector</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="sector_id"
+                       string="Sector"
+                       filter_domain="['|',('sector_id','ilike',self),
+                                           ('secondary_sector_ids','ilike',self)]"/>
+            </field>
+            <filter name="salesperson" position="after">
+                <filter name="sector"
+                        string="Sector"
+                        domain="[('is_company','=', True)]"
+                        context="{'group_by': 'sector_id'}"/>
+            </filter>
+        </field>
+    </record>
+
+</odoo>

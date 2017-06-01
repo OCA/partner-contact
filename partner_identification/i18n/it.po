@@ -3,11 +3,16 @@
 # * partner_identification
 # 
 # Translators:
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2015
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2015
+# Hotellook, 2014
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-20 01:37+0000\n"
+"POT-Creation-Date: 2016-11-24 01:41+0000\n"
 "PO-Revision-Date: 2016-03-19 05:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/it/)\n"
@@ -43,7 +48,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_active
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_active
 msgid "Active"
-msgstr ""
+msgstr "Attivo"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_partner_issued_id
@@ -78,7 +83,7 @@ msgstr "Creato il"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome da visualizzare"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:66
@@ -175,13 +180,13 @@ msgstr ""
 #. module: partner_identification
 #: selection:res.partner.id_number,status:0
 msgid "New"
-msgstr ""
+msgstr "Nuovo"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_comment
 #: model:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 msgid "Notes"
-msgstr ""
+msgstr "Note"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner
@@ -231,7 +236,7 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_status
 msgid "Status"
-msgstr ""
+msgstr "Stato"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_name

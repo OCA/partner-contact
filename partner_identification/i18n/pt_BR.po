@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-20 01:37+0000\n"
+"POT-Creation-Date: 2017-04-26 02:52+0000\n"
 "PO-Revision-Date: 2016-03-19 05:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/pt_BR/)\n"
@@ -43,7 +43,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_active
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_active
 msgid "Active"
-msgstr ""
+msgstr "Ativo"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_partner_issued_id
@@ -55,12 +55,12 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_category_id
 msgid "Category"
-msgstr ""
+msgstr "Categoria"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_code
 msgid "Code"
-msgstr ""
+msgstr "Código"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_uid
@@ -78,7 +78,7 @@ msgstr "Criado em"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome para Mostrar"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:66
@@ -153,7 +153,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category___last_update
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última atualização em"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_uid
@@ -231,7 +231,7 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_status
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_name

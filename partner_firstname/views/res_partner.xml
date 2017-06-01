@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-<data>
+<odoo>
 
 <record id="view_partner_simple_form_firstname" model="ir.ui.view">
     <field name="name">Add firstname and lastname</field>
@@ -19,10 +18,12 @@
                 <group attrs="{'invisible': [('is_company', '=', True)]}">
                     <field name="lastname" attrs=
                         "{'required': [('firstname', '=', False),
-                                       ('is_company', '=', False)]}"/>
+                                       ('is_company', '=', False),
+                                       ('type', '=', 'contact')]}"/>
                     <field name="firstname" attrs=
                         "{'required': [('lastname', '=', False),
-                                       ('is_company', '=', False)]}"/>
+                                       ('is_company', '=', False),
+                                       ('type', '=', 'contact')]}"/>
                 </group>
             </xpath>
         </data>
@@ -42,15 +43,17 @@
                 }</attribute>
             </xpath>
 
-            <xpath expr="//h1//field[@name='name']/.." position="after">
+            <xpath expr="//field[@name='parent_id']/.." position="after">
                 <div class="oe_edit_only">
                   <group attrs="{'invisible': [('is_company', '=', True)]}">
                       <field name="lastname" attrs=
                           "{'required': [('firstname', '=', False),
-                                         ('is_company', '=', False)]}"/>
+                                         ('is_company', '=', False),
+                                         ('type', '=', 'contact')]}"/>
                       <field name="firstname" attrs=
                           "{'required': [('lastname', '=', False),
-                                         ('is_company', '=', False)]}"/>
+                                         ('is_company', '=', False),
+                                         ('type', '=', 'contact')]}"/>
                   </group>
                 </div>
             </xpath>
@@ -71,10 +74,12 @@
                   <group attrs="{'invisible': [('is_company', '=', True)]}">
                       <field name="lastname" attrs=
                           "{'required': [('firstname', '=', False),
-                                         ('is_company', '=', False)]}"/>
+                                         ('is_company', '=', False),
+                                         ('type', '=', 'contact')]}"/>
                       <field name="firstname" attrs=
                           "{'required': [('lastname', '=', False),
-                                         ('is_company', '=', False)]}"/>
+                                         ('is_company', '=', False),
+                                         ('type', '=', 'contact')]}"/>
                   </group>
                 </div>
             </xpath>
@@ -82,5 +87,4 @@
   </field>
 </record>
 
-</data>
-</openerp>
+</odoo>

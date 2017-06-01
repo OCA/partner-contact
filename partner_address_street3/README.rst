@@ -41,6 +41,7 @@ Contributors
 
 * Nicolas Bessi <nicolas.bessi@camptocamp.com>
 * Alexandre Fayolle <alexandre.fayolle@camptocamp.com>
+* Sodexis Team <dev@sodexis.com>
 
 Maintainer
 ----------
