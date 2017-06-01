@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2009 Sharoon Thomas Open Labs
+    Copyright 2014 Tecnativa - Pedro M. Baeza
+    Copyright 2015 Antiun Ingeniería S.L. - Jairo Llopis
+    Copyright 2016 Sodexis
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_partner_form_img_inh" model="ir.ui.view">
+        <field name="name">Add multi images</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/notebook" position="inside">
+                <page string="Images" name="multi_image">
+                    <field name="image_ids" nolabel="1" context="{
+                                'default_owner_model': 'res.partner',
+                                'default_owner_id': id,
+                            }" mode="kanban"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
