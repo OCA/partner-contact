@@ -50,11 +50,13 @@ addon | version | summary
 [partner_firstname](partner_firstname/) | 8.0.2.2.1 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 8.0.0.1.0 | Partner Helper
 [partner_identification](partner_identification/) | 8.0.1.0.0 | Partner Identification Numbers
+[partner_identification_gln](partner_identification_gln/) | 8.0.1.0.0 | This addon extends "Partner Identification Numbers" to provide a number category for GLN registration
 [partner_phone_extension](partner_phone_extension/) | 8.0.1.0.0 | Partner Phone Number Extension
 [partner_relations](partner_relations/) | 8.0.1.1.2 | Partner relations
 [partner_second_lastname](partner_second_lastname/) | 8.0.4.1.0 | Have split first and second lastnames
 [partner_sector](partner_sector/) | 8.0.1.0.0 | Add partner sectors
 [partner_street_number](partner_street_number/) | 8.0.0.1.0 | Introduces separate fields for street name and street number.
+[partner_tag_actions](partner_tag_actions/) | 8.0.1.0.0 | Partner Tag Actions
 [passport](passport/) | 8.0.0.1.0 | Passport Management
 [portal_partner_merge](portal_partner_merge/) | 8.0.1.0.0 | Portal Partner Merge
 [res_partner_affiliate](res_partner_affiliate/) | 8.0.1.0.0 | Partner Affiliates
