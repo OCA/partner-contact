@@ -3,7 +3,7 @@
 # Copyright 2014 Tecnativa Pedro M. Baeza
 # Copyright 2015 Antiun Ingeniería S.L. - Jairo Llopis
 # Copyright 2016 Sodexis
-# Copyright 2017 Tecmativa - Sergio Teruel
+# Copyright 2017 Tecnativa - Sergio Teruel
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp.addons.base_multi_image.hooks import pre_init_hook_for_submodules
