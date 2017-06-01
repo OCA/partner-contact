@@ -26,10 +26,13 @@ addon | version | summary
 [base_vat_sanitized](base_vat_sanitized/) | 10.0.1.0.0 | Adds field sanitized_vat on partners
 [partner_address_street3](partner_address_street3/) | 10.0.1.0.0 | Add a third address line on partners
 [partner_alias](partner_alias/) | 10.0.1.0.0 | Adds aliases to partner names.
+[partner_capital](partner_capital/) | 10.0.1.0.0 | Partners Capital
 [partner_contact_birthdate](partner_contact_birthdate/) | 10.0.1.0.0 | Contact's birthdate
 [partner_contact_configuration](partner_contact_configuration/) | 10.0.1.0.0 | Adds menu configuration access through the 'contacts' module main menu
+[partner_contact_department](partner_contact_department/) | 10.0.1.0.0 | Assign contacts to departments
 [partner_contact_gender](partner_contact_gender/) | 10.0.1.1.0 | Add gender field to contacts
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 10.0.1.0.0 | Allow to have one contact in several partners
+[partner_contact_job_position](partner_contact_job_position/) | 10.0.1.0.0 | Categorize job positions for contacts
 [partner_contact_nationality](partner_contact_nationality/) | 10.0.1.0.0 | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 10.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_contact_weight](partner_contact_weight/) | 10.0.1.0.0 | Provide contact weight
