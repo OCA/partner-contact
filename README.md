@@ -49,6 +49,7 @@ addon | version | summary
 [partner_firstname](partner_firstname/) | 9.0.2.0.0 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 9.0.0.1.0 | Partner Helper
 [partner_identification](partner_identification/) | 9.0.1.0.0 | Partner Identification Numbers
+[partner_multi_image](partner_multi_image/) | 9.0.1.0.0 | Multiple Images in Partners
 [partner_multi_relation](partner_multi_relation/) | 9.0.1.1.1 | Partner relations
 [partner_password_reset](partner_password_reset/) | 9.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
 [partner_payment_return_risk](partner_payment_return_risk/) | 9.0.1.0.0 | Partner Payment Return Risk
