@@ -5,14 +5,14 @@
 # Translators:
 # Antonio Trueba, 2016
 # Antonio Trueba, 2016
-# Oihane Crucelaegui <oihanecruce@gmail.com>, 2016
+# oihane <oihanecruce@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-25 11:58+0000\n"
+"POT-Creation-Date: 2017-06-01 03:22+0000\n"
 "PO-Revision-Date: 2016-07-14 09:05+0000\n"
-"Last-Translator: Oihane Crucelaegui <oihanecruce@gmail.com>\n"
+"Last-Translator: oihane <oihanecruce@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +26,7 @@ msgid "A user associated to the contact"
 msgstr "Un usuario asociado al contrato"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:369
+#: code:addons/base_partner_merge/base_partner_merge.py:370
 #, python-format
 msgid ""
 "All contacts must have the same email. Only the Administrator can merge "
@@ -114,10 +114,10 @@ msgid "Email"
 msgstr "e-mail"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:358
-#: code:addons/base_partner_merge/base_partner_merge.py:368
-#: code:addons/base_partner_merge/base_partner_merge.py:393
-#: code:addons/base_partner_merge/base_partner_merge.py:529
+#: code:addons/base_partner_merge/base_partner_merge.py:359
+#: code:addons/base_partner_merge/base_partner_merge.py:369
+#: code:addons/base_partner_merge/base_partner_merge.py:394
+#: code:addons/base_partner_merge/base_partner_merge.py:530
 #, python-format
 msgid "Error"
 msgstr "Error"
@@ -133,7 +133,7 @@ msgid "Finished"
 msgstr "Finalizado"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:359
+#: code:addons/base_partner_merge/base_partner_merge.py:360
 #, python-format
 msgid ""
 "For safety reasons, you cannot merge more than 3 contacts together. You can "
@@ -220,7 +220,7 @@ msgid "Merge with Manual Check"
 msgstr "Combinar con verificación manual"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:410
+#: code:addons/base_partner_merge/base_partner_merge.py:411
 #, python-format
 msgid "Merged with the following partners:"
 msgstr "Combinado con los siguientes terceros:"
@@ -236,7 +236,7 @@ msgid "Name"
 msgstr "Nombre"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:394
+#: code:addons/base_partner_merge/base_partner_merge.py:395
 #, python-format
 msgid ""
 "Only the destination contact may be linked to existing Journal Items. Please"
@@ -323,7 +323,7 @@ msgid "Wizard"
 msgstr "Asistente"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:530
+#: code:addons/base_partner_merge/base_partner_merge.py:531
 #, python-format
 msgid "You have to specify a filter for your selection"
 msgstr "Debe especificar un filtro para su selección"
