@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-10 03:39+0000\n"
-"PO-Revision-Date: 2017-03-10 03:39+0000\n"
+"POT-Creation-Date: 2017-05-31 03:41+0000\n"
+"PO-Revision-Date: 2017-05-31 03:41+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_partner_sequence
-#: code:addons/base_partner_sequence/models/partner.py:71
+#: code:addons/base_partner_sequence/models/partner.py:73
 #, python-format
 msgid "Either field values or an id must be provided."
 msgstr "Devono essere forniti i valori dei campi o un identificativo"

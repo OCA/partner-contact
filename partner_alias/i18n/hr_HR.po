@@ -4,14 +4,13 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
-# Bole <bole@dajmi5.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-24 00:42+0000\n"
-"PO-Revision-Date: 2017-04-24 00:42+0000\n"
-"Last-Translator: Bole <bole@dajmi5.com>, 2017\n"
+"POT-Creation-Date: 2017-05-31 03:41+0000\n"
+"PO-Revision-Date: 2017-05-31 03:41+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Croatian (Croatia) (https://www.transifex.com/oca/teams/23907/hr_HR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,6 +48,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:partner_alias.res_partner_alias_action
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_alias_ids
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_ids
+#: model:ir.model.fields,field_description:partner_alias.field_res_users_alias_ids
 #: model:ir.ui.view,arch_db:partner_alias.personal_information
 msgid "Aliases"
 msgstr ""
@@ -391,6 +391,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_name
 msgid "Name"
 msgstr "Naziv"
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_nationality_id
+msgid "Nationality"
+msgstr "Nacionalnost"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_comment
