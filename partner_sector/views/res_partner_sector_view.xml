@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- © 2015 Antiun Ingenieria S.L. - Javier Iniesta
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="res_partner_sector_action" model="ir.actions.act_window">
+        <field name="name">Sectors</field>
+        <field name="res_model">res.partner.sector</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record id="res_partner_sector_tree_view" model="ir.ui.view">
+        <field name="name">Partner Sector tree</field>
+        <field name="model">res.partner.sector</field>
+        <field name="arch" type="xml">
+            <tree string="Sectors" editable="top">
+                <field name="name"/>
+                <field name="parent_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem action="res_partner_sector_action"
+              id="menu_res_partner_sector"
+              name="Sectors"
+              parent="sales_team.menu_config_address_book"
+              sequence="3"/>
+
+</odoo>
