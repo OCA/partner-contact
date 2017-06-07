@@ -156,8 +156,9 @@ class ResPartner(models.Model):
             )
 
         Args:
-            field_name (str): Name of field to set.
             category_code (str): Category code of the Identification type.
+            operator (str): Operator of domain.
+            value (str): Value to search for.
 
         Returns:
             list: Domain to search with.
