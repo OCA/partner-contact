@@ -42,6 +42,7 @@ addon | version | summary
 [partner_helper](partner_helper/) | 10.0.0.1.0 | Add specific helper methods
 [partner_identification](partner_identification/) | 10.0.1.1.0 | Partner Identification Numbers
 [partner_password_reset](partner_password_reset/) | 10.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
+[partner_sector](partner_sector/) | 10.0.1.0.0 | Add partner sectors
 [partner_street_number](partner_street_number/) | 10.0.1.0.0 | Introduces separate fields for street name and street number.
 
 
