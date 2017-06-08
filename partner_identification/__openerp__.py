@@ -11,7 +11,7 @@
 {
     'name': 'Partner Identification Numbers',
     'category': 'Customer Relationship Management',
-    'version': '10.0.1.1.0',
+    'version': '10.0.1.1.1',
     'depends': [
         'sales_team',
     ],
