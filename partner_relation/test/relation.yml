@@ -1,0 +1,77 @@
+# -*- encoding: utf-8 -*-
+# Copyright (C) 2015 Akretion France (www.akretion.com)
+# @author: Alexis de Lattre <alexis.delattre@akretion.com>
+# The licence is in the file __openerp__.py
+-
+  Create a symetric relation type
+-
+  !record {model: res.partner.relation.type, id: friend}:
+    name: Friend of
+-
+  Create an asymetric relation type
+-
+  !record {model: res.partner.relation.type, id: parent}:
+    name: Parent of
+-
+  Create the reverse of the asymetric relation type
+-
+  !record {model: res.partner.relation.type, id: child}:
+    name: Child of
+    reverse_id: parent
+-
+  Check the creation of the asymetric relation
+-
+  !python {model: res.partner.relation.type, id: parent}: |
+    assert self.reverse_id.id == ref('child'), 'asymetric relation type not properly created'
+-
+  Create a symetric relation
+-
+  !record {model: res.partner.relation, id: friend1}:
+    src_partner_id: base.res_partner_address_4
+    relation_type_id: friend
+    dest_partner_id: base.res_partner_address_11
+-
+  Create asymetric relation
+-
+  !record {model: res.partner.relation, id: parent1}:
+    src_partner_id: base.res_partner_address_10
+    relation_type_id: parent
+    dest_partner_id: base.res_partner_address_14
+-
+  Check symetric and asymetric relations
+-
+  !python {model: res.partner.relation}: |
+    friend_rel_ids = self.search(cr, uid, [('relation_type_id', '=', ref('friend'))], context=context)
+    assert len(friend_rel_ids) == 2, 'Failure on creation of symetric relation'
+    friend_rels = self.browse(cr, uid, friend_rel_ids, context=context)
+    assert friend_rels[0].src_partner_id.id == friend_rels[1].dest_partner_id.id, 'Bad creation of symetric relation'
+    assert friend_rels[1].src_partner_id.id == friend_rels[0].dest_partner_id.id, 'Bad creation of symetric relation (2)'
+    parent_rel_ids = self.search(cr, uid, [('relation_type_id', '=', ref('parent'))], context=context)
+    assert len(parent_rel_ids) == 1, 'Failure on creation of asymetric relation'
+    child_rel_ids = self.search(cr, uid, [('relation_type_id', '=', ref('child'))], context=context)
+    assert len(child_rel_ids) == 1, 'Failure on creation of asymetric relation (2)'
+    child_rel = self.browse(cr, uid, child_rel_ids[0], context=context)
+    assert child_rel.src_partner_id.id == ref('base.res_partner_address_14'), 'Bad creation of asymetric relation'
+    assert child_rel.dest_partner_id.id == ref('base.res_partner_address_10'), 'Bad creation of asymetric relation (2)'
+-
+  Test write on relation
+-
+  !python {model: res.partner.relation}: |
+    friend_rel_ids = self.search(cr, uid, [('relation_type_id', '=', ref('friend'))], order='id', context=context)
+    assert friend_rel_ids[1] == ref('friend1'), 'Reverse rel should be created before relation'
+    self.write(cr, uid, [ref('friend1')], {'relation_type_id': ref('recommends'), 'dest_partner_id': ref('base.res_partner_address_9')}, context=context)
+    friend1_rel = self.browse(cr, uid, friend_rel_ids[1], context=context)
+    friend1_inv_rel = self.browse(cr, uid, friend_rel_ids[0], context=context)
+    assert friend1_rel.relation_type_id.id == ref('recommends'), 'Wrong rel type after write'
+    assert friend1_rel.src_partner_id.id == ref('base.res_partner_address_4'), 'Wrong src_partner_id after write'
+    assert friend1_rel.dest_partner_id.id == ref('base.res_partner_address_9'), 'Wrong dest_partner_id after write'
+    assert friend1_inv_rel.relation_type_id.id == ref('is_recommended_by'), 'Wrong rel type on inverse relation after write'
+    assert friend1_inv_rel.src_partner_id.id == ref('base.res_partner_address_9'), 'Wrong src_partner_id on inverse relation after write'
+    assert friend1_inv_rel.dest_partner_id.id == ref('base.res_partner_address_4'), 'Wrong dest_partner_id on inverse relation after write'
+-
+  Test deletion of relations
+-
+  !python {model: res.partner.relation}: |
+    self.unlink(cr, uid, [ref('parent1')], context=context)
+    child_rel_ids = self.search(cr, uid, [('relation_type_id', '=', ref('child'))], context=context)
+    assert len(child_rel_ids) == 0, "Didn't delete the reverse relation"

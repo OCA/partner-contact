@@ -1,0 +1,171 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* partner_relation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-22 19:57+0000\n"
+"PO-Revision-Date: 2014-05-22 19:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_relation
+#: field:res.partner.relation.type,active:0
+msgid "Active"
+msgstr "Actif"
+
+#. module: partner_relation
+#: view:res.partner:0
+msgid "Contacts"
+msgstr "Contacts"
+
+#. module: partner_relation
+#: field:res.partner.relation,dest_partner_id:0
+msgid "Destination Partner"
+msgstr "Partenaire destination"
+
+#. module: partner_relation
+#: code:addons/partner_relation/partner_relation.py:90
+#: code:addons/partner_relation/partner_relation.py:167
+#, python-format
+msgid "Error:"
+msgstr "Erreur :"
+
+#. module: partner_relation
+#: view:res.partner:0
+msgid "Go to Relation Partner"
+msgstr "Aller au partenaire lié"
+
+#. module: partner_relation
+#: view:res.partner.relation:0
+msgid "Group By..."
+msgstr "Grouper par..."
+
+#. module: partner_relation
+#: help:res.partner.relation.type,reverse_id:0
+msgid "If the relation type is asymetric, select the corresponding reverse relation type. For exemple, 'A recommends B' is an asymetric relation ; it's reverse relation is 'B is recommended by A'. If the relation type is symetric, leave the field empty. For example, 'A is a competitor of B' is a symetric relation because we also have 'B is the competitor of A'."
+msgstr "Si le type de relation est asymetrique, sélectionnez le type de relation inverse correspondant. Par exemple, 'A recommande B' est une relation asymetrique ; sa relation inverse est 'B recommande A'. Si le type de relation est symétrique, laissez le champ vide. Par exemple, 'A est un concurrent de B' est une relation symétrique car on a également 'B est un concurrent de A'."
+
+#. module: partner_relation
+#: code:addons/partner_relation/partner_relation.py:91
+#, python-format
+msgid "It is not possible to modify the reverse of a relation type. You should desactivate or delete this relation type and create a new one."
+msgstr "Il n'est pas possible de modifier l'inverse d'un type de relation. Vous devriez désactiver ou supprimer ce type de relation et en créer un nouveau."
+
+#. module: partner_relation
+#: model:ir.model,name:partner_relation.model_res_partner
+#: view:res.partner:0
+#: view:res.partner.relation:0
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: partner_relation
+#: model:ir.model,name:partner_relation.model_res_partner_relation_type
+msgid "Partner Relation Type"
+msgstr "Type de relation partenaire"
+
+#. module: partner_relation
+#: model:ir.actions.act_window,name:partner_relation.partner_relation_type_action
+#: model:ir.ui.menu,name:partner_relation.partner_relation_type_menu
+#: view:res.partner.relation.type:0
+msgid "Partner Relation Types"
+msgstr "Types de relation partenaire"
+
+#. module: partner_relation
+#: model:ir.actions.act_window,name:partner_relation.partner_relation_action
+#: model:ir.ui.menu,name:partner_relation.partner_relation_menu
+#: view:res.partner:0
+#: field:res.partner,relation_ids:0
+#: view:res.partner.relation:0
+msgid "Partner Relations"
+msgstr "Relations partenaires"
+
+#. module: partner_relation
+#: field:res.partner.relation.type,name:0
+msgid "Relation Name"
+msgstr "Nom de la relation"
+
+#. module: partner_relation
+#: view:res.partner.relation:0
+#: field:res.partner.relation,relation_type_id:0
+msgid "Relation Type"
+msgstr "Type de relation"
+
+#. module: partner_relation
+#: model:ir.ui.menu,name:partner_relation.partner_relation_config_menu
+#: view:res.partner:0
+msgid "Relations"
+msgstr "Relations"
+
+#. module: partner_relation
+#: field:res.partner.relation.type,reverse_id:0
+msgid "Reverse Relation Type"
+msgstr "Type de relation inverse"
+
+#. module: partner_relation
+#: view:res.partner.relation:0
+msgid "Search Partner Relations"
+msgstr "Recherche dans les relations partenaires"
+
+#. module: partner_relation
+#: field:res.partner.relation,src_partner_id:0
+msgid "Source Partner"
+msgstr "Partenaire source"
+
+#. module: partner_relation
+#: sql_constraint:res.partner.relation:0
+msgid "This relation already exists!"
+msgstr "Cette relation existe déjà !"
+
+#. module: partner_relation
+#: code:addons/partner_relation/partner_relation.py:168
+#, python-format
+msgid "You cannot write the same values on the relation and it's reverse relation."
+msgstr "Vous ne pouvez pas écrire les mêmes valeurs sur une relation et sa relation inverse."
+
+#. module: partner_relation
+#: model:res.partner.relation.type,name:partner_relation.is_competitor_of
+msgid "is a competitor of"
+msgstr "est un concurrent de"
+
+#. module: partner_relation
+#: model:res.partner.relation.type,name:partner_relation.is_customer_of
+msgid "is a customer of"
+msgstr "est un client de"
+
+#. module: partner_relation
+#: model:res.partner.relation.type,name:partner_relation.is_supplier_of
+msgid "is a supplier of"
+msgstr "est un fournisseur de"
+
+#. module: partner_relation
+#: model:res.partner.relation.type,name:partner_relation.is_integrator_of
+msgid "is an integrator of"
+msgstr "est un intégrateur de"
+
+#. module: partner_relation
+#: model:res.partner.relation.type,name:partner_relation.is_recommended_by
+msgid "is recommended by"
+msgstr "est recommandé par"
+
+#. module: partner_relation
+#: model:res.partner.relation.type,name:partner_relation.is_editor_of
+msgid "is the editor of"
+msgstr "est l'éditeur de"
+
+#. module: partner_relation
+#: model:res.partner.relation.type,name:partner_relation.recommends
+msgid "recommends"
+msgstr "recommande"
+
+#. module: partner_relation
+#: model:ir.model,name:partner_relation.model_res_partner_relation
+msgid "res.partner.relation"
+msgstr "res.partner.relation"
+

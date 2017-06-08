@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2014 Artisanat Monastique de Provence (www.barroux.org)
+    @author: Alexis de Lattre <alexis.delattre@akretion.com>
+    The licence is in the file __openerp__.py
+-->
+
+<openerp>
+<data noupdate="1">
+
+<!-- RELATION TYPES -->
+<record id="is_editor_of" model="res.partner.relation.type">
+    <field name="name">is the editor of</field>
+</record>
+
+<record id="is_integrator_of" model="res.partner.relation.type">
+    <field name="name">is an integrator of</field>
+    <field name="reverse_id" ref="is_editor_of"/>
+</record>
+
+<record id="is_recommended_by" model="res.partner.relation.type">
+    <field name="name">is recommended by</field>
+</record>
+
+<record id="recommends" model="res.partner.relation.type">
+    <field name="name">recommends</field>
+    <field name="reverse_id" ref="is_recommended_by"/>
+</record>
+
+<record id="is_competitor_of" model="res.partner.relation.type">
+    <field name="name">is a competitor of</field>
+    <!-- This is a symetric relation -->
+</record>
+
+<record id="is_supplier_of" model="res.partner.relation.type">
+    <field name="name">is a supplier of</field>
+</record>
+
+<record id="is_customer_of" model="res.partner.relation.type">
+    <field name="name">is a customer of</field>
+    <field name="reverse_id" ref="is_supplier_of"/>
+</record>
+
+
+<!-- PARTNER RELATIONS -->
+<!-- Elec Import is a customer of China Export -->
+<record id="relation_6_3_customer" model="res.partner.relation">
+    <field name="src_partner_id" ref="base.res_partner_6"/>
+    <field name="relation_type_id" ref="is_customer_of"/>
+    <field name="dest_partner_id" ref="base.res_partner_3"/>
+</record>
+
+<!-- Delta PC is a customer of Asustek -->
+<record id="relation_4_1_customer" model="res.partner.relation">
+    <field name="src_partner_id" ref="base.res_partner_4"/>
+    <field name="relation_type_id" ref="is_customer_of"/>
+    <field name="dest_partner_id" ref="base.res_partner_1"/>
+</record>
+
+<!-- Delta PC is a customer of Seagate -->
+<record id="relation_4_19_customer" model="res.partner.relation">
+    <field name="src_partner_id" ref="base.res_partner_4"/>
+    <field name="relation_type_id" ref="is_customer_of"/>
+    <field name="dest_partner_id" ref="base.res_partner_19"/>
+</record>
+
+<!-- Maxtor is a competitor of Seagate -->
+<record id="relation_20_19_competitor" model="res.partner.relation">
+    <field name="src_partner_id" ref="base.res_partner_20"/>
+    <field name="relation_type_id" ref="is_competitor_of"/>
+    <field name="dest_partner_id" ref="base.res_partner_19"/>
+</record>
+
+<!-- Medialpole recommends Agrolait -->
+<record id="relation_8_2_recommends" model="res.partner.relation">
+    <field name="src_partner_id" ref="base.res_partner_8"/>
+    <field name="relation_type_id" ref="recommends"/>
+    <field name="dest_partner_id" ref="base.res_partner_2"/>
+</record>
+
+<!-- Agrolait is a customer of Bank Wealthy -->
+<record id="relation_2_7_customer" model="res.partner.relation">
+    <field name="src_partner_id" ref="base.res_partner_2"/>
+    <field name="relation_type_id" ref="is_customer_of"/>
+    <field name="dest_partner_id" ref="base.res_partner_7"/>
+</record>
+
+<!-- Vicking Direct is a customer of Bank Wealthy -->
+<record id="relation_22_7_customer" model="res.partner.relation">
+    <field name="src_partner_id" ref="base.res_partner_22"/>
+    <field name="relation_type_id" ref="is_customer_of"/>
+    <field name="dest_partner_id" ref="base.res_partner_7"/>
+</record>
+
+<!-- Camptocamp is a competitor of Axelor -->
+<record id="relation_12_13_competitor" model="res.partner.relation">
+    <field name="src_partner_id" ref="base.res_partner_12"/>
+    <field name="relation_type_id" ref="is_competitor_of"/>
+    <field name="dest_partner_id" ref="base.res_partner_13"/>
+</record>
+
+
+</data>
+</openerp>

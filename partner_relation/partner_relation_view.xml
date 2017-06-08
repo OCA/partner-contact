@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2014-2015 Artisanat Monastique de Provence (www.barroux.org)
+    Copyright (C) 2015 Akretion France (www.akretion.com)
+    @author: Alexis de Lattre <alexis.delattre@akretion.com>
+    The licence is in the file __openerp__.py
+-->
+
+<openerp>
+<data>
+
+<!-- Partner Relation Type -->
+<record id="partner_relation_type_form" model="ir.ui.view">
+    <field name="name">partner_relation_type_form</field>
+    <field name="model">res.partner.relation.type</field>
+    <field name="arch" type="xml">
+        <form string="Partner Relation Types" version="7.0">
+            <group name="main">
+                <field name="name"/>
+                <field name="reverse_id"/>
+                <field name="active"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+<record id="partner_relation_type_tree" model="ir.ui.view">
+    <field name="name">partner_relation_type_tree</field>
+    <field name="model">res.partner.relation.type</field>
+    <field name="arch" type="xml">
+        <tree string="Partner Relation Types">
+            <field name="name"/>
+            <field name="reverse_id"/>
+        </tree>
+    </field>
+</record>
+
+<record id="partner_relation_type_action" model="ir.actions.act_window">
+    <field name="name">Relation Types</field>
+    <field name="res_model">res.partner.relation.type</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="partner_relation_config_menu" name="Relations"
+    parent="base.menu_config_address_book" sequence="90"/>
+
+<menuitem id="partner_relation_type_menu" action="partner_relation_type_action"
+    parent="partner_relation_config_menu" sequence="20"/>
+
+
+<!-- Partner Relation -->
+<record id="partner_relation_tree" model="ir.ui.view">
+    <field name="name">partner_relation_tree</field>
+    <field name="model">res.partner.relation</field>
+    <field name="arch" type="xml">
+        <tree string="Partner Relations" editable="bottom">
+            <field name="src_partner_id"/>
+            <field name="relation_type_id" widget="selection"/>
+            <field name="dest_partner_id"/>
+        </tree>
+    </field>
+</record>
+
+<record id="partner_relation_search" model="ir.ui.view">
+    <field name="name">partner_relation_search</field>
+    <field name="model">res.partner.relation</field>
+    <field name="arch" type="xml">
+        <search string="Search Partner Relations">
+            <field name="src_partner_id" string="Partner"
+                filter_domain="['|', ('src_partner_id', 'ilike', self), ('dest_partner_id', 'ilike', self)]"/>
+             <group string="Group By..." name="groupby">
+                 <filter name="relation_type_groupby" string="Relation Type"
+                    context="{'group_by': 'relation_type_id'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="partner_relation_action" model="ir.actions.act_window">
+    <field name="name">Relations</field>
+    <field name="res_model">res.partner.relation</field>
+    <field name="view_mode">tree</field>
+</record>
+
+<menuitem id="partner_relation_menu" action="partner_relation_action"
+    parent="partner_relation_config_menu" sequence="10"/>
+
+
+<!-- Partner -->
+<record id="view_partner_form" model="ir.ui.view">
+    <field name="name">add.relations.on.res.partner.form</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch"  type="xml">
+        <page string="Contacts" position="after">
+            <page name="relations" string="Relations">
+                <group string="Partner Relations" name="relations">
+                    <field name="relation_ids" nolabel="1">
+                    <!-- I can't call the tree view of
+                    res.partner.relation because 'src_partner_id' is a
+                    required field and it blocks... and I really want
+                    this field to be required for data integrity reasons
+                    -->
+                        <tree editable="bottom">
+                            <field name="relation_type_id" widget="selection"/>
+                            <field name="dest_partner_id" string="Partner"/>
+                            <button name="go_to_dest_partner" type="object"
+                                icon="terp-gtk-jump-to-ltr"
+                                string="Go to Relation Partner"/>
+                        </tree>
+                    </field>
+                </group>
+            </page>
+        </page>
+    </field>
+</record>
+
+</data>
+</openerp>
