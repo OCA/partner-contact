@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="partner_activity_report_base.report_partner_activity_def">
+            <t t-call="report.internal_layout">
+                <div class="page">
+                    <t t-foreach="o.partner_ids" t-as="partner">
+                        <p t-if="option_selected.partner_information">
+                            <h2>
+                                <span>Partner Informations</span>
+                            </h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Code</th>
+                                        <th>Categories</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="invoice_tbody">
+                                    <tr>
+                                        <td>
+                                            <span t-field="partner.name" />
+                                        </td>
+                                        <td>
+                                            <span t-field="partner.ref" />
+                                        </td>
+                                        <td>
+                                            <t t-if="partner.category_id"
+                                                t-foreach="partner.category_id"
+                                                t-as="categ">
+                                                <p>
+                                                    <t t-esc="categ.name" />
+                                                </p>
+                                            </t>
+                                            <span
+                                                t-if="not partner.category_id">/</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                        <p t-if="option_selected.partner_information">
+                            <h2>
+                                <span>Address Informations</span>
+                            </h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Street</th>
+                                        <th>Street Additional</th>
+                                        <th>PoBox</th>
+                                        <th>Zip</th>
+                                        <th>City</th>
+                                        <th>Country</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="invoice_tbody">
+                                    <tr>
+                                        <td>
+                                            <span t-field="partner.street" />
+                                        </td>
+                                        <td>
+                                            <span t-field="partner.street2" />
+                                        </td>
+                                        <td>
+                                            <span t-field="partner.zip" />
+                                        </td>
+                                        <td>
+                                            <span t-field="partner.city" />
+                                        </td>
+                                        <td>
+                                            <span
+                                                t-field="partner.country_id.name" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+
+                        <p t-if="option_selected.partner_address_information">
+                            <h2>
+                                <span>Partner Contacts</span>
+                            </h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Function</th>
+                                        <th>Phone</th>
+                                        <th>Mobile</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="invoice_tbody">
+                                    <tr t-if="len(partner.child_ids) > 0"
+                                        t-foreach="partner.child_ids"
+                                        t-as="l">
+                                        <td>
+                                            <span t-field="l.name" />
+                                        </td>
+                                        <td>
+                                            <span t-field="l.function" />
+                                        </td>
+                                        <td>
+                                            <span t-field="l.phone" />
+                                        </td>
+                                        <td>
+                                            <span t-field="l.mobile" />
+                                        </td>
+                                        <td>
+                                            <span t-field="l.email" />
+                                        </td>
+                                    </tr>
+                                    <tr t-if="len(partner.child_ids) == 0">
+                                        <td colspan="5">
+                                            <span>No records</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+                       </t>
+					 </div>
+                  <p style="page-break-after:always"></p>
+            </t>
+        </template>
+
+        <template id="partner_activity_report_base.report_partner_activity_qweb">
+            <t t-set="data_report_margin_top" t-value="12"/>
+	        <t t-set="data_report_header_spacing" t-value="9"/>
+	        <t t-set="data_report_dpi" t-value="110"/>
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t
+                        t-raw="translate_doc(doc_id, doc_model, 'user_id.lang', 'partner_activity_report_base.report_partner_activity_def')" />
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>
+
