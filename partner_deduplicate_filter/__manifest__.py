@@ -5,7 +5,7 @@
 
 {
     "name": "Exclude records from the deduplication",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "category": "Tools",
     "website": "https://www.tecnativa.com",
     "author": "Tecnativa, "
