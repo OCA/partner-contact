@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_partner_profitseg_segment_form" model="ir.ui.view">
+            <field name="name">view.partner.profitseg.segment.form</field>
+            <field name="model">res.partner.profitseg.segment</field>
+            <field name="arch" type="xml">
+                <form string="Customer profit segment">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="lower_limit"/>
+                        <field name="upper_limit"/>
+                    </group>
+                    <field name="notes" placeholder="Notes..."/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_partner_profitseg_segment_tree" model="ir.ui.view">
+            <field name="name">view.partner.profitseg.segment.tree</field>
+            <field name="model">res.partner.profitseg.segment</field>
+            <field name="arch" type="xml">
+                <tree string="Customer profit segments">
+                    <field name="name"/>
+                    <field name="lower_limit"/>
+                    <field name="upper_limit"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_profitseg_segments_tree" model="ir.actions.act_window">
+            <field name="name">Customers profit segments</field>
+            <field name="res_model">res.partner.profitseg.segment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_partner_profitseg_segment_tree"/>
+        </record>
+
+        <menuitem id="menu_action_profitseg_segments_tree" action="action_profitseg_segments_tree" parent="base.menu_base_config"/>
+
+    </data>
+</openerp>

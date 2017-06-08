@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_partner_form_profitseg" model="ir.ui.view">
+            <field name="name">view.partner.form.profitseg</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="profitseg_segment_id" attrs="{'invisible': [('customer', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
