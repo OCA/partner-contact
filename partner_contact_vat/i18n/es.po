@@ -1,0 +1,42 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_contact_vat
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 7.0-20140804-231303\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-08 09:55+0000\n"
+"PO-Revision-Date: 2014-08-08 11:58+0100\n"
+"Last-Translator: Jairo Llopis <yajo.sk8@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: es\n"
+
+#. module: partner_contact_vat
+#: model:ir.model,name:partner_contact_vat.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: partner_contact_vat
+#: help:res.partner,contact_vat:0
+msgid ""
+"Tax Identification Number of the contact. This will not be used for "
+"commercial actions; instead, parent company's TIN will be used."
+msgstr ""
+"Número de Identificación Fiscal del contacto. Este código no se usará para "
+"acciones comerciales; en su lugar, se usará el NIF de la empresa a la que "
+"pertenece el contacto."
+
+#. module: partner_contact_vat
+#: field:res.partner,contact_vat:0
+msgid "Contact TIN"
+msgstr "NIF del contacto"
+
+#. module: partner_contact_vat
+#: view:res.partner:0
+msgid "e.g. BE0477472701"
+msgstr "Por ejemplo, ESA00000000"
