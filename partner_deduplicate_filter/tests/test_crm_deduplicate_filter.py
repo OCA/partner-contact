@@ -2,8 +2,8 @@
 # Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp.tests import common
-from openerp.tools.safe_eval import safe_eval
+from odoo.tests import common
+from odoo.tools.safe_eval import safe_eval
 
 
 class TestDeduplicateFilter(common.TransactionCase):
@@ -36,7 +36,7 @@ class TestDeduplicateFilter(common.TransactionCase):
 
     def test_deduplicate_exclude_is_company(self):
         self.wizard.exclude_is_company = True
-        self.wizard.start_process_cb()
+        self.wizard.action_start_manual_process()
         matched_founds = 0
         for line in self.wizard.line_ids:
             match_ids = safe_eval(line.aggr_ids)
@@ -50,7 +50,7 @@ class TestDeduplicateFilter(common.TransactionCase):
 
     def test_deduplicate_exclude_not_parent(self):
         self.wizard.exclude_not_parent = True
-        self.wizard.start_process_cb()
+        self.wizard.action_start_manual_process()
         matched_founds = 0
         for line in self.wizard.line_ids:
             match_ids = safe_eval(line.aggr_ids)
@@ -64,7 +64,7 @@ class TestDeduplicateFilter(common.TransactionCase):
 
     def test_deduplicate_exclude_parent(self):
         self.wizard.exclude_parent = True
-        self.wizard.start_process_cb()
+        self.wizard.action_start_manual_process()
         matched_founds = 0
         for line in self.wizard.line_ids:
             match_ids = safe_eval(line.aggr_ids)

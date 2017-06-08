@@ -17,7 +17,7 @@ Usage
 
 To use this module, you need to:
 
-#. Go to *Sales > Tools > Deduplicate Contacts*.
+#. Go to *CRM/Sales > Tools > Deduplicate Contacts*.
 #. Mark "'Is a company?' field selected", "Parent company not set" or
    "Parent company set (Contacts)" in the section 'Exclude contacts having'.
 #. This criteria will be used for excluding in the deduplication the selected
@@ -25,7 +25,7 @@ To use this module, you need to:
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/111/9.0
+   :target: https://runbot.odoo-community.org/runbot/111/10.0
 
 Bug Tracker
 ===========
@@ -41,6 +41,7 @@ Credits
 Images
 ------
 
+* Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
 * `Funnel <https://openclipart.org/detail/245510/funnel>`_.
 * `Arrow <https://openclipart.org/detail/131875/convergent>`_.
 
@@ -49,6 +50,7 @@ Contributors
 
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
 * Vicent Cubells <vicent.cubells@tecnativa.com>
+* Luis M. Ontalba <luis.martinez@tecnativa.com>
 
 Maintainer
 ----------
