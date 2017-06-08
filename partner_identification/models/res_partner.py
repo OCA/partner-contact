@@ -44,7 +44,7 @@ class ResPartner(models.Model):
                     'social_security', 'SSN',
                 ),
                 search=lambda s, *a: s._search_identification(
-                    'social_security', 'SSN', *a
+                    'SSN', *a
                 ),
             )
 
@@ -86,7 +86,7 @@ class ResPartner(models.Model):
                     'social_security', 'SSN',
                 ),
                 search=lambda s, *a: s._search_identification(
-                    'social_security', 'SSN', *a
+                    'SSN', *a
                 ),
             )
 
@@ -136,8 +136,7 @@ class ResPartner(models.Model):
                 ))
 
     @api.model
-    def _search_identification(self, field_name, category_code,
-                               operator, value):
+    def _search_identification(self, category_code, operator, value):
         """ Search method for an identification field.
 
         Example:
@@ -152,19 +151,22 @@ class ResPartner(models.Model):
                     'social_security', 'SSN',
                 ),
                 search=lambda s, *a: s._search_identification(
-                    'social_security', 'SSN', *a
+                    'SSN', *a
                 ),
             )
 
         Args:
-            field_name (str): Name of field to set.
             category_code (str): Category code of the Identification type.
+            operator (str): Operator of domain.
+            value (str): Value to search for.
 
         Returns:
             list: Domain to search with.
         """
-
-        return [
-            (field_name, operator, value),
+        id_numbers = self.env['res.partner.id_number'].search([
+            ('name', operator, value),
             ('category_id.code', '=', category_code),
+        ])
+        return [
+            ('id_numbers.id', 'in', id_numbers.ids),
         ]
