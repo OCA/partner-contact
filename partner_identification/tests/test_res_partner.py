@@ -18,7 +18,7 @@ class ResPartner(models.Model):
             'social_security', 'SSN',
         ),
         search=lambda s, *a: s._search_identification(
-            'social_security', 'SSN', *a
+            'SSN', *a
         ),
     )
 
