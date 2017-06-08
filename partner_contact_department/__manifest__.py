@@ -15,7 +15,7 @@
     'website': 'http://www.tecnativa.com',
     "application": False,
     'depends': [
-        'base',
+        'sales_team',
     ],
     'data': [
         'security/ir.model.access.csv',
