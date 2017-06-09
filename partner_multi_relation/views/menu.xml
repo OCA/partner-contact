@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        <menuitem
+            id="menu_res_partner_relation_sales"
+            sequence="3"
+            parent="sales_team.menu_sales"
+            action="action_res_partner_relation_all"
+        />
+
+        <act_window
+            id="action_res_partner_relation_type"
+            res_model="res.partner.relation.type"
+            view_mode="tree,form"
+            name="Partner Relations Types"
+        />
+
+        <menuitem
+            id="menu_res_partner_relation_type"
+            parent="sales_team.menu_config_address_book"
+            action="action_res_partner_relation_type"
+        />
+
+</odoo>

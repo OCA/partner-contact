@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Added partner categories and partners to this file, because it
+             turned out to be a bad idea to rely on demo data in base module,
+             that can change from release to release. Only dependency on
+             countries remain. They are less likely to change/disappear.
+        -->
+
+        <!-- Partner relation types -->
+        <record id="rel_type_assistant" model="res.partner.relation.type">
+            <field name="name">Is assistant of</field>
+            <field name="name_inverse">Has assistant</field>
+            <field name="contact_type_left">p</field>
+            <field name="contact_type_right">p</field>
+        </record>
+        <record id="rel_type_competitor" model="res.partner.relation.type">
+            <field name="name">Is competitor of</field>
+            <field name="name_inverse">Is competitor of</field>
+            <field name="contact_type_left">c</field>
+            <field name="contact_type_right">c</field>
+            <field name="is_symmetric" eval="True" />
+        </record>
+        <record id="rel_type_has_worked_for" model="res.partner.relation.type">
+            <field name="name">Has worked for</field>
+            <field name="name_inverse">Has former employee</field>
+            <field name="contact_type_left">p</field>
+            <field name="contact_type_right">c</field>
+        </record>
+
+        <!-- Categories -->
+        <record id="res_partner_category_pmr_0" model="res.partner.category">
+            <field name="name">Washing Companies</field>
+        </record>
+        <record id="res_partner_category_pmr_4" model="res.partner.category">
+            <field name="name">Washing Gold</field>
+            <field name="parent_id" ref="res_partner_category_pmr_0"/>
+        </record>
+        <record id="res_partner_category_pmr_5" model="res.partner.category">
+            <field name="name">Washing Silver</field>
+            <field name="parent_id" ref="res_partner_category_pmr_0"/>
+        </record>
+        <record id="res_partner_category_pmr_11" model="res.partner.category">
+            <field name="name">Washing Services</field>
+            <field name="parent_id" ref="res_partner_category_pmr_0"/>
+        </record>
+
+        <!-- Partners -->
+        <record id="res_partner_pmr_great" model="res.partner">
+            <field name="name">Great Washing Powder Company</field>
+            <field
+                name="category_id"
+                eval="[(6, 0, [ref('res_partner_category_pmr_11'), ref('res_partner_category_pmr_4')])]"
+                />
+            <field name="supplier">1</field>
+            <field name="customer">1</field>
+            <field name="is_company">1</field>
+            <field name="city">Le Bourget du Lac</field>
+            <field name="zip">73377</field>
+            <field name="phone">+33 4 49 23 44 54</field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="street">93, Press Avenue</field>
+            <field name="email">great@yourcompany.example.com</field>
+            <field name="website">http://www.great.com</field>
+        </record>
+        <record id="res_partner_pmr_best" model="res.partner">
+            <field name="name">Best Washing Powder Company</field>
+            <field
+                name="category_id"
+                eval="[(6, 0, [ref('res_partner_category_pmr_4'), ref('res_partner_category_pmr_11')])]"
+                />
+            <field name="supplier">1</field>
+            <field name="is_company">1</field>
+            <field name="city">Champs sur Marne</field>
+            <field name="zip">77420</field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="email">best@yourcompany.example.com</field>
+            <field name="phone">+33 1 64 61 04 01</field>
+            <field name="street">12 rue Albert Einstein</field>
+            <field name="website">http://www.best.com/</field>
+        </record>
+        <record id="res_partner_pmr_super" model="res.partner">
+            <field name="name">Super Washing Powder Company</field>
+            <field
+                name="category_id"
+                eval="[(6,0,[ref('res_partner_category_pmr_5')])]"
+                />
+            <field name="supplier">1</field>
+            <field eval="1" name="customer"/>
+            <field name="is_company">1</field>
+            <field name="street">3rd Floor, Room 3-C,</field>
+            <field name="street2">Carretera Panamericana, Km 1, Urb. Delgado Chalbaud</field>
+            <field name="city">Caracas</field>
+            <field name="zip">1090</field>
+            <field name="email">super@yourcompany.example.com</field>
+            <field name="phone">+58 212 681 0538</field>
+            <field name="country_id" ref="base.ve"/>
+            <field name="website">super.com</field>
+        </record>
+
+        <!-- Relations -->
+        <record id="rel_1" model="res.partner.relation">
+            <field name="left_partner_id" ref="res_partner_pmr_great" />
+            <field name="right_partner_id" ref="res_partner_pmr_super" />
+            <field name="type_id" ref="rel_type_competitor" />
+        </record>
+        <record id="rel_2" model="res.partner.relation">
+            <field name="left_partner_id" ref="res_partner_pmr_best" />
+            <field name="right_partner_id" ref="res_partner_pmr_super" />
+            <field name="type_id" ref="rel_type_competitor" />
+        </record>
+        <record id="rel_3" model="res.partner.relation">
+            <field name="left_partner_id" ref="res_partner_pmr_great" />
+            <field name="right_partner_id" ref="res_partner_pmr_best" />
+            <field name="type_id" ref="rel_type_competitor" />
+        </record>
+    </data>
+</odoo>
