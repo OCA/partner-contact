@@ -11,12 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2017-06-10 01:50+0000\n"
 "PO-Revision-Date: 2017-06-10 01:50+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Lithuanian (https://www.transifex.com/oca/teams/23907/lt/)\n"
+"Language-Team: Persian (https://www.transifex.com/oca/teams/23907/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: lt\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: fa\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: base_location
 #: model:ir.actions.act_window,name:base_location.action_zip_tree
@@ -87,37 +87,37 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_uid
 msgid "Created by"
-msgstr "Sukūrė"
+msgstr "ایجاد شده توسط"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_date
 msgid "Created on"
-msgstr "Sukurta"
+msgstr "ایجاد شده در"
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 msgid "Group By"
-msgstr "Grupuoti pagal"
+msgstr "گروه‌بندی برمبنای"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_id
 msgid "ID"
-msgstr "ID"
+msgstr "شناسه"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip___last_update
 msgid "Last Modified on"
-msgstr "Paskutinį kartą keista"
+msgstr "تاریخ آخرین به‌روزرسانی"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_uid
 msgid "Last Updated by"
-msgstr "Paskutinį kartą atnaujino"
+msgstr "آخرین به روز رسانی توسط"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_date
 msgid "Last Updated on"
-msgstr "Paskutinį kartą atnaujinta"
+msgstr "آخرین به روز رسانی در"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_latitude
@@ -137,12 +137,12 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_display_name
 msgid "Name"
-msgstr "Pavadinimas"
+msgstr "نام"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_partner
 msgid "Partner"
-msgstr "Partneris"
+msgstr ""
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
