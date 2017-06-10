@@ -1,0 +1,103 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_employee_quantity
+# 
+# Translators:
+# Peter Hageman <hageman.p@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-10 01:50+0000\n"
+"PO-Revision-Date: 2017-06-10 01:50+0000\n"
+"Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
+"Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_create_uid
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_create_date
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model:ir.ui.view,arch_db:partner_employee_quantity.view_res_partner_filter_employees
+msgid "Employee Quantity"
+msgstr "Aantal Medewerkers"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_alias_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_users_employee_quantity
+#: model:ir.ui.view,arch_db:partner_employee_quantity.view_partner_form_employees
+msgid "Employee quantity"
+msgstr "Aantal medewerkers"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_alias_employee_quantity_range_id
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_id
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_users_employee_quantity_range_id
+msgid "Employee quantity range"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_id_4365
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range___last_update
+msgid "Last Modified on"
+msgstr "Laatst gewijzigd op"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_write_date
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_name
+msgid "Name"
+msgstr "Naam"
+
+#. module: partner_employee_quantity
+#: model:ir.model,name:partner_employee_quantity.model_res_partner
+msgid "Partner"
+msgstr "Relatie"
+
+#. module: partner_employee_quantity
+#: model:ir.model,name:partner_employee_quantity.model_res_partner_employee_quantity_range
+msgid "Partner employee quantity range"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,help:partner_employee_quantity.field_res_partner_alias_employee_quantity_range_id
+#: model:ir.model.fields,help:partner_employee_quantity.field_res_partner_employee_quantity_range_id
+#: model:ir.model.fields,help:partner_employee_quantity.field_res_users_employee_quantity_range_id
+msgid "Range of this partner depending on the employee quantity."
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model:ir.actions.act_window,name:partner_employee_quantity.employees_range_action
+#: model:ir.ui.menu,name:partner_employee_quantity.menu_employees_range
+#: model:ir.ui.view,arch_db:partner_employee_quantity.employees_range_tree_view
+msgid "Ranges by quantity of employees"
+msgstr ""

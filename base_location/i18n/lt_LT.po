@@ -1,0 +1,171 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_location
+# 
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-10 01:50+0000\n"
+"PO-Revision-Date: 2017-06-10 01:50+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Lithuanian (Lithuania) (https://www.transifex.com/oca/teams/23907/lt_LT/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: lt_LT\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. module: base_location
+#: model:ir.actions.act_window,name:base_location.action_zip_tree
+msgid "Cites/locations"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_country_state_better_zip_ids
+#: model:ir.ui.view,arch_db:base_location.better_zip_tree
+msgid "Cities"
+msgstr ""
+
+#. module: base_location
+#: model:ir.ui.menu,name:base_location.locations_menu
+msgid "Cities/Locations"
+msgstr ""
+
+#. module: base_location
+#: model:ir.ui.menu,name:base_location.locations_root_menu
+msgid "Cities/Locations Management"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_city
+#: model:ir.ui.view,arch_db:base_location.better_zip_form
+msgid "City"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_code
+msgid "City Code"
+msgstr ""
+
+#. module: base_location
+#: model:ir.ui.view,arch_db:base_location.view_company_form_city
+#: model:ir.ui.view,arch_db:base_location.view_partner_form
+msgid "City completion"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_partner_zip_id
+#: model:ir.model.fields,field_description:base_location.field_res_users_zip_id
+msgid "City/Location"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_better_zip
+msgid "City/locations completion object"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_country_id
+#: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
+#: model:ir.ui.view,arch_db:base_location.view_country_search
+msgid "Country"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_country_state
+msgid "Country state"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_uid
+msgid "Created by"
+msgstr "Sukūrė"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_date
+msgid "Created on"
+msgstr "Sukurta"
+
+#. module: base_location
+#: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
+msgid "Group By"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_id
+msgid "ID"
+msgstr "ID"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_uid
+msgid "Last Updated by"
+msgstr "Paskutinį kartą atnaujino"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_date
+msgid "Last Updated on"
+msgstr "Paskutinį kartą atnaujinta"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_latitude
+msgid "Latitude"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_company_better_zip_id
+msgid "Location"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_longitude
+msgid "Longitude"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_display_name
+msgid "Name"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: base_location
+#: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
+msgid "Search city"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_state_id
+#: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
+msgid "State"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,help:base_location.field_res_better_zip_code
+msgid "The official code for the city"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,help:base_location.field_res_company_better_zip_id
+msgid "Use the city name or the zip code to search the location"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_name
+msgid "ZIP"
+msgstr ""

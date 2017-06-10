@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-01 03:36+0000\n"
-"PO-Revision-Date: 2017-01-01 03:36+0000\n"
+"POT-Creation-Date: 2017-06-10 01:50+0000\n"
+"PO-Revision-Date: 2017-06-10 01:50+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Bulgarian (https://www.transifex.com/oca/teams/23907/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Създадено на"
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Име за показване"
 
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
@@ -65,7 +65,7 @@ msgid ""
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:125
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:129
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr ""
@@ -113,7 +113,7 @@ msgid "Letter Case"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:69
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:71
 #, python-format
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
@@ -123,12 +123,6 @@ msgstr ""
 #. module: base_location_geonames_import
 #: selection:better.zip.geonames.import,letter_case:0
 msgid "Title Case"
-msgstr ""
-
-#. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:101
-#, python-format
-msgid "Too many states with code %s for country %s"
 msgstr ""
 
 #. module: base_location_geonames_import

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-31 03:41+0000\n"
-"PO-Revision-Date: 2017-05-31 03:41+0000\n"
+"POT-Creation-Date: 2017-06-10 01:50+0000\n"
+"PO-Revision-Date: 2017-06-10 01:50+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Vietnamese (https://www.transifex.com/oca/teams/23907/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -38,37 +38,37 @@ msgstr ""
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Được tạo bởi"
 
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Được tạo vào"
 
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Tên hiển thị"
 
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Sửa lần cuối vào"
 
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Last Updated by"
 
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Cập nhật lần cuối vào"
 
 #. module: partner_password_reset
 #: model:ir.actions.act_window,name:partner_password_reset.action_view_partner_password_reset_wizard

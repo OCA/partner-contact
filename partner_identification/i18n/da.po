@@ -3,14 +3,15 @@
 # * partner_identification
 # 
 # Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-20 01:37+0000\n"
-"PO-Revision-Date: 2016-03-19 05:58+0000\n"
-"Last-Translator: <>\n"
-"Language-Team: Danish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/da/)\n"
+"POT-Creation-Date: 2017-06-10 01:50+0000\n"
+"PO-Revision-Date: 2017-06-10 01:50+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"Language-Team: Danish (https://www.transifex.com/oca/teams/23907/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -18,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:24
+#: code:addons/partner_identification/models/res_partner_id_category.py:23
 #, python-format
 msgid ""
 "\n"
@@ -29,7 +30,7 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:70
+#: code:addons/partner_identification/models/res_partner_id_category.py:71
 #, python-format
 msgid "%s is not a valid %s identifier"
 msgstr ""
@@ -43,7 +44,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_active
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_active
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_partner_issued_id
@@ -66,22 +67,22 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Oprettet af"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_date
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Oprettet den"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Vist navn"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:66
+#: code:addons/partner_identification/models/res_partner_id_category.py:67
 #, python-format
 msgid ""
 "Error when evaluating the id_category validation code::\n"
@@ -128,7 +129,9 @@ msgid "ID type defined in configuration. For example, Driver License"
 msgstr ""
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_alias_id_numbers
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_numbers
+#: model:ir.model.fields,field_description:partner_identification.field_res_users_id_numbers
 msgid "Identification Numbers"
 msgstr ""
 
@@ -153,19 +156,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category___last_update
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Sidst ændret den"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Sidst opdateret af"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_date
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Sidst opdateret den"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category_name
@@ -243,6 +246,14 @@ msgstr ""
 msgid ""
 "The place where the ID has been issued. For example the country for "
 "passports and visa"
+msgstr ""
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner.py:130
+#, python-format
+msgid ""
+"This %s has multiple IDs of this type (%s), so a write via the %s field is "
+"not possible. In order to fix this, please use the IDs tab."
 msgstr ""
 
 #. module: partner_identification

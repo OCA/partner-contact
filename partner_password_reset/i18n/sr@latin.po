@@ -1,0 +1,102 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_password_reset
+# 
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-10 01:50+0000\n"
+"PO-Revision-Date: 2017-06-10 01:50+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Serbian (Latin) (https://www.transifex.com/oca/teams/23907/sr@latin/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: sr@latin\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. module: partner_password_reset
+#: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
+msgid ""
+"Are you sure you want to reset the password for\n"
+"                    the following Users?"
+msgstr ""
+
+#. module: partner_password_reset
+#: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
+msgid "Cancel"
+msgstr ""
+
+#. module: partner_password_reset
+#: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
+msgid "Confirm"
+msgstr ""
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_create_uid
+msgid "Created by"
+msgstr "Kreirao"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_create_date
+msgid "Created on"
+msgstr "Kreiran"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_display_name
+msgid "Display Name"
+msgstr "Ime za prikaz"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard___last_update
+msgid "Last Modified on"
+msgstr "Zadnja izmjena"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Zadnja izmjena"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_write_date
+msgid "Last Updated on"
+msgstr "Zadnja izmjena"
+
+#. module: partner_password_reset
+#: model:ir.actions.act_window,name:partner_password_reset.action_view_partner_password_reset_wizard
+msgid "Send Password Reset Email"
+msgstr ""
+
+#. module: partner_password_reset
+#: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
+msgid "Send Password Reset Email(s)"
+msgstr ""
+
+#. module: partner_password_reset
+#: code:addons/partner_password_reset/wizard/res_partner_password_reset_wizard.py:35
+#, python-format
+msgid "The selected partners have no associated portal users"
+msgstr ""
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_user_ids
+msgid "User ids"
+msgstr ""
+
+#. module: partner_password_reset
+#: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
+msgid "or"
+msgstr ""
+
+#. module: partner_password_reset
+#: model:ir.model,name:partner_password_reset.model_res_partner_password_reset_wizard
+msgid "res.partner.password.reset.wizard"
+msgstr ""
