@@ -42,6 +42,7 @@ addon | version | summary
 [partner_firstname](partner_firstname/) | 10.0.2.0.0 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 10.0.0.1.0 | Add specific helper methods
 [partner_identification](partner_identification/) | 10.0.1.1.1 | Partner Identification Numbers
+[partner_multi_relation](partner_multi_relation/) | 10.0.1.0.0 | Partner relations
 [partner_password_reset](partner_password_reset/) | 10.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
 [partner_sector](partner_sector/) | 10.0.1.0.0 | Add partner sectors
 [partner_street_number](partner_street_number/) | 10.0.1.0.0 | Introduces separate fields for street name and street number.
@@ -58,7 +59,6 @@ addon | version | summary
 [firstname_display_name_trigger](firstname_display_name_trigger/) | 1.0 (unported) | Link module if partner_lastname and account_report_company are installed
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 (unported) | Partner auto salesman
 [partner_contact_address_detailed](partner_contact_address_detailed/) | 8.0.1.0.0 (unported) | All address data in summarized contact form
-[partner_relations](partner_relations/) | 8.0.1.1.0 (unported) | Partner relations
 [portal_partner_merge](portal_partner_merge/) | 8.0.1.0.0 (unported) | Portal Partner Merge
 [res_partner_affiliate](res_partner_affiliate/) | 8.0.1.0.0 (unported) | Partner Affiliates
 
