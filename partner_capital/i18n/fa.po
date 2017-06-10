@@ -8,20 +8,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-21 01:48+0000\n"
-"PO-Revision-Date: 2017-11-21 01:48+0000\n"
+"POT-Creation-Date: 2017-06-10 01:50+0000\n"
+"PO-Revision-Date: 2017-06-10 01:50+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
+"Language-Team: Persian (https://www.transifex.com/oca/teams/23907/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fa\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: partner_capital
 #: selection:res.partner,company_size:0
 msgid "Big"
-msgstr "Grande"
+msgstr ""
 
 #. module: partner_capital
 #: model:ir.ui.view,arch_db:partner_capital.view_partner_form_capital
@@ -68,37 +68,37 @@ msgstr ""
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_create_uid
 msgid "Created by"
-msgstr "Creato da"
+msgstr "ایجاد شده توسط"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_create_date
 msgid "Created on"
-msgstr "Creato il"
+msgstr "ایجاد شده در"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_display_name
 msgid "Display Name"
-msgstr "Nome da visualizzare"
+msgstr "نام نمایشی"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_id
 msgid "ID"
-msgstr "ID"
+msgstr "شناسه"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range___last_update
 msgid "Last Modified on"
-msgstr "Ultima modifica il"
+msgstr "تاریخ آخرین به‌روزرسانی"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_write_uid
 msgid "Last Updated by"
-msgstr "Ultimo caricamento il"
+msgstr "آخرین به روز رسانی توسط"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_write_date
 msgid "Last Updated on"
-msgstr "Ultimo caricamento di"
+msgstr "آخرین به روز رسانی در"
 
 #. module: partner_capital
 #: selection:res.partner,company_size:0
@@ -113,12 +113,12 @@ msgstr ""
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_name
 msgid "Name"
-msgstr "Nome"
+msgstr "نام"
 
 #. module: partner_capital
 #: model:ir.model,name:partner_capital.model_res_partner
 msgid "Partner"
-msgstr "Partner"
+msgstr ""
 
 #. module: partner_capital
 #: model:ir.model.fields,help:partner_capital.field_res_partner_alias_capital_amount
@@ -147,7 +147,7 @@ msgstr ""
 #. module: partner_capital
 #: model:ir.model,name:partner_capital.model_res_partner_turnover_range
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_alias_turnover_range_id
-#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_id_4641
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_id_4325
 #: model:ir.model.fields,field_description:partner_capital.field_res_users_turnover_range_id
 msgid "Turnover range"
 msgstr ""
