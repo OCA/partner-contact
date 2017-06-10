@@ -3,14 +3,14 @@
 # * partner_sector
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-26 02:52+0000\n"
-"PO-Revision-Date: 2017-04-26 02:52+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2017-12-26 15:33+0000\n"
+"PO-Revision-Date: 2017-12-26 15:33+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +45,7 @@ msgid "Error! You cannot create recursive sectors."
 msgstr ""
 
 #. module: partner_sector
-#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_id_1428
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_id_4179
 msgid "ID"
 msgstr "ID"
 
@@ -57,15 +57,17 @@ msgstr "Última Modificação em"
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_write_uid
 msgid "Last Updated by"
-msgstr "Última atualização por"
+msgstr "Útima atualização por"
 
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_write_date
 msgid "Last Updated on"
-msgstr "Última atualização em"
+msgstr "Útima atualização em"
 
 #. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_alias_sector_id
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_id
+#: model:ir.model.fields,field_description:partner_sector.field_res_users_sector_id
 msgid "Main Sector"
 msgstr ""
 
@@ -95,7 +97,9 @@ msgid "Partner"
 msgstr "Parceiro"
 
 #. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_alias_secondary_sector_ids
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_secondary_sector_ids
+#: model:ir.model.fields,field_description:partner_sector.field_res_users_secondary_sector_ids
 msgid "Secondary Sectors"
 msgstr ""
 
