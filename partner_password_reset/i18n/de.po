@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-02 00:47+0000\n"
-"PO-Revision-Date: 2017-06-02 00:47+0000\n"
+"POT-Creation-Date: 2017-06-03 05:34+0000\n"
+"PO-Revision-Date: 2017-06-03 05:34+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>, 2017\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
@@ -76,12 +76,12 @@ msgstr "Zuletzt aktualisiert am"
 #. module: partner_password_reset
 #: model:ir.actions.act_window,name:partner_password_reset.action_view_partner_password_reset_wizard
 msgid "Send Password Reset Email"
-msgstr ""
+msgstr "Verschicke Email zum Passwort zurücksetzen"
 
 #. module: partner_password_reset
 #: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
 msgid "Send Password Reset Email(s)"
-msgstr ""
+msgstr "Verschicke Email(s) zum Passwort zurücksetzen"
 
 #. module: partner_password_reset
 #: code:addons/partner_password_reset/wizard/res_partner_password_reset_wizard.py:35

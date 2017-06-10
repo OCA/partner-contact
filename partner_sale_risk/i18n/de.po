@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-02 00:47+0000\n"
-"PO-Revision-Date: 2017-06-02 00:47+0000\n"
+"POT-Creation-Date: 2017-06-03 05:34+0000\n"
+"PO-Revision-Date: 2017-06-03 05:34+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
@@ -75,12 +75,12 @@ msgstr "Dieser Verkaufsauftrag überschreitet das finanzielle Risiko.\n"
 #: code:addons/partner_sale_risk/models/sale.py:46
 #, python-format
 msgid "This sale order exceeds the sales orders risk.\n"
-msgstr ""
+msgstr "Dieser Auftrag übersteigt das Auftragsrisiko.\n"
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_risk_sale_order
 msgid "Total Sales Orders Not Invoiced"
-msgstr ""
+msgstr "Anzahl nicht abgerechneter"
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order
