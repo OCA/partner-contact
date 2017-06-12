@@ -260,3 +260,11 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
             details[0]['context'],
             msg='Custom actions incorrectly updated with new context'
         )
+
+        details = self.action.read(
+            cr, uid, self.custom_partner_action_id
+        )
+        self.assertIs(
+            type(details), type({}),
+            msg='Action should return one dictionary if called with integer'
+        )
