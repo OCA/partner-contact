@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <delete model="ir.translation" search="[('module', '=', 'base'), ('type', '=', 'model'), ('name', '=', 'ir.ui.menu,name'), ('res_id', '=', ref('base.menu_base_partner'))]" />
+        <delete model="ir.translation" search="[('module', '=', 'base'), ('type', '=', 'model'), ('name', '=', 'ir.ui.menu,name'), ('res_id', '=', ref('base.menu_sales'))]" />
+        <delete model="ir.translation" search="[('module', '=', 'base'), ('type', '=', 'model'), ('name', '=', 'ir.actions.act_window,name'), ('res_id', '=', ref('base.action_partner_customer_form'))]" />
+        <delete model="ir.translation" search="[('module', '=', 'base'), ('type', '=', 'model'), ('name', '=', 'ir.actions.act_window,name'), ('res_id', '=', ref('base.action_partner_form'))]" />
+        <delete model="ir.translation" search="[('module', '=', 'base'), ('type', '=', 'model'), ('name', '=', 'ir.ui.menu,name'), ('res_id', '=', ref('base.menu_partner_form'))]" />
+        <delete model="ir.translation" search="[('module', '=', 'base'), ('type', '=', 'view'), ('name', '=', 'res.partner'), ('res_id', '=', 0)]" />
+        <delete model="ir.translation" search="[('module', '=', 'base'), ('type', '=', 'view'), ('name', '=', 'res.partner'), ('res_id', '=', 0)]" />
+        <delete model="ir.translation" search="[('module', '=', 'base'), ('type', '=', 'view'), ('name', '=', 'res.partner'), ('res_id', '=', 0)]" />
+        <delete model="ir.translation" search="[('module', '=', 'base'), ('type', '=', 'view'), ('name', '=', 'res.partner'), ('res_id', '=', 0)]" />
+        <delete model="ir.translation" search="[('module', '=', 'base'), ('type', '=', 'field'), ('name', '=', 'res.partner,user_id'), ('res_id', '=', 0)]" />
+        <delete model="ir.translation" search="[('module', '=', 'base'), ('type', '=', 'field'), ('name', '=', 'res.partner,parent_id'), ('res_id', '=', 0)]" />
+    </data>
+</openerp>
+
