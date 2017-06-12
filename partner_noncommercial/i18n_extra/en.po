@@ -1,0 +1,55 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* vwn_crm_base_translations
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-12 09:28+0000\n"
+"PO-Revision-Date: 2012-03-12 09:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base
+#: model:ir.ui.menu,name:base.menu_base_partner
+msgid "Sales"
+msgstr "Partners"
+
+#. module: base
+#: model:ir.ui.menu,name:base.menu_sales
+msgid "Sales"
+msgstr "Address book"
+
+#. module: base
+#: model:ir.actions.act_window,name:base.action_partner_customer_form          
+#: model:ir.actions.act_window,name:base.action_partner_form                   
+#: model:ir.ui.menu,name:base.menu_partner_form                                
+#: view:res.partner:0
+msgid "Customers"
+msgstr "Customers"
+
+#. module: base                                                            
+#: view:res.partner:0                                                          
+msgid "Is a Company?"                                                           
+msgstr "Is an organisation?"
+
+#. module: base                                                                
+#: view:res.partner:0                                                          
+msgid "Sales & Purchases"                                                      
+msgstr "Details" 
+
+#. module: base
+#: view:res.partner:0
+#: field:res.partner,user_id:0
+msgid "Salesperson"
+msgstr "Responsible"
+
+#. module: base
+#: field:res.partner,parent_id:0
+msgid "Related Company"
+msgstr "Related organisation"
