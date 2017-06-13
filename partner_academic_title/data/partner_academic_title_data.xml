@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015-2017 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <data noupdate="1">
+        <record id="academic_title_bs" model="partner.academic.title">
+            <field name="name">B.S.</field>
+            <field name="sequence">1</field>
+        </record>
+        <record id="academic_title_ms" model="partner.academic.title">
+            <field name="name">M.S.</field>
+            <field name="sequence">2</field>
+        </record>
+        <record id="academic_title_mph" model="partner.academic.title">
+            <field name="name">M.P.H.</field>
+            <field name="sequence">3</field>
+        </record>
+        <record id="academic_title_mba" model="partner.academic.title">
+            <field name="name">M.B.A.</field>
+            <field name="sequence">4</field>
+        </record>
+        <record id="academic_title_md" model="partner.academic.title">
+            <field name="name">M.D.</field>
+            <field name="sequence">5</field>
+        </record>
+        <record id="academic_title_phd" model="partner.academic.title">
+            <field name="name">Ph.D.</field>
+            <field name="sequence">6</field>
+        </record>
+        <record id="academic_title_edd" model="partner.academic.title">
+            <field name="name">Ed.D</field>
+            <field name="sequence">7</field>
+        </record>
+        <record id="academic_title_psyd" model="partner.academic.title">
+            <field name="name">Psy.D.</field>
+            <field name="sequence">8</field>
+        </record>
+        <record id="academic_title_thd" model="partner.academic.title">
+            <field name="name">Th.D.</field>
+            <field name="sequence">9</field>
+        </record>
+        <record id="academic_title_pharmd" model="partner.academic.title">
+            <field name="name">Pharm.D.</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="academic_title_jd" model="partner.academic.title">
+            <field name="name">J.D.</field>
+            <field name="sequence">11</field>
+        </record>
+    </data>
+</odoo>
