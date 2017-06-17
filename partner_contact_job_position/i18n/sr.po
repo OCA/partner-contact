@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-10 01:50+0000\n"
-"PO-Revision-Date: 2017-06-10 01:50+0000\n"
+"POT-Creation-Date: 2017-06-14 00:44+0000\n"
+"PO-Revision-Date: 2017-06-14 00:44+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Serbian (https://www.transifex.com/oca/teams/23907/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgid "Display Name"
 msgstr ""
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_id_4350
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_id_4542
 msgid "ID"
 msgstr "ID"
 

@@ -3,15 +3,16 @@
 # * partner_academic_title
 # 
 # Translators:
-# Paolo Valier, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
+# Giuliano Lotta <giuliano.lotta@gmail.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (8.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-13 00:57+0000\n"
-"PO-Revision-Date: 2016-03-13 17:22+0000\n"
-"Last-Translator: Paolo Valier\n"
-"Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/it/)\n"
+"POT-Creation-Date: 2017-06-14 00:44+0000\n"
+"PO-Revision-Date: 2017-06-14 00:44+0000\n"
+"Last-Translator: Giuliano Lotta <giuliano.lotta@gmail.com>, 2017\n"
+"Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -20,15 +21,19 @@ msgstr ""
 
 #. module: partner_academic_title
 #: model:ir.actions.act_window,name:partner_academic_title.open_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_res_partner_academic_title_display
+#: model:ir.model.fields,field_description:partner_academic_title.field_res_partner_academic_title_ids
+#: model:ir.model.fields,field_description:partner_academic_title.field_res_partner_alias_academic_title_display
+#: model:ir.model.fields,field_description:partner_academic_title.field_res_partner_alias_academic_title_ids
+#: model:ir.model.fields,field_description:partner_academic_title.field_res_users_academic_title_display
+#: model:ir.model.fields,field_description:partner_academic_title.field_res_users_academic_title_ids
 #: model:ir.ui.menu,name:partner_academic_title.menu_academic_title
-#: view:res.partner:partner_academic_title.view_partner_form
-#: field:res.partner,academic_title_display:0
-#: field:res.partner,academic_title_ids:0
+#: model:ir.ui.view,arch_db:partner_academic_title.view_partner_form
 msgid "Academic Titles"
 msgstr "Titoli Accademici"
 
 #. module: partner_academic_title
-#: field:partner.academic.title,active:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_active
 msgid "Active"
 msgstr "Attivo"
 
@@ -38,14 +43,19 @@ msgid "B.S."
 msgstr ""
 
 #. module: partner_academic_title
-#: field:partner.academic.title,create_uid:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_create_uid
 msgid "Created by"
 msgstr "Creato da"
 
 #. module: partner_academic_title
-#: field:partner.academic.title,create_date:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_create_date
 msgid "Created on"
 msgstr "Creato il"
+
+#. module: partner_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_display_name
+msgid "Display Name"
+msgstr "Nome da visualizzare"
 
 #. module: partner_academic_title
 #: model:partner.academic.title,name:partner_academic_title.academic_title_edd
@@ -53,7 +63,7 @@ msgid "Ed.D"
 msgstr ""
 
 #. module: partner_academic_title
-#: field:partner.academic.title,id:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_id
 msgid "ID"
 msgstr "ID"
 
@@ -63,12 +73,17 @@ msgid "J.D."
 msgstr ""
 
 #. module: partner_academic_title
-#: field:partner.academic.title,write_uid:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title___last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: partner_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_write_uid
 msgid "Last Updated by"
 msgstr "Ultimo aggiornamento di"
 
 #. module: partner_academic_title
-#: field:partner.academic.title,write_date:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_write_date
 msgid "Last Updated on"
 msgstr "Ultimo aggiornamento il"
 
@@ -93,7 +108,7 @@ msgid "M.S."
 msgstr ""
 
 #. module: partner_academic_title
-#: field:partner.academic.title,name:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_name
 msgid "Name"
 msgstr "Nome"
 
@@ -118,7 +133,7 @@ msgid "Psy.D."
 msgstr ""
 
 #. module: partner_academic_title
-#: field:partner.academic.title,sequence:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_sequence
 msgid "Sequence"
 msgstr "Sequenza"
 
@@ -128,6 +143,11 @@ msgid "Th.D."
 msgstr ""
 
 #. module: partner_academic_title
-#: help:partner.academic.title,sequence:0
+#: model:ir.model.fields,help:partner_academic_title.field_partner_academic_title_sequence
 msgid "defines the order to display titles"
 msgstr "definisce l'ordine dei titoli."
+
+#. module: partner_academic_title
+#: model:ir.model,name:partner_academic_title.model_partner_academic_title
+msgid "partner.academic.title"
+msgstr ""
