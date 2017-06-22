@@ -1,24 +1,24 @@
 # -*- coding: utf-8 -*-
+# Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L.U. - Jairo Llopis
+# Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
+# Copyright 2017 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-# © 2015 Grupo ESOC Ingeniería de Servicios, S.L.U.
 
 {
     "name": "Partner second last name",
     "summary": "Have split first and second lastnames",
-    "version": "8.0.4.1.0",
+    "version": "10.0.1.0.0",
     "license": "AGPL-3",
-    "website": "https://grupoesoc.es",
-    "author": "Grupo ESOC Ingeniería de Servicios, "
+    "website": "https://www.tecnativa.com",
+    "author": "Tecnativa, "
               "Odoo Community Association (OCA)",
-    "maintainer": "Odoo Community Association (OCA)",
-    "category": "Extra Tools",
+    "category": "Partner Management",
     "depends": [
-        "partner_firstname"
+        "partner_firstname",
     ],
     "data": [
         "views/res_partner.xml",
         "views/res_user.xml",
     ],
     "installable": True,
-    'images': [],
 }

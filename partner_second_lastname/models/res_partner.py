@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-# © 2015 Grupo ESOC Ingeniería de Servicios, S.L.U.
-# © 2015 Antiun Ingenieria S.L. - Antonio Espinosa
+# Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L.U. - Jairo Llopis
+# Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
+# Copyright 2017 Tecnativa - Pedro M. Baeza
 
-from openerp import api, fields, models
-from openerp.addons.partner_firstname.models import exceptions
+from odoo import api, fields, models
+from odoo.addons.partner_firstname import exceptions
 
 
 class ResPartner(models.Model):
     """Adds a second last name."""
-
     _inherit = "res.partner"
 
     lastname2 = fields.Char("Second last name", oldname="lastname_second")
@@ -41,20 +41,20 @@ class ResPartner(models.Model):
                 names.append(firstname)
         return u" ".join(names)
 
-    @api.one
     @api.depends("firstname", "lastname", "lastname2")
     def _compute_name(self):
         """Write :attr:`~.name` according to splitted data."""
-        self.name = self._get_computed_name(
-            self.lastname, self.firstname, self.lastname2)
+        for partner in self:
+            partner.name = self._get_computed_name(
+                partner.lastname, partner.firstname, partner.lastname2,
+            )
 
     @api.one
     def _inverse_name(self):
         """Try to revert the effect of :meth:`._compute_name`."""
         parts = self._get_inverse_name(self.name, self.is_company)
-
         # Avoid to hit :meth:`~._check_name` with all 3 fields being ``False``
-        before, after = dict(), dict()
+        before, after = {}, {}
         for key, value in parts.iteritems():
             (before if value else after)[key] = value
         if any([before[k] != self[k] for k in before.keys()]):
@@ -96,17 +96,16 @@ class ResPartner(models.Model):
                 result['lastname2'] = parts[1]
         return result
 
-    @api.one
     @api.constrains("firstname", "lastname", "lastname2")
     def _check_name(self):
         """Ensure at least one name is set."""
         try:
             super(ResPartner, self)._check_name()
-        except exceptions.EmptyNamesError as error:
-            if not self.lastname2:
-                raise error
+        except exceptions.EmptyNamesError:
+            for partner in self:
+                if not partner.lastname2:
+                    raise
 
-    @api.one
     @api.onchange("firstname", "lastname", "lastname2")
     def _onchange_subnames(self):
         """Trigger onchange with :attr:`~.lastname2` too."""
