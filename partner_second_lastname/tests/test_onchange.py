@@ -8,7 +8,7 @@
 The form operates in onchange mode, with its limitations.
 """
 
-from openerp.tests.common import TransactionCase
+from odoo.tests.common import TransactionCase
 
 
 class OnChangeCase(TransactionCase):
@@ -31,6 +31,7 @@ class PartnerCompanyCase(OnChangeCase):
 
     def tearDown(self):
         """Companies never have ``firstname`` nor ``lastname2``."""
+        super(PartnerCompanyCase, self).tearDown()
         self.assertEqual(self.partner.firstname, False)
         self.assertEqual(self.partner.lastname2, False)
 
