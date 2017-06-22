@@ -3,8 +3,8 @@
 # © 2015 Grupo ESOC Ingeniería de Servicios, S.L.U.
 # © 2015 Antiun Ingenieria S.L. - Antonio Espinosa
 
-from openerp.tests.common import TransactionCase
-from openerp.addons.partner_firstname.tests.base import MailInstalled
+from odoo.tests.common import TransactionCase
+from odoo.addons.partner_firstname.tests.base import MailInstalled
 
 
 class CompanyCase(TransactionCase):
