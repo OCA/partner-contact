@@ -65,6 +65,7 @@ Contributors
 * Sebastien Alix <sebastien.alix@osiell.com>
 * Jairo Llopis <j.llopis@grupoesoc.es>
 * Richard deMeester <richard@willowit.com.au>
+* Valentin Thirion <vt@abakusitsolutions.eu>,
 
 Maintainer
 ----------

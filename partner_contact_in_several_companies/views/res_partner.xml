@@ -61,6 +61,7 @@
                         <field name="state_id"/>
                         <field name="image"/>
                         <field name="lang"/>
+                        <field name="contact_id"/>
                         <templates>
                             <t t-name="kanban-box">
                                 <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
@@ -74,6 +75,8 @@
                                         </t>
                                     </div>
                                     <div class="oe_kanban_details">
+                                        Linked to: <field name="parent_id" />
+                                        <br />
                                         <field name="name"/>
                                         <div t-if="record.function.raw_value"><field name="function"/></div>
                                         <div t-if="record.email.raw_value"><field name="email"/></div>
@@ -105,6 +108,7 @@
                                 </group>
                                 <group>
                                     <field name="name" string="Contact Name" attrs="{'required' : [('type', '=', 'contact')]}"/>
+                                    <field name="parent_id" readonly="1"/>
                                     <field name="title" placeholder="e.g. Mr."
                                         attrs="{'invisible': [('type','&lt;&gt;', 'contact')]}"/>
                                     <field name="function" placeholder="e.g. Sales Director"
