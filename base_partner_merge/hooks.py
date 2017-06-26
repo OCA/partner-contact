@@ -18,19 +18,13 @@ def post_load_hook():
             graph = frame.f_locals['graph']
             package = frame.f_locals['package']
             if any(p.name == 'crm' for p in graph):
-                # so crm is installed, then we need to remove your model
-                # from the list of models to be registered
-                # TODO: this could be smarter and only ditch models that need
-                # to be ditched (if crm is in their mro)
-                our_version = 'openerp.addons.base_partner_merge.' \
-                    'models.base_partner_merge'
-                classes_to_ditch = [_class for _name, _class in
-                    inspect.getmembers(sys.modules[our_version],
-                    lambda member: inspect.isclass(member)
-                    and member.__module__ == our_version)]
-                for _class in classes_to_ditch:
-                    MetaModel.module_to_models['base_partner_merge'] \
-                        .remove(_class)
+                # so crm is installed, then we need to remove the models
+                # we pull from CRM again
+                MetaModel.module_to_models['base_partner_merge'] = [
+                    cls
+                    for cls in MetaModel.module_to_models['base_partner_merge']
+                    if 'NoCRM' not in cls.__name__
+                ]
                 # and in this case, we also don't want to load our xml file
                 package.data['data'].remove('views/base_partner_merge.xml')
             break

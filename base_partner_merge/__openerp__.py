@@ -7,7 +7,11 @@
     'license': 'AGPL-3',
     'depends': [
         'base',
-        'mail'
+        'mail',
+        'base_manifest_extension',
+    ],
+    'depends_if_installed': [
+        'crm',
     ],
     'data': [
         'security/ir.model.access.csv',
