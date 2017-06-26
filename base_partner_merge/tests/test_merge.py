@@ -60,7 +60,7 @@ class PartnerMergeTestCase(TransactionCase):
         )
         # Merge on reference, leaving out guys that have no ref
         self.partner.deduplicate_on_fields(
-            ['ref'], domain=[('ref', '!=', False)],
+            ['ref'], domain=[('ref', '=', 'DD123')],
         )
         # Test if only one remains after
         partners = self.partner.search([('ref', '=', 'DD123')])
