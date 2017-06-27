@@ -8,11 +8,6 @@ Partner CoC
 
 Adds a field 'Chamber Of Commerce Registration Number' to partner.
 
-Configuration
-=============
-
-No configuration is needed.
-
 Usage
 =====
 

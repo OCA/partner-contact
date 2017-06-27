@@ -14,5 +14,5 @@ class ResPartner(models.Model):
         ),
         search=lambda s, *a: s._search_identification(
             'coc_registration_number', 'coc', *a
-        )
+        ),
     )
