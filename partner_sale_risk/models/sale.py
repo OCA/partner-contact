@@ -2,7 +2,7 @@
 # © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import api, fields, models, _
+from odoo import _, api, fields, models
 
 
 class SaleOrder(models.Model):
@@ -54,7 +54,7 @@ class SaleOrder(models.Model):
                 return self.env['partner.risk.exceeded.wiz'].create({
                     'exception_msg': exception_msg,
                     'partner_id': partner.id,
-                    'origin_reference': '%s,%s' % (self._model, self.id),
+                    'origin_reference': '%s,%s' % ('sale.order', self.id),
                     'continue_method': 'action_confirm',
                 }).action_show()
         return super(SaleOrder, self).action_confirm()

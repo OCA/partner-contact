@@ -46,6 +46,7 @@ addon | version | summary
 [partner_identification](partner_identification/) | 10.0.1.1.1 | Partner Identification Numbers
 [partner_multi_relation](partner_multi_relation/) | 10.0.1.0.0 | Partner relations
 [partner_password_reset](partner_password_reset/) | 10.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
+[partner_sale_risk](partner_sale_risk/) | 10.0.1.0.0 | Manage partner risk in sales orders
 [partner_second_lastname](partner_second_lastname/) | 10.0.1.0.0 | Have split first and second lastnames
 [partner_sector](partner_sector/) | 10.0.1.0.0 | Add partner sectors
 [partner_street_number](partner_street_number/) | 10.0.1.0.0 | Introduces separate fields for street name and street number.
