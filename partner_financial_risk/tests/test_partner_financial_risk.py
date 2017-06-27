@@ -2,15 +2,15 @@
 # © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp.tests.common import SavepointCase
-from openerp import fields
+from odoo.tests.common import SavepointCase
+from odoo import fields
 
 
 class TestPartnerFinancialRisk(SavepointCase):
     @classmethod
     def setUpClass(cls):
         super(TestPartnerFinancialRisk, cls).setUpClass()
-        cls.env.user.groups_id |= cls.env.ref('base.group_sale_manager')
+        cls.env.user.groups_id |= cls.env.ref('sales_team.group_sale_manager')
         cls.partner = cls.env['res.partner'].create({
             'name': 'Partner test',
             'customer': True,
@@ -68,7 +68,7 @@ class TestPartnerFinancialRisk(SavepointCase):
         self.partner.risk_invoice_draft_include = True
         self.assertAlmostEqual(self.partner.risk_invoice_draft, 550.0)
         self.assertAlmostEqual(self.partner.risk_total, 550.0)
-        self.invoice.signal_workflow('invoice_open')
+        self.invoice.action_invoice_open()
         self.assertAlmostEqual(self.partner.risk_invoice_draft, 0.0)
         self.assertFalse(self.invoice.date_due)
         self.partner.risk_invoice_unpaid_include = True
@@ -82,14 +82,14 @@ class TestPartnerFinancialRisk(SavepointCase):
         invoice2 = self.invoice.copy({'partner_id': self.invoice_address.id})
         self.assertAlmostEqual(self.partner.risk_invoice_draft, 550.0)
         self.assertAlmostEqual(self.partner.risk_invoice_unpaid, 550.0)
-        wiz_dic = invoice2.invoice_open()
+        wiz_dic = invoice2.action_invoice_open()
         wiz = self.env[wiz_dic['res_model']].browse(wiz_dic['res_id'])
         self.assertEqual(wiz.exception_msg, "Financial risk exceeded.\n")
         self.partner.risk_invoice_unpaid_limit = 0.0
         self.assertFalse(self.partner.risk_exception)
         self.partner.risk_invoice_open_limit = 300.0
         invoice2.date_due = fields.Date.today()
-        wiz_dic = invoice2.invoice_open()
+        wiz_dic = invoice2.action_invoice_open()
         wiz = self.env[wiz_dic['res_model']].browse(wiz_dic['res_id'])
         self.assertEqual(wiz.exception_msg,
                          "This invoice exceeds the open invoices risk.\n")
@@ -97,7 +97,7 @@ class TestPartnerFinancialRisk(SavepointCase):
         self.partner.risk_invoice_draft_include = False
         self.partner.risk_invoice_open_include = True
         self.partner.credit_limit = 900.0
-        wiz_dic = invoice2.invoice_open()
+        wiz_dic = invoice2.action_invoice_open()
         wiz = self.env[wiz_dic['res_model']].browse(wiz_dic['res_id'])
         self.assertEqual(wiz.exception_msg,
                          "This invoice exceeds the financial risk.\n")
