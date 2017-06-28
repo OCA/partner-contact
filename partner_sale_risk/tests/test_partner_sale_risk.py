@@ -2,31 +2,30 @@
 # © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import SavepointCase
+from odoo.addons.account.tests.account_test_classes import AccountingTestCase
 
 
-class TestPartnerSaleRisk(SavepointCase):
-    @classmethod
-    def setUpClass(cls):
-        super(TestPartnerSaleRisk, cls).setUpClass()
-        cls.env.user.groups_id |= cls.env.ref('sales_team.group_sale_manager')
-        cls.partner = cls.env['res.partner'].create({
+class TestPartnerSaleRisk(AccountingTestCase):
+    def setUp(self):
+        super(TestPartnerSaleRisk, self).setUp()
+        self.env.user.groups_id |= self.env.ref('sales_team.group_sale_manager')
+        self.partner = self.env['res.partner'].create({
             'name': 'Partner test',
             'customer': True,
         })
-        cls.product = cls.env.ref('product.product_product_2')
-        cls.product.invoice_policy = 'order'
-        cls.sale_order = cls.env['sale.order'].create({
-            'partner_id': cls.partner.id,
-            'pricelist_id': cls.env.ref('product.list0').id,
+        self.product = self.env.ref('product.product_product_2')
+        self.product.invoice_policy = 'order'
+        self.sale_order = self.env['sale.order'].create({
+            'partner_id': self.partner.id,
+            'pricelist_id': self.env.ref('product.list0').id,
             'order_line': [(0, 0, {
-                'name': cls.product.name,
-                'product_id': cls.product.id,
+                'name': self.product.name,
+                'product_id': self.product.id,
                 'product_uom_qty': 1,
-                'product_uom': cls.product.uom_id.id,
+                'product_uom': self.product.uom_id.id,
                 'price_unit': 100.0})],
         })
-        cls.env.user.lang = 'en_US'
+        self.env.user.lang = 'en_US'
 
     def test_sale_order(self):
         self.sale_order.action_confirm()
