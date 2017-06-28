@@ -35,6 +35,7 @@ class TestPartnerFinancialRisk(SavepointCase):
             'user_type_id': type_payable.id,
             'reconcile': True,
         })
+        cls.partner.property_account_payable_id = cls.account_customer.id
         cls.journal_sale = cls.env['account.journal'].create({
             'name': 'Test journal for sale',
             'type': 'sale',

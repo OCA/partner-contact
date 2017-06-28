@@ -10,7 +10,10 @@
     'license': 'AGPL-3',
     'author': 'Tecnativa, Odoo Community Association (OCA)',
     'website': 'https://www.tecnativa.com',
-    'depends': ['account'],
+    'depends': [
+        'account',
+        'sales_team',
+    ],
     'data': [
         'data/partner_financial_risk_data.xml',
         'views/res_config_view.xml',
