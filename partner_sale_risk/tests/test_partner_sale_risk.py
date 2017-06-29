@@ -8,7 +8,8 @@ from odoo.addons.account.tests.account_test_classes import AccountingTestCase
 class TestPartnerSaleRisk(AccountingTestCase):
     def setUp(self):
         super(TestPartnerSaleRisk, self).setUp()
-        self.env.user.groups_id |= self.env.ref('sales_team.group_sale_manager')
+        self.env.user.groups_id |= self.env.ref(
+            'sales_team.group_sale_manager')
         self.partner = self.env['res.partner'].create({
             'name': 'Partner test',
             'customer': True,
