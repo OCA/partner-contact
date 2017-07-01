@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-14 00:44+0000\n"
-"PO-Revision-Date: 2017-06-14 00:44+0000\n"
+"POT-Creation-Date: 2017-06-30 02:48+0000\n"
+"PO-Revision-Date: 2017-06-30 02:48+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Serbian (Latin) (https://www.transifex.com/oca/teams/23907/sr@latin/)\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgid "Error! You cannot create recursive departments."
 msgstr ""
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_id_3946
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_id_3949
 msgid "ID"
 msgstr "ID"
 

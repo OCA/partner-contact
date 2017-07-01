@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-10 01:50+0000\n"
-"PO-Revision-Date: 2017-06-10 01:50+0000\n"
+"POT-Creation-Date: 2017-06-30 02:49+0000\n"
+"PO-Revision-Date: 2017-06-30 02:49+0000\n"
 "Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +48,7 @@ msgstr "Aangemaakt op"
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Weergavenaam"
 
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_id

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-10 01:50+0000\n"
-"PO-Revision-Date: 2017-06-10 01:50+0000\n"
+"POT-Creation-Date: 2017-06-30 02:48+0000\n"
+"PO-Revision-Date: 2017-06-30 02:48+0000\n"
 "Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -106,7 +106,7 @@ msgstr "Relatie"
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "Person"
-msgstr ""
+msgstr "Persoon"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit

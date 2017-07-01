@@ -1,0 +1,36 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_second_lastname
+# 
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-30 02:49+0000\n"
+"PO-Revision-Date: 2017-06-30 02:49+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: partner_second_lastname
+#: model:ir.model,name:partner_second_lastname.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: partner_second_lastname
+#: model:ir.model.fields,field_description:partner_second_lastname.field_res_partner_alias_lastname2
+#: model:ir.model.fields,field_description:partner_second_lastname.field_res_partner_lastname2
+#: model:ir.model.fields,field_description:partner_second_lastname.field_res_users_lastname2
+msgid "Second last name"
+msgstr ""
+
+#. module: partner_second_lastname
+#: model:ir.model,name:partner_second_lastname.model_base_config_settings
+msgid "base.config.settings"
+msgstr ""
