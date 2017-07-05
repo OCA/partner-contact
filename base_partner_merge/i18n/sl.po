@@ -3,25 +3,20 @@
 # * base_partner_merge
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 23:45+0000\n"
-"PO-Revision-Date: 2016-08-20 23:45+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2017-07-08 02:41+0000\n"
+"PO-Revision-Date: 2017-07-08 02:41+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
-
-#. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_exclude_contact
-msgid "A user associated to the contact"
-msgstr "Uporabnik povezan s stikom"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -51,11 +46,6 @@ msgid "Close"
 msgstr "Zaključi"
 
 #. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_partner_ids
-msgid "Contacts"
-msgstr "Stiki"
-
-#. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_create_uid
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_create_uid
 msgid "Created by"
@@ -68,11 +58,6 @@ msgid "Created on"
 msgstr "Ustvarjeno"
 
 #. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_current_line_id
-msgid "Current Line"
-msgstr "Trenutna postavka"
-
-#. module: base_partner_merge
 #: model:ir.actions.act_window,name:base_partner_merge.action_partner_deduplicate
 msgid "Deduplicate Contacts"
 msgstr "Razdvoji stike"
@@ -83,20 +68,10 @@ msgid "Deduplicate the other Contacts"
 msgstr "Razdvoji ostale stike"
 
 #. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_dst_partner_id
-msgid "Destination Contact"
-msgstr "Ciljni stik"
-
-#. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_display_name
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_display_name
 msgid "Display Name"
 msgstr "Prikazni naziv"
-
-#. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_email
-msgid "Email"
-msgstr "E-pošta"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -104,35 +79,10 @@ msgid "Exclude contacts having"
 msgstr "Izvzemi stike z"
 
 #. module: base_partner_merge
-#: selection:base.partner.merge.automatic.wizard,state:0
-msgid "Finished"
-msgstr "Končano"
-
-#. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_number_group
-msgid "Group of Contacts"
-msgstr "Skupina stikov"
-
-#. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_id
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_id
 msgid "ID"
 msgstr "ID"
-
-#. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_aggr_ids
-msgid "Ids"
-msgstr "Id-ji"
-
-#. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_is_company
-msgid "Is Company"
-msgstr "Je družba"
-
-#. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_exclude_journal_item
-msgid "Journal Items associated to the contact"
-msgstr "Dnevniške postavke povezane s stikom"
 
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard___last_update
@@ -151,16 +101,6 @@ msgstr "Zadnji posodobil"
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_write_date
 msgid "Last Updated on"
 msgstr "Zadnjič posodobljeno"
-
-#. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_line_ids
-msgid "Lines"
-msgstr "Postavke"
-
-#. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_maximum_group
-msgid "Maximum of Group of Contacts"
-msgstr "Maksimum skupine stikov"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -193,34 +133,9 @@ msgid "Merge with Manual Check"
 msgstr "Združitev z ročnim preverjanjem"
 
 #. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_min_id
-msgid "MinID"
-msgstr "MinID"
-
-#. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_name
-msgid "Name"
-msgstr "Naziv"
-
-#. module: base_partner_merge
-#: selection:base.partner.merge.automatic.wizard,state:0
-msgid "Option"
-msgstr "Opcija"
-
-#. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Options"
 msgstr "Opcije"
-
-#. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_parent_id
-msgid "Parent Company"
-msgstr "Nadrejena družba"
-
-#. module: base_partner_merge
-#: model:ir.model,name:base_partner_merge.model_res_partner
-msgid "Partner"
-msgstr "Partner"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -236,28 +151,19 @@ msgstr "Iskanje duplikatov na osnovi podvojenih podatkov v"
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid ""
 "Select the list of fields used to search for\n"
-"                            duplicated records. If you select several fields,\n"
-"                            Odoo will propose you to merge only those having\n"
-"                            all these fields in common. (not one of the fields)."
+"                        duplicated records. If you select several fields,\n"
+"                        Odoo will propose you to merge only those having\n"
+"                        all these fields in common. (not one of the fields)."
 msgstr ""
-"Izberi seznam polj, ki se uporablja za iskanje\n"
-"podvojenih zapisov. Če izberete več polj, bo\n"
-"sistem predlagal združitev le tistih, ki imajo skupna\n"
-"vsa ta polja. (ne tista iz polj)."
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid ""
 "Selected contacts will be merged together.\n"
-"                                All documents linked to one of these contacts\n"
-"                                will be redirected to the destination contact.\n"
-"                                You can remove contacts from this list to avoid merging them."
+"                            All documents linked to one of these contacts\n"
+"                            will be redirected to the destination contact.\n"
+"                            You can remove contacts from this list to avoid merging them."
 msgstr ""
-
-#. module: base_partner_merge
-#: selection:base.partner.merge.automatic.wizard,state:0
-msgid "Selection"
-msgstr "Izbor"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -265,24 +171,9 @@ msgid "Skip these contacts"
 msgstr "Preskoči te stike"
 
 #. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_state
-msgid "State"
-msgstr "Stanje"
-
-#. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "There is no more contacts to merge for this request..."
 msgstr "Za ta zahtevek ni več stikov za združevanje..."
-
-#. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_vat
-msgid "VAT"
-msgstr "DDV"
-
-#. module: base_partner_merge
-#: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_line_wizard_id
-msgid "Wizard"
-msgstr "Čarovnik"
 
 #. module: base_partner_merge
 #: model:ir.model,name:base_partner_merge.model_base_partner_merge_automatic_wizard
