@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 Acsone S.A.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# Copyright 2016-2017 ACSONE SA/NV (<http://acsone.eu>)
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
     'name': 'Partner Identification Gln',
     'summary': """
         This addon extends "Partner Identification Numbers"
         to provide a number category for GLN registration""",
-    'version': '8.0.1.0.0',
+    'version': '10.0.1.0.0',
     'license': 'AGPL-3',
     'author': 'Acsone S.A.,Odoo Community Association (OCA)',
     'website': 'https://www.acsone.eu',
