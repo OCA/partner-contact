@@ -20,10 +20,6 @@ This module depends on 'stdnum' python module
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/repo/github-com-oca-partner-contact-134
 
-.. repo_id is available in https://github.com/OCA/maintainer-tools/blob/master/tools/repos_with_ids.txt
-.. branch is "8.0" for example
-
-
 Bug Tracker
 ===========
 
@@ -44,6 +40,7 @@ Contributors
 ------------
 
 * Denis Roussel <denis.roussel@acsone.eu>
+* Meyomesse Gilles <meyomesse.gilles@gmail.com>
 
 Maintainer
 ----------
