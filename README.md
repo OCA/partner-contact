@@ -22,6 +22,7 @@ addon | version | summary
 --- | --- | ---
 [base_location](base_location/) | 10.0.1.0.1 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 10.0.1.0.1 | Import better zip entries from Geonames
+[base_location_nuts](base_location_nuts/) | 10.0.1.0.0 | NUTS Regions
 [base_partner_sequence](base_partner_sequence/) | 10.0.1.0.0 | Sets customer's code from a sequence
 [base_vat_sanitized](base_vat_sanitized/) | 10.0.1.0.0 | Adds field sanitized_vat on partners
 [partner_academic_title](partner_academic_title/) | 10.0.1.0.0 | Add possibility to define some academic title
@@ -56,7 +57,6 @@ addon | version | summary
 --- | --- | ---
 [account_partner_merge](account_partner_merge/) | 1.0 (unported) | Account Partner Merge
 [base_continent](base_continent/) | 8.0.1.0.0 (unported) | Continent management
-[base_location_nuts](base_location_nuts/) | 8.0.1.0.0 (unported) | NUTS Regions
 [base_partner_merge](base_partner_merge/) | 9.0.1.0.0 (unported) | Partner merge wizard without dependency on CRM
 [firstname_display_name_trigger](firstname_display_name_trigger/) | 1.0 (unported) | Link module if partner_lastname and account_report_company are installed
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 (unported) | Partner auto salesman
