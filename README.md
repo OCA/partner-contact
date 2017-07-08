@@ -23,12 +23,14 @@ addon | version | summary
 [base_location](base_location/) | 10.0.1.0.1 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 10.0.1.0.1 | Import better zip entries from Geonames
 [base_location_nuts](base_location_nuts/) | 10.0.1.0.0 | NUTS Regions
+[base_partner_merge](base_partner_merge/) | 10.0.1.0.0 | Partner merge wizard without dependency on CRM
 [base_partner_sequence](base_partner_sequence/) | 10.0.1.0.0 | Sets customer's code from a sequence
 [base_vat_sanitized](base_vat_sanitized/) | 10.0.1.0.0 | Adds field sanitized_vat on partners
 [partner_academic_title](partner_academic_title/) | 10.0.1.0.0 | Add possibility to define some academic title
 [partner_address_street3](partner_address_street3/) | 10.0.1.0.0 | Add a third address line on partners
 [partner_alias](partner_alias/) | 10.0.1.0.0 | Adds aliases to partner names.
 [partner_capital](partner_capital/) | 10.0.1.0.0 | Partners Capital
+[partner_coc](partner_coc/) | 10.0.1.0.0 | Adds a field 'Chamber Of Commerce Registration Number' to partner
 [partner_contact_birthdate](partner_contact_birthdate/) | 10.0.1.1.0 | Contact's birthdate
 [partner_contact_configuration](partner_contact_configuration/) | 10.0.1.0.0 | Adds menu configuration access through the 'contacts' module main menu
 [partner_contact_department](partner_contact_department/) | 10.0.1.0.0 | Assign contacts to departments
@@ -57,7 +59,6 @@ addon | version | summary
 --- | --- | ---
 [account_partner_merge](account_partner_merge/) | 1.0 (unported) | Account Partner Merge
 [base_continent](base_continent/) | 8.0.1.0.0 (unported) | Continent management
-[base_partner_merge](base_partner_merge/) | 9.0.1.0.0 (unported) | Partner merge wizard without dependency on CRM
 [firstname_display_name_trigger](firstname_display_name_trigger/) | 1.0 (unported) | Link module if partner_lastname and account_report_company are installed
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 (unported) | Partner auto salesman
 [partner_contact_address_detailed](partner_contact_address_detailed/) | 8.0.1.0.0 (unported) | All address data in summarized contact form
