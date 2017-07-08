@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-30 02:48+0000\n"
-"PO-Revision-Date: 2017-06-30 02:48+0000\n"
+"POT-Creation-Date: 2017-07-08 02:41+0000\n"
+"PO-Revision-Date: 2017-07-08 02:41+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -147,7 +147,7 @@ msgstr "Znesek prometa"
 #. module: partner_capital
 #: model:ir.model,name:partner_capital.model_res_partner_turnover_range
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_alias_turnover_range_id
-#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_id_4520
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_id_4590
 #: model:ir.model.fields,field_description:partner_capital.field_res_users_turnover_range_id
 msgid "Turnover range"
 msgstr "Razpon prometa"

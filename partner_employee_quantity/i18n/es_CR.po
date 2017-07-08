@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-30 02:48+0000\n"
-"PO-Revision-Date: 2017-06-30 02:48+0000\n"
+"POT-Creation-Date: 2017-07-08 02:42+0000\n"
+"PO-Revision-Date: 2017-07-08 02:42+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Spanish (Costa Rica) (https://www.transifex.com/oca/teams/23907/es_CR/)\n"
 "MIME-Version: 1.0\n"
@@ -54,7 +54,7 @@ msgid "Employee quantity range"
 msgstr ""
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_id_4560
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_id_4630
 msgid "ID"
 msgstr "ID"
 

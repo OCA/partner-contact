@@ -3,15 +3,16 @@
 # * partner_firstname
 # 
 # Translators:
-# Laurent Mignon (ACSONE) <laurent.mignon@gmail.com>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2016
+# Lixon Jean-Yves <jy.lixon@ls-development.net>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (9.0)\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-28 11:23+0000\n"
-"PO-Revision-Date: 2016-06-16 15:35+0000\n"
-"Last-Translator: Laurent Mignon (ACSONE) <laurent.mignon@gmail.com>\n"
-"Language-Team: French (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/fr/)\n"
+"POT-Creation-Date: 2017-07-08 02:42+0000\n"
+"PO-Revision-Date: 2017-07-08 02:42+0000\n"
+"Last-Translator: Lixon Jean-Yves <jy.lixon@ls-development.net>, 2017\n"
+"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -48,11 +49,46 @@ msgid "No name is set."
 msgstr "Aucun nom spécifié."
 
 #. module: partner_firstname
+#: model:ir.model.fields,help:partner_firstname.field_base_config_settings_partner_names_order
+msgid "Order to compose partner fullname"
+msgstr "Ordre de la composition du nom complet"
+
+#. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
 msgid "Partner"
 msgstr "Partenaire"
 
 #. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_base_config_settings_partner_names_order
+msgid "Partner names order"
+msgstr "Ordre des noms et prénoms des partenaires"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_base_config_settings_partner_names_order_changed
+msgid "Partner names order changed"
+msgstr "L'ordre des noms et prénoms des partenaires  a changé"
+
+#. module: partner_firstname
+#: model:ir.ui.view,arch_db:partner_firstname.view_general_configuration
+msgid "Recalculate names"
+msgstr "Recalculer les noms et prénoms"
+
+#. module: partner_firstname
+#: model:ir.ui.view,arch_db:partner_firstname.view_general_configuration
+msgid ""
+"Recalculate names for all partners. This process could take so much time if "
+"there are more than 10,000 active partners"
+msgstr ""
+"Calcul des noms et prénoms de tous les partenaires. Ce traitement peut "
+"prendre plusieurs minutes, voir plus si le nombre de partenaires actifs "
+"dépasse les 10000. "
+
+#. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_users
 msgid "Users"
 msgstr "Utilisateurs"
+
+#. module: partner_firstname
+#: model:ir.model,name:partner_firstname.model_base_config_settings
+msgid "base.config.settings"
+msgstr ""

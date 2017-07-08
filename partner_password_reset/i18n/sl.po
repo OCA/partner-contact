@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-31 03:41+0000\n"
-"PO-Revision-Date: 2017-05-31 03:41+0000\n"
+"POT-Creation-Date: 2017-07-08 02:42+0000\n"
+"PO-Revision-Date: 2017-07-08 02:42+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -94,7 +94,7 @@ msgstr ""
 #. module: partner_password_reset
 #: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
 msgid "or"
-msgstr ""
+msgstr "ali"
 
 #. module: partner_password_reset
 #: model:ir.model,name:partner_password_reset.model_res_partner_password_reset_wizard
