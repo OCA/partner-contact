@@ -105,8 +105,6 @@
                                             <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
                                         </div>
                                     </div>
-                                    <field name="image" widget="image" options="{'preview_image': 'image_medium', 'size': [90, 90]}" modifiers="{}"/>
-                                    <field name="category_id" widget="many2many_tags" placeholder="Étiquettes..." can_create="true" can_write="true" modifiers="{}"/>
                                 </group>
                                 <group>
                                     <field name="name" string="Contact Name" attrs="{'required' : [('type', '=', 'contact')]}"/>
@@ -120,6 +118,12 @@
                                     <field name="mobile" widget="phone"/>
                                     <field name="comment" placeholder="internal note..."/>
                                 </group>
+                                <div>
+                                    <group col="2">
+                                        <field name="image" widget="image" options="{'preview_image': 'image_medium', 'size': [90, 90]}" modifiers="{}"/>
+                                        <field name="category_id" widget="many2many_tags" placeholder="Étiquettes..." can_create="true" can_write="true" modifiers="{}"/>
+                                    </group>
+                                </div>
                             </group>
                             <field name="supplier" invisible="True"/>
                             <field name="customer" invisible="True"/>
