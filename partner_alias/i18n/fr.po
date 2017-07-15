@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# leemannd <denis.leemann@camptocamp.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-31 03:41+0000\n"
-"PO-Revision-Date: 2017-05-31 03:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2017-07-08 05:27+0000\n"
+"PO-Revision-Date: 2017-07-08 05:27+0000\n"
+"Last-Translator: leemannd <denis.leemann@camptocamp.com>, 2017\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +22,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Action requise"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_active
@@ -31,7 +32,7 @@ msgstr "Actif"
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_type
 msgid "Address Type"
-msgstr ""
+msgstr "Type d'adresse"
 
 #. module: partner_alias
 #: code:addons/partner_alias/models/res_partner_alias.py:32
@@ -56,12 +57,12 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_bank_ids
 msgid "Banks"
-msgstr ""
+msgstr "Banques"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_barcode
 msgid "Barcode"
-msgstr ""
+msgstr "Code-barres"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_birthdate
@@ -77,7 +78,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_channel_ids
 msgid "Channels"
-msgstr ""
+msgstr "Canaux"
 
 #. module: partner_alias
 #: model:ir.model.fields,help:partner_alias.field_res_partner_alias_is_company
@@ -124,12 +125,12 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_company_id
 msgid "Company"
-msgstr ""
+msgstr "Companie"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_company_name
 msgid "Company Name"
-msgstr ""
+msgstr "Nom de la companie"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_commercial_company_name
@@ -139,17 +140,17 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_company_type
 msgid "Company Type"
-msgstr ""
+msgstr "Type de companie"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_contact_address
 msgid "Complete Address"
-msgstr ""
+msgstr "Adresse complète"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_contact_type
 msgid "Contact type"
-msgstr ""
+msgstr "Type de contact"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_child_ids
@@ -179,12 +180,12 @@ msgstr "Créé le"
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_credit_limit
 msgid "Credit Limit"
-msgstr ""
+msgstr "Limite de crédit"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_date
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #. module: partner_alias
 #: model:ir.model.fields,help:partner_alias.field_res_partner_alias_message_last_post
@@ -207,7 +208,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_email
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_notify_email
@@ -217,17 +218,17 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_employee
 msgid "Employee"
-msgstr ""
+msgstr "Employé"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_fax
 msgid "Fax"
-msgstr ""
+msgstr "Fax"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_firstname
 msgid "First Name"
-msgstr ""
+msgstr "Prénom"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_message_follower_ids
