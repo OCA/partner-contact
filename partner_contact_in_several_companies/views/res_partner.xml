@@ -108,7 +108,7 @@
                                 </group>
                                 <group>
                                     <field name="name" string="Contact Name" attrs="{'required' : [('type', '=', 'contact')]}"/>
-                                    <field name="parent_id" readonly="1"/>
+                                    <field name="parent_id" />
                                     <field name="title" placeholder="e.g. Mr."
                                         attrs="{'invisible': [('type','&lt;&gt;', 'contact')]}"/>
                                     <field name="function" placeholder="e.g. Sales Director"
