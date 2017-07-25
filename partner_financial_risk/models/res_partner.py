@@ -4,7 +4,7 @@
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class ResPartner(models.Model):
@@ -61,7 +61,7 @@ class ResPartner(models.Model):
     @api.multi
     def _compute_risk_allow_edit(self):
         is_editable = self.env.user.has_group(
-            'base.group_sale_manager') or self.env.user.has_group(
+            'sales_team.group_sale_manager') or self.env.user.has_group(
             'account.group_account_manager')
         for partner in self.filtered('customer'):
             partner.risk_allow_edit = is_editable
