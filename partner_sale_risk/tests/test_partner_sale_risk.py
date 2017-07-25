@@ -2,14 +2,14 @@
 # © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp.tests.common import SavepointCase
+from odoo.tests.common import SavepointCase
 
 
 class TestPartnerSaleRisk(SavepointCase):
     @classmethod
     def setUpClass(cls):
         super(TestPartnerSaleRisk, cls).setUpClass()
-        cls.env.user.groups_id |= cls.env.ref('base.group_sale_manager')
+        cls.env.user.groups_id |= cls.env.ref('sales_team.group_sale_manager')
         cls.partner = cls.env['res.partner'].create({
             'name': 'Partner test',
             'customer': True,
@@ -58,6 +58,14 @@ class TestPartnerSaleRisk(SavepointCase):
         self.sale_order.action_confirm()
         self.assertAlmostEqual(self.sale_order.invoice_pending_amount, 100.0)
         self.assertAlmostEqual(self.sale_order.invoice_amount, 0.0)
-        self.sale_order.action_invoice_create()
-        self.assertAlmostEqual(self.sale_order.invoice_pending_amount, 0.0)
-        self.assertAlmostEqual(self.sale_order.invoice_amount, 100.0)
+        wizard = self.env['sale.advance.payment.inv'].with_context({
+            'active_id': self.sale_order.id,
+            'active_ids': [self.sale_order.id],
+            'active_model': 'sale.order',
+        }).create({
+            'advance_payment_method': 'percentage',
+            'amount': 80,
+        })
+        wizard.create_invoices()
+        self.assertAlmostEqual(self.sale_order.invoice_pending_amount, 20.0)
+        self.assertAlmostEqual(self.sale_order.invoice_amount, 80.0)

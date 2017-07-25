@@ -22,7 +22,7 @@ To use this module, you need to:
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/9.0
+   :target: https://runbot.odoo-community.org/runbot/134/10.0
 
 
 Bug Tracker
@@ -37,11 +37,20 @@ help us smashing it by providing a detailed and welcomed feedback.
 Credits
 =======
 
+Images
+------
+
+* Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+
 Contributors
 ------------
 
 * Carlos Dauden <carlos.dauden@tecnativa.com>
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
+* Agathe Mollé <agathe.molle@savoirfairelinux.com>
+
+Do not contact contributors directly about support or help with technical issues.
+
 
 
 Maintainer
