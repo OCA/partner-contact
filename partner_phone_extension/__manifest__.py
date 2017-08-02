@@ -9,7 +9,7 @@
 
 {
     'name': 'Partner Phone Number Extension',
-    'version': '9.0.1.0.0',
+    'version': '10.0.1.0.0',
     'category': 'Customer Relationship Management',
     'summary': 'Partner Phone Number Extension',
     'author': "Savoir-faire Linux, "
