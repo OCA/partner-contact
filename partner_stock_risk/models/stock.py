@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
+# Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import _, api, exceptions, models
+from odoo import _, api, exceptions, models
 
 
 class StockMove(models.Model):
@@ -30,7 +30,7 @@ class StockPicking(models.Model):
         return self.env['partner.risk.exceeded.wiz'].create({
             'exception_msg': _("Financial risk exceeded \n"),
             'partner_id': self.partner_id.id,
-            'origin_reference': '%s,%s' % (self._model, self.id),
+            'origin_reference': '%s,%s' % (self._name, self.id),
             'continue_method': continue_method,
         }).action_show()
 

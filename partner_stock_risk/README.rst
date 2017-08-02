@@ -20,12 +20,9 @@ To use this module, you need to:
 #. Go to *Inventory > All Operations*
 #. Try transfer a risk exceed partner picking
 
-
-
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/9.0
-
+   :target: https://runbot.odoo-community.org/runbot/134/10.0
 
 Bug Tracker
 ===========
@@ -35,7 +32,6 @@ Bugs are tracked on `GitHub Issues
 check there if your issue has already been reported. If you spotted it first,
 help us smashing it by providing a detailed and welcomed feedback.
 
-
 Credits
 =======
 
@@ -44,7 +40,7 @@ Contributors
 
 * Carlos Dauden <carlos.dauden@tecnativa.com>
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
-
+* David Vidal <david.vidal@tecnativa.com>
 
 Maintainer
 ----------
