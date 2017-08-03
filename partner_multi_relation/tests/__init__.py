@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 Therp BV
+# Copyright 2014-2017 Therp BV
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from . import test_partner_relation_common
 from . import test_partner_relation

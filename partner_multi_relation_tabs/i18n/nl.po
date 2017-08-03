@@ -1,0 +1,36 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_relations_in_tab
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (10.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-01 13:16+0000\n"
+"PO-Revision-Date: 2015-05-22 13:07+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"Language-Team: Dutch (http://www.transifex.com/oca/OCA-partner-contact-7-0/language/nl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_relations_in_tab
+#: code:addons/partner_relations_in_tab/model/res_partner.py:99
+#: model:ir.model,name:partner_relations_in_tab.model_res_partner
+#, python-format
+msgid "Partner"
+msgstr "Relatie"
+
+#. module: partner_relations_in_tab
+#: field:res.partner.relation.type,own_tab_left:0
+#: field:res.partner.relation.type,own_tab_right:0
+msgid "Show in own tab"
+msgstr "Toon in eigen tabblad"
+
+#. module: partner_relations_in_tab
+#: model:ir.model,name:partner_relations_in_tab.model_res_partner_relation_type
+msgid "Parter relation type"
+msgstr "Type relatiekoppeling"

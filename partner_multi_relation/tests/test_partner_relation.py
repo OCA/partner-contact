@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 Therp BV
+# Copyright 2014-2017 Therp BV
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from datetime import date
 from dateutil.relativedelta import relativedelta
@@ -11,6 +11,8 @@ from .test_partner_relation_common import TestPartnerRelationCommon
 
 
 class TestPartnerRelation(TestPartnerRelationCommon):
+
+    post_install = True
 
     def test_selection_name_search(self):
         """Test wether we can find type selection on reverse name."""
@@ -119,8 +121,6 @@ class TestPartnerRelation(TestPartnerRelationCommon):
                     'is_symmetric': True,
                 }
             )
-        with self.env.do_in_onchange():
-            type_symmetric.onchange_is_symmetric()
         self.assertEqual(type_symmetric.is_symmetric, True)
         self.assertEqual(
             type_symmetric.name_inverse,
