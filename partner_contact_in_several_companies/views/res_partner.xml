@@ -38,10 +38,11 @@
     <field name="arch" type="xml">
         <field name="is_company" position="after">
             <field name="contact_type" invisible="1"/>
+            <field name="contact_id" invisible="1"/>
         </field>
         <page name='internal_notes' position="before">
-            <page string="Other Positions" attrs="{'invisible': ['|',('is_company','=',True),('contact_id','!=',False)]}">
-                <field name="other_contact_ids" context="{'default_contact_id': active_id, 'default_name': name, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_supplier': supplier}}" mode="kanban">
+            <page name='other_positions' string="Other Positions" attrs="{'invisible': ['|',('is_company','=',True),('contact_id','!=',False)]}">
+                <field name="other_contact_ids" context="{'default_contact_id': active_id, 'default_name': name, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_supplier': supplier, 'default_contact_type': 'attached'}}" mode="kanban">
                     <kanban>
                         <field name="color"/>
                         <field name="name"/>
@@ -75,7 +76,7 @@
                                     </div>
                                     <div class="oe_kanban_details">
                                         <field name="name"/>
-                                        <div t-if="record.function.raw_value"><field name="function"/></div>
+                                        <div><field name="function"/> at <field name="parent_id"/></div>
                                         <div t-if="record.email.raw_value"><field name="email"/></div>
                                         <div t-if="record.phone.raw_value">Phone: <field name="phone"/></div>
                                         <div t-if="record.mobile.raw_value">Mobile: <field name="mobile"/></div>
@@ -105,6 +106,7 @@
                                 </group>
                                 <group>
                                     <field name="name" string="Contact Name" attrs="{'required' : [('type', '=', 'contact')]}"/>
+                                    <field name="parent_id"/>
                                     <field name="title" placeholder="e.g. Mr."
                                         attrs="{'invisible': [('type','&lt;&gt;', 'contact')]}"/>
                                     <field name="function" placeholder="e.g. Sales Director"
@@ -123,16 +125,11 @@
                 </field>
             </page>
         </page>
-        <xpath expr="//field[@name='category_id']" position="before">
-            <group>
-                <label for="contact_type" class="oe_edit_only"/>
-                <field name="contact_type" readonly="0" nolabel="1"/>
-            </group>
-        </xpath>
         <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="before">
             <field name='contact_type' readonly='0'/>
             <field name="contact_id" string="Contact"
-                   attrs="{'invisible': [('contact_type','!=','attached')], 'required': [('contact_type','=','attached')]}"/>
+                   attrs="{'invisible': [('contact_type','!=','attached')], 'required': [('contact_type','=','attached')]}"
+                   context="{'default_name': name}"/>
         </xpath>
         <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="attributes">
             <attribute name="attrs">{'invisible': [('contact_type','=','attached')]}</attribute>
