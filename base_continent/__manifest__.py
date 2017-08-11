@@ -34,8 +34,8 @@ adds continent field on partner form
 """,
     'category': 'Generic Modules/Base',
     'data': [
-        'base_continent_view.xml',
-        'base_continent_data.xml',
+        'views/base_continent_view.xml',
+        'data/base_continent_data.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,

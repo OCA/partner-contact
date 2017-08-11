@@ -23,5 +23,6 @@
         <record id="sa" model="res.continent">
             <field name="name">South America</field>
         </record>
+
     </data>
 </openerp>
