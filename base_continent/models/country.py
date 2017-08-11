@@ -4,6 +4,9 @@
 #    Author: Romain Deheele
 #    Copyright 2014 Camptocamp SA
 #
+#    Author: Quentin Theuret
+#    Copyright 2017 SenseFly, Amaris
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
 #    published by the Free Software Foundation, either version 3 of the
@@ -19,12 +22,14 @@
 #
 ##############################################################################
 
-from openerp.osv.orm import Model
-from openerp.osv import fields
+from odoo import models
+from odoo import fields
 
 
-class Country(Model):
+class Country(models.Model):
     _inherit = 'res.country'
-    _columns = {
-        'continent_id': fields.many2one('res.continent', 'Continent'),
-    }
+
+    continent_id = fields.Many2one(
+        comodel_name='res.continent',
+        string='Continent',
+    )
