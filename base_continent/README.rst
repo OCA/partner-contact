@@ -63,7 +63,7 @@ Funders
 The development of this module has been financially supported by:
 
 * Camptocamp
-* SenseFly
+* SenseFly (http://sensefly.com)
 
 Maintainer
 ----------
