@@ -22,7 +22,7 @@
 
 {
     'name': 'Continent management',
-    'version': '8.0.1.0.0',
+    'version': '10.0.1.0.0',
     'depends': ['base'],
     'author': "Camptocamp,SenseFly,Amaris,Odoo Community Association (OCA)",
     'license': 'AGPL-3',
