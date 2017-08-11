@@ -3,7 +3,7 @@
    :alt: License: AGPL-3
 
 ==============
-{module_title}
+base_continent
 ==============
 
 This module extends the functionality of 'base' module to support continents
