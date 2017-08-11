@@ -18,17 +18,17 @@ msgstr ""
 #. module: base_continent
 #: model:res.continent,name:base_continent.af
 msgid "Africa"
-msgstr "Africa"
+msgstr "Afrique"
 
 #. module: base_continent
 #: model:res.continent,name:base_continent.an
 msgid "Antarctica"
-msgstr "Antarctica"
+msgstr "Antarctique"
 
 #. module: base_continent
 #: model:res.continent,name:base_continent.as
 msgid "Asia"
-msgstr "Asia"
+msgstr "Asie"
 
 #. module: base_continent
 #: model:ir.model,name:base_continent.model_res_continent
@@ -43,7 +43,7 @@ msgstr "Continent"
 #. module: base_continent
 #: model:ir.model.fields,field_description:base_continent.field_res_continent_code
 msgid "Continent Code"
-msgstr "Continent Code"
+msgstr "Code du continent"
 
 #. module: base_continent
 #: model:ir.model.fields,field_description:base_continent.field_res_continent_name
@@ -115,12 +115,12 @@ msgstr "Dernière mise à jour le"
 #. module: base_continent
 #: model:res.continent,name:base_continent.na
 msgid "North America"
-msgstr "North America"
+msgstr "Amérique du Nord"
 
 #. module: base_continent
 #: model:res.continent,name:base_continent.oc
 msgid "Oceania"
-msgstr "Oceania"
+msgstr "Océanie"
 
 #. module: base_continent
 #: model:ir.model,name:base_continent.model_res_partner
@@ -130,7 +130,7 @@ msgstr "Partenaire"
 #. module: base_continent
 #: model:res.continent,name:base_continent.sa
 msgid "South America"
-msgstr "South America"
+msgstr "Amérique du Sud"
 
 #. module: base_continent
 #: model:ir.model.fields,help:base_continent.field_res_continent_name
