@@ -38,6 +38,11 @@ class Continent(models.Model):
         required=True,
         translate=True,
     )
+    code = fields.Char(
+        string='Continent Code',
+        size=2,
+        required=True,
+    )
     countries = fields.One2many(
         comodel_name='res.country',
         inverse_name='continent_id',
