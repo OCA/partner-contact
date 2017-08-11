@@ -41,11 +41,11 @@
             <field name="model">res.continent</field>
             <field name="arch" type="xml">
                 <form string="Continent" version="7.0">
-                    <group>
+                    <group name="main_infos">
                         <field name="name"/>
                         <field name="code" />
                     </group>
-                    <group>
+                    <group name="countries">
                         <separator colspan="4" string="Countries" />
                         <field name="countries" mode="tree" nolabel="1" readonly="True" colspan="4">
                             <tree string="Countries">
