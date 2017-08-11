@@ -27,7 +27,7 @@
         'base',
         'sales_team',
     ],
-    'author': "Camptocamp,SenseFly,Amaris,Odoo Community Association (OCA)",
+    'author': "Camptocamp,senseFly,Amaris,Odoo Community Association (OCA)",
     'license': 'AGPL-3',
     'description': """
 This module introduces continent management.
