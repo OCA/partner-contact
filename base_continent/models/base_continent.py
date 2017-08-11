@@ -4,6 +4,9 @@
 #    Author: Romain Deheele
 #    Copyright 2014 Camptocamp SA
 #
+#    Author: Quentin Theuret
+#    Copyright 2017 SenseFly, Amaris
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
 #    published by the Free Software Foundation, either version 3 of the
@@ -19,16 +22,20 @@
 #
 ##############################################################################
 
-from openerp.osv.orm import Model
-from openerp.osv import fields
+from odoo import models
+from odoo import fields
 
 
-class Continent(Model):
+class Continent(models.Model):
     _name = 'res.continent'
     _description = 'Continent'
-    _columns = {
-        'name': fields.char('Continent Name', size=64,
-                            help='The full name of the continent.',
-                            required=True, translate=True),
-    }
     _order = 'name'
+
+    name = fields.Char(
+        string='Continent Name',
+        size=64,
+        help="""The full name of the continent.""",
+        required=True,
+        translate=True,
+    )
+
