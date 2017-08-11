@@ -38,4 +38,10 @@ class Continent(models.Model):
         required=True,
         translate=True,
     )
+    countries = fields.One2many(
+        comodel_name='res.country',
+        inverse_name='continent_id',
+        string='Countries',
+        readonly=True,
+    )
 

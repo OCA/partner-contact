@@ -43,6 +43,15 @@
                     <group>
                         <field name="name"/>
                     </group>
+                    <group>
+                        <separator colspan="4" string="Countries" />
+                        <field name="countries" mode="tree" nolabel="1" readonly="True" colspan="4">
+                            <tree string="Countries">
+                                <field name="name" />
+                                <field name="code" />
+                            </tree>
+                        </field>
+                    </group>
                 </form>
             </field>
         </record>
