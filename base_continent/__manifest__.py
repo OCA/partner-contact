@@ -23,7 +23,10 @@
 {
     'name': 'Continent management',
     'version': '10.0.1.0.0',
-    'depends': ['base'],
+    'depends': [
+        'base',
+        'sales_team',
+    ],
     'author': "Camptocamp,SenseFly,Amaris,Odoo Community Association (OCA)",
     'license': 'AGPL-3',
     'description': """
