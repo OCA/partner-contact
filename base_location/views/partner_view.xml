@@ -17,7 +17,8 @@
                     <field name="zip_id"
                         options="{'create_name_field': 'city', 'no_open': True, 'no_create': True}"
                         placeholder="City completion"
-                        class="oe_edit_only" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" />
+                        class="o_city_state"
+                    />
                 </xpath>
             </field>
         </record>
