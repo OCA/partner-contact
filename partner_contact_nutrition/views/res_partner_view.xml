@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_nutrition_information" model="ir.ui.view">
+        <field name="name">Partner Contact Nutrition</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_personal_information_page.personal_information"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='personal_information_page']" position="inside">
+                <group name="group_nutrition" string="Nutrition">
+                    <group name="intake" string="Intake">
+                        <label for="caloric_intake"/>
+                        <div>
+                            <field name='caloric_intake' class="oe_inline"/>
+                            <field name='caloric_intake_uom'
+                                   class="oe_inline"
+                                   placeholder="UoM"/>
+                        </div>
+                        <label for="carbohydrate_intake"/>
+                        <div>
+                            <field name='carbohydrate_intake' class="oe_inline"/>
+                            <field name='carbohydrate_intake_uom'
+                                   class="oe_inline"
+                                   placeholder="UoM"/>
+                        </div>
+                        <label for="fat_intake"/>
+                        <div>
+                            <field name='fat_intake' class="oe_inline"/>
+                            <field name='fat_intake_uom'
+                                   class="oe_inline"
+                                   placeholder="UoM"/>
+                        </div>
+                        <label for="protein_intake"/>
+                        <div>
+                            <field name='protein_intake' class="oe_inline"/>
+                            <field name='protein_intake_uom'
+                                   class="oe_inline"
+                                   placeholder="UoM"/>
+                        </div>
+                    </group>
+                    <group name="other_info" string="Other info"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
