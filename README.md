@@ -20,7 +20,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[base_location](base_location/) | 9.0.1.0.0 | Enhanced zip/npa management system
+[base_location](base_location/) | 9.0.1.1.0 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 9.0.1.0.1 | Import better zip entries from Geonames
 [base_partner_merge](base_partner_merge/) | 9.0.1.0.0 | Partner merge wizard without dependency on CRM
 [base_partner_sequence](base_partner_sequence/) | 9.0.0.1.0 | Sets customer's code from a sequence
