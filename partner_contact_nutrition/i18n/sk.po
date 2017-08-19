@@ -11,12 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2017-08-17 02:52+0000\n"
 "PO-Revision-Date: 2017-08-17 02:52+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Turkish (https://www.transifex.com/oca/teams/23907/tr/)\n"
+"Language-Team: Slovak (https://www.transifex.com/oca/teams/23907/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: tr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: sk\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #. module: partner_contact_nutrition
 #: model:ir.model.fields,field_description:partner_contact_nutrition.field_res_partner_alias_caloric_intake
@@ -78,7 +78,7 @@ msgstr ""
 #. module: partner_contact_nutrition
 #: model:ir.model,name:partner_contact_nutrition.model_res_partner
 msgid "Partner"
-msgstr "İş Ortağı"
+msgstr "Partner"
 
 #. module: partner_contact_nutrition
 #: model:ir.model.fields,field_description:partner_contact_nutrition.field_res_partner_alias_protein_intake
@@ -97,4 +97,4 @@ msgstr ""
 #. module: partner_contact_nutrition
 #: model:ir.ui.view,arch_db:partner_contact_nutrition.view_nutrition_information
 msgid "UoM"
-msgstr "Ölçü Birimi"
+msgstr ""
