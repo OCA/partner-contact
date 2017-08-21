@@ -44,11 +44,13 @@ addon | version | summary
 [partner_create_by_vat](partner_create_by_vat/) | 10.0.1.0.0 | Using VIES webservice, name and address information will be fetched and added to the partner.
 [partner_employee_quantity](partner_employee_quantity/) | 10.0.1.0.0 | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 10.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
+[partner_financial_risk](partner_financial_risk/) | 10.0.1.0.0 | Manage partner risk
 [partner_firstname](partner_firstname/) | 10.0.2.0.0 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 10.0.0.1.0 | Add specific helper methods
 [partner_identification](partner_identification/) | 10.0.1.1.1 | Partner Identification Numbers
 [partner_multi_relation](partner_multi_relation/) | 10.0.1.0.0 | Partner relations
 [partner_password_reset](partner_password_reset/) | 10.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
+[partner_sale_risk](partner_sale_risk/) | 10.0.1.0.0 | Manage partner risk in sales orders
 [partner_second_lastname](partner_second_lastname/) | 10.0.1.0.0 | Have split first and second lastnames
 [partner_sector](partner_sector/) | 10.0.1.0.0 | Add partner sectors
 [partner_street_number](partner_street_number/) | 10.0.1.0.0 | Introduces separate fields for street name and street number.
@@ -74,8 +76,8 @@ Translation Status
 
 ----
 
-OCA, or the Odoo Community Association, is a nonprofit organization whose 
-mission is to support the collaborative development of Odoo features and 
+OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
 http://odoo-community.org/
