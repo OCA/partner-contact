@@ -10,7 +10,7 @@ Adds a title to partner that are companies.
 (Before: Partner Title in Odoo - limited to contacts now)
 
 See : 
-	:target: https://en.wikipedia.org/wiki/Types_of_business_entity
+    :target: https://en.wikipedia.org/wiki/Types_of_business_entity
 
 Usage
 =====
@@ -19,9 +19,6 @@ Usage
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/134/10.0
-
-.. repo_id is available in https://github.com/OCA/maintainer-tools/blob/master/tools/repos_with_ids.txt
-.. branch is "8.0" for example
 
 
 Bug Tracker
