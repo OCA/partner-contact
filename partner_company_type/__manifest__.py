@@ -4,15 +4,15 @@
 
 {
     'name': 'Partner Company Type',
-    'summary': """
-        Adds a company type to partner that are companies""",
-    'version': '10.0.1.0.0',
+    'summary': 'Adds a company type to partner that are companies',
+    'version': '10.0.1.0.1',
     'license': 'AGPL-3',
     'author': 'ACSONE SA/NV,Odoo Community Association (OCA)',
     'website': 'https://acsone.eu',
-    'depends': ['base',
-                'sales_team'
-                ],
+    'depends': [
+        'base',
+        'sales_team',
+    ],
     'data': [
         'security/res_partner_company_type.xml',
         'views/res_partner_company_type.xml',
