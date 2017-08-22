@@ -8,5 +8,7 @@ from odoo import fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    company_type_id = fields.Many2one('res.partner.company.type',
-                                      string='Company Type')
+    partner_company_type_id = fields.Many2one(
+        'res.partner.company.type',
+        string='Company Type'
+    )
