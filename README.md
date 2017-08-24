@@ -54,6 +54,7 @@ addon | version | summary
 [partner_noncommercial](partner_noncommercial/) | 8.0.1.0.0 | Partner Non Commercial
 [partner_phone_extension](partner_phone_extension/) | 8.0.1.0.0 | Partner Phone Number Extension
 [partner_relations](partner_relations/) | 8.0.1.1.2 | Partner relations
+[partner_sale_risk](partner_sale_risk/) | 8.0.1.0.0 | Manage partner risk in sales orders
 [partner_second_lastname](partner_second_lastname/) | 8.0.4.1.0 | Have split first and second lastnames
 [partner_sector](partner_sector/) | 8.0.1.0.0 | Add partner sectors
 [partner_street_number](partner_street_number/) | 8.0.0.1.0 | Introduces separate fields for street name and street number.
