@@ -14,8 +14,14 @@ class ResPartner(models.Model):
     """Adds last name and first name; name becomes a stored function field."""
     _inherit = 'res.partner'
 
-    firstname = fields.Char("First name")
-    lastname = fields.Char("Last name")
+    firstname = fields.Char(
+        "First name",
+        index=True,
+    )
+    lastname = fields.Char(
+        "Last name",
+        index=True,
+    )
     name = fields.Char(
         compute="_compute_name",
         inverse="_inverse_name_after_cleaning_whitespace",
