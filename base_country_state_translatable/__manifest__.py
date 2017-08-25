@@ -5,7 +5,8 @@
 {
     "name": "Translate Country States",
     "version": "10.0.1.0.0",
-    "depends": [],
+    "depends": ['base',
+                ],
     'application': False,
     'author': 'initOS GmbH, Odoo Community Association (OCA)',
     "category": "Localisation/Europe",
