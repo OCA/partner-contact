@@ -20,6 +20,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[base_country_state_translatable](base_country_state_translatable/) | 10.0.1.0.0 | Translate Country States
 [base_location](base_location/) | 10.0.1.0.1 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 10.0.1.0.1 | Import better zip entries from Geonames
 [base_location_nuts](base_location_nuts/) | 10.0.1.0.0 | NUTS Regions
