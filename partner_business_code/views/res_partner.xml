@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 Oy Tawasta OS Technologies Ltd.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+	<data>
+
+		<record id="view_partner_form" model="ir.ui.view">
+			<field name="name">view.partner.form.business.id</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+
+				<field name="category_id" position="before">
+					<h2 attrs="{'invisible': [('is_company', '=', False)]}">
+						<field name="business_id" placeholder="Business id"/>
+					</h2>
+				</field>
+
+			</field>
+		</record>
+
+	</data>
+</openerp>
