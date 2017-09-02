@@ -3,13 +3,14 @@
 # * partner_contact_department
 # 
 # Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
 # Peter Hageman <hageman.p@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-17 05:37+0000\n"
-"PO-Revision-Date: 2017-06-17 05:37+0000\n"
+"POT-Creation-Date: 2017-08-19 05:49+0000\n"
+"PO-Revision-Date: 2017-08-19 05:49+0000\n"
 "Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -26,12 +27,12 @@ msgstr ""
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Aangemaakt door"
 
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Aangemaakt op"
 
 #. module: partner_contact_department
 #: model:ir.model,name:partner_contact_department.model_res_partner_department
@@ -72,12 +73,12 @@ msgstr "Laatst gewijzigd op"
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Laatst bijgewerkt door"
 
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Laatst bijgewerkt op"
 
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_name

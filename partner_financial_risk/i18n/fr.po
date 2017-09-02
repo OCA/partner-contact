@@ -4,12 +4,13 @@
 # 
 # Translators:
 # leemannd <denis.leemann@camptocamp.com>, 2016
+# leemannd <denis.leemann@camptocamp.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-20 03:40+0000\n"
-"PO-Revision-Date: 2016-12-23 08:32+0000\n"
+"POT-Creation-Date: 2017-08-19 05:50+0000\n"
+"PO-Revision-Date: 2017-08-28 09:08+0000\n"
 "Last-Translator: leemannd <denis.leemann@camptocamp.com>\n"
 "Language-Team: French (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -94,7 +95,7 @@ msgstr ""
 #: code:addons/partner_financial_risk/models/account_invoice.py:19
 #, python-format
 msgid "Financial risk exceeded.\n"
-msgstr ""
+msgstr "Risque financier dépassé.\n"
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount_include
@@ -102,7 +103,7 @@ msgstr ""
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_open_include
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_unpaid_include
 msgid "Full risk computation"
-msgstr ""
+msgstr "Calcul du risque total"
 
 #. module: partner_financial_risk
 #: model:ir.ui.view,arch_db:partner_financial_risk.res_partner_view_risk
@@ -246,7 +247,7 @@ msgstr "Risque dépassé"
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_open_limit
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_unpaid_limit
 msgid "Set 0 if it is not locked"
-msgstr ""
+msgstr "Mettre à 0 si il n'est pas fermé"
 
 #. module: partner_financial_risk
 #: model:ir.ui.view,arch_db:partner_financial_risk.res_partner_view_risk

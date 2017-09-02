@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-31 00:06+0000\n"
+"POT-Creation-Date: 2017-08-19 05:50+0000\n"
 "PO-Revision-Date: 2016-03-19 05:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Polish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/pl/)\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:24
@@ -43,7 +43,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_active
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_active
 msgid "Active"
-msgstr ""
+msgstr "Aktywny"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_partner_issued_id
@@ -181,7 +181,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_comment
 #: model:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 msgid "Notes"
-msgstr ""
+msgstr "Uwagi"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner

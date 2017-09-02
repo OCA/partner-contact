@@ -3,86 +3,85 @@
 # * partner_sale_risk
 # 
 # Translators:
-# Matjaž Mozetič <m.mozetic@matmoz.si>, 2017
-# OCA Transbot <transbot@odoo-community.org>, 2017
+# Peter Hageman <hageman.p@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-08-19 05:50+0000\n"
 "PO-Revision-Date: 2017-08-19 05:50+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
+"Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
+"Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_sale_risk
 #: code:addons/partner_sale_risk/models/sale.py:42
 #, python-format
 msgid "Financial risk exceeded.\n"
-msgstr "Prekoračeno finančno tveganje.\n"
+msgstr ""
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order_include
 msgid "Full risk computation"
-msgstr "Polna obdelava tveganja"
+msgstr ""
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_risk_sale_order_include
 msgid "Include Sales Orders"
-msgstr "Vključi prodajne naloge"
+msgstr ""
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,field_description:partner_sale_risk.field_sale_order_invoice_amount
 msgid "Invoice amount"
-msgstr "Zaračunani znesek"
+msgstr ""
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,field_description:partner_sale_risk.field_sale_order_invoice_pending_amount
 msgid "Invoice pending amount"
-msgstr "Znesek čakajočega računa"
+msgstr ""
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_risk_sale_order_limit
 msgid "Limit Sales Orders"
-msgstr "Omeji prodajne naloge"
+msgstr ""
 
 #. module: partner_sale_risk
 #: model:ir.model,name:partner_sale_risk.model_res_partner
 msgid "Partner"
-msgstr "Partner"
+msgstr ""
 
 #. module: partner_sale_risk
 #: model:ir.model,name:partner_sale_risk.model_sale_order
 msgid "Sales Order"
-msgstr "Prodajni nalog"
+msgstr "Verkooporder"
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order_limit
 msgid "Set 0 if it is not locked"
-msgstr "Nastavi 0 če ni zaklenjeno"
+msgstr ""
 
 #. module: partner_sale_risk
 #: code:addons/partner_sale_risk/models/sale.py:51
 #, python-format
 msgid "This sale order exceeds the financial risk.\n"
-msgstr "Ta prodajni nalog prekoračuje finančno tveganje.\n"
+msgstr ""
 
 #. module: partner_sale_risk
 #: code:addons/partner_sale_risk/models/sale.py:46
 #, python-format
 msgid "This sale order exceeds the sales orders risk.\n"
-msgstr "Ta prodajni nalog prekoračuje tveganost prodajnih nalogov.\n"
+msgstr ""
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_risk_sale_order
 msgid "Total Sales Orders Not Invoiced"
-msgstr "Skupaj še ne zaračunanih prodajnih nalogov"
+msgstr ""
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order
 msgid "Total not invoiced of sales orders in Sale Order state"
-msgstr "Skupaj še ne zaračunanih prodajnih nalogov v stanju prodajni nalog"
+msgstr ""

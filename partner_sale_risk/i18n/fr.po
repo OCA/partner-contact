@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# Quentin THEURET <odoo@kerpeo.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-02 00:47+0000\n"
-"PO-Revision-Date: 2017-06-02 00:47+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2017-08-19 05:50+0000\n"
+"PO-Revision-Date: 2017-08-19 05:50+0000\n"
+"Last-Translator: Quentin THEURET <odoo@kerpeo.com>, 2017\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,32 +23,32 @@ msgstr ""
 #: code:addons/partner_sale_risk/models/sale.py:42
 #, python-format
 msgid "Financial risk exceeded.\n"
-msgstr ""
+msgstr "Risque financier dépassé.\n"
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order_include
 msgid "Full risk computation"
-msgstr ""
+msgstr "Calcul du risque total"
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_risk_sale_order_include
 msgid "Include Sales Orders"
-msgstr ""
+msgstr "Inclure les commandes de vente"
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,field_description:partner_sale_risk.field_sale_order_invoice_amount
 msgid "Invoice amount"
-msgstr ""
+msgstr "Montant de la facture"
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,field_description:partner_sale_risk.field_sale_order_invoice_pending_amount
 msgid "Invoice pending amount"
-msgstr ""
+msgstr "Montant des factures en attente"
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_risk_sale_order_limit
 msgid "Limit Sales Orders"
-msgstr ""
+msgstr "Limite des bons de commande"
 
 #. module: partner_sale_risk
 #: model:ir.model,name:partner_sale_risk.model_res_partner
@@ -62,26 +63,26 @@ msgstr "Bon de commande"
 #. module: partner_sale_risk
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order_limit
 msgid "Set 0 if it is not locked"
-msgstr ""
+msgstr "Mettre à 0 si il n'est pas fermé"
 
 #. module: partner_sale_risk
 #: code:addons/partner_sale_risk/models/sale.py:51
 #, python-format
 msgid "This sale order exceeds the financial risk.\n"
-msgstr ""
+msgstr "Ce bon de commande dépasse le risque financier.\n"
 
 #. module: partner_sale_risk
 #: code:addons/partner_sale_risk/models/sale.py:46
 #, python-format
 msgid "This sale order exceeds the sales orders risk.\n"
-msgstr ""
+msgstr "Ce bon de commande dépasse le risque sur les bons de commande.\n"
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_risk_sale_order
 msgid "Total Sales Orders Not Invoiced"
-msgstr ""
+msgstr "Total des bons de commande non facturés"
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order
 msgid "Total not invoiced of sales orders in Sale Order state"
-msgstr ""
+msgstr "Total non facturé des bons de commande à l'état Bon de commande"

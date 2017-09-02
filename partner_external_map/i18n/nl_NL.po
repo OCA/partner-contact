@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-17 05:38+0000\n"
-"PO-Revision-Date: 2017-06-30 08:53+0000\n"
+"POT-Creation-Date: 2017-08-19 05:50+0000\n"
+"PO-Revision-Date: 2017-08-29 08:01+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -36,12 +36,12 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Aangemaakt door"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Aangemaakt op"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_department_id
@@ -93,12 +93,12 @@ msgstr "Laatst gewijzigd op"
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Laatst bijgewerkt door"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Laatst bijgewerkt op"
 
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
