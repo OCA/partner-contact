@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
+# Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import datetime
@@ -60,9 +60,7 @@ class ResPartner(models.Model):
 
     @api.multi
     def _compute_risk_allow_edit(self):
-        is_editable = self.env.user.has_group(
-            'sales_team.group_sale_manager') or self.env.user.has_group(
-            'account.group_account_manager')
+        is_editable = self.env.user.has_group('account.group_account_manager')
         for partner in self.filtered('customer'):
             partner.risk_allow_edit = is_editable
 

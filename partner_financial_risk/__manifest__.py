@@ -12,7 +12,6 @@
     'website': 'https://www.tecnativa.com',
     'depends': [
         'account',
-        'sales_team',
     ],
     'data': [
         'data/partner_financial_risk_data.xml',

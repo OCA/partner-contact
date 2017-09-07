@@ -1,16 +1,18 @@
 # -*- coding: utf-8 -*-
-# © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
+# Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import SavepointCase
+from odoo.tests import common
 from odoo import fields
 
 
-class TestPartnerFinancialRisk(SavepointCase):
+class TestPartnerFinancialRisk(common.SavepointCase):
+
     @classmethod
     def setUpClass(cls):
         super(TestPartnerFinancialRisk, cls).setUpClass()
-        cls.env.user.groups_id |= cls.env.ref('sales_team.group_sale_manager')
+        cls.env.user.groups_id |= cls.env.ref(
+            'account.group_account_manager')
         cls.partner = cls.env['res.partner'].create({
             'name': 'Partner test',
             'customer': True,
@@ -55,12 +57,11 @@ class TestPartnerFinancialRisk(SavepointCase):
             'account_id': cls.account_customer.id,
             'type': 'out_invoice',
             'journal_id': cls.journal_sale.id,
-            'payment_term_id': False,
             'invoice_line_ids': [(0, 0, {
                 'name': 'Test product',
                 'account_id': cls.account_sale.id,
-                'price_unit': 50,
-                'quantity': 10,
+                'price_unit': 50.0,
+                'quantity': 10.0,
                 'invoice_line_tax_ids': [(6, 0, [cls.tax.id])],
             })],
         })
