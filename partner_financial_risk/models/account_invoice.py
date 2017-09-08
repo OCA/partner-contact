@@ -22,7 +22,9 @@ class AccountInvoice(models.Model):
                     partner.risk_invoice_open_limit):
                 exception_msg = _(
                     "This invoice exceeds the open invoices risk.\n")
-            elif partner.risk_invoice_open_include and (
+            # If risk_invoice_draft_include this invoice included in risk_total
+            elif not partner.risk_invoice_draft_include and (
+                    partner.risk_invoice_open_include and
                     (partner.risk_total + invoice.amount_total) >
                     partner.credit_limit):
                 exception_msg = _(
