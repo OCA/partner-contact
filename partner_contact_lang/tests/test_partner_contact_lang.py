@@ -1,29 +1,35 @@
 # -*- coding: utf-8 -*-
-# © 2016 Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
+# Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2017 Vicent Cubells <vicent.cubells@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp.tests import common
+from odoo.tests import common
 
 
-class TestPartnerContactLang(common.TransactionCase):
-    def setUp(self):
-        super(TestPartnerContactLang, self).setUp()
-        self.ResPartner = self.env['res.partner']
-        self.partner = self.ResPartner.create({
+class TestPartnerContactLang(common.SavepointCase):
+    @classmethod
+    def setUpClass(cls):
+        super(TestPartnerContactLang, cls).setUpClass()
+        cls.ResPartner = cls.env['res.partner']
+        cls.partner = cls.ResPartner.create({
             'name': 'Partner test',
             'lang': 'en_US',
         })
-        self.contact = self.ResPartner.create({
+        cls.contact = cls.ResPartner.create({
             'name': 'Contact test',
             'lang': False,
-            'parent_id': self.partner.id,
+            'parent_id': cls.partner.id,
         })
 
     def test_onchange_parent_id(self):
         self.contact.parent_id = False
-        res = self.contact.onchange_parent_id(self.partner.id)
+        res = self.contact.onchange_parent_id()
+        self.assertIsNone(res)
+        self.contact.parent_id = self.partner
+        res = self.contact.onchange_parent_id()
         self.assertEqual(res.get('value', {}).get('lang'), 'en_US')
 
     def test_write_parent_lang(self):
+        self.partner.lang = False
         self.partner.lang = 'en_US'
         self.assertEqual(self.contact.lang, 'en_US')
