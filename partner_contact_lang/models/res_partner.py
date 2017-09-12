@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
-# © 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2016 Tecnativa - Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2017 Tecnativa - Vicent Cubells <vicent.cubells@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, models
+from odoo import api, models
 
 
 class ResPartner(models.Model):
@@ -21,21 +21,12 @@ class ResPartner(models.Model):
                 childs.write({'lang': vals['lang']})
         return res
 
-    @api.multi
-    def onchange_parent_id(self, parent_id):
+    @api.onchange('parent_id')
+    def onchange_parent_id(self):
         """Change language if the parent company changes and there's no
         language defined yet"""
-        res = super(ResPartner, self).onchange_parent_id(parent_id)
-        if parent_id and self.parent_id.id != parent_id and not self.lang:
-            parent = self.browse(parent_id)
+        res = super(ResPartner, self).onchange_parent_id()
+        if self.parent_id and self.parent_id != self and not self.lang:
             val = res.setdefault('value', {})
-            val['lang'] = parent.lang
+            val['lang'] = self.parent_id.lang
         return res
-
-    @api.multi
-    @api.onchange('lang')
-    def onchange_lang(self):
-        if self.lang:
-            childs = self.child_ids.filtered(lambda x: not x.lang)
-            for child in childs:
-                child.lang = self.lang
