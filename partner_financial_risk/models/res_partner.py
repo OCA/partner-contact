@@ -56,6 +56,7 @@ class ResPartner(models.Model):
         help='It Indicate if partner risk exceeded')
     credit_policy = fields.Char()
     risk_allow_edit = fields.Boolean(compute='_compute_risk_allow_edit')
+    credit_limit = fields.Float(track_visibility='onchange')
 
     @api.multi
     def _compute_risk_allow_edit(self):
