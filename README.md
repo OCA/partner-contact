@@ -45,7 +45,7 @@ addon | version | summary
 [partner_contact_weight](partner_contact_weight/) | 9.0.1.0.1 | Provide contact weight
 [partner_default_sale_discount](partner_default_sale_discount/) | 9.0.1.0.0 | Default sales discount per partner
 [partner_external_map](partner_external_map/) | 9.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
-[partner_financial_risk](partner_financial_risk/) | 9.0.1.0.1 | Manage partner risk
+[partner_financial_risk](partner_financial_risk/) | 9.0.1.0.2 | Manage partner risk
 [partner_firstname](partner_firstname/) | 9.0.2.0.0 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 9.0.0.1.0 | Partner Helper
 [partner_identification](partner_identification/) | 9.0.1.0.0 | Partner Identification Numbers
