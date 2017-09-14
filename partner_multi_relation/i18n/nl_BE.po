@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-08 02:42+0000\n"
-"PO-Revision-Date: 2017-07-08 02:42+0000\n"
+"POT-Creation-Date: 2017-12-26 15:33+0000\n"
+"PO-Revision-Date: 2017-12-26 15:33+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Dutch (Belgium) (https://www.transifex.com/oca/teams/23907/nl_BE/)\n"
 "MIME-Version: 1.0\n"
@@ -166,7 +166,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_id
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_4082
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_4121
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_id
 msgid "ID"
 msgstr "ID"
