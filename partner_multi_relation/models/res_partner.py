@@ -143,7 +143,8 @@ class ResPartner(models.Model):
         # pylint: disable=no-value-for-parameter
         date_args = []
         for arg in args:
-            if is_leaf(arg) and arg[0].startswith('search_relation'):
+            if (is_leaf(arg) and isinstance(arg[0], basestring) and
+                    arg[0].startswith('search_relation')):
                 if arg[0] == 'search_relation_date':
                     date_args = []
                     break
