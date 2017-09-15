@@ -49,7 +49,7 @@ addon | version | summary
 [partner_firstname](partner_firstname/) | 10.0.2.1.0 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 10.0.0.1.0 | Add specific helper methods
 [partner_identification](partner_identification/) | 10.0.1.1.1 | Partner Identification Numbers
-[partner_multi_relation](partner_multi_relation/) | 10.0.1.0.0 | Partner relations
+[partner_multi_relation](partner_multi_relation/) | 10.0.1.0.1 | Partner relations
 [partner_password_reset](partner_password_reset/) | 10.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
 [partner_phone_extension](partner_phone_extension/) | 10.0.1.0.0 | Partner Phone Number Extension
 [partner_second_lastname](partner_second_lastname/) | 10.0.1.0.0 | Have split first and second lastnames
