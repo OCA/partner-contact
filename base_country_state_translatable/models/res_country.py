@@ -2,7 +2,7 @@
 # © initOS GmbH 2017
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from openerp import fields, models
 
 
 class CountryState(models.Model):
