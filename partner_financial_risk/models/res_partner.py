@@ -68,11 +68,11 @@ class ResPartner(models.Model):
 
     @api.multi
     @api.depends('invoice_ids', 'invoice_ids.state',
-                 'invoice_ids.amount_total', 'invoice_ids.residual',
+                 'invoice_ids.amount_total', 'invoice_ids.residual_signed',
                  'invoice_ids.company_id.invoice_unpaid_margin',
                  'child_ids.invoice_ids', 'child_ids.invoice_ids.state',
                  'child_ids.invoice_ids.amount_total',
-                 'child_ids.invoice_ids.residual',
+                 'child_ids.invoice_ids.residual_signed',
                  'child_ids.invoice_ids.company_id.invoice_unpaid_margin')
     def _compute_risk_invoice(self):
         def sum_group(group, field):
@@ -92,18 +92,20 @@ class ResPartner(models.Model):
             ['partner_id'])
         open_group = AccountInvoice.read_group(
             domain + [('state', '=', 'open'), ('date_due', '>=', max_date)],
-            ['partner_id', 'residual'],
+            ['partner_id', 'residual_signed'],
             ['partner_id'])
         unpaid_group = AccountInvoice.read_group(
             domain + [('state', '=', 'open'), '|',
                       ('date_due', '=', False), ('date_due', '<', max_date)],
-            ['partner_id', 'residual'],
+            ['partner_id', 'residual_signed'],
             ['partner_id'])
         for partner in customers:
             partner_ids = (partner | partner.child_ids).ids
             partner.risk_invoice_draft = sum_group(draft_group, 'amount_total')
-            partner.risk_invoice_open = sum_group(open_group, 'residual')
-            partner.risk_invoice_unpaid = sum_group(unpaid_group, 'residual')
+            partner.risk_invoice_open = sum_group(
+                open_group, 'residual_signed')
+            partner.risk_invoice_unpaid = sum_group(
+                unpaid_group, 'residual_signed')
 
     @api.multi
     @api.depends('credit', 'risk_invoice_open', 'risk_invoice_unpaid',
