@@ -5,6 +5,7 @@
 from datetime import datetime, timedelta
 from mock import patch
 from openerp.tests.common import SavepointCase
+from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 PATH = ("openerp.addons.partner_phonecall_schedule.models"
         ".res_partner.datetime")
@@ -12,9 +13,9 @@ PATH = ("openerp.addons.partner_phonecall_schedule.models"
 
 class CanICallCase(SavepointCase):
     @classmethod
-    def setUpClass(self):
-        super(CanICallCase, self).setUpClass()
-        self.some_mornings = self.env["resource.calendar"].create({
+    def setUpClass(cls):
+        super(CanICallCase, cls).setUpClass()
+        cls.some_mornings = cls.env["resource.calendar"].create({
             "name": "Some mornings",
             "attendance_ids": [
                 (0, 0, {
@@ -33,7 +34,7 @@ class CanICallCase(SavepointCase):
                 }),
             ],
         })
-        self.some_evenings = self.env["resource.calendar"].create({
+        cls.some_evenings = cls.env["resource.calendar"].create({
             "name": "Some evenings",
             "attendance_ids": [
                 (0, 0, {
@@ -52,57 +53,86 @@ class CanICallCase(SavepointCase):
                 }),
             ],
         })
-        self.Partner = self.env["res.partner"]
-        self.dude = self.Partner.create({
+        cls.Partner = cls.env["res.partner"]
+        cls.dude = cls.env["res.partner"].create({
             "name": "Dude",
         })
-        self.dude.phonecall_calendar_ids = self.some_mornings
-        # This is a friday morning
+        cls.dude.phonecall_calendar_ids = cls.some_mornings
+
+    def setUp(self):
+        super(CanICallCase, self).setUp()
+        # Now it is a friday morning
         self.datetime = datetime(2017, 9, 15, 10, 53, 30)
 
-    @patch(PATH)
-    def allowed(self, mocked_dt):
-        mocked_dt.now.return_value = self.datetime
-        mocked_dt.date.return_value = self.datetime.date()
-        self.assertTrue(self.dude.phonecall_available)
-        self.assertTrue(self.Partner.search([
-            ("id", "=", self.dude.id),
+    def _allowed(self, now=None):
+        dude, Partner = self.dude, self.Partner
+        if now:
+            dude = dude.with_context(now=now)
+            Partner = Partner.with_context(now=now)
+        self.assertTrue(dude.phonecall_available)
+        self.assertTrue(Partner.search([
+            ("id", "=", dude.id),
             ("phonecall_available", "=", True),
         ]))
-        self.assertTrue(self.Partner.search([
-            ("id", "=", self.dude.id),
+        self.assertTrue(Partner.search([
+            ("id", "=", dude.id),
             ("phonecall_available", "!=", False),
         ]))
-        self.assertFalse(self.Partner.search([
-            ("id", "=", self.dude.id),
+        self.assertFalse(Partner.search([
+            ("id", "=", dude.id),
             ("phonecall_available", "=", False),
         ]))
-        self.assertFalse(self.Partner.search([
-            ("id", "=", self.dude.id),
+        self.assertFalse(Partner.search([
+            ("id", "=", dude.id),
             ("phonecall_available", "!=", True),
         ]))
 
-    @patch(PATH)
-    def disallowed(self, mocked_dt):
-        mocked_dt.now.return_value = self.datetime
-        mocked_dt.date.return_value = self.datetime.date()
-        self.assertFalse(self.dude.phonecall_available)
-        self.assertFalse(self.Partner.search([
-            ("id", "=", self.dude.id),
+    def allowed(self):
+        # Test mocking datetime.now()
+        with patch(PATH) as mocked_dt:
+            mocked_dt.now.return_value = self.datetime
+            mocked_dt.date.return_value = self.datetime.date()
+            self._allowed()
+        # Test sending a datetime object in the context
+        self._allowed(self.datetime)
+        # Test sending a string in the context
+        self._allowed(
+            self.datetime.strptime(DEFAULT_SERVER_DATETIME_FORMAT))
+
+    def _disallowed(self, now=None):
+        dude, Partner = self.dude, self.Partner
+        if now:
+            dude = dude.with_context(now=now)
+            Partner = Partner.with_context(now=now)
+        self.assertFalse(dude.phonecall_available)
+        self.assertFalse(Partner.search([
+            ("id", "=", dude.id),
             ("phonecall_available", "=", True),
         ]))
-        self.assertFalse(self.Partner.search([
-            ("id", "=", self.dude.id),
+        self.assertFalse(Partner.search([
+            ("id", "=", dude.id),
             ("phonecall_available", "!=", False),
         ]))
-        self.assertTrue(self.Partner.search([
-            ("id", "=", self.dude.id),
+        self.assertTrue(Partner.search([
+            ("id", "=", dude.id),
             ("phonecall_available", "=", False),
         ]))
-        self.assertTrue(self.Partner.search([
-            ("id", "=", self.dude.id),
+        self.assertTrue(Partner.search([
+            ("id", "=", dude.id),
             ("phonecall_available", "!=", True),
         ]))
+
+    def disallowed(self):
+        # Test mocking datetime.now()
+        with patch(PATH) as mocked_dt:
+            mocked_dt.now.return_value = self.datetime
+            mocked_dt.date.return_value = self.datetime.date()
+            self._disallowed()
+        # Test sending a datetime object in the context
+        self._disallowed(self.datetime)
+        # Test sending a string in the context
+        self._disallowed(
+            self.datetime.strptime(DEFAULT_SERVER_DATETIME_FORMAT))
 
     def test_friday_morning(self):
         """I can call dude this morning"""

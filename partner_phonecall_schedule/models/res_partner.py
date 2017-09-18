@@ -6,6 +6,7 @@ from __future__ import division
 from datetime import datetime
 from pytz import timezone
 from openerp import api, fields, models
+from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 
 class ResPartner(models.Model):
@@ -65,7 +66,13 @@ class ResPartner(models.Model):
             tz = timezone(self.env.context["tz"])
         except KeyError:
             tz = None
-        now = datetime.now(tz=tz)
+        now = self.env.context.get("now", datetime.now(tz=tz))
+        try:
+            now = datetime.strptime(now, DEFAULT_SERVER_DATETIME_FORMAT)
+            tz.localize(now)
+        except (TypeError, AttributeError):
+            # `now` is already a datetime object, or `tz` is `None`
+            pass
         date = now.date()
         float_time = now.hour + ((now.minute / 60) + now.second) / 60
         return [
