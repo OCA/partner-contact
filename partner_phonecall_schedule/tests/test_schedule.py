@@ -33,6 +33,25 @@ class CanICallCase(SavepointCase):
                 }),
             ],
         })
+        self.some_evenings = self.env["resource.calendar"].create({
+            "name": "Some evenings",
+            "attendance_ids": [
+                (0, 0, {
+                    "name": "Friday evening",
+                    "dayofweek": "4",
+                    "hour_from": 15,
+                    "hour_to": 19,
+                }),
+                (0, 0, {
+                    "name": "Next monday evening",
+                    "dayofweek": "0",
+                    "hour_from": 15,
+                    "hour_to": 19,
+                    "date_from": "2017-09-18",
+                    "date_to": "2017-09-18",
+                }),
+            ],
+        })
         self.Partner = self.env["res.partner"]
         self.dude = self.Partner.create({
             "name": "Dude",
@@ -113,3 +132,11 @@ class CanICallCase(SavepointCase):
         """I cannot call dude second next monday morning"""
         self.datetime += timedelta(days=10, hours=4)
         self.disallowed()
+
+    def test_aggregated_attendances(self):
+        """I get aggregated schedules correctly."""
+        self.dude.phonecall_calendar_ids |= self.some_evenings
+        all_attendances = (self.some_mornings | self.some_evenings).mapped(
+            "attendance_ids")
+        self.assertEqual(
+            self.dude.phonecall_calendar_attendance_ids, all_attendances)
