@@ -10,6 +10,12 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//notebook">
+                <!-- `many2many_tags` widget would not allow the user to click
+                     and edit a calendar record as the list widget does;
+                     management menus are under global settings, so only
+                     admins could do it; we need plenty of space to display
+                     the aggregated schedule. All that said, we have to use a
+                     list widget inside a dedicated page. -->
                 <page string="Phone calls" name="phonecalls">
                     <group>
                         <field name="phonecall_available"/>

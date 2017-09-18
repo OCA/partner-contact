@@ -9,20 +9,6 @@ Partner phonecalls schedule
 If you know the best moment to call your partners, use this addon to keep
 track of it and be able to filter partners that you can comfortably call now.
 
-Installation
-============
-
-To install this module, you need to:
-
-#. Do this ...
-
-Configuration
-=============
-
-To manage calendars:
-
-#. Go to *Settings > Technical > Resource*.
-
 Usage
 =====
 

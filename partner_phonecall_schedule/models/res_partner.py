@@ -5,7 +5,7 @@
 from __future__ import division
 from datetime import datetime
 from pytz import timezone
-from openerp import fields, models
+from openerp import api, fields, models
 
 
 class ResPartner(models.Model):
@@ -23,20 +23,29 @@ class ResPartner(models.Model):
         help="Best schedule when the contact expects to be called.",
     )
     phonecall_calendar_attendance_ids = fields.One2many(
+        comodel_name="resource.calendar.attendance",
         string="Aggregated phonecall schedule",
-        related="phonecall_calendar_ids.attendance_ids",
-        readonly=True,
+        compute="_compute_phonecall_calendar_ids",
+        help="Aggregation of all available phonecall schedules.",
     )
 
+    @api.depends("phonecall_calendar_ids", "phonecall_calendar_attendance_ids")
     def _compute_phonecall_available(self):
         """Know if a partner is available to call right now."""
+        Attendance = self.env["resource.calendar.attendance"]
         for one in self:
             domain = [
-                ("id", "in", one.phonecall_calendar_attendance_ids.ids)
+                ("calendar_id", "in", one.phonecall_calendar_ids.ids)
             ] + one._phonecall_available_domain()
-            found = one.phonecall_calendar_attendance_ids.search(
-                domain, limit=1)
+            found = Attendance.search(domain, limit=1)
             one.phonecall_available = bool(found)
+
+    @api.depends("phonecall_calendar_ids")
+    def _compute_phonecall_calendar_ids(self):
+        """Fill attendance aggregation."""
+        for one in self:
+            one.phonecall_calendar_attendance_ids = one.mapped(
+                "phonecall_calendar_ids.attendance_ids")
 
     def _search_phonecall_available(self, operator, value):
         """Search quickly if partner is available to call right now."""
@@ -47,7 +56,8 @@ class ResPartner(models.Model):
         if operator == "!=" or "not" in operator:
             value = not value
         operator = "in" if value else "not in"
-        return [("phonecall_calendar_attendance_ids", operator, available.ids)]
+        return [("phonecall_calendar_ids.attendance_ids",
+                operator, available.ids)]
 
     def _phonecall_available_domain(self):
         """Get a domain to know if we are available to call a partner."""
