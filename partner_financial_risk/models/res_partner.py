@@ -163,12 +163,13 @@ class ResPartner(models.Model):
 
     @api.model
     def process_unpaid_invoices(self):
-        today = fields.Date.today()
+        max_date = self._max_risk_date_due()
         ConfigParameter = self.env['ir.config_parameter']
         last_check = ConfigParameter.get_param(
             'partner_financial_risk.last_check', default='2016-01-01')
         invoices = self.env['account.invoice'].search([
-            ('date_due', '>=', last_check), ('date_due', '<', today)])
+            ('date_due', '>=', last_check), ('date_due', '<', max_date)])
         invoices.mapped('partner_id')._compute_risk_invoice()
-        ConfigParameter.set_param('partner_financial_risk.last_check', today)
+        ConfigParameter.set_param(
+            'partner_financial_risk.last_check', max_date)
         return True
