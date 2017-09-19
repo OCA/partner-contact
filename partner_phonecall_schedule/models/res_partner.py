@@ -4,9 +4,7 @@
 
 from __future__ import division
 from datetime import datetime
-from pytz import timezone
 from openerp import api, fields, models
-from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 
 class ResPartner(models.Model):
@@ -62,17 +60,13 @@ class ResPartner(models.Model):
 
     def _phonecall_available_domain(self):
         """Get a domain to know if we are available to call a partner."""
+        now = self.env.context.get("now", datetime.now())
         try:
-            tz = timezone(self.env.context["tz"])
-        except KeyError:
-            tz = None
-        now = self.env.context.get("now", datetime.now(tz=tz))
-        try:
-            now = datetime.strptime(now, DEFAULT_SERVER_DATETIME_FORMAT)
-            tz.localize(now)
-        except (TypeError, AttributeError):
-            # `now` is already a datetime object, or `tz` is `None`
+            now = fields.Datetime.from_string(now)
+        except TypeError:
+            # `now` is already a datetime object
             pass
+        now = fields.Datetime.context_timestamp(self, now)
         date = now.date()
         float_time = now.hour + ((now.minute / 60) + now.second) / 60
         return [

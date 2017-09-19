@@ -4,8 +4,8 @@
 
 from datetime import datetime, timedelta
 from mock import patch
+from openerp import fields
 from openerp.tests.common import SavepointCase
-from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 PATH = ("openerp.addons.partner_phonecall_schedule.models"
         ".res_partner.datetime")
@@ -15,7 +15,9 @@ class CanICallCase(SavepointCase):
     @classmethod
     def setUpClass(cls):
         super(CanICallCase, cls).setUpClass()
-        cls.some_mornings = cls.env["resource.calendar"].create({
+        cls.Calendar = cls.env["resource.calendar"].with_context(tz="UTC")
+        cls.Partner = cls.env["res.partner"].with_context(tz="UTC")
+        cls.some_mornings = cls.Calendar.create({
             "name": "Some mornings",
             "attendance_ids": [
                 (0, 0, {
@@ -34,7 +36,7 @@ class CanICallCase(SavepointCase):
                 }),
             ],
         })
-        cls.some_evenings = cls.env["resource.calendar"].create({
+        cls.some_evenings = cls.Calendar.create({
             "name": "Some evenings",
             "attendance_ids": [
                 (0, 0, {
@@ -53,8 +55,7 @@ class CanICallCase(SavepointCase):
                 }),
             ],
         })
-        cls.Partner = cls.env["res.partner"]
-        cls.dude = cls.env["res.partner"].create({
+        cls.dude = cls.Partner.create({
             "name": "Dude",
         })
         cls.dude.phonecall_calendar_ids = cls.some_mornings
@@ -97,7 +98,7 @@ class CanICallCase(SavepointCase):
         self._allowed(self.datetime)
         # Test sending a string in the context
         self._allowed(
-            self.datetime.strptime(DEFAULT_SERVER_DATETIME_FORMAT))
+            fields.Datetime.to_string(self.datetime))
 
     def _disallowed(self, now=None):
         dude, Partner = self.dude, self.Partner
@@ -132,7 +133,7 @@ class CanICallCase(SavepointCase):
         self._disallowed(self.datetime)
         # Test sending a string in the context
         self._disallowed(
-            self.datetime.strptime(DEFAULT_SERVER_DATETIME_FORMAT))
+            fields.Datetime.to_string(self.datetime))
 
     def test_friday_morning(self):
         """I can call dude this morning"""
