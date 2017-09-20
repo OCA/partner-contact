@@ -66,9 +66,9 @@ class ResPartner(models.Model):
         except TypeError:
             # `now` is already a datetime object
             pass
-        now = fields.Datetime.context_timestamp(self, now)
-        date = now.date()
-        float_time = now.hour + ((now.minute / 60) + now.second) / 60
+        date = fields.Date.to_string(now)
+        now_tz = fields.Datetime.context_timestamp(self, now)
+        float_time = now_tz.hour + ((now_tz.minute / 60) + now_tz.second) / 60
         return [
             ("dayofweek", "=", str(now.weekday())),
             "|", ("date_from", "=", False), ("date_from", "<=", date),
