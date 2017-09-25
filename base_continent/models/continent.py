@@ -49,4 +49,3 @@ class Continent(models.Model):
         string='Countries',
         readonly=True,
     )
-
