@@ -55,6 +55,7 @@ addon | version | summary
 [partner_password_reset](partner_password_reset/) | 9.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
 [partner_payment_return_risk](partner_payment_return_risk/) | 9.0.1.0.0 | Partner Payment Return Risk
 [partner_phone_extension](partner_phone_extension/) | 9.0.1.0.0 | Partner Phone Number Extension
+[partner_phonecall_schedule](partner_phonecall_schedule/) | 9.0.1.0.0 | Track the time and days your partners expect phone calls
 [partner_ref_unique](partner_ref_unique/) | 9.0.1.0.0 | Add an unique constraint to partner ref field
 [partner_sale_risk](partner_sale_risk/) | 9.0.1.0.0 | Manage partner risk in sales orders
 [partner_sector](partner_sector/) | 9.0.1.0.1 | Add partner sectors
