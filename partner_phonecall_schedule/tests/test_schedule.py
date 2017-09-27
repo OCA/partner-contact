@@ -4,11 +4,10 @@
 
 from datetime import datetime, timedelta
 from mock import patch
-from openerp import fields
-from openerp.tests.common import SavepointCase
+from odoo import fields
+from odoo.tests.common import SavepointCase
 
-PATH = ("openerp.addons.partner_phonecall_schedule.models"
-        ".res_partner.datetime")
+PATH = "odoo.addons.partner_phonecall_schedule.models.res_partner.datetime"
 
 
 class CanICallCase(SavepointCase):
