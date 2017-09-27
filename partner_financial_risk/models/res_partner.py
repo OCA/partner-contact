@@ -66,14 +66,36 @@ class ResPartner(models.Model):
         for partner in self.filtered('customer'):
             partner.risk_allow_edit = is_editable
 
+    @api.model
+    def _risk_invoice_domain_list(self):
+        max_date = self._max_risk_date_due()
+        return [
+            {'risk_field': 'risk_invoice_draft',
+             'domain': [('state', 'in', ['draft', 'proforma', 'proforma2'])],
+             'amount_field': 'amount_total'},
+            {'risk_field': 'risk_invoice_open',
+             'domain': [('state', '=', 'open'), ('date_due', '>=', max_date)],
+             'amount_field': 'residual_signed'},
+            {'risk_field': 'risk_invoice_unpaid',
+             'domain': [('state', '=', 'open'), '|',
+                        ('date_due', '=', False), ('date_due', '<', max_date)],
+             'amount_field': 'residual_signed'},
+        ]
+
+    @api.model
+    def _risk_invoice_depends_fields(self):
+        return [
+            'invoice_ids', 'invoice_ids.state',
+            'invoice_ids.amount_total', 'invoice_ids.residual_signed',
+            'invoice_ids.company_id.invoice_unpaid_margin',
+            'child_ids.invoice_ids', 'child_ids.invoice_ids.state',
+            'child_ids.invoice_ids.amount_total',
+            'child_ids.invoice_ids.residual_signed',
+            'child_ids.invoice_ids.company_id.invoice_unpaid_margin',
+        ]
+
     @api.multi
-    @api.depends('invoice_ids', 'invoice_ids.state',
-                 'invoice_ids.amount_total', 'invoice_ids.residual_signed',
-                 'invoice_ids.company_id.invoice_unpaid_margin',
-                 'child_ids.invoice_ids', 'child_ids.invoice_ids.state',
-                 'child_ids.invoice_ids.amount_total',
-                 'child_ids.invoice_ids.residual_signed',
-                 'child_ids.invoice_ids.company_id.invoice_unpaid_margin')
+    @api.depends(lambda x: x._risk_invoice_depends_fields())
     def _compute_risk_invoice(self):
         def sum_group(group, field):
             return sum([x[field] for x in group if
@@ -81,38 +103,32 @@ class ResPartner(models.Model):
         customers = self.filtered('customer')
         if not customers:
             return  # pragma: no cover
-        max_date = self._max_risk_date_due()
         AccountInvoice = self.env['account.invoice']
         partners = customers | customers.mapped('child_ids')
         domain = [('type', 'in', ['out_invoice', 'out_refund']),
                   ('partner_id', 'in', partners.ids)]
-        draft_group = AccountInvoice.read_group(
-            domain + [('state', 'in', ['draft', 'proforma', 'proforma2'])],
-            ['partner_id', 'amount_total'],
-            ['partner_id'])
-        open_group = AccountInvoice.read_group(
-            domain + [('state', '=', 'open'), ('date_due', '>=', max_date)],
-            ['partner_id', 'residual_signed'],
-            ['partner_id'])
-        unpaid_group = AccountInvoice.read_group(
-            domain + [('state', '=', 'open'), '|',
-                      ('date_due', '=', False), ('date_due', '<', max_date)],
-            ['partner_id', 'residual_signed'],
-            ['partner_id'])
+        groups = {}
+        amount_fields = {}
+        for risk_dic in self._risk_invoice_domain_list():
+            groups[risk_dic['risk_field']] = AccountInvoice.read_group(
+                domain + risk_dic['domain'],
+                ['partner_id', risk_dic['amount_field']],
+                ['partner_id'])
+            amount_fields[risk_dic['risk_field']] = risk_dic['amount_field']
         for partner in customers:
             partner_ids = (partner | partner.child_ids).ids
-            partner.risk_invoice_draft = sum_group(draft_group, 'amount_total')
-            partner.risk_invoice_open = sum_group(
-                open_group, 'residual_signed')
-            partner.risk_invoice_unpaid = sum_group(
-                unpaid_group, 'residual_signed')
+            partner_vals = {}
+            for risk_field in groups.keys():
+                partner_vals[risk_field] = sum_group(
+                    groups[risk_field], amount_fields[risk_field])
+            partner.update(partner_vals)
 
     @api.multi
     @api.depends('credit', 'risk_invoice_open', 'risk_invoice_unpaid',
                  'child_ids.credit', 'child_ids.risk_invoice_open',
                  'child_ids.risk_invoice_unpaid')
     def _compute_risk_account_amount(self):
-        for partner in self.filtered('customer'):
+        for partner in self.filtered(lambda x: x.customer and not x.parent_id):
             partner.risk_account_amount = (
                 partner.credit - partner.risk_invoice_open -
                 partner.risk_invoice_unpaid)
