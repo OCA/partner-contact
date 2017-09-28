@@ -97,16 +97,17 @@ class ResPartner(models.Model):
     @api.multi
     @api.depends(lambda x: x._risk_invoice_depends_fields())
     def _compute_risk_invoice(self):
-        def sum_group(group, field):
-            return sum([x[field] for x in group if
-                        x['partner_id'][0] in partner_ids])
-        customers = self.filtered('customer')
-        if not customers:
-            return  # pragma: no cover
         AccountInvoice = self.env['account.invoice']
-        partners = customers | customers.mapped('child_ids')
+        all_partners_and_children = {}
+        all_partner_ids = []
+        for partner in self.filtered('customer'):
+            all_partners_and_children[partner] = self.with_context(
+                active_test=False).search([('id', 'child_of', partner.id)]).ids
+            all_partner_ids += all_partners_and_children[partner]
+        if not all_partner_ids:
+            return  # pragma: no cover
         domain = [('type', 'in', ['out_invoice', 'out_refund']),
-                  ('partner_id', 'in', partners.ids)]
+                  ('partner_id', 'in', all_partner_ids)]
         groups = {}
         amount_fields = {}
         for risk_dic in self._risk_invoice_domain_list():
@@ -115,13 +116,11 @@ class ResPartner(models.Model):
                 ['partner_id', risk_dic['amount_field']],
                 ['partner_id'])
             amount_fields[risk_dic['risk_field']] = risk_dic['amount_field']
-        for partner in customers:
-            partner_ids = (partner | partner.child_ids).ids
-            partner_vals = {}
+        for partner, child_ids in all_partners_and_children.items():
             for risk_field in groups.keys():
-                partner_vals[risk_field] = sum_group(
-                    groups[risk_field], amount_fields[risk_field])
-            partner.update(partner_vals)
+                partner[risk_field] = sum(x[amount_fields[risk_field]]
+                                          for x in groups[risk_field]
+                                          if x['partner_id'][0] in child_ids)
 
     @api.multi
     @api.depends('credit', 'risk_invoice_open', 'risk_invoice_unpaid',
