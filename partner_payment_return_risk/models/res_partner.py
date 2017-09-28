@@ -21,10 +21,12 @@ class ResPartner(models.Model):
     def _risk_invoice_domain_list(self):
         res = super(ResPartner, self)._risk_invoice_domain_list()
         for reg in res:
-            reg['domain'].append(('returned_payment', '=', False))
+            reg['domain'] = [('returned_payment', '=', False)] + reg['domain']
         res.append({
             'risk_field': 'risk_payment_return',
-            'domain': [('returned_payment', '=', True)],
+            'model': 'account.invoice',
+            'domain': [('returned_payment', '=', True),
+                       ('type', 'in', ['out_invoice', 'out_refund'])],
             'amount_field': 'residual_signed'
         })
         return res

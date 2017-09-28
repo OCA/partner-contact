@@ -71,13 +71,19 @@ class ResPartner(models.Model):
         max_date = self._max_risk_date_due()
         return [
             {'risk_field': 'risk_invoice_draft',
-             'domain': [('state', 'in', ['draft', 'proforma', 'proforma2'])],
+             'model': 'account.invoice',
+             'domain': [('type', 'in', ['out_invoice', 'out_refund']),
+                        ('state', 'in', ['draft', 'proforma', 'proforma2'])],
              'amount_field': 'amount_total'},
             {'risk_field': 'risk_invoice_open',
-             'domain': [('state', '=', 'open'), ('date_due', '>=', max_date)],
+             'model': 'account.invoice',
+             'domain': [('type', 'in', ['out_invoice', 'out_refund']),
+                        ('state', '=', 'open'), ('date_due', '>=', max_date)],
              'amount_field': 'residual_signed'},
             {'risk_field': 'risk_invoice_unpaid',
-             'domain': [('state', '=', 'open'), '|',
+             'model': 'account.invoice',
+             'domain': [('type', 'in', ['out_invoice', 'out_refund']),
+                        ('state', '=', 'open'), '|',
                         ('date_due', '=', False), ('date_due', '<', max_date)],
              'amount_field': 'residual_signed'},
         ]
@@ -97,7 +103,6 @@ class ResPartner(models.Model):
     @api.multi
     @api.depends(lambda x: x._risk_invoice_depends_fields())
     def _compute_risk_invoice(self):
-        AccountInvoice = self.env['account.invoice']
         all_partners_and_children = {}
         all_partner_ids = []
         for partner in self.filtered('customer'):
@@ -106,13 +111,12 @@ class ResPartner(models.Model):
             all_partner_ids += all_partners_and_children[partner]
         if not all_partner_ids:
             return  # pragma: no cover
-        domain = [('type', 'in', ['out_invoice', 'out_refund']),
-                  ('partner_id', 'in', all_partner_ids)]
         groups = {}
         amount_fields = {}
         for risk_dic in self._risk_invoice_domain_list():
-            groups[risk_dic['risk_field']] = AccountInvoice.read_group(
-                domain + risk_dic['domain'],
+            model = self.env[risk_dic['model']]
+            groups[risk_dic['risk_field']] = model.read_group(
+                [('partner_id', 'in', all_partner_ids)] + risk_dic['domain'],
                 ['partner_id', risk_dic['amount_field']],
                 ['partner_id'])
             amount_fields[risk_dic['risk_field']] = risk_dic['amount_field']
