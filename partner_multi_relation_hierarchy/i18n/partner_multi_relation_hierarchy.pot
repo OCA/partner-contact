@@ -1,0 +1,148 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_multi_relation_hierarchy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-01 09:31+0000\n"
+"PO-Revision-Date: 2017-11-01 09:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_hierarchy_display
+msgid "Compact representation of hierarchy"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_has_partner_above
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_users_has_partner_above
+msgid "Has partner above"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_hierarchy_display
+#: model:ir.ui.view,arch_db:partner_multi_relation_hierarchy.view_partner_form
+msgid "Hierarchy"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_id
+msgid "ID"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_level
+msgid "Level"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_level
+msgid "Number of levels that partner above is higher up"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model,name:partner_multi_relation_hierarchy.model_res_partner
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model,name:partner_multi_relation_hierarchy.model_res_partner_relation_type
+msgid "Partner Relation Type"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_partner_above_id
+msgid "Partner above"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_partner_below_id
+msgid "Partner below"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_partner_below_id
+msgid "Partner immediately below partner above in the hierarchy"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model,name:partner_multi_relation_hierarchy.model_res_partner_relation
+msgid "Partner relation"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_partner_above_id
+msgid "Partner somewhere above in the hierarchy"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_partner_above_ids_4248
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_users_partner_above_ids
+msgid "Partners above in hierarchy"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_type_hierarchy
+msgid "Partners equal, right above, or left above"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model,name:partner_multi_relation_hierarchy.model_res_partner_relation_hierarchy
+msgid "Partners with all their partnes above"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_type_hierarchy
+msgid "Select wether the relation between the partners can be considered hierarchical. And if so which side is considered 'above'."
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_partner_id
+msgid "The partner at the base of the hierarchy"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: code:addons/partner_multi_relation_hierarchy/models/res_partner_relation.py:43
+#, python-format
+msgid "There is already a hierarchical relation between these partners: %s"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_partner_above_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_users_partner_above_hierarchy
+msgid "Upper level partners"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: selection:res.partner.relation.type,hierarchy:0
+msgid "equal"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: selection:res.partner.relation.type,hierarchy:0
+msgid "left_above_right"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: selection:res.partner.relation.type,hierarchy:0
+msgid "right_above_left"
+msgstr ""
+
