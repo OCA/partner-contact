@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
+# Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import datetime
@@ -49,7 +49,7 @@ class ResPartner(models.Model):
     risk_account_amount_limit = fields.Monetary(
         string='Limit Other Account Amount', help='Set 0 if it is not locked')
     risk_account_amount = fields.Monetary(
-        compute='_compute_risk_account_amount',
+        compute='_compute_risk_account_amount', store=True,
         string='Other Account Amount',
         help='Amount residual of others accounts')
     risk_account_amount_unpaid_include = fields.Boolean(
@@ -59,7 +59,7 @@ class ResPartner(models.Model):
         string='Limit Other Account Amount Unpaid',
         help='Set 0 if it is not locked')
     risk_account_amount_unpaid = fields.Monetary(
-        compute='_compute_risk_account_amount',
+        compute='_compute_risk_account_amount', store=True,
         string='Other Account Amount Unpaid',
         help='Amount residual of others accounts unpaid')
 
