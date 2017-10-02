@@ -13,7 +13,7 @@ class ResPartner(models.Model):
     risk_payment_return_limit = fields.Monetary(
         string='Limit Payments Returns', help='Set 0 if it is not locked')
     risk_payment_return = fields.Monetary(
-        compute='_compute_risk_invoice', store=True,
+        compute='_compute_risk_account_amount', store=True,
         string='Total Returned Invoices',
         help='Total returned invoices')
 
@@ -39,7 +39,9 @@ class ResPartner(models.Model):
     def _prepare_risk_account_vals(self, groups):
         vals = super(ResPartner, self)._prepare_risk_account_vals(groups)
         vals['risk_payment_return'] = sum(
-            reg['amount_residual'] for reg in groups['returned']['read_group'])
+            reg['amount_residual'] for reg in groups['returned']['read_group']
+            if reg['partner_id'][0] == self.id)
+        return vals
 
     @api.model
     def _risk_field_list(self):

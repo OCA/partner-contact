@@ -125,13 +125,20 @@ class TestPartnerFinancialRisk(SavepointCase):
             'line_ids': [
                 (0, 0, {
                     'name': 'Debit line',
+                    'partner_id': self.partner.id,
                     'account_id': self.other_account_customer.id,
                     'debit': 100,
                 }),
                 (0, 0, {
                     'name': 'Credit line',
+                    'partner_id': self.partner.id,
                     'account_id': self.account_sale.id,
                     'credit': 100,
                 }),
             ],
         })
+        self.assertAlmostEqual(self.partner.risk_account_amount, 100.0)
+        line = self.move.line_ids.filtered(lambda x: x.debit != 0.0)
+        line.date_maturity = '2017-01-01'
+        self.assertAlmostEqual(self.partner.risk_account_amount, 0.0)
+        self.assertAlmostEqual(self.partner.risk_account_amount_unpaid, 100.0)
