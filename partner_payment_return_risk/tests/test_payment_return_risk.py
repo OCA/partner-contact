@@ -24,9 +24,12 @@ class TestPartnerPaymentReturnRisk(common.SavepointCase):
                 'uom_id': cls.env.ref('product.product_uom_unit').id,
                 'price_unit': 100.0,
                 'account_id': cls.env['account.account'].search([
-                    ('user_type_id', '=', cls.user_type.id)], limit=1).id,
+                    ('internal_type', '=', 'receivable'),
+                    ('reconcile', '=', True)
+                ], limit=1).id,
             })]
         })
+        pass
 
     def test_payment_return_risk(self):
         self.invoice.signal_workflow('invoice_open')

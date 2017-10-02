@@ -15,30 +15,31 @@ class ResPartner(models.Model):
     risk_payment_return = fields.Monetary(
         compute='_compute_risk_invoice', store=True,
         string='Total Returned Invoices',
-        help='Total returned invoices in Open state')
+        help='Total returned invoices')
 
     @api.model
-    def _risk_invoice_domain_list(self):
-        res = super(ResPartner, self)._risk_invoice_domain_list()
-        for reg in res:
-            reg['domain'] = [('returned_payment', '=', False)] + reg['domain']
-        res.append({
-            'risk_field': 'risk_payment_return',
-            'model': 'account.invoice',
-            'domain': [('returned_payment', '=', True),
-                       ('type', 'in', ['out_invoice', 'out_refund'])],
-            'amount_field': 'residual_signed'
-        })
+    def _risk_account_groups(self):
+        res = super(ResPartner, self)._risk_account_groups()
+        res['open']['domain'] += [
+            ('partial_reconcile_returned_ids', '=', False),
+        ]
+        res['unpaid']['domain'] += [
+            ('partial_reconcile_returned_ids', '=', False),
+        ]
+        res['returned'] = {
+            'domain': [('reconciled', '=', False),
+                       ('account_id.internal_type', '=', 'receivable'),
+                       ('partial_reconcile_returned_ids', '!=', False)],
+            'fields': ['partner_id', 'account_id', 'amount_residual'],
+            'group_by': ['partner_id', 'account_id']
+        }
         return res
 
-    @api.model
-    def _risk_invoice_depends_fields(self):
-        res = super(ResPartner, self)._risk_invoice_depends_fields()
-        res.extend([
-            'invoice_ids.returned_payment',
-            'child_ids.invoice_ids.returned_payment',
-        ])
-        return res
+    @api.multi
+    def _prepare_risk_account_vals(self, groups):
+        vals = super(ResPartner, self)._prepare_risk_account_vals(groups)
+        vals['risk_payment_return'] = sum(
+            reg['amount_residual'] for reg in groups['returned']['read_group'])
 
     @api.model
     def _risk_field_list(self):
@@ -46,14 +47,3 @@ class ResPartner(models.Model):
         res.append(('risk_payment_return', 'risk_payment_return_limit',
                     'risk_payment_return_include'))
         return res
-
-    # TODO: Avoid overwrite function
-    @api.multi
-    @api.depends('credit', 'risk_invoice_open', 'risk_invoice_unpaid',
-                 'child_ids.credit', 'child_ids.risk_invoice_open',
-                 'child_ids.risk_invoice_unpaid')
-    def _compute_risk_account_amount(self):
-        for partner in self.filtered(lambda x: x.customer and not x.parent_id):
-            partner.risk_account_amount = (
-                partner.credit - partner.risk_invoice_open -
-                partner.risk_invoice_unpaid - partner.risk_payment_return)
