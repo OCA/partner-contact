@@ -119,7 +119,7 @@ class NutsImport(models.TransientModel):
         logger.info('Starting to download %s' % url)
         try:
             res_request = requests.get(url)
-        except Exception, e:
+        except Exception as e:
             raise UserError(
                 _('Got an error when trying to download the file: %s.') %
                 str(e))
