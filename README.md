@@ -29,6 +29,7 @@ addon | version | summary
 [base_vat_sanitized](base_vat_sanitized/) | 10.0.1.0.0 | Adds field sanitized_vat on partners
 [partner_academic_title](partner_academic_title/) | 10.0.1.0.0 | Add possibility to define some academic title
 [partner_address_street3](partner_address_street3/) | 10.0.1.0.0 | Add a third address line on partners
+[partner_affiliate](partner_affiliate/) | 10.0.1.0.0 | Partner Affiliates
 [partner_alias](partner_alias/) | 10.0.1.0.0 | Adds aliases to partner names.
 [partner_capital](partner_capital/) | 10.0.1.0.0 | Partners Capital
 [partner_coc](partner_coc/) | 10.0.1.0.0 | Adds a field 'Chamber Of Commerce Registration Number' to partner
@@ -42,6 +43,7 @@ addon | version | summary
 [partner_contact_lang](partner_contact_lang/) | 10.0.1.0.0 | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 10.0.1.0.0 | Add nationality field to contacts
 [partner_contact_nutrition](partner_contact_nutrition/) | 10.0.1.0.0 | Provide caloric intake
+[partner_contact_nutrition_goal](partner_contact_nutrition_goal/) | 10.0.1.0.0 | Set the nutrition goal of your contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 10.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_contact_weight](partner_contact_weight/) | 10.0.1.0.0 | Provide contact weight
 [partner_create_by_vat](partner_create_by_vat/) | 10.0.1.0.0 | Using VIES webservice, name and address information will be fetched and added to the partner.
@@ -53,6 +55,7 @@ addon | version | summary
 [partner_multi_relation](partner_multi_relation/) | 10.0.1.0.1 | Partner relations
 [partner_password_reset](partner_password_reset/) | 10.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
 [partner_phone_extension](partner_phone_extension/) | 10.0.1.0.0 | Partner Phone Number Extension
+[partner_phonecall_schedule](partner_phonecall_schedule/) | 10.0.1.0.0 | Track the time and days your partners expect phone calls
 [partner_second_lastname](partner_second_lastname/) | 10.0.1.0.0 | Have split first and second lastnames
 [partner_sector](partner_sector/) | 10.0.1.0.0 | Add partner sectors
 [partner_street_number](partner_street_number/) | 10.0.1.0.0 | Introduces separate fields for street name and street number.
@@ -68,7 +71,6 @@ addon | version | summary
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 (unported) | Partner auto salesman
 [partner_contact_address_detailed](partner_contact_address_detailed/) | 8.0.1.0.0 (unported) | All address data in summarized contact form
 [portal_partner_merge](portal_partner_merge/) | 8.0.1.0.0 (unported) | Portal Partner Merge
-[res_partner_affiliate](res_partner_affiliate/) | 8.0.1.0.0 (unported) | Partner Affiliates
 
 [//]: # (end addons)
 
