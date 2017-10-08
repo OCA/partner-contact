@@ -9,13 +9,17 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     risk_payment_return_include = fields.Boolean(
-        string='Include Payments Returns', help='Full risk computation')
+        string='Include Payments Returns',
+        help='Full risk computation.\n'
+             'Residual amount of move lines not reconciled with returned '
+             'lines related.')
     risk_payment_return_limit = fields.Monetary(
         string='Limit Payments Returns', help='Set 0 if it is not locked')
     risk_payment_return = fields.Monetary(
         compute='_compute_risk_account_amount', store=True,
-        string='Total Returned Invoices',
-        help='Total returned invoices')
+        string='Total Payments Returns',
+        help='Residual amount of move lines not reconciled with returned '
+             'lines related.')
 
     @api.model
     def _risk_account_groups(self):

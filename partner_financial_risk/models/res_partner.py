@@ -26,10 +26,10 @@ class ResPartner(models.Model):
 
     risk_invoice_open_include = fields.Boolean(
         string='Include Open Invoices/Principal Balance',
-        help='Full risk computation.'
+        help='Full risk computation.\n'
              'Residual amount of move lines not reconciled with the same '
-             'account that is set as partner receivable and date maturity'
-             'not exceeded, considering Due Margin set in account settings')
+             'account that is set as partner receivable and date maturity '
+             'not exceeded, considering Due Margin set in account settings.')
     risk_invoice_open_limit = fields.Monetary(
         string='Limit In Open Invoices/Principal Balance',
         help='Set 0 if it is not locked')
@@ -37,52 +37,54 @@ class ResPartner(models.Model):
         compute='_compute_risk_account_amount', store=True,
         string='Total Open Invoices/Principal Balance',
         help='Residual amount of move lines not reconciled with the same '
-             'account that is set as partner receivable and date maturity'
-             'not exceeded, considering Due Margin set in account settings')
+             'account that is set as partner receivable and date maturity '
+             'not exceeded, considering Due Margin set in account settings.')
     risk_invoice_unpaid_include = fields.Boolean(
-        string='Include Unpaid Invoices',
-        help='Full risk computation.'
+        string='Include Unpaid Invoices/Principal Balance',
+        help='Full risk computation.\n'
              'Residual amount of move lines not reconciled with the same '
-             'account that is set as partner receivable and date maturity'
-             'exceeded, considering Due Margin set in account settings')
+             'account that is set as partner receivable and date maturity '
+             'exceeded, considering Due Margin set in account settings.')
     risk_invoice_unpaid_limit = fields.Monetary(
-        string='Limit In Unpaid Invoices', help='Set 0 if it is not locked')
+        string='Limit In Unpaid Invoices/Principal Balance',
+        help='Set 0 if it is not locked')
     risk_invoice_unpaid = fields.Monetary(
         compute='_compute_risk_account_amount', store=True,
-        string='Total Unpaid Invoices',
+        string='Total Unpaid Invoices/Principal Balance',
         help='Residual amount of move lines not reconciled with the same '
-             'account that is set as partner receivable and date maturity'
-             'exceeded, considering Due Margin set in account settings')
+             'account that is set as partner receivable and date maturity '
+             'exceeded, considering Due Margin set in account settings.')
 
     risk_account_amount_include = fields.Boolean(
-        string='Include Other Account Amount',
-        help='Full risk computation.'
-             'Residual amount of move lines not reconciled with distinct'
-             'account that is set as partner receivable and date maturity'
-             'not exceeded, considering Due Margin set in account settings')
+        string='Include Other Account Open Amount',
+        help='Full risk computation.\n'
+             'Residual amount of move lines not reconciled with distinct '
+             'account that is set as partner receivable and date maturity '
+             'not exceeded, considering Due Margin set in account settings.')
     risk_account_amount_limit = fields.Monetary(
-        string='Limit Other Account Amount', help='Set 0 if it is not locked')
+        string='Limit Other Account Open Amount',
+        help='Set 0 if it is not locked')
     risk_account_amount = fields.Monetary(
         compute='_compute_risk_account_amount', store=True,
-        string='Other Account Amount',
-        help='Residual amount of move lines not reconciled with distinct'
-             'account that is set as partner receivable and date maturity'
-             'not exceeded, considering Due Margin set in account settings')
+        string='Total Other Account Open Amount',
+        help='Residual amount of move lines not reconciled with distinct '
+             'account that is set as partner receivable and date maturity '
+             'not exceeded, considering Due Margin set in account settings.')
     risk_account_amount_unpaid_include = fields.Boolean(
-        string='Include Other Account Amount Unpaid',
-        help='Full risk computation.'
-             'Residual amount of move lines not reconciled with distinct'
-             'account that is set as partner receivable and date maturity'
-             'exceeded, considering Due Margin set in account settings')
+        string='Include Other Account Unpaid Amount',
+        help='Full risk computation.\n'
+             'Residual amount of move lines not reconciled with distinct '
+             'account that is set as partner receivable and date maturity '
+             'exceeded, considering Due Margin set in account settings.')
     risk_account_amount_unpaid_limit = fields.Monetary(
-        string='Limit Other Account Amount Unpaid',
+        string='Limit Other Account Unpaid Amount',
         help='Set 0 if it is not locked')
     risk_account_amount_unpaid = fields.Monetary(
         compute='_compute_risk_account_amount', store=True,
-        string='Other Account Amount Unpaid',
-        help='Residual amount of move lines not reconciled with distinct'
-             'account that is set as partner receivable and date maturity'
-             'exceeded, considering Due Margin set in account settings')
+        string='Total Other Account Unpaid Amount',
+        help='Residual amount of move lines not reconciled with distinct '
+             'account that is set as partner receivable and date maturity '
+             'exceeded, considering Due Margin set in account settings.')
 
     risk_total = fields.Monetary(
         compute='_compute_risk_exception',
