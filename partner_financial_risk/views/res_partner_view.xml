@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- © 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
+<!-- Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3). -->
 <odoo>
     <record id="res_partner_view_risk" model="ir.ui.view">
@@ -26,6 +26,9 @@
                                 <field name="risk_account_amount_include"
                                        attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
                                 <field name="risk_account_amount" nolabel="1"/>
+                                <field name="risk_account_amount_unpaid_include"
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                                <field name="risk_account_amount_unpaid" nolabel="1"/>
                                 <field name="risk_total" colspan="3" class="oe_subtotal_footer_separator"/>
                             </group>
                         </group>
@@ -38,6 +41,8 @@
                                 <field name="risk_invoice_unpaid_limit"
                                        attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
                                 <field name="risk_account_amount_limit"
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                                <field name="risk_account_amount_unpaid_limit"
                                        attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
                                 <field name="risk_allow_edit" invisible="1"/>
                             </group>
