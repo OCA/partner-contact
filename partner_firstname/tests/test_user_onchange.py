@@ -9,7 +9,7 @@ class UserOnchangeCase(TransactionCase):
 
     def test_create_from_form_only_firstname(self):
         """In a new users form, a user set only the firstname."""
-        firstname = u"Zoë"
+        firstname = "Zoë"
         with self.env.do_in_onchange():
             # Changes firstname, which triggers onchanges
             self.user.firstname = firstname
@@ -21,7 +21,7 @@ class UserOnchangeCase(TransactionCase):
 
     def test_create_from_form_only_lastname(self):
         """In a new user form, a user set only the lastname."""
-        lastname = u"Żywioł"
+        lastname = "Żywioł"
         with self.env.do_in_onchange():
             # Changes lastname, which triggers onchanges
             self.user.lastname = lastname
@@ -33,8 +33,8 @@ class UserOnchangeCase(TransactionCase):
 
     def test_create_from_form_all(self):
         """In a new user form, a user set all names."""
-        firstname = u"Zoë"
-        lastname = u"Żywioł"
+        firstname = "Zoë"
+        lastname = "Żywioł"
         with self.env.do_in_onchange():
             # Changes firstname, which triggers onchanges
             self.user.firstname = firstname
@@ -46,7 +46,7 @@ class UserOnchangeCase(TransactionCase):
 
             self.assertEqual(self.user.lastname, lastname)
             self.assertEqual(self.user.firstname, firstname)
-            self.assertEqual(self.user.name, u" ".join((lastname, firstname)))
+            self.assertEqual(self.user.name, " ".join((lastname, firstname)))
 
     def setUp(self):
         super(UserOnchangeCase, self).setUp()
