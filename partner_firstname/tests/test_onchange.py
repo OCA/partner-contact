@@ -15,7 +15,7 @@ class PartnerCompanyCase(OnChangeCase):
 
     def test_create_from_form(self):
         """A user creates a company from the form."""
-        name = u"Sôme company"
+        name = "Sôme company"
         with self.env.do_in_onchange():
             # User presses ``new``
             partner = self.new_partner()
@@ -38,11 +38,11 @@ class PartnerCompanyCase(OnChangeCase):
             partner = self.new_partner()
 
             # User sets a name, which triggers onchanges
-            partner.name = u"Foó"
+            partner.name = "Foó"
             partner._onchange_name()
 
             # User unsets name, which triggers onchanges
-            partner.name = u""
+            partner.name = ""
             partner._onchange_name()
 
             self.assertEqual(partner.firstname, False)
@@ -52,7 +52,7 @@ class PartnerCompanyCase(OnChangeCase):
 class PartnerContactCase(OnChangeCase):
     def test_create_from_form_only_firstname(self):
         """A user creates a contact with only the firstname from the form."""
-        firstname = u"Fïrst"
+        firstname = "Fïrst"
         with self.env.do_in_onchange():
             # User presses ``new``
             partner = self.new_partner()
@@ -68,7 +68,7 @@ class PartnerContactCase(OnChangeCase):
 
     def test_create_from_form_only_lastname(self):
         """A user creates a contact with only the lastname from the form."""
-        lastname = u"Läst"
+        lastname = "Läst"
         with self.env.do_in_onchange():
             # User presses ``new``
             partner = self.new_partner()
@@ -84,8 +84,8 @@ class PartnerContactCase(OnChangeCase):
 
     def test_create_from_form_all(self):
         """A user creates a contact with all names from the form."""
-        firstname = u"Fïrst"
-        lastname = u"Läst"
+        firstname = "Fïrst"
+        lastname = "Läst"
         with self.env.do_in_onchange():
             # User presses ``new``
             partner = self.new_partner()
@@ -102,4 +102,4 @@ class PartnerContactCase(OnChangeCase):
 
             self.assertEqual(partner.lastname, lastname)
             self.assertEqual(partner.firstname, firstname)
-            self.assertEqual(partner.name, u" ".join((lastname, firstname)))
+            self.assertEqual(partner.name, " ".join((lastname, firstname)))

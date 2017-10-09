@@ -16,8 +16,8 @@ class PersonCase(TransactionCase):
     def setUp(self):
         super(PersonCase, self).setUp()
         self.values = {
-            "firstname": u"Núñez",
-            "lastname": u"Fernán",
+            "firstname": "Núñez",
+            "lastname": "Fernán",
         }
         self.values["name"] = "%s %s" % (self.values["lastname"],
                                          self.values["firstname"])
@@ -25,7 +25,7 @@ class PersonCase(TransactionCase):
             self.values["is_company"] = self.context["default_is_company"]
 
     def tearDown(self):
-        for key, value in self.values.iteritems():
+        for key, value in self.values.items():
             self.assertEqual(
                 self.defaults.get(key),
                 value,
@@ -38,7 +38,7 @@ class PersonCase(TransactionCase):
         self.defaults = (self.env[self.model]
                          .with_context(self.context,
                                        default_name=self.values["name"])
-                         .default_get(self.values.keys()))
+                         .default_get(list(self.values.keys())))
 
 
 class CompanyCase(PersonCase):
