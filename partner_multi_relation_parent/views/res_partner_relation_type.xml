@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        <record id="form_res_partner_relation_type" model="ir.ui.view">
+            <field name="model">res.partner.relation.type</field>
+            <field
+                name="inherit_id"
+                ref="partner_multi_relation.form_res_partner_relation_type"
+                />
+            <field type="xml" name="arch">
+                <field name="handle_invalid_onchange" position="after">
+                    <field name="partner_type" readonly="1" />
+                    <field name="partner_synchronization_active" />
+                </field>
+            </field>
+        </record>
+
+</odoo>
