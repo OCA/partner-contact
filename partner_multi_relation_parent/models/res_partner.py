@@ -67,7 +67,7 @@ class ResPartner(models.Model):
         for this in self:
             if this.env.context.get('no_relation_update'):
                 continue
-            relations_to_delete = self.search([
+            relations_to_delete = self.env['res.partner.relation'].search([
                 '|',
                 ('left_partner_id', '=', this.id),
                 ('right_partner_id', '=', this.id),
