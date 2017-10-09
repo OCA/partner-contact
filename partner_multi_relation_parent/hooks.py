@@ -4,7 +4,7 @@
 from odoo import api, SUPERUSER_ID
 
 
-def post_init_hook(cr):
+def post_init_hook(cr, registry):
     env = api.Environment(cr, SUPERUSER_ID, {})
     partner_model = env['res.partner']
     # get all fields with a parent
