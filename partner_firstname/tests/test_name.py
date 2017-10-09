@@ -36,17 +36,17 @@ from .base import BaseCase
 class PartnerContactCase(BaseCase):
     def test_update_lastname(self):
         """Change lastname."""
-        self.expect(u"newlästname", self.firstname)
+        self.expect("newlästname", self.firstname)
         self.original.name = self.name
 
     def test_update_firstname(self):
         """Change firstname."""
-        self.expect(self.lastname, u"newfïrstname")
+        self.expect(self.lastname, "newfïrstname")
         self.original.name = self.name
 
     def test_whitespace_cleanup(self):
         """Check that whitespace in name gets cleared."""
-        self.expect(u"newlästname", u"newfïrstname")
+        self.expect("newlästname", "newfïrstname")
         self.original.name = "  newlästname  newfïrstname  "
 
         # Need this to refresh the ``name`` field
@@ -65,14 +65,14 @@ class PartnerCompanyCase(BaseCase):
 
     def test_company_inverse(self):
         """Test the inverse method in a company record."""
-        name = u"Thïs is a Companŷ"
+        name = "Thïs is a Companŷ"
         self.expect(name, False, name)
         self.original.name = name
 
 
 class UserCase(PartnerContactCase):
     def create_original(self):
-        name = u"%s %s" % (self.lastname, self.firstname)
+        name = "%s %s" % (self.lastname, self.firstname)
 
         # Cannot create users if ``mail`` is installed
         if self.mail_installed():
