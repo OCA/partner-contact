@@ -13,7 +13,7 @@ Configuration
 =============
 
 You can configure some common name patterns for the inverse function
-in Settings > Configuration > General settings:
+in Settings > General settings:
 
 * Lastname Firstname: For example 'Anderson Robert'
 * Lastname, Firstname: For example 'Anderson, Robert'
@@ -47,7 +47,7 @@ supply the *last name* and *first name* (just once per contact).
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/10.0
+   :target: https://runbot.odoo-community.org/runbot/134/11.0
 
 For further information, please visit:
 
