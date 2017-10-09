@@ -90,5 +90,5 @@ msgstr "Utilisateurs"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_base_config_settings
-msgid "base.config.settings"
+msgid "res.config.settings"
 msgstr ""

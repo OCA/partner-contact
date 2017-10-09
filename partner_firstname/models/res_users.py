@@ -23,7 +23,7 @@ class ResUser(models.Model):
             partner_model._get_whitespace_cleaned_name(result.get("name", "")),
             result.get("is_company", False))
 
-        for field in inverted.keys():
+        for field in list(inverted.keys()):
             if field in fields_list:
                 result[field] = inverted.get(field)
 
