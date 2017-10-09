@@ -18,7 +18,7 @@ class BaseCase(TransactionCase, MailInstalled):
     def setUp(self):
         super(BaseCase, self).setUp()
         self.check_fields = True
-        self.expect(u"Núñez", u"Fernán")
+        self.expect("Núñez", "Fernán")
         self.create_original()
 
     def create_original(self):
@@ -30,7 +30,7 @@ class BaseCase(TransactionCase, MailInstalled):
         """Define what is expected in each field when ending."""
         self.lastname = lastname
         self.firstname = firstname
-        self.name = name or u"%s %s" % (lastname, firstname)
+        self.name = name or "%s %s" % (lastname, firstname)
 
     def tearDown(self):
         if self.check_fields:
@@ -47,13 +47,13 @@ class BaseCase(TransactionCase, MailInstalled):
 
     def test_copy(self):
         """Copy the partner and compare the result."""
-        self.expect(self.lastname, u"%s (copy)" % self.firstname)
+        self.expect(self.lastname, "%s (copy)" % self.firstname)
         self.changed = (self.original.with_context(copy=True, lang="en_US")
                         .copy())
 
     def test_one_name(self):
         """Test what happens when only one name is given."""
-        name = u"Mönty"
+        name = "Mönty"
         self.expect(name, False, name)
         self.original.name = name
 
