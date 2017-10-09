@@ -41,7 +41,7 @@ class ResPartner(models.Model):
                 vals.get("is_company",
                          self.default_get(["is_company"])["is_company"]))
 
-            for key, value in inverted.iteritems():
+            for key, value in inverted.items():
                 if not vals.get(key) or context.get("copy"):
                     vals[key] = value
 
@@ -72,7 +72,7 @@ class ResPartner(models.Model):
             self._get_whitespace_cleaned_name(result.get("name", "")),
             result.get("is_company", False))
 
-        for field in inverted.keys():
+        for field in list(inverted.keys()):
             if field in fields_list:
                 result[field] = inverted.get(field)
 
@@ -97,11 +97,11 @@ class ResPartner(models.Model):
         firstname the computed name"""
         order = self._get_names_order()
         if order == 'last_first_comma':
-            return u", ".join((p for p in (lastname, firstname) if p))
+            return ", ".join((p for p in (lastname, firstname) if p))
         elif order == 'first_last':
-            return u" ".join((p for p in (firstname, lastname) if p))
+            return " ".join((p for p in (firstname, lastname) if p))
         else:
-            return u" ".join((p for p in (lastname, firstname) if p))
+            return " ".join((p for p in (lastname, firstname) if p))
 
     @api.multi
     @api.depends("firstname", "lastname")
@@ -138,7 +138,7 @@ class ResPartner(models.Model):
         Removes leading, trailing and duplicated whitespace.
         """
         try:
-            name = u" ".join(name.split()) if name else name
+            name = " ".join(name.split()) if name else name
         except UnicodeDecodeError:
             # with users coming from LDAP, name can be a str encoded as utf-8
             # this happens with ActiveDirectory for instance, and in that case
@@ -146,7 +146,7 @@ class ResPartner(models.Model):
             # conversion that Python does for us.
             # In that case we need to manually decode the string to get a
             # proper unicode string.
-            name = u' '.join(name.decode('utf-8').split()) if name else name
+            name = ' '.join(name.decode('utf-8').split()) if name else name
 
         if comma:
             name = name.replace(" ,", ",")
@@ -179,9 +179,9 @@ class ResPartner(models.Model):
             parts = name.split("," if order == 'last_first_comma' else " ", 1)
             if len(parts) > 1:
                 if order == 'first_last':
-                    parts = [u" ".join(parts[1:]), parts[0]]
+                    parts = [" ".join(parts[1:]), parts[0]]
                 else:
-                    parts = [parts[0], u" ".join(parts[1:])]
+                    parts = [parts[0], " ".join(parts[1:])]
             else:
                 while len(parts) < 2:
                     parts.append(False)
