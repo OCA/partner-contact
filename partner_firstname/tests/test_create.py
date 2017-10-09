@@ -16,8 +16,8 @@ class PersonCase(TransactionCase):
     def setUp(self):
         super(PersonCase, self).setUp()
         self.good_values = {
-            "firstname": u"Núñez",
-            "lastname": u"Fernán",
+            "firstname": "Núñez",
+            "lastname": "Fernán",
         }
         self.good_values["name"] = "%s %s" % (self.good_values["lastname"],
                                               self.good_values["firstname"])
@@ -29,7 +29,7 @@ class PersonCase(TransactionCase):
         self.record = (self.env[self.model]
                        .with_context(self.context)
                        .create(self.values))
-        for key, value in self.good_values.iteritems():
+        for key, value in self.good_values.items():
             self.assertEqual(
                 self.record[key],
                 value,
@@ -43,17 +43,17 @@ class PersonCase(TransactionCase):
 
     def test_wrong_name_value(self):
         """Wrong name value is ignored, name is calculated."""
-        self.values["name"] = u"BÄD"
+        self.values["name"] = "BÄD"
 
     def test_wrong_name_context(self):
         """Wrong name context is ignored, name is calculated."""
         del self.values["name"]
-        self.context["default_name"] = u"BÄD"
+        self.context["default_name"] = "BÄD"
 
     def test_wrong_name_value_and_context(self):
         """Wrong name value and context is ignored, name is calculated."""
-        self.values["name"] = u"BÄD1"
-        self.context["default_name"] = u"BÄD2"
+        self.values["name"] = "BÄD1"
+        self.context["default_name"] = "BÄD2"
 
 
 class CompanyCase(PersonCase):
