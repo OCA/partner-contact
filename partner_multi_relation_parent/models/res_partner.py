@@ -55,24 +55,3 @@ class ResPartner(models.Model):
                 this.update_relations(this.parent_id.id, vals['parent_id'])
         res = super(ResPartner, self).write(vals=vals)
         return res
-
-    # if you unlink a partner you must unlink all relations in which it is
-    # involved.
-
-    @api.multi
-    def unlink(self):
-        trel = self.env.ref(
-            'partner_multi_relation_parent.parent_relation_type'
-        ).id
-        for this in self:
-            if this.env.context.get('no_relation_update'):
-                continue
-            relations_to_delete = self.env['res.partner.relation'].search([
-                '|',
-                ('left_partner_id', '=', this.id),
-                ('right_partner_id', '=', this.id),
-                ('type_id', '=', trel)
-            ])
-            relations_to_delete.unlink()
-        res = super(ResPartner, self).unlink()
-        return res
