@@ -32,12 +32,15 @@ class ResPartner(models.Model):
                     this.id, type_relation, old_parent_id
                 )
                 previous.unlink()
-            # create new relations
-            par_rel_mod.create({
-                'left_partner_id': this.id,
-                'type_id': type_relation,
-                'right_partner_id': parent_id,
-            })
+            # create new relations only if all the needed partners are there
+            # for example if on create it failed this.id will be false or if it
+            # has no parent also would fail.
+            if this.id and parent_id:
+                par_rel_mod.create({
+                    'left_partner_id': this.id,
+                    'type_id': type_relation,
+                    'right_partner_id': parent_id,
+                })
 
     @api.model
     def create(self, vals):
