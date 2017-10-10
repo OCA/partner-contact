@@ -1,121 +1,89 @@
 # -*- coding: utf-8 -*-
-# © 2017 Therp BV <http://therp.nl>
+# Copyright 2017 Therp BV <https://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from openerp import _, api, models
-from odoo.exceptions import UserError
+from odoo.exceptions import ValidationError
 
 
 class ResPartnerRelation(models.Model):
     _inherit = 'res.partner.relation'
 
-    def relation_exists(self, left, type_rel):
-        relation = self.search([
-            ('left_partner_id', '=', left),
-            ('type_id', '=', type_rel),
+    def get_contact_relation_type(self):
+        return self.env.ref(
+            'partner_multi_relation_parent.parent_relation_type'
+        )
+
+    @api.one
+    @api.constrains(
+        'left_partner_id',
+        'type_id',
+    )
+    def _only_one_contact(self):
+        """A person can only be a contact for one partner."""
+        type_relation = self.get_contact_relation_type()
+        existing = self.search([
+            ('left_partner_id', '=', self.left_partner_id.id),
+            ('type_id', '=', type_relation.id),
+            ('id', '!=', self.id),
         ])
-        return relation
+        if existing:
+            # we are creating a relation but one already exists, raise an
+            # exception to warn the user relations of type_relation must
+            # be unique.
+            raise ValidationError(_(
+                "The relation you are creating exists and has id %d.\n"
+                "There can only be one relation of type %s" %
+                (existing.id, type_relation.name)
+            ))
+
+    @api.multi
+    def update_left_partner(self):
+        type_relation = self.get_contact_relation_type()
+        for this in self:
+            if this.type_id == type_relation:
+                this.left_partner_id.with_context(
+                    no_relation_update=True
+                ).write({
+                    'parent_id': this.right_partner_id,
+                    'type': 'contact',
+                })
 
     @api.multi
     def write(self, vals):
-        part_mod = self.env['res.partner']
-        type_relation = self.env.ref(
-            'partner_multi_relation_parent.parent_relation_type'
-        ).id
+        """Synchronize parent_id in left partner with connection.
+
+        - If changed to non contact type, clear parent_id in partner;
+        - If changed to contact type, set parent_id and contact type
+          in partner.
+        """
+        type_relation = self.get_contact_relation_type()
         for this in self:
-            if this.type_id != type_relation:
-                continue
-            # check that whatever relation will come out of this write does
-            # not exist already , but check only if type_id doesn't change, if
-            # it does we don't care about uniqueness
-            if this.left_partner_id.type != 'contact':
-                raise UserError(_(
-                    "Only contact types are allowed in relation of type %s"
-                    "you are trying to make a ' %s ' relation with a partner"
-                    "of type %s" % (
-                        relation.type_id.name,
-                        relation.type_id.name,
-                        this.left_partner_id.type
-                    )))
-            if vals.get('type_id', this.type_id) == type_relation:
-                relation = this.relation_exists(
-                    vals.get('left_partner_id', this.left_partner_id),
-                    type_relation,
-                    vals.get('right_partner_id', this.right_partner_id)
-                )
-                if relation:
-                    raise UserError(_(
-                        "The relation you are creating exists and has id %s"
-                        "there can only be one relation of type %s" % (
-                            str(relation.id), relation.type_id.name
-                        )))
-            if 'type_id' in vals and vals['type_id'] != type_relation:
+            # Clear parent if needed:
+            if (this.type_id == type_relation and
+                    (('type_id' in vals and
+                      vals['type_id'] != type_relation.id) or
+                     ('left_partner_id' in vals and
+                      vals['left_partner_id'] != this.left_partner_id.id))):
                 this.left_partner_id.with_context(
                     no_relation_update=True
                 ).write({'parent_id': False})
-            elif 'right_partner_id' in vals and 'left_partner_id' not in vals:
-                new_parent = vals.get('right_partner_id')
-                contact_id = this.left_partner_id
-                contact_id.with_context(no_relation_update=True).write(
-                    {'parent_id': new_parent}
-                )
-            elif 'left_partner_id' in vals and 'right_partner_id' not in vals:
-                old_contact_id = part_mod.browse(this.left_partner_id)
-                old_contact_id.with_context(no_relation_update=True).write(
-                    {'parent_id': False}
-                )
-                contact_id = part_mod.browse(vals['left_partner_id'])
-                contact_id.with_context(no_relation_update=True).write(
-                    {'parent_id': this.right_partner_id}
-                )
-            elif 'left_partner_id' in vals and 'right_partner_id' in vals:
-                old_contact_id = this.left_partner_id
-                old_contact_id.with_context(no_relation_update=True).write(
-                    {'parent_id': False}
-                )
-                contact_id = part_mod.browse(vals['left_partner_id'])
-                contact_id.with_context(no_relation_update=True).write(
-                    {'parent_id': vals['right_partner_id']},
-                )
-        res = super(ResPartnerRelation, self).write(vals=vals)
+        res = super(ResPartnerRelation, self).write(vals)
+        self.update_left_partner()
         return res
 
     @api.multi
     def unlink(self):
-        type_relation = self.env.ref(
-            'partner_multi_relation_parent.parent_relation_type'
-        ).id
+        type_relation = self.get_contact_relation_type()
         for this in self:
-            if this.type_id.id != type_relation:
+            if this.type_id != type_relation:
                 continue
-            this.left_partner_id.with_context(no_relation_update=True).write(
-                {'parent_id': False}
-            )
-        res = super(ResPartnerRelation, self).unlink()
-        return res
+            this.left_partner_id.with_context(
+                no_relation_update=True
+            ).write({'parent_id': False})
+        return super(ResPartnerRelation, self).unlink()
 
     @api.model
     def create(self, vals):
-        type_relation = self.env.ref(
-            'partner_multi_relation_parent.parent_relation_type'
-        ).id
-        current = self.relation_exists(
-            vals['left_partner_id'],
-            type_relation,
-        )
-        if current:
-            # we are creating a relation but one already exists, raise an
-            # exception to warn the user relations of type_relation must be
-            # unique.
-            raise UserError(_(
-                "The relation you are creating exists and has id %s"
-                "there can only be one relation of type %s" % (
-                    str(current.id), current.type_id.name
-                )))
-        # there is no relation, so we can create it, but we must update
-        # the parent_id of the left contact of this new relation
-        res = super(ResPartnerRelation, self).create(vals=vals)
-        if res.type_id.id == type_relation:
-            res.left_partner_id.with_context(no_relation_update=True).write(
-                {'parent_id': vals['right_partner_id']}
-            )
+        res = super(ResPartnerRelation, self).create(vals)
+        res.update_left_partner()
         return res

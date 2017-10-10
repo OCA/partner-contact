@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data noupdate="0">
-        <record id="parent_relation_type" 
-            model="res.partner.relation.type">
+        <record id="parent_relation_type" model="res.partner.relation.type">
                 <field name="name">Is contact of</field>
                 <field name="name_inverse">Has contact</field>
                 <field name="contact_type_left">p</field>
-                <field name="contact_type_right">c</field>
                 <field name="handle_invalid_onchange">restrict</field>
         </record>
     </data>

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2017 Therp BV <http://therp.nl>
+# Copyright 2017 Therp BV <https://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     "name": "Partner Contact Mapping in relations",
@@ -8,7 +8,9 @@
     "license": "AGPL-3",
     "category": "CRM",
     "summary": "Syncs the partner's contacts with CRM relations",
-    "depends": ['partner_multi_relation'],
+    "depends": [
+        'partner_multi_relation',
+    ],
     "data": [
         'data/data.xml',
     ],
