@@ -9,6 +9,6 @@ def post_init_hook(cr, registry):
     partner_model = env['res.partner']
     # get all fields with a parent
     partners = partner_model.with_context(active_test=False).search(
-        [('parent_id', '!=', False), ('is_company', '!=' True)]
+        [('parent_id', '!=', False), ('is_company', '!=',  True)]
     )
     partners.update_relations()
