@@ -114,7 +114,8 @@ class ResPartnerRelation(models.Model):
         # there is no relation, so we can create it, but we must update
         # the parent_id of the left contact of this new relation
         res = super(ResPartnerRelation, self).create(vals=vals)
-        res.left_partner_id.with_context(no_relation_update=True).write(
-            {'parent_id': vals['right_partner_id']}
-        )
+        if res.type_id.id == type_relation:
+            res.left_partner_id.with_context(no_relation_update=True).write(
+                {'parent_id': vals['right_partner_id']}
+            )
         return res
