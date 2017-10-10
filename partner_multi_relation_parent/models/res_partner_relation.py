@@ -27,6 +27,15 @@ class ResPartnerRelation(models.Model):
             # check that whatever relation will come out of this write does
             # not exist already , but check only if type_id doesn't change, if
             # it does we don't care about uniqueness
+            if this.left_partner_id.type != 'contact':
+                raise UserError(_(
+                    "Only contact types are allowed in relation of type %s"
+                    "you are trying to make a ' %s ' relation with a partner"
+                    "of type %s" % (
+                        relation.type_id.name,
+                        relation.type_id.name,
+                        this.left_partner_id.type
+                    )))
             if vals.get('type_id', this.type_id) == type_relation:
                 relation = this.relation_exists(
                     vals.get('left_partner_id', this.left_partner_id),

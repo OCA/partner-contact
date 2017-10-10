@@ -22,6 +22,8 @@ class ResPartner(models.Model):
             'partner_multi_relation_parent.parent_relation_type'
         ).id
         for this in self:
+            if this.type != 'contact':
+                continue
             if not parent_id:
                 parent_id = this.parent_id.id
             if not old_parent_id:
