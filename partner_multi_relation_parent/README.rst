@@ -3,7 +3,7 @@
     :alt: License: AGPL-3
 
 =============================================
-Parent contact Hierarchy Mapping in relations
+Parent contact Mapping in relations
 =============================================
 
 This module maps automatically the relations between parent partners and their
