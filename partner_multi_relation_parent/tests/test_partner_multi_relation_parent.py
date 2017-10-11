@@ -6,17 +6,18 @@ from odoo.addons.partner_multi_relation.tests.test_partner_relation_common \
 
 
 class TestPartnerMultiRelationParent(TestPartnerRelationCommon):
+
+    # By default it will be false, this makes it run after the modules are
+    # installed
+    post_install = True
+
     # pylint: disable=invalid-name
     def setUp(self):
         super(TestPartnerMultiRelationParent, self).setUp()
         self.par_rel_mod = self.env['res.partner.relation']
         self.type_relation = self.env.ref(
-            'partner_multi_relation_contact.parent_relation_type'
+            'partner_multi_relation_parent.parent_relation_type'
         ).id
-
-    # By default it will be false, this makes it run after the modules are
-    # installed
-    post_install = True
 
     def count_partner_relation_left_right(self, partner_id, parent_id=None):
         # returns number relations , should be always 1
@@ -37,7 +38,7 @@ class TestPartnerMultiRelationParent(TestPartnerRelationCommon):
         ])
         return len(hits)
 
-    def test_partner_multi_relation_contact(self):
+    def test_partner_multi_relation_parent(self):
         # verify that existing partners do have relations
         relations = self.count_partner_relation_left_right(
             self.partner_01_person.id, self.partner_01_person.parent_id.id
@@ -48,6 +49,7 @@ class TestPartnerMultiRelationParent(TestPartnerRelationCommon):
             'name': '03 NGO ACCOUNTANT',
             'is_company': False,
             'ref': 'PR03C01',
+            'type': 'contact',
             'parent_id': self.partner_03_ngo.id
         })
         relations = self.count_partner_relation_left_right(
@@ -65,7 +67,6 @@ class TestPartnerMultiRelationParent(TestPartnerRelationCommon):
         )
         self.assertEqual(relations, 0)
         # check relations are there with current parent
-
         relations = self.count_partner_relation_left_right(
             ngo_contact.id, ngo_contact.parent_id.id
         )
@@ -74,7 +75,6 @@ class TestPartnerMultiRelationParent(TestPartnerRelationCommon):
         old_id = ngo_contact.id
         old_parent_id = ngo_contact.parent_id.id
         ngo_contact.unlink()
-
         relations = self.count_partner_relation_left_right(
             old_id, old_parent_id
         )
@@ -87,6 +87,7 @@ class TestPartnerMultiRelationParent(TestPartnerRelationCommon):
                     'name': '03 NGO %s' % str(partners),
                     'is_company': False,
                     'ref': 'PR03C%s' % str(partners),
+                    'type': 'contact',
                     'parent_id': self.partner_03_ngo.id
                 })
                 continue
@@ -94,6 +95,7 @@ class TestPartnerMultiRelationParent(TestPartnerRelationCommon):
                 'name': '02 Company %s' % str(partners),
                 'is_company': False,
                 'ref': 'PR02C%s' % str(partners),
+                'type': 'contact',
                 'parent_id': self.partner_02_company.id
             })
         # try to delete the has contact type , forbade

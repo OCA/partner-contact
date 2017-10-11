@@ -17,7 +17,7 @@ class ResPartner(models.Model):
             return
         relation_model = self.env['res.partner.relation']
         type_relation = self.env.ref(
-            'partner_multi_relation_contact.parent_relation_type'
+            'partner_multi_relation_parent.parent_relation_type'
         )
         for this in self:
             if not update:
