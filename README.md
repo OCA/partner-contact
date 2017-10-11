@@ -43,6 +43,7 @@ addon | version | summary
 [partner_contact_lang](partner_contact_lang/) | 10.0.1.0.0 | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 10.0.1.0.0 | Add nationality field to contacts
 [partner_contact_nutrition](partner_contact_nutrition/) | 10.0.1.0.0 | Provide caloric intake
+[partner_contact_nutrition_activity_level](partner_contact_nutrition_activity_level/) | 10.0.1.0.0 | Set the activity level of your contacts
 [partner_contact_nutrition_goal](partner_contact_nutrition_goal/) | 10.0.1.0.0 | Set the nutrition goal of your contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 10.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_contact_weight](partner_contact_weight/) | 10.0.1.0.0 | Provide contact weight
