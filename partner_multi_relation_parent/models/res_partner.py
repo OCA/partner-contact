@@ -47,9 +47,25 @@ class ResPartner(models.Model):
 
     @api.model
     def create(self, vals):
-        res = super(ResPartner, self).create(vals)
-        res.update_relations(update=False)
-        return res
+        if self.env.context.get('partner_synchronization_active'):
+            return super(ResPartner, self).create(vals)
+        new_partner = self.with_context(
+            partner_coordinated=True,
+        ).create(vals)
+        if new_partner.parent_id and new_partner.type:
+            relation_type = type_model.search([
+                ('partner_type', '=', new_partner.type),
+                ('partner_synchronization_active', '=', True),
+            ])
+            if relation_type:
+                self.with_context(
+                    partner_synchronization_active=True,
+                ).create({
+                    'left_partner_id': new_partner.id,
+                    'type_id': relation_type.id,
+                    'right_partner_id': new_partner.parent_id.id,
+                })
+        return new_partner
 
     @api.multi
     def write(self, vals):

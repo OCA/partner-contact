@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-    <data noupdate="0">
-        <record id="parent_relation_type" model="res.partner.relation.type">
-                <field name="name">Is contact of</field>
-                <field name="name_inverse">Has contact</field>
-                <field name="contact_type_left">p</field>
-                <field name="handle_invalid_onchange">restrict</field>
+<odoo><data noupdate="0">
+
+        <record
+            id="relation_type_parent_contact"
+            model="res.partner.relation.type"
+            >
+            <field name="name">Is contact of</field>
+            <field name="name_inverse">Has contact</field>
+            <field name="partner_type">contact</field>
+            <field name="partner_synchronization_active" eval="0" />
+            <field name="handle_invalid_onchange">restrict</field>
         </record>
-    </data>
-</odoo>
+
+        <record
+            id="relation_type_parent_invoice"
+            model="res.partner.relation.type"
+            >
+            <field name="name">Is invoice address for</field>
+            <field name="name_inverse">Has invoice address</field>
+            <field name="partner_type">invoice</field>
+            <field name="partner_synchronization_active" eval="0" />
+            <field name="handle_invalid_onchange">restrict</field>
+        </record>
+
+        <record
+            id="relation_type_parent_delivery"
+            model="res.partner.relation.type"
+            >
+            <field name="name">Is delivery address for</field>
+            <field name="name_inverse">Has delivery address</field>
+            <field name="partner_type">delivery</field>
+            <field name="partner_synchronization_active" eval="0" />
+            <field name="handle_invalid_onchange">restrict</field>
+        </record>
+
+        <record
+            id="relation_type_parent_other"
+            model="res.partner.relation.type"
+            >
+            <field name="name">Is alternative address for</field>
+            <field name="name_inverse">Has alternative address</field>
+            <field name="partner_type">other</field>
+            <field name="partner_synchronization_active" eval="0" />
+            <field name="handle_invalid_onchange">restrict</field>
+        </record>
+
+</data></odoo>

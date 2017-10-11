@@ -8,22 +8,20 @@ from odoo.exceptions import ValidationError
 class ResPartnerRelation(models.Model):
     _inherit = 'res.partner.relation'
 
-    def get_contact_relation_type(self):
-        return self.env.ref(
-            'partner_multi_relation_parent.parent_relation_type'
-        )
-
     @api.one
     @api.constrains(
         'left_partner_id',
         'type_id',
     )
-    def _only_one_contact(self):
-        """A person can only be a contact for one partner."""
-        type_relation = self.get_contact_relation_type()
+    def _check_parent_relation(self):
+        """A partner can only have one parent connection."""
+        # TODO: Check for other parent type connections and partner type:
+        if not self.left_partner_id.parent_id or \
+                not self.type_id.partner_synchronization_active:
+            return True
         existing = self.search([
             ('left_partner_id', '=', self.left_partner_id.id),
-            ('type_id', '=', type_relation.id),
+            ('type_id', '=', self.type_id.id),
             ('id', '!=', self.id),
         ])
         if existing:
@@ -33,7 +31,7 @@ class ResPartnerRelation(models.Model):
             raise ValidationError(_(
                 "The relation you are creating exists and has id %d.\n"
                 "There can only be one relation of type %s" %
-                (existing.id, type_relation.name)
+                (existing.id, self.type_id.name)
             ))
 
     @api.multi
@@ -56,7 +54,6 @@ class ResPartnerRelation(models.Model):
         - If changed to contact type, set parent_id and contact type
           in partner.
         """
-        type_relation = self.get_contact_relation_type()
         for this in self:
             # Clear parent if needed:
             if (this.type_id == type_relation and
@@ -73,17 +70,25 @@ class ResPartnerRelation(models.Model):
 
     @api.multi
     def unlink(self):
-        type_relation = self.get_contact_relation_type()
         for this in self:
-            if this.type_id != type_relation:
+            if not this.type_id.partner_synchronization_active:
                 continue
             this.left_partner_id.with_context(
-                no_relation_update=True
+                partner_synchronization_active=True
             ).write({'parent_id': False})
         return super(ResPartnerRelation, self).unlink()
 
     @api.model
     def create(self, vals):
-        res = super(ResPartnerRelation, self).create(vals)
-        res.update_left_partner()
-        return res
+        new_relation = super(ResPartnerRelation, self).create(vals)
+        if self.env.context.get('partner_synchronization_active'):
+            return new_relation
+        # If enabled in relation type, update partner to have parent
+        if new_relation.type_id.partner_synchronization_active:
+            new_relation.left_partner_id.with_context(
+                partner_synchronization_active=True,
+            ).write({
+                'type': new_relation.type_id.partner_type,
+                'parent_id': new_relation.right_partner_id.id,
+            })
+        return new_relation

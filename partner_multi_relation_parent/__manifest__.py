@@ -6,14 +6,13 @@
     "version": "10.0.1.0.0",
     "author": "Therp BV,Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "category": "CRM",
-    "summary": "Syncs the partner's contacts with CRM relations",
+    "category": "Customer Relationship Management",
+    "summary": "Synchronize partner relations with partner addresses",
     "depends": [
         'partner_multi_relation',
     ],
     "data": [
         'data/data.xml',
     ],
-    "post_init_hook": "post_init_hook",
     "installable": True,
 }
