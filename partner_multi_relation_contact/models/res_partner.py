@@ -54,5 +54,5 @@ class ResPartner(models.Model):
     @api.multi
     def write(self, vals):
         res = super(ResPartner, self).write(vals)
-        res.update_relations(update=True)
+        self.update_relations(update=True)
         return res
