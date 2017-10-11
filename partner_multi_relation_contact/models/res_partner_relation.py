@@ -10,7 +10,7 @@ class ResPartnerRelation(models.Model):
 
     def get_contact_relation_type(self):
         return self.env.ref(
-            'partner_multi_relation_parent.parent_relation_type'
+            'partner_multi_relation_contact.parent_relation_type'
         )
 
     @api.one

@@ -11,7 +11,7 @@ class TestPartnerMultiRelationParent(TestPartnerRelationCommon):
         super(TestPartnerMultiRelationParent, self).setUp()
         self.par_rel_mod = self.env['res.partner.relation']
         self.type_relation = self.env.ref(
-            'partner_multi_relation_parent.parent_relation_type'
+            'partner_multi_relation_contact.parent_relation_type'
         ).id
 
     # By default it will be false, this makes it run after the modules are
@@ -37,7 +37,7 @@ class TestPartnerMultiRelationParent(TestPartnerRelationCommon):
         ])
         return len(hits)
 
-    def test_partner_multi_relation_parent(self):
+    def test_partner_multi_relation_contact(self):
         # verify that existing partners do have relations
         relations = self.count_partner_relation_left_right(
             self.partner_01_person.id, self.partner_01_person.parent_id.id
