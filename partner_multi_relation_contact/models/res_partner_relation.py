@@ -44,7 +44,7 @@ class ResPartnerRelation(models.Model):
                 this.left_partner_id.with_context(
                     no_relation_update=True
                 ).write({
-                    'parent_id': this.right_partner_id,
+                    'parent_id': this.right_partner_id.id,
                     'type': 'contact',
                 })
 
