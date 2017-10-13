@@ -46,7 +46,7 @@ class PartnerCompanyCase(OnChangeCase):
 
     def test_create_from_form(self):
         """A user creates a company from the form."""
-        name = u"Sôme company"
+        name = "Sôme company"
         with self.env.do_in_onchange():
             # User presses ``new``
             self.partner = self.new_partner()
@@ -66,8 +66,8 @@ class PartnerCompanyCase(OnChangeCase):
             self.partner = self.new_partner()
 
             # User changes fields
-            self.set_name(u"Fóo")
-            self.set_name(u"")
+            self.set_name("Fóo")
+            self.set_name("")
 
             self.assertEqual(self.partner.lastname, False)
 
@@ -107,11 +107,11 @@ class PartnerContactCase(OnChangeCase):
             self.assertEqual(self.partner.lastname2, False)
 
             # ``name`` cannot be False, or upstream Odoo will fail
-            self.assertEqual(self.partner.name, u"")
+            self.assertEqual(self.partner.name, "")
 
     def test_create_from_form_only_firstname(self):
         """A user creates a contact with only the firstname from the form."""
-        firstname = u"Fïrst"
+        firstname = "Fïrst"
         with self.env.do_in_onchange():
             # User presses ``new``
             self.partner = self.new_partner()
@@ -125,7 +125,7 @@ class PartnerContactCase(OnChangeCase):
 
     def test_create_from_form_only_lastname(self):
         """A user creates a contact with only the lastname from the form."""
-        lastname = u"Läst"
+        lastname = "Läst"
         with self.env.do_in_onchange():
             # User presses ``new``
             self.partner = self.new_partner()
@@ -139,7 +139,7 @@ class PartnerContactCase(OnChangeCase):
 
     def test_create_from_form_only_lastname2(self):
         """A user creates a contact with only the lastname2 from the form."""
-        lastname2 = u"Läst2"
+        lastname2 = "Läst2"
         with self.env.do_in_onchange():
             # User presses ``new``
             self.partner = self.new_partner()
@@ -153,8 +153,8 @@ class PartnerContactCase(OnChangeCase):
 
     def test_create_from_without_firstname(self):
         """A user creates a contact without firstname from the form."""
-        lastname = u"Läst"
-        lastname2 = u"Läst2"
+        lastname = "Läst"
+        lastname2 = "Läst2"
         with self.env.do_in_onchange():
             # User presses ``new``
             self.partner = self.new_partner()
@@ -166,12 +166,12 @@ class PartnerContactCase(OnChangeCase):
             self.assertEqual(self.partner.firstname, False)
             self.assertEqual(
                 self.partner.name,
-                u"%s %s" % (lastname, lastname2))
+                "%s %s" % (lastname, lastname2))
 
     def test_create_from_without_lastname(self):
         """A user creates a contact without lastname from the form."""
-        firstname = u"Fïrst"
-        lastname2 = u"Läst2"
+        firstname = "Fïrst"
+        lastname2 = "Läst2"
         with self.env.do_in_onchange():
             # User presses ``new``
             self.partner = self.new_partner()
@@ -183,12 +183,12 @@ class PartnerContactCase(OnChangeCase):
             self.assertEqual(self.partner.lastname, False)
             self.assertEqual(
                 self.partner.name,
-                u"%s, %s" % (lastname2, firstname))
+                "%s, %s" % (lastname2, firstname))
 
     def test_create_from_without_lastname2(self):
         """A user creates a contact without lastname2 from the form."""
-        firstname = u"Fïrst"
-        lastname = u"Läst"
+        firstname = "Fïrst"
+        lastname = "Läst"
         with self.env.do_in_onchange():
             # User presses ``new``
             self.partner = self.new_partner()
@@ -200,13 +200,13 @@ class PartnerContactCase(OnChangeCase):
             self.assertEqual(self.partner.lastname2, False)
             self.assertEqual(
                 self.partner.name,
-                u"%s, %s" % (lastname, firstname))
+                "%s, %s" % (lastname, firstname))
 
     def test_create_from_form_all(self):
         """A user creates a contact with all names from the form."""
-        firstname = u"Fïrst"
-        lastname = u"Läst"
-        lastname2 = u"Läst2"
+        firstname = "Fïrst"
+        lastname = "Läst"
+        lastname2 = "Läst2"
         with self.env.do_in_onchange():
             # User presses ``new``
             self.partner = self.new_partner()
@@ -218,4 +218,4 @@ class PartnerContactCase(OnChangeCase):
 
             self.assertEqual(
                 self.partner.name,
-                u"%s %s, %s" % (lastname, lastname2, firstname))
+                "%s %s, %s" % (lastname, lastname2, firstname))
