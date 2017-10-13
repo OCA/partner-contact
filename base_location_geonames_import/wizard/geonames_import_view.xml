@@ -13,6 +13,7 @@
                 </group>
                 <group name="main">
                     <field name="country_id"/>
+                    <field name="enforce_cities"/>
                     <field name="letter_case"/>
                 </group>
                 <footer>
