@@ -39,7 +39,7 @@ class ResPartner(models.Model):
                 names[-1] = names[-1] + ","
             if firstname:
                 names.append(firstname)
-        return u" ".join(names)
+        return " ".join(names)
 
     @api.depends("firstname", "lastname", "lastname2")
     def _compute_name(self):
@@ -55,11 +55,11 @@ class ResPartner(models.Model):
         parts = self._get_inverse_name(self.name, self.is_company)
         # Avoid to hit :meth:`~._check_name` with all 3 fields being ``False``
         before, after = {}, {}
-        for key, value in parts.iteritems():
+        for key, value in parts.items():
             (before if value else after)[key] = value
-        if any([before[k] != self[k] for k in before.keys()]):
+        if any([before[k] != self[k] for k in list(before.keys())]):
             self.update(before)
-        if any([after[k] != self[k] for k in after.keys()]):
+        if any([after[k] != self[k] for k in list(after.keys())]):
             self.update(after)
 
     @api.model
