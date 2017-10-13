@@ -22,7 +22,7 @@ class CompanyCase(TransactionCase):
             })
 
             # Name should be cleaned of unneeded whitespace
-            clean_name = u" ".join(self.name.split(None))
+            clean_name = " ".join(self.name.split(None))
 
             # Check it's saved OK
             self.assertEqual(
@@ -51,27 +51,27 @@ class CompanyCase(TransactionCase):
 
     def test_long_name(self):
         """Create a company with a long name."""
-        self.name = u"Söme very lóng nâme"
+        self.name = "Söme very lóng nâme"
 
     def test_short_name(self):
         """Create a company with a short name."""
-        self.name = u"Shoŕt"
+        self.name = "Shoŕt"
 
     def test_whitespace_before(self):
         """Create a company with name prefixed with whitespace."""
-        self.name = u"  Wĥitespace befòre"
+        self.name = "  Wĥitespace befòre"
 
     def test_whitespace_after(self):
         """Create a company with name suffixed with whitespace."""
-        self.name = u"Whitespâce aftér   "
+        self.name = "Whitespâce aftér   "
 
     def test_whitespace_inside(self):
         """Create a company with whitespace inside the name."""
-        self.name = u"Whitespacé   ïnside"
+        self.name = "Whitespacé   ïnside"
 
     def test_whitespace_everywhere(self):
         """Create a company with whitespace everywhere in the name."""
-        self.name = u"  A  lot  öf    whitespace   "
+        self.name = "  A  lot  öf    whitespace   "
 
 
 class PersonCase(TransactionCase):
@@ -84,10 +84,10 @@ class PersonCase(TransactionCase):
         self.env['ir.config_parameter'].set_param(
             'partner_names_order', 'last_first_comma')
 
-        self.firstname = u"Fírstname"
-        self.lastname = u"Làstname1"
-        self.lastname2 = u"Lâstname2"
-        self.template = u"%(last1)s %(last2)s, %(first)s"
+        self.firstname = "Fírstname"
+        self.lastname = "Làstname1"
+        self.lastname2 = "Lâstname2"
+        self.template = "%(last1)s %(last2)s, %(first)s"
 
     def tearDown(self):
         try:
