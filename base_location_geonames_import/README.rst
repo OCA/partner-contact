@@ -1,23 +1,24 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-   :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+   :target: https://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
 =============================
 Base Location Geonames Import
 =============================
 
-This module adds a wizard to import better zip entries from `Geonames <http://www.geonames.org/>`_ database.
+This module adds a wizard to import cities and/or better zip entries from
+`Geonames <http://www.geonames.org/>`_ database.
 
 Installation
 ============
 
-To install this module, you need these Python libraries: requests and
-unicodecsv.
+To install this module, you need the Python library 'requests'.
 
 Configuration
 =============
 
-To access the menu to import better zip entries from Geonames, you must add yourself to the groups *Technical features* and *Sales manager*.
+To access the menu to import better zip entries from Geonames,
+you must add yourself to the groups *Technical features* and *Sales manager*.
 
 If want want/need to modify the default URL
 (http://download.geonames.org/export/zip/), you can set the *geonames.url*
@@ -29,14 +30,19 @@ Usage
 Go to *Settings > Technical > Cities/Locations Management > Import from Geonames*,
 and click on it to open a wizard.
 
-When you start the wizard, it will ask you to select a country. Then, for the
+When you start the wizard, it will ask you to select a country. If the
+country has been set-up to require the entry of cites from a list you will be
+able to indicate if you want to import the cities or zip codes.
+
+
+Then, for the
 selected country, it will delete all the current better zip entries, download
 the latest version of the list of cities from geonames.org and create new
 better zip entries.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/10.0
+   :target: https://runbot.odoo-community.org/runbot/134/11.0
 
 Bug Tracker
 ===========
@@ -54,8 +60,9 @@ Contributors
 
 * Alexis de Lattre <alexis.delattre@akretion.com>
 * Lorenzo Battistini <lorenzo.battistini@agilebg.com>
-* Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
+* Pedro M. Baeza <pedro.baeza@tecnativa.com>
 * Dave Lasley <dave@laslabs.com>
+* Jordi Ballester <jordi.ballester@eficent.com>
 
 Icon
 ----
