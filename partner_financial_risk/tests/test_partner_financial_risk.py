@@ -2,28 +2,17 @@
 # Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests import common
+from odoo.tests.common import SavepointCase
 from odoo import fields
 
 
-class TestPartnerFinancialRisk(common.SavepointCase):
-
+class TestPartnerFinancialRisk(SavepointCase):
     @classmethod
     def setUpClass(cls):
         super(TestPartnerFinancialRisk, cls).setUpClass()
-        cls.env.user.groups_id |= cls.env.ref(
-            'account.group_account_manager')
-        cls.partner = cls.env['res.partner'].create({
-            'name': 'Partner test',
-            'customer': True,
-        })
-        cls.invoice_address = cls.env['res.partner'].create({
-            'name': 'Partner test invoice',
-            'parent_id': cls.partner.id,
-            'type': 'invoice',
-        })
+        cls.env.user.groups_id |= cls.env.ref('account.group_account_manager')
         type_revenue = cls.env.ref('account.data_account_type_revenue')
-        type_payable = cls.env.ref('account.data_account_type_payable')
+        type_receivable = cls.env.ref('account.data_account_type_receivable')
         tax_group_taxes = cls.env.ref('account.tax_group_taxes')
         cls.account_sale = cls.env['account.account'].create({
             'name': 'Sale',
@@ -34,10 +23,25 @@ class TestPartnerFinancialRisk(common.SavepointCase):
         cls.account_customer = cls.env['account.account'].create({
             'name': 'Customer',
             'code': 'XX_430',
-            'user_type_id': type_payable.id,
+            'user_type_id': type_receivable.id,
             'reconcile': True,
         })
-        cls.partner.property_account_payable_id = cls.account_customer.id
+        cls.other_account_customer = cls.env['account.account'].create({
+            'name': 'Other Account Customer',
+            'code': 'XX_431',
+            'user_type_id': type_receivable.id,
+            'reconcile': True,
+        })
+        cls.partner = cls.env['res.partner'].create({
+            'name': 'Partner test',
+            'customer': True,
+            'property_account_receivable_id': cls.account_customer.id,
+        })
+        cls.invoice_address = cls.env['res.partner'].create({
+            'name': 'Partner test invoice',
+            'parent_id': cls.partner.id,
+            'type': 'invoice',
+        })
         cls.journal_sale = cls.env['account.journal'].create({
             'name': 'Test journal for sale',
             'type': 'sale',
@@ -57,11 +61,12 @@ class TestPartnerFinancialRisk(common.SavepointCase):
             'account_id': cls.account_customer.id,
             'type': 'out_invoice',
             'journal_id': cls.journal_sale.id,
+            'payment_term_id': False,
             'invoice_line_ids': [(0, 0, {
                 'name': 'Test product',
                 'account_id': cls.account_sale.id,
-                'price_unit': 50.0,
-                'quantity': 10.0,
+                'price_unit': 50,
+                'quantity': 10,
                 'invoice_line_tax_ids': [(6, 0, [cls.tax.id])],
             })],
         })
@@ -72,7 +77,8 @@ class TestPartnerFinancialRisk(common.SavepointCase):
         self.assertAlmostEqual(self.partner.risk_total, 550.0)
         self.invoice.action_invoice_open()
         self.assertAlmostEqual(self.partner.risk_invoice_draft, 0.0)
-        self.assertFalse(self.invoice.date_due)
+        line = self.invoice.move_id.line_ids.filtered(lambda x: x.debit != 0.0)
+        line.date_maturity = '2017-01-01'
         self.partner.risk_invoice_unpaid_include = True
         self.assertAlmostEqual(self.partner.risk_total, 550.0)
         self.partner.credit_limit = 100.0
@@ -111,3 +117,28 @@ class TestPartnerFinancialRisk(common.SavepointCase):
         self.assertEqual(self.env['ir.config_parameter'].get_param(
             'partner_financial_risk.last_check'),
             fields.Date.today())
+
+    def test_other_account_amount(self):
+        self.move = self.env['account.move'].create({
+            'journal_id': self.journal_sale.id,
+            'date': fields.Date.today(),
+            'line_ids': [
+                (0, 0, {
+                    'name': 'Debit line',
+                    'partner_id': self.partner.id,
+                    'account_id': self.other_account_customer.id,
+                    'debit': 100,
+                }),
+                (0, 0, {
+                    'name': 'Credit line',
+                    'partner_id': self.partner.id,
+                    'account_id': self.account_sale.id,
+                    'credit': 100,
+                }),
+            ],
+        })
+        self.assertAlmostEqual(self.partner.risk_account_amount, 100.0)
+        line = self.move.line_ids.filtered(lambda x: x.debit != 0.0)
+        line.date_maturity = '2017-01-01'
+        self.assertAlmostEqual(self.partner.risk_account_amount, 0.0)
+        self.assertAlmostEqual(self.partner.risk_account_amount_unpaid, 100.0)
