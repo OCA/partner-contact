@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 Therp BV
+# Copyright 2016-2017 Therp BV
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from openerp.exceptions import ValidationError
 
@@ -13,8 +13,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
 
         # Create a new relation type which will not have valid relations:
         category_nobody = self.category_model.create({
-            'name': 'Nobody',
-        })
+            'name': 'Nobody'})
         (self.type_nobody,
          self.selection_nobody,
          self.selection_nobody_inverse) = (
@@ -24,14 +23,19 @@ class TestPartnerRelation(TestPartnerRelationCommon):
                 'contact_type_left': 'c',
                 'contact_type_right': 'p',
                 'partner_category_left': category_nobody.id,
-                'partner_category_right': category_nobody.id,
-            })
-        )
+                'partner_category_right': category_nobody.id}))
 
     def _get_empty_relation(self):
         """Get empty relation record for onchange tests."""
         # Need English, because we will compare text
         return self.relation_all_model.with_context(lang='en_US').new({})
+
+    def test_get_partner_types(self):
+        """Partner types should contain at least 'c' and 'p'."""
+        partner_types = self.selection_model.get_partner_types()
+        type_codes = [ptype[0] for ptype in partner_types]
+        self.assertTrue('c' in type_codes)
+        self.assertTrue('p' in type_codes)
 
     def test_create_with_active_id(self):
         """Test creation with this_partner_id from active_id."""
@@ -39,15 +43,18 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         # taking the particular company from the active records:
         relation = self.relation_all_model.with_context(
             active_id=self.partner_02_company.id,
-            active_ids=self.partner_02_company.ids,
-        ).create({
-            'other_partner_id': self.partner_01_person.id,
-            'type_selection_id': self.selection_company2person.id,
-        })
+            active_ids=self.partner_02_company.ids).create({
+                'other_partner_id': self.partner_01_person.id,
+                'type_selection_id': self.selection_company2person.id})
         self.assertTrue(relation)
         self.assertEqual(relation.this_partner_id, self.partner_02_company)
         # Partner should have one relation now:
         self.assertEqual(self.partner_01_person.relation_count, 1)
+        # Test create without type_selection_id:
+        with self.assertRaises(ValidationError):
+            self.relation_all_model.create({
+                'this_partner_id': self.partner_02_company.id,
+                'other_partner_id': self.partner_01_person.id})
 
     def test_display_name(self):
         """Test display name"""
@@ -56,16 +63,12 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             relation.display_name, '%s %s %s' % (
                 relation.this_partner_id.name,
                 relation.type_selection_id.name,
-                relation.other_partner_id.name,
-            )
-        )
+                relation.other_partner_id.name))
 
     def test__regular_write(self):
         """Test write with valid data."""
         relation = self._create_company2person_relation()
-        relation.write({
-            'date_start': '2014-09-01',
-        })
+        relation.write({'date_start': '2014-09-01'})
         relation.invalidate_cache(ids=relation.ids)
         self.assertEqual(relation.date_start, '2014-09-01')
 
@@ -75,8 +78,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         with self.assertRaises(ValidationError):
             relation.write({
                 'date_start': '2016-09-01',
-                'date_end': '2016-08-01',
-            })
+                'date_end': '2016-08-01'})
 
     def test_validate_overlapping_01(self):
         """Test create overlapping with no start / end dates."""
@@ -86,8 +88,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             self.relation_all_model.create({
                 'this_partner_id': relation.this_partner_id.id,
                 'type_selection_id': relation.type_selection_id.id,
-                'other_partner_id': relation.other_partner_id.id,
-            })
+                'other_partner_id': relation.other_partner_id.id})
 
     def test_validate_overlapping_02(self):
         """Test create overlapping with start / end dates."""
@@ -96,8 +97,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             'type_selection_id': self.selection_company2person.id,
             'other_partner_id': self.partner_01_person.id,
             'date_start': '2015-09-01',
-            'date_end': '2016-08-31',
-        })
+            'date_end': '2016-08-31'})
         # New relation with overlapping start / end should give error
         with self.assertRaises(ValidationError):
             self.relation_all_model.create({
@@ -105,8 +105,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
                 'type_selection_id': relation.type_selection_id.id,
                 'other_partner_id': relation.other_partner_id.id,
                 'date_start': '2016-08-01',
-                'date_end': '2017-07-30',
-            })
+                'date_end': '2017-07-30'})
 
     def test_validate_overlapping_03(self):
         """Test create not overlapping."""
@@ -115,15 +114,13 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             'type_selection_id': self.selection_company2person.id,
             'other_partner_id': self.partner_01_person.id,
             'date_start': '2015-09-01',
-            'date_end': '2016-08-31',
-        })
+            'date_end': '2016-08-31'})
         relation_another_record = self.relation_all_model.create({
             'this_partner_id': relation.this_partner_id.id,
             'type_selection_id': relation.type_selection_id.id,
             'other_partner_id': relation.other_partner_id.id,
             'date_start': '2016-09-01',
-            'date_end': '2017-08-31',
-        })
+            'date_end': '2017-08-31'})
         self.assertTrue(relation_another_record)
 
     def test_inverse_record(self):
@@ -131,35 +128,45 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         relation = self._create_company2person_relation()
         inverse_relation = self.relation_all_model.search([
             ('this_partner_id', '=', relation.other_partner_id.id),
-            ('other_partner_id', '=', relation.this_partner_id.id),
-        ])
+            ('other_partner_id', '=', relation.this_partner_id.id)])
         self.assertEqual(len(inverse_relation), 1)
         self.assertEqual(
             inverse_relation.type_selection_id.name,
-            self.selection_person2company.name
-        )
+            self.selection_person2company.name)
 
     def test_inverse_creation(self):
         """Test creation of record through inverse selection."""
         relation = self.relation_all_model.create({
             'this_partner_id': self.partner_01_person.id,
             'type_selection_id': self.selection_person2company.id,
-            'other_partner_id': self.partner_02_company.id,
-        })
+            'other_partner_id': self.partner_02_company.id})
         # Check wether display name is what we should expect:
         self.assertEqual(
             relation.display_name, '%s %s %s' % (
                 self.partner_01_person.name,
                 self.selection_person2company.name,
-                self.partner_02_company.name,
-            )
-        )
+                self.partner_02_company.name))
+
+    def test_inverse_creation_type_id(self):
+        """Test creation of record through inverse selection with type_id."""
+        relation = self.relation_all_model.create({
+            'this_partner_id': self.partner_01_person.id,
+            'type_id': self.selection_person2company.type_id.id,
+            'is_inverse': True,
+            'other_partner_id': self.partner_02_company.id})
+        # Check wether display name is what we should expect:
+        self.assertEqual(
+            relation.display_name, '%s %s %s' % (
+                self.partner_01_person.name,
+                self.selection_person2company.name,
+                self.partner_02_company.name))
 
     def test_unlink(self):
         """Unlinking derived relation should unlink base relation."""
         # Check wether underlying record is removed when record is removed:
         relation = self._create_company2person_relation()
-        base_relation = relation.relation_id
+        base_model = self.env[relation.res_model]
+        base_relation = base_model.browse([relation.res_id])
         relation.unlink()
         self.assertFalse(base_relation.exists())
 
@@ -178,23 +185,20 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         relation = self._create_company2person_relation()
         domain = relation.onchange_type_selection_id()['domain']
         self.assertTrue(
-            ('is_company', '=', False) in domain['other_partner_id']
-        )
-        # 3. Test with relation needing categories.
-        relation_ngo_volunteer = self.relation_all_model.create({
-            'this_partner_id': self.partner_03_ngo.id,
-            'type_selection_id': self.selection_ngo2volunteer.id,
-            'other_partner_id': self.partner_04_volunteer.id,
-        })
+            ('is_company', '=', False) in domain['other_partner_id'])
+        # 3. Test with relation needing categories,
+        #    take active partner from active_id:
+        relation_ngo_volunteer = self.relation_all_model.with_context(
+            active_id=self.partner_03_ngo.id).create({
+                'type_selection_id': self.selection_ngo2volunteer.id,
+                'other_partner_id': self.partner_04_volunteer.id})
         domain = relation_ngo_volunteer.onchange_type_selection_id()['domain']
         self.assertTrue(
             ('category_id', 'in', [self.category_01_ngo.id]) in
-            domain['this_partner_id']
-        )
+            domain['this_partner_id'])
         self.assertTrue(
             ('category_id', 'in', [self.category_02_volunteer.id]) in
-            domain['other_partner_id']
-        )
+            domain['other_partner_id'])
         # 4. Test with invalid or impossible combinations
         relation_nobody = self._get_empty_relation()
         with self.env.do_in_draft():
@@ -208,9 +212,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         self.assertTrue('message' in warning)
         self.assertTrue('incompatible' in warning['message'])
         # Allow left partner and check message for other partner:
-        self.type_nobody.write({
-            'partner_category_left': False,
-        })
+        self.type_nobody.write({'partner_category_left': False})
         self.selection_nobody.invalidate_cache(ids=self.selection_nobody.ids)
         warning = relation_nobody.onchange_type_selection_id()['warning']
         self.assertTrue('message' in warning)
@@ -229,8 +231,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         relation = self._create_company2person_relation()
         domain = relation.onchange_partner_id()['domain']
         self.assertTrue(
-            ('contact_type_this', '=', 'c') in domain['type_selection_id']
-        )
+            ('contact_type_this', '=', 'c') in domain['type_selection_id'])
         # 3. Test with invalid or impossible combinations
         relation_nobody = self._get_empty_relation()
         with self.env.do_in_draft():
@@ -239,3 +240,39 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         warning = relation_nobody.onchange_partner_id()['warning']
         self.assertTrue('message' in warning)
         self.assertTrue('incompatible' in warning['message'])
+
+    def test_write(self):
+        """Test write. Special attention for changing type."""
+        relation_company2person = self._create_company2person_relation()
+        company_partner = relation_company2person.this_partner_id
+        # First get another worker:
+        partner_extra_person = self.partner_model.create({
+            'name': 'A new worker',
+            'is_company': False,
+            'ref': 'NW01'})
+        relation_company2person.write({
+            'other_partner_id': partner_extra_person.id})
+        self.assertEqual(
+            relation_company2person.other_partner_id.name,
+            partner_extra_person.name)
+        # We will also change to a type going from person to company:
+        (type_worker2company,
+         selection_worker2company,
+         selection_company2worker) = self._create_relation_type_selection({
+             'name': 'works for',
+             'name_inverse': 'has worker',
+             'contact_type_left': 'p',
+             'contact_type_right': 'c'})
+        relation_company2person.write({
+            'this_partner_id': partner_extra_person.id,
+            'type_selection_id': selection_worker2company.id,
+            'other_partner_id': company_partner.id})
+        self.assertEqual(
+            relation_company2person.this_partner_id.id,
+            partner_extra_person.id)
+        self.assertEqual(
+            relation_company2person.type_selection_id.id,
+            selection_worker2company.id)
+        self.assertEqual(
+            relation_company2person.other_partner_id.id,
+            company_partner.id)
