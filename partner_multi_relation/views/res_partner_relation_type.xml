@@ -39,7 +39,11 @@
                                 <field name="partner_category_right" />
                             </group>
                         </group>
-                        <group name="properties" string="Properties">
+                        <group
+                            name="properties"
+                            string="Properties"
+                            colspan= "6" col="4"
+                            >
                             <field name="allow_self" />
                             <field name="is_symmetric" />
                             <field name="handle_invalid_onchange" />

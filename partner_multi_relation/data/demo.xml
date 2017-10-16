@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data>
         <!-- Added partner categories and partners to this file, because it
              turned out to be a bad idea to rely on demo data in base module,
              that can change from release to release. Only dependency on
@@ -114,5 +113,4 @@
             <field name="right_partner_id" ref="res_partner_pmr_best" />
             <field name="type_id" ref="rel_type_competitor" />
         </record>
-    </data>
 </odoo>
