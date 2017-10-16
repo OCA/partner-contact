@@ -41,11 +41,11 @@
                     <field name="type_selection_id"/>
                     <filter
                         string="Left to right"
-                        domain="[('record_type', '=', 'a')]"
+                        domain="[('is_inverse', '=', False)]"
                         />
                     <filter
                         string="Right to left"
-                        domain="[('record_type', '=', 'b')]"
+                        domain="[('is_inverse', '=', True)]"
                         />
                     <filter
                         string="Include past records"
