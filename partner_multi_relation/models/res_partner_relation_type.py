@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2013-2016 Therp BV <http://therp.nl>
+# Copyright 2013-2017 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Define the type of relations that can exist between partners."""
 from openerp import _, api, fields, models
@@ -84,16 +84,6 @@ class ResPartnerRelationType(models.Model):
             ('p', _('Person')),
         ]
 
-    @api.onchange('is_symmetric')
-    def onchange_is_symmetric(self):
-        """Set right side to left side if symmetric."""
-        if self.is_symmetric:
-            self.update({
-                'name_inverse': self.name,
-                'contact_type_right': self.contact_type_left,
-                'partner_category_right': self.partner_category_left,
-            })
-
     @api.multi
     def check_existing(self, vals):
         """Check wether records exist that do not fit new criteria."""
@@ -169,7 +159,53 @@ class ResPartnerRelationType(models.Model):
                             relation.write({'date_end': cutoff_date})
 
     @api.multi
+    def _update_right_vals(self, vals):
+        """Make sure that on symmetric relations, right vals follow left vals.
+
+        @attention: All fields ending in `_right` will have their values
+                    replaced by the values of the fields whose names end
+                    in `_left`.
+        """
+        vals['name_inverse'] = vals.get('name', self.name)
+        # For all left keys in model, take value for right either from
+        # left key in vals, or if not present, from right key in self:
+        left_keys = [key for key in self._fields if key.endswith('_left')]
+        for left_key in left_keys:
+            right_key = left_key.replace('_left', '_right')
+            vals[right_key] = vals.get(left_key, self[left_key])
+            if hasattr(vals[right_key], 'id'):
+                vals[right_key] = vals[right_key].id
+
+    @api.model
+    def create(self, vals):
+        if vals.get('is_symmetric'):
+            self._update_right_vals(vals)
+        return super(ResPartnerRelationType, self).create(vals)
+
+    @api.multi
     def write(self, vals):
         """Handle existing relations if conditions change."""
         self.check_existing(vals)
-        return super(ResPartnerRelationType, self).write(vals)
+        for rec in self:
+            rec_vals = vals.copy()
+            if rec_vals.get('is_symmetric', rec.is_symmetric):
+                self._update_right_vals(rec_vals)
+            super(ResPartnerRelationType, rec).write(rec_vals)
+        return True
+
+    @api.multi
+    def unlink(self):
+        """Allow delete of relation type, even when connections exist.
+
+        Relations can be deleted if relation type allows it.
+        """
+        relation_model = self.env['res.partner.relation']
+        for rec in self:
+            if rec.handle_invalid_onchange == 'delete':
+                # Automatically delete relations, so existing relations
+                # do not prevent unlink of relation type:
+                relations = relation_model.search([
+                    ('type_id', '=', rec.id),
+                ])
+                relations.unlink()
+        return super(ResPartnerRelationType, self).unlink()
