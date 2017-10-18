@@ -7,11 +7,20 @@
         <field name="arch" type="xml">
             <form string="City">
                 <group col="4">
-                <field name="name"/>
-                <field name="code"/>
-                <field name="city"/>
-                <field name="state_id"/>
-                <field name="country_id"/>
+                    <group>
+                        <field name="name"/>
+                        <field name="city_id"
+                               attrs="{'invisible': [('enforce_cities', '=', False)],'required': [('enforce_cities', '=', True)]}"/>
+                        <field name="city"
+                               attrs="{'invisible': [('enforce_cities', '=', True)]}"/>
+                        <field name="country_id"/>
+                        <field name="enforce_cities" invisible="1"/>
+                    </group>
+                    <group>
+                        <field name="code"/>
+                        <field name="state_id"
+                               attrs="{'invisible': [('enforce_cities', '=', True)]}"/>
+                    </group>
                 </group>
             </form>
         </field>
@@ -41,16 +50,18 @@
                 <field name="city"/>
                 <field name="state_id"/>
                 <field name="country_id"/>
-                    <group expand="0" string="Group By">
-                        <filter string="State" domain="[]" context="{'group_by':'state_id'}"/>
-                        <filter string="Country" domain="[]" context="{'group_by':'country_id'}"/>
-                    </group>
+                <group expand="0" string="Group By">
+                    <filter string="State" domain="[]"
+                            context="{'group_by':'state_id'}"/>
+                    <filter string="Country" domain="[]"
+                            context="{'group_by':'country_id'}"/>
+                </group>
             </search>
         </field>
     </record>
 
     <record id="action_zip_tree" model="ir.actions.act_window">
-        <field name="name">Cites/locations</field>
+        <field name="name">Locations</field>
         <field name="res_model">res.better.zip</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
@@ -59,13 +70,13 @@
     </record>
 
     <menuitem
-        name="Cities/Locations Management"
+        name="Locations Management"
         id="locations_root_menu"
         parent="base.menu_custom"
         />
 
     <menuitem
-        name="Cities/Locations"
+        name="Locations"
         id="locations_menu"
         parent="locations_root_menu"
         action="action_zip_tree"
