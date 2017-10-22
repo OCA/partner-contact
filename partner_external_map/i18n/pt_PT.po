@@ -3,15 +3,14 @@
 # * partner_external_map
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
-# Tiago Baptista <tiago@baptista.net>, 2017
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-25 01:45+0000\n"
-"PO-Revision-Date: 2017-01-25 01:45+0000\n"
-"Last-Translator: Tiago Baptista <tiago@baptista.net>, 2017\n"
+"POT-Creation-Date: 2017-11-22 03:38+0000\n"
+"PO-Revision-Date: 2017-11-22 03:38+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Portuguese (Portugal) (https://www.transifex.com/oca/teams/23907/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,8 +25,8 @@ msgid "Address missing on partner '%s'."
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_zip_id
-msgid "City/Location"
+#: model:ir.model,name:partner_external_map.model_res_partner
+msgid "Contact"
 msgstr ""
 
 #. module: partner_external_map
@@ -161,11 +160,6 @@ msgid ""
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model,name:partner_external_map.model_res_partner
-msgid "Partner"
-msgstr "Parceiro"
-
-#. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
 msgid "Route Map"
 msgstr ""
@@ -188,11 +182,6 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_context_route_start_partner_id
 msgid "Start Address for Route Map"
-msgstr ""
-
-#. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_street3
-msgid "Street 3"
 msgstr ""
 
 #. module: partner_external_map
