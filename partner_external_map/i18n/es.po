@@ -3,14 +3,14 @@
 # * partner_external_map
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 20:43+0000\n"
-"PO-Revision-Date: 2017-05-01 20:43+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2017-12-13 03:42+0000\n"
+"PO-Revision-Date: 2017-12-13 03:42+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,6 +23,11 @@ msgstr ""
 #, python-format
 msgid "Address missing on partner '%s'."
 msgstr "Falta la dirección del socio '%s'."
+
+#. module: partner_external_map
+#: model:ir.model,name:partner_external_map.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_uid
@@ -169,11 +174,6 @@ msgid ""
 msgstr ""
 "Falta la dirección de origen para el mapa de la ruta: debes establecerlo en "
 "tus preferencias."
-
-#. module: partner_external_map
-#: model:ir.model,name:partner_external_map.model_res_partner
-msgid "Partner"
-msgstr "Socio"
 
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form

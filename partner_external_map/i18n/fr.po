@@ -3,14 +3,15 @@
 # * partner_external_map
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
+# Nicolas JEUDY <njeudy@panda-chi.io>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 20:43+0000\n"
-"PO-Revision-Date: 2017-05-01 20:43+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2017-11-22 03:38+0000\n"
+"PO-Revision-Date: 2017-11-22 03:38+0000\n"
+"Last-Translator: Nicolas JEUDY <njeudy@panda-chi.io>, 2017\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,6 +24,11 @@ msgstr ""
 #, python-format
 msgid "Address missing on partner '%s'."
 msgstr "Adresse manquante sur le partenaire '%s'."
+
+#. module: partner_external_map
+#: model:ir.model,name:partner_external_map.model_res_partner
+msgid "Contact"
+msgstr "Contacte"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_uid
@@ -47,7 +53,7 @@ msgstr "ID"
 #. module: partner_external_map
 #: model:ir.model.fields,help:partner_external_map.field_map_website_address_url
 msgid "In this URL, {ADDRESS} will be replaced by the address."
-msgstr ""
+msgstr "Dans cette URL, {ADDRESS} sera remplacé par l'adresse."
 
 #. module: partner_external_map
 #: model:ir.model.fields,help:partner_external_map.field_map_website_lat_lon_url
@@ -55,6 +61,8 @@ msgid ""
 "In this URL, {LATITUDE} and {LONGITUDE} will be replaced by the latitude and"
 " longitude (requires the module 'base_geolocalize')"
 msgstr ""
+"Dans cette URL, {LATITUDE} et {LONGITUDE} seront remplacés par la latitude "
+"et la longitude (necessite l'installation du module 'base_geolocalize')"
 
 #. module: partner_external_map
 #: model:ir.model.fields,help:partner_external_map.field_map_website_route_address_url
@@ -62,6 +70,8 @@ msgid ""
 "In this URL, {START_ADDRESS} and {DEST_ADDRESS} will be replaced by the "
 "start and destination addresses."
 msgstr ""
+"Dans cette URL, {START_ADDRESS} et {DEST_ADDRESS} seront respectivement "
+"remplacés par l'adresse de départ et l'adresse de destination."
 
 #. module: partner_external_map
 #: model:ir.model.fields,help:partner_external_map.field_map_website_route_lat_lon_url
@@ -70,6 +80,10 @@ msgid ""
 "{DEST_LONGITUDE} will be replaced by the latitude and longitude of the start"
 " and destination adresses (requires the module 'base_geolocalize')."
 msgstr ""
+"Dans cette URL, {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} et "
+"{DEST_LONGITUDE} seront respectivement remplacés par la latitude et la "
+"longitude de l'adresse de départ et de l'adresse de destination (nécessite "
+"l'installation du module 'base_geolocalize')."
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website___last_update
@@ -121,13 +135,15 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_users_form
 msgid "Maps"
-msgstr ""
+msgstr "Cartes"
 
 #. module: partner_external_map
 #: code:addons/partner_external_map/models/res_partner.py:52
 #, python-format
 msgid "Missing map provider: you should set it in your preferences."
 msgstr ""
+"Il manque le service de cartes: vous devriez le configurer dans vos "
+"préférences."
 
 #. module: partner_external_map
 #: code:addons/partner_external_map/models/res_partner.py:63
@@ -153,11 +169,6 @@ msgstr ""
 msgid ""
 "Missing start address for route map: you should set it in your preferences."
 msgstr ""
-
-#. module: partner_external_map
-#: model:ir.model,name:partner_external_map.model_res_partner
-msgid "Partner"
-msgstr "Partenaire"
 
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form

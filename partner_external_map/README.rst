@@ -34,11 +34,11 @@ of the address) if this information is present on the partner.
 Configuration
 =============
 
-If you want to create additionnal map websites, go to the menu
+If you want to create additional map websites, go to the menu
 *Settings > Technical > Map Websites > Map Websites*. You are
-invited to send the configuration information of your additionnal map websites
-to one of the authors of the module, so that the module can be updated with more
-pre-configured map websites.
+invited to send the configuration information of your additional map websites
+to one of the authors of the module, so that the module can be updated with
+more pre-configured map websites.
 
 Usage
 =====
@@ -54,7 +54,7 @@ or a route map.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/10.0
+   :target: https://runbot.odoo-community.org/runbot/134/11.0
 
 Known issues / Roadmap
 ======================
@@ -76,8 +76,10 @@ Credits
 Contributors
 ------------
 
-* Alexis de Lattre <alexis.delattre@akretion.com>
-* Pedro M. Baeza <pedro.baeza@tecnativa.com>
+* Akretion (http://www.akretion.com):
+  * Alexis de Lattre <alexis.delattre@akretion.com>
+* Tecnativa (https://www.tecnativa.com):
+  * Pedro M. Baeza <pedro.baeza@tecnativa.com>
 
 Maintainer
 ----------
