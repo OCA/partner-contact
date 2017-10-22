@@ -35,10 +35,10 @@ class ResPartner(models.Model):
     @api.model
     def _prepare_url(self, url, replace):
         assert url, 'Missing URL'
-        for key, value in replace.iteritems():
-            if not isinstance(value, (str, unicode)):
+        for key, value in replace.items():
+            if not isinstance(value, str):
                 # for latitude and longitude which are floats
-                value = unicode(value)
+                value = str(value)
             url = url.replace(key, value)
         logger.debug('Final URL: %s', url)
         return url
