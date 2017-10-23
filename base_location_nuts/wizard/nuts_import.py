@@ -97,7 +97,7 @@ class NutsImport(models.TransientModel):
                 if field_type == 'integer':
                     try:
                         value = int(value)
-                    except:
+                    except:  # flake8: noqa
                         value = 0
             else:
                 logger.debug("xpath = '%s', not found" % field_xpath)
