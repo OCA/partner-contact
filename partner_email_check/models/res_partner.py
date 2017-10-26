@@ -1,7 +1,14 @@
 # -*- coding: utf-8 -*-
-import re
+import logging
 from odoo import api, models, _
 from odoo.exceptions import UserError
+
+_logger = logging.getLogger(__name__)
+
+try:
+    from validate_email import validate_email
+except ImportError:
+    _logger.debug("Cannot import `validate_email`.")
 
 
 class ResPartner(models.Model):
@@ -14,8 +21,7 @@ class ResPartner(models.Model):
 
     @api.model
     def email_check(self, email):
-        if re.match(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)",
-                    email):
+        if validate_email(email):
             return True
         else:
-            raise UserError(_('Email Invalid!'))
+            raise UserError(_('Invalid e-mail!'))
