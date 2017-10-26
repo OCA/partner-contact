@@ -8,5 +8,9 @@
     'category' 'Tools',
     'depends': ['base'],
     'installable': 'True',
+    'application': False,
     'license': 'AGPL-3',
+    'external_dependencies': {
+        'python': ['validate_email']
+    },
 }
