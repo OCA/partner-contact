@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-17 05:37+0000\n"
+"POT-Creation-Date: 2017-10-28 01:35+0000\n"
 "PO-Revision-Date: 2015-12-15 11:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/nl_NL/)\n"
@@ -47,7 +47,7 @@ msgstr ""
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "City"
-msgstr ""
+msgstr "stad"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -67,7 +67,7 @@ msgstr ""
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -119,7 +119,7 @@ msgstr ""
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "State"
-msgstr ""
+msgstr "Provincie"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -141,7 +141,7 @@ msgstr ""
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "ZIP"
-msgstr ""
+msgstr "Postcode"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit

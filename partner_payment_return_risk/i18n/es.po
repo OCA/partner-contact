@@ -1,21 +1,22 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* partner_payment_return_risk
-#
+# * partner_payment_return_risk
+# 
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-08 23:50+0200\n"
-"PO-Revision-Date: 2017-10-08 23:53+0200\n"
-"Last-Translator: Carlos Dauden <carlos.dauden@tecnativa.com>\n"
-"Language-Team: \n"
-"Language: es_ES\n"
+"POT-Creation-Date: 2017-10-28 01:36+0000\n"
+"PO-Revision-Date: 2017-10-28 01:36+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
 
 #. module: partner_payment_return_risk
 #: model:ir.model.fields,help:partner_payment_return_risk.field_res_partner_risk_payment_return_include
@@ -23,8 +24,6 @@ msgid ""
 "Full risk computation.\n"
 "Residual amount of move lines not reconciled with returned lines related."
 msgstr ""
-"Computar en riesgo total.\n"
-"Importe residual de apuntes no conciliados relacionados con apuntes devueltos."
 
 #. module: partner_payment_return_risk
 #: model:ir.model.fields,field_description:partner_payment_return_risk.field_res_partner_risk_payment_return_include
@@ -43,8 +42,9 @@ msgstr "Empresa"
 
 #. module: partner_payment_return_risk
 #: model:ir.model.fields,help:partner_payment_return_risk.field_res_partner_risk_payment_return
-msgid "Residual amount of move lines not reconciled with returned lines related."
-msgstr "Importe residual de apuntes no conciliados relacionados con apuntes devueltos."
+msgid ""
+"Residual amount of move lines not reconciled with returned lines related."
+msgstr ""
 
 #. module: partner_payment_return_risk
 #: model:ir.model.fields,help:partner_payment_return_risk.field_res_partner_risk_payment_return_limit
@@ -54,4 +54,4 @@ msgstr "Establece 0 si no está bloqueado"
 #. module: partner_payment_return_risk
 #: model:ir.model.fields,field_description:partner_payment_return_risk.field_res_partner_risk_payment_return
 msgid "Total Payments Returns"
-msgstr "Total pagos devueltos"
+msgstr ""

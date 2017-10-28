@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-02 00:47+0000\n"
-"PO-Revision-Date: 2017-06-02 00:47+0000\n"
+"POT-Creation-Date: 2017-10-28 01:36+0000\n"
+"PO-Revision-Date: 2017-10-28 01:36+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -21,8 +21,10 @@ msgstr ""
 
 #. module: partner_payment_return_risk
 #: model:ir.model.fields,help:partner_payment_return_risk.field_res_partner_risk_payment_return_include
-msgid "Full risk computation"
-msgstr "Polna obdelava tveganja"
+msgid ""
+"Full risk computation.\n"
+"Residual amount of move lines not reconciled with returned lines related."
+msgstr ""
 
 #. module: partner_payment_return_risk
 #: model:ir.model.fields,field_description:partner_payment_return_risk.field_res_partner_risk_payment_return_include
@@ -40,16 +42,17 @@ msgid "Partner"
 msgstr "Partner"
 
 #. module: partner_payment_return_risk
+#: model:ir.model.fields,help:partner_payment_return_risk.field_res_partner_risk_payment_return
+msgid ""
+"Residual amount of move lines not reconciled with returned lines related."
+msgstr ""
+
+#. module: partner_payment_return_risk
 #: model:ir.model.fields,help:partner_payment_return_risk.field_res_partner_risk_payment_return_limit
 msgid "Set 0 if it is not locked"
 msgstr "Nastavi 0 če ni zaklenjeno"
 
 #. module: partner_payment_return_risk
 #: model:ir.model.fields,field_description:partner_payment_return_risk.field_res_partner_risk_payment_return
-msgid "Total Returned Invoices"
-msgstr ""
-
-#. module: partner_payment_return_risk
-#: model:ir.model.fields,help:partner_payment_return_risk.field_res_partner_risk_payment_return
-msgid "Total returned invoices in Open state"
+msgid "Total Payments Returns"
 msgstr ""

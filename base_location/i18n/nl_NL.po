@@ -3,13 +3,14 @@
 # * base_location
 # 
 # Translators:
+# Peter Hageman <hageman.p@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-19 05:49+0000\n"
-"PO-Revision-Date: 2015-12-15 11:17+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2017-10-28 01:35+0000\n"
+"PO-Revision-Date: 2017-09-19 09:11+0000\n"
+"Last-Translator: Peter Hageman <hageman.p@gmail.com>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,22 +21,22 @@ msgstr ""
 #. module: base_location
 #: model:ir.actions.act_window,name:base_location.action_zip_tree
 msgid "Cites/locations Management"
-msgstr ""
+msgstr "Steden/locatie-beheer"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_country_state_better_zip_ids
 msgid "Cities"
-msgstr ""
+msgstr "Steden"
 
 #. module: base_location
 #: model:ir.ui.menu,name:base_location.zip_base
 msgid "Cities/Locations Management"
-msgstr ""
+msgstr "Steden/Locatie-beheer"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_city
 msgid "City"
-msgstr ""
+msgstr "stad"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_code
@@ -61,19 +62,19 @@ msgstr ""
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Bedrijven"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_country_id
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 #: model:ir.ui.view,arch_db:base_location.view_country_search
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_country_state
 msgid "Country state"
-msgstr ""
+msgstr "Provincie"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_uid
@@ -88,7 +89,7 @@ msgstr "Aangemaakt op"
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 msgid "Group By"
-msgstr ""
+msgstr "Groeperen op"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_id
@@ -113,12 +114,12 @@ msgstr "Laatst bijgewerkt op"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company_better_zip_id
 msgid "Location"
-msgstr ""
+msgstr "Locatie"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_display_name
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_partner
@@ -134,7 +135,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_state_id
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 msgid "State"
-msgstr ""
+msgstr "Provincie"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_better_zip_code
@@ -151,4 +152,4 @@ msgstr ""
 #: model:ir.ui.view,arch_db:base_location.better_zip_form
 #: model:ir.ui.view,arch_db:base_location.better_zip_tree
 msgid "ZIP"
-msgstr ""
+msgstr "Postcode"

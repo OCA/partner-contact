@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-19 05:49+0000\n"
-"PO-Revision-Date: 2017-08-19 05:49+0000\n"
+"POT-Creation-Date: 2017-10-28 01:35+0000\n"
+"PO-Revision-Date: 2017-10-28 01:35+0000\n"
 "Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -200,7 +200,7 @@ msgstr ""
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_group_by_name
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #. module: base_partner_merge
 #: selection:base.partner.merge.automatic.wizard,state:0
@@ -263,7 +263,7 @@ msgstr ""
 #. module: base_partner_merge
 #: model:ir.model.fields,field_description:base_partner_merge.field_base_partner_merge_automatic_wizard_state
 msgid "State"
-msgstr ""
+msgstr "Provincie"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form

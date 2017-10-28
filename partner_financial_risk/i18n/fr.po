@@ -9,15 +9,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-19 05:50+0000\n"
-"PO-Revision-Date: 2017-08-28 09:08+0000\n"
-"Last-Translator: leemannd <denis.leemann@camptocamp.com>\n"
+"POT-Creation-Date: 2017-10-28 01:36+0000\n"
+"PO-Revision-Date: 2017-10-08 22:57+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: French (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_move_line_ids
+msgid "Account Moves"
+msgstr ""
 
 #. module: partner_financial_risk
 #: model:ir.ui.view,arch_db:partner_financial_risk.partner_risk_exceeded_wizard
@@ -62,12 +67,9 @@ msgstr "Client"
 #. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_account_config_settings_invoice_unpaid_margin
 #: model:ir.model.fields,help:partner_financial_risk.field_res_company_invoice_unpaid_margin
-msgid "Days after due date to set an invoice as unpaid"
-msgstr ""
-
-#. module: partner_financial_risk
-#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount
-msgid "Difference between accounting credit and rest of totals"
+msgid ""
+"Days after due date to set an invoice as unpaid.The change of this field "
+"recompute all partners risk,be patient."
 msgstr ""
 
 #. module: partner_financial_risk
@@ -98,12 +100,37 @@ msgid "Financial risk exceeded.\n"
 msgstr "Risque financier dépassé.\n"
 
 #. module: partner_financial_risk
-#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount_include
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_draft_include
-#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_open_include
-#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_unpaid_include
 msgid "Full risk computation"
 msgstr "Calcul du risque total"
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount_unpaid_include
+msgid ""
+"Full risk computation.\n"
+"Residual amount of move lines not reconciled with distinct account that is set as partner receivable and date maturity exceeded, considering Due Margin set in account settings."
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount_include
+msgid ""
+"Full risk computation.\n"
+"Residual amount of move lines not reconciled with distinct account that is set as partner receivable and date maturity not exceeded, considering Due Margin set in account settings."
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_unpaid_include
+msgid ""
+"Full risk computation.\n"
+"Residual amount of move lines not reconciled with the same account that is set as partner receivable and date maturity exceeded, considering Due Margin set in account settings."
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_open_include
+msgid ""
+"Full risk computation.\n"
+"Residual amount of move lines not reconciled with the same account that is set as partner receivable and date maturity not exceeded, considering Due Margin set in account settings."
+msgstr ""
 
 #. module: partner_financial_risk
 #: model:ir.ui.view,arch_db:partner_financial_risk.res_partner_view_risk
@@ -122,18 +149,23 @@ msgstr "Inclure les Factures Brouillon"
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_open_include
-msgid "Include Open Invoices"
-msgstr "Inclure les factures ouvertes"
+msgid "Include Open Invoices/Principal Balance"
+msgstr ""
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_account_amount_include
-msgid "Include Other Account Amount"
+msgid "Include Other Account Open Amount"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_account_amount_unpaid_include
+msgid "Include Other Account Unpaid Amount"
 msgstr ""
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_unpaid_include
-msgid "Include Unpaid Invoices"
-msgstr "Inclure les Factures non Payées"
+msgid "Include Unpaid Invoices/Principal Balance"
+msgstr ""
 
 #. module: partner_financial_risk
 #: model:ir.ui.view,arch_db:partner_financial_risk.res_partner_view_risk
@@ -172,17 +204,22 @@ msgstr ""
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_open_limit
-msgid "Limit In Open Invoices"
+msgid "Limit In Open Invoices/Principal Balance"
 msgstr ""
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_unpaid_limit
-msgid "Limit In Unpaid Invoices"
+msgid "Limit In Unpaid Invoices/Principal Balance"
 msgstr ""
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_account_amount_limit
-msgid "Limit Other Account Amount"
+msgid "Limit Other Account Open Amount"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_account_amount_unpaid_limit
+msgid "Limit Other Account Unpaid Amount"
 msgstr ""
 
 #. module: partner_financial_risk
@@ -197,11 +234,6 @@ msgid "Object"
 msgstr "Objet"
 
 #. module: partner_financial_risk
-#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_account_amount
-msgid "Other Account Amount"
-msgstr ""
-
-#. module: partner_financial_risk
 #: model:ir.model,name:partner_financial_risk.model_res_partner
 msgid "Partner"
 msgstr "Partenaire"
@@ -213,17 +245,35 @@ msgid "Partner risk exceeded"
 msgstr ""
 
 #. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount_unpaid
+msgid ""
+"Residual amount of move lines not reconciled with distinct account that is "
+"set as partner receivable and date maturity exceeded, considering Due Margin"
+" set in account settings."
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount
+msgid ""
+"Residual amount of move lines not reconciled with distinct account that is "
+"set as partner receivable and date maturity not exceeded, considering Due "
+"Margin set in account settings."
+msgstr ""
+
+#. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_unpaid
 msgid ""
-"Residual amount of invoices in Open state and the date due is exceeded, "
-"considering Unpaid Margin set in account settings"
+"Residual amount of move lines not reconciled with the same account that is "
+"set as partner receivable and date maturity exceeded, considering Due Margin"
+" set in account settings."
 msgstr ""
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_open
 msgid ""
-"Residual amount of invoices in Open state and the date due is not exceeded, "
-"considering Due Margin set in account settings"
+"Residual amount of move lines not reconciled with the same account that is "
+"set as partner receivable and date maturity not exceeded, considering Due "
+"Margin set in account settings."
 msgstr ""
 
 #. module: partner_financial_risk
@@ -243,6 +293,7 @@ msgstr "Risque dépassé"
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount_limit
+#: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount_unpaid_limit
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_draft_limit
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_open_limit
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_unpaid_limit
@@ -265,7 +316,7 @@ msgid "The partner has exceeded his risk"
 msgstr "Le partner a dépassé sa limite de risque"
 
 #. module: partner_financial_risk
-#: code:addons/partner_financial_risk/models/account_invoice.py:28
+#: code:addons/partner_financial_risk/models/account_invoice.py:30
 #, python-format
 msgid "This invoice exceeds the financial risk.\n"
 msgstr ""
@@ -283,8 +334,18 @@ msgstr "Total des Factures Brouillon"
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_open
-msgid "Total Open Invoices"
-msgstr "Total des Factures Ouvertes"
+msgid "Total Open Invoices/Principal Balance"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_account_amount
+msgid "Total Other Account Open Amount"
+msgstr ""
+
+#. module: partner_financial_risk
+#: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_account_amount_unpaid
+msgid "Total Other Account Unpaid Amount"
+msgstr ""
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_total
@@ -293,8 +354,8 @@ msgstr "Risque Total"
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_invoice_unpaid
-msgid "Total Unpaid Invoices"
-msgstr "Total des Factures non Payées"
+msgid "Total Unpaid Invoices/Principal Balance"
+msgstr ""
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_draft

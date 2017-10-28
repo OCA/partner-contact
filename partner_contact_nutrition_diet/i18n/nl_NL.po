@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-19 05:49+0000\n"
-"PO-Revision-Date: 2017-08-19 05:49+0000\n"
+"POT-Creation-Date: 2017-10-28 01:36+0000\n"
+"PO-Revision-Date: 2017-10-28 01:36+0000\n"
 "Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgstr "Laatst bijgewerkt op"
 #. module: partner_contact_nutrition_diet
 #: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_name
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #. module: partner_contact_nutrition_diet
 #: model:ir.model,name:partner_contact_nutrition_diet.model_res_partner

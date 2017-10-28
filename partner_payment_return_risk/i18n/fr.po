@@ -4,14 +4,13 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
-# Quentin THEURET <odoo@kerpeo.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-19 05:50+0000\n"
-"PO-Revision-Date: 2017-08-19 05:50+0000\n"
-"Last-Translator: Quentin THEURET <odoo@kerpeo.com>, 2017\n"
+"POT-Creation-Date: 2017-10-28 01:36+0000\n"
+"PO-Revision-Date: 2017-10-28 01:36+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,8 +20,10 @@ msgstr ""
 
 #. module: partner_payment_return_risk
 #: model:ir.model.fields,help:partner_payment_return_risk.field_res_partner_risk_payment_return_include
-msgid "Full risk computation"
-msgstr "Calcul du risque total"
+msgid ""
+"Full risk computation.\n"
+"Residual amount of move lines not reconciled with returned lines related."
+msgstr ""
 
 #. module: partner_payment_return_risk
 #: model:ir.model.fields,field_description:partner_payment_return_risk.field_res_partner_risk_payment_return_include
@@ -40,16 +41,17 @@ msgid "Partner"
 msgstr "Partenaire"
 
 #. module: partner_payment_return_risk
+#: model:ir.model.fields,help:partner_payment_return_risk.field_res_partner_risk_payment_return
+msgid ""
+"Residual amount of move lines not reconciled with returned lines related."
+msgstr ""
+
+#. module: partner_payment_return_risk
 #: model:ir.model.fields,help:partner_payment_return_risk.field_res_partner_risk_payment_return_limit
 msgid "Set 0 if it is not locked"
 msgstr "Mettre à 0 si il n'est pas fermé"
 
 #. module: partner_payment_return_risk
 #: model:ir.model.fields,field_description:partner_payment_return_risk.field_res_partner_risk_payment_return
-msgid "Total Returned Invoices"
-msgstr ""
-
-#. module: partner_payment_return_risk
-#: model:ir.model.fields,help:partner_payment_return_risk.field_res_partner_risk_payment_return
-msgid "Total returned invoices in Open state"
+msgid "Total Payments Returns"
 msgstr ""

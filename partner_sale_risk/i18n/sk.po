@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# Jan Prokop <jprokop@creativehome.sk>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-02 00:47+0000\n"
-"PO-Revision-Date: 2017-06-02 00:47+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2017-10-28 01:37+0000\n"
+"PO-Revision-Date: 2017-10-28 01:37+0000\n"
+"Last-Translator: Jan Prokop <jprokop@creativehome.sk>, 2017\n"
 "Language-Team: Slovak (https://www.transifex.com/oca/teams/23907/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,7 +58,7 @@ msgstr "Partner"
 #. module: partner_sale_risk
 #: model:ir.model,name:partner_sale_risk.model_sale_order
 msgid "Sales Order"
-msgstr ""
+msgstr "Objednávka predaja"
 
 #. module: partner_sale_risk
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order_limit
