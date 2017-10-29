@@ -97,7 +97,10 @@ class NutsImport(models.TransientModel):
                 if field_type == 'integer':
                     try:
                         value = int(value)
-                    except:
+                    except (ValueError, TypeError):
+                        logger.warn(
+                            "Value %s for field %s replaced by 0" %
+                            (value, k))
                         value = 0
             else:
                 logger.debug("xpath = '%s', not found" % field_xpath)
