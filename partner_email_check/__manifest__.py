@@ -7,7 +7,7 @@
     'website': 'http://www.komit-consulting.com'
     'category' 'Tools',
     'depends': ['base'],
-    'installable': 'True',
+    'installable': True,
     'application': False,
     'license': 'AGPL-3',
     'external_dependencies': {
