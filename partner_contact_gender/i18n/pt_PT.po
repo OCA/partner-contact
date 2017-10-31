@@ -3,25 +3,25 @@
 # * partner_contact_gender
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-01 20:43+0000\n"
 "PO-Revision-Date: 2017-05-01 20:43+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Portuguese (Portugal) (https://www.transifex.com/oca/teams/23907/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
+"Language: pt_PT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_contact_gender
 #: selection:res.partner,gender:0
 msgid "Female"
-msgstr "Femenino"
+msgstr "Feminino"
 
 #. module: partner_contact_gender
 #: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner_gender
@@ -37,9 +37,9 @@ msgstr "Masculino"
 #. module: partner_contact_gender
 #: selection:res.partner,gender:0
 msgid "Other"
-msgstr "Otro"
+msgstr "Outro"
 
 #. module: partner_contact_gender
 #: model:ir.model,name:partner_contact_gender.model_res_partner
 msgid "Partner"
-msgstr "Empresa"
+msgstr "Parceiro"
