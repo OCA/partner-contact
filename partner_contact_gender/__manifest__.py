@@ -1,14 +1,13 @@
-# -*- coding: utf-8 -*-
-# Copyright (C) 2014-2015  Grupo ESOC <www.grupoesoc.es>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-
+# Copyright 2014-2015 Grupo ESOC <www.grupoesoc.es>
+# Copyright 2017-Apertoso N.V. (<http://www.apertoso.be>)
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "name": "Contact gender",
     "summary": "Add gender field to contacts",
-    "version": "9.0.1.0.0",
+    'version': '11.0.1.0.0',
     "category": "Customer Relationship Management",
-    "website": "https://odoo-community.org/",
-    "author": "Grupo ESOC, Odoo Community Association (OCA)",
+    "website": "https://github.com/oca/partner-contact",
+    "author": "Grupo ESOC, Tecnativa, Odoo Community Association (OCA)",
     "contributors": [
         'Jairo Llopis <j.llopis@grupoesoc.es>',
         'Richard deMeester <richard@willowit.com.au>',
