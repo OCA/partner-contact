@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 Andreas Stauder (brain-tec AG)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="partner_contact_company_first" model="ir.ui.view">
+    <field name="name">Company in first line</field>
+    <field name="inherit_id" ref="base.contact"/>
+    <field name="arch" type="xml">
+        <xpath expr="//t[@t-if='object.name']" position="replace">
+            <t t-if="object.parent_id">
+                <t t-if="object.parent_name">
+                    <span itemprop="name" t-esc="object.parent_name"/>
+                </t>
+                <br/>
+            </t>
+
+            <t t-if="object.name">
+                <span itemprop="name" t-esc="object.name"/>
+            </t>
+        </xpath>
+    </field>
+</record>
+
+</data>
+</openerp>
