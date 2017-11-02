@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from openerp import fields
+from openerp import fields, tools
 from openerp.tests.common import TransactionCase
 from datetime import date
 
@@ -49,5 +49,6 @@ class BadCase(TransactionCase):
                             self.partner.birthdate_date)
         super(BadCase, self).tearDown()
 
+    @tools.mute_logger('openerp.addons.partner_contact_birthdate.models')
     def test_old_to_new(self):
         self.partner.birthdate = "Not a date"
