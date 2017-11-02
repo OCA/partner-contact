@@ -6,7 +6,7 @@
 {
     "name": "Partner job position",
     "summary": "Categorize job positions for contacts",
-    "version": "9.0.1.0.0",
+    "version": "9.0.1.1.0",
     'category': 'Customer Relationship Management',
     "website": "http://www.tecnativa.com",
     'author': 'Tecnativa, '
