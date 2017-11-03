@@ -28,10 +28,13 @@
                                 <field name="risk_account_amount_include"
                                        attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
                                 <field name="risk_account_amount" nolabel="1"/>
+                                <field name="risk_account_amount_unpaid_include"
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                                <field name="risk_account_amount_unpaid" nolabel="1"/>
                                 <field name="risk_total" colspan="3" class="oe_subtotal_footer_separator"/>
                             </group>
                         </group>
-                        <group string="Specific Limits" name="risk_limits" col="1">
+                        <group string="Specific Limits" name="risk_limits" col="2">
                             <group class="oe_subtotal_footer">
                                 <field name="risk_invoice_draft_limit"
                                        attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
@@ -40,6 +43,8 @@
                                 <field name="risk_invoice_unpaid_limit"
                                        attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
                                 <field name="risk_account_amount_limit"
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                                <field name="risk_account_amount_unpaid_limit"
                                        attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
                                 <field name="risk_allow_edit" invisible="1"/>
                             </group>

@@ -70,6 +70,7 @@ class TestPartnerFinancialRisk(SavepointCase):
                 'invoice_line_tax_ids': [(6, 0, [cls.tax.id])],
             })],
         })
+        cls.env.user.lang = False
 
     def test_invoices(self):
         self.partner.risk_invoice_draft_include = True
@@ -142,3 +143,8 @@ class TestPartnerFinancialRisk(SavepointCase):
         line.date_maturity = '2017-01-01'
         self.assertAlmostEqual(self.partner.risk_account_amount, 0.0)
         self.assertAlmostEqual(self.partner.risk_account_amount_unpaid, 100.0)
+
+    def test_recompute_newid(self):
+        """Computing risk shouldn't fail if record is a NewId."""
+        new = self.env['res.partner'].new({'customer': True})
+        new._compute_risk_invoice()
