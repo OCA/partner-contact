@@ -114,7 +114,7 @@ class ResPartner(models.Model):
 
     @api.multi
     @api.depends(
-        'invoice_ids', 'invoice_ids.state',
+        'customer', 'invoice_ids', 'invoice_ids.state',
         'invoice_ids.amount_total',
         'child_ids.invoice_ids', 'child_ids.invoice_ids.state',
         'child_ids.invoice_ids.amount_total')
@@ -122,11 +122,13 @@ class ResPartner(models.Model):
         all_partners_and_children = {}
         all_partner_ids = []
         for partner in self.filtered('customer'):
+            if not partner.id:
+                continue
             all_partners_and_children[partner] = self.with_context(
                 active_test=False).search([('id', 'child_of', partner.id)]).ids
             all_partner_ids += all_partners_and_children[partner]
         if not all_partner_ids:
-            return  # pragma: no cover
+            return
         total_group = self.env['account.invoice'].sudo().read_group(
             [('type', 'in', ['out_invoice', 'out_refund']),
              ('state', 'in', ['draft', 'proforma', 'proforma2']),
