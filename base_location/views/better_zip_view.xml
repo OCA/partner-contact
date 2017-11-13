@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="better_zip_form">
+        <field name="name">res.better.zip.form</field>
+        <field name="model">res.better.zip</field>
+        <field name="arch" type="xml">
+            <form string="City">
+                <group col="4">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="better_zip_tree">
+        <field name="name">res.better.zip.tree</field>
+        <field name="model">res.better.zip</field>
+        <field name="arch" type="xml">
+            <tree string="Cities">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_better_zip_filter" model="ir.ui.view">
+        <field name="name">res.better.zip.select</field>
+        <field name="model">res.better.zip</field>
+        <field name="arch" type="xml">
+            <search string="Search city">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+                    <group expand="0" string="Group By">
+                        <filter string="State" domain="[]" context="{'group_by':'state_id'}"/>
+                        <filter string="Country" domain="[]" context="{'group_by':'country_id'}"/>
+                    </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_zip_tree" model="ir.actions.act_window">
+        <field name="name">Cites/locations</field>
+        <field name="res_model">res.better.zip</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field ref="better_zip_tree" name="view_id"/>
+        <field name="search_view_id" ref="view_better_zip_filter"/>
+    </record>
+
+    <menuitem
+        name="Cities/Locations Management"
+        id="locations_root_menu"
+        parent="base.menu_custom"
+        />
+
+    <menuitem
+        name="Cities/Locations"
+        id="locations_menu"
+        parent="locations_root_menu"
+        action="action_zip_tree"
+        />
+
+</odoo>
