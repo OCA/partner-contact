@@ -68,7 +68,7 @@
 <menuitem action="res_partner_nuts_action"
           id="res_partner_nuts_menu"
           name="NUTS Items"
-          parent="sales_team.menu_localisation"
+          parent="contacts.menu_localisation"
           sequence="40"/>
 
 </odoo>
