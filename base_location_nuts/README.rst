@@ -1,4 +1,5 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+    :target: https://www.gnu.org/licenses/agpl
     :alt: License: AGPL-3
 
 ============
@@ -48,7 +49,7 @@ in order to allow to assign them to partner object.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/10.0
+   :target: https://runbot.odoo-community.org/runbot/134/11.0
 
 Bug Tracker
 ===========
