@@ -35,15 +35,13 @@
 <menuitem action="nuts_import_action"
           id="nuts_import_menu"
           name="Import NUTS 2013"
-          parent="sales_team.menu_localisation"
+          parent="contacts.menu_localisation"
           sequence="45"/>
 
 <record id="config_wizard_nuts" model="ir.actions.todo">
     <field name="name">Import NUTS 2013 from RAMON</field>
-    <field name="note">You can import NUTS from RAMON european service.</field>
     <field name="action_id" ref="nuts_import_action"/>
     <field name="sequence">20</field>
-    <field name="type">automatic</field>
 </record>
 
 </odoo>
