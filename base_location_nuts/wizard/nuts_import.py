@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2015 Antonio Espinosa <antonio.espinosa@tecnativa.com>
 # Copyright 2016 Jairo Llopis <jairo.llopis@tecnativa.com>
 # Copyright 2017 David Vidal <jairo.llopis@tecnativa.com>
@@ -79,7 +78,7 @@ class NutsImport(models.TransientModel):
 
     def _mapping(self, node):
         item = {}
-        for k, v in self._map.iteritems():
+        for k, v in self._map.items():
             field_xpath = v.get('xpath', '')
             field_attrib = v.get('attrib', False)
             field_type = v.get('type', 'string')
@@ -118,11 +117,11 @@ class NutsImport(models.TransientModel):
         if not url_params:
             url_params = URL_PARAMS
         url = url_base + url_path + '?'
-        url += '&'.join([k + '=' + v for k, v in url_params.iteritems()])
+        url += '&'.join([k + '=' + v for k, v in url_params.items()])
         logger.info('Starting to download %s' % url)
         try:
             res_request = requests.get(url)
-        except Exception, e:
+        except Exception as e:
             raise UserError(
                 _('Got an error when trying to download the file: %s.') %
                 str(e))
@@ -133,15 +132,15 @@ class NutsImport(models.TransientModel):
         logger.info('Download successfully %d bytes' %
                     len(res_request.content))
         # Workaround XML: Remove all characters before <?xml
-        pattern = re.compile(r'^.*<\?xml', re.DOTALL)
-        content_fixed = re.sub(pattern, '<?xml', res_request.content)
-        if not re.match(r'<\?xml', content_fixed):
+        pattern = re.compile(rb'^.*<\?xml', re.DOTALL)
+        content_fixed = re.sub(pattern, b'<?xml', res_request.content)
+        if not re.match(rb'<\?xml', content_fixed):
             raise UserError(_('Downloaded file is not a valid XML file'))
         return content_fixed
 
     @api.model
     def _load_countries(self):
-        for k in self._countries.keys():
+        for k in self._countries:
             self._countries[k] = self.env['res.country'].search(
                 [('code', '=', k)])
         # Workaround to translate some country codes:
@@ -190,7 +189,8 @@ class NutsImport(models.TransientModel):
         # All current NUTS (for available countries),
         #   delete if not found above
         nuts_to_delete = nuts_model.search(
-            [('country_id', 'in', [x.id for x in self._countries.values()])])
+            [('country_id', 'in',
+              [x.id for x in self._countries.values()])])
         # Download NUTS in english, create or update
         logger.info('Importing NUTS 2013 English...')
         xmlcontent = self._download_nuts()
