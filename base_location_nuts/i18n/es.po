@@ -1,21 +1,21 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_location_nuts
-# 
+#
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
+# OCA Transbot <transbot@odoo-community.org>, 2018
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-08 02:41+0000\n"
-"PO-Revision-Date: 2017-07-08 02:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2018-01-24 03:46+0000\n"
+"PO-Revision-Date: 2018-01-24 03:46+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_location_nuts
@@ -32,6 +32,11 @@ msgstr "Hijos"
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_code
 msgid "Code"
 msgstr "Código"
+
+#. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_res_country
@@ -59,19 +64,19 @@ msgid "Display Name"
 msgstr "Nombre mostrado"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:136
+#: code:addons/base_location_nuts/wizard/nuts_import.py:138
 #, python-format
 msgid "Downloaded file is not a valid XML file"
 msgstr "El fichero descargado no es un fichero XML válido"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:128
+#: code:addons/base_location_nuts/wizard/nuts_import.py:130
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Error %d al intentar descargar el fichero %s."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:124
+#: code:addons/base_location_nuts/wizard/nuts_import.py:126
 #, python-format
 msgid "Got an error when trying to download the file: %s."
 msgstr "Error al intentar descargar el fichero: %s."
@@ -156,7 +161,6 @@ msgid "NUTS Items"
 msgstr "Objetos NUTS"
 
 #. module: base_location_nuts
-#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_alias_nuts1_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts1_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users_nuts1_id
 #: model:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
@@ -164,7 +168,6 @@ msgid "NUTS L1"
 msgstr ""
 
 #. module: base_location_nuts
-#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_alias_nuts2_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts2_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users_nuts2_id
 #: model:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
@@ -172,7 +175,6 @@ msgid "NUTS L2"
 msgstr ""
 
 #. module: base_location_nuts
-#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_alias_nuts3_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts3_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users_nuts3_id
 #: model:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
@@ -180,7 +182,6 @@ msgid "NUTS L3"
 msgstr ""
 
 #. module: base_location_nuts
-#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_alias_nuts4_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts4_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users_nuts4_id
 #: model:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
@@ -193,6 +194,11 @@ msgid "Name"
 msgstr "Nombre"
 
 #. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_parent_left
 msgid "Parent Left"
 msgstr "Padre izquierda"
@@ -201,16 +207,6 @@ msgstr "Padre izquierda"
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_parent_right
 msgid "Parent Right"
 msgstr "Padre derecha"
-
-#. module: base_location_nuts
-#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_parent_id
-msgid "Parent id"
-msgstr "ID del padre"
-
-#. module: base_location_nuts
-#: model:ir.model,name:base_location_nuts.model_res_partner
-msgid "Partner"
-msgstr "Empresa"
 
 #. module: base_location_nuts
 #: model:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
@@ -224,8 +220,8 @@ msgstr "Provincia"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_country_state_level
-msgid "State level"
-msgstr "Nivel de estado"
+msgid "State Level"
+msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
@@ -239,24 +235,21 @@ msgstr ""
 "Este asistente descargará la última version de\n"
 "                NUTS 2013 desde el servicio de metadatos europeo RAMON.\n"
 "                Actualizando o creando nuevas regiones NUTS si no\n"
-"                las encuentra en el sistema, y BORRANDO LAS QUE NO ENCUENTRE\n"
+"                las encuentra en el sistema, y BORRANDO LAS QUE NO "
+"ENCUENTRE\n"
 "                en el nuevo fichero descargado."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:106
+#: code:addons/base_location_nuts/wizard/nuts_import.py:108
 #, python-format
 msgid "Value not found for mandatory field %s"
 msgstr "El valor no se ha encontrado para el campo obligatorio %s"
-
-#. module: base_location_nuts
-#: model:ir.actions.todo,note:base_location_nuts.config_wizard_nuts
-msgid "You can import NUTS from RAMON european service."
-msgstr "Usted puede importar NUTS desde el servicion europeo RAMON."
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
 msgid ""
 "You must click at import wizard to populate NUTS items\n"
 "        in Odoo database in:\n"
-"        Sales &gt; Configuration &gt; Address Book &gt; Localization &gt; Import NUTS 2013"
+"        Sales &gt; Configuration &gt; Address Book &gt; Localization &gt; "
+"Import NUTS 2013"
 msgstr ""
