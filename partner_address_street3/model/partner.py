@@ -21,7 +21,7 @@ class ResPartner(models.Model):
     @api.multi
     def _display_address(self, without_company=False):
         """Remove empty lines which can happen when street3 field is empty."""
-        res = super(ResPartner, self)._display_address(\
+        res = super(ResPartner, self)._display_address(
             without_company=without_company)
         while '\n\n' in res:
             res = res.replace('\n\n', '\n')
