@@ -16,9 +16,11 @@
               'Tecnativa,'
               'Odoo Community Association (OCA)',
     'website': 'http://www.akretion.com',
-    'depends': ['base_location'],
+    'depends': ['base', 'base_location'],
     'external_dependencies': {'python': ['requests', 'unicodecsv']},
     'data': [
+        'data/country.xml',
+        'views/res_country.xml',
         'wizard/geonames_import_view.xml',
         ],
     'installable': True,
