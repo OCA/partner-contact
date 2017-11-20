@@ -13,6 +13,7 @@
         </field>
         <xpath expr="//field[@name='child_ids']/form//field[@name='function']"
                position="before">
+            <field name="is_company" invisible="True"/>
             <field name="job_position_id"
                    attrs="{'invisible': [('is_company','=', True)]}"
                    options='{"no_open": True}'/>
