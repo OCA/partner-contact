@@ -8,7 +8,7 @@
 {
     "name": "Partner job position",
     "summary": "Categorize job positions for contacts",
-    "version": "10.0.1.0.0",
+    "version": "10.0.1.0.1",
     'category': 'Customer Relationship Management',
     "website": "http://www.antiun.com",
     'author': 'Serv. Tecnolog. Avanzados - Pedro M. Baeza, '
