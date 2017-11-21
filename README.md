@@ -40,7 +40,7 @@ addon | version | summary
 [partner_contact_department](partner_contact_department/) | 10.0.1.0.0 | Assign contacts to departments
 [partner_contact_gender](partner_contact_gender/) | 10.0.1.1.0 | Add gender field to contacts
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 10.0.1.0.0 | Allow to have one contact in several partners
-[partner_contact_job_position](partner_contact_job_position/) | 10.0.1.0.0 | Categorize job positions for contacts
+[partner_contact_job_position](partner_contact_job_position/) | 10.0.1.0.1 | Categorize job positions for contacts
 [partner_contact_lang](partner_contact_lang/) | 10.0.1.0.0 | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 10.0.1.0.0 | Add nationality field to contacts
 [partner_contact_nutrition](partner_contact_nutrition/) | 10.0.1.0.0 | Provide caloric intake
