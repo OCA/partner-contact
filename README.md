@@ -33,7 +33,7 @@ addon | version | summary
 [partner_contact_gender](partner_contact_gender/) | 9.0.1.1.0 | Add gender field to contacts
 [partner_contact_height](partner_contact_height/) | 9.0.1.0.1 | Provide contact height.
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 9.0.1.0.0 | Allow to have one contact in several partners
-[partner_contact_job_position](partner_contact_job_position/) | 9.0.1.0.0 | Categorize job positions for contacts
+[partner_contact_job_position](partner_contact_job_position/) | 9.0.1.1.0 | Categorize job positions for contacts
 [partner_contact_lang](partner_contact_lang/) | 9.0.1.0.0 | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 9.0.1.0.0 | Add nationality field to contacts
 [partner_contact_nutrition](partner_contact_nutrition/) | 9.0.1.0.1 | Provide caloric intake
@@ -58,7 +58,7 @@ addon | version | summary
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 9.0.1.1.0 | Track the time and days your partners expect phone calls
 [partner_ref_unique](partner_ref_unique/) | 9.0.1.0.0 | Add an unique constraint to partner ref field
 [partner_sale_risk](partner_sale_risk/) | 9.0.1.0.0 | Manage partner risk in sales orders
-[partner_sector](partner_sector/) | 9.0.1.0.1 | Add partner sectors
+[partner_sector](partner_sector/) | 9.0.1.0.2 | Add partner sectors
 [partner_stock_risk](partner_stock_risk/) | 9.0.1.0.0 | Manage partner risk in stock moves
 [res_partner_affiliate](res_partner_affiliate/) | 9.0.1.0.0 | Partner Affiliates
 
