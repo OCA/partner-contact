@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-10 01:50+0000\n"
-"PO-Revision-Date: 2017-06-10 01:50+0000\n"
+"POT-Creation-Date: 2017-11-21 01:48+0000\n"
+"PO-Revision-Date: 2017-11-21 01:48+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Bulgarian (https://www.transifex.com/oca/teams/23907/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -88,7 +88,7 @@ msgstr "ID"
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range___last_update
 msgid "Last Modified on"
-msgstr "Последно обновено на"
+msgstr "Последно променено на"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_write_uid
@@ -147,7 +147,7 @@ msgstr ""
 #. module: partner_capital
 #: model:ir.model,name:partner_capital.model_res_partner_turnover_range
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_alias_turnover_range_id
-#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_id_4325
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_id_4641
 #: model:ir.model.fields,field_description:partner_capital.field_res_users_turnover_range_id
 msgid "Turnover range"
 msgstr ""

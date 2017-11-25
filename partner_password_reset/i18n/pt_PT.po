@@ -3,14 +3,13 @@
 # * partner_password_reset
 # 
 # Translators:
-# Tiago Baptista <tiago@baptista.net>, 2017
 # OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-31 03:41+0000\n"
-"PO-Revision-Date: 2017-05-31 03:41+0000\n"
+"POT-Creation-Date: 2017-11-21 01:49+0000\n"
+"PO-Revision-Date: 2017-11-21 01:49+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Portuguese (Portugal) (https://www.transifex.com/oca/teams/23907/pt_PT/)\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +48,7 @@ msgstr "Criado em"
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_display_name
 msgid "Display Name"
-msgstr "Nome"
+msgstr "Nome a Apresentar"
 
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_id
@@ -59,7 +58,7 @@ msgstr "ID"
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard___last_update
 msgid "Last Modified on"
-msgstr "Modificado em"
+msgstr "Última Modificação em"
 
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_write_uid

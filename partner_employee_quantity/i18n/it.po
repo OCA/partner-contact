@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-17 02:52+0000\n"
-"PO-Revision-Date: 2017-08-17 02:52+0000\n"
+"POT-Creation-Date: 2017-11-21 01:49+0000\n"
+"PO-Revision-Date: 2017-11-21 01:49+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Creato da"
 #. module: partner_employee_quantity
 #: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_create_date
 msgid "Created on"
-msgstr "reato il"
+msgstr "Creato il"
 
 #. module: partner_employee_quantity
 #: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_display_name
@@ -54,7 +54,7 @@ msgid "Employee quantity range"
 msgstr ""
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_id_4654
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_id_4753
 msgid "ID"
 msgstr "ID"
 
@@ -66,12 +66,12 @@ msgstr "Ultima modifica il"
 #. module: partner_employee_quantity
 #: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_write_uid
 msgid "Last Updated by"
-msgstr "Ultimo aggiornamento di"
+msgstr "Ultimo caricamento il"
 
 #. module: partner_employee_quantity
 #: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_write_date
 msgid "Last Updated on"
-msgstr "Ultimo aggiornamento il"
+msgstr "Ultimo caricamento di"
 
 #. module: partner_employee_quantity
 #: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_name

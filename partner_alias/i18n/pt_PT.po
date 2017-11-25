@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-24 00:42+0000\n"
-"PO-Revision-Date: 2017-04-24 00:42+0000\n"
+"POT-Creation-Date: 2017-11-21 01:48+0000\n"
+"PO-Revision-Date: 2017-11-21 01:48+0000\n"
 "Last-Translator: Tiago Baptista <tiago@baptista.net>, 2017\n"
 "Language-Team: Portuguese (Portugal) (https://www.transifex.com/oca/teams/23907/pt_PT/)\n"
 "MIME-Version: 1.0\n"
@@ -35,6 +35,21 @@ msgid "Address Type"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_affiliate_ids
+msgid "Affiliates"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_phonecall_calendar_attendance_ids
+msgid "Aggregated phonecall schedule"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_phonecall_calendar_attendance_ids
+msgid "Aggregation of all available phonecall schedules."
+msgstr ""
+
+#. module: partner_alias
 #: code:addons/partner_alias/models/res_partner_alias.py:32
 #, python-format
 msgid "Alias first name cannot be the same as primary firstname"
@@ -49,8 +64,14 @@ msgstr ""
 #: model:ir.actions.act_window,name:partner_alias.res_partner_alias_action
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_alias_ids
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_ids
+#: model:ir.model.fields,field_description:partner_alias.field_res_users_alias_ids
 #: model:ir.ui.view,arch_db:partner_alias.personal_information
 msgid "Aliases"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_phonecall_available
+msgid "Available to call"
 msgstr ""
 
 #. module: partner_alias
@@ -61,6 +82,11 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_barcode
 msgid "Barcode"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_phonecall_calendar_ids
+msgid "Best schedule when the contact expects to be called."
 msgstr ""
 
 #. module: partner_alias
@@ -194,7 +220,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_display_name
 msgid "Display Name"
-msgstr "Nome"
+msgstr "Nome a Apresentar"
 
 #. module: partner_alias
 #: model:ir.model.fields,help:partner_alias.field_res_partner_alias_partner_share
@@ -325,6 +351,11 @@ msgid "Is a Vendor"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_phonecall_available
+msgid "Is it now a good time to call this partner?"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_function
 msgid "Job Position"
 msgstr ""
@@ -342,7 +373,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias___last_update
 msgid "Last Modified on"
-msgstr "Modificado em"
+msgstr "Última Modificação em"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_write_uid
@@ -391,6 +422,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_name
 msgid "Name"
 msgstr "Nome"
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_nationality_id
+msgid "Nationality"
+msgstr ""
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_comment
@@ -446,6 +482,21 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_phone
 msgid "Phone"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_phone_extension
+msgid "Phone Extension"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_phone_extension
+msgid "Phone Number Extension."
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_phonecall_calendar_ids
+msgid "Phonecall schedule"
 msgstr ""
 
 #. module: partner_alias

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-08 02:42+0000\n"
-"PO-Revision-Date: 2017-07-08 02:42+0000\n"
+"POT-Creation-Date: 2017-11-21 01:49+0000\n"
+"PO-Revision-Date: 2017-11-21 01:49+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr ""
 #. module: partner_password_reset
 #: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
 msgid "Cancel"
-msgstr "Prekliči"
+msgstr "Preklic"
 
 #. module: partner_password_reset
 #: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
@@ -43,7 +43,7 @@ msgstr "Ustvaril"
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_create_date
 msgid "Created on"
-msgstr "Ustvaril"
+msgstr "Ustvarjeno"
 
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_display_name

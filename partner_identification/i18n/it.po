@@ -3,14 +3,15 @@
 # * partner_identification
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
+# Giuliano Lotta <giuliano.lotta@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-31 03:41+0000\n"
-"PO-Revision-Date: 2017-05-31 03:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2017-11-21 01:49+0000\n"
+"PO-Revision-Date: 2017-11-21 01:49+0000\n"
+"Last-Translator: Giuliano Lotta <giuliano.lotta@gmail.com>, 2017\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -119,7 +120,7 @@ msgstr "Scaduto"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_id
 msgid "ID"
-msgstr "Documento di identificazione"
+msgstr "ID"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_name
@@ -184,7 +185,7 @@ msgstr "Ultimo caricamento il"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_date
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_date
 msgid "Last Updated on"
-msgstr "Ultimo aggiornamento il"
+msgstr "Ultimo caricamento di"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category_name

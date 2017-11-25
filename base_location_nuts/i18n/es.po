@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-08 02:41+0000\n"
-"PO-Revision-Date: 2017-07-08 02:41+0000\n"
+"POT-Creation-Date: 2017-11-21 01:48+0000\n"
+"PO-Revision-Date: 2017-11-21 01:48+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
@@ -59,19 +59,19 @@ msgid "Display Name"
 msgstr "Nombre mostrado"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:136
+#: code:addons/base_location_nuts/wizard/nuts_import.py:139
 #, python-format
 msgid "Downloaded file is not a valid XML file"
 msgstr "El fichero descargado no es un fichero XML válido"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:128
+#: code:addons/base_location_nuts/wizard/nuts_import.py:131
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Error %d al intentar descargar el fichero %s."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:124
+#: code:addons/base_location_nuts/wizard/nuts_import.py:127
 #, python-format
 msgid "Got an error when trying to download the file: %s."
 msgstr "Error al intentar descargar el fichero: %s."
@@ -243,7 +243,7 @@ msgstr ""
 "                en el nuevo fichero descargado."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:106
+#: code:addons/base_location_nuts/wizard/nuts_import.py:109
 #, python-format
 msgid "Value not found for mandatory field %s"
 msgstr "El valor no se ha encontrado para el campo obligatorio %s"

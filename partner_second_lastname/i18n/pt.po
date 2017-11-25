@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-30 02:49+0000\n"
-"PO-Revision-Date: 2017-06-30 02:49+0000\n"
+"POT-Creation-Date: 2017-11-21 01:49+0000\n"
+"PO-Revision-Date: 2017-11-21 01:49+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Portuguese (https://www.transifex.com/oca/teams/23907/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 #. module: partner_second_lastname
 #: model:ir.model,name:partner_second_lastname.model_res_partner
 msgid "Partner"
-msgstr "Entidade"
+msgstr "Parceiro"
 
 #. module: partner_second_lastname
 #: model:ir.model.fields,field_description:partner_second_lastname.field_res_partner_alias_lastname2

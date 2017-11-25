@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-08 02:41+0000\n"
-"PO-Revision-Date: 2017-07-08 02:41+0000\n"
+"POT-Creation-Date: 2017-11-21 01:48+0000\n"
+"PO-Revision-Date: 2017-11-21 01:48+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "MIME-Version: 1.0\n"
@@ -59,19 +59,19 @@ msgid "Display Name"
 msgstr "Nome da visualizzare"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:136
+#: code:addons/base_location_nuts/wizard/nuts_import.py:139
 #, python-format
 msgid "Downloaded file is not a valid XML file"
 msgstr "Il file scaricato non è un file XML valido"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:128
+#: code:addons/base_location_nuts/wizard/nuts_import.py:131
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Errore %d mentre si stava scaricando il file %s."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:124
+#: code:addons/base_location_nuts/wizard/nuts_import.py:127
 #, python-format
 msgid "Got an error when trying to download the file: %s."
 msgstr ""
@@ -118,13 +118,13 @@ msgstr "Ultima modifica il"
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import_write_uid
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_write_uid
 msgid "Last Updated by"
-msgstr "Ultimo aggiornamento di"
+msgstr "Ultimo caricamento il"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import_write_date
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_write_date
 msgid "Last Updated on"
-msgstr "Ultimo aggiornamento il"
+msgstr "Ultimo caricamento di"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_level
@@ -238,7 +238,7 @@ msgid ""
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:106
+#: code:addons/base_location_nuts/wizard/nuts_import.py:109
 #, python-format
 msgid "Value not found for mandatory field %s"
 msgstr ""
