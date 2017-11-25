@@ -1,21 +1,22 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_location_geonames_import
-# 
+#
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2018
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-24 00:41+0000\n"
-"PO-Revision-Date: 2017-04-24 00:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"POT-Creation-Date: 2018-01-03 20:26+0000\n"
+"PO-Revision-Date: 2018-01-03 20:26+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
+"teams/23907/pt_BR/)\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: base_location_geonames_import
@@ -38,6 +39,7 @@ msgid ""
 msgstr ""
 
 #. module: base_location_geonames_import
+#: model:ir.model,name:base_location_geonames_import.model_res_country
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_country_id
 msgid "Country"
 msgstr "País"
@@ -58,6 +60,11 @@ msgid "Display Name"
 msgstr "Nome a mostrar"
 
 #. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_enforce_cities
+msgid "Enforce Cities"
+msgstr ""
+
+#. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid ""
 "For the selected country, this wizard will download the latest version of "
@@ -65,7 +72,17 @@ msgid ""
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:129
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country_geonames_state_code_column
+msgid "Geonames State Code Column"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country_geonames_state_name_column
+msgid "Geonames State Name Column"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:189
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Recebido um erro %d ao tentar o download do arquivo %s."
@@ -95,7 +112,7 @@ msgstr "Importar de Geonames"
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import___last_update
 msgid "Last Modified on"
-msgstr "Última atualização em"
+msgstr "Ultima modificação em"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_write_uid
@@ -113,14 +130,19 @@ msgid "Letter Case"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:71
+#: model:ir.model.fields,help:base_location_geonames_import.field_better_zip_geonames_import_enforce_cities
+msgid "The city will be created as a separate entity."
+msgstr ""
+
+#. module: base_location_geonames_import
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:96
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:124
 #, python-format
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
 "country (%s)."
 msgstr ""
-"O código país dentro do arquivo (%s) não corresponde ao país selecionado "
-"(%s)"
+"O código país dentro do arquivo (%s) não corresponde ao país selecionado (%s)"
 
 #. module: base_location_geonames_import
 #: selection:better.zip.geonames.import,letter_case:0
