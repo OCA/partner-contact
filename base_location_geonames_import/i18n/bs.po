@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_location_geonames_import
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
@@ -12,11 +12,12 @@ msgstr ""
 "PO-Revision-Date: 2017-06-10 01:50+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Bosnian (https://www.transifex.com/oca/teams/23907/bs/)\n"
+"Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: bs\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
@@ -38,6 +39,7 @@ msgid ""
 msgstr ""
 
 #. module: base_location_geonames_import
+#: model:ir.model,name:base_location_geonames_import.model_res_country
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_country_id
 msgid "Country"
 msgstr ""
@@ -58,6 +60,11 @@ msgid "Display Name"
 msgstr "Prikaži naziv"
 
 #. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_enforce_cities
+msgid "Enforce Cities"
+msgstr ""
+
+#. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
 msgid ""
 "For the selected country, this wizard will download the latest version of "
@@ -65,7 +72,17 @@ msgid ""
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:129
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country_geonames_state_code_column
+msgid "Geonames State Code Column"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country_geonames_state_name_column
+msgid "Geonames State Name Column"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:189
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr ""
@@ -113,7 +130,13 @@ msgid "Letter Case"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:71
+#: model:ir.model.fields,help:base_location_geonames_import.field_better_zip_geonames_import_enforce_cities
+msgid "The city will be created as a separate entity."
+msgstr ""
+
+#. module: base_location_geonames_import
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:96
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:124
 #, python-format
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
