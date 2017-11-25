@@ -3,15 +3,15 @@
 # * base_location
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
-# leemannd <denis.leemann@camptocamp.com>, 2017
+# OCA Transbot <transbot@odoo-community.org>, 2017
+# Nicolas JEUDY <njeudy@panda-chi.io>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 20:42+0000\n"
-"PO-Revision-Date: 2017-05-01 20:42+0000\n"
-"Last-Translator: leemannd <denis.leemann@camptocamp.com>, 2017\n"
+"POT-Creation-Date: 2018-01-03 20:26+0000\n"
+"PO-Revision-Date: 2018-01-03 20:26+0000\n"
+"Last-Translator: Nicolas JEUDY <njeudy@panda-chi.io>, 2017\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,9 +20,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: base_location
-#: model:ir.actions.act_window,name:base_location.action_zip_tree
-msgid "Cites/locations"
-msgstr "Villes / lieux"
+#: model:ir.model.fields,help:base_location.field_res_better_zip_enforce_cities
+#: model:ir.model.fields,help:base_location.field_res_company_country_enforce_cities
+msgid ""
+"Check this box to ensure every address created in that country has a 'City' "
+"chosen in the list of the country's cities."
+msgstr ""
+"Cocher cette case pour forcer l'utilisation de la liste déroulantes des "
+"villes de ce pays lors de la saisie d'une adresse dans ce pays."
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_country_state_better_zip_ids
@@ -31,17 +36,9 @@ msgid "Cities"
 msgstr "Villes"
 
 #. module: base_location
-#: model:ir.ui.menu,name:base_location.locations_menu
-msgid "Cities/Locations"
-msgstr "Villes / Lieux"
-
-#. module: base_location
-#: model:ir.ui.menu,name:base_location.locations_root_menu
-msgid "Cities/Locations Management"
-msgstr "Cities/Locations Management"
-
-#. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_city
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_city_id
+#: model:ir.model.fields,field_description:base_location.field_res_company_city_id
 #: model:ir.ui.view,arch_db:base_location.better_zip_form
 msgid "City"
 msgstr "Ville"
@@ -58,12 +55,6 @@ msgid "City completion"
 msgstr "Complétion par ville"
 
 #. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_partner_zip_id
-#: model:ir.model.fields,field_description:base_location.field_res_users_zip_id
-msgid "City/Location"
-msgstr "Ville/location"
-
-#. module: base_location
 #: model:ir.model,name:base_location.model_res_better_zip
 msgid "City/locations completion object"
 msgstr "Objet de compléte de Ville / lieux"
@@ -72,6 +63,11 @@ msgstr "Objet de compléte de Ville / lieux"
 #: model:ir.model,name:base_location.model_res_company
 msgid "Companies"
 msgstr "Sociétés"
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_partner
+msgid "Contact"
+msgstr "Contacte"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_country_id
@@ -94,6 +90,17 @@ msgstr "Créé par"
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_date
 msgid "Created on"
 msgstr "Créé le"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_display_name
+msgid "Display Name"
+msgstr "Intitulé"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_better_zip_enforce_cities
+#: model:ir.model.fields,field_description:base_location.field_res_company_country_enforce_cities
+msgid "Enforce Cities"
+msgstr ""
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
@@ -123,27 +130,29 @@ msgstr "Mis à jour le"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_latitude
 msgid "Latitude"
+msgstr "Latitude"
+
+#. module: base_location
+#: model:ir.ui.view,arch_db:base_location.view_partner_form
+msgid "Location completion"
 msgstr ""
 
 #. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_company_better_zip_id
-msgid "Location"
-msgstr "Location"
+#: model:ir.actions.act_window,name:base_location.action_zip_tree
+#: model:ir.ui.menu,name:base_location.locations_menu
+#: model:ir.ui.view,arch_db:base_location.view_res_country_city_better_zip_form
+msgid "Locations"
+msgstr ""
+
+#. module: base_location
+#: model:ir.ui.menu,name:base_location.locations_root_menu
+msgid "Locations Management"
+msgstr ""
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_longitude
 msgid "Longitude"
-msgstr ""
-
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_better_zip_display_name
-msgid "Name"
-msgstr "Nom"
-
-#. module: base_location
-#: model:ir.model,name:base_location.model_res_partner
-msgid "Partner"
-msgstr "Partenaire"
+msgstr "Longitude"
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
@@ -157,12 +166,48 @@ msgid "State"
 msgstr "Etat"
 
 #. module: base_location
+#: code:addons/base_location/models/partner.py:64
+#, python-format
+msgid "The city of partner %s differs from that in location %s"
+msgstr ""
+
+#. module: base_location
+#: code:addons/base_location/models/better_zip.py:93
+#, python-format
+msgid "The country of the city differs from the country in location %s"
+msgstr ""
+
+#. module: base_location
+#: code:addons/base_location/models/partner.py:60
+#, python-format
+msgid "The country of the partner %s differs from that in location %s"
+msgstr ""
+
+#. module: base_location
+#: code:addons/base_location/models/better_zip.py:88
+#, python-format
+msgid "The country of the state differs from the country in location %s"
+msgstr ""
+
+#. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_better_zip_code
 msgid "The official code for the city"
 msgstr "Code officiel de la ville"
 
 #. module: base_location
-#: model:ir.model.fields,help:base_location.field_res_company_better_zip_id
+#: code:addons/base_location/models/better_zip.py:98
+#, python-format
+msgid "The state of the city differs from the state in location %s"
+msgstr ""
+
+#. module: base_location
+#: code:addons/base_location/models/partner.py:56
+#, python-format
+msgid "The state of the partner %s differs from that in location %s"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,help:base_location.field_res_company_zip_id
 msgid "Use the city name or the zip code to search the location"
 msgstr "Utilisez le nom de la ville ou le zip lors des recherches"
 
@@ -170,3 +215,10 @@ msgstr "Utilisez le nom de la ville ou le zip lors des recherches"
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_name
 msgid "ZIP"
 msgstr "ZIP"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_company_zip_id
+#: model:ir.model.fields,field_description:base_location.field_res_partner_zip_id
+#: model:ir.model.fields,field_description:base_location.field_res_users_zip_id
+msgid "ZIP Location"
+msgstr "Code postal"
