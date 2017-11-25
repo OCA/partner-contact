@@ -1,9 +1,8 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_contact_weight
+# * partner_contact_height
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
 # Wahyu Setiawan <wahyusetiaaa@gmail.com>, 2017
 msgid ""
 msgstr ""
@@ -19,22 +18,22 @@ msgstr ""
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#. module: partner_contact_weight
-#: model:ir.model,name:partner_contact_weight.model_res_partner
+#. module: partner_contact_height
+#: model:ir.model.fields,field_description:partner_contact_height.field_res_partner_height
+msgid "Height"
+msgstr ""
+
+#. module: partner_contact_height
+#: model:ir.model.fields,field_description:partner_contact_height.field_res_partner_height_uom
+msgid "Height UoM"
+msgstr ""
+
+#. module: partner_contact_height
+#: model:ir.model,name:partner_contact_height.model_res_partner
 msgid "Partner"
 msgstr "Mitra"
 
-#. module: partner_contact_weight
-#: model:ir.ui.view,arch_db:partner_contact_weight.view_partner_contact_weight
+#. module: partner_contact_height
+#: model:ir.ui.view,arch_db:partner_contact_height.view_partner_contact_height
 msgid "UoM"
-msgstr ""
-
-#. module: partner_contact_weight
-#: model:ir.model.fields,field_description:partner_contact_weight.field_res_partner_weight
-msgid "Weight"
-msgstr "Berat"
-
-#. module: partner_contact_weight
-#: model:ir.model.fields,field_description:partner_contact_weight.field_res_partner_weight_uom
-msgid "Weight UoM"
 msgstr ""

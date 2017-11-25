@@ -1,9 +1,8 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_contact_weight
+# * partner_default_sale_discount
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
 # Wahyu Setiawan <wahyusetiaaa@gmail.com>, 2017
 msgid ""
 msgstr ""
@@ -19,22 +18,18 @@ msgstr ""
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#. module: partner_contact_weight
-#: model:ir.model,name:partner_contact_weight.model_res_partner
+#. module: partner_default_sale_discount
+#: model:ir.model.fields,field_description:partner_default_sale_discount.field_res_partner_default_sale_discount
+#: model:ir.model.fields,field_description:partner_default_sale_discount.field_sale_order_default_sale_discount
+msgid "Default sales discount (%)"
+msgstr ""
+
+#. module: partner_default_sale_discount
+#: model:ir.model,name:partner_default_sale_discount.model_res_partner
 msgid "Partner"
 msgstr "Mitra"
 
-#. module: partner_contact_weight
-#: model:ir.ui.view,arch_db:partner_contact_weight.view_partner_contact_weight
-msgid "UoM"
-msgstr ""
-
-#. module: partner_contact_weight
-#: model:ir.model.fields,field_description:partner_contact_weight.field_res_partner_weight
-msgid "Weight"
-msgstr "Berat"
-
-#. module: partner_contact_weight
-#: model:ir.model.fields,field_description:partner_contact_weight.field_res_partner_weight_uom
-msgid "Weight UoM"
+#. module: partner_default_sale_discount
+#: model:ir.model,name:partner_default_sale_discount.model_sale_order
+msgid "Sales Order"
 msgstr ""
