@@ -1,9 +1,6 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Romain Deheele
-#    Copyright 2014 Camptocamp SA
-#
 #    Author: Quentin Theuret
 #    Copyright 2017 SenseFly, Amaris
 #

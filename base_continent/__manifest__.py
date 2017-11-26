@@ -22,21 +22,25 @@
 
 {
     'name': 'Continent management',
-    'version': '8.0.1.0.0',
-    'depends': ['base'],
-    'author': "Camptocamp,Odoo Community Association (OCA)",
+    'version': '1.0.1',
+    'depends': [
+        'base',
+        'sales_team',
+    ],
+    'author': "Camptocamp, senseFly, Amaris, Odoo Community Association (OCA)",
     'license': 'AGPL-3',
     'description': """
+    
 This module introduces continent management.
 ============================================
 Links continents to countries,
-adds continent field on partner form
-""",
+adds continent field on partner & company form
+    """,
     'category': 'Generic Modules/Base',
     'data': [
-        'base_continent_view.xml',
-        'base_continent_data.xml',
+        'views/base_continent_view.xml',
+        'data/base_continent_data.xml',
         'security/ir.model.access.csv',
     ],
-    'installable': False,
+    'installable': True,
 }
