@@ -11,7 +11,13 @@ _logger = logging.getLogger(__name__)
 try:
     from validate_email import validate_email
 except ImportError:
-    _logger.debug('Cannot import "validate_email".')
+    _logger.error('Cannot import "validate_email".')
+
+    def validate_email(email):
+        _logger.warning(
+            'Can not validate email, '
+            'python dependency required "validate_email"')
+        return True
 
 
 class ResPartner(models.Model):
