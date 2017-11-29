@@ -1,79 +1,44 @@
-# -*- coding: utf-8 -*-
 # Copyright 2017 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models
 from odoo.tests import common
 from odoo.exceptions import ValidationError
-
-
-class ResPartner(models.Model):
-    _inherit = 'res.partner'
-
-    social_security = fields.Char(
-        compute=lambda s: s._compute_identification(
-            'social_security', 'SSN',
-        ),
-        inverse=lambda s: s._inverse_identification(
-            'social_security', 'SSN',
-        ),
-        search=lambda s, *a: s._search_identification(
-            'SSN', *a
-        ),
-    )
+from .fake_models import ResPartner, setup_test_model, teardown_test_model
 
 
 class TestResPartner(common.SavepointCase):
 
-    @classmethod
-    def _init_test_model(cls, model_cls):
-        """ Build a model from model_cls in order to test abstract models.
-        Note that this does not actually create a table in the database, so
-        there may be some unidentified edge cases.
-        Args:
-            model_cls (openerp.models.BaseModel): Class of model to initialize
-        Returns:
-            model_cls: Instance
-        """
-        registry = cls.env.registry
-        cr = cls.env.cr
-        inst = model_cls._build_model(registry, cr)
-        model = cls.env[model_cls._inherit].with_context(todo=[])
-        model._prepare_setup()
-        model._setup_base()
-        model._setup_fields()
-        model._setup_complete()
-        model._auto_init()
-        model.init()
-        return inst
+    at_install = False
+    post_install = True
 
     @classmethod
     def setUpClass(cls):
-        super(TestResPartner, cls).setUpClass()
-        cls.env.registry.enter_test_mode()
-        cls._init_test_model(ResPartner)
-
-    def setUp(self):
-        super(TestResPartner, self).setUp()
-        bad_cat = self.env['res.partner.id_category'].create({
+        super().setUpClass()
+        setup_test_model(cls.env, ResPartner)
+        bad_cat = cls.env['res.partner.id_category'].create({
             'code': 'another_code',
             'name': 'another_name',
         })
-        self.env['res.partner.id_number'].create({
+        cls.env['res.partner.id_number'].create({
             'name': 'Bad ID',
             'category_id': bad_cat.id,
-            'partner_id': self.env.user.partner_id.id,
+            'partner_id': cls.env.user.partner_id.id,
         })
-        self.partner_id_category = self.env['res.partner.id_category'].create({
+        cls.partner_id_category = cls.env['res.partner.id_category'].create({
             'code': 'id_code',
             'name': 'id_name',
         })
-        self.partner = self.env.user.partner_id
-        self.partner_id = self.env['res.partner.id_number'].create({
+        cls.partner = cls.env.user.partner_id
+        cls.partner_id = cls.env['res.partner.id_number'].create({
             'name': 'Good ID',
-            'category_id': self.partner_id_category.id,
-            'partner_id': self.partner.id,
+            'category_id': cls.partner_id_category.id,
+            'partner_id': cls.partner.id,
         })
+
+    @classmethod
+    def tearDownClass(cls):
+        teardown_test_model(cls.env, ResPartner)
+        super().tearDownClass()
 
     def test_compute_identification(self):
         """ It should set the proper field to the proper ID name. """
