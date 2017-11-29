@@ -28,7 +28,7 @@
 
     <record model="ir.ui.menu" id="res_partner_role_menu">
         <field name="name">Partner Roles</field>
-        <field name="parent_id" ref="sales_team.menu_config_address_book"/>
+        <field name="parent_id" ref="contacts.res_partner_menu_config"/>
         <field name="action" ref="res_partner_role_act_window"/>
         <field name="sequence" eval="16"/>
     </record>
