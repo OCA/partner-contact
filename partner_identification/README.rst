@@ -1,4 +1,4 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
@@ -21,7 +21,7 @@ and vary from country to country.
 Installation
 ============
 
-No specific installation step required
+No specific installation step required.
 
 
 Configuration
