@@ -27,7 +27,7 @@ No specific installation step required
 Configuration
 =============
 
-Configure all ID types you need in Sales > Configuration > Contacts > Partner ID Categories.
+Configure all ID types you need in Contacts > Configuration > Partner ID Categories.
 For example, we create a category 'Driver License':
 
 Name:
@@ -40,10 +40,10 @@ Python validation code:
 
   .. code-block:: python
 
-   partner.with_context(id_no_validate=True).write({
-      'name': 'Bad Value',
-      'category_id': self.env.ref('id_category_only_numerics').id,
-   })
+     partner.with_context(id_no_validate=True).write({
+        'name': 'Bad Value',
+        'category_id': self.env.ref('id_category_only_numerics').id,
+     })
 
 Usage
 =====
@@ -70,7 +70,7 @@ Notes:
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/10.0
+   :target: https://runbot.odoo-community.org/runbot/134/11.0
 
 
 Known issues / Roadmap
@@ -86,15 +86,17 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues
 <https://github.com/OCA/partner_contact/issues>`_. In case of trouble, please
 check there if your issue has already been reported. If you spotted it first,
-help us smashing it by providing a detailed and welcomed `feedback
-<https://github.com/OCA/
-partner_contact/issues/new?body=module:%20
-partner_identifiers%0Aversion:%20
-9.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+help us smash it by providing detailed and welcomed feedback.
 
 
 Credits
 =======
+
+Images
+------
+
+* Odoo Community Association: `Icon <https://odoo-community.org/logo.png>`_.
+
 
 Contributors
 ------------
@@ -105,6 +107,8 @@ Contributors
 * Laurent Mignon <laurent.mignon@acsone.eu>
 * Jairo Llopis <jairo.llopis@tecnativa.com>
 * Dave Lasley <dave@laslabs.com>
+* Simone Orsi <simone.orsi@camptocamp.com>
+
 
 Maintainer
 ----------
@@ -120,4 +124,3 @@ mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
 To contribute to this module, please visit https://odoo-community.org.
-
