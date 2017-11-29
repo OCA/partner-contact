@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 # Copyright 2004-2010 Tiny SPRL http://tiny.be
 # Copyright 2010-2012 ChriCar Beteiligungs- und Beratungs- GmbH
 #             http://www.camptocamp.at
@@ -28,5 +26,5 @@
               'ACSONE SA/NV,'
               'LasLabs,'
               'Odoo Community Association (OCA)',
-    'website': 'https://odoo-community.org/',
+    'website': 'https://github.com/OCA/partner-contact',
 }
