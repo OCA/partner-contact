@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#  ©  2016 ACSONE SA/NV (<http://acsone.eu>)
+#  Copyright  2016 ACSONE SA/NV (<http://acsone.eu>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from psycopg2._psycopg import IntegrityError
 from odoo.tests import common
@@ -19,7 +19,7 @@ class TestPartnerIdentificationBase(common.TransactionCase):
         self.assertEqual(partner_id_category.code, 'id_code')
 
         partner_1 = self.env.ref('base.res_partner_1')
-        self.assertEquals(len(partner_1.id_numbers), 0)
+        self.assertEqual(len(partner_1.id_numbers), 0)
         # create without required category
         with self.assertRaises(IntegrityError), self.cr.savepoint():
             partner_1.write({'id_numbers': [(0, 0, {
@@ -30,11 +30,11 @@ class TestPartnerIdentificationBase(common.TransactionCase):
             'name': '1234',
             'category_id': partner_id_category.id
         })]})
-        self.assertEquals(len(partner_1.id_numbers), 1)
-        self.assertEquals(partner_1.id_numbers.name, '1234')
+        self.assertEqual(len(partner_1.id_numbers), 1)
+        self.assertEqual(partner_1.id_numbers.name, '1234')
         # delete
         partner_1.write({'id_numbers': [(5, 0, 0)]})
-        self.assertEquals(len(partner_1.id_numbers), 0)
+        self.assertEqual(len(partner_1.id_numbers), 0)
 
 
 class TestPartnerCategoryValidation(common.TransactionCase):
@@ -58,8 +58,8 @@ if id_number.name != '1234':
             'name': '1234',
             'category_id': partner_id_category.id
         })]})
-        self.assertEquals(len(partner_1.id_numbers), 1)
-        self.assertEquals(partner_1.id_numbers.name, '1234')
+        self.assertEqual(len(partner_1.id_numbers), 1)
+        self.assertEqual(partner_1.id_numbers.name, '1234')
 
         partner_id_category2 = self.env['res.partner.id_category'].create({
             'code': 'id_code2',
