@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-<data>
+<odoo>
 
 <!-- Partner Identification Number Categories -->
 <record id="view_partner_id_category_form" model="ir.ui.view">
@@ -38,7 +37,6 @@
 
 <menuitem action="action_partner_id_category"
           id="menu_partner_id_category"
-          parent="sales_team.menu_config_address_book"/>
+          parent="contacts.res_partner_menu_config"/>
 
-</data>
-</openerp>
+</odoo>

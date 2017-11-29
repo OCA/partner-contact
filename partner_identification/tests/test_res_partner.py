@@ -40,12 +40,11 @@ class TestResPartner(common.SavepointCase):
         inst = model_cls._build_model(registry, cr)
         model = cls.env[model_cls._inherit].with_context(todo=[])
         model._prepare_setup()
-        model._setup_base(partial=False)
-        model._setup_fields(partial=False)
+        model._setup_base()
+        model._setup_fields()
         model._setup_complete()
         model._auto_init()
         model.init()
-        model._auto_end()
         return inst
 
     @classmethod
