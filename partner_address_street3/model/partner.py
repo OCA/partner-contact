@@ -23,5 +23,5 @@ class ResPartner(models.Model):
         """Remove empty lines which can happen when street3 field is empty."""
         res = super(ResPartner, self)._display_address(
             without_company=without_company)
-        res = re.sub(r'([\n]+)', r'\n', res)
+        res = re.sub(r'\n{2,}', r'\n', res)
         return res
