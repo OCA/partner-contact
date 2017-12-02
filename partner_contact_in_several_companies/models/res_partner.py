@@ -94,15 +94,14 @@ class ResPartner(models.Model):
         return super(ResPartner, modified_self).unlink()
 
     @api.multi
-    def _commercial_partner_compute(self, name, args):
+    def _compute_commercial_partner(self):
         """ Returns the partner that is considered the commercial
         entity of this partner. The commercial entity holds the master data
         for all commercial fields (see :py:meth:`~_commercial_fields`) """
-        result = super(ResPartner, self)._commercial_partner_compute(name,
-                                                                     args)
+        result = super(ResPartner, self)._compute_commercial_partner()
         for partner in self:
             if partner.contact_type == 'attached' and not partner.parent_id:
-                result[partner.id] = partner.contact_id.id
+                partner.commercial_partner_id = partner.contact_id
         return result
 
     def _contact_fields(self):
