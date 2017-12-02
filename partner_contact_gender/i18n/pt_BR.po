@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-28 01:35+0000\n"
+"POT-Creation-Date: 2017-11-25 07:28+0000\n"
 "PO-Revision-Date: 2015-12-15 11:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/pt_BR/)\n"
@@ -39,7 +39,7 @@ msgstr "Masculino"
 #. module: partner_contact_gender
 #: selection:res.partner,gender:0
 msgid "Other"
-msgstr ""
+msgstr "Outro"
 
 #. module: partner_contact_gender
 #: model:ir.model,name:partner_contact_gender.model_res_partner

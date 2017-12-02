@@ -4,14 +4,13 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
-# Peter Hageman <hageman.p@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-28 01:37+0000\n"
-"PO-Revision-Date: 2017-10-28 01:37+0000\n"
-"Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
+"POT-Creation-Date: 2017-11-25 07:29+0000\n"
+"PO-Revision-Date: 2017-11-25 07:29+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +21,7 @@ msgstr ""
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_child_ids
 msgid "Children"
-msgstr ""
+msgstr "Onderliggende items"
 
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_create_uid
@@ -40,7 +39,7 @@ msgid "Display Name"
 msgstr "Weergavenaam"
 
 #. module: partner_sector
-#: code:addons/partner_sector/models/res_partner_sector.py:42
+#: code:addons/partner_sector/models/res_partner_sector.py:43
 #, python-format
 msgid "Error! You cannot create recursive sectors."
 msgstr ""
@@ -76,6 +75,11 @@ msgid "Name"
 msgstr "Naam"
 
 #. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_id
+msgid "Parent"
+msgstr "Bovenliggend item"
+
+#. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_left
 msgid "Parent Left"
 msgstr ""
@@ -83,11 +87,6 @@ msgstr ""
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_right
 msgid "Parent Right"
-msgstr ""
-
-#. module: partner_sector
-#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_id
-msgid "Parent id"
 msgstr ""
 
 #. module: partner_sector
