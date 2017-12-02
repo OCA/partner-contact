@@ -38,7 +38,7 @@ For further information, please visit:
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/9.0
+   :target: https://runbot.odoo-community.org/runbot/134/11.0
 
 Known issues / Roadmap
 ======================
@@ -48,14 +48,10 @@ Known issues / Roadmap
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/
-partner-contact/issues>`_.
-In case of trouble, please check there if your issue has already been reported.
-If you spotted it first, help us smashing it by providing a detailed and welcomed feedback `here <https://github.com/OCA/
-partner-contact/issues/new?body=module:%20
-partner_contact_personal_information_page%0Aversion:%20
-9.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
-
+Bugs are tracked on `GitHub Issues
+<https://github.com/OCA/partner-contact/issues>`_. In case of trouble, please
+check there if your issue has already been reported. If you spotted it first,
+help us smashing it by providing a detailed and welcomed feedback.
 
 Credits
 =======
@@ -68,6 +64,7 @@ Contributors
 * Matjaž Mozetič <m.mozetic@matmoz.si>
 * Rudolf Schnapka <schnapkar@golive-saar.de>
 * Richard deMeester <richard@willowit.com.au>
+* Nicolas JEUDY <https://github.com/njeudy>
 
 Maintainer
 ----------
