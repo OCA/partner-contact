@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# Peter Hageman <hageman.p@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-22 03:38+0000\n"
-"PO-Revision-Date: 2017-11-22 03:38+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2017-11-25 06:38+0000\n"
+"PO-Revision-Date: 2017-11-25 06:38+0000\n"
+"Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,19 +95,19 @@ msgstr "Laatst bijgewerkt op"
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
 msgid "Map"
-msgstr ""
+msgstr "Kaart"
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_map_website
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_context_map_website_id
 #: model:ir.ui.view,arch_db:partner_external_map.map_website_form
 msgid "Map Website"
-msgstr ""
+msgstr "Kaartwebsite"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_name
 msgid "Map Website Name"
-msgstr ""
+msgstr "Kaartwebsite-naam"
 
 #. module: partner_external_map
 #: model:ir.actions.act_window,name:partner_external_map.map_website_action
@@ -126,7 +127,7 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_users_form
 msgid "Maps"
-msgstr ""
+msgstr "Kaarten"
 
 #. module: partner_external_map
 #: code:addons/partner_external_map/models/res_partner.py:52
