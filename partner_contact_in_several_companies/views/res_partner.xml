@@ -55,7 +55,6 @@
                         <field name="city"/>
                         <field name="country_id"/>
                         <field name="mobile"/>
-                        <field name="fax"/>
                         <field name="state_id"/>
                         <field name="image"/>
                         <field name="lang"/>
@@ -77,7 +76,6 @@
                                         <div t-if="record.email.raw_value"><field name="email"/></div>
                                         <div t-if="record.phone.raw_value">Phone: <field name="phone"/></div>
                                         <div t-if="record.mobile.raw_value">Mobile: <field name="mobile"/></div>
-                                        <div t-if="record.fax.raw_value">Fax: <field name="fax"/></div>
                                     </div>
                                 </div>
                             </t>
@@ -168,7 +166,7 @@
                 </tree>
             </field>
         </field>
-        <xpath expr="//t[@t-name='kanban-box']//div[@class='oe_kanban_details']/ul/li[3]" position="after">
+        <xpath expr="//t[@t-name='kanban-box']//div[hasclass('oe_kanban_details')]/ul/li[3]" position="after">
             <t t-if="record.other_contact_ids.raw_value.length &gt; 0">
                 <li>+<t t-esc="record.other_contact_ids.raw_value.length"/>
                      <t t-if="record.other_contact_ids.raw_value.length == 1">other position</t>
