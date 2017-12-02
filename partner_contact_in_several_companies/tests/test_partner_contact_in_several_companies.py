@@ -139,8 +139,8 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         new_contact = self.partner.create(
             {'contact_id': self.bob_contact.id}
         )
-        self.assertEqual(new_contact.name, u'Bob Egnops')
-        self.assertEqual(new_contact.contact_type, u'attached')
+        self.assertEqual(new_contact.name, 'Bob Egnops')
+        self.assertEqual(new_contact.contact_type, 'attached')
 
         # Create a contact with both contact_id and name;
         # contact's name should override provided value in that case
@@ -149,14 +149,14 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         )
         self.assertEqual(
             new_contact.name,
-            u'Bob Egnops'
+            'Bob Egnops'
         )
 
         # Reset contact to standalone
         new_contact.write({'contact_id': False})
         self.assertEqual(
             new_contact.contact_type,
-            u'standalone',
+            'standalone',
         )
 
         # Reset contact to attached, and ensure only it is unlinked (i.e.
@@ -216,4 +216,33 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
             new_context_val,
             details['context'],
             msg='Custom actions incorrectly updated with new context'
+        )
+
+    def test_07_onchange(self):
+        """Check onchange method
+        """
+
+        new_contact = self.partner.create({'name': 'Bob before onchange'})
+        new_contact.write({'contact_id': self.bob_contact.id})
+        new_contact._onchange_contact_id()
+        self.assertEqual(
+            new_contact.name,
+            'Bob Egnops',
+        )
+
+        new_contact.write({'contact_type': 'standalone'})
+        new_contact._onchange_contact_type()
+        self.assertEqual(
+            new_contact.contact_id,
+            self.partner,
+        )
+
+    def test_08_commercial_partner_compute(self):
+        new_contact = self.partner.create({'name': 'Bob before onchange'})
+        new_contact.write({'contact_id': self.bob_contact.id,
+                           'parent_id': False})
+        new_contact._compute_commercial_partner()
+        self.assertEqual(
+            new_contact.commercial_partner_id,
+            self.bob_contact,
         )
