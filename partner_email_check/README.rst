@@ -11,7 +11,7 @@ This module validate the field `email` in the module `res.partner`.
 Configuration
 =============
 
-Install python package validate_email: `sudo pip install validate_email`
+Install python package validate_email: ``sudo pip install validate_email``
 Install Email Check module.
 
 Usage

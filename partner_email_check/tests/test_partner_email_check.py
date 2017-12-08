@@ -11,7 +11,6 @@ class TestPartnerEmailCheck(TransactionCase):
         super(TestPartnerEmailCheck, self).setUp()
         self.test_partner = self.env['res.partner'].create({
             'name': 'test',
-            'title': self.env.ref('base.res_partner_title_madam').id,
         })
 
     def test_bad_email(self):

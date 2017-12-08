@@ -25,9 +25,8 @@ class ResPartner(models.Model):
 
     @api.constrains('email')
     def constrains_email(self):
-        for rec in self:
-            if rec.email:
-                self.email_check(rec.email)
+        for rec in self.filtered("email"):
+            self.email_check(rec.email)
 
     @api.model
     def email_check(self, email):
