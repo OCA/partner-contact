@@ -14,6 +14,6 @@ class ResCountryState(models.Model):
         default=3
     )
     geonames_state_code_column = fields.Integer(
-        u'Geoname State Name Code',
+        u'Geoname State Code Column',
         default=4
     )
