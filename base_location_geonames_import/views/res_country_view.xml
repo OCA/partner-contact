@@ -7,18 +7,16 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <field name="code" position="after">
-                <field name="geonames_state_name_column" />
-                <field name="geonames_state_code_column" />
+                <field name="geonames_state_name" />
+                <field name="geonames_state_code" />
             </field>
         </field>
     </record>
 
-    <menuitem
-            id="better_zip_country_geonames_import_menu"
-            action="base.action_country"
-            parent="base_location.locations_root_menu"
-            sequence="25"
-    />
+    <menuitem id="better_zip_country_geonames_import_menu"
+        action="base.action_country"
+        parent="base_location.locations_root_menu"
+        sequence="25"/>
 </odoo>
 
 
