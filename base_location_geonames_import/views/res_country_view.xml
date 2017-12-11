@@ -12,11 +12,4 @@
             </field>
         </field>
     </record>
-
-    <menuitem id="better_zip_country_geonames_import_menu"
-        action="base.action_country"
-        parent="base_location.locations_root_menu"
-        sequence="25"/>
 </odoo>
-
-
