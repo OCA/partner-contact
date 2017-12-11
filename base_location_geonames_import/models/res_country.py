@@ -10,10 +10,10 @@ class ResCountryState(models.Model):
     _inherit = 'res.country'
 
     geonames_state_name = fields.Integer(
-        u'Geoname State Name Column',
+        'Geoname State Name Column',
         default=3,
     )
     geonames_state_code = fields.Integer(
-        u'Geoname State Code Column',
+        'Geoname State Code Column',
         default=4,
     )
