@@ -7,8 +7,8 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <field name="code" position="after">
-                <field name="geonames_state_name" />
-                <field name="geonames_state_code" />
+                <field name="geonames_state_name_column" />
+                <field name="geonames_state_code_column" />
             </field>
         </field>
     </record>
