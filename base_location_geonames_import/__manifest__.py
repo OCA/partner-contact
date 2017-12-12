@@ -19,7 +19,7 @@
     'depends': ['base_location'],
     'external_dependencies': {'python': ['requests', 'unicodecsv']},
     'data': [
-        'data/country.xml',
+        'data/res_country_data.xml',
         'views/res_country_view.xml',
         'wizard/geonames_import_view.xml',
         ],
