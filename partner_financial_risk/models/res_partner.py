@@ -2,6 +2,7 @@
 # Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+from collections import defaultdict
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from openerp import api, fields, models
@@ -249,12 +250,24 @@ class ResPartner(models.Model):
         ConfigParameter = self.env['ir.config_parameter']
         last_check = ConfigParameter.get_param(
             'partner_financial_risk.last_check', default='2016-01-01')
-        move_lines = self.env['account.move.line'].search([
-            ('reconciled', '=', False),
-            ('account_id.internal_type', '=', 'receivable'),
-            ('date_maturity', '>=', last_check),
-            ('date_maturity', '<', max_date)])
-        move_lines.mapped('partner_id')._compute_risk_account_amount()
+        groups = self.env['account.move.line'].read_group(
+            [('reconciled', '=', False),
+             ('partner_id', '!=', False),
+             ('account_id.internal_type', '=', 'receivable'),
+             ('date_maturity', '>=', last_check),
+             ('date_maturity', '<', max_date)],
+            ['company_id', 'partner_id'],
+            ['company_id', 'partner_id'],
+            lazy=False,
+        )
+        group_dic = defaultdict(list)
+        for group in groups:
+            group_dic[group['company_id'][0]].append(group['partner_id'][0])
+        for company_id, partner_ids in group_dic.iteritems():
+            partners = self.browse(partner_ids)
+            partners.with_context(
+                force_company=company_id,
+            )._compute_risk_account_amount()
         ConfigParameter.set_param(
             'partner_financial_risk.last_check', max_date)
         return True
