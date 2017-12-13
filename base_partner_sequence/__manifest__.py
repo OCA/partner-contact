@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2004-2009 Tiny SPRL (<http://tiny.be>).
 # Copyright 2013 initOS GmbH & Co. KG (<http://www.initos.com>).
 # Copyright 2016 Tecnativa - Vicent Cubells
@@ -11,7 +10,7 @@
               "Odoo Community Association (OCA), "
               "Camptocamp, ",
     "name": "Add a sequence on customers' code",
-    "version": "10.0.1.0.0",
+    "version": "11.0.1.0.0",
     "category": "Generic Modules/Base",
     "website": "http://www.initos.com",
     "depends": [
