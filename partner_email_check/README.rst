@@ -3,21 +3,20 @@
    :alt: License: AGPL-3
 
 ===========
-Email check
+Partner Email Check
 ===========
 
-This module validate the field `email` in the module `res.partner`.
+This module validate the field ``email`` in the module ``res.partner``.
 
 Configuration
 =============
 
-Install python package validate_email: ``sudo pip install validate_email``
-Install Email Check module.
+Install python package validate_email: ``sudo pip install validate_email``.
 
 Usage
 =====
 
-This module integrate automatically in all of the view `res.partner`
+This module integrate automatically in all of the view ``res.partner``
 
 Bug Tracker
 ===========
