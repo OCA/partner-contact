@@ -17,3 +17,4 @@ class Partner(models.Model):
         readonly=True,
         store=True,
     )
+

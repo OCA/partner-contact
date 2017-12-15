@@ -6,6 +6,7 @@
 from odoo import models
 from odoo import fields
 
+
 class Country(models.Model):
     _inherit = 'res.country'
 
