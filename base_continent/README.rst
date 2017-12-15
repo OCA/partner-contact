@@ -44,6 +44,8 @@ Contributors
 
 * Romain Deheele
 * Alexis de Lattre <alexis.delattre@akretion.com>
+* senseFly (http://sensefly.com)
+* Quentin Theuret <quentin.theuret@amaris.com>
 
 Maintainer
 ----------
