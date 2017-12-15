@@ -20,7 +20,7 @@ You can now group partners per continent.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/8.0
+   :target: https://runbot.odoo-community.org/runbot/134/10.0
 
 
 Bug Tracker
@@ -44,6 +44,8 @@ Contributors
 
 * Romain Deheele
 * Alexis de Lattre <alexis.delattre@akretion.com>
+* senseFly (http://sensefly.com)
+* Quentin Theuret <quentin.theuret@amaris.com>
 
 Maintainer
 ----------
