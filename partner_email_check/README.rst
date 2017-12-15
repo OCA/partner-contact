@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-===========
+===================
 Partner Email Check
-===========
+===================
 
 This module validate the field ``email`` in the module ``res.partner``.
 
