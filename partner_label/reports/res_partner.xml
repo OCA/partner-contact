@@ -11,7 +11,7 @@
                 <div class="page">
                     <t t-foreach="docs.with_context(show_address=True)" t-as="this">
                         <div t-attf-style="height: {{this.company_id.partner_labels_height}}mm; width: {{this.company_id.partner_labels_width}}mm; padding: {{this.company_id.partner_labels_padding}}mm; margin: {{this.company_id.partner_labels_margin}}mm; display: inline-block; overflow: hidden;">
-                            <div t-esc="this.name_get()[0][1]" style="white-space: pre-line;" />
+                            <address t-field="this.self" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
                         </div>
                     </t>
                 </div>
