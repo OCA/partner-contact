@@ -6,7 +6,7 @@
 
 {
     'name': 'Base Location Geonames Import',
-    'version': '10.0.1.0.1',
+    'version': '10.0.1.1.1',
     'category': 'Partner Management',
     'license': 'AGPL-3',
     'summary': 'Import better zip entries from Geonames',
@@ -19,6 +19,8 @@
     'depends': ['base_location'],
     'external_dependencies': {'python': ['requests', 'unicodecsv']},
     'data': [
+        'data/res_country_data.xml',
+        'views/res_country_view.xml',
         'wizard/geonames_import_view.xml',
         ],
     'installable': True,
