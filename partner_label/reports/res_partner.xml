@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="view_res_partner_label">
+        <t t-raw="'&lt;base href=%s&gt;' % base_url"/>
+        &lt;!DOCTYPE html&gt;
+        <html>
+            <head>
+                <meta charset="utf-8"/>
+            </head>
+            <body class="container">
+                <div class="page">
+                    <t t-foreach="docs.with_context(show_address=True)" t-as="this">
+                        <div t-attf-style="height: {{this.company_id.partner_labels_height}}mm; width: {{this.company_id.partner_labels_width}}mm; padding: {{this.company_id.partner_labels_padding}}mm; margin: {{this.company_id.partner_labels_margin}}mm; display: inline-block; overflow: hidden;">
+                            <address t-field="this.self" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                        </div>
+                    </t>
+                </div>
+            </body>
+        </html>
+    </template>
+    <report id="report_res_partner_label"
+        string="Labels"
+        model="res.partner"
+        name="partner_label.view_res_partner_label"
+        report_type="qweb-pdf"
+        paperformat="report.paperformat_euro"
+    />
+</odoo>

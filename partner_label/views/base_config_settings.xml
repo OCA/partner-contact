@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_general_configuration" model="ir.ui.view">
+        <field name="model">base.config.settings</field>
+        <field name="inherit_id" ref="base_setup.view_general_configuration" />
+        <field name="arch" type="xml">
+            <group name="report" position="after">
+                <group name="partner_labels" string="Labels configuration">
+                    <label for="partner_labels_width" />
+                    <div><field name="partner_labels_width" class="oe_inline" /> mm</div>
+                    <label for="partner_labels_height" />
+                    <div><field name="partner_labels_height" class="oe_inline" /> mm</div>
+                    <label for="partner_labels_margin" />
+                    <div><field name="partner_labels_margin" class="oe_inline" /> mm</div>
+                    <label for="partner_labels_padding" />
+                    <div><field name="partner_labels_padding" class="oe_inline" /> mm</div>
+                    <label for="partner_labels_paperformat_id" />
+                    <div>
+                        <field name="partner_labels_paperformat_id" class="oe_inline" />
+                        <button type="object" name="action_partner_labels_preview" string="Preview" />
+                    </div>
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>
