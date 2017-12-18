@@ -8,12 +8,8 @@ Base Partner Validate Address
 
 Adds an abstract core for address verification via remote interfaces.
 
-Installation
-============
-
-
-Configuration
-=============
+This is a technical module that is meant to provide a base for other modules. It does
+not provide any functionality on its own.
 
 Usage
 =====
@@ -21,16 +17,6 @@ Usage
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/149/10.0
-
-Known Issues / Roadmap
-======================
-
-Known Issues
-------------
-
-
-Roadmap
--------
 
 Bug Tracker
 ===========

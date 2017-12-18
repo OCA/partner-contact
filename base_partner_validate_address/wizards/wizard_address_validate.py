@@ -67,10 +67,12 @@ class WizardAddressValidate(models.TransientModel):
     latitude_original = fields.Float(
         string='Latitude',
         related='partner_id.latitude',
+        readonly=True,
     )
     longitude_original = fields.Float(
         string='Longitude',
         related='partner_id.longitude',
+        readonly=True,
     )
 
     @api.model
@@ -117,6 +119,8 @@ class WizardAddressValidate(models.TransientModel):
                 'state_id': record.state_id.id,
                 'country_id': record.country_id.id,
                 'zip': record.zip,
+                'latitude': record.latitude,
+                'longitude': record.longitude,
             })
         return {
             'type': 'ir.actions.act_window_close',
