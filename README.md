@@ -50,11 +50,13 @@ addon | version | summary
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 10.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_contact_weight](partner_contact_weight/) | 10.0.1.0.0 | Provide contact weight
 [partner_create_by_vat](partner_create_by_vat/) | 10.0.1.0.0 | Using VIES webservice, name and address information will be fetched and added to the partner.
+[partner_email_check](partner_email_check/) | 10.0.1.0.0 | Validate email address field
 [partner_employee_quantity](partner_employee_quantity/) | 10.0.1.0.0 | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 10.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_firstname](partner_firstname/) | 10.0.2.1.0 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 10.0.0.1.0 | Add specific helper methods
 [partner_identification](partner_identification/) | 10.0.1.1.1 | Partner Identification Numbers
+[partner_label](partner_label/) | 10.0.1.0.0 | Print partner labels
 [partner_multi_relation](partner_multi_relation/) | 10.0.1.0.1 | Partner relations
 [partner_password_reset](partner_password_reset/) | 10.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
 [partner_phone_extension](partner_phone_extension/) | 10.0.1.0.0 | Partner Phone Number Extension
