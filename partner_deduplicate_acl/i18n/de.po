@@ -3,15 +3,14 @@
 # * crm_deduplicate_acl
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
-# Rudolf Schnapka <rs@techno-flex.de>, 2017
+# OCA Transbot <transbot@odoo-community.org>, 2018
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-28 02:27+0000\n"
-"PO-Revision-Date: 2017-03-28 02:27+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>, 2017\n"
+"POT-Creation-Date: 2018-05-03 02:51+0000\n"
+"PO-Revision-Date: 2018-05-03 02:51+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,6 +24,11 @@ msgid "Automatically"
 msgstr "Automatisch"
 
 #. module: crm_deduplicate_acl
+#: model:ir.model,name:crm_deduplicate_acl.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: crm_deduplicate_acl
 #: model:ir.module.category,name:crm_deduplicate_acl.category
 #: model:ir.ui.menu,name:crm_deduplicate_acl.partner_merge_automatic_menu
 msgid "Deduplicate Contacts"
@@ -36,7 +40,7 @@ msgid "Manually"
 msgstr "Manuell"
 
 #. module: crm_deduplicate_acl
-#: model:ir.ui.menu,name:crm_deduplicate_acl.root_menu
+#: model:ir.ui.menu,name:crm_deduplicate_acl.crm_tools
 msgid "Tools"
 msgstr "Werkzeuge"
 

@@ -4,11 +4,11 @@
      Copyright 2017 Tecnativa - Pedro M. Baeza
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
 <odoo>
-    <menuitem id='root_menu' name='Tools'
-              parent='sales_team.menu_base_partner' sequence="25"/>
+    <menuitem id='crm_tools' name='Tools'
+              parent='crm.crm_menu_root' sequence="24"/>
     <menuitem id='partner_merge_automatic_menu'
               action='crm.action_partner_deduplicate'
               groups='group_automatically'
-              parent='root_menu'
+              parent='crm_tools'
     />
 </odoo>
