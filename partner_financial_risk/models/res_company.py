@@ -10,4 +10,6 @@ class ResCompany(models.Model):
 
     invoice_unpaid_margin = fields.Integer(
         string="Maturity Margin",
-        help="Days after due date to set an invoice as unpaid")
+        help="Days after due date to set an invoice as unpaid."
+             "The change of this field recompute all partners risk,"
+             "be patient.")

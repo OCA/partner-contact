@@ -13,7 +13,7 @@ class AccountInvoice(models.Model):
         if self.env.context.get('bypass_risk', False):
             return self.signal_workflow('invoice_open')
         for invoice in self:
-            partner = invoice.partner_id
+            partner = invoice.partner_id.commercial_partner_id
             exception_msg = ""
             if partner.risk_exception:
                 exception_msg = _("Financial risk exceeded.\n")
@@ -22,7 +22,9 @@ class AccountInvoice(models.Model):
                     partner.risk_invoice_open_limit):
                 exception_msg = _(
                     "This invoice exceeds the open invoices risk.\n")
-            elif partner.risk_invoice_open_include and (
+            # If risk_invoice_draft_include this invoice included in risk_total
+            elif not partner.risk_invoice_draft_include and (
+                    partner.risk_invoice_open_include and
                     (partner.risk_total + invoice.amount_total) >
                     partner.credit_limit):
                 exception_msg = _(
