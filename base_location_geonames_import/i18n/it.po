@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-21 01:48+0000\n"
-"PO-Revision-Date: 2017-11-21 01:48+0000\n"
+"POT-Creation-Date: 2017-12-26 15:32+0000\n"
+"PO-Revision-Date: 2017-12-26 15:32+0000\n"
 "Last-Translator: Giuliano Lotta <giuliano.lotta@gmail.com>, 2017\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "MIME-Version: 1.0\n"
@@ -44,6 +44,7 @@ msgstr ""
 " lettere maiuscole)."
 
 #. module: base_location_geonames_import
+#: model:ir.model,name:base_location_geonames_import.model_res_country
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_country_id
 msgid "Country"
 msgstr "Nazione"
@@ -73,7 +74,17 @@ msgstr ""
 " lista delle città"
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:129
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country_geonames_state_code_column
+msgid "Geonames State Code Column"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country_geonames_state_name_column
+msgid "Geonames State Name Column"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:133
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Errore %d mentre si stava scaricando il file %s."
