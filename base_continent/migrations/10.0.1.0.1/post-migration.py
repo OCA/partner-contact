@@ -2,6 +2,7 @@
 # © 2017 senseFly, Amaris (Author: Quentin Theuret)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+
 def migrate(cr, version):
     continents = [
         ('af', 'AF'),
