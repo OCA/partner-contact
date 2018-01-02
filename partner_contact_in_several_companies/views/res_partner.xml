@@ -34,6 +34,17 @@
     <field name="inherit_id" ref="base.view_partner_form"/>
     <field name="type">form</field>
     <field name="arch" type="xml">
+        <field name="parent_id" position="after">
+            <field name="contact_id" invisible="1"/>
+        </field>
+        <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="before">
+            <field name='contact_type' readonly='0'/>
+            <field name="contact_id" string="Contact"
+                   attrs="{'invisible': [('contact_type','!=','attached')], 'required': [('contact_type','=','attached')]}"/>
+        </xpath>
+        <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="attributes">
+            <attribute name="attrs">{'invisible': [('contact_type','=','attached')]}</attribute>
+        </xpath>
         <field name="is_company" position="after">
             <field name="contact_type" invisible="1"/>
         </field>
@@ -119,14 +130,6 @@
                 </field>
             </page>
         </page>
-        <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="before">
-            <field name='contact_type' readonly='0'/>
-            <field name="contact_id" string="Contact"
-                   attrs="{'invisible': [('contact_type','!=','attached')], 'required': [('contact_type','=','attached')]}"/>
-        </xpath>
-        <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="attributes">
-            <attribute name="attrs">{'invisible': [('contact_type','=','attached')]}</attribute>
-        </xpath>
     </field>
 </record>
 
