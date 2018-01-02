@@ -68,6 +68,7 @@ Contributors
 * Jairo Llopis <j.llopis@grupoesoc.es>
 * Richard deMeester <richard@willowit.com.au>
 * Nicolas JEUDY <https://github.com/njeudy>
+* Franco Tampieri <franco@tampieri.info>
 
 Maintainer
 ----------
