@@ -250,7 +250,7 @@ class ResPartner(models.Model):
         ConfigParameter = self.env['ir.config_parameter']
         last_check = ConfigParameter.get_param(
             'partner_financial_risk.last_check', default='2016-01-01')
-        groups = self.env['account.move.line'].read_group(
+        groups = self.env['account.move.line'].sudo().read_group(
             [('reconciled', '=', False),
              ('partner_id', '!=', False),
              ('account_id.internal_type', '=', 'receivable'),
