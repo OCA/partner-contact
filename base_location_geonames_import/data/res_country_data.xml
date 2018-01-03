@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="base.es" model="res.country">
+        <field name="geonames_state_code_column" eval="6" />
+        <field name="geonames_state_name_column" eval="5" />
+    </record>
+    <record id="base.it" model="res.country">
+        <field name="geonames_state_code_column" eval="6" />
+        <field name="geonames_state_name_column" eval="5" />
+    </record>
+</odoo>
