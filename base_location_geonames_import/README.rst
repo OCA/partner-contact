@@ -63,6 +63,7 @@ Contributors
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
 * Dave Lasley <dave@laslabs.com>
 * Jordi Ballester <jordi.ballester@eficent.com>
+* Franco Tampieri <franco@tampieri.info>
 
 Icon
 ----
