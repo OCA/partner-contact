@@ -164,6 +164,10 @@ class BetterZipGeonamesImport(models.TransientModel):
     @api.model
     def select_or_create_state(
             self, row, country, code_row_index=4, name_row_index=3):
+        if country.geonames_state_code_column:
+            code_row_index = country.geonames_state_code_column
+        if country.geonames_state_name_column:
+            name_row_index = country.geonames_state_name_column
         return self._get_state(
             country.id, row[code_row_index], row[name_row_index],
         )
