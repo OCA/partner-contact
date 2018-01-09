@@ -25,7 +25,7 @@ You can access the wizard by going in a view list of contacts select one or mult
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/10.0
+   :target: https://runbot.odoo-community.org/runbot/134/11.0
 
 Bug Tracker
 ===========
@@ -46,8 +46,15 @@ Images
 Author
 ------
 
-Yannick Vaucher
+* Yannick Vaucher <yannick.vaucher@camptocamp.com>
 Based Holger Brunn's idea.
+
+Contributors
+------------
+
+* Serpent Consulting Services Pvt. Ltd. <jay.vora@serpentcs.com>
+
+Do not contact contributors directly about support or help with technical issues.
 
 Maintainer
 ----------
