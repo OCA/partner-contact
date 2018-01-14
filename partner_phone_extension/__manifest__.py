@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2013-2014 Savoir-faire Linux
 #   (<http://www.savoirfairelinux.com>).
 # Copyright 2017 Eficent Business and IT Consulting Services S.L.
@@ -9,12 +8,12 @@
 
 {
     'name': 'Partner Phone Number Extension',
-    'version': '10.0.1.0.0',
+    'version': '11.0.1.0.0',
     'category': 'Customer Relationship Management',
     'summary': 'Partner Phone Number Extension',
     'author': "Savoir-faire Linux, "
               "Eficent, "
-              "SerpentCS, "
+              "Serpent Consulting Services Pvt. Ltd., "
               "Odoo Community Association (OCA)",
     'website': 'http://www.savoirfairelinux.com',
     'license': 'AGPL-3',
@@ -23,4 +22,5 @@
         'views/res_partner_view.xml',
     ],
     'installable': True,
+    'auto_install': False,
 }
