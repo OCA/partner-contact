@@ -8,7 +8,18 @@
         <field name="inherit_id" ref="base.view_partner_simple_form"/>
         <field name="arch" type="xml">
             <field name="phone" position="after">
-                <field name="phone_extension"/>
+                <field name="phone_extension" string="Extn."/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_partner_short_form_extension_form" model="ir.ui.view">
+        <field name="name">view.partner.short form.extension.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_short_form"/>
+        <field name="arch" type="xml">
+            <field name="phone" position="after">
+                <field name="phone_extension"  string="Extn."/>
             </field>
         </field>
     </record>
@@ -19,12 +30,17 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <field name="phone" position="after">
-                <field name="phone_extension"/>
+                <field name="phone_extension"  string="Extn."/>
             </field>
-            <xpath expr="/form/sheet/notebook/page/field/form/sheet/group/group/field[@name='phone']" position="after">
+            <xpath expr="/form/sheet/notebook/page/field/kanban/field[@name='phone']" position="after">
                 <field name="phone_extension"/>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_kanban_details')]/div[@t-if='record.phone.raw_value']" position="after">
+                <div t-if="record.phone_extension.raw_value">Ext: <field name="phone_extension"/></div>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page/field/form/sheet/group/group/field[@name='phone']" position="after">
+                <field name="phone_extension" string="Extn."/>
             </xpath>
         </field>
     </record>
-
 </odoo>
