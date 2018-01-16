@@ -3,15 +3,15 @@
 # * base_location_geonames_import
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
-# Peter Hageman <hageman.p@gmail.com>, 2017
+# OCA Transbot <transbot@odoo-community.org>, 2018
+# Peter Hageman <hageman.p@gmail.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-25 06:38+0000\n"
-"PO-Revision-Date: 2017-11-25 06:38+0000\n"
-"Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
+"POT-Creation-Date: 2018-01-03 20:26+0000\n"
+"PO-Revision-Date: 2018-01-03 20:26+0000\n"
+"Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2018\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,6 +39,7 @@ msgid ""
 msgstr ""
 
 #. module: base_location_geonames_import
+#: model:ir.model,name:base_location_geonames_import.model_res_country
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_country_id
 msgid "Country"
 msgstr "Land"
@@ -71,7 +72,17 @@ msgid ""
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:185
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country_geonames_state_code_column
+msgid "Geonames State Code Column"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country_geonames_state_name_column
+msgid "Geonames State Name Column"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:189
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Kreeg een fout %d tijdens de poging om bestand %s te downloaden."

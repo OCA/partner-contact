@@ -3,14 +3,14 @@
 # * partner_second_lastname
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
+# OCA Transbot <transbot@odoo-community.org>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-22 03:38+0000\n"
-"PO-Revision-Date: 2017-11-22 03:38+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2018-01-03 20:26+0000\n"
+"PO-Revision-Date: 2018-01-03 20:26+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +21,7 @@ msgstr ""
 #. module: partner_second_lastname
 #: model:ir.model,name:partner_second_lastname.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contatto"
 
 #. module: partner_second_lastname
 #: model:ir.model.fields,field_description:partner_second_lastname.field_res_partner_lastname2
