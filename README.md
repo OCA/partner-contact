@@ -33,7 +33,7 @@ addon | version | summary
 [partner_alias](partner_alias/) | 10.0.1.0.0 | Adds aliases to partner names.
 [partner_bank_active](partner_bank_active/) | 10.0.1.0.0 | Allow to deactivate a partner bank account
 [partner_capital](partner_capital/) | 10.0.1.0.0 | Partners Capital
-[partner_changeset](partner_changeset/) | 10.0.1.0.0 | Partner Changesets
+[partner_changeset](partner_changeset/) | 10.0.1.0.1 | Partner Changesets
 [partner_coc](partner_coc/) | 10.0.1.0.0 | Adds a field 'Chamber Of Commerce Registration Number' to partner
 [partner_company_type](partner_company_type/) | 10.0.1.0.1 | Adds a company type to partner that are companies
 [partner_contact_birthdate](partner_contact_birthdate/) | 10.0.1.1.0 | Contact's birthdate
