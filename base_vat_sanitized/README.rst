@@ -1,5 +1,5 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-   :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+.. image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+   :target: https://www.gnu.org/licenses/agpl
    :alt: License: AGPL-3
 
 ==================
@@ -8,11 +8,6 @@ Base VAT Sanitized
 
 This module adds a technical field *sanitized_vat* on partners that stores the VAT number without spaces and with letters in uppercase. It is useful for other modules that need to match partners on VAT number, such as the *base_business_document_import* module for example.
 
-Configuration
-=============
-
-No configuration is needed.
-
 Usage
 =====
 
@@ -20,7 +15,7 @@ This module doesn't bring any visible feature for the users.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/10.0
+   :target: https://runbot.odoo-community.org/runbot/134/11.0
 
 
 Bug Tracker
@@ -29,7 +24,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues
 <https://github.com/OCA/partner-contact/issues>`_. In case of trouble, please
 check there if your issue has already been reported. If you spotted it first,
-help us smashing it by providing a detailed and welcomed feedback.
+help us smash it by providing detailed and welcomed feedback.
 
 Credits
 =======
