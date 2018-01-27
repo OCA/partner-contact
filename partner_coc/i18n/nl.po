@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# lfreeke <lfreeke@therp.nl>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-08 02:41+0000\n"
-"PO-Revision-Date: 2017-07-08 02:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2018-01-23 01:50+0000\n"
+"PO-Revision-Date: 2018-01-23 01:50+0000\n"
+"Last-Translator: lfreeke <lfreeke@therp.nl>, 2018\n"
 "Language-Team: Dutch (https://www.transifex.com/oca/teams/23907/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,14 +22,14 @@ msgstr ""
 #. module: partner_coc
 #: model:res.partner.id_category,name:partner_coc.id_category_coc
 msgid "Chamber Of Commerce Registration Number"
-msgstr ""
+msgstr "Kamer van Koophandel registratienummer"
 
 #. module: partner_coc
 #: model:ir.model.fields,field_description:partner_coc.field_res_partner_alias_coc_registration_number
 #: model:ir.model.fields,field_description:partner_coc.field_res_partner_coc_registration_number
 #: model:ir.model.fields,field_description:partner_coc.field_res_users_coc_registration_number
 msgid "CoC Registration Number"
-msgstr ""
+msgstr "KvK-nummer"
 
 #. module: partner_coc
 #: model:ir.model,name:partner_coc.model_res_partner

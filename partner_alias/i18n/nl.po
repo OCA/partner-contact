@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# lfreeke <lfreeke@therp.nl>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-31 03:41+0000\n"
-"PO-Revision-Date: 2017-05-31 03:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2018-01-23 01:50+0000\n"
+"PO-Revision-Date: 2018-01-23 01:50+0000\n"
+"Last-Translator: lfreeke <lfreeke@therp.nl>, 2018\n"
 "Language-Team: Dutch (https://www.transifex.com/oca/teams/23907/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,6 +35,21 @@ msgid "Address Type"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_affiliate_ids
+msgid "Affiliates"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_phonecall_calendar_attendance_ids
+msgid "Aggregated phonecall schedule"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_phonecall_calendar_attendance_ids
+msgid "Aggregation of all available phonecall schedules."
+msgstr ""
+
+#. module: partner_alias
 #: code:addons/partner_alias/models/res_partner_alias.py:32
 #, python-format
 msgid "Alias first name cannot be the same as primary firstname"
@@ -54,6 +70,11 @@ msgid "Aliases"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_phonecall_available
+msgid "Available to call"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_bank_ids
 msgid "Banks"
 msgstr ""
@@ -64,10 +85,15 @@ msgid "Barcode"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_phonecall_calendar_ids
+msgid "Best schedule when the contact expects to be called."
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_birthdate
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_birthdate_date
 msgid "Birthdate"
-msgstr ""
+msgstr "Geboortedatum"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_message_bounce
@@ -139,7 +165,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_company_type
 msgid "Company Type"
-msgstr ""
+msgstr "Rechtsvorm"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_contact_address
@@ -325,6 +351,11 @@ msgid "Is a Vendor"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_phonecall_available
+msgid "Is it now a good time to call this partner?"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_function
 msgid "Job Position"
 msgstr ""
@@ -451,6 +482,21 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_phone
 msgid "Phone"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_phone_extension
+msgid "Phone Extension"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_phone_extension
+msgid "Phone Number Extension."
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_phonecall_calendar_ids
+msgid "Phonecall schedule"
 msgstr ""
 
 #. module: partner_alias
@@ -612,7 +658,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_title
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_message_unread
