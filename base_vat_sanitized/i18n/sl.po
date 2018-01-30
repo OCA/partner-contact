@@ -1,0 +1,38 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_vat_sanitized
+# 
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-01 20:42+0000\n"
+"PO-Revision-Date: 2017-05-01 20:42+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#. module: base_vat_sanitized
+#: model:ir.model,name:base_vat_sanitized.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: base_vat_sanitized
+#: model:ir.model.fields,field_description:base_vat_sanitized.field_res_partner_alias_sanitized_vat
+#: model:ir.model.fields,field_description:base_vat_sanitized.field_res_partner_sanitized_vat
+#: model:ir.model.fields,field_description:base_vat_sanitized.field_res_users_sanitized_vat
+msgid "Sanitized TIN"
+msgstr "Prečiščena ID za DDV"
+
+#. module: base_vat_sanitized
+#: model:ir.model.fields,help:base_vat_sanitized.field_res_partner_alias_sanitized_vat
+#: model:ir.model.fields,help:base_vat_sanitized.field_res_partner_sanitized_vat
+#: model:ir.model.fields,help:base_vat_sanitized.field_res_users_sanitized_vat
+msgid "TIN in uppercase without spaces nor special caracters."
+msgstr "ID za DDV z velikimi črkami brez presledkov ali posebnih znakov."
