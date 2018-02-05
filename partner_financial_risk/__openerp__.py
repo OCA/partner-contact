@@ -5,7 +5,7 @@
 {
     'name': 'Partner Financial Risk',
     'summary': 'Manage partner risk',
-    'version': '9.0.2.0.1',
+    'version': '9.0.2.1.0',
     'category': 'Sales Management',
     'license': 'AGPL-3',
     'author': 'Tecnativa, Odoo Community Association (OCA)',
