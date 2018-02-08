@@ -9,13 +9,14 @@
         """,
     'version': '10.0.1.0.0',
     'license': 'AGPL-3',
+    'maintainers': ['rousseldenis'],
     'author': 'ACSONE SA/NV,Odoo Community Association (OCA)',
-    'website': 'https://acsone.eu',
-    'depends': ['base',
-                'contacts'
-                ],
-    'data': ['views/partner_contact.xml'
-             ],
-    'demo': [
+    'website': 'https://github.com/OCA/partner-contact',
+    'depends': [
+        'base',
+        'contacts'
+    ],
+    'data': [
+        'views/partner_contact.xml'
     ],
 }
