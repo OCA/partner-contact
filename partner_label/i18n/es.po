@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# enjolras <yo@miguelrevilla.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2017-12-26 15:33+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2018-02-21 03:59+0000\n"
+"PO-Revision-Date: 2018-02-21 03:59+0000\n"
+"Last-Translator: enjolras <yo@miguelrevilla.com>, 2018\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +22,7 @@ msgstr ""
 #. module: partner_label
 #: model:ir.ui.view,arch_db:partner_label.view_res_partner_label
 msgid "&lt;!DOCTYPE html&gt;"
-msgstr ""
+msgstr "&lt;!DOCTYPE html&gt;"
 
 #. module: partner_label
 #: model:ir.model,name:partner_label.model_res_company
@@ -32,69 +33,69 @@ msgstr "Compañías"
 #: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_height
 #: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_height
 msgid "Height"
-msgstr ""
+msgstr "Alto"
 
 #. module: partner_label
 #: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_height
 #: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_height
 msgid "Height in millimeters"
-msgstr ""
+msgstr "Alto en milímetros"
 
 #. module: partner_label
 #: model:ir.actions.report.xml,name:partner_label.report_res_partner_label
 msgid "Labels"
-msgstr ""
+msgstr "Etiquetas"
 
 #. module: partner_label
 #: model:ir.ui.view,arch_db:partner_label.view_general_configuration
 msgid "Labels configuration"
-msgstr ""
+msgstr "Configuración de etiquetas"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_margin
 #: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_margin
 msgid "Margin"
-msgstr ""
+msgstr "Margen"
 
 #. module: partner_label
 #: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_margin
 #: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_margin
 msgid "Margin in millimeters"
-msgstr ""
+msgstr "Margen en milímetros"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_padding
 #: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_padding
 msgid "Padding"
-msgstr ""
+msgstr "Espaciado"
 
 #. module: partner_label
 #: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_padding
 #: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_padding
 msgid "Padding in millimeters"
-msgstr ""
+msgstr "Espaciado en milímetros"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_paperformat_id
 msgid "Paperformat"
-msgstr ""
+msgstr "Formato del papel"
 
 #. module: partner_label
 #: model:ir.ui.view,arch_db:partner_label.view_general_configuration
 msgid "Preview"
-msgstr ""
+msgstr "Previsualizar"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_width
 #: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_width
 msgid "Width"
-msgstr ""
+msgstr "Ancho"
 
 #. module: partner_label
 #: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_width
 #: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_width
 msgid "Width in millimeters"
-msgstr ""
+msgstr "Ancho en milímetros"
 
 #. module: partner_label
 #: model:ir.model,name:partner_label.model_base_config_settings
@@ -104,4 +105,4 @@ msgstr "base.config.settings"
 #. module: partner_label
 #: model:ir.ui.view,arch_db:partner_label.view_general_configuration
 msgid "mm"
-msgstr ""
+msgstr "mm"
