@@ -382,7 +382,8 @@ CREATE OR REPLACE VIEW %%(table)s AS
         for key in (
                 'this_partner_id',
                 'type_selection_id',
-                'other_partner_id'):
+                'other_partner_id',
+                'is_inverse'):
             if key in vals:
                 del vals[key]
         return vals
