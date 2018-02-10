@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * base_vat_sanitized
+# * partner_fax
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2018
@@ -18,19 +18,13 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. module: base_vat_sanitized
-#: model:ir.model,name:base_vat_sanitized.model_res_partner
+#. module: partner_fax
+#: model:ir.model,name:partner_fax.model_res_partner
 msgid "Contact"
 msgstr "Contact"
 
-#. module: base_vat_sanitized
-#: model:ir.model.fields,field_description:base_vat_sanitized.field_res_partner_sanitized_vat
-#: model:ir.model.fields,field_description:base_vat_sanitized.field_res_users_sanitized_vat
-msgid "Sanitized TIN"
-msgstr ""
-
-#. module: base_vat_sanitized
-#: model:ir.model.fields,help:base_vat_sanitized.field_res_partner_sanitized_vat
-#: model:ir.model.fields,help:base_vat_sanitized.field_res_users_sanitized_vat
-msgid "TIN in uppercase without spaces nor special caracters."
+#. module: partner_fax
+#: model:ir.model.fields,field_description:partner_fax.field_res_partner_fax
+#: model:ir.model.fields,field_description:partner_fax.field_res_users_fax
+msgid "Fax"
 msgstr ""
