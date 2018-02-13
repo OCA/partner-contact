@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2013-2017 Therp BV <http://therp.nl>
+# Copyright 2013-2018 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Define the type of relations that can exist between partners."""
 from openerp import _, api, fields, models
@@ -112,11 +112,11 @@ class ResPartnerRelationType(models.Model):
                 return [(fieldname2, 'not in', [category_id])]
             return []
 
-        for rec in self:
+        for this in self:
             handling = (
                 'handle_invalid_onchange' in vals and
                 vals['handle_invalid_onchange'] or
-                self.handle_invalid_onchange
+                this.handle_invalid_onchange
             )
             if handling == 'ignore':
                 continue
@@ -134,7 +134,7 @@ class ResPartnerRelationType(models.Model):
                 return
             # only look at relations for this type
             invalid_domain = AND([
-                [('type_id', '=', rec.id)], invalid_conditions
+                [('type_id', '=', this.id)], invalid_conditions
             ])
             invalid_relations = relation_model.with_context(
                 active_test=False
