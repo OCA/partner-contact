@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2013-2016 Therp BV <http://therp.nl>
+# © 2013-2017 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Define the type of relations that can exist between partners."""
 from openerp import _, api, fields, models
@@ -84,16 +84,6 @@ class ResPartnerRelationType(models.Model):
             ('p', _('Person')),
         ]
 
-    @api.onchange('is_symmetric')
-    def onchange_is_symmetric(self):
-        """Set right side to left side if symmetric."""
-        if self.is_symmetric:
-            self.update({
-                'name_inverse': self.name,
-                'contact_type_right': self.contact_type_left,
-                'partner_category_right': self.partner_category_left,
-            })
-
     @api.multi
     def check_existing(self, vals):
         """Check wether records exist that do not fit new criteria."""
@@ -168,8 +158,41 @@ class ResPartnerRelationType(models.Model):
                                 relation.date_end > cutoff_date):
                             relation.write({'date_end': cutoff_date})
 
+    def update_right_vals(self, vals):
+        """
+        When you update the left values of a symmetric relationship,
+        make sure that the right ones are updated as well.
+        @attention: All fields ending in `_right` will have their values
+                    replaced by the values of the fields whose names end
+                    in `_left`.
+        """
+        right_vals = {}
+        name = vals.get('name')
+        if name:
+            right_vals['name_inverse'] = name
+        left_keys = filter(lambda key: key.endswith('_left'), vals.keys())
+        for left_key in left_keys:
+            right_vals[left_key.replace('_left', '_right')] = vals[left_key]
+        # in any case, get the already existing left values and copy them
+        remaining_keys = [l_key for l_key in filter(
+            lambda field: field.endswith(
+                '_left') and field not in left_keys, self._fields)]
+        for rem_key in remaining_keys:
+            right_vals[rem_key.replace('_left', '_right')] = getattr(
+                self, rem_key)
+        return right_vals
+
+    @api.model
+    def create(self, vals):
+        if vals.get('is_symmetric'):
+            vals.update(self.update_right_vals(vals))
+        return super(ResPartnerRelationType, self).create(vals)
+
     @api.multi
     def write(self, vals):
         """Handle existing relations if conditions change."""
         self.check_existing(vals)
+        is_symmetric = vals.get('is_symmetric')
+        if is_symmetric or self.is_symmetric and is_symmetric is not False:
+            vals.update(self.update_right_vals(vals))
         return super(ResPartnerRelationType, self).write(vals)
