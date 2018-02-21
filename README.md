@@ -50,6 +50,7 @@ addon | version | summary
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 10.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_contact_weight](partner_contact_weight/) | 10.0.1.0.0 | Provide contact weight
 [partner_create_by_vat](partner_create_by_vat/) | 10.0.1.0.0 | Using VIES webservice, name and address information will be fetched and added to the partner.
+[partner_disable_gravatar](partner_disable_gravatar/) | 10.0.1.0.0 | Disable automatic connection to gravatar.com
 [partner_email_check](partner_email_check/) | 10.0.1.0.0 | Validate email address field
 [partner_employee_quantity](partner_employee_quantity/) | 10.0.1.0.0 | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 10.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
