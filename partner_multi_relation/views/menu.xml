@@ -2,9 +2,16 @@
 <odoo>
 
         <menuitem
-            id="menu_res_partner_relation_sales"
+            id="menu_res_partner_relation"
+            name="Relations"
             sequence="3"
-            parent="sales_team.menu_sales"
+            parent="contacts.menu_contacts"
+        />
+
+        <menuitem
+            id="menu_res_partner_relation_all"
+            sequence="3"
+            parent="menu_res_partner_relation"
             action="action_res_partner_relation_all"
         />
 
@@ -17,7 +24,8 @@
 
         <menuitem
             id="menu_res_partner_relation_type"
-            parent="sales_team.menu_config_address_book"
+            name="Relation Types"
+            parent="menu_res_partner_relation"
             action="action_res_partner_relation_type"
         />
 
