@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-
 # Copyright 2016-2017 Therp BV
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from datetime import date
 from dateutil.relativedelta import relativedelta
-from psycopg2 import IntegrityError
 
 from openerp import fields
 from openerp.exceptions import ValidationError
@@ -234,38 +232,6 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             'contact_type_left': 'c',
             'contact_type_right': 'p'})
         self.assertFalse(relation_bart2lisa.exists())
-
-    def test_relation_type_unlink_dberror(self):
-        """Test deleting relation type when not possible.
-
-        This test will catch a DB Integrity error. Because of that the
-        cursor will be invalidated, and further tests using the objects
-        will not be possible.
-        """
-        # First create a relation type having restrict particular conditions.
-        type_model = self.env['res.partner.relation.type']
-        relation_model = self.env['res.partner.relation']
-        partner_model = self.env['res.partner']
-        type_school2student = type_model.create({
-            'name': 'school has student',
-            'name_inverse': 'studies at school',
-            'handle_invalid_onchange': 'restrict'})
-        # Second create relation based on those conditions.
-        partner_school = partner_model.create({
-            'name': 'Test School',
-            'is_company': True,
-            'ref': 'TS'})
-        partner_bart = partner_model.create({
-            'name': 'Bart Simpson',
-            'is_company': False,
-            'ref': 'BS'})
-        relation_model.create({
-            'left_partner_id': partner_school.id,
-            'type_id': type_school2student.id,
-            'right_partner_id': partner_bart.id})
-        # Unlink should for the moment lead to error because of restrict:
-        with self.assertRaises(IntegrityError):
-            type_school2student.unlink()
 
     def test_relation_type_unlink(self):
         """Test delete of relation type, including deleting relations."""
