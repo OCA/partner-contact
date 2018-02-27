@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # © 2014-2016 Camptocamp SA
 # @author: Nicolas Bessi
 # © 2016 Akretion (Alexis de Lattre <alexis.delattre@akretion.com>)
@@ -29,8 +28,8 @@ class TestStreet3(TransactionCase):
             'parent_id': homer.id,
             'type': 'contact',
             })
-        self.assertEquals(bart.street3, 'Tho')
+        self.assertEqual(bart.street3, 'Tho')
 
         # test synchro of street3 on write
         homer.write({'street3': 'in OCA we trust'})
-        self.assertEquals(bart.street3, 'in OCA we trust')
+        self.assertEqual(bart.street3, 'in OCA we trust')
