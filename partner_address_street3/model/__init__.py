@@ -1,4 +1,2 @@
-# -*- coding: utf-8 -*-
-
-from . import partner
 from . import country
+from . import partner
