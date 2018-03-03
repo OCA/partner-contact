@@ -1,0 +1,74 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_nutrition_diet
+# 
+# Translators:
+# Carlos Hormigo, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-10 01:51+0000\n"
+"PO-Revision-Date: 2018-02-10 01:51+0000\n"
+"Last-Translator: Carlos Hormigo, 2018\n"
+"Language-Team: Catalan (Spain) (https://www.transifex.com/oca/teams/23907/ca_ES/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: ca_ES\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_contact_nutrition_diet
+#: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_create_uid
+msgid "Created by"
+msgstr "Creat per"
+
+#. module: partner_contact_nutrition_diet
+#: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_create_date
+msgid "Created on"
+msgstr "Creat a"
+
+#. module: partner_contact_nutrition_diet
+#: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_res_partner_nutrition_diet_id
+msgid "Diet"
+msgstr ""
+
+#. module: partner_contact_nutrition_diet
+#: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_display_name
+msgid "Display Name"
+msgstr "Nom visible"
+
+#. module: partner_contact_nutrition_diet
+#: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_id
+msgid "ID"
+msgstr ""
+
+#. module: partner_contact_nutrition_diet
+#: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet___last_update
+msgid "Last Modified on"
+msgstr "Darrera modificació en"
+
+#. module: partner_contact_nutrition_diet
+#: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_write_uid
+msgid "Last Updated by"
+msgstr "Darrera actualització per"
+
+#. module: partner_contact_nutrition_diet
+#: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_write_date
+msgid "Last Updated on"
+msgstr "Darrera actualització el"
+
+#. module: partner_contact_nutrition_diet
+#: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: partner_contact_nutrition_diet
+#: model:ir.model,name:partner_contact_nutrition_diet.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: partner_contact_nutrition_diet
+#: model:ir.model,name:partner_contact_nutrition_diet.model_nutrition_diet
+msgid "nutrition.diet"
+msgstr ""

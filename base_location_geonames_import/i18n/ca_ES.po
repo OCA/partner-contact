@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 01:41+0000\n"
+"POT-Creation-Date: 2018-02-10 01:50+0000\n"
 "PO-Revision-Date: 2016-04-28 11:44+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Catalan (Spain) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/ca_ES/)\n"
@@ -35,17 +35,17 @@ msgstr ""
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creat per"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creat a"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom visible"
 
 #. module: base_location_geonames_import
 #: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
@@ -86,17 +86,17 @@ msgstr ""
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Darrera modificació en"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Darrera actualització per"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Darrera actualització el"
 
 #. module: base_location_geonames_import
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:65
