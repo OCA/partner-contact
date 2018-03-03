@@ -1,0 +1,51 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_nutrition_activity_level
+# 
+# Translators:
+# Lukáš Spurný <lukasspurny8@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-21 03:58+0000\n"
+"PO-Revision-Date: 2018-02-21 03:58+0000\n"
+"Last-Translator: Lukáš Spurný <lukasspurny8@gmail.com>, 2018\n"
+"Language-Team: Czech (Czech Republic) (https://www.transifex.com/oca/teams/23907/cs_CZ/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: cs_CZ\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. module: partner_contact_nutrition_activity_level
+#: model:ir.model.fields,field_description:partner_contact_nutrition_activity_level.field_res_partner_activity_level
+#: model:ir.model.fields,field_description:partner_contact_nutrition_activity_level.field_res_partner_alias_activity_level
+#: model:ir.model.fields,field_description:partner_contact_nutrition_activity_level.field_res_users_activity_level
+msgid "Activity Level"
+msgstr "Úroveň aktivity"
+
+#. module: partner_contact_nutrition_activity_level
+#: selection:res.partner,activity_level:0
+msgid "Extremely active"
+msgstr "Extrémně aktivní"
+
+#. module: partner_contact_nutrition_activity_level
+#: selection:res.partner,activity_level:0
+msgid "Moderately active"
+msgstr "Mírně aktivní"
+
+#. module: partner_contact_nutrition_activity_level
+#: model:ir.model,name:partner_contact_nutrition_activity_level.model_res_partner
+msgid "Partner"
+msgstr "Společník"
+
+#. module: partner_contact_nutrition_activity_level
+#: selection:res.partner,activity_level:0
+msgid "Sedentary"
+msgstr "Sedavý"
+
+#. module: partner_contact_nutrition_activity_level
+#: selection:res.partner,activity_level:0
+msgid "Very active"
+msgstr "Velmi aktivní"

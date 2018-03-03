@@ -1,0 +1,92 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_firstname
+# 
+# Translators:
+# Lukáš Spurný <lukasspurny8@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-21 03:59+0000\n"
+"PO-Revision-Date: 2018-02-21 03:59+0000\n"
+"Last-Translator: Lukáš Spurný <lukasspurny8@gmail.com>, 2018\n"
+"Language-Team: Czech (Czech Republic) (https://www.transifex.com/oca/teams/23907/cs_CZ/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: cs_CZ\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. module: partner_firstname
+#: sql_constraint:res.partner:0
+msgid "Contacts require a name."
+msgstr "Kontakty vyžadují jméno."
+
+#. module: partner_firstname
+#: code:addons/partner_firstname/exceptions.py:11
+#, python-format
+msgid "Error(s) with partner %d's name."
+msgstr "Chyby s názvem partnera %d."
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users_firstname
+msgid "First name"
+msgstr "Křestní jméno"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner_lastname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users_lastname
+msgid "Last name"
+msgstr "Příjmení"
+
+#. module: partner_firstname
+#: code:addons/partner_firstname/exceptions.py:8
+#, python-format
+msgid "No name is set."
+msgstr "Není nastaveno žádné jméno."
+
+#. module: partner_firstname
+#: model:ir.model.fields,help:partner_firstname.field_base_config_settings_partner_names_order
+msgid "Order to compose partner fullname"
+msgstr "Objednat k sestavení úplného jména partnera"
+
+#. module: partner_firstname
+#: model:ir.model,name:partner_firstname.model_res_partner
+msgid "Partner"
+msgstr "Společník"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_base_config_settings_partner_names_order
+msgid "Partner names order"
+msgstr "Pořadí jména partnerů"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_base_config_settings_partner_names_order_changed
+msgid "Partner names order changed"
+msgstr "Pořadí jména partnerů se změnilo"
+
+#. module: partner_firstname
+#: model:ir.ui.view,arch_db:partner_firstname.view_general_configuration
+msgid "Recalculate names"
+msgstr "Přepočítněte jména"
+
+#. module: partner_firstname
+#: model:ir.ui.view,arch_db:partner_firstname.view_general_configuration
+msgid ""
+"Recalculate names for all partners. This process could take so much time if "
+"there are more than 10,000 active partners"
+msgstr ""
+"Přepočítněte jména všech partnerů. Tento proces může trvat tolik času, pokud"
+" je více než 10 000 aktivních partnerů"
+
+#. module: partner_firstname
+#: model:ir.model,name:partner_firstname.model_res_users
+msgid "Users"
+msgstr "Uživatelé"
+
+#. module: partner_firstname
+#: model:ir.model,name:partner_firstname.model_base_config_settings
+msgid "base.config.settings"
+msgstr "base.config.settings"

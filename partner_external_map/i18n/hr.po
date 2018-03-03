@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# Bole <bole@dajmi5.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2017-11-21 01:49+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2018-02-21 03:58+0000\n"
+"PO-Revision-Date: 2018-02-21 03:58+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>, 2018\n"
 "Language-Team: Croatian (https://www.transifex.com/oca/teams/23907/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +23,7 @@ msgstr ""
 #: code:addons/partner_external_map/models/res_partner.py:32
 #, python-format
 msgid "Address missing on partner '%s'."
-msgstr ""
+msgstr "Adresa edostaje na partneru '%s'."
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_uid
@@ -89,19 +90,19 @@ msgstr "Vrijeme promjene"
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
 msgid "Map"
-msgstr ""
+msgstr "Karta"
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_map_website
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users_context_map_website_id
 #: model:ir.ui.view,arch_db:partner_external_map.map_website_form
 msgid "Map Website"
-msgstr ""
+msgstr "Webstranica sa kartom"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_name
 msgid "Map Website Name"
-msgstr ""
+msgstr "Naziv webstranice sa kartama"
 
 #. module: partner_external_map
 #: model:ir.actions.act_window,name:partner_external_map.map_website_action
@@ -121,7 +122,7 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_users_form
 msgid "Maps"
-msgstr ""
+msgstr "Karte"
 
 #. module: partner_external_map
 #: code:addons/partner_external_map/models/res_partner.py:52
@@ -197,4 +198,4 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Korisnici"

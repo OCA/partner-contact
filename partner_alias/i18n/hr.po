@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# Bole <bole@dajmi5.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-21 01:48+0000\n"
-"PO-Revision-Date: 2017-11-21 01:48+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2018-02-21 03:58+0000\n"
+"PO-Revision-Date: 2018-02-21 03:58+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>, 2018\n"
 "Language-Team: Croatian (https://www.transifex.com/oca/teams/23907/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -129,12 +130,12 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_city
 msgid "City"
-msgstr ""
+msgstr "Grad"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_zip_id
 msgid "City/Location"
-msgstr ""
+msgstr "Grad/Lokacija"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_color
@@ -179,7 +180,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_child_ids
 msgid "Contacts"
-msgstr ""
+msgstr "Kontakti"
 
 #. module: partner_alias
 #: model:ir.model.fields,help:partner_alias.field_res_partner_alias_message_bounce
@@ -189,7 +190,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_country_id
 msgid "Country"
-msgstr ""
+msgstr "Država"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_create_uid
@@ -282,7 +283,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_gender
 msgid "Gender"
-msgstr ""
+msgstr "Spol"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_id
@@ -387,12 +388,12 @@ msgstr "Vrijeme promjene"
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_lastname
 msgid "Last name"
-msgstr ""
+msgstr "Prezime"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_contact_id
 msgid "Main Contact"
-msgstr ""
+msgstr "Glavni kontakt"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_image_medium
@@ -425,7 +426,7 @@ msgstr "Naziv"
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_nationality_id
 msgid "Nationality"
-msgstr ""
+msgstr "Nacionalnost"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_comment
@@ -455,7 +456,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_other_contact_ids
 msgid "Others Positions"
-msgstr ""
+msgstr "Pozicije drugih"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_parent_name
@@ -491,7 +492,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,help:partner_alias.field_res_partner_alias_phone_extension
 msgid "Phone Number Extension."
-msgstr ""
+msgstr "Ektenzija telefonskog broja"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_phonecall_calendar_ids
@@ -577,7 +578,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_state_id
 msgid "State"
-msgstr ""
+msgstr "Županija"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_street
@@ -592,7 +593,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_street_name
 msgid "Street name"
-msgstr ""
+msgstr "Naziv ulice"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_street_number
@@ -679,7 +680,7 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_user_ids
 msgid "Users"
-msgstr ""
+msgstr "Korisnici"
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_website

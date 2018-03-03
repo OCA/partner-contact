@@ -1,0 +1,102 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_password_reset
+# 
+# Translators:
+# Lukáš Spurný <lukasspurny8@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-21 03:59+0000\n"
+"PO-Revision-Date: 2018-02-21 03:59+0000\n"
+"Last-Translator: Lukáš Spurný <lukasspurny8@gmail.com>, 2018\n"
+"Language-Team: Czech (Czech Republic) (https://www.transifex.com/oca/teams/23907/cs_CZ/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: cs_CZ\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. module: partner_password_reset
+#: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
+msgid ""
+"Are you sure you want to reset the password for\n"
+"                    the following Users?"
+msgstr "Opravdu chcete obnovit heslo pro následující uživatele?"
+
+#. module: partner_password_reset
+#: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
+msgid "Cancel"
+msgstr "Zrušit"
+
+#. module: partner_password_reset
+#: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
+msgid "Confirm"
+msgstr "Potvrdit"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_create_uid
+msgid "Created by"
+msgstr "Vytvořil"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_create_date
+msgid "Created on"
+msgstr "Vytvořeno"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_display_name
+msgid "Display Name"
+msgstr "Zobrazovaný název"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard___last_update
+msgid "Last Modified on"
+msgstr "Poslední změna dne"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Naposledy aktualizováno"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_write_date
+msgid "Last Updated on"
+msgstr "Poslední aktualizace dne"
+
+#. module: partner_password_reset
+#: model:ir.actions.act_window,name:partner_password_reset.action_view_partner_password_reset_wizard
+msgid "Send Password Reset Email"
+msgstr "Odeslat e-mail s obnovením hesla"
+
+#. module: partner_password_reset
+#: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
+msgid "Send Password Reset Email(s)"
+msgstr "Poslat E-mail pro resetování hesla/y"
+
+#. module: partner_password_reset
+#: code:addons/partner_password_reset/wizard/res_partner_password_reset_wizard.py:35
+#, python-format
+msgid "The selected partners have no associated portal users"
+msgstr "Vybraní partneři nemají přidružených uživatelů portálu"
+
+#. module: partner_password_reset
+#: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_user_ids
+msgid "User ids"
+msgstr "ID uživatele"
+
+#. module: partner_password_reset
+#: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
+msgid "or"
+msgstr "nebo"
+
+#. module: partner_password_reset
+#: model:ir.model,name:partner_password_reset.model_res_partner_password_reset_wizard
+msgid "res.partner.password.reset.wizard"
+msgstr "res.partner.password.reset.wizard"

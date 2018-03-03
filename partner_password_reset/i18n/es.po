@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
+# enjolras <yo@miguelrevilla.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2017-11-21 01:49+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"POT-Creation-Date: 2018-02-21 03:59+0000\n"
+"PO-Revision-Date: 2018-02-21 03:59+0000\n"
+"Last-Translator: enjolras <yo@miguelrevilla.com>, 2018\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,6 +25,8 @@ msgid ""
 "Are you sure you want to reset the password for\n"
 "                    the following Users?"
 msgstr ""
+"¿Seguro que desea reestablecer la contraseña\n"
+"de los siguientes usuarios?"
 
 #. module: partner_password_reset
 #: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
@@ -33,7 +36,7 @@ msgstr "Cancelar"
 #. module: partner_password_reset
 #: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
 msgid "Confirm"
-msgstr ""
+msgstr "Confirmar"
 
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_create_uid
@@ -73,12 +76,12 @@ msgstr "Última actualización en"
 #. module: partner_password_reset
 #: model:ir.actions.act_window,name:partner_password_reset.action_view_partner_password_reset_wizard
 msgid "Send Password Reset Email"
-msgstr ""
+msgstr "Enviar email de reestablecimiento de contraseña"
 
 #. module: partner_password_reset
 #: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
 msgid "Send Password Reset Email(s)"
-msgstr ""
+msgstr "Enviar email(s) de restablecimiento de contraseña"
 
 #. module: partner_password_reset
 #: code:addons/partner_password_reset/wizard/res_partner_password_reset_wizard.py:35
@@ -89,14 +92,14 @@ msgstr ""
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_user_ids
 msgid "User ids"
-msgstr ""
+msgstr "IDs de usuario"
 
 #. module: partner_password_reset
 #: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
 msgid "or"
-msgstr ""
+msgstr "o"
 
 #. module: partner_password_reset
 #: model:ir.model,name:partner_password_reset.model_res_partner_password_reset_wizard
 msgid "res.partner.password.reset.wizard"
-msgstr ""
+msgstr "res.partner.password.reset.wizard"

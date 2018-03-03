@@ -1,0 +1,46 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_nutrition_goal
+# 
+# Translators:
+# Lukáš Spurný <lukasspurny8@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-21 03:58+0000\n"
+"PO-Revision-Date: 2018-02-21 03:58+0000\n"
+"Last-Translator: Lukáš Spurný <lukasspurny8@gmail.com>, 2018\n"
+"Language-Team: Czech (Czech Republic) (https://www.transifex.com/oca/teams/23907/cs_CZ/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: cs_CZ\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. module: partner_contact_nutrition_goal
+#: selection:res.partner,weight_goal:0
+msgid "Gain weight"
+msgstr "Nabrat na váze"
+
+#. module: partner_contact_nutrition_goal
+#: model:ir.model.fields,field_description:partner_contact_nutrition_goal.field_res_partner_alias_weight_goal
+#: model:ir.model.fields,field_description:partner_contact_nutrition_goal.field_res_partner_weight_goal
+#: model:ir.model.fields,field_description:partner_contact_nutrition_goal.field_res_users_weight_goal
+msgid "Goal"
+msgstr "Gól"
+
+#. module: partner_contact_nutrition_goal
+#: selection:res.partner,weight_goal:0
+msgid "Lose weight"
+msgstr "Zhubnout"
+
+#. module: partner_contact_nutrition_goal
+#: selection:res.partner,weight_goal:0
+msgid "Maintain weight"
+msgstr "udržet váhu"
+
+#. module: partner_contact_nutrition_goal
+#: model:ir.model,name:partner_contact_nutrition_goal.model_res_partner
+msgid "Partner"
+msgstr "Společník"
