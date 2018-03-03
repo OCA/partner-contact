@@ -3,21 +3,20 @@
 # * partner_label
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
-# enjolras <yo@miguelrevilla.com>, 2018
+# Lukáš Spurný <lukasspurny8@gmail.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-21 03:59+0000\n"
 "PO-Revision-Date: 2018-02-21 03:59+0000\n"
-"Last-Translator: enjolras <yo@miguelrevilla.com>, 2018\n"
-"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
+"Last-Translator: Lukáš Spurný <lukasspurny8@gmail.com>, 2018\n"
+"Language-Team: Czech (Czech Republic) (https://www.transifex.com/oca/teams/23907/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: cs_CZ\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #. module: partner_label
 #: model:ir.ui.view,arch_db:partner_label.view_res_partner_label
@@ -27,75 +26,75 @@ msgstr "&lt;!DOCTYPE html&gt;"
 #. module: partner_label
 #: model:ir.model,name:partner_label.model_res_company
 msgid "Companies"
-msgstr "Compañías"
+msgstr "Společnosti"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_height
 #: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_height
 msgid "Height"
-msgstr "Alto"
+msgstr "Výška"
 
 #. module: partner_label
 #: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_height
 #: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_height
 msgid "Height in millimeters"
-msgstr "Alto en milímetros"
+msgstr "Výška v milimetrech"
 
 #. module: partner_label
 #: model:ir.actions.report.xml,name:partner_label.report_res_partner_label
 msgid "Labels"
-msgstr "Etiquetas"
+msgstr "Štítky"
 
 #. module: partner_label
 #: model:ir.ui.view,arch_db:partner_label.view_general_configuration
 msgid "Labels configuration"
-msgstr "Configuración de etiquetas"
+msgstr "Konfigurace štítků"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_margin
 #: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_margin
 msgid "Margin"
-msgstr "Margen"
+msgstr "Okraj"
 
 #. module: partner_label
 #: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_margin
 #: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_margin
 msgid "Margin in millimeters"
-msgstr "Margen en milímetros"
+msgstr "Okraj v milimetrech"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_padding
 #: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_padding
 msgid "Padding"
-msgstr "Espaciado"
+msgstr "Polstrování"
 
 #. module: partner_label
 #: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_padding
 #: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_padding
 msgid "Padding in millimeters"
-msgstr "Espaciado en milímetros"
+msgstr "Padání v milimetrech"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_paperformat_id
 msgid "Paperformat"
-msgstr "Formato del papel"
+msgstr "Formát papíru"
 
 #. module: partner_label
 #: model:ir.ui.view,arch_db:partner_label.view_general_configuration
 msgid "Preview"
-msgstr "Previsualizar"
+msgstr "Náhled"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_width
 #: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_width
 msgid "Width"
-msgstr "Ancho"
+msgstr "Šířka"
 
 #. module: partner_label
 #: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_width
 #: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_width
 msgid "Width in millimeters"
-msgstr "Ancho en milímetros"
+msgstr "Šířka v milimetrech"
 
 #. module: partner_label
 #: model:ir.model,name:partner_label.model_base_config_settings
