@@ -10,8 +10,13 @@
                     <div><field name="partner_labels_width" class="oe_inline" /> mm</div>
                     <label for="partner_labels_height" />
                     <div><field name="partner_labels_height" class="oe_inline" /> mm</div>
-                    <label for="partner_labels_margin" />
-                    <div><field name="partner_labels_margin" class="oe_inline" /> mm</div>
+                    <label string="Margin"/>
+                    <div class="oe_inline">
+                        Top: <field name="partner_labels_margin_top" string="Top" class="oe_inline"/>mm,
+                        Bottom: <field name="partner_labels_margin_bottom" string="Bottom" class="oe_inline"/>mm,
+                        Left: <field name="partner_labels_margin_left" string="Left" class="oe_inline"/>mm,
+                        Right: <field name="partner_labels_margin_right" string="Right" class="oe_inline"/>mm
+                    </div>
                     <label for="partner_labels_padding" />
                     <div><field name="partner_labels_padding" class="oe_inline" /> mm</div>
                     <label for="partner_labels_paperformat_id" />

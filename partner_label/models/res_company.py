@@ -16,6 +16,27 @@ class ResCompany(models.Model):
     partner_labels_padding = fields.Float(
         'Padding', default=5, help='Padding in millimeters', required=True,
     )
-    partner_labels_margin = fields.Float(
-        'Margin', default=1, help='Margin in millimeters', required=True,
+    partner_labels_margin_top = fields.Float(
+        string="Margin Top",
+        default=1,
+        help="Margin top in millimeters",
+        required=True,
+    )
+    partner_labels_margin_bottom = fields.Float(
+        string="Margin Bottom",
+        default=1,
+        help="Margin bottom in millimeters",
+        required=True,
+    )
+    partner_labels_margin_left = fields.Float(
+        string="Margin Left",
+        default=1,
+        help="Margin left in millimeters",
+        required=True,
+    )
+    partner_labels_margin_right = fields.Float(
+        string="Margin Right",
+        default=1,
+        help="Margin right in millimeters",
+        required=True,
     )
