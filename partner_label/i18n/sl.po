@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_label
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
@@ -12,15 +12,21 @@ msgstr ""
 "PO-Revision-Date: 2017-12-26 15:33+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
 
 #. module: partner_label
 #: model:ir.ui.view,arch_db:partner_label.view_res_partner_label
 msgid "&lt;!DOCTYPE html&gt;"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
+msgid "Bottom"
 msgstr ""
 
 #. module: partner_label
@@ -41,25 +47,66 @@ msgid "Height in millimeters"
 msgstr ""
 
 #. module: partner_label
-#: model:ir.actions.report.xml,name:partner_label.report_res_partner_label
-msgid "Labels"
-msgstr ""
-
-#. module: partner_label
 #: model:ir.ui.view,arch_db:partner_label.view_general_configuration
 msgid "Labels configuration"
 msgstr ""
 
 #. module: partner_label
-#: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_margin
-#: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_margin
+#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
+msgid "Left"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
 msgid "Margin"
 msgstr ""
 
 #. module: partner_label
-#: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_margin
-#: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_margin
-msgid "Margin in millimeters"
+#: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_margin_bottom
+#: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_margin_bottom
+msgid "Margin Bottom"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_margin_left
+#: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_margin_left
+msgid "Margin Left"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_margin_right
+#: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_margin_right
+msgid "Margin Right"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_margin_top
+#: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_margin_top
+msgid "Margin Top"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_margin_bottom
+#: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_margin_bottom
+msgid "Margin bottom in millimeters"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_margin_left
+#: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_margin_left
+msgid "Margin left in millimeters"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_margin_right
+#: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_margin_right
+msgid "Margin right in millimeters"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_margin_top
+#: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_margin_top
+msgid "Margin top in millimeters"
 msgstr ""
 
 #. module: partner_label
@@ -80,8 +127,28 @@ msgid "Paperformat"
 msgstr ""
 
 #. module: partner_label
+#: model:ir.actions.report.xml,name:partner_label.report_res_partner_label
+msgid "Partner Labels"
+msgstr ""
+
+#. module: partner_label
 #: model:ir.ui.view,arch_db:partner_label.view_general_configuration
 msgid "Preview"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
+msgid "Right"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
+msgid "Top"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
+msgid "Top:"
 msgstr ""
 
 #. module: partner_label
@@ -104,4 +171,25 @@ msgstr ""
 #. module: partner_label
 #: model:ir.ui.view,arch_db:partner_label.view_general_configuration
 msgid "mm"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
+msgid ""
+"mm,\n"
+"                        Bottom:"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
+msgid ""
+"mm,\n"
+"                        Left:"
+msgstr ""
+
+#. module: partner_label
+#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
+msgid ""
+"mm,\n"
+"                        Right:"
 msgstr ""

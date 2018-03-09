@@ -16,8 +16,21 @@ class BaseConfigSettings(models.TransientModel):
     partner_labels_padding = fields.Float(
         related='company_id.partner_labels_padding', required=True,
     )
-    partner_labels_margin = fields.Float(
-        related='company_id.partner_labels_margin', required=True,
+    partner_labels_margin_top = fields.Float(
+        related='company_id.partner_labels_margin_top',
+        required=True,
+    )
+    partner_labels_margin_bottom = fields.Float(
+        related='company_id.partner_labels_margin_bottom',
+        required=True,
+    )
+    partner_labels_margin_left = fields.Float(
+        related='company_id.partner_labels_margin_left',
+        required=True,
+    )
+    partner_labels_margin_right = fields.Float(
+        related='company_id.partner_labels_margin_right',
+        required=True,
     )
     partner_labels_paperformat_id = fields.Many2one(
         'report.paperformat', string='Paperformat', required=True,
