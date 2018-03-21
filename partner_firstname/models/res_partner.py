@@ -87,7 +87,7 @@ class ResPartner(models.Model):
         """Get names order configuration from system parameters.
         You can override this method to read configuration from language,
         country, company or other"""
-        return self.env['ir.config_parameter'].get_param(
+        return self.env['ir.config_parameter'].sudo().get_param(
             'partner_names_order', self._names_order_default())
 
     @api.model
