@@ -9,3 +9,9 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     fax = fields.Char()
+
+class ResCompany(models.Model):
+
+    _inherit = 'res.company'
+
+    fax = fields.Char()
