@@ -23,6 +23,17 @@ class ResPartnerSector(models.Model):
                                 string="Children")
     parent_left = fields.Integer('Parent Left', select=True)
     parent_right = fields.Integer('Parent Right', select=True)
+    complete_name = fields.Char(
+        string="Complete Name",
+        compute='_compute_complete_name',
+        store=True,
+    )
+
+    @api.multi
+    @api.depends("name", "parent_id", "parent_id.name")
+    def _compute_complete_name(self):
+        for rec in self:
+            rec.complete_name = rec.display_name
 
     @api.multi
     def name_get(self):
@@ -30,7 +41,7 @@ class ResPartnerSector(models.Model):
             """ Return the list [cat.name, cat.parent_id.name, ...] """
             res = []
             while cat:
-                res.append(cat.name)
+                res.append(cat.name or '/')
                 cat = cat.parent_id
             return res
 

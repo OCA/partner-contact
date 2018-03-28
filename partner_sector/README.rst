@@ -55,6 +55,7 @@ Contributors
 * Javier Iniesta <javieria@antiun.com>
 * Vicent Cubells <vicent.cubells@tecnativa.com>
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
+* Lois Rilo <lois.rilo@eficent.com>
 
 Maintainer
 ----------

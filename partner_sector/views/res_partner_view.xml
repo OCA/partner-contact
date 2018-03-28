@@ -36,6 +36,7 @@
         <field name="inherit_id" ref="base.view_res_partner_filter"/>
         <field name="arch" type="xml">
             <field name="category_id" position="after">
+                <field name="sector_complete_name"/>
                 <field name="sector_id"
                        string="Sector"
                        filter_domain="['|',('sector_id','ilike',self),
