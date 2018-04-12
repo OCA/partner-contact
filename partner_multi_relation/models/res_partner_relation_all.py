@@ -1,7 +1,7 @@
-# Copyright 2014-2017 Therp BV <http://therp.nl>
+# -*- coding: utf-8 -*-
+# Copyright 2014-2018 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 # pylint: disable=method-required-super
-"""Abstract model to show each relation from two sides."""
 import collections
 import logging
 
@@ -15,55 +15,8 @@ from openerp.tools import drop_view_if_exists
 _logger = logging.getLogger(__name__)
 
 
-_last_key_offset = -1
-_specification_register = collections.OrderedDict()
-
-
-def register_select_specification(base_name, is_inverse, select_sql):
-    """Register SELECT clause for rows to be included in view.
-
-    Each SELECT clause must contain a first column in the form:
-        '<base_keyfield> * %%(padding)s + %(key_offset),'
-    The %%(padding)s will be used as a parameter for the
-    cursor.execute function, the %(key_offset) will be replaced
-    by dictionary replacement.
-    The columns for each SELECT clause must be ordered as follows:
-    id - specified as defined above:
-    res_model: model._name of the underlying table,
-    res_id: base key in the underlying table,
-    this_partner_id: must refer to a partner
-    other_partner_id: must refer to a related partner
-    type_id: refers to res.partner.relation.type,
-    date_start: start date of relation if relevant or NULL,
-    date_end: end date of relation if relevant or NULL,
-    %(is_inverse)s as is_inverse: used to determine type_selection_id,
-    """
-    global _last_key_offset
-    key_name = base_name + (is_inverse and '_inverse' or '')
-    assert key_name not in _specification_register
-    assert '%%(padding)s' in select_sql
-    assert '%(key_offset)s' in select_sql
-    assert '%(is_inverse)s' in select_sql
-    _last_key_offset += 1
-    _specification_register[key_name] = dict(
-        base_name=base_name,
-        is_inverse=is_inverse,
-        key_offset=_last_key_offset,
-        select_sql=select_sql % {
-            'key_offset': _last_key_offset,
-            'is_inverse': is_inverse})
-
-
-def get_select_specification(base_name, is_inverse):
-    key_name = base_name + (is_inverse and '_inverse' or '')
-    return _specification_register[key_name]
-
-
 # Register relations
-register_select_specification(
-    base_name='relation',
-    is_inverse=False,
-    select_sql="""\
+RELATIONS_SQL = """\
 SELECT
     (rel.id * %%(padding)s) + %(key_offset)s AS id,
     'res.partner.relation' AS res_model,
@@ -74,14 +27,10 @@ SELECT
     rel.date_start,
     rel.date_end,
     %(is_inverse)s as is_inverse
-FROM res_partner_relation rel
-    """)
+FROM res_partner_relation rel"""
 
 # Register inverse relations
-register_select_specification(
-    base_name='relation',
-    is_inverse=True,
-    select_sql="""\
+RELATIONS_SQL_INVERSE = """\
 SELECT
     (rel.id * %%(padding)s) + %(key_offset)s AS id,
     'res.partner.relation',
@@ -92,8 +41,7 @@ SELECT
     rel.date_start,
     rel.date_end,
     %(is_inverse)s as is_inverse
-FROM res_partner_relation rel
-    """)
+FROM res_partner_relation rel"""
 
 
 class ResPartnerRelationAll(models.AbstractModel):
@@ -148,20 +96,44 @@ class ResPartnerRelationAll(models.AbstractModel):
         compute=lambda self: None,
         search='_search_any_partner_id')
 
-    def _get_active_selects(self):
-        """Return selects actually to be used.
+    def register_specification(
+            self, register, base_name, is_inverse, select_sql):
+        _last_key_offset = register['_lastkey']
+        key_name = base_name + (is_inverse and '_inverse' or '')
+        assert key_name not in register
+        assert '%%(padding)s' in select_sql
+        assert '%(key_offset)s' in select_sql
+        assert '%(is_inverse)s' in select_sql
+        _last_key_offset += 1
+        register['_lastkey'] = _last_key_offset
+        register[key_name] = dict(
+            base_name=base_name,
+            is_inverse=is_inverse,
+            key_offset=_last_key_offset,
+            select_sql=select_sql % {
+                'key_offset': _last_key_offset,
+                'is_inverse': is_inverse})
 
-        Selects are registered from all modules PRESENT. But should only be
-        used to build view if module actually INSTALLED.
-        """
-        return ['relation', 'relation_inverse']
+    def get_register(self):
+        register = collections.OrderedDict()
+        register['_lastkey'] = -1
+        self.register_specification(
+            register, 'relation', False, RELATIONS_SQL)
+        self.register_specification(
+            register, 'relation', True, RELATIONS_SQL_INVERSE)
+        return register
+
+    def get_select_specification(self, base_name, is_inverse):
+        register = self.get_register()
+        key_name = base_name + (is_inverse and '_inverse' or '')
+        return register[key_name]
 
     def _get_statement(self):
         """Allow other modules to add to statement."""
-        active_selects = self._get_active_selects()
+        register = self.get_register()
         union_select = ' UNION '.join(
-            [_specification_register[key]['select_sql']
-             for key in active_selects])
+            [register[key]['select_sql']
+             for key in register.iterkeys() if key != '_lastkey'])
         return """\
 CREATE OR REPLACE VIEW %%(table)s AS
      WITH base_selection AS (%(union_select)s)
@@ -441,7 +413,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
     def _compute_id(self, base_resource, type_selection):
         """Compute id. Allow for enhancements in inherit model."""
         base_name = self._compute_base_name(type_selection)
-        key_offset = get_select_specification(
+        key_offset = self.get_select_specification(
             base_name, type_selection.is_inverse)['key_offset']
         return base_resource.id * self._get_padding() + key_offset
 
