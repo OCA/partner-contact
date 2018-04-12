@@ -1,33 +1,27 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * crm_deduplicate_filter
+#	* crm_deduplicate_filter
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
-# Ediz Duman <neps1192@gmail.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-10 03:36+0000\n"
-"PO-Revision-Date: 2017-06-10 03:36+0000\n"
-"Last-Translator: Ediz Duman <neps1192@gmail.com>, 2017\n"
-"Language-Team: Turkish (https://www.transifex.com/oca/teams/23907/tr/)\n"
-"Language: tr\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: \n"
 
 #. module: crm_deduplicate_filter
 #: model:ir.model.fields,field_description:crm_deduplicate_filter.field_base_partner_merge_automatic_wizard_exclude_is_company
 msgid "'Is a company?' field selected"
-msgstr "' Bu bir şirket mi? ' Alanı seçili ise"
+msgstr ""
 
 #. module: crm_deduplicate_filter
 #: model:ir.model.fields,field_description:crm_deduplicate_filter.field_base_partner_merge_automatic_wizard_exclude_not_parent
 msgid "Parent company not set"
-msgstr "Üst firma Ayarlanmamışsa"
+msgstr ""
 
 #. module: crm_deduplicate_filter
 #: model:ir.model.fields,field_description:crm_deduplicate_filter.field_base_partner_merge_automatic_wizard_exclude_parent
@@ -37,4 +31,5 @@ msgstr ""
 #. module: crm_deduplicate_filter
 #: model:ir.model,name:crm_deduplicate_filter.model_base_partner_merge_automatic_wizard
 msgid "base.partner.merge.automatic.wizard"
-msgstr "base.partner.merge.automatic.wizard"
+msgstr ""
+
