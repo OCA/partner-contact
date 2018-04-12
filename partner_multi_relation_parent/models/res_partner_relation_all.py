@@ -4,15 +4,9 @@
 from openerp import _, api, models
 from openerp.exceptions import ValidationError
 
-from openerp.addons.partner_multi_relation.models.res_partner_relation_all \
-    import register_select_specification
-
 
 # Register relation from address partner to parent partner:
-register_select_specification(
-    base_name='partner_address',
-    is_inverse=False,
-    select_sql="""\
+PARTNER_ADDRESS_SQL = """\
 SELECT
     (partner.id * %%(padding)s) + %(key_offset)s as ID,
     'res.partner' AS res_model,
@@ -26,13 +20,10 @@ SELECT
  FROM res_partner partner
  JOIN res_partner_relation_type rprt ON partner.type = rprt.partner_type
  WHERE NOT partner.parent_id IS NULL
-   AND rprt.partner_synchronization_active""")
+   AND rprt.partner_synchronization_active"""
 
 # Register relation from parent partner to address partner:
-register_select_specification(
-    base_name='partner_address',
-    is_inverse=True,
-    select_sql="""\
+PARTNER_ADDRESS_SQL_INVERSE = """\
 SELECT
     (partner.id * %%(padding)s) + %(key_offset)s as ID,
     'res.partner' AS res_model,
@@ -46,21 +37,20 @@ SELECT
  FROM res_partner partner
  JOIN res_partner_relation_type rprt ON partner.type = rprt.partner_type
  WHERE NOT partner.parent_id IS NULL
-   AND rprt.partner_synchronization_active""")
+   AND rprt.partner_synchronization_active"""
 
 
 class ResPartnerRelationAll(models.AbstractModel):
     """Show addresses as relations if so configured."""
     _inherit = 'res.partner.relation.all'
 
-    def _get_active_selects(self):
-        """Return selects actually to be used.
-
-        Selects are registered from all modules PRESENT. But should only be
-        used to build view if module actually INSTALLED.
-        """
-        return super(ResPartnerRelationAll, self)._get_active_selects() +\
-            ['partner_address', 'partner_address_inverse']
+    def get_register(self):
+        register = super(ResPartnerRelationAll, self).get_register()
+        self.register_specification(
+            register, 'partner_address', False, PARTNER_ADDRESS_SQL)
+        self.register_specification(
+            register, 'partner_address', True, PARTNER_ADDRESS_SQL_INVERSE)
+        return register
 
     @api.model
     def _compute_base_name(self, type_selection):
