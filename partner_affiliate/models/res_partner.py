@@ -10,10 +10,14 @@ class ResPartner(models.Model):
     """Add relation affiliate_ids."""
     _inherit = "res.partner"
 
-    child_ids = fields.One2many(domain=[('is_company', '=', False)])
-    affiliate_ids = fields.One2many(
-        comodel_name='res.partner',
-        inverse_name='parent_id',
-        string='Affiliates',
-        domain=[('is_company', '=', True)],
-    )
+    # force "active_test" domain to bypass _search() override
+    child_ids = fields.One2many('res.partner', 'parent_id',
+                                string = 'Contacts',
+                                domain = [('active', '=', True),
+                                          ('is_company', '=', False)])
+
+    # force "active_test" domain to bypass _search() override
+    affiliate_ids = fields.One2many('res.partner', 'parent_id',
+                                    string='Affiliates',
+                                    domain=[('active', '=', True),
+                                            ('is_company', '=', True)])
