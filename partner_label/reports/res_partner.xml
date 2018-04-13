@@ -10,8 +10,19 @@
             <body class="container">
                 <div class="page">
                     <t t-foreach="docs.with_context(show_address=True)" t-as="this">
-                        <div t-attf-style="height: {{this.company_id.partner_labels_height}}mm; width: {{this.company_id.partner_labels_width}}mm; padding: {{this.company_id.partner_labels_padding}}mm; margin: {{this.company_id.partner_labels_margin}}mm; display: inline-block; overflow: hidden;">
-                            <address t-field="this.self" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                        <div t-attf-style="height: {{this.company_id.partner_labels_height}}mm;
+                                           width: {{this.company_id.partner_labels_width}}mm;
+                                           padding: {{this.company_id.partner_labels_padding}}mm;
+                                           margin-top: {{this.company_id.partner_labels_margin_top}}mm;
+                                           margin-bottom: {{this.company_id.partner_labels_margin_bottom}}mm;
+                                           margin-left: {{this.company_id.partner_labels_margin_left}}mm;
+                                           margin-right: {{this.company_id.partner_labels_margin_right}}mm;
+                                           display: inline-block;
+                                           overflow: hidden;
+                                           float:left;
+                                           page-break-inside: avoid;">
+                            <address t-field="this.self"
+                                     t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
                         </div>
                     </t>
                 </div>
@@ -19,7 +30,7 @@
         </html>
     </template>
     <report id="report_res_partner_label"
-        string="Labels"
+        string="Partner Labels"
         model="res.partner"
         name="partner_label.view_res_partner_label"
         report_type="qweb-pdf"
