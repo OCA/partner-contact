@@ -12,9 +12,9 @@ class ResPartner(models.Model):
 
     # force "active_test" domain to bypass _search() override
     child_ids = fields.One2many('res.partner', 'parent_id',
-                                string = 'Contacts',
-                                domain = [('active', '=', True),
-                                          ('is_company', '=', False)])
+                                string='Contacts',
+                                domain=[('active', '=', True),
+                                        ('is_company', '=', False)])
 
     # force "active_test" domain to bypass _search() override
     affiliate_ids = fields.One2many('res.partner', 'parent_id',
