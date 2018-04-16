@@ -22,7 +22,7 @@ Usage
 =====
 
 Before being able to use relations, you'll have define some first. Do that in
-Sales / Configuration / Address Book / Partner relations. Here, you need to
+Contacts / Relations / Partner relations. Here, you need to
 name both sides of the relation: To have an assistant-relation, you would name
 one side 'is assistant of' and the other side 'has assistant'. This relation
 only makes sense between people, so you would choose 'Person' for both partner
@@ -31,11 +31,11 @@ while the relation 'has worked for' should have persons on the left side and
 companies on the right side. If you leave this field empty, the relation is
 applicable to all types of partners.
 
-If you use categories to further specify the type of partners, you could for
+If you use categories (tags) to further specify the type of partners, you could for
 example enforce that the 'is member of' relation can only have companies with
 label 'Organization' on the left side.
 
-Now open a partner and choose relations as appropriate in the 'Relations' tab.
+Now open a partner, click on the 'Relations' smart button and add relations as appropriate.
 
 Searching partners with relations
 ---------------------------------
@@ -87,6 +87,7 @@ Contributors
 * Sandy Carter <sandy.carter@savoirfairelinux.com>
 * Bruno Joliveau <bruno.joliveau@savoirfairelinux.com>
 * Adriana Ierfino <adriana.ierfino@savoirfairelinux.com>
+* Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 
 Maintainer
 ----------
