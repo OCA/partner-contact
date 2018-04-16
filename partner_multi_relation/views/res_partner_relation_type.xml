@@ -34,7 +34,7 @@
                                 name="right"
                                 attrs="{'invisible': [('is_symmetric', '=', True)]}"
                                 >
-                                <field name="name_inverse" />
+                                <field name="name_inverse" attrs="{'required': [('is_symmetric', '=', False)]}"/>
                                 <field name="contact_type_right" />
                                 <field name="partner_category_right" />
                             </group>

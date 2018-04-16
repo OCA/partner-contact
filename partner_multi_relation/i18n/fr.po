@@ -375,6 +375,12 @@ msgid "Reflexive"
 msgstr "Réflexive"
 
 #. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:179
+#, python-format
+msgid "Reflexivity could not be disabled for the relation type {relation_type}. There are existing reflexive relations defined for the following partners: {partners}"
+msgstr "La reflexivité n'a pas pu être désactivée pour le type de relation {relation_type}. Il existe des relations réflexives pour les partenaires suivants: {partners}"
+
+#. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_relation_id
 msgid "Relation"
 msgstr "Relation"
