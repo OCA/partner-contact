@@ -1,9 +1,9 @@
 # Copyright 2013-2018 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Define the type of relations that can exist between partners."""
-from openerp import _, api, fields, models
-from openerp.exceptions import ValidationError
-from openerp.osv.expression import AND, OR
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
+from odoo.osv.expression import AND, OR
 
 
 HANDLE_INVALID_ONCHANGE = [
@@ -83,6 +83,27 @@ class ResPartnerRelationType(models.Model):
             ('p', _('Person')),
         ]
 
+    @api.model
+    def _end_active_relations(self, relations):
+        """End the relations that are active.
+
+        If a relation is current, that is, if it has a start date
+        in the past and end date in the future (or no end date),
+        the end date will be set to the current date.
+
+        If a relation has a end date in the past, then it is inactive and
+        will not be modified.
+
+        :param relations: a recordset of relations (not necessarily all active)
+        """
+        today = fields.Date.today()
+        for relation in relations:
+            if relation.date_start and relation.date_start >= today:
+                relation.unlink()
+
+            elif not relation.date_end or relation.date_end > today:
+                relation.write({'date_end': today})
+
     @api.multi
     def check_existing(self, vals):
         """Check wether records exist that do not fit new criteria."""
@@ -147,16 +168,64 @@ class ResPartnerRelationType(models.Model):
                 elif handling == 'delete':
                     invalid_relations.unlink()
                 else:
-                    # Delete future records, end other ones, ignore relations
-                    # already ended:
-                    cutoff_date = fields.Date.today()
-                    for relation in invalid_relations:
-                        if (relation.date_start and
-                                relation.date_start >= cutoff_date):
-                            relation.unlink()
-                        elif (not relation.date_end or
-                                relation.date_end > cutoff_date):
-                            relation.write({'date_end': cutoff_date})
+                    self._end_active_relations(invalid_relations)
+
+    def _get_reflexive_relations(self):
+        """Get all reflexive relations for this relation type.
+
+        :return: a recordset of res.partner.relation.
+        """
+        self.env.cr.execute(
+            """
+            SELECT id FROM res_partner_relation
+            WHERE left_partner_id = right_partner_id
+            AND type_id = %(relation_type_id)s
+            """, {
+                'relation_type_id': self.id,
+            }
+        )
+        reflexive_relation_ids = [r[0] for r in self.env.cr.fetchall()]
+        return self.env['res.partner.relation'].browse(reflexive_relation_ids)
+
+    def _check_no_existing_reflexive_relations(self):
+        """Check that no reflexive relation exists for these relation types."""
+        for relation_type in self:
+            relations = relation_type._get_reflexive_relations()
+            if relations:
+                raise ValidationError(
+                    _("Reflexivity could not be disabled for the relation "
+                      "type {relation_type}. There are existing reflexive "
+                      "relations defined for the following partners: "
+                      "{partners}").format(
+                        relation_type=relation_type.display_name,
+                        partners=relations.mapped(
+                            'left_partner_id.display_name')))
+
+    def _delete_existing_reflexive_relations(self):
+        """Delete existing reflexive relations for these relation types."""
+        for relation_type in self:
+            relations = relation_type._get_reflexive_relations()
+            relations.unlink()
+
+    def _end_active_reflexive_relations(self):
+        """End active reflexive relations for these relation types."""
+        for relation_type in self:
+            reflexive_relations = relation_type._get_reflexive_relations()
+            self._end_active_relations(reflexive_relations)
+
+    def _handle_deactivation_of_allow_self(self):
+        """Handle the deactivation of reflexivity on these relations types."""
+        restrict_relation_types = self.filtered(
+            lambda t: t.handle_invalid_onchange == 'restrict')
+        restrict_relation_types._check_no_existing_reflexive_relations()
+
+        delete_relation_types = self.filtered(
+            lambda t: t.handle_invalid_onchange == 'delete')
+        delete_relation_types._delete_existing_reflexive_relations()
+
+        end_relation_types = self.filtered(
+            lambda t: t.handle_invalid_onchange == 'end')
+        end_relation_types._end_active_reflexive_relations()
 
     @api.multi
     def _update_right_vals(self, vals):
@@ -186,11 +255,17 @@ class ResPartnerRelationType(models.Model):
     def write(self, vals):
         """Handle existing relations if conditions change."""
         self.check_existing(vals)
+
         for rec in self:
             rec_vals = vals.copy()
             if rec_vals.get('is_symmetric', rec.is_symmetric):
                 self._update_right_vals(rec_vals)
             super(ResPartnerRelationType, rec).write(rec_vals)
+
+        allow_self_disabled = 'allow_self' in vals and not vals['allow_self']
+        if allow_self_disabled:
+            self._handle_deactivation_of_allow_self()
+
         return True
 
     @api.multi
