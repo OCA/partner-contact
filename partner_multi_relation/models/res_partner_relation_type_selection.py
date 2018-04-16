@@ -14,8 +14,8 @@ the field labels translatable.
 """
 from psycopg2.extensions import AsIs
 
-from openerp import api, fields, models
-from openerp.tools import drop_view_if_exists
+from odoo import api, fields, models
+from odoo.tools import drop_view_if_exists
 
 
 class ResPartnerRelationTypeSelection(models.Model):
