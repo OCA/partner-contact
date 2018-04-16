@@ -3,8 +3,8 @@
 """Support connections between partners."""
 import numbers
 
-from openerp import _, api, exceptions, fields, models
-from openerp.osv.expression import is_leaf, OR, FALSE_LEAF
+from odoo import _, api, exceptions, fields, models
+from odoo.osv.expression import is_leaf, OR, FALSE_LEAF
 
 
 class ResPartner(models.Model):
