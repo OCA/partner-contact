@@ -4,6 +4,7 @@
 
 from odoo import api, models, _
 from odoo.exceptions import ValidationError
+from odoo.tools import config
 
 
 class ResPartner(models.Model):
@@ -12,9 +13,13 @@ class ResPartner(models.Model):
     @api.constrains('vat')
     def _check_vat_unique(self):
         for record in self:
-            if record.parent_id:
+            if record.parent_id or not record.vat:
                 continue
-            results = self.env['res.partner'].search([
+            test_condition = (config['test_enable'] and
+                              not self.env.context.get('test_vat'))
+            if test_condition:
+                continue
+            results = self.env['res.partner'].search_count([
                 ('parent_id', '=', False),
                 ('vat', '=', record.vat),
                 ('id', '!=', record.id)
