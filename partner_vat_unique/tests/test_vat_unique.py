@@ -17,7 +17,7 @@ class TestVatUnique(SavepointCase):
 
     def test_duplicated_vat_creation(self):
         with self.assertRaises(ValidationError):
-            self.env['res.partner'].create({
+            self.env['res.partner'].with_context(test_vat=True).create({
                 'name': 'Second partner',
                 'vat': 'ESA12345674'
             })
