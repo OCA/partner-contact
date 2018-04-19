@@ -1,0 +1,57 @@
+import setuptools
+
+with open('VERSION.txt', 'r') as f:
+    version = f.read().strip()
+
+setuptools.setup(
+    name="odoo9-addons-oca-partner-contact",
+    description="Meta package for oca-partner-contact Odoo addons",
+    version=version,
+    install_requires=[
+        'odoo9-addon-base_country_state_translatable',
+        'odoo9-addon-base_location',
+        'odoo9-addon-base_location_geonames_import',
+        'odoo9-addon-base_partner_merge',
+        'odoo9-addon-base_partner_sequence',
+        'odoo9-addon-base_vat_sanitized',
+        'odoo9-addon-partner_address_street3',
+        'odoo9-addon-partner_changeset',
+        'odoo9-addon-partner_contact_birthdate',
+        'odoo9-addon-partner_contact_department',
+        'odoo9-addon-partner_contact_gender',
+        'odoo9-addon-partner_contact_height',
+        'odoo9-addon-partner_contact_in_several_companies',
+        'odoo9-addon-partner_contact_job_position',
+        'odoo9-addon-partner_contact_lang',
+        'odoo9-addon-partner_contact_nationality',
+        'odoo9-addon-partner_contact_nutrition',
+        'odoo9-addon-partner_contact_nutrition_activity_level',
+        'odoo9-addon-partner_contact_nutrition_allergen',
+        'odoo9-addon-partner_contact_nutrition_diet',
+        'odoo9-addon-partner_contact_nutrition_exclusion',
+        'odoo9-addon-partner_contact_nutrition_goal',
+        'odoo9-addon-partner_contact_personal_information_page',
+        'odoo9-addon-partner_contact_weight',
+        'odoo9-addon-partner_default_sale_discount',
+        'odoo9-addon-partner_external_map',
+        'odoo9-addon-partner_financial_risk',
+        'odoo9-addon-partner_firstname',
+        'odoo9-addon-partner_helper',
+        'odoo9-addon-partner_identification',
+        'odoo9-addon-partner_multi_image',
+        'odoo9-addon-partner_multi_relation',
+        'odoo9-addon-partner_password_reset',
+        'odoo9-addon-partner_payment_return_risk',
+        'odoo9-addon-partner_phone_extension',
+        'odoo9-addon-partner_phonecall_schedule',
+        'odoo9-addon-partner_ref_unique',
+        'odoo9-addon-partner_sale_risk',
+        'odoo9-addon-partner_sector',
+        'odoo9-addon-partner_stock_risk',
+        'odoo9-addon-res_partner_affiliate',
+    ],
+    classifiers=[
+        'Programming Language :: Python',
+        'Framework :: Odoo',
+    ]
+)
