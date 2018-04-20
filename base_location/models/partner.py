@@ -1,4 +1,5 @@
 # Copyright 2016 Nicolas Bessi, Camptocamp SA
+# Copyright 2018 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models, _
@@ -64,3 +65,8 @@ class ResPartner(models.Model):
                 raise ValidationError(_(
                     "The city of partner %s differs from that in "
                     "location %s") % (rec.name, rec.zip_id.name))
+
+    @api.onchange('state_id')
+    def onchange_state_id(self):
+        if self.state_id.country_id:
+            self.country_id = self.state_id.country_id.id
