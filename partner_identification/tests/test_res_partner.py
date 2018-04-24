@@ -7,6 +7,7 @@ from odoo.tests import common
 from odoo.exceptions import ValidationError
 
 
+# pylint: disable=consider-merging-classes-inherited
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
@@ -23,10 +24,9 @@ class ResPartner(models.Model):
     )
 
 
-class TestResPartner(common.SavepointCase):
+class TestResPartner(common.TransactionCase):
 
-    @classmethod
-    def _init_test_model(cls, model_cls):
+    def _init_test_model(self, model_cls):
         """ Build a model from model_cls in order to test abstract models.
         Note that this does not actually create a table in the database, so
         there may be some unidentified edge cases.
@@ -35,10 +35,10 @@ class TestResPartner(common.SavepointCase):
         Returns:
             model_cls: Instance
         """
-        registry = cls.env.registry
-        cr = cls.env.cr
+        registry = self.env.registry
+        cr = self.env.cr
         inst = model_cls._build_model(registry, cr)
-        model = cls.env[model_cls._inherit].with_context(todo=[])
+        model = self.env[model_cls._inherit].with_context(todo=[])
         model._prepare_setup()
         model._setup_base(partial=False)
         model._setup_fields(partial=False)
@@ -48,14 +48,9 @@ class TestResPartner(common.SavepointCase):
         model._auto_end()
         return inst
 
-    @classmethod
-    def setUpClass(cls):
-        super(TestResPartner, cls).setUpClass()
-        cls.env.registry.enter_test_mode()
-        cls._init_test_model(ResPartner)
-
     def setUp(self):
         super(TestResPartner, self).setUp()
+        self._init_test_model(ResPartner)
         bad_cat = self.env['res.partner.id_category'].create({
             'code': 'another_code',
             'name': 'another_name',
