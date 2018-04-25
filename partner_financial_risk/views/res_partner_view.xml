@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3). -->
+<?xml version="1.0"?>
+<!-- Copyright 2016-2018 Tecnativa - Carlos Dauden
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
 
     <record id="res_partner_view_risk" model="ir.ui.view">

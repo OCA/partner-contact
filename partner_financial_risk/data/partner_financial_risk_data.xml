@@ -1,15 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3). -->
+<?xml version="1.0"?>
+<!-- Copyright 2016-2018 Tecnativa - Carlos Dauden
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
-    <record id="ir_cron_due_invoice_every_day" model="ir.cron">
-        <field name="name">Financial risk: Process due invoices</field>
-        <field name="interval_number">1</field>
-        <field name="interval_type">days</field>
-        <field name="numbercall">-1</field>
-        <field name="doall" eval="False"/>
-        <field name="model" eval="'res.partner'"/>
-        <field name="function" eval="'process_unpaid_invoices'"/>
-        <field name="args" eval="'()'"/>
-    </record>
+
+<record id="ir_cron_due_invoice_every_day" model="ir.cron">
+    <field name="name">Financial risk: Process due invoices</field>
+    <field name="model_id" ref="model_res_partner"/>
+    <field name="state">code</field>
+    <field name="code">model.process_unpaid_invoices()</field>
+    <field name="user_id" ref="base.user_root" />
+    <field name="interval_number">1</field>
+    <field name="interval_type">days</field>
+    <field name="numbercall">-1</field>
+    <!--<field name="doall" eval="False"/>-->
+</record>
+
 </odoo>

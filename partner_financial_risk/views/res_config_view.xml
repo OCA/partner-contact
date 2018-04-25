@@ -1,23 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3). -->
+<?xml version="1.0"?>
+<!-- Copyright 2016-2018 Tecnativa - Carlos Dauden
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
 
-    <record id="view_account_config" model="ir.ui.view">
-        <field name="name">account settings</field>
-        <field name="model">account.config.settings</field>
-        <field name="inherit_id" ref="account.view_account_config_settings"/>
-        <field name="arch" type="xml">
-
-            <xpath expr="//div[@name='payment_acquirer']/.." position="after">
-                <label for="id" string="Financial Risk"/>
-                <div name="financial_risk" string="Financial Risk div">
-                    <label for="invoice_unpaid_margin"/>
-                    <field name="invoice_unpaid_margin" class="oe_inline"/>
+<record id="res_config_settings_view_form" model="ir.ui.view">
+    <field name="name">res.config.settings.view.form.inherit.partner.financial.risk</field>
+    <field name="model">res.config.settings</field>
+    <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+    <field name="arch" type="xml">
+        <xpath expr=".//div[@id='account_followup']/.." position="inside">
+            <div class="col-xs-12 col-md-6 o_setting_box" title="These taxes are set in any new product created.">
+                <div class="o_setting_left_pane"/>
+                <div class="o_setting_right_pane">
+                    <label string='Financial Risk'/>
+                    <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." groups="base.group_multi_company"/>
+                    <div class="text-muted">
+                        Set options applied to financial risk
+                    </div>
+                    <div class="content-group">
+                        <div class="row mt16" title="">
+                            <label string="Maturity Margin" for="invoice_unpaid_margin" class="col-md-3 o_light_label"/>
+                            <field name="invoice_unpaid_margin"/>
+                        </div>
+                    </div>
                 </div>
-            </xpath>
-
-        </field>
-    </record>
+            </div>
+        </xpath>
+    </field>
+</record>
 
 </odoo>
