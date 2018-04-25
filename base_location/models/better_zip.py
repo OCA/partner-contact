@@ -54,7 +54,8 @@ class BetterZip(models.Model):
     @api.model
     def name_search(self, name='', args=None, operator='ilike', limit=100):
         args = list(args or [])
-        args += ['|', ('city', operator, name), '|', ('name', operator, name), ('code', operator, name)]
+        args += ['|', ('city', operator, name),
+                 '|', ('name', operator, name), ('code', operator, name)]
         recs = self.search(args, limit=limit)
         return recs.name_get()
 
