@@ -54,6 +54,7 @@ setuptools.setup(
         'odoo10-addon-partner_second_lastname',
         'odoo10-addon-partner_sector',
         'odoo10-addon-partner_street_number',
+        'odoo10-addon-partner_vat_unique',
     ],
     classifiers=[
         'Programming Language :: Python',
