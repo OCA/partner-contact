@@ -66,6 +66,7 @@ addon | version | summary
 [partner_second_lastname](partner_second_lastname/) | 10.0.1.0.0 | Have split first and second lastnames
 [partner_sector](partner_sector/) | 10.0.1.1.0 | Add partner sectors
 [partner_street_number](partner_street_number/) | 10.0.1.0.0 | Introduces separate fields for street name and street number.
+[partner_vat_unique](partner_vat_unique/) | 10.0.1.0.0 | Partner VAT Unique
 
 
 Unported addons
