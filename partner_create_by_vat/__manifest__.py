@@ -15,7 +15,7 @@
     'application': False,
     'installable': True,
     'external_dependencies': {
-        'python': ['stdnum', 'suds'],
+        'python': ['python-stdnum', 'suds'],
     },
     'depends': ['base_vat'],
     'data': ['views/res_partner_view.xml'],
