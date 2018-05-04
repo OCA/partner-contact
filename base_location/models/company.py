@@ -54,6 +54,7 @@ class ResCompany(models.Model):
     @api.onchange('zip_id')
     def _onchange_zip_id(self):
         if self.zip_id:
+            self.partner_id.write({'zip_id': False})
             self.zip = self.zip_id.name
             self.city_id = self.zip_id.city_id
             self.city = self.zip_id.city
