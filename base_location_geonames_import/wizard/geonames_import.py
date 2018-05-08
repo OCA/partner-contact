@@ -53,12 +53,14 @@ class BetterZipGeonamesImport(models.TransientModel):
     @api.model
     def _domain_search_res_city(self, row, country):
         return [('name', '=', self.transform_city_name(row[2], country)),
+                ('state_id.name', '=', row[3]),
                 ('country_id', '=', country.id)]
 
     @api.model
     def _domain_search_better_zip(self, row, country, res_city):
         domain = [('name', '=', row[1]),
                   ('city', '=', self.transform_city_name(row[2], country)),
+                  ('state_id.name', '=', row[3]),
                   ('country_id', '=', country.id)]
         if res_city:
             domain += [('city_id', '=', res_city.id)]
