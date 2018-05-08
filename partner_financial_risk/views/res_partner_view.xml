@@ -14,38 +14,38 @@
             <page name="sales_purchases" position="after">
                 <page name="financial_risk" string="Financial Risk" attrs="{'invisible': [('customer','=',False)]}">
                     <group name="risk_general" col="3">
-                        <group string="General Limits" name="risk_include" col="1" colspan="2">
-                            <group col="3" class="oe_subtotal_footer">
+                        <group string="General Limits" name="risk_include" class="o_group_col_6">
+                            <group col="3" class="oe_subtotal_footer" style="float: left !important;">
                                 <field name="risk_invoice_draft_include"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
-                                <field name="risk_invoice_draft" nolabel="1"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
+                                <field name="risk_invoice_draft" nolabel="1" class="oe_left_padding_15"/>
                                 <field name="risk_invoice_open_include"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
-                                <field name="risk_invoice_open" nolabel="1"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
+                                <field name="risk_invoice_open" nolabel="1" class="oe_left_padding_15"/>
                                 <field name="risk_invoice_unpaid_include"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
-                                <field name="risk_invoice_unpaid" nolabel="1"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
+                                <field name="risk_invoice_unpaid" nolabel="1" class="oe_left_padding_15"/>
                                 <field name="risk_account_amount_include"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
-                                <field name="risk_account_amount" nolabel="1"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
+                                <field name="risk_account_amount" nolabel="1" class="oe_left_padding_15"/>
                                 <field name="risk_account_amount_unpaid_include"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
-                                <field name="risk_account_amount_unpaid" nolabel="1"/>
-                                <field name="risk_total" colspan="3" class="oe_subtotal_footer_separator"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
+                                <field name="risk_account_amount_unpaid" nolabel="1" class="oe_left_padding_15"/>
+                                <field name="risk_total" colspan="3" class="oe_subtotal_footer_separator oe_label_to_left"/>
                             </group>
                         </group>
-                        <group string="Specific Limits" name="risk_limits" col="2">
-                            <group class="oe_subtotal_footer">
+                        <group string="Specific Limits" name="risk_limits" class="o_group_col_6">
+                            <group class="oe_subtotal_footer" style="float: left !important;">
                                 <field name="risk_invoice_draft_limit"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
                                 <field name="risk_invoice_open_limit"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
                                 <field name="risk_invoice_unpaid_limit"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
                                 <field name="risk_account_amount_limit"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
                                 <field name="risk_account_amount_unpaid_limit"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
                                 <field name="risk_allow_edit" invisible="1"/>
                             </group>
                         </group>

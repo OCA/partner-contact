@@ -146,5 +146,5 @@ class TestPartnerFinancialRisk(SavepointCase):
 
     def test_recompute_newid(self):
         """Computing risk shouldn't fail if record is a NewId."""
-        new = self.env['res.partner'].new({'customer': True})
+        new = self.env["res.partner"].new({"customer": True})
         new._compute_risk_invoice()
