@@ -2,15 +2,18 @@
 # Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import SavepointCase
+from odoo.tests import common
 from odoo import fields
 
 
-class TestPartnerFinancialRisk(SavepointCase):
+@common.at_install(False)
+@common.post_install(True)
+class TestPartnerFinancialRisk(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
         super(TestPartnerFinancialRisk, cls).setUpClass()
-        cls.env.user.groups_id |= cls.env.ref('account.group_account_manager')
+        cls.env.user.groups_id |= cls.env.ref(
+            'account.group_account_manager')
         type_revenue = cls.env.ref('account.data_account_type_revenue')
         type_receivable = cls.env.ref('account.data_account_type_receivable')
         tax_group_taxes = cls.env.ref('account.tax_group_taxes')
