@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_social_media_form_view" model="ir.ui.view">
+        <field name="name">res.partner.social_media.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <page name="internal_notes" position="after">
+                <page name="social_media_page" string="Social Media">
+                    <group string="Social Media" name="social_media">
+                        <field name="social_rss"/>
+                        <field name="social_twitter"/>
+                        <field name="social_facebook"/>
+                        <field name="social_github"/>
+                        <field name="social_linkedin"/>
+                        <field name="social_youtube"/>
+                        <field name="social_googleplus"/>
+                        <field name="social_flickr"/>
+                        <field name="social_slideshare"/>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>
