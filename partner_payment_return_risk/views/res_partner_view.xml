@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3). -->
+<!-- Copyright 2016-2018 Tecnativa - Carlos Dauden
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3). -->
 <odoo>
     <record id="res_partner_view_risk" model="ir.ui.view">
         <field name="model">res.partner</field>
@@ -9,7 +9,7 @@
             <field name="risk_invoice_unpaid" position="after">
                 <field name="risk_payment_return_include"
                        attrs="{'readonly': [('risk_allow_edit', '=', False)]}"/>
-                <field name="risk_payment_return" nolabel="1"/>
+                <field name="risk_payment_return" nolabel="1" class="oe_left_padding_15"/>
             </field>
             <field name="risk_invoice_unpaid_limit" position="after">
                 <field name="risk_payment_return_limit"

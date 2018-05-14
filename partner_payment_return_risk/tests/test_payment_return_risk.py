@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Copyright 2017 Carlos Dauden <carlos.dauden@tecnativa.com>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# Copyright 2017-2018 Tecnativa - Carlos Dauden
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from openerp.tests import common
+from odoo.tests import common
 
 
 class TestPartnerPaymentReturnRisk(common.SavepointCase):
@@ -55,7 +55,7 @@ class TestPartnerPaymentReturnRisk(common.SavepointCase):
             'code': 'RTEST',
             'name': 'Reason Test'
         })
-        cls.invoice.signal_workflow('invoice_open')
+        cls.invoice.action_invoice_open()
         cls.receivable_line = cls.invoice.move_id.line_ids.filtered(
             lambda x: x.account_id.internal_type == 'receivable')
         # Invert the move to simulate the payment
