@@ -54,6 +54,11 @@ class TestResPartner(common.SavepointCase):
         cls.env.registry.enter_test_mode()
         cls._init_test_model(ResPartner)
 
+    @classmethod
+    def tearDownClass(cls):
+        cls.env.registry.leave_test_mode()
+        super(TestResPartner, cls).tearDownClass()
+
     def setUp(self):
         super(TestResPartner, self).setUp()
         bad_cat = self.env['res.partner.id_category'].create({
