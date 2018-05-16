@@ -51,6 +51,14 @@ class BetterZip(models.Model):
             result.append((rec.id, ", ".join(name)))
         return result
 
+    @api.model
+    def name_search(self, name='', args=None, operator='ilike', limit=100):
+        args = list(args or [])
+        args += ['|', ('city', operator, name),
+                 '|', ('name', operator, name), ('code', operator, name)]
+        recs = self.search(args, limit=limit)
+        return recs.name_get()
+
     @api.onchange('country_id')
     def _onchange_country_id(self):
         if self.state_id.country_id != self.country_id:
