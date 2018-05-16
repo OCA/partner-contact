@@ -21,7 +21,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [base_country_state_translatable](base_country_state_translatable/) | 10.0.1.0.0 | Translate Country States
-[base_location](base_location/) | 10.0.1.0.1 | Enhanced zip/npa management system
+[base_location](base_location/) | 10.0.1.0.2 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 10.0.1.1.1 | Import better zip entries from Geonames
 [base_location_nuts](base_location_nuts/) | 10.0.1.0.0 | NUTS Regions
 [base_partner_merge](base_partner_merge/) | 10.0.1.0.0 | Partner merge wizard without dependency on CRM
@@ -55,6 +55,7 @@ addon | version | summary
 [partner_email_check](partner_email_check/) | 10.0.1.0.0 | Validate email address field
 [partner_employee_quantity](partner_employee_quantity/) | 10.0.1.0.0 | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 10.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
+[partner_financial_risk](partner_financial_risk/) | 10.0.1.0.0 | Manage partner risk
 [partner_firstname](partner_firstname/) | 10.0.2.1.1 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 10.0.0.1.0 | Add specific helper methods
 [partner_identification](partner_identification/) | 10.0.1.1.1 | Partner Identification Numbers
@@ -63,8 +64,10 @@ addon | version | summary
 [partner_password_reset](partner_password_reset/) | 10.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
 [partner_phone_extension](partner_phone_extension/) | 10.0.1.0.0 | Partner Phone Number Extension
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 10.0.1.0.0 | Track the time and days your partners expect phone calls
+[partner_sale_risk](partner_sale_risk/) | 10.0.1.0.0 | Manage partner risk in sales orders
 [partner_second_lastname](partner_second_lastname/) | 10.0.1.0.0 | Have split first and second lastnames
 [partner_sector](partner_sector/) | 10.0.1.1.0 | Add partner sectors
+[partner_stock_risk](partner_stock_risk/) | 10.0.1.0.0 | Manage partner risk in stock moves
 [partner_street_number](partner_street_number/) | 10.0.1.0.0 | Introduces separate fields for street name and street number.
 [partner_vat_unique](partner_vat_unique/) | 10.0.1.0.0 | Partner VAT Unique
 
