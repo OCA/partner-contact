@@ -231,6 +231,66 @@ class TestBaseLocation(TransactionCase):
             ).name
         )
 
+    def test_name_search___can_find_using_city_name_or_zip_or_code(self):
+        barcelona_data = {
+            'city_id': self.city_bcn.id,
+            'city': self.city_bcn.name,
+            'name': '444',
+            'code': 'BA',
+            'state_id': self.state_bcn.id,
+            'country_id': self.ref('base.es'),
+        }
+        madrid_data = {
+            'city_id': self.city_madrid.id,
+            'city': self.city_madrid.name,
+            'name': '555',
+            'code': 'MD',
+            'state_id': self.state_madrid.id,
+            'country_id': self.ref('base.es'),
+        }
+        lausanne_data = {
+            'city_id': self.city_lausanne.id,
+            'city': self.city_lausanne.name,
+            'name': '666',
+            'code': 'LA',
+            'state_id': self.state_vd.id,
+            'country_id': self.ref('base.ch'),
+        }
+
+        barcelona = self.env['res.better.zip'].create(barcelona_data)
+        madrid = self.env['res.better.zip'].create(madrid_data)
+        lausanne = self.env['res.better.zip'].create(lausanne_data)
+
+        found_recs = self.env['res.better.zip'].name_search(name='444')
+        self.assertEqual(len(found_recs), 1)
+        self.assertEqual(found_recs[0][0], barcelona.id)
+        found_recs = self.env['res.better.zip'].name_search(name='Barcelona')
+        self.assertEqual(len(found_recs), 1)
+        self.assertEqual(found_recs[0][0], barcelona.id)
+        found_recs = self.env['res.better.zip'].name_search(name='BA')
+        self.assertEqual(len(found_recs), 1)
+        self.assertEqual(found_recs[0][0], barcelona.id)
+
+        found_recs = self.env['res.better.zip'].name_search(name='555')
+        self.assertEqual(len(found_recs), 1)
+        self.assertEqual(found_recs[0][0], madrid.id)
+        found_recs = self.env['res.better.zip'].name_search(name='Madrid')
+        self.assertEqual(len(found_recs), 1)
+        self.assertEqual(found_recs[0][0], madrid.id)
+        found_recs = self.env['res.better.zip'].name_search(name='MD')
+        self.assertEqual(len(found_recs), 1)
+        self.assertEqual(found_recs[0][0], madrid.id)
+
+        found_recs = self.env['res.better.zip'].name_search(name='666')
+        self.assertEqual(len(found_recs), 1)
+        self.assertEqual(found_recs[0][0], lausanne.id)
+        found_recs = self.env['res.better.zip'].name_search(name='Lausanne')
+        self.assertEqual(len(found_recs), 1)
+        self.assertEqual(found_recs[0][0], lausanne.id)
+        found_recs = self.env['res.better.zip'].name_search(name='LA')
+        self.assertEqual(len(found_recs), 1)
+        self.assertEqual(found_recs[0][0], lausanne.id)
+
     def setUp(self):
         super(TestBaseLocation, self).setUp()
         self.state_vd = self.env['res.country.state'].create({
