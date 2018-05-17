@@ -1,0 +1,101 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_risk_insurance
+# 
+# Translators:
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: odoomrp-wip (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-07 10:44+0000\n"
+"PO-Revision-Date: 2015-09-20 19:01+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/odoomrp-wip-8-0/language/sl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#. module: partner_risk_insurance
+#: help:res.partner,risk_insurance_code:0
+msgid "Code assigned to this partner by the risk insurance company."
+msgstr "Koda, ki jo je partnerju dodelila zavarovalnica za zavarovanje tveganj."
+
+#. module: partner_risk_insurance
+#: field:res.partner,company_credit_limit:0
+msgid "Company's Credit Limit"
+msgstr "Kreditni limit družbe"
+
+#. module: partner_risk_insurance
+#: view:res.partner:partner_risk_insurance.view_partner_form
+msgid "Credit Insurance"
+msgstr "Zavarovanje kredita"
+
+#. module: partner_risk_insurance
+#: help:res.partner,company_credit_limit:0
+msgid "Credit limit granted by the company."
+msgstr "Kreditni limit, ki ga je družba odobrila."
+
+#. module: partner_risk_insurance
+#: help:res.partner,insurance_credit_limit:0
+msgid "Credit limit granted by the insurance company."
+msgstr "Kreditni limit, ki ga je odobrila zavarovalnica."
+
+#. module: partner_risk_insurance
+#: help:res.partner,risk_insurance_grant_date:0
+msgid "Date when the insurance was granted by the insurance company."
+msgstr "Datum, ko je zavarovalnica odobrila zavarovanje."
+
+#. module: partner_risk_insurance
+#: field:res.partner,risk_insurance_code:0
+msgid "Insurance Code"
+msgstr "Zavarovalna koda"
+
+#. module: partner_risk_insurance
+#: field:res.partner,risk_insurance_code_2:0
+msgid "Insurance Code 2"
+msgstr "Zavarovalna koda 2"
+
+#. module: partner_risk_insurance
+#: field:res.partner,risk_insurance_grant_date:0
+msgid "Insurance Grant Date"
+msgstr "Datum odobritve zavarovanja"
+
+#. module: partner_risk_insurance
+#: field:res.partner,risk_insurance_requested:0
+msgid "Insurance Requested"
+msgstr "Zavarovanje zahtevano"
+
+#. module: partner_risk_insurance
+#: field:res.partner,risk_insurance_coverage_percent:0
+msgid "Insurance's Credit Coverage"
+msgstr "Zavarovalno kritje kredita"
+
+#. module: partner_risk_insurance
+#: field:res.partner,insurance_credit_limit:0
+msgid "Insurance's Credit Limit"
+msgstr "Kreditni limit zavarovanja"
+
+#. module: partner_risk_insurance
+#: help:res.partner,risk_insurance_requested:0
+msgid ""
+"Mark this field if an insurance was requested for the credit of this "
+"partner."
+msgstr "Označite to polje, če je za kredit tega partnerja zahtevano zavarovanje."
+
+#. module: partner_risk_insurance
+#: model:ir.model,name:partner_risk_insurance.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: partner_risk_insurance
+#: help:res.partner,risk_insurance_coverage_percent:0
+msgid "Percentage of the credit covered by the insurance."
+msgstr "Odstotek kredita, ki ga krije zavarovanje."
+
+#. module: partner_risk_insurance
+#: help:res.partner,risk_insurance_code_2:0
+msgid "Secondary code assigned to this partner by the risk insurance company."
+msgstr "Sekundarna koda, ki jo je partnerju dodelila zavarovalnica za zavarovanje tveganj."

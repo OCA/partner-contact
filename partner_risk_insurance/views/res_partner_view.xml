@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_partner_form">
+        <field name="name">res.partner.form.risk_insurance</field>
+        <field name="model">res.partner</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="partner_financial_risk.res_partner_view_risk" />
+        <field name="arch" type="xml">
+            <page name="financial_risk" position="inside">
+                <group name="credit_insurance" string="Credit Insurance">
+                    <group>
+                            <field name="company_credit_limit" />
+                            <field name="insurance_credit_limit" />
+                            <field name="risk_insurance_requested" />
+                            <field name="risk_insurance_grant_date" />
+                    </group>
+                    <group>
+                            <field name="risk_insurance_coverage_percent" />
+                            <field name="risk_insurance_code" />
+                            <field name="risk_insurance_code_2" />
+                    </group>
+                </group>
+            </page>
+        </field>
+    </record>
+
+</odoo>

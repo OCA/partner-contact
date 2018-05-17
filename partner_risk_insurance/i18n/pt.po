@@ -1,0 +1,101 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_risk_insurance
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010
+msgid ""
+msgstr ""
+"Project-Id-Version: odoomrp-wip (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-07 10:44+0000\n"
+"PO-Revision-Date: 2015-09-10 16:43+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Portuguese (http://www.transifex.com/oca/odoomrp-wip-8-0/language/pt/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_risk_insurance
+#: help:res.partner,risk_insurance_code:0
+msgid "Code assigned to this partner by the risk insurance company."
+msgstr ""
+
+#. module: partner_risk_insurance
+#: field:res.partner,company_credit_limit:0
+msgid "Company's Credit Limit"
+msgstr "Limite de Crédito da Empresa"
+
+#. module: partner_risk_insurance
+#: view:res.partner:partner_risk_insurance.view_partner_form
+msgid "Credit Insurance"
+msgstr "Seguro de Crédito"
+
+#. module: partner_risk_insurance
+#: help:res.partner,company_credit_limit:0
+msgid "Credit limit granted by the company."
+msgstr "Limite de crédito concedido pela empresa."
+
+#. module: partner_risk_insurance
+#: help:res.partner,insurance_credit_limit:0
+msgid "Credit limit granted by the insurance company."
+msgstr "Limite de crédito concedido pela companhia de seguros."
+
+#. module: partner_risk_insurance
+#: help:res.partner,risk_insurance_grant_date:0
+msgid "Date when the insurance was granted by the insurance company."
+msgstr "Data em que o seguro foi concedido pela companhia de seguros."
+
+#. module: partner_risk_insurance
+#: field:res.partner,risk_insurance_code:0
+msgid "Insurance Code"
+msgstr "Código de Seguros"
+
+#. module: partner_risk_insurance
+#: field:res.partner,risk_insurance_code_2:0
+msgid "Insurance Code 2"
+msgstr "Código de Segurança 2"
+
+#. module: partner_risk_insurance
+#: field:res.partner,risk_insurance_grant_date:0
+msgid "Insurance Grant Date"
+msgstr "Data da Concessão do Seguro"
+
+#. module: partner_risk_insurance
+#: field:res.partner,risk_insurance_requested:0
+msgid "Insurance Requested"
+msgstr "Seguro Requerido"
+
+#. module: partner_risk_insurance
+#: field:res.partner,risk_insurance_coverage_percent:0
+msgid "Insurance's Credit Coverage"
+msgstr "Cobertura do Seguro de Crédito"
+
+#. module: partner_risk_insurance
+#: field:res.partner,insurance_credit_limit:0
+msgid "Insurance's Credit Limit"
+msgstr "Limite do Seguro de Crédito"
+
+#. module: partner_risk_insurance
+#: help:res.partner,risk_insurance_requested:0
+msgid ""
+"Mark this field if an insurance was requested for the credit of this "
+"partner."
+msgstr "Marque este campo se o seguro foi solicitado para o crédito deste terceiro."
+
+#. module: partner_risk_insurance
+#: model:ir.model,name:partner_risk_insurance.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: partner_risk_insurance
+#: help:res.partner,risk_insurance_coverage_percent:0
+msgid "Percentage of the credit covered by the insurance."
+msgstr "Percentual do crédito coberto pelo seguro."
+
+#. module: partner_risk_insurance
+#: help:res.partner,risk_insurance_code_2:0
+msgid "Secondary code assigned to this partner by the risk insurance company."
+msgstr ""
