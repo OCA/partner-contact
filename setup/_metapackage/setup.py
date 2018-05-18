@@ -52,6 +52,7 @@ setuptools.setup(
         'odoo10-addon-partner_password_reset',
         'odoo10-addon-partner_phone_extension',
         'odoo10-addon-partner_phonecall_schedule',
+        'odoo10-addon-partner_risk_insurance',
         'odoo10-addon-partner_sale_risk',
         'odoo10-addon-partner_second_lastname',
         'odoo10-addon-partner_sector',
