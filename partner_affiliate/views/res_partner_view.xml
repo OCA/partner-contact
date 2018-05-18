@@ -14,7 +14,7 @@
             <xpath expr='//page[@name="internal_notes"]' position="before">
                 <page string="Affiliates" attrs="{'invisible': [('is_company','=',False)]}">
                     <field name="affiliate_ids"
-                           context="{'default_parent_id': active_id, 'default_is_company': True, 'default_type':'other'}" mode="kanban">
+                           context="{'default_parent_id': active_id, 'default_is_company': True, 'default_type':'affiliate'}" mode="kanban">
                         <kanban>
                             <field name="color"/>
                             <field name="name"/>
