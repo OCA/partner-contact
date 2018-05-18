@@ -12,6 +12,12 @@
     'name': 'Partner Identification Numbers',
     'category': 'Customer Relationship Management',
     'version': '10.0.1.1.1',
+    'external_dependencies': {
+        'python': [
+            'openupgradelib',
+        ]
+    },
+    'post_init_hook': 'post_init_hook',
     'depends': [
         'sales_team',
     ],
