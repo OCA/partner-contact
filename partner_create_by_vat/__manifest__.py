@@ -6,7 +6,7 @@
     'name': 'Automatic partner creation based on VAT number',
     'summary': 'Using VIES webservice, name and address information will '
                'be fetched and added to the partner.',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.0.1',
     'category': 'Customer Relationship Management',
     'author': 'Forest and Biomass Services Romania, '
               'Odoo Community Association (OCA)',
