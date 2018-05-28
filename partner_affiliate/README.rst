@@ -42,6 +42,7 @@ Contributors
 * Yannick Vaucher <yannick.vaucher@camptocamp.com>
 * Vicent Cubells <vicent.cubells@tecnativa.com>
 * Raul Martin <raul.martin@braintec-group.com>
+* Miguel Ángel Gómez <miguel.gomez@braintec-group.com>
 * Dave Lasley <dave@laslabs.com>
 
 Maintainer
