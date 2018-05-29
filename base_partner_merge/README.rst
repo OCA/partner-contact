@@ -46,8 +46,15 @@ Images
 Author
 ------
 
-Yannick Vaucher
+* Yannick Vaucher <yannick.vaucher@camptocamp.com>
 Based Holger Brunn's idea.
+
+Contributors
+------------
+
+* Serpent Consulting Services Pvt. Ltd. <jay.vora@serpentcs.com>
+
+Do not contact contributors directly about support or help with technical issues.
 
 Maintainer
 ----------
