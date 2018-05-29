@@ -81,7 +81,7 @@
                         attrs="{'invisible': [('state', '!=', 'selection')]}" />
                     <button name="action_start_manual_process"
                         string="Merge with Manual Check"
-                        type="object"  class='oe_highlight"
+                        type="object"  class="oe_highlight"
                         attrs="{'invisible': [('state', '!=', 'option')]}" />
                     <button name="action_start_automatic_process"
                         string="Merge Automatically"
