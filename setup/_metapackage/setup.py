@@ -25,6 +25,7 @@ setuptools.setup(
         'odoo10-addon-partner_coc',
         'odoo10-addon-partner_company_type',
         'odoo10-addon-partner_contact_birthdate',
+        'odoo10-addon-partner_contact_birthplace',
         'odoo10-addon-partner_contact_configuration',
         'odoo10-addon-partner_contact_department',
         'odoo10-addon-partner_contact_gender',
