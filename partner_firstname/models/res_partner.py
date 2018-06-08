@@ -203,10 +203,9 @@ class ResPartner(models.Model):
     def _check_name(self):
         """Ensure at least one name is set."""
         for record in self:
-            if all((
-                record.type == 'contact' or record.is_company,
-                not (record.firstname or record.lastname)
-            )):
+            if (
+                not (record.firstname or record.lastname or record.name)
+            ):
                 raise exceptions.EmptyNamesError(record)
 
     @api.onchange("firstname", "lastname")
