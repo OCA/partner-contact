@@ -4,10 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0-20150327\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-30 07:53+0000\n"
-"PO-Revision-Date: 2015-03-30 07:53+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,33 +14,72 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:26
+#: model:ir.model,name:partner_firstname.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_firstname
+#: sql_constraint:res.partner:0
+msgid "Contacts require a name."
+msgstr ""
+
+#. module: partner_firstname
+#: code:addons/partner_firstname/exceptions.py:11
 #, python-format
 msgid "Error(s) with partner %d's name."
 msgstr ""
 
 #. module: partner_firstname
-#: field:res.partner,firstname:0
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users_firstname
 msgid "First name"
 msgstr ""
 
 #. module: partner_firstname
-#: view:res.partner:partner_firstname.partner_form
-msgid "Is a Company?"
-msgstr ""
-
-#. module: partner_firstname
-#: field:res.partner,lastname:0
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner_lastname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users_lastname
 msgid "Last name"
 msgstr ""
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:40
+#: code:addons/partner_firstname/exceptions.py:8
 #, python-format
 msgid "No name is set."
 msgstr ""
 
 #. module: partner_firstname
-#: model:ir.model,name:partner_firstname.model_res_partner
-msgid "Partner"
+#: model:ir.model.fields,help:partner_firstname.field_res_config_settings_partner_names_order
+msgid "Order to compose partner fullname"
 msgstr ""
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings_partner_names_order_changed
+msgid "Partner Names Order Changed"
+msgstr ""
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings_partner_names_order
+#: model:ir.ui.view,arch_db:partner_firstname.view_general_configuration
+msgid "Partner names order"
+msgstr ""
+
+#. module: partner_firstname
+#: model:ir.ui.view,arch_db:partner_firstname.view_general_configuration
+msgid "Recalculate names"
+msgstr ""
+
+#. module: partner_firstname
+#: model:ir.ui.view,arch_db:partner_firstname.view_general_configuration
+msgid "Recalculate names for all partners. This process could take so much time if there are more than 10,000 active partners"
+msgstr ""
+
+#. module: partner_firstname
+#: model:ir.model,name:partner_firstname.model_res_users
+msgid "Users"
+msgstr ""
+
+#. module: partner_firstname
+#: model:ir.model,name:partner_firstname.model_res_config_settings
+msgid "res.config.settings"
+msgstr ""
+
