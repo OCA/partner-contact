@@ -1,24 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_multi_relation
+#	* partner_multi_relation
 #
-# Translators:
-# Mohamed HABOU <m.habou@agoradeveloppement.com>, 2016
-# OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 01:41+0000\n"
-"PO-Revision-Date: 2016-11-24 01:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: French (France) (https://www.transifex.com/oca/teams/23907/"
-"fr_FR/)\n"
-"Language: fr_FR\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: \n"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:226
@@ -122,7 +115,7 @@ msgstr ""
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:301
 #, python-format
 msgid "Error!"
-msgstr "Erreur !"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
@@ -343,8 +336,7 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.actions.act_window,help:partner_multi_relation.action_res_partner_relation_all
-msgid ""
-"Record and track your partners' relations. Relations may\n"
+msgid "Record and track your partners' relations. Relations may\n"
 "                    be linked to other partners with a type either directly\n"
 "                    or inversely."
 msgstr ""
@@ -485,9 +477,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:145
 #, python-format
-msgid ""
-"There are already relations not satisfying the conditions for partner type "
-"or category."
+msgid "There are already relations not satisfying the conditions for partner type or category."
 msgstr ""
 
 #. module: partner_multi_relation
@@ -510,7 +500,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_4182
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_type_id
 msgid "Type"
-msgstr "Type"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_type_id
@@ -545,10 +535,8 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type_handle_invalid_onchange
-msgid ""
-"When adding relations criteria like partner type and category are checked.\n"
-"However when you change the criteria, there might be relations that do not "
-"fit the new criteria.\n"
+msgid "When adding relations criteria like partner type and category are checked.\n"
+"However when you change the criteria, there might be relations that do not fit the new criteria.\n"
 "Specify how this situation should be handled."
 msgstr ""
 
@@ -563,3 +551,4 @@ msgstr ""
 #, python-format
 msgid "this"
 msgstr ""
+
