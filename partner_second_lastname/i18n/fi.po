@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_second_lastname
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,11 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2016-01-19 01:46+0000\n"
 "PO-Revision-Date: 2015-10-29 13:08+0000\n"
 "Last-Translator: <>\n"
-"Language-Team: Finnish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/fi/)\n"
+"Language-Team: Finnish (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/fi/)\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_second_lastname
@@ -23,46 +24,13 @@ msgid "Partner"
 msgstr "Kumppani"
 
 #. module: partner_second_lastname
-#: field:res.partner,lastname2:0
+#: model:ir.model.fields,field_description:partner_second_lastname.field_res_partner_alias_lastname2
+#: model:ir.model.fields,field_description:partner_second_lastname.field_res_partner_lastname2
+#: model:ir.model.fields,field_description:partner_second_lastname.field_res_users_lastname2
 msgid "Second last name"
 msgstr ""
 
 #. module: partner_second_lastname
-#: view:res.partner:partner_second_lastname.partner_form
-#: view:res.partner:partner_second_lastname.partner_simple_form
-msgid ""
-"{\n"
-"                    'required': [('firstname', '=', False),\n"
-"                                 ('lastname2', '=', False),\n"
-"                                 ('is_company', '=', False)]\n"
-"                }"
-msgstr ""
-
-#. module: partner_second_lastname
-#: view:res.users:partner_second_lastname.users_form
-msgid ""
-"{\n"
-"                    'required': [('firstname', '=', False),\n"
-"                                 ('lastname2', '=', False)]\n"
-"                }"
-msgstr ""
-
-#. module: partner_second_lastname
-#: view:res.partner:partner_second_lastname.partner_form
-#: view:res.partner:partner_second_lastname.partner_simple_form
-msgid ""
-"{\n"
-"                    'required': [('lastname', '=', False),\n"
-"                                 ('lastname2', '=', False),\n"
-"                                 ('is_company', '=', False)]\n"
-"                }"
-msgstr ""
-
-#. module: partner_second_lastname
-#: view:res.users:partner_second_lastname.users_form
-msgid ""
-"{\n"
-"                    'required': [('lastname', '=', False),\n"
-"                                 ('lastname2', '=', False)]\n"
-"                }"
+#: model:ir.model,name:partner_second_lastname.model_base_config_settings
+msgid "base.config.settings"
 msgstr ""
