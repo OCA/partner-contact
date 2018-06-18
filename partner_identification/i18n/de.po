@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_identification
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
@@ -12,10 +12,10 @@ msgstr ""
 "PO-Revision-Date: 2017-05-31 03:41+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_identification
@@ -23,13 +23,15 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"# Python code. Use failed = True to specify that the id number is not valid.\n"
+"# Python code. Use failed = True to specify that the id number is not "
+"valid.\n"
 "# You can use the following variables :\n"
 "#  - self: browse_record of the current ID Category browse_record\n"
 "#  - id_number: browse_record of ID number to validate"
 msgstr ""
 "\n"
-"# Python code. Verwende failed = True, um anzuzeigen, dass die ID ungültig ist.\n"
+"# Python code. Verwende failed = True, um anzuzeigen, dass die ID ungültig "
+"ist.\n"
 "# Sie können die folgenden Variablen nutzen:\n"
 "#  - self: browse_record des aktuellen Kategorie-ID browse_record\n"
 "#  - id_number: browse_record der zu prüfenden ID"
@@ -106,7 +108,8 @@ msgid ""
 "Expiration date. For example, date when person needs to renew his driver "
 "license, 21/10/2019"
 msgstr ""
-"Ablaufdatum. Zum Beispiel das Datum, an dem jemand seinen Führerschein erneuern muss,\n"
+"Ablaufdatum. Zum Beispiel das Datum, an dem jemand seinen Führerschein "
+"erneuern muss,\n"
 "21. 10. 2019"
 
 #. module: partner_identification
@@ -261,8 +264,8 @@ msgid ""
 "The place where the ID has been issued. For example the country for "
 "passports and visa"
 msgstr ""
-"Der Ort an dem dieser Ausweis ausgestellt wurde. Zum Beispiel das "
-"Aussteller-Land vom Reisepass oder des Personalausweises"
+"Der Ort an dem dieser Ausweis ausgestellt wurde. Zum Beispiel das Aussteller-"
+"Land vom Reisepass oder des Personalausweises"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner.py:130

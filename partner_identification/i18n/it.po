@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_identification
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 # Giuliano Lotta <giuliano.lotta@gmail.com>, 2017
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2017-11-21 01:49+0000\n"
 "Last-Translator: Giuliano Lotta <giuliano.lotta@gmail.com>, 2017\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_identification
@@ -24,13 +24,15 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"# Python code. Use failed = True to specify that the id number is not valid.\n"
+"# Python code. Use failed = True to specify that the id number is not "
+"valid.\n"
 "# You can use the following variables :\n"
 "#  - self: browse_record of the current ID Category browse_record\n"
 "#  - id_number: browse_record of ID number to validate"
 msgstr ""
 "\n"
-"# Codice Python  Utilizzare failed = True per specificare che il numero documento non è valido.\n"
+"# Codice Python  Utilizzare failed = True per specificare che il numero "
+"documento non è valido.\n"
 "# Potete utilizzare le seguenti variabili :\n"
 "#  - self: browse_record della Categoria Documento corrente browse_record\n"
 "#  - id_number: browse_record del numero documento da validare"
@@ -257,8 +259,8 @@ msgstr "Stato"
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_name
 msgid "The ID itself. For example, Driver License number of this person"
 msgstr ""
-"Il numero del documento stesso. Ad esempio, il numero di patente di guida di"
-" questa persona"
+"Il numero del documento stesso. Ad esempio, il numero di patente di guida di "
+"questa persona"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_place_issuance

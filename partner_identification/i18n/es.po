@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_identification
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 # Pedro M. Baeza <pedro.baeza@gmail.com>, 2017
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2017-11-21 01:49+0000\n"
 "Last-Translator: Pedro M. Baeza <pedro.baeza@gmail.com>, 2017\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_identification
@@ -24,13 +24,15 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"# Python code. Use failed = True to specify that the id number is not valid.\n"
+"# Python code. Use failed = True to specify that the id number is not "
+"valid.\n"
 "# You can use the following variables :\n"
 "#  - self: browse_record of the current ID Category browse_record\n"
 "#  - id_number: browse_record of ID number to validate"
 msgstr ""
 "\n"
-"# Código Python. Utilice failed = True para especificar que el identificador no es válido.\n"
+"# Código Python. Utilice failed = True para especificar que el identificador "
+"no es válido.\n"
 "# Puede usar las siguientes variables:\n"
 "#  - self: registro ORM de la categoría de identificación\n"
 "#  - id_number: registro ORM del nº de identificación a validar"
@@ -259,8 +261,8 @@ msgstr "Estado"
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_name
 msgid "The ID itself. For example, Driver License number of this person"
 msgstr ""
-"El identificador en si. Por ejemplo, el número de carnet de conducir de esta"
-" persona."
+"El identificador en si. Por ejemplo, el número de carnet de conducir de esta "
+"persona."
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_place_issuance
