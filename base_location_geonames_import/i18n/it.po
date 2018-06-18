@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_location_geonames_import
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 # Giuliano Lotta <giuliano.lotta@gmail.com>, 2017
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2017-12-26 15:32+0000\n"
 "Last-Translator: Giuliano Lotta <giuliano.lotta@gmail.com>, 2017\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_location_geonames_import
@@ -40,8 +40,8 @@ msgid ""
 "first letter of a word) or Upper Case (all letters upper case)."
 msgstr ""
 "Converte i nomi recuperati di città e stato con iniziale maiuscola "
-"(maiuscole su ogni prima lettera di una parola) o tutte maiuscole (con tutte"
-" lettere maiuscole)."
+"(maiuscole su ogni prima lettera di una parola) o tutte maiuscole (con tutte "
+"lettere maiuscole)."
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_res_country
@@ -70,8 +70,8 @@ msgid ""
 "For the selected country, this wizard will download the latest version of "
 "the list of cities from"
 msgstr ""
-"Per la nazione selezionata, questo wizard scaricherà l'ultima versione della"
-" lista delle città"
+"Per la nazione selezionata, questo wizard scaricherà l'ultima versione della "
+"lista delle città"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country_geonames_state_code_column
