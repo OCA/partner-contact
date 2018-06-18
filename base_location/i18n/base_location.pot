@@ -1,22 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * base_location
+#	* base_location
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-10 01:50+0000\n"
-"PO-Revision-Date: 2017-06-10 01:50+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Finnish (https://www.transifex.com/oca/teams/23907/fi/)\n"
-"Language: fi\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: base_location
 #: model:ir.actions.act_window,name:base_location.action_zip_tree
@@ -77,7 +72,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 #: model:ir.ui.view,arch_db:base_location.view_country_search
 msgid "Country"
-msgstr "Maa"
+msgstr ""
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_country_state
@@ -87,12 +82,12 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_uid
 msgid "Created by"
-msgstr "Luonut"
+msgstr ""
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_create_date
 msgid "Created on"
-msgstr "Luotu"
+msgstr ""
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
@@ -102,22 +97,22 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip___last_update
 msgid "Last Modified on"
-msgstr "Viimeksi muokattu"
+msgstr ""
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_uid
 msgid "Last Updated by"
-msgstr "Viimeksi päivitetty"
+msgstr ""
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_write_date
 msgid "Last Updated on"
-msgstr "Viimeksi päivittänyt"
+msgstr ""
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_latitude
@@ -137,12 +132,12 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_display_name
 msgid "Name"
-msgstr "Nimi"
+msgstr ""
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_partner
 msgid "Partner"
-msgstr "Kumppani"
+msgstr ""
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
@@ -153,7 +148,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_state_id
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
 msgid "State"
-msgstr "Tila"
+msgstr ""
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_better_zip_code
@@ -169,3 +164,4 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_name
 msgid "ZIP"
 msgstr ""
+
