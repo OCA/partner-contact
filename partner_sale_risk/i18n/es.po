@@ -27,12 +27,16 @@ msgid "Financial risk exceeded.\n"
 msgstr "Riesgo financiero excedido.\n"
 
 #. module: partner_sale_risk
+#: model:ir.model.fields,help:partner_sale_risk.field_res_partner_alias_risk_sale_order_include
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order_include
+#: model:ir.model.fields,help:partner_sale_risk.field_res_users_risk_sale_order_include
 msgid "Full risk computation"
 msgstr "Cómputo de riesgo total"
 
 #. module: partner_sale_risk
+#: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_alias_risk_sale_order_include
 #: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_risk_sale_order_include
+#: model:ir.model.fields,field_description:partner_sale_risk.field_res_users_risk_sale_order_include
 msgid "Include Sales Orders"
 msgstr "Incluir pedidos de venta"
 
@@ -47,7 +51,9 @@ msgid "Invoice pending amount"
 msgstr "Pendiente de facturar"
 
 #. module: partner_sale_risk
+#: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_alias_risk_sale_order_limit
 #: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_risk_sale_order_limit
+#: model:ir.model.fields,field_description:partner_sale_risk.field_res_users_risk_sale_order_limit
 msgid "Limit Sales Orders"
 msgstr "Límite en pedidos"
 
@@ -62,7 +68,9 @@ msgid "Sales Order"
 msgstr "Pedido de venta"
 
 #. module: partner_sale_risk
+#: model:ir.model.fields,help:partner_sale_risk.field_res_partner_alias_risk_sale_order_limit
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order_limit
+#: model:ir.model.fields,help:partner_sale_risk.field_res_users_risk_sale_order_limit
 msgid "Set 0 if it is not locked"
 msgstr "Establece 0 si no está bloqueado"
 
@@ -79,11 +87,15 @@ msgid "This sale order exceeds the sales orders risk.\n"
 msgstr "Este pedido excede el riesgo en pedidos.\n"
 
 #. module: partner_sale_risk
+#: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_alias_risk_sale_order
 #: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_risk_sale_order
+#: model:ir.model.fields,field_description:partner_sale_risk.field_res_users_risk_sale_order
 msgid "Total Sales Orders Not Invoiced"
 msgstr "Total de pedidos de venta no facturados"
 
 #. module: partner_sale_risk
+#: model:ir.model.fields,help:partner_sale_risk.field_res_partner_alias_risk_sale_order
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order
+#: model:ir.model.fields,help:partner_sale_risk.field_res_users_risk_sale_order
 msgid "Total not invoiced of sales orders in Sale Order state"
 msgstr "Total no facturado"

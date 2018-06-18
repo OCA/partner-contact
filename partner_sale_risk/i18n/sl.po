@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_sale_risk
-# 
+#
 # Translators:
 # Matjaž Mozetič <m.mozetic@matmoz.si>, 2017
 # OCA Transbot <transbot@odoo-community.org>, 2017
@@ -13,11 +13,12 @@ msgstr ""
 "PO-Revision-Date: 2017-06-02 00:47+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
 
 #. module: partner_sale_risk
 #: code:addons/partner_sale_risk/models/sale.py:42
@@ -26,12 +27,16 @@ msgid "Financial risk exceeded.\n"
 msgstr "Prekoračeno finančno tveganje.\n"
 
 #. module: partner_sale_risk
+#: model:ir.model.fields,help:partner_sale_risk.field_res_partner_alias_risk_sale_order_include
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order_include
+#: model:ir.model.fields,help:partner_sale_risk.field_res_users_risk_sale_order_include
 msgid "Full risk computation"
 msgstr "Polna obdelava tveganja"
 
 #. module: partner_sale_risk
+#: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_alias_risk_sale_order_include
 #: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_risk_sale_order_include
+#: model:ir.model.fields,field_description:partner_sale_risk.field_res_users_risk_sale_order_include
 msgid "Include Sales Orders"
 msgstr ""
 
@@ -46,7 +51,9 @@ msgid "Invoice pending amount"
 msgstr ""
 
 #. module: partner_sale_risk
+#: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_alias_risk_sale_order_limit
 #: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_risk_sale_order_limit
+#: model:ir.model.fields,field_description:partner_sale_risk.field_res_users_risk_sale_order_limit
 msgid "Limit Sales Orders"
 msgstr ""
 
@@ -61,7 +68,9 @@ msgid "Sales Order"
 msgstr "Prodajni nalog"
 
 #. module: partner_sale_risk
+#: model:ir.model.fields,help:partner_sale_risk.field_res_partner_alias_risk_sale_order_limit
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order_limit
+#: model:ir.model.fields,help:partner_sale_risk.field_res_users_risk_sale_order_limit
 msgid "Set 0 if it is not locked"
 msgstr "Nastavi 0 če ni zaklenjeno"
 
@@ -78,11 +87,15 @@ msgid "This sale order exceeds the sales orders risk.\n"
 msgstr ""
 
 #. module: partner_sale_risk
+#: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_alias_risk_sale_order
 #: model:ir.model.fields,field_description:partner_sale_risk.field_res_partner_risk_sale_order
+#: model:ir.model.fields,field_description:partner_sale_risk.field_res_users_risk_sale_order
 msgid "Total Sales Orders Not Invoiced"
 msgstr ""
 
 #. module: partner_sale_risk
+#: model:ir.model.fields,help:partner_sale_risk.field_res_partner_alias_risk_sale_order
 #: model:ir.model.fields,help:partner_sale_risk.field_res_partner_risk_sale_order
+#: model:ir.model.fields,help:partner_sale_risk.field_res_users_risk_sale_order
 msgid "Total not invoiced of sales orders in Sale Order state"
 msgstr ""
