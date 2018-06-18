@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_partner_merge
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2017-07-08 02:41+0000\n"
 "PO-Revision-Date: 2017-07-08 02:41+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: French (Canada) (https://www.transifex.com/oca/teams/23907/fr_CA/)\n"
+"Language-Team: French (Canada) (https://www.transifex.com/oca/teams/23907/"
+"fr_CA/)\n"
+"Language: fr_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: base_partner_merge
@@ -25,8 +26,7 @@ msgstr ""
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
-msgid ""
-"Are you sure to execute the list of automatic merges of your contacts ?"
+msgid "Are you sure to execute the list of automatic merges of your contacts ?"
 msgstr ""
 
 #. module: base_partner_merge
@@ -161,7 +161,8 @@ msgid ""
 "Selected contacts will be merged together.\n"
 "                            All documents linked to one of these contacts\n"
 "                            will be redirected to the destination contact.\n"
-"                            You can remove contacts from this list to avoid merging them."
+"                            You can remove contacts from this list to avoid "
+"merging them."
 msgstr ""
 
 #. module: base_partner_merge
