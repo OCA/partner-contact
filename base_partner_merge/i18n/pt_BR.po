@@ -9,15 +9,16 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-08 02:41+0000\n"
-"PO-Revision-Date: 2017-07-08 02:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
-"teams/23907/pt_BR/)\n"
+"PO-Revision-Date: 2018-06-21 14:03+0000\n"
+"Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
+"23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -116,12 +117,12 @@ msgstr "Mesclar automaticamente todos os processos"
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Merge Contacts"
-msgstr ""
+msgstr "Mesclar Contatos"
 
 #. module: base_partner_merge
 #: model:ir.actions.act_window,name:base_partner_merge.action_partner_merge
 msgid "Merge Selected Contacts"
-msgstr ""
+msgstr "Mesclar Contatos Selecionados"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -156,6 +157,12 @@ msgid ""
 "                        Odoo will propose you to merge only those having\n"
 "                        all these fields in common. (not one of the fields)."
 msgstr ""
+"Selecione a lista de campos usados para procurar\n"
+"                         registros duplicados. Se você selecionar vários "
+"campos,\n"
+"                         Odoo irá propor-lhe a fusão apenas aqueles que "
+"tenham\n"
+"                         todos esses campos em comum. (não um dos campos)."
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -166,6 +173,12 @@ msgid ""
 "                            You can remove contacts from this list to avoid "
 "merging them."
 msgstr ""
+"Os contatos selecionados serão mesclados.\n"
+"                             Todos os documentos vinculados a um desses "
+"contatos\n"
+"                             será redirecionado para o contato de destino.\n"
+"                             Você pode remover contatos dessa lista para "
+"evitar mesclá-los."
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
