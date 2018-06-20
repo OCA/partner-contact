@@ -9,20 +9,21 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:32+0000\n"
-"PO-Revision-Date: 2017-12-26 15:32+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
-"teams/23907/pt_BR/)\n"
+"PO-Revision-Date: 2018-06-20 13:48+0000\n"
+"Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
+"23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_child_ids
 msgid "Child departments"
-msgstr ""
+msgstr "Departamentos Infantis"
 
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_create_uid
@@ -60,7 +61,7 @@ msgstr "Mostrar Nome"
 #: code:addons/partner_contact_department/models/res_partner.py:42
 #, python-format
 msgid "Error! You cannot create recursive departments."
-msgstr ""
+msgstr "Erro! Você não pode criar departamentos recursivos."
 
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_id_4099
@@ -90,17 +91,17 @@ msgstr "Nome"
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_parent_id
 msgid "Parent department"
-msgstr ""
+msgstr "Departamento Pai"
 
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_parent_left
 msgid "Parent left"
-msgstr ""
+msgstr "Pai restante"
 
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_parent_right
 msgid "Parent right"
-msgstr ""
+msgstr "Pai certo"
 
 #. module: partner_contact_department
 #: model:ir.model,name:partner_contact_department.model_res_partner
