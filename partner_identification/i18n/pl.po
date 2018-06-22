@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_identification
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
@@ -12,25 +12,28 @@ msgstr ""
 "PO-Revision-Date: 2017-06-10 01:50+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Polish (https://www.transifex.com/oca/teams/23907/pl/)\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>=14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
+"%100<12 || n%100>=14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
+"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:23
+#: code:addons/partner_identification/models/res_partner_id_category.py:34
 #, python-format
 msgid ""
 "\n"
-"# Python code. Use failed = True to specify that the id number is not valid.\n"
+"# Python code. Use failed = True to specify that the id number is not "
+"valid.\n"
 "# You can use the following variables :\n"
 "#  - self: browse_record of the current ID Category browse_record\n"
 "#  - id_number: browse_record of ID number to validate"
 msgstr ""
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:71
+#: code:addons/partner_identification/models/res_partner_id_category.py:69
 #, python-format
 msgid "%s is not a valid %s identifier"
 msgstr ""
@@ -64,6 +67,11 @@ msgid "Code"
 msgstr ""
 
 #. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_uid
 msgid "Created by"
@@ -82,7 +90,7 @@ msgid "Display Name"
 msgstr "Wyświetlana nazwa "
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:67
+#: code:addons/partner_identification/models/res_partner_id_category.py:65
 #, python-format
 msgid ""
 "Error when evaluating the id_category validation code::\n"
@@ -129,7 +137,6 @@ msgid "ID type defined in configuration. For example, Driver License"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_alias_id_numbers
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_numbers
 #: model:ir.model.fields,field_description:partner_identification.field_res_users_id_numbers
 msgid "Identification Numbers"
@@ -187,7 +194,6 @@ msgid "Notes"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model,name:partner_identification.model_res_partner
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_partner_id
 msgid "Partner"
 msgstr "Partner"
@@ -249,7 +255,7 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner.py:130
+#: code:addons/partner_identification/models/res_partner.py:128
 #, python-format
 msgid ""
 "This %s has multiple IDs of this type (%s), so a write via the %s field is "
