@@ -1,23 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_external_map
+#	* partner_external_map
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-22 03:38+0000\n"
-"PO-Revision-Date: 2017-11-22 03:38+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: French (Canada) (https://www.transifex.com/oca/teams/23907/"
-"fr_CA/)\n"
-"Language: fr_CA\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: \n"
 
 #. module: partner_external_map
 #: code:addons/partner_external_map/models/res_partner.py:32
@@ -33,22 +27,22 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_uid
 msgid "Created by"
-msgstr "Créé par"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_date
 msgid "Created on"
-msgstr "Créé le"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_display_name
 msgid "Display Name"
-msgstr "Afficher le nom"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_id
 msgid "ID"
-msgstr "Identifiant"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,help:partner_external_map.field_map_website_address_url
@@ -57,24 +51,17 @@ msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,help:partner_external_map.field_map_website_lat_lon_url
-msgid ""
-"In this URL, {LATITUDE} and {LONGITUDE} will be replaced by the latitude and "
-"longitude (requires the module 'base_geolocalize')"
+msgid "In this URL, {LATITUDE} and {LONGITUDE} will be replaced by the latitude and longitude (requires the module 'base_geolocalize')"
 msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,help:partner_external_map.field_map_website_route_address_url
-msgid ""
-"In this URL, {START_ADDRESS} and {DEST_ADDRESS} will be replaced by the "
-"start and destination addresses."
+msgid "In this URL, {START_ADDRESS} and {DEST_ADDRESS} will be replaced by the start and destination addresses."
 msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,help:partner_external_map.field_map_website_route_lat_lon_url
-msgid ""
-"In this URL, {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} and "
-"{DEST_LONGITUDE} will be replaced by the latitude and longitude of the start "
-"and destination adresses (requires the module 'base_geolocalize')."
+msgid "In this URL, {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} and {DEST_LONGITUDE} will be replaced by the latitude and longitude of the start and destination adresses (requires the module 'base_geolocalize')."
 msgstr ""
 
 #. module: partner_external_map
@@ -85,12 +72,12 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_write_uid
 msgid "Last Updated by"
-msgstr "Dernière mise à jour par"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website_write_date
 msgid "Last Updated on"
-msgstr "Dernière mise à jour le"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
@@ -119,9 +106,7 @@ msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,help:partner_external_map.field_res_users_context_route_map_website_id
-msgid ""
-"Map provided used when you click on the car icon on the partner form to "
-"display an itinerary."
+msgid "Map provided used when you click on the car icon on the partner form to display an itinerary."
 msgstr ""
 
 #. module: partner_external_map
@@ -156,8 +141,7 @@ msgstr ""
 #. module: partner_external_map
 #: code:addons/partner_external_map/models/res_partner.py:84
 #, python-format
-msgid ""
-"Missing start address for route map: you should set it in your preferences."
+msgid "Missing start address for route map: you should set it in your preferences."
 msgstr ""
 
 #. module: partner_external_map
@@ -199,3 +183,4 @@ msgstr ""
 #: model:ir.model,name:partner_external_map.model_res_users
 msgid "Users"
 msgstr ""
+
