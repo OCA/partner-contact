@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_identification
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 # Giuliano Lotta <giuliano.lotta@gmail.com>, 2017
@@ -13,30 +13,32 @@ msgstr ""
 "PO-Revision-Date: 2017-11-21 01:49+0000\n"
 "Last-Translator: Giuliano Lotta <giuliano.lotta@gmail.com>, 2017\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:23
+#: code:addons/partner_identification/models/res_partner_id_category.py:34
 #, python-format
 msgid ""
 "\n"
-"# Python code. Use failed = True to specify that the id number is not valid.\n"
+"# Python code. Use failed = True to specify that the id number is not "
+"valid.\n"
 "# You can use the following variables :\n"
 "#  - self: browse_record of the current ID Category browse_record\n"
 "#  - id_number: browse_record of ID number to validate"
 msgstr ""
 "\n"
-"# Codice Python  Utilizzare failed = True per specificare che il numero documento non è valido.\n"
+"# Codice Python  Utilizzare failed = True per specificare che il numero "
+"documento non è valido.\n"
 "# Potete utilizzare le seguenti variabili :\n"
 "#  - self: browse_record della Categoria Documento corrente browse_record\n"
 "#  - id_number: browse_record del numero documento da validare"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:71
+#: code:addons/partner_identification/models/res_partner_id_category.py:69
 #, python-format
 msgid "%s is not a valid %s identifier"
 msgstr "%s non è un valido %s identificatore"
@@ -73,6 +75,11 @@ msgid "Code"
 msgstr "Codice"
 
 #. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_uid
 msgid "Created by"
@@ -91,7 +98,7 @@ msgid "Display Name"
 msgstr "Nome da visualizzare"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:67
+#: code:addons/partner_identification/models/res_partner_id_category.py:65
 #, python-format
 msgid ""
 "Error when evaluating the id_category validation code::\n"
@@ -144,7 +151,6 @@ msgstr ""
 "Tipo di documento definito in configurazione. Per esempio, Patente di Guida"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_alias_id_numbers
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_numbers
 #: model:ir.model.fields,field_description:partner_identification.field_res_users_id_numbers
 msgid "Identification Numbers"
@@ -204,7 +210,6 @@ msgid "Notes"
 msgstr "Note"
 
 #. module: partner_identification
-#: model:ir.model,name:partner_identification.model_res_partner
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_partner_id
 msgid "Partner"
 msgstr "Partner"
@@ -257,8 +262,8 @@ msgstr "Stato"
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_name
 msgid "The ID itself. For example, Driver License number of this person"
 msgstr ""
-"Il numero del documento stesso. Ad esempio, il numero di patente di guida di"
-" questa persona"
+"Il numero del documento stesso. Ad esempio, il numero di patente di guida di "
+"questa persona"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_place_issuance
@@ -270,7 +275,7 @@ msgstr ""
 "passaporto e del visto"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner.py:130
+#: code:addons/partner_identification/models/res_partner.py:128
 #, python-format
 msgid ""
 "This %s has multiple IDs of this type (%s), so a write via the %s field is "
