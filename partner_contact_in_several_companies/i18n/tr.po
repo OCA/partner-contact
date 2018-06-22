@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_contact_in_several_companies
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
@@ -12,10 +12,10 @@ msgstr ""
 "PO-Revision-Date: 2017-03-10 03:39+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Turkish (https://www.transifex.com/oca/teams/23907/tr/)\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: partner_contact_in_several_companies
@@ -51,6 +51,7 @@ msgid "City"
 msgstr ""
 
 #. module: partner_contact_in_several_companies
+#: model:ir.model,name:partner_contact_in_several_companies.model_res_partner
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Contact"
 msgstr ""
@@ -62,7 +63,8 @@ msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_contact_type
-msgid "Contact type"
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_users_contact_type
+msgid "Contact Type"
 msgstr ""
 
 #. module: partner_contact_in_several_companies
@@ -71,12 +73,8 @@ msgid "Country"
 msgstr ""
 
 #. module: partner_contact_in_several_companies
-#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
-msgid "Fax:"
-msgstr ""
-
-#. module: partner_contact_in_several_companies
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_contact_id
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_users_contact_id
 msgid "Main Contact"
 msgstr ""
 
@@ -92,13 +90,9 @@ msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_other_contact_ids
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_users_other_contact_ids
 msgid "Others Positions"
 msgstr ""
-
-#. module: partner_contact_in_several_companies
-#: model:ir.model,name:partner_contact_in_several_companies.model_res_partner
-msgid "Partner"
-msgstr "İş Ortağı"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
@@ -178,3 +172,6 @@ msgstr ""
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_kanban_contact
 msgid "other positions"
 msgstr ""
+
+#~ msgid "Partner"
+#~ msgstr "İş Ortağı"
