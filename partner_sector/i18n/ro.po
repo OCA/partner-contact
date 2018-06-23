@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_sector
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
@@ -12,11 +12,12 @@ msgstr ""
 "PO-Revision-Date: 2017-06-02 00:47+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Romanian (https://www.transifex.com/oca/teams/23907/ro/)\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
 
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_child_ids
@@ -39,7 +40,7 @@ msgid "Display Name"
 msgstr "Nume Afişat"
 
 #. module: partner_sector
-#: code:addons/partner_sector/models/res_partner_sector.py:42
+#: code:addons/partner_sector/models/res_partner_sector.py:43
 #, python-format
 msgid "Error! You cannot create recursive sectors."
 msgstr ""
@@ -75,6 +76,11 @@ msgid "Name"
 msgstr "Nume"
 
 #. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_left
 msgid "Parent Left"
 msgstr ""
@@ -82,11 +88,6 @@ msgstr ""
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_right
 msgid "Parent Right"
-msgstr ""
-
-#. module: partner_sector
-#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_id
-msgid "Parent id"
 msgstr ""
 
 #. module: partner_sector
