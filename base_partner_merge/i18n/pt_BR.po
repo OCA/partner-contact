@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_partner_merge
-# 
+#
 # Translators:
 # danimaribeiro <danimaribeiro@gmail.com>, 2015
 # danimaribeiro <danimaribeiro@gmail.com>, 2015
@@ -12,11 +12,12 @@ msgstr ""
 "POT-Creation-Date: 2017-06-01 03:22+0000\n"
 "PO-Revision-Date: 2016-05-06 15:13+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-"
+"contact-8-0/language/pt_BR/)\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: base_partner_merge
@@ -30,18 +31,21 @@ msgstr "Um usuário associado ao contato"
 msgid ""
 "All contacts must have the same email. Only the Administrator can merge "
 "contacts with different emails."
-msgstr "Todos os contatos devem ter o mesmo email. Apenas o administrador pode mesclar contatos com diferentes emails."
+msgstr ""
+"Todos os contatos devem ter o mesmo email. Apenas o administrador pode "
+"mesclar contatos com diferentes emails."
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Are you sure to execute the automatic merge of your contacts ?"
-msgstr "Você tem certeza que quer executar a mescla automática de seus contatos ?"
+msgstr ""
+"Você tem certeza que quer executar a mescla automática de seus contatos ?"
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
-msgid ""
-"Are you sure to execute the list of automatic merges of your contacts ?"
-msgstr "Você tem certeza que quer executar a mescla automática de seus contatos ?"
+msgid "Are you sure to execute the list of automatic merges of your contacts ?"
+msgstr ""
+"Você tem certeza que quer executar a mescla automática de seus contatos ?"
 
 #. module: base_partner_merge
 #: model:ir.actions.act_window,name:base_partner_merge.action_partner_merge
@@ -137,7 +141,9 @@ msgstr "Finalizado"
 msgid ""
 "For safety reasons, you cannot merge more than 3 contacts together. You can "
 "re-open the wizard several times if needed."
-msgstr "Por razões de segurança você não pode mesclar mais que 3 contatos. Você pode reabrir o wizard mais vezes se necessário"
+msgstr ""
+"Por razões de segurança você não pode mesclar mais que 3 contatos. Você pode "
+"reabrir o wizard mais vezes se necessário"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,number_group:0
@@ -238,10 +244,14 @@ msgstr "Nome"
 #: code:addons/base_partner_merge/base_partner_merge.py:395
 #, python-format
 msgid ""
-"Only the destination contact may be linked to existing Journal Items. Please"
-" ask the Administrator if you need to merge several contacts linked to "
+"Only the destination contact may be linked to existing Journal Items. Please "
+"ask the Administrator if you need to merge several contacts linked to "
 "existing Journal Items."
-msgstr "Apenas o administrador pode juntar itens de diário existentes. Por favor solicite ao\nadministrador se você necessita mesclar vários contatos que estejam ligados a itens existentes."
+msgstr ""
+"Apenas o administrador pode juntar itens de diário existentes. Por favor "
+"solicite ao\n"
+"administrador se você necessita mesclar vários contatos que estejam ligados "
+"a itens existentes."
 
 #. module: base_partner_merge
 #: selection:base.partner.merge.automatic.wizard,state:0
@@ -272,10 +282,17 @@ msgstr "Buscar dados duplicados baseados no dados em"
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid ""
 "Select the list of fields used to search for\n"
-"                            duplicated records. If you select several fields,\n"
-"                            OpenERP will propose you to merge only those having\n"
-"                            all these fields in common. (not one of the fields)."
-msgstr "Selecione a lista de campos usados para buscar registros\nduplicados. Se você selecionar vários campos, Odoo irá propor para mesclar apenas \naqueles que tem todos os campos com o mesmo valor. (não apenas um dos campos)"
+"                            duplicated records. If you select several "
+"fields,\n"
+"                            OpenERP will propose you to merge only those "
+"having\n"
+"                            all these fields in common. (not one of the "
+"fields)."
+msgstr ""
+"Selecione a lista de campos usados para buscar registros\n"
+"duplicados. Se você selecionar vários campos, Odoo irá propor para mesclar "
+"apenas \n"
+"aqueles que tem todos os campos com o mesmo valor. (não apenas um dos campos)"
 
 #. module: base_partner_merge
 #: selection:base.partner.merge.automatic.wizard,state:0
@@ -296,10 +313,17 @@ msgstr "Estado"
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid ""
 "The selected contacts will be merged together. All\n"
-"                                documents linking to one of these contacts will be\n"
-"                                redirected to the aggregated contact. You can remove\n"
-"                                contacts from this list to avoid merging them."
-msgstr "Os contatos selecionados vão ser mesclados. Todos\nos documentos ligados a um contato serão automaticamente\ntransferidos ao contato agregado. Você pode remover\ncontatos desta lista para evitar a mesclagem."
+"                                documents linking to one of these contacts "
+"will be\n"
+"                                redirected to the aggregated contact. You "
+"can remove\n"
+"                                contacts from this list to avoid merging "
+"them."
+msgstr ""
+"Os contatos selecionados vão ser mesclados. Todos\n"
+"os documentos ligados a um contato serão automaticamente\n"
+"transferidos ao contato agregado. Você pode remover\n"
+"contatos desta lista para evitar a mesclagem."
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
