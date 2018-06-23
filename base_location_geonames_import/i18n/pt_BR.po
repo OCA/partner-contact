@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_location_geonames_import
-# 
+#
 # Translators:
 # danimaribeiro <danimaribeiro@gmail.com>, 2015
 # danimaribeiro <danimaribeiro@gmail.com>, 2015
@@ -12,11 +12,12 @@ msgstr ""
 "POT-Creation-Date: 2016-04-03 00:58+0000\n"
 "PO-Revision-Date: 2016-01-18 15:23+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-"
+"contact-8-0/language/pt_BR/)\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: base_location_geonames_import
@@ -45,12 +46,21 @@ msgid "Created on"
 msgstr "Criado em"
 
 #. module: base_location_geonames_import
+#: field:better.zip.geonames.import,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: base_location_geonames_import
 #: view:better.zip.geonames.import:base_location_geonames_import.better_zip_geonames_import_form
 msgid ""
-"For the country selected above, this wizard will download the latest version"
-" of the list of cities from geonames.org, create new location entries if not"
-" found already in the system, and DELETE MISSING ENTRIES from new file."
-msgstr "Para o país selecionado abaixo, este wizard vai baixar a última versão da lista de cidades do site geonames.org, criar novas localidades se não for encontrado registrado no sistema, e DELETAR registros que não existam no novo arquivo."
+"For the country selected above, this wizard will download the latest version "
+"of the list of cities from geonames.org, create new location entries if not "
+"found already in the system, and DELETE MISSING ENTRIES from new file."
+msgstr ""
+"Para o país selecionado abaixo, este wizard vai baixar a última versão da "
+"lista de cidades do site geonames.org, criar novas localidades se não for "
+"encontrado registrado no sistema, e DELETAR registros que não existam no "
+"novo arquivo."
 
 #. module: base_location_geonames_import
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:118
@@ -81,6 +91,12 @@ msgid "Import from Geonames"
 msgstr "Importar de Geonames"
 
 #. module: base_location_geonames_import
+#: field:better.zip.geonames.import,__last_update:0
+#, fuzzy
+msgid "Last Modified on"
+msgstr "Útima atualização em"
+
+#. module: base_location_geonames_import
 #: field:better.zip.geonames.import,write_uid:0
 msgid "Last Updated by"
 msgstr "Útima atualização por"
@@ -96,7 +112,8 @@ msgstr "Útima atualização em"
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
 "country (%s)."
-msgstr "O código país dentro do arquivo (%s) não corresponde ao país selecionado (%s)"
+msgstr ""
+"O código país dentro do arquivo (%s) não corresponde ao país selecionado (%s)"
 
 #. module: base_location_geonames_import
 #: field:better.zip.geonames.import,title_case:0

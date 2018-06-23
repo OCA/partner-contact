@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_location_geonames_import
-# 
+#
 # Translators:
 # Paolo Valier, 2016
 # Paolo Valier, 2016
@@ -12,11 +12,12 @@ msgstr ""
 "POT-Creation-Date: 2016-04-03 00:58+0000\n"
 "PO-Revision-Date: 2016-03-13 17:22+0000\n"
 "Last-Translator: Paolo Valier\n"
-"Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/it/)\n"
+"Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_location_geonames_import
@@ -27,7 +28,8 @@ msgstr "Annulla"
 #. module: base_location_geonames_import
 #: help:better.zip.geonames.import,title_case:0
 msgid "Converts retreived city and state names to Title Case."
-msgstr "Converti i nomi delle città e delle provincie recuperati in Maiuscoletto."
+msgstr ""
+"Converti i nomi delle città e delle provincie recuperati in Maiuscoletto."
 
 #. module: base_location_geonames_import
 #: field:better.zip.geonames.import,country_id:0
@@ -45,11 +47,16 @@ msgid "Created on"
 msgstr "Creato il"
 
 #. module: base_location_geonames_import
+#: field:better.zip.geonames.import,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: base_location_geonames_import
 #: view:better.zip.geonames.import:base_location_geonames_import.better_zip_geonames_import_form
 msgid ""
-"For the country selected above, this wizard will download the latest version"
-" of the list of cities from geonames.org, create new location entries if not"
-" found already in the system, and DELETE MISSING ENTRIES from new file."
+"For the country selected above, this wizard will download the latest version "
+"of the list of cities from geonames.org, create new location entries if not "
+"found already in the system, and DELETE MISSING ENTRIES from new file."
 msgstr ""
 
 #. module: base_location_geonames_import
@@ -81,6 +88,12 @@ msgid "Import from Geonames"
 msgstr "Importa da Geonames"
 
 #. module: base_location_geonames_import
+#: field:better.zip.geonames.import,__last_update:0
+#, fuzzy
+msgid "Last Modified on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: base_location_geonames_import
 #: field:better.zip.geonames.import,write_uid:0
 msgid "Last Updated by"
 msgstr "Ultimo aggiornamento di"
@@ -96,7 +109,9 @@ msgstr "Ultimo aggiornamento il"
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
 "country (%s)."
-msgstr "Il codice paese all'interno del file (%s) non corrisponde al paese selezionato (%s)."
+msgstr ""
+"Il codice paese all'interno del file (%s) non corrisponde al paese "
+"selezionato (%s)."
 
 #. module: base_location_geonames_import
 #: field:better.zip.geonames.import,title_case:0
