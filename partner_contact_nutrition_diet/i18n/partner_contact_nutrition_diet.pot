@@ -1,32 +1,27 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_contact_nutrition_diet
+#	* partner_contact_nutrition_diet
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 01:41+0000\n"
-"PO-Revision-Date: 2016-11-24 01:41+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Persian (https://www.transifex.com/oca/teams/23907/fa/)\n"
-"Language: fa\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: \n"
 
 #. module: partner_contact_nutrition_diet
 #: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_create_uid
 msgid "Created by"
-msgstr "ایجاد شده توسط"
+msgstr ""
 
 #. module: partner_contact_nutrition_diet
 #: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_create_date
 msgid "Created on"
-msgstr "ایجاد شده در"
+msgstr ""
 
 #. module: partner_contact_nutrition_diet
 #: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_res_partner_nutrition_diet_id
@@ -36,32 +31,32 @@ msgstr ""
 #. module: partner_contact_nutrition_diet
 #: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_display_name
 msgid "Display Name"
-msgstr "نام نمایشی"
+msgstr ""
 
 #. module: partner_contact_nutrition_diet
 #: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_id
 msgid "ID"
-msgstr "شناسه"
+msgstr ""
 
 #. module: partner_contact_nutrition_diet
 #: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet___last_update
 msgid "Last Modified on"
-msgstr "تاریخ آخرین به‌روزرسانی"
+msgstr ""
 
 #. module: partner_contact_nutrition_diet
 #: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_write_uid
 msgid "Last Updated by"
-msgstr "آخرین به روز رسانی توسط"
+msgstr ""
 
 #. module: partner_contact_nutrition_diet
 #: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_write_date
 msgid "Last Updated on"
-msgstr "آخرین به روز رسانی در"
+msgstr ""
 
 #. module: partner_contact_nutrition_diet
 #: model:ir.model.fields,field_description:partner_contact_nutrition_diet.field_nutrition_diet_name
 msgid "Name"
-msgstr "نام"
+msgstr ""
 
 #. module: partner_contact_nutrition_diet
 #: model:ir.model,name:partner_contact_nutrition_diet.model_res_partner
@@ -72,3 +67,4 @@ msgstr ""
 #: model:ir.model,name:partner_contact_nutrition_diet.model_nutrition_diet
 msgid "nutrition.diet"
 msgstr ""
+
