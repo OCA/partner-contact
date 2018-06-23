@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_financial_risk
-# 
+#
 # Translators:
 # Carlos Dauden <carlos.dauden@tecnativa.com>, 2016
 # Pedro M. Baeza <pedro.baeza@gmail.com>, 2017
@@ -12,11 +12,12 @@ msgstr ""
 "POT-Creation-Date: 2017-10-28 01:36+0000\n"
 "PO-Revision-Date: 2017-10-08 22:57+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/es/)\n"
+"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-9-0/"
+"language/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_financial_risk
@@ -70,7 +71,10 @@ msgstr "Cliente"
 msgid ""
 "Days after due date to set an invoice as unpaid.The change of this field "
 "recompute all partners risk,be patient."
-msgstr "Días posteriores a la fecha de vencimiento para establecer una factura como impagada. El cambio de este campo recalculará el riesgo de todos los clientes, tenga paciencia."
+msgstr ""
+"Días posteriores a la fecha de vencimiento para establecer una factura como "
+"impagada. El cambio de este campo recalculará el riesgo de todos los "
+"clientes, tenga paciencia."
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_display_name
@@ -108,29 +112,56 @@ msgstr "Computar en riesgo total."
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount_unpaid_include
 msgid ""
 "Full risk computation.\n"
-"Residual amount of move lines not reconciled with distinct account that is set as partner receivable and date maturity exceeded, considering Due Margin set in account settings."
-msgstr "Computar en riesgo total.\nImporte residual de apuntes no conciliados con cuenta distinta a la establecida como cuenta a cobrar del cliente y fecha vencimiento excedida, teniendo en cuenta los días de margen establecidos en la configuración de contabilidad."
+"Residual amount of move lines not reconciled with distinct account that is "
+"set as partner receivable and date maturity exceeded, considering Due Margin "
+"set in account settings."
+msgstr ""
+"Computar en riesgo total.\n"
+"Importe residual de apuntes no conciliados con cuenta distinta a la "
+"establecida como cuenta a cobrar del cliente y fecha vencimiento excedida, "
+"teniendo en cuenta los días de margen establecidos en la configuración de "
+"contabilidad."
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount_include
 msgid ""
 "Full risk computation.\n"
-"Residual amount of move lines not reconciled with distinct account that is set as partner receivable and date maturity not exceeded, considering Due Margin set in account settings."
-msgstr "Computar en riesgo total.\nImporte residual de apuntes no conciliados con cuenta distinta a la establecida como cuenta a cobrar del cliente y fecha vencimiento no excedida, teniendo en cuenta los días de margen establecidos en la configuración de contabilidad."
+"Residual amount of move lines not reconciled with distinct account that is "
+"set as partner receivable and date maturity not exceeded, considering Due "
+"Margin set in account settings."
+msgstr ""
+"Computar en riesgo total.\n"
+"Importe residual de apuntes no conciliados con cuenta distinta a la "
+"establecida como cuenta a cobrar del cliente y fecha vencimiento no "
+"excedida, teniendo en cuenta los días de margen establecidos en la "
+"configuración de contabilidad."
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_unpaid_include
 msgid ""
 "Full risk computation.\n"
-"Residual amount of move lines not reconciled with the same account that is set as partner receivable and date maturity exceeded, considering Due Margin set in account settings."
-msgstr "Computar en riesgo total.\nImporte residual de apuntes no conciliados con cuenta igual a la establecida como cuenta a cobrar del cliente y fecha vencimiento excedida, teniendo en cuenta los días de margen establecidos en la configuración de contabilidad."
+"Residual amount of move lines not reconciled with the same account that is "
+"set as partner receivable and date maturity exceeded, considering Due Margin "
+"set in account settings."
+msgstr ""
+"Computar en riesgo total.\n"
+"Importe residual de apuntes no conciliados con cuenta igual a la establecida "
+"como cuenta a cobrar del cliente y fecha vencimiento excedida, teniendo en "
+"cuenta los días de margen establecidos en la configuración de contabilidad."
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_open_include
 msgid ""
 "Full risk computation.\n"
-"Residual amount of move lines not reconciled with the same account that is set as partner receivable and date maturity not exceeded, considering Due Margin set in account settings."
-msgstr "Computar en riesgo total.\nImporte residual de apuntes no conciliados con cuenta igual a la establecida como cuenta a cobrar del cliente y fecha vencimiento no excedida, teniendo en cuenta los días de margen establecidos en la configuración de contabilidad."
+"Residual amount of move lines not reconciled with the same account that is "
+"set as partner receivable and date maturity not exceeded, considering Due "
+"Margin set in account settings."
+msgstr ""
+"Computar en riesgo total.\n"
+"Importe residual de apuntes no conciliados con cuenta igual a la establecida "
+"como cuenta a cobrar del cliente y fecha vencimiento no excedida, teniendo "
+"en cuenta los días de margen establecidos en la configuración de "
+"contabilidad."
 
 #. module: partner_financial_risk
 #: model:ir.ui.view,arch_db:partner_financial_risk.res_partner_view_risk
@@ -248,9 +279,13 @@ msgstr "Empresa con riesgo excedido"
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount_unpaid
 msgid ""
 "Residual amount of move lines not reconciled with distinct account that is "
-"set as partner receivable and date maturity exceeded, considering Due Margin"
-" set in account settings."
-msgstr "Importe residual de apuntes no conciliados con cuenta distinta a la establecida como cuenta a cobrar del cliente y fecha vencimiento excedida, teniendo en cuenta los días de margen establecidos en la configuración de contabilidad."
+"set as partner receivable and date maturity exceeded, considering Due Margin "
+"set in account settings."
+msgstr ""
+"Importe residual de apuntes no conciliados con cuenta distinta a la "
+"establecida como cuenta a cobrar del cliente y fecha vencimiento excedida, "
+"teniendo en cuenta los días de margen establecidos en la configuración de "
+"contabilidad."
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_account_amount
@@ -258,15 +293,22 @@ msgid ""
 "Residual amount of move lines not reconciled with distinct account that is "
 "set as partner receivable and date maturity not exceeded, considering Due "
 "Margin set in account settings."
-msgstr "Importe residual de apuntes no conciliados con cuenta distinta a la establecida como cuenta a cobrar del cliente y fecha vencimiento no excedida, teniendo en cuenta los días de margen establecidos en la configuración de contabilidad."
+msgstr ""
+"Importe residual de apuntes no conciliados con cuenta distinta a la "
+"establecida como cuenta a cobrar del cliente y fecha vencimiento no "
+"excedida, teniendo en cuenta los días de margen establecidos en la "
+"configuración de contabilidad."
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_unpaid
 msgid ""
 "Residual amount of move lines not reconciled with the same account that is "
-"set as partner receivable and date maturity exceeded, considering Due Margin"
-" set in account settings."
-msgstr "Importe residual de apuntes no conciliados con cuenta igual a la establecida como cuenta a cobrar del cliente y fecha vencimiento excedida, teniendo en cuenta los días de margen establecidos en la configuración de contabilidad."
+"set as partner receivable and date maturity exceeded, considering Due Margin "
+"set in account settings."
+msgstr ""
+"Importe residual de apuntes no conciliados con cuenta igual a la establecida "
+"como cuenta a cobrar del cliente y fecha vencimiento excedida, teniendo en "
+"cuenta los días de margen establecidos en la configuración de contabilidad."
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,help:partner_financial_risk.field_res_partner_risk_invoice_open
@@ -274,7 +316,11 @@ msgid ""
 "Residual amount of move lines not reconciled with the same account that is "
 "set as partner receivable and date maturity not exceeded, considering Due "
 "Margin set in account settings."
-msgstr "Importe residual de apuntes no conciliados con cuenta igual a la establecida como cuenta a cobrar del cliente y fecha vencimiento no excedida, teniendo en cuenta los días de margen establecidos en la configuración de contabilidad."
+msgstr ""
+"Importe residual de apuntes no conciliados con cuenta igual a la establecida "
+"como cuenta a cobrar del cliente y fecha vencimiento no excedida, teniendo "
+"en cuenta los días de margen establecidos en la configuración de "
+"contabilidad."
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_risk_exception
