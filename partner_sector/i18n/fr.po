@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_sector
-# 
+#
 # Translators:
 # Fabien Bourgeois <fabien@yaltik.com>, 2016
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2016-05-08 05:15+0000\n"
 "PO-Revision-Date: 2016-05-14 04:10+0000\n"
 "Last-Translator: Fabien Bourgeois <fabien@yaltik.com>\n"
-"Language-Team: French (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/fr/)\n"
+"Language-Team: French (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: partner_sector
@@ -116,4 +117,6 @@ msgstr "Secteurs d'activité"
 #: code:addons/partner_sector/models/res_partner.py:21
 #, python-format
 msgid "The main sector must be different from the secondary sectors."
-msgstr "Le secteur d'activité principal doit être différent des secteurs d'activité secondaires."
+msgstr ""
+"Le secteur d'activité principal doit être différent des secteurs d'activité "
+"secondaires."
