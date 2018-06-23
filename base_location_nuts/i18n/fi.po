@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_location_nuts
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,11 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2016-02-26 01:49+0000\n"
 "PO-Revision-Date: 2016-02-25 17:29+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Finnish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/fi/)\n"
+"Language-Team: Finnish (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/fi/)\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_location_nuts
@@ -48,6 +49,11 @@ msgstr "Luonut"
 #: field:nuts.import,create_date:0 field:res.partner.nuts,create_date:0
 msgid "Created on"
 msgstr "Luotu"
+
+#. module: base_location_nuts
+#: field:nuts.import,display_name:0 field:res.partner.nuts,display_name:0
+msgid "Display Name"
+msgstr ""
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:128
@@ -97,6 +103,12 @@ msgstr ""
 #: model:ir.model,name:base_location_nuts.model_nuts_import
 msgid "Import NUTS items from European RAMON service"
 msgstr ""
+
+#. module: base_location_nuts
+#: field:nuts.import,__last_update:0 field:res.partner.nuts,__last_update:0
+#, fuzzy
+msgid "Last Modified on"
+msgstr "Viimeksi päivittänyt"
 
 #. module: base_location_nuts
 #: field:nuts.import,write_uid:0 field:res.partner.nuts,write_uid:0
@@ -232,5 +244,6 @@ msgstr ""
 msgid ""
 "You must click at import wizard to populate NUTS items\n"
 "        in Odoo database in:\n"
-"        Sales > Configuration > Address Book > Localization > Import NUTS 2013"
+"        Sales > Configuration > Address Book > Localization > Import NUTS "
+"2013"
 msgstr ""

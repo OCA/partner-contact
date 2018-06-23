@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_location_nuts
-# 
+#
 # Translators:
 # Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
@@ -11,12 +11,14 @@ msgstr ""
 "POT-Creation-Date: 2016-05-07 07:18+0000\n"
 "PO-Revision-Date: 2016-05-07 07:14+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
-"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-"
+"contact-8-0/language/sl/)\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
 
 #. module: base_location_nuts
 #: view:nuts.import:base_location_nuts.nuts_import_form
@@ -225,7 +227,12 @@ msgid ""
 "                Updating or creating new NUTS entries if not\n"
 "                found already in the system, and DELETING MISSING\n"
 "                ENTRIES from new downloaded file."
-msgstr "Ta čarovnik bo prenesel zadnjo verzijo\n                NUTS 2013 iz evropske RAMON metadata storitve.\n                Posodabljanje ali ustvarjanje novih NUTS vnosov, če\n                niso že v sistemu in BRISANJE MANJKAJOČIH\n                VNOSOV iz prenesene datoteke."
+msgstr ""
+"Ta čarovnik bo prenesel zadnjo verzijo\n"
+"                NUTS 2013 iz evropske RAMON metadata storitve.\n"
+"                Posodabljanje ali ustvarjanje novih NUTS vnosov, če\n"
+"                niso že v sistemu in BRISANJE MANJKAJOČIH\n"
+"                VNOSOV iz prenesene datoteke."
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:95
@@ -243,5 +250,9 @@ msgstr "Uvozite lahko NUTS iz RAMON evropske storitve."
 msgid ""
 "You must click at import wizard to populate NUTS items\n"
 "        in Odoo database in:\n"
-"        Sales > Configuration > Address Book > Localization > Import NUTS 2013"
-msgstr "Kliknite na čarovnik za uvoz za naselitev NUTS postavk\n        v Odoo podatkovno bazo v:\n        Prodaja > Nastavitve > Imenik > Lokalizacija > Uvoz NUTS 2013"
+"        Sales > Configuration > Address Book > Localization > Import NUTS "
+"2013"
+msgstr ""
+"Kliknite na čarovnik za uvoz za naselitev NUTS postavk\n"
+"        v Odoo podatkovno bazo v:\n"
+"        Prodaja > Nastavitve > Imenik > Lokalizacija > Uvoz NUTS 2013"

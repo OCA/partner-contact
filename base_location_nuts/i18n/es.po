@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_location_nuts
-# 
+#
 # Translators:
 # Oihane Crucelaegui <oihanecruce@gmail.com>, 2016
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2016-07-25 11:58+0000\n"
 "PO-Revision-Date: 2016-07-14 09:05+0000\n"
 "Last-Translator: Oihane Crucelaegui <oihanecruce@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
+"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_location_nuts
@@ -225,7 +226,13 @@ msgid ""
 "                Updating or creating new NUTS entries if not\n"
 "                found already in the system, and DELETING MISSING\n"
 "                ENTRIES from new downloaded file."
-msgstr "Este asistente descargará la última version de\n                NUTS 2013 desde el servicio de metadatos europeo RAMON.\n                Actualizando o creando nuevas regiones NUTS si no\n                las encuentra en el sistema, y BORRANDO LAS QUE NO ENCUENTRE\n                en el nuevo fichero descargado."
+msgstr ""
+"Este asistente descargará la última version de\n"
+"                NUTS 2013 desde el servicio de metadatos europeo RAMON.\n"
+"                Actualizando o creando nuevas regiones NUTS si no\n"
+"                las encuentra en el sistema, y BORRANDO LAS QUE NO "
+"ENCUENTRE\n"
+"                en el nuevo fichero descargado."
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:95
@@ -243,5 +250,10 @@ msgstr "Usted puede importar NUTS desde el servicion europeo RAMON."
 msgid ""
 "You must click at import wizard to populate NUTS items\n"
 "        in Odoo database in:\n"
-"        Sales > Configuration > Address Book > Localization > Import NUTS 2013"
-msgstr "Debes clicar en el asistente de importación para crear las\n        las regiones NUTS en la base de datos de Odoo, en el menú:\n        Ventas > Configuración > Libreta de direcciones > Localización > Importar NUTS 2013"
+"        Sales > Configuration > Address Book > Localization > Import NUTS "
+"2013"
+msgstr ""
+"Debes clicar en el asistente de importación para crear las\n"
+"        las regiones NUTS en la base de datos de Odoo, en el menú:\n"
+"        Ventas > Configuración > Libreta de direcciones > Localización > "
+"Importar NUTS 2013"
