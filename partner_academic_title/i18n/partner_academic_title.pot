@@ -1,23 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_academic_title
+#	* partner_academic_title
 #
-# Translators:
-# Paolo Valier, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (8.0)\n"
+"Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-13 00:57+0000\n"
-"PO-Revision-Date: 2016-03-13 17:22+0000\n"
-"Last-Translator: Paolo Valier\n"
-"Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
-"language/it/)\n"
-"Language: it\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: partner_academic_title
 #: model:ir.actions.act_window,name:partner_academic_title.open_academic_title
@@ -26,12 +20,12 @@ msgstr ""
 #: field:res.partner,academic_title_display:0
 #: field:res.partner,academic_title_ids:0
 msgid "Academic Titles"
-msgstr "Titoli Accademici"
+msgstr ""
 
 #. module: partner_academic_title
 #: field:partner.academic.title,active:0
 msgid "Active"
-msgstr "Attivo"
+msgstr ""
 
 #. module: partner_academic_title
 #: model:partner.academic.title,name:partner_academic_title.academic_title_bs
@@ -41,12 +35,12 @@ msgstr ""
 #. module: partner_academic_title
 #: field:partner.academic.title,create_uid:0
 msgid "Created by"
-msgstr "Creato da"
+msgstr ""
 
 #. module: partner_academic_title
 #: field:partner.academic.title,create_date:0
 msgid "Created on"
-msgstr "Creato il"
+msgstr ""
 
 #. module: partner_academic_title
 #: field:partner.academic.title,display_name:0
@@ -61,7 +55,7 @@ msgstr ""
 #. module: partner_academic_title
 #: field:partner.academic.title,id:0
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: partner_academic_title
 #: model:partner.academic.title,name:partner_academic_title.academic_title_jd
@@ -70,19 +64,18 @@ msgstr ""
 
 #. module: partner_academic_title
 #: field:partner.academic.title,__last_update:0
-#, fuzzy
 msgid "Last Modified on"
-msgstr "Ultimo aggiornamento il"
+msgstr ""
 
 #. module: partner_academic_title
 #: field:partner.academic.title,write_uid:0
 msgid "Last Updated by"
-msgstr "Ultimo aggiornamento di"
+msgstr ""
 
 #. module: partner_academic_title
 #: field:partner.academic.title,write_date:0
 msgid "Last Updated on"
-msgstr "Ultimo aggiornamento il"
+msgstr ""
 
 #. module: partner_academic_title
 #: model:partner.academic.title,name:partner_academic_title.academic_title_mba
@@ -107,12 +100,12 @@ msgstr ""
 #. module: partner_academic_title
 #: field:partner.academic.title,name:0
 msgid "Name"
-msgstr "Nome"
+msgstr ""
 
 #. module: partner_academic_title
 #: model:ir.model,name:partner_academic_title.model_res_partner
 msgid "Partner"
-msgstr "Partner"
+msgstr ""
 
 #. module: partner_academic_title
 #: model:partner.academic.title,name:partner_academic_title.academic_title_phd
@@ -132,7 +125,7 @@ msgstr ""
 #. module: partner_academic_title
 #: field:partner.academic.title,sequence:0
 msgid "Sequence"
-msgstr "Sequenza"
+msgstr ""
 
 #. module: partner_academic_title
 #: model:partner.academic.title,name:partner_academic_title.academic_title_thd
@@ -142,4 +135,5 @@ msgstr ""
 #. module: partner_academic_title
 #: help:partner.academic.title,sequence:0
 msgid "defines the order to display titles"
-msgstr "definisce l'ordine dei titoli."
+msgstr ""
+
