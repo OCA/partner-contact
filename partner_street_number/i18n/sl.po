@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_street_number
-# 
+#
 # Translators:
 # Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
 msgid ""
@@ -11,12 +11,14 @@ msgstr ""
 "POT-Creation-Date: 2015-08-28 15:54+0000\n"
 "PO-Revision-Date: 2015-05-28 07:17+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
-"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-"
+"contact-8-0/language/sl/)\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
 
 #. module: partner_street_number
 #: view:res.partner:partner_street_number.view_partner_form
@@ -51,4 +53,9 @@ msgid ""
 "'default_city': city, 'default_state_id': state_id, 'default_zip': zip, "
 "'default_country_id': country_id, 'default_supplier': supplier, "
 "'default_customer': customer, 'default_use_parent_address': True}"
-msgstr "{'default_parent_id': active_id, 'default_street_name': street_name, 'default_street_number': street_number, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_supplier': supplier, 'default_customer': customer, 'default_use_parent_address': True}"
+msgstr ""
+"{'default_parent_id': active_id, 'default_street_name': street_name, "
+"'default_street_number': street_number, 'default_street2': street2, "
+"'default_city': city, 'default_state_id': state_id, 'default_zip': zip, "
+"'default_country_id': country_id, 'default_supplier': supplier, "
+"'default_customer': customer, 'default_use_parent_address': True}"

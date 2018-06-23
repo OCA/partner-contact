@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_street_number
-# 
+#
 # Translators:
 # Rudolf Schnapka <rs@techno-flex.de>, 2016-2017
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2017-02-21 16:57+0000\n"
 "PO-Revision-Date: 2017-02-24 22:09+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_street_number
@@ -51,4 +52,9 @@ msgid ""
 "'default_city': city, 'default_state_id': state_id, 'default_zip': zip, "
 "'default_country_id': country_id, 'default_supplier': supplier, "
 "'default_customer': customer, 'default_use_parent_address': True}"
-msgstr "{'default_parent_id': active_id, 'default_street_name': street_name, 'default_street_number': street_number, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_supplier': supplier, 'default_customer': customer, 'default_use_parent_address': True}"
+msgstr ""
+"{'default_parent_id': active_id, 'default_street_name': street_name, "
+"'default_street_number': street_number, 'default_street2': street2, "
+"'default_city': city, 'default_state_id': state_id, 'default_zip': zip, "
+"'default_country_id': country_id, 'default_supplier': supplier, "
+"'default_customer': customer, 'default_use_parent_address': True}"
