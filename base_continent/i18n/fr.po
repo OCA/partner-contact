@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_continent
-# 
+#
 # Translators:
 # Quentin THEURET <odoo@kerpeo.com>, 2017
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2017-07-26 02:02+0000\n"
 "PO-Revision-Date: 2017-08-03 14:01+0000\n"
 "Last-Translator: Quentin THEURET <odoo@kerpeo.com>\n"
-"Language-Team: French (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/fr/)\n"
+"Language-Team: French (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: base_continent
@@ -85,7 +86,9 @@ msgstr "Nom affiché"
 msgid ""
 "Display and manage the list of all continents that can be assigned to your "
 "partner records."
-msgstr "Affiche et gère la liste de tous les continents qui peuvent être associés à vos partenaires."
+msgstr ""
+"Affiche et gère la liste de tous les continents qui peuvent être associés à "
+"vos partenaires."
 
 #. module: base_continent
 #: model:res.continent,name:base_continent.eu
