@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_employee_quantity
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -10,11 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2016-02-27 23:26+0000\n"
 "PO-Revision-Date: 2015-12-22 17:25+0000\n"
 "Last-Translator: <>\n"
-"Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/it/)\n"
+"Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_employee_quantity
@@ -26,6 +27,11 @@ msgstr "Creato da"
 #: field:res.partner.employee_quantity_range,create_date:0
 msgid "Created on"
 msgstr "reato il"
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,display_name:0
+msgid "Display Name"
+msgstr ""
 
 #. module: partner_employee_quantity
 #: view:res.partner:partner_employee_quantity.view_res_partner_filter_employees
@@ -47,6 +53,12 @@ msgstr ""
 #: field:res.partner.employee_quantity_range,id:0
 msgid "ID"
 msgstr "ID"
+
+#. module: partner_employee_quantity
+#: field:res.partner.employee_quantity_range,__last_update:0
+#, fuzzy
+msgid "Last Modified on"
+msgstr "Ultimo aggiornamento il"
 
 #. module: partner_employee_quantity
 #: field:res.partner.employee_quantity_range,write_uid:0
