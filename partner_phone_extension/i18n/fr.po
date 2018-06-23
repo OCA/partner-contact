@@ -18,14 +18,14 @@ msgstr ""
 "X-Generator: Poedit 1.6.10\n"
 
 #. module: partner_phone_extension
-#: model:ir.model,name:partner_phone_extension.model_res_partner
-msgid "Partner"
-msgstr "Partenaire"
-
-#. module: partner_phone_extension
 #: field:res.partner,extension:0
 msgid "Extension"
 msgstr "Poste"
+
+#. module: partner_phone_extension
+#: model:ir.model,name:partner_phone_extension.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
 
 #. module: partner_phone_extension
 #: help:res.partner,extension:0
