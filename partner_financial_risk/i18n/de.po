@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_financial_risk
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
 # Rudolf Schnapka <rs@techno-flex.de>, 2017
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2017-02-21 16:57+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>, 2017\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_financial_risk
@@ -218,8 +218,8 @@ msgid ""
 "Residual amount of invoices in Open state and the date due is exceeded, "
 "considering Unpaid Margin set in account settings"
 msgstr ""
-"Restbetrag von offenen Rechnungen mit überschrittenem Fälligkeitsdatum unter"
-" Berücksichtigung der Limit-Einstellung im Konto"
+"Restbetrag von offenen Rechnungen mit überschrittenem Fälligkeitsdatum unter "
+"Berücksichtigung der Limit-Einstellung im Konto"
 
 #. module: partner_financial_risk
 #: help:res.partner,risk_invoice_open:0
