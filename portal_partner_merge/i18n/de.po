@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * portal_partner_merge
-# 
+#
 # Translators:
 # Rudolf Schnapka <rs@techno-flex.de>, 2016
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2016-01-19 01:46+0000\n"
 "PO-Revision-Date: 2016-01-18 08:09+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: portal_partner_merge
@@ -23,9 +24,12 @@ msgstr ""
 #, python-format
 msgid ""
 "- Merge existing contacts together using the Automatic Merge wizard, "
-"available in the More menu after selecting several contacts in the Customers"
-" list"
-msgstr "- Zusammenführen mehrerer Kontakte mit Hilfe des Zusammenführungs-Assistenten, verfügbar über das Mehr-Menü nach Auswahl mehrerer Kontakte der Kundenliste"
+"available in the More menu after selecting several contacts in the Customers "
+"list"
+msgstr ""
+"- Zusammenführen mehrerer Kontakte mit Hilfe des Zusammenführungs-"
+"Assistenten, verfügbar über das Mehr-Menü nach Auswahl mehrerer Kontakte der "
+"Kundenliste"
 
 #. module: portal_partner_merge
 #: model:ir.model,name:portal_partner_merge.model_portal_wizard_user

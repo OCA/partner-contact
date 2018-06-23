@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * portal_partner_merge
-# 
+#
 # Translators:
 # Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
 msgid ""
@@ -11,21 +11,25 @@ msgstr ""
 "POT-Creation-Date: 2015-08-28 15:54+0000\n"
 "PO-Revision-Date: 2015-05-29 04:46+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
-"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-"
+"contact-8-0/language/sl/)\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
 
 #. module: portal_partner_merge
 #: code:addons/portal_partner_merge/wizard/portal_wizard.py:35
 #, python-format
 msgid ""
 "- Merge existing contacts together using the Automatic Merge wizard, "
-"available in the More menu after selecting several contacts in the Customers"
-" list"
-msgstr "- Spoji obstoječe stike z uporabo čarovnika za samodejno spajanje, ki je dosegljiv v meniju več po izbiri več stikov iz seznama stikov"
+"available in the More menu after selecting several contacts in the Customers "
+"list"
+msgstr ""
+"- Spoji obstoječe stike z uporabo čarovnika za samodejno spajanje, ki je "
+"dosegljiv v meniju več po izbiri več stikov iz seznama stikov"
 
 #. module: portal_partner_merge
 #: model:ir.model,name:portal_partner_merge.model_portal_wizard_user
