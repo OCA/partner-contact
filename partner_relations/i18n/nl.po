@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_relations
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2016-09-17 18:40+0000\n"
 "PO-Revision-Date: 2016-09-17 18:43+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Dutch (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/nl/)\n"
+"Language-Team: Dutch (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/nl/)\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_relations
@@ -28,12 +29,17 @@ msgstr "%s relatie is onverenigbaar met gekozen connectietype."
 #: model:ir.actions.act_window,help:partner_relations.action_res_partner_relation_all
 msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
-"                    Record and track your partners' relations. Relations may\n"
+"                    Record and track your partners' relations. Relations "
+"may\n"
 "                    be linked to other partners with a type either directly\n"
 "                    or inversely.\n"
 "                </p>\n"
 "            "
-msgstr "<p class=\"oe_view_nocontent_create\">\nOnderhoud de connecties tussen uw relaties. Relaties mogen gekoppeld\nworden zowel via een normale connectie, als met een omgekeerde\nconnectie.</p>"
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"Onderhoud de connecties tussen uw relaties. Relaties mogen gekoppeld\n"
+"worden zowel via een normale connectie, als met een omgekeerde\n"
+"connectie.</p>"
 
 #. module: partner_relations
 #: field:res.partner.relation.all,active:0
@@ -60,7 +66,8 @@ msgstr "Alle connecties vanuit de huidige relatie"
 #: selection:res.partner.relation.type,handle_invalid_onchange:0
 #, python-format
 msgid "Allow existing relations that do not fit changed conditions"
-msgstr "Sta bestaande connecties toe die niet voldoen aan de gewijzigde criteria"
+msgstr ""
+"Sta bestaande connecties toe die niet voldoen aan de gewijzigde criteria"
 
 #. module: partner_relations
 #: field:res.partner.relation,create_uid:0
@@ -116,7 +123,9 @@ msgstr "Sta geen wijziging toe die zal resulteren in ongeldige connecties"
 #: selection:res.partner.relation.type,handle_invalid_onchange:0
 #, python-format
 msgid "End relations per today, if they do not fit changed conditions"
-msgstr "Beëindig wijzigingen per vandaag indien ze niet voldoen aan de gewijzigde condities"
+msgstr ""
+"Beëindig wijzigingen per vandaag indien ze niet voldoen aan de gewijzigde "
+"condities"
 
 #. module: partner_relations
 #: field:res.partner.relation,date_end:0
@@ -442,7 +451,9 @@ msgstr "De ingangsdatum kan niet na de einddatum liggen."
 msgid ""
 "There are already relations not satisfying the conditions for partner type "
 "or category."
-msgstr "Er zijn al connecties die niet voldoen aan de criteria voor type relatie of categorie."
+msgstr ""
+"Er zijn al connecties die niet voldoen aan de criteria voor type relatie of "
+"categorie."
 
 #. module: partner_relations
 #: code:addons/partner_relations/models/res_partner_relation.py:155
@@ -458,7 +469,8 @@ msgstr "Deze connectie kan een relatie met zichzelf verbinden"
 #. module: partner_relations
 #: help:res.partner.relation.type,is_symmetric:0
 msgid "This relation is the same from right to left as from left to right"
-msgstr "Deze connectie is van rechts naar links hetzelfde als van links naar rechts"
+msgstr ""
+"Deze connectie is van rechts naar links hetzelfde als van links naar rechts"
 
 #. module: partner_relations
 #: field:res.partner.relation,type_id:0
@@ -476,9 +488,15 @@ msgstr "Zoek operator \"%s\" wordt niet ondersteund "
 #: help:res.partner.relation.type,handle_invalid_onchange:0
 msgid ""
 "When adding relations criteria like partner type and category are checked.\n"
-"However when you change the criteria, there might be relations that do not fit the new criteria.\n"
+"However when you change the criteria, there might be relations that do not "
+"fit the new criteria.\n"
 "Specify how this situation should be handled."
-msgstr "Bij het aanmaken van connecties vinden controles plaats op type en categorie van de relatie.\nEchter, wanneer u de criteria verandert, dan kunnen er al connecties bestaan die daar niet aan voldoen.\nGeef aan hoe zo'n situatie moet worden afgehandeld. "
+msgstr ""
+"Bij het aanmaken van connecties vinden controles plaats op type en categorie "
+"van de relatie.\n"
+"Echter, wanneer u de criteria verandert, dan kunnen er al connecties bestaan "
+"die daar niet aan voldoen.\n"
+"Geef aan hoe zo'n situatie moet worden afgehandeld. "
 
 #. module: partner_relations
 #: model:res.partner.relation.type,name_inverse:partner_relations.rel_type_assistant
