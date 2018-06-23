@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_partner_merge
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
 # Rudolf Schnapka <rs@techno-flex.de>, 2017
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2017-02-25 04:48+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>, 2017\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_partner_merge
@@ -32,8 +32,7 @@ msgstr ""
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
-msgid ""
-"Are you sure to execute the list of automatic merges of your contacts ?"
+msgid "Are you sure to execute the list of automatic merges of your contacts ?"
 msgstr ""
 "Sind Sie sicher, dass Sie Liste der Kontakte-Zusammenführungen ausführen "
 "möchten?"
@@ -239,9 +238,12 @@ msgstr "Suche Duplikate basierend auf duplizierten Daten in"
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid ""
 "Select the list of fields used to search for\n"
-"                            duplicated records. If you select several fields,\n"
-"                            Odoo will propose you to merge only those having\n"
-"                            all these fields in common. (not one of the fields)."
+"                            duplicated records. If you select several "
+"fields,\n"
+"                            Odoo will propose you to merge only those "
+"having\n"
+"                            all these fields in common. (not one of the "
+"fields)."
 msgstr ""
 "Wählen Sie die Liste der zu vergleichenden Felder bei der Dupblettensuche. "
 "Wenn Sie mehrere Felder auswählen, wird Odoo Ihnen nur die anbieten, die "
@@ -251,13 +253,16 @@ msgstr ""
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid ""
 "Selected contacts will be merged together.\n"
-"                                All documents linked to one of these contacts\n"
-"                                will be redirected to the destination contact.\n"
-"                                You can remove contacts from this list to avoid merging them."
+"                                All documents linked to one of these "
+"contacts\n"
+"                                will be redirected to the destination "
+"contact.\n"
+"                                You can remove contacts from this list to "
+"avoid merging them."
 msgstr ""
 "Die ausgewählten Kontakte werden zusammengeführt. Alle Dokumente, die auf "
-"diese Kontakte verweisen, werden auf den zusammengeführten Kontakt umgelegt."
-" Sie können Kontakte aus der Liste entfernen, um die Zusammenführung für "
+"diese Kontakte verweisen, werden auf den zusammengeführten Kontakt umgelegt. "
+"Sie können Kontakte aus der Liste entfernen, um die Zusammenführung für "
 "diese zu unterbinden."
 
 #. module: base_partner_merge
