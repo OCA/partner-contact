@@ -1,22 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_firstname
+#	* partner_firstname
 #
-# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (9.0)\n"
+"Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-30 01:37+0000\n"
-"PO-Revision-Date: 2016-03-11 23:18+0000\n"
 "Last-Translator: <>\n"
-"Language-Team: Spanish (Mexico) (http://www.transifex.com/oca/OCA-partner-"
-"contact-9-0/language/es_MX/)\n"
-"Language: es_MX\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: partner_firstname
 #: sql_constraint:res.partner:0
@@ -55,7 +50,7 @@ msgstr ""
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
 msgid "Partner"
-msgstr "Compañero"
+msgstr ""
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_base_config_settings_partner_names_order
@@ -74,9 +69,7 @@ msgstr ""
 
 #. module: partner_firstname
 #: model:ir.ui.view,arch_db:partner_firstname.view_general_configuration
-msgid ""
-"Recalculate names for all partners. This process could take so much time if "
-"there are more than 10,000 active partners"
+msgid "Recalculate names for all partners. This process could take so much time if there are more than 10,000 active partners"
 msgstr ""
 
 #. module: partner_firstname
@@ -88,3 +81,4 @@ msgstr ""
 #: model:ir.model,name:partner_firstname.model_base_config_settings
 msgid "base.config.settings"
 msgstr ""
+

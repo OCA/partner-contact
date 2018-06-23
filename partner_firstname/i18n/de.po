@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_firstname
-# 
+#
 # Translators:
 # Armando Vulcano Junior <vulcano@uol.com.br>, 2015
 # Matjaž Mozetič <m.mozetic@matmoz.si>, 2016
@@ -13,11 +13,12 @@ msgstr ""
 "POT-Creation-Date: 2017-04-26 02:52+0000\n"
 "PO-Revision-Date: 2017-04-20 12:53+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-9-0/"
+"language/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_firstname
@@ -79,7 +80,9 @@ msgstr "Namen neu ermitteln"
 msgid ""
 "Recalculate names for all partners. This process could take so much time if "
 "there are more than 10,000 active partners"
-msgstr "Namen aller Partner neu ermitteln. Dieser Vorgang kann, je nach Menge an Partnern, ziemlich lange dauern"
+msgstr ""
+"Namen aller Partner neu ermitteln. Dieser Vorgang kann, je nach Menge an "
+"Partnern, ziemlich lange dauern"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_users
