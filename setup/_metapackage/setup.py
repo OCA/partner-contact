@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo11-addon-base_location_nuts',
         'odoo11-addon-base_partner_sequence',
         'odoo11-addon-base_vat_sanitized',
+        'odoo11-addon-partner_address_street3',
         'odoo11-addon-partner_affiliate',
         'odoo11-addon-partner_contact_in_several_companies',
         'odoo11-addon-partner_contact_personal_information_page',
