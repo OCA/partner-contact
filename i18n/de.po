@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_identification
-# 
+#
 # Translators:
 # Rudolf Schnapka <rs@techno-flex.de>, 2017
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2017-02-21 16:57+0000\n"
 "PO-Revision-Date: 2017-02-25 00:18+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_identification
@@ -23,11 +24,18 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"# Python code. Use failed = True to specify that the id number is not valid.\n"
+"# Python code. Use failed = True to specify that the id number is not "
+"valid.\n"
 "# You can use the following variables :\n"
 "#  - self: browse_record of the current ID Category browse_record\n"
 "#  - id_number: browse_record of ID number to validate"
-msgstr "\n# Python code. Verwende failed = True, um anzugeben, dass die ID unzulässig ist.\n# Sie können die folgenden Variablen einsetzen:\n#  - self: browse_record der aktuellen ID Kategorie browse_record\n#  - id_number: browse_record der zu prüfenden ID"
+msgstr ""
+"\n"
+"# Python code. Verwende failed = True, um anzugeben, dass die ID unzulässig "
+"ist.\n"
+"# Sie können die folgenden Variablen einsetzen:\n"
+"#  - self: browse_record der aktuellen ID Kategorie browse_record\n"
+"#  - id_number: browse_record der zu prüfenden ID"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:70
@@ -50,7 +58,9 @@ msgstr "Aktiv"
 msgid ""
 "Another partner, who issued this ID. For example, Traffic National "
 "Institution"
-msgstr "Anderer Partner, der diesen Ausweis ausgestellt hat. Z. B. örtlichen Fahrerlaubnisbehörde"
+msgstr ""
+"Anderer Partner, der diesen Ausweis ausgestellt hat. Z. B. örtlichen "
+"Fahrerlaubnisbehörde"
 
 #. module: partner_identification
 #: field:res.partner.id_number,category_id:0
@@ -87,14 +97,19 @@ msgid ""
 "Error when evaluating the id_category validation code::\n"
 " %s \n"
 "(%s)"
-msgstr "Fehler im Prüfprogramm-Code beim Auswerten der id_category:\n %s \n(%s)"
+msgstr ""
+"Fehler im Prüfprogramm-Code beim Auswerten der id_category:\n"
+" %s \n"
+"(%s)"
 
 #. module: partner_identification
 #: help:res.partner.id_number,valid_until:0
 msgid ""
 "Expiration date. For example, date when person needs to renew his driver "
 "license, 21/10/2019"
-msgstr "Ablaufdatum. Zum Beispiel, Datum an dem der Führeschein der Person erneuert werden muss: 21.10.2019"
+msgstr ""
+"Ablaufdatum. Zum Beispiel, Datum an dem der Führeschein der Person erneuert "
+"werden muss: 21.10.2019"
 
 #. module: partner_identification
 #: selection:res.partner.id_number,status:0
@@ -141,7 +156,9 @@ msgstr "Ausgestellt durch"
 msgid ""
 "Issued date. For example, date when person approved his driving exam, "
 "21/10/2009"
-msgstr "Ausstellungsdatum. Zum Beispiel das Ausstellungsdatum des Führescheins am 21. 10. 2009"
+msgstr ""
+"Ausstellungsdatum. Zum Beispiel das Ausstellungsdatum des Führescheins am "
+"21. 10. 2009"
 
 #. module: partner_identification
 #: field:res.partner.id_number,date_issued:0
@@ -242,7 +259,9 @@ msgstr "Der Ausweis selbst. Zum Beispiel die Führerscheinnummer dieser Person"
 msgid ""
 "The place where the ID has been issued. For example the country for "
 "passports and visa"
-msgstr "Der Ort an dem dieser Ausweis ausgestellt wurde. Zum Beispiel das Aussteller-Land vom Reisepass oder des Personalausweises"
+msgstr ""
+"Der Ort an dem dieser Ausweis ausgestellt wurde. Zum Beispiel das Aussteller-"
+"Land vom Reisepass oder des Personalausweises"
 
 #. module: partner_identification
 #: selection:res.partner.id_number,status:0
