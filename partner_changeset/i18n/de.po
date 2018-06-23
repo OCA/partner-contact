@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_changeset
-# 
+#
 # Translators:
 # Rudolf Schnapka <rs@techno-flex.de>, 2017
 msgid ""
@@ -12,10 +12,10 @@ msgstr ""
 "PO-Revision-Date: 2017-02-21 16:57+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>, 2017\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_changeset
@@ -159,11 +159,18 @@ msgstr "Kennung"
 #. module: partner_changeset
 #: help:changeset.field.rule,source_model_id:0
 msgid ""
-"If a source model is defined, the rule will be applied only when the change is made from this origin.  Rules without source model are global and applies to all backends.\n"
-"Rules with a source model have precedence over global rules, but if a field has no rule with a source model, the global rule is used."
+"If a source model is defined, the rule will be applied only when the change "
+"is made from this origin.  Rules without source model are global and applies "
+"to all backends.\n"
+"Rules with a source model have precedence over global rules, but if a field "
+"has no rule with a source model, the global rule is used."
 msgstr ""
-"Wenn ein Quellmodell definiert ist, wird die Regel nur angewendet, wenn dieser Ursprung sich ändert. Regeln ohne Ursprungsmodell sind global und gelten für alle Backends.\n"
-"Regeln mit Quell-Modell haben Vorrang vor globalen Regeln, wenn aber ein Feld keine Regel mit Quell-Modell aufweist, wird auf eine globale Regel zurückgegriffen."
+"Wenn ein Quellmodell definiert ist, wird die Regel nur angewendet, wenn "
+"dieser Ursprung sich ändert. Regeln ohne Ursprungsmodell sind global und "
+"gelten für alle Backends.\n"
+"Regeln mit Quell-Modell haben Vorrang vor globalen Regeln, wenn aber ein "
+"Feld keine Regel mit Quell-Modell aufweist, wird auf eine globale Regel "
+"zurückgegriffen."
 
 #. module: partner_changeset
 #: field:changeset.field.rule,__last_update:0
@@ -319,10 +326,12 @@ msgstr ""
 #: code:addons/partner_changeset/models/res_partner_changeset.py:401
 #, python-format
 msgid ""
-"This change cannot be applied because a previous changeset for the same partner is pending.\n"
+"This change cannot be applied because a previous changeset for the same "
+"partner is pending.\n"
 "Apply all the anterior changesets before applying this one."
 msgstr ""
-"Diese Änderung darf nicht zugelassen werden, da ein vorheriger Änderungssatz noch aussteht.\n"
+"Diese Änderung darf nicht zugelassen werden, da ein vorheriger Änderungssatz "
+"noch aussteht.\n"
 "Wenden Sie alle Änderungssätze an bevor Sie diesen anwenden."
 
 #. module: partner_changeset

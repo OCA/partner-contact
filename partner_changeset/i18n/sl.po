@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_changeset
-# 
+#
 # Translators:
 # Matjaž Mozetič <m.mozetic@matmoz.si>, 2016
 msgid ""
@@ -12,11 +12,12 @@ msgstr ""
 "PO-Revision-Date: 2016-07-03 07:56+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>, 2016\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
 
 #. module: partner_changeset
 #: sql_constraint:changeset.field.rule:0
@@ -159,11 +160,17 @@ msgstr "ID"
 #. module: partner_changeset
 #: help:changeset.field.rule,source_model_id:0
 msgid ""
-"If a source model is defined, the rule will be applied only when the change is made from this origin.  Rules without source model are global and applies to all backends.\n"
-"Rules with a source model have precedence over global rules, but if a field has no rule with a source model, the global rule is used."
+"If a source model is defined, the rule will be applied only when the change "
+"is made from this origin.  Rules without source model are global and applies "
+"to all backends.\n"
+"Rules with a source model have precedence over global rules, but if a field "
+"has no rule with a source model, the global rule is used."
 msgstr ""
-"Če je izvorni model določen, se pravilo uveljavi le za spremembe iz tega izvora. Pravila brez izvornega modela so globalna in se uveljavijo na vseh ozadjih.\n"
-"Pravila izvornega modela imajo prednost pred globalnimi pravili, a če polje nima pravila z izvornim modelom, se uporabi globalno pravilo."
+"Če je izvorni model določen, se pravilo uveljavi le za spremembe iz tega "
+"izvora. Pravila brez izvornega modela so globalna in se uveljavijo na vseh "
+"ozadjih.\n"
+"Pravila izvornega modela imajo prednost pred globalnimi pravili, a če polje "
+"nima pravila z izvornim modelom, se uporabi globalno pravilo."
 
 #. module: partner_changeset
 #: field:changeset.field.rule,__last_update:0
@@ -318,10 +325,12 @@ msgstr "Uporabnik bo imel dostop do nastavitev pravil niza sprememb."
 #: code:addons/partner_changeset/models/res_partner_changeset.py:401
 #, python-format
 msgid ""
-"This change cannot be applied because a previous changeset for the same partner is pending.\n"
+"This change cannot be applied because a previous changeset for the same "
+"partner is pending.\n"
 "Apply all the anterior changesets before applying this one."
 msgstr ""
-"Te spremembe ni mogoče uveljaviti, ker obstaja za istega partnerja prejšnji čakajoč niz sprememb.\n"
+"Te spremembe ni mogoče uveljaviti, ker obstaja za istega partnerja prejšnji "
+"čakajoč niz sprememb.\n"
 "Pred uveljavitvijo tega uveljavite vse predhodne nize sprememb."
 
 #. module: partner_changeset
