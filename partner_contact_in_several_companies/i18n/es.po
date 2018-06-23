@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_contact_in_several_companies
-# 
+#
 # Translators:
 # Francisco Palm <francisco.palm@gmail.com>, 2015
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2015-09-23 21:40+0000\n"
 "PO-Revision-Date: 2015-09-13 13:27+0000\n"
 "Last-Translator: Francisco Palm <francisco.palm@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
+"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_contact_in_several_companies
@@ -135,7 +136,9 @@ msgstr "Etiquetas..."
 msgid ""
 "To see personal information about this contact, please\n"
 "                        go to to the his person form:"
-msgstr "Para ver la información personal de este contacto, por favor\ndiríjase a su formulario personal:"
+msgstr ""
+"Para ver la información personal de este contacto, por favor\n"
+"diríjase a su formulario personal:"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit

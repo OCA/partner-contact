@@ -1,172 +1,163 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_contact_in_several_companies
+#	* partner_contact_in_several_companies
 #
-# Translators:
-# Rudolf Schnapka <rs@techno-flex.de>, 2015,2017
-# Rudolf Schnapka <schnapkar@golive-saar.de>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (8.0)\n"
+"Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-21 16:57+0000\n"
-"PO-Revision-Date: 2017-02-24 23:44+0000\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
-"language/de/)\n"
-"Language: de\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Address"
-msgstr "Anschrift"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "All partner positions"
-msgstr "Alle Positionen des Partners"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "All positions"
-msgstr "Alle Positionen"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: code:addons/partner_contact_in_several_companies/models.py:32
 #, python-format
 msgid "Attached to existing Contact"
-msgstr "Mit bestehendem Kontakt verknüpft"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "City"
-msgstr "Stadt"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Company"
-msgstr "Unternehmen"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Contact"
-msgstr "Kontakt"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: field:res.partner,contact_type:0
 msgid "Contact Type"
-msgstr "Kontaktart"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Contacts"
-msgstr "Kontakte"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Country"
-msgstr "Land"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Fax:"
-msgstr "Fax:"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: field:res.partner,contact_id:0
 msgid "Main Contact"
-msgstr "Hauptkontakt"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Mobile:"
-msgstr "Mobil:"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Other Positions"
-msgstr "Andere Positionen"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: field:res.partner,other_contact_ids:0
 msgid "Others Positions"
-msgstr "Andere Positionen"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model,name:partner_contact_in_several_companies.model_res_partner
 msgid "Partner"
-msgstr "Partner"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "Person"
-msgstr "Person"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Phone:"
-msgstr "Telefon:"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: code:addons/partner_contact_in_several_companies/models.py:31
 #, python-format
 msgid "Standalone Contact"
-msgstr "Alleinstehender Kontakt"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "State"
-msgstr "Bundesland"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Street..."
-msgstr "Straße..."
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Tags..."
-msgstr "Schlagworte..."
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_personal_information
-msgid ""
-"To see personal information about this contact, please\n"
+msgid "To see personal information about this contact, please\n"
 "                        go to to the his person form:"
 msgstr ""
-"Um persönliche Information zu diesem Kontakt zu erhalten, gehen Sie bitte "
-"auf das Person-Formular:"
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "ZIP"
-msgstr "PLZ"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "at"
-msgstr "bei"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "e.g. Sales Director"
-msgstr "z. B. Verkaufsleiter"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_kanban_contact
 msgid "other position"
-msgstr "andere Position"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_res_partner_kanban_contact
 msgid "other positions"
-msgstr "andere Positionen"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: view:res.partner:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "{'invisible': [('contact_type','=','attached')]}"
-msgstr "{'invisible': [('contact_type','=','attached')]}"
+msgstr ""
+
