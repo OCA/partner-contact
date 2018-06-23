@@ -1,23 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_external_maps
+#	* partner_external_maps
 #
-# Translators:
-# Esther Martín Menéndez <esthermartin001@gmail.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: partner-contact (8.0)\n"
+"Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-21 16:57+0000\n"
-"PO-Revision-Date: 2017-02-23 15:55+0000\n"
-"Last-Translator: Esther Martín Menéndez <esthermartin001@gmail.com>\n"
-"Language-Team: Basque (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
-"language/eu/)\n"
-"Language: eu\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: partner_external_maps
 #: code:addons/partner_external_maps/partner_external_maps.py:128
@@ -117,24 +111,17 @@ msgstr ""
 
 #. module: partner_external_maps
 #: help:map.website,lat_lon_url:0
-msgid ""
-"In this URL, {LATITUDE} and {LONGITUDE} will be replaced by the latitude and "
-"longitude (requires the module 'base_geolocalize')"
+msgid "In this URL, {LATITUDE} and {LONGITUDE} will be replaced by the latitude and longitude (requires the module 'base_geolocalize')"
 msgstr ""
 
 #. module: partner_external_maps
 #: help:map.website,route_address_url:0
-msgid ""
-"In this URL, {START_ADDRESS} and {DEST_ADDRESS} will be replaced by the "
-"start and destination addresses."
+msgid "In this URL, {START_ADDRESS} and {DEST_ADDRESS} will be replaced by the start and destination addresses."
 msgstr ""
 
 #. module: partner_external_maps
 #: help:map.website,route_lat_lon_url:0
-msgid ""
-"In this URL, {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} and "
-"{DEST_LONGITUDE} will be replaced by the latitude and longitude of the start "
-"and destination adresses (requires the module 'base_geolocalize')."
+msgid "In this URL, {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} and {DEST_LONGITUDE} will be replaced by the latitude and longitude of the start and destination adresses (requires the module 'base_geolocalize')."
 msgstr ""
 
 #. module: partner_external_maps
@@ -188,9 +175,7 @@ msgstr ""
 
 #. module: partner_external_maps
 #: help:res.users,context_route_map_website_id:0
-msgid ""
-"Map provided used when you click on the car icon on the partner form to "
-"display an itinerary."
+msgid "Map provided used when you click on the car icon on the partner form to display an itinerary."
 msgstr ""
 
 #. module: partner_external_maps
@@ -225,8 +210,7 @@ msgstr ""
 #. module: partner_external_maps
 #: code:addons/partner_external_maps/partner_external_maps.py:181
 #, python-format
-msgid ""
-"Missing start address for route map: you should set it in your preferences."
+msgid "Missing start address for route map: you should set it in your preferences."
 msgstr ""
 
 #. module: partner_external_maps
@@ -252,7 +236,7 @@ msgstr ""
 #. module: partner_external_maps
 #: model:ir.model,name:partner_external_maps.model_res_partner
 msgid "Partner"
-msgstr "Kidea"
+msgstr ""
 
 #. module: partner_external_maps
 #: help:res.users,capital_amount:0
@@ -318,3 +302,4 @@ msgstr ""
 #: model:ir.model,name:partner_external_maps.model_res_users
 msgid "Users"
 msgstr ""
+

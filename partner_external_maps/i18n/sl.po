@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_external_maps
-# 
+#
 # Translators:
 # Matjaž Mozetič <m.mozetic@matmoz.si>, 2015-2016
 msgid ""
@@ -11,12 +11,14 @@ msgstr ""
 "POT-Creation-Date: 2016-07-03 07:56+0000\n"
 "PO-Revision-Date: 2016-07-04 06:44+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
-"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/sl/)\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-"
+"contact-8-0/language/sl/)\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
 
 #. module: partner_external_maps
 #: code:addons/partner_external_maps/partner_external_maps.py:128
@@ -117,24 +119,31 @@ msgstr "V tej URL povezavi bo {ADDRESS} zamenjan z naslovom."
 #. module: partner_external_maps
 #: help:map.website,lat_lon_url:0
 msgid ""
-"In this URL, {LATITUDE} and {LONGITUDE} will be replaced by the latitude and"
-" longitude (requires the module 'base_geolocalize')"
-msgstr "V tej URL povezavi bosta {LATITUDE} in {LONGITUDE} zamenjani z geografsko širino in dolžino (potreben je modul 'base_geolocalize')"
+"In this URL, {LATITUDE} and {LONGITUDE} will be replaced by the latitude and "
+"longitude (requires the module 'base_geolocalize')"
+msgstr ""
+"V tej URL povezavi bosta {LATITUDE} in {LONGITUDE} zamenjani z geografsko "
+"širino in dolžino (potreben je modul 'base_geolocalize')"
 
 #. module: partner_external_maps
 #: help:map.website,route_address_url:0
 msgid ""
 "In this URL, {START_ADDRESS} and {DEST_ADDRESS} will be replaced by the "
 "start and destination addresses."
-msgstr "V tej URL povezavi bosta {START_ADDRESS} in {DEST_ADDRESS} zamenjana z začetnim in ciljnim naslovom."
+msgstr ""
+"V tej URL povezavi bosta {START_ADDRESS} in {DEST_ADDRESS} zamenjana z "
+"začetnim in ciljnim naslovom."
 
 #. module: partner_external_maps
 #: help:map.website,route_lat_lon_url:0
 msgid ""
 "In this URL, {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} and "
-"{DEST_LONGITUDE} will be replaced by the latitude and longitude of the start"
-" and destination adresses (requires the module 'base_geolocalize')."
-msgstr "V tej URL povezavi bodo {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} in {DEST_LONGITUDE} zamenjani z geografsko širino in dolžino začetnega in ciljnega naslova (potreben je modul 'base_geolocalize')."
+"{DEST_LONGITUDE} will be replaced by the latitude and longitude of the start "
+"and destination adresses (requires the module 'base_geolocalize')."
+msgstr ""
+"V tej URL povezavi bodo {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} "
+"in {DEST_LONGITUDE} zamenjani z geografsko širino in dolžino začetnega in "
+"ciljnega naslova (potreben je modul 'base_geolocalize')."
 
 #. module: partner_external_maps
 #: field:map.website,__last_update:0
@@ -190,7 +199,9 @@ msgstr "Spletne strani zemljevidov"
 msgid ""
 "Map provided used when you click on the car icon on the partner form to "
 "display an itinerary."
-msgstr "Zemljevid uporabljen ob kliku na ikono avtomobila v partnerjevem obrazcu za prikaz itinerarja."
+msgstr ""
+"Zemljevid uporabljen ob kliku na ikono avtomobila v partnerjevem obrazcu za "
+"prikaz itinerarja."
 
 #. module: partner_external_maps
 #: view:res.users:partner_external_maps.view_users_form
@@ -207,13 +218,16 @@ msgstr "Manjkajoč ponudnik zemljevida: nastavite ga v nastavitvah."
 #: code:addons/partner_external_maps/partner_external_maps.py:161
 #, python-format
 msgid "Missing parameter 'URL that uses the address' for map website '%s'."
-msgstr "Manjkajoč parameter 'URL ki uporablja naslov' za spletno stran zemljevida '%s'."
+msgstr ""
+"Manjkajoč parameter 'URL ki uporablja naslov' za spletno stran zemljevida "
+"'%s'."
 
 #. module: partner_external_maps
 #: code:addons/partner_external_maps/partner_external_maps.py:200
 #, python-format
 msgid "Missing route URL that uses the addresses for the map website '%s'"
-msgstr "Manjkajoč URL proge, ki uporablja naslove za spletno stran zemljevida '%s'"
+msgstr ""
+"Manjkajoč URL proge, ki uporablja naslove za spletno stran zemljevida '%s'"
 
 #. module: partner_external_maps
 #: code:addons/partner_external_maps/partner_external_maps.py:176

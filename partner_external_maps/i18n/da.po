@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_external_maps
-# 
+#
 # Translators:
 # Hans Henrik Gabelgaard <hhg@gabelgaard.org>, 2015
 msgid ""
@@ -11,17 +11,68 @@ msgstr ""
 "POT-Creation-Date: 2015-08-28 15:54+0000\n"
 "PO-Revision-Date: 2015-06-29 06:28+0000\n"
 "Last-Translator: Hans Henrik Gabelgaard <hhg@gabelgaard.org>\n"
-"Language-Team: Danish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/da/)\n"
+"Language-Team: Danish (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/da/)\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_external_maps
 #: code:addons/partner_external_maps/partner_external_maps.py:128
 #, python-format
 msgid "Address missing on partner '%s'."
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,capital_amount:0
+msgid "Capital amount"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,capital_country_id:0
+msgid "Capital country"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,capital_currency_id:0
+msgid "Capital currency"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,job_position_id:0
+msgid "Categorized job position"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,count_pending_changesets:0
+msgid "Changes"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,changeset_ids:0
+msgid "Changesets"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,zip_id:0
+msgid "City/Location"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,company_size:0
+msgid "Company size"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,continent_id:0
+msgid "Continent"
+msgstr ""
+
+#. module: partner_external_maps
+#: help:res.users,capital_country_id:0
+msgid "Country of origin of this company's capital."
 msgstr ""
 
 #. module: partner_external_maps
@@ -32,6 +83,26 @@ msgstr ""
 #. module: partner_external_maps
 #: field:map.website,create_date:0
 msgid "Created on"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,department_id:0
+msgid "Department"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:map.website,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,employee_quantity:0
+msgid "Employee quantity"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,employee_quantity_range_id:0
+msgid "Employee quantity range"
 msgstr ""
 
 #. module: partner_external_maps
@@ -47,8 +118,8 @@ msgstr ""
 #. module: partner_external_maps
 #: help:map.website,lat_lon_url:0
 msgid ""
-"In this URL, {LATITUDE} and {LONGITUDE} will be replaced by the latitude and"
-" longitude (requires the module 'base_geolocalize')"
+"In this URL, {LATITUDE} and {LONGITUDE} will be replaced by the latitude and "
+"longitude (requires the module 'base_geolocalize')"
 msgstr ""
 
 #. module: partner_external_maps
@@ -62,8 +133,13 @@ msgstr ""
 #: help:map.website,route_lat_lon_url:0
 msgid ""
 "In this URL, {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} and "
-"{DEST_LONGITUDE} will be replaced by the latitude and longitude of the start"
-" and destination adresses (requires the module 'base_geolocalize')."
+"{DEST_LONGITUDE} will be replaced by the latitude and longitude of the start "
+"and destination adresses (requires the module 'base_geolocalize')."
+msgstr ""
+
+#. module: partner_external_maps
+#: field:map.website,__last_update:0
+msgid "Last Modified on"
 msgstr ""
 
 #. module: partner_external_maps
@@ -74,6 +150,16 @@ msgstr ""
 #. module: partner_external_maps
 #: field:map.website,write_date:0
 msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,lau1_id:0
+msgid "Local Admin. Unit 1"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,lau2_id:0
+msgid "Local Admin. Unit 2"
 msgstr ""
 
 #. module: partner_external_maps
@@ -144,8 +230,38 @@ msgid ""
 msgstr ""
 
 #. module: partner_external_maps
+#: field:res.users,nuts1_id:0
+msgid "NUTS L1"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,nuts2_id:0
+msgid "NUTS L2"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,nuts3_id:0
+msgid "NUTS L3"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,nuts4_id:0
+msgid "NUTS L4"
+msgstr ""
+
+#. module: partner_external_maps
 #: model:ir.model,name:partner_external_maps.model_res_partner
 msgid "Partner"
+msgstr ""
+
+#. module: partner_external_maps
+#: help:res.users,capital_amount:0
+msgid "Publicly registered capital amount."
+msgstr ""
+
+#. module: partner_external_maps
+#: help:res.users,employee_quantity_range_id:0
+msgid "Range of this partner depending on the employee quantity."
 msgstr ""
 
 #. module: partner_external_maps
@@ -172,6 +288,21 @@ msgstr ""
 #: field:res.users,context_route_start_partner_id:0
 msgid "Start Address for Route Map"
 msgstr "Start adresse ved rutevejledning"
+
+#. module: partner_external_maps
+#: field:res.users,street3:0
+msgid "Street 3"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,turnover_amount:0
+msgid "Turnover amount"
+msgstr ""
+
+#. module: partner_external_maps
+#: field:res.users,turnover_range_id:0
+msgid "Turnover range"
+msgstr ""
 
 #. module: partner_external_maps
 #: field:map.website,lat_lon_url:0

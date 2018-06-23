@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_external_maps
-# 
+#
 # Translators:
 # Francisco Palm <francisco.palm@gmail.com>, 2015
 # Oihane Crucelaegui <oihanecruce@gmail.com>, 2016
@@ -12,11 +12,12 @@ msgstr ""
 "POT-Creation-Date: 2016-07-25 11:58+0000\n"
 "PO-Revision-Date: 2016-07-14 09:10+0000\n"
 "Last-Translator: Oihane Crucelaegui <oihanecruce@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/es/)\n"
+"Language-Team: Spanish (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_external_maps
@@ -118,24 +119,31 @@ msgstr "En este URL, {ADDRESS} será reemplazado por la dirección."
 #. module: partner_external_maps
 #: help:map.website,lat_lon_url:0
 msgid ""
-"In this URL, {LATITUDE} and {LONGITUDE} will be replaced by the latitude and"
-" longitude (requires the module 'base_geolocalize')"
-msgstr "En este URL, {LATITUDE} y {LONGITUDE} serán reemplazados por la latitud y la longitud (requiere el módulo 'base_geolocalize')"
+"In this URL, {LATITUDE} and {LONGITUDE} will be replaced by the latitude and "
+"longitude (requires the module 'base_geolocalize')"
+msgstr ""
+"En este URL, {LATITUDE} y {LONGITUDE} serán reemplazados por la latitud y la "
+"longitud (requiere el módulo 'base_geolocalize')"
 
 #. module: partner_external_maps
 #: help:map.website,route_address_url:0
 msgid ""
 "In this URL, {START_ADDRESS} and {DEST_ADDRESS} will be replaced by the "
 "start and destination addresses."
-msgstr "En este URL, {START_ADDRESS} y {DEST_ADDRESS} serán reemplazados por las direcciones de origen y destino."
+msgstr ""
+"En este URL, {START_ADDRESS} y {DEST_ADDRESS} serán reemplazados por las "
+"direcciones de origen y destino."
 
 #. module: partner_external_maps
 #: help:map.website,route_lat_lon_url:0
 msgid ""
 "In this URL, {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} and "
-"{DEST_LONGITUDE} will be replaced by the latitude and longitude of the start"
-" and destination adresses (requires the module 'base_geolocalize')."
-msgstr "En este URL, {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} y {DEST_LONGITUDE} serán reemplazados por las latitudes y longitudes de las direcciones de origen y destino (requiere el módulo 'base_geolocalize')."
+"{DEST_LONGITUDE} will be replaced by the latitude and longitude of the start "
+"and destination adresses (requires the module 'base_geolocalize')."
+msgstr ""
+"En este URL, {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} y "
+"{DEST_LONGITUDE} serán reemplazados por las latitudes y longitudes de las "
+"direcciones de origen y destino (requiere el módulo 'base_geolocalize')."
 
 #. module: partner_external_maps
 #: field:map.website,__last_update:0
@@ -191,7 +199,9 @@ msgstr "Sitios web del Mapa"
 msgid ""
 "Map provided used when you click on the car icon on the partner form to "
 "display an itinerary."
-msgstr "El mapa dado fue utilizado cuando hizo clic en el icono de auto en el formulario del socio para mostrar un itinerario."
+msgstr ""
+"El mapa dado fue utilizado cuando hizo clic en el icono de auto en el "
+"formulario del socio para mostrar un itinerario."
 
 #. module: partner_external_maps
 #: view:res.users:partner_external_maps.view_users_form
@@ -208,26 +218,33 @@ msgstr "Falta el proveedor de mapas: debe establecerlo en sus preferencias."
 #: code:addons/partner_external_maps/partner_external_maps.py:161
 #, python-format
 msgid "Missing parameter 'URL that uses the address' for map website '%s'."
-msgstr "Parámetro faltante 'URL que utiliza la dirección' para el sito web del mapa '%s'."
+msgstr ""
+"Parámetro faltante 'URL que utiliza la dirección' para el sito web del mapa "
+"'%s'."
 
 #. module: partner_external_maps
 #: code:addons/partner_external_maps/partner_external_maps.py:200
 #, python-format
 msgid "Missing route URL that uses the addresses for the map website '%s'"
-msgstr "Falta URL de la ruta que utiliza las direcciones para el sitio web del mapa '%s'"
+msgstr ""
+"Falta URL de la ruta que utiliza las direcciones para el sitio web del mapa "
+"'%s'"
 
 #. module: partner_external_maps
 #: code:addons/partner_external_maps/partner_external_maps.py:176
 #, python-format
 msgid "Missing route map website: you should set it in your preferences."
-msgstr "Falta sitio web del mapa de la ruta: debes establecerlo en tus preferencias."
+msgstr ""
+"Falta sitio web del mapa de la ruta: debes establecerlo en tus preferencias."
 
 #. module: partner_external_maps
 #: code:addons/partner_external_maps/partner_external_maps.py:181
 #, python-format
 msgid ""
 "Missing start address for route map: you should set it in your preferences."
-msgstr "Falta la dirección de origen para el mapa de la ruta: debes establecerlo en tus preferencias."
+msgstr ""
+"Falta la dirección de origen para el mapa de la ruta: debes establecerlo en "
+"tus preferencias."
 
 #. module: partner_external_maps
 #: field:res.users,nuts1_id:0
