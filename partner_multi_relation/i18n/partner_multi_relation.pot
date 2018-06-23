@@ -1,24 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_multi_relation
+#	* partner_multi_relation
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-02 00:47+0000\n"
-"PO-Revision-Date: 2017-06-02 00:47+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: Croatian (Croatia) (https://www.transifex.com/oca/teams/23907/"
-"hr_HR/)\n"
-"Language: hr_HR\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: \n"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:168
@@ -29,7 +22,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_active
 msgid "Active"
-msgstr "Aktivan"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation_all
@@ -57,13 +50,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_create_uid
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_create_uid
 msgid "Created by"
-msgstr "Kreirao"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_create_date
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_create_date
 msgid "Created on"
-msgstr "Kreirano"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_partner_category_this
@@ -93,7 +86,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_display_name
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_display_name
 msgid "Display Name"
-msgstr "Naziv"
+msgstr ""
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:12
@@ -125,7 +118,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "Group By"
-msgstr "Prupiraj po"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_assistant
@@ -163,7 +156,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_1412
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
@@ -207,19 +200,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type___last_update
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection___last_update
 msgid "Last Modified on"
-msgstr "Zadnje modificirano"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_write_uid
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_write_uid
 msgid "Last Updated by"
-msgstr "Zadnji ažurirao"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_write_date
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_write_date
 msgid "Last Updated on"
-msgstr "Zadnje ažurirano"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_partner_category_left
@@ -250,7 +243,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_name
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_name
 msgid "Name"
-msgstr "Naziv"
+msgstr ""
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:173
@@ -290,7 +283,7 @@ msgstr ""
 #: model:ir.model,name:partner_multi_relation.model_res_partner
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_any_partner_id
 msgid "Partner"
-msgstr "Partner"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type
@@ -323,7 +316,7 @@ msgstr ""
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:84
 #, python-format
 msgid "Person"
-msgstr "Osoba"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
@@ -337,8 +330,7 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.actions.act_window,help:partner_multi_relation.action_res_partner_relation_all
-msgid ""
-"Record and track your partners' relations. Relations may\n"
+msgid "Record and track your partners' relations. Relations may\n"
 "                    be linked to other partners with a type either directly\n"
 "                    or inversely."
 msgstr ""
@@ -465,9 +457,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:155
 #, python-format
-msgid ""
-"There are already relations not satisfying the conditions for partner type "
-"or category."
+msgid "There are already relations not satisfying the conditions for partner type or category."
 msgstr ""
 
 #. module: partner_multi_relation
@@ -490,7 +480,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_type_id
 msgid "Type"
-msgstr "Tip"
+msgstr ""
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner.py:80
@@ -520,10 +510,8 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type_handle_invalid_onchange
-msgid ""
-"When adding relations criteria like partner type and category are checked.\n"
-"However when you change the criteria, there might be relations that do not "
-"fit the new criteria.\n"
+msgid "When adding relations criteria like partner type and category are checked.\n"
+"However when you change the criteria, there might be relations that do not fit the new criteria.\n"
 "Specify how this situation should be handled."
 msgstr ""
 
@@ -538,3 +526,4 @@ msgstr ""
 #, python-format
 msgid "this"
 msgstr ""
+
