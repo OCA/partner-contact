@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_contact_in_several_companies
-# 
+#
 # Translators:
 # Bole <bole@dajmi5.com>, 2016
 msgid ""
@@ -11,12 +11,14 @@ msgstr ""
 "POT-Creation-Date: 2016-06-28 11:23+0000\n"
 "PO-Revision-Date: 2016-06-14 10:50+0000\n"
 "Last-Translator: Bole <bole@dajmi5.com>\n"
-"Language-Team: Croatian (Croatia) (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/hr_HR/)\n"
+"Language-Team: Croatian (Croatia) (http://www.transifex.com/oca/OCA-partner-"
+"contact-9-0/language/hr_HR/)\n"
+"Language: hr_HR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: hr_HR\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -137,7 +139,9 @@ msgstr "Ulica..."
 msgid ""
 "To see personal information about this contact, please\n"
 "                    go to to the this person form:"
-msgstr "Da bi vidjeli sve informacije o ovom kontaktu, molimo\npogledajte ih na formi ove osobe:"
+msgstr ""
+"Da bi vidjeli sve informacije o ovom kontaktu, molimo\n"
+"pogledajte ih na formi ove osobe:"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
