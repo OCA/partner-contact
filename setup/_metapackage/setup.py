@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo11-addon-base_location',
         'odoo11-addon-base_location_geonames_import',
         'odoo11-addon-base_location_nuts',
+        'odoo11-addon-base_partner_merge',
         'odoo11-addon-base_partner_sequence',
         'odoo11-addon-base_vat_sanitized',
         'odoo11-addon-partner_address_street3',
