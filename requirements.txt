@@ -1,4 +1,4 @@
-python-stdnum==1.1
+python-stdnum
 suds
 requests
 unicodecsv
