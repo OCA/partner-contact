@@ -9,12 +9,19 @@ from openerp import models, fields, api, exceptions, _
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    sector_id = fields.Many2one(comodel_name='res.partner.sector',
-                                string='Main Sector')
-
+    sector_id = fields.Many2one(
+        comodel_name='res.partner.sector',
+        string='Main Sector',
+    )
+    sector_complete_name = fields.Char(
+        string="Main Sector Complete Name",
+        related="sector_id.complete_name",
+        readonly=True,
+    )
     secondary_sector_ids = fields.Many2many(
         comodel_name='res.partner.sector', string="Secondary Sectors",
-        domain="[('id', '!=', sector_id)]")
+        domain="[('id', '!=', sector_id)]",
+    )
 
     @api.constrains('sector_id', 'secondary_sector_ids')
     def _check_sectors(self):

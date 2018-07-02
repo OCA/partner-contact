@@ -16,6 +16,7 @@
         <field name="arch" type="xml">
             <tree string="Sectors" editable="top">
                 <field name="name"/>
+                <field name="complete_name"/>
                 <field name="parent_id"/>
             </tree>
         </field>
