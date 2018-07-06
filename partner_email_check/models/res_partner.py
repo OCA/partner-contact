@@ -30,7 +30,7 @@ class ResPartner(models.Model):
 
     @api.model
     def email_check(self, emails):
-        for email in emails.split(';'):
+        for email in emails.split(','):
             if not validate_email(email):
                 raise UserError(
                     _("%s is an invalid email") % email.strip()
