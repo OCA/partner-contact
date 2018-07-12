@@ -47,6 +47,7 @@ Author
 ------
 
 * Yannick Vaucher <yannick.vaucher@camptocamp.com>
+
 Based Holger Brunn's idea.
 
 Contributors
