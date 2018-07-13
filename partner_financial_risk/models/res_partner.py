@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2016 Carlos Dauden <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -136,7 +135,7 @@ class ResPartner(models.Model):
              ('partner_id', 'in', self.ids)],
             ['partner_id', 'amount_total'],
             ['partner_id'])
-        for partner, child_ids in all_partners_and_children.items():
+        for partner, child_ids in list(all_partners_and_children.items()):
             partner.risk_invoice_draft = sum(
                 x['amount_total']
                 for x in total_group if x['partner_id'][0] in child_ids)
@@ -171,7 +170,7 @@ class ResPartner(models.Model):
         if not customers:
             return
         groups = self._risk_account_groups()
-        for key, group in groups.iteritems():
+        for key, group in groups.items():
             group['read_group'] = AccountMoveLine.read_group(
                 group['domain'] + [('partner_id', 'in', customers.ids)],
                 group['fields'],
@@ -270,7 +269,7 @@ class ResPartner(models.Model):
         group_dic = defaultdict(list)
         for group in groups:
             group_dic[group['company_id'][0]].append(group['partner_id'][0])
-        for company_id, partner_ids in group_dic.iteritems():
+        for company_id, partner_ids in group_dic.items():
             partners = self.browse(partner_ids)
             partners.with_context(
                 force_company=company_id,
