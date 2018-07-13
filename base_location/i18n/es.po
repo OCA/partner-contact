@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-13 03:42+0000\n"
-"PO-Revision-Date: 2017-12-13 03:42+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2018-07-13 11:55+0000\n"
+"Last-Translator: Enric Tobella <etobella@creublanca.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_better_zip_enforce_cities
@@ -127,7 +128,7 @@ msgstr "Última actualización en"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_latitude
 msgid "Latitude"
-msgstr ""
+msgstr "Latitud"
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_partner_form
@@ -149,7 +150,7 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_better_zip_longitude
 msgid "Longitude"
-msgstr ""
+msgstr "Longitud"
 
 #. module: base_location
 #: model:ir.ui.view,arch_db:base_location.view_better_zip_filter
