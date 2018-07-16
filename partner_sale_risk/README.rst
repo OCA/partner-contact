@@ -45,6 +45,7 @@ Images
 Contributors
 ------------
 
+* Xavier Jimenez <xavier.jimenez@qubiq.es>
 * Carlos Dauden <carlos.dauden@tecnativa.com>
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
 * Agathe Mollé <agathe.molle@savoirfairelinux.com>
