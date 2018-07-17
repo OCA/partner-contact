@@ -22,3 +22,13 @@ class TestPartnerEmailCheck(TransactionCase):
         """Test acceptance of good"""
         self.test_partner.email = 'goodemail@domain.com'
         self.assertTrue(self.test_partner.email)
+
+    def test_bad_emails(self):
+        """Test rejection of bad emails."""
+        with self.assertRaises(ValidationError):
+            self.test_partner.email = 'good@domain.com,bad@email@domain..com'
+
+    def test_good_emails(self):
+        """Test acceptance of good"""
+        self.test_partner.email = 'goodemail@domain.com,goodemail2@domain.com'
+        self.assertTrue(self.test_partner.email)

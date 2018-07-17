@@ -29,8 +29,10 @@ class ResPartner(models.Model):
             self.email_check(rec.email)
 
     @api.model
-    def email_check(self, email):
-        if validate_email(email):
-            return True
-        else:
-            raise UserError(_('Invalid e-mail!'))
+    def email_check(self, emails):
+        for email in emails.split(','):
+            if not validate_email(email):
+                raise UserError(
+                    _("%s is an invalid email") % email.strip()
+                )
+        return True
