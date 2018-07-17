@@ -16,7 +16,7 @@ msgstr ""
 #. module: partner_email_check
 #: code:addons/partner_email_check/models/res_partner.py:36
 #, python-format
-msgid "Invalid e-mail!"
+msgid "%s is an invalid email"
 msgstr ""
 
 #. module: partner_email_check
