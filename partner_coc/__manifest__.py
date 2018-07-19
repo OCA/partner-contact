@@ -1,11 +1,13 @@
+# Copyright 2017-2018 Onestein (<http://www.onestein.eu>)
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
 {
     'name': 'Partner CoC',
-    'summary': "Adds a field 'Chamber Of Commerce Registration Number' to "
-               "partner",
-    'version': '10.0.1.0.0',
+    'summary': "Adds field 'Chamber Of Commerce Registration Number'",
+    'version': '11.0.1.0.0',
     'category': 'Web',
     'author': 'Onestein,Odoo Community Association (OCA)',
-    'website': 'http://www.onestein.eu',
+    'website': 'https://github.com/OCA/partner-contact/',
     'license': 'AGPL-3',
     'depends': [
         'partner_identification',
@@ -15,5 +17,4 @@
         'views/res_partner_view.xml'
     ],
     'installable': True,
-    'application': False,
 }
