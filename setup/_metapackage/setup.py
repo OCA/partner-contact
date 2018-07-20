@@ -23,6 +23,7 @@ setuptools.setup(
         'odoo11-addon-partner_fax',
         'odoo11-addon-partner_firstname',
         'odoo11-addon-partner_identification',
+        'odoo11-addon-partner_phonecall_schedule',
         'odoo11-addon-partner_second_lastname',
     ],
     classifiers=[
