@@ -13,6 +13,7 @@ class ResPartner(models.Model):
             'coc_registration_number', 'coc',
         ),
         search=lambda s, *a: s._search_identification(
-            'coc_registration_number', 'coc', *a
+            #'coc_registration_number', 'coc', *a  #note: *a accepts an operator and searc_value
+            'coc', *a
         ),
     )
