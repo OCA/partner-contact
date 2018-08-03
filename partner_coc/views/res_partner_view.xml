@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add coc_registration_number to res partner view -->
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority" eval="10"/>
+        <field name="arch" type="xml">
+            <field name="lang" position="after">
+                <field name="coc_registration_number" attrs="{'invisible': [('company_type','!=','company')]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>
