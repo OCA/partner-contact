@@ -15,6 +15,14 @@
                 <field name="secondary_sector_ids" widget="many2many_tags"
                        attrs="{'invisible': [('is_company', '=', False)]}"/>
             </field>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='title']" position="after">
+                <field name="is_company" invisible="1"/>
+                <field name="sector_id" placeholder="Sector"
+                       options='{"no_open": True}'
+                       attrs="{'invisible': [('is_company', '=', False)]}"/>
+                <field name="secondary_sector_ids" widget="many2many_tags"
+                       attrs="{'invisible': [('is_company', '=', False)]}"/>
+            </xpath>
         </field>
     </record>
 
@@ -46,6 +54,53 @@
                         string="Sector"
                         domain="[('is_company','=', True)]"
                         context="{'group_by': 'sector_id'}"/>
+            </filter>
+        </field>
+    </record>
+
+    <!-- Views activated for group_use_partner_sector_for_person -->
+
+    <record model="ir.ui.view" id="view_partner_form_sector_person">
+        <field name="name">Partner form with sector</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_sector.view_partner_form_sector"/>
+        <field name="groups_id" eval="[(4, ref('partner_sector.group_use_partner_sector_for_person'))]"/>
+        <field name="arch" type="xml">
+            <field name="sector_id" position="attributes">
+                <attribute name="attrs">{'invisible': 0}</attribute>
+            </field>
+            <field name="secondary_sector_ids" position="attributes">
+                <attribute name="attrs">{'invisible': 0}</attribute>
+            </field>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='sector_id']" position="attributes">
+                <attribute name="attrs">{'invisible': 0}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='secondary_sector_ids']" position="attributes">
+                <attribute name="attrs">{'invisible': 0}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_partner_tree_sector_person">
+        <field name="name">Partner tree with sector</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_sector.view_partner_tree_sector"/>
+        <field name="groups_id" eval="[(4, ref('partner_sector.group_use_partner_sector_for_person'))]"/>
+        <field name="arch" type="xml">
+            <field name="sector_id" position="attributes">
+                <attribute name="attrs">{'invisible': 0}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_res_partner_filter_sector_person">
+        <field name="name">Partner search with sector</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_sector.view_res_partner_filter_sector"/>
+        <field name="groups_id" eval="[(4, ref('partner_sector.group_use_partner_sector_for_person'))]"/>
+        <field name="arch" type="xml">
+            <filter name="sector" position="attributes">
+                <attribute name="domain"/>
             </filter>
         </field>
     </record>

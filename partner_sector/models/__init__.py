@@ -5,3 +5,5 @@
 
 from . import res_partner
 from . import res_partner_sector
+from . import base_config_settings
+from . import sale_config_settings
