@@ -16,6 +16,15 @@ To manage sectors, you need to:
 
 * Go to *Sales > Configuration > Contacts > Sectors*.
 
+By default only companies have sectors. To activate sectors in individuals also,
+you need to activate the following setting:
+
+* Go to *Settings > General Settings > Sector in contacts > Use sector for individuals*
+
+Or, if you have *Sales* or *CRM* modules installed:
+
+* Go to *Sales > Configuration > Settings > Partner Sector > Use sector for individuals*
+
 
 Usage
 =====
@@ -23,8 +32,6 @@ Usage
 To use this module, you need to:
 
 * Go to any partner's form.
-
-Only companies have sectors.
 
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
@@ -56,6 +63,7 @@ Contributors
 * Vicent Cubells <vicent.cubells@tecnativa.com>
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
 * Luis M. Ontalba <luis.martinez@tecnativa.com>
+* Jordi Ballester Alomar <jordi.ballester@eficent.com>
 
 Maintainer
 ----------
