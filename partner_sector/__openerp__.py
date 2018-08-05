@@ -14,11 +14,14 @@
     "application": False,
     "installable": True,
     "depends": [
-        "base",
+        "base_setup",
     ],
     "data": [
         "security/ir.model.access.csv",
+        "security/partner_sector_security.xml",
         "views/res_partner_sector_view.xml",
         "views/res_partner_view.xml",
+        "views/base_config_settings.xml",
+        "views/sale_config_settings.xml"
     ]
 }
