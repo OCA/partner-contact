@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-10 12:14+0000\n"
-"PO-Revision-Date: 2018-05-10 12:14+0000\n"
+"POT-Creation-Date: 2018-08-06 07:40+0000\n"
+"PO-Revision-Date: 2018-08-06 07:40+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,13 +24,13 @@ msgstr "Contacto"
 #: model:ir.model.fields,field_description:partner_social_media.field_res_partner_social_facebook
 #: model:ir.model.fields,field_description:partner_social_media.field_res_users_social_facebook
 msgid "Facebook Account"
-msgstr "Facebook Account"
+msgstr "Cuenta de Facebook"
 
 #. module: partner_social_media
 #: model:ir.model.fields,field_description:partner_social_media.field_res_partner_social_flickr
 #: model:ir.model.fields,field_description:partner_social_media.field_res_users_social_flickr
 msgid "Flickr Account"
-msgstr "Flickr Account"
+msgstr "Cuenta de Flickr"
 
 #. module: partner_social_media
 #: model:ir.model.fields,field_description:partner_social_media.field_res_partner_social_github
@@ -48,7 +48,7 @@ msgstr "Cuenta de Google+"
 #: model:ir.model.fields,field_description:partner_social_media.field_res_partner_social_linkedin
 #: model:ir.model.fields,field_description:partner_social_media.field_res_users_social_linkedin
 msgid "LinkedIn Account"
-msgstr "LinkedIn Account"
+msgstr "Cuenta de Linkedin"
 
 #. module: partner_social_media
 #: model:ir.model.fields,field_description:partner_social_media.field_res_partner_social_rss
@@ -60,7 +60,7 @@ msgstr "RSS"
 #: model:ir.model.fields,field_description:partner_social_media.field_res_partner_social_slideshare
 #: model:ir.model.fields,field_description:partner_social_media.field_res_users_social_slideshare
 msgid "Slideshare Account"
-msgstr "Slideshare Account"
+msgstr "Cuenta de Slideshare"
 
 #. module: partner_social_media
 #: model:ir.ui.view,arch_db:partner_social_media.res_partner_social_media_form_view
@@ -71,11 +71,11 @@ msgstr "Medios de comunicación social"
 #: model:ir.model.fields,field_description:partner_social_media.field_res_partner_social_twitter
 #: model:ir.model.fields,field_description:partner_social_media.field_res_users_social_twitter
 msgid "Twitter Account"
-msgstr "Twitter Account"
+msgstr "Cuenta de Twitter"
 
 #. module: partner_social_media
 #: model:ir.model.fields,field_description:partner_social_media.field_res_partner_social_youtube
 #: model:ir.model.fields,field_description:partner_social_media.field_res_users_social_youtube
 msgid "Youtube Account"
-msgstr "Youtube Account"
+msgstr "Cuenta de Youtube"
 
