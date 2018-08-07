@@ -40,6 +40,7 @@ Contributors
 
 * Ismael Calvo <ismael.calvo@es.gt.com>
 * Vicent Cubells <vicent.cubells@tecnativa.com>
+* Michael Michot <michotm@gmail.com>
 
 Do not contact contributors directly about support or help with technical issues.
 
