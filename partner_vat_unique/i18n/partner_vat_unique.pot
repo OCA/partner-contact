@@ -1,0 +1,26 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_vat_unique
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_vat_unique
+#: model:ir.model,name:partner_vat_unique.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: partner_vat_unique
+#: code:addons/partner_vat_unique/models/res_partner.py:28
+#, python-format
+msgid "The VAT %s already exists in another partner."
+msgstr ""
+
