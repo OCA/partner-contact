@@ -23,7 +23,7 @@ msgstr ""
 #. module: partner_capital
 #: selection:res.partner,company_size:0
 msgid "Big"
-msgstr ""
+msgstr "Grande"
 
 #. module: partner_capital
 #: model:ir.ui.view,arch_db:partner_capital.view_partner_form_capital
@@ -35,7 +35,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_capital_amount
 #: model:ir.model.fields,field_description:partner_capital.field_res_users_capital_amount
 msgid "Capital amount"
-msgstr ""
+msgstr "Montant du capital"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_alias_capital_country_id
@@ -43,14 +43,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_capital.field_res_users_capital_country_id
 #: model:ir.ui.view,arch_db:partner_capital.view_res_partner_filter_capital
 msgid "Capital country"
-msgstr ""
+msgstr "Pays d'origine du capital"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_alias_capital_currency_id
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_capital_currency_id
 #: model:ir.model.fields,field_description:partner_capital.field_res_users_capital_currency_id
 msgid "Capital currency"
-msgstr ""
+msgstr "Devise du capital"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_alias_company_size
@@ -58,14 +58,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_capital.field_res_users_company_size
 #: model:ir.ui.view,arch_db:partner_capital.view_res_partner_filter_capital
 msgid "Company size"
-msgstr ""
+msgstr "Taille de la société"
 
 #. module: partner_capital
 #: model:ir.model.fields,help:partner_capital.field_res_partner_alias_capital_country_id
 #: model:ir.model.fields,help:partner_capital.field_res_partner_capital_country_id
 #: model:ir.model.fields,help:partner_capital.field_res_users_capital_country_id
 msgid "Country of origin of this company's capital."
-msgstr ""
+msgstr "Pays d'origine du capital de la société"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_create_uid
@@ -105,12 +105,12 @@ msgstr "Mis à jour le"
 #. module: partner_capital
 #: selection:res.partner,company_size:0
 msgid "Medium"
-msgstr ""
+msgstr "Normale"
 
 #. module: partner_capital
 #: selection:res.partner,company_size:0
 msgid "Micro"
-msgstr ""
+msgstr "Très petite"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_name
@@ -127,24 +127,24 @@ msgstr "Contact"
 #: model:ir.model.fields,help:partner_capital.field_res_partner_capital_amount
 #: model:ir.model.fields,help:partner_capital.field_res_users_capital_amount
 msgid "Publicly registered capital amount."
-msgstr ""
+msgstr "Montant du capital enregistré publiquement"
 
 #. module: partner_capital
 #: selection:res.partner,company_size:0
 msgid "Small"
-msgstr ""
+msgstr "Petite"
 
 #. module: partner_capital
 #: model:ir.ui.view,arch_db:partner_capital.view_res_partner_filter_capital
 msgid "Turnover"
-msgstr ""
+msgstr "Chiffre d'affaire"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_alias_turnover_amount
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_amount
 #: model:ir.model.fields,field_description:partner_capital.field_res_users_turnover_amount
 msgid "Turnover amount"
-msgstr ""
+msgstr "Montant du chiffre d'affaire"
 
 #. module: partner_capital
 #: model:ir.model,name:partner_capital.model_res_partner_turnover_range
@@ -152,11 +152,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_id_5466
 #: model:ir.model.fields,field_description:partner_capital.field_res_users_turnover_range_id
 msgid "Turnover range"
-msgstr ""
+msgstr "Fourchette du chiffre d'affaire"
 
 #. module: partner_capital
 #: model:ir.actions.act_window,name:partner_capital.res_partner_turnover_range_action
 #: model:ir.ui.menu,name:partner_capital.menu_res_partner_turnover_range
 #: model:ir.ui.view,arch_db:partner_capital.res_partner_turnover_range_tree_view
 msgid "Turnover ranges"
-msgstr ""
+msgstr "Fourchettes du chiffre d'affaire"

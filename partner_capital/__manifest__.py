@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2015 Antonio Espinosa <antonio.espinosa@tecnativa.com>
 # Copyright 2015 Jairo Llopis <jairo.llopis@tecnativa.com>
 # Copyright 2017 David Vidal <david.vidal@tecnativa.com>
@@ -6,12 +5,12 @@
 
 {
     'name': 'Partners Capital',
-    'version': '10.0.1.0.0',
+    'version': '11.0.1.0.0',
     'category': 'Customer Relationship Management',
-    'author': 'Antiun Ingeniería S.L., '
+    'author': 'Antiun Ingenieria S.L., '
               'Tecnativa, '
               'Odoo Community Association (OCA)',
-    'website': 'https://www.tecnativa.com',
+    "website": "https://github.com/OCA/partner-contact/tree/11.0/partner_capital", # noqa
     'depends': [
         'sale',
     ],

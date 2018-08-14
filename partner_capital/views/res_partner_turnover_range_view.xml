@@ -21,6 +21,6 @@
 
 <menuitem action="res_partner_turnover_range_action"
           id="menu_res_partner_turnover_range"
-          parent="sales_team.menu_config_address_book"/>
+          parent="sale.menu_sale_config"/>
 
 </odoo>
