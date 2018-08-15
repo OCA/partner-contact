@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<openerp>
+<data>
     <!-- Add coc_registration_number to res partner view -->
     <record model="ir.ui.view" id="view_partner_form">
         <field name="name">view.partner.form</field>
@@ -7,9 +8,10 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="priority" eval="10"/>
         <field name="arch" type="xml">
-            <field name="lang" position="after">
-                <field name="coc_registration_number" attrs="{'invisible': [('company_type','!=','company')]}"/>
-            </field>
+            <xpath expr="//page[@name='sales_purchases']/group/group/field[@name='lang']" position="after">
+                <field name="coc_registration_number" attrs="{'invisible': [('is_company','!=',True)]}"/>
+            </xpath>
         </field>
     </record>
-</odoo>
+</data>
+</openerp>
