@@ -6,9 +6,9 @@
 {
     "name": "Partner Sector",
     "summary": "Add partner sectors",
-    "version": "10.0.1.1.0",
+    "version": "10.0.1.2.0",
     "category": "Customer Relationship Management",
-    "website": "http://www.tecnativa.com",
+    "website": "https://github.com/OCA/partner-contact",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "application": False,
