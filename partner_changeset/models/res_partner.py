@@ -14,16 +14,16 @@ class ResPartner(models.Model):
                                     readonly=True)
     count_pending_changesets = fields.Integer(
         string='Changes',
-        compute='_count_pending_changesets',
+        compute='_compute_count_pending_changesets',
         search='_search_count_pending_changesets')
 
-    @api.one
     @api.depends('changeset_ids', 'changeset_ids.state')
-    def _count_pending_changesets(self):
-        changesets = self.changeset_ids.filtered(
-            lambda rev: rev.state == 'draft' and rev.partner_id == self
-        )
-        self.count_pending_changesets = len(changesets)
+    def _compute_count_pending_changesets(self):
+        for res in self:
+            changesets = res.changeset_ids.filtered(
+                lambda rev: rev.state == 'draft' and rev.partner_id == res
+            )
+            res.count_pending_changesets = len(changesets)
 
     @api.multi
     def write(self, values):
@@ -39,6 +39,7 @@ class ResPartner(models.Model):
     def _search_count_pending_changesets(self, operator, value):
         if operator not in ('=', '!=', '<', '<=', '>', '>=', 'in', 'not in'):
             return []
+        # pylint: disable=sql-injection
         query = ("SELECT p.id "
                  "FROM res_partner p "
                  "INNER JOIN res_partner_changeset r ON r.partner_id = p.id "

@@ -15,7 +15,7 @@ and vary from country to country.
 * Fiscal ID's
 * Membership numbers
 * Driver license
-* ...
+* …
 
 
 Installation
