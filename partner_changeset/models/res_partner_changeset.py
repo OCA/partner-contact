@@ -52,14 +52,14 @@ class ResPartnerChangeset(models.Model):
         models = self.env['ir.model'].search([])
         return [(model.model, model.name) for model in models]
 
-    @api.one
     @api.depends('change_ids', 'change_ids.state')
     def _compute_state(self):
-        if all(change.state in ('done', 'cancel') for change
-                in self.mapped('change_ids')):
-            self.state = 'done'
-        else:
-            self.state = 'draft'
+        for res in self:
+            if all(change.state in ('done', 'cancel') for change
+                    in res.mapped('change_ids')):
+                res.state = 'done'
+            else:
+                res.state = 'draft'
 
     @api.multi
     def apply(self):
@@ -306,25 +306,25 @@ class ResPartnerChangesetChange(models.Model):
                      _old_value_fields +
                      _new_value_fields)
 
-    @api.one
     @api.depends('changeset_id.partner_id')
     def _compute_origin_values(self):
-        field_name = self.get_field_for_type(self.field_id, 'origin')
-        if self.state == 'draft':
-            value = self.changeset_id.partner_id[self.field_id.name]
-        else:
-            old_field = self.get_field_for_type(self.field_id, 'old')
-            value = self[old_field]
-        setattr(self, field_name, value)
+        for res in self:
+            field_name = res.get_field_for_type(res.field_id, 'origin')
+            if res.state == 'draft':
+                value = res.changeset_id.partner_id[res.field_id.name]
+            else:
+                old_field = res.get_field_for_type(res.field_id, 'old')
+                value = res[old_field]
+            setattr(res, field_name, value)
 
-    @api.one
     @api.depends(lambda self: self._value_fields)
     def _compute_value_display(self):
-        for prefix in ('origin', 'new'):
-            value = getattr(self, 'get_%s_value' % prefix)()
-            if self.field_id.ttype == 'many2one' and value:
-                value = value.display_name
-            setattr(self, '%s_value_display' % prefix, value)
+        for res in self:
+            for prefix in ('origin', 'new'):
+                value = getattr(res, 'get_%s_value' % prefix)()
+                if res.field_id.ttype == 'many2one' and value:
+                    value = value.display_name
+                setattr(res, '%s_value_display' % prefix, value)
 
     @api.model
     def get_field_for_type(self, field, prefix):

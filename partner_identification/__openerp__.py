@@ -19,10 +19,10 @@
         'security/ir.model.access.csv',
     ],
     'author': 'ChriCar Beteiligungs- und Beratungs- GmbH, '
-              'Antiun Ingeniería S.L.',
-              'Camptocamp,'
-              'ACSONE SA/NV,'
-              'Odoo Community Association (OCA)'
+              'Antiun Ingeniería S.L., '
+              'Camptocamp, '
+              'ACSONE SA/NV, '
+              'Odoo Community Association (OCA)',
     'website': 'https://odoo-community.org/',
     'license': 'AGPL-3',
     'installable': True,
