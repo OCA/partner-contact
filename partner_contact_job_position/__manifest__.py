@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2014 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # Copyright 2015 Antonio Espinosa <antonioea@antiun.com>
 # Copyright 2015 Jairo Llopis <jairo.llopis@tecnativa.com>
@@ -6,20 +5,17 @@
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
 {
-    "name": "Partner job position",
+    "name": "Partner Job Position",
     "summary": "Categorize job positions for contacts",
-    "version": "10.0.1.0.1",
+    "version": "11.0.1.0.0",
     'category': 'Customer Relationship Management',
-    "website": "http://www.antiun.com",
-    'author': 'Serv. Tecnolog. Avanzados - Pedro M. Baeza, '
-              'Antiun Ingeniería S.L., '
-              'Tecnativa,'
+    "website": "https://github.com/OCA/partner-contact",
+    'author': 'Tecnativa,'
               "Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "application": False,
     "installable": True,
     "depends": [
-        "sale",
+        "contacts",
     ],
     "data": [
         'security/ir.model.access.csv',
