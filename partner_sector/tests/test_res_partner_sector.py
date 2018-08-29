@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
-# © 2015 Antiun Ingenieria S.L. - Javier Iniesta
-# © 2016 Tecnativa S.L. - Vicent Cubells
-# © 2016 Tecnativa S.L. - Pedro M. Baeza
+# Copyright 2015 Antiun Ingenieria S.L. - Javier Iniesta
+# Copyright 2016 Tecnativa S.L. - Vicent Cubells
+# Copyright 2016 Tecnativa S.L. - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests import common

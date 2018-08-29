@@ -1,6 +1,6 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
-    :alt: License: AGPL-3
+.. image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+   :target: https://www.gnu.org/licenses/agpl
+   :alt: License: AGPL-3
 
 ==============
 Partner Sector
@@ -14,16 +14,12 @@ Configuration
 
 To manage sectors, you need to:
 
-* Go to *Sales > Configuration > Contacts > Sectors*.
+* Go to *Contacts > Configuration > Contacts > Sectors*.
 
 By default only companies have sectors. To activate sectors in individuals also,
 you need to activate the following setting:
 
-* Go to *Settings > General Settings > Sector in contacts > Use sector for individuals*
-
-Or, if you have *Sales* or *CRM* modules installed:
-
-* Go to *Sales > Configuration > Settings > Partner Sector > Use sector for individuals*
+* Go to *Settings > General Settings > Partner Sectors > Sector in contacts > Use sector for individuals*
 
 
 Usage
@@ -36,7 +32,7 @@ To use this module, you need to:
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/10.0
+   :target: https://runbot.odoo-community.org/runbot/134/11.0
 
 Known issues / Roadmap
 ======================
@@ -53,6 +49,11 @@ spotted it first, help us smashing it by providing a detailed and welcomed feedb
 
 Credits
 =======
+
+Images
+------
+
+* Odoo Community Association: `Icon <https://odoo-community.org/logo.png>`_.
 
 Contributors
 ------------
