@@ -19,7 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_alias_job_position_id
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_id
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_users_job_position_id
 msgid "Categorized job position"
@@ -28,6 +27,11 @@ msgstr ""
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_child_ids
 msgid "Children"
+msgstr ""
+
+#. module: partner_contact_job_position
+#: model:ir.model,name:partner_contact_job_position.model_res_partner
+msgid "Contact"
 msgstr ""
 
 #. module: partner_contact_job_position
@@ -46,7 +50,7 @@ msgid "Display Name"
 msgstr "表示名"
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_id_5557
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_id_1617
 msgid "ID"
 msgstr "ID"
 
@@ -95,15 +99,13 @@ msgstr ""
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_parent_left
-msgid "Parent left"
+msgid "Parent Left"
 msgstr ""
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_parent_right
-msgid "Parent right"
+msgid "Parent Right"
 msgstr ""
 
-#. module: partner_contact_job_position
-#: model:ir.model,name:partner_contact_job_position.model_res_partner
-msgid "Partner"
-msgstr "パートナ"
+#~ msgid "Partner"
+#~ msgstr "パートナ"
