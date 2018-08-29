@@ -1,0 +1,124 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_sector
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-26 15:33+0000\n"
+"PO-Revision-Date: 2017-12-26 15:33+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Bulgarian (https://www.transifex.com/oca/teams/23907/bg/)\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_child_ids
+msgid "Children"
+msgstr ""
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_create_uid
+msgid "Created by"
+msgstr "Създадено от"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_create_date
+msgid "Created on"
+msgstr "Създадено на"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_display_name
+msgid "Display Name"
+msgstr "Име за показване"
+
+#. module: partner_sector
+#: code:addons/partner_sector/models/res_partner_sector.py:42
+#, python-format
+msgid "Error! You cannot create recursive sectors."
+msgstr ""
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_id_4236
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector___last_update
+msgid "Last Modified on"
+msgstr "Последно променено на"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_write_uid
+msgid "Last Updated by"
+msgstr "Последно обновено от"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_write_date
+msgid "Last Updated on"
+msgstr "Последно обновено на"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_alias_sector_id
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_id
+#: model:ir.model.fields,field_description:partner_sector.field_res_users_sector_id
+msgid "Main Sector"
+msgstr ""
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_name
+msgid "Name"
+msgstr "Име"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_left
+msgid "Parent Left"
+msgstr ""
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_right
+msgid "Parent Right"
+msgstr ""
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_id
+msgid "Parent id"
+msgstr ""
+
+#. module: partner_sector
+#: model:ir.model,name:partner_sector.model_res_partner
+msgid "Partner"
+msgstr "Партньор"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_alias_secondary_sector_ids
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_secondary_sector_ids
+#: model:ir.model.fields,field_description:partner_sector.field_res_users_secondary_sector_ids
+msgid "Secondary Sectors"
+msgstr ""
+
+#. module: partner_sector
+#: model:ir.model,name:partner_sector.model_res_partner_sector
+#: model:ir.ui.view,arch_db:partner_sector.view_partner_form_sector
+#: model:ir.ui.view,arch_db:partner_sector.view_res_partner_filter_sector
+msgid "Sector"
+msgstr ""
+
+#. module: partner_sector
+#: model:ir.actions.act_window,name:partner_sector.res_partner_sector_action
+#: model:ir.ui.menu,name:partner_sector.menu_res_partner_sector
+#: model:ir.ui.view,arch_db:partner_sector.res_partner_sector_tree_view
+msgid "Sectors"
+msgstr ""
+
+#. module: partner_sector
+#: code:addons/partner_sector/models/res_partner.py:22
+#, python-format
+msgid "The main sector must be different from the secondary sectors."
+msgstr ""

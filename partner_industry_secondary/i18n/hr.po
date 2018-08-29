@@ -1,0 +1,126 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_sector
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+# Bole <bole@dajmi5.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-21 03:59+0000\n"
+"PO-Revision-Date: 2018-02-21 03:59+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>, 2018\n"
+"Language-Team: Croatian (https://www.transifex.com/oca/teams/23907/hr/)\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_child_ids
+msgid "Children"
+msgstr "Podređeni"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_create_uid
+msgid "Created by"
+msgstr "Kreirao"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_create_date
+msgid "Created on"
+msgstr "Datum kreiranja"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_display_name
+msgid "Display Name"
+msgstr "Naziv za prikaz"
+
+#. module: partner_sector
+#: code:addons/partner_sector/models/res_partner_sector.py:42
+#, python-format
+msgid "Error! You cannot create recursive sectors."
+msgstr "Greška! Nije moguće kreirati rekurzivne sektore."
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_id_4236
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector___last_update
+msgid "Last Modified on"
+msgstr "Zadnja promjena"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_write_uid
+msgid "Last Updated by"
+msgstr "Promijenio"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_write_date
+msgid "Last Updated on"
+msgstr "Vrijeme promjene"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_alias_sector_id
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_id
+#: model:ir.model.fields,field_description:partner_sector.field_res_users_sector_id
+msgid "Main Sector"
+msgstr "Glavni sektor"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_name
+msgid "Name"
+msgstr "Naziv"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_left
+msgid "Parent Left"
+msgstr "Parent Left"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_right
+msgid "Parent Right"
+msgstr "Parent Right"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_id
+msgid "Parent id"
+msgstr "ID nadređenog"
+
+#. module: partner_sector
+#: model:ir.model,name:partner_sector.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_alias_secondary_sector_ids
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_secondary_sector_ids
+#: model:ir.model.fields,field_description:partner_sector.field_res_users_secondary_sector_ids
+msgid "Secondary Sectors"
+msgstr "Sekundarni sektor"
+
+#. module: partner_sector
+#: model:ir.model,name:partner_sector.model_res_partner_sector
+#: model:ir.ui.view,arch_db:partner_sector.view_partner_form_sector
+#: model:ir.ui.view,arch_db:partner_sector.view_res_partner_filter_sector
+msgid "Sector"
+msgstr "Sektor"
+
+#. module: partner_sector
+#: model:ir.actions.act_window,name:partner_sector.res_partner_sector_action
+#: model:ir.ui.menu,name:partner_sector.menu_res_partner_sector
+#: model:ir.ui.view,arch_db:partner_sector.res_partner_sector_tree_view
+msgid "Sectors"
+msgstr "Sektori"
+
+#. module: partner_sector
+#: code:addons/partner_sector/models/res_partner.py:22
+#, python-format
+msgid "The main sector must be different from the secondary sectors."
+msgstr "Glavni sektor mora biti različit od sekundarnih sektora"
