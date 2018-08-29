@@ -7,33 +7,33 @@ from odoo.tests import common
 from odoo.exceptions import ValidationError
 
 
-class TestResPartnerSector(common.SavepointCase):
+class TestResPartnerIndustry(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
-        super(TestResPartnerSector, cls).setUpClass()
-        cls.Sector = cls.env['res.partner.sector']
-        cls.sector_main = cls.Sector.create({
+        super(TestResPartnerIndustry, cls).setUpClass()
+        cls.industry_model = cls.env['res.partner.industry']
+        cls.industry_main = cls.industry_model.create({
             'name': 'Test',
         })
-        cls.sector_child = cls.Sector.create({
+        cls.industry_child = cls.industry_model.create({
             'name': 'Test child',
-            'parent_id': cls.sector_main.id,
+            'parent_id': cls.industry_main.id,
         })
 
-    def test_check_sectors(self):
+    def test_check_industries(self):
         with self.assertRaises(ValidationError):
             self.env['res.partner'].create({
                 'name': 'Test',
-                'sector_id': self.sector_main.id,
-                'secondary_sector_ids': [(4, self.sector_main.id)],
+                'industry_id': self.industry_main.id,
+                'secondary_industry_ids': [(4, self.industry_main.id)],
             })
 
     def test_check_recursion(self):
         with self.assertRaises(ValidationError):
-            self.sector_main.parent_id = self.sector_child.id
+            self.industry_main.parent_id = self.industry_child.id
 
     def test_name(self):
         self.assertEqual(
-            self.sector_child.name_get()[0][1],
+            self.industry_child.name_get()[0][1],
             "Test / Test child",
         )

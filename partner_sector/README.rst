@@ -6,20 +6,20 @@
 Partner Sector
 ==============
 
-This module adds the concept of economic sector for partners.
+This module adds secondary industries for partners.
 
 
 Configuration
 =============
 
-To manage sectors, you need to:
+To manage industries, you need to:
 
-* Go to *Contacts > Configuration > Contacts > Sectors*.
+* Go to *Contacts > Configuration > Sectors of Activity*.
 
-By default only companies have sectors. To activate sectors in individuals also,
+By default only companies have industries. To activate industries in individuals also,
 you need to activate the following setting:
 
-* Go to *Settings > General Settings > Partner Sectors > Sector in contacts > Use sector for individuals*
+* Go to *Settings > General Settings > Partner Industries > Industry in contacts > Use industry for individuals*
 
 
 Usage
@@ -37,15 +37,16 @@ To use this module, you need to:
 Known issues / Roadmap
 ======================
 
-* Add a unique constraint for name per parent sector.
+* Add a unique constraint for name per parent industry.
 
 
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
-In case of trouble, please check there if your issue has already been reported. If you
-spotted it first, help us smashing it by providing a detailed and welcomed feedback.
+Bugs are tracked on `GitHub Issues
+<https://github.com/OCA/partner-contact/issues>`_. In case of trouble, please
+check there if your issue has already been reported. If you spotted it first,
+help us smash it by providing detailed and welcomed feedback.
 
 Credits
 =======
@@ -65,6 +66,7 @@ Contributors
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
 * Luis M. Ontalba <luis.martinez@tecnativa.com>
 * Jordi Ballester Alomar <jordi.ballester@eficent.com>
+* Miquel Raïch <miquel.raich@eficent.com>
 
 Maintainer
 ----------

@@ -4,103 +4,109 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
 <odoo>
 
-    <record model="ir.ui.view" id="view_partner_form_sector">
-        <field name="name">Partner form with sector</field>
+    <record model="ir.ui.view" id="view_partner_form_industry">
+        <field name="name">Partner form with industry</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <field name="phone" position="before">
-                <field name="sector_id" placeholder="Sector"
-                       options='{"no_open": True}'
-                       attrs="{'invisible': [('is_company', '=', False)]}"/>
-                <field name="secondary_sector_ids" widget="many2many_tags"
+            <field name="industry_id" position="after">
+                <field name="secondary_industry_ids" widget="many2many_tags"
                        attrs="{'invisible': [('is_company', '=', False)]}"/>
             </field>
             <xpath expr="//field[@name='child_ids']/form//field[@name='title']" position="after">
                 <field name="is_company" invisible="1"/>
-                <field name="sector_id" placeholder="Sector"
+                <field name="industry_id" placeholder="Sector"
                        options='{"no_open": True}'
                        attrs="{'invisible': [('is_company', '=', False)]}"/>
-                <field name="secondary_sector_ids" widget="many2many_tags"
+                <field name="secondary_industry_ids" widget="many2many_tags"
                        attrs="{'invisible': [('is_company', '=', False)]}"/>
             </xpath>
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_partner_tree_sector">
-        <field name="name">Partner tree with sector</field>
+    <record model="ir.ui.view" id="view_partner_tree_industry">
+        <field name="name">Partner tree with industry</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_tree"/>
         <field name="arch" type="xml">
             <field name="email" position="after">
-                <field name="sector_id"
+                <field name="industry_id"
                        attrs="{'invisible': [('is_company', '=', False)]}"/>
             </field>
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_res_partner_filter_sector">
-        <field name="name">Partner search with sector</field>
+    <record model="ir.ui.view" id="view_res_partner_filter_industry">
+        <field name="name">Partner search with industry</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_res_partner_filter"/>
         <field name="arch" type="xml">
             <field name="category_id" position="after">
-                <field name="sector_id"
-                       string="Sector"
-                       filter_domain="['|',('sector_id','ilike',self),
-                                           ('secondary_sector_ids.name','ilike',self)]"/>
+                <field name="industry_id"
+                       string="Industry"
+                       filter_domain="['|',('industry_id','ilike',self),
+                                           ('secondary_industry_ids.name','ilike',self)]"/>
             </field>
             <filter name="salesperson" position="after">
-                <filter name="sector"
-                        string="Sector"
+                <filter name="industry"
+                        string="Industry"
                         domain="[('is_company','=', True)]"
-                        context="{'group_by': 'sector_id'}"/>
+                        context="{'group_by': 'industry_id'}"/>
             </filter>
         </field>
     </record>
 
-    <!-- Views activated for group_use_partner_sector_for_person -->
+    <!-- Views activated for group_use_partner_industry_for_person -->
 
-    <record model="ir.ui.view" id="view_partner_form_sector_person">
-        <field name="name">Partner form with sector</field>
+    <record model="ir.ui.view" id="view_partner_form_industry_person0">
+        <field name="name">Partner form with industry</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="partner_sector.view_partner_form_sector"/>
-        <field name="groups_id" eval="[(4, ref('partner_sector.group_use_partner_sector_for_person'))]"/>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="groups_id" eval="[(4, ref('partner_sector.group_use_partner_industry_for_person'))]"/>
         <field name="arch" type="xml">
-            <field name="sector_id" position="attributes">
-                <attribute name="attrs">{'invisible': 0}</attribute>
-            </field>
-            <field name="secondary_sector_ids" position="attributes">
-                <attribute name="attrs">{'invisible': 0}</attribute>
-            </field>
-            <xpath expr="//field[@name='child_ids']/form//field[@name='sector_id']" position="attributes">
-                <attribute name="attrs">{'invisible': 0}</attribute>
-            </xpath>
-            <xpath expr="//field[@name='child_ids']/form//field[@name='secondary_sector_ids']" position="attributes">
+            <xpath expr="//page/group/group/field[@name='industry_id']" position="attributes">
                 <attribute name="attrs">{'invisible': 0}</attribute>
             </xpath>
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_partner_tree_sector_person">
-        <field name="name">Partner tree with sector</field>
+    <record model="ir.ui.view" id="view_partner_form_industry_person">
+        <field name="name">Partner form with industry</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="partner_sector.view_partner_tree_sector"/>
-        <field name="groups_id" eval="[(4, ref('partner_sector.group_use_partner_sector_for_person'))]"/>
+        <field name="inherit_id" ref="partner_sector.view_partner_form_industry"/>
+        <field name="groups_id" eval="[(4, ref('partner_sector.group_use_partner_industry_for_person'))]"/>
         <field name="arch" type="xml">
-            <field name="sector_id" position="attributes">
+            <xpath expr="//page/group/group/field[@name='secondary_industry_ids']" position="attributes">
+                <attribute name="attrs">{'invisible': 0}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='industry_id']" position="attributes">
+                <attribute name="attrs">{'invisible': 0}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='secondary_industry_ids']" position="attributes">
+                <attribute name="attrs">{'invisible': 0}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_partner_tree_industry_person">
+        <field name="name">Partner tree with industry</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_sector.view_partner_tree_industry"/>
+        <field name="groups_id" eval="[(4, ref('partner_sector.group_use_partner_industry_for_person'))]"/>
+        <field name="arch" type="xml">
+            <field name="industry_id" position="attributes">
                 <attribute name="attrs">{'invisible': 0}</attribute>
             </field>
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_res_partner_filter_sector_person">
-        <field name="name">Partner search with sector</field>
+    <record model="ir.ui.view" id="view_res_partner_filter_industry_person">
+        <field name="name">Partner search with industry</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="partner_sector.view_res_partner_filter_sector"/>
-        <field name="groups_id" eval="[(4, ref('partner_sector.group_use_partner_sector_for_person'))]"/>
+        <field name="inherit_id" ref="partner_sector.view_res_partner_filter_industry"/>
+        <field name="groups_id" eval="[(4, ref('partner_sector.group_use_partner_industry_for_person'))]"/>
         <field name="arch" type="xml">
-            <filter name="sector" position="attributes">
+            <filter name="industry" position="attributes">
                 <attribute name="domain"/>
             </filter>
         </field>

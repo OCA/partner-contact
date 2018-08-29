@@ -4,7 +4,7 @@
 
 {
     "name": "Partner Sector",
-    "summary": "Add partner sectors",
+    "summary": "Add secondary partner industries",
     "version": "11.0.1.0.0",
     "category": "Customer Relationship Management",
     "website": "https://github.com/OCA/partner-contact",
@@ -17,8 +17,8 @@
     ],
     "data": [
         "security/ir.model.access.csv",
-        "security/partner_sector_security.xml",
-        "views/res_partner_sector_view.xml",
+        "security/partner_industry_security.xml",
+        "views/res_partner_industry_view.xml",
         "views/res_partner_view.xml",
         "views/res_config_settings.xml",
     ]

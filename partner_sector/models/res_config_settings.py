@@ -7,8 +7,8 @@ from odoo import fields, models
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    group_use_partner_sector_for_person = fields.Boolean(
-        'Use sector for individuals',
-        help="Set if you want to be able to use sectors for "
+    group_use_partner_industry_for_person = fields.Boolean(
+        'Use industry for individuals',
+        help="Set if you want to be able to use industries for "
              "individuals also.",
-        implied_group='partner_sector.group_use_partner_sector_for_person')
+        implied_group='partner_sector.group_use_partner_industry_for_person')
