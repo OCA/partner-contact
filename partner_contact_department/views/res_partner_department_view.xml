@@ -36,6 +36,6 @@
 
     <menuitem action="res_partner_department_action"
               id="menu_res_partner_department"
-              parent="sales_team.menu_config_address_book"/>
+              parent="contacts.res_partner_menu_config"/>
 
 </odoo>
