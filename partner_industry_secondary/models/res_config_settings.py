@@ -11,4 +11,5 @@ class ResConfigSettings(models.TransientModel):
         'Use industry for individuals',
         help="Set if you want to be able to use industries for "
              "individuals also.",
-        implied_group='partner_sector.group_use_partner_industry_for_person')
+        implied_group='partner_industry_secondary.'
+                      'group_use_partner_industry_for_person')

@@ -2,9 +2,9 @@
    :target: https://www.gnu.org/licenses/agpl
    :alt: License: AGPL-3
 
-==============
-Partner Sector
-==============
+==========================
+Partner Industry Secondary
+==========================
 
 This module adds secondary industries for partners.
 
