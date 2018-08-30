@@ -18,6 +18,7 @@ setuptools.setup(
         'odoo11-addon-partner_address_street3',
         'odoo11-addon-partner_affiliate',
         'odoo11-addon-partner_coc',
+        'odoo11-addon-partner_contact_department',
         'odoo11-addon-partner_contact_in_several_companies',
         'odoo11-addon-partner_contact_personal_information_page',
         'odoo11-addon-partner_external_map',
