@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2013-2017 Therp BV <http://therp.nl>.
+# Copyright 2013-2018 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later <http://www.gnu.org/licenses/agpl.html>.
 import time
 
@@ -12,17 +12,35 @@ from openerp.tools.translate import _
 class ResPartner(orm.Model):
     _inherit = 'res.partner'
 
-    def _get_relation_ids_select(self, cr, uid, ids, field_name, arg,
-                                 context=None):
-        """return the partners' relations as tuple
-        (id, left_partner_id, right_partner_id)"""
-        cr.execute(
-            """select id, left_partner_id, right_partner_id
-            from res_partner_relation
-            where (left_partner_id in %s or right_partner_id in %s)""" +
-            ' order by ' + self.pool['res.partner.relation']._order,
-            (tuple(ids), tuple(ids))
-        )
+    def _get_relation_ids_select_select(self, field_name=None):
+        return "SELECT rpr.id, rpr.left_partner_id, rpr.right_partner_id"
+
+    def _get_relation_ids_select_from(self, field_name=None):
+        return "FROM res_partner_relation rpr"
+
+    def _get_relation_ids_select_where(self, field_name=None):
+        return \
+            "WHERE (rpr.left_partner_id IN %s OR rpr.right_partner_id IN %s)"
+
+    def _get_relation_ids_select_order_by(self, field_name=None):
+        return "ORDER BY %s" % self.pool['res.partner.relation']._order
+
+    def _get_relation_ids_select(
+            self, cr, uid, ids, field_name, arg, context=None):
+        """Return the relation id's for field_name."""
+        # No real danger here for SQL injection.
+        # pylint: disable=sql-injection
+        statement = (
+            "%(select)s %(from)s %(where)s %(order_by)s" % {
+                'select': self._get_relation_ids_select_select(
+                    field_name=field_name),
+                'from': self._get_relation_ids_select_from(
+                    field_name=field_name),
+                'where': self._get_relation_ids_select_where(
+                    field_name=field_name),
+                'order_by': self._get_relation_ids_select_order_by(
+                    field_name=field_name)})
+        cr.execute(statement, (tuple(ids), tuple(ids)))
         return cr.fetchall()
 
     def _get_relation_ids(
