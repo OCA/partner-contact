@@ -15,7 +15,7 @@ and vary from country to country.
 * Fiscal ID's
 * Membership numbers
 * Driver license
-* ...
+* etc
 
 
 Installation
@@ -35,8 +35,15 @@ Name:
 Code:
   Code, abbreviation or acronym of this ID type. For example, 'driver_license'
 Python validation code:
-  Optional python code called to validate ID numbers of this ID type.
+  Optional python code called to validate ID numbers of this ID type. This functionality can be
+  overridden by setting ``id_no_validate`` to ``True`` in the context, such as:
 
+  .. code-block:: python
+
+   partner.with_context(id_no_validate=True).write({
+      'name': 'Bad Value',
+      'category_id': self.env.ref('id_category_only_numerics').id,
+   })
 
 Usage
 =====
@@ -63,7 +70,7 @@ Notes:
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/
+   :target: https://runbot.odoo-community.org/runbot/134/8.0
 
 
 Known issues / Roadmap
@@ -97,7 +104,9 @@ Contributors
 * Ferdinand Gassauer <office@chrcar.at>
 * Gerhard Könighofer <gerhard.koenighofer@swing-system.com>
 * Laurent Mignon <laurent.mignon@acsone.eu>
-* Yajo <Yajo@users.noreply.github.com>
+* Jairo Llopis <jairo.llopis@tecnativa.com>
+* Dave Lasley <dave@laslabs.com>
+* Kevin Graveman <k.graveman@onestein.nl>
 
 Maintainer
 ----------

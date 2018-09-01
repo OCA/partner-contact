@@ -2,7 +2,7 @@
 #  ©  2016 ACSONE SA/NV (<http://acsone.eu>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from psycopg2._psycopg import IntegrityError
-import openerp.tests.common as common
+from openerp.tests import common
 from openerp.exceptions import ValidationError
 
 
@@ -75,7 +75,7 @@ if id_number.name != '1235':
                 'category_id': partner_id_category2.id
             })
 
-    def test_bad_calidation_code(self):
+    def test_bad_validation_code(self):
         partner_id_category = self.env['res.partner.id_category'].create({
             'code': 'id_code',
             'name': 'id_name',
@@ -90,3 +90,21 @@ if id_number.name != '1234' #  missing :
                 'name': '1234',
                 'category_id': partner_id_category.id
             })]})
+
+    def test_bad_validation_code_override(self):
+        """ It should allow a bad validation code if context overrides. """
+        partner_id_category = self.env['res.partner.id_category'].create({
+            'code': 'id_code',
+            'name': 'id_name',
+            'validation_code': """
+if id_number.name != '1234' #  missing :
+    failed = True
+"""
+        })
+        partner_1 = self.env.ref('base.res_partner_1').with_context(
+            id_no_validate=True,
+        )
+        partner_1.write({'id_numbers': [(0, 0,  {
+            'name': '1234',
+            'category_id': partner_id_category.id
+        })]})
