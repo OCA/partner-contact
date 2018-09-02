@@ -49,7 +49,7 @@ addon | version | summary
 [partner_financial_risk](partner_financial_risk/) | 8.0.1.1.1 | Manage partner risk
 [partner_firstname](partner_firstname/) | 8.0.2.2.1 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 8.0.0.1.0 | Partner Helper
-[partner_identification](partner_identification/) | 8.0.1.0.0 | Partner Identification Numbers
+[partner_identification](partner_identification/) | 8.0.1.1.1 | Partner Identification Numbers
 [partner_identification_gln](partner_identification_gln/) | 8.0.1.0.0 | This addon extends "Partner Identification Numbers" to provide a number category for GLN registration
 [partner_noncommercial](partner_noncommercial/) | 8.0.1.0.0 | Partner Non Commercial
 [partner_phone_extension](partner_phone_extension/) | 8.0.1.0.0 | Partner Phone Number Extension
