@@ -4,104 +4,17 @@
 import logging
 from lxml import etree
 
-from openerp.osv.orm import Model, transfer_modifiers_to_node
-from openerp.osv import expression, fields
+from openerp.osv import orm, fields
 from openerp.tools.translate import _
-from openerp import SUPERUSER_ID
+
+from ..tablib import Tab
 
 
 _logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
-NAME_PREFIX = 'relation_ids_tab'
 
 
-class Tab(object):
-
-    def __init__(self, source, side):
-        """Create tab from source.
-
-        In this version source can be assumed to be a partner.relation.type.
-        """
-        self.id = source.id
-        self.side = side
-        if side == 'left':
-            self.name = source.name
-            self.contact_type = source.contact_type_left
-            self.category_id = source.partner_category_left
-            self.other_contact_type = source.contact_type_right
-            self.other_category_id = source.partner_category_right
-            self.other_side = 'right'
-        else:
-            self.name = source.name_inverse
-            self.contact_type = source.contact_type_right
-            self.category_id = source.partner_category_right
-            self.other_contact_type = source.contact_type_left
-            self.other_category_id = source.partner_category_left
-            self.other_side = 'left'
-
-    def get_fieldname(self):
-        return '%s_%s_%s' % (NAME_PREFIX, self.id, self.side)
-
-    def get_domain(self):
-        return [('type_id', '=', self.id)]
-
-    def create_page(self):
-        tab_page = etree.Element('page')
-        self._set_page_attrs(tab_page)
-        field = etree.Element(
-            'field',
-            name=self.get_fieldname(),
-            context=(
-                '{"default_type_id": %s, "default_%s_partner_id": id, '
-                '"active_test": False}') % (self.id, self.side))
-        tab_page.append(field)
-        tree = etree.Element('tree', editable='bottom')
-        field.append(tree)
-        tree.append(etree.Element(
-            'field', name='%s_partner_id' % self.side, invisible='True'))
-        tree.append(etree.Element(
-            'field',
-            string=_('Partner'),
-            domain=repr(self._get_other_partner_domain()),
-            widget='many2one_clickable',
-            name='%s_partner_id' % self.other_side))
-        tree.append(etree.Element('field', name='date_start'))
-        tree.append(etree.Element('field', name='date_end'))
-        tree.append(etree.Element('field', name='active'))
-        tree.append(etree.Element('field', name='type_id', invisible='True'))
-        return tab_page
-
-    def _get_other_partner_domain(self):
-        partner_domain = []
-        if self.other_contact_type == 'c':
-            partner_domain.append(('is_company', '=', True))
-        if self.other_contact_type == 'p':
-            partner_domain.append(('is_company', '=', False))
-        if self.other_category_id:
-            partner_domain.append(
-                ('category_id', 'child_of', self.other_category_id))
-        return partner_domain
-
-    def _set_page_attrs(self, tab_page):
-        tab_page.set('string', self.name)
-        invisible = [('id', '=', False)]
-        if self.contact_type:
-            invisible = expression.OR([
-                invisible,
-                [('is_company', '=', self.contact_type != 'c')]])
-        if self.category_id:
-            invisible = expression.OR([
-                invisible,
-                [('category_id', '!=', self.category_id)]])
-        attrs = {'invisible': invisible}
-        tab_page.set('attrs', repr(attrs))
-        transfer_modifiers_to_node(attrs, tab_page)
-
-
-class ResPartner(Model):
+class ResPartner(orm.Model):
     _inherit = 'res.partner'
-
-    def _make_tab(self, source, side):
-        return Tab(source, side)
 
     def _register_hook(self, cr):
         """This function is automatically called by Odoo on all models."""
@@ -111,54 +24,34 @@ class ResPartner(Model):
         """Create a field for each tab that might be shown for a partner."""
         deprecated_tab_fields = [
             name for name in self._columns.copy()
-            if name.startswith(NAME_PREFIX)]
+            if Tab.is_tab_fieldname(name)]
         tabs = self._get_tabs(cr)
         for tab in tabs:
-            fieldname = tab.get_fieldname()
-            if fieldname in self._columns:
-                self._update_tab_field(tab)
-            else:
-                self._add_tab_field(tab)
+            fieldname = self._add_tab_field(tab)
             if fieldname in deprecated_tab_fields:
                 deprecated_tab_fields.remove(fieldname)  # not deprecated
         for fieldname in deprecated_tab_fields:
             self._delete_tab_field(fieldname)
 
     def _get_tabs(self, cr):
-        tabs = []
         relation_type_model = self.pool['res.partner.relation.type']
-        relation_type_domain = [
-            '|',
-            ('own_tab_left', '=', True),
-            ('own_tab_right', '=', True)]
-        relation_type_ids = relation_type_model.search(
-            cr, SUPERUSER_ID, relation_type_domain)
-        for relation_type in relation_type_model.browse(
-                cr, SUPERUSER_ID, relation_type_ids):
-            if relation_type.own_tab_left:
-                new_tab = Tab(relation_type, 'left')
-                tabs.append(new_tab)
-            if relation_type.own_tab_right:
-                new_tab = Tab(relation_type, 'right')
-                tabs.append(new_tab)
-        return tabs
+        return relation_type_model.get_tabs(cr)
 
     def _add_tab_field(self, tab):
+        fieldname = tab.get_fieldname()
         field = fields.one2many(
             'res.partner.relation',
             '%s_partner_id' % tab.side,
             string=tab.name,
             domain=tab.get_domain())
-        fieldname = tab.get_fieldname()
-        _logger.info(_(
-            "Adding field %s to res.partner model.") % fieldname)
+        if fieldname in self._columns:
+            _logger.info(_(
+                "Updating field %s in res.partner model.") % fieldname)
+        else:
+            _logger.info(_(
+                "Adding field %s to res.partner model.") % fieldname)
         self._columns[fieldname] = field
-
-    def _update_tab_field(self, tab):
-        fieldname = tab.get_fieldname()
-        _logger.info(_(
-            "Updating field %s in res.partner model.") % fieldname)
-        self._columns[fieldname].string = tab.name
+        return fieldname
 
     def _delete_tab_field(self, fieldname):
         _logger.info(_(
