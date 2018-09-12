@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="view_general_configuration" model="ir.ui.view">
+            <field name="name">General Settings</field>
+            <field name="model">base.config.settings</field>
+            <field name="inherit_id" ref="base_setup.view_general_configuration"/>
+            <field name="arch" type="xml">
+                <group name="authentication" position="after">
+                    <group name="partner">
+                        <label for="id" string="Sector for individual"/>
+                        <div name="group_use_partner_sector_for_person">
+                            <field name="group_use_partner_sector_for_person" class="oe_inline"/>
+                            <label for="group_use_partner_sector_for_person"/>
+                        </div>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+</odoo>
