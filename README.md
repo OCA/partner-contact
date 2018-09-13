@@ -68,7 +68,7 @@ addon | version | summary
 [partner_risk_insurance](partner_risk_insurance/) | 10.0.1.0.0 | Lets set risk insurance info in the partners
 [partner_sale_risk](partner_sale_risk/) | 10.0.1.0.0 | Manage partner risk in sales orders
 [partner_second_lastname](partner_second_lastname/) | 10.0.1.0.0 | Have split first and second lastnames
-[partner_sector](partner_sector/) | 10.0.1.1.0 | Add partner sectors
+[partner_sector](partner_sector/) | 10.0.1.2.0 | Add partner sectors
 [partner_stock_risk](partner_stock_risk/) | 10.0.1.0.0 | Manage partner risk in stock moves
 [partner_street_number](partner_street_number/) | 10.0.1.0.0 | Introduces separate fields for street name and street number.
 [partner_vat_unique](partner_vat_unique/) | 10.0.1.0.0 | Partner VAT Unique
