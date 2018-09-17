@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
-# Copyright 2016 Antiun Ingenieria S.L. - Antonio Espinosa
+# Copyright 2016 Antonio Espinosa
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api, _
-from openerp.exceptions import ValidationError
+from odoo import _, api, models
+from odoo.exceptions import ValidationError
 
 
 class ResPartner(models.Model):
@@ -20,7 +19,6 @@ class ResPartner(models.Model):
                 domain = [
                     ('id', '!=', partner.id),
                     ('ref', '=', partner.ref),
-                    ('customer', '=', True),
                 ]
                 if mode == 'companies':
                     domain.append(('is_company', '=', True))
