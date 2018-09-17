@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2016 Antiun Ingenieria S.L. - Antonio Espinosa
 # Copyright 2017 Tecnativa - Vicent Cubells
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
@@ -6,11 +5,10 @@
 {
     "name": "Partner unique reference",
     "summary": "Add an unique constraint to partner ref field",
-    "version": "9.0.1.0.0",
+    "version": "11.0.1.0.0",
     "category": "Customer Relationship Management",
-    "website": "http://www.antiun.com",
-    "author": "Antiun Ingeniería S.L., "
-              "Tecnativa, "
+    "website": "https://github.com/OCA/partner-contact/",
+    "author": "Tecnativa, "
               "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "application": False,
