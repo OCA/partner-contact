@@ -14,7 +14,7 @@
 </record>
 
 <record id="res_partner_nuts_form" model="ir.ui.view">
-    <field name="name">NUTS Items tree</field>
+    <field name="name">NUTS Items form</field>
     <field name="model">res.partner.nuts</field>
     <field name="arch" type="xml">
         <form string="NUTS Item">
@@ -24,6 +24,7 @@
                     <field name="code"/>
                     <field name="parent_id"/>
                     <field name="name"/>
+                    <field name="not_updatable"/>
                 </group>
                 <group>
                     <field name="country_id"/>
