@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright 2015 Antonio Espinosa <antonio.espinosa@tecnativa.com>
 # Copyright 2016 Jairo Llopis <jairo.llopis@tecnativa.com>
 # Copyright 2017 David Vidal <jairo.llopis@tecnativa.com>
@@ -174,7 +175,7 @@ class NutsImport(models.TransientModel):
         nuts = nuts_model.search([('level', '=', data['level']),
                                   ('code', '=', data['code'])])
         if nuts:
-            nuts.write(data)
+            nuts.filtered(lambda n: not n.not_updatable).write(data)
         else:
             nuts = nuts_model.create(data)
         if level >= 1 and level <= 4:
@@ -189,8 +190,8 @@ class NutsImport(models.TransientModel):
         # All current NUTS (for available countries),
         #   delete if not found above
         nuts_to_delete = nuts_model.search(
-            [('country_id', 'in',
-              [x.id for x in self._countries.values()])])
+            [('country_id', 'in', [x.id for x in self._countries.values()]),
+             ('not_updatable', '=', False)])
         # Download NUTS in english, create or update
         logger.info('Importing NUTS 2013 English...')
         xmlcontent = self._download_nuts()
