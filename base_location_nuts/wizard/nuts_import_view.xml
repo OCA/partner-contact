@@ -12,6 +12,8 @@
                 Updating or creating new NUTS entries if not
                 found already in the system, and DELETING MISSING
                 ENTRIES from new downloaded file.
+
+                Update or deletion is prevented for NUTS entries with the flag 'Not updatable'.
             </div>
             <footer>
                 <button name="run_import" type="object"
