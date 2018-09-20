@@ -7,7 +7,7 @@
 {
     'name': 'NUTS Regions',
     'category': 'Localisation/Europe',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.1.0',
     'depends': [
         'sales_team',
     ],
@@ -22,8 +22,9 @@
         'images/new_fields.png',
     ],
     'author': 'Tecnativa, '
+              'Agile Business Group, '
               'Odoo Community Association (OCA)',
-    'website': 'https://www.tecnativa.com',
+    'website': 'https://github.com/OCA/partner-contact',
     'license': 'AGPL-3',
     'installable': True,
 }
