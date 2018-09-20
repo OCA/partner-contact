@@ -64,19 +64,19 @@ msgid "Display Name"
 msgstr "Име за показване"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:138
+#: code:addons/base_location_nuts/wizard/nuts_import.py:139
 #, python-format
 msgid "Downloaded file is not a valid XML file"
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:130
+#: code:addons/base_location_nuts/wizard/nuts_import.py:131
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:126
+#: code:addons/base_location_nuts/wizard/nuts_import.py:127
 #, python-format
 msgid "Got an error when trying to download the file: %s."
 msgstr ""
@@ -194,6 +194,11 @@ msgid "Name"
 msgstr "Име"
 
 #. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_not_updatable
+msgid "Not Updatable"
+msgstr ""
+
+#. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_parent_id
 msgid "Parent"
 msgstr ""
@@ -230,11 +235,14 @@ msgid ""
 "                NUTS 2013 from Europe RAMON metadata service.\n"
 "                Updating or creating new NUTS entries if not\n"
 "                found already in the system, and DELETING MISSING\n"
-"                ENTRIES from new downloaded file."
+"                ENTRIES from new downloaded file.\n"
+"\n"
+"                Update or deletion is prevented for NUTS entries with the "
+"flag 'Not updatable'."
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:108
+#: code:addons/base_location_nuts/wizard/nuts_import.py:109
 #, python-format
 msgid "Value not found for mandatory field %s"
 msgstr ""
