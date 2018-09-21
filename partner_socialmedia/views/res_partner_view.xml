@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_socialmedia" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field eval="1" name="priority"/>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="socialmedia" string="Social Media">
+                    <group>
+                        <field name="facebook" widget="url"/>
+                        <field name="twitter" widget="url"/>
+                        <field name="skype" widget="url"/>
+                        <field name="linkedin" widget="url"/>
+                        <field name="mastodon" widget="url"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
