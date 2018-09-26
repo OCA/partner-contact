@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 # Copyright 2017 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp.tests import common
-from openerp.tools.safe_eval import safe_eval
+from odoo.tests import common
+from odoo.tools.safe_eval import safe_eval
 
 
 class TestDeduplicateByRef(common.TransactionCase):
@@ -24,7 +23,7 @@ class TestDeduplicateByRef(common.TransactionCase):
         wizard = self.env['base.partner.merge.automatic.wizard'].create({
             'group_by_ref': True,
         })
-        wizard.start_process_cb()
+        wizard.action_start_manual_process()
         found_match = False
         for line in wizard.line_ids:
             match_ids = safe_eval(line.aggr_ids)
@@ -39,7 +38,7 @@ class TestDeduplicateByRef(common.TransactionCase):
             'group_by_ref': True,
             'group_by_email': True,
         })
-        wizard.start_process_cb()
+        wizard.action_start_manual_process()
         found_match = False
         for line in wizard.line_ids:
             match_ids = safe_eval(line.aggr_ids)
