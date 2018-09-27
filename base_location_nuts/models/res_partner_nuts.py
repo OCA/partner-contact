@@ -22,6 +22,7 @@ class ResPartnerNuts(models.Model):
                                  required=True)
     state_id = fields.Many2one(comodel_name='res.country.state',
                                string='State')
+    not_updatable = fields.Boolean()
     # Parent hierarchy
     parent_id = fields.Many2one(comodel_name='res.partner.nuts',
                                 ondelete='restrict')

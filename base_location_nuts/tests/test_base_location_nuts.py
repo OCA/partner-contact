@@ -14,16 +14,12 @@ class TestBaseLocationNuts(common.SavepointCase):
         cls.importer.run_import()  # loads nuts
         cls.country_1 = cls.env['res.country'].search([('code', '=', 'ES')])
         cls.country_2 = cls.env['res.country'].search([('code', '=', 'PT')])
-        cls.nuts1_2 = cls.env[
-            'res.partner.nuts'].search([('code', '=', 'PT')])
-        cls.nuts2_1 = cls.env[
-            'res.partner.nuts'].search([('code', '=', 'ES2')])
-        cls.nuts3_1 = cls.env[
-            'res.partner.nuts'].search([('code', '=', 'ES24')])
-        cls.nuts4_1 = cls.env[
-            'res.partner.nuts'].search([('code', '=', 'ES243')])
-        cls.nuts4_2 = cls.env[
-            'res.partner.nuts'].search([('code', '=', 'ES300')])
+        cls.nuts_model = cls.env['res.partner.nuts']
+        cls.nuts1_2 = cls.nuts_model.search([('code', '=', 'PT')])
+        cls.nuts2_1 = cls.nuts_model.search([('code', '=', 'ES2')])
+        cls.nuts3_1 = cls.nuts_model.search([('code', '=', 'ES24')])
+        cls.nuts4_1 = cls.nuts_model.search([('code', '=', 'ES243')])
+        cls.nuts4_2 = cls.nuts_model.search([('code', '=', 'ES300')])
         cls.partner = cls.env['res.partner'].create({
             'name': 'Test partner',
             'country_id': cls.country_1.id,
@@ -88,3 +84,48 @@ class TestBaseLocationNuts(common.SavepointCase):
             self.importer._download_nuts(url_base='htttt://test.com')
         with self.assertRaises(UserError):
             self.importer._download_nuts(url_base='http://ec.europa.eu/_404')
+
+    def create_new_parent(self, orig_parent):
+        new_parent = self.nuts_model.create({
+            'level': orig_parent.level,
+            'code': 'NEW' + orig_parent.code,
+            'name': 'New parent',
+            'country_id': orig_parent.country_id.id,
+            'not_updatable': False
+        })
+        return new_parent
+
+    def test_no_update(self):
+        # Update a NUTS field
+        orig_name = self.nuts4_2.name
+        new_name = 2 * orig_name
+        self.assertNotEqual(orig_name, new_name)
+
+        # Update hierarchy creating a new parent
+        orig_parent = self.nuts4_2.parent_id
+        new_parent = self.create_new_parent(orig_parent)
+        self.assertNotEqual(orig_parent, new_parent)
+
+        # If the flag is False (default), updates will be overwritten
+        # and the new parent deleted
+        self.assertFalse(self.nuts4_2.not_updatable)
+        self.assertFalse(new_parent.not_updatable)
+        self.nuts4_2.name = new_name
+        self.nuts4_2.parent_id = new_parent
+        self.importer.run_import()
+        self.assertEqual(self.nuts4_2.name, orig_name)
+        self.assertEqual(self.nuts4_2.parent_id, orig_parent)
+        self.assertFalse(new_parent.exists())
+
+        # New parent has been deleted by the import
+        new_parent = self.create_new_parent(orig_parent)
+
+        # If the flag is True, creation and updates will not be overwritten
+        self.nuts4_2.not_updatable = True
+        new_parent.not_updatable = True
+        self.nuts4_2.name = new_name
+        self.nuts4_2.parent_id = new_parent
+        self.importer.run_import()
+        self.assertEqual(self.nuts4_2.name, new_name)
+        self.assertEqual(self.nuts4_2.parent_id, new_parent)
+        self.assertTrue(new_parent.exists())
