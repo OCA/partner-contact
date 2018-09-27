@@ -22,7 +22,7 @@
                 <filter name="group_group" string="Group" context="{'group_by': 'group_id'}"/>
             </filter>
             <field name="parent_id" position="after">
-                <field name="group_id" operator="child_of"/>
+                <field name="group_id"/>
             </field>
         </field>
     </record>
