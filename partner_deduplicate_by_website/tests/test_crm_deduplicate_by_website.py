@@ -1,30 +1,35 @@
-# -*- coding: utf-8 -*-
-# Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2016 Tecnativa - Pedro M. Baeza
+# Copyright 2018 Tecnativa - Cristina Martin
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp.tests import common
-from openerp.tools.safe_eval import safe_eval
+from odoo.tests import common
+from odoo.tools.safe_eval import safe_eval
 
 
-class TestDeduplicateByWebsite(common.TransactionCase):
-    def setUp(self):
-        super(TestDeduplicateByWebsite, self).setUp()
-        self.partner_1 = self.env['res.partner'].create({
-            'name': 'Partner 1',
-            'website': 'www.test-deduplicate.com',
-            'email': 'test@deduplicate.com',
-        })
-        self.partner_2 = self.env['res.partner'].create({
-            'name': 'Partner 2',
-            'website': 'www.test-deduplicate.com',
-            'email': 'test@deduplicate.com',
-        })
+class TestDeduplicateByWebsite(common.SavepointCase):
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.partner_1 = cls.env['res.partner'].with_context(
+            tracking_disable=True).create({
+                'name': 'Partner 1',
+                'website': 'www.test-deduplicate.com',
+                'email': 'test@deduplicate.com',
+            })
+
+        cls.partner_2 = cls.env['res.partner'].with_context(
+            tracking_disable=True).create({
+                'name': 'Partner 2',
+                'website': 'www.test-deduplicate.com',
+                'email': 'test@deduplicate.com',
+            })
 
     def test_deduplicate_by_website(self):
         wizard = self.env['base.partner.merge.automatic.wizard'].create({
             'group_by_website': True,
         })
-        wizard.start_process_cb()
+        wizard.action_start_manual_process()
         found_match = False
         for line in wizard.line_ids:
             match_ids = safe_eval(line.aggr_ids)
@@ -39,7 +44,7 @@ class TestDeduplicateByWebsite(common.TransactionCase):
             'group_by_website': True,
             'group_by_email': True,
         })
-        wizard.start_process_cb()
+        wizard.action_start_manual_process()
         found_match = False
         for line in wizard.line_ids:
             match_ids = safe_eval(line.aggr_ids)
