@@ -1,13 +1,13 @@
-# -*- coding: utf-8 -*-
-# Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
-# Copyright 2017 Vicent Cubells <vicent.cubells@tecnativa.com>
+# Copyright 2016 Tecnativa - Pedro M. Baeza
+# Copyright 2017 Tecnativa - Vicent Cubells
+# Copyright 2018 Tecnativa - Cristina Martin
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
     "name": "Deduplicate Contacts by Website",
-    "version": "9.0.1.0.0",
+    "version": "11.0.1.0.0",
     "category": "Tools",
-    "website": "https://www.tecnativa.com",
+    "website": "https://github.com/OCA/crm",
     "author": "Tecnativa, "
               "Odoo Community Association (OCA)",
     "license": "AGPL-3",
