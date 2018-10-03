@@ -1,6 +1,4 @@
 # Translation of OpenERP Server.
-# This file contains the translation of the following modules:
-#	* vwn_crm_base_translations
 #
 msgid ""
 msgstr ""
@@ -16,32 +14,14 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: base
-#: model:ir.ui.menu,name:base.menu_base_partner
-msgid "Sales"
-msgstr "Relaties"
-
-#. module: base
-#: model:ir.ui.menu,name:base.menu_sales
-msgid "Sales"
-msgstr "Adresboek"
-
-#. module: base
-#: model:ir.actions.act_window,name:base.action_partner_customer_form          
-#: model:ir.actions.act_window,name:base.action_partner_form                   
-#: model:ir.ui.menu,name:base.menu_partner_form                                
 #: view:res.partner:0
-msgid "Customers"
-msgstr "Klanten"
-
-#. module: base                                                                
-#: view:res.partner:0                                                          
-msgid "Is a Company?"                                                           
+msgid "Is a Company?"
 msgstr "Is een organisatie?"
 
-#. module: base                                                                
-#: view:res.partner:0                                                          
-msgid "Sales & Purchases"                                                      
-msgstr "Details" 
+#. module: base
+#: view:res.partner:0
+msgid "Sales & Purchases"
+msgstr "Details"
 
 #. module: base
 #: view:res.partner:0
@@ -53,5 +33,4 @@ msgstr "Verantwoordelijke"
 #: field:res.partner,parent_id:0
 msgid "Related Company"
 msgstr "Gerelateerde organisatie"
-
 
