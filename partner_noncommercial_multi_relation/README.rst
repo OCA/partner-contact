@@ -2,43 +2,35 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-======================
-Partner Non Commercial
-======================
+=====================================
+Partner Non Commercial Multi Relation
+=====================================
 
-This module changes menu and view descriptions to make partner management
-suitable for use in non commercial organisations.
+This is an autoinstallable glue module between partner_noncommercial and
+partner_multi_relation. It will change the partner_multi_relation menu-items
+to be visible on the non commercial partner menu, instead of on the
+standard sales menu.
 
 Installation
 ============
 
-Installing this module needs no special actions.
+This module should be automatically installed when partner_noncommercial and
+partner_multi_relation are installed.
 
 Configuration
 =============
 
-This module requires no special configuration.
+This module requires no configuration.
 
 Usage
 =====
 
-This module changes the Sales main menu to relations. There it gives special
-options to work with persons or organisationss.
+This module changes the location of the menu_items provided by the
+partner_multi_relation* modules.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/partner-contact/10.0
-
-Known issues / Roadmap
-======================
-
-After installing this module a situation has been encountered where the new
-menu's were added to the database, but not shown in the UI. This was due to
-partner_left and partner_right not being filled. To solve this, use the
-generic solution when the menu-system has been messed up:
-1. stop server
-2. drop parent_left and parent_right columns from ir_ui_menu table
-3. start server while updating base module
 
 
 Bug Tracker

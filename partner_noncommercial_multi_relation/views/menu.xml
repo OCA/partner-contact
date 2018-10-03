@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem
+        id="partner_multi_relation.menu_res_partner_relation_sales"
+        parent="partner_noncommercial.menu_partner"
+        name="Partner Relations"
+        sequence="36"
+        />
+
+</odoo>

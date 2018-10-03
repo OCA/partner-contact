@@ -4,8 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-01 12:32+0000\n"
+"PO-Revision-Date: 2017-12-01 12:32+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,26 +16,44 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_noncommercial
-#: model:ir.actions.act_window,help:partner_noncommercial.action_company_form
-msgid "<p class=\"oe_view_nocontent_create\">Click to add a company in your address book.</p>"
-msgstr ""
-
-#. module: partner_noncommercial
-#: model:ir.actions.act_window,help:partner_noncommercial.action_person_form
-msgid "<p class=\"oe_view_nocontent_create\">Click to add a person in your address book.</p>"
+#: model:ir.actions.act_window,name:partner_noncommercial.action_address_form
+#: model:ir.ui.menu,name:partner_noncommercial.menu_address_form
+msgid "All addresses"
 msgstr ""
 
 #. module: partner_noncommercial
 #: model:ir.actions.act_window,name:partner_noncommercial.action_all_partner_form
 #: model:ir.ui.menu,name:partner_noncommercial.menu_all_partner_form
+#: model:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
 msgid "All partners"
+msgstr ""
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,help:partner_noncommercial.action_person_form
+msgid "Click to add a person to your address book."
+msgstr ""
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,help:partner_noncommercial.action_company_form
+msgid "Click to add an organisation to your address book."
+msgstr ""
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,help:partner_noncommercial.action_address_form
+msgid "Click to add item to your address book."
 msgstr ""
 
 #. module: partner_noncommercial
 #: model:ir.actions.act_window,name:partner_noncommercial.action_company_form
 #: model:ir.ui.menu,name:partner_noncommercial.menu_company_form
-#: view:res.partner:partner_noncommercial.view_res_partner_filter
+#: model:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
 msgid "Organisations"
+msgstr ""
+
+#. module: partner_noncommercial
+#: model:ir.ui.menu,name:partner_noncommercial.menu_partner
+#: model:ir.ui.menu,name:partner_noncommercial.menu_partner_main
+msgid "Partners"
 msgstr ""
 
 #. module: partner_noncommercial
