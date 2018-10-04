@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
-# Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
-# Copyright 2017 Vicent Cubells <vicent.cubells@tecnativa.com>
+# Copyright 2016 Tecnativa - Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2017 Tecnativa - Vicent Cubells <vicent.cubells@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, models
+from odoo import api, models
 
 
 class ResPartner(models.Model):

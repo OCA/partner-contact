@@ -1,6 +1,6 @@
-# -*- coding: utf-8 -*-
-# Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
-# Copyright 2017 Vicent Cubells <vicent.cubells@tecnativa.com>
+# Copyright 2016 Tecnativa - Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2017 Tecnativa - Vicent Cubells <vicent.cubells@tecnativa.com>
+# Copyright 2018 Tecnativa - Cristina Martín
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests import common
@@ -30,6 +30,9 @@ class TestPartnerContactLang(common.SavepointCase):
         self.assertEqual(res.get('value', {}).get('lang'), 'en_US')
 
     def test_write_parent_lang(self):
+        """First empty the field for filling it again afterwards to see if
+        the contact gets the same value.
+        """
         self.partner.lang = False
         self.partner.lang = 'en_US'
         self.assertEqual(self.contact.lang, 'en_US')
