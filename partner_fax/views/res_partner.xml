@@ -6,11 +6,9 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_simple_form"/>
         <field name="arch" type="xml">
-            <data>
-                <xpath expr="//field[@name='function']" position="after">
-                    <field name="fax"/>
-                </xpath>
-            </data>
+            <field name="function" position="after">
+                <field name="fax" placeholder="Fax..."/>
+            </field>
         </field>
     </record>
 
@@ -19,11 +17,9 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_short_form"/>
         <field name="arch" type="xml">
-            <data>
-                <xpath expr="//field[@name='function']" position="after">
-                    <field name="fax" widget="phone"/>
-                </xpath>
-            </data>
+            <field name="function" position="after">
+                <field name="fax" placeholder="Fax..." widget="phone"/>
+            </field>
         </field>
     </record>
 
@@ -32,11 +28,9 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <data>
-                <xpath expr="//field[@name='function']" position="after">
-                    <field name="fax" widget="phone"/>
-                </xpath>
-            </data>
+            <field name="function" position="after">
+                <field name="fax" placeholder="Fax..." widget="phone"/>
+            </field>
         </field>
     </record>
 
