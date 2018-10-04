@@ -1,0 +1,62 @@
+# Translation of OpenERP Server.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-01 12:32+0000\n"
+"PO-Revision-Date: 2012-03-12 09:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,name:partner_noncommercial.action_address_form
+#: model:ir.ui.menu,name:partner_noncommercial.menu_address_form
+msgid "All addresses"
+msgstr "Alle adressen"
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,name:partner_noncommercial.action_all_partner_form
+#: model:ir.ui.menu,name:partner_noncommercial.menu_all_partner_form
+#: model:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+msgid "All partners"
+msgstr "Alle relaties"
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,help:partner_noncommercial.action_person_form
+msgid "Click to add a person to your address book."
+msgstr "Klik voor het toevoegen van een persoon aan het adresboek."
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,help:partner_noncommercial.action_company_form
+msgid "Click to add an organisation to your address book."
+msgstr "Klik voor het toevoegen van een organisatie aan het adresboek."
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,help:partner_noncommercial.action_address_form
+msgid "Click to add item to your address book."
+msgstr "Klik voor toevoeging aan het adresboek"
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,name:partner_noncommercial.action_company_form
+#: model:ir.ui.menu,name:partner_noncommercial.menu_company_form
+#: model:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+msgid "Organisations"
+msgstr "Organisaties"
+
+#. module: partner_noncommercial
+#: model:ir.ui.menu,name:partner_noncommercial.menu_partner
+#: model:ir.ui.menu,name:partner_noncommercial.menu_partner_main
+msgid "Partners"
+msgstr "Alle relaties"
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,name:partner_noncommercial.action_person_form
+#: model:ir.ui.menu,name:partner_noncommercial.menu_person_form
+msgid "Persons"
+msgstr "Personen"

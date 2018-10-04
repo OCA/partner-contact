@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+            Configuring authorities is complicated, because there is a
+            mismatch between the record ID's used for group names, and the
+            actual names:
+            base.group_user                     - Employee
+            sales_team.group_sale_salesman      - User
+            sales_team.group_sale_sales_manager - Manager
+    -->
+    <!-- Provide non-commercial partner menu -->
+    <menuitem
+        id="menu_partner_main"
+        name="Partners"
+        groups="base.group_user"
+        sequence="4"
+        />
+    <menuitem
+        id="menu_partner"
+        name="Partners"
+        parent="menu_partner_main"
+        groups="base.group_user"
+        sequence="4"
+        />
+
+    <!-- Add menu item to show all relations -->
+    <record id="action_all_partner_form" model="ir.actions.act_window">
+        <field name="name">All partners</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="context">{"search_default_type_relation": 1}</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+    </record>
+    <menuitem
+        id="menu_all_partner_form"
+        parent="menu_partner"
+        action="action_all_partner_form"
+        sequence="11"
+        />
+
+    <!-- Add menu item to show only organisations -->
+    <record id="action_company_form" model="ir.actions.act_window">
+        <field name="name">Organisations</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="context">{"search_default_type_company": 1,"default_is_company": True}</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create"
+                >Click to add an organisation to your address book.</p></field>
+    </record>
+    <menuitem
+        id="menu_company_form"
+        parent="menu_partner"
+        action="action_company_form"
+        sequence="21"
+        />
+
+    <!-- Add menu item to show only persons -->
+    <record id="action_person_form" model="ir.actions.act_window">
+        <field name="name">Persons</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="context">{"search_default_type_person": 1,"default_is_company": False}</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create"
+                >Click to add a person to your address book.</p></field>
+    </record>
+    <menuitem
+        id="menu_person_form"
+        parent="menu_partner"
+        action="action_person_form"
+        sequence="31"
+        />
+
+    <!-- Add menu item to show all relations and other addresses -->
+    <record id="action_address_form" model="ir.actions.act_window">
+        <field name="name">All addresses</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create"
+                >Click to add item to your address book.</p></field>
+    </record>
+    <menuitem
+        id="menu_address_form"
+        parent="menu_partner"
+        action="action_address_form"
+        sequence="41"
+        />
+
+    <!-- Move address book configuration to partner menu -->
+    <menuitem
+        id="sales_team.menu_config_address_book"
+        name="Contacts"
+        parent="menu_partner"
+        sequence="90"
+        />
+
+</odoo>
