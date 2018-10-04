@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--
-            Configuring authorities is complicated, because there is a
-            mismatch between the record ID's used for group names, and the
-            actual names:
-            base.group_user                     - Employee
-            sales_team.group_sale_salesman      - User
-            sales_team.group_sale_sales_manager - Manager
-    -->
-    <!-- Provide non-commercial partner menu -->
+   <!-- Provide non-commercial partner menu -->
     <menuitem
         id="menu_partner_main"
         name="Partners"
+        parent="contacts.menu_contacts"
         groups="base.group_user"
         sequence="4"
         />
@@ -97,14 +90,6 @@
         parent="menu_partner"
         action="action_address_form"
         sequence="41"
-        />
-
-    <!-- Move address book configuration to partner menu -->
-    <menuitem
-        id="sales_team.menu_config_address_book"
-        name="Contacts"
-        parent="menu_partner"
-        sequence="90"
         />
 
 </odoo>
