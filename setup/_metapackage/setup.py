@@ -50,6 +50,8 @@ setuptools.setup(
         'odoo10-addon-partner_identification',
         'odoo10-addon-partner_label',
         'odoo10-addon-partner_multi_relation',
+        'odoo10-addon-partner_noncommercial',
+        'odoo10-addon-partner_noncommercial_multi_relation',
         'odoo10-addon-partner_password_reset',
         'odoo10-addon-partner_phone_extension',
         'odoo10-addon-partner_phonecall_schedule',
