@@ -62,6 +62,8 @@ addon | version | summary
 [partner_identification](partner_identification/) | 10.0.1.1.1 | Partner Identification Numbers
 [partner_label](partner_label/) | 10.0.1.0.0 | Print partner labels
 [partner_multi_relation](partner_multi_relation/) | 10.0.1.0.1 | Partner relations
+[partner_noncommercial](partner_noncommercial/) | 10.0.1.0.0 | Partner Non Commercial
+[partner_noncommercial_multi_relation](partner_noncommercial_multi_relation/) | 10.0.1.0.0 | Partner Non Commercial Multi Relation
 [partner_password_reset](partner_password_reset/) | 10.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
 [partner_phone_extension](partner_phone_extension/) | 10.0.1.0.0 | Partner Phone Number Extension
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 10.0.1.0.0 | Track the time and days your partners expect phone calls
