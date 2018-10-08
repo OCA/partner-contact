@@ -8,16 +8,19 @@ from odoo.exceptions import ValidationError
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
-    zip_id = fields.Many2one('res.better.zip', 'ZIP Location')
+
+    zip_id = fields.Many2one('res.city.zip', 'ZIP Location')
 
     @api.onchange('city_id')
     def _onchange_city_id(self):
         if not self.zip_id:
-            super(ResPartner, self)._onchange_city_id()
+            super()._onchange_city_id()
         if self.zip_id and self.city_id != self.zip_id.city_id:
-            self.zip_id = False
-            self.zip = False
-            self.city = False
+            self.update({
+                'zip_id': False,
+                'zip': False,
+                'city': False,
+            })
         if self.city_id:
             return {
                 'domain': {
@@ -26,38 +29,37 @@ class ResPartner(models.Model):
             }
         return {'domain': {'zip_id': []}}
 
-    @api.onchange('state_id')
-    def _onchange_state_id(self):
-        if self.zip_id and self.state_id != self.zip_id.state_id:
-            self.zip_id = False
-            self.zip = False
-            self.city = False
-
     @api.onchange('country_id')
     def _onchange_country_id(self):
-        res = super(ResPartner, self)._onchange_country_id()
-        if self.zip_id and self.zip_id.country_id != self.country_id:
+        res = super()._onchange_country_id()
+        if self.zip_id and self.zip_id.city_id.country_id != self.country_id:
             self.zip_id = False
         return res
 
     @api.onchange('zip_id')
     def _onchange_zip_id(self):
         if self.zip_id:
-            self.country_id = self.zip_id.country_id
-            if self.country_id.enforce_cities:
-                self.city_id = self.zip_id.city_id
-            self.zip = self.zip_id.name
-            self.state_id = self.zip_id.state_id
-            self.city = self.zip_id.city
+            vals = {
+                'city_id': self.zip_id.city_id,
+                'zip': self.zip_id.name,
+                'city': self.zip_id.city_id.name,
+            }
+            if self.zip_id.city_id.country_id:
+                vals.update({'country_id': self.zip_id.city_id.country_id})
+            if self.zip_id.city_id.state_id:
+                vals.update({'state_id': self.zip_id.city_id.state_id})
+            self.update(vals)
 
     @api.constrains('zip_id', 'country_id', 'city_id', 'state_id')
     def _check_zip(self):
-        for rec in self.filtered('zip_id'):
-            if rec.zip_id.state_id != rec.state_id:
+        for rec in self:
+            if not rec.zip_id:
+                continue
+            if rec.zip_id.city_id.state_id != rec.state_id:
                 raise ValidationError(_(
                     "The state of the partner %s differs from that in "
                     "location %s") % (rec.name, rec.zip_id.name))
-            if rec.zip_id.country_id != rec.country_id:
+            if rec.zip_id.city_id.country_id != rec.country_id:
                 raise ValidationError(_(
                     "The country of the partner %s differs from that in "
                     "location %s") % (rec.name, rec.zip_id.name))
@@ -67,6 +69,14 @@ class ResPartner(models.Model):
                     "location %s") % (rec.name, rec.zip_id.name))
 
     @api.onchange('state_id')
-    def onchange_state_id(self):
+    def _onchange_state_id(self):
+        vals = {}
         if self.state_id.country_id:
-            self.country_id = self.state_id.country_id.id
+            vals.update({'country_id': self.state_id.country_id})
+        if self.zip_id and self.state_id != self.zip_id.city_id.state_id:
+            vals.update({
+                'zip_id': False,
+                'zip': False,
+                'city': False,
+            })
+        self.update(vals)
