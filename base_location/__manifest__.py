@@ -4,26 +4,30 @@
 
 {
     'name': 'Location management (aka Better ZIP)',
-    'version': '11.0.1.0.1',
+    'version': '12.0.1.0.0',
     'depends': [
-        'base_address_city'
+        'base_address_city',
+        'contacts',
     ],
     'author': "Camptocamp,"
               "ACYSOS S.L.,"
               "Alejandro Santana,"
               "Tecnativa,"
+              "AdaptiveCity,"
               "Odoo Community Association (OCA)",
     'license': "AGPL-3",
     'summary': '''Enhanced zip/npa management system''',
-    'website': 'http://www.camptocamp.com',
-    'data': ['views/better_zip_view.xml',
-             'views/state_view.xml',
-             'views/res_country_view.xml',
-             'views/company_view.xml',
-             'views/partner_view.xml',
-             'security/ir.model.access.csv'],
+    'website': 'https://github.com/OCA/partner-contact',
+    'data': [
+        'security/ir.model.access.csv',
+        'views/res_city_zip_view.xml',
+        'views/res_city_view.xml',
+        'views/res_country_view.xml',
+        'views/res_company_view.xml',
+        'views/res_partner_view.xml',
+    ],
     'demo': [
-        'demo/better_zip.xml',
+        'demo/res_city_zip.xml',
     ],
     'installable': True,
     'auto_install': False,
