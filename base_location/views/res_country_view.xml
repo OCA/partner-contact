@@ -22,7 +22,7 @@
                     icon="fa-globe"
                     type="action"
                     context="{'default_country_id': active_id, 'search_default_country_id': active_id}"
-                    string="Locations">
+                    string="Zips">
                 </button>
             </xpath>
         </field>
