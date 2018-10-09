@@ -62,6 +62,7 @@ setuptools.setup(
         'odoo10-addon-partner_stock_risk',
         'odoo10-addon-partner_street_number',
         'odoo10-addon-partner_vat_unique',
+        'odoo10-addon-portal_partner_select_all',
     ],
     classifiers=[
         'Programming Language :: Python',
