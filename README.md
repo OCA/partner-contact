@@ -74,6 +74,7 @@ addon | version | summary
 [partner_stock_risk](partner_stock_risk/) | 10.0.1.0.0 | Manage partner risk in stock moves
 [partner_street_number](partner_street_number/) | 10.0.1.0.0 | Introduces separate fields for street name and street number.
 [partner_vat_unique](partner_vat_unique/) | 10.0.1.0.0 | Partner VAT Unique
+[portal_partner_select_all](portal_partner_select_all/) | 10.0.1.0.1 | Portal Partner Select All
 
 
 Unported addons
