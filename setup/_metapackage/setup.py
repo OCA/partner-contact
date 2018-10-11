@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo9-addon-base_partner_merge',
         'odoo9-addon-base_partner_sequence',
         'odoo9-addon-base_vat_sanitized',
+        'odoo9-addon-partner_academic_title',
         'odoo9-addon-partner_address_street3',
         'odoo9-addon-partner_changeset',
         'odoo9-addon-partner_contact_birthdate',
