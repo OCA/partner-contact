@@ -8,8 +8,11 @@
     "complexity": "normal",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
-    "depends": ["contacts"],
     "demo": ["data/demo.xml"],
+    "depends": [
+        "contacts",
+        "web_domain_field",
+    ],
     "data": [
         "security/ir.model.access.csv",
         "views/res_partner_relation.xml",

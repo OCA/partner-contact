@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 # pylint: disable=method-required-super,no-self-use
 import collections
+import json
 import logging
 
 from psycopg2.extensions import AsIs
@@ -136,6 +137,32 @@ class ResPartnerRelationAll(models.AbstractModel):
         compute=lambda self: None,
         search="_search_any_partner_id",
     )
+    # Helper fields to set domain
+    this_partner_id_domain = fields.Char(
+        compute="_compute_domains", readonly=True, store=False
+    )
+    type_selection_id_domain = fields.Char(
+        compute="_compute_domains", readonly=True, store=False
+    )
+    other_partner_id_domain = fields.Char(
+        compute="_compute_domains", readonly=True, store=False
+    )
+
+    @api.multi
+    @api.depends("this_partner_id", "type_selection_id", "other_partner_id")
+    def _compute_domains(self):
+        for this in self:
+            type_selection_result = this.onchange_type_selection_id()
+            this.this_partner_id_domain = json.dumps(
+                type_selection_result["domain"]["this_partner_id"]
+            )
+            this.other_partner_id_domain = json.dumps(
+                type_selection_result["domain"]["other_partner_id"]
+            )
+            partner_result = this.onchange_partner_id()
+            this.type_selection_id_domain = json.dumps(
+                partner_result["domain"]["type_selection_id"]
+            )
 
     def register_specification(self, register, base_name, is_inverse, select_sql):
         _last_key_offset = register["_lastkey"]
@@ -262,6 +289,13 @@ CREATE OR REPLACE VIEW %%(table)s AS
             )
             for this in self
         }
+
+    @api.onchange()
+    def onchange(self):
+        """Fill domain on initial load of form for existing record."""
+        result = self.onchange_type_selection_id()
+        result["domain"].update(self.onchange_partner_id()["domain"])
+        return result
 
     @api.onchange("type_selection_id")
     def onchange_type_selection_id(self):
@@ -397,21 +431,26 @@ CREATE OR REPLACE VIEW %%(table)s AS
         return result
 
     @api.model
-    def _correct_vals(self, vals, type_selection):
+    def _correct_vals(self, original_vals, type_selection):
         """Fill left and right partner from this and other partner."""
-        vals = vals.copy()
+        vals = original_vals.copy()
+        context = self.env.context
         if "type_selection_id" in vals:
             vals["type_id"] = type_selection.type_id.id
         if type_selection.is_inverse:
-            if "this_partner_id" in vals:
-                vals["right_partner_id"] = vals["this_partner_id"]
-            if "other_partner_id" in vals:
-                vals["left_partner_id"] = vals["other_partner_id"]
+            vals["right_partner_id"] = original_vals.get(
+                "this_partner_id", self.this_partner_id.id or context.get("active_id")
+            )
+            vals["left_partner_id"] = vals.get(
+                "other_partner_id", self.other_partner_id.id
+            )
         else:
-            if "this_partner_id" in vals:
-                vals["left_partner_id"] = vals["this_partner_id"]
-            if "other_partner_id" in vals:
-                vals["right_partner_id"] = vals["other_partner_id"]
+            vals["left_partner_id"] = original_vals.get(
+                "this_partner_id", self.this_partner_id.id or context.get("active_id")
+            )
+            vals["right_partner_id"] = vals.get(
+                "other_partner_id", self.other_partner_id.id
+            )
         # Delete values not in underlying table:
         for key in (
             "this_partner_id",
@@ -466,11 +505,11 @@ CREATE OR REPLACE VIEW %%(table)s AS
             else:
                 vals["date_end"] = fields.Date.today()
         new_type_selection = self._get_type_selection_from_vals(vals)
-        for rec in self:
-            type_selection = new_type_selection or rec.type_selection_id
-            vals = rec._correct_vals(vals, type_selection)
-            base_resource = rec.get_base_resource()
-            rec.write_resource(base_resource, vals)
+        for this in self:
+            type_selection = new_type_selection or this.type_selection_id
+            vals = this._correct_vals(vals, type_selection)
+            base_resource = this.get_base_resource()
+            this.write_resource(base_resource, vals)
         # Invalidate cache to make res.partner.relation.all reflect changes
         # in underlying res.partner.relation:
         self.env.clear()

@@ -1,5 +1,5 @@
-# Copyright 2016 Therp BV
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2016-2018 Therp BV <https://therp.nl>.
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 from odoo.tests import common
 
 
@@ -45,10 +45,23 @@ class TestPartnerRelationCommon(common.TransactionCase):
             self.selection_person2company,
         ) = self._create_relation_type_selection(
             {
-                "name": "mixed",
-                "name_inverse": "mixed_inverse",
+                "name": "has employee",
+                "name_inverse": "is employee at",
                 "contact_type_left": "c",
                 "contact_type_right": "p",
+            }
+        )
+        # Create an extra relation type but from p to c to test changes:
+        (
+            self.type_person2company_extra,
+            self.selection_person2company_extra,
+            self.selection_company2person_extra,
+        ) = self._create_relation_type_selection(
+            {
+                "name": "is director of",
+                "name_inverse": "has as director",
+                "contact_type_left": "p",
+                "contact_type_right": "c",
             }
         )
         # Create a new relation type with categories:
@@ -72,7 +85,7 @@ class TestPartnerRelationCommon(common.TransactionCase):
         assert "name" in vals, (
             "Name missing in vals to create relation type. Vals: %s." % vals
         )
-        assert "name" in vals, (
+        assert "name_inverse" in vals, (
             "Name_inverse missing in vals to create relation type. Vals: %s." % vals
         )
         new_type = self.type_model.create(vals)

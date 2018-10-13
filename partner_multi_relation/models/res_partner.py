@@ -163,7 +163,7 @@ class ResPartner(models.Model):
     @api.multi
     def get_partner_type(self):
         """Get partner type for relation.
-        :return: 'c' for company or 'p' for person
+        :return: 'c' for organisation or 'p' for person
         :rtype: str
         """
         self.ensure_one()
