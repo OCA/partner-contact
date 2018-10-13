@@ -42,6 +42,18 @@ class ResPartnerRelation(models.Model):
     date_start = fields.Date("Starting date")
     date_end = fields.Date("Ending date")
 
+    @api.multi
+    def name_get(self):
+        return {
+            this.id: "%s %s %s"
+            % (
+                this.left_partner_id.display_name,
+                this.type_id.display_name,
+                this.right_partner_id.display_name,
+            )
+            for this in self
+        }
+
     @api.model
     def create(self, vals):
         """Override create to correct values, before being stored.

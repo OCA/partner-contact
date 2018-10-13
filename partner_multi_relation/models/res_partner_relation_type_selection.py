@@ -40,13 +40,13 @@ class ResPartnerRelationTypeSelection(models.Model):
         string="Type",
     )
     name = fields.Char("Name")
-    contact_type_this = fields.Selection(
-        selection="get_partner_types",
-        string="Current record's partner type",
-    )
     is_inverse = fields.Boolean(
         string="Is reverse type?",
         help="Inverse relations are from right to left partner.",
+    )
+    contact_type_this = fields.Selection(
+        selection="get_partner_types",
+        string="Current record's partner type",
     )
     contact_type_other = fields.Selection(
         selection="get_partner_types",
