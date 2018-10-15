@@ -39,19 +39,28 @@ class ResPartner(orm.Model):
         return result
 
     def _add_tab_pages(self, cr, uid, view, context=None):
-        """Adds the relevant tabs to the partner's formview."""
+        """Adds the relevant tabs to the partner's formview.
+
+        This should only be done for those partner forms that have
+        pages in the first place. Some specialized forms contain only
+        a limited selection of fiels and no pages/tabs.
+        """
+        last_page_nodes = view.xpath('//page[last()]')
+        if not last_page_nodes:
+            return []
         extra_fields = []
         if not view.xpath('//field[@name="id"]'):
             view.append(
                 etree.Element('field', name='id', invisible='True'))
             extra_fields.append('id')
-        element_last_page_hook = view.xpath('//page[last()]')[0]
+        last_page = last_page_nodes[0]
         for tab in self._get_tabs(cr, uid, context=context):
             fieldname = tab.get_fieldname()
             self._columns[fieldname] = tab.make_field()
             extra_fields.append(fieldname)
             tab_page = tab.create_page()
-            element_last_page_hook.addnext(tab_page)
+            last_page.addnext(tab_page)
+            last_page = tab_page  # Keep ordering of tabs
         return extra_fields
 
     def _get_tabs(self, cr, uid, context=None):
