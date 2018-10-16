@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2014-2016 Akretion (Alexis de Lattre
 #                     <alexis.delattre@akretion.com>)
 # Copyright 2014 Lorenzo Battistini <lorenzo.battistini@agilebg.com>
@@ -9,22 +8,23 @@
 
 {
     'name': 'Base Location Geonames Import',
-    'version': '11.0.1.1.1',
+    'version': '12.0.1.0.0',
     'category': 'Partner Management',
     'license': 'AGPL-3',
-    'summary': 'Import better zip entries from Geonames',
+    'summary': 'Import zip entries from Geonames',
     'author': 'Akretion,'
               'Agile Business Group,'
-              'Antiun Ingeniería S.L.,'
               'Tecnativa,'
+              'AdaptiveCity,'
               'Odoo Community Association (OCA)',
-    'website': 'http://www.akretion.com',
-    'depends': ['base_location'],
-    'external_dependencies': {'python': ['requests']},
+    'website': 'https://github.com/OCA/partner-contact',
+    'depends': [
+        'base_location',
+    ],
     'data': [
         'data/res_country_data.xml',
         'views/res_country_view.xml',
         'wizard/geonames_import_view.xml',
-        ],
+    ],
     'installable': True,
 }
