@@ -19,19 +19,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_location_geonames_import
-#: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
+#: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid ""
 ", create new location entries if not found already in the system, and "
 "<b>delete missing entries</b> from new file."
 msgstr ""
 
 #. module: base_location_geonames_import
-#: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
+#: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,help:base_location_geonames_import.field_better_zip_geonames_import_letter_case
+#: model:ir.model.fields,help:base_location_geonames_import.field_city_zip_geonames_import__letter_case
 msgid ""
 "Converts retreived city and state names to Title Case (upper case on each "
 "first letter of a word) or Upper Case (all letters upper case)."
@@ -39,125 +39,108 @@ msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_res_country
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_country_id
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__country_id
 msgid "Country"
 msgstr "País"
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_create_uid
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__create_uid
 msgid "Created by"
 msgstr "Criado por"
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_create_date
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__create_date
 msgid "Created on"
 msgstr "Criado em"
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_display_name
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__display_name
 msgid "Display Name"
 msgstr "Nome a Apresentar"
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_enforce_cities
-msgid "Enforce Cities"
-msgstr ""
-
-#. module: base_location_geonames_import
-#: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
+#: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid ""
 "For the selected country, this wizard will download the latest version of "
 "the list of cities from"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country_geonames_state_code_column
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__code_row_index
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_code_column
 msgid "Geonames State Code Column"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country_geonames_state_name_column
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__name_row_index
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_name_column
 msgid "Geonames State Name Column"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:189
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:126
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr ""
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_id
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__id
 msgid "ID"
 msgstr "ID"
 
 #. module: base_location_geonames_import
-#: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
+#: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "Import"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: model:ir.model,name:base_location_geonames_import.model_better_zip_geonames_import
-msgid "Import Better Zip from Geonames"
+#: model:ir.model,name:base_location_geonames_import.model_city_zip_geonames_import
+msgid "Import City Zips from Geonames"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: model:ir.actions.act_window,name:base_location_geonames_import.better_zip_geonames_import_action
-#: model:ir.ui.menu,name:base_location_geonames_import.better_zip_geonames_import_menu
-#: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
+#: model:ir.actions.act_window,name:base_location_geonames_import.city_zip_geonames_import_action
+#: model:ir.ui.menu,name:base_location_geonames_import.city_zip_geonames_import_menu
+#: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "Import from Geonames"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import___last_update
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import____last_update
 msgid "Last Modified on"
 msgstr "Modificado a última vez por"
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_write_uid
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__write_uid
 msgid "Last Updated by"
 msgstr "Atualizado pela última vez por"
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_write_date
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__write_date
 msgid "Last Updated on"
 msgstr "Atualizado pela última vez em"
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_better_zip_geonames_import_letter_case
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__letter_case
 msgid "Letter Case"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,help:base_location_geonames_import.field_better_zip_geonames_import_enforce_cities
-msgid "The city will be created as a separate entity."
-msgstr ""
-
-#. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:96
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:124
-#, python-format
-msgid ""
-"The country code inside the file (%s) doesn't correspond to the selected "
-"country (%s)."
-msgstr ""
-
-#. module: base_location_geonames_import
-#: selection:better.zip.geonames.import,letter_case:0
+#: selection:city.zip.geonames.import,letter_case:0
 msgid "Title Case"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: selection:better.zip.geonames.import,letter_case:0
+#: selection:city.zip.geonames.import,letter_case:0
 msgid "Unchanged"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: selection:better.zip.geonames.import,letter_case:0
+#: selection:city.zip.geonames.import,letter_case:0
 msgid "Upper Case"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: model:ir.ui.view,arch_db:base_location_geonames_import.better_zip_geonames_import_form
+#: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "geonames.org"
 msgstr ""
