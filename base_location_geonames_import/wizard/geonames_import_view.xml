@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="better_zip_geonames_import_form" model="ir.ui.view">
+    <record id="city_zip_geonames_import_form" model="ir.ui.view">
         <field name="name">Import from Geonames form view</field>
-        <field name="model">better.zip.geonames.import</field>
+        <field name="model">city.zip.geonames.import</field>
         <field name="arch"  type="xml">
             <form string="Import from Geonames">
                 <group name="help">
@@ -13,7 +13,6 @@
                 </group>
                 <group name="main">
                     <field name="country_id"/>
-                    <field name="enforce_cities"/>
                     <field name="letter_case"/>
                 </group>
                 <footer>
@@ -25,17 +24,17 @@
         </field>
     </record>
 
-    <record id="better_zip_geonames_import_action" model="ir.actions.act_window">
+    <record id="city_zip_geonames_import_action" model="ir.actions.act_window">
         <field name="name">Import from Geonames</field>
-        <field name="res_model">better.zip.geonames.import</field>
+        <field name="res_model">city.zip.geonames.import</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
 
     <menuitem
-            id="better_zip_geonames_import_menu"
-            action="better_zip_geonames_import_action"
-            parent="base_location.locations_root_menu"
+            id="city_zip_geonames_import_menu"
+            action="city_zip_geonames_import_action"
+            parent="contacts.menu_localisation"
             sequence="50"
     />
 
