@@ -151,18 +151,15 @@ class ResPartnerRelationAll(models.AbstractModel):
     @api.multi
     @api.depends("this_partner_id", "type_selection_id", "other_partner_id")
     def _compute_domains(self):
+        def json_dump(this, result, fieldname):
+            this["%s_domain" % fieldname] = json.dumps(result["domain"][fieldname])
+
         for this in self:
-            type_selection_result = this.onchange_type_selection_id()
-            this.this_partner_id_domain = json.dumps(
-                type_selection_result["domain"]["this_partner_id"]
-            )
-            this.other_partner_id_domain = json.dumps(
-                type_selection_result["domain"]["other_partner_id"]
-            )
-            partner_result = this.onchange_partner_id()
-            this.type_selection_id_domain = json.dumps(
-                partner_result["domain"]["type_selection_id"]
-            )
+            result = this.onchange_type_selection_id()
+            json_dump(this, result, "this_partner_id")
+            json_dump(this, result, "other_partner_id")
+            result = this.onchange_partner_id()
+            json_dump(this, result, "type_selection_id")
 
     def register_specification(self, register, base_name, is_inverse, select_sql):
         _last_key_offset = register["_lastkey"]
@@ -289,13 +286,6 @@ CREATE OR REPLACE VIEW %%(table)s AS
             )
             for this in self
         }
-
-    @api.onchange()
-    def onchange(self):
-        """Fill domain on initial load of form for existing record."""
-        result = self.onchange_type_selection_id()
-        result["domain"].update(self.onchange_partner_id()["domain"])
-        return result
 
     @api.onchange("type_selection_id")
     def onchange_type_selection_id(self):
@@ -481,8 +471,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
 
     @api.model
     def _get_type_selection_from_vals(self, vals):
-        """Get type_selection_id straight from vals or compute from type_id.
-        """
+        """Get type_selection_id straight from vals or compute from type_id."""
         type_selection_id = vals.get("type_selection_id", False)
         if not type_selection_id:
             type_id = vals.get("type_id", False)
@@ -560,8 +549,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
 
     @api.multi
     def unlink(self):
-        """For model 'res.partner.relation' call unlink on underlying model.
-        """
+        """For model 'res.partner.relation' call unlink on underlying model."""
         for rec in self:
             try:
                 base_resource = rec.get_base_resource()

@@ -1,26 +1,68 @@
-# Copyright 2016-2017 Therp BV
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from datetime import datetime, date, timedelta
+# Copyright 2016-2018 Therp BV <https://therp.nl>.
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+from datetime import date
 from dateutil.relativedelta import relativedelta
 
 from odoo import fields
 from odoo.exceptions import ValidationError
 
-from .test_partner_relation_common import TestPartnerRelationCommon
+from .common import PartnerRelationCase
 
 
-class TestPartnerRelation(TestPartnerRelationCommon):
+class TestPartnerRelation(PartnerRelationCase):
+    """Run tests on the base model res.partner.relation.
+
+    Do not use res.partner.relation.all in this class.
+    """
 
     post_install = True
+
+    # pylint: disable=invalid-name
+    def setUp(self):
+        super(TestPartnerRelation, self).setUp()
+        # Create a relation type having no particular conditions.
+        self.type_school2student = self.type_model.create(
+            {"name": "school has student", "name_inverse": "studies at school"}
+        )
+        # Create partners.
+        self.partner_school = self.partner_model.create(
+            {"name": "Test School", "is_company": True, "ref": "TS"}
+        )
+        self.partner_bart = self.partner_model.create(
+            {"name": "Bart Simpson", "is_company": False, "ref": "BS"}
+        )
+        self.partner_lisa = self.partner_model.create(
+            {"name": "Lisa Simpson", "is_company": False, "ref": "LS"}
+        )
+        # Create relations based on those conditions.
+        self.relation_school2bart = self.relation_model.create(
+            {
+                "left_partner_id": self.partner_school.id,
+                "type_id": self.type_school2student.id,
+                "right_partner_id": self.partner_bart.id,
+            }
+        )
+        self.assertTrue(self.relation_school2bart)
+        self.relation_school2lisa = self.relation_model.create(
+            {
+                "left_partner_id": self.partner_school.id,
+                "type_id": self.type_school2student.id,
+                "right_partner_id": self.partner_lisa.id,
+            }
+        )
+        self.assertTrue(self.relation_school2lisa)
 
     def test_selection_name_search(self):
         """Test wether we can find type selection on reverse name."""
         selection_types = self.selection_model.name_search(
-            name=self.selection_person2company.name
+            name=self.selection_person_is_employee.name
         )
         self.assertTrue(selection_types)
         self.assertTrue(
-            (self.selection_person2company.id, self.selection_person2company.name)
+            (
+                self.selection_person_is_employee.id,
+                self.selection_person_is_employee.name,
+            )
             in selection_types
         )
 
@@ -39,8 +81,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         reflexive_relation = self.relation_model.create(
             {
                 "type_id": type_allow.id,
-                "left_partner_id": self.partner_01_person.id,
-                "right_partner_id": self.partner_01_person.id,
+                "left_partner_id": self.partner_person_test.id,
+                "right_partner_id": self.partner_person_test.id,
             }
         )
         self.assertTrue(reflexive_relation)
@@ -65,13 +107,14 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             self.relation_model.create(
                 {
                     "type_id": type_disallow.id,
-                    "left_partner_id": self.partner_01_person.id,
-                    "right_partner_id": self.partner_01_person.id,
+                    "left_partner_id": self.partner_person_test.id,
+                    "right_partner_id": self.partner_person_test.id,
                 }
             )
 
     def test_self_disallowed_after_self_relation_created(self):
-        """Test that allow_self can not be true if a reflexive relation already exists.
+        """Test that allow_self can not be true if a reflexive relation
+        already exists.
 
         If at least one reflexive relation exists for the given type,
         reflexivity can not be disallowed.
@@ -89,8 +132,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         reflexive_relation = self.relation_model.create(
             {
                 "type_id": type_allow.id,
-                "left_partner_id": self.partner_01_person.id,
-                "right_partner_id": self.partner_01_person.id,
+                "left_partner_id": self.partner_person_test.id,
+                "right_partner_id": self.partner_person_test.id,
             }
         )
         self.assertTrue(reflexive_relation)
@@ -231,8 +274,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             self.relation_model.create(
                 {
                     "type_id": type_default.id,
-                    "left_partner_id": self.partner_01_person.id,
-                    "right_partner_id": self.partner_01_person.id,
+                    "left_partner_id": self.partner_person_test.id,
+                    "right_partner_id": self.partner_person_test.id,
                 }
             )
 
@@ -245,9 +288,9 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         with self.assertRaises(ValidationError):
             self.relation_model.create(
                 {
-                    "type_id": self.type_company2person.id,
-                    "left_partner_id": self.partner_01_person.id,
-                    "right_partner_id": self.partner_02_company.id,
+                    "type_id": self.relation_type_company_has_employee.id,
+                    "left_partner_id": self.partner_person_test.id,
+                    "right_partner_id": self.partner_company_test.id,
                 }
             )
 
@@ -292,18 +335,6 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             [("type_id", "=", type_symmetric.id)]
         )
         self.assertEqual(len(selection_symmetric), 1)
-        relation = self.relation_all_model.create(
-            {
-                "type_selection_id": selection_symmetric.id,
-                "this_partner_id": self.partner_02_company.id,
-                "other_partner_id": self.partner_01_person.id,
-            }
-        )
-        partners = self.partner_model.search(
-            [("search_relation_type_id", "=", relation.type_selection_id.id)]
-        )
-        self.assertTrue(self.partner_01_person in partners)
-        self.assertTrue(self.partner_02_company in partners)
 
     def test_category_domain(self):
         """Test check on category in relations."""
@@ -311,30 +342,24 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         with self.assertRaises(ValidationError):
             self.relation_model.create(
                 {
-                    "type_id": self.type_ngo2volunteer.id,
-                    "left_partner_id": self.partner_02_company.id,
-                    "right_partner_id": self.partner_04_volunteer.id,
+                    "type_id": self.relation_type_ngo_has_volunteer.id,
+                    "left_partner_id": self.partner_company_test.id,
+                    "right_partner_id": self.partner_volunteer_test.id,
                 }
             )
         # Check on right side:
         with self.assertRaises(ValidationError):
             self.relation_model.create(
                 {
-                    "type_id": self.type_ngo2volunteer.id,
-                    "left_partner_id": self.partner_03_ngo.id,
-                    "right_partner_id": self.partner_01_person.id,
+                    "type_id": self.relation_type_ngo_has_volunteer.id,
+                    "left_partner_id": self.partner_ngo_test.id,
+                    "right_partner_id": self.partner_person_test.id,
                 }
             )
 
     def test_display_name(self):
         """Test display name"""
-        relation = self.relation_model.create(
-            {
-                "left_partner_id": self.partner_02_company.id,
-                "type_id": self.type_company2person.id,
-                "right_partner_id": self.partner_01_person.id,
-            }
-        )
+        relation = self.relation_company2employee
         self.assertEqual(
             relation.display_name,
             "%s %s %s"
@@ -347,70 +372,39 @@ class TestPartnerRelation(TestPartnerRelationCommon):
 
     def test_relation_type_change(self):
         """Test change in relation type conditions."""
-        # First create a relation type having no particular conditions.
-        (
-            type_school2student,
-            school2student,
-            dummy_inverse,
-        ) = self._create_relation_type_selection(
-            {"name": "school has student", "name_inverse": "studies at school"}
-        )
-        # Second create relations based on those conditions.
-        partner_school = self.partner_model.create(
-            {"name": "Test School", "is_company": True, "ref": "TS"}
-        )
-        partner_bart = self.partner_model.create(
-            {"name": "Bart Simpson", "is_company": False, "ref": "BS"}
-        )
-        partner_lisa = self.partner_model.create(
-            {"name": "Lisa Simpson", "is_company": False, "ref": "LS"}
-        )
-        relation_school2bart = self.relation_all_model.create(
+        # Create a relation that will be made invalid.
+        relation_bart2lisa = self.relation_model.create(
             {
-                "this_partner_id": partner_school.id,
-                "type_selection_id": school2student.id,
-                "other_partner_id": partner_bart.id,
-            }
-        )
-        self.assertTrue(relation_school2bart)
-        relation_school2lisa = self.relation_all_model.create(
-            {
-                "this_partner_id": partner_school.id,
-                "type_selection_id": school2student.id,
-                "other_partner_id": partner_lisa.id,
-            }
-        )
-        self.assertTrue(relation_school2lisa)
-        relation_bart2lisa = self.relation_all_model.create(
-            {
-                "this_partner_id": partner_bart.id,
-                "type_selection_id": school2student.id,
-                "other_partner_id": partner_lisa.id,
+                "left_partner_id": self.partner_bart.id,
+                "type_id": self.type_school2student.id,
+                "right_partner_id": self.partner_lisa.id,
             }
         )
         self.assertTrue(relation_bart2lisa)
-        # Third creata a category and make it a condition for the
+        # Create a category and make it a condition for the
         #     relation type.
         # - Test restriction
         # - Test ignore
         category_student = self.category_model.create({"name": "Student"})
         with self.assertRaises(ValidationError):
-            type_school2student.write({"partner_category_right": category_student.id})
-        self.assertFalse(type_school2student.partner_category_right.id)
-        type_school2student.write(
+            self.type_school2student.write(
+                {"partner_category_right": category_student.id}
+            )
+        self.assertFalse(self.type_school2student.partner_category_right.id)
+        self.type_school2student.write(
             {
                 "handle_invalid_onchange": "ignore",
                 "partner_category_right": category_student.id,
             }
         )
         self.assertEqual(
-            type_school2student.partner_category_right.id, category_student.id
+            self.type_school2student.partner_category_right.id, category_student.id
         )
         # Fourth make company type a condition for left partner
         # - Test ending
         # - Test deletion
-        partner_bart.write({"category_id": [(4, category_student.id)]})
-        partner_lisa.write({"category_id": [(4, category_student.id)]})
+        self.partner_bart.write({"category_id": [(4, category_student.id)]})
+        self.partner_lisa.write({"category_id": [(4, category_student.id)]})
         # Future student to be deleted by end action:
         partner_homer = self.partner_model.create(
             {
@@ -420,21 +414,24 @@ class TestPartnerRelation(TestPartnerRelationCommon):
                 "category_id": [(4, category_student.id)],
             }
         )
-        relation_lisa2homer = self.relation_all_model.create(
+        relation_lisa2homer = self.relation_model.create(
             {
-                "this_partner_id": partner_lisa.id,
-                "type_selection_id": school2student.id,
-                "other_partner_id": partner_homer.id,
-                "date_start": date.today() + relativedelta(months=+6),
+                "left_partner_id": self.partner_lisa.id,
+                "type_id": self.type_school2student.id,
+                "right_partner_id": partner_homer.id,
+                "date_start": fields.Date.to_string(
+                    date.today() + relativedelta(months=+6)
+                ),
             }
         )
         self.assertTrue(relation_lisa2homer)
-        type_school2student.write(
+        self.type_school2student.write(
             {"handle_invalid_onchange": "end", "contact_type_left": "c"}
         )
         self.assertEqual(relation_bart2lisa.date_end, fields.Date.today())
+        # Future relations that became invalid should be deleted.
         self.assertFalse(relation_lisa2homer.exists())
-        type_school2student.write(
+        self.type_school2student.write(
             {
                 "handle_invalid_onchange": "delete",
                 "contact_type_left": "c",
@@ -443,33 +440,23 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         )
         self.assertFalse(relation_bart2lisa.exists())
 
+    def test_relation_type_unlink_dberror(self):
+        """Test deleting relation type when not possible.
+
+        This test will catch a DB Integrity error. Because of that the
+        cursor will be invalidated, and further tests using the objects
+        will not be possible.
+        """
+        # Create a relation type having restrict particular conditions.
+        self.type_school2student.handle_invalid_onchange = "restrict"
+        # Unlink should lead to error because of restrict:
+        with self.assertRaises(IntegrityError):
+            self.type_school2student.unlink()
+
     def test_relation_type_unlink(self):
         """Test delete of relation type, including deleting relations."""
         # First create a relation type having restrict particular conditions.
-        type_model = self.env["res.partner.relation.type"]
-        relation_model = self.env["res.partner.relation"]
-        partner_model = self.env["res.partner"]
-        type_school2student = type_model.create(
-            {
-                "name": "school has student",
-                "name_inverse": "studies at school",
-                "handle_invalid_onchange": "delete",
-            }
-        )
-        # Second create relation based on those conditions.
-        partner_school = partner_model.create(
-            {"name": "Test School", "is_company": True, "ref": "TS"}
-        )
-        partner_bart = partner_model.create(
-            {"name": "Bart Simpson", "is_company": False, "ref": "BS"}
-        )
-        relation_school2bart = relation_model.create(
-            {
-                "left_partner_id": partner_school.id,
-                "type_id": type_school2student.id,
-                "right_partner_id": partner_bart.id,
-            }
-        )
+        self.type_school2student.handle_invalid_onchange = "delete"
         # Delete type. Relations with type should also cease to exist:
-        type_school2student.unlink()
-        self.assertFalse(relation_school2bart.exists())
+        self.type_school2student.unlink()
+        self.assertFalse(self.relation_school2bart.exists())

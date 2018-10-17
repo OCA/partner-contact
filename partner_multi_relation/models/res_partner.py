@@ -138,7 +138,8 @@ class ResPartner(models.Model):
         def is_relation_search_arg(arg):
             """Check whether search argument is a search on relations."""
             return (
-                is_leaf(arg) and isinstance(arg[0], str)
+                is_leaf(arg)
+                and isinstance(arg[0], str)
                 and arg[0].startswith("search_relation")
             )
 
@@ -179,14 +180,16 @@ class ResPartner(models.Model):
         action["domain"] = [("id", "in", self.relation_all_ids.ids)]
         context = action.get("context", "{}")
         if "search_default_this_partner_id" not in context:  # Prevent duplicate add.
-            extra_context = str({
-                "search_default_this_partner_id": self.id,
-                "default_this_partner_id": self.id,
-                "active_model": "res.partner",
-                "active_id": self.id,
-                "active_ids": [self.id],
-                "active_test": False,
-            })
+            extra_context = str(
+                {
+                    "search_default_this_partner_id": self.id,
+                    "default_this_partner_id": self.id,
+                    "active_model": "res.partner",
+                    "active_id": self.id,
+                    "active_ids": [self.id],
+                    "active_test": False,
+                }
+            )
             context = context[:-1] + ", " + extra_context[1:]
         action["context"] = context
         return action
