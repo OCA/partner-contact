@@ -10,9 +10,18 @@
                     colors="gray:not active; blue:date_start &gt; current_date"
                     >
                     <field name="active" invisible="1" />
-                    <field name="this_partner_id" />
-                    <field name="type_selection_id" />
-                    <field name="other_partner_id" />
+                    <field
+                        name="this_partner_id"
+                        widget="many2one_clickable"
+                        />
+                    <field
+                        name="type_selection_id"
+                        widget="many2one_clickable"
+                        />
+                    <field
+                        name="other_partner_id"
+                        widget="many2one_clickable"
+                        />
                     <field name="date_start" />
                     <field name="date_end" />
                 </tree>
@@ -32,34 +41,37 @@
                             <field name="display_name"/>
                         </h1>
                     </div>
-                    <div class="oe_edit_only">
-                        <group id="main_group" colspan="6" col="3">
-                            <label for="this_partner_id" />
-                            <label for="type_selection_id" />
-                            <label for="other_partner_id" />
-                            <field
-                                name="this_partner_id"
-                                required="True"
-                                options="{'no_create': True}"
-                                nolabel="1"
-                                domain="this_partner_id_domain"
-                                />
-                            <field
-                                name="type_selection_id"
-                                required="True"
-                                options="{'no_create': True}"
-                                nolabel="1"
-                                domain="type_selection_id_domain"
-                                />
-                            <field
-                                name="other_partner_id"
-                                required="True"
-                                options="{'no_create': True}"
-                                nolabel="1"
-                                domain="other_partner_id_domain"
-                                />
-                        </group>
-                    </div>
+                    <group id="main_group" colspan="6" col="3">
+                        <label for="this_partner_id" />
+                        <label for="type_selection_id" />
+                        <label for="other_partner_id" />
+                        <field
+                            name="this_partner_id"
+                            required="True"
+                            context="{'no_create': True, 'show_address': 1, 'show_email': 1}"
+                            nolabel="1"
+                            domain="this_partner_id_domain"
+                            options="{'always_reload': True}"
+                            widget="many2one_clickable"
+                            />
+                        <field
+                            name="type_selection_id"
+                            required="True"
+                            options="{'no_create': True}"
+                            nolabel="1"
+                            domain="type_selection_id_domain"
+                            widget="many2one_clickable"
+                            />
+                        <field
+                            name="other_partner_id"
+                            required="True"
+                            context="{'no_create': True, 'show_address': 1, 'show_email': 1}"
+                            nolabel="1"
+                            domain="other_partner_id_domain"
+                            options="{'always_reload': True}"
+                            widget="many2one_clickable"
+                            />
+                    </group>
                     <group
                         id="detail_group"
                         colspan="2" col="2"

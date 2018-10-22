@@ -12,6 +12,7 @@
         "contacts",
         "sales_team",
         "web_domain_field",
+        "web_tree_many2one_clickable",
     ],
     "demo": [
         "demo/res_partner_category_demo.xml",
