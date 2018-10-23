@@ -30,6 +30,7 @@ setuptools.setup(
         'odoo11-addon-partner_phone_extension',
         'odoo11-addon-partner_phone_search',
         'odoo11-addon-partner_phonecall_schedule',
+        'odoo11-addon-partner_ref_unique',
         'odoo11-addon-partner_second_lastname',
         'odoo11-addon-partner_vat_unique',
     ],
