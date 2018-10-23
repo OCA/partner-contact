@@ -321,7 +321,7 @@ class TestPartnerRelation(PartnerRelationCase):
             ],
             limit=1,
         )
-        relation._compute_domains()
+        relation._compute_domains()  # pylint: disable=protected-access
         # Selection of this_partner_id must be for organisations that
         # are NGO's.
         self.assertIn(
