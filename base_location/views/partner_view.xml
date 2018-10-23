@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <field name="city" position="before">
                 <field name="zip_id"
+                    attrs="{'readonly': [('type', '=', 'contact'), ('parent_id', '!=', False)]}"
                     options="{'create_name_field': 'city', 'no_open': True, 'no_create': True}"
                     placeholder="City completion"
                     class="oe_edit_only" />
