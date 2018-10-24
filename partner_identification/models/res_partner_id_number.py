@@ -12,6 +12,7 @@ from odoo import api, models, fields
 
 class ResPartnerIdNumber(models.Model):
     _name = "res.partner.id_number"
+    _description = "Partner ID Number"
     _order = "name"
 
     @api.constrains('name', 'category_id')
