@@ -8,9 +8,6 @@ from .fake_models import ResPartner, setup_test_model, teardown_test_model
 
 class TestResPartner(common.SavepointCase):
 
-    at_install = False
-    post_install = True
-
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -28,7 +25,7 @@ class TestResPartner(common.SavepointCase):
             'code': 'id_code',
             'name': 'id_name',
         })
-        cls.partner = cls.env.user.partner_id
+        cls.partner = cls.env.ref('base.main_partner')
         cls.partner_id = cls.env['res.partner.id_number'].create({
             'name': 'Good ID',
             'category_id': cls.partner_id_category.id,
