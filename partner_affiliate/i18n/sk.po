@@ -19,10 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #. module: partner_affiliate
-#: model:ir.model.fields,field_description:partner_affiliate.field_res_partner_affiliate_ids
-#: model:ir.model.fields,field_description:partner_affiliate.field_res_users_affiliate_ids
-#: model:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+#: model:ir.model.fields,field_description:partner_affiliate.field_res_partner__affiliate_ids
+#: model:ir.model.fields,field_description:partner_affiliate.field_res_users__affiliate_ids
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Affiliates"
+msgstr ""
+
+#. module: partner_affiliate
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+msgid "Avatar"
 msgstr ""
 
 #. module: partner_affiliate
@@ -31,12 +36,33 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_affiliate
-#: model:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+#: model:ir.model.fields,field_description:partner_affiliate.field_res_partner__child_ids
+#: model:ir.model.fields,field_description:partner_affiliate.field_res_users__child_ids
+msgid "Contacts"
+msgstr ""
+
+#. module: partner_affiliate
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+msgid "Delivery"
+msgstr ""
+
+#. module: partner_affiliate
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+msgid "Invoice"
+msgstr ""
+
+#. module: partner_affiliate
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+msgid "Logo"
+msgstr ""
+
+#. module: partner_affiliate
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Mobile:"
 msgstr ""
 
 #. module: partner_affiliate
-#: model:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Phone:"
 msgstr ""
 
