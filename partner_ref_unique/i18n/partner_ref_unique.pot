@@ -1,23 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_ref_unique
+#	* partner_ref_unique
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-25 03:42+0000\n"
-"PO-Revision-Date: 2017-01-25 03:42+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Greek (Greece) (https://www.transifex.com/oca/teams/23907/"
-"el_GR/)\n"
-"Language: el_GR\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: partner_ref_unique
 #: selection:res.company,partner_ref_unique:0
@@ -27,7 +21,7 @@ msgstr ""
 #. module: partner_ref_unique
 #: model:ir.model,name:partner_ref_unique.model_res_company
 msgid "Companies"
-msgstr "Εταιρίες"
+msgstr ""
 
 #. module: partner_ref_unique
 #: model:ir.model,name:partner_ref_unique.model_res_partner
@@ -60,5 +54,3 @@ msgstr ""
 msgid "Unique partner reference for"
 msgstr ""
 
-#~ msgid "Partner"
-#~ msgstr "Συνεργάτης"
