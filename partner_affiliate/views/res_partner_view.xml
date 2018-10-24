@@ -3,7 +3,6 @@
 
     <!-- Show always parent_id plus add affiliates -->
     <record id="view_partner_form_add_affiliate" model="ir.ui.view">
-        <field name="name">res.partner.form</field>
         <field name="model">res.partner</field>
         <field eval="1" name="priority"/>
         <field name="inherit_id" ref="base.view_partner_form"/>
@@ -15,7 +14,8 @@
                 <page string="Affiliates" attrs="{'invisible': [('is_company','=',False)]}">
                     <field name="affiliate_ids"
                            context="{'default_parent_id': active_id, 'default_is_company': True, 'default_type':'other'}" mode="kanban">
-                        <kanban>
+                        <kanban on_create="base.view_partner_form">
+                            <field name="id"/>
                             <field name="color"/>
                             <field name="name"/>
                             <field name="title"/>
@@ -32,28 +32,33 @@
                             <field name="country_id"/>
                             <field name="mobile"/>
                             <field name="state_id"/>
-                            <field name="image"/>
+                            <field name="image_small"/>
                             <field name="lang"/>
+                            <!-- fields in form x2many view to diminish requests -->
+                            <field name="comment"/>
+                            <field name="customer"/>
+                            <field name="display_name"/>
+                            <field name="supplier"/>
                             <templates>
                                 <t t-name="kanban-box">
                                     <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
                                     <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">
                                         <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right"/>
                                         <div class="o_kanban_image">
-                                            <img t-if="record.image.raw_value" t-att-src="'data:image/png;base64,'+record.image.raw_value"/>
-                                            <t t-if="!record.image.raw_value">
-                                                <img t-if="record.type.raw_value === 'delivery'" t-att-src='_s + "/base/static/src/img/truck.png"'/>
-                                                <img t-if="record.type.raw_value === 'invoice'" t-att-src='_s + "/base/static/src/img/money.png"'/>
+                                            <img alt="" t-if="record.image_small.raw_value" t-att-src="kanban_image('res.partner', 'image_small', record.id.raw_value)"/>
+                                            <t t-if="!record.image_small.raw_value">
+                                                <img alt="Delivery" t-if="record.type.raw_value === 'delivery'" t-att-src='_s + "/base/static/img/truck.png"'/>
+                                                <img alt="Invoice" t-if="record.type.raw_value === 'invoice'" t-att-src='_s + "/base/static/img/money.png"'/>
                                                 <t t-if="record.type.raw_value !== 'invoice' &amp;&amp; record.type.raw_value !== 'delivery'">
-                                                    <img t-if="record.is_company.raw_value === true" t-att-src='_s + "/base/static/src/img/company_image.png"'/>
-                                                    <img t-if="record.is_company.raw_value === false" t-att-src='_s + "/base/static/src/img/avatar.png"'/>
+                                                    <img alt="Logo" t-if="record.is_company.raw_value === true" t-att-src='_s + "/base/static/img/company_image.png"'/>
+                                                    <img alt="Avatar" t-if="record.is_company.raw_value === false" t-att-src='_s + "/base/static/img/avatar.png"'/>
                                                 </t>
                                             </t>
                                         </div>
                                         <div class="oe_kanban_details">
                                             <field name="name"/>
                                             <div t-if="record.function.raw_value"><field name="function"/></div>
-                                            <div t-if="record.email.raw_value"><field name="email"/></div>
+                                            <div t-if="record.email.raw_value"><field name="email" widget="email"/></div>
                                             <div t-if="record.type.raw_value != 'contact'">
                                                 <div>
                                                     <field name="zip"/>
