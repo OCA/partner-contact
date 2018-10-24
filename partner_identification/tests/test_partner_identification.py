@@ -57,11 +57,11 @@ if id_number.name != '1234':
         })
         partner_1 = self.env.ref('base.res_partner_1')
         with self.assertRaises(ValidationError), self.cr.savepoint():
-            partner_1.write({'id_numbers': [(0, 0,  {
+            partner_1.write({'id_numbers': [(0, 0, {
                 'name': '01234',
                 'category_id': partner_id_category.id
             })]})
-        partner_1.write({'id_numbers': [(0, 0,  {
+        partner_1.write({'id_numbers': [(0, 0, {
             'name': '1234',
             'category_id': partner_id_category.id
         })]})

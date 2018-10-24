@@ -9,22 +9,24 @@
 {
     'name': 'Partner Identification Numbers',
     'category': 'Customer Relationship Management',
-    'version': '11.0.1.0.0',
+    'version': '12.0.1.0.0',
     'license': 'AGPL-3',
     'depends': [
         'contacts',
     ],
     'data': [
+        'security/ir.model.access.csv',
         'views/res_partner_id_category_view.xml',
         'views/res_partner_id_number_view.xml',
         'views/res_partner_view.xml',
-        'security/ir.model.access.csv',
     ],
-    'author': 'ChriCar Beteiligungs- und Beratungs- GmbH, '
+    'author': 'ChriCar Beteiligungs- und Beratungs- GmbH,'
               'Tecnativa,'
               'Camptocamp,'
               'ACSONE SA/NV,'
               'LasLabs,'
+              'Onestein,'
               'Odoo Community Association (OCA)',
     'website': 'https://github.com/OCA/partner-contact',
+    'development_status': 'Production/Stable',
 }

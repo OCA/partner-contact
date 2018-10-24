@@ -15,6 +15,7 @@ from odoo.tools.safe_eval import safe_eval
 
 class ResPartnerIdCategory(models.Model):
     _name = "res.partner.id_category"
+    _description = "Partner ID Category"
     _order = "name"
 
     code = fields.Char(
@@ -48,7 +49,7 @@ class ResPartnerIdCategory(models.Model):
     @api.multi
     def validate_id_number(self, id_number):
         """Validate the given ID number
-        The method raises an openerp.exceptions.ValidationError if the eval of
+        The method raises an odoo.exceptions.ValidationError if the eval of
         python validation code fails
         """
         self.ensure_one()
