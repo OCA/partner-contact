@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-# © 2016 Yannick Vaucher (Camptocamp SA)
+# Copyright 2016 Yannick Vaucher (Camptocamp SA)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo.tests.common import TransactionCase
@@ -46,7 +45,7 @@ class UserOnchangeCase(TransactionCase):
 
             self.assertEqual(self.user.lastname, lastname)
             self.assertEqual(self.user.firstname, firstname)
-            self.assertEqual(self.user.name, " ".join((lastname, firstname)))
+            self.assertEqual(self.user.name, " ".join((firstname, lastname)))
 
     def setUp(self):
         super(UserOnchangeCase, self).setUp()
