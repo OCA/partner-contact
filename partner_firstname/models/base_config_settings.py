@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-# © 2015 Antiun Ingenieria S.L. - Antonio Espinosa
+# Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import logging
@@ -73,6 +72,9 @@ class ResConfigSettings(models.TransientModel):
 
     @api.multi
     def action_recalculate_partners_name(self):
+        self.env['ir.config_parameter'].sudo().set_param(
+            'partner_names_order', self.partner_names_order
+        )
         partners = self._partners_for_recalculating()
         _logger.info("Recalculating names for %d partners.", len(partners))
         partners._compute_name()

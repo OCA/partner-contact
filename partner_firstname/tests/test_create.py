@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-# © 2015 Grupo ESOC Ingeniería de Servicios, S.L. - Jairo Llopis.
+# Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L. - Jairo Llopis.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 """Test default values for models."""
@@ -19,8 +18,8 @@ class PersonCase(TransactionCase):
             "firstname": "Núñez",
             "lastname": "Fernán",
         }
-        self.good_values["name"] = "%s %s" % (self.good_values["lastname"],
-                                              self.good_values["firstname"])
+        self.good_values["name"] = "%s %s" % (self.good_values["firstname"],
+                                              self.good_values["lastname"])
         if "default_is_company" in self.context:
             self.good_values["is_company"] = self.context["default_is_company"]
         self.values = self.good_values.copy()
