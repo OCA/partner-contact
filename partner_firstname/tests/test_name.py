@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Authors: Nemry Jonathan
 # Copyright (c) 2014 Acsone SA/NV (http://www.acsone.eu)
 # All Rights Reserved
@@ -47,7 +45,7 @@ class PartnerContactCase(BaseCase):
     def test_whitespace_cleanup(self):
         """Check that whitespace in name gets cleared."""
         self.expect("newlästname", "newfïrstname")
-        self.original.name = "  newlästname  newfïrstname  "
+        self.original.name = "  newfïrstname  newlästname  "
 
         # Need this to refresh the ``name`` field
         self.original.invalidate_cache()
@@ -72,7 +70,7 @@ class PartnerCompanyCase(BaseCase):
 
 class UserCase(PartnerContactCase):
     def create_original(self):
-        name = "%s %s" % (self.lastname, self.firstname)
+        name = "%s %s" % (self.firstname, self.lastname)
 
         # Cannot create users if ``mail`` is installed
         if self.mail_installed():

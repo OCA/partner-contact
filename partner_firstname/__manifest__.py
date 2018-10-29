@@ -1,13 +1,12 @@
-# -*- coding: utf-8 -*-
-# © 2013 Nicolas Bessi (Camptocamp SA)
-# © 2014 Agile Business Group (<http://www.agilebg.com>)
-# © 2015 Grupo ESOC (<http://www.grupoesoc.es>)
+# Copyright 2013 Nicolas Bessi (Camptocamp SA)
+# Copyright 2014 Agile Business Group (<http://www.agilebg.com>)
+# Copyright 2015 Grupo ESOC (<http://www.grupoesoc.es>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
     'name': 'Partner first name and last name',
     'summary': "Split first name and last name for non company partners",
-    'version': '11.0.1.0.1',
+    'version': '12.0.1.0.0',
     'author': "Camptocamp, "
               "Grupo ESOC Ingeniería de Servicios, "
               "Tecnativa, "

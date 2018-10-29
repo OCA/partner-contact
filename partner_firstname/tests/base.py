@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
-# © 2014 Nemry Jonathan (Acsone SA/NV) (http://www.acsone.eu)
+
+# Copyright 2014 Nemry Jonathan (Acsone SA/NV) (http://www.acsone.eu)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests.common import TransactionCase
@@ -23,14 +23,14 @@ class BaseCase(TransactionCase, MailInstalled):
 
     def create_original(self):
         self.original = self.env["res.partner"].create({
-            "lastname": self.lastname,
-            "firstname": self.firstname})
+            "firstname": self.firstname,
+            "lastname": self.lastname})
 
     def expect(self, lastname, firstname, name=None):
         """Define what is expected in each field when ending."""
         self.lastname = lastname
         self.firstname = firstname
-        self.name = name or "%s %s" % (lastname, firstname)
+        self.name = name or "%s %s" % (firstname, lastname)
 
     def tearDown(self):
         if self.check_fields:
@@ -47,7 +47,7 @@ class BaseCase(TransactionCase, MailInstalled):
 
     def test_copy(self):
         """Copy the partner and compare the result."""
-        self.expect(self.lastname, "%s (copy)" % self.firstname)
+        self.expect("%s (copy)" % self.lastname, self.firstname)
         self.changed = (self.original.with_context(copy=True, lang="en_US")
                         .copy())
 
