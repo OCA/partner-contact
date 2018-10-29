@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- © 2015 Antiun Ingenieria S.L. - Antonio Espinosa
+<!-- Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
 <odoo>
 
@@ -10,7 +10,7 @@
                ref="base_setup.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[@name='multi_company']" position='after'>
-                <h2>Partner names order</h2>
+                <h2>Partner Names Order</h2>
                 <div class="row mt16 o_settings_container"
                      name="partner_names_order">
                     <div class="col-xs-12 col-md-6 o_setting_box">
