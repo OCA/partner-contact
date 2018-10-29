@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-# © 2015 Grupo ESOC <www.grupoesoc.es>
+# Copyright 2015 Grupo ESOC <www.grupoesoc.es>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 """These tests try to mimic the behavior of the UI form.
@@ -102,4 +101,4 @@ class PartnerContactCase(OnChangeCase):
 
             self.assertEqual(partner.lastname, lastname)
             self.assertEqual(partner.firstname, firstname)
-            self.assertEqual(partner.name, " ".join((lastname, firstname)))
+            self.assertEqual(partner.name, " ".join((firstname, lastname)))

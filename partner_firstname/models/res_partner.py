@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
-# © 2013 Nicolas Bessi (Camptocamp SA)
-# © 2014 Agile Business Group (<http://www.agilebg.com>)
-# © 2015 Grupo ESOC (<http://www.grupoesoc.es>)
+# Copyright 2013 Nicolas Bessi (Camptocamp SA)
+# Copyright 2014 Agile Business Group (<http://www.agilebg.com>)
+# Copyright 2015 Grupo ESOC (<http://www.grupoesoc.es>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 import logging
 from odoo import api, fields, models
@@ -40,7 +39,6 @@ class ResPartner(models.Model):
                 self._get_whitespace_cleaned_name(name),
                 vals.get("is_company",
                          self.default_get(["is_company"])["is_company"]))
-
             for key, value in inverted.items():
                 if not vals.get(key) or context.get("copy"):
                     vals[key] = value
@@ -80,7 +78,7 @@ class ResPartner(models.Model):
 
     @api.model
     def _names_order_default(self):
-        return 'last_first'
+        return 'first_last'
 
     @api.model
     def _get_names_order(self):
