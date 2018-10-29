@@ -11,4 +11,5 @@ from . import (
     test_onchange,
     test_user_onchange,
     test_order,
+    test_copy,
 )
