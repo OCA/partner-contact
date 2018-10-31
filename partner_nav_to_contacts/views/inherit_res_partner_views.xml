@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--
+Mofificación de vista formulario de cliente  para poder navegar desde la empresa
+a sus contactos.
+-->
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.nav2contacts</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="sequence">90</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+
+            <xpath expr="//div[hasclass('oe_kanban_details')]/field[@name='name']" position='replace'>
+                <div>
+                    <button name="open_commercial_partner" type="object" class="oe_link">
+                        <field name="name"/>
+                    </button>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
