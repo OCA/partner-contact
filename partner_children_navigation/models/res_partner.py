@@ -7,8 +7,6 @@ from odoo import api, fields, models
 class Partner(models.Model):
     _inherit = 'res.partner'
 
-    contact_origin = fields.Many2one('res.partner', string='Contact origin')
-
     @api.multi
     def open_commercial_partner(self):
         """
