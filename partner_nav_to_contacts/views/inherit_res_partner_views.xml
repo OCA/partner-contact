@@ -2,8 +2,8 @@
 <odoo>
 
 <!--
-Mofificación de vista formulario de cliente  para poder navegar desde la empresa
-a sus contactos.
+Form view of customer to be able to navigate from the company
+to its contacts.
 -->
     <record id="view_partner_form" model="ir.ui.view">
         <field name="name">res.partner.form.inherit.nav2contacts</field>
