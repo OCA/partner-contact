@@ -1,3 +1,4 @@
+
 To navigate from a customer or supplier to its contacts,
 the name of the contact in the kanban card of each contact
 in the contacts and addresses tab in the form view of the source contact is a link

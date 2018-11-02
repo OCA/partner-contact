@@ -9,16 +9,19 @@ to its contacts.
         <field name="name">res.partner.form.inherit.nav2contacts</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
-        <field name="sequence">90</field>
+        <field name="priority">90</field>
         <field name="type">form</field>
         <field name="arch" type="xml">
 
-            <xpath expr="//div[hasclass('oe_kanban_details')]/field[@name='name']" position='replace'>
+            <xpath expr="//div[hasclass('oe_kanban_details')]/field[@name='name']" position='before'>
                 <div>
                     <button name="open_commercial_partner" type="object" class="oe_link">
                         <field name="name"/>
                     </button>
                 </div>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_kanban_details')]/field[@name='name']" position='attributes'>
+                <attribute name="invisible">1</attribute>
             </xpath>
 
         </field>
