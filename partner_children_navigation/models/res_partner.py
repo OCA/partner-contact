@@ -1,7 +1,7 @@
 # SDI
 # © 2018 David Juaneda <djuaneda@sdi.es>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from odoo import api, fields, models
+from odoo import api, models
 
 
 class Partner(models.Model):
