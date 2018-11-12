@@ -48,10 +48,10 @@
                         <field
                             name="this_partner_id"
                             required="True"
-                            context="{'no_create': True, 'show_address': 1, 'show_email': 1}"
+                            context="{'show_address': 1, 'show_email': 1}"
                             nolabel="1"
                             domain="this_partner_id_domain"
-                            options="{'always_reload': True}"
+                            options="{'no_create': True, 'always_reload': True}"
                             widget="many2one_clickable"
                             />
                         <field
@@ -65,10 +65,10 @@
                         <field
                             name="other_partner_id"
                             required="True"
-                            context="{'no_create': True, 'show_address': 1, 'show_email': 1}"
+                            context="{'show_address': 1, 'show_email': 1}"
                             nolabel="1"
                             domain="other_partner_id_domain"
-                            options="{'always_reload': True}"
+                            options="{'no_create': True, 'always_reload': True}"
                             widget="many2one_clickable"
                             />
                     </group>
