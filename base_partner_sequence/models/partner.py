@@ -52,7 +52,7 @@ class ResPartner(models.Model):
         for partner in self:
             if not vals.get('ref') and partner._needsRef(vals) and \
                not partner.ref:
-                vals['ref'] = self._get_next_ref(vals=vals)
+                vals['ref'] = partner._get_next_ref(vals=vals)
 
             super(ResPartner, partner).write(vals)
         return True
