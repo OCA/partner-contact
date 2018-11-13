@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-# © 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo.tests import common
@@ -22,13 +21,18 @@ class TestPartnerExternalMap(common.TransactionCase):
         self.partner = self.env['res.partner'].create({
             'name': 'Test partner',
             'city': 'Madrid',
+            'street': 'street_test',
+            'street2': 'street2_test',
+            'state_id': self.ref('base.state_es_m'),
+            'country_id': self.ref('base.es'),
         })
 
     def test_post_init_hook(self):
         # Call this again for coverage purposes, but it has been already run
         set_default_map_settings(self.cr, self.registry)
-        self.assertTrue(self.env.user.context_map_website_id)
-        self.assertTrue(self.env.user.context_route_map_website_id)
+        usrs = self.env['res.users'].search([])
+        self.assertTrue(all([u.context_map_website_id.id for u in usrs]))
+        self.assertTrue(all([u.context_route_map_website_id.id for u in usrs]))
         self.assertEqual(self.env.user.partner_id,
                          self.env.user.context_route_start_partner_id)
 
@@ -39,13 +43,15 @@ class TestPartnerExternalMap(common.TransactionCase):
     def test_open_map(self):
         action = self.partner.sudo(self.user.id).open_map()
         self.assertEqual(
-            action['url'], "https://www.google.com/maps?ie=UTF8&q=Madrid")
+            action['url'], "https://www.google.com/maps?ie=UTF8"
+                           "&q=street_test street2_test Madrid Madrid Spain")
 
     def test_open_route_map(self):
         action = self.partner.sudo(self.user.id).open_route_map()
         self.assertEqual(
-            action['url'], "https://www.google.com/maps?saddr=Tomelloso&daddr="
-                           "Madrid&directionsmode=driving")
+            action['url'], "https://www.google.com/maps?saddr=Tomelloso"
+                           "&daddr=street_test street2_test Madrid Madrid "
+                           "Spain&directionsmode=driving")
 
     def test_open_map_with_coordinates(self):
         # Simulate that we have the base_geolocalize module installed creating
@@ -57,6 +63,17 @@ class TestPartnerExternalMap(common.TransactionCase):
         self.assertEqual(
             action['url'],
             "https://www.google.com/maps?z=15&q=39.15837,-3.02145")
+
+    def test_exception_no_addr(self):
+        self.partner.write({
+            'city': False,
+            'street': False,
+            'street2': False,
+            'state_id': False,
+            'country_id': False,
+        })
+        with self.assertRaises(UserError):
+            self.partner.sudo(self.user.id).open_route_map()
 
     def test_exception_no_map_website(self):
         self.user.context_map_website_id = False
