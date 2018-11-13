@@ -1,6 +1,6 @@
 # Copyright 2016-2018 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-from datetime import date
+from datetime import datetime, date, timedelta
 from dateutil.relativedelta import relativedelta
 
 from odoo import fields
@@ -439,19 +439,6 @@ class TestPartnerRelation(PartnerRelationCase):
             }
         )
         self.assertFalse(relation_bart2lisa.exists())
-
-    def test_relation_type_unlink_dberror(self):
-        """Test deleting relation type when not possible.
-
-        This test will catch a DB Integrity error. Because of that the
-        cursor will be invalidated, and further tests using the objects
-        will not be possible.
-        """
-        # Create a relation type having restrict particular conditions.
-        self.type_school2student.handle_invalid_onchange = "restrict"
-        # Unlink should lead to error because of restrict:
-        with self.assertRaises(IntegrityError):
-            self.type_school2student.unlink()
 
     def test_relation_type_unlink(self):
         """Test delete of relation type, including deleting relations."""
