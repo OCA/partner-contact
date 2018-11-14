@@ -147,7 +147,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
 
         type_allow.allow_self = False
         self.assertEqual(reflexive_relation.date_end, fields.Date.today())
-        self.assertEqual(past_reflexive_relation.date_end, '2000-01-01')
+        self.assertEqual(past_reflexive_relation.date_end, date(2000, 1, 1))
         self.assertFalse(normal_relation.date_end)
 
     def test_self_disallowed_with_future_reflexive_relation(self):
@@ -334,8 +334,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             'this_partner_id': partner_lisa.id,
             'type_selection_id': school2student.id,
             'other_partner_id': partner_homer.id,
-            'date_start': fields.Date.to_string(
-                date.today() + relativedelta(months=+6))})
+            'date_start': date.today() + relativedelta(months=+6)})
         self.assertTrue(relation_lisa2homer)
         type_school2student.write({
             'handle_invalid_onchange': 'end',
