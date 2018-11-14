@@ -40,27 +40,33 @@
                     <field name="other_partner_id"/>
                     <field name="type_selection_id"/>
                     <filter
+                        name="left_to_right"
                         string="Left to right"
                         domain="[('is_inverse', '=', False)]"
                         />
                     <filter
+                        name="right_to_left"
                         string="Right to left"
                         domain="[('is_inverse', '=', True)]"
                         />
                     <filter
+                        name="include_part_records"
                         string="Include past records"
                         context="{'active_test': False}"
                         />
                     <group expand="0" string="Group By">
                         <filter
+                            name="group_by_this_partner_id"
                             string="One Partner"
                             context="{'group_by': 'this_partner_id'}"
                             />
                         <filter
+                            name="group_by_type_selection_id"
                             string="Relationship Type"
                             context="{'group_by': 'type_selection_id'}"
                             />
                         <filter
+                            name="group_by_other_partner_id"
                             string="Other Partner"
                             context="{'group_by': 'other_partner_id'}"
                             />
