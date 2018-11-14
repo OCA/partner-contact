@@ -12,7 +12,7 @@
     "name": "Add a sequence on customers' code",
     "version": "12.0.1.0.0",
     "category": "Generic Modules/Base",
-    "website": "http://www.initos.com",
+    "website": "https://github.com/OCA/partner-contact",
     "depends": [
         'base',
     ],
