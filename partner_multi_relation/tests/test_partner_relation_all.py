@@ -1,5 +1,7 @@
 # Copyright 2016-2017 Therp BV
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
+from datetime import date
 from odoo.exceptions import ValidationError
 
 from .test_partner_relation_common import TestPartnerRelationCommon
@@ -69,7 +71,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         relation = self._create_company2person_relation()
         relation.write({'date_start': '2014-09-01'})
         relation.invalidate_cache(ids=relation.ids)
-        self.assertEqual(relation.date_start, '2014-09-01')
+        self.assertEqual(relation.date_start, date(2014, 9, 1))
 
     def test_write_incompatible_dates(self):
         """Test write with date_end before date_start."""
