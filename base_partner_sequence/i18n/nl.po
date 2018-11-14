@@ -27,4 +27,4 @@ msgstr "Contact"
 #: code:addons/base_partner_sequence/models/partner.py:51
 #, python-format
 msgid "Either field values or an id must be provided."
-msgstr ""
+msgstr "Veld waardes of een ID moet worden opgegeven."
