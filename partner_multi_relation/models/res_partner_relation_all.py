@@ -455,3 +455,16 @@ CREATE OR REPLACE VIEW %%(table)s AS
             base_resource = rec.get_base_resource()
             rec.unlink_resource(base_resource)
         return True
+
+    @api.model
+    def fields_get(self, allfields=None, attributes=None):
+        """Set type_selection_id field to not exportable.
+
+        Trying to export type_selection_id would result in a crash
+        as it does not refer to a real table.
+        """
+        result = super(ResPartnerRelationAll, self).fields_get(
+            allfields=allfields, attributes=attributes)
+        if 'type_selection_id' in result:
+            result['type_selection_id']['exportable'] = False
+        return result
