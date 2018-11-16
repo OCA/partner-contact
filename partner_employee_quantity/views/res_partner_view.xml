@@ -6,14 +6,16 @@
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="base.view_partner_form"/>
     <field name="arch" type="xml">
-        <xpath expr="/form/sheet/group">
-            <group name="employee_quantity"
-                   string="Employee quantity"
-                   attrs="{'invisible': [('is_company', '=', False)]}">
-                <field name="employee_quantity"/>
-                <field name="employee_quantity_range_id"/>
+        <page name="internal_notes" position="inside">
+            <group>
+                <group name="employee_quantity"
+                    string="Employee quantity"
+                    attrs="{'invisible': [('is_company', '=', False)]}">
+                    <field name="employee_quantity"/>
+                    <field name="employee_quantity_range_id"/>
+                </group>
             </group>
-        </xpath>
+        </page>
     </field>
 </record>
 
