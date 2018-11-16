@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2015-2016 Akretion (Alexis de Lattre <alexis.delattre@akretion.com>)
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+
+<odoo>
+
+<record id="map_website_form" model="ir.ui.view">
+    <field name="name">map.website.form</field>
+    <field name="model">map.website</field>
+    <field name="arch" type="xml">
+        <form string="Map Website">
+            <group name="main">
+                <field name="name"/>
+                <field name="address_url"/>
+                <field name="lat_lon_url"/>
+                <field name="route_address_url"/>
+                <field name="route_lat_lon_url"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+<record id="map_website_tree" model="ir.ui.view">
+    <field name="name">map.website.tree</field>
+    <field name="model">map.website</field>
+    <field name="arch" type="xml">
+        <tree string="Map Websites">
+            <field name="name"/>
+            <field name="address_url"/>
+        </tree>
+    </field>
+</record>
+
+<record id="map_website_action" model="ir.actions.act_window">
+    <field name="name">Map Websites</field>
+    <field name="res_model">map.website</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<!-- Menu entry under Settings > Technical
+We prefered the menu entry of previous Odoo versions under
+Sales > Config > Address Book > Localization, but in v10 that
+would required a dependency on sales_team, and we don't want that -->
+<menuitem id="root_map_website_menu" name="Map Websites" parent="base.menu_custom" sequence="100"/>
+
+<menuitem id="map_website_menu" action="map_website_action"
+    parent="root_map_website_menu"/>
+
+</odoo>
