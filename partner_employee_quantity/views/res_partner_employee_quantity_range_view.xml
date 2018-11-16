@@ -20,6 +20,8 @@
 
 <menuitem action="employees_range_action"
           id="menu_employees_range"
-          parent="sales_team.menu_config_address_book"/>
+          parent="contacts.res_partner_menu_config"
+          sequence="0"
+/>
 
 </odoo>
