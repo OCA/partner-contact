@@ -1,0 +1,5 @@
+#. module: partner_noncommercial_multi_relation
+#: model:ir.ui.menu,name:partner_noncommercial_multi_relation.menu_partner_relation_config
+#: model:ir.ui.menu,name:partner_noncommercial_multi_relation.menu_partner_relations
+msgid "Partner Relations"
+msgstr "Connecties"

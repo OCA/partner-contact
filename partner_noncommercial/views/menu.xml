@@ -23,7 +23,7 @@
         sequence="4"
         />
 
-    <!-- Add menu item to show all relations -->
+    <!-- Add menu item to show all partners -->
     <record id="action_all_partner_form" model="ir.actions.act_window">
         <field name="name">All partners</field>
         <field name="type">ir.actions.act_window</field>
@@ -80,7 +80,7 @@
         sequence="31"
         />
 
-    <!-- Add menu item to show all relations and other addresses -->
+    <!-- Add menu item to show all true partners and other addresses -->
     <record id="action_address_form" model="ir.actions.act_window">
         <field name="name">All addresses</field>
         <field name="type">ir.actions.act_window</field>
@@ -99,12 +99,18 @@
         sequence="41"
         />
 
-    <!-- Move address book configuration to partner menu -->
+    <!-- Create configuration menu -->
     <menuitem
-        id="sales_team.menu_config_address_book"
-        name="Contacts"
-        parent="menu_partner"
-        sequence="90"
+        id="menu_partner_config"
+        name="Configuration"
+        parent="menu_partner_main"
+        groups="base.group_partner_manager"
+        sequence="99"
         />
+
+    <!-- Move address book configuration to partner menu -->
+    <record id="sales_team.menu_config_address_book" model="ir.ui.menu">
+        <field name="parent_id" ref="menu_partner_config" />
+    </record>
 
 </odoo>

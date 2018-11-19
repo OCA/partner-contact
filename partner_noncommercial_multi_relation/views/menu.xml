@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+    <!-- Create relations menu -->
     <menuitem
-        id="partner_multi_relation.menu_res_partner_relation_sales"
-        parent="partner_noncommercial.menu_partner"
+        id="menu_partner_relations"
         name="Partner Relations"
+        parent="partner_noncommercial.menu_partner_main"
         sequence="36"
         />
+
+    <!-- Move view on all relations under this menu -->
+    <record
+        id="partner_multi_relation.menu_res_partner_relation_sales"
+        model="ir.ui.menu"
+        >
+        <field name="parent_id" ref="menu_partner_relations" />
+        <field name="sequence">11</field>
+    </record>
+
+    <!-- Create relations configuration menu -->
+    <menuitem
+        id="menu_partner_relation_config"
+        name="Partner Relations"
+        parent="partner_noncommercial.menu_partner_config"
+        sequence="21"
+        />
+
+    <!-- Move configuration of relation types under this menu -->
+    <record
+        id="partner_multi_relation.menu_res_partner_relation_type"
+        model="ir.ui.menu"
+        >
+        <field name="parent_id" ref="menu_partner_relation_config" />
+        <field name="sequence">11</field>
+    </record>
 
 </odoo>
