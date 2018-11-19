@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-26 15:33+0000\n"
+"POT-Creation-Date: 2018-11-19 10:48+0000\n"
 "PO-Revision-Date: 2017-12-26 15:33+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Dutch (https://www.transifex.com/oca/teams/23907/nl/)\n"
@@ -40,7 +40,6 @@ msgid "All relation types"
 msgstr "Alle connectietypes"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_relation_all_ids
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_ids
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_relation_all_ids
 msgid "All relations with current partner"
@@ -141,21 +140,18 @@ msgid "Has former employee"
 msgstr "Heeft voormalig werknemer"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_search_relation_type_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_search_relation_type_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_search_relation_type_id
 msgid "Has relation of type"
 msgstr "heeft connectie van type"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_search_relation_partner_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_search_relation_partner_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_search_relation_partner_id
 msgid "Has relation with"
 msgstr "Heeft connectie met"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_search_relation_partner_category_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_search_relation_partner_category_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_search_relation_partner_category_id
 msgid "Has relation with a partner in category"
@@ -245,7 +241,7 @@ msgstr "Type linkerrelatie"
 #. module: partner_multi_relation
 #: model:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
 msgid "Left side of relation"
-msgstr "Linkerkant van relatie"
+msgstr "Linkerkant van connectie"
 
 #. module: partner_multi_relation
 #: model:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
@@ -268,7 +264,7 @@ msgstr "Geen %s relatie beschikbaar voor dit connectietype."
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:434
 #, python-format
 msgid "No relation type specified in vals: %s."
-msgstr ""
+msgstr "Geen connectietype opgegeven in vals: %s."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_this_partner_id
@@ -316,12 +312,6 @@ msgid "Partner Relations"
 msgstr "Connecties"
 
 #. module: partner_multi_relation
-#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
-#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
-msgid "Partner Relations Types"
-msgstr "Connectietypes"
-
-#. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation
 msgid "Partner relation"
 msgstr "Connectie"
@@ -349,7 +339,7 @@ msgid ""
 "Record and track your partners' relations. Relations may\n"
 "                    be linked to other partners with a type either directly\n"
 "                    or inversely."
-msgstr ""
+msgstr "Hou gegevens bij over de connecties van uw relaties."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all_active
@@ -363,7 +353,6 @@ msgid "Reflexive"
 msgstr "Wederkerig"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_relation_count
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_count
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_relation_count
 msgid "Relation Count"
@@ -375,13 +364,18 @@ msgid "Relation Type"
 msgstr "Type connectie"
 
 #. module: partner_multi_relation
+#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
+msgid "Relation Types"
+msgstr "Connectie types"
+
+#. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:302
 #, python-format
 msgid "Relation type incompatible with selected partner(s)."
 msgstr "Type connectie komt niet overeen met geselecteerde relatie(s)."
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_alias_search_relation_date
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_search_relation_date
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_search_relation_date
 msgid "Relation valid"
@@ -401,12 +395,12 @@ msgstr "Type connectie"
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_res_id
 msgid "Resource ID"
-msgstr ""
+msgstr "Resource ID"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_res_model
 msgid "Resource Model"
-msgstr ""
+msgstr "Resource Model"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_partner_category_right
@@ -459,7 +453,7 @@ msgstr "Symmetrisch"
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:103
 #, python-format
 msgid "The %s partner does not have category %s."
-msgstr ""
+msgstr "Relatie %s heeft niet categorie %s."
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:97
@@ -470,12 +464,12 @@ msgstr "De %s relatie is niet geldig voor dit type connectie."
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all_res_model
 msgid "The database object this relation is based on."
-msgstr ""
+msgstr "Database object waar deze connectie op is gebaseerd."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all_res_id
 msgid "The id of the object in the model this relation is based on."
-msgstr ""
+msgstr "Het id van het object in het model waarop deze connectie is gebaseerd."
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:63
@@ -518,9 +512,8 @@ msgstr "Type"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_type_id
-#, fuzzy
 msgid "Underlying Relation Type"
-msgstr "Type connectie"
+msgstr "Onderliggend connectietype"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner.py:80
@@ -531,22 +524,22 @@ msgstr "Zoek operator \"%s\" wordt niet ondersteund "
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_0
 msgid "Washing Companies"
-msgstr ""
+msgstr "Wasserettes"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_4
 msgid "Washing Gold"
-msgstr ""
+msgstr "Wasseretes van de gouden categorie"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_11
 msgid "Washing Services"
-msgstr ""
+msgstr "Wasserij diensten"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_5
 msgid "Washing Silver"
-msgstr ""
+msgstr "Wasseretes van de zilveren categorie"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type_handle_invalid_onchange
@@ -573,15 +566,3 @@ msgstr "andere"
 #, python-format
 msgid "this"
 msgstr "deze"
-
-#~ msgid "Left partner to right partner"
-#~ msgstr "Van linker naar rechterrelatie"
-
-#~ msgid "Record Type"
-#~ msgstr "Recordtype"
-
-#~ msgid "Relation"
-#~ msgstr "Connectie"
-
-#~ msgid "Right partner to left partner"
-#~ msgstr "Rechter naar linkerrelatie"
