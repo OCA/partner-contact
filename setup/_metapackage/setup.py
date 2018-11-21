@@ -23,6 +23,7 @@ setuptools.setup(
         'odoo11-addon-partner_contact_job_position',
         'odoo11-addon-partner_contact_lang',
         'odoo11-addon-partner_contact_personal_information_page',
+        'odoo11-addon-partner_employee_quantity',
         'odoo11-addon-partner_external_map',
         'odoo11-addon-partner_fax',
         'odoo11-addon-partner_firstname',
