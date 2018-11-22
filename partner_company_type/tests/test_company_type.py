@@ -1,11 +1,11 @@
-# -*- coding: utf-8 -*-
 # Copyright 2016 ACSONE SA/NV
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 from odoo.tests import TransactionCase
+from odoo.tools.misc import mute_logger
 from psycopg2 import IntegrityError
 
 
+@mute_logger('odoo.sql_db')
 class CompanyTypeTest(TransactionCase):
 
     def setUp(self):

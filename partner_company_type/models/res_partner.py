@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
 # Copyright 2017 ACSONE SA/NV
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 from odoo import fields, models
 
 
@@ -10,5 +8,6 @@ class ResPartner(models.Model):
 
     partner_company_type_id = fields.Many2one(
         'res.partner.company.type',
-        string='Company Type'
+        string='Company Type',
+        oldname='company_type_id',
     )

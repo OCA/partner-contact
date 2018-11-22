@@ -45,7 +45,6 @@
         <field name="context">{}</field>
     </record>
     
-    <!-- Odoo put partner title menu in sales_team... -->
-    <menuitem action="res_partner_company_type_act_window" id="menu_partner_company_type" name="Company Types" parent="sales_team.menu_config_address_book" sequence="4" groups="base.group_no_one"/>
+    <menuitem action="res_partner_company_type_act_window" id="menu_partner_company_type" name="Company Types" parent="contacts.menu_contacts" sequence="4" groups="base.group_no_one"/>
 
 </odoo>
