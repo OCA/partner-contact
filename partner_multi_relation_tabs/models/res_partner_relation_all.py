@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Copyright 2014-2017 Therp BV <http://therp.nl>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from openerp import api, fields, models
+# Copyright 2014-2018 Therp BV <https://therp.nl>.
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+from odoo import api, fields, models
 
 
 class ResPartnerRelationAll(models.AbstractModel):
@@ -16,6 +16,7 @@ class ResPartnerRelationAll(models.AbstractModel):
 
     def _get_additional_view_fields(self):
         """Add tab_id to view fields."""
+        # pylint: disable=no-member
         return ','.join([
             super(ResPartnerRelationAll, self)._get_additional_view_fields(),
             "CASE"
@@ -26,6 +27,7 @@ class ResPartnerRelationAll(models.AbstractModel):
 
     def _get_additional_tables(self):
         """Add res_partner_tab table to view."""
+        # pylint: disable=no-member
         return ' '.join([
             super(ResPartnerRelationAll, self)._get_additional_tables(),
             "LEFT OUTER JOIN res_partner_tab lefttab"
@@ -40,9 +42,10 @@ class ResPartnerRelationAll(models.AbstractModel):
     def onchange_partner_id(self):
         """Add tab if needed to type_selection_id domain.
 
-        This method makes sure then when a relation is added to a tab,
+        This method makes sure that when a relation is added to a tab,
         it is with a relation type meant to be placed on that tab.
         """
+        # pylint: disable=no-member
         result = super(ResPartnerRelationAll, self).onchange_partner_id()
         if 'default_tab_id' in self.env.context:
             if 'domain' not in result:

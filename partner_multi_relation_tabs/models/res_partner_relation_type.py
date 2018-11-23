@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 # Copyright 2014-2017 Therp BV <https://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# pylint: disable=no-self-use
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
 class ResPartnerRelationType(models.Model):
+    # pylint: disable=too-few-public-methods
     _inherit = 'res.partner.relation.type'
 
     tab_left_id = fields.Many2one(

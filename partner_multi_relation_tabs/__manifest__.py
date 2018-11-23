@@ -12,6 +12,13 @@
         'web_tree_many2one_clickable',
         'partner_multi_relation',
     ],
+    "demo": [
+        "demo/res_partner_category_demo.xml",
+        "demo/res_partner_tab_demo.xml",
+        "demo/res_partner_demo.xml",
+        "demo/res_partner_relation_type_demo.xml",
+        "demo/res_partner_relation_demo.xml",
+    ],
     "data": [
         "views/res_partner_tab.xml",
         "views/res_partner_relation_type.xml",
