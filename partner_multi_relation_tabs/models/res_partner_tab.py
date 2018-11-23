@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 # Copyright 2017-2018 Therp BV <https://therp.nl>.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+
+from ..tablib import Tab
 
 
 class ResPartnerTab(models.Model):
@@ -48,13 +50,6 @@ class ResPartnerTab(models.Model):
             raise ValidationError(_(
                 "You can not both specify partner_ids and other criteria."))
 
-    @api.model
-    def create(self, vals):
-        new_tab = super(ResPartnerTab, self).create(vals)
-        partner_model = self.env['res.partner']
-        partner_model._add_tab_field(new_tab)
-        return new_tab
-
     @api.multi
     def update_types(self, vals=None):
         """Update types on write or unlink.
@@ -86,17 +81,16 @@ class ResPartnerTab(models.Model):
                 vals.get('partner_category_id', False):
             self.update_types(vals)
         result = super(ResPartnerTab, self).write(vals)
-        partner_model = self.env['res.partner']
-        for this in self:
-            partner_model._update_tab_field(this)
         return result
 
     @api.multi
     def unlink(self):
         """Unlink should first remove references."""
         self.update_types()
-        partner_model = self.env['res.partner']
-        for this in self:
-            fieldname = partner_model._get_tab_fieldname(this)
-            partner_model._delete_tab_field(fieldname)
         return super(ResPartnerTab, self).unlink()
+
+    @api.model
+    def get_tabs(self):
+        """Convert information on tabs in database to array of objects."""
+        tabs = [Tab(tab_record) for tab_record in self.search([])]
+        return tabs
