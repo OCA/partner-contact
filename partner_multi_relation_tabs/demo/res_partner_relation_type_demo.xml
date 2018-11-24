@@ -27,4 +27,15 @@
         <field name="tab_right_id" ref="tab_positions" />
     </record>
 
+    <!-- Organisation has department -->
+    <record
+        id="relation_type_organisation_has_department"
+        model="res.partner.relation.type">
+        <field name="name">has department</field>
+        <field name="name_inverse">is department of</field>
+        <field name="tab_left_id" ref="tab_departments" />
+        <field name="contact_type_right">c</field>
+        <field name="partner_category_right" ref="category_department"/>
+    </record>
+
 </odoo>
