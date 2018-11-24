@@ -10,4 +10,8 @@
         <field name="name">Functionary</field>
     </record>
 
+    <record id="category_department" model="res.partner.category">
+        <field name="name">Department</field>
+    </record>
+
 </odoo>

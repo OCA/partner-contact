@@ -42,6 +42,13 @@ class TestPartnerTabs(common.TestCommon):
             'Tab field %s should not exist in %s.' %
             (fieldname, etree.tostring(tree)))
 
+    def test_view_without_pages(self):
+        """Check that _add_tab_pages does not effect view without pages."""
+        # pylint: disable=protected-access
+        view = etree.Element('view')
+        extra_fields = self.partner_model._add_tab_pages(view)
+        self.assertFalse(extra_fields)
+
     def test_tab_modifications(self):
         tab_executive = self.tab_model.create({
             'code': 'executive',
@@ -73,6 +80,13 @@ class TestPartnerTabs(common.TestCommon):
         self.assertEqual(
             type_chairperson.tab_left_id.id,
             False)
+        # It should not be possible to add category or contact type to as
+        # selection criteria to a tab meant for specific partners.
+        with self.assertRaises(ValidationError):
+            self.tab_departments.write({'contact_type': 'c'})
+        with self.assertRaises(ValidationError):
+            self.tab_departments.write({
+                'partner_category_id': self.category_government.id})
 
     def test_type_modifications(self):
         self.assertTrue(bool(self.tab_board))
@@ -123,3 +137,22 @@ class TestPartnerTabs(common.TestCommon):
         self.assertEqual(
             onchange_result['domain']['type_selection_id'][-1],
             ('tab_id', '=', self.tab_board.id))
+
+    def test_compute_visibility(self):
+        """Check the computation of visibility on partners."""
+        # pylint: disable=protected-access
+        main_partner = self.env.ref('base.main_partner')
+        main_partner._compute_tabs_visibility()
+        tab_obj = Tab(self.tab_departments)
+        fieldname = tab_obj.get_fieldname()
+        visible_fieldname = tab_obj.get_visible_fieldname()
+        self.assertIn(visible_fieldname, main_partner._fields)
+        self.assertIn(fieldname, main_partner._fields)
+        self.assertEqual(main_partner[visible_fieldname], True)
+        department_relations = main_partner[fieldname]
+        self.assertTrue(len(department_relations) >= 1)
+        departments = [
+            relation.other_partner_id for relation in department_relations]
+        for department in departments:
+            self.assertIn(
+                self.category_department, department.category_id)

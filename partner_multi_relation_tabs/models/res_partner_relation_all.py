@@ -48,11 +48,10 @@ class ResPartnerRelationAll(models.AbstractModel):
         # pylint: disable=no-member
         result = super(ResPartnerRelationAll, self).onchange_partner_id()
         if 'default_tab_id' in self.env.context:
-            if 'domain' not in result:
-                result['domain'] = {}
-            if 'type_selection_id' not in result['domain']:
-                result['domain']['type_selection_id'] = []
-            selection_domain = result['domain']['type_selection_id']
-            selection_domain.append(
+            result['domain'] = result['domain'] if 'domain' in result else {}
+            result['domain']['type_selection_id'] = \
+                result['domain']['type_selection_id'] \
+                if 'type_selection_id' in result['domain'] else {}
+            result['domain']['type_selection_id'].append(
                 ('tab_id', '=', self.env.context['default_tab_id']))
         return result

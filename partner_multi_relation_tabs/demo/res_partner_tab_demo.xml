@@ -21,4 +21,14 @@
         <field name="partner_category_id" ref="category_functionary" />
     </record>
 
+    <!-- Tab that will only be shown on our own main company partner. -->
+    <record id="tab_departments" model="res.partner.tab">
+        <field name="code">departments</field>
+        <field name="name">Our departments</field>
+        <field
+            name="partner_ids"
+            eval="[(6,0,[ref('base.main_partner')])]"
+            />
+    </record>
+
 </odoo>

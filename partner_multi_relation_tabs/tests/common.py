@@ -21,6 +21,8 @@ class TestCommon(common.SingleTransactionCase):
             'partner_multi_relation_tabs.category_government')
         self.category_functionary = self.env.ref(
             'partner_multi_relation_tabs.category_functionary')
+        self.category_department = self.env.ref(
+            'partner_multi_relation_tabs.category_department')
         # Tabs.
         self.tab_committee = self.env.ref(
             'partner_multi_relation_tabs.tab_committee')
@@ -28,6 +30,8 @@ class TestCommon(common.SingleTransactionCase):
             'partner_multi_relation_tabs.tab_board')
         self.tab_positions = self.env.ref(
             'partner_multi_relation_tabs.tab_positions')
+        self.tab_departments = self.env.ref(
+            'partner_multi_relation_tabs.tab_departments')
         # Types.
         self.type_chairperson = self.env.ref(
             'partner_multi_relation_tabs'
