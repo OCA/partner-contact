@@ -25,4 +25,24 @@
         <field name="ref">HS</field>
     </record>
 
+    <record id="partner_programming_department" model="res.partner">
+        <field
+            name="category_id"
+            eval="[(6,0,[ref('category_department')])]"
+            />
+        <field name="name">Programming</field>
+        <field name="is_company">1</field>
+        <field name="ref">HACKDEP</field>
+    </record>
+
+    <record id="partner_helpdesk_department" model="res.partner">
+        <field
+            name="category_id"
+            eval="[(6,0,[ref('category_department')])]"
+            />
+        <field name="name">Helpdesk</field>
+        <field name="is_company">1</field>
+        <field name="ref">HELPDEP</field>
+    </record>
+
 </odoo>
