@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2018 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-# pylint: disable=protected-access
 from . import common
 
 from ..tablib import Tab
@@ -25,7 +24,17 @@ class TestTab(common.TestCommon):
         tab_obj = Tab(self.tab_positions)
         self.assertTrue(
             tab_obj.compute_visibility(self.partner_important_person),
-            'Board tab should be visible for functionary.')
+            'Positions tab should be visible for functionary.')
         self.assertFalse(
             tab_obj.compute_visibility(self.partner_common_person),
-            'Board tab should not be visible for non-functionary.')
+            'Positions tab should not be visible for non-functionary.')
+        # Tab for departments should only be visible for main partner
+        self.assertTrue(bool(self.tab_departments))
+        self.assertTrue(bool(self.partner_big_company))
+        tab_obj = Tab(self.tab_departments)
+        self.assertTrue(
+            tab_obj.compute_visibility(self.env.ref('base.main_partner')),
+            'Department tab should be visible for main partner.')
+        self.assertFalse(
+            tab_obj.compute_visibility(self.partner_big_company),
+            'Department tab should not be visible for other partners.')
