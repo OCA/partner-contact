@@ -1,15 +1,14 @@
-# -*- coding: utf-8 -*-
-# Copyright 2014-2018 Therp BV <https://therp.nl>
+# Copyright 2014-2018 Therp BV <https://therp.nl>.[:w
+
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "name": "Show partner relations in own tab",
-    "version": "10.0.1.0.0",
+    "version": "11.0.1.0.0",
     "author": "Therp BV,Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "complexity": "normal",
     "category": "Customer Relationship Management",
     "depends": [
-        'web_tree_many2one_clickable',
         'partner_multi_relation',
     ],
     "demo": [

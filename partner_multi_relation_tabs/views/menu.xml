@@ -10,7 +10,7 @@
 
         <menuitem
             id="menu_res_partner_tab"
-            parent="sales_team.menu_config_address_book"
+            parent="partner_multi_relation.menu_res_partner_relation"
             action="action_res_partner_tab"
             sequence="80"
         />
