@@ -25,7 +25,7 @@ msgid "Birthdate"
 msgstr "Urtebetetxea"
 
 #. module: partner_contact_birthdate
-#: code:addons/partner_contact_birthdate/models.py:52
+#: code:addons/partner_contact_birthdate/models.py:54
 #, python-format
 msgid ""
 "Could not convert '{0.birthdate}' to date in res.partner {0.id} ({0.name}). "

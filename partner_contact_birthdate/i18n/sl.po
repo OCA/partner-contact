@@ -24,14 +24,14 @@ msgid "Birthdate"
 msgstr "Rojstni datum"
 
 #. module: partner_contact_birthdate
-#: code:addons/partner_contact_birthdate/models.py:52
+#: code:addons/partner_contact_birthdate/models.py:54
 #, python-format
 msgid ""
 "Could not convert '{0.birthdate}' to date in res.partner {0.id} ({0.name}). "
 "Skipping."
 msgstr ""
-"Ni možna pretvorba  '{0.birthdate}' v datum v res.partner {0.id} ({0."
-"name}). Preskoči."
+"Ni možna pretvorba  '{0.birthdate}' v datum v res.partner {0.id} ({0.name}). "
+"Preskoči."
 
 #. module: partner_contact_birthdate
 #: model:ir.model,name:partner_contact_birthdate.model_res_partner
