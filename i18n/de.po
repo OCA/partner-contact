@@ -38,7 +38,7 @@ msgstr ""
 "#  - id_number: browse_record der zu prüfenden ID"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:70
+#: code:addons/partner_identification/models/res_partner_id_category.py:72
 #, python-format
 msgid "%s is not a valid %s identifier"
 msgstr "%s ist keine zulässige %s Kennung"
@@ -91,7 +91,7 @@ msgid "Display Name"
 msgstr "Anzeigebezeichnung"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:66
+#: code:addons/partner_identification/models/res_partner_id_category.py:68
 #, python-format
 msgid ""
 "Error when evaluating the id_category validation code::\n"
@@ -262,6 +262,14 @@ msgid ""
 msgstr ""
 "Der Ort an dem dieser Ausweis ausgestellt wurde. Zum Beispiel das Aussteller-"
 "Land vom Reisepass oder des Personalausweises"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner.py:130
+#, python-format
+msgid ""
+"This %s has multiple IDs of this type (%s), so a write via the %s field is "
+"not possible. In order to fix this, please use the IDs tab."
+msgstr ""
 
 #. module: partner_identification
 #: selection:res.partner.id_number,status:0

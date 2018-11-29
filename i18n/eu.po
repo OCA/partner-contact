@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:70
+#: code:addons/partner_identification/models/res_partner_id_category.py:72
 #, python-format
 msgid "%s is not a valid %s identifier"
 msgstr ""
@@ -83,7 +83,7 @@ msgid "Display Name"
 msgstr "Izena erakutsi"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:66
+#: code:addons/partner_identification/models/res_partner_id_category.py:68
 #, python-format
 msgid ""
 "Error when evaluating the id_category validation code::\n"
@@ -244,6 +244,14 @@ msgstr ""
 msgid ""
 "The place where the ID has been issued. For example the country for "
 "passports and visa"
+msgstr ""
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner.py:130
+#, python-format
+msgid ""
+"This %s has multiple IDs of this type (%s), so a write via the %s field is "
+"not possible. In order to fix this, please use the IDs tab."
 msgstr ""
 
 #. module: partner_identification
