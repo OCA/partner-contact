@@ -32,22 +32,24 @@ class Partner(models.Model):
 
     # Make the old Char field to reflect the new Date field
     birthdate = fields.Char(
-        compute="_birthdate_compute",
-        inverse="_birthdate_inverse",
+        compute="_compute_birthdate",
+        inverse="_inverse_birthdate",
         store=True)
 
-    @api.one
+    @api.multi
     @api.depends("birthdate_date")
-    def _birthdate_compute(self):
+    def _compute_birthdate(self):
         """Store a string of the new date in the old field."""
-        self.birthdate = self.birthdate_date
+        for this in self:
+            this.birthdate = this.birthdate_date
 
-    @api.one
-    def _birthdate_inverse(self):
+    @api.multi
+    def _inverse_birthdate(self):
         """Convert the old Char date to the new Date format."""
-        try:
-            self.birthdate_date = self.birthdate
-        except ValueError:
-            _logger.warn(
-                _("Could not convert '{0.birthdate}' to date in "
-                  "res.partner {0.id} ({0.name}). Skipping.").format(self))
+        for this in self:
+            try:
+                this.birthdate_date = this.birthdate
+            except ValueError:
+                _logger.warn(
+                    _("Could not convert '{0.birthdate}' to date in "
+                      "res.partner {0.id} ({0.name}). Skipping.").format(this))
