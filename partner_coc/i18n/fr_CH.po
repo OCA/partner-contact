@@ -25,7 +25,6 @@ msgid "Chamber Of Commerce Registration Number"
 msgstr ""
 
 #. module: partner_coc
-#: model:ir.model.fields,field_description:partner_coc.field_res_partner_alias_coc_registration_number
 #: model:ir.model.fields,field_description:partner_coc.field_res_partner_coc_registration_number
 #: model:ir.model.fields,field_description:partner_coc.field_res_users_coc_registration_number
 msgid "CoC Registration Number"
@@ -33,5 +32,8 @@ msgstr ""
 
 #. module: partner_coc
 #: model:ir.model,name:partner_coc.model_res_partner
-msgid "Partner"
-msgstr "Partenaire"
+msgid "Contact"
+msgstr ""
+
+#~ msgid "Partner"
+#~ msgstr "Partenaire"
