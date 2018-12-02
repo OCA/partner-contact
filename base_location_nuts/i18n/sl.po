@@ -65,19 +65,19 @@ msgid "Display Name"
 msgstr "Prikazni naziv"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:138
+#: code:addons/base_location_nuts/wizard/nuts_import.py:139
 #, python-format
 msgid "Downloaded file is not a valid XML file"
 msgstr "Prenesena datoteka ni veljavna XML datoteka"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:130
+#: code:addons/base_location_nuts/wizard/nuts_import.py:131
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Napaka %d pri poskusu prenosa datoteke %s."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:126
+#: code:addons/base_location_nuts/wizard/nuts_import.py:127
 #, python-format
 msgid "Got an error when trying to download the file: %s."
 msgstr "Napaka pri poskusu prenosa datoteke: %s."
@@ -195,6 +195,11 @@ msgid "Name"
 msgstr "Naziv"
 
 #. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_not_updatable
+msgid "Not Updatable"
+msgstr ""
+
+#. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_parent_id
 msgid "Parent"
 msgstr ""
@@ -226,12 +231,16 @@ msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
+#, fuzzy
 msgid ""
 "This wizard will download the lastest version of\n"
 "                NUTS 2013 from Europe RAMON metadata service.\n"
 "                Updating or creating new NUTS entries if not\n"
 "                found already in the system, and DELETING MISSING\n"
-"                ENTRIES from new downloaded file."
+"                ENTRIES from new downloaded file.\n"
+"\n"
+"                Update or deletion is prevented for NUTS entries with the "
+"flag 'Not updatable'."
 msgstr ""
 "Ta čarovnik bo prenesel zadnjo verzijo\n"
 "                NUTS 2013 iz evropske RAMON metadata storitve.\n"
@@ -240,7 +249,7 @@ msgstr ""
 "                VNOSOV iz prenesene datoteke."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:108
+#: code:addons/base_location_nuts/wizard/nuts_import.py:109
 #, python-format
 msgid "Value not found for mandatory field %s"
 msgstr "Vrednost obveznega polja %s ni najdena"
