@@ -42,7 +42,7 @@ To configure job positions, you need to:
 
 * Go to *Contacts > Configuration > Job Positions*.
 
-.. figure:: path/to/local/image.png
+.. figure:: https://raw.githubusercontent.com/OCA/partner-contact/11.0/partner_contact_job_position/path/to/local/image.png
    :alt: alternative description
    :width: 600 px
 
