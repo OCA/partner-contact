@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_partner_merge
-# 
+#
 # Translators:
 # Quentin THEURET <odoo@kerpeo.com>, 2017
 # OCA Transbot <transbot@odoo-community.org>, 2017
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2017-07-15 05:28+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: base_partner_merge
@@ -26,8 +26,7 @@ msgstr "Êtes-vous sûr de vouloir exécuter la fusion de vos contacts ?"
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
-msgid ""
-"Are you sure to execute the list of automatic merges of your contacts ?"
+msgid "Are you sure to execute the list of automatic merges of your contacts ?"
 msgstr ""
 "Êtes-vous sûr de vouloir exécuter la liste des fusions automatiques de vos "
 "contacts ?"
@@ -168,12 +167,14 @@ msgid ""
 "Selected contacts will be merged together.\n"
 "                            All documents linked to one of these contacts\n"
 "                            will be redirected to the destination contact.\n"
-"                            You can remove contacts from this list to avoid merging them."
+"                            You can remove contacts from this list to avoid "
+"merging them."
 msgstr ""
 "Les contacts sélectionnés seront fusionnés ensemble.\n"
 "Tous les documents liés à l'un de ces contacts seront\n"
 "redirigés vers le contact de destination.\n"
-"Vous pouvez supprimer les contacts de cette liste pour éviter des les fusionner."
+"Vous pouvez supprimer les contacts de cette liste pour éviter des les "
+"fusionner."
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -195,7 +196,5 @@ msgstr "base.partner.merge.automatic.wizard"
 msgid "base.partner.merge.line"
 msgstr "base.partner.merge.line"
 
-#. module: base_partner_merge
-#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
-msgid "or"
-msgstr "ou"
+#~ msgid "or"
+#~ msgstr "ou"

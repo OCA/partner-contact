@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_partner_merge
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
@@ -28,8 +28,7 @@ msgstr ""
 
 #. module: base_partner_merge
 #: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
-msgid ""
-"Are you sure to execute the list of automatic merges of your contacts ?"
+msgid "Are you sure to execute the list of automatic merges of your contacts ?"
 msgstr ""
 "Sind Sie sicher, die Liste der automatischen Zusammenführungen Ihrer "
 "Kontakte auszuführen?"
@@ -173,14 +172,15 @@ msgid ""
 "Selected contacts will be merged together.\n"
 "                            All documents linked to one of these contacts\n"
 "                            will be redirected to the destination contact.\n"
-"                            You can remove contacts from this list to avoid merging them."
+"                            You can remove contacts from this list to avoid "
+"merging them."
 msgstr ""
 "Ausgewählte Kontakte werden zusammengeführt.\n"
 "                            Alle Dokumente, die mit einem dieser Kontakte \n"
 "                            verknüpft sind werden an den Zielkontakt "
 "übergeleitet.\n"
-"                            Sie können Kontakte aus dieser Liste entfernen, "
-"\n"
+"                            Sie können Kontakte aus dieser Liste "
+"entfernen, \n"
 "                            um ein Zusammenführen zu vermeiden."
 
 #. module: base_partner_merge
@@ -204,7 +204,5 @@ msgstr "base.partner.merge.automatic.wizard"
 msgid "base.partner.merge.line"
 msgstr "base.partner.merge.line"
 
-#. module: base_partner_merge
-#: model:ir.ui.view,arch_db:base_partner_merge.base_partner_merge_automatic_wizard_form
-msgid "or"
-msgstr "oder"
+#~ msgid "or"
+#~ msgstr "oder"
