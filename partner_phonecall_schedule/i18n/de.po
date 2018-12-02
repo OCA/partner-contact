@@ -50,15 +50,15 @@ msgstr ""
 "Am Besten Termin vereinbaren, wenn der Kontakt erwartet angerufen zu werden."
 
 #. module: partner_phonecall_schedule
+#: model:ir.model,name:partner_phonecall_schedule.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_phonecall_schedule
 #: model:ir.model.fields,help:partner_phonecall_schedule.field_res_partner_phonecall_available
 #: model:ir.model.fields,help:partner_phonecall_schedule.field_res_users_phonecall_available
 msgid "Is it now a good time to call this partner?"
 msgstr "Ist jetzt ein geeigneter Moment diesen Partner anzurufen?"
-
-#. module: partner_phonecall_schedule
-#: model:ir.model,name:partner_phonecall_schedule.model_res_partner
-msgid "Partner"
-msgstr "Partner"
 
 #. module: partner_phonecall_schedule
 #: model:ir.ui.view,arch_db:partner_phonecall_schedule.view_partner_form
@@ -70,3 +70,6 @@ msgstr "Anrufe"
 #: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_users_phonecall_calendar_ids
 msgid "Phonecall schedule"
 msgstr "Anrufplanung"
+
+#~ msgid "Partner"
+#~ msgstr "Partner"
