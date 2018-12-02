@@ -18,11 +18,11 @@ msgstr ""
 
 #. module: partner_vat_unique
 #: model:ir.model,name:partner_vat_unique.model_res_partner
-msgid "Partner"
+msgid "Contact"
 msgstr ""
 
 #. module: partner_vat_unique
-#: code:addons/partner_vat_unique/models/res_partner.py:28
+#: code:addons/partner_vat_unique/models/res_partner.py:27
 #, fuzzy, python-format
 msgid "The VAT %s already exists in another partner."
 msgstr "¡El NIF debe de ser único por empresa!"
