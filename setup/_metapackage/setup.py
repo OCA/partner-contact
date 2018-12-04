@@ -19,6 +19,7 @@ setuptools.setup(
         'odoo11-addon-partner_affiliate',
         'odoo11-addon-partner_coc',
         'odoo11-addon-partner_contact_department',
+        'odoo11-addon-partner_contact_gender',
         'odoo11-addon-partner_contact_in_several_companies',
         'odoo11-addon-partner_contact_job_position',
         'odoo11-addon-partner_contact_lang',
