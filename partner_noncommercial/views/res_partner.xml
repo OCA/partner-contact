@@ -8,7 +8,7 @@
             <filter name="type_person" position="before">
                 <filter
                     string="All partners"
-                    name="type_relation"
+                    name="type_contact"
                     domain="['|',('is_company','=',1),('type','=','contact')]"
                     />
             </filter>
