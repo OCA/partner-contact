@@ -51,7 +51,6 @@ msgstr "Organisaties"
 
 #. module: partner_noncommercial
 #: model:ir.ui.menu,name:partner_noncommercial.menu_partner
-#: model:ir.ui.menu,name:partner_noncommercial.menu_partner_main
 msgid "Partners"
 msgstr "Alle relaties"
 

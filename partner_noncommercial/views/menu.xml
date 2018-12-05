@@ -1,29 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-   <!-- Provide non-commercial partner menu -->
-    <menuitem
-        id="menu_partner_main"
-        name="Partners"
-        parent="contacts.menu_contacts"
-        groups="base.group_user"
-        sequence="4"
-        />
     <menuitem
         id="menu_partner"
         name="Partners"
-        parent="menu_partner_main"
-        groups="base.group_user"
-        sequence="4"
+        parent="contacts.menu_contacts"
+        sequence="11"
         />
 
-    <!-- Add menu item to show all relations -->
+    <!-- Add menu item to show all partners -->
     <record id="action_all_partner_form" model="ir.actions.act_window">
         <field name="name">All partners</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">res.partner</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,kanban,form</field>
-        <field name="context">{"search_default_type_relation": 1}</field>
+        <field name="context">{"search_default_type_contact": 1}</field>
         <field name="search_view_id" ref="base.view_res_partner_filter"/>
     </record>
     <menuitem
