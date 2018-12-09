@@ -45,7 +45,7 @@ msgid "Error! You cannot create recursive sectors."
 msgstr ""
 
 #. module: partner_sector
-#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_id_4236
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_id_4252
 msgid "ID"
 msgstr "ID"
 
@@ -97,6 +97,11 @@ msgid "Partner"
 msgstr ""
 
 #. module: partner_sector
+#: model:ir.ui.view,arch_db:partner_sector.view_sale_config_settings
+msgid "Partner Sector"
+msgstr ""
+
+#. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_alias_secondary_sector_ids
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_secondary_sector_ids
 #: model:ir.model.fields,field_description:partner_sector.field_res_users_secondary_sector_ids
@@ -111,6 +116,16 @@ msgid "Sector"
 msgstr ""
 
 #. module: partner_sector
+#: model:ir.ui.view,arch_db:partner_sector.view_general_configuration
+msgid "Sector for individual"
+msgstr ""
+
+#. module: partner_sector
+#: model:ir.ui.view,arch_db:partner_sector.view_sale_config_settings
+msgid "Sector for individuals"
+msgstr ""
+
+#. module: partner_sector
 #: model:ir.actions.act_window,name:partner_sector.res_partner_sector_action
 #: model:ir.ui.menu,name:partner_sector.menu_res_partner_sector
 #: model:ir.ui.view,arch_db:partner_sector.res_partner_sector_tree_view
@@ -118,7 +133,34 @@ msgid "Sectors"
 msgstr ""
 
 #. module: partner_sector
+#: model:ir.model.fields,help:partner_sector.field_sale_config_settings_group_use_partner_sector_for_person
+msgid "Set if you want to be able to use sectors for individuals also."
+msgstr ""
+
+#. module: partner_sector
+#: model:ir.model.fields,help:partner_sector.field_base_config_settings_group_use_partner_sector_for_person
+msgid "Set if you want to be able use sectors for individuals also."
+msgstr ""
+
+#. module: partner_sector
 #: code:addons/partner_sector/models/res_partner.py:22
 #, python-format
 msgid "The main sector must be different from the secondary sectors."
+msgstr ""
+
+#. module: partner_sector
+#: model:ir.model.fields,field_description:partner_sector.field_base_config_settings_group_use_partner_sector_for_person
+#: model:ir.model.fields,field_description:partner_sector.field_sale_config_settings_group_use_partner_sector_for_person
+#: model:res.groups,name:partner_sector.group_use_partner_sector_for_person
+msgid "Use sector for individuals"
+msgstr ""
+
+#. module: partner_sector
+#: model:ir.model,name:partner_sector.model_base_config_settings
+msgid "base.config.settings"
+msgstr ""
+
+#. module: partner_sector
+#: model:ir.model,name:partner_sector.model_sale_config_settings
+msgid "sale.config.settings"
 msgstr ""
