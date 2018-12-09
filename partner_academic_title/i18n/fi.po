@@ -20,15 +20,15 @@ msgstr ""
 
 #. module: partner_academic_title
 #: model:ir.actions.act_window,name:partner_academic_title.open_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_res_partner_academic_title_display
+#: model:ir.model.fields,field_description:partner_academic_title.field_res_partner_academic_title_ids
 #: model:ir.ui.menu,name:partner_academic_title.menu_academic_title
-#: view:res.partner:partner_academic_title.view_partner_form
-#: field:res.partner,academic_title_display:0
-#: field:res.partner,academic_title_ids:0
+#: model:ir.ui.view,arch_db:partner_academic_title.view_partner_form
 msgid "Academic Titles"
 msgstr ""
 
 #. module: partner_academic_title
-#: field:partner.academic.title,active:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_active
 msgid "Active"
 msgstr ""
 
@@ -38,17 +38,17 @@ msgid "B.S."
 msgstr ""
 
 #. module: partner_academic_title
-#: field:partner.academic.title,create_uid:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_create_uid
 msgid "Created by"
 msgstr "Luonut"
 
 #. module: partner_academic_title
-#: field:partner.academic.title,create_date:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_create_date
 msgid "Created on"
 msgstr "Luotu"
 
 #. module: partner_academic_title
-#: field:partner.academic.title,display_name:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_display_name
 msgid "Display Name"
 msgstr ""
 
@@ -58,7 +58,7 @@ msgid "Ed.D"
 msgstr ""
 
 #. module: partner_academic_title
-#: field:partner.academic.title,id:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_id
 msgid "ID"
 msgstr "ID"
 
@@ -68,18 +68,18 @@ msgid "J.D."
 msgstr ""
 
 #. module: partner_academic_title
-#: field:partner.academic.title,__last_update:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title___last_update
 #, fuzzy
 msgid "Last Modified on"
 msgstr "Viimeksi päivittänyt"
 
 #. module: partner_academic_title
-#: field:partner.academic.title,write_uid:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_write_uid
 msgid "Last Updated by"
 msgstr "Viimeksi päivitetty"
 
 #. module: partner_academic_title
-#: field:partner.academic.title,write_date:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_write_date
 msgid "Last Updated on"
 msgstr "Viimeksi päivittänyt"
 
@@ -104,7 +104,7 @@ msgid "M.S."
 msgstr ""
 
 #. module: partner_academic_title
-#: field:partner.academic.title,name:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_name
 msgid "Name"
 msgstr "Nimi"
 
@@ -129,7 +129,7 @@ msgid "Psy.D."
 msgstr ""
 
 #. module: partner_academic_title
-#: field:partner.academic.title,sequence:0
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_sequence
 msgid "Sequence"
 msgstr ""
 
@@ -139,6 +139,11 @@ msgid "Th.D."
 msgstr ""
 
 #. module: partner_academic_title
-#: help:partner.academic.title,sequence:0
+#: model:ir.model.fields,help:partner_academic_title.field_partner_academic_title_sequence
 msgid "defines the order to display titles"
+msgstr ""
+
+#. module: partner_academic_title
+#: model:ir.model,name:partner_academic_title.model_partner_academic_title
+msgid "partner.academic.title"
 msgstr ""
