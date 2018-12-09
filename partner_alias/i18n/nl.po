@@ -264,6 +264,11 @@ msgid "Employee"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_facebook
+msgid "Facebook"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_fax
 msgid "Fax"
 msgstr ""
@@ -409,9 +414,19 @@ msgid "Last name"
 msgstr "Achternaam"
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_linkedin
+msgid "Linkedin"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_contact_id
 msgid "Main Contact"
 msgstr "Hoofd contact"
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_mastodon
+msgid "Mastodon"
+msgstr ""
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_image_medium
@@ -581,6 +596,11 @@ msgid "Signup token"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_skype
+msgid "Skype"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_image_small
 msgid "Small-sized image"
 msgstr ""
@@ -677,6 +697,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_title
 msgid "Title"
 msgstr "Titel"
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_twitter
+msgid "Twitter"
+msgstr ""
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_message_unread
