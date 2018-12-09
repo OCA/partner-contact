@@ -24,7 +24,13 @@ msgid "Contact"
 msgstr "Kontakt"
 
 #. module: partner_fax
-#: model:ir.model.fields,field_description:partner_fax.field_res_partner_fax
-#: model:ir.model.fields,field_description:partner_fax.field_res_users_fax
+#: model:ir.model.fields,field_description:partner_fax.field_res_partner__fax
 msgid "Fax"
+msgstr ""
+
+#. module: partner_fax
+#: model_terms:ir.ui.view,arch_db:partner_fax.view_partner_form_fax
+#: model_terms:ir.ui.view,arch_db:partner_fax.view_partner_short_form_fax
+#: model_terms:ir.ui.view,arch_db:partner_fax.view_partner_simple_form_fax
+msgid "Fax..."
 msgstr ""
