@@ -317,6 +317,7 @@ msgid "Partner Relation Type"
 msgstr "Type de relation de partenaire"
 
 #. module: partner_multi_relation
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_sales
 #: model:ir.ui.view,arch_db:partner_multi_relation.tree_res_partner_relation_all
 msgid "Partner Relations"
 msgstr "Relations de partenaires"
@@ -400,7 +401,6 @@ msgstr "Relation valide"
 
 #. module: partner_multi_relation
 #: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_all
-#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_sales
 #: model:ir.ui.view,arch_db:partner_multi_relation.view_partner_form
 msgid "Relations"
 msgstr "Relations"
@@ -522,7 +522,7 @@ msgid "This relation is the same from right to left as from left to right"
 msgstr "Cette relation est la même de droite à gauche que de gauche à droite."
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_4182
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_4198
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_type_id
 msgid "Type"
 msgstr "Type"
