@@ -194,6 +194,11 @@ msgid "Name"
 msgstr "Naziv"
 
 #. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_not_updatable
+msgid "Not updatable"
+msgstr ""
+
+#. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_parent_left
 msgid "Parent Left"
 msgstr "Levo nadrejeni"
@@ -230,12 +235,16 @@ msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
+#, fuzzy
 msgid ""
 "This wizard will download the lastest version of\n"
 "                NUTS 2013 from Europe RAMON metadata service.\n"
 "                Updating or creating new NUTS entries if not\n"
 "                found already in the system, and DELETING MISSING\n"
-"                ENTRIES from new downloaded file."
+"                ENTRIES from new downloaded file.\n"
+"\n"
+"                Update or deletion is prevented for NUTS entries with the "
+"flag 'Not updatable'."
 msgstr ""
 "Ta čarovnik bo prenesel zadnjo verzijo\n"
 "                NUTS 2013 iz evropske RAMON metadata storitve.\n"
