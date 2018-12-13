@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: odoomrp-wip (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-07 10:44+0000\n"
-"PO-Revision-Date: 2015-09-10 16:43+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"PO-Revision-Date: 2018-12-14 18:58+0000\n"
+"Last-Translator: alvarorib <alvaro.ribeiro@exo.pt>\n"
 "Language-Team: Portuguese (http://www.transifex.com/oca/odoomrp-wip-8-0/"
 "language/pt/)\n"
 "Language: pt\n"
@@ -18,13 +18,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 3.3\n"
 
 #. module: partner_risk_insurance
 #: model:ir.model.fields,help:partner_risk_insurance.field_res_partner_alias_risk_insurance_code
 #: model:ir.model.fields,help:partner_risk_insurance.field_res_partner_risk_insurance_code
 #: model:ir.model.fields,help:partner_risk_insurance.field_res_users_risk_insurance_code
 msgid "Code assigned to this partner by the risk insurance company."
-msgstr ""
+msgstr "Código atribuído a este parceiro pela companhia de seguros de crédito."
 
 #. module: partner_risk_insurance
 #: model:ir.model.fields,field_description:partner_risk_insurance.field_res_partner_alias_company_credit_limit
@@ -64,7 +65,7 @@ msgstr "Data em que o seguro foi concedido pela companhia de seguros."
 #: model:ir.model.fields,field_description:partner_risk_insurance.field_res_partner_risk_insurance_code
 #: model:ir.model.fields,field_description:partner_risk_insurance.field_res_users_risk_insurance_code
 msgid "Insurance Code"
-msgstr "Código de Seguros"
+msgstr "Código do Seguro"
 
 #. module: partner_risk_insurance
 #: model:ir.model.fields,field_description:partner_risk_insurance.field_res_partner_alias_risk_insurance_code_2
@@ -85,7 +86,7 @@ msgstr "Data da Concessão do Seguro"
 #: model:ir.model.fields,field_description:partner_risk_insurance.field_res_partner_risk_insurance_requested
 #: model:ir.model.fields,field_description:partner_risk_insurance.field_res_users_risk_insurance_requested
 msgid "Insurance Requested"
-msgstr "Seguro Requerido"
+msgstr "Seguro Pedido"
 
 #. module: partner_risk_insurance
 #: model:ir.model.fields,field_description:partner_risk_insurance.field_res_partner_alias_risk_insurance_coverage_percent
@@ -107,13 +108,12 @@ msgstr "Limite do Seguro de Crédito"
 #: model:ir.model.fields,help:partner_risk_insurance.field_res_users_risk_insurance_requested
 msgid ""
 "Mark this field if an insurance was requested for the credit of this partner."
-msgstr ""
-"Marque este campo se o seguro foi solicitado para o crédito deste terceiro."
+msgstr "Marque este campo se o seguro foi pedido para o crédito deste terceiro."
 
 #. module: partner_risk_insurance
 #: model:ir.model,name:partner_risk_insurance.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Parceiro"
 
 #. module: partner_risk_insurance
 #: model:ir.model.fields,help:partner_risk_insurance.field_res_partner_alias_risk_insurance_coverage_percent
@@ -128,3 +128,5 @@ msgstr "Percentual do crédito coberto pelo seguro."
 #: model:ir.model.fields,help:partner_risk_insurance.field_res_users_risk_insurance_code_2
 msgid "Secondary code assigned to this partner by the risk insurance company."
 msgstr ""
+"Código secundário atribuído a este parceiro pela companhia de seguros de "
+"crédito."
