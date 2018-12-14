@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="res_partner_nominatim_form" model="ir.ui.view">
+            <field name="name">res.partner.geolocation.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook[last()]" position="inside">
+                    <page string="Geolocation" name="geo_location">
+                        <group>
+                            <group>
+                                <button string="Geolocate" name="geo_localize" icon="fa-check" type="object"/>
+                            </group>
+                            <group>
+                                <field name="date_localization" />
+                                <field name="partner_latitude" />
+                                <field name="partner_longitude" />
+                            </group>    
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+</odoo>
