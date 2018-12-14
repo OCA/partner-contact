@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2017 ACSONE SA/NV
+<!-- Copyright 2017-2018 ACSONE SA/NV
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
@@ -44,8 +44,11 @@
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>
-    
-    <!-- Odoo put partner title menu in sales_team... -->
-    <menuitem action="res_partner_company_type_act_window" id="menu_partner_company_type" name="Company Types" parent="sales_team.menu_config_address_book" sequence="4" groups="base.group_no_one"/>
+
+    <menuitem action="res_partner_company_type_act_window"
+              id="menu_partner_company_type"
+              name="Company Types"
+              parent="contacts.res_partner_menu_config"
+              sequence="4" groups="base.group_no_one"/>
 
 </odoo>
