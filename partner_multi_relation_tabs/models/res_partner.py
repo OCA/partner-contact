@@ -14,15 +14,6 @@ _logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    @api.multi
-    def browse(self, arg=None, prefetch=None):
-        for tab in self._get_tabs():
-            fieldname = tab.get_fieldname()
-            if fieldname not in self._fields:
-                # Check this for performance reasons.
-                self.add_field(tab)
-        return super(ResPartner, self).browse(arg=arg, prefetch=prefetch)
-
     @api.model
     def fields_view_get(
             self, view_id=None, view_type='form', toolbar=False,
@@ -73,6 +64,10 @@ class ResPartner(models.Model):
     def _compute_tabs_visibility(self):
         """Compute for all tabs wether they should be visible."""
         for tab in self._get_tabs():  # get all tabs
+            fieldname = tab.get_fieldname()
+            if fieldname not in self._fields:
+                # Check this for performance reasons.
+                self.add_field(tab)
             for this in self:
                 this[tab.get_visible_fieldname()] = \
                     tab.compute_visibility(this)
