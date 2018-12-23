@@ -31,46 +31,46 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_uid
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__create_uid
 msgid "Created by"
 msgstr "Creat de"
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website_create_date
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__create_date
 msgid "Created on"
 msgstr "Creat la"
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website_display_name
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__display_name
 msgid "Display Name"
 msgstr "Nume Afişat"
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website_id
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__id
 msgid "ID"
 msgstr "ID"
 
 #. module: partner_external_map
-#: model:ir.model.fields,help:partner_external_map.field_map_website_address_url
+#: model:ir.model.fields,help:partner_external_map.field_map_website__address_url
 msgid "In this URL, {ADDRESS} will be replaced by the address."
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,help:partner_external_map.field_map_website_lat_lon_url
+#: model:ir.model.fields,help:partner_external_map.field_map_website__lat_lon_url
 msgid ""
 "In this URL, {LATITUDE} and {LONGITUDE} will be replaced by the latitude and "
 "longitude (requires the module 'base_geolocalize')"
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,help:partner_external_map.field_map_website_route_address_url
+#: model:ir.model.fields,help:partner_external_map.field_map_website__route_address_url
 msgid ""
 "In this URL, {START_ADDRESS} and {DEST_ADDRESS} will be replaced by the "
 "start and destination addresses."
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,help:partner_external_map.field_map_website_route_lat_lon_url
+#: model:ir.model.fields,help:partner_external_map.field_map_website__route_lat_lon_url
 msgid ""
 "In this URL, {START_LATITUDE}, {START_LONGITUDE}, {DEST_LATITUDE} and "
 "{DEST_LONGITUDE} will be replaced by the latitude and longitude of the start "
@@ -78,34 +78,34 @@ msgid ""
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website___last_update
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website____last_update
 msgid "Last Modified on"
 msgstr "Ultima actualizare în"
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website_write_uid
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__write_uid
 msgid "Last Updated by"
 msgstr "Ultima actualizare făcută de"
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website_write_date
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__write_date
 msgid "Last Updated on"
 msgstr "Ultima actualizare la"
 
 #. module: partner_external_map
-#: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
+#: model_terms:ir.ui.view,arch_db:partner_external_map.view_partner_form
 msgid "Map"
 msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_map_website
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_context_map_website_id
-#: model:ir.ui.view,arch_db:partner_external_map.map_website_form
+#: model:ir.model.fields,field_description:partner_external_map.field_res_users__context_map_website_id
+#: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_form
 msgid "Map Website"
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website_name
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__name
 msgid "Map Website Name"
 msgstr ""
 
@@ -113,19 +113,19 @@ msgstr ""
 #: model:ir.actions.act_window,name:partner_external_map.map_website_action
 #: model:ir.ui.menu,name:partner_external_map.map_website_menu
 #: model:ir.ui.menu,name:partner_external_map.root_map_website_menu
-#: model:ir.ui.view,arch_db:partner_external_map.map_website_tree
+#: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_tree
 msgid "Map Websites"
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,help:partner_external_map.field_res_users_context_route_map_website_id
+#: model:ir.model.fields,help:partner_external_map.field_res_users__context_route_map_website_id
 msgid ""
 "Map provided used when you click on the car icon on the partner form to "
 "display an itinerary."
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.ui.view,arch_db:partner_external_map.view_users_form
+#: model_terms:ir.ui.view,arch_db:partner_external_map.view_users_form
 msgid "Maps"
 msgstr ""
 
@@ -161,37 +161,37 @@ msgid ""
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.ui.view,arch_db:partner_external_map.view_partner_form
+#: model_terms:ir.ui.view,arch_db:partner_external_map.view_partner_form
 msgid "Route Map"
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_context_route_map_website_id
+#: model:ir.model.fields,field_description:partner_external_map.field_res_users__context_route_map_website_id
 msgid "Route Map Website"
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website_route_lat_lon_url
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__route_lat_lon_url
 msgid "Route URL that uses latitude and longitude"
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website_route_address_url
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__route_address_url
 msgid "Route URL that uses the addresses"
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_res_users_context_route_start_partner_id
+#: model:ir.model.fields,field_description:partner_external_map.field_res_users__context_route_start_partner_id
 msgid "Start Address for Route Map"
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website_lat_lon_url
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__lat_lon_url
 msgid "URL that uses latitude and longitude"
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website_address_url
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__address_url
 msgid "URL that uses the address"
 msgstr ""
 
