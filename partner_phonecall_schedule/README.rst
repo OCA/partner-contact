@@ -75,6 +75,8 @@ Contributors
   * Jairo Llopis <jairo.llopis@tecnativa.com>
   * David Vidal <david.vidal@tecnativa.com>
 
+* Anand Kansagra <kansagraanand@hotmail.com>
+
 Maintainers
 ~~~~~~~~~~~
 
