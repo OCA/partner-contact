@@ -3,12 +3,11 @@
 {
     "name": "Partner phonecalls schedule",
     "summary": "Track the time and days your partners expect phone calls",
-    "version": "11.0.1.0.0",
+    "version": "12.0.1.0.0",
     "category": "Customer Relationship Management",
-    "website": "https://github.com/OCA/crm",
+    "website": "https://github.com/OCA/partner-contact",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "application": False,
     "installable": True,
     "depends": [
         "resource",
