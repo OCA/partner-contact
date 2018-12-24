@@ -7,6 +7,8 @@ from odoo import api, fields, models
 
 
 class ResPartner(models.Model):
+    """Added phonecall details in the partner."""
+
     _inherit = "res.partner"
 
     phonecall_available = fields.Boolean(
@@ -59,12 +61,8 @@ class ResPartner(models.Model):
 
     def _phonecall_available_domain(self):
         """Get a domain to know if we are available to call a partner."""
-        now = self.env.context.get("now", datetime.now())
-        try:
-            now = fields.Datetime.from_string(now)
-        except TypeError:
-            # `now` is already a datetime object
-            pass
+        now = fields.Datetime.from_string(self.env.context.get(
+            "now", datetime.now()))
         date = fields.Date.to_string(now)
         now_tz = fields.Datetime.context_timestamp(self, now)
         float_time = now_tz.hour + ((now_tz.minute / 60) + now_tz.second) / 60
