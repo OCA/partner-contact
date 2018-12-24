@@ -20,31 +20,31 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #. module: partner_phonecall_schedule
-#: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_partner_phonecall_calendar_attendance_ids
-#: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_users_phonecall_calendar_attendance_ids
+#: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_partner__phonecall_calendar_attendance_ids
+#: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_users__phonecall_calendar_attendance_ids
 msgid "Aggregated phonecall schedule"
 msgstr ""
 
 #. module: partner_phonecall_schedule
-#: model:ir.model.fields,help:partner_phonecall_schedule.field_res_partner_phonecall_calendar_attendance_ids
-#: model:ir.model.fields,help:partner_phonecall_schedule.field_res_users_phonecall_calendar_attendance_ids
+#: model:ir.model.fields,help:partner_phonecall_schedule.field_res_partner__phonecall_calendar_attendance_ids
+#: model:ir.model.fields,help:partner_phonecall_schedule.field_res_users__phonecall_calendar_attendance_ids
 msgid "Aggregation of all available phonecall schedules."
 msgstr ""
 
 #. module: partner_phonecall_schedule
-#: model:ir.ui.view,arch_db:partner_phonecall_schedule.view_res_partner_filter
+#: model_terms:ir.ui.view,arch_db:partner_phonecall_schedule.view_res_partner_filter
 msgid "Available for phone calls now"
 msgstr ""
 
 #. module: partner_phonecall_schedule
-#: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_partner_phonecall_available
-#: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_users_phonecall_available
+#: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_partner__phonecall_available
+#: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_users__phonecall_available
 msgid "Available to call"
 msgstr ""
 
 #. module: partner_phonecall_schedule
-#: model:ir.model.fields,help:partner_phonecall_schedule.field_res_partner_phonecall_calendar_ids
-#: model:ir.model.fields,help:partner_phonecall_schedule.field_res_users_phonecall_calendar_ids
+#: model:ir.model.fields,help:partner_phonecall_schedule.field_res_partner__phonecall_calendar_ids
+#: model:ir.model.fields,help:partner_phonecall_schedule.field_res_users__phonecall_calendar_ids
 msgid "Best schedule when the contact expects to be called."
 msgstr ""
 
@@ -54,19 +54,19 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_phonecall_schedule
-#: model:ir.model.fields,help:partner_phonecall_schedule.field_res_partner_phonecall_available
-#: model:ir.model.fields,help:partner_phonecall_schedule.field_res_users_phonecall_available
+#: model:ir.model.fields,help:partner_phonecall_schedule.field_res_partner__phonecall_available
+#: model:ir.model.fields,help:partner_phonecall_schedule.field_res_users__phonecall_available
 msgid "Is it now a good time to call this partner?"
 msgstr ""
 
 #. module: partner_phonecall_schedule
-#: model:ir.ui.view,arch_db:partner_phonecall_schedule.view_partner_form
+#: model_terms:ir.ui.view,arch_db:partner_phonecall_schedule.view_partner_form
 msgid "Phone calls"
 msgstr ""
 
 #. module: partner_phonecall_schedule
-#: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_partner_phonecall_calendar_ids
-#: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_users_phonecall_calendar_ids
+#: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_partner__phonecall_calendar_ids
+#: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_users__phonecall_calendar_ids
 msgid "Phonecall schedule"
 msgstr ""
 
