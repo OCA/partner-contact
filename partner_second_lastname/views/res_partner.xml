@@ -9,13 +9,13 @@
         <field name="arch" type="xml">
             <data>
                 <xpath expr="//field[@name='firstname']" position="attributes">
-                    <attribute name="attrs">{'required': [('lastname', '=', False), ('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
+                    <attribute name="attrs">{'required': [('lastname', '=', False), ('lastname2', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}</attribute>
                 </xpath>
                 <xpath expr="//field[@name='lastname']" position="attributes">
-                    <attribute name="attrs">{'required': [('firstname', '=', False), ('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
+                    <attribute name="attrs">{'required': [('firstname', '=', False), ('lastname2', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}</attribute>
                 </xpath>
                 <xpath expr="//field[@name='lastname']" position="after">
-                    <field name="lastname2" attrs="{'required': [('firstname', '=', False), ('lastname', '=', False), ('is_company', '=', False)]}"/>
+                    <field name="lastname2" attrs="{'required': [('firstname', '=', False), ('lastname', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}"/>
                 </xpath>
             </data>
         </field>
@@ -28,24 +28,24 @@
             <data>
                 <!-- Main form -->
                 <xpath expr="//field[@name='firstname']" position="attributes">
-                    <attribute name="attrs">{'required': [('lastname', '=', False), ('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
+                    <attribute name="attrs">{'required': [('lastname', '=', False), ('lastname2', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}</attribute>
                 </xpath>
 
                 <xpath expr="//field[@name='lastname']" position="attributes">
-                    <attribute name="attrs">{'required': [('firstname', '=', False), ('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
+                    <attribute name="attrs">{'required': [('firstname', '=', False), ('lastname2', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}</attribute>
                 </xpath>
                 <xpath expr="//field[@name='lastname']" position="after">
-                    <field name="lastname2" attrs="{'required': [('firstname', '=', False), ('lastname', '=', False), ('is_company', '=', False)]}"/>
+                    <field name="lastname2" attrs="{'required': [('firstname', '=', False), ('lastname', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}"/>
                 </xpath>
                 <!-- Inner contact form of child_ids -->
                 <xpath expr="//field[@name='child_ids']/form//field[@name='firstname']" position="attributes">
-                    <attribute name="attrs">{'required': [('lastname', '=', False), ('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
+                    <attribute name="attrs">{'required': [('lastname', '=', False), ('lastname2', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}</attribute>
                 </xpath>
                 <xpath expr="//field[@name='child_ids']/form//field[@name='lastname']" position="attributes">
-                    <attribute name="attrs">{'required': [('firstname', '=', False), ('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
+                    <attribute name="attrs">{'required': [('firstname', '=', False), ('lastname2', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}</attribute>
                 </xpath>
                 <xpath expr="//field[@name='child_ids']/form//field[@name='lastname']" position="after">
-                    <field name="lastname2" attrs="{'required': [('firstname', '=', False), ('lastname', '=', False), ('is_company', '=', False)]}"/>
+                    <field name="lastname2" attrs="{'required': [('firstname', '=', False), ('lastname', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}"/>
                 </xpath>
             </data>
       </field>
