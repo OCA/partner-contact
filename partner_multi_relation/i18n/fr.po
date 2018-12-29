@@ -393,7 +393,6 @@ msgstr "Type de relation"
 #. module: partner_multi_relation
 #: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
 #, fuzzy
-#| msgid "Relation Type"
 msgid "Relation Types"
 msgstr "Type de relation"
 
@@ -542,7 +541,6 @@ msgstr "Type"
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__type_id
 #, fuzzy
-#| msgid "Partner Relation Type"
 msgid "Underlying Relation Type"
 msgstr "Type de relation de partenaire"
 
