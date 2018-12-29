@@ -49,16 +49,19 @@ msgstr "Napaka(e) pri nazivu partnerja %d's ."
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__firstname
 msgid "First name"
 msgstr "Lastno ime"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname
 msgid "Last name"
 msgstr "Priimek"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__name
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__name
 msgid "Name"
 msgstr ""
 

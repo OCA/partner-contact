@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2018-12-24 17:58+0000\n"
+"PO-Revision-Date: 2018-12-29 23:42+0000\n"
 "Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -24,13 +24,12 @@ msgstr ""
 #: code:addons/partner_firstname/models/res_users.py:42
 #, python-format
 msgid "%s (copy)"
-msgstr ""
+msgstr "%s (copia)"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_config_settings
-#, fuzzy
 msgid "Config Settings"
-msgstr "res.config.settings"
+msgstr "Impostazioni configurazione"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
@@ -50,18 +49,21 @@ msgstr "Errore/i con il nome del partner %d."
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__firstname
 msgid "First name"
 msgstr "Nome"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname
 msgid "Last name"
 msgstr "Cognome"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__name
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__name
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:7
@@ -76,14 +78,13 @@ msgstr "Ordinamento per comporre il nome completo del partner"
 
 #. module: partner_firstname
 #: model_terms:ir.ui.view,arch_db:partner_firstname.view_general_configuration
-#, fuzzy
 msgid "Partner Names Order"
-msgstr "Ordinamento nome del partner"
+msgstr "Ordinamento nome partner"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order_changed
 msgid "Partner Names Order Changed"
-msgstr "Ordinamento modificato nome del partner"
+msgstr "Ordinamento nome partner modificato"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order
