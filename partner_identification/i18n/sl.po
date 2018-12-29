@@ -20,7 +20,7 @@ msgstr ""
 "%100==4 ? 2 : 3);\n"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:34
+#: code:addons/partner_identification/models/res_partner_id_category.py:35
 #, python-format
 msgid ""
 "\n"
@@ -38,36 +38,36 @@ msgstr ""
 "# - id_number: dostop do zapisa ID številke za validacojo"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:69
+#: code:addons/partner_identification/models/res_partner_id_category.py:70
 #, python-format
 msgid "%s is not a valid %s identifier"
 msgstr "%s ni veljaven %s identifikator"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category_code
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
 msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
 msgstr "Okrajšava ali akronim tega ID tipa. Na primer: 'voznisko_dovoljenje'"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_active
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_active
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__active
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__active
 msgid "Active"
 msgstr "Aktivno"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_partner_issued_id
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__partner_issued_id
 msgid ""
 "Another partner, who issued this ID. For example, Traffic National "
 "Institution"
 msgstr "Dodaten partner, ki je izdal ta ID. Na primer: Državni izpitni center"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_category_id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__category_id
 msgid "Category"
 msgstr "Kategorija"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_code
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__code
 msgid "Code"
 msgstr "Koda"
 
@@ -77,25 +77,25 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_uid
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__create_uid
 msgid "Created by"
 msgstr "Ustvaril"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_date
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__create_date
 msgid "Created on"
 msgstr "Ustvarjeno"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_display_name
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_display_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__display_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__display_name
 msgid "Display Name"
 msgstr "Prikazni naziv"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:65
+#: code:addons/partner_identification/models/res_partner_id_category.py:66
 #, python-format
 msgid ""
 "Error when evaluating the id_category validation code::\n"
@@ -107,7 +107,7 @@ msgstr ""
 "(%s)"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_valid_until
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_until
 msgid ""
 "Expiration date. For example, date when person needs to renew his driver "
 "license, 21/10/2019"
@@ -121,44 +121,43 @@ msgid "Expired"
 msgstr "Potekel"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_id
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__id
 msgid "ID"
 msgstr "ID"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__name
 msgid "ID Number"
 msgstr "ID številka"
 
 #. module: partner_identification
-#: model:ir.ui.view,arch_db:partner_identification.view_partner_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_form
 msgid "ID Numbers"
 msgstr "ID številka"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__name
 msgid "ID name"
 msgstr "ID ime"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_category_id
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__category_id
 msgid "ID type defined in configuration. For example, Driver License"
 msgstr "ID tip določen v konfiguraciji. Na primer: Vozniški izpit"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_numbers
-#: model:ir.model.fields,field_description:partner_identification.field_res_users_id_numbers
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id_numbers
 msgid "Identification Numbers"
 msgstr "Identifikacijska številka"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_partner_issued_id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_issued_id
 msgid "Issued by"
 msgstr "Izdal"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_date_issued
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__date_issued
 msgid ""
 "Issued date. For example, date when person approved his driving exam, "
 "21/10/2009"
@@ -167,30 +166,30 @@ msgstr ""
 "21/10/2019"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_date_issued
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
 msgid "Issued on"
 msgstr "Izdano"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category___last_update
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number___last_update
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category____last_update
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number____last_update
 msgid "Last Modified on"
 msgstr "Zadnjič spremenjeno"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_uid
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_uid
 msgid "Last Updated by"
 msgstr "Zadnji posodobil"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_date
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_date
 msgid "Last Updated on"
 msgstr "Zadnjič posodobljeno"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category_name
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__name
 msgid "Name of this ID type. For example, 'Driver License'"
 msgstr "Ime tega ID tipa. Na primer: 'Vozniško dovoljenje'"
 
@@ -200,13 +199,13 @@ msgid "New"
 msgstr "Nov"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_comment
-#: model:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__comment
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 msgid "Notes"
 msgstr "Zapiski"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_partner_id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_id
 msgid "Partner"
 msgstr "Partner"
 
@@ -217,30 +216,42 @@ msgid "Partner ID Categories"
 msgstr "Partnerjeve ID kategorije"
 
 #. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner_id_category
+#, fuzzy
+msgid "Partner ID Category"
+msgstr "Partnerjeve ID kategorije"
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner_id_number
+#, fuzzy
+msgid "Partner ID Number"
+msgstr "Partnerjeve ID številke"
+
+#. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
-#: model:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
-#: model:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_tree
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_tree
 msgid "Partner ID Numbers"
 msgstr "Partnerjeve ID številke"
 
 #. module: partner_identification
-#: model:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
-#: model:ir.ui.view,arch_db:partner_identification.view_partner_id_category_tree
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_tree
 msgid "Partner Identification Categories"
 msgstr "Partnerjeve identifikacijske kategorije"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_place_issuance
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__place_issuance
 msgid "Place of Issuance"
 msgstr "Kraj zavarovanja"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category_validation_code
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__validation_code
 msgid "Python code called to validate an id number."
 msgstr "Python koda za validacijo ID številke."
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_validation_code
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__validation_code
 msgid "Python validation code"
 msgstr "Python validacijska koda"
 
@@ -250,17 +261,17 @@ msgid "Running"
 msgstr "V teku"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_status
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
 msgid "Status"
 msgstr "Status"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_name
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__name
 msgid "The ID itself. For example, Driver License number of this person"
 msgstr "ID sama. Na primer: Številka vozniškega dovoljenja te osebe"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_place_issuance
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__place_issuance
 msgid ""
 "The place where the ID has been issued. For example the country for "
 "passports and visa"
@@ -280,26 +291,16 @@ msgid "To Renew"
 msgstr "Obnoviti"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_valid_from
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
 msgid "Valid from"
 msgstr "Veljavno od"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_valid_until
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_until
 msgid "Valid until"
 msgstr "Veljavno do"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_valid_from
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_from
 msgid "Validation period stating date."
 msgstr "Datum pričetka obdobja validacije."
-
-#. module: partner_identification
-#: model:ir.model,name:partner_identification.model_res_partner_id_category
-msgid "res.partner.id_category"
-msgstr ""
-
-#. module: partner_identification
-#: model:ir.model,name:partner_identification.model_res_partner_id_number
-msgid "res.partner.id_number"
-msgstr ""
