@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:34
+#: code:addons/partner_identification/models/res_partner_id_category.py:35
 #, python-format
 msgid ""
 "\n"
@@ -33,36 +33,36 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:69
+#: code:addons/partner_identification/models/res_partner_id_category.py:70
 #, python-format
 msgid "%s is not a valid %s identifier"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category_code
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
 msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
 msgstr "Abreviatura ou acrónimo deste tipo de identificação. Por exemplo, 'CC'"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_active
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_active
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__active
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__active
 msgid "Active"
 msgstr "Activo"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_partner_issued_id
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__partner_issued_id
 msgid ""
 "Another partner, who issued this ID. For example, Traffic National "
 "Institution"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_category_id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__category_id
 msgid "Category"
 msgstr "Categoria"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_code
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__code
 msgid "Code"
 msgstr "Código"
 
@@ -72,25 +72,25 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_uid
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__create_uid
 msgid "Created by"
 msgstr "Criado por"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_date
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__create_date
 msgid "Created on"
 msgstr "Criado em"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_display_name
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_display_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__display_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__display_name
 msgid "Display Name"
 msgstr "Nome a Apresentar"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:65
+#: code:addons/partner_identification/models/res_partner_id_category.py:66
 #, python-format
 msgid ""
 "Error when evaluating the id_category validation code::\n"
@@ -99,7 +99,7 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_valid_until
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_until
 msgid ""
 "Expiration date. For example, date when person needs to renew his driver "
 "license, 21/10/2019"
@@ -111,76 +111,75 @@ msgid "Expired"
 msgstr "Expirado"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_id
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__id
 msgid "ID"
 msgstr "ID"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__name
 msgid "ID Number"
 msgstr "Número de Identificação"
 
 #. module: partner_identification
-#: model:ir.ui.view,arch_db:partner_identification.view_partner_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_form
 msgid "ID Numbers"
 msgstr "Números de Identificação"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__name
 msgid "ID name"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_category_id
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__category_id
 msgid "ID type defined in configuration. For example, Driver License"
 msgstr ""
 "Tipo de identificação definido na configuração. Por exemplo, Cartão de "
 "Cidadão"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_numbers
-#: model:ir.model.fields,field_description:partner_identification.field_res_users_id_numbers
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id_numbers
 msgid "Identification Numbers"
 msgstr "Números de Identificação"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_partner_issued_id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_issued_id
 msgid "Issued by"
 msgstr "Emitido por"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_date_issued
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__date_issued
 msgid ""
 "Issued date. For example, date when person approved his driving exam, "
 "21/10/2009"
 msgstr "Data de emissão."
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_date_issued
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
 msgid "Issued on"
 msgstr "Emitido em"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category___last_update
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number___last_update
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category____last_update
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number____last_update
 msgid "Last Modified on"
 msgstr "Última Modificação em"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_uid
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_uid
 msgid "Last Updated by"
 msgstr "Atualizado pela última vez por"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_date
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_date
 msgid "Last Updated on"
 msgstr "Atualizado pela última vez em"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category_name
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__name
 msgid "Name of this ID type. For example, 'Driver License'"
 msgstr "Nome desto tipo de identificação. Por exemplo, 'Cartão de Cidadão'"
 
@@ -190,13 +189,13 @@ msgid "New"
 msgstr "Novo"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_comment
-#: model:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__comment
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 msgid "Notes"
 msgstr "Notas"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_partner_id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_id
 msgid "Partner"
 msgstr "Parceiro"
 
@@ -207,30 +206,42 @@ msgid "Partner ID Categories"
 msgstr "Categorias de Identificação"
 
 #. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner_id_category
+#, fuzzy
+msgid "Partner ID Category"
+msgstr "Categorias de Identificação"
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner_id_number
+#, fuzzy
+msgid "Partner ID Number"
+msgstr "Número de Identificação"
+
+#. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
-#: model:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
-#: model:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_tree
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_tree
 msgid "Partner ID Numbers"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
-#: model:ir.ui.view,arch_db:partner_identification.view_partner_id_category_tree
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_tree
 msgid "Partner Identification Categories"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_place_issuance
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__place_issuance
 msgid "Place of Issuance"
 msgstr "Local de Emissão"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category_validation_code
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__validation_code
 msgid "Python code called to validate an id number."
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_validation_code
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__validation_code
 msgid "Python validation code"
 msgstr ""
 
@@ -240,17 +251,17 @@ msgid "Running"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_status
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
 msgid "Status"
 msgstr "Estado"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_name
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__name
 msgid "The ID itself. For example, Driver License number of this person"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_place_issuance
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__place_issuance
 msgid ""
 "The place where the ID has been issued. For example the country for "
 "passports and visa"
@@ -270,26 +281,16 @@ msgid "To Renew"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_valid_from
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
 msgid "Valid from"
 msgstr "Válido desde"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_valid_until
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_until
 msgid "Valid until"
 msgstr "Válido até"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_valid_from
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_from
 msgid "Validation period stating date."
-msgstr ""
-
-#. module: partner_identification
-#: model:ir.model,name:partner_identification.model_res_partner_id_category
-msgid "res.partner.id_category"
-msgstr ""
-
-#. module: partner_identification
-#: model:ir.model,name:partner_identification.model_res_partner_id_number
-msgid "res.partner.id_number"
 msgstr ""
