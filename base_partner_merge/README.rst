@@ -25,7 +25,7 @@ You can access the wizard by going in a view list of contacts select one or mult
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/11.0
+   :target: https://runbot.odoo-community.org/runbot/134/12.0
 
 Bug Tracker
 ===========
@@ -54,6 +54,7 @@ Contributors
 ------------
 
 * Serpent Consulting Services Pvt. Ltd. <jay.vora@serpentcs.com>
+* Anand Kansagra <kansagraanand@hotmail.com>
 
 Do not contact contributors directly about support or help with technical issues.
 
