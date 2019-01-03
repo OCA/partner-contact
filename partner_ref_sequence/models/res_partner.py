@@ -6,7 +6,6 @@ from odoo import api, models, fields
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
-    _description = 'Add customer to customer number'
 
     @api.model
     def create(self, vals):

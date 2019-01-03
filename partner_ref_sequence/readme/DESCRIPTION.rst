@@ -1,2 +1,2 @@
-This module will introduce automatic integer number generation for customer.
-And fill in ref field
+This module provides a sequence to generate an automatic number to set
+customer number

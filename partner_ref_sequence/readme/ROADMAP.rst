@@ -1,2 +1,2 @@
-The roadmap of the Partner contanct is documented on
+The roadmap of the partner-contact is documented on
 `Github <https://github.com/OCA/partner-contact/>`_.

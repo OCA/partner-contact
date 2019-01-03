@@ -9,10 +9,15 @@
     "summary": "Generate Automatic customer reference number",
     "category": "Customers",
     "maintainer": "Open Source Integrators",
-    "website": "http://www.opensourceintegrators.com",
+    "website": "https://github.com/OCA/partner-contact",
     "depends": ["base"],
     "data": [
         "data/ir_sequence_data.xml",
     ],
     "installable": True,
+    "development_status": "Beta",
+    "maintainers": [
+        "max3903",
+        "smangukiya",
+    ],
 }
