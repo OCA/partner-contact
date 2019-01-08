@@ -25,8 +25,11 @@ Partner Affiliates
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
-This module allows to use parent_id in company partner to refer to a parent
-company, plus will show a tab in parent company of affiliated companies.
+The field 'Contacts & Addresses' is focused on storing contact information about the company's employees and the
+company it self.
+This module adds a new field 'Affiliates' on the partner form and changes 'Contacts & Addresses'
+to only show individuals. This new field is in contrast to 'Contacts & Addresses' focussed on
+storing information about holding companies and other company structures.
 
 **Table of contents**
 
@@ -36,9 +39,7 @@ company, plus will show a tab in parent company of affiliated companies.
 Usage
 =====
 
-New tab 'Affiliates' are available on the contact form if partner is company.
-In tab 'Contact & Addresses' only are shown those contacts that are not
-companies.
+You can find the new field on the partner (contact, customer, etc) form.
 
 Bug Tracker
 ===========
