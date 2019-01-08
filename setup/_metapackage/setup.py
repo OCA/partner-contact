@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo12-addon-base_location',
         'odoo12-addon-base_partner_sequence',
+        'odoo12-addon-partner_affiliate',
         'odoo12-addon-partner_external_map',
         'odoo12-addon-partner_fax',
         'odoo12-addon-partner_firstname',
