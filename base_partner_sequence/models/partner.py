@@ -32,10 +32,14 @@ class ResPartner(models.Model):
     @api.multi
     def write(self, vals):
         for partner in self:
-            if not vals.get('ref') and partner._needsRef(vals) and \
-               not partner.ref:
-                vals['ref'] = partner._get_next_ref(vals=vals)
-            super(ResPartner, partner).write(vals)
+            partner_vals = vals.copy()
+            if (
+                    not partner_vals.get('ref')
+                    and partner._needsRef(partner_vals)
+                    and not partner.ref
+            ):
+                partner_vals['ref'] = partner._get_next_ref(vals=partner_vals)
+            super(ResPartner, partner).write(partner_vals)
         return True
 
     @api.multi
