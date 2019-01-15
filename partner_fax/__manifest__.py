@@ -5,7 +5,7 @@
     'name': 'Partner fax',
     'category': 'Extra Tools',
     'summary': 'Add fax number on partner',
-    'version': '11.0.1.0.0',
+    'version': '11.0.1.1.0',
     'license': 'AGPL-3',
     'author': 'Francesco Apruzzese, '
               'Odoo Community Association (OCA)',
