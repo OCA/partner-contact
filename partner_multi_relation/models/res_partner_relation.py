@@ -44,10 +44,20 @@ class ResPartnerRelation(models.Model):
     @api.model
     def create(self, vals):
         """Override create to correct values, before being stored."""
+        """Check to make sure each unique relation stays unique"""
         context = self.env.context
         if 'left_partner_id' not in vals and context.get('active_id'):
             vals['left_partner_id'] = context.get('active_id')
+        if not self.check_is_unique(vals):
+            raise ValidationError(_('Relation already exists!'))
         return super(ResPartnerRelation, self).create(vals)
+
+    @api.model
+    def write(self, vals):
+        """Check to make sure each unique relation stays unique"""
+        if not self.check_is_unique(vals):
+            raise ValidationError(_('Relation already exists!'))
+        return super(ResPartnerRelation, self).write(vals)
 
     @api.constrains('date_start', 'date_end')
     def _check_dates(self):
@@ -154,3 +164,32 @@ class ResPartnerRelation(models.Model):
                     _('There is already a similar relation with '
                       'overlapping dates')
                 )
+
+    @api.multi
+    def check_is_unique(self, vals):
+        type_id = self.env['res.partner.relation.type']
+        for line in self.env['res.partner.relation'].search([]):
+            if line.type_id.is_unique:
+                count = 0
+                if 'right_partner_id' in vals:
+                    if vals.get('right_partner_id') == \
+                       line.right_partner_id.id:
+                        count += 1
+                else:
+                    if self.right_partner_id == line.right_partner_id.id:
+                        count += 1
+                if 'type_id' in vals:
+                    if type_id.browse(vals.get('type_id')).name == \
+                       line.type_id.name:
+                        count += 1
+                    if (type_id.browse(vals.get('type_id')).is_unique
+                       or line.type_id.is_unique):
+                        count += 1
+                else:
+                    if self.type_id.name == line.type_id.name:
+                        count += 1
+                    if self.type_id.is_unique or line.type_id.is_unique:
+                        count += 1
+                if count == 3:
+                    return False
+        return True

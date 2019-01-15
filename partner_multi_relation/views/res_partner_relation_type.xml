@@ -11,6 +11,7 @@
                     <field name="contact_type_right" />
                     <field name="allow_self" />
                     <field name="is_symmetric" />
+                    <field name="is_unique" />
                 </tree>
             </field>
         </record>
@@ -47,6 +48,7 @@
                             <field name="allow_self" />
                             <field name="is_symmetric" />
                             <field name="handle_invalid_onchange" />
+                            <field name="is_unique" />
                         </group>
                     </sheet>
                 </form>
