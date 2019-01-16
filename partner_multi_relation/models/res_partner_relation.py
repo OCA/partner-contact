@@ -167,29 +167,21 @@ class ResPartnerRelation(models.Model):
 
     @api.multi
     def check_is_unique(self, vals):
-        type_id = self.env['res.partner.relation.type']
-        for line in self.env['res.partner.relation'].search([]):
-            if line.type_id.is_unique:
-                count = 0
-                if 'right_partner_id' in vals:
-                    if vals.get('right_partner_id') == \
-                       line.right_partner_id.id:
-                        count += 1
-                else:
-                    if self.right_partner_id == line.right_partner_id.id:
-                        count += 1
-                if 'type_id' in vals:
-                    if type_id.browse(vals.get('type_id')).name == \
-                       line.type_id.name:
-                        count += 1
-                    if (type_id.browse(vals.get('type_id')).is_unique
-                       or line.type_id.is_unique):
-                        count += 1
-                else:
-                    if self.type_id.name == line.type_id.name:
-                        count += 1
-                    if self.type_id.is_unique or line.type_id.is_unique:
-                        count += 1
-                if count == 3:
-                    return False
+        if 'type_id' in vals:
+            type_id = vals['type_id']
+        else: 
+            type_id = self.type_id.id
+        type_rec = self.env['res.partner.relation.type'].\
+                   search([('id', '=', type_id)])
+        if 'right_partner_id' in vals:
+            right = vals['right_partner_id'] 
+        else: 
+            right = self.right_partner_id.id
+        res = self.search([('type_id', '=', type_id),
+                            ('right_partner_id', '=', right)])
+        if (type_rec.is_unique and len(res) > 0):
+            return False
+        for rec in res:
+            if rec.type_id.is_unique:
+                return False
         return True

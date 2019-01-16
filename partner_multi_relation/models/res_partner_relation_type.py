@@ -77,7 +77,6 @@ class ResPartnerRelationType(models.Model):
         string='Is Unique',
         help="If a relation type is unique, then there cannot be 2"
              "relations with the same parties and the same type.",
-        default=False
     )
 
     @api.model
