@@ -3,7 +3,7 @@
 
 {
     "name": "Translate Country States",
-    "version": "11.0.1.0.0",
+    "version": "12.0.1.0.0",
     "depends": ['base',
                 ],
     'author': 'initOS GmbH, Odoo Community Association (OCA)',
