@@ -169,16 +169,16 @@ class ResPartnerRelation(models.Model):
     def check_is_unique(self, vals):
         if 'type_id' in vals:
             type_id = vals['type_id']
-        else: 
+        else:
             type_id = self.type_id.id
         type_rec = self.env['res.partner.relation.type'].\
-                   search([('id', '=', type_id)])
+            search([('id', '=', type_id)])
         if 'right_partner_id' in vals:
-            right = vals['right_partner_id'] 
-        else: 
+            right = vals['right_partner_id']
+        else:
             right = self.right_partner_id.id
         res = self.search([('type_id', '=', type_id),
-                            ('right_partner_id', '=', right)])
+                           ('right_partner_id', '=', right)])
         if (type_rec.is_unique and len(res) > 0):
             return False
         for rec in res:
