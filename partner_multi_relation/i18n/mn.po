@@ -173,6 +173,13 @@ msgid "ID"
 msgstr "ID"
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type_is_unique
+msgid ""
+"If a relation type is unique, then there cannot be 2relations with the same "
+"parties and the same type."
+msgstr ""
+
+#. module: partner_multi_relation
 #: model:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "Include past records"
 msgstr ""
@@ -191,6 +198,11 @@ msgstr ""
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all_is_inverse
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type_selection_is_inverse
 msgid "Inverse relations are from right to left partner."
+msgstr ""
+
+#. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_is_unique
+msgid "Is Unique"
 msgstr ""
 
 #. module: partner_multi_relation
@@ -275,7 +287,7 @@ msgid "One Partner"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:82
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:87
 #, python-format
 msgid "Organisation"
 msgstr ""
@@ -322,13 +334,13 @@ msgid "Partner relation"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:115
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:125
 #, python-format
 msgid "Partners cannot have a relation with themselves."
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:83
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:88
 #, python-format
 msgid "Person"
 msgstr ""
@@ -358,7 +370,7 @@ msgid "Reflexive"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:196
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:201
 #, python-format
 msgid ""
 "Reflexivity could not be disabled for the relation type {relation_type}. "
@@ -380,6 +392,13 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
 msgid "Relation Types"
+msgstr ""
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:52
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:59
+#, python-format
+msgid "Relation already exists!"
 msgstr ""
 
 #. module: partner_multi_relation
@@ -465,13 +484,13 @@ msgid "Symmetric"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:101
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:111
 #, python-format
 msgid "The %s partner does not have category %s."
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:95
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:105
 #, python-format
 msgid "The %s partner is not applicable for this relation type."
 msgstr ""
@@ -487,13 +506,13 @@ msgid "The id of the object in the model this relation is based on."
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:62
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:72
 #, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:165
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:170
 #, python-format
 msgid ""
 "There are already relations not satisfying the conditions for partner type "
@@ -501,7 +520,7 @@ msgid ""
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:154
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:164
 #, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr ""
@@ -517,7 +536,7 @@ msgid "This relation is the same from right to left as from left to right"
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_4102
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_4103
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_type_id
 msgid "Type"
 msgstr "Төрөл"
