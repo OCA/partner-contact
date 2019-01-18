@@ -43,8 +43,8 @@ class ResPartnerRelation(models.Model):
 
     @api.model
     def create(self, vals):
-        """Override create to correct values, before being stored."""
-        """Check to make sure each unique relation stays unique"""
+        """Override create to correct values, before being stored.
+        Check to make sure each unique relation stays unique"""
         context = self.env.context
         if 'left_partner_id' not in vals and context.get('active_id'):
             vals['left_partner_id'] = context.get('active_id')
