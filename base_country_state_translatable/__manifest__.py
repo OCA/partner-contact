@@ -1,4 +1,4 @@
-# © initOS GmbH 2017
+# Copyright 2017 initOS GmbH
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
