@@ -43,11 +43,21 @@ class ResPartnerRelation(models.Model):
 
     @api.model
     def create(self, vals):
-        """Override create to correct values, before being stored."""
+        """Override create to correct values, before being stored.
+        Check to make sure each unique relation stays unique"""
         context = self.env.context
         if 'left_partner_id' not in vals and context.get('active_id'):
             vals['left_partner_id'] = context.get('active_id')
+        if not self.check_is_unique(vals):
+            raise ValidationError(_('Relation already exists!'))
         return super(ResPartnerRelation, self).create(vals)
+
+    @api.model
+    def write(self, vals):
+        """Check to make sure each unique relation stays unique"""
+        if not self.check_is_unique(vals):
+            raise ValidationError(_('Relation already exists!'))
+        return super(ResPartnerRelation, self).write(vals)
 
     @api.constrains('date_start', 'date_end')
     def _check_dates(self):
@@ -154,3 +164,24 @@ class ResPartnerRelation(models.Model):
                     _('There is already a similar relation with '
                       'overlapping dates')
                 )
+
+    @api.multi
+    def check_is_unique(self, vals):
+        if 'type_id' in vals:
+            type_id = vals['type_id']
+        else:
+            type_id = self.type_id.id
+        type_rec = self.env['res.partner.relation.type'].\
+            search([('id', '=', type_id)])
+        if 'right_partner_id' in vals:
+            right = vals['right_partner_id']
+        else:
+            right = self.right_partner_id.id
+        res = self.search([('type_id', '=', type_id),
+                           ('right_partner_id', '=', right)])
+        if (type_rec.is_unique and len(res) > 0):
+            return False
+        for rec in res:
+            if rec.type_id.is_unique:
+                return False
+        return True

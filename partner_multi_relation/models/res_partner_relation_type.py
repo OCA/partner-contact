@@ -73,6 +73,11 @@ class ResPartnerRelationType(models.Model):
              " that do not fit the new criteria.\n"
              "Specify how this situation should be handled.",
     )
+    is_unique = fields.Boolean(
+        string='Is Unique',
+        help="If a relation type is unique, then there cannot be 2"
+             "relations with the same parties and the same type.",
+    )
 
     @api.model
     def get_partner_types(self):
@@ -255,7 +260,6 @@ class ResPartnerRelationType(models.Model):
     def write(self, vals):
         """Handle existing relations if conditions change."""
         self.check_existing(vals)
-
         for rec in self:
             rec_vals = vals.copy()
             if rec_vals.get('is_symmetric', rec.is_symmetric):
