@@ -40,11 +40,6 @@ For further information, please visit:
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/134/11.0
 
-Known issues / Roadmap
-======================
-
-* None.
-
 Bug Tracker
 ===========
 
@@ -65,6 +60,7 @@ Contributors
 * Rudolf Schnapka <schnapkar@golive-saar.de>
 * Richard deMeester <richard@willowit.com.au>
 * Nicolas JEUDY <https://github.com/njeudy>
+* Nikul Chaudhary <nikulchaudhary2112@gmail.com>
 
 Maintainer
 ----------
