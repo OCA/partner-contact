@@ -1,12 +1,11 @@
-# -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
     "name": "Personal information page for contacts",
     "summary": "Add a page to contacts form to put personal information",
-    "version": "11.0.1.0.0",
+    "version": "12.0.1.0.0",
     "category": "Customer Relationship Management",
-    "website": "https://odoo-community.org/",
+    "website": "https://github.com/OCA/partner-contact",
     "author": "Nicolas JEUDY,Odoo Community Association (OCA)",
     "contributors": [
         'EL Hadji DEM <elhadji.dem@savoirfairelinux.com>',
