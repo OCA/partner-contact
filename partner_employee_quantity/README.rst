@@ -86,6 +86,8 @@ Contributors
   * David Vidal
   * Pedro M. Baeza
 
+* Nikul Chaudhary <nikulchaudhary2112@gmail.com>
+
 Maintainers
 ~~~~~~~~~~~
 
