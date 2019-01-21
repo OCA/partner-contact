@@ -23,5 +23,5 @@ class TestResPartner(TransactionCase):
             operator='ilike',
             args=[('id', 'in', self.partner_id.ids)]
         )
-        self.assertEqual(set([self.partner_id.id]),
+        self.assertEqual(set(self.partner_id.ids),
                          set([a[0] for a in partner_ids]))
