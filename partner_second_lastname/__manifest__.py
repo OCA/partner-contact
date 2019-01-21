@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L.U. - Jairo Llopis
 # Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
 # Copyright 2017 Tecnativa - Pedro M. Baeza
@@ -7,9 +6,9 @@
 {
     "name": "Partner second last name",
     "summary": "Have split first and second lastnames",
-    "version": "11.0.1.0.0",
+    "version": "12.0.1.0.0",
     "license": "AGPL-3",
-    "website": "https://www.tecnativa.com",
+    "website": "https://github.com/OCA/partner-contact",
     "author": "Tecnativa, "
               "Odoo Community Association (OCA)",
     "category": "Partner Management",
