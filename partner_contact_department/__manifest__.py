@@ -6,12 +6,12 @@
 {
     'name': 'Partner Contact Department',
     "summary": "Assign contacts to departments",
-    'version': '11.0.1.0.0',
+    'version': '12.0.1.0.0',
     'category': 'Customer Relationship Management',
     'author': 'Tecnativa, '
               'Odoo Community Association (OCA)',
     "license": "AGPL-3",
-    'website': 'http://www.tecnativa.com',
+    'website': 'https://github.com/OCA/partner-contact',
     "application": False,
     'depends': [
         'contacts',
