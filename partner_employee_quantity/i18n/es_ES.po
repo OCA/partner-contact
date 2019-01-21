@@ -25,60 +25,60 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_create_uid
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_create_date
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__create_date
 msgid "Created on"
 msgstr "Creado en"
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_display_name
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__display_name
 msgid "Display Name"
 msgstr "Nombre para mostrar"
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_users_employee_quantity
-#: model:ir.ui.view,arch_db:partner_employee_quantity.view_res_partner_filter_employees
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner__employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_users__employee_quantity
+#: model_terms:ir.ui.view,arch_db:partner_employee_quantity.view_res_partner_filter_employees
 msgid "Employee Quantity"
 msgstr ""
 
 #. module: partner_employee_quantity
-#: model:ir.ui.view,arch_db:partner_employee_quantity.view_partner_form_employees
+#: model_terms:ir.ui.view,arch_db:partner_employee_quantity.view_partner_form_employees
 msgid "Employee quantity"
 msgstr ""
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_id
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_users_employee_quantity_range_id
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner__employee_quantity_range_id
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_users__employee_quantity_range_id
 msgid "Employee quantity range"
 msgstr ""
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_id_1599
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__id
 msgid "ID"
 msgstr "ID"
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range___last_update
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_write_uid
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_write_date
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_name
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__name
 msgid "Name"
 msgstr ""
 
@@ -88,14 +88,14 @@ msgid "Partner employee quantity range"
 msgstr ""
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,help:partner_employee_quantity.field_res_partner_employee_quantity_range_id
-#: model:ir.model.fields,help:partner_employee_quantity.field_res_users_employee_quantity_range_id
+#: model:ir.model.fields,help:partner_employee_quantity.field_res_partner__employee_quantity_range_id
+#: model:ir.model.fields,help:partner_employee_quantity.field_res_users__employee_quantity_range_id
 msgid "Range of this partner depending on the employee quantity."
 msgstr ""
 
 #. module: partner_employee_quantity
 #: model:ir.actions.act_window,name:partner_employee_quantity.employees_range_action
 #: model:ir.ui.menu,name:partner_employee_quantity.menu_employees_range
-#: model:ir.ui.view,arch_db:partner_employee_quantity.employees_range_tree_view
+#: model_terms:ir.ui.view,arch_db:partner_employee_quantity.employees_range_tree_view
 msgid "Ranges by quantity of employees"
 msgstr ""
