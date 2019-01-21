@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 # Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L.U. - Jairo Llopis
 # Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
 # Copyright 2017 Tecnativa - Pedro M. Baeza
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, fields, models
 from odoo.addons.partner_firstname import exceptions
@@ -12,7 +11,9 @@ class ResPartner(models.Model):
     """Adds a second last name."""
     _inherit = "res.partner"
 
-    lastname2 = fields.Char("Second last name", oldname="lastname_second")
+    lastname2 = fields.Char(
+        "Second last name",
+    )
 
     @api.model
     def _get_computed_name(self, lastname, firstname, lastname2=None):
@@ -49,9 +50,10 @@ class ResPartner(models.Model):
                 partner.lastname, partner.firstname, partner.lastname2,
             )
 
-    @api.one
+    @api.multi
     def _inverse_name(self):
         """Try to revert the effect of :meth:`._compute_name`."""
+        self.ensure_one()
         parts = self._get_inverse_name(self.name, self.is_company)
         # Avoid to hit :meth:`~._check_name` with all 3 fields being ``False``
         before, after = {}, {}
