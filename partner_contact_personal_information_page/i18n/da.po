@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_contact_personal_information_page
+# 	* partner_contact_personal_information_page
 #
 msgid ""
 msgstr ""
@@ -17,6 +17,6 @@ msgstr ""
 "X-Generator: Weblate 3.2.2\n"
 
 #. module: partner_contact_personal_information_page
-#: model:ir.ui.view,arch_db:partner_contact_personal_information_page.personal_information
+#: model_terms:ir.ui.view,arch_db:partner_contact_personal_information_page.personal_information
 msgid "Personal Information"
 msgstr "Personlig information"
