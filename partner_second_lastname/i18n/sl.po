@@ -20,17 +20,17 @@ msgstr ""
 "%100==4 ? 2 : 3);\n"
 
 #. module: partner_second_lastname
+#: model:ir.model,name:partner_second_lastname.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: partner_second_lastname
 #: model:ir.model,name:partner_second_lastname.model_res_partner
 msgid "Contact"
 msgstr "Stik"
 
 #. module: partner_second_lastname
-#: model:ir.model.fields,field_description:partner_second_lastname.field_res_partner_lastname2
-#: model:ir.model.fields,field_description:partner_second_lastname.field_res_users_lastname2
+#: model:ir.model.fields,field_description:partner_second_lastname.field_res_partner__lastname2
+#: model:ir.model.fields,field_description:partner_second_lastname.field_res_users__lastname2
 msgid "Second last name"
 msgstr "Drugi priimek"
-
-#. module: partner_second_lastname
-#: model:ir.model,name:partner_second_lastname.model_res_config_settings
-msgid "res.config.settings"
-msgstr ""
