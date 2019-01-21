@@ -21,4 +21,7 @@ class ResPartnerEmployeeQuantityRange(models.Model):
     _name = "res.partner.employee_quantity_range"
     _description = "Partner employee quantity range"
 
-    name = fields.Char(required=True, translate=True)
+    name = fields.Char(
+        required=True,
+        translate=True
+    )
