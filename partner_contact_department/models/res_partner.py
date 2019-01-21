@@ -12,27 +12,32 @@ class ResPartner(models.Model):
     department_id = fields.Many2one(
         "res.partner.department",
         "Department",
-        oldname="department")
+        oldname="department"
+    )
 
 
 class ResPartnerDepartment(models.Model):
     _name = 'res.partner.department'
-    _order = "parent_left"
+    _order = "parent_path"
     _parent_order = "name"
     _parent_store = True
     _description = "Department"
 
-    name = fields.Char(required=True, translate=True)
+    name = fields.Char(
+        required=True,
+        translate=True
+    )
     parent_id = fields.Many2one(
         "res.partner.department",
         "Parent department",
-        ondelete='restrict')
+        ondelete='restrict'
+    )
     child_ids = fields.One2many(
         "res.partner.department",
         "parent_id",
-        "Child departments")
-    parent_left = fields.Integer(index=True)
-    parent_right = fields.Integer(index=True)
+        "Child departments"
+    )
+    parent_path = fields.Char(index=True)
 
     @api.constrains('parent_id')
     def _check_parent_id(self):
