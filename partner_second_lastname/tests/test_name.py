@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-# © 2015 Grupo ESOC Ingeniería de Servicios, S.L.U.
-# © 2015 Antiun Ingenieria S.L. - Antonio Espinosa
+# Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L.U.
+# Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
 
 from odoo.tests.common import TransactionCase
 from odoo.addons.partner_firstname.tests.base import MailInstalled
