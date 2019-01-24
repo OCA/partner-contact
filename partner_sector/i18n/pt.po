@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2017-12-26 15:33+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2019-01-24 18:41+0000\n"
+"Last-Translator: João Carvalhido <joao.carvalhido@exo.pt>\n"
 "Language-Team: Portuguese (https://www.transifex.com/oca/teams/23907/pt/)\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 3.3\n"
 
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_child_ids
@@ -42,7 +43,7 @@ msgstr "Nome a Apresentar"
 #: code:addons/partner_sector/models/res_partner_sector.py:42
 #, python-format
 msgid "Error! You cannot create recursive sectors."
-msgstr ""
+msgstr "Erro! Não pode criar setores recursivos."
 
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_id_4252
@@ -69,7 +70,7 @@ msgstr "Atualizado pela última vez em"
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_id
 #: model:ir.model.fields,field_description:partner_sector.field_res_users_sector_id
 msgid "Main Sector"
-msgstr ""
+msgstr "Setor principal"
 
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_name
@@ -89,7 +90,7 @@ msgstr "Ascendente à direita"
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_id
 msgid "Parent id"
-msgstr ""
+msgstr "Id do Ascendente"
 
 #. module: partner_sector
 #: model:ir.model,name:partner_sector.model_res_partner
@@ -98,63 +99,62 @@ msgstr "Parceiro"
 
 #. module: partner_sector
 #: model:ir.ui.view,arch_db:partner_sector.view_sale_config_settings
-#, fuzzy
 msgid "Partner Sector"
-msgstr "Parceiro"
+msgstr "Setor do parceiro"
 
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_alias_secondary_sector_ids
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_secondary_sector_ids
 #: model:ir.model.fields,field_description:partner_sector.field_res_users_secondary_sector_ids
 msgid "Secondary Sectors"
-msgstr ""
+msgstr "Setores secundários"
 
 #. module: partner_sector
 #: model:ir.model,name:partner_sector.model_res_partner_sector
 #: model:ir.ui.view,arch_db:partner_sector.view_partner_form_sector
 #: model:ir.ui.view,arch_db:partner_sector.view_res_partner_filter_sector
 msgid "Sector"
-msgstr ""
+msgstr "Setor"
 
 #. module: partner_sector
 #: model:ir.ui.view,arch_db:partner_sector.view_general_configuration
 msgid "Sector for individual"
-msgstr ""
+msgstr "Setor para indivíduo"
 
 #. module: partner_sector
 #: model:ir.ui.view,arch_db:partner_sector.view_sale_config_settings
 msgid "Sector for individuals"
-msgstr ""
+msgstr "Setor para indivíduos"
 
 #. module: partner_sector
 #: model:ir.actions.act_window,name:partner_sector.res_partner_sector_action
 #: model:ir.ui.menu,name:partner_sector.menu_res_partner_sector
 #: model:ir.ui.view,arch_db:partner_sector.res_partner_sector_tree_view
 msgid "Sectors"
-msgstr ""
+msgstr "Setores"
 
 #. module: partner_sector
 #: model:ir.model.fields,help:partner_sector.field_sale_config_settings_group_use_partner_sector_for_person
 msgid "Set if you want to be able to use sectors for individuals also."
-msgstr ""
+msgstr "Defina se também quiser usar setores indivíduos."
 
 #. module: partner_sector
 #: model:ir.model.fields,help:partner_sector.field_base_config_settings_group_use_partner_sector_for_person
 msgid "Set if you want to be able use sectors for individuals also."
-msgstr ""
+msgstr "Defina se também quiser usar setores indivíduos."
 
 #. module: partner_sector
 #: code:addons/partner_sector/models/res_partner.py:22
 #, python-format
 msgid "The main sector must be different from the secondary sectors."
-msgstr ""
+msgstr "O setor principal deverá ser diferente dos setores secundários."
 
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_base_config_settings_group_use_partner_sector_for_person
 #: model:ir.model.fields,field_description:partner_sector.field_sale_config_settings_group_use_partner_sector_for_person
 #: model:res.groups,name:partner_sector.group_use_partner_sector_for_person
 msgid "Use sector for individuals"
-msgstr ""
+msgstr "Use setores para indivíduos"
 
 #. module: partner_sector
 #: model:ir.model,name:partner_sector.model_base_config_settings
