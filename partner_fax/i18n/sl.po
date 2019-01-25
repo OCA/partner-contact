@@ -26,6 +26,7 @@ msgstr "Stik"
 
 #. module: partner_fax
 #: model:ir.model.fields,field_description:partner_fax.field_res_partner__fax
+#: model:ir.model.fields,field_description:partner_fax.field_res_users__fax
 msgid "Fax"
 msgstr ""
 
