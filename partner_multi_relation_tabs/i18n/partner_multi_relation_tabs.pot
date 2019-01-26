@@ -4,22 +4,14 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-01 09:32+0000\n"
-"PO-Revision-Date: 2017-11-01 09:32+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-
-#. module: partner_multi_relation_tabs
-#: code:addons/partner_multi_relation_tabs/models/res_partner.py:26
-#, python-format
-msgid "Adding field %s to res.partner nodel."
-msgstr ""
 
 #. module: partner_multi_relation_tabs
 #: model:ir.model,name:partner_multi_relation_tabs.model_res_partner_relation_all
@@ -37,13 +29,23 @@ msgid "Code"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:32
+#: model:res.partner.tab,name:partner_multi_relation_tabs.tab_board
+msgid "Company executive board"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model,name:partner_multi_relation_tabs.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:33
 #, python-format
 msgid "Contact type left not compatible with left tab"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:52
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:53
 #, python-format
 msgid "Contact type right not compatible with right tab"
 msgstr ""
@@ -59,8 +61,33 @@ msgid "Created on"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
+#: model:res.partner.category,name:partner_multi_relation_tabs.category_department
+msgid "Department"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
 #: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab_display_name
 msgid "Display Name"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.category,name:partner_multi_relation_tabs.category_functionary
+msgid "Functionary"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:ir.ui.view,arch_db:partner_multi_relation_tabs.form_res_partner_tab
+msgid "General"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.category,name:partner_multi_relation_tabs.category_government
+msgid "Government"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.tab,name:partner_multi_relation_tabs.tab_committee
+msgid "Government committee"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
@@ -94,8 +121,41 @@ msgid "Name"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model,name:partner_multi_relation_tabs.model_res_partner
+#: model:res.partner.tab,name:partner_multi_relation_tabs.tab_departments
+msgid "Our departments"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: code:addons/partner_multi_relation_tabs/tablib/tab.py:56
+#, python-format
 msgid "Partner"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model,name:partner_multi_relation_tabs.model_res_partner_relation_type
+msgid "Partner Relation Type"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:38
+#, python-format
+msgid "Partner category left not compatible with left tab"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:58
+#, python-format
+msgid "Partner category right not compatible with right tab"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab_partner_ids
+msgid "Partners with this tab"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.tab,name:partner_multi_relation_tabs.tab_positions
+msgid "Positions held"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
@@ -105,20 +165,13 @@ msgid "Relation Tabs"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model,name:partner_multi_relation_tabs.model_res_partner_relation_type
-msgid "Partner Relation Type"
+#: model:ir.ui.view,arch_db:partner_multi_relation_tabs.form_res_partner_tab
+msgid "Select partner type and category for tab"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:37
-#, python-format
-msgid "Partner category left not compatible with left tab"
-msgstr ""
-
-#. module: partner_multi_relation_tabs
-#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:57
-#, python-format
-msgid "Partner category right not compatible with right tab"
+#: model:ir.ui.view,arch_db:partner_multi_relation_tabs.form_res_partner_tab
+msgid "Select specific partners to have this tab"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
@@ -153,9 +206,9 @@ msgid "Tabs to add to partner"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: code:addons/partner_multi_relation_tabs/models/res_partner.py:39
-#, python-format
-msgid "Updating field %s in res.partner nodel."
+#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_tab_partner_ids
+msgid "This tab will only show for certain partners.\n"
+"Do not combine this with selection for contact type or category."
 msgstr ""
 
 #. module: partner_multi_relation_tabs
@@ -174,8 +227,38 @@ msgid "Will provide title for tab in user language"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: code:addons/partner_multi_relation_tabs/models/res_partner.py:45
+#: code:addons/partner_multi_relation_tabs/models/res_partner_tab.py:49
 #, python-format
-msgid "deleting field %s from res.partner nodel."
+msgid "You can not both specify partner_ids and other criteria."
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.relation.type,name:partner_multi_relation_tabs.relation_type_company_has_ceo
+msgid "has ceo"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.relation.type,name:partner_multi_relation_tabs.relation_type_committee_has_chairperson
+msgid "has chairperson"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.relation.type,name:partner_multi_relation_tabs.relation_type_organisation_has_department
+msgid "has department"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation_tabs.relation_type_company_has_ceo
+msgid "is ceo of"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation_tabs.relation_type_committee_has_chairperson
+msgid "is chairperson of"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation_tabs.relation_type_organisation_has_department
+msgid "is department of"
 msgstr ""
 
