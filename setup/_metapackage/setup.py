@@ -31,6 +31,7 @@ setuptools.setup(
         'odoo11-addon-partner_identification',
         'odoo11-addon-partner_industry_secondary',
         'odoo11-addon-partner_multi_relation',
+        'odoo11-addon-partner_multi_relation_tabs',
         'odoo11-addon-partner_phone_extension',
         'odoo11-addon-partner_phone_search',
         'odoo11-addon-partner_phonecall_schedule',
