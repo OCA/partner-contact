@@ -148,6 +148,7 @@ msgstr "ID tip določen v konfiguraciji. Na primer: Vozniški izpit"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner__id_numbers
+#: model:ir.model.fields,field_description:partner_identification.field_res_users__id_numbers
 msgid "Identification Numbers"
 msgstr "Identifikacijska številka"
 
