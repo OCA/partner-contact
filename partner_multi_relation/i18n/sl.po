@@ -42,6 +42,7 @@ msgstr "Vsi tipi odnosov"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_all_ids
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_all_ids
 msgid "All relations with current partner"
 msgstr "Vsi odnosi s trenutnim partnerjem"
 
@@ -143,16 +144,19 @@ msgstr "Ima bivšega zaposlenega"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_type_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_type_id
 msgid "Has relation of type"
 msgstr "Ima odnos tipa"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_partner_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_partner_id
 msgid "Has relation with"
 msgstr "Je v odnosu z"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_partner_category_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_partner_category_id
 msgid "Has relation with a partner in category"
 msgstr "Je v odnosu s partnerjem kategorije"
 
@@ -365,6 +369,7 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_count
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_count
 msgid "Relation Count"
 msgstr "Števec relacij"
 
@@ -387,6 +392,7 @@ msgstr "Tip odnosa nezdružljiv z izborom partnerja(ev)."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_date
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_date
 msgid "Relation valid"
 msgstr "Odnos veljaven"
 

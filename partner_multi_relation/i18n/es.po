@@ -41,6 +41,7 @@ msgstr "Todos los tipos de relaciones"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_all_ids
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_all_ids
 msgid "All relations with current partner"
 msgstr "Todas las relaciones con la empresa actual"
 
@@ -142,16 +143,19 @@ msgstr "Tiene ex-empleado"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_type_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_type_id
 msgid "Has relation of type"
 msgstr "Tiene una relación de tipo"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_partner_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_partner_id
 msgid "Has relation with"
 msgstr "Tiene una relación con"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_partner_category_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_partner_category_id
 msgid "Has relation with a partner in category"
 msgstr "Tiene una relación con las empresas con la etiqueta"
 
@@ -364,6 +368,7 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_count
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_count
 msgid "Relation Count"
 msgstr ""
 
@@ -386,6 +391,7 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_date
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_date
 msgid "Relation valid"
 msgstr "Relación válida"
 
