@@ -41,6 +41,7 @@ msgstr "Alle connectietypes"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_all_ids
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_all_ids
 msgid "All relations with current partner"
 msgstr "Alle connecties vanuit de huidige relatie"
 
@@ -145,16 +146,19 @@ msgstr "Heeft voormalig werknemer"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_type_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_type_id
 msgid "Has relation of type"
 msgstr "heeft connectie van type"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_partner_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_partner_id
 msgid "Has relation with"
 msgstr "Heeft connectie met"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_partner_category_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_partner_category_id
 msgid "Has relation with a partner in category"
 msgstr "Heeft connectie met een relatie in de categorie"
 
@@ -367,6 +371,7 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_count
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_count
 msgid "Relation Count"
 msgstr "Aantal connecties"
 
@@ -389,6 +394,7 @@ msgstr "Type connectie komt niet overeen met geselecteerde relatie(s)."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_date
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_date
 msgid "Relation valid"
 msgstr "Geldige connectie"
 

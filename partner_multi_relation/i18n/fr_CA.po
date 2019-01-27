@@ -43,6 +43,7 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_all_ids
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_all_ids
 msgid "All relations with current partner"
 msgstr ""
 
@@ -144,16 +145,19 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_type_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_type_id
 msgid "Has relation of type"
 msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_partner_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_partner_id
 msgid "Has relation with"
 msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_partner_category_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_partner_category_id
 msgid "Has relation with a partner in category"
 msgstr ""
 
@@ -340,8 +344,7 @@ msgstr ""
 #: model_terms:ir.actions.act_window,help:partner_multi_relation.action_res_partner_relation_all
 msgid ""
 "Record and track your partners' relations. Relations may\n"
-"                    be linked to other partners with a type either "
-"directly\n"
+"                    be linked to other partners with a type either directly\n"
 "                    or inversely."
 msgstr ""
 
@@ -367,6 +370,7 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_count
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_count
 msgid "Relation Count"
 msgstr ""
 
@@ -388,6 +392,7 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_date
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_date
 msgid "Relation valid"
 msgstr ""
 
@@ -553,8 +558,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__handle_invalid_onchange
 msgid ""
-"When adding relations criteria like partner type and category are "
-"checked.\n"
+"When adding relations criteria like partner type and category are checked.\n"
 "However when you change the criteria, there might be relations that do not "
 "fit the new criteria.\n"
 "Specify how this situation should be handled."
