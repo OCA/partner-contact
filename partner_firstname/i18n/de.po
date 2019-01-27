@@ -50,16 +50,19 @@ msgstr "Fehler beim Namen des Partners %d ."
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__firstname
 msgid "First name"
 msgstr "Vorname"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname
 msgid "Last name"
 msgstr "Nachname"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__name
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__name
 msgid "Name"
 msgstr ""
 
