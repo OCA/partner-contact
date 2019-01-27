@@ -22,6 +22,7 @@ msgstr ""
 
 #. module: partner_affiliate
 #: model:ir.model.fields,field_description:partner_affiliate.field_res_partner__affiliate_ids
+#: model:ir.model.fields,field_description:partner_affiliate.field_res_users__affiliate_ids
 #: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Affiliates"
 msgstr ""
@@ -38,6 +39,7 @@ msgstr ""
 
 #. module: partner_affiliate
 #: model:ir.model.fields,field_description:partner_affiliate.field_res_partner__child_ids
+#: model:ir.model.fields,field_description:partner_affiliate.field_res_users__child_ids
 msgid "Contacts"
 msgstr ""
 
