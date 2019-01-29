@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_id_category_certificate_of_conduct" model="res.partner.id_category">
+        <field name="code">co_conduct</field>
+        <field name="name">Certificate of Conduct</field>
+    </record>
+</odoo>
