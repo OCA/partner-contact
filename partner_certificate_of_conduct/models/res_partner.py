@@ -17,6 +17,6 @@ class ResPartner(models.Model):
             'coc_certificate_of_conduct', 'co_conduct',
         ),
         search=lambda s, *a: s._search_identification(
-            'coc_certificate_of_conduct', 'co_conduct', *a
+            'co_conduct', *a
         ),
     )
