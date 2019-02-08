@@ -9,31 +9,32 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:48+0000\n"
-"PO-Revision-Date: 2017-11-21 01:48+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2019-02-08 17:50+0000\n"
+"Last-Translator: João Carvalhido <joao.carvalhido@exo.pt>\n"
 "Language-Team: Portuguese (https://www.transifex.com/oca/teams/23907/pt/)\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 3.4\n"
 
 #. module: partner_affiliate
 #: model:ir.model.fields,field_description:partner_affiliate.field_res_partner_affiliate_ids
 #: model:ir.model.fields,field_description:partner_affiliate.field_res_users_affiliate_ids
 #: model:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Affiliates"
-msgstr ""
+msgstr "Afiliado"
 
 #. module: partner_affiliate
 #: model:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Fax:"
-msgstr ""
+msgstr "Fax:"
 
 #. module: partner_affiliate
 #: model:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Mobile:"
-msgstr ""
+msgstr "Telemóvel:"
 
 #. module: partner_affiliate
 #: model:ir.model,name:partner_affiliate.model_res_partner
@@ -43,4 +44,4 @@ msgstr "Parceiro"
 #. module: partner_affiliate
 #: model:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Phone:"
-msgstr ""
+msgstr "Telefone:"
