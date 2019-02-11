@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_contact_birthdate
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
 # Timo Talvitie <timo.talvitie@vizucom.com>, 2017
@@ -13,21 +13,22 @@ msgstr ""
 "PO-Revision-Date: 2017-08-17 02:52+0000\n"
 "Last-Translator: Timo Talvitie <timo.talvitie@vizucom.com>, 2017\n"
 "Language-Team: Finnish (https://www.transifex.com/oca/teams/23907/fi/)\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_contact_birthdate
-#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner_birthdate
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner_birthdate_date
-#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users_birthdate
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users_birthdate_date
 msgid "Birthdate"
 msgstr "Syntymäaika"
 
 #. module: partner_contact_birthdate
 #: model:ir.model,name:partner_contact_birthdate.model_res_partner
-msgid "Partner"
-msgstr "Kumppani"
+msgid "Contact"
+msgstr ""
+
+#~ msgid "Partner"
+#~ msgstr "Kumppani"
