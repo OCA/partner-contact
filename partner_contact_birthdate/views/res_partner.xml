@@ -6,13 +6,11 @@
     <record id="view_personal_information_birthdate_date" model="ir.ui.view">
         <field name="name">Birthdate Date field</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="partner_contact_personal_information_page.personal_information"/>
+        <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <data>
-                <xpath expr="//group[@name='personal_information_group']">
-                    <field name="birthdate_date"/>
-                </xpath>
-            </data>
+            <xpath expr="//field[@name='function']" position="after">
+                <field name="birthdate_date" attrs="{'invisible': [('is_company', '=', True)]}"/>
+            </xpath>
         </field>
     </record>
 </odoo>
