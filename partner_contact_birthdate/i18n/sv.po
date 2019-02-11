@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * partner_contact_birthdate
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
@@ -12,27 +12,22 @@ msgstr ""
 "PO-Revision-Date: 2017-03-10 03:39+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_contact_birthdate
-#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner_birthdate
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner_birthdate_date
+#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users_birthdate_date
 msgid "Birthdate"
 msgstr ""
 
 #. module: partner_contact_birthdate
-#: code:addons/partner_contact_birthdate/models/res_partner.py:37
-#, python-format
-msgid ""
-"Could not convert '{0.birthdate}' to date in res.partner {0.id} ({0.name}). "
-"Skipping."
+#: model:ir.model,name:partner_contact_birthdate.model_res_partner
+msgid "Contact"
 msgstr ""
 
-#. module: partner_contact_birthdate
-#: model:ir.model,name:partner_contact_birthdate.model_res_partner
-msgid "Partner"
-msgstr "Företag"
+#~ msgid "Partner"
+#~ msgstr "Företag"
