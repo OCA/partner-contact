@@ -4,7 +4,7 @@ def store_ir_config_param(cr):
     store the config parameter if it is not present.
     """
     cr.execute("SELECT 1 FROM ir_config_parameter "
-               "WHERE name = 'partner_names_order'")
+               "WHERE key = 'partner_names_order'")
     if not cr.fetchone():
         cr.execute("INSERT INTO ir_config_parameter (key, value) VALUES "
                    "('partner_names_order', 'last_first')")
