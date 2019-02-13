@@ -102,7 +102,8 @@ class ResPartner(models.Model):
     risk_exception = fields.Boolean(
         compute='_compute_risk_exception',
         string='Risk Exception',
-        help='It Indicate if partner risk exceeded')
+        help='It Indicate if partner risk exceeded',
+        store=True)
     credit_policy = fields.Char()
     risk_allow_edit = fields.Boolean(compute='_compute_risk_allow_edit')
     credit_limit = fields.Float(track_visibility='onchange')
