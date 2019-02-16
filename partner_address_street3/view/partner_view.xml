@@ -1,0 +1,59 @@
+<odoo>
+
+    <record id="add_street3_in_form_view" model="ir.ui.view">
+      <field name="name">add street3 in form view</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <xpath
+            expr="/form/sheet/group/group/div/field[@name='street2']"
+            position="after">
+          <field name="street3" 
+                 placeholder="Street 3..." 
+                 class="o_address_street"
+                 attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+        </xpath>
+        <xpath expr='//field[@name="child_ids"]' position="attributes">
+          <attribute name="context">{'default_parent_id': active_id,
+          'default_street': street, 'default_street2': street2,
+          'default_street3': street3, 'default_city': city, 'default_state_id':
+          state_id, 'default_zip': zip, 'default_country_id': country_id,
+          'default_supplier': supplier, 'default_customer': customer,
+          'default_lang': lang,}</attribute>
+        </xpath>
+        <xpath expr="/form//field[@name='child_ids']/form//field[@name='street2']"
+               position="after">
+          <field name="street3" placeholder="Street 3..." class="o_address_street"/>
+        </xpath>
+
+        <xpath expr="/form//field[@name='child_ids']/kanban/field[@name='street2']"
+               position="after">
+          <field name="street3"/>
+        </xpath>
+
+      </field>
+    </record>
+
+    <record id="add_street_3_in_kanban" model="ir.ui.view">
+      <field name="name">add street 3 in kanban</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+      <field name="arch" type="xml">
+        <field name="street2" position="after">
+          <field name="street3"/>
+        </field>
+      </field>
+    </record>
+
+    <record id="view_partner_address_form" model="ir.ui.view">
+      <field name="name">add street 3 in res.partner.form.address</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_address_form"/>
+      <field name="arch" type="xml">
+        <field name="street2" position="after">
+          <field name="street3" placeholder="Street 3..." class="o_address_street"/>
+        </field>
+      </field>
+    </record>
+
+</odoo>
