@@ -1,0 +1,23 @@
+<openerp>
+    <data>
+        <record model="ir.actions.act_window" id="res_partner_see_related_documents_act">
+            <field name="name">Shows documents related to a partner</field>
+            <field name="res_model">signature.request</field>
+            <field name="view_mode">kanban, tree</field>
+            <field name="view_id" ref="website_sign.signature_request_view_kanban"/>
+            <field name="domain">[('request_item_ids.partner_id', '=', context.get('partner_id'))]</field>
+        </record>
+        <record model="ir.ui.view" id="res_partner_form_add_related_docs">
+            <field name="name">res_partner_form_add_related_docs</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" type="action" name="%(res_partner_see_related_documents_act)d" context="{'partner_id': active_id}" icon="fa-file-text" >
+                        <field name="documents_count" string="Documents" widget="statinfo" />
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
