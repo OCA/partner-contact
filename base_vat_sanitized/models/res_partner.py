@@ -1,4 +1,4 @@
-# Copyright 2016 Akretion (http://www.akretion.com)
+# Copyright 2016-2019 Akretion France (http://www.akretion.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 # @author Alexis de Lattre <alexis.delattre@akretion.com>
 
@@ -11,8 +11,7 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     sanitized_vat = fields.Char(
-        compute='_compute_sanitized_vat', string='Sanitized TIN',
-        store=True, readonly=True,
+        compute='_compute_sanitized_vat', string='Sanitized TIN', store=True,
         help='TIN in uppercase without spaces nor special caracters.')
 
     @classmethod
