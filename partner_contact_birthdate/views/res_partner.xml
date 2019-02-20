@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+     © 2015 Grupo ESOC Ingeniería de Servicios, S.L.U. -->
+
+<odoo>
+    <record id="view_personal_information_birthdate_date" model="ir.ui.view">
+        <field name="name">Birthdate Date field</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='function']" position="after">
+                <field name="birthdate_date" attrs="{'invisible': [('is_company', '=', True)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
