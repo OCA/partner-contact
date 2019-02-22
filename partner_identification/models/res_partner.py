@@ -5,11 +5,11 @@
 # Copyright - Antiun Ingenieria, SL (Madrid, Spain)
 #        http://www.antiun.com
 #        Antonio Espinosa <antonioea@antiun.com>
+# Copyright - 2019 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 # pylint: disable=invalid-name,missing-docstring,too-many-arguments
-# pylint: disable=protectec-access,unused-argument
+# pylint: disable=protected-access,unused-argument,no-self-use
 from openerp.osv import orm, fields
-from openerp.exceptions import ValidationError
 from openerp.tools.translate import _
 
 
@@ -19,23 +19,27 @@ class ResPartner(orm.Model):
     The base class provides for the registration of categories of
     identification and a list of those id numbers related to a partner.
 
-    Inheriting modules can dd specific fields, to enable easy entry and search
-    on those fields. An example of souch a field follows here:
+    Inheriting modules can have specific fields, to enable easy entry and
+    search on those fields. An example of souch a field follows here:
 
     Example:
         .. code-block:: python
 
-        _columns = {
-            'social_security': fields.function(
-                _compute_identification,
-                arg='SSN',
-                fcnt_inv=_inverse_identification,
-                fcnt_inv_arg='SSN',
-                type='char',
-                fcnt_search=_search_identification,
-                method= True, store=True,
-            ),
-        }
+    _columns = {
+        'social_security': fields.function(
+            lambda self, *args, **kwargs:
+            self._compute_identification(*args, **kwargs),
+            arg='SSN',
+            fnct_inv=lambda self, *args, **kwargs:
+            self._inverse_identification(*args, **kwargs),
+            fnct_inv_arg='SSN',
+            type='char',
+            fnct_search=lambda self, *args, **kwargs:
+            self._search_identification(*args, **kwargs),
+            method=True, store=True, readonly=False,
+            string='Social Security Number',
+        ),
+    }
 
         The field attributes arg and fnct_inv_arg must be set to a valid
         category code, to be provided by the module data of the module
@@ -70,15 +74,15 @@ class ResPartner(orm.Model):
             res[record.id] = False
             if not record.id_numbers:
                 continue
-            id_numbers = record.id_numbers.filtered(
-                lambda r: r.category_id.code == category_code
-            )
-            if not id_numbers:
-                continue
-            value = id_numbers[0].name
-            record[field_name] = value
+            for id_number in record.id_numbers:
+                if id_number.category_id.code != category_code:
+                    continue
+                res[record.id] = id_number.name
+        return res
 
-    def _inverse_identification(self, field_name, category_code):
+    def _inverse_identification(
+            self, cr, uid, ids, field_name, field_value, category_code,
+            context=None):
         """ Inverse for an identification field.
 
         This method will create a new record, or modify the existing one
@@ -94,50 +98,56 @@ class ResPartner(orm.Model):
             field_name (str): Name of field to set.
             category_code (str): Category code of the Identification type.
         """
-        for record in self:
-            id_number = record.id_numbers.filtered(
-                lambda r: r.category_id.code == category_code
-            )
-            record_len = len(id_number)
-            # Record for category is not existent.
-            if record_len == 0:
-                name = record[field_name]
-                if not name:
-                    # No value to set
-                    continue
-                category = self.env['res.partner.id_category'].search([
-                    ('code', '=', category_code),
-                ])
-                if not category:
-                    category = self.env['res.partner.id_category'].create({
-                        'code': category_code,
-                        'name': category_code,
-                    })
-                self.env['res.partner.id_number'].create({
-                    'partner_id': record.id,
-                    'category_id': category.id,
-                    'name': name,
-                })
+        # For the moment do nothing with empty value.
+        if not field_name or not field_value:
+            return
+        # Check, and if needed autocreate, category:
+        category_model = self.pool['res.partner.id_category']
+        category_ids = category_model.search(
+            cr, uid, [('code', '=', category_code)], context=context)
+        if not category_ids:
+            category_id = category_model.create(
+                cr, uid, {
+                    'code': category_code,
+                    'name': category_code},
+                context=context)
+        else:
+            category_id = category_ids[0]
+        id_model = self.pool['res.partner.id_number']
+        for record in self.browse(cr, uid, [ids], context=context):
+            # Search al records with the right category.
+            id_number_ids = id_model.search(
+                cr, uid, [
+                    ('partner_id', '=', record.id),
+                    ('category_id', '=', category_id)],
+                context=context)
+            if len(id_number_ids) > 1:
+                # Guard against writing wrong records.
+                raise orm.except_orm(
+                    _('Error'),
+                    _('This %s has multiple IDs of this type (%s), so a write'
+                      ' via the %s field is not possible.\n'
+                      'In order to fix this, please use the IDs tab.') % (
+                          record._name, category_code, field_name))
+            if len(id_number_ids) < 1:
+                id_model.create(
+                    cr, uid, {
+                        'partner_id': record.id,
+                        'category_id': category_id,
+                        'name': field_value},
+                    context=context)
+                return
             # There was an identification record singleton found.
-            elif record_len == 1:
-                value = record[field_name]
-                if value:
-                    id_number.name = value
-                else:
-                    id_number.active = False
-            # Guard against writing wrong records.
-            else:
-                raise ValidationError(_(
-                    'This %s has multiple IDs of this type (%s), so a write '
-                    'via the %s field is not possible. In order to fix this, '
-                    'please use the IDs tab.',
-                ) % (
-                    record._name, category_code, field_name,
-                ))
+            id_model.write(
+                cr, uid, id_number_ids, {
+                    'partner_id': record.id,
+                    'category_id': category_id,
+                    'name': field_value},
+                context=context)
 
-    def _search_identification(self, category_code, operator, value):
+    def _search_identification(
+            self, cr, uid, dummy_obj, field_name, args, context=None):
         """ Search method for an identification field.
-
 
         Args:
             category_code (str): Category code of the Identification type.
@@ -147,10 +157,11 @@ class ResPartner(orm.Model):
         Returns:
             list: Domain to search with.
         """
-        id_numbers = self.env['res.partner.id_number'].search([
-            ('name', operator, value),
-            ('category_id.code', '=', category_code),
-        ])
-        return [
-            ('id_numbers.id', 'in', id_numbers.ids),
-        ]
+        result = []
+        for arg in args:
+            if isinstance(arg, tuple) and arg[0] == field_name:
+                result.append(
+                    ('id_numbers.name',
+                     arg[1],
+                     arg[2]))
+        return result

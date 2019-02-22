@@ -26,10 +26,8 @@ msgid "Chamber Of Commerce Registration Number"
 msgstr "Kamer van Koophandel registratienummer"
 
 #. module: partner_coc
-#: model:ir.model.fields,field_description:partner_coc.field_res_partner_alias_coc_registration_number
-#: model:ir.model.fields,field_description:partner_coc.field_res_partner_coc_registration_number
-#: model:ir.model.fields,field_description:partner_coc.field_res_users_coc_registration_number
-msgid "CoC Registration Number"
+#: field:res.partner,coc_registration_number:0
+msgid "Chamber of Commerce"
 msgstr "KvK-nummer"
 
 #. module: partner_coc

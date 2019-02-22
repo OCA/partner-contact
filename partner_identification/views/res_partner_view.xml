@@ -9,15 +9,14 @@
     <field name="inherit_id" ref="base.view_partner_form"/>
     <field name="priority" eval="10"/>
     <field name="arch" type="xml">
-        <page name='sales_purchases' position="after">
+        <xpath expr='//page[last()]' position="after">
           <page string="ID Numbers" name="id_numbers">
               <field name="id_numbers" colspan="4" nolabel="1"
                      widget="one2many_list"/>
           </page>
-        </page>
+        </xpath>
     </field>
 </record>
-
 
 </data>
 </openerp>
