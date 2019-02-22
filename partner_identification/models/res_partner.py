@@ -1,30 +1,59 @@
 # -*- coding: utf-8 -*-
-#
-# © 2004-2010 Tiny SPRL http://tiny.be
-# © 2010-2012 ChriCar Beteiligungs- und Beratungs- GmbH
+# Copyright - 2004-2010 Tiny SPRL http://tiny.be
+# Copyright - 2010-2012 ChriCar Beteiligungs- und Beratungs- GmbH
 #             http://www.camptocamp.at
-# © 2015 Antiun Ingenieria, SL (Madrid, Spain)
+# Copyright - Antiun Ingenieria, SL (Madrid, Spain)
 #        http://www.antiun.com
 #        Antonio Espinosa <antonioea@antiun.com>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-
-from openerp import api, models, fields, _
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+# pylint: disable=invalid-name,missing-docstring,too-many-arguments
+# pylint: disable=protectec-access,unused-argument
+from openerp.osv import orm, fields
 from openerp.exceptions import ValidationError
+from openerp.tools.translate import _
 
 
-class ResPartner(models.Model):
-    _inherit = 'res.partner'  # pylint: disable=R7980
+class ResPartner(orm.Model):
+    """Base class to support identification fields.
 
-    id_numbers = fields.One2many(
-        comodel_name='res.partner.id_number',
-        inverse_name='partner_id',
-        string="Identification Numbers",
-    )
+    The base class provides for the registration of categories of
+    identification and a list of those id numbers related to a partner.
 
-    @api.multi
-    @api.depends('id_numbers')
-    def _compute_identification(self, field_name, category_code):
-        """ Compute a field that indicates a certain ID type.
+    Inheriting modules can dd specific fields, to enable easy entry and search
+    on those fields. An example of souch a field follows here:
+
+    Example:
+        .. code-block:: python
+
+        _columns = {
+            'social_security': fields.function(
+                _compute_identification,
+                arg='SSN',
+                fcnt_inv=_inverse_identification,
+                fcnt_inv_arg='SSN',
+                type='char',
+                fcnt_search=_search_identification,
+                method= True, store=True,
+            ),
+        }
+
+        The field attributes arg and fnct_inv_arg must be set to a valid
+        category code, to be provided by the module data of the module
+        adding the field.
+        """
+    _inherit = 'res.partner'
+
+    _columns = {
+        'id_numbers': fields.one2many(
+            'res.partner.id_number',
+            'partner_id',
+            "Identification Numbers"
+        ),
+    }
+
+    def _compute_identification(
+            self, cr, uid, ids, field_name, category_code, context=None):
+        """ Compute the field that indicate a certain ID type.
 
         Use this on a field that represents a certain ID type. It will compute
         the desired field as that ID(s).
@@ -32,27 +61,15 @@ class ResPartner(models.Model):
         This ID can be worked with as if it were a Char field, but it will
         be relating back to a ``res.partner.id_number`` instead.
 
-        Example:
-
-            .. code-block:: python
-
-            social_security = fields.Char(
-                compute=lambda s: s._compute_identification(
-                    'social_security', 'SSN',
-                ),
-                inverse=lambda s: s._inverse_identification(
-                    'social_security', 'SSN',
-                ),
-                search=lambda s, *a: s._search_identification(
-                    'SSN', *a
-                ),
-            )
-
         Args:
             field_name (str): Name of field to set.
             category_code (str): Category code of the Identification type.
         """
-        for record in self:
+        res = {}
+        for record in self.browse(cr, uid, ids, context=context):
+            res[record.id] = False
+            if not record.id_numbers:
+                continue
             id_numbers = record.id_numbers.filtered(
                 lambda r: r.category_id.code == category_code
             )
@@ -61,7 +78,6 @@ class ResPartner(models.Model):
             value = id_numbers[0].name
             record[field_name] = value
 
-    @api.multi
     def _inverse_identification(self, field_name, category_code):
         """ Inverse for an identification field.
 
@@ -73,22 +89,6 @@ class ResPartner(models.Model):
 
         If the value of the target field is unset, the associated ID will
         be deactivated in order to preserve history.
-
-        Example:
-
-            .. code-block:: python
-
-            social_security = fields.Char(
-                compute=lambda s: s._compute_identification(
-                    'social_security', 'SSN',
-                ),
-                inverse=lambda s: s._inverse_identification(
-                    'social_security', 'SSN',
-                ),
-                search=lambda s, *a: s._search_identification(
-                    'SSN', *a
-                ),
-            )
 
         Args:
             field_name (str): Name of field to set.
@@ -135,25 +135,9 @@ class ResPartner(models.Model):
                     record._name, category_code, field_name,
                 ))
 
-    @api.model
     def _search_identification(self, category_code, operator, value):
         """ Search method for an identification field.
 
-        Example:
-
-            .. code-block:: python
-
-            social_security = fields.Char(
-                compute=lambda s: s._compute_identification(
-                    'social_security', 'SSN',
-                ),
-                inverse=lambda s: s._inverse_identification(
-                    'social_security', 'SSN',
-                ),
-                search=lambda s, *a: s._search_identification(
-                    'SSN', *a
-                ),
-            )
 
         Args:
             category_code (str): Category code of the Identification type.
