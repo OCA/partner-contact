@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo12-addon-partner_address_street3',
         'odoo12-addon-partner_affiliate',
         'odoo12-addon-partner_disable_gravatar',
+        'odoo12-addon-partner_employee_quantity',
         'odoo12-addon-partner_external_map',
         'odoo12-addon-partner_fax',
         'odoo12-addon-partner_firstname',
