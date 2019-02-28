@@ -18,6 +18,6 @@ class ResPartner(models.Model):
     @api.constrains('industry_id', 'secondary_industry_ids')
     def _check_industries(self):
         if self.industry_id in self.secondary_industry_ids:
-            raise exceptions.UserError(
+            raise exceptions.ValidationError(
                 _('The main industry must be different '
                   'from the secondary industries.'))
