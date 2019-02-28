@@ -2,6 +2,7 @@
 # Copyright 2016 Tecnativa S.L. - Vicent Cubells
 # Copyright 2016 Tecnativa S.L. - Pedro M. Baeza
 # Copyright 2018 Eficent Business and IT Consulting Services, S.L.
+# Copyright 2019 Tecnativa - Cristina Martin R.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, exceptions, fields, models, _
@@ -9,7 +10,7 @@ from odoo import api, exceptions, fields, models, _
 
 class ResPartnerIndustry(models.Model):
     _inherit = 'res.partner.industry'
-    _order = "parent_left"
+    _order = "parent_path"
     _parent_order = "name"
     _parent_store = True
 
@@ -19,8 +20,7 @@ class ResPartnerIndustry(models.Model):
     child_ids = fields.One2many(comodel_name='res.partner.industry',
                                 inverse_name='parent_id',
                                 string="Children")
-    parent_left = fields.Integer('Parent Left', index=True)
-    parent_right = fields.Integer('Parent Right', index=True)
+    parent_path = fields.Char(index=True)
 
     @api.multi
     def name_get(self):
