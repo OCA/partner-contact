@@ -72,13 +72,8 @@ msgid "Name"
 msgstr ""
 
 #. module: partner_sector
-#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_left
-msgid "Parent Left"
-msgstr ""
-
-#. module: partner_sector
-#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_right
-msgid "Parent Right"
+#: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_parent_path
+msgid "Parent Path"
 msgstr ""
 
 #. module: partner_sector
@@ -117,4 +112,3 @@ msgstr ""
 #, python-format
 msgid "The main sector must be different from the secondary sectors."
 msgstr ""
-
