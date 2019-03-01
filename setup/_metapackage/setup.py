@@ -22,6 +22,7 @@ setuptools.setup(
         'odoo12-addon-partner_firstname',
         'odoo12-addon-partner_identification',
         'odoo12-addon-partner_multi_relation',
+        'odoo12-addon-partner_vat_unique',
     ],
     classifiers=[
         'Programming Language :: Python',
