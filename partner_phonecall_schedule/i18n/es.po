@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-15 12:30+0000\n"
-"PO-Revision-Date: 2017-09-15 14:32+0200\n"
-"Last-Translator: Jairo Llopis <yajo.sk8@gmail.com>\n"
+"PO-Revision-Date: 2019-03-01 15:53+0000\n"
+"Last-Translator: Marta Vázquez Rodríguez <vazrodmar@gmail.com>\n"
 "Language-Team: \n"
-"Language: es_ES\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.4\n"
 
 #. module: partner_phonecall_schedule
 #: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_partner_phonecall_calendar_attendance_ids
@@ -24,9 +24,8 @@ msgstr "Horario agregado de llamadas telefónicas"
 
 #. module: partner_phonecall_schedule
 #: model:ir.model.fields,help:partner_phonecall_schedule.field_res_partner_phonecall_calendar_attendance_ids
-#, fuzzy
 msgid "Aggregation of all available phonecall schedules."
-msgstr "Horario agregado de llamadas telefónicas"
+msgstr "Agregación de todos los horarios de llamada disponible."
 
 #. module: partner_phonecall_schedule
 #: model:ir.ui.view,arch_db:partner_phonecall_schedule.view_res_partner_filter
