@@ -10,14 +10,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-21 03:59+0000\n"
-"PO-Revision-Date: 2018-02-21 03:59+0000\n"
-"Last-Translator: enjolras <yo@miguelrevilla.com>, 2018\n"
+"PO-Revision-Date: 2019-03-01 10:53+0000\n"
+"Last-Translator: Marta Vázquez Rodríguez <vazrodmar@gmail.com>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.4\n"
 
 #. module: partner_password_reset
 #: model:ir.ui.view,arch_db:partner_password_reset.view_partner_password_reset_wizard
@@ -87,7 +88,7 @@ msgstr "Enviar email(s) de restablecimiento de contraseña"
 #: code:addons/partner_password_reset/wizard/res_partner_password_reset_wizard.py:35
 #, python-format
 msgid "The selected partners have no associated portal users"
-msgstr ""
+msgstr "La empresa seleccionada no tiene asociado un usuario de portal"
 
 #. module: partner_password_reset
 #: model:ir.model.fields,field_description:partner_password_reset.field_res_partner_password_reset_wizard_user_ids
