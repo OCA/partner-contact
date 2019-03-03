@@ -26,14 +26,14 @@ msgid "Contact"
 msgstr ""
 
 #. module: base_vat_sanitized
-#: model:ir.model.fields,field_description:base_vat_sanitized.field_res_partner_sanitized_vat
-#: model:ir.model.fields,field_description:base_vat_sanitized.field_res_users_sanitized_vat
+#: model:ir.model.fields,field_description:base_vat_sanitized.field_res_partner__sanitized_vat
+#: model:ir.model.fields,field_description:base_vat_sanitized.field_res_users__sanitized_vat
 msgid "Sanitized TIN"
 msgstr ""
 
 #. module: base_vat_sanitized
-#: model:ir.model.fields,help:base_vat_sanitized.field_res_partner_sanitized_vat
-#: model:ir.model.fields,help:base_vat_sanitized.field_res_users_sanitized_vat
+#: model:ir.model.fields,help:base_vat_sanitized.field_res_partner__sanitized_vat
+#: model:ir.model.fields,help:base_vat_sanitized.field_res_users__sanitized_vat
 msgid "TIN in uppercase without spaces nor special caracters."
 msgstr ""
 
