@@ -21,6 +21,6 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. module: partner_contact_personal_information_page
-#: model:ir.ui.view,arch_db:partner_contact_personal_information_page.personal_information
+#: model_terms:ir.ui.view,arch_db:partner_contact_personal_information_page.personal_information
 msgid "Personal Information"
 msgstr "Osobne informacije"
