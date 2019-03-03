@@ -19,6 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: partner_contact_personal_information_page
-#: model:ir.ui.view,arch_db:partner_contact_personal_information_page.personal_information
+#: model_terms:ir.ui.view,arch_db:partner_contact_personal_information_page.personal_information
 msgid "Personal Information"
 msgstr "Informations personnelles"
