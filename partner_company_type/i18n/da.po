@@ -29,7 +29,6 @@ msgid "Anonymous Company"
 msgstr ""
 
 #. module: partner_company_type
-#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_alias_partner_company_type_id
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_partner_company_type_id
 #: model:ir.model.fields,field_description:partner_company_type.field_res_users_partner_company_type_id
 msgid "Company Type"
@@ -40,6 +39,11 @@ msgstr ""
 #: model:ir.ui.menu,name:partner_company_type.menu_partner_company_type
 #: model:ir.ui.view,arch_db:partner_company_type.res_partner_company_type_form_view
 msgid "Company Types"
+msgstr ""
+
+#. module: partner_company_type
+#: model:ir.model,name:partner_company_type.model_res_partner
+msgid "Contact"
 msgstr ""
 
 #. module: partner_company_type
@@ -78,11 +82,6 @@ msgid "Last Updated on"
 msgstr "Sidst opdateret den"
 
 #. module: partner_company_type
-#: model:ir.model,name:partner_company_type.model_res_partner
-msgid "Partner"
-msgstr "Partner"
-
-#. module: partner_company_type
 #: model:ir.model,name:partner_company_type.model_res_partner_company_type
 msgid "Partner Company Type"
 msgstr ""
@@ -96,3 +95,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type_name
 msgid "Title"
 msgstr ""
+
+#~ msgid "Partner"
+#~ msgstr "Partner"
