@@ -20,5 +20,8 @@ msgstr ""
 
 #. module: partner_disable_gravatar
 #: model:ir.model,name:partner_disable_gravatar.model_res_partner
-msgid "Partner"
-msgstr "Kidea"
+msgid "Contact"
+msgstr ""
+
+#~ msgid "Partner"
+#~ msgstr "Kidea"
