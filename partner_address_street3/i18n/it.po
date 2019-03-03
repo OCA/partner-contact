@@ -29,14 +29,32 @@ msgid "Country"
 msgstr "Nazione"
 
 #. module: partner_address_street3
-#: model:ir.model.fields,field_description:partner_address_street3.field_res_partner_street3
-#: model:ir.model.fields,field_description:partner_address_street3.field_res_users_street3
+#: model:ir.model.fields,help:partner_address_street3.field_res_country__address_format
+msgid ""
+"Display format to use for addresses belonging to this country.\n"
+"\n"
+"You can use python-style string pattern with all the fields of the address "
+"(for example, use '%(street)s' to display the field 'street') plus\n"
+"%(state_name)s: the name of the state\n"
+"%(state_code)s: the code of the state\n"
+"%(country_name)s: the name of the country\n"
+"%(country_code)s: the code of the country"
+msgstr ""
+
+#. module: partner_address_street3
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_country__address_format
+msgid "Layout in Reports"
+msgstr ""
+
+#. module: partner_address_street3
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_partner__street3
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_users__street3
 msgid "Street 3"
 msgstr ""
 
 #. module: partner_address_street3
-#: model:ir.ui.view,arch_db:partner_address_street3.add_street3_in_form_view
-#: model:ir.ui.view,arch_db:partner_address_street3.view_partner_address_form
+#: model_terms:ir.ui.view,arch_db:partner_address_street3.add_street3_in_form_view
+#: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_address_form
 msgid "Street 3..."
 msgstr ""
 
