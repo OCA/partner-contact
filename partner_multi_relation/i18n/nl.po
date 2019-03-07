@@ -542,7 +542,7 @@ msgstr ""
 "Deze connectie is van rechts naar links hetzelfde als van links naar rechts"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_1683
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_1685
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_type_id
 msgid "Type"
 msgstr "Type"
