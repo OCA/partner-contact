@@ -2,7 +2,7 @@
 # Copyright 2018 Tecnativa - David Vidal
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models
+from openerp import api, fields, models
 
 
 class PortalWizard(models.TransientModel):
@@ -24,4 +24,4 @@ class PortalWizard(models.TransientModel):
                 )
         else:
             not_in_portal = self.user_ids.filtered(lambda x: not x.in_portal)
-            not_in_portal.update({'in_portal': True})
+            not_in_portal.write({'in_portal': True})
