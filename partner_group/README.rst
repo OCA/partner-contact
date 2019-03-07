@@ -26,7 +26,10 @@ Partner Group
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
 This module extends the functionality of partner to allow group partners into
-other partners, this modulo not use the parent company field.
+other partners.
+This module is an alternative to parent company field, as setting that field
+implies other business logic that wants to be avoided here as this is only for
+informative purposes.
 
 **Table of contents**
 
