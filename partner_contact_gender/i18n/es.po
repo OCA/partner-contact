@@ -30,8 +30,8 @@ msgid "Female"
 msgstr "Femenino"
 
 #. module: partner_contact_gender
-#: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner_gender
-#: model:ir.model.fields,field_description:partner_contact_gender.field_res_users_gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner__gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_users__gender
 msgid "Gender"
 msgstr "Género"
 
