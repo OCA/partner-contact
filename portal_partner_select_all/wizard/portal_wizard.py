@@ -24,4 +24,5 @@ class PortalWizard(models.TransientModel):
                 )
         else:
             not_in_portal = self.user_ids.filtered(lambda x: not x.in_portal)
-            not_in_portal.write({'in_portal': True})
+            for user in not_in_portal:
+                user.in_portal = True
