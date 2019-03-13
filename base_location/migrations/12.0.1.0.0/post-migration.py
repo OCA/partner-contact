@@ -9,6 +9,7 @@ from openupgradelib import openupgrade
 def migrate(env, version):
     column_name = openupgrade.get_legacy_name('better_zip_id')
     openupgrade.logged_query(
+        env.cr,
         "ALTER TABLE res_city_zip ADD %s INTEGER", (AsIs(column_name), ),
     )
     openupgrade.logged_query(
