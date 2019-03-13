@@ -52,6 +52,8 @@ class ResPartner(models.Model):
 
     @api.constrains('zip_id', 'country_id', 'city_id', 'state_id')
     def _check_zip(self):
+        if self.env.context.get('skip_check_zip'):
+            return
         for rec in self:
             if not rec.zip_id:
                 continue
