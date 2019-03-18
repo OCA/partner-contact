@@ -18,7 +18,7 @@ class ResPartner(orm.Model):
             type='char',
             fnct_search=lambda self, *args, **kwargs:
             self._search_identification(*args, **kwargs),
-            method=True, store=True, readonly=False,
-            string='Chamber of Commerce',
+            method=True, readonly=False,
+            string='CoC Registration Number',
         ),
     }

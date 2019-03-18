@@ -5,7 +5,6 @@
 <record id="view_partner_id_numbers_form" model="ir.ui.view">
     <field name="name">res.partner.id_number.form</field>
     <field name="model">res.partner.id_number</field>
-    <field name="type">form</field>
     <field name="arch" type="xml">
         <form string="Partner ID Numbers">
             <group>
@@ -27,7 +26,6 @@
 <record id="view_partner_id_numbers_tree" model="ir.ui.view">
     <field name="name">res.partner.id_number.tree</field>
     <field name="model">res.partner.id_number</field>
-    <field name="type">tree</field>
     <field name="arch" type="xml">
         <tree string="Partner ID Numbers">
             <field name="category_id" />

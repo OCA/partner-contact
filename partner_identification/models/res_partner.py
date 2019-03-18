@@ -11,6 +11,7 @@
 # pylint: disable=protected-access,unused-argument,no-self-use
 from openerp.osv import orm, fields
 from openerp.tools.translate import _
+from openerp.osv.expression import is_leaf, AND
 
 
 class ResPartner(orm.Model):
@@ -25,26 +26,26 @@ class ResPartner(orm.Model):
     Example:
         .. code-block:: python
 
-    _columns = {
-        'social_security': fields.function(
-            lambda self, *args, **kwargs:
-            self._compute_identification(*args, **kwargs),
-            arg='SSN',
-            fnct_inv=lambda self, *args, **kwargs:
-            self._inverse_identification(*args, **kwargs),
-            fnct_inv_arg='SSN',
-            type='char',
-            fnct_search=lambda self, *args, **kwargs:
-            self._search_identification(*args, **kwargs),
-            method=True, store=True, readonly=False,
-            string='Social Security Number',
-        ),
-    }
+        _columns = {
+            'social_security': fields.function(
+                lambda self, *args, **kwargs:
+                self._compute_identification(*args, **kwargs),
+                arg='SSN',
+                fnct_inv=lambda self, *args, **kwargs:
+                self._inverse_identification(*args, **kwargs),
+                fnct_inv_arg='SSN',
+                type='char',
+                fnct_search=lambda self, *args, **kwargs:
+                self._search_identification(*args, **kwargs),
+                method=True, readonly=False,
+                string='Social Security Number',
+            ),
+        }
 
-        The field attributes arg and fnct_inv_arg must be set to a valid
-        category code, to be provided by the module data of the module
-        adding the field.
-        """
+    The field attributes arg and fnct_inv_arg must be set to a valid
+    category code, to be provided by the module data of the module
+    adding the field.
+    """
     _inherit = 'res.partner'
 
     _columns = {
@@ -102,20 +103,11 @@ class ResPartner(orm.Model):
         if not field_name or not field_value:
             return
         # Check, and if needed autocreate, category:
-        category_model = self.pool['res.partner.id_category']
-        category_ids = category_model.search(
-            cr, uid, [('code', '=', category_code)], context=context)
-        if not category_ids:
-            category_id = category_model.create(
-                cr, uid, {
-                    'code': category_code,
-                    'name': category_code},
-                context=context)
-        else:
-            category_id = category_ids[0]
+        category_id = self._get_create_category(
+            cr, uid, category_code, context=context)
         id_model = self.pool['res.partner.id_number']
-        for record in self.browse(cr, uid, [ids], context=context):
-            # Search al records with the right category.
+        for record in self.browse(cr, uid, ids, context=context):
+            # Search all records with the right category.
             id_number_ids = id_model.search(
                 cr, uid, [
                     ('partner_id', '=', record.id),
@@ -139,11 +131,7 @@ class ResPartner(orm.Model):
                 return
             # There was an identification record singleton found.
             id_model.write(
-                cr, uid, id_number_ids, {
-                    'partner_id': record.id,
-                    'category_id': category_id,
-                    'name': field_value},
-                context=context)
+                cr, uid, id_number_ids, {'name': field_value}, context=context)
 
     def _search_identification(
             self, cr, uid, dummy_obj, field_name, args, context=None):
@@ -157,11 +145,25 @@ class ResPartner(orm.Model):
         Returns:
             list: Domain to search with.
         """
-        result = []
+        category_code = self._columns[field_name]._arg
+        category_id = self._get_create_category(
+            cr, uid, category_code, context=context)
+        result = [('id_numbers.category_id.id', '=', category_id)]
         for arg in args:
-            if isinstance(arg, tuple) and arg[0] == field_name:
-                result.append(
-                    ('id_numbers.name',
-                     arg[1],
-                     arg[2]))
+            if is_leaf(arg) and arg[0] == field_name:
+                result = AND([result, [('id_numbers.name', arg[1], arg[2])]])
         return result
+
+    def _get_create_category(self, cr, uid, category_code, context=None):
+        """Get category for code, create if not exists."""
+        category_model = self.pool['res.partner.id_category']
+        category_ids = category_model.search(
+            cr, uid, [('code', '=', category_code)], context=context)
+        if category_ids:
+            return category_ids[0]
+        category = category_model.create(
+            cr, uid, {
+                'code': category_code,
+                'name': category_code},
+            context=context)
+        return category.id

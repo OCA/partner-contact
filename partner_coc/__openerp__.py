@@ -6,6 +6,8 @@
                "partner",
     'version': '7.0.1.0.0',
     'category': 'Web',
+    'description':
+    """Adds a field 'Chamber Of Commerce Registration Number' to partner.""",
     'author': 'Onestein,Odoo Community Association (OCA)',
     'website': 'https://github.com/oca/partner-contact',
     'license': 'AGPL-3',

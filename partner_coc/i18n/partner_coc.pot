@@ -20,7 +20,7 @@ msgstr ""
 
 #. module: partner_coc
 #: field:res.partner,coc_registration_number:0
-msgid "Chamber of Commerce"
+msgid "CoC Registration Number"
 msgstr ""
 
 #. module: partner_coc

@@ -51,11 +51,13 @@ class ResPartnerIdNumber(orm.Model):
             help="Expiration date. For example, date when person needs"
                  " to renew his driver license, 21/10/2019"),
         'comment': fields.text("Notes"),
+        # TODO: rename status field to standard state.
         'status': fields.selection(
             [('draft', 'New'),
              ('open', 'Running'),
              ('pending', 'To Renew'),
-             ('close', 'Expired')]),
+             ('close', 'Expired')],
+            "Status"),
         'active': fields.boolean(string="Active"),
     }
     _defaults = {

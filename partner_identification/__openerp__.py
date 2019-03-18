@@ -12,6 +12,13 @@
 {
     'name': 'Partner Identification Numbers',
     'category': 'Customer Relationship Management',
+    'description': """Manage partner identifications.
+
+    This includes searching partners on identification, and also a
+    framework for adding identification fields for specific types of
+    identification (passpost, drivers license, chamber of commerce id...),
+    with common methods to maintain those fields.
+    """,
     'version': '7.0.1.1.1',
     'data': [
         'views/res_partner_id_category_view.xml',
