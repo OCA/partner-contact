@@ -11,7 +11,7 @@
 
 
 from odoo import api, models, fields, _
-from odoo.exceptions import ValidationError, UserError
+from odoo.exceptions import ValidationError
 from odoo.tools.safe_eval import safe_eval
 
 
@@ -63,7 +63,7 @@ class ResPartnerIdCategory(models.Model):
                       mode='exec',
                       nocopy=True)
         except Exception as e:
-            raise UserError(
+            raise ValidationError(
                 _('Error when evaluating the id_category validation code:'
                   ':\n %s \n(%s)') % (self.name, e))
         if eval_context.get('failed', False):

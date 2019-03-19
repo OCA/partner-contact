@@ -3,7 +3,8 @@
 # © 2016 Tecnativa S.L. - Vicent Cubells
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api, exceptions, _
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 
 class ResPartner(models.Model):
@@ -19,5 +20,6 @@ class ResPartner(models.Model):
     @api.constrains('sector_id', 'secondary_sector_ids')
     def _check_sectors(self):
         if self.sector_id in self.secondary_sector_ids:
-            raise exceptions.Warning(_('The main sector must be different '
-                                       'from the secondary sectors.'))
+            raise ValidationError(
+                _('The main sector must be different '
+                  'from the secondary sectors.'))
