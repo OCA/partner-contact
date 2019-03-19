@@ -143,7 +143,7 @@ msgid "Set if you want to be able use sectors for individuals also."
 msgstr ""
 
 #. module: partner_sector
-#: code:addons/partner_sector/models/res_partner.py:22
+#: code:addons/partner_sector/models/res_partner.py:24
 #, python-format
 msgid "The main sector must be different from the secondary sectors."
 msgstr ""
