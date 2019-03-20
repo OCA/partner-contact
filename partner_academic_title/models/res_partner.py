@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
-# Copyright 2015-2017 ACSONE SA/NV (<http://acsone.eu>)
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2015-2017 ACSONE SA/NV (<https://acsone.eu>)
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api
 
@@ -11,19 +10,17 @@ class ResPartner(models.Model):
     def _get_separator(self):
         return ', '
 
+    @api.multi
     @api.depends('academic_title_ids', 'academic_title_ids.sequence')
-    @api.one
-    def _get_academic_title_display(self):
-        display_title = ""
-        separator = self._get_separator()
-        title_ids = self.academic_title_ids.sorted(lambda r: r.sequence)
-        for title in title_ids:
-            if display_title:
-                display_title = "%s%s%s" % (display_title, separator,
-                                            title.name)
-            else:
-                display_title = "%s" % (title.name)
-        self.academic_title_display = display_title
+    def _compute_academic_title_display(self):
+        for this in self:
+            display_title = ""
+            separator = this._get_separator()
+            title_ids = this.academic_title_ids.sorted(lambda r: r.sequence)
+            if title_ids:
+                display_title = separator.join(
+                    [title.name for title in title_ids])
+            this.academic_title_display = display_title
 
     academic_title_ids = fields.Many2many(
         string='Academic Titles',
@@ -34,6 +31,6 @@ class ResPartner(models.Model):
     )
     academic_title_display = fields.Char(
         string='Academic Titles',
-        compute='_get_academic_title_display',
+        compute='_compute_academic_title_display',
         store=True
     )
