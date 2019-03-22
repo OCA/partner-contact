@@ -25,11 +25,6 @@ msgid "Automatically"
 msgstr "自动"
 
 #. module: partner_deduplicate_acl
-#: model:ir.model,name:partner_deduplicate_acl.model_res_partner
-msgid "Contact"
-msgstr ""
-
-#. module: partner_deduplicate_acl
 #: model:ir.module.category,name:partner_deduplicate_acl.category
 #: model:ir.ui.menu,name:partner_deduplicate_acl.partner_merge_automatic_menu
 msgid "Deduplicate Contacts"
@@ -41,7 +36,12 @@ msgid "Manually"
 msgstr "手动"
 
 #. module: partner_deduplicate_acl
-#: model:ir.ui.menu,name:partner_deduplicate_acl.crm_tools
+#: model:ir.model,name:partner_deduplicate_acl.model_base_partner_merge_automatic_wizard
+msgid "Merge Partner Wizard"
+msgstr ""
+
+#. module: partner_deduplicate_acl
+#: model:ir.ui.menu,name:partner_deduplicate_acl.base_tools
 msgid "Tools"
 msgstr ""
 
@@ -49,8 +49,3 @@ msgstr ""
 #: model:res.groups,name:partner_deduplicate_acl.group_unrestricted
 msgid "Without restrictions"
 msgstr "无限制"
-
-#. module: partner_deduplicate_acl
-#: model:ir.model,name:partner_deduplicate_acl.model_base_partner_merge_automatic_wizard
-msgid "base.partner.merge.automatic.wizard"
-msgstr ""
