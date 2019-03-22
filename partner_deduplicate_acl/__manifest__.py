@@ -16,7 +16,7 @@
     "application": False,
     "installable": True,
     "depends": [
-        "base",
+        "contacts",
     ],
     "data": [
         "security/partner_deduplicate_acl_security.xml",
