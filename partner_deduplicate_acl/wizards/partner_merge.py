@@ -14,7 +14,7 @@ class BasePartnerMergeAutomaticWizard(models.TransientModel):
         rights to avoid the rise of exceptions. An special context key is
         passed for preserving the message author.
         """
-        if self.env.user.has_group('crm_deduplicate_acl.group_unrestricted'):
+        if self.env.user.has_group('partner_deduplicate_acl.group_unrestricted'):
             obj = self.sudo().with_context(message_post_user=self.env.uid)
             if dst_partner:
                 dst_partner = dst_partner.with_context(
