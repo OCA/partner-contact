@@ -21,7 +21,7 @@ class TestCrmDeduplicateAcl(common.TransactionCase):
         self.user = self.env['res.users'].create({
             'login': 'test_crm_deduplicate_acl',
             'name': 'test_crm_deduplicate_acl',
-            'email': 'crm_deduplicate_acl@example.org',
+            'email': 'partner_deduplicate_acl@example.org',
             'groups_id': [
                 (4, self.env.ref('base.group_user').id),
                 (4, self.env.ref('base.group_partner_manager').id),
@@ -38,7 +38,7 @@ class TestCrmDeduplicateAcl(common.TransactionCase):
         with self.assertRaises(exceptions.UserError):
             self.wizard.action_merge()
         self.user.groups_id = [
-            (4, self.env.ref('crm_deduplicate_acl.group_unrestricted').id),
+            (4, self.env.ref('partner_deduplicate_acl.group_unrestricted').id),
         ]
         # Now there shouldn't be error
         self.wizard.action_merge()
