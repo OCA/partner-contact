@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * crm_deduplicate_filter
+# * partner_deduplicate_filter
 #
 # Translators:
 # Bole <bole@dajmi5.com>, 2017
@@ -19,22 +19,25 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#. module: crm_deduplicate_filter
-#: model:ir.model.fields,field_description:crm_deduplicate_filter.field_base_partner_merge_automatic_wizard_exclude_is_company
+#. module: partner_deduplicate_filter
+#: model:ir.model.fields,field_description:partner_deduplicate_filter.field_base_partner_merge_automatic_wizard__exclude_is_company
 msgid "'Is a company?' field selected"
 msgstr ""
 
-#. module: crm_deduplicate_filter
-#: model:ir.model.fields,field_description:crm_deduplicate_filter.field_base_partner_merge_automatic_wizard_exclude_not_parent
+#. module: partner_deduplicate_filter
+#: model:ir.model,name:partner_deduplicate_filter.model_base_partner_merge_automatic_wizard
+msgid "Merge Partner Wizard"
+msgstr ""
+
+#. module: partner_deduplicate_filter
+#: model:ir.model.fields,field_description:partner_deduplicate_filter.field_base_partner_merge_automatic_wizard__exclude_not_parent
 msgid "Parent company not set"
 msgstr ""
 
-#. module: crm_deduplicate_filter
-#: model:ir.model.fields,field_description:crm_deduplicate_filter.field_base_partner_merge_automatic_wizard_exclude_parent
+#. module: partner_deduplicate_filter
+#: model:ir.model.fields,field_description:partner_deduplicate_filter.field_base_partner_merge_automatic_wizard__exclude_parent
 msgid "Parent company set (Contacts)"
 msgstr ""
 
-#. module: crm_deduplicate_filter
-#: model:ir.model,name:crm_deduplicate_filter.model_base_partner_merge_automatic_wizard
-msgid "base.partner.merge.automatic.wizard"
-msgstr "base.partner.merge.automatic.wizard"
+#~ msgid "base.partner.merge.automatic.wizard"
+#~ msgstr "base.partner.merge.automatic.wizard"
