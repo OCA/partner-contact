@@ -34,6 +34,7 @@ setuptools.setup(
         'odoo9-addon-partner_contact_personal_information_page',
         'odoo9-addon-partner_contact_weight',
         'odoo9-addon-partner_default_sale_discount',
+        'odoo9-addon-partner_email_unique',
         'odoo9-addon-partner_external_map',
         'odoo9-addon-partner_financial_risk',
         'odoo9-addon-partner_firstname',
