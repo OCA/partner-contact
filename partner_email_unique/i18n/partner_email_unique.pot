@@ -1,0 +1,26 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_email_unique
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_email_unique
+#: model:ir.model,name:partner_email_unique.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: partner_email_unique
+#: code:addons/partner_email_unique/models/res_partner.py:32
+#, python-format
+msgid "This email is already set to partner '%s'"
+msgstr ""
+
