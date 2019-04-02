@@ -3,7 +3,7 @@
         <record model="ir.actions.act_window" id="res_partner_see_related_documents_act">
             <field name="name">Shows documents related to a partner</field>
             <field name="res_model">signature.request</field>
-            <field name="view_mode">kanban, tree</field>
+            <field name="view_mode">kanban,tree,form</field>
             <field name="view_id" ref="website_sign.signature_request_view_kanban"/>
             <field name="domain">[('request_item_ids.partner_id', '=', context.get('partner_id'))]</field>
         </record>
