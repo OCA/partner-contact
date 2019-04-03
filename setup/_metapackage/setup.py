@@ -19,6 +19,7 @@ setuptools.setup(
         'odoo12-addon-partner_company_group',
         'odoo12-addon-partner_contact_gender',
         'odoo12-addon-partner_contact_personal_information_page',
+        'odoo12-addon-partner_deduplicate_acl',
         'odoo12-addon-partner_disable_gravatar',
         'odoo12-addon-partner_employee_quantity',
         'odoo12-addon-partner_external_map',
