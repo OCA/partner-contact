@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 Tecnativa - Jairo Llopis
+     Copyright 2016 Tecnativa - Vicent Cubells
+     Copyright 2018 Tecnativa - Pedro M. Baeza
+     Copyright 2019 Tecnativa - Victor M.M. Torres
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+        <record id="base_partner_merge_automatic_wizard_form" model="ir.ui.view">
+            <field name="name">Restrict automatic merge access</field>
+            <field name="model">base.partner.merge.automatic.wizard</field>
+            <field name="inherit_id" ref="base.base_partner_merge_automatic_wizard_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_start_automatic_process']" position="attributes">
+                    <attribute name="groups">partner_deduplicate_acl.group_automatically</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_update_all_process']" position="attributes">
+                    <attribute name="groups">partner_deduplicate_acl.group_automatically</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="base.action_partner_merge" model="ir.actions.act_window">
+            <field name="groups_id" eval="[(4, ref('partner_deduplicate_acl.group_manually'))]"/>
+        </record>
+
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 Tecnativa - Jairo Llopis
+     Copyright 2016 Tecnativa - Vicent Cubells
+     Copyright 2017 Tecnativa - Pedro M. Baeza
+     Copyright 2019 Tecnativa - Victor M.M. Torres
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <menuitem id='base_tools' name='Tools'
+              parent='contacts.menu_contacts' sequence="24"/>
+    <menuitem id='partner_merge_automatic_menu'
+              action='base.action_partner_deduplicate'
+              groups='group_automatically'
+              parent='base_tools'
+    />
+</odoo>
