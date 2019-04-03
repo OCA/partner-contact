@@ -25,6 +25,7 @@ setuptools.setup(
         'odoo12-addon-partner_fax',
         'odoo12-addon-partner_firstname',
         'odoo12-addon-partner_identification',
+        'odoo12-addon-partner_industry_secondary',
         'odoo12-addon-partner_multi_relation',
         'odoo12-addon-partner_phone_extension',
         'odoo12-addon-partner_second_lastname',
