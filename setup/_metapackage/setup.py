@@ -17,6 +17,7 @@ setuptools.setup(
         'odoo12-addon-partner_affiliate',
         'odoo12-addon-partner_coc',
         'odoo12-addon-partner_company_group',
+        'odoo12-addon-partner_contact_department',
         'odoo12-addon-partner_contact_gender',
         'odoo12-addon-partner_contact_personal_information_page',
         'odoo12-addon-partner_deduplicate_acl',
