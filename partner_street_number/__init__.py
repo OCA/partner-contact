@@ -36,7 +36,7 @@ def post_init_hook(cr, registry):
     cr.execute(
         'SELECT id, street FROM res_partner '
         'WHERE street IS NOT NULL and street_name IS NULL'
-        )
+    )
     partner_obj = registry['res.partner']
     for partner in cr.fetchall():
         partner_obj.write(
