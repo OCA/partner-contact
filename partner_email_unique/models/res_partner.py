@@ -22,6 +22,7 @@ class ResPartner(models.Model):
             domain = [
                 ('id', '!=', partner.id),
                 ('email', '=', partner.email),
+                ('email', '!=', False),
             ]
             other_partners = self.search(domain)
 

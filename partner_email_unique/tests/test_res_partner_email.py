@@ -33,3 +33,7 @@ class TestResPartnerEmailUnique(common.SavepointCase):
         # Test can't create/modify partner with same email
         with self.assertRaises(ValidationError):
             self.partner2.email = 'same_email@test.com'
+
+        # Empty email addresses don't raise
+        self.partner1.email = False
+        self.partner2.email = False
