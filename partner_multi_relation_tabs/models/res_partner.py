@@ -33,6 +33,18 @@ class ResPartner(models.Model):
             result['fields'][fieldname] = original_fields[fieldname]
         return result
 
+    def mapped(self, func):
+        """Handle situation where mapped refers to not yet added tab field."""
+        try:
+            return super(ResPartner, self).mapped(func)
+        except KeyError:
+            # Retry if error caused by tab field
+            if isinstance(func, basestring) and 'tab' in func:
+                for tab in self._get_tabs():  # get all tabs
+                    self.add_field(tab)
+                return super(ResPartner, self).mapped(func)
+            raise
+
     def _add_tab_pages(self, view):
         """Adds the relevant tabs to the partner's formview."""
         # pylint: disable=no-member
