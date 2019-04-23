@@ -1,5 +1,5 @@
-# Copyright 2017 Komit <http://komit-consulting.com>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# Copyright 2019 Komit <https://komit-consulting.com>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 import logging
 from odoo import api, models, _
@@ -31,5 +31,4 @@ class ResPartner(models.Model):
     def email_check(self, email):
         if validate_email(email):
             return True
-        else:
-            raise UserError(_('Invalid e-mail!'))
+        raise UserError(_('Invalid e-mail!'))
