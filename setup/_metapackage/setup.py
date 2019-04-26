@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo11-addon-base_partner_merge',
         'odoo11-addon-base_partner_sequence',
         'odoo11-addon-base_vat_sanitized',
+        'odoo11-addon-partner_academic_title',
         'odoo11-addon-partner_address_street3',
         'odoo11-addon-partner_affiliate',
         'odoo11-addon-partner_coc',
