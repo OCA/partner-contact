@@ -386,8 +386,9 @@ CREATE OR REPLACE VIEW %%(table)s AS
             if type_id:
                 is_inverse = vals.get('is_inverse')
                 type_selection_id = type_id * 2 + (is_inverse and 1 or 0)
-        return type_selection_id and self.type_selection_id.browse(
-            type_selection_id) or False
+        return self.env['res.partner.relation.type.selection'].browse(
+            type_selection_id or []
+        )
 
     @api.multi
     def write(self, vals):
