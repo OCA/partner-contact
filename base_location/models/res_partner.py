@@ -2,8 +2,7 @@
 # Copyright 2018 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
+from odoo import api, fields, models
 
 
 class ResPartner(models.Model):
@@ -51,26 +50,6 @@ class ResPartner(models.Model):
             self.update(vals)
         elif not self.country_enforce_cities:
             self.city_id = False
-
-    @api.constrains('zip_id', 'country_id', 'city_id', 'state_id')
-    def _check_zip(self):
-        if self.env.context.get('skip_check_zip'):
-            return
-        for rec in self:
-            if not rec.zip_id:
-                continue
-            if rec.zip_id.city_id.state_id != rec.state_id:
-                raise ValidationError(_(
-                    "The state of the partner %s differs from that in "
-                    "location %s") % (rec.name, rec.zip_id.name))
-            if rec.zip_id.city_id.country_id != rec.country_id:
-                raise ValidationError(_(
-                    "The country of the partner %s differs from that in "
-                    "location %s") % (rec.name, rec.zip_id.name))
-            if rec.zip_id.city_id != rec.city_id:
-                raise ValidationError(_(
-                    "The city of partner %s differs from that in "
-                    "location %s") % (rec.name, rec.zip_id.name))
 
     @api.onchange('state_id')
     def _onchange_state_id(self):

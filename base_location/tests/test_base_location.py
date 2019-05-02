@@ -1,7 +1,6 @@
 # Copyright 2015 Yannick Vaucher, Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.exceptions import ValidationError
 from odoo.tests import tagged, common
 from odoo.tools.misc import mute_logger
 import psycopg2
@@ -127,55 +126,38 @@ class TestBaseLocation(common.SavepointCase):
         company._onchange_zip_id()
         self.assertEqual(company.city_id, self.barcelona.city_id)
 
-    def test_constrains_partner_01(self):
-        """Test partner 1 constraints"""
-        with self.assertRaises(ValidationError):
-            self.partner_obj.create({
-                'name': 'P1',
-                'zip_id': self.barcelona.id,
-            })
-
     def test_writing_company(self):
         self.company.zip_id = self.barcelona
 
     def test_constrains_partner_country(self):
         """Test partner country constraints"""
-        partner = self.partner_obj.create({
+        self.partner_obj.create({
             'name': 'P1',
             'zip_id': self.barcelona.id,
             'country_id': self.barcelona.city_id.country_id.id,
             'state_id': self.barcelona.city_id.state_id.id,
             'city_id': self.barcelona.city_id.id,
         })
-
-        with self.assertRaises(ValidationError):
-            partner.country_id = self.ref('base.ch')
 
     def test_constrains_partner_state(self):
         """Test partner state constraints"""
-        partner = self.partner_obj.create({
+        self.partner_obj.create({
             'name': 'P1',
             'zip_id': self.barcelona.id,
             'country_id': self.barcelona.city_id.country_id.id,
             'state_id': self.barcelona.city_id.state_id.id,
             'city_id': self.barcelona.city_id.id,
         })
-
-        with self.assertRaises(ValidationError):
-            partner.state_id = self.state_vd.id
 
     def test_constrains_partner_city(self):
         """Test partner city constraints"""
-        partner = self.partner_obj.create({
+        self.partner_obj.create({
             'name': 'P1',
             'zip_id': self.barcelona.id,
             'country_id': self.barcelona.city_id.country_id.id,
             'state_id': self.barcelona.city_id.state_id.id,
             'city_id': self.barcelona.city_id.id,
         })
-
-        with self.assertRaises(ValidationError):
-            partner.city_id = self.city_lausanne
 
     def test_partner_onchange_country(self):
         """Test partner onchange country_id"""

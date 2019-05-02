@@ -47,21 +47,11 @@ class ResCompany(models.Model):
 
     def _inverse_city_id(self):
         for company in self:
-            company.with_context(
-                skip_check_zip=True).partner_id.city_id = company.city_id
+            company.partner_id.city_id = company.city_id
 
     def _inverse_zip_id(self):
         for company in self:
-            company.with_context(
-                skip_check_zip=True).partner_id.zip_id = company.zip_id
-
-    def _inverse_state(self):
-        return super(ResCompany, self.with_context(
-            skip_check_zip=True))._inverse_state()
-
-    def _inverse_country(self):
-        return super(ResCompany, self.with_context(
-            skip_check_zip=True))._inverse_country()
+            company.partner_id.zip_id = company.zip_id
 
     @api.onchange('zip_id')
     def _onchange_zip_id(self):
