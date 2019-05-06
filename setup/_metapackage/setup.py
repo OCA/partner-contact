@@ -33,6 +33,7 @@ setuptools.setup(
         'odoo12-addon-partner_multi_relation',
         'odoo12-addon-partner_phone_extension',
         'odoo12-addon-partner_phonecall_schedule',
+        'odoo12-addon-partner_priority',
         'odoo12-addon-partner_ref_unique',
         'odoo12-addon-partner_second_lastname',
         'odoo12-addon-partner_vat_unique',
