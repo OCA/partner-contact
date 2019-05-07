@@ -19,7 +19,7 @@ msgid "Partner"
 msgstr ""
 
 #. module: partner_email_unique
-#: code:addons/partner_email_unique/models/res_partner.py:33
+#: code:addons/partner_email_unique/models/res_partner.py:35
 #, python-format
 msgid "This email is already set to partner '%s'"
 msgstr ""
