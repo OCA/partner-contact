@@ -3,13 +3,15 @@
 #   Robin Keunen <robin@coopiteasy.be>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api, _
+from openerp import models, api, _, fields
 from openerp.exceptions import ValidationError
 from openerp.tools import config
 
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
+
+    email = fields.Char(copy=False)
 
     @api.multi
     @api.constrains('email')
