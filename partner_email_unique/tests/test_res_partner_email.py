@@ -37,3 +37,6 @@ class TestResPartnerEmailUnique(common.SavepointCase):
         # Empty email addresses don't raise
         self.partner1.email = False
         self.partner2.email = False
+
+    def test_copy_does_not_raise_duplicate_email_error(self):
+        self.partner1.copy()
