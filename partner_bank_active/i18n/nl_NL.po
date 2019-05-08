@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-16 02:10+0000\n"
+"POT-Creation-Date: 2019-05-08 09:14+0000\n"
 "PO-Revision-Date: 2017-12-16 02:10+0000\n"
 "Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/"
@@ -20,12 +20,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_bank_active
-#: model:ir.model.fields,field_description:partner_bank_active.field_res_partner_bank_active
+#: model:ir.model.fields,field_description:partner_bank_active.field_res_partner_bank__active
 msgid "Active"
 msgstr "Actief"
 
 #. module: partner_bank_active
-#: model:ir.ui.view,arch_db:partner_bank_active.res_partner_bank_search_view
+#: model_terms:ir.ui.view,arch_db:partner_bank_active.res_partner_bank_search_view
 msgid "Archived"
 msgstr ""
 
