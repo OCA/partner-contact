@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017-2019 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <!--FORM view-->
+    <record model="ir.ui.view" id="res_partner_bank_form_view">
+        <field name="name">res.partner.bank.form (in partner_bank_active)</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[group[field[@name='sequence']]]" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-archive">
+                        <field name="active"
+                               widget="boolean_button"
+                               options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!--TREE view-->
+    <record model="ir.ui.view" id="res_partner_bank_tree_view">
+        <field name="name">res.partner.bank.tree (in partner_bank_active)</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="active"
+                       invisible="1"/>
+            </field>
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-muted">active == False</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!--SEARCH view-->
+    <record model="ir.ui.view" id="res_partner_bank_search_view">
+        <field name="name">res.partner.bank.search (in partner_bank_active)</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_search"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <separator/>
+                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
