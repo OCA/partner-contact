@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2017-12-26 15:33+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2019-05-09 07:03+0000\n"
+"Last-Translator: Hans Henrik Gabelgaard <hhg@gabelgaard.org>\n"
 "Language-Team: Danish (https://www.transifex.com/oca/teams/23907/da/)\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.5.1\n"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:240
@@ -37,13 +38,13 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type_selection
 msgid "All relation types"
-msgstr ""
+msgstr "Alle relationstyper"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_ids
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users_relation_all_ids
 msgid "All relations with current partner"
-msgstr ""
+msgstr "Alle relationer med aktuel partner"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:13
@@ -55,7 +56,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_create_uid
@@ -89,7 +90,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_right_partner_id
 msgid "Destination Partner"
-msgstr ""
+msgstr "Destinations partner"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all_display_name
@@ -124,7 +125,7 @@ msgstr "Slut dato"
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:315
 #, python-format
 msgid "Error!"
-msgstr ""
+msgstr "Fejl!"
 
 #. module: partner_multi_relation
 #: model:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
@@ -134,7 +135,7 @@ msgstr "Gruppér efter"
 #. module: partner_multi_relation
 #: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_assistant
 msgid "Has assistant"
-msgstr ""
+msgstr "Har assistent"
 
 #. module: partner_multi_relation
 #: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_has_worked_for
@@ -203,7 +204,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_is_unique
 msgid "Is Unique"
-msgstr ""
+msgstr "Er unik"
 
 #. module: partner_multi_relation
 #: model:res.partner.relation.type,name:partner_multi_relation.rel_type_assistant
@@ -331,7 +332,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation
 msgid "Partner relation"
-msgstr ""
+msgstr "Partner relation"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:125
