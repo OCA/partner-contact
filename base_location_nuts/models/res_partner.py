@@ -67,7 +67,7 @@ class ResPartner(models.Model):
         return self._onchange_nuts(1)
 
     @api.onchange('country_id')
-    def _onchange_country_id(self):
+    def _onchange_country_id_base_location_nuts(self):
         """Sensible values and domains for related fields."""
         fields = ['state_id', 'nuts1_id', 'nuts2_id', 'nuts3_id', 'nuts4_id']
         country_domain = ([('country_id', '=', self.country_id.id)]
