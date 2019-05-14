@@ -44,7 +44,7 @@ class TestBaseLocationNuts(common.SavepointCase):
 
     def test_onchange_nuts(self):
         self.partner.country_id = self.country_2
-        self.partner._onchange_country_id()
+        self.partner._onchange_country_id_base_location_nuts()
         self.assertEqual(self.partner.nuts1_id.country_id,
                          self.partner.country_id)
         self.partner.nuts4_id = self.nuts4_1
@@ -57,7 +57,7 @@ class TestBaseLocationNuts(common.SavepointCase):
         self.partner._onchange_nuts2_id()
         self.assertEqual(self.partner.nuts1_id.country_id, self.country_1)
         self.partner.country_id = self.country_2
-        self.partner._onchange_country_id()
+        self.partner._onchange_country_id_base_location_nuts()
         self.assertEqual(self.partner.country_id, self.nuts1_2.country_id)
         self.assertFalse(self.partner.nuts2_id)
         self.assertFalse(self.partner.nuts3_id)
