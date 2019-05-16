@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record model="ir.ui.view" id="view_partner_form_nuts">
+    <field name="name">Partner form with NUTS</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//sheet/group//field[@name='country_id']/.." position="after">
+            <field name="nuts1_id"/>
+            <field name="nuts2_id"/>
+            <field name="nuts3_id"/>
+            <field name="nuts4_id"/>
+        </xpath>
+        <xpath expr="//field[@name='child_ids']/form//field[@name='country_id']/.." position="after">
+            <field name="nuts1_id"/>
+            <field name="nuts2_id"/>
+            <field name="nuts3_id"/>
+            <field name="nuts4_id"/>
+        </xpath>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="view_res_partner_filter_nuts">
+    <field name="name">Partner search with NUTS</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_res_partner_filter"/>
+    <field name="arch" type="xml">
+        <field name="category_id" position="after">
+            <field name="nuts1_id"/>
+            <field name="nuts2_id"/>
+            <field name="nuts3_id"/>
+            <field name="nuts4_id"/>
+        </field>
+        <filter name="salesperson" position="after">
+            <filter name="nuts_l1"
+                    string="NUTS L1"
+                    domain="[]"
+                    context="{'group_by': 'nuts1_id'}"/>
+            <filter name="nuts_l2"
+                    string="NUTS L2"
+                    domain="[]"
+                    context="{'group_by': 'nuts2_id'}"/>
+            <filter name="nuts_l3"
+                    string="NUTS L3"
+                    domain="[]"
+                    context="{'group_by': 'nuts3_id'}"/>
+            <filter name="nuts_l4"
+                    string="NUTS L4"
+                    domain="[]"
+                    context="{'group_by': 'nuts4_id'}"/>
+        </filter>
+    </field>
+</record>
+
+
+</odoo>

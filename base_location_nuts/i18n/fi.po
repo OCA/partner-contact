@@ -1,0 +1,257 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_location_nuts
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-24 03:46+0000\n"
+"PO-Revision-Date: 2018-01-24 03:46+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"Language-Team: Finnish (https://www.transifex.com/oca/teams/23907/fi/)\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: base_location_nuts
+#: model:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
+msgid "Cancel"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_child_ids
+msgid "Children"
+msgstr "Alaluokat"
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_code
+msgid "Code"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_res_country
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_country_id
+#: model:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
+msgid "Country"
+msgstr "Maa"
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import_create_uid
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_create_uid
+msgid "Created by"
+msgstr "Luonut"
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import_create_date
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_create_date
+msgid "Created on"
+msgstr "Luotu"
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import_display_name
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_display_name
+msgid "Display Name"
+msgstr "Nimi"
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:139
+#, python-format
+msgid "Downloaded file is not a valid XML file"
+msgstr ""
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:131
+#, python-format
+msgid "Got an error %d when trying to download the file %s."
+msgstr ""
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:127
+#, python-format
+msgid "Got an error when trying to download the file: %s."
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
+msgid "Group By"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import_id
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_id
+msgid "ID"
+msgstr "ID"
+
+#. module: base_location_nuts
+#: model:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
+msgid "Import"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.ui.menu,name:base_location_nuts.nuts_import_menu
+msgid "Import NUTS 2013"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.actions.act_window,name:base_location_nuts.nuts_import_action
+#: model:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
+msgid "Import NUTS 2013 from RAMON"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_nuts_import
+msgid "Import NUTS items from European RAMON service"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import___last_update
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts___last_update
+msgid "Last Modified on"
+msgstr "Viimeksi muokattu"
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import_write_uid
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_write_uid
+msgid "Last Updated by"
+msgstr "Viimeksi päivitetty"
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import_write_date
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_write_date
+msgid "Last Updated on"
+msgstr "Viimeksi päivittänyt"
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_level
+#: model:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
+msgid "Level"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model.fields,help:base_location_nuts.field_res_country_state_level
+msgid "Level for the state NUTS category."
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.ui.view,arch_db:base_location_nuts.view_country_form
+msgid "NUTS"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model,name:base_location_nuts.model_res_partner_nuts
+#: model:ir.ui.view,arch_db:base_location_nuts.res_partner_nuts_form
+msgid "NUTS Item"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.actions.act_window,name:base_location_nuts.res_partner_nuts_action
+#: model:ir.ui.menu,name:base_location_nuts.res_partner_nuts_menu
+#: model:ir.ui.view,arch_db:base_location_nuts.res_partner_nuts_tree
+msgid "NUTS Items"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts1_id
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_users_nuts1_id
+#: model:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
+msgid "NUTS L1"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts2_id
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_users_nuts2_id
+#: model:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
+msgid "NUTS L2"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts3_id
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_users_nuts3_id
+#: model:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
+msgid "NUTS L3"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts4_id
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_users_nuts4_id
+#: model:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
+msgid "NUTS L4"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_name
+msgid "Name"
+msgstr "Nimi"
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_not_updatable
+msgid "Not Updatable"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_parent_left
+msgid "Parent Left"
+msgstr "Vasen ylätaso"
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_parent_right
+msgid "Parent Right"
+msgstr "Oikea ylätaso"
+
+#. module: base_location_nuts
+#: model:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
+msgid "Search NUTS"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts_state_id
+msgid "State"
+msgstr "Tila"
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_country_state_level
+msgid "State Level"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
+msgid ""
+"This wizard will download the lastest version of\n"
+"                NUTS 2013 from Europe RAMON metadata service.\n"
+"                Updating or creating new NUTS entries if not\n"
+"                found already in the system, and DELETING MISSING\n"
+"                ENTRIES from new downloaded file.\n"
+"\n"
+"                Update or deletion is prevented for NUTS entries with the "
+"flag 'Not updatable'."
+msgstr ""
+
+#. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:109
+#, python-format
+msgid "Value not found for mandatory field %s"
+msgstr ""
+
+#. module: base_location_nuts
+#: model:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
+msgid ""
+"You must click at import wizard to populate NUTS items\n"
+"        in Odoo database in:\n"
+"        Sales &gt; Configuration &gt; Address Book &gt; Localization &gt; "
+"Import NUTS 2013"
+msgstr ""
