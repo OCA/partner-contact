@@ -21,8 +21,8 @@ msgstr ""
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #. module: partner_contact_birthdate
-#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner_birthdate_date
-#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users_birthdate_date
+#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner__birthdate_date
+#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users__birthdate_date
 msgid "Birthdate"
 msgstr ""
 
