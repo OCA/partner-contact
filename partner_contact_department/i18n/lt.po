@@ -20,7 +20,7 @@ msgstr ""
 "%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_child_ids
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__child_ids
 msgid "Child departments"
 msgstr ""
 
@@ -30,79 +30,74 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_create_uid
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__create_uid
 msgid "Created by"
 msgstr "Sukūrė"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_create_date
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__create_date
 msgid "Created on"
 msgstr "Sukurta"
 
 #. module: partner_contact_department
 #: model:ir.model,name:partner_contact_department.model_res_partner_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_id
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_users_department_id
-#: model:ir.ui.view,arch_db:partner_contact_department.view_partner_form_department
-#: model:ir.ui.view,arch_db:partner_contact_department.view_res_partner_filter_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner__department_id
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_users__department_id
+#: model_terms:ir.ui.view,arch_db:partner_contact_department.view_partner_form_department
+#: model_terms:ir.ui.view,arch_db:partner_contact_department.view_res_partner_filter_department
 msgid "Department"
 msgstr ""
 
 #. module: partner_contact_department
 #: model:ir.actions.act_window,name:partner_contact_department.res_partner_department_action
 #: model:ir.ui.menu,name:partner_contact_department.menu_res_partner_department
-#: model:ir.ui.view,arch_db:partner_contact_department.res_partner_department_tree_view
+#: model_terms:ir.ui.view,arch_db:partner_contact_department.res_partner_department_tree_view
 msgid "Departments"
 msgstr ""
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_display_name
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__display_name
 msgid "Display Name"
 msgstr "Vaizduojamas pavadinimas"
 
 #. module: partner_contact_department
-#: code:addons/partner_contact_department/models/res_partner.py:41
+#: code:addons/partner_contact_department/models/res_partner.py:46
 #, python-format
 msgid "Error! You cannot create recursive departments."
 msgstr ""
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_id_1566
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__id
 msgid "ID"
 msgstr "ID"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department___last_update
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department____last_update
 msgid "Last Modified on"
 msgstr "Paskutinį kartą keista"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_write_uid
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__write_uid
 msgid "Last Updated by"
 msgstr "Paskutinį kartą atnaujino"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_write_date
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__write_date
 msgid "Last Updated on"
 msgstr "Paskutinį kartą atnaujinta"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_name
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__name
 msgid "Name"
 msgstr "Pavadinimas"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_parent_left
-msgid "Parent Left"
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__parent_path
+msgid "Parent Path"
 msgstr ""
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_parent_right
-msgid "Parent Right"
-msgstr ""
-
-#. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_parent_id
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__parent_id
 msgid "Parent department"
 msgstr ""
 
