@@ -45,7 +45,7 @@ msgid "Only companies"
 msgstr ""
 
 #. module: partner_ref_unique
-#: model:ir.ui.view,arch_db:partner_ref_unique.view_company_form
+#: model_terms:ir.ui.view,arch_db:partner_ref_unique.view_company_form
 msgid "Partners"
 msgstr "Ortaklar"
 
@@ -56,7 +56,7 @@ msgid "This reference is equal to partner '%s'"
 msgstr ""
 
 #. module: partner_ref_unique
-#: model:ir.model.fields,field_description:partner_ref_unique.field_res_company_partner_ref_unique
+#: model:ir.model.fields,field_description:partner_ref_unique.field_res_company__partner_ref_unique
 msgid "Unique partner reference for"
 msgstr ""
 
