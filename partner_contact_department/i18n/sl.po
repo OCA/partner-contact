@@ -20,7 +20,7 @@ msgstr ""
 "%100==4 ? 2 : 3);\n"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_child_ids
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__child_ids
 msgid "Child departments"
 msgstr "Podrejeni oddelki"
 
@@ -30,83 +30,81 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_create_uid
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__create_uid
 msgid "Created by"
 msgstr "Ustvaril"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_create_date
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__create_date
 msgid "Created on"
 msgstr "Ustvarjeno"
 
 #. module: partner_contact_department
 #: model:ir.model,name:partner_contact_department.model_res_partner_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_id
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_users_department_id
-#: model:ir.ui.view,arch_db:partner_contact_department.view_partner_form_department
-#: model:ir.ui.view,arch_db:partner_contact_department.view_res_partner_filter_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner__department_id
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_users__department_id
+#: model_terms:ir.ui.view,arch_db:partner_contact_department.view_partner_form_department
+#: model_terms:ir.ui.view,arch_db:partner_contact_department.view_res_partner_filter_department
 msgid "Department"
 msgstr "Oddelek"
 
 #. module: partner_contact_department
 #: model:ir.actions.act_window,name:partner_contact_department.res_partner_department_action
 #: model:ir.ui.menu,name:partner_contact_department.menu_res_partner_department
-#: model:ir.ui.view,arch_db:partner_contact_department.res_partner_department_tree_view
+#: model_terms:ir.ui.view,arch_db:partner_contact_department.res_partner_department_tree_view
 msgid "Departments"
 msgstr "Oddelki"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_display_name
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__display_name
 msgid "Display Name"
 msgstr "Prikazni naziv"
 
 #. module: partner_contact_department
-#: code:addons/partner_contact_department/models/res_partner.py:41
+#: code:addons/partner_contact_department/models/res_partner.py:46
 #, python-format
 msgid "Error! You cannot create recursive departments."
 msgstr ""
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_id_1566
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__id
 msgid "ID"
 msgstr "ID"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department___last_update
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department____last_update
 msgid "Last Modified on"
 msgstr "Zadnjič spremenjeno"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_write_uid
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__write_uid
 msgid "Last Updated by"
 msgstr "Zadnji posodobil"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_write_date
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__write_date
 msgid "Last Updated on"
 msgstr "Zadnjič posodobljeno"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_name
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__name
 msgid "Name"
 msgstr "Naziv"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_parent_left
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__parent_path
 #, fuzzy
-msgid "Parent Left"
+msgid "Parent Path"
 msgstr "Levo nadrejeni"
 
 #. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_parent_right
-#, fuzzy
-msgid "Parent Right"
-msgstr "Desno nadrejeni"
-
-#. module: partner_contact_department
-#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department_parent_id
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__parent_id
 msgid "Parent department"
 msgstr "Nadrejeni oddelek"
+
+#, fuzzy
+#~ msgid "Parent Right"
+#~ msgstr "Desno nadrejeni"
 
 #~ msgid "Partner"
 #~ msgstr "Partner"
