@@ -11,24 +11,11 @@ class ResPartner(models.Model):
 
     job_position_id = fields.Many2one(
         "res.partner.job_position",
-        "Categorized job position",)
+        "Categorized job position")
 
 
 class ResPartnerJobPosition(models.Model):
     _name = "res.partner.job_position"
-    _order = "parent_left"
-    _parent_order = "name"
-    _parent_store = True
     _description = "Job position"
 
     name = fields.Char(required=True, translate=True)
-    parent_id = fields.Many2one(
-        "res.partner.job_position",
-        "Parent", ondelete='restrict')
-    child_ids = fields.One2many(
-        "res.partner.job_position",
-        "parent_id",
-        "Children",
-        oldname="children")
-    parent_left = fields.Integer(index=True)
-    parent_right = fields.Integer(index=True)
