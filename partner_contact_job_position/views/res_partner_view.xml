@@ -31,7 +31,7 @@
         </field>
         <filter name="salesperson" position="after">
             <filter string="Job position"
-                    domain="[('is_company','=', True)]"
+                    name="job_position_filter" domain="[('is_company','!=', True)]"
                     context="{'group_by': 'job_position_id'}"/>
         </filter>
     </field>
