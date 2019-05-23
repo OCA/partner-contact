@@ -3,7 +3,6 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from openupgradelib import openupgrade
-from psycopg2.extensions import AsIs
 
 _xmlid_renames = [
     ('partner_industry_secondary.group_use_partner_sector_for_person',
