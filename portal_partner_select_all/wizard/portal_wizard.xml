@@ -5,12 +5,14 @@
         <field name="model">portal.wizard</field>
         <field name="inherit_id" ref="portal.wizard_view"/>
         <field name="arch" type="xml">
-            <field name="portal_id" position="after">
-                <field name="set_all_users"/>
-            </field>
             <field name="user_ids" position="before">
-                <div class="alert alert-warning alert-dismissable" attrs="{'invisible': [('set_all_users', '=', False)]}">
-                    <i class="fa fa-warning"/> You're about to invite to portal all the contacts list below.
+                <group>
+                    <field name="set_all_users" string="Invite all the contacts"/>
+                </group>
+                <div class="card bg-warning mb8" attrs="{'invisible': [('set_all_users', '=', False)]}">
+                    <div class="card-body bg-warning">
+                        <i class="fa fa-warning"/> You're about to invite to portal all the contacts list below.
+                    </div>
                 </div>
             </field>
         </field>

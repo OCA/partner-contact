@@ -1,1 +1,3 @@
-* David Vidal <david.vidal@tecnativa.com>
+* `Tecnativa <https://www.tecnativa.com>`__:
+
+  * David Vidal
