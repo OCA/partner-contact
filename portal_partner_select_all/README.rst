@@ -47,7 +47,6 @@ Usage
 #. Set it on and a warning will appear advising all of them will be invited.
 #. Set it off again and only the already existing users will be checked.
 
-
 Bug Tracker
 ===========
 
