@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
@@ -14,17 +14,18 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: portal_partner_select_all
-#: model:ir.ui.view,arch_db:portal_partner_select_all.portal_wizard
+#: model_terms:ir.ui.view,arch_db:portal_partner_select_all.portal_wizard
 msgid "<i class=\"fa fa-warning\"/> You're about to invite to portal all the contacts list below."
 msgstr ""
 
 #. module: portal_partner_select_all
-#: model:ir.model.fields,field_description:portal_partner_select_all.field_portal_wizard_set_all_users
-msgid "Invite all the contacts"
+#: model:ir.model,name:portal_partner_select_all.model_portal_wizard
+msgid "Grant Portal Access"
 msgstr ""
 
 #. module: portal_partner_select_all
-#: model:ir.model,name:portal_partner_select_all.model_portal_wizard
-msgid "Portal Access Management"
+#: model:ir.model.fields,field_description:portal_partner_select_all.field_portal_wizard__set_all_users
+#: model_terms:ir.ui.view,arch_db:portal_partner_select_all.portal_wizard
+msgid "Invite all the contacts"
 msgstr ""
 
