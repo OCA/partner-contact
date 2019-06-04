@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="portal_wizard">
+        <field name="model">portal.wizard</field>
+        <field name="inherit_id" ref="portal.wizard_view"/>
+        <field name="arch" type="xml">
+            <field name="user_ids" position="before">
+                <group>
+                    <field name="set_all_users" string="Invite all the contacts"/>
+                </group>
+                <div class="card bg-warning mb8" attrs="{'invisible': [('set_all_users', '=', False)]}">
+                    <div class="card-body bg-warning">
+                        <i class="fa fa-warning"/> You're about to invite to portal all the contacts list below.
+                    </div>
+                </div>
+            </field>
+        </field>
+    </record>
+
+</odoo>
