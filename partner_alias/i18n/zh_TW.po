@@ -233,6 +233,11 @@ msgid "Date of the last message posted on the record."
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_date_version
+msgid "Date version"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_display_name
 msgid "Display Name"
 msgstr "顯示名稱"
@@ -720,6 +725,11 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_user_ids
 msgid "Users"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_version_hash
+msgid "Version hash"
 msgstr ""
 
 #. module: partner_alias
