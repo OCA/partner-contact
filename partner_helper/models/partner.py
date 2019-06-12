@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
-#    Copyright (C) 2016 Akretion (http://www.akretion.com)
-#    Author: Sébastien BEAU <sebastien.beau@akretion.com>
+# Copyright (C) 2016 Akretion (http://www.akretion.com)
+# Author: Sébastien BEAU <sebastien.beau@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import models
@@ -32,7 +31,7 @@ class ResPartner(models.Model):
             In some countries you may use 3 or 4 shorter street fields.
 
             example:
-            res = self.env['res.partner']._get_split_address( 3, 35)
+            res = self.partner_id._get_split_address(3, 35)
             street1, street2, street3 = res
         """
         self.ensure_one()
@@ -43,7 +42,7 @@ class ResPartner(models.Model):
             result[0] = street
             result[1] = street2
             return result
-        elif street <= max_size:
+        elif len(street) <= max_size:
             return [street] + split_char(street2, output_number - 1, max_size)
         else:
             return split_char(
