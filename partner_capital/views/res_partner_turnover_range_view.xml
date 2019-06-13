@@ -19,8 +19,8 @@
     </field>
 </record>
 
-<menuitem action="res_partner_turnover_range_action"
-          id="menu_res_partner_turnover_range"
-          parent="sales_team.menu_config_address_book"/>
+<menuitem id="menu_res_partner_turnover_range"
+          action="res_partner_turnover_range_action"
+          parent="contacts.res_partner_menu_config"/>
 
 </odoo>
