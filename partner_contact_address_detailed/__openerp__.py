@@ -33,4 +33,5 @@ in summarized partner contact form when creating a new partner""",
     'auto_install': False,
     'installable': True,
     'images': [],
+    'license': 'AGPL-3',
 }
