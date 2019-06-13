@@ -33,4 +33,5 @@ Link module for base_partner_merge which extract portal dependency
  'installable': True,
  'auto_install': True,
  'application': False,
+ "license": "AGPL-3",
  }
