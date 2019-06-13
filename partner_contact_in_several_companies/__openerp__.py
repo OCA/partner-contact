@@ -32,4 +32,5 @@
     "demo": [
         "demo/res_partner.xml",
     ],
+    "license": "AGPL-3",
 }
