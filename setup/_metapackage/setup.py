@@ -17,6 +17,7 @@ setuptools.setup(
         'odoo12-addon-partner_address_street3',
         'odoo12-addon-partner_affiliate',
         'odoo12-addon-partner_bank_active',
+        'odoo12-addon-partner_capital',
         'odoo12-addon-partner_coc',
         'odoo12-addon-partner_company_group',
         'odoo12-addon-partner_contact_birthdate',
