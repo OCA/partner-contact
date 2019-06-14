@@ -1,0 +1,2 @@
+# TODO: change this to server-tools proper once this is merged
+server-tools https://github.com/hbrunn/server-tools 8.0-base_manifest_extension
