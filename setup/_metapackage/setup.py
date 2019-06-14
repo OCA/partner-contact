@@ -30,6 +30,7 @@ setuptools.setup(
         'odoo12-addon-partner_external_map',
         'odoo12-addon-partner_fax',
         'odoo12-addon-partner_firstname',
+        'odoo12-addon-partner_helper',
         'odoo12-addon-partner_identification',
         'odoo12-addon-partner_industry_secondary',
         'odoo12-addon-partner_multi_relation',
