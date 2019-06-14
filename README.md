@@ -26,7 +26,7 @@ addon | version | summary
 [base_location_geonames_import](base_location_geonames_import/) | 8.0.1.0.1 | Import better zip entries from Geonames
 [base_location_lau](base_location_lau/) | 8.0.1.0.0 | Local Administrative Units
 [base_location_nuts](base_location_nuts/) | 8.0.2.0.0 | NUTS Regions
-[base_partner_merge](base_partner_merge/) | 8.0.0.1.0 | Base Partner Merge
+[base_partner_merge](base_partner_merge/) | 8.0.1.0.0 | Deduplicate Contacts (OCA)
 [base_partner_sequence](base_partner_sequence/) | 8.0.1.1.1 | Sets customer's code from a sequence
 [base_vat_sanitized](base_vat_sanitized/) | 8.0.1.0.0 | Adds field sanitized_vat on partners
 [partner_academic_title](partner_academic_title/) | 8.0.1.0.0 | Add possibility to define some academic title
