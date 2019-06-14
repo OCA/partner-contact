@@ -27,17 +27,6 @@ msgid "A user associated to the contact"
 msgstr "Un usuario asociado al contrato"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:370
-#, python-format
-msgid ""
-"All contacts must have the same email. Only the Administrator can merge "
-"contacts with different emails."
-msgstr ""
-"Todos los contactos deben tener la misma dirección de correo electrónico. "
-"Únicamente el administrador puede combinar contactos con direcciones "
-"diferentes."
-
-#. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Are you sure to execute the automatic merge of your contacts ?"
 msgstr "¿Seguro que quiere combinar automáticamente sus contactos?"
@@ -119,15 +108,6 @@ msgid "Email"
 msgstr "e-mail"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:359
-#: code:addons/base_partner_merge/base_partner_merge.py:369
-#: code:addons/base_partner_merge/base_partner_merge.py:394
-#: code:addons/base_partner_merge/base_partner_merge.py:530
-#, python-format
-msgid "Error"
-msgstr "Error"
-
-#. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Exclude contacts having"
 msgstr "Excluir contactos que cumplan"
@@ -136,16 +116,6 @@ msgstr "Excluir contactos que cumplan"
 #: selection:base.partner.merge.automatic.wizard,state:0
 msgid "Finished"
 msgstr "Finalizado"
-
-#. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:360
-#, python-format
-msgid ""
-"For safety reasons, you cannot merge more than 3 contacts together. You can "
-"re-open the wizard several times if needed."
-msgstr ""
-"Por motivos de seguridad no se permite combinar más de 3 contactos de una "
-"vez. Puede repetir el asistente varias veces si es necesario."
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,number_group:0
@@ -227,12 +197,6 @@ msgid "Merge with Manual Check"
 msgstr "Combinar con verificación manual"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:411
-#, python-format
-msgid "Merged with the following partners:"
-msgstr "Combinado con los siguientes terceros:"
-
-#. module: base_partner_merge
 #: field:base.partner.merge.line,min_id:0
 msgid "MinID"
 msgstr ""
@@ -241,15 +205,6 @@ msgstr ""
 #: field:base.partner.merge.automatic.wizard,group_by_name:0
 msgid "Name"
 msgstr "Nombre"
-
-#. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:395
-#, python-format
-msgid ""
-"Only the destination contact may be linked to existing Journal Items. Please "
-"ask the Administrator if you need to merge several contacts linked to "
-"existing Journal Items."
-msgstr ""
 
 #. module: base_partner_merge
 #: selection:base.partner.merge.automatic.wizard,state:0
@@ -267,9 +222,21 @@ msgid "Parent Company"
 msgstr "Empresa matriz"
 
 #. module: base_partner_merge
+#: model:ir.model,name:base_partner_merge.model_res_partner
+#, fuzzy
+#| msgid "Partners"
+msgid "Partner"
+msgstr "Empresas"
+
+#. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Partners"
 msgstr "Empresas"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,group_by_ref:0
+msgid "Reference"
+msgstr ""
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -342,12 +309,30 @@ msgid "Wizard"
 msgstr "Asistente"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:531
-#, python-format
-msgid "You have to specify a filter for your selection"
-msgstr "Debe especificar un filtro para su selección"
-
-#. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "or"
 msgstr "o"
+
+#~ msgid ""
+#~ "All contacts must have the same email. Only the Administrator can merge "
+#~ "contacts with different emails."
+#~ msgstr ""
+#~ "Todos los contactos deben tener la misma dirección de correo electrónico. "
+#~ "Únicamente el administrador puede combinar contactos con direcciones "
+#~ "diferentes."
+
+#~ msgid "Error"
+#~ msgstr "Error"
+
+#~ msgid ""
+#~ "For safety reasons, you cannot merge more than 3 contacts together. You "
+#~ "can re-open the wizard several times if needed."
+#~ msgstr ""
+#~ "Por motivos de seguridad no se permite combinar más de 3 contactos de una "
+#~ "vez. Puede repetir el asistente varias veces si es necesario."
+
+#~ msgid "Merged with the following partners:"
+#~ msgstr "Combinado con los siguientes terceros:"
+
+#~ msgid "You have to specify a filter for your selection"
+#~ msgstr "Debe especificar un filtro para su selección"

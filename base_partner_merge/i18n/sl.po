@@ -26,16 +26,6 @@ msgid "A user associated to the contact"
 msgstr "Uporabnik povezan s stikom"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:370
-#, python-format
-msgid ""
-"All contacts must have the same email. Only the Administrator can merge "
-"contacts with different emails."
-msgstr ""
-"Vsi stiki morajo imeti isti e-poštni naslov. Le administrator lahko združuje "
-"stike z različnimi e-poštnimi naslovi."
-
-#. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Are you sure to execute the automatic merge of your contacts ?"
 msgstr "Ste prepričani, da želite izvesti samodejno združitev svojih stikov?"
@@ -116,15 +106,6 @@ msgid "Email"
 msgstr "E-pošta"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:359
-#: code:addons/base_partner_merge/base_partner_merge.py:369
-#: code:addons/base_partner_merge/base_partner_merge.py:394
-#: code:addons/base_partner_merge/base_partner_merge.py:530
-#, python-format
-msgid "Error"
-msgstr "Napaka"
-
-#. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Exclude contacts having"
 msgstr "Izvzemi stike z"
@@ -133,16 +114,6 @@ msgstr "Izvzemi stike z"
 #: selection:base.partner.merge.automatic.wizard,state:0
 msgid "Finished"
 msgstr "Končano"
-
-#. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:360
-#, python-format
-msgid ""
-"For safety reasons, you cannot merge more than 3 contacts together. You can "
-"re-open the wizard several times if needed."
-msgstr ""
-"Iz varnostnih razlogov ni dovoljeno združevati več kot 3 stike istočasno. "
-"Lahko pa večkrat zaženete čarovnika, če je potrebno."
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,number_group:0
@@ -224,12 +195,6 @@ msgid "Merge with Manual Check"
 msgstr "Združitev z ročnim preverjanjem"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:411
-#, python-format
-msgid "Merged with the following partners:"
-msgstr "Združeno s sledečimi partnerji:"
-
-#. module: base_partner_merge
 #: field:base.partner.merge.line,min_id:0
 msgid "MinID"
 msgstr "MinID"
@@ -238,18 +203,6 @@ msgstr "MinID"
 #: field:base.partner.merge.automatic.wizard,group_by_name:0
 msgid "Name"
 msgstr "Naziv"
-
-#. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:395
-#, python-format
-msgid ""
-"Only the destination contact may be linked to existing Journal Items. Please "
-"ask the Administrator if you need to merge several contacts linked to "
-"existing Journal Items."
-msgstr ""
-"Le ciljni stik je lahko povezan z obstoječimi dnevniškimi vnosi. Če želite "
-"združiti več stikov povezanih z obstoječimi dnevniškimi vnosi, se obrnite na "
-"administratorja."
 
 #. module: base_partner_merge
 #: selection:base.partner.merge.automatic.wizard,state:0
@@ -267,9 +220,21 @@ msgid "Parent Company"
 msgstr "Nadrejena družba"
 
 #. module: base_partner_merge
+#: model:ir.model,name:base_partner_merge.model_res_partner
+#, fuzzy
+#| msgid "Partners"
+msgid "Partner"
+msgstr "Partnerji"
+
+#. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "Partners"
 msgstr "Partnerji"
+
+#. module: base_partner_merge
+#: field:base.partner.merge.automatic.wizard,group_by_ref:0
+msgid "Reference"
+msgstr ""
 
 #. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
@@ -344,12 +309,38 @@ msgid "Wizard"
 msgstr "Čarovnik"
 
 #. module: base_partner_merge
-#: code:addons/base_partner_merge/base_partner_merge.py:531
-#, python-format
-msgid "You have to specify a filter for your selection"
-msgstr "Določite filter za vaš izbor"
-
-#. module: base_partner_merge
 #: view:base.partner.merge.automatic.wizard:base_partner_merge.base_partner_merge_automatic_wizard_form
 msgid "or"
 msgstr "ali"
+
+#~ msgid ""
+#~ "All contacts must have the same email. Only the Administrator can merge "
+#~ "contacts with different emails."
+#~ msgstr ""
+#~ "Vsi stiki morajo imeti isti e-poštni naslov. Le administrator lahko "
+#~ "združuje stike z različnimi e-poštnimi naslovi."
+
+#~ msgid "Error"
+#~ msgstr "Napaka"
+
+#~ msgid ""
+#~ "For safety reasons, you cannot merge more than 3 contacts together. You "
+#~ "can re-open the wizard several times if needed."
+#~ msgstr ""
+#~ "Iz varnostnih razlogov ni dovoljeno združevati več kot 3 stike istočasno. "
+#~ "Lahko pa večkrat zaženete čarovnika, če je potrebno."
+
+#~ msgid "Merged with the following partners:"
+#~ msgstr "Združeno s sledečimi partnerji:"
+
+#~ msgid ""
+#~ "Only the destination contact may be linked to existing Journal Items. "
+#~ "Please ask the Administrator if you need to merge several contacts linked "
+#~ "to existing Journal Items."
+#~ msgstr ""
+#~ "Le ciljni stik je lahko povezan z obstoječimi dnevniškimi vnosi. Če "
+#~ "želite združiti več stikov povezanih z obstoječimi dnevniškimi vnosi, se "
+#~ "obrnite na administratorja."
+
+#~ msgid "You have to specify a filter for your selection"
+#~ msgstr "Določite filter za vaš izbor"
