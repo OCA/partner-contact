@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+<record id="res_partner_turnover_range_action" model="ir.actions.act_window">
+    <field name="name">Turnover ranges</field>
+    <field name="res_model">res.partner.turnover_range</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree</field>
+</record>
+
+<record id="res_partner_turnover_range_tree_view" model="ir.ui.view">
+    <field name="name">CRM Turnover range tree</field>
+    <field name="model">res.partner.turnover_range</field>
+    <field name="arch" type="xml">
+        <tree string="Turnover ranges" editable="top">
+            <field name="name"/>
+        </tree>
+    </field>
+</record>
+
+<menuitem id="menu_res_partner_turnover_range"
+          action="res_partner_turnover_range_action"
+          parent="contacts.res_partner_menu_config"/>
+
+</odoo>
