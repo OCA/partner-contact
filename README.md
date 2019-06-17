@@ -33,6 +33,7 @@ addon | version | summary
 [partner_affiliate](partner_affiliate/) | 10.0.1.0.0 | Partner Affiliates
 [partner_alias](partner_alias/) | 10.0.1.0.0 | Adds aliases to partner names.
 [partner_bank_active](partner_bank_active/) | 10.0.1.0.0 | Allow to deactivate a partner bank account
+[partner_bank_sort_code](partner_bank_sort_code/) | 10.0.1.0.0 | Adds a field in banks to manage Sort Codes
 [partner_capital](partner_capital/) | 10.0.1.0.0 | Partners Capital
 [partner_changeset](partner_changeset/) | 10.0.1.0.1 | Partner Changesets
 [partner_coc](partner_coc/) | 10.0.1.0.0 | Adds a field 'Chamber Of Commerce Registration Number' to partner
