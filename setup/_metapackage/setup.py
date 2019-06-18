@@ -24,6 +24,7 @@ setuptools.setup(
         'odoo12-addon-partner_contact_birthdate',
         'odoo12-addon-partner_contact_department',
         'odoo12-addon-partner_contact_gender',
+        'odoo12-addon-partner_contact_job_position',
         'odoo12-addon-partner_contact_personal_information_page',
         'odoo12-addon-partner_deduplicate_acl',
         'odoo12-addon-partner_deduplicate_filter',
