@@ -23,7 +23,8 @@ class ResPartner(models.Model):
                 limit_rest = limit
             if limit_rest or not limit:
                 args += [('id', 'not in', partners.ids)]
-            return res += super(ResPartner, self).name_search(
+            res += super(ResPartner, self).name_search(
                 name, args=args, operator=operator, limit=limit_rest)
+            return res
         return super(ResPartner, self).name_search(
             name=name, args=args, operator=operator, limit=limit)
