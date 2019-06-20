@@ -34,6 +34,8 @@ Name:
   Name of this ID type. For example, 'Driver License'
 Code:
   Code, abbreviation or acronym of this ID type. For example, 'driver_license'
+Company Type:
+  Individual or Company. Allow to get relevant categories in Partner form.
 Python validation code:
   Optional python code called to validate ID numbers of this ID type. This functionality can be
   overridden by setting ``id_no_validate`` to ``True`` in the context, such as:

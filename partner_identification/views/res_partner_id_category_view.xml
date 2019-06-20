@@ -12,6 +12,7 @@
             <group>
                 <field name="name" />
                 <field name="code" />
+                <field name="company_type"/>
             </group>
         </form>
     </field>
@@ -25,7 +26,22 @@
         <tree string="Partner Identification Categories">
             <field name="name"/>
             <field name="code"/>
+            <field name="company_type"/>
         </tree>
+    </field>
+</record>
+
+<record id="view_partner_id_category_search" model="ir.ui.view">
+    <field name="name">res.partner.id_category.search</field>
+    <field name="model">res.partner.id_category</field>
+    <field name="type">search</field>
+    <field name="arch" type="xml">
+        <search string="Partner Identification Categories">
+            <group expand="0" string="Group By...">
+                <filter name="group_by_company_type" string="Company Type"
+                    domain="[]" context="{'group_by':'company_type'}"/>
+            </group>
+        </search>
     </field>
 </record>
 
@@ -33,6 +49,7 @@
     <field name="name">Partner ID Categories</field>
     <field name="res_model">res.partner.id_category</field>
     <field name="view_type">form</field>
+    <field name="context" eval="{'search_default_group_by_company_type': 1}"/>
     <field name="view_mode">tree,form</field>
 </record>
 
