@@ -39,6 +39,16 @@ class ResPartnerIdCategory(models.Model):
         'Python validation code',
         help="Python code called to validate an id number.",
         default=_default_validation_code)
+    company_type = fields.Selection(
+        selection=lambda self: self._get_company_type_selection(),
+    )
+
+    @api.model
+    def _get_company_type_selection(self):
+        return [
+            ('person', 'Individual'),
+            ('company', 'Company'),
+        ]
 
     @api.multi
     def _validation_eval_context(self, id_number):
