@@ -20,14 +20,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_id
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_users_job_position_id
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner__job_position_id
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_users__job_position_id
 msgid "Categorized job position"
-msgstr ""
-
-#. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_child_ids
-msgid "Children"
 msgstr ""
 
 #. module: partner_contact_job_position
@@ -36,22 +31,22 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_create_uid
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_create_date
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__create_date
 msgid "Created on"
 msgstr "Creado"
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_display_name
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__display_name
 msgid "Display Name"
 msgstr "Nombre Público"
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_id_1617
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__id
 msgid "ID"
 msgstr "ID"
 
@@ -63,47 +58,32 @@ msgstr ""
 
 #. module: partner_contact_job_position
 #: model:ir.model,name:partner_contact_job_position.model_res_partner_job_position
-#: model:ir.ui.view,arch_db:partner_contact_job_position.view_res_partner_filter_job_position
+#: model_terms:ir.ui.view,arch_db:partner_contact_job_position.view_res_partner_filter_job_position
 msgid "Job position"
 msgstr ""
 
 #. module: partner_contact_job_position
-#: model:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_form_view
-#: model:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_tree_view
+#: model_terms:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_form_view
+#: model_terms:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_tree_view
 msgid "Job positions"
 msgstr ""
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position___last_update
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position____last_update
 msgid "Last Modified on"
 msgstr "Última Modificación el"
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_write_uid
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__write_uid
 msgid "Last Updated by"
 msgstr "Actualizado por"
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_write_date
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__write_date
 msgid "Last Updated on"
 msgstr "Actualizado"
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_name
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__name
 msgid "Name"
 msgstr "Nombre"
-
-#. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_parent_id
-msgid "Parent"
-msgstr ""
-
-#. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_parent_left
-msgid "Parent Left"
-msgstr ""
-
-#. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_parent_right
-msgid "Parent Right"
-msgstr ""
