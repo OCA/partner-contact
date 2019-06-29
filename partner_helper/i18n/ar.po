@@ -21,5 +21,8 @@ msgstr ""
 
 #. module: partner_helper
 #: model:ir.model,name:partner_helper.model_res_partner
-msgid "Partner"
-msgstr "الشريك"
+msgid "Contact"
+msgstr ""
+
+#~ msgid "Partner"
+#~ msgstr "الشريك"
