@@ -9,41 +9,42 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2018-01-03 20:26+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2019-07-19 09:43+0000\n"
+"Last-Translator: j-zaballa <jonzaballa@digital5.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.7.1\n"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Address"
-msgstr ""
+msgstr "Dirección"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.actions.act_window,name:partner_contact_in_several_companies.action_partner_form
 msgid "All Customers in All Positions"
-msgstr ""
+msgstr "Todos los clientes y todos los puestos"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "All partner positions"
-msgstr ""
+msgstr "Puestos del contacto"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "All positions"
-msgstr ""
+msgstr "Todos los puestos"
 
 #. module: partner_contact_in_several_companies
 #: code:addons/partner_contact_in_several_companies/models/res_partner.py:13
 #: selection:res.partner,contact_type:0
 #, python-format
 msgid "Attached to existing Contact"
-msgstr ""
+msgstr "Enlazado a contacto existente"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -59,13 +60,13 @@ msgstr "Contacto"
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Contact Name"
-msgstr ""
+msgstr "Nombre del contacto"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_contact_type
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_users_contact_type
 msgid "Contact Type"
-msgstr ""
+msgstr "Tipo de contacto"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -76,40 +77,40 @@ msgstr "País"
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_contact_id
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_users_contact_id
 msgid "Main Contact"
-msgstr ""
+msgstr "Contacto principal"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Mobile:"
-msgstr ""
+msgstr "Móvil:"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Other Positions"
-msgstr ""
+msgstr "Otros puestos"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_other_contact_ids
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_users_other_contact_ids
 msgid "Others Positions"
-msgstr ""
+msgstr "Otros puestos"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "Person"
-msgstr ""
+msgstr "Persona"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Phone:"
-msgstr ""
+msgstr "Teléfono:"
 
 #. module: partner_contact_in_several_companies
 #: code:addons/partner_contact_in_several_companies/models/res_partner.py:12
 #: selection:res.partner,contact_type:0
 #, python-format
 msgid "Standalone Contact"
-msgstr ""
+msgstr "Contacto independiente"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -119,12 +120,12 @@ msgstr "Provincia"
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Street 2..."
-msgstr ""
+msgstr "Calle 2..."
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Street..."
-msgstr ""
+msgstr "Calle..."
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.personal_contact_information
@@ -132,6 +133,8 @@ msgid ""
 "To see personal information about this contact, please\n"
 "                    go to to the this person form:"
 msgstr ""
+"Para ver información personal de este contacto, vaya\n"
+"al formulario de esta persona, por favor:"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -141,22 +144,22 @@ msgstr "C.P."
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "at"
-msgstr ""
+msgstr "en"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "e.g. Mr."
-msgstr ""
+msgstr "e.g. Sr."
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "e.g. Sales Director"
-msgstr ""
+msgstr "e.g. Responsable de ventas"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "internal note..."
-msgstr ""
+msgstr "nota interna..."
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model,name:partner_contact_in_several_companies.model_ir_actions_act_window
@@ -166,9 +169,9 @@ msgstr "ir.actions.act_window"
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_kanban_contact
 msgid "other position"
-msgstr ""
+msgstr "otro puesto"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_kanban_contact
 msgid "other positions"
-msgstr ""
+msgstr "otros puestos"
