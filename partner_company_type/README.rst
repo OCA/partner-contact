@@ -63,6 +63,7 @@ Other credits
 ~~~~~~~~~~~~~
 
 This module is maintained by:
+
 * Odoo Community Association
 
 Maintainers
