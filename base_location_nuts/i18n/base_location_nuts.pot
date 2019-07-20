@@ -59,19 +59,19 @@ msgid "Display Name"
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:139
+#: code:addons/base_location_nuts/wizard/nuts_import.py:138
 #, python-format
 msgid "Downloaded file is not a valid XML file"
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:131
+#: code:addons/base_location_nuts/wizard/nuts_import.py:130
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:127
+#: code:addons/base_location_nuts/wizard/nuts_import.py:126
 #, python-format
 msgid "Got an error when trying to download the file: %s."
 msgstr ""
@@ -230,7 +230,7 @@ msgid "This wizard will download the lastest version of\n"
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:109
+#: code:addons/base_location_nuts/wizard/nuts_import.py:108
 #, python-format
 msgid "Value not found for mandatory field %s"
 msgstr ""
