@@ -1,10 +1,10 @@
 # Copyright 2014-2016 Akretion (Alexis de Lattre
 #                     <alexis.delattre@akretion.com>)
 # Copyright 2014 Lorenzo Battistini <lorenzo.battistini@agilebg.com>
-# Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # Copyright 2017 Eficent Business and IT Consulting Services, S.L.
 #                <contact@eficent.com>
 # Copyright 2018 Aitor Bouzas <aitor.bouzas@adaptivecity.com>
+# Copyright 2016-2019 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import _, api, fields, models
@@ -168,26 +168,28 @@ class CityZipGeonamesImport(models.TransientModel):
         for i, row in enumerate(parsed_csv):
             if max_import and i == max_import:
                 break
+            state_id = state_dict[row[self.code_row_index or 4]]
             city = self.select_city(
                 row, self.country_id) if search_cities else False
             if not city:
-                state_id = state_dict[
-                    row[self.code_row_index or 4]]
                 city_vals = self.prepare_city(
                     row, self.country_id, state_id)
                 if city_vals not in city_vals_list:
                     city_vals_list.append(city_vals)
             else:
-                city_dict[city.name] = city.id
-
+                city_dict[(city.name, state_id)] = city.id
         created_cities = self.env['res.city'].create(city_vals_list)
         for i, vals in enumerate(city_vals_list):
-            city_dict[vals['name']] = created_cities[i].id
+            city_dict[(vals['name'], vals['state_id'])] = created_cities[i].id
         return city_dict
 
     @api.multi
     def run_import(self):
         self.ensure_one()
+        parsed_csv = self.get_and_parse_csv()
+        return self._process_csv(parsed_csv)
+
+    def _process_csv(self, parsed_csv):
         state_model = self.env['res.country.state']
         zip_model = self.env['res.city.zip']
         res_city_model = self.env['res.city']
@@ -203,7 +205,6 @@ class CityZipGeonamesImport(models.TransientModel):
             [('country_id', '=', self.country_id.id)])
         search_states = True and len(current_states) > 0 or False
 
-        parsed_csv = self.get_and_parse_csv()
         max_import = self.env.context.get('max_import', 0)
         logger.info('Starting to create the cities and/or city zip entries')
 
@@ -218,12 +219,15 @@ class CityZipGeonamesImport(models.TransientModel):
             if max_import and i == max_import:
                 break
             # Don't search if there aren't any records
-            zip = False
+            zip_code = False
             if search_zips:
-                zip = self.select_zip(row, self.country_id)
-            if not zip:
-                city_id = city_dict[
-                    self.transform_city_name(row[2], self.country_id)]
+                zip_code = self.select_zip(row, self.country_id)
+            if not zip_code:
+                state_id = state_dict[row[self.code_row_index or 4]]
+                city_id = city_dict[(
+                    self.transform_city_name(row[2], self.country_id),
+                    state_id,
+                )]
                 zip_vals = self.prepare_zip(row, city_id)
                 if zip_vals not in zip_vals_list:
                     zip_vals_list.append(zip_vals)
@@ -243,7 +247,7 @@ class CityZipGeonamesImport(models.TransientModel):
             # we can delete the old ones
             created_cities = res_city_model.search(
                 [('country_id', '=', self.country_id.id),
-                 ('id', 'in', [value for key, value in city_dict.items()])]
+                 ('id', 'in', list(city_dict.values()))]
             )
             current_cities -= created_cities
             current_cities.unlink()
