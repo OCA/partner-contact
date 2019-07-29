@@ -1,4 +1,4 @@
-# Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2016-2019 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests import common
@@ -109,3 +109,36 @@ class TestBaseLocationGeonamesImport(common.SavepointCase):
         with a wrong country code"""
         with self.assertRaises(UserError):
             self.wrong_wizard.run_import()
+
+    def test_import_duplicated_city_name(self):
+        country = self.env.ref('base.us')
+        self.wizard.country_id = country.id
+        parsed_csv = [
+            ['US', '95602', 'Auburn', ' California', 'CA', 'Placer', '61',
+             '38.9829', '-121.0944', '4'],
+            ['US', '95603', 'Auburn', ' California', 'CA', 'Placer', '61',
+             '38.9115', '-121.08', '4'],
+            ['US', '30011', 'Auburn', ' Georgia', 'GA', 'Barrow', '13',
+             '34.0191', '-83.8261', '4'],
+        ]
+        self.wizard._process_csv(parsed_csv)
+        cities = self.env['res.city'].search([('name', '=', 'Auburn')])
+        self.assertEqual(len(cities), 2)
+        mapping = [
+            ['California', '95602'],
+            ['California', '95603'],
+            ['Georgia', '30011'],
+        ]
+        for state_name, zip_code in mapping:
+            zip_entry = self.env['res.city.zip'].search([
+                ('city_id.country_id', '=', country.id),
+                ('name', '=', zip_code),
+            ])
+            state = self.env['res.country.state'].search([
+                ('country_id', '=', country.id),
+                ('name', '=', state_name),
+            ])
+            self.assertEqual(
+                zip_entry.city_id.state_id, state,
+                "Incorrect state for %s %s" % (state_name, zip_code),
+            )
