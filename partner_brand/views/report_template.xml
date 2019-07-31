@@ -1,0 +1,80 @@
+<odoo>
+
+    <!-- Copyright (C) 2019 Open Source Integrators
+         License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+    <template id="external_layout_standard_logo"
+              inherit_id="web.external_layout_standard">
+
+        <xpath expr="//img[@t-if='company.logo']" position="replace">
+            <t t-if="'brand_id' in o.fields_get() and o.brand_id">
+                <img t-if="o.brand_id.image"
+                     t-att-src="image_data_uri(o.brand_id.image)"
+                     style="max-height: 45px;" alt="Logo"/>
+            </t>
+            <t t-else="">
+                <img t-if="company.logo"
+                     t-att-src="image_data_uri(company.logo)"
+                     style="max-height: 45px;" alt="Logo"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="external_layout_standard_address"
+              inherit_id="web.external_layout_standard">
+
+        <xpath expr="//div[@t-field='company.partner_id']" position="replace">
+            <t t-if="'brand_id' in o.fields_get() and o.brand_id">
+                <div t-field="o.brand_id.name"/>
+                <div t-field="o.brand_id"
+                     t-options='{"widget": "contact", "fields": ["address"], "no_marker": true}'/>
+            </t>
+            <t t-else="">
+                <div t-field="company.partner_id"
+                     t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="external_layout_standard_footer"
+              inherit_id="web.external_layout_standard">
+        <xpath expr="//ul[hasclass('list-inline')]" position="replace">
+            <t t-if="'brand_id' in o.fields_get() and o.brand_id">
+                <ul class="list-inline mb4">
+                    <li t-if="o.brand_id.phone" class="list-inline-item">
+                        Phone:
+                        <span t-field="o.brand_id.phone"/>
+                    </li>
+                    <li t-if="o.brand_id.email" class="list-inline-item">
+                        Email:
+                        <span t-field="o.brand_id.email"/>
+                    </li>
+                    <li t-if="o.brand_id.website" class="list-inline-item">
+                        Web:
+                        <span t-field="o.brand_id.website"/>
+                    </li>
+                </ul>
+            </t>
+            <t t-else="">
+                <ul t-if="company" class="list-inline mb4">
+                    <li t-if="company.phone"
+                        class="list-inline-item">
+                        Phone:
+                        <span t-field="company.phone"/>
+                    </li>
+                    <li t-if="company.email"
+                        class="list-inline-item">
+                        Email:
+                        <span t-field="company.email"/>
+                    </li>
+                    <li t-if="company.website"
+                        class="list-inline-item">
+                        Web:
+                        <span t-field="company.website"/>
+                    </li>
+                </ul>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>
