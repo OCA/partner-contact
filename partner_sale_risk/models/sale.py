@@ -17,7 +17,11 @@ class SaleOrder(models.Model):
     @api.depends('state', 'order_line.invoice_lines.invoice_id.amount_total')
     def _compute_invoice_amount(self):
         AccountInvoice = self.env['account.invoice']
-        for order in self.filtered(lambda x: x.state == 'sale'):
+        if self.env['ir.values'].get_default('sale.config.settings', 'auto_done_setting'):
+            orders = self.filtered(lambda x: x.state in ["sale", "done"])
+        else:
+            orders = self.filtered(lambda x: x.state in ["sale"])
+        for order in orders:
             invoice_ids = order.order_line.mapped(
                 'invoice_lines.invoice_id').ids
             if not invoice_ids:

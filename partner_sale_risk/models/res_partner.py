@@ -24,10 +24,17 @@ class ResPartner(models.Model):
     def _compute_risk_sale_order(self):
         customers = self.filtered('customer')
         partners = customers | customers.mapped('child_ids')
-        orders_group = self.env['sale.order'].read_group(
-            [('state', '=', 'sale'), ('partner_id', 'in', partners.ids)],
-            ['partner_id', 'invoice_pending_amount'],
-            ['partner_id'])
+        if self.env['ir.values'].get_default('sale.config.settings', 'auto_done_setting'):
+            orders_group = self.env['sale.order'].read_group(
+                [('state', 'in', ['sale', 'done']), ('partner_id', 'in', partners.ids),
+                 ('invoice_status', '!=', 'invoiced')],
+                ['partner_id', 'invoice_pending_amount'],
+                ['partner_id'])
+        else:
+            orders_group = self.env['sale.order'].read_group(
+                [('state', '=', 'sale'), ('partner_id', 'in', partners.ids)],
+                ['partner_id', 'invoice_pending_amount'],
+                ['partner_id'])
         for partner in customers:
             partner_ids = (partner | partner.child_ids).ids
             partner.risk_sale_order = sum(
