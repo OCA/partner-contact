@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="res_brand_form_view">
+        <field name="name">res.brand.form (in partner_brand)</field>
+        <field name="model">res.brand</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="string">Brand</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="res_brand_search_view">
+        <field name="name">res.brand.search (in partner_brand)</field>
+        <field name="model">res.brand</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="attributes">
+                <attribute name="string">Brands</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="res_brand_kanban_view">
+        <field name="name">res.brand.kanban (in partner_brand)</field>
+        <field name="model">res.brand</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="string">Brands</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="res_brand_tree_view">
+        <field name="name">res.brand.tree (in partner_brand)</field>
+        <field name="model">res.brand</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="string">Brands</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="res_brand_act_window">
+        <field name="name">Brands</field>
+        <field name="res_model">res.brand</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record model="ir.ui.menu" id="res_brand_menu">
+        <field name="name">Brands</field>
+        <field name="parent_id" ref="base.menu_users"/>
+        <field name="action" ref="res_brand_act_window"/>
+    </record>
+
+</odoo>

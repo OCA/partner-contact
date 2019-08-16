@@ -1,5 +1,4 @@
 To use this module, you need to:
 
-#. Go to the partner form
-#. Select a company
-#. Add a new address and select the type "Brand"
+#. Go to Settings > Users & Companies > Brands
+#. Add a new brand
