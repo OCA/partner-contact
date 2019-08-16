@@ -4,7 +4,7 @@
 {
     "name": "Partner Brand",
     "summary": "Manage your brands and use them on your documents",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.0.1",
     "category": "Sales Management",
     "website": "https://github.com/OCA/sale-workflow",
     "author": "Open Source Integrators, Odoo Community Association (OCA)",

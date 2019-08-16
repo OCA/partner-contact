@@ -15,4 +15,14 @@
         </field>
     </record>
 
+    <record id="partner_brand_action" model="ir.actions.act_window">
+        <field name="name">Brands</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('type', '=', 'brand')]</field>
+        <field name="context">{'default_type': 'brand', 'default_customer': False}</field>
+    </record>
+
+    <menuitem id="partner_brand_menuitem" name="Brands" parent="base.menu_users" action="partner_brand_action"/>
 </odoo>
