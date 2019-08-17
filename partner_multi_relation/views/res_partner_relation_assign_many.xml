@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="res_partner_relation_assign_many_form">
+            <field name="name">res.partner.relation.assign.many.form</field>
+            <field name="model">res.partner.relation.assign.many</field>
+            <field name="groups_id" eval="[(4,ref('base.group_user'))]"/>
+            <field name="arch" type="xml">
+                <form string="Assign Partners' Relation">
+                    <group col="2">
+                        <field name="type_id"/>
+                        <field name="right_partner_id"/>
+                        <separator colspan="2"/>
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                    </group>
+
+                    <footer>
+                        <button icon="fa-lg fa-save" string="Assign Partners Relation" name="assign_many" type="object" class="send btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Assign Partners' Relation"
+                res_model="res.partner.relation.assign.many"
+                src_model="res.partner"
+                view_mode="form"
+                view_type="form"
+                multi="True"
+                target="new"
+                key2="client_action_multi"
+                id="action_partner_assign_many_relation"
+                context="{}"/>
+
+
+    </data>
+
+</odoo>

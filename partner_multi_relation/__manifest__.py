@@ -20,6 +20,7 @@
         "views/res_partner_relation_all.xml",
         'views/res_partner.xml',
         'views/res_partner_relation_type.xml',
+        'views/res_partner_relation_assign_many.xml',
         'views/menu.xml',
     ],
     "auto_install": False,
