@@ -18,14 +18,13 @@ class TestDeduplicateByWebsite(common.SavepointCase):
                 'email': 'test@deduplicate.com',
             })
 
-        cls.partner_2 = cls.env['res.partner'].with_context(
+    def test_deduplicate_by_website(self):
+        self.partner_2 = self.env['res.partner'].with_context(
             tracking_disable=True).create({
                 'name': 'Partner 2',
                 'website': 'www.test-deduplicate.com',
-                'email': 'test@deduplicate.com',
+                'email': 'test2@deduplicate.com',
             })
-
-    def test_deduplicate_by_website(self):
         wizard = self.env['base.partner.merge.automatic.wizard'].create({
             'group_by_website': True,
         })
@@ -40,6 +39,12 @@ class TestDeduplicateByWebsite(common.SavepointCase):
         self.assertTrue(found_match)
 
     def test_deduplicate_by_website_and_is_company(self):
+        self.partner_2 = self.env['res.partner'].with_context(
+            tracking_disable=True).create({
+                'name': 'Partner 2',
+                'website': 'www.test-deduplicate.com',
+                'email': 'test@deduplicate.com',
+            })
         wizard = self.env['base.partner.merge.automatic.wizard'].create({
             'group_by_website': True,
             'group_by_email': True,
