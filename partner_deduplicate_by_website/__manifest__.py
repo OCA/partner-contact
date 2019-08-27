@@ -13,7 +13,7 @@
     "license": "AGPL-3",
     "installable": True,
     "depends": [
-        "partner_deduplicate_acl",
+        "contacts",
     ],
     "data": [
         'wizards/partner_merge_view.xml',
