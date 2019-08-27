@@ -5,7 +5,7 @@
 
 {
     "name": "Deduplicate Contacts by Website",
-    "version": "11.0.1.0.0",
+    "version": "12.0.1.0.0",
     "category": "Tools",
     "website": "https://github.com/OCA/crm",
     "author": "Tecnativa, "
@@ -13,8 +13,7 @@
     "license": "AGPL-3",
     "installable": True,
     "depends": [
-        "crm",
-        "crm_deduplicate_acl",
+        "partner_deduplicate_acl",
     ],
     "data": [
         'wizards/partner_merge_view.xml',
