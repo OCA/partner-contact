@@ -12,6 +12,33 @@ def migrate(env, version):
         env.cr,
         "ALTER TABLE res_city_zip ADD %s INTEGER", (AsIs(column_name), ),
     )
+    # Create a city for ZIPs without it
+    openupgrade.logged_query(
+        env.cr, """
+        INSERT INTO res_city (
+            name, state_id, country_id,
+            create_uid, create_date, write_uid, write_date
+        )
+        SELECT
+            city, state_id, country_id,
+            MIN(create_uid), MIN(create_date), MIN(write_uid), MIN(write_date)
+        FROM res_better_zip
+        WHERE city_id IS NULL
+        GROUP BY city, state_id, country_id
+        ON CONFLICT DO NOTHING""",
+    )
+    # Update city_id in res_better_zip
+    openupgrade.logged_query(
+        env.cr, """
+        UPDATE res_better_zip rbz
+        SET city_id = rc.id
+        FROM res_city rc
+        WHERE rc.name = rbz.city
+            AND rc.state_id = rbz.state_id
+            AND rc.country_id = rbz.country_id
+            AND rbz.city_id IS NULL""",
+    )
+    # Create records for new model
     openupgrade.logged_query(
         env.cr, """
         INSERT INTO res_city_zip (
@@ -20,7 +47,8 @@ def migrate(env, version):
         SELECT
             id, name, city_id
         FROM res_better_zip
-        WHERE city_id IS NOT NULL""",
+        WHERE city_id IS NOT NULL
+        ON CONFLICT DO NOTHING""",
         (AsIs(column_name), ),
     )
     # Recompute display name for entries inserted by SQL
