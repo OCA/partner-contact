@@ -10,7 +10,7 @@ _logger = logging.getLogger(__name__)
 try:
     from validate_email import validate_email
 except ImportError:
-    _logger.error('Cannot import "validate_email".')
+    _logger.debug('Cannot import "validate_email".')
 
     def validate_email(email):
         _logger.warning(
