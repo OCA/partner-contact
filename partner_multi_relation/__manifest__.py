@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Copyright 2013-2017 Therp BV <http://therp.nl>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2013-2019 Therp BV <https://therp.nl>.
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "name": "Partner relations",
-    "version": "10.0.1.0.1",
+    "version": "10.0.1.0.2",
     "author": "Therp BV,Camptocamp,Odoo Community Association (OCA)",
     "complexity": "normal",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
+    "website": "https://github.com/oca/partner-contact",
     "depends": [
-        'base',
         'sales_team',
     ],
     "demo": [

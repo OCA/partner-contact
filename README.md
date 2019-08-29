@@ -29,9 +29,11 @@ addon | version | summary
 [base_vat_sanitized](base_vat_sanitized/) | 10.0.1.0.0 | Adds field sanitized_vat on partners
 [partner_academic_title](partner_academic_title/) | 10.0.1.0.0 | Add possibility to define some academic title
 [partner_address_street3](partner_address_street3/) | 10.0.1.0.0 | Add a third address line on partners
+[partner_address_version](partner_address_version/) | 10.0.1.0.0 | Partner Address Version
 [partner_affiliate](partner_affiliate/) | 10.0.1.0.0 | Partner Affiliates
 [partner_alias](partner_alias/) | 10.0.1.0.0 | Adds aliases to partner names.
 [partner_bank_active](partner_bank_active/) | 10.0.1.0.0 | Allow to deactivate a partner bank account
+[partner_bank_sort_code](partner_bank_sort_code/) | 10.0.1.0.0 | Adds a field in banks to manage Sort Codes
 [partner_capital](partner_capital/) | 10.0.1.0.0 | Partners Capital
 [partner_changeset](partner_changeset/) | 10.0.1.0.1 | Partner Changesets
 [partner_coc](partner_coc/) | 10.0.1.0.0 | Adds a field 'Chamber Of Commerce Registration Number' to partner
@@ -61,7 +63,7 @@ addon | version | summary
 [partner_helper](partner_helper/) | 10.0.0.1.0 | Add specific helper methods
 [partner_identification](partner_identification/) | 10.0.1.1.2 | Partner Identification Numbers
 [partner_label](partner_label/) | 10.0.1.0.0 | Print partner labels
-[partner_multi_relation](partner_multi_relation/) | 10.0.1.0.1 | Partner relations
+[partner_multi_relation](partner_multi_relation/) | 10.0.1.0.2 | Partner relations
 [partner_noncommercial](partner_noncommercial/) | 10.0.1.0.0 | Partner Non Commercial
 [partner_noncommercial_multi_relation](partner_noncommercial_multi_relation/) | 10.0.1.0.0 | Partner Non Commercial Multi Relation
 [partner_password_reset](partner_password_reset/) | 10.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.

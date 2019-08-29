@@ -262,7 +262,7 @@ msgid "No %s partner available for relation type."
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:434
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:435
 #, python-format
 msgid "No relation type specified in vals: %s."
 msgstr ""
@@ -505,7 +505,7 @@ msgid "This relation is the same from right to left as from left to right"
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_4198
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_id_4205
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection_type_id
 msgid "Type"
 msgstr "Төрөл"
