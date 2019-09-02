@@ -9,7 +9,7 @@
     <field name="arch" type="xml">
         <form string="Partner ID Numbers">
             <group>
-                <field name="category_id" />
+                <field name="category_id"/>
                 <field name="name" />
                 <field name="partner_issued_id" />
                 <field name="date_issued" />
