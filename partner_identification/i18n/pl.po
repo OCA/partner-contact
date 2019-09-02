@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:71
+#: code:addons/partner_identification/models/res_partner_id_category.py:81
 #, python-format
 msgid "%s is not a valid %s identifier"
 msgstr ""
@@ -67,6 +67,16 @@ msgid "Code"
 msgstr ""
 
 #. module: partner_identification
+#: model:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
+msgid "Company Type"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_company_type
+msgid "Company type"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_create_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_create_uid
 msgid "Created by"
@@ -85,7 +95,7 @@ msgid "Display Name"
 msgstr "Wyświetlana nazwa "
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:67
+#: code:addons/partner_identification/models/res_partner_id_category.py:77
 #, python-format
 msgid ""
 "Error when evaluating the id_category validation code::\n"
@@ -103,6 +113,11 @@ msgstr ""
 #. module: partner_identification
 #: selection:res.partner.id_number,status:0
 msgid "Expired"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
+msgid "Group By..."
 msgstr ""
 
 #. module: partner_identification
@@ -185,6 +200,7 @@ msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_comment
+#: model:ir.ui.view,arch_db:partner_identification.view_partner_form
 #: model:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 msgid "Notes"
 msgstr ""
@@ -203,6 +219,7 @@ msgstr ""
 
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
+#: model:ir.ui.view,arch_db:partner_identification.view_partner_form
 #: model:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 #: model:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_tree
 msgid "Partner ID Numbers"
@@ -210,6 +227,7 @@ msgstr ""
 
 #. module: partner_identification
 #: model:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+#: model:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
 #: model:ir.ui.view,arch_db:partner_identification.view_partner_id_category_tree
 msgid "Partner Identification Categories"
 msgstr ""
