@@ -13,6 +13,7 @@
 
             <xpath expr="//field[@name='name']" position="after">
                 <field name="parent_id"/>
+                <field name="complete_name"/>
             </xpath>
             <xpath expr="//form" position="inside">
                 <group>
