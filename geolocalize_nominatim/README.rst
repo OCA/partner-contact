@@ -4,7 +4,7 @@
 
 
 ======================
-Nominatim Geolocalize
+Geolocalize Nominatim
 ======================
 
 Get partner coordinate using Nominatim API
