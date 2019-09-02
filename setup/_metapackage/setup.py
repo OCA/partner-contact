@@ -28,6 +28,7 @@ setuptools.setup(
         'odoo12-addon-partner_contact_job_position',
         'odoo12-addon-partner_contact_personal_information_page',
         'odoo12-addon-partner_deduplicate_acl',
+        'odoo12-addon-partner_deduplicate_by_website',
         'odoo12-addon-partner_deduplicate_filter',
         'odoo12-addon-partner_disable_gravatar',
         'odoo12-addon-partner_employee_quantity',
