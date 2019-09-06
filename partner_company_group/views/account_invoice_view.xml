@@ -6,7 +6,7 @@
         <field name="priority">2</field>
         <field name="inherit_id" ref="account.view_account_invoice_filter"/>
         <field name="arch" type="xml">
-            <field name="number" position="before">
+            <field name="number" position="after">
                 <field name="company_group_id" />
             </field>
             <filter name="group_by_partner_id" position="before">
