@@ -5,7 +5,7 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_sales_order_filter" />
         <field name="arch" type="xml">
-            <field name="name" position="before">
+            <field name="name" position="after">
                 <field name="company_group_id" />
             </field>
             <filter name="customer" position="before">
