@@ -6,12 +6,27 @@
 Partner Email Check
 ===================
 
-This module validate the field ``email`` in the module ``res.partner``.
+This module validates and normalizes the field ``email`` in the model
+``res.partner``.
+
+As part of the normalization, email addresses are converted to lowercase.
+
+Optionally, multiple partners can not be allowed to have the same address.
+This will not work with multiple comma-separated email addresses in the field,
+although validation and normalization are still supported in such cases.
 
 Configuration
 =============
 
-Install python package validate_email: ``sudo pip install validate_email``.
+Install python package email-validator: ``sudo pip install email-validator``.
+
+To not allow multiple partners to have the same email address, use the
+"Filter duplicate email addresses"/``partner_email_check_filter_duplicates``
+setting.
+
+To validate that email addresses are deliverable (that the hostname exists),
+use the "Check deliverability of email addresses"/``partner_email_check_check_deliverability``
+setting.
 
 Usage
 =====
