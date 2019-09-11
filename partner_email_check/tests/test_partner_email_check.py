@@ -15,6 +15,9 @@ class TestPartnerEmailCheck(TransactionCase):
         self.env['ir.config_parameter'].set_param(
             'partner_email_check_filter_duplicates', False
         )
+        self.env['ir.config_parameter'].set_param(
+            'partner_email_check_check_deliverability', False
+        )
 
     def test_bad_email(self):
         """Test rejection of bad emails."""

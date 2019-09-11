@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="view_general_configuration" model="ir.ui.view">
-        <field name="name">partner_email_check_filter_duplicates</field>
+        <field name="name">partner_email_check</field>
         <field name="model">base.config.settings</field>
         <field name="inherit_id" ref="base_setup.view_general_configuration" />
         <field name="arch" type="xml">
@@ -11,6 +11,14 @@
                 <div>
                     <div>
                         <field name="partner_email_check_filter_duplicates" class="oe_inline" />
+                    </div>
+                </div>
+            </group>
+            <group>
+                <label for="partner_email_check_check_deliverability" />
+                <div>
+                    <div>
+                        <field name="partner_email_check_check_deliverability" class="oe_inline" />
                     </div>
                 </div>
             </group>

@@ -21,6 +21,27 @@ class BaseConfigSettings(models.TransientModel):
         return {
             'partner_email_check_filter_duplicates':
                 self.env['ir.config_parameter'].get_param(
-                    'partner_email_check_filter_duplicates', False
+                    'partner_email_check_filter_duplicates', 'False'
+                ) == 'True'
+        }
+
+    partner_email_check_check_deliverability = fields.Boolean(
+        string="Check deliverability of email addresses",
+        help="Don't allow email addresses with providers that don't exist",
+    )
+
+    @api.multi
+    def set_partner_email_check_check_deliverability(self):
+        self.env['ir.config_parameter'].set_param(
+            'partner_email_check_check_deliverability',
+            str(self.partner_email_check_check_deliverability)
+        )
+
+    @api.model
+    def get_default_partner_email_check_check_deliverability(self, fields):
+        return {
+            'partner_email_check_check_deliverability':
+                self.env['ir.config_parameter'].get_param(
+                    'partner_email_check_check_deliverability', 'False'
                 ) == 'True'
         }

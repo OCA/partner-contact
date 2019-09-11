@@ -24,8 +24,7 @@ class ResPartner(models.Model):
         return ','.join(self._normalize_email(email.strip())
                         for email in emails.split(','))
 
-    @staticmethod
-    def _normalize_email(email):
+    def _normalize_email(self, email):
         if validate_email is None:
             _logger.warning(
                 'Can not validate email, '
@@ -35,7 +34,7 @@ class ResPartner(models.Model):
         try:
             result = validate_email(
                 email,
-                check_deliverability=not tools.config['test_enable'],
+                check_deliverability=self._should_check_deliverability(),
             )
         except EmailNotValidError as e:
             raise ValidationError(
@@ -45,7 +44,13 @@ class ResPartner(models.Model):
 
     def _should_filter_duplicates(self):
         conf = self.env['ir.config_parameter'].get_param(
-            'partner_email_check_filter_duplicates', False
+            'partner_email_check_filter_duplicates', 'False'
+        )
+        return conf == 'True'
+
+    def _should_check_deliverability(self):
+        conf = self.env['ir.config_parameter'].get_param(
+            'partner_email_check_check_deliverability', 'False'
         )
         return conf == 'True'
 
