@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2016-2017 ACSONE SA/NV (<http://acsone.eu>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -18,6 +17,7 @@ except ImportError:
 class ResPartnerIdCategory(models.Model):
     _inherit = 'res.partner.id_category'
 
+    @api.model
     def _search_duplicate(self, category_id, id_number, force_active=False):
         domain = [('category_id', '=', category_id),
                   ('name', '=', id_number.name),
@@ -26,8 +26,7 @@ class ResPartnerIdCategory(models.Model):
 
         if force_active:
             domain.append(('partner_id.active', '=', True))
-        num_obj = self.env['res.partner.id_number']
-        return num_obj.search(domain)
+        return self.env['res.partner.id_number'].search(domain)
 
     @api.multi
     def validate_res_partner_gln(self, id_number):
