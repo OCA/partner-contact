@@ -9,7 +9,11 @@ from odoo.exceptions import ValidationError
 _logger = logging.getLogger(__name__)
 
 try:
-    from email_validator import validate_email, EmailNotValidError
+    from email_validator import (
+        validate_email,
+        EmailSyntaxError,
+        EmailUndeliverableError,
+    )
 except ImportError:
     _logger.debug('Cannot import "email_validator".')
 
@@ -24,6 +28,23 @@ class ResPartner(models.Model):
         return ','.join(self._normalize_email(email.strip())
                         for email in emails.split(','))
 
+    @api.constrains('email')
+    def _check_email_unique(self):
+        if self._should_filter_duplicates():
+            for rec in self.filtered("email"):
+                if ',' in rec.email:
+                    raise ValidationError(
+                        _("Field contains multiple email addresses. This is "
+                          "not supported when duplicate email addresses are "
+                          "not allowed.")
+                    )
+                if self.search_count(
+                    [('email', '=', rec.email), ('id', '!=', rec.id)]
+                ):
+                    raise ValidationError(
+                        _("Email '%s' is already in use.") % rec.email.strip()
+                    )
+
     def _normalize_email(self, email):
         if validate_email is None:
             _logger.warning(
@@ -36,9 +57,13 @@ class ResPartner(models.Model):
                 email,
                 check_deliverability=self._should_check_deliverability(),
             )
-        except EmailNotValidError as e:
+        except EmailSyntaxError:
             raise ValidationError(
-                _("%s is an invalid email: %s") % (email.strip(), e.message)
+                _("%s is an invalid email") % email.strip()
+            )
+        except EmailUndeliverableError:
+            raise ValidationError(
+                _("Cannot deliver to email address %s") % email.strip()
             )
         return result['local'].lower() + '@' + result['domain_i18n']
 
@@ -54,39 +79,14 @@ class ResPartner(models.Model):
         )
         return conf == 'True'
 
-    def _validate_no_duplicates(self, email):
-        is_existing_record = bool(self)
-        if is_existing_record:
-            self.ensure_one()
-
-        if is_existing_record and email == self.email:
-            # No change, no need to check
-            return
-
-        if ',' in email:
-            raise ValidationError(
-                _("Field contains multiple email addresses. This is not "
-                  "supported when duplicate email addresses are not allowed.")
-            )
-
-        domain = [('email', '=', email)]
-        if is_existing_record:
-            domain.append(('id', '!=', self.id))
-        if self.search(domain, limit=1):
-            raise ValidationError(_("Email '%s' is already in use.") % email)
-
     @api.model
     def create(self, vals):
-        if vals.get('email', False):
+        if vals.get('email'):
             vals['email'] = self.email_check(vals['email'])
-            if self._should_filter_duplicates():
-                self._validate_no_duplicates(vals['email'])
         return super(ResPartner, self).create(vals)
 
     @api.multi
     def write(self, vals):
-        if vals.get('email', False):
+        if vals.get('email'):
             vals['email'] = self.email_check(vals['email'])
-            if self._should_filter_duplicates():
-                self._validate_no_duplicates(vals['email'])
         return super(ResPartner, self).write(vals)

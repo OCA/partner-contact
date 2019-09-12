@@ -9,6 +9,11 @@ class BaseConfigSettings(models.TransientModel):
         help="Don't allow multiple partners to have the same email address.",
     )
 
+    partner_email_check_check_deliverability = fields.Boolean(
+        string="Check deliverability of email addresses",
+        help="Don't allow email addresses with providers that don't exist",
+    )
+
     @api.multi
     def set_partner_email_check_filter_duplicates(self):
         self.env['ir.config_parameter'].set_param(
@@ -24,11 +29,6 @@ class BaseConfigSettings(models.TransientModel):
                     'partner_email_check_filter_duplicates', 'False'
                 ) == 'True'
         }
-
-    partner_email_check_check_deliverability = fields.Boolean(
-        string="Check deliverability of email addresses",
-        help="Don't allow email addresses with providers that don't exist",
-    )
 
     @api.multi
     def set_partner_email_check_check_deliverability(self):

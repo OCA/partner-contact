@@ -18,7 +18,7 @@ although validation and normalization are still supported in such cases.
 Configuration
 =============
 
-Install python package validate_email: ``sudo pip install email-validator``.
+Install python package email-validator: ``sudo pip install email-validator``.
 
 To not allow multiple partners to have the same email address, use the
 "Filter duplicate email addresses"/``partner_email_check_filter_duplicates``
