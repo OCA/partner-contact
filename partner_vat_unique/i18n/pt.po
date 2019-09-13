@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_vat_unique
+# 	* partner_vat_unique
 #
 msgid ""
 msgstr ""
@@ -22,7 +22,21 @@ msgid "Contact"
 msgstr "Contacto"
 
 #. module: partner_vat_unique
-#: code:addons/partner_vat_unique/models/res_partner.py:27
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__vat
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_users__vat
+msgid "Tax ID"
+msgstr ""
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,help:partner_vat_unique.field_res_partner__vat
+#: model:ir.model.fields,help:partner_vat_unique.field_res_users__vat
+msgid ""
+"The Tax Identification Number. Complete it if the contact is subjected to "
+"government taxes. Used in some legal statements."
+msgstr ""
+
+#. module: partner_vat_unique
+#: code:addons/partner_vat_unique/models/res_partner.py:29
 #, python-format
 msgid "The VAT %s already exists in another partner."
 msgstr "O NIF %s já existe noutro parceiro."
