@@ -20,3 +20,7 @@ class TestVatUnique(SavepointCase):
                 'name': 'Second partner',
                 'vat': 'ESA12345674'
             })
+
+    def test_duplicate_partner(self):
+        partner_copied = self.partner.copy()
+        self.assertFalse(partner_copied.vat)
