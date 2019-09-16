@@ -22,8 +22,9 @@ def migrate(env, version):
         SELECT
             city, state_id, country_id,
             MIN(create_uid), MIN(create_date), MIN(write_uid), MIN(write_date)
-        FROM res_better_zip
+        FROM res_better_zip rbz
         WHERE city_id IS NULL
+            AND rbz.country_id IS NOT NULL
         GROUP BY city, state_id, country_id
         ON CONFLICT DO NOTHING""",
     )
