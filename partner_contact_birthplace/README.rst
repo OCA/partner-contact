@@ -14,7 +14,7 @@ Installation
 
 To install this module, you need to:
 
-* Install the OCA repository `partner-contact`_.
+* Install the OCA repository 'partner_contact'
 * Update your modules list.
 * Search and install this module.
 
@@ -41,7 +41,7 @@ For further information, please visit:
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/134/10.0
+   :target: https://runbot.odoo-community.org/runbot/134/12.0
 
 
 Credits
@@ -73,4 +73,4 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-To contribute to this module, please visit http://odoo-community.org.
+To contribute to this module, please visit http://odoo-community.org
