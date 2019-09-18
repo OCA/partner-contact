@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 {
@@ -6,7 +5,7 @@
     'summary': 'This module allows to define a birthplace for partners.',
     'version': '12.0.1.0.0',
     'category': 'Customer Relationship Management',
-    'website': 'https://github.com/OCA/partner-contact'
+    'website': 'https://github.com/OCA/partner-contact/tree/12.0/'
                'partner_contact_birthplace',
     'author': 'Agile Business Group, Odoo Community Association (OCA)',
     'license': 'AGPL-3',

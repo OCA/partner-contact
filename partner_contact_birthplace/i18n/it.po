@@ -17,24 +17,28 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_contact_birthplace
-#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner_birth_city
-#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_users_birth_city
-msgid "Birth city"
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__birth_city
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_users__birth_city
+#, fuzzy
+msgid "Birth City"
 msgstr "Città di nascita"
 
 #. module: partner_contact_birthplace
-#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner_birth_country_id
-#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_users_birth_country_id
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__birth_country_id
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_users__birth_country_id
 msgid "Birth country"
 msgstr "Stato di nascita"
 
 #. module: partner_contact_birthplace
-#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner_birth_state_id
-#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_users_birth_state_id
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__birth_state_id
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_users__birth_state_id
 msgid "Birth state"
 msgstr "Provincia di nascita"
 
 #. module: partner_contact_birthplace
 #: model:ir.model,name:partner_contact_birthplace.model_res_partner
-msgid "Partner"
-msgstr "Partner"
+msgid "Contact"
+msgstr ""
+
+#~ msgid "Partner"
+#~ msgstr "Partner"
