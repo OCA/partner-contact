@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2018 Simone Rubino - Agile Business Group
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<!-- License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 
 <odoo>
     <record id="view_personal_information_birthplace" model="ir.ui.view">
