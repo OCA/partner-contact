@@ -3,7 +3,7 @@
     'version': '12.0.1.0.0',
     'installable': True,
     'category': 'base',
-    'author': 'Komit',
+    'author': 'Komit, Odoo Community Association (OCA)',
     'website': 'http://komit-consulting.com',
     'license': 'AGPL-3',
     "depends": [
