@@ -22,6 +22,7 @@ setuptools.setup(
         'odoo12-addon-partner_company_group',
         'odoo12-addon-partner_company_type',
         'odoo12-addon-partner_contact_birthdate',
+        'odoo12-addon-partner_contact_birthplace',
         'odoo12-addon-partner_contact_department',
         'odoo12-addon-partner_contact_gender',
         'odoo12-addon-partner_contact_job_position',
