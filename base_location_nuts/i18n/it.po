@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-24 03:46+0000\n"
-"PO-Revision-Date: 2018-01-24 03:46+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"PO-Revision-Date: 2019-10-27 15:33+0000\n"
+"Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.8\n"
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
@@ -61,7 +62,7 @@ msgstr "Creato il"
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__display_name
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__display_name
 msgid "Display Name"
-msgstr "Nome da visualizzare"
+msgstr "Nome visualizzato"
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:138
@@ -73,13 +74,13 @@ msgstr "Il file scaricato non è un file XML valido"
 #: code:addons/base_location_nuts/wizard/nuts_import.py:130
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
-msgstr "Errore %d mentre si stava scaricando il file %s."
+msgstr "Errore %d durante lo scaricamento del file %s."
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:126
 #, python-format
 msgid "Got an error when trying to download the file: %s."
-msgstr ""
+msgstr "Errore durante lo scaricamento del file: %s."
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
@@ -100,13 +101,13 @@ msgstr "Importa"
 #. module: base_location_nuts
 #: model:ir.ui.menu,name:base_location_nuts.nuts_import_menu
 msgid "Import NUTS 2013"
-msgstr ""
+msgstr "Importa NUTS 2013"
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.nuts_import_action
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
 msgid "Import NUTS 2013 from RAMON"
-msgstr ""
+msgstr "Importazione NUTS 2013 da RAMON"
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_nuts_import
@@ -145,48 +146,48 @@ msgstr ""
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_country_form
 msgid "NUTS"
-msgstr ""
+msgstr "NUTS"
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_res_partner_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.res_partner_nuts_form
 msgid "NUTS Item"
-msgstr ""
+msgstr "Voce NUTS"
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.res_partner_nuts_action
 #: model:ir.ui.menu,name:base_location_nuts.res_partner_nuts_menu
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.res_partner_nuts_tree
 msgid "NUTS Items"
-msgstr ""
+msgstr "Voci NUTS"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts1_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__nuts1_id
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L1"
-msgstr ""
+msgstr "Livello NUTS 1"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts2_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__nuts2_id
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L2"
-msgstr ""
+msgstr "Livello NUTS 2"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts3_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__nuts3_id
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L3"
-msgstr ""
+msgstr "Livello NUTS 3"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts4_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__nuts4_id
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L4"
-msgstr ""
+msgstr "Livello NUTS 4"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__name
@@ -196,7 +197,7 @@ msgstr "Nome"
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__not_updatable
 msgid "Not Updatable"
-msgstr ""
+msgstr "Non aggiornabile"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__parent_id
@@ -211,12 +212,12 @@ msgstr ""
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
 msgid "Search NUTS"
-msgstr ""
+msgstr "Ricerca NUTS"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__state_id
 msgid "State"
-msgstr "Provincia"
+msgstr "Stato"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_country__state_level
@@ -240,7 +241,7 @@ msgstr ""
 #: code:addons/base_location_nuts/wizard/nuts_import.py:108
 #, python-format
 msgid "Value not found for mandatory field %s"
-msgstr ""
+msgstr "Valore non trovato per il campo obbligatorio %s"
 
 #. module: base_location_nuts
 #: model_terms:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
