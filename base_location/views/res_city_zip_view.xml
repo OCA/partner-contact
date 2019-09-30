@@ -39,7 +39,6 @@
     <record id="action_zip_tree" model="ir.actions.act_window">
         <field name="name">Locations</field>
         <field name="res_model">res.city.zip</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field ref="city_zip_tree" name="view_id"/>
         <field name="search_view_id" ref="view_city_zip_filter"/>
