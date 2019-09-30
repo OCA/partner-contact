@@ -31,12 +31,11 @@ class ResCompany(models.Model):
         string='ZIP Location',
         compute='_compute_address',
         inverse='_inverse_zip_id',
-        oldname="better_zip_id",
         help='Use the city name or the zip code to search the location',
     )
 
     country_enforce_cities = fields.Boolean(
-        related='country_id.enforce_cities'
+        related='partner_id.country_id.enforce_cities',
     )
 
     def _get_company_address_fields(self, partner):

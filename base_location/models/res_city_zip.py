@@ -28,7 +28,6 @@ class ResCityZip(models.Model):
          'The zip code must be unique within it\'s city'),
     ]
 
-    @api.multi
     @api.depends('name', 'city_id')
     def _compute_new_display_name(self):
         for rec in self:
