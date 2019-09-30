@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests.common import TransactionCase
+
 from .base import MailInstalled
 
 
@@ -31,6 +32,7 @@ class UserCase(CompanyCase, MailInstalled):
     model = "res.users"
     context = {"default_login": "user@example.com"}
 
+    # pylint: disable=missing-return
     def test_computing_after_unlink(self):
         # Cannot create users if ``mail`` is installed
         if not self.mail_installed():
