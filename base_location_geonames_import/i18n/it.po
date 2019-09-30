@@ -85,7 +85,7 @@ msgid "Geonames State Name Column"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:126
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Errore %d mentre si stava scaricando il file %s."
@@ -134,17 +134,17 @@ msgid "Letter Case"
 msgstr "Maiuscolo/Minuscolo"
 
 #. module: base_location_geonames_import
-#: selection:city.zip.geonames.import,letter_case:0
+#: model:ir.model.fields.selection,name:base_location_geonames_import.selection__city_zip_geonames_import__letter_case__title
 msgid "Title Case"
 msgstr "Iniziale Maiuscola"
 
 #. module: base_location_geonames_import
-#: selection:city.zip.geonames.import,letter_case:0
+#: model:ir.model.fields.selection,name:base_location_geonames_import.selection__city_zip_geonames_import__letter_case__unchanged
 msgid "Unchanged"
 msgstr "Invariato"
 
 #. module: base_location_geonames_import
-#: selection:city.zip.geonames.import,letter_case:0
+#: model:ir.model.fields.selection,name:base_location_geonames_import.selection__city_zip_geonames_import__letter_case__upper
 msgid "Upper Case"
 msgstr "Lettere Maiuscole"
 
