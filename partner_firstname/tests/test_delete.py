@@ -31,6 +31,7 @@ class UserCase(CompanyCase, MailInstalled):
     model = "res.users"
     context = {"default_login": "user@example.com"}
 
+    # pylint: disable=missing-return
     def test_computing_after_unlink(self):
         # Cannot create users if ``mail`` is installed
         if not self.mail_installed():

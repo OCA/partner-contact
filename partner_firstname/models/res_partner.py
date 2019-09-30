@@ -51,7 +51,6 @@ class ResPartner(models.Model):
 
         return super(ResPartner, self.with_context(context)).create(vals)
 
-    @api.multi
     def copy(self, default=None):
         """Ensure partners are copied right.
 
@@ -90,7 +89,7 @@ class ResPartner(models.Model):
 
     @api.model
     def _get_computed_name(self, lastname, firstname):
-        """Compute the 'name' field according to splitted data.
+        """Compute the 'name' field according to split data.
         You can override this method to change the order of lastname and
         firstname the computed name"""
         order = self._get_names_order()
@@ -101,7 +100,6 @@ class ResPartner(models.Model):
         else:
             return " ".join((p for p in (lastname, firstname) if p))
 
-    @api.multi
     @api.depends("firstname", "lastname")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
@@ -110,7 +108,6 @@ class ResPartner(models.Model):
                 record.lastname, record.firstname,
             )
 
-    @api.multi
     def _inverse_name_after_cleaning_whitespace(self):
         """Clean whitespace in :attr:`~.name` and split it.
 
@@ -125,9 +122,7 @@ class ResPartner(models.Model):
             if record.name != clean:
                 record.name = clean
 
-            # Save name in the real fields
-            else:
-                record._inverse_name()
+            record._inverse_name()
 
     @api.model
     def _get_whitespace_cleaned_name(self, name, comma=False):
@@ -158,7 +153,7 @@ class ResPartner(models.Model):
         - If the partner is a company, save it in the lastname.
         - Otherwise, make a guess.
 
-        This method can be easily overriden by other submodules.
+        This method can be easily overwritten by other submodules.
         You can also override this method to change the order of name's
         attributes
 
@@ -185,7 +180,6 @@ class ResPartner(models.Model):
                     parts.append(False)
         return {"lastname": parts[0], "firstname": parts[1]}
 
-    @api.multi
     def _inverse_name(self):
         """Try to revert the effect of :meth:`._compute_name`."""
         for record in self:
@@ -193,7 +187,6 @@ class ResPartner(models.Model):
             record.lastname = parts['lastname']
             record.firstname = parts['firstname']
 
-    @api.multi
     @api.constrains("firstname", "lastname")
     def _check_name(self):
         """Ensure at least one name is set."""
@@ -213,7 +206,12 @@ class ResPartner(models.Model):
         """
         # Modify self's context without creating a new Environment.
         # See https://github.com/odoo/odoo/issues/7472#issuecomment-119503916.
-        self.env.context = self.with_context(skip_onchange=True).env.context
+        if not self.env.context.get("inverse_name", False):
+            self.env.context = \
+                self.with_context(skip_onchange=True).env.context
+        else:
+            self.env.context = \
+                self.with_context(inverse_name=False).env.context
 
     @api.onchange("name")
     def _onchange_name(self):
@@ -223,6 +221,8 @@ class ResPartner(models.Model):
             self.env.context = (
                 self.with_context(skip_onchange=False).env.context)
         else:
+            self.env.context = \
+                self.with_context(inverse_name=True).env.context
             self._inverse_name_after_cleaning_whitespace()
 
     @api.model
@@ -241,8 +241,8 @@ class ResPartner(models.Model):
         records._inverse_name()
         _logger.info("%d partners updated installing module.", len(records))
 
-    # Disabling SQL constraint givint a more explicit error using a Python
-    # contstraint
+    # Disabling SQL constraint giving a more explicit error using a Python
+    # constraint
     _sql_constraints = [(
         'check_name',
         "CHECK( 1=1 )",

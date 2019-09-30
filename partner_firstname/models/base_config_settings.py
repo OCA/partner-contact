@@ -10,7 +10,6 @@ class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
     partner_names_order = fields.Selection(
-        string="Partner names order",
         selection="_partner_names_order_selection",
         help="Order to compose partner fullname",
         required=True,
@@ -26,7 +25,6 @@ class ResConfigSettings(models.TransientModel):
             ('first_last', 'Firstname Lastname'),
         ]
 
-    @api.multi
     def _partner_names_order_default(self):
         return self.env['res.partner']._names_order_default()
 
@@ -40,7 +38,6 @@ class ResConfigSettings(models.TransientModel):
         res.update(partner_names_order=partner_names_order)
         return res
 
-    @api.multi
     @api.depends('partner_names_order')
     def _compute_names_order_changed(self):
         current = self.env['ir.config_parameter'].sudo().get_param(
@@ -51,26 +48,23 @@ class ResConfigSettings(models.TransientModel):
                 record.partner_names_order != current
             )
 
-    @api.multi
     @api.onchange('partner_names_order')
     def _onchange_partner_names_order(self):
         self._compute_names_order_changed()
 
-    @api.multi
+    # pylint: disable=missing-return
     def set_values(self):
         super(ResConfigSettings, self).set_values()
         self.env['ir.config_parameter'].sudo().set_param(
             'partner_names_order', self.partner_names_order
         )
 
-    @api.multi
     def _partners_for_recalculating(self):
         return self.env['res.partner'].search([
             ('is_company', '=', False),
             ('firstname', '!=', False), ('lastname', '!=', False),
         ])
 
-    @api.multi
     def action_recalculate_partners_name(self):
         self.env['ir.config_parameter'].sudo().set_param(
             'partner_names_order', self.partner_names_order

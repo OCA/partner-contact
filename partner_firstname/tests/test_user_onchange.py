@@ -1,51 +1,62 @@
 # Copyright 2016 Yannick Vaucher (Camptocamp SA)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import TransactionCase
+from odoo.tests.common import TransactionCase, Form
 
 
 class UserOnchangeCase(TransactionCase):
 
     def test_create_from_form_only_firstname(self):
         """In a new users form, a user set only the firstname."""
+        login = "Zoë"
         firstname = "Zoë"
-        with self.env.do_in_onchange():
+        with Form(
+                self.env['res.users'],
+                view='partner_firstname.view_users_form'
+        ) as user_form:
+            user_form.login = login
             # Changes firstname, which triggers onchanges
-            self.user.firstname = firstname
-            self.user._compute_name()
+            user_form.firstname = firstname
 
-            self.assertEqual(self.user.lastname, False)
-            self.assertEqual(self.user.firstname, firstname)
-            self.assertEqual(self.user.name, firstname)
+        self.assertEqual(user_form.lastname, False)
+        self.assertEqual(user_form.firstname, firstname)
+        self.assertEqual(user_form.name, firstname)
 
     def test_create_from_form_only_lastname(self):
         """In a new user form, a user set only the lastname."""
+        login = "Żywioł"
         lastname = "Żywioł"
-        with self.env.do_in_onchange():
+        with Form(
+                self.env['res.users'],
+                view='partner_firstname.view_users_form'
+        ) as user_form:
+            user_form.login = login
             # Changes lastname, which triggers onchanges
-            self.user.lastname = lastname
-            self.user._compute_name()
+            user_form.lastname = lastname
 
-            self.assertEqual(self.user.firstname, False)
-            self.assertEqual(self.user.lastname, lastname)
-            self.assertEqual(self.user.name, lastname)
+        self.assertEqual(user_form.firstname, False)
+        self.assertEqual(user_form.lastname, lastname)
+        self.assertEqual(user_form.name, lastname)
 
     def test_create_from_form_all(self):
         """In a new user form, a user set all names."""
+        login = "Zoë.Żywioł"
         firstname = "Zoë"
         lastname = "Żywioł"
-        with self.env.do_in_onchange():
+        with Form(
+                self.env['res.users'],
+                view='partner_firstname.view_users_form'
+        ) as user_form:
+            user_form.login = login
             # Changes firstname, which triggers onchanges
-            self.user.firstname = firstname
-            self.user._compute_name()
+            user_form.firstname = firstname
 
             # Changes lastname, which triggers onchanges
-            self.user.lastname = lastname
-            self.user._compute_name()
+            user_form.lastname = lastname
 
-            self.assertEqual(self.user.lastname, lastname)
-            self.assertEqual(self.user.firstname, firstname)
-            self.assertEqual(self.user.name, " ".join((firstname, lastname)))
+        self.assertEqual(user_form.lastname, lastname)
+        self.assertEqual(user_form.firstname, firstname)
+        self.assertEqual(user_form.name, " ".join((firstname, lastname)))
 
     def setUp(self):
         super(UserOnchangeCase, self).setUp()

@@ -16,3 +16,4 @@
 * Pedro Baeza <pedro.baeza@serviciosbaeza.com>
 * Dave Lasley <dave@laslabs.com>
 * Graeme Gellatly <graeme@o4sb.com>
+* Raf Ven <raf.ven@dynapps.be>

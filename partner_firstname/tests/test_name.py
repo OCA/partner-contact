@@ -48,14 +48,16 @@ class PartnerContactCase(BaseCase):
         self.original.name = "  newfïrstname  newlästname  "
 
         # Need this to refresh the ``name`` field
-        self.original.invalidate_cache()
+        self.original.invalidate_cache(['name'])
 
 
 class PartnerCompanyCase(BaseCase):
+    # pylint: disable=missing-return
     def create_original(self):
         super(PartnerCompanyCase, self).create_original()
         self.original.is_company = True
 
+    # pylint: disable=missing-return
     def test_copy(self):
         """Copy the partner and compare the result."""
         super(PartnerCompanyCase, self).test_copy()
@@ -81,6 +83,7 @@ class UserCase(PartnerContactCase):
                 "name": name,
                 "login": "firstnametest@example.com"})
 
+    # pylint: disable=missing-return
     def test_copy(self):
         """Copy the partner and compare the result."""
         # Skip if ``mail`` is installed
