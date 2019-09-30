@@ -13,12 +13,12 @@ class TestBaseLocation(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        country_obj = cls.env['res.country.state']
+        state_obj = cls.env['res.country.state']
         city_obj = cls.env['res.city']
         zip_obj = cls.env['res.city.zip']
         cls.partner_obj = cls.env['res.partner']
         cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
-        cls.state_vd = country_obj.create({
+        cls.state_vd = state_obj.create({
             'name': 'Vaud',
             'code': 'VD',
             'country_id': cls.env.ref('base.ch').id,
@@ -28,12 +28,12 @@ class TestBaseLocation(common.SavepointCase):
         })
         cls.company = cls.env.ref('base.main_company')
 
-        cls.state_bcn = country_obj.create({
+        cls.state_bcn = state_obj.create({
             'name': 'Barcelona',
             'code': '08',
             'country_id': cls.env.ref('base.es').id,
         })
-        cls.state_madrid = country_obj.create({
+        cls.state_madrid = state_obj.create({
             'name': 'Madrid',
             'code': '28',
             'country_id': cls.env.ref('base.es').id,
@@ -67,7 +67,6 @@ class TestBaseLocation(common.SavepointCase):
         partner1 = self.partner_obj.new({
             'name': 'Camptocamp',
         })
-        self.barcelona.city_id.country_id.enforce_cities = True
         partner1.zip_id = self.barcelona
         partner1._onchange_zip_id()
         self.assertEqual(partner1.zip, self.barcelona.name)
@@ -107,14 +106,10 @@ class TestBaseLocation(common.SavepointCase):
 
     def test_company_address_fields_inverse(self):
         """Test inverse fields from res.company"""
-        company = self.env['res.company'].new({
+        company = self.env['res.company'].create({
             'name': 'Test',
-            'partner_id': self.partner_obj.new({}).id
-            # Partner must be initiated in order to be filled
         })
-        company.update({
-            'zip_id': self.barcelona.id,
-        })
+        company.zip_id = self.barcelona.id
         company._inverse_city_id()
         company._inverse_zip_id()
         self.assertEqual(company.zip_id, company.partner_id.zip_id)
@@ -179,13 +174,11 @@ class TestBaseLocation(common.SavepointCase):
 
     def test_partner_onchange_country(self):
         """Test partner onchange country_id"""
-        country_es = self.env.ref('base.es')
-        country_es.enforce_cities = True
         partner = self.partner_obj.new({
             'name': 'TEST',
             'zip_id': self.lausanne.id
         })
-        partner.country_id = country_es
+        partner.country_id = self.env.ref('base.es')
         partner._onchange_country_id()
         self.assertFalse(partner.zip_id)
 
