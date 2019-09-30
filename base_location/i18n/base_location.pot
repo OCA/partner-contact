@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* base_location
+# 	* base_location
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,9 @@ msgstr ""
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__country_enforce_cities
-msgid "Check this box to ensure every address created in that country has a 'City' chosen in the list of the country's cities."
+msgid ""
+"Check this box to ensure every address created in that country has a 'City' "
+"chosen in the list of the country's cities."
 msgstr ""
 
 #. module: base_location
@@ -83,7 +85,8 @@ msgstr ""
 
 #. module: base_location
 #: model_terms:ir.actions.act_window,help:base_location.action_res_city_full
-msgid "Display and manage the list of all cities that can be assigned to\n"
+msgid ""
+"Display and manage the list of all cities that can be assigned to\n"
 "            your partner records. Note that an option can be set on each country separately\n"
 "            to enforce any address of it to have a city in this list."
 msgstr ""
@@ -129,19 +132,19 @@ msgid "Search zip"
 msgstr ""
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:69
+#: code:addons/base_location/models/res_partner.py:0
 #, python-format
 msgid "The city of partner %s differs from that in location %s"
 msgstr ""
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:65
+#: code:addons/base_location/models/res_partner.py:0
 #, python-format
 msgid "The country of the partner %s differs from that in location %s"
 msgstr ""
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:61
+#: code:addons/base_location/models/res_partner.py:0
 #, python-format
 msgid "The state of the partner %s differs from that in location %s"
 msgstr ""
@@ -152,13 +155,17 @@ msgid "Use the city name or the zip code to search the location"
 msgstr ""
 
 #. module: base_location
-#: sql_constraint:res.city:0
-msgid "You already have a city with that name in the same state.The city must have a unique name within it's state and it's country"
+#: model:ir.model.constraint,message:base_location.constraint_res_city_name_state_country_uniq
+msgid ""
+"You already have a city with that name in the same state.The city must have "
+"a unique name within it's state and it's country"
 msgstr ""
 
 #. module: base_location
-#: sql_constraint:res.city.zip:0
-msgid "You already have a zip with that code in the same city. The zip code must be unique within it's city"
+#: model:ir.model.constraint,message:base_location.constraint_res_city_zip_name_city_uniq
+msgid ""
+"You already have a zip with that code in the same city. The zip code must be"
+" unique within it's city"
 msgstr ""
 
 #. module: base_location
@@ -190,4 +197,3 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_location.field_res_city__zip_ids
 msgid "Zips in this city"
 msgstr ""
-
