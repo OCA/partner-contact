@@ -183,7 +183,6 @@ class CityZipGeonamesImport(models.TransientModel):
             city_dict[(vals['name'], vals['state_id'])] = created_cities[i].id
         return city_dict
 
-    @api.multi
     def run_import(self):
         self.ensure_one()
         parsed_csv = self.get_and_parse_csv()
