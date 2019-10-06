@@ -1,0 +1,147 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_location_geonames_import
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-10 01:50+0000\n"
+"PO-Revision-Date: 2017-06-10 01:50+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Galician (Spain) (https://www.transifex.com/oca/teams/23907/"
+"gl_ES/)\n"
+"Language: gl_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: base_location_geonames_import
+#: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
+msgid ""
+", create new location entries if not found already in the system, and "
+"<b>delete missing entries</b> from new file."
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
+msgid "Cancel"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,help:base_location_geonames_import.field_city_zip_geonames_import__letter_case
+msgid ""
+"Converts retreived city and state names to Title Case (upper case on each "
+"first letter of a word) or Upper Case (all letters upper case)."
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model,name:base_location_geonames_import.model_res_country
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__country_id
+msgid "Country"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
+msgid ""
+"For the selected country, this wizard will download the latest version of "
+"the list of cities from"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__code_row_index
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_code_column
+msgid "Geonames State Code Column"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__name_row_index
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_name_column
+msgid "Geonames State Name Column"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:126
+#, python-format
+msgid "Got an error %d when trying to download the file %s."
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__id
+msgid "ID"
+msgstr "ID"
+
+#. module: base_location_geonames_import
+#: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
+msgid "Import"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model,name:base_location_geonames_import.model_city_zip_geonames_import
+msgid "Import City Zips from Geonames"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.actions.act_window,name:base_location_geonames_import.city_zip_geonames_import_action
+#: model:ir.ui.menu,name:base_location_geonames_import.city_zip_geonames_import_menu
+#: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
+msgid "Import from Geonames"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__letter_case
+msgid "Letter Case"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: selection:city.zip.geonames.import,letter_case:0
+msgid "Title Case"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: selection:city.zip.geonames.import,letter_case:0
+msgid "Unchanged"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: selection:city.zip.geonames.import,letter_case:0
+msgid "Upper Case"
+msgstr ""
+
+#. module: base_location_geonames_import
+#: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
+msgid "geonames.org"
+msgstr ""
