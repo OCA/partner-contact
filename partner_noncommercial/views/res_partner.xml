@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="model">res.partner</field>
+        <field type="xml" name="arch">
+            <filter name="type_person" position="before">
+                <filter
+                    string="All partners"
+                    name="type_contact"
+                    domain="['|',('is_company','=',1),('type','=','contact')]"
+                    />
+            </filter>
+            <!-- Default type_person also contains invoice and delivery
+                 addresses for companies (and persons). -->
+            <filter name="type_person" position="attributes">
+                <attribute
+                    name="domain"
+                    >[('is_company','=',0),('type','=','contact')]</attribute>
+            </filter>
+            <filter name="type_company" position="attributes">
+                <attribute name="string">Organisations</attribute>
+            </filter>
+        </field>
+    </record>
+
+</odoo>
