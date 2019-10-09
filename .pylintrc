@@ -13,6 +13,13 @@ valid_odoo_versions=13.0
 [MESSAGES CONTROL]
 disable=all
 
+# This .pylintrc contains optional AND mandatory checks and is meant to be
+# loaded in an IDE to have it check everything, in the hope this will make
+# optional checks more visible to contributors who otherwise never look at a
+# green travis to see optional checks that failed.
+# .pylintrc-mandatory containing only mandatory checks is used the pre-commit
+# config as a blocking check.
+
 enable=anomalous-backslash-in-string,
     api-one-deprecated,
     api-one-multi-together,

@@ -1,8 +1,8 @@
-exclude: "^setup/"
+exclude: "^setup/|/static/src/lib"
 default_language_version:
   python: python3
 repos:
-- repo: https://github.com/ambv/black
+- repo: https://github.com/psf/black
   rev: 19.3b0
   hooks:
   - id: black
@@ -25,6 +25,16 @@ repos:
     args: ["--extend-ignore=F401"]  # ignore unused imports in __init__.py
     files: /__init__\.py$
     additional_dependencies: ["flake8-bugbear==19.8.0"]
+  - id: fix-encoding-pragma
+    args: ["--remove"]
+  - id: check-case-conflict
+  - id: check-docstring-first
+  - id: check-executables-have-shebangs
+  - id: check-merge-conflict
+  - id: check-symlinks
+  - id: check-xml
+  - id: mixed-line-ending
+    args: ["--fix=lf"]
 - repo: https://github.com/pre-commit/mirrors-pylint
   rev: v2.3.1
   hooks:
@@ -59,4 +69,3 @@ repos:
   hooks:
   - id: eslint
     verbose: true
-    exclude: /static/src/lib/
