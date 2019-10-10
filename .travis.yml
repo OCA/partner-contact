@@ -5,7 +5,7 @@ cache:
   - $HOME/.cache/pre-commit
 
 python:
-  - "3.5"
+  - "3.6"
 
 addons:
   postgresql: "9.6"
@@ -21,10 +21,10 @@ jobs:
   include:
     - stage: linting
       name: "pre-commit"
-      python: "3.6"
       install: pip install pre-commit
       script: pre-commit run --all --show-diff-on-failure
-      after_success: true
+      before_install:
+      after_success:
     - stage: test
       env:
         - TESTS="1" ODOO_REPO="odoo/odoo" MAKEPOT="1"
