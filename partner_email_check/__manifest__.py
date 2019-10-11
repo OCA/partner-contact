@@ -9,11 +9,14 @@
     'author': "Komit, Odoo Community Association (OCA)",
     'website': 'http://komit-consulting.com',
     'category': 'Tools',
-    'depends': ['base'],
+    'depends': ['base_setup'],
     'installable': True,
     'application': False,
     'license': 'AGPL-3',
     'external_dependencies': {
-        'python': ['validate_email']
+        'python': ['email_validator']
     },
+    'data': [
+        'views/base_config_view.xml',
+    ]
 }

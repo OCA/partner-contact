@@ -2,4 +2,4 @@ python-stdnum
 suds
 requests
 unicodecsv
-validate_email
+email_validator
