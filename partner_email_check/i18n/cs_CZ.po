@@ -20,12 +20,57 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #. module: partner_email_check
-#: code:addons/partner_email_check/models/res_partner.py:36
+#: code:addons/partner_email_check/models/res_partner.py:62
 #, fuzzy, python-format
 msgid "%s is an invalid email"
 msgstr "Neplatný e-mail!"
 
 #. module: partner_email_check
+#: code:addons/partner_email_check/models/res_partner.py:66
+#, python-format
+msgid "Cannot deliver to email address %s"
+msgstr ""
+
+#. module: partner_email_check
+#: model:ir.model.fields,field_description:partner_email_check.field_base_config_settings_partner_email_check_check_deliverability
+msgid "Check deliverability of email addresses"
+msgstr ""
+
+#. module: partner_email_check
+#: model:ir.model.fields,help:partner_email_check.field_base_config_settings_partner_email_check_check_deliverability
+msgid "Don't allow email addresses with providers that don't exist"
+msgstr ""
+
+#. module: partner_email_check
+#: model:ir.model.fields,help:partner_email_check.field_base_config_settings_partner_email_check_filter_duplicates
+msgid "Don't allow multiple partners to have the same email address."
+msgstr ""
+
+#. module: partner_email_check
+#: code:addons/partner_email_check/models/res_partner.py:45
+#, python-format
+msgid "Email '%s' is already in use."
+msgstr ""
+
+#. module: partner_email_check
+#: code:addons/partner_email_check/models/res_partner.py:37
+#, python-format
+msgid ""
+"Field contains multiple email addresses. This is not supported when "
+"duplicate email addresses are not allowed."
+msgstr ""
+
+#. module: partner_email_check
+#: model:ir.model.fields,field_description:partner_email_check.field_base_config_settings_partner_email_check_filter_duplicates
+msgid "Filter duplicate partner email addresses"
+msgstr ""
+
+#. module: partner_email_check
 #: model:ir.model,name:partner_email_check.model_res_partner
 msgid "Partner"
 msgstr "Společník"
+
+#. module: partner_email_check
+#: model:ir.model,name:partner_email_check.model_base_config_settings
+msgid "base.config.settings"
+msgstr ""
