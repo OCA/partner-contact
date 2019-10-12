@@ -3,32 +3,29 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Location management (aka Better ZIP)',
-    'version': '13.0.1.0.0',
-    'depends': [
-        'base_address_city',
-        'contacts',
+    "name": "Location management (aka Better ZIP)",
+    "version": "13.0.1.0.0",
+    "depends": ["base_address_city", "contacts"],
+    "author": (
+        "Camptocamp,"
+        "ACYSOS S.L.,"
+        "Alejandro Santana,"
+        "Tecnativa,"
+        "AdaptiveCity,"
+        "Odoo Community Association (OCA)"
+    ),
+    "license": "AGPL-3",
+    "summary": """Enhanced zip/npa management system""",
+    "website": "https://github.com/OCA/partner-contact",
+    "data": [
+        "security/ir.model.access.csv",
+        "views/res_city_zip_view.xml",
+        "views/res_city_view.xml",
+        "views/res_country_view.xml",
+        "views/res_company_view.xml",
+        "views/res_partner_view.xml",
     ],
-    'author': "Camptocamp,"
-              "ACYSOS S.L.,"
-              "Alejandro Santana,"
-              "Tecnativa,"
-              "AdaptiveCity,"
-              "Odoo Community Association (OCA)",
-    'license': "AGPL-3",
-    'summary': '''Enhanced zip/npa management system''',
-    'website': 'https://github.com/OCA/partner-contact',
-    'data': [
-        'security/ir.model.access.csv',
-        'views/res_city_zip_view.xml',
-        'views/res_city_view.xml',
-        'views/res_country_view.xml',
-        'views/res_company_view.xml',
-        'views/res_partner_view.xml',
-    ],
-    'demo': [
-        'demo/res_city_zip.xml',
-    ],
-    'installable': True,
-    'auto_install': False,
+    "demo": ["demo/res_city_zip.xml"],
+    "installable": True,
+    "auto_install": False,
 }
