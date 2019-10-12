@@ -13,22 +13,22 @@ class ResCityZip(models.Model):
     _order = "name asc"
     _rec_name = "display_name"
 
-    name = fields.Char('ZIP', required=True)
-    city_id = fields.Many2one(
-        'res.city',
-        'City',
-        required=True,
+    name = fields.Char("ZIP", required=True)
+    city_id = fields.Many2one("res.city", "City", required=True)
+    display_name = fields.Char(
+        compute="_compute_new_display_name", store=True, index=True
     )
-    display_name = fields.Char(compute='_compute_new_display_name',
-                               store=True, index=True)
 
     _sql_constraints = [
-        ('name_city_uniq', 'UNIQUE(name, city_id)',
-         'You already have a zip with that code in the same city. '
-         'The zip code must be unique within it\'s city'),
+        (
+            "name_city_uniq",
+            "UNIQUE(name, city_id)",
+            "You already have a zip with that code in the same city. "
+            "The zip code must be unique within it's city",
+        )
     ]
 
-    @api.depends('name', 'city_id')
+    @api.depends("name", "city_id")
     def _compute_new_display_name(self):
         for rec in self:
             name = [rec.name, rec.city_id.name]
