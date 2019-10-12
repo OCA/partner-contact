@@ -6,11 +6,7 @@ from odoo import fields, models
 
 class ResCountryState(models.Model):
 
-    _inherit = 'res.country'
+    _inherit = "res.country"
 
-    geonames_state_name_column = fields.Integer(
-        'Geonames State Name Column',
-    )
-    geonames_state_code_column = fields.Integer(
-        'Geonames State Code Column',
-    )
+    geonames_state_name_column = fields.Integer("Geonames State Name Column")
+    geonames_state_code_column = fields.Integer("Geonames State Code Column")
