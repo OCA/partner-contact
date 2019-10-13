@@ -76,10 +76,10 @@ class TestBaseLocationGeonamesImport(common.SavepointCase):
     def test_import_title(self):
         self.wizard.letter_case = "title"
         self.wizard.with_context(max_import=1).run_import()
-        zip = self.env["res.city.zip"].search(
+        city_zip = self.env["res.city.zip"].search(
             [("city_id.country_id", "=", self.country.id)], limit=1
         )
-        self.assertEqual(zip.city_id.name, zip.city_id.name.title())
+        self.assertEqual(city_zip.city_id.name, city_zip.city_id.name.title())
 
         city = self.env["res.city"].search(
             [("country_id", "=", self.country.id)], limit=1
@@ -89,10 +89,10 @@ class TestBaseLocationGeonamesImport(common.SavepointCase):
     def test_import_upper(self):
         self.wizard.letter_case = "upper"
         self.wizard.with_context(max_import=1).run_import()
-        zip = self.env["res.city.zip"].search(
+        city_zip = self.env["res.city.zip"].search(
             [("city_id.country_id", "=", self.country.id)], limit=1
         )
-        self.assertEqual(zip.city_id.name, zip.city_id.name.upper())
+        self.assertEqual(city_zip.city_id.name, city_zip.city_id.name.upper())
 
         city = self.env["res.city"].search(
             [("country_id", "=", self.country.id)], limit=1
