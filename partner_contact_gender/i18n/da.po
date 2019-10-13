@@ -25,7 +25,7 @@ msgid "Contact"
 msgstr "Kontakt"
 
 #. module: partner_contact_gender
-#: selection:res.partner,gender:0
+#: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__female
 msgid "Female"
 msgstr "Kvinde"
 
@@ -36,12 +36,12 @@ msgid "Gender"
 msgstr "Køn"
 
 #. module: partner_contact_gender
-#: selection:res.partner,gender:0
+#: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__male
 msgid "Male"
 msgstr "Mand"
 
 #. module: partner_contact_gender
-#: selection:res.partner,gender:0
+#: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__other
 msgid "Other"
 msgstr "Andet"
 
