@@ -6,12 +6,14 @@
     "name": "Location management (aka Better ZIP)",
     "version": "13.0.1.0.0",
     "depends": ["base_address_city", "contacts"],
-    "author": "Camptocamp,"
-    "ACYSOS S.L.,"
-    "Alejandro Santana,"
-    "Tecnativa,"
-    "AdaptiveCity,"
-    "Odoo Community Association (OCA)",
+    "author": (
+        "Camptocamp,"
+        "ACYSOS S.L.,"
+        "Alejandro Santana,"
+        "Tecnativa,"
+        "AdaptiveCity,"
+        "Odoo Community Association (OCA)"
+    ),
     "license": "AGPL-3",
     "summary": """Enhanced zip/npa management system""",
     "website": "https://github.com/OCA/partner-contact",
