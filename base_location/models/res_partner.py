@@ -17,7 +17,7 @@ class ResPartner(models.Model):
             super()._onchange_city_id()
         if self.zip_id and self.city_id != self.zip_id.city_id:
             self.update({"zip_id": False, "zip": False, "city": False})
-        if self.city_id:
+        if self.city_id and self.country_enforce_cities:
             return {"domain": {"zip_id": [("city_id", "=", self.city_id.id)]}}
         return {"domain": {"zip_id": []}}
 
@@ -41,6 +41,8 @@ class ResPartner(models.Model):
             if self.zip_id.city_id.state_id:
                 vals.update({"state_id": self.zip_id.city_id.state_id})
             self.update(vals)
+        elif not self.country_enforce_cities:
+            self.city_id = False
 
     @api.constrains("zip_id", "country_id", "city_id", "state_id")
     def _check_zip(self):
