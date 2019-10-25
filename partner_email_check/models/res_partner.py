@@ -4,6 +4,7 @@
 import logging
 from odoo import api, models, _
 from odoo.exceptions import UserError, ValidationError
+from odoo.tools import config
 
 _logger = logging.getLogger(__name__)
 
@@ -24,6 +25,9 @@ class ResPartner(models.Model):
 
     @api.model
     def email_check(self, emails):
+        if (config['test_enable'] and
+                not self.env.context.get('test_partner_email_check')):
+            return emails
         return ','.join(self._normalize_email(email.strip())
                         for email in emails.split(','))
 
