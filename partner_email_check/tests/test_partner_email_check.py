@@ -11,7 +11,11 @@ from odoo.tools.misc import mute_logger
 class TestPartnerEmailCheck(TransactionCase):
     def setUp(self):
         super(TestPartnerEmailCheck, self).setUp()
-        self.test_partner = self.env['res.partner'].create({
+        # Checks are disabled during tests unless this key is set
+        self.res_partner = self.env['res.partner'].with_context(
+            test_partner_email_check=True
+        )
+        self.test_partner = self.res_partner.create({
             'name': 'test',
         })
         self.wizard = self.env['res.config.settings'].create({})
@@ -76,14 +80,14 @@ class TestPartnerEmailCheck(TransactionCase):
         self.disallow_duplicates()
         self.test_partner.write({'email': 'email@domain.tld'})
         with self.assertRaises(ValidationError):
-            self.env['res.partner'].create({
+            self.res_partner.create({
                 'name': 'alsotest',
                 'email': 'email@domain.tld'
             })
 
     def test_duplicate_after_normalization_addresses_disallowed(self):
         self.disallow_duplicates()
-        self.env['res.partner'].create({
+        self.res_partner.create({
             'name': 'alsotest',
             'email': 'email@doMAIN.tld'
         })
@@ -96,7 +100,7 @@ class TestPartnerEmailCheck(TransactionCase):
             self.test_partner.email = 'foo@bar.org,email@domain.tld'
 
     def test_duplicate_addresses_allowed_by_default(self):
-        self.env['res.partner'].create({
+        self.res_partner.create({
             'name': 'alsotest',
             'email': 'email@domain.tld',
         })
@@ -141,9 +145,17 @@ class TestPartnerEmailCheck(TransactionCase):
         self.disallow_duplicates()
         with patch('odoo.addons.partner_email_check.models.res_partner.'
                    'validate_email', None):
-            self.env['res.partner'].create({
+            self.res_partner.create({
                 'name': 'alsotest',
                 'email': 'email@domain.tld'
             })
             with self.assertRaises(ValidationError):
                 self.test_partner.email = 'email@domain.tld'
+
+    def test_invalid_email_addresses_allowed_during_tests(self):
+        # Note: testing without test_partner_email_check in the context
+        new_partner = self.env['res.partner'].create({
+            'name': 'invalidly emailed',
+            'email': 'invalid'
+        })
+        self.assertEqual('invalid', new_partner.email)
