@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-24 03:46+0000\n"
-"PO-Revision-Date: 2019-09-24 11:24+0000\n"
+"PO-Revision-Date: 2019-10-27 15:33+0000\n"
 "Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -166,28 +166,28 @@ msgstr "Voci NUTS"
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__nuts1_id
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L1"
-msgstr "NUTS L1"
+msgstr "Livello NUTS 1"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts2_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__nuts2_id
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L2"
-msgstr "NUTS L2"
+msgstr "Livello NUTS 2"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts3_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__nuts3_id
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L3"
-msgstr "NUTS L3"
+msgstr "Livello NUTS 3"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts4_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__nuts4_id
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L4"
-msgstr "NUTS L4"
+msgstr "Livello NUTS 4"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__name
@@ -217,7 +217,7 @@ msgstr "Ricerca NUTS"
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__state_id
 msgid "State"
-msgstr "Provincia"
+msgstr "Stato"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_country__state_level
@@ -241,7 +241,7 @@ msgstr ""
 #: code:addons/base_location_nuts/wizard/nuts_import.py:108
 #, python-format
 msgid "Value not found for mandatory field %s"
-msgstr ""
+msgstr "Valore non trovato per il campo obbligatorio %s"
 
 #. module: base_location_nuts
 #: model_terms:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
