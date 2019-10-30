@@ -22,4 +22,12 @@
         <field name="perm_write" eval="1"/>
         <field name="perm_unlink" eval="1"/>
     </record>
+
+    <record id="res_partner_company_type_comp_rule" model="ir.rule">
+        <field name="name">res.partner.company.type multi company rule</field>
+        <field name="model_id" ref="model_res_partner_company_type"/>
+        <field name="domain_force">
+            ['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]
+        </field>
+    </record>
 </odoo>

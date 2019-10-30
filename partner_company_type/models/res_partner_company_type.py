@@ -18,6 +18,14 @@ class ResPartnerCompanyType(models.Model):
         string='Abbreviation',
         translate=True,
     )
+    company_id = fields.Many2one(
+        'res.company',
+        'Company',
+        default=lambda self: self.env['res.company']._company_default_get(
+            'res.partner.company.type'
+        ),
+        ondelete='cascade',
+    )
 
     _sql_constraints = [('name_uniq', 'unique (name)',
                          "Partner Company Type already exists!")]
