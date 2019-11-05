@@ -12,7 +12,7 @@
         <field name="perm_write" eval="0"/>
         <field name="perm_unlink" eval="0"/>
     </record>
-    
+
     <record model="ir.model.access" id="res_partner_company_type_manager">
         <field name="name">res.partner.company.type manager</field>
         <field name="model_id" ref="model_res_partner_company_type"/>

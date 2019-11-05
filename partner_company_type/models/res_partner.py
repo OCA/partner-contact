@@ -8,6 +8,5 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     partner_company_type_id = fields.Many2one(
-        comodel_name='res.partner.company.type',
-        string='Legal Form',
+        comodel_name="res.partner.company.type", string="Legal Form"
     )
