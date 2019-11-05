@@ -10,6 +10,7 @@ Add support to local administrative areas, such as municipalities.
 Two new fields are added to the Partners model: LAU1 and LAU2.
 
 It is compatible with the Eurostat NUTS\LAU structure.
+
 * The upper LAU level (LAU level 1, formerly NUTS level 4) is defined for most,
   but not all of the countries.
 * The lower LAU level (LAU level 2, formerly NUTS level 5) consists of
