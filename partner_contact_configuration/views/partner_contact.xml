@@ -2,19 +2,19 @@
 <!-- Copyright 2016 ACSONE SA/NV
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-	<menuitem id="menu_config_contacts"
-	parent="contacts.menu_contacts"
-	name="Contacts"
-	sequence="4"
-	groups="base.group_system"/>
-	
+    <menuitem id="menu_config_contacts"
+    parent="contacts.menu_contacts"
+    name="Contacts"
+    sequence="4"
+    groups="base.group_system"/>
+
     <menuitem action="base.action_partner_category_form"
     id="menu_partner_contacts_category_form"
     name="Contact Tags"
     sequence="1"
     parent="menu_config_contacts"
     groups="base.group_no_one"/>
-    
+
     <menuitem action="base.action_partner_title_contact"
     id="menu_partner_contacts_title_contact"
     name="Contact Titles"
