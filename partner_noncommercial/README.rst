@@ -39,10 +39,10 @@ After installing this module a situation has been encountered where the new
 menu's were added to the database, but not shown in the UI. This was due to
 partner_left and partner_right not being filled. To solve this, use the
 generic solution when the menu-system has been messed up:
-  1. stop server
-  2. drop parent_left and parent_right columns frm ir_ui_menu table
-  3. start server while updating base module
 
+1. stop server
+2. drop parent_left and parent_right columns frm ir_ui_menu table
+3. start server while updating base module
 
 Bug Tracker
 ===========
