@@ -13,4 +13,5 @@
     "depends": ["base", "contacts"],
     "data": ["views/partner_contact.xml"],
     "demo": [],
+    "installable": True,
 }
