@@ -3,7 +3,9 @@
 # Copyright 2015 Grupo ESOC (<http://www.grupoesoc.es>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 import logging
+
 from odoo import api, fields, models
+
 from .. import exceptions
 
 _logger = logging.getLogger(__name__)
@@ -11,21 +13,17 @@ _logger = logging.getLogger(__name__)
 
 class ResPartner(models.Model):
     """Adds last name and first name; name becomes a stored function field."""
-    _inherit = 'res.partner'
 
-    firstname = fields.Char(
-        "First name",
-        index=True,
-    )
-    lastname = fields.Char(
-        "Last name",
-        index=True,
-    )
+    _inherit = "res.partner"
+
+    firstname = fields.Char("First name", index=True)
+    lastname = fields.Char("Last name", index=True)
     name = fields.Char(
         compute="_compute_name",
         inverse="_inverse_name_after_cleaning_whitespace",
         required=False,
-        store=True)
+        store=True,
+    )
 
     @api.model
     def create(self, vals):
@@ -37,8 +35,8 @@ class ResPartner(models.Model):
             # Calculate the splitted fields
             inverted = self._get_inverse_name(
                 self._get_whitespace_cleaned_name(name),
-                vals.get("is_company",
-                         self.default_get(["is_company"])["is_company"]))
+                vals.get("is_company", self.default_get(["is_company"])["is_company"]),
+            )
             for key, value in inverted.items():
                 if not vals.get(key) or context.get("copy"):
                     vals[key] = value
@@ -68,7 +66,8 @@ class ResPartner(models.Model):
 
         inverted = self._get_inverse_name(
             self._get_whitespace_cleaned_name(result.get("name", "")),
-            result.get("is_company", False))
+            result.get("is_company", False),
+        )
 
         for field in list(inverted.keys()):
             if field in fields_list:
@@ -78,15 +77,18 @@ class ResPartner(models.Model):
 
     @api.model
     def _names_order_default(self):
-        return 'first_last'
+        return "first_last"
 
     @api.model
     def _get_names_order(self):
         """Get names order configuration from system parameters.
         You can override this method to read configuration from language,
         country, company or other"""
-        return self.env['ir.config_parameter'].sudo().get_param(
-            'partner_names_order', self._names_order_default())
+        return (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("partner_names_order", self._names_order_default())
+        )
 
     @api.model
     def _get_computed_name(self, lastname, firstname):
@@ -94,21 +96,19 @@ class ResPartner(models.Model):
         You can override this method to change the order of lastname and
         firstname the computed name"""
         order = self._get_names_order()
-        if order == 'last_first_comma':
-            return ", ".join((p for p in (lastname, firstname) if p))
-        elif order == 'first_last':
-            return " ".join((p for p in (firstname, lastname) if p))
+        if order == "last_first_comma":
+            return ", ".join(p for p in (lastname, firstname) if p)
+        elif order == "first_last":
+            return " ".join(p for p in (firstname, lastname) if p)
         else:
-            return " ".join((p for p in (lastname, firstname) if p))
+            return " ".join(p for p in (lastname, firstname) if p)
 
     @api.multi
     @api.depends("firstname", "lastname")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
         for record in self:
-            record.name = record._get_computed_name(
-                record.lastname, record.firstname,
-            )
+            record.name = record._get_computed_name(record.lastname, record.firstname)
 
     @api.multi
     def _inverse_name_after_cleaning_whitespace(self):
@@ -144,7 +144,7 @@ class ResPartner(models.Model):
             # conversion that Python does for us.
             # In that case we need to manually decode the string to get a
             # proper unicode string.
-            name = ' '.join(name.decode('utf-8').split()) if name else name
+            name = " ".join(name.decode("utf-8").split()) if name else name
 
         if comma:
             name = name.replace(" ,", ",")
@@ -173,10 +173,11 @@ class ResPartner(models.Model):
             order = self._get_names_order()
             # Remove redundant spaces
             name = self._get_whitespace_cleaned_name(
-                name, comma=(order == 'last_first_comma'))
-            parts = name.split("," if order == 'last_first_comma' else " ", 1)
+                name, comma=(order == "last_first_comma")
+            )
+            parts = name.split("," if order == "last_first_comma" else " ", 1)
             if len(parts) > 1:
-                if order == 'first_last':
+                if order == "first_last":
                     parts = [" ".join(parts[1:]), parts[0]]
                 else:
                     parts = [parts[0], " ".join(parts[1:])]
@@ -190,18 +191,20 @@ class ResPartner(models.Model):
         """Try to revert the effect of :meth:`._compute_name`."""
         for record in self:
             parts = record._get_inverse_name(record.name, record.is_company)
-            record.lastname = parts['lastname']
-            record.firstname = parts['firstname']
+            record.lastname = parts["lastname"]
+            record.firstname = parts["firstname"]
 
     @api.multi
     @api.constrains("firstname", "lastname")
     def _check_name(self):
         """Ensure at least one name is set."""
         for record in self:
-            if all((
-                record.type == 'contact' or record.is_company,
-                not (record.firstname or record.lastname)
-            )):
+            if all(
+                (
+                    record.type == "contact" or record.is_company,
+                    not (record.firstname or record.lastname),
+                )
+            ):
                 raise exceptions.EmptyNamesError(record)
 
     @api.onchange("firstname", "lastname")
@@ -220,8 +223,7 @@ class ResPartner(models.Model):
         """Ensure :attr:`~.name` is inverted in the UI."""
         if self.env.context.get("skip_onchange"):
             # Do not skip next onchange
-            self.env.context = (
-                self.with_context(skip_onchange=False).env.context)
+            self.env.context = self.with_context(skip_onchange=False).env.context
         else:
             self._inverse_name_after_cleaning_whitespace()
 
@@ -234,8 +236,7 @@ class ResPartner(models.Model):
         correctly into the database. This can be called later too if needed.
         """
         # Find records with empty firstname and lastname
-        records = self.search([("firstname", "=", False),
-                               ("lastname", "=", False)])
+        records = self.search([("firstname", "=", False), ("lastname", "=", False)])
 
         # Force calculations there
         records._inverse_name()
@@ -243,8 +244,4 @@ class ResPartner(models.Model):
 
     # Disabling SQL constraint givint a more explicit error using a Python
     # contstraint
-    _sql_constraints = [(
-        'check_name',
-        "CHECK( 1=1 )",
-        'Contacts require a name.'
-    )]
+    _sql_constraints = [("check_name", "CHECK( 1=1 )", "Contacts require a name.")]
