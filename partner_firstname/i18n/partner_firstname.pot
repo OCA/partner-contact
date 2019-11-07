@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_firstname
+# 	* partner_firstname
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,8 +14,8 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/models/res_users.py:40
-#: code:addons/partner_firstname/models/res_users.py:42
+#: code:addons/partner_firstname/models/res_users.py:0
+#: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
 msgid "%s (copy)"
 msgstr ""
@@ -31,12 +31,12 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_firstname
-#: sql_constraint:res.partner:0
+#: model:ir.model.constraint,message:partner_firstname.constraint_res_partner_check_name
 msgid "Contacts require a name."
 msgstr ""
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:10
+#: code:addons/partner_firstname/exceptions.py:0
 #, python-format
 msgid "Error(s) with partner %d's name."
 msgstr ""
@@ -60,7 +60,7 @@ msgid "Name"
 msgstr ""
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:7
+#: code:addons/partner_firstname/exceptions.py:0
 #, python-format
 msgid "No name is set."
 msgstr ""
@@ -71,7 +71,7 @@ msgid "Order to compose partner fullname"
 msgstr ""
 
 #. module: partner_firstname
-#: model_terms:ir.ui.view,arch_db:partner_firstname.view_general_configuration
+#: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
 msgid "Partner Names Order"
 msgstr ""
 
@@ -86,17 +86,18 @@ msgid "Partner names order"
 msgstr ""
 
 #. module: partner_firstname
-#: model_terms:ir.ui.view,arch_db:partner_firstname.view_general_configuration
+#: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
 msgid "Recalculate names"
 msgstr ""
 
 #. module: partner_firstname
-#: model_terms:ir.ui.view,arch_db:partner_firstname.view_general_configuration
-msgid "Recalculate names for all partners. This process could take so much time if there are more than 10,000 active partners"
+#: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
+msgid ""
+"Recalculate names for all partners. This process could take so much time if "
+"there are more than 10,000 active partners"
 msgstr ""
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_users
 msgid "Users"
 msgstr ""
-

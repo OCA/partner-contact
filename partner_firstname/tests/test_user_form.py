@@ -53,7 +53,3 @@ class UserOnchangeCase(TransactionCase):
         self.assertEqual(user_form.lastname, lastname)
         self.assertEqual(user_form.firstname, firstname)
         self.assertEqual(user_form.name, " ".join((firstname, lastname)))
-
-    def setUp(self):
-        super(UserOnchangeCase, self).setUp()
-        self.user = self.env["res.users"].new()

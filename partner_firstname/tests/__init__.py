@@ -8,4 +8,5 @@ from . import (
     test_user_form,
     test_order,
     test_copy,
+    test_config_settings,
 )
