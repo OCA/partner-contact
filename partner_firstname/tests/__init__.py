@@ -4,8 +4,8 @@ from . import (
     test_delete,
     test_empty,
     test_name,
-    test_onchange,
-    test_user_onchange,
+    test_partner_form,
+    test_user_form,
     test_order,
     test_copy,
 )
