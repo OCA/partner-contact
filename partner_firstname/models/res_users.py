@@ -31,7 +31,6 @@ class ResUser(models.Model):
         for rec in self:
             rec.name = rec.partner_id._get_computed_name(rec.lastname, rec.firstname)
 
-    @api.multi
     def copy(self, default=None):
         self.ensure_one()
         default = dict(default or {})
