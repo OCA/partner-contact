@@ -49,7 +49,6 @@ class ResPartner(models.Model):
 
         return super(ResPartner, self.with_context(context)).create(vals)
 
-    @api.multi
     def copy(self, default=None):
         """Ensure partners are copied right.
 
@@ -103,14 +102,12 @@ class ResPartner(models.Model):
         else:
             return " ".join(p for p in (lastname, firstname) if p)
 
-    @api.multi
     @api.depends("firstname", "lastname")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
         for record in self:
             record.name = record._get_computed_name(record.lastname, record.firstname)
 
-    @api.multi
     def _inverse_name_after_cleaning_whitespace(self):
         """Clean whitespace in :attr:`~.name` and split it.
 
@@ -186,7 +183,6 @@ class ResPartner(models.Model):
                     parts.append(False)
         return {"lastname": parts[0], "firstname": parts[1]}
 
-    @api.multi
     def _inverse_name(self):
         """Try to revert the effect of :meth:`._compute_name`."""
         for record in self:
@@ -194,7 +190,6 @@ class ResPartner(models.Model):
             record.lastname = parts["lastname"]
             record.firstname = parts["firstname"]
 
-    @api.multi
     @api.constrains("firstname", "lastname")
     def _check_name(self):
         """Ensure at least one name is set."""
