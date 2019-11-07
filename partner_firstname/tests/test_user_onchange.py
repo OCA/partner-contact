@@ -5,7 +5,6 @@ from odoo.tests.common import TransactionCase
 
 
 class UserOnchangeCase(TransactionCase):
-
     def test_create_from_form_only_firstname(self):
         """In a new users form, a user set only the firstname."""
         firstname = "Zoë"
