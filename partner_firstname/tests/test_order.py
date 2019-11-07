@@ -6,11 +6,8 @@ from odoo.tests.common import TransactionCase
 
 class PartnerNamesOrder(TransactionCase):
     def order_set(self, order):
-        return (
-            self.env["ir.config_parameter"]
-            .sudo()
-            .set_param("partner_names_order", order)
-        )
+        config = self.env["res.config.settings"].create({"partner_names_order": order})
+        config.execute()
 
     def test_get_computed_name(self):
         lastname = "García Lorca"
