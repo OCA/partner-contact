@@ -23,6 +23,7 @@ class ResPartner(models.Model):
         inverse="_inverse_name_after_cleaning_whitespace",
         required=False,
         store=True,
+        readonly=False,
     )
 
     @api.model
@@ -117,14 +118,8 @@ class ResPartner(models.Model):
         for record in self:
             # Remove unneeded whitespace
             clean = record._get_whitespace_cleaned_name(record.name)
-
-            # Clean name avoiding infinite recursion
-            if record.name != clean:
-                record.name = clean
-
-            # Save name in the real fields
-            else:
-                record._inverse_name()
+            record.name = clean
+            record._inverse_name()
 
     @api.model
     def _get_whitespace_cleaned_name(self, name, comma=False):
@@ -201,26 +196,6 @@ class ResPartner(models.Model):
                 )
             ):
                 raise exceptions.EmptyNamesError(record)
-
-    @api.onchange("firstname", "lastname")
-    def _onchange_subnames(self):
-        """Avoid recursion when the user changes one of these fields.
-
-        This forces to skip the :attr:`~.name` inversion when the user is
-        setting it in a not-inverted way.
-        """
-        # Modify self's context without creating a new Environment.
-        # See https://github.com/odoo/odoo/issues/7472#issuecomment-119503916.
-        self.env.context = self.with_context(skip_onchange=True).env.context
-
-    @api.onchange("name")
-    def _onchange_name(self):
-        """Ensure :attr:`~.name` is inverted in the UI."""
-        if self.env.context.get("skip_onchange"):
-            # Do not skip next onchange
-            self.env.context = self.with_context(skip_onchange=False).env.context
-        else:
-            self._inverse_name_after_cleaning_whitespace()
 
     @api.model
     def _install_partner_firstname(self):
