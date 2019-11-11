@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2012 Camptocamp SA - Yannick Vaucher
 # Copyright 2017 Tecnativa - Vicent Cubells
 # Copyright 2018 brain-tec AG - Raul Martin

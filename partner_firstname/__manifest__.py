@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # © 2013 Nicolas Bessi (Camptocamp SA)
 # © 2014 Agile Business Group (<http://www.agilebg.com>)
 # © 2015 Grupo ESOC (<http://www.grupoesoc.es>)

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 # Authors: Nemry Jonathan
 # Copyright (c) 2014 Acsone SA/NV (http://www.acsone.eu)

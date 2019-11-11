@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2014-2016 Akretion (Alexis de Lattre
 #                     <alexis.delattre@akretion.com>)
 # Copyright 2014 Lorenzo Battistini <lorenzo.battistini@agilebg.com>
