@@ -88,7 +88,7 @@ msgstr ""
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_config_settings
-msgid "res.config.settings"
+msgid "partner.firstname.settings"
 msgstr ""
 
 #~ msgid "Partner"

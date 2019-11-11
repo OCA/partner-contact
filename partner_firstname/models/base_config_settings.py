@@ -9,6 +9,7 @@ _logger = logging.getLogger(__name__)
 
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
+    _name = 'partner.firstname.settings'
 
     partner_names_order = fields.Selection(
         string="Partner names order",
