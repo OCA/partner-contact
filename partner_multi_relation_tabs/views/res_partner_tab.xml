@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        <record id="tree_res_partner_tab" model="ir.ui.view">
+            <field name="model">res.partner.tab</field>
+            <field type="xml" name="arch">
+                <tree>
+                    <field name="code" />
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="form_res_partner_tab" model="ir.ui.view">
+            <field name="model">res.partner.tab</field>
+            <field type="xml" name="arch">
+                <form>
+                    <group colspan="6" col="4">
+                        <group
+                            id="tab_group_general" string="General"
+                            colspan="2" col="2"
+                            >
+                            <field name="code" />
+                            <field name="name" />
+                        </group>
+                        <group
+                            id="tab_group_target"
+                            string="Select partner type and category for tab"
+                            colspan="2" col="2"
+                            >
+                            <field name="contact_type" />
+                            <field name="partner_category_id" />
+                        </group>
+                        <separator
+                            colspan="2"
+                            string="Select specific partners to have this tab"
+                            />
+                        <field name="partner_ids" colspan="2" nolabel="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+</odoo>
