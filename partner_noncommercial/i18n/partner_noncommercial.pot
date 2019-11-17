@@ -42,6 +42,11 @@ msgid "Click to add item to your address book."
 msgstr ""
 
 #. module: partner_noncommercial
+#: model:ir.ui.menu,name:partner_noncommercial.menu_partner_config
+msgid "Configuration"
+msgstr ""
+
+#. module: partner_noncommercial
 #: model:ir.actions.act_window,name:partner_noncommercial.action_company_form
 #: model:ir.ui.menu,name:partner_noncommercial.menu_company_form
 #: model:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
