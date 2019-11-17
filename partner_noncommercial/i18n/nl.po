@@ -43,6 +43,11 @@ msgid "Click to add item to your address book."
 msgstr "Klik voor toevoeging aan het adresboek"
 
 #. module: partner_noncommercial
+#: model:ir.ui.menu,name:partner_noncommercial.menu_partner_config
+msgid "Configuration"
+msgstr "Instellingen"
+
+#. module: partner_noncommercial
 #: model:ir.actions.act_window,name:partner_noncommercial.action_company_form
 #: model:ir.ui.menu,name:partner_noncommercial.menu_company_form
 #: model:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
@@ -60,6 +65,3 @@ msgstr "Alle relaties"
 #: model:ir.ui.menu,name:partner_noncommercial.menu_person_form
 msgid "Persons"
 msgstr "Personen"
-
-#~ msgid "Configuration"
-#~ msgstr "Instellingen"
