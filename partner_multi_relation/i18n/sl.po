@@ -308,16 +308,9 @@ msgid "Partner Relation Type"
 msgstr "Tip partnerskega odnosa"
 
 #. module: partner_multi_relation
-#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_sales
 #: model:ir.ui.view,arch_db:partner_multi_relation.tree_res_partner_relation_all
 msgid "Partner Relations"
 msgstr "Partnerski odnosi"
-
-#. module: partner_multi_relation
-#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
-#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
-msgid "Partner Relations Types"
-msgstr "Tipi partnerskih odnosov"
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation
@@ -373,6 +366,14 @@ msgid "Relation Type"
 msgstr "Tip odnosa"
 
 #. module: partner_multi_relation
+#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
+#, fuzzy
+#| msgid "Relation Type"
+msgid "Relation Types"
+msgstr "Tip odnosa"
+
+#. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:302
 #, python-format
 msgid "Relation type incompatible with selected partner(s)."
@@ -387,6 +388,7 @@ msgstr "Odnos veljaven"
 
 #. module: partner_multi_relation
 #: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_all
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_sales
 #: model:ir.ui.view,arch_db:partner_multi_relation.view_partner_form
 msgid "Relations"
 msgstr "Odnosi"
@@ -570,6 +572,9 @@ msgstr "drugo"
 #, python-format
 msgid "this"
 msgstr "ta"
+
+#~ msgid "Partner Relations Types"
+#~ msgstr "Tipi partnerskih odnosov"
 
 #~ msgid "Left partner to right partner"
 #~ msgstr "Levi partner proti desnemu"

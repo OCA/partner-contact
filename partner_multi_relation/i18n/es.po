@@ -307,16 +307,9 @@ msgid "Partner Relation Type"
 msgstr "Tipo de relación entre empresas"
 
 #. module: partner_multi_relation
-#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_sales
 #: model:ir.ui.view,arch_db:partner_multi_relation.tree_res_partner_relation_all
 msgid "Partner Relations"
 msgstr "Relaciones entre empresas"
-
-#. module: partner_multi_relation
-#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
-#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
-msgid "Partner Relations Types"
-msgstr "Tipos de relaciones entre empresas"
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation
@@ -372,6 +365,14 @@ msgid "Relation Type"
 msgstr "Tipo de relación"
 
 #. module: partner_multi_relation
+#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
+#, fuzzy
+#| msgid "Relation Type"
+msgid "Relation Types"
+msgstr "Tipo de relación"
+
+#. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:302
 #, python-format
 msgid "Relation type incompatible with selected partner(s)."
@@ -386,6 +387,7 @@ msgstr "Relación válida"
 
 #. module: partner_multi_relation
 #: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_all
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_sales
 #: model:ir.ui.view,arch_db:partner_multi_relation.view_partner_form
 msgid "Relations"
 msgstr "Relaciones"
@@ -562,6 +564,9 @@ msgstr ""
 #, python-format
 msgid "this"
 msgstr ""
+
+#~ msgid "Partner Relations Types"
+#~ msgstr "Tipos de relaciones entre empresas"
 
 #~ msgid "Record Type"
 #~ msgstr "Tipo de registro"
