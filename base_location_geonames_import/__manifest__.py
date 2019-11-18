@@ -12,11 +12,13 @@
     "category": "Partner Management",
     "license": "AGPL-3",
     "summary": "Import zip entries from Geonames",
-    "author": "Akretion,"
-    "Agile Business Group,"
-    "Tecnativa,"
-    "AdaptiveCity,"
-    "Odoo Community Association (OCA)",
+    "author": (
+        "Akretion,"
+        "Agile Business Group,"
+        "Tecnativa,"
+        "AdaptiveCity,"
+        "Odoo Community Association (OCA)"
+    ),
     "website": "https://github.com/OCA/partner-contact",
     "depends": ["base_location"],
     "data": [
