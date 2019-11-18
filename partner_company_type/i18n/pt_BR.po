@@ -1,0 +1,110 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_company_type
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-21 01:49+0000\n"
+"PO-Revision-Date: 2019-08-30 13:23+0000\n"
+"Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
+"23907/pt_BR/)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.8\n"
+
+#. module: partner_company_type
+#: model:res.partner.company.type,shortcut:partner_company_type.res_partner_company_type_sa
+msgid "AC"
+msgstr "Aos Cuidados"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__shortcut
+msgid "Abbreviation"
+msgstr "Abreviação"
+
+#. module: partner_company_type
+#: model:res.partner.company.type,name:partner_company_type.res_partner_company_type_sa
+msgid "Anonymous Company"
+msgstr "Empresa Anônima"
+
+#. module: partner_company_type
+#: model:ir.actions.act_window,name:partner_company_type.res_partner_company_type_act_window
+#: model:ir.ui.menu,name:partner_company_type.menu_partner_company_type
+#: model_terms:ir.ui.view,arch_db:partner_company_type.res_partner_company_type_form_view
+msgid "Company Types"
+msgstr "Tipos de Empresas"
+
+#. module: partner_company_type
+#: model:ir.model,name:partner_company_type.model_res_partner
+msgid "Contact"
+msgstr "Contato"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__display_name
+msgid "Display Name"
+msgstr "Mostrar Nome"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type____last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__write_uid
+msgid "Last Updated by"
+msgstr "Útima atualização por"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__write_date
+msgid "Last Updated on"
+msgstr "Útima atualização em"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner__partner_company_type_id
+#: model:ir.model.fields,field_description:partner_company_type.field_res_users__partner_company_type_id
+msgid "Legal Form"
+msgstr "Formulário Jurídico"
+
+#. module: partner_company_type
+#: model:ir.model,name:partner_company_type.model_res_partner_company_type
+msgid "Partner Company Type"
+msgstr "Tipo de empresa parceira"
+
+#. module: partner_company_type
+#: sql_constraint:res.partner.company.type:0
+msgid "Partner Company Type already exists!"
+msgstr "Tipo de empresa parceira já existe!"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__name
+msgid "Title"
+msgstr "Título"
+
+#~ msgid "Company Type"
+#~ msgstr "Tipo de Empresa"
+
+#~ msgid "Partner"
+#~ msgstr "Parceiro"
