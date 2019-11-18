@@ -9,92 +9,93 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-31 01:39+0000\n"
-"PO-Revision-Date: 2016-12-31 01:39+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"PO-Revision-Date: 2019-11-18 14:34+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>\n"
 "Language-Team: Croatian (https://www.transifex.com/oca/teams/23907/hr/)\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.8\n"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/models/res_users.py:40
 #: code:addons/partner_firstname/models/res_users.py:42
 #, python-format
 msgid "%s (copy)"
-msgstr ""
+msgstr "%s (kopija)"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Postavke"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #. module: partner_firstname
 #: sql_constraint:res.partner:0
 msgid "Contacts require a name."
-msgstr ""
+msgstr "Kontaktima je Ime obavezno."
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:10
 #, python-format
 msgid "Error(s) with partner %d's name."
-msgstr ""
+msgstr "Greška(e) sa nazivom partnera %d."
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__firstname
 msgid "First name"
-msgstr ""
+msgstr "Ime"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname
 msgid "Last name"
-msgstr ""
+msgstr "Prezime"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__name
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__name
 msgid "Name"
-msgstr ""
+msgstr "Naziv"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:7
 #, python-format
 msgid "No name is set."
-msgstr ""
+msgstr "Naziv nije postavljen."
 
 #. module: partner_firstname
 #: model:ir.model.fields,help:partner_firstname.field_res_config_settings__partner_names_order
 msgid "Order to compose partner fullname"
-msgstr ""
+msgstr "Redosljed sastavljanja punog naziva partnera"
 
 #. module: partner_firstname
 #: model_terms:ir.ui.view,arch_db:partner_firstname.view_general_configuration
 msgid "Partner Names Order"
-msgstr ""
+msgstr "Redosljed naziva partnera"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order_changed
 msgid "Partner Names Order Changed"
-msgstr ""
+msgstr "Redosljed naziva partnera promijenjen"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order
 msgid "Partner names order"
-msgstr ""
+msgstr "Redosljed naziva partnera"
 
 #. module: partner_firstname
 #: model_terms:ir.ui.view,arch_db:partner_firstname.view_general_configuration
 msgid "Recalculate names"
-msgstr ""
+msgstr "Ponovo izračunaj nazive"
 
 #. module: partner_firstname
 #: model_terms:ir.ui.view,arch_db:partner_firstname.view_general_configuration
@@ -102,11 +103,13 @@ msgid ""
 "Recalculate names for all partners. This process could take so much time if "
 "there are more than 10,000 active partners"
 msgstr ""
+"Poovo izračunaj nazive za sve partnere. Ovaj proces bi mogao potrajati ako "
+"imate preko 10.000 aktivnih partnera."
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Korisnici"
 
 #~ msgid "Partner"
 #~ msgstr "Partner"
