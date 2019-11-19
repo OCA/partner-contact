@@ -16,14 +16,9 @@
     "development_status": "Production/Stable",
     "category": "Generic Modules/Base",
     "website": "https://github.com/OCA/partner-contact",
-    "depends": [
-        'base',
-    ],
+    "depends": ["base"],
     "summary": "Sets customer's code from a sequence",
-    "data": [
-        'data/partner_sequence.xml',
-        'views/partner_view.xml',
-    ],
+    "data": ["data/partner_sequence.xml", "views/partner_view.xml"],
     "installable": True,
     "license": "AGPL-3",
 }
