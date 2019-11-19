@@ -3,10 +3,10 @@
 # Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import models, api, _
-from odoo.exceptions import UserError
 import logging
 
+from odoo import _, api, models
+from odoo.exceptions import UserError
 
 logger = logging.getLogger(__name__)
 
@@ -14,7 +14,6 @@ logger = logging.getLogger(__name__)
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    @api.multi
     def _address_as_string(self):
         self.ensure_one()
         addr = []
@@ -43,7 +42,6 @@ class ResPartner(models.Model):
         logger.debug('Final URL: %s', url)
         return url
 
-    @api.multi
     def open_map(self):
         self.ensure_one()
         map_website = self.env.user.context_map_website_id
@@ -71,7 +69,6 @@ class ResPartner(models.Model):
             'target': 'new',
         }
 
-    @api.multi
     def open_route_map(self):
         self.ensure_one()
         if not self.env.user.context_route_map_website_id:
