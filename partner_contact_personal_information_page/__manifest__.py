@@ -8,13 +8,9 @@
     "website": "https://github.com/OCA/partner-contact",
     "author": "Nicolas JEUDY,Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    'application': False,
-    'installable': True,
-    'auto_install': False,
-    "depends": [
-        "base"
-    ],
-    "data": [
-        "views/res_partner.xml",
-    ],
+    "application": False,
+    "installable": True,
+    "auto_install": False,
+    "depends": ["base"],
+    "data": ["views/res_partner.xml"],
 }
