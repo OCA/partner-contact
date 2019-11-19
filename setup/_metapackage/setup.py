@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo13-addon-base_location',
         'odoo13-addon-base_location_geonames_import',
+        'odoo13-addon-partner_company_type',
         'odoo13-addon-partner_fax',
         'odoo13-addon-partner_firstname',
     ],

@@ -6,7 +6,7 @@
 {
     "name": "Partner first name and last name",
     "summary": "Split first name and last name for non company partners",
-    "version": "13.0.1.0.0",
+    "version": "13.0.1.0.1",
     "author": "Camptocamp, "
     "Grupo ESOC Ingeniería de Servicios, "
     "Tecnativa, "
@@ -16,7 +16,7 @@
     "license": "AGPL-3",
     "maintainer": "Camptocamp, Acsone",
     "category": "Extra Tools",
-    "website": "https://odoo-community.org/",
+    "website": "https://github.com/OCA/partner-contact",
     "depends": ["base_setup"],
     "post_init_hook": "post_init_hook",
     "data": [
