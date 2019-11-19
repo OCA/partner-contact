@@ -6,6 +6,7 @@ from odoo import fields, models
 
 class ResPartner(models.Model):
     """Partner with birth date in date format."""
+
     _inherit = "res.partner"
 
     birthdate_date = fields.Date("Birthdate")
