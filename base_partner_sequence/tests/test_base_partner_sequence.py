@@ -20,7 +20,7 @@ class TestBasePartnerSequence(common.TransactionCase):
 
         copy = self.partner.copy()
         self.assertTrue(
-            copy.ref, "A partner with ref created by copy " "has a ref by default."
+            copy.ref, "A partner with ref created by copy has a ref by default."
         )
 
     def test_ref_sequence_on_contact(self):
@@ -33,13 +33,11 @@ class TestBasePartnerSequence(common.TransactionCase):
             }
         )
         self.assertEqual(
-            self.partner.ref,
-            contact.ref,
-            "All it's ok as sequence doesn't " "increase.",
+            self.partner.ref, contact.ref, "All it's ok as sequence doesn't increase."
         )
 
     def test_unique_ref_on_write(self):
-        """Assert that create and write gives a different refs if we """
+        """Assert that on create or on write, a different ref is assigned"""
         vals = [
             {"name": "test1", "email": "test@test.com"},
             {"name": "test2", "email": "test@test.com"},
