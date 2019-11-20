@@ -1,0 +1,149 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_multi_relation_hierarchy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-01 09:31+0000\n"
+"PO-Revision-Date: 2017-11-01 09:31+0000\n"
+"Last-Translator: Ronald Portier <ronald@therp.nl>, 2017\n"
+"Language-Team: Dutch (https://www.transifex.com/oca/teams/23907/nl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_hierarchy_display
+msgid "Compact representation of hierarchy"
+msgstr "Compacte weergave van de hiërarchie"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_display_name
+msgid "Display Name"
+msgstr "Naam voor weergave"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_has_partner_above
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_users_has_partner_above
+msgid "Has partner above"
+msgstr "Heeft relatie boven zich"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_hierarchy_display
+#: model:ir.ui.view,arch_db:partner_multi_relation_hierarchy.view_partner_form
+msgid "Hierarchy"
+msgstr "Hiërarchie"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy___last_update
+msgid "Last Modified on"
+msgstr "Laatst gewijzigd"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_level
+msgid "Level"
+msgstr "Niveau"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_level
+msgid "Number of levels that partner above is higher up"
+msgstr "Niveau verschil met bovenliggende partner"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model,name:partner_multi_relation_hierarchy.model_res_partner
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_partner_id
+msgid "Partner"
+msgstr "Relatie"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model,name:partner_multi_relation_hierarchy.model_res_partner_relation_type
+msgid "Partner Relation Type"
+msgstr "Type connectie"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_partner_above_id
+msgid "Partner above"
+msgstr "Bovenliggende relatie"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_partner_below_id
+msgid "Partner below"
+msgstr "Onderliggende relatie"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_partner_below_id
+msgid "Partner immediately below partner above in the hierarchy"
+msgstr "Direct bovenliggende relatie in de hiërarchie"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model,name:partner_multi_relation_hierarchy.model_res_partner_relation
+msgid "Partner relation"
+msgstr "Connectie"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_partner_above_id
+msgid "Partner somewhere above in the hierarchy"
+msgstr "Relatie één of meer plaatsen hoger in de hiërarchie"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_partner_above_ids_4248
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_users_partner_above_ids
+msgid "Partners above in hierarchy"
+msgstr "Bovenliggende partners in de hiërarchie"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_type_hierarchy
+msgid "Partners equal, right above, or left above"
+msgstr "Relaties gelijkwaardig, rechts hoger of links hoger"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model,name:partner_multi_relation_hierarchy.model_res_partner_relation_hierarchy
+msgid "Partners with all their partnes above"
+msgstr "Relaties met al hun bovenliggende relaties"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_type_hierarchy
+msgid "Select wether the relation between the partners can be considered hierarchical. And if so which side is considered 'above'."
+msgstr "Geef aan of de connectie tussen de relaties een hiërarchie aangeeft. Zo ja geef aan welke kant beschouwd wordt als 'bovenliggend'"
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_partner_id
+msgid "The partner at the base of the hierarchy"
+msgstr "De relatie aan de basis van de hiërarchie"
+
+#. module: partner_multi_relation_hierarchy
+#: code:addons/partner_multi_relation_hierarchy/models/res_partner_relation.py:43
+#, python-format
+msgid "There is already a hierarchical relation between these partners: %s"
+msgstr "Er bestaat reeds een hiërarchische relatie tussen deze partners."
+
+#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_partner_above_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_users_partner_above_hierarchy
+msgid "Upper level partners"
+msgstr "Bovenliggende relaties"
+
+#. module: partner_multi_relation_hierarchy
+#: selection:res.partner.relation.type,hierarchy:0
+msgid "equal"
+msgstr "gelijk"
+
+#. module: partner_multi_relation_hierarchy
+#: selection:res.partner.relation.type,hierarchy:0
+msgid "left_above_right"
+msgstr "links boven rechts"
+
+#. module: partner_multi_relation_hierarchy
+#: selection:res.partner.relation.type,hierarchy:0
+msgid "right_above_left"
+msgstr "rechts boven links"
+
