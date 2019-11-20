@@ -6,8 +6,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-01 09:31+0000\n"
-"PO-Revision-Date: 2017-11-01 09:31+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,6 +24,7 @@ msgid "Display Name"
 msgstr ""
 
 #. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_alias_has_partner_above
 #: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_has_partner_above
 #: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_users_has_partner_above
 msgid "Has partner above"
@@ -50,6 +49,12 @@ msgstr ""
 #. module: partner_multi_relation_hierarchy
 #: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_level
 msgid "Level"
+msgstr ""
+
+#. module: partner_multi_relation_hierarchy
+#: code:addons/partner_multi_relation_hierarchy/models/res_partner_relation.py:42
+#, python-format
+msgid "Not allowed to create an inconsistent hierarchy"
 msgstr ""
 
 #. module: partner_multi_relation_hierarchy
@@ -94,7 +99,8 @@ msgid "Partner somewhere above in the hierarchy"
 msgstr ""
 
 #. module: partner_multi_relation_hierarchy
-#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_partner_above_ids_4248
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_alias_partner_above_ids
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_partner_above_ids
 #: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_users_partner_above_ids
 msgid "Partners above in hierarchy"
 msgstr ""
@@ -120,12 +126,7 @@ msgid "The partner at the base of the hierarchy"
 msgstr ""
 
 #. module: partner_multi_relation_hierarchy
-#: code:addons/partner_multi_relation_hierarchy/models/res_partner_relation.py:43
-#, python-format
-msgid "There is already a hierarchical relation between these partners: %s"
-msgstr ""
-
-#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_alias_partner_above_hierarchy
 #: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_partner_above_hierarchy
 #: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_users_partner_above_hierarchy
 msgid "Upper level partners"
