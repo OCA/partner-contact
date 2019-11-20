@@ -9,3 +9,4 @@
 * Akim Juillerat <akim.juillerat@camptocamp.com>
 * Cas Vissers <c.vissers@brahoo.nl>
 * Quentin Groulard <quentin.groulard@acsone.eu>
+* Kevin Khao <kevinkhao@gmail.com>
