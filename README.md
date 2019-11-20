@@ -64,6 +64,7 @@ addon | version | summary
 [partner_identification](partner_identification/) | 10.0.1.2.0 | Partner Identification Numbers
 [partner_label](partner_label/) | 10.0.1.0.0 | Print partner labels
 [partner_multi_relation](partner_multi_relation/) | 10.0.1.0.2 | Partner relations
+[partner_multi_relation_hierarchy](partner_multi_relation_hierarchy/) | 10.0.0.1.0 | Partner Relation Hierarchy
 [partner_multi_relation_tabs](partner_multi_relation_tabs/) | 10.0.1.0.0 | Show partner relations in own tab
 [partner_noncommercial](partner_noncommercial/) | 10.0.1.0.0 | Partner Non Commercial
 [partner_noncommercial_multi_relation](partner_noncommercial_multi_relation/) | 10.0.1.0.0 | Partner Non Commercial Multi Relation
