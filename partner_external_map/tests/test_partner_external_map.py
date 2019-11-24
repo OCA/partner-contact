@@ -46,7 +46,7 @@ class TestPartnerExternalMap(common.TransactionCase):
         self.assertEqual(self.user.partner_id, self.user.context_route_start_partner_id)
 
     def test_open_map(self):
-        action = self.partner.sudo(self.user.id).open_map()
+        action = self.partner.with_user(self.user.id).open_map()
         self.assertEqual(
             action["url"],
             "https://www.google.com/maps?ie=UTF8"
@@ -54,7 +54,7 @@ class TestPartnerExternalMap(common.TransactionCase):
         )
 
     def test_open_route_map(self):
-        action = self.partner.sudo(self.user.id).open_route_map()
+        action = self.partner.with_user(self.user.id).open_route_map()
         self.assertEqual(
             action["url"],
             "https://www.google.com/maps?saddr=Tomelloso"
@@ -65,7 +65,7 @@ class TestPartnerExternalMap(common.TransactionCase):
     def test_open_map_with_coordinates(self):
         # Simulate that we have the base_geolocalize module installed creating
         # by hand the variables - This can't be done with routes
-        partner = self.partner.sudo(self.user.id)
+        partner = self.partner.with_user(self.user.id)
         partner.partner_latitude = 39.15837
         partner.partner_longitude = -3.02145
         action = partner.open_map()
@@ -84,29 +84,29 @@ class TestPartnerExternalMap(common.TransactionCase):
             }
         )
         with self.assertRaises(UserError):
-            self.partner.sudo(self.user.id).open_route_map()
+            self.partner.with_user(self.user.id).open_route_map()
 
     def test_exception_no_map_website(self):
         self.user.context_map_website_id = False
         with self.assertRaises(UserError):
-            self.partner.sudo(self.user.id).open_map()
+            self.partner.with_user(self.user.id).open_map()
 
     def test_exception_no_map_route_website(self):
         self.user.context_route_start_partner_id = False
         with self.assertRaises(UserError):
-            self.partner.sudo(self.user.id).open_route_map()
+            self.partner.with_user(self.user.id).open_route_map()
 
     def test_exception_no_starting_partner(self):
         self.user.context_route_map_website_id = False
         with self.assertRaises(UserError):
-            self.partner.sudo(self.user.id).open_route_map()
+            self.partner.with_user(self.user.id).open_route_map()
 
     def test_exception_no_address_url(self):
         self.user.context_map_website_id.address_url = False
         with self.assertRaises(UserError):
-            self.partner.sudo(self.user.id).open_map()
+            self.partner.with_user(self.user.id).open_map()
 
     def test_exception_no_route_address_url(self):
         self.user.context_map_website_id.route_address_url = False
         with self.assertRaises(UserError):
-            self.partner.sudo(self.user.id).open_route_map()
+            self.partner.with_user(self.user.id).open_route_map()
