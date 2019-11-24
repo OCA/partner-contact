@@ -59,7 +59,7 @@
     </record>
     <record id="mapquest" model="map.website">
         <field name="name">MapQuest</field>
-        <field name="address_url">https://www.mapquest.com/?center={ADDRESS}</field>
+        <field name="address_url">https://www.mapquest.com/?q={ADDRESS}</field>
         <field
             name="lat_lon_url"
         >https://www.mapquest.com/?center={LATITUDE},{LONGITUDE}</field>
