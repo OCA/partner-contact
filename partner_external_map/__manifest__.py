@@ -5,14 +5,14 @@
 
 {
     "name": "Partner External Maps",
-    "version": "12.0.1.0.1",
+    "version": "13.0.1.0.0",
     "category": "Extra Tools",
     "license": "AGPL-3",
     "summary": "Add Map and Map Routing buttons on partner form to "
     "open GMaps, OSM, Bing and others",
     "author": "Akretion, " "Tecnativa, " "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
-    "depends": ["base",],
+    "depends": ["base"],
     "data": [
         "views/res_partner_view.xml",
         "views/map_website_view.xml",

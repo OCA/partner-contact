@@ -14,7 +14,6 @@ logger = logging.getLogger(__name__)
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    @api.multi
     def _address_as_string(self):
         self.ensure_one()
         addr = []
@@ -38,12 +37,14 @@ class ResPartner(models.Model):
         for key, value in replace.items():
             if not isinstance(value, str):
                 # for latitude and longitude which are floats
-                value = str(value)
+                if isinstance(value, float):
+                    value = "%.5f" % value
+                else:
+                    value = ""
             url = url.replace(key, value)
         logger.debug("Final URL: %s", url)
         return url
 
-    @api.multi
     def open_map(self):
         self.ensure_one()
         map_website = self.env.user.context_map_website_id
@@ -82,7 +83,6 @@ class ResPartner(models.Model):
             "target": "new",
         }
 
-    @api.multi
     def open_route_map(self):
         self.ensure_one()
         if not self.env.user.context_route_map_website_id:
