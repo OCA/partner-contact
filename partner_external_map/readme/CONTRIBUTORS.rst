@@ -6,3 +6,4 @@
 
   * Pedro M. Baeza
   * Ernesto Tejeda
+  * João Marques
