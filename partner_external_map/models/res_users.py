@@ -16,12 +16,7 @@ class ResUsers(models.Model):
     @api.model
     def _default_map_website(self):
         return self.env["map.website"].search(
-            [
-                "|",
-                ("address_url", "!=", False),
-                ("lat_lon_url", "!=", False)
-            ],
-            limit=1
+            ["|", ("address_url", "!=", False), ("lat_lon_url", "!=", False)], limit=1
         )
 
     @api.model
@@ -40,11 +35,7 @@ class ResUsers(models.Model):
         "map.website",
         string="Map Website",
         default=_default_map_website,
-        domain=[
-            "|",
-            ("address_url", "!=", False),
-            ("lat_lon_url", "!=", False)
-        ],
+        domain=["|", ("address_url", "!=", False), ("lat_lon_url", "!=", False)],
     )
     # We want to give the possibility to the user to have one map provider for
     # regular maps and another one for routing

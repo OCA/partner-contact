@@ -4,8 +4,7 @@
 
 import logging
 
-from odoo import api, SUPERUSER_ID
-
+from odoo import SUPERUSER_ID, api
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +23,8 @@ def set_default_map_settings(cr, registry):
             {
                 "context_map_website_id": user_model._default_map_website().id,
                 "context_route_map_website_id": (
-                    user_model._default_route_map_website().id),
+                    user_model._default_route_map_website().id
+                ),
             }
         )
     # Update the starting partner this way that is faster
@@ -33,4 +33,5 @@ def set_default_map_settings(cr, registry):
         UPDATE res_users
         SET context_route_start_partner_id = partner_id
         WHERE context_route_start_partner_id IS NULL;
-        """)
+        """
+    )

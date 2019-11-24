@@ -14,9 +14,7 @@ class TestPartnerExternalMap(common.TransactionCase):
             {
                 "name": "Test user",
                 "login": "test_login",
-                "context_map_website_id": self.ref(
-                    "partner_external_map.google_maps"
-                ),
+                "context_map_website_id": self.ref("partner_external_map.google_maps"),
                 "context_route_map_website_id": self.ref(
                     "partner_external_map.google_maps"
                 ),
@@ -41,15 +39,11 @@ class TestPartnerExternalMap(common.TransactionCase):
         self.assertTrue(all([u.context_map_website_id.id for u in usrs]))
         self.assertTrue(all([u.context_route_map_website_id.id for u in usrs]))
         self.assertEqual(
-            self.env.user.partner_id,
-            self.env.user.context_route_start_partner_id
+            self.env.user.partner_id, self.env.user.context_route_start_partner_id
         )
 
     def test_create_user(self):
-        self.assertEqual(
-            self.user.partner_id,
-            self.user.context_route_start_partner_id
-        )
+        self.assertEqual(self.user.partner_id, self.user.context_route_start_partner_id)
 
     def test_open_map(self):
         action = self.partner.sudo(self.user.id).open_map()
@@ -76,8 +70,7 @@ class TestPartnerExternalMap(common.TransactionCase):
         partner.partner_longitude = -3.02145
         action = partner.open_map()
         self.assertEqual(
-            action["url"],
-            "https://www.google.com/maps?z=15&q=39.15837,-3.02145"
+            action["url"], "https://www.google.com/maps?z=15&q=39.15837,-3.02145"
         )
 
     def test_exception_no_addr(self):
