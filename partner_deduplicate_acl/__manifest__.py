@@ -10,20 +10,15 @@
     "version": "12.0.1.0.0",
     "category": "Tools",
     "website": "https://github.com/OCA/partner-contact",
-    "author": "Tecnativa, "
-              "Odoo Community Association (OCA)",
+    "author": "Tecnativa, " "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "contacts",
-    ],
+    "depends": ["contacts"],
     "data": [
         "security/partner_deduplicate_acl_security.xml",
         "wizards/partner_merge_view.xml",
         "views/base_partner_merge_view.xml",
     ],
-    "images": [
-        "images/perms.png",
-    ],
+    "images": ["images/perms.png"],
 }
