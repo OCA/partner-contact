@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="account_invoice_search_view" model="ir.ui.view">
-        <field name="name">account.invoice.select</field>
-        <field name="model">account.invoice</field>
-        <field name="priority">2</field>
+    <record id="view_account_invoice_filter" model="ir.ui.view">
+        <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_account_invoice_filter"/>
         <field name="arch" type="xml">
-            <field name="number" position="before">
+            <field name="name" position="before">
                 <field name="company_group_id" />
             </field>
-            <filter name="group_by_partner_id" position="before">
+            <filter name="salesperson" position="before">
                <filter name="group_company_group" string="Company Group" context="{'group_by': 'company_group_id'}"/>
             </filter>
         </field>
