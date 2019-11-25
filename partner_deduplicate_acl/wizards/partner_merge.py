@@ -13,10 +13,8 @@ class BasePartnerMergeAutomaticWizard(models.TransientModel):
         """Pass extra_checks=False if we have the extra group for avoiding
         the checks.
         """
-        if self.env.user.has_group(
-            'partner_deduplicate_acl.group_unrestricted'
-        ):
+        if self.env.user.has_group("partner_deduplicate_acl.group_unrestricted"):
             extra_checks = False
         return super()._merge(
-            partner_ids, dst_partner=dst_partner, extra_checks=extra_checks,
+            partner_ids, dst_partner=dst_partner, extra_checks=extra_checks
         )
