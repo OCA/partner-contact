@@ -12,4 +12,4 @@ class Contact(models.Model):
     )
 
     def _commercial_fields(self):
-        return super(Contact, self)._commercial_fields() + ["company_group_id"]
+        return super()._commercial_fields() + ["company_group_id"]
