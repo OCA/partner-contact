@@ -11,16 +11,16 @@ from odoo.exceptions import ValidationError
 
 
 class ResPartner(models.Model):
-    _inherit = 'res.partner'
+    _inherit = "res.partner"
 
     id_numbers = fields.One2many(
-        comodel_name='res.partner.id_number',
-        inverse_name='partner_id',
+        comodel_name="res.partner.id_number",
+        inverse_name="partner_id",
         string="Identification Numbers",
     )
 
     @api.multi
-    @api.depends('id_numbers')
+    @api.depends("id_numbers")
     def _compute_identification(self, field_name, category_code):
         """ Compute a field that indicates a certain ID type.
 
@@ -103,19 +103,20 @@ class ResPartner(models.Model):
                 if not name:
                     # No value to set
                     continue
-                category = self.env['res.partner.id_category'].search([
-                    ('code', '=', category_code),
-                ])
+                category = self.env["res.partner.id_category"].search(
+                    [("code", "=", category_code),]
+                )
                 if not category:
-                    category = self.env['res.partner.id_category'].create({
-                        'code': category_code,
-                        'name': category_code,
-                    })
-                self.env['res.partner.id_number'].create({
-                    'partner_id': record.id,
-                    'category_id': category.id,
-                    'name': name,
-                })
+                    category = self.env["res.partner.id_category"].create(
+                        {"code": category_code, "name": category_code,}
+                    )
+                self.env["res.partner.id_number"].create(
+                    {
+                        "partner_id": record.id,
+                        "category_id": category.id,
+                        "name": name,
+                    }
+                )
             # There was an identification record singleton found.
             elif record_len == 1:
                 value = record[field_name]
@@ -125,13 +126,14 @@ class ResPartner(models.Model):
                     id_number.active = False
             # Guard against writing wrong records.
             else:
-                raise ValidationError(_(
-                    'This %s has multiple IDs of this type (%s), so a write '
-                    'via the %s field is not possible. In order to fix this, '
-                    'please use the IDs tab.',
-                ) % (
-                    record._name, category_code, field_name,
-                ))
+                raise ValidationError(
+                    _(
+                        "This %s has multiple IDs of this type (%s), so a write "
+                        "via the %s field is not possible. In order to fix this, "
+                        "please use the IDs tab.",
+                    )
+                    % (record._name, category_code, field_name,)
+                )
 
     @api.model
     def _search_identification(self, category_code, operator, value):
@@ -161,10 +163,12 @@ class ResPartner(models.Model):
         Returns:
             list: Domain to search with.
         """
-        id_numbers = self.env['res.partner.id_number'].search([
-            ('name', operator, value),
-            ('category_id.code', '=', category_code),
-        ])
+        id_numbers = self.env["res.partner.id_number"].search(
+            [
+                ("name", operator, value),
+                ("category_id.code", "=", category_code),
+            ]
+        )
         return [
-            ('id_numbers.id', 'in', id_numbers.ids),
+            ("id_numbers.id", "in", id_numbers.ids),
         ]
