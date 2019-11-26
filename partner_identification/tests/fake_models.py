@@ -34,7 +34,7 @@ class ResPartner(models.Model):
     _teardown_no_delete = True
 
     social_security = fields.Char(
-        compute=lambda s: s._compute_identification("social_security", "SSN",),
-        inverse=lambda s: s._inverse_identification("social_security", "SSN",),
+        compute=lambda s: s._compute_identification("social_security", "SSN"),
+        inverse=lambda s: s._inverse_identification("social_security", "SSN"),
         search=lambda s, *a: s._search_identification("SSN", *a),
     )
