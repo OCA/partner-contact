@@ -6,7 +6,7 @@
 #        Antonio Espinosa <antonioea@antiun.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, models, fields, _
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -19,7 +19,6 @@ class ResPartner(models.Model):
         string="Identification Numbers",
     )
 
-    @api.multi
     @api.depends("id_numbers")
     def _compute_identification(self, field_name, category_code):
         """ Compute a field that indicates a certain ID type.
@@ -59,7 +58,6 @@ class ResPartner(models.Model):
             value = id_numbers[0].name
             record[field_name] = value
 
-    @api.multi
     def _inverse_identification(self, field_name, category_code):
         """ Inverse for an identification field.
 
@@ -104,18 +102,14 @@ class ResPartner(models.Model):
                     # No value to set
                     continue
                 category = self.env["res.partner.id_category"].search(
-                    [("code", "=", category_code),]
+                    [("code", "=", category_code)]
                 )
                 if not category:
                     category = self.env["res.partner.id_category"].create(
-                        {"code": category_code, "name": category_code,}
+                        {"code": category_code, "name": category_code}
                     )
                 self.env["res.partner.id_number"].create(
-                    {
-                        "partner_id": record.id,
-                        "category_id": category.id,
-                        "name": name,
-                    }
+                    {"partner_id": record.id, "category_id": category.id, "name": name}
                 )
             # There was an identification record singleton found.
             elif record_len == 1:
@@ -130,9 +124,9 @@ class ResPartner(models.Model):
                     _(
                         "This %s has multiple IDs of this type (%s), so a write "
                         "via the %s field is not possible. In order to fix this, "
-                        "please use the IDs tab.",
+                        "please use the IDs tab."
                     )
-                    % (record._name, category_code, field_name,)
+                    % (record._name, category_code, field_name)
                 )
 
     @api.model
@@ -164,11 +158,6 @@ class ResPartner(models.Model):
             list: Domain to search with.
         """
         id_numbers = self.env["res.partner.id_number"].search(
-            [
-                ("name", operator, value),
-                ("category_id.code", "=", category_code),
-            ]
+            [("name", operator, value), ("category_id.code", "=", category_code)]
         )
-        return [
-            ("id_numbers.id", "in", id_numbers.ids),
-        ]
+        return [("id_numbers.id", "in", id_numbers.ids)]
