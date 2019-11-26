@@ -20,8 +20,7 @@ msgstr ""
 "X-Generator: Weblate 3.3\n"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/models/res_users.py:40
-#: code:addons/partner_firstname/models/res_users.py:42
+#: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
 msgid "%s (copy)"
 msgstr "%s (copia)"
@@ -37,12 +36,12 @@ msgid "Contact"
 msgstr "Contatto"
 
 #. module: partner_firstname
-#: sql_constraint:res.partner:0
+#: model:ir.model.constraint,message:partner_firstname.constraint_res_partner_check_name
 msgid "Contacts require a name."
 msgstr "I contatti richiedono un nome."
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:10
+#: code:addons/partner_firstname/exceptions.py:0
 #, python-format
 msgid "Error(s) with partner %d's name."
 msgstr "Errore/i con il nome del partner %d."
@@ -66,7 +65,7 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: partner_firstname
-#: code:addons/partner_firstname/exceptions.py:7
+#: code:addons/partner_firstname/exceptions.py:0
 #, python-format
 msgid "No name is set."
 msgstr "Nome non impostato."
@@ -77,7 +76,7 @@ msgid "Order to compose partner fullname"
 msgstr "Ordinamento per comporre il nome completo del partner"
 
 #. module: partner_firstname
-#: model_terms:ir.ui.view,arch_db:partner_firstname.view_general_configuration
+#: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
 msgid "Partner Names Order"
 msgstr "Ordinamento nome partner"
 
@@ -92,12 +91,12 @@ msgid "Partner names order"
 msgstr "Ordinamento nome del partner"
 
 #. module: partner_firstname
-#: model_terms:ir.ui.view,arch_db:partner_firstname.view_general_configuration
+#: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
 msgid "Recalculate names"
 msgstr "Ricalcola nome"
 
 #. module: partner_firstname
-#: model_terms:ir.ui.view,arch_db:partner_firstname.view_general_configuration
+#: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
 msgid ""
 "Recalculate names for all partners. This process could take so much time if "
 "there are more than 10,000 active partners"
