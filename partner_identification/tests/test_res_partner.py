@@ -1,8 +1,9 @@
 # Copyright 2017 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo.tests import common
 from odoo.exceptions import ValidationError
+from odoo.tests import common
+
 from .fake_models import ResPartner, setup_test_model, teardown_test_model
 
 
@@ -12,7 +13,7 @@ class TestResPartner(common.SavepointCase):
         super().setUpClass()
         setup_test_model(cls.env, ResPartner)
         bad_cat = cls.env["res.partner.id_category"].create(
-            {"code": "another_code", "name": "another_name",}
+            {"code": "another_code", "name": "another_name"}
         )
         cls.env["res.partner.id_number"].create(
             {
@@ -22,7 +23,7 @@ class TestResPartner(common.SavepointCase):
             }
         )
         cls.partner_id_category = cls.env["res.partner.id_category"].create(
-            {"code": "id_code", "name": "id_name",}
+            {"code": "id_code", "name": "id_name"}
         )
         cls.partner = cls.env.ref("base.main_partner")
         cls.partner_id = cls.env["res.partner.id_number"].create(
@@ -52,21 +53,18 @@ class TestResPartner(common.SavepointCase):
         """ It should create a new category of the type if non-existent. """
         self.partner._inverse_identification("name", "new_code_type")
         category = self.env["res.partner.id_category"].search(
-            [("code", "=", "new_code_type"),]
+            [("code", "=", "new_code_type")]
         )
         self.assertTrue(category)
 
     def test_inverse_identification_creates_new_id(self):
         """ It should create a new ID of the type if non-existent. """
         category = self.env["res.partner.id_category"].create(
-            {"code": "new_code_type", "name": "new_code_type",}
+            {"code": "new_code_type", "name": "new_code_type"}
         )
         self.partner._inverse_identification("name", "new_code_type")
         identification = self.env["res.partner.id_number"].search(
-            [
-                ("category_id", "=", category.id),
-                ("partner_id", "=", self.partner.id),
-            ]
+            [("category_id", "=", category.id), ("partner_id", "=", self.partner.id)]
         )
         self.assertEqual(identification.name, self.partner.name)
 
@@ -85,7 +83,5 @@ class TestResPartner(common.SavepointCase):
     def test_search_identification(self):
         """ It should return the right record when searched by ID. """
         self.partner.social_security = "Test"
-        partner = self.env["res.partner"].search(
-            [("social_security", "=", "Test"),]
-        )
+        partner = self.env["res.partner"].search([("social_security", "=", "Test")])
         self.assertEqual(partner, self.partner)
