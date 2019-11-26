@@ -8,8 +8,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 
-from odoo import api, models, fields, _
-from odoo.exceptions import ValidationError, UserError
+from odoo import _, fields, models
+from odoo.exceptions import UserError, ValidationError
 from odoo.tools.safe_eval import safe_eval
 
 
@@ -48,15 +48,10 @@ class ResPartnerIdCategory(models.Model):
             "#  - id_number: browse_record of ID number to validate"
         )
 
-    @api.multi
     def _validation_eval_context(self, id_number):
         self.ensure_one()
-        return {
-            "self": self,
-            "id_number": id_number,
-        }
+        return {"self": self, "id_number": id_number}
 
-    @api.multi
     def validate_id_number(self, id_number):
         """Validate the given ID number
         The method raises an odoo.exceptions.ValidationError if the eval of
@@ -67,9 +62,7 @@ class ResPartnerIdCategory(models.Model):
             return
         eval_context = self._validation_eval_context(id_number)
         try:
-            safe_eval(
-                self.validation_code, eval_context, mode="exec", nocopy=True
-            )
+            safe_eval(self.validation_code, eval_context, mode="exec", nocopy=True)
         except Exception as e:
             raise UserError(
                 _(
@@ -80,6 +73,5 @@ class ResPartnerIdCategory(models.Model):
             )
         if eval_context.get("failed", False):
             raise ValidationError(
-                _("%s is not a valid %s identifier")
-                % (id_number.name, self.name)
+                _("%s is not a valid %s identifier") % (id_number.name, self.name)
             )

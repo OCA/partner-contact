@@ -7,7 +7,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 
-from odoo import api, models, fields
+from odoo import api, fields, models
 
 
 class ResPartnerIdNumber(models.Model):
@@ -22,8 +22,7 @@ class ResPartnerIdNumber(models.Model):
     name = fields.Char(
         string="ID Number",
         required=True,
-        help="The ID itself. For example, Driver License number of this "
-        "person",
+        help="The ID itself. For example, Driver License number of this person",
     )
     category_id = fields.Many2one(
         string="Category",
@@ -32,10 +31,7 @@ class ResPartnerIdNumber(models.Model):
         help="ID type defined in configuration. For example, Driver License",
     )
     partner_id = fields.Many2one(
-        string="Partner",
-        required=True,
-        comodel_name="res.partner",
-        ondelete="cascade",
+        string="Partner", required=True, comodel_name="res.partner", ondelete="cascade"
     )
     partner_issued_id = fields.Many2one(
         string="Issued by",
