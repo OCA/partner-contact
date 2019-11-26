@@ -1,5 +1,5 @@
 # Copyright 2017-2019 Tecnativa - Pedro M. Baeza
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import exceptions
 from odoo.tests import common
@@ -31,7 +31,7 @@ class TestPartnerDeduplicateAcl(common.TransactionCase):
         )
         self.wizard = (
             self.env["base.partner.merge.automatic.wizard"]
-            .sudo(self.user)
+            .with_user(self.user)
             .create({"group_by_name": True})
         )
 
