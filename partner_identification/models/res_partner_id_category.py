@@ -19,32 +19,42 @@ class ResPartnerIdCategory(models.Model):
     _order = "name"
 
     code = fields.Char(
-        string="Code", size=16, required=True,
+        string="Code",
+        size=16,
+        required=True,
         help="Abbreviation or acronym of this ID type. For example, "
-             "'driver_license'")
+        "'driver_license'",
+    )
     name = fields.Char(
-        string="ID name", required=True, translate=True,
-        help="Name of this ID type. For example, 'Driver License'")
+        string="ID name",
+        required=True,
+        translate=True,
+        help="Name of this ID type. For example, 'Driver License'",
+    )
     active = fields.Boolean(string="Active", default=True)
     validation_code = fields.Text(
-        'Python validation code',
+        "Python validation code",
         help="Python code called to validate an id number.",
-        default=lambda self: self._default_validation_code())
+        default=lambda self: self._default_validation_code(),
+    )
 
     def _default_validation_code(self):
-        return _("\n# Python code. Use failed = True to specify that the id "
-                 "number is not valid.\n"
-                 "# You can use the following variables :\n"
-                 "#  - self: browse_record of the current ID Category "
-                 "browse_record\n"
-                 "#  - id_number: browse_record of ID number to validate")
+        return _(
+            "\n# Python code. Use failed = True to specify that the id "
+            "number is not valid.\n"
+            "# You can use the following variables :\n"
+            "#  - self: browse_record of the current ID Category "
+            "browse_record\n"
+            "#  - id_number: browse_record of ID number to validate"
+        )
 
     @api.multi
     def _validation_eval_context(self, id_number):
         self.ensure_one()
-        return {'self': self,
-                'id_number': id_number,
-                }
+        return {
+            "self": self,
+            "id_number": id_number,
+        }
 
     @api.multi
     def validate_id_number(self, id_number):
@@ -53,19 +63,23 @@ class ResPartnerIdCategory(models.Model):
         python validation code fails
         """
         self.ensure_one()
-        if self.env.context.get('id_no_validate'):
+        if self.env.context.get("id_no_validate"):
             return
         eval_context = self._validation_eval_context(id_number)
         try:
-            safe_eval(self.validation_code,
-                      eval_context,
-                      mode='exec',
-                      nocopy=True)
+            safe_eval(
+                self.validation_code, eval_context, mode="exec", nocopy=True
+            )
         except Exception as e:
             raise UserError(
-                _('Error when evaluating the id_category validation code:'
-                  ':\n %s \n(%s)') % (self.name, e))
-        if eval_context.get('failed', False):
+                _(
+                    "Error when evaluating the id_category validation code:"
+                    ":\n %s \n(%s)"
+                )
+                % (self.name, e)
+            )
+        if eval_context.get("failed", False):
             raise ValidationError(
-                _("%s is not a valid %s identifier") % (
-                    id_number.name, self.name))
+                _("%s is not a valid %s identifier")
+                % (id_number.name, self.name)
+            )
