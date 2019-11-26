@@ -4,3 +4,4 @@
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
 * Luis M. Ontalba <luis.martinez@tecnativa.com>
 * Victor M.M. Torres <victor.martin@tecnativa.com>
+* Kevin Khao <kevin.khao@gmail.com>
