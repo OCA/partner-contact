@@ -94,7 +94,7 @@ msgid "Partner Company Type"
 msgstr ""
 
 #. module: partner_company_type
-#: sql_constraint:res.partner.company.type:0
+#: model:ir.model.constraint,message:partner_company_type.constraint_res_partner_company_type_name_uniq
 msgid "Partner Company Type already exists!"
 msgstr ""
 
