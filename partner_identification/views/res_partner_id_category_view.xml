@@ -31,7 +31,6 @@
 <record id="action_partner_id_category" model="ir.actions.act_window">
     <field name="name">Partner ID Categories</field>
     <field name="res_model">res.partner.id_category</field>
-    <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
 </record>
 

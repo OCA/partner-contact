@@ -9,9 +9,9 @@
 {
     "name": "Partner Identification Numbers",
     "category": "Customer Relationship Management",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.0",
     "license": "AGPL-3",
-    "depends": ["contacts",],
+    "depends": ["contacts"],
     "data": [
         "security/ir.model.access.csv",
         "views/res_partner_id_category_view.xml",
