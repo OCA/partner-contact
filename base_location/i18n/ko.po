@@ -138,19 +138,19 @@ msgid "Search zip"
 msgstr ""
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:69
+#: code:addons/base_location/models/res_partner.py:0
 #, python-format
 msgid "The city of partner %s differs from that in location %s"
 msgstr ""
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:65
+#: code:addons/base_location/models/res_partner.py:0
 #, python-format
 msgid "The country of the partner %s differs from that in location %s"
 msgstr ""
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:61
+#: code:addons/base_location/models/res_partner.py:0
 #, python-format
 msgid "The state of the partner %s differs from that in location %s"
 msgstr ""
@@ -161,14 +161,14 @@ msgid "Use the city name or the zip code to search the location"
 msgstr ""
 
 #. module: base_location
-#: sql_constraint:res.city:0
+#: model:ir.model.constraint,message:base_location.constraint_res_city_name_state_country_uniq
 msgid ""
 "You already have a city with that name in the same state.The city must have "
 "a unique name within it's state and it's country"
 msgstr ""
 
 #. module: base_location
-#: sql_constraint:res.city.zip:0
+#: model:ir.model.constraint,message:base_location.constraint_res_city_zip_name_city_uniq
 msgid ""
 "You already have a zip with that code in the same city. The zip code must be "
 "unique within it's city"
