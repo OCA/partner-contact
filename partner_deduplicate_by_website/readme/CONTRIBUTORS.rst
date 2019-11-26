@@ -4,3 +4,4 @@
   * Vicent Cubells
   * Cristina Martin
   * Victor M.M. Torres
+* Kevin Khao <kevinkhao@gmail.com>

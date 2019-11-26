@@ -1,6 +1,6 @@
 # Copyright 2016 Tecnativa - Pedro M. Baeza
 # Copyright 2018 Tecnativa - Cristina Martin
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests import common
 from odoo.tools.safe_eval import safe_eval
