@@ -37,6 +37,3 @@ msgstr "La compañía padre no establecida"
 #: model:ir.model.fields,field_description:partner_deduplicate_filter.field_base_partner_merge_automatic_wizard__exclude_parent
 msgid "Parent company set (Contacts)"
 msgstr "La compañía padre establecida (Contactos)"
-
-#~ msgid "base.partner.merge.automatic.wizard"
-#~ msgstr "base.partner.merge.automatic.wizard"
