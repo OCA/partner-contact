@@ -1,5 +1,5 @@
-# Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2016 Tecnativa - Pedro M. Baeza
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests import common
 from odoo.tools.safe_eval import safe_eval
