@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;\n"
 
 #. module: partner_deduplicate_by_ref
-#: model:ir.model.fields,field_description:partner_deduplicate_by_ref.field_base_partner_merge_automatic_wizard_group_by_ref
-msgid "Reference"
-msgstr "Референца"
+#: model:ir.model,name:partner_deduplicate_by_ref.model_base_partner_merge_automatic_wizard
+msgid "Merge Partner Wizard"
+msgstr ""
 
 #. module: partner_deduplicate_by_ref
-#: model:ir.model,name:partner_deduplicate_by_ref.model_base_partner_merge_automatic_wizard
-msgid "base.partner.merge.automatic.wizard"
-msgstr ""
+#: model:ir.model.fields,field_description:partner_deduplicate_by_ref.field_base_partner_merge_automatic_wizard__group_by_ref
+msgid "Reference"
+msgstr "Референца"
