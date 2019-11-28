@@ -7,7 +7,7 @@ from odoo.tools.safe_eval import safe_eval
 
 class TestDeduplicateByRef(common.TransactionCase):
     def setUp(self):
-        super(TestDeduplicateByRef, self).setUp()
+        super().setUp()
         self.partner_1 = self.env['res.partner'].create({
             'name': 'Partner 1',
             'ref': '123456',
