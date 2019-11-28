@@ -14,7 +14,7 @@ class BasePartnerMergeAutomaticWizard(models.TransientModel):
         There's no better way to do it, as there are no hooks for adding
         this criteria regularly.
         """
-        query = super(BasePartnerMergeAutomaticWizard, self)._generate_query(
+        query = super()._generate_query(
             fields, maximum_group=maximum_group)
         if 'ref' in fields:
             if 'WHERE' in query:

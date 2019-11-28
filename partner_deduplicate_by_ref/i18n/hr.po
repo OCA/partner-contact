@@ -20,11 +20,11 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. module: partner_deduplicate_by_ref
-#: model:ir.model.fields,field_description:partner_deduplicate_by_ref.field_base_partner_merge_automatic_wizard_group_by_ref
-msgid "Reference"
-msgstr "Veza"
+#: model:ir.model,name:partner_deduplicate_by_ref.model_base_partner_merge_automatic_wizard
+msgid "Merge Partner Wizard"
+msgstr ""
 
 #. module: partner_deduplicate_by_ref
-#: model:ir.model,name:partner_deduplicate_by_ref.model_base_partner_merge_automatic_wizard
-msgid "base.partner.merge.automatic.wizard"
-msgstr ""
+#: model:ir.model.fields,field_description:partner_deduplicate_by_ref.field_base_partner_merge_automatic_wizard__group_by_ref
+msgid "Reference"
+msgstr "Veza"
