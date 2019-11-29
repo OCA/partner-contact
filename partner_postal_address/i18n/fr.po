@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_postal_address
+# 	* partner_postal_address
 #
 msgid ""
 msgstr ""
@@ -10,6 +10,7 @@ msgstr ""
 "PO-Revision-Date: 2019-08-14 10:09+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -55,6 +56,9 @@ msgstr "Adresse d'expédition"
 #. module: partner_postal_address
 #: model:ir.model.fields,help:partner_postal_address.field_res_partner__type
 #: model:ir.model.fields,help:partner_postal_address.field_res_users__type
-msgid "Used by Sales and Purchase Apps to select the relevant address depending on the context."
-msgstr "Utilisé par les Applications Vente et Achats pour sélectionner l'adresse adéquate en fonction du contexte"
-
+msgid ""
+"Used by Sales and Purchase Apps to select the relevant address depending on "
+"the context."
+msgstr ""
+"Utilisé par les Applications Vente et Achats pour sélectionner l'adresse "
+"adéquate en fonction du contexte"
