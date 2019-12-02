@@ -24,7 +24,7 @@ msgid "Contact"
 msgstr "Kontakt"
 
 #. module: base_partner_sequence
-#: code:addons/base_partner_sequence/models/partner.py:55
+#: code:addons/base_partner_sequence/models/partner.py:0
 #, python-format
 msgid "Either field values or an id must be provided."
 msgstr ""
