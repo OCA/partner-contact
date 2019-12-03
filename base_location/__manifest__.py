@@ -5,7 +5,7 @@
 
 {
     'name': 'Location management (aka Better ZIP)',
-    'version': '10.0.1.0.4',
+    'version': '10.0.1.1.0',
     'depends': [
         'base',
     ],
