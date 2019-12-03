@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo13-addon-base_partner_sequence',
         'odoo13-addon-partner_company_group',
         'odoo13-addon-partner_company_type',
+        'odoo13-addon-partner_contact_gender',
         'odoo13-addon-partner_contact_personal_information_page',
         'odoo13-addon-partner_fax',
         'odoo13-addon-partner_firstname',
