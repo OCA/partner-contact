@@ -11,7 +11,8 @@
                 <field name="better_zip_id"
                     options="{'create_name_field': 'city'}"
                     colspan="4"
-                    placeholder="City completion" />
+                    placeholder="City completion"
+                    class="oe_edit_only" />
             </field>
         </field>
     </record>
