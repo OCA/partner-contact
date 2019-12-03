@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_multi_relation_hierarchy
+# 	* partner_multi_relation_hierarchy
 #
 msgid ""
 msgstr ""
@@ -10,10 +10,10 @@ msgstr ""
 "PO-Revision-Date: 2017-11-01 09:31+0000\n"
 "Last-Translator: Ronald Portier <ronald@therp.nl>, 2017\n"
 "Language-Team: Dutch (https://www.transifex.com/oca/teams/23907/nl/)\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_multi_relation_hierarchy
@@ -27,6 +27,7 @@ msgid "Display Name"
 msgstr "Naam voor weergave"
 
 #. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_alias_has_partner_above
 #: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_has_partner_above
 #: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_users_has_partner_above
 msgid "Has partner above"
@@ -52,6 +53,12 @@ msgstr "Laatst gewijzigd"
 #: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_level
 msgid "Level"
 msgstr "Niveau"
+
+#. module: partner_multi_relation_hierarchy
+#: code:addons/partner_multi_relation_hierarchy/models/res_partner_relation.py:42
+#, python-format
+msgid "Not allowed to create an inconsistent hierarchy"
+msgstr ""
 
 #. module: partner_multi_relation_hierarchy
 #: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_level
@@ -95,7 +102,8 @@ msgid "Partner somewhere above in the hierarchy"
 msgstr "Relatie één of meer plaatsen hoger in de hiërarchie"
 
 #. module: partner_multi_relation_hierarchy
-#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_partner_above_ids_4248
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_alias_partner_above_ids
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_partner_above_ids
 #: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_users_partner_above_ids
 msgid "Partners above in hierarchy"
 msgstr "Bovenliggende partners in de hiërarchie"
@@ -112,8 +120,12 @@ msgstr "Relaties met al hun bovenliggende relaties"
 
 #. module: partner_multi_relation_hierarchy
 #: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_type_hierarchy
-msgid "Select wether the relation between the partners can be considered hierarchical. And if so which side is considered 'above'."
-msgstr "Geef aan of de connectie tussen de relaties een hiërarchie aangeeft. Zo ja geef aan welke kant beschouwd wordt als 'bovenliggend'"
+msgid ""
+"Select wether the relation between the partners can be considered "
+"hierarchical. And if so which side is considered 'above'."
+msgstr ""
+"Geef aan of de connectie tussen de relaties een hiërarchie aangeeft. Zo ja "
+"geef aan welke kant beschouwd wordt als 'bovenliggend'"
 
 #. module: partner_multi_relation_hierarchy
 #: model:ir.model.fields,help:partner_multi_relation_hierarchy.field_res_partner_relation_hierarchy_partner_id
@@ -121,12 +133,7 @@ msgid "The partner at the base of the hierarchy"
 msgstr "De relatie aan de basis van de hiërarchie"
 
 #. module: partner_multi_relation_hierarchy
-#: code:addons/partner_multi_relation_hierarchy/models/res_partner_relation.py:43
-#, python-format
-msgid "There is already a hierarchical relation between these partners: %s"
-msgstr "Er bestaat reeds een hiërarchische relatie tussen deze partners."
-
-#. module: partner_multi_relation_hierarchy
+#: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_alias_partner_above_hierarchy
 #: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_partner_partner_above_hierarchy
 #: model:ir.model.fields,field_description:partner_multi_relation_hierarchy.field_res_users_partner_above_hierarchy
 msgid "Upper level partners"
@@ -147,3 +154,5 @@ msgstr "links boven rechts"
 msgid "right_above_left"
 msgstr "rechts boven links"
 
+#~ msgid "There is already a hierarchical relation between these partners: %s"
+#~ msgstr "Er bestaat reeds een hiërarchische relatie tussen deze partners."
