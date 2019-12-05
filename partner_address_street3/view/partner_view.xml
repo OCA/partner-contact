@@ -8,8 +8,8 @@
         <xpath
             expr="/form/sheet/group/group/div/field[@name='street2']"
             position="after">
-          <field name="street3" 
-                 placeholder="Street 3..." 
+          <field name="street3"
+                 placeholder="Street 3..."
                  class="o_address_street"
                  attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
         </xpath>
