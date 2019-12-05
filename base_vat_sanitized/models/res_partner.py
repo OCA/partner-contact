@@ -19,7 +19,7 @@ class ResPartner(models.Model):
     )
 
     @classmethod
-    def _sanitize_vat(self, vat):
+    def _sanitize_vat(cls, vat):
         return vat and re.sub(r"\W+", "", vat).upper() or False
 
     @api.depends("vat")
