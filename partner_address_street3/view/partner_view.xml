@@ -18,7 +18,6 @@
           'default_street': street, 'default_street2': street2,
           'default_street3': street3, 'default_city': city, 'default_state_id':
           state_id, 'default_zip': zip, 'default_country_id': country_id,
-          'default_supplier': supplier, 'default_customer': customer,
           'default_lang': lang,}</attribute>
         </xpath>
         <xpath expr="/form//field[@name='child_ids']/form//field[@name='street2']"
