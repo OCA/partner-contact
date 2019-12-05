@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2017-12-26 15:33+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2019-12-05 14:04+0000\n"
+"Last-Translator: georginaf <georgina.fornes@qubiq.es>\n"
 "Language-Team: Catalan (https://www.transifex.com/oca/teams/23907/ca/)\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_child_ids
@@ -69,7 +70,7 @@ msgstr "Darrera Actualització el"
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_id
 #: model:ir.model.fields,field_description:partner_sector.field_res_users_sector_id
 msgid "Main Sector"
-msgstr ""
+msgstr "Sector principal"
 
 #. module: partner_sector
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_sector_name
@@ -107,31 +108,31 @@ msgstr "Empresa"
 #: model:ir.model.fields,field_description:partner_sector.field_res_partner_secondary_sector_ids
 #: model:ir.model.fields,field_description:partner_sector.field_res_users_secondary_sector_ids
 msgid "Secondary Sectors"
-msgstr ""
+msgstr "Sectors secundaris"
 
 #. module: partner_sector
 #: model:ir.model,name:partner_sector.model_res_partner_sector
 #: model:ir.ui.view,arch_db:partner_sector.view_partner_form_sector
 #: model:ir.ui.view,arch_db:partner_sector.view_res_partner_filter_sector
 msgid "Sector"
-msgstr ""
+msgstr "Sector"
 
 #. module: partner_sector
 #: model:ir.ui.view,arch_db:partner_sector.view_general_configuration
 msgid "Sector for individual"
-msgstr ""
+msgstr "Sector per a particular"
 
 #. module: partner_sector
 #: model:ir.ui.view,arch_db:partner_sector.view_sale_config_settings
 msgid "Sector for individuals"
-msgstr ""
+msgstr "Sectors per a particulars"
 
 #. module: partner_sector
 #: model:ir.actions.act_window,name:partner_sector.res_partner_sector_action
 #: model:ir.ui.menu,name:partner_sector.menu_res_partner_sector
 #: model:ir.ui.view,arch_db:partner_sector.res_partner_sector_tree_view
 msgid "Sectors"
-msgstr ""
+msgstr "Sectors"
 
 #. module: partner_sector
 #: model:ir.model.fields,help:partner_sector.field_sale_config_settings_group_use_partner_sector_for_person
@@ -154,7 +155,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_sector.field_sale_config_settings_group_use_partner_sector_for_person
 #: model:res.groups,name:partner_sector.group_use_partner_sector_for_person
 msgid "Use sector for individuals"
-msgstr ""
+msgstr "Utilitzar sector per a particulars"
 
 #. module: partner_sector
 #: model:ir.model,name:partner_sector.model_base_config_settings
