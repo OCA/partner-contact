@@ -4,11 +4,11 @@
 {
     "name": "Translate Country States",
     "version": "12.0.1.0.0",
-    "depends": ['base'],
-    "website": 'https://github.com/OCA/partner-contact',
+    "depends": ["base"],
+    "website": "https://github.com/OCA/partner-contact",
     "summary": "Translate Country States",
-    'author': 'initOS GmbH, Odoo Community Association (OCA)',
+    "author": "initOS GmbH, Odoo Community Association (OCA)",
     "category": "Localisation",
-    'license': 'AGPL-3',
-    'installable': True,
+    "license": "AGPL-3",
+    "installable": True,
 }
