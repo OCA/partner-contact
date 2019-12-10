@@ -1,0 +1,42 @@
+<odoo>
+    <record id="view_smart_tagger_tree" model="ir.ui.view">
+        <field name="name">Smart Tags</field>
+        <field name="model">res.partner.category</field>
+        <field name="inherit_id" ref="base.view_partner_category_list"/>
+        <field name="arch" type="xml">
+            <field name="display_name" position="after">
+                <field name="smart"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_smart_tagger_form" model="ir.ui.view">
+        <field name="name">Smart Tags</field>
+        <field name="model">res.partner.category</field>
+        <field name="inherit_id" ref="base.view_partner_category_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[1]" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button type='object' name='open_tags' class="oe_stat_button" icon="fa-female">
+                        <field name="number_tags" readonly="1" widget="statinfo" string="Partners"/>
+                    </button>
+                </div>
+            </xpath>
+            <field name="parent_id" position="after">
+                <field name="smart"/>
+                <field name="condition_id" attrs="{'invisible': [('smart', '=', False)],}" context="{'default_model_id':'res.partner'}"/>
+                <field name="partner_field" attrs="{'invisible': ['|', ('smart', '=', False), ('condition_id', '=', False)],}"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.actions.server" id="event_smart_tagger_update_action">
+        <field name="name">Update Smart Tagger</field>
+        <field name="binding_model_id" ref="model_res_partner_category"/>
+        <field name="model_id" ref="model_res_partner_category" />
+        <field name="state">code</field>
+        <field name="code">
+            records.update_partner_tags()
+        </field>
+    </record>
+</odoo>
