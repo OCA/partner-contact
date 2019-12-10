@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo13-addon-partner_company_type',
         'odoo13-addon-partner_contact_gender',
         'odoo13-addon-partner_contact_personal_information_page',
+        'odoo13-addon-partner_deduplicate_acl',
         'odoo13-addon-partner_deduplicate_by_website',
         'odoo13-addon-partner_fax',
         'odoo13-addon-partner_firstname',
