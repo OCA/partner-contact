@@ -3,3 +3,4 @@
 * Raul Martin <raul.martin@braintec-group.com>
 * Dave Lasley <dave@laslabs.com>
 * Dennis Sluijk <d.sluijk@onestein.nl>
+* Stephan Rozendaal <stephan.rozendaal@neobis.net>
