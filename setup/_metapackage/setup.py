@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo13-addon-base_location',
         'odoo13-addon-base_location_geonames_import',
         'odoo13-addon-base_partner_sequence',
+        'odoo13-addon-base_vat_sanitized',
         'odoo13-addon-partner_company_group',
         'odoo13-addon-partner_company_type',
         'odoo13-addon-partner_contact_gender',
