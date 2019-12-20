@@ -3,3 +3,4 @@
 * Jairo Llopis <jairo.llopis@tecnativa.com>
 * David Vidal <david.vidal@tecnativa.com>
 * Alexandre Díaz <alexandre.diaz@tecnativa.com>
+* Rattapong Chokmasermkul <rattapongc@ecosoft.co.th>
