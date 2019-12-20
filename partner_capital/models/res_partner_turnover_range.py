@@ -6,7 +6,7 @@ from odoo import fields, models
 
 
 class ResPartnerTurnoverRange(models.Model):
-    _name = 'res.partner.turnover_range'
+    _name = "res.partner.turnover_range"
     _description = "Turnover range"
 
     name = fields.Char(required=True, translate=True)
