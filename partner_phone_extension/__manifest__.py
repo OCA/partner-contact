@@ -7,20 +7,18 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'Partner Phone Number Extension',
-    'version': '12.0.1.0.0',
-    'category': 'Customer Relationship Management',
-    'summary': 'Partner Phone Number Extension',
-    'author': "Savoir-faire Linux, "
-              "Eficent, "
-              "Serpent Consulting Services Pvt. Ltd., "
-              "Odoo Community Association (OCA)",
-    'website': ' https://github.com/OCA/partner-contact',
-    'license': 'AGPL-3',
+    "name": "Partner Phone Number Extension",
+    "version": "13.0.1.0.0",
+    "category": "Customer Relationship Management",
+    "summary": "Partner Phone Number Extension",
+    "author": "Savoir-faire Linux, "
+    "Eficent, "
+    "Serpent Consulting Services Pvt. Ltd., "
+    "Odoo Community Association (OCA)",
+    "website": " https://github.com/OCA/partner-contact",
+    "license": "AGPL-3",
     "depends": ["base"],
-    'data': [
-        'views/res_partner_view.xml',
-    ],
-    'installable': True,
-    'auto_install': False,
+    "data": ["views/res_partner_view.xml"],
+    "installable": True,
+    "auto_install": False,
 }
