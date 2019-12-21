@@ -7,19 +7,16 @@
 {
     "name": "Partner Job Position",
     "summary": "Categorize job positions for contacts",
-    "version": "12.0.1.0.0",
-    'category': 'Customer Relationship Management',
+    "version": "13.0.1.0.0",
+    "category": "Customer Relationship Management",
     "website": "https://github.com/OCA/partner-contact",
-    'author': 'Tecnativa,'
-              "Odoo Community Association (OCA)",
+    "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
-    "depends": [
-        "contacts",
-    ],
+    "depends": ["contacts"],
     "data": [
-        'security/ir.model.access.csv',
-        'views/res_partner_job_position_view.xml',
-        'views/res_partner_view.xml',
+        "security/ir.model.access.csv",
+        "views/res_partner_job_position_view.xml",
+        "views/res_partner_view.xml",
     ],
 }
