@@ -6,3 +6,5 @@
   * Rafael Blasco
   * David Vidal
   * Ernesto Tejeda
+
+* Tharathip Chaweewongphan<tharathipc@ecosoft.co.th>

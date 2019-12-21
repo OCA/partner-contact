@@ -7,11 +7,11 @@ from odoo import fields, models
 
 
 class ResPartner(models.Model):
-    _inherit = 'res.partner'
+    _inherit = "res.partner"
 
     job_position_id = fields.Many2one(
-        "res.partner.job_position",
-        "Categorized job position")
+        "res.partner.job_position", "Categorized job position"
+    )
 
 
 class ResPartnerJobPosition(models.Model):
