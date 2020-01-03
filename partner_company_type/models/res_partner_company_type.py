@@ -18,6 +18,13 @@ class ResPartnerCompanyType(models.Model):
         string='Abbreviation',
         translate=True,
     )
+    country_id = fields.Many2one(
+        comodel_name="res.country",
+        string="Country",
+        help="Allows this company type to be selected on partners from this "
+        "country only. "
+        "Leave it blank if you want it to appear on any partner.",
+    )
 
     _sql_constraints = [('name_uniq', 'unique (name)',
                          "Partner Company Type already exists!")]

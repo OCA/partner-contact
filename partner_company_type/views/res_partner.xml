@@ -10,6 +10,7 @@
         <field name="arch" type="xml">
             <field name="title" position="after">
                 <field name="partner_company_type_id" options='{"no_open": True}'
+                domain="['|', ('country_id', '=', False), ('country_id', '=', country_id)]"
                 attrs="{'invisible': [('is_company', '=', False)]}"/>
             </field>
            </field>
