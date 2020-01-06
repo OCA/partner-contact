@@ -5,7 +5,7 @@
 {
     "name": "Partner unique reference",
     "summary": "Add an unique constraint to partner ref field",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.0.1",
     "category": "Customer Relationship Management",
     "website": "https://github.com/OCA/partner-contact/",
     "author": "Tecnativa, "
