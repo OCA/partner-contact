@@ -18,7 +18,7 @@ class TestResPartnerRefUnique(common.SavepointCase):
             'name': 'Partner2',
         })
 
-    def test_check_ref(self):
+    def test_check_ref_company(self):
         # Test can create/modify partners with same ref
         self.company.partner_ref_unique = 'none'
         self.partner1.ref = 'same_ref'
@@ -30,6 +30,11 @@ class TestResPartnerRefUnique(common.SavepointCase):
             'ref': 'same_ref',
         })
         self.partner2.ref = False
+        with self.assertRaises(ValidationError):
+            self.company.partner_ref_unique = 'all'
+
+    def test_check_ref(self):
+        self.partner1.ref = 'same_ref'
         # Test can't create/modify partner with same ref
         self.company.partner_ref_unique = 'all'
         with self.assertRaises(ValidationError):
