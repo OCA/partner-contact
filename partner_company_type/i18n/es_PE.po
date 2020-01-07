@@ -30,6 +30,13 @@ msgid "Abbreviation"
 msgstr ""
 
 #. module: partner_company_type
+#: model:ir.model.fields,help:partner_company_type.field_res_partner_company_type__country_id
+msgid ""
+"Allows this company type to be selected on partners from this country only. "
+"Leave it blank if you want it to appear on any partner."
+msgstr ""
+
+#. module: partner_company_type
 #: model:res.partner.company.type,name:partner_company_type.res_partner_company_type_sa
 msgid "Anonymous Company"
 msgstr ""
@@ -44,6 +51,11 @@ msgstr ""
 #. module: partner_company_type
 #: model:ir.model,name:partner_company_type.model_res_partner
 msgid "Contact"
+msgstr ""
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__country_id
+msgid "Country"
 msgstr ""
 
 #. module: partner_company_type
