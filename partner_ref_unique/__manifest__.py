@@ -13,6 +13,7 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
+    "pre_init_hook": "pre_init_hook",
     "depends": [
         "base",
     ],
