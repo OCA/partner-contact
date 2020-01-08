@@ -11,7 +11,7 @@ class ResPartner(models.Model):
     # This related is needed in order to trigger the check when changing the
     # value on res.company
     partner_ref_unique = fields.Selection(
-        related='company_id.partner_ref_unique',
+        related='company_id.partner_ref_unique', store=True,
     )
 
     @api.multi
