@@ -1,4 +1,4 @@
-# Copyright 2019 Camptocamp SA
+# Copyright 2020 Camptocamp SA
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
 import logging
 
@@ -10,6 +10,15 @@ def pre_init_hook(cr):
     :param odoo.sql_db.Cursor cr:
         Database cursor.
     """
+    _logger.info("Creating res.company.partner_ref_unique column")
+    cr.execute("ALTER TABLE res_company ADD partner_ref_unique varchar NULL;")
+    cr.execute(
+        "COMMENT ON COLUMN public.res_company.partner_ref_unique "
+        "IS 'Unique partner reference for';"
+    )
+    cr.execute(
+        "UPDATE res_company SET partner_ref_unique = 'none';"
+    )
     _logger.info(
         "Creating res.partner.partner_ref_unique column with value from "
         "res.company"
