@@ -15,7 +15,7 @@ class ResPartner(models.Model):
             domain = ['|', '|', ('phone', operator, name),
                       ('mobile', operator, name), ('email', operator, name)
                       ]
-            partners = self.search(domain + args, limit=limit,)
+            partners = self.search(domain + args, limit=limit, )
             res = partners.name_get()
             if limit:
                 limit_rest = limit - len(partners)
@@ -23,6 +23,9 @@ class ResPartner(models.Model):
                 limit_rest = limit
             if limit_rest or not limit:
                 args += [('id', 'not in', partners.ids)]
-                res += super(ResPartner, self).name_search(
+                res += super().name_search(
                     name, args=args, operator=operator, limit=limit_rest)
             return res
+        return super().name_search(
+            name, args=args, operator=operator, limit=limit
+        )
