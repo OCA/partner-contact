@@ -39,6 +39,7 @@ setuptools.setup(
         'odoo12-addon-partner_group',
         'odoo12-addon-partner_helper',
         'odoo12-addon-partner_identification',
+        'odoo12-addon-partner_identification_gln',
         'odoo12-addon-partner_industry_secondary',
         'odoo12-addon-partner_multi_relation',
         'odoo12-addon-partner_phone_extension',
