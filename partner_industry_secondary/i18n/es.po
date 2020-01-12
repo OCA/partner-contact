@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2017-12-26 15:33+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2020-01-12 21:13+0000\n"
+"Last-Translator: Carles Antoli <carlesantoli@hotmail.com>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: partner_industry_secondary
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__child_ids
@@ -26,45 +27,45 @@ msgstr "Hijos"
 #. module: partner_industry_secondary
 #: model:ir.model,name:partner_industry_secondary.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Configura los ajustes"
 
 #. module: partner_industry_secondary
 #: model:ir.model,name:partner_industry_secondary.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Enable industries for individuals"
-msgstr ""
+msgstr "Permitir los sectores para las personas"
 
 #. module: partner_industry_secondary
 #: code:addons/partner_industry_secondary/models/res_partner_industry.py:41
-#, fuzzy, python-format
+#, python-format
 msgid "Error! You cannot create recursive industries."
-msgstr "Error. No puede crear sectores recursivos."
+msgstr "Error!. No puede crear sectores recursivos."
 
 #. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Industries"
-msgstr ""
+msgstr "Sectores"
 
 #. module: partner_industry_secondary
 #: model:ir.model,name:partner_industry_secondary.model_res_partner_industry
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.view_res_partner_filter_industry
 msgid "Industry"
-msgstr ""
+msgstr "Sector"
 
 #. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Industry for individual"
-msgstr ""
+msgstr "Sector para personas"
 
 #. module: partner_industry_secondary
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner__industry_id
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_users__industry_id
 msgid "Main Industry"
-msgstr ""
+msgstr "Sector principal"
 
 #. module: partner_industry_secondary
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__name
@@ -73,21 +74,18 @@ msgstr "Nombre"
 
 #. module: partner_industry_secondary
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__parent_id
-#, fuzzy
 msgid "Parent"
-msgstr "ID del padre"
+msgstr "Padre"
 
 #. module: partner_industry_secondary
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__parent_path
-#, fuzzy
-#| msgid "Parent Left"
 msgid "Parent Path"
-msgstr "Padre izquierda"
+msgstr "Ruta padre"
 
 #. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Partner Industries"
-msgstr ""
+msgstr "Sectores de la empresa"
 
 #. module: partner_industry_secondary
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner__secondary_industry_ids
@@ -104,7 +102,7 @@ msgstr "Sector"
 #. module: partner_industry_secondary
 #: model:ir.model.fields,help:partner_industry_secondary.field_res_config_settings__group_use_partner_industry_for_person
 msgid "Set if you want to be able to use industries for individuals also."
-msgstr ""
+msgstr "Establezca si desea poder usar sectores para individuos también."
 
 #. module: partner_industry_secondary
 #: code:addons/partner_industry_secondary/models/res_partner.py:22
@@ -116,7 +114,7 @@ msgstr "El sector principal debe ser diferente a los sectores secundarios."
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_config_settings__group_use_partner_industry_for_person
 #: model:res.groups,name:partner_industry_secondary.group_use_partner_industry_for_person
 msgid "Use industry for individuals"
-msgstr ""
+msgstr "Use el sector para individuos"
 
 #~ msgid "Parent Right"
 #~ msgstr "Padre derecha"
