@@ -15,12 +15,12 @@
 
                 <xpath expr="//h1//field[@name='name']/.." position="before">
                     <group attrs="{'invisible': [('is_company', '=', True)]}">
-                        <field name="lastname" attrs=
-                            "{'required': [('firstname', '=', False),
-                            ('is_company', '=', False),
-                            ('type', '=', 'contact')]}"/>
                         <field name="firstname" attrs=
                             "{'required': [('lastname', '=', False),
+                            ('is_company', '=', False),
+                            ('type', '=', 'contact')]}"/>
+                        <field name="lastname" attrs=
+                            "{'required': [('firstname', '=', False),
                             ('is_company', '=', False),
                             ('type', '=', 'contact')]}"/>
                     </group>
@@ -45,12 +45,12 @@
                 <xpath expr="//h1//field[@name='name']/.." position="after">
                     <div class="oe_edit_only">
                         <group attrs="{'invisible': [('is_company', '=', True)]}">
-                            <field name="lastname" attrs=
-                                "{'required': [('firstname', '=', False),
-                                ('is_company', '=', False),
-                                ('type', '=', 'contact')]}"/>
                             <field name="firstname" attrs=
                                 "{'required': [('lastname', '=', False),
+                                ('is_company', '=', False),
+                                ('type', '=', 'contact')]}"/>
+                            <field name="lastname" attrs=
+                                "{'required': [('firstname', '=', False),
                                 ('is_company', '=', False),
                                 ('type', '=', 'contact')]}"/>
                         </group>
@@ -71,12 +71,12 @@
                     <div class="oe_edit_only" colspan="2">
                         <field name="is_company" invisible="True"/>
                         <group attrs="{'invisible': [('is_company', '=', True)]}">
-                            <field name="lastname" attrs=
-                                "{'required': [('firstname', '=', False),
-                                ('is_company', '=', False),
-                                ('type', '=', 'contact')]}"/>
                             <field name="firstname" attrs=
                                 "{'required': [('lastname', '=', False),
+                                ('is_company', '=', False),
+                                ('type', '=', 'contact')]}"/>
+                            <field name="lastname" attrs=
+                                "{'required': [('firstname', '=', False),
                                 ('is_company', '=', False),
                                 ('type', '=', 'contact')]}"/>
                         </group>
