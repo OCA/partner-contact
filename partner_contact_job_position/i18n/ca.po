@@ -9,25 +9,26 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:32+0000\n"
-"PO-Revision-Date: 2017-12-26 15:32+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2020-01-12 21:13+0000\n"
+"Last-Translator: Carles Antoli <carlesantoli@hotmail.com>\n"
 "Language-Team: Catalan (https://www.transifex.com/oca/teams/23907/ca/)\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner__job_position_id
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_users__job_position_id
 msgid "Categorized job position"
-msgstr ""
+msgstr "Lloc de treball categoritzat"
 
 #. module: partner_contact_job_position
 #: model:ir.model,name:partner_contact_job_position.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacte"
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__create_uid
@@ -53,19 +54,19 @@ msgstr "ID"
 #: model:ir.actions.act_window,name:partner_contact_job_position.res_partner_job_position_action
 #: model:ir.ui.menu,name:partner_contact_job_position.menu_res_partner_job_position
 msgid "Job Positions"
-msgstr ""
+msgstr "Llocs de treball"
 
 #. module: partner_contact_job_position
 #: model:ir.model,name:partner_contact_job_position.model_res_partner_job_position
 #: model_terms:ir.ui.view,arch_db:partner_contact_job_position.view_res_partner_filter_job_position
 msgid "Job position"
-msgstr ""
+msgstr "Lloc de treball"
 
 #. module: partner_contact_job_position
 #: model_terms:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_form_view
 #: model_terms:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_tree_view
 msgid "Job positions"
-msgstr ""
+msgstr "Llocs de treball"
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position____last_update
@@ -80,7 +81,7 @@ msgstr "Darrera Actualització per"
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__write_date
 msgid "Last Updated on"
-msgstr "Darrera Actualització el"
+msgstr "Darrera actualització el"
 
 #. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__name
