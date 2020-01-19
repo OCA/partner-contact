@@ -5,13 +5,13 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <field name="user_id" position="after">
+            <group name="sale" position="inside">
                 <field
                         name="default_sale_discount"
                         attrs="{'invisible': ['|', ('customer', '=', False), ('parent_id', '!=', False)]}"
                         groups="sale.group_discount_per_so_line"
                 />
-            </field>
+            </group>
         </field>
     </record>
 
