@@ -13,82 +13,83 @@ msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-14 11:14+0000\n"
-"PO-Revision-Date: 2016-04-05 10:01+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"PO-Revision-Date: 2020-01-22 10:41+0000\n"
+"Last-Translator: Hans Henrik Gabelgaard <hhg@gabelgaard.org>\n"
 "Language-Team: Danish (http://www.transifex.com/oca/OCA-partner-contact-9-0/"
 "language/da/)\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #. module: partner_firstname
 #: sql_constraint:res.partner:0
 msgid "Contacts require a name."
-msgstr ""
+msgstr "Kontakter kræver et navn."
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:11
 #, python-format
 msgid "Error(s) with partner %d's name."
-msgstr ""
+msgstr "Fejl med partner %d's navn."
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users_firstname
 msgid "First name"
-msgstr ""
+msgstr "Fornavn"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner_lastname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users_lastname
 msgid "Last name"
-msgstr ""
+msgstr "Efternavn"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:8
 #, python-format
 msgid "No name is set."
-msgstr ""
+msgstr "Navn ikke angivet."
 
 #. module: partner_firstname
 #: model:ir.model.fields,help:partner_firstname.field_res_config_settings_partner_names_order
 msgid "Order to compose partner fullname"
-msgstr ""
+msgstr "Rækkefølge for partners fulde navn"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings_partner_names_order_changed
 msgid "Partner Names Order Changed"
-msgstr ""
+msgstr "Rækkefølge for partner navn er ændret"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings_partner_names_order
 #: model:ir.ui.view,arch_db:partner_firstname.view_general_configuration
 msgid "Partner names order"
-msgstr ""
+msgstr "Rækkefølge for partner navn"
 
 #. module: partner_firstname
 #: model:ir.ui.view,arch_db:partner_firstname.view_general_configuration
 msgid "Recalculate names"
-msgstr ""
+msgstr "Genberegn navne"
 
 #. module: partner_firstname
 #: model:ir.ui.view,arch_db:partner_firstname.view_general_configuration
 msgid ""
 "Recalculate names for all partners. This process could take so much time if "
 "there are more than 10,000 active partners"
-msgstr ""
+msgstr "Genberegn navne for alle partnere. Denne process kan tage lang tid"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Brugere"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_config_settings
