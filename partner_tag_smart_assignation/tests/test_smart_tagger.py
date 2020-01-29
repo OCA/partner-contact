@@ -17,8 +17,8 @@ class TestSmartTagger(SavepointCase):
         john_m_brown = cls.browse_ref(cls, 'base.res_partner_address_11')
         charlie_bernard = cls.browse_ref(cls, 'base.res_partner_address_13')
 
-        cls.partners = michel_fletcher + chao_wang + david_simpson + john_m_brown +\
-            charlie_bernard
+        cls.partners = michel_fletcher + chao_wang + david_simpson + \
+            john_m_brown + charlie_bernard
         cls.o_partners = chao_wang + david_simpson + john_m_brown
         cls.non_o_partners = michel_fletcher + charlie_bernard
         cls.michel_fletcher = michel_fletcher
@@ -82,6 +82,32 @@ class TestSmartTagger(SavepointCase):
 
         # Simulate a cron trigger
         self.env['res.partner.category'].update_all_smart_tags()
+
+        # verify that the updated tag contains the partner 'Michel Angelo'
+        self.assertTrue(michael in smart_tag.partner_ids)
+
+        for partner in smart_tag.partner_ids:
+            self.assertTrue('o' in partner.name)
+
+    def test_smart_tag_sql(self):
+        """ Test query SQL for smart tags """
+        smart_tag = self.env['res.partner.category'].create({
+            'name': 'Test Smart Tag SQL',
+            'active': True,
+            'smart': True,
+            'parent_id': False,
+            'tag_filter_sql_query': """
+                SELECT id
+                FROM res_partner
+                Where name like '%o%'
+            """
+        })
+        # update some first names
+        michael = self.michel_fletcher
+        michael.write({'name': 'Michel Angelo'})
+
+        # Trigger tag update
+        smart_tag.update_partner_tags()
 
         # verify that the updated tag contains the partner 'Michel Angelo'
         self.assertTrue(michael in smart_tag.partner_ids)

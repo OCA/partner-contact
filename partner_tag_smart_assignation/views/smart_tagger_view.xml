@@ -24,8 +24,10 @@
             </xpath>
             <field name="parent_id" position="after">
                 <field name="smart"/>
+                <field name="tag_filter_join_operator" attrs="{'invisible': [('smart', '=', False)],}"/>
                 <field name="tag_filter_condition_id" attrs="{'invisible': [('smart', '=', False)],}" context="{'default_model_id':'res.partner'}"/>
                 <field name="tag_filter_partner_field" attrs="{'invisible': ['|', ('smart', '=', False), ('tag_filter_condition_id', '=', False)],}"/>
+                <field name="tag_filter_sql_query" attrs="{'invisible': [('smart', '=', False)],}" widget="ace"/>
             </field>
         </field>
     </record>
