@@ -2,23 +2,26 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 import datetime
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 from odoo.tools.safe_eval import safe_eval
 
 
 class ResPartnerCategory(models.Model):
     _inherit = "res.partner.category"
 
-    condition_id = fields.Many2one('ir.filters', string="Condition")
-    smart = fields.Boolean()
-    partner_field = fields.Char(
+    tag_filter_condition_id = fields.Many2one(
+        'ir.filters', 'Condition', oldname='condition_id')
+    smart = fields.Boolean(
+        help='Enable this to automatically assign the category on partners '
+             'matching a given filter domain.')
+    tag_filter_partner_field = fields.Char(
         default='partner_id',
+        oldname='partner_field',
         help='Relational field used on the filter object to find the partners.'
     )
-    partner_ids = fields.Many2many("res.partner",
-                                   relation='res_partner_res_partner_'
-                                            'category_rel',
-                                   column1='category_id',
-                                   column2='partner_id')
+    partner_ids = fields.Many2many(
+        "res.partner", 'res_partner_res_partner_category_rel',
+        'category_id', 'partner_id')
 
     number_tags = fields.Integer(compute='_compute_number_tags', stored=True)
 
@@ -31,33 +34,38 @@ class ResPartnerCategory(models.Model):
     @api.multi
     def write(self, vals):
         res = super().write(vals)
-        if 'condition_id' in vals or 'model' in vals:
+        if 'tag_filter_condition_id' in vals or 'model' in vals:
             self.update_partner_tags()
         return res
 
-    @api.constrains('condition_id')
+    @api.constrains('tag_filter_condition_id',
+                    'tag_filter_condition_id.model_id',
+                    'tag_filter_condition_id.domain',
+                    'tag_filter_partner_field')
     def check_condition(self):
         for me in self:
-            if me.condition_id.model_id != 'res.partner':
-                model_link = self.env[me.condition_id.model_id]
-                if 'partner_id' not in model_link:
-                    raise ValueError(
-                        "The chosen model has no partner_id field")
+            if me.tag_filter_condition_id.model_id != 'res.partner':
+                model_link = self.env[me.tag_filter_condition_id.model_id]
+                if me.tag_filter_partner_field not in model_link:
+                    raise ValidationError(
+                        "The chosen model has no field %s"
+                        % me.tag_filter_partner_field
+                    )
 
     @api.multi
     def update_partner_tags(self):
         for tagger in self.filtered('smart'):
-            domain = safe_eval(tagger.condition_id.domain,
+            domain = safe_eval(tagger.tag_filter_condition_id.domain,
                                locals_dict={'datetime': datetime},
                                locals_builtins=True)
-            model = tagger.condition_id.model_id
+            model = tagger.tag_filter_condition_id.model_id
             matching_records = self.env[model].search(domain)
             if matching_records:
                 if model == 'res.partner':
                     partner_ids = matching_records.ids
                 else:
                     partner_ids = matching_records.mapped(
-                        tagger.partner_field).ids
+                        tagger.tag_filter_partner_field).ids
                 tagger.write({'partner_ids': [(6, 0, partner_ids)]})
         return True
 

@@ -50,8 +50,8 @@ class TestSmartTagger(SavepointCase):
             'active': True,
             'smart': True,
             'parent_id': False,
-            'partner_field': 'partner_id',
-            'condition_id': self.create_condition().id
+            'tag_filter_partner_field': 'partner_id',
+            'tag_filter_condition_id': self.create_condition().id
         })
 
     def test_create_tag(self):
