@@ -23,8 +23,8 @@ msgid "Contact"
 msgstr "Contacto"
 
 #. module: partner_group
-#: model:ir.model.fields,field_description:partner_group.field_res_partner_group_id
-#: model:ir.model.fields,field_description:partner_group.field_res_users_group_id
-#: model:ir.ui.view,arch_db:partner_group.view_res_partner_filter
+#: model:ir.model.fields,field_description:partner_group.field_res_partner__group_id
+#: model:ir.model.fields,field_description:partner_group.field_res_users__group_id
+#: model_terms:ir.ui.view,arch_db:partner_group.view_res_partner_filter
 msgid "Group"
 msgstr "Grupo"
