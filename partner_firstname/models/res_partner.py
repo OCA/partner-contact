@@ -137,7 +137,7 @@ class ResPartner(models.Model):
         """
         try:
             name = " ".join(name.split()) if name else name
-        except UnicodeDecodeError:
+        except (UnicodeDecodeError, TypeError):
             # with users coming from LDAP, name can be a str encoded as utf-8
             # this happens with ActiveDirectory for instance, and in that case
             # we get a UnicodeDecodeError during the automatic ASCII -> Unicode
