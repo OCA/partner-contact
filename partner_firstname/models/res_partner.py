@@ -26,6 +26,10 @@ class ResPartner(models.Model):
         inverse="_inverse_name_after_cleaning_whitespace",
         required=False,
         store=True)
+    second_lastname = fields.Char(
+        "Second Last name",
+        index=True,
+    )
 
     @api.model
     def create(self, vals):
