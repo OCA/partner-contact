@@ -54,6 +54,9 @@ class ResPartner(models.Model):
                 lambda r: r.category_id.code == category_code
             )
             if not id_numbers:
+                # As this is used as a compute method
+                # we need to assign something
+                record[field_name] = False
                 continue
             value = id_numbers[0].name
             record[field_name] = value
