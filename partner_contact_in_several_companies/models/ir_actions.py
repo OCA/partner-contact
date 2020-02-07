@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, models
@@ -13,7 +12,7 @@ class IRActionsWindow(models.Model):
         for action in actions:
             if action.get('res_model', '') == 'res.partner':
                 # By default, only show standalone contact
-                action_context = action.get('context', '{}') or '{}'
+                action_context = action.get('context', '{}')
                 if 'search_show_all_positions' not in action_context:
                     action['context'] = action_context.replace(
                         '{',
