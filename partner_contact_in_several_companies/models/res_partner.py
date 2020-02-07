@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models, _
+from odoo import api, fields, models
 from odoo.osv import expression
 
 
@@ -9,20 +8,24 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     contact_type = fields.Selection(
-        [('standalone', _('Standalone Contact')),
-         ('attached', _('Attached to existing Contact')),
+        [('standalone', 'Standalone Contact'),
+         ('attached', 'Attached to existing Contact'),
          ],
         compute='_compute_contact_type',
         store=True,
         index=True,
         default='standalone')
-    contact_id = fields.Many2one('res.partner', string='Main Contact',
-                                 domain=[('is_company', '=', False),
-                                         ('contact_type', '=', 'standalone'),
-                                         ],
-                                 )
-    other_contact_ids = fields.One2many('res.partner', 'contact_id',
-                                        string='Others Positions')
+    contact_id = fields.Many2one(
+        'res.partner',
+        string='Main Contact',
+        domain=[('is_company', '=', False),
+                ('contact_type', '=', 'standalone'),
+                ],
+    )
+    other_contact_ids = fields.One2many(
+        'res.partner', 'contact_id',
+        string='Others Positions',
+    )
 
     @api.multi
     @api.depends('contact_id')
@@ -59,8 +62,8 @@ class ResPartner(models.Model):
             )
             attached_contacts = super(ResPartner, self).search(
                 attached_contact_args)
-            args = expression.OR((
-                expression.AND(([('contact_type', '=', 'standalone')], args)),
+            args = expression.OR((expression.AND((
+                [('contact_type', '=', 'standalone')], args)),
                 [('other_contact_ids', 'in', attached_contacts.ids)],
             ))
         return super(ResPartner, self).search(args, offset=offset,
