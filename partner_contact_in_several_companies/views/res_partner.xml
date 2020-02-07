@@ -49,7 +49,7 @@
             <field name="contact_type" invisible="1"/>
         </field>
         <page name='internal_notes' position="before">
-            <page string="Other Positions" attrs="{'invisible': ['|',('is_company','=',True),('contact_id','!=',False)]}">
+            <page name="other_position" string="Other Positions" attrs="{'invisible': ['|',('is_company','=',True),('contact_id','!=',False)]}">
                 <field name="other_contact_ids" context="{'default_contact_id': active_id, 'default_name': name, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_supplier': supplier}" mode="kanban">
                     <kanban create="false">
                         <field name="color"/>
