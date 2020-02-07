@@ -74,6 +74,7 @@ Contributors
 * Richard deMeester <richard@willowit.com.au>
 * Nicolas JEUDY <https://github.com/njeudy>
 * Franco Tampieri <franco@tampieri.info>
+* Rattapong Chokmasermkul <rattapongc@ecosoft.co.th>
 
 Maintainer
 ----------
