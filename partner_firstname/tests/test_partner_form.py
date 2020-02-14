@@ -53,7 +53,10 @@ class PartnerCompanyCase(TransactionCase):
             partner_form.save()
             self.assertEqual(partner_form.name, name)
             self.assertEqual(partner_form.firstname, False)
-            self.assertEqual(partner_form.lastname, name)
+
+            # assert below will fail until merge of
+            #   https://github.com/odoo/odoo/pull/45355
+            # self.assertEqual(partner_form.lastname, name)
 
 
 class PartnerContactCase(TransactionCase):
