@@ -1,4 +1,7 @@
 * Ismael Calvo <ismael.calvo@es.gt.com>
-* Vicent Cubells <vicent.cubells@tecnativa.com>
 * Michael Michot <michotm@gmail.com>
 * Koen Loodts <koen.loodts@dynapps.be>
+
+* `Tecnativa <https://www.tecnativa.com>`__:
+    * Vicent Cubells <vicent.cubells@tecnativa.com>
+    * Manuel Calero - Tecnativa
