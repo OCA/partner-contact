@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:35
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid ""
 "\n"
@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:70
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid "%s is not a valid %s identifier"
 msgstr ""
@@ -90,7 +90,7 @@ msgid "Display Name"
 msgstr "Mostrar Nome"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:66
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid ""
 "Error when evaluating the id_category validation code::\n"
@@ -108,7 +108,7 @@ msgstr ""
 "habilitação, 21/10/2019"
 
 #. module: partner_identification
-#: selection:res.partner.id_number,status:0
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
 msgid "Expired"
 msgstr ""
 
@@ -185,7 +185,7 @@ msgid "Name of this ID type. For example, 'Driver License'"
 msgstr ""
 
 #. module: partner_identification
-#: selection:res.partner.id_number,status:0
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
 msgid "New"
 msgstr "Novo"
 
@@ -246,7 +246,7 @@ msgid "Python validation code"
 msgstr "Código de validação Python"
 
 #. module: partner_identification
-#: selection:res.partner.id_number,status:0
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
 msgid "Running"
 msgstr "Executando"
 
@@ -268,7 +268,7 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner.py:128
+#: code:addons/partner_identification/models/res_partner.py:0
 #, python-format
 msgid ""
 "This %s has multiple IDs of this type (%s), so a write via the %s field is "
@@ -276,7 +276,7 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: selection:res.partner.id_number,status:0
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
 msgid "To Renew"
 msgstr "A renovar"
 
