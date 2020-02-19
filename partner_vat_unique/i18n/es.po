@@ -20,13 +20,13 @@ msgstr ""
 #. module: partner_vat_unique
 #: model:ir.model,name:partner_vat_unique.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: partner_vat_unique
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__vat
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_users__vat
 msgid "Tax ID"
-msgstr ""
+msgstr "Tax"
 
 #. module: partner_vat_unique
 #: model:ir.model.fields,help:partner_vat_unique.field_res_partner__vat
@@ -35,6 +35,8 @@ msgid ""
 "The Tax Identification Number. Complete it if the contact is subjected to "
 "government taxes. Used in some legal statements."
 msgstr ""
+"Complete el número de identificación fiscal si el contacto está sujeto "
+"a impuestos gubernamentales. Utilizado en algunas declaraciones legales"
 
 #. module: partner_vat_unique
 #: code:addons/partner_vat_unique/models/res_partner.py:29
