@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo13-addon-base_partner_sequence',
         'odoo13-addon-base_vat_sanitized',
         'odoo13-addon-partner_bank_active',
+        'odoo13-addon-partner_coc',
         'odoo13-addon-partner_company_group',
         'odoo13-addon-partner_company_type',
         'odoo13-addon-partner_contact_gender',
