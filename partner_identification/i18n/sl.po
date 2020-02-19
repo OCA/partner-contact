@@ -20,7 +20,7 @@ msgstr ""
 "%100==4 ? 2 : 3);\n"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:35
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid ""
 "\n"
@@ -38,7 +38,7 @@ msgstr ""
 "# - id_number: dostop do zapisa ID številke za validacojo"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:70
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid "%s is not a valid %s identifier"
 msgstr "%s ni veljaven %s identifikator"
@@ -95,7 +95,7 @@ msgid "Display Name"
 msgstr "Prikazni naziv"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:66
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid ""
 "Error when evaluating the id_category validation code::\n"
@@ -116,7 +116,7 @@ msgstr ""
 "dovoljenja, 21/10/2019"
 
 #. module: partner_identification
-#: selection:res.partner.id_number,status:0
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
 msgid "Expired"
 msgstr "Potekel"
 
@@ -195,7 +195,7 @@ msgid "Name of this ID type. For example, 'Driver License'"
 msgstr "Ime tega ID tipa. Na primer: 'Vozniško dovoljenje'"
 
 #. module: partner_identification
-#: selection:res.partner.id_number,status:0
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
 msgid "New"
 msgstr "Nov"
 
@@ -257,7 +257,7 @@ msgid "Python validation code"
 msgstr "Python validacijska koda"
 
 #. module: partner_identification
-#: selection:res.partner.id_number,status:0
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
 msgid "Running"
 msgstr "V teku"
 
@@ -279,7 +279,7 @@ msgid ""
 msgstr "Kraj izdaje ID. Na primer: kraj izdaje potnega lista ali vize"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner.py:128
+#: code:addons/partner_identification/models/res_partner.py:0
 #, python-format
 msgid ""
 "This %s has multiple IDs of this type (%s), so a write via the %s field is "
@@ -287,7 +287,7 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: selection:res.partner.id_number,status:0
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
 msgid "To Renew"
 msgstr "Obnoviti"
 
