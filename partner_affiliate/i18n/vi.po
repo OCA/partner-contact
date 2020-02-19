@@ -1,0 +1,70 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_affiliate
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-21 01:48+0000\n"
+"PO-Revision-Date: 2017-11-21 01:48+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Vietnamese (https://www.transifex.com/oca/teams/23907/vi/)\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: partner_affiliate
+#: model:ir.model.fields,field_description:partner_affiliate.field_res_partner__affiliate_ids
+#: model:ir.model.fields,field_description:partner_affiliate.field_res_users__affiliate_ids
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+msgid "Affiliates"
+msgstr ""
+
+#. module: partner_affiliate
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+msgid "Avatar"
+msgstr ""
+
+#. module: partner_affiliate
+#: model:ir.model,name:partner_affiliate.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_affiliate
+#: model:ir.model.fields,field_description:partner_affiliate.field_res_partner__child_ids
+#: model:ir.model.fields,field_description:partner_affiliate.field_res_users__child_ids
+msgid "Contacts"
+msgstr ""
+
+#. module: partner_affiliate
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+msgid "Delivery"
+msgstr ""
+
+#. module: partner_affiliate
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+msgid "Invoice"
+msgstr ""
+
+#. module: partner_affiliate
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+msgid "Logo"
+msgstr ""
+
+#. module: partner_affiliate
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+msgid "Mobile:"
+msgstr ""
+
+#. module: partner_affiliate
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+msgid "Phone:"
+msgstr ""
+
+#~ msgid "Partner"
+#~ msgstr "Đối tác"
