@@ -1,5 +1,6 @@
 # Copyright 2017 Grant Thornton Spain - Ismael Calvo <ismael.calvo@es.gt.com>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2020 Manuel Calero - Tecnativa
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
@@ -21,14 +22,7 @@ class ResPartner(models.Model):
             )
             if test_condition:
                 continue
-            results = self.env["res.partner"].search_count(
-                [
-                    ("parent_id", "=", False),
-                    ("vat", "=", record.vat),
-                    ("id", "!=", record.id),
-                ]
-            )
-            if results:
+            if record.same_vat_partner_id:
                 raise ValidationError(
-                    _("The VAT %s already exists in another " "partner.") % record.vat
+                    _("The VAT %s already exists in another partner.") % record.vat
                 )
