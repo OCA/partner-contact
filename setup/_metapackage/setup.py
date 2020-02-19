@@ -21,6 +21,7 @@ setuptools.setup(
         'odoo13-addon-partner_deduplicate_by_website',
         'odoo13-addon-partner_fax',
         'odoo13-addon-partner_firstname',
+        'odoo13-addon-partner_identification',
     ],
     classifiers=[
         'Programming Language :: Python',
