@@ -21,7 +21,7 @@ msgstr ""
 "X-Generator: Weblate 3.3\n"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:35
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid ""
 "\n"
@@ -39,7 +39,7 @@ msgstr ""
 "#  - id_number: browse_record del numero documento da validare"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:70
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid "%s is not a valid %s identifier"
 msgstr "%s non è un identificatore %s valido"
@@ -100,7 +100,7 @@ msgid "Display Name"
 msgstr "Nome visualizzato"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:66
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid ""
 "Error when evaluating the id_category validation code::\n"
@@ -121,7 +121,7 @@ msgstr ""
 "patente di guida, 21/10/2019"
 
 #. module: partner_identification
-#: selection:res.partner.id_number,status:0
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
 msgid "Expired"
 msgstr "Scaduto"
 
@@ -202,7 +202,7 @@ msgid "Name of this ID type. For example, 'Driver License'"
 msgstr "Nome del tipo di documento. Per esempio, \"Patente di guida\""
 
 #. module: partner_identification
-#: selection:res.partner.id_number,status:0
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
 msgid "New"
 msgstr "Nuovo"
 
@@ -264,7 +264,7 @@ msgid "Python validation code"
 msgstr "Codice di validazione Python"
 
 #. module: partner_identification
-#: selection:res.partner.id_number,status:0
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
 msgid "Running"
 msgstr "Valido"
 
@@ -290,7 +290,7 @@ msgstr ""
 "e del visto"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner.py:128
+#: code:addons/partner_identification/models/res_partner.py:0
 #, python-format
 msgid ""
 "This %s has multiple IDs of this type (%s), so a write via the %s field is "
@@ -298,7 +298,7 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: selection:res.partner.id_number,status:0
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
 msgid "To Renew"
 msgstr "Da rinnovare"
 
