@@ -32,6 +32,7 @@ setuptools.setup(
         'odoo8-addon-partner_contact_nationality',
         'odoo8-addon-partner_contact_personal_information_page',
         'odoo8-addon-partner_create_by_vat',
+        'odoo8-addon-partner_default_sale_discount',
         'odoo8-addon-partner_employee_quantity',
         'odoo8-addon-partner_external_maps',
         'odoo8-addon-partner_financial_risk',
