@@ -44,6 +44,7 @@ addon | version | summary
 [partner_contact_nationality](partner_contact_nationality/) | 8.0.1.0.0 | Contact's nationality
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 8.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_create_by_vat](partner_create_by_vat/) | 8.0.1.0.0 | Using VIES webservice, name and address information will be fetched and added to the partner.
+[partner_default_sale_discount](partner_default_sale_discount/) | 8.0.1.0.0 | Default sales discount per partner
 [partner_employee_quantity](partner_employee_quantity/) | 8.0.1.0.0 | Know how many employees a partner has
 [partner_external_maps](partner_external_maps/) | 8.0.0.1.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_financial_risk](partner_financial_risk/) | 8.0.1.1.1 | Manage partner risk
