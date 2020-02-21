@@ -12,7 +12,7 @@ class Report(models.Model):
     def render(self, template, values=None):
         """ Set context key to split partner address on two line only on report
         """
-        if values is not None:
+        if values is not None and 'docs' in values:
             values['docs'] = values.get('docs').with_context(
                 _two_lines_partner_address=True
             )
