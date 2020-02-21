@@ -10,8 +10,12 @@ class ResPartner(models.Model):
 
     def _get_contact_name(self, partner, name):
         if self.env.context.get("_two_lines_partner_address"):
-            return "{}\n {}".format(
-                partner.commercial_company_name or partner.parent_id.name, name
-            )
+            parent_name = \
+                partner.commercial_company_name or partner.parent_id.name
+            if parent_name:
+                return u"{}\n {}".format(parent_name, name)
+            else:
+                return name
+
         else:
             return super(ResPartner, self)._get_contact_name(partner, name)
