@@ -33,7 +33,7 @@ addon | version | summary
 [partner_contact_department](partner_contact_department/) | 9.0.1.0.0 | Assign contacts to departments
 [partner_contact_gender](partner_contact_gender/) | 9.0.1.1.0 | Add gender field to contacts
 [partner_contact_height](partner_contact_height/) | 9.0.1.0.1 | Provide contact height.
-[partner_contact_in_several_companies](partner_contact_in_several_companies/) | 9.0.1.0.0 | Allow to have one contact in several partners
+[partner_contact_in_several_companies](partner_contact_in_several_companies/) | 9.0.1.0.1 | Allow to have one contact in several partners
 [partner_contact_job_position](partner_contact_job_position/) | 9.0.1.1.0 | Categorize job positions for contacts
 [partner_contact_lang](partner_contact_lang/) | 9.0.1.0.0 | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 9.0.1.0.0 | Add nationality field to contacts
