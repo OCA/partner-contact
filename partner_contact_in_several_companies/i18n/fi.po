@@ -146,6 +146,11 @@ msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "at"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "e.g. Mr."
 msgstr ""
 
