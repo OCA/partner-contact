@@ -24,6 +24,7 @@ setuptools.setup(
         'odoo13-addon-partner_fax',
         'odoo13-addon-partner_firstname',
         'odoo13-addon-partner_identification',
+        'odoo13-addon-partner_phone_extension',
     ],
     classifiers=[
         'Programming Language :: Python',
