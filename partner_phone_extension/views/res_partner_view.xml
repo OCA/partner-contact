@@ -2,7 +2,7 @@
 <odoo>
 
     <!-- Add phone number extension fields for partner -->
-    <record id="view_partner_simple_number_extension_form" model="ir.ui.view">
+    <record id="view_partner_simple_form" model="ir.ui.view">
         <field name="name">view.partner.simple.number.extension.form</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_simple_form"/>
@@ -13,7 +13,7 @@
         </field>
     </record>
 
-    <record id="view_partner_short_form_extension_form" model="ir.ui.view">
+    <record id="view_partner_short_form" model="ir.ui.view">
         <field name="name">view.partner.short form.extension.form</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_short_form"/>
@@ -24,7 +24,7 @@
         </field>
     </record>
 
-    <record id="view_partner_number_extension_form" model="ir.ui.view">
+    <record id="view_partner_form" model="ir.ui.view">
         <field name="name">view.partner.number.extension.form</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
