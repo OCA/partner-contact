@@ -36,7 +36,7 @@ def migrate(env, version):
         SET city_id = rc.id
         FROM res_city rc
         WHERE rc.name = rbz.city
-            AND rc.state_id = rbz.state_id
+            AND rc.state_id IS NOT DISTINCT FROM rbz.state_id
             AND rc.country_id = rbz.country_id
             AND rbz.city_id IS NULL""",
     )
