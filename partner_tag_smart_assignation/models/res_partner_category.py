@@ -33,7 +33,8 @@ class ResPartnerCategory(models.Model):
         "res.partner", 'res_partner_res_partner_category_rel',
         'category_id', 'partner_id')
 
-    number_tags = fields.Integer(compute='_compute_number_tags', stored=True)
+    tagged_partner_count = fields.Integer(
+        compute='_compute_number_tags', stored=True, oldname='number_tags')
 
     @api.model
     def create(self, vals):
@@ -128,7 +129,7 @@ class ResPartnerCategory(models.Model):
     @api.depends('partner_ids')
     def _compute_number_tags(self):
         for category in self:
-            category.number_tags = len(category.partner_ids)
+            category.tagged_partner_count = len(category.partner_ids)
 
     @api.multi
     def open_tags(self):

@@ -18,7 +18,7 @@
             <xpath expr="//group[1]" position="before">
                 <div class="oe_button_box" name="button_box">
                     <button type='object' name='open_tags' class="oe_stat_button" icon="fa-female">
-                        <field name="number_tags" readonly="1" widget="statinfo" string="Partners"/>
+                        <field name="tagged_partner_count" readonly="1" widget="statinfo" string="Partners"/>
                     </button>
                 </div>
             </xpath>
