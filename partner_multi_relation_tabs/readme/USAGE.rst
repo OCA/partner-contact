@@ -6,7 +6,7 @@ form, you will have to define the tab.
 
 Do that in Contacts / Relations / Relation Tabs.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/11.0/partner_multi_relation_tabs/static/description/partner_multi_relation_tabs-tab-configuration.png
+.. image:: ../static/description/partner_multi_relation_tabs-tab-configuration.png
 
 If you specify nothing, the tab will be shown on all partner forms that have
 tabs (page elements). Normally you will select to show the tab only on
@@ -38,7 +38,7 @@ or organisation.
 For each side of a relation, the partner contact type and the partner category
 must be consistent with those specified for the tab.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/11.0/partner_multi_relation_tabs/static/description/partner_multi_relation_tabs-relation-type-configuration.png
+.. image:: ../static/description/partner_multi_relation_tabs-relation-type-configuration.png
 
 Partner Form
 ~~~~~~~~~~~~
@@ -53,11 +53,11 @@ can be selected.
 
 Example of adding a relation:
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/11.0/partner_multi_relation_tabs/static/description/partner_multi_relation_tabs-partner-edit.png
+.. image:: ../static/description/partner_multi_relation_tabs-partner-edit.png
 
 Example of a filled out board tab:
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/11.0/partner_multi_relation_tabs/static/description/partner_multi_relation_tabs-partner-display.png
+.. image:: ../static/description/partner_multi_relation_tabs-partner-display.png
 
 Deleting tabs
 ~~~~~~~~~~~~~
@@ -75,4 +75,4 @@ to find all board members.
 
 Do that in Contacts / Relations / Relations.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/11.0/partner_multi_relation_tabs/static/description/partner_multi_relation_tabs-relation-search.png
+.. image:: ../static/description/partner_multi_relation_tabs-relation-search.png
