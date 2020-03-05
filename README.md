@@ -37,6 +37,7 @@ addon | version | summary
 [partner_capital](partner_capital/) | 10.0.1.0.0 | Partners Capital
 [partner_changeset](partner_changeset/) | 10.0.1.0.1 | Partner Changesets
 [partner_coc](partner_coc/) | 10.0.1.0.0 | Adds a field 'Chamber Of Commerce Registration Number' to partner
+[partner_commercial_name](partner_commercial_name/) | 10.0.1.0.0 | Adds a commercial name to partner
 [partner_company_type](partner_company_type/) | 10.0.1.0.1 | Adds a company type to partner that are companies
 [partner_contact_birthdate](partner_contact_birthdate/) | 10.0.1.1.0 | Contact's birthdate
 [partner_contact_birthplace](partner_contact_birthplace/) | 10.0.1.0.0 | This module allows to define a birthplace for partners.
@@ -68,6 +69,7 @@ addon | version | summary
 [partner_multi_relation_tabs](partner_multi_relation_tabs/) | 10.0.1.0.0 | Show partner relations in own tab
 [partner_noncommercial](partner_noncommercial/) | 10.0.1.0.0 | Partner Non Commercial
 [partner_noncommercial_multi_relation](partner_noncommercial_multi_relation/) | 10.0.1.0.0 | Partner Non Commercial Multi Relation
+[partner_other_names](partner_other_names/) | 10.0.1.0.0 | Have split first and other names
 [partner_password_reset](partner_password_reset/) | 10.0.1.0.0 | Add Wizard to allow resetting of a Partner's associated user password from within the partner view.
 [partner_phone_extension](partner_phone_extension/) | 10.0.1.0.0 | Partner Phone Number Extension
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 10.0.1.0.0 | Track the time and days your partners expect phone calls
