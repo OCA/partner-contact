@@ -32,6 +32,7 @@ setuptools.setup(
         'odoo12-addon-partner_deduplicate_by_ref',
         'odoo12-addon-partner_deduplicate_by_website',
         'odoo12-addon-partner_deduplicate_filter',
+        'odoo12-addon-partner_default_sale_discount',
         'odoo12-addon-partner_disable_gravatar',
         'odoo12-addon-partner_employee_quantity',
         'odoo12-addon-partner_external_map',
