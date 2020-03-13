@@ -4,7 +4,7 @@
 
 {
     'name': 'Location management (aka Better ZIP)',
-    'version': '12.0.1.0.2',
+    'version': '12.0.1.0.3',
     'depends': [
         'base_address_city',
         'contacts',
