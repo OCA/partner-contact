@@ -30,8 +30,8 @@ msgid ""
 "Check this box to ensure every address created in that country has a 'City' "
 "chosen in the list of the country's cities."
 msgstr ""
-"Marca aquesta opció per assegurar-te que cada adreça creada al país té una \""
-"ciutat\" escollida de la llista de ciutats de país."
+"Marca aquesta opció per assegurar-te que cada adreça creada al país té una "
+"\"ciutat\" escollida de la llista de ciutats de país."
 
 #. module: base_location
 #: model:ir.actions.act_window,name:base_location.action_res_city_full
@@ -147,19 +147,19 @@ msgid "Search zip"
 msgstr "Cercar codi postal"
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:71
+#: code:addons/base_location/models/res_partner.py:86
 #, python-format
 msgid "The city of partner %s differs from that in location %s"
 msgstr "La ciutat del contacte %s difereix de la localització %s"
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:67
+#: code:addons/base_location/models/res_partner.py:82
 #, python-format
 msgid "The country of the partner %s differs from that in location %s"
 msgstr "El país del client %s difereix del que es troba a la ubicació %s"
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:63
+#: code:addons/base_location/models/res_partner.py:78
 #, python-format
 msgid "The state of the partner %s differs from that in location %s"
 msgstr "L’estat del soci %s difereix del que es troba a la ubicació %s"

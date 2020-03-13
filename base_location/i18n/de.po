@@ -144,19 +144,19 @@ msgid "Search zip"
 msgstr "Suche Stadt"
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:71
+#: code:addons/base_location/models/res_partner.py:86
 #, python-format
 msgid "The city of partner %s differs from that in location %s"
 msgstr "Die Stadt des Partners %s weicht von der des Standorts %s ab"
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:67
+#: code:addons/base_location/models/res_partner.py:82
 #, python-format
 msgid "The country of the partner %s differs from that in location %s"
 msgstr "Das Land des Partners %s unterscheidet sich vom dem des Standorts %s"
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:63
+#: code:addons/base_location/models/res_partner.py:78
 #, python-format
 msgid "The state of the partner %s differs from that in location %s"
 msgstr ""
