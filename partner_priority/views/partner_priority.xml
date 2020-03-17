@@ -1,19 +1,17 @@
 <!-- Copyright 2019 Patrick Wilson <patrickraymondwilson@gmail.com>
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
-
 <odoo>
     <record id="partner_priority_view_list" model="ir.ui.view">
         <field name="name">Priority List</field>
         <field name="model">partner.priority</field>
         <field name="arch" type="xml">
             <tree string="Priority">
-                <field name="sequence" widget="handle"/>
-                <field name="name"/>
-                <field name="description"/>
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="description" />
             </tree>
         </field>
     </record>
-
     <record id="partner_priority_view_form" model="ir.ui.view">
         <field name="name">Priority Form</field>
         <field name="model">partner.priority</field>
@@ -22,26 +20,27 @@
                 <sheet>
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only" string="Name" />
-                        <h1><field name="name" /></h1>
+                        <h1>
+                            <field name="name" />
+                        </h1>
                     </div>
                     <group>
-                        <field name="description"/>
+                        <field name="description" />
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
-
     <record id="partner_priority_action" model="ir.actions.act_window">
         <field name="name">Priority Action</field>
         <field name="res_model">partner.priority</field>
         <field name="view_mode">tree,form</field>
     </record>
-
     <menuitem
         name="Priorities"
         id="res_partner_priority_menu"
         parent="contacts.res_partner_menu_config"
         action="partner_priority_action"
-        sequence="101"/>
+        sequence="101"
+    />
 </odoo>
