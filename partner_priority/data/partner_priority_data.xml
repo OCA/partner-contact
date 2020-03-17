@@ -11,7 +11,7 @@
         <field name="description">Normal Priority</field>
         <field name="sequence">3</field>
     </record>
-    <record id="res_partner_priority_elavated" model="partner.priority">
+    <record id="res_partner_priority_elevated" model="partner.priority">
         <field name="name">Elevated</field>
         <field name="description">Elevated Priority</field>
         <field name="sequence">5</field>
