@@ -1,6 +1,5 @@
 <!-- Copyright 2019 Patrick Wilson <patrickraymondwilson@gmail.com>
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
-
 <odoo noupdate="1">
     <record id="res_partner_priority_low" model="partner.priority">
         <field name="name">Low</field>
