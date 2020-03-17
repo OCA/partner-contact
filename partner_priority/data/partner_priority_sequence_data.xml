@@ -1,6 +1,5 @@
 <!-- Copyright 2019 Patrick Wilson <patrickraymondwilson@gmail.com>
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
-
 <odoo noupdate="1">
     <record id="partner_priority_seq" model="ir.sequence">
         <field name="name">Priority Sequence</field>

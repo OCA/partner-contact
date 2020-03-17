@@ -1,28 +1,30 @@
 <!-- Copyright 2019 Patrick Wilson <patrickraymondwilson@gmail.com>
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
-
 <odoo>
     <record id="view_partner_form" model="ir.ui.view">
         <field name="name">partner.priority.form</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <field name="category_id" position="after">
-                <field name="priority_id"
-                       options="{'no_create': True, 'no_open': True}"/>
+                <field
+                    name="priority_id"
+                    options="{'no_create': True, 'no_open': True}"
+                />
             </field>
         </field>
     </record>
-
     <record id="view_res_partner_filter" model="ir.ui.view">
         <field name="name">partner.priority.filter</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
         <field name="arch" type="xml">
             <filter name="group_country" position="after">
-              <filter name="group_priority"
-                      string="Priority"
-                      context="{'group_by': 'priority_id'}"/>
+                <filter
+                    name="group_priority"
+                    string="Priority"
+                    context="{'group_by': 'priority_id'}"
+                />
             </filter>
         </field>
     </record>
