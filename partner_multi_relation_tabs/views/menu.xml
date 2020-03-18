@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        <act_window
+            id="action_res_partner_tab"
+            res_model="res.partner.tab"
+            view_mode="tree,form"
+            name="Relation Tabs"
+        />
+
+        <menuitem
+            id="menu_res_partner_tab"
+            parent="partner_multi_relation.menu_res_partner_relation"
+            action="action_res_partner_tab"
+            sequence="80"
+        />
+
+</odoo>
