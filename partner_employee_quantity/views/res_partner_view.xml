@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <record model="ir.ui.view" id="view_partner_form_employees">
+    <record id="view_partner_form" model="ir.ui.view">
         <field name="name">Partner form with employees</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
@@ -19,7 +19,7 @@
             </page>
         </field>
     </record>
-    <record model="ir.ui.view" id="view_res_partner_filter_employees">
+    <record id="view_res_partner_filter" model="ir.ui.view">
         <field name="name">Partner search with employees</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_res_partner_filter" />
