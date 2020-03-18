@@ -42,12 +42,12 @@ msgstr "Vis navn"
 #. module: partner_employee_quantity
 #: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner__employee_quantity
 #: model:ir.model.fields,field_description:partner_employee_quantity.field_res_users__employee_quantity
-#: model_terms:ir.ui.view,arch_db:partner_employee_quantity.view_res_partner_filter_employees
+#: model_terms:ir.ui.view,arch_db:partner_employee_quantity.view_res_partner_filter
 msgid "Employee Quantity"
 msgstr ""
 
 #. module: partner_employee_quantity
-#: model_terms:ir.ui.view,arch_db:partner_employee_quantity.view_partner_form_employees
+#: model_terms:ir.ui.view,arch_db:partner_employee_quantity.view_partner_form
 msgid "Employee quantity"
 msgstr ""
 
