@@ -12,12 +12,12 @@ from odoo import api, models
 class ResUsers(models.Model):
     _inherit = 'res.users'
 
-    @api.onchange("firstname", "othernames", "lastname", "lastname2")
+    @api.onchange("firstname", "middlename", "lastname", "lastname2")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
         for partner in self:
             partner.name = partner.partner_id._get_computed_name(
                 partner.firstname,
-                partner.othernames,
+                partner.middlename,
                 partner.lastname,
                 partner.lastname2)

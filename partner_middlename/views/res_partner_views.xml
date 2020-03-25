@@ -9,17 +9,17 @@
 
             <xpath expr="//field[@name='lastname']" position="before">
                 <field name="firstname"
-                    attrs="{'required': ['|', '|', ('lastname', '!=', False), ('lastname2', '!=', False), ('lastname', '=', False), ('lastname2', '=', False), ('othernames', '=', False), ('is_company', '=', False)]}"/>
-                <field name="othernames"
+                    attrs="{'required': ['|', '|', ('lastname', '!=', False), ('lastname2', '!=', False), ('lastname', '=', False), ('lastname2', '=', False), ('middlename', '=', False), ('is_company', '=', False)]}"/>
+                <field name="middlename"
                     attrs="{'required': ['|', '|', ('lastname', '!=', False), ('lastname2', '!=', False), ('lastname', '=', False), ('lastname2', '=', False), ('firstname', '=', False), ('is_company', '=', False)]}"/>
             </xpath>
 
             <xpath expr="//field[@name='lastname']" position="attributes">
-                <attribute name="attrs">{'required': ['|', '|', ('firstname', '!=', False), ('othernames', '!=', False), ('firstname', '=', False), ('othernames', '=', False), ('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
+                <attribute name="attrs">{'required': ['|', '|', ('firstname', '!=', False), ('middlename', '!=', False), ('firstname', '=', False), ('middlename', '=', False), ('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
             </xpath>
 
             <xpath expr="//field[@name='lastname2']" position="attributes">
-                <attribute name="attrs">{'required': ['|', '|', ('firstname', '!=', False), ('othernames', '!=', False), ('firstname', '=', False), ('othernames', '=', False), ('lastname', '=', False), ('is_company', '=', False)]}</attribute>
+                <attribute name="attrs">{'required': ['|', '|', ('firstname', '!=', False), ('middlename', '!=', False), ('firstname', '=', False), ('middlename', '=', False), ('lastname', '=', False), ('is_company', '=', False)]}</attribute>
             </xpath>
         </field>
     </record>
@@ -34,8 +34,8 @@
 
             <xpath expr="//field[@name='lastname']" position="before">
                  <field name="firstname"
-                    attrs="{'required': [('othernames', '=', False), ('is_company', '=', False)]}"/>
-                <field name="othernames"
+                    attrs="{'required': [('middlename', '=', False), ('is_company', '=', False)]}"/>
+                <field name="middlename"
                     attrs="{'required': [('firstname', '=', False), ('is_company', '=', False)]}"/>
             </xpath>
 
@@ -52,8 +52,8 @@
 
             <xpath expr="//field[@name='child_ids']/form//field[@name='lastname']" position="before">
                 <field name="firstname"
-                    attrs="{'required': [('othernames', '=', False), ('is_company', '=', False)]}"/>
-                <field name="othernames"
+                    attrs="{'required': [('middlename', '=', False), ('is_company', '=', False)]}"/>
+                <field name="middlename"
                     attrs="{'required': [('firstname', '=', False), ('is_company', '=', False)]}"/>
             </xpath>
 
