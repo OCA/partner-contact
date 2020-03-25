@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <menuitem id='root_menu_tools' name='Tools' parent='contacts.menu_contacts' sequence="3"/>
+    <menuitem id='partner_merge_automatic_menu'
+            action='base.action_partner_deduplicate'
+            groups='base.group_system'
+            parent='root_menu_tools' />
+    <record id="contacts.res_partner_menu_config" model="ir.ui.menu">
+        <field name="sequence">4</field>
+    </record>
+
+</odoo>
