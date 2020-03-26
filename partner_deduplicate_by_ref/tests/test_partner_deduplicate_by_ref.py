@@ -1,4 +1,5 @@
 # Copyright 2017 Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2020 Manuel Calero - Tecnativa
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests import common
@@ -9,15 +10,15 @@ class TestDeduplicateByRef(common.TransactionCase):
     def setUp(self):
         super().setUp()
         self.partner_1 = self.env["res.partner"].create(
-            {"name": "Partner 1", "ref": "123456", "email": "test@deduplicate.com",}
+            {"name": "Partner 1", "ref": "123456", "email": "test@deduplicate.com"}
         )
         self.partner_2 = self.env["res.partner"].create(
-            {"name": "Partner 2", "ref": "123456", "email": "test@deduplicate.com",}
+            {"name": "Partner 2", "ref": "123456", "email": "test@deduplicate.com"}
         )
 
     def test_deduplicate_by_ref(self):
         wizard = self.env["base.partner.merge.automatic.wizard"].create(
-            {"group_by_ref": True,}
+            {"group_by_ref": True}
         )
         wizard.action_start_manual_process()
         found_match = False
@@ -30,7 +31,7 @@ class TestDeduplicateByRef(common.TransactionCase):
 
     def test_deduplicate_by_ref_and_is_company(self):
         wizard = self.env["base.partner.merge.automatic.wizard"].create(
-            {"group_by_ref": True, "group_by_email": True,}
+            {"group_by_ref": True, "group_by_email": True}
         )
         wizard.action_start_manual_process()
         found_match = False
