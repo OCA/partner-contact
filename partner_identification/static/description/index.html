@@ -407,7 +407,7 @@ For example, we create a category ‘Driver License’:</p>
 <dd><p class="first">Optional python code called to validate ID numbers of this ID type. This functionality can be
 overridden by setting <tt class="docutils literal">id_no_validate</tt> to <tt class="docutils literal">True</tt> in the context, such as:</p>
 <pre class="code python last literal-block">
-<span class="n">partner</span><span class="o">.</span><span class="n">with_context</span><span class="p">(</span><span class="n">id_no_validate</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">({</span>
+<span class="n">partner</span><span class="o">.</span><span class="n">with_context</span><span class="p">(</span><span class="n">id_no_validate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">({</span>
    <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Bad Value'</span><span class="p">,</span>
    <span class="s1">'category_id'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="s1">'id_category_only_numerics'</span><span class="p">)</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
 <span class="p">})</span>
