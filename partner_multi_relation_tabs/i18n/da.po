@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_multi_relation_tabs
+# 	* partner_multi_relation_tabs
 #
 msgid ""
 msgstr ""
@@ -27,7 +27,7 @@ msgid "All relation types"
 msgstr "Alle relationstyper"
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab_code
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__code
 msgid "Code"
 msgstr "Kode"
 
@@ -54,12 +54,12 @@ msgid "Contact type right not compatible with right tab"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab_create_uid
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab_create_date
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__create_date
 msgid "Created on"
 msgstr ""
 
@@ -69,7 +69,7 @@ msgid "Department"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab_display_name
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgid "Functionary"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.ui.view,arch_db:partner_multi_relation_tabs.form_res_partner_tab
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation_tabs.form_res_partner_tab
 msgid "General"
 msgstr ""
 
@@ -94,32 +94,32 @@ msgid "Government committee"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab_id
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__id
 msgid "ID"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_tab_code
+#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_tab__code
 msgid "Language independent code for tab"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab___last_update
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab____last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab_write_uid
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab_write_date
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab_name
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__name
 msgid "Name"
 msgstr ""
 
@@ -152,7 +152,7 @@ msgid "Partner category right not compatible with right tab"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab_partner_ids
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__partner_ids
 msgid "Partners with this tab"
 msgstr ""
 
@@ -168,38 +168,38 @@ msgid "Relation Tabs"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.ui.view,arch_db:partner_multi_relation_tabs.form_res_partner_tab
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation_tabs.form_res_partner_tab
 msgid "Select partner type and category for tab"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.ui.view,arch_db:partner_multi_relation_tabs.form_res_partner_tab
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation_tabs.form_res_partner_tab
 msgid "Select specific partners to have this tab"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_all_tab_id
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_type_selection_tab_id
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_all__tab_id
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_type_selection__tab_id
 msgid "Show relation on tab"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_type_tab_right_id
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_type__tab_right_id
 msgid "Tab for inverse relation"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_type_tab_left_id
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_type__tab_left_id
 msgid "Tab for this relation"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_relation_type_tab_right_id
+#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_relation_type__tab_right_id
 msgid "Tab in which inverse relations will be visible on partner."
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_relation_type_tab_left_id
+#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_relation_type__tab_left_id
 msgid "Tab in which these relations will be visible on partner."
 msgstr ""
 
@@ -209,23 +209,24 @@ msgid "Tabs to add to partner"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_tab_partner_ids
-msgid "This tab will only show for certain partners.\n"
+#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_tab__partner_ids
+msgid ""
+"This tab will only show for certain partners.\n"
 "Do not combine this with selection for contact type or category."
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab_partner_category_id
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__partner_category_id
 msgid "Valid for partner category"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab_contact_type
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__contact_type
 msgid "Valid for partner type"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_tab_name
+#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_tab__name
 msgid "Will provide title for tab in user language"
 msgstr ""
 
