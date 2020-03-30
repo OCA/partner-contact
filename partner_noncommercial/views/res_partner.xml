@@ -9,7 +9,7 @@
                 <filter
                     string="All partners"
                     name="type_contact"
-                    domain="['|',('is_company','=',1),('type','=','contact')]"
+                    domain="['|', ('is_company', '=', True), ('type', '=', 'contact')]"
                     />
             </filter>
             <!-- Default type_person also contains invoice and delivery
@@ -17,7 +17,7 @@
             <filter name="type_person" position="attributes">
                 <attribute
                     name="domain"
-                    >[('is_company','=',0),('type','=','contact')]</attribute>
+                    >[('is_company', '=', False), ('type', '=', 'contact')]</attribute>
             </filter>
             <filter name="type_company" position="attributes">
                 <attribute name="string">Organisations</attribute>
