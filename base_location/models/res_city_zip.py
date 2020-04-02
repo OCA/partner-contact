@@ -14,7 +14,14 @@ class ResCityZip(models.Model):
     _rec_name = "display_name"
 
     name = fields.Char("ZIP", required=True)
-    city_id = fields.Many2one("res.city", "City", required=True)
+    city_id = fields.Many2one(
+        "res.city",
+        "City",
+        required=True,
+        auto_join=True,
+        ondelete="cascade",
+        index=True,
+    )
     display_name = fields.Char(
         compute="_compute_new_display_name", store=True, index=True
     )
