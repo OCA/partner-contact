@@ -4,7 +4,7 @@
 # Copyright 2017 Eficent Business and IT Consulting Services, S.L.
 #                <contact@eficent.com>
 # Copyright 2018 Aitor Bouzas <aitor.bouzas@adaptivecity.com>
-# Copyright 2016-2019 Tecnativa - Pedro M. Baeza
+# Copyright 2016-2020 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 import csv
@@ -57,17 +57,10 @@ class CityZipGeonamesImport(models.TransientModel):
         return res
 
     @api.model
-    def _domain_search_res_city(self, row, country):
-        return [
-            ("name", "=", self.transform_city_name(row[2], country)),
-            ("country_id", "=", country.id),
-        ]
-
-    @api.model
-    def _domain_search_city_zip(self, row, res_city):
+    def _domain_search_city_zip(self, row, city_id=False):
         domain = [("name", "=", row[1])]
-        if res_city:
-            domain += [("city_id", "=", res_city.id)]
+        if city_id:
+            domain += [("city_id", "=", city_id)]
         return domain
 
     @api.model
@@ -78,16 +71,23 @@ class CityZipGeonamesImport(models.TransientModel):
         )
 
     @api.model
-    def select_city(self, row, country):
-        res_city_model = self.env["res.city"]
-        return res_city_model.search(
-            self._domain_search_res_city(row, country), limit=1
+    def select_city(self, row, country, state_id):
+        # This has to be done by SQL for performance reasons avoiding
+        # left join with ir_translation on the translatable field "name"
+        self.env.cr.execute(
+            "SELECT id, name FROM res_city "
+            "WHERE name = %s AND country_id = %s AND state_id = %s LIMIT 1",
+            (self.transform_city_name(row[2], country), country.id, state_id),
         )
+        row = self.env.cr.fetchone()
+        return (row[0], row[1]) if row else (False, False)
 
     @api.model
-    def select_zip(self, row, country):
-        city = self.select_city(row, country)
-        return self.env["res.city.zip"].search(self._domain_search_city_zip(row, city))
+    def select_zip(self, row, country, state_id):
+        city_id, _ = self.select_city(row, country, state_id)
+        return self.env["res.city.zip"].search(
+            self._domain_search_city_zip(row, city_id)
+        )
 
     @api.model
     def prepare_state(self, row, country):
@@ -168,14 +168,20 @@ class CityZipGeonamesImport(models.TransientModel):
             if max_import and i == max_import:
                 break
             state_id = state_dict[row[self.code_row_index or 4]]
-            city = self.select_city(row, self.country_id) if search_cities else False
-            if not city:
+            city_id, city_name = (
+                self.select_city(row, self.country_id, state_id)
+                if search_cities
+                else False
+            )
+            if not city_id:
                 city_vals = self.prepare_city(row, self.country_id, state_id)
                 if city_vals not in city_vals_list:
                     city_vals_list.append(city_vals)
             else:
-                city_dict[(city.name, state_id)] = city.id
-        created_cities = self.env["res.city"].create(city_vals_list)
+                city_dict[(city_name, state_id)] = city_id
+        ctx = dict(self.env.context)
+        ctx.pop("lang", None)  # make sure no translation is added
+        created_cities = self.env["res.city"].with_context(ctx).create(city_vals_list)
         for i, vals in enumerate(city_vals_list):
             city_dict[(vals["name"], vals["state_id"])] = created_cities[i].id
         return city_dict
@@ -189,27 +195,24 @@ class CityZipGeonamesImport(models.TransientModel):
         state_model = self.env["res.country.state"]
         zip_model = self.env["res.city.zip"]
         res_city_model = self.env["res.city"]
-
         # Store current record list
-        current_zips = zip_model.search(
-            [("city_id.country_id", "=", self.country_id.id)]
+        old_zips = set(
+            zip_model.search([("city_id.country_id", "=", self.country_id.id)]).ids
         )
-        search_zips = True and len(current_zips) > 0 or False
-        current_cities = res_city_model.search(
-            [("country_id", "=", self.country_id.id)]
+        search_zips = len(old_zips) > 0
+        old_cities = set(
+            res_city_model.search([("country_id", "=", self.country_id.id)]).ids
         )
-        search_cities = True and len(current_cities) > 0 or False
+        search_cities = len(old_cities) > 0
         current_states = state_model.search([("country_id", "=", self.country_id.id)])
-        search_states = True and len(current_states) > 0 or False
-
+        search_states = len(current_states) > 0
         max_import = self.env.context.get("max_import", 0)
         logger.info("Starting to create the cities and/or city zip entries")
-
+        # Pre-create states and cities
         state_dict = self._create_states(parsed_csv, search_states, max_import)
         city_dict = self._create_cities(
             parsed_csv, search_cities, max_import, state_dict
         )
-
         # Zips
         zip_vals_list = []
         for i, row in enumerate(parsed_csv):
@@ -217,44 +220,35 @@ class CityZipGeonamesImport(models.TransientModel):
                 break
             # Don't search if there aren't any records
             zip_code = False
+            state_id = state_dict[row[self.code_row_index or 4]]
             if search_zips:
-                zip_code = self.select_zip(row, self.country_id)
+                zip_code = self.select_zip(row, self.country_id, state_id)
             if not zip_code:
-                state_id = state_dict[row[self.code_row_index or 4]]
                 city_id = city_dict[
                     (self.transform_city_name(row[2], self.country_id), state_id)
                 ]
                 zip_vals = self.prepare_zip(row, city_id)
                 if zip_vals not in zip_vals_list:
                     zip_vals_list.append(zip_vals)
-
-        delete_zips = self.env["res.city.zip"].create(zip_vals_list)
-        current_zips -= delete_zips
-
+            else:
+                old_zips.remove(zip_code.id)
+        self.env["res.city.zip"].create(zip_vals_list)
         if not max_import:
-            current_zips.unlink()
-            logger.info(
-                "%d city zip entries deleted for country %s"
-                % (len(current_zips), self.country_id.name)
-            )
-
-            # Since we wrapped the entire cities
-            # creation in a function we need
-            # to perform a search with city_dict in
-            # order to know which are the new ones so
-            # we can delete the old ones
-            created_cities = res_city_model.search(
-                [
-                    ("country_id", "=", self.country_id.id),
-                    ("id", "in", list(city_dict.values())),
-                ]
-            )
-            current_cities -= created_cities
-            current_cities.unlink()
-            logger.info(
-                "%d res.city entries deleted for country %s"
-                % (len(current_cities), self.country_id.name)
-            )
+            if old_zips:
+                logger.info("removing city zip entries")
+                self.env["res.city.zip"].browse(list(old_zips)).unlink()
+                logger.info(
+                    "%d city zip entries deleted for country %s"
+                    % (len(old_zips), self.country_id.name)
+                )
+            old_cities -= set(city_dict.values())
+            if old_cities:
+                logger.info("removing city entries")
+                self.env["res.city"].browse(list(old_cities)).unlink()
+                logger.info(
+                    "%d res.city entries deleted for country %s"
+                    % (len(old_cities), self.country_id.name)
+                )
         logger.info(
             "The wizard to create cities and/or city zip entries from "
             "geonames has been successfully completed."
