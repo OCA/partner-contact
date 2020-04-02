@@ -18,7 +18,9 @@ class ResCityZip(models.Model):
         'res.city',
         'City',
         required=True,
-        auto_join=True
+        auto_join=True,
+        ondelete="cascade",
+        index=True,
     )
     display_name = fields.Char(compute='_compute_new_display_name',
                                store=True, index=True)
