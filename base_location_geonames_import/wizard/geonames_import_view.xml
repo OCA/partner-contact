@@ -15,7 +15,11 @@
                     </div>
                 </group>
                 <group name="main">
-                    <field name="country_id" />
+                    <field
+                        name="country_id"
+                        widget="many2many_tags"
+                        options="{'no_create': True}"
+                    />
                     <field name="letter_case" />
                 </group>
                 <footer>

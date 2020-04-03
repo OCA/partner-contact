@@ -1,4 +1,5 @@
 # Copyright 2016-2019 Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2020 Manuel Regidor <manuel.regidor@sygel.es>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo.exceptions import UserError
@@ -14,13 +15,18 @@ class TestBaseLocationGeonamesImport(common.SavepointCase):
             {"name": "Test city", "country_id": cls.country.id}
         )
         cls.wizard = cls.env["city.zip.geonames.import"].create(
-            {"country_id": cls.country.id}
+            {"country_id": [(6, 0, [cls.country.id])]}
         )
         cls.wrong_country = cls.env["res.country"].create(
             {"name": "Wrong country", "code": "ZZYYXX"}
         )
         cls.wrong_wizard = cls.env["city.zip.geonames.import"].create(
-            {"country_id": cls.wrong_country.id}
+            {"country_id": [(6, 0, [cls.wrong_country.id])]}
+        )
+        cls.country_2 = cls.env.ref("base.li")
+        cls.country_3 = cls.env.ref("base.sm")
+        cls.wizard_2 = cls.env["city.zip.geonames.import"].create(
+            {"country_id": [(6, 0, [cls.country_2.id, cls.country_3.id])]}
         )
 
     def test_import_country(self):
@@ -107,7 +113,7 @@ class TestBaseLocationGeonamesImport(common.SavepointCase):
 
     def test_import_duplicated_city_name(self):
         country = self.env.ref("base.us")
-        self.wizard.country_id = country.id
+        self.wizard.country_id = [(6, 0, [country.id])]
         parsed_csv = [
             [
                 "US",
@@ -146,7 +152,7 @@ class TestBaseLocationGeonamesImport(common.SavepointCase):
                 "4",
             ],
         ]
-        self.wizard._process_csv(parsed_csv)
+        self.wizard._process_csv(parsed_csv, country)
         cities = self.env["res.city"].search([("name", "=", "Auburn")])
         self.assertEqual(len(cities), 2)
         mapping = [
@@ -166,3 +172,61 @@ class TestBaseLocationGeonamesImport(common.SavepointCase):
                 state,
                 "Incorrect state for {} {}".format(state_name, zip_code),
             )
+
+    def test_import_countries(self):
+        max_import = 10
+        self.wizard_2.with_context(max_import=max_import).run_import()
+        # Look if there are imported states for the country
+
+        state_country_2_count = self.env["res.country.state"].search_count(
+            [("country_id", "=", self.country_2.id)]
+        )
+        state_country_3_count = self.env["res.country.state"].search_count(
+            [("country_id", "=", self.country_3.id)]
+        )
+        self.assertTrue(state_country_2_count)
+        self.assertTrue(state_country_3_count)
+        # Look if there are imported zips
+        zip_country_2_count = self.env["res.city.zip"].search_count(
+            [("city_id.country_id", "=", self.country_2.id)]
+        )
+        zip_country_3_count = self.env["res.city.zip"].search_count(
+            [("city_id.country_id", "=", self.country_3.id)]
+        )
+        self.assertEqual(zip_country_2_count, max_import)
+        self.assertEqual(zip_country_3_count, max_import)
+
+        # Look if there are imported cities
+        city_country_2_count = self.env["res.city"].search_count(
+            [("country_id", "=", self.country_2.id)]
+        )
+        city_country_3_count = self.env["res.city"].search_count(
+            [("country_id", "=", self.country_3.id)]
+        )
+        self.assertTrue(city_country_2_count)
+        self.assertTrue(city_country_3_count)
+
+        # Reimport again to see that there's no duplicates
+        self.wizard.with_context(max_import=max_import).run_import()
+        state_2_count2 = self.env["res.country.state"].search_count(
+            [("country_id", "=", self.country_2.id)]
+        )
+        state_3_count2 = self.env["res.country.state"].search_count(
+            [("country_id", "=", self.country_3.id)]
+        )
+        self.assertEqual(state_country_2_count, state_2_count2)
+        self.assertEqual(state_country_3_count, state_3_count2)
+
+        city_2_count2 = self.env["res.city"].search_count(
+            [("country_id", "=", self.country_2.id)]
+        )
+        city_3_count2 = self.env["res.city"].search_count(
+            [("country_id", "=", self.country_3.id)]
+        )
+        self.assertEqual(city_country_2_count, city_2_count2)
+        self.assertEqual(city_country_3_count, city_3_count2)
+
+        zip_count = self.env["res.city.zip"].search_count(
+            [("city_id.country_id", "in", (self.country_2.id, self.country_3.id))]
+        )
+        self.assertEqual(zip_count, 20)
