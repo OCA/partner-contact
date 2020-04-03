@@ -78,8 +78,8 @@ class CityZipGeonamesImport(models.TransientModel):
             "SELECT id, name FROM res_city "
             "WHERE name = %s AND country_id = %s AND state_id = %s LIMIT 1",
             (self.transform_city_name(row[2], country), country.id, state_id))
-        row = self.env.cr.fetchone()
-        return (row[0], row[1]) if row else (False, False)
+        row_city = self.env.cr.fetchone()
+        return (row_city[0], row_city[1]) if row_city else (False, False)
 
     @api.model
     def select_zip(self, row, country, state_id):
@@ -169,8 +169,9 @@ class CityZipGeonamesImport(models.TransientModel):
             if max_import and i == max_import:
                 break
             state_id = state_dict[row[self.code_row_index or 4]]
-            city_id, city_name = self.select_city(
-                row, self.country_id, state_id) if search_cities else False
+            city_id, city_name = (
+                self.select_city(row, self.country_id, state_id)
+                if search_cities else (False, False))
             if not city_id:
                 city_vals = self.prepare_city(
                     row, self.country_id, state_id)
