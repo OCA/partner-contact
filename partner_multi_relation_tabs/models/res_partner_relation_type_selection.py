@@ -30,6 +30,6 @@ class ResPartnerRelationTypeSelection(models.Model):
             super(ResPartnerRelationTypeSelection, self)
             ._get_additional_tables(),
             "LEFT OUTER JOIN res_partner_tab lefttab"
-            " ON typ.tab_left_id = lefttab.id",
+            " ON typ.tab_id_left = lefttab.id",
             "LEFT OUTER JOIN res_partner_tab righttab"
-            " ON typ.tab_right_id = righttab.id"])
+            " ON typ.tab_id_right = righttab.id"])

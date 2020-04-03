@@ -58,26 +58,26 @@ class TestPartnerTabs(common.TestCommon):
             'name_inverse': 'is chairperson for',
             'contact_type_left': 'p',  # This emulates a user mistake.
             'contact_type_right': 'p',
-            'tab_left_id': tab_executive.id})
+            'tab_id_left': tab_executive.id})
         self.assertTrue(bool(type_chairperson))
         # If we change tab now to be only valid on company partners
-        # the tab_left_id field should be cleared from the type:
+        # the tab_id_left field should be cleared from the type:
         tab_executive.write({'contact_type': 'c'})
-        self.assertFalse(type_chairperson.tab_left_id.id)
+        self.assertFalse(type_chairperson.tab_id_left.id)
         # Trying to set the tab back on type should be impossible:
         with self.assertRaises(ValidationError):
-            type_chairperson.write({'tab_left_id': tab_executive.id})
+            type_chairperson.write({'tab_id_left': tab_executive.id})
         # We should be able to change tab, if also changing contact type.
         type_chairperson.write({
             'contact_type_left': 'c',
-            'tab_left_id': tab_executive.id})
+            'tab_id_left': tab_executive.id})
         self.assertEqual(
-            type_chairperson.tab_left_id.id,
+            type_chairperson.tab_id_left.id,
             tab_executive.id)
-        # Unlinking the tab should reset the tab_left_id on relation type.
+        # Unlinking the tab should reset the tab_id_left on relation type.
         tab_executive.unlink()
         self.assertEqual(
-            type_chairperson.tab_left_id.id,
+            type_chairperson.tab_id_left.id,
             False)
         # It should not be possible to add category or contact type to as
         # selection criteria to a tab meant for specific partners.

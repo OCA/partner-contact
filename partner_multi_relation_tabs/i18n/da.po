@@ -184,22 +184,22 @@ msgid "Show relation on tab"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_type__tab_right_id
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_type__tab_id_right
 msgid "Tab for inverse relation"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_type__tab_left_id
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_type__tab_id_left
 msgid "Tab for this relation"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_relation_type__tab_right_id
+#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_relation_type__tab_id_right
 msgid "Tab in which inverse relations will be visible on partner."
 msgstr ""
 
 #. module: partner_multi_relation_tabs
-#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_relation_type__tab_left_id
+#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_relation_type__tab_id_left
 msgid "Tab in which these relations will be visible on partner."
 msgstr ""
 
