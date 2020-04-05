@@ -10,16 +10,11 @@ class TestPartnerContactLang(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
         super(TestPartnerContactLang, cls).setUpClass()
-        cls.ResPartner = cls.env['res.partner']
-        cls.partner = cls.ResPartner.create({
-            'name': 'Partner test',
-            'lang': 'en_US',
-        })
-        cls.contact = cls.ResPartner.create({
-            'name': 'Contact test',
-            'lang': False,
-            'parent_id': cls.partner.id,
-        })
+        cls.ResPartner = cls.env["res.partner"]
+        cls.partner = cls.ResPartner.create({"name": "Partner test", "lang": "en_US",})
+        cls.contact = cls.ResPartner.create(
+            {"name": "Contact test", "lang": False, "parent_id": cls.partner.id,}
+        )
 
     def test_onchange_parent_id(self):
         self.contact.parent_id = False
@@ -27,12 +22,12 @@ class TestPartnerContactLang(common.SavepointCase):
         self.assertIsNone(res)
         self.contact.parent_id = self.partner
         res = self.contact.onchange_parent_id()
-        self.assertEqual(res.get('value', {}).get('lang'), 'en_US')
+        self.assertEqual(res.get("value", {}).get("lang"), "en_US")
 
     def test_write_parent_lang(self):
         """First empty the field for filling it again afterwards to see if
         the contact gets the same value.
         """
         self.partner.lang = False
-        self.partner.lang = 'en_US'
-        self.assertEqual(self.contact.lang, 'en_US')
+        self.partner.lang = "en_US"
+        self.assertEqual(self.contact.lang, "en_US")
