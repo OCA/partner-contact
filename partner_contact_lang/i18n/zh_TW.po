@@ -24,5 +24,10 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#. module: partner_contact_lang
+#: model_terms:ir.ui.view,arch_db:partner_contact_lang.view_res_partner_filter
+msgid "Language"
+msgstr ""
+
 #~ msgid "Partner"
 #~ msgstr "夥伴"
