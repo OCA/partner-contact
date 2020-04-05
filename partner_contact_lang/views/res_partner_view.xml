@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Copyright 2020 Pesol <pedro.gonzalez@pesol.es>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">view.partner.address.form.extension</field>
+        <field name="model">res.partner</field>
+        <field name="priority">100</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//field[@name='child_ids']/form/sheet/field[@name='lang']"
+                position="replace"
+            >
+                <field name="active_lang_count" invisible="1" />
+                <group attrs="{'invisible': [('active_lang_count', '&lt;=', 1)]}">
+                    <group>
+                        <field name="lang" />
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">res.partner.filter.extension</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="lang" />
+            </xpath>
+            <xpath expr="//group[@name='group_by']" position="inside">
+                <filter
+                    name="language"
+                    string="Language"
+                    context="{'group_by' : 'lang'}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
