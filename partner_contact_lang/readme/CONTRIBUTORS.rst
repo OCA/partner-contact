@@ -4,3 +4,4 @@
   * Vicent Cubells
   * David Vidal
   * Cristina Martín
+  * Pedro Evaristo Gonzalez Sanchez <pedro.gonzalez@pesol.es>

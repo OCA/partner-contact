@@ -8,3 +8,6 @@ contact language management:
 language and this parent company is assigned.
 #. When the company changes the language, it fills with the same language all
 the contacts that don't have any.
+#. Show the language in the inner narrowed Contact form and
+set the new conctact with a different language if needed.
+#. Search and also group contacts by their language.
