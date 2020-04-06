@@ -23,7 +23,7 @@ Base Location Geonames Import
     :target: https://runbot.odoo-community.org/runbot/134/13.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5| 
+|badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module adds a wizard to import cities and/or city zip entries from
 `Geonames <http://www.geonames.org/>`_ database.
@@ -83,6 +83,7 @@ Authors
 * Agile Business Group
 * Tecnativa
 * AdaptiveCity
+* Sygel
 
 Contributors
 ~~~~~~~~~~~~
@@ -94,6 +95,7 @@ Contributors
 * Jordi Ballester <jordi.ballester@eficent.com>
 * Franco Tampieri <franco@tampieri.info>
 * Aitor Bouzas <aitor.bouzas@adaptivecity.com>
+* Manuel Regidor <manuel.regidor@sygel.es>
 
 Maintainers
 ~~~~~~~~~~~
