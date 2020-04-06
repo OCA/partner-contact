@@ -156,9 +156,7 @@ class CityZipGeonamesImport(models.TransientModel):
             state_dict[vals["code"]] = created_states[i].id
         return state_dict
 
-    def _create_cities(
-        self, parsed_csv, search_cities, max_import, state_dict, country
-    ):
+    def _create_cities(self, parsed_csv, search_cities, max_import, state_dict, country):
         # Cities
         city_vals_list = []
         city_dict = {}
@@ -191,9 +189,13 @@ class CityZipGeonamesImport(models.TransientModel):
         res_city_model = self.env["res.city"]
 
         # Store current record list
-        current_zips = zip_model.search([("city_id.country_id", "=", country.id)])
+        current_zips = zip_model.search(
+            [("city_id.country_id", "=", country.id)]
+        )
         search_zips = True and len(current_zips) > 0 or False
-        current_cities = res_city_model.search([("country_id", "=", country.id)])
+        current_cities = res_city_model.search(
+            [("country_id", "=", country.id)]
+        )
         search_cities = True and len(current_cities) > 0 or False
         current_states = state_model.search([("country_id", "=", country.id)])
         search_states = True and len(current_states) > 0 or False
