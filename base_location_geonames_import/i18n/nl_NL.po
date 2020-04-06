@@ -40,6 +40,12 @@ msgid ""
 msgstr ""
 
 #. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__country_ids
+#, fuzzy
+msgid "Countries"
+msgstr "Land"
+
+#. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_res_country
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__country_id
 msgid "Country"
@@ -68,13 +74,11 @@ msgid ""
 msgstr ""
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__code_row_index
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_code_column
 msgid "Geonames State Code Column"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__name_row_index
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_name_column
 msgid "Geonames State Name Column"
 msgstr ""
