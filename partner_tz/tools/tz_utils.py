@@ -51,8 +51,8 @@ def tz_to_tz_time(from_tz, to_tz, time, base_date=None):
 
 
 def tz_to_utc_time(from_tz, time, base_date=None):
-    return tz_to_tz_time(from_tz, UTC_TZ, time)
+    return tz_to_tz_time(from_tz, UTC_TZ, time, base_date=base_date)
 
 
 def utc_to_tz_time(to_tz, time, base_date=None):
-    return tz_to_tz_time(UTC_TZ, to_tz, time)
+    return tz_to_tz_time(UTC_TZ, to_tz, time, base_date=base_date)
