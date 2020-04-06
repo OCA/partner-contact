@@ -58,7 +58,6 @@ class ResPartnerRelationType(models.Model):
                 raise ValidationError(_(
                     "Partner category right not compatible with right tab"))
 
-
     @api.multi
     def _update_right_vals(self, vals):
         """Make sure that on symmetric relations, right vals follow left vals.
