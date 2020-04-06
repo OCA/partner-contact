@@ -75,8 +75,8 @@ class CityZipGeonamesImport(models.TransientModel):
             "WHERE name = %s AND country_id = %s AND state_id = %s LIMIT 1",
             (self.transform_city_name(row[2], country), country.id, state_id),
         )
-        row = self.env.cr.fetchone()
-        return (row[0], row[1]) if row else (False, False)
+        row_city = self.env.cr.fetchone()
+        return (row_city[0], row_city[1]) if row_city else (False, False)
 
     @api.model
     def select_zip(self, row, country, state_id):
