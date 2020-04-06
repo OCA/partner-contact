@@ -5,3 +5,4 @@
 * Jordi Ballester <jordi.ballester@eficent.com>
 * Franco Tampieri <franco@tampieri.info>
 * Aitor Bouzas <aitor.bouzas@adaptivecity.com>
+* Manuel Regidor <manuel.regidor@sygel.es>
