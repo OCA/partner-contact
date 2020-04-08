@@ -6,7 +6,7 @@
 {
     "name": "Partner Industry Secondary",
     "summary": "Add secondary partner industries",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.0.1",
     "category": "Sales",
     "website": "https://github.com/OCA/partner-contact",
     "author": "Tecnativa, Odoo Community Association (OCA)",
