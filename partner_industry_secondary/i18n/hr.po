@@ -17,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.8\n"
 
 #. module: partner_industry_secondary
@@ -106,7 +106,7 @@ msgid "Set if you want to be able to use industries for individuals also."
 msgstr ""
 
 #. module: partner_industry_secondary
-#: code:addons/partner_industry_secondary/models/res_partner.py:22
+#: code:addons/partner_industry_secondary/models/res_partner.py:23
 #, fuzzy, python-format
 msgid "The main industry must be different from the secondary industries."
 msgstr "Glavni sektor mora biti različit od sekundarnih sektora"
