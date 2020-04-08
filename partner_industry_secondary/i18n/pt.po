@@ -106,7 +106,7 @@ msgid "Set if you want to be able to use industries for individuals also."
 msgstr ""
 
 #. module: partner_industry_secondary
-#: code:addons/partner_industry_secondary/models/res_partner.py:22
+#: code:addons/partner_industry_secondary/models/res_partner.py:23
 #, python-format
 msgid "The main industry must be different from the secondary industries."
 msgstr ""
