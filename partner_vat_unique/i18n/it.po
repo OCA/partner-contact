@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-08-09 19:44+0000\n"
-"Last-Translator: Marco Calcagni <mcalcagni@dinamicheaziendali.it>\n"
+"PO-Revision-Date: 2020-04-09 17:19+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: partner_vat_unique
 #: model:ir.model,name:partner_vat_unique.model_res_partner
@@ -25,7 +25,7 @@ msgstr "Contatto"
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__vat
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_users__vat
 msgid "Tax ID"
-msgstr ""
+msgstr "ID Imposta"
 
 #. module: partner_vat_unique
 #: model:ir.model.fields,help:partner_vat_unique.field_res_partner__vat
@@ -34,6 +34,8 @@ msgid ""
 "The Tax Identification Number. Complete it if the contact is subjected to "
 "government taxes. Used in some legal statements."
 msgstr ""
+"Il numero di identificazione fiscale. Completalo se il contatto è soggetto a "
+"imposte governative. Utilizzato in documenti legali."
 
 #. module: partner_vat_unique
 #: code:addons/partner_vat_unique/models/res_partner.py:29
