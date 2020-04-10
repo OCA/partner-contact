@@ -9,24 +9,25 @@ from odoo.exceptions import UserError
 
 
 class TestAddressVersion(SavepointCase):
-
     @classmethod
     def setUpClass(cls):
         super(TestAddressVersion, cls).setUpClass()
-        cls.partner_vals = OrderedDict([
-            ('name', u'Name'),
-            ('street', u'Street'),
-            ('street2', u'Street2'),
-            ('zip', u'Zip'),
-            ('city', u'City'),
-            ('country_id', cls.env.ref('base.fr'))
-        ])
+        cls.partner_vals = OrderedDict(
+            [
+                ("name", u"Name"),
+                ("street", u"Street"),
+                ("street2", u"Street2"),
+                ("zip", u"Zip"),
+                ("city", u"City"),
+                ("country_id", cls.env.ref("base.fr")),
+            ]
+        )
         create_vals = cls.partner_vals.copy()
-        create_vals['country_id'] = cls.env.ref('base.fr').id
+        create_vals["country_id"] = cls.env.ref("base.fr").id
         create_vals_2 = create_vals.copy()
-        cls.partner = cls.env['res.partner'].create(create_vals)
-        cls.partner_2 = cls.env['res.partner'].create(create_vals_2)
-        cls.partner_vals.update({'parent_id': cls.partner.id})
+        cls.partner = cls.env["res.partner"].create(create_vals)
+        cls.partner_2 = cls.env["res.partner"].create(create_vals_2)
+        cls.partner_vals.update({"parent_id": cls.partner.id})
 
     def test_hash(self):
         test_hash = hashlib.md5(str(self.partner_vals)).hexdigest()
@@ -47,17 +48,16 @@ class TestAddressVersion(SavepointCase):
     def test_write_versioned_partner(self):
         new_partner = self.partner.get_address_version()
         with self.assertRaises(UserError):
-            new_partner.street = 'New street'
+            new_partner.street = "New street"
 
     def test_same_address_different_parent(self):
         new_partner = self.partner.get_address_version()
         new_partner_2 = self.partner_2.get_address_version()
         for field in self.partner.get_version_fields():
-            if field == 'parent_id':
+            if field == "parent_id":
                 continue
             self.assertEqual(new_partner[field], new_partner_2[field])
         self.assertNotEqual(new_partner.id, new_partner_2.id)
         self.assertNotEqual(
-            new_partner.version_hash,
-            new_partner_2.version_hash
+            new_partner.version_hash, new_partner_2.version_hash
         )
