@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Akretion - Benoît Guillot
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -55,7 +54,7 @@ class ResPartner(models.Model):
                 version[field] = parent_id
             elif self[field]:
                 version[field] = self[field]
-        version_hash = hashlib.md5(str(version)).hexdigest()
+        version_hash = hashlib.md5(str(version).encode("utf-8")).hexdigest()
         return version_hash
 
     @api.multi

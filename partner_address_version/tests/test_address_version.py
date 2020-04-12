@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Akretion - Benoît Guillot
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -30,7 +29,9 @@ class TestAddressVersion(SavepointCase):
         cls.partner_vals.update({"parent_id": cls.partner.id})
 
     def test_hash(self):
-        test_hash = hashlib.md5(str(self.partner_vals)).hexdigest()
+        test_hash = hashlib.md5(
+            str(self.partner_vals).encode("utf-8")
+        ).hexdigest()
         self.assertEqual(test_hash, self.partner.get_version_hash())
 
     def test_create_version_partner(self):

@@ -1,6 +1,8 @@
-This module allows to manage versions for partner addresses.
+This module allows you to manage versions for partner addresses.
 
-You can define a list of versionned fields, for instance address, country, ...
-Those fields cannot be changed once an address is versionned.
+A list of fields are defined for versioning. These are immutable once set, and force the user to create a new partner
+if they want to change one of these fields.
 
-This can be useful to know where a sale order has been delivered even after several changes on the partner addresses.
+This forces historical consistency. For example, the moment you confirm a
+sale order, you might want to lock the address of that sale order instead of having it
+change everytime that partner is modified (see e.g sale_partner_version).
