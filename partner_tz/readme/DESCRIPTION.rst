@@ -1,3 +1,2 @@
-This module removes timezone default value on res.partner and display the field
-on form view.
+This module displays the timezone field on partner form view.
 Moreover it provides a few tools function in `tools/tz_utils.py`.

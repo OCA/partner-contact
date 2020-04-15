@@ -1,10 +1,10 @@
 # Copyright 2020 Camptocamp SA
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
+from datetime import date, datetime
+
 import pytz
-from datetime import datetime, date
 
-
-UTC_TZ = pytz.timezone('UTC')
+UTC_TZ = pytz.timezone("UTC")
 
 
 def tz_to_tz_naive_datetime(from_tz, to_tz, date_time):
