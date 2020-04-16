@@ -29,36 +29,26 @@ class TestAddressVersion(SavepointCase):
         cls.partner_vals.update({"parent_id": cls.partner.id})
 
     def test_hash(self):
-        test_hash = hashlib.md5(
-            str(self.partner_vals).encode("utf-8")
-        ).hexdigest()
-        self.assertEqual(test_hash, self.partner.get_version_hash())
+        test_hash = hashlib.md5(str(self.partner_vals).encode("utf-8")).hexdigest()
+        self.assertEqual(test_hash, self.partner._version_hash())
 
     def test_create_version_partner(self):
-        new_partner = self.partner.get_address_version()
+        new_partner = self.partner._version_create()
         self.assertEqual(new_partner.active, False)
         self.assertNotEqual(new_partner.id, self.partner.id)
         self.assertEqual(new_partner.parent_id.id, self.partner.id)
 
-    def test_get_version_hash(self):
-        self.partner.version_hash = self.partner.get_version_hash()
-        self.partner.active = False
-        version_partner = self.partner.get_address_version()
-        self.assertEqual(version_partner.id, self.partner.id)
-
     def test_write_versioned_partner(self):
-        new_partner = self.partner.get_address_version()
+        new_partner = self.partner._version_create()
         with self.assertRaises(UserError):
             new_partner.street = "New street"
 
     def test_same_address_different_parent(self):
-        new_partner = self.partner.get_address_version()
-        new_partner_2 = self.partner_2.get_address_version()
-        for field in self.partner.get_version_fields():
+        new_partner = self.partner._version_create()
+        new_partner_2 = self.partner_2._version_create()
+        for field in self.partner._version_fields():
             if field == "parent_id":
                 continue
             self.assertEqual(new_partner[field], new_partner_2[field])
         self.assertNotEqual(new_partner.id, new_partner_2.id)
-        self.assertNotEqual(
-            new_partner.version_hash, new_partner_2.version_hash
-        )
+        self.assertNotEqual(new_partner.version_hash, new_partner_2.version_hash)

@@ -8,5 +8,7 @@
     "category": "CRM",
     "license": "AGPL-3",
     "installable": True,
-    "depends": ["base"],
+    "depends": [
+        "base",
+    ],
 }
