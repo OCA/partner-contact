@@ -4,7 +4,7 @@
 
 {
     'name': 'Search Partner Phone/Mobile/Email',
-    'version': '11.0.1.0.0',
+    'version': '11.0.1.0.1',
     'category': 'Extra Tools',
     'summary': 'Partner Search by Phone/Mobile/Email',
     'author': "Serpent Consulting Services Pvt. Ltd.,"
