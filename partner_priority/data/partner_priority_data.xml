@@ -1,0 +1,24 @@
+<!-- Copyright 2019 Patrick Wilson <patrickraymondwilson@gmail.com>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record id="res_partner_priority_low" model="partner.priority">
+        <field name="name">Low</field>
+        <field name="description">Low Priority</field>
+        <field name="sequence">1</field>
+    </record>
+    <record id="res_partner_priority_normal" model="partner.priority">
+        <field name="name">Normal</field>
+        <field name="description">Normal Priority</field>
+        <field name="sequence">3</field>
+    </record>
+    <record id="res_partner_priority_elevated" model="partner.priority">
+        <field name="name">Elevated</field>
+        <field name="description">Elevated Priority</field>
+        <field name="sequence">5</field>
+    </record>
+    <record id="res_partner_priority_critical" model="partner.priority">
+        <field name="name">Critical</field>
+        <field name="description">Critical Priority</field>
+        <field name="sequence">8</field>
+    </record>
+</odoo>
