@@ -22,11 +22,13 @@ setuptools.setup(
         'odoo13-addon-partner_contact_job_position',
         'odoo13-addon-partner_contact_personal_information_page',
         'odoo13-addon-partner_deduplicate_acl',
+        'odoo13-addon-partner_deduplicate_by_ref',
         'odoo13-addon-partner_deduplicate_by_website',
         'odoo13-addon-partner_fax',
         'odoo13-addon-partner_firstname',
         'odoo13-addon-partner_identification',
         'odoo13-addon-partner_phone_extension',
+        'odoo13-addon-partner_priority',
         'odoo13-addon-partner_vat_unique',
     ],
     classifiers=[
