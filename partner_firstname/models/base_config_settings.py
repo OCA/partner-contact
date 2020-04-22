@@ -29,6 +29,7 @@ class ResConfigSettings(models.TransientModel):
             ("last_first", "Lastname Firstname"),
             ("last_first_comma", "Lastname, Firstname"),
             ("first_last", "Firstname Lastname"),
+            ("title", "Title Firstname Lastname"),
         ]
 
     def _partner_names_order_default(self):

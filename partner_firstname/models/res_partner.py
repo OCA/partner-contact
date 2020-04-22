@@ -91,7 +91,7 @@ class ResPartner(models.Model):
         )
 
     @api.model
-    def _get_computed_name(self, lastname, firstname):
+    def _get_computed_name(self, title, lastname, firstname):
         """Compute the 'name' field according to splitted data.
         You can override this method to change the order of lastname and
         firstname the computed name"""
@@ -100,14 +100,16 @@ class ResPartner(models.Model):
             return ", ".join(p for p in (lastname, firstname) if p)
         elif order == "first_last":
             return " ".join(p for p in (firstname, lastname) if p)
+        elif order == "title":
+            return " ".join(p for p in (title, firstname, lastname) if p)
         else:
             return " ".join(p for p in (lastname, firstname) if p)
 
-    @api.depends("firstname", "lastname")
+    @api.depends("firstname", "lastname", "title")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
         for record in self:
-            record.name = record._get_computed_name(record.lastname, record.firstname)
+            record.name = record._get_computed_name( record.title.name, record.lastname, record.firstname)
 
     def _inverse_name_after_cleaning_whitespace(self):
         """Clean whitespace in :attr:`~.name` and split it.
@@ -168,9 +170,14 @@ class ResPartner(models.Model):
                 name, comma=(order == "last_first_comma")
             )
             parts = name.split("," if order == "last_first_comma" else " ", 1)
-            if len(parts) > 1:
+            if len(parts) > 2:
+                if order == "title":
+                    parts = [" ".join(parts[2:]), parts[1]]
+            elif len(parts) > 1:
                 if order == "first_last":
                     parts = [" ".join(parts[1:]), parts[0]]
+                elif order == "title":
+                    parts = [" ".join(parts[1:]), False]
                 else:
                     parts = [parts[0], " ".join(parts[1:])]
             else:
