@@ -175,13 +175,13 @@ class ResPartner(models.Model):
     @api.multi
     def action_view_relations(self):
         for contact in self:
-            relation_ids = self.env['res.partner.relation.all'].\
-                search(['|', ('this_partner_id', '=', contact.id),
-                       ('other_partner_id', '=', contact.id)])
-            action = self.env.\
-                ref('partner_multi_relation.action_res_partner_relation_all').\
-                read()[0]
-            action['context'] = {}
+            relation_model = self.env['res.partner.relation.all']
+            relation_ids = relation_model.search(['|', 
+                ('this_partner_id', '=', contact.id),
+                ('other_partner_id', '=', contact.id)])
+            action = self.env.ref(
+                'partner_multi_relation.action_res_partner_relation_all'
+            ).read()[0]
             action['domain'] = [('id', 'in', relation_ids.ids)]
             action['context'].\
                 update({'search_default_this_partner_id': contact.id,
