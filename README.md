@@ -39,7 +39,7 @@ addon | version | summary
 [partner_changeset](partner_changeset/) | 10.0.1.0.1 | Partner Changesets
 [partner_coc](partner_coc/) | 10.0.1.0.0 | Adds a field 'Chamber Of Commerce Registration Number' to partner
 [partner_company_type](partner_company_type/) | 10.0.1.0.1 | Adds a company type to partner that are companies
-[partner_contact_birthdate](partner_contact_birthdate/) | 10.0.1.1.0 | Contact's birthdate
+[partner_contact_birthdate](partner_contact_birthdate/) | 10.0.1.1.1 | Contact's birthdate
 [partner_contact_birthplace](partner_contact_birthplace/) | 10.0.1.0.0 | This module allows to define a birthplace for partners.
 [partner_contact_configuration](partner_contact_configuration/) | 10.0.1.0.0 | Adds menu configuration access through the 'contacts' module main menu
 [partner_contact_department](partner_contact_department/) | 10.0.1.0.0 | Assign contacts to departments
