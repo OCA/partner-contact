@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * base_continent
-# 
+#
 # Translators:
 # danimaribeiro <danimaribeiro@gmail.com>, 2015
 # danimaribeiro <danimaribeiro@gmail.com>, 2015
@@ -12,11 +12,12 @@ msgstr ""
 "POT-Creation-Date: 2016-07-03 00:45+0000\n"
 "PO-Revision-Date: 2016-07-02 21:36+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-contact-8-0/language/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-"
+"contact-8-0/language/pt_BR/)\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: base_continent
@@ -36,28 +37,36 @@ msgstr "Ásia"
 
 #. module: base_continent
 #: model:ir.model,name:base_continent.model_res_continent
-#: view:res.continent:base_continent.view_continent_form
-#: field:res.country,continent_id:0
-#: view:res.partner:base_continent.view_res_partner_filter
-#: field:res.partner,continent_id:0
+#: model:ir.model.fields,field_description:base_continent.field_res_country_continent_id
+#: model:ir.model.fields,field_description:base_continent.field_res_partner_alias_continent_id
+#: model:ir.model.fields,field_description:base_continent.field_res_partner_continent_id
+#: model:ir.model.fields,field_description:base_continent.field_res_users_continent_id
+#: model:ir.ui.view,arch_db:base_continent.view_continent_form
+#: model:ir.ui.view,arch_db:base_continent.view_res_partner_filter
 msgid "Continent"
 msgstr "Continente"
 
 #. module: base_continent
-#: field:res.continent,name:0
+#: model:ir.model.fields,field_description:base_continent.field_res_continent_code
+#, fuzzy
+msgid "Continent Code"
+msgstr "Nome continente"
+
+#. module: base_continent
+#: model:ir.model.fields,field_description:base_continent.field_res_continent_name
 msgid "Continent Name"
 msgstr "Nome continente"
 
 #. module: base_continent
 #: model:ir.actions.act_window,name:base_continent.action_continent
 #: model:ir.ui.menu,name:base_continent.menu_continent_partner
-#: view:res.continent:base_continent.view_continent_tree
+#: model:ir.ui.view,arch_db:base_continent.view_continent_tree
 msgid "Continents"
 msgstr "Continentes"
 
 #. module: base_continent
-#: view:res.continent:base_continent.view_continent_form
-#: field:res.continent,country_ids:0
+#: model:ir.model.fields,field_description:base_continent.field_res_continent_country_ids
+#: model:ir.ui.view,arch_db:base_continent.view_continent_form
 msgid "Countries"
 msgstr ""
 
@@ -67,17 +76,17 @@ msgid "Country"
 msgstr "País"
 
 #. module: base_continent
-#: field:res.continent,create_uid:0
+#: model:ir.model.fields,field_description:base_continent.field_res_continent_create_uid
 msgid "Created by"
 msgstr "Criado por"
 
 #. module: base_continent
-#: field:res.continent,create_date:0
+#: model:ir.model.fields,field_description:base_continent.field_res_continent_create_date
 msgid "Created on"
 msgstr "Criado em"
 
 #. module: base_continent
-#: field:res.continent,display_name:0
+#: model:ir.model.fields,field_description:base_continent.field_res_continent_display_name
 msgid "Display Name"
 msgstr ""
 
@@ -86,7 +95,9 @@ msgstr ""
 msgid ""
 "Display and manage the list of all continents that can be assigned to your "
 "partner records."
-msgstr "Mostra e gerencia a lista de todos os continentes que podem ser setados nos registros de parceiros."
+msgstr ""
+"Mostra e gerencia a lista de todos os continentes que podem ser setados nos "
+"registros de parceiros."
 
 #. module: base_continent
 #: model:res.continent,name:base_continent.eu
@@ -94,22 +105,22 @@ msgid "Europe"
 msgstr "Europa"
 
 #. module: base_continent
-#: field:res.continent,id:0
+#: model:ir.model.fields,field_description:base_continent.field_res_continent_id
 msgid "ID"
 msgstr "ID"
 
 #. module: base_continent
-#: field:res.continent,__last_update:0
+#: model:ir.model.fields,field_description:base_continent.field_res_continent___last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: base_continent
-#: field:res.continent,write_uid:0
+#: model:ir.model.fields,field_description:base_continent.field_res_continent_write_uid
 msgid "Last Updated by"
 msgstr "Útima atualização por"
 
 #. module: base_continent
-#: field:res.continent,write_date:0
+#: model:ir.model.fields,field_description:base_continent.field_res_continent_write_date
 msgid "Last Updated on"
 msgstr "Útima atualização em"
 
@@ -134,6 +145,6 @@ msgid "South America"
 msgstr "América do Sul"
 
 #. module: base_continent
-#: help:res.continent,name:0
+#: model:ir.model.fields,help:base_continent.field_res_continent_name
 msgid "The full name of the continent."
 msgstr "O nome completo do continente"
