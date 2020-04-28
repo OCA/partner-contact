@@ -20,6 +20,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[base_continent](base_continent/) | 10.0.1.0.1 | Continent management
 [base_country_state_translatable](base_country_state_translatable/) | 10.0.1.0.0 | Translate Country States
 [base_location](base_location/) | 10.0.1.1.0 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 10.0.1.1.1 | Import better zip entries from Geonames
@@ -87,7 +88,6 @@ Unported addons
 addon | version | summary
 --- | --- | ---
 [account_partner_merge](account_partner_merge/) | 1.0 (unported) | Account Partner Merge
-[base_continent](base_continent/) | 8.0.1.0.0 (unported) | Continent management
 [firstname_display_name_trigger](firstname_display_name_trigger/) | 1.0 (unported) | Link module if partner_lastname and account_report_company are installed
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 (unported) | Partner auto salesman
 [partner_contact_address_detailed](partner_contact_address_detailed/) | 8.0.1.0.0 (unported) | All address data in summarized contact form
