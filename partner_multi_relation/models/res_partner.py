@@ -176,9 +176,10 @@ class ResPartner(models.Model):
     def action_view_relations(self):
         for contact in self:
             relation_model = self.env['res.partner.relation.all']
-            relation_ids = relation_model.search(['|', 
-                ('this_partner_id', '=', contact.id),
-                ('other_partner_id', '=', contact.id)])
+            relation_ids = relation_model.\
+                search(['|',
+                       ('this_partner_id', '=', contact.id),
+                       ('other_partner_id', '=', contact.id)])
             action = self.env.ref(
                 'partner_multi_relation.action_res_partner_relation_all'
             ).read()[0]
