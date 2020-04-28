@@ -47,7 +47,7 @@ class Tab(object):
         type_field = etree.Element(
             'field',
             name='type_selection_id',
-            widget='many2one_clickable')
+            widget='many2one')
         type_field.set('domain', repr([('tab_id', '=', self.tab_record.id)]))
         type_field.set('options', repr({'no_create': True}))
         tree.append(type_field)
@@ -55,7 +55,7 @@ class Tab(object):
             'field',
             string=_('Partner'),
             name='other_partner_id',
-            widget='many2one_clickable')
+            widget='many2one')
         other_partner_field.set('options', repr({'no_create': True}))
         tree.append(other_partner_field)
         tree.append(etree.Element('field', name='date_start'))
