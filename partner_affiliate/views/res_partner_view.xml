@@ -11,6 +11,14 @@
             <xpath expr="/form/sheet//div[hasclass('o_row')]/field[@name='parent_id']" position="attributes">
                 <attribute name="attrs"></attribute>
             </xpath>
+            <xpath
+                expr="/form/sheet//group/group/field[@name='vat']"
+                position="attributes"
+                >
+                <attribute
+                    name="attrs"
+                    >{'readonly': [('type', '!=', 'affiliate'), ('parent_id','!=',False)]}</attribute>
+            </xpath>
             <xpath expr='//page[@name="internal_notes"]' position="before">
                 <page string="Affiliates" attrs="{'invisible': [('is_company','=',False)]}">
                     <field name="affiliate_ids"

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2012 Camptocamp SA - Yannick Vaucher
 # Copyright 2017 Tecnativa - Vicent Cubells
 # Copyright 2018 brain-tec AG - Raul Martin
@@ -10,7 +9,7 @@
               "Tecnativa, "
               "brain-tec AG, "
               "Odoo Community Association (OCA)",
-    'website': 'http://www.camptocamp.com',
+    'website': 'https://github.com/OCA/partner-contact',
     'category': 'CRM',
     'license': 'AGPL-3',
     'installable': True,

@@ -9,6 +9,8 @@ Partner Affiliates
 This module allows to use parent_id in company partner to refer to a parent
 company, plus will show a tab in parent company of affiliated companies.
 
+The module will also add a new partner type of ('affiliate', 'Affiliate').
+
 Usage
 =====
 
@@ -44,6 +46,7 @@ Contributors
 * Raul Martin <raul.martin@braintec-group.com>
 * Miguel Ángel Gómez <miguel.gomez@braintec-group.com>
 * Dave Lasley <dave@laslabs.com>
+* Ronald Portier <ronald@therp.nl>
 
 Maintainer
 ----------
