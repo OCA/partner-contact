@@ -170,6 +170,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         base_relation = base_model.browse([relation.res_id])
         relation.unlink()
         self.assertFalse(base_relation.exists())
+        # Check unlinking record sets with both derived relation records
+        self.assertTrue(self.relation_all_model.search([]).unlink())
 
     def test_on_change_type_selection(self):
         """Test on_change_type_selection."""
