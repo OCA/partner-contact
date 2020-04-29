@@ -7,7 +7,7 @@ import logging
 from psycopg2.extensions import AsIs
 
 from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from odoo.exceptions import MissingError, ValidationError
 from odoo.tools import drop_view_if_exists
 
 
@@ -466,6 +466,9 @@ CREATE OR REPLACE VIEW %%(table)s AS
         """For model 'res.partner.relation' call unlink on underlying model.
         """
         for rec in self:
-            base_resource = rec.get_base_resource()
+            try:
+                base_resource = rec.get_base_resource()
+            except MissingError:
+                continue
             rec.unlink_resource(base_resource)
         return True
