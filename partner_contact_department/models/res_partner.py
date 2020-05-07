@@ -9,9 +9,7 @@ from odoo.exceptions import ValidationError
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    department_id = fields.Many2one(
-        "res.partner.department", "Department", oldname="department"
-    )
+    department_id = fields.Many2one("res.partner.department", "Department")
 
 
 class ResPartnerDepartment(models.Model):
