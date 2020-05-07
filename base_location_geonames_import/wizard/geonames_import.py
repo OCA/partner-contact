@@ -66,7 +66,7 @@ class BetterZipGeonamesImport(models.TransientModel):
 
     @api.model
     def create_better_zip(self, row, country):
-        if row[0] != country.code:
+        if row[8] != country.code:
             raise UserError(
                 _("The country code inside the file (%s) doesn't "
                     "correspond to the selected country (%s).")
