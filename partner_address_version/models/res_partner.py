@@ -30,6 +30,7 @@ class ResPartner(models.Model):
             "version_hash": version_hash,
             "parent_id": self.parent_id and self.parent_id.id or self.id,
             "date_version": fields.Datetime.now(),
+            "name": self.name,
         }
         versioned_partner = self.copy(default=default)
         return versioned_partner
