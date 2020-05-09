@@ -15,7 +15,7 @@ msgstr ""
 
 #. module: portal_partner_select_all
 #: model_terms:ir.ui.view,arch_db:portal_partner_select_all.portal_wizard
-msgid "<i class=\"fa fa-warning\"/> You're about to invite to portal all the contacts list below."
+msgid "<i class=\"fa fa-warning\"/> You're about to invite all contacts listed below to the portal."
 msgstr ""
 
 #. module: portal_partner_select_all
@@ -28,4 +28,3 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:portal_partner_select_all.portal_wizard
 msgid "Invite all the contacts"
 msgstr ""
-
