@@ -1,14 +1,14 @@
 # Copyright 2014-2015 Tecnativa S.L. - Jairo Llopis
 # Copyright 2016 Tecnativa S.L. - Vicent Cubells
 # Copyright 2017 Tecnativa S.L. - David Vidal
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 {
     "name": "Partner Contact Department",
     "summary": "Assign contacts to departments",
     "version": "13.0.1.0.0",
     "category": "Customer Relationship Management",
-    "author": "Tecnativa, " "Odoo Community Association (OCA)",
+    "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/partner-contact",
     "application": False,
