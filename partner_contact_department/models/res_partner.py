@@ -1,9 +1,8 @@
 # © 2014-2015 Tecnativa S.L. - Jairo Llopis
 # © 2016 Tecnativa S.L. - Vicent Cubells
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from odoo import fields, models
 
 
 class ResPartner(models.Model):
@@ -27,8 +26,3 @@ class ResPartnerDepartment(models.Model):
         "res.partner.department", "parent_id", "Child departments"
     )
     parent_path = fields.Char(index=True)
-
-    @api.constrains("parent_id")
-    def _check_parent_id(self):
-        if not self._check_recursion():
-            raise ValidationError(_("Error! You cannot create recursive departments."))
