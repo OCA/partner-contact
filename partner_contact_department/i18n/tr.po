@@ -60,12 +60,6 @@ msgid "Display Name"
 msgstr "Görünen İsim"
 
 #. module: partner_contact_department
-#: code:addons/partner_contact_department/models/res_partner.py:46
-#, python-format
-msgid "Error! You cannot create recursive departments."
-msgstr "Hata! Biri birlerinin içine geçen departmanlar oluşturamazsınız."
-
-#. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__id
 msgid "ID"
 msgstr "ID"
@@ -100,6 +94,9 @@ msgstr "Sol Ana"
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__parent_id
 msgid "Parent department"
 msgstr "Ana departman"
+
+#~ msgid "Error! You cannot create recursive departments."
+#~ msgstr "Hata! Biri birlerinin içine geçen departmanlar oluşturamazsınız."
 
 #, fuzzy
 #~ msgid "Parent Right"
