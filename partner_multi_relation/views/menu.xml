@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        <menuitem
+            id="menu_res_partner_relation"
+            name="Relations"
+            sequence="3"
+            parent="contacts.menu_contacts"
+        />
+
+        <menuitem
+            id="menu_res_partner_relation_all"
+            sequence="3"
+            parent="menu_res_partner_relation"
+            action="action_res_partner_relation_all"
+        />
+
+        <act_window
+            id="action_res_partner_relation_type"
+            res_model="res.partner.relation.type"
+            view_mode="tree,form"
+            name="Partner Relations Types"
+        />
+
+        <menuitem
+            id="menu_res_partner_relation_type"
+            name="Relation Types"
+            parent="menu_res_partner_relation"
+            action="action_res_partner_relation_type"
+        />
+
+</odoo>
