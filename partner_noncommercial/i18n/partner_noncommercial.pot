@@ -1,0 +1,61 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_noncommercial
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,name:partner_noncommercial.action_address_form
+#: model:ir.ui.menu,name:partner_noncommercial.menu_address_form
+msgid "All addresses"
+msgstr ""
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,name:partner_noncommercial.action_all_partner_form
+#: model:ir.ui.menu,name:partner_noncommercial.menu_all_partner_form
+#: model:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+msgid "All partners"
+msgstr ""
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,help:partner_noncommercial.action_person_form
+msgid "Click to add a person to your address book."
+msgstr ""
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,help:partner_noncommercial.action_company_form
+msgid "Click to add an organisation to your address book."
+msgstr ""
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,help:partner_noncommercial.action_address_form
+msgid "Click to add item to your address book."
+msgstr ""
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,name:partner_noncommercial.action_company_form
+#: model:ir.ui.menu,name:partner_noncommercial.menu_company_form
+#: model:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+msgid "Organisations"
+msgstr ""
+
+#. module: partner_noncommercial
+#: model:ir.ui.menu,name:partner_noncommercial.menu_partner
+msgid "Partners"
+msgstr ""
+
+#. module: partner_noncommercial
+#: model:ir.actions.act_window,name:partner_noncommercial.action_person_form
+#: model:ir.ui.menu,name:partner_noncommercial.menu_person_form
+msgid "Persons"
+msgstr ""
+
