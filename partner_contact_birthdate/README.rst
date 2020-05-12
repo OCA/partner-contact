@@ -23,7 +23,7 @@ Contact's birthdate
     :target: https://runbot.odoo-community.org/runbot/134/13.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5|
+|badge1| |badge2| |badge3| |badge4| |badge5| 
 
 This module was written to extend the functionality of Odoo to support setting
 a birthdate using a date format and allow you to benefit of a clearer API and
@@ -31,7 +31,7 @@ UI.
 
 Add a computed age field on Partners
 
-.. image:: ../static/description/age.png
+.. image:: https://raw.githubusercontent.com/OCA/partner-contact/13.0/partner_contact_birthdate/static/description/age.png
 
 **Table of contents**
 
@@ -74,6 +74,7 @@ Contributors
 * Rudolf Schnapka <schnapkar@golive-saar.de>
 * Denis Leemann <denis.leemann@camptocamp.com>
 * Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+* Druidoo (<https://www.druidoo.io>)
 
 Maintainers
 ~~~~~~~~~~~
