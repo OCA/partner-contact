@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-<data>
-
+<odoo>
 <!-- Modification of Partner - Adding Tab for Idenification Numbers -->
 <record model="ir.ui.view" id="view_partner_form">
     <field name="name">res.partner.form.id_number</field>
@@ -34,6 +32,4 @@
     </field>
 </record>
 
-
-</data>
-</openerp>
+</odoo>
