@@ -14,6 +14,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_contact_birthdate
+#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner__age
+#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users__age
+msgid "Age"
+msgstr ""
+
+#. module: partner_contact_birthdate
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner__birthdate_date
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users__birthdate_date
 msgid "Birthdate"
