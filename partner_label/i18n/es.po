@@ -20,186 +20,140 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_label
-#: model:ir.ui.view,arch_db:partner_label.view_res_partner_label
-msgid "&lt;!DOCTYPE html&gt;"
-msgstr "&lt;!DOCTYPE html&gt;"
-
-#. module: partner_label
-#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
-msgid "Bottom"
-msgstr ""
-
-#. module: partner_label
 #: model:ir.model,name:partner_label.model_res_company
 msgid "Companies"
 msgstr "Compañías"
 
 #. module: partner_label
-#: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_height
-#: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_height
+#: model:ir.model,name:partner_label.model_res_config_settings
+#, fuzzy
+msgid "Config Settings"
+msgstr "base.config.settings"
+
+#. module: partner_label
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_height
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_height
 msgid "Height"
 msgstr "Alto"
 
 #. module: partner_label
-#: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_height
-#: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_height
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_height
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_height
 msgid "Height in millimeters"
 msgstr "Alto en milímetros"
 
 #. module: partner_label
-#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
+#: model_terms:ir.ui.view,arch_db:partner_label.view_general_configuration
 msgid "Labels configuration"
 msgstr "Configuración de etiquetas"
 
 #. module: partner_label
-#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
-msgid "Left"
-msgstr ""
-
-#. module: partner_label
-#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
-msgid "Margin"
-msgstr "Margen"
-
-#. module: partner_label
-#: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_margin_bottom
-#: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_margin_bottom
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_bottom
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_bottom
 #, fuzzy
 msgid "Margin Bottom"
 msgstr "Margen"
 
 #. module: partner_label
-#: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_margin_left
-#: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_margin_left
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_left
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_left
 #, fuzzy
 msgid "Margin Left"
 msgstr "Margen"
 
 #. module: partner_label
-#: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_margin_right
-#: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_margin_right
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_right
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_right
 #, fuzzy
 msgid "Margin Right"
 msgstr "Margen"
 
 #. module: partner_label
-#: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_margin_top
-#: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_margin_top
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_top
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_top
 #, fuzzy
 msgid "Margin Top"
 msgstr "Margen"
 
 #. module: partner_label
-#: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_margin_bottom
-#: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_margin_bottom
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_margin_bottom
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_margin_bottom
 #, fuzzy
 msgid "Margin bottom in millimeters"
 msgstr "Margen en milímetros"
 
 #. module: partner_label
-#: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_margin_left
-#: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_margin_left
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_margin_left
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_margin_left
 #, fuzzy
 msgid "Margin left in millimeters"
 msgstr "Margen en milímetros"
 
 #. module: partner_label
-#: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_margin_right
-#: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_margin_right
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_margin_right
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_margin_right
 #, fuzzy
 msgid "Margin right in millimeters"
 msgstr "Margen en milímetros"
 
 #. module: partner_label
-#: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_margin_top
-#: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_margin_top
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_margin_top
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_margin_top
 #, fuzzy
 msgid "Margin top in millimeters"
 msgstr "Margen en milímetros"
 
 #. module: partner_label
-#: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_padding
-#: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_padding
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_padding
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_padding
 msgid "Padding"
 msgstr "Espaciado"
 
 #. module: partner_label
-#: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_padding
-#: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_padding
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_padding
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_padding
 msgid "Padding in millimeters"
 msgstr "Espaciado en milímetros"
 
 #. module: partner_label
-#: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_paperformat_id
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_paperformat_id
 msgid "Paperformat"
 msgstr "Formato del papel"
 
 #. module: partner_label
-#: model:ir.actions.report.xml,name:partner_label.report_res_partner_label
+#: model:ir.actions.report,name:partner_label.report_res_partner_label
 #, fuzzy
 msgid "Partner Labels"
 msgstr "Etiquetas"
 
 #. module: partner_label
-#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
+#: model_terms:ir.ui.view,arch_db:partner_label.view_general_configuration
 msgid "Preview"
 msgstr "Previsualizar"
 
 #. module: partner_label
-#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
-#, fuzzy
-msgid "Right"
-msgstr "Alto"
-
-#. module: partner_label
-#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
-msgid "Top"
-msgstr ""
-
-#. module: partner_label
-#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
-msgid "Top:"
-msgstr ""
-
-#. module: partner_label
-#: model:ir.model.fields,field_description:partner_label.field_base_config_settings_partner_labels_width
-#: model:ir.model.fields,field_description:partner_label.field_res_company_partner_labels_width
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_width
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_width
 msgid "Width"
 msgstr "Ancho"
 
 #. module: partner_label
-#: model:ir.model.fields,help:partner_label.field_base_config_settings_partner_labels_width
-#: model:ir.model.fields,help:partner_label.field_res_company_partner_labels_width
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_width
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_width
 msgid "Width in millimeters"
 msgstr "Ancho en milímetros"
 
 #. module: partner_label
-#: model:ir.model,name:partner_label.model_base_config_settings
-msgid "base.config.settings"
-msgstr "base.config.settings"
-
-#. module: partner_label
-#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
+#: model_terms:ir.ui.view,arch_db:partner_label.view_general_configuration
 msgid "mm"
 msgstr "mm"
 
-#. module: partner_label
-#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
-msgid ""
-"mm,\n"
-"                        Bottom:"
-msgstr ""
+#~ msgid "&lt;!DOCTYPE html&gt;"
+#~ msgstr "&lt;!DOCTYPE html&gt;"
 
-#. module: partner_label
-#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
-msgid ""
-"mm,\n"
-"                        Left:"
-msgstr ""
+#~ msgid "Margin"
+#~ msgstr "Margen"
 
-#. module: partner_label
-#: model:ir.ui.view,arch_db:partner_label.view_general_configuration
-msgid ""
-"mm,\n"
-"                        Right:"
-msgstr ""
+#, fuzzy
+#~ msgid "Right"
+#~ msgstr "Alto"

@@ -4,22 +4,19 @@ from odoo import fields, models
 
 
 class ResCompany(models.Model):
-    _inherit = 'res.company'
+    _inherit = "res.company"
 
     partner_labels_width = fields.Float(
-        'Width', default=60, help='Width in millimeters', required=True,
+        "Width", default=60, help="Width in millimeters", required=True,
     )
     partner_labels_height = fields.Float(
-        'Height', default=42.3, help='Height in millimeters', required=True,
+        "Height", default=42.3, help="Height in millimeters", required=True,
     )
     partner_labels_padding = fields.Float(
-        'Padding', default=5, help='Padding in millimeters', required=True,
+        "Padding", default=5, help="Padding in millimeters", required=True,
     )
     partner_labels_margin_top = fields.Float(
-        string="Margin Top",
-        default=1,
-        help="Margin top in millimeters",
-        required=True,
+        string="Margin Top", default=1, help="Margin top in millimeters", required=True,
     )
     partner_labels_margin_bottom = fields.Float(
         string="Margin Bottom",
