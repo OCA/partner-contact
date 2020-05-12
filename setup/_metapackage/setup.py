@@ -46,6 +46,7 @@ setuptools.setup(
         'odoo12-addon-partner_label',
         'odoo12-addon-partner_multi_relation',
         'odoo12-addon-partner_multi_relation_tabs',
+        'odoo12-addon-partner_noncommercial',
         'odoo12-addon-partner_phone_extension',
         'odoo12-addon-partner_phonecall_schedule',
         'odoo12-addon-partner_postal_address',
