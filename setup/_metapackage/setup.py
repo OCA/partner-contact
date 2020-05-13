@@ -28,6 +28,7 @@ setuptools.setup(
         'odoo13-addon-partner_fax',
         'odoo13-addon-partner_firstname',
         'odoo13-addon-partner_identification',
+        'odoo13-addon-partner_label',
         'odoo13-addon-partner_phone_extension',
         'odoo13-addon-partner_priority',
         'odoo13-addon-partner_vat_unique',
