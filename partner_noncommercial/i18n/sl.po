@@ -30,12 +30,12 @@ msgstr "Vsi partnerji"
 #. module: partner_noncommercial
 #: model:ir.actions.act_window,name:partner_noncommercial.action_all_partner_form
 #: model:ir.ui.menu,name:partner_noncommercial.menu_all_partner_form
-#: model:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+#: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
 msgid "All partners"
 msgstr "Vsi partnerji"
 
 #. module: partner_noncommercial
-#: model:ir.actions.act_window,help:partner_noncommercial.action_person_form
+#: model_terms:ir.actions.act_window,help:partner_noncommercial.action_person_form
 #, fuzzy
 #| msgid ""
 #| "<p class=\"oe_view_nocontent_create\">Click to add a person in your "
@@ -44,19 +44,19 @@ msgid "Click to add a person to your address book."
 msgstr "<p class=\"oe_view_nocontent_create\">Dodaj osebo v imenik.</p>"
 
 #. module: partner_noncommercial
-#: model:ir.actions.act_window,help:partner_noncommercial.action_company_form
+#: model_terms:ir.actions.act_window,help:partner_noncommercial.action_company_form
 msgid "Click to add an organisation to your address book."
 msgstr ""
 
 #. module: partner_noncommercial
-#: model:ir.actions.act_window,help:partner_noncommercial.action_address_form
+#: model_terms:ir.actions.act_window,help:partner_noncommercial.action_address_form
 msgid "Click to add item to your address book."
 msgstr ""
 
 #. module: partner_noncommercial
 #: model:ir.actions.act_window,name:partner_noncommercial.action_company_form
 #: model:ir.ui.menu,name:partner_noncommercial.menu_company_form
-#: model:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+#: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
 msgid "Organisations"
 msgstr "Organizacije"
 
