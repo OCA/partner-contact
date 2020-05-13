@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+        <record id="contacts.action_contacts" model="ir.actions.act_window">
+            <field name="context">{'update_relation_tab': 1}</field>
+        </record>
 
         <act_window
             id="action_res_partner_tab"

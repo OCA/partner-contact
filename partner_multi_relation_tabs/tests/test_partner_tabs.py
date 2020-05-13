@@ -140,7 +140,9 @@ class TestPartnerTabs(common.TestCommon):
     def test_compute_visibility(self):
         """Check the computation of visibility on partners."""
         # pylint: disable=protected-access
-        main_partner = self.env.ref('base.main_partner')
+        main_partner = self.env.ref('base.main_partner').with_context({
+            'update_relation_tab': 1
+        })
         main_partner._compute_tabs_visibility()
         tab_obj = Tab(self.tab_departments)
         fieldname = tab_obj.get_fieldname()
