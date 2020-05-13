@@ -9,7 +9,7 @@
     'version': '8.0.1.0.0',
     'category': 'Web',
     'author': 'Onestein,Odoo Community Association (OCA)',
-    'website': 'http://www.onestein.eu',
+    'website': 'https://github.com/OCA/partner-contact',
     'license': 'AGPL-3',
     'depends': [
         'partner_identification',
