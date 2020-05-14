@@ -160,7 +160,7 @@ class ResPartnerRelationType(models.Model):
             WHERE left_partner_id = right_partner_id
             AND type_id = %(relation_type_id)s
             """,
-            {"relation_type_id": self.id,},
+            {"relation_type_id": self.id},
         )
         reflexive_relation_ids = [r[0] for r in self.env.cr.fetchall()]
         return self.env["res.partner.relation"].browse(reflexive_relation_ids)
