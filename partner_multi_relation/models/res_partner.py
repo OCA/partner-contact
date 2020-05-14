@@ -84,7 +84,7 @@ class ResPartner(models.Model):
             relation_type_selection += type_selection_model.browse(value)
         elif operator == "!=" and isinstance(value, numbers.Integral):
             relation_type_selection = type_selection_model.search(
-                [("id", operator, value),]
+                [("id", operator, value)]
             )
         else:
             relation_type_selection = type_selection_model.search(
@@ -100,7 +100,7 @@ class ResPartner(models.Model):
             result = OR(
                 [
                     result,
-                    [("relation_all_ids.type_selection_id.id", "=", relation_type.id),],
+                    [("relation_all_ids.type_selection_id.id", "=", relation_type.id)],
                 ]
             )
         return result

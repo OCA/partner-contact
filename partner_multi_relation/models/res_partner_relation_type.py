@@ -124,10 +124,10 @@ class ResPartnerRelationType(models.Model):
             invalid_conditions = []
             for side in ["left", "right"]:
                 invalid_conditions = OR(
-                    [invalid_conditions, get_type_condition(vals, side),]
+                    [invalid_conditions, get_type_condition(vals, side)]
                 )
                 invalid_conditions = OR(
-                    [invalid_conditions, get_category_condition(vals, side),]
+                    [invalid_conditions, get_category_condition(vals, side)]
                 )
             if not invalid_conditions:
                 return
@@ -258,6 +258,6 @@ class ResPartnerRelationType(models.Model):
             if rec.handle_invalid_onchange == "delete":
                 # Automatically delete relations, so existing relations
                 # do not prevent unlink of relation type:
-                relations = relation_model.search([("type_id", "=", rec.id),])
+                relations = relation_model.search([("type_id", "=", rec.id)])
                 relations.unlink()
         return super(ResPartnerRelationType, self).unlink()
