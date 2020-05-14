@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:32+0000\n"
-"PO-Revision-Date: 2017-12-26 15:32+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2020-05-15 00:19+0000\n"
+"Last-Translator: Peter Schubert <psc@saco.info>\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__child_ids
@@ -26,7 +27,7 @@ msgstr "Unter-Abteilungen"
 #. module: partner_contact_department
 #: model:ir.model,name:partner_contact_department.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__create_uid
@@ -83,7 +84,7 @@ msgstr "zuletzt aktualisiert von"
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__write_date
 msgid "Last Updated on"
-msgstr "zuletzt aktualisiert am"
+msgstr "Zuletzt aktualisiert am"
 
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__name
