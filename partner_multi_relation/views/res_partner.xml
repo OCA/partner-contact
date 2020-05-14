@@ -25,7 +25,7 @@
                     class="oe_stat_button"
                     icon="fa-users"
                 >
-                    <field name="relation_count" widget="statinfo" string="Relations" />
+                <field name="relation_count" widget="statinfo" string="Relations" />
                 </button>
             </xpath>
         </field>
