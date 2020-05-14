@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 Acsone SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="res_partner_form_view">
+        <field name="name">res.partner.form (in partner_customer_supplier)</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="lang" position="before">
+                <field name="customer" invisible="1" />
+                <field name="supplier" invisible="1" />
+            </field>
+            <group name="sale" position="inside">
+                <field name="customer" />
+            </group>
+            <group name="purchase" position="inside">
+                <field name="supplier" />
+            </group>
+        </field>
+    </record>
+</odoo>
