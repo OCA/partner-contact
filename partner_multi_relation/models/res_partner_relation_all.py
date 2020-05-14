@@ -45,9 +45,8 @@ SELECT
 FROM res_partner_relation rel"""
 
 
-class ResPartnerRelationAll(models.AbstractModel):
+class ResPartnerRelationAll(models.Model):
     """Abstract model to show each relation from two sides."""
-    _auto = False
     _log_access = False
     _name = 'res.partner.relation.all'
     _description = 'All (non-inverse + inverse) relations between partners'
@@ -131,74 +130,6 @@ class ResPartnerRelationAll(models.AbstractModel):
         register = self.get_register()
         key_name = base_name + (is_inverse and '_inverse' or '')
         return register[key_name]
-
-    def _get_statement(self):
-        """Allow other modules to add to statement."""
-        register = self.get_register()
-        union_select = ' UNION '.join(
-            [register[key]['select_sql']
-             for key in register if key != '_lastkey'])
-        return """\
-CREATE OR REPLACE VIEW %%(table)s AS
-     WITH base_selection AS (%(union_select)s)
- SELECT
-     bas.*,
-     CASE
-         WHEN NOT bas.is_inverse OR typ.is_symmetric
-         THEN bas.type_id * 2
-         ELSE (bas.type_id * 2) + 1
-     END as type_selection_id,
-     (bas.date_end IS NULL OR bas.date_end >= current_date) AS active
-     %%(additional_view_fields)s
- FROM base_selection bas
- JOIN res_partner_relation_type typ ON (bas.type_id = typ.id)
- %%(additional_tables)s
-        """ % {'union_select': union_select}
-
-    def _get_padding(self):
-        """Utility function to define padding in one place."""
-        return 100
-
-    def _get_additional_relation_columns(self):
-        """Get additionnal columns from res_partner_relation.
-
-        This allows to add fields to the model res.partner.relation
-        and display these fields in the res.partner.relation.all list view.
-
-        :return: ', rel.column_a, rel.column_b_id'
-        """
-        return ''
-
-    def _get_additional_view_fields(self):
-        """Allow inherit models to add fields to view.
-
-        If fields are added, the resulting string must have each field
-        prepended by a comma, like so:
-            return ', typ.allow_self, typ.left_partner_category'
-        """
-        return ''
-
-    def _get_additional_tables(self):
-        """Allow inherit models to add tables (JOIN's) to view.
-
-        Example:
-            return 'JOIN type_extention ext ON (bas.type_id = ext.id)'
-        """
-        return ''
-
-    @api.model_cr_context
-    def _auto_init(self):
-        cr = self._cr
-        drop_view_if_exists(cr, self._table)
-        cr.execute(
-            self._get_statement(),
-            {'table': AsIs(self._table),
-             'padding': self._get_padding(),
-             'additional_view_fields':
-                AsIs(self._get_additional_view_fields()),
-             'additional_tables':
-                AsIs(self._get_additional_tables())})
-        return super(ResPartnerRelationAll, self)._auto_init()
 
     @api.model
     def _search_any_partner_id(self, operator, value):

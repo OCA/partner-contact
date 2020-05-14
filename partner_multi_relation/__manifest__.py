@@ -9,6 +9,7 @@
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
     "depends": [
+        'base',
         'contacts',
         'sales_team',
     ],

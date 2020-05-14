@@ -2,13 +2,10 @@
 <odoo>
 
         <record id="tree_res_partner_relation_all" model="ir.ui.view">
+            <field name="name">res.partner.relation.all.tree</field>
             <field name="model">res.partner.relation.all</field>
             <field name="arch" type="xml">
-                <tree
-                    string="Partner Relations"
-                    colors="gray:not active; blue:date_start &gt; current_date"
-                    editable="top"
-                    >
+                <tree>
                     <field
                         name="this_partner_id"
                         required="True"
@@ -32,6 +29,7 @@
         </record>
 
         <record id="search_res_partner_relation_all" model="ir.ui.view">
+            <field name="name">res.partner.relation.all.search</field>
             <field name="model">res.partner.relation.all</field>
             <field name="arch" type="xml">
                 <search string="Search Relations">
