@@ -23,10 +23,9 @@
                     name="action_view_relations"
                     type="object"
                     class="oe_stat_button"
-                    icon="fa-users">
-                    <field name="relation_count"
-                        widget="statinfo"
-                        string="Relations" />
+                    icon="fa-users"
+                >
+                <field name="relation_count" widget="statinfo" string="Relations" />
                 </button>
             </xpath>
         </field>
