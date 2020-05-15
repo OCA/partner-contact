@@ -1,0 +1,51 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_contact_address_default
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 18:08+0000\n"
+"PO-Revision-Date: 2020-05-15 20:09+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: partner_contact_address_default
+#: model:ir.model,name:partner_contact_address_default.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_contact_address_default
+#: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
+#, fuzzy
+msgid "Force addresses"
+msgstr "Dirección de facturación"
+
+#. module: partner_contact_address_default
+#: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
+msgid "If you keep empty this fields the Odoo's behavior will be normal"
+msgstr ""
+
+#. module: partner_contact_address_default
+#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_invoice_id
+#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_invoice_id
+msgid "Invoice address"
+msgstr "Dirección de facturación"
+
+#. module: partner_contact_address_default
+#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_delivery_id
+#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_delivery_id
+msgid "Shipping address"
+msgstr "Dirección de envío"
+
+#. module: partner_contact_address_default
+#: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
+msgid "You can force and delivery and invoice address for this contacts."
+msgstr ""
