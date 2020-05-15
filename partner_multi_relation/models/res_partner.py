@@ -186,12 +186,12 @@ class ResPartner(models.Model):
             action['domain'] = [('id', 'in', relation_ids.ids)]
             context = action.get('context', '{}').strip()[1:-1]
             elements = context.split(',') if context else []
-            to_add = ["""'search_default_this_partner_id': contact.id,
-                        'default_this_partner_id': contact.id,
+            to_add = ["""'search_default_this_partner_id': {0},
+                        'default_this_partner_id': {0},
                         'active_model': 'res.partner',
-                        'active_id': contact.id,
-                        'active_ids': [contact.id],
-                        'active_test': False"""]
+                        'active_id': {0},
+                        'active_ids': [{0}],
+                        'active_test': False""".format(contact.id)]
             context = '{' + ', '.join(elements + to_add) + '}'
             action['context'] = context
             return action
