@@ -3,7 +3,7 @@
 # Copyright 2016 Tecnativa S.L. - Pedro M. Baeza
 # Copyright 2018 Eficent Business and IT Consulting Services, S.L.
 # Copyright 2019 Tecnativa - Cristina Martin R.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import _, api, exceptions, fields, models
 
@@ -23,7 +23,6 @@ class ResPartnerIndustry(models.Model):
     )
     parent_path = fields.Char(index=True)
 
-    @api.multi
     def name_get(self):
         def get_names(cat):
             """ Return the list [cat.name, cat.parent_id.name, ...] """
@@ -41,3 +40,21 @@ class ResPartnerIndustry(models.Model):
             raise exceptions.ValidationError(
                 _("Error! You cannot create recursive industries.")
             )
+
+    @api.constrains("name", "parent_id")
+    def _check_uniq_name(self):
+        if (
+            self.search_count(
+                [("name", "=", self.name), ("parent_id", "=", self.parent_id.id)]
+            )
+            > 1
+        ):
+            raise exceptions.ValidationError(
+                _("Error! Industry with same name and parent already exists.")
+            )
+
+    def copy(self, default=None):
+        default = default or {}
+        if "name" not in default or default["name"] == self.name:
+            default["name"] = self.name + " 2"
+        return super(ResPartnerIndustry, self).copy(default=default)

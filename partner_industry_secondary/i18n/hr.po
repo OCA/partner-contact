@@ -42,7 +42,13 @@ msgid "Enable industries for individuals"
 msgstr "Omogući sektore za osobe"
 
 #. module: partner_industry_secondary
-#: code:addons/partner_industry_secondary/models/res_partner_industry.py:41
+#: code:addons/partner_industry_secondary/models/res_partner_industry.py:0
+#, python-format
+msgid "Error! Industry with same name and parent already exists."
+msgstr ""
+
+#. module: partner_industry_secondary
+#: code:addons/partner_industry_secondary/models/res_partner_industry.py:0
 #, python-format
 msgid "Error! You cannot create recursive industries."
 msgstr "Greška! Nije moguće kreirati rekurzivne sektore."
@@ -57,11 +63,6 @@ msgstr "Sektori"
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.view_res_partner_filter_industry
 msgid "Industry"
 msgstr "Sektor"
-
-#. module: partner_industry_secondary
-#: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
-msgid "Industry for individual"
-msgstr "Sektor za osobu"
 
 #. module: partner_industry_secondary
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner__industry_id
@@ -85,11 +86,6 @@ msgid "Parent Path"
 msgstr "Nadređena putanja"
 
 #. module: partner_industry_secondary
-#: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
-msgid "Partner Industries"
-msgstr "Nadređeni sektori"
-
-#. module: partner_industry_secondary
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner__secondary_industry_ids
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_users__secondary_industry_ids
 msgid "Secondary Industries"
@@ -106,7 +102,7 @@ msgid "Set if you want to be able to use industries for individuals also."
 msgstr ""
 
 #. module: partner_industry_secondary
-#: code:addons/partner_industry_secondary/models/res_partner.py:23
+#: code:addons/partner_industry_secondary/models/res_partner.py:0
 #, fuzzy, python-format
 msgid "The main industry must be different from the secondary industries."
 msgstr "Glavni sektor mora biti različit od sekundarnih sektora"
@@ -116,6 +112,12 @@ msgstr "Glavni sektor mora biti različit od sekundarnih sektora"
 #: model:res.groups,name:partner_industry_secondary.group_use_partner_industry_for_person
 msgid "Use industry for individuals"
 msgstr ""
+
+#~ msgid "Industry for individual"
+#~ msgstr "Sektor za osobu"
+
+#~ msgid "Partner Industries"
+#~ msgstr "Nadređeni sektori"
 
 #~ msgid "Parent Right"
 #~ msgstr "Parent Right"
