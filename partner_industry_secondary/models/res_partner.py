@@ -3,22 +3,27 @@
 # Copyright 2018 Eficent Business and IT Consulting Services, S.L.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, exceptions, fields, models, _
+from odoo import _, api, exceptions, fields, models
 
 
 class ResPartner(models.Model):
-    _inherit = 'res.partner'
+    _inherit = "res.partner"
 
-    industry_id = fields.Many2one(string='Main Industry')
+    industry_id = fields.Many2one(string="Main Industry")
 
     secondary_industry_ids = fields.Many2many(
-        comodel_name='res.partner.industry', string="Secondary Industries",
-        domain="[('id', '!=', industry_id)]")
+        comodel_name="res.partner.industry",
+        string="Secondary Industries",
+        domain="[('id', '!=', industry_id)]",
+    )
 
-    @api.constrains('industry_id', 'secondary_industry_ids')
+    @api.constrains("industry_id", "secondary_industry_ids")
     def _check_industries(self):
         for partner in self:
             if partner.industry_id in partner.secondary_industry_ids:
                 raise exceptions.ValidationError(
-                    _('The main industry must be different '
-                      'from the secondary industries.'))
+                    _(
+                        "The main industry must be different "
+                        "from the secondary industries."
+                    )
+                )
