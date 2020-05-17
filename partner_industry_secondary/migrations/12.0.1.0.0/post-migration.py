@@ -6,4 +6,4 @@ from openupgradelib import openupgrade
 
 @openupgrade.migrate(use_env=True)
 def migrate(env, version):
-    env['res.partner.industry']._parent_store_compute()
+    env["res.partner.industry"]._parent_store_compute()
