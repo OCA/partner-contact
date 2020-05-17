@@ -12,15 +12,12 @@
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
-    "depends": [
-        "base_setup",
-        "contacts",
-    ],
+    "depends": ["base_setup", "contacts",],
     "data": [
         "security/ir.model.access.csv",
         "security/partner_industry_security.xml",
         "views/res_partner_industry_view.xml",
         "views/res_partner_view.xml",
         "views/res_config_settings.xml",
-    ]
+    ],
 }

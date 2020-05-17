@@ -5,21 +5,22 @@
 # Copyright 2019 Tecnativa - Cristina Martin R.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, exceptions, fields, models, _
+from odoo import _, api, exceptions, fields, models
 
 
 class ResPartnerIndustry(models.Model):
-    _inherit = 'res.partner.industry'
+    _inherit = "res.partner.industry"
     _order = "parent_path"
     _parent_order = "name"
     _parent_store = True
 
     name = fields.Char(required=True)
-    parent_id = fields.Many2one(comodel_name='res.partner.industry',
-                                ondelete='restrict')
-    child_ids = fields.One2many(comodel_name='res.partner.industry',
-                                inverse_name='parent_id',
-                                string="Children")
+    parent_id = fields.Many2one(
+        comodel_name="res.partner.industry", ondelete="restrict"
+    )
+    child_ids = fields.One2many(
+        comodel_name="res.partner.industry", inverse_name="parent_id", string="Children"
+    )
     parent_path = fields.Char(index=True)
 
     @api.multi
@@ -34,8 +35,9 @@ class ResPartnerIndustry(models.Model):
 
         return [(cat.id, " / ".join(get_names(cat))) for cat in self]
 
-    @api.constrains('parent_id')
+    @api.constrains("parent_id")
     def _check_parent_id(self):
         if not self._check_recursion():
             raise exceptions.ValidationError(
-                _('Error! You cannot create recursive industries.'))
+                _("Error! You cannot create recursive industries.")
+            )
