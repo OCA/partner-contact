@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_industry_parent
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_industry_parent
+#: model:ir.model.fields,field_description:partner_industry_parent.field_res_partner_industry__child_ids
+msgid "Children"
+msgstr ""
+
+#. module: partner_industry_parent
+#: model:ir.model.fields,field_description:partner_industry_parent.field_res_partner_industry__complete_name
+msgid "Complete Name"
+msgstr ""
+
+#. module: partner_industry_parent
+#: model:ir.model,name:partner_industry_parent.model_res_partner_industry
+msgid "Industry"
+msgstr ""
+
+#. module: partner_industry_parent
+#: model:ir.model.fields,field_description:partner_industry_parent.field_res_partner_industry__parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: partner_industry_parent
+#: model:ir.model.fields,field_description:partner_industry_parent.field_res_partner_industry__parent_path
+msgid "Parent Path"
+msgstr ""
+
