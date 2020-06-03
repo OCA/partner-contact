@@ -184,11 +184,14 @@ class ResPartner(models.Model):
                 'partner_multi_relation.action_res_partner_relation_all'
             ).read()[0]
             action['domain'] = [('id', 'in', relation_ids.ids)]
-            action['context'].\
-                update({'search_default_this_partner_id': contact.id,
-                        'default_this_partner_id': contact.id,
+            context = action.get('context', '{}').strip()[1:-1]
+            elements = context.split(',') if context else []
+            to_add = ["""'search_default_this_partner_id': {0},
+                        'default_this_partner_id': {0},
                         'active_model': 'res.partner',
-                        'active_id': contact.id,
-                        'active_ids': [contact.id],
-                        'active_test': False})
+                        'active_id': {0},
+                        'active_ids': [{0}],
+                        'active_test': False""".format(contact.id)]
+            context = '{' + ', '.join(elements + to_add) + '}'
+            action['context'] = context
             return action
