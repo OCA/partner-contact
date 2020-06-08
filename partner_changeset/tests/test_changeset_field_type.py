@@ -44,7 +44,7 @@ class TestChangesetFieldType(ChangesetMixin, common.TransactionCase):
         self.partner = self.env['res.partner'].create({
             'name': 'Original Name',
             'street': 'Original Street',
-        })
+        }).with_context(test_partner_changeset=True)
 
     def test_new_changeset_char(self):
         """ Add a new changeset on a Char field """

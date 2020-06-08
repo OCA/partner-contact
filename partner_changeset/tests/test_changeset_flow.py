@@ -51,7 +51,7 @@ class TestChangesetFlow(ChangesetMixin, common.TransactionCase):
             'name': 'X',
             'street': 'street X',
             'street2': 'street2 X',
-        })
+        }).with_context(test_partner_changeset=True)
 
     def test_new_changeset(self):
         """ Add a new changeset on a partner

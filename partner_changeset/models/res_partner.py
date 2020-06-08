@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
+from odoo.tools import config
 
 
 class ResPartner(models.Model):
@@ -28,7 +29,7 @@ class ResPartner(models.Model):
     @api.multi
     def write(self, values):
         if (self.env.context.get('__no_changeset') or
-                self.env.context.get('test_enable') and
+                config['test_enable'] and
                 not self.env.context.get('test_partner_changeset')):
             return super(ResPartner, self).write(values)
         else:
