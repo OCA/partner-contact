@@ -36,7 +36,7 @@ addon | version | summary
 [partner_bank_active](partner_bank_active/) | 10.0.1.0.0 | Allow to deactivate a partner bank account
 [partner_bank_sort_code](partner_bank_sort_code/) | 10.0.1.0.0 | Adds a field in banks to manage Sort Codes
 [partner_capital](partner_capital/) | 10.0.1.0.0 | Partners Capital
-[partner_changeset](partner_changeset/) | 10.0.1.0.1 | Partner Changesets
+[partner_changeset](partner_changeset/) | 10.0.1.0.2 | Partner Changesets
 [partner_coc](partner_coc/) | 10.0.1.0.0 | Adds a field 'Chamber Of Commerce Registration Number' to partner
 [partner_company_type](partner_company_type/) | 10.0.1.0.1 | Adds a company type to partner that are companies
 [partner_contact_birthdate](partner_contact_birthdate/) | 10.0.1.1.1 | Contact's birthdate
