@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
@@ -26,8 +26,13 @@ msgid "Cannot deliver to email address %s"
 msgstr ""
 
 #. module: partner_email_check
-#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings_partner_email_check_check_deliverability
+#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__partner_email_check_check_deliverability
 msgid "Check deliverability of email addresses"
+msgstr ""
+
+#. module: partner_email_check
+#: model:ir.model,name:partner_email_check.model_res_config_settings
+msgid "Config Settings"
 msgstr ""
 
 #. module: partner_email_check
@@ -36,12 +41,12 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_email_check
-#: model:ir.model.fields,help:partner_email_check.field_res_config_settings_partner_email_check_check_deliverability
+#: model:ir.model.fields,help:partner_email_check.field_res_config_settings__partner_email_check_check_deliverability
 msgid "Don't allow email addresses with providers that don't exist"
 msgstr ""
 
 #. module: partner_email_check
-#: model:ir.model.fields,help:partner_email_check.field_res_config_settings_partner_email_check_filter_duplicates
+#: model:ir.model.fields,help:partner_email_check.field_res_config_settings__partner_email_check_filter_duplicates
 msgid "Don't allow multiple partners to have the same email address."
 msgstr ""
 
@@ -52,12 +57,12 @@ msgid "Email '%s' is already in use."
 msgstr ""
 
 #. module: partner_email_check
-#: model:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
 msgid "Email validation"
 msgstr ""
 
 #. module: partner_email_check
-#: model:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
 msgid "Ensure that partner email addresses can be delivered to"
 msgstr ""
 
@@ -68,17 +73,12 @@ msgid "Field contains multiple email addresses. This is not supported when dupli
 msgstr ""
 
 #. module: partner_email_check
-#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings_partner_email_check_filter_duplicates
+#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__partner_email_check_filter_duplicates
 msgid "Filter duplicate partner email addresses"
 msgstr ""
 
 #. module: partner_email_check
-#: model:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
 msgid "Require partner email addresses to be unique"
-msgstr ""
-
-#. module: partner_email_check
-#: model:ir.model,name:partner_email_check.model_res_config_settings
-msgid "res.config.settings"
 msgstr ""
 
