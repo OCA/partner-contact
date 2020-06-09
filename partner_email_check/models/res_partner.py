@@ -71,13 +71,13 @@ class ResPartner(models.Model):
         return result['local'].lower() + '@' + result['domain_i18n']
 
     def _should_filter_duplicates(self):
-        conf = self.env['ir.config_parameter'].get_param(
+        conf = self.env['ir.config_parameter'].sudo().get_param(
             'partner_email_check_filter_duplicates', 'False'
         )
         return conf == 'True'
 
     def _should_check_deliverability(self):
-        conf = self.env['ir.config_parameter'].get_param(
+        conf = self.env['ir.config_parameter'].sudo().get_param(
             'partner_email_check_check_deliverability', 'False'
         )
         return conf == 'True'
