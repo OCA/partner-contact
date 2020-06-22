@@ -11,24 +11,25 @@ try:
     from stdnum import ean
     from stdnum.exceptions import InvalidChecksum
 except ImportError:
-    _logger.debug('Cannot `import external dependency python stdnum package`.')
+    _logger.debug("Cannot `import external dependency python stdnum package`.")
 
 
 class ResPartnerIdCategory(models.Model):
-    _inherit = 'res.partner.id_category'
+    _inherit = "res.partner.id_category"
 
     @api.model
     def _search_duplicate(self, category_id, id_number, force_active=False):
-        domain = [('category_id', '=', category_id),
-                  ('name', '=', id_number.name),
-                  ('name', '!=', False),
-                  ('id', '!=', id_number.id)]
+        domain = [
+            ("category_id", "=", category_id),
+            ("name", "=", id_number.name),
+            ("name", "!=", False),
+            ("id", "!=", id_number.id),
+        ]
 
         if force_active:
-            domain.append(('partner_id.active', '=', True))
-        return self.env['res.partner.id_number'].search(domain)
+            domain.append(("partner_id.active", "=", True))
+        return self.env["res.partner.id_number"].search(domain)
 
-    @api.multi
     def validate_res_partner_gln(self, id_number):
         self.ensure_one()
         if not id_number:
@@ -39,8 +40,9 @@ class ResPartnerIdCategory(models.Model):
         except InvalidChecksum:
             return True
 
-        cat = self.env.ref('partner_identification_gln.'
-                           'partner_identification_gln_number_category').id
+        cat = self.env.ref(
+            "partner_identification_gln." "partner_identification_gln_number_category"
+        ).id
         duplicate_gln = self._search_duplicate(cat, id_number, True)
 
         if duplicate_gln:
@@ -48,7 +50,6 @@ class ResPartnerIdCategory(models.Model):
 
         return False
 
-    @api.multi
     def validate_res_partner_gcp(self, id_number):
         self.ensure_one()
         if not id_number:
@@ -57,8 +58,9 @@ class ResPartnerIdCategory(models.Model):
         if len(id_number.name) < 1 or len(id_number.name) > 12:
             return True
 
-        cat = self.env.ref('partner_identification_gln.'
-                           'partner_identification_gcp_number_category').id
+        cat = self.env.ref(
+            "partner_identification_gln." "partner_identification_gcp_number_category"
+        ).id
         duplicate_gln = self._search_duplicate(cat, id_number)
 
         if duplicate_gln:
