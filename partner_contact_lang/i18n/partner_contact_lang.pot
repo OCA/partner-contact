@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_contact_lang
+# 	* partner_contact_lang
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,3 +18,7 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#. module: partner_contact_lang
+#: model_terms:ir.ui.view,arch_db:partner_contact_lang.view_res_partner_filter
+msgid "Language"
+msgstr ""
