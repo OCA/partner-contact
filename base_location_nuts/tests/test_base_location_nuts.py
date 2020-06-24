@@ -20,14 +20,14 @@ class TestBaseLocationNuts(common.SavepointCase):
         cls.nuts4_1 = cls.nuts_model.search([("code", "=", "ES243")])
         cls.nuts4_2 = cls.nuts_model.search([("code", "=", "ES300")])
         cls.partner = cls.env["res.partner"].create(
-            {"name": "Test partner", "country_id": cls.country_1.id,}
+            {"name": "Test partner", "country_id": cls.country_1.id}
         )
         cls.state_1 = cls.env["res.country.state"].create(
-            {"name": "Zaragoza Test", "code": "ZT", "country_id": cls.country_1.id,}
+            {"name": "Zaragoza Test", "code": "ZT", "country_id": cls.country_1.id}
         )
         cls.nuts4_1.state_id = cls.state_1
         cls.state_2 = cls.env["res.country.state"].create(
-            {"name": "Madrid Test", "code": "MT", "country_id": cls.country_1.id,}
+            {"name": "Madrid Test", "code": "MT", "country_id": cls.country_1.id}
         )
         cls.nuts4_2.state_id = cls.state_2
         cls.country_1.state_level = 4
