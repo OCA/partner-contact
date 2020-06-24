@@ -65,19 +65,19 @@ msgid "Display Name"
 msgstr "Nome visualizzato"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:138
+#: code:addons/base_location_nuts/wizard/nuts_import.py:0
 #, python-format
 msgid "Downloaded file is not a valid XML file"
 msgstr "Il file scaricato non è un file XML valido"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:130
+#: code:addons/base_location_nuts/wizard/nuts_import.py:0
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Errore %d durante lo scaricamento del file %s."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:126
+#: code:addons/base_location_nuts/wizard/nuts_import.py:0
 #, python-format
 msgid "Got an error when trying to download the file: %s."
 msgstr "Errore durante lo scaricamento del file: %s."
@@ -238,7 +238,7 @@ msgid ""
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:108
+#: code:addons/base_location_nuts/wizard/nuts_import.py:0
 #, python-format
 msgid "Value not found for mandatory field %s"
 msgstr "Valore non trovato per il campo obbligatorio %s"
