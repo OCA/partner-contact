@@ -113,7 +113,7 @@ class NutsImport(models.TransientModel):
                     try:
                         value = int(value)
                     except (ValueError, TypeError):
-                        logger.warn(
+                        logger.warning(
                             "Value {} for field {} replaced by 0".format(value, k)
                         )
                         value = 0
@@ -170,9 +170,7 @@ class NutsImport(models.TransientModel):
         code = data.get("code", "")
         if level == 1:
             self._current_country = self._countries[code]
-        return {
-            "country_id": self._current_country.id,
-        }
+        return {"country_id": self._current_country.id}
 
     @api.model
     def create_or_update_nuts(self, node):
@@ -183,7 +181,7 @@ class NutsImport(models.TransientModel):
         data = self._mapping(node)
         data.update(self.state_mapping(data, node))
         level = data.get("level", 0)
-        if level >= 2 and level <= 5:
+        if 2 <= level <= 5:
             data["parent_id"] = self._parents[level - 2]
         nuts = nuts_model.search(
             [("level", "=", data["level"]), ("code", "=", data["code"])]
@@ -192,11 +190,10 @@ class NutsImport(models.TransientModel):
             nuts.filtered(lambda n: not n.not_updatable).write(data)
         else:
             nuts = nuts_model.create(data)
-        if level >= 1 and level <= 4:
+        if 1 <= level <= 4:
             self._parents[level - 1] = nuts.id
         return nuts
 
-    @api.multi
     def run_import(self):
         nuts_model = self.env["res.partner.nuts"].with_context(
             defer_parent_store_computation=True
