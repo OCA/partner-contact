@@ -20,6 +20,21 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_sale_order_count
+msgid "# of Sales Order"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_property_account_payable_id
+msgid "Account Payable"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_property_account_receivable_id
+msgid "Account Receivable"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_message_needaction
 msgid "Action Needed"
 msgstr ""
@@ -72,6 +87,11 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_phonecall_available
 msgid "Available to call"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_bank_account_count
+msgid "Bank"
 msgstr ""
 
 #. module: partner_alias
@@ -166,6 +186,11 @@ msgid "Commercial Entity"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_ref_company_ids
+msgid "Companies that refers to partner"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_company_id
 msgid "Company"
 msgstr ""
@@ -201,6 +226,19 @@ msgid "Contacts"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_contract_ids
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_contracts_count
+#, fuzzy
+#| msgid "Contact type"
+msgid "Contracts"
+msgstr "Tipo di contatto"
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_payment_token_count
+msgid "Count Payment Token"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,help:partner_alias.field_res_partner_alias_message_bounce
 msgid "Counter of the number of bounced emails for this contact"
 msgstr ""
@@ -226,6 +264,23 @@ msgid "Credit Limit"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_property_stock_customer
+#, fuzzy
+#| msgid "City/Location"
+msgid "Customer Location"
+msgstr "Città/Locazione"
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_property_payment_term_id
+msgid "Customer Payment Terms"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_date
 msgid "Date"
 msgstr ""
@@ -238,6 +293,11 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_date_version
 msgid "Date version"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_trust
+msgid "Degree of trust you have in this debtor"
 msgstr ""
 
 #. module: partner_alias
@@ -284,6 +344,13 @@ msgid "First Name"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_property_account_position_id
+#, fuzzy
+#| msgid "Others Positions"
+msgid "Fiscal Position"
+msgstr "Altre Posizioni"
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_message_follower_ids
 msgid "Followers"
 msgstr ""
@@ -314,6 +381,11 @@ msgid "Gender"
 msgstr "Genere"
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_has_unreconciled_entries
+msgid "Has unreconciled entries"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_id
 msgid "ID"
 msgstr "ID"
@@ -342,6 +414,13 @@ msgid ""
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_team_id
+msgid ""
+"If set, sale team used notably for sales and assignations related to this "
+"partner"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,help:partner_alias.field_res_partner_alias_lang
 msgid ""
 "If the selected language is loaded in the system, all documents related to "
@@ -356,6 +435,16 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_ref
 msgid "Internal Reference"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_invoice_warn
+msgid "Invoice"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_invoice_ids
+msgid "Invoices"
 msgstr ""
 
 #. module: partner_alias
@@ -389,6 +478,12 @@ msgid "Job Position"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_issued_total
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_journal_item_count
+msgid "Journal Items"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_lang
 msgid "Language"
 msgstr ""
@@ -419,6 +514,19 @@ msgid "Last name"
 msgstr "Cognome"
 
 #. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_last_time_entries_checked
+msgid ""
+"Last time the invoices & payments matching was performed for this partner. "
+"It is set either if there's not at least an unreconciled debit and an "
+"unreconciled credit or if you click the \"Done\" button."
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_last_time_entries_checked
+msgid "Latest Invoices & Payments Matching Date"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_linkedin
 msgid "Linkedin"
 msgstr ""
@@ -444,6 +552,21 @@ msgid ""
 "Medium-sized image of this contact. It is automatically resized as a "
 "128x128px image, with aspect ratio preserved. Use this field in form views "
 "or some kanban views."
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_invoice_warn_msg
+msgid "Message for Invoice"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_sale_warn_msg
+msgid "Message for Sales Order"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_picking_warn_msg
+msgid "Message for Stock Picking"
 msgstr ""
 
 #. module: partner_alias
@@ -518,6 +641,16 @@ msgid "Partner Aliases"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_debit_limit
+msgid "Payable Limit"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_payment_token_ids
+msgid "Payment Tokens"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_phone
 msgid "Phone"
 msgstr ""
@@ -561,8 +694,34 @@ msgid "Res Partner Alias"
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_property_product_pricelist
+msgid "Sale Pricelist"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_sale_order_ids
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_sale_warn
+msgid "Sales Order"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_team_id
+msgid "Sales Team"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_user_id
 msgid "Salesperson"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_invoice_warn
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_picking_warn
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_sale_warn
+msgid ""
+"Selecting the \"Warning\" option will notify user with the message, "
+"Selecting \"Blocking Message\" will throw an exception with the message and "
+"block the flow. The Message has to be written in the next field."
 msgstr ""
 
 #. module: partner_alias
@@ -624,6 +783,11 @@ msgid "State"
 msgstr "Provincia"
 
 #. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_picking_warn
+msgid "Stock Picking"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_street
 msgid "Street"
 msgstr ""
@@ -666,10 +830,23 @@ msgid ""
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_property_account_position_id
+msgid ""
+"The fiscal position will determine taxes and accounts used for the partner."
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,help:partner_alias.field_res_partner_alias_user_id
 msgid ""
 "The internal user that is in charge of communicating with this contact if "
 "any."
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_has_unreconciled_entries
+msgid ""
+"The partner has at least one unreconciled debit and credit since last time "
+"the invoices & payments matching was performed."
 msgstr ""
 
 #. module: partner_alias
@@ -682,10 +859,59 @@ msgid ""
 msgstr ""
 
 #. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_property_account_payable_id
+msgid ""
+"This account will be used instead of the default one as the payable account "
+"for the current partner"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_property_account_receivable_id
+msgid ""
+"This account will be used instead of the default one as the receivable "
+"account for the current partner"
+msgstr ""
+
+#. module: partner_alias
 #: model:ir.model.fields,help:partner_alias.field_res_partner_alias_image
 msgid ""
 "This field holds the image used as avatar for this contact, limited to "
 "1024x1024px"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_property_supplier_payment_term_id
+msgid ""
+"This payment term will be used instead of the default one for purchase "
+"orders and vendor bills"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_property_payment_term_id
+msgid ""
+"This payment term will be used instead of the default one for sale orders "
+"and customer invoices"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_property_product_pricelist
+msgid ""
+"This pricelist will be used, instead of the default one, for sales to the "
+"current partner"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_property_stock_customer
+msgid ""
+"This stock location will be used, instead of the default one, as the "
+"destination location for goods you send to this partner"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_property_stock_supplier
+msgid ""
+"This stock location will be used, instead of the default one, as the source "
+"location for goods you receive from the current partner"
 msgstr ""
 
 #. module: partner_alias
@@ -701,6 +927,31 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_title
 msgid "Title"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_total_invoiced
+msgid "Total Invoiced"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_debit
+msgid "Total Payable"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_credit
+msgid "Total Receivable"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_credit
+msgid "Total amount this customer owes you."
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_debit
+msgid "Total amount you have to pay to this vendor."
 msgstr ""
 
 #. module: partner_alias
@@ -729,6 +980,21 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_user_ids
 msgid "Users"
 msgstr "Utenti"
+
+#. module: partner_alias
+#: model:ir.model.fields,help:partner_alias.field_res_partner_alias_currency_id
+msgid "Utility field to express amount currency"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_property_stock_supplier
+msgid "Vendor Location"
+msgstr ""
+
+#. module: partner_alias
+#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_property_supplier_payment_term_id
+msgid "Vendor Payment Terms"
+msgstr ""
 
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_version_hash
