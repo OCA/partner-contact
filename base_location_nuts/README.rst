@@ -23,7 +23,7 @@ NUTS Regions
     :target: https://runbot.odoo-community.org/runbot/134/12.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5| 
+|badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module allows to import NUTS locations.
 
@@ -58,7 +58,7 @@ Configuration
 
 After installation, you must click at import wizard to populate NUTS items
 in Odoo database in:
-Sales > Configuration > Address Book > Import NUTS 2013
+Contacts > Configuration > Localization > Import NUTS 2013
 
 This wizard will download from Europe RAMON service the metadata to
 build NUTS in Odoo. Each localization addon (l10n_es_location_nuts,

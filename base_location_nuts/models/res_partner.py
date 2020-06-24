@@ -12,16 +12,10 @@ class ResPartner(models.Model):
         comodel_name="res.partner.nuts", domain=[("level", "=", 1)], string="NUTS L1"
     )
     nuts2_id = fields.Many2one(
-        comodel_name="res.partner.nuts",
-        domain=[("level", "=", 2)],
-        string="NUTS L2",
-        oldname="region",
+        comodel_name="res.partner.nuts", domain=[("level", "=", 2)], string="NUTS L2"
     )
     nuts3_id = fields.Many2one(
-        comodel_name="res.partner.nuts",
-        domain=[("level", "=", 3)],
-        string="NUTS L3",
-        oldname="substate",
+        comodel_name="res.partner.nuts", domain=[("level", "=", 3)], string="NUTS L3"
     )
     nuts4_id = fields.Many2one(
         comodel_name="res.partner.nuts", domain=[("level", "=", 4)], string="NUTS L4"
@@ -50,9 +44,7 @@ class ResPartner(models.Model):
                 domain_field = "nuts%d_id" % (level + 1)
                 parent_id = self[parent_field].id
                 if parent_id:
-                    result["domain"][domain_field] = [
-                        ("parent_id", "=", parent_id),
-                    ]
+                    result["domain"][domain_field] = [("parent_id", "=", parent_id)]
                 level += 1
         return result
 
@@ -90,13 +82,11 @@ class ResPartner(models.Model):
             domain[field].append(("level", "=", level))
         if self.country_id:
             nuts1 = self.env["res.partner.nuts"].search(
-                [("level", "=", 1), ("country_id", "=", self.country_id.id),], limit=1
+                [("level", "=", 1), ("country_id", "=", self.country_id.id)], limit=1
             )
             if self.nuts1_id.id != nuts1.id:
                 self.nuts1_id = nuts1.id
-        return {
-            "domain": domain,
-        }
+        return {"domain": domain}
 
     @api.onchange("state_id")
     def onchange_state_id_base_location_nuts(self):
