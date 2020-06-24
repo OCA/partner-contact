@@ -19,6 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_contact_configuration
+#: model:ir.ui.menu,name:partner_contact_configuration.menu_config_contacts
+msgid "Configuration"
+msgstr ""
+
+#. module: partner_contact_configuration
 #: model:ir.ui.menu,name:partner_contact_configuration.menu_partner_contacts_category_form
 msgid "Contact Tags"
 msgstr "Etiquetas de contacto"
@@ -29,6 +34,7 @@ msgid "Contact Titles"
 msgstr "Titulos de contacto"
 
 #. module: partner_contact_configuration
-#: model:ir.ui.menu,name:partner_contact_configuration.menu_config_contacts
+#: model:ir.ui.menu,name:partner_contact_configuration.menu_action_contacts
+#: model:ir.ui.menu,name:partner_contact_configuration.menu_contacts_contacts
 msgid "Contacts"
 msgstr "Contactos"

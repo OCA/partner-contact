@@ -20,6 +20,11 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. module: partner_contact_configuration
+#: model:ir.ui.menu,name:partner_contact_configuration.menu_config_contacts
+msgid "Configuration"
+msgstr ""
+
+#. module: partner_contact_configuration
 #: model:ir.ui.menu,name:partner_contact_configuration.menu_partner_contacts_category_form
 msgid "Contact Tags"
 msgstr "Oznake kontakata"
@@ -30,6 +35,7 @@ msgid "Contact Titles"
 msgstr "Titule kontakata"
 
 #. module: partner_contact_configuration
-#: model:ir.ui.menu,name:partner_contact_configuration.menu_config_contacts
+#: model:ir.ui.menu,name:partner_contact_configuration.menu_action_contacts
+#: model:ir.ui.menu,name:partner_contact_configuration.menu_contacts_contacts
 msgid "Contacts"
 msgstr "Kontakti"
