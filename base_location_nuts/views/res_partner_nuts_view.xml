@@ -35,7 +35,6 @@
     <record id="res_partner_nuts_action" model="ir.actions.act_window">
         <field name="name">NUTS Items</field>
         <field name="res_model">res.partner.nuts</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="help">You must click at import wizard to populate NUTS items
         in Odoo database in:
