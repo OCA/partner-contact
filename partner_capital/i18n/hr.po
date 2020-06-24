@@ -149,7 +149,7 @@ msgstr "Iznos prometa"
 #. module: partner_capital
 #: model:ir.model,name:partner_capital.model_res_partner_turnover_range
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_alias_turnover_range_id
-#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_id_5543
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range_id_5642
 #: model:ir.model.fields,field_description:partner_capital.field_res_users_turnover_range_id
 msgid "Turnover range"
 msgstr "Raspon prometa"
