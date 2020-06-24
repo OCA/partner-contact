@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo13-addon-base_location',
         'odoo13-addon-base_location_geonames_import',
+        'odoo13-addon-base_location_nuts',
         'odoo13-addon-base_partner_sequence',
         'odoo13-addon-base_vat_sanitized',
         'odoo13-addon-partner_affiliate',
