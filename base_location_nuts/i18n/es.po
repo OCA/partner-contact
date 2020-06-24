@@ -64,19 +64,19 @@ msgid "Display Name"
 msgstr "Nombre mostrado"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:138
+#: code:addons/base_location_nuts/wizard/nuts_import.py:0
 #, python-format
 msgid "Downloaded file is not a valid XML file"
 msgstr "El fichero descargado no es un fichero XML válido"
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:130
+#: code:addons/base_location_nuts/wizard/nuts_import.py:0
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Error %d al intentar descargar el fichero %s."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:126
+#: code:addons/base_location_nuts/wizard/nuts_import.py:0
 #, python-format
 msgid "Got an error when trying to download the file: %s."
 msgstr "Error al intentar descargar el fichero: %s."
@@ -206,7 +206,6 @@ msgstr ""
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__parent_path
 #, fuzzy
-#| msgid "Parent Left"
 msgid "Parent Path"
 msgstr "Padre izquierda"
 
@@ -246,7 +245,7 @@ msgstr ""
 "                en el nuevo fichero descargado."
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:108
+#: code:addons/base_location_nuts/wizard/nuts_import.py:0
 #, python-format
 msgid "Value not found for mandatory field %s"
 msgstr "El valor no se ha encontrado para el campo obligatorio %s"

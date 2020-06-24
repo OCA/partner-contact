@@ -16,17 +16,12 @@ class ResPartnerNuts(models.Model):
     level = fields.Integer(required=True)
     code = fields.Char(required=True)
     name = fields.Char(required=True, translate=True)
-    country_id = fields.Many2one(
-        comodel_name="res.country", string="Country", required=True
-    )
-    state_id = fields.Many2one(comodel_name="res.country.state", string="State")
+    country_id = fields.Many2one(comodel_name="res.country", required=True)
+    state_id = fields.Many2one(comodel_name="res.country.state")
     not_updatable = fields.Boolean()
     # Parent hierarchy
     parent_id = fields.Many2one(comodel_name="res.partner.nuts", ondelete="restrict")
     parent_path = fields.Char(index=True)
     child_ids = fields.One2many(
-        comodel_name="res.partner.nuts",
-        inverse_name="parent_id",
-        string="Children",
-        oldname="children",
+        comodel_name="res.partner.nuts", inverse_name="parent_id", string="Children"
     )
