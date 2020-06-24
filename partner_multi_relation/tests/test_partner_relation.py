@@ -271,8 +271,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         )
         self.assertEqual(len(selection_symmetric), 2)
         # Now change to symmetric and test name and inverse name:
-        with self.env.do_in_draft():
-            type_symmetric.write({"name": "sym", "is_symmetric": True})
+        type_symmetric.write({"name": "sym", "is_symmetric": True})
         self.assertEqual(type_symmetric.is_symmetric, True)
         self.assertEqual(type_symmetric.name_inverse, type_symmetric.name)
         self.assertEqual(

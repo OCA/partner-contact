@@ -252,13 +252,11 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         )
         # 4. Test with invalid or impossible combinations
         relation_nobody = self._get_empty_relation()
-        with self.env.do_in_draft():
-            relation_nobody.type_selection_id = self.selection_nobody
+        relation_nobody.type_selection_id = self.selection_nobody
         warning = relation_nobody.onchange_type_selection_id()["warning"]
         self.assertTrue("message" in warning)
         self.assertTrue("No this partner available" in warning["message"])
-        with self.env.do_in_draft():
-            relation_nobody.this_partner_id = self.partner_02_company
+        relation_nobody.this_partner_id = self.partner_02_company
         warning = relation_nobody.onchange_type_selection_id()["warning"]
         self.assertTrue("message" in warning)
         self.assertTrue("incompatible" in warning["message"])
@@ -284,9 +282,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         self.assertTrue(("contact_type_this", "=", "c") in domain["type_selection_id"])
         # 3. Test with invalid or impossible combinations
         relation_nobody = self._get_empty_relation()
-        with self.env.do_in_draft():
-            relation_nobody.this_partner_id = self.partner_02_company
-            relation_nobody.type_selection_id = self.selection_nobody
+        relation_nobody.this_partner_id = self.partner_02_company
+        relation_nobody.type_selection_id = self.selection_nobody
         warning = relation_nobody.onchange_partner_id()["warning"]
         self.assertTrue("message" in warning)
         self.assertTrue("incompatible" in warning["message"])
