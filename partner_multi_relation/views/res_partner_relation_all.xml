@@ -6,8 +6,7 @@
             <tree 
                 string="Partner Relations"
                 decoration-muted="not active"
-                decoration-info="date_start &gt;
-                current_date"
+                decoration-info="date_start &gt; current_date"
                 editable="top"
             >
                 <field
