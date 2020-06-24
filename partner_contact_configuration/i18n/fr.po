@@ -30,5 +30,10 @@ msgstr "Titres du Contact"
 
 #. module: partner_contact_configuration
 #: model:ir.ui.menu,name:partner_contact_configuration.menu_config_contacts
-msgid "Configuration"
-msgstr "Configuration"
+#, fuzzy
+#| msgid "Contact Tags"
+msgid "Contacts"
+msgstr "Tags du Contact"
+
+#~ msgid "Configuration"
+#~ msgstr "Configuration"
