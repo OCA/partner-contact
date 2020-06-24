@@ -8,5 +8,4 @@ from odoo import fields, models
 class ResCountry(models.Model):
     _inherit = "res.country"
 
-    state_level = fields.Integer(
-        help="Level for the state NUTS category.")
+    state_level = fields.Integer(help="Level for the state NUTS category.")
