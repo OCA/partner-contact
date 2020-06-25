@@ -48,7 +48,7 @@ msgid "Display Name"
 msgstr "Wyświetlana nazwa "
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_id_5733
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position_id_5743
 msgid "ID"
 msgstr "ID"
 
