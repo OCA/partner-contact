@@ -7,7 +7,7 @@
     'summary': """
         Enable a chatter on the partner bank accounts which will track
         updates done on a partner bank account""",
-    'version': '10.0.1.0.0',
+    'version': '10.0.2.0.0',
     'license': 'AGPL-3',
     'author': 'ACSONE SA/NV, Odoo Community Association (OCA)',
     'website': 'https://github.com/OCA/partner-contact',
