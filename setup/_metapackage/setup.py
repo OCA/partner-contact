@@ -22,6 +22,7 @@ setuptools.setup(
         'odoo10-addon-partner_affiliate',
         'odoo10-addon-partner_alias',
         'odoo10-addon-partner_bank_active',
+        'odoo10-addon-partner_bank_mail_thread',
         'odoo10-addon-partner_bank_sort_code',
         'odoo10-addon-partner_capital',
         'odoo10-addon-partner_changeset',
