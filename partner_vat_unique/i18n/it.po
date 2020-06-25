@@ -22,6 +22,12 @@ msgid "Contact"
 msgstr "Contatto"
 
 #. module: partner_vat_unique
+#: code:addons/partner_vat_unique/models/res_partner.py:37
+#, python-format
+msgid "NOTE: This partner may be archived."
+msgstr ""
+
+#. module: partner_vat_unique
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__vat
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_users__vat
 msgid "Tax ID"
@@ -38,7 +44,7 @@ msgstr ""
 "imposte governative. Utilizzato in documenti legali."
 
 #. module: partner_vat_unique
-#: code:addons/partner_vat_unique/models/res_partner.py:29
+#: code:addons/partner_vat_unique/models/res_partner.py:34
 #, python-format
 msgid "The VAT %s already exists in another partner."
 msgstr "La Partita Iva %s è già assegnata ad un altro partner."
