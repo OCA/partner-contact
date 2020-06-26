@@ -5,12 +5,12 @@
 
 {
     "name": "Manage language in contacts",
-    "version": "13.0.1.0.0",
+    "version": "12.0.1.0.0",
     "category": "Sales",
     "license": "AGPL-3",
     "author": "Tecnativa," "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact/",
-    "depends": ["base"],
+    "depends": ["base_view_inheritance_extension"],
     "data": ["views/res_partner_view.xml"],
     "installable": True,
 }

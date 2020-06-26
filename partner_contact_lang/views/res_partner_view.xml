@@ -12,13 +12,20 @@
                 expr="//field[@name='child_ids']/form/sheet/field[@name='lang']"
                 position="replace"
             >
-                <field name="active_lang_count" invisible="1" />
-                <group attrs="{'invisible': [('active_lang_count', '&lt;=', 1)]}">
+                <group>
                     <group>
                         <field name="lang" />
                     </group>
                 </group>
             </xpath>
+            <!-- HACK https://github.com/odoo/odoo/issues/53738
+                 TODO Remove when fixed -->
+            <field name="lang" position="after">
+                <field name="partner_lang" invisible="1"/>
+            </field>
+            <field name="child_ids" position="attributes">
+                <attribute name="context" operation="python_dict" key="default_lang">partner_lang</attribute>
+            </field>
         </field>
     </record>
     <record id="view_res_partner_filter" model="ir.ui.view">

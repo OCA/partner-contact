@@ -2,11 +2,19 @@
 # Copyright 2017 Tecnativa - Vicent Cubells <vicent.cubells@tecnativa.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, models
+from odoo import api, fields, models
 
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
+
+    # HACK https://github.com/odoo/odoo/issues/53738
+    # TODO Remove when fixed
+    partner_lang = fields.Selection(
+        string="Partner lang",
+        related="lang",
+        readonly=True,
+    )
 
     def write(self, vals):
         """Propagate a language change in the partner to the child contacts."""
