@@ -52,7 +52,7 @@ Symmetric
 
 A symetric relation has the same value for the left and right sides.
 
-For example, in a competitor relation, both companies are competitors of each other. 
+For example, in a competitor relation, both companies are competitors of each other.
 
 .. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_symmetric.png
 
