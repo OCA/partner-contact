@@ -20,51 +20,41 @@ from odoo.tools import drop_view_if_exists
 
 class ResPartnerRelationTypeSelection(models.Model):
     """Virtual relation types"""
-    _name = 'res.partner.relation.type.selection'
-    _description = 'All relation types'
+
+    _name = "res.partner.relation.type.selection"
+    _description = "All relation types"
     _auto = False  # Do not try to create table in _auto_init(..)
     _foreign_keys = []
     _log_access = False
-    _order = 'name asc'
+    _order = "name asc"
 
     @api.model
     def get_partner_types(self):
         """Partner types are defined by model res.partner.relation.type."""
         # pylint: disable=no-self-use
-        rprt_model = self.env['res.partner.relation.type']
+        rprt_model = self.env["res.partner.relation.type"]
         return rprt_model.get_partner_types()
 
-    type_id = fields.Many2one(
-        comodel_name='res.partner.relation.type',
-        string='Type',
-    )
-    name = fields.Char('Name')
+    type_id = fields.Many2one(comodel_name="res.partner.relation.type", string="Type")
+    name = fields.Char("Name")
     contact_type_this = fields.Selection(
-        selection='get_partner_types',
-        string='Current record\'s partner type',
+        selection="get_partner_types", string="Current record's partner type"
     )
     is_inverse = fields.Boolean(
         string="Is reverse type?",
         help="Inverse relations are from right to left partner.",
     )
     contact_type_other = fields.Selection(
-        selection='get_partner_types',
-        string='Other record\'s partner type',
+        selection="get_partner_types", string="Other record's partner type"
     )
     partner_category_this = fields.Many2one(
-        comodel_name='res.partner.category',
-        string='Current record\'s category',
+        comodel_name="res.partner.category", string="Current record's category"
     )
     partner_category_other = fields.Many2one(
-        comodel_name='res.partner.category',
-        string='Other record\'s category',
+        comodel_name="res.partner.category", string="Other record's category"
     )
-    allow_self = fields.Boolean(
-        string='Reflexive',
-    )
-    is_symmetric = fields.Boolean(
-        string='Symmetric',
-    )
+    allow_self = fields.Boolean(string="Reflexive")
+    is_symmetric = fields.Boolean(string="Symmetric")
 
     def _get_additional_view_fields(self):
         """Allow inherit models to add fields to view.
@@ -73,7 +63,7 @@ class ResPartnerRelationTypeSelection(models.Model):
         prepended by a comma, like so:
             return ', typ.allow_self, typ.left_partner_category'
         """
-        return ''
+        return ""
 
     def _get_additional_tables(self):
         """Allow inherit models to add tables (JOIN's) to view.
@@ -81,7 +71,7 @@ class ResPartnerRelationTypeSelection(models.Model):
         Example:
             return 'JOIN type_extention ext ON (bas.type_id = ext.id)'
         """
-        return ''
+        return ""
 
     @api.model_cr_context
     def _auto_init(self):
@@ -122,29 +112,38 @@ CREATE OR REPLACE VIEW %(table)s AS
  JOIN res_partner_relation_type typ ON (bas.type_id = typ.id)
      %(additional_tables)s
             """,
-            {'table': AsIs(self._table),
-             'underlying_table': AsIs('res_partner_relation_type'),
-             'additional_view_fields':
-                AsIs(self._get_additional_view_fields()),
-             'additional_tables':
-                 AsIs(self._get_additional_tables())})
+            {
+                "table": AsIs(self._table),
+                "underlying_table": AsIs("res_partner_relation_type"),
+                "additional_view_fields": AsIs(self._get_additional_view_fields()),
+                "additional_tables": AsIs(self._get_additional_tables()),
+            },
+        )
         return super(ResPartnerRelationTypeSelection, self)._auto_init()
 
     @api.multi
     def name_get(self):
         """Get name or name_inverse from underlying model."""
         return [
-            (this.id,
-             this.is_inverse and this.type_id.name_inverse or
-             this.type_id.display_name)
-            for this in self]
+            (
+                this.id,
+                this.is_inverse
+                and this.type_id.name_inverse
+                or this.type_id.display_name,
+            )
+            for this in self
+        ]
 
     @api.model
-    def name_search(self, name='', args=None, operator='ilike', limit=100):
+    def name_search(self, name="", args=None, operator="ilike", limit=100):
         """Search for name or inverse name in underlying model."""
         # pylint: disable=no-value-for-parameter
         return self.search(
-            ['|',
-             ('type_id.name', operator, name),
-             ('type_id.name_inverse', operator, name)] + (args or []),
-            limit=limit).name_get()
+            [
+                "|",
+                ("type_id.name", operator, name),
+                ("type_id.name_inverse", operator, name),
+            ]
+            + (args or []),
+            limit=limit,
+        ).name_get()
