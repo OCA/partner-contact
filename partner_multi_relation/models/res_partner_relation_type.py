@@ -83,7 +83,6 @@ class ResPartnerRelationType(models.Model):
             elif not relation.date_end or relation.date_end > today:
                 relation.write({"date_end": today})
 
-    @api.multi
     def check_existing(self, vals):
         """Check wether records exist that do not fit new criteria."""
         relation_model = self.env["res.partner.relation"]
@@ -207,7 +206,6 @@ class ResPartnerRelationType(models.Model):
         end_relation_types = self.filtered(lambda t: t.handle_invalid_onchange == "end")
         end_relation_types._end_active_reflexive_relations()
 
-    @api.multi
     def _update_right_vals(self, vals):
         """Make sure that on symmetric relations, right vals follow left vals.
 
@@ -231,7 +229,6 @@ class ResPartnerRelationType(models.Model):
             self._update_right_vals(vals)
         return super(ResPartnerRelationType, self).create(vals)
 
-    @api.multi
     def write(self, vals):
         """Handle existing relations if conditions change."""
         self.check_existing(vals)
@@ -248,7 +245,6 @@ class ResPartnerRelationType(models.Model):
 
         return True
 
-    @api.multi
     def unlink(self):
         """Allow delete of relation type, even when connections exist.
 

@@ -73,7 +73,6 @@ class ResPartnerRelationTypeSelection(models.Model):
         """
         return ""
 
-    @api.model_cr_context
     def _auto_init(self):
         cr = self._cr
         drop_view_if_exists(cr, self._table)
@@ -121,7 +120,6 @@ CREATE OR REPLACE VIEW %(table)s AS
         )
         return super(ResPartnerRelationTypeSelection, self)._auto_init()
 
-    @api.multi
     def name_get(self):
         """Get name or name_inverse from underlying model."""
         return [
