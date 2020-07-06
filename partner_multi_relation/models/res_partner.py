@@ -169,7 +169,6 @@ class ResPartner(models.Model):
             count=count,
         )
 
-    @api.multi
     def get_partner_type(self):
         """Get partner type for relation.
         :return: 'c' for company or 'p' for person
@@ -178,7 +177,6 @@ class ResPartner(models.Model):
         self.ensure_one()
         return "c" if self.is_company else "p"
 
-    @api.multi
     def action_view_relations(self):
         for contact in self:
             relation_model = self.env["res.partner.relation.all"]
