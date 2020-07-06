@@ -1,43 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-
-        <record id="view_res_partner_filter" model="ir.ui.view">
-            <field name="name">partner_multi_relation.view_partner_filter</field>
-            <field name="inherit_id" ref="base.view_res_partner_filter" />
-            <field name="model">res.partner</field>
-            <field type="xml" name="arch">
-                <field name="parent_id" position="after">
-                    <field name="search_relation_partner_id" />
-                    <field name="search_relation_type_id" />
-                    <field name="search_relation_date" />
-                    <field name="search_relation_partner_category_id" />
-                </field>
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">partner_multi_relation.view_partner_filter</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="model">res.partner</field>
+        <field type="xml" name="arch">
+            <field name="parent_id" position="after">
+                <field name="search_relation_partner_id" />
+                <field name="search_relation_type_id" />
+                <field name="search_relation_date" />
+                <field name="search_relation_partner_category_id" />
             </field>
-        </record>
-
-        <record id="view_partner_form" model="ir.ui.view">
-            <field name="name">partner_multi_relation.view_partner_form</field>
-            <field name="inherit_id" ref="base.view_partner_form" />
-            <field name="model">res.partner</field>
-            <field type="xml" name="arch">
-                <xpath expr="//div[@name='button_box']" position="inside">
-                    <button name="action_view_relations"
-                        type="object"
-                        class="oe_stat_button"
-                        icon="fa-users">
-                        <field name="relation_count"
-                            widget="statinfo"
-                            string="Relations"/>
-                    </button>
-                </xpath>
-            </field>
-        </record>
-
-        <act_window id="action_show_partner_multi_relation"
-            name="Show partner's relations"
-            src_model="res.partner"
-            res_model="res.partner.relation.all"
-            domain="[('this_partner_id', 'in', active_ids)]"
-            key2="client_action_multi" />
-
+        </field>
+    </record>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">partner_multi_relation.view_partner_form</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="model">res.partner</field>
+        <field type="xml" name="arch">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    name="action_view_relations"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-users"
+                >
+                    <field name="relation_count" widget="statinfo" string="Relations" />
+                </button>
+            </xpath>
+        </field>
+    </record>
+    <act_window
+        id="action_show_partner_multi_relation"
+        name="Show partner's relations"
+        src_model="res.partner"
+        res_model="res.partner.relation.all"
+        domain="[('this_partner_id', 'in', active_ids)]"
+        key2="client_action_multi"
+    />
 </odoo>
