@@ -82,7 +82,6 @@ class ResPartnerRelation(models.Model):
         """
         self._check_partner("right")
 
-    @api.multi
     def _check_partner(self, side):
         """Check partner for required company or person, and for category
 
