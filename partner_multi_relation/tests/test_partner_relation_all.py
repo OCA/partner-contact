@@ -1,5 +1,5 @@
 # Copyright 2016-2017 Therp BV
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from datetime import date
 
@@ -56,6 +56,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         self.assertTrue(relation)
         self.assertEqual(relation.this_partner_id, self.partner_02_company)
         # Partner should have one relation now:
+        relation.invalidate_cache(None, relation.ids)
+        self.partner_01_person.flush()
         self.assertEqual(self.partner_01_person.relation_count, 1)
         # Test create without type_selection_id:
         with self.assertRaises(ValidationError):
@@ -79,11 +81,10 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             ),
         )
 
-    def test__regular_write(self):
+    def test_regular_write(self):
         """Test write with valid data."""
         relation = self._create_company2person_relation()
         relation.write({"date_start": "2014-09-01"})
-        relation.invalidate_cache(ids=relation.ids)
         self.assertEqual(relation.date_start, date(2014, 9, 1))
 
     def test_write_incompatible_dates(self):
@@ -252,18 +253,17 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         )
         # 4. Test with invalid or impossible combinations
         relation_nobody = self._get_empty_relation()
-        with self.env.do_in_draft():
-            relation_nobody.type_selection_id = self.selection_nobody
+        relation_nobody.type_selection_id = self.selection_nobody
         warning = relation_nobody.onchange_type_selection_id()["warning"]
         self.assertTrue("message" in warning)
         self.assertTrue("No this partner available" in warning["message"])
-        with self.env.do_in_draft():
-            relation_nobody.this_partner_id = self.partner_02_company
+        relation_nobody.this_partner_id = self.partner_02_company
         warning = relation_nobody.onchange_type_selection_id()["warning"]
         self.assertTrue("message" in warning)
         self.assertTrue("incompatible" in warning["message"])
         # Allow left partner and check message for other partner:
         self.type_nobody.write({"partner_category_left": False})
+        self.type_nobody.flush()
         self.selection_nobody.invalidate_cache(ids=self.selection_nobody.ids)
         warning = relation_nobody.onchange_type_selection_id()["warning"]
         self.assertTrue("message" in warning)
@@ -284,9 +284,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         self.assertTrue(("contact_type_this", "=", "c") in domain["type_selection_id"])
         # 3. Test with invalid or impossible combinations
         relation_nobody = self._get_empty_relation()
-        with self.env.do_in_draft():
-            relation_nobody.this_partner_id = self.partner_02_company
-            relation_nobody.type_selection_id = self.selection_nobody
+        relation_nobody.this_partner_id = self.partner_02_company
+        relation_nobody.type_selection_id = self.selection_nobody
         warning = relation_nobody.onchange_partner_id()["warning"]
         self.assertTrue("message" in warning)
         self.assertTrue("incompatible" in warning["message"])

@@ -1,5 +1,5 @@
 # Copyright 2016-2017 Therp BV
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 from datetime import date, datetime, timedelta
 
 from dateutil.relativedelta import relativedelta
@@ -271,8 +271,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         )
         self.assertEqual(len(selection_symmetric), 2)
         # Now change to symmetric and test name and inverse name:
-        with self.env.do_in_draft():
-            type_symmetric.write({"name": "sym", "is_symmetric": True})
+        type_symmetric.write({"name": "sym", "is_symmetric": True})
         self.assertEqual(type_symmetric.is_symmetric, True)
         self.assertEqual(type_symmetric.name_inverse, type_symmetric.name)
         self.assertEqual(
@@ -287,6 +286,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
                 "contact_type_right": type_symmetric.contact_type_right,
             }
         )
+        type_symmetric.flush()
         # symmetric relation should result in only one record in
         # selection:
         selection_symmetric = self.selection_model.search(
