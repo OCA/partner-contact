@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- Added partner categories and partners to this file, because it
-             turned out to be a bad idea to rely on demo data in base module,
-             that can change from release to release. Only dependency on
-             countries remain. They are less likely to change/disappear.
-        -->
+            turned out to be a bad idea to rely on demo data in base module,
+            that can change from release to release. Only dependency on
+            countries remain. They are less likely to change/disappear.
+    -->
     <!-- Partner relation types -->
     <record id="rel_type_assistant" model="res.partner.relation.type">
         <field name="name">Is assistant of</field>
@@ -48,8 +48,6 @@
             name="category_id"
             eval="[(6, 0, [ref('res_partner_category_pmr_11'), ref('res_partner_category_pmr_4')])]"
         />
-        <field name="supplier">1</field>
-        <field name="customer">1</field>
         <field name="is_company">1</field>
         <field name="city">Le Bourget du Lac</field>
         <field name="zip">73377</field>
@@ -65,7 +63,6 @@
             name="category_id"
             eval="[(6, 0, [ref('res_partner_category_pmr_4'), ref('res_partner_category_pmr_11')])]"
         />
-        <field name="supplier">1</field>
         <field name="is_company">1</field>
         <field name="city">Champs sur Marne</field>
         <field name="zip">77420</field>
@@ -78,8 +75,6 @@
     <record id="res_partner_pmr_super" model="res.partner">
         <field name="name">Super Washing Powder Company</field>
         <field name="category_id" eval="[(6,0,[ref('res_partner_category_pmr_5')])]" />
-        <field name="supplier">1</field>
-        <field eval="1" name="customer" />
         <field name="is_company">1</field>
         <field name="street">3rd Floor, Room 3-C,</field>
         <field

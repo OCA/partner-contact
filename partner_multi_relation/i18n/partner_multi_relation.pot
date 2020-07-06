@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_multi_relation
+# 	* partner_multi_relation
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:240
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "%s partner incompatible with relation type."
 msgstr ""
@@ -41,8 +41,8 @@ msgid "All relations with current partner"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:13
-#: selection:res.partner.relation.type,handle_invalid_onchange:0
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
+#: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__ignore
 #, python-format
 msgid "Allow existing relations that do not fit changed conditions"
 msgstr ""
@@ -75,8 +75,8 @@ msgid "Current record's partner type"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:17
-#: selection:res.partner.relation.type,handle_invalid_onchange:0
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
+#: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__delete
 #, python-format
 msgid "Delete relations that do not fit changed conditions"
 msgstr ""
@@ -95,15 +95,15 @@ msgid "Display Name"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:11
-#: selection:res.partner.relation.type,handle_invalid_onchange:0
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
+#: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__restrict
 #, python-format
 msgid "Do not allow change that will result in invalid relations"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:15
-#: selection:res.partner.relation.type,handle_invalid_onchange:0
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
+#: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__end
 #, python-format
 msgid "End relations per today, if they do not fit changed conditions"
 msgstr ""
@@ -115,8 +115,8 @@ msgid "Ending date"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:237
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:315
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "Error!"
 msgstr ""
@@ -252,13 +252,13 @@ msgid "Name"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:244
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "No %s partner available for relation type."
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:448
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "No relation type specified in vals: %s."
 msgstr ""
@@ -270,7 +270,7 @@ msgid "One Partner"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:82
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #, python-format
 msgid "Organisation"
 msgstr ""
@@ -317,13 +317,13 @@ msgid "Partner relation"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:115
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "Partners cannot have a relation with themselves."
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:83
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #, python-format
 msgid "Person"
 msgstr ""
@@ -335,9 +335,10 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model_terms:ir.actions.act_window,help:partner_multi_relation.action_res_partner_relation_all
-msgid "Record and track your partners' relations. Relations may\n"
-"                    be linked to other partners with a type either directly\n"
-"                    or inversely."
+msgid ""
+"Record and track your partners' relations. Relations may\n"
+"                be linked to other partners with a type either directly\n"
+"                or inversely."
 msgstr ""
 
 #. module: partner_multi_relation
@@ -352,9 +353,12 @@ msgid "Reflexive"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:196
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #, python-format
-msgid "Reflexivity could not be disabled for the relation type {relation_type}. There are existing reflexive relations defined for the following partners: {partners}"
+msgid ""
+"Reflexivity could not be disabled for the relation type {relation_type}. "
+"There are existing reflexive relations defined for the following partners: "
+"{partners}"
 msgstr ""
 
 #. module: partner_multi_relation
@@ -374,7 +378,7 @@ msgid "Relation Types"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:316
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "Relation type incompatible with selected partner(s)."
 msgstr ""
@@ -456,13 +460,13 @@ msgid "Symmetric"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:101
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "The %s partner does not have category %s."
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:95
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "The %s partner is not applicable for this relation type."
 msgstr ""
@@ -478,19 +482,21 @@ msgid "The id of the object in the model this relation is based on."
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:62
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:165
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #, python-format
-msgid "There are already relations not satisfying the conditions for partner type or category."
+msgid ""
+"There are already relations not satisfying the conditions for partner type "
+"or category."
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:154
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr ""
@@ -517,7 +523,7 @@ msgid "Underlying Relation Type"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner.py:79
+#: code:addons/partner_multi_relation/models/res_partner.py:0
 #, python-format
 msgid "Unsupported search operator \"%s\""
 msgstr ""
@@ -544,20 +550,20 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__handle_invalid_onchange
-msgid "When adding relations criteria like partner type and category are checked.\n"
+msgid ""
+"When adding relations criteria like partner type and category are checked.\n"
 "However when you change the criteria, there might be relations that do not fit the new criteria.\n"
 "Specify how this situation should be handled."
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:289
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "other"
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:286
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "this"
 msgstr ""
-
