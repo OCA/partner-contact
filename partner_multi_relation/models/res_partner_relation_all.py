@@ -44,8 +44,8 @@ SELECT
 FROM res_partner_relation rel"""
 
 
-class ResPartnerRelationAll(models.AbstractModel):
-    """Abstract model to show each relation from two sides."""
+class ResPartnerRelationAll(models.Model):
+    """Model to show each relation from two sides."""
 
     _auto = False
     _log_access = False
@@ -190,7 +190,6 @@ CREATE OR REPLACE VIEW %%(table)s AS
         """
         return ""
 
-    @api.model_cr_context
     def _auto_init(self):
         cr = self._cr
         drop_view_if_exists(cr, self._table)
@@ -215,7 +214,6 @@ CREATE OR REPLACE VIEW %%(table)s AS
             ("other_partner_id", operator, value),
         ]
 
-    @api.multi
     def name_get(self):
         return {
             this.id: "%s %s %s"
@@ -383,14 +381,12 @@ CREATE OR REPLACE VIEW %%(table)s AS
                 del vals[key]
         return vals
 
-    @api.multi
     def get_base_resource(self):
         """Get base resource from res_model and res_id."""
         self.ensure_one()
         base_model = self.env[self.res_model]
         return base_model.browse([self.res_id])
 
-    @api.multi
     def write_resource(self, base_resource, vals):
         """write handled by base resource."""
         self.ensure_one()
@@ -399,6 +395,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
         relation_model = self.env["res.partner.relation"]
         assert self.res_model == relation_model._name
         base_resource.write(vals)
+        base_resource.flush()
 
     @api.model
     def _get_type_selection_from_vals(self, vals):
@@ -416,10 +413,8 @@ CREATE OR REPLACE VIEW %%(table)s AS
             or False
         )
 
-    @api.multi
     def write(self, vals):
-        """For model 'res.partner.relation' call write on underlying model.
-        """
+        """For model 'res.partner.relation' call write on underlying model."""
         new_type_selection = self._get_type_selection_from_vals(vals)
         for rec in self:
             type_selection = new_type_selection or rec.type_selection_id
@@ -428,7 +423,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
             rec.write_resource(base_resource, vals)
         # Invalidate cache to make res.partner.relation.all reflect changes
         # in underlying res.partner.relation:
-        self.env.clear()
+        self.invalidate_cache(None, self.ids)
         return True
 
     @api.model
@@ -464,7 +459,6 @@ CREATE OR REPLACE VIEW %%(table)s AS
         res_id = self._compute_id(base_resource, type_selection)
         return self.browse(res_id)
 
-    @api.multi
     def unlink_resource(self, base_resource):
         """Delegate unlink to underlying model."""
         self.ensure_one()
@@ -474,7 +468,6 @@ CREATE OR REPLACE VIEW %%(table)s AS
         assert self.res_model == relation_model._name
         base_resource.unlink()
 
-    @api.multi
     def unlink(self):
         """For model 'res.partner.relation' call unlink on underlying model.
         """
