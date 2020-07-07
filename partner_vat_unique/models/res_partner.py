@@ -31,9 +31,9 @@ class ResPartner(models.Model):
                 ("company_id", "=", False),
                 ("company_id", "=", record.company_id.id),
             ]):
-                raise ValidationError(_(
+                raise ValidationError((_(
                     "The VAT %s already exists in another "
                     "partner."
                 ) + " " + _(
                     "NOTE: This partner may be archived."
-                ) % record.vat)
+                )) % record.vat)
