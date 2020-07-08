@@ -5,7 +5,7 @@
 
 {
     'name': 'Partner External Maps',
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.0.1',
     'category': 'Extra Tools',
     'license': 'AGPL-3',
     'summary': 'Add Map and Map Routing buttons on partner form to '
