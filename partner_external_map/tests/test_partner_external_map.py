@@ -60,9 +60,10 @@ class TestPartnerExternalMap(common.TransactionCase):
         partner.partner_latitude = 39.15837
         partner.partner_longitude = -3.02145
         action = partner.open_map()
-        self.assertEqual(
-            action['url'],
-            "https://www.google.com/maps?z=15&q=39.15837,-3.02145")
+        self.assertTrue(
+            action["url"].startswith("https://www.google.com/maps?z="))
+        self.assertIn("39.15837", action['url'])
+        self.assertIn("-3.02145", action['url'])
 
     def test_exception_no_addr(self):
         self.partner.write({
