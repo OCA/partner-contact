@@ -4,16 +4,16 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, fields, models
+
 from odoo.addons.partner_firstname import exceptions
 
 
 class ResPartner(models.Model):
     """Adds a second last name."""
+
     _inherit = "res.partner"
 
-    lastname2 = fields.Char(
-        "Second last name",
-    )
+    lastname2 = fields.Char("Second last name",)
 
     @api.model
     def _get_computed_name(self, lastname, firstname, lastname2=None):
@@ -24,7 +24,7 @@ class ResPartner(models.Model):
         """
         order = self._get_names_order()
         names = list()
-        if order == 'first_last':
+        if order == "first_last":
             if firstname:
                 names.append(firstname)
             if lastname:
@@ -36,7 +36,7 @@ class ResPartner(models.Model):
                 names.append(lastname)
             if lastname2:
                 names.append(lastname2)
-            if names and firstname and order == 'last_first_comma':
+            if names and firstname and order == "last_first_comma":
                 names[-1] = names[-1] + ","
             if firstname:
                 names.append(firstname)
@@ -73,29 +73,28 @@ class ResPartner(models.Model):
         """
         # Company name goes to the lastname
         result = {
-            'firstname': False,
-            'lastname': name or False,
-            'lastname2': False,
+            "firstname": False,
+            "lastname": name or False,
+            "lastname2": False,
         }
         if not is_company and name:
             order = self._get_names_order()
-            result = super(ResPartner, self)._get_inverse_name(
-                name, is_company)
+            result = super(ResPartner, self)._get_inverse_name(name, is_company)
             parts = []
-            if order == 'last_first':
-                if result['firstname']:
-                    parts = result['firstname'].split(" ", 1)
+            if order == "last_first":
+                if result["firstname"]:
+                    parts = result["firstname"].split(" ", 1)
                 while len(parts) < 2:
                     parts.append(False)
-                result['lastname2'] = parts[0]
-                result['firstname'] = parts[1]
+                result["lastname2"] = parts[0]
+                result["firstname"] = parts[1]
             else:
-                if result['lastname']:
-                    parts = result['lastname'].split(" ", 1)
+                if result["lastname"]:
+                    parts = result["lastname"].split(" ", 1)
                 while len(parts) < 2:
                     parts.append(False)
-                result['lastname'] = parts[0]
-                result['lastname2'] = parts[1]
+                result["lastname"] = parts[0]
+                result["lastname2"] = parts[1]
         return result
 
     @api.constrains("firstname", "lastname", "lastname2")
