@@ -9,15 +9,9 @@
     "version": "12.0.1.0.0",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/partner-contact",
-    "author": "Tecnativa, "
-              "Odoo Community Association (OCA)",
+    "author": "Tecnativa, " "Odoo Community Association (OCA)",
     "category": "Partner Management",
-    "depends": [
-        "partner_firstname",
-    ],
-    "data": [
-        "views/res_partner.xml",
-        "views/res_user.xml",
-    ],
+    "depends": ["partner_firstname",],
+    "data": ["views/res_partner.xml", "views/res_user.xml",],
     "installable": True,
 }
