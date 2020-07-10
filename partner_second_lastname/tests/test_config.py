@@ -10,7 +10,7 @@ class TestConfig(common.SavepointCase):
         super(TestConfig, cls).setUpClass()
         cls.wizard = cls.env["res.config.settings"].create({})
         cls.partner = cls.env["res.partner"].create(
-            {"firstname": "First", "lastname": "Last", "lastname2": "Second",}
+            {"firstname": "First", "lastname": "Last", "lastname2": "Second"}
         )
 
     def test_last_first(self):
