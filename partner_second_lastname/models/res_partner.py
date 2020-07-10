@@ -50,7 +50,6 @@ class ResPartner(models.Model):
                 partner.lastname, partner.firstname, partner.lastname2,
             )
 
-    @api.multi
     def _inverse_name(self):
         """Try to revert the effect of :meth:`._compute_name`."""
         self.ensure_one()
@@ -106,8 +105,3 @@ class ResPartner(models.Model):
             for partner in self:
                 if not partner.lastname2:
                     raise
-
-    @api.onchange("firstname", "lastname", "lastname2")
-    def _onchange_subnames(self):
-        """Trigger onchange with :attr:`~.lastname2` too."""
-        super(ResPartner, self)._onchange_subnames()
