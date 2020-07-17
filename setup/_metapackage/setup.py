@@ -20,6 +20,7 @@ setuptools.setup(
         'odoo13-addon-partner_company_type',
         'odoo13-addon-partner_contact_age_range',
         'odoo13-addon-partner_contact_birthdate',
+        'odoo13-addon-partner_contact_department',
         'odoo13-addon-partner_contact_gender',
         'odoo13-addon-partner_contact_job_position',
         'odoo13-addon-partner_contact_lang',
