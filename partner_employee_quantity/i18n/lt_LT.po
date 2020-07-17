@@ -1,0 +1,102 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_employee_quantity
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-26 15:33+0000\n"
+"PO-Revision-Date: 2017-12-26 15:33+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Lithuanian (Lithuania) (https://www.transifex.com/oca/"
+"teams/23907/lt_LT/)\n"
+"Language: lt_LT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. module: partner_employee_quantity
+#: model:ir.model,name:partner_employee_quantity.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__create_uid
+msgid "Created by"
+msgstr "Sukūrė"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__create_date
+msgid "Created on"
+msgstr "Sukurta"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner__employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_users__employee_quantity
+#: model_terms:ir.ui.view,arch_db:partner_employee_quantity.view_res_partner_filter_employees
+msgid "Employee Quantity"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model_terms:ir.ui.view,arch_db:partner_employee_quantity.view_partner_form_employees
+msgid "Employee quantity"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner__employee_quantity_range_id
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_users__employee_quantity_range_id
+msgid "Employee quantity range"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__write_uid
+msgid "Last Updated by"
+msgstr "Paskutinį kartą atnaujino"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__write_date
+msgid "Last Updated on"
+msgstr "Paskutinį kartą atnaujinta"
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__name
+msgid "Name"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model:ir.model,name:partner_employee_quantity.model_res_partner_employee_quantity_range
+msgid "Partner employee quantity range"
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model:ir.model.fields,help:partner_employee_quantity.field_res_partner__employee_quantity_range_id
+#: model:ir.model.fields,help:partner_employee_quantity.field_res_users__employee_quantity_range_id
+msgid "Range of this partner depending on the employee quantity."
+msgstr ""
+
+#. module: partner_employee_quantity
+#: model:ir.actions.act_window,name:partner_employee_quantity.employees_range_action
+#: model:ir.ui.menu,name:partner_employee_quantity.menu_employees_range
+#: model_terms:ir.ui.view,arch_db:partner_employee_quantity.employees_range_tree_view
+msgid "Ranges by quantity of employees"
+msgstr ""
