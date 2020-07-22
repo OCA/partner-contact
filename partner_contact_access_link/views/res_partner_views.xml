@@ -1,21 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2020 Tecnativa - Jairo Llopis
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
-
 <data>
-
     <record id="view_partner_form" model="ir.ui.view">
         <field name="name">Add button to see child contacts full form</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <!-- Make child kanban able to open form in full view -->
-            <xpath expr="//field[@name='child_ids']/kanban/templates//field[@name='name']" position="after">
-                <button class="btn btn-link" type="object" name="open_child_form" title="Open full form">
+            <xpath
+                expr="//field[@name='child_ids']/kanban/templates//field[@name='name']"
+                position="after"
+            >
+                <button
+                    class="btn btn-link"
+                    type="object"
+                    name="open_child_form"
+                    title="Open full form"
+                >
                     <i class="fa fa-external-link-square" />
                 </button>
             </xpath>
         </field>
     </record>
-
 </data>
