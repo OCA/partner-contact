@@ -7,4 +7,3 @@ To use this module, you need to:
    can click to go to hers/his full form:
 
    .. image:: ../static/description/full-form.gif
-
