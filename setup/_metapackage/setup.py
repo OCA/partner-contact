@@ -18,6 +18,7 @@ setuptools.setup(
         'odoo13-addon-partner_coc',
         'odoo13-addon-partner_company_group',
         'odoo13-addon-partner_company_type',
+        'odoo13-addon-partner_contact_access_link',
         'odoo13-addon-partner_contact_age_range',
         'odoo13-addon-partner_contact_birthdate',
         'odoo13-addon-partner_contact_department',
