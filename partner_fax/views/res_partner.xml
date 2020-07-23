@@ -28,6 +28,12 @@
             <field name="function" position="after">
                 <field name="fax" placeholder="Fax..." widget="phone" />
             </field>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='mobile']"
+                position="after"
+            >
+                <field name="fax" placeholder="Fax..." widget="phone" />
+            </xpath>
         </field>
     </record>
 </odoo>
