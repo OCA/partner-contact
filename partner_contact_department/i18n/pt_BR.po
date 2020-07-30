@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2017-12-26 15:32+0000\n"
 "PO-Revision-Date: 2019-08-26 16:01+0000\n"
 "Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
-"23907/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
+"teams/23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,12 +62,6 @@ msgid "Display Name"
 msgstr "Mostrar Nome"
 
 #. module: partner_contact_department
-#: code:addons/partner_contact_department/models/res_partner.py:46
-#, python-format
-msgid "Error! You cannot create recursive departments."
-msgstr "Erro! Você não pode criar departamentos recursivos."
-
-#. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__id
 msgid "ID"
 msgstr "ID"
@@ -101,6 +95,9 @@ msgstr "Caminho do Pai"
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__parent_id
 msgid "Parent department"
 msgstr "Departamento Pai"
+
+#~ msgid "Error! You cannot create recursive departments."
+#~ msgstr "Erro! Você não pode criar departamentos recursivos."
 
 #, fuzzy
 #~ msgid "Parent Right"
