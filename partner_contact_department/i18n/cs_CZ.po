@@ -61,12 +61,6 @@ msgid "Display Name"
 msgstr "Zobrazovaný název"
 
 #. module: partner_contact_department
-#: code:addons/partner_contact_department/models/res_partner.py:46
-#, python-format
-msgid "Error! You cannot create recursive departments."
-msgstr "Chyba! Nemůžete vytvářet rekurzivní oddělení."
-
-#. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__id
 msgid "ID"
 msgstr "ID"
@@ -101,6 +95,9 @@ msgstr "Rodič odešel"
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__parent_id
 msgid "Parent department"
 msgstr "Rodičovské oddělení"
+
+#~ msgid "Error! You cannot create recursive departments."
+#~ msgstr "Chyba! Nemůžete vytvářet rekurzivní oddělení."
 
 #, fuzzy
 #~ msgid "Parent Right"
