@@ -61,12 +61,6 @@ msgid "Display Name"
 msgstr "显示名称"
 
 #. module: partner_contact_department
-#: code:addons/partner_contact_department/models/res_partner.py:46
-#, python-format
-msgid "Error! You cannot create recursive departments."
-msgstr ""
-
-#. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__id
 msgid "ID"
 msgstr "ID"
