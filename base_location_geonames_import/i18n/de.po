@@ -81,7 +81,7 @@ msgid "Geonames State Name Column"
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:189
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:191
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Erhielt einen Fehler %d beim Versuch die Datei %s herunter zu laden."
@@ -134,8 +134,8 @@ msgid "The city will be created as a separate entity."
 msgstr ""
 
 #. module: base_location_geonames_import
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:96
-#: code:addons/base_location_geonames_import/wizard/geonames_import.py:124
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:98
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:126
 #, python-format
 msgid ""
 "The country code inside the file (%s) doesn't correspond to the selected "
