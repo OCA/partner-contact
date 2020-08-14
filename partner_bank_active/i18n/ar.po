@@ -20,6 +20,7 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #. module: partner_bank_active
+#: model:ir.model.fields,field_description:partner_bank_active.field_account_setup_bank_manual_config__active
 #: model:ir.model.fields,field_description:partner_bank_active.field_res_partner_bank__active
 msgid "Active"
 msgstr "نشِط"
