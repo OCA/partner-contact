@@ -13,22 +13,28 @@ language: python
 python:
   - "3.5"
 
+stages:
+    - linting
+    - test
+
+jobs:
+  include:
+    - stage: linting
+      env:
+        - LINT_CHECK="1"
+    - stage: test
+      env:
+        - TESTS="1" ODOO_REPO="odoo/odoo" MAKEPOT="1"
+    - stage: test
+      env:
+        - TESTS="1" ODOO_REPO="OCA/OCB"
 
 env:
   global:
   - VERSION="12.0" TESTS="0" LINT_CHECK="0" TRANSIFEX="0"
-  - TRANSIFEX_USER='transbot@odoo-community.org'
-  - secure: "E0Y9b59yzsYaSZUG8aVdRbWHltEUBz8EIXla06YNLNsP0bsWUIWcgkVNCMhgQHBlBEGWZJ/2hcX+frDNx65IscEQrwHgfOM86AW32krRy6vKkkgQuhC04UM91dkp/bqT/bjP4Jzsn0khikBIa4mVA6ou2t1D4f3h5njhLdlAXHM="
-
-  matrix:
-  - LINT_CHECK="1"
-  - TRANSIFEX="1"
-  - TESTS="1" ODOO_REPO="OCA/OCB"
-  - TESTS="1" ODOO_REPO="odoo/odoo"
-
 
 install:
-  - git clone https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
+  - git clone --depth=1 https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
 
