@@ -40,7 +40,6 @@ msgstr ""
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__country_ids
 #, fuzzy
-#| msgid "Country"
 msgid "Countries"
 msgstr "Maa"
 
