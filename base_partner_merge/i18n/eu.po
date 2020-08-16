@@ -220,7 +220,6 @@ msgstr ""
 #. module: base_partner_merge
 #: model:ir.model,name:base_partner_merge.model_res_partner
 #, fuzzy
-#| msgid "Partners"
 msgid "Partner"
 msgstr "Kideak"
 
