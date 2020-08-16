@@ -27,7 +27,6 @@ msgstr "Bedrijven"
 #. module: partner_label
 #: model:ir.model,name:partner_label.model_res_config_settings
 #, fuzzy
-#| msgid "base.config.settings"
 msgid "Config Settings"
 msgstr "base.config.settings"
 
