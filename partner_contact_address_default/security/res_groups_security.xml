@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_allow_all_partner" model="res.groups">
+        <field name="name">Allow selecting all partner records as address default</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+</odoo>
