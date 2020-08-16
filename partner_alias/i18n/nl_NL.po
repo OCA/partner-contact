@@ -92,7 +92,6 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_bank_account_count
 #, fuzzy
-#| msgid "Banks"
 msgid "Bank"
 msgstr "Banken"
 

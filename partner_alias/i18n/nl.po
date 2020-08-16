@@ -229,7 +229,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_contract_ids
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_contracts_count
 #, fuzzy
-#| msgid "Contact type"
 msgid "Contracts"
 msgstr "Contact soort"
 
@@ -271,7 +270,6 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_property_stock_customer
 #, fuzzy
-#| msgid "City/Location"
 msgid "Customer Location"
 msgstr "Plaats/Locatie"
 
@@ -346,7 +344,6 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_property_account_position_id
 #, fuzzy
-#| msgid "Others Positions"
 msgid "Fiscal Position"
 msgstr "Overige functies"
 
