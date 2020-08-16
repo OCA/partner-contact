@@ -40,6 +40,5 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_contact_lang.field_res_partner__partner_lang
 #: model:ir.model.fields,field_description:partner_contact_lang.field_res_users__partner_lang
 #, fuzzy
-#| msgid "Partner"
 msgid "Partner lang"
 msgstr "พาร์ทเนอร์"
