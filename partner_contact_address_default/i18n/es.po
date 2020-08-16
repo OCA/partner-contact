@@ -25,7 +25,6 @@ msgstr "Contacto"
 #. module: partner_contact_address_default
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
 #, fuzzy
-#| msgid "Invoice address"
 msgid "Force addresses"
 msgstr "Dirección de facturación"
 
