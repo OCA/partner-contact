@@ -80,7 +80,6 @@ msgstr "Üst ID"
 #. module: partner_industry_secondary
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__parent_path
 #, fuzzy
-#| msgid "Parent Left"
 msgid "Parent Path"
 msgstr "Sol Üst"
 
