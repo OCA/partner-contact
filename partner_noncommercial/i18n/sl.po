@@ -23,7 +23,6 @@ msgstr ""
 #: model:ir.actions.act_window,name:partner_noncommercial.action_address_form
 #: model:ir.ui.menu,name:partner_noncommercial.menu_address_form
 #, fuzzy
-#| msgid "All partners"
 msgid "All addresses"
 msgstr "Vsi partnerji"
 
@@ -37,9 +36,6 @@ msgstr "Vsi partnerji"
 #. module: partner_noncommercial
 #: model_terms:ir.actions.act_window,help:partner_noncommercial.action_person_form
 #, fuzzy
-#| msgid ""
-#| "<p class=\"oe_view_nocontent_create\">Click to add a person in your "
-#| "address book.</p>"
 msgid "Click to add a person to your address book."
 msgstr "<p class=\"oe_view_nocontent_create\">Dodaj osebo v imenik.</p>"
 
@@ -63,7 +59,6 @@ msgstr "Organizacije"
 #. module: partner_noncommercial
 #: model:ir.ui.menu,name:partner_noncommercial.menu_partner
 #, fuzzy
-#| msgid "All partners"
 msgid "Partners"
 msgstr "Vsi partnerji"
 
