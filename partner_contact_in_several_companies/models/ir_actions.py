@@ -6,7 +6,6 @@ from odoo import api, models
 class IRActionsWindow(models.Model):
     _inherit = 'ir.actions.act_window'
 
-    @api.multi
     def read(self, fields=None, context=None, load='_classic_read'):
         actions = super(IRActionsWindow, self).read(fields=fields, load=load)
         for action in actions:
