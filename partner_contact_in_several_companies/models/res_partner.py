@@ -27,7 +27,6 @@ class ResPartner(models.Model):
         string='Others Positions',
     )
 
-    @api.multi
     @api.depends('contact_id')
     def _compute_contact_type(self):
         for rec in self:
@@ -81,22 +80,18 @@ class ResPartner(models.Model):
             vals['name'] = modified_self.browse(vals['contact_id']).name
         return super(ResPartner, modified_self).create(vals)
 
-    @api.multi
     def read(self, fields=None, load='_classic_read'):
         modified_self = self._basecontact_check_context('read')
         return super(ResPartner, modified_self).read(fields=fields, load=load)
 
-    @api.multi
     def write(self, vals):
         modified_self = self._basecontact_check_context('write')
         return super(ResPartner, modified_self).write(vals)
 
-    @api.multi
     def unlink(self):
         modified_self = self._basecontact_check_context('unlink')
         return super(ResPartner, modified_self).unlink()
 
-    @api.multi
     def _compute_commercial_partner(self):
         """ Returns the partner that is considered the commercial
         entity of this partner. The commercial entity holds the master data
@@ -132,7 +127,6 @@ class ResPartner(models.Model):
         if contact_vals:
             self.with_context(__update_contact_lock=True).write(contact_vals)
 
-    @api.multi
     def _fields_sync(self, update_values):
         """Sync commercial fields and address fields from company and to
         children, contact fields from contact and to attached contact
