@@ -80,8 +80,8 @@
                                         <div class="o_kanban_image">
                                             <img t-if="record.image_128.raw_value" t-att-src="'data:image/png;base64,' + record.image_128.raw_value"/>
                                             <t t-if="!record.image_128.raw_value">
-                                                <img alt="Logo" t-if="record.is_company.raw_value === true" t-att-src='_s + "/base/static/src/img/company_image.png"'/>
-                                                <img alt="Avatar" t-if="record.is_company.raw_value === false" t-att-src='_s + "/base/static/src/img/avatar_grey.png"'/>
+                                                <img alt="Logo" t-if="record.is_company.raw_value === true" t-att-src='_s + "/base/static/img/company_image.png"'/>
+                                                <img alt="Avatar" t-if="record.is_company.raw_value === false" t-att-src='_s + "/base/static/img/avatar_grey.png"'/>
                                             </t>
                                         </div>
                                         <div class="oe_kanban_details">
