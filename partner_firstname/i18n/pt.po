@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-14 03:37+0000\n"
-"PO-Revision-Date: 2016-11-14 03:37+0000\n"
-"Last-Translator: Tiago Baptista <tiago@baptista.net>, 2016\n"
+"PO-Revision-Date: 2020-09-02 18:00+0000\n"
+"Last-Translator: Pedro Castro Silva <pedrocs@exo.pt>\n"
 "Language-Team: Portuguese (https://www.transifex.com/oca/teams/23907/pt/)\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/models/res_users.py:40
@@ -62,7 +63,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__name
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__name
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:7
