@@ -85,8 +85,8 @@ class ResPartner(models.Model):
                     parts = result['firstname'].split(" ", 1)
                 while len(parts) < 2:
                     parts.append(False)
-                result['lastname2'] = parts[0]
-                result['firstname'] = parts[1]
+                result['firstname'] = parts[0]
+                result['lastname2'] = parts[1]
             else:
                 if result['lastname']:
                     parts = result['lastname'].split(" ", 1)
