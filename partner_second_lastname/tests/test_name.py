@@ -128,6 +128,15 @@ class PersonCase(TransactionCase):
             "name": "{} {}, {}".format(self.lastname, self.lastname2, self.firstname),
         }
 
+    def test_firstname_last_wo_comma(self):
+        """Create a person setting his first name last and the order as 'last_first'"""
+        self.env["ir.config_parameter"].set_param("partner_names_order", "last_first")
+        self.template = "%(last1)s %(last2)s %(first)s"
+        self.params = {
+            "is_company": False,
+            "name": "{} {} {}".format(self.lastname, self.lastname2, self.firstname),
+        }
+
     def test_firstname_only(self):
         """Create a person setting his first name only."""
         self.env["ir.config_parameter"].set_param("partner_names_order", "first_last")
@@ -155,6 +164,17 @@ class PersonCase(TransactionCase):
         self.params = {
             "is_company": False,
             "name": "{}, {}".format(self.lastname, self.firstname),
+        }
+
+    def test_lastname_firstname_only_wo_comma(self):
+        """Create a person setting his last name 1 and first name only.
+        Set order to 'last_first' to test name split without comma"""
+        self.env["ir.config_parameter"].set_param("partner_names_order", "last_first")
+        self.lastname2 = False
+        self.template = "%(last1)s %(first)s"
+        self.params = {
+            "is_company": False,
+            "name": "{} {}".format(self.lastname, self.firstname),
         }
 
     def test_separately(self):
