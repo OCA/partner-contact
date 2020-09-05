@@ -46,7 +46,7 @@ class ResPartner(models.Model):
                     vals[key] = value
 
             # Remove the combined fields
-            if "name" in vals:
+            if "name" in vals and not self._context.get('install_mode'):
                 del vals["name"]
             if "default_name" in context:
                 del context["default_name"]
