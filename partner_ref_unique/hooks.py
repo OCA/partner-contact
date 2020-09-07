@@ -16,12 +16,9 @@ def pre_init_hook(cr):
         "COMMENT ON COLUMN public.res_company.partner_ref_unique "
         "IS 'Unique partner reference for';"
     )
-    cr.execute(
-        "UPDATE res_company SET partner_ref_unique = 'none';"
-    )
+    cr.execute("UPDATE res_company SET partner_ref_unique = 'none';")
     _logger.info(
-        "Creating res.partner.partner_ref_unique column with value from "
-        "res.company"
+        "Creating res.partner.partner_ref_unique column with value from " "res.company"
     )
     cr.execute("ALTER TABLE res_partner ADD partner_ref_unique varchar NULL;")
     cr.execute(
