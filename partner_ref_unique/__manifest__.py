@@ -8,16 +8,11 @@
     "version": "12.0.1.0.2",
     "category": "Customer Relationship Management",
     "website": "https://github.com/OCA/partner-contact/",
-    "author": "Tecnativa, "
-              "Odoo Community Association (OCA)",
+    "author": "Tecnativa, " "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "pre_init_hook": "pre_init_hook",
-    "depends": [
-        "base",
-    ],
-    "data": [
-        "views/res_company_view.xml",
-    ],
+    "depends": ["base",],
+    "data": ["views/res_company_view.xml",],
 }
