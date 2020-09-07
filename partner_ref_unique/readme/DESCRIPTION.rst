@@ -1,1 +1,1 @@
-This module allows add an unique constraint to partner ref field.
+This module allows add a unique constraint to partner ref field.
