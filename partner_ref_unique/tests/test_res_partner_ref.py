@@ -1,5 +1,6 @@
 # Copyright 2017 Tecnativa - Vicent Cubells
 # Copyright 2020 Tecnativa - João Marques
+# Copyright 2020 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.exceptions import ValidationError
@@ -91,3 +92,16 @@ class TestResPartnerRefUnique(common.SavepointCase):
         self.partner_obj.create(
             {"is_company": False, "name": "other", "ref": "same_ref"}
         )
+
+    def test_merge(self):
+        self.company.partner_ref_unique = "all"
+        self.partner1.ref = "same_ref"
+        wizard = self.env["base.partner.merge.automatic.wizard"].create(
+            {
+                "partner_ids": [(4, self.partner1.id), (4, self.partner2.id)],
+                "dst_partner_id": self.partner2.id,
+                "state": "selection",
+            }
+        )
+        # this shouldn't raise error
+        wizard.action_merge()
