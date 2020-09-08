@@ -23,7 +23,8 @@ class ResPartner(models.Model):
                 if mode == "companies":
                     domain.append(("is_company", "=", True))
                 other = self.search(domain)
-                if other:
+                # Don't raise when coming from contact merge wizard or no duplicates
+                if other and not self.env.context.get("partner_ref_unique_merging"):
                     raise ValidationError(
                         _("This reference is equal to partner '%s'")
                         % other[0].display_name
