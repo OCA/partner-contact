@@ -20,7 +20,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 
 #. module: partner_ref_unique
-#: selection:res.company,partner_ref_unique:0
+#: model:ir.model.fields.selection,name:partner_ref_unique.selection__res_company__partner_ref_unique__all
 msgid "All partners"
 msgstr ""
 
@@ -35,12 +35,17 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_ref_unique
-#: selection:res.company,partner_ref_unique:0
+#: model:ir.model,name:partner_ref_unique.model_base_partner_merge_automatic_wizard
+msgid "Merge Partner Wizard"
+msgstr ""
+
+#. module: partner_ref_unique
+#: model:ir.model.fields.selection,name:partner_ref_unique.selection__res_company__partner_ref_unique__none
 msgid "None"
 msgstr ""
 
 #. module: partner_ref_unique
-#: selection:res.company,partner_ref_unique:0
+#: model:ir.model.fields.selection,name:partner_ref_unique.selection__res_company__partner_ref_unique__companies
 msgid "Only companies"
 msgstr ""
 
@@ -50,15 +55,13 @@ msgid "Partners"
 msgstr ""
 
 #. module: partner_ref_unique
-#: code:addons/partner_ref_unique/models/res_partner.py:37
+#: code:addons/partner_ref_unique/models/res_partner.py:0
 #, python-format
 msgid "This reference is equal to partner '%s'"
 msgstr ""
 
 #. module: partner_ref_unique
 #: model:ir.model.fields,field_description:partner_ref_unique.field_res_company__partner_ref_unique
-#: model:ir.model.fields,field_description:partner_ref_unique.field_res_partner__partner_ref_unique
-#: model:ir.model.fields,field_description:partner_ref_unique.field_res_users__partner_ref_unique
 msgid "Unique partner reference for"
 msgstr ""
 
