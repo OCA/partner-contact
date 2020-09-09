@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-22 03:38+0000\n"
-"PO-Revision-Date: 2020-08-16 00:59+0000\n"
+"PO-Revision-Date: 2020-09-09 23:00+0000\n"
 "Last-Translator: Jan Prokop <jprokop@jackie.sk>\n"
 "Language-Team: Slovak (https://www.transifex.com/oca/teams/23907/sk/)\n"
 "Language: sk\n"
@@ -154,7 +154,7 @@ msgstr ""
 #: code:addons/base_location/models/res_partner.py:83
 #, python-format
 msgid "The country of the partner %s differs from that in location %s"
-msgstr ""
+msgstr "Krajina partnera %s sa odlišuje od tej v lokácii %s"
 
 #. module: base_location
 #: code:addons/base_location/models/res_partner.py:79
@@ -165,7 +165,7 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__zip_id
 msgid "Use the city name or the zip code to search the location"
-msgstr ""
+msgstr "Pre hľadanie lokácie zadajte názov mesta alebo PSČ"
 
 #. module: base_location
 #: sql_constraint:res.city:0
@@ -173,6 +173,8 @@ msgid ""
 "You already have a city with that name in the same state.The city must have "
 "a unique name within it's state and it's country"
 msgstr ""
+"V tejto krajine už existuje mesto s daným názvom. Názov mesta musí byť "
+"jedinečný pre krajinu"
 
 #. module: base_location
 #: sql_constraint:res.city.zip:0
@@ -180,23 +182,24 @@ msgid ""
 "You already have a zip with that code in the same city. The zip code must be "
 "unique within it's city"
 msgstr ""
+"V danom meste už existuje takéto PSČ. PSČ musí byť jedinečné v rámci mesta"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__name
 msgid "ZIP"
-msgstr ""
+msgstr "PSČ"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company__zip_id
 #: model:ir.model.fields,field_description:base_location.field_res_partner__zip_id
 #: model:ir.model.fields,field_description:base_location.field_res_users__zip_id
 msgid "ZIP Location"
-msgstr ""
+msgstr "Lokácia PSČ"
 
 #. module: base_location
 #: model_terms:ir.ui.view,arch_db:base_location.city_zip_form
 msgid "Zip"
-msgstr ""
+msgstr "PSČ"
 
 #. module: base_location
 #: model:ir.ui.menu,name:base_location.locations_menu_zips
@@ -204,12 +207,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_location.view_city_form
 #: model_terms:ir.ui.view,arch_db:base_location.view_res_country_city_better_zip_form
 msgid "Zips"
-msgstr ""
+msgstr "Poštové smerovacie čísla"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city__zip_ids
 msgid "Zips in this city"
-msgstr ""
+msgstr "PSČ v danom meste"
 
 #~ msgid "Group By"
 #~ msgstr "Zoskupiť podľa"
