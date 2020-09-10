@@ -61,7 +61,7 @@ addon | version | summary
 [partner_employee_quantity](partner_employee_quantity/) | 10.0.1.0.0 | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 10.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_financial_risk](partner_financial_risk/) | 10.0.1.0.0 | Manage partner risk
-[partner_firstname](partner_firstname/) | 10.0.2.1.2 | Split first name and last name for non company partners
+[partner_firstname](partner_firstname/) | 10.0.2.1.3 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 10.0.0.1.0 | Add specific helper methods
 [partner_identification](partner_identification/) | 10.0.1.3.0 | Partner Identification Numbers
 [partner_label](partner_label/) | 10.0.1.0.0 | Print partner labels
