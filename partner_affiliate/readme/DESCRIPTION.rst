@@ -4,6 +4,6 @@ The existing tab "Contacts & Addresses" in Odoo Vanilla is focused on storing co
 
 With this module :
 
-- The tab "Affiliates" is focussed on storing information about holding companies and other company structures.
+- The tab "Affiliates" is focused on storing information about holding companies and other company structures.
 
 - The tab "Contacts & Addresses" only shows individuals who are linked to the company (employees or others).
