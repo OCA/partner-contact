@@ -146,6 +146,7 @@ class BetterZipGeonamesImport(models.TransientModel):
         reader = unicodecsv.reader(data_file, encoding='utf-8', delimiter='	')
         for i, row in enumerate(reader):
             zip_code = self.create_better_zip(row, self.country_id)
+            self._update_state_name(row[5], zip_code.state_id)
             if zip_code in zips_to_delete:
                 zips_to_delete -= zip_code
             if max_import and (i + 1) == max_import:
@@ -159,3 +160,11 @@ class BetterZipGeonamesImport(models.TransientModel):
             'The wizard to create better zip entries from geonames '
             'has been successfully completed.')
         return True
+
+    # update state_id.name with state information
+    def _update_state_name(self, state, state_id):
+        if state_id.name != state:
+            logger.info('updating state_id.name to %s', state)
+            state_id.update({
+                'name': state,
+            })
