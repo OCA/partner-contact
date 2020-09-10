@@ -176,7 +176,10 @@ class NutsImport(models.TransientModel):
         if nuts:
             nuts.filtered(lambda n: not n.not_updatable).write(data)
         else:
-            nuts = nuts_model.create(data)
+            if data.get('country_id', False):
+                nuts = nuts_model.create(data)
+            else:
+                logger.info(_('Missing country_id for %s') % data)
         if level >= 1 and level <= 4:
             self._parents[level - 1] = nuts.id
         return nuts
