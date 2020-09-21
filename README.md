@@ -75,7 +75,7 @@ addon | version | summary
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 10.0.1.0.0 | Track the time and days your partners expect phone calls
 [partner_risk_insurance](partner_risk_insurance/) | 10.0.1.0.0 | Lets set risk insurance info in the partners
 [partner_sale_risk](partner_sale_risk/) | 10.0.1.0.0 | Manage partner risk in sales orders
-[partner_second_lastname](partner_second_lastname/) | 10.0.1.0.0 | Have split first and second lastnames
+[partner_second_lastname](partner_second_lastname/) | 10.0.2.0.0 | Have split first and second lastnames
 [partner_sector](partner_sector/) | 10.0.1.2.1 | Add partner sectors
 [partner_socialmedia](partner_socialmedia/) | 10.0.1.0.0 | Add social media fields to contacts
 [partner_stock_risk](partner_stock_risk/) | 10.0.1.0.0 | Manage partner risk in stock moves
