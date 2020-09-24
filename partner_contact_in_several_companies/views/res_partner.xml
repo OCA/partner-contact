@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="view_res_partner_filter_contact" model="ir.ui.view">
         <field name="name">res.partner.select.contact</field>
@@ -48,17 +48,20 @@
                 expr="//field[@name='child_ids']/form//field[@name='name']"
                 position="before"
             >
-                <field name='contact_type' readonly='0'/>
-                <field name="contact_id"
-                       string="Contact"
-                       attrs="{'invisible': [('contact_type','!=','attached')], 'required': [('contact_type','=','attached')]}"
+                <field name='contact_type' readonly='0' />
+                <field
+                    name="contact_id"
+                    string="Contact"
+                    attrs="{'invisible': [('contact_type','!=','attached')], 'required': [('contact_type','=','attached')]}"
                 />
             </xpath>
             <xpath
                 expr="//field[@name='child_ids']/form//field[@name='name']"
                 position="attributes"
             >
-                <attribute name="attrs">{'invisible': [('contact_type','=','attached')]}</attribute>
+                <attribute
+                    name="attrs"
+                >{'invisible': [('contact_type','=','attached')]}</attribute>
             </xpath>
             <field name="is_company" position="after">
                 <field name="contact_type" invisible="1" />
@@ -219,7 +222,10 @@
                                         <field name="email" />
                                         <field name="phone" widget="phone" />
                                         <field name="mobile" widget="phone" />
-                                        <field name="comment" placeholder="internal note..." />
+                                        <field
+                                            name="comment"
+                                            placeholder="internal note..."
+                                        />
                                     </group>
                                 </group>
                                 <field name="lang" invisible="True" />
@@ -234,7 +240,10 @@
     <record id="personal_contact_information" model="ir.ui.view">
         <field name="name">Contacts in several partners: personal info</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="partner_contact_personal_information_page.personal_information" />
+        <field
+            name="inherit_id"
+            ref="partner_contact_personal_information_page.personal_information"
+        />
         <field name="arch" type="xml">
             <xpath
                 expr="//page[@name='personal_information_page']/group[@name='personal_information_group']"
