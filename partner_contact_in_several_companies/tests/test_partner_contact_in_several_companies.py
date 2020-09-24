@@ -13,9 +13,13 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         # Get test records reference
         self.main_partner = self.env.ref("base.main_partner")
         self.bob_contact = self.env.ref("%s.res_partner_contact1" % current_module)
-        self.bob_job1 = self.env.ref("%s.res_partner_contact1_work_position1" % current_module)
+        self.bob_job1 = self.env.ref(
+            "%s.res_partner_contact1_work_position1" % current_module
+        )
         self.roger_contact = self.env.ref("base.res_partner_main2")
-        self.roger_job2 = self.env.ref("%s.res_partner_main2_position_consultant" % current_module)
+        self.roger_job2 = self.env.ref(
+            "%s.res_partner_main2_position_consultant" % current_module
+        )
 
     def test_00_show_only_standalone_contact(self):
         """Check that only standalone contact are shown if context
@@ -52,13 +56,21 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         """
 
         ctx = {}
-        self.assertEqual(self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids)
+        self.assertEqual(
+            self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids
+        )
         ctx = {"search_show_all_positions": {"is_set": False}}
-        self.assertEqual(self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids)
+        self.assertEqual(
+            self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids
+        )
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": False}}
-        self.assertEqual(self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids)
+        self.assertEqual(
+            self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids
+        )
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": True}}
-        self.assertEqual(self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids)
+        self.assertEqual(
+            self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids
+        )
 
         ctx = {}
         self.assertIn(self.bob_job1, self.main_partner.with_context(ctx).child_ids)
@@ -83,7 +95,9 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         # but when searching without 'all positions',
         # we should get the position standalone contact instead.
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": False}}
-        partner_ids = self.partner.with_context(ctx).search([("parent_id", "ilike", "YourCompany")])
+        partner_ids = self.partner.with_context(ctx).search(
+            [("parent_id", "ilike", "YourCompany")]
+        )
         self.assertTrue(self.bob_contact in partner_ids)
 
     def test_04_contact_creation(self):
@@ -100,19 +114,25 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
         # Create a contact with both contact_id and name;
         # contact's name should override provided value in that case
-        new_contact = self.partner.create({"contact_id": self.bob_contact.id, "name": "Rob Egnops"})
+        new_contact = self.partner.create(
+            {"contact_id": self.bob_contact.id, "name": "Rob Egnops"}
+        )
         self.assertEqual(new_contact.name, "Bob Egnops")
 
         # Reset contact to standalone
         new_contact.write({"contact_id": False})
-        self.assertEqual(new_contact.contact_type, "standalone",)
+        self.assertEqual(
+            new_contact.contact_type, "standalone",
+        )
 
         # Reset contact to attached, and ensure only it is unlinked (i.e.
         # context is ignored).
         new_contact.write({"contact_id": self.bob_contact.id})
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": True}}
         new_contact.with_context(ctx).unlink()
-        partner_ids = self.partner.with_context(ctx).search([("id", "in", [new_contact.id, self.bob_contact.id])])
+        partner_ids = self.partner.with_context(ctx).search(
+            [("id", "in", [new_contact.id, self.bob_contact.id])]
+        )
         self.assertIn(self.bob_contact, partner_ids)
         self.assertNotIn(new_contact, partner_ids)
 
@@ -123,11 +143,15 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
         # Test DOWNSTREAM sync
         self.bob_contact.write({"name": "Rob Egnops"})
-        self.assertEqual(self.bob_job1.name, "Rob Egnops",)
+        self.assertEqual(
+            self.bob_job1.name, "Rob Egnops",
+        )
 
         # Test UPSTREAM sync
         self.bob_job1.write({"name": "Bob Egnops"})
-        self.assertEqual(self.bob_contact.name, "Bob Egnops",)
+        self.assertEqual(
+            self.bob_contact.name, "Bob Egnops",
+        )
 
     def test_06_ir_action(self):
         """Check ir_action context is auto updated.
@@ -144,7 +168,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         self.assertIn(
             new_context_val,
             details["context"],
-            msg="Default actions not updated with new context"
+            msg="Default actions not updated with new context",
         )
 
         details = self.env["ir.actions.act_window"].for_xml_id(
@@ -154,7 +178,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         self.assertNotIn(
             new_context_val,
             details["context"],
-            msg="Custom actions incorrectly updated with new context"
+            msg="Custom actions incorrectly updated with new context",
         )
 
     def test_07_onchange(self):
@@ -164,15 +188,11 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         new_contact = self.partner.create({"name": "Bob before onchange"})
         new_contact.write({"contact_id": self.bob_contact.id})
         new_contact._onchange_contact_id()
-        self.assertEqual(
-            new_contact.name, "Bob Egnops"
-        )
+        self.assertEqual(new_contact.name, "Bob Egnops")
 
         new_contact.write({"contact_type": "standalone"})
         new_contact._onchange_contact_type()
-        self.assertEqual(
-            new_contact.contact_id, self.partner
-        )
+        self.assertEqual(new_contact.contact_id, self.partner)
 
     def test_08_commercial_partner_compute(self):
         new_contact = self.partner.create({"name": "Bob before onchange"})
