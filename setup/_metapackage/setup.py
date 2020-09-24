@@ -25,6 +25,7 @@ setuptools.setup(
         'odoo13-addon-partner_contact_gender',
         'odoo13-addon-partner_contact_job_position',
         'odoo13-addon-partner_contact_lang',
+        'odoo13-addon-partner_contact_nationality',
         'odoo13-addon-partner_contact_personal_information_page',
         'odoo13-addon-partner_deduplicate_acl',
         'odoo13-addon-partner_deduplicate_by_ref',
