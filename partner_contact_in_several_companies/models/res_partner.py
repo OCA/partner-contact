@@ -15,7 +15,7 @@ class ResPartner(models.Model):
         compute="_compute_contact_type",
         store=True,
         index=True,
-        default="standalone"
+        default="standalone",
     )
     contact_id = fields.Many2one(
         "res.partner",
