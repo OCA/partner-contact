@@ -15,11 +15,12 @@ class ResPartner(models.Model):
         compute="_compute_contact_type",
         store=True,
         index=True,
-        default="standalone")
+        default="standalone"
+    )
     contact_id = fields.Many2one(
         "res.partner",
         string="Main Contact",
-        domain=[("is_company", "=", False), ("contact_type", "=", "standalone"), ],
+        domain=[("is_company", "=", False), ("contact_type", "=", "standalone")],
     )
     other_contact_ids = fields.One2many(
         "res.partner", "contact_id", string="Others Positions",
@@ -120,9 +121,7 @@ class ResPartner(models.Model):
         if self.env.context.get("__update_contact_lock"):
             return
         contact_fields = self._contact_fields()
-        contact_vals = {
-            field: vals[field] for field in contact_fields if field in vals
-        }
+        contact_vals = {field: vals[field] for field in contact_fields if field in vals}
         if contact_vals:
             self.with_context(__update_contact_lock=True).write(contact_vals)
 
