@@ -6,12 +6,10 @@
         <field name="parent_id" ref="base.res_partner_4" />
         <field name="contact_id" ref="base.res_partner_main2" />
     </record>
-
     <record id="res_partner_contact1" model="res.partner">
         <field name="name">Bob Egnops</field>
         <field name="email">bob@hillenburg-oceaninstitute.com</field>
     </record>
-
     <record id="res_partner_contact1_work_position1" model="res.partner">
         <field name="name">Bob Egnops</field>
         <field name="function">Technician</field>
