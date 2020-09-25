@@ -34,6 +34,7 @@ addon | version | summary
 [partner_auto_salesman](partner_auto_salesman/) | 8.0.1.0.0 | Partner auto salesman
 [partner_capital](partner_capital/) | 8.0.1.0.0 | Partners Capital
 [partner_changeset](partner_changeset/) | 8.0.1.0.0 | Partner Changesets
+[partner_coc](partner_coc/) | 8.0.1.0.0 | Adds a field 'Chamber Of Commerce Registration Number' to partner
 [partner_contact_address_detailed](partner_contact_address_detailed/) | 8.0.1.0.0 | All address data in summarized contact form
 [partner_contact_birthdate](partner_contact_birthdate/) | 8.0.1.0.0 | Contact's birthdate
 [partner_contact_department](partner_contact_department/) | 8.0.1.0.0 | Assign contacts to departments
