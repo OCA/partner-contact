@@ -17,19 +17,24 @@
                         <group string="General Limits" name="risk_include" class="o_group_col_6">
                             <group col="3" class="oe_subtotal_footer" style="float: left !important;">
                                 <field name="risk_invoice_draft_include"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"
+                                       style="text-align: left"/>
                                 <field name="risk_invoice_draft" nolabel="1" class="oe_left_padding_15"/>
                                 <field name="risk_invoice_open_include"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"
+                                       style="text-align: left"/>
                                 <field name="risk_invoice_open" nolabel="1" class="oe_left_padding_15"/>
                                 <field name="risk_invoice_unpaid_include"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"
+                                       style="text-align: left"/>
                                 <field name="risk_invoice_unpaid" nolabel="1" class="oe_left_padding_15"/>
                                 <field name="risk_account_amount_include"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"
+                                       style="text-align: left"/>
                                 <field name="risk_account_amount" nolabel="1" class="oe_left_padding_15"/>
                                 <field name="risk_account_amount_unpaid_include"
-                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"/>
+                                       attrs="{'readonly': [('risk_allow_edit', '=', False)]}" class="oe_label_to_left"
+                                       style="text-align: left"/>
                                 <field name="risk_account_amount_unpaid" nolabel="1" class="oe_left_padding_15"/>
                                 <field name="risk_total" colspan="3" class="oe_subtotal_footer_separator oe_label_to_left"/>
                             </group>
