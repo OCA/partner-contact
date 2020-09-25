@@ -43,6 +43,7 @@ setuptools.setup(
         'odoo13-addon-partner_phonecall_schedule',
         'odoo13-addon-partner_priority',
         'odoo13-addon-partner_ref_unique',
+        'odoo13-addon-partner_second_lastname',
         'odoo13-addon-partner_vat_unique',
     ],
     classifiers=[
