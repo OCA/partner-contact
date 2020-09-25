@@ -61,6 +61,11 @@ msgid "City/Location"
 msgstr "Stadt/Ort"
 
 #. module: partner_external_maps
+#: field:res.users,coc_registration_number:0
+msgid "CoC Registration Number"
+msgstr ""
+
+#. module: partner_external_maps
 #: field:res.users,company_size:0
 msgid "Company size"
 msgstr "Unternehmensgrösse"
