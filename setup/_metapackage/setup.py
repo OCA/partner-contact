@@ -22,6 +22,7 @@ setuptools.setup(
         'odoo8-addon-partner_auto_salesman',
         'odoo8-addon-partner_capital',
         'odoo8-addon-partner_changeset',
+        'odoo8-addon-partner_coc',
         'odoo8-addon-partner_contact_address_detailed',
         'odoo8-addon-partner_contact_birthdate',
         'odoo8-addon-partner_contact_department',
