@@ -3,7 +3,6 @@ from odoo.tests import common
 
 
 class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
-
     def setUp(self):
         """*****setUp*****"""
         super(PartnerContactInSeveralCompaniesCase, self).setUp()
