@@ -60,7 +60,7 @@ addon | version | summary
 [partner_email_check](partner_email_check/) | 10.0.1.1.1 | Validate email address field
 [partner_employee_quantity](partner_employee_quantity/) | 10.0.1.0.0 | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 10.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
-[partner_financial_risk](partner_financial_risk/) | 10.0.1.0.0 | Manage partner risk
+[partner_financial_risk](partner_financial_risk/) | 10.0.1.0.1 | Manage partner risk
 [partner_firstname](partner_firstname/) | 10.0.2.1.3 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 10.0.0.1.0 | Add specific helper methods
 [partner_identification](partner_identification/) | 10.0.1.3.0 | Partner Identification Numbers
@@ -74,7 +74,7 @@ addon | version | summary
 [partner_phone_extension](partner_phone_extension/) | 10.0.1.0.0 | Partner Phone Number Extension
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 10.0.1.0.0 | Track the time and days your partners expect phone calls
 [partner_risk_insurance](partner_risk_insurance/) | 10.0.1.0.0 | Lets set risk insurance info in the partners
-[partner_sale_risk](partner_sale_risk/) | 10.0.1.0.1 | Manage partner risk in sales orders
+[partner_sale_risk](partner_sale_risk/) | 10.0.1.0.2 | Manage partner risk in sales orders
 [partner_second_lastname](partner_second_lastname/) | 10.0.2.0.0 | Have split first and second lastnames
 [partner_sector](partner_sector/) | 10.0.1.2.1 | Add partner sectors
 [partner_socialmedia](partner_socialmedia/) | 10.0.1.0.0 | Add social media fields to contacts
