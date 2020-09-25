@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2015 Tecnativa - Jairo Llopis
+     Copyright 2017 Tecnativa - Pedro M. Baeza
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="partner_simple_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field
+            name="inherit_id"
+            ref="partner_firstname.view_partner_simple_form_firstname"
+        />
+        <field name="arch" type="xml">
+            <field name="firstname" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'required': [('lastname', '=', False), ('lastname2', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}</attribute>
+            </field>
+            <field name="lastname" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'required': [('firstname', '=', False), ('lastname2', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}</attribute>
+            </field>
+            <field name="lastname" position="after">
+                <field
+                    name="lastname2"
+                    attrs="{'required': [('firstname', '=', False), ('lastname', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}"
+                />
+            </field>
+        </field>
+    </record>
+    <record id="partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_firstname.view_partner_form_firstname" />
+        <field name="arch" type="xml">
+            <!-- Main form -->
+            <field name="firstname" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'required': [('lastname', '=', False), ('lastname2', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}</attribute>
+            </field>
+            <field name="lastname" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'required': [('firstname', '=', False), ('lastname2', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}</attribute>
+            </field>
+            <field name="lastname" position="after">
+                <field
+                    name="lastname2"
+                    attrs="{'required': [('firstname', '=', False), ('lastname', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}"
+                />
+            </field>
+            <!-- Inner contact form of child_ids -->
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='firstname']"
+                position="attributes"
+            >
+                <attribute
+                    name="attrs"
+                >{'required': [('lastname', '=', False), ('lastname2', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='lastname']"
+                position="attributes"
+            >
+                <attribute
+                    name="attrs"
+                >{'required': [('firstname', '=', False), ('lastname2', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='lastname']"
+                position="after"
+            >
+                <field
+                    name="lastname2"
+                    attrs="{'required': [('firstname', '=', False), ('lastname', '=', False), ('is_company', '=', False), ('type', '=', 'contact')]}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
