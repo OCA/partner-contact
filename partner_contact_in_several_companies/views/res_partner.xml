@@ -23,7 +23,6 @@
             </xpath>
         </field>
     </record>
-
     <record id="view_res_partner_tree_contact" model="ir.ui.view">
         <field name="name">res.partner.tree.contact</field>
         <field name="model">res.partner</field>
@@ -34,7 +33,6 @@
             </field>
         </field>
     </record>
-
     <record model="ir.ui.view" id="view_partner_form_inherit">
         <field name="name">res.partner.form.contact</field>
         <field name="model">res.partner</field>
@@ -236,7 +234,6 @@
             </page>
         </field>
     </record>
-
     <record id="personal_contact_information" model="ir.ui.view">
         <field name="name">Contacts in several partners: personal info</field>
         <field name="model">res.partner</field>
@@ -271,7 +268,6 @@
             </xpath>
         </field>
     </record>
-
     <record model="ir.ui.view" id="view_res_partner_kanban_contact">
         <field name="name">res.partner.kanban.contact</field>
         <field name="model">res.partner</field>
