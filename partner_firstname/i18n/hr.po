@@ -21,6 +21,13 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. module: partner_firstname
+#: code:addons/partner_firstname/models/res_users.py:40
+#: code:addons/partner_firstname/models/res_users.py:42
+#, python-format
+msgid "%s (copy)"
+msgstr ""
+
+#. module: partner_firstname
 #: sql_constraint:res.partner:0
 msgid "Contacts require a name."
 msgstr "Kontakti zahtijevaju naziv"
