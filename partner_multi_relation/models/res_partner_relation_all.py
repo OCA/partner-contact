@@ -97,7 +97,7 @@ class ResPartnerRelationAll(models.Model):
     any_partner_id = fields.Many2many(
         comodel_name="res.partner",
         string="Partner",
-        compute=lambda self: None,
+        compute=lambda self: self.update({"any_partner_id": None}),
         search="_search_any_partner_id",
     )
 
