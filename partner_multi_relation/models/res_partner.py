@@ -29,24 +29,24 @@ class ResPartner(models.Model):
     )
     search_relation_type_id = fields.Many2one(
         comodel_name="res.partner.relation.type.selection",
-        compute=lambda self: None,
+        compute=lambda self: self.update({"search_relation_type_id": None}),
         search="_search_relation_type_id",
         string="Has relation of type",
     )
     search_relation_partner_id = fields.Many2one(
         comodel_name="res.partner",
-        compute=lambda self: None,
+        compute=lambda self: self.update({"search_relation_partner_id": None}),
         search="_search_related_partner_id",
         string="Has relation with",
     )
     search_relation_date = fields.Date(
-        compute=lambda self: None,
+        compute=lambda self: self.update({"search_relation_date": None}),
         search="_search_relation_date",
         string="Relation valid",
     )
     search_relation_partner_category_id = fields.Many2one(
         comodel_name="res.partner.category",
-        compute=lambda self: None,
+        compute=lambda self: self.update({"search_relation_partner_category_id": None}),
         search="_search_related_partner_category_id",
         string="Has relation with a partner in category",
     )
