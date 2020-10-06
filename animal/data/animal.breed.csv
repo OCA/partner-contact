@@ -1,0 +1,25 @@
+id,name,species_id/id
+beagle,Beagle,animal.dog
+boxer,Boxer,animal.dog
+bull_terrier,Bull Terrier,animal.dog
+bulldog,Bulldog,animal.dog
+chihuahua,Chihuahua,animal.dog
+cocker,Cocker,animal.dog
+collie,Collie,animal.dog
+dalmatian,Dalmatian,animal.dog
+dachshund,Dachshund,animal.dog
+doberman,Doberman,animal.dog
+english_cocker_spaniel,English Cocker Spaniel,animal.dog
+french_bulldog,French Bulldog,animal.dog
+german_shepard,German Shepard,animal.dog
+golden_retriever,Golden Retriever,animal.dog
+great_dane,Great Dane,animal.dog
+jack_russell,Jack Russell,animal.dog
+labrador,Labrador,animal.dog
+pomeranian,Pomeranian,animal.dog
+pug,Pug,animal.dog
+rottweiler,Rottweiler,animal.dog
+schnauzer,Schnauzer,animal.dog
+shih_tzu,Shih Tzu,animal.dog
+siberian_husky,Siberian Husky,animal.dog
+yorkshire_terrier,Yorkshire Terrier,animal.dog
