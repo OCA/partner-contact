@@ -2,24 +2,24 @@
 # Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L.U. - Jairo Llopis
 # Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
 # Copyright 2017 Tecnativa - Pedro M. Baeza
-# Copyright 2018 Guillermo Montoya <Github@guillermm>
-# Copyright 2018 Joan Marín <Github@JoanMarin>
+# Copyright 2018 EXA Auto Parts S.A.S Guillermo Montoya <Github@guillermm>
+# Copyright 2018 EXA Auto Parts S.A.S Joan Marín <Github@JoanMarin>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, api
 
 
-class ResConfigSettings(models.TransientModel):
-    _inherit = 'res.config.settings'
+class BaseConfigSettings(models.TransientModel):
+    _inherit = 'base.config.settings'
 
     def _partner_names_order_selection(self):
-        options = super(ResConfigSettings, self)._partner_names_order_selection()
+        options = super(BaseConfigSettings, self)._partner_names_order_selection()
 
         new_labels = {
             'last_first': 'Lastname SecondLastname Firstname Othernames',
             'last_first_comma': 'Lastname SecondLastname, Firstname Othernames',
-            'first_last': 'Firstname Othernames Lastname SecondLastname'}
-
+            'first_last': 'Firstname Othernames Lastname SecondLastname',
+        }
         return [(k, new_labels[k]) if k in new_labels else (k, v) for k, v in options]
 
     @api.multi

@@ -3,7 +3,7 @@
    :alt: License: AGPL-3
 
 ===================
-Partner other names
+Partner Multi Name
 ===================
 
 This module was written to extend the functionality of
@@ -32,7 +32,7 @@ To use this module, you need to:
 Credits
 =======
 
-Original Authors
+Authors
 ----------------
 
 * Jairo Llopis <jairo.llopis@tecnativa.com>.

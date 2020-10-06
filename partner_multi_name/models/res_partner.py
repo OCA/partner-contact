@@ -2,8 +2,8 @@
 # Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L.U. - Jairo Llopis
 # Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
 # Copyright 2017 Tecnativa - Pedro M. Baeza
-# Copyright 2018 Guillermo Montoya <Github@guillermm>
-# Copyright 2018 Joan Marín <Github@JoanMarin>
+# Copyright 2018 EXA Auto Parts S.A.S Guillermo Montoya <Github@guillermm>
+# Copyright 2018 EXA Auto Parts S.A.S Joan Marín <Github@JoanMarin>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, fields, models
@@ -47,7 +47,6 @@ class ResPartner(models.Model):
                 names.append(firstname)
             if othernames:
                 names.append(othernames)
-
         return u" ".join(names)
 
     @api.depends("firstname", "othernames", "lastname", "lastname2")
@@ -86,7 +85,8 @@ class ResPartner(models.Model):
             'firstname': False,
             'othernames': False,
             'lastname': name or False,
-            'lastname2': False}
+            'lastname2': False,
+        }
 
         if not is_company and name:
             order = self._get_names_order()
