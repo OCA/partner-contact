@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_middlename
+#	* partner_multi_name
 #
 msgid ""
 msgstr ""
@@ -15,23 +15,23 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: partner_middlename
-#: model:ir.model.fields,field_description:partner_middlename.field_res_partner_middlename
-#: model:ir.model.fields,field_description:partner_middlename.field_res_users_middlename
+#. module: partner_multi_name
+#: model:ir.model.fields,field_description:partner_multi_name.field_res_partner_othernames
+#: model:ir.model.fields,field_description:partner_multi_name.field_res_users_othernames
 msgid "Other Names"
 msgstr ""
 
-#. module: partner_middlename
-#: model:ir.model,name:partner_middlename.model_res_partner
+#. module: partner_multi_name
+#: model:ir.model,name:partner_multi_name.model_res_partner
 msgid "Partner"
 msgstr ""
 
-#. module: partner_middlename
-#: model:ir.model,name:partner_middlename.model_res_users
+#. module: partner_multi_name
+#: model:ir.model,name:partner_multi_name.model_res_users
 msgid "Users"
 msgstr ""
 
-#. module: partner_middlename
-#: model:ir.model,name:partner_middlename.model_base_config_settings
+#. module: partner_multi_name
+#: model:ir.model,name:partner_multi_name.model_base_config_settings
 msgid "base.config.settings"
 msgstr ""

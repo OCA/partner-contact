@@ -8,8 +8,8 @@
             <xpath expr="//field[@name='firstname']" position="replace"/>
 
             <xpath expr="//field[@name='lastname']" position="before">
-                <field name="firstname" attrs="{'required': [('middlename', '=', False)]}"/>
-                <field name="middlename" attrs="{'required': [('firstname', '=', False)]}"/>
+                <field name="firstname" attrs="{'required': [('othernames', '=', False)]}"/>
+                <field name="othernames" attrs="{'required': [('firstname', '=', False)]}"/>
             </xpath>
 
             <xpath expr="//field[@name='lastname']" position="attributes">

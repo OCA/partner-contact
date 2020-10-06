@@ -3,7 +3,7 @@
    :alt: License: AGPL-3
 
 ===================
-Partner other names
+Partner Multi Name
 ===================
 
 This module was written to extend the functionality of

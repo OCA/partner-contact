@@ -14,10 +14,10 @@ class ResPartner(models.Model):
     """Adds other names."""
     _inherit = "res.partner"
 
-    middlename = fields.Char("Other Names")
+    othernames = fields.Char("Other Names")
 
     @api.model
-    def _get_computed_name(self, firstname, middlename, lastname, lastname2):
+    def _get_computed_name(self, firstname, othernames, lastname, lastname2):
         """
         Compute the name combined with the other names too.
 
@@ -30,8 +30,8 @@ class ResPartner(models.Model):
         if order == 'first_last':
             if firstname:
                 names.append(firstname)
-            if middlename:
-                names.append(middlename)
+            if othernames:
+                names.append(othernames)
             if lastname:
                 names.append(lastname)
             if lastname2:
@@ -41,22 +41,21 @@ class ResPartner(models.Model):
                 names.append(lastname)
             if lastname2:
                 names.append(lastname2)
-            if names and (firstname or middlename) and \
-                    order == 'last_first_comma':
+            if names and (firstname or othernames) and order == 'last_first_comma':
                 names[-1] = names[-1] + ","
             if firstname:
                 names.append(firstname)
-            if middlename:
-                names.append(middlename)
+            if othernames:
+                names.append(othernames)
         return u" ".join(names)
 
-    @api.depends("firstname", "middlename", "lastname", "lastname2")
+    @api.depends("firstname", "othernames", "lastname", "lastname2")
     def _compute_name(self):
         """Write the 'name' according to splitted data."""
         for partner in self:
             partner.name = self._get_computed_name(
                 partner.firstname,
-                partner.middlename,
+                partner.othernames,
                 partner.lastname,
                 partner.lastname2)
 
@@ -72,7 +71,7 @@ class ResPartner(models.Model):
             record.lastname = parts['lastname']
             record.lastname2 = parts['lastname2']
             record.firstname = parts['firstname']
-            record.middlename = parts['middlename']
+            record.othernames = parts['othernames']
 
     @api.model
     def _get_inverse_name(self, name, is_company=False):
@@ -84,24 +83,23 @@ class ResPartner(models.Model):
         # Company name goes to the lastname
         result = {
             'firstname': False,
-            'middlename': False,
+            'othernames': False,
             'lastname': name or False,
             'lastname2': False,
         }
 
         if not is_company and name:
             order = self._get_names_order()
-            result = super(ResPartner,
-                        self)._get_inverse_name(name,is_company)
+            result = super(ResPartner, self)._get_inverse_name(name, is_company)
             parts = []
 
             if order == 'first_last':
                 if result['lastname2']:
                     parts = result['lastname2'].split(" ", 1)
                 while len(parts) < 2:
-                    result['middlename'] = False
+                    result['othernames'] = False
                     return result
-                result['middlename'] = result['lastname']
+                result['othernames'] = result['lastname']
                 result['lastname'] = parts[0]
                 result['lastname2'] = parts[1]
             else:
@@ -110,21 +108,21 @@ class ResPartner(models.Model):
                 while len(parts) < 2:
                     parts.append(False)
                 result['firstname'] = parts[0]
-                result['middlename'] = parts[1]
+                result['othernames'] = parts[1]
 
         return result
 
-    @api.constrains("firstname", "middlename", "lastname", "lastname2")
+    @api.constrains("firstname", "othernames", "lastname", "lastname2")
     def _check_name(self):
         """Ensure at least one name is set."""
-        for partner in self:
-            try:
-                super(ResPartner, partner)._check_name()
-            except exceptions.EmptyNamesError:
-                if not partner.middlename:
+        try:
+            super(ResPartner, self)._check_name()
+        except exceptions.EmptyNamesError:
+            for partner in self:
+                if not partner.othernames:
                     raise
 
-    @api.onchange("firstname", "middlename", "lastname", "lastname2")
+    @api.onchange("firstname", "othernames", "lastname", "lastname2")
     def _onchange_subnames(self):
-        """Trigger onchange with 'middlename' too."""
+        """Trigger onchange with 'othernames' too."""
         super(ResPartner, self)._onchange_subnames()

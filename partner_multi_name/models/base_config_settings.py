@@ -13,28 +13,31 @@ class BaseConfigSettings(models.TransientModel):
     _inherit = 'base.config.settings'
 
     def _partner_names_order_selection(self):
-        options = super(BaseConfigSettings,
-                        self)._partner_names_order_selection()
+        options = super(BaseConfigSettings, self)._partner_names_order_selection()
 
         new_labels = {
-            'last_first': 'Lastname SecondLastname Firstname middlename',
-            'last_first_comma': 'Lastname SecondLastname,\
-                Firstname middlename',
-            'first_last': 'Firstname middlename Lastname SecondLastname'}
-
-        return [(k, new_labels[k]) if k in
-                new_labels else (k, v) for k, v in options]
+            'last_first': 'Lastname SecondLastname Firstname Othernames',
+            'last_first_comma': 'Lastname SecondLastname, Firstname Othernames',
+            'first_last': 'Firstname Othernames Lastname SecondLastname',
+        }
+        return [(k, new_labels[k]) if k in new_labels else (k, v) for k, v in options]
 
     @api.multi
     def _partners_for_recalculating(self):
-        res = super(BaseConfigSettings, self)._partners_for_recalculating()
-        res |= self.env['res.partner'].search([
+        return self.env['res.partner'].search([
             ('is_company', '=', False),
             '|',
             '&',
-            ('middlename', '!=', False),
+            ('firstname', '!=', False),
+            ('lastname', '!=', False),
+            '|',
+            '&',
+            ('firstname', '!=', False),
+            ('lastname2', '!=', False),
+            '|',
+            '&',
+            ('othernames', '!=', False),
             ('lastname', '!=', False),
             '&',
-            ('middlename', '!=', False),
+            ('othernames', '!=', False),
             ('lastname2', '!=', False)])
-        return res
