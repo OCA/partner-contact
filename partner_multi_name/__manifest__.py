@@ -9,7 +9,7 @@
 {
     "name": "Partner Multi Name",
     "summary": "Have split first and other names",
-    "version": "10.0.1.0.0",
+    "version": "11.0.1.0.0",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/partner-contact",
     "author": "EXA Auto Parts Github@exaap, "

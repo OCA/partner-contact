@@ -41,7 +41,8 @@ class ResPartner(models.Model):
                 names.append(lastname)
             if lastname2:
                 names.append(lastname2)
-            if names and (firstname or othernames) and order == 'last_first_comma':
+            if names and (firstname or othernames) \
+                    and order == 'last_first_comma':
                 names[-1] = names[-1] + ","
             if firstname:
                 names.append(firstname)
@@ -90,7 +91,8 @@ class ResPartner(models.Model):
 
         if not is_company and name:
             order = self._get_names_order()
-            result = super(ResPartner, self)._get_inverse_name(name, is_company)
+            result = super(ResPartner, self).\
+                _get_inverse_name(name, is_company)
             parts = []
 
             if order == 'first_last':

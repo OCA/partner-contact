@@ -13,14 +13,19 @@ class BaseConfigSettings(models.TransientModel):
     _inherit = 'base.config.settings'
 
     def _partner_names_order_selection(self):
-        options = super(BaseConfigSettings, self)._partner_names_order_selection()
+        options = super(BaseConfigSettings, self).\
+            _partner_names_order_selection()
 
         new_labels = {
-            'last_first': 'Lastname SecondLastname Firstname Othernames',
-            'last_first_comma': 'Lastname SecondLastname, Firstname Othernames',
-            'first_last': 'Firstname Othernames Lastname SecondLastname',
+            'last_first': 'Lastname SecondLastname \
+                Firstname Othernames',
+            'last_first_comma': 'Lastname SecondLastname, \
+                Firstname Othernames',
+            'first_last': 'Firstname Othernames \
+                Lastname SecondLastname',
         }
-        return [(k, new_labels[k]) if k in new_labels else (k, v) for k, v in options]
+        return [(k, new_labels[k]) if k in new_labels else
+                (k, v) for k, v in options]
 
     @api.multi
     def _partners_for_recalculating(self):
