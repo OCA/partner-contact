@@ -1,10 +1,10 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_other_names
+#	* partner_multi_name
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-09 21:45+0000\n"
 "PO-Revision-Date: 2019-08-09 21:45+0000\n"
@@ -15,23 +15,23 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: partner_other_names
-#: model:ir.model.fields,field_description:partner_other_names.field_res_partner_othernames
-#: model:ir.model.fields,field_description:partner_other_names.field_res_users_othernames
+#. module: partner_multi_name
+#: model:ir.model.fields,field_description:partner_multi_name.field_res_partner_othernames
+#: model:ir.model.fields,field_description:partner_multi_name.field_res_users_othernames
 msgid "Other Names"
 msgstr "Otros Nombres"
 
-#. module: partner_other_names
-#: model:ir.model,name:partner_other_names.model_res_partner
+#. module: partner_multi_name
+#: model:ir.model,name:partner_multi_name.model_res_partner
 msgid "Partner"
 msgstr "Tercero"
 
-#. module: partner_other_names
-#: model:ir.model,name:partner_other_names.model_res_users
+#. module: partner_multi_name
+#: model:ir.model,name:partner_multi_name.model_res_users
 msgid "Users"
 msgstr "Usuarios"
 
-#. module: partner_other_names
-#: model:ir.model,name:partner_other_names.model_res_config_settings
+#. module: partner_multi_name
+#: model:ir.model,name:partner_multi_name.model_base_config_settings
 msgid "base.config.settings"
 msgstr "base.config.settings"
