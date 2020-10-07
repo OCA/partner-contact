@@ -17,7 +17,8 @@ class ResPartnerIdNumber(models.Model):
 
     @api.constrains("name", "category_id")
     def validate_id_number(self):
-        self.category_id.validate_id_number(self)
+        for record in self:
+            record.category_id.validate_id_number(record)
 
     name = fields.Char(
         string="ID Number",
