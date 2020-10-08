@@ -94,11 +94,12 @@ class ResPartner(models.Model):
             'partner_names_order', self._names_order_default())
 
     @api.model
-    def _get_computed_name(self, lastname, firstname):
+    def _get_computed_name(self, lastname, firstname, order=None):
         """Compute the 'name' field according to splitted data.
         You can override this method to change the order of lastname and
         firstname the computed name"""
-        order = self._get_names_order()
+        if order is None:
+            order = self._get_names_order()
         if order == 'last_first_comma':
             return u", ".join((p for p in (lastname, firstname) if p))
         elif order == 'first_last':
@@ -110,9 +111,10 @@ class ResPartner(models.Model):
     @api.depends("firstname", "lastname")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
+        order = self._get_names_order()
         for record in self:
             record.name = record._get_computed_name(
-                record.lastname, record.firstname,
+                record.lastname, record.firstname, order=order
             )
 
     @api.multi
@@ -157,7 +159,7 @@ class ResPartner(models.Model):
         return name
 
     @api.model
-    def _get_inverse_name(self, name, is_company=False):
+    def _get_inverse_name(self, name, is_company=False, order=None):
         """Compute the inverted name.
 
         - If the partner is a company, save it in the lastname.
@@ -170,12 +172,15 @@ class ResPartner(models.Model):
         When this method is called, :attr:`~.name` already has unified and
         trimmed whitespace.
         """
+        # After this, order can be void too, but this to avoid forcing parameter AND
+        # allowing it when looping for instance (one call to ir.config.parameter)
+        if order is None:
+            order = self._get_names_order()
         # Company name goes to the lastname
         if is_company or not name:
             parts = [name or False, False]
         # Guess name splitting
         else:
-            order = self._get_names_order()
             # Remove redundant spaces
             name = self._get_whitespace_cleaned_name(
                 name, comma=(order == 'last_first_comma'))
@@ -192,11 +197,25 @@ class ResPartner(models.Model):
 
     @api.multi
     def _inverse_name(self):
-        """Try to revert the effect of :meth:`._compute_name`."""
+        """
+            Try to revert the effect of :meth:`._compute_name`.
+            Generate one write if values are really updated
+        """
+        order = self._get_names_order()
         for record in self:
-            parts = record._get_inverse_name(record.name, record.is_company)
-            record.lastname = parts['lastname']
-            record.firstname = parts['firstname']
+            parts = record._get_inverse_name(
+                record.name, record.is_company, order=order)
+            values = {}
+            if parts['lastname'] != record.lastname:
+                values.update({
+                    'lastname': parts['lastname']
+                })
+            if parts['firstname'] != record.firstname:
+                values.update({
+                    'firstname': parts['firstname']
+                })
+            if values:
+                record.update(values)
 
     @api.multi
     @api.constrains("firstname", "lastname")

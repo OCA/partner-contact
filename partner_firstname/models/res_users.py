@@ -28,9 +28,10 @@ class ResUser(models.Model):
     @api.onchange("firstname", "lastname")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
+        order = self.env["res.partner"]._get_names_order()
         for rec in self:
             rec.name = rec.partner_id._get_computed_name(
-                rec.lastname, rec.firstname)
+                rec.lastname, rec.firstname, order=order)
 
     @api.multi
     def copy(self, default=None):

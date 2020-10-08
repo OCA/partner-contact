@@ -71,6 +71,6 @@ class BaseConfigSettings(models.TransientModel):
     def action_recalculate_partners_name(self):
         partners = self._partners_for_recalculating()
         _logger.info("Recalculating names for %d partners.", len(partners))
-        partners._compute_name()
+        partners.with_context(tracking_disable=True)._compute_name()
         _logger.info("%d partners updated.", len(partners))
         return True
