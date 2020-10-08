@@ -1,6 +1,6 @@
 # Copyright 2014-2020 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-# pylint: disable=method-required-super
+# pylint: disable=method-required-super,no-self-use
 import collections
 import logging
 
@@ -54,6 +54,16 @@ class ResPartnerRelationAll(models.AbstractModel):
     _description = "All (non-inverse + inverse) relations between partners"
     _order = "this_partner_id, type_selection_id, date_end desc, date_start desc"
 
+    @api.multi
+    def _compute_active(self):
+        """active is computed based on end-date."""
+        today = fields.Date.today()
+        for this in self:
+            if this.date_end and this.date_end <= today:
+                this.active = False
+                continue
+            this.active = True
+
     res_model = fields.Char(
         string="Resource Model",
         readonly=True,
@@ -92,6 +102,7 @@ class ResPartnerRelationAll(models.AbstractModel):
     )
     active = fields.Boolean(
         string="Active",
+        compute="_compute_active",
         readonly=True,
         help="Records with date_end in the past are inactive",
     )
@@ -419,8 +430,13 @@ CREATE OR REPLACE VIEW %%(table)s AS
 
     @api.multi
     def write(self, vals):
-        """For model 'res.partner.relation' call write on underlying model.
-        """
+        """For model 'res.partner.relation' call write on underlying model."""
+        if "active" in vals:
+            active = vals.pop("active")
+            if active:
+                vals["date_end"] = False
+            else:
+                vals["date_end"] = fields.Date.today()
         new_type_selection = self._get_type_selection_from_vals(vals)
         for rec in self:
             type_selection = new_type_selection or rec.type_selection_id
