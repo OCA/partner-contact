@@ -7,7 +7,7 @@
 {
     'name': 'NUTS Regions',
     'category': 'Localisation/Europe',
-    'version': '11.0.1.1.0',
+    'version': '11.0.1.1.1',
     'depends': [
         'contacts',
     ],
