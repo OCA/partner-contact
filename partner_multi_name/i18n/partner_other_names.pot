@@ -32,6 +32,6 @@ msgid "Users"
 msgstr ""
 
 #. module: partner_multi_name
-#: model:ir.model,name:partner_multi_name.model_base_config_settings
-msgid "base.config.settings"
+#: model:ir.model,name:partner_multi_name.model_res_config_settings
+msgid "res.config.settings"
 msgstr ""

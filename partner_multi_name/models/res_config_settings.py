@@ -9,12 +9,11 @@
 from odoo import models, api
 
 
-class BaseConfigSettings(models.TransientModel):
-    _inherit = 'base.config.settings'
+class ResConfigSettings(models.TransientModel):
+    _inherit = 'res.config.settings'
 
     def _partner_names_order_selection(self):
-        options = super(BaseConfigSettings,
-                        self)._partner_names_order_selection()
+        options = super()._partner_names_order_selection()
 
         new_labels = {
             'last_first': 'Lastname SecondLastname \
