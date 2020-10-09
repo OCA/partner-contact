@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-    <!-- Main menu. -->
-    <menuitem
-        id="menu_res_partner_relation"
-        name="Relations"
-        sequence="3"
-        parent="contacts.menu_contacts"
-        />
-
     <!-- Show relations. -->
     <record
         id="action_res_partner_relation_all"
@@ -33,11 +25,19 @@
         </field>
     </record>
     <menuitem
-        id="menu_res_partner_relation_all"
+        id="menu_res_partner_relation"
         name="Relations"
         sequence="3"
-        parent="menu_res_partner_relation"
+        parent="contacts.menu_contacts"
         action="action_res_partner_relation_all"
+        />
+
+    <!-- Put configuration under general contact configuration. -->
+    <menuitem
+        id="menu_res_partner_multi_relation_config"
+        name="Relations"
+        sequence="81"
+        parent="contacts.res_partner_menu_config"
         />
 
     <!-- Configure relation types. -->
@@ -51,7 +51,7 @@
         id="menu_res_partner_relation_type"
         name="Relation Types"
         sequence="81"
-        parent="menu_res_partner_relation"
+        parent="menu_res_partner_multi_relation_config"
         action="action_res_partner_relation_type"
         />
 
