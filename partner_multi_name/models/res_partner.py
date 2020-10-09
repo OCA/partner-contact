@@ -91,8 +91,7 @@ class ResPartner(models.Model):
 
         if not is_company and name:
             order = self._get_names_order()
-            result = super(ResPartner, self).\
-                _get_inverse_name(name, is_company)
+            result = super()._get_inverse_name(name, is_company)
             parts = []
 
             if order == 'first_last':
@@ -118,7 +117,7 @@ class ResPartner(models.Model):
     def _check_name(self):
         """Ensure at least one name is set."""
         try:
-            super(ResPartner, self)._check_name()
+            super()._check_name()
         except exceptions.EmptyNamesError:
             for partner in self:
                 if not partner.othernames:
@@ -127,4 +126,4 @@ class ResPartner(models.Model):
     @api.onchange("firstname", "othernames", "lastname", "lastname2")
     def _onchange_subnames(self):
         """Trigger onchange with 'othernames' too."""
-        super(ResPartner, self)._onchange_subnames()
+        super()._onchange_subnames()
