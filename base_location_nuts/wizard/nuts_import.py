@@ -15,7 +15,7 @@ from collections import OrderedDict
 logger = logging.getLogger(__name__)
 
 # Default server values
-URL_BASE = 'http://ec.europa.eu'
+URL_BASE = 'https://ec.europa.eu'
 URL_PATH = '/eurostat/ramon/nomenclatures/index.cfm'
 URL_PARAMS = {'TargetUrl': 'ACT_OTH_CLS_DLD',
               'StrNom': 'NUTS_2013',
