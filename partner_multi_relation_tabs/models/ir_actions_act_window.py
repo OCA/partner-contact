@@ -9,7 +9,7 @@ class IrActionsActWindow(models.Model):
     _inherit = "ir.actions.act_window"
 
     @api.multi
-    def read(self, fields=None, load='_classic_read'):
+    def read(self, fields=None, load="_classic_read"):
         """Add update_tabs_visibility if called for partner model."""
         remove_res_model = False
         if fields and "context" in fields and "res_model" not in fields:
@@ -21,7 +21,7 @@ class IrActionsActWindow(models.Model):
                 if values["res_model"] == "res.partner":
                     ctx = values.get("context", "{}")
                     if "update_relation_tab" not in ctx:
-                        ctx = ctx.replace("{", "{\"update_relation_tab\": 1,  ", 1)
+                        ctx = ctx.replace("{", '{"update_relation_tab": 1,  ', 1)
                         values["context"] = ctx
                 if remove_res_model:
                     del values["res_model"]

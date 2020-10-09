@@ -5,12 +5,13 @@ from . import common
 
 
 UPDATE_KEY = "update_relation_tab"
-DQ = "\""
+DQ = '"'
 UPDATE_CONTEXT = "{%(dq)s%(key)s%(dq)s: 1}" % {"dq": DQ, "key": UPDATE_KEY}
 
 
 class TestPartnerViewActions(common.TestCommon):
     """Test the functionality in window action model."""
+
     post_install = True
 
     def test_non_partner_action(self):

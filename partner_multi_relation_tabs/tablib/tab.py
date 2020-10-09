@@ -1,9 +1,11 @@
-# Copyright 2014-2018 Therp BV <https://therp.nl>.
+# Copyright 2014-2020 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 import logging
 from lxml import etree
 
 from odoo import _
+
+# Note: next function moved in 13.0 to odoo/addons/base/models/ir_ui_view.py
 from odoo.osv.orm import transfer_modifiers_to_node
 
 
@@ -13,7 +15,7 @@ _logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 NAME_PREFIX = "relation_ids_tab"
 
 
-class Tab(object):
+class Tab:
     """Encapsulate the information on a tab in the database."""
 
     def __init__(self, tab_record):
@@ -25,12 +27,15 @@ class Tab(object):
         self.name = tab_record.code
 
     def get_fieldname(self):
+        """Fieldname will be concattenation of prefix and tab record id."""
         return "%s_%s" % (NAME_PREFIX, self.tab_record.id)
 
     def get_visible_fieldname(self):
+        """The field with suffix visible will control display of corresponding field."""
         return "%s_visible" % self.get_fieldname()
 
     def create_page(self):
+        """Create single tabpage that will be added to form notebook."""
         tab_page = etree.Element("page")
         self._set_page_attrs(tab_page)
         field = etree.Element(
@@ -42,7 +47,17 @@ class Tab(object):
             '"active_test": False}' % self.tab_record.id,
         )
         tab_page.append(field)
-        tree = etree.Element("tree", editable="bottom")
+        tree = etree.Element(
+            "tree",
+            attrib={
+                "editable": "bottom",
+                "decoration-success": "active and not date_end and"
+                " (not date_start or date_start <= current_date)",
+                "decoration-primary": "date_start and date_start >= current_date",
+                "decoration-warning": "active and date_end",
+                "decoration-muted": "date_end and date_end <= current_date",
+            },
+        )
         field.append(tree)
         # Now add fields for the editable tree view in the tab.
         type_field = etree.Element("field", name="type_selection_id", widget="many2one")
@@ -56,6 +71,7 @@ class Tab(object):
         tree.append(other_partner_field)
         tree.append(etree.Element("field", name="date_start"))
         tree.append(etree.Element("field", name="date_end"))
+        tree.append(etree.Element("field", name="active", invisible="1"))
         return tab_page
 
     def _set_page_attrs(self, tab_page):

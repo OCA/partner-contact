@@ -6,7 +6,10 @@
         <field name="arch" type="xml">
             <tree
                 string="Partner Relations"
-                colors="gray:not active; blue:date_start &gt; current_date"
+                decoration-success="active and not date_end and (not date_start or not date_start &gt; current_date)"
+                decoration-primary="date_start and date_start &gt; current_date"
+                decoration-warning="active and date_end"
+                decoration-muted="date_end and not date_end &lt; current_date"
                 editable="top"
                 >
                 <field
@@ -26,7 +29,7 @@
                     />
                 <field name="date_start" />
                 <field name="date_end" />
-                <field name="active" />
+                <field name="active" invisible="1" />
             </tree>
         </field>
     </record>
