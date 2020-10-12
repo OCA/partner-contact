@@ -8,5 +8,5 @@ class EmptyNamesError(exceptions.ValidationError):
         value = value or _("No name is set.")
         self.record = record
         self._value = value
-        self.name = _("Error(s) with partner %d's name.") % record.id
-        self.args = (self.name, value)
+        self._name = _("Error(s) with partner %d's name.") % record.id
+        self.args = (self._name, value)
