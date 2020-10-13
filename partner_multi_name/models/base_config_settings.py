@@ -4,7 +4,7 @@
 # Copyright 2017 Tecnativa - Pedro M. Baeza
 # Copyright 2018 EXA Auto Parts S.A.S Guillermo Montoya <Github@guillermm>
 # Copyright 2018 EXA Auto Parts S.A.S Joan Marín <Github@JoanMarin>
-# Copyright 2018 EXA Auto Parts S.A.S Juan Ocampo <Github@Capriatto>
+# Copyright 2020 EXA Auto Parts S.A.S Juan Ocampo <Github@Capriatto>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, api
@@ -30,16 +30,9 @@ class BaseConfigSettings(models.TransientModel):
 
     @api.multi
     def _partners_for_recalculating(self):
-        return self.env['res.partner'].search([
+        res = super(BaseConfigSettings, self)._partners_for_recalculating()
+        res |= self.env['res.partner'].search([
             ('is_company', '=', False),
-            '|',
-            '&',
-            ('firstname', '!=', False),
-            ('lastname', '!=', False),
-            '|',
-            '&',
-            ('firstname', '!=', False),
-            ('lastname2', '!=', False),
             '|',
             '&',
             ('othernames', '!=', False),
@@ -47,3 +40,4 @@ class BaseConfigSettings(models.TransientModel):
             '&',
             ('othernames', '!=', False),
             ('lastname2', '!=', False)])
+        return res

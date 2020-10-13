@@ -4,7 +4,7 @@
 # Copyright 2017 Tecnativa - Pedro M. Baeza
 # Copyright 2018 EXA Auto Parts S.A.S Guillermo Montoya <Github@guillermm>
 # Copyright 2018 EXA Auto Parts S.A.S Joan Marín <Github@JoanMarin>
-# Copyright 2018 EXA Auto Parts S.A.S Juan Ocampo <Github@Capriatto>
+# Copyright 2020 EXA Auto Parts S.A.S Juan Ocampo <Github@Capriatto>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, fields, models
@@ -118,10 +118,10 @@ class ResPartner(models.Model):
     @api.constrains("firstname", "othernames", "lastname", "lastname2")
     def _check_name(self):
         """Ensure at least one name is set."""
-        try:
-            super(ResPartner, self)._check_name()
-        except exceptions.EmptyNamesError:
-            for partner in self:
+        for partner in self:
+            try:
+                super(ResPartner, self)._check_name()
+            except exceptions.EmptyNamesError:
                 if not partner.othernames:
                     raise
 

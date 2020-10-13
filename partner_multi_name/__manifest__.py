@@ -4,13 +4,13 @@
 # Copyright 2017 Tecnativa - Pedro M. Baeza
 # Copyright 2018 EXA Auto Parts S.A.S Guillermo Montoya <Github@guillermm>
 # Copyright 2018 EXA Auto Parts S.A.S Joan Marín <Github@JoanMarin>
-# Copyright 2018 EXA Auto Parts S.A.S Juan Ocampo <Github@Capriatto>
+# Copyright 2020 EXA Auto Parts S.A.S Juan Ocampo <Github@Capriatto>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 {
     "name": "Partner Multi Name",
     "summary": "Have split first and other names",
-    "version": "10.0.1.0.0",
+    "version": "10.0.1.0.1",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/partner-contact",
     "author": "EXA Auto Parts Github@exaap, "
