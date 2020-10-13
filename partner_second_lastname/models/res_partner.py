@@ -13,7 +13,9 @@ class ResPartner(models.Model):
 
     _inherit = "res.partner"
 
-    lastname2 = fields.Char("Second last name",)
+    lastname2 = fields.Char(
+        "Second last name",
+    )
 
     @api.model
     def _get_computed_name(self, lastname, firstname, lastname2=None):
@@ -47,7 +49,9 @@ class ResPartner(models.Model):
         """Write :attr:`~.name` according to splitted data."""
         for partner in self:
             partner.name = self._get_computed_name(
-                partner.lastname, partner.firstname, partner.lastname2,
+                partner.lastname,
+                partner.firstname,
+                partner.lastname2,
             )
 
     def _inverse_name(self):
