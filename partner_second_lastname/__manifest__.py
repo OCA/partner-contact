@@ -6,7 +6,7 @@
 {
     "name": "Partner second last name",
     "summary": "Have split first and second lastnames",
-    "version": "13.0.2.0.0",
+    "version": "14.0.1.0.0",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/partner-contact",
     "author": "Tecnativa, " "Odoo Community Association (OCA)",
