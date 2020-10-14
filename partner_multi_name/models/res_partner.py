@@ -17,7 +17,8 @@ class ResPartner(models.Model):
     othernames = fields.Char("Other Names")
 
     @api.model
-    def _get_computed_name(self, firstname, othernames, lastname, lastname2):
+    def _get_computed_name(self, firstname=None, othernames=None,
+                           lastname=None, lastname2=None):
         """
         Compute the name combined with the other names too.
 
