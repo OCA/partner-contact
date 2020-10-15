@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_simple_form_fax" model="ir.ui.view">
+        <field name="name">Add fax on partner</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_simple_form" />
+        <field name="arch" type="xml">
+            <field name="function" position="after">
+                <field name="fax" placeholder="Fax..." />
+            </field>
+        </field>
+    </record>
+    <record id="view_partner_form_fax" model="ir.ui.view">
+        <field name="name">Add fax on partner</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="function" position="after">
+                <field name="fax" placeholder="Fax..." widget="phone" />
+            </field>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='mobile']"
+                position="after"
+            >
+                <field name="fax" placeholder="Fax..." widget="phone" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
