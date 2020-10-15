@@ -5,7 +5,7 @@
 
 {
     "name": "Contact's birthdate",
-    "version": "13.0.2.0.0",
+    "version": "14.0.1.0.0",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "category": "Customer Relationship Management",
     "website": "https://github.com/OCA/partner-contact",
