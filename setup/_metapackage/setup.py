@@ -52,6 +52,7 @@ setuptools.setup(
         'odoo10-addon-partner_firstname',
         'odoo10-addon-partner_helper',
         'odoo10-addon-partner_identification',
+        'odoo10-addon-partner_identification_gln',
         'odoo10-addon-partner_label',
         'odoo10-addon-partner_multi_relation',
         'odoo10-addon-partner_multi_relation_hierarchy',
