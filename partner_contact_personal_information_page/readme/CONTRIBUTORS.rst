@@ -6,3 +6,4 @@
 * Nicolas JEUDY <https://github.com/njeudy>
 * Nikul CHaudhary <nikulchaudhary2112@gmail.com>
 * Jeroen Evens <jeroen.evens@dynapps.be>
+* Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
