@@ -14,10 +14,11 @@ from odoo.exceptions import UserError
 def geo_find(addr):
     if not addr:
         return None
-    url = 'https://nominatim.openstreetmap.org/search.php/'
-    url += urllib2.quote(addr.encode('utf8'))
-    url += '?format=json'
-
+    url = (
+        "https://nominatim.openstreetmap.org/search.php/%s"
+        "?format=json"
+        % urllib2.quote(addr.encode('utf8'))
+    )
     try:
         result = json.load(urllib2.urlopen(url))
     except Exception as e:
