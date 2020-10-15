@@ -28,6 +28,7 @@ class TestPartnerContactLang(common.SavepointCase):
         """First empty the field for filling it again afterwards to see if
         the contact gets the same value.
         """
+        self.contact.lang = False
         self.partner.lang = False
         self.partner.lang = "en_US"
         self.assertEqual(self.contact.lang, "en_US")
