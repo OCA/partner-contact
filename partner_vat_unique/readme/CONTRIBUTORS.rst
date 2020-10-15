@@ -5,3 +5,5 @@
 * `Tecnativa <https://www.tecnativa.com>`__:
     * Vicent Cubells <vicent.cubells@tecnativa.com>
     * Manuel Calero - Tecnativa
+
+* Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
