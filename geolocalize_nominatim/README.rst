@@ -12,7 +12,6 @@ Get partner coordinate using Nominatim API
 Alternative to Google API
 
 
-
 Credits
 =======
 
