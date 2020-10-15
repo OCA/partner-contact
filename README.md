@@ -64,6 +64,7 @@ addon | version | summary
 [partner_firstname](partner_firstname/) | 10.0.2.1.4 | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 10.0.0.1.0 | Add specific helper methods
 [partner_identification](partner_identification/) | 10.0.1.3.0 | Partner Identification Numbers
+[partner_identification_gln](partner_identification_gln/) | 10.0.1.0.0 | This addon extends "Partner Identification Numbers" to provide a number category for GLN registration
 [partner_label](partner_label/) | 10.0.1.0.0 | Print partner labels
 [partner_multi_relation](partner_multi_relation/) | 10.0.1.0.2 | Partner relations
 [partner_multi_relation_hierarchy](partner_multi_relation_hierarchy/) | 10.0.0.1.0 | Partner Relation Hierarchy
