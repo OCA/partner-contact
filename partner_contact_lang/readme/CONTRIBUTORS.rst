@@ -5,3 +5,5 @@
   * David Vidal
   * Cristina Martín
   * Pedro Evaristo Gonzalez Sanchez <pedro.gonzalez@pesol.es>
+
+* Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
