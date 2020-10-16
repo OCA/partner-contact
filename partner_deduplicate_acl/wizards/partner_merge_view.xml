@@ -14,17 +14,17 @@
                 expr="//button[@name='action_start_automatic_process']"
                 position="attributes"
             >
-                <attribute
-                    name="groups"
-                >partner_deduplicate_acl.group_automatically</attribute>
+                <attribute name="groups">
+                    partner_deduplicate_acl.group_automatically
+                </attribute>
             </xpath>
             <xpath
                 expr="//button[@name='action_update_all_process']"
                 position="attributes"
             >
-                <attribute
-                    name="groups"
-                >partner_deduplicate_acl.group_automatically</attribute>
+                <attribute name="groups">
+                    partner_deduplicate_acl.group_automatically
+                </attribute>
             </xpath>
         </field>
     </record>
