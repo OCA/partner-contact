@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo14-addon-partner_fax',
         'odoo14-addon-partner_firstname',
         'odoo14-addon-partner_second_lastname',
+        'odoo14-addon-partner_vat_unique',
     ],
     classifiers=[
         'Programming Language :: Python',
