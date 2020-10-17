@@ -23,6 +23,7 @@ addon | version | summary
 [partner_fax](partner_fax/) | 14.0.1.0.0 | Add fax number on partner
 [partner_firstname](partner_firstname/) | 14.0.1.0.0 | Split first name and last name for non company partners
 [partner_second_lastname](partner_second_lastname/) | 14.0.1.0.0 | Have split first and second lastnames
+[partner_vat_unique](partner_vat_unique/) | 14.0.1.0.0 | Module to make the VAT number unique for customers and suppliers.
 
 [//]: # (end addons)
 
