@@ -64,6 +64,29 @@ class ResPartnerRelationAll(models.AbstractModel):
                 continue
             this.active = True
 
+    def _search_active(self, operator, value):
+        """Return domain using date_start and date_end."""
+        assert value in (True, False)
+        if operator in ("!=", "<>"):
+            value = not value
+        today = fields.Date.today()
+        if value:  # Find active records.
+            return [
+                "&",
+                "|",
+                ("date_start", "=", False),
+                ("date_start", "<=", today),
+                "|",
+                ("date_end", "=", False),
+                ("date_end", ">=", today),
+            ]
+        # Find not active records.
+        return [
+            "|",
+            ("date_start", ">", today),
+            ("date_end", "<", today),
+        ]
+
     res_model = fields.Char(
         string="Resource Model",
         readonly=True,
@@ -103,6 +126,7 @@ class ResPartnerRelationAll(models.AbstractModel):
     active = fields.Boolean(
         string="Active",
         compute="_compute_active",
+        search="_search_active",
         readonly=True,
         help="Records with date_end in the past are inactive",
     )

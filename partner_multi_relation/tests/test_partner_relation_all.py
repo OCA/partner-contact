@@ -1,13 +1,17 @@
-# Copyright 2016-2017 Therp BV
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2016-2020 Therp BV <https://therp.nl>.
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+"""Test res.partner.relation.all model."""
 
 from datetime import date
+
 from odoo.exceptions import ValidationError
 
 from .test_partner_relation_common import TestPartnerRelationCommon
 
 
 class TestPartnerRelation(TestPartnerRelationCommon):
+    """Test res.partner.relation.all. Implicitly test res.partner.relation."""
+
     def setUp(self):
         super(TestPartnerRelation, self).setUp()
 
@@ -77,6 +81,35 @@ class TestPartnerRelation(TestPartnerRelationCommon):
                 relation.other_partner_id.name,
             ),
         )
+
+    def test_active_field(self):
+        """Test compute and search of active field."""
+        relation = self._create_company2person_relation()
+        self.assertTrue(relation.active)
+        # If we search on active records for this partner, we should find record.
+        domain = [
+            ("this_partner_id", "=", relation.this_partner_id.id),
+            ("active", "=", True),
+        ]
+        relations_found = self.relation_all_model.search(domain)
+        self.assertIn(relation, relations_found)
+        # If we set the enddate to a date in the past, active should become False.
+        relation.date_end = "1999-12-31"
+        self.assertFalse(relation.active)
+        relations_found = self.relation_all_model.search(domain)
+        self.assertNotIn(relation, relations_found)
+        # Inactive should be found with inactive records.
+        domain = [
+            ("this_partner_id", "=", relation.this_partner_id.id),
+            ("active", "!=", True),
+        ]
+        relations_found = self.relation_all_model.search(domain)
+        self.assertIn(relation, relations_found)
+        # Clear enddate. Relation should become active again.
+        relation.date_end = False
+        self.assertTrue(relation.active)
+        relations_found = self.relation_all_model.search(domain)
+        self.assertNotIn(relation, relations_found)
 
     def test__regular_write(self):
         """Test write with valid data."""
@@ -304,9 +337,9 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         )
         # We will also change to a type going from person to company:
         (
-            type_worker2company,
+            _dummy_type_worker2company,
             selection_worker2company,
-            selection_company2worker,
+            _dummy_selection_company2worker,
         ) = self._create_relation_type_selection(
             {
                 "name": "works for",
