@@ -45,7 +45,8 @@
         />
         <field name="help">
             Display and manage the list of all cities that can be assigned to
-            your partner records. Note that an option can be set on each country separately
+            your partner records. Note that an option can be set on each country
+            separately
             to enforce any address of it to have a city in this list.
         </field>
     </record>
