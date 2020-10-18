@@ -22,9 +22,9 @@
                 />
             </field>
             <field name="city" position="attributes">
-                <attribute
-                    name="invisible"
-                >[('country_enforce_cities', '=', True)]</attribute>
+                <attribute name="invisible">
+                    [('country_enforce_cities', '=', True)]
+                </attribute>
             </field>
         </field>
     </record>
