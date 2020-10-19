@@ -1,6 +1,7 @@
 # Copyright 2015 Camptocamp SA
-# Copyright 2016 Therp BV
+# Copyright 2016-2020 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+"""Test methods added to res.partner model."""
 from odoo import fields
 from odoo.exceptions import ValidationError
 
@@ -8,6 +9,8 @@ from .test_partner_relation_common import TestPartnerRelationCommon
 
 
 class TestPartnerSearch(TestPartnerRelationCommon):
+    """Test methods added to res.partner model."""
+
     def test_search_relation_type(self):
         """Test searching on relation type."""
         relation = self._create_company2person_relation()
@@ -44,12 +47,18 @@ class TestPartnerSearch(TestPartnerRelationCommon):
 
     def test_search_relation_date(self):
         """Test searching on relations valid on a certain date."""
-        self._create_company2person_relation()
+        relation = self._create_company2person_relation()
         partners = self.partner_model.search(
             [("search_relation_date", "=", fields.Date.today())]
         )
         self.assertTrue(self.partner_01_person in partners)
         self.assertTrue(self.partner_02_company in partners)
+        relation.date_end = "1999-12-31"
+        partners = self.partner_model.search(
+            [("search_relation_date", "=", fields.Date.today())]
+        )
+        self.assertFalse(self.partner_01_person in partners)
+        self.assertFalse(self.partner_02_company in partners)
 
     def test_search_any_partner(self):
         """Test searching for partner left or right."""
