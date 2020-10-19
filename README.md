@@ -56,6 +56,7 @@ addon | version | summary
 [partner_contact_role](partner_contact_role/) | 10.0.1.0.0 | Add roles to partners.
 [partner_contact_weight](partner_contact_weight/) | 10.0.1.0.1 | Provide contact weight
 [partner_create_by_vat](partner_create_by_vat/) | 10.0.1.0.1 | Using VIES webservice, name and address information will be fetched and added to the partner.
+[partner_default_sale_discount](partner_default_sale_discount/) | 10.0.1.0.0 | Default sales discount per partner
 [partner_disable_gravatar](partner_disable_gravatar/) | 10.0.1.0.0 | Disable automatic connection to gravatar.com
 [partner_email_check](partner_email_check/) | 10.0.1.1.1 | Validate email address field
 [partner_employee_quantity](partner_employee_quantity/) | 10.0.1.0.0 | Know how many employees a partner has
