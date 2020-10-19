@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="view_order_form">
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <field name="date_order" position="after">
+                <field name="default_sale_discount" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
