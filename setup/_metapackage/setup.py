@@ -44,6 +44,7 @@ setuptools.setup(
         'odoo10-addon-partner_contact_role',
         'odoo10-addon-partner_contact_weight',
         'odoo10-addon-partner_create_by_vat',
+        'odoo10-addon-partner_default_sale_discount',
         'odoo10-addon-partner_disable_gravatar',
         'odoo10-addon-partner_email_check',
         'odoo10-addon-partner_employee_quantity',
