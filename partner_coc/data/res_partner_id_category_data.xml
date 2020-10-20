@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp><data>
+
+    <record id="id_category_coc" model="res.partner.id_category">
+        <field name="code">coc</field>
+        <field name="name">Chamber Of Commerce Registration Number</field>
+    </record>
+
+</data></openerp>

@@ -1,0 +1,292 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_identification
+#
+# Translators:
+# Rudolf Schnapka <rs@techno-flex.de>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-21 16:57+0000\n"
+"PO-Revision-Date: 2017-02-25 00:18+0000\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
+"language/de/)\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner_id_category.py:24
+#, python-format
+msgid ""
+"\n"
+"# Python code. Use failed = True to specify that the id number is not "
+"valid.\n"
+"# You can use the following variables :\n"
+"#  - self: browse_record of the current ID Category browse_record\n"
+"#  - id_number: browse_record of ID number to validate"
+msgstr ""
+"\n"
+"# Python code. Verwende failed = True, um anzugeben, dass die ID unzulässig "
+"ist.\n"
+"# Sie können die folgenden Variablen einsetzen:\n"
+"#  - self: browse_record der aktuellen ID Kategorie browse_record\n"
+"#  - id_number: browse_record der zu prüfenden ID"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner_id_category.py:72
+#, python-format
+msgid "%s is not a valid %s identifier"
+msgstr "%s ist keine zulässige %s Kennung"
+
+#. module: partner_identification
+#: help:res.partner.id_category,code:0
+msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
+msgstr "Abkürzung oder Akronym diese Kennungsart, z. B. 'Führerschein'"
+
+#. module: partner_identification
+#: field:res.partner.id_category,active:0 field:res.partner.id_number,active:0
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: partner_identification
+#: help:res.partner.id_number,partner_issued_id:0
+msgid ""
+"Another partner, who issued this ID. For example, Traffic National "
+"Institution"
+msgstr ""
+"Anderer Partner, der diesen Ausweis ausgestellt hat. Z. B. örtlichen "
+"Fahrerlaubnisbehörde"
+
+#. module: partner_identification
+#: field:res.partner.id_number,category_id:0
+msgid "Category"
+msgstr "Kategorie"
+
+#. module: partner_identification
+#: field:res.partner.id_category,code:0
+msgid "Code"
+msgstr "Schlüssel"
+
+#. module: partner_identification
+#: field:res.partner.id_category,create_uid:0
+#: field:res.partner.id_number,create_uid:0
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: partner_identification
+#: field:res.partner.id_category,create_date:0
+#: field:res.partner.id_number,create_date:0
+msgid "Created on"
+msgstr "Angelegt am"
+
+#. module: partner_identification
+#: field:res.partner.id_category,display_name:0
+#: field:res.partner.id_number,display_name:0
+msgid "Display Name"
+msgstr "Anzeigebezeichnung"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner_id_category.py:68
+#, python-format
+msgid ""
+"Error when evaluating the id_category validation code::\n"
+" %s \n"
+"(%s)"
+msgstr ""
+"Fehler im Prüfprogramm-Code beim Auswerten der id_category:\n"
+" %s \n"
+"(%s)"
+
+#. module: partner_identification
+#: help:res.partner.id_number,valid_until:0
+msgid ""
+"Expiration date. For example, date when person needs to renew his driver "
+"license, 21/10/2019"
+msgstr ""
+"Ablaufdatum. Zum Beispiel, Datum an dem der Führeschein der Person erneuert "
+"werden muss: 21.10.2019"
+
+#. module: partner_identification
+#: selection:res.partner.id_number,status:0
+msgid "Expired"
+msgstr "Abgelaufen"
+
+#. module: partner_identification
+#: field:res.partner.id_category,id:0 field:res.partner.id_number,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_identification
+#: field:res.partner.id_number,name:0
+msgid "ID Number"
+msgstr "ID-Nummer"
+
+#. module: partner_identification
+#: view:res.partner:partner_identification.view_partner_form
+msgid "ID Numbers"
+msgstr "Ausweis-Nummern"
+
+#. module: partner_identification
+#: field:res.partner.id_category,name:0
+msgid "ID name"
+msgstr "Ausweis-Name"
+
+#. module: partner_identification
+#: help:res.partner.id_number,category_id:0
+msgid "ID type defined in configuration. For example, Driver License"
+msgstr "In Einstellungen festgelegte Ausweis-Art. Zum Beispiel Führerschein"
+
+#. module: partner_identification
+#: field:res.partner,id_numbers:0
+msgid "Identification Numbers"
+msgstr "Ausweisnummern"
+
+#. module: partner_identification
+#: field:res.partner.id_number,partner_issued_id:0
+msgid "Issued by"
+msgstr "Ausgestellt durch"
+
+#. module: partner_identification
+#: help:res.partner.id_number,date_issued:0
+msgid ""
+"Issued date. For example, date when person approved his driving exam, "
+"21/10/2009"
+msgstr ""
+"Ausstellungsdatum. Zum Beispiel das Ausstellungsdatum des Führescheins am "
+"21. 10. 2009"
+
+#. module: partner_identification
+#: field:res.partner.id_number,date_issued:0
+msgid "Issued on"
+msgstr "Ausgestellt am"
+
+#. module: partner_identification
+#: field:res.partner.id_category,__last_update:0
+#: field:res.partner.id_number,__last_update:0
+msgid "Last Modified on"
+msgstr "Zuletzt verändert am"
+
+#. module: partner_identification
+#: field:res.partner.id_category,write_uid:0
+#: field:res.partner.id_number,write_uid:0
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: partner_identification
+#: field:res.partner.id_category,write_date:0
+#: field:res.partner.id_number,write_date:0
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: partner_identification
+#: help:res.partner.id_category,name:0
+msgid "Name of this ID type. For example, 'Driver License'"
+msgstr "Bezeichnung dieser Ausweisart. Zum Beispiel 'Führerschein'"
+
+#. module: partner_identification
+#: selection:res.partner.id_number,status:0
+msgid "New"
+msgstr "Neu"
+
+#. module: partner_identification
+#: view:res.partner.id_number:partner_identification.view_partner_id_numbers_form
+#: field:res.partner.id_number,comment:0
+msgid "Notes"
+msgstr "Hinweise"
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner
+#: field:res.partner.id_number,partner_id:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_category
+msgid "Partner ID Categories"
+msgstr "Ausweiskategorien von Partnern"
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
+#: view:res.partner.id_number:partner_identification.view_partner_id_numbers_form
+#: view:res.partner.id_number:partner_identification.view_partner_id_numbers_tree
+msgid "Partner ID Numbers"
+msgstr "Ausweisnummern von Partnern"
+
+#. module: partner_identification
+#: view:res.partner.id_category:partner_identification.view_partner_id_category_form
+#: view:res.partner.id_category:partner_identification.view_partner_id_category_tree
+msgid "Partner Identification Categories"
+msgstr "Partnerausweiskategorien"
+
+#. module: partner_identification
+#: field:res.partner.id_number,place_issuance:0
+msgid "Place of Issuance"
+msgstr "Austellungsort"
+
+#. module: partner_identification
+#: help:res.partner.id_category,validation_code:0
+msgid "Python code called to validate an id number."
+msgstr "Python-Code zum Prüfen einer Ausweinummer"
+
+#. module: partner_identification
+#: field:res.partner.id_category,validation_code:0
+msgid "Python validation code"
+msgstr "Python Prüfprogrammcode"
+
+#. module: partner_identification
+#: selection:res.partner.id_number,status:0
+msgid "Running"
+msgstr "Laufend"
+
+#. module: partner_identification
+#: field:res.partner.id_number,status:0
+msgid "Status"
+msgstr "Status"
+
+#. module: partner_identification
+#: help:res.partner.id_number,name:0
+msgid "The ID itself. For example, Driver License number of this person"
+msgstr "Der Ausweis selbst. Zum Beispiel die Führerscheinnummer dieser Person"
+
+#. module: partner_identification
+#: help:res.partner.id_number,place_issuance:0
+msgid ""
+"The place where the ID has been issued. For example the country for "
+"passports and visa"
+msgstr ""
+"Der Ort an dem dieser Ausweis ausgestellt wurde. Zum Beispiel das Aussteller-"
+"Land vom Reisepass oder des Personalausweises"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner.py:130
+#, python-format
+msgid ""
+"This %s has multiple IDs of this type (%s), so a write via the %s field is "
+"not possible. In order to fix this, please use the IDs tab."
+msgstr ""
+
+#. module: partner_identification
+#: selection:res.partner.id_number,status:0
+msgid "To Renew"
+msgstr "Zu erneuern"
+
+#. module: partner_identification
+#: field:res.partner.id_number,valid_from:0
+msgid "Valid from"
+msgstr "Gültig ab"
+
+#. module: partner_identification
+#: field:res.partner.id_number,valid_until:0
+msgid "Valid until"
+msgstr "Gültig bis"
+
+#. module: partner_identification
+#: help:res.partner.id_number,valid_from:0
+msgid "Validation period stating date."
+msgstr "Prüfung Periodenanfangsdatum"

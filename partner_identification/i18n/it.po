@@ -1,0 +1,269 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_identification
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2018-11-16 11:06+0000\n"
+"Last-Translator: Ciro Urselli <c.urselli@apuliasoftware.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.2.2\n"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner_id_category.py:24
+#, python-format
+msgid "\n"
+"# Python code. Use failed = True to specify that the id number is not valid.\n"
+"# You can use the following variables :\n"
+"#  - self: browse_record of the current ID Category browse_record\n"
+"#  - id_number: browse_record of ID number to validate"
+msgstr ""
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner_id_category.py:72
+#, python-format
+msgid "%s is not a valid %s identifier"
+msgstr "%s non è un valido %s identificatore"
+
+#. module: partner_identification
+#: help:res.partner.id_category,code:0
+msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
+msgstr "Abbreviazione o acronimo di questo tipo di documento. Ad esempio 'C.I.'"
+
+#. module: partner_identification
+#: field:res.partner.id_category,active:0
+#: field:res.partner.id_number,active:0
+msgid "Active"
+msgstr "Attivo"
+
+#. module: partner_identification
+#: help:res.partner.id_number,partner_issued_id:0
+msgid "Another partner, who issued this ID. For example, Traffic National Institution"
+msgstr ""
+"Un altro partner che rilascia questo tipo di documento. Ad esempio \""
+"Motorizzazione Civile\""
+
+#. module: partner_identification
+#: field:res.partner.id_number,category_id:0
+msgid "Category"
+msgstr "Categoria"
+
+#. module: partner_identification
+#: field:res.partner.id_category,code:0
+msgid "Code"
+msgstr "Codice"
+
+#. module: partner_identification
+#: field:res.partner.id_category,create_uid:0
+#: field:res.partner.id_number,create_uid:0
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: partner_identification
+#: field:res.partner.id_category,create_date:0
+#: field:res.partner.id_number,create_date:0
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: partner_identification
+#: field:res.partner.id_category,display_name:0
+#: field:res.partner.id_number,display_name:0
+msgid "Display Name"
+msgstr "Nome Visualizzato"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner_id_category.py:68
+#, python-format
+msgid "Error when evaluating the id_category validation code::\n"
+" %s \n"
+"(%s)"
+msgstr ""
+"Errore nell'elaborazione (%s \n"
+"%s)"
+
+#. module: partner_identification
+#: help:res.partner.id_number,valid_until:0
+msgid "Expiration date. For example, date when person needs to renew his driver license, 21/10/2019"
+msgstr ""
+"Data di Scadenza del documento. Ad esempio, la data di rinnovo della patente"
+
+#. module: partner_identification
+#: selection:res.partner.id_number,status:0
+msgid "Expired"
+msgstr "Scaduto"
+
+#. module: partner_identification
+#: field:res.partner.id_category,id:0
+#: field:res.partner.id_number,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_identification
+#: field:res.partner.id_number,name:0
+msgid "ID Number"
+msgstr "Documento D'identità"
+
+#. module: partner_identification
+#: view:res.partner:partner_identification.view_partner_form
+msgid "ID Numbers"
+msgstr "Documenti d'identità"
+
+#. module: partner_identification
+#: field:res.partner.id_category,name:0
+msgid "ID name"
+msgstr "Nome Documento"
+
+#. module: partner_identification
+#: help:res.partner.id_number,category_id:0
+msgid "ID type defined in configuration. For example, Driver License"
+msgstr "Tipo di documento. Ad esempio Patente di guida"
+
+#. module: partner_identification
+#: field:res.partner,id_numbers:0
+msgid "Identification Numbers"
+msgstr "Numero Documento"
+
+#. module: partner_identification
+#: field:res.partner.id_number,partner_issued_id:0
+msgid "Issued by"
+msgstr "Rilasciato da"
+
+#. module: partner_identification
+#: help:res.partner.id_number,date_issued:0
+msgid "Issued date. For example, date when person approved his driving exam, 21/10/2009"
+msgstr "Data di rilascio"
+
+#. module: partner_identification
+#: field:res.partner.id_number,date_issued:0
+msgid "Issued on"
+msgstr "Luogo di rilascio"
+
+#. module: partner_identification
+#: field:res.partner.id_category,__last_update:0
+#: field:res.partner.id_number,__last_update:0
+msgid "Last Modified on"
+msgstr "Ultima modifica"
+
+#. module: partner_identification
+#: field:res.partner.id_category,write_uid:0
+#: field:res.partner.id_number,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento"
+
+#. module: partner_identification
+#: field:res.partner.id_category,write_date:0
+#: field:res.partner.id_number,write_date:0
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento da"
+
+#. module: partner_identification
+#: help:res.partner.id_category,name:0
+msgid "Name of this ID type. For example, 'Driver License'"
+msgstr "Nome di questo tipo di documento. Ad esempio Patente di guida"
+
+#. module: partner_identification
+#: selection:res.partner.id_number,status:0
+msgid "New"
+msgstr "Nuovo"
+
+#. module: partner_identification
+#: view:res.partner.id_number:partner_identification.view_partner_id_numbers_form
+#: field:res.partner.id_number,comment:0
+msgid "Notes"
+msgstr "Note"
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner
+#: field:res.partner.id_number,partner_id:0
+msgid "Partner"
+msgstr "Contatto"
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_category
+msgid "Partner ID Categories"
+msgstr "Categoria documento partner"
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
+#: view:res.partner.id_number:partner_identification.view_partner_id_numbers_form
+#: view:res.partner.id_number:partner_identification.view_partner_id_numbers_tree
+msgid "Partner ID Numbers"
+msgstr "Numero documento partner"
+
+#. module: partner_identification
+#: view:res.partner.id_category:partner_identification.view_partner_id_category_form
+#: view:res.partner.id_category:partner_identification.view_partner_id_category_tree
+msgid "Partner Identification Categories"
+msgstr "categoria documento partner"
+
+#. module: partner_identification
+#: field:res.partner.id_number,place_issuance:0
+msgid "Place of Issuance"
+msgstr "Luogo di Rilascio"
+
+#. module: partner_identification
+#: help:res.partner.id_category,validation_code:0
+msgid "Python code called to validate an id number."
+msgstr "Codice python per la validazione di numero documento."
+
+#. module: partner_identification
+#: field:res.partner.id_category,validation_code:0
+msgid "Python validation code"
+msgstr "Codice Python per la validazione"
+
+#. module: partner_identification
+#: selection:res.partner.id_number,status:0
+msgid "Running"
+msgstr "Valido/In corso"
+
+#. module: partner_identification
+#: field:res.partner.id_number,status:0
+msgid "Status"
+msgstr "Stato"
+
+#. module: partner_identification
+#: help:res.partner.id_number,name:0
+msgid "The ID itself. For example, Driver License number of this person"
+msgstr ""
+"Il numero stesso del documento. Ad esempio il numero di rilascio della "
+"patente di guida assegnato dalla motorizzazione, oppure il numero della "
+"carta d'identità"
+
+#. module: partner_identification
+#: help:res.partner.id_number,place_issuance:0
+msgid "The place where the ID has been issued. For example the country for passports and visa"
+msgstr "Il luogo dove è presente l'ente che ha rilasciato il documento"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner.py:130
+#, python-format
+msgid "This %s has multiple IDs of this type (%s), so a write via the %s field is not possible. In order to fix this, please use the IDs tab."
+msgstr ""
+
+#. module: partner_identification
+#: selection:res.partner.id_number,status:0
+msgid "To Renew"
+msgstr "Da Rinnovare"
+
+#. module: partner_identification
+#: field:res.partner.id_number,valid_from:0
+msgid "Valid from"
+msgstr "Valido da"
+
+#. module: partner_identification
+#: field:res.partner.id_number,valid_until:0
+msgid "Valid until"
+msgstr "Valido fino al"
+
+#. module: partner_identification
+#: help:res.partner.id_number,valid_from:0
+msgid "Validation period stating date."
+msgstr "Data di scadenza del periodo di convalida."

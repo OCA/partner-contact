@@ -1,0 +1,288 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_identification
+#
+# Translators:
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-25 03:42+0000\n"
+"PO-Revision-Date: 2016-10-27 06:14+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/OCA-partner-"
+"contact-8-0/language/sl/)\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner_id_category.py:24
+#, python-format
+msgid ""
+"\n"
+"# Python code. Use failed = True to specify that the id number is not "
+"valid.\n"
+"# You can use the following variables :\n"
+"#  - self: browse_record of the current ID Category browse_record\n"
+"#  - id_number: browse_record of ID number to validate"
+msgstr ""
+"\n"
+"# Python koda. Uporaba failed = True določi, da je ID številka neveljavna.\n"
+"# Uporabite lahko naslednje spremenljivke:\n"
+"#  - self: browse_record trenutne ID kategorije browse_record\n"
+"#  - id_number: browse_record ID številke za overjanje"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner_id_category.py:72
+#, python-format
+msgid "%s is not a valid %s identifier"
+msgstr "%s ni veljaven %s identifikator"
+
+#. module: partner_identification
+#: help:res.partner.id_category,code:0
+msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
+msgstr "Okrajšava akronima za ta tip ID. Na primer, 'voznisko_dovoljenje'"
+
+#. module: partner_identification
+#: field:res.partner.id_category,active:0 field:res.partner.id_number,active:0
+msgid "Active"
+msgstr "Aktivno"
+
+#. module: partner_identification
+#: help:res.partner.id_number,partner_issued_id:0
+msgid ""
+"Another partner, who issued this ID. For example, Traffic National "
+"Institution"
+msgstr "Dodaten partner, ki je izdal ta ID. Na primer: Državni izpitni center"
+
+#. module: partner_identification
+#: field:res.partner.id_number,category_id:0
+msgid "Category"
+msgstr "Kategorija"
+
+#. module: partner_identification
+#: field:res.partner.id_category,code:0
+msgid "Code"
+msgstr "Koda"
+
+#. module: partner_identification
+#: field:res.partner.id_category,create_uid:0
+#: field:res.partner.id_number,create_uid:0
+msgid "Created by"
+msgstr "Ustvaril"
+
+#. module: partner_identification
+#: field:res.partner.id_category,create_date:0
+#: field:res.partner.id_number,create_date:0
+msgid "Created on"
+msgstr "Ustvarjeno"
+
+#. module: partner_identification
+#: field:res.partner.id_category,display_name:0
+#: field:res.partner.id_number,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner_id_category.py:68
+#, python-format
+msgid ""
+"Error when evaluating the id_category validation code::\n"
+" %s \n"
+"(%s)"
+msgstr ""
+"Napaka pri evalvaciji id_category overitvene kode::\n"
+"%s\n"
+"(%s)"
+
+#. module: partner_identification
+#: help:res.partner.id_number,valid_until:0
+msgid ""
+"Expiration date. For example, date when person needs to renew his driver "
+"license, 21/10/2019"
+msgstr ""
+"Datum poteka. Na primer: datum, ko mora oseba obnoviti veljavnost vozniškega "
+"dovoljenja, 21/10/2019"
+
+#. module: partner_identification
+#: selection:res.partner.id_number,status:0
+msgid "Expired"
+msgstr "Poteklo"
+
+#. module: partner_identification
+#: field:res.partner.id_category,id:0 field:res.partner.id_number,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_identification
+#: field:res.partner.id_number,name:0
+msgid "ID Number"
+msgstr "ID številka"
+
+#. module: partner_identification
+#: view:res.partner:partner_identification.view_partner_form
+msgid "ID Numbers"
+msgstr "ID številke"
+
+#. module: partner_identification
+#: field:res.partner.id_category,name:0
+msgid "ID name"
+msgstr "ID ime"
+
+#. module: partner_identification
+#: help:res.partner.id_number,category_id:0
+msgid "ID type defined in configuration. For example, Driver License"
+msgstr "ID tip določen v konfiguraciji. Na primer: Vozniški izpit"
+
+#. module: partner_identification
+#: field:res.partner,id_numbers:0
+msgid "Identification Numbers"
+msgstr "Identifikacijska številka"
+
+#. module: partner_identification
+#: field:res.partner.id_number,partner_issued_id:0
+msgid "Issued by"
+msgstr "Izdajatelj"
+
+#. module: partner_identification
+#: help:res.partner.id_number,date_issued:0
+msgid ""
+"Issued date. For example, date when person approved his driving exam, "
+"21/10/2009"
+msgstr ""
+"Datum izdaje. Na primer: datum, ko je oseba opravila vozniški izpit, "
+"21/10/2019"
+
+#. module: partner_identification
+#: field:res.partner.id_number,date_issued:0
+msgid "Issued on"
+msgstr "Izdano"
+
+#. module: partner_identification
+#: field:res.partner.id_category,__last_update:0
+#: field:res.partner.id_number,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
+
+#. module: partner_identification
+#: field:res.partner.id_category,write_uid:0
+#: field:res.partner.id_number,write_uid:0
+msgid "Last Updated by"
+msgstr "Zadnji posodobil"
+
+#. module: partner_identification
+#: field:res.partner.id_category,write_date:0
+#: field:res.partner.id_number,write_date:0
+msgid "Last Updated on"
+msgstr "Zadnjič posodobljeno"
+
+#. module: partner_identification
+#: help:res.partner.id_category,name:0
+msgid "Name of this ID type. For example, 'Driver License'"
+msgstr "Naziv tega tipa ID. Na primer: 'Vozniško dovoljenje'"
+
+#. module: partner_identification
+#: selection:res.partner.id_number,status:0
+msgid "New"
+msgstr "Novo"
+
+#. module: partner_identification
+#: view:res.partner.id_number:partner_identification.view_partner_id_numbers_form
+#: field:res.partner.id_number,comment:0
+msgid "Notes"
+msgstr "Opombe"
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner
+#: field:res.partner.id_number,partner_id:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_category
+msgid "Partner ID Categories"
+msgstr "ID kategorije partnerja"
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
+#: view:res.partner.id_number:partner_identification.view_partner_id_numbers_form
+#: view:res.partner.id_number:partner_identification.view_partner_id_numbers_tree
+msgid "Partner ID Numbers"
+msgstr "ID številke partnerja"
+
+#. module: partner_identification
+#: view:res.partner.id_category:partner_identification.view_partner_id_category_form
+#: view:res.partner.id_category:partner_identification.view_partner_id_category_tree
+msgid "Partner Identification Categories"
+msgstr "Partnerjeve identifikacijske kategorije"
+
+#. module: partner_identification
+#: field:res.partner.id_number,place_issuance:0
+msgid "Place of Issuance"
+msgstr "Kraj zavarovanja"
+
+#. module: partner_identification
+#: help:res.partner.id_category,validation_code:0
+msgid "Python code called to validate an id number."
+msgstr "Python koda za validacijo ID številke."
+
+#. module: partner_identification
+#: field:res.partner.id_category,validation_code:0
+msgid "Python validation code"
+msgstr "Python validacijska koda"
+
+#. module: partner_identification
+#: selection:res.partner.id_number,status:0
+msgid "Running"
+msgstr "V teku"
+
+#. module: partner_identification
+#: field:res.partner.id_number,status:0
+msgid "Status"
+msgstr "Status"
+
+#. module: partner_identification
+#: help:res.partner.id_number,name:0
+msgid "The ID itself. For example, Driver License number of this person"
+msgstr "ID sama. Na primer: Številka vozniškega dovoljenja te osebe"
+
+#. module: partner_identification
+#: help:res.partner.id_number,place_issuance:0
+msgid ""
+"The place where the ID has been issued. For example the country for "
+"passports and visa"
+msgstr "Kraj izdaje ID. Na primer: kraj izdaje potnega lista ali vize"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner.py:130
+#, python-format
+msgid ""
+"This %s has multiple IDs of this type (%s), so a write via the %s field is "
+"not possible. In order to fix this, please use the IDs tab."
+msgstr ""
+
+#. module: partner_identification
+#: selection:res.partner.id_number,status:0
+msgid "To Renew"
+msgstr "Za obnovo"
+
+#. module: partner_identification
+#: field:res.partner.id_number,valid_from:0
+msgid "Valid from"
+msgstr "Veljavno od"
+
+#. module: partner_identification
+#: field:res.partner.id_number,valid_until:0
+msgid "Valid until"
+msgstr "Veljavno do"
+
+#. module: partner_identification
+#: help:res.partner.id_number,valid_from:0
+msgid "Validation period stating date."
+msgstr "Datum pričetka obdobja validacije."
