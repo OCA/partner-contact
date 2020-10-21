@@ -3,3 +3,5 @@
 * `Tecnativa <https://www.tecnativa.com>`_:
 
   * Ernesto Tejeda
+
+* Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
