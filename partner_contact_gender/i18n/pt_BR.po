@@ -1,0 +1,49 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_gender
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner-contact (9.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-17 01:36+0000\n"
+"PO-Revision-Date: 2020-08-12 18:59+0000\n"
+"Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/"
+"OCA-partner-contact-9-0/language/pt_BR/)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.10\n"
+
+#. module: partner_contact_gender
+#: model:ir.model,name:partner_contact_gender.model_res_partner
+msgid "Contact"
+msgstr "Contato"
+
+#. module: partner_contact_gender
+#: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__female
+msgid "Female"
+msgstr "Mulher"
+
+#. module: partner_contact_gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner__gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_users__gender
+msgid "Gender"
+msgstr "Gênero"
+
+#. module: partner_contact_gender
+#: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__male
+msgid "Male"
+msgstr "Homem"
+
+#. module: partner_contact_gender
+#: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__other
+msgid "Other"
+msgstr "Outro"
+
+#~ msgid "Partner"
+#~ msgstr "Parceiro"
