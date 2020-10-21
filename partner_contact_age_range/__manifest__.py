@@ -3,13 +3,13 @@
 
 {
     "name": "Contact's Age Range",
-    "version": "13.0.1.0.0",
+    "version": "14.0.1.0.0",
     "license": "AGPL-3",
     "author": "Druidoo, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "category": "Customer Relationship Management",
     "summary": "Age Range for Contact's",
-    "depends": ["partner_contact_birthdate"],
+    "depends": ["contacts", "partner_contact_birthdate"],
     "data": [
         "security/ir.model.access.csv",
         "data/age_range_cron.xml",
