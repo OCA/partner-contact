@@ -68,6 +68,8 @@ Contributors
 
 -  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
 
+* Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+
 Maintainers
 -----------
 
