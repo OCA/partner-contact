@@ -20,6 +20,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [partner_contact_gender](partner_contact_gender/) | 14.0.1.0.1 | Add gender field to contacts
+[partner_contact_lang](partner_contact_lang/) | 14.0.1.0.0 | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 14.0.1.0.1 | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 14.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_fax](partner_fax/) | 14.0.1.0.0 | Add fax number on partner
