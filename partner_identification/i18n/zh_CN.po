@@ -224,6 +224,7 @@ msgstr "业务伙伴相关证件"
 
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_tree
 msgid "Partner ID Numbers"
@@ -278,7 +279,9 @@ msgstr "证件签发地点。例如签发护照与签证的国家"
 msgid ""
 "This %s has multiple IDs of this type (%s), so a write via the %s field is "
 "not possible. In order to fix this, please use the IDs tab."
-msgstr "%s 存在多个相同的证件类型 (%s)，因此无法通过 %s 字段进行写入。为了解决这个问题，请在业务伙伴相关证件中录入。"
+msgstr ""
+"%s 存在多个相同的证件类型 (%s)，因此无法通过 %s 字段进行写入。为了解决这个问"
+"题，请在业务伙伴相关证件中录入。"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
