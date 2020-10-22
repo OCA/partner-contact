@@ -214,6 +214,7 @@ msgstr ""
 
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_tree
 msgid "Partner ID Numbers"
