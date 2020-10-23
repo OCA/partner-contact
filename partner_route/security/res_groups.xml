@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Tecnativa - Ernesto Tejeda
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="partner_route_module_category" model="ir.module.category">
+        <field name="name">Partner Routes</field>
+        <field name="description">Manage Partner Routes</field>
+    </record>
+    <!-- Access Groups -->
+    <record id="partner_route_group_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="comment">the user can edit the route but cannot create or delete them.</field>
+        <field name="category_id" ref="partner_route_module_category"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+    <record id="partner_route_group_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="comment">the user can create and remove routes.</field>
+        <field name="category_id" ref="partner_route_module_category"/>
+        <field name="implied_ids" eval="[(4, ref('partner_route_group_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+</odoo>

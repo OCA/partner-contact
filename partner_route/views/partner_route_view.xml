@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_partner_route_tree" model="ir.ui.view">
+        <field name="model">partner.route</field>
+        <field name="arch" type="xml">
+            <tree string="Partner Route">
+                <field name="name" />
+                <field name="user_id" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_partner_route_form" model="ir.ui.view">
+        <field name="model">partner.route</field>
+        <field name="arch" type="xml">
+            <form string="Partner Route">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="toggle_active"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-archive"
+                        >
+                            <field
+                                name="active"
+                                widget="boolean_button"
+                                options='{"terminology": "active"}'
+                            />
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" default_focus="1" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="next_date" />
+                            <field name="route_day" />
+                        </group>
+                        <group>
+                            <field name="interval_unit" />
+                            <field name="recurring_interval" />
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="user_id" />
+                            <field name="route_type" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Partners" name="route_partners">
+                            <group>
+                                <field
+                                    name="route_partner_ids"
+                                    nolabel="1"
+                                >
+                                    <tree editable="bottom">
+                                        <field name="sequence" widget="handle" />
+                                        <field name="partner_id" />
+                                        <field name="street" />
+                                        <field name="city" />
+                                        <field name="zip" />
+                                        <field name="state_id" />
+                                        <field name="country_id" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="action_partner_route" model="ir.actions.act_window">
+        <field name="name">Partner Routes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">partner.route</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,pivot,activity</field>
+        <field name="domain">[]</field>
+    </record>
+    <menuitem
+        action="action_partner_route"
+        id="menu_partner_route"
+        parent="contacts.res_partner_menu_config"
+    />
+</odoo>
