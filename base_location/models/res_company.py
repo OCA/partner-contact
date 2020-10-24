@@ -38,10 +38,13 @@ class ResCompany(models.Model):
         related="partner_id.country_id.enforce_cities"
     )
 
-    def _get_company_address_fields(self, partner):
-        res = super()._get_company_address_fields(partner)
-        res["city_id"] = partner.city_id
-        res["zip_id"] = partner.zip_id
+    def _get_company_address_field_names(self):
+        """Add to the list of field to populate in _compute_address the new
+        ZIP field + the city that is not handled at company level in
+        `base_address_city`.
+        """
+        res = super()._get_company_address_field_names()
+        res += ["city_id", "zip_id"]
         return res
 
     def _inverse_city_id(self):
