@@ -20,7 +20,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [partner_contact_birthdate](partner_contact_birthdate/) | 14.0.1.0.0 | Contact's birthdate
-[partner_contact_department](partner_contact_department/) | 14.0.1.0.0 | Assign contacts to departments
+[partner_contact_department](partner_contact_department/) | 14.0.1.0.1 | Assign contacts to departments
 [partner_contact_gender](partner_contact_gender/) | 14.0.1.0.1 | Add gender field to contacts
 [partner_contact_job_position](partner_contact_job_position/) | 14.0.1.0.0 | Categorize job positions for contacts
 [partner_contact_lang](partner_contact_lang/) | 14.0.1.0.0 | Manage language in contacts
