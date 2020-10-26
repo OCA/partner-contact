@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo14-addon-partner_contact_birthdate',
+        'odoo14-addon-partner_contact_department',
         'odoo14-addon-partner_contact_gender',
         'odoo14-addon-partner_contact_job_position',
         'odoo14-addon-partner_contact_lang',
