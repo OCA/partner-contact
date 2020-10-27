@@ -14,6 +14,7 @@
                         colspan="4"
                         nolabel="1"
                         widget="one2many_list"
+                        context="{'default_partner_id': active_id}"
                     />
                 </page>
             </page>
