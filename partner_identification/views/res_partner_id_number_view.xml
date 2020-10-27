@@ -28,6 +28,7 @@
         <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree string="Partner ID Numbers">
+                <field name="partner_id" />
                 <field name="category_id" />
                 <field name="name" />
                 <field name="partner_issued_id" />
