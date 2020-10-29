@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+    <record id="search_res_partner_relation_type" model="ir.ui.view">
+        <field name="model">res.partner.relation.type</field>
+        <field
+            name="inherit_id"
+            ref="partner_multi_relation.search_res_partner_relation_type"
+            />
+        <field name="arch" type="xml">
+            <field name="contact_type_right" position="after">
+                <field name="tab_left_id" />
+                <field name="tab_right_id" />
+            </field>
+        </field>
+    </record>
+
     <record id="form_res_partner_relation_type" model="ir.ui.view">
         <field name="model">res.partner.relation.type</field>
         <field
