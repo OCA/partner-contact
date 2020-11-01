@@ -9,3 +9,5 @@
   * Vicent Cubells
   * Cristina Martín
   * João Marques
+
+* Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
