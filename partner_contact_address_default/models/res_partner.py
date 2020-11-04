@@ -26,5 +26,5 @@ class ResPartner(models.Model):
             for addr_type in default_address_type_list:
                 default_address_id = partner["partner_{}_id".format(addr_type)]
                 if default_address_id:
-                    res[addr_type] = default_address_id
+                    res[addr_type] = default_address_id.id
         return res
