@@ -31,11 +31,11 @@ class TestPartnerContactAddressDefault(common.TransactionCase):
         self.partner.partner_delivery_id = self.partner
         self.partner.partner_invoice_id = self.partner
         res = self.partner.address_get()
-        self.assertEqual(res["delivery"], self.partner)
-        self.assertEqual(res["invoice"], self.partner)
+        self.assertEqual(res["delivery"], self.partner.id)
+        self.assertEqual(res["invoice"], self.partner.id)
 
         self.partner_child_delivery2.partner_delivery_id = self.partner_child_delivery2
         self.partner_child_delivery2.partner_invoice_id = self.partner_child_delivery2
         res = self.partner_child_delivery2.address_get()
-        self.assertEqual(res["delivery"], self.partner_child_delivery2)
-        self.assertEqual(res["invoice"], self.partner_child_delivery2)
+        self.assertEqual(res["delivery"], self.partner_child_delivery2.id)
+        self.assertEqual(res["invoice"], self.partner_child_delivery2.id)
