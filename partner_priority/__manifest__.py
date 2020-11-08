@@ -15,7 +15,6 @@
         "views/partner_priority.xml",
         "security/ir.model.access.csv",
         "data/partner_priority_data.xml",
-        "data/partner_priority_sequence_data.xml",
     ],
     "development_status": "Beta",
     "maintainers": ["patrickrwilson"],
