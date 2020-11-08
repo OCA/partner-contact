@@ -13,8 +13,5 @@ class PartnerPriority(models.Model):
     description = fields.Text(required=True)
     sequence = fields.Integer(
         required=True,
-        default=lambda self: self.env["ir.sequence"].next_by_code(
-            "res.partner.priority"
-        )
-        or 0,
+        default=0,
     )
