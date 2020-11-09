@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Create a new Extra Right group that can read, create, and edit the "Child" level (individual) contacts of "Parent" level (company) contacts, but only read the parent level contacts.-->
+
+<odoo noupdate="1">
+	<record id="group_child_contact_creator" model="res.groups"><!--create record fo this new group-->
+		<field name="name">Child Contact Creation</field><!--name this group-->
+		<field name="category_id"
+			ref="base.module_category_usability"/><!--assign this group to Extra Rights Category above-->
+		<field name="implied_ids"
+			eval="[(4, ref('base.group_user'))]"/><!--assign this group to base users. this would inherit User types/Internal User.  Daniel recommended adding users instead of inheriting here-->
+	</record>
+
+	<!--record rule that only allows the Child Address Creation group permission to edit individual contacts for companies, but not Companies-->
+	<record id="child_contact_record_rule" model="ir.rule"><!--creat a record id(named anything you want) assigned to the ir.rule model-->
+		<field name="name">Contact Address Creation</field><!--Title that will be in the Groups-->
+		<field name="model_id" ref="base.model_res_partner"/> <!--xml id from res.partner model -->
+		<field name="domain_force">[('parent_id','!=', False)]</field><!--logic that limits this group to creating child contacts only (if parent_id exists) -->
+		<field name="groups" eval="[(4, ref('group_child_contact_creator'))]"/><!--add group(created above) that this rule applies to-->
+			<field name="perm_read" eval="False"/><!--restrict read access-->
+			<field name="perm_write" eval="True"/><!--give edit/update access-->
+			<field name="perm_create" eval="True"/><!--give create access-->
+			<field name="perm_unlink" eval="False"/><!--restrict delete access-->
+	</record>
+
+</odoo>

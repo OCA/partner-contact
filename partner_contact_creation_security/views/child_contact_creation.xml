@@ -1,0 +1,43 @@
+<odoo>
+<!--seet the action paramaters of the button to open a new window/form (Does this have to be done in a python file with more logic?-->
+
+        <record model="ir.actions.act_window" id="add_contact_button">
+                <field name="name">Add/Edit Child Contact</field>
+                <field name="res_model">res.partner</field>
+                <field name="view_mode">form</field>
+                <field name="view_id" ref="base.view_partner_short_form" />
+                <field name="context">{'default_parent_id': active_id}</field>
+		<field name="target">new</field>
+        </record>
+<!--inherit the create contact form and add a button that only child contact group can see-->
+        <record id="view_form_parner_extend" model="ir.ui.view">
+                <field name="name">Add Button for Limited User and hide Create and Edit Parent</field>
+                <field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.view_partner_form"/>
+		<field name="groups_id" eval="[(4,ref('child_contact_creation.group_child_contact_creator'))]"/>
+		<field name = "arch" type = "xml">	
+			<field name="child_ids" position="before">
+			<button name="%(child_contact_creation.add_contact_button)d" string="Add Child Contact" type="action" groups="child_contact_creation.group_child_contact_creator"/>
+			</field>
+
+			<xpath expr="/form" position="attributes">
+        			<attribute name="create">false</attribute>
+				<attribute name="edit">false</attribute>
+    			</xpath>
+		</field>
+
+	</record>
+
+<!--inherit the create contact short form and add remove the group="base.group_no_one" so the  child contact group can see and edit the Address Type for child contacts-->
+        <record id="view_form_partner_extend_address_type" model="ir.ui.view">
+                <field name="name">Show Address Type for limited users</field>
+                <field name="model">res.partner</field>
+                <field name="inherit_id" ref="base.view_partner_short_form"/>
+                <field name = "arch" type = "xml">
+                        <xpath expr="//field[@name='type']" position="attributes">
+    				<attribute name="groups"></attribute>
+			</xpath>
+                </field>
+
+        </record>
+</odoo>
