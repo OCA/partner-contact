@@ -1,5 +1,6 @@
 # Copyright 2014-2020 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+"""Encapsulate the information on a tab in the database."""
 import logging
 from lxml import etree
 
@@ -43,15 +44,16 @@ class Tab:
             name=self.get_fieldname(),
             context="{"
             '"default_this_partner_id": id,'
-            '"default_tab_id": %d,'
-            '"active_test": False}' % self.tab_record.id,
+            '"default_tab_id": %d}' % self.tab_record.id,
         )
         tab_page.append(field)
         tree = etree.Element(
             "tree",
             attrib={
                 "editable": "bottom",
-                "decoration-success": "active and not date_end and"
+                "default_order": "active desc, other_partner_id",
+                "decoration-success":
+                "active and not date_end and"
                 " (not date_start or date_start <= current_date)",
                 "decoration-primary": "date_start and date_start >= current_date",
                 "decoration-warning": "active and date_end",

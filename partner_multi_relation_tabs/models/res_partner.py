@@ -96,6 +96,7 @@ class ResPartner(models.Model):
             comodel_name="res.partner.relation.all",
             inverse_name="this_partner_id",
             domain=[("tab_id", "=", tab.tab_record.id)],
+            context={"active_test": False},
             string=tab.tab_record.name,
         )
         self._add_field(tab.get_fieldname(), tab_field)
