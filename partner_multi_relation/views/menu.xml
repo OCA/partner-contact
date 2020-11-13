@@ -25,7 +25,7 @@
         </field>
     </record>
     <menuitem
-        id="menu_res_partner_relation"
+        id="menu_res_partner_relation_all"
         name="Relations"
         sequence="3"
         parent="contacts.menu_contacts"
@@ -38,6 +38,21 @@
         name="Relations"
         sequence="81"
         parent="contacts.res_partner_menu_config"
+        />
+
+    <!-- Relations - needed for export/import. -->
+    <act_window
+        id="action_res_partner_relation"
+        res_model="res.partner.relation"
+        view_mode="tree"
+        name="Partner Relations (Use for Export/Import)"
+        />
+    <menuitem
+        id="menu_res_partner_relation"
+        name="Relations (Use for Export/Import)"
+        sequence="71"
+        parent="menu_res_partner_multi_relation_config"
+        action="action_res_partner_relation"
         />
 
     <!-- Configure relation types. -->

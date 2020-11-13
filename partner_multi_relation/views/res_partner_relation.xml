@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="tree_res_partner_relation" model="ir.ui.view">
+        <field name="model">res.partner.relation</field>
+        <field name="arch" type="xml">
+            <tree
+                string="Partner Relations For Export/Import"
+                >
+                <field
+                    name="left_partner_id"
+                    required="True"
+                    options="{'no_create': True}"
+                    />
+                <field
+                    name="type_id"
+                    required="True"
+                    options="{'no_create': True}"
+                    />
+                <field
+                    name="right_partner_id"
+                    required="True"
+                    options="{'no_create': True}"
+                    />
+                <field name="date_start" />
+                <field name="date_end" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>
