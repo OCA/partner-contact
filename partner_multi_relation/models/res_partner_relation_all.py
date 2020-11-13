@@ -290,8 +290,12 @@ CREATE OR REPLACE VIEW %%(table)s AS
                     )
             return warning
 
-        this_partner_domain = []
-        other_partner_domain = []
+        # For the moment only support relations between contact partners.
+        # We might make this more flexible in the future, but then we would
+        # need to add the allowed contact types to the definition of the
+        # relation type.
+        this_partner_domain = [("type", "=", "contact")]
+        other_partner_domain = [("type", "=", "contact")]
         if self.type_selection_id.contact_type_this:
             this_partner_domain.append(
                 ("is_company", "=", self.type_selection_id.contact_type_this == "c")
