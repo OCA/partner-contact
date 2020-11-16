@@ -38,6 +38,10 @@ class TestResPartnerIndustry(common.SavepointCase):
     def test_check_recursion(self):
         with self.assertRaises(UserError):
             self.industry_main.parent_id = self.industry_child.id
+        with self.assertRaises(ValidationError) as e:
+            self.industry_main._check_parent_id()
+        error_message = "Error! You cannot create recursive industries."
+        self.assertEqual(e.exception.args[0], error_message)
 
     def test_name(self):
         self.assertEqual(self.industry_child.display_name, "Test / Test child")
