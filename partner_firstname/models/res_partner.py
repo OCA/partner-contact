@@ -127,6 +127,11 @@ class ResPartner(models.Model):
 
         Removes leading, trailing and duplicated whitespace.
         """
+        if isinstance(name, bytes):
+            # With users coming from LDAP, name can be a byte encoded string.
+            # This happens with FreeIPA for instance.
+            name = name.decode("utf-8")
+
         try:
             name = " ".join(name.split()) if name else name
         except UnicodeDecodeError:
