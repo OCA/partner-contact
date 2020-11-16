@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_country_geonames_form">
+        <field name="name">res.country.geonames.form</field>
+        <field name="model">res.country</field>
+        <field name="inherit_id" ref="base.view_country_form" />
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="geonames_state_name_column" />
+                <field name="geonames_state_code_column" />
+            </field>
+        </field>
+    </record>
+</odoo>
