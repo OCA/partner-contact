@@ -1,8 +1,6 @@
-========================================================================================================
-Create a Group that can only  create and edit Child-Contacts (but not Parent-Top Level Contacts) for 
-=======================================================================================================
-Top-Level/Parent Contacts. This includes shipping addresses, private addresses, invoice addresse, etc.
-========================================================================================================
+================================================================================================
+Create a Group that can only create and edit Child-Contacts (but not Parent-Top Level Contacts).
+================================================================================================
 
 This module allows Fulton to change the default contact creation for new users so they can only create Child-Contacts for Companies.
 To create a Top-Level Company, users will have to be part of the Existing Extra Rights/Contact Creation group, 
@@ -18,8 +16,8 @@ Installation
 To install this module, you need to:
 
  * Go to Settings / Local Modules
- * Search by module name "Create Child Contacts" or
-   by module technical name "*child_contact_creation*"
+ * Search by module name "Partner Contact Creation Security" or
+   by module technical name "*partner_contact_creation_security*"
  * Click install button
 
 ==============
