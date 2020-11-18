@@ -9,7 +9,7 @@
         <field name="name">Relations</field>
         <field name="res_model">res.partner.relation.all</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree</field>
+        <field name="view_mode">tree,form</field>
         <field name="view_id" ref="tree_res_partner_relation_all"/>
         <field
             name="search_view_id"
