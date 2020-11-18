@@ -15,64 +15,68 @@ class ResPartnerRelation(models.Model):
     two times, once for the normal relation, once for the inverse relation,
     will be used to maintain the data.
     """
-    _name = 'res.partner.relation'
-    _description = 'Partner relation'
+
+    _name = "res.partner.relation"
+    _description = "Partner relation"
 
     left_partner_id = fields.Many2one(
-        comodel_name='res.partner',
-        string='Source Partner',
+        comodel_name="res.partner",
+        string="Source Partner",
         required=True,
         auto_join=True,
-        ondelete='cascade',
+        ondelete="cascade",
     )
     right_partner_id = fields.Many2one(
-        comodel_name='res.partner',
-        string='Destination Partner',
+        comodel_name="res.partner",
+        string="Destination Partner",
         required=True,
         auto_join=True,
-        ondelete='cascade',
+        ondelete="cascade",
     )
     type_id = fields.Many2one(
-        comodel_name='res.partner.relation.type',
-        string='Type',
+        comodel_name="res.partner.relation.type",
+        string="Type",
         required=True,
         auto_join=True,
     )
-    date_start = fields.Date('Starting date')
-    date_end = fields.Date('Ending date')
+    date_start = fields.Date("Starting date")
+    date_end = fields.Date("Ending date")
 
     @api.model
     def create(self, vals):
         """Override create to correct values, before being stored.
         Check to make sure each unique relation stays unique"""
         context = self.env.context
-        if 'left_partner_id' not in vals and context.get('active_id'):
-            vals['left_partner_id'] = context.get('active_id')
+        if "left_partner_id" not in vals and context.get("active_id"):
+            vals["left_partner_id"] = context.get("active_id")
         if not self.check_is_unique(vals):
-            raise ValidationError(_('Relation already exists!'))
+            raise ValidationError(_("Relation already exists!"))
         return super(ResPartnerRelation, self).create(vals)
 
     @api.model
     def write(self, vals):
         """Check to make sure each unique relation stays unique"""
         if not self.check_is_unique(vals):
-            raise ValidationError(_('Relation already exists!'))
+            raise ValidationError(_("Relation already exists!"))
         return super(ResPartnerRelation, self).write(vals)
 
-    @api.constrains('date_start', 'date_end')
+    @api.constrains("date_start", "date_end")
     def _check_dates(self):
         """End date should not be before start date, if not filled
 
         :raises ValidationError: When constraint is violated
         """
         for record in self:
-            if (record.date_start and record.date_end and
-                    record.date_start > record.date_end):
+            if (
+                record.date_start
+                and record.date_end
+                and record.date_start > record.date_end
+            ):
                 raise ValidationError(
-                    _('The starting date cannot be after the ending date.')
+                    _("The starting date cannot be after the ending date.")
                 )
 
-    @api.constrains('left_partner_id', 'type_id')
+    @api.constrains("left_partner_id", "type_id")
     def _check_partner_left(self):
         """Check left partner for required company or person
 
@@ -80,7 +84,7 @@ class ResPartnerRelation(models.Model):
         """
         self._check_partner("left")
 
-    @api.constrains('right_partner_id', 'type_id')
+    @api.constrains("right_partner_id", "type_id")
     def _check_partner_right(self):
         """Check right partner for required company or person
 
@@ -96,23 +100,24 @@ class ResPartnerRelation(models.Model):
         :raises ValidationError: When constraint is violated
         """
         for record in self:
-            assert side in ['left', 'right']
+            assert side in ["left", "right"]
             ptype = getattr(record.type_id, "contact_type_%s" % side)
-            partner = getattr(record, '%s_partner_id' % side)
-            if ((ptype == 'c' and not partner.is_company) or
-                    (ptype == 'p' and partner.is_company)):
+            partner = getattr(record, "%s_partner_id" % side)
+            if (ptype == "c" and not partner.is_company) or (
+                ptype == "p" and partner.is_company
+            ):
                 raise ValidationError(
-                    _('The %s partner is not applicable for this '
-                      'relation type.') % side
+                    _("The %s partner is not applicable for this " "relation type.")
+                    % side
                 )
             category = getattr(record.type_id, "partner_category_%s" % side)
             if category and category.id not in partner.category_id.ids:
                 raise ValidationError(
-                    _('The %s partner does not have category %s.') %
-                    (side, category.name)
+                    _("The %s partner does not have category %s.")
+                    % (side, category.name)
                 )
 
-    @api.constrains('left_partner_id', 'right_partner_id')
+    @api.constrains("left_partner_id", "right_partner_id")
     def _check_not_with_self(self):
         """Not allowed to link partner to same partner
 
@@ -122,15 +127,15 @@ class ResPartnerRelation(models.Model):
             if record.left_partner_id == record.right_partner_id:
                 if not (record.type_id and record.type_id.allow_self):
                     raise ValidationError(
-                        _('Partners cannot have a relation with themselves.')
+                        _("Partners cannot have a relation with themselves.")
                     )
 
     @api.constrains(
-        'left_partner_id',
-        'type_id',
-        'right_partner_id',
-        'date_start',
-        'date_end',
+        "left_partner_id",
+        "type_id",
+        "right_partner_id",
+        "date_start",
+        "date_end",
     )
     def _check_relation_uniqueness(self):
         """Forbid multiple active relations of the same type between the same
@@ -142,44 +147,41 @@ class ResPartnerRelation(models.Model):
         # pylint: disable=no-value-for-parameter
         for record in self:
             domain = [
-                ('type_id', '=', record.type_id.id),
-                ('id', '!=', record.id),
-                ('left_partner_id', '=', record.left_partner_id.id),
-                ('right_partner_id', '=', record.right_partner_id.id),
+                ("type_id", "=", record.type_id.id),
+                ("id", "!=", record.id),
+                ("left_partner_id", "=", record.left_partner_id.id),
+                ("right_partner_id", "=", record.right_partner_id.id),
             ]
             if record.date_start:
                 domain += [
-                    '|',
-                    ('date_end', '=', False),
-                    ('date_end', '>=', record.date_start),
+                    "|",
+                    ("date_end", "=", False),
+                    ("date_end", ">=", record.date_start),
                 ]
             if record.date_end:
                 domain += [
-                    '|',
-                    ('date_start', '=', False),
-                    ('date_start', '<=', record.date_end),
+                    "|",
+                    ("date_start", "=", False),
+                    ("date_start", "<=", record.date_end),
                 ]
             if record.search(domain):
                 raise ValidationError(
-                    _('There is already a similar relation with '
-                      'overlapping dates')
+                    _("There is already a similar relation with " "overlapping dates")
                 )
 
     @api.multi
     def check_is_unique(self, vals):
-        if 'type_id' in vals:
-            type_id = vals['type_id']
+        if "type_id" in vals:
+            type_id = vals["type_id"]
         else:
             type_id = self.type_id.id
-        type_rec = self.env['res.partner.relation.type'].\
-            search([('id', '=', type_id)])
-        if 'right_partner_id' in vals:
-            right = vals['right_partner_id']
+        type_rec = self.env["res.partner.relation.type"].search([("id", "=", type_id)])
+        if "right_partner_id" in vals:
+            right = vals["right_partner_id"]
         else:
             right = self.right_partner_id.id
-        res = self.search([('type_id', '=', type_id),
-                           ('right_partner_id', '=', right)])
-        if (type_rec.is_unique and len(res) > 0):
+        res = self.search([("type_id", "=", type_id), ("right_partner_id", "=", right)])
+        if type_rec.is_unique and len(res) > 0:
             return False
         for rec in res:
             if rec.type_id.is_unique:

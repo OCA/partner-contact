@@ -9,17 +9,17 @@
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
     "depends": [
-        'contacts',
+        "contacts",
     ],
     "demo": [
         "data/demo.xml",
     ],
     "data": [
-        'security/ir.model.access.csv',
+        "security/ir.model.access.csv",
         "views/res_partner_relation_all.xml",
-        'views/res_partner.xml',
-        'views/res_partner_relation_type.xml',
-        'views/menu.xml',
+        "views/res_partner.xml",
+        "views/res_partner_relation_type.xml",
+        "views/menu.xml",
     ],
     "auto_install": False,
     "installable": True,
