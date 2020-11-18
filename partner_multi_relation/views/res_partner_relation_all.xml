@@ -9,7 +9,7 @@
                 string="Partner Relations"
                 decoration-primary="date_start and date_start &gt; current_date"
                 decoration-warning="active and date_end"
-                decoration-muted="date_end and not date_end &lt; current_date"
+                decoration-muted="not active and date_end and date_end &lt; current_date"
                 >
                 <field name="active" invisible="1" />
                 <field name="this_partner_id" />
