@@ -30,6 +30,7 @@ setuptools.setup(
         'odoo13-addon-partner_deduplicate_acl',
         'odoo13-addon-partner_deduplicate_by_ref',
         'odoo13-addon-partner_deduplicate_by_website',
+        'odoo13-addon-partner_deduplicate_filter',
         'odoo13-addon-partner_disable_gravatar',
         'odoo13-addon-partner_employee_quantity',
         'odoo13-addon-partner_external_map',
