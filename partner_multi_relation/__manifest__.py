@@ -8,7 +8,7 @@
     "complexity": "normal",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
-    "depends": ["contacts", "sales_team"],
+    "depends": ["contacts"],
     "demo": ["data/demo.xml"],
     "data": [
         "security/ir.model.access.csv",
