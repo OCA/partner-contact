@@ -1,6 +1,7 @@
-# Copyright 2014-2018 Therp BV <https://therp.nl>.
+# Copyright 2014-2020 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 # pylint: disable=no-member
+"""Add tab fields to res.partner model and make sure tabs are added to form."""
 import logging
 from lxml import etree
 
@@ -11,6 +12,7 @@ _logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 
 
 class ResPartner(models.Model):
+    """Add tab fields and automatically load tabs in partner forms."""
     _inherit = "res.partner"
 
     @api.multi
@@ -21,14 +23,14 @@ class ResPartner(models.Model):
                 if fieldname not in self._fields:
                     # Check this for performance reasons.
                     self.add_field(tab)
-        return super(ResPartner, self).browse(arg=arg, prefetch=prefetch)
+        return super().browse(arg=arg, prefetch=prefetch)
 
     @api.model
     def fields_view_get(
         self, view_id=None, view_type="form", toolbar=False, submenu=False
     ):
         """Override to add relation tabs to form."""
-        result = super(ResPartner, self).fields_view_get(
+        result = super().fields_view_get(
             view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu
         )
         if view_type != "form" or self.env.context.get("check_view_ids"):
@@ -45,7 +47,6 @@ class ResPartner(models.Model):
 
     def _add_tab_pages(self, view):
         """Adds the relevant tabs to the partner's formview."""
-        # pylint: disable=no-member
         def add_invisible_extra_field(view, extra_fields, fieldname):
             """Add invisible field to view."""
             view.append(etree.Element("field", name=fieldname, invisible="True"))
