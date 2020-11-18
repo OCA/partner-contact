@@ -41,7 +41,9 @@ Usage
 
 To use this module, you need to:
 
-#. Go to *CRM/Sales > Tools > Deduplicate Contacts*.
+#. Follow the instructions in the partner_deduplicate_acl addon to set up the
+   correct user permissions.
+#. Go to *Contacts > Tools > Deduplicate Contacts*.
 #. Mark "'Is a company?' field selected", "Parent company not set" or
    "Parent company set (Contacts)" in the section 'Exclude contacts having'.
 #. This criteria will be used for excluding in the deduplication the selected
@@ -68,10 +70,14 @@ Authors
 Contributors
 ~~~~~~~~~~~~
 
-* Pedro M. Baeza <pedro.baeza@tecnativa.com>
-* Vicent Cubells <vicent.cubells@tecnativa.com>
-* Luis M. Ontalba <luis.martinez@tecnativa.com>
-* Victor M.M. Torres <victor.martin@tecnativa.com>
+
+* `Tecnativa <https://www.tecnativa.com>`_:
+  * Pedro M. Baeza
+  * Vicent Cubells
+  * Luis M. Ontalba
+  * Victor M.M. Torres
+  * João Marques
+
 * Kevin Khao <kevin.khao@gmail.com>
 
 Maintainers
