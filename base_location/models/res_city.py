@@ -12,9 +12,9 @@ class City(models.Model):
     _sql_constraints = [
         (
             "name_state_country_uniq",
-            "UNIQUE(name, state_id, country_id)",
-            "You already have a city with that name in the same state."
-            "The city must have a unique name within "
+            "UNIQUE(name, zipcode, state_id, country_id)",
+            "You already have a city with that name and zipcode in the same state."
+            "The city must have a unique name and zipcode within "
             "it's state and it's country",
         )
     ]

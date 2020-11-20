@@ -35,6 +35,7 @@ class TestBaseLocation(common.SavepointCase):
                 "name": "Barcelona",
                 "state_id": cls.state_bcn.id,
                 "country_id": cls.env.ref("base.es").id,
+                "zipcode": "",
             }
         )
         cls.city_madrid = city_obj.create(
@@ -42,6 +43,7 @@ class TestBaseLocation(common.SavepointCase):
                 "name": "Madrid",
                 "state_id": cls.state_madrid.id,
                 "country_id": cls.env.ref("base.es").id,
+                "zipcode": "",
             }
         )
         cls.city_lausanne = city_obj.create(
@@ -49,6 +51,7 @@ class TestBaseLocation(common.SavepointCase):
                 "name": "Lausanne",
                 "state_id": cls.state_vd.id,
                 "country_id": cls.env.ref("base.ch").id,
+                "zipcode": "",
             }
         )
         cls.lausanne = zip_obj.create({"name": "666", "city_id": cls.city_lausanne.id})
@@ -229,7 +232,7 @@ class TestBaseLocation(common.SavepointCase):
         self.assertEqual(len(found_recs), 1)
         self.assertEqual(found_recs[0][0], self.lausanne.id)
 
-    def test_zip_ql_constraints(self):
+    def test_zip_sql_constraints(self):
         """Test UNIQUE name within it's area for zips"""
         with self.assertRaises(psycopg2.IntegrityError), mute_logger("odoo.sql_db"):
             self.env["res.city.zip"].create(
@@ -244,5 +247,6 @@ class TestBaseLocation(common.SavepointCase):
                     "name": "Barcelona",
                     "state_id": self.state_bcn.id,
                     "country_id": self.ref("base.es"),
+                    "zipcode": "",
                 }
             )
