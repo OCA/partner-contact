@@ -60,7 +60,6 @@ msgstr "Completamento città"
 #: model:ir.model.fields,field_description:base_location.field_res_partner__city_id
 #: model:ir.model.fields,field_description:base_location.field_res_users__city_id
 #, fuzzy
-#| msgid "City Code"
 msgid "City of Address"
 msgstr "Codice Città"
 
