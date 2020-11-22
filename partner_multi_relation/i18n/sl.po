@@ -369,7 +369,6 @@ msgstr "Tip odnosa"
 #: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
 #: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
 #, fuzzy
-#| msgid "Relation Type"
 msgid "Relation Types"
 msgstr "Tip odnosa"
 
