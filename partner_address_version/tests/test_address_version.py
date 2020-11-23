@@ -1,10 +1,11 @@
 # Copyright 2018 Akretion - Benoît Guillot
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests import SavepointCase
-from collections import OrderedDict
 import hashlib
+from collections import OrderedDict
+
 from odoo.exceptions import UserError
+from odoo.tests import SavepointCase
 
 
 class TestAddressVersion(SavepointCase):
