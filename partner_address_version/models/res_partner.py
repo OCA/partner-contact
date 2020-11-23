@@ -81,7 +81,6 @@ class ResPartner(models.Model):
             partner_wizard._update_foreign_keys(self, version_p)
         return False
 
-    @api.multi
     def write(self, vals):
         version_fields = self._version_fields()
         has_written_versioned_fields = any((f in version_fields) for f in vals.keys())
