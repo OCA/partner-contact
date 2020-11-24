@@ -5,6 +5,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "author": (
+        "Callino"
         "Tiny/initOS GmbH & Co. KG,"
         "ACSONE SA/NV,"
         "Tecnativa,"
@@ -12,7 +13,7 @@
         "Odoo Community Association (OCA)"
     ),
     "name": "Add a sequence on customers' code",
-    "version": "13.0.1.0.1",
+    "version": "14.0.1.0.0",
     "development_status": "Production/Stable",
     "category": "Generic Modules/Base",
     "website": "https://github.com/OCA/partner-contact",
