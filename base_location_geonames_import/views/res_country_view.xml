@@ -4,11 +4,10 @@
         <field name="name">res.country.geonames.form</field>
         <field name="model">res.country</field>
         <field name="inherit_id" ref="base.view_country_form" />
-        <field name="type">form</field>
         <field name="arch" type="xml">
             <field name="code" position="after">
-                <field name="geonames_state_name_column" />
-                <field name="geonames_state_code_column" />
+                <field name="geonames_state_name_column" groups="base.group_no_one" />
+                <field name="geonames_state_code_column" groups="base.group_no_one" />
             </field>
         </field>
     </record>
