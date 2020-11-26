@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -39,7 +39,6 @@ msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_res_country
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__country_id
 msgid "Country"
 msgstr ""
 
@@ -55,6 +54,7 @@ msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__display_name
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -83,6 +83,7 @@ msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__id
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__id
 msgid "ID"
 msgstr ""
 
@@ -105,6 +106,7 @@ msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import____last_update
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country____last_update
 msgid "Last Modified on"
 msgstr ""
 

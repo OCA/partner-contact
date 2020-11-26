@@ -1,8 +1,7 @@
 # Copyright 2014-2016 Akretion (Alexis de Lattre
 #                     <alexis.delattre@akretion.com>)
 # Copyright 2014 Lorenzo Battistini <lorenzo.battistini@agilebg.com>
-# Copyright 2017 Eficent Business and IT Consulting Services, S.L.
-#                <contact@eficent.com>
+# Copyright 2017 ForgeFlow, S.L. <.com>
 # Copyright 2018 Aitor Bouzas <aitor.bouzas@adaptivecity.com>
 # Copyright 2016-2020 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
@@ -25,11 +24,8 @@ logger = logging.getLogger(__name__)
 class CityZipGeonamesImport(models.TransientModel):
     _name = "city.zip.geonames.import"
     _description = "Import City Zips from Geonames"
-    _rec_name = "country_id"
 
     country_ids = fields.Many2many("res.country", string="Countries")
-    # Remove field country_id in future versions
-    country_id = fields.Many2one("res.country", string="Country")
 
     letter_case = fields.Selection(
         [("unchanged", "Unchanged"), ("title", "Title Case"), ("upper", "Upper Case")],
@@ -187,7 +183,7 @@ class CityZipGeonamesImport(models.TransientModel):
         return city_dict
 
     def run_import(self):
-        for country in self.country_ids or self.country_id:
+        for country in self.country_ids:
             parsed_csv = self.get_and_parse_csv(country)
             self._process_csv(parsed_csv, country)
         return True
