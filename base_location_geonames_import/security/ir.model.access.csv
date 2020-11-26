@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_city_zip_geonames_import,Full access on city.zip.geonames.import to Settings group,model_city_zip_geonames_import,base.group_system,1,1,1,1
