@@ -27,7 +27,7 @@
                     <button
                         name="run_import"
                         type="object"
-                        class="oe_highlight"
+                        class="btn-primary"
                         string="Import"
                     />
                     <button special="cancel" string="Cancel" class="oe_link" />
