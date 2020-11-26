@@ -8,7 +8,7 @@
 
 {
     "name": "Base Location Geonames Import",
-    "version": "13.0.2.0.0",
+    "version": "14.0.1.0.0",
     "category": "Partner Management",
     "license": "AGPL-3",
     "summary": "Import zip entries from Geonames",
@@ -22,6 +22,7 @@
     "website": "https://github.com/OCA/partner-contact",
     "depends": ["base_location"],
     "data": [
+        "security/ir.model.access.csv",
         "data/res_country_data.xml",
         "views/res_country_view.xml",
         "wizard/geonames_import_view.xml",

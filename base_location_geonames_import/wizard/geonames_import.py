@@ -25,11 +25,8 @@ logger = logging.getLogger(__name__)
 class CityZipGeonamesImport(models.TransientModel):
     _name = "city.zip.geonames.import"
     _description = "Import City Zips from Geonames"
-    _rec_name = "country_id"
 
     country_ids = fields.Many2many("res.country", string="Countries")
-    # Remove field country_id in future versions
-    country_id = fields.Many2one("res.country", string="Country")
 
     letter_case = fields.Selection(
         [("unchanged", "Unchanged"), ("title", "Title Case"), ("upper", "Upper Case")],
@@ -187,7 +184,7 @@ class CityZipGeonamesImport(models.TransientModel):
         return city_dict
 
     def run_import(self):
-        for country in self.country_ids or self.country_id:
+        for country in self.country_ids:
             parsed_csv = self.get_and_parse_csv(country)
             self._process_csv(parsed_csv, country)
         return True
