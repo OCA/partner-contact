@@ -4,7 +4,7 @@
 import psycopg2
 
 from odoo.exceptions import ValidationError
-from odoo.tests import common, tagged
+from odoo.tests import Form, common, tagged
 from odoo.tools.misc import mute_logger
 
 
@@ -23,9 +23,9 @@ class TestBaseLocation(common.SavepointCase):
         )
         cls.env.ref("base.es").write({"enforce_cities": True})
         cls.company = cls.env.ref("base.main_company")
-
+        cls.country_es = cls.env.ref("base.es")
         cls.state_bcn = state_obj.create(
-            {"name": "Barcelona", "code": "08", "country_id": cls.env.ref("base.es").id}
+            {"name": "Barcelona", "code": "08", "country_id": cls.country_es.id}
         )
         cls.state_madrid = state_obj.create(
             {"name": "Madrid", "code": "28", "country_id": cls.env.ref("base.es").id}
@@ -56,9 +56,8 @@ class TestBaseLocation(common.SavepointCase):
 
     def test_onchange_partner_city_completion(self):
         """Test that partner data is filled accodingly"""
-        partner1 = self.partner_obj.new({"name": "Camptocamp"})
+        partner1 = Form(self.env["res.partner"])
         partner1.zip_id = self.barcelona
-        partner1._onchange_zip_id()
         self.assertEqual(partner1.zip, self.barcelona.name)
         self.assertEqual(partner1.city, self.barcelona.city_id.name)
         self.assertEqual(partner1.state_id, self.barcelona.city_id.state_id)
@@ -110,9 +109,19 @@ class TestBaseLocation(common.SavepointCase):
         self.assertEqual(company.city_id, self.barcelona.city_id)
 
     def test_constrains_partner_01(self):
-        """Test partner 1 constraints"""
+        """Test zip_id constraints"""
         with self.assertRaises(ValidationError):
-            self.partner_obj.create({"name": "P1", "zip_id": self.barcelona.id})
+            self.partner_obj.create(
+                {"name": "P1", "zip_id": self.barcelona.id, "state_id": False}
+            )
+        with self.assertRaises(ValidationError):
+            self.partner_obj.create(
+                {"name": "P1", "zip_id": self.barcelona.id, "country_id": False}
+            )
+        with self.assertRaises(ValidationError):
+            self.partner_obj.create(
+                {"name": "P1", "zip_id": self.barcelona.id, "city_id": False}
+            )
 
     def test_writing_company(self):
         self.company.zip_id = self.barcelona
@@ -171,22 +180,23 @@ class TestBaseLocation(common.SavepointCase):
 
     def test_partner_onchange_city(self):
         """Test partner onchange city_id"""
-        partner = self.partner_obj.new({"name": "TEST", "zip_id": self.lausanne.id})
+        partner = Form(self.env["res.partner"])
+        partner.zip_id = self.lausanne
         self.city_bcn.country_id.enforce_cities = False
         partner.city_id = self.city_bcn
-        partner._onchange_city_id()
         self.assertFalse(partner.zip_id)
-        partner.city_id = False
-        res = partner._onchange_city_id()
-        self.assertFalse(res["domain"]["zip_id"])
+        partner.city_id = self.env["res.city"]
+        self.assertEqual(
+            len(partner.allowed_zip_ids), self.env["res.city.zip"].search_count([])
+        )
 
     def test_partner_onchange_state(self):
         """Test partner onchange state_id"""
-        partner = self.partner_obj.new({"name": "TEST", "zip_id": self.lausanne.id})
+        partner = Form(self.env["res.partner"])
+        partner.zip_id = self.lausanne
         partner.state_id = self.state_bcn
-        partner._onchange_state_id()
         self.assertFalse(partner.zip_id)
-        self.assertEqual(partner.country_id, partner.state_id.country_id)
+        self.assertEqual(partner.country_id, self.country_es)
 
     def test_company_onchange_state(self):
         """Test company onchange state_id"""
