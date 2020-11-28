@@ -9,41 +9,96 @@ from odoo.exceptions import ValidationError
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    zip_id = fields.Many2one("res.city.zip", "ZIP Location", index=True)
-    city_id = fields.Many2one(index=True)  # add index for performance
+    allowed_zip_ids = fields.Many2many(
+        comodel_name="res.city.zip", compute="_compute_allowed_zip_ids"
+    )
+    zip_id = fields.Many2one(
+        comodel_name="res.city.zip",
+        string="ZIP Location",
+        index=True,
+        compute="_compute_zip_id",
+        readonly=False,
+        store=True,
+        domain="[('id', 'in', allowed_zip_ids)]",
+    )
+    city_id = fields.Many2one(
+        index=True,  # add index for performance
+        compute="_compute_city_id",
+        readonly=False,
+        store=True,
+    )
+    city = fields.Char(compute="_compute_city", readonly=False, store=True)
+    zip = fields.Char(compute="_compute_zip", readonly=False, store=True)
+    country_id = fields.Many2one(
+        compute="_compute_country_id", readonly=False, store=True
+    )
+    state_id = fields.Many2one(compute="_compute_state_id", readonly=False, store=True)
 
-    @api.onchange("city_id")
-    def _onchange_city_id(self):
-        if not self.zip_id:
-            super()._onchange_city_id()
-        if self.zip_id and self.city_id != self.zip_id.city_id:
-            self.update({"zip_id": False, "zip": False, "city": False})
-        if self.city_id and self.country_enforce_cities:
-            return {"domain": {"zip_id": [("city_id", "=", self.city_id.id)]}}
-        return {"domain": {"zip_id": []}}
+    @api.depends("city_id")
+    def _compute_allowed_zip_ids(self):
+        for record in self:
+            if record.city_id:
+                domain = [("city_id", "=", record.city_id.id)]
+            else:
+                domain = []
+            record.allowed_zip_ids = self.env["res.city.zip"].search(domain)
 
-    @api.onchange("country_id")
-    def _onchange_country_id(self):
-        res = super()._onchange_country_id()
-        if self.zip_id and self.zip_id.city_id.country_id != self.country_id:
-            self.zip_id = False
-        return res
+    @api.depends("state_id", "country_id")
+    def _compute_zip_id(self):
+        """Empty the zip auto-completion field if data mismatch when on UI."""
+        for record in self.filtered("zip_id"):
+            for field in ["state_id", "country_id"]:
+                if (
+                    record[field]
+                    and record[field] != record._origin[field]
+                    and record[field] != record.zip_id.city_id[field]
+                ):
+                    record.zip_id = False
 
-    @api.onchange("zip_id")
-    def _onchange_zip_id(self):
-        if self.zip_id:
-            vals = {
-                "city_id": self.zip_id.city_id,
-                "zip": self.zip_id.name,
-                "city": self.zip_id.city_id.name,
-            }
-            if self.zip_id.city_id.country_id:
-                vals.update({"country_id": self.zip_id.city_id.country_id})
-            if self.zip_id.city_id.state_id:
-                vals.update({"state_id": self.zip_id.city_id.state_id})
-            self.update(vals)
-        elif not self.country_enforce_cities:
-            self.city_id = False
+    @api.depends("zip_id")
+    def _compute_city_id(self):
+        if hasattr(super(), "_compute_city_id"):
+            super()._compute_city_id()  # pragma: no cover
+        for record in self:
+            if record.zip_id:
+                record.city_id = record.zip_id.city_id
+            elif not record.country_enforce_cities:
+                record.city_id = False
+
+    @api.depends("zip_id")
+    def _compute_city(self):
+        if hasattr(super(), "_compute_city"):
+            super()._compute_city()  # pragma: no cover
+        for record in self:
+            if record.zip_id:
+                record.city = record.zip_id.city_id.name
+
+    @api.depends("zip_id")
+    def _compute_zip(self):
+        if hasattr(super(), "_compute_zip"):
+            super()._compute_zip()  # pragma: no cover
+        for record in self:
+            if record.zip_id:
+                record.zip = record.zip_id.name
+
+    @api.depends("zip_id", "state_id")
+    def _compute_country_id(self):
+        if hasattr(super(), "_compute_country_id"):
+            super()._compute_country_id()  # pragma: no cover
+        for record in self:
+            if record.zip_id.city_id.country_id:
+                record.country_id = record.zip_id.city_id.country_id
+            elif record.state_id:
+                record.country_id = record.state_id.country_id
+
+    @api.depends("zip_id")
+    def _compute_state_id(self):
+        if hasattr(super(), "_compute_state_id"):
+            super()._compute_state_id()  # pragma: no cover
+        for record in self:
+            state = record.zip_id.city_id.state_id
+            if state and record.state_id != state:
+                record.state_id = record.zip_id.city_id.state_id
 
     @api.constrains("zip_id", "country_id", "city_id", "state_id")
     def _check_zip(self):
@@ -70,12 +125,3 @@ class ResPartner(models.Model):
                     _("The city of partner %s differs from that in " "location %s")
                     % (rec.name, rec.zip_id.name)
                 )
-
-    @api.onchange("state_id")
-    def _onchange_state_id(self):
-        vals = {}
-        if self.state_id.country_id:
-            vals.update({"country_id": self.state_id.country_id})
-        if self.zip_id and self.state_id != self.zip_id.city_id.state_id:
-            vals.update({"zip_id": False, "zip": False, "city": False})
-        self.update(vals)
