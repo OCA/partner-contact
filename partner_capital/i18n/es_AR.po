@@ -9,62 +9,63 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-10 01:50+0000\n"
-"PO-Revision-Date: 2017-06-10 01:50+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/"
-"teams/23907/es_AR/)\n"
+"PO-Revision-Date: 2020-11-28 22:36+0000\n"
+"Last-Translator: Ignacio Buioli <ibuioli@gmail.com>\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/teams/"
+"23907/es_AR/)\n"
 "Language: es_AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: partner_capital
 #: selection:res.partner,company_size:0
 msgid "Big"
-msgstr ""
+msgstr "Grande"
 
 #. module: partner_capital
 #: model_terms:ir.ui.view,arch_db:partner_capital.view_partner_form_capital
 msgid "Capital"
-msgstr ""
+msgstr "Capital"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner__capital_amount
 #: model:ir.model.fields,field_description:partner_capital.field_res_users__capital_amount
 msgid "Capital amount"
-msgstr ""
+msgstr "Monto del capital"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner__capital_country_id
 #: model:ir.model.fields,field_description:partner_capital.field_res_users__capital_country_id
 #: model_terms:ir.ui.view,arch_db:partner_capital.view_res_partner_filter_capital
 msgid "Capital country"
-msgstr ""
+msgstr "Capital del país"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner__capital_currency_id
 #: model:ir.model.fields,field_description:partner_capital.field_res_users__capital_currency_id
 msgid "Capital currency"
-msgstr ""
+msgstr "Moneda capital"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner__company_size
 #: model:ir.model.fields,field_description:partner_capital.field_res_users__company_size
 #: model_terms:ir.ui.view,arch_db:partner_capital.view_res_partner_filter_capital
 msgid "Company size"
-msgstr ""
+msgstr "Tamaño de la compañía"
 
 #. module: partner_capital
 #: model:ir.model,name:partner_capital.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: partner_capital
 #: model:ir.model.fields,help:partner_capital.field_res_partner__capital_country_id
 #: model:ir.model.fields,help:partner_capital.field_res_users__capital_country_id
 msgid "Country of origin of this company's capital."
-msgstr ""
+msgstr "País de origen del capital de esta compañía."
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__create_uid
@@ -104,12 +105,12 @@ msgstr "Última actualización el"
 #. module: partner_capital
 #: selection:res.partner,company_size:0
 msgid "Medium"
-msgstr ""
+msgstr "Mediano"
 
 #. module: partner_capital
 #: selection:res.partner,company_size:0
 msgid "Micro"
-msgstr ""
+msgstr "Micro"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__name
@@ -120,34 +121,34 @@ msgstr "Nombre"
 #: model:ir.model.fields,help:partner_capital.field_res_partner__capital_amount
 #: model:ir.model.fields,help:partner_capital.field_res_users__capital_amount
 msgid "Publicly registered capital amount."
-msgstr ""
+msgstr "Importe del capital social registrado."
 
 #. module: partner_capital
 #: selection:res.partner,company_size:0
 msgid "Small"
-msgstr ""
+msgstr "Pequeño"
 
 #. module: partner_capital
 #: model_terms:ir.ui.view,arch_db:partner_capital.view_res_partner_filter_capital
 msgid "Turnover"
-msgstr ""
+msgstr "Rotación"
 
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner__turnover_amount
 #: model:ir.model.fields,field_description:partner_capital.field_res_users__turnover_amount
 msgid "Turnover Amount"
-msgstr ""
+msgstr "Rotación del Monto"
 
 #. module: partner_capital
 #: model:ir.model,name:partner_capital.model_res_partner_turnover_range
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner__turnover_range_id
 #: model:ir.model.fields,field_description:partner_capital.field_res_users__turnover_range_id
 msgid "Turnover range"
-msgstr ""
+msgstr "Rango de rotación"
 
 #. module: partner_capital
 #: model:ir.actions.act_window,name:partner_capital.res_partner_turnover_range_action
 #: model:ir.ui.menu,name:partner_capital.menu_res_partner_turnover_range
 #: model_terms:ir.ui.view,arch_db:partner_capital.res_partner_turnover_range_tree_view
 msgid "Turnover ranges"
-msgstr ""
+msgstr "Rangos de rotación"
