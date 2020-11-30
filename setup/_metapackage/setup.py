@@ -20,6 +20,7 @@ setuptools.setup(
         'odoo14-addon-partner_fax',
         'odoo14-addon-partner_firstname',
         'odoo14-addon-partner_phone_extension',
+        'odoo14-addon-partner_phone_secondary',
         'odoo14-addon-partner_second_lastname',
         'odoo14-addon-partner_vat_unique',
     ],
