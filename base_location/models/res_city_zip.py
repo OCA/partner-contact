@@ -32,7 +32,7 @@ class ResCityZip(models.Model):
     ]
 
     @api.multi
-    @api.depends('name', 'city_id')
+    @api.depends('name', 'city_id', 'city_id.state_id', 'city_id.country_id')
     def _compute_new_display_name(self):
         for rec in self:
             name = [rec.name, rec.city_id.name]
