@@ -62,18 +62,22 @@ class Tab:
         )
         field.append(tree)
         # Now add fields for the editable tree view in the tab.
+        tree.append(etree.Element("field", name="active", invisible="1"))
+        tree.append(
+            etree.Element("field", name="other_partner_id_domain", invisible="1")
+        )
         type_field = etree.Element("field", name="type_selection_id", widget="many2one")
         type_field.set("domain", repr([("tab_id", "=", self.tab_record.id)]))
         type_field.set("options", repr({"no_create": True}))
         tree.append(type_field)
         other_partner_field = etree.Element(
-            "field", string=_("Partner"), name="other_partner_id", widget="many2one"
+            "field", string=_("Partner"), name="other_partner_id", widget="many2one",
+            domain="other_partner_id_domain"
         )
         other_partner_field.set("options", repr({"no_create": True}))
         tree.append(other_partner_field)
         tree.append(etree.Element("field", name="date_start"))
         tree.append(etree.Element("field", name="date_end"))
-        tree.append(etree.Element("field", name="active", invisible="1"))
         return tab_page
 
     def _set_page_attrs(self, tab_page):
