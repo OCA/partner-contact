@@ -1,11 +1,11 @@
 # Copyright 2013-2018 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+"""Add tab to relation type selection fields."""
 from odoo import fields, models
 
 
 class ResPartnerRelationTypeSelection(models.Model):
     """Virtual relation types"""
-
     _inherit = "res.partner.relation.type.selection"
 
     tab_id = fields.Many2one(

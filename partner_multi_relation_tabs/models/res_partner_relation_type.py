@@ -1,11 +1,13 @@
 # Copyright 2014-2017 Therp BV <https://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+"""Add tab fields to relation type."""
 # pylint: disable=no-self-use
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
 class ResPartnerRelationType(models.Model):
+    """Add tab fields to relation type."""
     # pylint: disable=too-few-public-methods
     _inherit = "res.partner.relation.type"
 
@@ -33,10 +35,11 @@ class ResPartnerRelationType(models.Model):
                     _("Contact type left not compatible with left tab")
                 )
             tab_partner_category_id = rec.tab_left_id.partner_category_id
-            if (
+            incompatible_category = (
                 tab_partner_category_id
                 and tab_partner_category_id != rec.partner_category_left
-            ):
+            )
+            if incompatible_category:
                 raise ValidationError(
                     _("Partner category left not compatible with left tab")
                 )
@@ -54,10 +57,11 @@ class ResPartnerRelationType(models.Model):
                     _("Contact type right not compatible with right tab")
                 )
             tab_partner_category_id = rec.tab_right_id.partner_category_id
-            if (
+            incompatible_category = (
                 tab_partner_category_id
                 and tab_partner_category_id != rec.partner_category_right
-            ):
+            )
+            if incompatible_category:
                 raise ValidationError(
                     _("Partner category right not compatible with right tab")
                 )

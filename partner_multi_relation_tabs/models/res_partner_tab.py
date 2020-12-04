@@ -1,5 +1,6 @@
-# Copyright 2017-2018 Therp BV <https://therp.nl>.
+# Copyright 2017-2020 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+"""Define tab that can be added to partner form, for a selection of relations."""
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
@@ -64,18 +65,19 @@ class ResPartnerTab(models.Model):
         for this in self:
             for tab_side in ("left", "right"):
                 side_tab = "tab_%s_id" % tab_side
-                tab_using = type_model.search([(side_tab, "=", this.id)])
-                for relation_type in tab_using:
+                relation_types = type_model.search([(side_tab, "=", this.id)])
+                for relation_type in relation_types:
                     type_value = relation_type["contact_type_%s" % tab_side]
                     category_value = relation_type["partner_category_%s" % tab_side]
-                    if (
-                        not vals
+                    tab_invalid_for_type = (
+                        not vals  # When called from unlink
                         or (contact_type and contact_type != type_value)
                         or (
                             partner_category_id
                             and partner_category_id != category_value.id
                         )
-                    ):
+                    )
+                    if tab_invalid_for_type:
                         relation_type.write({side_tab: False})
 
     @api.multi

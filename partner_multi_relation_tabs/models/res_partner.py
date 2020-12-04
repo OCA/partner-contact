@@ -15,26 +15,16 @@ class ResPartner(models.Model):
     """Add tab fields and automatically load tabs in partner forms."""
     _inherit = "res.partner"
 
-    @api.multi
-    def browse(self, arg=None, prefetch=None):
-        if "update_relation_tab" in self.env.context:
-            for tab in self._get_tabs():
-                fieldname = tab.get_fieldname()
-                if fieldname not in self._fields:
-                    # Check this for performance reasons.
-                    self.add_field(tab)
-        return super().browse(arg=arg, prefetch=prefetch)
-
     @api.model
     def fields_view_get(
-        self, view_id=None, view_type="form", toolbar=False, submenu=False
-    ):
+            self, view_id=None, view_type="form", toolbar=False, submenu=False):
         """Override to add relation tabs to form."""
         result = super().fields_view_get(
             view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu
         )
         if view_type != "form" or self.env.context.get("check_view_ids"):
             return result
+        self._update_tab_fields()
         view = etree.fromstring(result["arch"])
         extra_fields = self._add_tab_pages(view)
         view_model = self.env["ir.ui.view"]
@@ -44,6 +34,14 @@ class ResPartner(models.Model):
         for fieldname in extra_fields:
             result["fields"][fieldname] = original_fields[fieldname]
         return result
+
+    def _update_tab_fields(self):
+        """Make sure all defined tab fields are present."""
+        for tab in self._get_tabs():
+            fieldname = tab.get_fieldname()
+            if fieldname not in self._fields:
+                # Check this for performance reasons.
+                self.add_field(tab)
 
     def _add_tab_pages(self, view):
         """Adds the relevant tabs to the partner's formview."""
@@ -72,10 +70,9 @@ class ResPartner(models.Model):
     @api.depends("is_company", "category_id")
     def _compute_tabs_visibility(self):
         """Compute for all tabs wether they should be visible."""
-        if "update_relation_tab" in self.env.context:
-            for tab in self._get_tabs():  # get all tabs
-                for this in self:
-                    this[tab.get_visible_fieldname()] = tab.compute_visibility(this)
+        for tab in self._get_tabs():  # get all tabs
+            for this in self:
+                this[tab.get_visible_fieldname()] = tab.compute_visibility(this)
 
     def _get_tabs(self):
         tab_model = self.env["res.partner.tab"]
