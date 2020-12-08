@@ -9,15 +9,16 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-10 01:50+0000\n"
-"PO-Revision-Date: 2017-06-10 01:50+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/"
-"teams/23907/es_AR/)\n"
+"PO-Revision-Date: 2020-12-08 20:36+0000\n"
+"Last-Translator: Ignacio Buioli <ibuioli@gmail.com>\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/teams/"
+"23907/es_AR/)\n"
 "Language: es_AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
@@ -25,11 +26,13 @@ msgid ""
 ", create new location entries if not found already in the system, and "
 "<b>delete missing entries</b> from new file."
 msgstr ""
+", cree nuevas entradas de ubicación si aún no se encuentran en el sistema y "
+"<b> elimine las entradas que faltan </b> del nuevo archivo."
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,help:base_location_geonames_import.field_city_zip_geonames_import__letter_case
@@ -37,17 +40,20 @@ msgid ""
 "Converts retreived city and state names to Title Case (upper case on each "
 "first letter of a word) or Upper Case (all letters upper case)."
 msgstr ""
+"Convierte los nombres de ciudades y provincias recuperados a Letra Capital ("
+"mayúsculas en cada primera letra de una palabra) o Mayúsculas (todas las "
+"letras en mayúsculas)."
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__country_ids
 msgid "Countries"
-msgstr ""
+msgstr "Paises"
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_res_country
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__country_id
 msgid "Country"
-msgstr ""
+msgstr "País"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__create_uid
@@ -70,22 +76,24 @@ msgid ""
 "For the selected country, this wizard will download the latest version of "
 "the list of cities from"
 msgstr ""
+"Para el país seleccionado, este asistente descargará la última versión de la "
+"lista de ciudades de"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_code_column
 msgid "Geonames State Code Column"
-msgstr ""
+msgstr "Columna de Código de Provincia de GeoNombres"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_name_column
 msgid "Geonames State Name Column"
-msgstr ""
+msgstr "Columna de Nombre de Provincia del GeoNombre"
 
 #. module: base_location_geonames_import
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
-msgstr ""
+msgstr "Obtuvo un error %d al intentar descargar el archivo %s."
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__id
@@ -95,19 +103,19 @@ msgstr "ID"
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "Import"
-msgstr ""
+msgstr "Importar"
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_city_zip_geonames_import
 msgid "Import City Zips from Geonames"
-msgstr ""
+msgstr "Importar Códigos Postales de la Ciudad desde los GeoNombres"
 
 #. module: base_location_geonames_import
 #: model:ir.actions.act_window,name:base_location_geonames_import.city_zip_geonames_import_action
 #: model:ir.ui.menu,name:base_location_geonames_import.city_zip_geonames_import_menu
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "Import from Geonames"
-msgstr ""
+msgstr "Importar desde GeoNombres"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import____last_update
@@ -127,24 +135,24 @@ msgstr "Última actualización el"
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__letter_case
 msgid "Letter Case"
-msgstr ""
+msgstr "Caso de Carta"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields.selection,name:base_location_geonames_import.selection__city_zip_geonames_import__letter_case__title
 msgid "Title Case"
-msgstr ""
+msgstr "Título del Caso"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields.selection,name:base_location_geonames_import.selection__city_zip_geonames_import__letter_case__unchanged
 msgid "Unchanged"
-msgstr ""
+msgstr "Sin alterar"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields.selection,name:base_location_geonames_import.selection__city_zip_geonames_import__letter_case__upper
 msgid "Upper Case"
-msgstr ""
+msgstr "Mayúsculas"
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "geonames.org"
-msgstr ""
+msgstr "geonames.org"
