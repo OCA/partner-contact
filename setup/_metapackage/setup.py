@@ -51,6 +51,7 @@ setuptools.setup(
         'odoo9-addon-partner_sector',
         'odoo9-addon-partner_stock_risk',
         'odoo9-addon-partner_street_number',
+        'odoo9-addon-portal_partner_select_all',
         'odoo9-addon-res_partner_affiliate',
     ],
     classifiers=[
