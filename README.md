@@ -63,6 +63,7 @@ addon | version | summary
 [partner_sector](partner_sector/) | 9.0.2.0.0 | Add partner sectors
 [partner_stock_risk](partner_stock_risk/) | 9.0.1.0.0 | Manage partner risk in stock moves
 [partner_street_number](partner_street_number/) | 9.0.0.1.0 | Introduces separate fields for street name and street number.
+[portal_partner_select_all](portal_partner_select_all/) | 9.0.1.0.1 | Portal Partner Select All
 [res_partner_affiliate](res_partner_affiliate/) | 9.0.1.0.0 | Partner Affiliates
 
 
