@@ -1,0 +1,1 @@
+server-tools https://github.com/akretion/server-tools 14-mig-base_view_inheritance_extension
