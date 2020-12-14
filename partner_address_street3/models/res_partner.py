@@ -1,4 +1,4 @@
-# © 2014-2016 Camptocamp SA
+# Copyright 2014-2020 Camptocamp SA
 # @author: Nicolas Bessi
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -13,15 +13,13 @@ class ResPartner(models.Model):
 
     @api.model
     def _address_fields(self):
-        fields = super(ResPartner, self)._address_fields()
-        fields.append('street3')
-        return fields
+        res = super()._address_fields()
+        res.append('street3')
+        return res
 
-    @api.multi
     def _display_address(self, without_company=False):
         """Remove empty lines which can happen when street3 field is empty."""
-        res = super(ResPartner, self)._display_address(
-            without_company=without_company)
+        res = super()._display_address(without_company=without_company)
         while '\n\n' in res:
             res = res.replace('\n\n', '\n')
         return res
