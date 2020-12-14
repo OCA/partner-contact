@@ -33,6 +33,7 @@ addon | version | summary
 [partner_firstname](partner_firstname/) | 14.0.1.0.1 | Split first name and last name for non company partners
 [partner_phone_extension](partner_phone_extension/) | 14.0.1.0.1 | Partner Phone Number Extension
 [partner_phone_secondary](partner_phone_secondary/) | 14.0.1.0.0 | Adds a secondary phone number on partners
+[partner_priority](partner_priority/) | 14.0.1.0.0 | Adds priority to partners.
 [partner_ref_unique](partner_ref_unique/) | 14.0.1.0.0 | Add an unique constraint to partner ref field
 [partner_second_lastname](partner_second_lastname/) | 14.0.1.0.0 | Have split first and second lastnames
 [partner_vat_unique](partner_vat_unique/) | 14.0.1.0.0 | Module to make the VAT number unique for customers and suppliers.
