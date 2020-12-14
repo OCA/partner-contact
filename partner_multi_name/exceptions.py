@@ -6,7 +6,12 @@
 # Copyright 2018 EXA Auto Parts S.A.S Juan Ocampo <Github@Capriatto>
 # Copyright 2020 EXA Auto Parts S.A.S Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+from odoo import _, exceptions
 
-from . import res_config_settings
-from . import res_partner
-from . import res_users
+
+class EmptyNamesError(exceptions.ValidationError):
+    def __init__(self, record, value=_("No name is set.")):
+        self.record = record
+        self._value = value
+        self.name = _("Error(s) with partner %d's name.") % record.id
+        self.args = (self.name, value)

@@ -8,10 +8,8 @@
             <xpath expr="//field[@name='firstname']" position="replace"/>
 
             <xpath expr="//field[@name='lastname']" position="before">
-                <field name="firstname"
-                    attrs="{'required': ['|', '|', ('lastname', '!=', False), ('lastname2', '!=', False), ('lastname', '=', False), ('lastname2', '=', False), ('othernames', '=', False), ('is_company', '=', False)]}"/>
-                <field name="othernames"
-                    attrs="{'required': ['|', '|', ('lastname', '!=', False), ('lastname2', '!=', False), ('lastname', '=', False), ('lastname2', '=', False), ('firstname', '=', False), ('is_company', '=', False)]}"/>
+                <field name="firstname" attrs="{'required': ['|', '|', ('lastname', '!=', False), ('lastname2', '!=', False), ('lastname', '=', False), ('lastname2', '=', False), ('othernames', '=', False), ('is_company', '=', False)]}"/>
+                <field name="othernames" attrs="{'required': ['|', '|', ('lastname', '!=', False), ('lastname2', '!=', False), ('lastname', '=', False), ('lastname2', '=', False), ('firstname', '=', False), ('is_company', '=', False)]}"/>
             </xpath>
 
             <xpath expr="//field[@name='lastname']" position="attributes">
@@ -33,10 +31,8 @@
             <xpath expr="//field[@name='firstname']" position="replace"/>
 
             <xpath expr="//field[@name='lastname']" position="before">
-                 <field name="firstname"
-                    attrs="{'required': [('othernames', '=', False), ('is_company', '=', False)]}"/>
-                <field name="othernames"
-                    attrs="{'required': [('firstname', '=', False), ('is_company', '=', False)]}"/>
+                <field name="firstname" attrs="{'required': [('othernames', '=', False), ('is_company', '=', False)]}"/>
+                <field name="othernames" attrs="{'required': [('firstname', '=', False), ('is_company', '=', False)]}"/>
             </xpath>
 
             <xpath expr="//field[@name='lastname']" position="attributes">
@@ -46,15 +42,13 @@
             <xpath expr="//field[@name='lastname2']" position="attributes">
                 <attribute name="attrs">{'required': [('lastname', '=', False), ('is_company', '=', False)]}</attribute>
             </xpath>
-                
+
             <!-- Inner contact form of child_ids -->
             <xpath expr="//field[@name='child_ids']/form//field[@name='firstname']" position="replace"/>
 
             <xpath expr="//field[@name='child_ids']/form//field[@name='lastname']" position="before">
-                <field name="firstname"
-                    attrs="{'required': [('othernames', '=', False), ('is_company', '=', False)]}"/>
-                <field name="othernames"
-                    attrs="{'required': [('firstname', '=', False), ('is_company', '=', False)]}"/>
+                <field name="firstname" attrs="{'required': [('othernames', '=', False), ('is_company', '=', False)]}"/>
+                <field name="othernames" attrs="{'required': [('firstname', '=', False), ('is_company', '=', False)]}"/>
             </xpath>
 
             <xpath expr="//field[@name='child_ids']/form//field[@name='lastname']" position="attributes">

@@ -7,6 +7,15 @@
 # Copyright 2020 EXA Auto Parts S.A.S Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from . import res_config_settings
-from . import res_partner
-from . import res_users
+from odoo.tests.common import TransactionCase
+from .. import exceptions as ex
+
+
+class OnChangeCase(TransactionCase):
+    is_company = False
+
+    def new_partner(self):
+        """Create an empty partner. Ensure it is (or not) a company."""
+        new = self.env["res.partner"].new()
+        new.is_company = self.is_company
+        return new

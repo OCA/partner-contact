@@ -4,6 +4,7 @@
 # Copyright 2018 EXA Auto Parts S.A.S Guillermo Montoya <Github@guillermm>
 # Copyright 2018 EXA Auto Parts S.A.S Joan Marín <Github@JoanMarin>
 # Copyright 2018 EXA Auto Parts S.A.S Juan Ocampo <Github@Capriatto>
+# Copyright 2020 EXA Auto Parts S.A.S Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, models
@@ -17,7 +18,5 @@ class ResUsers(models.Model):
         """Write the 'name' field according to splitted data."""
         for partner in self:
             partner.name = partner.partner_id._get_computed_name(
-                partner.firstname,
-                partner.othernames,
-                partner.lastname,
+                partner.firstname, partner.othernames, partner.lastname,
                 partner.lastname2)

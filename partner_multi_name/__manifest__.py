@@ -4,6 +4,7 @@
 # Copyright 2018 EXA Auto Parts S.A.S Guillermo Montoya <Github@guillermm>
 # Copyright 2018 EXA Auto Parts S.A.S Joan Marín <Github@JoanMarin>
 # Copyright 2018 EXA Auto Parts S.A.S Juan Ocampo <Github@Capriatto>
+# Copyright 2020 EXA Auto Parts S.A.S Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 {
@@ -13,12 +14,10 @@
     "license": "AGPL-3",
     "website": "https://github.com/OCA/partner-contact",
     "author": "EXA Auto Parts Github@exaap, "
-              "Tecnativa, "
-              "Odoo Community Association (OCA)",
+    "Tecnativa, "
+    "Odoo Community Association (OCA)",
     "category": "Partner Management",
-    "depends": [
-        "partner_second_lastname"
-    ],
+    "depends": ["partner_second_lastname"],
     "data": [
         "views/res_users_views.xml",
         "views/res_partner_views.xml",

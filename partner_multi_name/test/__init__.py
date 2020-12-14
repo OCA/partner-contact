@@ -6,7 +6,6 @@
 # Copyright 2018 EXA Auto Parts S.A.S Juan Ocampo <Github@Capriatto>
 # Copyright 2020 EXA Auto Parts S.A.S Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-
-from . import res_config_settings
-from . import res_partner
-from . import res_users
+from . import base
+from . import test_onchange
+from . import test_order

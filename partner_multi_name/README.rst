@@ -44,5 +44,6 @@ Contributors
 ------------
 
 * EXA Auto Parts S.A.S <https://github.com/exaap>
+* Alejandro Olano <https://github.com/alejo-code>
 * Joan Marín <https://github.com/JoanMarin>
 * Guillermo Montoya <https://github.com/guillermm>
