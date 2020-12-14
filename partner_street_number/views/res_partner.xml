@@ -6,61 +6,48 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//div[@class='o_address_format']//field[@name='street']"
-                       position="after">
-                        <field name="street_name" class="o_address_street_name"
-                                placeholder="Street..."
-                                attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
-                               />
-                        <field name="street_number" class="o_address_street_number"
-                                placeholder="Number..."
-                                attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
-                               />
-                </xpath>
-                <xpath expr="//div[@class='o_address_format']//field[@name='street']"
-                       position="attributes">
-                    <attribute name="invisible">1</attribute>
+
+                <xpath
+                    expr="//div[@name='div_address']//field[@name='street']"
+                    position="after"
+                    >
+                    <div class="o_row">
+                        <field
+                            name="street_name"
+                            class="o_address_street_name"
+                            placeholder="Street..."
+                            />
+                        <field
+                            name="street_number"
+                            class="o_address_street_number"
+                            placeholder="Number..."
+                            />
+                        <field
+                            name="street_number2"
+                            class="o_address_street_number2"
+                            placeholder="Door Number..."
+                            />
+                    </div>
                 </xpath>
 
-                <xpath expr="//div[@name='div_address']//field[@name='street']"
-                       position="after">
-                        <field name="street_name" class="o_address_street_name"
-                               placeholder="Street..."
-                               />
-                        <field name="street_number" class="o_address_street_number"
-                               placeholder="Number..."
-                               />
-                </xpath>
-                <xpath expr="//div[@name='div_address']//field[@name='street']"
-                       position="attributes">
+                <xpath
+                    expr="//div[@name='div_address']//field[@name='street']"
+                    position="attributes"
+                    >
                     <attribute name="invisible">1</attribute>
                 </xpath>
 
                 <xpath expr="//field[@name='child_ids']" position="attributes">
-                    <attribute name="context">{'default_parent_id': active_id, 'default_street_name': street_name, 'default_street_number': street_number, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_supplier': supplier, 'default_customer': customer}</attribute>
+                    <attribute
+                        name="context"
+                        >{'default_parent_id': active_id, 'default_street_name': street_name,
+                            'default_street_number': street_number, 'default_street2': street2,
+                            'default_city': city, 'default_state_id': state_id, 'default_zip': zip,
+                            'default_country_id': country_id, 'default_supplier': supplier,
+                            'default_customer': customer}
+                    </attribute>
                 </xpath>
 
-            </field>
-        </record>
-
-        <record id="view_partner_address_form" model="ir.ui.view">
-            <field name="name">Add separate fields for street name and number in address form</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_address_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//div[@class='o_address_format']//field[@name='street']"
-                       position="after">
-                       <field name="street_name" class="o_address_street_name"
-                                placeholder="Street..."
-                               />
-                       <field name="street_number" class="o_address_street_number"
-                                placeholder="Number..."
-                               />
-                </xpath>
-                <xpath expr="//div[@class='o_address_format']//field[@name='street']"
-                       position="attributes">
-                    <attribute name="invisible">1</attribute>
-                </xpath>
             </field>
         </record>
 
