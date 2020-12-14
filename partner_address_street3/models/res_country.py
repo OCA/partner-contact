@@ -7,7 +7,8 @@ from odoo import fields, models
 
 class ResCountry(models.Model):
     """Override default adresses formatting of countries"""
-    _inherit = 'res.country'
+
+    _inherit = "res.country"
 
     address_format = fields.Text(
         default=(
