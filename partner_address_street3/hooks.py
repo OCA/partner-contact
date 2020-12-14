@@ -1,4 +1,4 @@
-# Copyright 2016 Sodexis
+# Copyright 2016-2020 Sodexis
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
