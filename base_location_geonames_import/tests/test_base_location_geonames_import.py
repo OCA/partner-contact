@@ -1,4 +1,4 @@
-# Copyright 2016-2019 Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2016-2020 Tecnativa - Pedro M. Baeza
 # Copyright 2020 Manuel Regidor <manuel.regidor@sygel.es>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
@@ -30,7 +30,7 @@ class TestBaseLocationGeonamesImport(common.SavepointCase):
         )
         cls.country_4 = cls.env.ref("base.ad")
         cls.wizard_3 = cls.env["city.zip.geonames.import"].create(
-            {"country_id": cls.country_4.id}
+            {"country_ids": [(4, cls.country_4.id)]}
         )
 
     def test_import_country(self):
@@ -117,7 +117,7 @@ class TestBaseLocationGeonamesImport(common.SavepointCase):
 
     def test_import_duplicated_city_name(self):
         country = self.env.ref("base.us")
-        self.wizard.country_id = country.id
+        self.wizard.country_ids = [(6, 0, country.ids)]
         parsed_csv = [
             [
                 "US",
