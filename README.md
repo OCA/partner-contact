@@ -20,6 +20,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [base_location](base_location/) | 14.0.1.0.1 | Enhanced zip/npa management system
+[base_location_geonames_import](base_location_geonames_import/) | 14.0.1.0.0 | Import zip entries from Geonames
 [partner_company_type](partner_company_type/) | 14.0.1.0.1 | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 14.0.1.0.0 | Allow to visit the full contact form from a company
 [partner_contact_birthdate](partner_contact_birthdate/) | 14.0.1.0.0 | Contact's birthdate
