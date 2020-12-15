@@ -10,10 +10,6 @@ from odoo.tests.common import TransactionCase
 
 
 class PartnerNamesOrder(TransactionCase):
-    def order_set(self, order):
-        return self.env['ir.config_parameter'].sudo().set_param(
-            'partner_names_order', order)
-
     def test_get_computed_name(self):
         firstname = "Johan"
         othernames = "Alejandro"
@@ -25,8 +21,7 @@ class PartnerNamesOrder(TransactionCase):
             ('first_last', "Johan Alejandro Olano Ramirez"),
         )
 
-        for order, name in cases:
-            self.order_set(order)
+        for name in cases:
             result = self.env['res.partner']._get_computed_name(
                 firstname, othernames, lastname, lastname2)
             self.assertEqual(result, name)

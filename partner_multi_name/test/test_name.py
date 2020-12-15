@@ -56,6 +56,30 @@ class CompanyCase(TransactionCase):
         finally:
             super(CompanyCase, self).tearDown()
 
+    def test_long_name(self):
+        """Create a company with a long name."""
+        self.name = "Söme very lóng nâme"
+
+    def test_short_name(self):
+        """Create a company with a short name."""
+        self.name = "Shoŕt"
+
+    def test_whitespace_before(self):
+        """Create a company with name prefixed with whitespace."""
+        self.name = "  Wĥitespace befòre"
+
+    def test_whitespace_after(self):
+        """Create a company with name suffixed with whitespace."""
+        self.name = "Whitespâce aftér   "
+
+    def test_whitespace_inside(self):
+        """Create a company with whitespace inside the name."""
+        self.name = "Whitespacé   ïnside"
+
+    def test_whitespace_everywhere(self):
+        """Create a company with whitespace everywhere in the name."""
+        self.name = "  A  lot  öf    whitespace   "
+
 
 class PersonCase(TransactionCase):
     """Test ``res.partner`` when it is a person."""
@@ -113,23 +137,23 @@ class PersonCase(TransactionCase):
         """Create a person setting his first name first."""
         self.env['ir.config_parameter'].set_param(
             'partner_names_order', 'first_last')
-        self.template = "%(last1)s, %(last2)s, %(first)s, %(othernames)s"
+        self.template = "%(last1)s %(last2)s %(first)s %(othernames)s"
         self.params = {
             "is_company": False,
-            "name": "%s, %s, %s, %s" % (self.firstname,
-                                        self.lastname,
-                                        self.lastname2,
-                                        self.othernames),
+            "name": "%s %s %s %s" % (self.firstname,
+                                     self.lastname,
+                                     self.lastname2,
+                                     self.othernames),
         }
 
     def test_firstname_last(self):
         """Create a person setting his first name last."""
         self.params = {
             "is_company": False,
-            "name": "%s, %s, %s, %s" % (self.lastname,
-                                        self.lastname2,
-                                        self.firstname,
-                                        self.othernames),
+            "name": "%s %s %s %s" % (self.lastname,
+                                     self.lastname2,
+                                     self.firstname,
+                                     self.othernames),
         }
 
     def test_separately(self):
@@ -141,3 +165,23 @@ class PersonCase(TransactionCase):
             "lastname2": self.lastname2,
             "othernames": self.othernames
         }
+
+
+class UserCase(PersonCase):
+    def create_original(self):
+        name = "%s %s" % (self.lastname, self.firstname)
+
+        # Cannot create users if ``mail`` is installed
+        if self.mail_installed():
+            self.original = self.env.ref("base.user_demo")
+            self.original.name = name
+        else:
+            self.original = self.env["res.users"].create({
+                "name": name,
+                "login": "firstnametest@example.com"})
+
+    def test_copy(self):
+        """Copy the partner and compare the result."""
+        # Skip if ``mail`` is installed
+        if not self.mail_installed():
+            super(UserCase, self).test_copy()

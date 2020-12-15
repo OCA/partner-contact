@@ -15,10 +15,10 @@ class TestConfig(common.SavepointCase):
         super(TestConfig, cls).setUpClass()
         cls.wizard = cls.env['res.config.settings'].create({})
         cls.partner = cls.env['res.partner'].create({
-            'firstname': "First",
-            'othernames': 'OtherNames',
-            'lastname': "Last",
-            'lastname2': "Second",
+            'firstname': "Firstname",
+            'othernames': 'Othernames',
+            'lastname': "Lastname",
+            'lastname2': "SecondLastname",
 
         })
 
@@ -26,16 +26,19 @@ class TestConfig(common.SavepointCase):
         self.wizard.partner_names_order = 'last_first'
         self.wizard.set_values()
         self.wizard.action_recalculate_partners_name()
-        self.assertEqual(self.partner.name, "Last Second First")
+        self.assertEqual(self.partner.name, 'Lastname SecondLastname \
+                Firstname Othernames')
 
     def test_last_first_comma(self):
         self.wizard.partner_names_order = 'last_first_comma'
         self.wizard.set_values()
         self.wizard.action_recalculate_partners_name()
-        self.assertEqual(self.partner.name, "Last Second, First")
+        self.assertEqual(self.partner.name, 'Lastname SecondLastname, \
+                Firstname Othernames')
 
     def test_first_last(self):
         self.wizard.partner_names_order = 'first_last'
         self.wizard.set_values()
         self.wizard.action_recalculate_partners_name()
-        self.assertEqual(self.partner.name, "First Last Second")
+        self.assertEqual(self.partner.name, 'Firstname Othernames \
+                Lastname SecondLastname')

@@ -14,8 +14,7 @@ class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
     def _partner_names_order_selection(self):
-        options = super(ResConfigSettings,
-                        self)._partner_names_order_selection()
+        options = super()._partner_names_order_selection()
 
         new_labels = {
             'last_first':
