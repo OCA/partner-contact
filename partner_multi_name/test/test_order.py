@@ -36,8 +36,7 @@ class PartnerNamesOrder(TransactionCase):
             ('last_first_comma', "Marin Bustamante, Johan Alberto"),
             ('first_last', "Johan Alberto Marin Bustamante"),
         )
-        for order, name in cases:
-            self.order_set(order)
+        for name in cases:
             result = self.env['res.partner']._get_inverse_name(name)
             self.assertEqual(result['firstname'], firstname)
             self.assertEqual(result['othernames'], othernames)
