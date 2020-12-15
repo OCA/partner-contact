@@ -6,59 +6,49 @@
 # Copyright 2018 EXA Auto Parts S.A.S Juan Ocampo <Github@Capriatto>
 # Copyright 2020 EXA Auto Parts S.A.S Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-from .base import OnChangeCase
+
+from odoo.tests.common import TransactionCase
 
 
-class PartnerContactCase(OnChangeCase):
-    def test_create_from_form_only_firstname_and_lastname(self):
-        """A user creates a contact with only the firstname and lastname from the form."""
-        firstname = "Alejandro"
-        lastname = "Olano"
+class OnChangeCase(TransactionCase):
+    is_company = False
+
+    def setUp(self):
+        super(OnChangeCase, self).setUp()
+        self.env['ir.config_parameter'].set_param(
+            'partner_names_order', 'last_first_comma')
+
+    def new_partner(self):
+        """Create an empty partner. Ensure it is (or not) a company."""
+        new = self.env["res.partner"].new()
+        new.is_company = self.is_company
+        return new
+
+
+class PartnerCompanyCase(OnChangeCase):
+    is_company = True
+
+    def tearDown(self):
+        super(PartnerCompanyCase, self).tearDown()
+        self.assertEqual(self.partner.othernames, False)
+
+    def set_name(self, value):
+        self.partner.name = value
+
+        # It triggers onchange
+        self.partner._onchange_name()
+
+        # Ensure it's properly set
+        self.assertEqual(self.partner.name, value)
+
+    def test_create_from_form(self):
+        """A user creates a company from the form."""
+        name = "Exa Solutions"
         with self.env.do_in_onchange():
             # User presses ``new``
-            partner = self.new_partner()
+            self.partner = self.new_partner()
 
-            # Changes firstname, lastname which triggers onchanges
-            partner.firstname = firstname
-            partner.lastname = lastname
-            partner._onchange_subnames()
+            # User changes fields
+            self.set_name(name)
 
-            self.assertEqual(partner.firstname, firstname)
-            self.assertEqual(partner.othernames, False)
-            self.assertEqual(partner.lastname, lastname)
-            self.assertEqual(partner.lastname2, False)
-            self.assertEqual(partner.name, " ".join((firstname, lastname)))
-
-    def test_create_from_form_all(self):
-        """A user creates a contact with all names from the form."""
-        firstname = "Johan"
-        othernames = "Alejandro"
-        lastname = "Olano"
-        lastname2 = "Ramirez"
-        with self.env.do_in_onchange():
-            # User presses ``new``
-            partner = self.new_partner()
-
-            # Changes firstname, which triggers onchanges
-            partner.firstname = firstname
-            partner._onchange_subnames()
-
-            # Changes othernames, which triggers onchanges
-            partner.othernames = othernames
-            partner._onchange_subnames()
-
-            # Changes lastname, which triggers onchanges
-            partner.lastname = lastname
-            partner._onchange_subnames()
-
-            # Changes lastname2, which triggers onchanges
-            partner.lastname2 = lastname2
-            partner._onchange_subnames()
-
-            self.assertEqual(partner.firstname, firstname)
-            self.assertEqual(partner.othernames, othernames)
-            self.assertEqual(partner.lastname, lastname)
-            self.assertEqual(partner.lastname2, lastname2)
-            self.assertEqual(
-                partner.name, " ".join(
-                    (firstname, othernames, lastname, lastname2)))
+            self.assertEqual(self.partner.lastname, name)
