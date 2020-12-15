@@ -6,7 +6,6 @@
 # Copyright 2018 EXA Auto Parts S.A.S Juan Ocampo <Github@Capriatto>
 # Copyright 2020 EXA Auto Parts S.A.S Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-
 from odoo.tests.common import TransactionCase
 
 
