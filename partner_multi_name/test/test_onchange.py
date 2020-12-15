@@ -241,4 +241,4 @@ class PartnerContactCase(OnChangeCase):
 
             self.assertEqual(
                 self.partner.name,
-                "%s %s, %s" % (lastname, othernames, lastname2, firstname))
+                "%s %s, %s %s" % (lastname, othernames, lastname2, firstname))
