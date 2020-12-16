@@ -135,9 +135,6 @@ class TestBaseLocation(common.SavepointCase):
                 'zip_id': self.barcelona.id,
             })
 
-    def test_writing_company(self):
-        self.company.zip_id = self.barcelona
-
     def test_constrains_partner_country(self):
         """Test partner country constraints"""
         partner = self.partner_obj.create({
