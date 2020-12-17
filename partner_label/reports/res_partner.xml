@@ -34,11 +34,4 @@
         <field name="binding_type">report</field>
         <field name="paperformat_id" ref="base.paperformat_euro" />
     </record>
-        id="report_res_partner_label"
-        string="Partner Labels"
-        model="res.partner"
-        name="partner_label.view_res_partner_label"
-        report_type="qweb-pdf"
-        paperformat="base.paperformat_euro"
-    />
 </odoo>
