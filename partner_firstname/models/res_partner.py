@@ -42,11 +42,12 @@ class ResPartner(models.Model):
                 if not vals.get(key) or context.get("copy"):
                     vals[key] = value
 
-            # Remove the combined fields
-            if "name" in vals:
-                del vals["name"]
-            if "default_name" in context:
-                del context["default_name"]
+            if vals.get("company_type") == "person":
+                # Remove the combined fields
+                if "name" in vals:
+                    del vals["name"]
+                if "default_name" in context:
+                    del context["default_name"]
 
         return super(ResPartner, self.with_context(context)).create(vals)
 
