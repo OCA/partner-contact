@@ -42,7 +42,10 @@ class ResPartner(models.Model):
                 if not vals.get(key) or context.get("copy"):
                     vals[key] = value
 
-            if vals.get("company_type") == "person":
+            # is_company has a default field value, but company_type does not
+            # so if company_type is not set use the same logic as _compute_company_type
+            # to determine if the following should be run.
+            if vals.get("company_type") == "person" or not vals.get("is_company"):
                 # Remove the combined fields
                 if "name" in vals:
                     del vals["name"]

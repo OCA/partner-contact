@@ -30,7 +30,6 @@ class PersonCase(TransactionCase):
         )
         for key, value in self.good_values.items():
             self.assertEqual(self.record[key], value, "Checking key %s" % key)
-
         super(PersonCase, self).tearDown()
 
     def test_no_name(self):
@@ -38,18 +37,18 @@ class PersonCase(TransactionCase):
         del self.values["name"]
 
     def test_wrong_name_value(self):
-        """Wrong name value is ignored, name is calculated."""
+        """Wrong name value is ignored, name is calculated for persons."""
         self.values["name"] = "BÄD"
 
     def test_wrong_name_context(self):
-        """Wrong name context is ignored, name is calculated."""
+        """Wrong name context is ignored, name is calculated for persons."""
         del self.values["name"]
         self.context["default_name"] = "BÄD"
 
     def test_wrong_name_value_and_context(self):
-        """Wrong name value and context is ignored, name is calculated."""
-        self.values["name"] = "BÄD1"
-        self.context["default_name"] = "BÄD2"
+        """Wrong name value and context is ignored, name is calculated for persons."""
+        self.values["name"] = "BÄD"
+        self.context["default_name"] = "BÄD"
 
 
 class CompanyCase(PersonCase):
@@ -58,8 +57,11 @@ class CompanyCase(PersonCase):
     context = {"default_is_company": True}
 
     def setUp(self):
+        """For companies only the name is relevant. Lastname is added by
+        _get_inverse_name.
+        """
         super(CompanyCase, self).setUp()
-        self.good_values.update(lastname=self.values["name"], firstname=False)
+        self.good_values.update(lastname="BÄD", firstname=False, name="BÄD")
         self.values = self.good_values.copy()
 
 
