@@ -6,7 +6,10 @@ from odoo import api, fields, models
 class PortalWizard(models.TransientModel):
     _inherit = "portal.wizard"
 
-    set_all_users = fields.Boolean(string="Invite all the contacts", default=False,)
+    set_all_users = fields.Boolean(
+        string="Invite all the contacts",
+        default=False,
+    )
 
     @api.onchange("set_all_users")
     def onchange_set_all_users(self):
