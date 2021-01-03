@@ -1,7 +1,7 @@
 # Copyright 2015 Antiun Ingenieria S.L. - Javier Iniesta
 # Copyright 2016 Tecnativa S.L. - Vicent Cubells
 # Copyright 2016 Tecnativa S.L. - Pedro M. Baeza
-# Copyright 2018 Eficent Business and IT Consulting Services, S.L.
+# Copyright 2018 ForgeFlow, S.L.
 # Copyright 2019 Tecnativa - Cristina Martin R.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
@@ -33,13 +33,6 @@ class ResPartnerIndustry(models.Model):
             return res
 
         return [(cat.id, " / ".join(get_names(cat))) for cat in self]
-
-    @api.constrains("parent_id")
-    def _check_parent_id(self):
-        if not self._check_recursion():
-            raise exceptions.ValidationError(
-                _("Error! You cannot create recursive industries.")
-            )
 
     @api.constrains("name", "parent_id")
     def _check_uniq_name(self):
