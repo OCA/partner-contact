@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo14-addon-base_location_geonames_import',
         'odoo14-addon-partner_company_type',
         'odoo14-addon-partner_contact_access_link',
+        'odoo14-addon-partner_contact_age_range',
         'odoo14-addon-partner_contact_birthdate',
         'odoo14-addon-partner_contact_department',
         'odoo14-addon-partner_contact_gender',
