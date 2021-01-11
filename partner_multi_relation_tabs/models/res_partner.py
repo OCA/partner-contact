@@ -5,7 +5,7 @@
 import logging
 from lxml import etree
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 
 
 _logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
@@ -14,6 +14,13 @@ _logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 class ResPartner(models.Model):
     """Add tab fields and automatically load tabs in partner forms."""
     _inherit = "res.partner"
+    _tab_modification_sequence = 0
+
+    @api.model
+    def browse(self, arg=None, prefetch=None):
+        """Make sure tabs are always up to date."""
+        self._update_tab_fields()
+        return super().browse(arg=arg, prefetch=prefetch)
 
     @api.model
     def fields_view_get(
@@ -24,7 +31,6 @@ class ResPartner(models.Model):
         )
         if view_type != "form" or self.env.context.get("check_view_ids"):
             return result
-        self._update_tab_fields()
         view = etree.fromstring(result["arch"])
         extra_fields = self._add_tab_pages(view)
         view_model = self.env["ir.ui.view"]
@@ -37,11 +43,28 @@ class ResPartner(models.Model):
 
     def _update_tab_fields(self):
         """Make sure all defined tab fields are present."""
+        if not self._need_tab_update():
+            return
         for tab in self._get_tabs():
             fieldname = tab.get_fieldname()
             if fieldname not in self._fields:
                 # Check this for performance reasons.
                 self.add_field(tab)
+
+    def _need_tab_update(self):
+        """Check wether tab needs update."""
+        sequence_model = self.env["res.partner.tab.sequence"]
+        tab_modification_sequence = sequence_model.get_sequence()
+        if tab_modification_sequence == self._tab_modification_sequence:
+            return False  # We are already up to date.
+        _logger.info(_("Updating tabs to modification %d"), tab_modification_sequence)
+        self._set_tab_modification_sequence(tab_modification_sequence)
+        return True
+
+    @classmethod
+    def _set_tab_modification_sequence(cls, tab_modification_sequence):
+        """Use class method to prevent creating copies of modification level."""
+        cls._tab_modification_sequence = tab_modification_sequence
 
     def _add_tab_pages(self, view):
         """Adds the relevant tabs to the partner's formview."""

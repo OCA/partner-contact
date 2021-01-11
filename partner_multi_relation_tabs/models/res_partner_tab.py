@@ -27,6 +27,7 @@ class ResPartnerTab(models.Model):
     name = fields.Char(
         string="Name",
         required=True,
+        index=True,
         translate=True,
         help="Will provide title for tab in user language",
     )
@@ -80,19 +81,34 @@ class ResPartnerTab(models.Model):
                     if tab_invalid_for_type:
                         relation_type.write({side_tab: False})
 
+    @api.model
+    def create(self, vals):
+        """Create new tab."""
+        result = super().create(vals)
+        self._update_modification_sequence()
+        return result
+
     @api.multi
     def write(self, vals):
         """Remove tab from types no longer satifying criteria."""
         if vals.get("contact_type", False) or vals.get("partner_category_id", False):
             self.update_types(vals)
-        result = super(ResPartnerTab, self).write(vals)
+        result = super().write(vals)
+        self._update_modification_sequence()
         return result
 
     @api.multi
     def unlink(self):
         """Unlink should first remove references."""
         self.update_types()
-        return super(ResPartnerTab, self).unlink()
+        result = super().unlink()
+        self._update_modification_sequence()
+        return result
+
+    def _update_modification_sequence(self):
+        """Update sequence used to check change in tab definitions."""
+        sequence_model = self.env["res.partner.tab.sequence"]
+        sequence_model.increment_sequence()
 
     @api.model
     def get_tabs(self):
