@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_pricelist_view" model="ir.ui.view">
+        <field name="model">product.pricelist</field>
+        <field name="inherit_id" ref="product.product_pricelist_view"/>
+        <field name="arch" type="xml">
+            <button name="toggle_active" position="before">
+                <button name="show_pricelist_partners" type="object"
+                        string="Customers"
+                        class="oe_stat_button" icon="fa-users"/>
+            </button>
+        </field>
+    </record>
+</odoo>
