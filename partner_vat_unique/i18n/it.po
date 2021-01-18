@@ -31,7 +31,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__vat
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_users__vat
 msgid "Tax ID"
-msgstr "ID Imposta"
+msgstr "Partita Iva"
 
 #. module: partner_vat_unique
 #: model:ir.model.fields,help:partner_vat_unique.field_res_partner__vat
