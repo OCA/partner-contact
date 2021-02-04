@@ -4,7 +4,7 @@
 {
     "name": "Partner Contact address default",
     "summary": "Set a default delivery and invoice address for contacts",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.1",
     "development_status": "Beta",
     "category": "Generic Modules/Base",
     "website": "https://github.com/OCA/partner-contact",
@@ -12,6 +12,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["base",],
-    "data": ["views/res_partner_views.xml",],
+    "depends": ["base"],
+    "data": ["views/res_partner_views.xml"],
 }
