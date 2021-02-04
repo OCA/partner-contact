@@ -6,8 +6,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-04 10:11+0000\n"
-"PO-Revision-Date: 2021-02-04 10:11+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,15 +19,15 @@ msgid "<i class=\"fa fa-eye\"/> View"
 msgstr ""
 
 #. module: portal_partner_data_no_edit
-#: model:ir.model.fields,help:portal_partner_data_no_edit.field_res_partner__block_portal_data_edit
-#: model:ir.model.fields,help:portal_partner_data_no_edit.field_res_users__block_portal_data_edit
-msgid "Block portal info editing for the portal user linked to this partner"
-msgstr ""
-
-#. module: portal_partner_data_no_edit
 #: model:ir.model.fields,field_description:portal_partner_data_no_edit.field_res_partner__block_portal_data_edit
 #: model:ir.model.fields,field_description:portal_partner_data_no_edit.field_res_users__block_portal_data_edit
 msgid "Block Customer Info Edit"
+msgstr ""
+
+#. module: portal_partner_data_no_edit
+#: model:ir.model.fields,help:portal_partner_data_no_edit.field_res_partner__block_portal_data_edit
+#: model:ir.model.fields,help:portal_partner_data_no_edit.field_res_users__block_portal_data_edit
+msgid "Block portal info editing for the portal user linked to this partner"
 msgstr ""
 
 #. module: portal_partner_data_no_edit
