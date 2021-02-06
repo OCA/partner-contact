@@ -1,10 +1,11 @@
 # Copyright 2012 Camptocamp SA - Yannick Vaucher
 # Copyright 2017 Tecnativa - Vicent Cubells
 # Copyright 2018 brain-tec AG - Raul Martin
+# Copyright 2021 Bloopark - Achraf Mhadhbi
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Partner Affiliates",
-    "version": "13.0.1.0.1",
+    "version": "14.0.1.0.1",
     "author": "Camptocamp, "
     "Tecnativa, "
     "brain-tec AG, "
