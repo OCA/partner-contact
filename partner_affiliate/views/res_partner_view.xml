@@ -54,14 +54,9 @@
                                     <div
                                         t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'"
                                     >
-                                        <a
-                                            t-if="!read_only_mode"
-                                            type="delete"
-                                            class="fa fa-times pull-right"
-                                        />
                                         <div class="o_kanban_image">
                                             <img
-                                                alt=""
+                                                alt="Contact image"
                                                 t-if="record.image_128.raw_value"
                                                 t-att-src="kanban_image('res.partner', 'image_128', record.id.raw_value)"
                                             />
@@ -87,19 +82,20 @@
                                                     <img
                                                         alt="Avatar"
                                                         t-if="record.is_company.raw_value === false"
-                                                        t-att-src='_s + "/base/static/img/avatar.png"'
+                                                        t-att-src='_s + "/base/static/img/avatar_grey.png"'
                                                     />
                                                 </t>
                                             </t>
                                         </div>
                                         <div class="oe_kanban_details">
                                             <field name="name" />
-                                            <div t-if="record.function.raw_value">
-                                                <field name="function" />
-                                            </div>
-                                            <div t-if="record.email.raw_value">
-                                                <field name="email" widget="email" />
-                                            </div>
+                                            <div t-if="record.function.raw_value"><field
+                                                    name="function"
+                                                /></div>
+                                            <div t-if="record.email.raw_value"><field
+                                                    name="email"
+                                                    widget="email"
+                                                /></div>
                                             <div
                                                 t-if="record.type.raw_value != 'contact'"
                                             >
@@ -113,12 +109,14 @@
                                                 />
                                                 <field name="country_id" />
                                             </div>
-                                            <div
-                                                t-if="record.phone.raw_value"
-                                            >Phone: <field name="phone" /></div>
+                                            <div t-if="record.phone.raw_value">Phone: <t
+                                                    t-esc="record.phone.value"
+                                                /></div>
                                             <div
                                                 t-if="record.mobile.raw_value"
-                                            >Mobile: <field name="mobile" /></div>
+                                            >Mobile: <t
+                                                    t-esc="record.mobile.value"
+                                                /></div>
                                         </div>
                                     </div>
                                 </t>
