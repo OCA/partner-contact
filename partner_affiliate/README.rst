@@ -23,7 +23,7 @@ Partner Affiliates
     :target: https://runbot.odoo-community.org/runbot/134/13.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5| 
+|badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module adds a new tab "Affiliates" in the partner form view and modifies the purpose of the tab "Contacts & Addresses". This new tab "Affiliates" is visible only if the partner is a company.
 
@@ -65,6 +65,7 @@ Authors
 * Tecnativa
 * brain-tec AG
 * Onestein
+* Bloopark Systems
 
 Contributors
 ~~~~~~~~~~~~
@@ -75,6 +76,7 @@ Contributors
 * Dave Lasley <dave@laslabs.com>
 * Dennis Sluijk <d.sluijk@onestein.nl>
 * Stephan Rozendaal <stephan.rozendaal@neobis.net>
+* Achraf Mhadhbi <machraf@bloopark.de>
 
 Other credits
 ~~~~~~~~~~~~~
