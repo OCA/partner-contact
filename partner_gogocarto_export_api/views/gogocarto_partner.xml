@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="partner_gogocarto_form_view">
+      <field name="name">partner.gogocarto.form</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name='priority'>99</field>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='function']" position="after">
+          <field name="in_gogocarto"/>
+        </xpath>
+      </field>
+    </record>
+</odoo>
