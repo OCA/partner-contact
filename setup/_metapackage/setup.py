@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-partner-contact Odoo addons",
     version=version,
     install_requires=[
+        'odoo13-addon-base_country_state_translatable',
         'odoo13-addon-base_location',
         'odoo13-addon-base_location_geonames_import',
         'odoo13-addon-base_location_nuts',
