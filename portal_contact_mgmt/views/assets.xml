@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2016 Jairo Llopis <jairo.llopis@tecnativa.com>
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+
+    <template
+        id="assets_tests"
+        name="Portal Contacts Assets Tests"
+        inherit_id="web.assets_tests"
+    >
+        <xpath expr="." position="inside">
+            <script
+                type="text/javascript"
+                src="/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js"
+            />
+        </xpath>
+    </template>
+
+</odoo>
