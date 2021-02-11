@@ -45,6 +45,7 @@ setuptools.setup(
         'odoo11-addon-partner_phonecall_schedule',
         'odoo11-addon-partner_ref_unique',
         'odoo11-addon-partner_second_lastname',
+        'odoo11-addon-partner_tag_smart_assignation',
         'odoo11-addon-partner_vat_unique',
         'odoo11-addon-portal_partner_select_all',
     ],
