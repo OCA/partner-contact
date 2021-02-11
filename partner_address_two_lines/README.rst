@@ -25,7 +25,7 @@ Partner address in two lines
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
-This module change the reports layout
+This module changes the reports layout.
 The company partner and the partner name are on two different lines.
 
 **Table of contents**
