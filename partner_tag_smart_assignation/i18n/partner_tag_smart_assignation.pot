@@ -1,0 +1,92 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_tag_smart_assignation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_tag_smart_assignation
+#: selection:res.partner.category,tag_filter_join_operator:0
+msgid "AND (must satisfy both SQL and domain filter)"
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: model:ir.model.fields,help:partner_tag_smart_assignation.field_res_partner_category_tag_filter_sql_query
+msgid "Can be used instead of the filter for finding the relevant partners. The given SQL query should only return partner ids rows."
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: model:ir.model.fields,field_description:partner_tag_smart_assignation.field_res_partner_category_tag_filter_condition_id
+msgid "Domain filter"
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: model:ir.model.fields,help:partner_tag_smart_assignation.field_res_partner_category_smart
+msgid "Enable this to automatically assign the category on partners matching a given filter domain or SQL query."
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: model:ir.model.fields,field_description:partner_tag_smart_assignation.field_res_partner_category_tag_filter_join_operator
+msgid "JOIN operator"
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: selection:res.partner.category,tag_filter_join_operator:0
+msgid "OR (can satisfy either SQL or domain filter)"
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: model:ir.model,name:partner_tag_smart_assignation.model_res_partner_category
+msgid "Partner Tags"
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: model:ir.ui.view,arch_db:partner_tag_smart_assignation.view_smart_tagger_form
+msgid "Partners"
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: model:ir.model.fields,help:partner_tag_smart_assignation.field_res_partner_category_tag_filter_partner_field
+msgid "Relational field used on the filter object to find the partners."
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: model:ir.model.fields,field_description:partner_tag_smart_assignation.field_res_partner_category_tag_filter_sql_query
+msgid "SQL query"
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: model:ir.model.fields,field_description:partner_tag_smart_assignation.field_res_partner_category_smart
+msgid "Smart"
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: model:ir.actions.server,name:partner_tag_smart_assignation.smart_tags_updater_ir_actions_server
+#: model:ir.cron,cron_name:partner_tag_smart_assignation.smart_tags_updater
+#: model:ir.cron,name:partner_tag_smart_assignation.smart_tags_updater
+msgid "Smart Tags Updater"
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: model:ir.model.fields,field_description:partner_tag_smart_assignation.field_res_partner_category_tag_filter_partner_field
+msgid "Tag Filter Partner Field"
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: model:ir.model.fields,field_description:partner_tag_smart_assignation.field_res_partner_category_tagged_partner_count
+msgid "Tagged Partner Count"
+msgstr ""
+
+#. module: partner_tag_smart_assignation
+#: model:ir.actions.server,name:partner_tag_smart_assignation.event_smart_tagger_update_action
+msgid "Update Smart Tagger"
+msgstr ""
+
