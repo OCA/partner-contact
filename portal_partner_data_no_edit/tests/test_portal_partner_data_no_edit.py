@@ -1,11 +1,10 @@
 # Copyright 2020 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo.tests import tagged, common
+from odoo.tests import common, tagged
 
 
-@tagged('post_install', '-at_install')
+@tagged("post_install", "-at_install")
 class PortalHttpCase(common.HttpCase):
-
     def setUp(self):
         super().setUp()
         self.partner = self.env.ref("base.partner_demo_portal")

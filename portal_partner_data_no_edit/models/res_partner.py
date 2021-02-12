@@ -8,6 +8,5 @@ class ResPartner(models.Model):
 
     block_portal_data_edit = fields.Boolean(
         string="Block Customer Info Edit",
-        help="Block portal info editing for the portal "
-             "user linked to this partner",
+        help="Block portal info editing for the portal " "user linked to this partner",
     )
