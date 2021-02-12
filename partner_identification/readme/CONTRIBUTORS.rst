@@ -6,3 +6,4 @@
 * Dave Lasley <dave@laslabs.com>
 * Simone Orsi <simone.orsi@camptocamp.com>
 * Dennis Sluijk <d.sluijk@onestein.nl>
+* Phuc Tran Thanh <phuc@trobz.com>
