@@ -21,7 +21,7 @@ class ResPartner(models.Model):
 
     @api.depends("id_numbers")
     def _compute_identification(self, field_name, category_code):
-        """ Compute a field that indicates a certain ID type.
+        """Compute a field that indicates a certain ID type.
 
         Use this on a field that represents a certain ID type. It will compute
         the desired field as that ID(s).
@@ -62,7 +62,7 @@ class ResPartner(models.Model):
             record[field_name] = value
 
     def _inverse_identification(self, field_name, category_code):
-        """ Inverse for an identification field.
+        """Inverse for an identification field.
 
         This method will create a new record, or modify the existing one
         in order to allow for the associated field to work like a Char.
@@ -134,7 +134,7 @@ class ResPartner(models.Model):
 
     @api.model
     def _search_identification(self, category_code, operator, value):
-        """ Search method for an identification field.
+        """Search method for an identification field.
 
         Example:
 
