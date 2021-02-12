@@ -1,16 +1,15 @@
 # Copyright 2021 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-from odoo.addons.portal.controllers.portal import CustomerPortal
 from odoo.http import request, route
+
+from odoo.addons.portal.controllers.portal import CustomerPortal
 
 
 class PortalBlockEdit(CustomerPortal):
-
     def _prepare_portal_layout_values(self):
         """So we can change the edit link text in the view"""
         values = super()._prepare_portal_layout_values()
-        values["block_portal_data_edit"] = (
-            request.env.user.block_portal_data_edit)
+        values["block_portal_data_edit"] = request.env.user.block_portal_data_edit
         return values
 
     @route()

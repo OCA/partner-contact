@@ -4,13 +4,10 @@
     "name": "Portal Partner Block Data Edit",
     "version": "12.0.1.0.0",
     "category": "Customer Relationship Management",
-    "author": "Tecnativa,"
-              "Odoo Community Association (OCA)",
+    "author": "Tecnativa," "Odoo Community Association (OCA)",
     "website": "https://www.github.com/OCA/partner-contact",
     "license": "AGPL-3",
-    "depends": [
-        "portal",
-    ],
+    "depends": ["portal"],
     "data": [
         "views/res_partner_views.xml",
         "views/portal_template.xml",

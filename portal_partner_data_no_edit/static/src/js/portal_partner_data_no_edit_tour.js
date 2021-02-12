@@ -1,7 +1,7 @@
 /* Copyright 2021 Tecnativa - David Vidal
  * License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). */
 
-odoo.define("portal_partner_data_default.tour", function (require) {
+odoo.define("portal_partner_data_default.tour", function(require) {
     "use strict";
 
     var tour = require("web_tour.tour");
@@ -13,13 +13,14 @@ odoo.define("portal_partner_data_default.tour", function (require) {
         },
         {
             trigger: "input[name=name]",
-            run: 'Mr. Odoo',
+            run: "Mr. Odoo",
         },
         {
             trigger: "button[type=submit]",
         },
     ];
-    tour.register("portal_partner_data_no_edit_default_tour",
+    tour.register(
+        "portal_partner_data_no_edit_default_tour",
         {
             url: "/my",
             test: true,
@@ -32,7 +33,7 @@ odoo.define("portal_partner_data_default.tour", function (require) {
     };
 });
 
-odoo.define("portal_partner_data_block.tour", function (require) {
+odoo.define("portal_partner_data_block.tour", function(require) {
     "use strict";
 
     var tour = require("web_tour.tour");
@@ -46,7 +47,8 @@ odoo.define("portal_partner_data_block.tour", function (require) {
             trigger: "p[name=name]",
         },
     ];
-    tour.register("portal_partner_data_no_edit_block_tour",
+    tour.register(
+        "portal_partner_data_no_edit_block_tour",
         {
             url: "/my",
             test: true,
