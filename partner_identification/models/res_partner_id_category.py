@@ -33,20 +33,8 @@ class ResPartnerIdCategory(models.Model):
     )
     active = fields.Boolean(string="Active", default=True)
     validation_code = fields.Text(
-        "Python validation code",
-        help="Python code called to validate an id number.",
-        default=lambda self: self._default_validation_code(),
+        "Python validation code", help="Python code called to validate an id number."
     )
-
-    def _default_validation_code(self):
-        return _(
-            "\n# Python code. Use failed = True to specify that the id "
-            "number is not valid.\n"
-            "# You can use the following variables :\n"
-            "#  - self: browse_record of the current ID Category "
-            "browse_record\n"
-            "#  - id_number: browse_record of ID number to validate"
-        )
 
     def _validation_eval_context(self, id_number):
         self.ensure_one()
