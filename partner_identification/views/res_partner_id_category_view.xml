@@ -7,10 +7,38 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <form string="Partner Identification Categories">
-                <group>
-                    <field name="name" />
-                    <field name="code" />
-                </group>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="code" />
+                            <field name="validation_code" />
+                        </group>
+                        <group>
+                            <div class="alert alert-primary" role="alert">
+                                <h4>Python Validation Code:</h4>
+                                <pre>
+# Use failed = True to specify that the id number is not valid.
+# You can use the following variables :
+#  - self: browse_record of the current ID Category browse_record
+#  - id_number: browse_record of ID number to validate
+
+<b><i># Sample 1: ID number only contains digits</i></b>
+if not id_number.name.isdigit():
+    failed = True
+else:
+    failed = False
+
+<b><i># Sample 2: Length of ID number cannot exceed 10 chars</i></b>
+failed = len(id_number.name) > 10 and True or False
+
+<b><i># Sample 3: ID number must start with the category code</i></b>
+failed = not id_number.name.startswith(self.code) and True or False
+                                </pre>
+                            </div>
+                        </group>
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>
