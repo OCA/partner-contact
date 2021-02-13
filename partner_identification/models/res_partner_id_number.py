@@ -68,3 +68,14 @@ class ResPartnerIdNumber(models.Model):
         ]
     )
     active = fields.Boolean(string="Active", default=True)
+
+    @api.model
+    def default_get(self, fields):
+        res = super(ResPartnerIdNumber, self).default_get(fields)
+        # It seems to be a bug in native odoo that the field partner_id
+        # is not in the fields list by default. A workaround is required
+        # to force this.
+        if "default_partner_id" in self._context and "partner_id" not in fields:
+            fields.append("partner_id")
+            res["partner_id"] = self._context.get("default_partner_id")
+        return res
