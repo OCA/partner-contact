@@ -4,19 +4,18 @@
 odoo.define("portal_partner_data_default.tour", function(require) {
     "use strict";
 
-    var tour = require("web_tour.tour");
-    var base = require("web_editor.base");
+    const tour = require("web_tour.tour");
 
-    var steps = [
+    const steps = [
         {
             trigger: "div.o_portal_my_details a:contains('Edit')",
         },
         {
-            trigger: "input[name=name]",
-            run: "Mr. Odoo",
+            trigger: "input[name='name']",
+            run: "text Mr. Odoo",
         },
         {
-            trigger: "button[type=submit]",
+            trigger: "button[type='submit']",
         },
     ];
     tour.register(
@@ -24,7 +23,6 @@ odoo.define("portal_partner_data_default.tour", function(require) {
         {
             url: "/my",
             test: true,
-            wait_for: base.ready(),
         },
         steps
     );
@@ -36,15 +34,14 @@ odoo.define("portal_partner_data_default.tour", function(require) {
 odoo.define("portal_partner_data_block.tour", function(require) {
     "use strict";
 
-    var tour = require("web_tour.tour");
-    var base = require("web_editor.base");
+    const tour = require("web_tour.tour");
 
-    var steps = [
+    const steps = [
         {
             trigger: "div.o_portal_my_details a:contains('View')",
         },
         {
-            trigger: "p[name=name]",
+            trigger: "p[name='name']",
         },
     ];
     tour.register(
@@ -52,7 +49,6 @@ odoo.define("portal_partner_data_block.tour", function(require) {
         {
             url: "/my",
             test: true,
-            wait_for: base.ready(),
         },
         steps
     );

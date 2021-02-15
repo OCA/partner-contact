@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <template id="assets_common" inherit_id="web.assets_common">
+    <template id="assets_tests" inherit_id="web.assets_tests">
         <xpath expr=".">
             <script
                 type="text/javascript"
