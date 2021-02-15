@@ -32,9 +32,9 @@ class SaleOrder(models.Model):
             # This should be handled in "string" mode, as the context can
             # contain a expression that can only be evaled on execution time
             # on the JS web client
-            context = xml_order_line[0].get('context', '{}').replace(
-                "{", "{'default_discount': default_sale_discount, ", 1
-            )
-            xml_order_line[0].set('context', context)
+            node_val = xml_order_line[0].get('context', '{}').strip()[1:-1]
+            elems = node_val.split(',') if node_val else []
+            to_add = ["'default_discount': default_sale_discount"]
+            xml_order_line[0].set('context', '{' + ', '.join(elems + to_add) + '}')
             res['arch'] = etree.tostring(eview)
         return res
