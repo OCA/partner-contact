@@ -13,5 +13,5 @@ class TestPartnerDefaultSaleDiscount(common.SavepointCase):
         xml_order_line = eview.xpath("//field[@name='order_line']")
         self.assertTrue(xml_order_line)
         self.assertIn(
-            "'default_discount': default_sale_discount,",
+            "'default_discount': default_sale_discount",
             xml_order_line[0].get('context', '{}'))
