@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="assets_tests" inherit_id="web.assets_tests">
+        <xpath expr=".">
+            <script
+                type="text/javascript"
+                src="/portal_partner_data_no_edit/static/src/js/portal_partner_data_no_edit_tour.js"
+            />
+        </xpath>
+    </template>
+</odoo>
