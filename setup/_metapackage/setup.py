@@ -52,6 +52,7 @@ setuptools.setup(
         'odoo13-addon-partner_second_lastname',
         'odoo13-addon-partner_tz',
         'odoo13-addon-partner_vat_unique',
+        'odoo13-addon-portal_partner_data_no_edit',
         'odoo13-addon-portal_partner_select_all',
     ],
     classifiers=[
