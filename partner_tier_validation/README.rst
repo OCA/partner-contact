@@ -2,9 +2,9 @@
    :target: https://www.gnu.org/licenses/agpl
    :alt: License: AGPL-3
 
-====================
+=======================
 Partner Tier Validation
-====================
+=======================
 
 This module extends the functionality of Partner to support a tier
 validation process.
