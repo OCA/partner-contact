@@ -1,96 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2019 Open Source Integrators
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 Open Source Integrators
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
 
     <record id="partner_form_tier" model="ir.ui.view">
         <field name="name">partner.form.tier</field>
         <field name="model">res.partner</field>
-	<field name="inherit_id" ref="base.view_partner_form"/> 
-	<!--<field name="inherit_id" ref="product.product_template_form_view"/>-->
-	<field name="arch" type="xml">
-		<xpath expr="/form/sheet" position="before">
+    <field name="inherit_id" ref="base.view_partner_form" />
+    <field name="arch" type="xml">
+        <xpath expr="/form/sheet" position="before">
               <header>
-          	 <field name="state" widget="statusbar" statusbar_visible="new, approved"/>
-                 <button name="request_validation"
-                    string="Request Validation"
-                    attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['new','to approve'])]}"
-                    type="object"/>
-                  <button name="restart_validation"
-                    string="Restart Validation"
-                    attrs="{'invisible': ['|',('review_ids', '=', []),('state','not in',['new','to approve'])]}"
-                    type="object"/>           		    
+             <field name="state" widget="statusbar" statusbar_visible="new, approved" />
+                 <button
+                        name="request_validation"
+                        string="Request Validation"
+                        attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['new','to approve'])]}"
+                        type="object"
+                    />
+                  <button
+                        name="restart_validation"
+                        string="Restart Validation"
+                        attrs="{'invisible': ['|',('review_ids', '=', []),('state','not in',['new','to approve'])]}"
+                        type="object"
+                    />
                </header>
             </xpath>
 
-	    <header position="after">
-                <field name="need_validation" invisible="1"/>
-                <field name="validated" invisible="1"/>
-		<field name="rejected" invisible="1"/>
-		<field name="reviewer_ids" invisible="1"/>
-                <div class="alert alert-warning"
-                     role="alert"
-                     attrs="{'invisible': ['|', '|', '|',
+        <header position="after">
+                <field name="need_validation" invisible="1" />
+                <field name="validated" invisible="1" />
+        <field name="rejected" invisible="1" />
+        <field name="reviewer_ids" invisible="1" />
+                <div
+                    class="alert alert-warning"
+                    role="alert"
+                    attrs="{'invisible': ['|', '|', '|',
                      ('validated', '=', True), ('state', 'not in', ['new','to approve']),
                      ('rejected', '=', True), ('review_ids', '=', [])]}"
-                     style="margin-bottom:0px;">
-                    <p><i class="fa fa-info-circle"/>This partner needs to be
+                    style="margin-bottom:0px;"
+                >
+                    <p><i class="fa fa-info-circle" />This partner needs to be
                         approved before it can have transactions.
-                        <field name="can_review" invisible="1"/>
-                        <button name="validate_tier"
-                                string="Validate"
-                                attrs="{'invisible': [('can_review', '=', False)]}"
-                                type="object"
-                                class="oe_inline oe_button btn-success"
-                                icon="fa-thumbs-up"/>
-                        <button name="reject_tier"
-                                string="Reject"
-                                attrs="{'invisible': [('can_review', '=', False)]}"
-                                type="object"
-                                class="btn-icon btn-danger"
-                                icon="fa-thumbs-down"/>
+                        <field name="can_review" invisible="1" />
+                        <button
+                            name="validate_tier"
+                            string="Validate"
+                            attrs="{'invisible': [('can_review', '=', False)]}"
+                            type="object"
+                            class="oe_inline oe_button btn-success"
+                            icon="fa-thumbs-up"
+                        />
+                        <button
+                            name="reject_tier"
+                            string="Reject"
+                            attrs="{'invisible': [('can_review', '=', False)]}"
+                            type="object"
+                            class="btn-icon btn-danger"
+                            icon="fa-thumbs-down"
+                        />
                     </p>
                 </div>
-                <div class="alert alert-success"
-                     role="alert"
-                     attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['new','to approve']), ('review_ids', '=', [])]}"
-                     style="margin-bottom:0px;">
-                    <p><i class="fa fa-thumbs-up"/> Partner has been <b>approved and now can have transactions</b>!</p>
+                <div
+                    class="alert alert-success"
+                    role="alert"
+                    attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['new','to approve']), ('review_ids', '=', [])]}"
+                    style="margin-bottom:0px;"
+                >
+                    <p><i class="fa fa-thumbs-up" /> Partner has been <b
+                        >approved and now can have transactions</b>!</p>
                 </div>
-                <div class="alert alert-danger"
-                     role="alert"
-                     attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['new','to approve']), ('review_ids', '=', [])]}"
-                     style="margin-bottom:0px;">
-                    <p><i class="fa fa-thumbs-down"/> Partner creation has been <b>rejected</b>.</p>
+                <div
+                    class="alert alert-danger"
+                    role="alert"
+                    attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['new','to approve']), ('review_ids', '=', [])]}"
+                    style="margin-bottom:0px;"
+                >
+                    <p><i class="fa fa-thumbs-down" /> Partner creation has been <b
+                        >rejected</b>.</p>
                 </div>
             </header>
             <xpath expr="//form/div[hasclass('oe_chatter')]" position="before">
-                <field name="review_ids" widget="tier_validation" attrs="{'invisible':[('review_ids', '=', [])]}"/>
-	        </xpath>
-	        <xpath expr="//group[@name='sale']/field[@name='customer']" position="attributes">
-		        <attribute name="attrs">{'readonly': [('can_review', '=', False)]}</attribute>
-            </xpath>	    
-	        <xpath expr="//group[@name='purchase']/field[@name='supplier']" position="attributes">
-		        <attribute name="attrs">{'readonly': [('can_review', '=', False)]}</attribute>
-            </xpath>	    
-            
+                <field
+                    name="review_ids"
+                    widget="tier_validation"
+                    attrs="{'invisible':[('review_ids', '=', [])]}"
+                />
+            </xpath>
+
         </field>
     </record>
-    
+
     <record id="partner_form_tier_filter" model="ir.ui.view">
         <field name="name">partner.form.tier.filter</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
         <field name="arch" type="xml">
-            <filter name="customer" position="before">
-                <filter name="needs_review" string="Needs my Review"
-                        domain="[('reviewer_ids','in',uid), ('state', 'not in', ['approved','to approve'])]"
-                        help="Partner(s) to review"/>
-		<!--<filter name="tier_validated" string="Validated"
-                        domain="[('validated', '=', True)]"
-			help="Partners validated or Approved"/>-->
+            <filter name="type_person" position="before">
+                <filter
+                    name="needs_review"
+                    string="Needs my Review"
+                    domain="[('reviewer_ids','in',uid), ('state', 'not in', ['approved','to approve'])]"
+                    help="Partner(s) to review"
+                />
             </filter>
         </field>
     </record>
-    
+
 </odoo>
