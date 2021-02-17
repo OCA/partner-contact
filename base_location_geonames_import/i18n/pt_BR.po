@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2019-09-17 17:24+0000\n"
+"PO-Revision-Date: 2020-08-12 18:59+0000\n"
 "Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
-"teams/23907/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
+"23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.8\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
@@ -43,6 +43,11 @@ msgstr ""
 "Converte nomes de cidades e estados recuperados em Maiúsculas (maiúsculas em "
 "cada primeira letra de uma palavra) ou Maiúsculas (todas as letras "
 "maiúsculas)."
+
+#. module: base_location_geonames_import
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__country_ids
+msgid "Countries"
+msgstr "Países"
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_res_country
@@ -75,13 +80,11 @@ msgstr ""
 "recente da lista de cidades de"
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__code_row_index
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_code_column
 msgid "Geonames State Code Column"
 msgstr "Coluna Código de estado dos nomes geográficos"
 
 #. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__name_row_index
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_name_column
 msgid "Geonames State Name Column"
 msgstr "Coluna Nome do estado dos nomes geográficos"

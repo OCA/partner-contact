@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="group_use_partner_industry_for_person" model="res.groups">
+        <field name="name">Use industry for individuals</field>
+        <field name="category_id" ref="base.module_category_hidden" />
+    </record>
+</odoo>

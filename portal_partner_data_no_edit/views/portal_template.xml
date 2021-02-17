@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<odoo>
+    <template id="o_portal_my_details" inherit_id="portal.portal_layout">
+        <xpath
+            expr="//div[hasclass('o_portal_my_details')]//h4/a[@href='/my/account']"
+            position="attributes"
+        >
+            <attribute name="t-if">not block_portal_data_edit</attribute>
+        </xpath>
+        <xpath
+            expr="//div[hasclass('o_portal_my_details')]//h4/a[@href='/my/account']"
+            position="after"
+        >
+            <a t-else="" role="button" href="/my/account" class="btn btn-sm btn-link"><i
+                    class="fa fa-eye"
+                /> View</a>
+        </xpath>
+    </template>
+</odoo>

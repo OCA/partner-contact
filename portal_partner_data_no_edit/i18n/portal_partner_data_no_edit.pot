@@ -1,0 +1,41 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* portal_partner_data_no_edit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: portal_partner_data_no_edit
+#: model_terms:ir.ui.view,arch_db:portal_partner_data_no_edit.o_portal_my_details
+msgid "<i class=\"fa fa-eye\"/> View"
+msgstr ""
+
+#. module: portal_partner_data_no_edit
+#: model:ir.model.fields,field_description:portal_partner_data_no_edit.field_res_partner__block_portal_data_edit
+#: model:ir.model.fields,field_description:portal_partner_data_no_edit.field_res_users__block_portal_data_edit
+msgid "Block Customer Info Edit"
+msgstr ""
+
+#. module: portal_partner_data_no_edit
+#: model:ir.model.fields,help:portal_partner_data_no_edit.field_res_partner__block_portal_data_edit
+#: model:ir.model.fields,help:portal_partner_data_no_edit.field_res_users__block_portal_data_edit
+msgid "Block portal info editing for the portal user linked to this partner"
+msgstr ""
+
+#. module: portal_partner_data_no_edit
+#: model:ir.model,name:portal_partner_data_no_edit.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: portal_partner_data_no_edit
+#: model:ir.model,name:portal_partner_data_no_edit.model_ir_ui_view
+msgid "View"
+msgstr ""

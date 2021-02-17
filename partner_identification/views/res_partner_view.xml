@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Modification of Partner - Adding Tab for Idenification Numbers -->
+    <record model="ir.ui.view" id="view_partner_form">
+        <field name="name">res.partner.form.id_number</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority" eval="10" />
+        <field name="arch" type="xml">
+            <page name='sales_purchases' position="after">
+                <page string="ID Numbers" name="id_numbers">
+                    <field
+                        name="id_numbers"
+                        colspan="4"
+                        nolabel="1"
+                        widget="one2many_list"
+                        context="{'default_partner_id': active_id}"
+                    />
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>
