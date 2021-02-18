@@ -8,10 +8,12 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     partner_delivery_id = fields.Many2one(
-        comodel_name="res.partner", string="Shipping address",
+        comodel_name="res.partner",
+        string="Shipping address",
     )
     partner_invoice_id = fields.Many2one(
-        comodel_name="res.partner", string="Invoice address",
+        comodel_name="res.partner",
+        string="Invoice address",
     )
 
     def get_address_default_type(self):
