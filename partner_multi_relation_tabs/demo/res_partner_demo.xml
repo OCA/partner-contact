@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Partners -->
+    <record id="partner_big_company" model="res.partner">
+        <field name="name">Big company</field>
+        <field name="is_company">1</field>
+        <field name="customer" eval="1"/>
+        <field name="ref">BIG</field>
+    </record>
+
+    <record id="partner_important_person" model="res.partner">
+        <field
+            name="category_id"
+            eval="[(6,0,[ref('category_functionary')])]"
+            />
+        <field name="name">Bart Simpson</field>
+        <field name="is_company">0</field>
+        <field name="ref">BS</field>
+    </record>
+
+    <record id="partner_common_person" model="res.partner">
+        <field name="name">Homer Simpson</field>
+        <field name="is_company">0</field>
+        <field name="ref">HS</field>
+    </record>
+
+    <record id="partner_programming_department" model="res.partner">
+        <field
+            name="category_id"
+            eval="[(6,0,[ref('category_department')])]"
+            />
+        <field name="name">Programming</field>
+        <field name="is_company">1</field>
+        <field name="ref">HACKDEP</field>
+    </record>
+
+    <record id="partner_helpdesk_department" model="res.partner">
+        <field
+            name="category_id"
+            eval="[(6,0,[ref('category_department')])]"
+            />
+        <field name="name">Helpdesk</field>
+        <field name="is_company">1</field>
+        <field name="ref">HELPDEP</field>
+    </record>
+
+</odoo>

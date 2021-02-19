@@ -20,6 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: partner_bank_active
+#: model:ir.model.fields,field_description:partner_bank_active.field_account_setup_bank_manual_config__active
 #: model:ir.model.fields,field_description:partner_bank_active.field_res_partner_bank__active
 msgid "Active"
 msgstr "Actif"

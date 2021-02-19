@@ -9,19 +9,20 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-22 03:38+0000\n"
-"PO-Revision-Date: 2017-11-22 03:38+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2019-12-29 01:13+0000\n"
+"Last-Translator: Carles Antoli <carlesantoli@hotmail.com>\n"
 "Language-Team: Catalan (https://www.transifex.com/oca/teams/23907/ca/)\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: base_location
 #: model:res.city,name:base_location.demo_brussels_city
 msgid "Brussels"
-msgstr ""
+msgstr "Brussel·les"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__country_enforce_cities
@@ -29,49 +30,57 @@ msgid ""
 "Check this box to ensure every address created in that country has a 'City' "
 "chosen in the list of the country's cities."
 msgstr ""
+"Marca aquesta opció per assegurar-te que cada adreça creada al país té una "
+"\"ciutat\" escollida de la llista de ciutats de país."
 
 #. module: base_location
 #: model:ir.actions.act_window,name:base_location.action_res_city_full
 #: model:ir.ui.menu,name:base_location.locations_menu_cities
 msgid "Cities"
-msgstr ""
+msgstr "Ciutats"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_city
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__city_id
 msgid "City"
-msgstr ""
+msgstr "Ciutat"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company__city_id
 msgid "City ID"
-msgstr ""
+msgstr "ID Ciutat"
 
 #. module: base_location
 #: model_terms:ir.ui.view,arch_db:base_location.view_company_form_city
 #: model_terms:ir.ui.view,arch_db:base_location.view_partner_form
 msgid "City completion"
+msgstr "Autocompletat a partir de la ciutat"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_partner__city_id
+#: model:ir.model.fields,field_description:base_location.field_res_users__city_id
+msgid "City of Address"
 msgstr ""
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_city_zip
 msgid "City/locations completion object"
-msgstr ""
+msgstr "Autocompletat d'objectes a partir de ciutats/ubicacions"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Empreses"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacte"
 
 #. module: base_location
 #: model_terms:ir.ui.view,arch_db:base_location.view_country_search
 msgid "Country"
-msgstr ""
+msgstr "País"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__create_uid
@@ -96,11 +105,17 @@ msgid ""
 "country separately\n"
 "            to enforce any address of it to have a city in this list."
 msgstr ""
+"Mostra i gestiona la llista de totes les ciutats a les quals es poden "
+"assignar\n"
+"             registres de client. Tingueu en compte que es pot configurar "
+"una opció a cada país per separat\n"
+"            per aplicar qualsevol adreça d'aquesta per tenir una ciutat "
+"d'aquesta llista."
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company__country_enforce_cities
 msgid "Enforce Cities"
-msgstr ""
+msgstr "Forçar ciutats"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__id
@@ -120,45 +135,45 @@ msgstr "Darrera Actualització per"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__write_date
 msgid "Last Updated on"
-msgstr "Darrera Actualització el"
+msgstr "Darrera actualització el"
 
 #. module: base_location
 #: model_terms:ir.ui.view,arch_db:base_location.view_partner_form
 msgid "Location completion"
-msgstr ""
+msgstr "Completar localització"
 
 #. module: base_location
 #: model:ir.actions.act_window,name:base_location.action_zip_tree
 msgid "Locations"
-msgstr ""
+msgstr "Localitzacions"
 
 #. module: base_location
 #: model_terms:ir.ui.view,arch_db:base_location.view_city_zip_filter
 msgid "Search zip"
-msgstr ""
+msgstr "Cercar codi postal"
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:69
+#: code:addons/base_location/models/res_partner.py:87
 #, python-format
 msgid "The city of partner %s differs from that in location %s"
-msgstr ""
+msgstr "La ciutat del contacte %s difereix de la localització %s"
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:65
+#: code:addons/base_location/models/res_partner.py:83
 #, python-format
 msgid "The country of the partner %s differs from that in location %s"
-msgstr ""
+msgstr "El país del client %s difereix del que es troba a la ubicació %s"
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:61
+#: code:addons/base_location/models/res_partner.py:79
 #, python-format
 msgid "The state of the partner %s differs from that in location %s"
-msgstr ""
+msgstr "L’estat del soci %s difereix del que es troba a la ubicació %s"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__zip_id
 msgid "Use the city name or the zip code to search the location"
-msgstr ""
+msgstr "Utilitzeu el nom de ciutat o el codi postal per trobar la posició"
 
 #. module: base_location
 #: sql_constraint:res.city:0
@@ -166,6 +181,8 @@ msgid ""
 "You already have a city with that name in the same state.The city must have "
 "a unique name within it's state and it's country"
 msgstr ""
+"Ja teniu una ciutat amb aquest nom al mateix estat. La ciutat ha de tenir un "
+"nom únic dins del seu estat i el seu país"
 
 #. module: base_location
 #: sql_constraint:res.city.zip:0
@@ -173,23 +190,25 @@ msgid ""
 "You already have a zip with that code in the same city. The zip code must be "
 "unique within it's city"
 msgstr ""
+"Ja teniu un codi postal amb aquest codi a la mateixa ciutat. El codi postal "
+"ha de ser únic a la ciutat"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__name
 msgid "ZIP"
-msgstr ""
+msgstr "C,P"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company__zip_id
 #: model:ir.model.fields,field_description:base_location.field_res_partner__zip_id
 #: model:ir.model.fields,field_description:base_location.field_res_users__zip_id
 msgid "ZIP Location"
-msgstr ""
+msgstr "Codi postal"
 
 #. module: base_location
 #: model_terms:ir.ui.view,arch_db:base_location.city_zip_form
 msgid "Zip"
-msgstr ""
+msgstr "Codi postal"
 
 #. module: base_location
 #: model:ir.ui.menu,name:base_location.locations_menu_zips
@@ -197,12 +216,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_location.view_city_form
 #: model_terms:ir.ui.view,arch_db:base_location.view_res_country_city_better_zip_form
 msgid "Zips"
-msgstr ""
+msgstr "Codis postals"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city__zip_ids
 msgid "Zips in this city"
-msgstr ""
+msgstr "Codis postals en aquesta ciutat"
 
 #~ msgid "Group By"
 #~ msgstr "Agrupa Per"

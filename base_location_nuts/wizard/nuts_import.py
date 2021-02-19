@@ -14,7 +14,7 @@ from collections import OrderedDict
 logger = logging.getLogger(__name__)
 
 # Default server values
-URL_BASE = 'http://ec.europa.eu'
+URL_BASE = 'https://ec.europa.eu'
 URL_PATH = '/eurostat/ramon/nomenclatures/index.cfm'
 URL_PARAMS = {'TargetUrl': 'ACT_OTH_CLS_DLD',
               'StrNom': 'NUTS_2013',
@@ -176,7 +176,10 @@ class NutsImport(models.TransientModel):
         if nuts:
             nuts.filtered(lambda n: not n.not_updatable).write(data)
         else:
-            nuts = nuts_model.create(data)
+            if data.get('country_id', False):
+                nuts = nuts_model.create(data)
+            else:
+                logger.info(_('Missing country_id for %s') % data)
         if level >= 1 and level <= 4:
             self._parents[level - 1] = nuts.id
         return nuts

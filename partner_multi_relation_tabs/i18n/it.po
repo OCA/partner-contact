@@ -1,0 +1,268 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_multi_relation_tabs
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2020-05-12 09:19+0000\n"
+"Last-Translator: Samuele Mariani <samuele@ooops404.com>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model,name:partner_multi_relation_tabs.model_res_partner_relation_all
+msgid "All (non-inverse + inverse) relations between partners"
+msgstr "Tutte le relazioni (non inverse + inverse) tra i partner"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model,name:partner_multi_relation_tabs.model_res_partner_relation_type_selection
+msgid "All relation types"
+msgstr "Tutti i tipi di relazione"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__code
+msgid "Code"
+msgstr "Codice"
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.tab,name:partner_multi_relation_tabs.tab_board
+msgid "Company executive board"
+msgstr "Consiglio di amministrazione dell'azienda"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model,name:partner_multi_relation_tabs.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_multi_relation_tabs
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:33
+#, python-format
+msgid "Contact type left not compatible with left tab"
+msgstr "Tipo di contatto a sinistra non compatibile con la scheda sinistra"
+
+#. module: partner_multi_relation_tabs
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:53
+#, python-format
+msgid "Contact type right not compatible with right tab"
+msgstr "Tipo di contatto destro non compatibile con la scheda destra"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.category,name:partner_multi_relation_tabs.category_department
+msgid "Department"
+msgstr "Dipartimento"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__display_name
+msgid "Display Name"
+msgstr "Nome da visualizzato"
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.category,name:partner_multi_relation_tabs.category_functionary
+msgid "Functionary"
+msgstr "Funzionario"
+
+#. module: partner_multi_relation_tabs
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation_tabs.form_res_partner_tab
+msgid "General"
+msgstr "Generale"
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.category,name:partner_multi_relation_tabs.category_government
+msgid "Government"
+msgstr "Governo"
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.tab,name:partner_multi_relation_tabs.tab_committee
+msgid "Government committee"
+msgstr "Comitato governativo"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_tab__code
+msgid "Language independent code for tab"
+msgstr "Codice indipendente dalla lingua per scheda"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.tab,name:partner_multi_relation_tabs.tab_departments
+msgid "Our departments"
+msgstr "I nostri dipartimenti"
+
+#. module: partner_multi_relation_tabs
+#: code:addons/partner_multi_relation_tabs/tablib/tab.py:56
+#, python-format
+msgid "Partner"
+msgstr "Partner"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model,name:partner_multi_relation_tabs.model_res_partner_relation_type
+msgid "Partner Relation Type"
+msgstr "Tipo di relazione del partner"
+
+#. module: partner_multi_relation_tabs
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:38
+#, python-format
+msgid "Partner category left not compatible with left tab"
+msgstr "Categoria partner a sinistra non compatibile con la scheda sinistra"
+
+#. module: partner_multi_relation_tabs
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:58
+#, python-format
+msgid "Partner category right not compatible with right tab"
+msgstr "Categoria partner destra non compatibile con la scheda destra"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__partner_ids
+msgid "Partners with this tab"
+msgstr "Partner con questa scheda"
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.tab,name:partner_multi_relation_tabs.tab_positions
+msgid "Positions held"
+msgstr "Posizioni detenute"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.actions.act_window,name:partner_multi_relation_tabs.action_res_partner_tab
+#: model:ir.ui.menu,name:partner_multi_relation_tabs.menu_res_partner_tab
+msgid "Relation Tabs"
+msgstr "Schede relazione"
+
+#. module: partner_multi_relation_tabs
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation_tabs.form_res_partner_tab
+msgid "Select partner type and category for tab"
+msgstr "Seleziona il tipo e la categoria del partner per la scheda"
+
+#. module: partner_multi_relation_tabs
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation_tabs.form_res_partner_tab
+msgid "Select specific partners to have this tab"
+msgstr "Seleziona partner specifici per avere questa scheda"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_all__tab_id
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_type_selection__tab_id
+msgid "Show relation on tab"
+msgstr "Mostra relazione nella Scheda"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_type__tab_right_id
+msgid "Tab for inverse relation"
+msgstr "Scheda per relazione inversa"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_relation_type__tab_left_id
+msgid "Tab for this relation"
+msgstr "Scheda per questa relazione"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_relation_type__tab_right_id
+msgid "Tab in which inverse relations will be visible on partner."
+msgstr "Scheda in cui le relazioni inverse saranno visibili sul partner."
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_relation_type__tab_left_id
+msgid "Tab in which these relations will be visible on partner."
+msgstr "Scheda in cui queste relazioni saranno visibili sul partner."
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model,name:partner_multi_relation_tabs.model_res_partner_tab
+msgid "Tabs to add to partner"
+msgstr "Schede da aggiungere al partner"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_tab__partner_ids
+msgid "This tab will only show for certain partners.\n"
+"Do not combine this with selection for contact type or category."
+msgstr ""
+"Questa scheda verrà visualizzata solo per determinati partner. Non associare "
+"questo con la selezione per tipo di contratto o categoria."
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__partner_category_id
+msgid "Valid for partner category"
+msgstr "Valido per la categoria del partner"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__contact_type
+msgid "Valid for partner type"
+msgstr "Valido per il tipo di partner"
+
+#. module: partner_multi_relation_tabs
+#: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_tab__name
+msgid "Will provide title for tab in user language"
+msgstr "Fornirà il titolo per la scheda nella lingua dell'utente"
+
+#. module: partner_multi_relation_tabs
+#: code:addons/partner_multi_relation_tabs/models/res_partner_tab.py:49
+#, python-format
+msgid "You can not both specify partner_ids and other criteria."
+msgstr "Non è possibile specificare sia partner_ids sia altri criteri."
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.relation.type,name:partner_multi_relation_tabs.relation_type_company_has_ceo
+msgid "has ceo"
+msgstr "ha amministratore delegato"
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.relation.type,name:partner_multi_relation_tabs.relation_type_committee_has_chairperson
+msgid "has chairperson"
+msgstr "ha un presidente"
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.relation.type,name:partner_multi_relation_tabs.relation_type_organisation_has_department
+msgid "has department"
+msgstr "ha un dipartimento"
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation_tabs.relation_type_company_has_ceo
+msgid "is ceo of"
+msgstr "è amministratore delegato di"
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation_tabs.relation_type_committee_has_chairperson
+msgid "is chairperson of"
+msgstr "è presidente di"
+
+#. module: partner_multi_relation_tabs
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation_tabs.relation_type_organisation_has_department
+msgid "is department of"
+msgstr "è il dipartimento di"

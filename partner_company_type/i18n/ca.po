@@ -9,41 +9,56 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2017-11-21 01:49+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2020-01-12 21:13+0000\n"
+"Last-Translator: Carles Antoli <carlesantoli@hotmail.com>\n"
 "Language-Team: Catalan (https://www.transifex.com/oca/teams/23907/ca/)\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: partner_company_type
 #: model:res.partner.company.type,shortcut:partner_company_type.res_partner_company_type_sa
 msgid "AC"
-msgstr ""
+msgstr "AC"
 
 #. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__shortcut
 msgid "Abbreviation"
+msgstr "Abreviatura"
+
+#. module: partner_company_type
+#: model:ir.model.fields,help:partner_company_type.field_res_partner_company_type__country_id
+msgid ""
+"Allows this company type to be selected on partners from this country only. "
+"Leave it blank if you want it to appear on any partner."
 msgstr ""
+"Permet seleccionar aquest tipus d’empresa només a les empreses d’aquest "
+"país. Deixeu-lo en blanc si voleu que aparegui a qualsevol empresa."
 
 #. module: partner_company_type
 #: model:res.partner.company.type,name:partner_company_type.res_partner_company_type_sa
 msgid "Anonymous Company"
-msgstr ""
+msgstr "Empresa anònima"
 
 #. module: partner_company_type
 #: model:ir.actions.act_window,name:partner_company_type.res_partner_company_type_act_window
 #: model:ir.ui.menu,name:partner_company_type.menu_partner_company_type
 #: model_terms:ir.ui.view,arch_db:partner_company_type.res_partner_company_type_form_view
 msgid "Company Types"
-msgstr ""
+msgstr "Tipus d’empresa"
 
 #. module: partner_company_type
 #: model:ir.model,name:partner_company_type.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacte"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__country_id
+msgid "Country"
+msgstr "País"
 
 #. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__create_uid
@@ -78,13 +93,13 @@ msgstr "Darrera Actualització per"
 #. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__write_date
 msgid "Last Updated on"
-msgstr "Darrera Actualització el"
+msgstr "Darrera actualització el"
 
 #. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner__partner_company_type_id
 #: model:ir.model.fields,field_description:partner_company_type.field_res_users__partner_company_type_id
 msgid "Legal Form"
-msgstr ""
+msgstr "Formulari legal"
 
 #. module: partner_company_type
 #: model:ir.model,name:partner_company_type.model_res_partner_company_type
@@ -99,7 +114,7 @@ msgstr ""
 #. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__name
 msgid "Title"
-msgstr ""
+msgstr "Títol"
 
 #~ msgid "Partner"
 #~ msgstr "Empresa"

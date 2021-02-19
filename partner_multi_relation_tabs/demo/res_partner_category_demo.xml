@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Categories -->
+    <record id="category_government" model="res.partner.category">
+        <field name="name">Government</field>
+    </record>
+
+    <record id="category_functionary" model="res.partner.category">
+        <field name="name">Functionary</field>
+    </record>
+
+    <record id="category_department" model="res.partner.category">
+        <field name="name">Department</field>
+    </record>
+
+</odoo>
