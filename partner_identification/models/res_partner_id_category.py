@@ -46,7 +46,7 @@ class ResPartnerIdCategory(models.Model):
         python validation code fails
         """
         self.ensure_one()
-        if self.env.context.get("id_no_validate"):
+        if self.env.context.get("id_no_validate") or not self.validation_code:
             return
         eval_context = self._validation_eval_context(id_number)
         try:
