@@ -3,12 +3,12 @@
 
 {
     "name": "Partner pricelist search",
-    "version": "12.0.1.0.0",
-    "author": "Tecnativa," "Odoo Community Association (OCA)",
+    "version": "13.0.1.0.0",
+    "author": "Tecnativa,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "category": "Partner Management",
-    "depends": ["product",],
-    "data": ["views/product_pricelist_views.xml",],
+    "depends": ["product"],
+    "data": ["views/product_pricelist_views.xml"],
     "installable": True,
     "license": "AGPL-3",
 }
