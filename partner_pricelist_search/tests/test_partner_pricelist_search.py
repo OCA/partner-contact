@@ -10,16 +10,16 @@ class TestPartnerPricelistSearch(common.SavepointCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.pricelist_1 = cls.env["product.pricelist"].create(
-            {"name": "Test pricelist 1",}
+            {"name": "Test pricelist 1"}
         )
         cls.pricelist_2 = cls.env["product.pricelist"].create(
-            {"name": "Test pricelist 2",}
+            {"name": "Test pricelist 2"}
         )
         cls.customer_1 = cls.env["res.partner"].create(
-            {"name": "Test customer 1", "property_product_pricelist": cls.pricelist_1,}
+            {"name": "Test customer 1", "property_product_pricelist": cls.pricelist_1}
         )
         cls.customer_2 = cls.env["res.partner"].create(
-            {"name": "Test customer 2", "property_product_pricelist": cls.pricelist_2,}
+            {"name": "Test customer 2", "property_product_pricelist": cls.pricelist_2}
         )
         cls.partner_obj = cls.env["res.partner"]
 
