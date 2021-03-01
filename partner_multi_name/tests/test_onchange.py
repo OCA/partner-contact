@@ -1,7 +1,11 @@
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-# Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L.U.
+# Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L.U. - Jairo Llopis
 # Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
-
+# Copyright 2017 Tecnativa - Pedro M. Baeza
+# Copyright 2018 EXA Auto Parts S.A.S Guillermo Montoya <Github@guillermm>
+# Copyright 2018 EXA Auto Parts S.A.S Joan Marín <Github@JoanMarin>
+# Copyright 2020 EXA Auto Parts S.A.S Juan Ocampo <Github@Capriatto>
+# Copyright 2021 EXA Auto Parts S.A.S Alejandro Olano <Github@alejo-code>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 """These tests try to mimic the behavior of the UI form.
 
 The form operates in onchange mode, with its limitations.
@@ -15,8 +19,8 @@ class OnChangeCase(TransactionCase):
 
     def setUp(self):
         super(OnChangeCase, self).setUp()
-        self.env['ir.config_parameter'].set_param(
-            'partner_names_order', 'last_first_comma')
+        self.env['ir.config_parameter'].set_param('partner_names_order',
+                                                  'last_first_comma')
 
     def new_partner(self):
         """Create an empty partner. Ensure it is (or not) a company."""
@@ -163,9 +167,8 @@ class PartnerContactCase(OnChangeCase):
             self.set_field("lastname2", lastname2)
 
             self.assertEqual(self.partner.firstname, False)
-            self.assertEqual(
-                self.partner.name,
-                "%s %s" % (lastname, lastname2))
+            self.assertEqual(self.partner.name,
+                             "%s %s" % (lastname, lastname2))
 
     def test_create_from_without_lastname(self):
         """A user creates a contact without lastname from the form."""
@@ -180,9 +183,8 @@ class PartnerContactCase(OnChangeCase):
             self.set_field("lastname2", lastname2)
 
             self.assertEqual(self.partner.lastname, False)
-            self.assertEqual(
-                self.partner.name,
-                "%s, %s" % (lastname2, firstname))
+            self.assertEqual(self.partner.name,
+                             "%s, %s" % (lastname2, firstname))
 
     def test_create_from_without_lastname2(self):
         """A user creates a contact without lastname2 from the form."""
@@ -197,9 +199,8 @@ class PartnerContactCase(OnChangeCase):
             self.set_field("lastname", lastname)
 
             self.assertEqual(self.partner.lastname2, False)
-            self.assertEqual(
-                self.partner.name,
-                "%s, %s" % (lastname, firstname))
+            self.assertEqual(self.partner.name,
+                             "%s, %s" % (lastname, firstname))
 
     def test_create_from_form_all(self):
         """A user creates a contact with all names from the form."""
@@ -215,6 +216,5 @@ class PartnerContactCase(OnChangeCase):
             self.set_field("lastname", lastname)
             self.set_field("lastname2", lastname2)
 
-            self.assertEqual(
-                self.partner.name,
-                "%s %s, %s" % (lastname, lastname2, firstname))
+            self.assertEqual(self.partner.name,
+                             "%s %s, %s" % (lastname, lastname2, firstname))
