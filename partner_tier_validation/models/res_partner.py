@@ -1,10 +1,10 @@
-# Copyright 2021 Open Source Integrators
+# Copyright 2019 Open Source Integrators
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import fields, models
 
 
-class ResPartner11(models.Model):
+class ResPartner(models.Model):
     _name = "res.partner"
     _inherit = ["res.partner", "tier.validation", "mail.activity.mixin"]
     _state_from = ["new", "to approve"]
