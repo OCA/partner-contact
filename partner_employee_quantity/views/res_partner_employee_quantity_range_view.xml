@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="employees_range_action" model="ir.actions.act_window">
+        <field name="name">Ranges by quantity of employees</field>
+        <field name="res_model">res.partner.employee_quantity_range</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <record id="employees_range_tree_view" model="ir.ui.view">
+        <field name="name">Quantity of employees ranges tree</field>
+        <field name="model">res.partner.employee_quantity_range</field>
+        <field name="arch" type="xml">
+            <tree string="Ranges by quantity of employees" editable="top">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <menuitem
+        action="employees_range_action"
+        id="menu_employees_range"
+        parent="contacts.res_partner_menu_config"
+        sequence="0"
+    />
+</odoo>
