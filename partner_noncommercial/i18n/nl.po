@@ -31,11 +31,6 @@ msgstr "Organisaties"
 
 #. module: partner_noncommercial
 #: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
-msgid "Type of contact/address"
-msgstr "Soort contact/adres"
-
-#. module: partner_noncommercial
-#: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
 msgid "With address"
 msgstr "Met adres"
 
@@ -43,3 +38,6 @@ msgstr "Met adres"
 #: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
 msgid "With email"
 msgstr "Met email"
+
+#~ msgid "Type of contact/address"
+#~ msgstr "Soort contact/adres"
