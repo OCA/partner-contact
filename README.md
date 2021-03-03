@@ -19,6 +19,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[base_country_state_translatable](base_country_state_translatable/) | 14.0.1.0.0 | Translate Country States
 [base_location](base_location/) | 14.0.1.0.1 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 14.0.1.0.0 | Import zip entries from Geonames
 [partner_company_group](partner_company_group/) | 14.0.1.0.1 | Adds the possibility to add a company group to a company
