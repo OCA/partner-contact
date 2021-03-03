@@ -15,7 +15,7 @@ class Pricelist(models.Model):
         partners = self.env["res.partner"].search(domain)
         action = self.env.ref("base.action_partner_form")
         res = action.read()[0]
-        res['domain'] = [
-            ('id', 'in', partners.ids),
+        res["domain"] = [
+            ("id", "in", partners.ids),
         ]
         return res
