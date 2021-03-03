@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo14-addon-base_country_state_translatable',
         'odoo14-addon-base_location',
         'odoo14-addon-base_location_geonames_import',
+        'odoo14-addon-partner_address_version',
         'odoo14-addon-partner_company_group',
         'odoo14-addon-partner_company_type',
         'odoo14-addon-partner_contact_access_link',
