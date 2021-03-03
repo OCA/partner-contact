@@ -33,6 +33,7 @@ addon | version | summary
 [partner_contact_lang](partner_contact_lang/) | 14.0.1.0.0 | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 14.0.1.0.1 | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 14.0.1.0.0 | Add a page to contacts form to put personal information
+[partner_employee_quantity](partner_employee_quantity/) | 14.0.1.0.0 | Know how many employees a partner has
 [partner_fax](partner_fax/) | 14.0.1.0.0 | Add fax number on partner
 [partner_firstname](partner_firstname/) | 14.0.1.0.1 | Split first name and last name for non company partners
 [partner_iterative_archive](partner_iterative_archive/) | 14.0.1.0.1 | Archive all contacts when parent is archived
