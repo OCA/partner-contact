@@ -22,6 +22,7 @@ addon | version | summary
 [base_country_state_translatable](base_country_state_translatable/) | 14.0.1.0.0 | Translate Country States
 [base_location](base_location/) | 14.0.1.0.1 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 14.0.1.0.0 | Import zip entries from Geonames
+[partner_address_version](partner_address_version/) | 14.0.1.0.0 | Partner Address Version
 [partner_company_group](partner_company_group/) | 14.0.1.0.1 | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 14.0.1.0.1 | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 14.0.1.0.0 | Allow to visit the full contact form from a company
