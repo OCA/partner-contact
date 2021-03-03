@@ -1,4 +1,4 @@
-# Copyright 2021 Open Source Integrators
+# Copyright 2019 Open Source Integrators
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Partner Tier Validation",
@@ -11,7 +11,7 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["contacts", "base_tier_validation", "partner_autocomplete"],
+    "depends": ["contacts", "base_tier_validation"],
     "data": [
         "views/res_partner_view.xml",
     ],
