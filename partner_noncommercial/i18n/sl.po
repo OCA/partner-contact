@@ -21,5 +21,25 @@ msgstr ""
 
 #. module: partner_noncommercial
 #: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+msgid "City"
+msgstr ""
+
+#. module: partner_noncommercial
+#: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+msgid "Organisation"
+msgstr ""
+
+#. module: partner_noncommercial
+#: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
 msgid "Organisations"
 msgstr "Organizacije"
+
+#. module: partner_noncommercial
+#: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+msgid "With address"
+msgstr ""
+
+#. module: partner_noncommercial
+#: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+msgid "With email"
+msgstr ""
