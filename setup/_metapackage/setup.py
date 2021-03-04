@@ -62,6 +62,7 @@ setuptools.setup(
         'odoo12-addon-partner_pricelist_search',
         'odoo12-addon-partner_priority',
         'odoo12-addon-partner_ref_unique',
+        'odoo12-addon-partner_route',
         'odoo12-addon-partner_second_lastname',
         'odoo12-addon-partner_vat_unique',
         'odoo12-addon-portal_partner_data_no_edit',
