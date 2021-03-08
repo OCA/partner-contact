@@ -6,12 +6,12 @@
         <field name="model">animal</field>
         <field name="arch" type="xml">
             <tree string="Animals">
-                <field name="ref"/>
-                <field name="name"/>
-                <field name="gender"/>
-                <field name="species_id"/>
-                <field name="breed_id"/>
-                <field name="color_id"/>
+                <field name="ref" />
+                <field name="name" />
+                <field name="gender" />
+                <field name="species_id" />
+                <field name="breed_id" />
+                <field name="color_id" />
             </tree>
         </field>
     </record>
@@ -22,44 +22,62 @@
         <field name="model">animal</field>
         <field name="arch" type="xml">
             <form string="Animal">
-                <header/>
+                <header />
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="toggle_active" type="object"
-                                class="oe_stat_button" icon="fa-archive">
-                            <field name="active" widget="boolean_button"
-                                options='{"terminology": "archive"}'/>
+                        <button
+                            name="toggle_active"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-archive"
+                        >
+                            <field
+                                name="active"
+                                widget="boolean_button"
+                                options='{"terminology": "archive"}'
+                            />
                         </button>
                     </div>
-                    <field name="image" widget='image' class="oe_avatar"/>
+                    <field name="image" widget='image' class="oe_avatar" />
                     <div class="oe_title">
                         <h1>
-                            <field name="name"/>
+                            <field name="name" />
                         </h1>
-                        <field name="gender" widget="radio"
-                            options="{'horizontal': true}"/>
+                        <field
+                            name="gender"
+                            widget="radio"
+                            options="{'horizontal': true}"
+                        />
                     </div>
                     <group id="main">
                         <group id="left">
-                            <field name="species_id"/>
-                            <field name="breed_id" domain="[('species_id', '=', species_id)]"/>
-                            <field name="color_id" domain="[('breed_id', '=', breed_id)]"/>
-                            <field name="size"/>
+                            <field name="species_id" />
+                            <field
+                                name="breed_id"
+                                domain="[('species_id', '=', species_id)]"
+                            />
+                            <field
+                                name="color_id"
+                                domain="[('breed_id', '=', breed_id)]"
+                            />
+                            <field name="size" />
                         </group>
                         <group id="right">
-                            <field name="ref"/>
-                            <field name="weight"/>
-                            <field name="birth_date"/>
+                            <field name="ref" />
+                            <field name="weight" />
+                            <field name="birth_date" />
                         </group>
                     </group>
-                    <notebook/>
+                    <notebook />
                 </sheet>
                 <div class="oe_chatter">
-                    <field name="message_follower_ids"
-                           widget="mail_followers"/>
-                    <field name="activity_ids" widget="mail_activity"/>
-                    <field name="message_ids" widget="mail_thread"
-                           options="{'post_refresh': 'recipients'}"/>
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field
+                        name="message_ids"
+                        widget="mail_thread"
+                        options="{'post_refresh': 'recipients'}"
+                    />
                 </div>
             </form>
         </field>
@@ -71,26 +89,46 @@
         <field name="model">animal</field>
         <field name="arch" type="xml">
             <kanban class="o_res_partner_kanban">
-                    <field name="id"/>
-                    <field name="image"/>
-                    <field name="name"/>
+                    <field name="id" />
+                    <field name="image" />
+                    <field name="name" />
                     <templates>
                         <t t-name="kanban-box">
-                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                            <div
+                            class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban"
+                        >
                                 <t t-if="record.image.raw_value">
-                                    <img class="o_kanban_image" t-att-src="kanban_image('animal', 'image', record.id.raw_value)" t-att-alt="record.name"/>
+                                    <img
+                                    class="o_kanban_image"
+                                    t-att-src="kanban_image('animal', 'image', record.id.raw_value)"
+                                    t-att-alt="record.name"
+                                />
                                 </t>
                                 <t t-else="">
-                                    <img class="o_kanban_image" alt="Avatar" t-att-src='_s + "/animal/static/img/avatar.png"'/>
+                                    <img
+                                    class="o_kanban_image"
+                                    alt="Avatar"
+                                    t-att-src='_s + "/animal/static/img/avatar.png"'
+                                />
                                 </t>
                                 <div class="oe_kanban_details">
-                                    <strong class="o_kanban_record_title oe_partner_heading"><field name="display_name"/></strong>
-                                    <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                    <strong
+                                    class="o_kanban_record_title oe_partner_heading"
+                                ><field name="display_name" /></strong>
+                                    <div
+                                    class="o_kanban_tags_section oe_kanban_partner_categories"
+                                />
                                     <ul>
-                                        <li t-if="record.gender.raw_value"><field name="gender"/></li>
-                                        <li t-if="record.species_id.raw_value and record.breed_id.raw_value"><field name="breed_id"/>, <field name="species_id"/></li>
+                                        <li t-if="record.gender.raw_value"><field
+                                            name="gender"
+                                        /></li>
+                                        <li
+                                        t-if="record.species_id.raw_value and record.breed_id.raw_value"
+                                    ><field name="breed_id" />, <field
+                                            name="species_id"
+                                        /></li>
                                     </ul>
-                                    <div class="oe_kanban_partner_links"/>
+                                    <div class="oe_kanban_partner_links" />
                                 </div>
                             </div>
                         </t>
@@ -105,36 +143,58 @@
         <field name="model">animal</field>
         <field name="arch" type="xml">
             <search string="Animals">
-                <field name="name"
-                       filter_domain="['|', ('name', 'ilike', self), ('ref', 'ilike', self)]"
-                       string="Name"/>
-                <field name="species_id"/>
-                <field name="breed_id"/>
-                <field name="color_id"/>
-                <field name="size"/>
-                <separator/>
-                <filter string="Female"
-                        domain="[('gender', '=', 'female')]"
-                        name="female"/>
-                <filter string="Male"
-                        domain="[('gender', '=', 'male')]"
-                        name="male"/>
-                <filter string="Hermaphrodite"
-                        domain="[('gender', '=', 'hermaphrodite')]"
-                        name="hermaphrodite"/>
-                <filter string="Neutered"
-                        domain="[('gender', '=', 'neutered')]"
-                        name="neutered"/>
-                <separator/>
+                <field
+                    name="name"
+                    filter_domain="['|', ('name', 'ilike', self), ('ref', 'ilike', self)]"
+                    string="Name"
+                />
+                <field name="species_id" />
+                <field name="breed_id" />
+                <field name="color_id" />
+                <field name="size" />
+                <separator />
+                <filter
+                    string="Female"
+                    domain="[('gender', '=', 'female')]"
+                    name="female"
+                />
+                <filter string="Male" domain="[('gender', '=', 'male')]" name="male" />
+                <filter
+                    string="Hermaphrodite"
+                    domain="[('gender', '=', 'hermaphrodite')]"
+                    name="hermaphrodite"
+                />
+                <filter
+                    string="Neutered"
+                    domain="[('gender', '=', 'neutered')]"
+                    name="neutered"
+                />
+                <separator />
                 <group expand="0" string="Group By">
-                    <filter name="gender" string="Gender" domain=""
-                            context="{'group_by': 'gender'}"/>
-                    <filter name="species_id" string="Species" domain=""
-                            context="{'group_by': 'species_id'}"/>
-                    <filter name="breed_id" string="Breed" domain=""
-                            context="{'group_by': 'breed_id'}"/>
-                    <filter name="color_id" string="Color" domain=""
-                            context="{'group_by': 'color_id'}"/>
+                    <filter
+                        name="gender"
+                        string="Gender"
+                        domain=""
+                        context="{'group_by': 'gender'}"
+                    />
+                    <filter
+                        name="species_id"
+                        string="Species"
+                        domain=""
+                        context="{'group_by': 'species_id'}"
+                    />
+                    <filter
+                        name="breed_id"
+                        string="Breed"
+                        domain=""
+                        context="{'group_by': 'breed_id'}"
+                    />
+                    <filter
+                        name="color_id"
+                        string="Color"
+                        domain=""
+                        context="{'group_by': 'color_id'}"
+                    />
                 </group>
             </search>
         </field>
@@ -145,7 +205,7 @@
         <field name="res_model">animal</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
-        <field name="search_view_id" ref="view_animal_search"/>
+        <field name="search_view_id" ref="view_animal_search" />
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create an animal.
