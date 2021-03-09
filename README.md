@@ -30,6 +30,7 @@ addon | version | summary
 [base_vat_sanitized](base_vat_sanitized/) | 10.0.1.0.0 | Adds field sanitized_vat on partners
 [partner_academic_title](partner_academic_title/) | 10.0.1.0.0 | Add possibility to define some academic title
 [partner_address_street3](partner_address_street3/) | 10.0.1.0.1 | Add a third address line on partners
+[partner_address_two_lines](partner_address_two_lines/) | 10.0.1.0.0 | The company and the partner name are on two different lines
 [partner_address_version](partner_address_version/) | 10.0.1.0.0 | Partner Address Version
 [partner_affiliate](partner_affiliate/) | 10.0.1.0.0 | Partner Affiliates
 [partner_alias](partner_alias/) | 10.0.1.0.0 | Adds aliases to partner names.
