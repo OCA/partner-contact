@@ -42,7 +42,6 @@
     <record id="action_animal_species" model="ir.actions.act_window">
         <field name="name">Species</field>
         <field name="res_model">animal.species</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
