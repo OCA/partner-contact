@@ -18,6 +18,7 @@ setuptools.setup(
         'odoo10-addon-base_vat_sanitized',
         'odoo10-addon-partner_academic_title',
         'odoo10-addon-partner_address_street3',
+        'odoo10-addon-partner_address_two_lines',
         'odoo10-addon-partner_address_version',
         'odoo10-addon-partner_affiliate',
         'odoo10-addon-partner_alias',
