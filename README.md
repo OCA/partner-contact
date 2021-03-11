@@ -22,6 +22,7 @@ addon | version | summary
 [base_country_state_translatable](base_country_state_translatable/) | 14.0.1.0.0 | Translate Country States
 [base_location](base_location/) | 14.0.1.0.1 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 14.0.1.0.0 | Import zip entries from Geonames
+[base_partner_sequence](base_partner_sequence/) | 14.0.1.0.0 | Sets customer's code from a sequence
 [partner_address_version](partner_address_version/) | 14.0.1.0.0 | Partner Address Version
 [partner_affiliate](partner_affiliate/) | 14.0.1.0.1 | Partner Affiliates
 [partner_company_group](partner_company_group/) | 14.0.1.0.1 | Adds the possibility to add a company group to a company
