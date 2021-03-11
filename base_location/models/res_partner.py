@@ -5,12 +5,19 @@
 from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
 
+ADDRESS_FIELDS = ('zip_id', 'city_id')
+
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     zip_id = fields.Many2one('res.city.zip', 'ZIP Location', index=True)
     city_id = fields.Many2one(index=True)  # add index for performance
+
+    @api.model
+    def _address_fields(self):
+        """Returns the list of address fields that are synced from the parent."""
+        return super()._address_fields() + list(ADDRESS_FIELDS)
 
     @api.onchange('city_id')
     def _onchange_city_id(self):
