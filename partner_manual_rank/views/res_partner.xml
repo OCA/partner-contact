@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">partner_manual_rank.view_partner_filter</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="model">res.partner</field>
+        <field type="xml" name="arch">
+            <field name="parent_id" position="after">
+                <field name="is_customer" />
+                <field name="is_supplier" />
+            </field>
+        </field>
+    </record>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">partner_manual_rank.view_partner_form</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="model">res.partner</field>
+        <field type="xml" name="arch">
+            <xpath expr="//field[@name='child_ids']/kanban/templates" position="before">
+                <field name="is_customer" />
+                <field name="is_supplier" />
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form/sheet" position="inside">
+                <field name="is_customer" invisible="1" />
+                <field name="is_supplier" invisible="1" />
+            </xpath>
+            <xpath expr="//group[@name='sale']/field[1]" position="before">
+                <field name="is_customer" />
+            </xpath>
+            <xpath expr="//group[@name='purchase']/field[1]" position="before">
+                <field name="is_supplier" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
