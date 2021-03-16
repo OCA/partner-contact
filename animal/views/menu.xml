@@ -1,0 +1,50 @@
+<odoo>
+
+    <!-- Main Menu -->
+    <menuitem
+        id="root"
+        name="Animals"
+        action="action_animal"
+        sequence="10"
+        web_icon="animal,static/description/icon.png"
+    />
+    <menuitem
+        id="animal"
+        name="Animals"
+        action="action_animal"
+        sequence="10"
+        parent="root"
+    />
+    <menuitem
+        id="config"
+        name="Configuration"
+        sequence="100"
+        parent="root"
+        groups="group_animal_manager"
+    />
+
+    <!-- Configuration -->
+    <menuitem id="settings" name="Settings" sequence="10" parent="config" />
+    <menuitem
+        id="species"
+        name="Species"
+        action="action_animal_species"
+        sequence="20"
+        parent="config"
+    />
+    <menuitem
+        id="breed"
+        name="Breeds"
+        action="action_animal_breed"
+        sequence="30"
+        parent="config"
+    />
+    <menuitem
+        id="color"
+        name="Colors"
+        action="action_animal_color"
+        sequence="40"
+        parent="config"
+    />
+
+</odoo>

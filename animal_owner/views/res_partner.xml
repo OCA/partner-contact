@@ -6,7 +6,7 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form" />
             <field name="arch" type="xml">
-                <xpath expr="//sheet" position="inside">
+                <div name="button_box" position="inside">
                     <button
                         class="oe_stat_button"
                         type="object"
@@ -19,7 +19,7 @@
                             <span class="o_stat_text"> Animals</span>
                         </div>
                     </button>
-                </xpath>
+                </div>
             </field>
         </record>
     </data>
