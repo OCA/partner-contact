@@ -86,7 +86,8 @@ class ResPartner(models.Model):
                 "base.partner.merge.automatic.wizard"
             ].with_context(address_version=True)
             partner_wizard._update_foreign_keys(self, version_p)
-        return False
+            return version_p
+        return self
 
     def write(self, vals):
         version_fields = self._version_fields()
