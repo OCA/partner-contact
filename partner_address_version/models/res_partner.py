@@ -118,3 +118,10 @@ class ResPartner(models.Model):
             "date_version": fields.Datetime.now(),
         }
         return self.copy(default=default)
+
+    def _version_exists(self):
+        return bool(
+            self.env["res.partner"]
+            .with_context(active_test=False)
+            .search([("version_hash", "=", self._version_hash())])
+        )
