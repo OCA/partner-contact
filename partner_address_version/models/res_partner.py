@@ -44,6 +44,23 @@ class ResPartner(models.Model):
         version_hash = hashlib.md5(str(version).encode("utf-8")).hexdigest()
         return version_hash
 
+    def _version_impacted_tables(self):
+        """
+        :return:
+            - list of tables to update in case of address versioning
+        """
+        return []
+
+    def _version_exclude_keys(self):
+        """
+        :return:
+            - dict:
+                key = table name
+                value = list of columns to ignore in case of address
+                        versioning
+        """
+        return {}
+
     def _version_impacted_columns(self):
         """
         :return: list of tuples of format:
