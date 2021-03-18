@@ -9,16 +9,24 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     nuts1_id = fields.Many2one(
-        comodel_name="res.partner.nuts", domain=[("level", "=", 1)], string="NUTS L1"
+        comodel_name="res.partner.nuts",
+        domain=[("level", "=", 1)],
+        string="NUTS L1",
     )
     nuts2_id = fields.Many2one(
-        comodel_name="res.partner.nuts", domain=[("level", "=", 2)], string="NUTS L2"
+        comodel_name="res.partner.nuts",
+        domain=[("level", "=", 2)],
+        string="NUTS L2",
     )
     nuts3_id = fields.Many2one(
-        comodel_name="res.partner.nuts", domain=[("level", "=", 3)], string="NUTS L3"
+        comodel_name="res.partner.nuts",
+        domain=[("level", "=", 3)],
+        string="NUTS L3",
     )
     nuts4_id = fields.Many2one(
-        comodel_name="res.partner.nuts", domain=[("level", "=", 4)], string="NUTS L4"
+        comodel_name="res.partner.nuts",
+        domain=[("level", "=", 4)],
+        string="NUTS L4",
     )
 
     def _onchange_nuts(self, level):
