@@ -9,7 +9,7 @@ class TestBaseLocationNuts(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
         super(TestBaseLocationNuts, cls).setUpClass()
-        cls.importer = cls.env["nuts.import"]
+        cls.importer = cls.env["nuts.import"].create({})
         cls.importer.run_import()  # loads nuts
         cls.country_1 = cls.env["res.country"].search([("code", "=", "ES")])
         cls.country_2 = cls.env["res.country"].search([("code", "=", "PT")])
