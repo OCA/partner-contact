@@ -1,6 +1,7 @@
 # Copyright 2015 Antonio Espinosa <antonio.espinosa@tecnativa.com>
 # Copyright 2016 Jairo Llopis <jairo.llopis@tecnativa.com>
 # Copyright 2017 David Vidal <jairo.llopis@tecnativa.com>
+# Copyright 2021 Andrii Skrypka <andrijskrypa@ukr.net>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 import logging
@@ -10,7 +11,7 @@ from collections import OrderedDict
 import requests
 from lxml import etree
 
-from odoo import _, api, models
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
 logger = logging.getLogger(__name__)
@@ -61,7 +62,6 @@ class NutsImport(models.TransientModel):
         "SE": False,
         "GB": False,  # UK
     }
-    _current_country = False
     _map = OrderedDict(
         [
             (
@@ -86,6 +86,7 @@ class NutsImport(models.TransientModel):
             ),
         ]
     )
+    current_country_id = fields.Many2one("res.country")
 
     def _check_node(self, node):
         if node.get("id") and node.get("idLevel"):
@@ -169,8 +170,8 @@ class NutsImport(models.TransientModel):
         level = data.get("level", 0)
         code = data.get("code", "")
         if level == 1:
-            self._current_country = self._countries[code]
-        return {"country_id": self._current_country.id}
+            self.current_country_id = self._countries[code]
+        return {"country_id": self.current_country_id.id}
 
     @api.model
     def create_or_update_nuts(self, node):
