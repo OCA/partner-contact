@@ -1,8 +1,10 @@
 # Copyright 2015 Antonio Espinosa <antonio.espinosa@tecnativa.com>
 # Copyright 2016 Jairo Llopis <jairo.llopis@tecnativa.com>
+# Copyright 2021 Andrii Skrypka <andrijskrypa@ukr.net>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, fields, models
+from odoo.osv.expression import AND, OR
 
 
 class ResPartner(models.Model):
@@ -10,24 +12,47 @@ class ResPartner(models.Model):
 
     nuts1_id = fields.Many2one(
         comodel_name="res.partner.nuts",
-        domain=[("level", "=", 1)],
+        domain="[('level', '=', 1), ('id', 'in', allowed_nut_ids)]",
         string="NUTS L1",
     )
     nuts2_id = fields.Many2one(
         comodel_name="res.partner.nuts",
-        domain=[("level", "=", 2)],
+        domain="[('level', '=', 2), ('id', 'in', allowed_nut_ids)]",
         string="NUTS L2",
     )
     nuts3_id = fields.Many2one(
         comodel_name="res.partner.nuts",
-        domain=[("level", "=", 3)],
+        domain="[('level', '=', 3), ('id', 'in', allowed_nut_ids)]",
         string="NUTS L3",
     )
     nuts4_id = fields.Many2one(
         comodel_name="res.partner.nuts",
-        domain=[("level", "=", 4)],
+        domain="[('level', '=', 4), ('id', 'in', allowed_nut_ids)]",
         string="NUTS L4",
     )
+    allowed_nut_ids = fields.Many2many(
+        "res.partner.nuts",
+        string="Allowed nuts",
+        compute="_compute_allowed_nuts",
+    )
+
+    @api.depends("country_id", "nuts1_id", "nuts2_id", "nuts3_id")
+    def _compute_allowed_nuts(self):
+        Nuts = self.env["res.partner.nuts"]
+        for partner in self:
+            domain = []
+            for level in range(1, 4):
+                nuts = partner["nuts%d_id" % level]
+                if nuts:
+                    domain = OR(
+                        [
+                            domain,
+                            [("parent_id", "=", nuts.id), ("level", "=", level + 1)],
+                        ]
+                    )
+            if partner.country_id:
+                domain = AND([[("country_id", "=", partner.country_id.id)], domain])
+            partner.allowed_nut_ids = Nuts.search(domain)
 
     def _onchange_nuts(self, level):
         field = self["nuts%d_id" % level]
@@ -44,17 +69,6 @@ class ResPartner(models.Model):
                 parent_field = self[nuts_parent_level]
                 if parent_field != parent_id:
                     self[nuts_parent_level] = parent_id
-        result = {}
-        if country_id and level < 4:
-            result["domain"] = {}
-            while level < 4:
-                parent_field = "nuts%d_id" % level
-                domain_field = "nuts%d_id" % (level + 1)
-                parent_id = self[parent_field].id
-                if parent_id:
-                    result["domain"][domain_field] = [("parent_id", "=", parent_id)]
-                level += 1
-        return result
 
     @api.onchange("nuts4_id")
     def _onchange_nuts4_id(self):
@@ -76,25 +90,16 @@ class ResPartner(models.Model):
     def _onchange_country_id_base_location_nuts(self):
         """Sensible values and domains for related fields."""
         fields = ["state_id", "nuts1_id", "nuts2_id", "nuts3_id", "nuts4_id"]
-        country_domain = (
-            [("country_id", "=", self.country_id.id)] if self.country_id else []
-        )
-        domain = dict()
         for field in fields:
             if self.country_id and self[field].country_id != self.country_id:
                 self[field] = False
-            domain[field] = list(country_domain)  # Using list() to copy
         fields.remove("state_id")
-        for field in fields:
-            level = int(field[4])
-            domain[field].append(("level", "=", level))
         if self.country_id:
             nuts1 = self.env["res.partner.nuts"].search(
                 [("level", "=", 1), ("country_id", "=", self.country_id.id)], limit=1
             )
             if self.nuts1_id.id != nuts1.id:
                 self.nuts1_id = nuts1.id
-        return {"domain": domain}
 
     @api.onchange("state_id")
     def onchange_state_id_base_location_nuts(self):
