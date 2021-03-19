@@ -229,4 +229,7 @@ class NutsImport(models.TransientModel):
             "The wizard to create NUTS entries from RAMON "
             "has been successfully completed."
         )
-        return True
+        return {
+            "type": "ir.actions.client",
+            "tag": "reload",
+        }
