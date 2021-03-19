@@ -1,6 +1,8 @@
 # Copyright 2017 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from psycopg2 import IntegrityError
+
 from odoo.exceptions import ValidationError
 from odoo.tests import common
 
@@ -85,3 +87,22 @@ class TestResPartner(common.SavepointCase):
         self.partner.social_security = "Test"
         partner = self.env["res.partner"].search([("social_security", "=", "Test")])
         self.assertEqual(partner, self.partner)
+
+    def test_raise_duplicate_category_and_id(self):
+        """Check no duplicate allowed for combo (category, number)."""
+        self.env["res.partner.id_number"].create(
+            {
+                "name": "Duplicate ID",
+                "category_id": self.partner_id_category.id,
+                "partner_id": self.partner.id,
+            }
+        )
+
+        with self.assertRaises(IntegrityError):
+            self.env["res.partner.id_number"].create(
+                {
+                    "name": "Duplicate ID",
+                    "category_id": self.partner_id_category.id,
+                    "partner_id": self.partner.id,
+                }
+            )

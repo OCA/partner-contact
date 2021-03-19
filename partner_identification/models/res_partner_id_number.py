@@ -68,3 +68,11 @@ class ResPartnerIdNumber(models.Model):
         ]
     )
     active = fields.Boolean(string="Active", default=True)
+
+    _sql_constraints = [
+        (
+            "unique_number_and_category",
+            "UNIQUE(category_id, name)",
+            "The combo category and ID number must be unique",
+        )
+    ]
