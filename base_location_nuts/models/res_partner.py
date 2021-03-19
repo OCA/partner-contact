@@ -100,21 +100,21 @@ class ResPartner(models.Model):
     def onchange_state_id_base_location_nuts(self):
         if self.state_id:
             self.country_id = self.state_id.country_id
-            if self.state_id.country_id.state_level:
+            if self.country_id.state_level:
                 nuts_state = self.env["res.partner.nuts"].search(
                     [
-                        ("level", "=", self.state_id.country_id.state_level),
+                        ("level", "=", self.country_id.state_level),
                         ("state_id", "=", self.state_id.id),
                     ],
                     limit=1,
                 )
                 if nuts_state:
-                    field = "nuts%d_id" % self.state_id.country_id.state_level
+                    field = "nuts%d_id" % self.country_id.state_level
                     self[field] = nuts_state
 
     @api.model
     def _address_fields(self):
-        fields = super(ResPartner, self)._address_fields()
+        fields = super()._address_fields()
         if fields:
             fields += ["nuts1_id", "nuts2_id", "nuts3_id", "nuts4_id"]
         return fields
