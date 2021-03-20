@@ -121,7 +121,8 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         # Reset contact to standalone
         new_contact.write({"contact_id": False})
         self.assertEqual(
-            new_contact.contact_type, "standalone",
+            new_contact.contact_type,
+            "standalone",
         )
 
         # Reset contact to attached, and ensure only it is unlinked (i.e.
@@ -143,26 +144,25 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         # Test DOWNSTREAM sync
         self.bob_contact.write({"name": "Rob Egnops"})
         self.assertEqual(
-            self.bob_job1.name, "Rob Egnops",
+            self.bob_job1.name,
+            "Rob Egnops",
         )
 
         # Test UPSTREAM sync
         self.bob_job1.write({"name": "Bob Egnops"})
         self.assertEqual(
-            self.bob_contact.name, "Bob Egnops",
+            self.bob_contact.name,
+            "Bob Egnops",
         )
 
     def test_06_ir_action(self):
-        """Check ir_action context is auto updated.
-        """
+        """Check ir_action context is auto updated."""
 
         new_context_val = (
             "'search_show_all_positions': " "{'is_set': True, 'set_value': False}"
         )
 
-        details = self.env["ir.actions.act_window"].for_xml_id(
-            "base", "action_partner_form"
-        )
+        details = self.env.ref("{}.{}".format("base", "action_partner_form")).read()[0]
 
         self.assertIn(
             new_context_val,
@@ -170,9 +170,9 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
             msg="Default actions not updated with new context",
         )
 
-        details = self.env["ir.actions.act_window"].for_xml_id(
-            "partner_contact_in_several_companies", "action_partner_form"
-        )
+        details = self.env.ref(
+            "partner_contact_in_several_companies.action_partner_form"
+        ).read()[0]
 
         self.assertNotIn(
             new_context_val,
@@ -181,8 +181,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         )
 
     def test_07_onchange(self):
-        """Check onchange method
-        """
+        """Check onchange method"""
 
         new_contact = self.partner.create({"name": "Bob before onchange"})
         new_contact.write({"contact_id": self.bob_contact.id})
@@ -198,5 +197,6 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         new_contact.write({"contact_id": self.bob_contact.id, "parent_id": False})
         new_contact._compute_commercial_partner()
         self.assertEqual(
-            new_contact.commercial_partner_id, self.bob_contact,
+            new_contact.commercial_partner_id,
+            self.bob_contact,
         )
