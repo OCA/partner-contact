@@ -23,7 +23,9 @@ class ResPartner(models.Model):
         domain=[("is_company", "=", False), ("contact_type", "=", "standalone")],
     )
     other_contact_ids = fields.One2many(
-        "res.partner", "contact_id", string="Others Positions",
+        "res.partner",
+        "contact_id",
+        string="Others Positions",
     )
 
     @api.depends("contact_id")
@@ -32,7 +34,7 @@ class ResPartner(models.Model):
             rec.contact_type = "attached" if rec.contact_id else "standalone"
 
     def _basecontact_check_context(self, mode):
-        """ Remove "search_show_all_positions" for non-search mode.
+        """Remove "search_show_all_positions" for non-search mode.
         Keeping it in context can result in unexpected behaviour (ex: reading
         one2many might return wrong result - i.e with "attached contact"
         removed even if it"s directly linked to a company).
@@ -47,8 +49,8 @@ class ResPartner(models.Model):
 
     @api.model
     def search(self, args, offset=0, limit=None, order=None, count=False):
-        """ Display only standalone contact matching ``args`` or having
-        attached contact matching ``args`` """
+        """Display only standalone contact matching ``args`` or having
+        attached contact matching ``args``"""
         ctx = self.env.context
         if (
             ctx.get("search_show_all_positions", {}).get("is_set")
@@ -71,7 +73,7 @@ class ResPartner(models.Model):
 
     @api.model
     def create(self, vals):
-        """ When creating, use a modified self to alter the context (see
+        """When creating, use a modified self to alter the context (see
         comment in _basecontact_check_context).  Also, we need to ensure
         that the name on an attached contact is the same as the name on the
         contact it is attached to."""
@@ -93,9 +95,9 @@ class ResPartner(models.Model):
         return super(ResPartner, modified_self).unlink()
 
     def _compute_commercial_partner(self):
-        """ Returns the partner that is considered the commercial
+        """Returns the partner that is considered the commercial
         entity of this partner. The commercial entity holds the master data
-        for all commercial fields (see :py:meth:`~_commercial_fields`) """
+        for all commercial fields (see :py:meth:`~_commercial_fields`)"""
         result = super(ResPartner, self)._compute_commercial_partner()
         for partner in self:
             if partner.contact_type == "attached" and not partner.parent_id:
@@ -103,12 +105,12 @@ class ResPartner(models.Model):
         return result
 
     def _contact_fields(self):
-        """ Returns the list of contact fields that are synced from the parent
-        when a partner is attached to him. """
+        """Returns the list of contact fields that are synced from the parent
+        when a partner is attached to him."""
         return ["name", "title"]
 
     def _contact_sync_from_parent(self):
-        """ Handle sync of contact fields when a new parent contact entity
+        """Handle sync of contact fields when a new parent contact entity
         is set, as if they were related fields
         """
         self.ensure_one()
