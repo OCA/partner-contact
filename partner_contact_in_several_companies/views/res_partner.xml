@@ -106,9 +106,11 @@
                                             t-if="!read_only_mode"
                                             type="delete"
                                             class="fa fa-times pull-right"
+                                            title="Delete Contact"
                                         />
                                         <div class="o_kanban_image">
                                             <img
+                                                alt="Contact Image"
                                                 t-if="record.image_128.raw_value"
                                                 t-att-src="'data:image/png;base64,' + record.image_128.raw_value"
                                             />
