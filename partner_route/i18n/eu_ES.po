@@ -6,33 +6,35 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2021-03-23 12:46+0000\n"
+"Last-Translator: oihane <oihanecruce@gmail.com>\n"
 "Language-Team: none\n"
 "Language: eu_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: partner_route
 #: model:ir.model.fields,field_description:partner_route.field_partner_route__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Beharrezko ekintza"
 
 #. module: partner_route
 #: model:ir.model.fields,field_description:partner_route.field_partner_route__active
 msgid "Active"
-msgstr ""
+msgstr "Aktiboa"
 
 #. module: partner_route
 #: model:ir.model.fields,field_description:partner_route.field_partner_route__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Jarduerak"
 
 #. module: partner_route
 #: model:ir.model.fields,field_description:partner_route.field_partner_route__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Jarduera egoera"
 
 #. module: partner_route
 #: model:ir.model.fields,field_description:partner_route.field_partner_route__route_day
@@ -42,7 +44,7 @@ msgstr ""
 #. module: partner_route
 #: model:ir.model.fields,field_description:partner_route.field_partner_route__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Eranskin kontagailua"
 
 #. module: partner_route
 #: selection:partner.route,route_type:0
@@ -57,7 +59,7 @@ msgstr ""
 #. module: partner_route
 #: model:ir.model,name:partner_route.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Kontaktua"
 
 #. module: partner_route
 #: model:ir.model.fields,field_description:partner_route.field_partner_route_item__country_id
