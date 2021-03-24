@@ -1,0 +1,12 @@
+<odoo noupdate="1">
+    <record id="partner_tier_definition" model="tier.definition">
+        <field name="name">Partner Validation</field>
+        <field name="model_id" ref="base.model_res_partner" />
+        <field name="review_type">group</field>
+        <field name="reviewer_group_id" ref="base.group_user" />
+        <field name="definition_type">domain</field>
+        <field
+            name="definition_domain"
+        >["&amp;",["parent_id","=",False],"|",["active","=",True],["active","=",False]]</field>
+    </record>
+</odoo>
