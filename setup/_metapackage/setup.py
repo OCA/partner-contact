@@ -42,6 +42,7 @@ setuptools.setup(
         'odoo13-addon-partner_firstname',
         'odoo13-addon-partner_identification',
         'odoo13-addon-partner_identification_gln',
+        'odoo13-addon-partner_identification_unique_by_category',
         'odoo13-addon-partner_industry_secondary',
         'odoo13-addon-partner_iterative_archive',
         'odoo13-addon-partner_label',
