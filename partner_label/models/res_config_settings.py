@@ -7,16 +7,24 @@ class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
     partner_labels_width = fields.Float(
-        related="company_id.partner_labels_width", required=True, readonly=False,
+        related="company_id.partner_labels_width",
+        required=True,
+        readonly=False,
     )
     partner_labels_height = fields.Float(
-        related="company_id.partner_labels_height", required=True, readonly=False,
+        related="company_id.partner_labels_height",
+        required=True,
+        readonly=False,
     )
     partner_labels_padding = fields.Float(
-        related="company_id.partner_labels_padding", required=True, readonly=False,
+        related="company_id.partner_labels_padding",
+        required=True,
+        readonly=False,
     )
     partner_labels_margin_top = fields.Float(
-        related="company_id.partner_labels_margin_top", required=True, readonly=False,
+        related="company_id.partner_labels_margin_top",
+        required=True,
+        readonly=False,
     )
     partner_labels_margin_bottom = fields.Float(
         related="company_id.partner_labels_margin_bottom",
@@ -24,10 +32,14 @@ class ResConfigSettings(models.TransientModel):
         readonly=False,
     )
     partner_labels_margin_left = fields.Float(
-        related="company_id.partner_labels_margin_left", required=True, readonly=False,
+        related="company_id.partner_labels_margin_left",
+        required=True,
+        readonly=False,
     )
     partner_labels_margin_right = fields.Float(
-        related="company_id.partner_labels_margin_right", required=True, readonly=False,
+        related="company_id.partner_labels_margin_right",
+        required=True,
+        readonly=False,
     )
     partner_labels_paperformat_id = fields.Many2one(
         "report.paperformat",
