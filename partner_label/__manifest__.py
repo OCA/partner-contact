@@ -8,6 +8,7 @@
     "license": "AGPL-3",
     "category": "Base",
     "summary": "Print partner labels",
+    "website": "https://github.com/OCA/partner-contact",
     "depends": ["base_setup"],
     "data": ["views/base_config_settings.xml", "reports/res_partner.xml"],
     "installable": True,
