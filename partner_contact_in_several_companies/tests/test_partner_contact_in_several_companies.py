@@ -120,10 +120,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
         # Reset contact to standalone
         new_contact.write({"contact_id": False})
-        self.assertEqual(
-            new_contact.contact_type,
-            "standalone",
-        )
+        self.assertEqual(new_contact.contact_type, "standalone")
 
         # Reset contact to attached, and ensure only it is unlinked (i.e.
         # context is ignored).
@@ -143,10 +140,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
         # Test DOWNSTREAM sync
         self.bob_contact.write({"name": "Rob Egnops"})
-        self.assertEqual(
-            self.bob_job1.name,
-            "Rob Egnops",
-        )
+        self.assertEqual(self.bob_job1.name, "Rob Egnops")
 
         # Test UPSTREAM sync
         self.bob_job1.write({"name": "Bob Egnops"})
@@ -162,7 +156,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
             "'search_show_all_positions': " "{'is_set': True, 'set_value': False}"
         )
 
-        details = self.env.ref("{}.{}".format("base", "action_partner_form")).read()[0]
+        details = self.env.ref("base.action_partner_form").read()[0]
 
         self.assertIn(
             new_context_val,
