@@ -47,7 +47,7 @@ addon | version | summary
 [partner_priority](partner_priority/) | 14.0.1.0.0 | Adds priority to partners.
 [partner_ref_unique](partner_ref_unique/) | 14.0.1.0.0 | Add an unique constraint to partner ref field
 [partner_second_lastname](partner_second_lastname/) | 14.0.1.0.0 | Have split first and second lastnames
-[partner_tier_validation](partner_tier_validation/) | 14.0.1.0.0 | Support a tier validation process for Contacts
+[partner_tier_validation](partner_tier_validation/) | 14.0.1.1.0 | Support a tier validation process for Contacts
 [partner_vat_unique](partner_vat_unique/) | 14.0.1.0.0 | Module to make the VAT number unique for customers and suppliers.
 [portal_partner_select_all](portal_partner_select_all/) | 14.0.1.1.0 | Portal Partner Select All
 
