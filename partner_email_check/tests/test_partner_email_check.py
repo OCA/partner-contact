@@ -15,7 +15,7 @@ class TestPartnerEmailCheck(TransactionCase):
         self.res_partner = self.env["res.partner"].with_context(
             test_partner_email_check=True
         )
-        self.test_partner = self.res_partner.create({"name": "test",})
+        self.test_partner = self.res_partner.create({"name": "test", })
         self.wizard = self.env["res.config.settings"].create({})
         self.wizard.partner_email_check_filter_duplicates = False
         self.wizard.partner_email_check_check_deliverability = False
@@ -92,7 +92,7 @@ class TestPartnerEmailCheck(TransactionCase):
 
     def test_duplicate_addresses_allowed_by_default(self):
         self.res_partner.create(
-            {"name": "alsotest", "email": "email@domain.tld",}
+            {"name": "alsotest", "email": "email@domain.tld", }
         )
         self.test_partner.email = "email@domain.tld"
 
@@ -127,7 +127,7 @@ class TestPartnerEmailCheck(TransactionCase):
     @mute_logger("odoo.addons.partner_email_check.models.res_partner")
     def test_lacking_dependency_does_not_halt_execution(self):
         with patch(
-                "odoo.addons.partner_email_check.models.res_partner." "validate_email", None
+            "odoo.addons.partner_email_check.models.res_partner." "validate_email", None
         ):
             self.test_partner.email = "notatallvalid@@domain"
 
@@ -135,7 +135,7 @@ class TestPartnerEmailCheck(TransactionCase):
     def test_lacking_dependency_keeps_uniqueness_constraint_working(self):
         self.disallow_duplicates()
         with patch(
-                "odoo.addons.partner_email_check.models.res_partner." "validate_email", None
+            "odoo.addons.partner_email_check.models.res_partner." "validate_email", None
         ):
             self.res_partner.create({"name": "alsotest", "email": "email@domain.tld"})
             with self.assertRaises(ValidationError):

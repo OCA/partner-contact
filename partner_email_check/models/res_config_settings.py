@@ -35,9 +35,9 @@ class ResConfigSettings(models.TransientModel):
         conf = self.env["ir.config_parameter"].sudo()
         conf.set_param(
             "partner_email_check_filter_duplicates",
-            self.partner_email_check_filter_duplicates
+            self.partner_email_check_filter_duplicates,
         )
         conf.set_param(
             "partner_email_check_check_deliverability",
-            self.partner_email_check_check_deliverability
+            self.partner_email_check_check_deliverability,
         )

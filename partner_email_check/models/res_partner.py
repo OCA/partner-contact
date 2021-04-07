@@ -25,11 +25,13 @@ class ResPartner(models.Model):
 
     @api.model
     def email_check(self, emails):
-        if (config["test_enable"] and
-                not self.env.context.get("test_partner_email_check")
+        if (config["test_enable"] and not self.env.context.get(
+                "test_partner_email_check"
+        )
         ):
             return emails
-        return ",".join(self._normalize_email(email.strip()) for email in emails.split(",")
+        return ",".join(
+            self._normalize_email(email.strip()) for email in emails.split(",")
         )
 
     @api.constrains("email")
@@ -38,9 +40,11 @@ class ResPartner(models.Model):
             for rec in self.filtered("email"):
                 if "," in rec.email:
                     raise UserError(
-                        _("Field contains multiple email addresses. This is "
+                        _(
+                            "Field contains multiple email addresses. This is "
                           "not supported when duplicate email addresses are "
-                          "not allowed.")
+                          "not allowed."
+                        )
                     )
                 if self.search_count([("email", "=", rec.email), ("id", "!=", rec.id)]):
                     raise UserError(
@@ -77,9 +81,9 @@ class ResPartner(models.Model):
 
     def _should_check_deliverability(self):
         conf = (
-            self.env["ir.config_parameter"].
-            sudo().
-            get_param("partner_email_check_check_deliverability", "False")
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("partner_email_check_check_deliverability", "False")
         )
         return conf == "True"
 
