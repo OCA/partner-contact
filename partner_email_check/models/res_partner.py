@@ -26,7 +26,7 @@ class ResPartner(models.Model):
     @api.model
     def email_check(self, emails):
         if (config["test_enable"] and not self.env.context.get(
-                "test_partner_email_check"
+            "test_partner_email_check"
         )
         ):
             return emails
@@ -42,8 +42,8 @@ class ResPartner(models.Model):
                     raise UserError(
                         _(
                             "Field contains multiple email addresses. This is "
-                          "not supported when duplicate email addresses are "
-                          "not allowed."
+                            "not supported when duplicate email addresses are "
+                            "not allowed."
                         )
                     )
                 if self.search_count([("email", "=", rec.email), ("id", "!=", rec.id)]):
