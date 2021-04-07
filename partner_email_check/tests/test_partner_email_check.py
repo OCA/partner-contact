@@ -91,9 +91,7 @@ class TestPartnerEmailCheck(TransactionCase):
             self.test_partner.email = "foo@bar.org,email@domain.tld"
 
     def test_duplicate_addresses_allowed_by_default(self):
-        self.res_partner.create(
-            {"name": "alsotest", "email": "email@domain.tld"}
-        )
+        self.res_partner.create({"name": "alsotest", "email": "email@domain.tld"})
         self.test_partner.email = "email@domain.tld"
 
     def check_deliverability(self):

@@ -25,9 +25,8 @@ class ResPartner(models.Model):
 
     @api.model
     def email_check(self, emails):
-        if (config["test_enable"] and not self.env.context.get(
+        if config["test_enable"] and not self.env.context.get(
             "test_partner_email_check"
-        )
         ):
             return emails
         return ",".join(
