@@ -21,6 +21,7 @@ setuptools.setup(
         'odoo14-addon-partner_contact_birthdate',
         'odoo14-addon-partner_contact_department',
         'odoo14-addon-partner_contact_gender',
+        'odoo14-addon-partner_contact_in_several_companies',
         'odoo14-addon-partner_contact_job_position',
         'odoo14-addon-partner_contact_lang',
         'odoo14-addon-partner_contact_nationality',
