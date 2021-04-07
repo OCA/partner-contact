@@ -78,8 +78,8 @@ Contributors
 * Vicent Cubells <vicent.cubells@tecnativa.com>
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
 * Luis M. Ontalba <luis.martinez@tecnativa.com>
-* Jordi Ballester Alomar <jordi.ballester@eficent.com>
-* Miquel Raïch <miquel.raich@eficent.com>
+* Jordi Ballester Alomar <jordi.ballester@forgeflow.com>
+* Miquel Raïch <miquel.raich@forgeflow.com>
 * Cristina Martin R.
 
 Maintainers
