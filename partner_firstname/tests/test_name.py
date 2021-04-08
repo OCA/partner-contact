@@ -53,13 +53,12 @@ class PartnerContactCase(BaseCase):
 
 class PartnerCompanyCase(BaseCase):
     def create_original(self):
+        # Original test had filled firstname for company. That should not be.
+        company_name = "The very great, big and succesfull Odoo Company"
+        self.lastname = company_name
+        self.firstname = False
         super(PartnerCompanyCase, self).create_original()
         self.original.is_company = True
-
-    def test_copy(self):
-        """Copy the partner and compare the result."""
-        super(PartnerCompanyCase, self).test_copy()
-        self.expect(self.name, False, self.name)
 
     def test_company_inverse(self):
         """Test the inverse method in a company record."""

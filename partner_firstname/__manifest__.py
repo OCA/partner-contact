@@ -1,7 +1,7 @@
 # Copyright 2013 Nicolas Bessi (Camptocamp SA)
 # Copyright 2014 Agile Business Group (<http://www.agilebg.com>)
 # Copyright 2015 Grupo ESOC (<http://www.grupoesoc.es>)
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 {
     "name": "Partner first name and last name",

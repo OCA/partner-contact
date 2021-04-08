@@ -1,11 +1,10 @@
 # Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L.U. - Jairo Llopis
 # Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
 # Copyright 2017 Tecnativa - Pedro M. Baeza
+# Copyright 2021 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, fields, models
-
-from odoo.addons.partner_firstname import exceptions
 
 
 class ResPartner(models.Model):
@@ -13,46 +12,11 @@ class ResPartner(models.Model):
 
     _inherit = "res.partner"
 
-    lastname2 = fields.Char(
-        "Second last name",
-    )
+    lastname2 = fields.Char("Second last name")
 
-    @api.model
-    def _get_computed_name(self, lastname, firstname, lastname2=None):
-        """Compute the name combined with the second lastname too.
-
-        We have 2 lastnames, so lastnames and firstname will be separated by a
-        comma.
-        """
-        order = self._get_names_order()
-        names = list()
-        if order == "first_last":
-            if firstname:
-                names.append(firstname)
-            if lastname:
-                names.append(lastname)
-            if lastname2:
-                names.append(lastname2)
-        else:
-            if lastname:
-                names.append(lastname)
-            if lastname2:
-                names.append(lastname2)
-            if names and firstname and order == "last_first_comma":
-                names[-1] = names[-1] + ","
-            if firstname:
-                names.append(firstname)
-        return " ".join(names)
-
-    @api.depends("firstname", "lastname", "lastname2")
-    def _compute_name(self):
-        """Write :attr:`~.name` according to splitted data."""
-        for partner in self:
-            partner.name = self._get_computed_name(
-                partner.lastname,
-                partner.firstname,
-                partner.lastname2,
-            )
+    def _get_lastname_fields(self):
+        """Determine dynamically the fields that compose the last name."""
+        return super._get_lastname_fields() + ["lastname2"]
 
     def _inverse_name(self):
         """Try to revert the effect of :meth:`._compute_name`."""
@@ -113,13 +77,3 @@ class ResPartner(models.Model):
         if not name or len(parts) < 2:
             return False
         return parts
-
-    @api.constrains("firstname", "lastname", "lastname2")
-    def _check_name(self):
-        """Ensure at least one name is set."""
-        try:
-            super(ResPartner, self)._check_name()
-        except exceptions.EmptyNamesError:
-            for partner in self:
-                if not partner.lastname2:
-                    raise

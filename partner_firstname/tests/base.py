@@ -31,7 +31,7 @@ class BaseCase(TransactionCase, MailInstalled):
         """Define what is expected in each field when ending."""
         self.lastname = lastname
         self.firstname = firstname
-        self.name = name or "{} {}".format(firstname, lastname)
+        self.name = name or " ".join([p for p in (firstname, lastname) if p])
 
     def tearDown(self):
         if self.check_fields:
@@ -62,4 +62,7 @@ class BaseCase(TransactionCase, MailInstalled):
         """Test that you cannot set a partner/user without names."""
         self.check_fields = False
         with self.assertRaises(ex.EmptyNamesError):
-            self.original.firstname = self.original.lastname = False
+            if self.original.is_company:
+                self.original.name = False
+            else:
+                self.original.firstname = self.original.lastname = False

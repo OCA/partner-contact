@@ -1,4 +1,5 @@
 # Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
+# Copyright 2021 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import logging
@@ -14,7 +15,8 @@ class ResConfigSettings(models.TransientModel):
     partner_names_order = fields.Selection(
         string="Partner names order",
         selection="_partner_names_order_selection",
-        help="Order to compose partner fullname",
+        help="Order to compose partner fullname.\n"
+        "Lastname or Firstname can be composed of multiple fields.",
         config_parameter="partner_names_order",
         default=lambda a: a._partner_names_order_default(),
         required=True,
@@ -48,6 +50,8 @@ class ResConfigSettings(models.TransientModel):
             )
 
     def _partners_for_recalculating(self):
+        # TODO: Change to either last recalc date not set, or before last ordering date.
+        #   Ofcourse still ony for non company partners. This makes overriding unneeded.
         return self.env["res.partner"].search(
             [
                 ("is_company", "=", False),
@@ -57,6 +61,7 @@ class ResConfigSettings(models.TransientModel):
         )
 
     def action_recalculate_partners_name(self):
+        # TODO: Change to cronjon with limited amount of partners to recalculate.
         self.env["ir.config_parameter"].sudo().set_param(
             "partner_names_order", self.partner_names_order
         )
