@@ -4,8 +4,8 @@
 from odoo import fields, models
 
 
-class AccountMove(models.Model):
-    _inherit = "account.move"
+class AccountInvoice(models.Model):
+    _inherit = "account.invoice"
 
     company_group_id = fields.Many2one(
         related="partner_id.company_group_id", store=True

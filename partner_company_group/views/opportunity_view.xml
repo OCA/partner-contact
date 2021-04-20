@@ -8,13 +8,13 @@
             <field name="name" position="after">
                 <field name="company_group_id" />
             </field>
-            <filter name="salesperson" position="before">
+            <xpath expr="//group[1]/filter[1]" position="before">
                 <filter
                     name="group_company_group"
                     string="Company Group"
                     context="{'group_by': 'company_group_id'}"
                 />
-            </filter>
+            </xpath>
         </field>
     </record>
 </odoo>

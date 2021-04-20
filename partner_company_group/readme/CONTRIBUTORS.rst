@@ -3,3 +3,5 @@
 * `Tecnativa <https://www.tecnativa.com>`_:
 
   * Ernesto Tejeda
+
+* Lois Rilo <lois.rilo@forgeflow.com>
