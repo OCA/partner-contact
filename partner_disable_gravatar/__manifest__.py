@@ -9,6 +9,7 @@
     "license": "AGPL-3",
     "summary": "Disable automatic connection to gravatar.com",
     "author": "Akretion, Odoo Community Association (OCA)",
+    "maintainers": ["alexis-via"],
     "website": "https://github.com/OCA/partner-contact",
     "depends": ["base"],
     "installable": True,
