@@ -399,8 +399,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
 
     @api.model
     def _get_type_selection_from_vals(self, vals):
-        """Get type_selection_id straight from vals or compute from type_id.
-        """
+        """Get type_selection_id straight from vals or compute from type_id."""
         type_selection_id = vals.get("type_selection_id", False)
         if not type_selection_id:
             type_id = vals.get("type_id", False)
@@ -469,8 +468,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
         base_resource.unlink()
 
     def unlink(self):
-        """For model 'res.partner.relation' call unlink on underlying model.
-        """
+        """For model 'res.partner.relation' call unlink on underlying model."""
         for rec in self:
             try:
                 base_resource = rec.get_base_resource()
