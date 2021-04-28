@@ -24,7 +24,7 @@ class ResPartner(models.Model):
         inverse_name="this_partner_id",
         string="All relations with current partner",
         auto_join=True,
-        selectable=False,
+        search=False,
         copy=False,
     )
     search_relation_type_id = fields.Many2one(
