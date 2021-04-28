@@ -30,11 +30,11 @@
             </xpath>
         </field>
     </record>
-    <act_window
-        id="action_show_partner_multi_relation"
-        name="Show partner's relations"
-        binding_model="res.partner"
-        res_model="res.partner.relation.all"
-        domain="[('this_partner_id', 'in', active_ids)]"
-    />
+    <record id="action_show_partner_multi_relation" model="ir.actions.act_window">
+        <field name="name">Show partner's relations</field>
+        <field name="binding_model_id" ref="base.model_res_partner" />
+        <field name="res_model">res.partner.relation.all</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('this_partner_id', 'in', active_ids)]</field>
+    </record>
 </odoo>
