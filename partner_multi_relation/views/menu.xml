@@ -12,12 +12,11 @@
         parent="menu_res_partner_relation"
         action="action_res_partner_relation_all"
     />
-    <act_window
-        id="action_res_partner_relation_type"
-        res_model="res.partner.relation.type"
-        view_mode="tree,form"
-        name="Partner Relations Types"
-    />
+    <record id="action_res_partner_relation_type" model="ir.actions.act_window">
+        <field name="name">Partner Relations Types</field>
+        <field name="res_model">res.partner.relation.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
     <menuitem
         id="menu_res_partner_relation_type"
         name="Relation Types"
