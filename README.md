@@ -41,6 +41,7 @@ addon | version | summary
 [partner_employee_quantity](partner_employee_quantity/) | 14.0.1.0.0 | Know how many employees a partner has
 [partner_fax](partner_fax/) | 14.0.1.0.0 | Add fax number on partner
 [partner_firstname](partner_firstname/) | 14.0.1.0.1 | Split first name and last name for non company partners
+[partner_identification](partner_identification/) | 14.0.1.2.0 | Partner Identification Numbers
 [partner_industry_secondary](partner_industry_secondary/) | 14.0.1.0.0 | Add secondary partner industries
 [partner_iterative_archive](partner_iterative_archive/) | 14.0.1.0.1 | Archive all contacts when parent is archived
 [partner_phone_extension](partner_phone_extension/) | 14.0.1.0.1 | Partner Phone Number Extension
