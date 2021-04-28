@@ -30,6 +30,7 @@ setuptools.setup(
         'odoo14-addon-partner_employee_quantity',
         'odoo14-addon-partner_fax',
         'odoo14-addon-partner_firstname',
+        'odoo14-addon-partner_identification',
         'odoo14-addon-partner_industry_secondary',
         'odoo14-addon-partner_iterative_archive',
         'odoo14-addon-partner_phone_extension',
