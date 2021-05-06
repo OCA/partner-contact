@@ -17,6 +17,7 @@ setuptools.setup(
         'odoo13-addon-partner_address_two_lines',
         'odoo13-addon-partner_affiliate',
         'odoo13-addon-partner_bank_active',
+        'odoo13-addon-partner_capital',
         'odoo13-addon-partner_coc',
         'odoo13-addon-partner_company_group',
         'odoo13-addon-partner_company_type',
