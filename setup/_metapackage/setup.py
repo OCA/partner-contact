@@ -46,6 +46,7 @@ setuptools.setup(
         'odoo13-addon-partner_industry_secondary',
         'odoo13-addon-partner_iterative_archive',
         'odoo13-addon-partner_label',
+        'odoo13-addon-partner_manual_rank',
         'odoo13-addon-partner_multi_relation',
         'odoo13-addon-partner_phone_extension',
         'odoo13-addon-partner_phonecall_schedule',
