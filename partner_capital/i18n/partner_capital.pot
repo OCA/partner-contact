@@ -1,0 +1,148 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_capital
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_capital
+#: selection:res.partner,company_size:0
+msgid "Big"
+msgstr ""
+
+#. module: partner_capital
+#: model_terms:ir.ui.view,arch_db:partner_capital.view_partner_form_capital
+msgid "Capital"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__capital_amount
+#: model:ir.model.fields,field_description:partner_capital.field_res_users__capital_amount
+msgid "Capital amount"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__capital_country_id
+#: model:ir.model.fields,field_description:partner_capital.field_res_users__capital_country_id
+#: model_terms:ir.ui.view,arch_db:partner_capital.view_res_partner_filter_capital
+msgid "Capital country"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__capital_currency_id
+#: model:ir.model.fields,field_description:partner_capital.field_res_users__capital_currency_id
+msgid "Capital currency"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__company_size
+#: model:ir.model.fields,field_description:partner_capital.field_res_users__company_size
+#: model_terms:ir.ui.view,arch_db:partner_capital.view_res_partner_filter_capital
+msgid "Company size"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model,name:partner_capital.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,help:partner_capital.field_res_partner__capital_country_id
+#: model:ir.model.fields,help:partner_capital.field_res_users__capital_country_id
+msgid "Country of origin of this company's capital."
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_capital
+#: selection:res.partner,company_size:0
+msgid "Medium"
+msgstr ""
+
+#. module: partner_capital
+#: selection:res.partner,company_size:0
+msgid "Micro"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__name
+msgid "Name"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,help:partner_capital.field_res_partner__capital_amount
+#: model:ir.model.fields,help:partner_capital.field_res_users__capital_amount
+msgid "Publicly registered capital amount."
+msgstr ""
+
+#. module: partner_capital
+#: selection:res.partner,company_size:0
+msgid "Small"
+msgstr ""
+
+#. module: partner_capital
+#: model_terms:ir.ui.view,arch_db:partner_capital.view_res_partner_filter_capital
+msgid "Turnover"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__turnover_amount
+#: model:ir.model.fields,field_description:partner_capital.field_res_users__turnover_amount
+msgid "Turnover Amount"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model,name:partner_capital.model_res_partner_turnover_range
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__turnover_range_id
+#: model:ir.model.fields,field_description:partner_capital.field_res_users__turnover_range_id
+msgid "Turnover range"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.actions.act_window,name:partner_capital.res_partner_turnover_range_action
+#: model:ir.ui.menu,name:partner_capital.menu_res_partner_turnover_range
+#: model_terms:ir.ui.view,arch_db:partner_capital.res_partner_turnover_range_tree_view
+msgid "Turnover ranges"
+msgstr ""
+
