@@ -57,6 +57,8 @@ setuptools.setup(
         'odoo13-addon-partner_vat_unique',
         'odoo13-addon-portal_partner_data_no_edit',
         'odoo13-addon-portal_partner_select_all',
+        'odoo13-addon-purchase_supplier_rank',
+        'odoo13-addon-sale_customer_rank',
     ],
     classifiers=[
         'Programming Language :: Python',
