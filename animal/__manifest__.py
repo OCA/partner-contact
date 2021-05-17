@@ -22,7 +22,6 @@
         "views/animal.xml",
         "views/menu.xml",
     ],
-    "demo": [],
     "application": True,
     "development_status": "Beta",
     "maintainers": ["max3903"],
