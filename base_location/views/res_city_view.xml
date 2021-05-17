@@ -28,7 +28,7 @@
                 </group>
                 <notebook>
                     <page name="zips" string="Zips">
-                        <field name="zip_ids"/>
+                        <field name="zip_ids" context="{'default_city_id': active_id}"/>
                     </page>
                 </notebook>
             </form>
