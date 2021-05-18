@@ -47,3 +47,8 @@ class ResPartner(models.Model):
                 partners._increase_rank("supplier_rank")
             else:
                 partners.supplier_rank = 0
+
+    def _increase_rank(self, field):
+        super()._increase_rank(field)
+        if self.ids and field in ["customer_rank", "supplier_rank"]:
+            self.modified([field])
