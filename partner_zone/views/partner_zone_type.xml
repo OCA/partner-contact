@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="partner_zone_type_form_view">
+        <field name="name">partner.zone.type.form (in partner_zone)</field>
+        <field name="model">partner.zone.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="zone_type"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="partner_zone_type_search_view">
+        <field name="name">partner.zone.type.search (in partner_zone)</field>
+        <field name="model">partner.zone.type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="zone_type"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="partner_zone_type_tree_view">
+        <field name="name">partner.zone.type.tree (in partner_zone)</field>
+        <field name="model">partner.zone.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="zone_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="partner_zone_type_act_window">
+        <field name="name">Zone Types</field>
+        <field name="res_model">partner.zone.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        action="partner_zone_type_act_window"
+        id="menu_partner_zone_type"
+        parent="partner_zone.menu_partner_zone"
+    />
+
+</odoo>

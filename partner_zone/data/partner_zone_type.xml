@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo noupdate="1">
+
+    <record model="partner.zone.type" id="partner_zone_type_pre_distributor">
+       <field name="name">Distributor</field>
+    </record>
+
+    <record model="partner.zone.type" id="partner_zone_type_sale_agent">
+       <field name="name">Agent</field>
+    </record>
+
+    <record model="partner.zone.type" id="partner_zone_type_telemarketing">
+       <field name="name">Telemarketing</field>
+    </record>
+
+    <record model="partner.zone.type" id="partner_zone_type_cs">
+       <field name="name">Customer Sucess</field>
+    </record>
+
+</odoo>

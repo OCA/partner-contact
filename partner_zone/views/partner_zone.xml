@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="partner_zone_form_view">
+        <field name="name">partner.zone.form (in partner_zone)</field>
+        <field name="model">partner.zone</field>
+        <field name="arch" type="xml">
+            <form class="oe_form_configuration">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Zone name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. North"/>
+                        </h1>
+                    </div>
+                    <group name="first" col="2">
+                        <field name="parent_id" class="oe_inline"/>
+                    </group>
+                    <group name="settings_filters">
+                        <group name="settings" string="Settings">
+                            <field name="code" placeholder="Code"/>
+                            <field name="zone_type_id"/>
+                        </group>
+                        <group name="filters" string="Partner">
+                            <field name="category_ids" widget="many2many_tags"/>
+                            <field name="industry_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <notebook name="main_notebook">
+                        <page name="apply_on" string="Apply On">
+                            <group>
+                                <field name="country_ids" widget="many2many_tags"/>
+                                <field name="state_ids" widget="many2many_tags"/>
+                                <field name="city_ids"/>
+                            </group>
+                        </page>
+                        <page name="partners" string="Partners">
+                            <field name="partner_ids" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="partner_zone_search_view">
+        <field name="name">partner.zone.search (in partner_zone)</field>
+        <field name="model">partner.zone</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="category_ids"/>
+                <field name="industry_ids"/>
+                <field name="country_ids"/>
+                <field name="state_ids"/>
+                <field name="city_ids"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="partner_zone_tree_view">
+        <field name="name">partner.zone.tree (in partner_zone)</field>
+        <field name="model">partner.zone</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="display_name" string="Name"/>
+                <field name="category_ids"/>
+                <field name="industry_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="partner_zone_act_window">
+        <field name="name">Partner Zone</field>
+        <field name="res_model">partner.zone</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        action="partner_zone_act_window"
+        id="menu_partner_zone_record"
+        parent="partner_zone.menu_partner_zone"
+    />
+
+</odoo>

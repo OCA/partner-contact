@@ -1,0 +1,7 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_partner_zone_group_user","partner_zone group_user","model_partner_zone","base.group_user",1,0,0,0
+"access_partner_zone_group_zone_user","partner_zone group_system","model_partner_zone","partner_zone_group_user",1,1,0,0
+"access_partner_zone_group_zone_manager","partner_zone group_system","model_partner_zone","partner_zone_group_manager",1,1,1,1
+"access_partner_zone_type_group_user","partner_zone group_user","model_partner_zone_type","base.group_user",1,0,0,0
+"access_partner_zone_type_group_zone_user","partner_zone group_system","model_partner_zone_type","partner_zone_group_user",1,1,0,0
+"access_partner_zone_type_group_zone_manager","partner_zone group_system","model_partner_zone_type","partner_zone_group_manager",1,1,1,1

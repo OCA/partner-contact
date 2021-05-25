@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="res_partner_form_view">
+        <field name="name">res.partner.form (in partner_zone)</field>
+        <field name="model">res.partner</field>
+        <field name="priority">10</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="industry_id" position="replace"/>
+            <field name="category_id" position="after">
+                <field name="industry_id"
+                       attrs="{'invisible': [('is_company', '=', False)]}"
+                       options="{'no_create': True}"/>
+                <field name="zone_ids" options="{'no_create': True}"
+                       widget="many2many_tags"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="res_partner_search_view">
+        <field name="name">res.partner.search (in partner_zone)</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="zone_ids" filter_domain="[('zone_ids','ilike', self)]"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

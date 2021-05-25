@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo noupdate="1">
+
+    <record model="partner.zone" id="partner_zone_america">
+       <field name="name">America</field>
+    </record>
+
+    <record model="partner.zone" id="partner_zone_south_america">
+       <field name="name">South America</field>
+       <field name="parent_id" ref="partner_zone.partner_zone_america"/>
+    </record>
+
+    <record model="partner.zone" id="partner_zone_north_america">
+       <field name="name">North America</field>
+       <field name="parent_id" ref="partner_zone.partner_zone_america"/>
+    </record>
+
+    <record model="partner.zone" id="partner_zone_brazil">
+       <field name="name">Brazil</field>
+       <field name="parent_id" ref="partner_zone.partner_zone_south_america"/>
+       <field name="country_ids" eval="[(4, ref('base.br'))]"/>
+    </record>
+
+    <record model="partner.zone" id="partner_zone_eua">
+       <field name="name">EUA</field>
+       <field name="parent_id" ref="partner_zone.partner_zone_north_america"/>
+       <field name="country_ids" eval="[(4, ref('base.us'))]"/>
+    </record>
+
+</odoo>
