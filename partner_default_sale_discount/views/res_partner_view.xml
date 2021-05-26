@@ -7,8 +7,8 @@
             <group name="sale" position="inside">
                 <field
                     name="default_sale_discount"
-                    attrs="{'invisible': ['|', ('customer', '=', False), ('parent_id', '!=', False)]}"
-                    groups="sale.group_discount_per_so_line"
+                    attrs="{'invisible': [('parent_id', '!=', False)]}"
+                    groups="product.group_discount_per_so_line"
                 />
             </group>
         </field>
