@@ -5,7 +5,7 @@ from odoo import fields, models
 
 
 class ResPartner(models.Model):
-    _inherit = 'res.partner'
+    _inherit = "res.partner"
 
     default_sale_discount = fields.Float(
         string="Default sales discount (%)", company_dependent=True,
