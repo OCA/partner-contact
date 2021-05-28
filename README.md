@@ -24,6 +24,7 @@ addon | version | summary
 [base_location_geonames_import](base_location_geonames_import/) | 14.0.1.0.0 | Import zip entries from Geonames
 [base_location_nuts](base_location_nuts/) | 14.0.1.0.1 | NUTS Regions
 [base_partner_sequence](base_partner_sequence/) | 14.0.1.0.1 | Sets customer's code from a sequence
+[partner_address_street3](partner_address_street3/) | 14.0.1.0.0 | Add a third address line on partners
 [partner_address_version](partner_address_version/) | 14.0.1.0.0 | Partner Address Version
 [partner_affiliate](partner_affiliate/) | 14.0.1.0.1 | Partner Affiliates
 [partner_company_group](partner_company_group/) | 14.0.1.0.1 | Adds the possibility to add a company group to a company
