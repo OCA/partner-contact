@@ -72,8 +72,8 @@ msgid "Needs my Approval"
 msgstr ""
 
 #. module: partner_tier_validation
-#: model:tier.definition,name:partner_tier_validation.partner_tier_definition
-msgid "Partner Validation"
+#: model:tier.definition,name:partner_tier_validation.partner_tier_definition_company_only
+msgid "Partner Validation (Company)"
 msgstr ""
 
 #. module: partner_tier_validation
