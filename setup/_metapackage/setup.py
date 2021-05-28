@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo14-addon-base_location_geonames_import',
         'odoo14-addon-base_location_nuts',
         'odoo14-addon-base_partner_sequence',
+        'odoo14-addon-partner_address_street3',
         'odoo14-addon-partner_address_version',
         'odoo14-addon-partner_affiliate',
         'odoo14-addon-partner_company_group',
