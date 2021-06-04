@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* animal
+# 	* animal
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,13 +29,22 @@ msgid "Activities"
 msgstr ""
 
 #. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_state
 msgid "Activity State"
 msgstr ""
 
 #. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: animal
 #: model:ir.model,name:animal.model_animal
-#: model:ir.module.category,name:animal.animal
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_form
 msgid "Animal"
 msgstr ""
@@ -57,10 +66,16 @@ msgstr ""
 
 #. module: animal
 #: model:ir.actions.act_window,name:animal.action_animal
-#: model:ir.ui.menu,name:animal.root
+#: model:ir.ui.menu,name:animal.animal model:ir.ui.menu,name:animal.root
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_tree
 msgid "Animals"
+msgstr ""
+
+#. module: animal
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_form
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+msgid "Archived"
 msgstr ""
 
 #. module: animal
@@ -175,7 +190,7 @@ msgstr ""
 
 #. module: animal
 #: model_terms:ir.actions.act_window,help:animal.action_animal
-msgid "Create an animal."
+msgid "Create an animal"
 msgstr ""
 
 #. module: animal
@@ -228,7 +243,7 @@ msgid "English Cocker Spaniel"
 msgstr ""
 
 #. module: animal
-#: selection:animal,gender:0
+#: model:ir.model.fields.selection,name:animal.selection__animal__gender__female
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Female"
 msgstr ""
@@ -246,6 +261,11 @@ msgstr ""
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_partner_ids
 msgid "Followers (Partners)"
+msgstr ""
+
+#. module: animal
+#: model:ir.model.fields,help:animal.field_animal__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
 msgstr ""
 
 #. module: animal
@@ -280,7 +300,7 @@ msgid "Group By"
 msgstr ""
 
 #. module: animal
-#: selection:animal,gender:0
+#: model:ir.model.fields.selection,name:animal.selection__animal__gender__hermaphrodite
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Hermaphrodite"
 msgstr ""
@@ -294,17 +314,24 @@ msgid "ID"
 msgstr ""
 
 #. module: animal
-#: model:ir.model.fields,help:animal.field_animal__message_unread
-msgid "If checked new messages require your attention."
+#: model:ir.model.fields,field_description:animal.field_animal__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: animal
+#: model:ir.model.fields,help:animal.field_animal__activity_exception_icon
+msgid "Icon to indicate an exception activity."
 msgstr ""
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_needaction
+#: model:ir.model.fields,help:animal.field_animal__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_has_error
+#: model:ir.model.fields,help:animal.field_animal__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -358,7 +385,7 @@ msgid "Main Attachment"
 msgstr ""
 
 #. module: animal
-#: selection:animal,gender:0
+#: model:ir.model.fields.selection,name:animal.selection__animal__gender__male
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Male"
 msgstr ""
@@ -388,7 +415,7 @@ msgid "Name"
 msgstr ""
 
 #. module: animal
-#: selection:animal,gender:0
+#: model:ir.model.fields.selection,name:animal.selection__animal__gender__neutered
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Neutered"
 msgstr ""
@@ -415,7 +442,7 @@ msgstr ""
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_has_error_counter
-msgid "Number of error"
+msgid "Number of errors"
 msgstr ""
 
 #. module: animal
@@ -431,16 +458,6 @@ msgstr ""
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
-
-#. module: animal
-#: selection:animal,activity_state:0
-msgid "Overdue"
-msgstr ""
-
-#. module: animal
-#: selection:animal,activity_state:0
-msgid "Planned"
 msgstr ""
 
 #. module: animal
@@ -466,6 +483,11 @@ msgstr ""
 #. module: animal
 #: model:animal.breed,name:animal.rottweiler
 msgid "Rottweiler"
+msgstr ""
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__message_has_sms_error
+msgid "SMS Delivery error"
 msgstr ""
 
 #. module: animal
@@ -512,7 +534,8 @@ msgstr ""
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__activity_state
-msgid "Status based on activities\n"
+msgid ""
+"Status based on activities\n"
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
@@ -524,8 +547,8 @@ msgid "This field holds the photo of the animal."
 msgstr ""
 
 #. module: animal
-#: selection:animal,activity_state:0
-msgid "Today"
+#: model:ir.model.fields,help:animal.field_animal__activity_exception_decoration
+msgid "Type of the exception activity on record."
 msgstr ""
 
 #. module: animal
@@ -562,4 +585,3 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_color_tree
 msgid "colors"
 msgstr ""
-
