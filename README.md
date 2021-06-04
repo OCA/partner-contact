@@ -19,7 +19,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[animal](animal/) | 14.0.1.0.0 | Animal
+[animal](animal/) | 14.0.1.0.0 | Manage animals information
 [base_country_state_translatable](base_country_state_translatable/) | 14.0.1.0.0 | Translate Country States
 [base_location](base_location/) | 14.0.1.0.1 | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 14.0.1.0.0 | Import zip entries from Geonames
