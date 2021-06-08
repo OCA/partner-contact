@@ -26,6 +26,7 @@ class ResPartner(models.Model):
         auto_join=True,
         selectable=False,
         copy=False,
+        domain=['|', ('active', '=', True), ('active', '=', False)],
     )
     search_relation_type_id = fields.Many2one(
         comodel_name="res.partner.relation.type.selection",
@@ -187,7 +188,6 @@ class ResPartner(models.Model):
                     "active_model": "res.partner",
                     "active_id": self.id,
                     "active_ids": [self.id],
-                    "active_test": False,
                 }
             )
             context = context[:-1] + ", " + extra_context[1:]
