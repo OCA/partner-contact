@@ -224,7 +224,7 @@ class CityZipGeonamesImport(models.TransientModel):
                 if zip_vals not in zip_vals_list:
                     zip_vals_list.append(zip_vals)
             else:
-                old_zips.remove(zip_code.id)
+                old_zips.discard(zip_code.id)
         self.env["res.city.zip"].create(zip_vals_list)
         if not max_import:
             if old_zips:
