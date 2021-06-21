@@ -406,6 +406,11 @@ msgid "Messages"
 msgstr ""
 
 #. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__name
 #: model:ir.model.fields,field_description:animal.field_animal_breed__name
 #: model:ir.model.fields,field_description:animal.field_animal_color__name
