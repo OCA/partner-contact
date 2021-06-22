@@ -9,9 +9,6 @@ from odoo.exceptions import ValidationError
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    allowed_zip_ids = fields.Many2many(
-        comodel_name="res.city.zip", compute="_compute_allowed_zip_ids"
-    )
     zip_id = fields.Many2one(
         comodel_name="res.city.zip",
         string="ZIP Location",
@@ -19,7 +16,9 @@ class ResPartner(models.Model):
         compute="_compute_zip_id",
         readonly=False,
         store=True,
-        domain="[('id', 'in', allowed_zip_ids)]",
+        domain="[('city_id', '=?', city_id), "
+        "('city_id.country_id', '=?', country_id), "
+        "('city_id.state_id', '=?', state_id)]",
     )
     city_id = fields.Many2one(
         index=True,  # add index for performance
@@ -33,15 +32,6 @@ class ResPartner(models.Model):
         compute="_compute_country_id", readonly=False, store=True
     )
     state_id = fields.Many2one(compute="_compute_state_id", readonly=False, store=True)
-
-    @api.depends("city_id")
-    def _compute_allowed_zip_ids(self):
-        for record in self:
-            if record.city_id:
-                domain = [("city_id", "=", record.city_id.id)]
-            else:
-                domain = []
-            record.allowed_zip_ids = self.env["res.city.zip"].search(domain)
 
     @api.depends("state_id", "country_id")
     def _compute_zip_id(self):
