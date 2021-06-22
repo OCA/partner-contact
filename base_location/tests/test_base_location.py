@@ -185,10 +185,6 @@ class TestBaseLocation(common.SavepointCase):
         self.city_bcn.country_id.enforce_cities = False
         partner.city_id = self.city_bcn
         self.assertFalse(partner.zip_id)
-        partner.city_id = self.env["res.city"]
-        self.assertEqual(
-            len(partner.allowed_zip_ids), self.env["res.city.zip"].search_count([])
-        )
 
     def test_partner_onchange_state(self):
         """Test partner onchange state_id"""
