@@ -37,7 +37,7 @@ addon | version | summary
 [partner_company_group](partner_company_group/) | 12.0.1.2.0 | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 12.0.1.1.0 | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 12.0.1.0.0 | Allow to visit the full contact form from a company
-[partner_contact_address_default](partner_contact_address_default/) | 12.0.1.0.1 | Set a default delivery and invoice address for contacts
+[partner_contact_address_default](partner_contact_address_default/) | 12.0.1.1.0 | Set a default delivery and invoice address for contacts
 [partner_contact_birthdate](partner_contact_birthdate/) | 12.0.1.1.0 | Contact's birthdate
 [partner_contact_birthplace](partner_contact_birthplace/) | 12.0.1.0.0 | This module allows to define a birthplace for partners.
 [partner_contact_department](partner_contact_department/) | 12.0.1.0.0 | Assign contacts to departments
