@@ -8,15 +8,23 @@
             <xpath expr="//field[@name='child_ids']" position="before">
                 <group>
                     <group>
-                        <field name="partner_delivery_id" domain="[('id', 'child_of', commercial_partner_id)]"/>
+                        <field
+                            name="partner_delivery_id"
+                            domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'delivery')]"
+                            widget="selection"
+                        />
                     </group>
                     <group>
-                        <field name="partner_invoice_id" domain="[('id', 'child_of', commercial_partner_id)]"/>
+                        <field
+                            name="partner_invoice_id"
+                            domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'invoice')]"
+                            widget="selection"
+                        />
                     </group>
                 </group>
             </xpath>
             <xpath expr="//field[@name='child_ids']//form//group" position="after">
-                <group string="Force addresses" attrs="{'invisible': [('type', '=', 'private')]}">
+                <group string="Force addresses" attrs="{'invisible': [('type', '!=', 'contact')]}">
                     <group colspan="4">
                         <field name="commercial_partner_id" invisible="1"/>
                         <div class="oe_grey">
@@ -25,12 +33,16 @@
                         </div>
                     </group>
                     <group colspan="4">
-                        <group>
-                            <field name="partner_delivery_id" domain="[('id', 'child_of', commercial_partner_id)]"/>
-                        </group>
-                        <group>
-                            <field name="partner_invoice_id" domain="[('id', 'child_of', commercial_partner_id)]"/>
-                        </group>
+                        <field
+                            name="partner_delivery_id"
+                            domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'delivery')]"
+                        />
+                    </group>
+                    <group colspan="4">
+                        <field
+                            name="partner_invoice_id"
+                            domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'invoice')]"
+                        />
                     </group>
                 </group>
             </xpath>
