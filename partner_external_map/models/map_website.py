@@ -9,6 +9,7 @@ from odoo import fields, models
 class MapWebsite(models.Model):
     _name = "map.website"
     _description = "Map Website"
+    _order = "sequence, id"
 
     name = fields.Char(string="Map Website Name", required=True)
     address_url = fields.Char(
@@ -32,3 +33,5 @@ class MapWebsite(models.Model):
         "latitude and longitude of the start and destination adresses "
         "(requires the module 'base_geolocalize').",
     )
+    active = fields.Boolean(default=True)
+    sequence = fields.Integer(default=10)
