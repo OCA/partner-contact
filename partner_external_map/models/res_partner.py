@@ -21,6 +21,8 @@ class ResPartner(models.Model):
             addr.append(self.street)
         if self.street2:
             addr.append(self.street2)
+        if hasattr(self, "street3") and self.street3:
+            addr.append(self.street3)
         if self.city:
             addr.append(self.city)
         if self.state_id:
@@ -52,12 +54,9 @@ class ResPartner(models.Model):
             raise UserError(
                 _("Missing map provider: " "you should set it in your preferences.")
             )
-        if (
-            map_website.lat_lon_url
-            and hasattr(self, "partner_latitude")
-            and self.partner_latitude
-            and self.partner_longitude
-        ):
+        # Since v13, fields partner_latitude and partner_longitude are
+        # in the "base" module
+        if map_website.lat_lon_url and self.partner_latitude and self.partner_longitude:
             url = self._prepare_url(
                 map_website.lat_lon_url,
                 {
@@ -103,7 +102,6 @@ class ResPartner(models.Model):
         start_partner = self.env.user.context_route_start_partner_id
         if (
             map_website.route_lat_lon_url
-            and hasattr(self, "partner_latitude")
             and self.partner_latitude
             and self.partner_longitude
             and start_partner.partner_latitude

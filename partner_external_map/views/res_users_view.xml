@@ -24,13 +24,19 @@
         <field name="inherit_id" ref="base.view_users_form_simple_modif" />
         <field name="arch" type="xml">
             <group name="preferences" position="inside">
-                <field name="context_map_website_id" readonly="0" widget="selection" />
-                <field
-                    name="context_route_map_website_id"
-                    readonly="0"
-                    widget="selection"
-                />
-                <field name="context_route_start_partner_id" readonly="0" />
+                <group name="maps">
+                    <field
+                        name="context_map_website_id"
+                        readonly="0"
+                        widget="selection"
+                    />
+                    <field
+                        name="context_route_map_website_id"
+                        readonly="0"
+                        widget="selection"
+                    />
+                    <field name="context_route_start_partner_id" readonly="0" />
+                </group>
             </group>
         </field>
     </record>
