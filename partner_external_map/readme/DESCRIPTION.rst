@@ -5,7 +5,7 @@ browser and go to Google Map with a search on the address of the partner.
 
 This module aims at restoring this feature with several improvements:
 
-* Each user can select the map website he wants to use in its preferences
+* Each user can select the map website he wants to use in its preferences.
 * There are now two buttons on the partner form view: one to open a regular map
   on the address of the partner, and another one to open an itinerary map from
   the start address configured in the preferences of the user to the address of
@@ -19,6 +19,5 @@ This module supports several map websites:
 * `Here Maps <https://www.here.com/>`
 * `MapQuest <http://www.mapquest.com/>`
 
-If the module *base_geolocalize* from the official addons is installed on the
-system, it will use the latitude and longitude to localize the partner (instead
-of the address) if this information is present on the partner.
+If partner has the latitude and longitude information, Odoo will use that
+information instead of the address.

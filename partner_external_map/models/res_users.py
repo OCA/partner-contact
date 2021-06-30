@@ -34,7 +34,7 @@ class ResUsers(models.Model):
     context_map_website_id = fields.Many2one(
         "map.website",
         string="Map Website",
-        default=_default_map_website,
+        default=lambda self: self._default_map_website(),
         domain=["|", ("address_url", "!=", False), ("lat_lon_url", "!=", False)],
     )
     # We want to give the possibility to the user to have one map provider for
@@ -47,7 +47,7 @@ class ResUsers(models.Model):
             ("route_address_url", "!=", False),
             ("route_lat_lon_url", "!=", False),
         ],
-        default=_default_route_map_website,
+        default=lambda self: self._default_route_map_website(),
         help="Map provided used when you click on the car icon on the partner "
         "form to display an itinerary.",
     )
@@ -62,5 +62,5 @@ class ResUsers(models.Model):
         """
         user = super(ResUsers, self).create(vals)
         if not vals.get("context_route_start_partner_id"):
-            user.context_route_start_partner_id = user.partner_id.id
+            user.write({"context_route_start_partner_id": user.partner_id.id})
         return user

@@ -30,13 +30,6 @@
             name="route_lat_lon_url"
         >https://www.openstreetmap.org/directions/?engine=orsm_car&amp;route={START_LATITUDE},{START_LONGITUDE};{DEST_LATITUDE},{DEST_LONGITUDE}</field>
     </record>
-    <record id="openstreetmap_fr" model="map.website">
-        <field name="name">OpenStreetMap FR</field>
-        <field name="address_url">http://tile.openstreetmap.fr/?q={ADDRESS}</field>
-        <field
-            name="lat_lon_url"
-        >http://tile.openstreetmap.fr/?zoom=15&amp;lat={LATITUDE}&amp;lon={LONGITUDE}</field>
-    </record>
     <record id="bing_maps" model="map.website">
         <field name="name">Bing Maps</field>
         <field
