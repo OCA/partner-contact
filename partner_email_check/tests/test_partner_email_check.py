@@ -4,22 +4,22 @@
 from unittest.mock import patch
 
 from odoo.exceptions import UserError, ValidationError
-from odoo.tests.common import TransactionCase
+from odoo.tests.common import SavepointCase
 from odoo.tools.misc import mute_logger
 
 
-class TestPartnerEmailCheck(TransactionCase):
-    def setUp(self):
-        super(TestPartnerEmailCheck, self).setUp()
+class TestPartnerEmailCheck(SavepointCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
         # Checks are disabled during tests unless this key is set
-        self.res_partner = self.env["res.partner"].with_context(
+        cls.res_partner = cls.env["res.partner"].with_context(
             test_partner_email_check=True
         )
-        self.test_partner = self.res_partner.create({"name": "test"})
-        self.wizard = self.env["res.config.settings"].create({})
-        self.wizard.partner_email_check_filter_duplicates = False
-        self.wizard.partner_email_check_check_deliverability = False
-        self.wizard.set_values()
+        cls.test_partner = cls.res_partner.create({"name": "test"})
+        cls.env.company.partner_email_check_filter_duplicates = False
+        cls.env.company.partner_email_check_check_deliverability = False
 
     def test_bad_email(self):
         """Test rejection of bad emails."""
@@ -70,8 +70,7 @@ class TestPartnerEmailCheck(TransactionCase):
         )
 
     def disallow_duplicates(self):
-        self.wizard.partner_email_check_filter_duplicates = True
-        self.wizard.set_values()
+        self.env.company.partner_email_check_filter_duplicates = True
 
     def test_duplicate_addresses_disallowed(self):
         self.disallow_duplicates()
@@ -90,13 +89,18 @@ class TestPartnerEmailCheck(TransactionCase):
         with self.assertRaises(UserError):
             self.test_partner.email = "foo@bar.org,email@domain.tld"
 
+    def test_duplicate_addresses_disallowed_copy_partner(self):
+        self.disallow_duplicates()
+        self.test_partner.write({"email": "email@domain.tld"})
+        partner_copy = self.test_partner.copy()
+        self.assertFalse(partner_copy.email)
+
     def test_duplicate_addresses_allowed_by_default(self):
         self.res_partner.create({"name": "alsotest", "email": "email@domain.tld"})
         self.test_partner.email = "email@domain.tld"
 
     def check_deliverability(self):
-        self.wizard.partner_email_check_check_deliverability = True
-        self.wizard.set_values()
+        self.env.company.partner_email_check_check_deliverability = True
 
     def test_deliverable_addresses_allowed(self):
         self.check_deliverability()
@@ -111,16 +115,6 @@ class TestPartnerEmailCheck(TransactionCase):
             # At least until a new version of email-validator is released
             # See https://github.com/JoshData/python-email-validator/pull/30
             self.test_partner.email = "cezrik@acoa.nrdkt"
-
-    def test_config_getters(self):
-        other_wizard = self.env["res.config.settings"].create({})
-        self.assertFalse(other_wizard.partner_email_check_check_deliverability)
-        self.assertFalse(other_wizard.partner_email_check_filter_duplicates)
-        self.disallow_duplicates()
-        self.check_deliverability()
-        other_wizard = self.env["res.config.settings"].create({})
-        self.assertTrue(other_wizard.partner_email_check_check_deliverability)
-        self.assertTrue(other_wizard.partner_email_check_filter_duplicates)
 
     @mute_logger("odoo.addons.partner_email_check.models.res_partner")
     def test_lacking_dependency_does_not_halt_execution(self):
