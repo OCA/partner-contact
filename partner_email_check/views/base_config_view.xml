@@ -14,6 +14,13 @@
                         </div>
                         <div class="o_setting_right_pane">
                             <label for="partner_email_check_filter_duplicates" />
+                            <span
+                                class="fa fa-lg fa-building-o"
+                                title="Values set here are company-specific."
+                                aria-label="Values set here are company-specific."
+                                groups="base.group_multi_company"
+                                role="img"
+                            />
                             <div class="text-muted">
                                 Require partner email addresses to be unique
                             </div>
@@ -25,6 +32,13 @@
                         </div>
                         <div class="o_setting_right_pane">
                             <label for="partner_email_check_check_deliverability" />
+                            <span
+                                class="fa fa-lg fa-building-o"
+                                title="Values set here are company-specific."
+                                aria-label="Values set here are company-specific."
+                                groups="base.group_multi_company"
+                                role="img"
+                            />
                             <div class="text-muted">
                                 Ensure that partner email addresses can be delivered to
                             </div>
