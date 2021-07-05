@@ -24,6 +24,13 @@ except ImportError:
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
+    def copy_data(self, default=None):
+        res = super(ResPartner, self).copy_data(default=default)
+        if self._should_filter_duplicates():
+            for copy_vals in res:
+                copy_vals.pop("email", None)
+        return res
+
     @api.model
     def email_check(self, emails):
         if config["test_enable"] and not self.env.context.get(
@@ -31,7 +38,9 @@ class ResPartner(models.Model):
         ):
             return emails
         return ",".join(
-            self._normalize_email(email.strip()) for email in emails.split(",")
+            self._normalize_email(email.strip())
+            for email in emails.split(",")
+            if email.strip()
         )
 
     @api.constrains("email")
@@ -72,20 +81,10 @@ class ResPartner(models.Model):
         return result["local"].lower() + "@" + result["domain_i18n"]
 
     def _should_filter_duplicates(self):
-        conf = (
-            self.env["ir.config_parameter"]
-            .sudo()
-            .get_param("partner_email_check_filter_duplicates", "False")
-        )
-        return conf == "True"
+        return self.env.company.partner_email_check_filter_duplicates
 
     def _should_check_deliverability(self):
-        conf = (
-            self.env["ir.config_parameter"]
-            .sudo()
-            .get_param("partner_email_check_check_deliverability", "False")
-        )
-        return conf == "True"
+        return self.env.company.partner_email_check_check_deliverability
 
     @api.model
     def create(self, vals):
