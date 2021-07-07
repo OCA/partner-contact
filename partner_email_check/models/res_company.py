@@ -8,6 +8,11 @@ class ResCompany(models.Model):
 
     _inherit = "res.company"
 
+    partner_email_check_syntax = fields.Boolean(
+        string="Check syntax of email addresses",
+        help="Don't allow email addresses with wrong syntax",
+        default=True,
+    )
     partner_email_check_filter_duplicates = fields.Boolean(
         string="Filter duplicate partner email addresses",
         help="Don't allow multiple partners to have the same email address.",
