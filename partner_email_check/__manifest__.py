@@ -14,4 +14,5 @@
     "license": "AGPL-3",
     "external_dependencies": {"python": ["email-validator"]},
     "data": ["views/base_config_view.xml"],
+    "demo": ["demo/res_company_demo.xml"],
 }

@@ -13,11 +13,8 @@ class TestPartnerEmailCheck(SavepointCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
-        # Checks are disabled during tests unless this key is set
-        cls.res_partner = cls.env["res.partner"].with_context(
-            test_partner_email_check=True
-        )
-        cls.test_partner = cls.res_partner.create({"name": "test"})
+        cls.test_partner = cls.env["res.partner"].create({"name": "test"})
+        cls.env.company.partner_email_check_syntax = True
         cls.env.company.partner_email_check_filter_duplicates = False
         cls.env.company.partner_email_check_check_deliverability = False
 
@@ -76,11 +73,15 @@ class TestPartnerEmailCheck(SavepointCase):
         self.disallow_duplicates()
         self.test_partner.write({"email": "email@domain.tld"})
         with self.assertRaises(UserError):
-            self.res_partner.create({"name": "alsotest", "email": "email@domain.tld"})
+            self.env["res.partner"].create(
+                {"name": "alsotest", "email": "email@domain.tld"}
+            )
 
     def test_duplicate_after_normalization_addresses_disallowed(self):
         self.disallow_duplicates()
-        self.res_partner.create({"name": "alsotest", "email": "email@doMAIN.tld"})
+        self.env["res.partner"].create(
+            {"name": "alsotest", "email": "email@doMAIN.tld"}
+        )
         with self.assertRaises(UserError):
             self.test_partner.email = "email@domain.tld"
 
@@ -96,7 +97,9 @@ class TestPartnerEmailCheck(SavepointCase):
         self.assertFalse(partner_copy.email)
 
     def test_duplicate_addresses_allowed_by_default(self):
-        self.res_partner.create({"name": "alsotest", "email": "email@domain.tld"})
+        self.env["res.partner"].create(
+            {"name": "alsotest", "email": "email@domain.tld"}
+        )
         self.test_partner.email = "email@domain.tld"
 
     def check_deliverability(self):
@@ -129,13 +132,13 @@ class TestPartnerEmailCheck(SavepointCase):
         with patch(
             "odoo.addons.partner_email_check.models.res_partner." "validate_email", None
         ):
-            self.res_partner.create({"name": "alsotest", "email": "email@domain.tld"})
+            self.env["res.partner"].create(
+                {"name": "alsotest", "email": "email@domain.tld"}
+            )
             with self.assertRaises(UserError):
                 self.test_partner.email = "email@domain.tld"
 
-    def test_invalid_email_addresses_allowed_during_tests(self):
-        # Note: testing without test_partner_email_check in the context
-        new_partner = self.env["res.partner"].create(
-            {"name": "invalidly emailed", "email": "invalid"}
-        )
-        self.assertEqual("invalid", new_partner.email)
+    def test_invalid_email_addresses_allowed(self):
+        self.env.company.partner_email_check_syntax = False
+        self.test_partner.email = "bad@email@domain..com"
+        self.assertTrue(self.test_partner.email)
