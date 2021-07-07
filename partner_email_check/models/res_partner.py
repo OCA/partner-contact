@@ -5,7 +5,6 @@ import logging
 
 from odoo import _, api, models
 from odoo.exceptions import UserError, ValidationError
-from odoo.tools import config
 
 _logger = logging.getLogger(__name__)
 
@@ -33,10 +32,6 @@ class ResPartner(models.Model):
 
     @api.model
     def email_check(self, emails):
-        if config["test_enable"] and not self.env.context.get(
-            "test_partner_email_check"
-        ):
-            return emails
         return ",".join(
             self._normalize_email(email.strip())
             for email in emails.split(",")
@@ -61,6 +56,8 @@ class ResPartner(models.Model):
                     )
 
     def _normalize_email(self, email):
+        if not self._should_check_syntax():
+            return email
         if validate_email is None:
             _logger.warning(
                 "Can not validate email, "
@@ -79,6 +76,9 @@ class ResPartner(models.Model):
                 _("Cannot deliver to email address %s") % email.strip()
             )
         return result["local"].lower() + "@" + result["domain_i18n"]
+
+    def _should_check_syntax(self):
+        return self.env.company.partner_email_check_syntax
 
     def _should_filter_duplicates(self):
         return self.env.company.partner_email_check_filter_duplicates
