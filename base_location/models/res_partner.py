@@ -32,17 +32,24 @@ class ResPartner(models.Model):
     )
     state_id = fields.Many2one(compute="_compute_state_id", readonly=False, store=True)
 
-    @api.depends("state_id", "country_id")
+    @api.depends("state_id", "country_id", "city_id", "zip")
     def _compute_zip_id(self):
         """Empty the zip auto-completion field if data mismatch when on UI."""
         for record in self.filtered("zip_id"):
-            for field in ["state_id", "country_id"]:
+            fields_map = {
+                "zip": "name",
+                "city_id": "city_id",
+                "state_id": "state_id",
+                "country_id": "country_id",
+            }
+            for rec_field, zip_field in fields_map.items():
                 if (
-                    record[field]
-                    and record[field] != record._origin[field]
-                    and record[field] != record.zip_id.city_id[field]
+                    record[rec_field]
+                    and record[rec_field] != record._origin[rec_field]
+                    and record[rec_field] != record.zip_id[zip_field]
                 ):
                     record.zip_id = False
+                    break
 
     @api.depends("zip_id")
     def _compute_city_id(self):
