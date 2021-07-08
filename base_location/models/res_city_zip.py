@@ -22,6 +22,8 @@ class ResCityZip(models.Model):
         ondelete="cascade",
         index=True,
     )
+    state_id = fields.Many2one(related="city_id.state_id")
+    country_id = fields.Many2one(related="city_id.country_id")
     display_name = fields.Char(
         compute="_compute_new_display_name", store=True, index=True
     )
