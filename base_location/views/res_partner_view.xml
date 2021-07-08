@@ -6,7 +6,6 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <field name="city" position="before">
-                <field name="city_id" invisible="1" />
                 <field
                     name="zip_id"
                     options="{'create_name_field': 'city', 'no_open': True, 'no_create': True}"
@@ -19,7 +18,6 @@
                 expr="//field[@name='child_ids']/form//field[@name='city']"
                 position="before"
             >
-                <field name="city_id" invisible="1" />
                 <field
                     name="zip_id"
                     options="{'create_name_field': 'city', 'no_open': True, 'no_create': True}"
