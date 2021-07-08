@@ -2,6 +2,8 @@
 # Copyright 2018 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+from lxml import etree
+
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
@@ -16,9 +18,6 @@ class ResPartner(models.Model):
         compute="_compute_zip_id",
         readonly=False,
         store=True,
-        domain="[('city_id', '=?', city_id), "
-        "('city_id.country_id', '=?', country_id), "
-        "('city_id.state_id', '=?', state_id)]",
     )
     city_id = fields.Many2one(
         index=True,  # add index for performance
@@ -117,3 +116,26 @@ class ResPartner(models.Model):
                     _("The zip of the partner %s differs from that in location %s")
                     % (rec.name, rec.zip_id.name)
                 )
+
+    def _zip_id_domain(self):
+        return """
+            [
+                ("city_id", "=?", city_id),
+                ("city_id.country_id", "=?", country_id),
+                ("city_id.state_id", "=?", state_id),
+            ]
+        """
+
+    @api.model
+    def _fields_view_get_address(self, arch):
+        # We want to use a domain that requires city_id to be on the view
+        # but we can't add it directly there, otherwise _fields_view_get_address
+        # in base_address_city won't do its magic, as it immediately returns
+        # if city_id is already in there. On the other hand, if city_id is not in the
+        # views, odoo won't let us use it in zip_id's domain.
+        # For this reason we need to set the domain here.
+        arch = super()._fields_view_get_address(arch)
+        doc = etree.fromstring(arch)
+        for node in doc.xpath("//field[@name='zip_id']"):
+            node.attrib["domain"] = self._zip_id_domain()
+        return etree.tostring(doc, encoding="unicode")
