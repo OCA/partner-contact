@@ -122,6 +122,10 @@ class TestBaseLocation(common.SavepointCase):
             self.partner_obj.create(
                 {"name": "P1", "zip_id": self.barcelona.id, "city_id": False}
             )
+        with self.assertRaises(ValidationError):
+            self.partner_obj.create(
+                {"name": "P1", "zip_id": self.barcelona.id, "zip": False}
+            )
 
     def test_writing_company(self):
         self.company.zip_id = self.barcelona
