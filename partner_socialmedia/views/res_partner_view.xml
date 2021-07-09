@@ -14,6 +14,10 @@
                         <field name="skype" widget="url"/>
                         <field name="linkedin" widget="url"/>
                         <field name="mastodon" widget="url"/>
+                        <field name="forum" widget="url"/>
+                        <field name="reddit" widget="url"/>
+                        <field name="youtube" widget="url"/>
+                        <field name="discord" widget="url"/>
                     </group>
                 </page>
             </xpath>
