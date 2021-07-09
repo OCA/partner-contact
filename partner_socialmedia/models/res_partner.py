@@ -7,6 +7,7 @@ from odoo import fields, models
 
 class ResPartner(models.Model):
     """Add social media fields"""
+
     _inherit = "res.partner"
 
     facebook = fields.Char()
