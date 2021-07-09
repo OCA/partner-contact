@@ -14,3 +14,7 @@ class ResPartner(models.Model):
     skype = fields.Char()
     linkedin = fields.Char()
     mastodon = fields.Char()
+    discord = fields.Char()
+    reddit = fields.Char()
+    forum = fields.Char()
+    youtube = fields.Char()
