@@ -51,6 +51,3 @@ msgstr "Ferramentas"
 #: model:res.groups,name:partner_deduplicate_acl.group_unrestricted
 msgid "Without restrictions"
 msgstr "Sem restrições"
-
-#~ msgid "Contact"
-#~ msgstr "Contato"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- © 2016 Tecnativa S.L. - Jairo Llopis
-     © 2016 Tecnativa S.L. - Vicent Cubells
+<!-- Copyright 2016 Tecnativa S.L. - Jairo Llopis
+     Copyright 2016 Tecnativa S.L. - Vicent Cubells
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html). -->
 <odoo>
     <!-- New user group category -->
