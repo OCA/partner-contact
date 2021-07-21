@@ -49,9 +49,3 @@ msgstr "Herramientas"
 #: model:res.groups,name:partner_deduplicate_acl.group_unrestricted
 msgid "Without restrictions"
 msgstr "Sin restricciones"
-
-#~ msgid "Contact"
-#~ msgstr "Contacto"
-
-#~ msgid "base.partner.merge.automatic.wizard"
-#~ msgstr "base.partner.merge.automatic.wizard"
