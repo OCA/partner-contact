@@ -48,6 +48,3 @@ msgstr "Araçlar"
 #: model:res.groups,name:partner_deduplicate_acl.group_unrestricted
 msgid "Without restrictions"
 msgstr "Kısıtlama olmaksızın"
-
-#~ msgid "base.partner.merge.automatic.wizard"
-#~ msgstr "base.partner.merge.automatic.wizard"

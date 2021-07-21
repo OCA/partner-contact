@@ -1,7 +1,12 @@
-* Rafael Blasco <rafabn@antiun.com>
-* Jairo Llopis <jairo.llopis@tecnativa.com>
-* Vicent Cubells <vicent.cubells@tecnativa.com>
-* Pedro M. Baeza <pedro.baeza@tecnativa.com>
-* Luis M. Ontalba <luis.martinez@tecnativa.com>
-* Victor M.M. Torres <victor.martin@tecnativa.com>
+* `Tecnativa <https://www.tecnativa.com>`_:
+
+  * Rafael Blasco
+  * Jairo Llopis
+  * Vicent Cubells
+  * Pedro M. Baeza
+  * Luis M. Ontalba
+  * Victor M.M. Torres
+  * Carlos Roca
+  * João Marques
+  * César A. Sánchez
 * Kevin Khao <kevin.khao@gmail.com>

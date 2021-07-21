@@ -7,7 +7,7 @@ from odoo.tests import common
 
 class TestPartnerDeduplicateAcl(common.TransactionCase):
     def setUp(self):
-        super(TestPartnerDeduplicateAcl, self).setUp()
+        super().setUp()
         self.partner_1 = self.env["res.partner"].create(
             {
                 "name": "Partner 1",
