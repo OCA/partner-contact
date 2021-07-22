@@ -1,0 +1,26 @@
+<odoo>
+    <record id="sale_order_form_identification_sale" model="ir.ui.view">
+        <field name="name">sale.order.from.view.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_shipping_id']" position="after">
+                <field name="valid_id" invisible="1" />
+                <field name="require_id" invisible="1" />
+                <p
+                    attrs="{'invisible': ['|', '&amp;',('require_id', '=', True), ('valid_id', '=', True), '&amp;', ('require_id', '!=', True), ('valid_id', '!=', True)]}"
+                    class="text-warning"
+                >
+                    No or Expired ID
+                </p>
+                <p />
+                <p
+                    attrs="{'invisible': ['|', '&amp;',('require_id', '=', True), ('valid_id', '=', False), '&amp;', ('require_id', '!=', True), ('valid_id', '!=', True)]}"
+                    class="text-success"
+                >
+                    Valid ID
+                </p>
+            </xpath>
+        </field>
+    </record>
+</odoo>
