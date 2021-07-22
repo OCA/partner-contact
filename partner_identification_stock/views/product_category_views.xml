@@ -1,0 +1,20 @@
+<odoo>
+
+    <record id="product_category_form_identification_stock" model="ir.ui.view">
+        <field name="name">product.category.from.view.inherit</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="after">
+                <group string="Partner ID Requirements" name="require_stock" col="2">
+                    <field
+                        name="require_id_stock_ids"
+                        widget="many2many_tags"
+                        options="{'color_field': 'color'}"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
