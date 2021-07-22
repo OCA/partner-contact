@@ -1,0 +1,26 @@
+<odoo>
+    <record id="stock_picking_form_identification_stock" model="ir.ui.view">
+        <field name="name">stock.picking.from.view.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="valid_partner_identification" invisible="1" />
+                <field name="require_partner_identification" invisible="1" />
+                <p
+                    attrs="{'invisible': ['|', '&amp;',('require_partner_identification', '=', True), ('valid_partner_identification', '=', True), '&amp;', ('require_partner_identification', '!=', True), ('valid_partner_identification', '!=', True)]}"
+                    class="text-warning"
+                >
+                    No or Expired ID
+                </p>
+                <p />
+                <p
+                    attrs="{'invisible': ['|', '&amp;',('require_partner_identification', '=', True), ('valid_partner_identification', '=', False), '&amp;', ('require_partner_identification', '!=', True), ('valid_partner_identification', '!=', True)]}"
+                    class="text-success"
+                >
+                    Valid ID
+                </p>
+            </xpath>
+        </field>
+    </record>
+</odoo>
