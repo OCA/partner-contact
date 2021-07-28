@@ -41,6 +41,7 @@ addon | version | summary
 [partner_contact_nationality](partner_contact_nationality/) | 14.0.1.0.1 | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 14.0.1.0.0 | Add a page to contacts form to put personal information
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 14.0.1.0.0 | Contact deduplication with fine-grained permission control
+[partner_disable_gravatar](partner_disable_gravatar/) | 14.0.1.0.0 | Disable automatic connection to gravatar.com
 [partner_employee_quantity](partner_employee_quantity/) | 14.0.1.0.0 | Know how many employees a partner has
 [partner_fax](partner_fax/) | 14.0.1.0.0 | Add fax number on partner
 [partner_firstname](partner_firstname/) | 14.0.1.0.1 | Split first name and last name for non company partners
