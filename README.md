@@ -26,6 +26,7 @@ addon | version | summary
 [base_location_nuts](base_location_nuts/) | 13.0.1.0.0 | NUTS Regions
 [base_partner_sequence](base_partner_sequence/) | 13.0.1.0.1 | Sets customer's code from a sequence
 [base_vat_sanitized](base_vat_sanitized/) | 13.0.1.0.0 | Adds field sanitized_vat on partners
+[partner_address_street3](partner_address_street3/) | 13.0.1.0.0 | Add a third address line on partners
 [partner_address_two_lines](partner_address_two_lines/) | 13.0.1.0.1 | The company and the partner name are on two different lines
 [partner_affiliate](partner_affiliate/) | 13.0.1.0.1 | Partner Affiliates
 [partner_bank_active](partner_bank_active/) | 13.0.1.0.0 | This module allows to deactivate a partner bank account.
