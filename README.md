@@ -29,8 +29,9 @@ addon | version | summary
 [partner_address_two_lines](partner_address_two_lines/) | 13.0.1.0.1 | The company and the partner name are on two different lines
 [partner_affiliate](partner_affiliate/) | 13.0.1.0.1 | Partner Affiliates
 [partner_bank_active](partner_bank_active/) | 13.0.1.0.0 | This module allows to deactivate a partner bank account.
+[partner_capital](partner_capital/) | 13.0.1.0.1 | Partners Capital
 [partner_coc](partner_coc/) | 13.0.1.0.0 | Adds field 'Chamber Of Commerce Registration Number'
-[partner_company_group](partner_company_group/) | 13.0.1.1.0 | Adds the possibility to add a company group to a company
+[partner_company_group](partner_company_group/) | 13.0.1.2.0 | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 13.0.1.0.0 | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 13.0.1.0.0 | Allow to visit the full contact form from a company
 [partner_contact_address_default](partner_contact_address_default/) | 13.0.1.0.1 | Set a default delivery and invoice address for contacts
@@ -48,18 +49,22 @@ addon | version | summary
 [partner_deduplicate_by_website](partner_deduplicate_by_website/) | 13.0.1.0.0 | Deduplicate Contacts by Website
 [partner_deduplicate_filter](partner_deduplicate_filter/) | 13.0.1.0.0 | Exclude records from the deduplication
 [partner_disable_gravatar](partner_disable_gravatar/) | 13.0.1.0.0 | Disable automatic connection to gravatar.com
+[partner_email_check](partner_email_check/) | 13.0.1.1.0 | Validate email address field
 [partner_employee_quantity](partner_employee_quantity/) | 13.0.1.0.0 | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 13.0.1.0.0 | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 13.0.1.1.0 | Add fax number on partner
 [partner_firstname](partner_firstname/) | 13.0.1.0.2 | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 13.0.1.2.0 | Partner Identification Numbers
 [partner_identification_gln](partner_identification_gln/) | 13.0.1.0.0 | This addon extends "Partner Identification Numbers" to provide a number category for GLN registration
+[partner_identification_unique_by_category](partner_identification_unique_by_category/) | 13.0.1.0.0 | Partner Identification Numbers Unique By Category
 [partner_industry_secondary](partner_industry_secondary/) | 13.0.1.0.0 | Add secondary partner industries
 [partner_iterative_archive](partner_iterative_archive/) | 13.0.1.0.0 | Archive all contacts when parent is archived
 [partner_label](partner_label/) | 13.0.1.0.0 | Print partner labels
+[partner_manual_rank](partner_manual_rank/) | 13.0.1.0.1 | Be able to manually flag partners as customer or supplier.
 [partner_multi_relation](partner_multi_relation/) | 13.0.1.1.0 | Partner Relations
 [partner_phone_extension](partner_phone_extension/) | 13.0.1.0.0 | Partner Phone Number Extension
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 13.0.1.0.0 | Track the time and days your partners expect phone calls
+[partner_pricelist_search](partner_pricelist_search/) | 13.0.1.0.0 | Partner pricelist search
 [partner_priority](partner_priority/) | 13.0.1.0.0 | Adds priority to partners.
 [partner_ref_unique](partner_ref_unique/) | 13.0.1.0.0 | Add an unique constraint to partner ref field
 [partner_second_lastname](partner_second_lastname/) | 13.0.2.0.0 | Have split first and second lastnames
@@ -67,6 +72,8 @@ addon | version | summary
 [partner_vat_unique](partner_vat_unique/) | 13.0.1.0.0 | Module to make the VAT number unique for customers and suppliers.
 [portal_partner_data_no_edit](portal_partner_data_no_edit/) | 13.0.1.0.1 | Portal Partner Block Data Edit
 [portal_partner_select_all](portal_partner_select_all/) | 13.0.1.0.1 | Portal Partner Select All
+[purchase_supplier_rank](purchase_supplier_rank/) | 13.0.1.0.0 | Update Supplier Rank when creating a Purchase Order
+[sale_customer_rank](sale_customer_rank/) | 13.0.1.0.0 | Update Customer Rank when creating a Sale Order
 
 [//]: # (end addons)
 
