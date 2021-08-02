@@ -1,0 +1,13 @@
+<odoo>
+    <record id="ir_cron_identification_notification" model="ir.cron">
+        <field name="name">Partner Identification Notification</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now().replace(hour=0, minute=0))" />
+        <field name="doall" eval="False" />
+        <field name="model_id" ref="model_res_partner_id_number" />
+        <field name="code">model.send_notification()</field>
+        <field name="state">code</field>
+    </record>
+</odoo>
