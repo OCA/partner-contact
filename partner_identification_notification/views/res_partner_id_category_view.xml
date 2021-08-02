@@ -1,0 +1,25 @@
+<odoo>
+    <record id="res_partner_id_category_form_inherit_notification" model="ir.ui.view">
+        <field name="name">res.partner.id_category.from.view.inherit</field>
+        <field name="model">res.partner.id_category</field>
+        <field
+            name="inherit_id"
+            ref="partner_identification.view_partner_id_category_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="after">
+               <field name="send_notification" />
+                <field name="id_number_model_id" invisible="1" />
+               <field
+                    name="days_before_expire"
+                    attrs="{'invisible': [('send_notification', '=', False)], 'required': [('send_notification', '=', True)]}"
+                />
+               <field
+                    name="email_template_id"
+                    attrs="{'invisible': [('send_notification', '=', False)], 'required': [('send_notification', '=', True)]}"
+                    context="{'default_model_id': id_number_model_id}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
