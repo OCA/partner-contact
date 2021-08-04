@@ -4,7 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 import logging
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 
 from .. import exceptions
 
@@ -31,8 +31,14 @@ class ResPartner(models.Model):
         """Add inverted names at creation if unavailable."""
         context = dict(self.env.context)
         name = vals.get("name", context.get("default_name"))
-
-        if name is not None:
+        if context.get("copy") and vals.get('firstname') and not vals.get('is_company'):
+            vals["firstname"] = _('%s (copy)', vals["firstname"])
+            # Remove the combined fields
+            if "name" in vals:
+                del vals["name"]
+            if "default_name" in context:
+                del context["default_name"]
+        elif name is not None:
             # Calculate the splitted fields
             inverted = self._get_inverse_name(
                 self._get_whitespace_cleaned_name(name),
