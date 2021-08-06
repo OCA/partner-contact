@@ -64,6 +64,7 @@ setuptools.setup(
         'odoo12-addon-partner_ref_unique',
         'odoo12-addon-partner_route',
         'odoo12-addon-partner_second_lastname',
+        'odoo12-addon-partner_socialmedia',
         'odoo12-addon-partner_vat_unique',
         'odoo12-addon-portal_partner_data_no_edit',
         'odoo12-addon-portal_partner_select_all',
