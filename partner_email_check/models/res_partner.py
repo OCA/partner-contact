@@ -10,9 +10,9 @@ _logger = logging.getLogger(__name__)
 
 try:
     from email_validator import (
-        validate_email,
         EmailSyntaxError,
         EmailUndeliverableError,
+        validate_email,
     )
 except ImportError:
     _logger.debug('Cannot import "email_validator".')
@@ -67,7 +67,8 @@ class ResPartner(models.Model):
 
         try:
             result = validate_email(
-                email, check_deliverability=self._should_check_deliverability(),
+                email,
+                check_deliverability=self._should_check_deliverability(),
             )
         except EmailSyntaxError:
             raise ValidationError(_("%s is an invalid email") % email.strip())
