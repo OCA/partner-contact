@@ -4,26 +4,25 @@
 from psycopg2 import IntegrityError
 
 from odoo.tests import common
+from odoo.tools import mute_logger
 
 
-class TestSortCode(common.TransactionCase):
-    def setUp(self):
-        super(TestSortCode, self).setUp()
+class TestSortCode(common.SavepointCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
         # Create two different active bank with different sort codes
-
-        self.bank_obj = self.env["res.bank"]
-
+        cls.Bank = cls.env["res.bank"]
         vals = {
             "name": "BANK 1",
             "sort_code": "95-01-32",
         }
-        self.bank_1 = self.bank_obj.create(vals)
-
+        cls.bank_1 = cls.Bank.create(vals)
         vals = {
             "name": "BANK 2",
             "sort_code": "95-01-33",
         }
-        self.bank_2 = self.bank_obj.create(vals)
+        cls.bank_2 = cls.Bank.create(vals)
 
     def test_sort_code_duplicate(self):
         # Create a duplicate
@@ -31,8 +30,8 @@ class TestSortCode(common.TransactionCase):
             "name": "BANK 3",
             "sort_code": "95-01-32",
         }
-        with self.assertRaises(IntegrityError):
-            self.bank_obj.create(vals)
+        with self.assertRaises(IntegrityError), mute_logger("odoo.sql_db"):
+            self.Bank.create(vals)
 
     def test_sort_code(self):
         # Create a new bank with new sort code
@@ -40,7 +39,7 @@ class TestSortCode(common.TransactionCase):
             "name": "BANK 3",
             "sort_code": "95-01-34",
         }
-        self.bank_obj.create(vals)
+        self.Bank.create(vals)
 
     def test_sort_code_inactive(self):
         # Set several banks with same sort code to inactive and then create
@@ -48,13 +47,13 @@ class TestSortCode(common.TransactionCase):
         self.bank_1.write({"active": False})
         vals = {
             "name": "BANK 3",
-            "sort_code": "95-01-32",
+            "sort_code": "95-01-38",
         }
-        self.bank_3 = self.bank_obj.create(vals)
+        self.bank_3 = self.Bank.create(vals)
         self.bank_3.active = False
-
+        self.bank_3.flush()
         vals = {
             "name": "BANK 4",
-            "sort_code": "95-01-32",
+            "sort_code": "95-01-38",
         }
-        self.bank_obj.create(vals)
+        self.Bank.create(vals)
