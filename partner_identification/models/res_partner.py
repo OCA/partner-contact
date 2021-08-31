@@ -6,6 +6,8 @@
 #        Antonio Espinosa <antonioea@antiun.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from dateutil.relativedelta import relativedelta
+
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
@@ -18,6 +20,17 @@ class ResPartner(models.Model):
         inverse_name="partner_id",
         string="Identification Numbers",
     )
+
+    dea_number = fields.Char(
+        string="DEA #",
+    )
+    dea_expired_date = fields.Date(string="DEA Expiration Date")
+    dea_active = fields.Selection([("yes", "Yes"), ("no", "NO")], string="DEA Active")
+
+    medical_license = fields.Char(
+        string="Medical License",
+    )
+    medical_license_expired_date = fields.Date(string="Medical License Expiration Date")
 
     @api.depends("id_numbers")
     def _compute_identification(self, field_name, category_code):
@@ -164,3 +177,40 @@ class ResPartner(models.Model):
             [("name", operator, value), ("category_id.code", "=", category_code)]
         )
         return [("id_numbers.id", "in", id_numbers.ids)]
+
+    @api.model
+    def send_expiration_date_notification(self):
+        email_dea_template_id = self.env.ref(
+            "partner_identification.email_template_dea_notification",
+            raise_if_not_found=False,
+        )
+        email_medical_template_id = self.env.ref(
+            "partner_identification.email_template_medical_notification",
+            raise_if_not_found=False,
+        )
+        des_partner_ids = self.search(
+            [
+                ("dea_expired_date", "=", fields.Date.today() + relativedelta(days=30)),
+                ("dea_active", "=", "yes"),
+            ]
+        )
+        medical_partner_ids = self.search(
+            [
+                (
+                    "medical_license_expired_date",
+                    "=",
+                    fields.Date.today() + relativedelta(days=30),
+                )
+            ]
+        )
+        for partner in des_partner_ids:
+            email_dea_template_id.send_mail(
+                partner.id,
+                force_send=True,
+            )
+
+        for partner in medical_partner_ids:
+            email_medical_template_id.send_mail(
+                partner.id,
+                force_send=True,
+            )

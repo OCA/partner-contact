@@ -18,6 +18,22 @@
                     />
                 </page>
             </page>
+            <field name="vat" position="after">
+                <field name="dea_active" />
+                <field
+                    name="dea_number"
+                    attrs="{'required': [('dea_active', '=', 'yes')]}"
+                />
+                <field
+                    name="dea_expired_date"
+                    attrs="{'required': [('dea_active', '=', 'yes')]}"
+                />
+                <field name="medical_license" />
+                <field
+                    name="medical_license_expired_date"
+                    attrs="{'required': [('medical_license', '!=', False)]}"
+                />
+            </field>
         </field>
     </record>
 </odoo>

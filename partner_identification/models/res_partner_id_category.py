@@ -36,6 +36,14 @@ class ResPartnerIdCategory(models.Model):
         "Python validation code", help="Python code called to validate an id number."
     )
 
+    dea_number = fields.Char(
+        string="DEA #",
+    )
+
+    medical_license = fields.Char(
+        string="Medical License",
+    )
+
     def _validation_eval_context(self, id_number):
         self.ensure_one()
         return {"self": self, "id_number": id_number}

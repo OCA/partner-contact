@@ -13,6 +13,8 @@
                             <field name="name" />
                             <field name="code" />
                             <field name="validation_code" />
+                            <field name="dea_number" />
+                            <field name="medical_license" />
                         </group>
                         <group>
                             <div class="alert alert-primary" role="alert">

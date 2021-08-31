@@ -1,0 +1,13 @@
+<odoo>
+    <record id="ir_cron_expiration_date_notification" model="ir.cron">
+        <field name="name">DEA and Medical License Expiration Date</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now().replace(hour=0, minute=0))" />
+        <field name="doall" eval="False" />
+        <field name="model_id" ref="base.model_res_partner" />
+        <field name="code">model.send_expiration_date_notification()</field>
+        <field name="state">code</field>
+    </record>
+</odoo>
