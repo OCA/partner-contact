@@ -1,0 +1,17 @@
+<odoo>
+    <record model="ir.ui.view" id="view_partner_form_dea">
+        <field name="name">res.partner.form.id_number</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <field name="vat" position="after">
+                <field name="dea_active" />
+                <field name="dea_number" />
+                <field name="dea_expired_date" />
+                <field name="medical_license" />
+                <field name="medical_license_expired_date" />
+            </field>
+        </field>
+    </record>
+</odoo>

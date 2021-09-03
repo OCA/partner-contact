@@ -1,0 +1,10 @@
+<odoo>
+    <record model="res.partner.id_category" id="res_partner_id_category_dea">
+        <field name="name">DEA Number</field>
+        <field name="code">DEA</field>
+    </record>
+    <record model="res.partner.id_category" id="res_partner_id_category_medical">
+        <field name="name">Medical License</field>
+        <field name="code">ML</field>
+    </record>
+</odoo>
