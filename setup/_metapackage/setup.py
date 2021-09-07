@@ -32,6 +32,7 @@ setuptools.setup(
         'odoo14-addon-partner_deduplicate_acl',
         'odoo14-addon-partner_disable_gravatar',
         'odoo14-addon-partner_employee_quantity',
+        'odoo14-addon-partner_external_map',
         'odoo14-addon-partner_fax',
         'odoo14-addon-partner_firstname',
         'odoo14-addon-partner_helper',
