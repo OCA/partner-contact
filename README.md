@@ -43,6 +43,7 @@ addon | version | maintainers | summary
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 14.0.1.0.0 |  | Contact deduplication with fine-grained permission control
 [partner_disable_gravatar](partner_disable_gravatar/) | 14.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Disable automatic connection to gravatar.com
 [partner_employee_quantity](partner_employee_quantity/) | 14.0.1.0.0 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) | Know how many employees a partner has
+[partner_external_map](partner_external_map/) | 14.0.1.0.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 14.0.1.0.0 |  | Add fax number on partner
 [partner_firstname](partner_firstname/) | 14.0.1.0.1 |  | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 14.0.1.0.0 |  | Add specific helper methods
