@@ -42,6 +42,7 @@ addon | version | maintainers | summary
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 14.0.1.0.0 |  | Add a page to contacts form to put personal information
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 14.0.1.0.0 |  | Contact deduplication with fine-grained permission control
 [partner_disable_gravatar](partner_disable_gravatar/) | 14.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Disable automatic connection to gravatar.com
+[partner_email_check](partner_email_check/) | 14.0.1.1.0 |  | Validate email address field
 [partner_employee_quantity](partner_employee_quantity/) | 14.0.1.0.0 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 14.0.1.0.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 14.0.1.0.0 |  | Add fax number on partner
