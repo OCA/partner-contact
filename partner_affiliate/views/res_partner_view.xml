@@ -6,6 +6,35 @@
         <field eval="1" name="priority" />
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
+            <field name="street" position='attributes'>
+                <attribute name="attrs">{'readonly': [('type', '=',
+                    'contact'),('parent_id', '!=', False),('is_company', '=',False)]}</attribute>
+            </field>
+            <field name="street2" position='attributes'>
+                <attribute name="attrs">{'readonly': [('type', '=',
+                    'contact'),('parent_id', '!=', False),('is_company', '=',False)]}</attribute>
+            </field>
+            <field name="city" position='attributes'>
+                <attribute name="attrs">{'readonly': [('type', '=',
+                    'contact'),('parent_id', '!=', False),('is_company', '=',False)]}</attribute>
+            </field>
+            <field name="state_id" position='attributes'>
+                <attribute name="attrs">{'readonly': [('type', '=',
+                    'contact'),('parent_id', '!=', False),('is_company', '=',False)]}</attribute>
+            </field>
+            <field name="zip" position='attributes'>
+                <attribute name="attrs">{'readonly': [('type', '=',
+                    'contact'),('parent_id', '!=', False),('is_company', '=',False)]}</attribute>
+            </field>
+            <field name="country_id" position='attributes'>
+                <attribute name="attrs">{'readonly': [('type', '=',
+                    'contact'),('parent_id', '!=', False),('is_company', '=',False)]}</attribute>
+            </field>
+            <field name="vat" position='attributes'>
+                <attribute
+                    name="attrs"
+                >{'readonly': [('parent_id','!=',False),('is_company', '=',False)]}</attribute>
+            </field>
             <xpath
                 expr="/form/sheet//div[hasclass('o_row')]/field[@name='parent_id']"
                 position="attributes"
