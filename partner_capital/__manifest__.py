@@ -1,11 +1,11 @@
-# Copyright 2015 Antonio Espinosa <antonio.espinosa@tecnativa.com>
-# Copyright 2015 Jairo Llopis <jairo.llopis@tecnativa.com>
-# Copyright 2017 David Vidal <david.vidal@tecnativa.com>
+# Copyright 2015 Tecnativa - Antonio Espinosa
+# Copyright 2015 Tecnativa - Jairo Llopis
+# Copyright 2017 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 {
     "name": "Partners Capital",
-    "version": "13.0.1.0.1",
+    "version": "14.0.1.0.0",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
     "author": "Antiun Ingeniería S.L., "
