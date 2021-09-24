@@ -28,6 +28,24 @@ msgid "Customers"
 msgstr "Clientes"
 
 #. module: partner_pricelist_search
+#: model:ir.model.fields,field_description:partner_pricelist_search.field_product_pricelist__display_name
+#: model:ir.model.fields,field_description:partner_pricelist_search.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_pricelist_search
+#: model:ir.model.fields,field_description:partner_pricelist_search.field_product_pricelist__id
+#: model:ir.model.fields,field_description:partner_pricelist_search.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_pricelist_search
+#: model:ir.model.fields,field_description:partner_pricelist_search.field_product_pricelist____last_update
+#: model:ir.model.fields,field_description:partner_pricelist_search.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_pricelist_search
 #: model:ir.model,name:partner_pricelist_search.model_product_pricelist
 #: model:ir.model.fields,field_description:partner_pricelist_search.field_res_partner__property_product_pricelist
 #: model:ir.model.fields,field_description:partner_pricelist_search.field_res_users__property_product_pricelist
@@ -35,7 +53,7 @@ msgid "Pricelist"
 msgstr "Tarifa"
 
 #. module: partner_pricelist_search
-#: code:addons/partner_pricelist_search/models/res_partner.py:29
+#: code:addons/partner_pricelist_search/models/res_partner.py:0
 #, python-format
 msgid "Pricelist field do not support search with the operator '%s'."
 msgstr "El campo Tarifa no soporta búsquedas con el operador '%s'."
