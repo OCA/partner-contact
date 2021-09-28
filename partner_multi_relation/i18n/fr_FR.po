@@ -504,6 +504,7 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:154
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:163
 #, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr ""

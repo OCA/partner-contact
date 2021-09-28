@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
 "PO-Revision-Date: 2020-12-08 18:36+0000\n"
 "Last-Translator: Ignacio Buioli <ibuioli@gmail.com>\n"
-"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/teams/"
-"23907/es_AR/)\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/"
+"teams/23907/es_AR/)\n"
 "Language: es_AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -398,7 +398,8 @@ msgstr "Tipos de Relación"
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:316
 #, python-format
 msgid "Relation type incompatible with selected partner(s)."
-msgstr "El tipo de relación es incompatble con el/los socio(s) seleccionado(s)."
+msgstr ""
+"El tipo de relación es incompatble con el/los socio(s) seleccionado(s)."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_date
@@ -516,6 +517,7 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:154
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:163
 #, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr "Ya existe una relación similar con fechas superpuestas"
