@@ -12,6 +12,12 @@
                 <field name="medical_license" />
                 <field name="medical_license_expired_date" />
             </field>
+            <xpath
+                expr="//field[@name='child_ids']//form//field[@name='comment']"
+                position="before"
+            >
+                <field name="dea_number" />
+            </xpath>
         </field>
     </record>
 </odoo>

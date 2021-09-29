@@ -1,0 +1,16 @@
+<odoo>
+    <record model="ir.ui.view" id="view_sale_order_form_dea">
+        <field name="name">sale.order.form.id_number</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field
+                    name="dea_number_id"
+                    context="{'partner_id':partner_id}"
+                    domain="[('category_id.code','=', 'DEA')]"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
