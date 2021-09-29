@@ -27,21 +27,16 @@ class ResPartner(models.Model):
     @api.model
     def create(self, vals):
         new = super().create(vals)
-        if new.need_validation and new.state != "confirmed":
-            new.active = False
-        else:
-            new.active = True
+        if not new.need_validation:
             new.state = "confirmed"
+
         return new
 
     def write(self, vals):
-        # Changing certain fields required new validation process
+        # Changing certain fields requires validation process
         revalidate_fields = self._tier_revalidation_fields(vals)
         if any(x in revalidate_fields for x in vals.keys()):
             self.mapped("review_ids").unlink()
             vals["state"] = "draft"
 
-        # Automatically update active flag depending on state
-        if "state" in vals:
-            vals["active"] = vals["state"] == "confirmed"
         return super().write(vals)

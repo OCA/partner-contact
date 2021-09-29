@@ -46,8 +46,8 @@ class TestPartnerTierValidation(common.SavepointCase):
         company = self.env["res.partner"].create(
             {"name": "Company for test", "company_type": "company"}
         )
-        # Since company need validation, it should be inactive
-        self.assertEqual(company.active, False)
+        # Since company need validation, it should be in Draft state
+        self.assertEqual(company.state, "draft")
 
         # Assert an error shows if trying to make it active
         with self.assertRaises(ValidationError):
@@ -65,4 +65,4 @@ class TestPartnerTierValidation(common.SavepointCase):
 
         # Test partner creation that doesn't need validation
         customer = self.env["res.partner"].create({"name": "Partner for test"})
-        self.assertEqual(customer.active, True)
+        self.assertEqual(customer.state, "confirmed")
