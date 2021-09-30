@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="base.view_partner_simple_form" />
         <field name="arch" type="xml">
             <field name="function" position="after">
-                <field name="fax" placeholder="Fax..." />
+                <field name="fax" placeholder="Fax..." options="{'enable_sms': False}"/>
             </field>
         </field>
     </record>
@@ -16,13 +16,13 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <field name="function" position="after">
-                <field name="fax" placeholder="Fax..." widget="phone" />
+                <field name="fax" placeholder="Fax..." widget="phone" options="{'enable_sms': False}" />
             </field>
             <xpath
                 expr="//field[@name='child_ids']/form//field[@name='mobile']"
                 position="after"
             >
-                <field name="fax" placeholder="Fax..." widget="phone" />
+                <field name="fax" placeholder="Fax..." widget="phone" options="{'enable_sms': False}" />
             </xpath>
         </field>
     </record>
