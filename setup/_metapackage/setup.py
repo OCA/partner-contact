@@ -17,6 +17,7 @@ setuptools.setup(
         'odoo14-addon-partner_address_street3',
         'odoo14-addon-partner_address_version',
         'odoo14-addon-partner_affiliate',
+        'odoo14-addon-partner_bank_code',
         'odoo14-addon-partner_capital',
         'odoo14-addon-partner_company_group',
         'odoo14-addon-partner_company_type',
