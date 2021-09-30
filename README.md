@@ -28,7 +28,7 @@ addon | version | maintainers | summary
 [partner_address_street3](partner_address_street3/) | 14.0.1.0.0 |  | Add a third address line on partners
 [partner_address_version](partner_address_version/) | 14.0.1.0.0 |  | Partner Address Version
 [partner_affiliate](partner_affiliate/) | 14.0.1.0.1 |  | Partner Affiliates
-[partner_bank_code](partner_bank_code/) | 14.0.1.0.0 |  | Add fields information in banks
+[partner_bank_code](partner_bank_code/) | 14.0.1.1.0 |  | Add fields information in banks
 [partner_capital](partner_capital/) | 14.0.1.0.0 |  | Partners Capital
 [partner_company_group](partner_company_group/) | 14.0.1.0.1 |  | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 14.0.1.0.1 |  | Adds a company type to partner that are companies
