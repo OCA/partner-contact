@@ -4,7 +4,7 @@
 {
     "name": "Partner Bank Sort Code",
     "summary": "Adds a field in banks to manage Sort Codes",
-    "version": "13.0.1.0.0",
+    "version": "13.0.1.0.1",
     "development_status": "Beta",
     "maintainers": ["rousseldenis"],
     "license": "AGPL-3",
