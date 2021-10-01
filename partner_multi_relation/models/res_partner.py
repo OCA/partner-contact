@@ -187,9 +187,9 @@ class ResPartner(models.Model):
                     ("other_partner_id", "=", contact.id),
                 ]
             )
-            action = self.env.ref(
+            action = self.env["ir.actions.act_window"]._for_xml_id(
                 "partner_multi_relation.action_res_partner_relation_all"
-            ).read()[0]
+            )
             action["domain"] = [("id", "in", relation_ids.ids)]
             context = action.get("context", "{}").strip()[1:-1]
             elements = context.split(",") if context else []
