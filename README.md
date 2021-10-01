@@ -30,6 +30,7 @@ addon | version | maintainers | summary
 [partner_address_two_lines](partner_address_two_lines/) | 13.0.1.0.1 |  | The company and the partner name are on two different lines
 [partner_affiliate](partner_affiliate/) | 13.0.1.0.1 |  | Partner Affiliates
 [partner_bank_active](partner_bank_active/) | 13.0.1.0.0 |  | This module allows to deactivate a partner bank account.
+[partner_bank_sort_code](partner_bank_sort_code/) | 13.0.1.0.0 | [![rousseldenis](https://github.com/rousseldenis.png?size=30px)](https://github.com/rousseldenis) | Adds a field in banks to manage Sort Codes
 [partner_capital](partner_capital/) | 13.0.1.0.1 |  | Partners Capital
 [partner_coc](partner_coc/) | 13.0.1.0.0 |  | Adds field 'Chamber Of Commerce Registration Number'
 [partner_company_group](partner_company_group/) | 13.0.1.2.0 |  | Adds the possibility to add a company group to a company
