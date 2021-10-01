@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_bank_sort_code
+# 	* partner_bank_sort_code
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,12 +19,11 @@ msgid "Bank"
 msgstr ""
 
 #. module: partner_bank_sort_code
-#: sql_constraint:res.bank:0
-msgid "Sort Code has to be unique"
+#: model:ir.model.fields,field_description:partner_bank_sort_code.field_res_bank__sort_code
+msgid "Sort Code"
 msgstr ""
 
 #. module: partner_bank_sort_code
-#: model:ir.model.fields,field_description:partner_bank_sort_code.field_res_bank_sort_code
-msgid "Sort code"
+#: model:ir.model.constraint,message:partner_bank_sort_code.constraint_res_bank_sort_code_unique
+msgid "Sort Code has to be unique"
 msgstr ""
-
