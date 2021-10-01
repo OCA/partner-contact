@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="res_bank_form_view">
+        <field name="name">res.bank.form (in partner_bank_sort_code)</field>
+        <field name="model">res.bank</field>
+        <field name="inherit_id" ref="base.view_res_bank_form" />
+        <field name="arch" type="xml">
+            <field name="bic" position="after">
+                <field name="sort_code" />
+            </field>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="res_bank_tree_view">
+        <field name="name">res.bank.tree (in partner_bank_sort_code)</field>
+        <field name="model">res.bank</field>
+        <field name="inherit_id" ref="base.view_res_bank_tree" />
+        <field name="arch" type="xml">
+            <field name="bic" position="after">
+                <field name="sort_code" />
+            </field>
+        </field>
+    </record>
+</odoo>
