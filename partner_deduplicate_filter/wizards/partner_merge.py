@@ -28,4 +28,4 @@ class BasePartnerMergeAutomaticWizard(models.TransientModel):
             else:  # pragma: no cover
                 subquery = "WHERE %s " % subquery
             query = query[:index_group_by] + subquery + query[index_group_by:]
-        return super(BasePartnerMergeAutomaticWizard, self)._process_query(query)
+        return super()._process_query(query)
