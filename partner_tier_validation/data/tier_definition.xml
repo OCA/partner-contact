@@ -5,6 +5,7 @@
         <field name="review_type">group</field>
         <field name="reviewer_group_id" ref="base.group_user" />
         <field name="definition_type">domain</field>
+        <field name="active" eval="False" />
         <field
             name="definition_domain"
         >["&amp;",["is_company","=",True],"|",["active","=",True],["active","=",False]]</field>
