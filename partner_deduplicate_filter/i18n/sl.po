@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_deduplicate_filter
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-28 02:27+0000\n"
+"PO-Revision-Date: 2017-03-28 02:27+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+
+#. module: partner_deduplicate_filter
+#: model:ir.model.fields,field_description:partner_deduplicate_filter.field_base_partner_merge_automatic_wizard__exclude_is_company
+msgid "'Is a company?' field selected"
+msgstr "Polje 'Je pravna oseba' izbrano"
+
+#. module: partner_deduplicate_filter
+#: model:ir.model,name:partner_deduplicate_filter.model_base_partner_merge_automatic_wizard
+msgid "Merge Partner Wizard"
+msgstr ""
+
+#. module: partner_deduplicate_filter
+#: model:ir.model.fields,field_description:partner_deduplicate_filter.field_base_partner_merge_automatic_wizard__exclude_not_parent
+msgid "Parent company not set"
+msgstr "Nadrejena družba ni nastavljena."
+
+#. module: partner_deduplicate_filter
+#: model:ir.model.fields,field_description:partner_deduplicate_filter.field_base_partner_merge_automatic_wizard__exclude_parent
+msgid "Parent company set (Contacts)"
+msgstr "Nadrejena družba nastavljena (stiki)"
