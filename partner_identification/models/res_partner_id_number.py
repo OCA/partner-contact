@@ -13,6 +13,7 @@ from odoo import api, fields, models
 class ResPartnerIdNumber(models.Model):
     _name = "res.partner.id_number"
     _description = "Partner ID Number"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _order = "name"
 
     @api.constrains("name", "category_id")
