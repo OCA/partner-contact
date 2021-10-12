@@ -146,3 +146,7 @@ class ResPartner(models.Model):
         for node in doc.xpath("//field[@name='zip_id']"):
             node.attrib["domain"] = self._zip_id_domain()
         return etree.tostring(doc, encoding="unicode")
+
+    @api.model
+    def _address_fields(self):
+        return super()._address_fields() + ["zip_id"]
