@@ -6,19 +6,26 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <form string="Partner ID Numbers">
-                <group>
-                    <field name="partner_id" />
-                    <field name="category_id" />
-                    <field name="name" />
-                    <field name="partner_issued_id" />
-                    <field name="date_issued" />
-                    <field name="place_issuance" />
-                    <field name="valid_from" />
-                    <field name="valid_until" />
-                    <field name="status" />
-                </group>
-                <separator colspan="4" string="Notes" />
-                <field name="comment" colspan="4" nolabel="1" />
+                <sheet>
+                    <group>
+                        <field name="partner_id" />
+                        <field name="category_id" />
+                        <field name="name" />
+                        <field name="partner_issued_id" />
+                        <field name="date_issued" />
+                        <field name="place_issuance" />
+                        <field name="valid_from" />
+                        <field name="valid_until" />
+                        <field name="status" />
+                    </group>
+                    <separator colspan="4" string="Notes" />
+                    <field name="comment" colspan="4" nolabel="1" />
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
             </form>
         </field>
     </record>
