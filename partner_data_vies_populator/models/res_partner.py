@@ -4,7 +4,8 @@
 
 import logging
 
-from odoo import api, models
+from odoo import _, api, models
+from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 
@@ -18,11 +19,16 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     @api.model
-    def _get_vies_data(self, vat):
+    def _get_vies_data(self, vat, raise_if_fail=False):
         res = {}
-        vat_country, vat_number = self._split_vat(vat)
-        result = check_vies(vat)
-        if result.name:
+        try:
+            result = check_vies(vat)
+        except Exception as e:
+            _logger.warning("Failed to query VIES: %s" % e)
+            if raise_if_fail:
+                raise UserError(_("Failed to query VIES.\nTechnical error: %s.") % e)
+            return res
+        if result.valid and result.name:
             res["vat"] = vat
             # Update partner name if listed on VIES
             if result.name != "---":
@@ -33,7 +39,9 @@ class ResPartner(models.Model):
                     result.address.replace("\n", " ").replace("\r", "").title()
                 )
             # Get country by country code
-            country = self.env["res.country"].search([("code", "ilike", vat_country)])
+            country = self.env["res.country"].search(
+                [("code", "ilike", result.countryCode)]
+            )
             if country:
                 res["country_id"] = country[0].id
         return res
@@ -52,4 +60,5 @@ class ResPartner(models.Model):
                 if vat_country and vat_country not in eu_countries:
                     continue
                 result = self._get_vies_data(vat)
-                partner.update(result)
+                if result:
+                    partner.update(result)
