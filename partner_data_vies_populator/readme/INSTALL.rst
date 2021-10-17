@@ -1,7 +1,1 @@
-To install this module, you need to:
-
-#. Clone the branch 13.0 of the repository https://github.com/OCA/partner-contact
-#. Add the path to this repository in your configuration (addons-path)
-#. Update the module list
-#. Search for "Partner Data VIES Populator" in your addons
-#. install the module
+This module require the `python-stdnum <https://pypi.org/project/python-stdnum/>`_ librairy. As Odoo itself depend on this librairy, it should already be installed on your system.
