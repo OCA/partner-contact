@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 Camptocamp SA
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+  <record id="view_partner_title_tree" model="ir.ui.view">
+    <field name="model">res.partner.title</field>
+    <field name="inherit_id" ref="base.view_partner_title_tree" />
+    <field name="arch" type="xml">
+      <field name="name" position="before">
+        <field name="sequence" widget="handle" />
+      </field>
+    </field>
+  </record>
+
+  <record id="view_partner_title_form" model="ir.ui.view">
+    <field name="model">res.partner.title</field>
+    <field name="inherit_id" ref="base.view_partner_title_form" />
+    <field name="arch" type="xml">
+      <field name="name" position="before">
+        <field name="sequence" />
+      </field>
+    </field>
+  </record>
+
+</odoo>
