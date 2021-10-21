@@ -15,5 +15,6 @@ class ResPartner(models.Model):
             "res_id": self.id,
             "view_mode": "form",
             "view_type": "form",
+            "views": [[self.env.ref('base.view_partner_form').id, "form"]],
             "target": "current",
         }
