@@ -45,6 +45,7 @@ setuptools.setup(
         'odoo14-addon-partner_identification_unique_by_category',
         'odoo14-addon-partner_industry_secondary',
         'odoo14-addon-partner_iterative_archive',
+        'odoo14-addon-partner_label',
         'odoo14-addon-partner_manual_rank',
         'odoo14-addon-partner_multi_relation',
         'odoo14-addon-partner_phone_extension',
