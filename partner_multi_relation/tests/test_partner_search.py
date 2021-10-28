@@ -9,6 +9,8 @@ from .common import PartnerRelationCase
 
 
 class TestPartnerSearch(PartnerRelationCase):
+    """Test methods added to res.partner model."""
+
     def test_search_relation_type(self):
         """Test searching on relation type."""
         partners = self.partner_model.search(

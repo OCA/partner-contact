@@ -1,6 +1,6 @@
-# -*- coding: utf-8 -*-
-# Copyright 2016-2018 Therp BV <https://therp.nl>.
+# Copyright 2016-2021 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+"""Common setup for partner_multi_relation test cases."""
 from odoo.tests import common
 
 
@@ -13,7 +13,7 @@ class PartnerRelationCase(common.TransactionCase):
     # pylint: disable=invalid-name
     def setUp(self):
         """Common setup for partner_multi_relation tests."""
-        super(PartnerRelationCase, self).setUp()
+        super().setUp()
 
         # Models.
         self.partner_model = self.env['res.partner']

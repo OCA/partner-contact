@@ -1,6 +1,5 @@
 # Copyright 2013-2020 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-# pylint: disable=api-one-deprecated
 """Store relations (connections) between partners."""
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
@@ -54,13 +53,42 @@ class ResPartnerRelation(models.Model):
             for this in self
         }
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Override create to correct values, before being stored."""
         context = self.env.context
-        if "left_partner_id" not in vals and context.get("active_id"):
-            vals["left_partner_id"] = context.get("active_id")
-        return super(ResPartnerRelation, self).create(vals)
+        for vals in vals_list:
+            if "left_partner_id" not in vals and context.get("active_id"):
+                vals["left_partner_id"] = context.get("active_id")
+        return super().create(vals_list)
+
+    @api.multi
+    def get_derived_relation(self):
+        """Get the derived relation from res.partner.relation.all."""
+        self.ensure_one()
+        all_model = self.env["res.partner.relation.all"]
+        return all_model.search(
+            [
+                ("res_model", "=", self._name),
+                ("res_id", "=", self.id),
+                ("is_inverse", "=", False)
+            ],
+            limit=1
+        )
+
+    @api.multi
+    def get_derived_inverse_relation(self):
+        """Get the derived inverse relation from res.partner.relation.all."""
+        self.ensure_one()
+        all_model = self.env["res.partner.relation.all"]
+        return all_model.search(
+            [
+                ("res_model", "=", self._name),
+                ("res_id", "=", self.id),
+                ("is_inverse", "=", True)
+            ],
+            limit=1
+        )
 
     @api.constrains("date_start", "date_end")
     def _check_dates(self):

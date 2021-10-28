@@ -1,10 +1,12 @@
-# Copyright 2016-2018 Therp BV <https://therp.nl>.
+# Copyright 2016-2021 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+"""Run tests on the base model res.partner.relation."""
 from datetime import datetime, date, timedelta
 from dateutil.relativedelta import relativedelta
 
 from odoo import fields
 from odoo.exceptions import ValidationError
+from odoo.tools.misc import mute_logger
 
 from .common import PartnerRelationCase
 
@@ -19,7 +21,7 @@ class TestPartnerRelation(PartnerRelationCase):
 
     # pylint: disable=invalid-name
     def setUp(self):
-        super(TestPartnerRelation, self).setUp()
+        super().setUp()
         # Create a relation type having no particular conditions.
         self.type_school2student = self.type_model.create(
             {"name": "school has student", "name_inverse": "studies at school"}
@@ -112,13 +114,9 @@ class TestPartnerRelation(PartnerRelationCase):
                 }
             )
 
+    @mute_logger('odoo.addons.partner_multi_relation.models.res_partner_relation_type')
     def test_self_disallowed_after_self_relation_created(self):
-        """Test that allow_self can not be true if a reflexive relation
-        already exists.
-
-        If at least one reflexive relation exists for the given type,
-        reflexivity can not be disallowed.
-        """
+        """Test that when reflexive relation exists, allow_self cannot be disabled."""
         type_allow = self.type_model.create(
             {
                 "name": "allow",
@@ -161,18 +159,17 @@ class TestPartnerRelation(PartnerRelationCase):
         reflexive_relation = self.relation_model.create(
             {
                 "type_id": type_allow.id,
-                "left_partner_id": self.partner_01_person.id,
-                "right_partner_id": self.partner_01_person.id,
+                "left_partner_id": self.partner_volunteer_test.id,
+                "right_partner_id": self.partner_volunteer_test.id,
             }
         )
         normal_relation = self.relation_model.create(
             {
                 "type_id": type_allow.id,
-                "left_partner_id": self.partner_01_person.id,
-                "right_partner_id": self.partner_04_volunteer.id,
+                "left_partner_id": self.partner_volunteer_test.id,
+                "right_partner_id": self.partner_person_test.id,
             }
         )
-
         type_allow.allow_self = False
         self.assertFalse(reflexive_relation.exists())
         self.assertTrue(normal_relation.exists())
@@ -201,24 +198,24 @@ class TestPartnerRelation(PartnerRelationCase):
         reflexive_relation = self.relation_model.create(
             {
                 "type_id": type_allow.id,
-                "left_partner_id": self.partner_01_person.id,
-                "right_partner_id": self.partner_01_person.id,
+                "left_partner_id": self.partner_person_test.id,
+                "right_partner_id": self.partner_person_test.id,
                 "date_start": "2000-01-02",
             }
         )
         past_reflexive_relation = self.relation_model.create(
             {
                 "type_id": type_allow.id,
-                "left_partner_id": self.partner_01_person.id,
-                "right_partner_id": self.partner_01_person.id,
+                "left_partner_id": self.partner_volunteer_test.id,
+                "right_partner_id": self.partner_volunteer_test.id,
                 "date_end": "2000-01-01",
             }
         )
         normal_relation = self.relation_model.create(
             {
                 "type_id": type_allow.id,
-                "left_partner_id": self.partner_01_person.id,
-                "right_partner_id": self.partner_04_volunteer.id,
+                "left_partner_id": self.partner_person_test.id,
+                "right_partner_id": self.partner_volunteer_test.id,
             }
         )
 
@@ -246,8 +243,8 @@ class TestPartnerRelation(PartnerRelationCase):
         future_reflexive_relation = self.relation_model.create(
             {
                 "type_id": type_allow.id,
-                "left_partner_id": self.partner_01_person.id,
-                "right_partner_id": self.partner_01_person.id,
+                "left_partner_id": self.partner_person_test.id,
+                "right_partner_id": self.partner_person_test.id,
                 "date_start": datetime.now() + timedelta(1),
             }
         )

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+    <!-- TODO: relations should really be added through res.partner.relation.all -->
+
     <!-- Relations -->
     <record id="relation_great2super" model="res.partner.relation">
         <field name="left_partner_id" ref="partner_washing_great" />

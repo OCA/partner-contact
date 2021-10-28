@@ -1,5 +1,7 @@
-# Copyright 2016-2020 Therp BV <https://therp.nl>.
+# Copyright 2016-2021 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+"""Test res.partner.relation.all, the main model to interface with relations."""
+import datetime
 import json
 
 from odoo.exceptions import ValidationError
@@ -8,8 +10,10 @@ from .common import PartnerRelationCase
 
 
 class TestPartnerRelation(PartnerRelationCase):
+    """Test res.partner.relation.all, the main model to interface with relations."""
+
     def setUp(self):
-        super(TestPartnerRelation, self).setUp()
+        super().setUp()
 
         # Another partner.
         self.partner_bart = self.partner_model.create(
@@ -107,7 +111,9 @@ class TestPartnerRelation(PartnerRelationCase):
 
     def test_active_field(self):
         """Test compute and search of active field."""
-        relation = self._create_company2person_relation()
+        underlying_relation = self.relation_company2employee
+        relation = underlying_relation.get_derived_relation()
+        # We have to find the right relation.all record for the relation record.
         self.assertTrue(relation.active)
         # If we search on active records for this partner, we should find record.
         domain = [
@@ -136,8 +142,9 @@ class TestPartnerRelation(PartnerRelationCase):
 
     def test__regular_write(self):
         """Test write with valid data."""
+        compare_date = datetime.date(2014, 9, 1)
         self.relation_ceo.write({"date_start": "2014-09-01"})
-        self.assertEqual(self.relation_ceo.date_start, "2014-09-01")
+        self.assertEqual(self.relation_ceo.date_start, compare_date)
 
     def test_write_incompatible_dates(self):
         """Test write with date_end before date_start."""
@@ -205,18 +212,23 @@ class TestPartnerRelation(PartnerRelationCase):
 
     def test_inverse_record(self):
         """Test creation of inverse record."""
+        # relation_ceo is from company to ceo.
         relation = self.relation_ceo
+        self.assertEqual(
+            relation.type_selection_id.name, "has ceo"
+        )
         inverse_relation = self.relation_all_model.search(
             [
                 ("this_partner_id", "=", relation.other_partner_id.id),
+                ("type_id", "=", self.relation_type_company_has_ceo.id),
                 ("other_partner_id", "=", relation.this_partner_id.id),
-            ]
+            ],
+            limit=1
         )
         self.assertTrue(bool(inverse_relation))
-        for relations in inverse_relation:
-            self.assertEqual(
-                relation.type_selection_id.name, self.selection_company_has_ceo.name
-            )
+        self.assertEqual(
+            inverse_relation.type_selection_id.name, "is ceo of"
+        )
 
     def test_inverse_creation(self):
         """Test creation of record through inverse selection."""
@@ -277,10 +289,11 @@ class TestPartnerRelation(PartnerRelationCase):
         result = relation_empty.onchange_type_selection_id()
         self.assertTrue("domain" in result)
         self.assertFalse("warning" in result)
+        # TODO: We should be able to predict the exact domains for partners.
         self.assertTrue("this_partner_id" in result["domain"])
-        self.assertFalse(result["domain"]["this_partner_id"])
+        self.assertTrue(result["domain"]["this_partner_id"])
         self.assertTrue("other_partner_id" in result["domain"])
-        self.assertFalse(result["domain"]["other_partner_id"])
+        self.assertTrue(result["domain"]["other_partner_id"])
         # 2. Test call with company 2 person relation
         relation = self.relation_ceo
         domain = relation.onchange_type_selection_id()["domain"]

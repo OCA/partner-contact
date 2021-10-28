@@ -1,6 +1,7 @@
-# Copyright 2014-2020 Therp BV <https://therp.nl>.
+# Copyright 2014-2021 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-# pylint: disable=method-required-super,no-self-use
+"""Provide an interface to approach any relation from two points of view."""
+# pylint: disable=no-self-use,protected-access
 import collections
 import json
 import logging
@@ -162,6 +163,7 @@ class ResPartnerRelationAll(models.AbstractModel):
             json_dump(this, result, "type_selection_id")
 
     def register_specification(self, register, base_name, is_inverse, select_sql):
+        """To support adding extra records not based on res.partner.relation."""
         _last_key_offset = register["_lastkey"]
         key_name = base_name + (is_inverse and "_inverse" or "")
         assert key_name not in register
@@ -183,6 +185,7 @@ class ResPartnerRelationAll(models.AbstractModel):
         )
 
     def get_register(self):
+        """The register contains one entry for each kind of relation."""
         register = collections.OrderedDict()
         register["_lastkey"] = -1
         self.register_specification(register, "relation", False, RELATIONS_SQL)
@@ -190,6 +193,7 @@ class ResPartnerRelationAll(models.AbstractModel):
         return register
 
     def get_select_specification(self, base_name, is_inverse):
+        """Get the key for the kind of relation in the registry."""
         register = self.get_register()
         key_name = base_name + (is_inverse and "_inverse" or "")
         return register[key_name]
@@ -255,7 +259,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
 
     @api.model_cr_context
     def _auto_init(self):
-        cr = self._cr
+        cr = self._cr  # pylint: disable=invalid-name
         drop_view_if_exists(cr, self._table)
         cr.execute(
             self._get_statement(),
@@ -266,7 +270,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
                 "additional_tables": AsIs(self._get_additional_tables()),
             },
         )
-        return super(ResPartnerRelationAll, self)._auto_init()
+        return super()._auto_init()
 
     @api.model
     def _search_any_partner_id(self, operator, value):
@@ -353,12 +357,8 @@ CREATE OR REPLACE VIEW %%(table)s AS
             if bool(self.this_partner_id.id):
                 this_partner = self.this_partner_id
             else:
-                this_partner_id = (
-                    "default_this_partner_id" in self.env.context
-                    and self.env.context["default_this_partner_id"]
-                    or "active_id" in self.env.context
-                    and self.env.context["active_id"]
-                    or False
+                this_partner_id = self.env.context.get(
+                    "default_this_partner_id", self.env.context.get("active_id", False)
                 )
                 if this_partner_id:
                     this_partner = partner_model.browse(this_partner_id)
@@ -485,9 +485,9 @@ CREATE OR REPLACE VIEW %%(table)s AS
                 is_inverse = vals.get("is_inverse")
                 type_selection_id = type_id * 2 + (is_inverse and 1 or 0)
         return (
-            type_selection_id
-            and self.type_selection_id.browse(type_selection_id)
-            or False
+            self.type_selection_id.browse(type_selection_id)
+            if type_selection_id
+            else False
         )
 
     @api.multi
@@ -513,6 +513,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
     @api.model
     def _compute_base_name(self, type_selection):
         """This will be overridden for each inherit model."""
+        # pylint: disable=unused-argument
         return "relation"
 
     @api.model
@@ -526,22 +527,29 @@ CREATE OR REPLACE VIEW %%(table)s AS
 
     @api.model
     def create_resource(self, vals, type_selection):
+        """Create the underlying record for this kind of relation."""
+        # pylint: disable=unused-argument
         relation_model = self.env["res.partner.relation"]
         return relation_model.create(vals)
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Divert non-problematic creates to underlying table.
 
-        Create a res.partner.relation but return the converted id.
+        Create underlying records but return an recordlist of this model.
         """
-        type_selection = self._get_type_selection_from_vals(vals)
-        if not type_selection:  # Should not happen
-            raise ValidationError(_("No relation type specified in vals: %s.") % vals)
-        vals = self._correct_vals(vals, type_selection)
-        base_resource = self.create_resource(vals, type_selection)
-        res_id = self._compute_id(base_resource, type_selection)
-        return self.browse(res_id)
+        result = self.browse([])
+        for vals in vals_list:
+            type_selection = self._get_type_selection_from_vals(vals)
+            if not type_selection:  # Should not happen
+                raise ValidationError(
+                    _("No relation type specified in vals: %s.") % vals
+                )
+            vals = self._correct_vals(vals, type_selection)
+            base_resource = self.create_resource(vals, type_selection)
+            res_id = self._compute_id(base_resource, type_selection)
+            result = result | self.browse(res_id)
+        return result
 
     @api.multi
     def unlink_resource(self, base_resource):
