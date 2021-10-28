@@ -7,7 +7,7 @@
     "name": "Deduplicate Contacts by Website",
     "version": "13.0.1.0.0",
     "category": "Tools",
-    "website": "https://github.com/OCA/crm",
+    "website": "https://github.com/OCA/partner-contact",
     "author": "Tecnativa, " "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
