@@ -49,7 +49,7 @@ addon | version | maintainers | summary
 [partner_data_vies_populator](partner_data_vies_populator/) | 13.0.1.0.0 |  | Using VIES webservice, name and address information will be fetched and added to the partner.
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 13.0.1.0.0 |  | Contact deduplication with fine-grained permission control
 [partner_deduplicate_by_ref](partner_deduplicate_by_ref/) | 13.0.1.0.0 |  | Deduplicate Contacts by reference
-[partner_deduplicate_by_website](partner_deduplicate_by_website/) | 13.0.1.0.0 |  | Deduplicate Contacts by Website
+[partner_deduplicate_by_website](partner_deduplicate_by_website/) | 13.0.1.0.1 |  | Deduplicate Contacts by Website
 [partner_deduplicate_filter](partner_deduplicate_filter/) | 13.0.1.0.0 |  | Exclude records from the deduplication
 [partner_disable_gravatar](partner_disable_gravatar/) | 13.0.1.0.0 |  | Disable automatic connection to gravatar.com
 [partner_email_check](partner_email_check/) | 13.0.1.1.0 |  | Validate email address field
