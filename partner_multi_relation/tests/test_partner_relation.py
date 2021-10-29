@@ -114,7 +114,7 @@ class TestPartnerRelation(PartnerRelationCase):
                 }
             )
 
-    @mute_logger('odoo.addons.partner_multi_relation.models.res_partner_relation_type')
+    @mute_logger("odoo.addons.partner_multi_relation.models.res_partner_relation_type")
     def test_self_disallowed_after_self_relation_created(self):
         """Test that when reflexive relation exists, allow_self cannot be disabled."""
         type_allow = self.type_model.create(

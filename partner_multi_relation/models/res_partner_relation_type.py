@@ -1,6 +1,7 @@
-# Copyright 2013-2020 Therp BV <https://therp.nl>.
+# Copyright 2013-2021 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 """Define the type of relations that can exist between partners."""
+# pylint: disable=no-self-use,protected-access
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 from odoo.osv.expression import AND, OR
@@ -80,7 +81,6 @@ class ResPartnerRelationType(models.Model):
         for relation in relations:
             if relation.date_start and relation.date_start >= today:
                 relation.unlink()
-
             elif not relation.date_end or relation.date_end > today:
                 relation.write({"date_end": today})
 
@@ -93,7 +93,7 @@ class ResPartnerRelationType(models.Model):
             """Add if needed check for contact type."""
             fieldname1 = "contact_type_%s" % side
             fieldname2 = "%s_partner_id.is_company" % side
-            contact_type = fieldname1 in vals and vals[fieldname1] or False
+            contact_type = vals.get(fieldname1, False)
             if contact_type == "c":
                 # Records that are not companies are invalid:
                 return [(fieldname2, "=", False)]
@@ -106,18 +106,14 @@ class ResPartnerRelationType(models.Model):
             """Add if needed check for partner category."""
             fieldname1 = "partner_category_%s" % side
             fieldname2 = "%s_partner_id.category_id" % side
-            category_id = fieldname1 in vals and vals[fieldname1] or False
+            category_id = vals.get(fieldname1, False)
             if category_id:
                 # Records that do not have the specified category are invalid:
                 return [(fieldname2, "not in", [category_id])]
             return []
 
         for this in self:
-            handling = (
-                "handle_invalid_onchange" in vals
-                and vals["handle_invalid_onchange"]
-                or this.handle_invalid_onchange
-            )
+            handling = vals.get("handle_invalid_onchange", this.handle_invalid_onchange)
             if handling == "ignore":
                 continue
             invalid_conditions = []
@@ -143,7 +139,7 @@ class ResPartnerRelationType(models.Model):
                             " conditions for partner type or category."
                         )
                     )
-                elif handling == "delete":
+                if handling == "delete":
                     invalid_relations.unlink()
                 else:
                     self._end_active_relations(invalid_relations)
@@ -226,27 +222,26 @@ class ResPartnerRelationType(models.Model):
             if hasattr(vals[right_key], "id"):
                 vals[right_key] = vals[right_key].id
 
-    @api.model
-    def create(self, vals):
-        if vals.get("is_symmetric"):
-            self._update_right_vals(vals)
-        return super(ResPartnerRelationType, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get("is_symmetric"):
+                self._update_right_vals(vals)
+        return super().create(vals_list)
 
     @api.multi
     def write(self, vals):
         """Handle existing relations if conditions change."""
         self.check_existing(vals)
-
         for rec in self:
             rec_vals = vals.copy()
             if rec_vals.get("is_symmetric", rec.is_symmetric):
                 self._update_right_vals(rec_vals)
+            # Here we need to specify the right record in the super call.
             super(ResPartnerRelationType, rec).write(rec_vals)
-
         allow_self_disabled = "allow_self" in vals and not vals["allow_self"]
         if allow_self_disabled:
             self._handle_deactivation_of_allow_self()
-
         return True
 
     @api.multi
@@ -262,4 +257,4 @@ class ResPartnerRelationType(models.Model):
                 # do not prevent unlink of relation type:
                 relations = relation_model.search([("type_id", "=", rec.id)])
                 relations.unlink()
-        return super(ResPartnerRelationType, self).unlink()
+        return super().unlink()

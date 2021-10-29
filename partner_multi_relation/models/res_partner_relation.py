@@ -71,9 +71,9 @@ class ResPartnerRelation(models.Model):
             [
                 ("res_model", "=", self._name),
                 ("res_id", "=", self.id),
-                ("is_inverse", "=", False)
+                ("is_inverse", "=", False),
             ],
-            limit=1
+            limit=1,
         )
 
     @api.multi
@@ -85,9 +85,9 @@ class ResPartnerRelation(models.Model):
             [
                 ("res_model", "=", self._name),
                 ("res_id", "=", self.id),
-                ("is_inverse", "=", True)
+                ("is_inverse", "=", True),
             ],
-            limit=1
+            limit=1,
         )
 
     @api.constrains("date_start", "date_end")

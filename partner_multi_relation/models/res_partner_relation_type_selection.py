@@ -1,4 +1,4 @@
-# Copyright 2013-2020 Therp BV <https://therp.nl>.
+# Copyright 2013-2021 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 """
 For the model defined here _auto is set to False to prevent creating a
@@ -64,6 +64,7 @@ class ResPartnerRelationTypeSelection(models.Model):
         prepended by a comma, like so:
             return ', typ.allow_self, typ.left_partner_category'
         """
+        # pylint: disable=no-self-use
         return ""
 
     def _get_additional_tables(self):
@@ -72,13 +73,13 @@ class ResPartnerRelationTypeSelection(models.Model):
         Example:
             return 'JOIN type_extention ext ON (bas.type_id = ext.id)'
         """
+        # pylint: disable=no-self-use
         return ""
 
     @api.model_cr_context
     def _auto_init(self):
-        cr = self._cr
-        drop_view_if_exists(cr, self._table)
-        cr.execute(
+        drop_view_if_exists(self._cr, self._table)
+        self._cr.execute(
             """\
 CREATE OR REPLACE VIEW %(table)s AS
      WITH selection_type AS (
@@ -120,7 +121,7 @@ CREATE OR REPLACE VIEW %(table)s AS
                 "additional_tables": AsIs(self._get_additional_tables()),
             },
         )
-        return super(ResPartnerRelationTypeSelection, self)._auto_init()
+        return super()._auto_init()
 
     @api.multi
     def name_get(self):

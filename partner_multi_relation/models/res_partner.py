@@ -6,14 +6,23 @@ import numbers
 from odoo import _, api, exceptions, fields, models
 from odoo.osv.expression import is_leaf, OR, FALSE_LEAF
 
+SUPPORTED_OPERATORS = (
+    "=",
+    "!=",
+    "like",
+    "not like",
+    "ilike",
+    "not ilike",
+    "in",
+    "not in",
+)
+
 
 class ResPartner(models.Model):
     """Extend partner with relations and allow to search for relations
     in various ways.
     """
 
-    # pylint: disable=invalid-name
-    # pylint: disable=no-member
     _inherit = "res.partner"
 
     relation_count = fields.Integer(
@@ -26,7 +35,7 @@ class ResPartner(models.Model):
         auto_join=True,
         selectable=False,
         copy=False,
-        domain=['|', ('active', '=', True), ('active', '=', False)],
+        domain=["|", ("active", "=", True), ("active", "=", False)],
     )
     search_relation_type_id = fields.Many2one(
         comodel_name="res.partner.relation.type.selection",
@@ -65,16 +74,6 @@ class ResPartner(models.Model):
     def _search_relation_type_id(self, operator, value):
         """Search partners based on their type of relations."""
         result = []
-        SUPPORTED_OPERATORS = (
-            "=",
-            "!=",
-            "like",
-            "not like",
-            "ilike",
-            "not ilike",
-            "in",
-            "not in",
-        )
         if operator not in SUPPORTED_OPERATORS:
             raise exceptions.ValidationError(
                 _('Unsupported search operator "%s"') % operator

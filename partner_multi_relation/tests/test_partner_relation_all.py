@@ -214,21 +214,17 @@ class TestPartnerRelation(PartnerRelationCase):
         """Test creation of inverse record."""
         # relation_ceo is from company to ceo.
         relation = self.relation_ceo
-        self.assertEqual(
-            relation.type_selection_id.name, "has ceo"
-        )
+        self.assertEqual(relation.type_selection_id.name, "has ceo")
         inverse_relation = self.relation_all_model.search(
             [
                 ("this_partner_id", "=", relation.other_partner_id.id),
                 ("type_id", "=", self.relation_type_company_has_ceo.id),
                 ("other_partner_id", "=", relation.this_partner_id.id),
             ],
-            limit=1
+            limit=1,
         )
         self.assertTrue(bool(inverse_relation))
-        self.assertEqual(
-            inverse_relation.type_selection_id.name, "is ceo of"
-        )
+        self.assertEqual(inverse_relation.type_selection_id.name, "is ceo of")
 
     def test_inverse_creation(self):
         """Test creation of record through inverse selection."""
