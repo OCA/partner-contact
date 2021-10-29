@@ -16,7 +16,7 @@
         <field name="name">res.city.zip.tree</field>
         <field name="model">res.city.zip</field>
         <field name="arch" type="xml">
-            <tree string="Zips" editable="top">
+            <tree editable="top">
                 <field name="name" />
                 <field name="city_id" />
             </tree>

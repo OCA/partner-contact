@@ -54,7 +54,7 @@ class ResPartner(models.Model):
     @api.depends("zip_id")
     def _compute_city_id(self):
         if hasattr(super(), "_compute_city_id"):
-            super()._compute_city_id()  # pragma: no cover
+            return super()._compute_city_id()  # pragma: no cover
         for record in self:
             if record.zip_id:
                 record.city_id = record.zip_id.city_id
@@ -64,7 +64,7 @@ class ResPartner(models.Model):
     @api.depends("zip_id")
     def _compute_city(self):
         if hasattr(super(), "_compute_city"):
-            super()._compute_city()  # pragma: no cover
+            return super()._compute_city()  # pragma: no cover
         for record in self:
             if record.zip_id:
                 record.city = record.zip_id.city_id.name
@@ -72,7 +72,7 @@ class ResPartner(models.Model):
     @api.depends("zip_id")
     def _compute_zip(self):
         if hasattr(super(), "_compute_zip"):
-            super()._compute_zip()  # pragma: no cover
+            return super()._compute_zip()  # pragma: no cover
         for record in self:
             if record.zip_id:
                 record.zip = record.zip_id.name
@@ -80,7 +80,7 @@ class ResPartner(models.Model):
     @api.depends("zip_id", "state_id")
     def _compute_country_id(self):
         if hasattr(super(), "_compute_country_id"):
-            super()._compute_country_id()  # pragma: no cover
+            return super()._compute_country_id()  # pragma: no cover
         for record in self:
             if record.zip_id.city_id.country_id:
                 record.country_id = record.zip_id.city_id.country_id
@@ -90,7 +90,7 @@ class ResPartner(models.Model):
     @api.depends("zip_id")
     def _compute_state_id(self):
         if hasattr(super(), "_compute_state_id"):
-            super()._compute_state_id()  # pragma: no cover
+            return super()._compute_state_id()  # pragma: no cover
         for record in self:
             state = record.zip_id.city_id.state_id
             if state and record.state_id != state:
@@ -103,25 +103,38 @@ class ResPartner(models.Model):
         for rec in self:
             if not rec.zip_id:
                 continue
+            error_dict = {"partner": rec.name, "location": rec.zip_id.name}
             if rec.zip_id.city_id.country_id != rec.country_id:
                 raise ValidationError(
-                    _("The country of the partner %s differs from that in location %s")
-                    % (rec.name, rec.zip_id.name)
+                    _(
+                        "The country of the partner %(partner)s differs from that in "
+                        "location %(location)s"
+                    )
+                    % error_dict
                 )
             if rec.zip_id.city_id.state_id != rec.state_id:
                 raise ValidationError(
-                    _("The state of the partner %s differs from that in location %s")
-                    % (rec.name, rec.zip_id.name)
+                    _(
+                        "The state of the partner %(partner)s differs from that in "
+                        "location %(location)s"
+                    )
+                    % error_dict
                 )
             if rec.zip_id.city_id != rec.city_id:
                 raise ValidationError(
-                    _("The city of partner %s differs from that in location %s")
-                    % (rec.name, rec.zip_id.name)
+                    _(
+                        "The city of the partner %(partner)s differs from that in "
+                        "location %(location)s"
+                    )
+                    % error_dict
                 )
             if rec.zip_id.name != rec.zip:
                 raise ValidationError(
-                    _("The zip of the partner %s differs from that in location %s")
-                    % (rec.name, rec.zip_id.name)
+                    _(
+                        "The zip of the partner %(partner)s differs from that in "
+                        "location %(location)s"
+                    )
+                    % error_dict
                 )
 
     def _zip_id_domain(self):
