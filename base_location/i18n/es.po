@@ -175,26 +175,26 @@ msgstr "Provincia"
 #. module: base_location
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
-msgid "The city of partner %s differs from that in location %s"
-msgstr "La ciudad del contacto %s difiere de la de la ubicación %s"
+msgid "The city of the partner %(partner)s differs from that in location %(location)s"
+msgstr "La ciudad del contacto %(partner)s difiere de la de la ubicación %(location)s"
 
 #. module: base_location
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
-msgid "The country of the partner %s differs from that in location %s"
-msgstr "El país del contacto %s difiere del de la ubicación %s"
+msgid "The country of the partner %(partner)s differs from that in location %(location)s"
+msgstr "El país del contacto %(partner)s difiere del de la ubicación %(location)s"
 
 #. module: base_location
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
-msgid "The state of the partner %s differs from that in location %s"
-msgstr "La provincia de contacto %s difiere de la de la ubicación %s"
+msgid "The state of the partner %(partner)s differs from that in location %(location)s"
+msgstr "La provincia del contacto %(partner)s difiere de la de la ubicación %(location)s"
 
 #. module: base_location
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
-msgid "The zip of the partner %s differs from that in location %s"
-msgstr ""
+msgid "The zip of the partner %(partner)s differs from that in location %(location)s"
+msgstr "El código postal del contacto %(partner)s difiere del de la ubicación %(location)s"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__zip_id
