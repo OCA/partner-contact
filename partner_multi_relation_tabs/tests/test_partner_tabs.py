@@ -1,5 +1,6 @@
 # Copyright 2014-2018 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+"""Test creating tabs in the partner form view."""
 from lxml import etree
 
 from odoo.exceptions import ValidationError
@@ -9,6 +10,7 @@ from ..tablib import Tab
 
 
 class TestPartnerTabs(common.TestCommon):
+    """Test creating tabs in the partner form view."""
     post_install = True
 
     def test_create_tab(self):
@@ -140,10 +142,8 @@ class TestPartnerTabs(common.TestCommon):
 
     def test_compute_visibility(self):
         """Check the computation of visibility on partners."""
+        main_partner = self.env.ref("base.main_partner")
         # pylint: disable=protected-access
-        main_partner = self.env.ref("base.main_partner").with_context(
-            {"update_relation_tab": 1}
-        )
         main_partner._compute_tabs_visibility()
         tab_obj = Tab(self.tab_departments)
         fieldname = tab_obj.get_fieldname()

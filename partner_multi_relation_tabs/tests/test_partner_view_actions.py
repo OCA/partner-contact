@@ -4,11 +4,6 @@
 from . import common
 
 
-UPDATE_KEY = "update_relation_tab"
-DQ = '"'
-UPDATE_CONTEXT = "{%(dq)s%(key)s%(dq)s: 1}" % {"dq": DQ, "key": UPDATE_KEY}
-
-
 class TestPartnerViewActions(common.TestCommon):
     """Test the functionality in window action model."""
 
@@ -19,25 +14,12 @@ class TestPartnerViewActions(common.TestCommon):
         action_dict = self._read_model_action("res.country")
         self.assertIn("context", action_dict)
         self.assertIn("res_model", action_dict)
-        self.assertNotIn(UPDATE_KEY, action_dict["context"])
 
     def test_all_fields(self):
         """Test action to open a partner view and read all fields."""
         action_dict = self._read_model_action("res.partner")
         self.assertIn("context", action_dict)
         self.assertIn("res_model", action_dict)
-        self.assertIn(UPDATE_KEY, action_dict["context"])
-
-    def test_no_duplicate(self):
-        """If key already in context, do not add it again."""
-        # No guarantee that using _read_model_action will always use same action...
-        action_model = self.env["ir.actions.act_window"]
-        action = action_model.search([("res_model", "=", "res.partner")], limit=1)
-        action.write({"context": UPDATE_CONTEXT})
-        action_dict = action.read(fields=["context"])[0]
-        self.assertIn("context", action_dict)
-        self.assertNotIn("res_model", action_dict)
-        self.assertEqual(action_dict["context"].count(UPDATE_KEY), 1)
 
     def test_some_fields(self):
         """Test action to open a partner view and read fields, including context."""
@@ -46,7 +28,6 @@ class TestPartnerViewActions(common.TestCommon):
         )
         self.assertIn("context", action_dict)
         self.assertNotIn("res_model", action_dict)
-        self.assertIn(UPDATE_KEY, action_dict["context"])
 
     def test_no_context(self):
         """Test action to open a partner view and read fields, but not context."""
