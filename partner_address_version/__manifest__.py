@@ -12,5 +12,6 @@
     'installable': True,
     'depends': [
         'base',
+        'base_partner_merge',
     ],
 }
