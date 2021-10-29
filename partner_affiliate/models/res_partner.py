@@ -1,14 +1,14 @@
 # Copyright 2012 Camptocamp SA - Yannick Vaucher
 # Copyright 2018 brain-tec AG - Raul Martin
-# Copyright 2020 Therp BV - <https://therp.nl>.
+# Copyright 2021 Therp BV - <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+"""Support affiliate relations beween partners."""
 
 from odoo import fields, models, api
 
 
 class ResPartner(models.Model):
     """Add relation affiliate_ids."""
-
     _inherit = "res.partner"
 
     type = fields.Selection(selection_add=[("affiliate", "Affiliate")])
@@ -28,22 +28,20 @@ class ResPartner(models.Model):
         domain=[("active", "=", True), ("is_company", "=", True)],
     )
 
-    def get_original_address(self):
-        def convert(value):
-            return value.id if isinstance(value, models.BaseModel) else value
+    @api.multi
+    def _fields_sync(self, values):
+        """A company that will have a parent set, must be an affiliate,
 
-        result = {"value": {key: convert(self[key]) for key in self._address_fields()}}
-        return result
+        Setting a company to type affiliate, will automatically prevent
+        overriding the address from the parent, because that is only done for
+        contact partners.
 
-    @api.onchange("parent_id")
-    def onchange_parent_id(self):
-        """Keep the original address info to set it back if its a company."""
-        original_address = self.get_original_address()
-        new_partner = super(ResPartner, self).onchange_parent_id()
-        # When the affiliate is a company, we must set back its address
-        # because the super call changes its address by the new parent address.
-        # In addition, the type must be set to affiliate instead of contact.
-        if new_partner and self.is_company:
-            new_partner.update(original_address)
-            new_partner["value"].update({"type": "affiliate"})
-        return new_partner
+        Clearing a parent_id from a company should reset its type to contact.
+
+        You could argue that the same should be true for individuals.
+        """
+        if self.is_company:
+            desired_type = "affiliate" if self.parent_id else "contact"
+            if self.type != desired_type:
+                super().write({"type": desired_type})
+        return super()._fields_sync(values)

@@ -104,7 +104,6 @@ class TestPartnerAffiliate(common.TransactionCase):
             }
         )
         my_individual.parent_id = self.second_company.id
-        my_individual.onchange_parent_id()
         # The parent has been changed.
         self.assertEqual(my_individual.parent_id.id, self.second_company.id)
         # The affiliate gets the address from the new parent.
@@ -128,7 +127,6 @@ class TestPartnerAffiliate(common.TransactionCase):
             }
         )
         my_affiliate_company.parent_id = self.second_company.id
-        my_affiliate_company.onchange_parent_id()
         # The parent has been changed.
         self.assertEqual(my_affiliate_company.parent_id.id, self.second_company.id)
         # The affiliate should keep its own address.
@@ -137,7 +135,7 @@ class TestPartnerAffiliate(common.TransactionCase):
             "affiliate_company street",
             "Street of affiliate company should not have changed",
         )
-        # Change of parent should not affect the type.
+        # Change of parent should set type to affiliate (why?? RP).
         self.assertEqual(
             my_affiliate_company.type, "affiliate", "Check type must remain 'affiliate'"
         )
