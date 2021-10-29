@@ -28,7 +28,7 @@ addon | version | maintainers | summary
 [base_vat_sanitized](base_vat_sanitized/) | 13.0.1.0.0 |  | Adds field sanitized_vat on partners
 [partner_address_street3](partner_address_street3/) | 13.0.1.0.0 |  | Add a third address line on partners
 [partner_address_two_lines](partner_address_two_lines/) | 13.0.1.0.1 |  | The company and the partner name are on two different lines
-[partner_affiliate](partner_affiliate/) | 13.0.1.0.1 |  | Partner Affiliates
+[partner_affiliate](partner_affiliate/) | 13.0.1.1.0 |  | Partner Affiliates
 [partner_bank_active](partner_bank_active/) | 13.0.1.0.0 |  | This module allows to deactivate a partner bank account.
 [partner_bank_sort_code](partner_bank_sort_code/) | 13.0.1.0.1 | [![rousseldenis](https://github.com/rousseldenis.png?size=30px)](https://github.com/rousseldenis) | Adds a field in banks to manage Sort Codes
 [partner_capital](partner_capital/) | 13.0.1.0.1 |  | Partners Capital
