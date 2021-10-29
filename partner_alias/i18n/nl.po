@@ -289,11 +289,6 @@ msgid "Date of the last message posted on the record."
 msgstr ""
 
 #. module: partner_alias
-#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_date_version
-msgid "Date version"
-msgstr ""
-
-#. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_trust
 msgid "Degree of trust you have in this debtor"
 msgstr ""
@@ -991,11 +986,6 @@ msgstr ""
 #. module: partner_alias
 #: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_property_supplier_payment_term_id
 msgid "Vendor Payment Terms"
-msgstr ""
-
-#. module: partner_alias
-#: model:ir.model.fields,field_description:partner_alias.field_res_partner_alias_version_hash
-msgid "Version hash"
 msgstr ""
 
 #. module: partner_alias
