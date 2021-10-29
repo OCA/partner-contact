@@ -172,25 +172,25 @@ msgstr "Provincia"
 #. module: base_location
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
-msgid "The city of partner %s differs from that in location %s"
-msgstr "La città del partner %s è diversa da quella del luogo %s"
+msgid "The city of the partner %(partner)s differs from that in location %(location)s"
+msgstr "La città del partner %(partner)s è diversa da quella del luogo %(location)s"
 
 #. module: base_location
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
-msgid "The country of the partner %s differs from that in location %s"
-msgstr "La nazione del partner %s è diversa dal quella del luogo %s"
+msgid "The country of the partner %(partner)s differs from that in location %(location)s"
+msgstr "La nazione del partner %(partner)s è diversa dal quella del luogo %(location)s"
 
 #. module: base_location
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
-msgid "The state of the partner %s differs from that in location %s"
-msgstr "Lo stato del partner %s è diverso da quello del luogo %s"
+msgid "The state of the partner %(partner)s differs from that in location %(location)s"
+msgstr "Lo stato del partner %(partner)s è diverso da quello del luogo %(location)s"
 
 #. module: base_location
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
-msgid "The zip of the partner %s differs from that in location %s"
+msgid "The zip of the partner %(partner)s differs from that in location %(location)s"
 msgstr ""
 
 #. module: base_location

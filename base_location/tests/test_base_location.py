@@ -1,15 +1,15 @@
 # Copyright 2015 Yannick Vaucher, Camptocamp SA
+# Copyright 2018-2021 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import psycopg2
 
 from odoo.exceptions import ValidationError
-from odoo.tests import Form, common, tagged
+from odoo.tests import Form, common
 from odoo.tools.misc import mute_logger
 
 
-@tagged("post_install", "-at_install")
-class TestBaseLocation(common.SavepointCase):
+class TestBaseLocation(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
