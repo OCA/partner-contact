@@ -14,6 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_address_version
+#: model:ir.model.fields,field_description:partner_address_version.field_res_partner_alias_date_version
 #: model:ir.model.fields,field_description:partner_address_version.field_res_partner_date_version
 #: model:ir.model.fields,field_description:partner_address_version.field_res_users_date_version
 msgid "Date version"
@@ -25,14 +26,20 @@ msgid "Partner"
 msgstr ""
 
 #. module: partner_address_version
+#: model:ir.model.fields,field_description:partner_address_version.field_res_partner_alias_version_hash
 #: model:ir.model.fields,field_description:partner_address_version.field_res_partner_version_hash
 #: model:ir.model.fields,field_description:partner_address_version.field_res_users_version_hash
 msgid "Version hash"
 msgstr ""
 
 #. module: partner_address_version
-#: code:addons/partner_address_version/models/res_partner.py:63
+#: code:addons/partner_address_version/models/res_partner.py:92
 #, python-format
 msgid "You can't modify a versioned field %s on the versioned partner %s."
+msgstr ""
+
+#. module: partner_address_version
+#: model:ir.model,name:partner_address_version.model_base_partner_merge_automatic_wizard
+msgid "base.partner.merge.automatic.wizard"
 msgstr ""
 
