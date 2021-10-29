@@ -2,7 +2,7 @@
 # Copyright 2018 brain-tec AG - Raul Martin
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class ResPartner(models.Model):
@@ -22,3 +22,10 @@ class ResPartner(models.Model):
         string="Affiliates",
         domain=[("active", "=", True), ("is_company", "=", True)],
     )
+
+    @api.onchange("parent_id")
+    def onchange_parent_id(self):
+        # If it is a company and it has a parent, do not change the address.
+        if self.parent_id and self.is_company:
+            return {}
+        return super(ResPartner, self).onchange_parent_id()
