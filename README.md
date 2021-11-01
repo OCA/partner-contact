@@ -52,7 +52,7 @@ addon | version | maintainers | summary
 [partner_fax](partner_fax/) | 14.0.1.0.0 |  | Add fax number on partner
 [partner_firstname](partner_firstname/) | 14.0.1.0.1 |  | Split first name and last name for non company partners
 [partner_helper](partner_helper/) | 14.0.1.0.0 |  | Add specific helper methods
-[partner_identification](partner_identification/) | 14.0.1.2.0 |  | Partner Identification Numbers
+[partner_identification](partner_identification/) | 14.0.1.3.0 |  | Partner Identification Numbers
 [partner_identification_unique_by_category](partner_identification_unique_by_category/) | 14.0.1.0.1 |  | Partner Identification Numbers Unique By Category
 [partner_industry_secondary](partner_industry_secondary/) | 14.0.1.0.0 |  | Add secondary partner industries
 [partner_iterative_archive](partner_iterative_archive/) | 14.0.1.0.1 |  | Archive all contacts when parent is archived
