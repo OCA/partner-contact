@@ -5,7 +5,7 @@
         <field name="name">view.animal.species.tree</field>
         <field name="model">animal.species</field>
         <field name="arch" type="xml">
-            <tree string="Species">
+            <tree>
                 <field name="name" />
             </tree>
         </field>

@@ -8,5 +8,5 @@ class AnimalBreed(models.Model):
     _description = "Animal Breeds"
     _order = "name"
 
-    name = fields.Char(string="Name", translate=True)
+    name = fields.Char(translate=True)
     species_id = fields.Many2one("animal.species", string="Species", required=True)
