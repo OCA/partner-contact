@@ -37,6 +37,7 @@ setuptools.setup(
         'odoo11-addon-partner_group',
         'odoo11-addon-partner_identification',
         'odoo11-addon-partner_industry_secondary',
+        'odoo11-addon-partner_multi_name',
         'odoo11-addon-partner_multi_relation',
         'odoo11-addon-partner_multi_relation_tabs',
         'odoo11-addon-partner_noncommercial',
