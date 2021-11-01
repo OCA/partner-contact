@@ -69,6 +69,11 @@ msgid "Code"
 msgstr ""
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
+msgid "Color Index"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner
 msgid "Contact"
 msgstr ""
