@@ -5,7 +5,7 @@
         <field name="name">view.animal.color.tree</field>
         <field name="model">animal.color</field>
         <field name="arch" type="xml">
-            <tree string="colors">
+            <tree>
                 <field name="name" />
                 <field name="breed_id" />
                 <field name="species_id" />
