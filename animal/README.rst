@@ -14,16 +14,16 @@ Animal
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/14.0/animal
+    :target: https://github.com/OCA/partner-contact/tree/15.0/animal
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
     :target: https://translation.odoo-community.org/projects/partner-contact-14-0/partner-contact-14-0-animal
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
-    :target: https://runbot.odoo-community.org/runbot/134/14.0
+    :target: https://runbot.odoo-community.org/runbot/134/15.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5| 
+|badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module allows you to store animal information.
 
@@ -64,6 +64,8 @@ Contributors
 
   * Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
 
+  * Moaad Bourhim <moaad.bourhim@gmail.com>
+
 Maintainers
 ~~~~~~~~~~~
 
@@ -83,8 +85,8 @@ promote its widespread use.
 
 Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
-|maintainer-max3903| 
+|maintainer-max3903|
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/14.0/animal>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/15.0/animal>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
