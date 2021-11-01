@@ -21,22 +21,25 @@ msgstr ""
 "X-Generator: Weblate 3.4\n"
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:0
-#, python-format
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid ""
-"\n"
-"# Python code. Use failed = True to specify that the id number is not "
-"valid.\n"
+"# Use failed = True to specify that the id number is not valid.\n"
 "# You can use the following variables :\n"
 "#  - self: browse_record of the current ID Category browse_record\n"
-"#  - id_number: browse_record of ID number to validate"
-msgstr ""
+"#  - id_number: browse_record of ID number to validate\n"
 "\n"
-"# Código Python. Utilice failed = True para especificar que el identificador "
-"no es válido.\n"
-"# Puede usar las siguientes variables:\n"
-"#  - self: registro ORM de la categoría de identificación\n"
-"#  - id_number: registro ORM del nº de identificación a validar"
+"<b><i># Sample 1: ID number only contains digits</i></b>\n"
+"if not id_number.name.isdigit():\n"
+"    failed = True\n"
+"else:\n"
+"    failed = False\n"
+"\n"
+"<b><i># Sample 2: Length of ID number cannot exceed 10 chars</i></b>\n"
+"failed = len(id_number.name) &gt; 10 and True or False\n"
+"\n"
+"<b><i># Sample 3: ID number must start with the category code</i></b>\n"
+"failed = not id_number.name.startswith(self.code) and True or False"
+msgstr ""
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
@@ -76,6 +79,11 @@ msgid "Code"
 msgstr "Código"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
+msgid "Color Index"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner
 msgid "Contact"
 msgstr "Contacto"
@@ -93,6 +101,7 @@ msgid "Created on"
 msgstr "Creado en"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__display_name
 msgid "Display Name"
@@ -125,6 +134,7 @@ msgid "Expired"
 msgstr "Expirado"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__id
 msgid "ID"
@@ -178,6 +188,7 @@ msgid "Issued on"
 msgstr "Emitido en"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category____last_update
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number____last_update
 msgid "Last Modified on"
@@ -253,6 +264,11 @@ msgid "Place of Issuance"
 msgstr "Lugar de emisión"
 
 #. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid "Python Validation Code:"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__validation_code
 msgid "Python code called to validate an id number."
 msgstr "Código Python llamado para validar un nº de identificación."
@@ -315,6 +331,21 @@ msgstr "Válido hasta"
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_from
 msgid "Validation period stating date."
 msgstr "Fecha de inicio del período de validación."
+
+#~ msgid ""
+#~ "\n"
+#~ "# Python code. Use failed = True to specify that the id number is not "
+#~ "valid.\n"
+#~ "# You can use the following variables :\n"
+#~ "#  - self: browse_record of the current ID Category browse_record\n"
+#~ "#  - id_number: browse_record of ID number to validate"
+#~ msgstr ""
+#~ "\n"
+#~ "# Código Python. Utilice failed = True para especificar que el "
+#~ "identificador no es válido.\n"
+#~ "# Puede usar las siguientes variables:\n"
+#~ "#  - self: registro ORM de la categoría de identificación\n"
+#~ "#  - id_number: registro ORM del nº de identificación a validar"
 
 #~ msgid "res.partner.id_category"
 #~ msgstr "res.partner.id_category"
