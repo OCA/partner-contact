@@ -7,7 +7,7 @@ class AnimalColor(models.Model):
     _name = "animal.color"
     _description = "Animal Colors"
 
-    name = fields.Char(string="Name", translate=True)
+    name = fields.Char(translate=True)
     breed_id = fields.Many2one("animal.breed", string="Breed", required=True)
     species_id = fields.Many2one(
         "animal.species", string="Species", related="breed_id.species_id", readonly=True
