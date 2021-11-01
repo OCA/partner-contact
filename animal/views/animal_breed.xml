@@ -5,7 +5,7 @@
         <field name="name">view.animal.breed.tree</field>
         <field name="model">animal.breed</field>
         <field name="arch" type="xml">
-            <tree string="Breeds">
+            <tree>
                 <field name="name" />
                 <field name="species_id" />
             </tree>
