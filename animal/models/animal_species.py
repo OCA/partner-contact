@@ -8,5 +8,5 @@ class AnimalSpecies(models.Model):
     _description = "Animal Species"
     _order = "name"
 
-    name = fields.Char(string="Name", translate=True)
+    name = fields.Char(translate=True)
     breed_ids = fields.One2many("animal.breed", "species_id", string="Breeds")

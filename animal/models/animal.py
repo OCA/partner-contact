@@ -9,16 +9,15 @@ class Animal(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _order = "name"
 
-    name = fields.Char(string="Name")
+    name = fields.Char()
     ref = fields.Char(string="Reference")
     species_id = fields.Many2one("animal.species", string="Species", required=True)
     breed_id = fields.Many2one("animal.breed", string="Breed", required=True)
     color_id = fields.Many2one("animal.color", string="Color")
-    size = fields.Char(string="Size")
+    size = fields.Char()
     weight = fields.Float(string="Weight (in kg)")
-    birth_date = fields.Date(string="Birth Date")
+    birth_date = fields.Date()
     gender = fields.Selection(
-        string="Gender",
         selection=[
             ("female", "Female"),
             ("male", "Male"),
@@ -30,7 +29,7 @@ class Animal(models.Model):
     )
     active = fields.Boolean(default=True)
     image = fields.Binary(
-        "Image", attachment=True, help="This field holds the photo of the animal."
+        attachment=True, help="This field holds the photo of the animal."
     )
 
     @api.onchange("species_id")
