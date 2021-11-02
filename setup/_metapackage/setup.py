@@ -55,6 +55,7 @@ setuptools.setup(
         'odoo14-addon-partner_ref_unique',
         'odoo14-addon-partner_second_lastname',
         'odoo14-addon-partner_tier_validation',
+        'odoo14-addon-partner_title_order',
         'odoo14-addon-partner_tz',
         'odoo14-addon-partner_vat_unique',
         'odoo14-addon-portal_partner_select_all',
