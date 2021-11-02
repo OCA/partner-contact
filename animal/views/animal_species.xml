@@ -1,0 +1,53 @@
+<odoo>
+
+    <!-- Animal Species Tree View -->
+    <record id="view_animal_species_tree" model="ir.ui.view">
+        <field name="name">view.animal.species.tree</field>
+        <field name="model">animal.species</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Animal Species Form View -->
+    <record id="view_animal_species_form" model="ir.ui.view">
+        <field name="name">view.animal.species.form</field>
+        <field name="model">animal.species</field>
+        <field name="arch" type="xml">
+            <form string="Species">
+                <header />
+                <sheet>
+                    <div class="oe_button_box" name="button_box" />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group id="main">
+                        <group id="left" />
+                        <group id="right" />
+                    </group>
+                    <notebook>
+                        <page string="Breeds" id="breeds">
+                            <field name="breed_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_animal_species" model="ir.actions.act_window">
+        <field name="name">Species</field>
+        <field name="res_model">animal.species</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a species.
+            </p>
+        </field>
+    </record>
+
+</odoo>
