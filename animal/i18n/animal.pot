@@ -68,7 +68,6 @@ msgstr ""
 #: model:ir.actions.act_window,name:animal.action_animal
 #: model:ir.ui.menu,name:animal.animal model:ir.ui.menu,name:animal.root
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
-#: model_terms:ir.ui.view,arch_db:animal.view_animal_tree
 msgid "Animals"
 msgstr ""
 
@@ -120,7 +119,6 @@ msgstr ""
 #: model:ir.actions.act_window,name:animal.action_animal_breed
 #: model:ir.model.fields,field_description:animal.field_animal_species__breed_ids
 #: model:ir.ui.menu,name:animal.breed
-#: model_terms:ir.ui.view,arch_db:animal.view_animal_breed_tree
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
 msgid "Breeds"
 msgstr ""
@@ -254,11 +252,6 @@ msgid "Followers"
 msgstr ""
 
 #. module: animal
-#: model:ir.model.fields,field_description:animal.field_animal__message_channel_ids
-msgid "Followers (Channels)"
-msgstr ""
-
-#. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
@@ -297,6 +290,11 @@ msgstr ""
 #. module: animal
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Group By"
+msgstr ""
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__has_message
+msgid "Has Message"
 msgstr ""
 
 #. module: animal
@@ -533,7 +531,6 @@ msgstr ""
 #: model:ir.ui.menu,name:animal.species
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
-#: model_terms:ir.ui.view,arch_db:animal.view_animal_species_tree
 msgid "Species"
 msgstr ""
 
@@ -567,16 +564,6 @@ msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: animal
-#: model:ir.model.fields,field_description:animal.field_animal__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: animal
-#: model:ir.model.fields,help:animal.field_animal__website_message_ids
-msgid "Website communication history"
-msgstr ""
-
-#. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__weight
 msgid "Weight (in kg)"
 msgstr ""
@@ -584,9 +571,4 @@ msgstr ""
 #. module: animal
 #: model:animal.breed,name:animal.yorkshire_terrier
 msgid "Yorkshire Terrier"
-msgstr ""
-
-#. module: animal
-#: model_terms:ir.ui.view,arch_db:animal.view_animal_color_tree
-msgid "colors"
 msgstr ""
