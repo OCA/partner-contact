@@ -1,5 +1,5 @@
 # Copyright (C) 2019 Compassion CH (http://www.compassion.ch)
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 import datetime
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
@@ -50,8 +50,6 @@ class ResPartnerCategory(models.Model):
         return res
 
     @api.constrains('tag_filter_condition_id',
-                    'tag_filter_condition_id.model_id',
-                    'tag_filter_condition_id.domain',
                     'tag_filter_partner_field')
     def check_condition(self):
         for me in self.filtered('tag_filter_condition_id'):
