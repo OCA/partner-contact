@@ -2,9 +2,9 @@ from odoo.tests.common import TransactionCase
 
 
 # @tagged('-at_install', 'post_install')
-class TestAnnimalState(TransactionCase):
+class TestAnimalState(TransactionCase):
     def setUp(self, *args, **kwargs):
-        super(TestAnnimalState, self).setUp(*args, **kwargs)
+        super(TestAnimalState, self).setUp(*args, **kwargs)
         self.test_species = self.env["animal.species"].create({"name": "specie 1"})
         self.test_breed = self.env["animal.breed"].create(
             {"name": "breed 1", "species_id": self.test_species.id}
