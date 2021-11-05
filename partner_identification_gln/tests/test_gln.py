@@ -6,19 +6,21 @@ from odoo.tests.common import SavepointCase
 
 
 class TestGLN(SavepointCase):
-    def setUp(self):
-        super(TestGLN, self).setUp()
-        self.partner = self.env["res.partner"].create({"name": "TestGLN"})
-        self.partner2 = self.env["res.partner"].create({"name": "TestGLN2"})
-        pc = self.env.ref(
-            "partner_identification_gln." "partner_identification_gln_number_category"
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.partner = cls.env["res.partner"].create({"name": "TestGLN"})
+        cls.partner2 = cls.env["res.partner"].create({"name": "TestGLN2"})
+        pc = cls.env.ref(
+            "partner_identification_gln.partner_identification_gln_number_category"
         )
-        self.partner_id_category = pc
+        cls.partner_id_category = pc
 
-        pc_gcp = self.env.ref(
-            "partner_identification_gln." "partner_identification_gcp_number_category"
+        pc_gcp = cls.env.ref(
+            "partner_identification_gln.partner_identification_gcp_number_category"
         )
-        self.partner_id_gcp_category = pc_gcp
+        cls.partner_id_gcp_category = pc_gcp
 
     def test_gln(self):
         # Good GLN
