@@ -1,5 +1,5 @@
 # Copyright (C) 2020 Open Source Integrators
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from odoo import api, fields, models
 
 
@@ -16,7 +16,6 @@ class ResPartner(models.Model):
         compute=_compute_animal_count, string="Number of Animals", store=True
     )
 
-    @api.multi
     def action_view_animals(self):
         action = self.env.ref("animal.action_animal").read()[0]
         if self.animal_count > 1:
