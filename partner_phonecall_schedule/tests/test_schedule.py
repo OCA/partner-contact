@@ -1,4 +1,4 @@
-# Copyright 2017 Jairo Llopis <jairo.llopis@tecnativa.com>
+# Copyright 2017 Tecnativa - Jairo Llopis
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import datetime, timedelta
@@ -14,7 +14,7 @@ PATH = "odoo.addons.partner_phonecall_schedule.models.res_partner.datetime"
 class CanICallCase(SavepointCase):
     @classmethod
     def setUpClass(cls):
-        super(CanICallCase, cls).setUpClass()
+        super().setUpClass()
         cls.Calendar = cls.env["resource.calendar"].with_context(tz="UTC")
         cls.Partner = cls.env["res.partner"].with_context(tz="UTC")
         cls.some_mornings = cls.Calendar.create(
@@ -79,7 +79,7 @@ class CanICallCase(SavepointCase):
         cls.dude.phonecall_calendar_ids = cls.some_mornings
 
     def setUp(self):
-        super(CanICallCase, self).setUp()
+        super().setUp()
         # Now it is a friday morning
         self.datetime = datetime(2017, 9, 15, 10, 53, 30)
 

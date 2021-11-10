@@ -68,6 +68,3 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_users__phonecall_calendar_ids
 msgid "Phonecall schedule"
 msgstr ""
-
-#~ msgid "Partner"
-#~ msgstr "Харилцагч"

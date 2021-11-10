@@ -1,7 +1,5 @@
-# Copyright 2017 Jairo Llopis <jairo.llopis@tecnativa.com>
+# Copyright 2017 Tecnativa - Jairo Llopis
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
-from __future__ import division
 
 from datetime import datetime
 
@@ -14,7 +12,7 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     phonecall_available = fields.Boolean(
-        "Available to call",
+        string="Available to call",
         compute="_compute_phonecall_available",
         search="_search_phonecall_available",
         help="Is it now a good time to call this partner?",
