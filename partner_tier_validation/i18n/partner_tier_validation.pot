@@ -14,16 +14,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_tier_validation
-#: model:ir.model.fields.selection,name:partner_tier_validation.selection__res_partner__state__confirmed
-msgid "Active"
-msgstr ""
-
-#. module: partner_tier_validation
-#: model:ir.model.fields.selection,name:partner_tier_validation.selection__res_partner__state__cancel
-msgid "Archived"
-msgstr ""
-
-#. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__can_review
 msgid "Can Review"
 msgstr ""
@@ -37,11 +27,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_tier_validation.field_tier_definition__display_name
 msgid "Display Name"
-msgstr ""
-
-#. module: partner_tier_validation
-#: model:ir.model.fields.selection,name:partner_tier_validation.selection__res_partner__state__draft
-msgid "Draft"
 msgstr ""
 
 #. module: partner_tier_validation
@@ -72,8 +57,8 @@ msgid "Needs my Approval"
 msgstr ""
 
 #. module: partner_tier_validation
-#: model:tier.definition,name:partner_tier_validation.partner_tier_definition_company_only
-msgid "Partner Validation (Company)"
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__next_review
+msgid "Next Review"
 msgstr ""
 
 #. module: partner_tier_validation
@@ -92,13 +77,13 @@ msgid "Reviewers"
 msgstr ""
 
 #. module: partner_tier_validation
-#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__state
-msgid "Status"
+#: model:ir.model,name:partner_tier_validation.model_tier_definition
+msgid "Tier Definition"
 msgstr ""
 
 #. module: partner_tier_validation
-#: model:ir.model,name:partner_tier_validation.model_tier_definition
-msgid "Tier Definition"
+#: model:tier.definition,name:partner_tier_validation.partner_tier_definition_company_only
+msgid "Validate New Company"
 msgstr ""
 
 #. module: partner_tier_validation
