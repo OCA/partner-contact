@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2017 Tecnativa - Jairo Llopis
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">Partner phonecall schedule</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="groups_id" eval="[(4, ref('base.group_partner_manager'), 0)]" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook">
+                <!-- `many2many_tags` widget would not allow the user to click
+                     and edit a calendar record as the list widget does;
+                     management menus are under global settings, so only
+                     admins could do it; we need plenty of space to display
+                     the aggregated schedule. All that said, we have to use a
+                     list widget inside a dedicated page. -->
+                <page string="Phone calls" name="phonecalls">
+                    <group>
+                        <field name="phonecall_available" />
+                        <field name="phonecall_calendar_ids" />
+                        <field name="phonecall_calendar_attendance_ids" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">Partner phonecall availability</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="groups_id" eval="[(4, ref('base.group_partner_manager'), 0)]" />
+        <field name="arch" type="xml">
+            <xpath expr="//separator[last()]" position="before">
+                <filter
+                    string="Available for phone calls now"
+                    name="phonecall_available"
+                    domain="[('phonecall_available', '=', True)]"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
