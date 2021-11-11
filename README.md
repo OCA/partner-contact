@@ -61,6 +61,7 @@ addon | version | maintainers | summary
 [partner_multi_relation](partner_multi_relation/) | 14.0.1.1.0 |  | Partner Relations
 [partner_phone_extension](partner_phone_extension/) | 14.0.1.0.1 |  | Partner Phone Number Extension
 [partner_phone_secondary](partner_phone_secondary/) | 14.0.1.0.0 | [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Adds a secondary phone number on partners
+[partner_phonecall_schedule](partner_phonecall_schedule/) | 14.0.1.0.0 |  | Track the time and days your partners expect phone calls
 [partner_pricelist_search](partner_pricelist_search/) | 14.0.1.0.0 |  | Partner pricelist search
 [partner_priority](partner_priority/) | 14.0.1.0.0 | [![patrickrwilson](https://github.com/patrickrwilson.png?size=30px)](https://github.com/patrickrwilson) | Adds priority to partners.
 [partner_ref_unique](partner_ref_unique/) | 14.0.1.0.0 |  | Add an unique constraint to partner ref field
