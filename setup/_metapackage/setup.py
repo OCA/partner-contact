@@ -50,6 +50,7 @@ setuptools.setup(
         'odoo14-addon-partner_multi_relation',
         'odoo14-addon-partner_phone_extension',
         'odoo14-addon-partner_phone_secondary',
+        'odoo14-addon-partner_phonecall_schedule',
         'odoo14-addon-partner_pricelist_search',
         'odoo14-addon-partner_priority',
         'odoo14-addon-partner_ref_unique',
