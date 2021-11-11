@@ -72,6 +72,11 @@ msgid "Needs my Approval"
 msgstr ""
 
 #. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__next_review
+msgid "Next Review"
+msgstr ""
+
+#. module: partner_tier_validation
 #: model:tier.definition,name:partner_tier_validation.partner_tier_definition_company_only
 msgid "Partner Validation (Company)"
 msgstr ""
