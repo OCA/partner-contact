@@ -29,7 +29,7 @@ class PartnerCompanyCase(TransactionCase):
         be raised (firstname and lastname are reset...)
         """
         with Form(
-            self.env["res.partner"], view="base.view_partner_simple_form"
+            self.env["res.partner"], view="base.view_partner_form"
         ) as partner_form:
             partner_form.is_company = self.is_company
 
