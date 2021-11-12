@@ -20,7 +20,8 @@ class CompanyCase(TransactionCase):
     def tearDown(self):
         try:
             data = {"name": self.name}
-            model = self.env[self.model].with_context(**self.context)
+            # pylint: disable=W8121
+            model = self.env[self.model].with_context(self.context)
             with self.assertRaises(ex.EmptyNamesError):
                 model.create(data)
         finally:
