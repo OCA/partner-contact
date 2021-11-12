@@ -48,7 +48,7 @@ class ResPartner(models.Model):
             if "default_name" in context:
                 del context["default_name"]
 
-        return super(ResPartner, self.with_context(context)).create(vals)
+        return super(ResPartner, self.with_context(**context)).create(vals)
 
     def copy(self, default=None):
         """Ensure partners are copied right.
