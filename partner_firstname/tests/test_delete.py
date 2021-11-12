@@ -19,7 +19,8 @@ class CompanyCase(TransactionCase):
         See https://github.com/OCA/partner-contact/issues/154.
         """
         data = {"name": "Söme name"}
-        record = self.env[self.model].with_context(**self.context).create(data)
+        # pylint: disable=W8121
+        record = self.env[self.model].with_context(self.context).create(data)
         record.unlink()
         record.recompute()
 
