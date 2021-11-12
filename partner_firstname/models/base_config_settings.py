@@ -12,7 +12,6 @@ class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
     partner_names_order = fields.Selection(
-        string="Partner names order",
         selection="_partner_names_order_selection",
         help="Order to compose partner fullname",
         config_parameter="partner_names_order",
