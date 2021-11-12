@@ -17,3 +17,4 @@
 * Dave Lasley <dave@laslabs.com>
 * Graeme Gellatly <graeme@o4sb.com>
 * Laurent Mignon <laurent.mignon@acsone.eu>
+* Bjorn Billen <bjorn.billen@dynapps.be>
