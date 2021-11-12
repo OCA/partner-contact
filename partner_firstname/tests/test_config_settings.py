@@ -1,10 +1,10 @@
 # Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 
 
-class TestConfigSettings(SavepointCase):
+class TestConfigSettings(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

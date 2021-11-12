@@ -26,7 +26,7 @@ class PersonCase(TransactionCase):
 
     def tearDown(self):
         self.record = (
-            self.env[self.model].with_context(self.context).create(self.values)
+            self.env[self.model].with_context(**self.context).create(self.values)
         )
         for key, value in self.good_values.items():
             self.assertEqual(self.record[key], value, "Checking key %s" % key)
