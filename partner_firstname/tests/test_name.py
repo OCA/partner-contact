@@ -53,13 +53,15 @@ class PartnerContactCase(BaseCase):
 
 class PartnerCompanyCase(BaseCase):
     def create_original(self):
-        super(PartnerCompanyCase, self).create_original()
+        res = super(PartnerCompanyCase, self).create_original()
         self.original.is_company = True
+        return res
 
     def test_copy(self):
         """Copy the partner and compare the result."""
-        super(PartnerCompanyCase, self).test_copy()
+        res = super(PartnerCompanyCase, self).test_copy()
         self.expect(self.name, False, self.name)
+        return res
 
     def test_company_inverse(self):
         """Test the inverse method in a company record."""
@@ -85,4 +87,4 @@ class UserCase(PartnerContactCase):
         """Copy the partner and compare the result."""
         # Skip if ``mail`` is installed
         if not self.mail_installed():
-            super(UserCase, self).test_copy()
+            return super(UserCase, self).test_copy()
