@@ -6,12 +6,13 @@
 {
     "name": "Partner first name and last name",
     "summary": "Split first name and last name for non company partners",
-    "version": "14.0.1.0.1",
+    "version": "15.0.1.0.0",
     "author": "Camptocamp, "
     "Grupo ESOC Ingeniería de Servicios, "
     "Tecnativa, "
     "LasLabs, "
     "ACSONE SA/NV, "
+    "DynApps NV, "
     "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "maintainer": "Camptocamp, Acsone",
