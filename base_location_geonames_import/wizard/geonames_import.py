@@ -29,7 +29,6 @@ class CityZipGeonamesImport(models.TransientModel):
 
     letter_case = fields.Selection(
         [("unchanged", "Unchanged"), ("title", "Title Case"), ("upper", "Upper Case")],
-        string="Letter Case",
         default="unchanged",
         help="Converts retreived city and state names to Title Case "
         "(upper case on each first letter of a word) or Upper Case "
@@ -115,6 +114,7 @@ class CityZipGeonamesImport(models.TransientModel):
         logger.info("Starting to download %s" % url)
         res_request = requests.get(url)
         if res_request.status_code != requests.codes.ok:
+            # pylint: disable=translation-positional-used - Don't want to re-translate
             raise UserError(
                 _("Got an error %d when trying to download the file %s.")
                 % (res_request.status_code, url)
@@ -177,6 +177,7 @@ class CityZipGeonamesImport(models.TransientModel):
                 city_dict[(city_name, state_id)] = city_id
         ctx = dict(self.env.context)
         ctx.pop("lang", None)  # make sure no translation is added
+        # pylint: disable=context-overridden - It's legit to replace it in this case
         created_cities = self.env["res.city"].with_context(ctx).create(city_vals_list)
         for i, vals in enumerate(city_vals_list):
             city_dict[(vals["name"], vals["state_id"])] = created_cities[i].id
