@@ -1,4 +1,4 @@
-# Copyright 2016-2020 Tecnativa - Pedro M. Baeza
+# Copyright 2016-2021 Tecnativa - Pedro M. Baeza
 # Copyright 2020 Manuel Regidor <manuel.regidor@sygel.es>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
@@ -6,7 +6,7 @@ from odoo.exceptions import UserError
 from odoo.tests import common
 
 
-class TestBaseLocationGeonamesImport(common.SavepointCase):
+class TestBaseLocationGeonamesImport(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
