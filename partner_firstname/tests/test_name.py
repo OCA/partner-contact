@@ -52,10 +52,9 @@ class PartnerContactCase(BaseCase):
 
 
 class PartnerCompanyCase(BaseCase):
-    def create_original(self):
-        res = super(PartnerCompanyCase, self).create_original()
+    def create_original(self):  # pylint: disable=W8110
+        super(PartnerCompanyCase, self).create_original()
         self.original.is_company = True
-        return res
 
     def test_copy(self):
         """Copy the partner and compare the result."""
