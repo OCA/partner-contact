@@ -25,9 +25,8 @@ class PersonCase(TransactionCase):
         self.values = self.good_values.copy()
 
     def tearDown(self):
-        # pylint: disable=W8121
         self.record = (
-            self.env[self.model].with_context(self.context).create(self.values)
+            self.env[self.model].with_context(**self.context).create(self.values)
         )
         for key, value in self.good_values.items():
             self.assertEqual(self.record[key], value, "Checking key %s" % key)
