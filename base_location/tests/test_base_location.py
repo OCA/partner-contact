@@ -4,7 +4,7 @@
 import psycopg2
 
 from odoo.exceptions import ValidationError
-from odoo.tests import common, tagged
+from odoo.tests import Form, common, tagged
 from odoo.tools.misc import mute_logger
 
 
@@ -246,3 +246,25 @@ class TestBaseLocation(common.SavepointCase):
                     "country_id": self.ref("base.es"),
                 }
             )
+
+    def test_partner_address_field_sync(self):
+        """Test that zip_id is correctly synced with parent of contact addresses"""
+        parent = self.env["res.partner"].create(
+            {
+                "name": "ACME Inc.",
+                "is_company": True,
+                "street": "123 Fake St.",
+                "city": "Springfield",
+                "city_id": self.barcelona.city_id.id,
+                "state_id": self.barcelona.city_id.state_id.id,
+                "country_id": self.barcelona.city_id.country_id.id,
+                "zip_id": self.barcelona.id,
+            }
+        )
+        contact = self.env["res.partner"].create(
+            {"name": "John Doe", "type": "contact", "parent_id": parent.id}
+        )
+        parent = Form(parent)
+        parent.zip_id = self.lausanne
+        parent.save()
+        self.assertEqual(contact.zip_id, self.lausanne, "Contact should be synced")

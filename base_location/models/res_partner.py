@@ -79,3 +79,7 @@ class ResPartner(models.Model):
         if self.zip_id and self.state_id != self.zip_id.city_id.state_id:
             vals.update({"zip_id": False, "zip": False, "city": False})
         self.update(vals)
+
+    @api.model
+    def _address_fields(self):
+        return super()._address_fields() + ["zip_id", "city_id"]
