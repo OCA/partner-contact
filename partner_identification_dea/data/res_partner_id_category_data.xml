@@ -2,6 +2,25 @@
     <record model="res.partner.id_category" id="res_partner_id_category_dea">
         <field name="name">DEA Number</field>
         <field name="code">DEA</field>
+        <field name="validation_code">if len(str(id_number.name)) != 9:
+    failed = True
+elif str(id_number.name)[1] != str(
+    id_number.partner_id.name
+).split(" ")[-1][0]:
+    failed = True
+elif str(
+    sum([
+        int(id_number.name[2]),
+        int(id_number.name[4]),
+        int(id_number.name[6]),
+    ]) + 2 * sum([
+        int(id_number.name[3]),
+        int(id_number.name[5]),
+        int(id_number.name[7]),
+    ])
+)[-1] != id_number.name[8]:
+    failed = True
+        </field>
     </record>
     <record model="res.partner.id_category" id="res_partner_id_category_medical">
         <field name="name">Medical License</field>
