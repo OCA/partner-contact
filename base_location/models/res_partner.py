@@ -100,3 +100,7 @@ class ResPartner(models.Model):
                 'city': False,
             })
         self.update(vals)
+
+    @api.model
+    def _address_fields(self):
+        return super()._address_fields() + ["zip_id", "city_id"]
