@@ -23,7 +23,7 @@ addon | version | maintainers | summary
 [animal](animal/) | 12.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Manage animals information
 [animal_owner](animal_owner/) | 12.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Add owner to the animal
 [base_country_state_translatable](base_country_state_translatable/) | 12.0.1.0.0 |  | Translate Country States
-[base_location](base_location/) | 12.0.1.1.3 |  | Enhanced zip/npa management system
+[base_location](base_location/) | 12.0.1.1.4 |  | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 12.0.1.0.4 |  | Import zip entries from Geonames
 [base_location_nuts](base_location_nuts/) | 12.0.1.0.2 |  | NUTS Regions
 [base_partner_sequence](base_partner_sequence/) | 12.0.1.0.1 |  | Sets customer's code from a sequence
