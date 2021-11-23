@@ -36,6 +36,12 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_company_group
+#: code:addons/partner_company_group/models/res_partner.py:21
+#, python-format
+msgid "Error! You cannot create recursive partner company group"
+msgstr ""
+
+#. module: partner_company_group
 #: model:ir.model,name:partner_company_group.model_account_invoice
 msgid "Invoice"
 msgstr ""
