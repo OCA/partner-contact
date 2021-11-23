@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo-addon-animal>=15.0dev,<15.1dev',
         'odoo-addon-base_location>=15.0dev,<15.1dev',
+        'odoo-addon-base_location_geonames_import>=15.0dev,<15.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
