@@ -10,10 +10,10 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2021-10-26 17:35+0000\n"
-"Last-Translator: educasilva <eduardo.silva@exo.pt>\n"
-"Language-Team: Portuguese (Portugal) (https://www.transifex.com/oca/"
-"teams/23907/pt_PT/)\n"
+"PO-Revision-Date: 2021-11-25 14:36+0000\n"
+"Last-Translator: Pedro Castro Silva <pedrocs@exo.pt>\n"
+"Language-Team: Portuguese (Portugal) (https://www.transifex.com/oca/teams/"
+"23907/pt_PT/)\n"
 "Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -81,7 +81,7 @@ msgstr "Código"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
 msgid "Color Index"
-msgstr ""
+msgstr "Índice de Cor"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner
@@ -143,17 +143,17 @@ msgstr "ID"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__name
 msgid "ID Number"
-msgstr "Número de Identificação"
+msgstr "Número de Id."
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_form
 msgid "ID Numbers"
-msgstr "Números de Identificação"
+msgstr "Números de Id."
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__name
 msgid "ID name"
-msgstr "Nome de identificação"
+msgstr "Nome de id."
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__category_id
@@ -209,7 +209,7 @@ msgstr "Atualizado pela última vez em"
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__name
 msgid "Name of this ID type. For example, 'Driver License'"
-msgstr "Nome desto tipo de identificação. Por exemplo, 'Cartão de Cidadão'"
+msgstr "Nome deste tipo de identificação. Por exemplo, 'Cartão de Cidadão'"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
@@ -265,7 +265,7 @@ msgstr "Local de Emissão"
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid "Python Validation Code:"
-msgstr ""
+msgstr "Código de Validação Python:"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__validation_code
