@@ -8,4 +8,5 @@ def post_init_hook(cr, registry):
     env = api.Environment(cr, SUPERUSER_ID, {})
     partners = env["sale.order"].search([]).mapped("partner_id")
     partners |= partners.mapped("commercial_partner_id")
-    partners._increase_rank("customer_rank")
+    for partner in partners:
+        partner._increase_rank("customer_rank", partner.sale_order_count)
