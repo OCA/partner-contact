@@ -4,13 +4,13 @@
 {
     "name": "Sale Customer Rank",
     "summary": "Update Customer Rank when creating a Sale Order",
-    "version": "13.0.1.0.0",
+    "version": "14.0.1.0.0",
     "category": "Sales",
     "website": "https://github.com/OCA/partner-contact",
     "author": "ForgeFlow, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
-    "depends": ["sale"],
+    "depends": ["sale_management"],
     "data": [],
     "post_init_hook": "post_init_hook",
 }
