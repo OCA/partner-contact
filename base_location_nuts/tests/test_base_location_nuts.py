@@ -71,7 +71,7 @@ class TestBaseLocationNuts(common.SavepointCase):
         self.assertEqual(self.partner.nuts1_id.country_id, self.country_1)
 
     def test_download_exceptions(self):
-        """ Tests download exceptions """
+        """Tests download exceptions"""
         with self.assertRaises(UserError):
             self.importer._download_nuts(url_base="htttt://test.com")
         with self.assertRaises(UserError):

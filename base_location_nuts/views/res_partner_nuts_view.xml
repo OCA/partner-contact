@@ -4,7 +4,7 @@
         <field name="name">NUTS Items tree</field>
         <field name="model">res.partner.nuts</field>
         <field name="arch" type="xml">
-            <tree string="NUTS Items">
+            <tree>
                 <field name="level" />
                 <field name="code" />
                 <field name="name" />
