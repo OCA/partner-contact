@@ -1,12 +1,13 @@
 # Copyright 2015 Antonio Espinosa <antonio.espinosa@tecnativa.com>
 # Copyright 2016 Jairo Llopis <jairo.llopis@tecnativa.com>
 # Copyright 2017 David Vidal <david.vidal@tecnativa.com>
+# Copyright 2021 Gustavo Salgado <gustavo2840@gmail.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 {
     "name": "NUTS Regions",
     "category": "Localisation/Europe",
-    "version": "14.0.1.0.1",
+    "version": "15.0.1.0.0",
     "depends": ["contacts"],
     "data": [
         "views/res_country_view.xml",
