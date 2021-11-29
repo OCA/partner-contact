@@ -121,7 +121,7 @@ class NutsImport(models.TransientModel):
             else:
                 logger.debug("xpath = '%s', not found" % field_xpath)
             if field_required and not value:
-                raise UserError(_("Value not found for mandatory field %s" % k))
+                raise UserError(_("Value not found for mandatory field %s") % k)
             item[k] = value
         return item
 
@@ -143,8 +143,10 @@ class NutsImport(models.TransientModel):
             )
         if res_request.status_code != requests.codes.ok:
             raise UserError(
-                _("Got an error %d when trying to download the file %s.")
-                % (res_request.status_code, url)
+                _(
+                    "Got an error %(status_code)s when trying to download the file %(url)s."
+                )
+                % {"status_code": res_request.status_code, "url": url}
             )
         logger.info("Download successfully %d bytes" % len(res_request.content))
         # Workaround XML: Remove all characters before <?xml
