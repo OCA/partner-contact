@@ -5,7 +5,7 @@ from odoo.exceptions import UserError
 from odoo.tests import common
 
 
-class TestBaseLocationNuts(common.SavepointCase):
+class TestBaseLocationNuts(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestBaseLocationNuts, cls).setUpClass()
