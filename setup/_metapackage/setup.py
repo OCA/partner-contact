@@ -43,6 +43,7 @@ setuptools.setup(
         'odoo14-addon-partner_helper',
         'odoo14-addon-partner_identification',
         'odoo14-addon-partner_identification_gln',
+        'odoo14-addon-partner_identification_notification',
         'odoo14-addon-partner_identification_unique_by_category',
         'odoo14-addon-partner_industry_secondary',
         'odoo14-addon-partner_iterative_archive',
