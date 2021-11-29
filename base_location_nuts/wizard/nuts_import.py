@@ -140,7 +140,7 @@ class NutsImport(models.TransientModel):
         except Exception as e:
             raise UserError(
                 _("Got an error when trying to download the file: %s.") % str(e)
-            )
+            ) from e
         if res_request.status_code != requests.codes.ok:
             raise UserError(
                 _(
