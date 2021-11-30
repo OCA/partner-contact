@@ -12,15 +12,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-14 19:12+0000\n"
-"PO-Revision-Date: 2018-11-14 14:15-0500\n"
-"Last-Translator: leemannd <denis.leemann@camptocamp.com>, 2017\n"
+"PO-Revision-Date: 2021-11-30 15:02+0000\n"
+"Last-Translator: Vincent Hatakeyama <vincent+github@hatakeyama.fr>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
@@ -56,12 +56,12 @@ msgstr "Toutes les relations avec le partenaire courant"
 msgid "Allow existing relations that do not fit changed conditions"
 msgstr ""
 "Autoriser les relations existantes qui ne satisfont pas les conditions "
-"modifiées."
+"modifiées"
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__create_uid
@@ -90,7 +90,7 @@ msgstr "Type de partenaire de l'enregistrement courant"
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__delete
 #, python-format
 msgid "Delete relations that do not fit changed conditions"
-msgstr "Supprimer les relations qui ne satisfont pas les conditions modifiées."
+msgstr "Supprimer les relations qui ne satisfont pas les conditions modifiées"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__right_partner_id
@@ -111,7 +111,7 @@ msgstr "Nom affiché"
 #, python-format
 msgid "Do not allow change that will result in invalid relations"
 msgstr ""
-"Ne pas autoriser de modification qui résulterait en d'invalides relations."
+"Ne pas autoriser de modification qui résulterait en d'invalides relations"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
@@ -120,7 +120,7 @@ msgstr ""
 msgid "End relations per today, if they do not fit changed conditions"
 msgstr ""
 "Terminer les relations à la date du jour, si elles ne satisfont pas les "
-"conditions modifiées."
+"conditions modifiées"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__date_end
@@ -276,7 +276,7 @@ msgstr "Pas de partenaire %s renseigné, nécessaire à ce type de relation."
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "No relation type specified in vals: %s."
-msgstr ""
+msgstr "Pas de relation du type spécifié dans vals : %s."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__this_partner_id
@@ -355,6 +355,11 @@ msgid ""
 "                be linked to other partners with a type either directly\n"
 "                or inversely."
 msgstr ""
+"Enregistrez et suivez les relations de vos partenaires. Les relations "
+"peuvent\n"
+"                être liées à d’autres partenaires avec un type soit "
+"directement\n"
+"                soit de façon inverse."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__active
@@ -375,9 +380,9 @@ msgid ""
 "There are existing reflexive relations defined for the following partners: "
 "{partners}"
 msgstr ""
-"La reflexivité n'a pas pu être désactivée pour le type de relation "
+"La réflexivité n’a pas pu être désactivée pour le type de relation "
 "{relation_type}. Il existe des relations réflexives pour les partenaires "
-"suivants: {partners}"
+"suivants : {partners}"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_count
@@ -392,9 +397,8 @@ msgstr "Type de relation"
 
 #. module: partner_multi_relation
 #: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
-#, fuzzy
 msgid "Relation Types"
-msgstr "Type de relation"
+msgstr "Types de relation"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
@@ -425,12 +429,12 @@ msgstr "Type de relation"
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__res_id
 msgid "Resource ID"
-msgstr ""
+msgstr "ID de l’enregistrement"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__res_model
 msgid "Resource Model"
-msgstr ""
+msgstr "Modèle de la ressource"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__partner_category_right
@@ -494,12 +498,12 @@ msgstr "Le partenaire %s n'est pas applicable pour ce type de relation."
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__res_model
 msgid "The database object this relation is based on."
-msgstr ""
+msgstr "L’objet de la base de données utilisé comme base à cette relation."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__res_id
 msgid "The id of the object in the model this relation is based on."
-msgstr ""
+msgstr "L’identifiant de l’enregistrement à la base de cette relation."
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
@@ -521,17 +525,17 @@ msgstr ""
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "There is already a similar relation with overlapping dates"
-msgstr "Il existe déjà une relation similaire avec des dates se chevauchant."
+msgstr "Il existe déjà une relation similaire avec des dates se chevauchant"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__allow_self
 msgid "This relation can be set up with the same partner left and right"
-msgstr "Cette relation peut avoir le même partenaire à gauche et à droite."
+msgstr "Cette relation peut avoir le même partenaire à gauche et à droite"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__is_symmetric
 msgid "This relation is the same from right to left as from left to right"
-msgstr "Cette relation est la même de droite à gauche que de gauche à droite."
+msgstr "Cette relation est la même de droite à gauche que de gauche à droite"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__type_id
@@ -541,9 +545,8 @@ msgstr "Type"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__type_id
-#, fuzzy
 msgid "Underlying Relation Type"
-msgstr "Type de relation de partenaire"
+msgstr "Type de relation sous-jacente"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner.py:0
