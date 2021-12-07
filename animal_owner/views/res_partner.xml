@@ -1,0 +1,25 @@
+<odoo>
+
+    <!-- Partner Form View -->
+    <record id="view_partner_animal_owner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button
+                    class="oe_stat_button"
+                    type="object"
+                    name="action_view_animals"
+                    icon="fa-pencil-square-o"
+                    context="{'default_partner_id': id}"
+                >
+                    <div class="o_stat_info">
+                        <field name="animal_count" class="o_stat_value" />
+                        <span class="o_stat_text"> Animals</span>
+                    </div>
+                </button>
+            </div>
+        </field>
+    </record>
+
+</odoo>
