@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo14-addon-animal',
+        'odoo14-addon-animal_owner',
         'odoo14-addon-base_country_state_translatable',
         'odoo14-addon-base_location',
         'odoo14-addon-base_location_geonames_import',
