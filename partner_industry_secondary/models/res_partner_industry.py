@@ -11,7 +11,7 @@ from odoo import _, api, exceptions, fields, models
 class ResPartnerIndustry(models.Model):
     _inherit = "res.partner.industry"
     _order = "parent_path"
-    _parent_order = "name"
+    _parent_name = "parent_id"
     _parent_store = True
 
     name = fields.Char(required=True)
@@ -33,13 +33,6 @@ class ResPartnerIndustry(models.Model):
             return res
 
         return [(cat.id, " / ".join(get_names(cat))) for cat in self]
-
-    @api.constrains("parent_id")
-    def _check_parent_id(self):
-        if not self._check_recursion():
-            raise exceptions.ValidationError(
-                _("Error! You cannot create recursive industries.")
-            )
 
     @api.constrains("name", "parent_id")
     def _check_uniq_name(self):
