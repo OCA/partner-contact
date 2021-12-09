@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2021-12-09 13:39+0000\n"
+"Last-Translator: David Beal <david.beal@akretion.com>\n"
 "Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_needaction
@@ -53,7 +55,7 @@ msgstr ""
 #. module: animal
 #: model:ir.model,name:animal.model_animal_breed
 msgid "Animal Breeds"
-msgstr ""
+msgstr "Races Animaux"
 
 #. module: animal
 #: model:ir.model,name:animal.model_animal_color
@@ -63,7 +65,7 @@ msgstr ""
 #. module: animal
 #: model:ir.model,name:animal.model_animal_species
 msgid "Animal Species"
-msgstr ""
+msgstr "Espèces Animal"
 
 #. module: animal
 #: model:ir.actions.act_window,name:animal.action_animal
@@ -71,7 +73,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_tree
 msgid "Animals"
-msgstr ""
+msgstr "Animaux"
 
 #. module: animal
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_form
@@ -115,7 +117,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_breed_form
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Breed"
-msgstr ""
+msgstr "Race"
 
 #. module: animal
 #: model:ir.actions.act_window,name:animal.action_animal_breed
@@ -124,7 +126,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_breed_tree
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
 msgid "Breeds"
-msgstr ""
+msgstr "Races"
 
 #. module: animal
 #: model:animal.breed,name:animal.bull_terrier
@@ -139,7 +141,7 @@ msgstr ""
 #. module: animal
 #: model:animal.species,name:animal.cat
 msgid "Cat"
-msgstr ""
+msgstr "Chat"
 
 #. module: animal
 #: model:animal.breed,name:animal.chihuahua
@@ -418,7 +420,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:animal.field_animal_species__name
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. module: animal
 #: model:ir.model.fields.selection,name:animal.selection__animal__gender__neutered
@@ -524,7 +526,7 @@ msgstr ""
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__size
 msgid "Size"
-msgstr ""
+msgstr "Taille"
 
 #. module: animal
 #: model:ir.actions.act_window,name:animal.action_animal_species
@@ -536,7 +538,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_species_tree
 msgid "Species"
-msgstr ""
+msgstr "Espèces"
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__activity_state
