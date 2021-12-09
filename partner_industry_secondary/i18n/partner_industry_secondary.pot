@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -29,13 +29,6 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_industry_secondary
-#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_config_settings__display_name
-#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner__display_name
-#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__display_name
-msgid "Display Name"
-msgstr ""
-
-#. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Enable industries for individuals"
 msgstr ""
@@ -47,19 +40,6 @@ msgid "Error! Industry with same name and parent already exists."
 msgstr ""
 
 #. module: partner_industry_secondary
-#: code:addons/partner_industry_secondary/models/res_partner_industry.py:0
-#, python-format
-msgid "Error! You cannot create recursive industries."
-msgstr ""
-
-#. module: partner_industry_secondary
-#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_config_settings__id
-#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner__id
-#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__id
-msgid "ID"
-msgstr ""
-
-#. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Industries"
 msgstr ""
@@ -68,13 +48,6 @@ msgstr ""
 #: model:ir.model,name:partner_industry_secondary.model_res_partner_industry
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.view_res_partner_filter_industry
 msgid "Industry"
-msgstr ""
-
-#. module: partner_industry_secondary
-#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_config_settings____last_update
-#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner____last_update
-#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry____last_update
-msgid "Last Modified on"
 msgstr ""
 
 #. module: partner_industry_secondary
