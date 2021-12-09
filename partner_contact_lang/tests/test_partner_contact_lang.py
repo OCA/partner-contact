@@ -1,12 +1,13 @@
 # Copyright 2016 Tecnativa - Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # Copyright 2017 Tecnativa - Vicent Cubells <vicent.cubells@tecnativa.com>
 # Copyright 2018 Tecnativa - Cristina Martín
+# Copyright 2021 Pesol - Pedro Evaristo Gonzalez Sanchez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests import common
 
 
-class TestPartnerContactLang(common.SavepointCase):
+class TestPartnerContactLang(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestPartnerContactLang, cls).setUpClass()
