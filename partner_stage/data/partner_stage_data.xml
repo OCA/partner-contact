@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="partner_stage_draft" model="res.partner.stage">
+        <field name="name">Draft</field>
+        <field name="state">draft</field>
+        <field name="sequence">10</field>
+    </record>
+    <record id="partner_stage_active" model="res.partner.stage">
+        <field name="name">Active</field>
+        <field name="state">confirmed</field>
+        <field name="sequence">20</field>
+        <field name="is_default">True</field>
+    </record>
+    <record id="partner_stage_inactive" model="res.partner.stage">
+        <field name="name">Inactive</field>
+        <field name="state">cancel</field>
+        <field name="sequence">30</field>
+        <field name="fold">True</field>
+    </record>
+</odoo>
