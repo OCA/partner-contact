@@ -25,7 +25,7 @@ class ResPartnerIndustry(models.Model):
 
     def name_get(self):
         def get_names(cat):
-            """ Return the list [cat.name, cat.parent_id.name, ...] """
+            """Return the list [cat.name, cat.parent_id.name, ...]"""
             res = []
             while cat:
                 res.insert(0, cat.name)
