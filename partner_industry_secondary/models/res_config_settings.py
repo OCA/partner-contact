@@ -8,8 +8,7 @@ class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
     group_use_partner_industry_for_person = fields.Boolean(
-        "Use industry for individuals",
-        help="Set if you want to be able to use industries for " "individuals also.",
-        implied_group="partner_industry_secondary."
-        "group_use_partner_industry_for_person",
+        string="Use industry for individuals",
+        help="Set if you want to be able to use industries for individuals also.",
+        implied_group="partner_industry_secondary.group_use_partner_industry_for_person",
     )
