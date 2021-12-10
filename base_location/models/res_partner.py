@@ -82,4 +82,4 @@ class ResPartner(models.Model):
 
     @api.model
     def _address_fields(self):
-        return super()._address_fields() + ["zip_id", "city_id"]
+        return super()._address_fields() + ["zip_id"]
