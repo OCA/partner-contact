@@ -165,4 +165,4 @@ class ResPartner(models.Model):
         """Add to the list of address fields the new ZIP one, but also the city that is
         not added by `base_address_extended`.
         """
-        return super()._address_fields() + ["zip_id", "city_id"]
+        return super()._address_fields() + ["zip_id"]
