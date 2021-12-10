@@ -212,6 +212,7 @@ class TestBaseLocation(common.SavepointCase):
                 "is_company": True,
                 "street": "123 Fake St.",
                 "city": "Springfield",
+                "city_id": self.barcelona.city_id.id,
                 "state_id": self.barcelona.state_id.id,
                 "country_id": self.barcelona.country_id.id,
                 "zip_id": self.barcelona.id,
@@ -224,7 +225,9 @@ class TestBaseLocation(common.SavepointCase):
                 "parent_id": parent.id,
             }
         )
+        parent = Form(parent)
         parent.zip_id = self.lausanne
+        parent.save()
         self.assertEqual(contact.zip_id, self.lausanne, "Contact should be synced")
 
     def test_display_name(self):
