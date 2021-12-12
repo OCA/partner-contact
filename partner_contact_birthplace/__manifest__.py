@@ -3,9 +3,9 @@
 {
     "name": "Partner contact birthplace",
     "summary": "This module allows to define a birthplace for partners.",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.0",
     "category": "Customer Relationship Management",
-    "website": "https://github.com/OCA/partner-contact/tree/12.0/"
+    "website": "https://github.com/OCA/partner-contact/tree/13.0/"
     "partner_contact_birthplace",
     "author": "Agile Business Group, Odoo Community Association (OCA)",
     "license": "AGPL-3",
