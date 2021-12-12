@@ -17,7 +17,7 @@ class TestRecursion(common.SavepointCase):
         )
 
     def test_recursion(self):
-        """ Testing recursion """
+        """Testing recursion"""
         self.dpt3 = self.department_obj.create(
             {"name": "Dep. 3", "parent_id": self.dpt2.id}
         )
