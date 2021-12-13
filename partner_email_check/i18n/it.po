@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-12-13 00:44+0000\n"
+"PO-Revision-Date: 2021-12-13 13:39+0000\n"
 "Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -37,19 +37,19 @@ msgstr ""
 #: code:addons/partner_email_check/models/res_partner.py:0
 #, python-format
 msgid "Cannot deliver to email address %s"
-msgstr ""
+msgstr "Impossibile recapitare all'indirizzo e-mail %s"
 
 #. module: partner_email_check
 #: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_check_deliverability
 #: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__partner_email_check_check_deliverability
 msgid "Check deliverability of email addresses"
-msgstr ""
+msgstr "Controllo di recapitabilità degli indirizzi e-mail"
 
 #. module: partner_email_check
 #: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_syntax
 #: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__partner_email_check_syntax
 msgid "Check syntax of email addresses"
-msgstr ""
+msgstr "Controllo sintassi degli indirizzi e-mail"
 
 #. module: partner_email_check
 #: model:ir.model,name:partner_email_check.model_res_company
@@ -77,25 +77,25 @@ msgstr "Nome visualizzato"
 #: model:ir.model.fields,help:partner_email_check.field_res_company__partner_email_check_check_deliverability
 #: model:ir.model.fields,help:partner_email_check.field_res_config_settings__partner_email_check_check_deliverability
 msgid "Don't allow email addresses with providers that don't exist"
-msgstr ""
+msgstr "Non consente indirizzi e-mail di fornitori non esistenti"
 
 #. module: partner_email_check
 #: model:ir.model.fields,help:partner_email_check.field_res_company__partner_email_check_syntax
 #: model:ir.model.fields,help:partner_email_check.field_res_config_settings__partner_email_check_syntax
 msgid "Don't allow email addresses with wrong syntax"
-msgstr ""
+msgstr "Non consente indirizzi e-mail con sintassi errata"
 
 #. module: partner_email_check
 #: model:ir.model.fields,help:partner_email_check.field_res_company__partner_email_check_filter_duplicates
 #: model:ir.model.fields,help:partner_email_check.field_res_config_settings__partner_email_check_filter_duplicates
 msgid "Don't allow multiple partners to have the same email address."
-msgstr ""
+msgstr "Non consente di avere lo stesso indirizzo e-mail per più partner."
 
 #. module: partner_email_check
 #: code:addons/partner_email_check/models/res_partner.py:0
 #, python-format
 msgid "Email '%s' is already in use."
-msgstr ""
+msgstr "E-mail \"%s\" già in uso."
 
 #. module: partner_email_check
 #: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
@@ -106,6 +106,7 @@ msgstr "Convalida e-mail"
 #: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
 msgid "Ensure that partner email addresses can be delivered to"
 msgstr ""
+"Garantisce che sia possibile recapitare agli indirizzi e-mail del partner"
 
 #. module: partner_email_check
 #: code:addons/partner_email_check/models/res_partner.py:0
@@ -114,12 +115,14 @@ msgid ""
 "Field contains multiple email addresses. This is not supported when "
 "duplicate email addresses are not allowed."
 msgstr ""
+"Il campo contiene più di un indirizzo e-mail. Ciò non è supportato se non "
+"sono consentiti indirizzi e-mail duplicati."
 
 #. module: partner_email_check
 #: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_filter_duplicates
 #: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__partner_email_check_filter_duplicates
 msgid "Filter duplicate partner email addresses"
-msgstr ""
+msgstr "Filtrare indirizzi e-mail duplicati del partner"
 
 #. module: partner_email_check
 #: model:ir.model.fields,field_description:partner_email_check.field_res_company__id
@@ -138,9 +141,9 @@ msgstr "Ultima modifica il"
 #. module: partner_email_check
 #: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
 msgid "Require partner email addresses to be unique"
-msgstr ""
+msgstr "Richiesta di univocità per gli indirizzi e-mail del partner"
 
 #. module: partner_email_check
 #: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
 msgid "Require partner email addresses to have valid syntax"
-msgstr ""
+msgstr "Richiesta di una sintassi valida per gli indirizzi e-mail del partner"
