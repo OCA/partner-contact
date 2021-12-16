@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-13 03:42+0000\n"
-"PO-Revision-Date: 2018-12-24 17:58+0000\n"
+"PO-Revision-Date: 2021-12-16 13:39+0000\n"
 "Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.3\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: base_location
 #: model:res.city,name:base_location.demo_brussels_city
@@ -61,9 +61,8 @@ msgstr "Completamento città"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_partner__city_id
 #: model:ir.model.fields,field_description:base_location.field_res_users__city_id
-#, fuzzy
 msgid "City of Address"
-msgstr "Codice Città"
+msgstr "Città dell'indirizzo"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_city_zip
@@ -191,12 +190,12 @@ msgstr "Lo stato del partner %s è diverso da quello del luogo %s"
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
 msgid "The zip of the partner %s differs from that in location %s"
-msgstr ""
+msgstr "IL CAP del partner %s è diverso da quello del luogo %s"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__zip_id
 msgid "Use the city name or the zip code to search the location"
-msgstr "Usare il nome della città o il codice CAP per cercare il luogo"
+msgstr "Per cercare il luogo utilizzare il nome della città o il CAP"
 
 #. module: base_location
 #: model:ir.model.constraint,message:base_location.constraint_res_city_name_state_country_uniq
@@ -204,6 +203,8 @@ msgid ""
 "You already have a city with that name in the same state.The city must have "
 "a unique name within it's state and it's country"
 msgstr ""
+"Nella stessa provincia è già presente una città con quel nome. All'interno "
+"della provincia e nazione la città deve avere un nome univoco"
 
 #. module: base_location
 #: model:ir.model.constraint,message:base_location.constraint_res_city_zip_name_city_uniq
@@ -211,6 +212,8 @@ msgid ""
 "You already have a zip with that code in the same city. The zip code must be "
 "unique within it's city"
 msgstr ""
+"Nella stessa città è già presente un identico CAP. All'interno di una città "
+"il codice deve essere univoco"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__name
