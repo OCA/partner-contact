@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-12-13 13:39+0000\n"
+"PO-Revision-Date: 2021-12-19 01:39+0000\n"
 "Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -43,13 +43,13 @@ msgstr "Impossibile recapitare all'indirizzo e-mail %s"
 #: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_check_deliverability
 #: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__partner_email_check_check_deliverability
 msgid "Check deliverability of email addresses"
-msgstr "Controllo di recapitabilità degli indirizzi e-mail"
+msgstr "Controllo di recapitabilità indirizzi e-mail"
 
 #. module: partner_email_check
 #: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_syntax
 #: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__partner_email_check_syntax
 msgid "Check syntax of email addresses"
-msgstr "Controllo sintassi degli indirizzi e-mail"
+msgstr "Controllo di sintassi indirizzi e-mail"
 
 #. module: partner_email_check
 #: model:ir.model,name:partner_email_check.model_res_company
