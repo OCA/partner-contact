@@ -8,7 +8,10 @@ class Contact(models.Model):
     _inherit = "res.partner"
 
     company_group_id = fields.Many2one(
-        "res.partner", "Company group", domain=[("is_company", "=", True)]
+        "res.partner",
+        "Company group",
+        domain=[("is_company", "=", True)],
+        recursive=True,
     )
 
     def _commercial_fields(self):
