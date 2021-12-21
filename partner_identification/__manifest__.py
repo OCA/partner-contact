@@ -13,6 +13,7 @@
     "license": "AGPL-3",
     "depends": ["contacts"],
     "data": [
+        "data/partner_number_cron.xml",
         "security/ir.model.access.csv",
         "views/res_partner_id_category_view.xml",
         "views/res_partner_id_number_view.xml",

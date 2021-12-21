@@ -6,7 +6,6 @@
 #        Antonio Espinosa <antonioea@antiun.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-
 from odoo import api, fields, models
 
 
@@ -79,3 +78,9 @@ class ResPartnerIdNumber(models.Model):
             fields.append("partner_id")
             res["partner_id"] = self._context.get("default_partner_id")
         return res
+
+    def check_valid_until_date(self):
+        partner_id_numbers = self.search(
+            [("valid_until", "<=", fields.Date.today()), ("status", "!=", "close")]
+        )
+        partner_id_numbers.write({"status": "close"})
