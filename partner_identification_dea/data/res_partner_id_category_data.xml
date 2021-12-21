@@ -4,10 +4,6 @@
         <field name="code">DEA</field>
         <field name="validation_code">if len(str(id_number.name)) != 9:
     failed = True
-elif str(id_number.name)[1] != str(
-    id_number.partner_id.name
-).split(" ")[-1][0]:
-    failed = True
 elif str(
     sum([
         int(id_number.name[2]),
