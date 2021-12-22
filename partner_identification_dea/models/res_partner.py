@@ -70,6 +70,8 @@ class ResPartner(models.Model):
             rec.dea_active = dea_number and "yes" or "no"
             rec.dea_expired_date = dea_number and dea_number.valid_until or False
             rec.dea_number = dea_number and dea_number.name or ""
+            if rec.child_ids and dea_number:
+                rec.child_ids.sudo().write({"dea_number": dea_number.name})
             rec.medical_license = medical_license and medical_license.name or ""
             rec.medical_license_expired_date = (
                 medical_license and medical_license.valid_until or False
