@@ -34,6 +34,7 @@ setuptools.setup(
         'odoo14-addon-partner_contact_nationality',
         'odoo14-addon-partner_contact_personal_information_page',
         'odoo14-addon-partner_deduplicate_acl',
+        'odoo14-addon-partner_deduplicate_by_ref',
         'odoo14-addon-partner_deduplicate_by_website',
         'odoo14-addon-partner_deduplicate_filter',
         'odoo14-addon-partner_disable_gravatar',
