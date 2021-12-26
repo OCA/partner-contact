@@ -7,5 +7,5 @@ class Animal(models.Model):
     _inherit = "animal"
 
     partner_id = fields.Many2one(
-        "res.partner", string="Owner", index=True, track_visibility="onchange"
+        "res.partner", string="Owner", index=True, tracking=True
     )
