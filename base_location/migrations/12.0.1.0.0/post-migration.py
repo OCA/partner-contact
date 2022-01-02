@@ -49,7 +49,7 @@ def migrate(env, version):
         SELECT
             id, name, city_id
         FROM res_better_zip
-        WHERE city_id IS NOT NULL
+        WHERE city_id IS NOT NULL AND name IS NOT NULL
         ON CONFLICT DO NOTHING""",
         (AsIs(column_name), ),
     )
