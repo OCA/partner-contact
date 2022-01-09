@@ -1,28 +1,29 @@
 # Copyright 2014-2017 Therp BV <https://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+"""Add tab fields to relation type."""
 # pylint: disable=no-self-use
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
 class ResPartnerRelationType(models.Model):
+    """Add tab fields to relation type."""
     # pylint: disable=too-few-public-methods
-    _inherit = 'res.partner.relation.type'
+    _inherit = "res.partner.relation.type"
 
     tab_left_id = fields.Many2one(
-        comodel_name='res.partner.tab',
-        string='Tab for this relation',
-        help="Tab in which these relations will be visible on partner.")
+        comodel_name="res.partner.tab",
+        string="Tab for this relation",
+        help="Tab in which these relations will be visible on partner.",
+    )
     tab_right_id = fields.Many2one(
-        comodel_name='res.partner.tab',
-        string='Tab for inverse relation',
-        help="Tab in which inverse relations will be visible on partner.")
+        comodel_name="res.partner.tab",
+        string="Tab for inverse relation",
+        help="Tab in which inverse relations will be visible on partner.",
+    )
 
     @api.multi
-    @api.constrains(
-        'contact_type_left',
-        'partner_category_left',
-        'tab_left_id')
+    @api.constrains("contact_type_left", "partner_category_left", "tab_left_id")
     def _check_tab_left(self):
         """Conditions for left partner should be consistent with tab."""
         for rec in self:
@@ -30,19 +31,21 @@ class ResPartnerRelationType(models.Model):
                 continue
             tab_contact_type = rec.tab_left_id.contact_type
             if tab_contact_type and tab_contact_type != rec.contact_type_left:
-                raise ValidationError(_(
-                    "Contact type left not compatible with left tab"))
+                raise ValidationError(
+                    _("Contact type left not compatible with left tab")
+                )
             tab_partner_category_id = rec.tab_left_id.partner_category_id
-            if tab_partner_category_id and \
-                    tab_partner_category_id != rec.partner_category_left:
-                raise ValidationError(_(
-                    "Partner category left not compatible with left tab"))
+            incompatible_category = (
+                tab_partner_category_id
+                and tab_partner_category_id != rec.partner_category_left
+            )
+            if incompatible_category:
+                raise ValidationError(
+                    _("Partner category left not compatible with left tab")
+                )
 
     @api.multi
-    @api.constrains(
-        'contact_type_right',
-        'partner_category_right',
-        'tab_right_id')
+    @api.constrains("contact_type_right", "partner_category_right", "tab_right_id")
     def _check_tab_right(self):
         """Conditions for right partner should be consistent with tab."""
         for rec in self:
@@ -50,13 +53,18 @@ class ResPartnerRelationType(models.Model):
                 continue
             tab_contact_type = rec.tab_right_id.contact_type
             if tab_contact_type and tab_contact_type != rec.contact_type_right:
-                raise ValidationError(_(
-                    "Contact type right not compatible with right tab"))
+                raise ValidationError(
+                    _("Contact type right not compatible with right tab")
+                )
             tab_partner_category_id = rec.tab_right_id.partner_category_id
-            if tab_partner_category_id and \
-                    tab_partner_category_id != rec.partner_category_right:
-                raise ValidationError(_(
-                    "Partner category right not compatible with right tab"))
+            incompatible_category = (
+                tab_partner_category_id
+                and tab_partner_category_id != rec.partner_category_right
+            )
+            if incompatible_category:
+                raise ValidationError(
+                    _("Partner category right not compatible with right tab")
+                )
 
     @api.multi
     def _update_right_vals(self, vals):
@@ -65,5 +73,5 @@ class ResPartnerRelationType(models.Model):
         @attention: original method only handles properties ending with _left
                     and we need to update tab_right_id as well
         """
-        vals['tab_right_id'] = vals.get('tab_left_id', self['tab_left_id'])
+        vals["tab_right_id"] = vals.get("tab_left_id", self["tab_left_id"])
         super(ResPartnerRelationType, self)._update_right_vals(vals)

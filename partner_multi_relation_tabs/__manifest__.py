@@ -8,9 +8,7 @@
     "license": "AGPL-3",
     "complexity": "normal",
     "category": "Customer Relationship Management",
-    "depends": [
-        'partner_multi_relation',
-    ],
+    "depends": ["partner_multi_relation"],
     "demo": [
         "demo/res_partner_category_demo.xml",
         "demo/res_partner_tab_demo.xml",
@@ -22,8 +20,8 @@
         "views/res_partner_tab.xml",
         "views/res_partner_relation_type.xml",
         "views/res_partner_relation_all.xml",
-        'views/menu.xml',
-        'security/ir.model.access.csv',
+        "views/menu.xml",
+        "security/ir.model.access.csv",
     ],
     "auto_install": False,
     "installable": True,

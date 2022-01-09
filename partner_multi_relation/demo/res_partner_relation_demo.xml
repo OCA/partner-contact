@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- TODO: relations should really be added through res.partner.relation.all -->
+
+    <!-- Relations -->
+    <record id="relation_great2super" model="res.partner.relation">
+        <field name="left_partner_id" ref="partner_washing_great" />
+        <field name="right_partner_id" ref="partner_washing_super" />
+        <field name="type_id" ref="relation_type_competitor" />
+    </record>
+
+    <record id="relation_best2super" model="res.partner.relation">
+        <field name="left_partner_id" ref="partner_washing_best" />
+        <field name="right_partner_id" ref="partner_washing_super" />
+        <field name="type_id" ref="relation_type_competitor" />
+    </record>
+
+    <record id="relation_great2best" model="res.partner.relation">
+        <field name="left_partner_id" ref="partner_washing_great" />
+        <field name="right_partner_id" ref="partner_washing_best" />
+        <field name="type_id" ref="relation_type_competitor" />
+    </record>
+
+    <record id="relation_company2employee" model="res.partner.relation">
+        <field name="left_partner_id" ref="partner_company_test" />
+        <field name="right_partner_id" ref="partner_person_test" />
+        <field name="type_id" ref="relation_type_company_has_employee" />
+    </record>
+
+    <record id="relation_ngo2volunteer" model="res.partner.relation">
+        <field name="left_partner_id" ref="partner_ngo_test" />
+        <field name="right_partner_id" ref="partner_volunteer_test" />
+        <field name="type_id" ref="relation_type_ngo_has_volunteer" />
+    </record>
+
+</odoo>

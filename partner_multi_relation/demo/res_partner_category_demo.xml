@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Categories -->
+    <record id="category_washing_company" model="res.partner.category">
+        <field name="name">Washing Companies</field>
+    </record>
+
+    <record id="category_washing_gold" model="res.partner.category">
+        <field name="name">Washing Gold</field>
+        <field name="parent_id" ref="category_washing_company"/>
+    </record>
+
+    <record id="category_washing_silver" model="res.partner.category">
+        <field name="name">Washing Silver</field>
+        <field name="parent_id" ref="category_washing_company"/>
+    </record>
+
+    <record id="category_washing_services" model="res.partner.category">
+        <field name="name">Washing Services</field>
+        <field name="parent_id" ref="category_washing_company"/>
+    </record>
+
+    <record id="category_ngo" model="res.partner.category">
+        <field name="name">NGO</field>
+    </record>
+
+    <record id="category_volunteer" model="res.partner.category">
+        <field name="name">Volunteer</field>
+    </record>
+
+</odoo>
