@@ -40,12 +40,14 @@ msgstr ""
 
 #. module: partner_multi_relation_tabs
 #: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:33
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:35
 #, python-format
 msgid "Contact type left not compatible with left tab"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
 #: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:53
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:57
 #, python-format
 msgid "Contact type right not compatible with right tab"
 msgstr ""
@@ -127,6 +129,7 @@ msgstr ""
 
 #. module: partner_multi_relation_tabs
 #: code:addons/partner_multi_relation_tabs/tablib/tab.py:56
+#: code:addons/partner_multi_relation_tabs/tablib/tab.py:74
 #, python-format
 msgid "Partner"
 msgstr ""
@@ -138,12 +141,14 @@ msgstr ""
 
 #. module: partner_multi_relation_tabs
 #: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:38
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:44
 #, python-format
 msgid "Partner category left not compatible with left tab"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
 #: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:58
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:66
 #, python-format
 msgid "Partner category right not compatible with right tab"
 msgstr ""
@@ -212,6 +217,12 @@ msgid "This tab will only show for certain partners.\n"
 msgstr ""
 
 #. module: partner_multi_relation_tabs
+#: code:addons/partner_multi_relation_tabs/models/res_partner.py:60
+#, python-format
+msgid "Updating tabs to modification %d"
+msgstr ""
+
+#. module: partner_multi_relation_tabs
 #: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__partner_category_id
 msgid "Valid for partner category"
 msgstr ""
@@ -228,6 +239,7 @@ msgstr ""
 
 #. module: partner_multi_relation_tabs
 #: code:addons/partner_multi_relation_tabs/models/res_partner_tab.py:49
+#: code:addons/partner_multi_relation_tabs/models/res_partner_tab.py:53
 #, python-format
 msgid "You can not both specify partner_ids and other criteria."
 msgstr ""
