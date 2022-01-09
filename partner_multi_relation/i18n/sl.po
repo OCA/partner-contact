@@ -21,6 +21,7 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:240
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:316
 #, python-format
 msgid "%s partner incompatible with relation type."
 msgstr "Partner %s ni združljiv s tipom odnosa."
@@ -47,6 +48,7 @@ msgid "All relations with current partner"
 msgstr "Vsi odnosi s trenutnim partnerjem"
 
 #. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:12
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:13
 #: selection:res.partner.relation.type,handle_invalid_onchange:0
 #, python-format
@@ -81,6 +83,7 @@ msgid "Current record's partner type"
 msgstr "Tip partnerja na trenutnem zapisu"
 
 #. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:14
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:17
 #: selection:res.partner.relation.type,handle_invalid_onchange:0
 #, python-format
@@ -108,6 +111,7 @@ msgid "Do not allow change that will result in invalid relations"
 msgstr "Ne dovoli sprememb, ki bi vodile v neveljavne odnose"
 
 #. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:13
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:15
 #: selection:res.partner.relation.type,handle_invalid_onchange:0
 #, python-format
@@ -122,7 +126,9 @@ msgstr "Končni datum"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:237
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:313
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:315
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:393
 #, python-format
 msgid "Error!"
 msgstr "Napaka!"
@@ -131,16 +137,6 @@ msgstr "Napaka!"
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "Group By"
 msgstr "Združi po"
-
-#. module: partner_multi_relation
-#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_assistant
-msgid "Has assistant"
-msgstr "Ima asistenta"
-
-#. module: partner_multi_relation
-#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_has_worked_for
-msgid "Has former employee"
-msgstr "Ima bivšega zaposlenega"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_type_id
@@ -161,22 +157,12 @@ msgid "Has relation with a partner in category"
 msgstr "Je v odnosu s partnerjem kategorije"
 
 #. module: partner_multi_relation
-#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_has_worked_for
-msgid "Has worked for"
-msgstr "Je delal za"
-
-#. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__id
 msgid "ID"
 msgstr "ID"
-
-#. module: partner_multi_relation
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
-msgid "Include past records"
-msgstr "Vključi pretekle zapise"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__handle_invalid_onchange
@@ -193,17 +179,6 @@ msgstr "Inverzni naziv"
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type_selection__is_inverse
 msgid "Inverse relations are from right to left partner."
 msgstr "Inverzni odnosi so od desnega proti levemu partnerju."
-
-#. module: partner_multi_relation
-#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_assistant
-msgid "Is assistant of"
-msgstr "Je asistent"
-
-#. module: partner_multi_relation
-#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_competitor
-#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_competitor
-msgid "Is competitor of"
-msgstr "Je konkurent"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__is_inverse
@@ -247,9 +222,9 @@ msgid "Left side of relation"
 msgstr "Leva stran odnosa"
 
 #. module: partner_multi_relation
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
-msgid "Left to right"
-msgstr "Levi proti desnemu"
+#: model:res.partner.category,name:partner_multi_relation.category_ngo
+msgid "NGO"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__name
@@ -259,12 +234,14 @@ msgstr "Naziv"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:244
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:320
 #, python-format
 msgid "No %s partner available for relation type."
 msgstr "Ni partnerja %s na voljo za tip odnosa."
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:448
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:546
 #, python-format
 msgid "No relation type specified in vals: %s."
 msgstr ""
@@ -276,6 +253,7 @@ msgid "One Partner"
 msgstr "En partner"
 
 #. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:65
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:82
 #, python-format
 msgid "Organisation"
@@ -286,6 +264,11 @@ msgstr "Organizacija"
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "Other Partner"
 msgstr "Drugi partner"
+
+#. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__other_partner_id_domain
+msgid "Other Partner Id Domain"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__partner_category_other
@@ -308,9 +291,20 @@ msgid "Partner Relation Type"
 msgstr "Tip partnerskega odnosa"
 
 #. module: partner_multi_relation
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_all
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.tree_res_partner_relation_all
 msgid "Partner Relations"
 msgstr "Partnerski odnosi"
+
+#. module: partner_multi_relation
+#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation
+msgid "Partner Relations (Use for Export/Import)"
+msgstr ""
+
+#. module: partner_multi_relation
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation.tree_res_partner_relation
+msgid "Partner Relations For Export/Import"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
@@ -324,11 +318,13 @@ msgstr "Partnerski odnos"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:115
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:160
 #, python-format
 msgid "Partners cannot have a relation with themselves."
 msgstr "Partnerji ne morejo biti v odnosu sami s seboj."
 
 #. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:65
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:83
 #, python-format
 msgid "Person"
@@ -343,8 +339,8 @@ msgstr "Lastnosti"
 #: model_terms:ir.actions.act_window,help:partner_multi_relation.action_res_partner_relation_all
 msgid ""
 "Record and track your partners' relations. Relations may\n"
-"                    be linked to other partners with a type either directly\n"
-"                    or inversely."
+"                be linked to other partners with a type either directly\n"
+"                or inversely."
 msgstr ""
 
 #. module: partner_multi_relation
@@ -359,6 +355,7 @@ msgid "Reflexive"
 msgstr "Povratni"
 
 #. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:169
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:196
 #, python-format
 msgid ""
@@ -385,7 +382,13 @@ msgid "Relation Types"
 msgstr "Tip odnosa"
 
 #. module: partner_multi_relation
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_all
+msgid "Relation details"
+msgstr ""
+
+#. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:316
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:394
 #, python-format
 msgid "Relation type incompatible with selected partner(s)."
 msgstr "Tip odnosa nezdružljiv z izborom partnerja(ev)."
@@ -398,11 +401,16 @@ msgstr "Odnos veljaven"
 
 #. module: partner_multi_relation
 #: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_all
-#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_multi_relation_config
 #: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_all
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.view_partner_form
 msgid "Relations"
 msgstr "Odnosi"
+
+#. module: partner_multi_relation
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation
+msgid "Relations (Use for Export/Import)"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
@@ -436,11 +444,6 @@ msgstr "Desna stran odnosa"
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
-msgid "Right to left"
-msgstr "Desni proti levemu"
-
-#. module: partner_multi_relation
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "Search Relations"
 msgstr "Iskanje odnosov"
 
@@ -468,12 +471,14 @@ msgstr "Simetrični"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:101
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:146
 #, python-format
 msgid "The %s partner does not have category %s."
 msgstr "Partner %s nima kategorije %s."
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:95
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:140
 #, python-format
 msgid "The %s partner is not applicable for this relation type."
 msgstr "Partner %s ni ustrezen za ta tip odnosa."
@@ -490,11 +495,13 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:62
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:106
 #, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr "Začetni datum ne more biti za končnim datumom."
 
 #. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:137
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:165
 #, python-format
 msgid ""
@@ -506,9 +513,15 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:163
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:204
 #, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr "Podoben odnos s prekrivajočimi se datumi že obstaja."
+
+#. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__this_partner_id_domain
+msgid "This Partner Id Domain"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__allow_self
@@ -527,6 +540,11 @@ msgid "Type"
 msgstr "Tip"
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__type_selection_id_domain
+msgid "Type Selection Id Domain"
+msgstr ""
+
+#. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__type_id
 #, fuzzy
 msgid "Underlying Relation Type"
@@ -539,22 +557,27 @@ msgid "Unsupported search operator \"%s\""
 msgstr "Nepodprt iskalni operand \"%s\""
 
 #. module: partner_multi_relation
-#: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_0
+#: model:res.partner.category,name:partner_multi_relation.category_volunteer
+msgid "Volunteer"
+msgstr ""
+
+#. module: partner_multi_relation
+#: model:res.partner.category,name:partner_multi_relation.category_washing_company
 msgid "Washing Companies"
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_4
+#: model:res.partner.category,name:partner_multi_relation.category_washing_gold
 msgid "Washing Gold"
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_11
+#: model:res.partner.category,name:partner_multi_relation.category_washing_services
 msgid "Washing Services"
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_5
+#: model:res.partner.category,name:partner_multi_relation.category_washing_silver
 msgid "Washing Silver"
 msgstr ""
 
@@ -573,16 +596,88 @@ msgstr ""
 "Določite, kako naj se v primeru take situacije ravna."
 
 #. module: partner_multi_relation
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.relation_type_person_is_director
+msgid "has as director"
+msgstr ""
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.relation_type_assistant
+msgid "has assistant"
+msgstr ""
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name:partner_multi_relation.relation_type_company_has_employee
+msgid "has employee"
+msgstr ""
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name:partner_multi_relation.relation_type_ngo_has_volunteer
+msgid "has volunteer"
+msgstr ""
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name:partner_multi_relation.relation_type_assistant
+msgid "is assistant of"
+msgstr ""
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name:partner_multi_relation.relation_type_competitor
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.relation_type_competitor
+msgid "is competitor of"
+msgstr ""
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name:partner_multi_relation.relation_type_person_is_director
+msgid "is director of"
+msgstr ""
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.relation_type_company_has_employee
+msgid "is employee at"
+msgstr ""
+
+#. module: partner_multi_relation
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation.relation_type_ngo_has_volunteer
+msgid "is volunteer for"
+msgstr ""
+
+#. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:289
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:368
 #, python-format
 msgid "other"
 msgstr "drugo"
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:286
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:365
 #, python-format
 msgid "this"
 msgstr "ta"
+
+#~ msgid "Has assistant"
+#~ msgstr "Ima asistenta"
+
+#~ msgid "Has former employee"
+#~ msgstr "Ima bivšega zaposlenega"
+
+#~ msgid "Has worked for"
+#~ msgstr "Je delal za"
+
+#~ msgid "Include past records"
+#~ msgstr "Vključi pretekle zapise"
+
+#~ msgid "Is assistant of"
+#~ msgstr "Je asistent"
+
+#~ msgid "Is competitor of"
+#~ msgstr "Je konkurent"
+
+#~ msgid "Left to right"
+#~ msgstr "Levi proti desnemu"
+
+#~ msgid "Right to left"
+#~ msgstr "Desni proti levemu"
 
 #~ msgid "Left partner to right partner"
 #~ msgstr "Levi partner proti desnemu"
