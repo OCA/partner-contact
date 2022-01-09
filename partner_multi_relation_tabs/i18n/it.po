@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_multi_relation_tabs
+# 	* partner_multi_relation_tabs
 #
 msgid ""
 msgstr ""
@@ -43,12 +43,14 @@ msgstr "Contatto"
 
 #. module: partner_multi_relation_tabs
 #: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:33
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:35
 #, python-format
 msgid "Contact type left not compatible with left tab"
 msgstr "Tipo di contatto a sinistra non compatibile con la scheda sinistra"
 
 #. module: partner_multi_relation_tabs
 #: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:53
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:57
 #, python-format
 msgid "Contact type right not compatible with right tab"
 msgstr "Tipo di contatto destro non compatibile con la scheda destra"
@@ -130,6 +132,7 @@ msgstr "I nostri dipartimenti"
 
 #. module: partner_multi_relation_tabs
 #: code:addons/partner_multi_relation_tabs/tablib/tab.py:56
+#: code:addons/partner_multi_relation_tabs/tablib/tab.py:74
 #, python-format
 msgid "Partner"
 msgstr "Partner"
@@ -141,12 +144,14 @@ msgstr "Tipo di relazione del partner"
 
 #. module: partner_multi_relation_tabs
 #: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:38
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:44
 #, python-format
 msgid "Partner category left not compatible with left tab"
 msgstr "Categoria partner a sinistra non compatibile con la scheda sinistra"
 
 #. module: partner_multi_relation_tabs
 #: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:58
+#: code:addons/partner_multi_relation_tabs/models/res_partner_relation_type.py:66
 #, python-format
 msgid "Partner category right not compatible with right tab"
 msgstr "Categoria partner destra non compatibile con la scheda destra"
@@ -210,11 +215,18 @@ msgstr "Schede da aggiungere al partner"
 
 #. module: partner_multi_relation_tabs
 #: model:ir.model.fields,help:partner_multi_relation_tabs.field_res_partner_tab__partner_ids
-msgid "This tab will only show for certain partners.\n"
+msgid ""
+"This tab will only show for certain partners.\n"
 "Do not combine this with selection for contact type or category."
 msgstr ""
 "Questa scheda verrà visualizzata solo per determinati partner. Non associare "
 "questo con la selezione per tipo di contratto o categoria."
+
+#. module: partner_multi_relation_tabs
+#: code:addons/partner_multi_relation_tabs/models/res_partner.py:60
+#, python-format
+msgid "Updating tabs to modification %d"
+msgstr ""
 
 #. module: partner_multi_relation_tabs
 #: model:ir.model.fields,field_description:partner_multi_relation_tabs.field_res_partner_tab__partner_category_id
@@ -233,6 +245,7 @@ msgstr "Fornirà il titolo per la scheda nella lingua dell'utente"
 
 #. module: partner_multi_relation_tabs
 #: code:addons/partner_multi_relation_tabs/models/res_partner_tab.py:49
+#: code:addons/partner_multi_relation_tabs/models/res_partner_tab.py:53
 #, python-format
 msgid "You can not both specify partner_ids and other criteria."
 msgstr "Non è possibile specificare sia partner_ids sia altri criteri."
