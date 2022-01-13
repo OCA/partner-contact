@@ -102,8 +102,9 @@ class ResPartnerRelation(models.Model):
             category = getattr(record.type_id, "partner_category_%s" % side)
             if category and category.id not in partner.category_id.ids:
                 raise ValidationError(
-                    _("The %s partner does not have category %s.")
-                    % (side, category.name)
+                    _(
+                        "The {partner} partner does not have category {category}."
+                    ).format(partner=side, category=category.name)
                 )
 
     @api.constrains("left_partner_id", "right_partner_id")

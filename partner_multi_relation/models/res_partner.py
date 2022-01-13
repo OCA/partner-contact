@@ -16,9 +16,7 @@ class ResPartner(models.Model):
     # pylint: disable=no-member
     _inherit = "res.partner"
 
-    relation_count = fields.Integer(
-        string="Relation Count", compute="_compute_relation_count"
-    )
+    relation_count = fields.Integer(compute="_compute_relation_count")
     relation_all_ids = fields.One2many(
         comodel_name="res.partner.relation.all",
         inverse_name="this_partner_id",

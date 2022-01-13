@@ -68,9 +68,7 @@ class ResPartnerRelationAll(models.Model):
     this_partner_id = fields.Many2one(
         comodel_name="res.partner", string="One Partner", required=True
     )
-    other_partner_id = fields.Many2one(
-        comodel_name="res.partner", string="Other Partner", required=True
-    )
+    other_partner_id = fields.Many2one(comodel_name="res.partner", required=True)
     type_id = fields.Many2one(
         comodel_name="res.partner.relation.type",
         string="Underlying Relation Type",
@@ -90,7 +88,6 @@ class ResPartnerRelationAll(models.Model):
         required=True,
     )
     active = fields.Boolean(
-        string="Active",
         readonly=True,
         help="Records with date_end in the past are inactive",
     )

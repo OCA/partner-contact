@@ -35,8 +35,8 @@ class ResPartnerRelationTypeSelection(models.Model):
         rprt_model = self.env["res.partner.relation.type"]
         return rprt_model.get_partner_types()
 
-    type_id = fields.Many2one(comodel_name="res.partner.relation.type", string="Type")
-    name = fields.Char("Name")
+    type_id = fields.Many2one(comodel_name="res.partner.relation.type")
+    name = fields.Char()
     contact_type_this = fields.Selection(
         selection="get_partner_types", string="Current record's partner type"
     )
