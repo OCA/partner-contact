@@ -3,7 +3,7 @@
     <record id="tree_res_partner_relation_all" model="ir.ui.view">
         <field name="model">res.partner.relation.all</field>
         <field name="arch" type="xml">
-            <tree string="Partner Relations" editable="top">
+            <tree editable="top">
                 <field
                     name="this_partner_id"
                     required="True"

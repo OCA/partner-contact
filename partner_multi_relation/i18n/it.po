@@ -369,7 +369,7 @@ msgid ""
 "{partners}"
 msgstr ""
 "La riflessività non può essere disabilitata per il tipo di relazione "
-"{tipo_relazione}. Esistono relazioni riflessive esistenti definite per i "
+"{relation_type}. Esistono relazioni riflessive esistenti definite per i "
 "seguenti partners: {partners}"
 
 #. module: partner_multi_relation
@@ -473,8 +473,8 @@ msgstr "Simmetrico"
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
-msgid "The %s partner does not have category %s."
-msgstr "Il partner %s non ha la categoria %s."
+msgid "The {partner} partner does not have category {category}."
+msgstr "Il partner {partner} non ha la categoria {category}."
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
