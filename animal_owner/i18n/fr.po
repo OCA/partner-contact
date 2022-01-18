@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-12-09 13:39+0000\n"
-"Last-Translator: David Beal <david.beal@akretion.com>\n"
+"PO-Revision-Date: 2022-01-18 18:47+0000\n"
+"Last-Translator: LESTRAT21 <elodie@comptoirdecampagne.fr>\n"
 "Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:animal_owner.field_res_partner__animal_count
 #: model:ir.model.fields,field_description:animal_owner.field_res_users__animal_count
 msgid "Number of Animals"
-msgstr ""
+msgstr "Nombre d'animaux"
 
 #. module: animal_owner
 #: model:ir.model.fields,field_description:animal_owner.field_animal__partner_id
