@@ -3,7 +3,7 @@
 {
     'name': 'Partner Group',
     'summary': 'Group partners by groups (other partner)',
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.0.1',
     'development_status': 'Beta',
     'category': 'Contact',
     'website': 'https://github.com/OCA/partner-contact',

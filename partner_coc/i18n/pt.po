@@ -9,30 +9,31 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:48+0000\n"
-"PO-Revision-Date: 2017-11-21 01:48+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2021-02-15 15:45+0000\n"
+"Last-Translator: Pedro Castro Silva <pedrocs@exo.pt>\n"
 "Language-Team: Portuguese (https://www.transifex.com/oca/teams/23907/pt/)\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: partner_coc
 #: model:res.partner.id_category,name:partner_coc.id_category_coc
 msgid "Chamber Of Commerce Registration Number"
-msgstr ""
+msgstr "Nº de Registo na Câmara de Comércio"
 
 #. module: partner_coc
 #: model:ir.model.fields,field_description:partner_coc.field_res_partner__coc_registration_number
 #: model:ir.model.fields,field_description:partner_coc.field_res_users__coc_registration_number
 msgid "CoC Registration Number"
-msgstr ""
+msgstr "Nº Registo CdC"
 
 #. module: partner_coc
 #: model:ir.model,name:partner_coc.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #~ msgid "Partner"
 #~ msgstr "Parceiro"

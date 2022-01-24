@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2019 ACSONE SA/NV
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <!-- Inherit Form View to Modify it -->
+    <record id="res_partner_industry_view_form" model="ir.ui.view">
+        <field name="name">Industry (in partner_industry_parent)</field>
+        <field name="model">res.partner.industry</field>
+        <field name="inherit_id" ref="base.res_partner_industry_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="parent_id"/>
+                <field name="complete_name"/>
+            </xpath>
+            <xpath expr="//form" position="inside">
+                <group>
+                    <field name="child_ids"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

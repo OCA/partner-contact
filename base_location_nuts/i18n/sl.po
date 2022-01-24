@@ -144,6 +144,12 @@ msgid "Level for the state NUTS category."
 msgstr ""
 
 #. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:182
+#, python-format
+msgid "Missing country_id for %s"
+msgstr ""
+
+#. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_country_form
 msgid "NUTS"
 msgstr ""
@@ -207,7 +213,6 @@ msgstr ""
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__parent_path
 #, fuzzy
-#| msgid "Parent Left"
 msgid "Parent Path"
 msgstr "Levo nadrejeni"
 

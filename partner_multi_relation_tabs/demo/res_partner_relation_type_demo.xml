@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Company has CEO: organisation to functionary person -->
+    <record
+        id="relation_type_company_has_ceo"
+        model="res.partner.relation.type">
+        <field name="name">has ceo</field>
+        <field name="name_inverse">is ceo of</field>
+        <field name="contact_type_left">c</field>
+        <field name="tab_left_id" ref="tab_board" />
+        <field name="contact_type_right">p</field>
+        <field name="partner_category_right" ref="category_functionary"/>
+    </record>
+
+    <!-- Committee has a chairperson -->
+    <record
+        id="relation_type_committee_has_chairperson"
+        model="res.partner.relation.type">
+        <field name="name">has chairperson</field>
+        <field name="name_inverse">is chairperson of</field>
+        <field name="contact_type_left">c</field>
+        <field name="tab_left_id" ref="tab_committee" />
+        <field name="contact_type_right">p</field>
+        <field name="partner_category_left" ref="category_government"/>
+        <field name="partner_category_right" ref="category_functionary"/>
+        <field name="tab_right_id" ref="tab_positions" />
+    </record>
+
+    <!-- Organisation has department -->
+    <record
+        id="relation_type_organisation_has_department"
+        model="res.partner.relation.type">
+        <field name="name">has department</field>
+        <field name="name_inverse">is department of</field>
+        <field name="tab_left_id" ref="tab_departments" />
+        <field name="contact_type_right">c</field>
+        <field name="partner_category_right" ref="category_department"/>
+    </record>
+
+</odoo>

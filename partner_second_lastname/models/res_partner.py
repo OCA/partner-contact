@@ -71,32 +71,50 @@ class ResPartner(models.Model):
         - If the partner is a company, save it in the lastname.
         - Otherwise, make a guess.
         """
-        # Company name goes to the lastname
         result = {
             'firstname': False,
             'lastname': name or False,
             'lastname2': False,
         }
-        if not is_company and name:
-            order = self._get_names_order()
-            result = super(ResPartner, self)._get_inverse_name(
-                name, is_company)
-            parts = []
-            if order == 'last_first':
-                if result['firstname']:
-                    parts = result['firstname'].split(" ", 1)
-                while len(parts) < 2:
-                    parts.append(False)
-                result['lastname2'] = parts[0]
-                result['firstname'] = parts[1]
-            else:
-                if result['lastname']:
-                    parts = result['lastname'].split(" ", 1)
-                while len(parts) < 2:
-                    parts.append(False)
-                result['lastname'] = parts[0]
-                result['lastname2'] = parts[1]
+
+        # Company name goes to the lastname
+        if not name or is_company:
+            return result
+
+        order = self._get_names_order()
+        result.update(
+            super(ResPartner, self)._get_inverse_name(name, is_company))
+
+        if order in ('first_last', 'last_first_comma'):
+            parts = self._split_part('lastname', result)
+            if parts:
+                result.update({
+                    'lastname': parts[0],
+                    'lastname2': u" ".join(parts[1:]),
+                })
+        else:
+            parts = self._split_part('firstname', result)
+            if parts:
+                result.update({
+                    'firstname': parts[-1],
+                    'lastname2': u" ".join(parts[:-1]),
+                })
         return result
+
+    def _split_part(self, name_part, name_split):
+        """Split a given part of a name.
+
+        :param name_split: The parts of the name
+        :type dict
+
+        :param name_part: The part to split
+        :type str
+        """
+        name = name_split.get(name_part, False)
+        parts = name.split(" ", 1) if name else []
+        if not name or len(parts) < 2:
+            return False
+        return parts
 
     @api.constrains("firstname", "lastname", "lastname2")
     def _check_name(self):

@@ -20,7 +20,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__birth_city
 #: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_users__birth_city
 #, fuzzy
-#| msgid "Birth city"
 msgid "Birth City"
 msgstr "Città di nascita"
 

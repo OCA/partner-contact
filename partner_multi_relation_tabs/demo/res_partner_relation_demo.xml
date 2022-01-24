@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Company has ceo. -->
+    <record id="relation_company_ceo" model="res.partner.relation">
+        <field name="left_partner_id" ref="partner_big_company" />
+        <field name="right_partner_id" ref="partner_important_person" />
+        <field name="type_id" ref="relation_type_company_has_ceo" />
+    </record>
+
+    <!-- Departments of main organisation. -->
+    <record id="relation_programming_department" model="res.partner.relation">
+        <field name="left_partner_id" ref="base.main_partner" />
+        <field name="right_partner_id" ref="partner_programming_department" />
+        <field
+            name="type_id"
+            ref="relation_type_organisation_has_department"
+            />
+    </record>
+
+    <record id="relation_helpdesk_department" model="res.partner.relation">
+        <field name="left_partner_id" ref="base.main_partner" />
+        <field name="right_partner_id" ref="partner_helpdesk_department" />
+        <field
+            name="type_id"
+            ref="relation_type_organisation_has_department"
+            />
+    </record>
+
+</odoo>

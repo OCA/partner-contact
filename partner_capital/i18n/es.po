@@ -136,7 +136,6 @@ msgstr "Facturación"
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner__turnover_amount
 #: model:ir.model.fields,field_description:partner_capital.field_res_users__turnover_amount
 #, fuzzy
-#| msgid "Turnover amount"
 msgid "Turnover Amount"
 msgstr "Cantidad de facturación"
 

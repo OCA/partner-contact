@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="tab_committee" model="res.partner.tab">
+        <field name="code">committee</field>
+        <field name="name">Government committee</field>
+        <field name="contact_type">c</field>
+        <field name="partner_category_id" ref="category_government" />
+    </record>
+
+    <record id="tab_board" model="res.partner.tab">
+        <field name="code">board</field>
+        <field name="name">Company executive board</field>
+        <field name="contact_type">c</field>
+    </record>
+
+    <record id="tab_positions" model="res.partner.tab">
+        <field name="code">positions</field>
+        <field name="name">Positions held</field>
+        <field name="contact_type">p</field>
+        <field name="partner_category_id" ref="category_functionary" />
+    </record>
+
+    <!-- Tab that will only be shown on our own main company partner. -->
+    <record id="tab_departments" model="res.partner.tab">
+        <field name="code">departments</field>
+        <field name="name">Our departments</field>
+        <field
+            name="partner_ids"
+            eval="[(6,0,[ref('base.main_partner')])]"
+            />
+    </record>
+
+</odoo>

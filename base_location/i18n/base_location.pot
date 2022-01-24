@@ -47,6 +47,12 @@ msgid "City completion"
 msgstr ""
 
 #. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_partner__city_id
+#: model:ir.model.fields,field_description:base_location.field_res_users__city_id
+msgid "City of Address"
+msgstr ""
+
+#. module: base_location
 #: model:ir.model,name:base_location.model_res_city_zip
 msgid "City/locations completion object"
 msgstr ""
@@ -129,19 +135,19 @@ msgid "Search zip"
 msgstr ""
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:71
+#: code:addons/base_location/models/res_partner.py:87
 #, python-format
 msgid "The city of partner %s differs from that in location %s"
 msgstr ""
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:67
+#: code:addons/base_location/models/res_partner.py:83
 #, python-format
 msgid "The country of the partner %s differs from that in location %s"
 msgstr ""
 
 #. module: base_location
-#: code:addons/base_location/models/res_partner.py:63
+#: code:addons/base_location/models/res_partner.py:79
 #, python-format
 msgid "The state of the partner %s differs from that in location %s"
 msgstr ""

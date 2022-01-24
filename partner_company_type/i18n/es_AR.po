@@ -9,25 +9,26 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2017-11-21 01:49+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/"
-"teams/23907/es_AR/)\n"
+"PO-Revision-Date: 2020-11-28 22:36+0000\n"
+"Last-Translator: Ignacio Buioli <ibuioli@gmail.com>\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/teams/"
+"23907/es_AR/)\n"
 "Language: es_AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: partner_company_type
 #: model:res.partner.company.type,shortcut:partner_company_type.res_partner_company_type_sa
 msgid "AC"
-msgstr ""
+msgstr "SA"
 
 #. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__shortcut
 msgid "Abbreviation"
-msgstr ""
+msgstr "Abreviatura"
 
 #. module: partner_company_type
 #: model:ir.model.fields,help:partner_company_type.field_res_partner_company_type__country_id
@@ -35,28 +36,30 @@ msgid ""
 "Allows this company type to be selected on partners from this country only. "
 "Leave it blank if you want it to appear on any partner."
 msgstr ""
+"Permite seleccionar este tipo de empresa en socios de este país únicamente. "
+"Déjelo en blanco si desea que aparezca en algún socio."
 
 #. module: partner_company_type
 #: model:res.partner.company.type,name:partner_company_type.res_partner_company_type_sa
 msgid "Anonymous Company"
-msgstr ""
+msgstr "Sociedad Anónima"
 
 #. module: partner_company_type
 #: model:ir.actions.act_window,name:partner_company_type.res_partner_company_type_act_window
 #: model:ir.ui.menu,name:partner_company_type.menu_partner_company_type
 #: model_terms:ir.ui.view,arch_db:partner_company_type.res_partner_company_type_form_view
 msgid "Company Types"
-msgstr ""
+msgstr "Tipo de Compañía"
 
 #. module: partner_company_type
 #: model:ir.model,name:partner_company_type.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__country_id
 msgid "Country"
-msgstr ""
+msgstr "País"
 
 #. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__create_uid
@@ -97,19 +100,19 @@ msgstr "Última actualización el"
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner__partner_company_type_id
 #: model:ir.model.fields,field_description:partner_company_type.field_res_users__partner_company_type_id
 msgid "Legal Form"
-msgstr ""
+msgstr "Formulario Legal"
 
 #. module: partner_company_type
 #: model:ir.model,name:partner_company_type.model_res_partner_company_type
 msgid "Partner Company Type"
-msgstr ""
+msgstr "Tipo de Compañía Asociada"
 
 #. module: partner_company_type
 #: sql_constraint:res.partner.company.type:0
 msgid "Partner Company Type already exists!"
-msgstr ""
+msgstr "¡El Tipo de Compañía Asociada ya existe!"
 
 #. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__name
 msgid "Title"
-msgstr ""
+msgstr "Título"

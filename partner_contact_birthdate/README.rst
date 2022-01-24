@@ -29,6 +29,10 @@ This module was written to extend the functionality of Odoo to support setting
 a birthdate using a date format and allow you to benefit of a clearer API and
 UI.
 
+Add a computed age field on Partners
+
+.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_contact_birthdate/static/description/age.png
+
 **Table of contents**
 
 .. contents::
@@ -69,6 +73,7 @@ Contributors
 * Matjaž Mozetič <m.mozetic@matmoz.si>
 * Rudolf Schnapka <schnapkar@golive-saar.de>
 * Denis Leemann <denis.leemann@camptocamp.com>
+* Druidoo (<https://www.druidoo.io>)
 
 Maintainers
 ~~~~~~~~~~~

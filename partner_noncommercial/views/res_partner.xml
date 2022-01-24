@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="model">res.partner</field>
+        <field name="mode">extension</field>
+        <field type="xml" name="arch">
+
+            <!-- Default type_person also contains invoice and delivery
+                 addresses for companies (and persons). -->
+            <filter name="type_person" position="attributes">
+                <attribute
+                    name="domain"
+                    >[('is_company', '=', False), ('type', '=', 'contact')]</attribute>
+            </filter>
+
+            <!-- Change string of Company filter to Organisations. -->
+            <filter name="type_company" position="attributes">
+                <attribute name="string">Organisations</attribute>
+            </filter>
+
+            <!-- Add extra filters. -->
+            <filter name="inactive" position="after">
+                <separator />
+                <filter
+                    string="With email"
+                    name="filter_email"
+                    domain="[('email', '!=', False)]"
+                    />
+                <filter
+                    string="With address"
+                    name="filter_address"
+                    domain="[('street', '!=', False), ('street', '!=', ''),
+                             ('city', '!=', False), ('city', '!=', '')]"
+                    />
+            </filter>
+
+            <!-- Add extra groupings. -->
+            <filter name="group_country" position="after">
+                <filter
+                    name="group_city"
+                    string="City"
+                    context="{'group_by': 'city'}"
+                    />
+                <filter
+                    name="group_organisation"
+                    string="Organisation"
+                    context="{'group_by': 'commercial_partner_id'}"
+                    />
+            </filter>
+
+        </field>
+    </record>
+
+</odoo>

@@ -1,5 +1,5 @@
 # Copyright 2018 Tecnativa - David Vidal
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 from odoo import api, fields, models
 
 
@@ -18,7 +18,7 @@ class PortalWizard(models.TransientModel):
             for user in self.user_ids:
                 user.in_portal = (
                     user.partner_id.user_ids and
-                    self.portal_id in user.partner_id.user_ids[0].groups_id
+                    user.partner_id.user_ids[0].has_group("base.group_portal")
                 )
         else:
             not_in_portal = self.user_ids.filtered(lambda x: not x.in_portal)

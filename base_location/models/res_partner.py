@@ -9,7 +9,8 @@ from odoo.exceptions import ValidationError
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    zip_id = fields.Many2one('res.city.zip', 'ZIP Location')
+    zip_id = fields.Many2one('res.city.zip', 'ZIP Location', index=True)
+    city_id = fields.Many2one(index=True)  # add index for performance
 
     @api.onchange('city_id')
     def _onchange_city_id(self):
@@ -27,6 +28,12 @@ class ResPartner(models.Model):
                     'zip_id': [('city_id', '=', self.city_id.id)]
                 },
             }
+        if self.country_id:
+            return {
+                'domain': {
+                    'zip_id': [('city_id.country_id', '=', self.country_id.id)]
+                }
+            }
         return {'domain': {'zip_id': []}}
 
     @api.onchange('country_id')
@@ -34,6 +41,15 @@ class ResPartner(models.Model):
         res = super()._onchange_country_id()
         if self.zip_id and self.zip_id.city_id.country_id != self.country_id:
             self.zip_id = False
+        if self.country_id:
+            city_zip_domain = {
+                "zip_id": [("city_id.country_id", "=", self.country_id.id)]
+            }
+            if isinstance(res, dict):
+                res.setdefault("domain", {})
+                res["domain"].update(city_zip_domain)
+            else:
+                res = {"domain": city_zip_domain}
         return res
 
     @api.onchange('zip_id')
@@ -67,7 +83,7 @@ class ResPartner(models.Model):
                 raise ValidationError(_(
                     "The country of the partner %s differs from that in "
                     "location %s") % (rec.name, rec.zip_id.name))
-            if rec.zip_id.city_id != rec.city_id:
+            if rec.city_id and rec.zip_id.city_id != rec.city_id:
                 raise ValidationError(_(
                     "The city of partner %s differs from that in "
                     "location %s") % (rec.name, rec.zip_id.name))
@@ -84,3 +100,7 @@ class ResPartner(models.Model):
                 'city': False,
             })
         self.update(vals)
+
+    @api.model
+    def _address_fields(self):
+        return super()._address_fields() + ["zip_id", "city_id"]

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Partners -->
+    <record id="partner_washing_great" model="res.partner">
+        <field name="name">Great Washing Powder Company</field>
+        <field
+            name="category_id"
+            eval="[(6, 0, [ref('category_washing_services'), ref('category_washing_gold')])]"
+            />
+        <field name="supplier">1</field>
+        <field name="customer">1</field>
+        <field name="is_company">1</field>
+        <field name="city">Le Bourget du Lac</field>
+        <field name="zip">73377</field>
+        <field name="phone">+33 4 49 23 44 54</field>
+        <field name="country_id" ref="base.fr"/>
+        <field name="street">93, Press Avenue</field>
+        <field name="email">great@yourcompany.example.com</field>
+        <field name="website">http://www.great.com</field>
+    </record>
+
+    <record id="partner_washing_best" model="res.partner">
+        <field name="name">Best Washing Powder Company</field>
+        <field
+            name="category_id"
+            eval="[(6, 0, [ref('category_washing_services'), ref('category_washing_gold')])]"
+            />
+        <field name="supplier">1</field>
+        <field name="is_company">1</field>
+        <field name="city">Champs sur Marne</field>
+        <field name="zip">77420</field>
+        <field name="country_id" ref="base.fr"/>
+        <field name="email">best@yourcompany.example.com</field>
+        <field name="phone">+33 1 64 61 04 01</field>
+        <field name="street">12 rue Albert Einstein</field>
+        <field name="website">http://www.best.com/</field>
+    </record>
+
+    <record id="partner_washing_super" model="res.partner">
+        <field name="name">Super Washing Powder Company</field>
+        <field
+            name="category_id"
+            eval="[(6,0,[ref('category_washing_silver')])]"
+            />
+        <field name="supplier">1</field>
+        <field eval="1" name="customer"/>
+        <field name="is_company">1</field>
+        <field name="street">3rd Floor, Room 3-C,</field>
+        <field name="street2">Carretera Panamericana, Km 1, Urb. Delgado Chalbaud</field>
+        <field name="city">Caracas</field>
+        <field name="zip">1090</field>
+        <field name="email">super@yourcompany.example.com</field>
+        <field name="phone">+58 212 681 0538</field>
+        <field name="country_id" ref="base.ve"/>
+        <field name="website">super.com</field>
+    </record>
+
+    <record id="partner_company_test" model="res.partner">
+        <field name="name">Test Company</field>
+        <field name="is_company">1</field>
+        <field name="supplier">1</field>
+        <field name="customer" eval="1"/>
+        <field name="ref">PR02</field>
+    </record>
+
+    <record id="partner_person_test" model="res.partner">
+        <field name="name">Test Person</field>
+        <field name="is_company">0</field>
+        <field name="customer" eval="1"/>
+        <field name="ref">PR01</field>
+    </record>
+
+    <record id="partner_ngo_test" model="res.partner">
+        <field
+            name="category_id"
+            eval="[(6,0,[ref('category_ngo')])]"
+            />
+        <field name="name">Test NGO</field>
+        <field name="is_company">1</field>
+        <field name="customer" eval="1"/>
+        <field name="ref">PR03</field>
+    </record>
+
+    <record id="partner_volunteer_test" model="res.partner">
+        <field
+            name="category_id"
+            eval="[(6,0,[ref('category_volunteer')])]"
+            />
+        <field name="name">Test Volunteer</field>
+        <field name="is_company">0</field>
+        <field name="ref">PR04</field>
+    </record>
+
+</odoo>

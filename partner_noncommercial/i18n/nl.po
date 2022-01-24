@@ -1,0 +1,43 @@
+# Translation of Odoo.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-29 08:28+0000\n"
+"PO-Revision-Date: 2020-09-29 09:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Therp BV - manual translation\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_noncommercial
+#: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+msgid "City"
+msgstr "Plaats"
+
+#. module: partner_noncommercial
+#: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+msgid "Organisation"
+msgstr "Organisatie"
+
+#. module: partner_noncommercial
+#: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+msgid "Organisations"
+msgstr "Organisaties"
+
+#. module: partner_noncommercial
+#: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+msgid "With address"
+msgstr "Met adres"
+
+#. module: partner_noncommercial
+#: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
+msgid "With email"
+msgstr "Met email"
+
+#~ msgid "Type of contact/address"
+#~ msgstr "Soort contact/adres"

@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_animal_user,animal.user,model_animal,base.group_user,1,1,1,1
+access_animal_color_user,animal.color.user,model_animal_color,base.group_user,1,0,0,0
+access_animal_color_manager,animal.color.manaager,model_animal_color,animal.group_animal_manager,1,1,1,1
+access_animal_breed_user,animal.breed.user,model_animal_breed,base.group_user,1,0,0,0
+access_animal_breed_manager,animal.breed.manager,model_animal_breed,animal.group_animal_manager,1,1,1,1
+access_animal_species_user,animal.species.user,model_animal_species,base.group_user,1,0,0,0
+access_animal_species_manager,animal.species.manager,model_animal_species,animal.group_animal_manager,1,1,1,0

@@ -36,7 +36,7 @@ def migrate(env, version):
         SET city_id = rc.id
         FROM res_city rc
         WHERE rc.name = rbz.city
-            AND rc.state_id = rbz.state_id
+            AND rc.state_id IS NOT DISTINCT FROM rbz.state_id
             AND rc.country_id = rbz.country_id
             AND rbz.city_id IS NULL""",
     )
@@ -49,7 +49,7 @@ def migrate(env, version):
         SELECT
             id, name, city_id
         FROM res_better_zip
-        WHERE city_id IS NOT NULL
+        WHERE city_id IS NOT NULL AND name IS NOT NULL
         ON CONFLICT DO NOTHING""",
         (AsIs(column_name), ),
     )

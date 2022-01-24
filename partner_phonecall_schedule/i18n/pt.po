@@ -9,65 +9,66 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2017-11-21 01:49+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2020-07-22 15:19+0000\n"
+"Last-Translator: Pedro Castro Silva <pedrocs@exo.pt>\n"
 "Language-Team: Portuguese (https://www.transifex.com/oca/teams/23907/pt/)\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: partner_phonecall_schedule
 #: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_partner__phonecall_calendar_attendance_ids
 #: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_users__phonecall_calendar_attendance_ids
 msgid "Aggregated phonecall schedule"
-msgstr ""
+msgstr "Agendamento de chamadas agregado"
 
 #. module: partner_phonecall_schedule
 #: model:ir.model.fields,help:partner_phonecall_schedule.field_res_partner__phonecall_calendar_attendance_ids
 #: model:ir.model.fields,help:partner_phonecall_schedule.field_res_users__phonecall_calendar_attendance_ids
 msgid "Aggregation of all available phonecall schedules."
-msgstr ""
+msgstr "Agregação de todos os cronogramas de chamadas disponíveis."
 
 #. module: partner_phonecall_schedule
 #: model_terms:ir.ui.view,arch_db:partner_phonecall_schedule.view_res_partner_filter
 msgid "Available for phone calls now"
-msgstr ""
+msgstr "Disponível para chamadas agora"
 
 #. module: partner_phonecall_schedule
 #: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_partner__phonecall_available
 #: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_users__phonecall_available
 msgid "Available to call"
-msgstr ""
+msgstr "Disponível para chamadas"
 
 #. module: partner_phonecall_schedule
 #: model:ir.model.fields,help:partner_phonecall_schedule.field_res_partner__phonecall_calendar_ids
 #: model:ir.model.fields,help:partner_phonecall_schedule.field_res_users__phonecall_calendar_ids
 msgid "Best schedule when the contact expects to be called."
-msgstr ""
+msgstr "Melhor altura para ligar ao cliente."
 
 #. module: partner_phonecall_schedule
 #: model:ir.model,name:partner_phonecall_schedule.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: partner_phonecall_schedule
 #: model:ir.model.fields,help:partner_phonecall_schedule.field_res_partner__phonecall_available
 #: model:ir.model.fields,help:partner_phonecall_schedule.field_res_users__phonecall_available
 msgid "Is it now a good time to call this partner?"
-msgstr ""
+msgstr "É agora uma boa altura para ligar a este parceiro?"
 
 #. module: partner_phonecall_schedule
 #: model_terms:ir.ui.view,arch_db:partner_phonecall_schedule.view_partner_form
 msgid "Phone calls"
-msgstr ""
+msgstr "Chamadas"
 
 #. module: partner_phonecall_schedule
 #: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_partner__phonecall_calendar_ids
 #: model:ir.model.fields,field_description:partner_phonecall_schedule.field_res_users__phonecall_calendar_ids
 msgid "Phonecall schedule"
-msgstr ""
+msgstr "Agendamento de chamadas"
 
 #~ msgid "Partner"
 #~ msgstr "Parceiro"

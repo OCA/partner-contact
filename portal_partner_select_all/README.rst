@@ -25,7 +25,7 @@ Portal Partner Select All
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
-When a user wants invite a lot of custumers to the portal it can be a pain to
+When a user wants invite a lot of customers to the portal it can be a pain to
 select them all one by one.
 
 This module adds a helper in the wizard to toggle between all selected and only

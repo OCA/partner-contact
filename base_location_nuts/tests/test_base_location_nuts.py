@@ -82,7 +82,7 @@ class TestBaseLocationNuts(common.SavepointCase):
         with self.assertRaises(UserError):
             self.importer._download_nuts(url_base='htttt://test.com')
         with self.assertRaises(UserError):
-            self.importer._download_nuts(url_base='http://ec.europa.eu/_404')
+            self.importer._download_nuts(url_base='https://ec.europa.eu/_404')
 
     def create_new_parent(self, orig_parent):
         new_parent = self.nuts_model.create({

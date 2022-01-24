@@ -1,10 +1,10 @@
 # Copyright 2016 Nicolas Bessi, Camptocamp SA
-# Copyright 2018-2019 Tecnativa - Pedro M. Baeza
+# Copyright 2018-2020 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
     'name': 'Location management (aka Better ZIP)',
-    'version': '12.0.1.0.2',
+    'version': '12.0.1.1.4',
     'depends': [
         'base_address_city',
         'contacts',
