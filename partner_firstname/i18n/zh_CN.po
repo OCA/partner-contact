@@ -22,8 +22,15 @@ msgstr ""
 #. module: partner_firstname
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
-msgid "%s (copy)"
+msgid "%(name)s (copy)"
 msgstr ""
+
+#. module: partner_firstname
+#: code:addons/partner_firstname/models/res_users.py:0
+#, python-format
+msgid "%(login)s (copy)"
+msgstr ""
+
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_config_settings
