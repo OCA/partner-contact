@@ -35,9 +35,9 @@ class ResUser(models.Model):
         self.ensure_one()
         default = dict(default or {})
         if ("name" not in default) and ("partner_id" not in default):
-            default["name"] = _("%s (copy)") % self.name
+            default["name"] = _("%(name)s (copy)", name=self.name)
         if "login" not in default:
-            default["login"] = _("%s (copy)") % self.login
+            default["login"] = _("%(login)s (copy)", login=self.login)
         if (
             ("firstname" not in default)
             and ("lastname" not in default)
