@@ -3,7 +3,7 @@
 
 {
     "name": "Partner pricelist search",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "author": "Tecnativa,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "category": "Partner Management",
