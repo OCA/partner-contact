@@ -17,7 +17,8 @@ class ResPartner(models.Model):
     )
 
     def action_view_animals(self):
-        action = self.env.ref("animal.action_animal").read()[0]
+        xmlid = "animal.action_animal"
+        action = self.env["ir.actions.act_window"]._for_xml_id(xmlid)
         if self.animal_count > 1:
             action["domain"] = [("id", "in", self.animal_ids.ids)]
         else:
