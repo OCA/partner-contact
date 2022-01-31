@@ -24,14 +24,14 @@ class TestPartnerPricelistSearch(common.SavepointCase):
         cls.partner_obj = cls.env["res.partner"]
 
     def test_partner_pricelist_search_equal(self):
-        """ Test search '=' """
+        """Test search '='"""
         partners = self.partner_obj.search(
             [("property_product_pricelist", "=", self.pricelist_1.id)]
         )
         self.assertEqual(partners, self.customer_1)
 
     def test_partner_pricelist_search_in(self):
-        """ Test search 'in' """
+        """Test search 'in'"""
         partners = self.partner_obj.search(
             [
                 (
@@ -45,7 +45,7 @@ class TestPartnerPricelistSearch(common.SavepointCase):
         self.assertIn(self.customer_2, partners)
 
     def test_partner_pricelist_search_not_equal(self):
-        """ Test search 'not equal' """
+        """Test search 'not equal'"""
         partners = self.partner_obj.search(
             [("property_product_pricelist", "!=", self.pricelist_1.id)]
         )
@@ -53,7 +53,7 @@ class TestPartnerPricelistSearch(common.SavepointCase):
         self.assertIn(self.customer_2, partners)
 
     def test_partner_pricelist_search_not_in(self):
-        """ Test search 'not in' """
+        """Test search 'not in'"""
         partners = self.partner_obj.search(
             [
                 (
@@ -67,7 +67,7 @@ class TestPartnerPricelistSearch(common.SavepointCase):
         self.assertNotIn(self.customer_2, partners)
 
     def test_partner_pricelist_search_not_implemented(self):
-        """ Test search not implemented """
+        """Test search not implemented"""
         with self.assertRaises(UserError):
             self.partner_obj.search(
                 [("property_product_pricelist", "ilike", "pricelist xx")]
