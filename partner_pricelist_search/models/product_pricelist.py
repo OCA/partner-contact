@@ -13,9 +13,9 @@ class Pricelist(models.Model):
         else:
             domain = [("property_product_pricelist", "in", self.ids)]
         partners = self.env["res.partner"].search(domain)
-        action = self.env.ref("base.action_partner_form")
-        res = action.read()[0]
-        res["domain"] = [
+        xmlid = "base.action_partner_form"
+        action = self.env["ir.actions.act_window"]._for_xml_id(xmlid)
+        action["domain"] = [
             ("id", "in", partners.ids),
         ]
-        return res
+        return action
