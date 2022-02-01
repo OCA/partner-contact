@@ -9,10 +9,10 @@
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
-    "depends": ["contacts", "base_tier_validation"],
+    "depends": ["contacts", "base_tier_validation", "partner_stage"],
     "data": [
         "data/tier_definition.xml",
         "views/res_partner_view.xml",
     ],
-    "post_init_hook": "post_init_hook",
+    "maintainers": ["dreispt"],
 }
