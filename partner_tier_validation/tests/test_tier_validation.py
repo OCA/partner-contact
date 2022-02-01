@@ -21,48 +21,55 @@ class TestPartnerTierValidation(common.SavepointCase):
                 "name": "John",
                 "login": "test1",
                 "groups_id": [(6, 0, group_ids)],
-                "email": "test@examlple.com",
+                "email": "test@example.com",
             }
         )
 
-        # Create tier definitions:
-        cls.tier_def_obj = cls.env["tier.definition"]
-        cls.tier_def_obj.create(
+        # Create tier definition: example where only Company needs validation
+        cls.TierDefinition = cls.env["tier.definition"]
+        cls.TierDefinition.create(
             {
                 "model_id": cls.partner_model.id,
                 "review_type": "individual",
                 "reviewer_id": cls.test_user_1.id,
-                "definition_domain": "['&',('is_company','=',True),'|', \
-                ('active','=',True),('active','=',False)]",
+                "definition_domain": "[('is_company','=',True)]",
             }
         )
 
     def test_tier_validation_model_name(self):
         self.assertIn(
-            "res.partner", self.tier_def_obj._get_tier_validation_model_names()
+            "res.partner", self.TierDefinition._get_tier_validation_model_names()
         )
 
     def test_validation_res_partner(self):
-        company = self.env["res.partner"].create(
+        """
+        Case where new Contact requires validation
+        """
+        contact = self.env["res.partner"].create(
             {"name": "Company for test", "company_type": "company"}
         )
-        # Since company need validation, it should be inactive
-        self.assertEqual(company.active, False)
+        # Since contact need validation, it should be inactive
+        self.assertEqual(contact.state, "draft")
 
         # Assert an error shows if trying to make it active
         with self.assertRaises(ValidationError):
-            company.write({"state": "confirmed"})
+            contact.write({"state": "confirmed"})
 
         # Request and validate partner
-        company.request_validation()
-        company.with_user(self.test_user_1).validate_tier()
-        company.with_user(self.test_user_1).write({"state": "confirmed"})
-        self.assertEqual(company.state, "confirmed")
+        contact.request_validation()
+        contact.with_user(self.test_user_1).validate_tier()
+        contact.with_user(self.test_user_1).write({"state": "confirmed"})
+        self.assertEqual(contact.state, "confirmed")
 
         # Change company type to retrigger validation
-        company.write({"company_type": "person", "is_company": False})
-        self.assertEqual(company.state, "draft")
+        contact.write({"company_type": "person", "is_company": False})
+        self.assertEqual(contact.state, "draft")
 
-        # Test partner creation that doesn't need validation
-        customer = self.env["res.partner"].create({"name": "Partner for test"})
-        self.assertEqual(customer.active, True)
+    def test_no_validation_res_partner(self):
+        """
+        Case where new Contact does not require validation
+        """
+        contact = self.env["res.partner"].create(
+            {"name": "Person for test", "company_type": "person"}
+        )
+        self.assertEqual(contact.state, "confirmed")

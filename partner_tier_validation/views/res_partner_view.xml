@@ -8,16 +8,10 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
 
-            <xpath expr="/form/sheet" position="before">
-                <header>
-                    <field
-                        name="state"
-                        widget="statusbar"
-                        options="{'clickable': '1'}"
-                    />
-                    <button name="dummy" invisible="True" />
-                </header>
-            </xpath>
+            <!-- Tier Validation UI needs the state field to be in the form -->
+            <field name="stage_id" position="before">
+                <field name="state" invisible="1" />
+            </field>
 
         </field>
     </record>
@@ -31,7 +25,7 @@
                 <filter
                     name="needs_review"
                     string="Needs my Approval"
-                    domain="[('reviewer_ids','in',uid), ('state', '=', 'draft'), '|', ('active','=', True), ('active', '=', False)]"
+                    domain="[('reviewer_ids', 'in', uid), ('state', '=', 'draft')]"
                     help="Partner(s) to Approve"
                 />
             </filter>
