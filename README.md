@@ -37,6 +37,7 @@ addon | version | maintainers | summary
 [partner_contact_address_default](partner_contact_address_default/) | 14.0.1.0.1 |  | Set a default delivery and invoice address for contacts
 [partner_contact_age_range](partner_contact_age_range/) | 14.0.1.0.1 |  | Age Range for Contact's
 [partner_contact_birthdate](partner_contact_birthdate/) | 14.0.1.0.0 |  | Contact's birthdate
+[partner_contact_birthplace](partner_contact_birthplace/) | 14.0.1.0.0 |  | This module allows to define a birthplace for partners.
 [partner_contact_department](partner_contact_department/) | 14.0.1.0.1 |  | Assign contacts to departments
 [partner_contact_gender](partner_contact_gender/) | 14.0.1.0.1 |  | Add gender field to contacts
 [partner_contact_in_several_companies](partner_contact_in_several_companies/) | 14.0.1.1.0 |  | Allow to have one contact in several partners
