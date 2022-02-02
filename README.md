@@ -20,7 +20,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [animal](animal/) | 14.0.1.0.1 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Manage animals information
-[animal_owner](animal_owner/) | 14.0.1.1.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Add owner to the animal
+[animal_owner](animal_owner/) | 14.0.1.1.1 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Add owner to the animal
 [base_country_state_translatable](base_country_state_translatable/) | 14.0.1.0.0 |  | Translate Country States
 [base_location](base_location/) | 14.0.1.2.4 |  | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 14.0.1.0.1 |  | Import zip entries from Geonames
@@ -40,7 +40,7 @@ addon | version | maintainers | summary
 [partner_contact_birthplace](partner_contact_birthplace/) | 14.0.1.0.0 |  | This module allows to define a birthplace for partners.
 [partner_contact_department](partner_contact_department/) | 14.0.1.0.1 |  | Assign contacts to departments
 [partner_contact_gender](partner_contact_gender/) | 14.0.1.0.1 |  | Add gender field to contacts
-[partner_contact_in_several_companies](partner_contact_in_several_companies/) | 14.0.1.1.0 |  | Allow to have one contact in several partners
+[partner_contact_in_several_companies](partner_contact_in_several_companies/) | 14.0.1.1.1 |  | Allow to have one contact in several partners
 [partner_contact_job_position](partner_contact_job_position/) | 14.0.1.0.0 |  | Categorize job positions for contacts
 [partner_contact_lang](partner_contact_lang/) | 14.0.1.0.0 |  | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 14.0.1.0.1 |  | Add nationality field to contacts
@@ -68,7 +68,7 @@ addon | version | maintainers | summary
 [partner_phone_extension](partner_phone_extension/) | 14.0.1.0.1 |  | Partner Phone Number Extension
 [partner_phone_secondary](partner_phone_secondary/) | 14.0.1.0.0 | [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Adds a secondary phone number on partners
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 14.0.1.0.0 |  | Track the time and days your partners expect phone calls
-[partner_pricelist_search](partner_pricelist_search/) | 14.0.1.0.0 |  | Partner pricelist search
+[partner_pricelist_search](partner_pricelist_search/) | 14.0.1.0.1 |  | Partner pricelist search
 [partner_priority](partner_priority/) | 14.0.1.0.0 | [![patrickrwilson](https://github.com/patrickrwilson.png?size=30px)](https://github.com/patrickrwilson) | Adds priority to partners.
 [partner_ref_unique](partner_ref_unique/) | 14.0.1.0.0 |  | Add an unique constraint to partner ref field
 [partner_second_lastname](partner_second_lastname/) | 14.0.1.0.0 |  | Have split first and second lastnames
