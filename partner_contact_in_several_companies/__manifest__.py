@@ -3,7 +3,7 @@
 {
     "name": "Contacts in several partners",
     "summary": "Allow to have one contact in several partners",
-    "version": "14.0.1.1.0",
+    "version": "14.0.1.1.1",
     "category": "Customer Relationship Management",
     "website": "https://github.com/OCA/partner-contact",
     "author": "Nicolas JEUDY, Odoo Community Association (OCA),Odoo SA",
