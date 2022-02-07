@@ -6,6 +6,7 @@
         <field name="model">animal.breed</field>
         <field name="arch" type="xml">
             <tree string="Breeds">
+                <field name="sequence" widget="handle" />
                 <field name="name" />
                 <field name="species_id" />
             </tree>
@@ -21,6 +22,13 @@
                 <header />
                 <sheet>
                     <div class="oe_button_box" name="button_box" />
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <field name="active" invisible="1" />
                     <div class="oe_title">
                         <h1>
                             <field name="name" />
