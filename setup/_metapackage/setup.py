@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo-addon-base_location_geonames_import>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_access_link>=15.0dev,<15.1dev',
         'odoo-addon-partner_fax>=15.0dev,<15.1dev',
+        'odoo-addon-partner_firstname>=15.0dev,<15.1dev',
         'odoo-addon-partner_industry_secondary>=15.0dev,<15.1dev',
     ],
     classifiers=[
