@@ -25,6 +25,7 @@ addon | version | maintainers | summary
 [base_location_geonames_import](base_location_geonames_import/) | 15.0.1.0.0 |  | Import zip entries from Geonames
 [partner_contact_access_link](partner_contact_access_link/) | 15.0.1.0.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
 [partner_fax](partner_fax/) | 15.0.1.0.0 |  | Add fax number on partner
+[partner_firstname](partner_firstname/) | 15.0.1.0.0 |  | Split first name and last name for non company partners
 [partner_industry_secondary](partner_industry_secondary/) | 15.0.1.0.0 |  | Add secondary partner industries
 
 [//]: # (end addons)
