@@ -20,6 +20,8 @@ msgstr ""
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__active
+#: model:ir.model.fields,field_description:animal.field_animal_breed__active
+#: model:ir.model.fields,field_description:animal.field_animal_species__active
 msgid "Active"
 msgstr ""
 
@@ -73,8 +75,10 @@ msgid "Animals"
 msgstr ""
 
 #. module: animal
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_breed_form
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_form
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
 msgid "Archived"
 msgstr ""
 
@@ -503,6 +507,12 @@ msgstr ""
 #. module: animal
 #: model:animal.breed,name:animal.schnauzer
 msgid "Schnauzer"
+msgstr ""
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal_breed__sequence
+#: model:ir.model.fields,field_description:animal.field_animal_species__sequence
+msgid "Sequence"
 msgstr ""
 
 #. module: animal
