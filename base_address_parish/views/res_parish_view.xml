@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_parish_tree" model="ir.ui.view">
+            <field name="model">res.parish</field>
+            <field name="arch" type="xml">
+                <tree string="Parish" editable="top">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="country_id" options="{'no_open': True, 'no_create': True}"/>
+                    <field name="state_id" context="{'default_country_id': country_id}"/>
+                    <field name="city_id" context="{'default_state_id': state_id}"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_parish_filter" model="ir.ui.view">
+            <field name="model">res.parish</field>
+            <field name="arch" type="xml">
+                <search string="Search Parish">
+                    <field name="name" filter_domain="['|', ('name','ilike',self), ('zipcode','ilike',self)]"
+                           string="Parish"/>
+                    <separator/>
+                    <field name="country_id"/>
+                    <field name="state_id"/>
+                    <field name="city_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_res_parish_tree" model="ir.actions.act_window">
+            <field name="name">Parishes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.parish</field>
+            <field name="view_mode">tree</field>
+            <field name="help">
+                Display and manage the list of all parishes that can be assigned to
+                your partner records. Note that an option can be set on each country separately
+                to enforce any address of it to have a parish in this list.
+            </field>
+        </record>
+
+        <!--MENU ITEMS FOR CITIES-->
+        <menuitem
+            name="Cities"
+            id="locations_menu_cities"
+            parent="contacts.menu_localisation"
+            action="base_address_city.action_res_city_tree"
+            sequence="4"
+        />
+
+        <menuitem
+            name="Parishes"
+            id="locations_menu_parishes"
+            parent="contacts.menu_localisation"
+            action="action_res_parish_tree"
+            sequence="5"
+        />
+    </data>
+</odoo>
+
