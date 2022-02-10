@@ -67,7 +67,7 @@ Credits
 Authors
 ~~~~~~~
 
-* amfredy Mejia Matute <@mamfredym>
+* Mamfredy Mejia Matute <@mamfredym>
 
 Contributors
 ~~~~~~~~~~~~
