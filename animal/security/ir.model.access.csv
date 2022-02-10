@@ -5,4 +5,4 @@ access_animal_color_manager,animal.color.manaager,model_animal_color,animal.grou
 access_animal_breed_user,animal.breed.user,model_animal_breed,base.group_user,1,0,0,0
 access_animal_breed_manager,animal.breed.manager,model_animal_breed,animal.group_animal_manager,1,1,1,1
 access_animal_species_user,animal.species.user,model_animal_species,base.group_user,1,0,0,0
-access_animal_species_manager,animal.species.manager,model_animal_species,animal.group_animal_manager,1,1,1,0
+access_animal_species_manager,animal.species.manager,model_animal_species,animal.group_animal_manager,1,1,1,1
