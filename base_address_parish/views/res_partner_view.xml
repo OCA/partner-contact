@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="parish_view_partner_form" model="ir.ui.view">
+      <field name="name">parish.partner.view</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form" />
+      <field name="arch" type="xml">
+        <field name="city" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </field>
+        <field name="city" position="after">
+          <field
+                    name="city_id"
+                    placeholder="City"
+                    class="o_address_city"
+                    attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
+                />
+        </field>
+        <field name="street2" position="after">
+          <field
+                    name="parish_id"
+                    placeholder="Parish..."
+                    class="o_address_street"
+                    options="{'no_open': True, 'no_quick_create': True}"
+                    attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
+                    context="{'country_id': country_id, 'default_country_id': country_id, 'state_id': state_id, 'default_state_id': state_id, 'city_id': city_id, 'default_city_id': city_id}"
+                />
+        </field>
+      </field>
+    </record>
+
+
+    <record id="parish_view_partner_address_form" model="ir.ui.view">
+      <field name="name">parish.res.partner.form.address</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_address_form" />
+      <field name="arch" type="xml">
+        <field name="city" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </field>
+        <field name="city" position="after">
+          <field
+                    name="city_id"
+                    placeholder="City"
+                    class="o_address_city"
+                    attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
+                />
+        </field>
+        <field name="street2" position="after">
+          <field
+                    name="parish_id"
+                    placeholder="Parish..."
+                    class="o_address_street"
+                    options="{'no_open': True, 'no_quick_create': True}"
+                    attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
+                    context="{'country_id': country_id, 'default_country_id': country_id, 'state_id': state_id, 'default_state_id': state_id, 'city_id': city_id, 'default_city_id': city_id}"
+                />
+        </field>
+      </field>
+    </record>
+
+    <record id="parish_res_partner_view_form_private" model="ir.ui.view">
+      <field name="name">parish.res.partner.form.private</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.res_partner_view_form_private" />
+      <field name="arch" type="xml">
+          <field name="city" position="attributes">
+            <attribute name="invisible">1</attribute>
+          </field>
+          <field name="city" position="after">
+            <field
+                    name="city_id"
+                    placeholder="City"
+                    class="o_address_city"
+                    attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
+                />
+          </field>
+          <field name="street2" position="after">
+            <field
+                    name="parish_id"
+                    placeholder="Parish..."
+                    class="o_address_street"
+                    options="{'no_open': True, 'no_quick_create': True}"
+                    attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
+                    context="{'country_id': country_id, 'default_country_id': country_id, 'state_id': state_id, 'default_state_id': state_id, 'city_id': city_id, 'default_city_id': city_id}"
+                />
+          </field>
+      </field>
+    </record>
+</odoo>
