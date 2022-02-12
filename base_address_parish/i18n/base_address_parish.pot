@@ -22,33 +22,33 @@ msgstr ""
 #. module: base_address_parish
 #: model:ir.model.fields,field_description:base_address_parish.field_res_parish__name
 msgid "Name"
-msgstr "Nombre"
+msgstr ""
 
 #. module: base_address_parish
 #: model:ir.model.fields,field_description:base_address_parish.field_res_parish__country_id
 msgid "Country"
-msgstr "Pais"
+msgstr ""
 
 #. module: base_address_parish
 #: model:ir.model.fields,field_description:base_address_parish.field_res_parish__state_id
 msgid "State"
-msgstr "Provincia"
+msgstr ""
 
 #. module: base_address_parish
 #: model:ir.model.fields,field_description:base_address_parish.field_res_parish__city_id
 msgid "City"
-msgstr "Ciudad"
+msgstr ""
 
 #. module: base_address_parish
 #: model:ir.model.fields,field_description:base_address_parish.field_res_parish__code
 msgid "Code"
-msgstr "Codigo"
+msgstr ""
 
 #. module: base_address_parish
 #: model:ir.ui.menu,name:base_address_parish.locations_menu_parishes
 #: model:ir.actions.act_window,name:base_address_parish.action_res_parish_tree
 msgid "Parishes"
-msgstr "Parroquias"
+msgstr ""
 
 #. module: base_address_parish
 #: model:ir.model.fields,field_description:base_address_parish.field_res_partner__parish_id
@@ -58,7 +58,7 @@ msgstr "Parroquias"
 #: model_terms:ir.ui.view,arch_db:base_address_parish.view_parish_tree
 #: model_terms:ir.ui.view,arch_db:base_address_parish.view_parish_filter
 msgid "Parish"
-msgstr "Parroquia"
+msgstr ""
 
 #. module: base_address_parish
 #: model_terms:ir.ui.view,arch_db:base_address_parish.parish_view_partner_form
@@ -68,21 +68,21 @@ msgstr "Parroquia..."
 #. module: base_address_parish
 #: model:ir.ui.menu,name:base_address_parish.locations_menu_cities
 msgid "Cities"
-msgstr "Ciudades"
+msgstr ""
 
 
 #. module: base_address_parish
 #: model:ir.model.fields,field_description:base_address_parish.field_res_country__enforce_parishes
 msgid "Enforce Parishes"
-msgstr "Habilitar Parroquias"
+msgstr ""
 
 #. module: base_address_parish
 #: model:ir.model.fields,help:base_address_parish.field_res_country__enforce_parishes
 msgid "Check this box to ensure every address created in that country has a 'Parish' chosen in the list of the city's parishes."
-msgstr "Marque esta casilla para habilitar la creacion de Parroquias eligiendo la ciudad a la que pertenece"
+msgstr ""
 
 
 #. module: base_address_parish
 #: model_terms:ir.actions.act_window,help:base_address_parish.action_res_parish_tree
 msgid "Display and manage the list of all parishes that can be assigned to your partner records. Note that an option can be set on each country separately to enforce any address of it to have a parish in this list."
-msgstr "Visualice y administre la lista de todas las parroquias que se pueden asignar a sus registros asociados. Tenga en cuenta que se puede configurar una opción en cada país por separado para hacer que cualquier dirección del mismo tenga una parroquia en esta lista."
+msgstr ""
