@@ -5,9 +5,9 @@ from odoo import fields, models
 
 
 class Country(models.Model):
-    _inherit = 'res.country'
+    _inherit = "res.country"
 
     enforce_parishes = fields.Boolean(
-        string='Enforce Parishes',
-        help="Check this box to ensure every address created in that country has a 'Parish' chosen "
-             "in the list of the city's parishes.")
+        help="Check this box to ensure every address created in that country has a "
+        "Parish' chosen in the list of the city's parishes.",
+    )

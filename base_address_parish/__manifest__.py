@@ -1,6 +1,4 @@
-# Copyright 2015 Antiun Ingenieria S.L. - Javier Iniesta
-# Copyright 2016-2017 Tecnativa S.L. - Vicent Cubells
-# Copyright 2019 Tecnativa S.L. - Cristina Martin R.
+# Copyright 2022 Mamfredy Mejia M.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 {

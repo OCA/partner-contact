@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
         <record id="view_parish_tree" model="ir.ui.view">
             <field name="model">res.parish</field>
             <field name="arch" type="xml">
-                <tree string="Parish" editable="top">
-                    <field name="name"/>
-                    <field name="code"/>
-                    <field name="country_id" options="{'no_open': True, 'no_create': True}"/>
-                    <field name="state_id" context="{'default_country_id': country_id}"/>
-                    <field name="city_id" context="{'default_state_id': state_id}"/>
+                <tree editable="top">
+                    <field name="name" />
+                    <field name="zip" />
+                    <field name="city_id" context="{'default_state_id': state_id}" />
+                    <field
+                    name="state_id"
+                    context="{'default_country_id': country_id}"
+                />
+                    <field
+                    name="country_id"
+                    options="{'no_open': True, 'no_create': True}"
+                />
+
                 </tree>
             </field>
         </record>
@@ -18,12 +24,15 @@
             <field name="model">res.parish</field>
             <field name="arch" type="xml">
                 <search string="Search Parish">
-                    <field name="name" filter_domain="['|', ('name','ilike',self), ('zipcode','ilike',self)]"
-                           string="Parish"/>
-                    <separator/>
-                    <field name="country_id"/>
-                    <field name="state_id"/>
-                    <field name="city_id"/>
+                    <field
+                    name="name"
+                    filter_domain="['|', ('name','ilike',self), ('zip','ilike',self)]"
+                    string="Parish"
+                />
+                    <separator />
+                    <field name="country_id" />
+                    <field name="state_id" />
+                    <field name="city_id" />
                 </search>
             </field>
         </record>
@@ -42,19 +51,18 @@
 
         <!--MENU ITEMS FOR CITIES-->
         <menuitem
-            name="Cities"
-            id="locations_menu_cities"
-            parent="contacts.menu_localisation"
-            action="base_address_city.action_res_city_tree"
-            sequence="4"
-        />
+        name="Cities"
+        id="locations_menu_cities"
+        parent="contacts.menu_localisation"
+        action="base_address_city.action_res_city_tree"
+        sequence="4"
+    />
 
         <menuitem
-            name="Parishes"
-            id="locations_menu_parishes"
-            parent="contacts.menu_localisation"
-            action="action_res_parish_tree"
-            sequence="5"
-        />
-    </data>
+        name="Parishes"
+        id="locations_menu_parishes"
+        parent="contacts.menu_localisation"
+        action="action_res_parish_tree"
+        sequence="5"
+    />
 </odoo>
