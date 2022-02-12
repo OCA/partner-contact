@@ -61,6 +61,11 @@ msgid "Parish"
 msgstr ""
 
 #. module: base_address_parish
+#: model_terms:ir.ui.view,arch_db:base_address_parish.parish_view_partner_form
+msgid "Parish..."
+msgstr "Parroquia..."
+
+#. module: base_address_parish
 #: model:ir.ui.menu,name:base_address_parish.locations_menu_cities
 msgid "Cities"
 msgstr ""

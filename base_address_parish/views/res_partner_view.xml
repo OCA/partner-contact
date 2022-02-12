@@ -5,17 +5,6 @@
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form" />
       <field name="arch" type="xml">
-        <field name="city" position="attributes">
-          <attribute name="invisible">1</attribute>
-        </field>
-        <field name="city" position="after">
-          <field
-                    name="city_id"
-                    placeholder="City"
-                    class="o_address_city"
-                    attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
-                />
-        </field>
         <field name="street2" position="after">
           <field
                     name="parish_id"
@@ -35,17 +24,6 @@
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_address_form" />
       <field name="arch" type="xml">
-        <field name="city" position="attributes">
-          <attribute name="invisible">1</attribute>
-        </field>
-        <field name="city" position="after">
-          <field
-                    name="city_id"
-                    placeholder="City"
-                    class="o_address_city"
-                    attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
-                />
-        </field>
         <field name="street2" position="after">
           <field
                     name="parish_id"
@@ -64,17 +42,6 @@
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.res_partner_view_form_private" />
       <field name="arch" type="xml">
-          <field name="city" position="attributes">
-            <attribute name="invisible">1</attribute>
-          </field>
-          <field name="city" position="after">
-            <field
-                    name="city_id"
-                    placeholder="City"
-                    class="o_address_city"
-                    attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
-                />
-          </field>
           <field name="street2" position="after">
             <field
                     name="parish_id"
