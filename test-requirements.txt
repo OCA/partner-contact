@@ -1,0 +1,3 @@
+odoo14-addon-extendable  @ git+https://github.com/oca/rest-framework.git@refs/pull/246/head#subdirectory=setup/extendable
+odoo14-addon-pydantic @ git+https://github.com/oca/rest-framework.git@refs/pull/221/head#subdirectory=setup/pydantic
+odoo14-addon-base-rest-pydantic @ git+https://github.com/oca/rest-framework.git@refs/pull/221/head#subdirectory=setup/base_rest_pydantic
