@@ -1,0 +1,1 @@
+git+https://github.com/OCA/partner-contact@refs/pull/1183/head#subdirectory=setup/partner_contact_birthdate
