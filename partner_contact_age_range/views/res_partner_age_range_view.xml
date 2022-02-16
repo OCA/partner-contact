@@ -4,7 +4,7 @@
         <field name="name">res.partner.age.range.tree</field>
         <field name="model">res.partner.age.range</field>
         <field name="arch" type="xml">
-            <tree string="Partner Age Range" editable="bottom">
+            <tree editable="bottom">
                 <field name="name" />
                 <field name="age_from" />
                 <field name="age_to" />
