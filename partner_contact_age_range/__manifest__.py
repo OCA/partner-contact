@@ -9,7 +9,7 @@
     "website": "https://github.com/OCA/partner-contact",
     "category": "Customer Relationship Management",
     "summary": "Age Range for Contact's",
-    "depends": ["partner_contact_birthdate"],
+    "depends": ["contacts", "partner_contact_birthdate"],
     "data": [
         "security/ir.model.access.csv",
         "data/age_range_cron.xml",
