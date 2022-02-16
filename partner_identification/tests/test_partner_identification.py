@@ -111,7 +111,7 @@ if id_number.name != '1234' #  missing :
             )
 
     def test_bad_validation_code_override(self):
-        """ It should allow a bad validation code if context overrides. """
+        """It should allow a bad validation code if context overrides."""
         partner_id_category = self.env["res.partner.id_category"].create(
             {
                 "code": "id_code",
