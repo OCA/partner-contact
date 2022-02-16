@@ -25,7 +25,7 @@ class ResPartner(models.Model):
                 active_test=False,
             ).search_count([
                 ('parent_id', '=', False),
-                ('vat', '=', record.vat),
+                ('vat', '=ilike', record.vat),
                 ('id', '!=', record.id),
                 "|",
                 ("company_id", "=", False),
