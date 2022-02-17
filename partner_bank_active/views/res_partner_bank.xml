@@ -10,7 +10,7 @@
         <field name="model">res.partner.bank</field>
         <field name="inherit_id" ref="base.view_partner_bank_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//group[group[field[@name='sequence']]]" position="before">
+            <xpath expr="//group[field[@name='sequence']]" position="before">
                 <div class="oe_button_box" name="button_box">
                     <button name="toggle_active"
                             type="object"
