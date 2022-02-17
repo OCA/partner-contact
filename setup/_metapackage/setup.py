@@ -18,6 +18,7 @@ setuptools.setup(
         'odoo12-addon-base_vat_sanitized',
         'odoo12-addon-partner_address_street3',
         'odoo12-addon-partner_address_two_lines',
+        'odoo12-addon-partner_address_version',
         'odoo12-addon-partner_affiliate',
         'odoo12-addon-partner_bank_active',
         'odoo12-addon-partner_capital',
