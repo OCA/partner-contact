@@ -14,16 +14,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_tier_validation
-#: model:ir.model.fields.selection,name:partner_tier_validation.selection__res_partner__state__confirmed
-msgid "Active"
-msgstr ""
-
-#. module: partner_tier_validation
-#: model:ir.model.fields.selection,name:partner_tier_validation.selection__res_partner__state__cancel
-msgid "Archived"
-msgstr ""
-
-#. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__can_review
 msgid "Can Review"
 msgstr ""
@@ -37,11 +27,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_tier_validation.field_tier_definition__display_name
 msgid "Display Name"
-msgstr ""
-
-#. module: partner_tier_validation
-#: model:ir.model.fields.selection,name:partner_tier_validation.selection__res_partner__state__draft
-msgid "Draft"
 msgstr ""
 
 #. module: partner_tier_validation
