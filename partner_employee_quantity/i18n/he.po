@@ -57,7 +57,7 @@ msgid "Employee quantity range"
 msgstr ""
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_id_4154
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range_id_4155
 msgid "ID"
 msgstr "מזהה"
 
