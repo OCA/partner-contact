@@ -18,6 +18,7 @@ setuptools.setup(
         'odoo11-addon-partner_academic_title',
         'odoo11-addon-partner_address_street3',
         'odoo11-addon-partner_affiliate',
+        'odoo11-addon-partner_bank_active',
         'odoo11-addon-partner_certificate_of_conduct',
         'odoo11-addon-partner_coc',
         'odoo11-addon-partner_company_type',
