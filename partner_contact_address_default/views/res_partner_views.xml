@@ -49,4 +49,25 @@
         </field>
     </record>
 
+    <record id="view_partner_form_allow_all_partner_as_default" model="ir.ui.view">
+        <field name="name">Partner Contact Address Default - Allow all partners as default</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_address_default.view_partner_form"/>
+        <field name="groups_id" eval="[(4,ref('partner_contact_address_default.group_allow_all_partner'))]"/>
+        <field name="arch" type="xml">
+            <field name="partner_delivery_id" position="attributes">
+                <attribute name="domain"></attribute>
+            </field>
+            <field name="partner_invoice_id" position="attributes">
+                <attribute name="domain"></attribute>
+            </field>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='partner_delivery_id']" position="attributes">
+                <attribute name="domain"></attribute>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='partner_invoice_id']" position="attributes">
+                <attribute name="domain"></attribute>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

@@ -16,6 +16,8 @@
         'base',
     ],
     'data': [
+        'security/res_groups_security.xml',
         'views/res_partner_views.xml',
+        'views/res_config_settings_views.xml',
     ],
 }
