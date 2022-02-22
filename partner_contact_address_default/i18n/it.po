@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_contact_address_default
+# 	* partner_contact_address_default
 #
 msgid ""
 msgstr ""
@@ -15,6 +15,32 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.3.2\n"
+
+#. module: partner_contact_address_default
+#: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_general_configuration
+msgid "Allow all partner"
+msgstr ""
+
+#. module: partner_contact_address_default
+#: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_general_configuration
+msgid "Allow selecting all partner as default invoice or delivery address"
+msgstr ""
+
+#. module: partner_contact_address_default
+#: model:res.groups,name:partner_contact_address_default.group_allow_all_partner
+msgid "Allow selecting all partner records as address default"
+msgstr ""
+
+#. module: partner_contact_address_default
+#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_config_settings__group_address_default_allow_all_partner
+#: model:ir.model.fields,help:partner_contact_address_default.field_res_config_settings__group_address_default_allow_all_partner
+msgid "Allow selecting from all partners as address default"
+msgstr ""
+
+#. module: partner_contact_address_default
+#: model:ir.model,name:partner_contact_address_default.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
 
 #. module: partner_contact_address_default
 #: model:ir.model,name:partner_contact_address_default.model_res_partner
@@ -36,6 +62,11 @@ msgstr "Se lasci questo campo vuoto, il funzionamento sarà quello standard"
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_invoice_id
 msgid "Invoice address"
 msgstr "Indirizzo di fatturazione"
+
+#. module: partner_contact_address_default
+#: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_general_configuration
+msgid "Partner Contact Address Default"
+msgstr ""
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_delivery_id
