@@ -1,0 +1,94 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_sector
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-26 15:33+0000\n"
+"PO-Revision-Date: 2020-01-12 21:13+0000\n"
+"Last-Translator: Mamfredy Mejia <mamfredym@yahoo.com>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
+
+#. module: base_address_parish
+#: model:ir.model.fields,field_description:base_address_parish.field_res_parish__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: base_address_parish
+#: model:ir.model.fields,field_description:base_address_parish.field_res_parish__country_id
+msgid "Country"
+msgstr "País"
+
+#. module: base_address_parish
+#: model:ir.model.fields,field_description:base_address_parish.field_res_parish__state_id
+msgid "State"
+msgstr "Provincia"
+
+#. module: base_address_parish
+#: model:ir.model.fields,field_description:base_address_parish.field_res_parish__city_id
+msgid "City"
+msgstr "Ciudad"
+
+#. module: base_address_parish
+#: model:ir.model.fields,field_description:base_address_parish.field_res_parish__zip
+msgid "Zip"
+msgstr "Código Postal"
+
+#. module: base_address_parish
+#: model:ir.model.fields,field_description:base_address_parish.field_res_parish__code
+msgid "Code"
+msgstr "Código"
+
+#. module: base_address_parish
+#: model:ir.ui.menu,name:base_address_parish.locations_menu_parishes
+#: model:ir.actions.act_window,name:base_address_parish.action_res_parish_tree
+#: model_terms:ir.ui.view,arch_db:base_address_parish.view_res_country_parish_extended_form
+msgid "Parishes"
+msgstr "Parroquias"
+
+#. module: base_address_parish
+#: model:ir.model.fields,field_description:base_address_parish.field_res_partner__parish_id
+#: model_terms:ir.ui.view,arch_db:base_address_parish.parish_view_partner_form
+#: model_terms:ir.ui.view,arch_db:base_address_parish.parish_res_partner_view_form_private
+#: model_terms:ir.ui.view,arch_db:base_address_parish.parish_view_partner_address_form
+#: model_terms:ir.ui.view,arch_db:base_address_parish.view_parish_tree
+#: model_terms:ir.ui.view,arch_db:base_address_parish.view_parish_filter
+msgid "Parish"
+msgstr "Parroquia"
+
+#. module: base_address_parish
+#: model_terms:ir.ui.view,arch_db:base_address_parish.parish_view_partner_form
+msgid "Parish..."
+msgstr "Parroquia..."
+
+#. module: base_address_parish
+#: model:ir.ui.menu,name:base_address_parish.locations_menu_cities
+msgid "Cities"
+msgstr "Ciudades"
+
+
+#. module: base_address_parish
+#: model:ir.model.fields,field_description:base_address_parish.field_res_country__enforce_parishes
+msgid "Enforce Parishes"
+msgstr "Habilitar Parroquias"
+
+#. module: base_address_parish
+#: model:ir.model.fields,help:base_address_parish.field_res_country__enforce_parishes
+msgid "Check this box to ensure every address created in that country has a 'Parish' chosen in the list of the city's parishes."
+msgstr "Marque esta casilla para habilitar la creación de Parroquias eligiendo la ciudad a la que pertenece"
+
+
+#. module: base_address_parish
+#: model_terms:ir.actions.act_window,help:base_address_parish.action_res_parish_tree
+msgid "Display and manage the list of all parishes that can be assigned to your partner records. Note that an option can be set on each country separately to enforce any address of it to have a parish in this list."
+msgstr "Visualice y administre la lista de todas las parroquias que se pueden asignar a sus registros asociados. Tenga en cuenta que se puede configurar una opción en cada país por separado para hacer que cualquier dirección del mismo tenga una parroquia en esta lista."
