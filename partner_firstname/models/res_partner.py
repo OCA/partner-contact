@@ -191,9 +191,23 @@ class ResPartner(models.Model):
     def _inverse_name(self):
         """Try to revert the effect of :meth:`._compute_name`."""
         for record in self:
+            # OF Modification OpenFire
+            # Chaque write risque de vider le cache (à cause de l'héritage mail.thread).
+            # On utilise donc with_prefetch pour ne recalculer qu'un partenaire à la fois.
+            record = record.with_prefetch()
             parts = record._get_inverse_name(record.name, record.is_company)
-            record.lastname = parts['lastname']
-            record.firstname = parts['firstname']
+
+            # Pour gagner encore du temps d'exécution, on va réunir les deux affectations dans un seul write
+            # Le temps gagné à l'installation est conséquent (divisé par 10 environ) car cela évite de générer
+            # 2 mail.message par partenaire : 1 pour ne mettre que le prénom puis un pour remettre le nom complet
+            if self.env.in_draft or not record.id:
+                record.lastname = parts['lastname']
+                record.firstname = parts['firstname']
+            else:
+                record.write({
+                    'lastname': parts['lastname'],
+                    'firstname': parts['firstname'],
+                })
 
     @api.multi
     @api.constrains("firstname", "lastname")
