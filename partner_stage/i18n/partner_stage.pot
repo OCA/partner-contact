@@ -118,6 +118,7 @@ msgid "Name"
 msgstr ""
 
 #. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__state
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__state
 msgid "Related State"
 msgstr ""
@@ -138,11 +139,6 @@ msgstr ""
 #. module: partner_stage
 #: model:ir.model.constraint,message:partner_stage.constraint_res_partner_stage_res_partner_stage_code_unique
 msgid "Stage Code must be unique."
-msgstr ""
-
-#. module: partner_stage
-#: model:ir.model.fields,field_description:partner_stage.field_res_partner__state
-msgid "Status"
 msgstr ""
 
 #. module: partner_stage
