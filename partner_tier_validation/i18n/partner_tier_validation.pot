@@ -62,11 +62,6 @@ msgid "Next Review"
 msgstr ""
 
 #. module: partner_tier_validation
-#: model:tier.definition,name:partner_tier_validation.partner_tier_definition_company_only
-msgid "Partner Validation (Company)"
-msgstr ""
-
-#. module: partner_tier_validation
 #: model_terms:ir.ui.view,arch_db:partner_tier_validation.partner_form_tier_filter
 msgid "Partner(s) to Approve"
 msgstr ""
@@ -82,13 +77,13 @@ msgid "Reviewers"
 msgstr ""
 
 #. module: partner_tier_validation
-#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__state
-msgid "Status"
+#: model:ir.model,name:partner_tier_validation.model_tier_definition
+msgid "Tier Definition"
 msgstr ""
 
 #. module: partner_tier_validation
-#: model:ir.model,name:partner_tier_validation.model_tier_definition
-msgid "Tier Definition"
+#: model:tier.definition,name:partner_tier_validation.partner_tier_definition_company_only
+msgid "Validate New Company"
 msgstr ""
 
 #. module: partner_tier_validation
