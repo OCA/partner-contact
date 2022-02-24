@@ -15,40 +15,36 @@ class ResPartner(models.Model):
     _tier_validation_manual_config = False
 
     @api.model
-    def _tier_revalidation_fields(self, values):
+    def _partner_tier_revalidation_fields(self, values):
         """
         Changing some Partner fields forces Tier Validation to be reevaluated.
         Out of the box these are is_company and parent_id.
         Other can be added extending this method.
         """
-        return ["is_company", "parent_id"]
-
-    @api.model
-    def _get_confirmed_stage(self):
-        return self.env["res.partner.stage"].search(
-            [("state", "in", self._state_to)], limit=1
-        )
-
-    @api.model
-    def create(self, vals):
-        new = super().create(vals)
-        # Contact not requiring validation
-        # are created in confirmed state
-        if not new.need_validation:
-            confirmed_stage = self._get_confirmed_stage()
-            new.stage_id = confirmed_stage
-        return new
+        # IDEA: make it a System Parameter?
+        return [
+            "company_type",
+            "parent_id",
+            "vat",
+            "state_id",
+            "country_id",
+            "property_account_position_id",
+            "property_account_receivable_id",
+            "property_account_payable_id",
+        ]
 
     def write(self, vals):
-        # Signal state transition by adding to vals
+        # Tier Validation does not work woith Stages, only States :-(
+        # So, signal state transition by adding it to the vals
         if "stage_id" in vals:
             stage_id = vals.get("stage_id")
             stage = self.env["res.partner.stage"].browse(stage_id)
             vals["state"] = stage.state
-        # Changing certain fields required new validation process
-        revalidate_fields = self._tier_revalidation_fields(vals)
+        # Changing certain fields requiresd a new validation process
+        revalidate_fields = self._partner_tier_revalidation_fields(vals)
         if any(x in revalidate_fields for x in vals.keys()):
-            self.mapped("review_ids").unlink()
-            vals["state"] = "draft"
-            self.request_validation()
-        return super().write(vals)
+            vals["stage_id"] = self._get_default_stage_id().id
+        res = super().write(vals)
+        if "stage_id" in vals:
+            self.restart_validation()
+        return res
