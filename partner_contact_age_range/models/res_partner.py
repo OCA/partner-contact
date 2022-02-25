@@ -22,8 +22,8 @@ class ResPartner(models.Model):
                 age_range = (
                     age_ranges.filtered(
                         lambda age_range: age_range.age_from
-                                          <= record.age
-                                          <= age_range.age_to
+                        <= record.age
+                        <= age_range.age_to
                     )
                     or False
                 )
