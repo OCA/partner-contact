@@ -2,10 +2,10 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo.exceptions import ValidationError
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 
 
-class TestVatUnique(SavepointCase):
+class TestVatUnique(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestVatUnique, cls).setUpClass()
