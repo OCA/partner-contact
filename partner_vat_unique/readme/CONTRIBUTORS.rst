@@ -7,3 +7,4 @@
     * Manuel Calero - Tecnativa
 
 * Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+* Alan Ramos <alan.ramos@jarsa.com>
