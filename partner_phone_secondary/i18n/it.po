@@ -22,22 +22,16 @@ msgid "Contact"
 msgstr "Contatto"
 
 #. module: partner_phone_secondary
-#: model:ir.model.fields,field_description:partner_phone_secondary.field_res_partner__display_name
-msgid "Display Name"
-msgstr "Nome visualizzato"
-
-#. module: partner_phone_secondary
-#: model:ir.model.fields,field_description:partner_phone_secondary.field_res_partner__id
-msgid "ID"
-msgstr "ID"
-
-#. module: partner_phone_secondary
-#: model:ir.model.fields,field_description:partner_phone_secondary.field_res_partner____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
-
-#. module: partner_phone_secondary
 #: model:ir.model.fields,field_description:partner_phone_secondary.field_res_partner__phone2
 #: model:ir.model.fields,field_description:partner_phone_secondary.field_res_users__phone2
 msgid "Phone (Secondary)"
 msgstr "Telefono (secondario)"
+
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
