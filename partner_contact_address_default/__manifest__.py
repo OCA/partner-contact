@@ -13,7 +13,7 @@
     'application': False,
     'installable': True,
     'depends': [
-        'base',
+        'base_setup',
     ],
     'data': [
         'security/res_groups_security.xml',
