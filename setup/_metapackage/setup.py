@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo-addon-base_location_geonames_import>=15.0dev,<15.1dev',
         'odoo-addon-partner_affiliate>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_access_link>=15.0dev,<15.1dev',
+        'odoo-addon-partner_contact_age_range>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_birthdate>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_personal_information_page>=15.0dev,<15.1dev',
         'odoo-addon-partner_fax>=15.0dev,<15.1dev',
