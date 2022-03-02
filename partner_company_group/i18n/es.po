@@ -25,7 +25,9 @@ msgid "Company Group"
 msgstr "Grupo compañía"
 
 #. module: partner_company_group
+#: model:ir.model.fields,field_description:partner_company_group.field_account_bank_statement_line__company_group_id
 #: model:ir.model.fields,field_description:partner_company_group.field_account_move__company_group_id
+#: model:ir.model.fields,field_description:partner_company_group.field_account_payment__company_group_id
 #: model:ir.model.fields,field_description:partner_company_group.field_crm_lead__company_group_id
 #: model:ir.model.fields,field_description:partner_company_group.field_res_partner__company_group_id
 #: model:ir.model.fields,field_description:partner_company_group.field_res_users__company_group_id
@@ -34,14 +36,44 @@ msgid "Company group"
 msgstr "Grupo compañía"
 
 #. module: partner_company_group
+#: model:ir.model.fields,field_description:partner_company_group.field_res_partner__company_group_member_ids
+#: model:ir.model.fields,field_description:partner_company_group.field_res_users__company_group_member_ids
+msgid "Company group members"
+msgstr ""
+
+#. module: partner_company_group
 #: model:ir.model,name:partner_company_group.model_res_partner
 msgid "Contact"
 msgstr "Contacto"
 
 #. module: partner_company_group
+#: model:ir.model.fields,field_description:partner_company_group.field_account_move__display_name
+#: model:ir.model.fields,field_description:partner_company_group.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:partner_company_group.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_company_group.field_sale_order__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_company_group
+#: model:ir.model.fields,field_description:partner_company_group.field_account_move__id
+#: model:ir.model.fields,field_description:partner_company_group.field_crm_lead__id
+#: model:ir.model.fields,field_description:partner_company_group.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_company_group.field_sale_order__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_company_group
 #: model:ir.model,name:partner_company_group.model_account_move
-msgid "Journal Entries"
-msgstr "Asientos contables"
+msgid "Journal Entry"
+msgstr ""
+
+#. module: partner_company_group
+#: model:ir.model.fields,field_description:partner_company_group.field_account_move____last_update
+#: model:ir.model.fields,field_description:partner_company_group.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:partner_company_group.field_res_partner____last_update
+#: model:ir.model.fields,field_description:partner_company_group.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr ""
 
 #. module: partner_company_group
 #: model:ir.model,name:partner_company_group.model_crm_lead
@@ -52,3 +84,6 @@ msgstr "Iniciativa / Oportunidad"
 #: model:ir.model,name:partner_company_group.model_sale_order
 msgid "Sales Order"
 msgstr "Pedido de venta"
+
+#~ msgid "Journal Entries"
+#~ msgstr "Asientos contables"
