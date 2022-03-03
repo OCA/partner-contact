@@ -482,8 +482,8 @@ msgstr "Symétrique"
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
-msgid "The %s partner does not have category %s."
-msgstr "Le partenaire %s n'est pas de catégorie %s."
+msgid "The {partner} partner does not have category {category}."
+msgstr "Le partenaire {partner} n'est pas de catégorie {category}."
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
