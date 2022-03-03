@@ -20,7 +20,7 @@ class ResPartnerRelationType(models.Model):
     _description = "Partner Relation Type"
     _order = "name"
 
-    name = fields.Char(string="Name", required=True, translate=True)
+    name = fields.Char(required=True, translate=True)
     name_inverse = fields.Char(string="Inverse name", required=True, translate=True)
     contact_type_left = fields.Selection(
         selection="get_partner_types", string="Left partner type"

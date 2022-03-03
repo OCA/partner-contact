@@ -468,8 +468,8 @@ msgstr "Simetrični"
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
-msgid "The %s partner does not have category %s."
-msgstr "Partner %s nima kategorije %s."
+msgid "The {partner} partner does not have category {category}."
+msgstr "Partner {partner} nima kategorije {category}."
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
