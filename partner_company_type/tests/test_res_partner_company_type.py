@@ -4,10 +4,10 @@
 from psycopg2 import IntegrityError
 
 from odoo import tools
-from odoo.tests import SavepointCase
+from odoo.tests.common import TransactionCase
 
 
-class TestResPartnerCompanyType(SavepointCase):
+class TestResPartnerCompanyType(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestResPartnerCompanyType, cls).setUpClass()
