@@ -52,6 +52,11 @@ This module depends on ``base_tier_validation``. You can find it at
 Usage
 =====
 
+Before using, check Contact Stages configuration,
+to ensure that the default stage has the "Related State" field
+set to "To Approve".
+For example, having the "Draft" stage the default ensures this.
+
 A regular user creates a new Contact and sends it for approval:
 
 #. Create a Contact triggering at least one "Tier Definition".
