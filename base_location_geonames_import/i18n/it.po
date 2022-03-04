@@ -20,6 +20,12 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: base_location_geonames_import
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
+#, python-format
+msgid "%d could not be deleted %"
+msgstr ""
+
+#. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid ""
 ", create new location entries if not found already in the system, and "
@@ -50,7 +56,6 @@ msgstr "Nazioni"
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_res_country
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__country_id
 msgid "Country"
 msgstr "Nazione"
 
@@ -66,6 +71,7 @@ msgstr "Creato il"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__display_name
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__display_name
 msgid "Display Name"
 msgstr "Nome visualizzato"
 
@@ -96,6 +102,7 @@ msgstr "Errore %d durante lo scaricamento del file %s."
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__id
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__id
 msgid "ID"
 msgstr "ID"
 
@@ -119,6 +126,7 @@ msgstr "Importa da Geonames"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import____last_update
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country____last_update
 msgid "Last Modified on"
 msgstr "Ultima modifica il"
 

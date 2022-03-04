@@ -11,14 +11,20 @@ msgstr ""
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
 "PO-Revision-Date: 2020-08-12 18:59+0000\n"
 "Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
-"23907/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
+"teams/23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 3.10\n"
+
+#. module: base_location_geonames_import
+#: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
+#, python-format
+msgid "%d could not be deleted %"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
@@ -51,7 +57,6 @@ msgstr "Países"
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_res_country
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__country_id
 msgid "Country"
 msgstr "País"
 
@@ -67,6 +72,7 @@ msgstr "Criado em"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__display_name
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__display_name
 msgid "Display Name"
 msgstr "Nome a mostrar"
 
@@ -97,6 +103,7 @@ msgstr "Recebido um erro %d ao tentar o download do arquivo %s."
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__id
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__id
 msgid "ID"
 msgstr "ID"
 
@@ -119,6 +126,7 @@ msgstr "Importar de Geonames"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import____last_update
+#: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country____last_update
 msgid "Last Modified on"
 msgstr "Ultima modificação em"
 
