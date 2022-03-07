@@ -47,3 +47,20 @@ class TestResPartner(common.TransactionCase):
 
         self.partner_admin.name_search(name="Pupila")
         self.assertTrue(search_mock.call_count == 2)
+
+    @mock.patch(partner_model)
+    def test_no_limit_search(self, search_mock):
+        """Test name search exception"""
+        search_mock.side_effect = [self.anyresp, self.anyresp, mock.DEFAULT]
+
+        self.partner_admin.name_search(name="Pupila", limit=0)
+        search_mock.assert_called_with(
+            [
+                "|",
+                "|",
+                ("tradename", "ilike", "Pupila"),
+                ("name", "ilike", "Pupila"),
+                ("vat", "ilike", "Pupila"),
+            ],
+            limit=0,
+        )
