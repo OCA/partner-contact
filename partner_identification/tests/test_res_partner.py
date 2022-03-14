@@ -40,17 +40,17 @@ class TestResPartner(common.SavepointCase):
         super().tearDownClass()
 
     def test_compute_identification(self):
-        """ It should set the proper field to the proper ID name. """
+        """It should set the proper field to the proper ID name."""
         self.partner._compute_identification("name", "id_code")
         self.assertEqual(self.partner.name, self.partner_id.name)
 
     def test_inverse_identification_saves(self):
-        """ It should set the ID name to the proper field value. """
+        """It should set the ID name to the proper field value."""
         self.partner._inverse_identification("name", "id_code")
         self.assertEqual(self.partner_id.name, self.partner.name)
 
     def test_inverse_identification_creates_new_category(self):
-        """ It should create a new category of the type if non-existent. """
+        """It should create a new category of the type if non-existent."""
         self.partner._inverse_identification("name", "new_code_type")
         category = self.env["res.partner.id_category"].search(
             [("code", "=", "new_code_type")]
@@ -58,7 +58,7 @@ class TestResPartner(common.SavepointCase):
         self.assertTrue(category)
 
     def test_inverse_identification_creates_new_id(self):
-        """ It should create a new ID of the type if non-existent. """
+        """It should create a new ID of the type if non-existent."""
         category = self.env["res.partner.id_category"].create(
             {"code": "new_code_type", "name": "new_code_type"}
         )
@@ -69,7 +69,7 @@ class TestResPartner(common.SavepointCase):
         self.assertEqual(identification.name, self.partner.name)
 
     def test_inverse_identification_multi_exception(self):
-        """ It should not allow a write when multiple IDs of same type. """
+        """It should not allow a write when multiple IDs of same type."""
         self.env["res.partner.id_number"].create(
             {
                 "name": "Another ID",
@@ -81,7 +81,7 @@ class TestResPartner(common.SavepointCase):
             self.partner._inverse_identification("name", "id_code")
 
     def test_search_identification(self):
-        """ It should return the right record when searched by ID. """
+        """It should return the right record when searched by ID."""
         self.partner.social_security = "Test"
         partner = self.env["res.partner"].search([("social_security", "=", "Test")])
         self.assertEqual(partner, self.partner)
