@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2022-02-16 12:16+0000\n"
+"PO-Revision-Date: 2022-03-14 18:34+0000\n"
 "Last-Translator: Riccardo Bellanova <bellanova@webmonks.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -154,7 +154,7 @@ msgstr "Numeri documenti"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__name
 msgid "ID name"
-msgstr "Nome documento"
+msgstr "Nome categoria"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__category_id
