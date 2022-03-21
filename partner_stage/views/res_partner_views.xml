@@ -23,7 +23,7 @@
         <field name="arch" type="xml">
             <filter name="group_country" position="after">
                 <filter
-                    name="group_country"
+                    name="group_stage"
                     string="Stage"
                     context="{'group_by': 'stage_id'}"
                 />
