@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo-addon-base_country_state_translatable>=15.0dev,<15.1dev',
         'odoo-addon-base_location>=15.0dev,<15.1dev',
         'odoo-addon-base_location_geonames_import>=15.0dev,<15.1dev',
+        'odoo-addon-base_partner_sequence>=15.0dev,<15.1dev',
         'odoo-addon-partner_affiliate>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_access_link>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_age_range>=15.0dev,<15.1dev',
