@@ -22,6 +22,7 @@ class Partner(models.Model):
         comodel_name="res.partner.stage",
         group_expand="_read_group_stage_id",
         default=_get_default_stage_id,
+        copy=False,
         index=True,
         tracking=True,
     )
