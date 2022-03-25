@@ -1,0 +1,345 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_skills
+# 
+# Translators:
+# Martin Trigaux, 2021
+# Friederike Fasterling-Nesselbosch, 2022
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server saas~14.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-12 07:49+0000\n"
+"PO-Revision-Date: 2021-09-14 12:23+0000\n"
+"Last-Translator: Friederike Fasterling-Nesselbosch, 2022\n"
+"Language-Team: German (https://www.transifex.com/odoo/teams/41243/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_skills
+#. openerp-web
+#: code:addons/partner_skills/static/src/xml/resume_templates.xml:0
+#, python-format
+msgid "ADD"
+msgstr "HINZUFÜGEN"
+
+#. module: partner_skills
+#. openerp-web
+#: code:addons/partner_skills/static/src/xml/resume_templates.xml:0
+#, python-format
+msgid "CREATE A NEW ENTRY"
+msgstr "NEUER EINTRAG"
+
+#. module: partner_skills
+#: model:ir.model.fields.selection,name:partner_skills.selection__partner_resume_line__display_type__classic
+msgid "Classic"
+msgstr "Klassisch"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_skill__create_uid
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line__create_uid
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line_type__create_uid
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill__create_uid
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_level__create_uid
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_type__create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_skill__create_date
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line__create_date
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line_type__create_date
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill__create_date
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_level__create_date
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_type__create_date
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: partner_skills
+#. openerp-web
+#: code:addons/partner_skills/static/src/js/resume_widget.js:0
+#, python-format
+msgid "Current"
+msgstr "Aktuell"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line__date_end
+msgid "Date End"
+msgstr "Datum Abschluss"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line__date_start
+msgid "Date Start"
+msgstr "Startdatum"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line__description
+#: model_terms:ir.ui.view,arch_db:partner_skills.resume_line_view_form
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_skill__display_name
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line__display_name
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line_type__display_name
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill__display_name
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_level__display_name
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_type__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line__display_type
+msgid "Display Type"
+msgstr "Display-Typ"
+
+#. module: partner_skills
+#: model:ir.model,name:partner_skills.model_partner_contact
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_skill__user_id_
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line__user_id_
+msgid "Partner"
+msgstr "Mitarbeiter"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_skill__id
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line__id
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line_type__id
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill__id
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_level__id
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_type__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_skill____last_update
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line____last_update
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line_type____last_update
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill____last_update
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_level____last_update
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_type____last_update
+msgid "Last Modified on"
+msgstr "Letzte Änderung am"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_skill__write_uid
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line__write_uid
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line_type__write_uid
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill__write_uid
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_level__write_uid
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_type__write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert von"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_skill__write_date
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line__write_date
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line_type__write_date
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill__write_date
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_level__write_date
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_type__write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_type__skill_level_ids
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_contact_skill_type_view_form
+msgid "Levels"
+msgstr "Niveau"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line__name
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line_type__name
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill__name
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_level__name
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_type__name
+msgid "Name"
+msgstr "Name"
+
+#. module: partner_skills
+#. openerp-web
+#: code:addons/partner_skills/static/src/js/resume_widget.js:0
+#, python-format
+msgid "Other"
+msgstr "Andere"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_skill__level_progress
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_level__level_progress
+msgid "Progress"
+msgstr "Fortschritt"
+
+#. module: partner_skills
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_skill_level_view_form
+msgid "Progress (%)"
+msgstr "Fortschritt (%)"
+
+#. module: partner_skills
+#: model:ir.model.fields,help:partner_skills.field_partner_contact_skill__level_progress
+#: model:ir.model.fields,help:partner_skills.field_partner_skill_level__level_progress
+msgid "Progress from zero knowledge (0%) to fully mastered (100%)."
+msgstr ""
+"Fortschritt von Nullkenntnissen (0%) bis zur vollständigen Beherrschung "
+"(100%)."
+
+#. module: partner_skills
+#: model:ir.model,name:partner_skills.model_partner_contact_public
+msgid "Public Partner"
+msgstr "Öffentlicher Mitarbeiter"
+
+#. module: partner_skills
+#: model:ir.ui.menu,name:partner_skills.menu_human_resources_configuration_resume
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_contact_public_view_form_inherit
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_contact_public_view_search
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_contact_view_form
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_contact_view_search
+#: model_terms:ir.ui.view,arch_db:partner_skills.res_users_view_form
+#: model_terms:ir.ui.view,arch_db:partner_skills.resume_line_view_form
+msgid "Resumé"
+msgstr "Lebenslauf"
+
+#. module: partner_skills
+#: model:ir.actions.act_window,name:partner_skills.partner_resume_type_action
+msgid "Resumé Line Types"
+msgstr ""
+
+#. module: partner_skills
+#. openerp-web
+#: code:addons/partner_skills/static/src/xml/resume_templates.xml:0
+#, python-format
+msgid "Resumé empty"
+msgstr ""
+
+#. module: partner_skills
+#: model:ir.model,name:partner_skills.model_partner_resume_line
+msgid "Resumé line of an partner"
+msgstr "Lebenslaufzeile eines/-er Mitarbeiters/-erin"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact__resume_line_ids
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_public__resume_line_ids
+#: model:ir.model.fields,field_description:partner_skills.field_res_users__resume_line_ids
+msgid "Resumé lines"
+msgstr ""
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line_type__sequence
+msgid "Sequence"
+msgstr "Sequenz"
+
+#. module: partner_skills
+#: model:ir.model,name:partner_skills.model_partner_skill
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_skill__skill_id
+msgid "Skill"
+msgstr "Qualifikation"
+
+#. module: partner_skills
+#: model:ir.model,name:partner_skills.model_partner_skill_level
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_skill__skill_level_id
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_skill_level_view_form
+msgid "Skill Level"
+msgstr "Qualifikationsniveau"
+
+#. module: partner_skills
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_skill_level_view_tree
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_skill_view_tree
+msgid "Skill Levels"
+msgstr "Qualifikationsniveaus"
+
+#. module: partner_skills
+#: model:ir.model,name:partner_skills.model_partner_skill_type
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_skill__skill_type_id
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill__skill_type_id
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_level__skill_type_id
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_contact_skill_type_view_form
+msgid "Skill Type"
+msgstr "Qualifikationstyp"
+
+#. module: partner_skills
+#: model:ir.actions.act_window,name:partner_skills.partner_skill_type_action
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_skill_type_view_tree
+msgid "Skill Types"
+msgstr "Qualifikationstypen"
+
+#. module: partner_skills
+#: model:ir.model,name:partner_skills.model_partner_contact_skill
+msgid "Skill level for an partner"
+msgstr "Qualifikationsniveau für einen Mitarbeiter"
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact__partner_skill_ids
+#: model:ir.model.fields,field_description:partner_skills.field_partner_contact_public__partner_skill_ids
+#: model:ir.model.fields,field_description:partner_skills.field_partner_skill_type__skill_ids
+#: model:ir.model.fields,field_description:partner_skills.field_res_users__partner_skill_ids
+#: model:ir.ui.menu,name:partner_skills.partner_skill_type_menu
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_skill_view_form
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_contact_public_view_form_inherit
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_contact_skill_type_view_form
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_contact_view_form
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_skill_view_form
+#: model_terms:ir.ui.view,arch_db:partner_skills.res_users_view_form
+msgid "Skills"
+msgstr "Fähigkeiten"
+
+#. module: partner_skills
+#: code:addons/partner_skills/models/partner_skills.py:0
+#, python-format
+msgid "The skill %(name)s and skill type %(type)s doesn't match"
+msgstr ""
+"Die Fähigkeit%(name)s und die Kategorie %(type)s passen nicht zusammen"
+
+#. module: partner_skills
+#: code:addons/partner_skills/models/partner_skills.py:0
+#, python-format
+msgid "The skill level %(level)s is not valid for skill type: %(type)s"
+msgstr ""
+"Die Fähigkeitsstufe %(level)s ist für den Fähigkeitstyp %(type)s nicht "
+"gültig: "
+
+#. module: partner_skills
+#: model:ir.model.constraint,message:partner_skills.constraint_partner_resume_line_date_check
+msgid "The start date must be anterior to the end date."
+msgstr "Das Start Datum muss vor dem Ende Datum sein"
+
+#. module: partner_skills
+#: model_terms:ir.ui.view,arch_db:partner_skills.resume_line_view_form
+msgid "Title"
+msgstr "Titel"
+
+#. module: partner_skills
+#: model:ir.model.constraint,message:partner_skills.constraint_partner_contact_skill__unique_skill
+msgid "Two levels for the same skill is not allowed"
+msgstr "Zwei Stufen für dieselbe Kompetenz sind nicht erlaubt."
+
+#. module: partner_skills
+#: model:ir.model.fields,field_description:partner_skills.field_partner_resume_line__line_type_id
+msgid "Type"
+msgstr "Typ"
+
+#. module: partner_skills
+#: model:ir.model,name:partner_skills.model_partner_resume_line_type
+msgid "Type of a resumé line"
+msgstr "Art der Zeile im Lebenslauf"
+
+#. module: partner_skills
+#: model:ir.ui.menu,name:partner_skills.partner_resume_line_type_menu
+msgid "Types"
+msgstr "Typen"
+
+#. module: partner_skills
+#: model:ir.model,name:partner_skills.model_res_users
+msgid "Users"
+msgstr "Benutzer"
+
+#. module: partner_skills
+#: model_terms:ir.ui.view,arch_db:partner_skills.partner_contact_skill_type_view_form
+msgid "e.g. Languages"
+msgstr "z.B. Sprachen"
+
+#. module: partner_skills
+#: model_terms:ir.ui.view,arch_db:partner_skills.resume_line_view_form
+msgid "e.g. Odoo Inc."
+msgstr "z.B. Odoo Inc."

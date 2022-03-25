@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data noupdate="1">
+
+    <!--Skill Types-->
+    <record id="partner_skill_type_lang" model="partner.skill.type">
+        <field name="name">Languages</field>
+    </record>
+    <record id="partner_skill_type_dev" model="partner.skill.type">
+        <field name="name">Dev</field>
+    </record>
+    <record id="partner_skill_type_music" model="partner.skill.type">
+        <field name="name">Music</field>
+    </record>
+    <record id="partner_skill_type_marketing" model="partner.skill.type">
+        <field name="name">Marketing</field>
+    </record>
+
+    <!--Skill Levels-->
+    <record id="partner_skill_level_a1" model="partner.skill.level">
+        <field name="name">A1</field>
+        <field name="level_progress">10</field>
+        <field name="skill_type_id" ref="partner_skill_type_lang"/>
+    </record>
+    <record id="partner_skill_level_a2" model="partner.skill.level">
+        <field name="name">A2</field>
+        <field name="level_progress">40</field>
+        <field name="skill_type_id" ref="partner_skill_type_lang"/>
+    </record>
+    <record id="partner_skill_level_b1" model="partner.skill.level">
+        <field name="name">B1</field>
+        <field name="level_progress">60</field>
+        <field name="skill_type_id" ref="partner_skill_type_lang"/>
+    </record>
+    <record id="partner_skill_level_b2" model="partner.skill.level">
+        <field name="name">B2</field>
+        <field name="level_progress">75</field>
+        <field name="skill_type_id" ref="partner_skill_type_lang"/>
+    </record>
+    <record id="partner_skill_level_c1" model="partner.skill.level">
+        <field name="name">C1</field>
+        <field name="level_progress">85</field>
+        <field name="skill_type_id" ref="partner_skill_type_lang"/>
+    </record>
+    <record id="partner_skill_level_c2" model="partner.skill.level">
+        <field name="name">C2</field>
+        <field name="level_progress">100</field>
+        <field name="skill_type_id" ref="partner_skill_type_lang"/>
+    </record>
+
+    <record id="partner_skill_level_beginner" model="partner.skill.level">
+        <field name="name">Beginner</field>
+        <field name="level_progress">15</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+    <record id="partner_skill_level_elementary" model="partner.skill.level">
+        <field name="name">Elementary</field>
+        <field name="level_progress">25</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+    <record id="partner_skill_level_intermediate" model="partner.skill.level">
+        <field name="name">Intermediate</field>
+        <field name="level_progress">50</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+    <record id="partner_skill_level_advanced" model="partner.skill.level">
+        <field name="name">Advanced</field>
+        <field name="level_progress">80</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+    <record id="partner_skill_level_expert" model="partner.skill.level">
+        <field name="name">Expert</field>
+        <field name="level_progress">100</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+
+    <record id="partner_skill_level_l1" model="partner.skill.level">
+        <field name="name">L1</field>
+        <field name="level_progress">25</field>
+        <field name="skill_type_id" ref="partner_skill_type_music"/>
+    </record>
+    <record id="partner_skill_level_l2" model="partner.skill.level">
+        <field name="name">L2</field>
+        <field name="level_progress">50</field>
+        <field name="skill_type_id" ref="partner_skill_type_music"/>
+    </record>
+    <record id="partner_skill_level_l3" model="partner.skill.level">
+        <field name="name">L3</field>
+        <field name="level_progress">75</field>
+        <field name="skill_type_id" ref="partner_skill_type_music"/>
+    </record>
+    <record id="partner_skill_level_l4" model="partner.skill.level">
+        <field name="name">L4</field>
+        <field name="level_progress">100</field>
+        <field name="skill_type_id" ref="partner_skill_type_music"/>
+    </record>
+
+    <record id="partner_skill_level_ml1" model="partner.skill.level">
+        <field name="name">L1</field>
+        <field name="level_progress">25</field>
+        <field name="skill_type_id" ref="partner_skill_type_marketing"/>
+    </record>
+    <record id="partner_skill_level_ml2" model="partner.skill.level">
+        <field name="name">L2</field>
+        <field name="level_progress">50</field>
+        <field name="skill_type_id" ref="partner_skill_type_marketing"/>
+    </record>
+    <record id="partner_skill_level_ml3" model="partner.skill.level">
+        <field name="name">L3</field>
+        <field name="level_progress">75</field>
+        <field name="skill_type_id" ref="partner_skill_type_marketing"/>
+    </record>
+    <record id="partner_skill_level_ml4" model="partner.skill.level">
+        <field name="name">L4</field>
+        <field name="level_progress">100</field>
+        <field name="skill_type_id" ref="partner_skill_type_marketing"/>
+    </record>
+
+    <!-- **** Skills **** -->
+    <!-- Languages -->
+    <record id="partner_skill_french" model="partner.skill">
+        <field name="name">French</field>
+        <field name="skill_type_id" ref="partner_skill_type_lang"/>
+    </record>
+    <record id="partner_skill_spanish" model="partner.skill">
+        <field name="name">Spanish</field>
+        <field name="skill_type_id" ref="partner_skill_type_lang"/>
+    </record>
+    <record id="partner_skill_english" model="partner.skill">
+        <field name="name">English</field>
+        <field name="skill_type_id" ref="partner_skill_type_lang"/>
+    </record>
+    <record id="partner_skill_german" model="partner.skill">
+        <field name="name">German</field>
+        <field name="skill_type_id" ref="partner_skill_type_lang"/>
+    </record>
+    <record id="partner_skill_filipino" model="partner.skill">
+        <field name="name">Filipino</field>
+        <field name="skill_type_id" ref="partner_skill_type_lang"/>
+    </record>
+    <record id="partner_skill_arabic" model="partner.skill">
+        <field name="name">Arabic</field>
+        <field name="skill_type_id" ref="partner_skill_type_lang"/>
+    </record>
+    <record id="partner_skill_bengali" model="partner.skill">
+        <field name="name">Bengali</field>
+        <field name="skill_type_id" ref="partner_skill_type_lang"/>
+    </record>
+
+    <!-- Dev -->
+    <record id="partner_skill_js" model="partner.skill">
+        <field name="name">Javascript</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+    <record id="partner_skill_python" model="partner.skill">
+        <field name="name">Python</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+    <record id="partner_skill_c" model="partner.skill">
+        <field name="name">C/C++</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+    <record id="partner_skill_android" model="partner.skill">
+        <field name="name">Android</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+    <record id="partner_skill_hadoop" model="partner.skill">
+        <field name="name">Hadoop</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+    <record id="partner_skill_spark" model="partner.skill">
+        <field name="name">Spark</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+    <record id="partner_skill_react" model="partner.skill">
+        <field name="name">React</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+    <record id="partner_skill_django" model="partner.skill">
+        <field name="name">Django</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+    <record id="partner_skill_sql" model="partner.skill">
+        <field name="name">RDMS</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+    <record id="partner_skill_nosql" model="partner.skill">
+        <field name="name">NoSQL</field>
+        <field name="skill_type_id" ref="partner_skill_type_dev"/>
+    </record>
+
+    <!-- Music -->
+    <record id="partner_skill_piano" model="partner.skill">
+        <field name="name">Piano</field>
+        <field name="skill_type_id" ref="partner_skill_type_music"/>
+    </record>
+    <record id="partner_skill_violin" model="partner.skill">
+        <field name="name">Violin</field>
+        <field name="skill_type_id" ref="partner_skill_type_music"/>
+    </record>
+    <record id="partner_skill_singing" model="partner.skill">
+        <field name="name">Singing</field>
+        <field name="skill_type_id" ref="partner_skill_type_music"/>
+    </record>
+    <record id="partner_skill_flute" model="partner.skill">
+        <field name="name">Flute</field>
+        <field name="skill_type_id" ref="partner_skill_type_music"/>
+    </record>
+
+    <!-- Marketing -->
+    <record id="partner_skill_com" model="partner.skill">
+        <field name="name">Communication</field>
+        <field name="skill_type_id" ref="partner_skill_type_marketing"/>
+    </record>
+    <record id="partner_skill_analytics" model="partner.skill">
+        <field name="name">Analytics</field>
+        <field name="skill_type_id" ref="partner_skill_type_marketing"/>
+    </record>
+    <record id="partner_skill_digital_ad" model="partner.skill">
+        <field name="name">Digital advertising</field>
+        <field name="skill_type_id" ref="partner_skill_type_marketing"/>
+    </record>
+    <record id="partner_skill_public" model="partner.skill">
+        <field name="name">Public Speaking</field>
+        <field name="skill_type_id" ref="partner_skill_type_marketing"/>
+    </record>
+    <record id="partner_skill_cms" model="partner.skill">
+        <field name="name">CMS</field>
+        <field name="skill_type_id" ref="partner_skill_type_marketing"/>
+    </record>
+    <record id="partner_skill_email" model="partner.skill">
+        <field name="name">Email Marketing</field>
+        <field name="skill_type_id" ref="partner_skill_type_marketing"/>
+    </record>
+
+    <!-- Resumé -->
+    <record id="partner_resume_line_admin_1" model="partner.resume.line">
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="name">Université Libre de Bruxelles - Polytechnique</field>
+        <field name="date_start" eval="(datetime.now()+relativedelta(years=-12)).strftime('%Y-09-17')"/>
+        <field name="date_end" eval="(datetime.now()+relativedelta(years=-7)).strftime('%Y-09-10')"/>
+        <field name="line_type_id" ref="resume_type_education"/>
+        <field name="description">
+            Master in Electrical engineering
+            Master thesis: Better grid management and control through machine learning
+        </field>
+    </record>
+
+    <record id="partner_resume_line_admin_2" model="partner.resume.line">
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="name">Saint-Joseph School</field>
+        <field name="date_start" eval="(datetime.now()+relativedelta(years=-18)).strftime('%Y-09-01')"/>
+        <field name="date_end" eval="(datetime.now()+relativedelta(years=-12)).strftime('%Y-06-30')"/>
+        <field name="line_type_id" ref="resume_type_education"/>
+        <field name="description">
+            Science &amp; math
+        </field>
+    </record>
+
+    <record id="partner_resume_line_admin_4" model="partner.resume.line">
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="name">Odoo SA</field>
+        <field name="date_start" eval="(datetime.now()+relativedelta(years=-3)).strftime('%Y-11-01')"/>
+        <field name="line_type_id" ref="resume_type_experience"/>
+        <field name="description">
+            Job position: Development team leader
+            Core Python Framework
+        </field>
+    </record>
+
+    <record id="partner_resume_line_admin_3" model="partner.resume.line">
+        <field name="partner_id" ref="base.partner_admin"/>
+        <field name="name">Burtho Inc.</field>
+        <field name="date_start" eval="(datetime.now()+relativedelta(years=-7)).strftime('%Y-09-10')"/>
+        <field name="date_end" eval="(datetime.now()+relativedelta(years=-3)).strftime('%Y-09-10')"/>
+        <field name="line_type_id" ref="resume_type_experience"/>
+        <field name="description">
+            Job position: Product manager
+            Business strategy, functional requirements, resource planning, product lifecycle management, etc.
+        </field>
+    </record>
+</data>
+</odoo>

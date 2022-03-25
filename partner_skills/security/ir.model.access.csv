@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_partner_resume_line,partner.resume.line,model_partner_resume_line,base.group_user,1,1,1,1
+access_partner_resume_line_partner,partner.resume.line.contact,model_partner_resume_line,base.group_user,1,1,1,1
+access_partner_resume_line_type,partner.resume.line.type,model_partner_resume_line_type,base.group_user,1,1,1,1
+access_partner_resume_line_type_partner,partner.resume.line.type.contact,model_partner_resume_line_type,base.group_user,1,0,0,0
+access_partner_skill_type,partner.skill.type,model_partner_skill_type,base.group_user,1,1,1,1
+access_partner_skill_type_partner,partner.skill.type.contact,model_partner_skill_type,base.group_user,1,0,0,0
+access_partner_skill_level,partner.skill.level,model_partner_skill_level,base.group_user,1,1,1,1
+access_partner_skill_level_partner,partner.skill.level.contact,model_partner_skill_level,base.group_user,1,0,0,0
+access_partner_skill,partner.skill,model_partner_skill,base.group_user,1,1,1,1
+access_partner_skill_partner,partner.skill.contact,model_partner_skill,base.group_user,1,0,0,0
+access_partner_skills,res.partner.skill,model_partner_skills,base.group_user,1,1,1,1
+access_partner_skills_partner,res.partner.skill,model_partner_skills,base.group_user,1,1,1,1
