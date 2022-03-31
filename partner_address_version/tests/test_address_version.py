@@ -14,11 +14,11 @@ class TestAddressVersion(SavepointCase):
         super(TestAddressVersion, cls).setUpClass()
         cls.partner_vals = OrderedDict(
             [
-                ("name", u"Name"),
-                ("street", u"Street"),
-                ("street2", u"Street2"),
-                ("zip", u"Zip"),
-                ("city", u"City"),
+                ("name", "Name"),
+                ("street", "Street"),
+                ("street2", "Street2"),
+                ("zip", "Zip"),
+                ("city", "City"),
                 ("country_id", cls.env.ref("base.fr")),
             ]
         )
