@@ -41,7 +41,7 @@ class TestPartnerEmailCheck(SavepointCase):
     def test_email_domain_normalization(self):
         """Test normalization of email domain names, including punycode."""
         self.test_partner.write({"email": "goodemail@xn--xamPle-9ua.com"})
-        self.assertEqual(self.test_partner.email, u"goodemail@éxample.com")
+        self.assertEqual(self.test_partner.email, "goodemail@éxample.com")
 
     def test_multi_email_domain_normalization(self):
         """Test normalization of email domain names of multiple addresses."""
@@ -49,7 +49,7 @@ class TestPartnerEmailCheck(SavepointCase):
             {"email": "goodemail@doMAIN.com,othergood@xn--xample-9ua.com"}
         )
         self.assertEqual(
-            self.test_partner.email, u"goodemail@domain.com,othergood@éxample.com"
+            self.test_partner.email, "goodemail@domain.com,othergood@éxample.com"
         )
 
     def test_email_local_normalization(self):
