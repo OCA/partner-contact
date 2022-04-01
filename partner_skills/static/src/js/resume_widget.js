@@ -1,4 +1,4 @@
-odoo.define('web.FieldResume', function (require) {
+odoo.define('web.FieldResumePartner', function (require) {
 "use strict";
 
 var time = require('web.time');
@@ -222,7 +222,7 @@ var SkillsRenderer = AbstractGroupedOne2ManyRenderer.extend({
 });
 
 
-var FieldResume = FieldOne2Many.extend({
+var FieldResumePartner = FieldOne2Many.extend({
 
     /**
      * @override
@@ -244,9 +244,9 @@ var FieldSkills = FieldOne2Many.extend({
     },
 });
 
-field_registry.add('partner_resume', FieldResume);
+field_registry.add('partner_resume', FieldResumePartner);
 field_registry.add('partner_skills', FieldSkills);
 
-return FieldResume;
+return FieldResumePartner;
 
 });
