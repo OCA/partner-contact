@@ -57,13 +57,6 @@ class CityZipGeonamesImport(models.TransientModel):
         return domain
 
     @api.model
-    def select_state(self, row, country):
-        code = row[country.geonames_state_code_column or 4]
-        return self.env["res.country.state"].search(
-            [("country_id", "=", country.id), ("code", "=", code)], limit=1
-        )
-
-    @api.model
     def select_city(self, row, country, state_id):
         # This has to be done by SQL for performance reasons avoiding
         # left join with ir_translation on the translatable field "name"
@@ -135,20 +128,36 @@ class CityZipGeonamesImport(models.TransientModel):
         return parsed_csv
 
     def _create_states(self, parsed_csv, search_states, max_import, country):
+        states_map = {}
+        if search_states:
+            states_map = {
+                state.code: state
+                for state in self.env["res.country.state"].search(
+                    [("country_id", "=", country.id)]
+                )
+            }
         # States
-        state_vals_list = []
+        state_vals_set = set()
         state_dict = {}
         for i, row in enumerate(parsed_csv):
             if max_import and i == max_import:
                 break
-            state = self.select_state(row, country) if search_states else False
+            state = None
+            if search_states:
+                code = row[country.geonames_state_code_column or 4]
+                state = states_map.get(code)
             if not state:
                 state_vals = self.prepare_state(row, country)
-                if state_vals not in state_vals_list:
-                    state_vals_list.append(state_vals)
+                state_vals_set.add(
+                    (state_vals["name"], state_vals["code"], state_vals["country_id"])
+                )
             else:
                 state_dict[state.code] = state.id
-
+        state_vals_list = [
+            {"name": name, "code": code, "country_id": country_id}
+            for name, code, country_id in state_vals_set
+        ]
+        logger.info("Importing %d states", len(state_vals_list))
         created_states = self.env["res.country.state"].create(state_vals_list)
         for i, vals in enumerate(state_vals_list):
             state_dict[vals["code"]] = created_states[i].id
@@ -158,7 +167,7 @@ class CityZipGeonamesImport(models.TransientModel):
         self, parsed_csv, search_cities, max_import, state_dict, country
     ):
         # Cities
-        city_vals_list = []
+        city_vals_set = set()
         city_dict = {}
         for i, row in enumerate(parsed_csv):
             if max_import and i == max_import:
@@ -171,12 +180,18 @@ class CityZipGeonamesImport(models.TransientModel):
             )
             if not city_id:
                 city_vals = self.prepare_city(row, country, state_id)
-                if city_vals not in city_vals_list:
-                    city_vals_list.append(city_vals)
+                city_vals_set.add(
+                    (city_vals["name"], city_vals["state_id"], city_vals["country_id"])
+                )
             else:
                 city_dict[(city_name, state_id)] = city_id
         ctx = dict(self.env.context)
         ctx.pop("lang", None)  # make sure no translation is added
+        city_vals_list = [
+            {"name": name, "state_id": state_id, "country_id": country_id}
+            for name, state_id, country_id in city_vals_set
+        ]
+        logger.info("Importing %d cities", len(city_vals_list))
         # pylint: disable=context-overridden - It's legit to replace it in this case
         created_cities = self.env["res.city"].with_context(ctx).create(city_vals_list)
         for i, vals in enumerate(city_vals_list):
