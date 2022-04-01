@@ -7,9 +7,9 @@
 
 <!-- /!\ do not modify above this line -->
 
-# partner-contact
+# Partner Contact
 
-TODO: add repo description.
+Contact-related odoo addons.
 
 <!-- /!\ do not modify below this line -->
 
