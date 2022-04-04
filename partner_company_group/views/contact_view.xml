@@ -30,4 +30,13 @@
             </filter>
         </field>
     </record>
+    <act_window
+        id="action_open_group_members"
+        name="Company group members"
+        binding_model="res.partner"
+        res_model="res.partner"
+        view_mode="tree"
+        target="current"
+        domain="[('company_group_id', 'in', context.get('active_ids'))]"
+    />
 </odoo>
