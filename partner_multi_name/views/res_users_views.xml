@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="users_form" model="ir.ui.view">
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="partner_second_lastname.users_form"/>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='firstname']" position="replace"/>
+
+            <xpath expr="//field[@name='lastname']" position="before">
+                <field name="firstname" attrs="{'required': [('othernames', '=', False)]}"/>
+                <field name="othernames" attrs="{'required': [('firstname', '=', False)]}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='lastname']" position="attributes">
+                <attribute name="attrs">{'required': [('lastname2', '=', False)]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='lastname2']" position="attributes">
+                <attribute name="attrs">{'required': [('lastname', '=', False)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
