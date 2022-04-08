@@ -54,6 +54,7 @@ setuptools.setup(
         'odoo12-addon-partner_industry_parent',
         'odoo12-addon-partner_industry_secondary',
         'odoo12-addon-partner_label',
+        'odoo12-addon-partner_multi_name',
         'odoo12-addon-partner_multi_relation',
         'odoo12-addon-partner_multi_relation_tabs',
         'odoo12-addon-partner_noncommercial',
