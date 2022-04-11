@@ -54,7 +54,7 @@ addon | version | maintainers | summary
 [partner_disable_gravatar](partner_disable_gravatar/) | 13.0.1.0.0 |  | Disable automatic connection to gravatar.com
 [partner_email_check](partner_email_check/) | 13.0.1.1.0 |  | Validate email address field
 [partner_employee_quantity](partner_employee_quantity/) | 13.0.1.0.0 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) | Know how many employees a partner has
-[partner_external_map](partner_external_map/) | 13.0.1.0.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
+[partner_external_map](partner_external_map/) | 13.0.1.1.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 13.0.1.1.0 |  | Add fax number on partner
 [partner_firstname](partner_firstname/) | 13.0.1.0.2 |  | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 13.0.1.2.0 |  | Partner Identification Numbers
