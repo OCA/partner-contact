@@ -33,6 +33,7 @@ msgid "Company group"
 msgstr ""
 
 #. module: partner_company_group
+#: model:ir.actions.act_window,name:partner_company_group.action_open_group_members
 #: model:ir.model.fields,field_description:partner_company_group.field_res_partner__company_group_member_ids
 #: model:ir.model.fields,field_description:partner_company_group.field_res_users__company_group_member_ids
 msgid "Company group members"
@@ -80,4 +81,27 @@ msgstr ""
 #. module: partner_company_group
 #: model:ir.model,name:partner_company_group.model_sale_order
 msgid "Sales Order"
+msgstr ""
+
+#. module: partner_company_group
+#: code:addons/partner_company_group/models/res_partner.py:0
+#, python-format
+msgid ""
+"The company group %s has the pricelist %s, that is different than the "
+"pricelist set on this contact"
+msgstr ""
+
+#. module: partner_company_group
+#: code:addons/partner_company_group/models/res_partner.py:0
+#, python-format
+msgid ""
+"This contact has members of a company group with different pricelists, the members are:\n"
+"%s"
+msgstr ""
+
+#. module: partner_company_group
+#: code:addons/partner_company_group/models/res_partner.py:0
+#: code:addons/partner_company_group/models/res_partner.py:0
+#, python-format
+msgid "Warning"
 msgstr ""

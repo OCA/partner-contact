@@ -6,15 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-07-03 17:19+0000\n"
+"POT-Creation-Date: 2022-04-11 11:02+0000\n"
+"PO-Revision-Date: 2022-04-11 13:05+0200\n"
 "Last-Translator: Sergio Teruel <sergio.teruel@tecnativa.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: partner_company_group
 #: model_terms:ir.ui.view,arch_db:partner_company_group.view_account_invoice_filter
@@ -36,10 +37,11 @@ msgid "Company group"
 msgstr "Grupo compañía"
 
 #. module: partner_company_group
+#: model:ir.actions.act_window,name:partner_company_group.action_open_group_members
 #: model:ir.model.fields,field_description:partner_company_group.field_res_partner__company_group_member_ids
 #: model:ir.model.fields,field_description:partner_company_group.field_res_users__company_group_member_ids
 msgid "Company group members"
-msgstr ""
+msgstr "Miembros del grupo compañía"
 
 #. module: partner_company_group
 #: model:ir.model,name:partner_company_group.model_res_partner
@@ -52,7 +54,7 @@ msgstr "Contacto"
 #: model:ir.model.fields,field_description:partner_company_group.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_company_group.field_sale_order__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre mostrado"
 
 #. module: partner_company_group
 #: model:ir.model.fields,field_description:partner_company_group.field_account_move__id
@@ -60,12 +62,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_company_group.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_company_group.field_sale_order__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_company_group
 #: model:ir.model,name:partner_company_group.model_account_move
 msgid "Journal Entry"
-msgstr ""
+msgstr "Asiento contable"
 
 #. module: partner_company_group
 #: model:ir.model.fields,field_description:partner_company_group.field_account_move____last_update
@@ -73,7 +75,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_company_group.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_company_group.field_sale_order____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación en"
 
 #. module: partner_company_group
 #: model:ir.model,name:partner_company_group.model_crm_lead
@@ -85,5 +87,30 @@ msgstr "Iniciativa / Oportunidad"
 msgid "Sales Order"
 msgstr "Pedido de venta"
 
-#~ msgid "Journal Entries"
-#~ msgstr "Asientos contables"
+#. module: partner_company_group
+#: code:addons/partner_company_group/models/res_partner.py:0
+#, python-format
+msgid ""
+"The company group %s has the pricelist %s, that is different than the "
+"pricelist set on this contact"
+msgstr ""
+"El grupo compañía %s tiene la tarifa %s, que es diferente a la tarifa de "
+"este contacto"
+
+#. module: partner_company_group
+#: code:addons/partner_company_group/models/res_partner.py:0
+#, python-format
+msgid ""
+"This contact has members of a company group with different pricelists, the "
+"members are:\n"
+"%s"
+msgstr ""
+"Este contacto tiene miembros de un grupo compañía con diferentes tarifas, "
+"los miembros son:\n"
+"%s"
+
+#. module: partner_company_group
+#: code:addons/partner_company_group/models/res_partner.py:0
+#, python-format
+msgid "Warning"
+msgstr "Advertencia"
