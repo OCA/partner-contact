@@ -61,7 +61,3 @@ msgid ""
 msgstr ""
 "Esta tarifa se utilizará, en lugar de la por defecto, para las ventas de la "
 "empresa actual"
-
-#, python-format
-#~ msgid "Pricelist field do not support search with the operator '%s'."
-#~ msgstr "El campo Tarifa no soporta búsquedas con el operador '%s'."
