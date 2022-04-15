@@ -5,7 +5,7 @@ from odoo.exceptions import UserError
 from odoo.tests import common
 
 
-class TestPartnerPricelistSearch(common.SavepointCase):
+class TestPartnerPricelistSearch(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
