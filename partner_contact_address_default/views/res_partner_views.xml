@@ -11,14 +11,12 @@
                         <field
                             name="partner_delivery_id"
                             domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'delivery')]"
-                            widget="selection"
                         />
                     </group>
                     <group>
                         <field
                             name="partner_invoice_id"
                             domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'invoice')]"
-                            widget="selection"
                         />
                     </group>
                 </group>
