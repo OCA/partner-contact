@@ -68,6 +68,7 @@ addon | version | maintainers | summary
 [partner_phone_extension](partner_phone_extension/) | 13.0.1.0.0 |  | Partner Phone Number Extension
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 13.0.1.0.0 |  | Track the time and days your partners expect phone calls
 [partner_pricelist_search](partner_pricelist_search/) | 13.0.1.0.0 |  | Partner pricelist search
+[partner_pricelist_tracking](partner_pricelist_tracking/) | 13.0.1.0.0 |  | Track partner pricelist changes
 [partner_priority](partner_priority/) | 13.0.1.0.0 | [![patrickrwilson](https://github.com/patrickrwilson.png?size=30px)](https://github.com/patrickrwilson) | Adds priority to partners.
 [partner_ref_unique](partner_ref_unique/) | 13.0.1.0.0 |  | Add an unique constraint to partner ref field
 [partner_second_lastname](partner_second_lastname/) | 13.0.2.0.0 |  | Have split first and second lastnames
