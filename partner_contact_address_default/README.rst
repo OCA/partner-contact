@@ -66,7 +66,6 @@ Contributors
   * Sergio Teruel
 
 * Giovanni Serra <giovanni@gslab.it>
-* `Trey <https://www.trey.es>`_- Antonio González
 
 Maintainers
 ~~~~~~~~~~~
