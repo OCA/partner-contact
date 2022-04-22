@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-10 01:50+0000\n"
-"PO-Revision-Date: 2022-04-13 14:05+0000\n"
+"PO-Revision-Date: 2022-04-22 12:05+0000\n"
 "Last-Translator: pablontura <pablo.ruiz@qubiq.es>\n"
 "Language-Team: Catalan (https://www.transifex.com/oca/teams/23907/ca/)\n"
 "Language: ca\n"
@@ -21,13 +21,12 @@ msgstr ""
 
 #. module: base_location_geonames_import
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
-#, fuzzy, python-format
+#, python-format
 msgid "%d could not be deleted %"
 msgstr "%d No s'ha pogut suprimir %"
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
-#, fuzzy
 msgid ""
 ", create new location entries if not found already in the system, and "
 "<b>delete missing entries</b> from new file."
@@ -42,7 +41,6 @@ msgstr "Cancel·la"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,help:base_location_geonames_import.field_city_zip_geonames_import__letter_case
-#, fuzzy
 msgid ""
 "Converts retreived city and state names to Title Case (upper case on each "
 "first letter of a word) or Upper Case (all letters upper case)."
@@ -93,13 +91,13 @@ msgstr "Columna del codi de l'estat dels geonoms"
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_name_column
 msgid "Geonames State Name Column"
-msgstr ""
+msgstr "Columna del nom de l'estat dels geonoms"
 
 #. module: base_location_geonames_import
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
-msgstr ""
+msgstr "S'ha produït un error %d al intentar baixar el fitxer %s."
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__id
@@ -109,19 +107,19 @@ msgstr "ID"
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "Import"
-msgstr ""
+msgstr "Importar"
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_city_zip_geonames_import
 msgid "Import City Zips from Geonames"
-msgstr ""
+msgstr "Importar codis postal de Geonames"
 
 #. module: base_location_geonames_import
 #: model:ir.actions.act_window,name:base_location_geonames_import.city_zip_geonames_import_action
 #: model:ir.ui.menu,name:base_location_geonames_import.city_zip_geonames_import_menu
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "Import from Geonames"
-msgstr ""
+msgstr "Importar des de Geonames"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import____last_update
@@ -141,24 +139,24 @@ msgstr "Darrera Actualització el"
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__letter_case
 msgid "Letter Case"
-msgstr ""
+msgstr "Lletra majúscula"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields.selection,name:base_location_geonames_import.selection__city_zip_geonames_import__letter_case__title
 msgid "Title Case"
-msgstr ""
+msgstr "Lletra inicial majúscula"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields.selection,name:base_location_geonames_import.selection__city_zip_geonames_import__letter_case__unchanged
 msgid "Unchanged"
-msgstr ""
+msgstr "Sense canvis"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields.selection,name:base_location_geonames_import.selection__city_zip_geonames_import__letter_case__upper
 msgid "Upper Case"
-msgstr ""
+msgstr "Majúscula"
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "geonames.org"
-msgstr ""
+msgstr "geonames.org"
