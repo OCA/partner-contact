@@ -6,107 +6,111 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2022-04-22 12:05+0000\n"
+"Last-Translator: pablontura <pablo.ruiz@qubiq.es>\n"
 "Language-Team: none\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Acció necessària"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__active
 msgid "Active"
-msgstr ""
+msgstr "Actiu"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Activitats"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_exception_decoration
+#, fuzzy
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Activitat Excepció Decoració"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Estat de l'activitat"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icona de tipus d'activitat"
 
 #. module: animal
 #: model:ir.model,name:animal.model_animal
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_form
 msgid "Animal"
-msgstr ""
+msgstr "Animal"
 
 #. module: animal
 #: model:ir.model,name:animal.model_animal_breed
 msgid "Animal Breeds"
-msgstr ""
+msgstr "Races d'Animals"
 
 #. module: animal
 #: model:ir.model,name:animal.model_animal_color
 msgid "Animal Colors"
-msgstr ""
+msgstr "Colors d'animals"
 
 #. module: animal
 #: model:ir.model,name:animal.model_animal_species
 msgid "Animal Species"
-msgstr ""
+msgstr "Espècies d'animal"
 
 #. module: animal
 #: model:ir.actions.act_window,name:animal.action_animal
 #: model:ir.ui.menu,name:animal.animal model:ir.ui.menu,name:animal.root
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Animals"
-msgstr ""
+msgstr "Animals"
 
 #. module: animal
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_form
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Archived"
-msgstr ""
+msgstr "Arxivat"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Recompte de fitxers adjunts"
 
 #. module: animal
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_kanban
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 #. module: animal
 #: model:animal.breed,name:animal.beagle
+#, fuzzy
 msgid "Beagle"
-msgstr ""
+msgstr "Beagle"
 
 #. module: animal
 #: model:animal.species,name:animal.bird
 msgid "Bird"
-msgstr ""
+msgstr "Ocell"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__birth_date
 msgid "Birth Date"
-msgstr ""
+msgstr "Data de naixement"
 
 #. module: animal
 #: model:animal.breed,name:animal.boxer
 msgid "Boxer"
-msgstr ""
+msgstr "Boxer"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__breed_id
