@@ -11,14 +11,14 @@
                         <field
                             name="partner_delivery_id"
                             domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'delivery')]"
-                            widget="selection"
+                            options="{'no_open': True, 'no_create': True}"
                         />
                     </group>
                     <group>
                         <field
                             name="partner_invoice_id"
                             domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'invoice')]"
-                            widget="selection"
+                            options="{'no_open': True, 'no_create': True}"
                         />
                     </group>
                 </group>
