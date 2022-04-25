@@ -14,19 +14,18 @@ def set_default_map_settings(cr, registry):
     The default method on the field can't be used, because it would be executed
     before loading map_website_data.xml, so it would not be able to set a
     value"""
-    with api.Environment.manage():
-        env = api.Environment(cr, SUPERUSER_ID, {})
-        user_model = env["res.users"]
-        users = user_model.search([("context_map_website_id", "=", False)])
-        logger.info("Updating user settings for maps...")
-        users.write(
-            {
-                "context_map_website_id": user_model._default_map_website().id,
-                "context_route_map_website_id": (
-                    user_model._default_route_map_website().id
-                ),
-            }
-        )
+    env = api.Environment(cr, SUPERUSER_ID, {})
+    user_model = env["res.users"]
+    users = user_model.search([("context_map_website_id", "=", False)])
+    logger.info("Updating user settings for maps...")
+    users.write(
+        {
+            "context_map_website_id": user_model._default_map_website().id,
+            "context_route_map_website_id": (
+                user_model._default_route_map_website().id
+            ),
+        }
+    )
     # Update the starting partner this way that is faster
     cr.execute(
         """
