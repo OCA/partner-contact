@@ -7,3 +7,7 @@
   * Pedro M. Baeza
   * Ernesto Tejeda
   * João Marques
+
+* `Sygel <http://www.sygel.es>`__:
+
+  * Manuel Regidor <manuel.regidor@sygel.es>
