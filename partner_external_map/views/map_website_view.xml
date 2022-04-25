@@ -30,7 +30,7 @@
         <field name="name">map.website.tree</field>
         <field name="model">map.website</field>
         <field name="arch" type="xml">
-            <tree string="Map Websites">
+            <tree>
                 <field name="sequence" widget="handle" />
                 <field name="name" />
                 <field name="address_url" />
