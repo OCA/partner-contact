@@ -25,6 +25,31 @@ class ResPartnerRelationType(models.Model):
     _description = 'Partner Relation Type'
     _order = 'name'
 
+    @api.model_cr_context
+    def _auto_init(self):
+        """
+        Les types de relation ont été crées par l'admin de ofbase10.
+        Ont leur assigne un xml_id pour pouvoir les utiliser dans ce module"""
+        cr = self._cr
+        brought_by = self.env.ref('partner_multi_relation.brought_by_relation_type', raise_if_not_found=False)
+        parent_of = self.env.ref('partner_multi_relation.parent_of_relation_type', raise_if_not_found=False)
+
+        if not brought_by:
+            brought_by = self.env['res.partner.relation.type'].search([('name', '=', 'Est apporté par')])
+            if brought_by:
+                cr.execute(
+                    """ INSERT INTO ir_model_data (name, date_init, date_update, module, model, res_id)
+                    VALUES (%s, (now() at time zone 'UTC'), (now() at time zone 'UTC'), %s, %s, %s) """,
+                    ('brought_by_relation_type', self._context['module'], 'res.partner.relation.type', brought_by.id))
+        if not parent_of:
+            parent_of = self.env['res.partner.relation.type'].search([('name', '=', 'Est parent de')])
+            if parent_of:
+                cr.execute(
+                    """ INSERT INTO ir_model_data (name, date_init, date_update, module, model, res_id)
+                    VALUES (%s, (now() at time zone 'UTC'), (now() at time zone 'UTC'), %s, %s, %s) """,
+                    ('parent_of_relation_type', self._context['module'], 'res.partner.relation.type', parent_of.id))
+        return super(ResPartnerRelationType, self)._auto_init()
+
     name = fields.Char(
         string='Name',
         required=True,

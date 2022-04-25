@@ -16,6 +16,7 @@
         "data/demo.xml",
     ],
     "data": [
+        "data/data.xml",
         "views/res_partner_relation_all.xml",
         'views/res_partner.xml',
         'views/res_partner_relation_type.xml',

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+    <!-- Partner relation types -->
+    <record id="brought_by_relation_type" model="res.partner.relation.type">
+        <field name="name">Est apporté par</field>
+        <field name="name_inverse">Est prescripteur de</field>
+    </record>
+
+    <record id="parent_of_relation_type" model="res.partner.relation.type">
+        <field name="name">Est parent de</field>
+        <field name="name_inverse">Est enfant de</field>
+    </record>
+
+</odoo>
