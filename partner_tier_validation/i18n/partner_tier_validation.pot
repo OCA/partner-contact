@@ -72,6 +72,11 @@ msgid "Rejected"
 msgstr ""
 
 #. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__rejected_message
+msgid "Rejected Message"
+msgstr ""
+
+#. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__reviewer_ids
 msgid "Reviewers"
 msgstr ""
@@ -82,6 +87,11 @@ msgid "Tier Definition"
 msgstr ""
 
 #. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__to_validate_message
+msgid "To Validate Message"
+msgstr ""
+
+#. module: partner_tier_validation
 #: model:tier.definition,name:partner_tier_validation.partner_tier_definition_company_only
 msgid "Validate New Company"
 msgstr ""
@@ -89,6 +99,11 @@ msgstr ""
 #. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__validated
 msgid "Validated"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__validated_message
+msgid "Validated Message"
 msgstr ""
 
 #. module: partner_tier_validation
