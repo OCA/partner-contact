@@ -33,7 +33,7 @@ addon | version | maintainers | summary
 [partner_bank_sort_code](partner_bank_sort_code/) | 13.0.1.0.1 | [![rousseldenis](https://github.com/rousseldenis.png?size=30px)](https://github.com/rousseldenis) | Adds a field in banks to manage Sort Codes
 [partner_capital](partner_capital/) | 13.0.1.0.1 |  | Partners Capital
 [partner_coc](partner_coc/) | 13.0.1.0.0 |  | Adds field 'Chamber Of Commerce Registration Number'
-[partner_company_group](partner_company_group/) | 13.0.1.3.0 |  | Adds the possibility to add a company group to a company
+[partner_company_group](partner_company_group/) | 13.0.1.3.1 |  | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 13.0.1.0.0 |  | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 13.0.1.0.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
 [partner_contact_address_default](partner_contact_address_default/) | 13.0.1.1.0 |  | Set a default delivery and invoice address for contacts
