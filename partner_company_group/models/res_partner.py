@@ -32,10 +32,10 @@ class Contact(models.Model):
                 "message": _(
                     "The company group %s has the pricelist %s, that is different than"
                     " the pricelist set on this contact"
-                    % (
-                        self.company_group_id.display_name,
-                        self.company_group_id.property_product_pricelist.display_name,
-                    )
+                )
+                % (
+                    self.company_group_id.display_name,
+                    self.company_group_id.property_product_pricelist.display_name,
                 ),
             }
         return res
@@ -55,12 +55,13 @@ class Contact(models.Model):
             )
             members_str = ""
             for member in company_members:
-                members_str += _("\t- %s\n" % member.display_name)
+                members_str += "\t- %s\n" % member.display_name
             res["warning"] = {
                 "title": _("Warning"),
                 "message": _(
                     "This contact has members of a company group with"
-                    " different pricelists, the members are:\n%s" % members_str
-                ),
+                    " different pricelists, the members are:\n%s"
+                )
+                % members_str,
             }
         return res
