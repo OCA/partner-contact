@@ -9,7 +9,7 @@ class ResPartner(models.Model):
     _inherit = ["res.partner", "tier.validation"]
 
     _tier_validation_buttons_xpath = "/form/header/field[@name='state']"
-    _state_from = ["draft"]
+    _state_from = ["draft", "cancel"]
     _state_to = ["confirmed"]
     _cancel_state = ["inactive"]
     _tier_validation_manual_config = False
@@ -45,6 +45,6 @@ class ResPartner(models.Model):
             stage = self.env["res.partner.stage"].browse(stage_id)
             vals["state"] = stage.state
         res = super().write(vals)
-        if "stage_id" in vals:
+        if "stage_id" in vals and vals.get("stage_id") in self._state_from:
             self.restart_validation()
         return res
