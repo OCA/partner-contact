@@ -118,7 +118,7 @@ class ResPartner(models.Model):
     def _check_name(self):
         """Ensure at least one name is set."""
         try:
-            super(ResPartner, self)._check_name()
+            return super(ResPartner, self)._check_name()
         except exceptions.EmptyNamesError:
             for partner in self:
                 if not partner.lastname2:
