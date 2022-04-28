@@ -88,7 +88,7 @@ class PersonCase(TransactionCase):
 
     def tearDown(self):
         try:
-            new = self.env[self.model].with_context(self.context).create(self.params)
+            new = self.env[self.model].with_context(**self.context).create(self.params)
 
             # Check that each individual field matches
             self.assertEqual(self.firstname, new.firstname, "First name saved badly.")
