@@ -5,10 +5,7 @@
 <odoo>
     <record id="partner_simple_form" model="ir.ui.view">
         <field name="model">res.partner</field>
-        <field
-            name="inherit_id"
-            ref="partner_firstname.view_partner_simple_form_firstname"
-        />
+        <field name="inherit_id" ref="partner_firstname.view_partner_simple_form" />
         <field name="arch" type="xml">
             <field name="firstname" position="attributes">
                 <attribute name="attrs">
@@ -32,7 +29,7 @@
     </record>
     <record id="partner_form" model="ir.ui.view">
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="partner_firstname.view_partner_form_firstname" />
+        <field name="inherit_id" ref="partner_firstname.view_partner_form" />
         <field name="arch" type="xml">
             <!-- Main form -->
             <field name="firstname" position="attributes">
