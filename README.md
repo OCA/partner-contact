@@ -74,7 +74,7 @@ addon | version | maintainers | summary
 [partner_ref_unique](partner_ref_unique/) | 14.0.1.0.0 |  | Add an unique constraint to partner ref field
 [partner_second_lastname](partner_second_lastname/) | 14.0.1.0.0 |  | Have split first and second lastnames
 [partner_stage](partner_stage/) | 14.0.2.1.1 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Add lifecycle Stages to Partners
-[partner_tier_validation](partner_tier_validation/) | 14.0.3.0.1 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Support a tier validation process for Contacts
+[partner_tier_validation](partner_tier_validation/) | 14.0.3.0.2 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Support a tier validation process for Contacts
 [partner_title_order](partner_title_order/) | 14.0.1.0.0 |  | Makes partner title sortable by sequence
 [partner_tz](partner_tz/) | 14.0.1.0.0 |  | Remove partner timezone default value and display on form
 [partner_vat_unique](partner_vat_unique/) | 14.0.1.0.0 |  | Module to make the VAT number unique for customers and suppliers.
