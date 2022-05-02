@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2018-01-03 20:26+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2022-05-02 18:05+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model,name:partner_contact_in_several_companies.model_ir_actions_act_window
@@ -26,7 +27,7 @@ msgstr ""
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Address"
-msgstr ""
+msgstr "Indirizzo"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.actions.act_window,name:partner_contact_in_several_companies.action_partner_form
