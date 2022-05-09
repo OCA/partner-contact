@@ -7,3 +7,4 @@
 * Simone Orsi <simone.orsi@camptocamp.com>
 * Dennis Sluijk <d.sluijk@onestein.nl>
 * Phuc Tran Thanh <phuc@trobz.com>
+* Freni Patel <fpatel@opensourceintegrators.com>

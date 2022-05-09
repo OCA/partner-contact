@@ -123,14 +123,11 @@ class ResPartner(models.Model):
                     id_number.active = False
             # Guard against writing wrong records.
             else:
-                raise ValidationError(
-                    _(
-                        "This %s has multiple IDs of this type (%s), so a write "
-                        "via the %s field is not possible. In order to fix this, "
-                        "please use the IDs tab."
-                    )
-                    % (record._name, category_code, field_name)
+                msg = "This {} has multiple IDs of this type {}, so a write via the {} field is\
+not possible. In order to fix this, please use the IDs tab.".format(
+                    record._name, category_code, field_name
                 )
+                raise ValidationError(_(msg))
 
     @api.model
     def _search_identification(self, category_code, operator, value):

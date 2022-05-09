@@ -50,11 +50,8 @@ class ResPartnerIdNumber(models.Model):
         help="Issued date. For example, date when person approved his driving "
         "exam, 21/10/2009",
     )
-    valid_from = fields.Date(
-        string="Valid from", help="Validation period stating date."
-    )
+    valid_from = fields.Date(help="Validation period stating date.")
     valid_until = fields.Date(
-        string="Valid until",
         help="Expiration date. For example, date when person needs to renew "
         "his driver license, 21/10/2019",
     )
@@ -67,7 +64,7 @@ class ResPartnerIdNumber(models.Model):
             ("close", "Expired"),
         ]
     )
-    active = fields.Boolean(string="Active", default=True)
+    active = fields.Boolean(default=True)
 
     @api.model
     def default_get(self, fields):

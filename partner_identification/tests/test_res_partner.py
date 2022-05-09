@@ -7,7 +7,7 @@ from odoo.tests import common
 from .fake_models import ResPartner, setup_test_model, teardown_test_model
 
 
-class TestResPartner(common.SavepointCase):
+class TestResPartner(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -37,7 +37,7 @@ class TestResPartner(common.SavepointCase):
     @classmethod
     def tearDownClass(cls):
         teardown_test_model(cls.env, ResPartner)
-        super().tearDownClass()
+        return super().tearDownClass()
 
     def test_compute_identification(self):
         """It should set the proper field to the proper ID name."""
