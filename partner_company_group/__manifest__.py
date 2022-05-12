@@ -10,6 +10,8 @@
     "depends": ["base", "account", "crm", "sale"],
     "website": "https://github.com/OCA/partner-contact",
     "data": [
+        "reports/account_invoice_report.xml",
+        "reports/sale_report.xml",
         "views/opportunity_view.xml",
         "views/contact_view.xml",
         "views/sale_order_view.xml",
