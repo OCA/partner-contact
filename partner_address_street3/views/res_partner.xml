@@ -16,13 +16,6 @@
                     attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
                 />
         </xpath>
-        <xpath expr='//field[@name="child_ids"]' position="attributes">
-          <attribute
-                    name="context"
-                    operation="python_dict"
-                    key="default_street3"
-                >street3</attribute>
-        </xpath>
         <xpath
                 expr="/form//field[@name='child_ids']/form//field[@name='street2']"
                 position="after"
