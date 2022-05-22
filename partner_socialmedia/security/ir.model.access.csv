@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_res_partner_socialmedia_group_user","res.partner.socialmedia","model_res_partner_socialmedia","base.group_user",1,0,0,0
+"access_res_partner_socialmedia_group_partner_manager","res.partner.socialmedia","model_res_partner_socialmedia","base.group_partner_manager",1,1,1,1
+"access_res_partner_socialmedia_platform_group_user","res.partner.socialmedia_platform","model_res_partner_socialmedia_platform","base.group_user",1,0,0,0
+"access_res_partner_socialmedia_platform_group_partner_manager","res.partner.socialmedia_platform","model_res_partner_socialmedia_platform","base.group_partner_manager",1,1,1,1

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_partner_socialmedia_platform_form" model="ir.ui.view">
+        <field name="name">res.partner.socialmedia_platform.form</field>
+        <field name="model">res.partner.socialmedia_platform</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Partner Social Media Platforms">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_partner_socialmedia_platform_tree" model="ir.ui.view">
+        <field name="name">res.partner.socialmedia_platform.tree</field>
+        <field name="model">res.partner.socialmedia_platform</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="action_partner_socialmedia_platform" model="ir.actions.act_window">
+        <field name="name">Partner Social Media Platforms</field>
+        <field name="res_model">res.partner.socialmedia_platform</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        action="action_partner_socialmedia_platform"
+        id="menu_partner_socialmedia_platform"
+        parent="contacts.res_partner_menu_config"
+    />
+</odoo>
