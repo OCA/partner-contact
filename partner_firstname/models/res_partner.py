@@ -4,7 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 import logging
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 
 from .. import exceptions
 
@@ -30,6 +30,12 @@ class ResPartner(models.Model):
     def create(self, vals):
         """Add inverted names at creation if unavailable."""
         context = dict(self.env.context)
+        is_contact_copied = (
+            context.get("copy") and vals.get("firstname") and not vals.get("is_company")
+        )
+        if is_contact_copied and "name" in vals:
+            vals.pop("name", None)
+            context.pop("default_name", None)
         name = vals.get("name", context.get("default_name"))
 
         if name is not None:
@@ -57,6 +63,10 @@ class ResPartner(models.Model):
         ignored in :meth:`~.create` because it also copies explicitly firstname
         and lastname fields.
         """
+        if default is None:
+            default = {}
+        if self.firstname and not self.is_company:
+            default["firstname"] = _("%s (copy)", self.firstname)
         return super(ResPartner, self.with_context(copy=True)).copy(default)
 
     @api.model
