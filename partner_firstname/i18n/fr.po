@@ -21,6 +21,7 @@ msgstr ""
 "X-Generator: Weblate 3.6.1\n"
 
 #. module: partner_firstname
+#: code:addons/partner_firstname/models/res_partner.py:0
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
 msgid "%s (copy)"
@@ -42,6 +43,13 @@ msgid "Contacts require a name."
 msgstr "Le nom est obligatoire sur les contacts."
 
 #. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:0
 #, python-format
 msgid "Error(s) with partner %d's name."
@@ -52,6 +60,20 @@ msgstr "Erreur(s) avec le num du contact %d."
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__firstname
 msgid "First name"
 msgstr "Prénom"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__id
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner____last_update
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users____last_update
+msgid "Last Modified on"
+msgstr ""
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
