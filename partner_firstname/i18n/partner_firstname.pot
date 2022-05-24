@@ -14,6 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_firstname
+#: code:addons/partner_firstname/models/res_partner.py:0
 #: code:addons/partner_firstname/models/res_users.py:0
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
