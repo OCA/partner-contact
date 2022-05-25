@@ -197,3 +197,33 @@ class UserCase(PersonCase, MailInstalled):
         # Skip if ``mail`` is installed
         if not self.mail_installed():
             super(UserCase, self).tearDown()
+
+
+class TestRecalculateNames(TransactionCase):
+    def setUp(self):
+        super().setUp()
+        self.config_settings = self.env["res.config.settings"].create({})
+
+    def test_recalculate_names(self):
+        firstname = "Xavier De Jesús"
+        lastname = "Payen"
+        lastname2 = "Sandoval"
+        correct_names = {
+            "first_last": f"{firstname} {lastname} {lastname2}",
+            "last_first": f"{lastname} {lastname2} {firstname}",
+            "last_first_comma": f"{lastname} {lastname2}, {firstname}",
+        }
+        partner = self.env["res.partner"].create(
+            {
+                "firstname": firstname,
+                "lastname": lastname,
+                "lastname2": lastname2,
+            }
+        )
+        for order in correct_names:
+            self.config_settings.partner_names_order = order
+            self.config_settings.action_recalculate_partners_name()
+            self.assertEqual(partner.name, correct_names[order])
+            self.assertEqual(partner.firstname, firstname)
+            self.assertEqual(partner.lastname, lastname)
+            self.assertEqual(partner.lastname2, lastname2)
