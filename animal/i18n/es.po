@@ -72,7 +72,6 @@ msgstr "Especies"
 #: model:ir.actions.act_window,name:animal.action_animal
 #: model:ir.ui.menu,name:animal.animal model:ir.ui.menu,name:animal.root
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
-#: model_terms:ir.ui.view,arch_db:animal.view_animal_tree
 msgid "Animals"
 msgstr "Animales"
 
@@ -124,7 +123,6 @@ msgstr "Raza"
 #: model:ir.actions.act_window,name:animal.action_animal_breed
 #: model:ir.model.fields,field_description:animal.field_animal_species__breed_ids
 #: model:ir.ui.menu,name:animal.breed
-#: model_terms:ir.ui.view,arch_db:animal.view_animal_breed_tree
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
 msgid "Breeds"
 msgstr "Razas"
@@ -258,11 +256,6 @@ msgid "Followers"
 msgstr "Seguidores"
 
 #. module: animal
-#: model:ir.model.fields,field_description:animal.field_animal__message_channel_ids
-msgid "Followers (Channels)"
-msgstr "Seguidores (Canales)"
-
-#. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Seguidores (Contactos)"
@@ -302,6 +295,11 @@ msgstr "Gran Danés"
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Group By"
 msgstr "Agrupar por"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__has_message
+msgid "Has Message"
+msgstr ""
 
 #. module: animal
 #: model:ir.model.fields.selection,name:animal.selection__animal__gender__hermaphrodite
@@ -537,7 +535,6 @@ msgstr "Tamaño"
 #: model:ir.ui.menu,name:animal.species
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
-#: model_terms:ir.ui.view,arch_db:animal.view_animal_species_tree
 msgid "Species"
 msgstr "Especies"
 
@@ -594,10 +591,11 @@ msgstr "Peso (en kg)"
 msgid "Yorkshire Terrier"
 msgstr "Yorkshire Terrier"
 
-#. module: animal
-#: model_terms:ir.ui.view,arch_db:animal.view_animal_color_tree
-msgid "colors"
-msgstr "colores"
+#~ msgid "Followers (Channels)"
+#~ msgstr "Seguidores (Canales)"
+
+#~ msgid "colors"
+#~ msgstr "colores"
 
 #~ msgid "Create an animal."
 #~ msgstr "Crear un animal."
