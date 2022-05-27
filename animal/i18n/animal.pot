@@ -564,6 +564,16 @@ msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: animal
+#: model:ir.model.fields,help:animal.field_animal__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__weight
 msgid "Weight (in kg)"
 msgstr ""
