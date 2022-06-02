@@ -9,10 +9,6 @@
     "category": "CRM",
     "license": "AGPL-3",
     "installable": True,
-    "depends": [
-        "base",
-    ],
-    "data": [
-        "views/res_partner_view.xml",
-    ],
+    "depends": ["base"],
+    "data": ["views/res_partner_view.xml"],
 }
