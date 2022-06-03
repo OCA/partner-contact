@@ -14,19 +14,19 @@ Partner Manual Rank
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/14.0/partner_manual_rank
+    :target: https://github.com/OCA/partner-contact/tree/15.0/partner_manual_rank
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-14-0/partner-contact-14-0-partner_manual_rank
+    :target: https://translation.odoo-community.org/projects/partner-contact-15-0/partner-contact-15-0-partner_manual_rank
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
-    :target: https://runbot.odoo-community.org/runbot/134/14.0
+    :target: https://runbot.odoo-community.org/runbot/134/15.0
     :alt: Try me on Runbot
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
-This module adds the ability to manually flag partners as customer or supplier
-from the partner form view.
+This module restores the functionality of <= 12.0 to set contacts as customer or
+vendor, and allows users to create custom filters on a more user-friendly manner.
 
 **Table of contents**
 
@@ -39,7 +39,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_manual_rank%0Aversion:%2014.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_manual_rank%0Aversion:%2015.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -50,12 +50,21 @@ Authors
 ~~~~~~~
 
 * ForgeFlow
+* Vauxoo
 
 Contributors
 ~~~~~~~~~~~~
 
 * Miquel Raïch <miquel.raich@forgeflow.com>
 * Francesco Apruzzese <cescoap@gmail.com>
+* Francisco Luna <fluna@vauxoo.com>
+* Luis González <lgonzalez@vauxoo.com>
+
+Other credits
+~~~~~~~~~~~~~
+
++ ForgeFlow, S.L.
++ Vauxoo
 
 Maintainers
 ~~~~~~~~~~~
@@ -70,6 +79,17 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/14.0/partner_manual_rank>`_ project on GitHub.
+.. |maintainer-luisg123v| image:: https://github.com/luisg123v.png?size=40px
+    :target: https://github.com/luisg123v
+    :alt: luisg123v
+.. |maintainer-frahikLV| image:: https://github.com/frahikLV.png?size=40px
+    :target: https://github.com/frahikLV
+    :alt: frahikLV
+
+Current `maintainers <https://odoo-community.org/page/maintainer-role>`__:
+
+|maintainer-luisg123v| |maintainer-frahikLV| 
+
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/15.0/partner_manual_rank>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
