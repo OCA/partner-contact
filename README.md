@@ -32,11 +32,11 @@ addon | version | maintainers | summary
 [partner_contact_age_range](partner_contact_age_range/) | 15.0.1.0.0 |  | Age Range for Contact's
 [partner_contact_birthdate](partner_contact_birthdate/) | 15.0.1.0.0 |  | Contact's birthdate
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 15.0.1.0.0 |  | Add a page to contacts form to put personal information
-[partner_customer_supplier](partner_customer_supplier/) | 15.0.1.0.0 | [![luisg123v](https://github.com/luisg123v.png?size=30px)](https://github.com/luisg123v) [![frahikLV](https://github.com/frahikLV.png?size=30px)](https://github.com/frahikLV) | Adds the fields 'customer' and 'supplier' to the res.partner model.
 [partner_external_map](partner_external_map/) | 15.0.1.0.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 15.0.1.0.0 |  | Add fax number on partner
 [partner_firstname](partner_firstname/) | 15.0.1.0.0 |  | Split first name and last name for non company partners
 [partner_industry_secondary](partner_industry_secondary/) | 15.0.1.0.0 |  | Add secondary partner industries
+[partner_manual_rank](partner_manual_rank/) | 15.0.1.0.0 | [![luisg123v](https://github.com/luisg123v.png?size=30px)](https://github.com/luisg123v) [![frahikLV](https://github.com/frahikLV.png?size=30px)](https://github.com/frahikLV) | Be able to manually flag partners as customer or supplier.
 [partner_multi_relation](partner_multi_relation/) | 15.0.1.0.0 |  | Partner Relations
 [partner_phone_secondary](partner_phone_secondary/) | 15.0.1.0.0 | [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Adds a secondary phone number on partners
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 15.0.1.0.0 |  | Track the time and days your partners expect phone calls
