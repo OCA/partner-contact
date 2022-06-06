@@ -22,16 +22,6 @@ msgid "Contact"
 msgstr "Contacto"
 
 #. module: partner_manual_rank
-#: model:ir.model.fields,field_description:partner_manual_rank.field_res_partner__display_name
-msgid "Display Name"
-msgstr "Nome a Exibir"
-
-#. module: partner_manual_rank
-#: model:ir.model.fields,field_description:partner_manual_rank.field_res_partner__id
-msgid "ID"
-msgstr "ID"
-
-#. module: partner_manual_rank
 #: model:ir.model.fields,field_description:partner_manual_rank.field_res_partner__is_customer
 #: model:ir.model.fields,field_description:partner_manual_rank.field_res_users__is_customer
 msgid "Is a Customer"
@@ -44,6 +34,16 @@ msgid "Is a Supplier"
 msgstr "É Fornecedor"
 
 #. module: partner_manual_rank
-#: model:ir.model.fields,field_description:partner_manual_rank.field_res_partner____last_update
-msgid "Last Modified on"
-msgstr "Última Modificação em"
+#: code:addons/partner_manual_rank/models/res_partner.py:0
+#, python-format
+msgid "Operation not supported"
+msgstr ""
+
+#~ msgid "Display Name"
+#~ msgstr "Nome a Exibir"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificação em"
