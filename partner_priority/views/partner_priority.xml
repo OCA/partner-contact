@@ -5,7 +5,7 @@
         <field name="name">Priority List</field>
         <field name="model">partner.priority</field>
         <field name="arch" type="xml">
-            <tree string="Priority">
+            <tree>
                 <field name="sequence" widget="handle" />
                 <field name="name" />
                 <field name="description" />
