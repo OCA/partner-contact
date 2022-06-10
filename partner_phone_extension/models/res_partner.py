@@ -9,4 +9,4 @@ from odoo import fields, models
 class Partner(models.Model):
     _inherit = "res.partner"
 
-    phone_extension = fields.Char("Phone Extension", help="Phone Number Extension.")
+    phone_extension = fields.Char(help="Phone Number Extension.")
