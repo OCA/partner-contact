@@ -39,3 +39,14 @@ class TestPartnerContactAddressDefault(common.TransactionCase):
         res = self.partner_child_delivery2.address_get(["delivery", "invoice"])
         self.assertEqual(res["delivery"], self.partner_child_delivery2.id)
         self.assertEqual(res["invoice"], self.partner_child_delivery2.id)
+
+    def test_contact_address_archived(self):
+        self.partner.partner_delivery_id = self.partner_child_delivery2
+        self.partner.partner_invoice_id = self.partner_child_invoice
+        self.partner_child_invoice.write({"active": False})
+        self.partner_child_delivery2.write({"active": False})
+        res = self.partner.address_get(["delivery", "invoice"])
+        # As partner_child_delivery2 is archived, even though it is set as
+        # partner_delivery_id it should fall back to partner_child_delivery1 here:
+        self.assertEqual(res["delivery"], self.partner_child_delivery1.id)
+        self.assertEqual(res["invoice"], self.partner.id)
