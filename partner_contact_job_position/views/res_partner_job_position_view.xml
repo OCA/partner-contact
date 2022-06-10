@@ -9,7 +9,7 @@
         <field name="name">Job position tree</field>
         <field name="model">res.partner.job_position</field>
         <field name="arch" type="xml">
-            <tree string="Job positions" editable="top">
+            <tree editable="top">
                 <field name="name" />
             </tree>
         </field>
