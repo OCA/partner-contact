@@ -1,0 +1,63 @@
+<odoo>
+    <record id="osi_address_validation_view_form" model="ir.ui.view">
+        <field name="name">OSI Address Validation Form Wizard</field>
+        <field name="model">osi.address.validation</field>
+        <field name="arch" type="xml">
+            <form string="OSI Address Validation">
+                <sheet>
+                    <group>
+                        <group string="Original Address">
+                            <field name="original_street"/>
+                            <field name="original_street2"/>
+                            <field name="original_city"/>
+                            <field name="original_state"/>
+                            <field name="original_zip"/>
+                            <field name="original_country" invisible="1" />
+                        </group>
+                        <group string="Validated Address">
+                            <field name="street"/>
+                            <field name="street2"/>
+                            <field name="city"/>
+                            <field name="state"/>
+                            <field name="zip"/>
+                            <field name="country" invisible="1"/>
+                        </group>
+                        <!-- <group>
+                            <field name="address_match" widget="boolean_toggle" readonly="1"/>
+                            <field name="city_state_zip_match" widget="boolean_toggle" readonly="1" />
+                        </group> -->
+                        <!-- <group>
+                            <div class="alert alert-info info_icon pull-left" role="status">
+                            <span class="fa fa-lightbulb-o fa-lg">
+                            </span>
+                             &amp;nbsp;
+                            <strong>
+                                <field name="address_result" readonly="1"/>
+                            </strong>
+                        </div>
+                        </group> -->
+                    </group>
+                    <footer>
+                    <button
+                        name="accept_validate_address"
+                        type="object"
+                        string="Accept Validate Address"
+                        class="oe_highlight"
+                    />
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="osi_address_validation_action" model="ir.actions.act_window">
+        <field name="name">OSI Address Validation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">osi.address.validation</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="osi_address_validation_view_form" />
+        <field name="target">new</field>
+    </record>
+</odoo>
