@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="usps_address_validation_btn_form_view" model="ir.ui.view">
+        <field name="name">USPS Address Validation</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <button
+                        name="button_usps_address_validation"
+                        string="Validate"
+                        type="object"
+                        icon="fa-cogs"
+                        colspan="2"
+                        context="{'from_validate_button': True}"
+                />
+            </xpath>
+            <xpath expr="//page[last()]"  position="after">
+                <page string="USPS Address Validation" name="usps_address_validation">
+                    <group>
+                        <group>
+                            <field name="usps_date_validation" />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

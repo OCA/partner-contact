@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_usps_address_validation,usps_address_validation,model_usps_address_validation,base.group_user,1,1,1,0
+access_usps_address_validation_manager,manager_usps_address_validation,model_usps_address_validation,base.group_user,1,1,1,1

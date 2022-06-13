@@ -1,0 +1,51 @@
+<!-- Copyright 2022 Open Source Integrators -->
+<!-- # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record id="usps_address_validation_view_form" model="ir.ui.view">
+        <field name="name">USPS Address Validation Form Wizard</field>
+        <field name="model">usps.address.validation</field>
+        <field name="arch" type="xml">
+            <form string="USPS Address Validation">
+                <sheet>
+                    <group>
+                        <group string="Original Address">
+                            <field name="original_street"/>
+                            <field name="original_street2"/>
+                            <field name="original_city"/>
+                            <field name="original_state"/>
+                            <field name="original_zip"/>
+                            <field name="original_country"/>
+                        </group>
+                        <group string="Validated Address">
+                            <field name="street"/>
+                            <field name="street2"/>
+                            <field name="city"/>
+                            <field name="state"/>
+                            <field name="zip"/>
+                            <field name="country"/>
+                        </group>
+                    </group>
+                    <footer>
+                    <button
+                        name="accept_validate_address"
+                        type="object"
+                        string="Accept Validate Address"
+                        class="oe_highlight"
+                    />
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="usps_address_validation_action" model="ir.actions.act_window">
+        <field name="name">USPS Address Validation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">usps.address.validation</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="usps_address_validation_view_form" />
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,2 @@
+- Create a USPS account at https://www.usps.com/business/web-tools-apis/ and get API credentials.
+- In the *General Settings* menu, enter your USPS API credentials under USPS Address Validation Settings

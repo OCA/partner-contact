@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.base.setup</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="0"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//*[@name='integration']" position="inside">
+                <div class="col-12 col-lg-6 o_setting_box" id="usps_address"><div class="o_setting_right_pane" id="usps_settings">
+                <div class="o_form_label">USPS Address Validation Settings</div>
+                <div class="content-group" id="usps_configuration_settings">
+                <div class="mt16 row">
+                <label class="o_form_label col-3 o_light_label" for="usps_username">Username</label>
+                <field name="usps_username"/>
+                <label class="o_form_label col-3 o_light_label" for="usps_password">Password</label>
+                <field name="usps_password"/>
+                <label class="o_form_label col-3 o_light_label" for="usps_api_url">API URL</label>
+                <field name="usps_api_url"/>
+                </div>
+                <div>
+                <a href="https://www.usps.com/business/web-tools-apis/" class="oe_link" target="_blank">
+                <i class="fa fa-arrow-right">
+                </i> Create USPS API account
+                </a></div></div></div></div>
+                </xpath>
+            </field>
+        </record>
+</odoo>
