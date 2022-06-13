@@ -37,3 +37,6 @@ class TestStreet3(TransactionCase):
         # test synchro of street3 on write
         homer.write({"street3": "in OCA we trust"})
         self.assertEqual(bart.street3, "in OCA we trust")
+
+        homer._display_address()
+        self.assertEqual(bart.street3, "in OCA we trust")
