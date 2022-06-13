@@ -38,6 +38,15 @@ class TestStreet3(TransactionCase):
         homer.write({"street3": "in OCA we trust"})
         self.assertEqual(bart.street3, "in OCA we trust")
 
-        homer.write({"street3": "  "})
-        homer._display_address()
-        self.assertEqual(homer.street3, "  ")
+        lisa = self.env["res.partner"].create(
+            {
+                "name": "Lisa Simpson",
+                "city": "Springfield",
+                "street": "742 Evergreen Terrace",
+                "street3": "",
+                "country_id": us_country.id,
+            }
+        )
+
+        res = lisa._display_address()
+        self.assertEqual(res, "742 Evergreen Terrace\nSpringfield  \nUnited States")
