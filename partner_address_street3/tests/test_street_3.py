@@ -38,5 +38,6 @@ class TestStreet3(TransactionCase):
         homer.write({"street3": "in OCA we trust"})
         self.assertEqual(bart.street3, "in OCA we trust")
 
+        homer.write({"street3": "  "})
         homer._display_address()
-        self.assertEqual(bart.street3, "in OCA we trust")
+        self.assertEqual(homer.street3, "  ")
