@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_view_form_syscoon" model="ir.ui.view">
+        <field name="name">res.partner.view.form.inherit.syscoon</field>
+        <field name="model">res.partner</field>
+        <field name="priority">99</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="user_ids" position="replace">
+            </field>
+            <field name="vat" position="after">
+               <field name="user_ids" widget="many2many_tags" readonly='1' />
+            </field>
+        </field>
+    </record>
+</odoo>
