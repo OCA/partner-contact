@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+
+    <record id="partner_rest_api_rule" model="ir.rule">
+        <field name="name">Partner REST API</field>
+        <field name="model_id" ref="base.model_res_partner" />
+        <field
+            name="domain_force"
+        >[('id', 'child_of', [authenticated_partner_id])]</field>
+        <field
+            name="groups"
+            eval="[(4, ref('partner_rest_api.group_partner_rest_api_read')), (4, ref('partner_rest_api.group_partner_rest_api_update'))]"
+        />
+    </record>
+
+</odoo>

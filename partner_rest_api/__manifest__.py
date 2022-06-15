@@ -9,7 +9,11 @@
     "author": "ACSONE SA/NV,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "depends": ["base_rest", "base_rest_pydantic", "extendable"],
-    "data": [],
+    "data": [
+        "security/groups.xml",
+        "security/acl_res_partner.xml",
+        "security/rule_res_partner.xml",
+    ],
     "external_dependencies": {
         "python": [
             "extendable-pydantic",
