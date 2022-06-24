@@ -27,7 +27,7 @@ class ResPartner(models.Model):
             record.age = age
 
     def _search_age(self, operator, value):
-        if operator not in ("=", "!=", "<", "<=", ">", ">=", "in", "not in"):
+        if operator not in ("=", "!=", "<", "<=", ">", ">="):
             return []
         # pylint: disable=sql-injection
         # the value of operator is checked, no risk of injection
