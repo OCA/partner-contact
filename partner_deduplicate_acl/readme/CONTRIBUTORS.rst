@@ -8,5 +8,5 @@
   * Victor M.M. Torres
   * Carlos Roca
   * João Marques
-
+  * César A. Sánchez
 * Kevin Khao <kevin.khao@gmail.com>
