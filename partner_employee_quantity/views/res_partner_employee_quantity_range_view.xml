@@ -9,7 +9,7 @@
         <field name="name">Quantity of employees ranges tree</field>
         <field name="model">res.partner.employee_quantity_range</field>
         <field name="arch" type="xml">
-            <tree string="Ranges by quantity of employees" editable="top">
+            <tree editable="top">
                 <field name="name" />
             </tree>
         </field>
