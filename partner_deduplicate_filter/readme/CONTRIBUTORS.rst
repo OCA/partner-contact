@@ -5,5 +5,6 @@
   * Luis M. Ontalba
   * Victor M.M. Torres
   * João Marques
+  * César A. Sánchez
 
 * Kevin Khao <kevin.khao@gmail.com>
