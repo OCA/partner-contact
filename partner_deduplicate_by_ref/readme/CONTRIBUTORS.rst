@@ -3,3 +3,4 @@
   * Pedro M. Baeza
   * David Vidal
   * Manuel Calero
+  * César A. Sánchez
