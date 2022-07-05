@@ -5,6 +5,7 @@
   * Jairo Llopis
   * David Vidal
   * Pedro M. Baeza
+  * César A. Sánchez
 
 * Nikul Chaudhary <nikulchaudhary2112@gmail.com>
 
