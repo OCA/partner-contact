@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -29,7 +29,6 @@ msgid "Created on"
 msgstr ""
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__display_name
 msgid "Display Name"
 msgstr ""
@@ -53,13 +52,11 @@ msgid "Employee quantity range"
 msgstr ""
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__id
 msgid "ID"
 msgstr ""
 
 #. module: partner_employee_quantity
-#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range____last_update
 msgid "Last Modified on"
 msgstr ""
@@ -93,6 +90,5 @@ msgstr ""
 #. module: partner_employee_quantity
 #: model:ir.actions.act_window,name:partner_employee_quantity.employees_range_action
 #: model:ir.ui.menu,name:partner_employee_quantity.menu_employees_range
-#: model_terms:ir.ui.view,arch_db:partner_employee_quantity.employees_range_tree_view
 msgid "Ranges by quantity of employees"
 msgstr ""
