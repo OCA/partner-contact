@@ -19,6 +19,7 @@ setuptools.setup(
         'odoo-addon-partner_contact_age_range>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_birthdate>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_personal_information_page>=15.0dev,<15.1dev',
+        'odoo-addon-partner_employee_quantity>=15.0dev,<15.1dev',
         'odoo-addon-partner_external_map>=15.0dev,<15.1dev',
         'odoo-addon-partner_fax>=15.0dev,<15.1dev',
         'odoo-addon-partner_firstname>=15.0dev,<15.1dev',
