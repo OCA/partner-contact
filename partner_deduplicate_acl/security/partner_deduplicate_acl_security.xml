@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2016 Tecnativa S.L. - Jairo Llopis
+     Copyright 2016 Tecnativa S.L. - Vicent Cubells
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <!-- New user group category -->
+    <record id="category" model="ir.module.category">
+        <field name="name">Deduplicate Contacts</field>
+    </record>
+    <!-- New user groups -->
+    <record id="group_manually" model="res.groups">
+        <field name="name">Manually</field>
+        <field name="category_id" ref="category" />
+    </record>
+    <record id="group_automatically" model="res.groups">
+        <field name="name">Automatically</field>
+        <field name="category_id" ref="category" />
+        <field name="implied_ids" eval="[(4, ref('group_manually'))]" />
+    </record>
+    <record id="group_unrestricted" model="res.groups">
+        <field name="name">Without restrictions</field>
+        <field name="category_id" ref="category" />
+        <field name="implied_ids" eval="[(4, ref('group_automatically'))]" />
+    </record>
+    <!-- Respect previous behavior -->
+    <record id="base.group_system" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_unrestricted'))]" />
+    </record>
+</odoo>
