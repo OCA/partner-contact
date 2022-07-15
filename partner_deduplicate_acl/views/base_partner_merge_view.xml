@@ -14,7 +14,7 @@
     <menuitem
         id='partner_merge_automatic_menu'
         action='base.action_partner_deduplicate'
-        groups='group_automatically'
+        groups='group_manually'
         parent='base_tools'
     />
 </odoo>
