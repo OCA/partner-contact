@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<odoo>
+
+   <record id="view_res_partner_delivery_count_form" model="ir.ui.view">
+        <field name="name">view.res.partner.delivery.count.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button
+                    type="object"
+                    name="action_view_partner_delivery"
+                    class="oe_stat_button"
+                    icon="fa-truck"
+                >
+                    <field name="delivery_count" widget="statinfo" string="Delivery" />
+                </button>
+            </div>
+        </field>
+    </record>
+
+</odoo>
