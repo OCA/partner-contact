@@ -1,6 +1,7 @@
 
 [![Runboat](https://img.shields.io/badge/runboat-Try%20me-875A7B.png)](https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=14.0)
-[![Build Status](https://travis-ci.com/OCA/partner-contact.svg?branch=14.0)](https://travis-ci.com/OCA/partner-contact)
+[![Pre-commit Status](https://github.com/OCA/partner-contact/actions/workflows/pre-commit.yml/badge.svg?branch=14.0)](https://github.com/OCA/partner-contact/actions/workflows/pre-commit.yml?query=branch%3A14.0)
+[![Build Status](https://github.com/OCA/partner-contact/actions/workflows/test.yml/badge.svg?branch=14.0)](https://github.com/OCA/partner-contact/actions/workflows/test.yml?query=branch%3A14.0)
 [![codecov](https://codecov.io/gh/OCA/partner-contact/branch/14.0/graph/badge.svg)](https://codecov.io/gh/OCA/partner-contact)
 [![Translation Status](https://translation.odoo-community.org/widgets/partner-contact-14-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/partner-contact-14-0/?utm_source=widget)
 
