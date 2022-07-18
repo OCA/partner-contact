@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 ACSONE SA/NV
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.model.access" id="partner_uom_read">
+        <field name="name">partner.uom Read</field>
+        <field name="model_id" ref="model_partner_uom" />
+        <field name="group_id" ref="base.group_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+    <record model="ir.model.access" id="partner_uom_manager">
+        <field name="name">partner.uom Manager</field>
+        <field name="model_id" ref="model_partner_uom" />
+        <field name="group_id" ref="base.group_partner_manager" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- Group to manage visibility -->
+
+    <record id="group_partner_uom" model="res.groups">
+        <field name="name">Partner UOM</field>
+        <field name="comment">Allow to see partner uoms</field>
+        <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+    </record>
+
+</odoo>
