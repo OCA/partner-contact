@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_department_action" model="ir.actions.act_window">
+        <field name="name">Departments</field>
+        <field name="res_model">res.partner.department</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <record id="res_partner_department_tree_view" model="ir.ui.view">
+        <field name="name">CRM department tree</field>
+        <field name="model">res.partner.department</field>
+        <field name="arch" type="xml">
+            <tree string="Departments" editable="top">
+                <field name="name" />
+                <field name="parent_id" />
+            </tree>
+        </field>
+    </record>
+    <record id="res_partner_department_form_view" model="ir.ui.view">
+        <field name="name">CRM department form</field>
+        <field name="model">res.partner.department</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name" />
+                    <field name="parent_id" />
+                    <field name="child_ids" />
+                </group>
+            </form>
+        </field>
+    </record>
+    <menuitem
+        action="res_partner_department_action"
+        id="menu_res_partner_department"
+        parent="contacts.res_partner_menu_config"
+    />
+</odoo>
