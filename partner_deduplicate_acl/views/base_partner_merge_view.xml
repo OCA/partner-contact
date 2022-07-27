@@ -9,7 +9,7 @@
         id='base_tools'
         name='Tools'
         parent='contacts.menu_contacts'
-        sequence="1"
+        sequence="10"
     />
     <menuitem
         id='partner_merge_automatic_menu'
