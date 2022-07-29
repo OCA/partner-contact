@@ -29,6 +29,7 @@ addon | version | maintainers | summary
 [base_partner_sequence](base_partner_sequence/) | 15.0.1.0.2 |  | Sets customer's code from a sequence
 [partner_affiliate](partner_affiliate/) | 15.0.1.0.0 |  | Partner Affiliates
 [partner_contact_access_link](partner_contact_access_link/) | 15.0.1.0.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
+[partner_contact_address_default](partner_contact_address_default/) | 15.0.1.0.0 |  | Set a default delivery and invoice address for contacts
 [partner_contact_age_range](partner_contact_age_range/) | 15.0.1.0.0 |  | Age Range for Contact's
 [partner_contact_birthdate](partner_contact_birthdate/) | 15.0.1.0.0 |  | Contact's birthdate
 [partner_contact_job_position](partner_contact_job_position/) | 15.0.1.0.1 |  | Categorize job positions for contacts
