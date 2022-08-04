@@ -108,6 +108,3 @@ msgstr ""
 #, python-format
 msgid "Warning"
 msgstr ""
-
-#~ msgid "Journal Entries"
-#~ msgstr "会计分录"
