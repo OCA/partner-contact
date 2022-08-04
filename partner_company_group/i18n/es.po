@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-11 11:02+0000\n"
-"PO-Revision-Date: 2022-04-11 13:05+0200\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2022-08-04 18:24+0200\n"
 "Last-Translator: Sergio Teruel <sergio.teruel@tecnativa.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -91,11 +91,11 @@ msgstr "Pedido de venta"
 #: code:addons/partner_company_group/models/res_partner.py:0
 #, python-format
 msgid ""
-"The company group %s has the pricelist %s, that is different than the "
-"pricelist set on this contact"
+"The company group %(name)s has the pricelist %(pricelist)s, that is "
+"different than the pricelist set on this contact"
 msgstr ""
-"El grupo compañía %s tiene la tarifa %s, que es diferente a la tarifa de "
-"este contacto"
+"El grupo compañía %(name)s  tiene la tarifa %(pricelist)s, que es "
+"diferente a la tarifa de este contacto"
 
 #. module: partner_company_group
 #: code:addons/partner_company_group/models/res_partner.py:0
@@ -103,11 +103,11 @@ msgstr ""
 msgid ""
 "This contact has members of a company group with different pricelists, the "
 "members are:\n"
-"%s"
+"%(members)s"
 msgstr ""
 "Este contacto tiene miembros de un grupo compañía con diferentes tarifas, "
 "los miembros son:\n"
-"%s"
+"%(members)s"
 
 #. module: partner_company_group
 #: code:addons/partner_company_group/models/res_partner.py:0

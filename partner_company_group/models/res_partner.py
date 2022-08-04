@@ -27,15 +27,18 @@ class Contact(models.Model):
             and self.company_group_id.property_product_pricelist
             != self.property_product_pricelist
         ):
+            cg = self.company_group_id
             res["warning"] = {
                 "title": _("Warning"),
                 "message": _(
-                    "The company group %s has the pricelist %s, that is different than"
-                    " the pricelist set on this contact"
+                    "The company group %(name)s has the pricelist %(pricelist)s, "
+                    "that is different than the pricelist set on this contact"
                 )
                 % (
-                    self.company_group_id.display_name,
-                    self.company_group_id.property_product_pricelist.display_name,
+                    {
+                        "name": cg.display_name,
+                        "pricelist": cg.property_product_pricelist.display_name,
+                    }
                 ),
             }
         return res
@@ -64,8 +67,8 @@ class Contact(models.Model):
                 "title": _("Warning"),
                 "message": _(
                     "This contact has members of a company group with"
-                    " different pricelists, the members are:\n%s"
+                    " different pricelists, the members are:\n%(members)s"
                 )
-                % members_str,
+                % ({"members": members_str}),
             }
         return res
