@@ -87,8 +87,8 @@ msgstr ""
 #: code:addons/partner_company_group/models/res_partner.py:0
 #, python-format
 msgid ""
-"The company group %s has the pricelist %s, that is different than the "
-"pricelist set on this contact"
+"The company group %(name)s has the pricelist %(pricelist)s, that is "
+"different than the pricelist set on this contact"
 msgstr ""
 
 #. module: partner_company_group
@@ -96,7 +96,7 @@ msgstr ""
 #, python-format
 msgid ""
 "This contact has members of a company group with different pricelists, the members are:\n"
-"%s"
+"%(members)s"
 msgstr ""
 
 #. module: partner_company_group
