@@ -3,11 +3,11 @@
 {
     "name": "Partner Company Group",
     "summary": "Adds the possibility to add a company group to a company",
-    "version": "14.0.1.1.0",
+    "version": "15.0.1.0.0",
     "category": "Sales",
     "author": "Camptocamp SA, Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "depends": ["base", "account", "crm", "sale"],
+    "depends": ["account", "crm", "sale"],
     "website": "https://github.com/OCA/partner-contact",
     "data": [
         "views/opportunity_view.xml",
