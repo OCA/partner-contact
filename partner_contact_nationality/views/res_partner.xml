@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!--   Inherit contacts form view -->
     <record id="view_personal_information_page_nationality" model="ir.ui.view">
         <field name="name">Partner nationality: personal info</field>
         <field name="model">res.partner</field>
