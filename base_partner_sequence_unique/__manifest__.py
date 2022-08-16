@@ -1,8 +1,5 @@
 {
-    "author": (
-        "Odoo Community Association (OCA)",
-        "Aung Ko Ko Lin"
-    ),
+    "author": "Odoo Community Association (OCA),Aung Ko Ko Lin",
     "name": "Base Partner Sequence Unique",
     "version": "13.0.1.0.0",
     "development_status": "Production/Stable",
