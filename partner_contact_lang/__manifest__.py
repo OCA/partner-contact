@@ -5,7 +5,7 @@
 
 {
     "name": "Manage language in contacts",
-    "version": "13.0.1.0.0",
+    "version": "13.0.1.0.1",
     "category": "Sales",
     "license": "AGPL-3",
     "author": "Tecnativa," "Odoo Community Association (OCA)",
