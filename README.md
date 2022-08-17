@@ -1,18 +1,19 @@
-[![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat/134/13.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-partner-contact-134)
-[![Build Status](https://travis-ci.org/OCA/partner-contact.svg?branch=13.0)](https://travis-ci.org/OCA/partner-contact)
-[![Coverage Status](https://coveralls.io/repos/OCA/partner-contact/badge.svg?branch=13.0)](https://coveralls.io/r/OCA/partner-contact?branch=13.0)
 
-OCA partner and contact management modules for Odoo
-===================================================
+[![Runboat](https://img.shields.io/badge/runboat-Try%20me-875A7B.png)](https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=13.0)
+[![Pre-commit Status](https://github.com/OCA/partner-contact/actions/workflows/pre-commit.yml/badge.svg?branch=13.0)](https://github.com/OCA/partner-contact/actions/workflows/pre-commit.yml?query=branch%3A13.0)
+[![Build Status](https://github.com/OCA/partner-contact/actions/workflows/test.yml/badge.svg?branch=13.0)](https://github.com/OCA/partner-contact/actions/workflows/test.yml?query=branch%3A13.0)
+[![codecov](https://codecov.io/gh/OCA/partner-contact/branch/13.0/graph/badge.svg)](https://codecov.io/gh/OCA/partner-contact)
+[![Translation Status](https://translation.odoo-community.org/widgets/partner-contact-13-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/partner-contact-13-0/?utm_source=widget)
 
-This project is meant to gather all community extensions about partner and contact management for Odoo.
+<!-- /!\ do not modify above this line -->
 
-Here you should find community modules that:
+# Odoo Partner and Contact related addons
 
-* Enable isolated contact management.
-* Add first name, birth name, street number and other extensions for the partners.
-* Manage cities and post codes.
-* Etc.
+Odoo Partner and Contact related addons
+
+<!-- /!\ do not modify below this line -->
+
+<!-- prettier-ignore-start -->
 
 [//]: # (addons)
 
