@@ -15,7 +15,7 @@
     "ForgeFlow, "
     "Serpent Consulting Services Pvt. Ltd., "
     "Odoo Community Association (OCA)",
-    "website": " https://github.com/OCA/partner-contact",
+    "website": "https://github.com/OCA/partner-contact",
     "license": "AGPL-3",
     "depends": ["base"],
     "data": ["views/res_partner_view.xml"],
