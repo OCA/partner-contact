@@ -1,0 +1,159 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_stage
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__active
+#: model:res.partner.stage,name:partner_stage.partner_stage_active
+msgid "Active"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields.selection,name:partner_stage.selection__res_partner_stage__state__confirmed
+msgid "Approved"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields.selection,name:partner_stage.selection__res_partner_stage__state__cancel
+msgid "Archived"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__code
+msgid "Code"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model,name:partner_stage.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model,name:partner_stage.model_res_partner_stage
+msgid "Contact Stage"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.ui.menu,name:partner_stage.menu_partner_stage
+msgid "Contact Stages"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__is_default
+msgid "Default state"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__description
+msgid "Description"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_stage
+#: model:res.partner.stage,name:partner_stage.partner_stage_draft
+msgid "Draft"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__fold
+msgid "Fold"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_stage
+#: model:res.partner.stage,name:partner_stage.partner_stage_inactive
+msgid "Inactive"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner____last_update
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__name
+msgid "Name"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__state
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__state
+msgid "Related State"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.actions.act_window,name:partner_stage.action_partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__stage_id
+#: model:ir.model.fields,field_description:partner_stage.field_res_users__stage_id
+#: model_terms:ir.ui.view,arch_db:partner_stage.view_partner_search
+msgid "Stage"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.constraint,message:partner_stage.constraint_res_partner_stage_res_partner_stage_code_unique
+msgid "Stage Code must be unique."
+msgstr ""
+
+#. module: partner_stage
+#: code:addons/partner_stage/models/res_partner_stage.py:0
+#, python-format
+msgid "There should be only one default stage"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields.selection,name:partner_stage.selection__res_partner_stage__state__draft
+msgid "To Approve"
+msgstr ""
+
+#. module: partner_stage
+#: model:ir.model.fields,help:partner_stage.field_res_partner_stage__sequence
+msgid "Used to order the stages"
+msgstr ""
