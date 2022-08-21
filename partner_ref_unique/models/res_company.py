@@ -12,6 +12,7 @@ class ResCompany(models.Model):
         selection=[
             ("none", "None"),
             ("companies", "Only companies"),
+            ("exclude_corporative", "All, except contacts of a partner"),
             ("all", "All partners"),
         ],
         string="Unique partner reference for",

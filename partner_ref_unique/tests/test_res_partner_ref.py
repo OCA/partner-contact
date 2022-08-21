@@ -105,3 +105,47 @@ class TestResPartnerRefUnique(common.SavepointCase):
         )
         # this shouldn't raise error
         wizard.action_merge()
+
+    def test_check_ref_corporative(self):
+        self.company.partner_ref_unique = "exclude_corporative"
+        ref = "same_ref"
+        # set the hierarcy
+        self.partner1.is_company = True
+        self.partner2.parent_id = self.partner1
+        # same refs under company allowed
+        self.partner1.ref = ref
+        self.partner2.ref = ref
+        # reference is not uniqe
+        with self.assertRaises(ValidationError):
+            self.partner_obj.create(
+                {"name": "Company3", "ref": ref, "is_company": True}
+            )
+        # outstanding individual with same reference forbidden to create
+        with self.assertRaises(ValidationError):
+            self.partner_obj.create(
+                {"name": "Company3", "ref": ref, "is_company": False}
+            )
+        # can create partner if they are under hierarchy
+        self.partner_obj.create(
+            {
+                "name": "Company3",
+                "ref": ref,
+                "is_company": True,
+                "parent_id": self.partner1.id,
+            }
+        )
+        self.partner_obj.create(
+            {
+                "name": "Company4",
+                "ref": ref,
+                "is_company": False,
+                "parent_id": self.partner1.id,
+            }
+        )
+
+        # when partner stops being part of company reference should be
+        # cleanup first
+        with self.assertRaises(ValidationError):
+            self.partner2.parent_id = False
+        self.partner2.ref = "other_ref"
+        self.partner2.parent_id = False
