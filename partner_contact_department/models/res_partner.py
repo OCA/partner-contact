@@ -9,4 +9,3 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     department_id = fields.Many2one("res.partner.department", "Department")
-

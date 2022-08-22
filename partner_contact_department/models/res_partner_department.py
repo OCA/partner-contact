@@ -20,4 +20,3 @@ class ResPartnerDepartment(models.Model):
         "res.partner.department", "parent_id", "Child departments"
     )
     parent_path = fields.Char(index=True)
-
