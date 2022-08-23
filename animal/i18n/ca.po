@@ -429,6 +429,11 @@ msgid "Neutered"
 msgstr ""
 
 #. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr ""
