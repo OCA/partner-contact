@@ -4,5 +4,6 @@
 
   * Ernesto Tejeda
   * Carlos Roca
+  * Víctor Martínez
 
 * Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
