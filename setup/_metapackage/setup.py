@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo-addon-base_partner_company_group>=15.0dev,<15.1dev',
         'odoo-addon-base_partner_sequence>=15.0dev,<15.1dev',
         'odoo-addon-partner_affiliate>=15.0dev,<15.1dev',
+        'odoo-addon-partner_company_group>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_access_link>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_address_default>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_age_range>=15.0dev,<15.1dev',
