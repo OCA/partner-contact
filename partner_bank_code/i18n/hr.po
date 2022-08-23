@@ -6,7 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2022-08-23 14:07+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>\n"
 "Language-Team: none\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -14,36 +15,37 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: partner_bank_code
 #: model:ir.model,name:partner_bank_code.model_res_bank
 msgid "Bank"
-msgstr ""
+msgstr "Banka"
 
 #. module: partner_bank_code
 #: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__bank_branch_code
 msgid "Bank Branch Code"
-msgstr ""
+msgstr "Šifra ogranka banke"
 
 #. module: partner_bank_code
 #: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__bank_code
 msgid "Bank Code"
-msgstr ""
+msgstr "Šifra banke"
 
 #. module: partner_bank_code
 #: model:ir.model.constraint,message:partner_bank_code.constraint_res_bank_bank_code_unique
 msgid "Bank and Branch Code should be unique."
-msgstr ""
+msgstr "Šifra banke i ogranka moraju biti jedinstvene."
 
 #. module: partner_bank_code
 #: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Prikazani naziv"
 
 #. module: partner_bank_code
 #: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_bank_code
 #: model:ir.model.fields,field_description:partner_bank_code.field_res_bank____last_update
