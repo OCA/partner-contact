@@ -48,32 +48,8 @@ msgid "Contact"
 msgstr "联系人"
 
 #. module: partner_company_group
-#: model:ir.model.fields,field_description:partner_company_group.field_account_move__display_name
-#: model:ir.model.fields,field_description:partner_company_group.field_crm_lead__display_name
-#: model:ir.model.fields,field_description:partner_company_group.field_res_partner__display_name
-#: model:ir.model.fields,field_description:partner_company_group.field_sale_order__display_name
-msgid "Display Name"
-msgstr ""
-
-#. module: partner_company_group
-#: model:ir.model.fields,field_description:partner_company_group.field_account_move__id
-#: model:ir.model.fields,field_description:partner_company_group.field_crm_lead__id
-#: model:ir.model.fields,field_description:partner_company_group.field_res_partner__id
-#: model:ir.model.fields,field_description:partner_company_group.field_sale_order__id
-msgid "ID"
-msgstr ""
-
-#. module: partner_company_group
 #: model:ir.model,name:partner_company_group.model_account_move
 msgid "Journal Entry"
-msgstr ""
-
-#. module: partner_company_group
-#: model:ir.model.fields,field_description:partner_company_group.field_account_move____last_update
-#: model:ir.model.fields,field_description:partner_company_group.field_crm_lead____last_update
-#: model:ir.model.fields,field_description:partner_company_group.field_res_partner____last_update
-#: model:ir.model.fields,field_description:partner_company_group.field_sale_order____last_update
-msgid "Last Modified on"
 msgstr ""
 
 #. module: partner_company_group
@@ -90,8 +66,8 @@ msgstr "销售订单"
 #: code:addons/partner_company_group/models/res_partner.py:0
 #, python-format
 msgid ""
-"The company group %s has the pricelist %s, that is different than the "
-"pricelist set on this contact"
+"The company group %(name)s has the pricelist %(pricelist)s, that is "
+"different than the pricelist set on this contact"
 msgstr ""
 
 #. module: partner_company_group
@@ -100,7 +76,7 @@ msgstr ""
 msgid ""
 "This contact has members of a company group with different pricelists, the "
 "members are:\n"
-"%s"
+"%(members)s"
 msgstr ""
 
 #. module: partner_company_group
