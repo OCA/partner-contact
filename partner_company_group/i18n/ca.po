@@ -1,0 +1,110 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_company_group
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2022-03-24 10:17+0000\n"
+"Last-Translator: jabelchi <jabelchi@gmail.com>\n"
+"Language-Team: none\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
+
+#. module: partner_company_group
+#: model_terms:ir.ui.view,arch_db:partner_company_group.view_account_invoice_filter
+#: model_terms:ir.ui.view,arch_db:partner_company_group.view_crm_case_opportunities_filter
+#: model_terms:ir.ui.view,arch_db:partner_company_group.view_res_partner_filter
+#: model_terms:ir.ui.view,arch_db:partner_company_group.view_sales_order_filter
+msgid "Company Group"
+msgstr "Grup d'empreses"
+
+#. module: partner_company_group
+#: model:ir.model.fields,field_description:partner_company_group.field_account_bank_statement_line__company_group_id
+#: model:ir.model.fields,field_description:partner_company_group.field_account_move__company_group_id
+#: model:ir.model.fields,field_description:partner_company_group.field_account_payment__company_group_id
+#: model:ir.model.fields,field_description:partner_company_group.field_crm_lead__company_group_id
+#: model:ir.model.fields,field_description:partner_company_group.field_res_partner__company_group_id
+#: model:ir.model.fields,field_description:partner_company_group.field_res_users__company_group_id
+#: model:ir.model.fields,field_description:partner_company_group.field_sale_order__company_group_id
+msgid "Company group"
+msgstr "Grup d'empreses"
+
+#. module: partner_company_group
+#: model:ir.actions.act_window,name:partner_company_group.action_open_group_members
+#: model:ir.model.fields,field_description:partner_company_group.field_res_partner__company_group_member_ids
+#: model:ir.model.fields,field_description:partner_company_group.field_res_users__company_group_member_ids
+msgid "Company group members"
+msgstr "Membres del grup d'empreses"
+
+#. module: partner_company_group
+#: model:ir.model,name:partner_company_group.model_res_partner
+msgid "Contact"
+msgstr "Contacte"
+
+#. module: partner_company_group
+#: model:ir.model.fields,field_description:partner_company_group.field_account_move__display_name
+#: model:ir.model.fields,field_description:partner_company_group.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:partner_company_group.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_company_group.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Nom a mostrar"
+
+#. module: partner_company_group
+#: model:ir.model.fields,field_description:partner_company_group.field_account_move__id
+#: model:ir.model.fields,field_description:partner_company_group.field_crm_lead__id
+#: model:ir.model.fields,field_description:partner_company_group.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_company_group.field_sale_order__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_company_group
+#: model:ir.model,name:partner_company_group.model_account_move
+msgid "Journal Entry"
+msgstr "Assentaments comptables"
+
+#. module: partner_company_group
+#: model:ir.model.fields,field_description:partner_company_group.field_account_move____last_update
+#: model:ir.model.fields,field_description:partner_company_group.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:partner_company_group.field_res_partner____last_update
+#: model:ir.model.fields,field_description:partner_company_group.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Darrera modificació el"
+
+#. module: partner_company_group
+#: model:ir.model,name:partner_company_group.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunitat"
+
+#. module: partner_company_group
+#: model:ir.model,name:partner_company_group.model_sale_order
+msgid "Sales Order"
+msgstr "Comanda de venda"
+
+#. module: partner_company_group
+#: code:addons/partner_company_group/models/res_partner.py:0
+#, python-format
+msgid ""
+"The company group %s has the pricelist %s, that is different than the "
+"pricelist set on this contact"
+msgstr ""
+
+#. module: partner_company_group
+#: code:addons/partner_company_group/models/res_partner.py:0
+#, python-format
+msgid ""
+"This contact has members of a company group with different pricelists, the "
+"members are:\n"
+"%s"
+msgstr ""
+
+#. module: partner_company_group
+#: code:addons/partner_company_group/models/res_partner.py:0
+#, python-format
+msgid "Warning"
+msgstr ""
