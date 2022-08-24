@@ -32,7 +32,7 @@ class ResPartner(models.Model):
             if months == 0 and days == 0:
                 logging.info("Send wish+++++++++")
                 template_id = self.env.ref(
-                    "partner_contact_birthdate.mail_template_birthday_wish"
+                    "partner_contact_birthday_wish.mail_template_birthday_wish"
                 ).id  # Get mail template
                 template = self.env["mail.template"].browse(template_id)
                 template.write(
