@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <menuitem id="res_country_municipality_menu"
+        name="Municipalities"
+        action="res_country_municipality_action"
+        parent="contacts.menu_localisation"
+        sequence="3"
+    />
+
+</odoo>

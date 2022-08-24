@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_country_municipality_view_tree" model="ir.ui.view">
+        <field name="model">res.country.municipality</field>
+        <field name="arch" type="xml">
+            <tree string="Municipalities">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="country_id"/>
+                <field name="state_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_country_municipality_view_form" model="ir.ui.view">
+        <field name="model">res.country.municipality</field>
+        <field name="arch" type="xml">
+            <form string="Municipality">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="country_id" options='{"no_open": True, "no_create": True}'/>
+                        <field name="state_id" options='{"no_open": True, "no_create": True}'/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_country_municipality_view_search" model="ir.ui.view">
+        <field name="model">res.country.municipality</field>
+        <field name="arch" type="xml">
+            <search string="Municipality">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="country_id"/>
+                <field name="state_id"/>
+                <group string="Group By">
+                    <filter name="groupby_country" string="Country" context="{'group_by': 'country_id'}"/>
+                    <filter name="groupby_state" string="State" context="{'group_by': 'state_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_country_municipality_action" model="ir.actions.act_window">
+        <field name="name">Municipalities</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.country.municipality</field>
+        <field name="view_id" ref="res_country_municipality_view_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Municipality
+            </p>
+        </field>
+    </record>
+
+</odoo>
