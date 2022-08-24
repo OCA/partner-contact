@@ -17,7 +17,7 @@ class PartnerCompanyCase(TransactionCase):
     def test_create_from_form(self):
         name = "Sôme company"
         with Form(self.env["res.partner"]) as partner_form:
-            partner_form.is_company = self.is_company
+            partner_form.company_type = "company" if self.is_company else "person"
             partner_form.name = name
 
         self.assertEqual(partner_form.name, name)
@@ -31,7 +31,7 @@ class PartnerCompanyCase(TransactionCase):
         with Form(
             self.env["res.partner"], view="base.view_partner_form"
         ) as partner_form:
-            partner_form.is_company = self.is_company
+            partner_form.company_type = "company" if self.is_company else "person"
 
             name = "Foó"
             # User sets a name
@@ -66,7 +66,7 @@ class PartnerContactCase(TransactionCase):
         """A user creates a contact with only the firstname from the form."""
         firstname = "Fïrst"
         with Form(self.env["res.partner"]) as partner_form:
-            partner_form.is_company = self.is_company
+            partner_form.company_type = "company" if self.is_company else "person"
 
             # Changes firstname, which triggers compute
             partner_form.firstname = firstname
@@ -79,7 +79,7 @@ class PartnerContactCase(TransactionCase):
         """A user creates a contact with only the lastname from the form."""
         lastname = "Läst"
         with Form(self.env["res.partner"]) as partner_form:
-            partner_form.is_company = self.is_company
+            partner_form.company_type = "company" if self.is_company else "person"
 
             # Changes lastname, which triggers compute
             partner_form.lastname = lastname
@@ -93,7 +93,7 @@ class PartnerContactCase(TransactionCase):
         firstname = "Fïrst"
         lastname = "Läst"
         with Form(self.env["res.partner"]) as partner_form:
-            partner_form.is_company = self.is_company
+            partner_form.company_type = "company" if self.is_company else "person"
 
             # Changes firstname, which triggers compute
             partner_form.firstname = firstname

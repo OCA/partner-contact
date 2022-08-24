@@ -48,7 +48,7 @@ class PartnerContactCase(BaseCase):
         self.original.name = "  newfïrstname  newlästname  "
 
         # Need this to refresh the ``name`` field
-        self.original.invalidate_cache(["name"])
+        self.original.invalidate_recordset(["name"])
 
 
 class PartnerCompanyCase(BaseCase):
