@@ -21,7 +21,7 @@ class CompanyCase(TransactionCase):
         data = {"name": "Söme name"}
         record = self.env[self.model].with_context(**self.context).create(data)
         record.unlink()
-        record.recompute()
+        record.flush_recordset()
 
 
 class PersonCase(CompanyCase):
