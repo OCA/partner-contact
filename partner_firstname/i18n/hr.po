@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-31 01:39+0000\n"
-"PO-Revision-Date: 2022-08-23 17:07+0000\n"
+"PO-Revision-Date: 2022-08-25 13:07+0000\n"
 "Last-Translator: Bole <bole@dajmi5.com>\n"
 "Language-Team: Croatian (https://www.transifex.com/oca/teams/23907/hr/)\n"
 "Language: hr\n"
@@ -101,22 +101,22 @@ msgstr "Redosljed kreiranja punog naziva"
 #. module: partner_firstname
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
 msgid "Partner Names Order"
-msgstr ""
+msgstr "Redosljed naziva partnera"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order_changed
 msgid "Partner Names Order Changed"
-msgstr ""
+msgstr "Redosljed naziva partnera je promijenjen"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order
 msgid "Partner names order"
-msgstr ""
+msgstr "Redosljed imena partnera"
 
 #. module: partner_firstname
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
 msgid "Recalculate names"
-msgstr ""
+msgstr "Preračunaj nazive"
 
 #. module: partner_firstname
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
@@ -124,11 +124,13 @@ msgid ""
 "Recalculate names for all partners. This process could take so much time if "
 "there are more than 10,000 active partners"
 msgstr ""
+"Preračunaj nazive ya sve partnere. Ovaj proces bi mogao potrajati dosta "
+"vremena ako ima više od 10.000 aktivnih partnera"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Korisnici"
 
 #~ msgid "Partner"
 #~ msgstr "Partner"
