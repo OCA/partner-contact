@@ -1,0 +1,38 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_category_security
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-25 06:47+0000\n"
+"PO-Revision-Date: 2022-08-25 08:48+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: partner_category_security
+#: model:ir.module.category,name:partner_category_security.category_partner_category
+msgid "Contact Tags"
+msgstr "Etiquetas de contacto"
+
+#. module: partner_category_security
+#: model:res.groups,name:partner_category_security.group_partner_category_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: partner_category_security
+#: model:res.groups,name:partner_category_security.group_partner_category_user
+msgid "Publisher"
+msgstr "Editor"
+
+#. module: partner_category_security
+#: model_terms:ir.ui.view,arch_db:partner_category_security.view_partner_form
+msgid "Tags..."
+msgstr ""
