@@ -1,0 +1,2 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+crm.access_res_partner_category,res.partner.category.crm.user,base.model_res_partner_category,sales_team.group_sale_salesman,1,0,0,0
