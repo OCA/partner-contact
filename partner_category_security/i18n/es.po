@@ -31,3 +31,8 @@ msgstr "Responsable"
 #: model:res.groups,name:partner_category_security.group_partner_category_user
 msgid "Publisher"
 msgstr "Editor"
+
+#. module: partner_category_security
+#: model_terms:ir.ui.view,arch_db:partner_category_security.view_partner_form
+msgid "Tags..."
+msgstr ""
