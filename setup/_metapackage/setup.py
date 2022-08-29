@@ -21,6 +21,7 @@ setuptools.setup(
         'odoo14-addon-partner_bank_code',
         'odoo14-addon-partner_capital',
         'odoo14-addon-partner_category_security',
+        'odoo14-addon-partner_category_security_crm',
         'odoo14-addon-partner_coc',
         'odoo14-addon-partner_company_group',
         'odoo14-addon-partner_company_type',
