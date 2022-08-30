@@ -36,7 +36,7 @@ class TestPartnerCategorySecurity(common.SavepointCase):
     def test_check_access_rights_partner_category_user(self):
         model = self.partner_category_model.with_user(self.partner_category_user)
         self.assertTrue(model.check_access_rights("read", False))
-        self.assertTrue(model.check_access_rights("write", False))
+        self.assertFalse(model.check_access_rights("write", False))
         self.assertFalse(model.check_access_rights("create", False))
         self.assertFalse(model.check_access_rights("unlink", False))
 
