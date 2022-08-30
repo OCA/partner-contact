@@ -13,7 +13,6 @@
         "security/security.xml",
         "security/ir.model.access.csv",
         "views/menu.xml",
-        "views/res_partner_view.xml",
     ],
     "maintainers": ["victoralmau"],
 }
