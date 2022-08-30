@@ -18,9 +18,29 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #. module: partner_category_security
+#: model:ir.model,name:partner_category_security.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_category_security
 #: model:ir.module.category,name:partner_category_security.category_partner_category
 msgid "Contact Tags"
 msgstr "Etiquetas de contacto"
+
+#. module: partner_category_security
+#: model:ir.model.fields,field_description:partner_category_security.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_category_security
+#: model:ir.model.fields,field_description:partner_category_security.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_category_security
+#: model:ir.model.fields,field_description:partner_category_security.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr ""
 
 #. module: partner_category_security
 #: model:res.groups,name:partner_category_security.group_partner_category_manager
@@ -31,8 +51,3 @@ msgstr "Responsable"
 #: model:res.groups,name:partner_category_security.group_partner_category_user
 msgid "Publisher"
 msgstr "Editor"
-
-#. module: partner_category_security
-#: model_terms:ir.ui.view,arch_db:partner_category_security.view_partner_form
-msgid "Tags..."
-msgstr ""
