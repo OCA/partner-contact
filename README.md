@@ -33,7 +33,7 @@ addon | version | maintainers | summary
 [partner_affiliate](partner_affiliate/) | 14.0.1.0.1 |  | Partner Affiliates
 [partner_bank_code](partner_bank_code/) | 14.0.1.1.0 |  | Add fields information in banks
 [partner_capital](partner_capital/) | 14.0.1.0.0 |  | Partners Capital
-[partner_category_security](partner_category_security/) | 14.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner category security
+[partner_category_security](partner_category_security/) | 14.0.1.0.1 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner category security
 [partner_category_security_crm](partner_category_security_crm/) | 14.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner category security (crm extension)
 [partner_coc](partner_coc/) | 14.0.1.0.1 | [![bosd](https://github.com/bosd.png?size=30px)](https://github.com/bosd) | Adds field 'Chamber Of Commerce Registration Number'
 [partner_company_group](partner_company_group/) | 14.0.1.1.0 |  | Adds the possibility to add a company group to a company
