@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -65,8 +65,6 @@ msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__display_name
-#: model:ir.model.fields,field_description:base_location_nuts.field_res_country__display_name
-#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__display_name
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__display_name
 msgid "Display Name"
 msgstr ""
@@ -80,7 +78,7 @@ msgstr ""
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:0
 #, python-format
-msgid "Got an error %d when trying to download the file %s."
+msgid "Got an error %(status_code)s when trying to download the file %(url)s."
 msgstr ""
 
 #. module: base_location_nuts
@@ -96,8 +94,6 @@ msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__id
-#: model:ir.model.fields,field_description:base_location_nuts.field_res_country__id
-#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__id
 msgid "ID"
 msgstr ""
@@ -125,8 +121,6 @@ msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import____last_update
-#: model:ir.model.fields,field_description:base_location_nuts.field_res_country____last_update
-#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner____last_update
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts____last_update
 msgid "Last Modified on"
 msgstr ""
@@ -168,7 +162,6 @@ msgstr ""
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.res_partner_nuts_action
 #: model:ir.ui.menu,name:base_location_nuts.res_partner_nuts_menu
-#: model_terms:ir.ui.view,arch_db:base_location_nuts.res_partner_nuts_tree
 msgid "NUTS Items"
 msgstr ""
 
