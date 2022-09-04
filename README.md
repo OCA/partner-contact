@@ -57,7 +57,7 @@ addon | version | maintainers | summary
 [partner_deduplicate_filter](partner_deduplicate_filter/) | 14.0.1.0.0 |  | Exclude records from the deduplication
 [partner_disable_gravatar](partner_disable_gravatar/) | 14.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Disable automatic connection to gravatar.com
 [partner_email_check](partner_email_check/) | 14.0.1.1.1 |  | Validate email address field
-[partner_email_duplicate_warn](partner_email_duplicate_warn/) | 14.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Warning banner on partner form if another partner has the same email
+[partner_email_duplicate_warn](partner_email_duplicate_warn/) | 14.0.1.0.1 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Warning banner on partner form if another partner has the same email
 [partner_employee_quantity](partner_employee_quantity/) | 14.0.1.0.0 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 14.0.1.0.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 14.0.1.0.0 |  | Add fax number on partner
