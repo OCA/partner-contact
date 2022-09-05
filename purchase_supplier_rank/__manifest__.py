@@ -4,7 +4,7 @@
 {
     "name": "Purchase Supplier Rank",
     "summary": "Update Supplier Rank when creating a Purchase Order",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "category": "Purchases",
     "website": "https://github.com/OCA/partner-contact",
     "author": "ForgeFlow, Odoo Community Association (OCA)",
