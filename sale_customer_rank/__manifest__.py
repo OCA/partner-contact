@@ -4,7 +4,7 @@
 {
     "name": "Sale Customer Rank",
     "summary": "Update Customer Rank when creating a Sale Order",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "category": "Sales",
     "website": "https://github.com/OCA/partner-contact",
     "author": "ForgeFlow, Odoo Community Association (OCA)",
