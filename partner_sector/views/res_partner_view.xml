@@ -46,7 +46,7 @@
             <field name="category_id" position="after">
                 <field name="sector_id"
                        string="Sector"
-                       filter_domain="['|',('sector_id','ilike',self),
+                       filter_domain="['|',('sector_id.name','ilike',self),
                                            ('secondary_sector_ids.name','ilike',self)]"/>
             </field>
             <filter name="salesperson" position="after">
