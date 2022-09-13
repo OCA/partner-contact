@@ -29,8 +29,6 @@ class ResPartner(models.Model):
                         continue
             if mode == "companies":
                 domain.append(("is_company", "=", partner.is_company))
-                else:
-                    domain.append(("is_company", "=", False))
             other = self.search(domain)
             # Don't raise when coming from contact merge wizard or no duplicates
             if other and not self.env.context.get("partner_ref_unique_merging"):
