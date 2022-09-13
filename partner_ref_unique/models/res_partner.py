@@ -28,8 +28,7 @@ class ResPartner(models.Model):
                     if partner.ref == partner.parent_id.ref:
                         continue
             if mode == "companies":
-                if partner.is_company:
-                    domain.append(("is_company", "=", True))
+                domain.append(("is_company", "=", partner.is_company))
                 else:
                     domain.append(("is_company", "=", False))
             other = self.search(domain)
