@@ -6,7 +6,7 @@ from odoo.tests import common, tagged
 
 
 @tagged("-at_install", "post_install")
-class TestPartnerTierValidation(common.SavepointCase):
+class TestPartnerTierValidation(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -70,6 +70,7 @@ class TestPartnerTierValidation(common.SavepointCase):
 
         # Request and validate partner
         contact.request_validation()
+        contact.invalidate_cache()
         contact.with_user(self.user_approver).validate_tier()
         contact.with_user(self.user_approver).write(
             {"stage_id": self.stage_confirmed.id}
