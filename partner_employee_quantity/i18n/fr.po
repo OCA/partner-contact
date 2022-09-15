@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2022-08-07 05:29+0000\n"
+"PO-Revision-Date: 2022-09-15 23:08+0000\n"
 "Last-Translator: Claude R Perrin <claude@perrin.it>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
@@ -93,7 +93,7 @@ msgstr "Tranche d’employés du partenaire"
 #: model:ir.model.fields,help:partner_employee_quantity.field_res_partner__employee_quantity_range_id
 #: model:ir.model.fields,help:partner_employee_quantity.field_res_users__employee_quantity_range_id
 msgid "Range of this partner depending on the employee quantity."
-msgstr "Trier ce partenaire en fonction de son nombre d’employés."
+msgstr "Tranche de ce partenaire par nombre d’employés."
 
 #. module: partner_employee_quantity
 #: model:ir.actions.act_window,name:partner_employee_quantity.employees_range_action
