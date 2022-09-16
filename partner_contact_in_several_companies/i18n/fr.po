@@ -10,19 +10,20 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2018-01-03 20:26+0000\n"
-"Last-Translator: Nicolas JEUDY <njeudy@panda-chi.io>, 2018\n"
+"PO-Revision-Date: 2022-09-16 09:05+0000\n"
+"Last-Translator: Claude R Perrin <claude@perrin.it>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model,name:partner_contact_in_several_companies.model_ir_actions_act_window
 msgid "Action Window"
-msgstr ""
+msgstr "Fenêtre d'Action"
 
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -85,7 +86,7 @@ msgstr "Fiche principale"
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Mobile:"
-msgstr "Portable"
+msgstr "Portable :"
 
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -106,12 +107,12 @@ msgstr "Personne"
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Phone:"
-msgstr "Téléphone:"
+msgstr "Téléphone :"
 
 #. module: partner_contact_in_several_companies
 #: selection:res.partner,contact_type:0
 msgid "Standalone Contact"
-msgstr "Contact autonome"
+msgstr "Contact indépendant"
 
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -134,8 +135,8 @@ msgid ""
 "To see personal information about this contact, please\n"
 "                    go to to the this person form:"
 msgstr ""
-"Pour consulter les information de ce contact, merci d'ouvrir sa fiche "
-"principale:"
+"Pour consulter les information de ce contact,\n"
+"                      merci d'ouvrir sa fiche principale :"
 
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -150,17 +151,17 @@ msgstr "à"
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "e.g. Mr."
-msgstr "ex: M."
+msgstr "ex : M."
 
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "e.g. Sales Director"
-msgstr "ex: Directeur des ventes"
+msgstr "ex : Directeur des ventes"
 
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "internal note..."
-msgstr "Note interne"
+msgstr "Note interne..."
 
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_kanban_contact
