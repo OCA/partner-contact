@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "name": "Portal Partner Block Data Edit",
-    "version": "13.0.1.0.2",
+    "version": "15.0.1.0.0",
     "category": "Customer Relationship Management",
     "author": "Tecnativa," "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
@@ -11,7 +11,11 @@
     "data": [
         "views/res_partner_views.xml",
         "views/portal_template.xml",
-        "templates/assets.xml",
     ],
+    "assets": {
+        "web.assets_tests": [
+            "portal_partner_data_no_edit/static/src/js/portal_partner_data_no_edit_tour.js",
+        ],
+    },
     "installable": True,
 }
