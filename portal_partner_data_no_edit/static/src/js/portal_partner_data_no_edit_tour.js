@@ -1,7 +1,7 @@
 /* Copyright 2021 Tecnativa - David Vidal
  * License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). */
 
-odoo.define("portal_partner_data_default.tour", function(require) {
+odoo.define("portal_partner_data_default.tour", function (require) {
     "use strict";
 
     const tour = require("web_tour.tour");
@@ -31,7 +31,7 @@ odoo.define("portal_partner_data_default.tour", function(require) {
     };
 });
 
-odoo.define("portal_partner_data_block.tour", function(require) {
+odoo.define("portal_partner_data_block.tour", function (require) {
     "use strict";
 
     const tour = require("web_tour.tour");
