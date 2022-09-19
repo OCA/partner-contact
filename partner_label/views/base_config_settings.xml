@@ -4,7 +4,7 @@
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
         <field name="arch" type="xml">
-            <xpath expr="//div[@id='business_documents']" position="after">
+            <xpath expr="//div[@id='companies']" position="after">
                 <div id="partner_labels">
                     <h2>Labels configuration</h2>
                     <div class="row mt16 o_settings_container">
