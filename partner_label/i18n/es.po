@@ -52,28 +52,28 @@ msgstr "Configuración de etiquetas"
 #: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_bottom
 #, fuzzy
 msgid "Margin Bottom"
-msgstr "Margen"
+msgstr "Margen Inf."
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_left
 #: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_left
 #, fuzzy
 msgid "Margin Left"
-msgstr "Margen"
+msgstr "Margen Izdo."
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_right
 #: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_right
 #, fuzzy
 msgid "Margin Right"
-msgstr "Margen"
+msgstr "Margen Dcho."
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_top
 #: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_top
 #, fuzzy
 msgid "Margin Top"
-msgstr "Margen"
+msgstr "Margen Sup."
 
 #. module: partner_label
 #: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_margin_bottom
