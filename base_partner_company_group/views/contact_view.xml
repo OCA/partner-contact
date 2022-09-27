@@ -30,4 +30,14 @@
             </filter>
         </field>
     </record>
+    <record id="action_open_group_members" model="ir.actions.act_window">
+        <field name="name">Company group members</field>
+        <field name="res_model">res.partner</field>
+        <field name="binding_model_id" ref="model_res_partner" />
+        <field name="view_mode">tree</field>
+        <field name="target">current</field>
+        <field
+            name="domain"
+        >[('company_group_id', 'in', context.get('active_ids'))]</field>
+    </record>
 </odoo>
