@@ -1,0 +1,1 @@
+odoo-addon-base_partner_company_group @ git+https://github.com/OCA/partner-contact@refs/pull/1346/head#subdirectory=setup/base_partner_company_group
