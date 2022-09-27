@@ -7,7 +7,11 @@
     "category": "Sales",
     "author": "Camptocamp SA, Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "depends": ["account", "crm", "sale"],
+    "depends": [
+        "account_partner_company_group",
+        "crm_partner_company_group",
+        "sale_partner_company_group",
+    ],
     "website": "https://github.com/OCA/partner-contact",
     "data": [
         "views/opportunity_view.xml",
