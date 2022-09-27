@@ -5,14 +5,15 @@ from odoo.tests.common import TransactionCase
 
 
 class TestBasePartnerCompanyGroup(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.partner_model = self.env["res.partner"]
-        self.company = self.partner_model.create(
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.partner_model = cls.env["res.partner"]
+        cls.company = cls.partner_model.create(
             {"name": "Test Company", "company_type": "company"}
         )
-        self.contact = self.partner_model.create(
-            {"name": "Test Contact", "type": "contact", "parent_id": self.company.id}
+        cls.contact = cls.partner_model.create(
+            {"name": "Test Contact", "type": "contact", "parent_id": cls.company.id}
         )
 
     def test_base_partner_company_group(self):

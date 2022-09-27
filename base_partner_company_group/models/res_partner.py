@@ -13,6 +13,11 @@ class Contact(models.Model):
         domain=[("is_company", "=", True)],
         recursive=True,
     )
+    company_group_member_ids = fields.One2many(
+        comodel_name="res.partner",
+        inverse_name="company_group_id",
+        string="Company group members",
+    )
 
     def _commercial_fields(self):
         return super()._commercial_fields() + ["company_group_id"]
