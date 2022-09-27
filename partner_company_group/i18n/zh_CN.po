@@ -25,62 +25,18 @@ msgid "Company Group"
 msgstr "集团公司"
 
 #. module: partner_company_group
-#: model:ir.model.fields,field_description:partner_company_group.field_account_bank_statement_line__company_group_id
-#: model:ir.model.fields,field_description:partner_company_group.field_account_move__company_group_id
-#: model:ir.model.fields,field_description:partner_company_group.field_account_payment__company_group_id
-#: model:ir.model.fields,field_description:partner_company_group.field_crm_lead__company_group_id
-#: model:ir.model.fields,field_description:partner_company_group.field_res_partner__company_group_id
-#: model:ir.model.fields,field_description:partner_company_group.field_res_users__company_group_id
-#: model:ir.model.fields,field_description:partner_company_group.field_sale_order__company_group_id
-msgid "Company group"
-msgstr "集团公司"
-
-#. module: partner_company_group
 #: model:ir.actions.act_window,name:partner_company_group.action_open_group_members
-#: model:ir.model.fields,field_description:partner_company_group.field_res_partner__company_group_member_ids
-#: model:ir.model.fields,field_description:partner_company_group.field_res_users__company_group_member_ids
 msgid "Company group members"
 msgstr ""
 
-#. module: partner_company_group
-#: model:ir.model,name:partner_company_group.model_res_partner
-msgid "Contact"
-msgstr "联系人"
+#~ msgid "Company group"
+#~ msgstr "集团公司"
 
-#. module: partner_company_group
-#: model:ir.model,name:partner_company_group.model_account_move
-msgid "Journal Entry"
-msgstr ""
+#~ msgid "Contact"
+#~ msgstr "联系人"
 
-#. module: partner_company_group
-#: model:ir.model,name:partner_company_group.model_crm_lead
-msgid "Lead/Opportunity"
-msgstr "线索/商机"
+#~ msgid "Lead/Opportunity"
+#~ msgstr "线索/商机"
 
-#. module: partner_company_group
-#: model:ir.model,name:partner_company_group.model_sale_order
-msgid "Sales Order"
-msgstr "销售订单"
-
-#. module: partner_company_group
-#: code:addons/partner_company_group/models/res_partner.py:0
-#, python-format
-msgid ""
-"The company group %(name)s has the pricelist %(pricelist)s, that is "
-"different than the pricelist set on this contact"
-msgstr ""
-
-#. module: partner_company_group
-#: code:addons/partner_company_group/models/res_partner.py:0
-#, python-format
-msgid ""
-"This contact has members of a company group with different pricelists, the "
-"members are:\n"
-"%(members)s"
-msgstr ""
-
-#. module: partner_company_group
-#: code:addons/partner_company_group/models/res_partner.py:0
-#, python-format
-msgid "Warning"
-msgstr ""
+#~ msgid "Sales Order"
+#~ msgstr "销售订单"
