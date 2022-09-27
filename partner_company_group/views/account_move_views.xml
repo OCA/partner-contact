@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="view_account_invoice_filter" model="ir.ui.view">
-        <field name="model">account.move</field>
-        <field name="inherit_id" ref="account.view_account_invoice_filter" />
-        <field name="arch" type="xml">
-            <field name="name" position="after">
-                <field name="company_group_id" />
-            </field>
-            <filter name="salesperson" position="before">
-                <filter
-                    name="group_company_group"
-                    string="Company Group"
-                    context="{'group_by': 'company_group_id'}"
-                />
-            </filter>
-        </field>
-    </record>
+    <function model="ir.model.data" name="_update_xmlids">
+        <value
+            model="base"
+            eval="[{
+            'xml_id': 'partner_company_group.view_account_invoice_filter',
+            'record': obj().env.ref('account_partner_company_group.view_account_invoice_filter'),
+        }]"
+        />
+    </function>
 </odoo>
