@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:48+0000\n"
-"PO-Revision-Date: 2022-09-13 22:07+0000\n"
+"PO-Revision-Date: 2022-09-28 10:07+0000\n"
 "Last-Translator: Claude R Perrin <claude@perrin.it>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
@@ -42,11 +42,20 @@ msgid ""
 "%(country_name)s: the name of the country\n"
 "%(country_code)s: the code of the country"
 msgstr ""
+"Affichez le format à utiliser pour les adresses de ce pays.\n"
+"\n"
+"Vous pouvez utiliser un modèle de chaîne de type python avec tous les champs "
+"associés à l'adresse (par exemple, utilisez « %(street)s » pour afficher le "
+"champ « Rue »),\n"
+"%(state_name)s pour afficher le nom de l'État,\n"
+"%(state_code)s pour afficher le code de l'État,\n"
+"%(country_name)s pour afficher le nom du pays,\n"
+"%(country_code)s pour afficher le code du pays"
 
 #. module: partner_address_street3
 #: model:ir.model.fields,field_description:partner_address_street3.field_res_country__address_format
 msgid "Layout in Reports"
-msgstr ""
+msgstr "Disposition dans les rapports"
 
 #. module: partner_address_street3
 #: model:ir.model.fields,field_description:partner_address_street3.field_res_partner__street3
@@ -58,7 +67,7 @@ msgstr "Rue 3"
 #: model_terms:ir.ui.view,arch_db:partner_address_street3.add_street3_in_form_view
 #: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_address_form
 msgid "Street 3..."
-msgstr "Rue 3..."
+msgstr "Rue 3...Numéro et libellé de la voie…"
 
 #~ msgid "Partner"
 #~ msgstr "Contact"
