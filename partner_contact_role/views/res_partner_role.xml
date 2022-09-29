@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 Camptocamp
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <odoo>
 
     <record model="ir.ui.view" id="res_partner_role_form_view">
@@ -11,7 +10,7 @@
             <form>
                 <sheet>
                     <group name="main">
-                        <field name="name"/>
+                        <field name="name" />
                     </group>
                 </sheet>
             </form>
@@ -28,9 +27,9 @@
 
     <record model="ir.ui.menu" id="res_partner_role_menu">
         <field name="name">Partner Roles</field>
-        <field name="parent_id" ref="contacts.res_partner_menu_config"/>
-        <field name="action" ref="res_partner_role_act_window"/>
-        <field name="sequence" eval="16"/>
+        <field name="parent_id" ref="contacts.res_partner_menu_config" />
+        <field name="action" ref="res_partner_role_act_window" />
+        <field name="sequence" eval="16" />
     </record>
 
 </odoo>
