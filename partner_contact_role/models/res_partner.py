@@ -5,17 +5,17 @@ from odoo import fields, models
 
 
 class ResPartner(models.Model):
-    _inherit = 'res.partner'
+    _inherit = "res.partner"
 
     role_ids = fields.Many2many(
-        string='Roles',
-        comodel_name='res.partner.role',
+        string="Roles",
+        comodel_name="res.partner.role",
     )
 
 
 class ResPartnerRole(models.Model):
 
-    _name = 'res.partner.role'
-    _description = 'Partner Role'
+    _name = "res.partner.role"
+    _description = "Partner Role"
 
     name = fields.Char()
