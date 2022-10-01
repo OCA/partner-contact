@@ -28,6 +28,7 @@ addon | version | maintainers | summary
 [base_location_nuts](base_location_nuts/) | 15.0.1.0.0 |  | NUTS Regions
 [base_partner_company_group](base_partner_company_group/) | 15.0.1.1.0 |  | Adds the possibility to add a company group to a company
 [base_partner_sequence](base_partner_sequence/) | 15.0.1.0.2 |  | Sets customer's code from a sequence
+[partner_address_street3](partner_address_street3/) | 15.0.1.0.0 |  | Add a third address line on partners
 [partner_affiliate](partner_affiliate/) | 15.0.1.0.0 |  | Partner Affiliates
 [partner_company_group](partner_company_group/) | 15.0.1.0.0 |  | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 15.0.1.0.1 |  | Adds a company type to partner that are companies
