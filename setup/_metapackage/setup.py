@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo-addon-base_location_nuts>=15.0dev,<15.1dev',
         'odoo-addon-base_partner_company_group>=15.0dev,<15.1dev',
         'odoo-addon-base_partner_sequence>=15.0dev,<15.1dev',
+        'odoo-addon-partner_address_street3>=15.0dev,<15.1dev',
         'odoo-addon-partner_affiliate>=15.0dev,<15.1dev',
         'odoo-addon-partner_company_group>=15.0dev,<15.1dev',
         'odoo-addon-partner_company_type>=15.0dev,<15.1dev',
