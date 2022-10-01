@@ -17,7 +17,7 @@ Partner Stage
     :target: https://github.com/OCA/partner-contact/tree/13.0/partner_stage
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-14-0/partner-contact-14-0-partner_stage
+    :target: https://translation.odoo-community.org/projects/partner-contact-13-0/partner-contact-13-0-partner_stage
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
     :target: https://runbot.odoo-community.org/runbot/134/13.0
