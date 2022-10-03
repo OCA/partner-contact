@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 {
-    "name": "Email Format Checker",
+    "name": "Partner Email Format and Duplicate Checker",
     "version": "14.0.1.1.1",
     "summary": "Validate email address field",
     "author": "Komit, Odoo Community Association (OCA)",
