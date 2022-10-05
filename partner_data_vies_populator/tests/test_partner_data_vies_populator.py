@@ -32,7 +32,7 @@ class TestPartnerCreateByVAT(TransactionCase):
 
     def test_company_vat_change(self):
         # Change partner VAT number field
-        partner = self.partner_model.create({"name": "1", "is_company": True})
+        partner = self.partner_model.create({"name": "SA ODOO", "is_company": True})
         with Form(partner) as partner_form:
             # Check if the datas fetch correspond with the datas from VIES.
             partner_form.vat = "be0477472701"
