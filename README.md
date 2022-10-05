@@ -9,7 +9,7 @@
 
 # partner-contact
 
-TODO: add repo description.
+This repository is for all functionality around partners.
 
 <!-- /!\ do not modify below this line -->
 
