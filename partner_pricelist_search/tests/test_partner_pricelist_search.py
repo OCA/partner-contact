@@ -1,7 +1,6 @@
 # Copyright 2021 Tecnativa - Carlos Dauden
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 
-from odoo.exceptions import UserError
 from odoo.tests import common
 
 
@@ -66,12 +65,13 @@ class TestPartnerPricelistSearch(common.SavepointCase):
         self.assertNotIn(self.customer_1, partners)
         self.assertNotIn(self.customer_2, partners)
 
-    def test_partner_pricelist_search_not_implemented(self):
-        """ Test search not implemented """
-        with self.assertRaises(UserError):
-            self.partner_obj.search(
-                [("property_product_pricelist", "ilike", "pricelist xx")]
-            )
+    def test_partner_pricelist_search_ilike(self):
+        """Test search 'ilike'"""
+        partners = self.partner_obj.search(
+            [("property_product_pricelist", "ilike", "Test pricelist 1")]
+        )
+        self.assertIn(self.customer_1, partners)
+        self.assertNotIn(self.customer_2, partners)
 
     def test_show_pricelist_partners(self):
         res = self.pricelist_1.show_pricelist_partners()

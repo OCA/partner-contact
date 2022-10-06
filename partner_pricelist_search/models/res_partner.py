@@ -1,8 +1,7 @@
 # Copyright 2021 Tecnativa - Carlos Dauden
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from odoo import api, fields, models
 
 
 class Pricelist(models.Model):
@@ -13,31 +12,21 @@ class Pricelist(models.Model):
     )
 
     @api.model
+    def search(self, args, offset=0, limit=None, order=None, count=False):
+        # Substitute pricelist tuple
+        partner_domain = [
+            (1, "=", 1)
+            if (isinstance(x, tuple) and x[0] == "property_product_pricelist")
+            else x
+            for x in args
+        ]
+        return super(
+            Pricelist, self.with_context(search_partner_domain=partner_domain)
+        ).search(args, offset=offset, limit=limit, order=order, count=count,)
+
+    @api.model
     def _search_property_product_pricelist(self, operator, value):
-        if operator == "=":
-
-            def filter_func(partner):
-                return partner.property_product_pricelist.id == value
-
-        elif operator == "!=":
-
-            def filter_func(partner):
-                return partner.property_product_pricelist.id != value
-
-        elif operator == "in":
-
-            def filter_func(partner):
-                return partner.property_product_pricelist.id in value
-
-        elif operator == "not in":
-
-            def filter_func(partner):
-                return partner.property_product_pricelist.id not in value
-
-        else:
-            raise UserError(
-                _("Pricelist field do not support search with the operator '%s'.")
-                % operator
-            )
-        partners = self.with_context(prefetch_fields=False).search([])
-        return [("id", "in", partners.filtered(filter_func).ids)]
+        domain = self.env.context.get("search_partner_domain", [])
+        partners = self.with_context(prefetch_fields=False).search(domain)
+        key = "property_product_pricelist"
+        return [("id", "in", partners.filtered_domain([(key, operator, value)]).ids)]
