@@ -35,12 +35,6 @@ msgid "Pricelist"
 msgstr "Tarifa"
 
 #. module: partner_pricelist_search
-#: code:addons/partner_pricelist_search/models/res_partner.py:29
-#, python-format
-msgid "Pricelist field do not support search with the operator '%s'."
-msgstr "El campo Tarifa no soporta búsquedas con el operador '%s'."
-
-#. module: partner_pricelist_search
 #: model:ir.model.fields,help:partner_pricelist_search.field_res_partner__property_product_pricelist
 #: model:ir.model.fields,help:partner_pricelist_search.field_res_users__property_product_pricelist
 msgid ""
@@ -49,3 +43,6 @@ msgid ""
 msgstr ""
 "Esta tarifa se utilizará, en lugar de la por defecto, para las ventas de la "
 "empresa actual"
+
+#~ msgid "Pricelist field do not support search with the operator '%s'."
+#~ msgstr "El campo Tarifa no soporta búsquedas con el operador '%s'."
