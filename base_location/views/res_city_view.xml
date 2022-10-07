@@ -2,7 +2,7 @@
 <odoo>
     <record id="view_city_tree_inherit" model="ir.ui.view">
         <field name="model">res.city</field>
-        <field name="inherit_id" ref="base_address_city.view_city_tree" />
+        <field name="inherit_id" ref="base_address_extended.view_city_tree" />
         <field name="arch" type="xml">
             <tree position="attributes">
                 <attribute name="editable" />
@@ -19,16 +19,18 @@
         <field name="model">res.city</field>
         <field name="arch" type="xml">
             <form>
-                <group>
-                    <field name="name" />
-                    <field name="country_id" />
-                    <field name="state_id" />
-                </group>
-                <notebook>
-                    <page name="zips" string="Zips">
-                        <field name="zip_ids" />
-                    </page>
-                </notebook>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="country_id" />
+                        <field name="state_id" />
+                    </group>
+                    <notebook>
+                        <page name="zips" string="Zips">
+                            <field name="zip_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
             </form>
         </field>
     </record>
@@ -40,7 +42,7 @@
         <field
             name="view_ids"
             eval="[(5,0,0),
-                      (0, 0, {'view_mode': 'tree', 'view_id': ref('base_address_city.view_city_tree')}),
+                      (0, 0, {'view_mode': 'tree', 'view_id': ref('base_address_extended.view_city_tree')}),
                       (0, 0, {'view_mode': 'form', 'view_id': ref('view_city_form')})]"
         />
         <field name="help">
