@@ -12,7 +12,7 @@ class ResPartner(models.Model):
 
     vat = fields.Char(copy=False)
 
-    @api.constrains("vat")
+    @api.constrains("vat", "parent_id")
     def _check_vat_unique(self):
         for record in self:
             if record.parent_id or not record.vat:
