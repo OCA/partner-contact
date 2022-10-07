@@ -182,14 +182,6 @@ class TestBaseLocation(common.TransactionCase):
         partner._onchange_country_id()
         self.assertFalse(partner.zip_id)
 
-    def test_partner_onchange_city(self):
-        """Test partner onchange city_id"""
-        partner = Form(self.env["res.partner"])
-        partner.zip_id = self.lausanne
-        self.city_bcn.country_id.enforce_cities = False
-        partner.city_id = self.city_bcn
-        self.assertFalse(partner.zip_id)
-
     def test_partner_onchange_state(self):
         """Test partner onchange state_id"""
         partner = Form(self.env["res.partner"])

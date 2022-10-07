@@ -150,7 +150,7 @@ class ResPartner(models.Model):
     def _fields_view_get_address(self, arch):
         # We want to use a domain that requires city_id to be on the view
         # but we can't add it directly there, otherwise _fields_view_get_address
-        # in base_address_city won't do its magic, as it immediately returns
+        # in base_address_extended won't do its magic, as it immediately returns
         # if city_id is already in there. On the other hand, if city_id is not in the
         # views, odoo won't let us use it in zip_id's domain.
         # For this reason we need to set the domain here.
@@ -162,4 +162,7 @@ class ResPartner(models.Model):
 
     @api.model
     def _address_fields(self):
+        """Add to the list of address fields the new ZIP one, but also the city that is
+        not added by `base_address_extended`.
+        """
         return super()._address_fields() + ["zip_id", "city_id"]

@@ -40,7 +40,7 @@ class ResCompany(models.Model):
     def _get_company_address_field_names(self):
         """Add to the list of field to populate in _compute_address the new
         ZIP field + the city that is not handled at company level in
-        `base_address_city`.
+        `base_address_extended`.
         """
         res = super()._get_company_address_field_names()
         res += ["city_id", "zip_id"]
