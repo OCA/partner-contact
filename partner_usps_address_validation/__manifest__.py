@@ -15,7 +15,7 @@
     ],
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
     "maintainer": ["ckolobow"],
-    "website": "https://github.com/OCA/sale-workflow",
+    "website": "https://github.com/OCA/partner-contact",
     "demo": [],
     "installable": True,
     "application": True,

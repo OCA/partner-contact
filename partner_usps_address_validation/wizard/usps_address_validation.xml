@@ -9,29 +9,29 @@
                 <sheet>
                     <group>
                         <group string="Original Address">
-                            <field name="original_street"/>
-                            <field name="original_street2"/>
-                            <field name="original_city"/>
-                            <field name="original_state"/>
-                            <field name="original_zip"/>
-                            <field name="original_country"/>
+                            <field name="original_street" />
+                            <field name="original_street2" />
+                            <field name="original_city" />
+                            <field name="original_state" />
+                            <field name="original_zip" />
+                            <field name="original_country" />
                         </group>
                         <group string="Validated Address">
-                            <field name="street"/>
-                            <field name="street2"/>
-                            <field name="city"/>
-                            <field name="state"/>
-                            <field name="zip"/>
-                            <field name="country"/>
+                            <field name="street" />
+                            <field name="street2" />
+                            <field name="city" />
+                            <field name="state" />
+                            <field name="zip" />
+                            <field name="country" />
                         </group>
                     </group>
                     <footer>
                     <button
-                        name="accept_validate_address"
-                        type="object"
-                        string="Accept Validate Address"
-                        class="oe_highlight"
-                    />
+                            name="accept_validate_address"
+                            type="object"
+                            string="Accept Validate Address"
+                            class="oe_highlight"
+                        />
                     <button string="Cancel" class="oe_link" special="cancel" />
                 </footer>
                 </sheet>
