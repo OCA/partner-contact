@@ -12,13 +12,13 @@ class TestPortalPartnerSelctAll(common.TransactionCase):
         self.partner3 = Partner.create({"name": "P3", "email": "p3@p3"})
         self.wizard_all = (
             self.env["portal.wizard"]
-            .with_context({"active_ids": [self.partner1.id, self.partner2.id]})
+            .with_context(**{"active_ids": [self.partner1.id, self.partner2.id]})
             .create({})
         )
         self.wizard_default = (
             self.env["portal.wizard"]
             .with_context(
-                {"active_ids": [self.partner1.id, self.partner2.id, self.partner3.id]}
+                **{"active_ids": [self.partner1.id, self.partner2.id, self.partner3.id]}
             )
             .create({})
         )
