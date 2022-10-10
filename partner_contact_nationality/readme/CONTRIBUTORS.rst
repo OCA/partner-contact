@@ -6,3 +6,7 @@
 * Denis Roussel <denis.roussel@acsone.eu>
 * Marçal Isern <marsal.isern@qubiq.es>
 * Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+
+* `Pesol <https://www.pesol.es>`__:
+
+  * Pedro Evaristo Gonzalez Sanchez <pedro.gonzalez@pesol.es>
