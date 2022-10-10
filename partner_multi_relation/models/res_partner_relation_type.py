@@ -1,4 +1,4 @@
-# Copyright 2013-2018 Therp BV <https://therp.nl>.
+# Copyright 2013-2022 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Define the type of relations that can exist between partners."""
 from odoo import _, api, fields, models
@@ -223,26 +223,24 @@ class ResPartnerRelationType(models.Model):
             if hasattr(vals[right_key], "id"):
                 vals[right_key] = vals[right_key].id
 
-    @api.model
-    def create(self, vals):
-        if vals.get("is_symmetric"):
-            self._update_right_vals(vals)
-        return super(ResPartnerRelationType, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get("is_symmetric"):
+                self._update_right_vals(vals)
+        return super().create(vals_list)
 
     def write(self, vals):
         """Handle existing relations if conditions change."""
         self.check_existing(vals)
-
         for rec in self:
             rec_vals = vals.copy()
             if rec_vals.get("is_symmetric", rec.is_symmetric):
                 self._update_right_vals(rec_vals)
             super(ResPartnerRelationType, rec).write(rec_vals)
-
         allow_self_disabled = "allow_self" in vals and not vals["allow_self"]
         if allow_self_disabled:
             self._handle_deactivation_of_allow_self()
-
         return True
 
     def unlink(self):
@@ -257,4 +255,4 @@ class ResPartnerRelationType(models.Model):
                 # do not prevent unlink of relation type:
                 relations = relation_model.search([("type_id", "=", rec.id)])
                 relations.unlink()
-        return super(ResPartnerRelationType, self).unlink()
+        return super().unlink()

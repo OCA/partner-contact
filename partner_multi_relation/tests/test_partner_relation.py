@@ -286,7 +286,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
                 "contact_type_right": type_symmetric.contact_type_right,
             }
         )
-        type_symmetric.flush()
+        type_symmetric.flush_recordset()
         # symmetric relation should result in only one record in
         # selection:
         selection_symmetric = self.selection_model.search(

@@ -1,4 +1,4 @@
-# Copyright 2013-2017 Therp BV <http://therp.nl>
+# Copyright 2013-2022 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """
 For the model defined here _auto is set to False to prevent creating a
@@ -36,7 +36,7 @@ class ResPartnerRelationTypeSelection(models.Model):
         return rprt_model.get_partner_types()
 
     type_id = fields.Many2one(comodel_name="res.partner.relation.type")
-    name = fields.Char()
+    name = fields.Char(required=True, translate=True)
     contact_type_this = fields.Selection(
         selection="get_partner_types", string="Current record's partner type"
     )
@@ -118,7 +118,7 @@ CREATE OR REPLACE VIEW %(table)s AS
                 "additional_tables": AsIs(self._get_additional_tables()),
             },
         )
-        return super(ResPartnerRelationTypeSelection, self)._auto_init()
+        return super()._auto_init()
 
     def name_get(self):
         """Get name or name_inverse from underlying model."""
