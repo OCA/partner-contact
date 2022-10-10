@@ -7,7 +7,7 @@ from odoo.exceptions import ValidationError
 from odoo.tests import common
 
 
-class TestResPartnerRefUnique(common.SavepointCase):
+class TestResPartnerRefUnique(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestResPartnerRefUnique, cls).setUpClass()
