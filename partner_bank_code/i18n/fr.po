@@ -36,17 +36,11 @@ msgstr "Code banque"
 msgid "Bank and Branch Code should be unique."
 msgstr "Les codes banque et agence doivent être uniques."
 
-#. module: partner_bank_code
-#: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__display_name
-msgid "Display Name"
-msgstr "Nom affiché"
+#~ msgid "Display Name"
+#~ msgstr "Nom affiché"
 
-#. module: partner_bank_code
-#: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__id
-msgid "ID"
-msgstr "ID"
+#~ msgid "ID"
+#~ msgstr "ID"
 
-#. module: partner_bank_code
-#: model:ir.model.fields,field_description:partner_bank_code.field_res_bank____last_update
-msgid "Last Modified on"
-msgstr "Dernière modification le"
+#~ msgid "Last Modified on"
+#~ msgstr "Dernière modification le"
