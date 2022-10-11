@@ -7,23 +7,34 @@ class TestAnimalOwner(test_animal.TestAnimalState):
         super(TestAnimalOwner, self).setUp()
         self.partner_obj = self.env["res.partner"]
 
-        # Create Partner
-        self.partner = self.partner_obj.create({"name": "Partner 1"})
+        # Create Owner 1
+        self.owner_1 = self.partner_obj.create({"name": "Owner 1"})
+        self.owner_2 = self.partner_obj.create({"name": "Owner 2"})
 
         # Assign to test_animal
-        self.test_animal.write({
-            "partner_id": self.partner.id
-        })
+        self.test_animal.write({"partner_id": self.owner_1.id})
 
-    def test_animal_owner(self):
-        # Test action
-        self.partner.action_view_animals()
+        # Duplicate test_animals for owner_2
+        self.test_animal_1 = self.test_animal.copy()
+        self.test_animal_1.write({"partner_id": self.owner_2.id})
+        self.test_animal_2 = self.test_animal_1.copy()
+
+    def test_animal_owner_1(self):
+        # Test action 1
+        self.owner_1.action_view_animals()
 
         # Check for animal count
-        self.assertEqual(self.partner.animal_count, 1)
+        self.assertEqual(self.owner_1.animal_count, 1)
+
+    def test_animal_owner_2(self):
+        # Test action 2
+        self.owner_2.action_view_animals()
+
+        # Check for animal count
+        self.assertEqual(self.owner_2.animal_count, 2)
 
         # Unlink animal
-        self.test_animal.unlink()
+        self.owner_2.animal_ids.unlink()
 
-        # Check animal count after link
-        self.assertEqual(self.partner.animal_count, 0)
+        # Check animal count after unlink
+        self.assertEqual(self.owner_2.animal_count, 0)
