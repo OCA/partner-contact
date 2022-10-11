@@ -9,7 +9,7 @@ def pre_init_hook(cr):
     logger.info("Prepopulating stored related fields")
     cr.execute(
         """
-        alter table crm_lead
-        add column if not exists company_group_id integer;
+        ALTER TABLE crm_lead
+        ADD COLUMN IF NOT EXISTS company_group_id integer;
         """
     )
