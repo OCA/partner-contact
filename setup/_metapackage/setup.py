@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-partner-contact Odoo addons",
     version=version,
     install_requires=[
+        'odoo-addon-account_partner_company_group>=15.0dev,<15.1dev',
         'odoo-addon-animal>=15.0dev,<15.1dev',
         'odoo-addon-base_country_state_translatable>=15.0dev,<15.1dev',
         'odoo-addon-base_location>=15.0dev,<15.1dev',
