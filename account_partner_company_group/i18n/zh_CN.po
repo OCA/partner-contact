@@ -22,11 +22,14 @@ msgid "Company Group"
 msgstr "集团公司"
 
 #. module: account_partner_company_group
+#: model:ir.model.fields,field_description:account_partner_company_group.field_account_bank_statement_line__company_group_id
 #: model:ir.model.fields,field_description:account_partner_company_group.field_account_move__company_group_id
+#: model:ir.model.fields,field_description:account_partner_company_group.field_account_payment__company_group_id
 msgid "Company group"
 msgstr "集团公司"
 
 #. module: account_partner_company_group
 #: model:ir.model,name:account_partner_company_group.model_account_move
-msgid "Journal Entries"
+#, fuzzy
+msgid "Journal Entry"
 msgstr "会计分录"
