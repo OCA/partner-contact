@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo-addon-base_location>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_birthdate>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_gender>=16.0dev,<16.1dev',
+        'odoo-addon-partner_contact_job_position>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_lang>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_personal_information_page>=16.0dev,<16.1dev',
         'odoo-addon-partner_firstname>=16.0dev,<16.1dev',
