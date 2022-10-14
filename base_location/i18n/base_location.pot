@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -41,6 +41,8 @@ msgstr ""
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company__city_id
+#: model:ir.model.fields,field_description:base_location.field_res_partner__city_id
+#: model:ir.model.fields,field_description:base_location.field_res_users__city_id
 msgid "City ID"
 msgstr ""
 
@@ -48,12 +50,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_location.view_company_form_city
 #: model_terms:ir.ui.view,arch_db:base_location.view_partner_form
 msgid "City completion"
-msgstr ""
-
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_partner__city_id
-#: model:ir.model.fields,field_description:base_location.field_res_users__city_id
-msgid "City of Address"
 msgstr ""
 
 #. module: base_location
