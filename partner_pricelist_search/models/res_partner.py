@@ -1,10 +1,10 @@
 # Copyright 2021 Tecnativa - Carlos Dauden
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
 
 
-class Pricelist(models.Model):
+class ResPartner(models.Model):
     _inherit = "res.partner"
 
     property_product_pricelist = fields.Many2one(
@@ -16,12 +16,12 @@ class Pricelist(models.Model):
         # Substitute pricelist tuple
         partner_domain = [
             (1, "=", 1)
-            if (isinstance(x, tuple) and x[0] == "property_product_pricelist")
+            if (isinstance(x, (list, tuple)) and x[0] == "property_product_pricelist")
             else x
             for x in args
         ]
         return super(
-            Pricelist, self.with_context(search_partner_domain=partner_domain)
+            ResPartner, self.with_context(search_partner_domain=partner_domain)
         ).search(
             args,
             offset=offset,
