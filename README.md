@@ -41,6 +41,7 @@ addon | version | maintainers | summary
 [partner_contact_gender](partner_contact_gender/) | 15.0.1.0.0 |  | Add gender field to contacts
 [partner_contact_job_position](partner_contact_job_position/) | 15.0.1.0.1 |  | Categorize job positions for contacts
 [partner_contact_lang](partner_contact_lang/) | 15.0.1.0.0 |  | Manage language in contacts
+[partner_contact_nationality](partner_contact_nationality/) | 15.0.1.0.0 |  | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 15.0.1.0.0 |  | Add a page to contacts form to put personal information
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 15.0.1.0.0 |  | Contact deduplication with fine-grained permission control
 [partner_deduplicate_by_ref](partner_deduplicate_by_ref/) | 15.0.1.0.0 |  | Deduplicate Contacts by reference
