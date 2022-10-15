@@ -28,6 +28,7 @@ setuptools.setup(
         'odoo-addon-partner_contact_gender>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_job_position>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_lang>=15.0dev,<15.1dev',
+        'odoo-addon-partner_contact_nationality>=15.0dev,<15.1dev',
         'odoo-addon-partner_contact_personal_information_page>=15.0dev,<15.1dev',
         'odoo-addon-partner_deduplicate_acl>=15.0dev,<15.1dev',
         'odoo-addon-partner_deduplicate_by_ref>=15.0dev,<15.1dev',
