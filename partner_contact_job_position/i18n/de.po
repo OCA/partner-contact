@@ -63,7 +63,6 @@ msgstr "Position"
 
 #. module: partner_contact_job_position
 #: model_terms:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_form_view
-#: model_terms:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_tree_view
 msgid "Job positions"
 msgstr "Positionen"
 
