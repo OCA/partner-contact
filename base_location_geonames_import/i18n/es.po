@@ -20,6 +20,7 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 
 #. module: base_location_geonames_import
+#. odoo-python
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
 #, python-format
 msgid "%d could not be deleted %"
@@ -95,6 +96,7 @@ msgid "Geonames State Name Column"
 msgstr "Columna Nombre Provincia Geonames"
 
 #. module: base_location_geonames_import
+#. odoo-python
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
 #, python-format
 msgid "Got an error %d when trying to download the file %s."

@@ -3,7 +3,7 @@
 # Copyright 2014 Lorenzo Battistini <lorenzo.battistini@agilebg.com>
 # Copyright 2017 ForgeFlow, S.L. <.com>
 # Copyright 2018 Aitor Bouzas <aitor.bouzas@adaptivecity.com>
-# Copyright 2016-2020 Tecnativa - Pedro M. Baeza
+# Copyright 2016-2022 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 import csv
@@ -50,30 +50,27 @@ class CityZipGeonamesImport(models.TransientModel):
         return res
 
     @api.model
-    def _domain_search_city_zip(self, row, city_id=False):
+    def _domain_search_city_zip(self, row, city=False):
         domain = [("name", "=", row[1])]
-        if city_id:
-            domain += [("city_id", "=", city_id)]
+        if city:
+            domain += [("city_id", "=", city.id)]
         return domain
 
     @api.model
-    def select_city(self, row, country, state_id):
-        # This has to be done by SQL for performance reasons avoiding
-        # left join with ir_translation on the translatable field "name"
-        self.env.cr.execute(
-            "SELECT id, name FROM res_city "
-            "WHERE name = %s AND country_id = %s AND state_id = %s LIMIT 1",
-            (self.transform_city_name(row[2], country), country.id, state_id),
+    def _select_city(self, row, country, state):
+        return self.env["res.city"].search(
+            [
+                ("name", "=", row[2]),
+                ("country_id", "=", country.id),
+                ("state_id", "=", state.id),
+            ],
+            limit=1,
         )
-        row_city = self.env.cr.fetchone()
-        return (row_city[0], row_city[1]) if row_city else (False, False)
 
     @api.model
-    def select_zip(self, row, country, state_id):
-        city_id, _ = self.select_city(row, country, state_id)
-        return self.env["res.city.zip"].search(
-            self._domain_search_city_zip(row, city_id)
-        )
+    def _select_zip(self, row, country, state):
+        city = self._select_city(row, country, state)
+        return self.env["res.city.zip"].search(self._domain_search_city_zip(row, city))
 
     @api.model
     def prepare_state(self, row, country):
@@ -84,10 +81,10 @@ class CityZipGeonamesImport(models.TransientModel):
         }
 
     @api.model
-    def prepare_city(self, row, country, state_id):
+    def prepare_city(self, row, country, state):
         vals = {
             "name": self.transform_city_name(row[2], country),
-            "state_id": state_id,
+            "state_id": state.id,
             "country_id": country.id,
         }
         return vals
@@ -105,7 +102,7 @@ class CityZipGeonamesImport(models.TransientModel):
         )
         url = config_url % country_code
         logger.info("Starting to download %s" % url)
-        res_request = requests.get(url)
+        res_request = requests.get(url, timeout=15)
         if res_request.status_code != requests.codes.ok:
             # pylint: disable=translation-positional-used - Don't want to re-translate
             raise UserError(
@@ -152,7 +149,7 @@ class CityZipGeonamesImport(models.TransientModel):
                     (state_vals["name"], state_vals["code"], state_vals["country_id"])
                 )
             else:
-                state_dict[state.code] = state.id
+                state_dict[state.code] = state
         state_vals_list = [
             {"name": name, "code": code, "country_id": country_id}
             for name, code, country_id in state_vals_set
@@ -160,7 +157,7 @@ class CityZipGeonamesImport(models.TransientModel):
         logger.info("Importing %d states", len(state_vals_list))
         created_states = self.env["res.country.state"].create(state_vals_list)
         for i, vals in enumerate(state_vals_list):
-            state_dict[vals["code"]] = created_states[i].id
+            state_dict[vals["code"]] = created_states[i]
         return state_dict
 
     def _create_cities(
@@ -172,28 +169,25 @@ class CityZipGeonamesImport(models.TransientModel):
         for i, row in enumerate(parsed_csv):
             if max_import and i == max_import:
                 break
-            state_id = state_dict[row[country.geonames_state_code_column or 4]]
-            city_id, city_name = (
-                self.select_city(row, country, state_id)
+            state = state_dict[row[country.geonames_state_code_column or 4]]
+            city = (
+                self._select_city(row, country, state)
                 if search_cities
-                else (False, False)
+                else self.env["res.city"]
             )
-            if not city_id:
-                city_vals = self.prepare_city(row, country, state_id)
+            if not city:
+                city_vals = self.prepare_city(row, country, state)
                 city_vals_set.add(
                     (city_vals["name"], city_vals["state_id"], city_vals["country_id"])
                 )
             else:
-                city_dict[(city_name, state_id)] = city_id
-        ctx = dict(self.env.context)
-        ctx.pop("lang", None)  # make sure no translation is added
+                city_dict[(city.name, state.id)] = city.id
         city_vals_list = [
             {"name": name, "state_id": state_id, "country_id": country_id}
             for name, state_id, country_id in city_vals_set
         ]
         logger.info("Importing %d cities", len(city_vals_list))
-        # pylint: disable=context-overridden - It's legit to replace it in this case
-        created_cities = self.env["res.city"].with_context(ctx).create(city_vals_list)
+        created_cities = self.env["res.city"].create(city_vals_list)
         for i, vals in enumerate(city_vals_list):
             city_dict[(vals["name"], vals["state_id"])] = created_cities[i].id
         return city_dict
@@ -245,12 +239,12 @@ class CityZipGeonamesImport(models.TransientModel):
                 break
             # Don't search if there aren't any records
             zip_code = False
-            state_id = state_dict[row[country.geonames_state_code_column or 4]]
+            state = state_dict[row[country.geonames_state_code_column or 4]]
             if search_zips:
-                zip_code = self.select_zip(row, country, state_id)
+                zip_code = self._select_zip(row, country, state)
             if not zip_code:
                 city_id = city_dict[
-                    (self.transform_city_name(row[2], country), state_id)
+                    (self.transform_city_name(row[2], country), state.id)
                 ]
                 zip_vals = self.prepare_zip(row, city_id)
                 if zip_vals not in zip_vals_list:
