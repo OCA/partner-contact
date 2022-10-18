@@ -21,6 +21,7 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. module: base_location_geonames_import
+#. odoo-python
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
 #, python-format
 msgid "%d could not be deleted %"
@@ -88,6 +89,7 @@ msgid "Geonames State Name Column"
 msgstr ""
 
 #. module: base_location_geonames_import
+#. odoo-python
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
 #, python-format
 msgid "Got an error %d when trying to download the file %s."
