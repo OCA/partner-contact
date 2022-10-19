@@ -55,6 +55,7 @@ addon | version | maintainers | summary
 [partner_phone_extension](partner_phone_extension/) | 15.0.1.0.1 |  | Partner Phone Number Extension
 [partner_phone_secondary](partner_phone_secondary/) | 15.0.1.0.0 | [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Adds a secondary phone number on partners
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 15.0.1.0.0 |  | Track the time and days your partners expect phone calls
+[partner_pricelist_search](partner_pricelist_search/) | 15.0.1.0.0 |  | Partner pricelist search
 [partner_priority](partner_priority/) | 15.0.1.0.0 | [![patrickrwilson](https://github.com/patrickrwilson.png?size=30px)](https://github.com/patrickrwilson) | Adds priority to partners.
 [partner_ref_unique](partner_ref_unique/) | 15.0.1.0.0 |  | Add an unique constraint to partner ref field
 [partner_second_lastname](partner_second_lastname/) | 15.0.1.0.0 |  | Have split first and second lastnames
