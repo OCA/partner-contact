@@ -72,6 +72,7 @@ addon | version | maintainers | summary
 [partner_label](partner_label/) | 14.0.1.0.1 |  | Print partner labels
 [partner_manual_rank](partner_manual_rank/) | 14.0.1.0.0 |  | Be able to manually flag partners as customer or supplier.
 [partner_mobile_duplicate_warn](partner_mobile_duplicate_warn/) | 14.0.1.0.1 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Warning banner on partner form if another partner has the same mobile
+[partner_mobile_unique](partner_mobile_unique/) | 14.0.1.0.0 | [![AshishHirapara](https://github.com/AshishHirapara.png?size=30px)](https://github.com/AshishHirapara) | Restriction on partner creation if another partner has the same mobile
 [partner_multi_relation](partner_multi_relation/) | 14.0.1.1.0 |  | Partner Relations
 [partner_phone_extension](partner_phone_extension/) | 14.0.1.0.1 |  | Partner Phone Number Extension
 [partner_phone_secondary](partner_phone_secondary/) | 14.0.1.0.0 | [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Adds a secondary phone number on partners
