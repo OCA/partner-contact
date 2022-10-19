@@ -59,6 +59,7 @@ setuptools.setup(
         'odoo14-addon-partner_label',
         'odoo14-addon-partner_manual_rank',
         'odoo14-addon-partner_mobile_duplicate_warn',
+        'odoo14-addon-partner_mobile_unique',
         'odoo14-addon-partner_multi_relation',
         'odoo14-addon-partner_phone_extension',
         'odoo14-addon-partner_phone_secondary',
