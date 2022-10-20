@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo-addon-partner_contact_lang>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_personal_information_page>=16.0dev,<16.1dev',
         'odoo-addon-partner_firstname>=16.0dev,<16.1dev',
+        'odoo-addon-partner_vat_unique>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
