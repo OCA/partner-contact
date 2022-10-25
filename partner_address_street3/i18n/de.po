@@ -60,13 +60,13 @@ msgstr "Layout in Reports"
 #: model:ir.model.fields,field_description:partner_address_street3.field_res_partner__street3
 #: model:ir.model.fields,field_description:partner_address_street3.field_res_users__street3
 msgid "Street 3"
-msgstr "Strasse 3"
+msgstr "Straße 3"
 
 #. module: partner_address_street3
 #: model_terms:ir.ui.view,arch_db:partner_address_street3.add_street3_in_form_view
 #: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_address_form
 msgid "Street 3..."
-msgstr "Strasse 3..."
+msgstr "Straße 3..."
 
 #~ msgid "Partner"
 #~ msgstr "Partner"
