@@ -4,7 +4,7 @@
 
 {
     "name": "Partner Disable Gravatar",
-    "version": "14.0.1.0.0",
+    "version": "16.0.1.0.1",
     "category": "Tools",
     "license": "AGPL-3",
     "summary": "Disable automatic connection to gravatar.com",
