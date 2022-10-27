@@ -21,5 +21,4 @@ class TestPartnerContactAccessLink(TransactionCase):
         self.assertEqual(res["res_model"], "res.partner")
         self.assertEqual(res["res_id"], self.contact.id)
         self.assertEqual(res["view_mode"], "form")
-        self.assertEqual(res["view_type"], "form")
         self.assertEqual(res["target"], "current")
