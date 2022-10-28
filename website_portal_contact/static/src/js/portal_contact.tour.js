@@ -6,7 +6,7 @@ odoo.define("website_portal_contact.tour", function (require) {
 
     var Tour = require("web.Tour");
 
-    function in_url (needle) {
+    function in_url(needle) {
         return (location.pathname + location.search).indexOf(needle) !== -1;
     }
 
@@ -15,13 +15,12 @@ odoo.define("website_portal_contact.tour", function (require) {
             if (in_url(needle)) {
                 console.log(
                     "Applying workaround for " +
-                    "https://github.com/odoo/odoo/issues/12961"
+                        "https://github.com/odoo/odoo/issues/12961"
                 );
                 return next_step;
             }
         };
     }
-
 
     Tour.register({
         id: "website_portal_contact",
@@ -138,6 +137,6 @@ odoo.define("website_portal_contact.tour", function (require) {
                 title: "No remaining contacts!",
                 waitNot: "tr:contains('LeChuck')",
             },
-        ]
+        ],
     });
 });
