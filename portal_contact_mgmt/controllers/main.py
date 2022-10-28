@@ -26,7 +26,7 @@ class ContactsCustomerPortal(CustomerPortal):
         """Get user's contacts domain."""
         domain = [("type", "=", "contact"), ("active", "=", True)]
         domain += request.env.ref(
-            "website_portal_contact.rule_edit_own_contacts"
+            "portal_contact_mgmt.rule_edit_own_contacts"
         )._compute_domain("res.partner", "read")
 
         # To edit yourself you have /my/account
@@ -174,7 +174,7 @@ class ContactsCustomerPortal(CustomerPortal):
         self, page=1, date_begin=None, date_end=None, search="", search_in="all", **kw
     ):
         values = self._prepare_contacts_values(page, date_begin, date_end, search)
-        return request.render("website_portal_contact.portal_my_contacts", values)
+        return request.render("portal_contact_mgmt.portal_my_contacts", values)
 
     @http.route("/my/contacts/new", auth="user", website=True)
     def portal_my_contacts_new(self):
@@ -188,7 +188,7 @@ class ContactsCustomerPortal(CustomerPortal):
                 "fields": self._contacts_fields(),
             }
         )
-        return request.render("website_portal_contact.portal_my_contact", values)
+        return request.render("portal_contact_mgmt.portal_my_contact", values)
 
     @http.route("/my/contacts/create", auth="user", website=True)
     def portal_my_contacts_create(self, redirect="/my/contacts/{}", **kwargs):
@@ -210,7 +210,7 @@ class ContactsCustomerPortal(CustomerPortal):
         except (AccessError, MissingError):
             return request.redirect("/my")
         values = self._contact_get_page_view_values(contact_sudo, access_token, **kw)
-        return request.render("website_portal_contact.portal_my_contact", values)
+        return request.render("portal_contact_mgmt.portal_my_contact", values)
 
     # ------------------------------------------------------------
     # My Contact

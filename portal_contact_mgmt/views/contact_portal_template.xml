@@ -172,7 +172,6 @@
                             t-att-value="request.csrf_token()"
                         />
                         <t t-foreach="fields" t-as="field_name">
-                            <!-- <t t-call="website_portal_contact.form_field"/> -->
                             <t
                                 t-set="field_description"
                                 t-value="contact._fields[field_name].get_description(request.env)"

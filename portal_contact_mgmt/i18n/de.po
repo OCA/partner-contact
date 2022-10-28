@@ -1,0 +1,285 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* portal_contact_mgmt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-28 07:17+0000\n"
+"PO-Revision-Date: 2022-10-28 07:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_contact
+msgid "<b>Add Contact  </b>"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_contact
+msgid "<b>Edit Contact  </b>"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_contact
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_contacts
+msgid "<span class=\"fa fa-trash\" role=\"img\" aria-label=\"Delete\" title=\"Delete\"/>"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_contacts
+msgid "Add new contact"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Change Email"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Change to Elaine"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Check My Contacts Portal Page"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Check Total"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Cilck on Add new contact button"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Click on Name"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Click on email"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Click on mobile"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Click on phone"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Click search for Guybrush"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Click search for LeChuck"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Click to add LeChuck"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model:ir.model,name:portal_contact_mgmt.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_layout
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_contacts
+msgid "Contacts"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_contacts
+msgid "Delete"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Delete Elaine"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model:ir.model.fields,field_description:portal_contact_mgmt.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_contacts
+msgid "Email"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: code:addons/portal_contact_mgmt/controllers/main.py:0
+#, python-format
+msgid "Fields not available: %s"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Fill email"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Fill mobile"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Fill name"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Fill name LeChuck"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Fill phone"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Guybrush not found, search for LeChuck"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model:ir.model.fields,field_description:portal_contact_mgmt.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model:ir.model.fields,field_description:portal_contact_mgmt.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_contacts
+msgid "Mobile"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_contacts
+msgid "Name"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_layout
+msgid "New Contact"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Return to list"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_contact
+msgid "Save"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Save changes"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Save new contact"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#. openerp-web
+#: code:addons/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js:0
+#, python-format
+msgid "Search for Guybrush"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: code:addons/portal_contact_mgmt/controllers/main.py:0
+#, python-format
+msgid "Search in All"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_contacts
+msgid "There are no contacts."
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_contacts
+msgid "Total:"
+msgstr ""
+
+#. module: portal_contact_mgmt
+#: model_terms:ir.ui.view,arch_db:portal_contact_mgmt.portal_my_home_contacts
+msgid "Your Contacts"
+msgstr ""

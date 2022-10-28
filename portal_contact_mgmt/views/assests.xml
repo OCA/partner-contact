@@ -11,7 +11,7 @@
         <xpath expr="." position="inside">
             <script
                 type="text/javascript"
-                src="/website_portal_contact/static/src/js/test_portal_contact_tour.js"
+                src="/portal_contact_mgmt/static/src/js/test_portal_contact_tour.js"
             />
         </xpath>
     </template>
