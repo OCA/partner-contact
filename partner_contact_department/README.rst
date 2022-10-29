@@ -98,7 +98,7 @@ This module is maintained by the OCA.
 OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
- 
+
 This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/14.0/partner_contact_department>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
