@@ -21,12 +21,14 @@ msgstr ""
 "X-Generator: Weblate 3.6.1\n"
 
 #. module: partner_firstname
+#. odoo-python
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
 msgid "%(login)s (copy)"
 msgstr "%(login)s (copié)"
 
 #. module: partner_firstname
+#. odoo-python
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
 msgid "%(name)s (copy)"
@@ -48,6 +50,7 @@ msgid "Contacts require a name."
 msgstr "Le nom est obligatoire sur les contacts."
 
 #. module: partner_firstname
+#. odoo-python
 #: code:addons/partner_firstname/exceptions.py:0
 #, python-format
 msgid "Error(s) with partner %d's name."
@@ -72,6 +75,7 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: partner_firstname
+#. odoo-python
 #: code:addons/partner_firstname/exceptions.py:0
 #, python-format
 msgid "No name is set."
