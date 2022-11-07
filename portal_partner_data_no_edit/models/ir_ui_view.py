@@ -1,6 +1,7 @@
 # Copyright 2021 Tecnativa - David Vidal
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 from lxml import html
+from markupsafe import Markup
 
 from odoo import models
 
@@ -8,16 +9,16 @@ from odoo import models
 class IrUiView(models.Model):
     _inherit = "ir.ui.view"
 
-    def render(self, values=None, engine="ir.qweb", minimal_qcontext=False):
+    def _render(self, values=None, engine="ir.qweb", minimal_qcontext=False):
         """Disable inputs converting them into paragraphs and clear form
         buttons. This way, we don't need to go input by input and we can
         support any view extension without further patching"""
-        res = super().render(
+        res = super()._render(
             values=values, engine=engine, minimal_qcontext=minimal_qcontext
         )
         if not self.env.context.get("block_portal_data_edit"):
             return res
-        fragments = html.fromstring(res.decode("utf-8"))
+        fragments = html.fromstring(res.encode("utf-8"))
         for fragment in fragments:
             # The result is a page that looks the same way as the original form
             # but with the input fields shadowed and not editable as they're
@@ -49,4 +50,4 @@ class IrUiView(models.Model):
                 _select.getparent().remove(_select)
             for _button in fragment.iterfind(".//form[@action='/my/account']//button"):
                 _button.getparent().remove(_button)
-        return b"".join(html.tostring(f) for f in fragments)
+        return Markup("".join(html.tostring(f).decode() for f in fragments))
