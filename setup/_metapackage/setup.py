@@ -47,6 +47,7 @@ setuptools.setup(
         'odoo-addon-partner_ref_unique>=15.0dev,<15.1dev',
         'odoo-addon-partner_second_lastname>=15.0dev,<15.1dev',
         'odoo-addon-partner_vat_unique>=15.0dev,<15.1dev',
+        'odoo-addon-portal_partner_data_no_edit>=15.0dev,<15.1dev',
         'odoo-addon-sale_partner_company_group>=15.0dev,<15.1dev',
     ],
     classifiers=[
