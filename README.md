@@ -60,6 +60,7 @@ addon | version | maintainers | summary
 [partner_ref_unique](partner_ref_unique/) | 15.0.1.0.0 |  | Add an unique constraint to partner ref field
 [partner_second_lastname](partner_second_lastname/) | 15.0.1.0.0 |  | Have split first and second lastnames
 [partner_vat_unique](partner_vat_unique/) | 15.0.1.0.0 |  | Module to make the VAT number unique for customers and suppliers.
+[portal_partner_data_no_edit](portal_partner_data_no_edit/) | 15.0.1.0.0 |  | Portal Partner Block Data Edit
 [sale_partner_company_group](sale_partner_company_group/) | 15.0.1.0.0 |  | Adds the possibility to add a company group to a company
 
 [//]: # (end addons)
