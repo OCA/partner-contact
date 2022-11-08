@@ -49,6 +49,7 @@ msgstr "Icono de tipo de actividad"
 
 #. module: animal
 #: model:ir.model,name:animal.model_animal
+#: model:ir.module.category,name:animal.module_category_animal
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_form
 msgid "Animal"
 msgstr "Animal"
@@ -70,7 +71,8 @@ msgstr "Especies"
 
 #. module: animal
 #: model:ir.actions.act_window,name:animal.action_animal
-#: model:ir.ui.menu,name:animal.animal model:ir.ui.menu,name:animal.root
+#: model:ir.ui.menu,name:animal.menu_animal
+#: model:ir.ui.menu,name:animal.menu_root
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Animals"
 msgstr "Animales"
@@ -122,7 +124,7 @@ msgstr "Raza"
 #. module: animal
 #: model:ir.actions.act_window,name:animal.action_animal_breed
 #: model:ir.model.fields,field_description:animal.field_animal_species__breed_ids
-#: model:ir.ui.menu,name:animal.breed
+#: model:ir.ui.menu,name:animal.menu_breed
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
 msgid "Breeds"
 msgstr "Razas"
@@ -166,12 +168,12 @@ msgstr "Color"
 
 #. module: animal
 #: model:ir.actions.act_window,name:animal.action_animal_color
-#: model:ir.ui.menu,name:animal.color
+#: model:ir.ui.menu,name:animal.menu_color
 msgid "Colors"
 msgstr "Colores"
 
 #. module: animal
-#: model:ir.ui.menu,name:animal.config
+#: model:ir.ui.menu,name:animal.menu_config
 msgid "Configuration"
 msgstr "Configuración"
 
@@ -513,7 +515,7 @@ msgid "Schnauzer"
 msgstr "Schnauzer"
 
 #. module: animal
-#: model:ir.ui.menu,name:animal.settings
+#: model:ir.ui.menu,name:animal.menu_settings
 msgid "Settings"
 msgstr "Ajustes"
 
@@ -537,7 +539,7 @@ msgstr "Tamaño"
 #: model:ir.model.fields,field_description:animal.field_animal__species_id
 #: model:ir.model.fields,field_description:animal.field_animal_breed__species_id
 #: model:ir.model.fields,field_description:animal.field_animal_color__species_id
-#: model:ir.ui.menu,name:animal.species
+#: model:ir.ui.menu,name:animal.menu_species
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
 msgid "Species"
