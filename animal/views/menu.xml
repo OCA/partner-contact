@@ -2,49 +2,49 @@
 
     <!-- Main Menu -->
     <menuitem
-        id="root"
+        id="menu_root"
         name="Animals"
         action="action_animal"
         sequence="10"
         web_icon="animal,static/description/icon.png"
     />
     <menuitem
-        id="animal"
+        id="menu_animal"
         name="Animals"
         action="action_animal"
         sequence="10"
-        parent="root"
+        parent="menu_root"
     />
     <menuitem
-        id="config"
+        id="menu_config"
         name="Configuration"
         sequence="100"
-        parent="root"
+        parent="menu_root"
         groups="group_animal_manager"
     />
 
     <!-- Configuration -->
-    <menuitem id="settings" name="Settings" sequence="10" parent="config" />
+    <menuitem id="menu_settings" name="Settings" sequence="10" parent="menu_config" />
     <menuitem
-        id="species"
+        id="menu_species"
         name="Species"
         action="action_animal_species"
         sequence="20"
-        parent="config"
+        parent="menu_config"
     />
     <menuitem
-        id="breed"
+        id="menu_breed"
         name="Breeds"
         action="action_animal_breed"
         sequence="30"
-        parent="config"
+        parent="menu_config"
     />
     <menuitem
-        id="color"
+        id="menu_color"
         name="Colors"
         action="action_animal_color"
         sequence="40"
-        parent="config"
+        parent="menu_config"
     />
 
 </odoo>
