@@ -27,7 +27,7 @@
         <field name="model">res.partner.id_number</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="Partner ID Numbers">
+            <tree>
                 <field name="partner_id" />
                 <field name="category_id" />
                 <field name="name" />
