@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2017-2018 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="res_partner_company_type_form_view">
+        <field name="name">
+            res.partner.company.type.form (in partner_company_type)
+        </field>
+        <field name="model">res.partner.company.type</field>
+        <field name="arch" type="xml">
+            <form string="Company Types">
+                <group col="4">
+                    <field name="name" />
+                    <field name="shortcut" />
+                </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="res_partner_company_type_search_view">
+        <field name="name">
+            res.partner.company.type.search (in partner_company_type)
+        </field>
+        <field name="model">res.partner.company.type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+            </search>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="res_partner_company_type_tree_view">
+        <field name="name">
+            res.partner.company.type.tree (in partner_company_type)
+        </field>
+        <field name="model">res.partner.company.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="shortcut" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="res_partner_company_type_act_window">
+        <field name="name">Company Types</field>
+        <field name="res_model">res.partner.company.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+    <menuitem
+        action="res_partner_company_type_act_window"
+        id="menu_partner_company_type"
+        name="Company Types"
+        parent="contacts.res_partner_menu_config"
+    />
+</odoo>
