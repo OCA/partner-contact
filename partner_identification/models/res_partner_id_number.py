@@ -67,7 +67,7 @@ class ResPartnerIdNumber(models.Model):
             ("close", "Expired"),
         ]
     )
-    active = fields.Boolean(string="Active", default=True)
+    active = fields.Boolean(default=True)
 
     @api.model
     def default_get(self, fields):
