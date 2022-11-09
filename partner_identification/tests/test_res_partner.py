@@ -7,7 +7,7 @@ from odoo.tests import common
 from .fake_models import ResPartner, setup_test_model, teardown_test_model
 
 
-class TestResPartner(common.SavepointCase):
+class TestResPartner(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
