@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo-addon-base_location>=16.0dev,<16.1dev',
         'odoo-addon-base_location_geonames_import>=16.0dev,<16.1dev',
+        'odoo-addon-partner_company_type>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_access_link>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_birthdate>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_gender>=16.0dev,<16.1dev',
