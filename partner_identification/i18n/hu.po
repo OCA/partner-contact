@@ -40,12 +40,6 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:0
-#, python-format
-msgid "%s is not a valid %s identifier"
-msgstr ""
-
-#. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
 msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
 msgstr ""
@@ -96,19 +90,19 @@ msgid "Created on"
 msgstr "Létrehozás dátuma"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__display_name
 msgid "Display Name"
 msgstr "Név megjelenítése"
 
 #. module: partner_identification
+#. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid ""
-"Error when evaluating the id_category validation code::\n"
-" %s \n"
-"(%s)"
+"Error when evaluating the id_category validation code: \n"
+" {name} \n"
+"({error})"
 msgstr ""
 
 #. module: partner_identification
@@ -124,7 +118,6 @@ msgid "Expired"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__id
 msgid "ID"
@@ -174,7 +167,6 @@ msgid "Issued on"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category____last_update
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number____last_update
 msgid "Last Modified on"
@@ -233,13 +225,11 @@ msgstr ""
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
 #: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
-#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_tree
 msgid "Partner ID Numbers"
 msgstr ""
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
-#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_tree
 msgid "Partner Identification Categories"
 msgstr ""
 
@@ -286,11 +276,13 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
+#. odoo-python
 #: code:addons/partner_identification/models/res_partner.py:0
 #, python-format
 msgid ""
-"This %s has multiple IDs of this type (%s), so a write via the %s field is "
-"not possible. In order to fix this, please use the IDs tab."
+"This {record_name} has multiple IDs of this type ({category_code}), so a "
+"write via the {field_name} field is not possible. In order to fix this, "
+"please use the IDs tab."
 msgstr ""
 
 #. module: partner_identification
@@ -311,4 +303,11 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_from
 msgid "Validation period stating date."
+msgstr ""
+
+#. module: partner_identification
+#. odoo-python
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
+#, python-format
+msgid "{id_name} is not a valid {cat_name} identifier"
 msgstr ""
