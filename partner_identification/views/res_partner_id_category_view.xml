@@ -47,7 +47,7 @@ failed = not id_number.name.startswith(self.code) and True or False
         <field name="model">res.partner.id_category</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="Partner Identification Categories">
+            <tree>
                 <field name="name" />
                 <field name="code" />
             </tree>
