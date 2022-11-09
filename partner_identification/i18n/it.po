@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2022-03-14 18:34+0000\n"
-"Last-Translator: Riccardo Bellanova <bellanova@webmonks.it>\n"
+"PO-Revision-Date: 2023-01-03 12:48+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.2\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
@@ -40,12 +40,6 @@ msgid ""
 "<b><i># Sample 3: ID number must start with the category code</i></b>\n"
 "failed = not id_number.name.startswith(self.code) and True or False"
 msgstr ""
-
-#. module: partner_identification
-#: code:addons/partner_identification/models/res_partner_id_category.py:0
-#, python-format
-msgid "%s is not a valid %s identifier"
-msgstr "%s non è un identificatore %s valido"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
@@ -82,7 +76,7 @@ msgstr "Codice"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
 msgid "Color Index"
-msgstr "Indice del colore"
+msgstr "Indice colore"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner
@@ -102,23 +96,20 @@ msgid "Created on"
 msgstr "Creato il"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__display_name
 msgid "Display Name"
 msgstr "Nome visualizzato"
 
 #. module: partner_identification
+#. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid ""
-"Error when evaluating the id_category validation code::\n"
-" %s \n"
-"(%s)"
+"Error when evaluating the id_category validation code: \n"
+" {name} \n"
+"({error})"
 msgstr ""
-"Errore durante l'esame del codice di convalida id_category.:\n"
-" %s \n"
-"(%s)"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_until
@@ -135,11 +126,10 @@ msgid "Expired"
 msgstr "Scaduto"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__id
 msgid "ID"
-msgstr "Documento"
+msgstr "ID"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__name
@@ -189,7 +179,6 @@ msgid "Issued on"
 msgstr "Emesso il"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category____last_update
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number____last_update
 msgid "Last Modified on"
@@ -199,7 +188,7 @@ msgstr "Ultima modifica il"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_uid
 msgid "Last Updated by"
-msgstr "Ultimo aggiornamento il"
+msgstr "Ultimo aggiornamento di"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_date
@@ -250,13 +239,11 @@ msgstr "Numeri documenti del partner"
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
 #: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
-#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_tree
 msgid "Partner ID Numbers"
 msgstr "Numeri documenti del partner"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
-#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_tree
 msgid "Partner Identification Categories"
 msgstr "Categorie di identificazione del partner"
 
@@ -307,11 +294,13 @@ msgstr ""
 "e del visto"
 
 #. module: partner_identification
+#. odoo-python
 #: code:addons/partner_identification/models/res_partner.py:0
 #, python-format
 msgid ""
-"This %s has multiple IDs of this type (%s), so a write via the %s field is "
-"not possible. In order to fix this, please use the IDs tab."
+"This {record_name} has multiple IDs of this type ({category_code}), so a "
+"write via the {field_name} field is not possible. In order to fix this, "
+"please use the IDs tab."
 msgstr ""
 
 #. module: partner_identification
@@ -333,6 +322,27 @@ msgstr "Valido fino a"
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_from
 msgid "Validation period stating date."
 msgstr "Data di inizio periodo di validità."
+
+#. module: partner_identification
+#. odoo-python
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
+#, python-format
+msgid "{id_name} is not a valid {cat_name} identifier"
+msgstr ""
+
+#, python-format
+#~ msgid "%s is not a valid %s identifier"
+#~ msgstr "%s non è un identificatore %s valido"
+
+#, python-format
+#~ msgid ""
+#~ "Error when evaluating the id_category validation code::\n"
+#~ " %s \n"
+#~ "(%s)"
+#~ msgstr ""
+#~ "Errore durante l'esame del codice di convalida id_category.:\n"
+#~ " %s \n"
+#~ "(%s)"
 
 #~ msgid ""
 #~ "\n"
