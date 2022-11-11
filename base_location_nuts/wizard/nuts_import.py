@@ -8,7 +8,7 @@ import logging
 import re
 from collections import OrderedDict
 
-import requests
+import urllib3
 from lxml import etree
 
 from odoo import _, api, fields, models
@@ -121,7 +121,7 @@ class NutsImport(models.TransientModel):
             else:
                 logger.debug("xpath = '%s', not found" % field_xpath)
             if field_required and not value:
-                raise UserError(_("Value not found for mandatory field %s" % k))
+                raise UserError(_("Value not found for mandatory field %s") % k)
             item[k] = value
         return item
 
@@ -136,20 +136,24 @@ class NutsImport(models.TransientModel):
         url += "&".join([k + "=" + v for k, v in url_params.items()])
         logger.info("Starting to download %s" % url)
         try:
-            res_request = requests.get(url)
+            http = urllib3.PoolManager()
+            res_request = http.request("GET", url)
         except Exception as e:
             raise UserError(
                 _("Got an error when trying to download the file: %s.") % str(e)
-            )
-        if res_request.status_code != requests.codes.ok:
+            ) from e
+        if res_request.status != 200:
             raise UserError(
-                _("Got an error %d when trying to download the file %s.")
-                % (res_request.status_code, url)
+                _(
+                    "Got an error %(d)s when trying to download the file %(s)s.",
+                    d=res_request.status,
+                    s=url,
+                )
             )
-        logger.info("Download successfully %d bytes" % len(res_request.content))
+        logger.info("Download successfully %d bytes" % len(res_request.data))
         # Workaround XML: Remove all characters before <?xml
         pattern = re.compile(rb"^.*<\?xml", re.DOTALL)
-        content_fixed = re.sub(pattern, b"<?xml", res_request.content)
+        content_fixed = re.sub(pattern, b"<?xml", res_request.data)
         if not re.match(rb"<\?xml", content_fixed):
             raise UserError(_("Downloaded file is not a valid XML file"))
         return content_fixed
