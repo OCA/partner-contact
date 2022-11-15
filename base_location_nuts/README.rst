@@ -119,4 +119,4 @@ promote its widespread use.
 
 This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/14.0/base_location_nuts>`_ project on GitHub.
 
-You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
+You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute. 
