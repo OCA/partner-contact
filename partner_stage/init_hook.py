@@ -15,7 +15,9 @@ def post_init_hook(cr, registry):
     default_stage = Partner._get_default_stage_id()
     missing_stages = Partner.search([("stage_id", "=", False)])
     if default_stage and missing_stages:
-        _logger.info("Init stage_id for %d partner records...", len(missing_stages))
+        _logger.info(
+            "Init stage_id for %d partner records...", len(missing_stages)
+        )
         cr.execute(
             """
             UPDATE res_partner

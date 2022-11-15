@@ -24,6 +24,6 @@ class Partner(models.Model):
         default=_get_default_stage_id,
         copy=False,
         index=True,
-        tracking=True,
+        track_visibility="onchange",
     )
     state = fields.Selection(related="stage_id.state", store=True, readonly=True)
