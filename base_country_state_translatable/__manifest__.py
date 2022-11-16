@@ -8,7 +8,7 @@
     "website": "https://github.com/OCA/partner-contact",
     "summary": "Translate Country States",
     "author": "initOS GmbH, Odoo Community Association (OCA)",
-    "category": "Localisation",
+    "category": "Localization",
     "license": "AGPL-3",
     "installable": True,
 }
