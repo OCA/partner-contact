@@ -7,7 +7,7 @@
 
 <!-- /!\ do not modify above this line -->
 
-# partner-contact
+# All functionalities around partners.
 
 This repository is for all functionality around partners.
 
