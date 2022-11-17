@@ -6,7 +6,7 @@
     "category": "Customer Relationship Management",
     "author": "Tecnativa,"
               "Odoo Community Association (OCA)",
-    "website": "https://www.github.com/OCA/partner-contact",
+    "website": "https://github.com/OCA/partner-contact",
     "license": "AGPL-3",
     "depends": [
         "portal",

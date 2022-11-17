@@ -16,7 +16,7 @@
     'license': "AGPL-3",
     'maintainer': 'Camptocamp, Acsone',
     'category': 'Extra Tools',
-    'website': 'https://odoo-community.org/',
+    'website': 'https://github.com/OCA/partner-contact',
     'depends': ['base_setup'],
     'post_init_hook': 'post_init_hook',
     'data': [

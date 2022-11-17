@@ -7,7 +7,7 @@
     "author": "Camptocamp," "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "category": "Partner",
-    "website": "http://github.com/OCA/partner-contact",
+    "website": "https://github.com/OCA/partner-contact",
     "depends": ["base"],
     "installable": True,
     "auto_install": False,
