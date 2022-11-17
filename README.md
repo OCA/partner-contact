@@ -62,6 +62,7 @@ addon | version | maintainers | summary
 [partner_second_lastname](partner_second_lastname/) | 15.0.1.0.0 |  | Have split first and second lastnames
 [partner_vat_unique](partner_vat_unique/) | 15.0.1.0.0 |  | Module to make the VAT number unique for customers and suppliers.
 [portal_partner_data_no_edit](portal_partner_data_no_edit/) | 15.0.1.0.0 |  | Portal Partner Block Data Edit
+[res_partner_journal_items_link](res_partner_journal_items_link/) | 15.0.1.0.0 |  | Adds a smart button to grant direct access to their accounting notes
 [sale_partner_company_group](sale_partner_company_group/) | 15.0.1.0.0 |  | Adds the possibility to add a company group to a company
 
 [//]: # (end addons)
