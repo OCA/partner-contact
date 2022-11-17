@@ -355,7 +355,7 @@ msgid ""
 "{partners}"
 msgstr ""
 "La riflessività non può essere disabilitata per il tipo di relazione "
-"{tipo_relazione}. Esistono relazioni riflessive esistenti definite per i "
+"{relation_type}. Esistono relazioni riflessive esistenti definite per i "
 "seguenti partners: {partners}"
 
 #. module: partner_multi_relation

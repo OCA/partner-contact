@@ -10,7 +10,7 @@
         'base',
     ],
     'summary': "Add specific helper methods",
-    'website': 'http://www.akretion.com/',
+    'website': 'https://github.com/OCA/partner-contact',
     'installable': True,
     'auto_install': False,
     'license': 'AGPL-3',

@@ -355,7 +355,7 @@ msgid ""
 "{partners}"
 msgstr ""
 "No se pudo deshabilitar la reflexividad para el tipo de relación "
-"{related_type}. Existen relaciones reflexivas definidas para los siguientes "
+"{relation_type}. Existen relaciones reflexivas definidas para los siguientes "
 "socios: {partners}"
 
 #. module: partner_multi_relation
