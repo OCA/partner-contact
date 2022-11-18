@@ -233,7 +233,7 @@ msgid "No %s partner available for relation type."
 msgstr ""
 
 #. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:546
+#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:548
 #, python-format
 msgid "No relation type specified in vals: %s."
 msgstr ""
