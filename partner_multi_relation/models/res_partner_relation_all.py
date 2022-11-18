@@ -490,6 +490,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
             else False
         )
 
+    # pylint: disable=method-required-super
     @api.multi
     def write(self, vals):
         """For model 'res.partner.relation' call write on underlying model."""
@@ -532,6 +533,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
         relation_model = self.env["res.partner.relation"]
         return relation_model.create(vals)
 
+    # pylint: disable=method-required-super
     @api.model_create_multi
     def create(self, vals_list):
         """Divert non-problematic creates to underlying table.
@@ -561,6 +563,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
         assert self.res_model == relation_model._name
         base_resource.unlink()
 
+    # pylint: disable=method-required-super
     @api.multi
     def unlink(self):
         """For model 'res.partner.relation' call unlink on underlying model."""

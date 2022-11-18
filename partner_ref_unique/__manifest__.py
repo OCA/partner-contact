@@ -7,7 +7,7 @@
     "summary": "Add an unique constraint to partner ref field",
     "version": "12.0.1.0.2",
     "category": "Customer Relationship Management",
-    "website": "https://github.com/OCA/partner-contact/",
+    "website": "https://github.com/OCA/partner-contact",
     "author": "Tecnativa, "
               "Odoo Community Association (OCA)",
     "license": "AGPL-3",

@@ -3,6 +3,7 @@
 {
     "name": "Partner labels",
     "version": "12.0.1.1.0",
+    "website": "https://github.com/OCA/partner-contact",
     "author": "Therp BV,Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "category": "Base",
