@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2022 Hunki Enterprises BV
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+<record id="view_city_tree" model="ir.ui.view">
+    <field name="model">res.city</field>
+    <field name="inherit_id" ref="base_address_city.view_city_tree" />
+    <field name="arch" type="xml">
+        <field name="state_id" position="after">
+            <field name="city_district_ids" widget="many2many_tags" />
+        </field>
+    </field>
+</record>
+
+</odoo>
