@@ -50,6 +50,8 @@ msgstr "Cidade"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company__city_id
+#: model:ir.model.fields,field_description:base_location.field_res_partner__city_id
+#: model:ir.model.fields,field_description:base_location.field_res_users__city_id
 msgid "City ID"
 msgstr "ID da Cidade"
 
@@ -58,12 +60,6 @@ msgstr "ID da Cidade"
 #: model_terms:ir.ui.view,arch_db:base_location.view_partner_form
 msgid "City completion"
 msgstr "Autocompletar de cidades"
-
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_partner__city_id
-#: model:ir.model.fields,field_description:base_location.field_res_users__city_id
-msgid "City of Address"
-msgstr "Cidade do Endereço"
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_city_zip
@@ -99,10 +95,7 @@ msgid "Created on"
 msgstr "Criado em"
 
 #. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_city__display_name
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__display_name
-#: model:ir.model.fields,field_description:base_location.field_res_company__display_name
-#: model:ir.model.fields,field_description:base_location.field_res_partner__display_name
 msgid "Display Name"
 msgstr "Nome a mostrar"
 
@@ -122,18 +115,12 @@ msgid "Enforce Cities"
 msgstr "Impor Cidades"
 
 #. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_city__id
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__id
-#: model:ir.model.fields,field_description:base_location.field_res_company__id
-#: model:ir.model.fields,field_description:base_location.field_res_partner__id
 msgid "ID"
 msgstr "ID"
 
 #. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_city____last_update
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip____last_update
-#: model:ir.model.fields,field_description:base_location.field_res_company____last_update
-#: model:ir.model.fields,field_description:base_location.field_res_partner____last_update
 msgid "Last Modified on"
 msgstr "Última atualização em"
 
@@ -170,27 +157,40 @@ msgid "State"
 msgstr "Estado"
 
 #. module: base_location
+#. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
-msgid "The city of the partner %(partner)s differs from that in location %(location)s"
-msgstr "A cidade do parceiro, %(partner)s, difere da sua localidade %(location)s"
+msgid ""
+"The city of the partner %(partner)s differs from that in location "
+"%(location)s"
+msgstr ""
+"A cidade do parceiro, %(partner)s, difere da sua localidade %(location)s"
 
 #. module: base_location
+#. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
-msgid "The country of the partner %(partner)s differs from that in location %(location)s"
+msgid ""
+"The country of the partner %(partner)s differs from that in location "
+"%(location)s"
 msgstr "O pais do parceiro, %(partner)s, difere da sua localidade %(location)s"
 
 #. module: base_location
+#. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
-msgid "The state of the partner %(partner)s differs from that in location %(location)s"
-msgstr "O estado do parceiro, %(partner)s, difere da sua localidade %(location)s"
+msgid ""
+"The state of the partner %(partner)s differs from that in location "
+"%(location)s"
+msgstr ""
+"O estado do parceiro, %(partner)s, difere da sua localidade %(location)s"
 
 #. module: base_location
+#. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
-msgid "The zip of the partner %(partner)s differs from that in location %(location)s"
+msgid ""
+"The zip of the partner %(partner)s differs from that in location %(location)s"
 msgstr ""
 
 #. module: base_location
@@ -237,7 +237,6 @@ msgstr "Cep"
 
 #. module: base_location
 #: model:ir.ui.menu,name:base_location.locations_menu_zips
-#: model_terms:ir.ui.view,arch_db:base_location.city_zip_tree
 #: model_terms:ir.ui.view,arch_db:base_location.view_city_form
 #: model_terms:ir.ui.view,arch_db:base_location.view_res_country_city_better_zip_form
 msgid "Zips"
@@ -247,6 +246,9 @@ msgstr "Ceps"
 #: model:ir.model.fields,field_description:base_location.field_res_city__zip_ids
 msgid "Zips in this city"
 msgstr "Ceps desta cidade"
+
+#~ msgid "City of Address"
+#~ msgstr "Cidade do Endereço"
 
 #~ msgid ""
 #~ "Display and manage the list of all cities that can be assigned to\n"
