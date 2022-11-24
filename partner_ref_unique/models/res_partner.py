@@ -22,7 +22,7 @@ class ResPartner(models.Model):
                 ]
                 if mode == "companies":
                     domain.append(("is_company", "=", True))
-                other = self.search(domain)
+                other = self.with_context(active_test=False).search(domain)
                 # Don't raise when coming from contact merge wizard or no duplicates
                 if other and not self.env.context.get("partner_ref_unique_merging"):
                     raise ValidationError(
