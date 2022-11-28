@@ -1,9 +1,5 @@
-In the old days of Odoo/OpenERP, back in version 6.1, there was an official
-*google_map* module ; this module added a *Map* button on the partner form view
-and, when the user clicked on that button, it would open a new tab on its web
-browser and go to Google Map with a search on the address of the partner.
-
-This module aims at restoring this feature with several improvements:
+This module adds buttons on the partner form to open a new tab with
+the map or the route to the address of the partner.
 
 * Each user can select the map website he wants to use in its preferences.
 * There are now two buttons on the partner form view: one to open a regular map
