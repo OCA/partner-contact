@@ -55,12 +55,13 @@ class ResUsers(models.Model):
         "res.partner", string="Start Address for Route Map"
     )
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """On creation, if no starting partner is provided, assign the current
         created one.
         """
-        user = super(ResUsers, self).create(vals)
-        if not vals.get("context_route_start_partner_id"):
-            user.write({"context_route_start_partner_id": user.partner_id.id})
-        return user
+        users = super().create(vals_list)
+        for user in users:
+            if not user.context_route_start_partner_id:
+                user.context_route_start_partner_id = user.partner_id.id
+        return users
