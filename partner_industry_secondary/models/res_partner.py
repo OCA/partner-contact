@@ -17,6 +17,16 @@ class ResPartner(models.Model):
         domain="[('id', '!=', industry_id)]",
     )
 
+    show_partner_industry_for_person = fields.Boolean(
+        compute="_compute_show_partner_industry_for_person",
+    )
+
+    def _compute_show_partner_industry_for_person(self):
+        for partner in self:
+            partner.show_partner_industry_for_person = self.env.user.has_group(
+                "partner_industry_secondary" ".group_use_partner_industry_for_person"
+            )
+
     @api.constrains("industry_id", "secondary_industry_ids")
     def _check_industries(self):
         for partner in self:
