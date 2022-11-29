@@ -9,20 +9,21 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-11 17:43+0000\n"
-"PO-Revision-Date: 2019-02-11 17:43+0000\n"
-"Last-Translator: <>\n"
+"PO-Revision-Date: 2022-11-29 12:45+0000\n"
+"Last-Translator: Pierrick Brun <brun.pierrick@protonmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: partner_contact_birthdate
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner__age
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users__age
 msgid "Age"
-msgstr ""
+msgstr "Âge"
 
 #. module: partner_contact_birthdate
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner__birthdate_date
