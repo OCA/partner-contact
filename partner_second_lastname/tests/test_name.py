@@ -11,7 +11,7 @@ class CompanyCase(TransactionCase):
     """Test ``res.partner`` when it is a company."""
 
     def setUp(self):
-        super(CompanyCase, self).setUp()
+        super().setUp()
         self.env["ir.config_parameter"].set_param("partner_names_order", "first_last")
 
     def tearDown(self):
@@ -42,7 +42,7 @@ class CompanyCase(TransactionCase):
             )
 
         finally:
-            super(CompanyCase, self).tearDown()
+            super().tearDown()
 
     def test_long_name(self):
         """Create a company with a long name."""
@@ -76,7 +76,7 @@ class PersonCase(TransactionCase):
     context = dict()
 
     def setUp(self):
-        super(PersonCase, self).setUp()
+        super().setUp()
         self.env["ir.config_parameter"].set_param(
             "partner_names_order", "last_first_comma"
         )
@@ -110,7 +110,7 @@ class PersonCase(TransactionCase):
             )
 
         finally:
-            super(PersonCase, self).tearDown()
+            super().tearDown()
 
     def test_firstname_first(self):
         """Create a person setting his first name first."""
@@ -196,4 +196,4 @@ class UserCase(PersonCase, MailInstalled):
     def tearDown(self):
         # Skip if ``mail`` is installed
         if not self.mail_installed():
-            super(UserCase, self).tearDown()
+            super().tearDown()
