@@ -85,7 +85,7 @@ class ResPartner(models.Model):
             return result
 
         order = self._get_names_order()
-        result.update(super(ResPartner, self)._get_inverse_name(name, is_company))
+        result.update(super()._get_inverse_name(name, is_company))
 
         if order in ("first_last", "last_first_comma"):
             parts = self._split_part("lastname", result)
@@ -118,7 +118,7 @@ class ResPartner(models.Model):
     def _check_name(self):
         """Ensure at least one name is set."""
         try:
-            return super(ResPartner, self)._check_name()
+            return super()._check_name()
         except exceptions.EmptyNamesError:
             for partner in self:
                 if not partner.lastname2:
