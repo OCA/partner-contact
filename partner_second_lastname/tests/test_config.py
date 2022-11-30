@@ -7,7 +7,7 @@ from odoo.tests.common import TransactionCase
 class TestConfig(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestConfig, cls).setUpClass()
+        super().setUpClass()
         cls.wizard = cls.env["res.config.settings"].create({})
         cls.partner = cls.env["res.partner"].create(
             {"firstname": "First", "lastname": "Last", "lastname2": "Second"}
