@@ -1,4 +1,4 @@
-# Copyright 2014-2018 Therp BV <http://therp.nl>
+# Copyright 2014-2022 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 # pylint: disable=method-required-super
 import collections
@@ -392,7 +392,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
         relation_model = self.env["res.partner.relation"]
         assert self.res_model == relation_model._name
         base_resource.write(vals)
-        base_resource.flush()
+        base_resource.flush_recordset()
 
     @api.model
     def _get_type_selection_from_vals(self, vals):
@@ -419,7 +419,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
             rec.write_resource(base_resource, vals)
         # Invalidate cache to make res.partner.relation.all reflect changes
         # in underlying res.partner.relation:
-        self.invalidate_cache(None, self.ids)
+        self.invalidate_recordset()
         return True
 
     @api.model
@@ -436,24 +436,31 @@ CREATE OR REPLACE VIEW %%(table)s AS
         )["key_offset"]
         return base_resource.id * self._get_padding() + key_offset
 
-    @api.model
-    def create_resource(self, vals, type_selection):
-        relation_model = self.env["res.partner.relation"]
-        return relation_model.create(vals)
-
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Divert non-problematic creates to underlying table.
 
         Create a res.partner.relation but return the converted id.
         """
-        type_selection = self._get_type_selection_from_vals(vals)
-        if not type_selection:  # Should not happen
-            raise ValidationError(_("No relation type specified in vals: %s.") % vals)
-        vals = self._correct_vals(vals, type_selection)
-        base_resource = self.create_resource(vals, type_selection)
-        res_id = self._compute_id(base_resource, type_selection)
-        return self.browse(res_id)
+        corrected_vals = []
+        type_selections = []
+        for vals in vals_list:
+            type_selection = self._get_type_selection_from_vals(vals)
+            if not type_selection:  # Should not happen
+                raise ValidationError(
+                    _("No relation type specified in vals: %s.") % vals
+                )
+            corrected_vals.append(self._correct_vals(vals, type_selection))
+            type_selections.append(type_selection)
+        relations = self._create_relations(corrected_vals)
+        relation_ids = []
+        for count, relation in enumerate(relations):
+            relation_ids.append(self._compute_id(relation, type_selections[count]))
+        return self.browse(relation_ids)
+
+    def _create_relations(self, vals_list):
+        relation_model = self.env["res.partner.relation"]
+        return relation_model.create(vals_list)
 
     def unlink_resource(self, base_resource):
         """Delegate unlink to underlying model."""
