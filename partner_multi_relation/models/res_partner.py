@@ -1,4 +1,4 @@
-# Copyright 2013-2017 Therp BV <http://therp.nl>
+# Copyright 2013-2022 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Support connections between partners."""
 import numbers
@@ -159,7 +159,7 @@ class ResPartner(models.Model):
                 ):
                     active_args = [("relation_all_ids.active", "=", True)]
                     break
-        return super(ResPartner, self).search(
+        return super().search(
             args + date_args + active_args,
             offset=offset,
             limit=limit,

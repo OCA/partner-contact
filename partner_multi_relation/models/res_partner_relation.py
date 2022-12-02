@@ -1,4 +1,4 @@
-# Copyright 2013-2017 Therp BV <http://therp.nl>
+# Copyright 2013-2022 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 # pylint: disable=api-one-deprecated
 """Store relations (connections) between partners."""
@@ -42,13 +42,14 @@ class ResPartnerRelation(models.Model):
     date_start = fields.Date("Starting date")
     date_end = fields.Date("Ending date")
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """Override create to correct values, before being stored."""
         context = self.env.context
-        if "left_partner_id" not in vals and context.get("active_id"):
-            vals["left_partner_id"] = context.get("active_id")
-        return super(ResPartnerRelation, self).create(vals)
+        for vals in vals_list:
+            if "left_partner_id" not in vals and context.get("active_id"):
+                vals["left_partner_id"] = context.get("active_id")
+        return super().create(vals_list)
 
     @api.constrains("date_start", "date_end")
     def _check_dates(self):
