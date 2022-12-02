@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2022-12-02 11:44+0000\n"
+"Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__active
@@ -33,22 +35,22 @@ msgstr ""
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__code
 msgid "Code"
-msgstr ""
+msgstr "Codice"
 
 #. module: partner_stage
 #: model:ir.model,name:partner_stage.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contatto"
 
 #. module: partner_stage
 #: model:ir.model,name:partner_stage.model_res_partner_stage
 msgid "Contact Stage"
-msgstr ""
+msgstr "Fase contatto"
 
 #. module: partner_stage
 #: model:ir.ui.menu,name:partner_stage.menu_partner_stage
 msgid "Contact Stages"
-msgstr ""
+msgstr "Fasi contatto"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__create_uid
@@ -63,23 +65,23 @@ msgstr ""
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__is_default
 msgid "Default state"
-msgstr ""
+msgstr "Stato predefinito"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__description
 msgid "Description"
-msgstr ""
+msgstr "Descrizione"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: partner_stage
 #: model:res.partner.stage,name:partner_stage.partner_stage_draft
 msgid "Draft"
-msgstr ""
+msgstr "Bozza"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__fold
@@ -90,7 +92,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_stage
 #: model:res.partner.stage,name:partner_stage.partner_stage_inactive
@@ -101,33 +103,33 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultimo aggiornamento di"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultimo aggiornamento il"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__name
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner__state
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__state
 msgid "Related State"
-msgstr ""
+msgstr "Stato correlato"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Sequenza"
 
 #. module: partner_stage
 #: model:ir.actions.act_window,name:partner_stage.action_partner_stage
@@ -135,23 +137,23 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_stage.field_res_users__stage_id
 #: model_terms:ir.ui.view,arch_db:partner_stage.view_partner_search
 msgid "Stage"
-msgstr ""
+msgstr "Fase"
 
 #. module: partner_stage
 #: model:ir.model.constraint,message:partner_stage.constraint_res_partner_stage_res_partner_stage_code_unique
 msgid "Stage Code must be unique."
-msgstr ""
+msgstr "Il codice della fase deve essere univoco."
 
 #. module: partner_stage
 #: code:addons/partner_stage/models/res_partner_stage.py:0
 #, python-format
 msgid "There should be only one default stage"
-msgstr ""
+msgstr "Deve essere presente una sola fase predefinita"
 
 #. module: partner_stage
 #: model:ir.model.fields.selection,name:partner_stage.selection__res_partner_stage__state__draft
 msgid "To Approve"
-msgstr ""
+msgstr "Da approvare"
 
 #. module: partner_stage
 #: model:ir.model.fields,help:partner_stage.field_res_partner_stage__sequence
