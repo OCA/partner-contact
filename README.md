@@ -33,6 +33,7 @@ addon | version | maintainers | summary
 [partner_disable_gravatar](partner_disable_gravatar/) | 16.0.1.0.1 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Disable automatic connection to gravatar.com
 [partner_external_map](partner_external_map/) | 16.0.1.0.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_firstname](partner_firstname/) | 16.0.1.0.1 |  | Split first name and last name for non company partners
+[partner_identification](partner_identification/) | 16.0.1.0.0 |  | Partner Identification Numbers
 [partner_multi_relation](partner_multi_relation/) | 16.0.1.0.0 |  | Partner Relations
 [partner_vat_unique](partner_vat_unique/) | 16.0.1.0.0 |  | Module to make the VAT number unique for customers and suppliers.
 
