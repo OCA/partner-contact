@@ -1,0 +1,335 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_identification
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-21 01:49+0000\n"
+"PO-Revision-Date: 2020-03-21 14:13+0000\n"
+"Last-Translator: Dong <dong@freshoo.cn>\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/oca/teams/23907/"
+"zh_CN/)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.10\n"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid ""
+"# Use failed = True to specify that the id number is not valid.\n"
+"# You can use the following variables :\n"
+"#  - self: browse_record of the current ID Category browse_record\n"
+"#  - id_number: browse_record of ID number to validate\n"
+"\n"
+"<b><i># Sample 1: ID number only contains digits</i></b>\n"
+"if not id_number.name.isdigit():\n"
+"    failed = True\n"
+"else:\n"
+"    failed = False\n"
+"\n"
+"<b><i># Sample 2: Length of ID number cannot exceed 10 chars</i></b>\n"
+"failed = len(id_number.name) &gt; 10 and True or False\n"
+"\n"
+"<b><i># Sample 3: ID number must start with the category code</i></b>\n"
+"failed = not id_number.name.startswith(self.code) and True or False"
+msgstr ""
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
+#, python-format
+msgid "%s is not a valid %s identifier"
+msgstr "%s 不是一个有效的 %s 号码"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
+msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
+msgstr "该证件类型的代码或首字母缩写。例如：'driver_license'"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__active
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__active
+msgid "Active"
+msgstr "有效"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__partner_issued_id
+msgid ""
+"Another partner, who issued this ID. For example, Traffic National "
+"Institution"
+msgstr "签发该证件的业务伙伴。例如：交通管理局"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__category_id
+msgid "Category"
+msgstr "证件类型"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__code
+msgid "Code"
+msgstr "代码"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
+msgid "Color Index"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner
+msgid "Contact"
+msgstr "联系人"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__display_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
+#, python-format
+msgid ""
+"Error when evaluating the id_category validation code::\n"
+" %s \n"
+"(%s)"
+msgstr ""
+"该证件类型校验证件号时出错 校验代码::\n"
+" %s \n"
+"(%s)"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_until
+msgid ""
+"Expiration date. For example, date when person needs to renew his driver "
+"license, 21/10/2019"
+msgstr "过期时间。例如，持证人需要更换驾驶证的日期，2019年10月21日"
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
+msgid "Expired"
+msgstr "已过期"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__name
+msgid "ID Number"
+msgstr "证件号"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_form
+msgid "ID Numbers"
+msgstr "相关证件"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__name
+msgid "ID name"
+msgstr "证件名称"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__category_id
+msgid "ID type defined in configuration. For example, Driver License"
+msgstr "定义证件类型的配置。例如：驾驶证"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id_numbers
+#: model:ir.model.fields,field_description:partner_identification.field_res_users__id_numbers
+msgid "Identification Numbers"
+msgstr "相关证件"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_issued_id
+msgid "Issued by"
+msgstr "签发单位"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__date_issued
+msgid ""
+"Issued date. For example, date when person approved his driving exam, "
+"21/10/2009"
+msgstr "签发日期。例如，持证人通过驾驶考试的日期，2009年10月21日"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
+msgid "Issued on"
+msgstr "签发日期"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner____last_update
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category____last_update
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number____last_update
+msgid "Last Modified on"
+msgstr "最近修改时间"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_uid
+msgid "Last Updated by"
+msgstr "最近更新人"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_date
+msgid "Last Updated on"
+msgstr "最近更新时间"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__name
+msgid "Name of this ID type. For example, 'Driver License'"
+msgstr "证件类型的名称。例如：驾驶证"
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
+msgid "New"
+msgstr "新建"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__comment
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+msgid "Notes"
+msgstr "备注"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_id
+msgid "Partner"
+msgstr "业务伙伴"
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_category
+msgid "Partner ID Categories"
+msgstr "业务伙伴证件类型"
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner_id_category
+msgid "Partner ID Category"
+msgstr "业务伙伴证件类型"
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner_id_number
+msgid "Partner ID Number"
+msgstr "业务伙伴相关证件"
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_tree
+msgid "Partner ID Numbers"
+msgstr "业务伙伴相关证件"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_tree
+msgid "Partner Identification Categories"
+msgstr "业务伙伴证件类型"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__place_issuance
+msgid "Place of Issuance"
+msgstr "签发地点"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid "Python Validation Code:"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__validation_code
+msgid "Python code called to validate an id number."
+msgstr "校验证件号的Python代码。"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__validation_code
+msgid "Python validation code"
+msgstr "Python校验代码"
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
+msgid "Running"
+msgstr "生效"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
+msgid "Status"
+msgstr "证件状态"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__name
+msgid "The ID itself. For example, Driver License number of this person"
+msgstr "该证件的证件号。例如：个人驾驶证号"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__place_issuance
+msgid ""
+"The place where the ID has been issued. For example the country for "
+"passports and visa"
+msgstr "证件签发地点。例如签发护照与签证的国家"
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner.py:0
+#, python-format
+msgid ""
+"This %s has multiple IDs of this type (%s), so a write via the %s field is "
+"not possible. In order to fix this, please use the IDs tab."
+msgstr ""
+"%s 存在多个相同的证件类型 (%s)，因此无法通过 %s 字段进行写入。为了解决这个问"
+"题，请在业务伙伴相关证件中录入。"
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
+msgid "To Renew"
+msgstr "待换证"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
+msgid "Valid from"
+msgstr "生效日期"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_until
+msgid "Valid until"
+msgstr "有效期至"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_from
+msgid "Validation period stating date."
+msgstr "有效期开始日期。"
+
+#~ msgid ""
+#~ "\n"
+#~ "# Python code. Use failed = True to specify that the id number is not "
+#~ "valid.\n"
+#~ "# You can use the following variables :\n"
+#~ "#  - self: browse_record of the current ID Category browse_record\n"
+#~ "#  - id_number: browse_record of ID number to validate"
+#~ msgstr ""
+#~ "\n"
+#~ "# Python 代码. 通过 failed = True 来判定证件号码无效。\n"
+#~ "# 你可以使用以下变量：\n"
+#~ "#  - self: 当前证件类型的记录集\n"
+#~ "#  - id_number: 待验证证件号码记录集"

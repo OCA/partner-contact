@@ -1,0 +1,315 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_identification
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-10 03:39+0000\n"
+"PO-Revision-Date: 2017-03-10 03:39+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"Language-Team: Greek (Greece) (https://www.transifex.com/oca/teams/23907/"
+"el_GR/)\n"
+"Language: el_GR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid ""
+"# Use failed = True to specify that the id number is not valid.\n"
+"# You can use the following variables :\n"
+"#  - self: browse_record of the current ID Category browse_record\n"
+"#  - id_number: browse_record of ID number to validate\n"
+"\n"
+"<b><i># Sample 1: ID number only contains digits</i></b>\n"
+"if not id_number.name.isdigit():\n"
+"    failed = True\n"
+"else:\n"
+"    failed = False\n"
+"\n"
+"<b><i># Sample 2: Length of ID number cannot exceed 10 chars</i></b>\n"
+"failed = len(id_number.name) &gt; 10 and True or False\n"
+"\n"
+"<b><i># Sample 3: ID number must start with the category code</i></b>\n"
+"failed = not id_number.name.startswith(self.code) and True or False"
+msgstr ""
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
+#, python-format
+msgid "%s is not a valid %s identifier"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
+msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__active
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__active
+msgid "Active"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__partner_issued_id
+msgid ""
+"Another partner, who issued this ID. For example, Traffic National "
+"Institution"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__category_id
+msgid "Category"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__code
+msgid "Code"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
+msgid "Color Index"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__create_uid
+msgid "Created by"
+msgstr "Δημιουργήθηκε από "
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__create_date
+msgid "Created on"
+msgstr "Δημιουργήθηκε στις"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__display_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
+#, python-format
+msgid ""
+"Error when evaluating the id_category validation code::\n"
+" %s \n"
+"(%s)"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_until
+msgid ""
+"Expiration date. For example, date when person needs to renew his driver "
+"license, 21/10/2019"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
+msgid "Expired"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__id
+msgid "ID"
+msgstr "Κωδικός"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__name
+msgid "ID Number"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_form
+msgid "ID Numbers"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__name
+msgid "ID name"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__category_id
+msgid "ID type defined in configuration. For example, Driver License"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id_numbers
+#: model:ir.model.fields,field_description:partner_identification.field_res_users__id_numbers
+msgid "Identification Numbers"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_issued_id
+msgid "Issued by"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__date_issued
+msgid ""
+"Issued date. For example, date when person approved his driving exam, "
+"21/10/2009"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
+msgid "Issued on"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner____last_update
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category____last_update
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_uid
+msgid "Last Updated by"
+msgstr "Τελευταία ενημέρωση από"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_date
+msgid "Last Updated on"
+msgstr "Τελευταία ενημέρωση στις"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__name
+msgid "Name of this ID type. For example, 'Driver License'"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
+msgid "New"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__comment
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+msgid "Notes"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_id
+msgid "Partner"
+msgstr "Συνεργάτης"
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_category
+msgid "Partner ID Categories"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner_id_category
+msgid "Partner ID Category"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner_id_number
+msgid "Partner ID Number"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_tree
+msgid "Partner ID Numbers"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_tree
+msgid "Partner Identification Categories"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__place_issuance
+msgid "Place of Issuance"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid "Python Validation Code:"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__validation_code
+msgid "Python code called to validate an id number."
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__validation_code
+msgid "Python validation code"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
+msgid "Running"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
+msgid "Status"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__name
+msgid "The ID itself. For example, Driver License number of this person"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__place_issuance
+msgid ""
+"The place where the ID has been issued. For example the country for "
+"passports and visa"
+msgstr ""
+
+#. module: partner_identification
+#: code:addons/partner_identification/models/res_partner.py:0
+#, python-format
+msgid ""
+"This %s has multiple IDs of this type (%s), so a write via the %s field is "
+"not possible. In order to fix this, please use the IDs tab."
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
+msgid "To Renew"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
+msgid "Valid from"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_until
+msgid "Valid until"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_from
+msgid "Validation period stating date."
+msgstr ""
