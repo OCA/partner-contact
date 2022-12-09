@@ -37,17 +37,8 @@ msgstr "Šifra banke"
 msgid "Bank and Branch Code should be unique."
 msgstr "Šifra banke i ogranka moraju biti jedinstvene."
 
-#. module: partner_bank_code
-#: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__display_name
-msgid "Display Name"
-msgstr "Prikazani naziv"
+#~ msgid "Display Name"
+#~ msgstr "Prikazani naziv"
 
-#. module: partner_bank_code
-#: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__id
-msgid "ID"
-msgstr "ID"
-
-#. module: partner_bank_code
-#: model:ir.model.fields,field_description:partner_bank_code.field_res_bank____last_update
-msgid "Last Modified on"
-msgstr ""
+#~ msgid "ID"
+#~ msgstr "ID"
