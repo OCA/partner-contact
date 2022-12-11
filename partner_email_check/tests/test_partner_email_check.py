@@ -4,11 +4,11 @@
 from unittest.mock import patch
 
 from odoo.exceptions import UserError, ValidationError
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 from odoo.tools.misc import mute_logger
 
 
-class TestPartnerEmailCheck(SavepointCase):
+class TestPartnerEmailCheck(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
