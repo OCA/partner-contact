@@ -101,7 +101,7 @@ class ResPartner(models.Model):
         for partner in self:
             if partner.contact_type == "attached" and not partner.parent_id:
                 partner.commercial_partner_id = partner.contact_id
-        return True
+        return
 
     @api.model
     def _contact_fields(self):
