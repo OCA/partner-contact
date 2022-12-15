@@ -44,6 +44,7 @@ setuptools.setup(
         'odoo14-addon-partner_deduplicate_by_website',
         'odoo14-addon-partner_deduplicate_filter',
         'odoo14-addon-partner_disable_gravatar',
+        'odoo14-addon-partner_duns',
         'odoo14-addon-partner_email_check',
         'odoo14-addon-partner_email_duplicate_warn',
         'odoo14-addon-partner_employee_quantity',
