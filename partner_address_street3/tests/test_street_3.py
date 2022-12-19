@@ -33,7 +33,24 @@ class TestStreet3(TransactionCase):
             }
         )
         self.assertEqual(bart.street3, "Tho")
+        bart.street3 = "\n\n"
+        bart_address = bart._display_address()
+        self.assertTrue("\n\n" not in bart_address)
 
         # test synchro of street3 on write
         homer.write({"street3": "in OCA we trust"})
         self.assertEqual(bart.street3, "in OCA we trust")
+
+    def test_post_init_hook(self):
+        from ..hooks import post_init_hook
+
+        post_init_hook(self.env.cr, None)
+        us_country = self.env.ref("base.us")
+        self.assertTrue("%(street3)s" in us_country.address_format)
+
+    def test_uninstall(self):
+        from ..hooks import uninstall_hook
+
+        uninstall_hook(self.env.cr, None)
+        us_country = self.env.ref("base.us")
+        self.assertTrue("%(street3)s" not in us_country.address_format)

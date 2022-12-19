@@ -54,8 +54,9 @@ msgid "Street 3"
 msgstr "Straat 3"
 
 #. module: partner_address_street3
-#: model_terms:ir.ui.view,arch_db:partner_address_street3.add_street3_in_form_view
+#: model_terms:ir.ui.view,arch_db:partner_address_street3.res_partner_view_form_private
 #: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_address_form
+#: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_form
 msgid "Street 3..."
 msgstr ""
 
