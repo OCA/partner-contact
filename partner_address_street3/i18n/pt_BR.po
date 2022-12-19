@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2017-05-01 20:42+0000\n"
 "PO-Revision-Date: 2019-09-17 17:24+0000\n"
 "Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
-"23907/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
+"teams/23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -63,8 +63,9 @@ msgid "Street 3"
 msgstr "Rua 3"
 
 #. module: partner_address_street3
-#: model_terms:ir.ui.view,arch_db:partner_address_street3.add_street3_in_form_view
+#: model_terms:ir.ui.view,arch_db:partner_address_street3.res_partner_view_form_private
 #: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_address_form
+#: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_form
 msgid "Street 3..."
 msgstr "Rua 3..."
 
