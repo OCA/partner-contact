@@ -6,8 +6,7 @@
     "version": "12.0.1.0.1",
     "category": "Partner Management",
     "license": "AGPL-3",
-    "author": "Tecnativa, "
-              "Odoo Community Association (OCA)",
+    "author": "Tecnativa, " "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "depends": [
         "sale_management",
