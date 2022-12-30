@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_accreditation_action" model="ir.actions.act_window">
+        <field name="name">Accreditation</field>
+        <field name="res_model">res.partner.accreditation</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <record id="res_partner_accreditation_tree_view" model="ir.ui.view">
+        <field name="name">Accreditation tree</field>
+        <field name="model">res.partner.accreditation</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="res_partner_accreditation_form_view" model="ir.ui.view">
+        <field name="name">Accreditation form</field>
+        <field name="model">res.partner.accreditation</field>
+        <field name="arch" type="xml">
+            <form string="Accreditation">
+                <group>
+                    <field name="name" />
+                </group>
+            </form>
+        </field>
+    </record>
+    <menuitem
+        action="res_partner_accreditation_action"
+        id="menu_res_partner_accreditation"
+        parent="contacts.res_partner_menu_config"
+    />
+</odoo>
