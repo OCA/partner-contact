@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2022-12-12 17:44+0000\n"
+"PO-Revision-Date: 2023-01-02 11:44+0000\n"
 "Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -199,7 +199,7 @@ msgstr "Ultima modifica il"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_uid
 msgid "Last Updated by"
-msgstr "Ultimo aggiornamento il"
+msgstr "Ultimo aggiornamento di"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_date
