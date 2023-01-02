@@ -37,10 +37,11 @@ class CityZipGeonamesImport(models.TransientModel):
     )
 
     @api.model
-    def transform_city_name(self, city, country):
+    def transform_city_name(self, city, country, zip=False):
         """Override it for transforming city name (if needed)
         :param city: Original city name
         :param country: Country record
+        :param zip: Zip record
         :return: Transformed city name
         """
         res = city
@@ -71,7 +72,7 @@ class CityZipGeonamesImport(models.TransientModel):
         self.env.cr.execute(
             "SELECT id, name FROM res_city "
             "WHERE name = %s AND country_id = %s AND state_id = %s LIMIT 1",
-            (self.transform_city_name(row[2], country), country.id, state_id),
+            (self.transform_city_name(row[2], country, row[1]), country.id, state_id),
         )
         row_city = self.env.cr.fetchone()
         return (row_city[0], row_city[1]) if row_city else (False, False)
@@ -94,7 +95,7 @@ class CityZipGeonamesImport(models.TransientModel):
     @api.model
     def prepare_city(self, row, country, state_id):
         vals = {
-            "name": self.transform_city_name(row[2], country),
+            "name": self.transform_city_name(row[2], country, row[1]),
             "state_id": state_id,
             "country_id": country.id,
         }
@@ -234,7 +235,7 @@ class CityZipGeonamesImport(models.TransientModel):
                 zip_code = self.select_zip(row, country, state_id)
             if not zip_code:
                 city_id = city_dict[
-                    (self.transform_city_name(row[2], country), state_id)
+                    (self.transform_city_name(row[2], country, row[1]), state_id)
                 ]
                 zip_vals = self.prepare_zip(row, city_id)
                 if zip_vals not in zip_vals_list:
