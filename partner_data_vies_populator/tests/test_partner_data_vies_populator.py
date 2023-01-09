@@ -11,12 +11,12 @@ class TestPartnerCreateByVAT(TransactionCase):
         self.partner_model = self.env["res.partner"]
         self.sample_1 = {
             "valid": True,
-            "name": u"SA ODOO",
-            "address": u"Chaussée De Namur 40 1367 Ramillies",
+            "name": "SA ODOO",
+            "address": "Chaussée De Namur 40 1367 Ramillies",
         }
 
     def test_create_from_vat1(self):
-        # Create an partner from VAT number field
+        # Create a partner from VAT number field
         with Form(self.env["res.partner"]) as partner_form:
             partner_form.is_company = True
             partner_form.vat = "be0477472701"
