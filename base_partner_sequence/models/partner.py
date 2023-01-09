@@ -29,16 +29,16 @@ class ResPartner(models.Model):
         return super(ResPartner, self).copy(default=default)
 
     def write(self, vals):
-        for partner in self:
-            partner_vals = vals.copy()
-            if (
-                not partner_vals.get("ref")
-                and partner._needs_ref(vals=partner_vals)
-                and not partner.ref
-            ):
+        partners_needing_ref = self.env["res.partner"]
+        if not vals.get("ref"):
+            partners_needing_ref = self.filtered(
+                lambda p: p._needs_ref(vals=vals) and not p.ref
+            )
+            for partner in partners_needing_ref:
+                partner_vals = vals.copy()
                 partner_vals["ref"] = partner._get_next_ref(vals=partner_vals)
-            super(ResPartner, partner).write(partner_vals)
-        return True
+                super(ResPartner, partner).write(partner_vals)
+        return super(ResPartner, self - partners_needing_ref).write(vals)
 
     def _needs_ref(self, vals=None):
         """
