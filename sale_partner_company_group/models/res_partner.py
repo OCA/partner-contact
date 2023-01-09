@@ -43,7 +43,7 @@ class Contact(models.Model):
                 != self.property_product_pricelist
             )
             members_str = ""
-            for member in company_members:
+            for member in company_members.sorted(key="display_name"):
                 members_str += "\t- %s\n" % member.display_name
             res["warning"] = {
                 "title": _("Warning"),
