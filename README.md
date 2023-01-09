@@ -34,7 +34,7 @@ addon | version | maintainers | summary
 [partner_bank_sort_code](partner_bank_sort_code/) | 13.0.1.0.1 | [![rousseldenis](https://github.com/rousseldenis.png?size=30px)](https://github.com/rousseldenis) | Adds a field in banks to manage Sort Codes
 [partner_capital](partner_capital/) | 13.0.1.0.1 |  | Partners Capital
 [partner_coc](partner_coc/) | 13.0.1.0.1 |  | Adds field 'Chamber Of Commerce Registration Number'
-[partner_company_group](partner_company_group/) | 13.0.1.3.1 |  | Adds the possibility to add a company group to a company
+[partner_company_group](partner_company_group/) | 13.0.1.3.2 |  | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 13.0.1.0.0 |  | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 13.0.1.0.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
 [partner_contact_address_default](partner_contact_address_default/) | 13.0.1.1.0 |  | Set a default delivery and invoice address for contacts
@@ -47,7 +47,7 @@ addon | version | maintainers | summary
 [partner_contact_lang](partner_contact_lang/) | 13.0.1.0.1 |  | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 13.0.1.0.0 |  | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 13.0.1.0.0 |  | Add a page to contacts form to put personal information
-[partner_data_vies_populator](partner_data_vies_populator/) | 13.0.1.0.0 |  | Using VIES webservice, name and address information will be fetched and added to the partner.
+[partner_data_vies_populator](partner_data_vies_populator/) | 13.0.1.0.1 |  | Using VIES webservice, name and address information will be fetched and added to the partner.
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 13.0.1.0.0 |  | Contact deduplication with fine-grained permission control
 [partner_deduplicate_by_ref](partner_deduplicate_by_ref/) | 13.0.1.0.1 |  | Deduplicate Contacts by reference
 [partner_deduplicate_by_website](partner_deduplicate_by_website/) | 13.0.1.0.1 |  | Deduplicate Contacts by Website
