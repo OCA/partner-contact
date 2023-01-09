@@ -12,7 +12,7 @@
     "installable": True,
     "application": False,
     "license": "AGPL-3",
-    "external_dependencies": {"python": ["email-validator"]},
+    "external_dependencies": {"python": ["email-validator==1.1.1"]},
     "data": ["views/base_config_view.xml"],
     "demo": ["demo/res_company_demo.xml"],
 }
