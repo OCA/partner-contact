@@ -2,22 +2,23 @@
 # Copyright (C) 2020 NextERP Romania
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo.tests.common import Form, TransactionCase
+from odoo.tests.common import Form, SavepointCase
 
 
-class TestPartnerCreateByVAT(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.partner_model = self.env["res.partner"]
-        self.be_country_id = self.env.ref("base.be").id
-        self.sample_1 = {
+class TestPartnerCreateByVAT(SavepointCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.partner_model = cls.env["res.partner"]
+        cls.be_country_id = cls.env.ref("base.be").id
+        cls.sample_1 = {
             "name": "SA ODOO",
             "address": "Chaussée De Namur 40 1367 Ramillies",
             "country_code": "BE",
         }
 
     def test_create_from_vat1(self):
-        # Create an partner from VAT number field
+        # Create a partner from VAT number field
         with Form(self.partner_model) as partner_form:
             partner_form.is_company = True
             partner_form.vat = "be0477472701"
