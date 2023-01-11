@@ -23,7 +23,7 @@ Partner Manual Rank
     :target: https://runbot.odoo-community.org/runbot/134/15.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5| 
+|badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module restores the functionality of <= 12.0 to set contacts as customer or
 vendor, and allows users to create custom filters on a more user-friendly manner.
@@ -59,6 +59,7 @@ Contributors
 * Francesco Apruzzese <cescoap@gmail.com>
 * Francisco Luna <fluna@vauxoo.com>
 * Luis González <lgonzalez@vauxoo.com>
+* Carlos Reyes <carlos@studio73.es>
 
 Other credits
 ~~~~~~~~~~~~~
@@ -88,7 +89,7 @@ promote its widespread use.
 
 Current `maintainers <https://odoo-community.org/page/maintainer-role>`__:
 
-|maintainer-luisg123v| |maintainer-frahikLV| 
+|maintainer-luisg123v| |maintainer-frahikLV|
 
 This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/15.0/partner_manual_rank>`_ project on GitHub.
 
