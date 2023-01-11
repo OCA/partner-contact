@@ -23,7 +23,7 @@ Partner Contact address default
     :target: https://runbot.odoo-community.org/runbot/134/15.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5| 
+|badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module extends the functionality of base partner module to allow to set a
 default delivery and invoice address for contacts.
@@ -68,6 +68,10 @@ Contributors
 * `Sygel <https://www.sygel.es>`_:
 
   * Manuel Regidor
+
+* `Studio73 <https://www.studio73.es>`_:
+
+  * Carlos Reyes
 
 Maintainers
 ~~~~~~~~~~~
