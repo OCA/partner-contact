@@ -5,26 +5,27 @@ from odoo.tests import common
 
 
 class TestPartnerContactAddressDefault(common.TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.Partner = self.env["res.partner"]
-        self.partner = self.Partner.create({"name": "Parent partner"})
-        self.partner_child_delivery1 = self.Partner.create(
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.Partner = cls.env["res.partner"]
+        cls.partner = cls.Partner.create({"name": "Parent partner"})
+        cls.partner_child_delivery1 = cls.Partner.create(
             {
                 "name": "Child delivery 1",
                 "type": "delivery",
-                "parent_id": self.partner.id,
+                "parent_id": cls.partner.id,
             }
         )
-        self.partner_child_delivery2 = self.Partner.create(
+        cls.partner_child_delivery2 = cls.Partner.create(
             {
                 "name": "Child delivery 2",
                 "type": "delivery",
-                "parent_id": self.partner.id,
+                "parent_id": cls.partner.id,
             }
         )
-        self.partner_child_invoice = self.Partner.create(
-            {"name": "Child invoice", "type": "invoice", "parent_id": self.partner.id}
+        cls.partner_child_invoice = cls.Partner.create(
+            {"name": "Child invoice", "type": "invoice", "parent_id": cls.partner.id}
         )
 
     def test_contact_address_default(self):
