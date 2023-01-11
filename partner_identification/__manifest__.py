@@ -9,7 +9,7 @@
 {
     "name": "Partner Identification Numbers",
     "category": "Customer Relationship Management",
-    "version": "14.0.1.3.0",
+    "version": "14.0.1.4.0",
     "license": "AGPL-3",
     "depends": ["contacts"],
     "data": [
