@@ -6,3 +6,7 @@
 * `Sygel <https://www.sygel.es>`_:
 
   * Manuel Regidor
+
+* `Studio73 <https://www.studio73.es>`_:
+
+  * Carlos Reyes
