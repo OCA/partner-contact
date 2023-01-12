@@ -45,7 +45,7 @@ addon | version | maintainers | summary
 [partner_contact_nationality](partner_contact_nationality/) | 15.0.1.0.0 |  | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 15.0.1.0.0 |  | Add a page to contacts form to put personal information
 [partner_contact_role](partner_contact_role/) | 15.0.1.0.0 |  | Add roles to partners.
-[partner_deduplicate_acl](partner_deduplicate_acl/) | 15.0.1.1.0 |  | Contact deduplication with fine-grained permission control
+[partner_deduplicate_acl](partner_deduplicate_acl/) | 15.0.1.2.0 |  | Contact deduplication with fine-grained permission control
 [partner_deduplicate_by_ref](partner_deduplicate_by_ref/) | 15.0.1.0.0 |  | Deduplicate Contacts by reference
 [partner_deduplicate_filter](partner_deduplicate_filter/) | 15.0.1.0.0 |  | Exclude records from the deduplication
 [partner_employee_quantity](partner_employee_quantity/) | 15.0.1.0.0 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) | Know how many employees a partner has
