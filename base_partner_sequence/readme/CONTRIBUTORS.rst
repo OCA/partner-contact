@@ -11,3 +11,5 @@
 * Quentin Groulard <quentin.groulard@acsone.eu>
 * Kevin Khao <kevinkhao@gmail.com>
 * Francesco Apruzzese <cescoap@gmail.com>
+* Daniel Reis <dreis@opensourceintegrators.com>
+* Nikul Chaudhary <nchaudhary@opensourceintegrators.com>

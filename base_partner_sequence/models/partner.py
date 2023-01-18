@@ -15,11 +15,12 @@ class ResPartner(models.Model):
     def _get_next_ref(self, vals=None):
         return self.env["ir.sequence"].next_by_code("res.partner")
 
-    @api.model
-    def create(self, vals):
-        if not vals.get("ref") and self._needs_ref(vals=vals):
-            vals["ref"] = self._get_next_ref(vals=vals)
-        return super(ResPartner, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if not vals.get("ref") and self._needs_ref(vals=vals):
+                vals["ref"] = self._get_next_ref(vals=vals)
+        return super(ResPartner, self).create(vals_list)
 
     def copy(self, default=None):
         default = default or {}
@@ -53,9 +54,7 @@ class ResPartner(models.Model):
             )
         # only assign a 'ref' to commercial partners
         if self:
-            vals = {}
-            vals["is_company"] = self.is_company
-            vals["parent_id"] = self.parent_id
+            vals = {"is_company": self.is_company, "parent_id": self.parent_id}
         return vals.get("is_company") or not vals.get("parent_id")
 
     @api.model
