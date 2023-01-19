@@ -23,21 +23,21 @@ class ResPartnerIdCategory(models.Model):
     def _get_default_color(self):
         return randint(1, 11)
 
-    color = fields.Integer(string="Color Index", default=_get_default_color)
+    color = fields.Integer("Color Index", default=_get_default_color)
     code = fields.Char(
-        string="Code",
+        "Abbrebiation or acronym",
         size=16,
         required=True,
         help="Abbreviation or acronym of this ID type. For example, "
         "'driver_license'",
     )
     name = fields.Char(
-        string="ID name",
+        "ID name",
         required=True,
         translate=True,
         help="Name of this ID type. For example, 'Driver License'",
     )
-    active = fields.Boolean(string="Active", default=True)
+    active = fields.Boolean("Active ?", default=True)
     validation_code = fields.Text(
         "Python validation code", help="Python code called to validate an id number."
     )
@@ -61,11 +61,12 @@ class ResPartnerIdCategory(models.Model):
             raise UserError(
                 _(
                     "Error when evaluating the id_category validation code:"
-                    ":\n %s \n(%s)"
+                    ":\n %(name)s \n(%(error)s)"
                 )
-                % (self.name, e)
-            )
+                % {"name": self.name, "error": e}
+            ) from e
         if eval_context.get("failed", False):
             raise ValidationError(
-                _("%s is not a valid %s identifier") % (id_number.name, self.name)
+                _("%(id)s is not a valid %(name)s identifier")
+                % {"id": id_number.name, "name": self.name}
             )

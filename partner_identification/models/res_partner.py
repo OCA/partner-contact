@@ -125,11 +125,15 @@ class ResPartner(models.Model):
             else:
                 raise ValidationError(
                     _(
-                        "This %s has multiple IDs of this type (%s), so a write "
-                        "via the %s field is not possible. In order to fix this, "
-                        "please use the IDs tab."
+                        "This %(name)s has multiple IDs of this type (%(categ_code)s), "
+                        "so a write via the %(fieldname)s field is not possible. "
+                        "In order to fix this, please use the IDs tab."
                     )
-                    % (record._name, category_code, field_name)
+                    % {
+                        "name": record._name,
+                        "categ_code": category_code,
+                        "fieldname": field_name,
+                    }
                 )
 
     @api.model
