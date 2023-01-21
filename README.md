@@ -27,7 +27,7 @@ addon | version | maintainers | summary
 [base_location](base_location/) | 14.0.1.2.4 |  | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 14.0.1.0.2 |  | Import zip entries from Geonames
 [base_location_nuts](base_location_nuts/) | 14.0.1.0.2 |  | NUTS Regions
-[base_partner_sequence](base_partner_sequence/) | 14.0.1.0.1 |  | Sets customer's code from a sequence
+[base_partner_sequence](base_partner_sequence/) | 14.0.1.0.2 |  | Sets customer's code from a sequence
 [partner_address_street3](partner_address_street3/) | 14.0.1.0.0 |  | Add a third address line on partners
 [partner_address_version](partner_address_version/) | 14.0.1.0.0 |  | Partner Address Version
 [partner_affiliate](partner_affiliate/) | 14.0.1.0.1 |  | Partner Affiliates
