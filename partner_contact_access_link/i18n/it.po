@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-12-12 17:44+0000\n"
+"PO-Revision-Date: 2023-01-27 18:46+0000\n"
 "Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -24,7 +24,7 @@ msgstr "Contatto"
 #. module: partner_contact_access_link
 #: model:ir.model.fields,field_description:partner_contact_access_link.field_res_partner__display_name
 msgid "Display Name"
-msgstr "Nome Visualizzato"
+msgstr "Nome visualizzato"
 
 #. module: partner_contact_access_link
 #: model:ir.model.fields,field_description:partner_contact_access_link.field_res_partner__id
