@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2023-01-27 12:45+0000\n"
+"Last-Translator: vdewulf <virginie@coopiteasy.be>\n"
 "Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: partner_accreditation
 #: model:ir.actions.act_window,name:partner_accreditation.res_partner_accreditation_action
@@ -22,59 +24,59 @@ msgstr ""
 #: model:ir.ui.menu,name:partner_accreditation.menu_res_partner_accreditation
 #: model_terms:ir.ui.view,arch_db:partner_accreditation.res_partner_accreditation_form_view
 msgid "Accreditation"
-msgstr ""
+msgstr "Agréments"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__active
 msgid "Active"
-msgstr ""
+msgstr "Actif"
 
 #. module: partner_accreditation
 #: model:ir.model,name:partner_accreditation.model_res_partner_accreditation
 msgid "Configurable Accreditation for Partners"
-msgstr ""
+msgstr "Agréments configurables pour les contacts"
 
 #. module: partner_accreditation
 #: model:ir.model,name:partner_accreditation.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom affiché"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Dernière modification le"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__partner_ids
 msgid "Partner"
-msgstr ""
+msgstr "Contact"
