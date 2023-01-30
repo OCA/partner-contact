@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2023-01-05 17:45+0000\n"
+"PO-Revision-Date: 2023-01-31 05:56+0000\n"
 "Last-Translator: Bole <bole@dajmi5.com>\n"
 "Language-Team: Croatian (https://www.transifex.com/oca/teams/23907/hr/)\n"
 "Language: hr\n"
@@ -23,7 +23,7 @@ msgstr ""
 #. module: partner_company_type
 #: model:res.partner.company.type,shortcut:partner_company_type.res_partner_company_type_sa
 msgid "AC"
-msgstr ""
+msgstr "AC"
 
 #. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__shortcut
