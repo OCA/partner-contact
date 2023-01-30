@@ -33,6 +33,7 @@ addon | version | maintainers | summary
 [partner_address_street3](partner_address_street3/) | 15.0.1.0.0 |  | Add a third address line on partners
 [partner_affiliate](partner_affiliate/) | 15.0.1.0.0 |  | Partner Affiliates
 [partner_bank_code](partner_bank_code/) | 15.0.1.0.0 |  | Add fields information in banks
+[partner_company_default](partner_company_default/) | 15.0.1.0.0 |  | Partner Company Default
 [partner_company_group](partner_company_group/) | 15.0.2.0.0 |  | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 15.0.1.0.1 |  | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 15.0.1.0.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
