@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2023-01-05 17:45+0000\n"
+"PO-Revision-Date: 2023-02-01 20:45+0000\n"
 "Last-Translator: Bole <bole@dajmi5.com>\n"
 "Language-Team: Croatian (https://www.transifex.com/oca/teams/23907/hr/)\n"
 "Language: hr\n"
@@ -115,11 +115,13 @@ msgid ""
 "Expiration date. For example, date when person needs to renew his driver "
 "license, 21/10/2019"
 msgstr ""
+"Datum isteka. Na primjer: datum, kada se mora obnoviti vozačka dozvola, 21.10"
+".2019"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
 msgid "Expired"
-msgstr ""
+msgstr "Isteklo"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
@@ -130,33 +132,33 @@ msgstr "ID"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__name
 msgid "ID Number"
-msgstr ""
+msgstr "ID broj"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_form
 msgid "ID Numbers"
-msgstr ""
+msgstr "ID brojevi"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__name
 msgid "ID name"
-msgstr ""
+msgstr "ID ime"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__category_id
 msgid "ID type defined in configuration. For example, Driver License"
-msgstr ""
+msgstr "ID tip definiram u postavkama. Na rpimjer, Vozačka dozvola"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner__id_numbers
 #: model:ir.model.fields,field_description:partner_identification.field_res_users__id_numbers
 msgid "Identification Numbers"
-msgstr ""
+msgstr "Identifikacijski brojevi"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_issued_id
 msgid "Issued by"
-msgstr ""
+msgstr "Izdao"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__date_issued
@@ -164,11 +166,13 @@ msgid ""
 "Issued date. For example, date when person approved his driving exam, "
 "21/10/2009"
 msgstr ""
+"Datum izdavanja. Na primjer: datum, kada je osoba položila vozački ispit, 21."
+"10.2019"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
 msgid "Issued on"
-msgstr ""
+msgstr "Izdao"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category____last_update
