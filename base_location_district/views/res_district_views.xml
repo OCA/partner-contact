@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_district_tree" model="ir.ui.view">
+        <field name="name">res.district.tree</field>
+        <field name="model">res.district</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name" />
+                <field name="code" />
+                <field name="city_id" options="{'no_open': True, 'no_create': True}" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_district_filter" model="ir.ui.view">
+        <field name="model">res.district</field>
+        <field name="arch" type="xml">
+            <search string="Search District">
+                <field
+                    name="name"
+                    filter_domain="['|', ('name','ilike',self), ('code','ilike',self)]"
+                    string="District"
+                />
+                <separator />
+                <field name="city_id" />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_res_district_tree" model="ir.actions.act_window">
+        <field name="name">Districts</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.district</field>
+        <field name="view_mode">tree</field>
+        <field name="help">
+            Display and manage the list of all districts that can be assigned to
+            your partner records.
+        </field>
+    </record>
+
+    <menuitem
+        id="menu_district_partner"
+        action="base_location_district.action_res_district_tree"
+        parent="contacts.menu_localisation"
+        sequence="10"
+    />
+</odoo>

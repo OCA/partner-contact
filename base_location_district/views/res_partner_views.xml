@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="address_street_extended_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field
+            name="inherit_id"
+            ref="base_address_extended.address_street_extended_form"
+        />
+        <field name="arch" type="xml">
+            <field name="country_id" position="after">
+                    <field
+                    name="district_id"
+                    placeholder="District"
+                    class="o_address_district"
+                    domain="[('city_id', '=', city_id)]"
+                    attrs="{'invisible': [('country_enforce_cities', '=', False)], 'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="address_street_extended_city_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field
+            name="inherit_id"
+            ref="base_address_extended.address_street_extended_city_form"
+        />
+        <field name="arch" type="xml">
+            <field name="country_id" position="after">
+                <field
+                    name="district_id"
+                    placeholder="District"
+                    class="o_address_district"
+                    domain="[('city_id', '=', city_id)]"
+                    attrs="{'invisible': [('country_enforce_cities', '=', False)], 'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
+                />
+            </field>
+        </field>
+    </record>
+
+</odoo>
