@@ -26,6 +26,7 @@ msgid "Contact"
 msgstr ""
 
 #. module: base_partner_sequence
+#. odoo-python
 #: code:addons/base_partner_sequence/models/partner.py:0
 #, python-format
 msgid "Either field values or an id must be provided."
