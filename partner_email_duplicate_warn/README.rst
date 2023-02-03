@@ -14,20 +14,20 @@ Partner Email Duplicate Warn
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/14.0/partner_email_duplicate_warn
+    :target: https://github.com/OCA/partner-contact/tree/16.0/partner_email_duplicate_warn
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-14-0/partner-contact-14-0-partner_email_duplicate_warn
+    :target: https://translation.odoo-community.org/projects/partner-contact-16-0/partner-contact-16-0-partner_email_duplicate_warn
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
-    :target: https://runbot.odoo-community.org/runbot/134/14.0
+    :target: https://runbot.odoo-community.org/runbot/134/16.0
     :alt: Try me on Runbot
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
 This module adds a warning banner on the partner form view if another partner has the same e-mail. It helps spot duplicate partners. If the duplication is confirmed, the user can then use the native partner merge wizard available from the partner tree view (menu *Action > Merge*).
 
-.. figure:: https://raw.githubusercontent.com/OCA/partner-contact/14.0/partner_email_duplicate_warn/static/description/partner_warn_banner.png
+.. figure:: https://raw.githubusercontent.com/OCA/partner-contact/16.0/partner_email_duplicate_warn/static/description/partner_warn_banner.png
    :alt: Warning banner on partner form
 
 It is similar to the native warning banner when another partner has the same VAT number. T
@@ -52,13 +52,19 @@ The warning banner is displayed on the partner form view if another partner:
 - if the partner is attached to a specific company: is in the same company or is not attached to a specific company,
 - if the partner is not attached to a specific company: is in any company or not attached to a specific company.
 
+Known issues / Roadmap
+======================
+
+- Add a button "Merge partner" in the end of the warning message to save clicks to user.
+- Set `same_email_partner_id` as Many2many and find a way to display all the duplicate in the warning banner with clickable links.
+
 Bug Tracker
 ===========
 
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_email_duplicate_warn%0Aversion:%2014.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_email_duplicate_warn%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -96,6 +102,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-alexis-via| 
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/14.0/partner_email_duplicate_warn>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/16.0/partner_email_duplicate_warn>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
