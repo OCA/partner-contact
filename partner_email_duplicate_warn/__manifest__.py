@@ -4,7 +4,7 @@
 
 {
     "name": "Partner Email Duplicate Warn",
-    "version": "15.0.1.0.0",
+    "version": "16.0.1.0.0",
     "category": "Partner Management",
     "license": "AGPL-3",
     "summary": "Warning banner on partner form if another partner has the same email",
