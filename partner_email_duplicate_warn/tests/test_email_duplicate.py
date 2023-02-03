@@ -8,41 +8,43 @@ from odoo.tests.common import TransactionCase
 
 @tagged("post_install", "-at_install")
 class TestResPartner(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.partner_simple = self.env["res.partner"].create(
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.partner_simple = cls.env["res.partner"].create(
             {
                 "name": "Alexia Payet",
                 "email": "alexia.payet@akretion.com",
             }
         )
-        self.partner_space_start = self.env["res.partner"].create(
+        cls.partner_space_start = cls.env["res.partner"].create(
             {
                 "name": "Alexia Payet",
                 "email": " alexia.payet@videolan.org",
             }
         )
-        self.partner_space_end = self.env["res.partner"].create(
+        cls.partner_space_end = cls.env["res.partner"].create(
             {
                 "name": "Alexia Payet",
                 "email": "alexia.payet@via.ecp.fr ",
             }
         )
-        self.company1_id = self.env.ref("base.main_company").id
-        partner_company = self.env["res.partner"].create(
+        cls.company1_id = cls.env.ref("base.main_company").id
+        partner_company = cls.env["res.partner"].create(
             {
                 "name": "Test Company",
                 "is_company": True,
-                "country_id": self.env.ref("base.fr").id,
+                "country_id": cls.env.ref("base.fr").id,
             }
         )
-        self.company2_id = (
-            self.env["res.company"]
+        cls.company2_id = (
+            cls.env["res.company"]
             .create(
                 {
                     "name": "Test Company",
                     "partner_id": partner_company.id,
-                    "currency_id": self.env.ref("base.EUR").id,
+                    "currency_id": cls.env.ref("base.EUR").id,
                 }
             )
             .id
