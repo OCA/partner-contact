@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_partner_form_industry">
+        <field name="name">view_partner_form_industry</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="vat" position="before">
+                <field name="is_subject_to_vat" />
+            </field>
+        </field>
+    </record>
+</odoo>
