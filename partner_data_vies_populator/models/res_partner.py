@@ -26,7 +26,9 @@ class ResPartner(models.Model):
         except Exception as e:
             _logger.warning("Failed to query VIES: %s" % e)
             if raise_if_fail:
-                raise UserError(_("Failed to query VIES.\nTechnical error: %s.") % e)
+                raise UserError(
+                    _("Failed to query VIES.\nTechnical error: %s.") % e
+                ) from None
             return res
         if result.valid and result.name:
             res["vat"] = vat
