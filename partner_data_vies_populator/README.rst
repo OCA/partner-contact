@@ -80,6 +80,10 @@ Contributors
 
   * Alexis de Lattre <alexis.delattre@akretion.com>
 
+* `Noviat <https://www.noviat.com/>`_ :
+
+  * Jeremy Didderen <jeremy.didderen@noviat.com>
+
 Maintainers
 ~~~~~~~~~~~
 
