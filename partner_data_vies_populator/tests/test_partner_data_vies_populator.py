@@ -6,11 +6,12 @@ from odoo.tests.common import Form, TransactionCase
 
 
 class TestPartnerCreateByVAT(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.partner_model = self.env["res.partner"]
-        self.be_country_id = self.env.ref("base.be").id
-        self.sample_1 = {
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.partner_model = cls.env["res.partner"]
+        cls.be_country_id = cls.env.ref("base.be").id
+        cls.sample_1 = {
             "name": "SA ODOO",
             "address": "Chaussée De Namur 40 1367 Ramillies",
             "country_code": "BE",
