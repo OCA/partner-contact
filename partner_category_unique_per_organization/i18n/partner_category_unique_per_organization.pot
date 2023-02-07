@@ -1,0 +1,57 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_category_unique_per_organization
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-07 13:52+0000\n"
+"PO-Revision-Date: 2023-02-07 13:52+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_category_unique_per_organization
+#: model:ir.model,name:partner_category_unique_per_organization.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_category_unique_per_organization
+#: model:ir.model.fields,field_description:partner_category_unique_per_organization.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_category_unique_per_organization.field_res_partner_category__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_category_unique_per_organization
+#: model:ir.model.fields,field_description:partner_category_unique_per_organization.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_category_unique_per_organization.field_res_partner_category__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_category_unique_per_organization
+#: model:ir.model.fields,field_description:partner_category_unique_per_organization.field_res_partner____last_update
+#: model:ir.model.fields,field_description:partner_category_unique_per_organization.field_res_partner_category____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_category_unique_per_organization
+#: model:ir.model,name:partner_category_unique_per_organization.model_res_partner_category
+msgid "Partner Tags"
+msgstr ""
+
+#. module: partner_category_unique_per_organization
+#: model:ir.model.fields,field_description:partner_category_unique_per_organization.field_res_partner_category__unique_per_organization
+msgid "Unique Per Organization"
+msgstr ""
+
+#. module: partner_category_unique_per_organization
+#: code:addons/partner_category_unique_per_organization/models/partner.py:0
+#, python-format
+msgid ""
+"You can only have 1 contact with the category {} for the organization {} "
+"({})"
+msgstr ""
