@@ -3,8 +3,7 @@
 {
     "name": "Partner timezone",
     "summary": "Remove partner timezone default value and display on form",
-    "version": "14.0.1.0.1",
-    "development_status": "Beta",
+    "version": "16.0.1.0.0",
     "category": "Uncategorized",
     "website": "https://github.com/OCA/partner-contact",
     "author": "Camptocamp, Odoo Community Association (OCA)",
