@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_merge_partner_manual_check,access.merge.partner.manual.check,model_merge_partner_manual_check,,1,1,1,1
+access_base_partner_merge_line,access.base.partner.merge.line,model_base_partner_merge_line,,1,1,1,1

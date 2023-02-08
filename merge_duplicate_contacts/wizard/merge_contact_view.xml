@@ -1,0 +1,1020 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="base.action_partner_merge" model="ir.actions.act_window">
+        <field name="binding_model_id" eval="False" />
+    </record>
+
+    <record model="ir.actions.server" id="action_contact_partner_merge">
+        <field name="name">Merge Contacts</field>
+        <field name="model_id" ref="base.model_res_partner" />
+        <field name="binding_model_id" ref="base.model_res_partner" />
+        <field name="binding_type">action</field>
+        <field name="state">code</field>
+        <field name="code">action = records.open_wizard_action()</field>
+    </record>
+
+    <record id="merge_partner_manual_check_form" model="ir.ui.view">
+        <field name="name">merge.partner.manual.check.form</field>
+        <field name="model">merge.partner.manual.check</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div style="text-align: center;">
+                        <h3>
+                            <label for="duplicate_position" string='Duplicates' />
+                            <field
+                                name="duplicate_position"
+                                class="oe_inline"
+                                readonly="1"
+                                style="padding-top: 0px; padding-right: 0px !important; padding-bottom: 0px !important;padding-left: 0px !important;"
+                            />
+                            <label
+                                for="total_duplicates"
+                                style="padding-left: 5px;"
+                                string=' of '
+                                class="oe_inline"
+                            />
+                            <field
+                                name="total_duplicates"
+                                class="oe_inline"
+                                style="padding-top: 0px; padding-right: 0px !important; padding-bottom: 0px !important;padding-left: 0px !important;"
+                                readonly="1"
+                            />
+                        </h3>
+                    </div>
+                    <field name="state" invisible="1" />
+                    <field name="number_group" invisible="1" />
+                    <field name="partner_ids" invisible='1' />
+                    <field
+                        name="dst_partner_id"
+                        domain="[('id', 'in', partner_ids or False)]"
+                        attrs="{'required': [('state', '=', 'selection')]}"
+                        invisible="1"
+                    />
+                    <field name='contact_type' invisible="1" />
+                    <field name='contact_type2' invisible="1" />
+                    <div width="90%">
+                        <group col="13">
+                            <label
+                                colspan="1"
+                                for="partner_id_1"
+                                string='ID'
+                                style="min-width: 108px;"
+                            />
+                            <field
+                                colspan="5"
+                                name="partner_id_1"
+                                nolabel="1"
+                                domain="[('id', '=', partner_id_1 or False)]"
+                                context="{'only_show_customer_id': True}"
+                                options='{"no_create_edit": True, "no_create": True}'
+                            />
+                            <field
+                                colspan="5"
+                                name="partner_id_2"
+                                nolabel="1"
+                                domain="[('id', '=', partner_id_2 or False)]"
+                                options='{"no_create_edit": True, "no_create": True}'
+                                context="{'only_show_customer_id': True}"
+                            />
+                        </group>
+                    </div>
+
+                    <group col="13" invisible='1'>
+                        <label colspan="1" for="id1" style="min-width: 108px;" />
+                        <field colspan="5" name="id1" nolabel="1" readonly='1' />
+                        <button
+                            colspan="1"
+                            name="swap_to_left"
+                            type="object"
+                            title="left"
+                            class="fa fa-arrow-left"
+                            style="display:none;"
+                        />
+                        <button
+                            colspan="1"
+                            name="swap_to_right"
+                            type="object"
+                            title="right"
+                            class="fa fa-arrow-right"
+                            style="display:none;"
+                        />
+                        <field colspan="5" name="id2" nolabel="1" readonly='1' />
+                    </group>
+
+                    <div width="90%">
+                        <group col="13">
+                            <label
+                                colspan="1"
+                                for="last_changes_date1"
+                                style="min-width: 108px;"
+                            />
+                            <field
+                                colspan="2"
+                                name="last_changes_date1"
+                                nolabel="1"
+                                readonly="1"
+                            />
+                            <field
+                                colspan="3"
+                                name="last_changes_uid1"
+                                nolabel="1"
+                                readonly="1"
+                            />
+                            <field
+                                colspan="2"
+                                name="last_changes_date2"
+                                nolabel="1"
+                                readonly="1"
+                            />
+                            <field
+                                colspan="3"
+                                name="last_changes_uid2"
+                                nolabel="1"
+                                readonly="1"
+                            />
+                        </group>
+                    </div>
+
+                    <group col="13">
+                        <label
+                            colspan="1"
+                            for="last_order1"
+                            style="min-width: 108px;"
+                        />
+                        <field
+                            colspan="2"
+                            name="last_order1"
+                            nolabel="1"
+                            readonly="1"
+                        />
+                        <field
+                            colspan="3"
+                            name="last_order_num1"
+                            nolabel="1"
+                            readonly="1"
+                        />
+                        <field
+                            colspan="2"
+                            name="last_order2"
+                            nolabel="1"
+                            readonly="1"
+                        />
+                        <field
+                            colspan="3"
+                            name="last_order_num2"
+                            nolabel="1"
+                            readonly="1"
+                        />
+                    </group>
+
+                    <group col="13" invisible="1">
+                        <label
+                            colspan="1"
+                            for="company_id"
+                            invisible="1"
+                            style="min-width: 108px;"
+                        />
+                        <field
+                            colspan="5"
+                            name="company_id"
+                            nolabel="1"
+                            invisible="1"
+                        />
+                        <button
+                            colspan="1"
+                            name="swap_to_left"
+                            type="object"
+                            title="left"
+                            class="fa fa-arrow-left"
+                            context="{'field_name':'company_id2'}"
+                        />
+                        <button
+                            colspan="1"
+                            name="swap_to_right"
+                            type="object"
+                            title="right"
+                            class="fa fa-arrow-right"
+                            context="{'field_name':'company_id'}"
+                        />
+                        <field colspan="5" name="company_id2" nolabel="1" />
+                    </group>
+
+                    <group>
+                        <label for="name" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="name"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                            <field
+                                name='name_show_icon'
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'name2'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('name_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('name_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'name'}"
+                            />
+                            <field
+                                name="name2"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                        </div>
+                    </group>
+
+                    <group>
+                        <label for="company_id" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="company_id"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                            <field
+                                name="company_show_icon"
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'company_id2'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('company_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('company_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'company_id'}"
+                            />
+                            <field
+                                name="company_id2"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                        </div>
+                    </group>
+
+                    <group>
+                        <label for="company_name" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="company_name"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                            <field
+                                name="company_name_show_icon"
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'company_name2'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('company_name_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('company_name_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'company_name'}"
+                            />
+                            <field
+                                name="company_name2"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                        </div>
+                    </group>
+
+                    <group>
+                        <label for="email" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="email"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                            <field
+                                name='email_show_icon'
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'email2'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('email_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('email_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'email'}"
+                            />
+                            <field
+                                name="email2"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                        </div>
+                    </group>
+                    <group>
+                        <label for="phone" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="phone"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                            <field
+                                name='phone_show_icon'
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'phone2'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('phone_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('phone_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'phone'}"
+                            />
+                            <field
+                                name="phone2"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                        </div>
+                    </group>
+
+                    <group>
+                        <label for="mobile" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="mobile"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                            <field
+                                name='mobile_show_icon'
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'mobile2'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('mobile_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('mobile_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'mobile'}"
+                            />
+                            <field
+                                name="mobile2"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                        </div>
+                    </group>
+
+                    <group>
+                        <label for="street" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="street"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type', '=', 'contact'),('company_id', '!=', False)]}"
+                            />
+                            <field
+                                name='addr1_show_icon'
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'street2'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('addr1_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('addr1_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'street'}"
+                            />
+                            <field
+                                name="street2"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type2', '=', 'contact'),('company_id2', '!=', False)]}"
+                            />
+                        </div>
+                    </group>
+                    <group>
+                        <label for="street11" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="street11"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type', '=', 'contact'),('company_id', '!=', False)]}"
+                            />
+                            <field
+                                name='addr2_show_icon'
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'street22'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('addr2_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('addr2_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'street11'}"
+                            />
+                            <field
+                                name="street22"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type2', '=', 'contact'),('company_id2', '!=', False)]}"
+                            />
+                        </div>
+                    </group>
+                    <group>
+                        <label for="zip" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="zip"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type', '=', 'contact'),('company_id', '!=', False)]}"
+                            />
+                            <field
+                                name='zip_show_icon'
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'zip2'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('zip_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('zip_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'zip'}"
+                            />
+                            <field
+                                name="zip2"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type2', '=', 'contact'),('company_id2', '!=', False)]}"
+                            />
+                        </div>
+                    </group>
+                    <group>
+                        <label for="city" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="city"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type', '=', 'contact'),('company_id', '!=', False)]}"
+                            />
+                            <field
+                                name='city_show_icon'
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'city2'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('city_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('city_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'city'}"
+                            />
+                            <field
+                                name="city2"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type2', '=', 'contact'),('company_id2', '!=', False)]}"
+                            />
+                        </div>
+                    </group>
+                    <group>
+                        <label for="state_id" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="state_id"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type', '=', 'contact'),('company_id', '!=', False)]}"
+                            />
+                            <field
+                                name='state_show_icon'
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'state_id2'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('state_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('state_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'state_id'}"
+                            />
+                            <field
+                                name="state_id2"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type2', '=', 'contact'),('company_id2', '!=', False)]}"
+                            />
+                        </div>
+                    </group>
+                    <group>
+                        <label for="country_id" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="country_id"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type', '=', 'contact'),('company_id', '!=', False)]}"
+                            />
+                            <field
+                                name='country_show_icon'
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'country_id2'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('country_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('country_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'country_id'}"
+                            />
+                            <field
+                                name="country_id2"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type2', '=', 'contact'),('company_id2', '!=', False)]}"
+                            />
+                        </div>
+                    </group>
+                    <group>
+                        <label for="vat_1" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="vat_1"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type', '=', 'contact'),('company_id', '!=', False)]}"
+                            />
+                            <field
+                                name='vat_show_icon'
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'vat_2'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('vat_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('vat_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'vat_1'}"
+                            />
+                            <field
+                                name="vat_2"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                                attrs="{'readonly': [('contact_type2', '=', 'contact'),('company_id2', '!=', False)]}"
+                            />
+                        </div>
+                    </group>
+                    <group>
+                        <label for="is_company" style="min-width: 108px;" />
+                        <div>
+                            <field
+                                name="is_company"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                            <field
+                                name='is_company_show_icon'
+                                invisible="1"
+                                class="oe_inline"
+                            />
+                            <button
+                                name="swap_to_left"
+                                type="object"
+                                title="left"
+                                class="fa fa-arrow-left oe_inline"
+                                context="{'field_name':'is_company2'}"
+                            />
+
+                            <button
+                                name="dummy_button"
+                                string="Differ"
+                                type="object"
+                                class="btn-danger oe_inline"
+                                attrs="{'invisible':[('is_company_show_icon','=',True)]}"
+                            />
+                            <button
+                                name="dummy_button"
+                                string="Same"
+                                type="object"
+                                class="oe_inline"
+                                attrs="{'invisible':[('is_company_show_icon','=',False)]}"
+                            />
+
+                            <button
+                                name="swap_to_right"
+                                type="object"
+                                title="right"
+                                class="fa fa-arrow-right oe_inline"
+                                context="{'field_name':'is_company'}"
+                            />
+                            <field
+                                name="is_company2"
+                                nolabel="1"
+                                class="oe_inline"
+                                style="min-width: 300px;"
+                            />
+                        </div>
+                    </group>
+                    <group col="16">
+                        <label colspan="1" for="keep1" style="min-width: 108px;" />
+                        <field colspan="5" name="keep1" nolabel="1" />
+                        <button
+                            colspan="1"
+                            name="swap_to_left"
+                            type="object"
+                            title="left"
+                            class="fa fa-arrow-left"
+                            style="display:none;"
+                        />
+                        <button
+                            colspan="1"
+                            name="swap_to_right"
+                            type="object"
+                            title="right"
+                            class="fa fa-arrow-right"
+                            style="display:none;"
+                        />
+                        <field colspan="5" name="keep2" nolabel="1" />
+                    </group>
+                </sheet>
+                <footer>
+                    <center>
+                        <button
+                            name="action_merge"
+                            string="Merge"
+                            type="object"
+                            style="margin-right:100px;"
+                        />
+                        <button
+                            name="action_skip"
+                            string="Skip"
+                            type="object"
+                            style="margin-right:100px;"
+                        />
+                        <button
+                            special="cancel"
+                            string="Cancel"
+                            type="object"
+                            class="btn btn-secondary oe_inline"
+                            style="margin-right:100px;"
+                        />
+                    </center>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="merge_partner_manual_check_form_ext" model="ir.ui.view">
+        <field name="name">base.partner.merge.automatic.wizard</field>
+        <field name="model">base.partner.merge.automatic.wizard</field>
+        <field name="inherit_id" ref="base.base_partner_merge_automatic_wizard_form" />
+        <field name="arch" type="xml">
+            <field name='exclude_contact' position="after">
+                <field name="associate_contact" />
+                <field name="contact_not_being_customer" />
+                <field name="without_sales_orders" />
+            </field>
+            <field name="group_by_parent_id" position="after">
+                <field name="group_by_domain_email" />
+            </field>
+            <field name="group_by_name" position="after">
+                <field name="group_by_phone" />
+                <field name="group_by_mobile" />
+            </field>
+        </field>
+    </record>
+
+</odoo>
