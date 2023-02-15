@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-01-31 05:56+0000\n"
+"PO-Revision-Date: 2023-02-15 19:22+0000\n"
 "Last-Translator: Bole <bole@dajmi5.com>\n"
 "Language-Team: none\n"
 "Language: hr\n"
@@ -45,39 +45,39 @@ msgstr "Kontakt"
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Kreirao"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Kreirano"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Prikazani naziv"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Zadnje modificirano"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Zadnji ažurirao"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Zadnje ažuriranje"
 
 #. module: partner_accreditation
 #: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__partner_ids
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
