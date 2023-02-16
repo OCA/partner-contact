@@ -10,7 +10,7 @@
 {
     "name": "Partner Multi Name",
     "summary": "Have split first and other names",
-    "version": "12.0.1.0.1",
+    "version": "13.0.1.0.0",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/partner-contact",
     "author": "EXA Auto Parts Github@exaap, "
@@ -18,6 +18,6 @@
     "Odoo Community Association (OCA)",
     "category": "Partner Management",
     "depends": ["partner_second_lastname"],
-    "data": ["views/res_users_views.xml", "views/res_partner_views.xml",],
+    "data": ["views/res_users_views.xml", "views/res_partner_views.xml"],
     "installable": True,
 }

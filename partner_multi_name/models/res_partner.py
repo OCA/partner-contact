@@ -67,7 +67,6 @@ class ResPartner(models.Model):
     def _names_order_default(self):
         return "first_last"
 
-    @api.multi
     def _inverse_name(self):
         """Try to revert the effect of '_compute_name'."""
         for record in self:
@@ -125,8 +124,3 @@ class ResPartner(models.Model):
             for partner in self:
                 if not partner.othernames:
                     raise
-
-    @api.onchange("firstname", "othernames", "lastname", "lastname2")
-    def _onchange_subnames(self):
-        """Trigger onchange with 'othernames' too."""
-        super()._onchange_subnames()

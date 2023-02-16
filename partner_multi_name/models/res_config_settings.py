@@ -7,7 +7,7 @@
 # Copyright 2021 EXA Auto Parts S.A.S Alejandro Olano <Github@alejo-code>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, models
+from odoo import models
 
 
 class ResConfigSettings(models.TransientModel):
@@ -26,7 +26,6 @@ class ResConfigSettings(models.TransientModel):
         }
         return [(k, new_labels[k]) if k in new_labels else (k, v) for k, v in options]
 
-    @api.multi
     def _partners_for_recalculating(self):
         return self.env["res.partner"].search(
             [
