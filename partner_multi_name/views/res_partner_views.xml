@@ -1,68 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="partner_simple_form" model="ir.ui.view">
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="partner_second_lastname.partner_simple_form"/>
+        <field name="inherit_id" ref="partner_second_lastname.partner_simple_form" />
         <field name="priority">100</field>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='firstname']" position="replace"/>
-
+            <xpath expr="//field[@name='firstname']" position="replace" />
             <xpath expr="//field[@name='lastname']" position="before">
-                <field name="firstname"
-                    attrs="{'required': ['|', '|', ('lastname', '!=', False), ('lastname2', '!=', False), ('lastname', '=', False), ('lastname2', '=', False), ('othernames', '=', False), ('is_company', '=', False)]}"/>
-                <field name="othernames"
-                    attrs="{'required': ['|', '|', ('lastname', '!=', False), ('lastname2', '!=', False), ('lastname', '=', False), ('lastname2', '=', False), ('firstname', '=', False), ('is_company', '=', False)]}"/>
+                <field
+                    name="firstname"
+                    attrs="{'required': ['|', '|', ('lastname', '!=', False), ('lastname2', '!=', False), ('lastname', '=', False), ('lastname2', '=', False), ('othernames', '=', False), ('is_company', '=', False)]}"
+                />
+                <field
+                    name="othernames"
+                    attrs="{'required': ['|', '|', ('lastname', '!=', False), ('lastname2', '!=', False), ('lastname', '=', False), ('lastname2', '=', False), ('firstname', '=', False), ('is_company', '=', False)]}"
+                />
             </xpath>
-
             <xpath expr="//field[@name='lastname']" position="attributes">
-                <attribute name="attrs">{'required': ['|', '|', ('firstname', '!=', False), ('othernames', '!=', False), ('firstname', '=', False), ('othernames', '=', False), ('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
+                <attribute
+                    name="attrs"
+                >{'required': ['|', '|', ('firstname', '!=', False), ('othernames', '!=', False), ('firstname', '=', False), ('othernames', '=', False), ('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
             </xpath>
-
             <xpath expr="//field[@name='lastname2']" position="attributes">
-                <attribute name="attrs">{'required': ['|', '|', ('firstname', '!=', False), ('othernames', '!=', False), ('firstname', '=', False), ('othernames', '=', False), ('lastname', '=', False), ('is_company', '=', False)]}</attribute>
+                <attribute
+                    name="attrs"
+                >{'required': ['|', '|', ('firstname', '!=', False), ('othernames', '!=', False), ('firstname', '=', False), ('othernames', '=', False), ('lastname', '=', False), ('is_company', '=', False)]}</attribute>
             </xpath>
         </field>
     </record>
-
     <record id="partner_form" model="ir.ui.view">
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="partner_second_lastname.partner_form"/>
+        <field name="inherit_id" ref="partner_second_lastname.partner_form" />
         <field name="priority">100</field>
         <field name="arch" type="xml">
             <!-- Main form -->
-            <xpath expr="//field[@name='firstname']" position="replace"/>
-
+            <xpath expr="//field[@name='firstname']" position="replace" />
             <xpath expr="//field[@name='lastname']" position="before">
-                 <field name="firstname"
-                    attrs="{'required': [('othernames', '=', False), ('is_company', '=', False)]}"/>
-                <field name="othernames"
-                    attrs="{'required': [('firstname', '=', False), ('is_company', '=', False)]}"/>
+                <field
+                    name="firstname"
+                    attrs="{'required': [('othernames', '=', False), ('is_company', '=', False)]}"
+                />
+                <field
+                    name="othernames"
+                    attrs="{'required': [('firstname', '=', False), ('is_company', '=', False)]}"
+                />
             </xpath>
-
             <xpath expr="//field[@name='lastname']" position="attributes">
-                <attribute name="attrs">{'required': [('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
+                <attribute
+                    name="attrs"
+                >{'required': [('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
             </xpath>
-
             <xpath expr="//field[@name='lastname2']" position="attributes">
-                <attribute name="attrs">{'required': [('lastname', '=', False), ('is_company', '=', False)]}</attribute>
+                <attribute
+                    name="attrs"
+                >{'required': [('lastname', '=', False), ('is_company', '=', False)]}</attribute>
             </xpath>
-                
             <!-- Inner contact form of child_ids -->
-            <xpath expr="//field[@name='child_ids']/form//field[@name='firstname']" position="replace"/>
-
-            <xpath expr="//field[@name='child_ids']/form//field[@name='lastname']" position="before">
-                <field name="firstname"
-                    attrs="{'required': [('othernames', '=', False), ('is_company', '=', False)]}"/>
-                <field name="othernames"
-                    attrs="{'required': [('firstname', '=', False), ('is_company', '=', False)]}"/>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='firstname']"
+                position="replace"
+            />
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='lastname']"
+                position="before"
+            >
+                <field
+                    name="firstname"
+                    attrs="{'required': [('othernames', '=', False), ('is_company', '=', False)]}"
+                />
+                <field
+                    name="othernames"
+                    attrs="{'required': [('firstname', '=', False), ('is_company', '=', False)]}"
+                />
             </xpath>
-
-            <xpath expr="//field[@name='child_ids']/form//field[@name='lastname']" position="attributes">
-                <attribute name="attrs">{'required': [('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='lastname']"
+                position="attributes"
+            >
+                <attribute
+                    name="attrs"
+                >{'required': [('lastname2', '=', False), ('is_company', '=', False)]}</attribute>
             </xpath>
-
-            <xpath expr="//field[@name='child_ids']/form//field[@name='lastname2']" position="attributes">
-                <attribute name="attrs">{'required': [('lastname', '=', False), ('is_company', '=', False)]}</attribute>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='lastname2']"
+                position="attributes"
+            >
+                <attribute
+                    name="attrs"
+                >{'required': [('lastname', '=', False), ('is_company', '=', False)]}</attribute>
             </xpath>
         </field>
     </record>

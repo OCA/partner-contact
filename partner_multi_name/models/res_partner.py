@@ -8,11 +8,13 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, fields, models
+
 from odoo.addons.partner_firstname import exceptions
 
 
 class ResPartner(models.Model):
     """Adds other names."""
+
     _inherit = "res.partner"
 
     othernames = fields.Char("Other Names")
@@ -28,7 +30,7 @@ class ResPartner(models.Model):
         order = self._get_names_order()
         names = list()
 
-        if order == 'first_last':
+        if order == "first_last":
             if firstname:
                 names.append(firstname)
             if othernames:
@@ -42,8 +44,7 @@ class ResPartner(models.Model):
                 names.append(lastname)
             if lastname2:
                 names.append(lastname2)
-            if names and (firstname or othernames) \
-                    and order == 'last_first_comma':
+            if names and (firstname or othernames) and order == "last_first_comma":
                 names[-1] = names[-1] + ","
             if firstname:
                 names.append(firstname)
@@ -55,24 +56,26 @@ class ResPartner(models.Model):
     def _compute_name(self):
         """Write the 'name' according to splitted data."""
         for partner in self:
-            partner.name = self._get_computed_name(partner.firstname,
-                                                   partner.othernames,
-                                                   partner.lastname,
-                                                   partner.lastname2)
+            partner.name = self._get_computed_name(
+                partner.firstname,
+                partner.othernames,
+                partner.lastname,
+                partner.lastname2,
+            )
 
     @api.model
     def _names_order_default(self):
-        return 'first_last'
+        return "first_last"
 
     @api.multi
     def _inverse_name(self):
         """Try to revert the effect of '_compute_name'."""
         for record in self:
             parts = record._get_inverse_name(record.name, record.is_company)
-            record.lastname = parts['lastname']
-            record.lastname2 = parts['lastname2']
-            record.firstname = parts['firstname']
-            record.othernames = parts['othernames']
+            record.lastname = parts["lastname"]
+            record.lastname2 = parts["lastname2"]
+            record.firstname = parts["firstname"]
+            record.othernames = parts["othernames"]
 
     @api.model
     def _get_inverse_name(self, name, is_company=False):
@@ -83,10 +86,10 @@ class ResPartner(models.Model):
         """
         # Company name goes to the lastname
         result = {
-            'firstname': False,
-            'othernames': False,
-            'lastname': name or False,
-            'lastname2': False,
+            "firstname": False,
+            "othernames": False,
+            "lastname": name or False,
+            "lastname2": False,
         }
 
         if not is_company and name:
@@ -94,22 +97,22 @@ class ResPartner(models.Model):
             result = super()._get_inverse_name(name, is_company)
             parts = []
 
-            if order == 'first_last':
-                if result['lastname2']:
-                    parts = result['lastname2'].split(" ", 1)
+            if order == "first_last":
+                if result["lastname2"]:
+                    parts = result["lastname2"].split(" ", 1)
                 while len(parts) < 2:
-                    result['othernames'] = False
+                    result["othernames"] = False
                     return result
-                result['othernames'] = result['lastname']
-                result['lastname'] = parts[0]
-                result['lastname2'] = parts[1]
+                result["othernames"] = result["lastname"]
+                result["lastname"] = parts[0]
+                result["lastname2"] = parts[1]
             else:
-                if result['firstname']:
-                    parts = result['firstname'].split(" ", 1)
+                if result["firstname"]:
+                    parts = result["firstname"].split(" ", 1)
                 while len(parts) < 2:
                     parts.append(False)
-                result['firstname'] = parts[0]
-                result['othernames'] = parts[1]
+                result["firstname"] = parts[0]
+                result["othernames"] = parts[1]
 
         return result
 

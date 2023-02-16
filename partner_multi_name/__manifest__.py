@@ -14,15 +14,10 @@
     "license": "AGPL-3",
     "website": "https://github.com/OCA/partner-contact",
     "author": "EXA Auto Parts Github@exaap, "
-              "Tecnativa, "
-              "Odoo Community Association (OCA)",
+    "Tecnativa, "
+    "Odoo Community Association (OCA)",
     "category": "Partner Management",
-    "depends": [
-        "partner_second_lastname"
-    ],
-    "data": [
-        "views/res_users_views.xml",
-        "views/res_partner_views.xml",
-    ],
+    "depends": ["partner_second_lastname"],
+    "data": ["views/res_users_views.xml", "views/res_partner_views.xml",],
     "installable": True,
 }
