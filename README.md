@@ -27,6 +27,7 @@ addon | version | maintainers | summary
 [base_partner_sequence](base_partner_sequence/) | 16.0.1.0.0 |  | Sets customer's code from a sequence
 [partner_accreditation](partner_accreditation/) | 16.0.1.0.0 | [![victor-champonnois](https://github.com/victor-champonnois.png?size=30px)](https://github.com/victor-champonnois) | Add Accreditation to Partners
 [partner_address_street3](partner_address_street3/) | 16.0.1.0.0 |  | Add a third address line on partners
+[partner_address_two_lines](partner_address_two_lines/) | 16.0.1.0.0 |  | The company and the partner name are on two different lines
 [partner_affiliate](partner_affiliate/) | 16.0.1.0.0 |  | Partner Affiliates
 [partner_company_type](partner_company_type/) | 16.0.1.0.0 |  | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 16.0.1.0.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
