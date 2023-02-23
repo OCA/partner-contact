@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo-addon-base_partner_sequence>=16.0dev,<16.1dev',
         'odoo-addon-partner_accreditation>=16.0dev,<16.1dev',
         'odoo-addon-partner_address_street3>=16.0dev,<16.1dev',
+        'odoo-addon-partner_address_two_lines>=16.0dev,<16.1dev',
         'odoo-addon-partner_affiliate>=16.0dev,<16.1dev',
         'odoo-addon-partner_company_type>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_access_link>=16.0dev,<16.1dev',
