@@ -13,4 +13,4 @@ class District(models.Model):
 
     name = fields.Char(required=True)
     code = fields.Char()
-    city_id = fields.Many2one(comodel_name="res.city", required=True)
+    city_id = fields.Many2many(comodel_name="res.city", required=True)
