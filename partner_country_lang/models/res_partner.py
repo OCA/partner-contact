@@ -9,9 +9,10 @@ class ResPartner(models.Model):
 
     @api.onchange("country_id")
     def _onchange_country_id(self):
-        super()._onchange_country_id()
+        result = super()._onchange_country_id()
         if self.country_id.lang:
             self.lang = self.country_id.lang
+        return result
 
     def _adjust_lang_by_country(self, vals):
         """Adjust vals dictionary for adding the language of the country
