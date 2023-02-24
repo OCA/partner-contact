@@ -35,4 +35,6 @@ msgstr "Imponer idioma"
 #. module: partner_country_lang
 #: model:ir.model.fields,help:partner_country_lang.field_res_country__lang
 msgid "This country partners' language will be set to this value by default"
-msgstr "El idioma de los contactos de este país se establecerá por defecto en este valor"
+msgstr ""
+"El idioma de los contactos de este país se establecerá por defecto en este "
+"valor"
