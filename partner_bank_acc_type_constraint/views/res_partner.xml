@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2023 Akretion France (http://www.akretion.com/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+
+<record id="view_partner_property_form" model="ir.ui.view">
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="account.view_partner_property_form" />
+    <field name="arch" type="xml">
+        <xpath
+                expr="//field[@name='bank_ids']/tree/field[@name='acc_number']"
+                position="before"
+            >
+            <field name="acc_type_manual" required="1" />
+        </xpath>
+    </field>
+</record>
+
+
+</odoo>
