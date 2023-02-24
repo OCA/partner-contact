@@ -48,6 +48,7 @@ setuptools.setup(
         'odoo-addon-partner_phone_secondary>=15.0dev,<15.1dev',
         'odoo-addon-partner_phonecall_schedule>=15.0dev,<15.1dev',
         'odoo-addon-partner_pricelist_search>=15.0dev,<15.1dev',
+        'odoo-addon-partner_pricelist_tracking>=15.0dev,<15.1dev',
         'odoo-addon-partner_priority>=15.0dev,<15.1dev',
         'odoo-addon-partner_ref_unique>=15.0dev,<15.1dev',
         'odoo-addon-partner_second_lastname>=15.0dev,<15.1dev',
