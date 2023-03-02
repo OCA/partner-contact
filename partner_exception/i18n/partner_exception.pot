@@ -1,0 +1,41 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_exception
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_exception
+#: model:ir.model.fields,field_description:partner_exception.field_exception_rule__model
+msgid "Apply on"
+msgstr ""
+
+#. module: partner_exception
+#: model:ir.model,name:partner_exception.model_res_partner
+#: model:ir.model.fields.selection,name:partner_exception.selection__exception_rule__model__res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_exception
+#: model:ir.actions.act_window,name:partner_exception.action_partner_exception_rule_tree
+#: model:ir.ui.menu,name:partner_exception.menu_action_contact_exception
+msgid "Contact Exception Rules"
+msgstr ""
+
+#. module: partner_exception
+#: model:ir.model.fields,field_description:partner_exception.field_exception_rule__partner_ids
+msgid "Contacts"
+msgstr ""
+
+#. module: partner_exception
+#: model:ir.model,name:partner_exception.model_exception_rule
+msgid "Exception Rule"
+msgstr ""
