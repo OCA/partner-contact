@@ -43,6 +43,7 @@ setuptools.setup(
         'odoo13-addon-partner_disable_gravatar',
         'odoo13-addon-partner_email_check',
         'odoo13-addon-partner_employee_quantity',
+        'odoo13-addon-partner_exception',
         'odoo13-addon-partner_external_map',
         'odoo13-addon-partner_fax',
         'odoo13-addon-partner_firstname',
