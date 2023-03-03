@@ -1,17 +1,23 @@
 # Copyright 2017 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from odoo_test_helper import FakeModelLoader
+
 from odoo.exceptions import ValidationError
 from odoo.tests import common
-
-from .fake_models import ResPartner, setup_test_model, teardown_test_model
 
 
 class TestResPartner(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        setup_test_model(cls.env, ResPartner)
+
+        cls.loader = FakeModelLoader(cls.env, cls.__module__)
+        cls.loader.backup_registry()
+        from .fake_models import ResPartner
+
+        cls.loader.update_registry((ResPartner,))
+
         bad_cat = cls.env["res.partner.id_category"].create(
             {"code": "another_code", "name": "another_name"}
         )
@@ -36,7 +42,7 @@ class TestResPartner(common.TransactionCase):
 
     @classmethod
     def tearDownClass(cls):
-        teardown_test_model(cls.env, ResPartner)
+        cls.loader.restore_registry()
         super().tearDownClass()
 
     def test_compute_identification(self):
