@@ -115,8 +115,8 @@ msgid ""
 "Expiration date. For example, date when person needs to renew his driver "
 "license, 21/10/2019"
 msgstr ""
-"Datum isteka. Na primjer: datum, kada se mora obnoviti vozačka dozvola, 21.10"
-".2019"
+"Datum isteka. Na primjer: datum, kada se mora obnoviti vozačka dozvola, "
+"21.10.2019"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
@@ -166,8 +166,8 @@ msgid ""
 "Issued date. For example, date when person approved his driving exam, "
 "21/10/2009"
 msgstr ""
-"Datum izdavanja. Na primjer: datum, kada je osoba položila vozački ispit, 21."
-"10.2019"
+"Datum izdavanja. Na primjer: datum, kada je osoba položila vozački ispit, "
+"21.10.2019"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
