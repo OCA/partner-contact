@@ -5,7 +5,7 @@ from lxml import etree
 from odoo.tests import common, new_test_user
 
 
-class TestPartnerCategorySecurity(common.SavepointCase):
+class TestPartnerCategorySecurity(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
