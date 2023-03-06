@@ -2,11 +2,11 @@
 # Copyright 2018 Tecnativa - Cristina Martin
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo.tests import common
+from odoo.tests.common import TransactionCase
 from odoo.tools.safe_eval import safe_eval
 
 
-class TestDeduplicateByWebsite(common.SavepointCase):
+class TestDeduplicateByWebsite(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
