@@ -1,0 +1,66 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_category_inherit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-07 15:13+0000\n"
+"PO-Revision-Date: 2023-03-07 15:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_category_inherit
+#: model:ir.model.fields,help:partner_category_inherit.field_res_partner_category__inherited
+msgid "Also apply this tag to the childs of the partner"
+msgstr ""
+
+#. module: partner_category_inherit
+#: model:ir.model,name:partner_category_inherit.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_category_inherit
+#: model:ir.model.fields,field_description:partner_category_inherit.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_category_inherit.field_res_partner_category__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_category_inherit
+#: model:ir.model.fields,field_description:partner_category_inherit.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_category_inherit.field_res_partner_category__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_category_inherit
+#: code:addons/partner_category_inherit/models/partner.py:0
+#, python-format
+msgid "Inheritable tags should only be put on the top-level partner"
+msgstr ""
+
+#. module: partner_category_inherit
+#: model:ir.model.fields,field_description:partner_category_inherit.field_res_partner_category__inherited
+msgid "Inherited"
+msgstr ""
+
+#. module: partner_category_inherit
+#: model:ir.model.fields,field_description:partner_category_inherit.field_res_partner____last_update
+#: model:ir.model.fields,field_description:partner_category_inherit.field_res_partner_category____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_category_inherit
+#: model:ir.model,name:partner_category_inherit.model_res_partner_category
+msgid "Partner Tags"
+msgstr ""
+
+#. module: partner_category_inherit
+#: model:ir.model.fields,field_description:partner_category_inherit.field_res_partner__category_id
+#: model:ir.model.fields,field_description:partner_category_inherit.field_res_users__category_id
+msgid "Tags"
+msgstr ""
