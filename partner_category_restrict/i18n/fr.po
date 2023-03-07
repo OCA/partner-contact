@@ -1,0 +1,67 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_category_restrict
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-07 11:07+0000\n"
+"PO-Revision-Date: 2023-03-07 12:09+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#. module: partner_category_restrict
+#: model:ir.model,name:partner_category_restrict.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: partner_category_restrict
+#: model:ir.model.fields,field_description:partner_category_restrict.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_category_restrict.field_res_partner_category__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: partner_category_restrict
+#: model:ir.model.fields,field_description:partner_category_restrict.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_category_restrict.field_res_partner_category__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_category_restrict
+#: model:ir.model.fields,field_description:partner_category_restrict.field_res_partner____last_update
+#: model:ir.model.fields,field_description:partner_category_restrict.field_res_partner_category____last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification Le"
+
+#. module: partner_category_restrict
+#: model:ir.model,name:partner_category_restrict.model_res_partner_category
+msgid "Partner Tags"
+msgstr "Tag de partenaire"
+
+#. module: partner_category_restrict
+#: model:ir.model.fields,field_description:partner_category_restrict.field_res_partner_category__restrict_filter_id
+msgid "Restrict Filter"
+msgstr "Filtre de restriction"
+
+#. module: partner_category_restrict
+#: code:addons/partner_category_restrict/models/partner.py:0
+#, python-format
+msgid ""
+"The tag \"{}\" cannot be applied to the partner \"{}\".\n"
+"\n"
+"Cause: it does not respect the \"{}\" filter.\n"
+"\n"
+"Detail: {}"
+msgstr ""
+"Le tag \"{}\" ne peut pas être appliqué au partenaire \"{}\".\n"
+"\n"
+"Cause: il ne respecte pas le filtre \"{}\".\n"
+"\n"
+"Détail: {}"
