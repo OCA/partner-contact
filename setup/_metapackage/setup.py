@@ -36,6 +36,7 @@ setuptools.setup(
         'odoo-addon-partner_country_lang>=15.0dev,<15.1dev',
         'odoo-addon-partner_deduplicate_acl>=15.0dev,<15.1dev',
         'odoo-addon-partner_deduplicate_by_ref>=15.0dev,<15.1dev',
+        'odoo-addon-partner_deduplicate_by_website>=15.0dev,<15.1dev',
         'odoo-addon-partner_deduplicate_filter>=15.0dev,<15.1dev',
         'odoo-addon-partner_email_check>=15.0dev,<15.1dev',
         'odoo-addon-partner_employee_quantity>=15.0dev,<15.1dev',
