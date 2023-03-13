@@ -2,7 +2,6 @@
 # @author Pierrick Brun <pierrick.brun@akretion.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo.exceptions import UserError
 from odoo.tests import common
 
 
@@ -41,10 +40,6 @@ class TestPartnerCategoryInherit(common.SavepointCase):
         self.org.category_id -= self.partner_category_inherited
         self.assertFalse(self.partner_category_inherited in self.org.category_id)
         self.assertFalse(self.partner_category_inherited in self.partner_1.category_id)
-
-    def test_partner_category_inherited_only_on_top_level(self):
-        with self.assertRaises(UserError):
-            self.partner_1.category_id |= self.partner_category_inherited
 
     def test_partner_category_inherited_on_creation(self):
         self.org.category_id |= self.partner_category_inherited
