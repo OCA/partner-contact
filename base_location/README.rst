@@ -91,6 +91,7 @@ Contributors
 * Francesco Apruzzese <f.apruzzese@apuliasoftware.it>
 * Dave Lasley <dave@laslabs.com>
 * Aitor Bouzas <aitor.bouzas@adaptivecity.com>
+* Eric Antones <eantones@nuobit.com>
 
 Other credits
 ~~~~~~~~~~~~~
