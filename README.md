@@ -24,7 +24,7 @@ addon | version | maintainers | summary
 [account_partner_company_group](account_partner_company_group/) | 15.0.1.0.0 |  | Adds the possibility to add a company group to a company
 [animal](animal/) | 15.0.1.1.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Manage animals information
 [base_country_state_translatable](base_country_state_translatable/) | 15.0.1.0.0 |  | Translate Country States
-[base_location](base_location/) | 15.0.1.0.1 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) | Enhanced zip/npa management system
+[base_location](base_location/) | 15.0.1.0.2 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 15.0.1.0.2 |  | Import zip entries from Geonames
 [base_location_nuts](base_location_nuts/) | 15.0.1.0.0 |  | NUTS Regions
 [base_partner_company_group](base_partner_company_group/) | 15.0.1.1.0 |  | Adds the possibility to add a company group to a company
