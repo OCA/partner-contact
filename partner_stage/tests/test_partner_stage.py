@@ -2,10 +2,10 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo.exceptions import ValidationError
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 
 
-class TestPartnerStage(SavepointCase):
+class TestPartnerStage(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -16,9 +16,9 @@ class TestPartnerStage(SavepointCase):
         default_stage = self.env.ref("partner_stage.partner_stage_active")
         new_partner = self.Partner.create({"name": "A Partner"})
         self.assertTrue(new_partner.stage_id, default_stage)
+        states = new_partner._read_group_stage_id(self.Stage, [], None)
+        self.assertTrue(states.ids, [1, 2, 3])
 
     def test_02_stage_default_constraint(self):
-        with self.assertRaises(ValidationError) as ctx:
+        with self.assertRaises(ValidationError):
             self.Stage.create({"name": "Another Default Stage", "is_default": True})
-            err_msg = ctx.exception.args[0]
-            self.assertEqual("There should be only one default stage", err_msg)
