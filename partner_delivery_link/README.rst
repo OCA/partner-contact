@@ -25,8 +25,9 @@ Partner Delivery Link
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module Partner Delivery Link module is a part of partner-contact and count the totals
-picking created for customer in customer form and can access all pickings.
+Partner Delivery Link module is a part of partner-contact repository and it counts
+the total number of pickings created for customer and then display it in Customer Form.
+
 
 **Table of contents**
 

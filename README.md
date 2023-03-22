@@ -45,6 +45,7 @@ addon | version | maintainers | summary
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 15.0.1.0.0 |  | Add a page to contacts form to put personal information
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 15.0.1.0.0 |  | Contact deduplication with fine-grained permission control
 [partner_deduplicate_by_ref](partner_deduplicate_by_ref/) | 15.0.1.0.0 |  | Deduplicate Contacts by reference
+[partner_delivery_link](partner_delivery_link/) | 15.0.1.0.0 |  |  Counts pickings for each partner
 [partner_employee_quantity](partner_employee_quantity/) | 15.0.1.0.0 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 15.0.1.0.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 15.0.1.0.0 |  | Add fax number on partner
