@@ -1,0 +1,86 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=place_id&input=Bellecombe+-+Gait%C3%A9+bus%2C+Lyon&inputtype=textquery
+  response:
+    body:
+      string: "{\n   \"candidates\" : [\n      {\n         \"place_id\" : \"ChIJv5Fn4oXq9EcReZcpO3Mkx4w\"\n
+        \     }\n   ],\n   \"status\" : \"OK\"\n}\n"
+    headers:
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - public, max-age=300
+      Content-Length:
+      - '117'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 03 Apr 2023 11:09:27 GMT
+      Expires:
+      - Mon, 03 Apr 2023 11:14:27 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Server-Timing:
+      - gfet4t7; dur=531
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://maps.googleapis.com/maps/api/place/details/json?fields=name%2Crating%2Cuser_ratings_total&place_id=ChIJv5Fn4oXq9EcReZcpO3Mkx4w
+  response:
+    body:
+      string: "{\n   \"html_attributions\" : [],\n   \"result\" : {\n      \"name\"
+        : \"Bellecombe - Gait\xE9\"\n   },\n   \"status\" : \"OK\"\n}\n"
+    headers:
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - public, max-age=300
+      Content-Length:
+      - '111'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 03 Apr 2023 11:09:27 GMT
+      Expires:
+      - Mon, 03 Apr 2023 11:14:27 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Server-Timing:
+      - gfet4t7; dur=66
+      Vary:
+      - Accept-Language
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1
