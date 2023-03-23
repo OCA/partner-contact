@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 NathanQj
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="view_res_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit (in partner_google_reviews)</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//form/sheet/notebook/page[@name='geo_location']"
+                position="inside"
+            >
+                <group>
+                    <separator string="Google Reviews" colspan="2" />
+                    <button
+                        name="update_google_reviews_info"
+                        string="Get Google Reviews"
+                        type="object"
+                        class="oe_link"
+                        icon="fa-google"
+                    />
+                    <field
+                        name="google_reviews_search"
+                        placeholder="Use the Company Name and City or their Website's URL for better results."
+                    />
+                    <field name="google_reviews_result" />
+                    <field name="google_rating" />
+                    <field name="google_reviews_number" />
+                    <field name="google_reviews_url" widget="url" />
+                    <field
+                        name="google_places_err"
+                        attrs="{'invisible': [('google_places_err', '=', False)]}"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

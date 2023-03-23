@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=place_id&input=fdsfjdfdksjfu%2C+FDFDFDFDFDFFDFDFDFF&inputtype=textquery
+  response:
+    body:
+      string: "{\n   \"candidates\" : [],\n   \"status\" : \"ZERO_RESULTS\"\n}\n"
+    headers:
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - public, max-age=300
+      Content-Length:
+      - '55'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 03 Apr 2023 11:03:56 GMT
+      Expires:
+      - Mon, 03 Apr 2023 11:08:56 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Server-Timing:
+      - gfet4t7; dur=173
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1

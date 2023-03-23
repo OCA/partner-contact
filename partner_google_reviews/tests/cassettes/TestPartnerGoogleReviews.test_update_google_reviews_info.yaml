@@ -1,0 +1,89 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=place_id&input=McDonald%27s+Charpennes%2C+Villeurbanne&inputtype=textquery
+  response:
+    body:
+      string: "{\n   \"candidates\" : [\n      {\n         \"place_id\" : \"ChIJZVMgfYXq9EcRd1TD3vvTmhU\"\n
+        \     }\n   ],\n   \"status\" : \"OK\"\n}\n"
+    headers:
+      Age:
+      - '111'
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - public, max-age=300
+      Content-Length:
+      - '117'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 03 Apr 2023 10:42:22 GMT
+      Expires:
+      - Mon, 03 Apr 2023 10:47:22 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Server-Timing:
+      - gfet4t7; dur=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://maps.googleapis.com/maps/api/place/details/json?fields=name%2Crating%2Cuser_ratings_total&place_id=ChIJZVMgfYXq9EcRd1TD3vvTmhU
+  response:
+    body:
+      string: "{\n   \"html_attributions\" : [],\n   \"result\" : {\n      \"name\"
+        : \"McDonald's\",\n      \"rating\" : 3.2,\n      \"user_ratings_total\" :
+        2436\n   },\n   \"status\" : \"OK\"\n}\n"
+    headers:
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - public, max-age=300
+      Content-Length:
+      - '159'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 03 Apr 2023 10:44:13 GMT
+      Expires:
+      - Mon, 03 Apr 2023 10:49:13 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Server-Timing:
+      - gfet4t7; dur=31
+      Vary:
+      - Accept-Language
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1
