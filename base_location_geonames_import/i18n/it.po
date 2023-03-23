@@ -9,21 +9,22 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2018-01-03 20:26+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"PO-Revision-Date: 2023-03-23 13:24+0000\n"
+"Last-Translator: Mario Riva <mario.riva@agilebg.com>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: base_location_geonames_import
 #. odoo-python
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
 #, python-format
 msgid "%d could not be deleted %"
-msgstr ""
+msgstr "%d non può essere cancellato %"
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
@@ -87,12 +88,12 @@ msgstr ""
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_code_column
 msgid "Geonames State Code Column"
-msgstr ""
+msgstr "Codice colonna Stato"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_name_column
 msgid "Geonames State Name Column"
-msgstr ""
+msgstr "Codice colonna Nome"
 
 #. module: base_location_geonames_import
 #. odoo-python
@@ -113,9 +114,8 @@ msgstr "Importa"
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_city_zip_geonames_import
-#, fuzzy
 msgid "Import City Zips from Geonames"
-msgstr "Importa Better Zip da Geonames"
+msgstr "Importare i CAP di Città da Geonames"
 
 #. module: base_location_geonames_import
 #: model:ir.actions.act_window,name:base_location_geonames_import.city_zip_geonames_import_action
