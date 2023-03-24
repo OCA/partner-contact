@@ -45,13 +45,6 @@ class TestPartnerDeliveryLink(common.TransactionCase):
             move.product_id = self.product
             move.product_uom_qty = 10
         picking = picking_form.save()
-        self.env["stock.picking.delivery"].create(
-            {
-                "carrier_id": self.carrier.id,
-                "picking_id": picking.id,
-                "carrier_tracking_ref": "Tester",
-            }
-        )
         picking.action_confirm()
         for move in picking.move_lines:
             move.quantity_done = move.product_uom_qty
