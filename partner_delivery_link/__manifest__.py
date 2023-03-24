@@ -11,7 +11,7 @@
     Partner Delivery Link
     This module adds a smart button in the Partner form to open
     the Delivery Orders of the related partner""",
-    "depends": ["contacts", "stock"],
+    "depends": ["contacts", "delivery", "stock"],
     "data": [
         "views/res_partner_view.xml",
     ],
