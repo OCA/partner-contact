@@ -7,7 +7,7 @@ class ResPartner(models.Model):
     delivery_order_ids = fields.Many2many(
         "stock.picking", compute="_compute_delivery_count"
     )
-    delivery_count = fields.Integer(compute="_compute_delivery_count")
+    partner_delivery_count = fields.Integer(compute="_compute_delivery_count")
 
     @api.model
     def _domain_for_pickings_search(self, partner):
@@ -24,7 +24,7 @@ class ResPartner(models.Model):
     def _compute_delivery_count(self):
         for partner in self:
             partner.delivery_order_ids = self._get_partner_pickings(partner)
-            partner.delivery_count = len(self._get_partner_pickings(partner))
+            partner.partner_delivery_count = len(self._get_partner_pickings(partner))
 
     def action_view_partner_delivery(self):
         delivery_tree_view = self.env.ref("stock.vpicktree")
