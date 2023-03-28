@@ -7,7 +7,9 @@ from odoo import api, fields, models
 class ExceptionRule(models.Model):
     _inherit = "exception.rule"
 
-    model = fields.Selection(selection_add=[("res.partner", "Contact")])
+    model = fields.Selection(
+        selection_add=[("res.partner", "Contact")], ondelete={"res.partner": "cascade"}
+    )
     partner_ids = fields.Many2many("res.partner", string="Contacts")
 
 
