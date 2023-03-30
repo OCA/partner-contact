@@ -15,7 +15,7 @@ class TestResPartnerRefUnique(common.SavepointCase):
         cls.company_obj = cls.env["res.company"]
         # look for possible already duplicated refs for being resilient
         cls.partner_obj.search([("ref", "!=", False)]).write({"ref": False})
-        cls.company = cls.company_obj.create({"name": "Test company"})
+        cls.company = cls.company_obj.create({"name": "Test partner company"})
         cls.env.user.write(
             {"company_id": cls.company.id, "company_ids": cls.company.ids}
         )

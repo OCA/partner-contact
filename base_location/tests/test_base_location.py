@@ -65,7 +65,7 @@ class TestBaseLocation(common.TransactionCase):
 
     def test_onchange_company_city_completion(self):
         """Test that company data is filled accodingly"""
-        company = self.env["res.company"].new({"name": "Test"})
+        company = self.env["res.company"].new({"name": "Test partner company"})
         company.zip_id = self.lausanne
         company._onchange_zip_id()
         self.assertEqual(company.zip, self.lausanne.name)
@@ -76,7 +76,7 @@ class TestBaseLocation(common.TransactionCase):
     def test_company_address_fields(self):
         """Test if the partner address fields changes when
         changing the ones from the company"""
-        company = self.env["res.company"].create({"name": "Test"})
+        company = self.env["res.company"].create({"name": "Test partner company"})
         self.assertTrue(company.partner_id)
         company.partner_id.write(
             {
@@ -94,7 +94,7 @@ class TestBaseLocation(common.TransactionCase):
 
     def test_company_address_fields_inverse(self):
         """Test inverse fields from res.company"""
-        company = self.env["res.company"].create({"name": "Test"})
+        company = self.env["res.company"].create({"name": "Test partner company"})
         company.zip_id = self.barcelona.id
         company._inverse_city_id()
         company._inverse_zip_id()
@@ -103,7 +103,7 @@ class TestBaseLocation(common.TransactionCase):
 
     def test_onchange_company_city_id_completion(self):
         """Test city auto-completion when changing zip in a company"""
-        company = self.env["res.company"].new({"name": "Test"})
+        company = self.env["res.company"].new({"name": "Test partner company"})
         company.zip_id = self.barcelona
         company._onchange_zip_id()
         self.assertEqual(company.city_id, self.barcelona.city_id)
