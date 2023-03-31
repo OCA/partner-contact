@@ -13,13 +13,35 @@ Partner Interest Group
 .. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
-.. |badge3| image:: https://img.shields.io/badge/github-oca%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/oca/partner-contact/tree/16.0/partner_interest_group
-    :alt: oca/partner-contact
+.. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
+    :target: https://github.com/OCA/partner-contact/tree/16.0/partner_interest_group
+    :alt: OCA/partner-contact
+.. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
+    :target: https://translation.odoo-community.org/projects/partner-contact-16-0/partner-contact-16-0-partner_interest_group
+    :alt: Translate me on Weblate
+.. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
+    :target: https://runbot.odoo-community.org/runbot/134/16.0
+    :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| 
+|badge1| |badge2| |badge3| |badge4| |badge5| 
 
-Add Interest Group to Partners
+Adds an Interests Group field (many2many), with configurable
+categories.
+
+I used the terminology “Interests Group” (cf
+`wikipedia <https://en.wikipedia.org/wiki/Interest_group_(disambiguation)>`__)
+because it is flexible enough to accommodate various uses. It’s a way to
+store information about what the partner is interested in.
+
+For instance, the client for which we develop this module is a
+federation of structures acting in social economy. A lot of their
+activities is organizing events, social economy advocacy and
+communication. They need a structured way to group their partners around
+what topic they are interested in to improve their outreach.
+
+More technical names could be for instance `Special interest
+group <https://en.wikipedia.org/wiki/Special_interest_group>`__ or
+`Advocacy group <https://en.wikipedia.org/wiki/Advocacy_group>`__
 
 **Table of contents**
 
@@ -29,10 +51,10 @@ Add Interest Group to Partners
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/oca/partner-contact/issues>`_.
+Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed
-`feedback <https://github.com/oca/partner-contact/issues/new?body=module:%20partner_interest_group%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_interest_group%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -54,14 +76,24 @@ Contributors
 Maintainers
 ~~~~~~~~~~~
 
+This module is maintained by the OCA.
+
+.. image:: https://odoo-community.org/logo.png
+   :alt: Odoo Community Association
+   :target: https://odoo-community.org
+
+OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.
+
 .. |maintainer-victor-champonnois| image:: https://github.com/victor-champonnois.png?size=40px
     :target: https://github.com/victor-champonnois
     :alt: victor-champonnois
 
-Current maintainer:
+Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-victor-champonnois| 
 
-This module is part of the `oca/partner-contact <https://github.com/oca/partner-contact/tree/16.0/partner_interest_group>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/16.0/partner_interest_group>`_ project on GitHub.
 
-You are welcome to contribute.
+You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
