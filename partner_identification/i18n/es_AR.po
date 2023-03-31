@@ -1,0 +1,367 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_identification
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-10 01:50+0000\n"
+"PO-Revision-Date: 2020-12-08 20:36+0000\n"
+"Last-Translator: Ignacio Buioli <ibuioli@gmail.com>\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/"
+"teams/23907/es_AR/)\n"
+"Language: es_AR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid ""
+"# Use failed = True to specify that the id number is not valid.\n"
+"# You can use the following variables :\n"
+"#  - self: browse_record of the current ID Category browse_record\n"
+"#  - id_number: browse_record of ID number to validate\n"
+"\n"
+"<b><i># Sample 1: ID number only contains digits</i></b>\n"
+"if not id_number.name.isdigit():\n"
+"    failed = True\n"
+"else:\n"
+"    failed = False\n"
+"\n"
+"<b><i># Sample 2: Length of ID number cannot exceed 10 chars</i></b>\n"
+"failed = len(id_number.name) &gt; 10 and True or False\n"
+"\n"
+"<b><i># Sample 3: ID number must start with the category code</i></b>\n"
+"failed = not id_number.name.startswith(self.code) and True or False"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
+msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
+msgstr ""
+"Abreviatura o acrónimo para este tipo de identificación. Por ejemplo, "
+"'driver_license'"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__active
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__partner_issued_id
+msgid ""
+"Another partner, who issued this ID. For example, Traffic National "
+"Institution"
+msgstr ""
+"Otro socio, que emitió esta identificación. Por ejemplo, Instituto Nacional "
+"de Tráfico"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__category_id
+msgid "Category"
+msgstr "Categoría"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__code
+msgid "Code"
+msgstr "Código"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
+msgid "Color Index"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__display_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: partner_identification
+#. odoo-python
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
+#, python-format
+msgid ""
+"Error when evaluating the id_category validation code: \n"
+" {name} \n"
+"({error})"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_until
+msgid ""
+"Expiration date. For example, date when person needs to renew his driver "
+"license, 21/10/2019"
+msgstr ""
+"Fecha de caducidad. Por ejemplo, fecha en la que la persona necesita renovar "
+"su licencia de conducir, 21/10/2019"
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
+msgid "Expired"
+msgstr "Expirado"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__name
+msgid "ID Number"
+msgstr "Número de ID"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_form
+msgid "ID Numbers"
+msgstr "Números de ID"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__name
+msgid "ID name"
+msgstr "Nombre de ID"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__category_id
+msgid "ID type defined in configuration. For example, Driver License"
+msgstr ""
+"Tipo de ID definido en la configuración. Por ejemplo, Licencia de Conducir"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id_numbers
+#: model:ir.model.fields,field_description:partner_identification.field_res_users__id_numbers
+msgid "Identification Numbers"
+msgstr "Números de Identificación"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_issued_id
+msgid "Issued by"
+msgstr "Emitido por"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__date_issued
+msgid ""
+"Issued date. For example, date when person approved his driving exam, "
+"21/10/2009"
+msgstr ""
+"Fecha de emisión. Por ejemplo, fecha en que la persona aprobó su examen de "
+"conducir, 21/10/2009"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
+msgid "Issued on"
+msgstr "Emitido el"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category____last_update
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización realizada por"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__name
+msgid "Name of this ID type. For example, 'Driver License'"
+msgstr ""
+"Nombre de este tipo de identificación. Por ejemplo, 'Licencia de Conducir'"
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
+msgid "New"
+msgstr "Nuevo"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__comment
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_id
+msgid "Partner"
+msgstr "Socio"
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_category
+msgid "Partner ID Categories"
+msgstr "Categorías de ID de Socio"
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner_id_category
+msgid "Partner ID Category"
+msgstr "Categoría de ID de Socio"
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner_id_number
+msgid "Partner ID Number"
+msgstr "Número de ID del Socio"
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+msgid "Partner ID Numbers"
+msgstr "Números de ID de socio"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid "Partner Identification Categories"
+msgstr "Categorías de Identificación de Socios"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__place_issuance
+msgid "Place of Issuance"
+msgstr "Lugar de Emisión"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid "Python Validation Code:"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__validation_code
+msgid "Python code called to validate an id number."
+msgstr "Se llama al código Python para validar un número de identificación."
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__validation_code
+msgid "Python validation code"
+msgstr "Código de validación de Python"
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
+msgid "Running"
+msgstr "Ejecutando"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
+msgid "Status"
+msgstr "Estado"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__name
+msgid "The ID itself. For example, Driver License number of this person"
+msgstr ""
+"La propia identificación. Por ejemplo, el número de Licencia de Conducir de "
+"esta persona"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__place_issuance
+msgid ""
+"The place where the ID has been issued. For example the country for "
+"passports and visa"
+msgstr ""
+"El lugar donde se ha emitido la identificación. Por ejemplo, el país para "
+"pasaportes y visas"
+
+#. module: partner_identification
+#. odoo-python
+#: code:addons/partner_identification/models/res_partner.py:0
+#, python-format
+msgid ""
+"This {record_name} has multiple IDs of this type ({category_code}), so a "
+"write via the {field_name} field is not possible. In order to fix this, "
+"please use the IDs tab."
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
+msgid "To Renew"
+msgstr "A renovar"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
+msgid "Valid from"
+msgstr "Válido desde"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_until
+msgid "Valid until"
+msgstr "Válido hasta"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_from
+msgid "Validation period stating date."
+msgstr "Fecha de inicio del período de validación."
+
+#. module: partner_identification
+#. odoo-python
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
+#, python-format
+msgid "{id_name} is not a valid {cat_name} identifier"
+msgstr ""
+
+#, python-format
+#~ msgid "%s is not a valid %s identifier"
+#~ msgstr "%s no es un identificador %s válido"
+
+#, python-format
+#~ msgid ""
+#~ "Error when evaluating the id_category validation code::\n"
+#~ " %s \n"
+#~ "(%s)"
+#~ msgstr ""
+#~ "Error al evaluar el código de validación id_category::\n"
+#~ " %s \n"
+#~ "(%s)"
+
+#, python-format
+#~ msgid ""
+#~ "This %s has multiple IDs of this type (%s), so a write via the %s field "
+#~ "is not possible. In order to fix this, please use the IDs tab."
+#~ msgstr ""
+#~ "Este %s tiene varios ID de este tipo (%s), por lo que no es posible "
+#~ "escribir a través del campo %s. Para solucionar este problema, utilice la "
+#~ "pestaña ID."
+
+#~ msgid ""
+#~ "\n"
+#~ "# Python code. Use failed = True to specify that the id number is not "
+#~ "valid.\n"
+#~ "# You can use the following variables :\n"
+#~ "#  - self: browse_record of the current ID Category browse_record\n"
+#~ "#  - id_number: browse_record of ID number to validate"
+#~ msgstr ""
+#~ "\n"
+#~ "# Código Python. Utilice fail = True para especificar que el número de "
+#~ "identificación no es válido.\n"
+#~ "# Puede utilizar las siguientes variables:\n"
+#~ "# - self: browse_record de la categoría de ID actual browse_record\n"
+#~ "# - id_number: navegar_record del número de identificación para validar"
