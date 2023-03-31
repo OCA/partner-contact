@@ -29,6 +29,7 @@ addon | version | maintainers | summary
 [partner_address_street3](partner_address_street3/) | 16.0.1.0.0 |  | Add a third address line on partners
 [partner_address_two_lines](partner_address_two_lines/) | 16.0.1.0.0 |  | The company and the partner name are on two different lines
 [partner_affiliate](partner_affiliate/) | 16.0.1.0.0 |  | Partner Affiliates
+[partner_company_default](partner_company_default/) | 16.0.1.0.0 |  | Partner Company Default
 [partner_company_type](partner_company_type/) | 16.0.1.0.0 |  | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 16.0.1.0.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
 [partner_contact_address_default](partner_contact_address_default/) | 16.0.1.0.0 |  | Set a default delivery and invoice address for contacts
