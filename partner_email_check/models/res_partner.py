@@ -15,7 +15,7 @@ try:
         validate_email,
     )
 except ImportError:
-    _logger.debug('Cannot import "email_validator".')
+    _logger.debug(_("Cannot import 'email_validator'."))
 
     validate_email = None
 
@@ -78,7 +78,7 @@ class ResPartner(models.Model):
             raise ValidationError(
                 _("Cannot deliver to email address %s") % email.strip()
             ) from EmailUndeliverableError
-        return result["local"].lower() + "@" + result["domain_i18n"]
+        return result.normalized.lower()
 
     def _should_check_syntax(self):
         return self.env.company.partner_email_check_syntax
@@ -89,11 +89,12 @@ class ResPartner(models.Model):
     def _should_check_deliverability(self):
         return self.env.company.partner_email_check_check_deliverability
 
-    @api.model
-    def create(self, vals):
-        if vals.get("email"):
-            vals["email"] = self.email_check(vals["email"])
-        return super(ResPartner, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get("email"):
+                vals["email"] = self.email_check(vals["email"])
+        return super(ResPartner, self).create(vals_list)
 
     def write(self, vals):
         if vals.get("email"):
