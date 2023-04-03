@@ -23,6 +23,12 @@ msgid "%s is an invalid email"
 msgstr "%s n'est pas un courriel valide"
 
 #. module: partner_email_check
+#: code:addons/partner_email_check/models/res_partner.py:0
+#, python-format
+msgid "Cannot import 'email_validator'."
+msgstr "Impossible d'importer le package 'email_validator'."
+
+#. module: partner_email_check
 #: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
 msgid ""
 "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
