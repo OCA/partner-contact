@@ -14,16 +14,16 @@ Partner Disable Gravatar
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/14.0/partner_disable_gravatar
+    :target: https://github.com/OCA/partner-contact/tree/15.0/partner_disable_gravatar
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
     :target: https://translation.odoo-community.org/projects/partner-contact-14-0/partner-contact-14-0-partner_disable_gravatar
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
-    :target: https://runbot.odoo-community.org/runbot/134/14.0
+    :target: https://runbot.odoo-community.org/runbot/134/15.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5| 
+|badge1| |badge2| |badge3| |badge4| |badge5|
 
 A new feature has been introduced in Odoo v10 in the *base* module: when you enter an email address in the form view of a partner, Odoo will send a query to `gravatar.com <https://www.gravatar.com/>`_ to get a picture corresponding to the email address.
 
@@ -87,8 +87,8 @@ promote its widespread use.
 
 Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
-|maintainer-alexis-via| 
+|maintainer-alexis-via|
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/14.0/partner_disable_gravatar>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/15.0/partner_disable_gravatar>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
