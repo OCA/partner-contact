@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="assets_backend"
+        inherit_id="web.assets_backend"
+        name="Partner Child Remove Dialog"
+    >
+        <xpath expr="//script[last()]" position="after">
+            <script
+                type="text/javascript"
+                src="/partner_child_ids_confirm_remove/static/src/js/view_dialogs.js"
+            />
+        </xpath>
+    </template>
+</odoo>
