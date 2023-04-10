@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:32+0000\n"
-"PO-Revision-Date: 2023-03-30 14:28+0000\n"
+"PO-Revision-Date: 2023-04-10 16:34+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -73,12 +73,12 @@ msgstr "Ultima modifica il"
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__write_uid
 msgid "Last Updated by"
-msgstr "Ultimo caricamento il"
+msgstr "Ultimo aggiornamento di"
 
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__write_date
 msgid "Last Updated on"
-msgstr "Ultimo caricamento di"
+msgstr "Ultimo aggiormento di"
 
 #. module: partner_contact_department
 #: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__name
