@@ -13,15 +13,16 @@ msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2016-03-19 05:58+0000\n"
-"Last-Translator: <>\n"
+"PO-Revision-Date: 2023-04-10 16:31+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-9-0/"
 "language/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:24
@@ -166,7 +167,7 @@ msgstr "Ultima modifica il"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_write_uid
 msgid "Last Updated by"
-msgstr "Ultimo caricamento il"
+msgstr "Ultimo aggiornamento di"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category_write_date
