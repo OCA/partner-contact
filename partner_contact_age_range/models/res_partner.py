@@ -19,18 +19,15 @@ class ResPartner(models.Model):
         age_ranges = self.env["res.partner.age.range"].search([])
         for record in self:
             if record.age >= 0:
-                age_range = (
-                    age_ranges.filtered(
-                        lambda age_range: age_range.age_from
-                        <= record.age
-                        <= age_range.age_to
-                    )
-                    or False
+                age_range = age_ranges.filtered(
+                    lambda age_range: age_range.age_from
+                    <= record.age
+                    <= age_range.age_to
                 )
             else:
-                age_range = False
+                age_range = self.env["res.partner.age.range"].browse()
             if record.age_range_id != age_range:
-                record.age_range_id = age_range and age_range.id or age_range
+                record.age_range_id = age_range
 
     @api.model
     def _cron_update_age_range_id(self):
