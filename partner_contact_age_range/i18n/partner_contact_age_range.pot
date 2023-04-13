@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,12 +14,14 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_contact_age_range
+#. odoo-python
 #: code:addons/partner_contact_age_range/models/res_partner_age_range.py:0
 #, python-format
 msgid "%(name)s is not a valid range (%(age_from)s >= %(age_to)s)"
 msgstr ""
 
 #. module: partner_contact_age_range
+#. odoo-python
 #: code:addons/partner_contact_age_range/models/res_partner_age_range.py:0
 #, python-format
 msgid "%(name)s is overalapping with range %(age_from)s"
@@ -50,7 +52,6 @@ msgstr ""
 #. module: partner_contact_age_range
 #: model:ir.actions.server,name:partner_contact_age_range.ir_cron_partner_age_range_ir_actions_server
 #: model:ir.cron,cron_name:partner_contact_age_range.ir_cron_partner_age_range
-#: model:ir.cron,name:partner_contact_age_range.ir_cron_partner_age_range
 msgid "Contact: Update Age Range"
 msgstr ""
 
