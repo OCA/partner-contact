@@ -24,6 +24,12 @@ class TestRespartnerAgeRange(TransactionCase):
                 "birthdate_date": datetime.today() - relativedelta(years=1, days=10),
             }
         )
+        self.partner2 = self.partner_model.create(
+            {
+                "name": "Test2",
+                "birthdate_date": datetime.today() + relativedelta(years=1),
+            }
+        )
 
     def test_age_from(self):
         age_from = self.range_model._default_age_from()
@@ -41,3 +47,6 @@ class TestRespartnerAgeRange(TransactionCase):
     def test_cron_update_age_range_id(self):
         self.partner_model._cron_update_age_range_id()
         self.assertEqual(self.partner.age_range_id, self.baby_range)
+
+    def test_partner_norange(self):
+        self.assertFalse(self.partner2.age_range_id)
