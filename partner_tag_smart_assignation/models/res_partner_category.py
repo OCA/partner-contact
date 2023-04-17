@@ -10,7 +10,7 @@ class ResPartnerCategory(models.Model):
     _inherit = "res.partner.category"
 
     tag_filter_condition_id = fields.Many2one(
-        "ir.filters", "Domain filter", oldname="condition_id"
+        "ir.filters", "Domain filter"
     )
     smart = fields.Boolean(
         help="Enable this to automatically assign the category on partners "
@@ -18,7 +18,6 @@ class ResPartnerCategory(models.Model):
     )
     tag_filter_partner_field = fields.Char(
         default="partner_id",
-        oldname="partner_field",
         help="Relational field used on the filter object to find the partners.",
     )
     tag_filter_sql_query = fields.Text(
@@ -44,7 +43,7 @@ class ResPartnerCategory(models.Model):
     )
 
     tagged_partner_count = fields.Integer(
-        compute="_compute_number_tags", stored=True, oldname="number_tags"
+        compute="_compute_number_tags", stored=True
     )
 
     @api.model
@@ -53,7 +52,6 @@ class ResPartnerCategory(models.Model):
         record.update_partner_tags()
         return record
 
-    @api.multi
     def write(self, vals):
         res = super().write(vals)
         if "tag_filter_condition_id" in vals or "model" in vals:
@@ -90,7 +88,6 @@ class ResPartnerCategory(models.Model):
                         "The SQL query should only return partner ids"
                     )
 
-    @api.multi
     def update_partner_tags(self):
         for tagger in self.filtered("smart"):
             sql_partners = tagger.get_partners_from_sql()
@@ -146,13 +143,11 @@ class ResPartnerCategory(models.Model):
         for category in self:
             category.tagged_partner_count = len(category.partner_ids)
 
-    @api.multi
     def open_tags(self):
         return {
             "type": "ir.actions.act_window",
             "res_model": "res.partner",
-            "view_type": "form",
             "view_mode": "list,form",
             "name": "Partners",
-            "domain": [["id", "in", self.partner_ids.ids]],
+            "domain": [["id", "in", self.mapped("partner_ids").ids]],
         }
