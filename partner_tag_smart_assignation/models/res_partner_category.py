@@ -1,7 +1,8 @@
 # Copyright (C) 2019 Compassion CH (http://www.compassion.ch)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-import datetime
-from odoo import models, fields, api
+from datetime import datetime
+
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 from odoo.tools.safe_eval import safe_eval
 
@@ -9,9 +10,7 @@ from odoo.tools.safe_eval import safe_eval
 class ResPartnerCategory(models.Model):
     _inherit = "res.partner.category"
 
-    tag_filter_condition_id = fields.Many2one(
-        "ir.filters", "Domain filter"
-    )
+    tag_filter_condition_id = fields.Many2one("ir.filters", "Domain filter")
     smart = fields.Boolean(
         help="Enable this to automatically assign the category on partners "
         "matching a given filter domain or SQL query."
@@ -42,9 +41,7 @@ class ResPartnerCategory(models.Model):
         "partner_id",
     )
 
-    tagged_partner_count = fields.Integer(
-        compute="_compute_number_tags", stored=True
-    )
+    tagged_partner_count = fields.Integer(compute="_compute_number_tags", stored=True)
 
     @api.model
     def create(self, vals):
@@ -70,7 +67,8 @@ class ResPartnerCategory(models.Model):
                 model_link = self.env[me.tag_filter_condition_id.model_id]
                 if me.tag_filter_partner_field not in model_link:
                     raise ValidationError(
-                        "The chosen model has no field %s" % me.tag_filter_partner_field
+                        _("The chosen model has no field %s")
+                        % me.tag_filter_partner_field
                     )
 
     @api.constrains("tag_filter_sql_query")
@@ -85,7 +83,7 @@ class ResPartnerCategory(models.Model):
                     or not self.env["res.partner"].browse(row[0]).exists()
                 ):
                     raise ValidationError(
-                        "The SQL query should only return partner ids"
+                        _("The SQL query should only return partner ids")
                     )
 
     def update_partner_tags(self):

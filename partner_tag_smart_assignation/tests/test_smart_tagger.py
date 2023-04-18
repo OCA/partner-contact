@@ -1,5 +1,6 @@
-from odoo.tests.common import SavepointCase
 import logging
+
+from odoo.tests.common import SavepointCase
 
 logger = logging.getLogger(__name__)
 
@@ -19,8 +20,6 @@ class TestSmartTagger(SavepointCase):
         cls.partners = (
             michel_fletcher + chao_wang + david_simpson + john_m_brown + charlie_bernard
         )
-        cls.o_partners = chao_wang + david_simpson + john_m_brown
-        cls.non_o_partners = michel_fletcher + charlie_bernard
         cls.michel_fletcher = michel_fletcher
 
     def create_condition(self):
@@ -63,10 +62,10 @@ class TestSmartTagger(SavepointCase):
         Tag all partners which have the letter 'o' in the name.
         """
         smart_tag = self.create_tag()
-        for partner in self.o_partners:
+        for partner in self.partners.filtered(lambda t: "o" in t.name):
             self.assertTrue(partner in smart_tag.partner_ids)
 
-        for partner in self.non_o_partners:
+        for partner in self.partners.filtered(lambda t: "o" not in t.name):
             self.assertFalse(partner in smart_tag.partner_ids)
 
         for partner in smart_tag.partner_ids:
