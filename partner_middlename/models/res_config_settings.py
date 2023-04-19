@@ -7,14 +7,6 @@ from odoo import models
 class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
-    def _partner_names_order_selection(self):
-        options = super()._partner_names_order_selection()
-        new_labels = {
-            "last_first": "Firstname Middlename Lastname",
-            "last_first_comma": "Lastname, Firstname Middlename",
-        }
-        return [(k, new_labels[k]) if k in new_labels else (k, v) for k, v in options]
-
     def _partners_for_recalculating(self):
         return self.env["res.partner"].search(
             [
