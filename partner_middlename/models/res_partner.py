@@ -13,30 +13,25 @@ class ResPartner(models.Model):
 
     @api.model
     def _get_computed_name(self, lastname, firstname, middlename=None):
-        """Compute the name combined with the second lastname too.
-
-        We have 2 lastnames, so lastnames and firstname will be separated by a
-        comma.
-        """
+        """Compute the 'name' field according to splitted data.
+        You can override this method to change the order of lastname and
+        firstname and middlename the computed name"""
         order = self._get_names_order()
-        names = list()
-        if order == "last_first":
-            if firstname:
-                names.append(firstname)
-            if middlename:
-                names.append(middlename)
+        if order == "last_first_comma":
+            names = list()
             if lastname:
                 names.append(lastname)
-        else:
-            if lastname:
-                names.append(lastname)
-            if names and firstname and order == "last_first_comma":
+            if names and firstname:
                 names[-1] = names[-1] + ","
             if firstname:
                 names.append(firstname)
             if middlename:
                 names.append(middlename)
-        return " ".join(names)
+            return " ".join(names)
+        elif order == "first_last":
+            return " ".join(p for p in (firstname, middlename, lastname) if p)
+        else:
+            return " ".join(p for p in (lastname, firstname, middlename) if p)
 
     @api.depends("firstname", "lastname", "middlename")
     def _compute_name(self):
@@ -81,10 +76,16 @@ class ResPartner(models.Model):
         order = self._get_names_order()
         result.update(super()._get_inverse_name(name, is_company))
 
-        if order in ("last_first", "last_first_comma"):
+        if order == "first_last":
             parts = self._split_part("lastname", result)
             if parts:
-                result.update({"lastname": parts[0], "middlename": " ".join(parts[1:])})
+                result.update({"middlename": parts[0], "lastname": " ".join(parts[1:])})
+        elif order == "last_first_comma":
+            parts = self._split_part("firstname", result)
+            if parts:
+                result.update(
+                    {"firstname": parts[0], "middlename": " ".join(parts[1:])}
+                )
         else:
             parts = self._split_part("firstname", result)
             if parts:
