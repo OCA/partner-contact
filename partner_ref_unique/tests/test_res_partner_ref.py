@@ -105,3 +105,12 @@ class TestResPartnerRefUnique(common.SavepointCase):
         )
         # this shouldn't raise error
         wizard.action_merge()
+
+    def test_child_record(self):
+        self.company.partner_ref_unique = "all"
+        self.partner1.ref = "same_ref"
+        # if base_partner_sequence is installed,
+        # ref will be copied, but we expect no validationError to happen
+        self.partner_obj.create(
+            {"name": "Address", "parent_id": self.partner1.id, "type": "other"}
+        )
