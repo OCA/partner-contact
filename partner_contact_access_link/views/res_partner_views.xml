@@ -18,7 +18,10 @@
                     name="open_child_form"
                     title="Open full form"
                 >
-                    <i class="fa fa-external-link-square" />
+                    <i
+                        class="fa fa-caret-right fa-2x"
+                        style="position:absolute;top:-4px;right:5px;transform:rotateY(0deg) rotate(-45deg);"
+                    />
                 </button>
             </xpath>
         </field>
