@@ -34,6 +34,7 @@ setuptools.setup(
         'odoo-addon-partner_identification>=16.0dev,<16.1dev',
         'odoo-addon-partner_interest_group>=16.0dev,<16.1dev',
         'odoo-addon-partner_manual_rank>=16.0dev,<16.1dev',
+        'odoo-addon-partner_middlename>=16.0dev,<16.1dev',
         'odoo-addon-partner_multi_relation>=16.0dev,<16.1dev',
         'odoo-addon-partner_second_lastname>=16.0dev,<16.1dev',
         'odoo-addon-partner_tz>=16.0dev,<16.1dev',
