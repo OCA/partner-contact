@@ -3,7 +3,7 @@
 {
     "name": "Partner Exception",
     "summary": "Custom exceptions on partner contact",
-    "version": "13.0.1.0.0",
+    "version": "13.0.1.0.1",
     "category": "Generic Modules/Sale",
     "author": "Forgeflow, " "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
