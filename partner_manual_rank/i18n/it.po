@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-12-07 18:41+0000\n"
+"PO-Revision-Date: 2023-05-09 15:35+0000\n"
 "Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.2\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: partner_manual_rank
 #: model:ir.model,name:partner_manual_rank.model_res_partner
@@ -25,13 +25,13 @@ msgstr "Contatto"
 #: model:ir.model.fields,field_description:partner_manual_rank.field_res_partner__is_customer
 #: model:ir.model.fields,field_description:partner_manual_rank.field_res_users__is_customer
 msgid "Is a Customer"
-msgstr "E' un cliente"
+msgstr "È un cliente"
 
 #. module: partner_manual_rank
 #: model:ir.model.fields,field_description:partner_manual_rank.field_res_partner__is_supplier
 #: model:ir.model.fields,field_description:partner_manual_rank.field_res_users__is_supplier
 msgid "Is a Supplier"
-msgstr "E' un fornitore"
+msgstr "È un fornitore"
 
 #. module: partner_manual_rank
 #: code:addons/partner_manual_rank/models/res_partner.py:0
