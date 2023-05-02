@@ -6,12 +6,12 @@ from datetime import datetime, timedelta
 from mock import patch
 
 from odoo import fields
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 
 PATH = "odoo.addons.partner_phonecall_schedule.models.res_partner.datetime"
 
 
-class CanICallCase(SavepointCase):
+class CanICallCase(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(CanICallCase, cls).setUpClass()
