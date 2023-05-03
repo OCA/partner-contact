@@ -122,7 +122,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         new_contact.write({"contact_id": False})
         self.assertEqual(new_contact.contact_type, "standalone")
 
-        # Reset contact to standalone
+        # Test read functionality
         new_contact_contact_type = new_contact.read(['contact_type'])
         self.assertEqual(new_contact_contact_type[0]['contact_type'], "standalone")
 
