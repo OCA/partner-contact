@@ -76,6 +76,7 @@ setuptools.setup(
         'odoo14-addon-partner_tz',
         'odoo14-addon-partner_vat_unique',
         'odoo14-addon-portal_partner_select_all',
+        'odoo14-addon-sale_customer_rank',
     ],
     classifiers=[
         'Programming Language :: Python',
