@@ -49,6 +49,7 @@ addon | version | maintainers | summary
 [partner_contact_birthdate](partner_contact_birthdate/) | 16.0.1.0.0 |  | Contact's birthdate
 [partner_contact_department](partner_contact_department/) | 16.0.1.0.2 |  | Assign contacts to departments
 [partner_contact_gender](partner_contact_gender/) | 16.0.1.0.0 |  | Add gender field to contacts
+[partner_contact_in_several_companies](partner_contact_in_several_companies/) | 16.0.1.0.0 | [![bfigueiredo-odoogap](https://github.com/bfigueiredo-odoogap.png?size=30px)](https://github.com/bfigueiredo-odoogap) | Allow to have one contact in several partners.
 [partner_contact_job_position](partner_contact_job_position/) | 16.0.1.0.0 |  | Categorize job positions for contacts
 [partner_contact_lang](partner_contact_lang/) | 16.0.1.0.0 |  | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 16.0.1.0.1 |  | Add nationality field to contacts

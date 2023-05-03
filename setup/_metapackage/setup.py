@@ -76,6 +76,7 @@ setuptools.setup(
         'odoo-addon-purchase_supplier_rank>=16.0dev,<16.1dev',
         'odoo-addon-sale_customer_rank>=16.0dev,<16.1dev',
         'odoo-addon-sale_partner_company_group>=16.0dev,<16.1dev',
+        'odoo-addon-partner_contact_in_several_companies>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
