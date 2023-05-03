@@ -40,6 +40,7 @@ setuptools.setup(
         'odoo-addon-partner_second_lastname>=16.0dev,<16.1dev',
         'odoo-addon-partner_tz>=16.0dev,<16.1dev',
         'odoo-addon-partner_vat_unique>=16.0dev,<16.1dev',
+        'odoo-addon-partner_contact_in_several_companies>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
