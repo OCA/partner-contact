@@ -111,8 +111,9 @@
                                             title="Delete Contact"
                                         />
                                         <div class="o_kanban_image">
-                                            <img alt="Contact image"
-                                                 t-att-src="kanban_image('res.partner', 'avatar_128', record.id.raw_value)"
+                                            <img
+                                                alt="Contact image"
+                                                t-att-src="kanban_image('res.partner', 'avatar_128', record.id.raw_value)"
                                             />
                                         </div>
                                         <div class="oe_kanban_details">
