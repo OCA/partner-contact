@@ -89,6 +89,7 @@ addon | version | maintainers | summary
 [partner_tz](partner_tz/) | 14.0.1.0.1 |  | Remove partner timezone default value and display on form
 [partner_vat_unique](partner_vat_unique/) | 14.0.1.0.1 |  | Module to make the VAT number unique for customers and suppliers.
 [portal_partner_select_all](portal_partner_select_all/) | 14.0.1.1.0 |  | Portal Partner Select All
+[sale_customer_rank](sale_customer_rank/) | 14.0.1.0.0 |  | Update Customer Rank when creating a Sale Order
 
 [//]: # (end addons)
 
