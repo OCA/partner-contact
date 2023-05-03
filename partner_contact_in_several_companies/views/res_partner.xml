@@ -4,10 +4,10 @@
     <record id="view_res_partner_filter_contact" model="ir.ui.view">
         <field name="name">res.partner.select.contact</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
         <field name="arch" type="xml">
             <filter name="type_company" position="after">
-                <separator />
+                <separator/>
                 <filter
                     string="All positions"
                     name="type_otherpositions"
@@ -28,10 +28,10 @@
     <record id="view_res_partner_tree_contact" model="ir.ui.view">
         <field name="name">res.partner.tree.contact</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="inherit_id" ref="base.view_partner_tree"/>
         <field name="arch" type="xml">
             <field name="parent_id" position="after">
-                <field name="contact_id" invisible="1" />
+                <field name="contact_id" invisible="1"/>
             </field>
         </field>
     </record>
@@ -39,14 +39,14 @@
     <record model="ir.ui.view" id="view_partner_form_inherit">
         <field name="name">res.partner.form.contact</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="type">form</field>
         <field name="arch" type="xml">
             <field name="parent_id" position="after">
-                <field name="contact_id" invisible="1" />
+                <field name="contact_id" invisible="1"/>
             </field>
             <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="before">
-                <field name='contact_type' readonly='0' />
+                <field name='contact_type' readonly='0'/>
                 <field
                     name="contact_id"
                     string="Contact"
@@ -59,7 +59,7 @@
                 </attribute>
             </xpath>
             <field name="is_company" position="after">
-                <field name="contact_type" invisible="1" />
+                <field name="contact_type" invisible="1"/>
             </field>
             <page name='internal_notes' position="before">
                 <page
@@ -73,50 +73,52 @@
                         mode="kanban"
                     >
                         <kanban create="false">
-                            <field name="color" />
-                            <field name="name" />
-                            <field name="title" />
-                            <field name="email" />
-                            <field name="parent_id" />
-                            <field name="is_company" />
-                            <field name="function" />
-                            <field name="phone" />
-                            <field name="street" />
-                            <field name="street2" />
-                            <field name="zip" />
-                            <field name="city" />
-                            <field name="country_id" />
-                            <field name="mobile" />
-                            <field name="state_id" />
-                            <field name="image_128" />
-                            <field name="lang" />
+                            <field name="color"/>
+                            <field name="name"/>
+                            <field name="title"/>
+                            <field name="email"/>
+                            <field name="parent_id"/>
+                            <field name="is_company"/>
+                            <field name="function"/>
+                            <field name="phone"/>
+                            <field name="street"/>
+                            <field name="street2"/>
+                            <field name="zip"/>
+                            <field name="city"/>
+                            <field name="country_id"/>
+                            <field name="mobile"/>
+                            <field name="state_id"/>
+                            <field name="image_128"/>
+                            <field name="lang"/>
                             <templates>
                                 <t t-name="kanban-box">
                                     <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
-                                    <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">
+                                    <div
+                                        t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">
                                         <a
                                             type="delete"
                                             class="fa fa-times float-end"
                                             title="Delete Contact"
                                         />
                                         <div class="o_kanban_image">
-                                            <img alt="Contact image" t-att-src="kanban_image('res.partner', 'avatar_128', record.id.raw_value)"/>
+                                            <img alt="Contact image"
+                                                 t-att-src="kanban_image('res.partner', 'avatar_128', record.id.raw_value)"/>
                                         </div>
                                         <div class="oe_kanban_details">
-                                            <field name="name" />
+                                            <field name="name"/>
                                             <div t-if="record.function.raw_value">
-                                                <field name="function" />
+                                                <field name="function"/>
                                                 at
-                                                <field name="parent_id" />
+                                                <field name="parent_id"/>
                                             </div>
                                             <div t-if="record.email.raw_value">
-                                                <field name="email" />
+                                                <field name="email"/>
                                             </div>
                                             <div t-if="record.phone.raw_value">Phone:
-                                                <field name="phone" />
+                                                <field name="phone"/>
                                             </div>
                                             <div t-if="record.mobile.raw_value">Mobile:
-                                                <field name="mobile" />
+                                                <field name="mobile"/>
                                             </div>
                                         </div>
                                     </div>
@@ -126,10 +128,10 @@
                         <form string="Contact">
                             <sheet>
                                 <field name="type" required="1" widget="radio" options="{'horizontal': true}"/>
-                                <hr />
+                                <hr/>
                                 <group>
                                     <group attrs="{'invisible': [('type','=', 'contact')]}">
-                                        <label for="street" string="Address" />
+                                        <label for="street" string="Address"/>
                                         <div>
                                             <div class="o_address_format" name="div_address">
                                                 <field name="street" placeholder="Street..." class="o_address_street"/>
@@ -180,16 +182,16 @@
                                             placeholder="e.g. Sales Director"
                                             attrs="{'invisible': [('type','&lt;&gt;', 'contact')]}"
                                         />
-                                        <field name="email" />
-                                        <field name="phone" widget="phone" />
-                                        <field name="mobile" widget="phone" />
+                                        <field name="email"/>
+                                        <field name="phone" widget="phone"/>
+                                        <field name="mobile" widget="phone"/>
                                         <field
                                             name="comment"
                                             placeholder="internal note..."
                                         />
                                     </group>
                                 </group>
-                                <field name="lang" invisible="True" />
+                                <field name="lang" invisible="True"/>
                             </sheet>
                         </form>
                     </field>
@@ -233,26 +235,28 @@
     <record model="ir.ui.view" id="view_res_partner_kanban_contact">
         <field name="name">res.partner.kanban.contact</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.res_partner_kanban_view" />
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
         <field name="arch" type="xml">
             <field name="is_company" position="after">
                 <field name="other_contact_ids">
                     <tree>
-                        <field name="parent_id" />
-                        <field name="function" />
+                        <field name="parent_id"/>
+                        <field name="function"/>
                     </tree>
                 </field>
             </field>
             <xpath expr="//t[@t-name='kanban-box']//div[hasclass('oe_kanban_details')]//ul/li[3]" position="after">
                 <t t-if="record.other_contact_ids.raw_value.length &gt; 0">
                     <li>+
-                        <t t-esc="record.other_contact_ids.raw_value.length" />
+                        <t t-esc="record.other_contact_ids.raw_value.length"/>
                         <t
                             t-if="record.other_contact_ids.raw_value.length == 1"
-                        > other position</t>
+                        >other position
+                        </t>
                         <t
                             t-if="record.other_contact_ids.raw_value.length &gt; 1"
-                        > other positions</t>
+                        >other positions
+                        </t>
                     </li>
                 </t>
             </xpath>
