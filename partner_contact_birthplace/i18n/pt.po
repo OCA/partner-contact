@@ -1,0 +1,56 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_contact_birthplace
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: André Leite <andre.leite@exo.pt>\n"
+"Language-Team: \n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: partner_contact_birthplace
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__birth_city
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_users__birth_city
+msgid "Birth City"
+msgstr "Cidade de Nascimento"
+
+#. module: partner_contact_birthplace
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__birth_country_id
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_users__birth_country_id
+msgid "Birth country"
+msgstr "País de Nascimento"
+
+#. module: partner_contact_birthplace
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__birth_state_id
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_users__birth_state_id
+msgid "Birth state"
+msgstr "Distrito de Nascimento"
+
+#. module: partner_contact_birthplace
+#: model:ir.model,name:partner_contact_birthplace.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_contact_birthplace
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nome a Apresentar"
+
+#. module: partner_contact_birthplace
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_contact_birthplace
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
