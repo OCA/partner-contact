@@ -36,7 +36,7 @@ addon | version | maintainers | summary
 [partner_company_default](partner_company_default/) | 15.0.1.0.0 |  | Partner Company Default
 [partner_company_group](partner_company_group/) | 15.0.2.0.0 |  | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 15.0.1.0.1 |  | Adds a company type to partner that are companies
-[partner_contact_access_link](partner_contact_access_link/) | 15.0.1.0.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
+[partner_contact_access_link](partner_contact_access_link/) | 15.0.1.1.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
 [partner_contact_address_default](partner_contact_address_default/) | 15.0.1.0.0 |  | Set a default delivery and invoice address for contacts
 [partner_contact_age_range](partner_contact_age_range/) | 15.0.1.0.0 |  | Age Range for Contact's
 [partner_contact_birthdate](partner_contact_birthdate/) | 15.0.1.0.0 |  | Contact's birthdate
@@ -64,7 +64,7 @@ addon | version | maintainers | summary
 [partner_name_hide_parent](partner_name_hide_parent/) | 15.0.1.0.0 |  | Partner Name Hide Parent
 [partner_phone_extension](partner_phone_extension/) | 15.0.1.0.1 |  | Partner Phone Number Extension
 [partner_phone_secondary](partner_phone_secondary/) | 15.0.1.0.0 | [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Adds a secondary phone number on partners
-[partner_phonecall_schedule](partner_phonecall_schedule/) | 15.0.1.0.0 |  | Track the time and days your partners expect phone calls
+[partner_phonecall_schedule](partner_phonecall_schedule/) | 15.0.1.0.1 |  | Track the time and days your partners expect phone calls
 [partner_pricelist_search](partner_pricelist_search/) | 15.0.1.0.0 |  | Partner pricelist search
 [partner_pricelist_tracking](partner_pricelist_tracking/) | 15.0.1.0.0 |  | Track partner pricelist changes
 [partner_priority](partner_priority/) | 15.0.1.0.0 | [![patrickrwilson](https://github.com/patrickrwilson.png?size=30px)](https://github.com/patrickrwilson) | Adds priority to partners.
