@@ -25,7 +25,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         explicitly state to not display all positions
         """
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": False}}
-        partner_ids = self.partner.with_context(ctx).search([])
+        partner_ids = self.partner.with_context(**ctx).search([])
         self.assertTrue(self.bob_job1 not in partner_ids)
         self.assertTrue(self.roger_job2 not in partner_ids)
 
@@ -40,12 +40,12 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         self.assertTrue(self.roger_job2 in partner_ids)
 
         ctx = {"search_show_all_positions": {"is_set": False}}
-        partner_ids = self.partner.with_context(ctx).search([])
+        partner_ids = self.partner.with_context(**ctx).search([])
         self.assertTrue(self.bob_job1 in partner_ids)
         self.assertTrue(self.roger_job2 in partner_ids)
 
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": True}}
-        partner_ids = self.partner.with_context(ctx).search([])
+        partner_ids = self.partner.with_context(**ctx).search([])
         self.assertTrue(self.bob_job1 in partner_ids)
         self.assertTrue(self.roger_job2 in partner_ids)
 
@@ -56,29 +56,29 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
         ctx = {}
         self.assertEqual(
-            self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids
+            self.bob_job1, self.bob_contact.with_context(**ctx).other_contact_ids
         )
         ctx = {"search_show_all_positions": {"is_set": False}}
         self.assertEqual(
-            self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids
+            self.bob_job1, self.bob_contact.with_context(**ctx).other_contact_ids
         )
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": False}}
         self.assertEqual(
-            self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids
+            self.bob_job1, self.bob_contact.with_context(**ctx).other_contact_ids
         )
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": True}}
         self.assertEqual(
-            self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids
+            self.bob_job1, self.bob_contact.with_context(**ctx).other_contact_ids
         )
 
         ctx = {}
-        self.assertIn(self.bob_job1, self.main_partner.with_context(ctx).child_ids)
+        self.assertIn(self.bob_job1, self.main_partner.with_context(**ctx).child_ids)
         ctx = {"search_show_all_positions": {"is_set": False}}
-        self.assertIn(self.bob_job1, self.main_partner.with_context(ctx).child_ids)
+        self.assertIn(self.bob_job1, self.main_partner.with_context(**ctx).child_ids)
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": False}}
-        self.assertIn(self.bob_job1, self.main_partner.with_context(ctx).child_ids)
+        self.assertIn(self.bob_job1, self.main_partner.with_context(**ctx).child_ids)
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": True}}
-        self.assertIn(self.bob_job1, self.main_partner.with_context(ctx).child_ids)
+        self.assertIn(self.bob_job1, self.main_partner.with_context(**ctx).child_ids)
 
     def test_03_search_match_attached_contacts(self):
         """Check that searching partner also return partners having
@@ -94,7 +94,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         # but when searching without 'all positions',
         # we should get the position standalone contact instead.
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": False}}
-        partner_ids = self.partner.with_context(ctx).search(
+        partner_ids = self.partner.with_context(**ctx).search(
             [("parent_id", "ilike", "YourCompany")]
         )
         self.assertTrue(self.bob_contact in partner_ids)
@@ -130,8 +130,8 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         # context is ignored).
         new_contact.write({"contact_id": self.bob_contact.id})
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": True}}
-        new_contact.with_context(ctx).unlink()
-        partner_ids = self.partner.with_context(ctx).search(
+        new_contact.with_context(**ctx).unlink()
+        partner_ids = self.partner.with_context(**ctx).search(
             [("id", "in", [new_contact.id, self.bob_contact.id])]
         )
         self.assertIn(self.bob_contact, partner_ids)
