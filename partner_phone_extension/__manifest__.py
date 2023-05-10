@@ -8,7 +8,7 @@
 
 {
     "name": "Partner Phone Number Extension",
-    "version": "15.0.1.0.1",
+    "version": "16.0.1.0.0",
     "category": "Customer Relationship Management",
     "summary": "Partner Phone Number Extension",
     "author": "Savoir-faire Linux, "
