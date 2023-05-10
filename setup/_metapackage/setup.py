@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo-addon-base_country_state_translatable>=16.0dev,<16.1dev',
         'odoo-addon-base_location>=16.0dev,<16.1dev',
         'odoo-addon-base_location_geonames_import>=16.0dev,<16.1dev',
+        'odoo-addon-base_partner_company_group>=16.0dev,<16.1dev',
         'odoo-addon-base_partner_sequence>=16.0dev,<16.1dev',
         'odoo-addon-partner_accreditation>=16.0dev,<16.1dev',
         'odoo-addon-partner_address_street3>=16.0dev,<16.1dev',
