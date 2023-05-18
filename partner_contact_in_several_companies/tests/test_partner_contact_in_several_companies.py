@@ -1,5 +1,6 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 from odoo.tests import common
+from odoo.tools.safe_eval import safe_eval
 
 
 class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
@@ -25,7 +26,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         explicitly state to not display all positions
         """
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": False}}
-        partner_ids = self.partner.with_context(ctx).search([])
+        partner_ids = self.partner.with_context(**ctx).search([])
         self.assertTrue(self.bob_job1 not in partner_ids)
         self.assertTrue(self.roger_job2 not in partner_ids)
 
@@ -40,12 +41,12 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         self.assertTrue(self.roger_job2 in partner_ids)
 
         ctx = {"search_show_all_positions": {"is_set": False}}
-        partner_ids = self.partner.with_context(ctx).search([])
+        partner_ids = self.partner.with_context(**ctx).search([])
         self.assertTrue(self.bob_job1 in partner_ids)
         self.assertTrue(self.roger_job2 in partner_ids)
 
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": True}}
-        partner_ids = self.partner.with_context(ctx).search([])
+        partner_ids = self.partner.with_context(**ctx).search([])
         self.assertTrue(self.bob_job1 in partner_ids)
         self.assertTrue(self.roger_job2 in partner_ids)
 
@@ -56,29 +57,29 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
 
         ctx = {}
         self.assertEqual(
-            self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids
+            self.bob_job1, self.bob_contact.with_context(**ctx).other_contact_ids
         )
         ctx = {"search_show_all_positions": {"is_set": False}}
         self.assertEqual(
-            self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids
+            self.bob_job1, self.bob_contact.with_context(**ctx).other_contact_ids
         )
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": False}}
         self.assertEqual(
-            self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids
+            self.bob_job1, self.bob_contact.with_context(**ctx).other_contact_ids
         )
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": True}}
         self.assertEqual(
-            self.bob_job1, self.bob_contact.with_context(ctx).other_contact_ids
+            self.bob_job1, self.bob_contact.with_context(**ctx).other_contact_ids
         )
 
         ctx = {}
-        self.assertIn(self.bob_job1, self.main_partner.with_context(ctx).child_ids)
+        self.assertIn(self.bob_job1, self.main_partner.with_context(**ctx).child_ids)
         ctx = {"search_show_all_positions": {"is_set": False}}
-        self.assertIn(self.bob_job1, self.main_partner.with_context(ctx).child_ids)
+        self.assertIn(self.bob_job1, self.main_partner.with_context(**ctx).child_ids)
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": False}}
-        self.assertIn(self.bob_job1, self.main_partner.with_context(ctx).child_ids)
+        self.assertIn(self.bob_job1, self.main_partner.with_context(**ctx).child_ids)
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": True}}
-        self.assertIn(self.bob_job1, self.main_partner.with_context(ctx).child_ids)
+        self.assertIn(self.bob_job1, self.main_partner.with_context(**ctx).child_ids)
 
     def test_03_search_match_attached_contacts(self):
         """Check that searching partner also return partners having
@@ -94,7 +95,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         # but when searching without 'all positions',
         # we should get the position standalone contact instead.
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": False}}
-        partner_ids = self.partner.with_context(ctx).search(
+        partner_ids = self.partner.with_context(**ctx).search(
             [("parent_id", "ilike", "YourCompany")]
         )
         self.assertTrue(self.bob_contact in partner_ids)
@@ -126,8 +127,8 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         # context is ignored).
         new_contact.write({"contact_id": self.bob_contact.id})
         ctx = {"search_show_all_positions": {"is_set": True, "set_value": True}}
-        new_contact.with_context(ctx).unlink()
-        partner_ids = self.partner.with_context(ctx).search(
+        new_contact.with_context(**ctx).unlink()
+        partner_ids = self.partner.with_context(**ctx).search(
             [("id", "in", [new_contact.id, self.bob_contact.id])]
         )
         self.assertIn(self.bob_contact, partner_ids)
@@ -152,25 +153,25 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
     def test_06_ir_action(self):
         """Check ir_action context is auto updated."""
 
-        new_context_val = (
-            "'search_show_all_positions': " "{'is_set': True, 'set_value': False}"
-        )
+        new_context_val = {
+            "search_show_all_positions": {"is_set": True, "set_value": False}
+        }
 
         xmlid = "base.action_partner_form"
         details = self.env["ir.actions.act_window"]._for_xml_id(xmlid)
 
-        self.assertIn(
-            new_context_val,
-            details["context"],
+        self.assertDictEqual(
+            new_context_val["search_show_all_positions"],
+            details["context"].get("search_show_all_positions", {}),
             msg="Default actions not updated with new context",
         )
 
         xmlid = "partner_contact_in_several_companies.action_partner_form"
         details = self.env["ir.actions.act_window"]._for_xml_id(xmlid)
-
-        self.assertNotIn(
-            new_context_val,
-            details["context"],
+        detail_context = safe_eval(details.get("context", "{}"))
+        self.assertNotEqual(
+            new_context_val["search_show_all_positions"].get("set_value"),
+            (detail_context.get("search_show_all_positions", {})).get("set_value"),
             msg="Custom actions incorrectly updated with new context",
         )
 

@@ -42,20 +42,19 @@ class ResPartner(models.Model):
         should be ignored...
         """
         if mode != "search" and "search_show_all_positions" in self.env.context:
-            result = self.with_context(search_show_all_positions={"is_set": False})
-        else:
-            result = self
-        return result
+            return self.with_context(search_show_all_positions={"is_set": False})
+        return self
 
     @api.model
     def search(self, args, offset=0, limit=None, order=None, count=False):
         """Display only standalone contact matching ``args`` or having
         attached contact matching ``args``"""
-        ctx = self.env.context
-        if (
-            ctx.get("search_show_all_positions", {}).get("is_set")
-            and not ctx["search_show_all_positions"]["set_value"]
-        ):
+        searsearch_show_all_positions = self.env.context.get(
+            "search_show_all_positions", {}
+        )
+        if searsearch_show_all_positions.get(
+            "is_set"
+        ) and not searsearch_show_all_positions.get("set_value"):
             args = expression.normalize_domain(args)
             attached_contact_args = expression.AND(
                 (args, [("contact_type", "=", "attached")])
@@ -78,32 +77,33 @@ class ResPartner(models.Model):
         that the name on an attached contact is the same as the name on the
         contact it is attached to."""
         modified_self = self._basecontact_check_context("create")
-        if not vals.get("name") and vals.get("contact_id"):
-            vals["name"] = modified_self.browse(vals["contact_id"]).name
+        contact_id = vals.get("contact_id")
+        if not vals.get("name") and contact_id:
+            vals.update(name=modified_self.browse(contact_id).name)
         return super(ResPartner, modified_self).create(vals)
 
     def read(self, fields=None, load="_classic_read"):
-        modified_self = self._basecontact_check_context("read")
-        return super(ResPartner, modified_self).read(fields=fields, load=load)
+        return super(ResPartner, self._basecontact_check_context("read")).read(
+            fields=fields, load=load
+        )
 
     def write(self, vals):
-        modified_self = self._basecontact_check_context("write")
-        return super(ResPartner, modified_self).write(vals)
+        return super(ResPartner, self._basecontact_check_context("write")).write(vals)
 
     def unlink(self):
-        modified_self = self._basecontact_check_context("unlink")
-        return super(ResPartner, modified_self).unlink()
+        return super(ResPartner, self._basecontact_check_context("unlink")).unlink()
 
     def _compute_commercial_partner(self):
         """Returns the partner that is considered the commercial
         entity of this partner. The commercial entity holds the master data
         for all commercial fields (see :py:meth:`~_commercial_fields`)"""
-        result = super(ResPartner, self)._compute_commercial_partner()
+        super(ResPartner, self)._compute_commercial_partner()
         for partner in self:
             if partner.contact_type == "attached" and not partner.parent_id:
                 partner.commercial_partner_id = partner.contact_id
-        return result
+        return
 
+    @api.model
     def _contact_fields(self):
         """Returns the list of contact fields that are synced from the parent
         when a partner is attached to him."""
@@ -134,7 +134,7 @@ class ResPartner(models.Model):
         fields.related to the parent
         """
         self.ensure_one()
-        super(ResPartner, self)._fields_sync(update_values)
+        result = super(ResPartner, self)._fields_sync(update_values)
         contact_fields = self._contact_fields()
         # 1. From UPSTREAM: sync from parent contact
         if update_values.get("contact_id"):
@@ -145,6 +145,7 @@ class ResPartner(models.Model):
             if self.contact_id:
                 update_ids |= self.contact_id
             update_ids.update_contact(update_values)
+        return result
 
     @api.onchange("contact_id")
     def _onchange_contact_id(self):
