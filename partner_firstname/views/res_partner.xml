@@ -6,7 +6,7 @@
             <xpath expr="//field[@id='individual']" position="attributes">
                 <attribute
                     name="attrs"
-                >{'invisible':[('is_company','=',True)], 'readonly': [('is_company', '=', False)], 'required': [('type', '=', 'contact'), ('is_company', '=', True)]}</attribute>
+                >{'invisible':[('is_company','=',True)], 'readonly': [('is_company', '=', False)], 'required': [('type', '=', 'contact'), ('is_company', '=', False)]}</attribute>
             </xpath>
             <xpath expr="//field[@id='company']" position="attributes">
                 <attribute
@@ -38,7 +38,7 @@
             <xpath expr="//field[@id='individual']" position="attributes">
                 <attribute
                     name="attrs"
-                >{'invisible':[('is_company','=',True)], 'readonly': [('is_company', '=', False)], 'required': [('type', '=', 'contact'), ('is_company', '=', True)]}</attribute>
+                >{'invisible':[('is_company','=',True)], 'readonly': [('is_company', '=', False)], 'required': [('type', '=', 'contact'), ('is_company', '=', False)]}</attribute>
             </xpath>
             <xpath expr="//field[@id='company']" position="attributes">
                 <attribute

@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_company_type
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-21 01:49+0000\n"
+"PO-Revision-Date: 2022-01-26 16:40+0000\n"
+"Last-Translator: Simon S <simon.stromberg@vertel.se>\n"
+"Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
+
+#. module: partner_company_type
+#: model:res.partner.company.type,shortcut:partner_company_type.res_partner_company_type_sa
+msgid "AC"
+msgstr ""
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__shortcut
+msgid "Abbreviation"
+msgstr "Förkortning"
+
+#. module: partner_company_type
+#: model:res.partner.company.type,name:partner_company_type.res_partner_company_type_sa
+msgid "Anonymous Company"
+msgstr "Anonymt bolag"
+
+#. module: partner_company_type
+#: model:ir.actions.act_window,name:partner_company_type.res_partner_company_type_act_window
+#: model:ir.ui.menu,name:partner_company_type.menu_partner_company_type
+#: model_terms:ir.ui.view,arch_db:partner_company_type.res_partner_company_type_form_view
+msgid "Company Types"
+msgstr "Bolagstyper"
+
+#. module: partner_company_type
+#: model:ir.model,name:partner_company_type.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__create_uid
+msgid "Created by"
+msgstr "Skapad av"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__create_date
+msgid "Created on"
+msgstr "Skapad den"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__display_name
+msgid "Display Name"
+msgstr "Visa namn"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type____last_update
+msgid "Last Modified on"
+msgstr "Senast redigerad"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__write_uid
+msgid "Last Updated by"
+msgstr "Senast uppdaterad av"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__write_date
+msgid "Last Updated on"
+msgstr "Senast uppdaterad"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner__partner_company_type_id
+#: model:ir.model.fields,field_description:partner_company_type.field_res_users__partner_company_type_id
+msgid "Legal Form"
+msgstr "Juridiskt dokument"
+
+#. module: partner_company_type
+#: model:ir.model,name:partner_company_type.model_res_partner_company_type
+msgid "Partner Company Type"
+msgstr "Partnerns bolagstyp"
+
+#. module: partner_company_type
+#: model:ir.model.constraint,message:partner_company_type.constraint_res_partner_company_type_name_uniq
+msgid "Partner Company Type already exists!"
+msgstr "Partners bolagstyp finns redan!"
+
+#. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__name
+msgid "Title"
+msgstr "Titel"
+
+#~ msgid "Partner"
+#~ msgstr "Företag"

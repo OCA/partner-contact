@@ -1,0 +1,63 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_address_street3
+#
+# Translators:
+# Tiago Baptista <tiago@baptista.net>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-20 18:18+0000\n"
+"PO-Revision-Date: 2017-01-20 18:18+0000\n"
+"Last-Translator: Tiago Baptista <tiago@baptista.net>, 2017\n"
+"Language-Team: Portuguese (Portugal) (https://www.transifex.com/oca/"
+"teams/23907/pt_PT/)\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_address_street3
+#: model:ir.model,name:partner_address_street3.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_address_street3
+#: model:ir.model,name:partner_address_street3.model_res_country
+msgid "Country"
+msgstr "País"
+
+#. module: partner_address_street3
+#: model:ir.model.fields,help:partner_address_street3.field_res_country__address_format
+msgid ""
+"Display format to use for addresses belonging to this country.\n"
+"\n"
+"You can use python-style string pattern with all the fields of the address "
+"(for example, use '%(street)s' to display the field 'street') plus\n"
+"%(state_name)s: the name of the state\n"
+"%(state_code)s: the code of the state\n"
+"%(country_name)s: the name of the country\n"
+"%(country_code)s: the code of the country"
+msgstr ""
+
+#. module: partner_address_street3
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_country__address_format
+msgid "Layout in Reports"
+msgstr ""
+
+#. module: partner_address_street3
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_partner__street3
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_users__street3
+msgid "Street 3"
+msgstr ""
+
+#. module: partner_address_street3
+#: model_terms:ir.ui.view,arch_db:partner_address_street3.add_street3_in_form_view
+#: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_address_form
+msgid "Street 3..."
+msgstr ""
+
+#~ msgid "Partner"
+#~ msgstr "Parceiro"
