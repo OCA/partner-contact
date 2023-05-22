@@ -10,3 +10,7 @@
   * João Marques
   * César A. Sánchez
 * Kevin Khao <kevin.khao@gmail.com>
+
+* `Pesol <https://www.pesol.es>`__:
+
+  * Jonathan Oscategui Taza <info@pesol.es>
