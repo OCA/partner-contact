@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-24 01:41+0000\n"
-"PO-Revision-Date: 2023-05-22 15:10+0000\n"
+"PO-Revision-Date: 2023-05-25 12:09+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-9-0/"
 "language/it/)\n"
@@ -79,7 +79,7 @@ msgstr ""
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_display_name
 msgid "Display Name"
-msgstr "Nome da visualizzare"
+msgstr "Nome visualizzato"
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_exception_msg
