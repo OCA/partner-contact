@@ -15,7 +15,10 @@ class ResPartner(models.Model):
             # If the company is not defined in the partner, take current user company
             company = partner.company_id or self.env.company
             mode = company.partner_ref_unique
-            if mode == "all" or (mode == "companies" and partner.is_company):
+            # Don't raise when coming from contact merge wizard or no duplicates
+            if not self.env.context.get("partner_ref_unique_merging") and (
+                mode == "all" or (mode == "companies" and partner.is_company)
+            ):
                 domain = [
                     ("id", "!=", partner.id),
                     ("ref", "=", partner.ref),
@@ -23,8 +26,7 @@ class ResPartner(models.Model):
                 if mode == "companies":
                     domain.append(("is_company", "=", True))
                 other = self.search(domain)
-                # Don't raise when coming from contact merge wizard or no duplicates
-                if other and not self.env.context.get("partner_ref_unique_merging"):
+                if other:
                     raise ValidationError(
                         _("This reference is equal to partner '%s'")
                         % other[0].display_name

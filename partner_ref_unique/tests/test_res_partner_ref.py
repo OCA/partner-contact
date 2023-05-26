@@ -7,10 +7,10 @@ from odoo.exceptions import ValidationError
 from odoo.tests import common
 
 
-class TestResPartnerRefUnique(common.SavepointCase):
+class TestResPartnerRefUnique(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestResPartnerRefUnique, cls).setUpClass()
+        super().setUpClass()
         cls.partner_obj = cls.env["res.partner"]
         cls.company_obj = cls.env["res.company"]
         # look for possible already duplicated refs for being resilient
@@ -28,20 +28,28 @@ class TestResPartnerRefUnique(common.SavepointCase):
         self.partner1.ref = "same_ref"
         partner = self.partner_obj.create({"name": "other", "ref": "same_ref"})
         # Try to activate restriction
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(
+            ValidationError, "This reference is equal to partner"
+        ):
             self.company.partner_ref_unique = "all"
         # Let the situation without duplicate refs and apply global condition
         partner.unlink()
         self.company.partner_ref_unique = "all"
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(
+            ValidationError, "This reference is equal to partner"
+        ):
             self.partner2.ref = "same_ref"
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(
+            ValidationError, "This reference is equal to partner"
+        ):
             self.partner_obj.create(
                 {"name": "other", "ref": "same_ref", "company_id": self.company.id}
             )
         # This one should also raise the constraint as the no-company contact
         # collapses with the company specific contact
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(
+            ValidationError, "This reference is equal to partner"
+        ):
             self.partner_obj.create(
                 {"name": "other", "ref": "same_ref", "company_id": False}
             )
@@ -49,7 +57,9 @@ class TestResPartnerRefUnique(common.SavepointCase):
     def test_partner1_wo_company_new_partner_w_company(self):
         self.company.partner_ref_unique = "all"
         self.partner1.write({"company_id": False, "ref": "same_ref"})
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(
+            ValidationError, "This reference is equal to partner"
+        ):
             self.partner_obj.create(
                 {"name": "other", "ref": "same_ref", "company_id": self.company.id}
             )
@@ -58,7 +68,9 @@ class TestResPartnerRefUnique(common.SavepointCase):
     def test_partner1_w_company_new_partner_wo_company(self):
         self.company.partner_ref_unique = "all"
         self.partner1.ref = "same_ref"
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(
+            ValidationError, "This reference is equal to partner"
+        ):
             self.partner_obj.create(
                 {"name": "other", "ref": "same_ref", "company_id": False}
             )
@@ -77,14 +89,20 @@ class TestResPartnerRefUnique(common.SavepointCase):
             {"name": "Company3", "ref": "same_ref", "is_company": True}
         )
         # Try to activate restriction
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(
+            ValidationError, "This reference is equal to partner"
+        ):
             self.company.partner_ref_unique = "companies"
         # Let the situation without duplicate refs and apply global condition
         partner3.unlink()
         self.company.partner_ref_unique = "companies"
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(
+            ValidationError, "This reference is equal to partner"
+        ):
             self.partner2.ref = "same_ref"
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(
+            ValidationError, "This reference is equal to partner"
+        ):
             self.partner_obj.create(
                 {"is_company": True, "name": "other", "ref": "same_ref"}
             )
