@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-12-01 18:44+0000\n"
-"Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
+"PO-Revision-Date: 2023-05-30 09:08+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_needaction
@@ -286,7 +286,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:animal.field_animal__gender
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Gender"
-msgstr "Sesso"
+msgstr "Genere"
 
 #. module: animal
 #: model:animal.breed,name:animal.german_shepard
