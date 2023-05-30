@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_company_tree" model="ir.ui.view">
+        <field name="name">res.company.tree - company_default_partner_pricelist</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_tree" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field
+                    name="default_property_product_pricelist"
+                    domain="[('company_id', 'in', (active_id, False))]"
+                    optional="hide"
+                />
+            </field>
+        </field>
+    </record>
+    <record id="view_company_form" model="ir.ui.view">
+        <field name="name">res.company.form - company_default_partner_pricelist</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form" />
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field
+                    name="default_property_product_pricelist"
+                    domain="[('company_id', 'in', (active_id, False))]"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
