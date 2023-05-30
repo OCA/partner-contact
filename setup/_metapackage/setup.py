@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo13-addon-base_location_nuts',
         'odoo13-addon-base_partner_sequence',
         'odoo13-addon-base_vat_sanitized',
+        'odoo13-addon-company_default_partner_pricelist',
         'odoo13-addon-partner_address_street3',
         'odoo13-addon-partner_address_two_lines',
         'odoo13-addon-partner_affiliate',
