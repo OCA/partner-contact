@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-01 20:43+0000\n"
-"PO-Revision-Date: 2023-05-18 15:32+0000\n"
+"PO-Revision-Date: 2023-05-30 09:08+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_contact_gender
 #: model:ir.model,name:partner_contact_gender.model_res_partner
@@ -33,7 +33,7 @@ msgstr "Femmina"
 #: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner__gender
 #: model:ir.model.fields,field_description:partner_contact_gender.field_res_users__gender
 msgid "Gender"
-msgstr "Sesso"
+msgstr "Genere"
 
 #. module: partner_contact_gender
 #: selection:res.partner,gender:0
