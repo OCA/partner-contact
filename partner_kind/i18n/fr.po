@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_kind
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-20 13:24+0000\n"
+"PO-Revision-Date: 2023-06-20 15:26+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: partner_kind
+#: code:addons/partner_kind/models/res_partner.py:0
+#, python-format
+msgid "Address"
+msgstr "Adresse"
+
+#. module: partner_kind
+#: code:addons/partner_kind/models/res_partner.py:0
+#, python-format
+msgid "Company"
+msgstr "Companie"
+
+#. module: partner_kind
+#: code:addons/partner_kind/models/res_partner.py:0
+#, python-format
+msgid "Company field is mandatory for address type"
+msgstr "La société est obligatoire pour le type adresse"
+
+#. module: partner_kind
+#: code:addons/partner_kind/models/res_partner.py:0
+#, python-format
+msgid "Company kind is only for independant company"
+msgstr "Le type société est exclusivement réservé aux sociétés"
+
+#. module: partner_kind
+#: model:ir.model,name:partner_kind.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: partner_kind
+#: model:ir.model.fields,field_description:partner_kind.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_kind.field_res_users__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: partner_kind
+#: model:ir.model.fields,field_description:partner_kind.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_kind.field_res_users__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_kind
+#: code:addons/partner_kind/models/res_partner.py:0
+#, python-format
+msgid "Individual"
+msgstr "Individu"
+
+#. module: partner_kind
+#: model:ir.model.fields,field_description:partner_kind.field_res_partner____last_update
+#: model:ir.model.fields,field_description:partner_kind.field_res_users____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: partner_kind
+#: model:ir.model.fields,field_description:partner_kind.field_res_partner__kind
+#: model:ir.model.fields,field_description:partner_kind.field_res_users__kind
+msgid "Type"
+msgstr "Type"
+
+#. module: partner_kind
+#: model:ir.model.fields,help:partner_kind.field_res_partner__kind
+#: model:ir.model.fields,help:partner_kind.field_res_users__kind
+msgid "Type of partner"
+msgstr "Type de partenaire"
+
+#. module: partner_kind
+#: code:addons/partner_kind/models/res_partner.py:0
+#, python-format
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: partner_kind
+#: code:addons/partner_kind/models/res_partner.py:0
+#, python-format
+msgid "User type is only for users"
+msgstr "Le type utilisateur et seulement pour les utilisateurs"
+
+#. module: partner_kind
+#: model:ir.model,name:partner_kind.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: partner_kind
+#: model_terms:ir.ui.view,arch_db:partner_kind.view_partner_form
+#: model_terms:ir.ui.view,arch_db:partner_kind.view_res_partner_filter
+msgid "kind"
+msgstr "Type"
