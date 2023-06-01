@@ -21,12 +21,14 @@ class ResPartner(models.Model):
         inverse="_inverse_is_customer",
         search="_search_is_customer",
         string="Is a Customer",
+        default=lambda self: self._default_is_customer(),
     )
     is_supplier = fields.Boolean(
         compute="_compute_is_supplier",
         inverse="_inverse_is_supplier",
         search="_search_is_supplier",
         string="Is a Supplier",
+        default=lambda self: self._default_is_supplier(),
     )
 
     @api.depends("customer_rank")
@@ -64,3 +66,9 @@ class ResPartner(models.Model):
             raise UserError(_("Operation not supported"))
         operator, value = DOMAIN_SEARCH.get((operator, value))
         return [("supplier_rank", operator, value)]
+
+    def _default_is_customer(self):
+        return self.env.context.get("res_partner_search_mode") == "customer"
+
+    def _default_is_supplier(self):
+        return self.env.context.get("res_partner_search_mode") == "supplier"
