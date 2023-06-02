@@ -6,23 +6,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2023-06-02 15:08+0000\n"
+"Last-Translator: Victor Champonnois <victor@coopiteasy.be>\n"
 "Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_interest_group
 #: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__active
 msgid "Active"
-msgstr ""
+msgstr "Actif"
 
 #. module: partner_interest_group
 #: model:ir.model,name:partner_interest_group.model_res_partner_interest_group
 msgid "Configurable Interest Group for Partners"
-msgstr ""
+msgstr "Groupes d'intérêts configurables pour les contacts"
 
 #. module: partner_interest_group
 #: model:ir.model,name:partner_interest_group.model_res_partner
@@ -32,17 +34,17 @@ msgstr ""
 #. module: partner_interest_group
 #: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: partner_interest_group
 #: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: partner_interest_group
 #: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom affiché"
 
 #. module: partner_interest_group
 #: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__id
@@ -57,24 +59,24 @@ msgstr ""
 #: model:ir.ui.menu,name:partner_interest_group.menu_res_partner_interest_group
 #: model_terms:ir.ui.view,arch_db:partner_interest_group.res_partner_interest_group_form_view
 msgid "Interest Group"
-msgstr ""
+msgstr "Groupe d'intérêt"
 
 #. module: partner_interest_group
 #: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Dernière mofidication le"
 
 #. module: partner_interest_group
 #: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: partner_interest_group
 #: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: partner_interest_group
 #: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__partner_id
 msgid "Partner"
-msgstr ""
+msgstr "Contact"
