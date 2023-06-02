@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2022-11-29 12:45+0000\n"
-"Last-Translator: Pierrick Brun <brun.pierrick@protonmail.com>\n"
+"PO-Revision-Date: 2023-06-02 15:08+0000\n"
+"Last-Translator: Victor Champonnois <victor@coopiteasy.be>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: base_location
 #: model:res.city,name:base_location.demo_brussels_city
@@ -52,7 +52,6 @@ msgstr "Ville"
 #: model:ir.model.fields,field_description:base_location.field_res_company__city_id
 #: model:ir.model.fields,field_description:base_location.field_res_partner__city_id
 #: model:ir.model.fields,field_description:base_location.field_res_users__city_id
-#, fuzzy
 msgid "City ID"
 msgstr "Ville"
 
@@ -109,11 +108,15 @@ msgid ""
 "            separately\n"
 "            to enforce any address of it to have a city in this list."
 msgstr ""
+"Affiche et gère la liste de toutes les villes qui peuvent être assignées au\n"
+"            contact. Notez que cette option peut être définie sur chaque "
+"pays\n"
+"            séparément."
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company__country_enforce_cities
 msgid "Enforce Cities"
-msgstr ""
+msgstr "Appliquer la ville"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__id
@@ -138,16 +141,15 @@ msgstr "Mis à jour le"
 #. module: base_location
 #: model_terms:ir.ui.view,arch_db:base_location.view_partner_form
 msgid "Location completion"
-msgstr ""
+msgstr "Complétion de la localisation"
 
 #. module: base_location
 #: model:ir.actions.act_window,name:base_location.action_zip_tree
 msgid "Locations"
-msgstr ""
+msgstr "Localisation"
 
 #. module: base_location
 #: model_terms:ir.ui.view,arch_db:base_location.view_city_zip_filter
-#, fuzzy
 msgid "Search zip"
 msgstr "Rechercher ville"
 
@@ -166,6 +168,8 @@ msgid ""
 "The city of the partner %(partner)s differs from that in location "
 "%(location)s"
 msgstr ""
+"La ville du contact %(partner)s diffèrent de celle de la localisation "
+"%(location)s"
 
 #. module: base_location
 #. odoo-python
@@ -175,6 +179,8 @@ msgid ""
 "The country of the partner %(partner)s differs from that in location "
 "%(location)s"
 msgstr ""
+"Le pays du contact %(partner)s diffèrent de ce lui de la localisation "
+"%(location)s"
 
 #. module: base_location
 #. odoo-python
@@ -184,6 +190,8 @@ msgid ""
 "The state of the partner %(partner)s differs from that in location "
 "%(location)s"
 msgstr ""
+"L'état du contact %(partner)s diffèrent de ce lui de la localisation "
+"%(location)s"
 
 #. module: base_location
 #. odoo-python
@@ -192,6 +200,8 @@ msgstr ""
 msgid ""
 "The zip of the partner %(partner)s differs from that in location %(location)s"
 msgstr ""
+"Le code ZIP du contact %(partner)s diffèrent de ce lui de la localisation "
+"%(location)s"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__zip_id
@@ -204,6 +214,8 @@ msgid ""
 "You already have a city with that name in the same state.The city must have "
 "a unique name within it's state and it's country"
 msgstr ""
+"Il y a déjà une ville avec le même nom dans le même état. La ville doit "
+"avoir un nom unique parmi l'état et le pays"
 
 #. module: base_location
 #: model:ir.model.constraint,message:base_location.constraint_res_city_zip_name_city_uniq
@@ -211,6 +223,8 @@ msgid ""
 "You already have a zip with that code in the same city. The zip code must be "
 "unique within it's city"
 msgstr ""
+"Il y a déjà un code ZIP avec le même nom dans le même état. Le code ZIP doit "
+"avoir un nom unique parmi l'état et le pays"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__name
@@ -229,19 +243,19 @@ msgstr "Code postal"
 #: model:ir.model.fields,field_description:base_location.field_res_users__zip
 #: model_terms:ir.ui.view,arch_db:base_location.city_zip_form
 msgid "Zip"
-msgstr ""
+msgstr "Code postal"
 
 #. module: base_location
 #: model:ir.ui.menu,name:base_location.locations_menu_zips
 #: model_terms:ir.ui.view,arch_db:base_location.view_city_form
 #: model_terms:ir.ui.view,arch_db:base_location.view_res_country_city_better_zip_form
 msgid "Zips"
-msgstr ""
+msgstr "Code postaux"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city__zip_ids
 msgid "Zips in this city"
-msgstr ""
+msgstr "Code postaux dans cette ville"
 
 #, fuzzy
 #~ msgid "City of Address"
