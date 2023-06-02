@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2023-02-03 12:46+0000\n"
-"Last-Translator: vdewulf <virginie@coopiteasy.be>\n"
+"PO-Revision-Date: 2023-06-02 15:08+0000\n"
+"Last-Translator: Victor Champonnois <victor@coopiteasy.be>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: base_location_geonames_import
 #. odoo-python
@@ -28,7 +28,6 @@ msgstr "%d n'a pas pu être supprimé %"
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
-#, fuzzy
 msgid ""
 ", create new location entries if not found already in the system, and "
 "<b>delete missing entries</b> from new file."
@@ -115,7 +114,7 @@ msgstr "Importer"
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_city_zip_geonames_import
 msgid "Import City Zips from Geonames"
-msgstr "Importer les codes postaux de Geonames"
+msgstr "Import Better Zip from Geonames"
 
 #. module: base_location_geonames_import
 #: model:ir.actions.act_window,name:base_location_geonames_import.city_zip_geonames_import_action
