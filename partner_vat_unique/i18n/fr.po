@@ -6,39 +6,41 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2023-06-04 07:08+0000\n"
+"Last-Translator: Claude R Perrin <claude@perrin.it>\n"
 "Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_vat_unique
 #: model:ir.model,name:partner_vat_unique.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 #. module: partner_vat_unique
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom affiché"
 
 #. module: partner_vat_unique
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_vat_unique
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Dernière modification le"
 
 #. module: partner_vat_unique
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__vat
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_users__vat
 msgid "Tax ID"
-msgstr ""
+msgstr "N° de TVA"
 
 #. module: partner_vat_unique
 #: model:ir.model.fields,help:partner_vat_unique.field_res_partner__vat
@@ -47,9 +49,11 @@ msgid ""
 "The Tax Identification Number. Complete it if the contact is subjected to "
 "government taxes. Used in some legal statements."
 msgstr ""
+"Le numéro de TVA. Complétez-le si le contact est soumis aux taxes "
+"gouvernementales. Utilisé dans certaines déclarations juridiques."
 
 #. module: partner_vat_unique
 #: code:addons/partner_vat_unique/models/res_partner.py:0
 #, python-format
 msgid "The VAT %s already exists in another partner."
-msgstr ""
+msgstr "Le numéro de TVA %s est déjà utilisé dans un autre contact."
