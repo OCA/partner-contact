@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2022-09-13 22:07+0000\n"
+"PO-Revision-Date: 2023-06-04 07:08+0000\n"
 "Last-Translator: Claude R Perrin <claude@perrin.it>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.3.2\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: base_location
 #: model:res.city,name:base_location.demo_brussels_city
@@ -31,7 +31,7 @@ msgid ""
 "Check this box to ensure every address created in that country has a 'City' "
 "chosen in the list of the country's cities."
 msgstr ""
-"Cocher cette case pour forcer l'utilisation de la liste déroulantes des "
+"Cocher cette case pour forcer l'utilisation de la liste déroulante des "
 "villes de ce pays lors de la saisie d'une adresse dans ce pays."
 
 #. module: base_location
@@ -115,6 +115,10 @@ msgid ""
 "            separately\n"
 "            to enforce any address of it to have a city in this list."
 msgstr ""
+"Affichez et gérez la liste de toutes les villes qui peuvent être associées\n"
+"à vos contacts. Notez qu'une option peut être configurée indépendam-\n"
+"ment pour chaque pays afin de rendre obligatoire la présence de\n"
+"l'adresse dans cette liste."
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company__country_enforce_cities
@@ -127,7 +131,7 @@ msgstr "Contrôle des Villes"
 #: model:ir.model.fields,field_description:base_location.field_res_company__id
 #: model:ir.model.fields,field_description:base_location.field_res_partner__id
 msgid "ID"
-msgstr "Identifiant"
+msgstr "ID"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city____last_update
@@ -140,12 +144,12 @@ msgstr "Dernière modification le"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__write_uid
 msgid "Last Updated by"
-msgstr "Mis à jour par"
+msgstr "Dernière mise à jour par"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__write_date
 msgid "Last Updated on"
-msgstr "Mis à jour le"
+msgstr "Dernière mise à jour le"
 
 #. module: base_location
 #: model_terms:ir.ui.view,arch_db:base_location.view_partner_form
@@ -173,25 +177,25 @@ msgstr "Etat"
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
 msgid "The city of partner %s differs from that in location %s"
-msgstr "La ville du partenaire %s est différente de celle du lieu %s"
+msgstr "La ville du contact %s est différente de celle du lieu %s"
 
 #. module: base_location
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
 msgid "The country of the partner %s differs from that in location %s"
-msgstr "Le pays du partenaire %s est différent de celui du lieu %s"
+msgstr "Le pays du contact %s est différent de celui du lieu %s"
 
 #. module: base_location
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
 msgid "The state of the partner %s differs from that in location %s"
-msgstr "L'état du partenaire %s est différent de celui du lieu %s"
+msgstr "L'état du contact %s est différent de celui du lieu %s"
 
 #. module: base_location
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
 msgid "The zip of the partner %s differs from that in location %s"
-msgstr "Le code postal du partenaire %s est différent de celui du lieu %s"
+msgstr "Le code postal du contact %s est différent de celui du lieu %s"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__zip_id
@@ -204,6 +208,8 @@ msgid ""
 "You already have a city with that name in the same state.The city must have "
 "a unique name within it's state and it's country"
 msgstr ""
+"Vous avez déjà une ville avec ce nom dans le même état. La ville doit avoir "
+"un nom unique dans son état et son pays"
 
 #. module: base_location
 #: model:ir.model.constraint,message:base_location.constraint_res_city_zip_name_city_uniq
@@ -211,6 +217,8 @@ msgid ""
 "You already have a zip with that code in the same city. The zip code must be "
 "unique within it's city"
 msgstr ""
+"Vous avez déjà un code postal avec ce code dans la même ville. Le code "
+"postal doit être unique dans sa ville"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__name
@@ -222,7 +230,7 @@ msgstr "Code Postal"
 #: model:ir.model.fields,field_description:base_location.field_res_partner__zip_id
 #: model:ir.model.fields,field_description:base_location.field_res_users__zip_id
 msgid "ZIP Location"
-msgstr "Lieu du Code postal"
+msgstr "Lieu(x) correspondant au Code postal"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_partner__zip
