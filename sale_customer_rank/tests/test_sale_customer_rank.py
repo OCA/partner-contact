@@ -7,7 +7,5 @@ class TestCustomerRank(TransactionCase):
     def test_customer_rank(self):
         partner = self.env["res.partner"].create({"name": "test partner"})
         self.assertEqual(partner.customer_rank, 0)
-        sale = self.env["sale.order"].create(  # noqa: F841
-            {"name": "test sale", "partner_id": partner.id}
-        )
+        self.env["sale.order"].create({"name": "test sale", "partner_id": partner.id})
         self.assertEqual(partner.customer_rank, 1)
