@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 Akretion
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="res_partner_form_view">
+        <field name="name">res.partner.form (in partner_company_children_notes)</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="child_ids" position="after">
+                <field
+                    name="children_notes"
+                    mode="kanban"
+                    attrs="{'invisible': [['is_company', '=', False]]}"
+                >
+                    <kanban>
+                        <field name="record_name" />
+                        <field name="body" />
+                        <field name="date" />
+                        <field name="author_id" />
+                            <templates>
+                                <t t-name="kanban-box">
+                                    <div
+                                    t-attf-class="oe_kanban_card oe_kanban_global_click"
+                                >
+                                        <div class="oe_kanban_record_top">
+                                            <div class="o_kanban_record_headings">
+                                                <field name="record_name" />
+                                            </div>
+                                        </div>
+                                        <div class="oe_kanban_record_body">
+                                            <field name="body" widget="text" />
+                                        </div>
+                                        <div class="oe_kanban_record_bottom">
+                                            <div class="oe_kanban_bottom_left">
+                                                <span><field name="date" /></span>
+                                            </div>
+                                            <div class="oe_kanban_record_bottom_right">
+                                                <field name="author_id" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </templates>
+                    </kanban>
+                </field>
+            </field>
+        </field>
+    </record>
+
+</odoo>
