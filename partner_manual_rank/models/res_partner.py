@@ -32,12 +32,14 @@ class ResPartner(models.Model):
     @api.depends("customer_rank")
     def _compute_is_customer(self):
         for partner in self:
-            partner.is_customer = bool(partner.customer_rank)
+            if not partner.is_customer:
+                partner.is_customer = bool(partner.customer_rank)
 
     @api.depends("supplier_rank")
     def _compute_is_supplier(self):
         for partner in self:
-            partner.is_supplier = bool(partner.supplier_rank)
+            if not partner.is_supplier:
+                partner.is_supplier = bool(partner.supplier_rank)
 
     def _inverse_is_customer(self):
         self.filtered(lambda p: not p.is_customer).write({"customer_rank": 0})
