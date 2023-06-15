@@ -17,12 +17,14 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: partner_contact_age_range
+#. odoo-python
 #: code:addons/partner_contact_age_range/models/res_partner_age_range.py:0
 #, python-format
 msgid "%(name)s is not a valid range (%(age_from)s >= %(age_to)s)"
 msgstr "%(name)s no és un interval vàlid (%(age_from)s >= %(age_to)s)"
 
 #. module: partner_contact_age_range
+#. odoo-python
 #: code:addons/partner_contact_age_range/models/res_partner_age_range.py:0
 #, python-format
 msgid "%(name)s is overalapping with range %(age_from)s"
@@ -53,7 +55,6 @@ msgstr "Contacte"
 #. module: partner_contact_age_range
 #: model:ir.actions.server,name:partner_contact_age_range.ir_cron_partner_age_range_ir_actions_server
 #: model:ir.cron,cron_name:partner_contact_age_range.ir_cron_partner_age_range
-#: model:ir.cron,name:partner_contact_age_range.ir_cron_partner_age_range
 msgid "Contact: Update Age Range"
 msgstr "Contacte: Actualitzar la franja d'edat"
 
