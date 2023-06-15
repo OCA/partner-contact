@@ -51,6 +51,7 @@ addon | version | maintainers | summary
 [partner_manual_rank](partner_manual_rank/) | 16.0.1.0.1 | [![luisg123v](https://github.com/luisg123v.png?size=30px)](https://github.com/luisg123v) [![frahikLV](https://github.com/frahikLV.png?size=30px)](https://github.com/frahikLV) | Be able to manually flag partners as customer or supplier.
 [partner_middlename](partner_middlename/) | 16.0.1.0.0 |  | Have split Middle
 [partner_multi_relation](partner_multi_relation/) | 16.0.1.0.0 |  | Partner Relations
+[partner_pricelist_search](partner_pricelist_search/) | 16.0.1.0.0 |  | Partner pricelist search
 [partner_ref_unique](partner_ref_unique/) | 16.0.1.0.0 |  | Add an unique constraint to partner ref field
 [partner_second_lastname](partner_second_lastname/) | 16.0.1.0.1 |  | Have split first and second lastnames
 [partner_tz](partner_tz/) | 16.0.1.0.0 |  | Remove partner timezone default value and display on form
