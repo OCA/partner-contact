@@ -14,6 +14,11 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_company_default
+#: model:ir.model,name:partner_company_default.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: partner_company_default
 #: model:ir.model.fields,field_description:partner_company_default.field_res_partner__company_id
 msgid "Company"
 msgstr ""
