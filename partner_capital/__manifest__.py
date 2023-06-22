@@ -5,7 +5,7 @@
 
 {
     "name": "Partners Capital",
-    "version": "16.0.0.1.0",
+    "version": "16.0.0.1.1",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
     "author": "Antiun Ingeniería S.L., "
