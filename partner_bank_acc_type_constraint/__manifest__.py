@@ -4,7 +4,7 @@
 
 {
     "name": "Bank Account Account Type Constraint",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "category": "Partners",
     "license": "AGPL-3",
     "summary": "Adds constraint on bank account type",
