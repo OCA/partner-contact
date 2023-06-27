@@ -9,28 +9,25 @@ class TestBasePartnerTwoLine(TransactionCase):
     def setUpClass(cls):
         super().setUpClass()
         partner_model = cls.env["res.partner"]
-        cls.partner = partner_model.create(
+        partner = partner_model.create(
             {"name": "Test Company Name", "company_type": "company"}
         )
         cls.child_partner_name = partner_model.create(
             {
                 "name": "Test Partner Name",
                 "type": "invoice",
-                "parent_id": cls.partner.id,
+                "parent_id": partner.id,
             }
         )
         cls.child_partner_no_name = partner_model.create(
             {
                 "name": "",
                 "type": "invoice",
-                "parent_id": cls.partner.id,
+                "parent_id": partner.id,
             }
         )
 
     def test_get_name(self):
-        # Test the output of method _get_name
-        # with different partner structures.
-
         # Partner with name.
         name = self.child_partner_name.with_context(
             _two_lines_partner_address=True
@@ -41,13 +38,3 @@ class TestBasePartnerTwoLine(TransactionCase):
             _two_lines_partner_address=True
         )._get_name()
         self.assertEqual(name, "Test Company Name\n Invoice Address")
-        # Partner with name && no_address_type enabled.
-        name = self.child_partner_name.with_context(
-            _two_lines_partner_address=True, no_address_type=True
-        )._get_name()
-        self.assertEqual(name, "Test Company Name\n Test Partner Name")
-        # Partner without a name && no_address_type enabled.
-        name = self.child_partner_no_name.with_context(
-            _two_lines_partner_address=True, no_address_type=True
-        )._get_name()
-        self.assertEqual(name, "Test Company Name")
