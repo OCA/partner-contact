@@ -9,7 +9,7 @@
                 <field
                     name="interest_group_ids"
                     widget="many2many_tags"
-                    options="{'no_create_edit': True}"
+                    options="{'no_create': True}"
                 />
             </field>
         </field>
