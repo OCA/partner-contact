@@ -73,7 +73,6 @@ msgid "Description"
 msgstr "Descrição"
 
 #. module: partner_stage
-#: model:ir.model.fields,field_description:partner_stage.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__display_name
 msgid "Display Name"
 msgstr "Nome a Exibir"
@@ -89,7 +88,6 @@ msgid "Fold"
 msgstr "Dobrar"
 
 #. module: partner_stage
-#: model:ir.model.fields,field_description:partner_stage.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__id
 msgid "ID"
 msgstr "ID"
@@ -100,7 +98,6 @@ msgid "Inactive"
 msgstr "Inativo"
 
 #. module: partner_stage
-#: model:ir.model.fields,field_description:partner_stage.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage____last_update
 msgid "Last Modified on"
 msgstr "Última Modificação Em"
@@ -145,6 +142,7 @@ msgid "Stage Code must be unique."
 msgstr "O Código do Estado tem que ser único."
 
 #. module: partner_stage
+#. odoo-python
 #: code:addons/partner_stage/models/res_partner_stage.py:0
 #, python-format
 msgid "There should be only one default stage"
