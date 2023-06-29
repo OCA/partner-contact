@@ -1,0 +1,112 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_tier_validation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__can_review
+msgid "Can Review"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model,name:partner_tier_validation.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_tier_validation.field_tier_definition__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__has_comment
+msgid "Has Comment"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_tier_validation.field_tier_definition__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner____last_update
+#: model:ir.model.fields,field_description:partner_tier_validation.field_tier_definition____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__need_validation
+msgid "Need Validation"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model_terms:ir.ui.view,arch_db:partner_tier_validation.partner_form_tier_filter
+msgid "Needs my Approval"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__next_review
+msgid "Next Review"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model_terms:ir.ui.view,arch_db:partner_tier_validation.partner_form_tier_filter
+msgid "Partner(s) to Approve"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__rejected
+msgid "Rejected"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__rejected_message
+msgid "Rejected Message"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__reviewer_ids
+msgid "Reviewers"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model,name:partner_tier_validation.model_tier_definition
+msgid "Tier Definition"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__to_validate_message
+msgid "To Validate Message"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:tier.definition,name:partner_tier_validation.partner_tier_definition_company_only
+msgid "Validate New Company"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__validated
+msgid "Validated"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__validated_message
+msgid "Validated Message"
+msgstr ""
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__review_ids
+msgid "Validations"
+msgstr ""
