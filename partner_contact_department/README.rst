@@ -13,15 +13,15 @@ Partner Contact Department
 .. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
-.. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/14.0/partner_contact_department
-    :alt: OCA/partner-contact
+.. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner_contact-lightgray.png?logo=github
+    :target: https://github.com/OCA/partner_contact/tree/15.0/partner_contact_department
+    :alt: OCA/partner_contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-14-0/partner-contact-14-0-partner_contact_department
+    :target: https://translation.odoo-community.org/projects/partner_contact-15-0/partner_contact-15-0-partner_contact_department
     :alt: Translate me on Weblate
-.. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
-    :target: https://runbot.odoo-community.org/runbot/134/14.0
-    :alt: Try me on Runbot
+.. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
+    :target: https://runboat.odoo-community.org/webui/builds.html?repo=OCA/partner_contact&target_branch=15.0
+    :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
@@ -43,7 +43,7 @@ To configure departments, you need to:
 
 * Go to *Contacts > Configuration > Departments*.
 
-.. figure:: https://raw.githubusercontent.com/OCA/partner-contact/14.0/partner_contact_department/path/to/local/image.png
+.. figure:: https://raw.githubusercontent.com/OCA/partner_contact/15.0/partner_contact_department/path/to/local/image.png
    :alt: alternative description
    :width: 600 px
 
@@ -58,10 +58,10 @@ To use this module, you need to:
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
+Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner_contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_contact_department%0Aversion:%2014.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner_contact/issues/new?body=module:%20partner_contact_department%0Aversion:%2015.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -76,12 +76,17 @@ Authors
 Contributors
 ~~~~~~~~~~~~
 
-* Pedro M. Baeza <pedro.baeza@tecnativa.com>
-* Antonio Espinosa <antonio.espinosa@tecnativa.com>
-* Rafael Blasco <rafael.blasco@tecnativa.com>
-* Jairo Llopis <jairo.llopis@tecnativa.com>
-* Vicent Cubells <vicent.cubells@tecnativa.com>
-* David Vidal <david.vidal@tecnativa.com>
+* `Tecnativa <https://www.tecnativa.com>`_:
+
+    * Pedro M. Baeza
+    * Antonio Espinosa
+    * Rafael Blasco
+    * Jairo Llopis
+    * Vicent Cubells
+    * David Vidal
+    * Stefan Ungureanu
+
+
 * Nikul Chaudhary <nikulchaudhary2112@gmail.com>
 * Harald Panten <harald.panten@sygel.es>
 * Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
@@ -99,6 +104,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/14.0/partner_contact_department>`_ project on GitHub.
+This module is part of the `OCA/partner_contact <https://github.com/OCA/partner_contact/tree/15.0/partner_contact_department>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
