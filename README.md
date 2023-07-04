@@ -50,7 +50,7 @@ addon | version | maintainers | summary
 [partner_firstname](partner_firstname/) | 16.0.1.0.1 |  | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 16.0.1.0.1 |  | Partner Identification Numbers
 [partner_industry_secondary](partner_industry_secondary/) | 16.0.1.0.0 |  | Add secondary partner industries
-[partner_interest_group](partner_interest_group/) | 16.0.1.0.0 | [![victor-champonnois](https://github.com/victor-champonnois.png?size=30px)](https://github.com/victor-champonnois) | Add Interest Group to Partners
+[partner_interest_group](partner_interest_group/) | 16.0.1.1.0 | [![victor-champonnois](https://github.com/victor-champonnois.png?size=30px)](https://github.com/victor-champonnois) | Add Interest Group to Partners
 [partner_manual_rank](partner_manual_rank/) | 16.0.1.0.1 | [![luisg123v](https://github.com/luisg123v.png?size=30px)](https://github.com/luisg123v) [![frahikLV](https://github.com/frahikLV.png?size=30px)](https://github.com/frahikLV) | Be able to manually flag partners as customer or supplier.
 [partner_middlename](partner_middlename/) | 16.0.1.0.0 |  | Have split Middle
 [partner_multi_relation](partner_multi_relation/) | 16.0.1.0.0 |  | Partner Relations
