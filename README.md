@@ -27,6 +27,7 @@ addon | version | maintainers | summary
 [base_partner_company_group](base_partner_company_group/) | 16.0.1.0.0 |  | Adds the possibility to add a company group to a company
 [base_partner_sequence](base_partner_sequence/) | 16.0.1.0.0 |  | Sets customer's code from a sequence
 [partner_accreditation](partner_accreditation/) | 16.0.1.0.0 | [![victor-champonnois](https://github.com/victor-champonnois.png?size=30px)](https://github.com/victor-champonnois) | Add Accreditation to Partners
+[partner_address_split](partner_address_split/) | 16.0.1.0.0 |  | Add specific helper methods
 [partner_address_street3](partner_address_street3/) | 16.0.1.0.0 |  | Add a third address line on partners
 [partner_address_two_lines](partner_address_two_lines/) | 16.0.1.0.0 |  | The company and the partner name are on two different lines
 [partner_affiliate](partner_affiliate/) | 16.0.1.0.0 |  | Partner Affiliates
