@@ -5,7 +5,7 @@
 {
     "name": "Partner Contact Tags in Contacts & Addresses Pop-up",
     "summary": """
-    Display a contact's tags in the 'Contacts & Addresses' pop-up form view.
+    Display a contact's tags in the "Contacts & Addresses" pop-up form view
     """,
     "version": "16.0.1.0.0",
     "category": "Customer Relationship Management",
