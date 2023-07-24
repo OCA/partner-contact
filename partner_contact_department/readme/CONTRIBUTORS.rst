@@ -7,3 +7,4 @@
 * Nikul Chaudhary <nikulchaudhary2112@gmail.com>
 * Harald Panten <harald.panten@sygel.es>
 * Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+* Aiendry Sarkar <aiendry@aktivsoftware.com>
