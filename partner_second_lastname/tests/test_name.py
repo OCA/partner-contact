@@ -68,6 +68,26 @@ class CompanyCase(TransactionCase):
         """Create a company with whitespace everywhere in the name."""
         self.name = "  A  lot  öf    whitespace   "
 
+    def test_clean_fields_partner_company(self):
+        """Check that the fields firstname and lastname2 are
+        cleaned when partner is updated to company type
+        """
+        self.name = "Söme very lóng nâme"
+        partner = self.env["res.partner"].create(
+            {
+                "firstname": "Company",
+                "lastname": "Duck",
+                "lastname2": "Inc",
+            }
+        )
+        self.assertEqual(partner.name, "Company Duck Inc")
+
+        partner.is_company = True
+        self.assertEqual(partner.name, "Company Duck Inc")
+        self.assertEqual(partner.lastname, "Company Duck Inc")
+        self.assertFalse(partner.firstname)
+        self.assertFalse(partner.lastname2)
+
 
 class PersonCase(TransactionCase):
     """Test ``res.partner`` when it is a person."""

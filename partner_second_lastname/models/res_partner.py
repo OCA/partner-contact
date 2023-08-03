@@ -123,3 +123,12 @@ class ResPartner(models.Model):
             for partner in self:
                 if not partner.lastname2:
                     raise
+
+    def write(self, vals):
+        res = super().write(vals)
+        if "is_company" in vals and vals["is_company"]:
+            for partner in self:
+                partner.lastname = partner.name
+                partner.firstname = None
+                partner.lastname2 = None
+        return res
