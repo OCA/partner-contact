@@ -52,6 +52,7 @@ setuptools.setup(
         'odoo-addon-partner_tz>=16.0dev,<16.1dev',
         'odoo-addon-partner_vat_unique>=16.0dev,<16.1dev',
         'odoo-addon-sale_customer_rank>=16.0dev,<16.1dev',
+        'odoo-addon-sale_partner_company_group>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
