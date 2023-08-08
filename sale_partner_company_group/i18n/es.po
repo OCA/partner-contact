@@ -37,6 +37,7 @@ msgid "Sales Order"
 msgstr "Pedido de venta"
 
 #. module: sale_partner_company_group
+#. odoo-python
 #: code:addons/sale_partner_company_group/models/res_partner.py:0
 #, python-format
 msgid "Warning"
