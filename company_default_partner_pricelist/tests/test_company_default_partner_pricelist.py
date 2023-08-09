@@ -17,7 +17,7 @@ class TestCompanyDefaultPartnerPricelist(common.TransactionCase):
         self.partner = self.env["res.partner"].create({"name": "Test customer"})
 
     def test_company_default_partner_pricelist(self):
-        """ Test Company Default Partner Pricelist """
+        """Test Company Default Partner Pricelist"""
         # By default, the pricelist of the partner is the first valid pricelist
         self.assertEqual(self.partner.property_product_pricelist, self.base_pricelist)
         # When the default is changed for the active company, the pricelist of
