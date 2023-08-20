@@ -1,0 +1,62 @@
+<odoo>
+
+    <!-- Animal Tree View -->
+    <record id="view_animal_owner_tree" model="ir.ui.view">
+        <field name="name">view.animal.owner.tree</field>
+        <field name="model">animal</field>
+        <field name="inherit_id" ref="animal.view_animal_tree" />
+        <field name="arch" type="xml">
+            <field name="color_id" position="after">
+                <field name="partner_id" />
+            </field>
+        </field>
+    </record>
+
+    <!-- Animal Form View -->
+    <record id="view_animal_owner_form" model="ir.ui.view">
+        <field name="name">view.animal.owner.form</field>
+        <field name="model">animal</field>
+        <field name="inherit_id" ref="animal.view_animal_form" />
+        <field name="arch" type="xml">
+            <field name="species_id" position="after">
+                <field name="partner_id" />
+            </field>
+        </field>
+    </record>
+
+    <!-- Animal Kanban View -->
+    <record id="view_animal_owner_kanban" model="ir.ui.view">
+        <field name="name">view.animal.owner.kanban</field>
+        <field name="model">animal</field>
+        <field name="inherit_id" ref="animal.view_animal_kanban" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="partner_id" />
+            </field>
+            <xpath expr="//div[hasclass('oe_kanban_details')]/ul" position="inside">
+                <li t-if="record.partner_id.raw_value"><field name="partner_id" /></li>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Animal Search View -->
+    <record id="view_animal_owner_search" model="ir.ui.view">
+        <field name="name">view.animal.owner.search</field>
+        <field name="model">animal</field>
+        <field name="inherit_id" ref="animal.view_animal_search" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="partner_id" />
+            </field>
+            <filter name="gender" position="before">
+                <filter
+                    name="partner_id"
+                    string="Owner"
+                    domain=""
+                    context="{'group_by': 'partner_id'}"
+                />
+            </filter>
+        </field>
+    </record>
+
+</odoo>
