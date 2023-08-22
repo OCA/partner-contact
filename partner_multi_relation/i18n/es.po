@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2019-11-10 17:34+0000\n"
-"Last-Translator: Galoperd <jvcsan@gmail.com>\n"
+"PO-Revision-Date: 2023-08-31 08:13+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.8\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -332,7 +332,7 @@ msgstr "Relación de empresa"
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "Partners cannot have a relation with themselves."
-msgstr "Partners cannot have a relation with themselves."
+msgstr "Los socios no pueden tener una relación consigo mismos."
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -353,6 +353,10 @@ msgid ""
 "                be linked to other partners with a type either directly\n"
 "                or inversely."
 msgstr ""
+"Registre y siga las relaciones de sus socios. Las relaciones pueden\n"
+"                estar vinculadas a otros interlocutores con un tipo, ya sea "
+"directamente\n"
+"                o inversamente."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__active
@@ -374,6 +378,9 @@ msgid ""
 "There are existing reflexive relations defined for the following partners: "
 "{partners}"
 msgstr ""
+"No se ha podido desactivar la reflexividad para el tipo de relación "
+"{relation_type}. Existen relaciones reflexivas definidas para los siguientes "
+"socios: {partners}"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_count
@@ -479,7 +486,7 @@ msgstr "Simétrica"
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "The %s partner is not applicable for this relation type."
-msgstr "La empresa %s no aplica para este tipo de relación"
+msgstr "El socio %s no es aplicable para este tipo de relación."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__res_model
@@ -489,7 +496,7 @@ msgstr "El objeto de base de daros en el que esta relación está basada."
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__res_id
 msgid "The id of the object in the model this relation is based on."
-msgstr ""
+msgstr "El id del objeto en el modelo en el que se basa esta relación."
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -513,6 +520,8 @@ msgid ""
 "There are already relations not satisfying the conditions for partner type "
 "or category."
 msgstr ""
+"Ya existen relaciones que no cumplen las condiciones de tipo o categoría de "
+"socio."
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -525,11 +534,13 @@ msgstr "Hay una relación similar que se solapa en fechas"
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__allow_self
 msgid "This relation can be set up with the same partner left and right"
 msgstr ""
+"Esta relación puede establecerse con el mismo socio a izquierda y derecha"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__is_symmetric
 msgid "This relation is the same from right to left as from left to right"
 msgstr ""
+"Esta relación es la misma de derecha a izquierda que de izquierda a derecha"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__type_id
@@ -539,36 +550,35 @@ msgstr "Tipo"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__type_id
-#, fuzzy
 msgid "Underlying Relation Type"
-msgstr "Tipo de relación entre empresas"
+msgstr "Tipo de relación subyacente"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner.py:0
 #, python-format
 msgid "Unsupported search operator \"%s\""
-msgstr ""
+msgstr "Operador de búsqueda no soportado \"%s\""
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_0
 msgid "Washing Companies"
-msgstr ""
+msgstr "Compañías de lavado"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_4
 msgid "Washing Gold"
-msgstr ""
+msgstr "Lavado de oro"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_11
 msgid "Washing Services"
-msgstr ""
+msgstr "Servicios de lavado"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_5
 msgid "Washing Silver"
-msgstr ""
+msgstr "Lavado de plata"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__handle_invalid_onchange
@@ -578,6 +588,11 @@ msgid ""
 "fit the new criteria.\n"
 "Specify how this situation should be handled."
 msgstr ""
+"Al añadir relaciones, se comprueban criterios como el tipo de socio y la "
+"categoría.\n"
+"Sin embargo, al cambiar los criterios, puede haber relaciones que no se "
+"ajusten a los nuevos criterios.\n"
+"Especifique cómo debe gestionarse esta situación."
 
 #. module: partner_multi_relation
 #. odoo-python
