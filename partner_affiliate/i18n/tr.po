@@ -23,49 +23,49 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_affiliate.field_res_users__affiliate_ids
 #: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Affiliates"
-msgstr ""
+msgstr "Bağlı kuruluşlar"
 
 #. module: partner_affiliate
 #: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Avatar"
-msgstr ""
+msgstr "Avatarı"
 
 #. module: partner_affiliate
 #: model:ir.model,name:partner_affiliate.model_res_partner
 #: model:ir.model.fields,field_description:partner_affiliate.field_res_partner__child_ids
 #: model:ir.model.fields,field_description:partner_affiliate.field_res_users__child_ids
 msgid "Contact"
-msgstr ""
+msgstr "iletişim"
 
 #. module: partner_affiliate
 #: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Contact image"
-msgstr ""
+msgstr "İletişim resmi"
 
 #. module: partner_affiliate
 #: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Delivery"
-msgstr ""
+msgstr "Teslimat"
 
 #. module: partner_affiliate
 #: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Invoice"
-msgstr ""
+msgstr "Fatura"
 
 #. module: partner_affiliate
 #: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #. module: partner_affiliate
 #: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Mobile:"
-msgstr ""
+msgstr "Mobile"
 
 #. module: partner_affiliate
 #: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Phone:"
-msgstr ""
+msgstr "Telefon"
 
 #~ msgid "Partner"
 #~ msgstr "İş Ortağı"
