@@ -60,7 +60,7 @@ addon | version | maintainers | summary
 [partner_identification](partner_identification/) | 15.0.1.0.0 |  | Partner Identification Numbers
 [partner_industry_parent](partner_industry_parent/) | 15.0.1.0.0 |  | This module add a parent relation to the partner industry
 [partner_industry_secondary](partner_industry_secondary/) | 15.0.1.0.0 |  | Add secondary partner industries
-[partner_manual_rank](partner_manual_rank/) | 15.0.1.0.0 | [![luisg123v](https://github.com/luisg123v.png?size=30px)](https://github.com/luisg123v) [![frahikLV](https://github.com/frahikLV.png?size=30px)](https://github.com/frahikLV) | Be able to manually flag partners as customer or supplier.
+[partner_manual_rank](partner_manual_rank/) | 15.0.1.1.0 | [![luisg123v](https://github.com/luisg123v.png?size=30px)](https://github.com/luisg123v) [![frahikLV](https://github.com/frahikLV.png?size=30px)](https://github.com/frahikLV) | Be able to manually flag partners as customer or supplier.
 [partner_multi_relation](partner_multi_relation/) | 15.0.1.0.0 |  | Partner Relations
 [partner_name_hide_parent](partner_name_hide_parent/) | 15.0.1.0.0 |  | Partner Name Hide Parent
 [partner_phone_extension](partner_phone_extension/) | 15.0.1.0.1 |  | Partner Phone Number Extension
