@@ -9,18 +9,18 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:32+0000\n"
-"PO-Revision-Date: 2019-02-04 17:50+0000\n"
-"Last-Translator: Marta Vázquez Rodríguez <vazrodmar@gmail.com>\n"
+"PO-Revision-Date: 2023-08-31 08:13+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.4\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__big
 msgid "Big"
 msgstr "Grande"
 
@@ -58,7 +58,7 @@ msgstr "Tamaño de la companía"
 #. module: partner_capital
 #: model:ir.model,name:partner_capital.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: partner_capital
 #: model:ir.model.fields,help:partner_capital.field_res_partner__capital_country_id
@@ -102,12 +102,12 @@ msgid "Last Updated on"
 msgstr "Última actualización en"
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__medium
 msgid "Medium"
 msgstr "Medio"
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__micro
 msgid "Micro"
 msgstr "Micro"
 
@@ -123,7 +123,7 @@ msgid "Publicly registered capital amount."
 msgstr "Importe del capital públicamente registrado."
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__small
 msgid "Small"
 msgstr "Pequeño"
 
@@ -135,10 +135,8 @@ msgstr "Facturación"
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner__turnover_amount
 #: model:ir.model.fields,field_description:partner_capital.field_res_users__turnover_amount
-#, fuzzy
-#| msgid "Turnover amount"
 msgid "Turnover Amount"
-msgstr "Cantidad de facturación"
+msgstr "Importe de la facturación"
 
 #. module: partner_capital
 #: model:ir.model,name:partner_capital.model_res_partner_turnover_range
@@ -150,7 +148,6 @@ msgstr "Rango de facturación"
 #. module: partner_capital
 #: model:ir.actions.act_window,name:partner_capital.res_partner_turnover_range_action
 #: model:ir.ui.menu,name:partner_capital.menu_res_partner_turnover_range
-#: model_terms:ir.ui.view,arch_db:partner_capital.res_partner_turnover_range_tree_view
 msgid "Turnover ranges"
 msgstr "Rangos de facturación"
 
