@@ -21,14 +21,14 @@ msgstr ""
 #. module: base_partner_sequence
 #: model:ir.model,name:base_partner_sequence.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "İletişim"
 
 #. module: base_partner_sequence
 #. odoo-python
 #: code:addons/base_partner_sequence/models/partner.py:0
 #, python-format
 msgid "Either field values or an id must be provided."
-msgstr ""
+msgstr "Alan değerleri veya kimlik sağlanmalıdır."
 
 #~ msgid "Partner"
 #~ msgstr "İş Ortağı"
