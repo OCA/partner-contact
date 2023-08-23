@@ -14,6 +14,9 @@ class TestCompanyDefaultPartnerPricelist(common.TransactionCase):
         self.pricelist_2 = self.env["product.pricelist"].create(
             {"name": "Test pricelist 2"}
         )
+        self.pricelist_3 = self.env["product.pricelist"].create(
+            {"name": "Test pricelist 3"}
+        )
         self.partner = self.env["res.partner"].create({"name": "Test customer"})
 
     def test_company_default_partner_pricelist(self):
@@ -25,6 +28,15 @@ class TestCompanyDefaultPartnerPricelist(common.TransactionCase):
         self.env.company.default_property_product_pricelist = self.pricelist_2
         self.partner.invalidate_cache()
         self.assertEqual(self.partner.property_product_pricelist, self.pricelist_2)
+
+        self.env.company.default_property_product_pricelist = self.pricelist_3
+        self.partner.invalidate_cache()
+        self.assertEqual(self.partner.property_product_pricelist, self.pricelist_3)
+
+        self.env.company.default_property_product_pricelist = False
+        self.partner.invalidate_cache()
+        self.assertEqual(self.partner.property_product_pricelist, self.base_pricelist)
+
         # Finally, when modified explicitly, the pricelist is the one
         # set by the user
         self.partner.property_product_pricelist = self.pricelist_1
