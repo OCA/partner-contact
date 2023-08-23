@@ -1,0 +1,159 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_stage
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-08-31 08:13+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__active
+#: model:res.partner.stage,name:partner_stage.partner_stage_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: partner_stage
+#: model:ir.model.fields.selection,name:partner_stage.selection__res_partner_stage__state__confirmed
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: partner_stage
+#: model:ir.model.fields.selection,name:partner_stage.selection__res_partner_stage__state__cancel
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__code
+msgid "Code"
+msgstr "Código"
+
+#. module: partner_stage
+#: model:ir.model,name:partner_stage.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_stage
+#: model:ir.model,name:partner_stage.model_res_partner_stage
+msgid "Contact Stage"
+msgstr "Etapa de contacto"
+
+#. module: partner_stage
+#: model:ir.ui.menu,name:partner_stage.menu_partner_stage
+msgid "Contact Stages"
+msgstr "Etapas de contacto"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__is_default
+msgid "Default state"
+msgstr "Estado por defecto"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: partner_stage
+#: model:res.partner.stage,name:partner_stage.partner_stage_draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__fold
+msgid "Fold"
+msgstr "Pliegue"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: partner_stage
+#: model:res.partner.stage,name:partner_stage.partner_stage_inactive
+msgid "Inactive"
+msgstr "Inactivo"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__write_date
+msgid "Last Updated on"
+msgstr "Última Actualización el"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__state
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__state
+msgid "Related State"
+msgstr "Estado relacionado"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: partner_stage
+#: model:ir.actions.act_window,name:partner_stage.action_partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__stage_id
+#: model:ir.model.fields,field_description:partner_stage.field_res_users__stage_id
+#: model_terms:ir.ui.view,arch_db:partner_stage.view_partner_search
+msgid "Stage"
+msgstr "Etapa"
+
+#. module: partner_stage
+#: model:ir.model.constraint,message:partner_stage.constraint_res_partner_stage_res_partner_stage_code_unique
+msgid "Stage Code must be unique."
+msgstr "El código de etapa debe ser único."
+
+#. module: partner_stage
+#. odoo-python
+#: code:addons/partner_stage/models/res_partner_stage.py:0
+#, python-format
+msgid "There should be only one default stage"
+msgstr "Sólo debería haber una etapa predeterminada"
+
+#. module: partner_stage
+#: model:ir.model.fields.selection,name:partner_stage.selection__res_partner_stage__state__draft
+msgid "To Approve"
+msgstr "Para Aprobar"
+
+#. module: partner_stage
+#: model:ir.model.fields,help:partner_stage.field_res_partner_stage__sequence
+msgid "Used to order the stages"
+msgstr "Se utiliza para ordenar las etapas"
