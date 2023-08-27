@@ -41,6 +41,7 @@ setuptools.setup(
         'odoo-addon-partner_deduplicate_filter>=15.0dev,<15.1dev',
         'odoo-addon-partner_email_check>=15.0dev,<15.1dev',
         'odoo-addon-partner_employee_quantity>=15.0dev,<15.1dev',
+        'odoo-addon-partner_exception>=15.0dev,<15.1dev',
         'odoo-addon-partner_external_map>=15.0dev,<15.1dev',
         'odoo-addon-partner_fax>=15.0dev,<15.1dev',
         'odoo-addon-partner_firstname>=15.0dev,<15.1dev',
