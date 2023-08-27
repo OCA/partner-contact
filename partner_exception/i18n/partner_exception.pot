@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -38,4 +38,24 @@ msgstr ""
 #. module: partner_exception
 #: model:ir.model,name:partner_exception.model_exception_rule
 msgid "Exception Rule"
+msgstr ""
+
+#. module: partner_exception
+#: model:ir.model.fields,field_description:partner_exception.field_res_partner__exception_ids
+msgid "Exceptions"
+msgstr ""
+
+#. module: partner_exception
+#: model:ir.model.fields,field_description:partner_exception.field_res_partner__exceptions_summary
+msgid "Exceptions Summary"
+msgstr ""
+
+#. module: partner_exception
+#: model:ir.model.fields,field_description:partner_exception.field_res_partner__ignore_exception
+msgid "Ignore Exceptions"
+msgstr ""
+
+#. module: partner_exception
+#: model:ir.model.fields,field_description:partner_exception.field_res_partner__main_exception_id
+msgid "Main Exception"
 msgstr ""
