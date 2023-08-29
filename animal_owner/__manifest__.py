@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Animal Owner",
-    "version": "15.0.0.0.0",
+    "version": "15.0.0.0.1",
     "license": "AGPL-3",
     "summary": "Add owner to the animal",
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
