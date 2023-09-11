@@ -132,11 +132,20 @@ class ResPartnerRelation(models.Model):
         # pylint: disable=no-member
         # pylint: disable=no-value-for-parameter
         for record in self:
-            domain = [
-                ("type_id", "=", record.type_id.id),
-                ("id", "!=", record.id),
+            domain = []
+            if record.type_id.is_symmetric:
+                domain = [
+                    "|",
+                    "&",
+                    ("left_partner_id", "=", record.right_partner_id.id),
+                    ("right_partner_id", "=", record.left_partner_id.id),
+                ]
+            domain += [
+                "&",
                 ("left_partner_id", "=", record.left_partner_id.id),
                 ("right_partner_id", "=", record.right_partner_id.id),
+                ("type_id", "=", record.type_id.id),
+                ("id", "!=", record.id),
             ]
             if record.date_start:
                 domain += [
