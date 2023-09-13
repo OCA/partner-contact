@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-13 00:57+0000\n"
-"PO-Revision-Date: 2023-01-02 11:57+0000\n"
-"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"PO-Revision-Date: 2023-09-20 17:51+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
 "language/it/)\n"
 "Language: it\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,exclude_contact:0
@@ -292,7 +292,7 @@ msgstr ""
 #. module: base_partner_merge
 #: field:base.partner.merge.automatic.wizard,group_by_vat:0
 msgid "VAT"
-msgstr "Partita IVA"
+msgstr "IVA"
 
 #. module: base_partner_merge
 #: field:base.partner.merge.line,wizard_id:0
