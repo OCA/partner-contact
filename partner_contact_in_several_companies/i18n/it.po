@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-20 01:37+0000\n"
-"PO-Revision-Date: 2023-06-16 16:08+0000\n"
-"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"PO-Revision-Date: 2023-09-20 20:09+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-9-0/"
 "language/it/)\n"
 "Language: it\n"
@@ -70,7 +70,7 @@ msgstr "Tipo di contatto"
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Country"
-msgstr "Paese"
+msgstr "Nazione"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
