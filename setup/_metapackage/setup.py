@@ -35,6 +35,7 @@ setuptools.setup(
         'odoo-addon-partner_contact_nationality>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_personal_information_page>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_type_end_user>=16.0dev,<16.1dev',
+        'odoo-addon-partner_deduplicate_acl>=16.0dev,<16.1dev',
         'odoo-addon-partner_disable_gravatar>=16.0dev,<16.1dev',
         'odoo-addon-partner_email_duplicate_warn>=16.0dev,<16.1dev',
         'odoo-addon-partner_external_map>=16.0dev,<16.1dev',
