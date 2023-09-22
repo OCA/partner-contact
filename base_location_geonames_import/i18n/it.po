@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2023-09-20 17:54+0000\n"
-"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"PO-Revision-Date: 2023-09-22 11:37+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -32,8 +32,8 @@ msgid ""
 ", create new location entries if not found already in the system, and "
 "<b>delete missing entries</b> from new file."
 msgstr ""
-", creare nuove voci località, se non già presenti nel sistema, e <b> "
-"eliminare le voci mancanti </ b> dal nuovo file."
+", creare nuove voci località, se non già presenti nel sistema, e "
+"<b>eliminare le voci mancanti</b> dal nuovo file."
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
@@ -52,9 +52,8 @@ msgstr ""
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__country_ids
-#, fuzzy
 msgid "Countries"
-msgstr "Paese"
+msgstr "Nazioni"
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_res_country
