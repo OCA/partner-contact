@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2023-03-23 13:24+0000\n"
+"PO-Revision-Date: 2023-09-22 11:37+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -354,6 +354,10 @@ msgid ""
 "                be linked to other partners with a type either directly\n"
 "                or inversely."
 msgstr ""
+"Registra e traccia le relazioni dei tuoi partner. Le relazioni\n"
+"                 possono essere collegato ad altri partner con un tipo "
+"direttamente\n"
+"                 o inversamente."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__active
@@ -587,8 +591,9 @@ msgid ""
 "Specify how this situation should be handled."
 msgstr ""
 "Quando si aggiungono criteri di relazione come il tipo di partner e la "
-"categoria vengono controllati. Tuttavia, quando si modificano i criteri, "
-"potrebbero esserci relazioni che non si adattano ai nuovi criteri. "
+"categoria vengono controllati. \n"
+"Tuttavia, quando si modificano i criteri, potrebbero esserci relazioni che "
+"non si adattano ai nuovi criteri. \n"
 "Specificare come gestire questa situazione."
 
 #. module: partner_multi_relation
