@@ -8,3 +8,4 @@
   * César A. Sánchez
 
 * Kevin Khao <kevin.khao@gmail.com>
+* Aiendry Sarkar <aiendry@aktivsoftware.com>
