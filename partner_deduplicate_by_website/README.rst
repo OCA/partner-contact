@@ -88,6 +88,7 @@ Contributors
   * Cristina Martin
   * Victor M.M. Torres
 * Kevin Khao <kevinkhao@gmail.com>
+* Aiendry Sarkar <aiendry@aktivsoftware.com>
 
 Maintainers
 ~~~~~~~~~~~
