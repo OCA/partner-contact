@@ -68,6 +68,7 @@ addon | version | maintainers | summary
 [partner_tier_validation](partner_tier_validation/) | 16.0.1.0.0 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Support a tier validation process for Contacts
 [partner_tz](partner_tz/) | 16.0.1.0.0 |  | Remove partner timezone default value and display on form
 [partner_vat_unique](partner_vat_unique/) | 16.0.1.0.0 |  | Module to make the VAT number unique for customers and suppliers.
+[purchase_supplier_rank](purchase_supplier_rank/) | 16.0.1.0.1 |  | Update Supplier Rank when creating a Purchase Order
 [sale_customer_rank](sale_customer_rank/) | 16.0.1.0.0 |  | Update Customer Rank when creating a Sale Order
 [sale_partner_company_group](sale_partner_company_group/) | 16.0.1.0.0 |  | Adds the possibility to add a company group to a company
 
