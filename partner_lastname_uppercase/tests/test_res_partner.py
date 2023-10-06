@@ -5,6 +5,13 @@ from odoo.tests.common import TransactionCase
 
 
 class LastnameUppercaseCase(TransactionCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env["ir.config_parameter"].sudo().set_param(
+            "partner_lastname_uppercase.convert_lastnames_to_uppercase", True
+        )
+
     def _create_partner(self):
         return self.env["res.partner"].create(
             {
