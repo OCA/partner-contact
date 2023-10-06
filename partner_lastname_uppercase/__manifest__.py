@@ -13,5 +13,6 @@
     "depends": ["partner_firstname"],
     "data": [
         "data/actions.xml",
+        "views/res_config_settings.xml",
     ],
 }
