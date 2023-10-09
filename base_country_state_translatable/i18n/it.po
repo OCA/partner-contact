@@ -30,6 +30,21 @@ msgid "Country state"
 msgstr "Provincia Paese"
 
 #. module: base_country_state_translatable
+#: model:ir.model.fields,field_description:base_country_state_translatable.field_res_country_state__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: base_country_state_translatable
+#: model:ir.model.fields,field_description:base_country_state_translatable.field_res_country_state__id
+msgid "ID"
+msgstr ""
+
+#. module: base_country_state_translatable
+#: model:ir.model.fields,field_description:base_country_state_translatable.field_res_country_state____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: base_country_state_translatable
 #: model:ir.model.fields,field_description:base_country_state_translatable.field_res_country_state__name
 msgid "State Name"
 msgstr ""
