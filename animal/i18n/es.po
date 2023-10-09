@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* animal
+# 	* animal
 #
 msgid ""
 msgstr ""
@@ -515,7 +515,8 @@ msgstr "Especies"
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__activity_state
-msgid "Status based on activities\n"
+msgid ""
+"Status based on activities\n"
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
