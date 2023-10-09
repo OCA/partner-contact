@@ -98,12 +98,12 @@ msgstr ""
 #: code:addons/partner_company_group/models/res_partner.py:0
 #, python-format
 msgid ""
-"This contact has members of a company group with different pricelists, the members are:\n"
+"This contact has members of a company group with different pricelists, the "
+"members are:\n"
 "%s"
 msgstr ""
 
 #. module: partner_company_group
-#: code:addons/partner_company_group/models/res_partner.py:0
 #: code:addons/partner_company_group/models/res_partner.py:0
 #, python-format
 msgid "Warning"
