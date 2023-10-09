@@ -35,6 +35,13 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__display_name
+msgid "Display Name"
+msgstr "Vaizduojamas pavadinimas"
+
+#. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Enable industries for individuals"
 msgstr ""
@@ -52,6 +59,13 @@ msgid "Error! You cannot create recursive industries."
 msgstr ""
 
 #. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_config_settings__id
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Industries"
 msgstr ""
@@ -61,6 +75,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.view_res_partner_filter_industry
 msgid "Industry"
 msgstr ""
+
+#. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner____last_update
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry____last_update
+msgid "Last Modified on"
+msgstr "Paskutinį kartą keista"
 
 #. module: partner_industry_secondary
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner__industry_id
@@ -116,15 +137,6 @@ msgstr ""
 
 #~ msgid "Created on"
 #~ msgstr "Sukurta"
-
-#~ msgid "Display Name"
-#~ msgstr "Vaizduojamas pavadinimas"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Last Modified on"
-#~ msgstr "Paskutinį kartą keista"
 
 #~ msgid "Last Updated by"
 #~ msgstr "Paskutinį kartą atnaujino"
