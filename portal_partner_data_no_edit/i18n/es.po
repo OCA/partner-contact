@@ -10,11 +10,11 @@ msgstr ""
 "PO-Revision-Date: 2021-02-04 11:18+0100\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"Language: es\n"
 "X-Generator: Poedit 2.3\n"
 
 #. module: portal_partner_data_no_edit
@@ -23,16 +23,18 @@ msgid "<i class=\"fa fa-eye\"/> View"
 msgstr "<i class=\"fa fa-eye\"/> Ver"
 
 #. module: portal_partner_data_no_edit
-#: model:ir.model.fields,help:portal_partner_data_no_edit.field_res_partner__block_portal_data_edit
-#: model:ir.model.fields,help:portal_partner_data_no_edit.field_res_users__block_portal_data_edit
-msgid "Block portal info editing for the portal user linked to this partner"
-msgstr "Bloquea la edición de la información al usuario de portal vinculado a este contacto"
-
-#. module: portal_partner_data_no_edit
 #: model:ir.model.fields,field_description:portal_partner_data_no_edit.field_res_partner__block_portal_data_edit
 #: model:ir.model.fields,field_description:portal_partner_data_no_edit.field_res_users__block_portal_data_edit
 msgid "Block Customer Info Edit"
 msgstr "Bloquear edición de datos de portal"
+
+#. module: portal_partner_data_no_edit
+#: model:ir.model.fields,help:portal_partner_data_no_edit.field_res_partner__block_portal_data_edit
+#: model:ir.model.fields,help:portal_partner_data_no_edit.field_res_users__block_portal_data_edit
+msgid "Block portal info editing for the portal user linked to this partner"
+msgstr ""
+"Bloquea la edición de la información al usuario de portal vinculado a este "
+"contacto"
 
 #. module: portal_partner_data_no_edit
 #: model:ir.model,name:portal_partner_data_no_edit.model_res_partner
