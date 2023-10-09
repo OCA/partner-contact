@@ -50,7 +50,6 @@ msgstr ""
 #. module: partner_contact_department
 #: model:ir.actions.act_window,name:partner_contact_department.res_partner_department_action
 #: model:ir.ui.menu,name:partner_contact_department.menu_res_partner_department
-#: model_terms:ir.ui.view,arch_db:partner_contact_department.res_partner_department_tree_view
 msgid "Departments"
 msgstr ""
 
