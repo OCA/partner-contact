@@ -46,12 +46,6 @@ msgid "Error! Industry with same name and parent already exists."
 msgstr "¡Error! Ya existe una industria con el mismo nombre y matriz."
 
 #. module: partner_industry_secondary
-#: code:addons/partner_industry_secondary/models/res_partner_industry.py:0
-#, python-format
-msgid "Error! You cannot create recursive industries."
-msgstr "Error!. No puede crear sectores recursivos."
-
-#. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Industries"
 msgstr "Sectores"
@@ -111,6 +105,10 @@ msgstr ""
 #: model:res.groups,name:partner_industry_secondary.group_use_partner_industry_for_person
 msgid "Use industry for individuals"
 msgstr "Use el sector para individuos"
+
+#, python-format
+#~ msgid "Error! You cannot create recursive industries."
+#~ msgstr "Error!. No puede crear sectores recursivos."
 
 #~ msgid "Industry for individual"
 #~ msgstr "Sector para personas"
