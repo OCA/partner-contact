@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2017-07-08 02:41+0000\n"
 "PO-Revision-Date: 2020-08-12 18:59+0000\n"
 "Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
-"23907/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
+"teams/23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,6 +35,21 @@ msgstr "Número de registro CoC"
 #: model:ir.model,name:partner_coc.model_res_partner
 msgid "Contact"
 msgstr "Contato"
+
+#. module: partner_coc
+#: model:ir.model.fields,field_description:partner_coc.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_coc
+#: model:ir.model.fields,field_description:partner_coc.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_coc
+#: model:ir.model.fields,field_description:partner_coc.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr ""
 
 #~ msgid "Partner"
 #~ msgstr "Parceiro"
