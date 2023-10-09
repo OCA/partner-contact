@@ -94,6 +94,7 @@ msgid "Destination Partner"
 msgstr "Parceiro de destino"
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__display_name
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__display_name
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__display_name
@@ -166,6 +167,7 @@ msgid "Has worked for"
 msgstr "Trabalhou para"
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__id
@@ -212,6 +214,7 @@ msgid "Is reverse type?"
 msgstr ""
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation____last_update
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all____last_update
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type____last_update
