@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 3.4\n"
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__big
 msgid "Big"
 msgstr "Grande"
 
@@ -77,16 +77,19 @@ msgid "Created on"
 msgstr "Creado en"
 
 #. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
 
 #. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__id
 msgid "ID"
 msgstr "ID"
 
 #. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range____last_update
 msgid "Last Modified on"
 msgstr "Última modificación el"
@@ -102,12 +105,12 @@ msgid "Last Updated on"
 msgstr "Última actualización en"
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__medium
 msgid "Medium"
 msgstr "Medio"
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__micro
 msgid "Micro"
 msgstr "Micro"
 
@@ -123,7 +126,7 @@ msgid "Publicly registered capital amount."
 msgstr "Importe del capital públicamente registrado."
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__small
 msgid "Small"
 msgstr "Pequeño"
 
@@ -136,7 +139,6 @@ msgstr "Facturación"
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner__turnover_amount
 #: model:ir.model.fields,field_description:partner_capital.field_res_users__turnover_amount
 #, fuzzy
-#| msgid "Turnover amount"
 msgid "Turnover Amount"
 msgstr "Cantidad de facturación"
 

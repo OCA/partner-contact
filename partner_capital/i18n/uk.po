@@ -20,7 +20,7 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__big
 msgid "Big"
 msgstr ""
 
@@ -77,16 +77,19 @@ msgid "Created on"
 msgstr "Дата створення"
 
 #. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__display_name
 msgid "Display Name"
 msgstr "Назва для відображення"
 
 #. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__id
 msgid "ID"
 msgstr "ID"
 
 #. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range____last_update
 msgid "Last Modified on"
 msgstr "Остання модифікація"
@@ -102,12 +105,12 @@ msgid "Last Updated on"
 msgstr "Останнє оновлення"
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__medium
 msgid "Medium"
 msgstr ""
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__micro
 msgid "Micro"
 msgstr ""
 
@@ -123,7 +126,7 @@ msgid "Publicly registered capital amount."
 msgstr ""
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__small
 msgid "Small"
 msgstr ""
 
