@@ -20,6 +20,12 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__allowed_nut_ids
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_users__allowed_nut_ids
+msgid "Allowed nuts"
+msgstr ""
+
+#. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
 msgid "Cancel"
 msgstr "Cancelar"
@@ -59,6 +65,11 @@ msgid "Created on"
 msgstr "Creado en"
 
 #. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__current_country_id
+msgid "Current Country"
+msgstr ""
+
+#. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__display_name
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__display_name
 msgid "Display Name"
@@ -73,8 +84,8 @@ msgstr "El fichero descargado no es un fichero XML válido"
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:0
 #, python-format
-msgid "Got an error %d when trying to download the file %s."
-msgstr "Error %d al intentar descargar el fichero %s."
+msgid "Got an error %(status_code)s when trying to download the file %(url)s."
+msgstr ""
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:0
@@ -157,7 +168,6 @@ msgstr "Objeto NUTS"
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.res_partner_nuts_action
 #: model:ir.ui.menu,name:base_location_nuts.res_partner_nuts_menu
-#: model_terms:ir.ui.view,arch_db:base_location_nuts.res_partner_nuts_tree
 msgid "NUTS Items"
 msgstr "Objetos NUTS"
 
@@ -263,6 +273,10 @@ msgstr ""
 "        en la base de datos Odoo en:\n"
 "        Ventas &gt; Configuración &gt; Libreta de direcciones &gt; "
 "Localización &gt; Importar NUTS 2013"
+
+#, python-format
+#~ msgid "Got an error %d when trying to download the file %s."
+#~ msgstr "Error %d al intentar descargar el fichero %s."
 
 #~ msgid "Parent Right"
 #~ msgstr "Padre derecha"
