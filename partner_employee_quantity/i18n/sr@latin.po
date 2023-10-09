@@ -36,6 +36,7 @@ msgid "Created on"
 msgstr "Kreiran"
 
 #. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__display_name
 msgid "Display Name"
 msgstr "Ime za prikaz"
@@ -59,11 +60,13 @@ msgid "Employee quantity range"
 msgstr ""
 
 #. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range__id
 msgid "ID"
 msgstr "ID"
 
 #. module: partner_employee_quantity
+#: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_employee_quantity.field_res_partner_employee_quantity_range____last_update
 msgid "Last Modified on"
 msgstr "Zadnja izmjena"
