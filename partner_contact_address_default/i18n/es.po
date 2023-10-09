@@ -47,4 +47,5 @@ msgstr "Dirección de envío"
 #. module: partner_contact_address_default
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
 msgid "You can force and delivery and invoice address for this contacts."
-msgstr "Puede forzar las dirección de envío y facturación para estos contactos."
+msgstr ""
+"Puede forzar las dirección de envío y facturación para estos contactos."
