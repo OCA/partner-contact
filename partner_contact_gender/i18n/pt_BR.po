@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2015-12-17 01:36+0000\n"
 "PO-Revision-Date: 2020-08-12 18:59+0000\n"
 "Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/"
-"OCA-partner-contact-9-0/language/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-"
+"contact-9-0/language/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,6 +25,11 @@ msgid "Contact"
 msgstr "Contato"
 
 #. module: partner_contact_gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_contact_gender
 #: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__female
 msgid "Female"
 msgstr "Mulher"
@@ -34,6 +39,16 @@ msgstr "Mulher"
 #: model:ir.model.fields,field_description:partner_contact_gender.field_res_users__gender
 msgid "Gender"
 msgstr "Gênero"
+
+#. module: partner_contact_gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_contact_gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr ""
 
 #. module: partner_contact_gender
 #: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__male

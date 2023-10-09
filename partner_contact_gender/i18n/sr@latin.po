@@ -26,6 +26,11 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_contact_gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_contact_gender
 #: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__female
 msgid "Female"
 msgstr ""
@@ -34,6 +39,16 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner__gender
 #: model:ir.model.fields,field_description:partner_contact_gender.field_res_users__gender
 msgid "Gender"
+msgstr ""
+
+#. module: partner_contact_gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_contact_gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner____last_update
+msgid "Last Modified on"
 msgstr ""
 
 #. module: partner_contact_gender
