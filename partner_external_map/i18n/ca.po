@@ -142,7 +142,8 @@ msgstr "Mapes"
 #: code:addons/partner_external_map/models/res_partner.py:52
 #, python-format
 msgid "Missing map provider: you should set it in your preferences."
-msgstr "Falta el proveïdor de mapes: deu establir-lo en les seves preferències."
+msgstr ""
+"Falta el proveïdor de mapes: deu establir-lo en les seves preferències."
 
 #. module: partner_external_map
 #: code:addons/partner_external_map/models/res_partner.py:63
