@@ -44,8 +44,13 @@ msgid "All positions"
 msgstr ""
 
 #. module: partner_contact_in_several_companies
-#: selection:res.partner,contact_type:0
+#: model:ir.model.fields.selection,name:partner_contact_in_several_companies.selection__res_partner__contact_type__attached
 msgid "Attached to existing Contact"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Avatar"
 msgstr ""
 
 #. module: partner_contact_in_several_companies
@@ -74,6 +79,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Country"
 msgstr "Maa"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Logo"
+msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner__contact_id
@@ -108,7 +118,7 @@ msgid "Phone:"
 msgstr ""
 
 #. module: partner_contact_in_several_companies
-#: selection:res.partner,contact_type:0
+#: model:ir.model.fields.selection,name:partner_contact_in_several_companies.selection__res_partner__contact_type__standalone
 msgid "Standalone Contact"
 msgstr ""
 
