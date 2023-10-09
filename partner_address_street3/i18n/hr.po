@@ -31,6 +31,12 @@ msgid "Country"
 msgstr "Država"
 
 #. module: partner_address_street3
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_country__display_name
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_address_street3
 #: model:ir.model.fields,help:partner_address_street3.field_res_country__address_format
 msgid ""
 "Display format to use for addresses belonging to this country.\n"
@@ -41,6 +47,18 @@ msgid ""
 "%(state_code)s: the code of the state\n"
 "%(country_name)s: the name of the country\n"
 "%(country_code)s: the code of the country"
+msgstr ""
+
+#. module: partner_address_street3
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_country__id
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_address_street3
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_country____last_update
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_partner____last_update
+msgid "Last Modified on"
 msgstr ""
 
 #. module: partner_address_street3
@@ -55,8 +73,9 @@ msgid "Street 3"
 msgstr "Ulica 3"
 
 #. module: partner_address_street3
-#: model_terms:ir.ui.view,arch_db:partner_address_street3.add_street3_in_form_view
+#: model_terms:ir.ui.view,arch_db:partner_address_street3.res_partner_view_form_private
 #: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_address_form
+#: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_form
 msgid "Street 3..."
 msgstr "Ulica 3..."
 
