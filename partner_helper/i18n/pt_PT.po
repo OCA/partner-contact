@@ -24,5 +24,20 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#. module: partner_helper
+#: model:ir.model.fields,field_description:partner_helper.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_helper
+#: model:ir.model.fields,field_description:partner_helper.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_helper
+#: model:ir.model.fields,field_description:partner_helper.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr ""
+
 #~ msgid "Partner"
 #~ msgstr "Parceiro"
