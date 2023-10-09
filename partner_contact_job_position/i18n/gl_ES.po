@@ -41,11 +41,13 @@ msgid "Created on"
 msgstr ""
 
 #. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__display_name
 msgid "Display Name"
 msgstr ""
 
 #. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__id
 msgid "ID"
 msgstr "ID"
@@ -69,6 +71,7 @@ msgid "Job positions"
 msgstr ""
 
 #. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position____last_update
 msgid "Last Modified on"
 msgstr ""
