@@ -22,6 +22,21 @@ msgid "Contact"
 msgstr "Contacto"
 
 #. module: partner_vat_unique
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_vat_unique
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__vat
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_users__vat
 msgid "Tax ID"
