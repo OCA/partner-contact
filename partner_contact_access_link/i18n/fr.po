@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_contact_access_link
+# 	* partner_contact_access_link
 #
 msgid ""
 msgstr ""
