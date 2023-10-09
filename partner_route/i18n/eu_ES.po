@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_route
+# 	* partner_route
 #
 msgid ""
 msgstr ""
@@ -327,7 +327,8 @@ msgstr ""
 
 #. module: partner_route
 #: model:ir.model.fields,help:partner_route.field_partner_route__activity_state
-msgid "Status based on activities\n"
+msgid ""
+"Status based on activities\n"
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
