@@ -28,24 +28,6 @@ msgid "Customers"
 msgstr "Clientes"
 
 #. module: partner_pricelist_search
-#: model:ir.model.fields,field_description:partner_pricelist_search.field_product_pricelist__display_name
-#: model:ir.model.fields,field_description:partner_pricelist_search.field_res_partner__display_name
-msgid "Display Name"
-msgstr "Mostrar Nombre"
-
-#. module: partner_pricelist_search
-#: model:ir.model.fields,field_description:partner_pricelist_search.field_product_pricelist__id
-#: model:ir.model.fields,field_description:partner_pricelist_search.field_res_partner__id
-msgid "ID"
-msgstr "ID (identificación)"
-
-#. module: partner_pricelist_search
-#: model:ir.model.fields,field_description:partner_pricelist_search.field_product_pricelist____last_update
-#: model:ir.model.fields,field_description:partner_pricelist_search.field_res_partner____last_update
-msgid "Last Modified on"
-msgstr "Última Modificación el"
-
-#. module: partner_pricelist_search
 #: model:ir.model,name:partner_pricelist_search.model_product_pricelist
 #: model:ir.model.fields,field_description:partner_pricelist_search.field_res_partner__property_product_pricelist
 #: model:ir.model.fields,field_description:partner_pricelist_search.field_res_users__property_product_pricelist
@@ -61,3 +43,12 @@ msgid ""
 msgstr ""
 "Esta tarifa se utilizará, en lugar de la por defecto, para las ventas de la "
 "empresa actual"
+
+#~ msgid "Display Name"
+#~ msgstr "Mostrar Nombre"
+
+#~ msgid "ID"
+#~ msgstr "ID (identificación)"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificación el"
