@@ -22,6 +22,11 @@ msgid "Contact"
 msgstr "Contacto"
 
 #. module: partner_manual_rank
+#: model_terms:ir.ui.view,arch_db:partner_manual_rank.view_res_partner_filter
+msgid "Customers"
+msgstr ""
+
+#. module: partner_manual_rank
 #: model:ir.model.fields,field_description:partner_manual_rank.field_res_partner__is_customer
 #: model:ir.model.fields,field_description:partner_manual_rank.field_res_users__is_customer
 msgid "Is a Customer"
@@ -34,9 +39,15 @@ msgid "Is a Supplier"
 msgstr "É Fornecedor"
 
 #. module: partner_manual_rank
+#. odoo-python
 #: code:addons/partner_manual_rank/models/res_partner.py:0
 #, python-format
 msgid "Operation not supported"
+msgstr ""
+
+#. module: partner_manual_rank
+#: model_terms:ir.ui.view,arch_db:partner_manual_rank.view_res_partner_filter
+msgid "Suppliers"
 msgstr ""
 
 #~ msgid "Display Name"
