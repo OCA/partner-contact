@@ -41,7 +41,6 @@ msgstr "Fournisseur"
 #. module: partner_manual_rank
 #. odoo-python
 #: code:addons/partner_manual_rank/models/res_partner.py:0
-#: code:addons/partner_manual_rank/models/res_partner.py:0
 #, python-format
 msgid "Operation not supported"
 msgstr "Opération non supportée"
