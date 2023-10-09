@@ -310,11 +310,6 @@ msgid "Partner Relation Type"
 msgstr "Tipo di relazione del partner"
 
 #. module: partner_multi_relation
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.tree_res_partner_relation_all
-msgid "Partner Relations"
-msgstr "Relazioni partner"
-
-#. module: partner_multi_relation
 #: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
 msgid "Partner Relations Types"
 msgstr "Tipi di relazioni con i partner"
@@ -477,12 +472,6 @@ msgstr "Simmetrico"
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
-msgid "The {partner} partner does not have category {category}."
-msgstr "Il partner {partner} non ha la categoria {category}."
-
-#. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "The %s partner is not applicable for this relation type."
 msgstr "Il partner %s non è applicabile per questo tipo di relazione."
 
@@ -501,6 +490,12 @@ msgstr "L'id dell'oggetto nel modello su cui si basa questa relazione."
 #, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr "La data di inizio non può essere successiva alla data di fine."
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
+#, python-format
+msgid "The {partner} partner does not have category {category}."
+msgstr "Il partner {partner} non ha la categoria {category}."
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
@@ -593,6 +588,9 @@ msgstr "altro"
 #, python-format
 msgid "this"
 msgstr "Questo"
+
+#~ msgid "Partner Relations"
+#~ msgstr "Relazioni partner"
 
 #~ msgid ""
 #~ "Record and track your partners' relations. Relations may\n"
