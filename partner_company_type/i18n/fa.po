@@ -56,16 +56,19 @@ msgid "Created on"
 msgstr "ایجاد شده در"
 
 #. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__display_name
 msgid "Display Name"
 msgstr "نام نمایشی"
 
 #. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__id
 msgid "ID"
 msgstr "شناسه"
 
 #. module: partner_company_type
+#: model:ir.model.fields,field_description:partner_company_type.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type____last_update
 msgid "Last Modified on"
 msgstr "تاریخ آخرین به‌روزرسانی"
