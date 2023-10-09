@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_pricelist_search
+# 	* partner_pricelist_search
 #
 msgid ""
 msgstr ""
@@ -43,7 +43,9 @@ msgstr ""
 #. module: partner_pricelist_search
 #: model:ir.model.fields,help:partner_pricelist_search.field_res_partner__property_product_pricelist
 #: model:ir.model.fields,help:partner_pricelist_search.field_res_users__property_product_pricelist
-msgid "This pricelist will be used, instead of the default one, for sales to the current partner"
+msgid ""
+"This pricelist will be used, instead of the default one, for sales to the "
+"current partner"
 msgstr ""
 "Cette liste de prix sera utilisée, en remplacement de la liste de prix par "
 "défaut, pour les vente de ce contact"
