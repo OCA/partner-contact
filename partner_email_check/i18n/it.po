@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_email_check
+# 	* partner_email_check
 #
 msgid ""
 msgstr ""
@@ -70,7 +70,9 @@ msgstr ""
 #. module: partner_email_check
 #: code:addons/partner_email_check/models/res_partner.py:40
 #, python-format
-msgid "Field contains multiple email addresses. This is not supported when duplicate email addresses are not allowed."
+msgid ""
+"Field contains multiple email addresses. This is not supported when "
+"duplicate email addresses are not allowed."
 msgstr ""
 
 #. module: partner_email_check
