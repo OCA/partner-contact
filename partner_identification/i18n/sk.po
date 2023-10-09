@@ -97,7 +97,6 @@ msgid "Display Name"
 msgstr "Zobraziť meno"
 
 #. module: partner_identification
-#. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid ""
@@ -282,7 +281,6 @@ msgid ""
 msgstr "Miesto vydania čísla ID, napr. názov krajiny pre pasy a víza"
 
 #. module: partner_identification
-#. odoo-python
 #: code:addons/partner_identification/models/res_partner.py:0
 #, python-format
 msgid ""
@@ -314,7 +312,6 @@ msgid "Validation period stating date."
 msgstr "Dátum overenia platnosti periódy."
 
 #. module: partner_identification
-#. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid "{id_name} is not a valid {cat_name} identifier"

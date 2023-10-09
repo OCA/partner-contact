@@ -96,7 +96,6 @@ msgid "Display Name"
 msgstr "Прикажи име"
 
 #. module: partner_identification
-#. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid ""
@@ -276,7 +275,6 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#. odoo-python
 #: code:addons/partner_identification/models/res_partner.py:0
 #, python-format
 msgid ""
@@ -306,7 +304,6 @@ msgid "Validation period stating date."
 msgstr ""
 
 #. module: partner_identification
-#. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid "{id_name} is not a valid {cat_name} identifier"

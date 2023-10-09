@@ -98,7 +98,6 @@ msgid "Display Name"
 msgstr "显示名称"
 
 #. module: partner_identification
-#. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid ""
@@ -278,7 +277,6 @@ msgid ""
 msgstr "证件签发地点。例如签发护照与签证的国家"
 
 #. module: partner_identification
-#. odoo-python
 #: code:addons/partner_identification/models/res_partner.py:0
 #, python-format
 msgid ""
@@ -308,7 +306,6 @@ msgid "Validation period stating date."
 msgstr "有效期开始日期。"
 
 #. module: partner_identification
-#. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid "{id_name} is not a valid {cat_name} identifier"
