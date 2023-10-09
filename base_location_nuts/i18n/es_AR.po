@@ -11,14 +11,20 @@ msgstr ""
 "POT-Creation-Date: 2017-07-08 02:41+0000\n"
 "PO-Revision-Date: 2020-12-08 20:36+0000\n"
 "Last-Translator: Ignacio Buioli <ibuioli@gmail.com>\n"
-"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/teams/"
-"23907/es_AR/)\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/"
+"teams/23907/es_AR/)\n"
 "Language: es_AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.10\n"
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__allowed_nut_ids
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_users__allowed_nut_ids
+msgid "Allowed nuts"
+msgstr ""
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
@@ -60,7 +66,14 @@ msgid "Created on"
 msgstr "Creado en"
 
 #. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__current_country_id
+msgid "Current Country"
+msgstr ""
+
+#. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__display_name
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_country__display_name
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__display_name
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__display_name
 msgid "Display Name"
 msgstr "Mostrar Nombre"
@@ -90,6 +103,8 @@ msgstr "Agrupar por"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__id
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_country__id
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__id
 msgid "ID"
 msgstr "ID"
@@ -117,6 +132,8 @@ msgstr "Importar artículos NUTS desde el servicio europeo RAMON"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import____last_update
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_country____last_update
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner____last_update
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"

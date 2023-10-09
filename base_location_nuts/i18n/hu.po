@@ -19,6 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__allowed_nut_ids
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_users__allowed_nut_ids
+msgid "Allowed nuts"
+msgstr ""
+
+#. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
 msgid "Cancel"
 msgstr ""
@@ -58,7 +64,14 @@ msgid "Created on"
 msgstr "Létrehozás dátuma"
 
 #. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__current_country_id
+msgid "Current Country"
+msgstr ""
+
+#. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__display_name
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_country__display_name
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__display_name
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__display_name
 msgid "Display Name"
 msgstr "Név megjelenítése"
@@ -88,6 +101,8 @@ msgstr "Csoportosítás..."
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__id
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_country__id
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__id
 msgid "ID"
 msgstr "ID"
@@ -115,6 +130,8 @@ msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import____last_update
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_country____last_update
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner____last_update
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts____last_update
 msgid "Last Modified on"
 msgstr "Utolsó frissítés dátuma"
