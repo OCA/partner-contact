@@ -20,7 +20,7 @@ msgstr ""
 "%100==4 ? 2 : 3);\n"
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__big
 msgid "Big"
 msgstr "Velika"
 
@@ -102,12 +102,12 @@ msgid "Last Updated on"
 msgstr "Zadnjič posodobljeno"
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__medium
 msgid "Medium"
 msgstr "Srednja"
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__micro
 msgid "Micro"
 msgstr "Mikro"
 
@@ -123,7 +123,7 @@ msgid "Publicly registered capital amount."
 msgstr "Javno registrirani znesek kapitala."
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__small
 msgid "Small"
 msgstr "Majhna"
 
@@ -136,7 +136,6 @@ msgstr "Promet"
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner__turnover_amount
 #: model:ir.model.fields,field_description:partner_capital.field_res_users__turnover_amount
 #, fuzzy
-#| msgid "Turnover amount"
 msgid "Turnover Amount"
 msgstr "Znesek prometa"
 

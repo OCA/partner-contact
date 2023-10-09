@@ -21,7 +21,7 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__big
 msgid "Big"
 msgstr ""
 
@@ -103,12 +103,12 @@ msgid "Last Updated on"
 msgstr "Zadnja izmjena"
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__medium
 msgid "Medium"
 msgstr ""
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__micro
 msgid "Micro"
 msgstr ""
 
@@ -124,7 +124,7 @@ msgid "Publicly registered capital amount."
 msgstr ""
 
 #. module: partner_capital
-#: selection:res.partner,company_size:0
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__small
 msgid "Small"
 msgstr ""
 
