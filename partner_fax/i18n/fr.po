@@ -32,7 +32,6 @@ msgstr "Fax"
 
 #. module: partner_fax
 #: model_terms:ir.ui.view,arch_db:partner_fax.view_partner_form_fax
-#: model_terms:ir.ui.view,arch_db:partner_fax.view_partner_short_form_fax
 #: model_terms:ir.ui.view,arch_db:partner_fax.view_partner_simple_form_fax
 msgid "Fax..."
 msgstr ""
