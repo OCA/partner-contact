@@ -2,7 +2,7 @@
 # Copyright 2018 Aitor Bouzas <aitor.bouzas@adaptivecity.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class ResCityZip(models.Model):
@@ -11,7 +11,7 @@ class ResCityZip(models.Model):
     _name = "res.city.zip"
     _description = __doc__
     _order = "name asc"
-    _rec_names_search = ["name", "city_id", "state_id", "country_id"]
+    _rec_name = "display_name"
 
     name = fields.Char("ZIP", required=True)
     city_id = fields.Many2one(
@@ -24,6 +24,7 @@ class ResCityZip(models.Model):
     )
     state_id = fields.Many2one(related="city_id.state_id")
     country_id = fields.Many2one(related="city_id.country_id")
+    display_name = fields.Char(compute="_compute_display_name", store=True, index=True)
 
     _sql_constraints = [
         (
@@ -34,14 +35,13 @@ class ResCityZip(models.Model):
         )
     ]
 
-    def name_get(self):
+    @api.depends("name", "city_id", "city_id.state_id", "city_id.country_id")
+    def _compute_display_name(self):
         """Get the proper display name formatted as 'ZIP, name, state, country'."""
-        res = []
         for rec in self:
             name = [rec.name, rec.city_id.name]
             if rec.city_id.state_id:
                 name.append(rec.city_id.state_id.name)
             if rec.city_id.country_id:
                 name.append(rec.city_id.country_id.name)
-            res.append((rec.id, ", ".join(name)))
-        return res
+            rec.display_name = ", ".join(name)
