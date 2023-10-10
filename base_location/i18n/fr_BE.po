@@ -98,7 +98,8 @@ msgstr ""
 #: model_terms:ir.actions.act_window,help:base_location.action_res_city_full
 msgid ""
 "Display and manage the list of all cities that can be assigned to\n"
-"            your partner records. Note that an option can be set on each country\n"
+"            your partner records. Note that an option can be set on each "
+"country\n"
 "            separately\n"
 "            to enforce any address of it to have a city in this list."
 msgstr ""
@@ -182,8 +183,7 @@ msgstr ""
 #: code:addons/base_location/models/res_partner.py:0
 #, python-format
 msgid ""
-"The zip of the partner %(partner)s differs from that in location "
-"%(location)s"
+"The zip of the partner %(partner)s differs from that in location %(location)s"
 msgstr ""
 
 #. module: base_location
@@ -201,8 +201,8 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.constraint,message:base_location.constraint_res_city_zip_name_city_uniq
 msgid ""
-"You already have a zip with that code in the same city. The zip code must be"
-" unique within it's city"
+"You already have a zip with that code in the same city. The zip code must be "
+"unique within it's city"
 msgstr ""
 
 #. module: base_location
