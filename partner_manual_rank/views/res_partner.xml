@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="base.view_res_partner_filter" />
         <field name="model">res.partner</field>
         <field type="xml" name="arch">
-            <xpath expr="//filter[@name='type_person']" position="before">
+            <xpath expr="//filter[@name='inactive']" position="before">
                 <filter
                     string="Customers"
                     name="customers"
@@ -17,6 +17,19 @@
                     domain="[('is_supplier', '=', True)]"
                 />
             </xpath>
+        </field>
+    </record>
+    <record id="view_res_partner_filter_account" model="ir.ui.view">
+        <field name="name">partner_manual_rank.view_partner_filter.account</field>
+        <field name="inherit_id" ref="account.res_partner_view_search" />
+        <field name="model">res.partner</field>
+        <field type="xml" name="arch">
+            <filter name="customer" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </filter>
+            <filter name="supplier" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </filter>
         </field>
     </record>
     <record id="view_partner_form" model="ir.ui.view">
