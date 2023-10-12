@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-24 03:46+0000\n"
-"PO-Revision-Date: 2023-10-09 07:40+0000\n"
+"PO-Revision-Date: 2023-10-12 13:36+0000\n"
 "Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__allowed_nut_ids
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__allowed_nut_ids
 msgid "Allowed nuts"
-msgstr ""
+msgstr "Tuercas permitidas"
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
@@ -67,7 +67,7 @@ msgstr "Creado en"
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__current_country_id
 msgid "Current Country"
-msgstr ""
+msgstr "País actual"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__display_name
@@ -86,6 +86,8 @@ msgstr "El fichero descargado no es un fichero XML válido"
 #, python-format
 msgid "Got an error %(status_code)s when trying to download the file %(url)s."
 msgstr ""
+"Se ha producido un error %(status_code)s al intentar descargar el archivo "
+"%(url)s."
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:0
