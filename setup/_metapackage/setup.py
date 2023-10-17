@@ -44,6 +44,7 @@ setuptools.setup(
         'odoo-addon-partner_fax>=16.0dev,<16.1dev',
         'odoo-addon-partner_firstname>=16.0dev,<16.1dev',
         'odoo-addon-partner_identification>=16.0dev,<16.1dev',
+        'odoo-addon-partner_identification_eori>=16.0dev,<16.1dev',
         'odoo-addon-partner_identification_gln>=16.0dev,<16.1dev',
         'odoo-addon-partner_industry_secondary>=16.0dev,<16.1dev',
         'odoo-addon-partner_interest_group>=16.0dev,<16.1dev',
