@@ -10,7 +10,7 @@
 
 from random import randint
 
-from odoo import _, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
 from odoo.tools.safe_eval import safe_eval
 
@@ -39,6 +39,20 @@ class ResPartnerIdCategory(models.Model):
     validation_code = fields.Text(
         "Python validation code", help="Python code called to validate an id number."
     )
+
+    @api.model
+    def _search_duplicate(self, category_id, id_number, force_active=False):
+        """Find duplicates for the given category and number."""
+        domain = [
+            ("category_id", "=", category_id),
+            ("name", "=", id_number.name),
+            ("name", "!=", False),
+            ("id", "!=", id_number.id),
+        ]
+
+        if force_active:
+            domain.append(("partner_id.active", "=", True))
+        return self.env["res.partner.id_number"].search(domain)
 
     def _validation_eval_context(self, id_number):
         self.ensure_one()
