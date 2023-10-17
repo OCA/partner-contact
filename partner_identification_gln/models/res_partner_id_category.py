@@ -3,7 +3,7 @@
 
 import logging
 
-from odoo import api, models
+from odoo import models
 
 _logger = logging.getLogger(__name__)
 
@@ -16,19 +16,6 @@ except ImportError:
 
 class ResPartnerIdCategory(models.Model):
     _inherit = "res.partner.id_category"
-
-    @api.model
-    def _search_duplicate(self, category_id, id_number, force_active=False):
-        domain = [
-            ("category_id", "=", category_id),
-            ("name", "=", id_number.name),
-            ("name", "!=", False),
-            ("id", "!=", id_number.id),
-        ]
-
-        if force_active:
-            domain.append(("partner_id.active", "=", True))
-        return self.env["res.partner.id_number"].search(domain)
 
     def validate_res_partner_gln(self, id_number):
         self.ensure_one()
