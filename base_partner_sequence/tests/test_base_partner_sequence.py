@@ -48,3 +48,20 @@ class TestBasePartnerSequence(common.TransactionCase):
         self.assertFalse(partners[0].ref)
         partners.write({})
         self.assertFalse(partners[0].ref == partners[1].ref)
+
+    def test_ref_change_convert_child_to_parent(self):
+        """Test that a ref is assigned to a child contact when it is
+        converted to a commercial partner."""
+        # Remove the ref from the parent so child does not have one initially
+        self.partner.write({"ref": False})
+        contact = self.res_partner.create(
+            {
+                "name": "contact1",
+                "email": "contact@contact.com",
+                "parent_id": self.partner.id,
+            }
+        )
+        self.assertEqual(self.partner.ref, contact.ref)
+        contact.write({"parent_id": False})
+        self.assertTrue(contact.ref)
+        self.assertFalse(contact.ref == self.partner.ref)

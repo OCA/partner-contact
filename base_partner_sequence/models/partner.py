@@ -53,9 +53,17 @@ class ResPartner(models.Model):
                 _("Either field values or an id must be provided.")
             )
         # only assign a 'ref' to commercial partners
+        fields_for_check = ["is_company", "parent_id"]
+        # Copy original vals to prevent modifying them
+        if vals:
+            vals_for_check = vals.copy()
+        else:
+            vals_for_check = {}
         if self:
-            vals = {"is_company": self.is_company, "parent_id": self.parent_id}
-        return vals.get("is_company") or not vals.get("parent_id")
+            for field in fields_for_check:
+                if field not in vals_for_check:
+                    vals_for_check[field] = self[field]
+        return vals_for_check.get("is_company") or not vals_for_check.get("parent_id")
 
     @api.model
     def _commercial_fields(self):
