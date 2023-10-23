@@ -7,7 +7,7 @@
 
 {
     "name": "Base Location Geonames Import",
-    "version": "15.0.1.0.2",
+    "version": "15.0.1.0.3",
     "development_status": "Mature",
     "category": "Partner Management",
     "license": "AGPL-3",
