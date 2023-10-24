@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_partner_category_list">
+        <field name="name">res.partner.category.tree - partner_category_type</field>
+        <field name="model">res.partner.category</field>
+        <field name="inherit_id" ref="base.view_partner_category_list" />
+        <field name="arch" type="xml">
+            <field name="display_name" position="after">
+                <field name="category_type" />
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_partner_category_form">
+        <field name="name">res.partner.category.form - partner_category_type</field>
+        <field name="model">res.partner.category</field>
+        <field name="inherit_id" ref="base.view_partner_category_form" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field
+                    name="category_type"
+                    attrs="{'readonly': [('parent_id', '!=', False)]}"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
