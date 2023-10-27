@@ -6,5 +6,6 @@
   * Victor M.M. Torres
   * João Marques
   * César A. Sánchez
+  * Stefan Ungureanu
 
 * Kevin Khao <kevin.khao@gmail.com>
