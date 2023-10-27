@@ -331,7 +331,6 @@ msgstr ""
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_has_error
-#: model:ir.model.fields,help:animal.field_animal__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -493,11 +492,6 @@ msgstr ""
 #. module: animal
 #: model:animal.breed,name:animal.rottweiler
 msgid "Rottweiler"
-msgstr ""
-
-#. module: animal
-#: model:ir.model.fields,field_description:animal.field_animal__message_has_sms_error
-msgid "SMS Delivery error"
 msgstr ""
 
 #. module: animal
