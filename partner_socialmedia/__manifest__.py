@@ -3,7 +3,7 @@
 {
     "name": "Partner Socialmedia",
     "summary": "Add social media fields to contacts",
-    "version": "12.0.1.0.1",
+    "version": "16.0.1.0.1",
     "author": "humanilog, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "category": "CRM",
