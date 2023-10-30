@@ -18,3 +18,5 @@ class ResPartner(models.Model):
     reddit = fields.Char()
     forum = fields.Char()
     youtube = fields.Char()
+    instagram = fields.Char()
+    tiktok = fields.Char()

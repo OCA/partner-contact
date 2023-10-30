@@ -18,6 +18,8 @@
                         <field name="reddit" widget="url" />
                         <field name="youtube" widget="url" />
                         <field name="discord" widget="url" />
+                        <field name="instagram" widget="url" />
+                        <field name="tiktok" widget="url" />
                     </group>
                 </page>
             </xpath>
