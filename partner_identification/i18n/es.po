@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2019-03-01 09:15+0000\n"
-"Last-Translator: Marta Vázquez Rodríguez <vazrodmar@gmail.com>\n"
+"PO-Revision-Date: 2023-10-09 07:40+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.4\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
@@ -40,12 +40,33 @@ msgid ""
 "<b><i># Sample 3: ID number must start with the category code</i></b>\n"
 "failed = not id_number.name.startswith(self.code) and True or False"
 msgstr ""
+"# Utilice fallado = Verdadero para especificar que el número de "
+"identificación no es válido.\n"
+"# Puedes utilizar las siguientes variables:\n"
+"# - self: Browse_record de la categoría de ID actual Browse_record\n"
+"# - id_number: Browse_record del número de identificación para validar\n"
+"\n"
+"<b><i># Ejemplo 1: el número de identificación solo contiene dígitos</i></"
+"b>\n"
+"si no es id_número.nombre.isdigit():\n"
+"    fallido = Verdadero\n"
+"demás:\n"
+"    fallido = falso\n"
+"\n"
+"<b><i># Ejemplo 2: la longitud del número de identificación no puede exceder "
+"los 10 caracteres</i></b>\n"
+"fallido = len(id_number.name) &gt; 10 y verdadero o falso\n"
+"\n"
+"<b><i># Ejemplo 3: el número de identificación debe comenzar con el código "
+"de categoría</i></b>\n"
+"fallido = no id_number.name.startswith(self.code) y Verdadero o Falso"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
 msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
 msgstr ""
-"Abreviación o o acrónimo de este tipo de identificador. Por ejemplo, 'NIF'."
+"Abreviación o acrónimo de este tipo de identificador. Por ejemplo, "
+"'carnet_conducir'"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__active
@@ -60,7 +81,7 @@ msgid ""
 "Institution"
 msgstr ""
 "La empresa que emitió esta identificación. Por ejemplo, 'Dirección General "
-"de Tráfico'."
+"de Tráfico'"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__category_id
@@ -75,7 +96,7 @@ msgstr "Código"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
 msgid "Color Index"
-msgstr ""
+msgstr "Índice de Color"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner
@@ -108,6 +129,9 @@ msgid ""
 " {name} \n"
 "({error})"
 msgstr ""
+"Error al evaluar el código de validación id_category:\n"
+" {name}\n"
+"({error})"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_until
@@ -116,7 +140,7 @@ msgid ""
 "license, 21/10/2019"
 msgstr ""
 "Fecha de expiración. Por ejemplo, la fecha en la que la persona necesita "
-"renovar su carnet de conducir. Ejemplo: 21/10/2019."
+"renovar su carnet de conducir. Ejemplo: 21/10/2019"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
@@ -149,7 +173,7 @@ msgstr "Nombre ID"
 msgid "ID type defined in configuration. For example, Driver License"
 msgstr ""
 "Tipo de identificación definido en la configuración. Por ejemplo, carnet de "
-"conducir."
+"conducir"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner__id_numbers
@@ -169,7 +193,7 @@ msgid ""
 "21/10/2009"
 msgstr ""
 "Fecha de emisión. Por ejemplo, la fecha en la que la persona aprobó el "
-"examen de conducir, 21/10/2009."
+"examen de conducir, 21/10/2009"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
@@ -198,7 +222,7 @@ msgstr "Última actualización en"
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__name
 msgid "Name of this ID type. For example, 'Driver License'"
 msgstr ""
-"Nombre de este tipo de identificación. Por ejemplo, 'Carnet de conducir'."
+"Nombre de este tipo de identificación. Por ejemplo, 'Carnet de conducir'"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
@@ -252,7 +276,7 @@ msgstr "Lugar de emisión"
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid "Python Validation Code:"
-msgstr ""
+msgstr "Código Python de validación:"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__validation_code
@@ -279,7 +303,7 @@ msgstr "Estado"
 msgid "The ID itself. For example, Driver License number of this person"
 msgstr ""
 "El identificador en si. Por ejemplo, el número de carnet de conducir de esta "
-"persona."
+"persona"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__place_issuance
@@ -288,7 +312,7 @@ msgid ""
 "passports and visa"
 msgstr ""
 "El lugar dónde el identificador se ha emitido. Por ejemplo, el país para el "
-"pasaporte y el visado."
+"pasaporte y el visado"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner.py:0
@@ -298,6 +322,9 @@ msgid ""
 "write via the {field_name} field is not possible. In order to fix this, "
 "please use the IDs tab."
 msgstr ""
+"Este {record_name} tiene múltiples ID de este tipo ({category_code}), por lo "
+"que no es posible escribir a través del campo {field_name}. Para solucionar "
+"este problema, utilice la pestaña ID."
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
@@ -323,7 +350,7 @@ msgstr "Fecha de inicio del período de validación."
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid "{id_name} is not a valid {cat_name} identifier"
-msgstr ""
+msgstr "{id_name} no es un identificador {cat_name} válido"
 
 #, python-format
 #~ msgid "%s is not a valid %s identifier"

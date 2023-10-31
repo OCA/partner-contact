@@ -9,34 +9,32 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2018-07-13 09:34+0000\n"
-"Last-Translator: Enric Tobella <etobella@creublanca.es>\n"
+"PO-Revision-Date: 2023-10-09 07:40+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
-
-#. module: partner_firstname
-#: code:addons/partner_firstname/models/res_users.py:0
-#, python-format
-msgid "%(name)s (copy)"
-msgstr ""
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
 msgid "%(login)s (copy)"
-msgstr ""
+msgstr "%(login)s (copiar)"
 
+#. module: partner_firstname
+#: code:addons/partner_firstname/models/res_users.py:0
+#, python-format
+msgid "%(name)s (copy)"
+msgstr "%(name)s (copiar)"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_config_settings
-#, fuzzy
 msgid "Config Settings"
-msgstr "res.config.settings"
+msgstr "Configuración de Ajustes"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
@@ -70,7 +68,7 @@ msgstr "Apellido"
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__name
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__name
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:0
@@ -84,20 +82,15 @@ msgid "Order to compose partner fullname"
 msgstr "Orden para generar el nombre completo"
 
 #. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
-#, fuzzy
 msgid "Partner Names Order"
-msgstr "Orden de los nombres"
+msgstr "Orden de los nombres de los socios"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order_changed
 msgid "Partner Names Order Changed"
 msgstr "Se ha cambiado el Orden de los Nombres"
-
-#. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order
-msgid "Partner names order"
-msgstr "Orden de los nombres"
 
 #. module: partner_firstname
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
@@ -117,3 +110,6 @@ msgstr ""
 #: model:ir.model,name:partner_firstname.model_res_users
 msgid "Users"
 msgstr "Usuarios"
+
+#~ msgid "Partner names order"
+#~ msgstr "Orden de los nombres"

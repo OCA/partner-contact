@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:32+0000\n"
-"PO-Revision-Date: 2023-03-23 13:24+0000\n"
+"PO-Revision-Date: 2023-05-17 14:35+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -54,7 +54,7 @@ msgstr "ID"
 #: model:ir.actions.act_window,name:partner_contact_job_position.res_partner_job_position_action
 #: model:ir.ui.menu,name:partner_contact_job_position.menu_res_partner_job_position
 msgid "Job Positions"
-msgstr "Posizioni Lavorative"
+msgstr "Posizioni lavorative"
 
 #. module: partner_contact_job_position
 #: model:ir.model,name:partner_contact_job_position.model_res_partner_job_position
@@ -64,7 +64,6 @@ msgstr "Posizione Lavorativa"
 
 #. module: partner_contact_job_position
 #: model_terms:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_form_view
-#: model_terms:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_tree_view
 msgid "Job positions"
 msgstr "Posizioni Lavorative"
 

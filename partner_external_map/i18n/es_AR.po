@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2017-06-10 01:50+0000\n"
 "PO-Revision-Date: 2020-12-08 20:36+0000\n"
 "Last-Translator: Ignacio Buioli <ibuioli@gmail.com>\n"
-"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/teams/"
-"23907/es_AR/)\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/"
+"teams/23907/es_AR/)\n"
 "Language: es_AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,10 +21,21 @@ msgstr ""
 "X-Generator: Weblate 3.10\n"
 
 #. module: partner_external_map
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__active
+msgid "Active"
+msgstr ""
+
+#. module: partner_external_map
 #: code:addons/partner_external_map/models/res_partner.py:0
 #, python-format
 msgid "Address missing on partner '%s'."
 msgstr "Dirección faltante en el socio '%s'."
+
+#. module: partner_external_map
+#: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_form
+#: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_search
+msgid "Archived"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_partner
@@ -121,7 +132,6 @@ msgstr "Nombre del Mapa del Sitio Web"
 #: model:ir.actions.act_window,name:partner_external_map.map_website_action
 #: model:ir.ui.menu,name:partner_external_map.map_website_menu
 #: model:ir.ui.menu,name:partner_external_map.root_map_website_menu
-#: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_tree
 msgid "Map Websites"
 msgstr "Mapa de los Sitios Web"
 
@@ -195,6 +205,11 @@ msgstr "URL de ruta que usa latitud y longitud"
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__route_address_url
 msgid "Route URL that uses the addresses"
 msgstr "URL de ruta que usa la dirección"
+
+#. module: partner_external_map
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__sequence
+msgid "Sequence"
+msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users__context_route_start_partner_id

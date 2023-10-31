@@ -9,20 +9,32 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-13 03:42+0000\n"
-"PO-Revision-Date: 2017-12-13 03:42+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2023-10-12 13:36+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: partner_external_map
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__active
+msgid "Active"
+msgstr "Activo"
 
 #. module: partner_external_map
 #: code:addons/partner_external_map/models/res_partner.py:0
 #, python-format
 msgid "Address missing on partner '%s'."
 msgstr "Falta la dirección del socio '%s'."
+
+#. module: partner_external_map
+#: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_form
+#: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_search
+msgid "Archived"
+msgstr "Archivado"
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_partner
@@ -119,7 +131,6 @@ msgstr "Nombre del Sitio web del Mapa"
 #: model:ir.actions.act_window,name:partner_external_map.map_website_action
 #: model:ir.ui.menu,name:partner_external_map.map_website_menu
 #: model:ir.ui.menu,name:partner_external_map.root_map_website_menu
-#: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_tree
 msgid "Map Websites"
 msgstr "Sitios web del Mapa"
 
@@ -194,6 +205,11 @@ msgstr "URL de la Ruta que utiliza la latitud y la longitud"
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__route_address_url
 msgid "Route URL that uses the addresses"
 msgstr "URL de la Ruta que utiliza las direcciones"
+
+#. module: partner_external_map
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__sequence
+msgid "Sequence"
+msgstr "Secuencia"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users__context_route_start_partner_id

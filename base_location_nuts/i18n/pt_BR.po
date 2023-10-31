@@ -9,15 +9,22 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-24 03:46+0000\n"
-"PO-Revision-Date: 2018-01-24 03:46+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"PO-Revision-Date: 2023-09-03 13:37+0000\n"
+"Last-Translator: Douglas Custódio <douglascstd@yahoo.com>\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
 "teams/23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__allowed_nut_ids
+#: model:ir.model.fields,field_description:base_location_nuts.field_res_users__allowed_nut_ids
+msgid "Allowed nuts"
+msgstr ""
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
@@ -32,7 +39,7 @@ msgstr "Filhos"
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__code
 msgid "Code"
-msgstr "Codigo"
+msgstr "Código"
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_res_partner
@@ -59,6 +66,11 @@ msgid "Created on"
 msgstr "Criado em"
 
 #. module: base_location_nuts
+#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__current_country_id
+msgid "Current Country"
+msgstr ""
+
+#. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__display_name
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__display_name
 msgid "Display Name"
@@ -73,8 +85,8 @@ msgstr "O arquivo baixado não é um XML válido"
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:0
 #, python-format
-msgid "Got an error %d when trying to download the file %s."
-msgstr "Recebido um erro %d ao tentar o download do arquivo %s."
+msgid "Got an error %(status_code)s when trying to download the file %(url)s."
+msgstr ""
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:0
@@ -157,7 +169,6 @@ msgstr ""
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.res_partner_nuts_action
 #: model:ir.ui.menu,name:base_location_nuts.res_partner_nuts_menu
-#: model_terms:ir.ui.view,arch_db:base_location_nuts.res_partner_nuts_tree
 msgid "NUTS Items"
 msgstr ""
 
@@ -251,3 +262,7 @@ msgid ""
 "        Sales &gt; Configuration &gt; Address Book &gt; Localization &gt; "
 "Import NUTS 2013"
 msgstr ""
+
+#, python-format
+#~ msgid "Got an error %d when trying to download the file %s."
+#~ msgstr "Recebido um erro %d ao tentar o download do arquivo %s."

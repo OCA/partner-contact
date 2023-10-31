@@ -19,9 +19,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;\n"
 
 #. module: partner_external_map
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__active
+msgid "Active"
+msgstr ""
+
+#. module: partner_external_map
 #: code:addons/partner_external_map/models/res_partner.py:0
 #, python-format
 msgid "Address missing on partner '%s'."
+msgstr ""
+
+#. module: partner_external_map
+#: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_form
+#: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_search
+msgid "Archived"
 msgstr ""
 
 #. module: partner_external_map
@@ -112,7 +123,6 @@ msgstr ""
 #: model:ir.actions.act_window,name:partner_external_map.map_website_action
 #: model:ir.ui.menu,name:partner_external_map.map_website_menu
 #: model:ir.ui.menu,name:partner_external_map.root_map_website_menu
-#: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_tree
 msgid "Map Websites"
 msgstr ""
 
@@ -177,6 +187,11 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__route_address_url
 msgid "Route URL that uses the addresses"
+msgstr ""
+
+#. module: partner_external_map
+#: model:ir.model.fields,field_description:partner_external_map.field_map_website__sequence
+msgid "Sequence"
 msgstr ""
 
 #. module: partner_external_map

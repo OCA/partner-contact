@@ -97,6 +97,5 @@ msgstr ""
 #. module: partner_employee_quantity
 #: model:ir.actions.act_window,name:partner_employee_quantity.employees_range_action
 #: model:ir.ui.menu,name:partner_employee_quantity.menu_employees_range
-#: model_terms:ir.ui.view,arch_db:partner_employee_quantity.employees_range_tree_view
 msgid "Ranges by quantity of employees"
 msgstr ""

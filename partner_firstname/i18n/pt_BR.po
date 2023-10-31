@@ -23,14 +23,14 @@ msgstr ""
 #. module: partner_firstname
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
-msgid "%(name)s (copy)"
-msgstr "%(name)s (cópia)"
+msgid "%(login)s (copy)"
+msgstr "%(login)s (cópia)"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
-msgid "%(login)s (copy)"
-msgstr "%(login)s (cópia)"
+msgid "%(name)s (copy)"
+msgstr "%(name)s (cópia)"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_config_settings
@@ -83,6 +83,7 @@ msgid "Order to compose partner fullname"
 msgstr "Ordem para compor o nome completo do parceiro"
 
 #. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
 msgid "Partner Names Order"
 msgstr "Ordem do Nome dos Parceiros"
@@ -91,11 +92,6 @@ msgstr "Ordem do Nome dos Parceiros"
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order_changed
 msgid "Partner Names Order Changed"
 msgstr "Ordem dos nomes dos parceiros alterada"
-
-#. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order
-msgid "Partner names order"
-msgstr "Ordem do nome dos parceiros"
 
 #. module: partner_firstname
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
@@ -115,3 +111,6 @@ msgstr ""
 #: model:ir.model,name:partner_firstname.model_res_users
 msgid "Users"
 msgstr "Usuários"
+
+#~ msgid "Partner names order"
+#~ msgstr "Ordem do nome dos parceiros"
