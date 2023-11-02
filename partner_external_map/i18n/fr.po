@@ -10,19 +10,20 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-22 03:38+0000\n"
-"PO-Revision-Date: 2017-11-22 03:38+0000\n"
-"Last-Translator: Nicolas JEUDY <njeudy@panda-chi.io>, 2017\n"
+"PO-Revision-Date: 2023-11-02 12:37+0000\n"
+"Last-Translator: Alexis de Lattre <alexis@via.ecp.fr>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__active
 msgid "Active"
-msgstr ""
+msgstr "Actif"
 
 #. module: partner_external_map
 #. odoo-python
@@ -35,12 +36,12 @@ msgstr "Adresse manquante sur le partenaire '%s'."
 #: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_form
 #: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_search
 msgid "Archived"
-msgstr ""
+msgstr "Archivé"
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_partner
 msgid "Contact"
-msgstr "Contacte"
+msgstr "Contact"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__create_uid
@@ -55,7 +56,7 @@ msgstr "Créé le"
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__display_name
 msgid "Display Name"
-msgstr "Intitulé"
+msgstr "Nom affiché"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__id
@@ -74,7 +75,7 @@ msgid ""
 "longitude (requires the module 'base_geolocalize')"
 msgstr ""
 "Dans cette URL, {LATITUDE} et {LONGITUDE} seront remplacés par la latitude "
-"et la longitude (necessite l'installation du module 'base_geolocalize')"
+"et la longitude (nécessite l'installation du module 'base_geolocalize')"
 
 #. module: partner_external_map
 #: model:ir.model.fields,help:partner_external_map.field_map_website__route_address_url
@@ -105,12 +106,12 @@ msgstr "Dernière modification le"
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__write_uid
 msgid "Last Updated by"
-msgstr "Mis à jour par"
+msgstr "Dernière mise à jour par"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__write_date
 msgid "Last Updated on"
-msgstr "Mis à jour le"
+msgstr "Dernière mise à jour le"
 
 #. module: partner_external_map
 #: model_terms:ir.ui.view,arch_db:partner_external_map.view_partner_form
@@ -142,6 +143,8 @@ msgid ""
 "Map provided used when you click on the car icon on the partner form to "
 "display an itinerary."
 msgstr ""
+"Carte utilisée lorsque vous cliquez sur l'icône de la voiture sur la vue "
+"formulaire du partenaire pour afficher un itinéraire."
 
 #. module: partner_external_map
 #: model_terms:ir.ui.view,arch_db:partner_external_map.view_users_form
@@ -163,6 +166,7 @@ msgstr ""
 #, python-format
 msgid "Missing parameter 'URL that uses the address' for map website '%s'."
 msgstr ""
+"Paramètre 'URL utilisant l'adresse' manquant pour le site de carte '%s'."
 
 #. module: partner_external_map
 #. odoo-python
@@ -170,6 +174,7 @@ msgstr ""
 #, python-format
 msgid "Missing route URL that uses the addresses for the map website '%s'"
 msgstr ""
+"Il manque l'URL d'itinéraire utilisant les adresses du site de carte '%s'"
 
 #. module: partner_external_map
 #. odoo-python
@@ -177,6 +182,8 @@ msgstr ""
 #, python-format
 msgid "Missing route map website: you should set it in your preferences."
 msgstr ""
+"Site de carte d'itinéraire manquant : vous devez le définir dans vos "
+"préférences."
 
 #. module: partner_external_map
 #. odoo-python
@@ -185,6 +192,8 @@ msgstr ""
 msgid ""
 "Missing start address for route map: you should set it in your preferences."
 msgstr ""
+"L'adresse de départ pour les itinéaires est manquante : vous devez la "
+"définir dans vos préférences."
 
 #. module: partner_external_map
 #: model_terms:ir.ui.view,arch_db:partner_external_map.view_partner_form
@@ -194,22 +203,22 @@ msgstr "Itinéraire"
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users__context_route_map_website_id
 msgid "Route Map Website"
-msgstr "Site web pour les itinéraires"
+msgstr "Site de carte d'itinéraire"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__route_lat_lon_url
 msgid "Route URL that uses latitude and longitude"
-msgstr ""
+msgstr "URL d'itinéraire utilisant la latitude et la longitude"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__route_address_url
 msgid "Route URL that uses the addresses"
-msgstr ""
+msgstr "URL d'itinéraire utilisant les adresses"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Séquence"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users__context_route_start_partner_id
@@ -219,17 +228,17 @@ msgstr "Adresse de départ pour les itinéraires"
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__lat_lon_url
 msgid "URL that uses latitude and longitude"
-msgstr ""
+msgstr "URL utilisant la latitude et la longitude"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__address_url
 msgid "URL that uses the address"
-msgstr ""
+msgstr "URL utilisant l'adresse"
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_users
 msgid "User"
-msgstr ""
+msgstr "Utilisateur"
 
 #~ msgid "Users"
 #~ msgstr "Utilisateurs"
