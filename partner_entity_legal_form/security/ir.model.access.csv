@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_entity_legal_form_group_user","entity.legal.form","model_entity_legal_form","base.group_user",1,0,0,0
+"access_entity_legal_form_group_partner_manager","entity.legal.form","model_entity_legal_form","base.group_partner_manager",1,1,1,1
+"access_entity_legal_form_abbreviation_group_user","entity.legal.form.abbreviation","model_entity_legal_form_abbreviation","base.group_user",1,0,0,0
+"access_entity_legal_form_abbreviation_group_partner_manager","entity.legal.form.abbreviation","model_entity_legal_form_abbreviation","base.group_partner_manager",1,1,1,1

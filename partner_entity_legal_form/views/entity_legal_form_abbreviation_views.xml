@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_entity_legal_form_abbreviation_form" model="ir.ui.view">
+        <field name="name">entity.legal.form.abbreviation.form</field>
+        <field name="model">entity.legal.form.abbreviation</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Entity Legal Forms Abbreviations">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="entity_legal_form_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_entity_legal_form_abbreviation_tree" model="ir.ui.view">
+        <field name="name">entity.legal.form.abbreviation.tree</field>
+        <field name="model">entity.legal.form.abbreviation</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="entity_legal_form_id" />
+            </tree>
+        </field>
+    </record>
+    <record id="action_entity_legal_form_abbreviation" model="ir.actions.act_window">
+        <field name="name">Entity Legal Forms Abbreviations</field>
+        <field name="res_model">entity.legal.form.abbreviation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        action="action_entity_legal_form_abbreviation"
+        id="menu_partner_legal_entities_abbreviations"
+        parent="contacts.res_partner_menu_config"
+    />
+</odoo>
