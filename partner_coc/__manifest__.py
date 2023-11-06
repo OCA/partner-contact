@@ -4,7 +4,7 @@
 {
     "name": "Partner CoC",
     "summary": "Adds field 'Chamber Of Commerce Registration Number'",
-    "version": "14.0.1.0.1",
+    "version": "15.0.1.0.0",
     "category": "Customer Relationship Management",
     "author": "Onestein,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
