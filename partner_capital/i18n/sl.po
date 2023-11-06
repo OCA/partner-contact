@@ -1,0 +1,157 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_capital
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-26 15:32+0000\n"
+"PO-Revision-Date: 2023-03-31 21:22+0000\n"
+"Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
+"Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#. module: partner_capital
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__big
+msgid "Big"
+msgstr "Velika"
+
+#. module: partner_capital
+#: model_terms:ir.ui.view,arch_db:partner_capital.view_partner_form_capital
+msgid "Capital"
+msgstr "Kapital"
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__capital_amount
+#: model:ir.model.fields,field_description:partner_capital.field_res_users__capital_amount
+msgid "Capital amount"
+msgstr "Znesek kapitala"
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__capital_country_id
+#: model:ir.model.fields,field_description:partner_capital.field_res_users__capital_country_id
+#: model_terms:ir.ui.view,arch_db:partner_capital.view_res_partner_filter_capital
+msgid "Capital country"
+msgstr "Država kapitala"
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__capital_currency_id
+#: model:ir.model.fields,field_description:partner_capital.field_res_users__capital_currency_id
+msgid "Capital currency"
+msgstr "Valuta kapitala"
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__company_size
+#: model:ir.model.fields,field_description:partner_capital.field_res_users__company_size
+#: model_terms:ir.ui.view,arch_db:partner_capital.view_res_partner_filter_capital
+msgid "Company size"
+msgstr "Velikost družbe"
+
+#. module: partner_capital
+#: model:ir.model,name:partner_capital.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_capital
+#: model:ir.model.fields,help:partner_capital.field_res_partner__capital_country_id
+#: model:ir.model.fields,help:partner_capital.field_res_users__capital_country_id
+msgid "Country of origin of this company's capital."
+msgstr "Država izvora kapitala družbe"
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__create_uid
+msgid "Created by"
+msgstr "Ustvaril"
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__create_date
+msgid "Created on"
+msgstr "Ustvarjeno"
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__display_name
+msgid "Display Name"
+msgstr "Prikazani naziv"
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range____last_update
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__write_uid
+msgid "Last Updated by"
+msgstr "Zadnji posodobil"
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__write_date
+msgid "Last Updated on"
+msgstr "Zadnjič posodobljeno"
+
+#. module: partner_capital
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__medium
+msgid "Medium"
+msgstr "Srednja"
+
+#. module: partner_capital
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__micro
+msgid "Micro"
+msgstr "Mikro"
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__name
+msgid "Name"
+msgstr "Naziv"
+
+#. module: partner_capital
+#: model:ir.model.fields,help:partner_capital.field_res_partner__capital_amount
+#: model:ir.model.fields,help:partner_capital.field_res_users__capital_amount
+msgid "Publicly registered capital amount."
+msgstr "Javno registrirani znesek kapitala."
+
+#. module: partner_capital
+#: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__small
+msgid "Small"
+msgstr "Majhna"
+
+#. module: partner_capital
+#: model_terms:ir.ui.view,arch_db:partner_capital.view_res_partner_filter_capital
+msgid "Turnover"
+msgstr "Promet"
+
+#. module: partner_capital
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__turnover_amount
+#: model:ir.model.fields,field_description:partner_capital.field_res_users__turnover_amount
+#, fuzzy
+msgid "Turnover Amount"
+msgstr "Znesek prometa"
+
+#. module: partner_capital
+#: model:ir.model,name:partner_capital.model_res_partner_turnover_range
+#: model:ir.model.fields,field_description:partner_capital.field_res_partner__turnover_range_id
+#: model:ir.model.fields,field_description:partner_capital.field_res_users__turnover_range_id
+msgid "Turnover range"
+msgstr "Razpon prometa"
+
+#. module: partner_capital
+#: model:ir.actions.act_window,name:partner_capital.res_partner_turnover_range_action
+#: model:ir.ui.menu,name:partner_capital.menu_res_partner_turnover_range
+msgid "Turnover ranges"
+msgstr "Razponi prometa"
+
+#~ msgid "Partner"
+#~ msgstr "Partner"
