@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,15 +14,10 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_email_check
+#. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
 #, python-format
 msgid "%s is an invalid email"
-msgstr ""
-
-#. module: partner_email_check
-#: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
-msgid "Cannot import 'email_validator'."
 msgstr ""
 
 #. module: partner_email_check
@@ -34,9 +29,17 @@ msgid ""
 msgstr ""
 
 #. module: partner_email_check
+#. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
 #, python-format
 msgid "Cannot deliver to email address %s"
+msgstr ""
+
+#. module: partner_email_check
+#. odoo-python
+#: code:addons/partner_email_check/models/res_partner.py:0
+#, python-format
+msgid "Cannot import 'email_validator'."
 msgstr ""
 
 #. module: partner_email_check
@@ -85,6 +88,7 @@ msgid "Don't allow multiple partners to have the same email address."
 msgstr ""
 
 #. module: partner_email_check
+#. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
 #, python-format
 msgid "Email '%s' is already in use."
@@ -101,6 +105,7 @@ msgid "Ensure that partner email addresses can be delivered to"
 msgstr ""
 
 #. module: partner_email_check
+#. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
 #, python-format
 msgid ""
