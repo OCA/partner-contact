@@ -73,7 +73,6 @@ msgid "Description"
 msgstr "Descrizione"
 
 #. module: partner_stage
-#: model:ir.model.fields,field_description:partner_stage.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__display_name
 msgid "Display Name"
 msgstr "Nome visualizzato"
@@ -89,7 +88,6 @@ msgid "Fold"
 msgstr ""
 
 #. module: partner_stage
-#: model:ir.model.fields,field_description:partner_stage.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__id
 msgid "ID"
 msgstr "ID"
@@ -100,7 +98,6 @@ msgid "Inactive"
 msgstr ""
 
 #. module: partner_stage
-#: model:ir.model.fields,field_description:partner_stage.field_res_partner____last_update
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage____last_update
 msgid "Last Modified on"
 msgstr "Ultima modifica il"
