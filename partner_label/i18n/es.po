@@ -10,14 +10,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-21 03:59+0000\n"
-"PO-Revision-Date: 2018-02-21 03:59+0000\n"
-"Last-Translator: enjolras <yo@miguelrevilla.com>, 2018\n"
+"PO-Revision-Date: 2023-11-06 21:38+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_label
 #: model:ir.model,name:partner_label.model_res_company
@@ -26,9 +27,8 @@ msgstr "Compañías"
 
 #. module: partner_label
 #: model:ir.model,name:partner_label.model_res_config_settings
-#, fuzzy
 msgid "Config Settings"
-msgstr "base.config.settings"
+msgstr "Ajustes Configuración"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_height
@@ -50,58 +50,50 @@ msgstr "Configuración de etiquetas"
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_bottom
 #: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_bottom
-#, fuzzy
 msgid "Margin Bottom"
-msgstr "Margen Inf."
+msgstr "Margen Inferior"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_left
 #: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_left
-#, fuzzy
 msgid "Margin Left"
-msgstr "Margen Izdo."
+msgstr "Margen Izdo"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_right
 #: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_right
-#, fuzzy
 msgid "Margin Right"
-msgstr "Margen Dcho."
+msgstr "Margen Dcho"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_top
 #: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_top
-#, fuzzy
 msgid "Margin Top"
-msgstr "Margen Sup."
+msgstr "Margen Sup"
 
 #. module: partner_label
 #: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_margin_bottom
 #: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_margin_bottom
-#, fuzzy
 msgid "Margin bottom in millimeters"
-msgstr "Margen en milímetros"
+msgstr "Margen inferior en milímetros"
 
 #. module: partner_label
 #: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_margin_left
 #: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_margin_left
-#, fuzzy
 msgid "Margin left in millimeters"
-msgstr "Margen en milímetros"
+msgstr "Margen izquierdo en milímetros"
 
 #. module: partner_label
 #: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_margin_right
 #: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_margin_right
-#, fuzzy
 msgid "Margin right in millimeters"
-msgstr "Margen en milímetros"
+msgstr "Margen derecho en milímetros"
 
 #. module: partner_label
 #: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_margin_top
 #: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_margin_top
-#, fuzzy
 msgid "Margin top in millimeters"
-msgstr "Margen en milímetros"
+msgstr "Margen superior en milímetros"
 
 #. module: partner_label
 #: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_padding
@@ -122,9 +114,8 @@ msgstr "Formato del papel"
 
 #. module: partner_label
 #: model:ir.actions.report,name:partner_label.report_res_partner_label
-#, fuzzy
 msgid "Partner Labels"
-msgstr "Etiquetas"
+msgstr "Etiquetas de Socios"
 
 #. module: partner_label
 #: model_terms:ir.ui.view,arch_db:partner_label.view_general_configuration
