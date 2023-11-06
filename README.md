@@ -52,6 +52,7 @@ addon | version | maintainers | summary
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 16.0.1.0.0 |  | Contact deduplication with fine-grained permission control
 [partner_deduplicate_by_ref](partner_deduplicate_by_ref/) | 16.0.1.0.0 |  | Deduplicate Contacts by reference
 [partner_disable_gravatar](partner_disable_gravatar/) | 16.0.1.0.1 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Disable automatic connection to gravatar.com
+[partner_email_check](partner_email_check/) | 16.0.1.0.0 |  | Validate email address field
 [partner_email_duplicate_warn](partner_email_duplicate_warn/) | 16.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Warning banner on partner form if another partner has the same email
 [partner_external_map](partner_external_map/) | 16.0.1.0.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 16.0.1.0.0 |  | Add fax number on partner
