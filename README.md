@@ -53,6 +53,7 @@ addon | version | maintainers | summary
 [partner_deduplicate_by_ref](partner_deduplicate_by_ref/) | 15.0.1.0.0 |  | Deduplicate Contacts by reference
 [partner_deduplicate_by_website](partner_deduplicate_by_website/) | 15.0.1.0.0 |  | Deduplicate Contacts by Website
 [partner_deduplicate_filter](partner_deduplicate_filter/) | 15.0.1.0.0 |  | Exclude records from the deduplication
+[partner_disable_gravatar](partner_disable_gravatar/) | 15.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Disable automatic connection to gravatar.com
 [partner_email_check](partner_email_check/) | 15.0.1.0.1 |  | Validate email address field
 [partner_employee_quantity](partner_employee_quantity/) | 15.0.1.0.0 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) | Know how many employees a partner has
 [partner_exception](partner_exception/) | 15.0.1.0.0 |  | Custom exceptions on partner contact
