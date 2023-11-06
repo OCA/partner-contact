@@ -66,6 +66,7 @@ addon | version | maintainers | summary
 [partner_identification_gln](partner_identification_gln/) | 12.0.1.0.0 |  | This addon extends "Partner Identification Numbers" to provide a number category for GLN registration
 [partner_industry_parent](partner_industry_parent/) | 12.0.2.0.0 |  | This module add a parent relation to the partner industry
 [partner_industry_secondary](partner_industry_secondary/) | 12.0.1.0.1 |  | Add secondary partner industries
+[partner_iterative_archive](partner_iterative_archive/) | 12.0.1.0.0 |  | Archive all contacts when parent is archived
 [partner_label](partner_label/) | 12.0.1.1.0 |  | Print partner labels
 [partner_multi_name](partner_multi_name/) | 12.0.1.0.1 |  | Have split first and other names
 [partner_multi_relation](partner_multi_relation/) | 12.0.2.0.0 |  | Partner Relations
