@@ -21,17 +21,11 @@ msgstr ""
 msgid "Contact"
 msgstr "Contatto"
 
-#. module: partner_disable_gravatar
-#: model:ir.model.fields,field_description:partner_disable_gravatar.field_res_partner__display_name
-msgid "Display Name"
-msgstr "Nome visualizzato"
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
 
-#. module: partner_disable_gravatar
-#: model:ir.model.fields,field_description:partner_disable_gravatar.field_res_partner__id
-msgid "ID"
-msgstr "ID"
+#~ msgid "ID"
+#~ msgstr "ID"
 
-#. module: partner_disable_gravatar
-#: model:ir.model.fields,field_description:partner_disable_gravatar.field_res_partner____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
