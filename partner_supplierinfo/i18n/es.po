@@ -6,92 +6,96 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2023-11-06 20:38+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_supplierinfo
 #: model:ir.model.constraint,message:partner_supplierinfo.constraint_partner_supplierinfo_unique_ref
 msgid "A reference of this supplier already exists."
-msgstr ""
+msgstr "Ya existe una referencia de este proveedor."
 
 #. module: partner_supplierinfo
 #: model:ir.model,name:partner_supplierinfo.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: partner_supplierinfo
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: partner_supplierinfo
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado el"
 
 #. module: partner_supplierinfo
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Mostrar Nombre"
 
 #. module: partner_supplierinfo
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__id
 msgid "ID"
-msgstr ""
+msgstr "ID(identificación)"
 
 #. module: partner_supplierinfo
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última Modifiación en"
 
 #. module: partner_supplierinfo
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Actualizado por Última vez por"
 
 #. module: partner_supplierinfo
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultima Actualización el"
 
 #. module: partner_supplierinfo
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__partner_id
 msgid "Partner"
-msgstr ""
+msgstr "Socio"
 
 #. module: partner_supplierinfo
 #: model:ir.model,name:partner_supplierinfo.model_partner_supplierinfo
 msgid "Partner reference equivalence to identify another partner"
 msgstr ""
+"Equivalencia de referencia del interlocutor para identificar a otro "
+"interlocutor"
 
 #. module: partner_supplierinfo
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__ref
 msgid "Ref"
-msgstr ""
+msgstr "Ref"
 
 #. module: partner_supplierinfo
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__supplier_id
 msgid "Supplier"
-msgstr ""
+msgstr "Proveedor"
 
 #. module: partner_supplierinfo
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_res_partner__supplier_info_ids
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_res_users__supplier_info_ids
 msgid "Supplier Info"
-msgstr ""
+msgstr "Información de Proveedor"
 
 #. module: partner_supplierinfo
 #: model_terms:ir.ui.view,arch_db:partner_supplierinfo.view_partner_form
 msgid "Supplier Information"
-msgstr ""
+msgstr "Información del proveedor"
 
 #. module: partner_supplierinfo
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_res_partner__supplier_ref
 #: model:ir.model.fields,field_description:partner_supplierinfo.field_res_users__supplier_ref
 msgid "Supplier Ref"
-msgstr ""
+msgstr "Ref. Proveedor"
