@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:48+0000\n"
-"PO-Revision-Date: 2023-11-09 10:38+0000\n"
+"PO-Revision-Date: 2023-11-09 17:37+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -99,7 +99,7 @@ msgstr "Ultimo caricamento il"
 #. module: partner_capital
 #: model:ir.model.fields,field_description:partner_capital.field_res_partner_turnover_range__write_date
 msgid "Last Updated on"
-msgstr "Ultimo caricamento di"
+msgstr "Ultimo aggiornamento il"
 
 #. module: partner_capital
 #: model:ir.model.fields.selection,name:partner_capital.selection__res_partner__company_size__medium
