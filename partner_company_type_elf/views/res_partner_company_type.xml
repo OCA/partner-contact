@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 ForgeFlow S.L.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="res_partner_company_type_form_view">
+        <field name="name">
+            res.partner.company.type.form (in partner_company_type_elf)
+        </field>
+        <field name="model">res.partner.company.type</field>
+        <field
+            name="inherit_id"
+            ref="partner_company_type.res_partner_company_type_form_view"
+        />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="code" />
+            </field>
+            <field name="shortcut" position="after">
+                <field name="country_id" />
+                <field name="state_id" />
+            </field>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="res_partner_company_type_tree_view">
+        <field name="name">
+            res.partner.company.type.tree (in partner_company_type_elf)
+        </field>
+        <field name="model">res.partner.company.type</field>
+        <field
+            name="inherit_id"
+            ref="partner_company_type.res_partner_company_type_tree_view"
+        />
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="code" />
+            </field>
+            <field name="shortcut" position="after">
+                <field name="country_id" />
+                <field name="state_id" />
+            </field>
+        </field>
+    </record>
+</odoo>
