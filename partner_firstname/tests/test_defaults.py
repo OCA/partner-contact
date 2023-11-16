@@ -15,7 +15,7 @@ class PersonCase(TransactionCase):
     model = "res.partner"
 
     def setUp(self):
-        super(PersonCase, self).setUp()
+        super().setUp()
         self.values = {"firstname": "Núñez", "lastname": "Fernán"}
         self.values["name"] = "{} {}".format(
             self.values["firstname"], self.values["lastname"]
@@ -27,7 +27,7 @@ class PersonCase(TransactionCase):
         for key, value in self.values.items():
             self.assertEqual(self.defaults.get(key), value, "Checking key %s" % key)
 
-        return super(PersonCase, self).tearDown()
+        return super().tearDown()
 
     def test_default_get(self):
         """Getting default values for fields includes new fields."""
@@ -45,7 +45,7 @@ class CompanyCase(PersonCase):
 
     def tearDown(self):
         self.values.update(lastname=self.values["name"], firstname=False)
-        return super(CompanyCase, self).tearDown()
+        return super().tearDown()
 
 
 class UserCase(PersonCase, MailInstalled):
@@ -58,7 +58,7 @@ class UserCase(PersonCase, MailInstalled):
         # Cannot create users if ``mail`` is installed
         if self.mail_installed():
             # Skip tests
-            super(PersonCase, self).tearDown()
+            super().tearDown()
         else:
             # Run tests
-            super(UserCase, self).tearDown()
+            super().tearDown()
