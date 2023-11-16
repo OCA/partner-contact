@@ -4,28 +4,24 @@
         <field name="inherit_id" ref="base.view_partner_simple_form" />
         <field name="arch" type="xml">
             <xpath expr="//field[@id='individual']" position="attributes">
-                <attribute
-                    name="attrs"
-                >{'invisible':[('is_company','=',True)], 'readonly': [('is_company', '=', False)], 'required': [('type', '=', 'contact'), ('is_company', '=', True)]}</attribute>
+                <attribute name="invisible">is_company</attribute>
+                <attribute name="readonly">not is_company</attribute>
+                <attribute name="required">type == 'contract' and is_company</attribute>
             </xpath>
             <xpath expr="//field[@id='company']" position="attributes">
-                <attribute
-                    name="attrs"
-                > {'invisible':[('is_company','=',False)], 'readonly': [('is_company', '=', False)], 'required': [('type', '=', 'contact'), ('is_company', '=', True)]}</attribute>
+                <attribute name="invisible">is_company == False</attribute>
+                <attribute name="readonly">not is_company</attribute>
+                <attribute name="required">type == 'contract' and is_company</attribute>
             </xpath>
             <xpath expr="//h1//field[@id='company']/.." position="before">
-                <group attrs="{'invisible': [('is_company', '=', True)]}">
+                <group invisible="is_company">
                     <field
                         name="lastname"
-                        attrs="{'required': [('firstname', '=', False),
-                        ('is_company', '=', False),
-                        ('type', '=', 'contact')]}"
+                        required="not firstname and not is_company and type == 'contact'"
                     />
                     <field
                         name="firstname"
-                        attrs="{'required': [('lastname', '=', False),
-                        ('is_company', '=', False),
-                        ('type', '=', 'contact')]}"
+                        required="not lastname and not is_company and type == 'contact'"
                     />
                 </group>
             </xpath>
@@ -36,32 +32,28 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <xpath expr="//field[@id='individual']" position="attributes">
-                <attribute
-                    name="attrs"
-                >{'invisible':[('is_company','=',True)], 'readonly': [('is_company', '=', False)], 'required': [('type', '=', 'contact'), ('is_company', '=', True)]}</attribute>
+                <attribute name="invisible">is_company</attribute>
+                <attribute name="readonly">not is_company</attribute>
+                <attribute name="required">type == 'contract' and is_company</attribute>
             </xpath>
             <xpath expr="//field[@id='company']" position="attributes">
-                <attribute
-                    name="attrs"
-                > {'invisible':[('is_company','=',False)], 'readonly': [('is_company', '=', False)], 'required': [('type', '=', 'contact'), ('is_company', '=', True)]}</attribute>
+                <attribute name="invisible">not is_company</attribute>
+                <attribute name="readonly">not is_company</attribute>
+                <attribute name="required">type == 'contract' and is_company</attribute>
             </xpath>
             <xpath
                 expr="//div[hasclass('oe_title')]//field[@id='company']/.."
                 position="after"
             >
                 <div class="oe_edit_only">
-                    <group attrs="{'invisible': [('is_company', '=', True)]}">
+                    <group invisible="is_company">
                         <field
                             name="lastname"
-                            attrs="{'required': [('firstname', '=', False),
-                                ('is_company', '=', False),
-                                ('type', '=', 'contact')]}"
+                            required="not firstname and not is_company and type == 'contact'"
                         />
                         <field
                             name="firstname"
-                            attrs="{'required': [('lastname', '=', False),
-                                ('is_company', '=', False),
-                                ('type', '=', 'contact')]}"
+                            required="not lastname and not is_company and type == 'contact'"
                         />
                     </group>
                 </div>
@@ -71,12 +63,8 @@
                 expr="//field[@name='child_ids']/form//field[@name='name']"
                 position="attributes"
             >
-                <attribute name="attrs">
-                    {
-                        'readonly': [('is_company', '=', False)],
-                        'required': [('is_company', '=', True)]
-                    }
-                </attribute>
+                <attribute name="readonly">not is_company</attribute>
+                <attribute name="required">is_company</attribute>
             </xpath>
             <xpath
                 expr="//field[@name='child_ids']/form//field[@name='name']"
@@ -84,18 +72,14 @@
             >
                 <div class="oe_edit_only" colspan="2">
                     <field name="is_company" invisible="True" />
-                    <group attrs="{'invisible': [('is_company', '=', True)]}">
+                    <group invisible="is_company">
                         <field
                             name="lastname"
-                            attrs="{'required': [('firstname', '=', False),
-                                ('is_company', '=', False),
-                                ('type', '=', 'contact')]}"
+                            required="not firstname and not is_company and type == 'contact'"
                         />
                         <field
                             name="firstname"
-                            attrs="{'required': [('lastname', '=', False),
-                                ('is_company', '=', False),
-                                ('type', '=', 'contact')]}"
+                            required="not lastname and not is_company and type == 'contact'"
                         />
                     </group>
                 </div>
