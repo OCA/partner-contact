@@ -36,17 +36,17 @@ jobs:
       matrix:
         include:
           - container: ghcr.io/oca/oca-ci/py3.10-odoo16.0:latest
-            include: "partner_middlename"
+            include: "partner_middlename,partner_country_state_required"
             name: test with Odoo
           - container: ghcr.io/oca/oca-ci/py3.10-ocb16.0:latest
-            include: "partner_middlename"
+            include: "partner_middlename,partner_country_state_required"
             name: test with OCB
             makepot: "true"
           - container: ghcr.io/oca/oca-ci/py3.10-odoo16.0:latest
-            exclude: "partner_middlename"
+            exclude: "partner_middlename,partner_country_state_required"
             name: test with Odoo
           - container: ghcr.io/oca/oca-ci/py3.10-ocb16.0:latest
-            exclude: "partner_middlename"
+            exclude: "partner_middlename,partner_country_state_required"
             name: test with OCB
             makepot: "true"
     services:
