@@ -9,7 +9,7 @@ class UserCase(TransactionCase, MailInstalled):
     """Test ``res.users``."""
 
     def setUp(self):
-        super(UserCase, self).setUp()
+        super().setUp()
         self.create_original()
 
     def create_original(self):
@@ -23,7 +23,7 @@ class UserCase(TransactionCase, MailInstalled):
         )
 
     def tearDown(self):
-        super(UserCase, self).tearDown()
+        super().tearDown()
 
     def compare(self, copy):
         self.assertEqual(copy.lastname, "Lastname2")

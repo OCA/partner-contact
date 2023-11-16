@@ -11,7 +11,7 @@ class ResUser(models.Model):
     @api.model
     def default_get(self, fields_list):
         """Invert name when getting default values."""
-        result = super(ResUser, self).default_get(fields_list)
+        result = super().default_get(fields_list)
 
         partner_model = self.env["res.partner"]
         inverted = partner_model._get_inverse_name(
@@ -46,4 +46,4 @@ class ResUser(models.Model):
             default.update(
                 self.env["res.partner"]._get_inverse_name(default["name"], False)
             )
-        return super(ResUser, self).copy(default)
+        return super().copy(default)
