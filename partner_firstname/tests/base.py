@@ -31,7 +31,7 @@ class BaseCase(TransactionCase, MailInstalled):
         """Define what is expected in each field when ending."""
         self.lastname = lastname
         self.firstname = firstname
-        self.name = name or "{} {}".format(firstname, lastname)
+        self.name = name or f"{firstname} {lastname}"
 
     def tearDown(self):
         if self.check_fields:
