@@ -24,7 +24,7 @@ class CompanyCase(TransactionCase):
             with self.assertRaises(ex.EmptyNamesError):
                 model.create(data)
         finally:
-            super(CompanyCase, self).tearDown()
+            super().tearDown()
 
     def test_name_empty_string(self):
         """Test what happens when the name is an empty string."""
@@ -51,10 +51,10 @@ class UserCase(CompanyCase, MailInstalled):
         # Cannot create users if ``mail`` is installed
         if self.mail_installed():
             # Skip tests
-            super(CompanyCase, self).tearDown()
+            super().tearDown()
         else:
             # Run tests
-            super(UserCase, self).tearDown()
+            super().tearDown()
 
 
 class AddressCase(TransactionCase):

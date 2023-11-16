@@ -17,7 +17,7 @@ class MailInstalled:
 
 class BaseCase(TransactionCase, MailInstalled):
     def setUp(self):
-        super(BaseCase, self).setUp()
+        super().setUp()
         self.check_fields = True
         self.expect("Núñez", "Fernán")
         self.create_original()
@@ -45,7 +45,7 @@ class BaseCase(TransactionCase, MailInstalled):
                     "Test failed with wrong %s" % field,
                 )
 
-        super(BaseCase, self).tearDown()
+        super().tearDown()
 
     def test_copy(self):
         """Copy the partner and compare the result."""
