@@ -15,7 +15,7 @@ class PersonCase(TransactionCase):
     model = "res.partner"
 
     def setUp(self):
-        super(PersonCase, self).setUp()
+        super().setUp()
         self.good_values = {"firstname": "Núñez", "lastname": "Fernán"}
         self.good_values["name"] = "{} {}".format(
             self.good_values["firstname"], self.good_values["lastname"]
@@ -31,7 +31,7 @@ class PersonCase(TransactionCase):
         for key, value in self.good_values.items():
             self.assertEqual(self.record[key], value, "Checking key %s" % key)
 
-        super(PersonCase, self).tearDown()
+        super().tearDown()
 
     def test_no_name(self):
         """Name is calculated."""
@@ -58,7 +58,7 @@ class CompanyCase(PersonCase):
     context = {"default_is_company": True}
 
     def setUp(self):
-        super(CompanyCase, self).setUp()
+        super().setUp()
         self.good_values.update(lastname=self.values["name"], firstname=False)
         self.values = self.good_values.copy()
 
@@ -73,7 +73,7 @@ class UserCase(PersonCase, MailInstalled):
         # Cannot create users if ``mail`` is installed
         if self.mail_installed():
             # Skip tests
-            super(PersonCase, self).tearDown()
+            super().tearDown()
         else:
             # Run tests
-            super(UserCase, self).tearDown()
+            super().tearDown()
