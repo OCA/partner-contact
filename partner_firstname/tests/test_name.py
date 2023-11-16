@@ -72,7 +72,7 @@ class PartnerCompanyCase(BaseCase):
 
 class UserCase(PartnerContactCase):
     def create_original(self):
-        name = "{} {}".format(self.firstname, self.lastname)
+        name = f"{self.firstname} {self.lastname}"
 
         # Cannot create users if ``mail`` is installed
         if self.mail_installed():
