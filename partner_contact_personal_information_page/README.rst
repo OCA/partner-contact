@@ -74,6 +74,7 @@ Contributors
 -  Nikul CHaudhary <nikulchaudhary2112@gmail.com>
 -  Jeroen Evens <jeroen.evens@dynapps.be>
 -  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+-  Simone Rubino <daemo00@gmail.com>
 
 Maintainers
 -----------
@@ -87,6 +88,14 @@ This module is maintained by the OCA.
 OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
+
+.. |maintainer-Daemo00| image:: https://github.com/Daemo00.png?size=40px
+    :target: https://github.com/Daemo00
+    :alt: Daemo00
+
+Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+
+|maintainer-Daemo00| 
 
 This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/17.0/partner_contact_personal_information_page>`_ project on GitHub.
 
