@@ -81,7 +81,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_priority.field_res_partner__priority_id
 #: model:ir.model.fields,field_description:partner_priority.field_res_users__priority_id
 #: model_terms:ir.ui.view,arch_db:partner_priority.partner_priority_view_form
-#: model_terms:ir.ui.view,arch_db:partner_priority.partner_priority_view_list
 #: model_terms:ir.ui.view,arch_db:partner_priority.view_res_partner_filter
 msgid "Priority"
 msgstr ""
