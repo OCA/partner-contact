@@ -5,3 +5,4 @@
 - Denis Leemann \<<denis.leemann@camptocamp.com>\>
 - Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
 - Druidoo (\<<https://www.druidoo.io>\>)
+- Simone Rubino \<<daemo00@gmail.com>>
