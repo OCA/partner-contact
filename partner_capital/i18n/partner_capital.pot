@@ -145,6 +145,5 @@ msgstr ""
 #. module: partner_capital
 #: model:ir.actions.act_window,name:partner_capital.res_partner_turnover_range_action
 #: model:ir.ui.menu,name:partner_capital.menu_res_partner_turnover_range
-#: model_terms:ir.ui.view,arch_db:partner_capital.res_partner_turnover_range_tree_view
 msgid "Turnover ranges"
 msgstr ""
