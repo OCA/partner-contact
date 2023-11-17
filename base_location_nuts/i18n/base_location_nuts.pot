@@ -168,7 +168,6 @@ msgstr ""
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.res_partner_nuts_action
 #: model:ir.ui.menu,name:base_location_nuts.res_partner_nuts_menu
-#: model_terms:ir.ui.view,arch_db:base_location_nuts.res_partner_nuts_tree
 msgid "NUTS Items"
 msgstr ""
 
