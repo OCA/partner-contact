@@ -72,7 +72,6 @@ msgstr ""
 #: model:ir.ui.menu,name:animal.menu_animal
 #: model:ir.ui.menu,name:animal.menu_root
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
-#: model_terms:ir.ui.view,arch_db:animal.view_animal_tree
 msgid "Animals"
 msgstr ""
 
@@ -126,7 +125,6 @@ msgstr ""
 #: model:ir.actions.act_window,name:animal.action_animal_breed
 #: model:ir.model.fields,field_description:animal.field_animal_species__breed_ids
 #: model:ir.ui.menu,name:animal.menu_breed
-#: model_terms:ir.ui.view,arch_db:animal.view_animal_breed_tree
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
 msgid "Breeds"
 msgstr ""
@@ -539,7 +537,6 @@ msgstr ""
 #: model:ir.ui.menu,name:animal.menu_species
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
-#: model_terms:ir.ui.view,arch_db:animal.view_animal_species_tree
 msgid "Species"
 msgstr ""
 
@@ -590,9 +587,4 @@ msgstr ""
 #. module: animal
 #: model:animal.breed,name:animal.yorkshire_terrier
 msgid "Yorkshire Terrier"
-msgstr ""
-
-#. module: animal
-#: model_terms:ir.ui.view,arch_db:animal.view_animal_color_tree
-msgid "colors"
 msgstr ""
