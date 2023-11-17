@@ -2,6 +2,7 @@
 <!-- License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
      Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L.U.
      Copyright 2019-2020: Druidoo (<https://www.druidoo.io>)
+     Copyright 2023 Simone Rubino <daemo00@gmail.com>
 -->
 <odoo>
     <record id="view_partner_form" model="ir.ui.view">
@@ -14,10 +15,7 @@
         <field name="arch" type="xml">
             <xpath expr="//group[@name='personal_information_group']">
                 <field name='birthdate_date' />
-                <field
-                    name="age"
-                    attrs="{'invisible': [('birthdate_date', '=', False)]}"
-                />
+                <field name="age" invisible="not birthdate_date" />
             </xpath>
         </field>
     </record>

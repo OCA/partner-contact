@@ -9,7 +9,7 @@ from odoo.tests import common
 
 class TestResPartner(common.TransactionCase):
     def setUp(self):
-        super(TestResPartner, self).setUp()
+        super().setUp()
         self.partner_admin = self.env.ref("base.partner_admin")
         self.partner_admin.write({"birthdate_date": "1991-09-05"})
 
