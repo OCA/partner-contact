@@ -7,3 +7,4 @@
 - Nikul CHaudhary \<<nikulchaudhary2112@gmail.com>\>
 - Jeroen Evens \<<jeroen.evens@dynapps.be>\>
 - Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
+- Simone Rubino \<<daemo00@gmail.com>>
