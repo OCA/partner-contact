@@ -223,7 +223,6 @@ msgstr ""
 
 #. module: base_location
 #: model:ir.ui.menu,name:base_location.locations_menu_zips
-#: model_terms:ir.ui.view,arch_db:base_location.city_zip_tree
 #: model_terms:ir.ui.view,arch_db:base_location.view_city_form
 #: model_terms:ir.ui.view,arch_db:base_location.view_res_country_city_better_zip_form
 msgid "Zips"
