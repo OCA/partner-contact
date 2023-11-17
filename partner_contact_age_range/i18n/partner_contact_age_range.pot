@@ -111,7 +111,6 @@ msgstr ""
 
 #. module: partner_contact_age_range
 #: model:ir.model,name:partner_contact_age_range.model_res_partner_age_range
-#: model_terms:ir.ui.view,arch_db:partner_contact_age_range.view_partner_age-range_tree
 #: model_terms:ir.ui.view,arch_db:partner_contact_age_range.view_partner_age_range_form
 msgid "Partner Age Range"
 msgstr ""
