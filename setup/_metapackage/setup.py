@@ -54,6 +54,7 @@ setuptools.setup(
         'odoo-addon-partner_label>=16.0dev,<16.1dev',
         'odoo-addon-partner_manual_rank>=16.0dev,<16.1dev',
         'odoo-addon-partner_middlename>=16.0dev,<16.1dev',
+        'odoo-addon-partner_mobile_duplicate_warn>=16.0dev,<16.1dev',
         'odoo-addon-partner_multi_relation>=16.0dev,<16.1dev',
         'odoo-addon-partner_pricelist_search>=16.0dev,<16.1dev',
         'odoo-addon-partner_ref_unique>=16.0dev,<16.1dev',
