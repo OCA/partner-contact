@@ -1,0 +1,62 @@
+<odoo noupdate="1">
+
+<!-- ### Contact Access ### -->
+      <record model="ir.module.category" id="cat_prt_partner_tweaks_access">
+          <field name="name">Contact Access</field>
+          <field name="description">Access to Contacts/Partners</field>
+          <field name="sequence">100</field>
+      </record>
+
+  <!-- Users, Followed, Tags -->
+        <record id="prt_contact_users" model="res.groups">
+            <field name="name">Same Company, Followed, Categories</field>
+            <field name="category_id" ref="cat_prt_partner_tweaks_access" />
+        </record>
+
+  <!-- Countries / Regions -->
+        <record id="prt_contact_regions" model="res.groups">
+            <field name="name"> + Selected Countries/States</field>
+            <field name="category_id" ref="cat_prt_partner_tweaks_access" />
+            <field name="implied_ids" eval="[(4, ref('prt_contact_users'))]" />
+        </record>
+
+  <!-- Full Access -->
+        <record id="prt_contact_full" model="res.groups">
+            <field name="name">Full Access</field>
+            <field name="category_id" ref="cat_prt_partner_tweaks_access" />
+            <field name="implied_ids" eval="[(4, ref('prt_contact_regions'))]" />
+        </record>
+
+
+<!-- Contacts: Users, Followed, Tags -->
+  <record id="rule_contact_users_followed_tags" model="ir.rule">
+      <field name="name">Users, Followed, Tags only</field>
+      <field name="model_id" ref="base.model_res_partner" />
+      <field name="domain_force">
+        ['&amp;', ('type', '!=', 'private'),  '|', '|', '|',
+                ('id', '=', user.partner_id.id),
+                ('message_partner_ids', 'in', [user.partner_id.id]),
+                ('category_id', 'in', user.allowed_partner_category_ids.ids),
+                ('user_ids', 'in', user.company_id.user_ids.ids)]</field>
+      <field name="groups" eval="[(4, ref('prt_contact_users'))]" />
+  </record>
+
+<!-- Contacts: Countries / States -->
+  <record id="rule_contact_countries_states" model="ir.rule">
+      <field name="name">Users, Followed, Tags only</field>
+      <field name="model_id" ref="base.model_res_partner" />
+      <field
+            name="domain_force"
+        >['|', ('country_id', 'in', user.allowed_country_ids.ids), ('state_id', 'in', user.allowed_country_state_ids.ids)]</field>
+      <field name="groups" eval="[(4, ref('prt_contact_regions'))]" />
+  </record>
+
+<!-- Contacts: Full Access-->
+  <record id="rule_contact_full_access" model="ir.rule">
+      <field name="name">Full Access</field>
+      <field name="model_id" ref="base.model_res_partner" />
+      <field name="domain_force">[]</field>
+      <field name="groups" eval="[(4, ref('prt_contact_full'))]" />
+  </record>
+
+</odoo>

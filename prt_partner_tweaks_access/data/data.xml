@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo noupdate="1">
+        <!--
+        Modify legacy access rules for res.partner
+        Keep it here instead of manifest.py to ensure this is triggered on every update
+        -->
+        <function model="res.users" name="tweak_access_rules_active" />
+</odoo>
