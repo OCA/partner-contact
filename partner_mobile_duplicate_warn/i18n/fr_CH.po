@@ -22,24 +22,9 @@ msgid "Contact"
 msgstr "Contact"
 
 #. module: partner_mobile_duplicate_warn
-#: model:ir.model.fields,field_description:partner_mobile_duplicate_warn.field_res_partner__display_name
-msgid "Display Name"
-msgstr "Nom affiché"
-
-#. module: partner_mobile_duplicate_warn
 #: model_terms:ir.ui.view,arch_db:partner_mobile_duplicate_warn.view_partner_form
 msgid "Duplicate warning: partner"
 msgstr "Alerte doublon : contact"
-
-#. module: partner_mobile_duplicate_warn
-#: model:ir.model.fields,field_description:partner_mobile_duplicate_warn.field_res_partner__id
-msgid "ID"
-msgstr "ID"
-
-#. module: partner_mobile_duplicate_warn
-#: model:ir.model.fields,field_description:partner_mobile_duplicate_warn.field_res_partner____last_update
-msgid "Last Modified on"
-msgstr "Dernière modification le"
 
 #. module: partner_mobile_duplicate_warn
 #: model:ir.model.fields,field_description:partner_mobile_duplicate_warn.field_res_partner__same_mobile_partner_id
@@ -51,3 +36,12 @@ msgstr "Contact avec le même natel"
 #: model_terms:ir.ui.view,arch_db:partner_mobile_duplicate_warn.view_partner_form
 msgid "has the same <b>Mobile</b>."
 msgstr "a le même <b>natel</b>."
+
+#~ msgid "Display Name"
+#~ msgstr "Nom affiché"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Dernière modification le"
