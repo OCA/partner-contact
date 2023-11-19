@@ -4,7 +4,8 @@ from odoo.tests.common import TransactionCase
 class PartnerTweaksAccessCommon(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(PartnerTweaksAccessCommon, cls).setUpClass()
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
 
         cls.partner_model = cls.env["res.partner"]
         cls.user_model = cls.env["res.users"]

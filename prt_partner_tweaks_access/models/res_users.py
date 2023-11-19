@@ -32,8 +32,9 @@ class ResUsers(models.Model):
     )
 
     @api.model
-    def tweak_access_rules_active(self):
-        self.self.env["ir.rule"].tweak_access_rules(False)
+    def actived_predefined_rules_state(self):
+        """Activate the predefined access rules"""
+        self.env["ir.rule"].set_predefined_rules_state(False)
 
     # -- Write. Clear caches if related vals changed
     def write(self, vals):

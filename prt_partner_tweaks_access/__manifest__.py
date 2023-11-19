@@ -3,7 +3,7 @@
 
 {
     "name": "Partner Access Tweaks",
-    "summary": "This allows to restrict contact access based on user settings",
+    "summary": "Restrict access to contacts based on user settings",
     "version": "16.0.1.0.1",
     "category": "base",
     "website": "https://github.com/OCA/partner-contact",
@@ -18,7 +18,7 @@
         "views/res_users.xml",
     ],
     "installable": True,
-    "application": True,
+    "application": False,
     "auto_install": False,
     "uninstall_hook": "restore_access_rules",
 }

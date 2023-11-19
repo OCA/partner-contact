@@ -10,9 +10,12 @@ class IRRule(models.Model):
     _inherit = "ir.rule"
 
     @api.model
-    def tweak_access_rules(self, state):
+    def set_predefined_rules_state(self, state):
         """
-        Need to shut down some non-updatable rules to ensure tweak is applied correctly
+        Adjust the state of predefined access rules.
+        This function is designed to modify the 'active' state of predefined access rules.
+        It shuts down (sets 'active' to True) or activates (sets 'active' to False)
+        the rules based on the provided 'state' parameter.
         """
         rules = (
             self.with_context(active_test=False)

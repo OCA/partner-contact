@@ -6,19 +6,23 @@ from .common import PartnerTweaksAccessCommon
 
 @tagged("post_install", "-at_install", "standart")
 class TestPartnerTweaksAccess(PartnerTweaksAccessCommon):
-    def test_user_without_tweak_access(self):
+    def test_user_access_difference(self):
         """
-        Check that results differ for a user without tweaks and a user with tweaks.
+        Check the search results are different for a user without access tweaks
+        and a user with access tweaks.
         """
-
-        result_1 = self.partner_model.with_user(self.user_without_tweaks_access).search(
-            []
-        )
-        result_2 = self.partner_model.with_user(self.user_with_tweaks_access).search([])
+        result_without_tweaks = self.partner_model.with_user(
+            self.user_without_tweaks_access
+        ).search([])
+        result_with_tweaks = self.partner_model.with_user(
+            self.user_with_tweaks_access
+        ).search([])
 
         # Ensure that the search results are not equal for the two users
         self.assertNotEqual(
-            result_1, result_2, msg="The search results should not be equal"
+            result_without_tweaks,
+            result_with_tweaks,
+            msg="The search results should not be equal",
         )
 
     def test_user_access_partner_categories(self):
@@ -105,11 +109,11 @@ class TestPartnerTweaksAccess(PartnerTweaksAccessCommon):
             ).format(state=self.country_state.id),
         )
 
-    def test_tweak_access_rules(self):
+    def test_predefined_rules_state(self):
         """
         Test that applying tweaks to user access rules activates predefined rules.
         """
-        self.user_model.tweak_access_rules_active()
+        self.user_model.actived_predefined_rules_state()
 
         # Search for predefined rules
         rules = (

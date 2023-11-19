@@ -10,4 +10,4 @@ from .consts import PREDEFINED_RULES
 # -- Restore access rules after module uninstalled
 def restore_access_rules(cr, registry):
     env = api.Environment(cr, SUPERUSER_ID, {})
-    env["ir.rule"].tweak_access_rules(True)
+    env["ir.rule"].set_predefined_rules_state(True)
