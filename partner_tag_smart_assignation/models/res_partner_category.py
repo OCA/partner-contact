@@ -43,6 +43,13 @@ class ResPartnerCategory(models.Model):
 
     tagged_partner_count = fields.Integer(compute="_compute_number_tags", stored=True)
 
+    author_id = fields.Many2one(
+        "res.users", string="Author", default=lambda x: x.env.user
+    )
+    department_ids = fields.Many2many("hr.department", string="Department")
+    description = fields.Text()
+    valid_until = fields.Date()
+
     @api.model
     def create(self, vals):
         record = super().create(vals)
@@ -134,7 +141,18 @@ class ResPartnerCategory(models.Model):
 
     @api.model
     def update_all_smart_tags(self):
+        self._check_validity_dates()
         return self.search([("smart", "=", True)]).update_partner_tags()
+
+    @api.model
+    def _check_validity_dates(self):
+        """Scheduled method to deactivate records past their validity date"""
+        today = fields.Date.today()
+        records_to_deactivate = self.search(
+            [("valid_until", "<", today), ("active", "=", True), ("smart", "=", True)]
+        )
+        # Archive the tag and unlink the partner
+        records_to_deactivate.write({"partner_ids": [(5, 0, 0)], "active": False})
 
     @api.depends("partner_ids")
     def _compute_number_tags(self):

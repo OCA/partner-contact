@@ -8,7 +8,7 @@
     "author": "Compassion CH, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/partner-contact",
-    "depends": ["base"],
+    "depends": ["base", "hr"],
     "data": ["cron/update_cron.xml", "views/smart_tagger_view.xml"],
     "installable": True,
     "auto_install": False,

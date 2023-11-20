@@ -6,6 +6,13 @@
         <field name="arch" type="xml">
             <field name="display_name" position="after">
                 <field name="smart" />
+                <field name="author_id" />
+                <field name="department_ids" />
+                <field name="description" />
+                <field
+                    name="valid_until"
+                    attrs="{'invisible': [('smart', '=', False)],}"
+                />
             </field>
         </field>
     </record>
@@ -34,6 +41,13 @@
             </xpath>
             <field name="parent_id" position="after">
                 <field name="smart" />
+                <field name="author_id" />
+                <field name="department_ids" widget="many2many_tags" />
+                <field name="description" />
+                <field
+                    name="valid_until"
+                    attrs="{'invisible': [('smart', '=', False)],}"
+                />
                 <field
                     name="tag_filter_join_operator"
                     attrs="{'invisible': [('smart', '=', False)],}"
