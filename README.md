@@ -70,6 +70,7 @@ addon | version | maintainers | summary
 [partner_mobile_duplicate_warn](partner_mobile_duplicate_warn/) | 16.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Warning banner on partner form if another partner has the same mobile
 [partner_multi_relation](partner_multi_relation/) | 16.0.1.0.0 |  | Partner Relations
 [partner_pricelist_search](partner_pricelist_search/) | 16.0.1.0.0 |  | Partner pricelist search
+[partner_purchase_manager](partner_purchase_manager/) | 16.0.1.0.1 | [![EmilioPascual](https://github.com/EmilioPascual.png?size=30px)](https://github.com/EmilioPascual) | Add purchase manager field in partner
 [partner_ref_unique](partner_ref_unique/) | 16.0.1.0.0 |  | Add an unique constraint to partner ref field
 [partner_second_lastname](partner_second_lastname/) | 16.0.1.0.1 |  | Have split first and second lastnames
 [partner_stage](partner_stage/) | 16.0.1.0.0 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Add lifecycle Stages to Partners
