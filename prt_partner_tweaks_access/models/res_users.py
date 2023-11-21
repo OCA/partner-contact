@@ -32,8 +32,8 @@ class ResUsers(models.Model):
     )
 
     @api.model
-    def actived_predefined_rules_state(self):
-        """Activate the predefined access rules"""
+    def disactivate_default_system_access_rules(self):
+        """Disactivate the predefined access rules"""
         self.env["ir.rule"].set_predefined_rules_state(False)
 
     # -- Write. Clear caches if related vals changed

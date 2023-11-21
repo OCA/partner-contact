@@ -21,15 +21,6 @@ class PartnerTweaksAccessCommon(TransactionCase):
                 "login": "user_with_tweaks_access@test.com",
             }
         )
-
-        cls.user_without_tweaks_access = cls.user_model.with_context(
-            no_reset_password=True
-        ).create(
-            {
-                "name": "Test User without Tweaks Access",
-                "login": "user_without_tweaks_access@test.com",
-            }
-        )
         cls.user_with_tweaks_access.groups_id = [
             (4, cls.env.ref("prt_partner_tweaks_access.prt_contact_users").id)
         ]

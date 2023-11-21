@@ -1,6 +1,8 @@
 - Go to "Settings -> User" and select a user
 
-- Select the contacts access level for the user In the "Contact Access" field
+- Select the contacts access level for the user in the "Other" —> "Contact Access" field
+- Add definitions of selection field options
+
 
 If enabled specify exact contacts user has access to:
 
