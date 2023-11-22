@@ -5,10 +5,13 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
+            <field name="ref" position="before">
+                <field name="ref_readonly" invisible="1" />
+            </field>
             <field name="ref" position="attributes">
                 <attribute
                     name="attrs"
-                >{'readonly': [('is_company', '=', False), ('parent_id', '!=', False)]}</attribute>
+                >{'readonly': ['|', ('ref_readonly', '=', True), '&amp;', ('is_company', '=', False), ('parent_id', '!=', False)]}</attribute>
             </field>
         </field>
     </record>

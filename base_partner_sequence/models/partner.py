@@ -4,13 +4,22 @@
 # Copyright 2016 Camptocamp - Akim Juillerat (<https://www.camptocamp.com>).
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, exceptions, models
+from odoo import _, api, exceptions, fields, models
 
 
 class ResPartner(models.Model):
     """Assigns 'ref' from a sequence on creation and copying"""
 
     _inherit = "res.partner"
+
+    ref_readonly = fields.Boolean(compute="_compute_ref_readonly")
+
+    @api.depends("company_id")
+    @api.depends_context("company")
+    def _compute_ref_readonly(self):
+        for rec in self:
+            company = rec.company_id or self.env.company
+            rec.ref_readonly = company.partner_ref_readonly
 
     def _get_next_ref(self, vals=None):
         return self.env["ir.sequence"].next_by_code("res.partner")
