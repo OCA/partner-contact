@@ -23,6 +23,7 @@ setuptools.setup(
         'odoo-addon-partner_bank_acc_type_constraint>=16.0dev,<16.1dev',
         'odoo-addon-partner_bank_code>=16.0dev,<16.1dev',
         'odoo-addon-partner_capital>=16.0dev,<16.1dev',
+        'odoo-addon-partner_category_type>=16.0dev,<16.1dev',
         'odoo-addon-partner_company_default>=16.0dev,<16.1dev',
         'odoo-addon-partner_company_group>=16.0dev,<16.1dev',
         'odoo-addon-partner_company_type>=16.0dev,<16.1dev',
