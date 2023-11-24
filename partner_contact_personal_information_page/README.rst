@@ -13,20 +13,17 @@ Personal information page for contacts
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
-    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
-    :alt: License: AGPL-3
-.. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
+.. |badge2| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
     :target: https://github.com/OCA/partner-contact/tree/17.0/partner_contact_personal_information_page
     :alt: OCA/partner-contact
-.. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
+.. |badge3| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
     :target: https://translation.odoo-community.org/projects/partner-contact-17-0/partner-contact-17-0-partner_contact_personal_information_page
     :alt: Translate me on Weblate
-.. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
+.. |badge4| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
     :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=17.0
     :alt: Try me on Runboat
 
-|badge1| |badge2| |badge3| |badge4| |badge5|
+|badge1| |badge2| |badge3| |badge4|
 
 This module extends the contact management functionality.
 
@@ -60,7 +57,7 @@ Credits
 Authors
 -------
 
-* Nicolas JEUDY
+* KOMIT COMPANY LIMITED
 
 Contributors
 ------------
