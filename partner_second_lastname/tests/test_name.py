@@ -118,14 +118,14 @@ class PersonCase(TransactionCase):
         self.template = "%(first)s %(last1)s %(last2)s"
         self.params = {
             "is_company": False,
-            "name": "{} {} {}".format(self.firstname, self.lastname, self.lastname2),
+            "name": f"{self.firstname} {self.lastname} {self.lastname2}",
         }
 
     def test_firstname_last(self):
         """Create a person setting his first name last."""
         self.params = {
             "is_company": False,
-            "name": "{} {}, {}".format(self.lastname, self.lastname2, self.firstname),
+            "name": f"{self.lastname} {self.lastname2}, {self.firstname}",
         }
 
     def test_firstname_last_wo_comma(self):
@@ -134,7 +134,7 @@ class PersonCase(TransactionCase):
         self.template = "%(last1)s %(last2)s %(first)s"
         self.params = {
             "is_company": False,
-            "name": "{} {} {}".format(self.lastname, self.lastname2, self.firstname),
+            "name": f"{self.lastname} {self.lastname2} {self.firstname}",
         }
 
     def test_firstname_only(self):
@@ -154,7 +154,7 @@ class PersonCase(TransactionCase):
         self.template = "%(first)s %(last1)s"
         self.params = {
             "is_company": False,
-            "name": "{} {}".format(self.firstname, self.lastname),
+            "name": f"{self.firstname} {self.lastname}",
         }
 
     def test_lastname_firstname_only(self):
@@ -163,7 +163,7 @@ class PersonCase(TransactionCase):
         self.template = "%(last1)s, %(first)s"
         self.params = {
             "is_company": False,
-            "name": "{}, {}".format(self.lastname, self.firstname),
+            "name": f"{self.lastname}, {self.firstname}",
         }
 
     def test_lastname_firstname_only_wo_comma(self):
@@ -174,7 +174,7 @@ class PersonCase(TransactionCase):
         self.template = "%(last1)s %(first)s"
         self.params = {
             "is_company": False,
-            "name": "{} {}".format(self.lastname, self.firstname),
+            "name": f"{self.lastname} {self.firstname}",
         }
 
     def test_separately(self):
