@@ -144,7 +144,7 @@ class Partner(models.Model):
     def create(self, vals_list):
         lang_name = f'display_name_{self.env.user.lang.split("_")[0]}'
         for vals in vals_list:
-            if lang_name in self._fields and vals.get('name'):
+            if lang_name in self._fields and vals.get("name"):
                 vals[lang_name] = vals["name"]
                 vals["name"] = self.partner_name_translate(vals["name"])
         partners = super(Partner, self).create(vals_list)
