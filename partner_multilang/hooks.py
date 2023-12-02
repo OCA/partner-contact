@@ -1,4 +1,3 @@
-#  -*- coding: utf-8 -*-
 #  Part of Odoo. See LICENSE file for full copyright and licensing details.
 import logging
 
@@ -13,6 +12,4 @@ def pre_init_hook(cr):
         """
     )
     logger.info("Copy display_name to display_name_en field")
-    cr.execute(
-        "UPDATE res_partner SET display_name_en=display_name;"
-    )
+    cr.execute("UPDATE res_partner SET display_name_en=display_name;")
