@@ -149,7 +149,7 @@ class Partner(models.Model):
                 vals["name"] = self.partner_name_translate(vals["name"])
         partners = super(Partner, self).create(vals_list)
         for partner, vals in zip(partners, vals_list):
-            if lang_name in self._fields:
+            if lang_name in self._fields and vals.get(lang_name):
                 partner.name = vals[lang_name]
             if vals.get("name"):
                 partner._force_display_names({})
