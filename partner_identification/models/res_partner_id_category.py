@@ -35,10 +35,23 @@ class ResPartnerIdCategory(models.Model):
         translate=True,
         help="Name of this ID type. For example, 'Driver License'",
     )
+    country_id = fields.Many2one(string="Country",
+                                 comodel_name='res.country',
+                                 help="Country for which this id category is available,"
+                                      " when applied on taxes.")
     active = fields.Boolean(default=True)
     validation_code = fields.Text(
         "Python validation code", help="Python code called to validate an id number."
     )
+
+    def name_get(self):
+        res = []
+        for id_category in self:
+            name = id_category.name
+            if id_category.country_id and id_category.country_id != self.env.company:
+                name = _("%s (%s)", id_category.name, id_category.country_id.code)
+            res.append((id_category.id, name,))
+        return res
 
     @api.model
     def _search_duplicate(self, category_id, id_number, force_active=False):
