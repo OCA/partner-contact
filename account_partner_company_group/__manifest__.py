@@ -10,5 +10,6 @@
     "depends": ["base_partner_company_group", "account"],
     "website": "https://github.com/OCA/partner-contact",
     "data": ["views/account_move_views.xml"],
+    "external_dependencies": {"python": ["openupgradelib"]},
     "installable": True,
 }
