@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright 2023 Simone Rubino <daemo00@gmail.com>
+  ~ License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+  -->
+<odoo>
+    <!-- Declared the same in every module that may need it -->
+    <record id="personal_information" model="ir.ui.view">
+        <field name="name">Personal information page for contacts form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <page
+                    name="personal_information_page"
+                    string="Personal Information"
+                    invisible="is_company"
+                >
+                    <group name="personal_information_group" />
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
