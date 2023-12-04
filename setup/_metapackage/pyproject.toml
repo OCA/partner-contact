@@ -1,7 +1,8 @@
 [project]
 name = "odoo-addons-oca-partner-contact"
-version = "17.0.20231203.0"
+version = "17.0.20231204.0"
 dependencies = [
+    "odoo-addon-partner_contact_birthdate>=17.0dev,<17.1dev",
     "odoo-addon-partner_contact_personal_information_page>=17.0dev,<17.1dev",
 ]
 classifiers=[
