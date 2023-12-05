@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- Modification of Partner - Adding Tab for Idenification Numbers -->
     <record model="ir.ui.view" id="view_partner_form">
@@ -14,7 +13,7 @@
                         colspan="4"
                         nolabel="1"
                         widget="one2many_list"
-                        context="{'default_partner_id': active_id}"
+                        context="{'default_partner_id': id}"
                     />
                 </page>
             </page>
