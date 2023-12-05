@@ -8,3 +8,4 @@
 - Dennis Sluijk \<<d.sluijk@onestein.nl>\>
 - Phuc Tran Thanh \<<phuc@trobz.com>\>
 - Marie Lejeune \<<marie.lejeune@acsone.eu>\>
+- Nils Coenen \<<nils.coenen@nico-solutions.de>\>
