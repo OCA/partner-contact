@@ -1,0 +1,350 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_identification
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-21 01:49+0000\n"
+"PO-Revision-Date: 2023-03-31 19:10+0000\n"
+"Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
+"Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid ""
+"# Use failed = True to specify that the id number is not valid.\n"
+"# You can use the following variables :\n"
+"#  - self: browse_record of the current ID Category browse_record\n"
+"#  - id_number: browse_record of ID number to validate\n"
+"\n"
+"<b><i># Sample 1: ID number only contains digits</i></b>\n"
+"if not id_number.name.isdigit():\n"
+"    failed = True\n"
+"else:\n"
+"    failed = False\n"
+"\n"
+"<b><i># Sample 2: Length of ID number cannot exceed 10 chars</i></b>\n"
+"failed = len(id_number.name) &gt; 10 and True or False\n"
+"\n"
+"<b><i># Sample 3: ID number must start with the category code</i></b>\n"
+"failed = not id_number.name.startswith(self.code) and True or False"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
+msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
+msgstr "Okrajšava ali akronim tega ID tipa. Na primer: 'voznisko_dovoljenje'"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__active
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__active
+msgid "Active"
+msgstr "Aktivno"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__partner_issued_id
+msgid ""
+"Another partner, who issued this ID. For example, Traffic National "
+"Institution"
+msgstr "Dodaten partner, ki je izdal ta ID. Na primer: Državni izpitni center"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__category_id
+msgid "Category"
+msgstr "Kategorija"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__code
+msgid "Code"
+msgstr "Koda"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
+msgid "Color Index"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__create_uid
+msgid "Created by"
+msgstr "Ustvaril"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__create_date
+msgid "Created on"
+msgstr "Ustvarjeno"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__display_name
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__display_name
+msgid "Display Name"
+msgstr "Prikazani naziv"
+
+#. module: partner_identification
+#. odoo-python
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
+#, python-format
+msgid ""
+"Error when evaluating the id_category validation code: \n"
+" {name} \n"
+"({error})"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_until
+msgid ""
+"Expiration date. For example, date when person needs to renew his driver "
+"license, 21/10/2019"
+msgstr ""
+"Datum poteka. Na primer: datum, ko mora oseba obnoviti veljavnost vozniškega "
+"dovoljenja, 21/10/2019"
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
+msgid "Expired"
+msgstr "Potekel"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__name
+msgid "ID Number"
+msgstr "ID številka"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_form
+msgid "ID Numbers"
+msgstr "ID številka"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__name
+msgid "ID name"
+msgstr "ID ime"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__category_id
+msgid "ID type defined in configuration. For example, Driver License"
+msgstr "ID tip določen v konfiguraciji. Na primer: Vozniški izpit"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id_numbers
+#: model:ir.model.fields,field_description:partner_identification.field_res_users__id_numbers
+msgid "Identification Numbers"
+msgstr "Identifikacijska številka"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_issued_id
+msgid "Issued by"
+msgstr "Izdal"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__date_issued
+msgid ""
+"Issued date. For example, date when person approved his driving exam, "
+"21/10/2009"
+msgstr ""
+"Datum izdaje. Na primer: datum, ko je oseba opravila vozniški izpit, "
+"21/10/2019"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
+msgid "Issued on"
+msgstr "Izdano"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category____last_update
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number____last_update
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_uid
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_uid
+msgid "Last Updated by"
+msgstr "Zadnji posodobil"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_date
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_date
+msgid "Last Updated on"
+msgstr "Zadnjič posodobljeno"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__name
+msgid "Name of this ID type. For example, 'Driver License'"
+msgstr "Ime tega ID tipa. Na primer: 'Vozniško dovoljenje'"
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
+msgid "New"
+msgstr "Nov"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__comment
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+msgid "Notes"
+msgstr "Zapiski"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_id
+msgid "Partner"
+msgstr "Partner"
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_category
+msgid "Partner ID Categories"
+msgstr "Partnerjeve ID kategorije"
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner_id_category
+#, fuzzy
+msgid "Partner ID Category"
+msgstr "Partnerjeve ID kategorije"
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner_id_number
+#, fuzzy
+msgid "Partner ID Number"
+msgstr "Partnerjeve ID številke"
+
+#. module: partner_identification
+#: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+msgid "Partner ID Numbers"
+msgstr "Partnerjeve ID številke"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid "Partner Identification Categories"
+msgstr "Partnerjeve identifikacijske kategorije"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__place_issuance
+msgid "Place of Issuance"
+msgstr "Kraj zavarovanja"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid "Python Validation Code:"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__validation_code
+msgid "Python code called to validate an id number."
+msgstr "Python koda za validacijo ID številke."
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__validation_code
+msgid "Python validation code"
+msgstr "Python validacijska koda"
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
+msgid "Running"
+msgstr "V teku"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
+msgid "Status"
+msgstr "Status"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__name
+msgid "The ID itself. For example, Driver License number of this person"
+msgstr "ID sama. Na primer: Številka vozniškega dovoljenja te osebe"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__place_issuance
+msgid ""
+"The place where the ID has been issued. For example the country for "
+"passports and visa"
+msgstr "Kraj izdaje ID. Na primer: kraj izdaje potnega lista ali vize"
+
+#. module: partner_identification
+#. odoo-python
+#: code:addons/partner_identification/models/res_partner.py:0
+#, python-format
+msgid ""
+"This {record_name} has multiple IDs of this type ({category_code}), so a "
+"write via the {field_name} field is not possible. In order to fix this, "
+"please use the IDs tab."
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
+msgid "To Renew"
+msgstr "Obnoviti"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
+msgid "Valid from"
+msgstr "Veljavno od"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_until
+msgid "Valid until"
+msgstr "Veljavno do"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_from
+msgid "Validation period stating date."
+msgstr "Datum pričetka obdobja validacije."
+
+#. module: partner_identification
+#. odoo-python
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
+#, python-format
+msgid "{id_name} is not a valid {cat_name} identifier"
+msgstr ""
+
+#, python-format
+#~ msgid "%s is not a valid %s identifier"
+#~ msgstr "%s ni veljaven %s identifikator"
+
+#, python-format
+#~ msgid ""
+#~ "Error when evaluating the id_category validation code::\n"
+#~ " %s \n"
+#~ "(%s)"
+#~ msgstr ""
+#~ "Napaka pri evalvaciji id_category validacijske kode::\n"
+#~ "%s\n"
+#~ "(%s)"
+
+#~ msgid ""
+#~ "\n"
+#~ "# Python code. Use failed = True to specify that the id number is not "
+#~ "valid.\n"
+#~ "# You can use the following variables :\n"
+#~ "#  - self: browse_record of the current ID Category browse_record\n"
+#~ "#  - id_number: browse_record of ID number to validate"
+#~ msgstr ""
+#~ "\n"
+#~ "# Python koda. Uporabi failed = True za določitev neveljavnosti ID "
+#~ "številke.\n"
+#~ "# Lahko uporabite naslednje spremenljivke:\n"
+#~ "# - self: dostop do zpisa trenutne ID kategorije\n"
+#~ "# - id_number: dostop do zapisa ID številke za validacojo"
