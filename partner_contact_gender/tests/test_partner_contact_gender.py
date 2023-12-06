@@ -5,7 +5,7 @@ from odoo.tests.common import TransactionCase
 
 class TestPartnerContactGender(TransactionCase):
     def setUp(self):
-        super(TestPartnerContactGender, self).setUp()
+        super().setUp()
         self.testpartner = self.env["res.partner"].create(
             {"name": "test", "title": self.env.ref("base.res_partner_title_madam").id}
         )
@@ -13,5 +13,5 @@ class TestPartnerContactGender(TransactionCase):
     def test_partner_contact_gender(self):
         from ..hooks import post_init_hook
 
-        post_init_hook(self.cr, None)
+        post_init_hook(self.env)
         self.assertEqual(self.testpartner.gender, "female")
