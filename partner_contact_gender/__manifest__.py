@@ -4,7 +4,7 @@
 {
     "name": "Contact gender",
     "summary": "Add gender field to contacts",
-    "version": "16.0.1.0.0",
+    "version": "17.0.1.0.0",
     "category": "Customer Relationship Management",
     "website": "https://github.com/OCA/partner-contact",
     "author": "Grupo ESOC, Tecnativa, Odoo Community Association (OCA)",
