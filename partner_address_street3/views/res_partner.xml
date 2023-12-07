@@ -13,7 +13,7 @@
                     name="street3"
                     placeholder="Street 3..."
                     class="o_address_street"
-                    attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
+                    readonly="type == 'contact' and parent_id != False"
                 />
         </xpath>
         <xpath
