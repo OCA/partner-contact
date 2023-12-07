@@ -44,13 +44,13 @@ class TestStreet3(TransactionCase):
     def test_post_init_hook(self):
         from ..hooks import post_init_hook
 
-        post_init_hook(self.env.cr, None)
+        post_init_hook(self.env)
         us_country = self.env.ref("base.us")
         self.assertTrue("%(street3)s" in us_country.address_format)
 
     def test_uninstall(self):
         from ..hooks import uninstall_hook
 
-        uninstall_hook(self.env.cr, None)
+        uninstall_hook(self.env)
         us_country = self.env.ref("base.us")
         self.assertTrue("%(street3)s" not in us_country.address_format)
