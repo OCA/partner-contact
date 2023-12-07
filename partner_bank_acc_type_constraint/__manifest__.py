@@ -4,7 +4,7 @@
 
 {
     "name": "Bank Account Account Type Constraint",
-    "version": "16.0.1.0.1",
+    "version": "13.0.1.0.0",
     "category": "Partners",
     "license": "AGPL-3",
     "summary": "Adds constraint on bank account type",
@@ -13,10 +13,7 @@
     "website": "https://github.com/OCA/partner-contact",
     # depend on "account" only for the form view of res.partner
     "depends": ["account"],
-    "data": [
-        "views/res_partner.xml",
-        "views/res_partner_bank.xml",
-    ],
+    "data": ["views/res_partner.xml", "views/res_partner_bank.xml"],
     "post_init_hook": "initialize_acc_type_manual",
     "installable": True,
 }
