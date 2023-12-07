@@ -39,6 +39,8 @@ class ResPartnerBank(models.Model):
                     _(
                         "The type of account number '%(acc_number)s' is "
                         "'%(acc_type)s' and not '%(acc_type_manual)s'.",
+                    )
+                    % dict(
                         acc_number=rec.acc_number,
                         acc_type=acctype2label.get(rec.acc_type),
                         acc_type_manual=acctype2label.get(rec.acc_type_manual),
