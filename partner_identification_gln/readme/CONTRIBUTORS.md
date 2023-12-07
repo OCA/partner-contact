@@ -4,3 +4,4 @@
 - Bejaoui Souheil \<<souheil.bejaoui@acsone.eu>\>
 - Simone Orsi \<<simone.orsi@camptocamp.com>\>
 - Duong (Tran Quoc) \<<duongtq@trobz.com>\>
+- Nils Coenen \<<nils.coenen@nico-solutions.de>\>
