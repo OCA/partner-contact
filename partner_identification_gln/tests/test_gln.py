@@ -1,6 +1,7 @@
 # Copyright 2016 Acsone S.A.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+
 from odoo.exceptions import ValidationError
 from odoo.tests.common import TransactionCase
 
@@ -69,4 +70,9 @@ class TestGLN(TransactionCase):
     def test_gcp_with_no_number(self):
         self.assertFalse(
             self.partner_id_gcp_category.validate_res_partner_gln(id_number=None)
+        )
+
+    def test_validate_res_partner_gcp_return_false(self):
+        self.assertFalse(
+            self.partner_id_category.validate_res_partner_gcp(id_number=None)
         )
