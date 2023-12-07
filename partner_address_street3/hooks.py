@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-def post_init_hook(cr, registry):
+def post_init_hook(env):
     """Add street3 to address format"""
     query = """
         UPDATE res_country
@@ -12,10 +12,10 @@ def post_init_hook(cr, registry):
         E'%(street2)s\n%(street3)s\n'
         )
     """
-    cr.execute(query)
+    env.cr.execute(query)
 
 
-def uninstall_hook(cr, registry):
+def uninstall_hook(env):
     """Remove street3 from address format"""
     # Remove %(street3)s\n from address_format
     query = """
@@ -26,7 +26,7 @@ def uninstall_hook(cr, registry):
         ''
         )
     """
-    cr.execute(query)
+    env.cr.execute(query)
 
     # Remove %(street3)s from address_format
     query = """
@@ -37,4 +37,4 @@ def uninstall_hook(cr, registry):
         ''
         )
     """
-    cr.execute(query)
+    env.cr.execute(query)
