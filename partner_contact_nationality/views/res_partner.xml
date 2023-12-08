@@ -8,13 +8,11 @@
             ref="partner_contact_personal_information_page.personal_information"
         />
         <field name="arch" type="xml">
-            <data>
-                <xpath
-                    expr="//page[@name='personal_information_page']/group[@name='personal_information_group']"
-                >
-                    <field name='nationality_id' />
-                </xpath>
-            </data>
+            <xpath
+                expr="//page[@name='personal_information_page']/group[@name='personal_information_group']"
+            >
+                <field name='nationality_id' />
+            </xpath>
         </field>
     </record>
 </odoo>
