@@ -4,7 +4,7 @@
 {
     "name": "Contact nationality",
     "summary": "Add nationality field to contacts",
-    "version": "15.0.1.0.0",
+    "version": "16.0.1.0.1",
     "category": "Customer Relationship Management",
     "website": "https://github.com/OCA/partner-contact",
     "author": "Grupo ESOC, Odoo Community Association (OCA)",
