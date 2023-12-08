@@ -2,14 +2,14 @@
 <odoo>
 <data>
 
-<record id="view_personal_information_gender" model="ir.ui.view">
-    <field name="name">Partner gender</field>
+<record id="view_personal_information_page_nationality" model="ir.ui.view">
+    <field name="name">Partner nationality</field>
     <field name="model">res.partner</field>
     <field name="inherit_id" ref="partner_contact_personal_information_page.personal_information"/>
     <field name="arch" type="xml">
         <data>
             <xpath expr="//group[@name='personal_information_group']">
-                <field name="gender"/>
+                <field name="nationality_id"/>
             </xpath>
         </data>
     </field>
