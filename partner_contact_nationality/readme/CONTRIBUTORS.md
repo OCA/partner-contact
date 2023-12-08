@@ -8,3 +8,5 @@
 - Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
 - [Pesol](https://www.pesol.es):
   - Pedro Evaristo Gonzalez Sanchez \<<pedro.gonzalez@pesol.es>\>
+- [Komit Company Limited](https://komit-consulting.com/):
+  - Quoc Pham Ngoc \<<quoc-pn@komit-consulting.com>\>
