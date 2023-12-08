@@ -15,7 +15,7 @@
     ],
     "license": "AGPL-3",
     'application': False,
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     "depends": [
         "partner_contact_personal_information_page",
