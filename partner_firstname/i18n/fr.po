@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
 "PO-Revision-Date: 2023-12-08 11:35+0000\n"
-"Last-Translator: Denis Leemann <denis.leemann@camptocamp.com>\n"
+"Last-Translator: c2cdidier <didier.donze@camptocamp.com>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -25,14 +25,14 @@ msgstr ""
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
 msgid "%(login)s (copy)"
-msgstr "%(login)s (copy)"
+msgstr "%(login)s (copie)"
 
 #. module: partner_firstname
 #. odoo-python
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
 msgid "%(name)s (copy)"
-msgstr "%(name)s (copy)"
+msgstr "%(name)s (copie)"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_config_settings
