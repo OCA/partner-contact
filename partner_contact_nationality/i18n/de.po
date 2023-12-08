@@ -1,25 +1,25 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* base_contact
-#
-# Rudolf Schnapka <schnapkar@golive-saar.de>, 2014.
+# * partner_contact_nationality
+# 
+# Translators:
+# Rudolf Schnapka <schnapkar@golive-saar.de>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0\n"
+"Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-20 07:38+0000\n"
-"PO-Revision-Date: 2015-05-20 09:39+0100\n"
-"Last-Translator: Rudolf Schnapka <schnapkar@golive-saar.de>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
-"Language: de\n"
+"POT-Creation-Date: 2015-12-17 01:36+0000\n"
+"PO-Revision-Date: 2015-12-15 11:18+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-partner-contact-9-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"X-Generator: Poedit 1.7.6\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_contact_nationality
-#: field:res.partner,nationality_id:0
+#: model:ir.model.fields,field_description:partner_contact_nationality.field_res_partner_nationality_id
 msgid "Nationality"
 msgstr "Nationalität"
 
