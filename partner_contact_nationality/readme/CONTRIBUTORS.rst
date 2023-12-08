@@ -5,3 +5,4 @@
 * Richard deMeester <richard@willowit.com.au>
 * Denis Roussel <denis.roussel@acsone.eu>
 * Marçal Isern <marsal.isern@qubiq.es>
+* Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
