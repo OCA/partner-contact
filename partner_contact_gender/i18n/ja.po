@@ -1,0 +1,49 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_gender
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-10 03:39+0000\n"
+"PO-Revision-Date: 2023-11-30 12:34+0000\n"
+"Last-Translator: Tatsuki Kanda <kanda@quartile.co>\n"
+"Language-Team: Japanese (https://www.transifex.com/oca/teams/23907/ja/)\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: partner_contact_gender
+#: model:ir.model,name:partner_contact_gender.model_res_partner
+msgid "Contact"
+msgstr "連絡先"
+
+#. module: partner_contact_gender
+#: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__female
+msgid "Female"
+msgstr "女性"
+
+#. module: partner_contact_gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner__gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_users__gender
+msgid "Gender"
+msgstr "性別"
+
+#. module: partner_contact_gender
+#: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__male
+msgid "Male"
+msgstr "男性"
+
+#. module: partner_contact_gender
+#: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__other
+msgid "Other"
+msgstr "その他"
+
+#~ msgid "Partner"
+#~ msgstr "パートナ"
