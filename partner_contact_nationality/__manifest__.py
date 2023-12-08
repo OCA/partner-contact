@@ -5,17 +5,18 @@
 {
     "name": "Contact nationality",
     "summary": "Add nationality field to contacts",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "category": "Customer Relationship Management",
     "website": "https://odoo-community.org/",
     "author": "Grupo ESOC, Odoo Community Association (OCA)",
     "contributors": [
         'Jairo Llopis <j.llopis@grupoesoc.es>',
         'Richard deMeester <richard@willowit.com.au>',
+        'Denis Roussel <denis.roussel@acsone.eu>',
     ],
     "license": "AGPL-3",
     'application': False,
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     "depends": [
         "partner_contact_personal_information_page",
