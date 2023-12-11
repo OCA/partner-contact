@@ -27,6 +27,7 @@ addon | version | maintainers | summary
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 17.0.1.0.0 | [![Daemo00](https://github.com/Daemo00.png?size=30px)](https://github.com/Daemo00) | Add a page to contacts form to put personal information
 [partner_firstname](partner_firstname/) | 17.0.1.0.0 |  | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 17.0.1.0.0 |  | Partner Identification Numbers
+[partner_second_lastname](partner_second_lastname/) | 17.0.1.0.0 |  | Have split first and second lastnames
 
 [//]: # (end addons)
 
