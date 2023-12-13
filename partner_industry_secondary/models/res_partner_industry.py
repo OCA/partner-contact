@@ -28,8 +28,7 @@ class ResPartnerIndustry(models.Model):
             """Return the list [cat.name, cat.parent_id.name, ...]"""
             res = []
             while cat:
-                res.insert(0, cat.name)
-                cat = cat.parent_id
+                res.insert(0, cat.name or f"#{cat.id}")
             return res
 
         return [(cat.id, " / ".join(get_names(cat))) for cat in self]

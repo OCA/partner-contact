@@ -42,6 +42,10 @@ class TestResPartnerIndustry(common.TransactionCase):
 
     def test_04_name(self):
         self.assertEqual(self.industry_child.display_name, "Test / Test child")
+        self.industry_child.name = False
+        self.assertEqual(
+            self.industry_child.display_name, f"Test / #{self.industry_child.id}"
+        )
 
     def test_05_check_partner_industries(self):
         main = self.industry_main
