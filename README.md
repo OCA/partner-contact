@@ -19,15 +19,16 @@ Contact-related odoo addons.
 
 Available addons
 ----------------
-addon | version | maintainers | summary
---- | --- | --- | ---
-[partner_address_street3](partner_address_street3/) | 17.0.1.0.0 |  | Add a third address line on partners
-[partner_contact_birthdate](partner_contact_birthdate/) | 17.0.1.0.0 | [![Daemo00](https://github.com/Daemo00.png?size=30px)](https://github.com/Daemo00) | Contact's birthdate
-[partner_contact_gender](partner_contact_gender/) | 17.0.1.0.0 |  | Add gender field to contacts
-[partner_contact_personal_information_page](partner_contact_personal_information_page/) | 17.0.1.0.0 | [![Daemo00](https://github.com/Daemo00.png?size=30px)](https://github.com/Daemo00) | Add a page to contacts form to put personal information
-[partner_firstname](partner_firstname/) | 17.0.1.0.0 |  | Split first name and last name for non company partners
-[partner_identification](partner_identification/) | 17.0.1.0.0 |  | Partner Identification Numbers
-[partner_second_lastname](partner_second_lastname/) | 17.0.1.0.0 |  | Have split first and second lastnames
+addon | version | maintainers                                                                          | summary
+--- | --- |--------------------------------------------------------------------------------------| ---
+[partner_address_street3](partner_address_street3/) | 17.0.1.0.0 |                                                                                      | Add a third address line on partners
+[partner_contact_birthdate](partner_contact_birthdate/) | 17.0.1.0.0 | [![Daemo00](https://github.com/Daemo00.png?size=30px)](https://github.com/Daemo00)   | Contact's birthdate
+[partner_contact_gender](partner_contact_gender/) | 17.0.1.0.0 |                                                                                      | Add gender field to contacts
+[partner_contact_personal_information_page](partner_contact_personal_information_page/) | 17.0.1.0.0 | [![Daemo00](https://github.com/Daemo00.png?size=30px)](https://github.com/Daemo00)   | Add a page to contacts form to put personal information
+[partner_firstname](partner_firstname/) | 17.0.1.0.0 |                                                                                      | Split first name and last name for non company partners
+[partner_identification](partner_identification/) | 17.0.1.0.0 |                                                                                      | Partner Identification Numbers
+[partner_second_lastname](partner_second_lastname/) | 17.0.1.0.0 |                                                                                      | Have split first and second lastnames
+[partner_stage](partner_stage/) | 17.0.1.0.0 | [![Daemo00](https://github.com/fasilwdr.png?size=30px)](https://github.com/fasilwdr) | Add lifecycle Stages to Partners
 
 [//]: # (end addons)
 
