@@ -107,6 +107,11 @@ msgid "Validated Message"
 msgstr ""
 
 #. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__validation_status
+msgid "Validation Status"
+msgstr ""
+
+#. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__review_ids
 msgid "Validations"
 msgstr ""
