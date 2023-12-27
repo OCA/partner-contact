@@ -1,6 +1,8 @@
 # Copyright 2019 Open Source Integrators
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
+from lxml import etree
+
 from odoo import api, models
 
 
@@ -48,3 +50,25 @@ class ResPartner(models.Model):
         if "stage_id" in vals and vals.get("stage_id") in self._state_from:
             self.restart_validation()
         return res
+
+    @api.model
+    def fields_view_get(
+        self, view_id=None, view_type="form", toolbar=False, submenu=False
+    ):
+        """We set the state field in every partner form view."""
+        result = super().fields_view_get(view_id, view_type, toolbar, submenu)
+        if view_type == "form":
+            doc = etree.XML(result["arch"])
+            node = doc.xpath("//form/sheet")
+            if node:
+                content = etree.fromstring('<field name="state" invisible="1"/>')
+                node[0].addprevious(content)
+                new_arch, new_fields = self.env["ir.ui.view"].postprocess_and_fields(
+                    doc, self._name
+                )
+                result["arch"] = new_arch
+                # We don't want to loose previous configuration, so, we only want to add
+                # the new fields
+                new_fields.update(result["fields"])
+                result["fields"] = new_fields
+        return result
