@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2023-12-24 18:41+0000\n"
+"PO-Revision-Date: 2023-12-27 11:34+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -220,7 +220,7 @@ msgstr "Partner"
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
 #: model:ir.ui.menu,name:partner_identification.menu_partner_id_category
 msgid "Partner ID Categories"
-msgstr "Categorie documenti del partner"
+msgstr "ID categorie partner"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner_id_category
