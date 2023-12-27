@@ -6,31 +6,31 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-12-02 11:44+0000\n"
-"Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
+"PO-Revision-Date: 2023-12-27 08:35+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__active
 #: model:res.partner.stage,name:partner_stage.partner_stage_active
 msgid "Active"
-msgstr ""
+msgstr "Attivo"
 
 #. module: partner_stage
 #: model:ir.model.fields.selection,name:partner_stage.selection__res_partner_stage__state__confirmed
 msgid "Approved"
-msgstr ""
+msgstr "Approvato"
 
 #. module: partner_stage
 #: model:ir.model.fields.selection,name:partner_stage.selection__res_partner_stage__state__cancel
 msgid "Archived"
-msgstr ""
+msgstr "In archivio"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__code
@@ -55,12 +55,12 @@ msgstr "Fasi contatto"
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creato da"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creato il"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__is_default
@@ -85,7 +85,7 @@ msgstr "Bozza"
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__fold
 msgid "Fold"
-msgstr ""
+msgstr "Chiuso"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__id
@@ -95,7 +95,7 @@ msgstr "ID"
 #. module: partner_stage
 #: model:res.partner.stage,name:partner_stage.partner_stage_inactive
 msgid "Inactive"
-msgstr ""
+msgstr "Inattivo"
 
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage____last_update
@@ -156,4 +156,4 @@ msgstr "Da approvare"
 #. module: partner_stage
 #: model:ir.model.fields,help:partner_stage.field_res_partner_stage__sequence
 msgid "Used to order the stages"
-msgstr ""
+msgstr "Utilizzato per ordinare le fasi"
