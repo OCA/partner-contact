@@ -6,30 +6,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2023-12-27 09:37+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_pricelist_search
 #: model:ir.model,name:partner_pricelist_search.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contatto"
 
 #. module: partner_pricelist_search
 #: model_terms:ir.ui.view,arch_db:partner_pricelist_search.product_pricelist_view
 msgid "Customers"
-msgstr ""
+msgstr "Clienti"
 
 #. module: partner_pricelist_search
 #: model:ir.model,name:partner_pricelist_search.model_product_pricelist
 #: model:ir.model.fields,field_description:partner_pricelist_search.field_res_partner__property_product_pricelist
 #: model:ir.model.fields,field_description:partner_pricelist_search.field_res_users__property_product_pricelist
 msgid "Pricelist"
-msgstr ""
+msgstr "Listino prezzi"
 
 #. module: partner_pricelist_search
 #: model:ir.model.fields,help:partner_pricelist_search.field_res_partner__property_product_pricelist
@@ -38,3 +40,5 @@ msgid ""
 "This pricelist will be used, instead of the default one, for sales to the "
 "current partner"
 msgstr ""
+"Questo listino verrà utilizzato, al posto di quello predefinito, per le "
+"vendite al partner corrente"
