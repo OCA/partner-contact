@@ -13,6 +13,11 @@
     "conflicts": [
         "base_search_fuzzy",
     ],
+    'external_dependencies': {
+        'python': [
+            'transliterate'
+        ]
+    },
     "depends": [
         "base",
     ],
@@ -20,4 +25,5 @@
     "demo": [],
     "installable": True,
     "pre_init_hook": "pre_init_hook",
+    "post_load": "post_load_hook"
 }

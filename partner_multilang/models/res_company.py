@@ -1,6 +1,7 @@
 #  Part of Odoo. See LICENSE file for full copyright and licensing details.
 import logging
 
+from transliterate import translit, get_available_language_codes
 from odoo import api, fields, models
 
 _logger = logging.getLogger(__name__)
@@ -22,6 +23,13 @@ class Company(models.Model):
     city = fields.Char(translate=True)
 
     def address_name_translate(self, name):
+        lang = self.env.user.lang.split("_")[0]
+        lang_name = f'display_name_{lang}'
+
+        if lang not in get_available_language_codes():
+            return name
+        if lang_name in self.env['res.partner']._fields:
+            return translit(name, lang, reversed=True)
         return name
 
     def _force_address(self, vals):

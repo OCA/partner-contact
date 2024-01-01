@@ -3,6 +3,7 @@
 import logging
 
 from lxml import etree
+from transliterate import translit, get_available_language_codes
 
 from odoo import api, fields, models
 
@@ -22,7 +23,14 @@ class Partner(models.Model):
     ]  # TODO vat must be sanitized the same way for storing/searching
 
     def partner_name_translate(self, name):
+        lang = self.env.user.lang.split("_")[0]
+        if lang not in get_available_language_codes():
+            return name
+        lang_name = f'display_name_{lang}'
+        if lang_name in self._fields:
+            return translit(name, lang, reversed=True)
         return name
+
 
     name = fields.Char(translate=True)
     street = fields.Char(translate=True)
@@ -82,7 +90,7 @@ class Partner(models.Model):
         # retrieve name_get() without any fancy feature
         names = dict(self.with_context(**{"lang": "en_US"}).name_get())
         for partner in self:
-            partner.display_name = names.get(partner.id)
+            partner.display_name_en = names.get(partner.id)
 
     def _compute_display_lang(self):
         display_lang = "display_name_en"
