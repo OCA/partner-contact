@@ -8,9 +8,17 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
 
-            <!-- Tier Validation UI needs the state field to be in the form -->
+            <!-- Tier Validation UI needs the computed fields to be in the form -->
+            <!-- when opening contact form by clicking create and edit from
+             many2one -->
             <field name="stage_id" position="before">
                 <field name="state" invisible="1" />
+                <field name="need_validation" invisible="1" />
+                <field name="validated" invisible="1" />
+                <field name="rejected" invisible="1" />
+                <field name="can_review" invisible="1" />
+                <field name="next_review" invisible="1" />
+                <field name="review_ids" invisible="1" />
             </field>
 
         </field>
