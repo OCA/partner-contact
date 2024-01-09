@@ -15,6 +15,7 @@ class TestPartnerCompanyDefault(common.TransactionCase):
         partner = (
             self.env["res.partner"]
             .with_user(self.user.id)
+            .with_context(test_partner_company_default=True)
             .create({"name": "Test Partner 1"})
         )
         self.assertEqual(partner.company_id, self.user.company_id)
@@ -39,6 +40,7 @@ class TestPartnerCompanyDefault(common.TransactionCase):
         partner = (
             self.env["res.partner"]
             .with_user(self.user.id)
+            .with_context(test_partner_company_default=True)
             .create({"name": "Test Partner 2"})
         )
         self.assertEqual(partner.company_id, company_fr)
