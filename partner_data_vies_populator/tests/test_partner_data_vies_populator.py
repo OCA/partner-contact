@@ -13,14 +13,16 @@ class TestPartnerCreateByVAT(TransactionCase):
         cls.be_country_id = cls.env.ref("base.be").id
         cls.sample_1 = {
             "name": "SA ODOO",
-            "address": "Chaussée De Namur 40 1367 Ramillies",
+            "address": "Chaussée de Namur 40",
+            "zip": "1367",
+            "city": "Ramillies",
             "country_code": "BE",
         }
 
     def test_create_from_vat1(self):
         # Create an partner from VAT number field
         with Form(self.partner_model) as partner_form:
-            partner_form.is_company = True
+            partner_form.company_type = "company"
             partner_form.vat = "be0477472701"
 
             # Check if the datas fetch correspond with the datas from VIES.

@@ -32,9 +32,14 @@ This module allows you to create the partners (companies) based on their VAT num
 Name and address of the partner will automatically be completed via VIES Webservice.
 
 VIES Service (based on stdnum python)
-http://ec.europa.eu/taxation_customs/vies/vieshome.do
+http://ec.europa.eu/taxation_customs/vies
 
-Unfortunately, VIES doesn't return a structured address but just a one-line address that aggregate street, zip and city. So, when you use this module to create a partner, the *City* and *Zip* fields will be left empty ; the *Street* field will contain the one-line address.
+Unfortunately, VIES doesn't return a structured address but just a multi-line string
+with aggregate street, zip and city.
+
+So, when the data is retrieved, it will try to populate the *City* and *Zip* fields
+from the last line of the address.
+T he *Street* field will contain the remaining information.
 
 **Table of contents**
 
@@ -44,12 +49,16 @@ Unfortunately, VIES doesn't return a structured address but just a one-line addr
 Installation
 ============
 
-This module require the `python-stdnum <https://pypi.org/project/python-stdnum/>`_ librairy. As Odoo itself depend on this librairy, it should already be installed on your system.
+This module require the `python-stdnum <https://pypi.org/project/python-stdnum/>`_ library.
+As Odoo itself depends on this librairy, it should already be installed on your system.
 
 Usage
 =====
 
-When changing a company partner VAT number, this module will try to fetch the partner data from VIES webservice, if available on VIES will update the name, address and country.
+When changing a company partner VAT number, this module will try
+to fetch the partner data from VIES webservice.
+
+If found on VIES, it will update the name, address, zip, city and country.
 
 Bug Tracker
 ===========
@@ -86,6 +95,10 @@ Contributors
 * `Noviat <https://www.noviat.com/>`_ :
 
   * Jeremy Didderen <jeremy.didderen@noviat.com>
+
+* `Open Source Integrators <https://opensourceintegrators.com>`_
+
+  * Daniel Reis <dreis@opensourceintegrators.com>
 
 Maintainers
 ~~~~~~~~~~~
