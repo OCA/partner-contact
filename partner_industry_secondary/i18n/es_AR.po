@@ -46,12 +46,6 @@ msgid "Error! Industry with same name and parent already exists."
 msgstr ""
 
 #. module: partner_industry_secondary
-#: code:addons/partner_industry_secondary/models/res_partner_industry.py:0
-#, python-format
-msgid "Error! You cannot create recursive industries."
-msgstr ""
-
-#. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Industries"
 msgstr ""

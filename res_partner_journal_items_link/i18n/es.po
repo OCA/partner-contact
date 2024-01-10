@@ -7,13 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-09 11:29+0000\n"
-"PO-Revision-Date: 2022-11-09 11:29+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2023-10-12 13:36+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: res_partner_journal_items_link
 #: model_terms:ir.ui.view,arch_db:res_partner_journal_items_link.res_partner_form_view
@@ -21,18 +23,16 @@ msgid "<span class=\"o_stat_text\">Journal items</span>"
 msgstr "<span class=\"o_stat_text\">Apuntes contables</span>"
 
 #. module: res_partner_journal_items_link
-#: model:ir.model,name:res_partner_journal_items_link.model_res_partner
-msgid "Contact"
-msgstr "Contacto"
+#: model:ir.actions.act_window,name:res_partner_journal_items_link.action_partner_account_move_line
+msgid "Journal items"
+msgstr "Artículos Diarios"
 
-#. module: res_partner_journal_items_link
-#: code:addons/res_partner_journal_items_link/models/res_partner.py:0
+#~ msgid "Contact"
+#~ msgstr "Contacto"
+
 #, python-format
-msgid "Journal items %s"
-msgstr "Apuntes contables %s"
+#~ msgid "Journal items %s"
+#~ msgstr "Apuntes contables %s"
 
-#. module: res_partner_journal_items_link
-#: model:ir.model.fields,field_description:res_partner_journal_items_link.field_res_partner__journal_items_count
-#: model:ir.model.fields,field_description:res_partner_journal_items_link.field_res_users__journal_items_count
-msgid "Number of Journal items"
-msgstr "Número de apuntes contables"
+#~ msgid "Number of Journal items"
+#~ msgstr "Número de apuntes contables"

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 ACSONE SA/NV
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <function model="res.company" name="write">
+        <value model="res.company" search="[]" />
+        <value eval="{'partner_email_check_syntax': False}" />
+    </function>
+</odoo>

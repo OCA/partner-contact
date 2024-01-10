@@ -51,7 +51,8 @@ msgstr "Todas as relações com o parceiro atual"
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__ignore
 #, python-format
 msgid "Allow existing relations that do not fit changed conditions"
-msgstr "Permitir relações existentes que não se encaixem em condições alteradas"
+msgstr ""
+"Permitir relações existentes que não se encaixem em condições alteradas"
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner
@@ -308,11 +309,6 @@ msgid "Partner Relation Type"
 msgstr "Tipo de Relação do Parceiro"
 
 #. module: partner_multi_relation
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.tree_res_partner_relation_all
-msgid "Partner Relations"
-msgstr "Relações de Parceiros"
-
-#. module: partner_multi_relation
 #: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
 msgid "Partner Relations Types"
 msgstr "Tipos de Relações de Parceiros"
@@ -474,12 +470,6 @@ msgstr "Simétrica"
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
-msgid "The {partner} partner does not have category {category}."
-msgstr "O parceiro {partner} não tem categoria {category}."
-
-#. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "The %s partner is not applicable for this relation type."
 msgstr "O parceiro %s não é aplicável para este tipo de relação."
 
@@ -498,6 +488,12 @@ msgstr "A id do objeto no modelo em que esta relação se baseia."
 #, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr "A data de início não pode ser posterior à data final."
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
+#, python-format
+msgid "The {partner} partner does not have category {category}."
+msgstr "O parceiro {partner} não tem categoria {category}."
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
@@ -591,3 +587,6 @@ msgstr "outro"
 #, python-format
 msgid "this"
 msgstr "este"
+
+#~ msgid "Partner Relations"
+#~ msgstr "Relações de Parceiros"

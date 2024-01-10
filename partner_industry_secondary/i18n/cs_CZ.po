@@ -46,12 +46,6 @@ msgid "Error! Industry with same name and parent already exists."
 msgstr ""
 
 #. module: partner_industry_secondary
-#: code:addons/partner_industry_secondary/models/res_partner_industry.py:0
-#, fuzzy, python-format
-msgid "Error! You cannot create recursive industries."
-msgstr "Chyba! Nemůžete vytvářet rekurzivní sektory."
-
-#. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Industries"
 msgstr ""
@@ -113,6 +107,10 @@ msgstr "Hlavní odvětví se musí lišit od sekundárních sektorů."
 #: model:res.groups,name:partner_industry_secondary.group_use_partner_industry_for_person
 msgid "Use industry for individuals"
 msgstr ""
+
+#, fuzzy, python-format
+#~ msgid "Error! You cannot create recursive industries."
+#~ msgstr "Chyba! Nemůžete vytvářet rekurzivní sektory."
 
 #~ msgid "Parent Right"
 #~ msgstr "Rodičovské právo"

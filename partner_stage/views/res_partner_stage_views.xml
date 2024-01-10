@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_partner_stage_form" model="ir.ui.view">
+        <field name="model">res.partner.stage</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group name="top">
+                        <group name="left">
+                            <field name="state" />
+                            <field name="code" />
+                        </group>
+                        <group name="right">
+                            <field name="is_default" />
+                            <field name="fold" />
+                            <field name="active" />
+                        </group>
+                    </group>
+                    <field name="description" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_partner_stage_tree" model="ir.ui.view">
+        <field name="model">res.partner.stage</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="state" />
+                <field name="code" />
+                <field name="description" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_partner_stage">
+        <field name="name">Stage</field>
+        <field name="res_model">res.partner.stage</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.menu" id="menu_partner_stage">
+        <field name="name">Contact Stages</field>
+        <field name="action" ref="action_partner_stage" />
+        <field name="parent_id" ref="contacts.res_partner_menu_config" />
+    </record>
+
+</odoo>

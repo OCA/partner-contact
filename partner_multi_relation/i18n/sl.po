@@ -307,11 +307,6 @@ msgid "Partner Relation Type"
 msgstr "Tip partnerskega odnosa"
 
 #. module: partner_multi_relation
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.tree_res_partner_relation_all
-msgid "Partner Relations"
-msgstr "Partnerski odnosi"
-
-#. module: partner_multi_relation
 #: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
 msgid "Partner Relations Types"
 msgstr "Tipi partnerskih odnosov"
@@ -468,12 +463,6 @@ msgstr "Simetrični"
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
-msgid "The {partner} partner does not have category {category}."
-msgstr "Partner {partner} nima kategorije {category}."
-
-#. module: partner_multi_relation
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "The %s partner is not applicable for this relation type."
 msgstr "Partner %s ni ustrezen za ta tip odnosa."
 
@@ -492,6 +481,12 @@ msgstr ""
 #, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr "Začetni datum ne more biti za končnim datumom."
+
+#. module: partner_multi_relation
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
+#, python-format
+msgid "The {partner} partner does not have category {category}."
+msgstr "Partner {partner} nima kategorije {category}."
 
 #. module: partner_multi_relation
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
@@ -582,6 +577,9 @@ msgstr "drugo"
 #, python-format
 msgid "this"
 msgstr "ta"
+
+#~ msgid "Partner Relations"
+#~ msgstr "Partnerski odnosi"
 
 #~ msgid "Left partner to right partner"
 #~ msgstr "Levi partner proti desnemu"

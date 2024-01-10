@@ -22,19 +22,9 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_contact_address_default
-#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__display_name
-msgid "Display Name"
-msgstr "Nom affiché"
-
-#. module: partner_contact_address_default
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
 msgid "Force addresses"
 msgstr "Force les adresses"
-
-#. module: partner_contact_address_default
-#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__id
-msgid "ID"
-msgstr ""
 
 #. module: partner_contact_address_default
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
@@ -48,11 +38,6 @@ msgid "Invoice address"
 msgstr "Adresse de facturation"
 
 #. module: partner_contact_address_default
-#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner____last_update
-msgid "Last Modified on"
-msgstr "Modifié le"
-
-#. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_delivery_id
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_delivery_id
 msgid "Shipping address"
@@ -64,3 +49,9 @@ msgid "You can force and delivery and invoice address for this contacts."
 msgstr ""
 "Vous pouvez forcer l'adresse de livraison et de facturation pour ces "
 "contacts."
+
+#~ msgid "Display Name"
+#~ msgstr "Nom affiché"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Modifié le"
