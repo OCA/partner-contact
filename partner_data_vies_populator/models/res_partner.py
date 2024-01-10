@@ -36,10 +36,13 @@ class ResPartner(models.Model):
             if result.name != "---":
                 res["name"] = result.name.upper()
             # Update partner address if listed on VIES
+            # Last line can be "ZipCode City"
             if result.address != "---":
-                res["street"] = (
-                    result.address.replace("\n", " ").replace("\r", "").title()
-                )
+                address_parts = result.address.split("\n")
+                if len(address_parts) > 1 and " " in address_parts[-1]:
+                    zip_city = address_parts.pop()
+                    res["zip"], res["city"] = zip_city.split(" ", 1)
+                res["street"] = " ".join(address_parts)
             # Get country by country code
             country = self.env["res.country"].search(
                 [("code", "ilike", result.countryCode)]
