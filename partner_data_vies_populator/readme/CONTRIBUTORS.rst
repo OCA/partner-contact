@@ -11,3 +11,7 @@
 * `Noviat <https://www.noviat.com/>`_ :
 
   * Jeremy Didderen <jeremy.didderen@noviat.com>
+
+* `Open Source Integrators <https://opensourceintegrators.com>`_
+
+  * Daniel Reis <dreis@opensourceintegrators.com>
