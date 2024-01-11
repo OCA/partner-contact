@@ -49,6 +49,7 @@ addon | version | maintainers | summary
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 15.0.1.0.0 |  | Add a page to contacts form to put personal information
 [partner_contact_role](partner_contact_role/) | 15.0.1.0.0 |  | Add roles to partners.
 [partner_country_lang](partner_country_lang/) | 15.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner language according country
+[partner_data_vies_populator](partner_data_vies_populator/) | 15.0.1.0.0 |  | Using VIES webservice, name and address information will be fetched and added to the partner.
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 15.0.1.2.1 |  | Contact deduplication with fine-grained permission control
 [partner_deduplicate_by_ref](partner_deduplicate_by_ref/) | 15.0.1.0.0 |  | Deduplicate Contacts by reference
 [partner_deduplicate_by_website](partner_deduplicate_by_website/) | 15.0.1.0.0 |  | Deduplicate Contacts by Website
