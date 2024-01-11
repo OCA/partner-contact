@@ -22,11 +22,6 @@ msgid "Contact"
 msgstr "Contact"
 
 #. module: partner_data_vies_populator
-#: model:ir.model.fields,field_description:partner_data_vies_populator.field_res_partner__display_name
-msgid "Display Name"
-msgstr "Nom affiché"
-
-#. module: partner_data_vies_populator
 #: code:addons/partner_data_vies_populator/models/res_partner.py:0
 #, python-format
 msgid ""
@@ -36,12 +31,11 @@ msgstr ""
 "Erreur pendant l'interrogation VIES.\n"
 "Erreur technique : %s."
 
-#. module: partner_data_vies_populator
-#: model:ir.model.fields,field_description:partner_data_vies_populator.field_res_partner__id
-msgid "ID"
-msgstr "ID"
+#~ msgid "Display Name"
+#~ msgstr "Nom affiché"
 
-#. module: partner_data_vies_populator
-#: model:ir.model.fields,field_description:partner_data_vies_populator.field_res_partner____last_update
-msgid "Last Modified on"
-msgstr "Dernière modification le"
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Dernière modification le"
