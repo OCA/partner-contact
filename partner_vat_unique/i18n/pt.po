@@ -22,12 +22,6 @@ msgid "Contact"
 msgstr "Contacto"
 
 #. module: partner_vat_unique
-#: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__vat
-#: model:ir.model.fields,field_description:partner_vat_unique.field_res_users__vat
-msgid "Tax ID"
-msgstr ""
-
-#. module: partner_vat_unique
 #: model:ir.model.fields,help:partner_vat_unique.field_res_partner__vat
 #: model:ir.model.fields,help:partner_vat_unique.field_res_users__vat
 msgid ""
@@ -40,3 +34,9 @@ msgstr ""
 #, python-format
 msgid "The VAT %s already exists in another partner."
 msgstr "O NIF %s já existe noutro parceiro."
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__vat
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_users__vat
+msgid "VAT/Tax ID"
+msgstr ""
