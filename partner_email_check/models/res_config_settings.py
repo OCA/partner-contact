@@ -13,6 +13,10 @@ class ResConfigSettings(models.TransientModel):
         related="company_id.partner_email_check_filter_duplicates",
         readonly=False,
     )
+    partner_email_duplicates_ignore_users = fields.Boolean(
+        related="company_id.partner_email_duplicates_ignore_users",
+        readonly=False,
+    )
 
     partner_email_check_check_deliverability = fields.Boolean(
         related="company_id.partner_email_check_check_deliverability",

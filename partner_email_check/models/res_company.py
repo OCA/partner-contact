@@ -17,6 +17,9 @@ class ResCompany(models.Model):
         string="Filter duplicate partner email addresses",
         help="Don't allow multiple partners to have the same email address.",
     )
+    partner_email_duplicates_ignore_users = fields.Boolean(
+        string="Ignore User emails in the duplicate email check",
+    )
     partner_email_check_check_deliverability = fields.Boolean(
         string="Check deliverability of email addresses",
         help="Don't allow email addresses with providers that don't exist",
