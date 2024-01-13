@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2024-01-13 18:33+0000\n"
+"PO-Revision-Date: 2024-01-13 22:33+0000\n"
 "Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
@@ -71,7 +71,8 @@ msgstr "%s no es un identificador %s válido"
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
 msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
 msgstr ""
-"Abreviación o o acrónimo de este tipo de identificador. Por ejemplo, 'NIF'."
+"Abreviatura o acrónimo de este tipo de identificación. Por ejemplo, "
+"'permiso_de_conducción'"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_needaction
@@ -110,8 +111,8 @@ msgid ""
 "Another partner, who issued this ID. For example, Traffic National "
 "Institution"
 msgstr ""
-"La empresa que emitió esta identificación. Por ejemplo, 'Dirección General "
-"de Tráfico'."
+"Otro socio, que emitió esta identificación. Por ejemplo, Institución "
+"Nacional de Tráfico"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_attachment_count
@@ -176,7 +177,7 @@ msgid ""
 "license, 21/10/2019"
 msgstr ""
 "Fecha de expiración. Por ejemplo, la fecha en la que la persona necesita "
-"renovar su carnet de conducir. Ejemplo: 21/10/2019."
+"renovar su carnet de conducir. Ejemplo: 21/10/2019"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
@@ -230,7 +231,7 @@ msgstr "Nombre ID"
 msgid "ID type defined in configuration. For example, Driver License"
 msgstr ""
 "Tipo de identificación definido en la configuración. Por ejemplo, carnet de "
-"conducir."
+"conducir"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_exception_icon
@@ -277,7 +278,7 @@ msgid ""
 "21/10/2009"
 msgstr ""
 "Fecha de emisión. Por ejemplo, la fecha en la que la persona aprobó el "
-"examen de conducir, 21/10/2009."
+"examen de conducir, 21/10/2009"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
@@ -327,7 +328,7 @@ msgstr "Fecha Límite de Mi Actividad"
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__name
 msgid "Name of this ID type. For example, 'Driver License'"
 msgstr ""
-"Nombre de este tipo de identificación. Por ejemplo, 'Carnet de conducir'."
+"Nombre de este tipo de identificación. Por ejemplo, 'Carnet de conducir'"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
@@ -473,7 +474,7 @@ msgstr ""
 msgid "The ID itself. For example, Driver License number of this person"
 msgstr ""
 "El identificador en si. Por ejemplo, el número de carnet de conducir de esta "
-"persona."
+"persona"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__place_issuance
@@ -482,7 +483,7 @@ msgid ""
 "passports and visa"
 msgstr ""
 "El lugar dónde el identificador se ha emitido. Por ejemplo, el país para el "
-"pasaporte y el visado."
+"pasaporte y el visado"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner.py:0
@@ -513,7 +514,7 @@ msgstr "Mensajes No Leídos"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Contador de mensajes no Leídos"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
@@ -533,12 +534,12 @@ msgstr "Fecha de inicio del período de validación."
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Mensajes de la Página Web"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historial de la comunicación del sitio web"
 
 #~ msgid ""
 #~ "\n"
