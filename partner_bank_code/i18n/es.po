@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-01-13 10:33+0000\n"
+"PO-Revision-Date: 2024-01-13 13:33+0000\n"
 "Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -24,29 +24,29 @@ msgstr "Banco"
 #. module: partner_bank_code
 #: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__bank_branch_code
 msgid "Bank Branch Code"
-msgstr ""
+msgstr "Código de Sucursal Bancaria"
 
 #. module: partner_bank_code
 #: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__bank_code
 msgid "Bank Code"
-msgstr ""
+msgstr "Código Bancario"
 
 #. module: partner_bank_code
 #: model:ir.model.constraint,message:partner_bank_code.constraint_res_bank_bank_code_unique
 msgid "Bank and Branch Code should be unique."
-msgstr ""
+msgstr "El Código de Banco y Sucursal debe ser único."
 
 #. module: partner_bank_code
 #: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Mostrar Nombre"
 
 #. module: partner_bank_code
 #: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_bank_code
 #: model:ir.model.fields,field_description:partner_bank_code.field_res_bank____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última Modificación el"
