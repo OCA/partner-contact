@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class ResPartnerCompanyType(models.Model):
-
     _name = "res.partner.company.type"
     _description = "Partner Company Type"
 
