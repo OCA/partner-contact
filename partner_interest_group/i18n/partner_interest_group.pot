@@ -19,6 +19,11 @@ msgid "Active"
 msgstr ""
 
 #. module: partner_interest_group
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__company_id
+msgid "Company"
+msgstr ""
+
+#. module: partner_interest_group
 #: model:ir.model,name:partner_interest_group.model_res_partner_interest_group
 msgid "Configurable Interest Group for Partners"
 msgstr ""
