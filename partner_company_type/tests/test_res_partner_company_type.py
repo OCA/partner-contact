@@ -10,7 +10,7 @@ from odoo.tests.common import TransactionCase
 class TestResPartnerCompanyType(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestResPartnerCompanyType, cls).setUpClass()
+        super().setUpClass()
         cls.company_type = cls.env.ref(
             "partner_company_type.res_partner_company_type_sa"
         )
