@@ -2,4 +2,5 @@
 
 from . import test_name
 from . import test_config
+from . import test_multiple_names
 from odoo.addons.partner_firstname.tests import test_empty
