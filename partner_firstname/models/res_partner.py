@@ -99,8 +99,7 @@ class ResPartner(models.Model):
         ignored in :meth:`~.create` because it also copies explicitly firstname
         and lastname fields.
         """
-        if default is None:
-            default = {}
+        default = default or {}
         if not self.is_company:
             order = self._get_names_order()
             extra_default_values = self.get_extra_default_copy_values(order)
