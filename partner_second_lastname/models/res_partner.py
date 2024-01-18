@@ -3,7 +3,7 @@
 # Copyright 2017 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 
 from odoo.addons.partner_firstname import exceptions
 
@@ -16,6 +16,21 @@ class ResPartner(models.Model):
     lastname2 = fields.Char(
         "Second last name",
     )
+
+    @api.model
+    def name_fields_in_vals(self, vals):
+        """Override to check if `lastname2` is in vals."""
+        return super().name_fields_in_vals(vals) or vals.get("lastname2")
+
+    def get_extra_default_copy_values(self, order):
+        """Override to add '(copy)' suffix to lastname2 instead of lastname."""
+        if order == "first_last":
+            return {
+                "lastname2": _("%s (copy)", self.lastname2)
+                if self.lastname2
+                else _("(copy)")
+            }
+        return super().get_extra_default_copy_values(order)
 
     @api.model
     def _get_computed_name(self, lastname, firstname, lastname2=None):
