@@ -8,7 +8,7 @@ from odoo.tests.common import TransactionCase
 class TestVatUnique(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestVatUnique, cls).setUpClass()
+        super().setUpClass()
         cls.partner_model = cls.env["res.partner"]
         cls.partner = cls.partner_model.create(
             {"name": "Test partner", "vat": "ESA12345674"}
