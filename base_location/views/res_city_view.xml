@@ -11,7 +11,7 @@
                 <attribute name="invisible">1</attribute>
             </field>
             <field name="zipcode" position="after">
-                <field name="zip_ids" widget="many2many_tags" />
+                <field name="zip_ids" widget="many2many_tags"/>
             </field>
         </field>
     </record>
