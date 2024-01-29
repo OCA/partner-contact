@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-12-02 11:44+0000\n"
-"Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
+"PO-Revision-Date: 2024-01-29 17:34+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: portal_partner_select_all
 #: model_terms:ir.ui.view,arch_db:portal_partner_select_all.portal_wizard
@@ -22,6 +22,8 @@ msgid ""
 "<i class=\"fa fa-warning\"/> You're about to invite all contacts listed "
 "below to the portal."
 msgstr ""
+"<i class=\"fa fa-warning\"/> Si stanno per invitare al portale tutti i "
+"contatti elencati di seguito."
 
 #. module: portal_partner_select_all
 #: model:ir.model.fields,field_description:portal_partner_select_all.field_portal_wizard__display_name
@@ -31,7 +33,7 @@ msgstr "Nome visualizzato"
 #. module: portal_partner_select_all
 #: model:ir.model,name:portal_partner_select_all.model_portal_wizard
 msgid "Grant Portal Access"
-msgstr ""
+msgstr "Concedi accesso portale"
 
 #. module: portal_partner_select_all
 #: model:ir.model.fields,field_description:portal_partner_select_all.field_portal_wizard__id
@@ -42,7 +44,7 @@ msgstr "ID"
 #: model:ir.model.fields,field_description:portal_partner_select_all.field_portal_wizard__set_all_users
 #: model_terms:ir.ui.view,arch_db:portal_partner_select_all.portal_wizard
 msgid "Invite all the contacts"
-msgstr ""
+msgstr "Invitare tutti i contatti"
 
 #. module: portal_partner_select_all
 #: model:ir.model.fields,field_description:portal_partner_select_all.field_portal_wizard____last_update
