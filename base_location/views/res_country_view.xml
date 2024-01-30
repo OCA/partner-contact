@@ -20,7 +20,7 @@
                     class="oe_stat_button"
                     icon="fa-globe"
                     type="action"
-                    context="{'default_country_id': active_id, 'search_default_country_id': active_id}"
+                    context="{'default_country_id': id, 'search_default_country_id': id}"
                     string="Zips"
                 >
 

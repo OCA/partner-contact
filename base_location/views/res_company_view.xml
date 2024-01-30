@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"  encoding="UTF-8" ?>
 <odoo>
     <!-- Add cities to the company form -->
     <record id="view_company_form_city" model="ir.ui.view">
@@ -16,12 +16,13 @@
             </field>
             <field name="city" position="after">
                 <field name="country_enforce_cities" invisible="1" />
-                <field
-                    name='city_id'
-                    invisible = "country_enforce_cities == False"
-                />
+                <field name='city_id' invisible="country_enforce_cities == False" />
             </field>
-            <field name="city" position="attributes" invisible="country_enforce_cities == False">
+            <field
+                name="city"
+                position="attributes"
+                invisible="country_enforce_cities == False"
+            >
             </field>
         </field>
     </record>

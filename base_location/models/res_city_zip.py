@@ -2,7 +2,8 @@
 # Copyright 2018 Aitor Bouzas <aitor.bouzas@adaptivecity.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models, api
+from odoo import api, fields, models
+
 
 class ResCityZip(models.Model):
     """City/locations completion object"""
@@ -13,7 +14,7 @@ class ResCityZip(models.Model):
     _rec_names_search = ["name", "city_id", "state_id", "country_id"]
 
     name = fields.Char("ZIP", required=True)
-    display_name = fields.Char(string='Display Name', compute='_compute_display_name')
+    display_name = fields.Char(string="Display Name", compute="_compute_display_name")
     city_id = fields.Many2one(
         "res.city",
         "City",
@@ -34,7 +35,7 @@ class ResCityZip(models.Model):
         )
     ]
 
-    @api.depends('name', 'city_id')
+    @api.depends("name", "city_id")
     def _compute_display_name(self):
         """Get the proper display name formatted as 'ZIP, name, state, country'."""
         for rec in self:
@@ -43,5 +44,5 @@ class ResCityZip(models.Model):
                 name.append(rec.city_id.state_id.name)
             if rec.city_id.country_id:
                 name.append(rec.city_id.country_id.name)
-            
+
             rec.display_name = ", ".join(name)
