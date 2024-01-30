@@ -12,5 +12,5 @@ class ResPartnerCompanyType(models.Model):
     shortcut = fields.Char(string="Abbreviation", translate=True)
 
     _sql_constraints = [
-        ("name_uniq", "unique (name)", "Partner Company Type already exists!")
+        ("name_uniq", "unique(name)", "Partner Company Type already exists!")
     ]
