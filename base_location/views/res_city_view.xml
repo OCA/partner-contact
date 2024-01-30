@@ -8,7 +8,7 @@
                 <attribute name="editable" />
             </tree>
             <field name="zipcode" position="attributes">
-                <attribute name="invisible">1</attribute>
+                <attribute name="column_invisible">1</attribute>
             </field>
             <field name="zipcode" position="after">
                 <field name="zip_ids" widget="many2many_tags" />
@@ -51,6 +51,9 @@
             separately
             to enforce any address of it to have a city in this list.
         </field>
+    </record>
+    <record model="ir.ui.menu" id="base_address_extended.menu_res_city">
+        <field name="active" eval="False" />
     </record>
     <menuitem
         name="Cities"

@@ -2,7 +2,7 @@
 # Copyright 2018 Aitor Bouzas <aitor.bouzas@adaptivecity.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class ResCityZip(models.Model):
@@ -34,14 +34,22 @@ class ResCityZip(models.Model):
         )
     ]
 
-    def name_get(self):
+    @api.depends(
+        "name",
+        "city_id",
+        "city_id.name",
+        "city_id.state_id.name",
+        "city_id.state_id",
+        "city_id.country_id",
+        "city_id.country_id.name",
+    )
+    def _compute_display_name(self):
         """Get the proper display name formatted as 'ZIP, name, state, country'."""
-        res = []
         for rec in self:
-            name = [rec.name, rec.city_id.name]
-            if rec.city_id.state_id:
-                name.append(rec.city_id.state_id.name)
-            if rec.city_id.country_id:
-                name.append(rec.city_id.country_id.name)
-            res.append((rec.id, ", ".join(name)))
-        return res
+            state_name = (
+                rec.city_id.state_id.name + ", " if rec.city_id.state_id else ""
+            )
+            country_name = rec.city_id.country_id.name if rec.city_id.country_id else ""
+            rec.display_name = (
+                f"{rec.name}, {rec.city_id.name}, " f"{state_name}{country_name}"
+            )
