@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="view_country_search" model="ir.ui.view">
         <field name="name">res.country.search</field>
@@ -20,7 +19,7 @@
                     class="oe_stat_button"
                     icon="fa-globe"
                     type="action"
-                    context="{'default_country_id': active_id, 'search_default_country_id': active_id}"
+                    context="{'default_country_id': id, 'search_default_country_id': id}"
                     string="Zips"
                 >
 

@@ -10,7 +10,7 @@
                     name="zip_id"
                     options="{'create_name_field': 'city', 'no_open': True, 'no_create': True}"
                     placeholder="Location completion"
-                    attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
+                    readonly="type == 'contact' and parent_id != False"
                 />
             </field>
             <xpath
