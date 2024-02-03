@@ -173,12 +173,6 @@ msgid "Issued on"
 msgstr "Izdano"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category____last_update
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number____last_update
-msgid "Last Modified on"
-msgstr "Zadnjič spremenjeno"
-
-#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_uid
 msgid "Last Updated by"
@@ -319,6 +313,9 @@ msgstr "Datum pričetka obdobja validacije."
 #, python-format
 msgid "{id_name} is not a valid {cat_name} identifier"
 msgstr ""
+
+#~ msgid "Last Modified on"
+#~ msgstr "Zadnjič spremenjeno"
 
 #, python-format
 #~ msgid "%s is not a valid %s identifier"
