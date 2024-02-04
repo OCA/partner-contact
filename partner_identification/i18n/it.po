@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2023-03-07 19:34+0000\n"
-"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"PO-Revision-Date: 2024-02-04 11:37+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
@@ -40,6 +40,23 @@ msgid ""
 "<b><i># Sample 3: ID number must start with the category code</i></b>\n"
 "failed = not id_number.name.startswith(self.code) and True or False"
 msgstr ""
+"# Utilizzare failed = True per indicare che il numero ID non è valido.\n"
+"# Si possono utilizzare le seguenti variabili:\n"
+"#  - self: browse_record dell'attuale categoria ID browse_record\n"
+"#  - id_number: browse_record del numero ID da validare\n"
+"\n"
+"<b><i># Esempio 1: numero ID che contiene solo numeri</i></b>\n"
+"if not id_number.name.isdigit():\n"
+"    failed = True\n"
+"else:\n"
+"    failed = False\n"
+"\n"
+"<b><i># Esempio 2: la lunghezza del numero ID non può superare i 10 "
+"caratteri</i></b>\n"
+"failed = len(id_number.name) &gt; 10 and True or False\n"
+"\n"
+"<b><i># Esempio 3:il numero ID deve iniziare con l codice categoria</i></b>\n"
+"failed = not id_number.name.startswith(self.code) and True or False"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
@@ -60,7 +77,7 @@ msgid ""
 "Another partner, who issued this ID. For example, Traffic National "
 "Institution"
 msgstr ""
-"Un altro partner, che ha emesso questo documento. Per esempio,  "
+"Un altro partner, che ha emesso questo documento. Per esempio, "
 "Motorizzazione Civile"
 
 #. module: partner_identification
@@ -110,6 +127,9 @@ msgid ""
 " {name} \n"
 "({error})"
 msgstr ""
+"Errore nella valutazione del codice validazione id_category: \n"
+" {name} \n"
+"({error})"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_until
@@ -219,15 +239,13 @@ msgstr "Categorie documenti del partner"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner_id_category
-#, fuzzy
 msgid "Partner ID Category"
-msgstr "Categorie documenti del partner"
+msgstr "ID categoria partner"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner_id_number
-#, fuzzy
 msgid "Partner ID Number"
-msgstr "Numeri documenti del partner"
+msgstr "Numero ID partner"
 
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
@@ -296,6 +314,9 @@ msgid ""
 "write via the {field_name} field is not possible. In order to fix this, "
 "please use the IDs tab."
 msgstr ""
+"Questo {record_name} ha ID multipli di questo tipo ({category_code}), quindi "
+"una scrittura tramite il campo {field_name} non è possibile. Per risolvere "
+"il problema, usare la linguetta degli ID."
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
@@ -322,7 +343,7 @@ msgstr "Data di inizio periodo di validità."
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid "{id_name} is not a valid {cat_name} identifier"
-msgstr ""
+msgstr "{id_name} non è un valido identificatore {cat_name}"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Ultima modifica il"
