@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-01-29 17:34+0000\n"
+"PO-Revision-Date: 2024-02-05 09:33+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -34,7 +34,7 @@ msgstr "Codice banca"
 #. module: partner_bank_code
 #: model:ir.model.constraint,message:partner_bank_code.constraint_res_bank_bank_code_unique
 msgid "Bank and Branch Code should be unique."
-msgstr ""
+msgstr "Il codice banca e filiale devono essere univoci."
 
 #. module: partner_bank_code
 #: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__display_name
