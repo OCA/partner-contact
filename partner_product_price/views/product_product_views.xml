@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="product_product_tree_view" model="ir.ui.view">
+        <field name="name">product.product.tree.inherit.partner.product.price</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <field name="lst_price" position="before">
+                <field name="partner_id" optional="show" />
+                <field name="partner_price" optional="show" />
+            </field>
+        </field>
+    </record>
+    <record id="product_product_action_sell" model="ir.actions.act_window">
+        <field name="name">Product Variants with Contact's Price</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field
+            name="context"
+        >{"search_default_filter_to_sell": 1, "partner_id": active_id}</field>
+        <field name="view_id" ref="product_product_tree_view" />
+        <field name="search_view_id" ref="product.product_search_form_view" />
+    </record>
+</odoo>
