@@ -1,0 +1,3 @@
+- Open a contact.
+- Click Actions - Products.
+- In list view, show the fields **Contact** and **Contact's Price**.
