@@ -4,7 +4,7 @@
 {
     "name": "Partner Bank Code",
     "summary": "Add fields information in banks",
-    "version": "16.0.1.0.1",
+    "version": "17.0.1.0.1",
     "website": "https://github.com/OCA/partner-contact",
     "author": "Ecosoft, Odoo Community Association (OCA)",
     "license": "AGPL-3",
