@@ -14,7 +14,6 @@ class ResCityZip(models.Model):
     _rec_names_search = ["name", "city_id", "state_id", "country_id"]
 
     name = fields.Char("ZIP", required=True)
-    display_name = fields.Char(string="Display Name", compute="_compute_display_name")
     city_id = fields.Many2one(
         "res.city",
         "City",
