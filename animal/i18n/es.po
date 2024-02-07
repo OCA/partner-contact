@@ -341,7 +341,6 @@ msgstr "Si está marcado, nuevos mensajes requieren tu atención."
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_has_error
-#: model:ir.model.fields,help:animal.field_animal__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes tienen un error en la entrega."
 
@@ -501,11 +500,6 @@ msgid "Rottweiler"
 msgstr "Rottweiler"
 
 #. module: animal
-#: model:ir.model.fields,field_description:animal.field_animal__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error de entrega de SMS"
-
-#. module: animal
 #: model:animal.color,name:animal.salt
 msgid "Salt and pepper"
 msgstr "Sal y pimienta"
@@ -610,6 +604,9 @@ msgstr "Yorkshire Terrier"
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_color_tree
 msgid "colors"
 msgstr "colores"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error de entrega de SMS"
 
 #~ msgid "Create an animal."
 #~ msgstr "Crear un animal."
