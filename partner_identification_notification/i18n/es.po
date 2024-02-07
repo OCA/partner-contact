@@ -111,7 +111,6 @@ msgstr "Si está marcada, nuevos mensajes requieren su atención."
 
 #. module: partner_identification_notification
 #: model:ir.model.fields,help:partner_identification_notification.field_res_partner_id_number__message_has_error
-#: model:ir.model.fields,help:partner_identification_notification.field_res_partner_id_number__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
 
@@ -214,11 +213,6 @@ msgid "Responsible User"
 msgstr "Usuario Responsable"
 
 #. module: partner_identification_notification
-#: model:ir.model.fields,field_description:partner_identification_notification.field_res_partner_id_number__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error en la Entrega de SMS"
-
-#. module: partner_identification_notification
 #: model:ir.model.fields,field_description:partner_identification_notification.field_res_partner_id_category__send_notification
 msgid "Send Notification"
 msgstr "Enviar Notificación"
@@ -260,3 +254,6 @@ msgstr "Mensajes de la Página Web"
 #: model:ir.model.fields,help:partner_identification_notification.field_res_partner_id_number__website_message_ids
 msgid "Website communication history"
 msgstr "Historial de comunicación del sitio web"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error en la Entrega de SMS"
