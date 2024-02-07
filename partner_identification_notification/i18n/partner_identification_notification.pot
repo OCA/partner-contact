@@ -108,7 +108,6 @@ msgstr ""
 
 #. module: partner_identification_notification
 #: model:ir.model.fields,help:partner_identification_notification.field_res_partner_id_number__message_has_error
-#: model:ir.model.fields,help:partner_identification_notification.field_res_partner_id_number__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -208,11 +207,6 @@ msgstr ""
 #. module: partner_identification_notification
 #: model:ir.model.fields,field_description:partner_identification_notification.field_res_partner_id_number__activity_user_id
 msgid "Responsible User"
-msgstr ""
-
-#. module: partner_identification_notification
-#: model:ir.model.fields,field_description:partner_identification_notification.field_res_partner_id_number__message_has_sms_error
-msgid "SMS Delivery error"
 msgstr ""
 
 #. module: partner_identification_notification
