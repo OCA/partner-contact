@@ -46,8 +46,8 @@ msgstr ""
 "# - self: Browse_record de la categoría de ID actual Browse_record\n"
 "# - id_number: Browse_record del número de identificación para validar\n"
 "\n"
-"<b><i># Ejemplo 1: el número de identificación solo contiene dígitos</i></b>"
-"\n"
+"<b><i># Ejemplo 1: el número de identificación solo contiene dígitos</i></"
+"b>\n"
 "si no es id_número.nombre.isdigit():\n"
 "    fallido = Verdadero\n"
 "demás:\n"
@@ -257,7 +257,6 @@ msgstr "Si está marcada, nuevos mensajes requieren su atención."
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_error
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
 
@@ -447,11 +446,6 @@ msgid "Running"
 msgstr "Ejecutándose"
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error en la Entrega de SMS"
-
-#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
 msgid "Status"
 msgstr "Estado"
@@ -540,6 +534,9 @@ msgstr "Mensajes de la Página Web"
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__website_message_ids
 msgid "Website communication history"
 msgstr "Historial de la comunicación del sitio web"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error en la Entrega de SMS"
 
 #~ msgid ""
 #~ "\n"
