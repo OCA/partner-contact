@@ -3,7 +3,10 @@
 
 from datetime import datetime, timedelta
 
-from mock import patch
+try:
+    from unittest.mock import patch
+except ImportError:
+    from mock import patch
 
 from odoo import fields
 from odoo.tests.common import TransactionCase
