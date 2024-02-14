@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-12-27 11:42+0000\n"
+"PO-Revision-Date: 2024-02-14 16:35+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -34,7 +34,7 @@ msgstr "Ha commenti"
 #. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__need_validation
 msgid "Need Validation"
-msgstr "Richiede validazione"
+msgstr "Richiede conferma"
 
 #. module: partner_tier_validation
 #: model_terms:ir.ui.view,arch_db:partner_tier_validation.partner_form_tier_filter
