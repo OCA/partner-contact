@@ -5,7 +5,7 @@ from odoo.tests import common
 
 class TestPartnerRelationCommon(common.TransactionCase):
     def setUp(self):
-        super(TestPartnerRelationCommon, self).setUp()
+        super().setUp()
 
         self.partner_model = self.env["res.partner"]
         self.category_model = self.env["res.partner.category"]
