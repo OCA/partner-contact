@@ -36,12 +36,12 @@ class ResPartnerRelationType(models.Model):
     )
     allow_self = fields.Boolean(
         string="Reflexive",
-        help="This relation can be set up with the same partner left and " "right",
+        help="This relation can be set up with the same partner left and right",
         default=False,
     )
     is_symmetric = fields.Boolean(
         string="Symmetric",
-        help="This relation is the same from right to left as from left to" " right",
+        help="This relation is the same from right to left as from left to right",
         default=False,
     )
     handle_invalid_onchange = fields.Selection(
