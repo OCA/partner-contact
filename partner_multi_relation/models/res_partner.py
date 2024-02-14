@@ -130,7 +130,7 @@ class ResPartner(models.Model):
         return [("relation_all_ids.other_partner_id.category_id", operator, value)]
 
     @api.model
-    def search(self, args, offset=0, limit=None, order=None, count=False):
+    def search(self, args, offset=0, limit=None, order=None):
         """Inject searching for current relation date if we search for
         relation properties and no explicit date was given.
         """
@@ -164,7 +164,6 @@ class ResPartner(models.Model):
             offset=offset,
             limit=limit,
             order=order,
-            count=count,
         )
 
     def get_partner_type(self):

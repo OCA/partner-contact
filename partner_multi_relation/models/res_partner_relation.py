@@ -153,5 +153,5 @@ class ResPartnerRelation(models.Model):
                 ]
             if record.search(domain):
                 raise ValidationError(
-                    _("There is already a similar relation with " "overlapping dates")
+                    _("There is already a similar relation with overlapping dates")
                 )

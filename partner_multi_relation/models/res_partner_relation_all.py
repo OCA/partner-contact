@@ -137,22 +137,22 @@ class ResPartnerRelationAll(models.Model):
         union_select = " UNION ".join(
             [register[key]["select_sql"] for key in register if key != "_lastkey"]
         )
-        return """\
-CREATE OR REPLACE VIEW %%(table)s AS
-     WITH base_selection AS (%(union_select)s)
- SELECT
-     bas.*,
-     CASE
-         WHEN NOT bas.is_inverse OR typ.is_symmetric
-         THEN bas.type_id * 2
-         ELSE (bas.type_id * 2) + 1
-     END as type_selection_id,
-     (bas.date_end IS NULL OR bas.date_end >= current_date) AS active
-     %%(additional_view_fields)s
- FROM base_selection bas
- JOIN res_partner_relation_type typ ON (bas.type_id = typ.id)
- %%(additional_tables)s
-        """ % {"union_select": union_select}
+        return f"""\
+            CREATE OR REPLACE VIEW %(table)s AS
+                 WITH base_selection AS ({union_select})
+             SELECT
+                 bas.*,
+                 CASE
+                     WHEN NOT bas.is_inverse OR typ.is_symmetric
+                     THEN bas.type_id * 2
+                     ELSE (bas.type_id * 2) + 1
+                 END as type_selection_id,
+                 (bas.date_end IS NULL OR bas.date_end >= current_date) AS active
+                 %(additional_view_fields)s
+             FROM base_selection bas
+             JOIN res_partner_relation_type typ ON (bas.type_id = typ.id)
+             %(additional_tables)s
+                    """
 
     def _get_padding(self):
         """Utility function to define padding in one place."""
@@ -197,7 +197,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
                 "additional_tables": AsIs(self._get_additional_tables()),
             },
         )
-        return super(ResPartnerRelationAll, self)._auto_init()
+        return super()._auto_init()
 
     @api.model
     def _search_any_partner_id(self, operator, value):
@@ -209,16 +209,18 @@ CREATE OR REPLACE VIEW %%(table)s AS
             ("other_partner_id", operator, value),
         ]
 
-    def name_get(self):
-        return {
-            this.id: "%s %s %s"
-            % (
-                this.this_partner_id.name,
-                this.type_selection_id.display_name,
-                this.other_partner_id.name,
+    @api.depends(
+        "this_partner_id.name",
+        "type_selection_id.display_name",
+        "other_partner_id.name",
+    )
+    def _compute_display_name(self):
+        for record in self:
+            record.display_name = "{} {} {}".format(
+                record.this_partner_id.name,
+                record.type_selection_id.display_name,
+                record.other_partner_id.name,
             )
-            for this in self
-        }
 
     @api.onchange("type_selection_id")
     def onchange_type_selection_id(self):
