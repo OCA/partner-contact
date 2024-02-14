@@ -21,7 +21,7 @@
                 />
                 <field name="date_start" />
                 <field name="date_end" />
-                <field name="active" invisible="1" />
+                <field name="active" column_invisible="1" />
             </tree>
         </field>
     </record>
