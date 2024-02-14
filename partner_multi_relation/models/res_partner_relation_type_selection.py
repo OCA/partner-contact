@@ -120,23 +120,21 @@ CREATE OR REPLACE VIEW %(table)s AS
         )
         return super()._auto_init()
 
-    def name_get(self):
+    @api.depends("is_inverse", "type_id.name_inverse", "type_id.display_name")
+    def _compute_display_name(self):
         """Get name or name_inverse from underlying model."""
-        return [
-            (
-                this.id,
+        for this in self:
+            this.display_name = (
                 this.is_inverse
                 and this.type_id.name_inverse
-                or this.type_id.display_name,
+                or this.type_id.display_name
             )
-            for this in self
-        ]
 
     @api.model
     def name_search(self, name="", args=None, operator="ilike", limit=100):
         """Search for name or inverse name in underlying model."""
         # pylint: disable=no-value-for-parameter
-        return self.search(
+        records = self.search(
             [
                 "|",
                 ("type_id.name", operator, name),
@@ -144,4 +142,5 @@ CREATE OR REPLACE VIEW %(table)s AS
             ]
             + (args or []),
             limit=limit,
-        ).name_get()
+        )
+        return [(record.id, record.display_name) for record in records]

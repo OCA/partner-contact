@@ -10,7 +10,7 @@ from .test_partner_relation_common import TestPartnerRelationCommon
 
 class TestPartnerRelation(TestPartnerRelationCommon):
     def setUp(self):
-        super(TestPartnerRelation, self).setUp()
+        super().setUp()
 
         # Create a new relation type which will not have valid relations:
         category_nobody = self.category_model.create({"name": "Nobody"})
@@ -73,8 +73,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         relation = self._create_company2person_relation()
         self.assertEqual(
             relation.display_name,
-            "%s %s %s"
-            % (
+            "{} {} {}".format(
                 relation.this_partner_id.name,
                 relation.type_selection_id.name,
                 relation.other_partner_id.name,
@@ -177,8 +176,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         # Check wether display name is what we should expect:
         self.assertEqual(
             relation.display_name,
-            "%s %s %s"
-            % (
+            "{} {} {}".format(
                 self.partner_01_person.name,
                 self.selection_person2company.name,
                 self.partner_02_company.name,
@@ -198,8 +196,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         # Check wether display name is what we should expect:
         self.assertEqual(
             relation.display_name,
-            "%s %s %s"
-            % (
+            "{} {} {}".format(
                 self.partner_01_person.name,
                 self.selection_person2company.name,
                 self.partner_02_company.name,
