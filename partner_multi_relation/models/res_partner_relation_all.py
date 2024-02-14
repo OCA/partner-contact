@@ -152,9 +152,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
  FROM base_selection bas
  JOIN res_partner_relation_type typ ON (bas.type_id = typ.id)
  %%(additional_tables)s
-        """ % {
-            "union_select": union_select
-        }
+        """ % {"union_select": union_select}
 
     def _get_padding(self):
         """Utility function to define padding in one place."""
