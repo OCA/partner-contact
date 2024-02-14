@@ -11,7 +11,6 @@ from .test_partner_relation_common import TestPartnerRelationCommon
 
 
 class TestPartnerRelation(TestPartnerRelationCommon):
-
     post_install = True
 
     def test_selection_name_search(self):

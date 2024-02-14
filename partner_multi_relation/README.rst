@@ -17,22 +17,23 @@ Partner Relations
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/16.0/partner_multi_relation
+    :target: https://github.com/OCA/partner-contact/tree/17.0/partner_multi_relation
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-16-0/partner-contact-16-0-partner_multi_relation
+    :target: https://translation.odoo-community.org/projects/partner-contact-17-0/partner-contact-17-0-partner_multi_relation
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module aims to provide generic means to model relations between partners.
+This module aims to provide generic means to model relations between
+partners.
 
-Examples would be 'is sibling of' or 'is friend of', but also 'has contract X
-with' or 'is assistant of'. This way, you can encode your knowledge about your
-partners directly in your partner list.
+Examples would be 'is sibling of' or 'is friend of', but also 'has
+contract X with' or 'is assistant of'. This way, you can encode your
+knowledge about your partners directly in your partner list.
 
 **Table of contents**
 
@@ -43,107 +44,134 @@ Usage
 =====
 
 Relation Types
-~~~~~~~~~~~~~~
+--------------
 
-Before being able to use relations, you'll have define some first.
-Do that in Contacts / Relations / Partner relations.
+Before being able to use relations, you'll have define some first. Do
+that in Contacts / Relations / Partner relations.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_list.png
+|image|
 
 A relation type has a name for both sides.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_empty.png
+|image1|
 
-To have an assistant-relation, you would name one side 'is assistant of' and the other side 'has assistant'.
+To have an assistant-relation, you would name one side 'is assistant of'
+and the other side 'has assistant'.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_name_filled.png
+|image2|
 
 Partner Types
-~~~~~~~~~~~~~
+-------------
 
-The `Partner Type` fields allow to constrain what type of partners can be used
-on the left and right sides of the relation.
+The Partner Type fields allow to constrain what type of partners can be
+used on the left and right sides of the relation.
 
-* In the example above, the assistant-relation only makes sense between people, so you would choose 'Person' for both partner types.
+-  In the example above, the assistant-relation only makes sense between
+   people, so you would choose 'Person' for both partner types.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_partner_type_filled.png
+|image3|
 
-* For a relation 'is a competitor of', both sides would be companies.
-* A relation 'has worked for' should have persons on the left side and companies on the right side.
+-  For a relation 'is a competitor of', both sides would be companies.
+-  A relation 'has worked for' should have persons on the left side and
+   companies on the right side.
 
-If you leave these fields empty, the relation is applicable to all types of partners.
+If you leave these fields empty, the relation is applicable to all types
+of partners.
 
 Partner Categories
-~~~~~~~~~~~~~~~~~~
+------------------
 
 You may use categories (tags) to further specify the type of partners.
 
-You could for example enforce the 'is member of' relation to accept only companies with the label 'Organization' on the right side.
+You could for example enforce the 'is member of' relation to accept only
+companies with the label 'Organization' on the right side.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_category_filled.png
+|image4|
 
 Reflexive
-~~~~~~~~~
+---------
 
-A reflexive relation type allows a partner to be in relation with himself.
+A reflexive relation type allows a partner to be in relation with
+himself.
 
 For example, the CEO of a company could be his own manager.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_reflexive.png
+|image5|
 
 Symmetric
-~~~~~~~~~
+---------
 
 A symetric relation has the same value for the left and right sides.
 
-For example, in a competitor relation, both companies are competitors of each other.
+For example, in a competitor relation, both companies are competitors of
+each other.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_symmetric.png
+|image6|
 
 Invalid Relation Handling
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
-When the configuration of a relation type changes, some relations between 2 partners may become invalid.
+When the configuration of a relation type changes, some relations
+between 2 partners may become invalid.
 
-For example, if the left partner type is set to `Person` and a relation already exists with a company on the right side,
-that relation becomes invalid.
+For example, if the left partner type is set to Person and a relation
+already exists with a company on the right side, that relation becomes
+invalid.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_invalid_handling.png
+|image7|
 
-What happens with invalid relations is customizable on the relation type.
+What happens with invalid relations is customizable on the relation
+type.
 
 4 possible behaviors are available:
 
-* Do not allow change that will result in invalid relations
-* Allow existing relations that do not fit changed conditions
-* End relations per today, if they do not fit changed conditions
-* Delete relations that do not fit changed conditions
+-  Do not allow change that will result in invalid relations
+-  Allow existing relations that do not fit changed conditions
+-  End relations per today, if they do not fit changed conditions
+-  Delete relations that do not fit changed conditions
 
 Searching Partners With Relations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
-To search for existing relations, go to `Contacts / Relations / Relations`.
+To search for existing relations, go to Contacts / Relations /
+Relations.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation.png
+|image8|
 
 To find all assistants in your database, fill in 'assistant' and
 autocomplete will propose to search for this type of relation.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation_2.png
+|image9|
 
-Now if you want to find Colleen's assistant, you fill in 'Colleen' and one of the proposals
-is to search for partners having a relation with Colleen.
+Now if you want to find Colleen's assistant, you fill in 'Colleen' and
+one of the proposals is to search for partners having a relation with
+Colleen.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation_3.png
+|image10|
 
 Searching Relations From Partner View
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
-A smart button is available on the partner form view to display the list of relations.
+A smart button is available on the partner form view to display the list
+of relations.
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/partner_form_view_smart_button.png
+|image11|
 
-.. image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/partner_form_view_smart_button_2.png
+|image12|
+
+.. |image| image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_list.png
+.. |image1| image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_empty.png
+.. |image2| image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_name_filled.png
+.. |image3| image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_partner_type_filled.png
+.. |image4| image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_category_filled.png
+.. |image5| image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_reflexive.png
+.. |image6| image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_symmetric.png
+.. |image7| image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_invalid_handling.png
+.. |image8| image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation.png
+.. |image9| image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation_2.png
+.. |image10| image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation_3.png
+.. |image11| image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/partner_form_view_smart_button.png
+.. |image12| image:: https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/partner_form_view_smart_button_2.png
 
 Bug Tracker
 ===========
@@ -151,7 +179,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_multi_relation%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_multi_relation%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -159,28 +187,29 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Therp BV
 * Camptocamp
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Holger Brunn <hbrunn@therp.nl>
-* Stefan Rijnhart <stefan@therp.nl>
-* Ronald Portier <ronald@therp.nl>
-* Sandy Carter <sandy.carter@savoirfairelinux.com>
-* Bruno Joliveau <bruno.joliveau@savoirfairelinux.com>
-* Adriana Ierfino <adriana.ierfino@savoirfairelinux.com>
-* Numigi (tm) and all its contributors (https://bit.ly/numigiens)
-* Radovan Skolnik <radovan@skolnik.info>, KEMA SK s.r.o. (https://www.kema.sk)
-* `DynApps NV <https://www.dynapps.be>`_:
+-  Holger Brunn <hbrunn@therp.nl>
+-  Stefan Rijnhart <stefan@therp.nl>
+-  Ronald Portier <ronald@therp.nl>
+-  Sandy Carter <sandy.carter@savoirfairelinux.com>
+-  Bruno Joliveau <bruno.joliveau@savoirfairelinux.com>
+-  Adriana Ierfino <adriana.ierfino@savoirfairelinux.com>
+-  Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+-  Radovan Skolnik <radovan@skolnik.info>, KEMA SK s.r.o.
+   (https://www.kema.sk)
+-  `DynApps NV <https://www.dynapps.be>`__:
 
-  * Raf Ven
+   -  Raf Ven
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -192,6 +221,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/16.0/partner_multi_relation>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/17.0/partner_multi_relation>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
