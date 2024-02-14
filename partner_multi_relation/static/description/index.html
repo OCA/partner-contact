@@ -369,11 +369,12 @@ ul.auto-toc {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !! source digest: sha256:85cf3dac713211bbac2a2b6f3d46d70a0f3ed1fd78f67bdfc48b0d7100f14f49
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/partner-contact/tree/16.0/partner_multi_relation"><img alt="OCA/partner-contact" src="https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/partner-contact-16-0/partner-contact-16-0-partner_multi_relation"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&amp;target_branch=16.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
-<p>This module aims to provide generic means to model relations between partners.</p>
-<p>Examples would be ‘is sibling of’ or ‘is friend of’, but also ‘has contract X
-with’ or ‘is assistant of’. This way, you can encode your knowledge about your
-partners directly in your partner list.</p>
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/partner-contact/tree/17.0/partner_multi_relation"><img alt="OCA/partner-contact" src="https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/partner-contact-17-0/partner-contact-17-0-partner_multi_relation"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&amp;target_branch=17.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
+<p>This module aims to provide generic means to model relations between
+partners.</p>
+<p>Examples would be ‘is sibling of’ or ‘is friend of’, but also ‘has
+contract X with’ or ‘is assistant of’. This way, you can encode your
+knowledge about your partners directly in your partner list.</p>
 <p><strong>Table of contents</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -401,53 +402,63 @@ partners directly in your partner list.</p>
 <h1><a class="toc-backref" href="#toc-entry-1">Usage</a></h1>
 <div class="section" id="relation-types">
 <h2><a class="toc-backref" href="#toc-entry-2">Relation Types</a></h2>
-<p>Before being able to use relations, you’ll have define some first.
-Do that in Contacts / Relations / Partner relations.</p>
-<img alt="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_list.png" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_list.png" />
+<p>Before being able to use relations, you’ll have define some first. Do
+that in Contacts / Relations / Partner relations.</p>
+<p><img alt="image" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_list.png" /></p>
 <p>A relation type has a name for both sides.</p>
-<img alt="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_empty.png" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_empty.png" />
-<p>To have an assistant-relation, you would name one side ‘is assistant of’ and the other side ‘has assistant’.</p>
-<img alt="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_name_filled.png" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_name_filled.png" />
+<p><img alt="image1" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_empty.png" /></p>
+<p>To have an assistant-relation, you would name one side ‘is assistant of’
+and the other side ‘has assistant’.</p>
+<p><img alt="image2" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_name_filled.png" /></p>
 </div>
 <div class="section" id="partner-types">
 <h2><a class="toc-backref" href="#toc-entry-3">Partner Types</a></h2>
-<p>The <cite>Partner Type</cite> fields allow to constrain what type of partners can be used
-on the left and right sides of the relation.</p>
+<p>The Partner Type fields allow to constrain what type of partners can be
+used on the left and right sides of the relation.</p>
 <ul class="simple">
-<li>In the example above, the assistant-relation only makes sense between people, so you would choose ‘Person’ for both partner types.</li>
+<li>In the example above, the assistant-relation only makes sense between
+people, so you would choose ‘Person’ for both partner types.</li>
 </ul>
-<img alt="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_partner_type_filled.png" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_partner_type_filled.png" />
+<p><img alt="image3" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_partner_type_filled.png" /></p>
 <ul class="simple">
 <li>For a relation ‘is a competitor of’, both sides would be companies.</li>
-<li>A relation ‘has worked for’ should have persons on the left side and companies on the right side.</li>
+<li>A relation ‘has worked for’ should have persons on the left side and
+companies on the right side.</li>
 </ul>
-<p>If you leave these fields empty, the relation is applicable to all types of partners.</p>
+<p>If you leave these fields empty, the relation is applicable to all types
+of partners.</p>
 </div>
 <div class="section" id="partner-categories">
 <h2><a class="toc-backref" href="#toc-entry-4">Partner Categories</a></h2>
 <p>You may use categories (tags) to further specify the type of partners.</p>
-<p>You could for example enforce the ‘is member of’ relation to accept only companies with the label ‘Organization’ on the right side.</p>
-<img alt="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_category_filled.png" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_category_filled.png" />
+<p>You could for example enforce the ‘is member of’ relation to accept only
+companies with the label ‘Organization’ on the right side.</p>
+<p><img alt="image4" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_form_category_filled.png" /></p>
 </div>
 <div class="section" id="reflexive">
 <h2><a class="toc-backref" href="#toc-entry-5">Reflexive</a></h2>
-<p>A reflexive relation type allows a partner to be in relation with himself.</p>
+<p>A reflexive relation type allows a partner to be in relation with
+himself.</p>
 <p>For example, the CEO of a company could be his own manager.</p>
-<img alt="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_reflexive.png" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_reflexive.png" />
+<p><img alt="image5" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_reflexive.png" /></p>
 </div>
 <div class="section" id="symmetric">
 <h2><a class="toc-backref" href="#toc-entry-6">Symmetric</a></h2>
 <p>A symetric relation has the same value for the left and right sides.</p>
-<p>For example, in a competitor relation, both companies are competitors of each other.</p>
-<img alt="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_symmetric.png" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_symmetric.png" />
+<p>For example, in a competitor relation, both companies are competitors of
+each other.</p>
+<p><img alt="image6" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_symmetric.png" /></p>
 </div>
 <div class="section" id="invalid-relation-handling">
 <h2><a class="toc-backref" href="#toc-entry-7">Invalid Relation Handling</a></h2>
-<p>When the configuration of a relation type changes, some relations between 2 partners may become invalid.</p>
-<p>For example, if the left partner type is set to <cite>Person</cite> and a relation already exists with a company on the right side,
-that relation becomes invalid.</p>
-<img alt="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_invalid_handling.png" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_invalid_handling.png" />
-<p>What happens with invalid relations is customizable on the relation type.</p>
+<p>When the configuration of a relation type changes, some relations
+between 2 partners may become invalid.</p>
+<p>For example, if the left partner type is set to Person and a relation
+already exists with a company on the right side, that relation becomes
+invalid.</p>
+<p><img alt="image7" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/relation_type_invalid_handling.png" /></p>
+<p>What happens with invalid relations is customizable on the relation
+type.</p>
 <p>4 possible behaviors are available:</p>
 <ul class="simple">
 <li>Do not allow change that will result in invalid relations</li>
@@ -458,20 +469,23 @@ that relation becomes invalid.</p>
 </div>
 <div class="section" id="searching-partners-with-relations">
 <h2><a class="toc-backref" href="#toc-entry-8">Searching Partners With Relations</a></h2>
-<p>To search for existing relations, go to <cite>Contacts / Relations / Relations</cite>.</p>
-<img alt="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation.png" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation.png" />
+<p>To search for existing relations, go to Contacts / Relations /
+Relations.</p>
+<p><img alt="image8" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation.png" /></p>
 <p>To find all assistants in your database, fill in ‘assistant’ and
 autocomplete will propose to search for this type of relation.</p>
-<img alt="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation_2.png" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation_2.png" />
-<p>Now if you want to find Colleen’s assistant, you fill in ‘Colleen’ and one of the proposals
-is to search for partners having a relation with Colleen.</p>
-<img alt="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation_3.png" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation_3.png" />
+<p><img alt="image9" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation_2.png" /></p>
+<p>Now if you want to find Colleen’s assistant, you fill in ‘Colleen’ and
+one of the proposals is to search for partners having a relation with
+Colleen.</p>
+<p><img alt="image10" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/search_relation_3.png" /></p>
 </div>
 <div class="section" id="searching-relations-from-partner-view">
 <h2><a class="toc-backref" href="#toc-entry-9">Searching Relations From Partner View</a></h2>
-<p>A smart button is available on the partner form view to display the list of relations.</p>
-<img alt="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/partner_form_view_smart_button.png" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/partner_form_view_smart_button.png" />
-<img alt="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/partner_form_view_smart_button_2.png" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/partner_form_view_smart_button_2.png" />
+<p>A smart button is available on the partner form view to display the list
+of relations.</p>
+<p><img alt="image11" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/partner_form_view_smart_button.png" /></p>
+<p><img alt="image12" src="https://raw.githubusercontent.com/OCA/partner-contact/12.0/partner_multi_relation/static/description/partner_form_view_smart_button_2.png" /></p>
 </div>
 </div>
 <div class="section" id="bug-tracker">
@@ -479,7 +493,7 @@ is to search for partners having a relation with Colleen.</p>
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/partner-contact/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-<a class="reference external" href="https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_multi_relation%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
+<a class="reference external" href="https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_multi_relation%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
@@ -501,7 +515,8 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <li>Bruno Joliveau &lt;<a class="reference external" href="mailto:bruno.joliveau&#64;savoirfairelinux.com">bruno.joliveau&#64;savoirfairelinux.com</a>&gt;</li>
 <li>Adriana Ierfino &lt;<a class="reference external" href="mailto:adriana.ierfino&#64;savoirfairelinux.com">adriana.ierfino&#64;savoirfairelinux.com</a>&gt;</li>
 <li>Numigi (tm) and all its contributors (<a class="reference external" href="https://bit.ly/numigiens">https://bit.ly/numigiens</a>)</li>
-<li>Radovan Skolnik &lt;<a class="reference external" href="mailto:radovan&#64;skolnik.info">radovan&#64;skolnik.info</a>&gt;, KEMA SK s.r.o. (<a class="reference external" href="https://www.kema.sk">https://www.kema.sk</a>)</li>
+<li>Radovan Skolnik &lt;<a class="reference external" href="mailto:radovan&#64;skolnik.info">radovan&#64;skolnik.info</a>&gt;, KEMA SK s.r.o.
+(<a class="reference external" href="https://www.kema.sk">https://www.kema.sk</a>)</li>
 <li><a class="reference external" href="https://www.dynapps.be">DynApps NV</a>:<ul>
 <li>Raf Ven</li>
 </ul>
@@ -515,7 +530,7 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <p>OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.</p>
-<p>This module is part of the <a class="reference external" href="https://github.com/OCA/partner-contact/tree/16.0/partner_multi_relation">OCA/partner-contact</a> project on GitHub.</p>
+<p>This module is part of the <a class="reference external" href="https://github.com/OCA/partner-contact/tree/17.0/partner_multi_relation">OCA/partner-contact</a> project on GitHub.</p>
 <p>You are welcome to contribute. To learn how please visit <a class="reference external" href="https://odoo-community.org/page/Contribute">https://odoo-community.org/page/Contribute</a>.</p>
 </div>
 </div>
