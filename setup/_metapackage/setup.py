@@ -70,6 +70,7 @@ setuptools.setup(
         'odoo14-addon-partner_priority',
         'odoo14-addon-partner_ref_unique',
         'odoo14-addon-partner_second_lastname',
+        'odoo14-addon-partner_sequence_address_type',
         'odoo14-addon-partner_stage',
         'odoo14-addon-partner_tier_validation',
         'odoo14-addon-partner_title_order',
