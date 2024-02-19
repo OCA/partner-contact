@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-19 11:36+0000\n"
+"PO-Revision-Date: 2024-02-19 14:36+0000\n"
 "Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -72,15 +72,15 @@ msgstr "Nome"
 #. module: partner_sequence_address_type
 #: model:ir.model,name:partner_sequence_address_type.model_res_partner_sequence_type
 msgid "Partner Sequence Type"
-msgstr ""
+msgstr "Tipo sequenza partner"
 
 #. module: partner_sequence_address_type
 #: model:ir.actions.act_window,name:partner_sequence_address_type.res_partner_sequence_type_action
 #: model:ir.ui.menu,name:partner_sequence_address_type.menu_res_partner_sequence_type_action
 msgid "Partner Sequence by Address Type"
-msgstr ""
+msgstr "Sequenza partner per tipo indirizzo"
 
 #. module: partner_sequence_address_type
 #: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner_sequence_type__sequence_id
 msgid "Sequence"
-msgstr ""
+msgstr "Sequenza"
