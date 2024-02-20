@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_form_auto_archive" model="ir.ui.view">
+        <field name="name">res.partner.form.auto_archive</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <!-- Add checkbox to set as auto-archive -->
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="auto_archive" />
+            </xpath>
+            <xpath expr="//group//field[@name='company_id']" position="after">
+                <field name="auto_archive" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
