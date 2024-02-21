@@ -25,4 +25,4 @@ class ResPartnerDepartment(models.Model):
     child_ids = fields.One2many(
         "res.partner.department", "parent_id", "Child departments"
     )
-    parent_path = fields.Char(index=True)
+    parent_path = fields.Char(index=True, unaccent=False)
