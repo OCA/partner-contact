@@ -14,12 +14,10 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     @api.model
-    def fields_view_get(
-        self, view_id=None, view_type="form", toolbar=False, submenu=False
-    ):
+    def get_view(self, view_id=None, view_type="form", **options):
         """We define the category_id field read-only if the user does not have
         permissions."""
-        result = super().fields_view_get(view_id, view_type, toolbar, submenu)
+        result = super().get_view(view_id, view_type, **options)
         category_group = "partner_category_security.group_partner_category_user"
         if view_type == "form" and not self.env.user.has_group(category_group):
             doc = etree.XML(result["arch"])
@@ -30,9 +28,5 @@ class ResPartner(models.Model):
                 modifiers = {}
                 transfer_node_to_modifiers(nodes[0], modifiers)
                 transfer_modifiers_to_node(modifiers, nodes[0])
-            xarch, xfields = self.env["ir.ui.view"].postprocess_and_fields(
-                doc, self._name
-            )
-            result["arch"] = xarch
-            result["fields"] = xfields
+            result["arch"] = etree.tostring(doc, encoding="unicode")
         return result
