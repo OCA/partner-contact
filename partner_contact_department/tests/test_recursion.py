@@ -4,10 +4,10 @@ from odoo.exceptions import UserError
 from odoo.tests import common
 
 
-class TestRecursion(common.SavepointCase):
+class TestRecursion(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestRecursion, cls).setUpClass()
+        super().setUpClass()
         cls.department_obj = cls.env["res.partner.department"]
 
         # Instances
