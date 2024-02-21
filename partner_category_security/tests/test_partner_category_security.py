@@ -1,26 +1,31 @@
 # Copyright 2022 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+import json
+
 from lxml import etree
 
-from odoo.tests import common, new_test_user
+from odoo.tests import new_test_user
+from odoo.tests.common import users
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestPartnerCategorySecurity(common.SavepointCase):
+class TestPartnerCategorySecurity(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.basic_user = new_test_user(
             cls.env,
-            login="Test basic user",
+            login="test_basic_user",
         )
         cls.partner_category_user = new_test_user(
             cls.env,
-            login="Test partner category user",
+            login="test_partner_category_user",
             groups="partner_category_security.group_partner_category_user",
         )
         cls.partner_category_manager = new_test_user(
             cls.env,
-            login="Test partner category manager",
+            login="test_partner_category_manager",
             groups="partner_category_security.group_partner_category_manager",
         )
         cls.partner_model = cls.env["res.partner"]
@@ -47,19 +52,26 @@ class TestPartnerCategorySecurity(common.SavepointCase):
         self.assertTrue(model.check_access_rights("create", False))
         self.assertTrue(model.check_access_rights("unlink", False))
 
-    def test_partner_model_fields_view_get(self):
-        res = self.partner_model.with_user(self.basic_user).fields_view_get(
-            view_type="form"
-        )
+    @users("test_basic_user")
+    def test_partner_model_fields_view_get_1(self):
+        res = self.partner_model.with_user(self.env.user).get_view(view_type="form")
         node = etree.XML(res["arch"]).xpath("//field[@name='category_id']")[0]
-        self.assertTrue(res["fields"]["category_id"]["readonly"])
-        self.assertEqual(node.get("readonly"), "1")
+        modifiers = json.loads(node.get("modifiers"))
+        self.assertTrue(modifiers["readonly"])
         self.assertEqual(node.get("force_save"), "1")
-        res = self.partner_model.with_user(self.partner_category_user).fields_view_get(
-            view_type="form"
-        )
-        self.assertFalse(res["fields"]["category_id"]["readonly"])
-        res = self.partner_model.with_user(
-            self.partner_category_manager
-        ).fields_view_get(view_type="form")
-        self.assertFalse(res["fields"]["category_id"]["readonly"])
+
+    @users("test_partner_category_user")
+    def test_partner_model_fields_view_get_2(self):
+        res = self.partner_model.with_user(self.env.user).get_view(view_type="form")
+        node = etree.XML(res["arch"]).xpath("//field[@name='category_id']")[0]
+        modifiers = json.loads(node.get("modifiers")) if node.get("modifiers") else {}
+        self.assertTrue("readonly" not in modifiers or not modifiers["readonly"])
+        self.assertFalse(node.get("force_save"))
+
+    @users("test_partner_category_manager")
+    def test_partner_model_fields_view_get_3(self):
+        res = self.partner_model.with_user(self.env.user).get_view(view_type="form")
+        node = etree.XML(res["arch"]).xpath("//field[@name='category_id']")[0]
+        modifiers = json.loads(node.get("modifiers")) if node.get("modifiers") else {}
+        self.assertTrue("readonly" not in modifiers or not modifiers["readonly"])
+        self.assertFalse(node.get("force_save"))
