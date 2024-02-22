@@ -67,11 +67,6 @@ msgid "ID"
 msgstr "ID"
 
 #. module: partner_company_type
-#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type____last_update
-msgid "Last Modified on"
-msgstr "Poslední změna dne"
-
-#. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__write_uid
 msgid "Last Updated by"
 msgstr "Naposledy aktualizováno"
@@ -101,6 +96,9 @@ msgstr "Typ partnerské firmy již existuje!"
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__name
 msgid "Title"
 msgstr "Titul"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Poslední změna dne"
 
 #~ msgid "Company Type"
 #~ msgstr "Typ společnosti"
