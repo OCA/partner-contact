@@ -17,7 +17,7 @@ PATH = "odoo.addons.partner_phonecall_schedule.models.res_partner.datetime"
 class CanICallCase(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(CanICallCase, cls).setUpClass()
+        super().setUpClass()
         # Remove this variable in v16 and put instead:
         # from odoo.addons.base.tests.common import DISABLED_MAIL_CONTEXT
         DISABLED_MAIL_CONTEXT = {
@@ -92,7 +92,7 @@ class CanICallCase(TransactionCase):
         cls.dude.phonecall_calendar_ids = cls.some_mornings
 
     def setUp(self):
-        super(CanICallCase, self).setUp()
+        super().setUp()
         # Now it is a friday morning
         self.datetime = datetime(2017, 9, 15, 10, 53, 30)
 
