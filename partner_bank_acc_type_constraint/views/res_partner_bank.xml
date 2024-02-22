@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2023 Akretion France (http://www.akretion.com/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+
+<record id="view_partner_bank_form" model="ir.ui.view">
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form" />
+    <field name="arch" type="xml">
+        <field name="acc_type" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </field>
+        <field name="acc_type" position="after">
+            <field name="acc_type_manual" required="1" />
+        </field>
+    </field>
+</record>
+
+<record id="view_partner_bank_tree" model="ir.ui.view">
+    <field name="model">res.partner.bank</field>
+    <field name="inherit_id" ref="base.view_partner_bank_tree" />
+    <field name="arch" type="xml">
+        <field name="acc_number" position="after">
+            <field name="acc_type_manual" required="1" />
+        </field>
+    </field>
+</record>
+
+<record id="view_partner_bank_search" model="ir.ui.view">
+    <field name="model">res.partner.bank</field>
+    <field name="inherit_id" ref="base.view_partner_bank_search" />
+    <field name="arch" type="xml">
+        <search position="inside">
+            <group name="groupby">
+                <filter
+                        name="acc_type_manual_groupby"
+                        string="Account Type"
+                        context="{'group_by': 'acc_type_manual'}"
+                    />
+            </group>
+        </search>
+    </field>
+</record>
+
+</odoo>
