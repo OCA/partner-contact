@@ -79,7 +79,7 @@ addon | version | maintainers | summary
 [partner_second_lastname](partner_second_lastname/) | 16.0.1.0.1 |  | Have split first and second lastnames
 [partner_stage](partner_stage/) | 16.0.1.0.0 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Add lifecycle Stages to Partners
 [partner_subject_to_vat](partner_subject_to_vat/) | 16.0.1.0.0 | [![victor-champonnois](https://github.com/victor-champonnois.png?size=30px)](https://github.com/victor-champonnois) | Record whether a company is subject to VAT.
-[partner_tier_validation](partner_tier_validation/) | 16.0.1.0.0 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Support a tier validation process for Contacts
+[partner_tier_validation](partner_tier_validation/) | 16.0.1.0.1 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Support a tier validation process for Contacts
 [partner_tz](partner_tz/) | 16.0.1.0.0 |  | Remove partner timezone default value and display on form
 [partner_vat_unique](partner_vat_unique/) | 16.0.1.0.0 |  | Module to make the VAT number unique for customers and suppliers.
 [purchase_supplier_rank](purchase_supplier_rank/) | 16.0.1.0.1 |  | Update Supplier Rank when creating a Purchase Order
