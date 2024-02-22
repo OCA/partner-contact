@@ -31,6 +31,7 @@ addon | version | maintainers | summary
 [partner_address_street3](partner_address_street3/) | 14.0.1.0.0 |  | Add a third address line on partners
 [partner_address_version](partner_address_version/) | 14.0.1.0.0 |  | Partner Address Version
 [partner_affiliate](partner_affiliate/) | 14.0.1.0.1 |  | Partner Affiliates
+[partner_bank_acc_type_constraint](partner_bank_acc_type_constraint/) | 14.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Adds constraint on bank account type
 [partner_bank_code](partner_bank_code/) | 14.0.1.1.0 |  | Add fields information in banks
 [partner_capital](partner_capital/) | 14.0.1.0.0 |  | Partners Capital
 [partner_category_security](partner_category_security/) | 14.0.1.0.1 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner category security
