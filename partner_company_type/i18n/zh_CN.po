@@ -68,11 +68,6 @@ msgid "ID"
 msgstr "ID"
 
 #. module: partner_company_type
-#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type____last_update
-msgid "Last Modified on"
-msgstr "最近修改时间"
-
-#. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__write_uid
 msgid "Last Updated by"
 msgstr "最近更新人"
@@ -102,6 +97,9 @@ msgstr "业务伙伴公司类型已经存在！"
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__name
 msgid "Title"
 msgstr "标题"
+
+#~ msgid "Last Modified on"
+#~ msgstr "最近修改时间"
 
 #~ msgid "Partner"
 #~ msgstr "业务伙伴"
