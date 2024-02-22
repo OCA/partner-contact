@@ -21,7 +21,7 @@ class ResPartnerIndustry(models.Model):
     child_ids = fields.One2many(
         comodel_name="res.partner.industry", inverse_name="parent_id", string="Children"
     )
-    parent_path = fields.Char(index=True)
+    parent_path = fields.Char(index=True, unaccent=False)
 
     def name_get(self):
         def get_names(cat):
