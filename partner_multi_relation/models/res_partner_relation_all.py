@@ -52,6 +52,11 @@ class ResPartnerRelationAll(models.Model):
     _name = "res.partner.relation.all"
     _description = "All (non-inverse + inverse) relations between partners"
     _order = "this_partner_id, type_selection_id, date_end desc, date_start desc"
+    _rec_names_search = [
+        "this_partner_id.name",
+        "type_selection_id.display_name",
+        "other_partner_id.name",
+    ]
 
     res_model = fields.Char(
         string="Resource Model",
@@ -212,15 +217,18 @@ CREATE OR REPLACE VIEW %%(table)s AS
         ]
 
     def name_get(self):
-        return {
-            this.id: "%s %s %s"
-            % (
-                this.this_partner_id.name,
-                this.type_selection_id.display_name,
-                this.other_partner_id.name,
+        return [
+            (
+                this.id,
+                "%s %s %s"
+                % (
+                    this.this_partner_id.name,
+                    this.type_selection_id.display_name,
+                    this.other_partner_id.name,
+                ),
             )
             for this in self
-        }
+        ]
 
     @api.onchange("type_selection_id")
     def onchange_type_selection_id(self):
