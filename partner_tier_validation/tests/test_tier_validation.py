@@ -70,7 +70,7 @@ class TestPartnerTierValidation(common.TransactionCase):
 
         # Request and validate partner
         contact.request_validation()
-        contact.invalidate_cache()
+        contact.invalidate_recordset()
         contact.with_user(self.user_approver).validate_tier()
         contact.with_user(self.user_approver).write(
             {"stage_id": self.stage_confirmed.id}
