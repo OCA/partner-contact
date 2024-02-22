@@ -27,8 +27,3 @@ msgstr ""
 #: model:ir.model.fields,help:company_default_partner_pricelist.field_res_company__default_property_product_pricelist
 msgid "Default pricelist for this company for new partners."
 msgstr ""
-
-#. module: company_default_partner_pricelist
-#: model:ir.model,name:company_default_partner_pricelist.model_product_pricelist
-msgid "Pricelist"
-msgstr ""
