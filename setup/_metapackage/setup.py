@@ -20,6 +20,7 @@ setuptools.setup(
         'odoo-addon-partner_address_street3>=16.0dev,<16.1dev',
         'odoo-addon-partner_address_two_lines>=16.0dev,<16.1dev',
         'odoo-addon-partner_affiliate>=16.0dev,<16.1dev',
+        'odoo-addon-partner_auto_archive>=16.0dev,<16.1dev',
         'odoo-addon-partner_bank_acc_type_constraint>=16.0dev,<16.1dev',
         'odoo-addon-partner_bank_code>=16.0dev,<16.1dev',
         'odoo-addon-partner_capital>=16.0dev,<16.1dev',
