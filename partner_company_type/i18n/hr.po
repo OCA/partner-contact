@@ -68,11 +68,6 @@ msgid "ID"
 msgstr "ID"
 
 #. module: partner_company_type
-#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type____last_update
-msgid "Last Modified on"
-msgstr "Zadnja promjena"
-
-#. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__write_uid
 msgid "Last Updated by"
 msgstr "Promijenio"
@@ -102,6 +97,9 @@ msgstr "Vrta tvrtke partnera već postoji!"
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__name
 msgid "Title"
 msgstr "Naslov"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Zadnja promjena"
 
 #~ msgid "Partner"
 #~ msgstr "Partner"

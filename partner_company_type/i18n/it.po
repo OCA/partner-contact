@@ -67,11 +67,6 @@ msgid "ID"
 msgstr "ID"
 
 #. module: partner_company_type
-#: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
-
-#. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__write_uid
 msgid "Last Updated by"
 msgstr "Ultimo aggiornamento di"
@@ -101,6 +96,9 @@ msgstr "Il tipo azienda partner esiste già!"
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__name
 msgid "Title"
 msgstr "Titolo"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
 
 #~ msgid "Partner"
 #~ msgstr "Partner"
