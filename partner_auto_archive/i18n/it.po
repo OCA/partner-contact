@@ -6,33 +6,35 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2024-02-26 15:37+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_auto_archive
 #: model:ir.model.fields,help:partner_auto_archive.field_res_partner__auto_archive
 #: model:ir.model.fields,help:partner_auto_archive.field_res_users__auto_archive
 msgid "Archive contact automatically after a period of time"
-msgstr ""
+msgstr "Attivare automaticamente il contatto dopo un periodo di tempo"
 
 #. module: partner_auto_archive
 #: model:ir.model.fields,field_description:partner_auto_archive.field_res_partner__auto_archive
 #: model:ir.model.fields,field_description:partner_auto_archive.field_res_users__auto_archive
 msgid "Auto Archive"
-msgstr ""
+msgstr "Auto attiva"
 
 #. module: partner_auto_archive
 #: model:ir.model,name:partner_auto_archive.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contatto"
 
 #. module: partner_auto_archive
 #: model:ir.actions.server,name:partner_auto_archive.ir_cron_archive_contacts_ir_actions_server
 #: model:ir.cron,cron_name:partner_auto_archive.ir_cron_archive_contacts
 msgid "Contact: Archive Contacts"
-msgstr ""
+msgstr "Contatto: attiva contatti"
