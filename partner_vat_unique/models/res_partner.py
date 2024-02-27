@@ -26,3 +26,11 @@ class ResPartner(models.Model):
                 raise ValidationError(
                     _("The VAT %s already exists in another partner.") % record.vat
                 )
+
+    @api.model
+    def create(self, vals_list):
+        new_records = super(ResPartner, self).create(vals_list)
+        if "xmlrpc" in self.env.context:
+            for record in new_records:
+                record._check_vat_unique()
+        return new_records

@@ -45,7 +45,6 @@ isn't any duplicated VAT before installation.
 Known issues / Roadmap
 ======================
 
-* Creation of the partner from XML-RPC.
 * Partner creation by importing a CSV file, in those cases you miss the notice.
 
 Bug Tracker
@@ -72,6 +71,7 @@ Contributors
 * Ismael Calvo <ismael.calvo@es.gt.com>
 * Michael Michot <michotm@gmail.com>
 * Koen Loodts <koen.loodts@dynapps.be>
+* Randall Castro <randall@vauxoo.com>
 
 * `Tecnativa <https://www.tecnativa.com>`__:
     * Vicent Cubells <vicent.cubells@tecnativa.com>
