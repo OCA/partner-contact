@@ -10,7 +10,7 @@ from odoo.tests import common
 class TestResPartnerIndustry(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestResPartnerIndustry, cls).setUpClass()
+        super().setUpClass()
         cls.industry_model = cls.env["res.partner.industry"]
         cls.industry_main = cls.industry_model.create({"name": "Test"})
         cls.industry_child = cls.industry_model.create(

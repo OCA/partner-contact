@@ -50,4 +50,4 @@ class ResPartnerIndustry(models.Model):
         default = default or {}
         if "name" not in default or default["name"] == self.name:
             default["name"] = self.name + " 2"
-        return super(ResPartnerIndustry, self).copy(default=default)
+        return super().copy(default=default)
