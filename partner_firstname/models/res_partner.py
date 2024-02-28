@@ -214,11 +214,9 @@ class ResPartner(models.Model):
         correctly into the database. This can be called later too if needed.
         """
         # Find records with empty firstname and lastname
-        records = self.search([
-            ("firstname", "=", False),
-            ("lastname", "=", False),
-            ("name", "!=", "")
-        ])
+        records = self.search(
+            [("firstname", "=", False), ("lastname", "=", False), ("name", "!=", "")]
+        )
 
         # Force calculations there
         records._inverse_name()
