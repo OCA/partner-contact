@@ -115,7 +115,7 @@ class CityZipGeonamesImport(models.TransientModel):
         f_geonames.extract("%s.txt" % country_code, tempdir)
 
         data_file = open(
-            os.path.join(tempdir, "%s.txt" % country_code), "r", encoding="utf-8"
+            os.path.join(tempdir, "%s.txt" % country_code), encoding="utf-8"
         )
         data_file.seek(0)
         reader = csv.reader(data_file, delimiter="	")
