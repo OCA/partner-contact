@@ -174,7 +174,7 @@ class TestBaseLocationGeonamesImport(common.TransactionCase):
             self.assertEqual(
                 zip_entry.city_id.state_id,
                 state,
-                "Incorrect state for {} {}".format(state_name, zip_code),
+                f"Incorrect state for {state_name} {zip_code}",
             )
 
     def test_import_countries(self):
