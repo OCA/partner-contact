@@ -3,7 +3,7 @@
 
 {
     "name": "Contact's Age Range",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "license": "AGPL-3",
     "author": "Druidoo, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
