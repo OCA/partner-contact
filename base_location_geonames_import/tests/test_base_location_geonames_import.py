@@ -1,6 +1,8 @@
-# Copyright 2016-2021 Tecnativa - Pedro M. Baeza
 # Copyright 2020 Manuel Regidor <manuel.regidor@sygel.es>
+# Copyright 2016-2024 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+
+import requests
 
 from odoo.exceptions import UserError
 from odoo.tests import common
@@ -9,6 +11,7 @@ from odoo.tests import common
 class TestBaseLocationGeonamesImport(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
+        cls._super_send = requests.Session.send
         super().setUpClass()
         cls.country = cls.env.ref("base.mc")
         cls.city = cls.env["res.city"].create(
@@ -32,6 +35,11 @@ class TestBaseLocationGeonamesImport(common.TransactionCase):
         cls.wizard_3 = cls.env["city.zip.geonames.import"].create(
             {"country_ids": [(4, cls.country_4.id)]}
         )
+
+    @classmethod
+    def _request_handler(cls, s, r, /, **kw):
+        """Don't block external requests."""
+        return cls._super_send(s, r, **kw)
 
     def test_import_country(self):
         max_import = 10
