@@ -7,7 +7,7 @@ import odoo.tests.common as common
 
 class TestBasePartnerSequence(common.TransactionCase):
     def setUp(self):
-        super(TestBasePartnerSequence, self).setUp()
+        super().setUp()
 
         self.res_partner = self.env["res.partner"]
         self.partner = self.res_partner.create(
@@ -44,9 +44,11 @@ class TestBasePartnerSequence(common.TransactionCase):
         ]
         partners = self.env["res.partner"].create(vals)
         self.assertFalse(partners[0].ref == partners[1].ref)
-        partners.write({"ref": False})
+        for partner in partners:
+            partner.write({"ref": False})
         self.assertFalse(partners[0].ref)
-        partners.write({})
+        for partner in partners:
+            partner.write({})
         self.assertFalse(partners[0].ref == partners[1].ref)
 
     def test_ref_change_convert_child_to_parent(self):
