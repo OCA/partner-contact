@@ -47,7 +47,8 @@ class TestBasePartnerSequence(common.TransactionCase):
         partners[0].write({"ref": False})
         partners[1].write({"ref": False})
         self.assertFalse(partners[0].ref)
-        partners.write({})
+        partners[0].write({})
+        partners[1].write({})
         self.assertFalse(partners[0].ref == partners[1].ref)
 
     def test_ref_change_convert_child_to_parent(self):
