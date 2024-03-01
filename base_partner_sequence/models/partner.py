@@ -20,13 +20,13 @@ class ResPartner(models.Model):
         for vals in vals_list:
             if not vals.get("ref") and self._needs_ref(vals=vals):
                 vals["ref"] = self._get_next_ref(vals=vals)
-        return super(ResPartner, self).create(vals_list)
+        return super().create(vals_list)
 
     def copy(self, default=None):
         default = default or {}
         if self._needs_ref():
             default["ref"] = self._get_next_ref()
-        return super(ResPartner, self).copy(default=default)
+        return super().copy(default=default)
 
     def write(self, vals):
         for partner in self:
@@ -37,7 +37,7 @@ class ResPartner(models.Model):
                 and not partner.ref
             ):
                 partner_vals["ref"] = partner._get_next_ref(vals=partner_vals)
-            super(ResPartner, partner).write(partner_vals)
+            super().write(partner_vals)
         return True
 
     def _needs_ref(self, vals=None):
@@ -71,4 +71,4 @@ class ResPartner(models.Model):
         Make the partner reference a field that is propagated
         to the partner's contacts
         """
-        return super(ResPartner, self)._commercial_fields() + ["ref"]
+        return super()._commercial_fields() + ["ref"]
