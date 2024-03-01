@@ -44,11 +44,11 @@ class TestBasePartnerSequence(common.TransactionCase):
         ]
         partners = self.env["res.partner"].create(vals)
         self.assertFalse(partners[0].ref == partners[1].ref)
-        partners[0].write({"ref": False})
-        partners[1].write({"ref": False})
+        for partner in partners:
+            partner.write({"ref": False})
         self.assertFalse(partners[0].ref)
-        partners[0].write({})
-        partners[1].write({})
+        for partner in partners:
+            partner.write({})
         self.assertFalse(partners[0].ref == partners[1].ref)
 
     def test_ref_change_convert_child_to_parent(self):
