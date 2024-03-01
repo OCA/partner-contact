@@ -7,8 +7,8 @@
         <field name="arch" type="xml">
             <field name="ref" position="attributes">
                 <attribute
-                    name="attrs"
-                >{'readonly': [('is_company', '=', False), ('parent_id', '!=', False)]}</attribute>
+                    name="options"
+                >{'readonly': [['is_company', '=', False], ['parent_id', '!=', False]]}</attribute>
             </field>
         </field>
     </record>
