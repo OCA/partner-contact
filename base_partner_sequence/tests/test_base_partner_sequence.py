@@ -44,7 +44,8 @@ class TestBasePartnerSequence(common.TransactionCase):
         ]
         partners = self.env["res.partner"].create(vals)
         self.assertFalse(partners[0].ref == partners[1].ref)
-        partners.write({"ref": False})
+        partners[0].write({"ref": False})
+        partners[1].write({"ref": False})
         self.assertFalse(partners[0].ref)
         partners.write({})
         self.assertFalse(partners[0].ref == partners[1].ref)
