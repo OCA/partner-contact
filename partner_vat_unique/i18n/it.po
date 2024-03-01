@@ -1,0 +1,47 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_vat_unique
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-12-26 14:48+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: partner_vat_unique
+#: model:ir.model,name:partner_vat_unique.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__vat
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_users__vat
+msgid "Tax ID"
+msgstr "Partita IVA"
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,help:partner_vat_unique.field_res_partner__vat
+#: model:ir.model.fields,help:partner_vat_unique.field_res_users__vat
+msgid ""
+"The Tax Identification Number. Values here will be validated based on the "
+"country format. You can use '/' to indicate that the partner is not subject "
+"to tax."
+msgstr ""
+"Il numero identificazione tassa. I valori verranno validati nel formato "
+"della nazione. Si può utilizzare '/' per indicare che il partner non è "
+"soggetto alla tassa."
+
+#. module: partner_vat_unique
+#. odoo-python
+#: code:addons/partner_vat_unique/models/res_partner.py:0
+#, python-format
+msgid "The VAT %s already exists in another partner."
+msgstr "La Partita Iva %s è già assegnata ad un altro partner."

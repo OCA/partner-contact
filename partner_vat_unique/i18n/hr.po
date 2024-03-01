@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_vat_unique
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-01-04 02:40+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>\n"
+"Language-Team: none\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#. module: partner_vat_unique
+#: model:ir.model,name:partner_vat_unique.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__vat
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_users__vat
+msgid "Tax ID"
+msgstr "Porezni broj"
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,help:partner_vat_unique.field_res_partner__vat
+#: model:ir.model.fields,help:partner_vat_unique.field_res_users__vat
+msgid ""
+"The Tax Identification Number. Values here will be validated based on the "
+"country format. You can use '/' to indicate that the partner is not subject "
+"to tax."
+msgstr ""
+
+#. module: partner_vat_unique
+#. odoo-python
+#: code:addons/partner_vat_unique/models/res_partner.py:0
+#, python-format
+msgid "The VAT %s already exists in another partner."
+msgstr "Porezni broj %s već postoji na drugom partneru."
+
+#~ msgid ""
+#~ "The Tax Identification Number. Complete it if the contact is subjected to "
+#~ "government taxes. Used in some legal statements."
+#~ msgstr ""
+#~ "Porezni broj. Popunite ga ako je kontakt u sustavu PDV. Koristi se u "
+#~ "poreznim izvještajima."
