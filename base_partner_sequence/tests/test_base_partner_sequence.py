@@ -7,7 +7,7 @@ import odoo.tests.common as common
 
 class TestBasePartnerSequence(common.TransactionCase):
     def setUp(self):
-        super(TestBasePartnerSequence, self).setUp()
+        super().setUp()
 
         self.res_partner = self.env["res.partner"]
         self.partner = self.res_partner.create(
