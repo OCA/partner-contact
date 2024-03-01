@@ -1,0 +1,6 @@
+- [Tecnativa](https://www.tecnativa.com):
+  - Jairo Llopis \<<jairo.llopis@tecnativa.com>\>
+  - David Vidal \<<david.vidal@tecnativa.com>\>
+  - César A. Sánchez \<<cesar.sanchez@tecnativa.com>\>
+- Anand Kansagra \<<kansagraanand@hotmail.com>\>
+  - Pedro Guirao \<<pguirao@puntsistemes.es>\>
