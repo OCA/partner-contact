@@ -2,3 +2,4 @@
 
   * Carlos Dauden
   * Víctor Martínez
+  * David Vidal

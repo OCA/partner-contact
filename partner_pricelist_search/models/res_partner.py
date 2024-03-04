@@ -16,7 +16,11 @@ class ResPartner(models.Model):
         # Substitute pricelist tuple
         partner_domain = [
             (1, "=", 1)
-            if (isinstance(x, (list, tuple)) and x[0] == "property_product_pricelist")
+            if (
+                isinstance(x, (list, tuple))
+                and (isinstance(x[0], str))
+                and x[0].startswith("property_product_pricelist")
+            )
             else x
             for x in args
         ]
@@ -35,4 +39,12 @@ class ResPartner(models.Model):
         domain = self.env.context.get("search_partner_domain", [])
         partners = self.with_context(prefetch_fields=False).search(domain)
         key = "property_product_pricelist"
-        return [("id", "in", partners.filtered_domain([(key, operator, value)]).ids)]
+        pricelist_search_field = "name" if isinstance(value, str) else "id"
+        pricelist_ids = (
+            self.env["product.pricelist"]
+            .search([(pricelist_search_field, operator, value)])
+            .ids
+        )
+        return [
+            ("id", "in", partners.filtered_domain([(key, "in", pricelist_ids)]).ids)
+        ]
