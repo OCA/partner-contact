@@ -14,3 +14,6 @@
 * `Pesol <https://www.pesol.es>`__:
 
   * Jonathan Oscategui Taza <info@pesol.es>
+
+* `Moduon <https://www.moduon.es>`__:
+  * Eduardo López Peñalver

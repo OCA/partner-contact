@@ -7,7 +7,7 @@
 {
     "name": "Employee quantity in partners",
     "summary": "Know how many employees a partner has",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "category": "Customer Relationship Management",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
@@ -20,6 +20,6 @@
         "views/res_partner_view.xml",
     ],
     "development_status": "Mature",
-    "maintainers": ["pedrobaeza"],
+    "maintainers": ["pedrobaeza", "rafaelbn", "edlopen"],
     "installable": True,
 }
