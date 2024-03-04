@@ -20,6 +20,6 @@
         "views/res_partner_view.xml",
     ],
     "development_status": "Mature",
-    "maintainers": ["pedrobaeza"],
+    "maintainers": ["pedrobaeza", "rafaelbn", "edlopen"],
     "installable": True,
 }
