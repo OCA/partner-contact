@@ -12,7 +12,7 @@
         "Odoo Community Association (OCA)"
     ),
     "name": "Add a sequence on customers' code",
-    "version": "16.0.1.0.1",
+    "version": "16.0.1.0.2",
     "development_status": "Production/Stable",
     "category": "Generic Modules/Base",
     "website": "https://github.com/OCA/partner-contact",
