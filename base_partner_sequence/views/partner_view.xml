@@ -11,7 +11,7 @@
             <field name="ref" position="attributes">
                 <attribute
                     name="attrs"
-                >{'readonly': ['|', ('ref_readonly', '=', True), '&amp;', ('is_company', '=', False), ('parent_id', '!=', False)]}</attribute>
+                >{'readonly': [('ref_readonly', '=', True)]}</attribute>
             </field>
         </field>
     </record>

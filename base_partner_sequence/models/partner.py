@@ -14,12 +14,18 @@ class ResPartner(models.Model):
 
     ref_readonly = fields.Boolean(compute="_compute_ref_readonly")
 
-    @api.depends("company_id")
+    @api.depends("company_id", "is_company", "parent_id")
     @api.depends_context("company")
     def _compute_ref_readonly(self):
         for rec in self:
-            company = rec.company_id or self.env.company
-            rec.ref_readonly = company.partner_ref_readonly
+            ref_readonly = False
+            if not rec.is_company and rec.parent_id:
+                ref_readonly = True
+            elif (
+                rec.company_id and rec.company_id.partner_ref_readonly
+            ) or self.env.company.partner_ref_readonly:
+                ref_readonly = True
+            rec.ref_readonly = ref_readonly
 
     def _get_next_ref(self, vals=None):
         return self.env["ir.sequence"].next_by_code("res.partner")
