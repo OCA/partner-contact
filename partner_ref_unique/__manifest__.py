@@ -11,6 +11,7 @@
     "website": "https://github.com/OCA/partner-contact",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
+    "maintainers": ["luisg123v"],
     "application": False,
     "installable": True,
     "depends": ["base"],
