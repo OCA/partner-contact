@@ -33,3 +33,13 @@ class TestVatUnique(TransactionCase):
     def test_duplicate_partner(self):
         partner_copied = self.partner.copy()
         self.assertFalse(partner_copied.vat)
+
+    def test_name_search(self):
+        partner = self.partner
+        result = partner.name_search(name=partner.vat)
+        self.assertEqual(result[0][0], partner.id)
+
+    def test_name_search_args_none(self):
+        partner = self.partner
+        result = partner.name_search(name=partner.vat, args=None)
+        self.assertEqual(result[0][0], partner.id)
