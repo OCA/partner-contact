@@ -17,8 +17,13 @@ class TestResPartnerIndustry(common.TransactionCase):
             {"name": "Test child", "parent_id": cls.industry_main.id}
         )
         cls.env.user.groups_id = [
-            (4, cls.env.ref(
-                "partner_industry_secondary.group_use_partner_industry_for_person").id)]
+            (
+                4,
+                cls.env.ref(
+                    "partner_industry_secondary.group_use_partner_industry_for_person"
+                ).id,
+            )
+        ]
         cls.partner = cls.env["res.partner"].create({"name": "Test partner"})
 
     def test_00_check_industries(self):
