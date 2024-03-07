@@ -17,7 +17,9 @@
                 />
             </field>
             <field name="industry_id" position="attributes">
-                <attribute name="invisible">is_company == False and show_partner_industry_for_person == False</attribute>
+                <attribute
+                    name="invisible"
+                >is_company == False and show_partner_industry_for_person == False</attribute>
             </field>
             <xpath
                 expr="//field[@name='child_ids']/form//field[@name='title']"
