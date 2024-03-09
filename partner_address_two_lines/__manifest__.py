@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     "name": "Partner address in two lines",
-    "version": "16.0.1.0.0",
+    "version": "17.0.1.0.0",
     "summary": "The company and the partner name are on two different lines",
     "author": "Camptocamp," "Odoo Community Association (OCA)",
     "license": "AGPL-3",
