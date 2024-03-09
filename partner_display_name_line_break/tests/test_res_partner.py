@@ -3,12 +3,18 @@
 
 from odoo.tests.common import TransactionCase
 
+VALID_HASHES = {
+    "base.partner:_get_complete_name": ["bcff3ffbe5ffeaa8f71d1563f8dbd108"],
+}
+
 
 class TestBasePartnerTwoLine(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        partner_model = cls.env["res.partner"]
+        partner_model = cls.env["res.partner"].with_context(
+            _two_lines_partner_address=True
+        )
         partner = partner_model.create(
             {"name": "Test Company Name", "company_type": "company"}
         )
@@ -27,14 +33,31 @@ class TestBasePartnerTwoLine(TransactionCase):
             }
         )
 
+        partner_2 = partner_model.create(
+            {"name": "Test Company, LTD", "company_type": "company"}
+        )
+
+        cls.child_partner_name_2 = partner_model.create(
+            {
+                "name": "Test Partner Name 2",
+                "type": "invoice",
+                "parent_id": partner_2.id,
+            }
+        )
+
     def test_get_name(self):
         # Partner with name.
-        name = self.child_partner_name.with_context(
-            _two_lines_partner_address=True
-        )._get_name()
-        self.assertEqual(name, "Test Company Name\nTest Partner Name")
+        self.assertEqual(
+            self.child_partner_name.display_name, "Test Company Name\nTest Partner Name"
+        )
+
+        self.assertEqual(
+            self.child_partner_name_2.display_name,
+            "Test Company, LTD\nTest Partner Name 2",
+        )
+
         # Partner without a name.
-        name = self.child_partner_no_name.with_context(
-            _two_lines_partner_address=True
-        )._get_name()
-        self.assertEqual(name, "Test Company Name\nInvoice Address")
+        self.assertEqual(
+            self.child_partner_no_name.display_name,
+            "Test Company Name\nInvoice Address",
+        )

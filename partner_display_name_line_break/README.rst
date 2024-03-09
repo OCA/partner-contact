@@ -1,6 +1,6 @@
-============================
-Partner address in two lines
-============================
+===============================
+Partner Display Name Line Break
+===============================
 
 .. 
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -17,10 +17,10 @@ Partner address in two lines
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/17.0/partner_address_two_lines
+    :target: https://github.com/OCA/partner-contact/tree/17.0/partner_display_name_line_break
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-17-0/partner-contact-17-0-partner_address_two_lines
+    :target: https://translation.odoo-community.org/projects/partner-contact-17-0/partner-contact-17-0-partner_display_name_line_break
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
     :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=17.0
@@ -42,7 +42,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_address_two_lines%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_display_name_line_break%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -59,6 +59,16 @@ Contributors
 
 -  Thomas Nowicki <thomas.nowicki@camptocamp.com>
 -  Akim Juillerat <akim.juillerat@camptocamp.com>
+-  Juan Miguel Sánchez Arce juan.sanchez@camptocamp.com
+-  `Trobz <https://www.trobz.com>`__:
+
+   -  Tris Doan <tridm@trobz.com>
+
+Other credits
+-------------
+
+The migration of this module from 16.0 to 17.0 was financially supported
+by Camptocamp
 
 Maintainers
 -----------
@@ -73,6 +83,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/17.0/partner_address_two_lines>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/17.0/partner_display_name_line_break>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
