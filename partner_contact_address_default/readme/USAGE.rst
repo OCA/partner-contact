@@ -1,2 +1,2 @@
 #. Go to *Contacts*.
-#. Select default delivery address or invoice address for partner.
+#. Select default delivery address, invoice address or contact for partner.

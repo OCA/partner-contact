@@ -3,8 +3,8 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Partner Contact address default",
-    "summary": "Set a default delivery and invoice address for contacts",
-    "version": "16.0.1.0.0",
+    "summary": "Set a default delivery address, invoice address and contact for contacts",
+    "version": "16.0.1.1.0",
     "development_status": "Beta",
     "category": "Generic Modules/Base",
     "website": "https://github.com/OCA/partner-contact",
