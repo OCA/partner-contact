@@ -7,4 +7,4 @@ from odoo import fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    address_ok = fields.Boolean("Addess is OK", default=True)
+    address_ok = fields.Boolean("Addess is OK", default=True, copy=False)
