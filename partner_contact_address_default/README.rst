@@ -29,7 +29,7 @@ Partner Contact address default
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module extends the functionality of base partner module to allow to set a
-default delivery and invoice address for contacts.
+default delivery and invoice address and a default contact for contacts.
 
 **Table of contents**
 
@@ -40,7 +40,7 @@ Usage
 =====
 
 #. Go to *Contacts*.
-#. Select default delivery address or invoice address for partner.
+#. Select default delivery address, invoice address or contact for partner.
 
 Bug Tracker
 ===========
@@ -75,6 +75,10 @@ Contributors
 * `Studio73 <https://www.studio73.es>`_:
 
   * Carlos Reyes
+
+* `ForgeFlow <https://www.forgeflow.com>`_:
+
+  * Laura Cazorla
 
 Maintainers
 ~~~~~~~~~~~
