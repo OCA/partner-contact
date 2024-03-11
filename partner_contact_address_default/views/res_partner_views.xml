@@ -12,11 +12,16 @@
                             domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'delivery')]"
                             widget="selection"
                         />
-                    </group>
-                    <group>
                         <field
                             name="partner_invoice_id"
                             domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'invoice')]"
+                            widget="selection"
+                        />
+                    </group>
+                    <group>
+                        <field
+                            name="partner_contact_id"
+                            domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'contact')]"
                             widget="selection"
                         />
                     </group>
@@ -31,7 +36,7 @@
                         <field name="commercial_partner_id" invisible="1" />
                         <div class="oe_grey">
                             <div
-                            >You can force and delivery and invoice address for this contacts.</div>
+                            >You can force contact, delivery and invoice address for this contacts.</div>
                             <div
                             >If you keep empty this fields the Odoo's behavior will be normal</div>
                         </div>
@@ -46,6 +51,12 @@
                         <field
                             name="partner_invoice_id"
                             domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'invoice')]"
+                        />
+                    </group>
+                    <group colspan="4">
+                        <field
+                            name="partner_contact_id"
+                            domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'contact')]"
                         />
                     </group>
                 </group>
