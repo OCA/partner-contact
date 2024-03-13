@@ -15,8 +15,7 @@ try:
         validate_email,
     )
 except ImportError:
-    _logger.debug(_("Cannot import 'email_validator'."))
-
+    _logger.debug('Cannot import "email_validator".')
     validate_email = None
 
 
@@ -84,7 +83,11 @@ class ResPartner(models.Model):
         return self.env.company.partner_email_check_syntax
 
     def _should_filter_duplicates(self):
-        return self.env.company.partner_email_check_filter_duplicates
+        check_duplicates = self.env.company.partner_email_check_filter_duplicates
+        ignore_users = self.env.company.partner_email_duplicates_ignore_users
+        # The Users Window Action has some context values to know we are there
+        on_user_form = "search_default_filter_no_share" in self.env.context
+        return check_duplicates and not (on_user_form and ignore_users)
 
     def _should_check_deliverability(self):
         return self.env.company.partner_email_check_check_deliverability

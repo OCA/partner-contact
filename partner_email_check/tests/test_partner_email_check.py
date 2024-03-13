@@ -90,6 +90,21 @@ class TestPartnerEmailCheck(TransactionCase):
         with self.assertRaises(UserError):
             self.test_partner.email = "foo@bar.org,email@domain.tld"
 
+    def test_multiple_addresses_disallowed_except_users_partner(self):
+        "If ignore users is enabled, run regular duplicate check"
+        self.disallow_duplicates()
+        self.env.company.partner_email_duplicates_ignore_users = True
+        with self.assertRaises(UserError):
+            self.test_partner.email = "foo@bar.org,email@domain.tld"
+
+    def test_multiple_addresses_disallowed_except_users_user(self):
+        "If ignore users is enabled, don't run duplicate check on the Users form"
+        self.disallow_duplicates()
+        self.env.company.partner_email_duplicates_ignore_users = True
+        User = self.env["res.users"].with_context(search_default_filter_no_share=True)
+        user = User.create({"login": "foo@bar.org,email@domain.tld", "name": "Foo Bar"})
+        self.assertTrue(user)
+
     def test_duplicate_addresses_disallowed_copy_partner(self):
         self.disallow_duplicates()
         self.test_partner.write({"email": "email@domain.tld"})
