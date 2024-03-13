@@ -61,6 +61,7 @@ addon | version | maintainers | summary
 [partner_disable_gravatar](partner_disable_gravatar/) | 16.0.1.0.1 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Disable automatic connection to gravatar.com
 [partner_email_check](partner_email_check/) | 16.0.1.0.0 |  | Validate email address field
 [partner_email_duplicate_warn](partner_email_duplicate_warn/) | 16.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Warning banner on partner form if another partner has the same email
+[partner_employee_quantity](partner_employee_quantity/) | 16.0.1.0.1 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) [![rafaelbn](https://github.com/rafaelbn.png?size=30px)](https://github.com/rafaelbn) [![edlopen](https://github.com/edlopen.png?size=30px)](https://github.com/edlopen) | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 16.0.1.0.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 16.0.1.0.0 |  | Add fax number on partner
 [partner_firstname](partner_firstname/) | 16.0.1.0.1 |  | Split first name and last name for non company partners
