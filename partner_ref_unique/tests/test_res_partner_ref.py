@@ -4,10 +4,10 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.exceptions import ValidationError
-from odoo.tests import common
+from odoo.tests import TransactionCase
 
 
-class TestResPartnerRefUnique(common.SavepointCase):
+class TestResPartnerRefUnique(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestResPartnerRefUnique, cls).setUpClass()
@@ -105,3 +105,17 @@ class TestResPartnerRefUnique(common.SavepointCase):
         )
         # this shouldn't raise error
         wizard.action_merge()
+
+    def test_name_search(self):
+        self.company.partner_ref_unique = "all"
+        partner = self.partner1
+        partner.ref = "ref"
+        result = partner.name_search(name=partner.ref)
+        self.assertEqual(result[0][0], partner.id)
+
+    def test_name_search_args_none(self):
+        self.company.partner_ref_unique = "all"
+        partner = self.partner1
+        partner.ref = "ref"
+        result = partner.name_search(name=partner.ref, args=None)
+        self.assertEqual(result[0][0], partner.id)

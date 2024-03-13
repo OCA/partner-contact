@@ -9,6 +9,7 @@
     "website": "https://github.com/OCA/partner-contact",
     "author": "Grant Thornton S.L.P, Odoo Community Association (OCA)",
     "license": "AGPL-3",
+    "maintainers": ["luisg123v"],
     "application": True,
     "installable": True,
     "depends": ["base"],
