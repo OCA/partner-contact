@@ -21,6 +21,7 @@ setuptools.setup(
         'odoo-addon-partner_affiliate>=15.0dev,<15.1dev',
         'odoo-addon-partner_bank_code>=15.0dev,<15.1dev',
         'odoo-addon-partner_capital>=15.0dev,<15.1dev',
+        'odoo-addon-partner_coc>=15.0dev,<15.1dev',
         'odoo-addon-partner_company_default>=15.0dev,<15.1dev',
         'odoo-addon-partner_company_group>=15.0dev,<15.1dev',
         'odoo-addon-partner_company_type>=15.0dev,<15.1dev',
