@@ -4,7 +4,6 @@
 
 from odoo import _, api, models
 from odoo.exceptions import ValidationError
-from odoo.osv import expression
 
 
 class ResPartner(models.Model):
@@ -30,12 +29,3 @@ class ResPartner(models.Model):
                         _("This reference is equal to partner '%s'")
                         % other[0].display_name
                     )
-
-    @api.model
-    def _name_search(self, name="", args=None, operator="ilike", limit=100):
-        """Allow searching by ref by default."""
-        if name and operator in {"=", "ilike", "=ilike", "like", "=like"}:
-            args = expression.OR([[("ref", operator, name)], args])
-        return super()._name_search(
-            name=name, args=args, operator=operator, limit=limit
-        )
