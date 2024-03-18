@@ -19,6 +19,7 @@
         "views/res_partner_interest_group_view.xml",
         "views/res_partner_view.xml",
         "security/ir.model.access.csv",
+        "security/interest_group_rules.xml",
     ],
     "demo": [],
     "qweb": [],
