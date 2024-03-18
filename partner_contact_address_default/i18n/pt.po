@@ -22,6 +22,12 @@ msgid "Contact"
 msgstr "Contacto"
 
 #. module: partner_contact_address_default
+#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_contact_id
+#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_contact_id
+msgid "Default contact"
+msgstr ""
+
+#. module: partner_contact_address_default
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
 msgid "Force addresses"
 msgstr "Forçar endereços"
@@ -46,5 +52,8 @@ msgstr "Endereço de envio"
 
 #. module: partner_contact_address_default
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
-msgid "You can force and delivery and invoice address for this contacts."
-msgstr "Pode forçar um endereço de envio e faturação para este contacto."
+msgid "You can force contact, delivery and invoice address for this contacts."
+msgstr ""
+
+#~ msgid "You can force and delivery and invoice address for this contacts."
+#~ msgstr "Pode forçar um endereço de envio e faturação para este contacto."
