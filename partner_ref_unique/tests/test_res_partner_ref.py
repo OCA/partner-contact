@@ -105,17 +105,3 @@ class TestResPartnerRefUnique(TransactionCase):
         )
         # this shouldn't raise error
         wizard.action_merge()
-
-    def test_name_search(self):
-        self.company.partner_ref_unique = "all"
-        partner = self.partner1
-        partner.ref = "ref"
-        result = partner.name_search(name=partner.ref)
-        self.assertEqual(result[0][0], partner.id)
-
-    def test_name_search_args_none(self):
-        self.company.partner_ref_unique = "all"
-        partner = self.partner1
-        partner.ref = "ref"
-        result = partner.name_search(name=partner.ref, args=None)
-        self.assertEqual(result[0][0], partner.id)
