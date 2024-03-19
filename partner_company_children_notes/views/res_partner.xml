@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 Akretion
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="res_partner_form_view">
+        <field name="name">res.partner.form (in partner_company_children_notes)</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="child_ids" position="after">
+                <field
+                    name="children_notes"
+                    mode="tree"
+                    attrs="{'invisible': [['is_company', '=', False]]}"
+                >
+                    <tree>
+                        <field name="record_name" string="Contact" />
+                        <field name="date" />
+                        <field name="author_id" />
+                        <field name="body" />
+                    </tree>
+                </field>
+            </field>
+        </field>
+    </record>
+
+</odoo>
