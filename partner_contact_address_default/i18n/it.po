@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-12-27 11:42+0000\n"
+"PO-Revision-Date: 2024-03-19 15:35+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -25,7 +25,7 @@ msgstr "Contatto"
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_contact_id
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_contact_id
 msgid "Default contact"
-msgstr ""
+msgstr "Contatto predefinito"
 
 #. module: partner_contact_address_default
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
@@ -55,6 +55,8 @@ msgstr "Indirizzo di spedizione"
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
 msgid "You can force contact, delivery and invoice address for this contacts."
 msgstr ""
+"Si possono forzare gli indirizzi di contatto, spedizione e fatturazione per "
+"questi contatti."
 
 #~ msgid "You can force and delivery and invoice address for this contacts."
 #~ msgstr ""
