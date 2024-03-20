@@ -7,7 +7,7 @@
     "author": "Odoo Community Association (OCA), Camptocamp",
     "website": "https://github.com/OCA/partner-contact",
     "category": "Partner Management",
-    "version": "12.0.1.0.0",
+    "version": "17.0.1.0.0",
     "license": "AGPL-3",
     "depends": ["partner_stage"],
     "installable": True,

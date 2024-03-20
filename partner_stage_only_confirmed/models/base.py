@@ -10,31 +10,35 @@ class Base(models.AbstractModel):
     _inherit = "base"
 
     @api.model
-    def fields_view_get(self, *args, **kwargs):
+    def get_view(self, view_id=None, view_type="form", **options):
         # OVERRIDE: display only confirmed partners on Many2one fields related
         # to ``res.partner`` on form views.
-        res = super().fields_view_get(*args, **kwargs)
-        if res["type"] == "form" and self._filter_only_confirmed():
+        res = super().get_view(view_id, view_type, **options)
+        if view_type == "form" and self._filter_only_confirmed():
             doc = etree.XML(res["arch"])
-            for fname, fvalues in tuple(res["fields"].items()):
-                ftype, frel = fvalues.get("type"), fvalues.get("relation")
-                if (ftype, frel) != ("many2one", "res.partner"):
-                    continue
-                for node in doc.xpath("//field[@name='%s']" % fname):
-                    domain = node.get("domain")
-                    if not domain:
-                        domain = "[('state', '=', 'confirmed')]"
-                    elif isinstance(domain, str):
-                        if domain in ("", "[]"):
-                            domain = "[('state', '=', 'confirmed')]"
-                        else:
-                            domain = domain[:-1]
-                            domain += ", ('state', '=', 'confirmed')]"
-                    else:
-                        domain = list(domain)
-                        domain.append(("state", "=", "confirmed"))
-                        domain = str(domain)
-                    node.set("domain", domain)
+            for model_name, model_fields in res["models"].items():
+                for fname in model_fields:
+                    model = self.env[model_name]
+                    field_obj = model._fields.get(fname)
+                    if field_obj:
+                        ftype, fcomodel_name = field_obj.type, field_obj.comodel_name
+                        if (ftype, fcomodel_name) != ("many2one", "res.partner"):
+                            continue
+                        for node in doc.xpath("//field[@name='%s']" % fname):
+                            domain = node.get("domain")
+                            if not domain:
+                                domain = "[('state', '=', 'confirmed')]"
+                            elif isinstance(domain, str):
+                                if domain in ("", "[]"):
+                                    domain = "[('state', '=', 'confirmed')]"
+                                else:
+                                    domain = domain[:-1]
+                                    domain += ", ('state', '=', 'confirmed')]"
+                            else:
+                                domain = list(domain)
+                                domain.append(("state", "=", "confirmed"))
+                                domain = str(domain)
+                            node.set("domain", domain)
             res["arch"] = etree.tostring(doc)
         return res
 
