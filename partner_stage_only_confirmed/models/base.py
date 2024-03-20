@@ -2,11 +2,12 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from lxml import etree
+
 from odoo import api, models
 
 
 class Base(models.AbstractModel):
-    _inherit = 'base'
+    _inherit = "base"
 
     @api.model
     def fields_view_get(self, *args, **kwargs):
@@ -31,7 +32,7 @@ class Base(models.AbstractModel):
                             domain += ", ('state', '=', 'confirmed')]"
                     else:
                         domain = list(domain)
-                        domain.append(('state', '=', 'confirmed'))
+                        domain.append(("state", "=", "confirmed"))
                         domain = str(domain)
                     node.set("domain", domain)
             res["arch"] = etree.tostring(doc)
@@ -51,8 +52,10 @@ class Base(models.AbstractModel):
             return bool(self._context["only_confirmed_partners"])
 
         # Retrieve value from system parameters
-        val = self.env["ir.config_parameter"].sudo().get_param(
-            "partner_stage.only_confirmed_partners", default=None
+        val = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("partner_stage.only_confirmed_partners", default=None)
         )
         if val is not None:
             return val not in ("False", "false", "", "0")
