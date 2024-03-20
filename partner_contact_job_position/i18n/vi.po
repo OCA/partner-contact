@@ -1,0 +1,90 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_job_position
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-26 15:32+0000\n"
+"PO-Revision-Date: 2017-12-26 15:32+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Vietnamese (https://www.transifex.com/oca/teams/23907/vi/)\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner__job_position_id
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_users__job_position_id
+msgid "Categorized job position"
+msgstr ""
+
+#. module: partner_contact_job_position
+#: model:ir.model,name:partner_contact_job_position.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__create_date
+msgid "Created on"
+msgstr "Được tạo vào"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_contact_job_position
+#: model:ir.actions.act_window,name:partner_contact_job_position.res_partner_job_position_action
+#: model:ir.ui.menu,name:partner_contact_job_position.menu_res_partner_job_position
+msgid "Job Positions"
+msgstr ""
+
+#. module: partner_contact_job_position
+#: model:ir.model,name:partner_contact_job_position.model_res_partner_job_position
+#: model_terms:ir.ui.view,arch_db:partner_contact_job_position.view_res_partner_filter_job_position
+msgid "Job position"
+msgstr ""
+
+#. module: partner_contact_job_position
+#: model_terms:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_form_view
+msgid "Job positions"
+msgstr ""
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__name
+msgid "Name"
+msgstr "Tên"
+
+#~ msgid "Partner"
+#~ msgstr "Đối tác"

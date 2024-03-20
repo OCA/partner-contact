@@ -1,0 +1,105 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_job_position
+#
+# Translators:
+# Lukáš Spurný <lukasspurny8@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-21 03:58+0000\n"
+"PO-Revision-Date: 2018-02-21 03:58+0000\n"
+"Last-Translator: Lukáš Spurný <lukasspurny8@gmail.com>, 2018\n"
+"Language-Team: Czech (Czech Republic) (https://www.transifex.com/oca/"
+"teams/23907/cs_CZ/)\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner__job_position_id
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_users__job_position_id
+msgid "Categorized job position"
+msgstr "Kategorizovaná pracovní pozice"
+
+#. module: partner_contact_job_position
+#: model:ir.model,name:partner_contact_job_position.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__create_uid
+msgid "Created by"
+msgstr "Vytvořil"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__create_date
+msgid "Created on"
+msgstr "Vytvořeno"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__display_name
+msgid "Display Name"
+msgstr "Zobrazovaný název"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_contact_job_position
+#: model:ir.actions.act_window,name:partner_contact_job_position.res_partner_job_position_action
+#: model:ir.ui.menu,name:partner_contact_job_position.menu_res_partner_job_position
+msgid "Job Positions"
+msgstr "Pracovní pozice"
+
+#. module: partner_contact_job_position
+#: model:ir.model,name:partner_contact_job_position.model_res_partner_job_position
+#: model_terms:ir.ui.view,arch_db:partner_contact_job_position.view_res_partner_filter_job_position
+msgid "Job position"
+msgstr "Pracovní pozice"
+
+#. module: partner_contact_job_position
+#: model_terms:ir.ui.view,arch_db:partner_contact_job_position.res_partner_job_position_form_view
+msgid "Job positions"
+msgstr "Pracovní místa"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position____last_update
+msgid "Last Modified on"
+msgstr "Poslední změna dne"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__write_uid
+msgid "Last Updated by"
+msgstr "Naposledy aktualizováno"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__write_date
+msgid "Last Updated on"
+msgstr "Poslední aktualizace dne"
+
+#. module: partner_contact_job_position
+#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__name
+msgid "Name"
+msgstr "Jméno"
+
+#~ msgid "Children"
+#~ msgstr "Děti"
+
+#~ msgid "Parent"
+#~ msgstr "Rodič"
+
+#, fuzzy
+#~ msgid "Parent Left"
+#~ msgstr "Rodič vlevo"
+
+#, fuzzy
+#~ msgid "Parent Right"
+#~ msgstr "Rodič právo"
+
+#~ msgid "Partner"
+#~ msgstr "Společník"
