@@ -95,11 +95,6 @@ msgid "Inactive"
 msgstr ""
 
 #. module: partner_stage
-#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage____last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__write_uid
 msgid "Last Updated by"
 msgstr ""
