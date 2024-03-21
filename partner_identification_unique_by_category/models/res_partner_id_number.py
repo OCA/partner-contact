@@ -12,7 +12,7 @@ class ResPartnerIdNumber(models.Model):
 
     @api.constrains("name", "category_id")
     def validate_id_number(self):
-        super().validate_id_number()
+        res = super().validate_id_number()
         for rec in self:
             if not rec.category_id.has_unique_numbers:
                 continue
@@ -22,7 +22,9 @@ class ResPartnerIdNumber(models.Model):
             if count > 1:
                 raise ValidationError(
                     _(
-                        "The Id {} in the category {} could not be created because "
-                        "it already exists"
-                    ).format(rec.name, rec.category_id.name)
+                        "The Id %(name)s in the category %(category)s could not be "
+                        "created because it already exists"
+                    )
+                    % {"name": rec.name, "category": rec.category_id.name}
                 )
+        return res
