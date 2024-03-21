@@ -95,10 +95,10 @@ class ResPartner(models.Model):
             if partner.version_hash and has_written_versioned_fields:
                 raise exceptions.UserError(
                     _(
-                        "You can't modify a versioned field %s on the "
-                        "versioned partner %s."
+                        "You can't modify a versioned field %(fields)s on the versioned"
+                        " partner %(partner_name)s."
                     )
-                    % (version_fields, partner.name)
+                    % {"fields": version_fields, "partner_name": partner.name}
                 )
         return super(ResPartner, self).write(vals)
 

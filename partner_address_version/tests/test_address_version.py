@@ -5,10 +5,10 @@ import hashlib
 from collections import OrderedDict
 
 from odoo.exceptions import UserError
-from odoo.tests import SavepointCase
+from odoo.tests import TransactionCase
 
 
-class TestAddressVersion(SavepointCase):
+class TestAddressVersion(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestAddressVersion, cls).setUpClass()
