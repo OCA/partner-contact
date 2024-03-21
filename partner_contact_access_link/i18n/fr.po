@@ -1,0 +1,27 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_contact_access_link
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-06-21 12:09+0000\n"
+"Last-Translator: Rémi <remi@le-filament.com>\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: partner_contact_access_link
+#: model:ir.model,name:partner_contact_access_link.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_contact_access_link
+#: model_terms:ir.ui.view,arch_db:partner_contact_access_link.view_partner_form
+msgid "Open full form"
+msgstr "Ouvrir la fiche complète"
