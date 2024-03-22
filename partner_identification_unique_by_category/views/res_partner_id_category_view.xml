@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_partner_id_category_form">
+        <field name="name">res.partner.id_category.form</field>
+        <field name="model">res.partner.id_category</field>
+        <field
+            name="inherit_id"
+            ref="partner_identification.view_partner_id_category_form"
+        />
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="has_unique_numbers" />
+            </field>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_partner_id_category_tree">
+        <field name="name">res.partner.id_category.tree</field>
+        <field name="model">res.partner.id_category</field>
+        <field
+            name="inherit_id"
+            ref="partner_identification.view_partner_id_category_tree"
+        />
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="has_unique_numbers" />
+            </field>
+        </field>
+    </record>
+</odoo>
