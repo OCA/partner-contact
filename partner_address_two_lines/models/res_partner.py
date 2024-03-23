@@ -9,8 +9,12 @@ class ResPartner(models.Model):
 
     def _get_contact_name(self, partner, name):
         if self.env.context.get("_two_lines_partner_address"):
-            return "{}\n {}".format(
-                partner.commercial_company_name or partner.sudo().parent_id.name, name
+            company_name = (
+                partner.commercial_company_name or partner.sudo().parent_id.name
             )
-        else:
-            return super()._get_contact_name(partner, name)
+            # Depends on https://github.com/odoo/odoo/pull/126451
+            # This change can only be merged after this Odoo PR is merged as well.
+            if company_name and name:
+                # Only display two lines if both values are found.
+                return "{}\n{}".format(company_name, name)
+        return super()._get_contact_name(partner, name)
