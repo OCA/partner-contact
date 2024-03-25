@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="action_partner_form" model="ir.actions.act_window">
+        <field name="name">All Customers in All Positions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field
+            name="context"
+        >{"search_default_customer":1, 'search_show_all_positions': {'is_set': True, 'set_value': True}}</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter" />
+    </record>
+</odoo>
