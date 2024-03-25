@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_partner_sequence_type_view_tree" model="ir.ui.view">
+        <field name="name">res.partner.sequence.type.tree</field>
+        <field name="model">res.partner.sequence.type</field>
+        <field name="arch" type="xml">
+            <tree create="false" delete="false">
+                <field name="name" />
+                <field name="code" optional="hide" />
+                <field name="sequence_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_partner_sequence_type_view_form" model="ir.ui.view">
+        <field name="name">res.partner.sequence.type.form</field>
+        <field name="model">res.partner.sequence.type</field>
+        <field name="arch" type="xml">
+            <form create="false" delete="false">
+                <sheet>
+                    <h1>
+                        <field name="name" />
+                    </h1>
+                    <group>
+                        <field name="code" />
+                        <field name="sequence_id" colspan="2" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_partner_sequence_type_action" model="ir.actions.act_window">
+        <field name="name">Partner Sequence by Address Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner.sequence.type</field>
+    </record>
+
+    <menuitem
+        action="res_partner_sequence_type_action"
+        id="menu_res_partner_sequence_type_action"
+        parent="contacts.res_partner_menu_config"
+        sequence='10'
+    />
+</odoo>

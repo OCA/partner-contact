@@ -1,0 +1,86 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_sequence_address_type
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2024-02-19 14:36+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: partner_sequence_address_type
+#: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner_sequence_type__code
+msgid "Code"
+msgstr "Codice"
+
+#. module: partner_sequence_address_type
+#: model:ir.model,name:partner_sequence_address_type.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_sequence_address_type
+#: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner_sequence_type__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: partner_sequence_address_type
+#: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner_sequence_type__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: partner_sequence_address_type
+#: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner_sequence_type__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: partner_sequence_address_type
+#: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner_sequence_type__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_sequence_address_type
+#: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner____last_update
+#: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner_sequence_type____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: partner_sequence_address_type
+#: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner_sequence_type__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: partner_sequence_address_type
+#: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner_sequence_type__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: partner_sequence_address_type
+#: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner_sequence_type__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: partner_sequence_address_type
+#: model:ir.model,name:partner_sequence_address_type.model_res_partner_sequence_type
+msgid "Partner Sequence Type"
+msgstr "Tipo sequenza partner"
+
+#. module: partner_sequence_address_type
+#: model:ir.actions.act_window,name:partner_sequence_address_type.res_partner_sequence_type_action
+#: model:ir.ui.menu,name:partner_sequence_address_type.menu_res_partner_sequence_type_action
+msgid "Partner Sequence by Address Type"
+msgstr "Sequenza partner per tipo indirizzo"
+
+#. module: partner_sequence_address_type
+#: model:ir.model.fields,field_description:partner_sequence_address_type.field_res_partner_sequence_type__sequence_id
+msgid "Sequence"
+msgstr "Sequenza"

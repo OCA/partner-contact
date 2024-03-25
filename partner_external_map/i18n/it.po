@@ -9,20 +9,20 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-13 03:42+0000\n"
-"PO-Revision-Date: 2020-04-24 15:19+0000\n"
-"Last-Translator: Alberto Carollo <baba75@gmail.com>\n"
+"PO-Revision-Date: 2024-01-29 17:34+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__active
 msgid "Active"
-msgstr ""
+msgstr "Attivo"
 
 #. module: partner_external_map
 #: code:addons/partner_external_map/models/res_partner.py:0
@@ -34,7 +34,7 @@ msgstr "Indirizzo mancante per il partner \"%s\"."
 #: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_form
 #: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_search
 msgid "Archived"
-msgstr ""
+msgstr "In archivio"
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_partner
@@ -216,7 +216,7 @@ msgstr "URL del percorso che usa gli indirizzi"
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Sequenza"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users__context_route_start_partner_id
