@@ -10,7 +10,6 @@
     "author": "Camptocamp,Odoo Community Association (OCA)",
     "maintainer": "Camptocamp",
     "category": "Sales",
-    "depends": ["base_view_inheritance_extension"],
     "website": "https://github.com/OCA/partner-contact",
     "data": ["views/res_partner.xml"],
     "post_init_hook": "post_init_hook",
