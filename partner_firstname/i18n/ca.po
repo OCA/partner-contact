@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-10 03:39+0000\n"
-"PO-Revision-Date: 2023-06-23 14:09+0000\n"
-"Last-Translator: eccit-quim <quim@eccit.com>\n"
+"PO-Revision-Date: 2024-03-28 22:34+0000\n"
+"Last-Translator: Eugeni Chafer <eugeni@chafer.cat>\n"
 "Language-Team: Catalan (https://www.transifex.com/oca/teams/23907/ca/)\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -24,14 +24,14 @@ msgstr ""
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
 msgid "%(login)s (copy)"
-msgstr "%(login)s (cópia)"
+msgstr "%(login)s (còpia)"
 
 #. module: partner_firstname
 #. odoo-python
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
 msgid "%(name)s (copy)"
-msgstr "%(name)s (copia)"
+msgstr "%(name)s (còpia)"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_config_settings
@@ -59,13 +59,13 @@ msgstr "Error(es) con el nombre del socio %d."
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__firstname
 msgid "First name"
-msgstr "Primer Cognom"
+msgstr "Nom"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname
 msgid "Last name"
-msgstr "Segon Cognom"
+msgstr "Cognoms"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__name
@@ -89,13 +89,12 @@ msgstr "Ordre per compondre el nom complet del soci"
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
 msgid "Partner Names Order"
-msgstr "Ordre de noms de socis"
+msgstr "Ordre de noms del contacte"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order_changed
-#, fuzzy
 msgid "Partner Names Order Changed"
-msgstr "L'ordre dels noms dels socis ha canviat"
+msgstr "L'ordre dels noms dels contacte ha canviat"
 
 #. module: partner_firstname
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
@@ -108,8 +107,8 @@ msgid ""
 "Recalculate names for all partners. This process could take so much time if "
 "there are more than 10,000 active partners"
 msgstr ""
-"Torna a calcular els noms de tots els socis. Aquest procés podria trigar "
-"molt de temps si hi ha més de 10.000 socis actius"
+"Torna a calcular els noms de tots els contactes. Aquest procés podria trigar "
+"molt de temps si hi ha més de 10.000 contactes actius"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_users
