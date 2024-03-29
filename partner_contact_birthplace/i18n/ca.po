@@ -39,17 +39,11 @@ msgstr "Província/estat de naixement"
 msgid "Contact"
 msgstr "Contacte"
 
-#. module: partner_contact_birthplace
-#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__display_name
-msgid "Display Name"
-msgstr "Nom a mostrar"
+#~ msgid "Display Name"
+#~ msgstr "Nom a mostrar"
 
-#. module: partner_contact_birthplace
-#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__id
-msgid "ID"
-msgstr "ID"
+#~ msgid "ID"
+#~ msgstr "ID"
 
-#. module: partner_contact_birthplace
-#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner____last_update
-msgid "Last Modified on"
-msgstr "Darrera modificació el"
+#~ msgid "Last Modified on"
+#~ msgstr "Darrera modificació el"
