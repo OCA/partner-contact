@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -369,13 +368,15 @@ ul.auto-toc {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !! source digest: sha256:32e365c1bac39e8d860609e9f0e3c5b0d9883c653b1d592e8ea1a61e66eea744
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/partner-contact/tree/16.0/partner_email_check"><img alt="OCA/partner-contact" src="https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/partner-contact-16-0/partner-contact-16-0-partner_email_check"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&amp;target_branch=16.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/partner-contact/tree/17.0/partner_email_check"><img alt="OCA/partner-contact" src="https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/partner-contact-17-0/partner-contact-17-0-partner_email_check"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&amp;target_branch=17.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
 <p>This module validates and normalizes the field <tt class="docutils literal">email</tt> in the model
 <tt class="docutils literal">res.partner</tt>.</p>
-<p>As part of the normalization, email addresses are converted to lowercase.</p>
-<p>Optionally, multiple partners can not be allowed to have the same address.
-This will not work with multiple comma-separated email addresses in the field,
-although validation and normalization are still supported in such cases.</p>
+<p>As part of the normalization, email addresses are converted to
+lowercase.</p>
+<p>Optionally, multiple partners can not be allowed to have the same
+address. This will not work with multiple comma-separated email
+addresses in the field, although validation and normalization are still
+supported in such cases.</p>
 <p><strong>Table of contents</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -392,13 +393,14 @@ although validation and normalization are still supported in such cases.</p>
 </div>
 <div class="section" id="configuration">
 <h1><a class="toc-backref" href="#toc-entry-1">Configuration</a></h1>
-<p>Install python package email-validator: <tt class="docutils literal">sudo pip install <span class="pre">email-validator</span></tt>.</p>
+<p>Install python package email-validator:
+<tt class="docutils literal">sudo pip install <span class="pre">email-validator</span></tt>.</p>
 <p>To not allow multiple partners to have the same email address, use the
-“Filter duplicate email addresses”/<tt class="docutils literal">partner_email_check_filter_duplicates</tt>
-setting.</p>
-<p>To validate that email addresses are deliverable (that the hostname exists),
-use the “Check deliverability of email addresses”/<tt class="docutils literal">partner_email_check_check_deliverability</tt>
-setting.</p>
+“Filter duplicate email
+addresses”/<tt class="docutils literal">partner_email_check_filter_duplicates</tt> setting.</p>
+<p>To validate that email addresses are deliverable (that the hostname
+exists), use the “Check deliverability of email
+addresses”/<tt class="docutils literal">partner_email_check_check_deliverability</tt> setting.</p>
 </div>
 <div class="section" id="usage">
 <h1><a class="toc-backref" href="#toc-entry-2">Usage</a></h1>
@@ -409,7 +411,7 @@ setting.</p>
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/partner-contact/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-<a class="reference external" href="https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_email_check%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
+<a class="reference external" href="https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_email_check%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
@@ -435,7 +437,7 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <p>OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.</p>
-<p>This module is part of the <a class="reference external" href="https://github.com/OCA/partner-contact/tree/16.0/partner_email_check">OCA/partner-contact</a> project on GitHub.</p>
+<p>This module is part of the <a class="reference external" href="https://github.com/OCA/partner-contact/tree/17.0/partner_email_check">OCA/partner-contact</a> project on GitHub.</p>
 <p>You are welcome to contribute. To learn how please visit <a class="reference external" href="https://odoo-community.org/page/Contribute">https://odoo-community.org/page/Contribute</a>.</p>
 </div>
 </div>

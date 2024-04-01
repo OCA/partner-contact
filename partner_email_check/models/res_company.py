@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class ResCompany(models.Model):
-
     _inherit = "res.company"
 
     partner_email_check_syntax = fields.Boolean(
