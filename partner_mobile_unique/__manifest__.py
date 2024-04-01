@@ -3,7 +3,7 @@
 
 {
     "name": "Partner Mobile Format and Duplicate Checker",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "summary": "Restriction on partner creation if another partner has the same mobile",
     "author": "Ashish Hirpara, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",

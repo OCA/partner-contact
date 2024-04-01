@@ -23,3 +23,4 @@ class TestMobileCheckUnique(common.TransactionCase):
 
         with self.assertRaises(UserError):
             self._create_partners("Test Partner 4", "12345678", self.env.company.id)
+            self._create_partners("Test Partner 5", "12345678", self.env.company.id)
