@@ -24,7 +24,7 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     def copy_data(self, default=None):
-        res = super(ResPartner, self).copy_data(default=default)
+        res = super().copy_data(default=default)
         if self._should_filter_duplicates():
             for copy_vals in res:
                 copy_vals.pop("email", None)
@@ -94,9 +94,9 @@ class ResPartner(models.Model):
         for vals in vals_list:
             if vals.get("email"):
                 vals["email"] = self.email_check(vals["email"])
-        return super(ResPartner, self).create(vals_list)
+        return super().create(vals_list)
 
     def write(self, vals):
         if vals.get("email"):
             vals["email"] = self.email_check(vals["email"])
-        return super(ResPartner, self).write(vals)
+        return super().write(vals)
