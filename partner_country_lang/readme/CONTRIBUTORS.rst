@@ -2,3 +2,7 @@
 
   * Víctor Martínez
   * Pedro M. Baeza
+
+* `Binhex <https://binhex.cloud/>`_:
+
+  * Antonio Ruban
