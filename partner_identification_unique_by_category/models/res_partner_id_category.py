@@ -25,7 +25,7 @@ class ResPartnerIdCategory(models.Model):
             if len(ids) != len(unique_numbers):
                 raise ValidationError(
                     _(
-                        "The category {} can not be set to use unique numbers, "
+                        "The category {name} can not be set to use unique numbers, "
                         "because it already contains duplicates."
-                    ).format(rec.name)
+                    ).format(name=rec.name)
                 )
