@@ -65,6 +65,7 @@ class ResPartner(models.Model):
     @api.model
     def default_get(self, fields_list):
         """Invert name when getting default values."""
+        fields_list.append("name")
         result = super(ResPartner, self).default_get(fields_list)
 
         inverted = self._get_inverse_name(
