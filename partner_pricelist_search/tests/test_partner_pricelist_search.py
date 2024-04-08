@@ -9,6 +9,9 @@ class TestPartnerPricelistSearch(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        # Enable the pricelist
+        cls.env.user.groups_id += cls.env.ref("product.group_product_pricelist")
+        cls.env.company._activate_or_create_pricelists()
         cls.pricelist_1 = cls.env["product.pricelist"].create(
             {"name": "Test pricelist 1"}
         )
