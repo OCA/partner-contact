@@ -37,7 +37,7 @@ class ResPartner(models.Model):
                 and not partner.ref
             ):
                 partner_vals["ref"] = partner._get_next_ref(vals=partner_vals)
-            super().write(partner_vals)
+            super(ResPartner, partner).write(partner_vals)
         return True
 
     def _needs_ref(self, vals=None):
