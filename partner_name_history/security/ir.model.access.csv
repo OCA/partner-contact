@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+partner_name_history.access_partner_name_history,Everyone can manage the History of partner name,partner_name_history.model_partner_name_history,,1,1,1,1
