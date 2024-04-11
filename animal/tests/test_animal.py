@@ -3,17 +3,18 @@ from odoo.tests.common import TransactionCase
 
 # @tagged('-at_install', 'post_install')
 class TestAnimalState(TransactionCase):
-    def setUp(self, *args, **kwargs):
-        super(TestAnimalState, self).setUp(*args, **kwargs)
-        self.test_species = self.env["animal.species"].create({"name": "specie 1"})
-        self.test_breed = self.env["animal.breed"].create(
-            {"name": "breed 1", "species_id": self.test_species.id}
+    @classmethod
+    def setUpClass(cls, *args, **kwargs):
+        super().setUpClass(*args, **kwargs)
+        cls.test_species = cls.env["animal.species"].create({"name": "specie 1"})
+        cls.test_breed = cls.env["animal.breed"].create(
+            {"name": "breed 1", "species_id": cls.test_species.id}
         )
-        self.test_animal = self.env["animal"].create(
+        cls.test_animal = cls.env["animal"].create(
             {
                 "name": "Animal 1",
-                "species_id": self.test_species.id,
-                "breed_id": self.test_breed.id,
+                "species_id": cls.test_species.id,
+                "breed_id": cls.test_breed.id,
             }
         )
 
