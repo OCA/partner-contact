@@ -20,6 +20,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_second_lastname
+#. odoo-python
+#: code:addons/partner_second_lastname/models/res_partner.py:0
+#, python-format
+msgid "%s (copy)"
+msgstr ""
+
+#. module: partner_second_lastname
+#. odoo-python
+#: code:addons/partner_second_lastname/models/res_partner.py:0
+#, python-format
+msgid "(copy)"
+msgstr ""
+
+#. module: partner_second_lastname
 #: model:ir.model,name:partner_second_lastname.model_res_config_settings
 #, fuzzy
 msgid "Config Settings"
