@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_lang
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-25 03:41+0000\n"
+"PO-Revision-Date: 2022-11-29 12:45+0000\n"
+"Last-Translator: Pierrick Brun <brun.pierrick@protonmail.com>\n"
+"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#. module: partner_contact_lang
+#: model:ir.model,name:partner_contact_lang.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: partner_contact_lang
+#: model_terms:ir.ui.view,arch_db:partner_contact_lang.view_res_partner_filter
+msgid "Language"
+msgstr "Langue"
+
+#~ msgid "Partner"
+#~ msgstr "Partenaire"
