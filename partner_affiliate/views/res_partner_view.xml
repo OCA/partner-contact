@@ -10,13 +10,10 @@
                 expr="/form/sheet//div[hasclass('o_row')]/field[@name='parent_id']"
                 position="attributes"
             >
-                <attribute name="attrs" />
+                <attribute name="invisible">0</attribute>
             </xpath>
             <xpath expr='//page[@name="internal_notes"]' position="before">
-                <page
-                    string="Affiliates"
-                    attrs="{'invisible': [('is_company','=',False)]}"
-                >
+                <page string="Affiliates" invisible="not is_company">
                     <field
                         name="affiliate_ids"
                         context="{'default_parent_id': active_id, 'default_is_company': True, 'default_type':'other'}"
@@ -29,7 +26,6 @@
                             <field name="title" />
                             <field name="type" />
                             <field name="email" />
-                            <field name="parent_id" />
                             <field name="is_company" />
                             <field name="function" />
                             <field name="phone" />
