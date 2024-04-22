@@ -20,12 +20,18 @@ msgstr ""
 
 #. module: partner_category_security
 #: model:ir.module.category,name:partner_category_security.category_partner_category
+#: model:ir.ui.menu,name:partner_category_security.menu_partner_category_custom
 msgid "Contact Tags"
 msgstr ""
 
 #. module: partner_category_security
 #: model:res.groups,name:partner_category_security.group_partner_category_manager
 msgid "Manager"
+msgstr ""
+
+#. module: partner_category_security
+#: model:ir.model,name:partner_category_security.model_ir_ui_menu
+msgid "Menu"
 msgstr ""
 
 #. module: partner_category_security
