@@ -6,4 +6,14 @@
             eval="[(4, ref('partner_category_security.group_partner_category_manager'))]"
         />
     </record>
+    <!-- Custom menu for accessing Contact Tags if the user does not have the
+        group.group_system group.-->
+    <menuitem
+        id="menu_partner_category_custom"
+        name="Contact Tags"
+        parent="contacts.menu_contacts"
+        action="base.action_partner_category_form"
+        groups="partner_category_security.group_partner_category_manager"
+        sequence="90"
+    />
 </odoo>

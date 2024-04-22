@@ -75,3 +75,34 @@ class TestPartnerCategorySecurity(BaseCommon):
         modifiers = json.loads(node.get("modifiers")) if node.get("modifiers") else {}
         self.assertTrue("readonly" not in modifiers or not modifiers["readonly"])
         self.assertFalse(node.get("force_save"))
+
+    def test_ir_ui_menu(self):
+        menu_partner_category_custom = self.env.ref(
+            "partner_category_security.menu_partner_category_custom"
+        )
+        visible_ids = (
+            self.env["ir.ui.menu"].with_user(self.basic_user)._visible_menu_ids()
+        )
+        self.assertNotIn(menu_partner_category_custom.id, visible_ids)
+        visible_ids = (
+            self.env["ir.ui.menu"]
+            .with_user(self.partner_category_user)
+            ._visible_menu_ids()
+        )
+        self.assertNotIn(menu_partner_category_custom.id, visible_ids)
+        visible_ids = (
+            self.env["ir.ui.menu"]
+            .with_user(self.partner_category_manager)
+            ._visible_menu_ids()
+        )
+        self.assertIn(menu_partner_category_custom.id, visible_ids)
+        # Add system to partner_category_manager user
+        self.partner_category_manager.write(
+            {"groups_id": [(4, self.env.ref("base.group_system").id)]}
+        )
+        visible_ids = (
+            self.env["ir.ui.menu"]
+            .with_user(self.partner_category_manager)
+            ._visible_menu_ids()
+        )
+        self.assertNotIn(menu_partner_category_custom.id, visible_ids)
