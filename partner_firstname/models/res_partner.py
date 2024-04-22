@@ -1,6 +1,7 @@
 # Copyright 2013 Nicolas Bessi (Camptocamp SA)
 # Copyright 2014 Agile Business Group (<http://www.agilebg.com>)
 # Copyright 2015 Grupo ESOC (<http://www.grupoesoc.es>)
+# Copyright 2024 Simone Rubino - Aion Tech
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 import logging
 
@@ -73,7 +74,7 @@ class ResPartner(models.Model):
             # pylint: disable=W8121
             created_partners |= super(
                 ResPartner, self.with_context(partner_context)
-            ).create(vals_list)
+            ).create([vals])
         return created_partners
 
     def get_extra_default_copy_values(self, order):
