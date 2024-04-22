@@ -217,14 +217,6 @@ msgid "Is reverse type?"
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation____last_update
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all____last_update
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type____last_update
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection____last_update
-msgid "Last Modified on"
-msgstr "Laatst Aangepast op"
-
-#. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__write_uid
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__write_uid
 msgid "Last Updated by"
@@ -589,3 +581,6 @@ msgstr ""
 #, python-format
 msgid "this"
 msgstr ""
+
+#~ msgid "Last Modified on"
+#~ msgstr "Laatst Aangepast op"
