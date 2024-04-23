@@ -37,20 +37,16 @@ class ResPartner(models.Model):
                 partner.is_supplier = bool(partner.supplier_rank)
 
     def _inverse_is_customer(self):
-        for partner in self:
-            partners = partner | partner.commercial_partner_id
-            if partner.is_customer:
-                partners._increase_rank("customer_rank")
-            else:
-                partners.customer_rank = 0
+        self.filtered(lambda p: not p.is_customer).write({"customer_rank": 0})
+        self.filtered(lambda p: p.is_customer and not p.customer_rank).write(
+            {"customer_rank": 1}
+        )
 
     def _inverse_is_supplier(self):
-        for partner in self:
-            partners = partner | partner.commercial_partner_id
-            if partner.is_supplier:
-                partners._increase_rank("supplier_rank")
-            else:
-                partners.supplier_rank = 0
+        self.filtered(lambda p: not p.is_supplier).write({"supplier_rank": 0})
+        self.filtered(lambda p: p.is_supplier and not p.supplier_rank).write(
+            {"supplier_rank": 1}
+        )
 
     def _default_is_customer(self):
         return self.env.context.get("res_partner_search_mode") == "customer"
