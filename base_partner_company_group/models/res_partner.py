@@ -9,7 +9,7 @@ class Contact(models.Model):
 
     company_group_id = fields.Many2one(
         "res.partner",
-        "Company group",
+        string="Company group",
         domain=[("is_company", "=", True)],
         recursive=True,
     )
