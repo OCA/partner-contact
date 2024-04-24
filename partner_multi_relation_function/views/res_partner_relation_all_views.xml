@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="tree_res_partner_relation_all" model="ir.ui.view">
+        <field name="model">res.partner.relation.all</field>
+        <field
+            name="inherit_id"
+            ref="partner_multi_relation.tree_res_partner_relation_all"
+        />
+        <field name="arch" type="xml">
+            <field name="other_partner_id" position="after">
+                <field name="allow_function" invisible="1" />
+                <field
+                    name="function"
+                    optional="show"
+                    attrs="{'readonly': [('allow_function','=',False)]}"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="search_res_partner_relation_all" model="ir.ui.view">
+        <field name="model">res.partner.relation.all</field>
+        <field
+            name="inherit_id"
+            ref="partner_multi_relation.search_res_partner_relation_all"
+        />
+        <field name="arch" type="xml">
+            <field name="other_partner_id" position="after">
+                <field name="function" />
+            </field>
+        </field>
+    </record>
+
+</odoo>

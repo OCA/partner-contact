@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="demo_relation_ceo" model="res.partner.relation">
+        <field
+            name="left_partner_id"
+            ref="partner_multi_relation.res_partner_pmr_great"
+        />
+        <field name="right_partner_id" ref="res_partner_demo_the_big_guy" />
+        <field name="type_id" ref="rel_type_board_member" />
+        <field name="function">CEO</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="tree_res_partner_relation_type" model="ir.ui.view">
+        <field name="model">res.partner.relation.type</field>
+        <field
+            name="inherit_id"
+            ref="partner_multi_relation.tree_res_partner_relation_type"
+        />
+        <field type="xml" name="arch">
+            <xpath expr="//tree" position="inside">
+                <field name="allow_function" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="form_res_partner_relation_type" model="ir.ui.view">
+        <field name="model">res.partner.relation.type</field>
+        <field
+            name="inherit_id"
+            ref="partner_multi_relation.form_res_partner_relation_type"
+        />
+        <field type="xml" name="arch">
+            <field name="allow_self" position="before">
+                <field name="allow_function" />
+            </field>
+        </field>
+    </record>
+
+</odoo>
