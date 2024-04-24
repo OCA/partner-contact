@@ -23,23 +23,9 @@ msgstr "Contatto"
 
 #. module: partner_category_security
 #: model:ir.module.category,name:partner_category_security.category_partner_category
+#: model:ir.ui.menu,name:partner_category_security.menu_partner_category_custom
 msgid "Contact Tags"
 msgstr "Etichette contatto"
-
-#. module: partner_category_security
-#: model:ir.model.fields,field_description:partner_category_security.field_res_partner__display_name
-msgid "Display Name"
-msgstr "Nome visualizzato"
-
-#. module: partner_category_security
-#: model:ir.model.fields,field_description:partner_category_security.field_res_partner__id
-msgid "ID"
-msgstr "ID"
-
-#. module: partner_category_security
-#: model:ir.model.fields,field_description:partner_category_security.field_res_partner____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
 
 #. module: partner_category_security
 #: model:res.groups,name:partner_category_security.group_partner_category_manager
@@ -47,6 +33,20 @@ msgid "Manager"
 msgstr "Responsabile"
 
 #. module: partner_category_security
+#: model:ir.model,name:partner_category_security.model_ir_ui_menu
+msgid "Menu"
+msgstr ""
+
+#. module: partner_category_security
 #: model:res.groups,name:partner_category_security.group_partner_category_user
 msgid "Publisher"
 msgstr "Editore"
+
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
