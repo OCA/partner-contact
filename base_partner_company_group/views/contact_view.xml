@@ -5,14 +5,26 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <field name="vat" position="before">
-                <field
+            <xpath expr="//div[hasclass('o_address_format')]" position="after">
+                    <field
                     name="company_group_id"
-                    attrs="{'invisible': [('is_company','=', False)]}"
+                    widget="res_partner_many2one"
+                    invisible="not is_company"
                 />
-            </field>
+            </xpath>
+            <div name="button_box" position="inside">
+                <button
+                    class="oe_stat_button"
+                    type="object"
+                    name="action_view_company_group_members"
+                    icon="fa-users"
+                >
+                    <field name="company_group_member_ids" widget="statinfo" />
+                </button>
+            </div>
         </field>
     </record>
+
     <record id="view_res_partner_filter" model="ir.ui.view">
         <field name="name">res.partner.select</field>
         <field name="model">res.partner</field>
@@ -30,12 +42,14 @@
             </filter>
         </field>
     </record>
+
     <record id="action_open_group_members" model="ir.actions.act_window">
         <field name="name">Company group members</field>
         <field name="res_model">res.partner</field>
         <field name="binding_model_id" ref="model_res_partner" />
         <field name="view_mode">tree</field>
         <field name="target">current</field>
+        <field name="context">{'create': False}</field>
         <field
             name="domain"
         >[('company_group_id', 'in', context.get('active_ids'))]</field>
