@@ -57,6 +57,7 @@ addon | version | maintainers | summary
 [partner_deduplicate_by_ref](partner_deduplicate_by_ref/) | 14.0.1.0.0 |  | Deduplicate Contacts by reference
 [partner_deduplicate_by_website](partner_deduplicate_by_website/) | 14.0.1.0.0 |  | Deduplicate Contacts by Website
 [partner_deduplicate_filter](partner_deduplicate_filter/) | 14.0.1.0.0 |  | Exclude records from the deduplication
+[partner_default_sale_discount](partner_default_sale_discount/) | 14.0.1.0.0 |  | Default sales discount per partner
 [partner_disable_gravatar](partner_disable_gravatar/) | 14.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Disable automatic connection to gravatar.com
 [partner_duns](partner_duns/) | 14.0.1.0.1 | [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Set DUNS (Data Universal Numbering System) on partners
 [partner_email_check](partner_email_check/) | 14.0.1.1.1 |  | Validate email address field
