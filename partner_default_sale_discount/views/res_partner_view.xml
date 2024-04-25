@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!-- Copyright 2016 Tecnativa - Pedro M. Baeza
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html). -->
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <group name="sale" position="inside">
+                <field
+                    name="default_sale_discount"
+                    attrs="{'invisible': [('parent_id', '!=', False)]}"
+                    groups="product.group_discount_per_so_line"
+                />
+            </group>
+        </field>
+    </record>
+
+</odoo>
