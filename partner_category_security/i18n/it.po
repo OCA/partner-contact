@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-03-04 10:36+0000\n"
+"PO-Revision-Date: 2024-04-29 09:36+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -35,7 +35,7 @@ msgstr "Responsabile"
 #. module: partner_category_security
 #: model:ir.model,name:partner_category_security.model_ir_ui_menu
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #. module: partner_category_security
 #: model:res.groups,name:partner_category_security.group_partner_category_user
