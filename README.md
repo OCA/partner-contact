@@ -64,7 +64,7 @@ addon | version | maintainers | summary
 [partner_employee_quantity](partner_employee_quantity/) | 16.0.1.0.1 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) [![rafaelbn](https://github.com/rafaelbn.png?size=30px)](https://github.com/rafaelbn) [![edlopen](https://github.com/edlopen.png?size=30px)](https://github.com/edlopen) | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 16.0.1.0.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 16.0.1.0.0 |  | Add fax number on partner
-[partner_firstname](partner_firstname/) | 16.0.1.0.2 |  | Split first name and last name for non company partners
+[partner_firstname](partner_firstname/) | 16.0.1.0.3 |  | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 16.0.1.0.3 |  | Partner Identification Numbers
 [partner_identification_eori](partner_identification_eori/) | 16.0.1.0.0 |  | This addon extends "Partner Identification Numbers" to provide a number category for EORI Number
 [partner_identification_gln](partner_identification_gln/) | 16.0.1.0.1 |  | This addon extends "Partner Identification Numbers" to provide a number category for GLN registration
