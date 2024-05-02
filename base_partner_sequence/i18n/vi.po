@@ -19,6 +19,16 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: base_partner_sequence
+#: model:ir.model,name:base_partner_sequence.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: base_partner_sequence
+#: model:ir.model,name:base_partner_sequence.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: base_partner_sequence
 #: model:ir.model,name:base_partner_sequence.model_res_partner
 msgid "Contact"
 msgstr ""
@@ -28,6 +38,29 @@ msgstr ""
 #: code:addons/base_partner_sequence/models/partner.py:0
 #, python-format
 msgid "Either field values or an id must be provided."
+msgstr ""
+
+#. module: base_partner_sequence
+#: model:ir.model.fields,help:base_partner_sequence.field_res_company__partner_ref_readonly
+#: model:ir.model.fields,help:base_partner_sequence.field_res_config_settings__partner_ref_readonly
+msgid "If marked, the Reference in partners will not be editable."
+msgstr ""
+
+#. module: base_partner_sequence
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_company__partner_ref_readonly
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_config_settings__partner_ref_readonly
+msgid "Partner Reference Readonly"
+msgstr ""
+
+#. module: base_partner_sequence
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_partner__ref_readonly
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_users__ref_readonly
+msgid "Ref Readonly"
+msgstr ""
+
+#. module: base_partner_sequence
+#: model_terms:ir.ui.view,arch_db:base_partner_sequence.res_config_settings_view_form
+msgid "Set Partner Reference field as read-only"
 msgstr ""
 
 #~ msgid "Partner"
