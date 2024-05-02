@@ -52,6 +52,7 @@ setuptools.setup(
         'odoo-addon-partner_identification>=15.0dev,<15.1dev',
         'odoo-addon-partner_industry_parent>=15.0dev,<15.1dev',
         'odoo-addon-partner_industry_secondary>=15.0dev,<15.1dev',
+        'odoo-addon-partner_label>=15.0dev,<15.1dev',
         'odoo-addon-partner_manual_rank>=15.0dev,<15.1dev',
         'odoo-addon-partner_multi_relation>=15.0dev,<15.1dev',
         'odoo-addon-partner_name_hide_parent>=15.0dev,<15.1dev',
