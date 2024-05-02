@@ -37,6 +37,7 @@ addon | version | maintainers | summary
 [partner_ref_unique](partner_ref_unique/) | 17.0.1.0.0 |  | Add an unique constraint to partner ref field
 [partner_second_lastname](partner_second_lastname/) | 17.0.1.0.0 |  | Have split first and second lastnames
 [partner_stage](partner_stage/) | 17.0.1.0.0 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Add lifecycle Stages to Partners
+[partner_stage_only_confirmed](partner_stage_only_confirmed/) | 17.0.1.0.0 |  | Adds filters on form views to display only confirmed partners
 [partner_vat_unique](partner_vat_unique/) | 17.0.1.0.0 |  | Module to make the VAT number unique for customers and suppliers.
 
 [//]: # (end addons)
