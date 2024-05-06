@@ -25,6 +25,7 @@ addon | version | maintainers | summary
 [base_location_geonames_import](base_location_geonames_import/) | 17.0.1.0.0 |  | Import zip entries from Geonames
 [base_partner_sequence](base_partner_sequence/) | 17.0.1.0.0 |  | Sets customer's code from a sequence
 [partner_address_street3](partner_address_street3/) | 17.0.1.0.0 |  | Add a third address line on partners
+[partner_affiliate](partner_affiliate/) | 17.0.1.0.0 |  | Partner Affiliates
 [partner_company_type](partner_company_type/) | 17.0.1.0.0 |  | Adds a company type to partner that are companies
 [partner_contact_birthdate](partner_contact_birthdate/) | 17.0.1.0.0 | [![Daemo00](https://github.com/Daemo00.png?size=30px)](https://github.com/Daemo00) | Contact's birthdate
 [partner_contact_gender](partner_contact_gender/) | 17.0.1.0.0 |  | Add gender field to contacts
