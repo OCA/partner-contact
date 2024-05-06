@@ -29,8 +29,10 @@ class TestBasePartnerTwoLine(TransactionCase):
 
     def test_get_name(self):
         # Partner with name.
-        name = self.child_partner_name.with_context(no_address_type=True)._get_name()
+        name = self.child_partner_name.with_context(no_address_type=True).display_name
         self.assertEqual(name, "Test Company Name, Test Partner Name")
         # Partner without a name.
-        name = self.child_partner_no_name.with_context(no_address_type=True)._get_name()
+        name = self.child_partner_no_name.with_context(
+            no_address_type=True
+        ).display_name
         self.assertEqual(name, "Test Company Name")
