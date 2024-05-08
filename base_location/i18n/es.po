@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-24 18:00+0000\n"
-"PO-Revision-Date: 2020-10-24 20:08+0200\n"
-"Last-Translator: Josep M <jmyepes@mac.com>\n"
+"PO-Revision-Date: 2024-05-08 18:34+0000\n"
+"Last-Translator: Jaime Ruiz Maccione <jaime.ruiz@sygel.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: base_location
 #: model:res.city,name:base_location.demo_brussels_city
@@ -213,7 +213,7 @@ msgid ""
 "a unique name within it's state and it's country"
 msgstr ""
 "Tiene ya una ciudad con ese nombre en la misma provincia. La ciudad debe "
-"tener un nombre único para la misma provincia y país."
+"tener un nombre único para la misma provincia y país"
 
 #. module: base_location
 #: model:ir.model.constraint,message:base_location.constraint_res_city_zip_name_city_uniq
@@ -221,8 +221,8 @@ msgid ""
 "You already have a zip with that code in the same city. The zip code must be "
 "unique within it's city"
 msgstr ""
-"Ya tiene ese código postal  en la misma ciudad. El código postal debe ser "
-"único para una misma ciudad."
+"Ya tiene ese código postal en la misma ciudad. El código postal debe ser "
+"único para una misma ciudad"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__name
