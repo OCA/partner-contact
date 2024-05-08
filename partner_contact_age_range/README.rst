@@ -81,6 +81,8 @@ Contributors
 -  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
 -  brain-tec AG <info@bt-group.com>
 -  Andreas Hochuli <andreas.hochuli@camptocamp.com>
+-  `Binhex Systems Solutions <https://binhex.cloud/>`__:
+-  Deriman Alonso <d.alonso@binhex.cloud>
 
 Maintainers
 -----------
