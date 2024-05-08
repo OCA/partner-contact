@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-28 03:45+0000\n"
-"PO-Revision-Date: 2023-12-27 09:37+0000\n"
+"PO-Revision-Date: 2024-05-08 09:34+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -22,12 +22,12 @@ msgstr ""
 #. module: base_partner_sequence
 #: model:ir.model,name:base_partner_sequence.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Aziende"
 
 #. module: base_partner_sequence
 #: model:ir.model,name:base_partner_sequence.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Impostazioni configurazione"
 
 #. module: base_partner_sequence
 #: model:ir.model,name:base_partner_sequence.model_res_partner
@@ -45,21 +45,21 @@ msgstr "Devono essere forniti i valori dei campi o un ID."
 #: model:ir.model.fields,help:base_partner_sequence.field_res_company__partner_ref_readonly
 #: model:ir.model.fields,help:base_partner_sequence.field_res_config_settings__partner_ref_readonly
 msgid "If marked, the Reference in partners will not be editable."
-msgstr ""
+msgstr "Se selezionata, il riferimento nei partner non sarà modificabile."
 
 #. module: base_partner_sequence
 #: model:ir.model.fields,field_description:base_partner_sequence.field_res_company__partner_ref_readonly
 #: model:ir.model.fields,field_description:base_partner_sequence.field_res_config_settings__partner_ref_readonly
 msgid "Partner Reference Readonly"
-msgstr ""
+msgstr "Riferimento partner solo lettura"
 
 #. module: base_partner_sequence
 #: model:ir.model.fields,field_description:base_partner_sequence.field_res_partner__ref_readonly
 #: model:ir.model.fields,field_description:base_partner_sequence.field_res_users__ref_readonly
 msgid "Ref Readonly"
-msgstr ""
+msgstr "Rif. solo lettura"
 
 #. module: base_partner_sequence
 #: model_terms:ir.ui.view,arch_db:base_partner_sequence.res_config_settings_view_form
 msgid "Set Partner Reference field as read-only"
-msgstr ""
+msgstr "Imposta il riferimento partner a solo lettura"
