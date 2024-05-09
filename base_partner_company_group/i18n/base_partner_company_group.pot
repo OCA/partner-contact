@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,14 +14,10 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: base_partner_company_group
-#: model_terms:ir.ui.view,arch_db:base_partner_company_group.view_res_partner_filter
-msgid "Company Group"
-msgstr ""
-
-#. module: base_partner_company_group
 #: model:ir.model.fields,field_description:base_partner_company_group.field_res_partner__company_group_id
 #: model:ir.model.fields,field_description:base_partner_company_group.field_res_users__company_group_id
-msgid "Company group"
+#: model_terms:ir.ui.view,arch_db:base_partner_company_group.view_res_partner_filter
+msgid "Company Group"
 msgstr ""
 
 #. module: base_partner_company_group
