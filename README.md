@@ -51,6 +51,7 @@ addon | version | maintainers | summary
 [partner_contact_lang](partner_contact_lang/) | 14.0.1.0.0 |  | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 14.0.1.0.1 |  | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 14.0.1.0.0 |  | Add a page to contacts form to put personal information
+[partner_country_lang](partner_country_lang/) | 14.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner language according country
 [partner_create_format_phone](partner_create_format_phone/) | 14.0.1.0.0 |  | Auto mobile number format for Partner
 [partner_data_vies_populator](partner_data_vies_populator/) | 14.0.1.0.3 |  | Using VIES webservice, name and address information will be fetched and added to the partner.
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 14.0.1.0.0 |  | Contact deduplication with fine-grained permission control
