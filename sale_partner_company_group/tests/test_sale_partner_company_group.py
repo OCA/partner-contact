@@ -1,7 +1,7 @@
 # Copyright 2020 Ecosoft Co., Ltd (http://ecosoft.co.th/)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo.addons.base_partner_company_group.tests.test_base_partner_company_group import (
+from odoo.addons.base_partner_company_group.tests.test_base_partner_company_group import (  # noqa: E501
     TestBasePartnerCompanyGroup,
 )
 
