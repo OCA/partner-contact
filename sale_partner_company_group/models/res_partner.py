@@ -15,13 +15,18 @@ class Contact(models.Model):
             and self.company_group_id.property_product_pricelist
             != self.property_product_pricelist
         ):
+            price_list = self.company_group_id.property_product_pricelist
             res["warning"] = {
                 "title": _("Warning"),
                 "message": _(
-                    f"The company group {self.company_group_id.display_name} has the pricelist "
-                    f"{self.company_group_id.property_product_pricelist.display_name}, "
-                    "that is different than the pricelist set on this contact"
-                ),
+                    "The company group %(company_group)s has"
+                    " the pricelist %(pricelist)s, that is different"
+                    " than the pricelist set on this contact"
+                )
+                % {
+                    "company_group": self.company_group_id.display_name,
+                    "pricelist": price_list.display_name,
+                },
             }
         return res
 
@@ -31,8 +36,8 @@ class Contact(models.Model):
         if (
             not res
             and self.company_group_member_ids
-            # Need to check _origin because the field company_group_ids is a recordset of
-            # NewIds that have False values on the field property_product_pricelist.
+            # Need to check _origin because the field company_group_ids is a recordset
+            # of NewIds that have False values on the field property_product_pricelist.
             and self.company_group_member_ids._origin.mapped(
                 "property_product_pricelist"
             )
