@@ -3,11 +3,11 @@
 import logging
 
 
-def pre_init_hook(cr):
+def pre_init_hook(env):
     """Prepopulate stored related fields for faster installation"""
     logger = logging.getLogger(__name__)
     logger.info("Prepopulating stored related fields")
-    cr.execute(
+    env.execute(
         """
         ALTER TABLE account_move
         ADD COLUMN IF NOT EXISTS company_group_id integer;
