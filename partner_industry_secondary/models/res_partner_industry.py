@@ -23,16 +23,13 @@ class ResPartnerIndustry(models.Model):
     )
     parent_path = fields.Char(index=True, unaccent=False)
 
-    def name_get(self):
-        def get_names(cat):
-            """Return the list [cat.name, cat.parent_id.name, ...]"""
-            res = []
-            while cat:
-                res.insert(0, cat.name)
-                cat = cat.parent_id
-            return res
-
-        return [(cat.id, " / ".join(get_names(cat))) for cat in self]
+    @api.depends("name", "parent_id")
+    def _compute_display_name(self):
+        for rec in self:
+            if rec.parent_id:
+                rec.display_name = f"{rec.parent_id.display_name} / {rec.name}"
+            else:
+                rec.display_name = rec.name
 
     @api.constrains("name", "parent_id")
     def _check_uniq_name(self):
@@ -49,5 +46,5 @@ class ResPartnerIndustry(models.Model):
     def copy(self, default=None):
         default = default or {}
         if "name" not in default or default["name"] == self.name:
-            default["name"] = self.name + " 2"
-        return super(ResPartnerIndustry, self).copy(default=default)
+            default["name"] = f"{self.name} 2"
+        return super().copy(default=default)
