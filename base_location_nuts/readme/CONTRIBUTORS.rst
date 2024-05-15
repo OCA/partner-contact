@@ -5,3 +5,4 @@
 * Simone Rubino <simone.rubino@agilebg.com>
 * Alexandre Díaz <alexandre.diaz@tecnativa.com>
 * Andrea Stirpe <a.stirpe@onestein.nl>
+* Eduardo López <elp@moduon.team>
