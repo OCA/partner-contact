@@ -16,6 +16,14 @@ class TestResPartnerIndustry(common.TransactionCase):
         cls.industry_child = cls.industry_model.create(
             {"name": "Test child", "parent_id": cls.industry_main.id}
         )
+        cls.env.user.groups_id = [
+            (
+                4,
+                cls.env.ref(
+                    "partner_industry_secondary.group_use_partner_industry_for_person"
+                ).id,
+            )
+        ]
         cls.partner = cls.env["res.partner"].create({"name": "Test partner"})
 
     def test_00_check_industries(self):
@@ -50,3 +58,7 @@ class TestResPartnerIndustry(common.TransactionCase):
             self.partner.write(
                 {"industry_id": main.id, "secondary_industry_ids": [(6, 0, both.ids)]}
             )
+
+    def test_06_check_show_partner_industry_for_person(self):
+        self.partner._compute_show_partner_industry_for_person()
+        self.assertEqual(self.partner.show_partner_industry_for_person, True)

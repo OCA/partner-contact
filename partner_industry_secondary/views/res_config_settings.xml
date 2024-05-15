@@ -29,7 +29,7 @@
                             <div class="content-group">
                                 <div
                                     class="mt16"
-                                    attrs="{'invisible': [('group_use_partner_industry_for_person', '=', False)]}"
+                                    invisible="group_use_partner_industry_for_person == False"
                                 >
                                     <button
                                         name="%(base.res_partner_industry_action)d"
