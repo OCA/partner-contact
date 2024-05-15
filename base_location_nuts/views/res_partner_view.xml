@@ -5,7 +5,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <xpath expr="//sheet/group//field[@name='country_id']/.." position="after">
+            <xpath expr="//sheet/group//field[@name='vat']" position="before">
                 <field name="allowed_nut_ids" invisible="1" />
                 <field
                     name="nuts1_id"
