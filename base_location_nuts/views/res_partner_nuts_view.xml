@@ -38,7 +38,7 @@
         <field name="view_mode">tree,form</field>
         <field name="help">You must click at import wizard to populate NUTS items
         in Odoo database in:
-        Sales > Configuration > Address Book > Localization > Import NUTS 2013</field>
+        Contacts > Configuration > Localization > Import NUTS 2024</field>
     </record>
     <record model="ir.ui.view" id="view_res_partner_nuts_filter">
         <field name="name">NUTS search filters</field>

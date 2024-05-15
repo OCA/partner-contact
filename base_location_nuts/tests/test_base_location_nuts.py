@@ -1,24 +1,45 @@
 # Copyright 2017 David Vidal <david.vidal@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.exceptions import UserError
-from odoo.tests import common
+from unittest.mock import patch
+
+from requests.exceptions import HTTPError
+
+from odoo.tests.common import Form, TransactionCase, new_test_user
+from odoo.tools import mute_logger
+
+from .test_nuts_request_results import create_response_error, create_response_ok
+
+MOCK_PATH = "odoo.addons.base_location_nuts.wizard.nuts_import.requests.get"
 
 
-class TestBaseLocationNuts(common.TransactionCase):
+class TestBaseLocationNuts(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestBaseLocationNuts, cls).setUpClass()
-        cls.importer = cls.env["nuts.import"].create({})
-        cls.importer.run_import()  # loads nuts
+        cls.uid = new_test_user(
+            cls.env,
+            login="test-nuts-import-user",
+            groups="base.group_partner_manager",
+        )
+        cls.nut_form = Form(cls.env["nuts.import"].with_user(cls.uid))
+        cls.nut_wizard = cls.nut_form.save()
+        with patch(MOCK_PATH, return_value=create_response_ok()):
+            cls.nut_wizard.import_update_partner_nuts()
         cls.country_1 = cls.env["res.country"].search([("code", "=", "ES")])
         cls.country_2 = cls.env["res.country"].search([("code", "=", "PT")])
         cls.nuts_model = cls.env["res.partner.nuts"]
-        cls.nuts1_2 = cls.nuts_model.search([("code", "=", "PT")])
-        cls.nuts2_1 = cls.nuts_model.search([("code", "=", "ES2")])
-        cls.nuts3_1 = cls.nuts_model.search([("code", "=", "ES24")])
-        cls.nuts4_1 = cls.nuts_model.search([("code", "=", "ES243")])
-        cls.nuts4_2 = cls.nuts_model.search([("code", "=", "ES300")])
+        cls.nuts1_2 = cls.nuts_model.search([("code", "=", "PT1a")])
+        cls.nuts1_2.write({"country_id": cls.country_2})
+        cls.nuts2_1 = cls.nuts_model.search([("code", "=", "ES2a")])
+        cls.nuts1_2.write({"country_id": cls.country_2})
+        cls.nuts3_1 = cls.nuts_model.search([("code", "=", "ES24a")])
+        cls.nuts1_2.write({"country_id": cls.country_2})
+        cls.nuts4_1 = cls.nuts_model.search([("code", "=", "ES243a")])
+        cls.nuts1_2.write({"country_id": cls.country_2})
+        cls.nuts4_2 = cls.nuts_model.search([("code", "=", "ES300a")])
+        cls.nuts1_2.write({"country_id": cls.country_2})
+
         cls.partner = cls.env["res.partner"].create(
             {"name": "Test partner", "country_id": cls.country_1.id}
         )
@@ -70,12 +91,12 @@ class TestBaseLocationNuts(common.TransactionCase):
         self.partner._onchange_nuts2_id()
         self.assertEqual(self.partner.nuts1_id.country_id, self.country_1)
 
-    def test_download_exceptions(self):
-        """Tests download exceptions"""
-        with self.assertRaises(UserError):
-            self.importer._download_nuts(url_base="htttt://test.com")
-        with self.assertRaises(UserError):
-            self.importer._download_nuts(url_base="http://ec.europa.eu/_404")
+    @mute_logger("odoo.addons.base_location_nuts.wizard.nuts_import")
+    @patch(MOCK_PATH, return_value=create_response_error())
+    def test_download_exceptions(self, mock_request):
+        """Tests request exceptions"""
+        with self.assertRaises(HTTPError):
+            self.nut_wizard.import_update_partner_nuts()
 
     def create_new_parent(self, orig_parent):
         new_parent = self.nuts_model.create(
@@ -89,7 +110,8 @@ class TestBaseLocationNuts(common.TransactionCase):
         )
         return new_parent
 
-    def test_no_update(self):
+    @patch(MOCK_PATH, return_value=create_response_ok())
+    def test_no_update(self, mock_response):
         # Update a NUTS field
         orig_name = self.nuts4_2.name
         new_name = 2 * orig_name
@@ -106,7 +128,7 @@ class TestBaseLocationNuts(common.TransactionCase):
         self.assertFalse(new_parent.not_updatable)
         self.nuts4_2.name = new_name
         self.nuts4_2.parent_id = new_parent
-        self.importer.run_import()
+        self.nut_wizard.import_update_partner_nuts()
         self.assertEqual(self.nuts4_2.name, orig_name)
         self.assertEqual(self.nuts4_2.parent_id, orig_parent)
         self.assertFalse(new_parent.exists())
@@ -119,7 +141,7 @@ class TestBaseLocationNuts(common.TransactionCase):
         new_parent.not_updatable = True
         self.nuts4_2.name = new_name
         self.nuts4_2.parent_id = new_parent
-        self.importer.run_import()
+        self.nut_wizard.import_update_partner_nuts()
         self.assertEqual(self.nuts4_2.name, new_name)
         self.assertEqual(self.nuts4_2.parent_id, new_parent)
         self.assertTrue(new_parent.exists())
