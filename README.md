@@ -30,6 +30,7 @@ addon | version | maintainers | summary
 [partner_company_type](partner_company_type/) | 17.0.1.0.0 |  | Adds a company type to partner that are companies
 [partner_contact_birthdate](partner_contact_birthdate/) | 17.0.1.0.0 | [![Daemo00](https://github.com/Daemo00.png?size=30px)](https://github.com/Daemo00) | Contact's birthdate
 [partner_contact_gender](partner_contact_gender/) | 17.0.1.0.0 |  | Add gender field to contacts
+[partner_contact_nationality](partner_contact_nationality/) | 17.0.1.0.0 |  | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 17.0.1.0.0 | [![Daemo00](https://github.com/Daemo00.png?size=30px)](https://github.com/Daemo00) | Add a page to contacts form to put personal information
 [partner_fax](partner_fax/) | 17.0.1.0.0 |  | Add fax number on partner
 [partner_firstname](partner_firstname/) | 17.0.1.0.1 |  | Split first name and last name for non company partners
