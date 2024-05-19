@@ -4,7 +4,7 @@
 {
     "name": "Partner Manual Rank",
     "summary": "Be able to manually flag partners as customer or supplier.",
-    "version": "14.0.1.1.1",
+    "version": "14.0.1.2.0",
     "category": "Partner Management",
     "website": "https://github.com/OCA/partner-contact",
     "author": "ForgeFlow, Odoo Community Association (OCA)",
