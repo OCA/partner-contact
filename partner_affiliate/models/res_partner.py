@@ -22,3 +22,13 @@ class ResPartner(models.Model):
         string="Affiliates",
         domain=[("active", "=", True), ("is_company", "=", True)],
     )
+
+    def open_affiliate_form(self):
+        """Open affiliate contact form from the parent partner form view"""
+        return {
+            "type": "ir.actions.act_window",
+            "res_model": "res.partner",
+            "res_id": self.id,
+            "view_mode": "form",
+            "target": "current",
+        }
