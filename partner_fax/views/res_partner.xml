@@ -5,8 +5,8 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_simple_form" />
         <field name="arch" type="xml">
-            <field name="function" position="after">
-                <field name="fax" placeholder="Fax..." />
+            <field name="mobile" position="after">
+                <field name="fax" widget="phone" />
             </field>
         </field>
     </record>
@@ -15,15 +15,26 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <field name="function" position="after">
-                <field name="fax" placeholder="Fax..." widget="phone" />
+            <field name="mobile" position="after">
+                <field name="fax" widget="phone" />
             </field>
             <xpath
                 expr="//field[@name='child_ids']/form//field[@name='mobile']"
                 position="after"
             >
-                <field name="fax" placeholder="Fax..." widget="phone" />
+                <field name="fax" widget="phone" />
             </xpath>
         </field>
-    </record>
+</record>
+<record id="view_partner_tree" model="ir.ui.view">
+        <field name="name">Add fax on partner tree view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="arch" type="xml">
+            <field name="phone" position="after">
+                    <field name="fax" optional="hide" widget="phone" />
+            </field>
+        </field>
+</record>
+
 </odoo>

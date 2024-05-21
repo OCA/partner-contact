@@ -9,7 +9,7 @@
     "license": "AGPL-3",
     "author": "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
-    "depends": ["base_setup"],
+    "depends": ["phone_validation"],
     "data": ["views/res_partner.xml"],
     "installable": True,
 }
