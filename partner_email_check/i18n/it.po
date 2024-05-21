@@ -17,6 +17,7 @@ msgstr ""
 "X-Generator: Weblate 4.14.1\n"
 
 #. module: partner_email_check
+#. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
 #, python-format
 msgid "%s is an invalid email"
@@ -26,18 +27,26 @@ msgstr "%s non è una e-mail valida"
 #: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
 msgid ""
 "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" aria-label=\"Values set here are company-specific.\" "
-"groups=\"base.group_multi_company\" role=\"img\"/>"
+"specific.\" aria-label=\"Values set here are company-specific.\" groups="
+"\"base.group_multi_company\" role=\"img\"/>"
 msgstr ""
 "<span class=\"fa fa-lg fa-building-o\" title=\"I valori impostati qui sono "
 "specifici per azienda.\" aria-label=\"I valori impostati qui sono specifici "
 "per azienda.\" groups=\"base.group_multi_company\" role=\"img\"/>"
 
 #. module: partner_email_check
+#. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
 #, python-format
 msgid "Cannot deliver to email address %s"
 msgstr "Impossibile recapitare all'indirizzo e-mail %s"
+
+#. module: partner_email_check
+#. odoo-python
+#: code:addons/partner_email_check/models/res_partner.py:0
+#, python-format
+msgid "Cannot import 'email_validator'."
+msgstr ""
 
 #. module: partner_email_check
 #: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_check_deliverability
@@ -67,13 +76,6 @@ msgid "Contact"
 msgstr "Contatto"
 
 #. module: partner_email_check
-#: model:ir.model.fields,field_description:partner_email_check.field_res_company__display_name
-#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__display_name
-#: model:ir.model.fields,field_description:partner_email_check.field_res_partner__display_name
-msgid "Display Name"
-msgstr "Nome visualizzato"
-
-#. module: partner_email_check
 #: model:ir.model.fields,help:partner_email_check.field_res_company__partner_email_check_check_deliverability
 #: model:ir.model.fields,help:partner_email_check.field_res_config_settings__partner_email_check_check_deliverability
 msgid "Don't allow email addresses with providers that don't exist"
@@ -92,6 +94,7 @@ msgid "Don't allow multiple partners to have the same email address."
 msgstr "Non consente di avere lo stesso indirizzo e-mail per più partner."
 
 #. module: partner_email_check
+#. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
 #, python-format
 msgid "Email '%s' is already in use."
@@ -109,6 +112,7 @@ msgstr ""
 "Garantisce che sia possibile recapitare agli indirizzi e-mail del partner"
 
 #. module: partner_email_check
+#. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
 #, python-format
 msgid ""
@@ -125,20 +129,6 @@ msgid "Filter duplicate partner email addresses"
 msgstr "Filtrare indirizzi e-mail duplicati del partner"
 
 #. module: partner_email_check
-#: model:ir.model.fields,field_description:partner_email_check.field_res_company__id
-#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__id
-#: model:ir.model.fields,field_description:partner_email_check.field_res_partner__id
-msgid "ID"
-msgstr "ID"
-
-#. module: partner_email_check
-#: model:ir.model.fields,field_description:partner_email_check.field_res_company____last_update
-#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings____last_update
-#: model:ir.model.fields,field_description:partner_email_check.field_res_partner____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
-
-#. module: partner_email_check
 #: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
 msgid "Require partner email addresses to be unique"
 msgstr "Richiesta di univocità per gli indirizzi e-mail del partner"
@@ -147,3 +137,12 @@ msgstr "Richiesta di univocità per gli indirizzi e-mail del partner"
 #: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
 msgid "Require partner email addresses to have valid syntax"
 msgstr "Richiesta di una sintassi valida per gli indirizzi e-mail del partner"
+
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
