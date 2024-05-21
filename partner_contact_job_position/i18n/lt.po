@@ -68,11 +68,6 @@ msgid "Job positions"
 msgstr ""
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position____last_update
-msgid "Last Modified on"
-msgstr "Paskutinį kartą keista"
-
-#. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__write_uid
 msgid "Last Updated by"
 msgstr "Paskutinį kartą atnaujino"
@@ -86,6 +81,9 @@ msgstr "Paskutinį kartą atnaujinta"
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__name
 msgid "Name"
 msgstr "Pavadinimas"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Paskutinį kartą keista"
 
 #~ msgid "Partner"
 #~ msgstr "Partneris"

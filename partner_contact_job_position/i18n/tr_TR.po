@@ -68,11 +68,6 @@ msgid "Job positions"
 msgstr ""
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position____last_update
-msgid "Last Modified on"
-msgstr "En son güncelleme tarihi"
-
-#. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__write_uid
 msgid "Last Updated by"
 msgstr "En son güncelleyen "
@@ -86,6 +81,9 @@ msgstr "En son güncelleme tarihi"
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__name
 msgid "Name"
 msgstr "Ad"
+
+#~ msgid "Last Modified on"
+#~ msgstr "En son güncelleme tarihi"
 
 #~ msgid "Partner"
 #~ msgstr "Ortak"
