@@ -29,5 +29,6 @@
         action="res_partner_job_position_action"
         id="menu_res_partner_job_position"
         parent="contacts.res_partner_menu_config"
+        sequence="4"
     />
 </odoo>
