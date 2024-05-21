@@ -26,7 +26,7 @@ addon | version | maintainers | summary
 [base_partner_company_group](base_partner_company_group/) | 17.0.1.0.0 |  | Adds the possibility to add a company group to a company
 [base_partner_sequence](base_partner_sequence/) | 17.0.1.0.0 |  | Sets customer's code from a sequence
 [partner_address_street3](partner_address_street3/) | 17.0.1.0.0 |  | Add a third address line on partners
-[partner_affiliate](partner_affiliate/) | 17.0.1.0.0 |  | Partner Affiliates
+[partner_affiliate](partner_affiliate/) | 17.0.1.0.1 |  | Partner Affiliates
 [partner_company_type](partner_company_type/) | 17.0.1.0.0 |  | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 17.0.1.0.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
 [partner_contact_birthdate](partner_contact_birthdate/) | 17.0.1.0.0 | [![Daemo00](https://github.com/Daemo00.png?size=30px)](https://github.com/Daemo00) | Contact's birthdate
