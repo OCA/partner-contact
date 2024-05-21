@@ -65,6 +65,11 @@ msgstr "Mobil"
 
 #. module: partner_affiliate
 #: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
+msgid "Open full form"
+msgstr ""
+
+#. module: partner_affiliate
+#: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Phone:"
 msgstr "Telefon:"
 
