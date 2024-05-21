@@ -68,11 +68,6 @@ msgid "Job positions"
 msgstr ""
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position____last_update
-msgid "Last Modified on"
-msgstr "Ultima modificacion realizada"
-
-#. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__write_uid
 msgid "Last Updated by"
 msgstr "Ultima actualizacion por"
@@ -86,6 +81,9 @@ msgstr "Ultima actualización realizada"
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__name
 msgid "Name"
 msgstr "Nombre"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modificacion realizada"
 
 #~ msgid "Children"
 #~ msgstr "Hijos"

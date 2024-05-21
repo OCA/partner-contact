@@ -67,11 +67,6 @@ msgid "Job positions"
 msgstr ""
 
 #. module: partner_contact_job_position
-#: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position____last_update
-msgid "Last Modified on"
-msgstr "Terakhir Dimodifikasi pada"
-
-#. module: partner_contact_job_position
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__write_uid
 msgid "Last Updated by"
 msgstr "Diperbaharui oleh"
@@ -85,3 +80,6 @@ msgstr "Diperbaharui pada"
 #: model:ir.model.fields,field_description:partner_contact_job_position.field_res_partner_job_position__name
 msgid "Name"
 msgstr "Nama"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Terakhir Dimodifikasi pada"
