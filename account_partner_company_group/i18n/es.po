@@ -17,18 +17,17 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: account_partner_company_group
-#: model_terms:ir.ui.view,arch_db:account_partner_company_group.view_account_invoice_filter
-msgid "Company Group"
-msgstr "Grupo compañía"
-
-#. module: account_partner_company_group
 #: model:ir.model.fields,field_description:account_partner_company_group.field_account_bank_statement_line__company_group_id
 #: model:ir.model.fields,field_description:account_partner_company_group.field_account_move__company_group_id
 #: model:ir.model.fields,field_description:account_partner_company_group.field_account_payment__company_group_id
-msgid "Company group"
+#: model_terms:ir.ui.view,arch_db:account_partner_company_group.view_account_invoice_filter
+msgid "Company Group"
 msgstr "Grupo compañía"
 
 #. module: account_partner_company_group
 #: model:ir.model,name:account_partner_company_group.model_account_move
 msgid "Journal Entry"
 msgstr "Entrada diaria"
+
+#~ msgid "Company group"
+#~ msgstr "Grupo compañía"
