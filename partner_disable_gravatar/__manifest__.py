@@ -4,13 +4,13 @@
 
 {
     "name": "Partner Disable Gravatar",
-    "version": "16.0.1.0.1",
+    "version": "17.0.1.0.0",
     "category": "Tools",
     "license": "AGPL-3",
     "summary": "Disable automatic connection to gravatar.com",
     "author": "Akretion, Odoo Community Association (OCA)",
     "maintainers": ["alexis-via"],
     "website": "https://github.com/OCA/partner-contact",
-    "depends": ["base"],
+    "depends": ["web"],
     "installable": True,
 }
