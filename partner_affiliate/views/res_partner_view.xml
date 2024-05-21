@@ -85,6 +85,17 @@
                                         </div>
                                         <div class="oe_kanban_details">
                                             <field name="name" />
+                                            <button
+                                                class="btn btn-link"
+                                                type="object"
+                                                name="open_affiliate_form"
+                                                title="Open full form"
+                                            >
+                                                <i
+                                                    class="fa fa-caret-right fa-2x"
+                                                    style="position:absolute;top:-4px;right:5px;transform:rotateY(0deg) rotate(-45deg);"
+                                                />
+                                            </button>
                                             <div t-if="record.function.raw_value"><field
                                                     name="function"
                                                 /></div>
