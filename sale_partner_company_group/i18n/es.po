@@ -17,13 +17,9 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: sale_partner_company_group
+#: model:ir.model.fields,field_description:sale_partner_company_group.field_sale_order__company_group_id
 #: model_terms:ir.ui.view,arch_db:sale_partner_company_group.view_sales_order_filter
 msgid "Company Group"
-msgstr "Grupo compañía"
-
-#. module: sale_partner_company_group
-#: model:ir.model.fields,field_description:sale_partner_company_group.field_sale_order__company_group_id
-msgid "Company group"
 msgstr "Grupo compañía"
 
 #. module: sale_partner_company_group
@@ -40,5 +36,17 @@ msgstr "Pedido de venta"
 #. odoo-python
 #: code:addons/sale_partner_company_group/models/res_partner.py:0
 #, python-format
+msgid ""
+"The company group %(company_group)s has the pricelist %(pricelist)s, that is "
+"different than the pricelist set on this contact"
+msgstr ""
+
+#. module: sale_partner_company_group
+#. odoo-python
+#: code:addons/sale_partner_company_group/models/res_partner.py:0
+#, python-format
 msgid "Warning"
 msgstr "Aviso"
+
+#~ msgid "Company group"
+#~ msgstr "Grupo compañía"
