@@ -17,16 +17,15 @@ msgstr ""
 "X-Generator: Weblate 3.10\n"
 
 #. module: crm_partner_company_group
+#: model:ir.model.fields,field_description:crm_partner_company_group.field_crm_lead__company_group_id
 #: model_terms:ir.ui.view,arch_db:crm_partner_company_group.view_crm_case_opportunities_filter
 msgid "Company Group"
-msgstr "集团公司"
-
-#. module: crm_partner_company_group
-#: model:ir.model.fields,field_description:crm_partner_company_group.field_crm_lead__company_group_id
-msgid "Company group"
 msgstr "集团公司"
 
 #. module: crm_partner_company_group
 #: model:ir.model,name:crm_partner_company_group.model_crm_lead
 msgid "Lead/Opportunity"
 msgstr "线索/商机"
+
+#~ msgid "Company group"
+#~ msgstr "集团公司"
