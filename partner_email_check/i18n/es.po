@@ -1,0 +1,145 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_email_check
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-11-06 21:38+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: partner_email_check
+#. odoo-python
+#: code:addons/partner_email_check/models/res_partner.py:0
+#, python-format
+msgid "%s is an invalid email"
+msgstr "%s es un email inválido"
+
+#. module: partner_email_check
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" aria-label=\"Values set here are company-specific.\" "
+"groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" aria-label=\"Values set here are company-specific.\" groups="
+"\"base.group_multi_company\" role=\"img\"/>"
+
+#. module: partner_email_check
+#. odoo-python
+#: code:addons/partner_email_check/models/res_partner.py:0
+#, python-format
+msgid "Cannot deliver to email address %s"
+msgstr "No se puede entregar a la dirección de correo electrónico %s"
+
+#. module: partner_email_check
+#. odoo-python
+#: code:addons/partner_email_check/models/res_partner.py:0
+#, python-format
+msgid "Cannot import 'email_validator'."
+msgstr "No se puede importar 'email_validator'."
+
+#. module: partner_email_check
+#: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_check_deliverability
+#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__partner_email_check_check_deliverability
+msgid "Check deliverability of email addresses"
+msgstr "Comprobar la entregabilidad de las direcciones de correo electrónico"
+
+#. module: partner_email_check
+#: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_syntax
+#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__partner_email_check_syntax
+msgid "Check syntax of email addresses"
+msgstr "Comprobar la sintaxis de las direcciones de correo electrónico"
+
+#. module: partner_email_check
+#: model:ir.model,name:partner_email_check.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: partner_email_check
+#: model:ir.model,name:partner_email_check.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes Configuración"
+
+#. module: partner_email_check
+#: model:ir.model,name:partner_email_check.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_email_check
+#: model:ir.model.fields,help:partner_email_check.field_res_company__partner_email_check_check_deliverability
+#: model:ir.model.fields,help:partner_email_check.field_res_config_settings__partner_email_check_check_deliverability
+msgid "Don't allow email addresses with providers that don't exist"
+msgstr ""
+"No permitir direcciones de correo electrónico con proveedores que no existen"
+
+#. module: partner_email_check
+#: model:ir.model.fields,help:partner_email_check.field_res_company__partner_email_check_syntax
+#: model:ir.model.fields,help:partner_email_check.field_res_config_settings__partner_email_check_syntax
+msgid "Don't allow email addresses with wrong syntax"
+msgstr "No permitir direcciones de correo electrónico con sintaxis incorrecta"
+
+#. module: partner_email_check
+#: model:ir.model.fields,help:partner_email_check.field_res_company__partner_email_check_filter_duplicates
+#: model:ir.model.fields,help:partner_email_check.field_res_config_settings__partner_email_check_filter_duplicates
+msgid "Don't allow multiple partners to have the same email address."
+msgstr ""
+"No permita que varios socios tengan la misma dirección de correo electrónico."
+
+#. module: partner_email_check
+#. odoo-python
+#: code:addons/partner_email_check/models/res_partner.py:0
+#, python-format
+msgid "Email '%s' is already in use."
+msgstr "El correo electrónico '%s' ya está en uso."
+
+#. module: partner_email_check
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+msgid "Email validation"
+msgstr "Validación del correo electrónico"
+
+#. module: partner_email_check
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+msgid "Ensure that partner email addresses can be delivered to"
+msgstr ""
+"Garantizar que las direcciones de correo electrónico de los socios puedan "
+"enviarse a"
+
+#. module: partner_email_check
+#. odoo-python
+#: code:addons/partner_email_check/models/res_partner.py:0
+#, python-format
+msgid ""
+"Field contains multiple email addresses. This is not supported when "
+"duplicate email addresses are not allowed."
+msgstr ""
+"El campo contiene varias direcciones de correo electrónico. No se admite "
+"cuando no se permiten direcciones de correo electrónico duplicadas."
+
+#. module: partner_email_check
+#: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_filter_duplicates
+#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__partner_email_check_filter_duplicates
+msgid "Filter duplicate partner email addresses"
+msgstr "Filtrar las direcciones de correo electrónico duplicadas de los socios"
+
+#. module: partner_email_check
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+msgid "Require partner email addresses to be unique"
+msgstr ""
+"Exigir que las direcciones de correo electrónico de los socios sean únicas"
+
+#. module: partner_email_check
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+msgid "Require partner email addresses to have valid syntax"
+msgstr ""
+"Exigir que las direcciones de correo electrónico de los socios tengan una "
+"sintaxis válida"
