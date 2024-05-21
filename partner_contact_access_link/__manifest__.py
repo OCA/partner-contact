@@ -3,7 +3,7 @@
 {
     "name": "Partner contact access link",
     "summary": "Allow to visit the full contact form from a company",
-    "version": "16.0.1.1.0",
+    "version": "17.0.1.0.0",
     "development_status": "Production/Stable",
     "category": "Tools",
     "website": "https://github.com/OCA/partner-contact",
