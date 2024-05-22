@@ -2,13 +2,16 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import exceptions
-from odoo.tests import common
+from odoo.tests import new_test_user
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestPartnerDeduplicateAcl(common.TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.partner_1 = self.env["res.partner"].create(
+class TestPartnerDeduplicateAcl(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.partner_1 = cls.env["res.partner"].create(
             {
                 "name": "Partner 1",
                 "email": "partner1@example.org",
@@ -16,22 +19,17 @@ class TestPartnerDeduplicateAcl(common.TransactionCase):
                 "parent_id": False,
             }
         )
-        self.partner_2 = self.partner_1.copy()
-        self.partner_2.write({"name": "Partner 1", "email": "partner2@example.org"})
-        self.user = self.env["res.users"].create(
-            {
-                "login": "test_crm_deduplicate_acl",
-                "name": "test_crm_deduplicate_acl",
-                "email": "partner_deduplicate_acl@example.org",
-                "groups_id": [
-                    (4, self.env.ref("base.group_user").id),
-                    (4, self.env.ref("base.group_partner_manager").id),
-                ],
-            }
+        cls.partner_2 = cls.partner_1.copy()
+        cls.partner_2.write({"name": "Partner 1", "email": "partner2@example.org"})
+        cls.user = new_test_user(
+            cls.env,
+            login="test_crm_deduplicate_acl",
+            email="partner_deduplicate_acl@example.org",
+            groups="base.group_partner_manager",
         )
-        self.wizard = (
-            self.env["base.partner.merge.automatic.wizard"]
-            .with_user(self.user)
+        cls.wizard = (
+            cls.env["base.partner.merge.automatic.wizard"]
+            .with_user(cls.user)
             .create({"group_by_name": True})
         )
 
@@ -43,4 +41,7 @@ class TestPartnerDeduplicateAcl(common.TransactionCase):
             (4, self.env.ref("partner_deduplicate_acl.group_unrestricted").id)
         ]
         # Now there shouldn't be error
-        self.wizard.action_merge()
+        # Although it should not be necessary, we apply sudo() because in some cases
+        # the user may not have enough permissions to access some of the partner data;
+        # for example website.visitor records
+        self.wizard.sudo().action_merge()
