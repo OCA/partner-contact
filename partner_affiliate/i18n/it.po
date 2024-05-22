@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:48+0000\n"
-"PO-Revision-Date: 2023-12-27 09:37+0000\n"
+"PO-Revision-Date: 2024-05-22 10:39+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -66,7 +66,7 @@ msgstr "Cellulare:"
 #. module: partner_affiliate
 #: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
 msgid "Open full form"
-msgstr ""
+msgstr "Apri modulo completamente"
 
 #. module: partner_affiliate
 #: model_terms:ir.ui.view,arch_db:partner_affiliate.view_partner_form_add_affiliate
