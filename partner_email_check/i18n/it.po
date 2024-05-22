@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-10-20 10:43+0000\n"
-"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"PO-Revision-Date: 2024-05-22 10:39+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_email_check
 #. odoo-python
@@ -46,7 +46,7 @@ msgstr "Impossibile recapitare all'indirizzo e-mail %s"
 #: code:addons/partner_email_check/models/res_partner.py:0
 #, python-format
 msgid "Cannot import 'email_validator'."
-msgstr ""
+msgstr "Impossibile importare 'email_validator'."
 
 #. module: partner_email_check
 #: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_check_deliverability
