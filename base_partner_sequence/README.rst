@@ -28,17 +28,17 @@ Add a sequence on customers' code
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module adds the possibility to define a sequence for
-the partner's reference. This reference is then set as default
-when you create a new partner, using the defined sequence.
+This module adds the possibility to define a sequence for the partner's
+reference. This reference is then set as default when you create a new
+partner, using the defined sequence.
 
-The reference field is treated as a commercial field, i.e. it
-is managed from the commercial partner and then propagated to
-the partner's contacts. The field is visible on the contacts,
-but it can only be modified from the commercial partner.
+The reference field is treated as a commercial field, i.e. it is managed
+from the commercial partner and then propagated to the partner's
+contacts. The field is visible on the contacts, but it can only be
+modified from the commercial partner.
 
-No references are assigned for contacts such as shipping and
-invoice addresses.
+No references are assigned for contacts such as shipping and invoice
+addresses.
 
 **Table of contents**
 
@@ -59,7 +59,7 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Tiny/initOS GmbH & Co. KG
 * ACSONE SA/NV
@@ -67,26 +67,26 @@ Authors
 * Camptocamp
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Thomas Rehn <thomas.rehn@initos.com>
-* Stefan Rijnhart <stefan@therp.nl>
-* Yannick Vaucher <yannick.vaucher@camptocamp.com>
-* Sandy Carter <sandy.carter@savoirfairelinux.com>
-* Laurent Mignon (ACSONE) <laurent.mignon@acsone.eu>
-* Guewen Baconnier <guewen.baconnier@camptocamp.com>
-* Alexandre Fayolle <alexandre.fayolle@camptocamp.com>
-* Vicent Cubells <vicent.cubells@tecnativa.com>
-* Akim Juillerat <akim.juillerat@camptocamp.com>
-* Cas Vissers <c.vissers@brahoo.nl>
-* Quentin Groulard <quentin.groulard@acsone.eu>
-* Kevin Khao <kevinkhao@gmail.com>
-* Francesco Apruzzese <cescoap@gmail.com>
-* Daniel Reis <dreis@opensourceintegrators.com>
-* Nikul Chaudhary <nchaudhary@opensourceintegrators.com>
+-  Thomas Rehn <thomas.rehn@initos.com>
+-  Stefan Rijnhart <stefan@therp.nl>
+-  Yannick Vaucher <yannick.vaucher@camptocamp.com>
+-  Sandy Carter <sandy.carter@savoirfairelinux.com>
+-  Laurent Mignon (ACSONE) <laurent.mignon@acsone.eu>
+-  Guewen Baconnier <guewen.baconnier@camptocamp.com>
+-  Alexandre Fayolle <alexandre.fayolle@camptocamp.com>
+-  Vicent Cubells <vicent.cubells@tecnativa.com>
+-  Akim Juillerat <akim.juillerat@camptocamp.com>
+-  Cas Vissers <c.vissers@brahoo.nl>
+-  Quentin Groulard <quentin.groulard@acsone.eu>
+-  Kevin Khao <kevinkhao@gmail.com>
+-  Francesco Apruzzese <cescoap@gmail.com>
+-  Daniel Reis <dreis@opensourceintegrators.com>
+-  Nikul Chaudhary <nchaudhary@opensourceintegrators.com>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
