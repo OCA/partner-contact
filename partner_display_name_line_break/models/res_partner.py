@@ -1,20 +1,42 @@
 # Copyright 2020 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models
+import re
+
+from odoo import api, models
 
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    def _get_contact_name(self, partner, name):
+    @api.depends(
+        "complete_name",
+        "email",
+        "vat",
+        "state_id",
+        "country_id",
+        "commercial_company_name",
+    )
+    @api.depends_context(
+        "show_address",
+        "partner_show_db_id",
+        "address_inline",
+        "show_email",
+        "show_vat",
+        "lang",
+        "_two_lines_partner_address",
+    )
+    def _compute_display_name(self):  # pylint: disable=W8110
+        super()._compute_display_name()
         if self.env.context.get("_two_lines_partner_address"):
-            company_name = (
-                partner.commercial_company_name or partner.sudo().parent_id.name
-            )
-            # Depends on https://github.com/odoo/odoo/pull/126451
-            # This change can only be merged after this Odoo PR is merged as well.
-            if company_name and name:
-                # Only display two lines if both values are found.
-                return f"{company_name}\n{name}"
-        return super()._get_contact_name(partner, name)
+            for partner in self:
+                displayed_types = partner._complete_name_displayed_types
+                type_description = dict(
+                    partner._fields["type"]._description_selection(partner.env)
+                )
+                name = partner.name or ""
+                if not name and partner.type in displayed_types:
+                    name = type_description[partner.type]
+                if name in partner.display_name:
+                    pattern = r",\s(?=" + re.escape(name) + ")"
+                    partner.display_name = re.sub(pattern, "\n", partner.display_name)
