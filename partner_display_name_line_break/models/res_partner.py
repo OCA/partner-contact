@@ -16,5 +16,5 @@ class ResPartner(models.Model):
             # This change can only be merged after this Odoo PR is merged as well.
             if company_name and name:
                 # Only display two lines if both values are found.
-                return "{}\n{}".format(company_name, name)
+                return f"{company_name}\n{name}"
         return super()._get_contact_name(partner, name)
