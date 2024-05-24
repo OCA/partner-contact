@@ -60,6 +60,15 @@ Contributors
 -  Thomas Nowicki <thomas.nowicki@camptocamp.com>
 -  Akim Juillerat <akim.juillerat@camptocamp.com>
 -  Juan Miguel Sánchez Arce <juan.sanchez@camptocamp.com>
+-  `Trobz <https://www.trobz.com>`__:
+
+   -  Tris Doan <tridm@trobz.com>
+
+Other credits
+-------------
+
+The migration of this module from 16.0 to 17.0 was financially supported
+by Camptocamp
 
 Maintainers
 -----------
