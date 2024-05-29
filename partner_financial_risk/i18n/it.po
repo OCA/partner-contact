@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-28 03:43+0000\n"
-"PO-Revision-Date: 2023-06-07 10:11+0000\n"
+"PO-Revision-Date: 2024-05-29 09:37+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -52,7 +52,7 @@ msgstr "Creato il"
 #. module: partner_financial_risk
 #: field:res.partner,credit_policy:0
 msgid "Credit policy"
-msgstr "Regole di Credito"
+msgstr "Regole di credito"
 
 #. module: partner_financial_risk
 #: field:partner.risk.exceeded.wiz,partner_id:0
