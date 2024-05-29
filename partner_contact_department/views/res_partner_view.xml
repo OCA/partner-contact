@@ -9,7 +9,7 @@
                 <field
                     name="department_id"
                     placeholder="Department"
-                    attrs="{'invisible': [('is_company','=', True)]}"
+                    invisible="is_company"
                     options='{"no_open": True}'
                 />
             </xpath>
@@ -21,7 +21,7 @@
                 <field
                     name="department_id"
                     placeholder="Department"
-                    attrs="{'invisible': [('is_company','=', True)]}"
+                    invisible="is_company"
                     options='{"no_open": True}'
                 />
             </xpath>
