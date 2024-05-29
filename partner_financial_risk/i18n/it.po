@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-24 01:41+0000\n"
-"PO-Revision-Date: 2023-05-25 12:09+0000\n"
+"PO-Revision-Date: 2024-05-29 09:36+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-9-0/"
 "language/it/)\n"
@@ -61,7 +61,7 @@ msgstr "Creato il"
 #: model:ir.model.fields,field_description:partner_financial_risk.field_res_partner_credit_policy
 #: model:ir.model.fields,field_description:partner_financial_risk.field_res_users_credit_policy
 msgid "Credit policy"
-msgstr "Regole di Credito"
+msgstr "Regole di credito"
 
 #. module: partner_financial_risk
 #: model:ir.model.fields,field_description:partner_financial_risk.field_partner_risk_exceeded_wiz_partner_id
