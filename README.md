@@ -75,6 +75,7 @@ addon | version | maintainers | summary
 [partner_pricelist_search](partner_pricelist_search/) | 15.0.2.0.0 |  | Partner pricelist search
 [partner_pricelist_tracking](partner_pricelist_tracking/) | 15.0.1.0.0 |  | Track partner pricelist changes
 [partner_priority](partner_priority/) | 15.0.1.0.0 | [![patrickrwilson](https://github.com/patrickrwilson.png?size=30px)](https://github.com/patrickrwilson) | Adds priority to partners.
+[partner_readonly_security](partner_readonly_security/) | 15.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner Readonly Security
 [partner_ref_unique](partner_ref_unique/) | 15.0.1.0.2 | [![luisg123v](https://github.com/luisg123v.png?size=30px)](https://github.com/luisg123v) | Add an unique constraint to partner ref field
 [partner_second_lastname](partner_second_lastname/) | 15.0.1.0.0 |  | Have split first and second lastnames
 [partner_stage](partner_stage/) | 15.0.1.0.0 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Add lifecycle Stages to Partners
