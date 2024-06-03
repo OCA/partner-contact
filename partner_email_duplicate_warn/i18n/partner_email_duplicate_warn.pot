@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,7 +19,7 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_email_duplicate_warn
-#: model_terms:ir.ui.view,arch_db:partner_email_duplicate_warn.view_partner_form
+#: model_terms:ir.ui.view,arch_db:partner_email_duplicate_warn.view_partner_form_with_email_warning
 msgid "Duplicate warning: partner"
 msgstr ""
 
@@ -30,6 +30,6 @@ msgid "Partner with same e-mail"
 msgstr ""
 
 #. module: partner_email_duplicate_warn
-#: model_terms:ir.ui.view,arch_db:partner_email_duplicate_warn.view_partner_form
+#: model_terms:ir.ui.view,arch_db:partner_email_duplicate_warn.view_partner_form_with_email_warning
 msgid "has the same <b>Email</b>."
 msgstr ""
