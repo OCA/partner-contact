@@ -6,10 +6,11 @@ _logger = logging.getLogger(__name__)
 
 
 class TestSplit(TransactionCase):
-    def setUp(self):
-        super(TestSplit, self).setUp()
-        self.partnerX = self.env.ref("base.res_partner_12")
-        self.partnerX.street = (
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.partnerX = cls.env.ref("base.res_partner_12")
+        cls.partnerX.street = (
             "278 route pitoresque de la vallee de l'ours qui fuit les chasseurs"
         )
 
