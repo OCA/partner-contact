@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="action_generate_qr_code_wizard" model="ir.actions.server">
+       <field name="name">Generate Contact QR Code</field>
+       <field name="model_id" ref="base.model_res_partner" />
+       <field name="binding_model_id" ref="base.model_res_partner" />
+       <field name="binding_view_types">form</field>
+       <field name="state">code</field>
+       <field name="code">action = model.generate_qr_code_wizard()</field>
+   </record>
+</odoo>
