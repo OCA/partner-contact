@@ -9,21 +9,21 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-24 03:46+0000\n"
-"PO-Revision-Date: 2019-10-27 15:33+0000\n"
-"Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
+"PO-Revision-Date: 2024-06-04 15:34+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.8\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__allowed_nut_ids
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__allowed_nut_ids
 msgid "Allowed nuts"
-msgstr ""
+msgstr "NUTS consentite"
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
@@ -67,7 +67,7 @@ msgstr "Creato il"
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__current_country_id
 msgid "Current Country"
-msgstr ""
+msgstr "Nazione attuale"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__display_name
@@ -86,6 +86,8 @@ msgstr "Il file scaricato non è un file XML valido"
 #, python-format
 msgid "Got an error %(status_code)s when trying to download the file %(url)s."
 msgstr ""
+"Ricevuto un errore %(status_code)s nel tentativo di scaricare il file "
+"%(url)s."
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:0
@@ -123,7 +125,7 @@ msgstr "Importazione NUTS 2013 da RAMON"
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_nuts_import
 msgid "Import NUTS items from European RAMON service"
-msgstr ""
+msgstr "Importazione voci NUTS dal servizio europeo RAMON"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import____last_update
@@ -152,7 +154,7 @@ msgstr "Livello"
 #. module: base_location_nuts
 #: model:ir.model.fields,help:base_location_nuts.field_res_country__state_level
 msgid "Level for the state NUTS category."
-msgstr ""
+msgstr "Livello per la categoria livello NUTS."
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_country_form
@@ -212,12 +214,12 @@ msgstr "Non aggiornabile"
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__parent_id
 msgid "Parent"
-msgstr ""
+msgstr "Padre"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__parent_path
 msgid "Parent Path"
-msgstr ""
+msgstr "Percorso padre"
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
@@ -232,7 +234,7 @@ msgstr "Stato"
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_country__state_level
 msgid "State Level"
-msgstr ""
+msgstr "Livello stato"
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
@@ -246,6 +248,14 @@ msgid ""
 "                Update or deletion is prevented for NUTS entries with the "
 "flag 'Not updatable'."
 msgstr ""
+"Questa procedura guidata scaricherà l'ultima versione di\n"
+"                NUTS 2013 dal servizio di metadati europeo RAMON.\n"
+"                Aggiornando o creando nuovi elementi NUTS se non\n"
+"                già presenti nel sistema, ed ELIMINANDO GLI ELEMENTI\n"
+"                NON PRESENTI nel file scaricato.\n"
+"\n"
+"                L'aggiornamento o l'eliminazione degli elementi NUTS è "
+"impedita dal flag 'Non aggiornabile'."
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:0
@@ -261,6 +271,10 @@ msgid ""
 "        Sales &gt; Configuration &gt; Address Book &gt; Localization &gt; "
 "Import NUTS 2013"
 msgstr ""
+"Bisogna fare clic sulla procedura guidata per popolare le voci NUTS\n"
+"        nel database Odoo in:\n"
+"        Vendite &gt; Configurazione &gt; Elenco indirizzi &gt; "
+"Localizzazione &gt; Importa NUTS 2013"
 
 #, python-format
 #~ msgid "Got an error %d when trying to download the file %s."
