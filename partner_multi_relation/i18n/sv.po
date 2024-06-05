@@ -9,21 +9,22 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2017-12-26 15:33+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2024-06-17 13:36+0000\n"
+"Last-Translator: Weblate Admin <weblate@odoo-community.org>\n"
 "Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "%s partner incompatible with relation type."
-msgstr ""
+msgstr "%s kontakter inkompatibel med relationstyp."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__active
@@ -33,18 +34,18 @@ msgstr "Aktiv"
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation_all
 msgid "All (non-inverse + inverse) relations between partners"
-msgstr ""
+msgstr "Alla (icke-inversa + inversa) relationer mellan partner"
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type_selection
 msgid "All relation types"
-msgstr ""
+msgstr "Alla relationstyper"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_all_ids
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_all_ids
 msgid "All relations with current partner"
-msgstr ""
+msgstr "Alla relationer med nuvarande partner"
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -52,12 +53,12 @@ msgstr ""
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__ignore
 #, python-format
 msgid "Allow existing relations that do not fit changed conditions"
-msgstr ""
+msgstr "Tillåt befintliga relationer som inte passar de ändrade villkoren"
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__create_uid
@@ -74,12 +75,12 @@ msgstr "Skapad den"
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__partner_category_this
 msgid "Current record's category"
-msgstr ""
+msgstr "Aktuell rekordkategori"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__contact_type_this
 msgid "Current record's partner type"
-msgstr ""
+msgstr "Aktuell posts partnertyp"
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -87,12 +88,12 @@ msgstr ""
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__delete
 #, python-format
 msgid "Delete relations that do not fit changed conditions"
-msgstr ""
+msgstr "Ta bort relationer som inte passar ändrade förutsättningar"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__right_partner_id
 msgid "Destination Partner"
-msgstr ""
+msgstr "Destinationspartner"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__display_name
@@ -108,7 +109,7 @@ msgstr "Visa namn"
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__restrict
 #, python-format
 msgid "Do not allow change that will result in invalid relations"
-msgstr ""
+msgstr "Tillåt inte förändringar som leder till ogiltiga relationer"
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -116,7 +117,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__end
 #, python-format
 msgid "End relations per today, if they do not fit changed conditions"
-msgstr ""
+msgstr "Avsluta relationer per idag, om de inte passar ändrade förutsättningar"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__date_end
@@ -139,35 +140,35 @@ msgstr "Gruppera efter"
 #. module: partner_multi_relation
 #: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_assistant
 msgid "Has assistant"
-msgstr ""
+msgstr "Har assistent"
 
 #. module: partner_multi_relation
 #: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_has_worked_for
 msgid "Has former employee"
-msgstr ""
+msgstr "Har tidigare anställd"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_type_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_type_id
 msgid "Has relation of type"
-msgstr ""
+msgstr "Har relation av typ"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_partner_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_partner_id
 msgid "Has relation with"
-msgstr ""
+msgstr "Har samband med"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_partner_category_id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_partner_category_id
 msgid "Has relation with a partner in category"
-msgstr ""
+msgstr "Har relation med en partner i kategorin"
 
 #. module: partner_multi_relation
 #: model:res.partner.relation.type,name:partner_multi_relation.rel_type_has_worked_for
 msgid "Has worked for"
-msgstr ""
+msgstr "Har arbetat för"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__id
@@ -180,40 +181,40 @@ msgstr "ID"
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "Include past records"
-msgstr ""
+msgstr "Inkludera tidigare uppgifter"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__handle_invalid_onchange
 msgid "Invalid relation handling"
-msgstr ""
+msgstr "Ogiltig relationshantering"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__name_inverse
 msgid "Inverse name"
-msgstr ""
+msgstr "Inverterat namn"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__is_inverse
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type_selection__is_inverse
 msgid "Inverse relations are from right to left partner."
-msgstr ""
+msgstr "Omvända relationer är från höger till vänster partner."
 
 #. module: partner_multi_relation
 #: model:res.partner.relation.type,name:partner_multi_relation.rel_type_assistant
 msgid "Is assistant of"
-msgstr ""
+msgstr "Är assistent till"
 
 #. module: partner_multi_relation
 #: model:res.partner.relation.type,name:partner_multi_relation.rel_type_competitor
 #: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_competitor
 msgid "Is competitor of"
-msgstr ""
+msgstr "Är konkurrent till"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__is_inverse
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__is_inverse
 msgid "Is reverse type?"
-msgstr ""
+msgstr "Är omvänd typ?"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__write_uid
@@ -230,22 +231,22 @@ msgstr "Senast uppdaterad"
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__partner_category_left
 msgid "Left partner category"
-msgstr ""
+msgstr "Vänster partnerkategori"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__contact_type_left
 msgid "Left partner type"
-msgstr ""
+msgstr "Typ av vänster partner"
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
 msgid "Left side of relation"
-msgstr ""
+msgstr "Vänster sida av relationen"
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "Left to right"
-msgstr ""
+msgstr "Från vänster till höger"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__name
@@ -258,43 +259,43 @@ msgstr "Namn"
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "No %s partner available for relation type."
-msgstr ""
+msgstr "Ingen %s partner tillgänglig för relationstyp."
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "No relation type specified in vals: %s."
-msgstr ""
+msgstr "Ingen relationstyp angiven i vals: %s."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__this_partner_id
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "One Partner"
-msgstr ""
+msgstr "En partner"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #, python-format
 msgid "Organisation"
-msgstr ""
+msgstr "Organisation"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__other_partner_id
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "Other Partner"
-msgstr ""
+msgstr "Annan partner"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__partner_category_other
 msgid "Other record's category"
-msgstr ""
+msgstr "Annan rekordkategori"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__contact_type_other
 msgid "Other record's partner type"
-msgstr ""
+msgstr "Typ av partner för annan post"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__any_partner_id
@@ -304,36 +305,36 @@ msgstr "Företag"
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type
 msgid "Partner Relation Type"
-msgstr ""
+msgstr "Partnerrelation Typ"
 
 #. module: partner_multi_relation
 #: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_type
 msgid "Partner Relations Types"
-msgstr ""
+msgstr "Typer av partnerrelationer"
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation
 msgid "Partner relation"
-msgstr ""
+msgstr "Partnerrelation"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "Partners cannot have a relation with themselves."
-msgstr ""
+msgstr "Partners kan inte ha en relation med sig själva."
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #, python-format
 msgid "Person"
-msgstr ""
+msgstr "Person"
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
 msgid "Properties"
-msgstr ""
+msgstr "Fastigheter"
 
 #. module: partner_multi_relation
 #: model_terms:ir.actions.act_window,help:partner_multi_relation.action_res_partner_relation_all
@@ -342,17 +343,20 @@ msgid ""
 "                be linked to other partners with a type either directly\n"
 "                or inversely."
 msgstr ""
+"Registrera och följ upp dina partners relationer. Relationer kan\n"
+"                kopplas till andra partners med en typ antingen direkt\n"
+"                eller omvänt."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__active
 msgid "Records with date_end in the past are inactive"
-msgstr ""
+msgstr "Poster med date_end i det förflutna är inaktiva"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__allow_self
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__allow_self
 msgid "Reflexive"
-msgstr ""
+msgstr "Reflexiv"
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -363,35 +367,38 @@ msgid ""
 "There are existing reflexive relations defined for the following partners: "
 "{partners}"
 msgstr ""
+"Det gick inte att inaktivera reflexivitet för relationstypen {relation_type}"
+". Det finns befintliga reflexiva relationer definierade för följande "
+"partners: {partners}"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_count
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_count
 msgid "Relation Count"
-msgstr ""
+msgstr "Relationens antal"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__type_selection_id
 msgid "Relation Type"
-msgstr ""
+msgstr "Relationstyp"
 
 #. module: partner_multi_relation
 #: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
 msgid "Relation Types"
-msgstr ""
+msgstr "Relationstyper"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "Relation type incompatible with selected partner(s)."
-msgstr ""
+msgstr "Relationstyp oförenlig med vald(a) partner(s)."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_date
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__search_relation_date
 msgid "Relation valid"
-msgstr ""
+msgstr "Relation giltig"
 
 #. module: partner_multi_relation
 #: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_all
@@ -399,100 +406,100 @@ msgstr ""
 #: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_all
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.view_partner_form
 msgid "Relations"
-msgstr ""
+msgstr "Relationer"
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "Relationship Type"
-msgstr ""
+msgstr "Typ av relation"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__res_id
 msgid "Resource ID"
-msgstr ""
+msgstr "Resurs-ID"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__res_model
 msgid "Resource Model"
-msgstr ""
+msgstr "Resursmodell"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__partner_category_right
 msgid "Right partner category"
-msgstr ""
+msgstr "Rätt partnerkategori"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__contact_type_right
 msgid "Right partner type"
-msgstr ""
+msgstr "Rätt typ av partner"
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
 msgid "Right side of relation"
-msgstr ""
+msgstr "Höger sida av relationen"
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "Right to left"
-msgstr ""
+msgstr "Från höger till vänster"
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
 msgid "Search Relations"
-msgstr ""
+msgstr "Sök relationer"
 
 #. module: partner_multi_relation
 #: model:ir.actions.act_window,name:partner_multi_relation.action_show_partner_multi_relation
 msgid "Show partner's relations"
-msgstr ""
+msgstr "Visa partnerns relationer"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__left_partner_id
 msgid "Source Partner"
-msgstr ""
+msgstr "Källa Partner"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__date_start
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__date_start
 msgid "Starting date"
-msgstr ""
+msgstr "Startdatum"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__is_symmetric
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__is_symmetric
 msgid "Symmetric"
-msgstr ""
+msgstr "Symmetrisk"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "The %s partner is not applicable for this relation type."
-msgstr ""
+msgstr "Partnern %s är inte tillämplig för den här relationstypen."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__res_model
 msgid "The database object this relation is based on."
-msgstr ""
+msgstr "Det databasobjekt som denna relation är baserad på."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__res_id
 msgid "The id of the object in the model this relation is based on."
-msgstr ""
+msgstr "Id för objektet i den modell som denna relation baseras på."
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "The starting date cannot be after the ending date."
-msgstr ""
+msgstr "Startdatumet kan inte vara efter slutdatumet."
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "The {partner} partner does not have category {category}."
-msgstr ""
+msgstr "Partnern {partner} har inte kategori {category}."
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -502,23 +509,27 @@ msgid ""
 "There are already relations not satisfying the conditions for partner type "
 "or category."
 msgstr ""
+"Det finns redan relationer som inte uppfyller villkoren för partnertyp eller "
+"kategori."
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "There is already a similar relation with overlapping dates"
-msgstr ""
+msgstr "Det finns redan en liknande relation med överlappande datum"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__allow_self
 msgid "This relation can be set up with the same partner left and right"
-msgstr ""
+msgstr "Denna relation kan upprättas med samma partner till höger och vänster"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__is_symmetric
 msgid "This relation is the same from right to left as from left to right"
 msgstr ""
+"Detta förhållande är detsamma från höger till vänster som från vänster till "
+"höger"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__type_id
@@ -529,34 +540,34 @@ msgstr "Typ"
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__type_id
 msgid "Underlying Relation Type"
-msgstr ""
+msgstr "Underliggande relationstyp"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner.py:0
 #, python-format
 msgid "Unsupported search operator \"%s\""
-msgstr ""
+msgstr "Sökoperatorn \"%s\" stöds inte"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_0
 msgid "Washing Companies"
-msgstr ""
+msgstr "Tvättföretag"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_4
 msgid "Washing Gold"
-msgstr ""
+msgstr "Tvättning av guld"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_11
 msgid "Washing Services"
-msgstr ""
+msgstr "Tvättjänster"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_5
 msgid "Washing Silver"
-msgstr ""
+msgstr "Tvätt av silver"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__handle_invalid_onchange
@@ -566,20 +577,25 @@ msgid ""
 "fit the new criteria.\n"
 "Specify how this situation should be handled."
 msgstr ""
+"När du lägger till relationer kontrolleras kriterier som partnertyp och "
+"kategori.\n"
+"Men när du ändrar kriterierna kan det finnas relationer som inte uppfyller "
+"de nya kriterierna.\n"
+"Ange hur denna situation ska hanteras."
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "other"
-msgstr ""
+msgstr "andra"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 #, python-format
 msgid "this"
-msgstr ""
+msgstr "detta"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Senast redigerad"
