@@ -9,31 +9,32 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-10 03:39+0000\n"
-"PO-Revision-Date: 2017-03-10 03:39+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2024-06-05 16:35+0000\n"
+"Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
 "Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_contact_birthdate
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner__age
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users__age
 msgid "Age"
-msgstr ""
+msgstr "Ålder"
 
 #. module: partner_contact_birthdate
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner__birthdate_date
 #: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users__birthdate_date
 msgid "Birthdate"
-msgstr ""
+msgstr "Födelsedatum"
 
 #. module: partner_contact_birthdate
 #: model:ir.model,name:partner_contact_birthdate.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #~ msgid "Partner"
 #~ msgstr "Företag"
