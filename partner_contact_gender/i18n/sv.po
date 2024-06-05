@@ -9,40 +9,41 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-10 03:39+0000\n"
-"PO-Revision-Date: 2017-03-10 03:39+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2024-06-05 16:35+0000\n"
+"Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
 "Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: partner_contact_gender
 #: model:ir.model,name:partner_contact_gender.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #. module: partner_contact_gender
 #: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__female
 msgid "Female"
-msgstr ""
+msgstr "Kvinna"
 
 #. module: partner_contact_gender
 #: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner__gender
 #: model:ir.model.fields,field_description:partner_contact_gender.field_res_users__gender
 msgid "Gender"
-msgstr ""
+msgstr "Kön"
 
 #. module: partner_contact_gender
 #: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__male
 msgid "Male"
-msgstr ""
+msgstr "Man"
 
 #. module: partner_contact_gender
 #: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__other
 msgid "Other"
-msgstr ""
+msgstr "Övriga"
 
 #~ msgid "Partner"
 #~ msgstr "Företag"
