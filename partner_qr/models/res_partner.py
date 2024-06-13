@@ -13,20 +13,14 @@ class ResPartner(models.Model):
 
         :return: dict[str, str | dict[str, Any]] (wizard initialization dict)
         """
-        active_model = self.env.context.get("active_model")
-        active_id = self.env.context.get("active_id")
-
-        if active_model and active_id:
-            record = self.env[active_model].browse(active_id)
-        else:
-            record = self
+        self.ensure_one()
 
         return {
             "type": "ir.actions.act_window",
-            "name": _("%s's Contact QR Code") % record.name,
+            "name": _("%s's Contact QR Code") % self.name,
             "res_model": "contacts.qr.code",
             "target": "new",
             "view_mode": "form",
             "view_type": "form",
-            "context": {"default_contact": record.id},
+            "context": {"default_contact": self.id},
         }

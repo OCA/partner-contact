@@ -4,7 +4,6 @@ from io import BytesIO
 import qrcode
 
 from odoo import api, fields, models
-from odoo.exceptions import ValidationError
 
 
 class ContactsQRCode(models.TransientModel):
@@ -30,48 +29,42 @@ class ContactsQRCode(models.TransientModel):
 
         :return: None
         """
-        try:
-            active_model = self.env.context.get("active_model")
-            active_id = self.env.context.get("active_id")
-            # print("model: ", active_model)
-            # print("id: ", active_id)
-            if active_model and active_id:
-                record = self.env[active_model].browse(active_id)
-            else:
-                return
-                # self.qr_code = False
+        active_model = self.env.context.get("active_model")
+        active_id = self.env.context.get("active_id")
+        if active_model and active_id:
+            record = self.env[active_model].browse(active_id)
+        else:
+            return None
 
-            # Prepared VCARD structure according to the phone's format
-            vcard = f"BEGIN:VCARD\nTEL:{record.phone}\n"
-            if self.fullname and record.name:
-                vcard += f"FN:{record.name}\n"
-            if self.company_name and record.parent_id.name:
-                vcard += f"ORG:{record.parent_id.name}\n"
-            if self.job_title and record.function:
-                vcard += f"TITLE:{record.function}\n"
-            if self.email and record.email:
-                vcard += f"EMAIL;TYPE=WORK:{record.email}\n"
-            if self.url and record.website:
-                vcard += f"URL:{record.website}\n"
-            vcard += "END:VCARD"
+        # Prepared VCARD structure according to the phone's format
+        vcard = f"BEGIN:VCARD\nTEL:{record.phone}\n"
+        if self.fullname and record.name:
+            vcard += f"FN:{record.name}\n"
+        if self.company_name and record.parent_id.name:
+            vcard += f"ORG:{record.parent_id.name}\n"
+        if self.job_title and record.function:
+            vcard += f"TITLE:{record.function}\n"
+        if self.email and record.email:
+            vcard += f"EMAIL;TYPE=WORK:{record.email}\n"
+        if self.url and record.website:
+            vcard += f"URL:{record.website}\n"
+        vcard += "END:VCARD"
 
-            qr = qrcode.QRCode(
-                version=1,
-                error_correction=qrcode.constants.ERROR_CORRECT_L,
-                box_size=10,
-                border=4,
-            )
-            qr.add_data(vcard)
-            qr.make(fit=True)
-            qr_img = qr.make_image(fill_color="black", back_color="white")
+        qr = qrcode.QRCode(
+            version=1,
+            error_correction=qrcode.constants.ERROR_CORRECT_L,
+            box_size=10,
+            border=4,
+        )
+        qr.add_data(vcard)
+        qr.make(fit=True)
+        qr_img = qr.make_image(fill_color="black", back_color="white")
 
-            buffered = BytesIO()
-            qr_img.save(buffered, format="PNG")
-            img_str = base64.b64encode(buffered.getvalue()).decode("utf-8")
+        buffered = BytesIO()
+        qr_img.save(buffered, format="PNG")
+        img_str = base64.b64encode(buffered.getvalue()).decode("utf-8")
 
-            self.qr_code = img_str
-        except Exception as e:
-            raise ValidationError(str(e)) from e
+        self.qr_code = img_str
 
     def download_qr(self):
         """
@@ -84,8 +77,11 @@ class ContactsQRCode(models.TransientModel):
         if active_model and active_id:
             record = self.env[active_model].browse(active_id)
         else:
-            return
+            return None
 
+        # active_model = self.env.context.get("active_model")
+        # active_id = self.env.context.get("active_id")
+        # record = self.env[active_model].browse(active_id)
         # Get base url
         base_url = self.env["ir.config_parameter"].get_param("web.base.url")
         attachment_obj = self.env["ir.attachment"]

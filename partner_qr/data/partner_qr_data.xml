@@ -6,6 +6,6 @@
        <field name="binding_model_id" ref="base.model_res_partner" />
        <field name="binding_view_types">form</field>
        <field name="state">code</field>
-       <field name="code">action = model.generate_qr_code_wizard()</field>
+       <field name="code">action = records.generate_qr_code_wizard()</field>
    </record>
 </odoo>

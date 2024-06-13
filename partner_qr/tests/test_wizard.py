@@ -74,11 +74,10 @@ class TestWizard(common.TransactionCase):
     def test_creates_qr_code(self):
         # Generate the QR Code
         self.wizard._compute_qr_code()
-        test_wizard = self.wizard_obj.search([("fullname", "=", "True")])
 
         # Check if QR Code was created
         self.assertIsInstance(
-            test_wizard.qr_code, bytes, "qr_code should be of type 'bytes'"
+            self.wizard.qr_code, bytes, "qr_code should be of type 'bytes'"
         )
 
     def test_download_qr(self):
@@ -88,3 +87,25 @@ class TestWizard(common.TransactionCase):
         # Assert wizard opening
         self.assertEqual(wizard_information["type"], "ir.actions.act_url")
         self.assertEqual(wizard_information["target"], "form")
+
+    def test_not_active_model_and_id(self):
+        # Create a local wizard with no model nor id
+        context = {"active_model": "", "active_id": None}
+        wizard = (
+            self.env["contacts.qr.code"]
+            .with_context(**context)
+            .create(
+                {
+                    "fullname": "True",
+                }
+            )
+        )
+        # Clicks Download QR Code button
+        wizard_information = wizard.download_qr()
+        # Return should be None
+        self.assertIsNone(wizard_information, "wizard_information should be None")
+
+        # Trigger _compute_qr_code function
+        wizard_information = wizard._compute_qr_code()
+        # Return should be None
+        self.assertIsNone(wizard_information, "wizard_information should be None")
