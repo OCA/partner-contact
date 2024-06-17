@@ -47,6 +47,7 @@ setuptools.setup(
         'odoo-addon-partner_deduplicate_filter>=16.0dev,<16.1dev',
         'odoo-addon-partner_disable_gravatar>=16.0dev,<16.1dev',
         'odoo-addon-partner_display_name_line_break>=16.0dev,<16.1dev',
+        'odoo-addon-partner_duns>=16.0dev,<16.1dev',
         'odoo-addon-partner_email_check>=16.0dev,<16.1dev',
         'odoo-addon-partner_email_duplicate_warn>=16.0dev,<16.1dev',
         'odoo-addon-partner_employee_quantity>=16.0dev,<16.1dev',
