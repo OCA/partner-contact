@@ -30,7 +30,6 @@ msgstr ""
 
 #. module: partner_phone_extension
 #: model_terms:ir.ui.view,arch_db:partner_phone_extension.view_partner_form
-#: model_terms:ir.ui.view,arch_db:partner_phone_extension.view_partner_short_form
 #: model_terms:ir.ui.view,arch_db:partner_phone_extension.view_partner_simple_form
 msgid "Extn."
 msgstr ""
