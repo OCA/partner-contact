@@ -499,7 +499,7 @@ msgstr "Startdatumet kan inte vara efter slutdatumet."
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
 msgid "The {partner} partner does not have category {category}."
-msgstr "Partnern {partner} har inte kategori {kategori}."
+msgstr "Partnern {partner} har inte kategori {category}."
 
 #. module: partner_multi_relation
 #. odoo-python
