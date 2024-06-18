@@ -33,6 +33,20 @@ msgid "%(name)s (copy)"
 msgstr ""
 
 #. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/models/res_partner.py:0
+#, python-format
+msgid "%s (copy)"
+msgstr ""
+
+#. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/models/res_partner.py:0
+#, python-format
+msgid "(copy)"
+msgstr ""
+
+#. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_config_settings
 msgid "Config Settings"
 msgstr ""
