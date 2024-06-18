@@ -21,6 +21,20 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. module: partner_second_lastname
+#. odoo-python
+#: code:addons/partner_second_lastname/models/res_partner.py:0
+#, python-format
+msgid "%s (copy)"
+msgstr ""
+
+#. module: partner_second_lastname
+#. odoo-python
+#: code:addons/partner_second_lastname/models/res_partner.py:0
+#, python-format
+msgid "(copy)"
+msgstr ""
+
+#. module: partner_second_lastname
 #: model:ir.model,name:partner_second_lastname.model_res_config_settings
 msgid "Config Settings"
 msgstr ""
