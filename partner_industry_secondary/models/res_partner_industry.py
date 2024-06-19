@@ -23,7 +23,7 @@ class ResPartnerIndustry(models.Model):
     )
     parent_path = fields.Char(index=True, unaccent=False)
 
-    @api.depends("name", "parent_id")
+    @api.depends("name", "parent_id", "parent_id.display_name")
     def _compute_display_name(self):
         for rec in self:
             if rec.parent_id:
