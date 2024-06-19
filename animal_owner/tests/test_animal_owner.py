@@ -1,5 +1,6 @@
 from odoo.tests.common import TransactionCase
 
+
 class TestAnimalOwner(TransactionCase):
     def setUp(self, *args, **kwargs):
         super().setUp(*args, **kwargs)
