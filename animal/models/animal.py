@@ -6,7 +6,7 @@ from odoo import api, fields, models
 class Animal(models.Model):
     _name = "animal"
     _description = "Animal"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit = ["mail.thread", "mail.activity.mixin", "image.mixin"]
     _order = "name"
 
     name = fields.Char()

@@ -98,8 +98,8 @@
                                 <t t-else="">
                                     <img
                                     class="o_kanban_image"
-                                    alt="Avatar"
-                                    t-att-src='_s + "/animal/static/img/avatar.png"'
+                                    t-att-src="'/animal/static/img/avatar.png'"
+                                    t-att-alt="Avatar"
                                 />
                                 </t>
                                 <div class="oe_kanban_details">
@@ -119,6 +119,7 @@
                                         t-if="record.species_id.raw_value and record.breed_id.raw_value"
                                     >
                                             <field name="breed_id" />
+                                            <span>, </span>
                                             <field name="species_id" />
                                         </li>
                                     </ul>
