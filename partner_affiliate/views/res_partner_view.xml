@@ -16,7 +16,7 @@
                 <page string="Affiliates" invisible="not is_company">
                     <field
                         name="affiliate_ids"
-                        context="{'default_parent_id': active_id, 'default_is_company': True, 'default_type':'other'}"
+                        context="{'default_parent_id': id, 'default_is_company': True, 'default_type':'other'}"
                         mode="kanban"
                     >
                         <kanban on_create="base.view_partner_form">
