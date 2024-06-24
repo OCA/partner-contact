@@ -41,6 +41,7 @@ addon | version | maintainers | summary
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 17.0.1.0.0 | [![Daemo00](https://github.com/Daemo00.png?size=30px)](https://github.com/Daemo00) | Add a page to contacts form to put personal information
 [partner_display_name_line_break](partner_display_name_line_break/) | 17.0.1.0.0 |  | Split the company and the partner name on two different lines
 [partner_email_check](partner_email_check/) | 17.0.1.0.0 |  | Validate email address field
+[partner_email_duplicate_warn](partner_email_duplicate_warn/) | 17.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Warning banner on partner form if another partner has the same email
 [partner_fax](partner_fax/) | 17.0.1.0.0 |  | Add fax number on partner
 [partner_firstname](partner_firstname/) | 17.0.1.0.2 |  | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 17.0.1.0.0 |  | Partner Identification Numbers
