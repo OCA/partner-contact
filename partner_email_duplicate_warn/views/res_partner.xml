@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_partner_form_with_email_warning" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='warning_company']" position="after">
+                <div
+                    class="alert alert-warning"
+                    role="alert"
+                    invisible="not same_email_partner_id"
+                />
+                  Duplicate warning: partner <field
+                    name="same_email_partner_id"
+                /> has the same <b>Email</b>.
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
