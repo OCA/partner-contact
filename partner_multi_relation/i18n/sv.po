@@ -11,6 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
 "PO-Revision-Date: 2024-06-17 13:36+0000\n"
 "Last-Translator: Weblate Admin <weblate@odoo-community.org>\n"
+
 "Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
