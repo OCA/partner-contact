@@ -64,6 +64,9 @@ Contributors
 ------------
 
 -  Denis Roussel <denis.roussel@acsone.eu>
+-  `Binhex Systems Solutions <https://binhex.cloud/>`__:
+
+   -  Deriman Alonso <d.alonso@binhex.cloud>
 
 Maintainers
 -----------
