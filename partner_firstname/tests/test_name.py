@@ -23,6 +23,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
+# Copyright 2024 Simone Rubino - Aion Tech
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
 """Test naming logic.
 
 To have more accurate results, remove the ``mail`` module before testing.
@@ -49,6 +52,32 @@ class PartnerContactCase(BaseCase):
 
         # Need this to refresh the ``name`` field
         self.original.invalidate_recordset(["name"])
+
+    def test_multiple_name_creation(self):
+        """Create multiple partners at once, only with "name"."""
+        partners = self.env["res.partner"].create(
+            [
+                {
+                    "name": "Test partner1",
+                },
+                {
+                    "name": "Test partner2",
+                },
+            ]
+        )
+        self.assertRecordValues(
+            partners,
+            [
+                {
+                    "firstname": "Test",
+                    "lastname": "partner1",
+                },
+                {
+                    "firstname": "Test",
+                    "lastname": "partner2",
+                },
+            ],
+        )
 
 
 class PartnerCompanyCase(BaseCase):

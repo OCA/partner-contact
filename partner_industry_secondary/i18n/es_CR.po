@@ -1,0 +1,132 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_sector
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-26 15:33+0000\n"
+"PO-Revision-Date: 2017-12-26 15:33+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Spanish (Costa Rica) (https://www.transifex.com/oca/"
+"teams/23907/es_CR/)\n"
+"Language: es_CR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__child_ids
+msgid "Children"
+msgstr "Hijos"
+
+#. module: partner_industry_secondary
+#: model:ir.model,name:partner_industry_secondary.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: partner_industry_secondary
+#: model:ir.model,name:partner_industry_secondary.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_industry_secondary
+#: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
+msgid "Enable industries for individuals"
+msgstr ""
+
+#. module: partner_industry_secondary
+#. odoo-python
+#: code:addons/partner_industry_secondary/models/res_partner_industry.py:0
+#, python-format
+msgid "Error! Industry with same name and parent already exists."
+msgstr ""
+
+#. module: partner_industry_secondary
+#: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
+msgid "Industries"
+msgstr ""
+
+#. module: partner_industry_secondary
+#: model:ir.model,name:partner_industry_secondary.model_res_partner_industry
+#: model_terms:ir.ui.view,arch_db:partner_industry_secondary.view_res_partner_filter_industry
+msgid "Industry"
+msgstr ""
+
+#. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner__industry_id
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_users__industry_id
+msgid "Main Industry"
+msgstr ""
+
+#. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner__secondary_industry_ids
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_users__secondary_industry_ids
+msgid "Secondary Industries"
+msgstr ""
+
+#. module: partner_industry_secondary
+#: model_terms:ir.ui.view,arch_db:partner_industry_secondary.view_partner_form_industry
+msgid "Sector"
+msgstr ""
+
+#. module: partner_industry_secondary
+#: model:ir.model.fields,help:partner_industry_secondary.field_res_config_settings__group_use_partner_industry_for_person
+msgid "Set if you want to be able to use industries for individuals also."
+msgstr ""
+
+#. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner__show_partner_industry_for_person
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_users__show_partner_industry_for_person
+msgid "Show Partner Industry For Person"
+msgstr ""
+
+#. module: partner_industry_secondary
+#. odoo-python
+#: code:addons/partner_industry_secondary/models/res_partner.py:0
+#, python-format
+msgid "The main industry must be different from the secondary industries."
+msgstr ""
+
+#. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_config_settings__group_use_partner_industry_for_person
+#: model:res.groups,name:partner_industry_secondary.group_use_partner_industry_for_person
+msgid "Use industry for individuals"
+msgstr ""
+
+#~ msgid "Created by"
+#~ msgstr "Creado por"
+
+#~ msgid "Created on"
+#~ msgstr "Creado en"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Updated by"
+#~ msgstr "Ultima actualización por"
+
+#~ msgid "Last Updated on"
+#~ msgstr "Ultima actualización en"
+
+#~ msgid "Partner"
+#~ msgstr "Empresa"
