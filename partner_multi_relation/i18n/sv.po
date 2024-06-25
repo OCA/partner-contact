@@ -53,6 +53,7 @@ msgstr "Alla relationer med nuvarande partner"
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__ignore
 #, python-format
+msgid "Allow existing relations that do not fit changed conditions"
 msgstr "Tillåt befintliga relationer som inte passar de ändrade villkoren"
 
 #. module: partner_multi_relation
