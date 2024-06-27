@@ -68,6 +68,7 @@ setuptools.setup(
         'odoo-addon-partner_phone_extension>=16.0dev,<16.1dev',
         'odoo-addon-partner_phonecall_schedule>=16.0dev,<16.1dev',
         'odoo-addon-partner_pricelist_search>=16.0dev,<16.1dev',
+        'odoo-addon-partner_property>=16.0dev,<16.1dev',
         'odoo-addon-partner_purchase_manager>=16.0dev,<16.1dev',
         'odoo-addon-partner_ref_unique>=16.0dev,<16.1dev',
         'odoo-addon-partner_second_lastname>=16.0dev,<16.1dev',
