@@ -110,7 +110,7 @@ class ResPartner(models.Model):
     @api.model
     def default_get(self, fields_list):
         """Invert name when getting default values."""
-        if "firstname" in fields_list or "lastname" in fields_list:
+        if ("firstname" in fields_list or "lastname" in fields_list) and "name" not in fields_list:
             fields_list.append("name")
         result = super().default_get(fields_list)
 
