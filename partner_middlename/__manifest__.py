@@ -10,6 +10,7 @@
     "author": "Open Source Integrators, " "Odoo Community Association (OCA)",
     "category": "Partner Management",
     "depends": ["partner_firstname"],
+    "excludes": ["partner_second_lastname"],
     "data": ["views/res_partner.xml", "views/res_user.xml"],
     "installable": True,
 }
