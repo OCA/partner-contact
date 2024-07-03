@@ -6,7 +6,7 @@
     "name": "Partner Accreditation",
     "summary": """
         Add Accreditation to Partners""",
-    "version": "16.0.1.0.0",
+    "version": "17.0.1.0.0",
     "category": "Partner",
     "website": "https://github.com/OCA/partner-contact",
     "author": "Coop IT Easy SC, Odoo Community Association (OCA)",
