@@ -21,24 +21,28 @@
         <field name="inherit_id" ref="chiarcosso_base.chiarcosso_base_partner_form" />
         <field name="arch" type="xml">
             <field name="company_type" position="after">
-                <field name="type" attrs="{'invisible': True}" />
-                <field name="parent_id_domain" attrs="{'invisible': True}" />
+                <field name="type" attrs="{'invisible': False}" widget="badge"/>
             </field>
             <field name="name" position="before">
 				<field name="parent_id" position="move" />
 			</field>
             <field name="parent_id" position="before">
-                <label for="parent_id" string="Parent Company" />
+                <label for="parent_id" string="Parent Company"/>
             </field>
             <field name="parent_id" position="attributes">
                 <attribute name="attrs">{'readonly': False}</attribute>
             </field>
+            <field name="parent_id" />
             <xpath expr="/form/sheet//group/group/field[@name='vat']" position="attributes">
-                <attribute name="attrs">{'invisible': [('type', '!=', 'parent_company')]}</attribute>
+                <attribute name="attrs">{'readonly': [('type', '!=', 'parent_company')]}</attribute>
             </xpath>
             <xpath expr="/form/sheet//group/group/field[@name='name']" position="attributes">
                 <attribute name="attrs">{'readonly': [('type', '=', 'affiliate')]}</attribute>
             </xpath>
+            <field name="type" widget="badge" 
+                decoration-warning="type == 'affiliate'" 
+                decoration-danger="type == 'parent_company'" 
+                decoration-info="type == 'contact'"/>
             <xpath expr='//page[@name="internal_notes"]' position="before">
                 <page string="Affiliates" attrs="{'invisible': [('type','!=','parent_company')]}">
                     <field name="affiliate_ids"
@@ -79,7 +83,7 @@
                                             </t>
                                         </div>
                                         <div class="oe_kanban_details">
-                                            <b><field name="name" /></b> <!-- Testo in grassetto -->
+                                            <b><field name="name" /></b>
                                             <div t-if="record.function.raw_value">
                                                 <field name="function" />
                                             </div>
@@ -131,4 +135,22 @@
             </filter>
         </field>
     </record>
+
+
+    <!-- Contacts Kanban -->
+    <record id="res_partner_kanban_phone_view" model="ir.ui.view" >
+        <field name="name">res.partner.kanban</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='display_name']/ancestor::strong" position="before">
+                <field name="type" widget="badge" 
+                    decoration-warning="type == 'affiliate'" 
+                    decoration-danger="type == 'parent_company'" 
+                    decoration-info="type == 'contact'"/>
+            </xpath>
+        </field>
+    </record>
+
+
 </odoo>

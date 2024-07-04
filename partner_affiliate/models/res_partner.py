@@ -45,17 +45,18 @@ class ResPartner(models.Model):
             "affiliate": "set default",
             "parent_company": "set default",
         },
+        compute="_compute_type",
+        store=True
     )
 
-    parent_id_domain = fields.Many2many(
-        comodel_name="res.partner",
-        string="Parent Company Domain",
-        compute="_compute_parent_id_domain",
-        store=False,
-    )
+    # parent_id_domain = fields.Char(
+    #     string="Parent Company Domain",
+    #     compute="_compute_parent_id_domain",
+    #     store=True,
+    # )
 
-    @api.onchange("parent_id", "company_type")
-    def _onchange_parent_id(self):
+    @api.depends("parent_id", "company_type")
+    def _compute_type(self):
         for partner in self:
             if partner.company_type == "person":
                 partner.type = "contact"
@@ -63,11 +64,25 @@ class ResPartner(models.Model):
                 partner.type = "parent_company"
             if partner.parent_id and partner.company_type == "company":
                 partner.type = "affiliate"
-                self.get_affiliate_name()
 
-    @api.onchange("city")
+    # @api.onchange("parent_id", "company_type")
+    # def onchange_parent_id(self):
+    #     for partner in self:
+    #         if not partner.parent_id and partner.company_type == "company":
+    #             return super().write({"type": "parent_company"})
+    #         if partner.parent_id and partner.company_type == "company":
+    #             partner.type = "affiliate"
+    #             self.get_affiliate_name()
+    #             return super().write({"type": "affiliate"})
+    #         if partner.company_type == "person":
+    #             partner.type = "contact"
+    #             return super().write({"type": "contact"})
+    #     return super().onchange_parent_id()
+
+    @api.onchange("city", "parent_id", "company_type")
     def _onchange_city(self):
-        self.get_affiliate_name()
+        if self.type == "affiliate":
+            self.get_affiliate_name()
 
     def get_affiliate_name(self):
         parent_name = self.parent_id.name.upper() if self.parent_id.name else ""
@@ -76,8 +91,7 @@ class ResPartner(models.Model):
             self.name = f"{parent_name} - {city_name}"
         else:
             self.name = parent_name or city_name
-
-    @api.model
+    
     def _fields_sync(self, values):
         """A company that will have a parent set, must be an affiliate,
 
@@ -89,10 +103,17 @@ class ResPartner(models.Model):
 
         You could argue that the same should be true for individuals.
         """
-        # if self.is_company:
-        #     desired_type = "affiliate" if self.parent_id else "contact"
-        #     if self.type != desired_type:
-        #         super().write({"type": desired_type})
+        if self.company_type == "person":
+            desired_type = "contact"
+        elif not self.parent_id and self.company_type == "company":
+            desired_type = "parent_company"
+        elif self.parent_id and self.company_type == "company":
+            desired_type = "affiliate"
+        else:
+           desired_type = "contact"
+        
+        if self.type != desired_type:
+            super().write({"type": desired_type})
         return super()._fields_sync(values)
 
     @api.model
@@ -109,12 +130,27 @@ class ResPartner(models.Model):
             if not values.get("vat"):
                 raise ValidationError(_("Vat is mandatory to create a Parent Company"))
 
+    # @api.depends("company_type")
+    # def _compute_parent_id_domain(self):
+    #     for partner in self:
+    #         if partner.company_type == "person":
+    #             partner.parent_id_domain = ['affiliate', 'parent_company']
+    #         else:
+    #             partner.parent_id_domain = ['parent_company']
+
+    @api.onchange("company_type")
+    def onchange_get_partner_ids_domain(self):
+        if self.company_type == 'person':
+            domain = [('type','in', ['affiliate', 'parent_company'])]
+        else:
+            domain = [('type','in', ['parent_company'])]
+        return {'domain': {'parent_id': domain}}
+
     @api.depends("company_type")
-    def _compute_parent_id_domain(self):
-        for partner in self:
-            if partner.company_type == "person":
-                partner.parent_id_domain = [
-                    ("type", "in", ["affiliate", "parent_company"])
-                ]
-            else:
-                partner.parent_id_domain = [("type", "in", ["parent_company"])]
+    def get_partner_ids_domain(self):
+        if self.company_type == 'person':
+            domain = [('type','in', ['affiliate', 'parent_company'])]
+        else:
+            domain = [('type','in', ['parent_company'])]
+        return {'domain': {'parent_id': domain}}
+
