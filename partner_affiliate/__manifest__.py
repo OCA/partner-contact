@@ -11,7 +11,7 @@
     "website": "https://www.gruppochiarcosso.com",
     "license": "LGPL-3",
     "category": "Human Resources",
-    "depends": ["base"],
+    "depends": ["base", "chiarcosso_base"],
     "data": [
         # Views
         "views/res_partner_view.xml"
