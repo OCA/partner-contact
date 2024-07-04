@@ -25,13 +25,14 @@
                 <field name="parent_id_domain" attrs="{'invisible': True}" />
             </field>
             <field name="name" position="before">
+				<field name="parent_id" position="move" />
+			</field>
+            <field name="parent_id" position="before">
                 <label for="parent_id" string="Parent Company" />
-                <field name="parent_id" placeholder="Only If Is An Affiliate" />
             </field>
-            <xpath expr="/form/sheet//div[hasclass('o_row')]/field[@name='parent_id']" position="attributes">
+            <field name="parent_id" position="attributes">
                 <attribute name="attrs">{'readonly': False}</attribute>
-                <attribute name="domain">parent_id_domain</attribute>
-            </xpath>
+            </field>
             <xpath expr="/form/sheet//group/group/field[@name='vat']" position="attributes">
                 <attribute name="attrs">{'invisible': [('type', '!=', 'parent_company')]}</attribute>
             </xpath>
@@ -45,9 +46,8 @@
                            mode="kanban">
                         <kanban>
                             <field name="color" />
-                            <field name="name" attrs="{'readonly': [('parent_id', '!=', False)]}" />
+                            <field name="name" />
                             <field name="title" />
-                            <field name="type" />
                             <field name="email" />
                             <field name="parent_id" />
                             <field name="is_company" />
@@ -66,12 +66,10 @@
                                 <t t-name="kanban-box">
                                     <t t-set="color" t-value="kanban_color(record.color.raw_value)" />
                                     <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">
-                                        <a t-if="!read_only_mode"
-                                           type="delete"
-                                           class="fa fa-times pull-right" />
+                                        <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right"></a>
                                         <div class="o_kanban_image">
-                                            <img t-if="record.image.raw_value" t-att-src="'data:image/png;base64,'+record.image.raw_value" />
-                                            <t t-if="!record.image.raw_value">
+                                            <img t-if="record.image_512.raw_value" t-att-src="'data:image/png;base64,'+record.image_512.raw_value" />
+                                            <t t-if="!record.image_512.raw_value">
                                                 <img t-if="record.type.raw_value === 'delivery'" t-att-src='_s + "/base/static/src/img/truck.png"' />
                                                 <img t-if="record.type.raw_value === 'invoice'" t-att-src='_s + "/base/static/src/img/money.png"' />
                                                 <t t-if="record.type.raw_value !== 'invoice' &amp;&amp; record.type.raw_value !== 'delivery'">
@@ -81,7 +79,7 @@
                                             </t>
                                         </div>
                                         <div class="oe_kanban_details">
-                                            <field name="name" />
+                                            <b><field name="name" /></b> <!-- Testo in grassetto -->
                                             <div t-if="record.function.raw_value">
                                                 <field name="function" />
                                             </div>
