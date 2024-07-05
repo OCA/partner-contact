@@ -91,6 +91,7 @@ Contributors
    -  Vicent Cubells
    -  Cristina Martin
    -  Victor M.M. Torres
+   -  Carolina Fernandez
 
 -  Kevin Khao <kevinkhao@gmail.com>
 
