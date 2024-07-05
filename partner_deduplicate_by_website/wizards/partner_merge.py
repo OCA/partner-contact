@@ -1,4 +1,5 @@
 # Copyright 2016 Tecnativa - Pedro M. Baeza
+# Copyright 2024 Tecnativa - Carolina Fernandez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import fields, models
@@ -14,9 +15,7 @@ class BasePartnerMergeAutomaticWizard(models.TransientModel):
         There's no better way to do it, as there are no hooks for adding
         this criteria regularly.
         """
-        query = super(BasePartnerMergeAutomaticWizard, self)._generate_query(
-            fields, maximum_group=maximum_group
-        )
+        query = super()._generate_query(fields, maximum_group=maximum_group)
         if "website" in fields:
             if "WHERE" in query:
                 index = query.find("WHERE")
