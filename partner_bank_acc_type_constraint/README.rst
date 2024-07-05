@@ -17,26 +17,33 @@ Bank Account Account Type Constraint
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/16.0/partner_bank_acc_type_constraint
+    :target: https://github.com/OCA/partner-contact/tree/17.0/partner_bank_acc_type_constraint
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-16-0/partner-contact-16-0-partner_bank_acc_type_constraint
+    :target: https://translation.odoo-community.org/projects/partner-contact-17-0/partner-contact-17-0-partner_bank_acc_type_constraint
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module aims at restoring the behavior of bank account types of Odoo 8.0 and previous versions : the user manually selects the bank account type and, if the checkum doesn't match the selected bank account type, Odoo raises a blocking error message.
+This module aims at restoring the behavior of bank account types of Odoo
+8.0 and previous versions : the user manually selects the bank account
+type and, if the checkum doesn't match the selected bank account type,
+Odoo raises a blocking error message.
 
-With Odoo 9.0 and upper versions, when a user enters an invalid IBAN in Odoo, he often don't realize that he has entered an invalid IBAN because he doesn't have any explicit error message.
+With Odoo 9.0 and upper versions, when a user enters an invalid IBAN in
+Odoo, he often don't realize that he has entered an invalid IBAN because
+he doesn't have any explicit error message.
 
-With this module, when a user enters an invalid IBAN in Odoo, he will get an explicit error message that will prevent him from saving the account number.
+With this module, when a user enters an invalid IBAN in Odoo, he will
+get an explicit error message that will prevent him from saving the
+account number.
 
-.. figure:: https://raw.githubusercontent.com/OCA/partner-contact/16.0/partner_bank_acc_type_constraint/static/description/partner_bank_acc_type_raise.png
-   :scale: 80 %
-   :alt: IBAN error
+|image1|
+
+.. |image1| image:: https://raw.githubusercontent.com/OCA/partner-contact/17.0/partner_bank_acc_type_constraint/static/description/partner_bank_acc_type_raise.png
 
 **Table of contents**
 
@@ -49,7 +56,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_bank_acc_type_constraint%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_bank_acc_type_constraint%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -57,17 +64,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Akretion
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Alexis de Lattre <alexis.delattre@akretion.com>
+-  Alexis de Lattre <alexis.delattre@akretion.com>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -87,6 +94,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-alexis-via| 
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/16.0/partner_bank_acc_type_constraint>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/17.0/partner_bank_acc_type_constraint>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
