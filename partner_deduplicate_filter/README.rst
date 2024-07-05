@@ -83,6 +83,7 @@ Contributors
    -  João Marques
    -  César A. Sánchez
    -  Stefan Ungureanu
+   -  Carolina Fernandez
 
 -  Kevin Khao <kevin.khao@gmail.com>
 

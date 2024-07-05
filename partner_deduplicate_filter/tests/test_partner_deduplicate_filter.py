@@ -1,4 +1,5 @@
 # Copyright 2016 Tecnativa - Pedro M. Baeza
+# Copyright 2024 Tecnativa - Carolina Fernandez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests import common
@@ -6,9 +7,10 @@ from odoo.tools.safe_eval import safe_eval
 
 
 class TestDeduplicateFilter(common.TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.partner_1 = self.env["res.partner"].create(
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.partner_1 = cls.env["res.partner"].create(
             {
                 "name": "Partner 1",
                 "email": "partner1@example.org",
@@ -16,17 +18,17 @@ class TestDeduplicateFilter(common.TransactionCase):
                 "parent_id": False,
             }
         )
-        self.partner_1.copy()
-        self.partner_2 = self.env["res.partner"].create(
+        cls.partner_1.copy()
+        cls.partner_2 = cls.env["res.partner"].create(
             {
                 "name": "Partner 2",
                 "email": "partner2@example.org",
                 "is_company": False,
-                "parent_id": self.partner_1.id,
+                "parent_id": cls.partner_1.id,
             }
         )
-        self.partner_2.copy()
-        self.partner_3 = self.env["res.partner"].create(
+        cls.partner_2.copy()
+        cls.partner_3 = cls.env["res.partner"].create(
             {
                 "name": "Partner 3",
                 "email": "partner3@example.org",
@@ -34,8 +36,8 @@ class TestDeduplicateFilter(common.TransactionCase):
                 "parent_id": False,
             }
         )
-        self.partner_3.copy()
-        self.wizard = self.env["base.partner.merge.automatic.wizard"].create(
+        cls.partner_3.copy()
+        cls.wizard = cls.env["base.partner.merge.automatic.wizard"].create(
             {"group_by_email": True}
         )
 
