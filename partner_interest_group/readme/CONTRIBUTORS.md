@@ -1,2 +1,4 @@
 - [Coop IT Easy SC](https://coopiteasy.be):
   - Victor Champonnois
+- [Binhex](https://binhex.cloud/)
+  - Deriman Alonso
