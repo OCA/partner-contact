@@ -1,0 +1,7 @@
+- [Tecnativa](https://www.tecnativa.com):
+  - Pedro M. Baeza
+  - David Vidal
+  - Manuel Calero
+  - César A. Sánchez
+- [Pesol](https://www.pesol.es):
+  - Jonathan Oscategui Taza \<<info@pesol.es>\>
