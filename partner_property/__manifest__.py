@@ -4,7 +4,7 @@
     "name": "Partner Property",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.1.0",
     "depends": ["base"],
     "license": "AGPL-3",
     "category": "Partner Management",
