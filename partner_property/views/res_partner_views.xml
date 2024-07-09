@@ -7,7 +7,20 @@
         <field name="arch" type="xml">
             <notebook position="before">
                 <field name="properties_company_id" invisible="1" />
-                <field name="properties" nolabel="1" columns="2" hideKanbanOption="1" />
+                <field
+                    name="properties_type_company"
+                    nolabel="1"
+                    columns="2"
+                    hideKanbanOption="1"
+                    attrs="{'invisible': [('is_company','=', False)]}"
+                />
+                <field
+                    name="properties_type_person"
+                    nolabel="1"
+                    columns="2"
+                    hideKanbanOption="1"
+                    attrs="{'invisible': [('is_company','=', True)]}"
+                />
             </notebook>
         </field>
     </record>

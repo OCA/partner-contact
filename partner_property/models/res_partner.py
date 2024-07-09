@@ -11,8 +11,12 @@ class ResPartner(models.Model):
         compute="_compute_properties_company_id",
         comodel_name="res.company",
     )
-    properties = fields.Properties(
-        definition="properties_company_id.partner_properties_definition",
+    properties_type_company = fields.Properties(
+        definition="properties_company_id.partner_properties_definition_company",
+        copy=True,
+    )
+    properties_type_person = fields.Properties(
+        definition="properties_company_id.partner_properties_definition_person",
         copy=True,
     )
 
