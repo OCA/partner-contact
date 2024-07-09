@@ -21,7 +21,10 @@
         <field name="inherit_id" ref="chiarcosso_base.chiarcosso_base_partner_form" />
         <field name="arch" type="xml">
             <field name="company_type" position="after">
-                <field name="type" attrs="{'invisible': False}" widget="badge"/>
+                <field name="type" attrs="{'invisible': False}" widget="badge"
+                    decoration-warning="type == 'affiliate'" 
+                    decoration-danger="type == 'parent_company'" 
+                    decoration-info="type == 'contact'"/>
             </field>
             <field name="name" position="before">
 				<field name="parent_id" position="move" />

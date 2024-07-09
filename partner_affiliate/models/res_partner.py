@@ -8,6 +8,10 @@ from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
+def check_if_parent_company(parent_type: str | None, vat: str | None):
+    if parent_type== "parent_company" and not vat:
+        raise ValidationError(_("Vat is mandatory to create a Parent Company"))
+
 class ResPartner(models.Model):
     """Add relation affiliate_ids."""
 
@@ -49,44 +53,23 @@ class ResPartner(models.Model):
         store=True
     )
 
-    # parent_id_domain = fields.Char(
-    #     string="Parent Company Domain",
-    #     compute="_compute_parent_id_domain",
-    #     store=True,
-    # )
-
-    @api.depends("parent_id", "company_type")
+    @api.depends("parent_id", "company_type", "name")
     def _compute_type(self):
         for partner in self:
             if partner.company_type == "person":
                 partner.type = "contact"
-            if not partner.parent_id and partner.company_type == "company":
-                partner.type = "parent_company"
-            if partner.parent_id and partner.company_type == "company":
-                partner.type = "affiliate"
-
-    # @api.onchange("parent_id", "company_type")
-    # def onchange_parent_id(self):
-    #     for partner in self:
-    #         if not partner.parent_id and partner.company_type == "company":
-    #             return super().write({"type": "parent_company"})
-    #         if partner.parent_id and partner.company_type == "company":
-    #             partner.type = "affiliate"
-    #             self.get_affiliate_name()
-    #             return super().write({"type": "affiliate"})
-    #         if partner.company_type == "person":
-    #             partner.type = "contact"
-    #             return super().write({"type": "contact"})
-    #     return super().onchange_parent_id()
+                continue
+            partner.type = "affiliate" if partner.parent_id else "parent_company"
 
     @api.onchange("city", "parent_id", "company_type")
     def _onchange_city(self):
         if self.type == "affiliate":
-            self.get_affiliate_name()
+            self._get_affiliate_name()
 
-    def get_affiliate_name(self):
-        parent_name = self.parent_id.name.upper() if self.parent_id.name else ""
-        city_name = self.city.upper() if self.city else ""
+    def _get_affiliate_name(self):
+        self.ensure_one()
+        parent_name = self.parent_id.name.upper() if self.parent_id else None
+        city_name = self.city.upper() if self.city else None
         if parent_name and city_name:
             self.name = f"{parent_name} - {city_name}"
         else:
@@ -111,46 +94,35 @@ class ResPartner(models.Model):
             desired_type = "affiliate"
         else:
            desired_type = "contact"
-        
+        check_if_parent_company(desired_type, self.vat)
         if self.type != desired_type:
             super().write({"type": desired_type})
         return super()._fields_sync(values)
 
     @api.model
     def create(self, values):
-        res = super().create(values)
-        self.check_if_parent_company(values)
+        """ Il problema é che se é un'azienda fa un check e vuole la Pta Iva. Quindi si deve prima creare e poi sovrascrivere"""
+        check_if_parent_company(values.get("type"), values.get("vat"))
+        res =  super().create(values)
         if res.parent_id:
             res.vat = None
-            return res
         return res
 
-    def check_if_parent_company(self, values):
-        if values.get("type") == "parent_company":
-            if not values.get("vat"):
-                raise ValidationError(_("Vat is mandatory to create a Parent Company"))
-
-    # @api.depends("company_type")
-    # def _compute_parent_id_domain(self):
-    #     for partner in self:
-    #         if partner.company_type == "person":
-    #             partner.parent_id_domain = ['affiliate', 'parent_company']
-    #         else:
-    #             partner.parent_id_domain = ['parent_company']
 
     @api.onchange("company_type")
     def onchange_get_partner_ids_domain(self):
         if self.company_type == 'person':
             domain = [('type','in', ['affiliate', 'parent_company'])]
         else:
-            domain = [('type','in', ['parent_company'])]
+            domain = [('type','=', 'parent_company')]
         return {'domain': {'parent_id': domain}}
 
-    @api.depends("company_type")
-    def get_partner_ids_domain(self):
-        if self.company_type == 'person':
-            domain = [('type','in', ['affiliate', 'parent_company'])]
-        else:
-            domain = [('type','in', ['parent_company'])]
-        return {'domain': {'parent_id': domain}}
+    # @api.depends("company_type")
+    # def get_partner_ids_domain(self):
+    #     for partner in self:
+    #         if partner.company_type == 'person':
+    #             domain = [('type','in', ['affiliate', 'parent_company'])]
+    #         else:
+    #             domain = [('type','in', ['parent_company'])]
+    #         partner.parent_id = str(domain)
 
