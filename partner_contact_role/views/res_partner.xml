@@ -2,7 +2,6 @@
 <!-- Copyright 2017 Camptocamp
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-
     <record model="ir.ui.view" id="view_partner_form_role">
         <field name="name">Partner form with roles</field>
         <field name="model">res.partner</field>
@@ -17,5 +16,4 @@
             </field>
         </field>
     </record>
-
 </odoo>
