@@ -15,7 +15,7 @@ def migrate(env, version):
         WHERE key = 'partner_property.properties_definition'
         """,
     )
-    icp = env["ir.config_parameter"].get_param(
-        "partner_property.properties_definition_company"
+    icp = env["ir.config_parameter"].search(
+        [("key", "=", "partner_property.properties_definition_company")]
     )
     icp.copy({"key": "partner_property.properties_definition_person"})
