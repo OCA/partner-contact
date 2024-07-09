@@ -27,18 +27,35 @@ msgid "Contact"
 msgstr "Contatto"
 
 #. module: partner_property
-#: model:ir.model.fields,field_description:partner_property.field_res_company__partner_properties_definition
-msgid "Partner Properties"
-msgstr "Prorietà partner"
+#: model:ir.model.fields,field_description:partner_property.field_res_company__partner_properties_definition_company
+msgid "Partner Properties (company)"
+msgstr ""
 
 #. module: partner_property
-#: model:ir.model.fields,field_description:partner_property.field_res_partner__properties
-#: model:ir.model.fields,field_description:partner_property.field_res_users__properties
-msgid "Properties"
-msgstr "Proprietà"
+#: model:ir.model.fields,field_description:partner_property.field_res_company__partner_properties_definition_person
+msgid "Partner Properties (person)"
+msgstr ""
 
 #. module: partner_property
 #: model:ir.model.fields,field_description:partner_property.field_res_partner__properties_company_id
 #: model:ir.model.fields,field_description:partner_property.field_res_users__properties_company_id
 msgid "Properties Company"
 msgstr "Azienda priprietà"
+
+#. module: partner_property
+#: model:ir.model.fields,field_description:partner_property.field_res_partner__properties_type_company
+#: model:ir.model.fields,field_description:partner_property.field_res_users__properties_type_company
+msgid "Properties Type Company"
+msgstr ""
+
+#. module: partner_property
+#: model:ir.model.fields,field_description:partner_property.field_res_partner__properties_type_person
+#: model:ir.model.fields,field_description:partner_property.field_res_users__properties_type_person
+msgid "Properties Type Person"
+msgstr ""
+
+#~ msgid "Partner Properties"
+#~ msgstr "Prorietà partner"
+
+#~ msgid "Properties"
+#~ msgstr "Proprietà"
