@@ -40,6 +40,7 @@ addon | version | maintainers | summary
 [partner_contact_nationality](partner_contact_nationality/) | 17.0.1.0.0 |  | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 17.0.1.0.0 | [![Daemo00](https://github.com/Daemo00.png?size=30px)](https://github.com/Daemo00) | Add a page to contacts form to put personal information
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 17.0.1.0.0 |  | Contact deduplication with fine-grained permission control
+[partner_deduplicate_by_website](partner_deduplicate_by_website/) | 17.0.1.0.0 |  | Deduplicate Contacts by Website
 [partner_deduplicate_filter](partner_deduplicate_filter/) | 17.0.1.0.0 |  | Exclude records from the deduplication
 [partner_display_name_line_break](partner_display_name_line_break/) | 17.0.1.0.0 |  | Split the company and the partner name on two different lines
 [partner_email_check](partner_email_check/) | 17.0.1.0.0 |  | Validate email address field
