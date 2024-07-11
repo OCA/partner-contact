@@ -9,7 +9,7 @@ from odoo.exceptions import ValidationError
 
 
 def check_if_parent_company(parent_type: str | None, vat: str | None):
-    if parent_type== "parent_company" and not vat:
+    if parent_type == "parent_company" and not vat:
         raise ValidationError(_("Vat is mandatory to create a Parent Company"))
 
 class ResPartner(models.Model):
@@ -59,7 +59,14 @@ class ResPartner(models.Model):
             if partner.company_type == "person":
                 partner.type = "contact"
                 continue
-            partner.type = "affiliate" if partner.parent_id else "parent_company"
+            if partner.parent_id:
+                partner.type = "affiliate"
+                continue
+            elif not partner.parent_id and partner.vat:
+                partner.type = "parent_company"
+                continue
+            else:
+                partner.type = "other"
 
     @api.onchange("city", "parent_id", "company_type")
     def _onchange_city(self):
@@ -88,13 +95,13 @@ class ResPartner(models.Model):
         """
         if self.company_type == "person":
             desired_type = "contact"
-        elif not self.parent_id and self.company_type == "company":
+        elif not self.parent_id and self.company_type == "company" and self.vat:
             desired_type = "parent_company"
         elif self.parent_id and self.company_type == "company":
             desired_type = "affiliate"
         else:
-           desired_type = "contact"
-        check_if_parent_company(desired_type, self.vat)
+           desired_type = "other"
+        #check_if_parent_company(desired_type, self.vat)
         if self.type != desired_type:
             super().write({"type": desired_type})
         return super()._fields_sync(values)
@@ -102,7 +109,7 @@ class ResPartner(models.Model):
     @api.model
     def create(self, values):
         """ Il problema é che se é un'azienda fa un check e vuole la Pta Iva. Quindi si deve prima creare e poi sovrascrivere"""
-        check_if_parent_company(values.get("type"), values.get("vat"))
+        #check_if_parent_company(values.get("type"), values.get("vat"))
         res =  super().create(values)
         if res.parent_id:
             res.vat = None
@@ -117,12 +124,4 @@ class ResPartner(models.Model):
             domain = [('type','=', 'parent_company')]
         return {'domain': {'parent_id': domain}}
 
-    # @api.depends("company_type")
-    # def get_partner_ids_domain(self):
-    #     for partner in self:
-    #         if partner.company_type == 'person':
-    #             domain = [('type','in', ['affiliate', 'parent_company'])]
-    #         else:
-    #             domain = [('type','in', ['parent_company'])]
-    #         partner.parent_id = str(domain)
 

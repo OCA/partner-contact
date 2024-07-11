@@ -24,7 +24,8 @@
                 <field name="type" attrs="{'invisible': False}" widget="badge"
                     decoration-warning="type == 'affiliate'" 
                     decoration-danger="type == 'parent_company'" 
-                    decoration-info="type == 'contact'"/>
+                    decoration-info="type == 'contact'"
+                    decoration-mutes="type == 'other'"/>
             </field>
             <field name="name" position="before">
 				<field name="parent_id" position="move" />
@@ -132,8 +133,11 @@
                         name="affiliates"
                         domain="[('type','=','affiliate')]" />
                 <filter string="Contacts"
-                        name="affiliates"
+                        name="contacts"
                         domain="[('type','=','contact')]" />
+                <filter string="Others"
+                        name="others"
+                        domain="[('type','=','other')]" />
                 <separator />
             </filter>
         </field>
@@ -152,12 +156,6 @@
                     decoration-danger="type == 'parent_company'" 
                     decoration-info="type == 'contact'"/>
             </xpath>
-            <xpath expr="//t[1]/t[2]" position="after">
-                <t t-elif="record.type.raw_value === 'affiliate'" t-set="placeholder" t-value="kanban_image('res.partner', 'image_128', record.parent_id.raw_value)" />
-            </xpath>
-            <!-- <xpath expr="//div[@class='o_kanban_image_fill_left o_kanban_image_full'][1]/@role" position="attributes">
-                <t t-if="record.type.raw_value === 'affiliate'" t-set="placeholder" t-value="kanban_image('res.partner', 'image_128', record.parent_id.raw_value)" />
-            </xpath> -->
             <xpath expr="//div[@class='oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban'][1]/t[2]/t" position="after">
                 <t t-if="record.type.raw_value === 'affiliate'" t-set="placeholder" t-value="kanban_image('res.partner', 'image_128', record.parent_id.raw_value)" />
             </xpath>
