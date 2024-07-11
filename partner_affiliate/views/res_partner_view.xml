@@ -7,7 +7,14 @@
         <field name="inherit_id" ref="base.view_partner_tree" />
         <field name="arch" type="xml">
             <field name="phone" position="before">
-                <field name="type" />
+                <field name="type" widget="badge"
+                    decoration-warning="type == 'affiliate'" 
+                    decoration-danger="type == 'parent_company'" 
+                    decoration-info="type == 'contact'"
+                    decoration-mutes="type == 'other'"/>
+            </field>
+            <field name="type" position="after">
+                <field name="vat" />
             </field>
         </field>
     </record>
@@ -125,6 +132,10 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_res_partner_filter" />
         <field name="arch" type="xml">
+        <field name="name" position="before">
+            <field name="display_name" />
+            <field name="city" />
+         </field>
             <filter name="type_person" position="before">
                 <filter string="Registered Offices"
                         name="registered_office"
