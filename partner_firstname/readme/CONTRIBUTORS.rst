@@ -18,3 +18,6 @@
 * Graeme Gellatly <graeme@o4sb.com>
 * Laurent Mignon <laurent.mignon@acsone.eu>
 * Bjorn Billen <bjorn.billen@dynapps.be>
+* `Aion Tech <https://aiontech.company/>`_:
+
+  * Simone Rubino <simone.rubino@aion-tech.it>

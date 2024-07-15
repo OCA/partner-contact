@@ -1,0 +1,61 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_property
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2024-07-15 09:58+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
+
+#. module: partner_property
+#: model:ir.model,name:partner_property.model_res_company
+msgid "Companies"
+msgstr "Aziende"
+
+#. module: partner_property
+#: model:ir.model,name:partner_property.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_property
+#: model:ir.model.fields,field_description:partner_property.field_res_company__partner_properties_definition_company
+msgid "Partner Properties (company)"
+msgstr "Proprietà partner (azienda)"
+
+#. module: partner_property
+#: model:ir.model.fields,field_description:partner_property.field_res_company__partner_properties_definition_person
+msgid "Partner Properties (person)"
+msgstr "Proprietà partner (persona)"
+
+#. module: partner_property
+#: model:ir.model.fields,field_description:partner_property.field_res_partner__properties_company_id
+#: model:ir.model.fields,field_description:partner_property.field_res_users__properties_company_id
+msgid "Properties Company"
+msgstr "Azienda priprietà"
+
+#. module: partner_property
+#: model:ir.model.fields,field_description:partner_property.field_res_partner__properties_type_company
+#: model:ir.model.fields,field_description:partner_property.field_res_users__properties_type_company
+msgid "Properties Type Company"
+msgstr "Azienda tipo proprieà"
+
+#. module: partner_property
+#: model:ir.model.fields,field_description:partner_property.field_res_partner__properties_type_person
+#: model:ir.model.fields,field_description:partner_property.field_res_users__properties_type_person
+msgid "Properties Type Person"
+msgstr "Persona tipo proprietà"
+
+#~ msgid "Partner Properties"
+#~ msgstr "Prorietà partner"
+
+#~ msgid "Properties"
+#~ msgstr "Proprietà"

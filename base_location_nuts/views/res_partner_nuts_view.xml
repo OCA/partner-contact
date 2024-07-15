@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_nuts_tree" model="ir.ui.view">
+        <field name="name">NUTS Items tree</field>
+        <field name="model">res.partner.nuts</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="level" />
+                <field name="code" />
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="res_partner_nuts_form" model="ir.ui.view">
+        <field name="name">NUTS Items form</field>
+        <field name="model">res.partner.nuts</field>
+        <field name="arch" type="xml">
+            <form string="NUTS Item">
+                <group>
+                    <group>
+                        <field name="level" />
+                        <field name="code" />
+                        <field name="parent_id" />
+                        <field name="name" />
+                        <field name="not_updatable" />
+                    </group>
+                    <group>
+                        <field name="country_id" />
+                        <field name="state_id" />
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="res_partner_nuts_action" model="ir.actions.act_window">
+        <field name="name">NUTS Items</field>
+        <field name="res_model">res.partner.nuts</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help">You must click at import wizard to populate NUTS items
+        in Odoo database in:
+        Contacts > Configuration > Localization > Import NUTS 2024</field>
+    </record>
+    <record model="ir.ui.view" id="view_res_partner_nuts_filter">
+        <field name="name">NUTS search filters</field>
+        <field name="model">res.partner.nuts</field>
+        <field name="arch" type="xml">
+            <search string="Search NUTS">
+                <field name="name" />
+                <field name="country_id" />
+                <field name="state_id" />
+                <group expand="0" string="Group By">
+                    <filter
+                        name="country"
+                        string="Country"
+                        domain="[]"
+                        context="{'group_by': 'country_id'}"
+                    />
+                    <filter
+                        name="level"
+                        string="Level"
+                        domain="[]"
+                        context="{'group_by': 'level'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+    <menuitem
+        action="res_partner_nuts_action"
+        id="res_partner_nuts_menu"
+        groups="base.group_partner_manager"
+        name="NUTS Items"
+        parent="contacts.menu_localisation"
+        sequence="40"
+    />
+</odoo>

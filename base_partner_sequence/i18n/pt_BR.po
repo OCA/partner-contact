@@ -9,16 +9,27 @@ msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-08-28 15:54+0000\n"
-"PO-Revision-Date: 2019-09-09 15:24+0000\n"
-"Last-Translator: Rodrigo Macedo <rmsolucoeseminformatic4@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-partner-"
-"contact-8-0/language/pt_BR/)\n"
+"PO-Revision-Date: 2024-05-22 23:59+0000\n"
+"Last-Translator: Rodrigo Macedo <sottomaiormacedotec@users.noreply."
+"translation.odoo-community.org>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/"
+"OCA-partner-contact-8-0/language/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.8\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: base_partner_sequence
+#: model:ir.model,name:base_partner_sequence.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: base_partner_sequence
+#: model:ir.model,name:base_partner_sequence.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configurações"
 
 #. module: base_partner_sequence
 #: model:ir.model,name:base_partner_sequence.model_res_partner
@@ -31,6 +42,29 @@ msgstr "Contato"
 #, python-format
 msgid "Either field values or an id must be provided."
 msgstr "Valores de campo ou um ID devem ser fornecidos."
+
+#. module: base_partner_sequence
+#: model:ir.model.fields,help:base_partner_sequence.field_res_company__partner_ref_readonly
+#: model:ir.model.fields,help:base_partner_sequence.field_res_config_settings__partner_ref_readonly
+msgid "If marked, the Reference in partners will not be editable."
+msgstr "Se marcada, a Referência em parceiros não será editável."
+
+#. module: base_partner_sequence
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_company__partner_ref_readonly
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_config_settings__partner_ref_readonly
+msgid "Partner Reference Readonly"
+msgstr "Referência do parceiro somente leitura"
+
+#. module: base_partner_sequence
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_partner__ref_readonly
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_users__ref_readonly
+msgid "Ref Readonly"
+msgstr "Ref somente leitura"
+
+#. module: base_partner_sequence
+#: model_terms:ir.ui.view,arch_db:base_partner_sequence.res_config_settings_view_form
+msgid "Set Partner Reference field as read-only"
+msgstr "Definir o campo Referência do parceiro como somente leitura"
 
 #~ msgid "Partner"
 #~ msgstr "Parceiro"
