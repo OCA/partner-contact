@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-07-08 11:58+0000\n"
+"PO-Revision-Date: 2024-07-15 09:58+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -29,12 +29,12 @@ msgstr "Contatto"
 #. module: partner_property
 #: model:ir.model.fields,field_description:partner_property.field_res_company__partner_properties_definition_company
 msgid "Partner Properties (company)"
-msgstr ""
+msgstr "Proprietà partner (azienda)"
 
 #. module: partner_property
 #: model:ir.model.fields,field_description:partner_property.field_res_company__partner_properties_definition_person
 msgid "Partner Properties (person)"
-msgstr ""
+msgstr "Proprietà partner (persona)"
 
 #. module: partner_property
 #: model:ir.model.fields,field_description:partner_property.field_res_partner__properties_company_id
@@ -46,13 +46,13 @@ msgstr "Azienda priprietà"
 #: model:ir.model.fields,field_description:partner_property.field_res_partner__properties_type_company
 #: model:ir.model.fields,field_description:partner_property.field_res_users__properties_type_company
 msgid "Properties Type Company"
-msgstr ""
+msgstr "Azienda tipo proprieà"
 
 #. module: partner_property
 #: model:ir.model.fields,field_description:partner_property.field_res_partner__properties_type_person
 #: model:ir.model.fields,field_description:partner_property.field_res_users__properties_type_person
 msgid "Properties Type Person"
-msgstr ""
+msgstr "Persona tipo proprietà"
 
 #~ msgid "Partner Properties"
 #~ msgstr "Prorietà partner"
