@@ -27,19 +27,16 @@
         <field eval="1" name="priority" />
         <field name="inherit_id" ref="chiarcosso_base.chiarcosso_base_partner_form" />
         <field name="arch" type="xml">
-            <field name="company_type" position="after">
-                <field name="type" attrs="{'invisible': False}" widget="badge"
-                    decoration-warning="type == 'affiliate'" 
-                    decoration-danger="type == 'parent_company'" 
-                    decoration-info="type == 'contact'"
-                    decoration-mutes="type == 'other'"/>
+            <field name="company_type" position="before">
+                <group>
+                    <field name="type" attrs="{'invisible': False}" />
+                </group>
             </field>
-            <field name="name" position="before">
-				<field name="parent_id" position="move" />
+            <field name="name" position="after">
+                <group>
+                    <field name="parent_id" position="move" />
+                </group>
 			</field>
-            <field name="parent_id" position="before">
-                <label for="parent_id" string="Parent Company"/>
-            </field>
             <field name="parent_id" position="attributes">
                 <attribute name="attrs">{'readonly': False}</attribute>
             </field>
@@ -50,10 +47,6 @@
             <xpath expr="/form/sheet//group/group/field[@name='name']" position="attributes">
                 <attribute name="attrs">{'readonly': [('type', '=', 'affiliate')]}</attribute>
             </xpath>
-            <field name="type" widget="badge" 
-                decoration-warning="type == 'affiliate'" 
-                decoration-danger="type == 'parent_company'" 
-                decoration-info="type == 'contact'"/>
             <xpath expr='//page[@name="internal_notes"]' position="before">
                 <page string="Affiliates" attrs="{'invisible': [('type','!=','parent_company')]}">
                     <field name="affiliate_ids"
@@ -165,7 +158,8 @@
                 <field name="type" widget="badge" 
                     decoration-warning="type == 'affiliate'" 
                     decoration-danger="type == 'parent_company'" 
-                    decoration-info="type == 'contact'"/>
+                    decoration-info="type == 'contact'"
+                    decoration-mutes="type == 'other'" />
             </xpath>
             <xpath expr="//div[@class='oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban'][1]/t[2]/t" position="after">
                 <t t-if="record.type.raw_value === 'affiliate'" t-set="placeholder" t-value="kanban_image('res.partner', 'image_128', record.parent_id.raw_value)" />
