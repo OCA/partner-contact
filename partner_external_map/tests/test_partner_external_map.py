@@ -9,7 +9,7 @@ from ..hooks import set_default_map_settings
 
 class TestPartnerExternalMap(common.TransactionCase):
     def setUp(self):
-        super(TestPartnerExternalMap, self).setUp()
+        super().setUp()
         self.user = self.env["res.users"].create(
             {
                 "name": "Test user",
@@ -34,7 +34,7 @@ class TestPartnerExternalMap(common.TransactionCase):
 
     def test_post_init_hook(self):
         # Call this again for coverage purposes, but it has been already run
-        set_default_map_settings(self.cr, self.registry)
+        set_default_map_settings(self.env)
         usrs = self.env["res.users"].search([])
         self.assertTrue(all([u.context_map_website_id.id for u in usrs]))
         self.assertTrue(all([u.context_route_map_website_id.id for u in usrs]))
