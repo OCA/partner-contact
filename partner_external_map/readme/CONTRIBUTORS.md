@@ -1,0 +1,8 @@
+- [Akretion](http://www.akretion.com):
+  - Alexis de Lattre \<<alexis.delattre@akretion.com>\>
+- [Tecnativa](https://www.tecnativa.com):
+  - Pedro M. Baeza
+  - Ernesto Tejeda
+  - João Marques
+- [Sygel](http://www.sygel.es):
+  - Manuel Regidor \<<manuel.regidor@sygel.es>\>
