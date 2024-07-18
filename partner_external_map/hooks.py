@@ -4,17 +4,14 @@
 
 import logging
 
-from odoo import SUPERUSER_ID, api
-
 logger = logging.getLogger(__name__)
 
 
-def set_default_map_settings(cr, registry):
+def set_default_map_settings(env):
     """Method called as post-install script
     The default method on the field can't be used, because it would be executed
     before loading map_website_data.xml, so it would not be able to set a
     value"""
-    env = api.Environment(cr, SUPERUSER_ID, {})
     user_model = env["res.users"]
     users = user_model.search([("context_map_website_id", "=", False)])
     logger.info("Updating user settings for maps...")
@@ -27,7 +24,7 @@ def set_default_map_settings(cr, registry):
         }
     )
     # Update the starting partner this way that is faster
-    cr.execute(
+    env.cr.execute(
         """
         UPDATE res_users
         SET context_route_start_partner_id = partner_id

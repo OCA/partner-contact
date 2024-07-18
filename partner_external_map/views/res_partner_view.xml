@@ -16,7 +16,7 @@
                     name="open_map"
                     type="object"
                     string="Map"
-                    attrs="{'invisible': [('city', '=', False)]}"
+                    invisible="not city"
                     icon="fa-map-marker"
                 />
                 <button
@@ -24,7 +24,7 @@
                     name="open_route_map"
                     type="object"
                     string="Route Map"
-                    attrs="{'invisible': [('city', '=', False)]}"
+                    invisible="not city"
                     icon="fa-car"
                 />
             </xpath>
