@@ -6,7 +6,7 @@ from odoo.tests.common import TransactionCase
 
 class TestPartnerCoC(TransactionCase):
     def setUp(self):
-        super(TestPartnerCoC, self).setUp()
+        super().setUp()
         self.main_partner = self.env.ref("base.main_partner")
         self.partner_id_category = self.env.ref("partner_coc.id_category_coc")
 
