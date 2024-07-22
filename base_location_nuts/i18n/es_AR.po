@@ -66,33 +66,10 @@ msgid "Created on"
 msgstr "Creado en"
 
 #. module: base_location_nuts
-#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__current_country_id
-msgid "Current Country"
-msgstr ""
-
-#. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__display_name
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__display_name
 msgid "Display Name"
 msgstr "Mostrar Nombre"
-
-#. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:0
-#, python-format
-msgid "Downloaded file is not a valid XML file"
-msgstr "Archivo descargado no es un archivo XML válido"
-
-#. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:0
-#, python-format
-msgid "Got an error %(status_code)s when trying to download the file %(url)s."
-msgstr ""
-
-#. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:0
-#, python-format
-msgid "Got an error when trying to download the file: %s."
-msgstr "Obtuvo un error cuando intentó descargar el archivo: %s."
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
@@ -111,26 +88,24 @@ msgid "Import"
 msgstr "Importar"
 
 #. module: base_location_nuts
+#: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
+msgid "Import NUTS 2013 from ShowVoc"
+msgstr ""
+
+#. module: base_location_nuts
 #: model:ir.ui.menu,name:base_location_nuts.nuts_import_menu
-msgid "Import NUTS 2013"
-msgstr "Importar NUTS 2013"
+msgid "Import NUTS 2024"
+msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.nuts_import_action
-#: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
-msgid "Import NUTS 2013 from RAMON"
-msgstr "Importar NUTS 2013 desde RAMON"
+msgid "Import NUTS 2024 from SHOWVOC"
+msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_nuts_import
-msgid "Import NUTS items from European RAMON service"
-msgstr "Importar artículos NUTS desde el servicio europeo RAMON"
-
-#. module: base_location_nuts
-#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import____last_update
-#: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts____last_update
-msgid "Last Modified on"
-msgstr "Última modificación en"
+msgid "Import NUTS items from European ShowVoc service"
+msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__write_uid
@@ -221,6 +196,13 @@ msgid "Parent Path"
 msgstr "Ruta Principal"
 
 #. module: base_location_nuts
+#. odoo-python
+#: code:addons/base_location_nuts/wizard/nuts_import.py:0
+#, python-format
+msgid "Partner NUTS by EU"
+msgstr ""
+
+#. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
 msgid "Search NUTS"
 msgstr "Buscar NUTS"
@@ -239,7 +221,7 @@ msgstr "Nivel de Estado"
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
 msgid ""
 "This wizard will download the lastest version of\n"
-"                NUTS 2013 from Europe RAMON metadata service.\n"
+"                NUTS 2024 from Europe ShowVoc service.\n"
 "                Updating or creating new NUTS entries if not\n"
 "                found already in the system, and DELETING MISSING\n"
 "                ENTRIES from new downloaded file.\n"
@@ -247,34 +229,69 @@ msgid ""
 "                Update or deletion is prevented for NUTS entries with the "
 "flag 'Not updatable'."
 msgstr ""
-"Este asistente descargará la última versión de\n"
-"                NUTS 2013 del servicio de metadatos RAMON de Europa.\n"
-"                Actualiza o crea nuevas entradas NUTS si no\n"
-"                se encontraron ya en el sistema, y ELIMINA ENTRADAS\n"
-"                PERDIDAS del nuevo archivo descargado.\n"
-"\n"
-"                Se impide la actualización o eliminación de las entradas "
-"NUTS con el indicador \"No actualizable\"."
-
-#. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:0
-#, python-format
-msgid "Value not found for mandatory field %s"
-msgstr "Valor no encontrado para un campo obligatorio %s"
 
 #. module: base_location_nuts
 #: model_terms:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
 msgid ""
 "You must click at import wizard to populate NUTS items\n"
 "        in Odoo database in:\n"
-"        Sales &gt; Configuration &gt; Address Book &gt; Localization &gt; "
-"Import NUTS 2013"
+"        Contacts &gt; Configuration &gt; Localization &gt; Import NUTS 2024"
 msgstr ""
-"Debe hacer clic en el asistente de importación para completar los elementos "
-"NUTS\n"
-"        en la base de datos de Odoo en:\n"
-"        Ventas &gt; Configuración &gt; Libreta de direcciones &gt; "
-"Localización &gt; Importar NUTS 2013"
+
+#, python-format
+#~ msgid "Downloaded file is not a valid XML file"
+#~ msgstr "Archivo descargado no es un archivo XML válido"
+
+#, python-format
+#~ msgid "Got an error when trying to download the file: %s."
+#~ msgstr "Obtuvo un error cuando intentó descargar el archivo: %s."
+
+#~ msgid "Import NUTS 2013"
+#~ msgstr "Importar NUTS 2013"
+
+#~ msgid "Import NUTS 2013 from RAMON"
+#~ msgstr "Importar NUTS 2013 desde RAMON"
+
+#~ msgid "Import NUTS items from European RAMON service"
+#~ msgstr "Importar artículos NUTS desde el servicio europeo RAMON"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última modificación en"
+
+#~ msgid ""
+#~ "This wizard will download the lastest version of\n"
+#~ "                NUTS 2013 from Europe RAMON metadata service.\n"
+#~ "                Updating or creating new NUTS entries if not\n"
+#~ "                found already in the system, and DELETING MISSING\n"
+#~ "                ENTRIES from new downloaded file.\n"
+#~ "\n"
+#~ "                Update or deletion is prevented for NUTS entries with the "
+#~ "flag 'Not updatable'."
+#~ msgstr ""
+#~ "Este asistente descargará la última versión de\n"
+#~ "                NUTS 2013 del servicio de metadatos RAMON de Europa.\n"
+#~ "                Actualiza o crea nuevas entradas NUTS si no\n"
+#~ "                se encontraron ya en el sistema, y ELIMINA ENTRADAS\n"
+#~ "                PERDIDAS del nuevo archivo descargado.\n"
+#~ "\n"
+#~ "                Se impide la actualización o eliminación de las entradas "
+#~ "NUTS con el indicador \"No actualizable\"."
+
+#, python-format
+#~ msgid "Value not found for mandatory field %s"
+#~ msgstr "Valor no encontrado para un campo obligatorio %s"
+
+#~ msgid ""
+#~ "You must click at import wizard to populate NUTS items\n"
+#~ "        in Odoo database in:\n"
+#~ "        Sales &gt; Configuration &gt; Address Book &gt; Localization &gt; "
+#~ "Import NUTS 2013"
+#~ msgstr ""
+#~ "Debe hacer clic en el asistente de importación para completar los "
+#~ "elementos NUTS\n"
+#~ "        en la base de datos de Odoo en:\n"
+#~ "        Ventas &gt; Configuración &gt; Libreta de direcciones &gt; "
+#~ "Localización &gt; Importar NUTS 2013"
 
 #, python-format
 #~ msgid "Got an error %d when trying to download the file %s."
