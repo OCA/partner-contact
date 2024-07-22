@@ -284,7 +284,7 @@
                 </field>
             </field>
             <xpath
-                expr="//t[@t-name='kanban-box']//div[hasclass('oe_kanban_details')]/ul/li[3]"
+                expr="//t[@t-name='kanban-box']//div[hasclass('oe_kanban_details')]//ul/li[3]"
                 position="after"
             >
                 <t t-if="record.other_contact_ids.raw_value.length &gt; 0">
