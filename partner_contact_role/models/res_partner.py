@@ -18,3 +18,7 @@ class ResPartnerRole(models.Model):
     _description = "Partner Role"
 
     name = fields.Char()
+    active = fields.Boolean(
+        default=True,
+        help="By unchecking the active field, you may hide a role you will not use.",
+    )
