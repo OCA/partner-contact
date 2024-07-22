@@ -156,7 +156,7 @@ class NutsImport(models.TransientModel):
             return
         max_level = max(nuts_to_delete.mapped("level"))
         for level in range(max_level, 0, -1):
-            ntd2 = nuts_to_delete.filtered(lambda nut: nut.level == level)
+            ntd2 = nuts_to_delete.filtered(lambda nut: nut.level == level)  # noqa: B023
             ntd2.unlink()
             nuts_to_delete -= ntd2
         logger.info("%d NUTS entries deleted" % len(nuts_to_delete))
