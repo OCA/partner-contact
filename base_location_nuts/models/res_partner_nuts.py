@@ -21,7 +21,7 @@ class ResPartnerNuts(models.Model):
     not_updatable = fields.Boolean()
     # Parent hierarchy
     parent_id = fields.Many2one(comodel_name="res.partner.nuts", ondelete="restrict")
-    parent_path = fields.Char(index=True)
+    parent_path = fields.Char(index=True, unaccent=False)
     child_ids = fields.One2many(
         comodel_name="res.partner.nuts", inverse_name="parent_id", string="Children"
     )
