@@ -16,7 +16,7 @@ MOCK_PATH = "odoo.addons.base_location_nuts.wizard.nuts_import.requests.get"
 class TestBaseLocationNuts(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestBaseLocationNuts, cls).setUpClass()
+        super().setUpClass()
         cls.uid = new_test_user(
             cls.env,
             login="test-nuts-import-user",
