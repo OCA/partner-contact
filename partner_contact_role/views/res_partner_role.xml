@@ -10,6 +10,7 @@
                 <sheet>
                     <group name="main">
                         <field name="name" />
+                        <field name="active" />
                     </group>
                 </sheet>
             </form>
