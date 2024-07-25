@@ -37,6 +37,7 @@ addon | version | maintainers | summary
 [partner_bank_acc_type_constraint](partner_bank_acc_type_constraint/) | 16.0.1.0.1 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Adds constraint on bank account type
 [partner_bank_code](partner_bank_code/) | 16.0.1.0.1 |  | Add fields information in banks
 [partner_capital](partner_capital/) | 16.0.0.1.1 | [![EmilioPascual](https://github.com/EmilioPascual.png?size=30px)](https://github.com/EmilioPascual) | Partners Capital
+[partner_category_description](partner_category_description/) | 16.0.1.0.0 | [![edlopen](https://github.com/edlopen.png?size=30px)](https://github.com/edlopen) [![rafaelbn](https://github.com/rafaelbn.png?size=30px)](https://github.com/rafaelbn) | Adds a description field to contact categories to improve organization and managment of customer relationships.
 [partner_category_security](partner_category_security/) | 16.0.2.0.1 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner category security
 [partner_category_security_crm](partner_category_security_crm/) | 16.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner category security (crm extension)
 [partner_category_type](partner_category_type/) | 16.0.1.0.0 | [![JordiMForgeFlow](https://github.com/JordiMForgeFlow.png?size=30px)](https://github.com/JordiMForgeFlow) | Add a selection field 'Type' to classify Contact Tags.

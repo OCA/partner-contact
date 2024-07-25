@@ -24,6 +24,7 @@ setuptools.setup(
         'odoo-addon-partner_bank_acc_type_constraint>=16.0dev,<16.1dev',
         'odoo-addon-partner_bank_code>=16.0dev,<16.1dev',
         'odoo-addon-partner_capital>=16.0dev,<16.1dev',
+        'odoo-addon-partner_category_description>=16.0dev,<16.1dev',
         'odoo-addon-partner_category_security>=16.0dev,<16.1dev',
         'odoo-addon-partner_category_security_crm>=16.0dev,<16.1dev',
         'odoo-addon-partner_category_type>=16.0dev,<16.1dev',
