@@ -12,10 +12,11 @@ def check_if_parent_company(parent_type: str | None, vat: str | None):
     if parent_type == "parent_company" and not vat:
         raise ValidationError(_("Vat is mandatory to create a Parent Company"))
 
-class ResPartner(models.Model):
-    """Add relation affiliate_ids."""
 
-    _name = "res.partner"
+"""Add relation affiliate_ids."""
+
+
+class ResPartner(models.Model):
     _inherit = "res.partner"
 
     child_ids = fields.One2many(
@@ -50,10 +51,10 @@ class ResPartner(models.Model):
             "parent_company": "set default",
         },
         compute="_compute_type",
-        store=True
+        store=True,
     )
 
-    @api.depends("parent_id", "company_type", "name")
+    @api.depends("parent_id", "company_type")
     def _compute_type(self):
         for partner in self:
             if partner.company_type == "person":
@@ -68,20 +69,24 @@ class ResPartner(models.Model):
             else:
                 partner.type = "other"
 
-    @api.onchange("city", "parent_id", "company_type")
-    def _onchange_city(self):
+    def _get_name(self):
         if self.type == "affiliate":
-            self._get_affiliate_name()
+            parent_name = self.parent_id.name or ""
+            city_name = self.city or ""
+            return f"{parent_name} ({city_name})"
+        return super()._get_name()
 
-    def _get_affiliate_name(self):
-        self.ensure_one()
-        parent_name = self.parent_id.name.upper() if self.parent_id else None
-        city_name = self.city.upper() if self.city else None
-        if parent_name and city_name:
-            self.name = f"{parent_name} - {city_name}"
-        else:
-            self.name = parent_name or city_name
-    
+    @api.onchange("parent_id")
+    def _onchange_parent_id_or_city(self):
+        if self.parent_id:
+            self.name = self.parent_id.name
+
+    @api.depends("parent_id.name", "parent_id")
+    def _compute_affiliate_name(self):
+        for partner in self:
+            if partner.type == "affiliate":
+                partner.name = partner.parent_id.name
+
     def _fields_sync(self, values):
         """A company that will have a parent set, must be an affiliate,
 
@@ -100,28 +105,23 @@ class ResPartner(models.Model):
         elif self.parent_id and self.company_type == "company":
             desired_type = "affiliate"
         else:
-           desired_type = "other"
-        #check_if_parent_company(desired_type, self.vat)
+            desired_type = "other"
+        # check_if_parent_company(desired_type, self.vat)
         if self.type != desired_type:
             super().write({"type": desired_type})
         return super()._fields_sync(values)
 
     @api.model
     def create(self, values):
-        """ Il problema é che se é un'azienda fa un check e vuole la Pta Iva. Quindi si deve prima creare e poi sovrascrivere"""
-        #check_if_parent_company(values.get("type"), values.get("vat"))
-        res =  super().create(values)
+        res = super().create(values)
         if res.parent_id:
             res.vat = None
         return res
 
-
     @api.onchange("company_type")
     def onchange_get_partner_ids_domain(self):
-        if self.company_type == 'person':
-            domain = [('type','in', ['affiliate', 'parent_company'])]
+        if self.company_type == "person":
+            domain = [("type", "in", ["affiliate", "parent_company"])]
         else:
-            domain = [('type','=', 'parent_company')]
-        return {'domain': {'parent_id': domain}}
-
-
+            domain = [("type", "=", "parent_company")]
+        return {"domain": {"parent_id": domain}}
