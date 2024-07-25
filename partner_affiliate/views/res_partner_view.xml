@@ -7,11 +7,11 @@
         <field name="inherit_id" ref="base.view_partner_tree" />
         <field name="arch" type="xml">
             <field name="phone" position="before">
-                <field name="type" widget="badge"
-                    decoration-warning="type == 'affiliate'" 
-                    decoration-danger="type == 'parent_company'" 
-                    decoration-info="type == 'contact'"
-                    decoration-mutes="type == 'other'"/>
+                <field name="type"
+                       widget="badge"
+                       decoration-info="type == 'affiliate'"
+                       decoration-success="type == 'parent_company'"
+                       decoration-warning="type == 'others'" />
             </field>
             <field name="type" position="after">
                 <field name="vat" />
@@ -19,39 +19,44 @@
         </field>
     </record>
 
-
     <!-- Show always parent_id plus add affiliates -->
     <record id="view_partner_form_add_affiliate" model="ir.ui.view">
         <field name="name">res.partner.form</field>
         <field name="model">res.partner</field>
-        <field eval="1" name="priority" />
-        <field name="inherit_id" ref="chiarcosso_base.chiarcosso_base_partner_form" />
+        <field eval="20" name="priority" />
+        <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <field name="company_type" position="before">
-                <group>
-                    <field name="type" attrs="{'invisible': False}" />
-                </group>
+            <xpath expr="//field[@name='parent_id']/ancestor::div[hasclass('o_row')]" position="before">
+                <field name="type" invisible="0" />
+                <br />
+            </xpath>
+            <field name="vat" position="after">
+                <div style="display:none;">
+                    <field name="type"
+                           widget="badge"
+                           decoration-info="type == 'affiliate'"
+                           decoration-success="type == 'parent_company'"
+                           decoration-warning="type == 'others'"
+                           invisible="0" />
+                </div>                
             </field>
-            <field name="name" position="after">
-                <group>
-                    <field name="parent_id" position="move" />
-                </group>
-			</field>
+            <!-- IL NOME E' OBBLIGATORIO E CON IL READONLY NON LO STROVA E BLOCCA IL CREATE! -->
+            <field name="name" position="attributes">
+                <attribute name="attrs">{'readonly': [('id', '!=', False),('type','=','affiliate')]}</attribute>
+            </field>
+
             <field name="parent_id" position="attributes">
                 <attribute name="attrs">{'readonly': False}</attribute>
             </field>
-            <field name="parent_id" />
             <xpath expr="/form/sheet//group/group/field[@name='vat']" position="attributes">
-                <attribute name="attrs">{'readonly': [('type', '!=', 'parent_company')]}</attribute>
+                <attribute name="attrs">{'readonly': [('parent_id', '!=', False)]}</attribute>
             </xpath>
             <xpath expr="/form/sheet//group/group/field[@name='name']" position="attributes">
                 <attribute name="attrs">{'readonly': [('type', '=', 'affiliate')]}</attribute>
             </xpath>
             <xpath expr='//page[@name="internal_notes"]' position="before">
                 <page string="Affiliates" attrs="{'invisible': [('type','!=','parent_company')]}">
-                    <field name="affiliate_ids"
-                           context="{'default_parent_id': active_id, 'default_is_company': True}"
-                           mode="kanban">
+                    <field name="affiliate_ids" context="{'default_parent_id': active_id, 'default_is_company': True}" mode="kanban">
                         <kanban>
                             <field name="color" />
                             <field name="name" />
@@ -76,8 +81,11 @@
                                     <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">
                                         <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right"></a>
                                         <div class="o_kanban_image">
-                                            <img t-if="record.image_512.raw_value" t-att-src="'data:image/png;base64,'+record.image_512.raw_value" />
-                                            <t t-if="!record.image_512.raw_value">
+                                            <t t-if="record.type.raw_value === 'affiliate'">
+                                                <img t-att-src="kanban_image('res.partner', 'image_128', record.parent_id.raw_value)" />
+                                            </t>
+                                            <img t-elif="record.image_512.raw_value" t-att-src="'data:image/png;base64,'+record.image_512.raw_value" />
+                                            <t t-else="!record.image_512.raw_value">
                                                 <img t-if="record.type.raw_value === 'delivery'" t-att-src='_s + "/base/static/src/img/truck.png"' />
                                                 <img t-if="record.type.raw_value === 'invoice'" t-att-src='_s + "/base/static/src/img/money.png"' />
                                                 <t t-if="record.type.raw_value !== 'invoice' &amp;&amp; record.type.raw_value !== 'delivery'">
@@ -87,7 +95,9 @@
                                             </t>
                                         </div>
                                         <div class="oe_kanban_details">
-                                            <b><field name="name" /></b>
+                                            <b>
+                                                <field name="display_name" />
+                                            </b>
                                             <div t-if="record.function.raw_value">
                                                 <field name="function" />
                                             </div>
@@ -125,23 +135,16 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_res_partner_filter" />
         <field name="arch" type="xml">
-        <field name="name" position="before">
-            <field name="display_name" />
-            <field name="city" />
-         </field>
+            <field name="name" position="before">
+                <field name="display_name" />
+                <field name="city" />
+                <field name="country_id" />
+            </field>
             <filter name="type_person" position="before">
-                <filter string="Registered Offices"
-                        name="registered_office"
-                        domain="[('type','=','parent_company')]" />
-                <filter string="Affiliates"
-                        name="affiliates"
-                        domain="[('type','=','affiliate')]" />
-                <filter string="Contacts"
-                        name="contacts"
-                        domain="[('type','=','contact')]" />
-                <filter string="Others"
-                        name="others"
-                        domain="[('type','=','other')]" />
+                <filter string="Registered Offices" name="registered_office" domain="[('type','=','parent_company')]" />
+                <filter string="Affiliates" name="affiliates" domain="[('type','=','affiliate')]" />
+                <filter string="Contacts" name="contacts" domain="[('type','=','contact')]" />
+                <filter string="Others" name="others" domain="[('type','=','other')]" />
                 <separator />
             </filter>
         </field>
@@ -149,21 +152,22 @@
 
 
     <!-- Contacts Kanban -->
-    <record id="res_partner_kanban_phone_view" model="ir.ui.view" >
+    <record id="res_partner_kanban_phone_view" model="ir.ui.view">
         <field name="name">res.partner.kanban</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.res_partner_kanban_view" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='display_name']/ancestor::strong" position="before">
-                <field name="type" widget="badge" 
-                    decoration-warning="type == 'affiliate'" 
-                    decoration-danger="type == 'parent_company'" 
-                    decoration-info="type == 'contact'"
-                    decoration-mutes="type == 'other'" />
+            <xpath expr="//span[@class='oe_kanban_partner_links'][1]" position="after">
+                <field name="type"
+                       widget="badge"
+                       decoration-info="type == 'affiliate'"
+                       decoration-success="type == 'parent_company'"
+                       decoration-warning="type == 'others'" />
             </xpath>
             <xpath expr="//div[@class='oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban'][1]/t[2]/t" position="after">
                 <t t-if="record.type.raw_value === 'affiliate'" t-set="placeholder" t-value="kanban_image('res.partner', 'image_128', record.parent_id.raw_value)" />
             </xpath>
+            <xpath expr="//div[hasclass('oe_kanban_details')]" position="inside"></xpath>
         </field>
     </record>
 </odoo>
