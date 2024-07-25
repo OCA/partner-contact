@@ -1,5 +1,5 @@
 # Copyright 2024 Moduon Team S.L.
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0)
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/LGPL-3.0)
 
 {
     "name": "Partner Category Description",
@@ -11,7 +11,7 @@
     "website": "https://github.com/OCA/partner-contact",
     "author": "Moduon, Odoo Community Association (OCA)",
     "maintainers": ["edlopen", "rafaelbn"],
-    "license": "AGPL-3",
+    "license": "LGPL-3",
     "application": False,
     "installable": True,
     "depends": [
