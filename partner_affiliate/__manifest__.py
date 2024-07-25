@@ -11,10 +11,12 @@
     "website": "https://www.gruppochiarcosso.com",
     "license": "LGPL-3",
     "category": "Human Resources",
-    "depends": ["base", "chiarcosso_base"],
+    "depends": ["base"],
     "data": [
         # Views
         "views/res_partner_view.xml"
     ],
+    "post_init_hook": "contact_type_post_init_hook",
+    "uninstall_hook": "contact_type_uninstall_hook",
     "installable": True,
 }
