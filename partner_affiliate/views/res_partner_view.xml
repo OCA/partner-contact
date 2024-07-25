@@ -41,9 +41,9 @@
                 </div>                
             </field>
             <!-- IL NOME E' OBBLIGATORIO E CON IL READONLY NON LO STROVA E BLOCCA IL CREATE! -->
-            <field name="name" position="attributes">
+            <!-- <field name="name" position="attributes">
                 <attribute name="attrs">{'readonly': [('id', '!=', False),('type','=','affiliate')]}</attribute>
-            </field>
+            </field> -->
 
             <field name="parent_id" position="attributes">
                 <attribute name="attrs">{'readonly': False}</attribute>

@@ -76,12 +76,12 @@ class ResPartner(models.Model):
             return f"{parent_name} ({city_name})"
         return super()._get_name()
 
-    @api.onchange("parent_id")
+    @api.onchange("parent_id", "zip", "country_id", "name")
     def _onchange_parent_id_or_city(self):
         if self.parent_id:
             self.name = self.parent_id.name
 
-    @api.depends("parent_id.name", "parent_id")
+    @api.depends("parent_id.name", "zip", "country_id", "name")
     def _compute_affiliate_name(self):
         for partner in self:
             if partner.type == "affiliate":
