@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2024 Moduon Team S.L.
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0) -->
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/LGPL-3.0) -->
 <data>
     <record id="res_partner_category_view_search" model="ir.ui.view">
         <field name="model">res.partner.category</field>
