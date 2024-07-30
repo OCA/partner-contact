@@ -42,6 +42,7 @@ setuptools.setup(
         'odoo-addon-partner_contact_lang>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_nationality>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_personal_information_page>=16.0dev,<16.1dev',
+        'odoo-addon-partner_contact_tags_in_popup>=16.0dev,<16.1dev',
         'odoo-addon-partner_contact_type_end_user>=16.0dev,<16.1dev',
         'odoo-addon-partner_country_state_required>=16.0dev,<16.1dev',
         'odoo-addon-partner_deduplicate_acl>=16.0dev,<16.1dev',
