@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="users_form" model="ir.ui.view">
+        <field name="name">Add second last name</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="partner_firstname.view_users_form" />
+        <field name="arch" type="xml">
+            <field name="firstname" position="attributes">
+                <attribute name="required">
+                    lastname == False and middlename == False
+                </attribute>
+            </field>
+            <field name="lastname" position="attributes">
+                <attribute name="required">
+                    firstname == False and middlename == False
+                </attribute>
+            </field>
+            <field name="lastname" position="before">
+                <field
+                    name="middlename"
+                    required="firstname == False and lastname == False"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
