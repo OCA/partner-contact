@@ -98,11 +98,6 @@ msgstr ""
 "dirección de inicio y de destino (requiere el módulo 'base_geolocalize')."
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website____last_update
-msgid "Last Modified on"
-msgstr "Última modificación en"
-
-#. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización realizada por"
@@ -236,6 +231,9 @@ msgstr "URL que usa la dirección"
 #: model:ir.model,name:partner_external_map.model_res_users
 msgid "User"
 msgstr ""
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última modificación en"
 
 #~ msgid "Users"
 #~ msgstr "Usuarios"

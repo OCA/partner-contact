@@ -99,11 +99,6 @@ msgstr ""
 "l'installation du module 'base_geolocalize')."
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website____last_update
-msgid "Last Modified on"
-msgstr "Dernière modification le"
-
-#. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__write_uid
 msgid "Last Updated by"
 msgstr "Dernière mise à jour par"
@@ -239,6 +234,9 @@ msgstr "URL utilisant l'adresse"
 #: model:ir.model,name:partner_external_map.model_res_users
 msgid "User"
 msgstr "Utilisateur"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Dernière modification le"
 
 #~ msgid "Users"
 #~ msgstr "Utilisateurs"

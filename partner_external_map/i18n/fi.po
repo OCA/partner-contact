@@ -89,11 +89,6 @@ msgid ""
 msgstr ""
 
 #. module: partner_external_map
-#: model:ir.model.fields,field_description:partner_external_map.field_map_website____last_update
-msgid "Last Modified on"
-msgstr "Viimeksi muokattu"
-
-#. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__write_uid
 msgid "Last Updated by"
 msgstr "Viimeksi päivitetty"
@@ -219,3 +214,6 @@ msgstr ""
 #: model:ir.model,name:partner_external_map.model_res_users
 msgid "User"
 msgstr ""
+
+#~ msgid "Last Modified on"
+#~ msgstr "Viimeksi muokattu"
