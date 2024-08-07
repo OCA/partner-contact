@@ -6,29 +6,19 @@ from odoo import fields, models
 
 
 class ResPartner(models.Model):
-    """Add relation affiliate_ids."""
-
     _inherit = "res.partner"
 
-    # force "active_test" domain to bypass _search() override
+    # Modify core's field
     child_ids = fields.One2many(
+        # Same than core's, but with is_company == False
         domain=[("active", "=", True), ("is_company", "=", False)]
     )
 
-    # force "active_test" domain to bypass _search() override
     affiliate_ids = fields.One2many(
         "res.partner",
         "parent_id",
         string="Affiliates",
+        # Same than core's child_ids, but with is_company == True
         domain=[("active", "=", True), ("is_company", "=", True)],
+        context={"active_test": False},
     )
-
-    def open_affiliate_form(self):
-        """Open affiliate contact form from the parent partner form view"""
-        return {
-            "type": "ir.actions.act_window",
-            "res_model": "res.partner",
-            "res_id": self.id,
-            "view_mode": "form",
-            "target": "current",
-        }
