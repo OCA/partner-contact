@@ -1,4 +1,5 @@
 - Yannick Vaucher \<<yannick.vaucher@camptocamp.com>\>
+- Iván Todorovich \<<ivan.todorovich@camptocamp.com>\>
 - Vicent Cubells \<<vicent.cubells@tecnativa.com>\>
 - Raul Martin \<<raul.martin@braintec-group.com>\>
 - Dave Lasley \<<dave@laslabs.com>\>
