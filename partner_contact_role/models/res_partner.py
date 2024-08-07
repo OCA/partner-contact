@@ -14,7 +14,6 @@ class ResPartner(models.Model):
 
 
 class ResPartnerRole(models.Model):
-
     _name = "res.partner.role"
     _description = "Partner Role"
 
