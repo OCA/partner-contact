@@ -9,11 +9,7 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <field name="function" position="after">
-                <field
-                    name="role_ids"
-                    widget="many2many_tags"
-                    attrs="{'invisible': [('is_company','=', True)]}"
-                />
+                <field name="role_ids" widget="many2many_tags" invisible="is_company" />
             </field>
         </field>
     </record>
