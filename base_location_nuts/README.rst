@@ -32,15 +32,18 @@ This module allows to import NUTS locations.
 
 Creates four new fields in Partner object, one per NUTS level
 
-* NUTS L1: Country level
-* NUTS L2: Normally state or big region level
-* NUTS L3: Normally substate or state level
-* NUTS L4: Normally small region or province level
+-  NUTS L1: Country level
+-  NUTS L2: Normally state or big region level
+-  NUTS L3: Normally substate or state level
+-  NUTS L4: Normally small region or province level
 
-This module allows to set the flag *Not updatable* in a NUTS region so that it gets no more updated nor deleted by the import wizard.
+This module allows to set the flag *Not updatable* in a NUTS region so
+that it gets no more updated nor deleted by the import wizard.
 
-Usually NUTS regions have to stay updated with the real ones, but the user may want to update a region's field (name, parent, ...) or create a new ones.
-With this module, flagging such records as *Not updatable* prevents them from being overwritten or deleted by the import wizard.
+Usually NUTS regions have to stay updated with the real ones, but the
+user may want to update a region's field (name, parent, ...) or create a
+new ones. With this module, flagging such records as *Not updatable*
+prevents them from being overwritten or deleted by the import wizard.
 
 **Table of contents**
 
@@ -50,35 +53,38 @@ With this module, flagging such records as *Not updatable* prevents them from be
 Installation
 ============
 
-We recommend to install another addon (one for each country) in order to relate
-NUTS with states defined by each localization addon, for example:
+We recommend to install another addon (one for each country) in order to
+relate NUTS with states defined by each localization addon, for example:
 
-* l10n_es_location_nuts : Spanish Provinces (NUTS level 4) related to Partner State
-* l10n_de_location_nuts : German states (NUTS level 2) related to Partner State
-* l10n_nl_location_nuts : Dutch provinces (NUTS level 3 and 4) related to Partner State
+-  l10n_es_location_nuts : Spanish Provinces (NUTS level 4) related to
+   Partner State
+-  l10n_de_location_nuts : German states (NUTS level 2) related to
+   Partner State
+-  l10n_nl_location_nuts : Dutch provinces (NUTS level 3 and 4) related
+   to Partner State
 
 Configuration
 =============
 
-After installation, a import wizard will popup to create NUTS items in Odoo.
-You can also run it manually from
-Contacts > Configuration > Localization > Import NUTS 2024
+After installation, a import wizard will popup to create NUTS items in
+Odoo. You can also run it manually from Contacts > Configuration >
+Localization > Import NUTS 2024
 
 This wizard will download from Europe ShowVoc service the metadata to
 build NUTS in Odoo. Each localization addon (l10n_es_location_nuts,
-l10n_de_location_nuts, ...) will inherit this wizard and
-relate each NUTS item with states. So if you install a new localization addon
-you must re-build NUTS clicking this wizard again.
+l10n_de_location_nuts, ...) will inherit this wizard and relate each
+NUTS item with states. So if you install a new localization addon you
+must re-build NUTS clicking this wizard again.
 
-As the last RAMON file used in this module was from 2013, you may want to update
-your NUTS items by running the wizard again. 
+As the last RAMON file used in this module was from 2013, you may want
+to update your NUTS items by running the wizard again.
 
 Usage
 =====
 
-Only Administrator can manage NUTS list (it is not neccesary because
-it is an European convention) but any registered user can read them,
-in order to allow to assign them to partner object.
+Only Administrator can manage NUTS list (it is not neccesary because it
+is an European convention) but any registered user can read them, in
+order to allow to assign them to partner object.
 
 Bug Tracker
 ===========
@@ -94,25 +100,25 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Tecnativa
 * Agile Business Group
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Rafael Blasco <rafael.blasco@tecnativa.com>
-* Antonio Espinosa <antonio.espinosa@tecnativa.com>
-* Jairo Llopis <jairo.llopis@tecnativa.com>
-* David Vidal <david.vidal@tecnativa.com>
-* Simone Rubino <simone.rubino@agilebg.com>
-* Alexandre Díaz <alexandre.diaz@tecnativa.com>
-* Andrea Stirpe <a.stirpe@onestein.nl>
-* Eduardo López <elp@moduon.team>
+-  Rafael Blasco <rafael.blasco@tecnativa.com>
+-  Antonio Espinosa <antonio.espinosa@tecnativa.com>
+-  Jairo Llopis <jairo.llopis@tecnativa.com>
+-  David Vidal <david.vidal@tecnativa.com>
+-  Simone Rubino <simone.rubino@agilebg.com>
+-  Alexandre Díaz <alexandre.diaz@tecnativa.com>
+-  Andrea Stirpe <a.stirpe@onestein.nl>
+-  Eduardo López <elp@moduon.team>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 

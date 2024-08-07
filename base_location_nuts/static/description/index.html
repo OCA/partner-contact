@@ -378,9 +378,12 @@ ul.auto-toc {
 <li>NUTS L3: Normally substate or state level</li>
 <li>NUTS L4: Normally small region or province level</li>
 </ul>
-<p>This module allows to set the flag <em>Not updatable</em> in a NUTS region so that it gets no more updated nor deleted by the import wizard.</p>
-<p>Usually NUTS regions have to stay updated with the real ones, but the user may want to update a region’s field (name, parent, …) or create a new ones.
-With this module, flagging such records as <em>Not updatable</em> prevents them from being overwritten or deleted by the import wizard.</p>
+<p>This module allows to set the flag <em>Not updatable</em> in a NUTS region so
+that it gets no more updated nor deleted by the import wizard.</p>
+<p>Usually NUTS regions have to stay updated with the real ones, but the
+user may want to update a region’s field (name, parent, …) or create a
+new ones. With this module, flagging such records as <em>Not updatable</em>
+prevents them from being overwritten or deleted by the import wizard.</p>
 <p><strong>Table of contents</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -398,32 +401,35 @@ With this module, flagging such records as <em>Not updatable</em> prevents them 
 </div>
 <div class="section" id="installation">
 <h1><a class="toc-backref" href="#toc-entry-1">Installation</a></h1>
-<p>We recommend to install another addon (one for each country) in order to relate
-NUTS with states defined by each localization addon, for example:</p>
+<p>We recommend to install another addon (one for each country) in order to
+relate NUTS with states defined by each localization addon, for example:</p>
 <ul class="simple">
-<li>l10n_es_location_nuts : Spanish Provinces (NUTS level 4) related to Partner State</li>
-<li>l10n_de_location_nuts : German states (NUTS level 2) related to Partner State</li>
-<li>l10n_nl_location_nuts : Dutch provinces (NUTS level 3 and 4) related to Partner State</li>
+<li>l10n_es_location_nuts : Spanish Provinces (NUTS level 4) related to
+Partner State</li>
+<li>l10n_de_location_nuts : German states (NUTS level 2) related to
+Partner State</li>
+<li>l10n_nl_location_nuts : Dutch provinces (NUTS level 3 and 4) related
+to Partner State</li>
 </ul>
 </div>
 <div class="section" id="configuration">
 <h1><a class="toc-backref" href="#toc-entry-2">Configuration</a></h1>
-<p>After installation, a import wizard will popup to create NUTS items in Odoo.
-You can also run it manually from
-Contacts &gt; Configuration &gt; Localization &gt; Import NUTS 2024</p>
+<p>After installation, a import wizard will popup to create NUTS items in
+Odoo. You can also run it manually from Contacts &gt; Configuration &gt;
+Localization &gt; Import NUTS 2024</p>
 <p>This wizard will download from Europe ShowVoc service the metadata to
 build NUTS in Odoo. Each localization addon (l10n_es_location_nuts,
-l10n_de_location_nuts, …) will inherit this wizard and
-relate each NUTS item with states. So if you install a new localization addon
-you must re-build NUTS clicking this wizard again.</p>
-<p>As the last RAMON file used in this module was from 2013, you may want to update
-your NUTS items by running the wizard again.</p>
+l10n_de_location_nuts, …) will inherit this wizard and relate each
+NUTS item with states. So if you install a new localization addon you
+must re-build NUTS clicking this wizard again.</p>
+<p>As the last RAMON file used in this module was from 2013, you may want
+to update your NUTS items by running the wizard again.</p>
 </div>
 <div class="section" id="usage">
 <h1><a class="toc-backref" href="#toc-entry-3">Usage</a></h1>
-<p>Only Administrator can manage NUTS list (it is not neccesary because
-it is an European convention) but any registered user can read them,
-in order to allow to assign them to partner object.</p>
+<p>Only Administrator can manage NUTS list (it is not neccesary because it
+is an European convention) but any registered user can read them, in
+order to allow to assign them to partner object.</p>
 </div>
 <div class="section" id="bug-tracker">
 <h1><a class="toc-backref" href="#toc-entry-4">Bug Tracker</a></h1>
