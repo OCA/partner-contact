@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2017 Camptocamp
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="view_partner_form_role">
+        <field name="name">Partner form with roles</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="function" position="after">
+                <field
+                    name="role_ids"
+                    widget="many2many_tags"
+                    attrs="{'invisible': [('is_company','=', True)]}"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
