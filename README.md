@@ -55,6 +55,7 @@ addon | version | maintainers | summary
 [partner_contact_lang](partner_contact_lang/) | 16.0.1.0.0 |  | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 16.0.1.0.1 |  | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 16.0.1.0.1 |  | Add a page to contacts form to put personal information
+[partner_contact_role](partner_contact_role/) | 16.0.1.0.0 |  | Add roles to partners.
 [partner_contact_tags_in_popup](partner_contact_tags_in_popup/) | 16.0.1.0.0 | [![carmenbianca](https://github.com/carmenbianca.png?size=30px)](https://github.com/carmenbianca) | Display a contact's tags in the 'Contacts & Addresses' pop-up form view.
 [partner_contact_type_end_user](partner_contact_type_end_user/) | 16.0.1.0.0 | [![rousseldenis](https://github.com/rousseldenis.png?size=30px)](https://github.com/rousseldenis) | Adds a new contact type 'End User'
 [partner_country_state_required](partner_country_state_required/) | 16.0.1.0.0 |  | Partner Country State Required
