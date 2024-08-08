@@ -17,6 +17,16 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 
 #. module: partner_contact_role
+#: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__active
+msgid "Active"
+msgstr ""
+
+#. module: partner_contact_role
+#: model:ir.model.fields,help:partner_contact_role.field_res_partner_role__active
+msgid "By unchecking the active field, you may hide a role you will not use."
+msgstr ""
+
+#. module: partner_contact_role
 #: model:ir.model,name:partner_contact_role.model_res_partner
 msgid "Contact"
 msgstr ""
@@ -39,11 +49,6 @@ msgstr ""
 #. module: partner_contact_role
 #: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__id
 msgid "ID"
-msgstr ""
-
-#. module: partner_contact_role
-#: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role____last_update
-msgid "Last Modified on"
 msgstr ""
 
 #. module: partner_contact_role
