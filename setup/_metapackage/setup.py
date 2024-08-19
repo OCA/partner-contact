@@ -83,6 +83,7 @@ setuptools.setup(
         'odoo-addon-partner_vat_unique>=16.0dev,<16.1dev',
         'odoo-addon-purchase_supplier_rank>=16.0dev,<16.1dev',
         'odoo-addon-sale_customer_rank>=16.0dev,<16.1dev',
+        'odoo-addon-sale_partner_address_restrict>=16.0dev,<16.1dev',
         'odoo-addon-sale_partner_company_group>=16.0dev,<16.1dev',
     ],
     classifiers=[

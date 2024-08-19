@@ -96,6 +96,7 @@ addon | version | maintainers | summary
 [partner_vat_unique](partner_vat_unique/) | 16.0.1.0.0 |  | Module to make the VAT number unique for customers and suppliers.
 [purchase_supplier_rank](purchase_supplier_rank/) | 16.0.1.0.1 |  | Update Supplier Rank when creating a Purchase Order
 [sale_customer_rank](sale_customer_rank/) | 16.0.1.0.0 |  | Update Customer Rank when creating a Sale Order
+[sale_partner_address_restrict](sale_partner_address_restrict/) | 16.0.1.0.0 |  | Restrict addresses domain in the sales order form taking into account the partner selected
 [sale_partner_company_group](sale_partner_company_group/) | 16.0.1.0.0 |  | Adds the possibility to add a company group to a company
 
 [//]: # (end addons)
