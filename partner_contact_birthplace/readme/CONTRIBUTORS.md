@@ -1,0 +1,3 @@
+-  Simone Rubino \<<simone.rubino@agilebg.com>\> (\<<<http://www.agilebg.com/>\>)
+-  Nicolò Crisafulli \<<nicolo.crisafulli@agilebg.com>\> (\<<<http://www.agilebg.com/>\>)
+-  Giuseppe Borruso \<<gborruso@dinamicheaziendali.it>\> (\<<<https://www.dinamicheaziendali.it/>\>)
