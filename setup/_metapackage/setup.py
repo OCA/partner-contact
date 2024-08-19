@@ -76,6 +76,7 @@ setuptools.setup(
         'odoo-addon-partner_purchase_manager>=16.0dev,<16.1dev',
         'odoo-addon-partner_ref_unique>=16.0dev,<16.1dev',
         'odoo-addon-partner_second_lastname>=16.0dev,<16.1dev',
+        'odoo-addon-partner_shipping_policy>=16.0dev,<16.1dev',
         'odoo-addon-partner_stage>=16.0dev,<16.1dev',
         'odoo-addon-partner_subject_to_vat>=16.0dev,<16.1dev',
         'odoo-addon-partner_tier_validation>=16.0dev,<16.1dev',
