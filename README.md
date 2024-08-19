@@ -41,7 +41,7 @@ addon | version | maintainers | summary
 [partner_category_security](partner_category_security/) | 16.0.2.0.1 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner category security
 [partner_category_security_crm](partner_category_security_crm/) | 16.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner category security (crm extension)
 [partner_category_type](partner_category_type/) | 16.0.1.0.0 | [![JordiMForgeFlow](https://github.com/JordiMForgeFlow.png?size=30px)](https://github.com/JordiMForgeFlow) | Add a selection field 'Type' to classify Contact Tags.
-[partner_company_default](partner_company_default/) | 16.0.1.1.1 |  | Partner Company Default
+[partner_company_default](partner_company_default/) | 16.0.1.1.2 |  | Partner Company Default
 [partner_company_group](partner_company_group/) | 16.0.1.0.0 | [![luisg123v](https://github.com/luisg123v.png?size=30px)](https://github.com/luisg123v) | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 16.0.1.0.0 |  | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 16.0.1.1.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
