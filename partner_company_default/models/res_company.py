@@ -7,7 +7,7 @@ from odoo import api, models
 class ResCompany(models.Model):
     _inherit = "res.company"
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         self = self.with_context(creating_from_company=True)
-        return super().create(vals)
+        return super().create(vals_list)
