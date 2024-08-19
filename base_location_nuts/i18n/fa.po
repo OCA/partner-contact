@@ -64,35 +64,12 @@ msgid "Created on"
 msgstr "ایجاد شده در"
 
 #. module: base_location_nuts
-#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__current_country_id
-msgid "Current Country"
-msgstr ""
-
-#. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__display_name
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_country__display_name
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__display_name
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__display_name
 msgid "Display Name"
 msgstr "نام نمایشی"
-
-#. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:0
-#, python-format
-msgid "Downloaded file is not a valid XML file"
-msgstr ""
-
-#. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:0
-#, python-format
-msgid "Got an error %d when trying to download the file %s."
-msgstr ""
-
-#. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:0
-#, python-format
-msgid "Got an error when trying to download the file: %s."
-msgstr ""
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
@@ -114,18 +91,22 @@ msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.ui.menu,name:base_location_nuts.nuts_import_menu
-msgid "Import NUTS 2013"
+msgid "Import NUTS 2024"
 msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.nuts_import_action
+msgid "Import NUTS 2024 from SHOWVOC"
+msgstr ""
+
+#. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
-msgid "Import NUTS 2013 from RAMON"
+msgid "Import NUTS 2024 from ShowVoc"
 msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_nuts_import
-msgid "Import NUTS items from European RAMON service"
+msgid "Import NUTS items from European ShowVoc service"
 msgstr ""
 
 #. module: base_location_nuts
@@ -226,6 +207,12 @@ msgid "Parent Path"
 msgstr ""
 
 #. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:0
+#, python-format
+msgid "Partner NUTS by EU"
+msgstr ""
+
+#. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
 msgid "Search NUTS"
 msgstr ""
@@ -244,7 +231,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
 msgid ""
 "This wizard will download the lastest version of\n"
-"                NUTS 2013 from Europe RAMON metadata service.\n"
+"                NUTS 2024 from Europe ShowVoc service.\n"
 "                Updating or creating new NUTS entries if not\n"
 "                found already in the system, and DELETING MISSING\n"
 "                ENTRIES from new downloaded file.\n"
@@ -254,16 +241,9 @@ msgid ""
 msgstr ""
 
 #. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:0
-#, python-format
-msgid "Value not found for mandatory field %s"
-msgstr ""
-
-#. module: base_location_nuts
 #: model_terms:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
 msgid ""
 "You must click at import wizard to populate NUTS items\n"
 "        in Odoo database in:\n"
-"        Sales &gt; Configuration &gt; Address Book &gt; Localization &gt; "
-"Import NUTS 2013"
+"        Contacts &gt; Configuration &gt; Localization &gt; Import NUTS 2024"
 msgstr ""
