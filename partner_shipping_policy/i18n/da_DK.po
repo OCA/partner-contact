@@ -1,0 +1,54 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_shipping_policy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-03 08:34+0000\n"
+"PO-Revision-Date: 2024-04-03 08:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_shipping_policy
+#: model:ir.model.fields.selection,name:partner_shipping_policy.selection__res_partner__picking_policy__direct
+msgid "As soon as possible"
+msgstr "Hurtigst muligt"
+
+#. module: partner_shipping_policy
+#: model:ir.model,name:partner_shipping_policy.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: partner_shipping_policy
+#: model:ir.model,name:partner_shipping_policy.model_sale_order
+msgid "Sales Order"
+msgstr "Salgsordre"
+
+#. module: partner_shipping_policy
+#: model:ir.model.fields,field_description:partner_shipping_policy.field_res_partner__picking_policy
+#: model:ir.model.fields,field_description:partner_shipping_policy.field_res_users__picking_policy
+msgid "Shipping Policy"
+msgstr "Afsendelses måde"
+
+#. module: partner_shipping_policy
+#: model:ir.model.fields,help:partner_shipping_policy.field_res_partner__picking_policy
+#: model:ir.model.fields,help:partner_shipping_policy.field_res_users__picking_policy
+msgid ""
+"Shipping policy to use in this partner's sales orders. If you deliver all "
+"products at once, the delivery order will be scheduled based on the greatest"
+" product lead time. Otherwise, it will be based on the shortest."
+msgstr ""
+"Forsendelsespolitik til brug i denne partner salgsordrer. Hvis du levere alle "
+"produkter samtidigt, vil leveringsordren blive planlagt ud fra den længste"
+" produkt ledetid. Ellers vil den være baseret på den korteste."
+
+#. module: partner_shipping_policy
+#: model:ir.model.fields.selection,name:partner_shipping_policy.selection__res_partner__picking_policy__one
+msgid "When all products are ready"
+msgstr "Når alle produkter er klar"
