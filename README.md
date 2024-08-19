@@ -67,7 +67,7 @@ addon | version | maintainers | summary
 [partner_industry_secondary](partner_industry_secondary/) | 13.0.1.0.0 |  | Add secondary partner industries
 [partner_iterative_archive](partner_iterative_archive/) | 13.0.1.0.0 |  | Archive all contacts when parent is archived
 [partner_label](partner_label/) | 13.0.1.0.1 |  | Print partner labels
-[partner_manual_rank](partner_manual_rank/) | 13.0.1.0.1 |  | Be able to manually flag partners as customer or supplier.
+[partner_manual_rank](partner_manual_rank/) | 13.0.1.0.2 |  | Be able to manually flag partners as customer or supplier.
 [partner_multi_relation](partner_multi_relation/) | 13.0.1.1.0 |  | Partner Relations
 [partner_phone_extension](partner_phone_extension/) | 13.0.1.0.1 |  | Partner Phone Number Extension
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 13.0.1.0.0 |  | Track the time and days your partners expect phone calls
