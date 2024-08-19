@@ -37,7 +37,7 @@ addon | version | maintainers | summary
 [partner_category_security](partner_category_security/) | 14.0.1.0.1 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner category security
 [partner_category_security_crm](partner_category_security_crm/) | 14.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner category security (crm extension)
 [partner_coc](partner_coc/) | 14.0.1.0.1 | [![bosd](https://github.com/bosd.png?size=30px)](https://github.com/bosd) | Adds field 'Chamber Of Commerce Registration Number'
-[partner_company_group](partner_company_group/) | 14.0.1.1.1 |  | Adds the possibility to add a company group to a company
+[partner_company_group](partner_company_group/) | 14.0.1.2.0 |  | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 14.0.1.0.1 |  | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 14.0.1.0.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
 [partner_contact_address_default](partner_contact_address_default/) | 14.0.1.1.0 |  | Set a default delivery and invoice address for contacts
