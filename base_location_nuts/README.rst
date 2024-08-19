@@ -60,15 +60,18 @@ NUTS with states defined by each localization addon, for example:
 Configuration
 =============
 
-After installation, you must click at import wizard to populate NUTS items
-in Odoo database in:
-Contacts > Configuration > Localization > Import NUTS 2013
+After installation, a import wizard will popup to create NUTS items in Odoo.
+You can also run it manually from
+Contacts > Configuration > Localization > Import NUTS 2024
 
-This wizard will download from Europe RAMON service the metadata to
+This wizard will download from Europe ShowVoc service the metadata to
 build NUTS in Odoo. Each localization addon (l10n_es_location_nuts,
 l10n_de_location_nuts, ...) will inherit this wizard and
 relate each NUTS item with states. So if you install a new localization addon
 you must re-build NUTS clicking this wizard again.
+
+As the last RAMON file used in this module was from 2013, you may want to update
+your NUTS items by running the wizard again. 
 
 Usage
 =====
@@ -106,6 +109,7 @@ Contributors
 * Simone Rubino <simone.rubino@agilebg.com>
 * Alexandre Díaz <alexandre.diaz@tecnativa.com>
 * Andrea Stirpe <a.stirpe@onestein.nl>
+* Eduardo López <elp@moduon.team>
 
 Maintainers
 ~~~~~~~~~~~
@@ -119,6 +123,17 @@ This module is maintained by the OCA.
 OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
+
+.. |maintainer-rafaelbn| image:: https://github.com/rafaelbn.png?size=40px
+    :target: https://github.com/rafaelbn
+    :alt: rafaelbn
+.. |maintainer-edlopen| image:: https://github.com/edlopen.png?size=40px
+    :target: https://github.com/edlopen
+    :alt: edlopen
+
+Current `maintainers <https://odoo-community.org/page/maintainer-role>`__:
+
+|maintainer-rafaelbn| |maintainer-edlopen| 
 
 This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/14.0/base_location_nuts>`_ project on GitHub.
 
