@@ -17,7 +17,7 @@ class ResPartnerIndustry(models.Model):
         store=True,
         recursive=True,
     )
-    parent_path = fields.Char(index=True)
+    parent_path = fields.Char(index=True, unaccent=False)
     parent_id = fields.Many2one(
         comodel_name="res.partner.industry", index=True, ondelete="cascade"
     )
