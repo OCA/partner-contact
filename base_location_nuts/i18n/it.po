@@ -9,21 +9,21 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-24 03:46+0000\n"
-"PO-Revision-Date: 2019-10-27 15:33+0000\n"
-"Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
+"PO-Revision-Date: 2024-08-26 11:06+0000\n"
+"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.8\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__allowed_nut_ids
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__allowed_nut_ids
 msgid "Allowed nuts"
-msgstr ""
+msgstr "NUTS consentiti"
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
@@ -93,22 +93,22 @@ msgstr "Importa"
 #. module: base_location_nuts
 #: model:ir.ui.menu,name:base_location_nuts.nuts_import_menu
 msgid "Import NUTS 2024"
-msgstr ""
+msgstr "Importa NUTS 2024"
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.nuts_import_action
 msgid "Import NUTS 2024 from SHOWVOC"
-msgstr ""
+msgstr "Importa NUTS 2024 da SHOWVOC"
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
 msgid "Import NUTS 2024 from ShowVoc"
-msgstr ""
+msgstr "Importa NUTS 2024 da ShowVoc"
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_nuts_import
 msgid "Import NUTS items from European ShowVoc service"
-msgstr ""
+msgstr "Importa elementi NUTS dal servizio European ShowVoc"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import____last_update
@@ -139,7 +139,7 @@ msgstr "Livello"
 #. module: base_location_nuts
 #: model:ir.model.fields,help:base_location_nuts.field_res_country__state_level
 msgid "Level for the state NUTS category."
-msgstr ""
+msgstr "Livello per la categoria livello NUTS."
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_country_form
@@ -200,18 +200,18 @@ msgstr "Non aggiornabile"
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__parent_id
 msgid "Parent"
-msgstr ""
+msgstr "Genitore"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__parent_path
 msgid "Parent Path"
-msgstr ""
+msgstr "Percorso genitore"
 
 #. module: base_location_nuts
 #: code:addons/base_location_nuts/wizard/nuts_import.py:0
 #, python-format
 msgid "Partner NUTS by EU"
-msgstr ""
+msgstr "Partner NUTS da EU"
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
@@ -226,7 +226,7 @@ msgstr "Stato"
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_country__state_level
 msgid "State Level"
-msgstr ""
+msgstr "Livello stato"
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
@@ -240,6 +240,14 @@ msgid ""
 "                Update or deletion is prevented for NUTS entries with the "
 "flag 'Not updatable'."
 msgstr ""
+"Questa procedura guidata scaricherà l'ultima versione del\n"
+"                NUTS 2024 dal servizio Europe ShowVoc.\n"
+"                Aggiornando o creando nuove registrazioni NUTS che\n"
+"                non sono giò presenti nel sistema, ed ELIMINANDO QUELLE\n"
+"                MANCANTI dai nuovi file scaricati.\n"
+"\n"
+"                L'aggiornamento o la cancellazione sono bloccate per le "
+"registrazioni NUTS con l'opzione 'Non aggiornabile'."
 
 #. module: base_location_nuts
 #: model_terms:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
@@ -248,6 +256,11 @@ msgid ""
 "        in Odoo database in:\n"
 "        Contacts &gt; Configuration &gt; Localization &gt; Import NUTS 2024"
 msgstr ""
+"Bisogna fare clic sulla procedura guidata di importazione per compilare gli "
+"elementi NUTS\n"
+"        nel database Odoo in:\n"
+"        Contatti  &gt; Configuratzione  &gt; Localizazione  &gt; "
+"Importazione NUTS 2024"
 
 #, python-format
 #~ msgid "Downloaded file is not a valid XML file"
