@@ -34,11 +34,11 @@
                 >
                     <group colspan="4">
                         <field name="commercial_partner_id" invisible="1" />
-                        <div class="oe_grey">
-                            <div
-                            >You can force contact, delivery and invoice address for this contacts.</div>
-                            <div
-                            >If you keep empty this fields the Odoo's behavior will be normal</div>
+                        <div class="oe_grey" colspan="4">
+                            <p>
+                                You can force contact, delivery and invoice address for this contact.
+                                If you keep these fields empty Odoo's default behavior will apply
+                            </p>
                         </div>
                     </group>
                     <group colspan="4">
