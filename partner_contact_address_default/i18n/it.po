@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-03-19 15:35+0000\n"
+"PO-Revision-Date: 2024-09-02 09:06+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. module: partner_contact_address_default
 #: model:ir.model,name:partner_contact_address_default.model_res_partner
@@ -33,13 +33,6 @@ msgid "Force addresses"
 msgstr "Forza indirizzi"
 
 #. module: partner_contact_address_default
-#: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
-msgid "If you keep empty this fields the Odoo's behavior will be normal"
-msgstr ""
-"Se si lascia questo campo vuoto, il funzionamento di Odoo sarà quello "
-"standard"
-
-#. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_invoice_id
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_invoice_id
 msgid "Invoice address"
@@ -53,10 +46,26 @@ msgstr "Indirizzo di spedizione"
 
 #. module: partner_contact_address_default
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
-msgid "You can force contact, delivery and invoice address for this contacts."
+msgid ""
+"You can force contact, delivery and invoice address for this contact.\n"
+"                            If you keep these fields empty, Odoo's default "
+"behavior will apply."
 msgstr ""
-"Si possono forzare gli indirizzi di contatto, spedizione e fatturazione per "
-"questi contatti."
+"Si può forzare il contatto, consegna e indirizzo di fatturazione per questo "
+"contatto.\n"
+"                            Se si lascia questo campo vuoto, si applicherà "
+"il comportamento standard di Odoo."
+
+#~ msgid "If you keep empty this fields the Odoo's behavior will be normal"
+#~ msgstr ""
+#~ "Se si lascia questo campo vuoto, il funzionamento di Odoo sarà quello "
+#~ "standard"
+
+#~ msgid ""
+#~ "You can force contact, delivery and invoice address for this contacts."
+#~ msgstr ""
+#~ "Si possono forzare gli indirizzi di contatto, spedizione e fatturazione "
+#~ "per questi contatti."
 
 #~ msgid "You can force and delivery and invoice address for this contacts."
 #~ msgstr ""
