@@ -33,11 +33,6 @@ msgid "Force addresses"
 msgstr "Force les adresses"
 
 #. module: partner_contact_address_default
-#: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
-msgid "If you keep empty this fields the Odoo's behavior will be normal"
-msgstr "Si vous laissez ces champs vides, le comportement d'Odoo sera normal"
-
-#. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_invoice_id
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_invoice_id
 msgid "Invoice address"
@@ -51,8 +46,15 @@ msgstr "Adresse de livraison"
 
 #. module: partner_contact_address_default
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
-msgid "You can force contact, delivery and invoice address for this contacts."
+msgid ""
+"You can force contact, delivery and invoice address for this contact.\n"
+"                            If you keep these fields empty, Odoo's default "
+"behavior will apply."
 msgstr ""
+
+#~ msgid "If you keep empty this fields the Odoo's behavior will be normal"
+#~ msgstr ""
+#~ "Si vous laissez ces champs vides, le comportement d'Odoo sera normal"
 
 #~ msgid "You can force and delivery and invoice address for this contacts."
 #~ msgstr ""

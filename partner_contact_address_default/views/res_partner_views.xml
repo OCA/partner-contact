@@ -10,19 +10,19 @@
                         <field
                             name="partner_delivery_id"
                             domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'delivery')]"
-                            widget="selection"
+                            options="{'no_open': True, 'no_create': True}"
                         />
                         <field
                             name="partner_invoice_id"
                             domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'invoice')]"
-                            widget="selection"
+                            options="{'no_open': True, 'no_create': True}"
                         />
                     </group>
                     <group>
                         <field
                             name="partner_contact_id"
                             domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'contact')]"
-                            widget="selection"
+                            options="{'no_open': True, 'no_create': True}"
                         />
                     </group>
                 </group>
@@ -34,11 +34,10 @@
                 >
                     <group colspan="4">
                         <field name="commercial_partner_id" invisible="1" />
-                        <div class="oe_grey">
-                            <div
-                            >You can force contact, delivery and invoice address for this contacts.</div>
-                            <div
-                            >If you keep empty this fields the Odoo's behavior will be normal</div>
+                        <div class="oe_grey" colspan="4">
+                            <p
+                            >You can force contact, delivery and invoice address for this contact.
+                            If you keep these fields empty, Odoo's default behavior will apply.</p>
                         </div>
                     </group>
                     <group colspan="4">
