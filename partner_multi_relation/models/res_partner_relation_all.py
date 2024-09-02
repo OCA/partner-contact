@@ -94,7 +94,8 @@ class ResPartnerRelationAll(models.Model):
     )
     active = fields.Boolean(
         readonly=True,
-        help="Records with date_end in the past are inactive",
+        help="Records with date_end in the past are inactive, "
+        " as well as records for inactive partners.",
     )
     any_partner_id = fields.Many2many(
         comodel_name="res.partner",
@@ -152,10 +153,16 @@ CREATE OR REPLACE VIEW %%(table)s AS
          THEN bas.type_id * 2
          ELSE (bas.type_id * 2) + 1
      END as type_selection_id,
-     (bas.date_end IS NULL OR bas.date_end >= current_date) AS active
+     (
+        (bas.date_end IS NULL OR bas.date_end >= current_date)
+        AND this_partner.active
+        AND other_partner.active
+     ) AS active
      %%(additional_view_fields)s
  FROM base_selection bas
  JOIN res_partner_relation_type typ ON (bas.type_id = typ.id)
+ JOIN res_partner this_partner ON (bas.this_partner_id = this_partner.id)
+ JOIN res_partner other_partner ON (bas.other_partner_id = other_partner.id)
  %%(additional_tables)s
         """ % {
             "union_select": union_select
@@ -227,7 +234,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
                     this.other_partner_id.name,
                 ),
             )
-            for this in self
+            for this in self.with_context(test_active=False)
         ]
 
     @api.onchange("type_selection_id")
