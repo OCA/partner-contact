@@ -7,6 +7,10 @@ from odoo.exceptions import ValidationError
 from odoo.osv.expression import AND
 
 
+def record_name(record):
+    return f"{record.display_name} (id {record.id})"
+
+
 class ResPartnerRelation(models.Model):
     """Model res.partner.relation is used to describe all links or relations
     between partners in the database.
@@ -435,6 +439,10 @@ class ResPartnerRelation(models.Model):
             if record.search(domain):
                 raise ValidationError(
                     self.env._(
-                        "There is already a similar relation with overlapping dates"
+                        "%(left_partner)s already has a %(connection_type)s"
+                        " relation with %(right_partner)s with overlapping dates",
+                        left_partner=record_name(record.left_partner_id),
+                        connection_type=record.type_id.display_name,
+                        right_partner=record_name(record.right_partner_id),
                     )
                 )
