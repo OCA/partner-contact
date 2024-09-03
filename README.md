@@ -92,6 +92,7 @@ addon | version | maintainers | summary
 [partner_second_lastname](partner_second_lastname/) | 16.0.1.0.2 |  | Have split first and second lastnames
 [partner_shipping_policy](partner_shipping_policy/) | 16.0.1.0.0 |  | Define shipping policy at partners level.
 [partner_stage](partner_stage/) | 16.0.1.0.1 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Add lifecycle Stages to Partners
+[partner_store](partner_store/) | 16.0.1.0.0 | [![wouitmil](https://github.com/wouitmil.png?size=30px)](https://github.com/wouitmil) | Add store type to Partners
 [partner_subject_to_vat](partner_subject_to_vat/) | 16.0.1.0.0 | [![victor-champonnois](https://github.com/victor-champonnois.png?size=30px)](https://github.com/victor-champonnois) | Record whether a company is subject to VAT.
 [partner_tier_validation](partner_tier_validation/) | 16.0.1.0.1 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Support a tier validation process for Contacts
 [partner_tz](partner_tz/) | 16.0.1.0.0 |  | Remove partner timezone default value and display on form
