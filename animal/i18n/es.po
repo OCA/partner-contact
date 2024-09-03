@@ -329,7 +329,6 @@ msgstr "Ícono para indicar una actividad de excepción."
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_needaction
-#: model:ir.model.fields,help:animal.field_animal__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "Si está marcado, nuevos mensajes requieren tu atención."
 
@@ -460,18 +459,13 @@ msgstr "Número de errores"
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Número de mensajes que requieren una acción"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Número de mensajes con error de entrega"
-
-#. module: animal
-#: model:ir.model.fields,help:animal.field_animal__message_unread_counter
-msgid "Number of unread messages"
-msgstr "Número de mensajes sin leer"
 
 #. module: animal
 #: model:animal.breed,name:animal.pomeranian
@@ -563,16 +557,6 @@ msgid "Type of the exception activity on record."
 msgstr "Tipo de actividad de excepción registrada."
 
 #. module: animal
-#: model:ir.model.fields,field_description:animal.field_animal__message_unread
-msgid "Unread Messages"
-msgstr "Nuevos mensajes"
-
-#. module: animal
-#: model:ir.model.fields,field_description:animal.field_animal__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Contador de mensajes sin leer"
-
-#. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__website_message_ids
 msgid "Website Messages"
 msgstr "Mensajes del sitio Web"
@@ -591,6 +575,18 @@ msgstr "Peso (en kg)"
 #: model:animal.breed,name:animal.yorkshire_terrier
 msgid "Yorkshire Terrier"
 msgstr "Yorkshire Terrier"
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Número de mensajes que requieren una acción"
+
+#~ msgid "Number of unread messages"
+#~ msgstr "Número de mensajes sin leer"
+
+#~ msgid "Unread Messages"
+#~ msgstr "Nuevos mensajes"
+
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Contador de mensajes sin leer"
 
 #~ msgid "SMS Delivery error"
 #~ msgstr "Error de entrega de SMS"

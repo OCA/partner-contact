@@ -330,7 +330,6 @@ msgstr ""
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_needaction
-#: model:ir.model.fields,help:animal.field_animal__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
@@ -461,17 +460,12 @@ msgstr ""
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_needaction_counter
-msgid "Number of messages which requires an action"
+msgid "Number of messages requiring action"
 msgstr ""
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
-
-#. module: animal
-#: model:ir.model.fields,help:animal.field_animal__message_unread_counter
-msgid "Number of unread messages"
 msgstr ""
 
 #. module: animal
@@ -557,16 +551,6 @@ msgstr ""
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
-
-#. module: animal
-#: model:ir.model.fields,field_description:animal.field_animal__message_unread
-msgid "Unread Messages"
-msgstr ""
-
-#. module: animal
-#: model:ir.model.fields,field_description:animal.field_animal__message_unread_counter
-msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: animal
