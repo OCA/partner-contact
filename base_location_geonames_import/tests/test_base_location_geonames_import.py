@@ -177,6 +177,42 @@ class TestBaseLocationGeonamesImport(common.TransactionCase):
                 "Incorrect state for {} {}".format(state_name, zip_code),
             )
 
+    def test_import_duplicated_state_code(self):
+        country = self.env.ref("base.bg")
+        self.wizard.country_ids = [(6, 0, country.ids)]
+        parsed_csv = [
+            [
+                "BG",
+                "8500",
+                "Ajtos",
+                "Burgas",
+                "BGS",
+                "Ajtos",
+                "BGS01",
+                "42.7",
+                "27.25",
+                "4",
+            ],
+            [
+                "BG",
+                "8518",
+                "Ljaskovo",
+                "Burgos",
+                "BGS",
+                "Ajtos",
+                "BGS02",
+                "42.7333",
+                "27.3",
+                "4",
+            ],
+        ]
+        self.wizard._process_csv(parsed_csv, country)
+        self.wizard._process_csv(parsed_csv, country)
+        cities = self.env["res.city"].search([("country_id", "=", country.id)])
+        self.assertEqual(len(cities), 2)
+        states = self.env["res.country.state"].search([("country_id", "=", country.id)])
+        self.assertEqual(len(states), 1)
+
     def test_import_countries(self):
         max_import = 1
         self.wizard_2.with_context(max_import=max_import).run_import()
