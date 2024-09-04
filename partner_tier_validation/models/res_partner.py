@@ -48,3 +48,8 @@ class ResPartner(models.Model):
         if "stage_id" in vals and vals.get("stage_id") in self._state_from:
             self.restart_validation()
         return res
+
+    def _get_tier_validation_readonly_domain(self):
+        if self.env.context.get("form_view_ref") == "base.view_partner_simple_form":
+            return ""
+        return super()._get_tier_validation_readonly_domain()

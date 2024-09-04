@@ -2,7 +2,7 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 from odoo.exceptions import ValidationError
-from odoo.tests import common, tagged
+from odoo.tests import Form, common, tagged
 
 
 @tagged("-at_install", "post_install")
@@ -77,11 +77,16 @@ class TestPartnerTierValidation(common.TransactionCase):
         )
         self.assertEqual(contact.state, "confirmed")
 
-        # Change company type to retrigger validation
+        # Change company type to trigger validation
         contact.write({"company_type": "person"})
         self.assertEqual(
             contact.state, "draft", "Change company type sets back to draft"
         )
+        with Form(
+            contact.with_context(form_view_ref="base.view_partner_simple_form"),
+            view="base.view_partner_simple_form",
+        ) as c:
+            c.email = "test@company.test"
 
     def test_no_validation_res_partner(self):
         """
