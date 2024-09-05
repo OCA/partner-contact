@@ -12,6 +12,7 @@
                     name="partner_company_type_id"
                     options='{"no_open": True}'
                     attrs="{'invisible': [('is_company', '=', False)]}"
+                    domain="[ '|', ('country_ids', '=', False), ('country_ids', 'in', [country_id]), '|', ('state_ids', '=', False), ('state_ids', 'in', [state_id])]"
                 />
             </field>
         </field>
