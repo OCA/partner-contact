@@ -2,11 +2,12 @@
 # Author: Sébastien BEAU <sebastien.beau@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import models
+from odoo import _, models
+from odoo.exceptions import UserError
 
 
-def split_char(char, output_number, size):
-    words = char.split(" ")
+def split_char(char, output_number, size, strict=False):
+    words = char.strip().split(" ")
     result = []
     word = words.pop(0)
     for index in range(0, output_number):
@@ -19,13 +20,18 @@ def split_char(char, output_number, size):
             else:
                 result[index] += " %s" % word
                 word = ""
+    if words and strict:
+        raise UserError(
+            _("The address is too long following word can not be processed '%s'")
+            % " ".join(words)
+        )
     return result
 
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    def _get_split_address(self, output_number, max_size):
+    def _get_split_address(self, output_number, max_size, strict=False):
         """This method allows to get a number of street fields according to
         your choice. Default is 2 large fields in Odoo (128 chars).
         In some countries you may use 3 or 4 shorter street fields.
@@ -43,6 +49,8 @@ class ResPartner(models.Model):
             result[1] = street2
             return result
         elif len(street) <= max_size:
-            return [street] + split_char(street2, output_number - 1, max_size)
+            return [street] + split_char(street2, output_number - 1, max_size, strict)
         else:
-            return split_char("{} {}".format(street, street2), output_number, max_size)
+            return split_char(
+                "{} {}".format(street, street2), output_number, max_size, strict
+            )
