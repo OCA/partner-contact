@@ -1,0 +1,15 @@
+CY	KY1-1000	Airport	Grand Cayman	KY1	Grand Cayman	KY1	Grand Cayman	KY1	0	0	0
+CY	KY1-1600	Bodden Town	Grand Cayman	KY1	Grand Cayman	KY1	Grand Cayman	KY1	0	0	0
+CY	KY1-1800	East End	Grand Cayman	KY1	Grand Cayman	KY1	Grand Cayman	KY1	0	0	0
+CY	KY1-1100	Geoge Town	Grand Cayman	KY1	Grand Cayman	KY1	Grand Cayman	KY1	0	0	0
+CY	KY1-0002	Gun Bay	Grand Cayman	KY1	Grand Cayman	KY1	Grand Cayman	KY1	0	0	0
+CY	KY1-1400	Hell	Grand Cayman	KY1	Grand Cayman	KY1	Grand Cayman	KY1	0	0	0
+CY	KY1-1700	North Side	Grand Cayman	KY1	Grand Cayman	KY1	Grand Cayman	KY1	0	0	0
+CY	KY1-9007	Ogier	Grand Cayman	KY1	Grand Cayman	KY1	Grand Cayman	KY1	0	0	0
+CY	KY1-0001	Old Man Bay	Grand Cayman	KY1	Grand Cayman	KY1	Grand Cayman	KY1	0	0	0
+CY	KY1-1500	Sabannah	Grand Cayman	KY1	Grand Cayman	KY1	Grand Cayman	KY1	0	0	0
+CY	KY1-1200	Seven Mile	Grand Cayman	KY1	Grand Cayman	KY1	Grand Cayman	KY1	0	0	0
+CY	KY1-9000	Unique Post Code	Grand Cayman	KY1	Grand Cayman	KY1	Grand Cayman	KY1	0	0	0
+CY	KY1-1300	West Bay	Grand Cayman	KY1	Grand Cayman	KY1	Grand Cayman	KY1	0	0	0
+CY	KY2-2000	Cayman Brac	Cayman Brac	KY2	Cayman Brac	KY2	Cayman Brac	KY2	0	0	0
+CY	KY3-2500	Little Cayman	Little Cayman	KY3	Little Cayman	KY3	Little Cayman	KY3	0	0	0
