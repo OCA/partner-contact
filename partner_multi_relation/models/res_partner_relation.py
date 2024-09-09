@@ -6,6 +6,13 @@ from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
+def record_name(record):
+    return "%(record_name)s (id %(record_id)s)" % {
+        "record_name": record.display_name,
+        "record_id": record.id,
+    }
+
+
 class ResPartnerRelation(models.Model):
     """Model res.partner.relation is used to describe all links or relations
     between partners in the database.
@@ -152,6 +159,13 @@ class ResPartnerRelation(models.Model):
                     ("date_start", "<=", record.date_end),
                 ]
             if record.search(domain):
-                raise ValidationError(
-                    _("There is already a similar relation with " "overlapping dates")
+                partner_message = _(
+                    "%(left_partner)s already has a %(connection_type)s"
+                    " relation with %(right_partner)s with overlapping dates"
                 )
+                message = partner_message % {
+                    "left_partner": record_name(record.left_partner_id),
+                    "connection_type": record.type_id.display_name,
+                    "right_partner": record_name(record.right_partner_id),
+                }
+                raise ValidationError(message)
