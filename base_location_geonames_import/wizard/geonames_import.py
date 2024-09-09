@@ -134,7 +134,7 @@ class CityZipGeonamesImport(models.TransientModel):
                 )
             }
         # States
-        state_vals_set = set()
+        state_vals_dict = dict()
         state_dict = {}
         for i, row in enumerate(parsed_csv):
             if max_import and i == max_import:
@@ -145,14 +145,18 @@ class CityZipGeonamesImport(models.TransientModel):
                 state = states_map.get(code)
             if not state:
                 state_vals = self.prepare_state(row, country)
-                state_vals_set.add(
-                    (state_vals["name"], state_vals["code"], state_vals["country_id"])
-                )
+                key = (state_vals["code"], state_vals["country_id"])
+                if key not in state_vals_dict:
+                    state_vals_dict[key] = (
+                        state_vals["name"],
+                        state_vals["code"],
+                        state_vals["country_id"],
+                    )
             else:
                 state_dict[state.code] = state
         state_vals_list = [
             {"name": name, "code": code, "country_id": country_id}
-            for name, code, country_id in state_vals_set
+            for name, code, country_id in state_vals_dict.values()
         ]
         logger.info("Importing %d states", len(state_vals_list))
         created_states = self.env["res.country.state"].create(state_vals_list)
