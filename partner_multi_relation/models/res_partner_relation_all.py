@@ -54,7 +54,7 @@ class ResPartnerRelationAll(models.Model):
     _order = "this_partner_id, type_selection_id, date_end desc, date_start desc"
     _rec_names_search = [
         "this_partner_id.name",
-        "type_selection_id.display_name",
+        "type_selection_id.name",
         "other_partner_id.name",
     ]
 
