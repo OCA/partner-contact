@@ -1,0 +1,922 @@
+GR	104 31	Athens	Attica	AT					0	0	0
+GR	104 32	Athens	Attica	AT					0	0	0
+GR	104 33	Athens	Attica	AT					0	0	0
+GR	104 34	Athens	Attica	AT					0	0	0
+GR	104 35	Athens	Attica	AT					0	0	0
+GR	104 36	Athens	Attica	AT					0	0	0
+GR	104 37	Athens	Attica	AT					0	0	0
+GR	104 38	Athens	Attica	AT					0	0	0
+GR	104 39	Athens	Attica	AT					0	0	0
+GR	104 40	Athens	Attica	AT					0	0	0
+GR	104 41	Athens	Attica	AT					0	0	0
+GR	104 42	Athens	Attica	AT					0	0	0
+GR	104 43	Athens	Attica	AT					0	0	0
+GR	104 44	Athens	Attica	AT					0	0	0
+GR	104 45	Athens	Attica	AT					0	0	0
+GR	104 46	Athens	Attica	AT					0	0	0
+GR	104 47	Athens	Attica	AT					0	0	0
+GR	105 51	Athens	Attica	AT					0	0	0
+GR	105 52	Athens	Attica	AT					0	0	0
+GR	105 53	Athens	Attica	AT					0	0	0
+GR	105 54	Athens	Attica	AT					0	0	0
+GR	105 55	Athens	Attica	AT					0	0	0
+GR	105 56	Athens	Attica	AT					0	0	0
+GR	105 57	Athens	Attica	AT					0	0	0
+GR	105 58	Athens	Attica	AT					0	0	0
+GR	105 59	Athens	Attica	AT					0	0	0
+GR	105 60	Athens	Attica	AT					0	0	0
+GR	105 61	Athens	Attica	AT					0	0	0
+GR	105 62	Athens	Attica	AT					0	0	0
+GR	105 63	Athens	Attica	AT					0	0	0
+GR	105 64	Athens	Attica	AT					0	0	0
+GR	106 71	Athens	Attica	AT					0	0	0
+GR	106 72	Athens	Attica	AT					0	0	0
+GR	106 73	Athens	Attica	AT					0	0	0
+GR	106 74	Athens	Attica	AT					0	0	0
+GR	106 75	Athens	Attica	AT					0	0	0
+GR	106 76	Athens	Attica	AT					0	0	0
+GR	106 77	Athens	Attica	AT					0	0	0
+GR	106 78	Athens	Attica	AT					0	0	0
+GR	106 79	Athens	Attica	AT					0	0	0
+GR	106 80	Athens	Attica	AT					0	0	0
+GR	106 81	Athens	Attica	AT					0	0	0
+GR	106 82	Athens	Attica	AT					0	0	0
+GR	106 83	Athens	Attica	AT					0	0	0
+GR	111 41	Athens	Attica	AT					0	0	0
+GR	111 42	Athens	Attica	AT					0	0	0
+GR	111 43	Athens	Attica	AT					0	0	0
+GR	111 44	Athens	Attica	AT					0	0	0
+GR	111 45	Athens	Attica	AT					0	0	0
+GR	112 51	Athens	Attica	AT					0	0	0
+GR	112 52	Athens	Attica	AT					0	0	0
+GR	112 53	Athens	Attica	AT					0	0	0
+GR	112 54	Athens	Attica	AT					0	0	0
+GR	112 55	Athens	Attica	AT					0	0	0
+GR	112 56	Athens	Attica	AT					0	0	0
+GR	112 57	Athens	Attica	AT					0	0	0
+GR	113 61	Athens	Attica	AT					0	0	0
+GR	113 62	Athens	Attica	AT					0	0	0
+GR	113 63	Athens	Attica	AT					0	0	0
+GR	113 64	Athens	Attica	AT					0	0	0
+GR	114 71	Athens	Attica	AT					0	0	0
+GR	114 72	Athens	Attica	AT					0	0	0
+GR	114 73	Athens	Attica	AT					0	0	0
+GR	114 74	Athens	Attica	AT					0	0	0
+GR	114 75	Athens	Attica	AT					0	0	0
+GR	114 76	Athens	Attica	AT					0	0	0
+GR	115 21	Athens	Attica	AT					0	0	0
+GR	115 22	Athens	Attica	AT					0	0	0
+GR	115 23	Athens	Attica	AT					0	0	0
+GR	115 24	Athens	Attica	AT					0	0	0
+GR	115 25	Athens	Attica	AT					0	0	0
+GR	115 26	Athens	Attica	AT					0	0	0
+GR	115 27	Athens	Attica	AT					0	0	0
+GR	115 28	Athens	Attica	AT					0	0	0
+GR	116 31	Athens	Attica	AT					0	0	0
+GR	116 32	Athens	Attica	AT					0	0	0
+GR	116 33	Athens	Attica	AT					0	0	0
+GR	116 34	Athens	Attica	AT					0	0	0
+GR	116 35	Athens	Attica	AT					0	0	0
+GR	116 36	Athens	Attica	AT					0	0	0
+GR	117 41	Athens	Attica	AT					0	0	0
+GR	117 42	Athens	Attica	AT					0	0	0
+GR	117 43	Athens	Attica	AT					0	0	0
+GR	117 44	Athens	Attica	AT					0	0	0
+GR	117 45	Athens	Attica	AT					0	0	0
+GR	118 51	Athens	Attica	AT					0	0	0
+GR	118 52	Athens	Attica	AT					0	0	0
+GR	118 53	Athens	Attica	AT					0	0	0
+GR	118 54	Athens	Attica	AT					0	0	0
+GR	118 55	Athens	Attica	AT					0	0	0
+GR	121 37	Peristeri	Attica	AT					0	0	0
+GR	122 41	Aigaleo	Attica	AT					0	0	0
+GR	122 42	Aigaleo	Attica	AT					0	0	0
+GR	122 43	Aigaleo	Attica	AT					0	0	0
+GR	122 44	Aigaleo	Attica	AT					0	0	0
+GR	123 51	Agia Varvara	Attica	AT					0	0	0
+GR	124 61	Chaidari	Attica	AT					0	0	0
+GR	124 62	Chaidari	Attica	AT					0	0	0
+GR	131 21	Ilion, Greece	Attica	AT					0	0	0
+GR	131 22	Ilion, Greece	Attica	AT					0	0	0
+GR	131 23	Ilion, Greece	Attica	AT					0	0	0
+GR	132 31	Petroupoli	Attica	AT					0	0	0
+GR	133 41	Ano Liosia	Attica	AT					0	0	0
+GR	133 42	Ano Liosia	Attica	AT					0	0	0
+GR	133 43	Ano Liosia	Attica	AT					0	0	0
+GR	133 44	Ano Liosia	Attica	AT					0	0	0
+GR	133 45	Fyli	Attica	AT					0	0	0
+GR	134 51	Kamatero	Attica	AT					0	0	0
+GR	135 01	Zefyri	Attica	AT					0	0	0
+GR	135 61	Agioi Anargyroi	Attica	AT					0	0	0
+GR	135 62	Agioi Anargyroi	Attica	AT					0	0	0
+GR	136 71	Acharnes	Attica	AT					0	0	0
+GR	136 72	Acharnes	Attica	AT					0	0	0
+GR	136 73	Acharnes	Attica	AT					0	0	0
+GR	136 74	Acharnes	Attica	AT					0	0	0
+GR	136 75	Acharnes	Attica	AT					0	0	0
+GR	136 76	Thrakomakedónes	Attica	AT					0	0	0
+GR	136 77	Acharnes	Attica	AT					0	0	0
+GR	136 78	Acharnes	Attica	AT					0	0	0
+GR	136 79	Acharnes	Attica	AT					0	0	0
+GR	141 21	Irakleio, Attica	Attica	AT					0	0	0
+GR	141 22	Irakleio, Attica	Attica	AT					0	0	0
+GR	141 23	Lykovrysi	Attica	AT					0	0	0
+GR	142 31	Nea Ionia	Attica	AT					0	0	0
+GR	142 32	Nea Ionia	Attica	AT					0	0	0
+GR	142 33	Nea Ionia	Attica	AT					0	0	0
+GR	142 35	Nea Ionia	Attica	AT					0	0	0
+GR	143 41	Nea Filadelfeia	Attica	AT					0	0	0
+GR	143 42	Nea Filadelfeia	Attica	AT					0	0	0
+GR	143 43	Nea Chalkidona	Attica	AT					0	0	0
+GR	144 51	Metamorfosi	Attica	AT					0	0	0
+GR	144 52	Metamorfosi	Attica	AT					0	0	0
+GR	145 61	Kifissia	Attica	AT					0	0	0
+GR	145 62	Kifissia	Attica	AT					0	0	0
+GR	145 63	Kifissia	Attica	AT					0	0	0
+GR	145 64	Kifissia	Attica	AT					0	0	0
+GR	145 68	Kryoneri, Attica	Attica	AT					0	0	0
+GR	145 69	Anoixi	Attica	AT					0	0	0
+GR	145 72	Drosia	Attica	AT					0	0	0
+GR	145 74	Rodopoli	Attica	AT					0	0	0
+GR	145 75	Stamata	Attica	AT					0	0	0
+GR	145 76	Dionysos, Greece	Attica	AT					0	0	0
+GR	145 78	Ekali	Attica	AT					0	0	0
+GR	146 71	Nea Erythraia	Attica	AT					0	0	0
+GR	151 21	Pefki	Attica	AT					0	0	0
+GR	151 22	Marousi	Attica	AT					0	0	0
+GR	151 23	Marousi	Attica	AT					0	0	0
+GR	151 25	Marousi	Attica	AT					0	0	0
+GR	151 27	Melissia	Attica	AT					0	0	0
+GR	152 33	Chalandri	Attica	AT					0	0	0
+GR	152 35	Vrilissia	Attica	AT					0	0	0
+GR	152 36	Kifissia	Attica	AT					0	0	0
+GR	152 37	Filothei	Attica	AT					0	0	0
+GR	153 02	Pallini	Attica	AT					0	0	0
+GR	153 41	Agia Paraskevi	Attica	AT					0	0	0
+GR	153 43	Agia Paraskevi	Attica	AT					0	0	0
+GR	153 44	Gerakas	Attica	AT					0	0	0
+GR	153 49	Anthousa	Attica	AT					0	0	0
+GR	153 51	Pallini	Attica	AT					0	0	0
+GR	153 54	Glyka Nera	Attica	AT					0	0	0
+GR	154 51	Psychiko	Attica	AT					0	0	0
+GR	154 52	Psychiko	Attica	AT					0	0	0
+GR	155 61	Holargos	Attica	AT					0	0	0
+GR	156 69	Papagou	Attica	AT					0	0	0
+GR	157 71	Zográfos	Attica	AT					0	0	0
+GR	157 72	Zográfos	Attica	AT					0	0	0
+GR	157 73	Zográfos	Attica	AT					0	0	0
+GR	161 21	Athens	Attica	AT					0	0	0
+GR	161 22	Athens	Attica	AT					0	0	0
+GR	162 31	Vyronas	Attica	AT					0	0	0
+GR	162 32	Metamorfosi	Attica	AT					0	0	0
+GR	162 33	Vyronas	Attica	AT					0	0	0
+GR	163 41	Ilioupoli	Attica	AT					0	0	0
+GR	163 42	Ilioupoli	Attica	AT					0	0	0
+GR	163 43	Ilioupoli	Attica	AT					0	0	0
+GR	163 44	Ilioupoli	Attica	AT					0	0	0
+GR	163 45	Ilioupoli	Attica	AT					0	0	0
+GR	163 46	Ilioupoli	Attica	AT					0	0	0
+GR	164 51	Argyroupoli	Attica	AT					0	0	0
+GR	165 62	Glyfada	Attica	AT					0	0	0
+GR	166 72	Vari	Attica	AT					0	0	0
+GR	166 73	Voula	Attica	AT					0	0	0
+GR	166 74	Glyfada	Attica	AT					0	0	0
+GR	167 77	Elliniko	Attica	AT					0	0	0
+GR	171 21	Nea Smyrni	Attica	AT					0	0	0
+GR	171 22	Nea Smyrni	Attica	AT					0	0	0
+GR	171 23	Nea Smyrni	Attica	AT					0	0	0
+GR	171 24	Nea Smyrni	Attica	AT					0	0	0
+GR	172 34	Dafni, Attica	Attica	AT					0	0	0
+GR	172 35	Dafni, Attica	Attica	AT					0	0	0
+GR	172 36	Ymittos	Attica	AT					0	0	0
+GR	172 37	Ymittos	Attica	AT					0	0	0
+GR	173 41	Agios Dimitrios	Attica	AT					0	0	0
+GR	173 42	Agios Dimitrios	Attica	AT					0	0	0
+GR	173 43	Agios Dimitrios	Attica	AT					0	0	0
+GR	174 55	Alimos	Attica	AT					0	0	0
+GR	174 56	Alimos	Attica	AT					0	0	0
+GR	175 61	Palaio Faliro	Attica	AT					0	0	0
+GR	175 62	Palaio Faliro	Attica	AT					0	0	0
+GR	175 63	Palaio Faliro	Attica	AT					0	0	0
+GR	175 64	Palaio Faliro	Attica	AT					0	0	0
+GR	176 55	Alimos	Attica	AT					0	0	0
+GR	176 71	Kallithea	Attica	AT					0	0	0
+GR	176 72	Kallithea	Attica	AT					0	0	0
+GR	176 73	Metamorfosi	Attica	AT					0	0	0
+GR	176 74	Kallithea	Attica	AT					0	0	0
+GR	176 75	Kallithea	Attica	AT					0	0	0
+GR	176 76	Kallithea	Attica	AT					0	0	0
+GR	177 78	Tavros	Attica	AT					0	0	0
+GR	180 10	Aegina	Attica	AT					0	0	0
+GR	180 20	Troezen	Attica	AT					0	0	0
+GR	180 30	Methana	Attica	AT					0	0	0
+GR	180 40	Hydra (island)	Attica	AT					0	0	0
+GR	180 50	Spetses	Attica	AT					0	0	0
+GR	181 20	Korydallós	Attica	AT					0	0	0
+GR	181 21	Korydallós	Attica	AT					0	0	0
+GR	181 22	Korydallós	Attica	AT					0	0	0
+GR	182 33	Agios Ioannis Rentis	Attica	AT					0	0	0
+GR	183 44	Moschato	Attica	AT					0	0	0
+GR	183 45	Moschato	Attica	AT					0	0	0
+GR	183 46	Moschato	Attica	AT					0	0	0
+GR	184 50	Nikaia, Attica	Attica	AT					0	0	0
+GR	184 51	Nikaia, Attica	Attica	AT					0	0	0
+GR	184 52	Nikaia, Attica	Attica	AT					0	0	0
+GR	184 53	Nikaia, Attica	Attica	AT					0	0	0
+GR	184 54	Nikaia, Attica	Attica	AT					0	0	0
+GR	185 31	Piraeus	Attica	AT					0	0	0
+GR	185 32	Piraeus	Attica	AT					0	0	0
+GR	185 33	Piraeus	Attica	AT					0	0	0
+GR	185 34	Piraeus	Attica	AT					0	0	0
+GR	185 35	Piraeus	Attica	AT					0	0	0
+GR	185 36	Piraeus	Attica	AT					0	0	0
+GR	185 37	Piraeus	Attica	AT					0	0	0
+GR	185 38	Piraeus	Attica	AT					0	0	0
+GR	185 39	Piraeus	Attica	AT					0	0	0
+GR	185 40	Piraeus	Attica	AT					0	0	0
+GR	185 41	Piraeus	Attica	AT					0	0	0
+GR	185 42	Piraeus	Attica	AT					0	0	0
+GR	185 43	Piraeus	Attica	AT					0	0	0
+GR	185 44	Piraeus	Attica	AT					0	0	0
+GR	185 45	Piraeus	Attica	AT					0	0	0
+GR	185 46	Piraeus	Attica	AT					0	0	0
+GR	185 47	Piraeus	Attica	AT					0	0	0
+GR	185 51	Nikaia, Attica	Attica	AT					0	0	0
+GR	186 48	Drapetsóna	Attica	AT					0	0	0
+GR	187 55	Keratsini	Attica	AT					0	0	0
+GR	187 56	Keratsini	Attica	AT					0	0	0
+GR	187 57	Keratsini	Attica	AT					0	0	0
+GR	187 58	Keratsini	Attica	AT					0	0	0
+GR	188 63	Perama	Attica	AT					0	0	0
+GR	189 00	Salamina (city)	Attica	AT					0	0	0
+GR	189 02	Ampelakia	Attica	AT					0	0	0
+GR	189 03	Aiánteio	Attica	AT					0	0	0
+GR	190 01	Keratea	Attica	AT					0	0	0
+GR	190 02	Paiania	Attica	AT					0	0	0
+GR	190 03	Markópoulo	Attica	AT					0	0	0
+GR	190 04	Spata	Attica	AT					0	0	0
+GR	190 05	Nea Makri	Attica	AT					0	0	0
+GR	190 06	Néa Péramos	Attica	AT					0	0	0
+GR	190 08	Erythres	Attica	AT					0	0	0
+GR	190 09	Rafina	Attica	AT					0	0	0
+GR	190 11	Avlonas, Attica	Attica	AT					0	0	0
+GR	190 12	Vilia	Attica	AT					0	0	0
+GR	190 13	Anavyssos	Attica	AT					0	0	0
+GR	190 14	Kalamos, Attica	Attica	AT					0	0	0
+GR	190 15	Nea Palatia	Attica	AT					0	0	0
+GR	190 16	Artemida, Attica	Attica	AT					0	0	0
+GR	190 19	Spata	Attica	AT					0	0	0
+GR	191 00	Megara	Attica	AT					0	0	0
+GR	192 00	Eleusis	Attica	AT					0	0	0
+GR	193 00	Aspropyrgos	Attica	AT					0	0	0
+GR	194 00	Koropi	Attica	AT					0	0	0
+GR	195 00	Laurium	Attica	AT					0	0	0
+GR	196 00	Mandra	Attica	AT					0	0	0
+GR	200 01	Zevgolateio	Peloponnese	PE					0	0	0
+GR	200 02	Velo, Greece	Peloponnese	PE					0	0	0
+GR	200 04	Sofikón	Peloponnese	PE					0	0	0
+GR	200 05	Athikia	Peloponnese	PE					0	0	0
+GR	200 06	Vrachati	Peloponnese	PE					0	0	0
+GR	200 07	Arkhaía Kórinthos	Peloponnese	PE					0	0	0
+GR	200 09	Evrostina	Peloponnese	PE					0	0	0
+GR	200 10	Loutraki	Peloponnese	PE					0	0	0
+GR	200 11	Lechaio	Peloponnese	PE					0	0	0
+GR	200 12	Evrostina	Peloponnese	PE					0	0	0
+GR	200 13	Kamári	Peloponnese	PE					0	0	0
+GR	200 14	Feneos	Peloponnese	PE					0	0	0
+GR	200 16	Stymfalia	Peloponnese	PE					0	0	0
+GR	200 17	Xylokastro	Peloponnese	PE					0	0	0
+GR	201 00	Corinth	Peloponnese	PE					0	0	0
+GR	202 00	Kiato	Peloponnese	PE					0	0	0
+GR	203 00	Loutraki	Peloponnese	PE					0	0	0
+GR	204 00	Xylokastro	Peloponnese	PE					0	0	0
+GR	210 00	Argos	Peloponnese	PE					0	0	0
+GR	210 51	Ermioni	Peloponnese	PE					0	0	0
+GR	210 52	Ligourión	Peloponnese	PE					0	0	0
+GR	210 53	Nea Kios	Peloponnese	PE					0	0	0
+GR	210 54	Dhímaina	Peloponnese	PE					0	0	0
+GR	210 55	Arakhnaíon	Peloponnese	PE					0	0	0
+GR	210 57	Achladokampos	Peloponnese	PE					0	0	0
+GR	210 58	Lyrkeia	Peloponnese	PE					0	0	0
+GR	210 59	Epidaurus	Peloponnese	PE					0	0	0
+GR	210 60	Íria	Peloponnese	PE					0	0	0
+GR	210 61	Porto Cheli	Peloponnese	PE					0	0	0
+GR	211 00	Nafplio	Peloponnese	PE					0	0	0
+GR	212 00	Argos	Peloponnese	PE					0	0	0
+GR	213 00	Kranidi	Peloponnese	PE					0	0	0
+GR	220 02	Levidi	Peloponnese	PE					0	0	0
+GR	220 03	Langadia, Arcadia	Peloponnese	PE					0	0	0
+GR	220 04	Levidi	Peloponnese	PE					0	0	0
+GR	220 05	Nestani	Peloponnese	PE					0	0	0
+GR	220 07	Dimitsana	Peloponnese	PE					0	0	0
+GR	220 08	Kalliánion	Peloponnese	PE					0	0	0
+GR	220 09	Agios Petros, Arcadia	Peloponnese	PE					0	0	0
+GR	220 10	Vytina	Peloponnese	PE					0	0	0
+GR	220 13	Vourvoura	Peloponnese	PE					0	0	0
+GR	220 14	Kleitoria	Western Greece	WG					0	0	0
+GR	220 15	Kontovazaina	Peloponnese	PE					0	0	0
+GR	220 16	Vlakhokeraséa	Peloponnese	PE					0	0	0
+GR	220 17	Levidi	Peloponnese	PE					0	0	0
+GR	220 19	Astros, Greece	Peloponnese	PE					0	0	0
+GR	220 20	Kosmas, Greece	Peloponnese	PE					0	0	0
+GR	220 21	Falaisia	Peloponnese	PE					0	0	0
+GR	220 22	Karytaina	Peloponnese	PE					0	0	0
+GR	220 24	Stemnitsa	Peloponnese	PE					0	0	0
+GR	220 27	Valtetsi	Peloponnese	PE					0	0	0
+GR	220 29	Tyrós	Peloponnese	PE					0	0	0
+GR	221 00	Tripoli, Greece	Peloponnese	PE					0	0	0
+GR	223 00	Leonidio	Peloponnese	PE					0	0	0
+GR	230 52	Molaoi	Peloponnese	PE					0	0	0
+GR	230 53	Voies	Peloponnese	PE					0	0	0
+GR	230 54	Xirokámbion	Peloponnese	PE					0	0	0
+GR	230 57	Krokees	Peloponnese	PE					0	0	0
+GR	230 58	Yerákion	Peloponnese	PE					0	0	0
+GR	230 60	Niata	Peloponnese	PE					0	0	0
+GR	230 62	Areopoli	Peloponnese	PE					0	0	0
+GR	230 63	Oitylo	Peloponnese	PE					0	0	0
+GR	230 65	Pellana	Peloponnese	PE					0	0	0
+GR	230 67	Kariaí	Peloponnese	PE					0	0	0
+GR	230 70	Monemvasia	Peloponnese	PE					0	0	0
+GR	230 71	Geroliménas	Peloponnese	PE					0	0	0
+GR	232 00	Gythio	Peloponnese	PE					0	0	0
+GR	240 02	Meligalas	Peloponnese	PE					0	0	0
+GR	240 03	Kopanaki	Peloponnese	PE					0	0	0
+GR	240 05	Petalidi	Peloponnese	PE					0	0	0
+GR	240 08	Andania	Peloponnese	PE					0	0	0
+GR	240 09	Thouria, Messenia	Peloponnese	PE					0	0	0
+GR	240 13	Androusa	Peloponnese	PE					0	0	0
+GR	240 15	Aristomenis	Peloponnese	PE					0	0	0
+GR	240 16	Avia, Messenia	Peloponnese	PE					0	0	0
+GR	240 18	Áno Dhórion	Peloponnese	PE					0	0	0
+GR	240 20	Kalamata	Peloponnese	PE					0	0	0
+GR	241 00	Kalamata	Peloponnese	PE					0	0	0
+GR	241 01	Kalamata	Peloponnese	PE					0	0	0
+GR	241 31	Kalamata	Peloponnese	PE					0	0	0
+GR	242 00	Messini	Peloponnese	PE					0	0	0
+GR	243 00	Filiatra	Peloponnese	PE					0	0	0
+GR	244 00	Gargalianoi	Peloponnese	PE					0	0	0
+GR	245 00	Kyparissia	Peloponnese	PE					0	0	0
+GR	246 00	Chóra	Peloponnese	PE					0	0	0
+GR	250 00	Kalavryta	Western Greece	WG					0	0	0
+GR	250 01	Kalavryta	Western Greece	WG					0	0	0
+GR	250 02	Vrachnaiika	Western Greece	WG					0	0	0
+GR	250 03	Diakopto	Western Greece	WG					0	0	0
+GR	250 04	Paos	Western Greece	WG					0	0	0
+GR	250 05	Vrachnaiika	Western Greece	WG					0	0	0
+GR	250 06	Akrata	Western Greece	WG					0	0	0
+GR	250 07	Lefkasi	Western Greece	WG					0	0	0
+GR	250 08	Chalandritsa	Western Greece	WG					0	0	0
+GR	250 09	Kamárai	Western Greece	WG					0	0	0
+GR	250 10	Aigeira	Western Greece	WG					0	0	0
+GR	251 00	Aigio	Western Greece	WG					0	0	0
+GR	252 00	Karamesinaíika	Western Greece	WG					0	0	0
+GR	262 21	Patras	Western Greece	WG					0	0	0
+GR	262 22	Patras	Western Greece	WG					0	0	0
+GR	262 23	Patras	Western Greece	WG					0	0	0
+GR	262 24	Patras	Western Greece	WG					0	0	0
+GR	262 25	Patras	Western Greece	WG					0	0	0
+GR	262 26	Patras	Western Greece	WG					0	0	0
+GR	262 32	Patras	Western Greece	WG					0	0	0
+GR	263 31	Patras	Western Greece	WG					0	0	0
+GR	263 32	Patras	Western Greece	WG					0	0	0
+GR	263 33	Patras	Western Greece	WG					0	0	0
+GR	263 35	Patras	Western Greece	WG					0	0	0
+GR	264 41	Patras	Western Greece	WG					0	0	0
+GR	264 42	Patras	Western Greece	WG					0	0	0
+GR	264 43	Patras	Western Greece	WG					0	0	0
+GR	264 44	Patras	Western Greece	WG					0	0	0
+GR	265 00	Patras	Western Greece	WG					0	0	0
+GR	265 04	Rio, Greece	Western Greece	WG					0	0	0
+GR	270 50	Vartholomio	Western Greece	WG					0	0	0
+GR	270 51	Andravida	Western Greece	WG					0	0	0
+GR	270 52	Vouprasia	Western Greece	WG					0	0	0
+GR	270 53	Tragano	Peloponnese	PE					0	0	0
+GR	270 54	Zacharo	Western Greece	WG					0	0	0
+GR	270 56	Figaleia	Western Greece	WG					0	0	0
+GR	270 57	Tragano	Peloponnese	PE					0	0	0
+GR	270 60	Olympia, Greece	Western Greece	WG					0	0	0
+GR	270 61	Andritsaina	Western Greece	WG					0	0	0
+GR	270 63	Lampeia	Western Greece	WG					0	0	0
+GR	270 64	Oleni	Western Greece	WG					0	0	0
+GR	270 65	Olympia, Greece	Western Greece	WG					0	0	0
+GR	270 66	Lálas	Western Greece	WG					0	0	0
+GR	270 67	Katakolo	Western Greece	WG					0	0	0
+GR	270 68	Kyllíni	Western Greece	WG					0	0	0
+GR	271 00	Pyrgos, Elis	Western Greece	WG					0	0	0
+GR	272 00	Amaliada	Western Greece	WG					0	0	0
+GR	273 00	Gastouni	Western Greece	WG					0	0	0
+GR	280 80	Sami, Cephalonia	Ionian Islands	IO					0	0	0
+GR	280 84	Fiskárdo	Ionian Islands	IO					0	0	0
+GR	281 00	Argostoli	Ionian Islands	IO					0	0	0
+GR	282 00	Lixouri	Ionian Islands	IO					0	0	0
+GR	283 00	Ithaca	Ionian Islands	IO					0	0	0
+GR	283 01	Ithaca	Ionian Islands	IO					0	0	0
+GR	290 90	Alykes	Ionian Islands	IO					0	0	0
+GR	290 91	Volimes	Ionian Islands	IO					0	0	0
+GR	290 92	Machairado	Ionian Islands	IO					0	0	0
+GR	291 00	Zakynthos (city)	Ionian Islands	IO					0	0	0
+GR	300 01	Neochórion	Western Greece	WG					0	0	0
+GR	300 03	Panaitólion	Western Greece	WG					0	0	0
+GR	300 04	Katoúna	Western Greece	WG					0	0	0
+GR	300 05	Kainoúryion	Western Greece	WG					0	0	0
+GR	300 06	Astakos	Western Greece	WG					0	0	0
+GR	300 07	Katochi	Western Greece	WG					0	0	0
+GR	300 08	Thermo, Greece	Western Greece	WG					0	0	0
+GR	300 09	Fyteíes	Western Greece	WG					0	0	0
+GR	300 10	Paravola	Western Greece	WG					0	0	0
+GR	300 11	Mataránga	Western Greece	WG					0	0	0
+GR	300 12	Palairos	Western Greece	WG					0	0	0
+GR	300 14	Perithóri	Western Greece	WG					0	0	0
+GR	300 16	Menidi, Aetolia-Acarnania	Western Greece	WG					0	0	0
+GR	300 20	Antirrio	Western Greece	WG					0	0	0
+GR	300 22	Platanos, Aetolia-Acarnania	Western Greece	WG					0	0	0
+GR	300 25	Platanos, Aetolia-Acarnania	Western Greece	WG					0	0	0
+GR	300 26	Dorvitsiá	Western Greece	WG					0	0	0
+GR	301 00	Agrinio	Western Greece	WG					0	0	0
+GR	301 31	Agrinio	Western Greece	WG					0	0	0
+GR	302 00	Mesolóngi	Western Greece	WG					0	0	0
+GR	303 00	Nafpaktos	Western Greece	WG					0	0	0
+GR	304 00	Aitoliko	Western Greece	WG					0	0	0
+GR	305 00	Amfilochia	Western Greece	WG					0	0	0
+GR	310 80	Karya, Lefkada	Ionian Islands	IO					0	0	0
+GR	311 00	Lefkada (city)	Ionian Islands	IO					0	0	0
+GR	320 01	Aliartos	Central Greece	CG					0	0	0
+GR	320 02	Vagia	Central Greece	CG					0	0	0
+GR	320 04	Arachova	Central Greece	CG					0	0	0
+GR	320 05	Distomo	Central Greece	CG					0	0	0
+GR	320 06	Kyriaki	Central Greece	CG					0	0	0
+GR	320 08	Davleia	Central Greece	CG					0	0	0
+GR	320 10	Domvraína	Central Greece	CG					0	0	0
+GR	320 11	Oinofyta	Central Greece	CG					0	0	0
+GR	320 12	Antikyra	Central Greece	CG					0	0	0
+GR	321 00	Livadeia	Central Greece	CG					0	0	0
+GR	322 00	Thebes, Greece	Central Greece	CG					0	0	0
+GR	323 00	Orchomenus (Boeotia)	Central Greece	CG					0	0	0
+GR	330 50	Desfina	Central Greece	CG					0	0	0
+GR	330 52	Galaxidi	Central Greece	CG					0	0	0
+GR	330 53	Lidoriki	Central Greece	CG					0	0	0
+GR	330 54	Delphi	Central Greece	CG					0	0	0
+GR	330 57	Gravia	Central Greece	CG					0	0	0
+GR	330 58	Tolofon	Central Greece	CG					0	0	0
+GR	330 59	Artotina	Central Greece	CG					0	0	0
+GR	330 62	Pentagioi	Central Greece	CG					0	0	0
+GR	330 63	Athanasios Diakos, Greece	Central Greece	CG					0	0	0
+GR	331 00	Amfissa	Central Greece	CG					0	0	0
+GR	340 03	Kymi, Greece	Central Greece	CG					0	0	0
+GR	340 04	Mantoúdi	Central Greece	CG					0	0	0
+GR	340 06	Yimnón	Central Greece	CG					0	0	0
+GR	340 07	Skyros	Central Greece	CG					0	0	0
+GR	340 10	Agía Ánna	Central Greece	CG					0	0	0
+GR	340 12	Oreoi	Central Greece	CG					0	0	0
+GR	340 15	Styra	Central Greece	CG					0	0	0
+GR	340 16	Konistres	Central Greece	CG					0	0	0
+GR	340 17	Dystos	Central Greece	CG					0	0	0
+GR	342 00	Artemisio	Central Greece	CG					0	0	0
+GR	343 00	Aidipsos	Central Greece	CG					0	0	0
+GR	344 00	Psachná	Central Greece	CG					0	0	0
+GR	345 00	Dystos	Central Greece	CG					0	0	0
+GR	346 00	Nea Artaki	Central Greece	CG					0	0	0
+GR	350 01	Malesina	Central Greece	CG					0	0	0
+GR	350 02	Amfikleia	Central Greece	CG					0	0	0
+GR	350 03	Spercheiada	Central Greece	CG					0	0	0
+GR	350 04	Elateia	Central Greece	CG					0	0	0
+GR	350 05	Martínon	Central Greece	CG					0	0	0
+GR	350 06	Áyios Konstandínos	Central Greece	CG					0	0	0
+GR	350 07	Livanates	Central Greece	CG					0	0	0
+GR	350 08	Kamena Vourla	Central Greece	CG					0	0	0
+GR	350 09	Kainoúryion	Central Greece	CG					0	0	0
+GR	350 11	Makrakomi	Central Greece	CG					0	0	0
+GR	350 12	Lárimna	Central Greece	CG					0	0	0
+GR	350 13	Pelasgia, Phthiotis	Central Greece	CG					0	0	0
+GR	350 15	Tithorea	Central Greece	CG					0	0	0
+GR	350 16	Ypati	Central Greece	CG					0	0	0
+GR	350 18	Spercheiada	Central Greece	CG					0	0	0
+GR	351 00	Lamia (city)	Central Greece	CG					0	0	0
+GR	352 00	Elateia	Central Greece	CG					0	0	0
+GR	360 71	Viniani	Central Greece	CG					0	0	0
+GR	360 73	Ágrafa	Central Greece	CG					0	0	0
+GR	360 74	Prousos	Central Greece	CG					0	0	0
+GR	360 76	Domnista	Central Greece	CG					0	0	0
+GR	360 80	Fourna	Central Greece	CG					0	0	0
+GR	361 71	Karpenisi	Central Greece	CG					0	0	0
+GR	370 01	Zagora, Greece	Thessaly	TH					0	0	0
+GR	370 02	Skiathos (town)	Thessaly	TH					0	0	0
+GR	370 03	Skopelos	Thessaly	TH					0	0	0
+GR	370 04	Glossa, Skopelos	Thessaly	TH					0	0	0
+GR	370 05	Alonnisos	Thessaly	TH					0	0	0
+GR	370 06	Argalasti	Thessaly	TH					0	0	0
+GR	370 07	Pteleos	Thessaly	TH					0	0	0
+GR	370 08	Sourpi	Thessaly	TH					0	0	0
+GR	370 09	Trikeri	Thessaly	TH					0	0	0
+GR	370 10	Afetes	Thessaly	TH					0	0	0
+GR	370 11	Makrinitsa	Thessaly	TH					0	0	0
+GR	370 12	Tsagkarada	Thessaly	TH					0	0	0
+GR	371 00	Evxinoúpolis	Thessaly	TH					0	0	0
+GR	373 00	Agria	Thessaly	TH					0	0	0
+GR	374 00	Nea Anchialos	Thessaly	TH					0	0	0
+GR	375 00	Velestino	Thessaly	TH					0	0	0
+GR	382 21	Volos	Thessaly	TH					0	0	0
+GR	382 22	Volos	Thessaly	TH					0	0	0
+GR	383 33	Volos	Thessaly	TH					0	0	0
+GR	383 34	Volos	Thessaly	TH					0	0	0
+GR	384 45	Nea Ionia, Magnesia	Thessaly	TH					0	0	0
+GR	384 46	Nea Ionia, Magnesia	Thessaly	TH					0	0	0
+GR	385 00	Nea Ionia, Magnesia	Thessaly	TH					0	0	0
+GR	400 02	Livadi	Thessaly	TH					0	0	0
+GR	400 03	Agia, Larissa	Thessaly	TH					0	0	0
+GR	400 04	Gonnoi	Thessaly	TH					0	0	0
+GR	400 05	Verdikousa	Thessaly	TH					0	0	0
+GR	400 06	Makrychori	Thessaly	TH					0	0	0
+GR	400 09	Platykampos	Thessaly	TH					0	0	0
+GR	401 00	Tyrnavos	Thessaly	TH					0	0	0
+GR	402 00	Elassona	Thessaly	TH					0	0	0
+GR	404 00	Ampelóna	Thessaly	TH					0	0	0
+GR	410 00	Larissa	Thessaly	TH					0	0	0
+GR	412 21	Larissa	Thessaly	TH					0	0	0
+GR	412 22	Larissa	Thessaly	TH					0	0	0
+GR	412 23	Larissa	Thessaly	TH					0	0	0
+GR	413 34	Larissa	Thessaly	TH					0	0	0
+GR	413 35	Larissa	Thessaly	TH					0	0	0
+GR	413 36	Larissa	Thessaly	TH					0	0	0
+GR	414 47	Larissa	Thessaly	TH					0	0	0
+GR	415 00	Nikaia, Larissa	Thessaly	TH					0	0	0
+GR	420 31	Farkadona	Thessaly	TH					0	0	0
+GR	420 32	Pyli	Thessaly	TH					0	0	0
+GR	420 33	Myrofyllo	Thessaly	TH					0	0	0
+GR	422 00	Kalabaka	Thessaly	TH					0	0	0
+GR	430 63	Anávra	Thessaly	TH					0	0	0
+GR	430 64	Fanári	Thessaly	TH					0	0	0
+GR	430 65	Argithea	Thessaly	TH					0	0	0
+GR	431 00	Karditsa	Thessaly	TH					0	0	0
+GR	432 00	Palamas	Thessaly	TH					0	0	0
+GR	440 01	Pramanta	Epirus	EP					0	0	0
+GR	440 02	Delvinaki	Epirus	EP					0	0	0
+GR	440 03	Zitsa	Epirus	EP					0	0	0
+GR	440 04	Kalpaki	Epirus	EP					0	0	0
+GR	440 05	Pogoniani	Epirus	EP					0	0	0
+GR	440 06	Kefalovryso, Ioannina	Epirus	EP					0	0	0
+GR	440 07	Zagori	Epirus	EP					0	0	0
+GR	440 08	Fourka	Epirus	EP					0	0	0
+GR	440 10	Tsepelovo	Epirus	EP					0	0	0
+GR	440 12	Kalpaki	Epirus	EP					0	0	0
+GR	440 14	Greveníti	Epirus	EP					0	0	0
+GR	440 15	Aetomilitsa	Epirus	EP					0	0	0
+GR	440 16	Papingo	Epirus	EP					0	0	0
+GR	440 17	Ioannina	Epirus	EP					0	0	0
+GR	440 19	Distrato	Epirus	EP					0	0	0
+GR	442 00	Metsovo	Epirus	EP					0	0	0
+GR	450 00	Ioannina	Epirus	EP					0	0	0
+GR	452 21	Ioannina	Epirus	EP					0	0	0
+GR	453 32	Ioannina	Epirus	EP					0	0	0
+GR	453 33	Ioannina	Epirus	EP					0	0	0
+GR	454 44	Ioannina	Epirus	EP					0	0	0
+GR	454 45	Ioannina	Epirus	EP					0	0	0
+GR	455 00	Anatoli	Epirus	EP					0	0	0
+GR	460 30	Margariti	Epirus	EP					0	0	0
+GR	461 00	Igoumenitsa	Epirus	EP					0	0	0
+GR	462 00	Paramythia	Epirus	EP					0	0	0
+GR	470 40	Menidi, Aetolia-Acarnania	Western Greece	WG					0	0	0
+GR	470 41	Neochóri	Epirus	EP					0	0	0
+GR	470 46	Rodavgí	Epirus	EP					0	0	0
+GR	471 00	Kommeno	Epirus	EP					0	0	0
+GR	472 00	Peta, Greece	Epirus	EP					0	0	0
+GR	480 61	Louros	Epirus	EP					0	0	0
+GR	480 62	Kanaláki	Epirus	EP					0	0	0
+GR	481 00	Preveza	Epirus	EP					0	0	0
+GR	482 00	Filippiada	Epirus	EP					0	0	0
+GR	490 80	Lefkimmi	Ionian Islands	IO					0	0	0
+GR	490 82	Gaios	Ionian Islands	IO					0	0	0
+GR	491 83	Skriperó	Ionian Islands	IO					0	0	0
+GR	500 01	Neapoli, Kozani	Western Macedonia	WM					0	0	0
+GR	500 02	Tsotyli	Western Macedonia	WM					0	0	0
+GR	500 03	Eratyra	Western Macedonia	WM					0	0	0
+GR	500 04	Aiani	Western Macedonia	WM					0	0	0
+GR	500 06	Kato Vermio	Central Macedonia	CM					0	0	0
+GR	500 07	Eptachóri	Western Macedonia	WM					0	0	0
+GR	500 09	Vlasti	Western Macedonia	WM					0	0	0
+GR	501 00	Kozani	Western Macedonia	WM					0	0	0
+GR	502 00	Ptolemaida	Western Macedonia	WM					0	0	0
+GR	503 00	Siatista	Western Macedonia	WM					0	0	0
+GR	504 00	Velventos	Western Macedonia	WM					0	0	0
+GR	505 00	Servia, Greece	Western Macedonia	WM					0	0	0
+GR	510 30	Milea, Grevena	Western Macedonia	WM					0	0	0
+GR	510 32	Smixi	Western Macedonia	WM					0	0	0
+GR	511 00	Grevena	Western Macedonia	WM					0	0	0
+GR	512 00	Deskati	Western Macedonia	WM					0	0	0
+GR	520 51	Nestorio	Western Macedonia	WM					0	0	0
+GR	520 52	Korisós	Western Macedonia	WM					0	0	0
+GR	520 53	Vogatsiko	Western Macedonia	WM					0	0	0
+GR	520 54	Kleisoura, Kastoria	Western Macedonia	WM					0	0	0
+GR	520 57	Neapoli, Kozani	Western Macedonia	WM					0	0	0
+GR	521 00	Kastoria	Western Macedonia	WM					0	0	0
+GR	522 00	Argos Orestiko	Western Macedonia	WM					0	0	0
+GR	530 70	Filotas	Western Macedonia	WM					0	0	0
+GR	530 71	Meliti	Western Macedonia	WM					0	0	0
+GR	530 74	Vevi	Western Macedonia	WM					0	0	0
+GR	530 75	Aetos, Florina	Western Macedonia	WM					0	0	0
+GR	530 76	Antartiko	Western Macedonia	WM					0	0	0
+GR	530 78	Nymfaio	Western Macedonia	WM					0	0	0
+GR	531 00	Florina	Western Macedonia	WM					0	0	0
+GR	532 00	Filotas	Western Macedonia	WM					0	0	0
+GR	540 00	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	540 15	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	541 10	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	542 48	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	542 49	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	542 50	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	543 51	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	543 52	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	544 53	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	544 54	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	545 00	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 21	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 22	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 23	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 24	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 25	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 26	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 27	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 28	Menemeni	Central Macedonia	CM					0	0	0
+GR	546 29	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 30	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 31	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 32	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 33	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 34	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 35	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 36	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 37	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 38	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 39	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 40	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 41	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 42	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 43	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 44	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 45	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 46	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	546 55	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	551 03	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	552 36	Panorama, Thessaloniki	Central Macedonia	CM					0	0	0
+GR	553 00	Agios Pavlos, Thessaloniki	Central Macedonia	CM					0	0	0
+GR	553 37	Triandria	Central Macedonia	CM					0	0	0
+GR	554 38	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	555 10	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	555 35	Pylaia	Central Macedonia	CM					0	0	0
+GR	561 21	Ampelokipoi, Thessaloniki	Central Macedonia	CM					0	0	0
+GR	561 22	Menemeni	Central Macedonia	CM					0	0	0
+GR	561 23	Ampelokipoi, Thessaloniki	Central Macedonia	CM					0	0	0
+GR	562 00	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	562 24	Evosmos	Central Macedonia	CM					0	0	0
+GR	563 34	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	564 04	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	564 29	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	564 30	Stavroupoli	Central Macedonia	CM					0	0	0
+GR	564 31	Stavroupoli	Central Macedonia	CM					0	0	0
+GR	565 32	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	565 33	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	566 25	Sykies	Central Macedonia	CM					0	0	0
+GR	566 26	Sykies	Central Macedonia	CM					0	0	0
+GR	567 27	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	567 28	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	570 02	Sochos	Central Macedonia	CM					0	0	0
+GR	570 03	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	570 04	Michaniona	Central Macedonia	CM					0	0	0
+GR	570 06	Vasiliká	Central Macedonia	CM					0	0	0
+GR	570 07	Chalkidona	Central Macedonia	CM					0	0	0
+GR	570 08	Diavatá	Central Macedonia	CM					0	0	0
+GR	570 09	Kalochóri	Central Macedonia	CM					0	0	0
+GR	570 13	Oraiokastro	Central Macedonia	CM					0	0	0
+GR	570 15	Néa Apollonía	Central Macedonia	CM					0	0	0
+GR	570 16	Askós	Central Macedonia	CM					0	0	0
+GR	570 17	Xilópolis	Central Macedonia	CM					0	0	0
+GR	570 18	Melissochóri	Central Macedonia	CM					0	0	0
+GR	570 19	Peraía	Central Macedonia	CM					0	0	0
+GR	570 20	Lagkadikia	Central Macedonia	CM					0	0	0
+GR	570 21	Asprovalta	Central Macedonia	CM					0	0	0
+GR	570 22	Sindos	Central Macedonia	CM					0	0	0
+GR	571 00	Koufalia	Central Macedonia	CM					0	0	0
+GR	572 00	Kolchikón	Central Macedonia	CM					0	0	0
+GR	574 00	Sindos	Central Macedonia	CM					0	0	0
+GR	575 00	Epanomi	Central Macedonia	CM					0	0	0
+GR	576 00	Thessaloniki	Central Macedonia	CM					0	0	0
+GR	580 00	Pélla	Central Macedonia	CM					0	0	0
+GR	580 02	Arnissa	Central Macedonia	CM					0	0	0
+GR	580 03	Exaplatanos	Central Macedonia	CM					0	0	0
+GR	580 04	Exaplatanos	Central Macedonia	CM					0	0	0
+GR	580 05	Pélla	Central Macedonia	CM					0	0	0
+GR	581 00	Giannitsa	Central Macedonia	CM					0	0	0
+GR	582 00	Edessa, Greece	Central Macedonia	CM					0	0	0
+GR	583 00	Krya Vrysi, Pella	Central Macedonia	CM					0	0	0
+GR	584 00	Aridaea	Central Macedonia	CM					0	0	0
+GR	590 31	Meliki	Central Macedonia	CM					0	0	0
+GR	590 33	Makrochori	Central Macedonia	CM					0	0	0
+GR	590 34	Eirinoupoli	Central Macedonia	CM					0	0	0
+GR	591 00	Veria	Central Macedonia	CM					0	0	0
+GR	593 00	Alexandreia, Greece	Central Macedonia	CM					0	0	0
+GR	600 61	Kolindros	Central Macedonia	CM					0	0	0
+GR	600 62	Korinos	Central Macedonia	CM					0	0	0
+GR	601 00	Katerini	Central Macedonia	CM					0	0	0
+GR	602 00	Litochoro	Central Macedonia	CM					0	0	0
+GR	603 00	Aiginio	Central Macedonia	CM					0	0	0
+GR	610 02	Cherso	Central Macedonia	CM					0	0	0
+GR	610 03	Mouries	Central Macedonia	CM					0	0	0
+GR	610 05	Axioupoli	Central Macedonia	CM					0	0	0
+GR	610 07	Evropos	Central Macedonia	CM					0	0	0
+GR	612 00	Polykastro	Central Macedonia	CM					0	0	0
+GR	613 00	Goumenissa	Central Macedonia	CM					0	0	0
+GR	614 00	Axioupoli	Central Macedonia	CM					0	0	0
+GR	620 41	Palaiokómi	Central Macedonia	CM					0	0	0
+GR	620 43	Vyroneia	Central Macedonia	CM					0	0	0
+GR	620 45	Sitagroi	Eastern Macedonia and Thrace	EM					0	0	0
+GR	620 47	Proti, Serres	Central Macedonia	CM					0	0	0
+GR	620 49	Tragilos	Central Macedonia	CM					0	0	0
+GR	620 52	Dravískos	Central Macedonia	CM					0	0	0
+GR	620 53	Kerkini	Central Macedonia	CM					0	0	0
+GR	620 54	Strymoniko	Central Macedonia	CM					0	0	0
+GR	620 55	Káto Poróïa	Central Macedonia	CM					0	0	0
+GR	620 56	Alistrati	Central Macedonia	CM					0	0	0
+GR	621 00	Serres	Central Macedonia	CM					0	0	0
+GR	621 21	Serres	Central Macedonia	CM					0	0	0
+GR	621 22	Serres	Central Macedonia	CM					0	0	0
+GR	621 23	Serres	Central Macedonia	CM					0	0	0
+GR	621 24	Serres	Central Macedonia	CM					0	0	0
+GR	621 25	Serres	Central Macedonia	CM					0	0	0
+GR	622 00	Nigrita	Central Macedonia	CM					0	0	0
+GR	623 00	Skotoussa	Central Macedonia	CM					0	0	0
+GR	630 71	Ormylia	Central Macedonia	CM					0	0	0
+GR	630 72	Toroni	Central Macedonia	CM					0	0	0
+GR	630 74	Arnaia	Central Macedonia	CM					0	0	0
+GR	630 77	Kassandreia	Central Macedonia	CM					0	0	0
+GR	630 80	Nea Kallikratia	Central Macedonia	CM					0	0	0
+GR	630 81	Neos Marmaras	Central Macedonia	CM					0	0	0
+GR	630 82	Stagira	Central Macedonia	CM					0	0	0
+GR	630 83	Stagira	Central Macedonia	CM					0	0	0
+GR	630 86	Karyes, Mount Athos	Mount Athos	MA					0	0	0
+GR	630 88	Ágios Nikólaos	Central Macedonia	CM					0	0	0
+GR	631 00	Polygyros	Central Macedonia	CM					0	0	0
+GR	632 00	Nea Moudania	Central Macedonia	CM					0	0	0
+GR	640 01	Nikísiani	Eastern Macedonia and Thrace	EM					0	0	0
+GR	640 02	Limenária	Eastern Macedonia and Thrace	EM					0	0	0
+GR	640 03	Filippoi	Eastern Macedonia and Thrace	EM					0	0	0
+GR	640 04	Potamiá	Eastern Macedonia and Thrace	EM					0	0	0
+GR	640 05	Theológos	Eastern Macedonia and Thrace	EM					0	0	0
+GR	640 06	Néa Karváli	Eastern Macedonia and Thrace	EM					0	0	0
+GR	640 07	Eleftherés	Eastern Macedonia and Thrace	EM					0	0	0
+GR	640 11	Keramoti	Eastern Macedonia and Thrace	EM					0	0	0
+GR	642 00	Chrysoupoli	Eastern Macedonia and Thrace	EM					0	0	0
+GR	652 01	Kavala	Eastern Macedonia and Thrace	EM					0	0	0
+GR	653 02	Kavala	Eastern Macedonia and Thrace	EM					0	0	0
+GR	654 03	Kavala	Eastern Macedonia and Thrace	EM					0	0	0
+GR	654 04	Kavala	Eastern Macedonia and Thrace	EM					0	0	0
+GR	655 00	Amygdaleónas	Eastern Macedonia and Thrace	EM					0	0	0
+GR	660 31	Kalampaki	Eastern Macedonia and Thrace	EM					0	0	0
+GR	660 34	Sitagroi	Eastern Macedonia and Thrace	EM					0	0	0
+GR	660 35	Paranesti	Eastern Macedonia and Thrace	EM					0	0	0
+GR	660 37	Nikiforos	Eastern Macedonia and Thrace	EM					0	0	0
+GR	660 38	Drama, Greece	Eastern Macedonia and Thrace	EM					0	0	0
+GR	661 00	Drama, Greece	Eastern Macedonia and Thrace	EM					0	0	0
+GR	662 00	Prosotsani	Eastern Macedonia and Thrace	EM					0	0	0
+GR	663 00	Ágios Athanásios	Eastern Macedonia and Thrace	EM					0	0	0
+GR	670 61	Pezoula	Eastern Macedonia and Thrace	EM					0	0	0
+GR	670 62	Stavroupoli, Xanthi	Eastern Macedonia and Thrace	EM					0	0	0
+GR	670 63	Lagos, Xanthi	Eastern Macedonia and Thrace	EM					0	0	0
+GR	671 00	Xanthi	Eastern Macedonia and Thrace	EM					0	0	0
+GR	671 50	Xanthi	Eastern Macedonia and Thrace	EM					0	0	0
+GR	680 01	Nea Vyssa	Eastern Macedonia and Thrace	EM					0	0	0
+GR	680 02	Samothrace	Eastern Macedonia and Thrace	EM					0	0	0
+GR	680 03	Tychero	Eastern Macedonia and Thrace	EM					0	0	0
+GR	680 04	Lavara	Eastern Macedonia and Thrace	EM					0	0	0
+GR	680 06	Kyprinos	Eastern Macedonia and Thrace	EM					0	0	0
+GR	680 08	Nea Vyssa	Eastern Macedonia and Thrace	EM					0	0	0
+GR	680 10	Metaxades	Eastern Macedonia and Thrace	EM					0	0	0
+GR	681 00	Alexandroupoli	Eastern Macedonia and Thrace	EM					0	0	0
+GR	681 31	Alexandroupoli	Eastern Macedonia and Thrace	EM					0	0	0
+GR	682 00	Orestiada	Eastern Macedonia and Thrace	EM					0	0	0
+GR	683 00	Didymoteicho	Eastern Macedonia and Thrace	EM					0	0	0
+GR	684 00	Soufli	Eastern Macedonia and Thrace	EM					0	0	0
+GR	685 00	Feres, Evros	Eastern Macedonia and Thrace	EM					0	0	0
+GR	690 00	Komotini	Eastern Macedonia and Thrace	EM					0	0	0
+GR	691 00	Komotini	Eastern Macedonia and Thrace	EM					0	0	0
+GR	691 32	Komotini	Eastern Macedonia and Thrace	EM					0	0	0
+GR	692 00	Iasmos	Eastern Macedonia and Thrace	EM					0	0	0
+GR	693 00	Sapes	Eastern Macedonia and Thrace	EM					0	0	0
+GR	694 00	Xylaganí	Eastern Macedonia and Thrace	EM					0	0	0
+GR	695 00	Organi	Eastern Macedonia and Thrace	EM					0	0	0
+GR	700 01	Krousonas	Crete	CR					0	0	0
+GR	700 02	Zaros	Crete	CR					0	0	0
+GR	700 03	Agia Varvara, Heraklion	Crete	CR					0	0	0
+GR	700 05	Mokhós	Crete	CR					0	0	0
+GR	700 07	Mália	Crete	CR					0	0	0
+GR	700 09	Pómpia	Crete	CR					0	0	0
+GR	700 10	Pýrgos	Crete	CR					0	0	0
+GR	700 14	Hersonissos	Crete	CR					0	0	0
+GR	700 15	Heraklion	Crete	CR					0	0	0
+GR	700 16	Heraklion	Crete	CR					0	0	0
+GR	701 00	Ano Arhanes	Crete	CR					0	0	0
+GR	702 00	Tympaki	Crete	CR					0	0	0
+GR	703 00	Arkalochori	Crete	CR					0	0	0
+GR	704 00	Moires	Crete	CR					0	0	0
+GR	713 09	Heraklion	Crete	CR					0	0	0
+GR	714 14	Gazi, Crete	Crete	CR					0	0	0
+GR	716 01	Nea Alikarnassos	Crete	CR					0	0	0
+GR	720 51	Kritsa	Crete	CR					0	0	0
+GR	720 52	Tzermiádon	Crete	CR					0	0	0
+GR	720 53	Elounda	Crete	CR					0	0	0
+GR	720 54	Neapoli, Crete	Crete	CR					0	0	0
+GR	720 57	Sitia	Crete	CR					0	0	0
+GR	720 58	Neapoli, Crete	Crete	CR					0	0	0
+GR	720 59	Ziros, Lasithi	Crete	CR					0	0	0
+GR	721 00	Kritsa	Crete	CR					0	0	0
+GR	722 00	Ierapetra	Crete	CR					0	0	0
+GR	723 00	Sitia	Crete	CR					0	0	0
+GR	724 00	Neapoli, Crete	Crete	CR					0	0	0
+GR	730 02	Voukolies	Crete	CR					0	0	0
+GR	730 04	Kandanos	Crete	CR					0	0	0
+GR	730 05	Alikianos	Crete	CR					0	0	0
+GR	730 06	Kolymvari	Crete	CR					0	0	0
+GR	730 07	Georgioupoli	Crete	CR					0	0	0
+GR	730 08	Vamos	Crete	CR					0	0	0
+GR	730 09	Chania	Crete	CR					0	0	0
+GR	731 31	Chania	Crete	CR					0	0	0
+GR	731 32	Chania	Crete	CR					0	0	0
+GR	731 33	Chania	Crete	CR					0	0	0
+GR	731 34	Chania	Crete	CR					0	0	0
+GR	731 35	Chania	Crete	CR					0	0	0
+GR	731 36	Chania	Crete	CR					0	0	0
+GR	732 00	Souda	Crete	CR					0	0	0
+GR	734 00	Kissamos	Crete	CR					0	0	0
+GR	740 51	Anogeia	Crete	CR					0	0	0
+GR	740 52	Pérama	Crete	CR					0	0	0
+GR	740 53	Spili	Crete	CR					0	0	0
+GR	740 54	Mourtzana	Crete	CR					0	0	0
+GR	740 56	Agia Galini	Crete	CR					0	0	0
+GR	740 57	Rethymno	Crete	CR					0	0	0
+GR	740 58	Rethymno	Crete	CR					0	0	0
+GR	740 61	Amári	Crete	CR					0	0	0
+GR	741 32	Rethymno	Crete	CR					0	0	0
+GR	801 00	Kythira	Attica	AT					0	0	0
+GR	802 00	Kythira	Attica	AT					0	0	0
+GR	811 00	Mytilene	North Aegean	NA					0	0	0
+GR	811 01	Agiasos	North Aegean	NA					0	0	0
+GR	811 02	Agia Paraskevi, Lesbos	North Aegean	NA					0	0	0
+GR	811 03	Ántissa	North Aegean	NA					0	0	0
+GR	811 04	Mantamados	North Aegean	NA					0	0	0
+GR	811 05	Eresós	North Aegean	NA					0	0	0
+GR	811 06	Pappádos	North Aegean	NA					0	0	0
+GR	811 07	Anemotia	North Aegean	NA					0	0	0
+GR	811 08	Mithymna	North Aegean	NA					0	0	0
+GR	811 12	Eresós	North Aegean	NA					0	0	0
+GR	812 00	Plomari	North Aegean	NA					0	0	0
+GR	813 00	Polichnitos	North Aegean	NA					0	0	0
+GR	814 01	Moudros	North Aegean	NA					0	0	0
+GR	815 00	Agios Efstratios	North Aegean	NA					0	0	0
+GR	821 04	Psara	North Aegean	NA					0	0	0
+GR	823 00	Kardamyla	North Aegean	NA					0	0	0
+GR	831 00	Samos (town)	North Aegean	NA					0	0	0
+GR	831 01	Mytilinioí	North Aegean	NA					0	0	0
+GR	831 02	Marathokampos	North Aegean	NA					0	0	0
+GR	831 03	Pythagoreio	North Aegean	NA					0	0	0
+GR	831 04	Pythagoreio	North Aegean	NA					0	0	0
+GR	832 00	Karlovasi	North Aegean	NA					0	0	0
+GR	833 00	Agios Kirykos	North Aegean	NA					0	0	0
+GR	833 01	Raches	North Aegean	NA					0	0	0
+GR	833 02	Evdilos	North Aegean	NA					0	0	0
+GR	840 01	Íos	South Aegean	SA					0	0	0
+GR	840 03	Apollonía	South Aegean	SA					0	0	0
+GR	840 04	Kimolos	South Aegean	SA					0	0	0
+GR	840 05	Serifos	South Aegean	SA					0	0	0
+GR	840 06	Kythnos	South Aegean	SA					0	0	0
+GR	840 07	Antiparos	South Aegean	SA					0	0	0
+GR	840 09	Anafi	South Aegean	SA					0	0	0
+GR	840 10	Sikinos	South Aegean	SA					0	0	0
+GR	840 11	Folegandros	South Aegean	SA					0	0	0
+GR	842 00	Tinos (town)	South Aegean	SA					0	0	0
+GR	842 01	Panormos, Tinos	South Aegean	SA					0	0	0
+GR	843 00	Naxos (city)	South Aegean	SA					0	0	0
+GR	844 00	Paros	South Aegean	SA					0	0	0
+GR	844 01	Naousa, Paros	South Aegean	SA					0	0	0
+GR	845 00	Andros	South Aegean	SA					0	0	0
+GR	846 00	Mykonos	South Aegean	SA					0	0	0
+GR	847 00	Fira	South Aegean	SA					0	0	0
+GR	847 02	Oia, Greece	South Aegean	SA					0	0	0
+GR	847 03	Emporeío	South Aegean	SA					0	0	0
+GR	848 01	Milos	South Aegean	SA					0	0	0
+GR	851 00	Rhodes (city)	South Aegean	SA					0	0	0
+GR	851 01	Ialysos	South Aegean	SA					0	0	0
+GR	851 02	Archangelos, Rhodes	South Aegean	SA					0	0	0
+GR	851 03	Afantou	South Aegean	SA					0	0	0
+GR	851 04	Kremastí	South Aegean	SA					0	0	0
+GR	851 06	Kameiros	South Aegean	SA					0	0	0
+GR	851 07	Lindos	South Aegean	SA					0	0	0
+GR	851 08	Embonas	South Aegean	SA					0	0	0
+GR	851 09	Lindos	South Aegean	SA					0	0	0
+GR	851 10	Halki (Greece)	South Aegean	SA					0	0	0
+GR	851 11	Kastellorizo	South Aegean	SA					0	0	0
+GR	852 00	Kalymnos	South Aegean	SA					0	0	0
+GR	853 01	Kefalos	South Aegean	SA					0	0	0
+GR	855 00	Patmos	South Aegean	SA					0	0	0
+GR	856 00	Symi	South Aegean	SA					0	0	0
+GR	857 00	Karpathos (regional unit)	South Aegean	SA					0	0	0
+GR	858 00	Fry	South Aegean	SA					0	0	0
+GR	859 00	Astypalaia	South Aegean	SA					0	0	0

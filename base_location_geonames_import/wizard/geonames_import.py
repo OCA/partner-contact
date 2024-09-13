@@ -17,6 +17,7 @@ import requests
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
+from odoo.tools import file_path
 
 logger = logging.getLogger(__name__)
 
@@ -103,20 +104,33 @@ class CityZipGeonamesImport(models.TransientModel):
         url = config_url % country_code
         logger.info("Starting to download %s" % url)
         res_request = requests.get(url, timeout=15)
-        if res_request.status_code != requests.codes.ok:
-            # pylint: disable=translation-positional-used - Don't want to re-translate
-            raise UserError(
-                _("Got an error %d when trying to download the file %s.")
-                % (res_request.status_code, url)
+
+        if res_request.status_code == requests.codes.ok:
+            f_geonames = zipfile.ZipFile(io.BytesIO(res_request.content))
+            tempdir = tempfile.mkdtemp(prefix="odoo")
+            f_geonames.extract("%s.txt" % country_code, tempdir)
+
+            f_route = os.path.join(tempdir, "%s.txt" % country_code)
+        else:
+            logger.warning(
+                _(
+                    "Got an error %(status_code)d when trying to download "
+                    "the file %(url)s. Searching for the file locally"
+                )
+                % {"status_code": res_request.status_code, "url": url}
             )
+            addon_dir = file_path("base_location_geonames_import/data/zips")
+            f_route = os.path.join(addon_dir, f"{country_code}.txt")
+            if not os.path.exists(f_route):
+                raise UserError(
+                    _(
+                        "Got an error %(status_code)d when trying to download "
+                        "the file %(url)s."
+                    )
+                    % {"status_code": res_request.status_code, "url": url}
+                )
 
-        f_geonames = zipfile.ZipFile(io.BytesIO(res_request.content))
-        tempdir = tempfile.mkdtemp(prefix="odoo")
-        f_geonames.extract("%s.txt" % country_code, tempdir)
-
-        data_file = open(
-            os.path.join(tempdir, "%s.txt" % country_code), "r", encoding="utf-8"
-        )
+        data_file = open(f_route, "r", encoding="utf-8")
         data_file.seek(0)
         reader = csv.reader(data_file, delimiter="	")
         parsed_csv = [row for i, row in enumerate(reader)]
