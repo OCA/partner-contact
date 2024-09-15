@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_general_configuration" model="ir.ui.view">
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='companies']" position="after">
+                <div id="partner_labels">
+                    <h2>Labels configuration</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <div class="mt16 row">
+                                        <label
+                                            for="partner_labels_width"
+                                            class="col-3 col-lg-3 o_light_label"
+                                        />
+                                        <field
+                                            name="partner_labels_width"
+                                            class="oe_inline"
+                                        />mm
+                                    </div>
+                                    <div class="mt16 row">
+                                        <label
+                                            for="partner_labels_height"
+                                            class="col-3 col-lg-3 o_light_label"
+                                        />
+                                        <field
+                                            name="partner_labels_height"
+                                            class="oe_inline"
+                                        />mm
+                                    </div>
+                                    <div class="mt16 row">
+                                        <label
+                                            for="partner_labels_padding"
+                                            class="col-3 col-lg-3 o_light_label"
+                                        />
+                                        <field
+                                            name="partner_labels_padding"
+                                            class="oe_inline"
+                                        />mm
+                                    </div>
+                                    <div class="mt16 row">
+                                        <label
+                                            for="partner_labels_paperformat_id"
+                                            class="col-3 col-lg-3 o_light_label"
+                                        />
+                                        <field
+                                            name="partner_labels_paperformat_id"
+                                            class="oe_inline"
+                                        />
+                                    </div>
+                                    <div class="mt16">
+                                        <button
+                                            type="object"
+                                            name="action_partner_labels_preview"
+                                            string="Preview"
+                                            class="oe_link"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <div class="mt16 row">
+                                        <label
+                                            for="partner_labels_margin_top"
+                                            class="col-3 col-lg-3 o_light_label"
+                                        />
+                                        <field
+                                            name="partner_labels_margin_top"
+                                            class="oe_inline"
+                                        />mm
+                                    </div>
+                                    <div class="mt16 row">
+                                        <label
+                                            for="partner_labels_margin_bottom"
+                                            class="col-3 col-lg-3 o_light_label"
+                                        />
+                                        <field
+                                            name="partner_labels_margin_bottom"
+                                            class="oe_inline"
+                                        />mm
+                                    </div>
+                                    <div class="mt16 row">
+                                        <label
+                                            for="partner_labels_margin_left"
+                                            class="col-3 col-lg-3 o_light_label"
+                                        />
+                                        <field
+                                            name="partner_labels_margin_left"
+                                            class="oe_inline"
+                                        />mm
+                                    </div>
+                                    <div class="mt16 row">
+                                        <label
+                                            for="partner_labels_margin_right"
+                                            class="col-3 col-lg-3 o_light_label"
+                                        />
+                                        <field
+                                            name="partner_labels_margin_right"
+                                            class="oe_inline"
+                                        />mm
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
