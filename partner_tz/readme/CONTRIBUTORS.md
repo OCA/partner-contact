@@ -4,3 +4,4 @@
 - Denis Roussel \<<denis.roussel@acsone.eu>\>
 - [Binhex](https://binhex.cloud/):
     -   Deriman Alonso
+- Khoi (Kien Kim) \<<kkimkhoi3010@gmail.com>>
