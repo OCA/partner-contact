@@ -77,6 +77,8 @@ Contributors
 
    -  Deriman Alonso
 
+-  Khoi (Kien Kim) <kkimkhoi3010@gmail.com>
+
 Other credits
 -------------
 
