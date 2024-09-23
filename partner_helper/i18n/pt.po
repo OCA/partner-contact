@@ -38,5 +38,11 @@ msgstr ""
 msgid "Last Modified on"
 msgstr ""
 
+#. module: partner_helper
+#: code:addons/partner_helper/models/partner.py:0
+#, python-format
+msgid "The address is too long following word can not be processed '%s'"
+msgstr ""
+
 #~ msgid "Partner"
 #~ msgstr "Parceiro"
