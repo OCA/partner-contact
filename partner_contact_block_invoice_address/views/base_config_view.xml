@@ -1,0 +1,20 @@
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">Partner block invoice address config parameter</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='companies']" position='after'>
+                <block
+                    title="Block Invoice Address Type"
+                    name="block_invoice_address_type_setting_container"
+                >
+                    <setting>
+                        <field name="partner_block_invoice_address" />
+                        <field name="partner_block_invoice_address_default_type" />
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
