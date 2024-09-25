@@ -32,3 +32,17 @@ class ResPartner(models.Model):
             "view_mode": "form",
             "target": "current",
         }
+
+    @api.onchange('parent_id')
+    def onchange_parent_id(self):
+        """Prevent loss of address and make it editable if we attach later a company to another company"""
+        if not self.parent_id:
+            return
+        result = {}
+        if not self.is_company:
+            result = super().onchange_parent_id()
+        elif self.type != "other":
+            result['value'] = {
+                "type": "other"
+            }
+        return result
