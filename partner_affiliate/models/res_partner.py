@@ -2,7 +2,7 @@
 # Copyright 2018 brain-tec AG - Raul Martin
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from odoo import fields, models, api
 
 
 class ResPartner(models.Model):
@@ -22,6 +22,18 @@ class ResPartner(models.Model):
         string="Affiliates",
         domain=[("active", "=", True), ("is_company", "=", True)],
     )
+
+    @api.onchange("parent_id")
+    def onchange_parent_id(self):
+        """Prevent loss of address and make it editable if we attach later a company to another company"""
+        if not self.parent_id:
+            return
+        result = {}
+        if not self.is_company:
+            result = super().onchange_parent_id()
+        elif self.type != "other":
+            result["value"] = {"type": "other"}
+        return result
 
     def open_affiliate_form(self):
         """Open affiliate contact form from the parent partner form view"""
