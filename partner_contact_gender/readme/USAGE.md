@@ -1,2 +1,2 @@
-New item for 'Gender' can be edited on the 'Personal Information' tab of
+A value for 'Gender' can be selected on the 'Personal Information' tab of
 the partner contact form.
