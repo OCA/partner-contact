@@ -71,16 +71,17 @@ class ResPartner(models.Model):
             args, offset=offset, limit=limit, order=order, count=count
         )
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """When creating, use a modified self to alter the context (see
         comment in _basecontact_check_context).  Also, we need to ensure
         that the name on an attached contact is the same as the name on the
         contact it is attached to."""
         modified_self = self._basecontact_check_context("create")
-        if not vals.get("name") and vals.get("contact_id"):
-            vals["name"] = modified_self.browse(vals["contact_id"]).name
-        return super(ResPartner, modified_self).create(vals)
+        for vals in vals_list:
+            if not vals.get("name") and vals.get("contact_id"):
+                vals["name"] = modified_self.browse(vals["contact_id"]).name
+        return super(ResPartner, modified_self).create(vals_list)
 
     def read(self, fields=None, load="_classic_read"):
         modified_self = self._basecontact_check_context("read")
@@ -134,7 +135,7 @@ class ResPartner(models.Model):
         fields.related to the parent
         """
         self.ensure_one()
-        super(ResPartner, self)._fields_sync(update_values)
+        res = super(ResPartner, self)._fields_sync(update_values)
         contact_fields = self._contact_fields()
         # 1. From UPSTREAM: sync from parent contact
         if update_values.get("contact_id"):
@@ -145,6 +146,7 @@ class ResPartner(models.Model):
             if self.contact_id:
                 update_ids |= self.contact_id
             update_ids.update_contact(update_values)
+        return res
 
     @api.onchange("contact_id")
     def _onchange_contact_id(self):
