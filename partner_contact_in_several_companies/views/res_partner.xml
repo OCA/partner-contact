@@ -130,18 +130,20 @@
                                         <div class="oe_kanban_details">
                                             <field name="name" />
                                             <div t-if="record.function.raw_value">
-                                                <field name="function" />
-                                                at
-                                                <field name="parent_id" />
+                                                <field name="function" /> at <field
+                                                    name="parent_id"
+                                                />
                                             </div>
                                             <div t-if="record.email.raw_value">
                                                 <field name="email" />
                                             </div>
-                                            <div t-if="record.phone.raw_value">Phone:
-                                                <field name="phone" />
+                                            <div
+                                                t-if="record.phone.raw_value"
+                                            >Phone: <field name="phone" />
                                             </div>
-                                            <div t-if="record.mobile.raw_value">Mobile:
-                                                <field name="mobile" />
+                                            <div
+                                                t-if="record.mobile.raw_value"
+                                            >Mobile: <field name="mobile" />
                                             </div>
                                         </div>
                                     </div>
@@ -256,10 +258,10 @@
                 expr="//page[@name='personal_information_page']/group[@name='personal_information_group']"
                 position='after'
             >
-                <p attrs="{'invisible': [('contact_id','=',False)]}">
-                    To see personal information about this contact, please
-                    go to to the this person form:
-                    <field
+                <p
+                    attrs="{'invisible': [('contact_id','=',False)]}"
+                > To see personal information
+                    about this contact, please go to to the this person form: <field
                         name="contact_id"
                         class="oe_inline"
                         domain="[('contact_type','!=','attached')]"
@@ -284,12 +286,11 @@
                 </field>
             </field>
             <xpath
-                expr="//t[@t-name='kanban-box']//div[hasclass('oe_kanban_details')]/ul/li[3]"
+                expr="//t[@t-name='kanban-box']//div[hasclass('oe_kanban_details')]//ul/li[3]"
                 position="after"
             >
                 <t t-if="record.other_contact_ids.raw_value.length &gt; 0">
-                    <li>+
-                        <t t-esc="record.other_contact_ids.raw_value.length" />
+                    <li>+ <t t-esc="record.other_contact_ids.raw_value.length" />
                         <t
                             t-if="record.other_contact_ids.raw_value.length == 1"
                         >other position</t>

@@ -134,7 +134,7 @@ class ResPartner(models.Model):
         fields.related to the parent
         """
         self.ensure_one()
-        super(ResPartner, self)._fields_sync(update_values)
+        res = super(ResPartner, self)._fields_sync(update_values)
         contact_fields = self._contact_fields()
         # 1. From UPSTREAM: sync from parent contact
         if update_values.get("contact_id"):
@@ -145,6 +145,7 @@ class ResPartner(models.Model):
             if self.contact_id:
                 update_ids |= self.contact_id
             update_ids.update_contact(update_values)
+        return res
 
     @api.onchange("contact_id")
     def _onchange_contact_id(self):
