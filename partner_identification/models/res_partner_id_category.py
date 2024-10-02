@@ -10,7 +10,7 @@
 
 from random import randint
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import UserError, ValidationError
 from odoo.tools.safe_eval import safe_eval
 
@@ -71,14 +71,18 @@ class ResPartnerIdCategory(models.Model):
             safe_eval(self.validation_code, eval_context, mode="exec", nocopy=True)
         except Exception as e:
             raise UserError(
-                _(
+                self.env._(
                     "Error when evaluating the id_category "
-                    "validation code: \n {name} \n({error})"
-                ).format(name=self.name, error=e)
+                    "validation code: \n %(name)s \n(%(error)s)",
+                    name=self.name,
+                    error=e,
+                )
             ) from e
         if eval_context.get("failed", False):
             raise ValidationError(
-                _("{id_name} is not a valid {cat_name} identifier").format(
-                    id_name=id_number.name, cat_name=self.name
+                self.env._(
+                    "{%(id_name)s is not a valid %(cat_name)s identifier",
+                    id_name=id_number.name,
+                    cat_name=self.name,
                 )
             )

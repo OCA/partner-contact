@@ -42,20 +42,20 @@ failed = not id_number.name.startswith(self.code) and True or False
         </field>
     </record>
     <record id="view_partner_id_category_tree" model="ir.ui.view">
-        <field name="name">res.partner.id_category.tree</field>
+        <field name="name">res.partner.id_category.list</field>
         <field name="model">res.partner.id_category</field>
-        <field name="type">tree</field>
+        <field name="type">list</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="code" />
-            </tree>
+            </list>
         </field>
     </record>
     <record id="action_partner_id_category" model="ir.actions.act_window">
         <field name="name">Partner ID Categories</field>
         <field name="res_model">res.partner.id_category</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
     <menuitem
         action="action_partner_id_category"

@@ -147,6 +147,7 @@ Contributors
 -  Phuc Tran Thanh <phuc@trobz.com>
 -  Marie Lejeune <marie.lejeune@acsone.eu>
 -  Nils Coenen <nils.coenen@nico-solutions.de>
+-  Chau Le <chaulb@trobz.com>
 
 Other credits
 -------------
