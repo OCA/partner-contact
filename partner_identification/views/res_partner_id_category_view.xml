@@ -22,16 +22,24 @@
 #  - self: browse_record of the current ID Category browse_record
 #  - id_number: browse_record of ID number to validate
 
-<b><i># Sample 1: ID number only contains digits</i></b>
+<b>
+                                    <i># Sample 1: ID number only contains digits</i>
+                                </b>
 if not id_number.name.isdigit():
     failed = True
 else:
     failed = False
 
-<b><i># Sample 2: Length of ID number cannot exceed 10 chars</i></b>
+<b>
+                                    <i
+                                    ># Sample 2: Length of ID number cannot exceed 10 chars</i>
+                                </b>
 failed = len(id_number.name) > 10 and True or False
 
-<b><i># Sample 3: ID number must start with the category code</i></b>
+<b>
+                                    <i
+                                    ># Sample 3: ID number must start with the category code</i>
+                                </b>
 failed = not id_number.name.startswith(self.code) and True or False
                                 </pre>
                             </div>
