@@ -52,12 +52,19 @@ Credits
 Authors
 -------
 
-* Camptocamp SA
+* Camptocamp
 
 Contributors
 ------------
 
 -  Thierry Ducrest <thierry.ducrest@camptocamp.com>
+-  Chau Le <chaulb@trobz.com>
+
+Other credits
+-------------
+
+The migration of this module from 14.0 to 18.0 was financially supported
+by Camptocamp.
 
 Maintainers
 -----------
