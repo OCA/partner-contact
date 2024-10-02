@@ -61,6 +61,7 @@ Contributors
 -  `Trobz <https://trobz.com>`__:
 
    -  Khoi Vo <khoivha@trobz.com>
+   -  Khoi (Kien Kim) <khoikk@trobz.com>
 
 Other credits
 -------------
@@ -69,6 +70,11 @@ Other credits
 
 -  Cosanum
 -  Camptocamp R&D
+
+The migration of this module from 17.0 to 18.0 was financially supported
+by:
+
+-  Camptocamp.
 
 Maintainers
 -----------
