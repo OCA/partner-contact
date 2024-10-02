@@ -1,7 +1,7 @@
 # Copyright 2021 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -24,8 +24,9 @@ class ResPartnerIdCategory(models.Model):
             unique_numbers = set(ids.mapped("name"))
             if len(ids) != len(unique_numbers):
                 raise ValidationError(
-                    _(
-                        "The category {} can not be set to use unique numbers, "
-                        "because it already contains duplicates."
-                    ).format(rec.name)
+                    self.env._(
+                        "The category %s can not be set to use unique numbers, "
+                        "because it already contains duplicates.",
+                        rec.name,
+                    )
                 )

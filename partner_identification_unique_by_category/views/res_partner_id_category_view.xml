@@ -14,7 +14,7 @@
         </field>
     </record>
     <record model="ir.ui.view" id="view_partner_id_category_tree">
-        <field name="name">res.partner.id_category.tree</field>
+        <field name="name">res.partner.id_category.list</field>
         <field name="model">res.partner.id_category</field>
         <field
             name="inherit_id"

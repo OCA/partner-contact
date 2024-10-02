@@ -1,7 +1,7 @@
 # Copyright 2021 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from odoo import _, api, models
+from odoo import api, models
 from odoo.exceptions import ValidationError
 
 
@@ -21,8 +21,10 @@ class ResPartnerIdNumber(models.Model):
             )
             if count > 1:
                 raise ValidationError(
-                    _(
-                        "The Id {} in the category {} could not be created because "
-                        "it already exists"
-                    ).format(rec.name, rec.category_id.name)
+                    self.env._(
+                        "The Id %(name)s in the category %(category_name)s "
+                        "could not be created because it already exists",
+                        name=rec.name,
+                        category_name=rec.category_id.name,
+                    )
                 )

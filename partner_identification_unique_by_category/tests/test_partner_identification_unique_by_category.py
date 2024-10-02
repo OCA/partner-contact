@@ -2,10 +2,10 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
 from odoo.exceptions import ValidationError
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 
 
-class TestPartnerIdentificationUniqueByCategory(SavepointCase):
+class TestPartnerIdentificationUniqueByCategory(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -67,7 +67,6 @@ class TestPartnerIdentificationUniqueByCategory(SavepointCase):
                 "partner_id": self.partner_1.id,
             }
         )
-        self.category_1.has_unique_numbers = True
         self.category_1.has_unique_numbers = False
         self.env["res.partner.id_number"].create(
             {
