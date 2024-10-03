@@ -1,0 +1,1 @@
+odoo-addon-partner_identification @ git+https://github.com/OCA/partner-contact.git@refs/pull/1858/head#subdirectory=partner_identification
