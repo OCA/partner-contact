@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_team_group_user,ir.filters.group,model_res_team,base.group_user,1,0,0,0
+access_res_team_group_system,ir.filters.group,model_res_team,base.group_system,1,1,1,1
+access_rel_team_partner_group_user,ir.filters.group,model_rel_team_partner,base.group_user,1,0,0,0
+access_rel_team_partner_group_system,ir.filters.group,model_rel_team_partner,base.group_system,1,1,1,1
