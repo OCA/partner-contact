@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.sportclub.base</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="70" />
+            <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block o_sportclub_base_block"
+                        data-string="SportClub_Base"
+                        string="Sport Club"
+                        data-key="sportclub_base"
+                        groups="base.group_user"
+                        invisible="1">
+                        <h2>Sport Club</h2>
+                    </div>
+                </xpath>
+                <xpath expr="//div[hasclass('o_sportclub_base_block')]" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </xpath>
+                <xpath expr="//div[hasclass('o_sportclub_base_block')]" position="inside">
+                    <div class="row mt16 o_settings_container">
+                        <div class="o_setting_box col-12 col-lg-6">
+
+                            <div class="o_setting_right_pane o_sportclub_base_right_pane">
+                                <h2>Club informations</h2>
+                                <div class="content-group">
+                                    <div class="row ">
+                                        <label class="o_form_label col-lg-12" for="sportclub_name" />
+                                        <field name="sportclub_name" />
+                                    </div>
+                                    <div class="row">
+                                        <label class="o_form_label col-lg-12" for="sportclub_matr" />
+                                        <field name="sportclub_matr" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+
+        </record>
+
+        <record id="settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context" eval="{'module': 'general_settings', 'bin_size': False}" />
+        </record>
+
+        <record id="configuration_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module': 'sportclub_base', 'bin_size': False}</field>
+        </record>
+
+
+
+        <menuitem name="Sport Club"
+            id="menu_sportclub"
+            sequence="95"
+            groups="base.group_user"
+            web_icon="sportclub_base,static/description/icon.png" />
+
+    
+
+    </data>
+</odoo>
