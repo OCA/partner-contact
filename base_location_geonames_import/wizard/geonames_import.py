@@ -15,7 +15,7 @@ import zipfile
 
 import requests
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import UserError
 
 logger = logging.getLogger(__name__)
@@ -101,22 +101,23 @@ class CityZipGeonamesImport(models.TransientModel):
             "geonames.url", default="http://download.geonames.org/export/zip/%s.zip"
         )
         url = config_url % country_code
-        logger.info("Starting to download %s" % url)
+        logger.info("Starting to download %s", url)
         res_request = requests.get(url, timeout=15)
         if res_request.status_code != requests.codes.ok:
             # pylint: disable=translation-positional-used - Don't want to re-translate
             raise UserError(
-                _("Got an error %d when trying to download the file %s.")
-                % (res_request.status_code, url)
+                self.env._(
+                    "Got an error %d when trying to download the file %s.",
+                    res_request.status_code,
+                    url,
+                )
             )
 
         f_geonames = zipfile.ZipFile(io.BytesIO(res_request.content))
         tempdir = tempfile.mkdtemp(prefix="odoo")
-        f_geonames.extract("%s.txt" % country_code, tempdir)
+        f_geonames.extract(f"{country_code}.txt", tempdir)
 
-        data_file = open(
-            os.path.join(tempdir, "%s.txt" % country_code), encoding="utf-8"
-        )
+        data_file = open(os.path.join(tempdir, f"{country_code}.txt"), encoding="utf-8")
         data_file.seek(0)
         reader = csv.reader(data_file, delimiter="	")
         parsed_csv = [row for i, row in enumerate(reader)]
@@ -202,17 +203,17 @@ class CityZipGeonamesImport(models.TransientModel):
         model = self.env[model_name]
         items = model.browse(list(old_records))
         try:
-            logger.info("removing %s entries" % model._name)
+            logger.info("removing %s entries", model._name)
             items.unlink()
             logger.info(
-                "%d entries deleted for country %s" % (len(old_records), country.name)
+                "%d entries deleted for country %s", len(old_records), country.name
             )
         except Exception:
             for item in items:
                 try:
                     item.unlink()
                 except Exception:
-                    logger.info(_("%d could not be deleted %") % item.name)
+                    logger.info(self.env._("%s could not be deleted", item.name))
 
     def _process_csv(self, parsed_csv, country):
         state_model = self.env["res.country.state"]
