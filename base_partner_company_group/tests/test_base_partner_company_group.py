@@ -1,23 +1,13 @@
 # Copyright 2020 Ecosoft Co., Ltd (http://ecosoft.co.th/)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo.tests.common import TransactionCase
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestBasePartnerCompanyGroup(TransactionCase):
+class TestBasePartnerCompanyGroup(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        # Remove this variable in v16 and put instead:
-        # from odoo.addons.base.tests.common import DISABLED_MAIL_CONTEXT
-        DISABLED_MAIL_CONTEXT = {
-            "tracking_disable": True,
-            "mail_create_nolog": True,
-            "mail_create_nosubscribe": True,
-            "mail_notrack": True,
-            "no_reset_password": True,
-        }
-        cls.env = cls.env(context=dict(cls.env.context, **DISABLED_MAIL_CONTEXT))
         cls.partner_model = cls.env["res.partner"]
         cls.company = cls.partner_model.create(
             {"name": "Test Company", "company_type": "company"}
