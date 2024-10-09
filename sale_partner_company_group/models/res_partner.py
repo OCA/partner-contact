@@ -1,7 +1,7 @@
 # Copyright 2019 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, models
+from odoo import api, models
 
 
 class Contact(models.Model):
@@ -17,8 +17,8 @@ class Contact(models.Model):
         ):
             price_list = self.company_group_id.property_product_pricelist
             res["warning"] = {
-                "title": _("Warning"),
-                "message": _(
+                "title": self.env._("Warning"),
+                "message": self.env._(
                     "The company group %(company_group)s has"
                     " the pricelist %(pricelist)s, that is different"
                     " than the pricelist set on this contact"
@@ -49,10 +49,10 @@ class Contact(models.Model):
             )
             members_str = ""
             for member in company_members.sorted(key="display_name"):
-                members_str += "\t- %s\n" % member.display_name
+                members_str += f"\t- {member.display_name}\n"
             res["warning"] = {
-                "title": _("Warning"),
-                "message": _(
+                "title": self.env._("Warning"),
+                "message": self.env._(
                     "This contact has members of a company group with"
                     f" different pricelists, the members are:\n{members_str}"
                 ),
