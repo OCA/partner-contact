@@ -3,3 +3,4 @@
 - [Tecnativa](https://www.tecnativa.com):
   - Ernesto Tejeda
 - Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
+- Nguyen Minh Chien \<<chien@trobz.com>\>
