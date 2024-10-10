@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2016-2017 ACSONE SA/NV (<http://acsone.eu>)
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record
+        id="partner_identification_gln_number_category"
+        model="res.partner.id_category"
+    >
+        <field name="name">GLN Identification Number</field>
+        <field name="code">gln_id_number</field>
+        <field
+            name="validation_code"
+        ><![CDATA[failed = self.validate_res_partner_gln(id_number)]]></field>
+    </record>
+    <record
+        id="partner_identification_gcp_number_category"
+        model="res.partner.id_category"
+    >
+        <field name="name">GCP Identification Number</field>
+        <field name="code">gcp_id_number</field>
+        <field
+            name="validation_code"
+        ><![CDATA[failed = self.validate_res_partner_gcp(id_number)]]></field>
+    </record>
+</odoo>

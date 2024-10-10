@@ -1,0 +1,48 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_identification_gln
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-11 11:05+0000\n"
+"PO-Revision-Date: 2019-09-11 11:05+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>, 2017\n"
+"Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+
+#. module: partner_identification_gln
+#: model:ir.model.fields,field_description:partner_identification_gln.field_res_partner_id_category__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_identification_gln
+#: model:res.partner.id_category,name:partner_identification_gln.partner_identification_gcp_number_category
+msgid "GCP Identification Number"
+msgstr "GCP identifikacijska številka"
+
+#. module: partner_identification_gln
+#: model:res.partner.id_category,name:partner_identification_gln.partner_identification_gln_number_category
+msgid "GLN Identification Number"
+msgstr "GLN identifikacijska številka"
+
+#. module: partner_identification_gln
+#: model:ir.model.fields,field_description:partner_identification_gln.field_res_partner_id_category__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_identification_gln
+#: model:ir.model.fields,field_description:partner_identification_gln.field_res_partner_id_category____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_identification_gln
+#: model:ir.model,name:partner_identification_gln.model_res_partner_id_category
+msgid "Partner ID Category"
+msgstr "Partnerjeve ID kategorije"
