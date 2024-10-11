@@ -2,18 +2,10 @@
 # Copyright 2016 Tecnativa - Vicent Cubells
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-import odoo.tests.common as common
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestBasePartnerSequence(common.TransactionCase):
-    def setUp(self):
-        super().setUp()
-
-        self.res_partner = self.env["res.partner"]
-        self.partner = self.res_partner.create(
-            {"name": "test1", "email": "test@test.com"}
-        )
-
+class TestBasePartnerSequence(BaseCommon):
     def test_ref_sequence_on_partner(self):
         # Test sequence on creating partner and copying it
         self.assertTrue(self.partner.ref, "A partner has always a ref.")
@@ -25,7 +17,7 @@ class TestBasePartnerSequence(common.TransactionCase):
 
     def test_ref_sequence_on_contact(self):
         # Test if sequence doesn't increase on creating a contact child
-        contact = self.res_partner.create(
+        contact = self.env["res.partner"].create(
             {
                 "name": "contact1",
                 "email": "contact@contact.com",
@@ -54,7 +46,7 @@ class TestBasePartnerSequence(common.TransactionCase):
         converted to a commercial partner."""
         # Remove the ref from the parent so child does not have one initially
         self.partner.write({"ref": False})
-        contact = self.res_partner.create(
+        contact = self.env["res.partner"].create(
             {
                 "name": "contact1",
                 "email": "contact@contact.com",
