@@ -13,3 +13,4 @@
 - Francesco Apruzzese \<<cescoap@gmail.com>\>
 - Daniel Reis \<<dreis@opensourceintegrators.com>\>
 - Nikul Chaudhary \<<nchaudhary@opensourceintegrators.com>\>
+- Khoi (Kien Kim) \<<khoikk@trobz.com>\>
