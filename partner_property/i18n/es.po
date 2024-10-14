@@ -53,9 +53,3 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_property.field_res_users__properties_type_person
 msgid "Properties Type Person"
 msgstr ""
-
-#~ msgid "Partner Properties"
-#~ msgstr "Propiedades de contacto"
-
-#~ msgid "Properties"
-#~ msgstr "Propiedades"
