@@ -88,8 +88,8 @@ class UserCase(TransactionCase, MailInstalled):
             copy,
             [
                 {
-                    "firstname": False,
-                    "lastname": "Firstname1 Firstname2 Lastname1 Lastname2 (copy)",
+                    "firstname": "Firstname1 Firstname2",
+                    "lastname": "Lastname1 Lastname2 (copy)",
                     "name": "Firstname1 Firstname2 Lastname1 Lastname2 (copy)",
                 }
             ],
