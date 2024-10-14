@@ -16,14 +16,14 @@
         <field name="name">res.city.zip.tree</field>
         <field name="model">res.city.zip</field>
         <field name="arch" type="xml">
-            <tree editable="top">
+            <list editable="top">
                 <field name="name" />
                 <field name="city_id" />
                 <field
                     name="country_id"
                     options="{'no_open': True, 'no_create': True}"
                 />
-            </tree>
+            </list>
         </field>
     </record>
     <record id="view_city_zip_filter" model="ir.ui.view">
