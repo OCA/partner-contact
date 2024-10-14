@@ -6,7 +6,7 @@
 The form operates in onchange mode, with its limitations.
 """
 
-from odoo.tests.common import Form, TransactionCase
+from odoo.tests import Form, TransactionCase
 
 from ..exceptions import EmptyNamesError
 

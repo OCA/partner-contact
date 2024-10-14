@@ -3,7 +3,7 @@
 
 """Test default values for models."""
 
-from odoo.tests.common import TransactionCase
+from odoo.tests import TransactionCase
 
 from .base import MailInstalled
 
@@ -29,7 +29,7 @@ class PersonCase(TransactionCase):
             self.env[self.model].with_context(**self.context).create(self.values)
         )
         for key, value in self.good_values.items():
-            self.assertEqual(self.record[key], value, "Checking key %s" % key)
+            self.assertEqual(self.record[key], value, f"Checking key {key}")
 
         super().tearDown()
 

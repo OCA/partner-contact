@@ -1,7 +1,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Test copy function for models."""
 
-from odoo.tests.common import TransactionCase
+from odoo.tests import TransactionCase
 
 from .base import MailInstalled
 
@@ -88,8 +88,8 @@ class UserCase(TransactionCase, MailInstalled):
             copy,
             [
                 {
-                    "firstname": False,
-                    "lastname": "Firstname1 Firstname2 Lastname1 Lastname2 (copy)",
+                    "firstname": "Firstname1 Firstname2",
+                    "lastname": "Lastname1 Lastname2 (copy)",
                     "name": "Firstname1 Firstname2 Lastname1 Lastname2 (copy)",
                 }
             ],

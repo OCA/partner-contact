@@ -3,7 +3,7 @@
 
 """Test default values for models."""
 
-from odoo.tests.common import TransactionCase
+from odoo.tests import TransactionCase
 
 from .base import MailInstalled
 
@@ -25,7 +25,7 @@ class PersonCase(TransactionCase):
 
     def tearDown(self):
         for key, value in self.values.items():
-            self.assertEqual(self.defaults.get(key), value, "Checking key %s" % key)
+            self.assertEqual(self.defaults.get(key), value, f"Checking key {key}")
 
         return super().tearDown()
 
