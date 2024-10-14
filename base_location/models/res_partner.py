@@ -4,7 +4,7 @@
 
 from lxml import etree
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -106,35 +106,35 @@ class ResPartner(models.Model):
             error_dict = {"partner": rec.name, "location": rec.zip_id.name}
             if rec.zip_id.city_id.country_id != rec.country_id:
                 raise ValidationError(
-                    _(
+                    self.env._(
                         "The country of the partner %(partner)s differs from that in "
-                        "location %(location)s"
+                        "location %(location)s",
+                        **error_dict,
                     )
-                    % error_dict
                 )
             if rec.zip_id.city_id.state_id != rec.state_id:
                 raise ValidationError(
-                    _(
+                    self.env._(
                         "The state of the partner %(partner)s differs from that in "
-                        "location %(location)s"
+                        "location %(location)s",
+                        **error_dict,
                     )
-                    % error_dict
                 )
             if rec.zip_id.city_id != rec.city_id:
                 raise ValidationError(
-                    _(
+                    self.env._(
                         "The city of the partner %(partner)s differs from that in "
-                        "location %(location)s"
+                        "location %(location)s",
+                        **error_dict,
                     )
-                    % error_dict
                 )
             if rec.zip_id.name != rec.zip:
                 raise ValidationError(
-                    _(
+                    self.env._(
                         "The zip of the partner %(partner)s differs from that in "
-                        "location %(location)s"
+                        "location %(location)s",
+                        **error_dict,
                     )
-                    % error_dict
                 )
 
     def _zip_id_domain(self):
