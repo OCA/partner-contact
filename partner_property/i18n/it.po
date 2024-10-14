@@ -53,9 +53,3 @@ msgstr "Azienda tipo proprieà"
 #: model:ir.model.fields,field_description:partner_property.field_res_users__properties_type_person
 msgid "Properties Type Person"
 msgstr "Persona tipo proprietà"
-
-#~ msgid "Partner Properties"
-#~ msgstr "Prorietà partner"
-
-#~ msgid "Properties"
-#~ msgstr "Proprietà"
