@@ -96,11 +96,17 @@ Contributors
 -  Francesco Apruzzese <f.apruzzese@apuliasoftware.it>
 -  Dave Lasley <dave@laslabs.com>
 -  Aitor Bouzas <aitor.bouzas@adaptivecity.com>
+-  Khoi (Kien Kim) <khoikk@trobz.com>
 
 Other credits
 -------------
 
 -  Icon park: Icon http://icon-park.com/icon/location-map-pin-orange3/
+
+The migration of this module from 17.0 to 18.0 was financially supported
+by:
+
+-  Camptocamp.
 
 Maintainers
 -----------
