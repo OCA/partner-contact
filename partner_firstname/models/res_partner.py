@@ -47,11 +47,8 @@ class ResPartner(models.Model):
         created_partners = self.browse()
         for vals in vals_list:
             partner_context = dict(self.env.context)
-            if (
-                not vals.get("is_company")
-                and self.name_fields_in_vals(vals)
-                and "name" in vals
-            ):
+            is_company = vals.get("company_type") == "company"
+            if not is_company and self.name_fields_in_vals(vals) and "name" in vals:
                 del vals["name"]
                 partner_context.pop("default_name", None)
             else:
@@ -59,10 +56,7 @@ class ResPartner(models.Model):
                 if name is not None:
                     # Calculate the split fields
                     inverted = self._get_inverse_name(
-                        self._get_whitespace_cleaned_name(name),
-                        vals.get(
-                            "is_company", self.default_get(["is_company"])["is_company"]
-                        ),
+                        self._get_whitespace_cleaned_name(name), is_company
                     )
                     for key, value in inverted.items():
                         if not vals.get(key) or partner_context.get("copy"):
@@ -101,10 +95,9 @@ class ResPartner(models.Model):
         and lastname fields.
         """
         default = default or {}
-        if not self.is_company:
-            order = self._get_names_order()
-            extra_default_values = self.get_extra_default_copy_values(order)
-            default.update(extra_default_values)
+        order = self._get_names_order()
+        extra_default_values = self.get_extra_default_copy_values(order)
+        default.update(extra_default_values)
         return super(ResPartner, self.with_context(copy=True)).copy(default)
 
     @api.model
@@ -252,7 +245,7 @@ class ResPartner(models.Model):
                     not (record.firstname or record.lastname),
                 )
             ):
-                raise exceptions.EmptyNamesError(record)
+                raise exceptions.EmptyNamesError(record, self.env)
 
     @api.model
     def _install_partner_firstname(self):
