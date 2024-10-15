@@ -17,12 +17,12 @@ class Partner(models.Model):
         count=False,
         access_rights_uid=None,
     ):
-        if self._context.get("search_default_industry_id"):
+        if self.env.context.get("search_default_industry_id"):
             args.append(
                 (
                     "industry_id",
                     "child_of",
-                    self._context["search_default_industry_id"],
+                    self.env.context["search_default_industry_id"],
                 )
             )
         return super()._search(
@@ -36,7 +36,7 @@ class Partner(models.Model):
 
     @api.model
     def view_header_get(self, view_id, view_type):
-        if self._context.get("industry_id"):
+        if self.env.context.get("industry_id"):
             return _(
                 "Partners: %(industry)s",
                 industry=self.env["res.partner.industry"]
