@@ -1,0 +1,1 @@
+odoo-addon-base_location @ git+https://github.com/OCA/partner-contact.git@refs/pull/1867/head#subdirectory=base_location
