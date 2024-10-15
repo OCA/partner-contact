@@ -58,7 +58,6 @@ msgstr "Empresas"
 #. module: partner_ref_unique
 #. odoo-python
 #: code:addons/partner_ref_unique/models/res_partner.py:0
-#, python-format
 msgid "This reference is equal to partner '%s'"
 msgstr "Esta referencia es igual al socio '%s'"
 
