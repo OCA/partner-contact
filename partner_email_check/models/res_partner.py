@@ -44,7 +44,7 @@ class ResPartner(models.Model):
             for rec in self.filtered("email"):
                 if "," in rec.email:
                     raise UserError(
-                        _(
+                        self.env._(
                             "Field contains multiple email addresses. This is "
                             "not supported when duplicate email addresses are "
                             "not allowed."
@@ -52,7 +52,7 @@ class ResPartner(models.Model):
                     )
                 if self.search_count([("email", "=", rec.email), ("id", "!=", rec.id)]):
                     raise UserError(
-                        _("Email '%s' is already in use.") % rec.email.strip()
+                        self.env._("Email '%s' is already in use.", rec.email.strip())
                     )
 
     def _normalize_email(self, email):
@@ -72,11 +72,11 @@ class ResPartner(models.Model):
             )
         except EmailSyntaxError:
             raise ValidationError(
-                _("%s is an invalid email") % email.strip()
+                self.env._("%s is an invalid email", email.strip())
             ) from EmailSyntaxError
         except EmailUndeliverableError:
             raise ValidationError(
-                _("Cannot deliver to email address %s") % email.strip()
+                self.env._("Cannot deliver to email address %s", email.strip())
             ) from EmailUndeliverableError
         return result.normalized.lower()
 
