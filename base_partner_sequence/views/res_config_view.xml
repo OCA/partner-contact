@@ -23,6 +23,21 @@
                                 Set Partner Reference field as read-only
                             </div>
                         </div>
+                        <div class="o_setting_left_pane">
+                            <field name="partner_generated_reference_unique" />
+                        </div>
+                        <div
+                        class="o_setting_right_pane"
+                        id="partner_reference_unique_settings"
+                    >
+                            <label for="partner_generated_reference_unique" />
+                            <div class="text-muted">
+                                Partner generated reference will be unique.<br />
+                                <span
+                                class="fa fa-warning"
+                            /> Be aware that changing this parameter will affect only new partners.
+                            </div>
+                        </div>
                     </div>
                 </xpath>
             </field>
