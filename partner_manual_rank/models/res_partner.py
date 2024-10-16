@@ -72,3 +72,12 @@ class ResPartner(models.Model):
 
     def _default_is_supplier(self):
         return self.env.context.get("res_partner_search_mode") == "supplier"
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if "customer_rank" in vals and "is_customer" not in vals:
+                vals["is_customer"] = bool(vals["customer_rank"])
+            if "supplier_rank" in vals and "is_supplier" not in vals:
+                vals["is_supplier"] = bool(vals["supplier_rank"])
+        return super().create(vals_list)
