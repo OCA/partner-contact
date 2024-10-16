@@ -1,8 +1,9 @@
 [project]
 name = "odoo-addons-oca-partner-contact"
-version = "18.0.20241015.0"
+version = "18.0.20241016.0"
 dependencies = [
     "odoo-addon-partner_ref_unique==18.0.*",
+    "odoo-addon-partner_tz==18.0.*",
 ]
 classifiers=[
     "Programming Language :: Python",

@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [partner_ref_unique](partner_ref_unique/) | 18.0.1.0.0 |  | Add an unique constraint to partner ref field
+[partner_tz](partner_tz/) | 18.0.1.0.0 |  | Remove partner timezone default value and display on form
 
 [//]: # (end addons)
 
