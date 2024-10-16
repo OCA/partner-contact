@@ -9,3 +9,6 @@ but it can only be modified from the commercial partner.
 
 No references are assigned for contacts such as shipping and
 invoice addresses.
+
+That initial behavior can be changed to use unique generated references
+across all partners through a configuration parameter.

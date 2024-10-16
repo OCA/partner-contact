@@ -2,15 +2,15 @@
 # Copyright 2016 Tecnativa - Vicent Cubells
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-import odoo.tests.common as common
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestBasePartnerSequence(common.TransactionCase):
-    def setUp(self):
-        super(TestBasePartnerSequence, self).setUp()
-
-        self.res_partner = self.env["res.partner"]
-        self.partner = self.res_partner.create(
+class TestBasePartnerSequence(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.res_partner = cls.env["res.partner"]
+        cls.partner = cls.res_partner.create(
             {"name": "test1", "email": "test@test.com"}
         )
 
@@ -65,3 +65,31 @@ class TestBasePartnerSequence(common.TransactionCase):
         contact.write({"parent_id": False})
         self.assertTrue(contact.ref)
         self.assertFalse(contact.ref == self.partner.ref)
+
+    def test_ref_sequence_on_contact_copy_unique(self):
+        """
+        Activate the functionality to have unique generated references
+        across partners.
+        Create a first child partner, reference should be different
+        Copy the child to a new one, references should be different
+        """
+        self.env.company.partner_generated_reference_unique = True
+
+        self.partner_child = self.res_partner.create(
+            {
+                "name": "Contact 1",
+                "parent_id": self.partner.id,
+            }
+        )
+
+        self.assertNotEqual(self.partner_child.ref, self.partner.ref)
+
+        copy = self.partner_child.copy()
+        self.assertTrue(
+            copy.ref, "A partner with ref created by copy has a ref by default."
+        )
+        self.assertNotEqual(copy.ref, self.partner_child.ref)
+
+        self.env.company.partner_generated_reference_unique = False
+        copy.name = "Contact 2"
+        self.assertNotEqual(copy.ref, self.partner_child.ref)

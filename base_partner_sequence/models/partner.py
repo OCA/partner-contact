@@ -67,6 +67,9 @@ class ResPartner(models.Model):
             raise exceptions.UserError(
                 _("Either field values or an id must be provided.")
             )
+        # If references should be unique across all partners
+        if self.env.company.partner_generated_reference_unique:
+            return True
         # only assign a 'ref' to commercial partners
         fields_for_check = ["is_company", "parent_id"]
         # Copy original vals to prevent modifying them
@@ -86,4 +89,6 @@ class ResPartner(models.Model):
         Make the partner reference a field that is propagated
         to the partner's contacts
         """
+        if self.env.company.partner_generated_reference_unique:
+            return super()._commercial_fields()
         return super(ResPartner, self)._commercial_fields() + ["ref"]

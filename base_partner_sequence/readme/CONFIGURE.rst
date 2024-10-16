@@ -1,0 +1,3 @@
+- Go to Settings > General Parameters > Contacts
+- If you want to set the partner reference as readonly, check the box 'Partner Reference Readonly'.
+- If you want to get a unique generated reference across all partners, check the box 'Partner Generated Reference Unique'.
