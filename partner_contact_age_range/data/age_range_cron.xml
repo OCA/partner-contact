@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="ir_cron_partner_age_range" model="ir.cron">
+        <field name="name">Contact: Update Age Range</field>
+        <field name="model_id" ref="model_res_partner" />
+        <field name="state">code</field>
+        <field name="code">model._cron_update_age_range_id()</field>
+        <field name="user_id" ref="base.user_root" />
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False" />
+    </record>
+</odoo>
