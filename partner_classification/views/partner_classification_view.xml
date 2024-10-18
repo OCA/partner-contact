@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_classification_form_new" model="ir.ui.view">
+        <field name="name">partner.classification.form</field>
+        <field name="model">partner.classification</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="parent_id" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="res_partner_classification_tree" model="ir.ui.view">
+        <field name="name">partner.classification.form</field>
+        <field name="model">partner.classification</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="parent_id" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="partner_classification_action">
+        <field name="name">Partner Classification</field>
+        <field name="res_model">partner.classification</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        id="menu_partner_classification"
+        name="Partner Classification"
+        action="partner_classification_action"
+        parent="partner_classification.menu_partner"
+        sequence="16"
+    />
+</odoo>

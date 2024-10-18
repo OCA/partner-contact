@@ -1,0 +1,1 @@
+Odoo already allows to classify partners through Tags (`res.partner.category`). But this module is a bit more rigid: it only allows for one Classification per Partner. And the Classification is shown at the top of the Form View, under the partner's name.

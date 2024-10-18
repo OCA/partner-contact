@@ -1,0 +1,1 @@
+This module provides a more structured way to classify partners in Odoo. Unlike the standard Tags (`res.partner.category`), which allow multiple tags per partner, this module restricts classification to one category per partner. The selected classification is prominently displayed at the top of the partner's form view, right beneath the partner's name.

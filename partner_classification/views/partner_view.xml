@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="menu_partner"
+        name="Partner"
+        parent="contacts.res_partner_menu_config"
+        action="base.action_partner_supplier_form"
+        sequence="15"
+    />
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field eval="1" name="priority" />
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/div/h1" position="after">
+                <div class="o_row">
+                    <field
+                        name="partner_classification_id"
+                        options='{"no_open": True, "no_create": True}'
+                        placeholder="Partner Classification..."
+                    />
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_res_partner_filter_inherit" model="ir.ui.view">
+        <field name="name">res.partner.search.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="partner_classification_id" />
+                <filter
+                    name="partner_classification"
+                    string="Partner Classification"
+                    context="{'group_by': 'partner_classification_id'}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
