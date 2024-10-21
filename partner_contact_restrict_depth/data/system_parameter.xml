@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="True">
+    <record id="contacts_max_depth" model="ir.config_parameter">
+        <field name="key">partner_contact_restrict_depth.contacts_max_depth</field>
+        <field name="value">0</field>
+    </record>
+</odoo>
