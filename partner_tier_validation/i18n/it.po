@@ -1,0 +1,102 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_tier_validation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2024-02-14 16:35+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__can_review
+msgid "Can Review"
+msgstr "Può revisionare"
+
+#. module: partner_tier_validation
+#: model:ir.model,name:partner_tier_validation.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__has_comment
+msgid "Has Comment"
+msgstr "Ha commenti"
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__need_validation
+msgid "Need Validation"
+msgstr "Richiede conferma"
+
+#. module: partner_tier_validation
+#: model_terms:ir.ui.view,arch_db:partner_tier_validation.partner_form_tier_filter
+msgid "Needs my Approval"
+msgstr "Richiede la mia approvazione"
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__next_review
+msgid "Next Review"
+msgstr "Prossima revisione"
+
+#. module: partner_tier_validation
+#: model_terms:ir.ui.view,arch_db:partner_tier_validation.partner_form_tier_filter
+msgid "Partner(s) to Approve"
+msgstr "Partner da approvare"
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__rejected
+msgid "Rejected"
+msgstr "Respinto"
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__rejected_message
+msgid "Rejected Message"
+msgstr "Messaggio di rifiuto"
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__reviewer_ids
+msgid "Reviewers"
+msgstr "Revisori"
+
+#. module: partner_tier_validation
+#: model:ir.model,name:partner_tier_validation.model_tier_definition
+msgid "Tier Definition"
+msgstr "Definizione livello"
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__to_validate_message
+msgid "To Validate Message"
+msgstr "Messaggio per 'Da validare'"
+
+#. module: partner_tier_validation
+#: model:tier.definition,name:partner_tier_validation.partner_tier_definition_company_only
+msgid "Validate New Company"
+msgstr "Valida nuova azienda"
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__validated
+msgid "Validated"
+msgstr "Validato"
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__validated_message
+msgid "Validated Message"
+msgstr "Messaggio per 'Validato'"
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__validation_status
+msgid "Validation Status"
+msgstr "Stato validazione"
+
+#. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__review_ids
+msgid "Validations"
+msgstr "Validazioni"
