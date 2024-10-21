@@ -1,0 +1,35 @@
+<!-- Copyright 2019 Open Source Integrators
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="partner_form_tier" model="ir.ui.view">
+        <field name="name">partner.form.tier</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+
+            <!-- Tier Validation UI needs the state field to be in the form -->
+            <field name="stage_id" position="before">
+                <field name="state" invisible="1" />
+            </field>
+
+        </field>
+    </record>
+
+    <record id="partner_form_tier_filter" model="ir.ui.view">
+        <field name="name">partner.form.tier.filter</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <filter name="inactive" position="before">
+                <filter
+                    name="needs_review"
+                    string="Needs my Approval"
+                    domain="[('reviewer_ids', 'in', uid), ('state', '=', 'draft')]"
+                    help="Partner(s) to Approve"
+                />
+            </filter>
+        </field>
+    </record>
+
+</odoo>
