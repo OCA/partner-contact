@@ -1,0 +1,4 @@
+odoo-addon-base_partner_company_group @ git+https://github.com/OCA/partner-contact.git@refs/pull/1871/head#subdirectory=base_partner_company_group
+odoo-addon-account_partner_company_group @ git+https://github.com/OCA/partner-contact.git@refs/pull/1872/head#subdirectory=account_partner_company_group
+odoo-addon-crm_partner_company_group @ git+https://github.com/OCA/partner-contact.git@refs/pull/1873/head#subdirectory=crm_partner_company_group
+odoo-addon-sale_partner_company_group @ git+https://github.com/OCA/partner-contact.git@refs/pull/1874/head#subdirectory=sale_partner_company_group
