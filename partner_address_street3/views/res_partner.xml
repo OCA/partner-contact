@@ -25,23 +25,6 @@
                     class="o_address_street"
                 />
             </xpath>
-            <xpath
-                expr="/form//field[@name='child_ids']/kanban/field[@name='street2']"
-                position="after"
-            >
-                <field name="street3" />
-            </xpath>
-        </field>
-    </record>
-
-    <record id="res_partner_kanban_view" model="ir.ui.view">
-        <field name="name">add street 3 in kanban</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.res_partner_kanban_view" />
-        <field name="arch" type="xml">
-            <field name="street2" position="after">
-                <field name="street3" />
-            </field>
         </field>
     </record>
 
