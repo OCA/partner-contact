@@ -72,6 +72,8 @@ Contributors
 
    -  Maksym Yankin maksym.yankin@camptocamp.com
 
+-  Bert Van Groenendael <bert.vangroenendael@dynapps.eu>
+
 Maintainers
 -----------
 
