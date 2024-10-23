@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="view_res_partner_label">
+        <t t-call="web.basic_layout">
+            <t t-set="company_id" t-value="res_company" />
+            <t t-foreach="docs.with_context(show_address=True)" t-as="this">
+                <div
+                    t-attf-style="height: {{company_id.partner_labels_height}}mm;
+                    width: {{company_id.partner_labels_width}}mm;
+                    padding: {{company_id.partner_labels_padding}}mm;
+                    margin-top: {{company_id.partner_labels_margin_top}}mm;
+                    margin-bottom: {{company_id.partner_labels_margin_bottom}}mm;
+                    margin-left: {{company_id.partner_labels_margin_left}}mm;
+                    margin-right: {{company_id.partner_labels_margin_right}}mm;
+                    display: inline-block;
+                    overflow: hidden;
+                    float:left;
+                    page-break-inside: avoid;"
+                >
+                    <address
+                        t-field="this.self"
+                        t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'
+                    />
+                </div>
+            </t>
+        </t>
+    </template>
+    <record id="report_res_partner_label" model="ir.actions.report">
+        <field name="name">Partner Labels</field>
+        <field name="model">res.partner</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">partner_label.view_res_partner_label</field>
+        <field name="binding_model_id" ref="base.model_res_partner" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="base.paperformat_euro" />
+    </record>
+</odoo>
