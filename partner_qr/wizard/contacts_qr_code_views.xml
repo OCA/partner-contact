@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="contacts_qr_code_form" model="ir.ui.view">
+        <field name="name">contacts.qr.code.form.view</field>
+        <field name="model">contacts.qr.code</field>
+        <field name="arch" type="xml">
+            <form string="QR Code">
+                <group>
+                    <group class="checkboxes" string="Elements to add">
+                        <field name="fullname" />
+                        <field name="company_name" />
+                        <field name="job_title" />
+                        <field name="email" />
+                        <field name="url" />
+                    </group>
+                    <group string="QR Code">
+                        <field
+                            name="qr_code"
+                            widget="image"
+                            options="{'size': [300, 300]}"
+                            nolabel="1"
+                            class="contact_qr_code"
+                        />
+                    </group>
+                </group>
+
+                <footer>
+                   <button name="cancel" string="Close" special="cancel" />
+                   <button
+                        name="download_qr"
+                        string="Download this QR Code"
+                        type="object"
+                    />
+                </footer>
+
+           </form>
+
+        </field>
+    </record>
+</odoo>

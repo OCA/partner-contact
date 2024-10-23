@@ -1,0 +1,115 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_qr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-28 09:31+0000\n"
+"PO-Revision-Date: 2024-05-28 10:33+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.3\n"
+
+#. module: partner_qr
+#. odoo-python
+#: code:addons/partner_qr/models/res_partner.py:0
+#, python-format
+msgid "%s's Contact QR Code"
+msgstr "Código QR do Contacto %s"
+
+#. module: partner_qr
+#: model_terms:ir.ui.view,arch_db:partner_qr.contacts_qr_code_form
+msgid "Close"
+msgstr "Fechar"
+
+#. module: partner_qr
+#: model:ir.model.fields,field_description:partner_qr.field_contacts_qr_code__company_name
+msgid "Company Name"
+msgstr "Nome da Empresa"
+
+#. module: partner_qr
+#: model:ir.model.fields,field_description:partner_qr.field_contacts_qr_code__url
+msgid "Company URL"
+msgstr "Link da Empresa"
+
+#. module: partner_qr
+#: model:ir.model,name:partner_qr.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_qr
+#: model:ir.model.fields,field_description:partner_qr.field_contacts_qr_code__create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: partner_qr
+#: model:ir.model.fields,field_description:partner_qr.field_contacts_qr_code__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: partner_qr
+#: model:ir.model.fields,field_description:partner_qr.field_contacts_qr_code__display_name
+msgid "Display Name"
+msgstr "Mostrar nome"
+
+#. module: partner_qr
+#: model_terms:ir.ui.view,arch_db:partner_qr.contacts_qr_code_form
+msgid "Download this QR Code"
+msgstr "Download código QR"
+
+#. module: partner_qr
+#: model:ir.model.fields,field_description:partner_qr.field_contacts_qr_code__email
+msgid "Email"
+msgstr "Email"
+
+#. module: partner_qr
+#: model:ir.model.fields,field_description:partner_qr.field_contacts_qr_code__fullname
+msgid "Full Name"
+msgstr "Nome Completo"
+
+#. module: partner_qr
+#: model:ir.actions.server,name:partner_qr.action_generate_qr_code_wizard
+msgid "Generate Contact QR Code"
+msgstr "Gerar Código QR do Contacto"
+
+#. module: partner_qr
+#: model:ir.model.fields,field_description:partner_qr.field_contacts_qr_code__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_qr
+#: model:ir.model.fields,field_description:partner_qr.field_contacts_qr_code__job_title
+msgid "Job Title"
+msgstr "Titulo de Emprego"
+
+#. module: partner_qr
+#: model:ir.model.fields,field_description:partner_qr.field_contacts_qr_code__write_uid
+msgid "Last Updated by"
+msgstr "Última vez atualizado por"
+
+#. module: partner_qr
+#: model:ir.model.fields,field_description:partner_qr.field_contacts_qr_code__write_date
+msgid "Last Updated on"
+msgstr "Última vez atualizado em"
+
+#. module: partner_qr
+#: model_terms:ir.ui.view,arch_db:partner_qr.contacts_qr_code_form
+msgid "QR Code"
+msgstr "Código QR"
+
+#. module: partner_qr
+#: model:ir.model,name:partner_qr.model_contacts_qr_code
+msgid "QR Code Wizard"
+msgstr "Código QR Wizard"
+
+#. module: partner_qr
+#: model:ir.model.fields,field_description:partner_qr.field_contacts_qr_code__qr_code
+msgid "Qr Code"
+msgstr "Código QR"
