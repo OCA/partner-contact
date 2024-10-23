@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_interest_group_action" model="ir.actions.act_window">
+        <field name="name">Interest Group</field>
+        <field name="res_model">res.partner.interest.group</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <record id="res_partner_interest_group_tree_view" model="ir.ui.view">
+        <field name="name">Interest Group tree</field>
+        <field name="model">res.partner.interest.group</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name" />
+                <field name="company_id" />
+            </tree>
+        </field>
+    </record>
+    <record id="res_partner_interest_group_form_view" model="ir.ui.view">
+        <field name="name">Interest Group form</field>
+        <field name="model">res.partner.interest.group</field>
+        <field name="arch" type="xml">
+            <form string="Interest Group">
+                <group>
+                    <field name="name" />
+                    <field name="company_id" />
+                </group>
+            </form>
+        </field>
+    </record>
+    <menuitem
+        action="res_partner_interest_group_action"
+        id="menu_res_partner_interest_group"
+        parent="contacts.res_partner_menu_config"
+    />
+</odoo>
