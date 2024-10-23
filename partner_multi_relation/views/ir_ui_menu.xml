@@ -12,15 +12,15 @@
         parent="menu_res_partner_relation"
         action="action_res_partner_relation_all"
     />
-    <record id="action_res_partner_relation_type" model="ir.actions.act_window">
-        <field name="name">Partner Relations Types</field>
-        <field name="res_model">res.partner.relation.type</field>
-        <field name="view_mode">tree,form</field>
-    </record>
     <menuitem
         id="menu_res_partner_relation_type"
         name="Relation Types"
+        sequence="5"
         parent="menu_res_partner_relation"
         action="action_res_partner_relation_type"
     />
+    <!-- Increase sequence of standard configuration menu, to keep it right. -->
+    <record id="contacts.res_partner_menu_config" model="ir.ui.menu">
+        <field name="sequence">999</field>
+    </record>
 </odoo>
