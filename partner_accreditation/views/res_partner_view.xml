@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_partner_form_accreditation">
+        <field name="name">Partner form with Accreditation</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field
+                    name="accreditation_ids"
+                    widget="many2many_tags"
+                    options="{'no_create_edit': True}"
+                />
+            </field>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_res_partner_filter_accreditation">
+        <field name="name">view_res_partner_filter_accreditation</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="accreditation_ids" />
+            </field>
+        </field>
+    </record>
+</odoo>
