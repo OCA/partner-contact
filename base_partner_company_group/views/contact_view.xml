@@ -8,6 +8,7 @@
             <xpath expr="//div[hasclass('o_address_format')]" position="after">
                     <field
                     name="company_group_id"
+                    domain="[('is_company', '=', True), ('commercial_partner_id', '!=', commercial_partner_id)]"
                     widget="res_partner_many2one"
                     invisible="not is_company"
                 />
