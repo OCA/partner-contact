@@ -9,6 +9,30 @@ class TestResPartner(common.TransactionCase):
         self.partner = self.env["res.partner"].create({"name": "Microsoft Corporation"})
         self.partner_2 = self.env["res.partner"].create({"name": "Apple Inc."})
 
+    def test_create_with_rank(self):
+        p = self.env["res.partner"].create({"name": "customer", "customer_rank": 1})
+        self.assertTrue(p.is_customer)
+        self.assertEqual(p.customer_rank, 1)
+        self.assertFalse(p.is_supplier)
+        self.assertEqual(p.supplier_rank, 0)
+        p = self.env["res.partner"].create({"name": "supplier", "supplier_rank": 1})
+        self.assertTrue(p.is_supplier)
+        self.assertEqual(p.supplier_rank, 1)
+        self.assertFalse(p.is_customer)
+        self.assertEqual(p.customer_rank, 0)
+
+    def test_create_without_rank(self):
+        p = self.env["res.partner"].create({"name": "customer", "is_customer": True})
+        self.assertTrue(p.is_customer)
+        self.assertEqual(p.customer_rank, 1)
+        self.assertFalse(p.is_supplier)
+        self.assertEqual(p.supplier_rank, 0)
+        p = self.env["res.partner"].create({"name": "supplier", "is_supplier": True})
+        self.assertTrue(p.is_supplier)
+        self.assertEqual(p.supplier_rank, 1)
+        self.assertFalse(p.is_customer)
+        self.assertEqual(p.customer_rank, 0)
+
     def test_01_is_customer(self):
         partners = self.partner | self.partner_2
         self.assertRecordValues(
