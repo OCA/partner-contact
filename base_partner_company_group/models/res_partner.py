@@ -1,7 +1,7 @@
 # Copyright 2019 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class Contact(models.Model):
@@ -30,3 +30,16 @@ class Contact(models.Model):
         )
         action["domain"] = [("company_group_id", "in", all_child.ids)]
         return action
+
+    @api.model
+    def create(self, vals):
+        partner = super().create(vals)
+        if not partner.company_group_id:
+            partner.company_group_id = partner.id
+        return partner
+
+    def write(self, vals):
+        res = super().write(vals)
+        if "name" in vals:
+            self.company_group_id = self
+        return res
