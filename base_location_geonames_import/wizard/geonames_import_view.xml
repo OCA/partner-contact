@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="city_zip_geonames_import_form" model="ir.ui.view">
+        <field name="name">Import from Geonames form view</field>
+        <field name="model">city.zip.geonames.import</field>
+        <field name="arch" type="xml">
+            <form string="Import from Geonames">
+                <p
+                >For the selected country, this wizard will download the latest version of the list of cities from <a
+                        href="http://www.geonames.org/"
+                    >geonames.org</a>, create new location entries if not found already in the system, and <b
+                    >delete missing entries</b> from new file.</p>
+                <group name="main">
+                    <field
+                        name="country_ids"
+                        widget="many2many_tags"
+                        options="{'no_create': True}"
+                        required="1"
+                    />
+                    <field name="letter_case" />
+                </group>
+                <footer>
+                    <button
+                        name="run_import"
+                        type="object"
+                        class="btn-primary"
+                        string="Import"
+                    />
+                    <button special="cancel" string="Cancel" class="oe_link" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="city_zip_geonames_import_action" model="ir.actions.act_window">
+        <field name="name">Import from Geonames</field>
+        <field name="res_model">city.zip.geonames.import</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem
+        id="city_zip_geonames_import_menu"
+        action="city_zip_geonames_import_action"
+        parent="contacts.menu_localisation"
+        sequence="50"
+    />
+</odoo>
