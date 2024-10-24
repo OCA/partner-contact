@@ -1,7 +1,8 @@
 [project]
 name = "odoo-addons-oca-partner-contact"
-version = "18.0.20241023.0"
+version = "18.0.20241024.0"
 dependencies = [
+    "odoo-addon-partner_firstname==18.0.*",
     "odoo-addon-partner_pricelist_search==18.0.*",
     "odoo-addon-partner_ref_unique==18.0.*",
     "odoo-addon-partner_tz==18.0.*",
