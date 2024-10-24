@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 4.14.1\n"
 
 #. module: partner_identification
@@ -47,10 +47,35 @@ msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
 msgstr "Okrajšava ali akronim tega ID tipa. Na primer: 'voznisko_dovoljenje'"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__active
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__active
 msgid "Active"
 msgstr "Aktivno"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__partner_issued_id
@@ -58,6 +83,11 @@ msgid ""
 "Another partner, who issued this ID. For example, Traffic National "
 "Institution"
 msgstr "Dodaten partner, ki je izdal ta ID. Na primer: Državni izpitni center"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__category_id
@@ -122,6 +152,26 @@ msgid "Expired"
 msgstr "Potekel"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__id
 msgid "ID"
@@ -148,10 +198,35 @@ msgid "ID type defined in configuration. For example, Driver License"
 msgstr "ID tip določen v konfiguraciji. Na primer: Vozniški izpit"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner__id_numbers
 #: model:ir.model.fields,field_description:partner_identification.field_res_users__id_numbers
 msgid "Identification Numbers"
 msgstr "Identifikacijska številka"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_is_follower
+msgid "Is Follower"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_issued_id
@@ -185,6 +260,21 @@ msgid "Last Updated on"
 msgstr "Zadnjič posodobljeno"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__name
 msgid "Name of this ID type. For example, 'Driver License'"
 msgstr "Ime tega ID tipa. Na primer: 'Vozniško dovoljenje'"
@@ -195,10 +285,50 @@ msgid "New"
 msgstr "Nov"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__comment
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 msgid "Notes"
 msgstr "Zapiski"
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_id
@@ -256,6 +386,11 @@ msgid "Python validation code"
 msgstr "Python validacijska koda"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
 msgid "Running"
 msgstr "V teku"
@@ -264,6 +399,15 @@ msgstr "V teku"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
 msgid "Status"
 msgstr "Status"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__name
@@ -293,6 +437,11 @@ msgid "To Renew"
 msgstr "Obnoviti"
 
 #. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
 msgid "Valid from"
 msgstr "Veljavno od"
@@ -306,6 +455,16 @@ msgstr "Veljavno do"
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_from
 msgid "Validation period stating date."
 msgstr "Datum pričetka obdobja validacije."
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__website_message_ids
+msgid "Website communication history"
+msgstr ""
 
 #. module: partner_identification
 #. odoo-python
