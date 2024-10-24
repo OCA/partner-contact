@@ -22,28 +22,24 @@ msgstr ""
 #. module: partner_firstname
 #. odoo-python
 #: code:addons/partner_firstname/models/res_users.py:0
-#, python-format
 msgid "%(login)s (copy)"
 msgstr ""
 
 #. module: partner_firstname
 #. odoo-python
 #: code:addons/partner_firstname/models/res_users.py:0
-#, python-format
 msgid "%(name)s (copy)"
 msgstr ""
 
 #. module: partner_firstname
 #. odoo-python
 #: code:addons/partner_firstname/models/res_partner.py:0
-#, python-format
 msgid "%s (copy)"
 msgstr ""
 
 #. module: partner_firstname
 #. odoo-python
 #: code:addons/partner_firstname/models/res_partner.py:0
-#, python-format
 msgid "(copy)"
 msgstr ""
 
@@ -66,7 +62,6 @@ msgstr "Relaties moeten een naam hebben"
 #. module: partner_firstname
 #. odoo-python
 #: code:addons/partner_firstname/exceptions.py:0
-#, python-format
 msgid "Error(s) with partner %d's name."
 msgstr "Fout(en) met de naam van relatie %d."
 
@@ -91,7 +86,6 @@ msgstr ""
 #. module: partner_firstname
 #. odoo-python
 #: code:addons/partner_firstname/exceptions.py:0
-#, python-format
 msgid "No name is set."
 msgstr "Geen naam ingesteld."
 
