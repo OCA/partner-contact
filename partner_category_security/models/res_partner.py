@@ -4,11 +4,6 @@ from lxml import etree
 
 from odoo import api, models
 
-from odoo.addons.base.models.ir_ui_view import (
-    transfer_modifiers_to_node,
-    transfer_node_to_modifiers,
-)
-
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
@@ -25,8 +20,5 @@ class ResPartner(models.Model):
             if nodes:
                 nodes[0].set("readonly", "1")
                 nodes[0].set("force_save", "1")
-                modifiers = {}
-                transfer_node_to_modifiers(nodes[0], modifiers)
-                transfer_modifiers_to_node(modifiers, nodes[0])
             result["arch"] = etree.tostring(doc, encoding="unicode")
         return result
