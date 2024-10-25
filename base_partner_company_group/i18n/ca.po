@@ -17,15 +17,11 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: base_partner_company_group
+#: model:ir.model.fields,field_description:base_partner_company_group.field_res_partner__company_group_id
+#: model:ir.model.fields,field_description:base_partner_company_group.field_res_users__company_group_id
 #: model_terms:ir.ui.view,arch_db:base_partner_company_group.view_res_partner_filter
 msgid "Company Group"
 msgstr "Grup Empresa"
-
-#. module: base_partner_company_group
-#: model:ir.model.fields,field_description:base_partner_company_group.field_res_partner__company_group_id
-#: model:ir.model.fields,field_description:base_partner_company_group.field_res_users__company_group_id
-msgid "Company group"
-msgstr "Grup empresa"
 
 #. module: base_partner_company_group
 #: model:ir.actions.act_window,name:base_partner_company_group.action_open_group_members
@@ -38,3 +34,6 @@ msgstr ""
 #: model:ir.model,name:base_partner_company_group.model_res_partner
 msgid "Contact"
 msgstr "Contacte"
+
+#~ msgid "Company group"
+#~ msgstr "Grup empresa"
