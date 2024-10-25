@@ -73,6 +73,7 @@ Contributors
 
    -  Víctor Martínez
    -  Pedro M. Baeza
+   -  Pilar Vargas
 
 Maintainers
 -----------
