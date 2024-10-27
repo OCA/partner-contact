@@ -17,27 +17,9 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: partner_identification_unique_by_category
-#: model:ir.model.fields,field_description:partner_identification_unique_by_category.field_res_partner_id_category__display_name
-#: model:ir.model.fields,field_description:partner_identification_unique_by_category.field_res_partner_id_number__display_name
-msgid "Display Name"
-msgstr "Mostrar Nombre"
-
-#. module: partner_identification_unique_by_category
 #: model:ir.model.fields,field_description:partner_identification_unique_by_category.field_res_partner_id_category__has_unique_numbers
 msgid "Enforce unicity"
 msgstr "Reforzar la unicidad"
-
-#. module: partner_identification_unique_by_category
-#: model:ir.model.fields,field_description:partner_identification_unique_by_category.field_res_partner_id_category__id
-#: model:ir.model.fields,field_description:partner_identification_unique_by_category.field_res_partner_id_number__id
-msgid "ID"
-msgstr "ID"
-
-#. module: partner_identification_unique_by_category
-#: model:ir.model.fields,field_description:partner_identification_unique_by_category.field_res_partner_id_category____last_update
-#: model:ir.model.fields,field_description:partner_identification_unique_by_category.field_res_partner_id_number____last_update
-msgid "Last Modified on"
-msgstr "Última Modificación el"
 
 #. module: partner_identification_unique_by_category
 #: model:ir.model,name:partner_identification_unique_by_category.model_res_partner_id_category
@@ -50,24 +32,46 @@ msgid "Partner ID Number"
 msgstr "Número ID de Socio"
 
 #. module: partner_identification_unique_by_category
+#. odoo-python
 #: code:addons/partner_identification_unique_by_category/models/res_partner_id_number.py:0
-#, python-format
 msgid ""
-"The Id {} in the category {} could not be created because it already exists"
-msgstr "El Id {} de la categoría {} no se ha podido crear porque ya existe"
+"The Id %(name)s in the category %(category_name)s could not be created "
+"because it already exists"
+msgstr ""
 
 #. module: partner_identification_unique_by_category
+#. odoo-python
 #: code:addons/partner_identification_unique_by_category/models/res_partner_id_category.py:0
-#, python-format
 msgid ""
-"The category {} can not be set to use unique numbers, because it already "
+"The category %s can not be set to use unique numbers, because it already "
 "contains duplicates."
 msgstr ""
-"La categoría {} no puede configurarse para utilizar números únicos, porque "
-"ya contiene duplicados."
 
 #. module: partner_identification_unique_by_category
 #: model:ir.model.fields,help:partner_identification_unique_by_category.field_res_partner_id_category__has_unique_numbers
 msgid "When set, duplicate numbers will not be allowed for this category."
 msgstr ""
 "Si se establece, no se permitirán números duplicados para esta categoría."
+
+#~ msgid "Display Name"
+#~ msgstr "Mostrar Nombre"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificación el"
+
+#, python-format
+#~ msgid ""
+#~ "The Id {} in the category {} could not be created because it already "
+#~ "exists"
+#~ msgstr "El Id {} de la categoría {} no se ha podido crear porque ya existe"
+
+#, python-format
+#~ msgid ""
+#~ "The category {} can not be set to use unique numbers, because it already "
+#~ "contains duplicates."
+#~ msgstr ""
+#~ "La categoría {} no puede configurarse para utilizar números únicos, "
+#~ "porque ya contiene duplicados."
