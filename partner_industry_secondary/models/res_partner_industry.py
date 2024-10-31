@@ -15,6 +15,7 @@ class ResPartnerIndustry(models.Model):
     _parent_store = True
 
     name = fields.Char(required=True)
+    display_name = fields.Char(recursive=True)
     parent_id = fields.Many2one(
         comodel_name="res.partner.industry", ondelete="restrict"
     )
