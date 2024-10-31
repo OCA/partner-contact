@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -144,7 +144,6 @@ msgstr ""
 #. module: base_location
 #. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
-#, python-format
 msgid ""
 "The city of the partner %(partner)s differs from that in location "
 "%(location)s"
@@ -153,7 +152,6 @@ msgstr ""
 #. module: base_location
 #. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
-#, python-format
 msgid ""
 "The country of the partner %(partner)s differs from that in location "
 "%(location)s"
@@ -162,7 +160,6 @@ msgstr ""
 #. module: base_location
 #. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
-#, python-format
 msgid ""
 "The state of the partner %(partner)s differs from that in location "
 "%(location)s"
@@ -171,7 +168,6 @@ msgstr ""
 #. module: base_location
 #. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
-#, python-format
 msgid ""
 "The zip of the partner %(partner)s differs from that in location "
 "%(location)s"
