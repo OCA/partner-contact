@@ -2,7 +2,6 @@
 <!-- Copyright 2017 Camptocamp
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-
     <record model="ir.ui.view" id="res_partner_role_form_view">
         <field name="name">res.partner.role.form</field>
         <field name="model">res.partner.role</field>
@@ -32,5 +31,4 @@
         <field name="action" ref="res_partner_role_act_window" />
         <field name="sequence" eval="16" />
     </record>
-
 </odoo>
