@@ -9,3 +9,4 @@
   (<https://www.kema.sk>)
 - [DynApps NV](https://www.dynapps.be):
   - Raf Ven
+- Marcin Chechłacz \<<marcin.chechlacz@braintec.com>\>

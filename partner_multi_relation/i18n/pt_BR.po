@@ -470,8 +470,8 @@ msgstr ""
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
-msgid "The %s partner is not applicable for this relation type."
-msgstr "O parceiro %s não é aplicavel a este tipo de relação."
+msgid "The {side} partner is not applicable for this relation type"
+msgstr "O parceiro {side} não é aplicavel a este tipo de relação."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__res_model

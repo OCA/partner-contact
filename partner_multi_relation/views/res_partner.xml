@@ -34,7 +34,7 @@
         <field name="name">Show partner's relations</field>
         <field name="binding_model_id" ref="base.model_res_partner" />
         <field name="res_model">res.partner.relation.all</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="domain">[('this_partner_id', 'in', active_ids)]</field>
     </record>
 </odoo>
