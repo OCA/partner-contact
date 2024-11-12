@@ -3,14 +3,14 @@
     <record id="tree_res_partner_relation_type" model="ir.ui.view">
         <field name="model">res.partner.relation.type</field>
         <field type="xml" name="arch">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="name_inverse" />
                 <field name="contact_type_left" />
                 <field name="contact_type_right" />
                 <field name="allow_self" />
                 <field name="is_symmetric" />
-            </tree>
+            </list>
         </field>
     </record>
     <record id="form_res_partner_relation_type" model="ir.ui.view">

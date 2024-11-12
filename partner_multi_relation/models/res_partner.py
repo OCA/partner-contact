@@ -4,8 +4,9 @@
 
 import numbers
 
-from odoo import _, api, exceptions, fields, models
+from odoo import api, exceptions, fields, models
 from odoo.osv.expression import FALSE_LEAF, OR, is_leaf
+from odoo.tools.safe_eval import safe_eval
 
 
 class ResPartner(models.Model):
@@ -13,8 +14,6 @@ class ResPartner(models.Model):
     in various ways.
     """
 
-    # pylint: disable=invalid-name
-    # pylint: disable=no-member
     _inherit = "res.partner"
 
     relation_count = fields.Integer(compute="_compute_relation_count")
@@ -75,7 +74,7 @@ class ResPartner(models.Model):
         )
         if operator not in SUPPORTED_OPERATORS:
             raise exceptions.ValidationError(
-                _('Unsupported search operator "%s"') % operator
+                self.env._('Unsupported search operator "%s"', operator)
             )
         type_selection_model = self.env["res.partner.relation.type.selection"]
         relation_type_selection = []
@@ -177,28 +176,24 @@ class ResPartner(models.Model):
 
     def action_view_relations(self):
         for contact in self:
-            relation_model = self.env["res.partner.relation.all"]
-            relation_ids = relation_model.search(
-                [
-                    "|",
-                    ("this_partner_id", "=", contact.id),
-                    ("other_partner_id", "=", contact.id),
-                ]
-            )
             action = self.env["ir.actions.act_window"]._for_xml_id(
                 "partner_multi_relation.action_res_partner_relation_all"
             )
-            action["domain"] = [("id", "in", relation_ids.ids)]
-            context = action.get("context", "{}").strip()[1:-1]
-            elements = context.split(",") if context else []
-            to_add = [
-                f"""'search_default_this_partner_id': {contact.id},
-                        'default_this_partner_id': {contact.id},
-                        'active_model': 'res.partner',
-                        'active_id': {contact.id},
-                        'active_ids': [{contact.id}],
-                        'active_test': False"""
+            action["domain"] = [
+                "|",
+                ("this_partner_id", "=", contact.id),
+                ("other_partner_id", "=", contact.id),
             ]
-            context = "{" + ", ".join(elements + to_add) + "}"
-            action["context"] = context
+            context = safe_eval(action.get("context", "{}"))
+            context.update(
+                {
+                    "search_default_this_partner_id": contact.id,
+                    "default_this_partner_id": contact.id,
+                    "active_model": "res.partner",
+                    "active_id": contact.id,
+                    "active_ids": contact.ids,
+                    "active_test": False,
+                }
+            )
+            action["context"] = str(context)
             return action

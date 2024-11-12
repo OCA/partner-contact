@@ -2,15 +2,24 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Define the type of relations that can exist between partners."""
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 from odoo.osv.expression import AND, OR
 
 HANDLE_INVALID_ONCHANGE = [
-    ("restrict", _("Do not allow change that will result in invalid relations")),
-    ("ignore", _("Allow existing relations that do not fit changed conditions")),
-    ("end", _("End relations per today, if they do not fit changed conditions")),
-    ("delete", _("Delete relations that do not fit changed conditions")),
+    (
+        "restrict",
+        "Do not allow change that will result in invalid relations",
+    ),
+    (
+        "ignore",
+        "Allow existing relations that do not fit changed conditions",
+    ),
+    (
+        "end",
+        "End relations per today, if they do not fit changed conditions",
+    ),
+    ("delete", "Delete relations that do not fit changed conditions"),
 ]
 
 
@@ -61,7 +70,7 @@ class ResPartnerRelationType(models.Model):
     def get_partner_types(self):
         """A partner can be an organisation or an individual."""
         # pylint: disable=no-self-use
-        return [("c", _("Organisation")), ("p", _("Person"))]
+        return [("c", self.env._("Organisation")), ("p", self.env._("Person"))]
 
     @api.model
     def _end_active_relations(self, relations):
@@ -77,12 +86,16 @@ class ResPartnerRelationType(models.Model):
         :param relations: a recordset of relations (not necessarily all active)
         """
         today = fields.Date.today()
+        relations_to_delete = self.env["res.partner.relation"]
+        relations_to_update = self.env["res.partner.relation"]
         for relation in relations:
             if relation.date_start and relation.date_start >= today:
-                relation.unlink()
-
+                relations_to_delete += relation
             elif not relation.date_end or relation.date_end > today:
-                relation.write({"date_end": today})
+                relations_to_update += relation
+        relations_to_delete.unlink()
+        relations_to_update.write({"date_end": today})
+        self.env.flush_all()
 
     def check_existing(self, vals):
         """Check wether records exist that do not fit new criteria."""
@@ -90,8 +103,8 @@ class ResPartnerRelationType(models.Model):
 
         def get_type_condition(vals, side):
             """Add if needed check for contact type."""
-            fieldname1 = "contact_type_%s" % side
-            fieldname2 = "%s_partner_id.is_company" % side
+            fieldname1 = f"contact_type_{side}"
+            fieldname2 = f"{side}_partner_id.is_company"
             contact_type = fieldname1 in vals and vals[fieldname1] or False
             if contact_type == "c":
                 # Records that are not companies are invalid:
@@ -99,17 +112,17 @@ class ResPartnerRelationType(models.Model):
             if contact_type == "p":
                 # Records that are companies are invalid:
                 return [(fieldname2, "=", True)]
-            return []
+            return [(0, "=", 1)]
 
         def get_category_condition(vals, side):
             """Add if needed check for partner category."""
-            fieldname1 = "partner_category_%s" % side
-            fieldname2 = "%s_partner_id.category_id" % side
+            fieldname1 = f"partner_category_{side}"
+            fieldname2 = f"{side}_partner_id.category_id"
             category_id = fieldname1 in vals and vals[fieldname1] or False
             if category_id:
                 # Records that do not have the specified category are invalid:
                 return [(fieldname2, "not in", [category_id])]
-            return []
+            return [(0, "=", 1)]
 
         for this in self:
             handling = (
@@ -119,7 +132,7 @@ class ResPartnerRelationType(models.Model):
             )
             if handling == "ignore":
                 continue
-            invalid_conditions = []
+            invalid_conditions = [(0, "=", 1)]
             for side in ["left", "right"]:
                 invalid_conditions = OR(
                     [invalid_conditions, get_type_condition(vals, side)]
@@ -128,7 +141,7 @@ class ResPartnerRelationType(models.Model):
                     [invalid_conditions, get_category_condition(vals, side)]
                 )
             if not invalid_conditions:
-                return
+                continue
             # only look at relations for this type
             invalid_domain = AND([[("type_id", "=", this.id)], invalid_conditions])
             invalid_relations = relation_model.with_context(active_test=False).search(
@@ -137,7 +150,7 @@ class ResPartnerRelationType(models.Model):
             if invalid_relations:
                 if handling == "restrict":
                     raise ValidationError(
-                        _(
+                        self.env._(
                             "There are already relations not satisfying the"
                             " conditions for partner type or category."
                         )
@@ -169,22 +182,23 @@ class ResPartnerRelationType(models.Model):
             relations = relation_type._get_reflexive_relations()
             if relations:
                 raise ValidationError(
-                    _(
+                    self.env._(
                         "Reflexivity could not be disabled for the relation "
-                        "type {relation_type}. There are existing reflexive "
+                        "type %s. There are existing reflexive "
                         "relations defined for the following partners: "
-                        "{partners}"
-                    ).format(
-                        relation_type=relation_type.display_name,
-                        partners=relations.mapped("left_partner_id.display_name"),
+                        "%s",
+                        relation_type.display_name,
+                        relations.mapped("left_partner_id.display_name"),
                     )
                 )
 
     def _delete_existing_reflexive_relations(self):
         """Delete existing reflexive relations for these relation types."""
+        relations_to_delete = self.env["res.partner.relation"]
         for relation_type in self:
             relations = relation_type._get_reflexive_relations()
-            relations.unlink()
+            relations_to_delete += relations
+        relations_to_delete.unlink()
 
     def _end_active_reflexive_relations(self):
         """End active reflexive relations for these relation types."""
@@ -247,13 +261,18 @@ class ResPartnerRelationType(models.Model):
     def unlink(self):
         """Allow delete of relation type, even when connections exist.
 
-        Relations can be deleted if relation type allows it.
+        Relations can be deleted if relation type allows it, so existing relations do
+        not prevent unlink of relation type.
         """
-        relation_model = self.env["res.partner.relation"]
-        for rec in self:
-            if rec.handle_invalid_onchange == "delete":
-                # Automatically delete relations, so existing relations
-                # do not prevent unlink of relation type:
-                relations = relation_model.search([("type_id", "=", rec.id)])
-                relations.unlink()
+        self.env["res.partner.relation"].search(
+            [
+                (
+                    "type_id",
+                    "in",
+                    self.filtered(
+                        lambda rel_type: rel_type.handle_invalid_onchange == "delete"
+                    ).ids,
+                )
+            ],
+        ).unlink()
         return super().unlink()

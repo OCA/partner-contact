@@ -73,7 +73,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         relation = self._create_company2person_relation()
         self.assertEqual(
             relation.display_name,
-            f"{relation.this_partner_id.name} {relation.type_selection_id.name} {relation.other_partner_id.name}",
+            f"{relation.this_partner_id.name} {relation.type_selection_id.name} "
+            f"{relation.other_partner_id.name}",
         )
 
     def test_regular_write(self):
@@ -172,7 +173,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         # Check wether display name is what we should expect:
         self.assertEqual(
             relation.display_name,
-            f"{self.partner_01_person.name} {self.selection_person2company.name} {self.partner_02_company.name}",
+            f"{self.partner_01_person.name} {self.selection_person2company.name} "
+            f"{self.partner_02_company.name}",
         )
 
     def test_inverse_creation_type_id(self):
@@ -188,7 +190,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         # Check wether display name is what we should expect:
         self.assertEqual(
             relation.display_name,
-            f"{self.partner_01_person.name} {self.selection_person2company.name} {self.partner_02_company.name}",
+            f"{self.partner_01_person.name} {self.selection_person2company.name} "
+            f"{self.partner_02_company.name}",
         )
 
     def test_unlink(self):
