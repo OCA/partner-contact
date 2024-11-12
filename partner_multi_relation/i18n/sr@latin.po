@@ -469,7 +469,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 #, python-format
-msgid "The %s partner is not applicable for this relation type."
+msgid "The {side} partner is not applicable for this relation type"
 msgstr ""
 
 #. module: partner_multi_relation

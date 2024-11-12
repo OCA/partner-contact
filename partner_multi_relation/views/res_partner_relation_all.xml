@@ -3,7 +3,7 @@
     <record id="tree_res_partner_relation_all" model="ir.ui.view">
         <field name="model">res.partner.relation.all</field>
         <field name="arch" type="xml">
-            <tree editable="top">
+            <list editable="top">
                 <field
                     name="this_partner_id"
                     required="True"
@@ -22,7 +22,7 @@
                 <field name="date_start" />
                 <field name="date_end" />
                 <field name="active" column_invisible="1" />
-            </tree>
+            </list>
         </field>
     </record>
     <record id="search_res_partner_relation_all" model="ir.ui.view">
@@ -71,7 +71,7 @@
     <record id="action_res_partner_relation_all" model="ir.actions.act_window">
         <field name="name">Relations</field>
         <field name="res_model">res.partner.relation.all</field>
-        <field name="view_mode">tree</field>
+        <field name="view_mode">list</field>
         <field name="view_id" ref="tree_res_partner_relation_all" />
         <field name="search_view_id" ref="search_res_partner_relation_all" />
         <field name="context">{'active_test': 0}</field>

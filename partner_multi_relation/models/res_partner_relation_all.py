@@ -6,7 +6,7 @@ import logging
 
 from psycopg2.extensions import AsIs
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import MissingError, ValidationError
 from odoo.tools import drop_view_if_exists
 
@@ -216,7 +216,10 @@ class ResPartnerRelationAll(models.Model):
     )
     def _compute_display_name(self):
         for record in self:
-            record.display_name = f"{record.this_partner_id.name} {record.type_selection_id.display_name} {record.other_partner_id.name}"
+            record.display_name = (
+                f"{record.this_partner_id.name} {record.type_selection_id.display_name}"
+                f" {record.other_partner_id.name}"
+            )
 
     @api.onchange("type_selection_id")
     def onchange_type_selection_id(self):
@@ -234,14 +237,14 @@ class ResPartnerRelationAll(models.Model):
             partner_model = self.env["res.partner"]
             partners_found = partner_model.search(test_domain, limit=1)
             if not partners_found:
-                warning["title"] = _("Error!")
+                warning["title"] = self.env._("Error!")
                 if partner:
-                    warning["message"] = (
-                        _("%s partner incompatible with relation type.") % side.title()
+                    warning["message"] = self.env._(
+                        "%s partner incompatible with relation type.", side.title()
                     )
                 else:
-                    warning["message"] = (
-                        _("No %s partner available for relation type.") % side
+                    warning["message"] = self.env._(
+                        "No %s partner available for relation type.", side
                     )
             return warning
 
@@ -286,10 +289,12 @@ class ResPartnerRelationAll(models.Model):
                 )
                 if this_partner_id:
                     this_partner = partner_model.browse(this_partner_id)
-            warning = check_partner_domain(this_partner, this_partner_domain, _("this"))
+            warning = check_partner_domain(
+                this_partner, this_partner_domain, self.env._("this")
+            )
         if not warning and other_partner_domain:
             warning = check_partner_domain(
-                self.other_partner_id, other_partner_domain, _("other")
+                self.other_partner_id, other_partner_domain, self.env._("other")
             )
         if warning:
             result["warning"] = warning
@@ -314,8 +319,8 @@ class ResPartnerRelationAll(models.Model):
             type_model = self.env["res.partner.relation.type.selection"]
             types_found = type_model.search(test_domain, limit=1)
             if not types_found:
-                warning["title"] = _("Error!")
-                warning["message"] = _(
+                warning["title"] = self.env._("Error!")
+                warning["message"] = self.env._(
                     "Relation type incompatible with selected partner(s)."
                 )
             return warning
@@ -444,7 +449,7 @@ class ResPartnerRelationAll(models.Model):
             type_selection = self._get_type_selection_from_vals(vals)
             if not type_selection:  # Should not happen
                 raise ValidationError(
-                    _("No relation type specified in vals: %s.") % vals
+                    self.env._("No relation type specified in vals: %s.", vals)
                 )
             corrected_vals.append(self._correct_vals(vals, type_selection))
             type_selections.append(type_selection)
