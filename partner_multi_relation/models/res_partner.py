@@ -1,6 +1,7 @@
 # Copyright 2013-2022 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Support connections between partners."""
+
 import numbers
 
 from odoo import _, api, exceptions, fields, models
