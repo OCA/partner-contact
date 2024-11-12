@@ -12,6 +12,7 @@ normally (if _auto == True) not only creates the db tables, but it also takes
 care of registering all fields in ir_model_fields. This is needed to make
 the field labels translatable.
 """
+
 from psycopg2.extensions import AsIs
 
 from odoo import api, fields, models

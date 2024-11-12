@@ -216,11 +216,7 @@ class ResPartnerRelationAll(models.Model):
     )
     def _compute_display_name(self):
         for record in self:
-            record.display_name = "{} {} {}".format(
-                record.this_partner_id.name,
-                record.type_selection_id.display_name,
-                record.other_partner_id.name,
-            )
+            record.display_name = f"{record.this_partner_id.name} {record.type_selection_id.display_name} {record.other_partner_id.name}"
 
     @api.onchange("type_selection_id")
     def onchange_type_selection_id(self):
