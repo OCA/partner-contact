@@ -6,12 +6,12 @@
             <xpath expr="//field[@id='individual']" position="attributes">
                 <attribute name="invisible">is_company</attribute>
                 <attribute name="readonly">not is_company</attribute>
-                <attribute name="required">type == 'contract' and is_company</attribute>
+                <attribute name="required">type == 'contact' and is_company</attribute>
             </xpath>
             <xpath expr="//field[@id='company']" position="attributes">
                 <attribute name="invisible">is_company == False</attribute>
                 <attribute name="readonly">not is_company</attribute>
-                <attribute name="required">type == 'contract' and is_company</attribute>
+                <attribute name="required">type == 'contact' and is_company</attribute>
             </xpath>
             <xpath expr="//h1//field[@id='company']/.." position="before">
                 <group invisible="is_company">
@@ -34,12 +34,12 @@
             <xpath expr="//field[@id='individual']" position="attributes">
                 <attribute name="invisible">is_company</attribute>
                 <attribute name="readonly">not is_company</attribute>
-                <attribute name="required">type == 'contract' and is_company</attribute>
+                <attribute name="required">type == 'contact' and is_company</attribute>
             </xpath>
             <xpath expr="//field[@id='company']" position="attributes">
                 <attribute name="invisible">not is_company</attribute>
                 <attribute name="readonly">not is_company</attribute>
-                <attribute name="required">type == 'contract' and is_company</attribute>
+                <attribute name="required">type == 'contact' and is_company</attribute>
             </xpath>
             <xpath
                 expr="//div[hasclass('oe_title')]//field[@id='company']/.."
