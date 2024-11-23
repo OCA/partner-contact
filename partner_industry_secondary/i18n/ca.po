@@ -35,6 +35,11 @@ msgid "Contact"
 msgstr "Contacte"
 
 #. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__display_name
+msgid "Display Name"
+msgstr "Veure el nom"
+
+#. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Enable industries for individuals"
 msgstr "Habilitar indústries per a particulars"
@@ -45,11 +50,6 @@ msgstr "Habilitar indústries per a particulars"
 #, python-format
 msgid "Error! Industry with same name and parent already exists."
 msgstr "Error! Ja existeix una indústria amb el mateix nom i matriu."
-
-#. module: partner_industry_secondary
-#: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
-msgid "Industries"
-msgstr "Indústries"
 
 #. module: partner_industry_secondary
 #: model:ir.model,name:partner_industry_secondary.model_res_partner_industry
@@ -114,6 +114,9 @@ msgstr ""
 msgid "Use industry for individuals"
 msgstr "Utilitzar la indústria per a particulars"
 
+#~ msgid "Industries"
+#~ msgstr "Indústries"
+
 #, python-format
 #~ msgid "Error! You cannot create recursive industries."
 #~ msgstr "Error! No podeu crear indústries recursives."
@@ -123,9 +126,6 @@ msgstr "Utilitzar la indústria per a particulars"
 
 #~ msgid "Created on"
 #~ msgstr "Creat el"
-
-#~ msgid "Display Name"
-#~ msgstr "Veure el nom"
 
 #~ msgid "ID"
 #~ msgstr "ID"
