@@ -11,14 +11,14 @@ msgstr ""
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
 "PO-Revision-Date: 2017-12-26 15:33+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Serbian (Latin) (https://www.transifex.com/oca/teams/23907/sr"
-"%40latin/)\n"
+"Language-Team: Serbian (Latin) (https://www.transifex.com/oca/teams/23907/"
+"sr%40latin/)\n"
 "Language: sr@latin\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. module: partner_industry_secondary
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__child_ids
@@ -36,6 +36,11 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__display_name
+msgid "Display Name"
+msgstr "Ime za prikaz"
+
+#. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Enable industries for individuals"
 msgstr ""
@@ -45,11 +50,6 @@ msgstr ""
 #: code:addons/partner_industry_secondary/models/res_partner_industry.py:0
 #, python-format
 msgid "Error! Industry with same name and parent already exists."
-msgstr ""
-
-#. module: partner_industry_secondary
-#: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
-msgid "Industries"
 msgstr ""
 
 #. module: partner_industry_secondary
@@ -119,9 +119,6 @@ msgstr ""
 
 #~ msgid "Created on"
 #~ msgstr "Kreiran"
-
-#~ msgid "Display Name"
-#~ msgstr "Ime za prikaz"
 
 #~ msgid "ID"
 #~ msgstr "ID"

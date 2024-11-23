@@ -34,6 +34,11 @@ msgid "Contact"
 msgstr ""
 
 #. module: partner_industry_secondary
+#: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: partner_industry_secondary
 #: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
 msgid "Enable industries for individuals"
 msgstr ""
@@ -43,11 +48,6 @@ msgstr ""
 #: code:addons/partner_industry_secondary/models/res_partner_industry.py:0
 #, python-format
 msgid "Error! Industry with same name and parent already exists."
-msgstr ""
-
-#. module: partner_industry_secondary
-#: model_terms:ir.ui.view,arch_db:partner_industry_secondary.res_config_settings_view_form
-msgid "Industries"
 msgstr ""
 
 #. module: partner_industry_secondary
@@ -117,9 +117,6 @@ msgstr ""
 
 #~ msgid "Created on"
 #~ msgstr "ایجاد شده در"
-
-#~ msgid "Display Name"
-#~ msgstr "نام نمایشی"
 
 #~ msgid "ID"
 #~ msgstr "شناسه"
