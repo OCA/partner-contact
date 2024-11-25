@@ -5,7 +5,7 @@
 # Copyright 2019 Tecnativa - Cristina Martin R.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, exceptions, fields, models
+from odoo import api, exceptions, fields, models
 
 
 class ResPartnerIndustry(models.Model):
@@ -22,7 +22,7 @@ class ResPartnerIndustry(models.Model):
     child_ids = fields.One2many(
         comodel_name="res.partner.industry", inverse_name="parent_id", string="Children"
     )
-    parent_path = fields.Char(index=True, unaccent=False)
+    parent_path = fields.Char(index=True)
 
     @api.depends("name", "parent_id", "parent_id.display_name")
     def _compute_display_name(self):
@@ -41,7 +41,7 @@ class ResPartnerIndustry(models.Model):
             > 1
         ):
             raise exceptions.ValidationError(
-                _("Error! Industry with same name and parent already exists.")
+                self.env._("Error! Industry with same name and parent already exists.")
             )
 
     def copy(self, default=None):
