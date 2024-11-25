@@ -18,9 +18,9 @@
         <field name="model">res.partner.industry</field>
         <field name="inherit_id" ref="base.res_partner_industry_view_tree" />
         <field name="arch" type="xml">
-            <tree position="attributes">
+            <list position="attributes">
                 <attribute name="editable" />
-            </tree>
+            </list>
             <field name="name" position="after">
                 <field name="parent_id" />
             </field>

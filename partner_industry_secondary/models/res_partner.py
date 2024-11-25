@@ -3,7 +3,7 @@
 # Copyright 2018 Eficent Business and IT Consulting Services, S.L.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, exceptions, fields, models
+from odoo import api, exceptions, fields, models
 
 
 class ResPartner(models.Model):
@@ -32,7 +32,7 @@ class ResPartner(models.Model):
         for partner in self:
             if partner.industry_id in partner.secondary_industry_ids:
                 raise exceptions.ValidationError(
-                    _(
+                    self.env._(
                         "The main industry must be different "
                         "from the secondary industries."
                     )
