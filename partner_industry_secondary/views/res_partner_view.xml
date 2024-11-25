@@ -9,34 +9,31 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <field name="industry_id" position="after">
-                <field name="show_partner_industry_for_person" invisible="1" />
                 <field
                     name="secondary_industry_ids"
                     widget="many2many_tags"
-                    invisible="is_company == False and show_partner_industry_for_person == False"
+                    invisible="not is_company and not show_partner_industry_for_person"
                 />
             </field>
             <field name="industry_id" position="attributes">
                 <attribute
                     name="invisible"
-                >is_company == False and show_partner_industry_for_person == False</attribute>
+                >not is_company and not show_partner_industry_for_person</attribute>
             </field>
             <xpath
                 expr="//field[@name='child_ids']/form//field[@name='title']"
                 position="after"
             >
-                <field name="is_company" invisible="1" />
-                <field name="show_partner_industry_for_person" invisible="1" />
                 <field
                     name="industry_id"
                     placeholder="Sector"
                     options='{"no_open": True}'
-                    invisible="is_company == False and show_partner_industry_for_person == False"
+                    invisible="not is_company and not show_partner_industry_for_person"
                 />
                 <field
                     name="secondary_industry_ids"
                     widget="many2many_tags"
-                    invisible="is_company == False and show_partner_industry_for_person == False"
+                    invisible="not is_company and not show_partner_industry_for_person"
                 />
             </xpath>
         </field>
@@ -49,9 +46,8 @@
             <field name="email" position="after">
                 <field
                     name="industry_id"
-                    invisible="is_company == False and show_partner_industry_for_person == False"
+                    invisible="not is_company and not show_partner_industry_for_person"
                 />
-                <field name="show_partner_industry_for_person" column_invisible="1" />
             </field>
         </field>
     </record>
