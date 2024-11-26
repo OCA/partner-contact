@@ -36,13 +36,6 @@ suitable for use in non commercial organisations.
 .. contents::
    :local:
 
-Configuration
-=============
-
-To configure this module, you need to:
-
-#. This module requires no special configuration.
-
 Usage
 =====
 
