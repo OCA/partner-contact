@@ -4,7 +4,7 @@
 {
     "name": "Personal information page for contacts",
     "summary": "Add a page to contacts form to put personal information",
-    "version": "17.0.1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Customer Relationship Management",
     "website": "https://github.com/OCA/partner-contact",
     "author": "Nicolas JEUDY,Odoo Community Association (OCA)",
