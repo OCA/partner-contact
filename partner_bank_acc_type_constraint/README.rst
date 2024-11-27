@@ -41,9 +41,9 @@ With this module, when a user enters an invalid IBAN in Odoo, he will
 get an explicit error message that will prevent him from saving the
 account number.
 
-|image1|
+|Error message|
 
-.. |image1| image:: https://raw.githubusercontent.com/OCA/partner-contact/18.0/partner_bank_acc_type_constraint/static/description/partner_bank_acc_type_raise.png
+.. |Error message| image:: https://raw.githubusercontent.com/OCA/partner-contact/18.0/partner_bank_acc_type_constraint/static/description/partner_bank_acc_type_raise.png
 
 **Table of contents**
 

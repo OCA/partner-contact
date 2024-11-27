@@ -10,7 +10,19 @@
         <field name="inherit_id" ref="account.view_partner_property_form" />
         <field name="arch" type="xml">
             <xpath
-                expr="//field[@name='bank_ids']/tree/field[@name='acc_number']"
+                expr="//field[@name='bank_ids']/list/field[@name='acc_number']"
+                position="before"
+            >
+                <field name="acc_type_manual" required="1" />
+            </xpath>
+        </field>
+    </record>
+    <record id="res_partner_view_form_private" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_view_form_private" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//field[@name='bank_ids']/list/field[@name='acc_number']"
                 position="before"
             >
                 <field name="acc_type_manual" required="1" />

@@ -9,10 +9,7 @@
         <field name="model">res.partner.bank</field>
         <field name="inherit_id" ref="base.view_partner_bank_form" />
         <field name="arch" type="xml">
-            <field name="acc_type" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </field>
-            <field name="acc_type" position="after">
+            <field name="acc_number" position="before">
                 <field name="acc_type_manual" required="1" />
             </field>
         </field>
