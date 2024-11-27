@@ -5,19 +5,16 @@
   License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 -->
 <odoo>
-
-<record id="view_partner_property_form" model="ir.ui.view">
-    <field name="model">res.partner</field>
-    <field name="inherit_id" ref="account.view_partner_property_form" />
-    <field name="arch" type="xml">
-        <xpath
+    <record id="view_partner_property_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form" />
+        <field name="arch" type="xml">
+            <xpath
                 expr="//field[@name='bank_ids']/tree/field[@name='acc_number']"
                 position="before"
             >
-            <field name="acc_type_manual" required="1" />
-        </xpath>
-    </field>
-</record>
-
-
+                <field name="acc_type_manual" required="1" />
+            </xpath>
+        </field>
+    </record>
 </odoo>
