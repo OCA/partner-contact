@@ -7,6 +7,11 @@
         <field name="mode">extension</field>
         <field type="xml" name="arch">
 
+            <!-- Change string of parent_id field to Organisations. -->
+            <field name="parent_id" position="attributes">
+                <attribute name="string">Organisation</attribute>
+            </field>
+
             <!-- Default type_person also contains invoice and delivery
                  addresses for companies (and persons). -->
             <filter name="type_person" position="attributes">
@@ -36,17 +41,17 @@
                 />
             </filter>
 
-            <!-- Add extra groupings. -->
+            <!-- Change string of Company group to Organisations. -->
+            <filter name="group_company" position="attributes">
+                <attribute name="string">Organisation</attribute>
+            </filter>
+
+            <!-- Add extra grouping. -->
             <filter name="group_country" position="after">
                 <filter
                     name="group_city"
                     string="City"
                     context="{'group_by': 'city'}"
-                />
-                <filter
-                    name="group_organisation"
-                    string="Organisation"
-                    context="{'group_by': 'commercial_partner_id'}"
                 />
             </filter>
 
