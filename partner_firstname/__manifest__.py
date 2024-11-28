@@ -6,7 +6,7 @@
 {
     "name": "Partner first name and last name",
     "summary": "Split first name and last name for non company partners",
-    "version": "18.0.3.0.0",
+    "version": "18.0.4.0.0",
     "author": "Camptocamp, "
     "Grupo ESOC Ingeniería de Servicios, "
     "Tecnativa, "
@@ -17,10 +17,9 @@
     "Odoo Community Association (OCA)",
     "maintainers": ["legalsylvain"],
     "license": "AGPL-3",
-    "maintainer": "Camptocamp, Acsone",
     "category": "Extra Tools",
     "website": "https://github.com/OCA/partner-contact",
-    "depends": ["base_setup"],
+    "depends": ["partner_type_base"],
     "post_init_hook": "post_init_hook",
     "data": [
         "data/ir_config_parameter.xml",
