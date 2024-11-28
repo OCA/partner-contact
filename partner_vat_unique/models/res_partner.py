@@ -2,7 +2,7 @@
 # Copyright 2020 Manuel Calero - Tecnativa
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 from odoo.tools import config
 
@@ -24,5 +24,8 @@ class ResPartner(models.Model):
                 continue
             if record.same_vat_partner_id:
                 raise ValidationError(
-                    _("The VAT %s already exists in another partner.") % record.vat
+                    self.env._(
+                        "The VAT %(vat)s already exists in another partner.",
+                        vat=record.vat,
+                    )
                 )
