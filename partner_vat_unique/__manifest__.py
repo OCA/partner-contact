@@ -11,5 +11,8 @@
     "license": "AGPL-3",
     "application": True,
     "installable": True,
-    "depends": ["base"],
+    "depends": ["base_setup"],
+    "data": [
+        "views/res_config_settings_views.xml",
+    ],
 }
