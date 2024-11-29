@@ -13,5 +13,8 @@
     "installable": True,
     "maintainers": ["luisg123v", "frahikLV"],
     "depends": ["account"],
-    "data": ["views/res_partner.xml"],
+    "data": [
+        "views/account_move.xml",
+        "views/res_partner.xml",
+    ],
 }

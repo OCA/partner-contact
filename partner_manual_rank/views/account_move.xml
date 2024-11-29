@@ -1,0 +1,25 @@
+<odoo>
+    <record id="view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">account.move.search</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter" />
+        <field name="arch" type="xml">
+            <filter name="due_date" position="after">
+                <separator />
+                <filter
+                    name="is_supplier"
+                    string="Is supplier"
+                    domain="[('is_supplier', '=', True)]"
+                />
+            </filter>
+             <xpath expr="//search/group/filter[@name='status']" position="after">
+                <filter
+                    string="Is Supplier"
+                    name="is_supplier"
+                    context="{'group_by': 'is_supplier'}"
+                />
+                <separator />
+            </xpath>
+        </field>
+    </record>
+</odoo>
