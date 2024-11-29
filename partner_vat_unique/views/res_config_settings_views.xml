@@ -1,0 +1,16 @@
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.partner.vat.unique</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <block name="contacts_setting_container" position="inside">
+                <setting
+                    help="Check this if you want to constrain VAT number to be unique"
+                >
+                    <field name="partner_vat_unique" />
+                </setting>
+            </block>
+        </field>
+    </record>
+</odoo>

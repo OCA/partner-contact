@@ -42,6 +42,18 @@ Installation
 Will not check previous VAT duplicates, so it is recomended make sure
 there isn't any duplicated VAT before installation.
 
+Configuration
+=============
+
+To configure this module, you need to:
+
+1. Go to **Settings > Contacts**.
+2. Locate the option: Unique VAT Constraint.
+3. Enable the setting to enforce VAT uniqueness across partners.
+
+Once enabled, Odoo will validate that VAT numbers are unique across
+partners, preventing duplicate entries.
+
 Known issues / Roadmap
 ======================
 

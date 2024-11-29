@@ -10,15 +10,23 @@ class TestVatUnique(TransactionCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.partner_model = cls.env["res.partner"]
+        cls.config_parameter = cls.env["ir.config_parameter"]
         cls.partner = cls.partner_model.create(
             {"name": "Test partner", "vat": "ESA12345674"}
         )
 
     def test_duplicated_vat_creation(self):
+        self.config_parameter.set_param("partner_vat_unique.partner_vat_unique", True)
+
         with self.assertRaises(ValidationError):
-            self.partner_model.with_context(test_vat=True).create(
-                {"name": "Second partner", "vat": "ESA12345674"}
-            )
+            self.partner_model.create({"name": "Second partner", "vat": "ESA12345674"})
+
+        self.config_parameter.set_param("partner_vat_unique.partner_vat_unique", False)
+
+        partner_duplicated = self.partner_model.create(
+            {"name": "Second partner", "vat": "ESA12345674"}
+        )
+        self.assertEqual(partner_duplicated.vat, "ESA12345674")
 
     def test_duplicate_partner(self):
         partner_copied = self.partner.copy()
