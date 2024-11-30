@@ -24,14 +24,26 @@ class TestPartnerCreateByVAT(TransactionCase):
         with Form(self.partner_model) as partner_form:
             partner_form.company_type = "company"
             partner_form.vat = "be0477472701"
-
             # Check if the datas fetch correspond with the datas from VIES.
+            # address: 'Chaussée de Namur 40\n1367 Ramillies'
             self.assertEqual(partner_form.name, self.sample_1["name"])
             self.assertEqual(partner_form.street, self.sample_1["address"])
             self.assertEqual(
                 partner_form.country_id.code, self.sample_1["country_code"]
             )
             self.assertEqual(partner_form.vat, "BE0477472701")
+
+    def test_create_from_vat2nl(self):
+        # Create an partner from VAT number field
+        with Form(self.partner_model) as partner_form:
+            partner_form.company_type = "company"
+            partner_form.vat = "NL001172359B01"
+            # Check if the datas fetch correspond with the datas from VIES.
+            # address: '\nRIJKSWEG 00015\n5462CE VEGHEL\n'
+            self.assertEqual(partner_form.name, "JUMBO SUPERMARKTEN B.V.")
+            self.assertEqual(partner_form.country_id.code, "NL")
+            self.assertEqual(partner_form.zip, "5462CE")
+            self.assertEqual(partner_form.vat, "NL001172359B01")
 
     def test_company_vat_change(self):
         # Change partner VAT number field
