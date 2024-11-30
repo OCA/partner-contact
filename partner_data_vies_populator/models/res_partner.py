@@ -18,6 +18,18 @@ except ImportError:
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
+
+    def _parse_vies_address(self, address):
+        res = {}
+        if address != "---":
+            address_parts = [x for x in address.split("\n") if x]
+            if len(address_parts) > 1 and " " in address_parts[-1]:
+                # Last line can be "ZipCode City"
+                zip_city = address_parts.pop()
+                res["zip"], res["city"] = zip_city.split(" ", 1)
+            res["street"] = " ".join(address_parts)
+        return res
+
     @api.model
     def _get_vies_data(self, vat, raise_if_fail=False):
         res = {}
@@ -30,19 +42,15 @@ class ResPartner(models.Model):
                     _("Failed to query VIES.\nTechnical error: %s.") % e
                 ) from None
             return res
+        _logger.debug(result)
+        # Update partner VAT
         if result.valid and result.name:
             res["vat"] = vat
             # Update partner name if listed on VIES
             if result.name != "---":
                 res["name"] = result.name.upper()
             # Update partner address if listed on VIES
-            # Last line can be "ZipCode City"
-            if result.address != "---":
-                address_parts = result.address.split("\n")
-                if len(address_parts) > 1 and " " in address_parts[-1]:
-                    zip_city = address_parts.pop()
-                    res["zip"], res["city"] = zip_city.split(" ", 1)
-                res["street"] = " ".join(address_parts)
+            res.update(self._parse_vies_address(result.address))
             # Get country by country code
             country = self.env["res.country"].search(
                 [("code", "ilike", result.countryCode)]
