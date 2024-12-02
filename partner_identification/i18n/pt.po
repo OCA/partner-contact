@@ -468,6 +468,16 @@ msgid "Validation period stating date."
 msgstr "Período de validação indicando a data."
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: partner_identification
 #. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 msgid "{%(id_name)s is not a valid %(cat_name)s identifier"
