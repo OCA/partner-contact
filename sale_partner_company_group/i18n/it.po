@@ -35,7 +35,6 @@ msgstr "Ordine di vendita"
 #. module: sale_partner_company_group
 #. odoo-python
 #: code:addons/sale_partner_company_group/models/res_partner.py:0
-#, python-format
 msgid ""
 "The company group %(company_group)s has the pricelist %(pricelist)s, that is "
 "different than the pricelist set on this contact"
@@ -46,7 +45,6 @@ msgstr ""
 #. module: sale_partner_company_group
 #. odoo-python
 #: code:addons/sale_partner_company_group/models/res_partner.py:0
-#, python-format
 msgid "Warning"
 msgstr "Attenzione"
 
