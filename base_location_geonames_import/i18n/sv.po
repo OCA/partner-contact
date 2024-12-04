@@ -22,9 +22,8 @@ msgstr ""
 #. module: base_location_geonames_import
 #. odoo-python
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
-#, python-format
-msgid "%d could not be deleted %"
-msgstr "%d kunde inte raderas %"
+msgid "%s could not be deleted"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
@@ -96,7 +95,6 @@ msgstr "Geonames Stat Namn Kolumn"
 #. module: base_location_geonames_import
 #. odoo-python
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
-#, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Fick ett fel %d när jag försökte ladda ner filen %s."
 
@@ -121,11 +119,6 @@ msgstr "Importera stadszips från Geonames"
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "Import from Geonames"
 msgstr "Importera från Geonames"
-
-#. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import____last_update
-msgid "Last Modified on"
-msgstr "Senast redigerad"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__write_uid
@@ -161,3 +154,10 @@ msgstr "Versaler"
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "geonames.org"
 msgstr "geonames.org"
+
+#, python-format
+#~ msgid "%d could not be deleted %"
+#~ msgstr "%d kunde inte raderas %"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Senast redigerad"
