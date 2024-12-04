@@ -16,16 +16,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.14.1\n"
 
 #. module: base_location_geonames_import
 #. odoo-python
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
-#, python-format
-msgid "%d could not be deleted %"
-msgstr "%d nije mogao biti obrisan %"
+msgid "%s could not be deleted"
+msgstr ""
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
@@ -91,7 +90,6 @@ msgstr ""
 #. module: base_location_geonames_import
 #. odoo-python
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
-#, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr ""
 
@@ -116,11 +114,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "Import from Geonames"
 msgstr ""
-
-#. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import____last_update
-msgid "Last Modified on"
-msgstr "Zadnje modificirano"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__write_uid
@@ -156,3 +149,10 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "geonames.org"
 msgstr ""
+
+#, python-format
+#~ msgid "%d could not be deleted %"
+#~ msgstr "%d nije mogao biti obrisan %"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Zadnje modificirano"

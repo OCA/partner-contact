@@ -23,8 +23,7 @@ msgstr ""
 #. module: base_location_geonames_import
 #. odoo-python
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
-#, python-format
-msgid "%d could not be deleted %"
+msgid "%s could not be deleted"
 msgstr ""
 
 #. module: base_location_geonames_import
@@ -92,7 +91,6 @@ msgstr ""
 #. module: base_location_geonames_import
 #. odoo-python
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
-#, python-format
 msgid "Got an error %d when trying to download the file %s."
 msgstr "Kreeg een fout %d tijdens de poging om bestand %s te downloaden."
 
@@ -117,11 +115,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "Import from Geonames"
 msgstr ""
-
-#. module: base_location_geonames_import
-#: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import____last_update
-msgid "Last Modified on"
-msgstr "Laatst gewijzigd op"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__write_uid
@@ -157,6 +150,9 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "geonames.org"
 msgstr "geonames.org"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Laatst gewijzigd op"
 
 #~ msgid "Enforce Cities"
 #~ msgstr "Plaatsen afdwingen"
