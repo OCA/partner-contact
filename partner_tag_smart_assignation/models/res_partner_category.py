@@ -10,7 +10,8 @@ from odoo.tools.safe_eval import safe_eval
 class ResPartnerCategory(models.Model):
     _inherit = "res.partner.category"
 
-    tag_filter_condition_id = fields.Many2one("ir.filters", "Domain filter")
+    tag_filter_condition_id = fields.Many2one(
+        "ir.filters", "Domain filter", ondelete="restrict")
     smart = fields.Boolean(
         help="Enable this to automatically assign the category on partners "
         "matching a given filter domain or SQL query."
