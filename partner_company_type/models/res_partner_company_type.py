@@ -26,5 +26,15 @@ class ResPartnerCompanyType(models.Model):
         "Leave it blank if you want it to appear on any partner.",
     )
 
-    _sql_constraints = [('name_uniq', 'unique (name)',
-                         "Partner Company Type already exists!")]
+    _sql_constraints = [
+        (
+            "name_country_uniq",
+            "unique (name, country_id)",
+            "Partner Company Type already exists for this country!"
+        ),
+        (
+            "unique_name_null_country_id",
+            "EXCLUDE (name WITH =) WHERE (country_id IS NULL)",
+            "Shared Partner Company Type already exists!"
+        ),
+    ]
