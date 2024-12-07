@@ -2,10 +2,10 @@
 # @author Iván Todorovich <ivan.todorovich@camptocamp.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo.tests import Form, SavepointCase
+from odoo.tests import Form, TransactionCase
 
 
-class TestPartnerDuns(SavepointCase):
+class TestPartnerDuns(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -27,9 +27,11 @@ class TestPartnerDuns(SavepointCase):
         self.assertEqual(self.partner.duns, "111222333")
 
     def test_partner_duns_sanitized_on_change(self):
-        with Form(self.partner) as form:
-            form.duns = "111-222-333"
-            self.assertEqual(form.duns, "111222333")
+        partner_form = Form(self.env["res.partner"])
+        partner_form.name = "Test Company"
+        partner_form.company_type = "company"
+        partner_form.duns = "111-222-333"
+        self.assertEqual(partner_form.duns, "111222333")
 
     def test_partner_duns_duplicated(self):
         dupe = self.env["res.partner"].create(

@@ -11,10 +11,7 @@
         <field name="priority" eval="20" />
         <field name="arch" type="xml">
             <field name="vat" position="after">
-                <field
-                    name="duns"
-                    attrs="{'invisible': [('is_company', '=', False)]}"
-                />
+                <field name="duns" invisible="not is_company" />
             </field>
             <xpath
                 expr="//field[@name='same_vat_partner_id']/ancestor::div[hasclass('alert')]"
@@ -23,7 +20,7 @@
                 <div
                     class="alert alert-warning oe_edit_only"
                     role="alert"
-                    attrs="{'invisible': [('same_duns_partner_id', '=', False)]}"
+                    invisible="not same_duns_partner_id"
                 >
                     A partner with the same DUNS number already exists (<field
                         name="same_duns_partner_id"

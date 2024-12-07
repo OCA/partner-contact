@@ -5,12 +5,12 @@
 {
     "name": "Partner DUNS",
     "summary": "Set DUNS (Data Universal Numbering System) on partners",
-    "version": "16.0.1.0.0",
+    "version": "17.0.1.0.0",
     "author": "Camptocamp, Odoo Community Association (OCA)",
     "maintainers": ["ivantodorovich"],
     "website": "https://github.com/OCA/partner-contact",
     "license": "AGPL-3",
     "category": "Others",
-    "depends": ["base"],
+    "depends": ["base", "web"],
     "data": ["views/res_partner.xml"],
 }
