@@ -23,8 +23,8 @@
                     invisible="not same_duns_partner_id"
                 >
                     A partner with the same DUNS number already exists (<field
-                        name="same_duns_partner_id"
-                    />)
+                    name="same_duns_partner_id"
+                />)
                 </div>
             </xpath>
         </field>
