@@ -16,7 +16,7 @@
             <field name="lastname" position="after">
                 <field
                     name="lastname2"
-                    required="not lastname2 and not lastname and not is_company and type == 'contact'"
+                    required="not firstname and not lastname and not is_company and type == 'contact'"
                 />
             </field>
         </field>
