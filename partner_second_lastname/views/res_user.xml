@@ -15,7 +15,7 @@
                 <attribute name="required" add="(not lastname2)" separator=" and " />
             </field>
             <field name="lastname" position="after">
-                <field name="lastname2" required="not lastname2 and not lastname" />
+                <field name="lastname2" required="not firstname and not lastname" />
             </field>
         </field>
     </record>
