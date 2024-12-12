@@ -1,0 +1,38 @@
+<odoo>
+    <record id="view_partner_title_for_company_tree" model="ir.ui.view">
+        <field name="name">view.partner.title.for.company.tree</field>
+        <field name="model">res.partner.title</field>
+        <field name="inherit_id" ref="base.view_partner_title_tree" />
+        <field name="priority" eval="8" />
+        <field name="arch" type="xml">
+            <field name="shortcut" position="after">
+                <field name="for_company" widget="boolean_toggle" />
+            </field>
+        </field>
+    </record>
+    <record id="view_partner_title_for_company_form" model="ir.ui.view">
+        <field name="name">view.partner.title.for.company.form</field>
+        <field name="model">res.partner.title</field>
+        <field name="inherit_id" ref="base.view_partner_title_form" />
+        <field name="priority" eval="8" />
+        <field name="arch" type="xml">
+            <field name="shortcut" position="after">
+                <field name="for_company" />
+            </field>
+        </field>
+    </record>
+    <record id="view_partner_for_company_form" model="ir.ui.view">
+        <field name="name">view.partner.for.company.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority" eval="8" />
+        <field name="arch" type="xml">
+            <field name="title" position="attributes">
+                <attribute name="invisible" />
+                <attribute name="domain">
+                    [('for_company', '=', is_company)]
+                </attribute>
+            </field>
+        </field>
+    </record>
+</odoo>
