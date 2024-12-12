@@ -21,11 +21,6 @@
                     attrs="{'invisible': [('country_enforce_cities', '=', False)]}"
                 />
             </field>
-            <field name="city" position="attributes">
-                <attribute name="attrs">
-                    {'invisible': [('country_enforce_cities', '=', False)]}
-                </attribute>
-            </field>
         </field>
     </record>
 </odoo>
