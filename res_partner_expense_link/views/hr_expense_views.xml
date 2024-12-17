@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="action_hr_expense_sheet_filter_partner" model="ir.actions.act_window">
+        <field name="name">Expense Reports Filter Partner</field>
+        <field name="res_model">hr.expense.sheet</field>
+        <field name="domain">[('employee_id.address_home_id', 'in', active_ids)]</field>
+    </record>
+</odoo>
