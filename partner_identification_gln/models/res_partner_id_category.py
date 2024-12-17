@@ -9,7 +9,7 @@ _logger = logging.getLogger(__name__)
 
 try:
     from stdnum import ean
-    from stdnum.exceptions import InvalidChecksum
+    from stdnum.exceptions import InvalidChecksum, InvalidFormat, InvalidLength
 except ImportError:
     _logger.debug("Cannot `import external dependency python stdnum package`.")
 
@@ -21,10 +21,9 @@ class ResPartnerIdCategory(models.Model):
         self.ensure_one()
         if not id_number:
             return False
-
         try:
             ean.validate(id_number.name)
-        except InvalidChecksum:
+        except (InvalidChecksum, InvalidFormat, InvalidLength):
             return True
 
         cat = self.env.ref(
