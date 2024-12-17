@@ -81,7 +81,7 @@ class ResPartnerIdCategory(models.Model):
         if eval_context.get("failed", False):
             raise ValidationError(
                 self.env._(
-                    "{%(id_name)s is not a valid %(cat_name)s identifier",
+                    "%(id_name)s is not a valid %(cat_name)s identifier",
                     id_name=id_number.name,
                     cat_name=self.name,
                 )
