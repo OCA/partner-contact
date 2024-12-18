@@ -76,6 +76,12 @@ msgstr ""
 "failed = not id_number.name.startswith(self.code) and True or False"
 
 #. module: partner_identification
+#. odoo-python
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
+msgid "%(id_name)s is not a valid %(cat_name)s identifier"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
 msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
 msgstr ""
@@ -522,11 +528,8 @@ msgstr "Messaggi sito web"
 msgid "Website communication history"
 msgstr "Cronologia comunicazioni sito web"
 
-#. module: partner_identification
-#. odoo-python
-#: code:addons/partner_identification/models/res_partner_id_category.py:0
-msgid "{%(id_name)s is not a valid %(cat_name)s identifier"
-msgstr "{%(id_name)s non è un identificatore %(cat_name)s valido"
+#~ msgid "{%(id_name)s is not a valid %(cat_name)s identifier"
+#~ msgstr "{%(id_name)s non è un identificatore %(cat_name)s valido"
 
 #~ msgid ""
 #~ "# Use failed = True to specify that the id number is not valid.\n"
