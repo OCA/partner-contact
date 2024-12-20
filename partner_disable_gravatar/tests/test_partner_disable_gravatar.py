@@ -4,7 +4,6 @@ from odoo.tests import Form, common
 
 
 class TestPartnerDisableGravatar(common.TransactionCase):
-
     # https://github.com/odoo/odoo/blob/
     # 28034c48c024284ea3bd6248451e186132aca4d0/odoo/tests/common.py#L407
     def patch(self, obj, key, val):
