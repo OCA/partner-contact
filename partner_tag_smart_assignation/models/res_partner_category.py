@@ -114,7 +114,10 @@ class ResPartnerCategory(models.Model):
             return self.env["res.partner"]
         domain = safe_eval(
             self.tag_filter_condition_id.domain,
-            locals_dict={"datetime": datetime},
+            locals_dict={
+                "datetime.datetime": datetime.datetime,
+                "datetime.timedelta": datetime.timedelta,
+            },
             locals_builtins=True,
         )
         model = self.tag_filter_condition_id.model_id
