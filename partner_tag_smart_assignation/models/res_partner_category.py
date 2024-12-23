@@ -4,7 +4,7 @@ import datetime
 
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
-from odoo.tools.safe_eval import safe_eval
+from odoo.tools.safe_eval import safe_eval, wrap_module
 
 
 class ResPartnerCategory(models.Model):
@@ -115,8 +115,7 @@ class ResPartnerCategory(models.Model):
         domain = safe_eval(
             self.tag_filter_condition_id.domain,
             locals_dict={
-                "datetime.datetime": datetime.datetime,
-                "datetime.timedelta": datetime.timedelta,
+                "datetime": wrap_module(datetime, ["datetime", "timedelta"]),
             },
             locals_builtins=True,
         )
