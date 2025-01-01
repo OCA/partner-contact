@@ -14,10 +14,10 @@ def split_char(char, output_number, size):
         word = ""
         while len(words) > 0:
             word = words.pop(0)
-            if len(result[index] + " %s" % word) > size:
+            if len(f"{result[index]} {word}") > size:
                 break
             else:
-                result[index] += " %s" % word
+                result[index] += f" {word}"
                 word = ""
     return result
 
