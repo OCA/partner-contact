@@ -3,3 +3,4 @@
 - Numigi (tm) and all its contributors (<https://bit.ly/numigiens>)
 - Moaad Bourhim \<<moaad.bourhim@gmail.com>\>
 - Italo LOPES \<<italo.lopes@camptocamp.com>\>
+- Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>
