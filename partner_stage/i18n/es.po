@@ -98,11 +98,6 @@ msgid "Inactive"
 msgstr "Inactivo"
 
 #. module: partner_stage
-#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage____last_update
-msgid "Last Modified on"
-msgstr "Última Modificación el"
-
-#. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
@@ -144,7 +139,6 @@ msgstr "El código de etapa debe ser único."
 #. module: partner_stage
 #. odoo-python
 #: code:addons/partner_stage/models/res_partner_stage.py:0
-#, python-format
 msgid "There should be only one default stage"
 msgstr "Sólo debería haber una etapa predeterminada"
 
@@ -157,3 +151,6 @@ msgstr "Para Aprobar"
 #: model:ir.model.fields,help:partner_stage.field_res_partner_stage__sequence
 msgid "Used to order the stages"
 msgstr "Se utiliza para ordenar las etapas"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificación el"
