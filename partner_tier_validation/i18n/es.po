@@ -32,6 +32,11 @@ msgid "Has Comment"
 msgstr "Tiene Comentario"
 
 #. module: partner_tier_validation
+#: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__is_reevaluation_required
+msgid "Is Reevaluation Required"
+msgstr ""
+
+#. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__need_validation
 msgid "Need Validation"
 msgstr "Necesita Validación"
