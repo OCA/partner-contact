@@ -26,8 +26,10 @@ class TestPartnerReadonlySecurity(common.TransactionCase):
         cls.user_admin = new_test_user(
             cls.env,
             login="test_user_admin",
-            groups="base.group_user,base.group_partner_manager,%s"
-            % ("partner_readonly_security.group_partner_edition",),
+            groups="""
+                base.group_user,base.group_partner_manager,
+                partner_readonly_security.group_partner_edition
+            """,
         )
         cls.user_readonly = new_test_user(
             cls.env,
