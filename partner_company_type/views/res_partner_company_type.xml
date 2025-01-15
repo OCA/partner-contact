@@ -33,10 +33,10 @@
         </field>
         <field name="model">res.partner.company.type</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="shortcut" />
-            </tree>
+            </list>
         </field>
     </record>
     <record model="ir.actions.act_window" id="res_partner_company_type_act_window">
