@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <record id="view_partner_form" model="ir.ui.view">
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
@@ -15,11 +14,10 @@
                     attrs="{'invisible': [('same_mobile_partner_id', '=', False)]}"
                 >
                   Duplicate warning: partner <field
-                        name="same_mobile_partner_id"
-                    /> has the same <b>Mobile</b>.
+                    name="same_mobile_partner_id"
+                /> has the same <b>Mobile</b>.
                 </div>
             </div>
         </field>
     </record>
-
 </odoo>
