@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -41,7 +41,6 @@ msgstr ""
 #. module: partner_industry_secondary
 #. odoo-python
 #: code:addons/partner_industry_secondary/models/res_partner_industry.py:0
-#, python-format
 msgid "Error! Industry with same name and parent already exists."
 msgstr ""
 
@@ -97,7 +96,6 @@ msgstr ""
 #. module: partner_industry_secondary
 #. odoo-python
 #: code:addons/partner_industry_secondary/models/res_partner.py:0
-#, python-format
 msgid "The main industry must be different from the secondary industries."
 msgstr ""
 
