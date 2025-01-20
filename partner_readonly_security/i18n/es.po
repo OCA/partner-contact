@@ -28,6 +28,7 @@ msgid "Partner edition"
 msgstr "Edición de contactos"
 
 #. module: partner_readonly_security
+#. odoo-python
 #: code:addons/partner_readonly_security/models/res_partner.py:0
 #, python-format
 msgid ""
