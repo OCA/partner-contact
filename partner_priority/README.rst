@@ -67,6 +67,9 @@ Contributors
 
 - Patrick Wilson <patrickraymondwilson@gmail.com>
 - Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+- `Tecnativa <https://www.tecnativa.com>`__:
+
+  - Juan Carlos Oñate
 
 Maintainers
 -----------
