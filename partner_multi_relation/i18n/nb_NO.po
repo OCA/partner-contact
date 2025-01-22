@@ -22,7 +22,6 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "%s partner incompatible with relation type."
 msgstr ""
 
@@ -48,10 +47,7 @@ msgid "All relations with current partner"
 msgstr ""
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__ignore
-#, python-format
 msgid "Allow existing relations that do not fit changed conditions"
 msgstr ""
 
@@ -83,10 +79,7 @@ msgid "Current record's partner type"
 msgstr ""
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__delete
-#, python-format
 msgid "Delete relations that do not fit changed conditions"
 msgstr ""
 
@@ -104,18 +97,12 @@ msgid "Display Name"
 msgstr "Vis navn"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__restrict
-#, python-format
 msgid "Do not allow change that will result in invalid relations"
 msgstr ""
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__end
-#, python-format
 msgid "End relations per today, if they do not fit changed conditions"
 msgstr ""
 
@@ -128,7 +115,6 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "Error!"
 msgstr ""
 
@@ -257,14 +243,12 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "No %s partner available for relation type."
 msgstr ""
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "No relation type specified in vals: %s."
 msgstr ""
 
@@ -277,7 +261,6 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid "Organisation"
 msgstr ""
 
@@ -320,15 +303,21 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "Partners cannot have a relation with themselves."
 msgstr ""
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid "Person"
+msgstr ""
+
+#. module: partner_multi_relation
+#. odoo-python
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
+msgid ""
+"Programming error: Argument \"side\" of method \"_check_partner\" can just "
+"be called with a value of \"left\" or \"right\"."
 msgstr ""
 
 #. module: partner_multi_relation
@@ -358,11 +347,9 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid ""
-"Reflexivity could not be disabled for the relation type {relation_type}. "
-"There are existing reflexive relations defined for the following partners: "
-"{partners}"
+"Reflexivity could not be disabled for the relation type %s. There are "
+"existing reflexive relations defined for the following partners: %s"
 msgstr ""
 
 #. module: partner_multi_relation
@@ -384,7 +371,6 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "Relation type incompatible with selected partner(s)."
 msgstr ""
 
@@ -467,8 +453,13 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
-msgid "The {side} partner is not applicable for this relation type"
+msgid "The %s partner does not have category %s."
+msgstr ""
+
+#. module: partner_multi_relation
+#. odoo-python
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
+msgid "The %s partner is not applicable for this relation type."
 msgstr ""
 
 #. module: partner_multi_relation
@@ -484,21 +475,12 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr ""
 
 #. module: partner_multi_relation
 #. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
-msgid "The {partner} partner does not have category {category}."
-msgstr ""
-
-#. module: partner_multi_relation
-#. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid ""
 "There are already relations not satisfying the conditions for partner type "
 "or category."
@@ -507,7 +489,6 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr ""
 
@@ -535,7 +516,6 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner.py:0
-#, python-format
 msgid "Unsupported search operator \"%s\""
 msgstr ""
 
@@ -571,14 +551,12 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "other"
 msgstr ""
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "this"
 msgstr ""
 

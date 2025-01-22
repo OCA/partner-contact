@@ -22,7 +22,6 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "%s partner incompatible with relation type."
 msgstr "%s kontakter inkompatibel med relationstyp."
 
@@ -48,10 +47,7 @@ msgid "All relations with current partner"
 msgstr "Alla relationer med nuvarande partner"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__ignore
-#, python-format
 msgid "Allow existing relations that do not fit changed conditions"
 msgstr "Tillåt befintliga relationer som inte passar de ändrade villkoren"
 
@@ -83,10 +79,7 @@ msgid "Current record's partner type"
 msgstr "Aktuell posts partnertyp"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__delete
-#, python-format
 msgid "Delete relations that do not fit changed conditions"
 msgstr "Ta bort relationer som inte passar ändrade förutsättningar"
 
@@ -104,18 +97,12 @@ msgid "Display Name"
 msgstr "Visa namn"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__restrict
-#, python-format
 msgid "Do not allow change that will result in invalid relations"
 msgstr "Tillåt inte förändringar som leder till ogiltiga relationer"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__end
-#, python-format
 msgid "End relations per today, if they do not fit changed conditions"
 msgstr "Avsluta relationer per idag, om de inte passar ändrade förutsättningar"
 
@@ -128,7 +115,6 @@ msgstr "Slutdatum"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "Error!"
 msgstr "Fel!"
 
@@ -257,14 +243,12 @@ msgstr "Namn"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "No %s partner available for relation type."
 msgstr "Ingen %s partner tillgänglig för relationstyp."
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "No relation type specified in vals: %s."
 msgstr "Ingen relationstyp angiven i vals: %s."
 
@@ -277,7 +261,6 @@ msgstr "En partner"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid "Organisation"
 msgstr "Organisation"
 
@@ -320,16 +303,22 @@ msgstr "Partnerrelation"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "Partners cannot have a relation with themselves."
 msgstr "Partners kan inte ha en relation med sig själva."
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid "Person"
 msgstr "Person"
+
+#. module: partner_multi_relation
+#. odoo-python
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
+msgid ""
+"Programming error: Argument \"side\" of method \"_check_partner\" can just "
+"be called with a value of \"left\" or \"right\"."
+msgstr ""
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
@@ -361,15 +350,10 @@ msgstr "Reflexiv"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid ""
-"Reflexivity could not be disabled for the relation type {relation_type}. "
-"There are existing reflexive relations defined for the following partners: "
-"{partners}"
+"Reflexivity could not be disabled for the relation type %s. There are "
+"existing reflexive relations defined for the following partners: %s"
 msgstr ""
-"Det gick inte att inaktivera reflexivitet för relationstypen {relation_type}"
-". Det finns befintliga reflexiva relationer definierade för följande "
-"partners: {partners}"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_count
@@ -390,7 +374,6 @@ msgstr "Relationstyper"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "Relation type incompatible with selected partner(s)."
 msgstr "Relationstyp oförenlig med vald(a) partner(s)."
 
@@ -473,9 +456,14 @@ msgstr "Symmetrisk"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
-msgid "The {side} partner is not applicable for this relation type"
-msgstr "Partnern {side} är inte tillämplig för den här relationstypen."
+msgid "The %s partner does not have category %s."
+msgstr ""
+
+#. module: partner_multi_relation
+#. odoo-python
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
+msgid "The %s partner is not applicable for this relation type."
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__res_model
@@ -490,21 +478,12 @@ msgstr "Id för objektet i den modell som denna relation baseras på."
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr "Startdatumet kan inte vara efter slutdatumet."
 
 #. module: partner_multi_relation
 #. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
-msgid "The {partner} partner does not have category {category}."
-msgstr "Partnern {partner} har inte kategori {category}."
-
-#. module: partner_multi_relation
-#. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid ""
 "There are already relations not satisfying the conditions for partner type "
 "or category."
@@ -515,7 +494,6 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr "Det finns redan en liknande relation med överlappande datum"
 
@@ -545,7 +523,6 @@ msgstr "Underliggande relationstyp"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner.py:0
-#, python-format
 msgid "Unsupported search operator \"%s\""
 msgstr "Sökoperatorn \"%s\" stöds inte"
 
@@ -586,16 +563,32 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "other"
 msgstr "andra"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "this"
 msgstr "detta"
+
+#, python-format
+#~ msgid ""
+#~ "Reflexivity could not be disabled for the relation type {relation_type}. "
+#~ "There are existing reflexive relations defined for the following "
+#~ "partners: {partners}"
+#~ msgstr ""
+#~ "Det gick inte att inaktivera reflexivitet för relationstypen "
+#~ "{relation_type}. Det finns befintliga reflexiva relationer definierade "
+#~ "för följande partners: {partners}"
+
+#, python-format
+#~ msgid "The {side} partner is not applicable for this relation type"
+#~ msgstr "Partnern {side} är inte tillämplig för den här relationstypen."
+
+#, python-format
+#~ msgid "The {partner} partner does not have category {category}."
+#~ msgstr "Partnern {partner} har inte kategori {category}."
 
 #~ msgid "Last Modified on"
 #~ msgstr "Senast redigerad"
