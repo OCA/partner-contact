@@ -22,6 +22,11 @@ msgid "Contact"
 msgstr "Contacto"
 
 #. module: partner_priority
+#: model:ir.ui.menu,name:partner_priority.res_partner_priority_menu
+msgid "Contact Priorities"
+msgstr ""
+
+#. module: partner_priority
 #: model:ir.model.fields,field_description:partner_priority.field_partner_priority__create_uid
 msgid "Created by"
 msgstr "Creado por"
@@ -47,11 +52,6 @@ msgid "ID"
 msgstr "ID (identificación)"
 
 #. module: partner_priority
-#: model:ir.model.fields,field_description:partner_priority.field_partner_priority____last_update
-msgid "Last Modified on"
-msgstr "Última Modificación el"
-
-#. module: partner_priority
 #: model:ir.model.fields,field_description:partner_priority.field_partner_priority__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
@@ -72,11 +72,6 @@ msgid "Partner Priority"
 msgstr "Socio Prioritario"
 
 #. module: partner_priority
-#: model:ir.ui.menu,name:partner_priority.res_partner_priority_menu
-msgid "Priorities"
-msgstr "Prioridades"
-
-#. module: partner_priority
 #: model:ir.model.fields,field_description:partner_priority.field_partner_priority__name
 #: model:ir.model.fields,field_description:partner_priority.field_res_partner__priority_id
 #: model:ir.model.fields,field_description:partner_priority.field_res_users__priority_id
@@ -94,3 +89,9 @@ msgstr "Acción Prioritaria"
 #: model:ir.model.fields,field_description:partner_priority.field_partner_priority__sequence
 msgid "Sequence"
 msgstr "Secuencia"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificación el"
+
+#~ msgid "Priorities"
+#~ msgstr "Prioridades"

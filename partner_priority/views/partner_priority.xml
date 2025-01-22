@@ -5,11 +5,11 @@
         <field name="name">Priority List</field>
         <field name="model">partner.priority</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="sequence" widget="handle" />
                 <field name="name" />
                 <field name="description" />
-            </tree>
+            </list>
         </field>
     </record>
     <record id="partner_priority_view_form" model="ir.ui.view">
@@ -34,13 +34,13 @@
     <record id="partner_priority_action" model="ir.actions.act_window">
         <field name="name">Priority Action</field>
         <field name="res_model">partner.priority</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
     <menuitem
-        name="Priorities"
+        name="Contact Priorities"
         id="res_partner_priority_menu"
         parent="contacts.res_partner_menu_config"
         action="partner_priority_action"
-        sequence="101"
+        sequence="3"
     />
 </odoo>
