@@ -22,7 +22,6 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "%s partner incompatible with relation type."
 msgstr "Empresa %s incompatible con el tipo de relación."
 
@@ -48,10 +47,7 @@ msgid "All relations with current partner"
 msgstr "Todas las relaciones con la empresa actual"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__ignore
-#, python-format
 msgid "Allow existing relations that do not fit changed conditions"
 msgstr ""
 "Permitir relaciones existentes que no encajan con las condiciones cambiadas"
@@ -84,10 +80,7 @@ msgid "Current record's partner type"
 msgstr "Tipo de empresa del registro actual"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__delete
-#, python-format
 msgid "Delete relations that do not fit changed conditions"
 msgstr "Eliminar relaciones que no encajan con las condiciones cambiadas"
 
@@ -105,18 +98,12 @@ msgid "Display Name"
 msgstr "Nombre mostrado"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__restrict
-#, python-format
 msgid "Do not allow change that will result in invalid relations"
 msgstr "No permitir cambios que resulten en relaciones inválidas"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__end
-#, python-format
 msgid "End relations per today, if they do not fit changed conditions"
 msgstr ""
 "Terminar relaciones por hoy, si no encajan con las condiciones cambiadas"
@@ -130,7 +117,6 @@ msgstr "Fecha fin"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "Error!"
 msgstr "¡Error!"
 
@@ -259,14 +245,12 @@ msgstr "Nombre"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "No %s partner available for relation type."
 msgstr "No hay %s contacto disponible para este tipo de relación."
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "No relation type specified in vals: %s."
 msgstr "No existe tipo de relación especificada en vals: %s."
 
@@ -279,7 +263,6 @@ msgstr "Un Contacto"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid "Organisation"
 msgstr "Organización"
 
@@ -322,16 +305,22 @@ msgstr "Relación de empresa"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "Partners cannot have a relation with themselves."
 msgstr "Los socios no pueden tener una relación consigo mismos."
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid "Person"
 msgstr "Contacto"
+
+#. module: partner_multi_relation
+#. odoo-python
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
+msgid ""
+"Programming error: Argument \"side\" of method \"_check_partner\" can just "
+"be called with a value of \"left\" or \"right\"."
+msgstr ""
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
@@ -364,15 +353,10 @@ msgstr "Reflexiva"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid ""
-"Reflexivity could not be disabled for the relation type {relation_type}. "
-"There are existing reflexive relations defined for the following partners: "
-"{partners}"
+"Reflexivity could not be disabled for the relation type %s. There are "
+"existing reflexive relations defined for the following partners: %s"
 msgstr ""
-"No se ha podido desactivar la reflexividad para el tipo de relación "
-"{relation_type}. Existen relaciones reflexivas definidas para los siguientes "
-"socios: {partners}"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_count
@@ -393,7 +377,6 @@ msgstr "Tipo de Relación"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "Relation type incompatible with selected partner(s)."
 msgstr "Tipo de relación incompatible con contacto(s) seleccionado(s)."
 
@@ -476,9 +459,14 @@ msgstr "Simétrica"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
-msgid "The {side} partner is not applicable for this relation type"
-msgstr "El socio {side} no es aplicable para este tipo de relación."
+msgid "The %s partner does not have category %s."
+msgstr ""
+
+#. module: partner_multi_relation
+#. odoo-python
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
+msgid "The %s partner is not applicable for this relation type."
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__res_model
@@ -493,21 +481,12 @@ msgstr "El id del objeto en el modelo en el que se basa esta relación."
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr "La fecha de inicio no puede ser posterior a la fecha de fin."
 
 #. module: partner_multi_relation
 #. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
-msgid "The {partner} partner does not have category {category}."
-msgstr "El contacto {partner} no tiene categoría {category}."
-
-#. module: partner_multi_relation
-#. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid ""
 "There are already relations not satisfying the conditions for partner type "
 "or category."
@@ -518,7 +497,6 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr "Hay una relación similar que se solapa en fechas"
 
@@ -548,7 +526,6 @@ msgstr "Tipo de relación subyacente"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner.py:0
-#, python-format
 msgid "Unsupported search operator \"%s\""
 msgstr "Operador de búsqueda no soportado \"%s\""
 
@@ -589,16 +566,32 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "other"
 msgstr "otr@"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "this"
 msgstr "est@"
+
+#, python-format
+#~ msgid ""
+#~ "Reflexivity could not be disabled for the relation type {relation_type}. "
+#~ "There are existing reflexive relations defined for the following "
+#~ "partners: {partners}"
+#~ msgstr ""
+#~ "No se ha podido desactivar la reflexividad para el tipo de relación "
+#~ "{relation_type}. Existen relaciones reflexivas definidas para los "
+#~ "siguientes socios: {partners}"
+
+#, python-format
+#~ msgid "The {side} partner is not applicable for this relation type"
+#~ msgstr "El socio {side} no es aplicable para este tipo de relación."
+
+#, python-format
+#~ msgid "The {partner} partner does not have category {category}."
+#~ msgstr "El contacto {partner} no tiene categoría {category}."
 
 #~ msgid "Last Modified on"
 #~ msgstr "Última modificación el"

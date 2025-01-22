@@ -16,14 +16,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 4.14.1\n"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "%s partner incompatible with relation type."
 msgstr "Partner %s ni združljiv s tipom odnosa."
 
@@ -49,10 +48,7 @@ msgid "All relations with current partner"
 msgstr "Vsi odnosi s trenutnim partnerjem"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__ignore
-#, python-format
 msgid "Allow existing relations that do not fit changed conditions"
 msgstr "Dovoli obstoječa razmerja, ki ne ustrezajo spremenjenim pogojem."
 
@@ -84,10 +80,7 @@ msgid "Current record's partner type"
 msgstr "Tip partnerja na trenutnem zapisu"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__delete
-#, python-format
 msgid "Delete relations that do not fit changed conditions"
 msgstr "Izbriši razmerja, ki ne ustrezajo spremenjenim pogojem."
 
@@ -105,18 +98,12 @@ msgid "Display Name"
 msgstr "Prikazani naziv"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__restrict
-#, python-format
 msgid "Do not allow change that will result in invalid relations"
 msgstr "Ne dovoli sprememb, ki bi vodile v neveljavne odnose"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__end
-#, python-format
 msgid "End relations per today, if they do not fit changed conditions"
 msgstr "Zaključi razmerja do danes, ki ne ustrezajo spremenjenim pogojem"
 
@@ -129,7 +116,6 @@ msgstr "Končni datum"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "Error!"
 msgstr "Napaka!"
 
@@ -258,14 +244,12 @@ msgstr "Naziv"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "No %s partner available for relation type."
 msgstr "Ni partnerja %s na voljo za tip odnosa."
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "No relation type specified in vals: %s."
 msgstr ""
 
@@ -278,7 +262,6 @@ msgstr "En partner"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid "Organisation"
 msgstr "Organizacija"
 
@@ -321,16 +304,22 @@ msgstr "Partnerski odnos"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "Partners cannot have a relation with themselves."
 msgstr "Partnerji ne morejo biti v odnosu sami s seboj."
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid "Person"
 msgstr "Oseba"
+
+#. module: partner_multi_relation
+#. odoo-python
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
+msgid ""
+"Programming error: Argument \"side\" of method \"_check_partner\" can just "
+"be called with a value of \"left\" or \"right\"."
+msgstr ""
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
@@ -359,11 +348,9 @@ msgstr "Povratni"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid ""
-"Reflexivity could not be disabled for the relation type {relation_type}. "
-"There are existing reflexive relations defined for the following partners: "
-"{partners}"
+"Reflexivity could not be disabled for the relation type %s. There are "
+"existing reflexive relations defined for the following partners: %s"
 msgstr ""
 
 #. module: partner_multi_relation
@@ -386,7 +373,6 @@ msgstr "Tip odnosa"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "Relation type incompatible with selected partner(s)."
 msgstr "Tip odnosa nezdružljiv z izborom partnerja(ev)."
 
@@ -469,9 +455,14 @@ msgstr "Simetrični"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
-msgid "The {side} partner is not applicable for this relation type"
-msgstr "Partner {side} ni ustrezen za ta tip odnosa."
+msgid "The %s partner does not have category %s."
+msgstr ""
+
+#. module: partner_multi_relation
+#. odoo-python
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
+msgid "The %s partner is not applicable for this relation type."
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__res_model
@@ -486,21 +477,12 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "The starting date cannot be after the ending date."
 msgstr "Začetni datum ne more biti za končnim datumom."
 
 #. module: partner_multi_relation
 #. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
-msgid "The {partner} partner does not have category {category}."
-msgstr "Partner {partner} nima kategorije {category}."
-
-#. module: partner_multi_relation
-#. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
-#, python-format
 msgid ""
 "There are already relations not satisfying the conditions for partner type "
 "or category."
@@ -511,7 +493,6 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-#, python-format
 msgid "There is already a similar relation with overlapping dates"
 msgstr "Podoben odnos s prekrivajočimi se datumi že obstaja."
 
@@ -540,7 +521,6 @@ msgstr "Tip partnerskega odnosa"
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner.py:0
-#, python-format
 msgid "Unsupported search operator \"%s\""
 msgstr "Nepodprt iskalni operand \"%s\""
 
@@ -581,16 +561,22 @@ msgstr ""
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "other"
 msgstr "drugo"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-#, python-format
 msgid "this"
 msgstr "ta"
+
+#, python-format
+#~ msgid "The {side} partner is not applicable for this relation type"
+#~ msgstr "Partner {side} ni ustrezen za ta tip odnosa."
+
+#, python-format
+#~ msgid "The {partner} partner does not have category {category}."
+#~ msgstr "Partner {partner} nima kategorije {category}."
 
 #~ msgid "Last Modified on"
 #~ msgstr "Zadnjič spremenjeno"
