@@ -6,28 +6,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2025-01-24 08:18+0000\n"
+"Last-Translator: yledoare <yann@linuxconsole.org>\n"
 "Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Action requise"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__active
 msgid "Active"
-msgstr ""
+msgstr "Actif"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Activités"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_exception_decoration
@@ -37,34 +39,34 @@ msgstr ""
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "État de l'activité"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icône de type d'activité"
 
 #. module: animal
 #: model:ir.model,name:animal.model_animal
 #: model:ir.module.category,name:animal.module_category_animal
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_form
 msgid "Animal"
-msgstr ""
+msgstr "Animal"
 
 #. module: animal
 #: model:ir.model,name:animal.model_animal_breed
 msgid "Animal Breeds"
-msgstr ""
+msgstr "Races Animaux"
 
 #. module: animal
 #: model:ir.model,name:animal.model_animal_color
 msgid "Animal Colors"
-msgstr ""
+msgstr "Couleurs de l'animal"
 
 #. module: animal
 #: model:ir.model,name:animal.model_animal_species
 msgid "Animal Species"
-msgstr ""
+msgstr "Espèces Animales"
 
 #. module: animal
 #: model:ir.actions.act_window,name:animal.action_animal
@@ -72,18 +74,18 @@ msgstr ""
 #: model:ir.ui.menu,name:animal.menu_root
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Animals"
-msgstr ""
+msgstr "Animaux"
 
 #. module: animal
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_form
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Archived"
-msgstr ""
+msgstr "Archivé"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Nombre de fichiers joints"
 
 #. module: animal
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_kanban
@@ -93,17 +95,17 @@ msgstr ""
 #. module: animal
 #: model:animal.breed,name:animal.beagle
 msgid "Beagle"
-msgstr ""
+msgstr "Beagle"
 
 #. module: animal
 #: model:animal.species,name:animal.bird
 msgid "Bird"
-msgstr ""
+msgstr "Oiseau"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__birth_date
 msgid "Birth Date"
-msgstr ""
+msgstr "Date de naissance"
 
 #. module: animal
 #: model:animal.breed,name:animal.boxer
@@ -116,7 +118,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_breed_form
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Breed"
-msgstr ""
+msgstr "Race"
 
 #. module: animal
 #: model:ir.actions.act_window,name:animal.action_animal_breed
@@ -124,7 +126,7 @@ msgstr ""
 #: model:ir.ui.menu,name:animal.menu_breed
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
 msgid "Breeds"
-msgstr ""
+msgstr "Races"
 
 #. module: animal
 #: model:animal.breed,name:animal.bull_terrier
@@ -139,7 +141,7 @@ msgstr ""
 #. module: animal
 #: model:animal.species,name:animal.cat
 msgid "Cat"
-msgstr ""
+msgstr "Chat"
 
 #. module: animal
 #: model:animal.breed,name:animal.chihuahua
@@ -161,13 +163,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_color_form
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Color"
-msgstr ""
+msgstr "Couleur"
 
 #. module: animal
 #: model:ir.actions.act_window,name:animal.action_animal_color
 #: model:ir.ui.menu,name:animal.menu_color
 msgid "Colors"
-msgstr ""
+msgstr "Couleurs"
 
 #. module: animal
 #: model:ir.ui.menu,name:animal.menu_config
@@ -177,22 +179,22 @@ msgstr ""
 #. module: animal
 #: model_terms:ir.actions.act_window,help:animal.action_animal_breed
 msgid "Create a breed."
-msgstr ""
+msgstr "Créer une race."
 
 #. module: animal
 #: model_terms:ir.actions.act_window,help:animal.action_animal_color
 msgid "Create a color."
-msgstr ""
+msgstr "Créer une couleur."
 
 #. module: animal
 #: model_terms:ir.actions.act_window,help:animal.action_animal_species
 msgid "Create a species."
-msgstr ""
+msgstr "Créer une espèce."
 
 #. module: animal
 #: model_terms:ir.actions.act_window,help:animal.action_animal
 msgid "Create an animal"
-msgstr ""
+msgstr "Créer un animal"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__create_uid
@@ -200,7 +202,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:animal.field_animal_color__create_uid
 #: model:ir.model.fields,field_description:animal.field_animal_species__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__create_date
@@ -208,7 +210,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:animal.field_animal_color__create_date
 #: model:ir.model.fields,field_description:animal.field_animal_species__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: animal
 #: model:animal.breed,name:animal.dachshund
@@ -218,7 +220,7 @@ msgstr ""
 #. module: animal
 #: model:animal.breed,name:animal.dalmatian
 msgid "Dalmatian"
-msgstr ""
+msgstr "Dalmatien"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__display_name
@@ -226,7 +228,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:animal.field_animal_color__display_name
 #: model:ir.model.fields,field_description:animal.field_animal_species__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Afficher le nom"
 
 #. module: animal
 #: model:animal.breed,name:animal.doberman
@@ -236,28 +238,28 @@ msgstr ""
 #. module: animal
 #: model:animal.species,name:animal.dog
 msgid "Dog"
-msgstr ""
+msgstr "Chien"
 
 #. module: animal
 #: model:animal.breed,name:animal.english_cocker_spaniel
 msgid "English Cocker Spaniel"
-msgstr ""
+msgstr "Cocker Spaniel Anglais"
 
 #. module: animal
 #: model:ir.model.fields.selection,name:animal.selection__animal__gender__female
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Female"
-msgstr ""
+msgstr "Femelle"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Abonnés"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Abonnés (Partenaires)"
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__activity_type_icon
@@ -267,18 +269,18 @@ msgstr ""
 #. module: animal
 #: model:animal.breed,name:animal.french_bulldog
 msgid "French Bulldog"
-msgstr ""
+msgstr "Bouledogue Français"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__gender
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Gender"
-msgstr ""
+msgstr "Genre"
 
 #. module: animal
 #: model:animal.breed,name:animal.german_shepard
 msgid "German Shepard"
-msgstr ""
+msgstr "Berger Allemand"
 
 #. module: animal
 #: model:animal.breed,name:animal.golden_retriever
@@ -288,12 +290,12 @@ msgstr ""
 #. module: animal
 #: model:animal.breed,name:animal.great_dane
 msgid "Great Dane"
-msgstr ""
+msgstr "Grand Danois"
 
 #. module: animal
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Group By"
-msgstr ""
+msgstr "Grouper par"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__has_message
@@ -312,27 +314,27 @@ msgstr ""
 #: model:ir.model.fields,field_description:animal.field_animal_color__id
 #: model:ir.model.fields,field_description:animal.field_animal_species__id
 msgid "ID"
-msgstr ""
+msgstr "Identifiant"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Icône"
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icône pour indiquer une activité exceptionnelle."
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si coché, les nouveaux messages nécessitent votre attention."
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si coché, certains messages ont une erreur de livraison."
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__image
@@ -342,7 +344,7 @@ msgstr ""
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Est un abonné"
 
 #. module: animal
 #: model:animal.breed,name:animal.jack_russell
@@ -360,7 +362,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:animal.field_animal_color____last_update
 #: model:ir.model.fields,field_description:animal.field_animal_species____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Dernière modification le"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__write_uid
@@ -368,7 +370,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:animal.field_animal_color__write_uid
 #: model:ir.model.fields,field_description:animal.field_animal_species__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__write_date
@@ -376,28 +378,28 @@ msgstr ""
 #: model:ir.model.fields,field_description:animal.field_animal_color__write_date
 #: model:ir.model.fields,field_description:animal.field_animal_species__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Pièce jointe"
 
 #. module: animal
 #: model:ir.model.fields.selection,name:animal.selection__animal__gender__male
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Male"
-msgstr ""
+msgstr "Mâle"
 
 #. module: animal
 #: model:res.groups,name:animal.group_animal_manager
 msgid "Manager"
-msgstr ""
+msgstr "Gestionnaire"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Erreur de livraison du message"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_ids
@@ -407,7 +409,7 @@ msgstr ""
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Date limite de mon activité"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__name
@@ -416,13 +418,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:animal.field_animal_species__name
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. module: animal
 #: model:ir.model.fields.selection,name:animal.selection__animal__gender__neutered
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 msgid "Neutered"
-msgstr ""
+msgstr "Neutre"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_calendar_event_id
@@ -432,27 +434,27 @@ msgstr ""
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Date limite de la prochaine activité"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Résumé de la prochaine activité"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Type de la prochaine activité"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Nombre d'actions"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Nombre d'erreurs"
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_needaction_counter
@@ -462,7 +464,7 @@ msgstr ""
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Nombre de messages avec erreur de livraison"
 
 #. module: animal
 #: model:animal.breed,name:animal.pomeranian
@@ -472,17 +474,17 @@ msgstr ""
 #. module: animal
 #: model:animal.breed,name:animal.pug
 msgid "Pug"
-msgstr ""
+msgstr "Carlin"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__ref
 msgid "Reference"
-msgstr ""
+msgstr "Référence"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Utilisateur responsable"
 
 #. module: animal
 #: model:animal.breed,name:animal.rottweiler
@@ -492,7 +494,7 @@ msgstr ""
 #. module: animal
 #: model:animal.color,name:animal.salt
 msgid "Salt and pepper"
-msgstr ""
+msgstr "Poivre et sel"
 
 #. module: animal
 #: model:animal.breed,name:animal.schnauzer
@@ -502,7 +504,7 @@ msgstr ""
 #. module: animal
 #: model:ir.ui.menu,name:animal.menu_settings
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"
 
 #. module: animal
 #: model:animal.breed,name:animal.shih_tzu
@@ -512,12 +514,12 @@ msgstr ""
 #. module: animal
 #: model:animal.breed,name:animal.siberian_husky
 msgid "Siberian Husky"
-msgstr ""
+msgstr "Husky sibérien"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__size
 msgid "Size"
-msgstr ""
+msgstr "Taille"
 
 #. module: animal
 #: model:ir.actions.act_window,name:animal.action_animal_species
@@ -528,7 +530,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_search
 #: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
 msgid "Species"
-msgstr ""
+msgstr "Espèces"
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__activity_state
@@ -538,31 +540,35 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Statut basé sur les activités\n"
+"En retard : La date limite est déjà passée\n"
+"Aujourd'hui : La date de l'activité est aujourd'hui\n"
+"Planifié : Activités futures."
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__image
 msgid "This field holds the photo of the animal."
-msgstr ""
+msgstr "Ce champ contient la photo de l'animal."
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Type d'activité d'exception enregistrée."
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Messages du site Web"
 
 #. module: animal
 #: model:ir.model.fields,help:animal.field_animal__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historique de communication du site Web"
 
 #. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__weight
 msgid "Weight (in kg)"
-msgstr ""
+msgstr "Poids (en Kg)"
 
 #. module: animal
 #: model:animal.breed,name:animal.yorkshire_terrier
