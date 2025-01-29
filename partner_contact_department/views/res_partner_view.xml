@@ -17,7 +17,6 @@
                 expr="//field[@name='child_ids']/form//field[@name='function']"
                 position="after"
             >
-                <field name="is_company" invisible="True" />
                 <field
                     name="department_id"
                     placeholder="Department"
