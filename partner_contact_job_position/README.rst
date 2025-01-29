@@ -29,7 +29,7 @@ Partner Job Position
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module extends the functionality of partners job position to
-support having them categorized in tree form and allow you to choose a
+support having them categorized in list form and allow you to choose a
 categorized job position for your contacts in addition to the current
 custom string for job position.
 
