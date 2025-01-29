@@ -2,7 +2,7 @@
 # © 2016 Tecnativa S.L. - Vicent Cubells
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models
+from odoo import fields, models, api
 
 
 class ResPartner(models.Model):
@@ -26,3 +26,9 @@ class ResPartnerDepartment(models.Model):
         "res.partner.department", "parent_id", "Child departments"
     )
     parent_path = fields.Char(index=True, unaccent=False)
+    
+    @api.model
+    def _valid_field_parameter(self, field, name):
+        if name == 'unaccent':
+            return True
+        return super()._valid_field_parameter(field, name)

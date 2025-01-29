@@ -42,7 +42,7 @@
                             <field name="comment" />
                             <field name="display_name" />
                             <templates>
-                                <t t-name="kanban-box">
+                                <t t-name="card">
                                     <t
                                         t-set="color"
                                         t-value="kanban_color(record.color.raw_value)"
