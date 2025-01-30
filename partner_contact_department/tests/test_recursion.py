@@ -33,10 +33,14 @@ class TestRecursion(TransactionCase):
     def test_update_department(self):
         """Test updating an existing department"""
         self.dpt1.write({"name": "Updated Department"})
-        self.assertEqual(self.dpt1.name, "Updated Department", "Department name should be updated")
+        self.assertEqual(
+            self.dpt1.name, "Updated Department", "Department name should be updated"
+        )
 
     def test_delete_department(self):
         """Test deleting a department"""
-        department_to_delete = self.department_obj.create({"name": "Department to Delete"})
+        department_to_delete = self.department_obj.create(
+            {"name": "Department to Delete"}
+        )
         department_to_delete.unlink()
         self.assertFalse(department_to_delete.exists(), "Department should be deleted")
