@@ -1,0 +1,14 @@
+<!-- Copyright 2025 Kencove - Mohamed Alkobrosli - (https://www.kencove.com) -->
+<!-- License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="action_phone_query_dashboard" model="ir.actions.client">
+        <field name="name">Phone Query Dashboard</field>
+        <field name="tag">phone_query_dashboard</field>
+    </record>
+
+    <menuitem
+        id="menu_my_dashboard"
+        name="Phone Query"
+        action="action_phone_query_dashboard"
+    />
+</odoo>

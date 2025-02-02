@@ -1,0 +1,33 @@
+<!-- Copyright 2025 Kencove - Mohamed Alkobrosli - (https://www.kencove.com) -->
+<!-- License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<templates xml:space="preserve">
+    <t t-name="phone_query.phone_query_dashboard_template" owl="1">
+        <div class="o_cp_controller">
+            <div class="o_control_panel" />
+            <div class="o_content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2" />
+                        <div class="col-md-8">
+                            <div class="card text-center shadow-sm">
+                                <h5 class="card-title">Query Phone Number Dashboard</h5>
+                                <div class="card-body">
+                                    <p>
+                                        You can type <strong
+                                        >&amp;phone_number=123456789</strong> in the url of odoo webclient
+                                    </p>
+                                    <p>
+                                        <strong>Example:</strong>
+                                    </p>
+                                    <h4
+                                    >http://localhost:8069/web#action=330&amp;cids=1&amp;menu_id=224&amp;phone_number=588</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
