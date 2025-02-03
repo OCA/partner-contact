@@ -16,6 +16,7 @@
         "demo/res_partner_relation_demo.xml",  # Must be after type and partner
     ],
     "data": [
+        "views/res_partner_views.xml",
         "views/res_partner_relation_all_views.xml",
         "views/res_partner_relation_type_views.xml",
     ],

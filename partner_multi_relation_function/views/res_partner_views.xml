@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">partner_multi_relation_function.view_partner_filter</field>
+        <field name="inherit_id" ref="partner_multi_relation.view_res_partner_filter" />
+        <field name="model">res.partner</field>
+        <field type="xml" name="arch">
+            <field name="search_relation_partner_id" position="before">
+                <field name="search_relation_function" />
+            </field>
+        </field>
+    </record>
+</odoo>
