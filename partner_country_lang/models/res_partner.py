@@ -1,27 +1,24 @@
-# Copyright 2022 Tecnativa - Víctor Martínez
+# Copyright 2022-2025 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, models
+from odoo import api, fields, models
 
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    @api.onchange("country_id")
-    def _onchange_country_id(self):
-        result = super()._onchange_country_id()
-        if self.country_id.lang:
-            self.lang = self.country_id.lang
-        return result
+    # Add the compute method on the existing field
+    lang = fields.Selection(compute="_compute_lang", store=True, readonly=False)
 
-    def _adjust_lang_by_country(self, vals):
-        """Adjust vals dictionary for adding the language of the country
-        if no one is included in it, but country is.
-        """
-        if vals.get("country_id") and "lang" not in vals:
-            country = self.env["res.country"].browse(vals["country_id"])
-            if country.lang:
-                vals["lang"] = country.lang
+    @api.depends("country_id")
+    def _compute_lang(self):
+        if hasattr(super(), "_compute_lang"):
+            res = super()._compute_lang()
+        for item in self:
+            if item.country_id.lang:
+                item.lang = item.country_id.lang
+        if hasattr(super(), "_compute_lang"):
+            return res
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -29,12 +26,8 @@ class ResPartner(models.Model):
         and no language is specified.
         """
         for vals in vals_list:
-            self._adjust_lang_by_country(vals)
+            if vals.get("country_id") and "lang" not in vals:
+                country = self.env["res.country"].browse(vals["country_id"])
+                if country.lang:
+                    vals["lang"] = country.lang
         return super().create(vals_list)
-
-    def write(self, vals):
-        """Change language if a country is written through code and no
-        one is modified as well.
-        """
-        self._adjust_lang_by_country(vals)
-        return super().write(vals)
