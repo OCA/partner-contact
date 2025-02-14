@@ -2,11 +2,11 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 from odoo.exceptions import ValidationError
-from odoo.tests import common, tagged
+from odoo.tests.common import TransactionCase, tagged
 
 
 @tagged("-at_install", "post_install")
-class TestPartnerTierValidation(common.TransactionCase):
+class TestPartnerTierValidation(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
