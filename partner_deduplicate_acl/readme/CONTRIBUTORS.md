@@ -8,6 +8,7 @@
   - Carlos Roca
   - João Marques
   - César A. Sánchez
+  - Juan Carlos Oñate
 - Kevin Khao \<<kevin.khao@gmail.com>\>
 - [Pesol](https://www.pesol.es):
   - Jonathan Oscategui Taza \<<info@pesol.es>\>
