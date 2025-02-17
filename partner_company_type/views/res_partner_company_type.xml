@@ -27,22 +27,22 @@
             </search>
         </field>
     </record>
-    <record model="ir.ui.view" id="res_partner_company_type_tree_view">
+    <record model="ir.ui.view" id="res_partner_company_type_list_view">
         <field name="name">
-            res.partner.company.type.tree (in partner_company_type)
+            res.partner.company.type.list (in partner_company_type)
         </field>
         <field name="model">res.partner.company.type</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="shortcut" />
-            </tree>
+            </list>
         </field>
     </record>
     <record model="ir.actions.act_window" id="res_partner_company_type_act_window">
         <field name="name">Company Types</field>
         <field name="res_model">res.partner.company.type</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>
