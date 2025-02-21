@@ -1,10 +1,10 @@
 # Copyright 2020 Tecnativa - Carlos Dauden
 # Copyright 2020 Tecnativa - Sergio Teruel
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-from odoo.tests import common
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestPartnerContactAddressDefault(common.TransactionCase):
+class TestPartnerContactAddressDefault(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

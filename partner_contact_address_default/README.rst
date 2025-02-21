@@ -69,6 +69,7 @@ Contributors
 
   - Carlos Dauden
   - Sergio Teruel
+  - Juan Carlos Oñate
 
 - `Sygel <https://www.sygel.es>`__:
 

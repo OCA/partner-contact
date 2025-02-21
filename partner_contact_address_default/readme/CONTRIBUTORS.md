@@ -1,6 +1,7 @@
 - [Tecnativa](https://www.tecnativa.com):
   - Carlos Dauden
   - Sergio Teruel
+  - Juan Carlos Oñate
 - [Sygel](https://www.sygel.es):
   - Manuel Regidor
 - [Studio73](https://www.studio73.es):
