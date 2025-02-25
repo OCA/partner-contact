@@ -8,24 +8,26 @@ from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
 from odoo.exceptions import ValidationError
-from odoo.tests.common import TransactionCase
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestRespartnerAgeRange(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.range_model = self.env["res.partner.age.range"]
-        self.partner_model = self.env["res.partner"]
-        self.baby_range = self.range_model.create(
+class TestRespartnerAgeRange(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.range_model = cls.env["res.partner.age.range"]
+        cls.partner_model = cls.env["res.partner"]
+        cls.baby_range = cls.range_model.create(
             {"name": "baby", "age_from": 0, "age_to": 2}
         )
-        self.partner = self.partner_model.create(
+        cls.partner = cls.partner_model.create(
             {
                 "name": "Test",
                 "birthdate_date": datetime.today() - relativedelta(years=1, days=10),
             }
         )
-        self.partner2 = self.partner_model.create(
+        cls.partner2 = cls.partner_model.create(
             {
                 "name": "Test2",
                 "birthdate_date": datetime.today() + relativedelta(years=1),
