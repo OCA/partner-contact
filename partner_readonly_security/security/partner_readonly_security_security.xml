@@ -3,6 +3,6 @@
     <record id="group_partner_edition" model="res.groups">
         <field name="name">Partner edition</field>
         <field name="category_id" ref="base.module_category_usability" />
-        <field name="users" eval="[(4, ref('base.user_admin'))]" />
+        <field name="users" eval="[Command.link(ref('base.user_admin'))]" />
     </record>
 </odoo>
