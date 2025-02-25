@@ -2,41 +2,26 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import datetime, timedelta
+from unittest.mock import patch
 
-try:
-    from unittest.mock import patch
-except ImportError:
-    from unittest.mock import patch
+from odoo import Command, fields
 
-from odoo import fields
-from odoo.tests.common import TransactionCase
+from odoo.addons.base.tests.common import BaseCommon
 
 PATH = "odoo.addons.partner_phonecall_schedule.models.res_partner.datetime"
 
 
-class CanICallCase(TransactionCase):
+class CanICallCase(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        # Remove this variable in v16 and put instead:
-        # from odoo.addons.base.tests.common import DISABLED_MAIL_CONTEXT
-        DISABLED_MAIL_CONTEXT = {
-            "tracking_disable": True,
-            "mail_create_nolog": True,
-            "mail_create_nosubscribe": True,
-            "mail_notrack": True,
-            "no_reset_password": True,
-        }
-        cls.env = cls.env(context=dict(cls.env.context, **DISABLED_MAIL_CONTEXT))
         cls.Calendar = cls.env["resource.calendar"].with_context(tz="UTC")
         cls.Partner = cls.env["res.partner"].with_context(tz="UTC")
         cls.some_mornings = cls.Calendar.create(
             {
                 "name": "Some mornings",
                 "attendance_ids": [
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "name": "Friday morning",
                             "dayofweek": "4",
@@ -44,9 +29,7 @@ class CanICallCase(TransactionCase):
                             "hour_to": 12,
                         },
                     ),
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "name": "Next monday morning",
                             "dayofweek": "0",
@@ -63,9 +46,7 @@ class CanICallCase(TransactionCase):
             {
                 "name": "Some evenings",
                 "attendance_ids": [
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "name": "Friday evening",
                             "dayofweek": "4",
@@ -73,9 +54,7 @@ class CanICallCase(TransactionCase):
                             "hour_to": 19,
                         },
                     ),
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "name": "Next monday evening",
                             "dayofweek": "0",
