@@ -2,10 +2,18 @@
 
 from . import models
 from odoo import api, SUPERUSER_ID
+import os
 
 
-def post_init_hook(cr, registry):
-    env = api.Environment(cr, SUPERUSER_ID, {})
-    partners = env["purchase.order"].search([]).mapped("partner_id")
+def post_init_hook(env):
+    if (
+        os.getenv("ODOO_TEST_MODE")
+        or getattr(env, "registry", None)
+        and getattr(env.registry, "in_test_mode", False)
+    ):
+        return
+
+    envs = api.Environment(env.cr, SUPERUSER_ID, {})
+    partners = envs["purchase.order"].search([]).mapped("partner_id")
     partners |= partners.mapped("commercial_partner_id")
     partners._increase_rank("supplier_rank")
