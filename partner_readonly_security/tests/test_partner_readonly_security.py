@@ -3,23 +3,20 @@
 
 
 from odoo.exceptions import AccessError
-from odoo.tests import common, new_test_user
+from odoo.tests import new_test_user
 from odoo.tests.common import users
 from odoo.tools import mute_logger
 
+from odoo.addons.base.tests.common import BaseCommon
 
-class TestPartnerReadonlySecurity(common.TransactionCase):
+
+class TestPartnerReadonlySecurity(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.env = cls.env(
             context=dict(
                 cls.env.context,
-                mail_create_nolog=True,
-                mail_create_nosubscribe=True,
-                mail_notrack=True,
-                no_reset_password=True,
-                tracking_disable=True,
                 test_partner_readonly_security=True,
             )
         )
