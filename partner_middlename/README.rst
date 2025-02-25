@@ -83,6 +83,10 @@ Contributors
   - Daniel Reis <dreis@opensourceintegrators.com>
   - Nikul Chaudhary <nchaudhary@opensourceintegrators.com>
 
+- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+
+  - Bhavesh Heliconia
+
 Maintainers
 -----------
 
