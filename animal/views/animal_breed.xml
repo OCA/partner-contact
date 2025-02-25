@@ -1,5 +1,4 @@
 <odoo>
-
     <!-- Animal breed Tree View -->
     <record id="view_animal_breed_tree" model="ir.ui.view">
         <field name="name">view.animal.breed.tree</field>
@@ -48,5 +47,4 @@
             </p>
         </field>
     </record>
-
 </odoo>
