@@ -187,6 +187,37 @@ class ResPartner(models.Model):
             )
         return domain
 
+    def get_partner_type(self):
+        """Get partner type for relation.
+        :return: 'c' for company or 'p' for person
+        :rtype: str
+        """
+        self.ensure_one()
+        return "c" if self.is_company else "p"
+
+    @api.constrains("is_company")
+    def _check_relation_compatibility(self):
+        """If is_company changes, check relations whether this should be allowed."""
+        Relation = self.env["res.partner.relation"]
+        for this in self:
+            contact_type = this.get_partner_type()
+            incompatible_relations = Relation.search(
+                [
+                    "|",
+                    "&",
+                    ("left_partner_id", "=", this.id),
+                    ("type_id.contact_type_left", "not in", (False, contact_type)),
+                    "&",
+                    ("right_partner_id", "=", this.id),
+                    ("type_id.contact_type_right", "not in", (False, contact_type)),
+                ],
+                limit=1,
+            )
+            if incompatible_relations:
+                raise ValidationError(
+                    _("Cannot change type of partner due to incompatible connections.")
+                )
+
     def action_view_relations(self):
         self.ensure_one()
         return {
