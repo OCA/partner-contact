@@ -72,6 +72,10 @@ Contributors
 
   - Deriman Alonso <d.alonso@binhex.cloud>
 
+- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+
+  - Bhavesh Heliconia
+
 Maintainers
 -----------
 
