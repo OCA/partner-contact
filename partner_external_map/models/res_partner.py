@@ -40,7 +40,7 @@ class ResPartner(models.Model):
             if not isinstance(value, str):
                 # for latitude and longitude which are floats
                 if isinstance(value, float):
-                    value = "%.5f" % value
+                    value = f"{value:.5f}"
                 else:
                     value = ""
             url = url.replace(key, value)
