@@ -20,8 +20,8 @@ class ResPartner(models.Model):
         for record in self:
             if record.age >= 0:
                 age_range = age_ranges.filtered(
-                    lambda age_range: age_range.age_from
-                    <= record.age
+                    lambda age_range, record_data=record: age_range.age_from
+                    <= record_data.age
                     <= age_range.age_to
                 )
             else:
