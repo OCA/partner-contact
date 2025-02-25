@@ -8,7 +8,7 @@ from odoo.tests.common import TransactionCase
 class TestCountryStateRequired(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestCountryStateRequired, cls).setUpClass()
+        super().setUpClass()
         cls.partner_model = cls.env["res.partner"]
         cls.spain = cls.env.ref("base.es")
         cls.state_bcn = cls.env.ref("base.state_es_b")
