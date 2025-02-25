@@ -50,11 +50,11 @@ Go to Contact / Configuration / Age Ranges
 
 Configure your Age Ranges
 
-|image|
+|image 1|
 
 Contacts will automatically compute age range based on age.
 
-.. |image| image:: https://raw.githubusercontent.com/OCA/partner-contact/18.0/partner_contact_age_range/static/description/configure_age_range.png
+.. |image 1| image:: https://raw.githubusercontent.com/OCA/partner-contact/18.0/partner_contact_age_range/static/description/image1.png
 
 Bug Tracker
 ===========
@@ -81,6 +81,9 @@ Contributors
 - Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
 - brain-tec AG <info@bt-group.com>
 - Andreas Hochuli <andreas.hochuli@camptocamp.com>
+- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+
+  - Bhavesh Heliconia
 
 Maintainers
 -----------

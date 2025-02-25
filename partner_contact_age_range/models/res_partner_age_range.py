@@ -1,7 +1,7 @@
 # Copyright 2019-2020: Druidoo (<https://www.druidoo.io>)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -31,7 +31,7 @@ class ResPartnerDateRange(models.Model):
         for rec in self:
             if rec.age_from >= rec.age_to:
                 raise ValidationError(
-                    _(
+                    self.env._(
                         "%(name)s is not a valid range (%(age_from)s >= %(age_to)s)",
                         name=rec.name,
                         age_from=rec.age_from,
@@ -48,7 +48,7 @@ class ResPartnerDateRange(models.Model):
             )
             if range_id:
                 raise ValidationError(
-                    _(
+                    self.env._(
                         "%(name)s is overalapping with range %(age_from)s",
                         name=rec.name,
                         age_from=range_id.name,
