@@ -13,16 +13,17 @@ class PersonCase(TransactionCase):
     model = "res.partner"
     context = dict()
 
-    def setUp(self):
-        super().setUp()
-        self.env["ir.config_parameter"].set_param(
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env["ir.config_parameter"].set_param(
             "partner_names_order", "last_first_comma"
         )
 
-        self.firstname = "Fírstname"
-        self.middlename = "Middlename"
-        self.lastname = "Làstname1"
-        self.template = "%(last1)s %(first)s, %(last2)s"
+        cls.firstname = "Fírstname"
+        cls.middlename = "Middlename"
+        cls.lastname = "Làstname1"
+        cls.template = "%(last1)s %(first)s, %(last2)s"
 
     def tearDown(self):
         try:
