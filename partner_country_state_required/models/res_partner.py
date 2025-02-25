@@ -1,7 +1,7 @@
 # Copyright 2023 ForgeFlow S.L.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import _, api, models
+from odoo import api, models
 from odoo.exceptions import ValidationError
 
 
@@ -21,7 +21,7 @@ class ResPartner(models.Model):
                 and not record.state_id
             ):
                 raise ValidationError(
-                    _(
+                    self.env._(
                         "Please specify a state for the address when selecting "
                         "a country with available states."
                     )
