@@ -2,11 +2,12 @@
 # Copyright 2024 Tecnativa - Carolina Fernandez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo.tests import common
 from odoo.tools.safe_eval import safe_eval
 
+from odoo.addons.base.tests.common import BaseCommon
 
-class TestDeduplicateFilter(common.TransactionCase):
+
+class TestDeduplicateFilter(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

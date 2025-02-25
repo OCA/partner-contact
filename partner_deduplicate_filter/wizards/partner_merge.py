@@ -22,10 +22,10 @@ class BasePartnerMergeAutomaticWizard(models.TransientModel):
                 filters.append("parent_id IS NULL")
             index_where = query.find("WHERE")
             index_group_by = query.find("GROUP BY")
-            subquery = "%s" % " AND ".join(filters)
+            subquery = "{}".format(" AND ".join(filters))
             if index_where > 0:
-                subquery = "AND (%s) " % subquery
+                subquery = f"AND ({subquery}) "
             else:  # pragma: no cover
-                subquery = "WHERE %s " % subquery
+                subquery = f"WHERE {subquery} "
             query = query[:index_group_by] + subquery + query[index_group_by:]
         return super()._process_query(query)
