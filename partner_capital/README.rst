@@ -94,6 +94,10 @@ Contributors
   - David Vidal
   - Alexandre Díaz
 
+- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+
+  - Bhavesh Heliconia
+
 Maintainers
 -----------
 
