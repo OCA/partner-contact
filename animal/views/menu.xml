@@ -1,5 +1,4 @@
 <odoo>
-
     <!-- Main Menu -->
     <menuitem
         id="menu_root"
@@ -46,5 +45,4 @@
         sequence="40"
         parent="menu_config"
     />
-
 </odoo>
