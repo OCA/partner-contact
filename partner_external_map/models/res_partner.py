@@ -3,12 +3,8 @@
 # Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-import logging
-
-from odoo import _, api, models
+from odoo import api, models
 from odoo.exceptions import UserError
-
-logger = logging.getLogger(__name__)
 
 
 class ResPartner(models.Model):
@@ -30,7 +26,7 @@ class ResPartner(models.Model):
         if self.country_id:
             addr.append(self.country_id.name)
         if not addr:
-            raise UserError(_("Address missing on partner '%s'.") % self.name)
+            raise UserError(self.env._("Address missing on partner '%s'.") % self.name)
         return " ".join(addr)
 
     @api.model
@@ -44,7 +40,6 @@ class ResPartner(models.Model):
                 else:
                     value = ""
             url = url.replace(key, value)
-        logger.debug("Final URL: %s", url)
         return url
 
     def open_map(self):
@@ -52,7 +47,9 @@ class ResPartner(models.Model):
         map_website = self.env.user.context_map_website_id
         if not map_website:
             raise UserError(
-                _("Missing map provider: " "you should set it in your preferences.")
+                self.env._(
+                    "Missing map provider: " "you should set it in your preferences."
+                )
             )
         # Since v13, fields partner_latitude and partner_longitude are
         # in the "base" module
@@ -67,7 +64,7 @@ class ResPartner(models.Model):
         else:
             if not map_website.address_url:
                 raise UserError(
-                    _(
+                    self.env._(
                         "Missing parameter 'URL that uses the address' "
                         "for map website '%s'."
                     )
@@ -86,7 +83,7 @@ class ResPartner(models.Model):
         self.ensure_one()
         if not self.env.user.context_route_map_website_id:
             raise UserError(
-                _(
+                self.env._(
                     "Missing route map website: "
                     "you should set it in your preferences."
                 )
@@ -94,7 +91,7 @@ class ResPartner(models.Model):
         map_website = self.env.user.context_route_map_website_id
         if not self.env.user.context_route_start_partner_id:
             raise UserError(
-                _(
+                self.env._(
                     "Missing start address for route map: "
                     "you should set it in your preferences."
                 )
@@ -119,7 +116,7 @@ class ResPartner(models.Model):
         else:
             if not map_website.route_address_url:
                 raise UserError(
-                    _(
+                    self.env._(
                         "Missing route URL that uses the addresses "
                         "for the map website '%s'"
                     )

@@ -2,12 +2,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo.exceptions import UserError
-from odoo.tests import common
+
+from odoo.addons.base.tests.common import BaseCommon
 
 from ..hooks import set_default_map_settings
 
 
-class TestPartnerExternalMap(common.TransactionCase):
+class TestPartnerExternalMap(BaseCommon):
     def setUp(self):
         super().setUp()
         self.user = self.env["res.users"].create(

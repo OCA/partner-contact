@@ -17,13 +17,13 @@ Partner External Maps
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/17.0/partner_external_map
+    :target: https://github.com/OCA/partner-contact/tree/18.0/partner_external_map
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-17-0/partner-contact-17-0-partner_external_map
+    :target: https://translation.odoo-community.org/projects/partner-contact-18-0/partner-contact-18-0-partner_external_map
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=17.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=18.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -31,24 +31,23 @@ Partner External Maps
 This module adds buttons on the partner form to open a new tab with the
 map or the route to the address of the partner.
 
--  Each user can select the map website he wants to use in its
-   preferences.
--  There are now two buttons on the partner form view: one to open a
-   regular map on the address of the partner, and another one to open an
-   itinerary map from the start address configured in the preferences of
-   the user to the address of the partner.
+- Each user can select the map website he wants to use in its
+  preferences.
+- There are now two buttons on the partner form view: one to open a
+  regular map on the address of the partner, and another one to open an
+  itinerary map from the start address configured in the preferences of
+  the user to the address of the partner.
 
 This module supports several map websites:
 
--  Google Maps
-   <`https://www.google.com/maps\\> <https://www.google.com/maps\>>`__
--  OpenStreetMap
-   <`https://www.openstreetmap.org/\\> <https://www.openstreetmap.org/\>>`__
--  Bing Maps
-   <`https://www.bing.com/maps/\\> <https://www.bing.com/maps/\>>`__
--  Here Maps <`https://www.here.com/\\> <https://www.here.com/\>>`__
--  MapQuest
-   <`http://www.mapquest.com/\\> <http://www.mapquest.com/\>>`__
+- Google Maps
+  <`https://www.google.com/maps\\> <https://www.google.com/maps\>>`__
+- OpenStreetMap
+  <`https://www.openstreetmap.org/\\> <https://www.openstreetmap.org/\>>`__
+- Bing Maps
+  <`https://www.bing.com/maps/\\> <https://www.bing.com/maps/\>>`__
+- Here Maps <`https://www.here.com/\\> <https://www.here.com/\>>`__
+- MapQuest <`http://www.mapquest.com/\\> <http://www.mapquest.com/\>>`__
 
 If partner has the latitude and longitude information, Odoo will use
 that information instead of the address.
@@ -72,9 +71,9 @@ Usage
 
 First, you need to configure in your preferences:
 
--  The map website to use for the regular maps,
--  The map website to use for the route maps,
--  The start address for the route maps.
+- The map website to use for the regular maps,
+- The map website to use for the route maps,
+- The start address for the route maps.
 
 Then you can use the two new buttons on the partner form to open a
 regular map or a route map.
@@ -82,8 +81,8 @@ regular map or a route map.
 Known issues / Roadmap
 ======================
 
--  Let decide if the user prefers to use addresses instead coordinates
-   when *base_geolocalize* is installed.
+- Let decide if the user prefers to use addresses instead coordinates
+  when *base_geolocalize* is installed.
 
 Bug Tracker
 ===========
@@ -91,7 +90,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_external_map%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_external_map%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -107,19 +106,23 @@ Authors
 Contributors
 ------------
 
--  `Akretion <http://www.akretion.com>`__:
+- `Akretion <http://www.akretion.com>`__:
 
-   -  Alexis de Lattre <alexis.delattre@akretion.com>
+  - Alexis de Lattre <alexis.delattre@akretion.com>
 
--  `Tecnativa <https://www.tecnativa.com>`__:
+- `Tecnativa <https://www.tecnativa.com>`__:
 
-   -  Pedro M. Baeza
-   -  Ernesto Tejeda
-   -  João Marques
+  - Pedro M. Baeza
+  - Ernesto Tejeda
+  - João Marques
 
--  `Sygel <http://www.sygel.es>`__:
+- `Sygel <http://www.sygel.es>`__:
 
-   -  Manuel Regidor <manuel.regidor@sygel.es>
+  - Manuel Regidor <manuel.regidor@sygel.es>
+
+- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+
+  - Bhavesh Heliconia
 
 Maintainers
 -----------
@@ -134,6 +137,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/17.0/partner_external_map>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/18.0/partner_external_map>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.

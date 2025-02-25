@@ -6,3 +6,5 @@
   - João Marques
 - [Sygel](http://www.sygel.es):
   - Manuel Regidor \<<manuel.regidor@sygel.es>\>
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+  - Bhavesh Heliconia

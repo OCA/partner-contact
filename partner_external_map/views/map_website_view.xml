@@ -30,11 +30,11 @@
         <field name="name">map.website.tree</field>
         <field name="model">map.website</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="sequence" widget="handle" />
                 <field name="name" />
                 <field name="address_url" />
-            </tree>
+            </list>
         </field>
     </record>
     <record id="map_website_search" model="ir.ui.view">
@@ -55,7 +55,7 @@
     <record id="map_website_action" model="ir.actions.act_window">
         <field name="name">Map Websites</field>
         <field name="res_model">map.website</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
     <menuitem
         id="root_map_website_menu"

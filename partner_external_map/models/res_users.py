@@ -3,11 +3,7 @@
 # Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-import logging
-
 from odoo import api, fields, models
-
-logger = logging.getLogger(__name__)
 
 
 class ResUsers(models.Model):
