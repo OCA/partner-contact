@@ -4,11 +4,11 @@
         <field name="name">res.partner.age.range.tree</field>
         <field name="model">res.partner.age.range</field>
         <field name="arch" type="xml">
-            <tree editable="bottom">
+            <list editable="bottom">
                 <field name="name" />
                 <field name="age_from" />
                 <field name="age_to" />
-            </tree>
+            </list>
         </field>
     </record>
     <record id="view_partner_age_range_form" model="ir.ui.view">

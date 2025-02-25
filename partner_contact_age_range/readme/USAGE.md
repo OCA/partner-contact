@@ -2,6 +2,6 @@ Go to Contact / Configuration / Age Ranges
 
 Configure your Age Ranges
 
-![image](../static/description/configure_age_range.png)
+![image 1](../static/description/image1.png)
 
 Contacts will automatically compute age range based on age.
