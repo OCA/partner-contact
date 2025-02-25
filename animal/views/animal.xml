@@ -4,14 +4,14 @@
         <field name="name">animal.tree</field>
         <field name="model">animal</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="ref" />
                 <field name="name" />
                 <field name="gender" />
                 <field name="species_id" />
                 <field name="breed_id" />
                 <field name="color_id" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -26,7 +26,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
                     <field name="active" invisible="1" />
                     <field name="image" widget='image' class="oe_avatar" />
@@ -60,15 +60,7 @@
                         </group>
                     </group>
                 </sheet>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers" />
-                    <field name="activity_ids" widget="mail_activity" />
-                    <field
-                        name="message_ids"
-                        widget="mail_thread"
-                        options="{'post_refresh': 'recipients'}"
-                    />
-                </div>
+                <chatter />
             </form>
         </field>
     </record>
@@ -83,47 +75,35 @@
                 <field name="image" />
                 <field name="name" />
                 <templates>
-                    <t t-name="kanban-box">
-                        <div
-                            class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban"
+                    <t t-name="card" class="flex-row">
+                        <aside
+                            class="o_field_widget o_readonly_modifier o_field_background_image d-block position-relative     "
                         >
                             <t t-if="record.image.raw_value">
-                                <img
-                                    class="o_kanban_image"
-                                    t-att-src="kanban_image('animal', 'image', record.id.raw_value)"
-                                    t-att-alt="record.name"
+                                <field
+                                    name="image"
+                                    widget="image"
+                                    options="{'img_class': 'object-fit-cover'}"
                                 />
                             </t>
                             <t t-else="">
-                                <img
-                                    class="o_kanban_image"
-                                    alt="Avatar"
-                                    t-att-src='_s + "/animal/static/img/avatar.png"'
-                                />
+                                <img alt="Avatar" src="/animal/static/img/avatar.png" />
                             </t>
-                            <div class="oe_kanban_details">
-                                <strong
-                                    class="o_kanban_record_title oe_partner_heading"
-                                >
-                                    <field name="display_name" />
-                                </strong>
-                                <div
-                                    class="o_kanban_tags_section oe_kanban_partner_categories"
-                                />
-                                <ul>
-                                    <li t-if="record.gender.raw_value">
-                                        <field name="gender" />
-                                    </li>
-                                    <li
-                                        t-if="record.species_id.raw_value and record.breed_id.raw_value"
-                                    >
-                                        <field name="breed_id" />
-                                        <field name="species_id" />
-                                    </li>
-                                </ul>
-                                <div class="oe_kanban_partner_links" />
+                        </aside>
+                        <main class="ms-2">
+                            <field name="display_name" class="fw-bold fs-5" />
+
+                            <div t-if="record.gender.raw_value" class="o_text_overflow">
+                                <field name="gender" />
                             </div>
-                        </div>
+                            <div
+                                t-if="record.species_id.raw_value and record.breed_id.raw_value"
+                            >
+                                <field name="species_id" />
+                                <field name="breed_id" />
+                            </div>
+                            <div class="oe_kanban_partner_links" />
+                        </main>
                     </t>
                 </templates>
             </kanban>
@@ -202,7 +182,7 @@
     <record id="action_animal" model="ir.actions.act_window">
         <field name="name">Animals</field>
         <field name="res_model">animal</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">kanban,list,form</field>
         <field name="search_view_id" ref="view_animal_search" />
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">Create an animal</p>
