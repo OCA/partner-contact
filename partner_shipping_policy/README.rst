@@ -70,6 +70,9 @@ Contributors
 ------------
 
 - Marina Alapont <marina.alapont@forgeflow.com>
+- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+
+  - Bhavesh Heliconia
 
 Maintainers
 -----------
