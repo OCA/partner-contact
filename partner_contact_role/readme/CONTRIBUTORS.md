@@ -1,4 +1,6 @@
 - Simone Orsi \<<simone.orsi@camptocamp.com>\>
 
-- [Trobz](https://trobz.com):  
+- [Trobz](https://trobz.com):
   - Hai Lang \<<hailn@trobz.com>\>
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+  - Bhavesh Heliconia
