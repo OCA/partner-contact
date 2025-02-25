@@ -6,12 +6,12 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-def post_init_hook(cr, registry):
+def post_init_hook(env):
     """Set state_required to True"""
     _logger.info("Setting state_required to True for all countries.")
     query = """
         UPDATE res_country
         SET state_required = TRUE;
     """
-    cr.execute(query)
-    _logger.info(f"{cr.rowcount} rows updated in res_country")
+    env.cr.execute(query)
+    _logger.info(f"{env.cr.rowcount} rows updated in res_country")
