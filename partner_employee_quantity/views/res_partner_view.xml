@@ -10,7 +10,7 @@
                     <group
                         name="employee_quantity"
                         string="Employee quantity"
-                        attrs="{'invisible': [('is_company', '=', False)]}"
+                        invisible="not is_company"
                     >
                         <field name="employee_quantity" />
                         <field name="employee_quantity_range_id" />
