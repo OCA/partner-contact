@@ -4,9 +4,8 @@
 
 {
     "name": "Partner Subject to VAT",
-    "summary": """
-        Record whether a company is subject to VAT.""",
-    "version": "16.0.1.0.0",
+    "summary": "Record whether a company is subject to VAT.",
+    "version": "17.0.1.0.0",
     "category": "Contact",
     "website": "https://github.com/OCA/partner-contact",
     "author": "Coop IT Easy SC, Odoo Community Association (OCA)",
