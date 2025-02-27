@@ -82,6 +82,9 @@ Contributors
   - César A. Sánchez <cesar.sanchez@tecnativa.com>
 
 - Anand Kansagra <kansagraanand@hotmail.com>
+- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+
+  - Bhavesh Heliconia
 
 Maintainers
 -----------
