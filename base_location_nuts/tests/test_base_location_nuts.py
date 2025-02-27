@@ -40,8 +40,10 @@ class TestBaseLocationNuts(TransactionCase):
         cls.nuts4_2 = cls.nuts_model.search([("code", "=", "ES300a")])
         cls.nuts1_2.write({"country_id": cls.country_2})
 
-        cls.partner = cls.env["res.partner"].create(
-            {"name": "Test partner", "country_id": cls.country_1.id}
+        cls.partner = (
+            cls.env["res.partner"]
+            .with_context(no_state_required=True)
+            .create({"name": "Test partner", "country_id": cls.country_1.id})
         )
         cls.state_1 = cls.env["res.country.state"].create(
             {"name": "Zaragoza Test", "code": "ZT", "country_id": cls.country_1.id}

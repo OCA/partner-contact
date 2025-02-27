@@ -3,6 +3,7 @@
 
 from odoo import _, api, models
 from odoo.exceptions import ValidationError
+from odoo.tools import config
 
 
 class ResPartner(models.Model):
@@ -11,6 +12,10 @@ class ResPartner(models.Model):
     @api.constrains("country_id", "state_id")
     def _check_state_required(self):
         if self.env.context.get("no_state_required"):
+            return
+        if config.get("test_enable") and not self.env.context.get(
+            "force_state_required"
+        ):
             return
 
         for record in self:
