@@ -12,7 +12,7 @@ class Partner(models.Model):
         string="Shipping Policy",
         help="Shipping policy to use in this partner's sales orders. If you deliver "
         "all products at once, the delivery order will be scheduled based on the "
-        "greatest product lead time. Otherwise, it will be based on the shortest.",
+        "longest product lead time. Otherwise, it will be based on the shortest.",
     )
 
     @api.model
