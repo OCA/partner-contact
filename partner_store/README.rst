@@ -66,6 +66,9 @@ Contributors
 ------------
 
 - Hadrien Huvelle <hadrien.huvelle@camptocamp.com>
+- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+
+  - Bhavesh Heliconia
 
 Maintainers
 -----------
