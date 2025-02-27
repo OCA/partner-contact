@@ -4,7 +4,7 @@
 {
     "name": "Partner last name uppercase",
     "summary": "Uppercases the the last names of partners",
-    "version": "16.0.1.0.1",
+    "version": "17.0.1.0.0",
     "author": "Coop IT Easy SC, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "maintainer": "Coop IT Easy SC",
