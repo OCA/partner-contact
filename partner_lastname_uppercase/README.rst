@@ -17,27 +17,27 @@ Partner last name uppercase
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/16.0/partner_lastname_uppercase
+    :target: https://github.com/OCA/partner-contact/tree/17.0/partner_lastname_uppercase
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-16-0/partner-contact-16-0-partner_lastname_uppercase
+    :target: https://translation.odoo-community.org/projects/partner-contact-17-0/partner-contact-17-0-partner_lastname_uppercase
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module uppercases last names on create and write.
 
-This module uses python `upper` function. This function uses the default
-unicode case folding*. This works for many languages, but not for all, like
-turkish where ı/I i/İ pairs work differently (see cpython issue
-`17252 <https://bugs.python.org/issue17252>`_).
+This module uses python upper function. This function uses the default
+unicode case folding\*. This works for many languages, but not for all,
+like turkish where ı/I i/İ pairs work differently (see cpython issue
+`17252 <https://bugs.python.org/issue17252>`__).
 
-\* The uppercasing algorithm used is described in section 3.13
-‘Default Case Folding’ of the
-`Unicode Standard <https://www.unicode.org/versions/Unicode15.0.0/ch03.pdf>`_.
+\* The uppercasing algorithm used is described in section 3.13 ‘Default
+Case Folding’ of the `Unicode
+Standard <https://www.unicode.org/versions/Unicode15.0.0/ch03.pdf>`__.
 
 **Table of contents**
 
@@ -47,13 +47,14 @@ turkish where ı/I i/İ pairs work differently (see cpython issue
 Configuration
 =============
 
-After installation, tick "Uppercase Lastnames" in the general configuration pannel.
+After installation, tick "Uppercase Lastnames" in the general
+configuration pannel.
 
 Usage
 =====
 
-A server action (Uppercase all lastnames) is provided to initialize the data.
-To launch it :
+A server action (Uppercase all lastnames) is provided to initialize the
+data. To launch it :
 
 - activate debug mode
 - find the action in Technical > Server Actions
@@ -70,7 +71,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_lastname_uppercase%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_lastname_uppercase%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -78,19 +79,19 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Coop IT Easy SC
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* `Coop IT Easy SC <https://coopiteasy.be>`_:
+- `Coop IT Easy SC <https://coopiteasy.be>`__:
 
-  * Robin Keunen
+  - Robin Keunen
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -102,6 +103,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/16.0/partner_lastname_uppercase>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/17.0/partner_lastname_uppercase>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
