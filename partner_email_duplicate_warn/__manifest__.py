@@ -7,7 +7,7 @@
     "version": "18.0.1.0.0",
     "category": "Partner Management",
     "license": "AGPL-3",
-    "summary": "Warning banner on partner form if another partner has the same email",
+    "summary": "Warning banner on partner form if other partners have the same email",
     "author": "Akretion,Odoo Community Association (OCA)",
     "maintainers": ["alexis-via"],
     "website": "https://github.com/OCA/partner-contact",
