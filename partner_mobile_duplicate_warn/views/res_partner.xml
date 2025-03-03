@@ -4,14 +4,11 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <div
-                attrs="{'invisible': [('same_vat_partner_id', '=', False)]}"
-                position="after"
-            >
+            <div invisible="not same_vat_partner_id" position="after">
                 <div
                     class="alert alert-warning"
                     role="alert"
-                    attrs="{'invisible': [('same_mobile_partner_id', '=', False)]}"
+                    invisible="not same_mobile_partner_id"
                 >
                   Duplicate warning: partner <field
                     name="same_mobile_partner_id"
