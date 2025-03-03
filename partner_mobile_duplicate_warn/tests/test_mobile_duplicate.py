@@ -48,10 +48,19 @@ class TestResPartner(TransactionCase):
             }
         )
         partner1._onchange_mobile_validation()
-        self.assertFalse(partner1.same_mobile_partner_id)
+        self.assertFalse(partner1.same_mobile_partner_ids)
+        partner2 = self.env["res.partner"].create(
+            {
+                "name": "Yet another duplicate",
+                "mobile": "06 99 88 77 66",
+                "country_id": self.fr_country_id,
+            }
+        )
+        partner2._onchange_mobile_validation()
         partner1.write({"mobile": " 06 99 88 77 66"})
         partner1._onchange_mobile_validation()
-        self.assertEqual(partner1.same_mobile_partner_id, self.partner_simple)
+        self.assertIn(self.partner_simple, partner1.same_mobile_partner_ids)
+        self.assertIn(partner2, partner1.same_mobile_partner_ids)
 
     def test_partner_duplicate_multi_company(self):
         partner_company1 = self.env["res.partner"].create(
@@ -68,7 +77,7 @@ class TestResPartner(TransactionCase):
                 "company_id": self.company2_id,
             }
         )
-        self.assertFalse(partner_company1.same_mobile_partner_id)
-        self.assertFalse(partner_company2.same_mobile_partner_id)
+        self.assertFalse(partner_company1.same_mobile_partner_ids)
+        self.assertFalse(partner_company2.same_mobile_partner_ids)
         partner_company2.write({"company_id": False})
-        self.assertEqual(partner_company2.same_mobile_partner_id, partner_company1)
+        self.assertEqual(partner_company2.same_mobile_partner_ids, partner_company1)
