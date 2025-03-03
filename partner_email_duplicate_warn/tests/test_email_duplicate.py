@@ -58,9 +58,16 @@ class TestResPartner(BaseCommon):
                 "email": "alexis.payet@akretion.com",
             }
         )
-        self.assertFalse(partner1.same_email_partner_id)
+        self.assertFalse(partner1.same_email_partner_ids)
+        partner2 = self.env["res.partner"].create(
+            {
+                "name": "Test regular second",
+                "email": "alexia.payet@akretion.com",
+            }
+        )
         partner1.write({"email": "alexia.payet@akretion.com"})
-        self.assertEqual(partner1.same_email_partner_id, self.partner_simple)
+        self.assertIn(self.partner_simple, partner1.same_email_partner_ids)
+        self.assertIn(partner2, partner1.same_email_partner_ids)
 
     def test_partner_duplicate_spaces_caps(self):
         partner2 = self.env["res.partner"].create(
@@ -69,26 +76,26 @@ class TestResPartner(BaseCommon):
                 "email": "alexia.payet@videolan.org",
             }
         )
-        self.assertEqual(partner2.same_email_partner_id, self.partner_space_start)
+        self.assertEqual(partner2.same_email_partner_ids, self.partner_space_start)
         partner2.write({"email": "alexia.payet@videolan.org "})
-        self.assertEqual(partner2.same_email_partner_id, self.partner_space_start)
+        self.assertEqual(partner2.same_email_partner_ids, self.partner_space_start)
         partner2.write({"email": " alexia.payet@videolan.org"})
-        self.assertEqual(partner2.same_email_partner_id, self.partner_space_start)
+        self.assertEqual(partner2.same_email_partner_ids, self.partner_space_start)
         partner2.write({"email": " Alexia.Payet@videolan.org "})
-        self.assertEqual(partner2.same_email_partner_id, self.partner_space_start)
+        self.assertEqual(partner2.same_email_partner_ids, self.partner_space_start)
         partner2.write({"email": "Alexia.Pazet@videolan.org"})
-        self.assertFalse(partner2.same_email_partner_id)
+        self.assertFalse(partner2.same_email_partner_ids)
         partner3 = self.env["res.partner"].create(
             {
                 "name": "Test space2",
                 "email": "Alexia.Payet@via.ecp.fr",
             }
         )
-        self.assertEqual(partner3.same_email_partner_id, self.partner_space_end)
+        self.assertEqual(partner3.same_email_partner_ids, self.partner_space_end)
         partner3.write({"email": " Alexia.Payet@via.ecp.fr"})
-        self.assertEqual(partner3.same_email_partner_id, self.partner_space_end)
+        self.assertEqual(partner3.same_email_partner_ids, self.partner_space_end)
         partner3.write({"email": " Alexia.Payet@Via.Ecp.Fr "})
-        self.assertEqual(partner3.same_email_partner_id, self.partner_space_end)
+        self.assertEqual(partner3.same_email_partner_ids, self.partner_space_end)
 
     def test_partner_duplicate_multi_company(self):
         partner_company1 = self.env["res.partner"].create(
@@ -105,10 +112,10 @@ class TestResPartner(BaseCommon):
                 "company_id": self.company2_id,
             }
         )
-        self.assertFalse(partner_company1.same_email_partner_id)
-        self.assertFalse(partner_company2.same_email_partner_id)
+        self.assertFalse(partner_company1.same_email_partner_ids)
+        self.assertFalse(partner_company2.same_email_partner_ids)
         partner_company2.write({"company_id": False})
-        self.assertEqual(partner_company2.same_email_partner_id, partner_company1)
+        self.assertEqual(partner_company2.same_email_partner_ids, partner_company1)
 
     def test_partner_duplicate_parent_child(self):
         parent_partner = self.env["res.partner"].create(
@@ -126,5 +133,5 @@ class TestResPartner(BaseCommon):
                 "email": "contact@rocket.com",
             }
         )
-        self.assertFalse(parent_partner.same_email_partner_id)
-        self.assertFalse(child_partner.same_email_partner_id)
+        self.assertFalse(parent_partner.same_email_partner_ids)
+        self.assertFalse(child_partner.same_email_partner_ids)

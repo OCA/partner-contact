@@ -8,12 +8,12 @@
                 <div
                     class="alert alert-warning"
                     role="alert"
-                    name="warn_duplicate_email"
-                    invisible="not same_email_partner_id"
+                    invisible="not same_email_partner_ids"
                 >
-                        Duplicate warning: partner <field
-                    name="same_email_partner_id"
-                /> has the same <b>Email</b>.
+                  Duplicate warning: partner(s) <field
+                    name="same_email_partner_ids"
+                    widget="x2many_buttons"
+                /> has/have the same <b>Email</b>.
                 </div>
             </xpath>
         </field>
