@@ -11,7 +11,10 @@ class ResPartner(models.Model):
 
     @api.onchange("phone2", "country_id", "company_id")
     def _onchange_phone2_validation(self):
-        # Compatibility with phone_validation
-        if hasattr(self, "phone_format"):
-            if self.phone2:
-                self.phone2 = self.phone_format(self.phone2)
+        # This is done in onchange to keep consistent with phone_validation
+        # phone and mobile validation
+        if self.phone2 and hasattr(self, "_phone_format"):
+            self.phone2 = (
+                self._phone_format(fname="phone2", force_format="INTERNATIONAL")
+                or self.phone2
+            )
