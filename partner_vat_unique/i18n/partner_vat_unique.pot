@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -12,6 +12,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: partner_vat_unique
+#: model_terms:ir.ui.view,arch_db:partner_vat_unique.res_config_settings_view_form
+msgid "Check this if you want to constrain VAT number to be unique"
+msgstr ""
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,help:partner_vat_unique.field_res_config_settings__partner_vat_unique
+msgid "Check this if you want to constrain VAT number to be unique."
+msgstr ""
+
+#. module: partner_vat_unique
+#: model:ir.model,name:partner_vat_unique.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
 
 #. module: partner_vat_unique
 #: model:ir.model,name:partner_vat_unique.model_res_partner
@@ -36,6 +51,10 @@ msgstr ""
 #. module: partner_vat_unique
 #. odoo-python
 #: code:addons/partner_vat_unique/models/res_partner.py:0
-#, python-format
-msgid "The VAT %s already exists in another partner."
+msgid "The VAT %(vat)s already exists in another partner."
+msgstr ""
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_config_settings__partner_vat_unique
+msgid "Unique VAT Constraint"
 msgstr ""
