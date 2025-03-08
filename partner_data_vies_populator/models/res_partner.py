@@ -18,7 +18,6 @@ except ImportError:
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-
     def _parse_vies_address(self, address):
         res = {}
         if address != "---":
