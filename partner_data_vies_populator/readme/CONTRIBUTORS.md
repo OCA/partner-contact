@@ -1,0 +1,9 @@
+- [NextERP Romania](https://www.nexterp.ro):
+  - Fekete Mihai \<<feketemihai@nexterp.ro>\>
+- [Forest and Biomass Romania](https://www.forbiom.eu/)
+- [Akretion](https://akretion.com/) :
+  - Alexis de Lattre \<<alexis.delattre@akretion.com>\>
+- [Noviat](https://www.noviat.com/) :
+  - Jeremy Didderen \<<jeremy.didderen@noviat.com>\>
+- [Open Source Integrators](https://opensourceintegrators.com)
+  - Daniel Reis \<<dreis@opensourceintegrators.com>\>
