@@ -2,10 +2,28 @@
 # Copyright (C) 2020 NextERP Romania
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
+import requests
+import werkzeug
+from requests import PreparedRequest, Session
+
 from odoo.tests.common import Form, TransactionCase
+
+_super_send = requests.Session.send
 
 
 class TestPartnerCreateByVAT(TransactionCase):
+    @classmethod
+    def _request_handler(cls, s: Session, r: PreparedRequest, /, **kw):
+        """
+        Override to allow requests to the VIES API
+        because odoo17 only permit calls to localhost
+        (see https://github.com/odoo/odoo/blob/17.0/odoo/tests/common.py#L279 )
+        """
+        url = werkzeug.urls.url_parse(r.url)
+        if url.host in ("ec.europa.eu",):
+            return _super_send(s, r, **kw)
+        return super()._request_handler(s=s, r=r, **kw)
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
