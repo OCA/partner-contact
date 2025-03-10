@@ -19,57 +19,35 @@ class ResBank(models.Model):
         ),
     ]
 
-    def name_get(self):
-        """Add bank and branch code to name if available"""
-        result = super().name_get()
-        return [
-            (
-                _id,
-                name
-                + (
-                    (
-                        " [%s%s]"
-                        % (
-                            self.browse(_id).bank_code,
-                            ("/%s" % self.browse(_id).bank_branch_code)
-                            if self.browse(_id).bank_branch_code
-                            else "",
-                        )
-                    )
-                    if self.browse(_id).bank_code
-                    else ""
-                ),
-            )
-            for _id, name in result
-        ]
+    @api.depends("name", "bank_code", "bank_branch_code")
+    def _compute_display_name(self):
+        """Compute display name with bank code and branch code."""
+        res = super()._compute_display_name()
+        for rec in self:
+            if not rec.bank_code:
+                continue
+
+            display_parts = f"{rec.display_name} [{rec.bank_code}"
+            if rec.bank_branch_code:
+                display_parts += f"/{rec.bank_branch_code}"
+            display_parts += "]"
+            rec.display_name = display_parts
+        return res
 
     @api.model
-    def _name_search(
-        self, name, args=None, operator="ilike", limit=100, name_get_uid=None
-    ):
-        """Return matches of bank_code, branch_code first"""
-        matches = self.browse([])
-        if name and operator not in expression.NEGATIVE_TERM_OPERATORS:
-            matches = self.browse(
-                self._search(
-                    [
-                        "|",
-                        ("bank_code", "=ilike", name + "%"),
-                        ("bank_branch_code", "=ilike", name + "%"),
-                    ]
-                    + (args or []),
-                    limit=limit,
-                    access_rights_uid=name_get_uid,
-                )
-            )
-        if not limit or len(matches) < limit:
-            matches += self.browse(
-                super()._name_search(
-                    name,
-                    args=[("id", "not in", matches.ids)] + (args or []),
-                    operator=operator,
-                    limit=limit and limit - len(matches) or limit,
-                    name_get_uid=name_get_uid,
-                )
-            )
-        return matches.ids
+    def _name_search(self, name, domain=None, operator="ilike", limit=None, order=None):
+        domain = domain or []
+        if name:
+            name_domain = [
+                "|",
+                "|",
+                "|",
+                ("bic", "=ilike", name + "%"),
+                ("name", operator, name),
+                ("bank_code", "=ilike", name + "%"),
+                ("bank_branch_code", "=ilike", name + "%"),
+            ]
+            if operator in expression.NEGATIVE_TERM_OPERATORS:
+                name_domain = ["&", "!"] + name_domain[1:]
+            domain = domain + name_domain
+        return self._search(domain, limit=limit, order=order)

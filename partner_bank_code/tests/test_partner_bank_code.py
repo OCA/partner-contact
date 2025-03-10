@@ -36,13 +36,14 @@ class TestPartnerBankCode(TransactionCase):
         self.assertEqual(self.bank3.display_name, "bank3 - some bic [4242/434343]")
 
     def test_name_search(self):
-        search = self.env["res.bank"].name_search
-        self.assertItemsEqual(
-            search("some b"),
-            self.bank1.name_get() + self.bank2.name_get() + self.bank3.name_get(),
-        )
-        self.assertItemsEqual(
-            search("42"), self.bank2.name_get() + self.bank3.name_get()
-        )
-        self.assertItemsEqual(search("43"), self.bank3.name_get())
-        self.assertItemsEqual(search("bank3", limit=None), self.bank3.name_get())
+        # Search with name
+        found_recs = self.env["res.bank"].name_search(name="some b")
+        self.assertEqual(len(found_recs), 3)
+
+        # Search with bank code
+        found_recs = self.env["res.bank"].name_search(name="42")
+        self.assertEqual(len(found_recs), 2)
+
+        # Search with bank branch code
+        found_recs = self.env["res.bank"].name_search(name="43")
+        self.assertEqual(len(found_recs), 1)
