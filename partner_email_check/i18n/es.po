@@ -24,17 +24,6 @@ msgid "%s is an invalid email"
 msgstr "%s es un email inválido"
 
 #. module: partner_email_check
-#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
-msgid ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" aria-label=\"Values set here are company-specific.\" groups="
-"\"base.group_multi_company\" role=\"img\"/>"
-msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" aria-label=\"Values set here are company-specific.\" groups="
-"\"base.group_multi_company\" role=\"img\"/>"
-
-#. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
 #, python-format
@@ -143,3 +132,17 @@ msgid "Require partner email addresses to have valid syntax"
 msgstr ""
 "Exigir que las direcciones de correo electrónico de los socios tengan una "
 "sintaxis válida"
+
+#. module: partner_email_check
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+msgid "Values set here are company-specific."
+msgstr ""
+
+#~ msgid ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are "
+#~ "company-specific.\" aria-label=\"Values set here are company-specific.\" "
+#~ "groups=\"base.group_multi_company\" role=\"img\"/>"
+#~ msgstr ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are "
+#~ "company-specific.\" aria-label=\"Values set here are company-specific.\" "
+#~ "groups=\"base.group_multi_company\" role=\"img\"/>"
