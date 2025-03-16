@@ -1,0 +1,11 @@
+<odoo noupdate="1">
+    <record id="partner_tier_definition_company_only" model="tier.definition">
+        <field name="name">Validate New Company</field>
+        <field name="model_id" ref="base.model_res_partner" />
+        <field name="review_type">group</field>
+        <field name="reviewer_group_id" ref="base.group_user" />
+        <field name="definition_type">domain</field>
+        <field name="active" eval="False" />
+        <field name="definition_domain">[["is_company","=",True]]</field>
+    </record>
+</odoo>
