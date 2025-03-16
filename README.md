@@ -69,6 +69,7 @@ addon | version | maintainers | summary
 [partner_second_lastname](partner_second_lastname/) | 17.0.1.0.2 |  | Have split first and second lastnames
 [partner_stage](partner_stage/) | 17.0.1.1.0 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Add lifecycle Stages to Partners
 [partner_stage_only_confirmed](partner_stage_only_confirmed/) | 17.0.1.0.0 |  | Adds filters on form views to display only confirmed partners
+[partner_tier_validation](partner_tier_validation/) | 17.0.1.0.0 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Support a tier validation process for Contacts
 [partner_title_active](partner_title_active/) | 17.0.1.0.0 |  | Partner Title Active
 [partner_tz](partner_tz/) | 17.0.1.0.0 |  | Remove partner timezone default value and display on form
 [partner_vat_unique](partner_vat_unique/) | 17.0.1.0.0 |  | Module to make the VAT number unique for customers and suppliers.
