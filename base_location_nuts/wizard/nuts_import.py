@@ -206,8 +206,15 @@ class NutsImport(models.TransientModel):
     def import_update_partner_nuts(self):
         self._load_countries()
         query = self._get_query()
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+        }
+
         response = requests.get(
-            ENDPOINT, params={"format": "json", "query": query}, timeout=120
+            ENDPOINT,
+            params={"format": "json", "query": query},
+            timeout=120,
+            headers=headers,
         )
         try:
             response.raise_for_status()
