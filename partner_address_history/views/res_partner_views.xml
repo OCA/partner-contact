@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="address_history" string="Address History">
+                    <field name="allow_edit_history_address" invisible="1" />
+                    <field
+                        name="history_change_ids"
+                        attrs="{'readonly': [('allow_edit_history_address', '=', False)]}"
+                    />
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_partner_change_history_user,access_partner_change_history_user,model_res_partner_history_change,base.group_user,1,0,0,0
+access_partner_change_history_manager,access_partner_change_history_manager,model_res_partner_history_change,partner_address_history.group_edit_history_address,1,1,1,1
