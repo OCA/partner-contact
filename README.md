@@ -37,6 +37,7 @@ addon | version | maintainers | summary
 [partner_company_group](partner_company_group/) | 17.0.1.0.0 | [![luisg123v](https://github.com/luisg123v.png?size=30px)](https://github.com/luisg123v) | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 17.0.1.0.0 |  | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 17.0.1.0.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
+[partner_contact_address_default](partner_contact_address_default/) | 17.0.1.0.0 |  | Set a default delivery address, invoice address and contact for contacts
 [partner_contact_birthdate](partner_contact_birthdate/) | 17.0.1.1.0 | [![Daemo00](https://github.com/Daemo00.png?size=30px)](https://github.com/Daemo00) | Contact's birthdate
 [partner_contact_birthplace](partner_contact_birthplace/) | 17.0.1.0.0 |  | This module allows to define a birthplace for partners.
 [partner_contact_department](partner_contact_department/) | 17.0.1.0.0 |  | Assign contacts to departments
