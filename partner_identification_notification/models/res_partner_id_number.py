@@ -7,7 +7,7 @@ class ResPartnerIdNumber(models.Model):
     _name = "res.partner.id_number"
     _inherit = ["res.partner.id_number", "mail.thread", "mail.activity.mixin"]
 
-    notification_date = fields.Date(string="Notification Date")
+    notification_date = fields.Date()
 
     @api.model
     def send_notification(self):
