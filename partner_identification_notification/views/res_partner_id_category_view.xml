@@ -8,13 +8,13 @@
         />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='code']" position="after">
-               <field name="send_notification" />
+                <field name="send_notification" />
                 <field name="id_number_model_id" invisible="1" />
-               <field
+                <field
                     name="days_before_expire"
                     attrs="{'invisible': [('send_notification', '=', False)], 'required': [('send_notification', '=', True)]}"
                 />
-               <field
+                <field
                     name="email_template_id"
                     attrs="{'invisible': [('send_notification', '=', False)], 'required': [('send_notification', '=', True)]}"
                     context="{'default_model_id': id_number_model_id}"

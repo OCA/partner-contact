@@ -7,9 +7,7 @@ class ResPartnerIdCategory(models.Model):
     def _get_default_id_number_model(self):
         return self.env.ref("partner_identification.model_res_partner_id_number").id
 
-    send_notification = fields.Boolean(
-        string="Send Notification",
-    )
+    send_notification = fields.Boolean()
     days_before_expire = fields.Integer(
         string="# of Days Before Expiration",
     )

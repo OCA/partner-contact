@@ -1,5 +1,4 @@
 <odoo>
-
     <record id="view_partner_id_numbers_form_inherit_add_chatter" model="ir.ui.view">
         <field name="name">view.partner.id.numbers.form.inherit.add.chatter</field>
         <field name="model">res.partner.id_number</field>
