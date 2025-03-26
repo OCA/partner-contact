@@ -14,7 +14,6 @@
     "data": [
         "data/ir_cron_data.xml",
         "views/res_partner_id_category_view.xml",
-        "views/res_partner_id_number_view.xml",
     ],
     "installable": True,
     "application": False,
