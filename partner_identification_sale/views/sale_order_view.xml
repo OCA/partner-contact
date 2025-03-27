@@ -8,14 +8,14 @@
                 <field name="valid_id" invisible="1" />
                 <field name="require_id" invisible="1" />
                 <p
-                    attrs="{'invisible': ['|', '&amp;',('require_id', '=', True), ('valid_id', '=', True), '&amp;', ('require_id', '!=', True), ('valid_id', '!=', True)]}"
+                    invisible="(require_id and valid_id) or (not require_id and not valid_id)"
                     class="text-warning"
                 >
                     No or Expired ID
                 </p>
                 <p />
                 <p
-                    attrs="{'invisible': ['|', '&amp;',('require_id', '=', True), ('valid_id', '=', False), '&amp;', ('require_id', '!=', True), ('valid_id', '!=', True)]}"
+                    invisible="require_id or not valid_id or (not require_id and not valid_id)"
                     class="text-success"
                 >
                     Valid ID

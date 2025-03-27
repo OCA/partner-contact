@@ -124,7 +124,8 @@ class TestPartnerIdentificationSale(common.TransactionCase):
         )
         sale_order.write({"partner_id": self.partner_2.id})
         sale_order._compute_id_requirement()
-        sale_order.action_confirm()
+        with self.assertRaises(UserError):
+            sale_order.action_confirm()
 
         sale_order_two = self.sale_obj.create(
             {
