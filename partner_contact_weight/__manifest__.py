@@ -3,7 +3,7 @@
 {
     "name": "Partner Contact Weight",
     "summary": "Provide contact weight",
-    "version": "10.0.1.0.1",
+    "version": "17.0.1.0.0",
     "category": "Health",
     "website": "https://github.com/OCA/partner-contact",
     "author": "Ursa Information Systems, Odoo Community Association (OCA)",
@@ -15,6 +15,6 @@
         "partner_contact_personal_information_page",
     ],
     "data": [
-        "views/res_partner_view.xml",
+        "views/res_partner_views.xml",
     ],
 }
