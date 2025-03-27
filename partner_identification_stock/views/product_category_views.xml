@@ -1,5 +1,4 @@
 <odoo>
-
     <record id="product_category_form_identification_stock" model="ir.ui.view">
         <field name="name">product.category.from.view.inherit</field>
         <field name="model">product.category</field>
@@ -16,5 +15,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>

@@ -7,17 +7,18 @@ class StockPicking(models.Model):
 
     def _compute_id_requirement(self):
         for rec in self:
-            rec.require_partner_identification = (
-                rec.valid_partner_identification
-            ) = False
+            rec.require_partner_identification = rec.valid_partner_identification = (
+                False
+            )
             for line in rec.move_lines:
                 if line.product_id.require_id_stock_ids:
                     rec.require_partner_identification = True
-                ffl_lines = rec.partner_id.id_numbers.filtered(
-                    lambda i: i.category_id.id
-                    in line.product_id.require_id_stock_ids.ids
+                ffl_lines = [
+                    i
+                    for i in rec.partner_id.id_numbers
+                    if i.category_id.id in line.product_id.require_id_stock_ids.ids
                     and i.valid_until
-                )
+                ]
                 if any(
                     line.valid_until >= fields.Date.today()
                     and line.status in ["open", "pending"]

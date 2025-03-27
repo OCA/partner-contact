@@ -6,7 +6,7 @@ from odoo.tests import common
 
 class TestPartnerIdentificationStock(common.TransactionCase):
     def setUp(self):
-        super(TestPartnerIdentificationStock, self).setUp()
+        super().setUp()
         self.product_obj = self.env["product.product"]
         self.res_partner_id_category_obj = self.env["res.partner.id_category"]
         self.picking_obj = self.env["stock.picking"]
@@ -83,7 +83,6 @@ class TestPartnerIdentificationStock(common.TransactionCase):
         self.ship_location = self.warehouse.wh_output_stock_loc_id
 
     def test_partneridentificationsale(self):
-
         picking = self.picking_obj.create(
             {
                 "partner_id": self.partner_1.id,
