@@ -8,23 +8,23 @@ class SaleOrder(models.Model):
     def _compute_id_requirement(self):
         for rec in self:
             rec.require_id = rec.valid_id = False
-            if rec.state in ["sale"]:
-                break
-            require_id_sale_ids = rec.order_line.product_id.mapped(
-                "require_id_sale_ids"
-            ).ids
+            if rec.state == "sale":
+                continue
+            require_id_sale_ids = set(
+                rec.order_line.product_id.mapped("require_id_sale_ids").ids
+            )
             if require_id_sale_ids:
                 rec.require_id = True
-
-            ffl_lines = rec.partner_id.id_numbers.filtered(
-                lambda i: i.category_id.id in require_id_sale_ids and i.valid_until
-            )
-            if any(
-                line.valid_until >= fields.Date.today()
-                and line.status in ["open", "pending"]
-                for line in ffl_lines
-            ):
-                rec.valid_id = True
+                ffl_lines = [
+                    i
+                    for i in rec.partner_id.id_numbers
+                    if i.category_id.id in require_id_sale_ids and i.valid_until
+                ]
+                today = fields.Date.today()
+                rec.valid_id = any(
+                    line.valid_until >= today and line.status in ["open", "pending"]
+                    for line in ffl_lines
+                )
 
     require_id = fields.Boolean(string="Require ID?", compute="_compute_id_requirement")
     valid_id = fields.Boolean(string="Valid ID?", compute="_compute_id_requirement")

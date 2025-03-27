@@ -3,7 +3,7 @@
 
 {
     "name": "Partner Identification Sale",
-    "version": "14.0.1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Sale",
     "depends": ["partner_identification", "sale_management"],
     "author": "Open Source Integrators," "Odoo Community Association (OCA)",
