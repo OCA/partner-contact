@@ -98,7 +98,7 @@ class TestPartnerIdentificationStock(common.TransactionCase):
                             "product_uom_id": self.product.uom_id.id,
                             "location_id": self.ship_location.id,
                             "location_dest_id": self.customer_location.id,
-                            "product_uom_qty": 2,
+                            "quantity_product_uom": 2,
                         },
                     )
                 ],

@@ -8,14 +8,13 @@
                 <field name="valid_partner_identification" invisible="1" />
                 <field name="require_partner_identification" invisible="1" />
                 <p
-                    attrs="{'invisible': ['|', '&amp;',('require_partner_identification', '=', True), ('valid_partner_identification', '=', True), '&amp;', ('require_partner_identification', '!=', True), ('valid_partner_identification', '!=', True)]}"
+                    invisible="(require_partner_identification and valid_partner_identification) or (not require_partner_identification and not valid_partner_identification)"
                     class="text-warning"
                 >
                     No or Expired ID
                 </p>
-                <p />
                 <p
-                    attrs="{'invisible': ['|', '&amp;',('require_partner_identification', '=', True), ('valid_partner_identification', '=', False), '&amp;', ('require_partner_identification', '!=', True), ('valid_partner_identification', '!=', True)]}"
+                    invisible="(require_partner_identification and not valid_partner_identification) or (not require_partner_identification and not valid_partner_identification)"
                     class="text-success"
                 >
                     Valid ID
