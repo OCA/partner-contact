@@ -6,10 +6,10 @@
 from vcr_unittest import VCRMixin
 
 from odoo.exceptions import UserError
-from odoo.tests import SavepointCase
+from odoo.tests import TransactionCase
 
 
-class TestPartnerGoogleReviews(VCRMixin, SavepointCase):
+class TestPartnerGoogleReviews(VCRMixin, TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

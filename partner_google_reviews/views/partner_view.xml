@@ -2,7 +2,6 @@
 <!-- Copyright 2023 NathanQj
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-
     <record id="view_res_partner_form_inherit" model="ir.ui.view">
         <field name="name">res.partner.form.inherit (in partner_google_reviews)</field>
         <field name="model">res.partner</field>
@@ -29,10 +28,7 @@
                     <field name="google_rating" />
                     <field name="google_reviews_number" />
                     <field name="google_reviews_url" widget="url" />
-                    <field
-                        name="google_places_err"
-                        attrs="{'invisible': [('google_places_err', '=', False)]}"
-                    />
+                    <field name="google_places_err" invisible="not google_places_err" />
                 </group>
             </xpath>
         </field>

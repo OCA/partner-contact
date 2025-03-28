@@ -17,12 +17,10 @@ class ResPartner(models.Model):
         "or the Company Name and City.",
     )
     google_reviews_result = fields.Char(
-        string="Google Reviews Result",
         help="Name of the business found on Google Places",
         readonly=True,
     )
     google_rating = fields.Float(
-        string="Google Rating",
         digits=(2, 1),
         help="Google rating out of 5",
         readonly=True,
@@ -66,7 +64,7 @@ class ResPartner(models.Model):
             }
 
             # Call Google Places API to get the place ID and the reviews
-            response = requests.get(url, params=params)
+            response = requests.get(url, params=params, timeout=10)
             result = json.loads(response.text)
 
             if not result["candidates"] or not result["status"] == "OK":
@@ -81,7 +79,7 @@ class ResPartner(models.Model):
                     "fields": "name,rating,user_ratings_total",
                     "key": api_key,
                 }
-                response = requests.get(url, params=params)
+                response = requests.get(url, params=params, timeout=10)
                 result = json.loads(response.text)
                 if result["status"] == "OK":
                     # Handle case when the place has no rating
@@ -97,8 +95,8 @@ class ResPartner(models.Model):
                     contact.write(
                         {
                             "google_reviews_result": result["result"]["name"],
-                            "google_reviews_url": "https://www.google.com/maps/place/"
-                            "?q=place_id:%s" % place_id,
+                            "google_reviews_url": f"https://www.google.com/maps/place/"
+                            f"?q=place_id:{place_id}",
                             "google_rating": rating,
                             "google_reviews_number": ratings_total,
                             "google_places_err": err,
@@ -106,6 +104,6 @@ class ResPartner(models.Model):
                     )
                 else:
                     contact.google_places_err = (
-                        "Google Places API Error: %s"
-                        % result.get("error_message", "Missing information")
+                        f"Google Places API Error: "
+                        f"{result.get('error_message', 'Missing information')}"
                     )
