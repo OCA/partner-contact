@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -16,7 +16,6 @@ msgstr ""
 #. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid "%s is an invalid email"
 msgstr ""
 
@@ -31,14 +30,12 @@ msgstr ""
 #. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid "Cannot deliver to email address %s"
 msgstr ""
 
 #. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid "Cannot import 'email_validator'."
 msgstr ""
 
@@ -90,7 +87,6 @@ msgstr ""
 #. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid "Email '%s' is already in use."
 msgstr ""
 
@@ -107,7 +103,6 @@ msgstr ""
 #. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid ""
 "Field contains multiple email addresses. This is not supported when "
 "duplicate email addresses are not allowed."
