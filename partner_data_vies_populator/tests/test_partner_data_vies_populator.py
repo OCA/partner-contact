@@ -6,7 +6,7 @@ import requests
 import werkzeug
 from requests import PreparedRequest, Session
 
-from odoo.tests.common import Form, TransactionCase
+from odoo.tests import Form, TransactionCase
 
 _super_send = requests.Session.send
 
