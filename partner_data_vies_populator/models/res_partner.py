@@ -35,10 +35,10 @@ class ResPartner(models.Model):
         try:
             result = check_vies(vat)
         except Exception as e:
-            _logger.warning("Failed to query VIES: %s" % e)
+            _logger.warning(f"Failed to query VIES: {e}")
             if raise_if_fail:
                 raise UserError(
-                    _("Failed to query VIES.\nTechnical error: %s.") % e
+                    _(f"Failed to query VIES.\nTechnical error: {e}.")
                 ) from None
             return res
         _logger.debug(result)
