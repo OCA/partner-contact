@@ -6,7 +6,6 @@ from odoo import api, fields, models
 
 
 class ResPartner(models.Model):
-
     _inherit = "res.partner"
 
     children_notes = fields.One2many("mail.message", compute="_compute_children_notes")
