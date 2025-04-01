@@ -32,12 +32,12 @@ This module allows to manage all sort of identification numbers and
 certificates which are assigned to a partner (company or individual) and
 vary from country to country.
 
--  Commercial register
--  VAT ID
--  Fiscal ID's
--  Membership numbers
--  Driver license
--  etc
+- Commercial register
+- VAT ID
+- Fiscal ID's
+- Membership numbers
+- Driver license
+- etc
 
 **Table of contents**
 
@@ -107,8 +107,8 @@ add any IDs to this partner, defining:
 Known issues / Roadmap
 ======================
 
--  If you want to search a partner by ID you will use advance search
-   form. You can't search by issuer, valid dates, category or notes.
+- If you want to search a partner by ID you will use advance search
+  form. You can't search by issuer, valid dates, category or notes.
 
 Bug Tracker
 ===========
@@ -136,25 +136,25 @@ Authors
 Contributors
 ------------
 
--  Antonio Espinosa <antonio.espinosa@tecnativa.com>
--  Ferdinand Gassauer <office@chrcar.at>
--  Gerhard Könighofer <gerhard.koenighofer@swing-system.com>
--  Laurent Mignon <laurent.mignon@acsone.eu>
--  Jairo Llopis <jairo.llopis@tecnativa.com>
--  Dave Lasley <dave@laslabs.com>
--  Simone Orsi <simone.orsi@camptocamp.com>
--  Dennis Sluijk <d.sluijk@onestein.nl>
--  Phuc Tran Thanh <phuc@trobz.com>
--  Marie Lejeune <marie.lejeune@acsone.eu>
--  Nils Coenen <nils.coenen@nico-solutions.de>
--  Chau Le <chaulb@trobz.com>
+- Antonio Espinosa <antonio.espinosa@tecnativa.com>
+- Ferdinand Gassauer <office@chrcar.at>
+- Gerhard Könighofer <gerhard.koenighofer@swing-system.com>
+- Laurent Mignon <laurent.mignon@acsone.eu>
+- Jairo Llopis <jairo.llopis@tecnativa.com>
+- Dave Lasley <dave@laslabs.com>
+- Simone Orsi <simone.orsi@camptocamp.com>
+- Dennis Sluijk <d.sluijk@onestein.nl>
+- Phuc Tran Thanh <phuc@trobz.com>
+- Marie Lejeune <marie.lejeune@acsone.eu>
+- Nils Coenen <nils.coenen@nico-solutions.de>
+- Chau Le <chaulb@trobz.com>
 
 Other credits
 -------------
 
 The development of this module has been financially supported by:
 
--  Camptocamp
+- Camptocamp
 
 Maintainers
 -----------

@@ -18,6 +18,9 @@
         "views/res_partner_id_number_view.xml",
         "views/res_partner_view.xml",
     ],
+    "external_dependencies": {
+        "python": ["odoo_test_helper"],
+    },
     "author": "ChriCar Beteiligungs- und Beratungs- GmbH,"
     "Tecnativa,"
     "Camptocamp,"
