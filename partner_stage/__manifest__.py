@@ -9,7 +9,7 @@
     "category": "Sales/CRM",
     "version": "16.0.1.0.1",
     "license": "AGPL-3",
-    "depends": ["contacts"],
+    "depends": ["contacts", "mail"],
     "data": [
         "security/ir.model.access.csv",
         "data/partner_stage_data.xml",
