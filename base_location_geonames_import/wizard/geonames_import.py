@@ -60,7 +60,7 @@ class CityZipGeonamesImport(models.TransientModel):
     def _select_city(self, row, country, state):
         return self.env["res.city"].search(
             [
-                ("name", "=", row[2]),
+                ("name", "=", self.transform_city_name(row[2], country)),
                 ("country_id", "=", country.id),
                 ("state_id", "=", state.id),
             ],
@@ -250,7 +250,7 @@ class CityZipGeonamesImport(models.TransientModel):
                 if zip_vals not in zip_vals_list:
                     zip_vals_list.append(zip_vals)
             else:
-                old_zips.discard(zip_code.id)
+                old_zips -= set(zip_code.ids)
         zip_model.create(zip_vals_list)
         if not max_import:
             if old_zips:
