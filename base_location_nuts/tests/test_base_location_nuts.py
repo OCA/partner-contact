@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 from requests.exceptions import HTTPError
 
-from odoo.tests.common import Form, TransactionCase, new_test_user
+from odoo.tests import Form, TransactionCase, new_test_user
 from odoo.tools import mute_logger
 
 from .test_nuts_request_results import create_response_error, create_response_ok
