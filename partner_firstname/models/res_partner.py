@@ -109,9 +109,13 @@ class ResPartner(models.Model):
         """
         default = default or {}
         order = self._get_names_order()
-        extra_default_values = self.get_extra_default_copy_values(order)
-        default.update(extra_default_values)
-        return super(ResPartner, self.with_context(copy=True)).copy(default)
+        records = self.browse()
+        for record in self:
+            extra_default_values = record.get_extra_default_copy_values(order)
+            records |= super(ResPartner, record.with_context(copy=True)).copy(
+                default | extra_default_values
+            )
+        return records
 
     @api.model
     def default_get(self, fields_list):
