@@ -1,9 +1,27 @@
 # Copyright 2014 Nemry Jonathan (Acsone SA/NV) (http://www.acsone.eu)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+import functools
+
 from odoo.tests import TransactionCase
 
 from .. import exceptions as ex
+
+
+def partner_names_orders(func):
+    """Execute test method for each partner_names_order selection."""
+
+    @functools.wraps(func)
+    def _orders(self):
+        for order, _title in self.env[
+            "res.config.settings"
+        ]._partner_names_order_selection():
+            with self.subTest(order=order), self.env.cr.savepoint() as sp:
+                self.env["ir.config_parameter"].set_param("partner_names_order", order)
+                func(self)
+                sp.rollback()
+
+    return _orders
 
 
 class MailInstalled:

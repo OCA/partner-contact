@@ -22,7 +22,7 @@ class ResPartner(models.Model):
         """Override to check if `lastname2` is in vals."""
         return super().name_fields_in_vals(vals) or vals.get("lastname2")
 
-    def get_extra_default_copy_values(self):
+    def get_extra_default_copy_values(self, default=None):
         """Override to add '(copy)' suffix to lastname2 instead of lastname."""
         if self._get_names_order() == "first_last":
             return {
@@ -30,7 +30,7 @@ class ResPartner(models.Model):
                 if self.lastname2
                 else _("(copy)")
             }
-        return super().get_extra_default_copy_values()
+        return super().get_extra_default_copy_values(default)
 
     @api.model
     def _get_computed_name(self, lastname, firstname, lastname2=None):

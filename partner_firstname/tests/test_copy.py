@@ -3,7 +3,64 @@
 
 from odoo.tests import TransactionCase
 
-from .base import MailInstalled
+from .base import MailInstalled, partner_names_orders
+
+
+class PartnerCase(TransactionCase):
+    """Test ``res.partner``."""
+
+    def setUp(self):
+        super().setUp()
+        self.original = self.env.ref("base.partner_demo")
+
+    def compare(self, copy, *, firstname="Marc2", lastname="Demo2"):
+        self.assertEqual(copy.lastname, lastname)
+        self.assertEqual(copy.firstname, firstname)
+        name = {
+            "last_first": f"{lastname} {firstname}",
+            "last_first_comma": f"{lastname}, {firstname}",
+            "first_last": f"{firstname} {lastname}",
+        }[self.env["res.partner"]._get_names_order()]
+        self.assertEqual(copy.name, name)
+
+    def test_copy_last_first(self):
+        self.env["ir.config_parameter"].set_param("partner_names_order", "last_first")
+        copy = self.original.copy()
+        self.compare(copy, firstname="Marc (copy)", lastname="Demo")
+
+    def test_copy_last_first_comma(self):
+        self.env["ir.config_parameter"].set_param(
+            "partner_names_order", "last_first_comma"
+        )
+        copy = self.original.copy()
+        self.compare(copy, firstname="Marc (copy)", lastname="Demo")
+
+    def test_copy_first_last(self):
+        self.env["ir.config_parameter"].set_param("partner_names_order", "first_last")
+        copy = self.original.copy()
+        self.compare(copy, firstname="Marc", lastname="Demo (copy)")
+
+    def test_copy_name(self):
+        """Copy original with default name set - firstname lastname not set."""
+        copy = self.original.copy({"name": "Marc2 Demo2"})
+        self.compare(copy)
+
+    @partner_names_orders
+    def test_copy_firstname_lastname(self):
+        """Copy original with default firstname and lastname set"""
+        copy = self.original.copy({"firstname": "Marc2", "lastname": "Demo2"})
+        self.compare(copy)
+
+    def test_copy_firstname_lastname_name(self):
+        """Copy original with default firstname, lastname and name set"""
+        copy = self.original.copy(
+            {
+                "firstname": "Marc2",
+                "lastname": "Demo2",
+                "name": "Marc2 Demo2",
+            }
+        )
+        self.compare(copy)
 
 
 class UserCase(TransactionCase, MailInstalled):
@@ -41,7 +98,12 @@ class UserCase(TransactionCase, MailInstalled):
     def compare(self, copy):
         self.assertEqual(copy.lastname, "Lastname2")
         self.assertEqual(copy.firstname, "Firstname2")
-        self.assertEqual(copy.name, "Firstname2 Lastname2")
+        name = {
+            "last_first": "Lastname2 Firstname2",
+            "last_first_comma": "Lastname2, Firstname2",
+            "first_last": "Firstname2 Lastname2",
+        }[self.env["res.partner"]._get_names_order()]
+        self.assertEqual(copy.name, name)
 
     def test_copy_login(self):
         copy = self.original.copy()
@@ -56,6 +118,7 @@ class UserCase(TransactionCase, MailInstalled):
         copy = self.original.copy({"name": "Firstname2 Lastname2"})
         self.compare(copy)
 
+    @partner_names_orders
     def test_copy_firstname_lastname(self):
         """Copy original with default firstname and lastname set"""
         copy = self.original.copy({"firstname": "Firstname2", "lastname": "Lastname2"})
