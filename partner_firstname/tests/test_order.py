@@ -36,3 +36,11 @@ class PartnerNamesOrder(TransactionCase):
             result = self.env["res.partner"]._get_inverse_name(name)
             self.assertEqual(result["lastname"], lastname)
             self.assertEqual(result["firstname"], firstname)
+
+    def test_name_create_empty(self):
+        # See addons/mail/tests/test_res_partner.py test_name_create_corner_cases
+        for name in ("", " ", False, None):
+            with self.subTest(name=name):
+                res_id = self.env["res.partner"].name_create("")[0]
+                record = self.env["res.partner"].browse(res_id)
+                self.assertEqual(record.name, "")

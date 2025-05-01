@@ -8,7 +8,6 @@ To have more accurate results, remove the ``mail`` module before testing.
 
 from odoo.tests import TransactionCase
 
-from .. import exceptions as ex
 from .base import MailInstalled
 
 
@@ -22,8 +21,7 @@ class CompanyCase(TransactionCase):
         try:
             data = {"name": self.name}
             model = self.env[self.model].with_context(**self.context)
-            with self.assertRaises(ex.EmptyNamesError):
-                model.create(data)
+            model.create(data)
         finally:
             super().tearDown()
 
