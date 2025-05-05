@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_form_telegram" model="ir.ui.view">
+        <field name="name">Telegram Alias Field</field>
+        <field name="model">res.partner</field>
+        <field
+            name="inherit_id"
+            ref="partner_contact_social_media_information_page.social_media_information"
+        />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//group[@name='social_media_information_group']"
+                position="inside"
+            >
+                <field name="telegram_uid" invisible="True" />
+                <field name="telegram_alias" placeholder="e.g. @odoo123" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
