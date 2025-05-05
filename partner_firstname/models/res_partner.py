@@ -27,6 +27,19 @@ class ResPartner(models.Model):
         readonly=False,
     )
 
+    form_has_lastname_first = fields.Boolean(compute="_compute_form_has_lastname_first")
+
+    def _compute_form_has_lastname_first(self):
+        default_order = (
+            self.env["res.config.settings"].sudo()._partner_names_order_default()
+        )
+        self.form_has_lastname_first = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("partner_names_order", default_order)
+            != "first_last"
+        )
+
     @api.model
     def name_fields_in_vals(self, vals):
         """Method to check if any name fields are in `vals`."""
