@@ -16,12 +16,18 @@
             <xpath expr="//h1//field[@id='company']/.." position="before">
                 <group invisible="is_company">
                     <field
+                        invisible="not form_has_lastname_first"
                         name="lastname"
-                        required="not firstname and not is_company and type == 'contact'"
+                        required="form_has_lastname_first and not firstname and not is_company and type == 'contact'"
                     />
                     <field
                         name="firstname"
                         required="not lastname and not is_company and type == 'contact'"
+                    />
+                    <field
+                        invisible="form_has_lastname_first"
+                        name="lastname"
+                        required="not form_has_lastname_first and not firstname and not is_company and type == 'contact'"
                     />
                 </group>
             </xpath>
@@ -48,12 +54,18 @@
                 <div class="oe_edit_only">
                     <group invisible="is_company">
                         <field
+                            invisible="not form_has_lastname_first"
                             name="lastname"
-                            required="not firstname and not is_company and type == 'contact'"
+                            required="form_has_lastname_first and not firstname and not is_company and type == 'contact'"
                         />
                         <field
                             name="firstname"
                             required="not lastname and not is_company and type == 'contact'"
+                        />
+                        <field
+                            invisible="form_has_lastname_first"
+                            name="lastname"
+                            required="not form_has_lastname_first and not firstname and not is_company and type == 'contact'"
                         />
                     </group>
                 </div>
@@ -74,12 +86,18 @@
                     <field name="is_company" invisible="True" />
                     <group invisible="is_company">
                         <field
+                            invisible="not form_has_lastname_first"
                             name="lastname"
-                            required="not firstname and not is_company and type == 'contact'"
+                            required="form_has_lastname_first and not firstname and not is_company and type == 'contact'"
                         />
                         <field
                             name="firstname"
                             required="not lastname and not is_company and type == 'contact'"
+                        />
+                        <field
+                            invisible="form_has_lastname_first"
+                            name="lastname"
+                            required="form_has_lastname_first and not firstname and not is_company and type == 'contact'"
                         />
                     </group>
                 </div>
