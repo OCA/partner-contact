@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Declared the same in every module that may need it -->
+    <record id="social_media_information" model="ir.ui.view">
+        <field name="name">Social Media information page for contacts form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <page name="social_media_information_page" string="Social Media">
+                    <group name="social_media_information_group" />
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
