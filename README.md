@@ -65,6 +65,7 @@ addon | version | maintainers | summary
 [partner_manual_rank](partner_manual_rank/) | 17.0.1.0.0 | [![luisg123v](https://github.com/luisg123v.png?size=30px)](https://github.com/luisg123v) [![frahikLV](https://github.com/frahikLV.png?size=30px)](https://github.com/frahikLV) | Be able to manually flag partners as customer or supplier.
 [partner_multi_relation](partner_multi_relation/) | 17.0.1.0.0 |  | Partner Relations
 [partner_pricelist_search](partner_pricelist_search/) | 17.0.1.0.0 |  | Partner pricelist search
+[partner_priority](partner_priority/) | 17.0.1.0.0 | [![patrickrwilson](https://github.com/patrickrwilson.png?size=30px)](https://github.com/patrickrwilson) | Adds priority to partners.
 [partner_property](partner_property/) | 17.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner Property
 [partner_readonly_security](partner_readonly_security/) | 17.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner Readonly Security
 [partner_ref_unique](partner_ref_unique/) | 17.0.1.0.0 |  | Add an unique constraint to partner ref field
