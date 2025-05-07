@@ -8,6 +8,9 @@ class City(models.Model):
     _inherit = "res.city"
 
     zip_ids = fields.One2many("res.city.zip", "city_id", string="Zips in this city")
+    # We add this field because cities can have more than one zip code. With this,
+    # we can add a specific code to identify locations in Geonames, for example.
+    code = fields.Char()
 
     _sql_constraints = [
         (
