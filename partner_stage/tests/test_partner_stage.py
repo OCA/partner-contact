@@ -70,7 +70,7 @@ class TestPartnerStage(TransactionCase):
         default_stage = self.env.ref("partner_stage.partner_stage_active")
         new_partner = self.Partner.create({"name": "A Partner"})
         self.assertTrue(new_partner.stage_id, default_stage)
-        states = new_partner._read_group_stage_id(self.Stage, [], None)
+        states = new_partner._read_group_stage_id(self.Stage, [])
         self.assertTrue(states.ids, [1, 2, 3])
 
     def test_03_stage_default_constraint(self):

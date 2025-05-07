@@ -14,7 +14,7 @@ class Partner(models.Model):
         )
 
     @api.model
-    def _read_group_stage_id(self, states, domain, order):
+    def _read_group_stage_id(self, states, domain):
         return states.search([])
 
     stage_id = fields.Many2one(
