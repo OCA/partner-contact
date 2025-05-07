@@ -12,6 +12,7 @@
             </field>
             <field name="zipcode" position="after">
                 <field name="zip_ids" widget="many2many_tags" />
+                <field name="code" />
             </field>
         </field>
     </record>
@@ -24,6 +25,7 @@
                         <field name="name" />
                         <field name="country_id" />
                         <field name="state_id" />
+                        <field name="code" />
                     </group>
                     <notebook>
                         <page name="zips" string="Zips">
