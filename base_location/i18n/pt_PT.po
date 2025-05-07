@@ -65,6 +65,11 @@ msgid "City/locations completion object"
 msgstr ""
 
 #. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city__code
+msgid "Code"
+msgstr ""
+
+#. module: base_location
 #: model:ir.model,name:base_location.model_res_company
 msgid "Companies"
 msgstr "Empresas"
@@ -116,11 +121,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__id
 msgid "ID"
 msgstr "ID"
-
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_city_zip____last_update
-msgid "Last Modified on"
-msgstr "Modificado em"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__write_uid
@@ -239,6 +239,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_location.field_res_city__zip_ids
 msgid "Zips in this city"
 msgstr ""
+
+#~ msgid "Last Modified on"
+#~ msgstr "Modificado em"
 
 #, fuzzy
 #~ msgid "City of Address"
