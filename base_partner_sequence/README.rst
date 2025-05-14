@@ -40,6 +40,8 @@ modified from the commercial partner.
 No references are assigned for contacts such as shipping and invoice
 addresses.
 
+The module also adds a server action to update all partners ref.
+
 **Table of contents**
 
 .. contents::
@@ -69,22 +71,22 @@ Authors
 Contributors
 ------------
 
--  Thomas Rehn <thomas.rehn@initos.com>
--  Stefan Rijnhart <stefan@therp.nl>
--  Yannick Vaucher <yannick.vaucher@camptocamp.com>
--  Sandy Carter <sandy.carter@savoirfairelinux.com>
--  Laurent Mignon (ACSONE) <laurent.mignon@acsone.eu>
--  Guewen Baconnier <guewen.baconnier@camptocamp.com>
--  Alexandre Fayolle <alexandre.fayolle@camptocamp.com>
--  Vicent Cubells <vicent.cubells@tecnativa.com>
--  Akim Juillerat <akim.juillerat@camptocamp.com>
--  Cas Vissers <c.vissers@brahoo.nl>
--  Quentin Groulard <quentin.groulard@acsone.eu>
--  Kevin Khao <kevinkhao@gmail.com>
--  Francesco Apruzzese <cescoap@gmail.com>
--  Daniel Reis <dreis@opensourceintegrators.com>
--  Nikul Chaudhary <nchaudhary@opensourceintegrators.com>
--  Khoi (Kien Kim) <khoikk@trobz.com>
+- Thomas Rehn <thomas.rehn@initos.com>
+- Stefan Rijnhart <stefan@therp.nl>
+- Yannick Vaucher <yannick.vaucher@camptocamp.com>
+- Sandy Carter <sandy.carter@savoirfairelinux.com>
+- Laurent Mignon (ACSONE) <laurent.mignon@acsone.eu>
+- Guewen Baconnier <guewen.baconnier@camptocamp.com>
+- Alexandre Fayolle <alexandre.fayolle@camptocamp.com>
+- Vicent Cubells <vicent.cubells@tecnativa.com>
+- Akim Juillerat <akim.juillerat@camptocamp.com>
+- Cas Vissers <c.vissers@brahoo.nl>
+- Quentin Groulard <quentin.groulard@acsone.eu>
+- Kevin Khao <kevinkhao@gmail.com>
+- Francesco Apruzzese <cescoap@gmail.com>
+- Daniel Reis <dreis@opensourceintegrators.com>
+- Nikul Chaudhary <nchaudhary@opensourceintegrators.com>
+- Khoi (Kien Kim) <khoikk@trobz.com>
 
 Other credits
 -------------
@@ -92,7 +94,7 @@ Other credits
 The migration of this module from 17.0 to 18.0 was financially supported
 by:
 
--  Camptocamp
+- Camptocamp
 
 Maintainers
 -----------

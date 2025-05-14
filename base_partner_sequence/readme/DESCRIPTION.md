@@ -9,3 +9,5 @@ modified from the commercial partner.
 
 No references are assigned for contacts such as shipping and invoice
 addresses.
+
+The module also adds a server action to update all partners ref.

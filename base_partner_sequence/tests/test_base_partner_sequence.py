@@ -57,3 +57,10 @@ class TestBasePartnerSequence(BaseCommon):
         contact.write({"parent_id": False})
         self.assertTrue(contact.ref)
         self.assertFalse(contact.ref == self.partner.ref)
+
+    def test_update_partners_ref(self):
+        """Assert that after the ir_action_server a sequence is set
+        on a partner that did not have one previously"""
+        self.partner.write({"ref": False})
+        self.partner.update_partners_ref()
+        self.assertTrue(self.partner.ref)

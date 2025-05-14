@@ -6,6 +6,8 @@
 
 from odoo import _, api, exceptions, models
 
+BATCH_SIZE = 5000
+
 
 class ResPartner(models.Model):
     """Assigns 'ref' from a sequence on creation and copying"""
@@ -72,3 +74,21 @@ class ResPartner(models.Model):
         to the partner's contacts
         """
         return super()._commercial_fields() + ["ref"]
+
+    def update_partners_ref(self):
+        """Calculate ref of all partners. Called from a server action"""
+        offset = 0
+
+        while True:
+            partners = self.search(
+                [("ref", "=", False)], offset=offset, limit=BATCH_SIZE
+            )
+
+            if not partners:
+                break
+
+            for partner in partners:
+                if partner._needs_ref():
+                    partner.write({})
+
+            offset += BATCH_SIZE
