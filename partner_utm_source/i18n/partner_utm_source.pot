@@ -1,0 +1,31 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_utm_source
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_utm_source
+#: model:ir.model,name:partner_utm_source.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_utm_source
+#: model_terms:ir.ui.view,arch_db:partner_utm_source.view_partner_form_inherit
+msgid "Source..."
+msgstr ""
+
+#. module: partner_utm_source
+#: model:ir.model.fields,field_description:partner_utm_source.field_res_partner__utm_source_id
+#: model:ir.model.fields,field_description:partner_utm_source.field_res_users__utm_source_id
+#: model_terms:ir.ui.view,arch_db:partner_utm_source.view_res_partner_filter_inherit
+msgid "UTM Source"
+msgstr ""
