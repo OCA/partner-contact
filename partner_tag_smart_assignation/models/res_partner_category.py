@@ -11,7 +11,8 @@ class ResPartnerCategory(models.Model):
     _inherit = "res.partner.category"
 
     tag_filter_condition_id = fields.Many2one(
-        "ir.filters", "Domain filter", ondelete="restrict")
+        "ir.filters", "Domain filter", ondelete="restrict"
+    )
     smart = fields.Boolean(
         help="Enable this to automatically assign the category on partners "
         "matching a given filter domain or SQL query."
@@ -145,7 +146,10 @@ class ResPartnerCategory(models.Model):
     @api.model
     def update_all_smart_tags(self):
         self._check_validity_dates()
-        return self.search([("smart", "=", True)]).update_partner_tags()
+        tags = self.search([("smart", "=", True)])
+        tags.delayable().update_partner_tags().set(
+            priority=100, channel="root.res_partner"
+        ).split(10, chain=True).delay()
 
     @api.model
     def _check_validity_dates(self):
