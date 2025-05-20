@@ -1,0 +1,28 @@
+<odoo>
+    <record id="view_country_form" model="ir.ui.view">
+        <field name="name">res.country.form</field>
+        <field name="model">res.country</field>
+        <field name="inherit_id" ref="base.view_country_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name_position']" position="before">
+                <field name="is_relevant_for_company" invisible="1" />
+                <label
+                    for="address_format_domestic"
+                    attrs="{'invisible': [('is_relevant_for_company', '=', False)]}"
+                />
+                <div
+                    class="o_row"
+                    attrs="{'invisible': [('is_relevant_for_company', '=', False)]}"
+                >
+                    <field
+                        name="address_format_domestic"
+                        placeholder="Domestic Address format..."
+                    />
+                    <div name="div_address_format ms-2" class="text-muted">
+                        Change the way addresses are displayed in reports for domestic transactions
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
