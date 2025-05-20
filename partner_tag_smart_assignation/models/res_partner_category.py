@@ -103,10 +103,13 @@ class ResPartnerCategory(models.Model):
                 partners = sql_partners & filter_partners
             else:
                 partners = sql_partners | filter_partners
-            if partners:
-                tagger.write({"partner_ids": [(6, 0, partners.ids)]})
-            else:
-                tagger.write({"partner_ids": [(5, 0, 0)]})
+            current_partner_ids = set(tagger.partner_ids.ids)
+            new_partner_ids = set(partners.ids)
+            if current_partner_ids != new_partner_ids:
+                if new_partner_ids:
+                    tagger.write({"partner_ids": [(6, 0, list(new_partner_ids))]})
+                else:
+                    tagger.write({"partner_ids": [(5, 0, 0)]})
         return True
 
     def get_partners_from_ir_filter(self):
@@ -149,7 +152,7 @@ class ResPartnerCategory(models.Model):
         tags = self.search([("smart", "=", True)])
         tags.delayable().update_partner_tags().set(
             priority=100, channel="root.res_partner"
-        ).split(10, chain=True).delay()
+        ).split(1, chain=True).delay()
 
     @api.model
     def _check_validity_dates(self):
