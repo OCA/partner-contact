@@ -64,35 +64,12 @@ msgid "Created on"
 msgstr "erstellt am"
 
 #. module: base_location_nuts
-#: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__current_country_id
-msgid "Current Country"
-msgstr ""
-
-#. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__display_name
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_country__display_name
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__display_name
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__display_name
 msgid "Display Name"
 msgstr "Anzeigename"
-
-#. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:0
-#, python-format
-msgid "Downloaded file is not a valid XML file"
-msgstr "Heruntergeladene Datei scheint keine gültige XML-Datei zu sein"
-
-#. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:0
-#, python-format
-msgid "Got an error %d when trying to download the file %s."
-msgstr "Erhielt einen Fehler %d beim Versuch die Datei %s herunter zu laden."
-
-#. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:0
-#, python-format
-msgid "Got an error when trying to download the file: %s."
-msgstr "Erhielt einen Fehler beim Versuch die Datei %s herunterzuladen."
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
@@ -114,19 +91,23 @@ msgstr "Import"
 
 #. module: base_location_nuts
 #: model:ir.ui.menu,name:base_location_nuts.nuts_import_menu
-msgid "Import NUTS 2013"
-msgstr "Importiere NUTS 2013"
+msgid "Import NUTS 2024"
+msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.nuts_import_action
+msgid "Import NUTS 2024 from SHOWVOC"
+msgstr ""
+
+#. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
-msgid "Import NUTS 2013 from RAMON"
-msgstr "Importiere NUTS 2013 von RAMON"
+msgid "Import NUTS 2024 from ShowVoc"
+msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_nuts_import
-msgid "Import NUTS items from European RAMON service"
-msgstr "Importiere NUTS-Elemente vom Europäischen RAMON-Dienst"
+msgid "Import NUTS items from European ShowVoc service"
+msgstr ""
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import____last_update
@@ -227,6 +208,12 @@ msgid "Parent Path"
 msgstr "Übergeordnet links"
 
 #. module: base_location_nuts
+#: code:addons/base_location_nuts/wizard/nuts_import.py:0
+#, python-format
+msgid "Partner NUTS by EU"
+msgstr ""
+
+#. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
 msgid "Search NUTS"
 msgstr "Suche in NUTS"
@@ -243,10 +230,9 @@ msgstr ""
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
-#, fuzzy
 msgid ""
 "This wizard will download the lastest version of\n"
-"                NUTS 2013 from Europe RAMON metadata service.\n"
+"                NUTS 2024 from Europe ShowVoc service.\n"
 "                Updating or creating new NUTS entries if not\n"
 "                found already in the system, and DELETING MISSING\n"
 "                ENTRIES from new downloaded file.\n"
@@ -254,25 +240,56 @@ msgid ""
 "                Update or deletion is prevented for NUTS entries with the "
 "flag 'Not updatable'."
 msgstr ""
-"Dieser Assisten lädt die neueste Version des NUTS vom Europäischen RAMON "
-"Metadatendienst herunter. NUTS-Einträge werden aktualisiert oder angelegt, "
-"wenn sie nicht bereits im System vorhanden sind und werden GELÖSCHT, wenn "
-"sie in der neuen Datei fehlen."
-
-#. module: base_location_nuts
-#: code:addons/base_location_nuts/wizard/nuts_import.py:0
-#, python-format
-msgid "Value not found for mandatory field %s"
-msgstr "Wert für Pflichtfeld %s nicht gefunden"
 
 #. module: base_location_nuts
 #: model_terms:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
 msgid ""
 "You must click at import wizard to populate NUTS items\n"
 "        in Odoo database in:\n"
-"        Sales &gt; Configuration &gt; Address Book &gt; Localization &gt; "
-"Import NUTS 2013"
+"        Contacts &gt; Configuration &gt; Localization &gt; Import NUTS 2024"
 msgstr ""
+
+#, python-format
+#~ msgid "Downloaded file is not a valid XML file"
+#~ msgstr "Heruntergeladene Datei scheint keine gültige XML-Datei zu sein"
+
+#, python-format
+#~ msgid "Got an error %d when trying to download the file %s."
+#~ msgstr ""
+#~ "Erhielt einen Fehler %d beim Versuch die Datei %s herunter zu laden."
+
+#, python-format
+#~ msgid "Got an error when trying to download the file: %s."
+#~ msgstr "Erhielt einen Fehler beim Versuch die Datei %s herunterzuladen."
+
+#~ msgid "Import NUTS 2013"
+#~ msgstr "Importiere NUTS 2013"
+
+#~ msgid "Import NUTS 2013 from RAMON"
+#~ msgstr "Importiere NUTS 2013 von RAMON"
+
+#~ msgid "Import NUTS items from European RAMON service"
+#~ msgstr "Importiere NUTS-Elemente vom Europäischen RAMON-Dienst"
+
+#, fuzzy
+#~ msgid ""
+#~ "This wizard will download the lastest version of\n"
+#~ "                NUTS 2013 from Europe RAMON metadata service.\n"
+#~ "                Updating or creating new NUTS entries if not\n"
+#~ "                found already in the system, and DELETING MISSING\n"
+#~ "                ENTRIES from new downloaded file.\n"
+#~ "\n"
+#~ "                Update or deletion is prevented for NUTS entries with the "
+#~ "flag 'Not updatable'."
+#~ msgstr ""
+#~ "Dieser Assisten lädt die neueste Version des NUTS vom Europäischen RAMON "
+#~ "Metadatendienst herunter. NUTS-Einträge werden aktualisiert oder "
+#~ "angelegt, wenn sie nicht bereits im System vorhanden sind und werden "
+#~ "GELÖSCHT, wenn sie in der neuen Datei fehlen."
+
+#, python-format
+#~ msgid "Value not found for mandatory field %s"
+#~ msgstr "Wert für Pflichtfeld %s nicht gefunden"
 
 #~ msgid "Parent Right"
 #~ msgstr "Übergeordnet rechts"

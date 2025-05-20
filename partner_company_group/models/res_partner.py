@@ -8,7 +8,7 @@ class Contact(models.Model):
     _inherit = "res.partner"
 
     company_group_id = fields.Many2one(
-        "res.partner", "Company group", domain=[("is_company", "=", True)]
+        "res.partner", "Company group", domain=[("is_company", "=", True)], index=True
     )
     company_group_member_ids = fields.One2many(
         comodel_name="res.partner",

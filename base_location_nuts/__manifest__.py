@@ -6,7 +6,7 @@
 {
     "name": "NUTS Regions",
     "category": "Localization/Europe",
-    "version": "14.0.1.0.3",
+    "version": "14.0.1.1.0",
     "depends": ["contacts"],
     "data": [
         "views/res_country_view.xml",
@@ -15,6 +15,7 @@
         "wizard/nuts_import_view.xml",
         "security/ir.model.access.csv",
     ],
+    "maintainers": ["rafaelbn", "edlopen"],
     "images": ["images/new_fields.png"],
     "author": "Tecnativa, " "Agile Business Group, " "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",

@@ -1,0 +1,53 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_country_lang
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: partner_country_lang
+#: model:ir.model,name:partner_country_lang.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_country_lang
+#: model:ir.model,name:partner_country_lang.model_res_country
+msgid "Country"
+msgstr ""
+
+#. module: partner_country_lang
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_country__display_name
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_country_lang
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_country__lang
+msgid "Enforce language"
+msgstr ""
+
+#. module: partner_country_lang
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_country__id
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_country_lang
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_country____last_update
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_country_lang
+#: model:ir.model.fields,help:partner_country_lang.field_res_country__lang
+msgid "This country partners' language will be set to this value by default"
+msgstr ""

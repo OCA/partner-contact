@@ -6,40 +6,42 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2025-02-20 10:59+0000\n"
+"Last-Translator: Sergio Corato <sergiocorato@gmail.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. module: animal_owner
 #: model_terms:ir.ui.view,arch_db:animal_owner.view_partner_animal_owner_form
 msgid "<span class=\"o_stat_text\"> Animals</span>"
-msgstr ""
+msgstr "<span class=\"o_stat_text\"> Animali</span>"
 
 #. module: animal_owner
 #: model:ir.model,name:animal_owner.model_animal
 msgid "Animal"
-msgstr ""
+msgstr "Animale"
 
 #. module: animal_owner
 #: model:ir.model.fields,field_description:animal_owner.field_res_partner__animal_ids
 #: model:ir.model.fields,field_description:animal_owner.field_res_users__animal_ids
 msgid "Animals"
-msgstr ""
+msgstr "Animali"
 
 #. module: animal_owner
 #: model:ir.model,name:animal_owner.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contatto"
 
 #. module: animal_owner
 #: model:ir.model.fields,field_description:animal_owner.field_animal__display_name
 #: model:ir.model.fields,field_description:animal_owner.field_res_partner__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: animal_owner
 #: model:ir.model.fields,field_description:animal_owner.field_animal__id
@@ -51,16 +53,16 @@ msgstr ""
 #: model:ir.model.fields,field_description:animal_owner.field_animal____last_update
 #: model:ir.model.fields,field_description:animal_owner.field_res_partner____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: animal_owner
 #: model:ir.model.fields,field_description:animal_owner.field_res_partner__animal_count
 #: model:ir.model.fields,field_description:animal_owner.field_res_users__animal_count
 msgid "Number of Animals"
-msgstr ""
+msgstr "Numero di animali"
 
 #. module: animal_owner
 #: model:ir.model.fields,field_description:animal_owner.field_animal__partner_id
 #: model_terms:ir.ui.view,arch_db:animal_owner.view_animal_owner_search
 msgid "Owner"
-msgstr ""
+msgstr "Proprietario"
