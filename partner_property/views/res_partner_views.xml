@@ -20,4 +20,24 @@
             </notebook>
         </field>
     </record>
+    <record id="res_partner_kanban_view" model="ir.ui.view">
+        <field name="name">res.partner.kanban</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='active']" position="after">
+                <field name="properties_company_id" />
+            </xpath>
+            <xpath expr="//div[hasclass('o_kanban_record_bottom')]" position="before">
+                <div>
+                    <t t-if="record.is_company.raw_value">
+                        <field name="properties_type_company" widget="properties" />
+                    </t>
+                    <t t-if="!record.is_company.raw_value">
+                        <field name="properties_type_person" widget="properties" />
+                    </t>
+                </div>
+            </xpath>
+        </field>
+    </record>
 </odoo>
