@@ -72,6 +72,12 @@ msgid "First name"
 msgstr "Nome"
 
 #. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__form_has_lastname_first
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__form_has_lastname_first
+msgid "Form Has Lastname First"
+msgstr ""
+
+#. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname
 msgid "Last name"
