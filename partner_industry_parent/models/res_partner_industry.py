@@ -5,15 +5,14 @@ from odoo import api, fields, models
 
 
 class ResPartnerIndustry(models.Model):
-
-    _inherit = 'res.partner.industry'
+    _inherit = "res.partner.industry"
     _parent_name = "parent_id"
     _parent_store = True
-    _rec_name = 'complete_name'
-    _order = 'complete_name'
+    _rec_name = "complete_name"
+    _order = "complete_name"
 
     complete_name = fields.Char(
-        'Complete Name', compute='_compute_complete_name', store=True
+        "Complete Name", compute="_compute_complete_name", store=True
     )
     parent_path = fields.Char(index=True)
     parent_id = fields.Many2one(comodel_name="res.partner.industry")
@@ -23,11 +22,11 @@ class ResPartnerIndustry(models.Model):
         string="Children Industry",
     )
 
-    @api.depends('name', 'parent_id.complete_name')
+    @api.depends("name", "parent_id.complete_name")
     def _compute_complete_name(self):
         for industry in self:
             if industry.parent_id:
-                industry.complete_name = '%s / %s' % (
+                industry.complete_name = "%s / %s" % (
                     industry.parent_id.complete_name,
                     industry.name,
                 )
