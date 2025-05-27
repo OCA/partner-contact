@@ -12,7 +12,7 @@ class ResPartnerIndustry(models.Model):
     _order = "complete_name"
 
     complete_name = fields.Char(
-        "Complete Name", compute="_compute_complete_name", store=True
+        compute="_compute_complete_name", store=True, recursive=True
     )
     parent_path = fields.Char(index=True)
     parent_id = fields.Many2one(comodel_name="res.partner.industry")
@@ -26,9 +26,8 @@ class ResPartnerIndustry(models.Model):
     def _compute_complete_name(self):
         for industry in self:
             if industry.parent_id:
-                industry.complete_name = "%s / %s" % (
-                    industry.parent_id.complete_name,
-                    industry.name,
+                industry.complete_name = (
+                    f"{industry.parent_id.complete_name} / {industry.name}"
                 )
             else:
                 industry.complete_name = industry.name
