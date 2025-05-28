@@ -9,7 +9,7 @@
             <field name="category_id" position="after">
                 <field
                     name="coc_registration_number"
-                    attrs="{'invisible': [('company_type','!=','company')]}"
+                    invisible="company_type != 'company'"
                 />
             </field>
         </field>
