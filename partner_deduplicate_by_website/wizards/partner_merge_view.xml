@@ -11,7 +11,7 @@
                 <field name="group_by_website" />
             </field>
             <xpath
-                expr="//field[@name='partner_ids']/tree//field[@name='country_id']"
+                expr="//field[@name='partner_ids']/list//field[@name='country_id']"
                 position="after"
             >
                 <field name="website" />
