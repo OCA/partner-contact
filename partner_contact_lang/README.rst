@@ -83,6 +83,9 @@ Contributors
    -  Pedro Evaristo Gonzalez Sanchez <pedro.gonzalez@pesol.es>
 
 -  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+-  `APSL-Nagarro <https://apsl.tech>`__:
+
+   -  Antoni Marroig <amarroig@apsl.net>
 
 Maintainers
 -----------

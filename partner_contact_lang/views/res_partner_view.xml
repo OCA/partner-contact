@@ -13,7 +13,7 @@
                 position="replace"
             >
                 <field name="active_lang_count" invisible="1" />
-                <group attrs="{'invisible': [('active_lang_count', '&lt;=', 1)]}">
+                <group invisible="active_lang_count &lt;= 1">
                     <group>
                         <field name="lang" />
                     </group>
