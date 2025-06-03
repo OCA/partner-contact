@@ -10,7 +10,7 @@ class ResPartner(models.Model):
 
     def write(self, vals):
         """Propagate a language change in the partner to the child contacts."""
-        res = super(ResPartner, self).write(vals)
+        res = super().write(vals)
         if vals.get("lang"):
             childs = self.search([("id", "child_of", self.ids), ("lang", "=", False)])
             if childs:
@@ -25,7 +25,7 @@ class ResPartner(models.Model):
         A special case is made for virtual records, where default lang value
         is assigned at startup, so we always overwrite language in that case.
         """
-        res = super(ResPartner, self).onchange_parent_id()
+        res = super().onchange_parent_id()
         if (
             self.parent_id.lang
             and (

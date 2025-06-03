@@ -17,30 +17,30 @@ Manage language in contacts
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/16.0/partner_contact_lang
+    :target: https://github.com/OCA/partner-contact/tree/17.0/partner_contact_lang
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-16-0/partner-contact-16-0-partner_contact_lang
+    :target: https://translation.odoo-community.org/projects/partner-contact-17-0/partner-contact-17-0-partner_contact_lang
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-Odoo by default propagate language field to the created contacts from their
-form, but it doesn't allow to change it once created.
+Odoo by default propagate language field to the created contacts from
+their form, but it doesn't allow to change it once created.
 
 This module fills this gap, and also provides other facilities for the
 contact language management:
 
-#. Put the language of the parent company when the contact doesn't have a
-   language and this parent company is assigned.
-#. When the company changes the language, it fills with the same language all
-   the contacts that don't have any.
-#. Show the language in the inner narrowed Contact form and
-   set the new conctact with a different language if needed.
-#. Search and also group contacts by their language.
+1. Put the language of the parent company when the contact doesn't have
+   a language and this parent company is assigned.
+2. When the company changes the language, it fills with the same
+   language all the contacts that don't have any.
+3. Show the language in the inner narrowed Contact form and set the new
+   conctact with a different language if needed.
+4. Search and also group contacts by their language.
 
 **Table of contents**
 
@@ -50,8 +50,8 @@ contact language management:
 Usage
 =====
 
-#. Go to any company partner has contacts.
-#. Click on any contact and you will be able to edit the language.
+1. Go to any company partner has contacts.
+2. Click on any contact and you will be able to edit the language.
 
 Bug Tracker
 ===========
@@ -59,7 +59,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_contact_lang%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_contact_lang%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -67,25 +67,25 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Tecnativa
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* `Tecnativa <https://www.tecnativa.com>`__:
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  * Javier Iniesta
-  * Vicent Cubells
-  * David Vidal
-  * Cristina Martín
-  * Pedro Evaristo Gonzalez Sanchez <pedro.gonzalez@pesol.es>
+   -  Javier Iniesta
+   -  Vicent Cubells
+   -  David Vidal
+   -  Cristina Martín
+   -  Pedro Evaristo Gonzalez Sanchez <pedro.gonzalez@pesol.es>
 
-* Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+-  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -97,6 +97,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/16.0/partner_contact_lang>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/17.0/partner_contact_lang>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
