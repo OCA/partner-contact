@@ -10,7 +10,7 @@ from odoo.tests import common
 class TestPartnerContactLang(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestPartnerContactLang, cls).setUpClass()
+        super().setUpClass()
         cls.ResPartner = cls.env["res.partner"]
         cls.partner = cls.ResPartner.create({"name": "Partner test", "lang": "en_US"})
         cls.contact = cls.ResPartner.create(
