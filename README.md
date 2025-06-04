@@ -21,8 +21,8 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[animal](animal/) | 12.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Manage animals information
-[animal_owner](animal_owner/) | 12.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Add owner to the animal
+[animal](animal/) | 12.0.1.0.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Manage animals information
+[animal_owner](animal_owner/) | 12.0.1.0.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Add owner to the animal
 [base_country_state_translatable](base_country_state_translatable/) | 12.0.1.0.0 |  | Translate Country States
 [base_location](base_location/) | 12.0.1.1.4 |  | Enhanced zip/npa management system
 [base_location_geonames_import](base_location_geonames_import/) | 12.0.1.0.4 |  | Import zip entries from Geonames
@@ -38,7 +38,7 @@ addon | version | maintainers | summary
 [partner_coc](partner_coc/) | 12.0.1.0.0 |  | Adds field 'Chamber Of Commerce Registration Number'
 [partner_company_group](partner_company_group/) | 12.0.1.2.1 |  | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 12.0.1.1.0 |  | Adds a company type to partner that are companies
-[partner_contact_access_link](partner_contact_access_link/) | 12.0.1.0.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
+[partner_contact_access_link](partner_contact_access_link/) | 12.0.1.0.0 | <a href='https://github.com/Yajo'><img src='https://github.com/Yajo.png' width='32' height='32' style='border-radius:50%;' alt='Yajo'/></a> | Allow to visit the full contact form from a company
 [partner_contact_address_default](partner_contact_address_default/) | 12.0.1.3.0 |  | Set a default delivery and invoice address for contacts
 [partner_contact_birthdate](partner_contact_birthdate/) | 12.0.1.2.0 |  | Contact's birthdate
 [partner_contact_birthplace](partner_contact_birthplace/) | 12.0.1.0.0 |  | This module allows to define a birthplace for partners.
@@ -56,7 +56,7 @@ addon | version | maintainers | summary
 [partner_default_sale_discount](partner_default_sale_discount/) | 12.0.1.0.1 |  | Default sales discount per partner
 [partner_disable_gravatar](partner_disable_gravatar/) | 12.0.1.0.0 |  | Disable automatic connection to gravatar.com
 [partner_email_check](partner_email_check/) | 12.0.1.0.0 |  | Validate email address field
-[partner_employee_quantity](partner_employee_quantity/) | 12.0.1.0.0 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) | Know how many employees a partner has
+[partner_employee_quantity](partner_employee_quantity/) | 12.0.1.0.0 | <a href='https://github.com/pedrobaeza'><img src='https://github.com/pedrobaeza.png' width='32' height='32' style='border-radius:50%;' alt='pedrobaeza'/></a> | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 12.0.1.0.1 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 12.0.1.1.1 |  | Add fax number on partner
 [partner_firstname](partner_firstname/) | 12.0.1.1.0 |  | Split first name and last name for non company partners
@@ -74,9 +74,9 @@ addon | version | maintainers | summary
 [partner_noncommercial](partner_noncommercial/) | 12.0.2.0.0 |  | Partner Non Commercial
 [partner_phone_extension](partner_phone_extension/) | 12.0.1.0.0 |  | Partner Phone Number Extension
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 12.0.1.0.0 |  | Track the time and days your partners expect phone calls
-[partner_postal_address](partner_postal_address/) | 12.0.1.0.0 | [![remi-filament](https://github.com/remi-filament.png?size=30px)](https://github.com/remi-filament) | Adds a postal address in address types
+[partner_postal_address](partner_postal_address/) | 12.0.1.0.0 | <a href='https://github.com/remi-filament'><img src='https://github.com/remi-filament.png' width='32' height='32' style='border-radius:50%;' alt='remi-filament'/></a> | Adds a postal address in address types
 [partner_pricelist_search](partner_pricelist_search/) | 12.0.1.0.0 |  | Partner pricelist search
-[partner_priority](partner_priority/) | 12.0.1.0.0 | [![patrickrwilson](https://github.com/patrickrwilson.png?size=30px)](https://github.com/patrickrwilson) | Adds priority to partners.
+[partner_priority](partner_priority/) | 12.0.1.0.0 | <a href='https://github.com/patrickrwilson'><img src='https://github.com/patrickrwilson.png' width='32' height='32' style='border-radius:50%;' alt='patrickrwilson'/></a> | Adds priority to partners.
 [partner_ref_unique](partner_ref_unique/) | 12.0.1.0.2 |  | Add an unique constraint to partner ref field
 [partner_route](partner_route/) | 12.0.1.0.0 |  | Base module to assign routes to partners
 [partner_second_lastname](partner_second_lastname/) | 12.0.2.0.0 |  | Have split first and second lastnames
