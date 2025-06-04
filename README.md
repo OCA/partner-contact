@@ -32,12 +32,12 @@ addon | version | maintainers | summary
 [partner_address_two_lines](partner_address_two_lines/) | 13.0.1.0.2 |  | The company and the partner name are on two different lines
 [partner_affiliate](partner_affiliate/) | 13.0.1.1.0 |  | Partner Affiliates
 [partner_bank_active](partner_bank_active/) | 13.0.1.0.0 |  | This module allows to deactivate a partner bank account.
-[partner_bank_sort_code](partner_bank_sort_code/) | 13.0.1.0.1 | [![rousseldenis](https://github.com/rousseldenis.png?size=30px)](https://github.com/rousseldenis) | Adds a field in banks to manage Sort Codes
+[partner_bank_sort_code](partner_bank_sort_code/) | 13.0.1.0.1 | <a href='https://github.com/rousseldenis'><img src='https://github.com/rousseldenis.png' width='32' height='32' style='border-radius:50%;' alt='rousseldenis'/></a> | Adds a field in banks to manage Sort Codes
 [partner_capital](partner_capital/) | 13.0.1.0.1 |  | Partners Capital
 [partner_coc](partner_coc/) | 13.0.1.0.1 |  | Adds field 'Chamber Of Commerce Registration Number'
 [partner_company_group](partner_company_group/) | 13.0.1.3.2 |  | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 13.0.1.0.0 |  | Adds a company type to partner that are companies
-[partner_contact_access_link](partner_contact_access_link/) | 13.0.1.0.0 | [![Yajo](https://github.com/Yajo.png?size=30px)](https://github.com/Yajo) | Allow to visit the full contact form from a company
+[partner_contact_access_link](partner_contact_access_link/) | 13.0.1.0.0 | <a href='https://github.com/Yajo'><img src='https://github.com/Yajo.png' width='32' height='32' style='border-radius:50%;' alt='Yajo'/></a> | Allow to visit the full contact form from a company
 [partner_contact_address_default](partner_contact_address_default/) | 13.0.1.1.0 |  | Set a default delivery and invoice address for contacts
 [partner_contact_age_range](partner_contact_age_range/) | 13.0.1.0.0 |  | Age Range for Contact's
 [partner_contact_birthdate](partner_contact_birthdate/) | 13.0.2.0.0 |  | Contact's birthdate
@@ -48,7 +48,7 @@ addon | version | maintainers | summary
 [partner_contact_lang](partner_contact_lang/) | 13.0.1.0.1 |  | Manage language in contacts
 [partner_contact_nationality](partner_contact_nationality/) | 13.0.1.0.0 |  | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 13.0.1.0.0 |  | Add a page to contacts form to put personal information
-[partner_country_lang](partner_country_lang/) | 13.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Partner language according country
+[partner_country_lang](partner_country_lang/) | 13.0.1.0.0 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> | Partner language according country
 [partner_data_vies_populator](partner_data_vies_populator/) | 13.0.1.0.1 |  | Using VIES webservice, name and address information will be fetched and added to the partner.
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 13.0.1.0.0 |  | Contact deduplication with fine-grained permission control
 [partner_deduplicate_by_ref](partner_deduplicate_by_ref/) | 13.0.1.0.1 |  | Deduplicate Contacts by reference
@@ -56,7 +56,7 @@ addon | version | maintainers | summary
 [partner_deduplicate_filter](partner_deduplicate_filter/) | 13.0.1.0.0 |  | Exclude records from the deduplication
 [partner_disable_gravatar](partner_disable_gravatar/) | 13.0.1.0.0 |  | Disable automatic connection to gravatar.com
 [partner_email_check](partner_email_check/) | 13.0.1.1.0 |  | Validate email address field
-[partner_employee_quantity](partner_employee_quantity/) | 13.0.1.0.0 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) | Know how many employees a partner has
+[partner_employee_quantity](partner_employee_quantity/) | 13.0.1.0.0 | <a href='https://github.com/pedrobaeza'><img src='https://github.com/pedrobaeza.png' width='32' height='32' style='border-radius:50%;' alt='pedrobaeza'/></a> | Know how many employees a partner has
 [partner_exception](partner_exception/) | 13.0.1.0.1 |  | Custom exceptions on partner contact
 [partner_external_map](partner_external_map/) | 13.0.1.1.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 13.0.1.1.0 |  | Add fax number on partner
@@ -73,10 +73,10 @@ addon | version | maintainers | summary
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 13.0.1.0.0 |  | Track the time and days your partners expect phone calls
 [partner_pricelist_search](partner_pricelist_search/) | 13.0.1.0.2 |  | Partner pricelist search
 [partner_pricelist_tracking](partner_pricelist_tracking/) | 13.0.1.0.1 |  | Track partner pricelist changes
-[partner_priority](partner_priority/) | 13.0.1.0.0 | [![patrickrwilson](https://github.com/patrickrwilson.png?size=30px)](https://github.com/patrickrwilson) | Adds priority to partners.
+[partner_priority](partner_priority/) | 13.0.1.0.0 | <a href='https://github.com/patrickrwilson'><img src='https://github.com/patrickrwilson.png' width='32' height='32' style='border-radius:50%;' alt='patrickrwilson'/></a> | Adds priority to partners.
 [partner_ref_unique](partner_ref_unique/) | 13.0.1.0.1 |  | Add an unique constraint to partner ref field
 [partner_second_lastname](partner_second_lastname/) | 13.0.2.0.0 |  | Have split first and second lastnames
-[partner_stage](partner_stage/) | 13.0.1.0.0 | [![dreispt](https://github.com/dreispt.png?size=30px)](https://github.com/dreispt) | Add lifecycle Stages to Partners
+[partner_stage](partner_stage/) | 13.0.1.0.0 | <a href='https://github.com/dreispt'><img src='https://github.com/dreispt.png' width='32' height='32' style='border-radius:50%;' alt='dreispt'/></a> | Add lifecycle Stages to Partners
 [partner_tz](partner_tz/) | 13.0.1.0.0 |  | Remove partner timezone default value and display on form
 [partner_vat_unique](partner_vat_unique/) | 13.0.1.0.0 |  | Module to make the VAT number unique for customers and suppliers.
 [portal_partner_data_no_edit](portal_partner_data_no_edit/) | 13.0.1.0.2 |  | Portal Partner Block Data Edit
