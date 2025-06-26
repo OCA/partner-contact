@@ -145,3 +145,31 @@ class TestBaseLocationNuts(TransactionCase):
         self.assertEqual(self.nuts4_2.name, new_name)
         self.assertEqual(self.nuts4_2.parent_id, new_parent)
         self.assertTrue(new_parent.exists())
+
+    def test_sql_injection_protection(self):
+        """Test protection against SQL injection attacks"""
+        # Test SQL injection in NUTS code field
+        malicious_codes = [
+            "'; DROP TABLE res_partner_nuts; --",
+            "' OR '1'='1",
+            "'; DELETE FROM res_partner; --",
+            "UNION SELECT * FROM res_users --",
+        ]
+        
+        for malicious_code in malicious_codes:
+            with self.subTest(malicious_code=malicious_code):
+                # Attempt to create NUTS with malicious code
+                with self.assertRaises(Exception):
+                    self.nuts_model.create({
+                        'level': 1,
+                        'code': malicious_code,
+                        'name': 'Test',
+                        'country_id': self.country_1.id,
+                    })
+        
+        # Test SQL injection in search operations
+        for malicious_code in malicious_codes:
+            with self.subTest(search_code=malicious_code):
+                # Search should return empty recordset, not execute malicious SQL
+                result = self.nuts_model.search([('code', '=', malicious_code)])
+                self.assertEqual(len(result), 0)
