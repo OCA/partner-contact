@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -45,11 +45,6 @@ msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
-msgid "Avatar"
-msgstr ""
-
-#. module: partner_contact_in_several_companies
-#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "City"
 msgstr ""
 
@@ -57,11 +52,6 @@ msgstr ""
 #: model:ir.model,name:partner_contact_in_several_companies.model_res_partner
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Contact"
-msgstr ""
-
-#. module: partner_contact_in_several_companies
-#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
-msgid "Contact Image"
 msgstr ""
 
 #. module: partner_contact_in_several_companies
@@ -77,35 +67,12 @@ msgstr ""
 
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Contact image"
+msgstr ""
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Country"
-msgstr ""
-
-#. module: partner_contact_in_several_companies
-#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
-msgid "Delete Contact"
-msgstr ""
-
-#. module: partner_contact_in_several_companies
-#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_ir_actions_act_window__display_name
-#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner__display_name
-msgid "Display Name"
-msgstr ""
-
-#. module: partner_contact_in_several_companies
-#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_ir_actions_act_window__id
-#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner__id
-msgid "ID"
-msgstr ""
-
-#. module: partner_contact_in_several_companies
-#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_ir_actions_act_window____last_update
-#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner____last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: partner_contact_in_several_companies
-#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
-msgid "Logo"
 msgstr ""
 
 #. module: partner_contact_in_several_companies
@@ -163,8 +130,8 @@ msgstr ""
 #. module: partner_contact_in_several_companies
 #: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.personal_contact_information
 msgid ""
-"To see personal information about this contact, please\n"
-"                    go to to the this person form:"
+"To see personal information\n"
+"                    about this contact, please go to to the this person form:"
 msgstr ""
 
 #. module: partner_contact_in_several_companies
