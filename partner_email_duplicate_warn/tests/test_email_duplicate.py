@@ -3,11 +3,12 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
 @tagged("post_install", "-at_install")
-class TestResPartner(TransactionCase):
+class TestResPartner(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
