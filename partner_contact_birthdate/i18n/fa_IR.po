@@ -1,0 +1,37 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_contact_birthdate
+#
+# Translators:
+# Azar Nazari <azar.nazari@gmail.com> , 2025
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-14 15:28+0000\n"
+"PO-Revision-Date: 2025-07-14 19:00+0330\n"
+"Last-Translator:  Azar Nazari <azar.nazari@gmail.com> , 2025\n"
+"Language-Team: Persian \n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: partner_contact_birthdate
+#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner__age
+#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users__age
+msgid "Age"
+msgstr "سن"
+
+#. module: partner_contact_birthdate
+#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_partner__birthdate_date
+#: model:ir.model.fields,field_description:partner_contact_birthdate.field_res_users__birthdate_date
+msgid "Birthdate"
+msgstr "تاریخ تولد"
+
+#. module: partner_contact_birthdate
+#: model:ir.model,name:partner_contact_birthdate.model_res_partner
+msgid "Contact"
+msgstr "مخاطب"
