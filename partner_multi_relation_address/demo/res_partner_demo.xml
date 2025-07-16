@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="res_partner_demo_lawyer" model="res.partner">
+        <field name="name">The devils advocate</field>
+        <field name="is_company">0</field>
+    </record>
+
+</odoo>

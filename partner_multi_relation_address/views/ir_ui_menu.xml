@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem
+        id="menu_res_partner_relation_address"
+        sequence="11"
+        parent="partner_multi_relation.menu_res_partner_relation"
+        action="action_res_partner_relation_address"
+    />
+</odoo>

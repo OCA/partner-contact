@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="demo_relation_lawyer" model="res.partner.relation">
+        <field
+            name="left_partner_id"
+            ref="partner_multi_relation.res_partner_pmr_great"
+        />
+        <field name="right_partner_id" ref="res_partner_demo_lawyer" />
+        <field name="type_id" ref="rel_type_lawyer" />
+        <field name="email">warsowitz@greatcompany.example.com</field>
+        <field name="phone">+310201234567</field>
+        <field name="mobile">+310612345678</field>
+    </record>
+
+</odoo>
