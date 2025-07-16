@@ -2,7 +2,6 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
-from odoo.osv import expression
 
 
 class ResBank(models.Model):
@@ -35,19 +34,18 @@ class ResBank(models.Model):
         return res
 
     @api.model
-    def _name_search(self, name, domain=None, operator="ilike", limit=None, order=None):
-        domain = domain or []
-        if name:
-            name_domain = [
+    def _search_display_name(self, operator, value):
+        if operator in ("ilike", "not ilike") and value:
+            domain = [
                 "|",
                 "|",
                 "|",
-                ("bic", "=ilike", name + "%"),
-                ("name", operator, name),
-                ("bank_code", "=ilike", name + "%"),
-                ("bank_branch_code", "=ilike", name + "%"),
+                ("bic", "=ilike", value + "%"),
+                ("name", "ilike", value),
+                ("bank_code", "=ilike", value + "%"),
+                ("bank_branch_code", "=ilike", value + "%"),
             ]
-            if operator in expression.NEGATIVE_TERM_OPERATORS:
-                name_domain = ["&", "!"] + name_domain[1:]
-            domain = domain + name_domain
-        return self._search(domain, limit=limit, order=order)
+            if operator == "not ilike":
+                domain = ["!", *domain]
+            return domain
+        return super()._search_display_name(operator, value)

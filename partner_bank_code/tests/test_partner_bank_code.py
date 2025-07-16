@@ -40,9 +40,20 @@ class TestPartnerBankCode(TransactionCase):
         found_recs = self.env["res.bank"].name_search(name="some b")
         self.assertEqual(len(found_recs), 3)
 
+        # Search with name equal only
+        found_recs = self.env["res.bank"].name_search(name="some bic", operator="=")
+        self.assertEqual(len(found_recs), 3)
+
         # Search with bank code
         found_recs = self.env["res.bank"].name_search(name="42")
         self.assertEqual(len(found_recs), 2)
+
+        # Search with bank code not ilike
+        # it should show 1 record because bank1, 2 don't have bank_branch_code
+        found_recs = self.env["res.bank"].name_search(
+            name="bank1", operator="not ilike"
+        )
+        self.assertEqual(len(found_recs), 1)
 
         # Search with bank branch code
         found_recs = self.env["res.bank"].name_search(name="43")
