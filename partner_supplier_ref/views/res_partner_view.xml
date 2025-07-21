@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form - supplier.reference</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <group name="purchase" position="inside">
+                <field name="supplier_ref" />
+            </group>
+            <group name="sale" position="inside">
+                <field name="ref" position="move" />
+            </group>
+        </field>
+    </record>
+</odoo>
