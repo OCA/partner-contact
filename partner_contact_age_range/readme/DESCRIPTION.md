@@ -4,4 +4,4 @@ The age range is computed based on the partner's age.
 
 The cron job will auto compute age range.
 
-![image](../static/description/age_range.png)
+![age_range](../static/description/age_range.png)

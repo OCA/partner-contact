@@ -34,9 +34,9 @@ The age range is computed based on the partner's age.
 
 The cron job will auto compute age range.
 
-|image|
+|age_range|
 
-.. |image| image:: https://raw.githubusercontent.com/OCA/partner-contact/17.0/partner_contact_age_range/static/description/age_range.png
+.. |age_range| image:: https://raw.githubusercontent.com/OCA/partner-contact/17.0/partner_contact_age_range/static/description/age_range.png
 
 **Table of contents**
 
@@ -50,11 +50,11 @@ Go to Contact / Configuration / Age Ranges
 
 Configure your Age Ranges
 
-|image|
+|configure_age_range|
 
 Contacts will automatically compute age range based on age.
 
-.. |image| image:: https://raw.githubusercontent.com/OCA/partner-contact/17.0/partner_contact_age_range/static/description/configure_age_range.png
+.. |configure_age_range| image:: https://raw.githubusercontent.com/OCA/partner-contact/17.0/partner_contact_age_range/static/description/configure_age_range.png
 
 Bug Tracker
 ===========
@@ -81,6 +81,9 @@ Contributors
 - Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
 - brain-tec AG <info@bt-group.com>
 - Andreas Hochuli <andreas.hochuli@camptocamp.com>
+  -`Komit <https://komit-consulting.com>`__:
+
+  - Quoc Pham Ngoc
 
 Maintainers
 -----------

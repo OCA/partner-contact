@@ -20,7 +20,7 @@ class ResPartner(models.Model):
         for record in self:
             if record.age >= 0:
                 age_range = age_ranges.filtered(
-                    lambda age_range: age_range.age_from
+                    lambda age_range, record=record: age_range.age_from
                     <= record.age
                     <= age_range.age_to
                 )
@@ -36,4 +36,4 @@ class ResPartner(models.Model):
         It is used to update age range on contact
         """
         partners = self.search([("birthdate_date", "!=", False)])
-        partners._compute_age_range_id()
+        self.env.add_to_compute(self._fields["age_range_id"], partners)

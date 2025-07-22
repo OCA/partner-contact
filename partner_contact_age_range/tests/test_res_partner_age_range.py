@@ -32,7 +32,7 @@ class TestRespartnerAgeRange(TransactionCase):
             }
         )
 
-    @freeze_time("2024-02-07")
+    @freeze_time("2026-02-07")
     def test_age_from(self):
         age_from = self.range_model._default_age_from()
         toddler_range = self.range_model.create(
@@ -40,18 +40,18 @@ class TestRespartnerAgeRange(TransactionCase):
         )
         self.assertEqual(toddler_range.age_from, self.baby_range.age_to + 1)
 
-    @freeze_time("2024-02-07")
+    @freeze_time("2026-02-07")
     def test_validate_range(self):
         with self.assertRaises(ValidationError):
             self.range_model.create({"name": "Child", "age_from": 1, "age_to": 12})
         with self.assertRaises(ValidationError):
             self.range_model.create({"name": "Teenager", "age_from": 16, "age_to": 15})
 
-    @freeze_time("2024-02-07")
+    @freeze_time("2026-02-07")
     def test_cron_update_age_range_id(self):
         self.partner_model._cron_update_age_range_id()
         self.assertEqual(self.partner.age_range_id, self.baby_range)
 
-    @freeze_time("2024-02-07")
+    @freeze_time("2026-02-07")
     def test_partner_norange(self):
         self.assertFalse(self.partner2.age_range_id)

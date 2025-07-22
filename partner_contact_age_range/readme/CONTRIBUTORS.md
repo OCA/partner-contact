@@ -2,3 +2,5 @@
 - Tharathip Chaweewongphan \<tharathipc@ecosoft.co.th\>
 - brain-tec AG \<info@bt-group.com\>
 - Andreas Hochuli \<andreas.hochuli@camptocamp.com\>
+-[Komit](https://komit-consulting.com):
+  - Quoc Pham Ngoc
