@@ -6,10 +6,7 @@
         <field name="inherit_id" ref="partner_contact_birthdate.view_partner_form" />
         <field name="arch" type="xml">
             <field name="age" position="after">
-                <field
-                    name="age_range_id"
-                    attrs="{'invisible': [('birthdate_date', '=', False)]}"
-                />
+                <field name="age_range_id" invisible="not birthdate_date" />
             </field>
         </field>
     </record>

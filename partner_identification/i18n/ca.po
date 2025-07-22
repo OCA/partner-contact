@@ -160,7 +160,7 @@ msgid ""
 "({error})"
 msgstr ""
 "Error en avaluar el codi de validació id_category: \n"
-" {nom} \n"
+" {name} \n"
 "({error})"
 
 #. module: partner_identification
