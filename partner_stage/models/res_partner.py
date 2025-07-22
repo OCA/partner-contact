@@ -14,12 +14,13 @@ class Partner(models.Model):
         )
 
     @api.model
-    def _read_group_stage_id(self, states, domain):
-        return states.search([])
+    def _read_group_stage_ids(self, stages, domain):
+        order = stages._order or "sequence, id"
+        return stages.search([], order=order)
 
     stage_id = fields.Many2one(
         comodel_name="res.partner.stage",
-        group_expand="_read_group_stage_id",
+        group_expand="_read_group_stage_ids",
         default=_get_default_stage_id,
         copy=False,
         index=True,
