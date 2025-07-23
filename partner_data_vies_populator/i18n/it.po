@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-05-27 14:26+0000\n"
+"PO-Revision-Date: 2025-07-23 17:25+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -19,7 +19,7 @@ msgstr ""
 #. module: partner_data_vies_populator
 #: model:ir.model,name:partner_data_vies_populator.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contatto"
 
 #. module: partner_data_vies_populator
 #: model:ir.model.fields,field_description:partner_data_vies_populator.field_res_partner__display_name
@@ -33,6 +33,8 @@ msgid ""
 "Failed to query VIES.\n"
 "Technical error: %s."
 msgstr ""
+"Fallita la richiesta VIES.\n"
+"Errore tecnico: %s."
 
 #. module: partner_data_vies_populator
 #: model:ir.model.fields,field_description:partner_data_vies_populator.field_res_partner__id
@@ -42,4 +44,4 @@ msgstr "ID"
 #. module: partner_data_vies_populator
 #: model:ir.model.fields,field_description:partner_data_vies_populator.field_res_partner____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
