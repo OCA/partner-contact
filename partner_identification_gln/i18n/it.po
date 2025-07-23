@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-05-20 17:26+0000\n"
+"PO-Revision-Date: 2025-07-23 17:25+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -24,12 +24,12 @@ msgstr "Nome visualizzato"
 #. module: partner_identification_gln
 #: model:res.partner.id_category,name:partner_identification_gln.partner_identification_gcp_number_category
 msgid "GCP Identification Number"
-msgstr ""
+msgstr "Numeri di identificazione GCP"
 
 #. module: partner_identification_gln
 #: model:res.partner.id_category,name:partner_identification_gln.partner_identification_gln_number_category
 msgid "GLN Identification Number"
-msgstr ""
+msgstr "Numero di identificazione GLN"
 
 #. module: partner_identification_gln
 #: model:ir.model.fields,field_description:partner_identification_gln.field_res_partner_id_category__id
@@ -39,9 +39,9 @@ msgstr "ID"
 #. module: partner_identification_gln
 #: model:ir.model.fields,field_description:partner_identification_gln.field_res_partner_id_category____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: partner_identification_gln
 #: model:ir.model,name:partner_identification_gln.model_res_partner_id_category
 msgid "Partner ID Category"
-msgstr ""
+msgstr "ID categoria partner"
