@@ -5,6 +5,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import _, api, exceptions, fields, models
+from odoo.exceptions import ValidationError
 
 
 class ResPartner(models.Model):
@@ -13,6 +14,10 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     ref_readonly = fields.Boolean(compute="_compute_ref_readonly")
+
+    @api.model
+    def _get_partners_with_ref(self, ref):
+        return self.env["res.partner"].search([("ref", "=", ref)])
 
     @api.depends("company_id", "is_company", "parent_id")
     @api.depends_context("company")
@@ -54,6 +59,28 @@ class ResPartner(models.Model):
                 partner_vals["ref"] = partner._get_next_ref(vals=partner_vals)
                 super(ResPartner, partner).write(partner_vals)
         return super(ResPartner, self - partners_needing_ref).write(vals)
+
+    @api.constrains("ref")
+    def _check_ref_uniqueness(self):
+        """
+        Validates that the 'ref' field is unique if `partner_generated_reference_unique`
+        is enabled.
+        """
+        for partner in self:
+            if partner.ref and partner.env.company.partner_generated_reference_unique:
+                clashing_partners = self.env["res.partner"].search(
+                    [("ref", "=", partner.ref), ("id", "!=", partner.id)]
+                )
+                if clashing_partners:
+                    raise ValidationError(
+                        _(
+                            "The Partner Reference '%(ref)s' is already used by the following Partner(s):\n%(partners)s",
+                            ref=partner.ref,
+                            partners="\n".join(
+                                [f"- {p.name} (id={p.id})" for p in clashing_partners]
+                            ),
+                        )
+                    )
 
     def _needs_ref(self, vals=None):
         """

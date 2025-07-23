@@ -94,6 +94,7 @@ Contributors
 * Francesco Apruzzese <cescoap@gmail.com>
 * Daniel Reis <dreis@opensourceintegrators.com>
 * Nikul Chaudhary <nchaudhary@opensourceintegrators.com>
+* Nicolas Delbovier (ACSONE) <nicolas.delbovier@acsone.eu>
 
 Maintainers
 ~~~~~~~~~~~

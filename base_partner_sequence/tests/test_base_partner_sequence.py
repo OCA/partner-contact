@@ -2,6 +2,8 @@
 # Copyright 2016 Tecnativa - Vicent Cubells
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
+from odoo.exceptions import ValidationError
+
 from odoo.addons.base.tests.common import BaseCommon
 
 
@@ -48,6 +50,10 @@ class TestBasePartnerSequence(BaseCommon):
         self.assertFalse(partners[0].ref)
         partners.write({})
         self.assertFalse(partners[0].ref == partners[1].ref)
+
+        self.env.company.partner_generated_reference_unique = True
+        with self.assertRaises(ValidationError):
+            partners[1].ref = partners[0].ref
 
     def test_ref_change_convert_child_to_parent(self):
         """Test that a ref is assigned to a child contact when it is
