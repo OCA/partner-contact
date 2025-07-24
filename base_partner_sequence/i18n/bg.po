@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-31 01:39+0000\n"
+"POT-Creation-Date: 2025-07-24 07:58+0000\n"
 "PO-Revision-Date: 2016-12-31 01:39+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Bulgarian (https://www.transifex.com/oca/teams/23907/bg/)\n"
@@ -17,6 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: base_partner_sequence
+#: model:ir.model.fields,help:base_partner_sequence.field_res_config_settings__partner_generated_reference_unique
+msgid ""
+"Check this if you want to have unique generated references across all "
+"partners (companies, contacts, addresses,...)"
+msgstr ""
 
 #. module: base_partner_sequence
 #: model:ir.model,name:base_partner_sequence.model_res_company
@@ -47,9 +54,23 @@ msgid "If marked, the Reference in partners will not be editable."
 msgstr ""
 
 #. module: base_partner_sequence
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_company__partner_generated_reference_unique
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_config_settings__partner_generated_reference_unique
+msgid "Partner Generated Reference Unique"
+msgstr ""
+
+#. module: base_partner_sequence
 #: model:ir.model.fields,field_description:base_partner_sequence.field_res_company__partner_ref_readonly
 #: model:ir.model.fields,field_description:base_partner_sequence.field_res_config_settings__partner_ref_readonly
 msgid "Partner Reference Readonly"
+msgstr ""
+
+#. module: base_partner_sequence
+#: model_terms:ir.ui.view,arch_db:base_partner_sequence.res_config_settings_view_form
+msgid ""
+"Partner generated reference will be unique.<br/>\n"
+"                                <span class=\"fa fa-warning\"/> Be aware "
+"that changing this parameter will affect only new partners."
 msgstr ""
 
 #. module: base_partner_sequence
@@ -61,6 +82,20 @@ msgstr ""
 #. module: base_partner_sequence
 #: model_terms:ir.ui.view,arch_db:base_partner_sequence.res_config_settings_view_form
 msgid "Set Partner Reference field as read-only"
+msgstr ""
+
+#. module: base_partner_sequence
+#. odoo-python
+#: code:addons/base_partner_sequence/models/partner.py:0
+#, python-format
+msgid ""
+"The reference '%(ref)s' is already used by the following Partner(s):\n"
+"%(partners)s"
+msgstr ""
+
+#. module: base_partner_sequence
+#: model:ir.model.fields,help:base_partner_sequence.field_res_company__partner_generated_reference_unique
+msgid "This is a technical field that allows to get this from config parameter"
 msgstr ""
 
 #~ msgid "Partner"
