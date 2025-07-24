@@ -40,13 +40,13 @@ class ResPartner(models.Model):
         for vals in vals_list:
             if not vals.get("ref") and self._needs_ref(vals=vals):
                 vals["ref"] = self._get_next_ref(vals=vals)
-        return super(ResPartner, self).create(vals_list)
+        return super().create(vals_list)
 
     def copy(self, default=None):
         default = default or {}
         if self._needs_ref():
             default["ref"] = self._get_next_ref()
-        return super(ResPartner, self).copy(default=default)
+        return super().copy(default=default)
 
     def write(self, vals):
         partners_needing_ref = self.env["res.partner"]
@@ -74,7 +74,8 @@ class ResPartner(models.Model):
                 if clashing_partners:
                     raise ValidationError(
                         _(
-                            "The Partner Reference '%(ref)s' is already used by the following Partner(s):\n%(partners)s",
+                            "The reference '%(ref)s' is already used by the "
+                            "following Partner(s):\n%(partners)s",
                             ref=partner.ref,
                             partners="\n".join(
                                 [f"- {p.name} (id={p.id})" for p in clashing_partners]
@@ -118,4 +119,4 @@ class ResPartner(models.Model):
         """
         if self.env.company.partner_generated_reference_unique:
             return super()._commercial_fields()
-        return super(ResPartner, self)._commercial_fields() + ["ref"]
+        return super()._commercial_fields() + ["ref"]
