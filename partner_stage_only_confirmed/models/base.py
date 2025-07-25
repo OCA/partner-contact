@@ -24,7 +24,7 @@ class Base(models.AbstractModel):
                         ftype, fcomodel_name = field_obj.type, field_obj.comodel_name
                         if (ftype, fcomodel_name) != ("many2one", "res.partner"):
                             continue
-                        for node in doc.xpath("//field[@name='%s']" % fname):
+                        for node in doc.xpath(f"//field[@name='{fname}']"):
                             domain = node.get("domain")
                             if not domain:
                                 domain = "[('state', '=', 'confirmed')]"
