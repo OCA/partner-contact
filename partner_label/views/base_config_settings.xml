@@ -13,33 +13,33 @@
                                 <div class="content-group">
                                     <div class="mt16 row">
                                         <label
-                                            for="partner_labels_width"
-                                            class="col-3 col-lg-3 o_light_label"
-                                        />
+                                        for="partner_labels_width"
+                                        class="col-3 col-lg-3 o_light_label"
+                                    />
                                         <field
-                                            name="partner_labels_width"
-                                            class="oe_inline"
-                                        />mm
+                                        name="partner_labels_width"
+                                        class="oe_inline"
+                                    />mm
                                     </div>
                                     <div class="mt16 row">
                                         <label
-                                            for="partner_labels_height"
-                                            class="col-3 col-lg-3 o_light_label"
-                                        />
+                                        for="partner_labels_height"
+                                        class="col-3 col-lg-3 o_light_label"
+                                    />
                                         <field
-                                            name="partner_labels_height"
-                                            class="oe_inline"
-                                        />mm
+                                        name="partner_labels_height"
+                                        class="oe_inline"
+                                    />mm
                                     </div>
                                     <div class="mt16 row">
                                         <label
-                                            for="partner_labels_padding"
-                                            class="col-3 col-lg-3 o_light_label"
-                                        />
+                                        for="partner_labels_padding"
+                                        class="col-3 col-lg-3 o_light_label"
+                                    />
                                         <field
-                                            name="partner_labels_padding"
-                                            class="oe_inline"
-                                        />mm
+                                        name="partner_labels_padding"
+                                        class="oe_inline"
+                                    />mm
                                     </div>
                                     <div class="mt16 row">
                                         <label
@@ -67,43 +67,43 @@
                                 <div class="content-group">
                                     <div class="mt16 row">
                                         <label
-                                            for="partner_labels_margin_top"
-                                            class="col-3 col-lg-3 o_light_label"
-                                        />
+                                        for="partner_labels_margin_top"
+                                        class="col-3 col-lg-3 o_light_label"
+                                    />
                                         <field
-                                            name="partner_labels_margin_top"
-                                            class="oe_inline"
-                                        />mm
+                                        name="partner_labels_margin_top"
+                                        class="oe_inline"
+                                    />mm
                                     </div>
                                     <div class="mt16 row">
                                         <label
-                                            for="partner_labels_margin_bottom"
-                                            class="col-3 col-lg-3 o_light_label"
-                                        />
+                                        for="partner_labels_margin_bottom"
+                                        class="col-3 col-lg-3 o_light_label"
+                                    />
                                         <field
-                                            name="partner_labels_margin_bottom"
-                                            class="oe_inline"
-                                        />mm
+                                        name="partner_labels_margin_bottom"
+                                        class="oe_inline"
+                                    />mm
                                     </div>
                                     <div class="mt16 row">
                                         <label
-                                            for="partner_labels_margin_left"
-                                            class="col-3 col-lg-3 o_light_label"
-                                        />
+                                        for="partner_labels_margin_left"
+                                        class="col-3 col-lg-3 o_light_label"
+                                    />
                                         <field
-                                            name="partner_labels_margin_left"
-                                            class="oe_inline"
-                                        />mm
+                                        name="partner_labels_margin_left"
+                                        class="oe_inline"
+                                    />mm
                                     </div>
                                     <div class="mt16 row">
                                         <label
-                                            for="partner_labels_margin_right"
-                                            class="col-3 col-lg-3 o_light_label"
-                                        />
+                                        for="partner_labels_margin_right"
+                                        class="col-3 col-lg-3 o_light_label"
+                                    />
                                         <field
-                                            name="partner_labels_margin_right"
-                                            class="oe_inline"
-                                        />mm
+                                        name="partner_labels_margin_right"
+                                        class="oe_inline"
+                                    />mm
                                     </div>
                                 </div>
                             </div>
