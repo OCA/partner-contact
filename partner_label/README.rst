@@ -84,6 +84,10 @@ Contributors
 
   - Quan Nguyen <quan.nhm@komit-consulting.com>
 
+- [Trobz] (https://trobz.com/):
+
+  - Khoi (Kien Kim) <khoikk@trobz.com>
+
 Maintainers
 -----------
 
