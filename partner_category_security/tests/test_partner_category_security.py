@@ -2,8 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from odoo.tests import new_test_user
-from odoo.tests.common import Form
+from odoo.tests import Form, new_test_user
 
 from odoo.addons.base.tests.common import BaseCommon
 
@@ -31,24 +30,24 @@ class TestPartnerCategorySecurity(BaseCommon):
 
     def test_check_access_rights_basic_user(self):
         model = self.partner_category_model.with_user(self.basic_user)
-        self.assertTrue(model.check_access_rights("read", False))
-        self.assertFalse(model.check_access_rights("write", False))
-        self.assertFalse(model.check_access_rights("create", False))
-        self.assertFalse(model.check_access_rights("unlink", False))
+        self.assertTrue(model.has_access("read"))
+        self.assertFalse(model.has_access("write"))
+        self.assertFalse(model.has_access("create"))
+        self.assertFalse(model.has_access("unlink"))
 
     def test_check_access_rights_partner_category_user(self):
         model = self.partner_category_model.with_user(self.partner_category_user)
-        self.assertTrue(model.check_access_rights("read", False))
-        self.assertFalse(model.check_access_rights("write", False))
-        self.assertFalse(model.check_access_rights("create", False))
-        self.assertFalse(model.check_access_rights("unlink", False))
+        self.assertTrue(model.has_access("read"))
+        self.assertFalse(model.has_access("write"))
+        self.assertFalse(model.has_access("create"))
+        self.assertFalse(model.has_access("unlink"))
 
     def test_check_access_rights_partner_category_manager(self):
         model = self.partner_category_model.with_user(self.partner_category_manager)
-        self.assertTrue(model.check_access_rights("read", False))
-        self.assertTrue(model.check_access_rights("write", False))
-        self.assertTrue(model.check_access_rights("create", False))
-        self.assertTrue(model.check_access_rights("unlink", False))
+        self.assertTrue(model.has_access("read"))
+        self.assertTrue(model.has_access("write"))
+        self.assertTrue(model.has_access("create"))
+        self.assertTrue(model.has_access("unlink"))
 
     def test_partner_model_fields_view_get_1(self):
         """Basic users can only read categories, but not set them."""
