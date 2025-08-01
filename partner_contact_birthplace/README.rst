@@ -36,20 +36,6 @@ bithplace city and allows you to benefit of a clearer API and UI.
 .. contents::
    :local:
 
-Installation
-============
-
-To install this module, you need to:
-
-- Install the OCA repository 'partner_contact'
-- Update your modules list.
-- Search and install this module.
-
-Configuration
-=============
-
-No configuration is needed.
-
 Usage
 =====
 
