@@ -41,9 +41,9 @@ Installation
 
 To install this module, you need to:
 
--  Install the OCA repository 'partner_contact'
--  Update your modules list.
--  Search and install this module.
+- Install the OCA repository 'partner_contact'
+- Update your modules list.
+- Search and install this module.
 
 Configuration
 =============
@@ -55,15 +55,14 @@ Usage
 
 To use this module, you need to:
 
--  Edit or create a partner.
--  Ensure it is **not** a company.
--  Go to the Personal Information sheet.
--  Set the birthplace there.
+- Edit or create a partner.
+- Ensure it is **not** a company.
+- Go to the Personal Information sheet.
+- Set the birthplace there.
 
-For further information, please visit:
+|partner_form|
 
--  https://www.odoo.com/forum/help-1
--  https://github.com/OCA/partner-contact/
+.. |partner_form| image:: https://raw.githubusercontent.com/OCA/partner-contact/18.0/partner_contact_birthplace/static/description/partner_form.png
 
 Bug Tracker
 ===========
@@ -86,12 +85,11 @@ Authors
 Contributors
 ------------
 
--  Simone Rubino <simone.rubino@agilebg.com>
-   (<<http://www.agilebg.com/>)
--  Nicolò Crisafulli <nicolo.crisafulli@agilebg.com>
-   (<<http://www.agilebg.com/>)
--  Giuseppe Borruso <gborruso@dinamicheaziendali.it>
-   (<<https://www.dinamicheaziendali.it/>)
+- Simone Rubino <simone.rubino@agilebg.com> (<<http://www.agilebg.com/>)
+- Nicolò Crisafulli <nicolo.crisafulli@agilebg.com>
+  (<<http://www.agilebg.com/>)
+- Giuseppe Borruso <gborruso@dinamicheaziendali.it>
+  (<<https://www.dinamicheaziendali.it/>)
 
 Maintainers
 -----------
