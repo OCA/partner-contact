@@ -12,6 +12,7 @@
             <xpath expr="//group[@name='personal_information_group']">
                 <field name="birth_city" />
                 <field name="birth_state_id" />
+                <field name="birth_zip" />
                 <field name="birth_country_id" />
             </xpath>
         </field>
