@@ -5,7 +5,4 @@ To use this module, you need to:
 -  Go to the Personal Information sheet.
 -  Set the birthplace there.
 
-For further information, please visit:
-
--  https://www.odoo.com/forum/help-1
--  https://github.com/OCA/partner-contact/
+![partner_form](../static/description/partner_form.png)
