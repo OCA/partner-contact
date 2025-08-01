@@ -8,6 +8,7 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     birth_city = fields.Char()
+    birth_zip = fields.Char()
     birth_state_id = fields.Many2one(
         comodel_name="res.country.state", string="Birth state", ondelete="restrict"
     )
