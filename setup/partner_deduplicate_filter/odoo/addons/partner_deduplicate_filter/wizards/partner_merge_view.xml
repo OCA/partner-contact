@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2016 Tecnativa - Pedro M. Baeza
+     Copyright 2017 Tecnativa - Vicent Cubells
+     Copyright 2019 Tecnativa - Victor M.M Torres
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record id="base_partner_merge_automatic_wizard_form" model="ir.ui.view">
+        <field name="model">base.partner.merge.automatic.wizard</field>
+        <field name="inherit_id" ref="base.base_partner_merge_automatic_wizard_form" />
+        <field name="arch" type="xml">
+            <field name='exclude_contact' position="before">
+                <field name="exclude_is_company" />
+                <field name="exclude_not_parent" />
+                <field name="exclude_parent" />
+            </field>
+        </field>
+    </record>
+</odoo>

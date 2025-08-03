@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_partner_form_department">
+        <field name="name">Partner form with department</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group//field[@name='function']" position="after">
+                <field
+                    name="department_id"
+                    placeholder="Department"
+                    attrs="{'invisible': [('is_company','=', True)]}"
+                    options='{"no_open": True}'
+                />
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='function']"
+                position="after"
+            >
+                <field name="is_company" invisible="True" />
+                <field
+                    name="department_id"
+                    placeholder="Department"
+                    attrs="{'invisible': [('is_company','=', True)]}"
+                    options='{"no_open": True}'
+                />
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_res_partner_filter_department">
+        <field name="name">Partner search with department</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="department_id" />
+            </field>
+            <filter name="salesperson" position="after">
+                <filter
+                    name="department"
+                    string="Department"
+                    domain="[('is_company', '=', False)]"
+                    context="{'group_by': 'department_id'}"
+                />
+            </filter>
+        </field>
+    </record>
+</odoo>

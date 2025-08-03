@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='child_ids']" position="before">
+                <group>
+                    <group>
+                        <field
+                            name="partner_delivery_id"
+                            domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'delivery')]"
+                            widget="selection"
+                        />
+                    </group>
+                    <group>
+                        <field
+                            name="partner_invoice_id"
+                            domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'invoice')]"
+                            widget="selection"
+                        />
+                    </group>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']//form//group" position="after">
+                <group
+                    string="Force addresses"
+                    attrs="{'invisible': [('type', '!=', 'contact')]}"
+                >
+                    <group colspan="4">
+                        <field name="commercial_partner_id" invisible="1" />
+                        <div class="oe_grey">
+                            <div
+                            >You can force and delivery and invoice address for this contacts.</div>
+                            <div
+                            >If you keep empty this fields the Odoo's behavior will be normal</div>
+                        </div>
+                    </group>
+                    <group colspan="4">
+                        <field
+                            name="partner_delivery_id"
+                            domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'delivery')]"
+                        />
+                    </group>
+                    <group colspan="4">
+                        <field
+                            name="partner_invoice_id"
+                            domain="[('id', 'child_of', commercial_partner_id), ('type', '=', 'invoice')]"
+                        />
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

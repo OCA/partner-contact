@@ -1,0 +1,96 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_supplierinfo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_supplierinfo
+#: model:ir.model.constraint,message:partner_supplierinfo.constraint_partner_supplierinfo_unique_ref
+msgid "A reference of this supplier already exists."
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model,name:partner_supplierinfo.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model,name:partner_supplierinfo.model_partner_supplierinfo
+msgid "Partner reference equivalence to identify another partner"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__ref
+msgid "Ref"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_partner_supplierinfo__supplier_id
+msgid "Supplier"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_res_partner__supplier_info_ids
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_res_users__supplier_info_ids
+msgid "Supplier Info"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model_terms:ir.ui.view,arch_db:partner_supplierinfo.view_partner_form
+msgid "Supplier Information"
+msgstr ""
+
+#. module: partner_supplierinfo
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_res_partner__supplier_ref
+#: model:ir.model.fields,field_description:partner_supplierinfo.field_res_users__supplier_ref
+msgid "Supplier Ref"
+msgstr ""

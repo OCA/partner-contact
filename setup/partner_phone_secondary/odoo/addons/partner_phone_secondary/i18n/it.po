@@ -1,0 +1,37 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_phone_secondary
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2021-12-13 00:44+0000\n"
+"Last-Translator: Sergio Zanchetta <primes2h@gmail.com>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
+
+#. module: partner_phone_secondary
+#: model:ir.model,name:partner_phone_secondary.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_phone_secondary
+#: model:ir.model.fields,field_description:partner_phone_secondary.field_res_partner__phone2
+#: model:ir.model.fields,field_description:partner_phone_secondary.field_res_users__phone2
+msgid "Phone (Secondary)"
+msgstr "Telefono (secondario)"
+
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"

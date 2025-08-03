@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_age-range_tree" model="ir.ui.view">
+        <field name="name">res.partner.age.range.tree</field>
+        <field name="model">res.partner.age.range</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name" />
+                <field name="age_from" />
+                <field name="age_to" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_partner_age_range_form" model="ir.ui.view">
+        <field name="name">res.partner.age.range.form</field>
+        <field name="model">res.partner.age.range</field>
+        <field name="arch" type="xml">
+            <form string="Partner Age Range">
+                <sheet>
+                    <group col="4">
+                        <field name="name" />
+                        <field name="age_from" />
+                        <field name="age_to" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_partner_age_range" model="ir.actions.act_window">
+        <field name="name">Age Ranges</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner.age.range</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help">
+            Manage the contact age range you want to have available in your system.
+            For eg: 0-10, 11-20
+        </field>
+    </record>
+    <menuitem
+        id="menu_partner_age_range"
+        action="action_partner_age_range"
+        name="Age Ranges"
+        sequence="2"
+        parent="contacts.res_partner_menu_config"
+    />
+</odoo>

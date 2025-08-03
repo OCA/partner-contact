@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="vat" position="before">
+                <field
+                    name="company_group_id"
+                    attrs="{'invisible': [('is_company','=', False)]}"
+                />
+            </field>
+        </field>
+    </record>
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">res.partner.select</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="company_group_id" />
+            </field>
+            <filter name="group_company" position="before">
+                <filter
+                    name="group_company_group"
+                    string="Company Group"
+                    context="{'group_by': 'company_group_id'}"
+                />
+            </filter>
+        </field>
+    </record>
+    <record id="action_open_group_members" model="ir.actions.act_window">
+        <field name="name">Company group members</field>
+        <field name="res_model">res.partner</field>
+        <field name="binding_model_id" ref="model_res_partner" />
+        <field name="view_mode">tree</field>
+        <field name="target">current</field>
+        <field
+            name="domain"
+        >[('company_group_id', 'in', context.get('active_ids'))]</field>
+    </record>
+</odoo>

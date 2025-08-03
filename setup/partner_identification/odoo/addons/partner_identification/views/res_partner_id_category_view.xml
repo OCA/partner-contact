@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Partner Identification Number Categories -->
+    <record id="view_partner_id_category_form" model="ir.ui.view">
+        <field name="name">res.partner.id_category.form</field>
+        <field name="model">res.partner.id_category</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Partner Identification Categories">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="code" />
+                            <field name="validation_code" />
+                        </group>
+                        <group>
+                            <div class="alert alert-primary" role="alert">
+                                <h4>Python Validation Code:</h4>
+                                <pre>
+# Use failed = True to specify that the id number is not valid.
+# You can use the following variables :
+#  - self: browse_record of the current ID Category browse_record
+#  - id_number: browse_record of ID number to validate
+
+<b><i># Sample 1: ID number only contains digits</i></b>
+if not id_number.name.isdigit():
+    failed = True
+else:
+    failed = False
+
+<b><i># Sample 2: Length of ID number cannot exceed 10 chars</i></b>
+failed = len(id_number.name) > 10 and True or False
+
+<b><i># Sample 3: ID number must start with the category code</i></b>
+failed = not id_number.name.startswith(self.code) and True or False
+                                </pre>
+                            </div>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_partner_id_category_tree" model="ir.ui.view">
+        <field name="name">res.partner.id_category.tree</field>
+        <field name="model">res.partner.id_category</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="code" />
+            </tree>
+        </field>
+    </record>
+    <record id="action_partner_id_category" model="ir.actions.act_window">
+        <field name="name">Partner ID Categories</field>
+        <field name="res_model">res.partner.id_category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        action="action_partner_id_category"
+        id="menu_partner_id_category"
+        parent="contacts.res_partner_menu_config"
+    />
+</odoo>

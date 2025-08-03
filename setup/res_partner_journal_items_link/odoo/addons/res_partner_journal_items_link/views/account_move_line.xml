@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="action_partner_account_move_line" model="ir.actions.act_window">
+        <field name="name">Journal items</field>
+        <field name="res_model">account.move.line</field>
+        <field name="context">{}</field>
+        <field name="domain">[('partner_id', 'in', active_ids)]</field>
+    </record>
+</odoo>
