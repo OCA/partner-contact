@@ -7,7 +7,7 @@ class IRActionsWindow(models.Model):
     _inherit = "ir.actions.act_window"
 
     def read(self, fields=None, context=None, load="_classic_read"):
-        actions = super(IRActionsWindow, self).read(fields=fields, load=load)
+        actions = super().read(fields=fields, load=load)
         for action in actions:
             if action.get("res_model", "") == "res.partner":
                 # By default, only show standalone contact

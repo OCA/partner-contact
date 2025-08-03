@@ -48,7 +48,7 @@ class ResPartner(models.Model):
         return result
 
     @api.model
-    def search(self, args, offset=0, limit=None, order=None, count=False):
+    def search(self, args, offset=0, limit=None, order=None):
         """Display only standalone contact matching ``args`` or having
         attached contact matching ``args``"""
         ctx = self.env.context
@@ -60,16 +60,14 @@ class ResPartner(models.Model):
             attached_contact_args = expression.AND(
                 (args, [("contact_type", "=", "attached")])
             )
-            attached_contacts = super(ResPartner, self).search(attached_contact_args)
+            attached_contacts = super().search(attached_contact_args)
             args = expression.OR(
                 (
                     expression.AND(([("contact_type", "=", "standalone")], args)),
                     [("other_contact_ids", "in", attached_contacts.ids)],
                 )
             )
-        return super(ResPartner, self).search(
-            args, offset=offset, limit=limit, order=order, count=count
-        )
+        return super().search(args, offset=offset, limit=limit, order=order)
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -99,7 +97,7 @@ class ResPartner(models.Model):
         """Returns the partner that is considered the commercial
         entity of this partner. The commercial entity holds the master data
         for all commercial fields (see :py:meth:`~_commercial_fields`)"""
-        result = super(ResPartner, self)._compute_commercial_partner()
+        result = super()._compute_commercial_partner()
         for partner in self:
             if partner.contact_type == "attached" and not partner.parent_id:
                 partner.commercial_partner_id = partner.contact_id
@@ -135,7 +133,7 @@ class ResPartner(models.Model):
         fields.related to the parent
         """
         self.ensure_one()
-        res = super(ResPartner, self)._fields_sync(update_values)
+        res = super()._fields_sync(update_values)
         contact_fields = self._contact_fields()
         # 1. From UPSTREAM: sync from parent contact
         if update_values.get("contact_id"):
