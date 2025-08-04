@@ -20,7 +20,7 @@ class TestPartnerCategorySecurityCrm(TestPartnerCategorySecurity):
 
     def test_check_access_rights_salesman_user(self):
         model = self.partner_category_model.with_user(self.salesman_user)
-        self.assertTrue(model.check_access_rights("read", False))
-        self.assertFalse(model.check_access_rights("write", False))
-        self.assertFalse(model.check_access_rights("create", False))
-        self.assertFalse(model.check_access_rights("unlink", False))
+        self.assertTrue(model.has_access("read"))
+        self.assertFalse(model.has_access("write"))
+        self.assertFalse(model.has_access("create"))
+        self.assertFalse(model.has_access("unlink"))

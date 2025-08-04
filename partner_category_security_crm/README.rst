@@ -68,6 +68,8 @@ Contributors
   - Víctor Martínez
   - Pedro M. Baeza
 
+- Ruchir Shukla <ruchir@bizzappdev.com>
+
 Maintainers
 -----------
 
