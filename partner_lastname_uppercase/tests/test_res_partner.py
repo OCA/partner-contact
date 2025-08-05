@@ -23,7 +23,7 @@ class LastnameUppercaseCase(TransactionCase):
     def _create_company(self, name=None):
         if name is None:
             name = "A Company"
-        return self.env["res.partner"].create({"name": name, "is_company": True})
+        return self.env["res.partner"].create({"name": name, "company_type": "company"})
 
     def test_lastname_uppercased_on_create(self):
         partner = self._create_partner()

@@ -90,6 +90,8 @@ Contributors
 
   - Robin Keunen
 
+- Ruchir Shukla <ruchir@bizzappdev.com>
+
 Maintainers
 -----------
 

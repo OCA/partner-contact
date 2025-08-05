@@ -1,2 +1,3 @@
 - [Coop IT Easy SC](https://coopiteasy.be):
   - Robin Keunen
+- Ruchir Shukla \<<ruchir@bizzappdev.com>\>
