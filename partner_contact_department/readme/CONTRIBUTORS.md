@@ -8,3 +8,4 @@
 - Harald Panten \<<harald.panten@sygel.es>\>
 - Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
 - Aiendry Sarkar \<<aiendry@aktivsoftware.com>\>
+- Ruchir Shukla \<<ruchir@bizzappdev.com>\>
