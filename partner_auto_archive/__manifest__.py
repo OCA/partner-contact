@@ -9,9 +9,7 @@
     "category": "Customer Relationship Management",
     "summary": "Archive periodically all contacts marked as auto-archive.",
     "license": "AGPL-3",
-    "depends": [
-        "base",
-    ],
+    "depends": ["base", "mail"],
     "data": ["views/res_partner_views.xml", "data/ir_cron.xml"],
     "installable": True,
     "application": False,
