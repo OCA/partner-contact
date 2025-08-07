@@ -5,3 +5,4 @@
   - César A. Sánchez
 - [Pesol](https://www.pesol.es):
   - Jonathan Oscategui Taza \<info@pesol.es\>
+- Ruchir Shukla \<<ruchir@bizzappdev.com>\>

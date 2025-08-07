@@ -78,6 +78,8 @@ Contributors
 
   - Jonathan Oscategui Taza <info@pesol.es>
 
+- Ruchir Shukla <ruchir@bizzappdev.com>
+
 Maintainers
 -----------
 
