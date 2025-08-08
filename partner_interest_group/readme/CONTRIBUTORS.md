@@ -1,2 +1,3 @@
 - [Coop IT Easy SC](https://coopiteasy.be):
   - Victor Champonnois
+- Ruchir Shukla \<<ruchir@bizzappdev.com>\>
