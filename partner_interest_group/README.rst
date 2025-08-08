@@ -75,6 +75,8 @@ Contributors
 
   - Victor Champonnois
 
+- Ruchir Shukla <ruchir@bizzappdev.com>
+
 Maintainers
 -----------
 
