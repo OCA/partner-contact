@@ -226,7 +226,7 @@ class NutsImport(models.TransientModel):
         tree_view_id = self.env.ref("base_location_nuts.res_partner_nuts_tree").id
         return {
             "name": _("Partner NUTS by EU"),
-            "view_mode": "tree",
+            "view_mode": "list",
             "res_model": "res.partner.nuts",
             "view_id": tree_view_id,
             "type": "ir.actions.act_window",
