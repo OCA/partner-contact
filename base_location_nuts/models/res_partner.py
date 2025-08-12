@@ -44,12 +44,25 @@ class ResPartner(models.Model):
             for level in range(1, 4):
                 nuts = partner["nuts%d_id" % level]
                 if nuts:
-                    domain = OR(
-                        [
-                            domain,
-                            [("parent_id", "=", nuts.id), ("level", "=", level + 1)],
-                        ]
-                    )
+                    if not domain:
+                        domain = OR(
+                            [
+                                [
+                                    ("parent_id", "=", nuts.id),
+                                    ("level", "=", level + 1),
+                                ],
+                            ]
+                        )
+                    else:
+                        domain = OR(
+                            [
+                                [
+                                    ("parent_id", "=", nuts.id),
+                                    ("level", "=", level + 1),
+                                ],
+                                domain,
+                            ]
+                        )
             if partner.country_id:
                 domain = AND([[("country_id", "=", partner.country_id.id)], domain])
             partner.allowed_nut_ids = Nuts.search(domain)

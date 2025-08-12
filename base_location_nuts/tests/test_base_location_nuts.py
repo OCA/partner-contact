@@ -5,7 +5,8 @@ from unittest.mock import patch
 
 from requests.exceptions import HTTPError
 
-from odoo.tests.common import Form, TransactionCase, new_test_user
+from odoo.tests import Form
+from odoo.tests.common import TransactionCase, new_test_user
 from odoo.tools import mute_logger
 
 from .test_nuts_request_results import create_response_error, create_response_ok
@@ -41,7 +42,11 @@ class TestBaseLocationNuts(TransactionCase):
         cls.nuts1_2.write({"country_id": cls.country_2})
 
         cls.partner = cls.env["res.partner"].create(
-            {"name": "Test partner", "country_id": cls.country_1.id}
+            {
+                "name": "Test partner",
+                "country_id": cls.country_1.id,
+                "state_id": cls.country_1.state_ids[0].id,
+            }
         )
         cls.state_1 = cls.env["res.country.state"].create(
             {"name": "Zaragoza Test", "code": "ZT", "country_id": cls.country_1.id}
@@ -60,6 +65,7 @@ class TestBaseLocationNuts(TransactionCase):
 
     def test_onchange_nuts(self):
         self.partner.country_id = self.country_2
+        self.partner.state_id = self.country_2.state_ids[0]
         self.partner._onchange_country_id_base_location_nuts()
         self.assertEqual(self.partner.nuts1_id.country_id, self.partner.country_id)
         self.partner.nuts4_id = self.nuts4_1
@@ -71,6 +77,7 @@ class TestBaseLocationNuts(TransactionCase):
         self.partner._onchange_nuts2_id()
         self.assertEqual(self.partner.nuts1_id.country_id, self.country_1)
         self.partner.country_id = self.country_2
+        self.partner.state_id = self.country_2.state_ids[0]
         self.partner._onchange_country_id_base_location_nuts()
         self.assertEqual(self.partner.country_id, self.nuts1_2.country_id)
         self.assertFalse(self.partner.nuts2_id)
