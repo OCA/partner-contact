@@ -28,7 +28,7 @@
             <xpath expr="//field[@name='active']" position="after">
                 <field name="properties_company_id" />
             </xpath>
-            <xpath expr="//div[hasclass('o_kanban_record_bottom')]" position="before">
+            <xpath expr="//footer" position="before">
                 <div>
                     <t t-if="record.is_company.raw_value">
                         <field name="properties_type_company" widget="properties" />
