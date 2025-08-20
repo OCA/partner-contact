@@ -34,6 +34,7 @@ addon | version | maintainers | summary
 [partner_contact_access_link](partner_contact_access_link/) | 18.0.1.0.0 | <a href='https://github.com/Yajo'><img src='https://github.com/Yajo.png' width='32' height='32' style='border-radius:50%;' alt='Yajo'/></a> | Allow to visit the full contact form from a company
 [partner_contact_address_default](partner_contact_address_default/) | 18.0.1.0.0 |  | Set a default delivery address, invoice address and contact for contacts
 [partner_contact_birthdate](partner_contact_birthdate/) | 18.0.1.0.0 | <a href='https://github.com/Daemo00'><img src='https://github.com/Daemo00.png' width='32' height='32' style='border-radius:50%;' alt='Daemo00'/></a> | Contact's birthdate
+[partner_contact_department](partner_contact_department/) | 18.0.1.0.1 |  | Assign contacts to departments
 [partner_contact_gender](partner_contact_gender/) | 18.0.1.0.0 |  | Add gender field to contacts
 [partner_contact_job_position](partner_contact_job_position/) | 18.0.1.0.0 |  | Categorize job positions for contacts
 [partner_contact_lang](partner_contact_lang/) | 18.0.1.0.0 |  | Manage language in contacts
