@@ -1,9 +1,7 @@
-#from odoo.tests.common import TransactionCase
 from odoo.addons.base.tests.common import BaseCommon
 
 
 # @tagged('-at_install', 'post_install')
-#class TestAnimalState(TransactionCase):
 class TestAnimalState(BaseCommon):
     @classmethod
     def setUpClass(cls, *args, **kwargs):
