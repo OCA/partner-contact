@@ -2,7 +2,7 @@
 # Copyright 2014 Agile Business Group (<http://www.agilebg.com>)
 # Copyright 2015 Grupo ESOC (<http://www.grupoesoc.es>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from odoo import _, models
+from odoo import models
 
 
 class ResUsers(models.Model):
@@ -26,5 +26,5 @@ class ResUsers(models.Model):
                 default.update(
                     self.env["res.partner"]._get_inverse_name(default["name"], False)
                 )
-            records |= super(ResUser, record).copy(default)
+            records |= super(ResUsers, record).copy(default)
         return records

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="partner_firstname_required_fields" model="ir.config_parameter">
+        <field name="key">partner_firstname.required_fields</field>
+        <field name="value">no</field>
+    </record>
+</odoo>
