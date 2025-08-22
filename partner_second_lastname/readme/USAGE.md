@@ -2,7 +2,7 @@ To use this module, you need to:
 
 - Edit any partner's form.
 - Make sure the partner is not a company.
-- Enter firstname and lastnames.
+- Enter firstname, lastnames, secondlast name.
 
 If you directly enter the full name instead of entering the other fields
 separately (maybe from other form), this module will try to guess the
