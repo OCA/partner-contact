@@ -31,7 +31,7 @@ class ResConfigSettings(models.TransientModel):
         ]
 
     def _partner_names_order_default(self):
-        return self.env["res.partner"]._names_order_default()
+        return "first_last"
 
     def _inverse_partner_names_order(self):
         current = (
