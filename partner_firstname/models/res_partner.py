@@ -7,8 +7,6 @@ import logging
 
 from odoo import _, api, fields, models
 
-from .. import exceptions
-
 _logger = logging.getLogger(__name__)
 
 
@@ -19,7 +17,9 @@ class ResPartner(models.Model):
     _inherit = ["res.partner", "firstname.mixin"]
 
     firstname = fields.Char("First name", index=True)
+
     lastname = fields.Char("Last name", index=True)
+
     name = fields.Char(
         compute="_compute_name",
         inverse="_inverse_name_after_cleaning_whitespace",
@@ -27,6 +27,22 @@ class ResPartner(models.Model):
         store=True,
         readonly=False,
     )
+
+    # @api.depends(lambda self: self._get_fields_depend_firstname_lastname_required())
+    def _compute_firstname_lastname_required(self):
+        for partner in self.filtered(lambda x: x.is_company or not x.type == "contact"):
+            partner.firstname_required = False
+            partner.lastname_required = False
+
+        return super(
+            ResPartner,
+            self.filtered(lambda x: not x.is_company and x.type == "contact"),
+        )._compute_firstname_lastname_required()
+
+    def _get_fields_depend_firstname_lastname_required(self):
+        res = super()._get_fields_depend_firstname_lastname_required()
+        res += ["is_company", "type"]
+        return res
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -125,18 +141,6 @@ class ResPartner(models.Model):
             parts = record._get_inverse_name(record.name, record.is_company)
             record.lastname = parts["lastname"]
             record.firstname = parts["firstname"]
-
-    @api.constrains("firstname", "lastname")
-    def _check_name(self):
-        """Ensure at least one name is set."""
-        for record in self:
-            if all(
-                (
-                    record.type == "contact" or record.is_company,
-                    not (record.firstname or record.lastname),
-                )
-            ):
-                raise exceptions.EmptyNamesError(record, self.env)
 
     @api.model
     def _install_partner_firstname(self):
