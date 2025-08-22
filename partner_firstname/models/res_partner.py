@@ -15,7 +15,8 @@ _logger = logging.getLogger(__name__)
 class ResPartner(models.Model):
     """Adds last name and first name; name becomes a stored function field."""
 
-    _inherit = "res.partner"
+    _name = "res.partner"
+    _inherit = ["res.partner", "firstname.mixin"]
 
     firstname = fields.Char("First name", index=True)
     lastname = fields.Char("Last name", index=True)
@@ -26,24 +27,6 @@ class ResPartner(models.Model):
         store=True,
         readonly=False,
     )
-
-    form_has_lastname_first = fields.Boolean(compute="_compute_form_has_lastname_first")
-
-    def _compute_form_has_lastname_first(self):
-        default_order = (
-            self.env["res.config.settings"].sudo()._partner_names_order_default()
-        )
-        self.form_has_lastname_first = (
-            self.env["ir.config_parameter"]
-            .sudo()
-            .get_param("partner_names_order", default_order)
-            != "first_last"
-        )
-
-    @api.model
-    def name_fields_in_vals(self, vals):
-        """Method to check if any name fields are in `vals`."""
-        return vals.get("firstname") or vals.get("lastname")
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -84,11 +67,11 @@ class ResPartner(models.Model):
             ).create([vals])
         return created_partners
 
-    def get_extra_default_copy_values(self, order):
+    def get_extra_default_copy_values(self):
         """Method to add '(copy)' suffix to lastname or firstname, depending on name
         order configuration.
         """
-        if order == "first_last":
+        if self._get_names_order() == "first_last":
             return {
                 "lastname": _("%s (copy)", self.lastname)
                 if self.lastname
@@ -108,68 +91,21 @@ class ResPartner(models.Model):
         and lastname fields.
         """
         default = default or {}
-        order = self._get_names_order()
         records = self.browse()
         for record in self:
-            extra_default_values = record.get_extra_default_copy_values(order)
+            extra_default_values = record.get_extra_default_copy_values()
             records |= super(ResPartner, record.with_context(copy=True)).copy(
                 default | extra_default_values
             )
         return records
 
-    @api.model
-    def default_get(self, fields_list):
-        """Invert name when getting default values."""
-        if (
-            "firstname" in fields_list or "lastname" in fields_list
-        ) and "name" not in fields_list:
-            fields_list.append("name")
-        result = super().default_get(fields_list)
-
-        inverted = self._get_inverse_name(
-            self._get_whitespace_cleaned_name(result.get("name", "")),
-            result.get("is_company", False),
-        )
-
-        for field in list(inverted.keys()):
-            if field in fields_list:
-                result[field] = inverted.get(field)
-
-        return result
-
-    @api.model
-    def _names_order_default(self):
-        return "first_last"
-
-    @api.model
-    def _get_names_order(self):
-        """Get names order configuration from system parameters.
-        You can override this method to read configuration from language,
-        country, company or other"""
-        return (
-            self.env["ir.config_parameter"]
-            .sudo()
-            .get_param("partner_names_order", self._names_order_default())
-        )
-
-    @api.model
-    def _get_computed_name(self, lastname, firstname):
-        """Compute the 'name' field according to splitted data.
-        You can override this method to change the order of lastname and
-        firstname the computed name"""
-        order = self._get_names_order()
-        if order == "last_first_comma":
-            return ", ".join(p for p in (lastname, firstname) if p)
-        elif order == "first_last":
-            return " ".join(p for p in (firstname, lastname) if p)
-        else:
-            return " ".join(p for p in (lastname, firstname) if p)
-
     @api.depends("firstname", "lastname")
     def _compute_name(self):
         """Write the 'name' field according to splitted data."""
-        for record in self:
-            record.name = record._get_computed_name(record.lastname, record.firstname)
+        for partner in self:
+            partner.name = partner._get_computed_name(
+                partner.lastname, partner.firstname
+            )
 
     def _inverse_name_after_cleaning_whitespace(self):
         """Clean whitespace in :attr:`~.name` and split it.
@@ -182,68 +118,6 @@ class ResPartner(models.Model):
             clean = record._get_whitespace_cleaned_name(record.name)
             record.name = clean
             record._inverse_name()
-
-    @api.model
-    def _get_whitespace_cleaned_name(self, name, comma=False):
-        """Remove redundant whitespace from :param:`name`.
-
-        Removes leading, trailing and duplicated whitespace.
-        """
-        if isinstance(name, bytes):
-            # With users coming from LDAP, name can be a byte encoded string.
-            # This happens with FreeIPA for instance.
-            name = name.decode("utf-8")
-
-        try:
-            name = " ".join(name.split()) if name else name
-        except UnicodeDecodeError:
-            # with users coming from LDAP, name can be a str encoded as utf-8
-            # this happens with ActiveDirectory for instance, and in that case
-            # we get a UnicodeDecodeError during the automatic ASCII -> Unicode
-            # conversion that Python does for us.
-            # In that case we need to manually decode the string to get a
-            # proper unicode string.
-            name = " ".join(name.decode("utf-8").split()) if name else name
-
-        if comma:
-            name = name.replace(" ,", ",")
-            name = name.replace(", ", ",")
-        return name
-
-    @api.model
-    def _get_inverse_name(self, name, is_company=False):
-        """Compute the inverted name.
-
-        - If the partner is a company, save it in the lastname.
-        - Otherwise, make a guess.
-
-        This method can be easily overriden by other submodules.
-        You can also override this method to change the order of name's
-        attributes
-
-        When this method is called, :attr:`~.name` already has unified and
-        trimmed whitespace.
-        """
-        # Company name goes to the lastname
-        if is_company or not name:
-            parts = [name or False, False]
-        # Guess name splitting
-        else:
-            order = self._get_names_order()
-            # Remove redundant spaces
-            name = self._get_whitespace_cleaned_name(
-                name, comma=(order == "last_first_comma")
-            )
-            parts = name.split("," if order == "last_first_comma" else " ", 1)
-            if len(parts) > 1:
-                if order == "first_last":
-                    parts = [" ".join(parts[1:]), parts[0]]
-                else:
-                    parts = [parts[0], " ".join(parts[1:])]
-            else:
-                while len(parts) < 2:
-                    parts.append(False)
-        return {"lastname": parts[0], "firstname": parts[1]}
 
     def _inverse_name(self):
         """Try to revert the effect of :meth:`._compute_name`."""
