@@ -19,6 +19,14 @@ class ResConfigSettings(models.TransientModel):
         required=True,
         inverse="_inverse_partner_names_order",
     )
+
+    partner_names_required_fields = fields.Selection(
+        selection="_partner_names_required_fields_selection",
+        help="Define which fields are required or not",
+        config_parameter="partner_firstname.required_fields",
+        required=True,
+    )
+
     partner_names_order_changed = fields.Boolean(
         config_parameter="partner_names_order_changed"
     )
@@ -28,6 +36,14 @@ class ResConfigSettings(models.TransientModel):
             ("last_first", "Lastname Firstname"),
             ("last_first_comma", "Lastname, Firstname"),
             ("first_last", "Firstname Lastname"),
+        ]
+
+    def _partner_names_required_fields_selection(self):
+        return [
+            ("firstname_lastname", "First Name and Last Name"),
+            ("firstname", "First Name"),
+            ("lastname", "Last Name"),
+            ("no", "Nothing"),
         ]
 
     def _partner_names_order_default(self):

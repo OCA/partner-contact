@@ -21,6 +21,7 @@
     "depends": ["base_setup"],
     "post_init_hook": "post_init_hook",
     "data": [
+        "data/ir_config_parameter.xml",
         "views/base_config_view.xml",
         "views/res_partner.xml",
         "views/res_user.xml",
