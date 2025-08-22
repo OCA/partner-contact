@@ -17,7 +17,7 @@ class CompanyCase(TransactionCase):
     def tearDown(self):
         try:
             new = self.env["res.partner"].create(
-                {"is_company": True, "name": self.name}
+                {"company_type": "company", "name": self.name}
             )
 
             # Name should be cleaned of unneeded whitespace
