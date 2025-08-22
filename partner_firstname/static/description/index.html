@@ -391,12 +391,17 @@ support having separate last name and first name.</p>
 </div>
 <div class="section" id="configuration">
 <h2><a class="toc-backref" href="#toc-entry-1">Configuration</a></h2>
+<p><strong>Fields Order</strong></p>
 <p>You can configure some common name patterns for the inverse function in
 Settings &gt; General settings:</p>
-<ul class="simple">
-<li>Lastname Firstname: For example ‘Anderson Robert’</li>
-<li>Lastname, Firstname: For example ‘Anderson, Robert’</li>
-<li>Firstname Lastname: For example ‘Robert Anderson’</li>
+<ul>
+<li><p class="first">Lastname Firstname: For example ‘Anderson Robert’</p>
+</li>
+<li><p class="first">Lastname, Firstname: For example ‘Anderson, Robert’</p>
+</li>
+<li><p class="first">Firstname Lastname: For example ‘Robert Anderson’</p>
+<p><img alt="partner_names_order" src="https://raw.githubusercontent.com/OCA/partner-contact/19.0/partner_firstname/static/description/partner_names_order.png" /></p>
+</li>
 </ul>
 <p>After applying the changes, you can recalculate all partners name
 clicking “Recalculate names” button. Note: This process could take so
@@ -405,6 +410,10 @@ much time depending how many partners there are in database.</p>
 from a simple string and also <em>_get_computed_name</em> to get a name form
 the lastname and firstname. These methods can be overridden to change
 the format specified above.</p>
+<p><strong>Required Fields</strong></p>
+<p>you can configure if firstname and / or lastname are required, in
+“Settings &gt; General Settings”:</p>
+<p><img alt="partner_names_required_fields" src="https://raw.githubusercontent.com/OCA/partner-contact/19.0/partner_firstname/static/description/partner_names_required_fields.png" /></p>
 </div>
 <div class="section" id="usage">
 <h2><a class="toc-backref" href="#toc-entry-2">Usage</a></h2>

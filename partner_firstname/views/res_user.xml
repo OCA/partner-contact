@@ -10,8 +10,17 @@
             </xpath>
             <xpath expr="//field[@name='email']" position="after">
                 <group>
-                    <field name="lastname" required="not firstname" />
-                    <field name="firstname" required="not lastname" />
+                    <field
+                        name="lastname"
+                        invisible="not form_has_lastname_first"
+                        required="form_has_lastname_first and lastname_required"
+                    />
+                    <field name="firstname" required="firstname_required" />
+                    <field
+                        name="lastname"
+                        invisible="form_has_lastname_first"
+                        required="not form_has_lastname_first and lastname_required"
+                    />
                 </group>
             </xpath>
         </field>

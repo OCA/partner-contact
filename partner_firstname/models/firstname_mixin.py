@@ -2,18 +2,45 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from odoo import api, fields, models
 
+from .. import exceptions
+
 
 class FirstNameMixin(models.AbstractModel):
     _name = "firstname.mixin"
-    _description = "Manage common things needed for models"
-    " that have firstname / lastname fields."
+    _description = (
+        "Manage common things needed for models that have firstname / lastname fields."
+    )
 
     form_has_lastname_first = fields.Boolean(compute="_compute_form_has_lastname_first")
+
+    firstname_required = fields.Boolean(compute="_compute_firstname_lastname_required")
+
+    lastname_required = fields.Boolean(compute="_compute_firstname_lastname_required")
+
+    @api.depends(lambda self: self._get_fields_depend_firstname_lastname_required())
+    def _compute_firstname_lastname_required(self):
+        required_fields = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("partner_names_required_fields")
+        )
+        for partner in self:
+            partner.firstname_required = not partner.lastname or required_fields in [
+                "firstname",
+                "firstname_lastname",
+            ]
+            partner.lastname_required = not partner.firstname or required_fields in [
+                "lastname",
+                "firstname_lastname",
+            ]
 
     def _compute_form_has_lastname_first(self):
         names_order = self._get_names_order()
         for record in self:
             record.form_has_lastname_first = names_order != "first_last"
+
+    def _get_fields_depend_firstname_lastname_required(self):
+        return ["lastname", "firstname"]
 
     @api.model
     def default_get(self, fields_list):
@@ -128,3 +155,17 @@ class FirstNameMixin(models.AbstractModel):
     def name_fields_in_vals(self, vals):
         """Method to check if any name fields are in `vals`."""
         return vals.get("firstname") or vals.get("lastname")
+
+    @api.constrains("name", "firstname", "lastname")
+    def _check_name(self):
+        """Ensure that name, firstname and lastname are correctly set
+        depending on the configuration and on the type of the record."""
+        for record in self:
+            if any(
+                [
+                    record.is_company and not record.name,
+                    record.firstname_required and not record.firstname,
+                    record.lastname_required and not record.lastname,
+                ]
+            ):
+                raise exceptions.EmptyNamesError(record, self.env)

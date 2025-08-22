@@ -10,18 +10,21 @@ class ResUsers(models.Model):
     _inherit = ["res.users", "firstname.mixin"]
 
     def copy(self, default=None):
-        self.ensure_one()
-        default = dict(default or {})
-        if ("name" not in default) and ("partner_id" not in default):
-            default["name"] = self.env._("%(name)s (copy)", name=self.name)
-        if "login" not in default:
-            default["login"] = self.env._("%(login)s (copy)", login=self.login)
-        if (
-            ("firstname" not in default)
-            and ("lastname" not in default)
-            and ("name" in default)
-        ):
-            default.update(
-                self.env["res.partner"]._get_inverse_name(default["name"], False)
-            )
-        return super().copy(default)
+        default_ = default or {}
+        records = self.browse()
+        for record in self:
+            default = dict(default_)
+            if ("name" not in default) and ("partner_id" not in default):
+                default["name"] = self.env._("%(name)s (copy)", name=record.name)
+            if "login" not in default:
+                default["login"] = self.env._("%(login)s (copy)", login=record.login)
+            if (
+                ("firstname" not in default)
+                and ("lastname" not in default)
+                and ("name" in default)
+            ):
+                default.update(
+                    self.env["res.partner"]._get_inverse_name(default["name"], False)
+                )
+            records |= super(ResUsers, record).copy(default)
+        return records
