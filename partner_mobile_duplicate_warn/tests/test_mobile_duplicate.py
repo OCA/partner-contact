@@ -72,3 +72,19 @@ class TestResPartner(TransactionCase):
         self.assertFalse(partner_company2.same_mobile_partner_id)
         partner_company2.write({"company_id": False})
         self.assertEqual(partner_company2.same_mobile_partner_id, partner_company1)
+
+    def test_partner_find_inclusive(self):
+        partner1 = self.env["res.partner"].create(
+            {
+                "name": "Test regular",
+                "mobile": "06 99 88 77 65",
+                "country_id": self.fr_country_id,
+            }
+        )
+        partner1._onchange_mobile_validation()
+        found_partners = partner1._search_same_mobile_matches_inclusive()
+        self.assertEqual(found_partners, partner1)
+        partner1.write({"mobile": " 06 99 88 77 66"})
+        partner1._onchange_mobile_validation()
+        duplicate_partner = partner1._find_duplicate_mobile_partner()
+        self.assertEqual(duplicate_partner, self.partner_simple)
