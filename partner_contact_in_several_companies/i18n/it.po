@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-20 01:37+0000\n"
-"PO-Revision-Date: 2023-09-20 20:09+0000\n"
-"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"PO-Revision-Date: 2025-08-25 15:25+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-9-0/"
 "language/it/)\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -28,24 +28,24 @@ msgstr "Indirizzo"
 #. module: partner_contact_in_several_companies
 #: model:ir.actions.act_window,name:partner_contact_in_several_companies.action_partner_form
 msgid "All Customers in All Positions"
-msgstr "Tutti i Clienti in tutte le Posizioni"
+msgstr "Tutti i clienti in tutte le posizioni"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "All partner positions"
-msgstr "Tutte le Posizioni del Partner"
+msgstr "Tutte le posizioni del partner"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
 msgid "All positions"
-msgstr "Tutte le Posizioni"
+msgstr "Tutte le posizioni"
 
 #. module: partner_contact_in_several_companies
 #: code:addons/partner_contact_in_several_companies/models/res_partner.py:13
 #: selection:res.partner,contact_type:0
 #, python-format
 msgid "Attached to existing Contact"
-msgstr "Allega a Contatto esistente"
+msgstr "Allega a contatto esistente"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -65,7 +65,7 @@ msgstr "Nome contatto"
 #. module: partner_contact_in_several_companies
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_contact_type
 msgid "Contact type"
-msgstr "Tipo di contatto"
+msgstr "Tipo contatto"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
@@ -90,12 +90,12 @@ msgstr "Cellulare:"
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Other Positions"
-msgstr "Altre Posizioni"
+msgstr "Altre posizioni"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner_other_contact_ids
 msgid "Others Positions"
-msgstr "Altre Posizioni"
+msgstr "Altre posizioni"
 
 #. module: partner_contact_in_several_companies
 #: model:ir.model,name:partner_contact_in_several_companies.model_res_partner
@@ -132,7 +132,7 @@ msgstr ""
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
 msgid "Street..."
-msgstr "Via..."
+msgstr "Indirizzo..."
 
 #. module: partner_contact_in_several_companies
 #: model:ir.ui.view,arch_db:partner_contact_in_several_companies.personal_contact_information
