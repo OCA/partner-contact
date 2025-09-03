@@ -5,6 +5,7 @@ from unittest.mock import patch
 
 from requests.exceptions import HTTPError
 
+from odoo.exceptions import AccessError
 from odoo.tests import Form
 from odoo.tests.common import TransactionCase, new_test_user
 from odoo.tools import mute_logger
@@ -21,7 +22,7 @@ class TestBaseLocationNuts(TransactionCase):
         cls.uid = new_test_user(
             cls.env,
             login="test-nuts-import-user",
-            groups="base.group_partner_manager",
+            groups="base.group_system",
         )
         cls.nut_form = Form(cls.env["nuts.import"].with_user(cls.uid))
         cls.nut_wizard = cls.nut_form.save()
@@ -57,6 +58,15 @@ class TestBaseLocationNuts(TransactionCase):
         )
         cls.nuts4_2.state_id = cls.state_2
         cls.country_1.state_level = 4
+
+    def test_nuts_import_not_admin_user(self):
+        user = new_test_user(
+            self.env,
+            login="test-not-admin-user",
+            groups="base.group_user",
+        )
+        with self.assertRaises(AccessError):
+            Form(self.env["nuts.import"].with_user(user))
 
     def test_onchange_nuts_country(self):
         self.partner.nuts1_id = self.nuts1_2
