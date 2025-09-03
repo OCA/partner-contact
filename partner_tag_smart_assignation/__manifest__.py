@@ -3,13 +3,17 @@
 {
     "name": "Smart Tagger",
     "summary": "Smart tagger, module to have smart tags who " "update themselves alone",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "category": "Other",
     "author": "Compassion CH, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/partner-contact",
     "depends": ["base", "hr", "queue_job"],
-    "data": ["cron/update_cron.xml", "views/smart_tagger_view.xml"],
+    "data": [
+        "cron/update_cron.xml",
+        "views/smart_tagger_view.xml",
+        "views/res_partner_view.xml",
+    ],
     "installable": True,
     "auto_install": False,
 }
