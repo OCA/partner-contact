@@ -3,7 +3,7 @@
 
 import logging
 
-from odoo import _, api, models
+from odoo import api, models
 from odoo.exceptions import UserError, ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -15,7 +15,7 @@ try:
         validate_email,
     )
 except ImportError:
-    _logger.debug(_("Cannot import 'email_validator'."))
+    _logger.debug("Cannot import 'email-validator'.")
 
     validate_email = None
 
