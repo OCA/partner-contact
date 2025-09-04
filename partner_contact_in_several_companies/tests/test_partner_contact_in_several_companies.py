@@ -11,13 +11,13 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         current_module = "partner_contact_in_several_companies"
         # Get test records reference
         self.main_partner = self.env.ref("base.main_partner")
-        self.bob_contact = self.env.ref("%s.res_partner_contact1" % current_module)
+        self.bob_contact = self.env.ref(f"{current_module}.res_partner_contact1")
         self.bob_job1 = self.env.ref(
-            "%s.res_partner_contact1_work_position1" % current_module
+            f"{current_module}.res_partner_contact1_work_position1"
         )
         self.roger_contact = self.env.ref("base.res_partner_main2")
         self.roger_job2 = self.env.ref(
-            "%s.res_partner_main2_position_consultant" % current_module
+            f"{current_module}.res_partner_main2_position_consultant"
         )
 
     def test_00_show_only_standalone_contact(self):

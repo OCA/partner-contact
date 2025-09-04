@@ -67,9 +67,7 @@ class ResPartner(models.Model):
                     [("other_contact_ids", "in", attached_contacts.ids)],
                 )
             )
-        return super().search(
-            args, offset=offset, limit=limit, order=order, count=count
-        )
+        return super().search(args, offset=offset, limit=limit, order=order)
 
     @api.model_create_multi
     def create(self, vals_list):
