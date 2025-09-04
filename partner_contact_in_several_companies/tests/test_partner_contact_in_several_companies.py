@@ -5,7 +5,7 @@ from odoo.tests import common
 class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
     def setUp(self):
         """*****setUp*****"""
-        super(PartnerContactInSeveralCompaniesCase, self).setUp()
+        super().setUp()
         self.partner = self.env["res.partner"]
         self.action = self.env["ir.actions.act_window"]
         current_module = "partner_contact_in_several_companies"
