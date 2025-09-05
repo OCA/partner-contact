@@ -41,10 +41,6 @@
                 <field name="is_customer" />
                 <field name="is_supplier" />
             </xpath>
-            <xpath expr="//field[@name='child_ids']/form/sheet" position="inside">
-                <field name="is_customer" invisible="1" />
-                <field name="is_supplier" invisible="1" />
-            </xpath>
             <xpath expr="//group[@name='sale']/field[1]" position="before">
                 <field name="is_customer" />
             </xpath>
