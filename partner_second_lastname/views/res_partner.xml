@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2015 Tecnativa - Jairo Llopis
+     Copyright 2017 Tecnativa - Pedro M. Baeza
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="partner_simple_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_firstname.view_partner_simple_form" />
+        <field name="arch" type="xml">
+            <field name="firstname" position="attributes">
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </field>
+            <field name="lastname" position="attributes">
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </field>
+            <field name="lastname" position="after">
+                <field
+                    name="lastname2"
+                    required="not firstname and not lastname and not is_company and type == 'contact'"
+                />
+            </field>
+        </field>
+    </record>
+    <record id="partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_firstname.view_partner_form" />
+        <field name="arch" type="xml">
+            <!-- Main form -->
+            <field name="firstname" position="attributes">
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </field>
+            <field name="lastname" position="attributes">
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </field>
+            <field name="lastname" position="after">
+                <field
+                    name="lastname2"
+                    required="not lastname2 and not lastname and not is_company and type == 'contact'"
+                />
+            </field>
+            <!-- Inner contact form of child_ids -->
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='firstname']"
+                position="attributes"
+            >
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='lastname']"
+                position="attributes"
+            >
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='lastname']"
+                position="after"
+            >
+                <field
+                    name="lastname2"
+                    required="not lastname2 and not lastname and not is_company and type == 'contact'"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
