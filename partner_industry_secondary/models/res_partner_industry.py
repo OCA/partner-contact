@@ -4,9 +4,11 @@
 # Copyright 2018 Eficent Business and IT Consulting Services, S.L.
 # Copyright 2019 Tecnativa - Cristina Martin R.
 # Copyright 2025 Moduon - Eduardo de Miguel
+# Copyright 2025, 2026 XCG SAS
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import _, api, exceptions, fields, models
+from odoo.tools import populate
 
 
 class ResPartnerIndustry(models.Model):
@@ -66,3 +68,19 @@ class ResPartnerIndustry(models.Model):
         if "name" not in default or default["name"] == self.name:
             default["name"] = self.name + " 2"
         return super(ResPartnerIndustry, self).copy(default=default)
+
+    def _populate_factories(self):
+        result = super()._populate_factories()
+        modified_result = []
+        # search for name to replace it to avoid empty names
+        for field_name, populate_function in result:
+            if field_name == "name":
+                modified_result.append(
+                    (
+                        field_name,
+                        populate.cartesian(["Industry name {counter}"], [1.0]),
+                    )
+                )
+            else:
+                modified_result.append((field_name, populate_function))
+        return modified_result
