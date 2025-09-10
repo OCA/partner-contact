@@ -53,15 +53,19 @@ class ResPartnerIndustry(models.Model):
 
     @api.constrains("name", "parent_id")
     def _check_uniq_name(self):
-        if (
-            self.search_count(
-                [("name", "=", self.name), ("parent_id", "=", self.parent_id.id)]
-            )
-            > 1
-        ):
-            raise exceptions.ValidationError(
-                _("Error! Industry with same name and parent already exists.")
-            )
+        for industry in self:
+            if (
+                self.search_count(
+                    [
+                        ("name", "=", industry.name),
+                        ("parent_id", "=", industry.parent_id.id),
+                    ]
+                )
+                > 1
+            ):
+                raise exceptions.ValidationError(
+                    _("Error! Industry with same name and parent already exists.")
+                )
 
     def copy(self, default=None):
         default = default or {}
