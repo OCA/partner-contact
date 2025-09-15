@@ -71,6 +71,7 @@ addon | version | maintainers | summary
 [partner_property](partner_property/) | 17.0.1.1.1 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> | Partner Property
 [partner_readonly_security](partner_readonly_security/) | 17.0.1.0.0 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> | Partner Readonly Security
 [partner_ref_unique](partner_ref_unique/) | 17.0.1.0.0 |  | Add an unique constraint to partner ref field
+[partner_search_alias](partner_search_alias/) | 17.0.1.0.0 |  | Partner Search Alias
 [partner_second_lastname](partner_second_lastname/) | 17.0.1.0.2 |  | Have split first and second lastnames
 [partner_stage](partner_stage/) | 17.0.1.1.0 | <a href='https://github.com/dreispt'><img src='https://github.com/dreispt.png' width='32' height='32' style='border-radius:50%;' alt='dreispt'/></a> | Add lifecycle Stages to Partners
 [partner_stage_only_confirmed](partner_stage_only_confirmed/) | 17.0.1.0.0 |  | Adds filters on form views to display only confirmed partners
