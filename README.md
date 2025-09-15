@@ -81,6 +81,7 @@ addon | version | maintainers | summary
 [partner_route](partner_route/) | 12.0.1.0.0 |  | Base module to assign routes to partners
 [partner_second_lastname](partner_second_lastname/) | 12.0.2.0.0 |  | Have split first and second lastnames
 [partner_socialmedia](partner_socialmedia/) | 12.0.1.0.1 |  | Add social media fields to contacts
+[partner_stage](partner_stage/) | 12.0.1.0.0 | <a href='https://github.com/dreispt'><img src='https://github.com/dreispt.png' width='32' height='32' style='border-radius:50%;' alt='dreispt'/></a> | Add lifecycle Stages to Partners
 [partner_vat_unique](partner_vat_unique/) | 12.0.1.0.4 |  | Module to make the VAT number unique for customers and suppliers.
 [portal_partner_data_no_edit](portal_partner_data_no_edit/) | 12.0.1.0.0 |  | Portal Partner Block Data Edit
 [portal_partner_select_all](portal_partner_select_all/) | 12.0.1.0.2 |  | Portal Partner Select All
