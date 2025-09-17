@@ -48,3 +48,11 @@ class ResPartner(models.Model):
         if "stage_id" in vals and vals.get("stage_id") in self._state_from:
             self.restart_validation()
         return res
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        default_stage_id = self._get_default_stage_id().id
+        for vals in vals_list:
+            if not vals.get("stage_id") and default_stage_id:
+                vals["stage_id"] = default_stage_id
+        return super().create(vals_list)
