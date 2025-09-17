@@ -7,16 +7,11 @@
         parent="contacts.menu_contacts"
     />
     <menuitem
-        id="menu_res_partner_relation_all"
-        sequence="3"
+        id="menu_res_partner_relation_simple"
+        sequence="5"
         parent="menu_res_partner_relation"
-        action="action_res_partner_relation_all"
+        action="action_res_partner_relation"
     />
-    <record id="action_res_partner_relation_type" model="ir.actions.act_window">
-        <field name="name">Partner Relations Types</field>
-        <field name="res_model">res.partner.relation.type</field>
-        <field name="view_mode">list,form</field>
-    </record>
     <menuitem
         id="menu_res_partner_relation_type"
         name="Relation Types"

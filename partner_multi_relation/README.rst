@@ -66,14 +66,14 @@ Partner Types
 The Partner Type fields allow to constrain what type of partners can be
 used on the left and right sides of the relation.
 
-- In the example above, the assistant-relation only makes sense between
-  people, so you would choose 'Person' for both partner types.
+-  In the example above, the assistant-relation only makes sense between
+   people, so you would choose 'Person' for both partner types.
 
 |image3|
 
-- For a relation 'is a competitor of', both sides would be companies.
-- A relation 'has worked for' should have persons on the left side and
-  companies on the right side.
+-  For a relation 'is a competitor of', both sides would be companies.
+-  A relation 'has worked for' should have persons on the left side and
+   companies on the right side.
 
 If you leave these fields empty, the relation is applicable to all types
 of partners.
@@ -125,10 +125,10 @@ type.
 
 4 possible behaviors are available:
 
-- Do not allow change that will result in invalid relations
-- Allow existing relations that do not fit changed conditions
-- End relations per today, if they do not fit changed conditions
-- Delete relations that do not fit changed conditions
+-  Do not allow change that will result in invalid relations
+-  Allow existing relations that do not fit changed conditions
+-  End relations per today, if they do not fit changed conditions
+-  Delete relations that do not fit changed conditions
 
 Searching Partners With Relations
 ---------------------------------
@@ -195,20 +195,20 @@ Authors
 Contributors
 ------------
 
-- Holger Brunn <hbrunn@therp.nl>
-- Stefan Rijnhart <stefan@therp.nl>
-- Ronald Portier <ronald@therp.nl>
-- Sandy Carter <sandy.carter@savoirfairelinux.com>
-- Bruno Joliveau <bruno.joliveau@savoirfairelinux.com>
-- Adriana Ierfino <adriana.ierfino@savoirfairelinux.com>
-- Numigi (tm) and all its contributors (https://bit.ly/numigiens)
-- Radovan Skolnik <radovan@skolnik.info>, KEMA SK s.r.o.
-  (https://www.kema.sk)
-- `DynApps NV <https://www.dynapps.be>`__:
+-  Holger Brunn <hbrunn@therp.nl>
+-  Stefan Rijnhart <stefan@therp.nl>
+-  Ronald Portier <ronald@therp.nl>
+-  Sandy Carter <sandy.carter@savoirfairelinux.com>
+-  Bruno Joliveau <bruno.joliveau@savoirfairelinux.com>
+-  Adriana Ierfino <adriana.ierfino@savoirfairelinux.com>
+-  Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+-  Radovan Skolnik <radovan@skolnik.info>, KEMA SK s.r.o.
+   (https://www.kema.sk)
+-  `DynApps NV <https://www.dynapps.be>`__:
 
-  - Raf Ven
+   -  Raf Ven
 
-- Marcin Chechłacz <marcin.chechlacz@braintec.com>
+-  Marcin Chechłacz <marcin.chechlacz@braintec.com>
 
 Maintainers
 -----------
