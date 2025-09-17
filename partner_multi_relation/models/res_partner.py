@@ -1,12 +1,10 @@
-# Copyright 2013-2022 Therp BV <http://therp.nl>
+# Copyright 2013-2025 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Support connections between partners."""
 
-import numbers
-
-from odoo import api, exceptions, fields, models
-from odoo.osv.expression import FALSE_LEAF, OR, is_leaf
-from odoo.tools.safe_eval import safe_eval
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
+from odoo.osv.expression import AND, FALSE_LEAF, is_leaf
 
 
 class ResPartner(models.Model):
@@ -16,17 +14,21 @@ class ResPartner(models.Model):
 
     _inherit = "res.partner"
 
-    relation_count = fields.Integer(compute="_compute_relation_count")
-    relation_all_ids = fields.One2many(
-        comodel_name="res.partner.relation.all",
-        inverse_name="this_partner_id",
-        string="All relations with current partner",
-        auto_join=True,
-        search=False,
+    relation_left_ids = fields.One2many(
+        comodel_name="res.partner.relation",
+        inverse_name="left_partner_id",
+        string="Left relations with current partner",
         copy=False,
     )
+    relation_right_ids = fields.One2many(
+        comodel_name="res.partner.relation",
+        inverse_name="right_partner_id",
+        string="Right relations with current partner",
+        copy=False,
+    )
+    relation_count = fields.Integer(compute="_compute_relation_count")
     search_relation_type_id = fields.Many2one(
-        comodel_name="res.partner.relation.type.selection",
+        comodel_name="res.partner.relation.type",
         compute=lambda self: self.update({"search_relation_type_id": None}),
         search="_search_relation_type_id",
         string="Has relation of type",
@@ -34,7 +36,7 @@ class ResPartner(models.Model):
     search_relation_partner_id = fields.Many2one(
         comodel_name="res.partner",
         compute=lambda self: self.update({"search_relation_partner_id": None}),
-        search="_search_related_partner_id",
+        search="_search_relation_partner_id",
         string="Has relation with",
     )
     search_relation_date = fields.Date(
@@ -45,23 +47,20 @@ class ResPartner(models.Model):
     search_relation_partner_category_id = fields.Many2one(
         comodel_name="res.partner.category",
         compute=lambda self: self.update({"search_relation_partner_category_id": None}),
-        search="_search_related_partner_category_id",
+        search="_search_relation_partner_category_id",
         string="Has relation with a partner in category",
     )
 
-    @api.depends("relation_all_ids")
     def _compute_relation_count(self):
-        """Count the number of relations this partner has for Smart Button
-
-        Don't count inactive relations.
-        """
-        for rec in self:
-            rec.relation_count = len(rec.relation_all_ids.filtered("active"))
+        """Combined count for left and right partners."""
+        for this in self:
+            this.relation_count = len(this.relation_left_ids.filtered("active")) + len(
+                this.relation_right_ids.filtered("active")
+            )
 
     @api.model
     def _search_relation_type_id(self, operator, value):
         """Search partners based on their type of relations."""
-        result = []
         SUPPORTED_OPERATORS = (
             "=",
             "!=",
@@ -73,127 +72,137 @@ class ResPartner(models.Model):
             "not in",
         )
         if operator not in SUPPORTED_OPERATORS:
-            raise exceptions.ValidationError(
+            raise ValidationError(
                 self.env._('Unsupported search operator "%s"', operator)
             )
-        type_selection_model = self.env["res.partner.relation.type.selection"]
-        relation_type_selection = []
-        if operator == "=" and isinstance(value, numbers.Integral):
-            relation_type_selection += type_selection_model.browse(value)
-        elif operator == "!=" and isinstance(value, numbers.Integral):
-            relation_type_selection = type_selection_model.search(
-                [("id", operator, value)]
-            )
-        else:
-            relation_type_selection = type_selection_model.search(
-                [
-                    "|",
-                    ("type_id.name", operator, value),
-                    ("type_id.name_inverse", operator, value),
-                ]
-            )
-        if not relation_type_selection:
-            result = [FALSE_LEAF]
-        for relation_type in relation_type_selection:
-            result = OR(
-                [
-                    result,
-                    [("relation_all_ids.type_selection_id.id", "=", relation_type.id)],
-                ]
-            )
-        return result
-
-    @api.model
-    def _search_related_partner_id(self, operator, value):
-        """Find partner based on relation with other partner."""
-        # pylint: disable=no-self-use
-        return [("relation_all_ids.other_partner_id", operator, value)]
-
-    @api.model
-    def _search_relation_date(self, operator, value):
-        """Look only for relations valid at date of search."""
-        # pylint: disable=no-self-use
+        PartnerRelation = self.env["res.partner.relation"]
+        left_relations = PartnerRelation.search([("type_id", operator, value)])
+        right_relations = PartnerRelation.search([("type_id", operator, value)])
+        if not (left_relations or right_relations):
+            return [FALSE_LEAF]
         return [
-            "&",
             "|",
-            ("relation_all_ids.date_start", "=", False),
-            ("relation_all_ids.date_start", "<=", value),
-            "|",
-            ("relation_all_ids.date_end", "=", False),
-            ("relation_all_ids.date_end", ">=", value),
+            ("relation_left_ids", "in", left_relations.ids),
+            ("relation_right_ids", "in", right_relations.ids),
         ]
 
     @api.model
-    def _search_related_partner_category_id(self, operator, value):
-        """Search for partner related to a partner with search category."""
+    def _search_relation_partner_id(self, operator, value):
+        """Find partner based on relation with other partner."""
         # pylint: disable=no-self-use
-        return [("relation_all_ids.other_partner_id.category_id", operator, value)]
+        return [
+            "|",
+            ("relation_left_ids.right_partner_id", operator, value),
+            ("relation_right_ids.left_partner_id", operator, value),
+        ]
 
     @api.model
-    def search(self, args, offset=0, limit=None, order=None):
+    def _search_relation_date(self, operator, value):
+        """Look only for partners that have a relation valid at date of search.
+
+        This makes only sense when combined with other searches on relations.
+        For instance we want to check for partners that had a relation with
+        a category of volunteer on 21 february 2022.
+
+        operator is ignored, value must contain a date.
+        """
+        PartnerRelation = self.env["res.partner.relation"]
+        date_domain = [
+            "&",
+            "|",
+            ("date_start", "=", False),
+            ("date_start", "<=", value),
+            "|",
+            ("date_end", "=", False),
+            ("date_end", ">=", value),
+        ]
+        left_relations = PartnerRelation.search(date_domain)
+        right_relations = PartnerRelation.search(date_domain)
+        if not (left_relations or right_relations):
+            # Can only happen when there are no valid relations at all...
+            return [FALSE_LEAF]  # pragma: no cover
+        return [
+            "|",
+            ("relation_left_ids", "in", left_relations.ids),
+            ("relation_right_ids", "in", right_relations.ids),
+        ]
+
+    @api.model
+    def _search_relation_partner_category_id(self, operator, value):
+        """Search for partner related to a partner with search category."""
+        # pylint: disable=no-self-use
+        return [
+            "|",
+            ("relation_left_ids.right_partner_id.category_id", operator, value),
+            ("relation_right_ids.left_partner_id.category_id", operator, value),
+        ]
+
+    @api.model
+    def search(self, domain, offset=0, limit=None, order=None):
         """Inject searching for current relation date if we search for
         relation properties and no explicit date was given.
         """
-        # pylint: disable=arguments-differ
-        # pylint: disable=no-value-for-parameter
-        date_args = []
-        for arg in args:
-            if (
-                is_leaf(arg)
-                and isinstance(arg[0], str)
-                and arg[0].startswith("search_relation")
-            ):
-                if arg[0] == "search_relation_date":
-                    date_args = []
-                    break
-                if not date_args:
-                    date_args = [("search_relation_date", "=", fields.Date.today())]
-        # because of auto_join, we have to do the active test by hand
-        active_args = []
-        if self.env.context.get("active_test", True):
-            for arg in args:
-                if (
-                    is_leaf(arg)
-                    and isinstance(arg[0], str)
-                    and arg[0].startswith("search_relation")
-                ):
-                    active_args = [("relation_all_ids.active", "=", True)]
-                    break
-        return super().search(
-            args + date_args + active_args,
-            offset=offset,
-            limit=limit,
-            order=order,
-        )
+        relation_search = self._get_domain_relation_search(domain)
+        if relation_search:
+            # Could be inline, but this is easier for unit test.
+            domain = self._update_domain_relation_search(domain, relation_search)
+        return super().search(domain, offset=offset, limit=limit, order=order)
 
-    def get_partner_type(self):
-        """Get partner type for relation.
-        :return: 'c' for company or 'p' for person
-        :rtype: str
+    def _get_domain_relation_search(self, domain):
+        """Check whether domain contains elements that search on relations."""
+        relation_search = []
+        for part in domain:
+            if (
+                is_leaf(part)
+                and isinstance(part[0], str)
+                and part[0].startswith("search_relation")
+            ):
+                relation_search.append(part[0])
+        return relation_search
+
+    def _update_domain_relation_search(self, domain, relation_search):
+        """Inject, if needed, date and active criteria in search on relations.
+
+        Need to return new domain if modified, as reassigning will leave
+        original list argument (domain) unaffected.
         """
-        self.ensure_one()
-        return "c" if self.is_company else "p"
+        if "search_relation_date" not in relation_search:
+            domain = AND(
+                [
+                    domain,
+                    [("search_relation_date", "=", fields.Date.today())],
+                ]
+            )
+        # because of auto_join, we have to do the active test by hand
+        if self.env.context.get("active_test", True):
+            domain = AND(
+                [
+                    domain,
+                    [
+                        "|",
+                        ("relation_left_ids.active", "=", True),
+                        ("relation_right_ids.active", "=", True),
+                    ],
+                ]
+            )
+        return domain
 
     def action_view_relations(self):
-        for contact in self:
-            action = self.env["ir.actions.act_window"]._for_xml_id(
-                "partner_multi_relation.action_res_partner_relation_all"
-            )
-            action["domain"] = [
+        self.ensure_one()
+        return {
+            "type": "ir.actions.act_window",
+            "res_model": "res.partner.relation",
+            "name": _("Connections for current partner"),
+            "view_mode": "tree,form",
+            # For the moment default views.
+            "views": [(False, "list"), (False, "form")],
+            "domain": [
                 "|",
-                ("this_partner_id", "=", contact.id),
-                ("other_partner_id", "=", contact.id),
-            ]
-            context = safe_eval(action.get("context", "{}"))
-            context.update(
-                {
-                    "search_default_this_partner_id": contact.id,
-                    "default_this_partner_id": contact.id,
-                    "active_model": "res.partner",
-                    "active_id": contact.id,
-                    "active_ids": contact.ids,
-                    "active_test": False,
-                }
-            )
-            action["context"] = str(context)
-            return action
+                ("left_partner_id", "=", self.id),
+                ("right_partner_id", "=", self.id),
+            ],
+            "context": {
+                "current_partner_id": self.id,
+            },
+            "target": "top",
+        }
