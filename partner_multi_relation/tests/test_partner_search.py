@@ -8,30 +8,30 @@ from .test_partner_relation_common import TestPartnerRelationCommon
 
 
 class TestPartnerSearch(TestPartnerRelationCommon):
-    def test_search_relation_type(self):
+    def test_search_type(self):
         """Test searching on relation type."""
         relation = self._create_company2person_relation()
         partners = self.partner_model.search(
-            [("search_relation_type_id", "=", relation.type_selection_id.id)]
+            [("search_type_id", "=", relation.type_selection_id.id)]
         )
         self.assertTrue(self.partner_02_company in partners)
         partners = self.partner_model.search(
-            [("search_relation_type_id", "!=", relation.type_selection_id.id)]
+            [("search_type_id", "!=", relation.type_selection_id.id)]
         )
         self.assertTrue(self.partner_01_person in partners)
         partners = self.partner_model.search(
-            [("search_relation_type_id", "=", self.type_company2person.name)]
+            [("search_type_id", "=", self.type_company2person.name)]
         )
         self.assertTrue(self.partner_01_person in partners)
         self.assertTrue(self.partner_02_company in partners)
         partners = self.partner_model.search(
-            [("search_relation_type_id", "=", "unknown relation")]
+            [("search_type_id", "=", "unknown relation")]
         )
         self.assertFalse(partners)
         # Check error with invalid search operator:
         with self.assertRaises(ValidationError):
             partners = self.partner_model.search(
-                [("search_relation_type_id", "child_of", "some parent")]
+                [("search_type_id", "child_of", "some parent")]
             )
 
     def test_search_relation_partner(self):
