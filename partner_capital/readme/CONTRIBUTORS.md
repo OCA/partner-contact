@@ -1,0 +1,9 @@
+- Rattapong Chokmasermkul \<<rattapongc@ecosoft.co.th>\>
+- [Tecnativa](https://www.tecnativa.com):
+  - Antonio Espinosa
+  - Rafael Blasco
+  - Jairo Llopis
+  - David Vidal
+  - Alexandre Díaz
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+  - Bhavesh Heliconia
