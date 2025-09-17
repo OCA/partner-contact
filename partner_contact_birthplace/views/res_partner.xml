@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_personal_information_birthplace" model="ir.ui.view">
+        <field name="name">Birthplace field</field>
+        <field name="model">res.partner</field>
+        <field
+            name="inherit_id"
+            ref="partner_contact_personal_information_page.personal_information"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='personal_information_group']">
+                <span class="o_form_label o_td_label o_address_type">
+                    Birth Place
+                </span>
+                <div class="o_address_format">
+                    <field
+                        name="birth_city"
+                        placeholder="City"
+                        class="o_address_city"
+                    />
+                    <field
+                        name="birth_state_id"
+                        placeholder="State"
+                        class="o_address_state"
+                        options="{'no_open': True, 'no_quick_create': True}"
+                        context="{'country_id': birth_country_id, 'default_country_id': birth_country_id, 'zip': birth_zip}"
+                    />
+                    <field name="birth_zip" placeholder="ZIP" class="o_address_zip" />
+                    <div
+                        name="partner_address_country"
+                        class="d-flex justify-content-between"
+                    >
+                        <field
+                            name="birth_country_id"
+                            placeholder="Country"
+                            class="o_address_country"
+                            options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"
+                        />
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
