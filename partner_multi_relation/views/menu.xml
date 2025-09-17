@@ -15,12 +15,7 @@
     <menuitem
         id="menu_res_partner_relation_type"
         name="Relation Types"
-        sequence="5"
         parent="menu_res_partner_relation"
         action="action_res_partner_relation_type"
     />
-    <!-- Increase sequence of standard configuration menu, to keep it right. -->
-    <record id="contacts.res_partner_menu_config" model="ir.ui.menu">
-        <field name="sequence">999</field>
-    </record>
 </odoo>

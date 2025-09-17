@@ -1,4 +1,4 @@
-# Copyright 2016-2017 Therp BV
+# Copyright 2016-2025 Therp BV
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 from datetime import date, datetime, timedelta
 
@@ -301,7 +301,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             }
         )
         partners = self.partner_model.search(
-            [("search_relation_type_id", "=", relation.type_selection_id.id)]
+            [("search_type_id", "=", relation.type_selection_id.id)]
         )
         self.assertTrue(self.partner_01_person in partners)
         self.assertTrue(self.partner_02_company in partners)
@@ -327,14 +327,14 @@ class TestPartnerRelation(TestPartnerRelationCommon):
                 }
             )
 
-    def test_relation_type_change(self):
+    def test_type_change(self):
         """Test change in relation type conditions."""
         # First create a relation type having no particular conditions.
         (
             type_school2student,
             school2student,
             school2student_inverse,
-        ) = self._create_relation_type_selection(
+        ) = self._create_type_selection(
             {"name": "school has student", "name_inverse": "studies at school"}
         )
         # Second create relations based on those conditions.
@@ -425,7 +425,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         )
         self.assertFalse(relation_bart2lisa.exists())
 
-    def test_relation_type_unlink(self):
+    def test_type_unlink(self):
         """Test delete of relation type, including deleting relations."""
         # First create a relation type having restrict particular conditions.
         type_model = self.env["res.partner.relation.type"]
