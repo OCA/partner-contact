@@ -3,7 +3,7 @@
 {
     "name": "Partner timezone",
     "summary": "Remove partner timezone default value and display on form",
-    "version": "14.0.1.0.1",
+    "version": "15.0.1.0.0",
     "development_status": "Beta",
     "category": "Uncategorized",
     "website": "https://github.com/OCA/partner-contact",
