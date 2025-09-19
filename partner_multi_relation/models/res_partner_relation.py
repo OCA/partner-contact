@@ -119,10 +119,10 @@ class ResPartnerRelation(models.Model):
         # Check wether domain results in no choice or wrong choice of partners:
         warning = (
             self._check_partner_domain(
-                self.left_partner_id, self.left_partner_id_domain, self.env._("left")
+                self.left_partner_id, self.left_partner_id_domain, _("left")
             )
             or self._check_partner_domain(
-                self.right_partner_id, self.right_partner_id_domain, self.env._("right")
+                self.right_partner_id, self.right_partner_id_domain, _("right")
             )
             or {}
         )
@@ -142,12 +142,12 @@ class ResPartnerRelation(models.Model):
         if Partner.search(test_domain, limit=1):
             return None
         message = (
-            self.env._("%s partner incompatible with relation type.", side)
+            _("%s partner incompatible with relation type.", side)
             if partner
-            else self.env._("No %s partner available for relation type.", side)
+            else _("No %s partner available for relation type.", side)
         )
         return {
-            "title": self.env._("Error!"),
+            "title": _("Error!"),
             "message": message,
         }
 
@@ -181,10 +181,8 @@ class ResPartnerRelation(models.Model):
         if RelationType.search(test_domain, limit=1):
             return None
         return {
-            "title": self.env._("Error!"),
-            "message": self.env._(
-                "Relation type incompatible with selected partner(s)."
-            ),
+            "title": _("Error!"),
+            "message": _("Relation type incompatible with selected partner(s)."),
         }
 
     @api.depends("type_id")

@@ -74,9 +74,7 @@ class ResPartner(models.Model):
             "not in",
         )
         if operator not in SUPPORTED_OPERATORS:
-            raise ValidationError(
-                self.env._('Unsupported search operator "%s"', operator)
-            )
+            raise ValidationError(_('Unsupported search operator "%s"', operator))
         PartnerRelation = self.env["res.partner.relation"]
         left_relations = PartnerRelation.search([("type_id", operator, value)])
         right_relations = PartnerRelation.search([("type_id", operator, value)])
