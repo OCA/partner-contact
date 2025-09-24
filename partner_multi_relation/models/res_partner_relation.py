@@ -4,7 +4,7 @@
 
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
-from odoo.osv.expression import AND
+from odoo.fields import Domain
 
 
 class ResPartnerRelation(models.Model):
@@ -24,7 +24,7 @@ class ResPartnerRelation(models.Model):
         comodel_name="res.partner",
         string="Source Partner",
         required=True,
-        auto_join=True,
+        bypass_search_access=True,
         ondelete="cascade",
     )
     left_partner_id_domain = fields.Binary(
@@ -35,7 +35,7 @@ class ResPartnerRelation(models.Model):
         comodel_name="res.partner",
         string="Destination Partner",
         required=True,
-        auto_join=True,
+        bypass_search_access=True,
         ondelete="cascade",
     )
     right_partner_id_domain = fields.Binary(
@@ -46,7 +46,7 @@ class ResPartnerRelation(models.Model):
         comodel_name="res.partner.relation.type",
         string="Type",
         required=True,
-        auto_join=True,
+        bypass_search_access=True,
     )
     type_id_domain = fields.Binary(
         compute="_compute_type_id_domain",
@@ -129,9 +129,9 @@ class ResPartnerRelation(models.Model):
         """Check wether partner_domain results in empty selection
         for partner, or wrong selection of partner already selected.
         """
-        test_domain = partner_domain
+        test_domain = Domain(partner_domain)
         if partner:
-            test_domain = AND([partner_domain, [("id", "=", partner.id)]])
+            test_domain &= Domain("id", "=", partner.id)
         Partner = self.env["res.partner"]
         if Partner.search(test_domain, limit=1):
             return None
@@ -170,7 +170,7 @@ class ResPartnerRelation(models.Model):
         self.ensure_one()
         if not self.type_id:
             return None
-        test_domain = AND([self.type_id_domain, [("id", "=", self.type_id.id)]])
+        test_domain = Domain(self.type_id_domain) & Domain("id", "=", self.type_id.id)
         RelationType = self.env["res.partner.relation.type"]
         if RelationType.search(test_domain, limit=1):
             return None
@@ -187,11 +187,11 @@ class ResPartnerRelation(models.Model):
         for this in self:
             domain = []
             if this.type_id:
-                contact_type = this.type_id.contact_type_left
+                contact_type = this.type_id.left_partner_type
                 if contact_type:
                     is_company = True if contact_type == "c" else False
                     domain.append(("is_company", "=", is_company))
-                category_id = this.type_id.partner_category_left
+                category_id = this.type_id.left_partner_category_id
                 if category_id:
                     domain.append(("category_id", "=", category_id.id))
             this.left_partner_id_domain = domain
@@ -202,11 +202,11 @@ class ResPartnerRelation(models.Model):
         for this in self:
             domain = []
             if this.type_id:
-                contact_type = this.type_id.contact_type_right
+                contact_type = this.type_id.right_partner_type
                 if contact_type:
                     is_company = True if contact_type == "c" else False
                     domain.append(("is_company", "=", is_company))
-                category_id = this.type_id.partner_category_right
+                category_id = this.type_id.right_partner_category_id
                 if category_id:
                     domain.append(("category_id", "=", category_id.id))
             this.right_partner_id_domain = domain
@@ -221,22 +221,22 @@ class ResPartnerRelation(models.Model):
                 partner_type = "c" if left_partner.is_company else "p"
                 domain += [
                     "|",
-                    ("contact_type_left", "=", False),
-                    ("contact_type_left", "=", partner_type),
+                    ("left_partner_type", "=", False),
+                    ("left_partner_type", "=", partner_type),
                     "|",
-                    ("partner_category_left", "=", False),
-                    ("partner_category_left", "in", left_partner.category_id.ids),
+                    ("left_partner_category_id", "=", False),
+                    ("left_partner_category_id", "in", left_partner.category_id.ids),
                 ]
             right_partner = this.right_partner_id
             if right_partner:
                 partner_type = "c" if right_partner.is_company else "p"
                 domain += [
                     "|",
-                    ("contact_type_right", "=", False),
-                    ("contact_type_right", "=", partner_type),
+                    ("right_partner_type", "=", False),
+                    ("right_partner_type", "=", partner_type),
                     "|",
-                    ("partner_category_right", "=", False),
-                    ("partner_category_right", "in", right_partner.category_id.ids),
+                    ("right_partner_category_id", "=", False),
+                    ("right_partner_category_id", "in", right_partner.category_id.ids),
                 ]
             this.type_id_domain = domain
 
@@ -315,7 +315,6 @@ class ResPartnerRelation(models.Model):
     @api.model
     def _search_any_partner_id(self, operator, value):
         """Search relation with partner, no matter on which side."""
-        # pylint: disable=no-self-use
         return [
             "|",
             ("left_partner_id", operator, value),
@@ -371,7 +370,7 @@ class ResPartnerRelation(models.Model):
         """
         for record in self:
             assert side in ["left", "right"]  # pragma no cover
-            ptype = getattr(record.type_id, f"contact_type_{side}")
+            ptype = getattr(record.type_id, f"{side}_partner_type")
             partner = getattr(record, f"{side}_partner_id")
             if (ptype == "c" and not partner.is_company) or (
                 ptype == "p" and partner.is_company
@@ -381,13 +380,13 @@ class ResPartnerRelation(models.Model):
                         "The %s partner is not applicable for this relation type.", side
                     )
                 )
-            category = getattr(record.type_id, f"partner_category_{side}")
+            category = getattr(record.type_id, f"{side}_partner_category_id")
             if category and category.id not in partner.category_id.ids:
                 raise ValidationError(
                     self.env._(
-                        "The %s partner does not have category %s.",
-                        side,
-                        category.name,
+                        "The %(side)s partner does not have category %(category)s.",
+                        side=side,
+                        category=category.name,
                     )
                 )
 

@@ -6,8 +6,8 @@
             <list>
                 <field name="name" />
                 <field name="name_inverse" />
-                <field name="contact_type_left" />
-                <field name="contact_type_right" />
+                <field name="left_partner_type" />
+                <field name="right_partner_type" />
                 <field name="allow_self" />
                 <field name="is_symmetric" />
             </list>
@@ -21,8 +21,8 @@
                     <group>
                         <group string="Left side of relation" name="left">
                             <field name="name" />
-                            <field name="contact_type_left" />
-                            <field name="partner_category_left" />
+                            <field name="left_partner_type" />
+                            <field name="left_partner_category_id" />
                         </group>
                         <group
                             string="Right side of relation"
@@ -30,8 +30,8 @@
                             invisible="is_symmetric"
                         >
                             <field name="name_inverse" required="not is_symmetric" />
-                            <field name="contact_type_right" />
-                            <field name="partner_category_right" />
+                            <field name="right_partner_type" />
+                            <field name="right_partner_category_id" />
                         </group>
                     </group>
                     <group name="properties" string="Properties" colspan="6" col="4">

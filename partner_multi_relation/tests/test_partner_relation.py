@@ -21,10 +21,10 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             {
                 "name": "has relation with nobody",
                 "name_inverse": "nobody has relation with",
-                "contact_type_left": "c",
-                "contact_type_right": "p",
-                "partner_category_left": category_nobody.id,
-                "partner_category_right": category_nobody.id,
+                "left_partner_type": "c",
+                "right_partner_type": "p",
+                "left_partner_category_id": category_nobody.id,
+                "right_partner_category_id": category_nobody.id,
             }
         )
 
@@ -104,7 +104,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         self.assertEqual(relation.type_id_display, relation.type_id.name_inverse)
         self.assertEqual(relation.other_partner_id, relation.left_partner_id)
 
-    def test_validate_contact_type(self):
+    def test_validate_partner_type(self):
         """Create with wrong partner for type should raise ValidationError."""
         with self.assertRaises(ValidationError):
             self.Relation.create(
@@ -282,7 +282,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         self.assertTrue("message" in warning)
         self.assertTrue("incompatible" in warning["message"])
         # Allow left partner and check message for other partner:
-        self.type_nobody.write({"partner_category_left": False})
+        self.type_nobody.write({"left_partner_category_id": False})
         warning = relation_nobody._onchange_type_id()["warning"]
         self.assertTrue("message" in warning)
         self.assertTrue("No right partner available" in warning["message"])
@@ -299,7 +299,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         # 2. Test call with company 2 person relation
         relation = self.company2person_relation
         domain = relation._onchange_partner()["domain"]
-        self.assertTrue(("contact_type_left", "=", "c") in domain["type_id"])
+        self.assertTrue(("left_partner_type", "=", "c") in domain["type_id"])
         # 3. Test with invalid or impossible combinations
         relation_nobody = self._get_empty_relation()
         relation_nobody.left_partner_id = self.partner_02_company
@@ -323,8 +323,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             {
                 "name": "works for",
                 "name_inverse": "has worker",
-                "contact_type_left": "p",
-                "contact_type_right": "c",
+                "left_partner_type": "p",
+                "right_partner_type": "c",
             }
         )
         relation.write(
@@ -344,8 +344,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             {
                 "name": "allow",
                 "name_inverse": "allow_inverse",
-                "contact_type_left": "p",
-                "contact_type_right": "p",
+                "left_partner_type": "p",
+                "right_partner_type": "p",
                 "allow_self": True,
             }
         )
@@ -369,8 +369,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             {
                 "name": "disallow",
                 "name_inverse": "disallow_inverse",
-                "contact_type_left": "p",
-                "contact_type_right": "p",
+                "left_partner_type": "p",
+                "right_partner_type": "p",
                 "allow_self": False,
             }
         )
@@ -394,8 +394,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             {
                 "name": "allow",
                 "name_inverse": "allow_inverse",
-                "contact_type_left": "p",
-                "contact_type_right": "p",
+                "left_partner_type": "p",
+                "right_partner_type": "p",
                 "allow_self": True,
             }
         )
@@ -426,8 +426,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             {
                 "name": "allow",
                 "name_inverse": "allow_inverse",
-                "contact_type_left": "p",
-                "contact_type_right": "p",
+                "left_partner_type": "p",
+                "right_partner_type": "p",
                 "allow_self": True,
                 "handle_invalid_onchange": "delete",
             }
@@ -465,8 +465,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             {
                 "name": "allow",
                 "name_inverse": "allow_inverse",
-                "contact_type_left": "p",
-                "contact_type_right": "p",
+                "left_partner_type": "p",
+                "right_partner_type": "p",
                 "allow_self": True,
                 "handle_invalid_onchange": "end",
             }
@@ -509,8 +509,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             {
                 "name": "allow",
                 "name_inverse": "allow_inverse",
-                "contact_type_left": "p",
-                "contact_type_right": "p",
+                "left_partner_type": "p",
+                "right_partner_type": "p",
                 "allow_self": True,
                 "handle_invalid_onchange": "end",
             }
@@ -537,8 +537,8 @@ class TestPartnerRelation(TestPartnerRelationCommon):
             {
                 "name": "default",
                 "name_inverse": "default_inverse",
-                "contact_type_left": "p",
-                "contact_type_right": "p",
+                "left_partner_type": "p",
+                "right_partner_type": "p",
             }
         )
         self.assertTrue(type_default)

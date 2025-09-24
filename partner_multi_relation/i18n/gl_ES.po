@@ -74,7 +74,7 @@ msgid "Current record's category"
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__contact_type_this
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__partner_type_this
 msgid "Current record's partner type"
 msgstr ""
 
@@ -215,12 +215,12 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__partner_category_left
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__left_partner_category_id
 msgid "Left partner category"
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__contact_type_left
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__left_partner_type
 msgid "Left partner type"
 msgstr ""
 
@@ -276,7 +276,7 @@ msgid "Other record's category"
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__contact_type_other
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__partner_type_other
 msgid "Other record's partner type"
 msgstr ""
 
@@ -404,12 +404,12 @@ msgid "Resource Model"
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__partner_category_right
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__right_partner_category_id
 msgid "Right partner category"
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__contact_type_right
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__right_partner_type
 msgid "Right partner type"
 msgstr ""
 
