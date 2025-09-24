@@ -42,8 +42,8 @@ class TestPartnerRelationCommon(common.TransactionCase):
             {
                 "name": "has contact",
                 "name_inverse": "is contact for",
-                "contact_type_left": "c",
-                "contact_type_right": "p",
+                "left_partner_type": "c",
+                "right_partner_type": "p",
                 "handle_invalid_onchange": "restrict",
             }
         )
@@ -52,10 +52,10 @@ class TestPartnerRelationCommon(common.TransactionCase):
             {
                 "name": "NGO has volunteer",
                 "name_inverse": "volunteer works for NGO",
-                "contact_type_left": "c",
-                "contact_type_right": "p",
-                "partner_category_left": cls.category_01_ngo.id,
-                "partner_category_right": cls.category_02_volunteer.id,
+                "left_partner_type": "c",
+                "right_partner_type": "p",
+                "left_partner_category_id": cls.category_01_ngo.id,
+                "right_partner_category_id": cls.category_02_volunteer.id,
             }
         )
         cls.company2person_relation = cls.Relation.create(

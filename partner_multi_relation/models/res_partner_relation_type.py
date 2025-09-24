@@ -4,7 +4,7 @@
 
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
-from odoo.osv.expression import AND, FALSE_LEAF, OR
+from odoo.fields import Domain
 
 HANDLE_INVALID_ONCHANGE = [
     (
@@ -32,21 +32,16 @@ class ResPartnerRelationType(models.Model):
 
     name = fields.Char(required=True, translate=True)
     name_inverse = fields.Char(string="Inverse name", required=True, translate=True)
-    # TODO (on migration to 19.0?): rename fields:
-    # - contact_type_left => left_partner_type;
-    # - contact_type_right => right_partner_type;
-    # - partner_category_left => left_partner_category_id;
-    # - partner_category_right => right_partner_category_id.
-    contact_type_left = fields.Selection(
+    left_partner_type = fields.Selection(
         selection="get_partner_types", string="Left partner type"
     )
-    contact_type_right = fields.Selection(
+    right_partner_type = fields.Selection(
         selection="get_partner_types", string="Right partner type"
     )
-    partner_category_left = fields.Many2one(
+    left_partner_category_id = fields.Many2one(
         comodel_name="res.partner.category", string="Left partner category"
     )
-    partner_category_right = fields.Many2one(
+    right_partner_category_id = fields.Many2one(
         comodel_name="res.partner.category", string="Right partner category"
     )
     allow_self = fields.Boolean(
@@ -74,7 +69,6 @@ class ResPartnerRelationType(models.Model):
     @api.model
     def get_partner_types(self):
         """A partner can be an organisation or an individual."""
-        # pylint: disable=no-self-use
         return [("c", self.env._("Organisation")), ("p", self.env._("Person"))]
 
     @api.model
@@ -108,7 +102,7 @@ class ResPartnerRelationType(models.Model):
 
         def get_type_condition(vals, side):
             """Add if needed check for contact type."""
-            fieldname1 = f"contact_type_{side}"
+            fieldname1 = f"{side}_partner_type"
             contact_type = vals.get(fieldname1, False)
             if not contact_type:
                 return None
@@ -116,17 +110,17 @@ class ResPartnerRelationType(models.Model):
             # If contact_type is 'c' person records are invalid.
             is_company = True if contact_type == "p" else False
             fieldname2 = f"{side}_partner_id.is_company"
-            return [(fieldname2, "=", is_company)]
+            return Domain(fieldname2, "=", is_company)
 
         def get_category_condition(vals, side):
             """Add if needed check for partner category."""
-            fieldname1 = f"partner_category_{side}"
+            fieldname1 = f"{side}_partner_category_id"
             category_id = vals.get(fieldname1, False)
             if not category_id:
                 return None
             # Records that do not have the specified category are invalid:
             fieldname2 = f"{side}_partner_id.category_id"
-            return [(fieldname2, "!=", category_id)]
+            return Domain(fieldname2, "!=", category_id)
 
         for this in self:
             handling = (
@@ -136,18 +130,18 @@ class ResPartnerRelationType(models.Model):
             )
             if handling == "ignore":
                 continue
-            invalid_conditions = [FALSE_LEAF]
+            invalid_conditions = Domain.FALSE
             for side in ["left", "right"]:
                 type_condition = get_type_condition(vals, side)
                 if type_condition:
-                    invalid_conditions = OR([invalid_conditions, type_condition])
+                    invalid_conditions |= type_condition
                 category_condition = get_category_condition(vals, side)
                 if category_condition:
-                    invalid_conditions = OR([invalid_conditions, category_condition])
-            if invalid_conditions == [FALSE_LEAF]:
+                    invalid_conditions |= category_condition
+            if invalid_conditions.is_false():
                 continue
             # only look at relations for this type
-            invalid_domain = AND([[("type_id", "=", this.id)], invalid_conditions])
+            invalid_domain = Domain("type_id", "=", this.id) & invalid_conditions
             invalid_relations = Relation.with_context(active_test=False).search(
                 invalid_domain
             )
@@ -188,11 +182,11 @@ class ResPartnerRelationType(models.Model):
                 raise ValidationError(
                     self.env._(
                         "Reflexivity could not be disabled for the relation "
-                        "type %s. There are existing reflexive "
+                        "type %(relation_type)s. There are existing reflexive "
                         "relations defined for the following partners: "
-                        "%s",
-                        relation_type.display_name,
-                        relations.mapped("left_partner_id.display_name"),
+                        "%(partners)s",
+                        relation_type=relation_type.display_name,
+                        partners=relations.mapped("left_partner_id.display_name"),
                     )
                 )
 
@@ -228,16 +222,16 @@ class ResPartnerRelationType(models.Model):
     def _update_right_vals(self, vals):
         """Make sure that on symmetric relations, right vals follow left vals.
 
-        @attention: All fields ending in `_right` will have their values
-                    replaced by the values of the fields whose names end
-                    in `_left`.
+        @attention: All fields starting with `_right` will have their values
+                    replaced by the values of the fields whose names start
+                    with `_left`.
         """
         vals["name_inverse"] = vals.get("name", self.name)
         # For all left keys in model, take value for right either from
         # left key in vals, or if not present, from right key in self:
-        left_keys = [key for key in self._fields if key.endswith("_left")]
+        left_keys = [key for key in self._fields if key.startswith("left_")]
         for left_key in left_keys:
-            right_key = left_key.replace("_left", "_right")
+            right_key = left_key.replace("left_", "right_")
             vals[right_key] = vals.get(left_key, self[left_key])
             if hasattr(vals[right_key], "id"):
                 vals[right_key] = vals[right_key].id

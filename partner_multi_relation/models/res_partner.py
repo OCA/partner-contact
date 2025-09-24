@@ -2,9 +2,10 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Support connections between partners."""
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
-from odoo.osv.expression import AND, FALSE_LEAF, is_leaf
+from odoo.fields import Domain
+from odoo.tools import OrderedSet
 
 
 class ResPartner(models.Model):
@@ -62,6 +63,7 @@ class ResPartner(models.Model):
     def _search_relation_type_id(self, operator, value):
         """Search partners based on their type of relations."""
         SUPPORTED_OPERATORS = (
+            "any",
             "=",
             "!=",
             "like",
@@ -79,7 +81,7 @@ class ResPartner(models.Model):
         left_relations = PartnerRelation.search([("type_id", operator, value)])
         right_relations = PartnerRelation.search([("type_id", operator, value)])
         if not (left_relations or right_relations):
-            return [FALSE_LEAF]
+            return Domain.FALSE
         return [
             "|",
             ("relation_left_ids", "in", left_relations.ids),
@@ -89,7 +91,6 @@ class ResPartner(models.Model):
     @api.model
     def _search_relation_partner_id(self, operator, value):
         """Find partner based on relation with other partner."""
-        # pylint: disable=no-self-use
         return [
             "|",
             ("relation_left_ids.right_partner_id", operator, value),
@@ -106,6 +107,10 @@ class ResPartner(models.Model):
 
         operator is ignored, value must contain a date.
         """
+        # For some reason Domain "optimization" morphs date values
+        # into an OrderedSet. Undo this, as it will crash later on.
+        if isinstance(value, OrderedSet):
+            value = list(value)[0]
         PartnerRelation = self.env["res.partner.relation"]
         date_domain = [
             "&",
@@ -120,7 +125,7 @@ class ResPartner(models.Model):
         right_relations = PartnerRelation.search(date_domain)
         if not (left_relations or right_relations):
             # Can only happen when there are no valid relations at all...
-            return [FALSE_LEAF]  # pragma: no cover
+            return Domain.FALSE  # pragma: no cover
         return [
             "|",
             ("relation_left_ids", "in", left_relations.ids),
@@ -130,7 +135,6 @@ class ResPartner(models.Model):
     @api.model
     def _search_relation_partner_category_id(self, operator, value):
         """Search for partner related to a partner with search category."""
-        # pylint: disable=no-self-use
         return [
             "|",
             ("relation_left_ids.right_partner_id.category_id", operator, value),
@@ -151,13 +155,11 @@ class ResPartner(models.Model):
     def _get_domain_relation_search(self, domain):
         """Check whether domain contains elements that search on relations."""
         relation_search = []
-        for part in domain:
-            if (
-                is_leaf(part)
-                and isinstance(part[0], str)
-                and part[0].startswith("search_relation")
-            ):
-                relation_search.append(part[0])
+        for condition in Domain(domain).iter_conditions():
+            # We will only have real conditions in iter_conditions.
+            field_name = condition.field_expr
+            if field_name.startswith("search_relation"):
+                relation_search.append(field_name)
         return relation_search
 
     def _update_domain_relation_search(self, domain, relation_search):
@@ -166,33 +168,25 @@ class ResPartner(models.Model):
         Need to return new domain if modified, as reassigning will leave
         original list argument (domain) unaffected.
         """
+        updated_domain = Domain(domain)  # Make sure we have domain object.
         if "search_relation_date" not in relation_search:
-            domain = AND(
-                [
-                    domain,
-                    [("search_relation_date", "=", fields.Date.today())],
-                ]
-            )
-        # because of auto_join, we have to do the active test by hand
+            updated_domain &= Domain("search_relation_date", "=", fields.Date.today())
+        # because of bypass_search_access, we have to do the active test by hand
         if self.env.context.get("active_test", True):
-            domain = AND(
+            updated_domain &= Domain.OR(
                 [
-                    domain,
-                    [
-                        "|",
-                        ("relation_left_ids.active", "=", True),
-                        ("relation_right_ids.active", "=", True),
-                    ],
+                    Domain("relation_left_ids.active", "=", True),
+                    Domain("relation_right_ids.active", "=", True),
                 ]
             )
-        return domain
+        return updated_domain
 
     def action_view_relations(self):
         self.ensure_one()
         return {
             "type": "ir.actions.act_window",
             "res_model": "res.partner.relation",
-            "name": _("Connections for current partner"),
+            "name": self.env._("Connections for current partner"),
             "view_mode": "tree,form",
             # For the moment default views.
             "views": [(False, "list"), (False, "form")],

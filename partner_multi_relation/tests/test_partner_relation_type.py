@@ -20,46 +20,46 @@ class TestPartnerRelationType(TestPartnerRelationCommon):
         self.assertTrue(relation_type.unlink())
         self.assertFalse(relation.exists())
 
-    def test_write_contact_type(self):
+    def test_write_partner_type(self):
         """Create relation company 2 person, then change left type to person."""
         relation_type = self.type_company2person
         relation = self.company2person_relation
         self.assertTrue(relation.left_partner_id.is_company)
         with self.assertRaises(ValidationError):
-            relation_type.write({"contact_type_left": "p"})
+            relation_type.write({"left_partner_type": "p"})
         # But should be OK if we end the incompatible relations.
         relation_type.write(
             {
                 "handle_invalid_onchange": "end",
-                "contact_type_left": "p",
+                "left_partner_type": "p",
             }
         )
         self.assertTrue(relation.date_end)
 
-    def test_write_contact_type_company(self):
+    def test_write_partner_type_company(self):
         """Create relation company 2 person, then change right type to company."""
         relation_type = self.type_company2person
         relation = self.company2person_relation
         self.assertFalse(relation.right_partner_id.is_company)
         with self.assertRaises(ValidationError):
-            relation_type.write({"contact_type_right": "c"})
+            relation_type.write({"right_partner_type": "c"})
         # But should be OK if we delete the incompatible relations.
         relation_type.write(
             {
                 "handle_invalid_onchange": "delete",
-                "contact_type_right": "c",
+                "right_partner_type": "c",
             }
         )
         self.assertFalse(relation.exists())
 
-    def test_write_remove_contact_types(self):
+    def test_write_remove_partner_types(self):
         """Create relation company 2 person, then make all kind of changes possible."""
         relation_type = self.type_company2person
         relation = self.company2person_relation
         relation_type.write(
             {
-                "contact_type_left": False,
-                "contact_type_right": False,
+                "left_partner_type": False,
+                "right_partner_type": False,
             }
         )
         # Now we should be able to add person left and company right.
@@ -78,12 +78,12 @@ class TestPartnerRelationType(TestPartnerRelationCommon):
         relation = self.company2person_relation
         self.assertFalse(relation.left_partner_id.category_id)
         with self.assertRaises(ValidationError):
-            relation_type.write({"partner_category_left": self.category_01_ngo.id})
+            relation_type.write({"left_partner_category_id": self.category_01_ngo.id})
         # But should be OK if we ignore the incompatible relations.
         relation_type.write(
             {
                 "handle_invalid_onchange": "ignore",
-                "partner_category_left": self.category_01_ngo.id,
+                "left_partner_category_id": self.category_01_ngo.id,
             }
         )
         self.assertFalse(relation.left_partner_id.category_id)
@@ -116,10 +116,10 @@ class TestPartnerRelationType(TestPartnerRelationCommon):
         self.assertTrue(
             type_party_volunteer.write(
                 {
-                    "contact_type_left": "c",
-                    "contact_type_right": "p",
-                    "partner_category_left": category_party.id,
-                    "partner_category_right": self.category_02_volunteer.id,
+                    "left_partner_type": "c",
+                    "right_partner_type": "p",
+                    "left_partner_category_id": category_party.id,
+                    "right_partner_category_id": self.category_02_volunteer.id,
                 }
             )
         )
@@ -130,16 +130,17 @@ class TestPartnerRelationType(TestPartnerRelationCommon):
             {
                 "name": "is related to",
                 "name_inverse": "has a relation to",
-                "contact_type_left": "p",
-                "partner_category_left": self.category_01_ngo.id,
+                "left_partner_type": "p",
+                "left_partner_category_id": self.category_01_ngo.id,
             }
         )
         relation_type.write({"is_symmetric": True})
         self.assertTrue(relation_type.is_symmetric)
         self.assertEqual(relation_type.name_inverse, relation_type.name)
         self.assertEqual(
-            relation_type.contact_type_right, relation_type.contact_type_left
+            relation_type.right_partner_type, relation_type.left_partner_type
         )
         self.assertEqual(
-            relation_type.partner_category_right, relation_type.partner_category_left
+            relation_type.right_partner_category_id,
+            relation_type.left_partner_category_id,
         )
