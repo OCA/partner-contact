@@ -8,7 +8,7 @@
                 <field name="left_partner_id" />
                 <field name="right_partner_id" />
                 <field name="type_id" />
-                <group expand="0" string="Group By">
+                <group>
                     <filter
                         name="group_by_left_partner_id"
                         string="Left Partner"

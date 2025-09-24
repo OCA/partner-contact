@@ -74,7 +74,7 @@ msgid "Current record's category"
 msgstr "Aktuell rekordkategori"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__contact_type_this
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__partner_type_this
 msgid "Current record's partner type"
 msgstr "Aktuell posts partnertyp"
 
@@ -215,12 +215,12 @@ msgid "Last Updated on"
 msgstr "Senast uppdaterad"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__partner_category_left
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__left_partner_category_id
 msgid "Left partner category"
 msgstr "Vänster partnerkategori"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__contact_type_left
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__left_partner_type
 msgid "Left partner type"
 msgstr "Typ av vänster partner"
 
@@ -276,7 +276,7 @@ msgid "Other record's category"
 msgstr "Annan rekordkategori"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__contact_type_other
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__partner_type_other
 msgid "Other record's partner type"
 msgstr "Typ av partner för annan post"
 
@@ -407,12 +407,12 @@ msgid "Resource Model"
 msgstr "Resursmodell"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__partner_category_right
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__right_partner_category_id
 msgid "Right partner category"
 msgstr "Rätt partnerkategori"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__contact_type_right
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__right_partner_type
 msgid "Right partner type"
 msgstr "Rätt typ av partner"
 
