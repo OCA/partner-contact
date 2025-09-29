@@ -11,4 +11,5 @@
     "website": "https://github.com/OCA/partner-contact",
     "data": ["views/sale_order_view.xml"],
     "installable": True,
+    "auto_install": True,
 }
