@@ -12,6 +12,7 @@
     "depends": ["contacts", "base_tier_validation", "partner_stage"],
     "data": [
         "data/tier_definition.xml",
+        "data/tier_validation_exception.xml",
         "views/res_partner_view.xml",
     ],
     "maintainers": ["dreispt"],

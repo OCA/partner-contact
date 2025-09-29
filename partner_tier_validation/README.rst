@@ -100,11 +100,11 @@ Authors
 Contributors
 ------------
 
--  `Open Source Integrators <https://opensourceintegrators.com>`__.
+- `Open Source Integrators <https://opensourceintegrators.com>`__.
 
-   -  Antonio Yamuta <ayamuta@opensourceintegrators.com>
-   -  Daniel Reis <dreis@opensourceintegrators.com>
-   -  Urvisha Desai <udesai@opensourceintegrators.com>
+  - Antonio Yamuta <ayamuta@opensourceintegrators.com>
+  - Daniel Reis <dreis@opensourceintegrators.com>
+  - Urvisha Desai <udesai@opensourceintegrators.com>
 
 Maintainers
 -----------
