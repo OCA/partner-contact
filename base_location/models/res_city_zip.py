@@ -51,5 +51,5 @@ class ResCityZip(models.Model):
             )
             country_name = rec.city_id.country_id.name if rec.city_id.country_id else ""
             rec.display_name = (
-                f"{rec.name}, {rec.city_id.name}, " f"{state_name}{country_name}"
+                f"{rec.name}, {rec.city_id.name}, {state_name}{country_name}"
             )
