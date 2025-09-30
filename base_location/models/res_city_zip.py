@@ -18,21 +18,18 @@ class ResCityZip(models.Model):
         "res.city",
         "City",
         required=True,
-        auto_join=True,
+        bypass_search_access=True,
         ondelete="cascade",
         index=True,
     )
     state_id = fields.Many2one(related="city_id.state_id")
     country_id = fields.Many2one(related="city_id.country_id")
 
-    _sql_constraints = [
-        (
-            "name_city_uniq",
-            "UNIQUE(name, city_id)",
-            "You already have a zip with that code in the same city. "
-            "The zip code must be unique within it's city",
-        )
-    ]
+    _name_city_uniq = models.Constraint(
+        "UNIQUE(name, city_id)",
+        "You already have a zip with that code in the same city. "
+        "The zip code must be unique within it's city",
+    )
 
     @api.depends(
         "name",
