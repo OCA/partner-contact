@@ -11,8 +11,11 @@ class TestResPartnerCompanyType(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.company_type = cls.env.ref(
-            "partner_company_type.res_partner_company_type_sa"
+        cls.company_type = cls.env["res.partner.company.type"].create(
+            {
+                "name": "Anonymous Company",
+                "shortcut": "AC",
+            }
         )
 
     def test_00_duplicate(self):
