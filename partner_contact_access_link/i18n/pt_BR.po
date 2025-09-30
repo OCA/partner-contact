@@ -17,11 +17,24 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: partner_contact_access_link
+#: model:ir.model.fields,field_description:partner_contact_access_link.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_contact_access_link
 #: model:ir.model,name:partner_contact_access_link.model_res_partner
-msgid "Contact"
-msgstr "Contato"
+msgid "Fake Model"
+msgstr ""
+
+#. module: partner_contact_access_link
+#: model:ir.model.fields,field_description:partner_contact_access_link.field_res_partner__id
+msgid "ID"
+msgstr ""
 
 #. module: partner_contact_access_link
 #: model_terms:ir.ui.view,arch_db:partner_contact_access_link.view_partner_form
 msgid "Open full form"
 msgstr "Abrir formulário completo"
+
+#~ msgid "Contact"
+#~ msgstr "Contato"
