@@ -15,5 +15,4 @@
         "views/res_partner.xml",
     ],
     "demo": ["demo/res_partner_company_type.xml"],
-    "installable": True,
 }
