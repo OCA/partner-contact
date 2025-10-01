@@ -80,6 +80,7 @@ addon | version | maintainers | summary
 [partner_second_lastname](partner_second_lastname/) | 15.0.1.0.0 |  | Have split first and second lastnames
 [partner_stage](partner_stage/) | 15.0.1.0.0 | <a href='https://github.com/dreispt'><img src='https://github.com/dreispt.png' width='32' height='32' style='border-radius:50%;' alt='dreispt'/></a> | Add lifecycle Stages to Partners
 [partner_supplierinfo](partner_supplierinfo/) | 15.0.1.0.0 |  | Management of partner reference equivalences
+[partner_tz](partner_tz/) | 15.0.1.0.0 |  | Remove partner timezone default value and display on form
 [partner_vat_unique](partner_vat_unique/) | 15.0.1.0.3 | <a href='https://github.com/luisg123v'><img src='https://github.com/luisg123v.png' width='32' height='32' style='border-radius:50%;' alt='luisg123v'/></a> | Module to make the VAT number unique for customers and suppliers.
 [portal_partner_data_no_edit](portal_partner_data_no_edit/) | 15.0.1.0.0 |  | Portal Partner Block Data Edit
 [res_partner_journal_items_link](res_partner_journal_items_link/) | 15.0.1.0.0 |  | Adds a smart button to grant direct access to their accounting notes
