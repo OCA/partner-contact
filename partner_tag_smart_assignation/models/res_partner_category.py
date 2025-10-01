@@ -55,13 +55,19 @@ class ResPartnerCategory(models.Model):
     @api.model
     def create(self, vals):
         record = super().create(vals)
-        record.update_partner_tags()
+        record.with_delay(
+            channel="root.res_partner",
+            priority=100
+        ).update_partner_tags()
         return record
 
     def write(self, vals):
         res = super().write(vals)
         if "tag_filter_condition_id" in vals or "model" in vals:
-            self.update_partner_tags()
+            self.with_delay(
+                channel="root.res_partner",
+                priority=100
+            ).update_partner_tags()
         return res
 
     @api.constrains(
