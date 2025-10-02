@@ -3,3 +3,5 @@
 - Pimolnat Suntian \<<pimolnats@ecosoft.co.th>\>
 - Nadal Francisco Garcia \<<nadal.francisco@braintec.com>\>
   (<https://braintec.com>)
+- Hudson Amadeus Leonardy \<<hudson@solusiaglis.co.id>\>
+  (<https://solusiaglis.co.id>)
