@@ -11,3 +11,5 @@
 - Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
 
 - Alan Ramos \<<alan.ramos@jarsa.com>\>
+
+- Hudson Amadeus Leonardy \<<hudson@solusiaglis.co.id>\>
