@@ -104,7 +104,7 @@ class CityZipGeonamesImport(models.TransientModel):
         logger.info("Starting to download %s", url)
         res_request = requests.get(url, timeout=15)
         if res_request.status_code != requests.codes.ok:
-            # pylint: disable=translation-positional-used - Don't want to re-translate
+            # pylint: disable=translation-positional-used  # Don't want to re-translate
             raise UserError(
                 self.env._(
                     "Got an error %d when trying to download the file %s.",
