@@ -17,7 +17,11 @@ partner-contact
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[base_country_state_translatable](base_country_state_translatable/) | 19.0.1.0.0 |  | Translate Country States
 
 [//]: # (end addons)
 
