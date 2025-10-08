@@ -3,12 +3,13 @@
 {
     "name": "Sale Partner Company Group",
     "summary": "Adds the possibility to add a company group to a company",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Sales",
     "author": "Camptocamp SA, Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "depends": ["base_partner_company_group", "sale"],
+    "depends": ["base_partner_company_group", "product", "sale"],
     "website": "https://github.com/OCA/partner-contact",
     "data": ["views/sale_order_view.xml"],
     "installable": True,
+    "pre_init_hook": "pre_init_hook",
 }

@@ -1,22 +1,17 @@
 # Copyright 2020 Ecosoft Co., Ltd (http://ecosoft.co.th/)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo.addons.base_partner_company_group.tests.test_base_partner_company_group import (  # noqa: E501
-    TestBasePartnerCompanyGroup,
-)
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestSalePartnerCompanyGroup(TestBasePartnerCompanyGroup):
+class TestSalePartnerCompanyGroup(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        currency = cls.env.ref("base.USD")
-        cls.pricelist1 = cls.env["product.pricelist"].create(
-            {"name": "Pricelist 01", "currency_id": currency.id}
-        )
-        cls.pricelist2 = cls.env["product.pricelist"].create(
-            {"name": "Pricelist 02", "currency_id": currency.id}
-        )
+        cls.env.user.group_ids += cls.env.ref("product.group_product_pricelist")
+        cls.pricelist1 = cls.env["product.pricelist"].create({"name": "Pricelist 01"})
+        cls.pricelist2 = cls.env["product.pricelist"].create({"name": "Pricelist 02"})
         cls.company_group1 = cls.env["res.partner"].create(
             {
                 "name": "Company Group 01",
