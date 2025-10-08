@@ -4,3 +4,4 @@
   - Ernesto Tejeda
 - Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
 - Nguyen Minh Chien \<<chien@trobz.com>\>
+- Hudson Amadeus Leonardy \<<https://solusiaglis.co.id>\>
