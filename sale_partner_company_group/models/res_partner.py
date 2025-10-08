@@ -21,12 +21,10 @@ class Contact(models.Model):
                 "message": self.env._(
                     "The company group %(company_group)s has"
                     " the pricelist %(pricelist)s, that is different"
-                    " than the pricelist set on this contact"
-                )
-                % {
-                    "company_group": self.company_group_id.display_name,
-                    "pricelist": price_list.display_name,
-                },
+                    " than the pricelist set on this contact",
+                    company_group=self.company_group_id.display_name,
+                    pricelist=price_list.display_name,
+                ),
             }
         return res
 
@@ -54,7 +52,8 @@ class Contact(models.Model):
                 "title": self.env._("Warning"),
                 "message": self.env._(
                     "This contact has members of a company group with"
-                    f" different pricelists, the members are:\n{members_str}"
+                    " different pricelists, the members are:\n%(members_str)s",
+                    members_str=members_str,
                 ),
             }
         return res
