@@ -1,0 +1,190 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_collective_agreement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-10 08:25+0000\n"
+"PO-Revision-Date: 2025-10-10 10:26+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.7\n"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__active
+#: model:ir.model.fields.selection,name:partner_collective_agreement.selection__collective_agreement__state__active
+msgid "Active"
+msgstr ""
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__code
+msgid "Code"
+msgstr "Código"
+
+#. module: partner_collective_agreement
+#: model:ir.model,name:partner_collective_agreement.model_collective_agreement
+#: model_terms:ir.ui.view,arch_db:partner_collective_agreement.view_form_collective_agreement
+msgid "Collective Agreement"
+msgstr "Convenio colectivo"
+
+#. module: partner_collective_agreement
+#: model:ir.model,name:partner_collective_agreement.model_collective_agreement_official_publication
+msgid "Collective Agreement Official Publication"
+msgstr "Publicación oficial del convenio colectivo"
+
+#. module: partner_collective_agreement
+#: model:ir.model,name:partner_collective_agreement.model_collective_agreement_scope
+msgid "Collective Agreement Scope"
+msgstr "Ámbito del convenio colectivo"
+
+#. module: partner_collective_agreement
+#: model:ir.actions.act_window,name:partner_collective_agreement.action_collective_agreement
+#: model:ir.actions.act_window,name:partner_collective_agreement.action_partner_collective_agreements
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_res_partner__collective_agreement_ids
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_res_users__collective_agreement_ids
+#: model:ir.ui.menu,name:partner_collective_agreement.menu_collective_agreement_root
+#: model_terms:ir.ui.view,arch_db:partner_collective_agreement.view_collective_agreement_search
+#: model_terms:ir.ui.view,arch_db:partner_collective_agreement.view_list_collective_agreement
+#: model_terms:ir.ui.view,arch_db:partner_collective_agreement.view_res_partner_form_inherit_collective_agreement
+msgid "Collective Agreements"
+msgstr "Convenios colectivos"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_res_partner__collective_agreement_count
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_res_users__collective_agreement_count
+msgid "Collective Agreements Count"
+msgstr "Convenios colectivos"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: partner_collective_agreement
+#: model:ir.model,name:partner_collective_agreement.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__create_uid
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_official_publication__create_uid
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_scope__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__create_date
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_official_publication__create_date
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_scope__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__display_name
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_official_publication__display_name
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_scope__display_name
+msgid "Display Name"
+msgstr "Mostrar nombre"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields.selection,name:partner_collective_agreement.selection__collective_agreement__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__end_date
+msgid "End Date"
+msgstr "Fecha de finalización"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields.selection,name:partner_collective_agreement.selection__collective_agreement__state__finished
+msgid "Finished"
+msgstr "Finalizado"
+
+#. module: partner_collective_agreement
+#: model_terms:ir.ui.view,arch_db:partner_collective_agreement.view_res_partner_filter_inherit_collective_agreement
+msgid "Has Collective Agreement"
+msgstr "Tiene convenido colectivo"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__id
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_official_publication__id
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_scope__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__write_uid
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_official_publication__write_uid
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_scope__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualización por"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__write_date
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_official_publication__write_date
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_scope__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__name
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_official_publication__name
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement_scope__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__observations
+#: model_terms:ir.ui.view,arch_db:partner_collective_agreement.view_form_collective_agreement
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__official_publication_id
+msgid "Official Publication"
+msgstr "Publicación oficial"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__partner_ids
+#: model_terms:ir.ui.view,arch_db:partner_collective_agreement.view_form_collective_agreement
+msgid "Partners"
+msgstr "Contactos"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__publication_date
+msgid "Publication Date"
+msgstr "Fecha de publicación"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__scope_id
+msgid "Scope"
+msgstr "Ámbito"
+
+#. module: partner_collective_agreement
+#: model:ir.model.fields,field_description:partner_collective_agreement.field_collective_agreement__state
+msgid "State"
+msgstr "Estado"
+
+#. module: partner_collective_agreement
+#: model:ir.model.constraint,message:partner_collective_agreement.constraint_collective_agreement_code_uniq
+msgid "The code must be unique"
+msgstr "El código debe ser único"
+
+#. module: partner_collective_agreement
+#. odoo-python
+#: code:addons/partner_collective_agreement/models/collective_agreement.py:0
+msgid "The end date cannot be earlier than the publication date."
+msgstr "La fecha de finalización no puede ser anterior a la fecha de publicación."
+
+#. module: partner_collective_agreement
+#: model:ir.model.constraint,message:partner_collective_agreement.constraint_collective_agreement_name_uniq
+msgid "The name must be unique"
+msgstr "El nombre debe ser único"

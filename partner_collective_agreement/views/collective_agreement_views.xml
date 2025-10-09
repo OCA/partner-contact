@@ -1,0 +1,77 @@
+<odoo>
+    <record id="view_form_collective_agreement" model="ir.ui.view">
+        <field name="name">collective.agreement.form</field>
+        <field name="model">collective.agreement</field>
+        <field name="arch" type="xml">
+            <form string="Collective Agreement">
+                <sheet>
+                    <group>
+                        <field name="code" />
+                        <field name="name" />
+                        <field name="scope_id" />
+                        <field name="publication_date" />
+                        <field name="end_date" />
+                        <field name="official_publication_id" />
+                        <field name="state" />
+                        <field name="active" />
+                    </group>
+                    <notebook>
+                        <page string="Partners">
+                            <field
+                                name="partner_ids"
+                                context="{'default_company_id': company_id}"
+                            >
+                                <list>
+                                    <field name="name" />
+                                    <field name="vat" />
+                                    <field name="phone" />
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Observations">
+                            <field name="observations" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_list_collective_agreement" model="ir.ui.view">
+        <field name="name">collective.agreement.list</field>
+        <field name="model">collective.agreement</field>
+        <field name="arch" type="xml">
+            <list string="Collective Agreements">
+                <field name="code" />
+                <field name="name" />
+                <field name="scope_id" />
+                <field name="publication_date" />
+                <field name="end_date" />
+                <field name="official_publication_id" />
+                <field name="state" />
+                <field name="active" />
+            </list>
+        </field>
+    </record>
+    <record id="view_collective_agreement_search" model="ir.ui.view">
+        <field name="name">collective.agreement.search</field>
+        <field name="model">collective.agreement</field>
+        <field name="arch" type="xml">
+            <search string="Collective Agreements">
+                <field name="code" />
+                <field name="name" />
+            </search>
+        </field>
+    </record>
+    <record id="action_collective_agreement" model="ir.actions.act_window">
+        <field name="name">Collective Agreements</field>
+        <field name="res_model">collective.agreement</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <menuitem
+        id="menu_collective_agreement_root"
+        name="Collective Agreements"
+        parent="contacts.res_partner_menu_config"
+        sequence="10"
+        action="action_collective_agreement"
+    />
+</odoo>
