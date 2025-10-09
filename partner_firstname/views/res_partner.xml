@@ -31,20 +31,17 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@id='individual']" position="attributes">
+            <xpath expr="//h1//field[last()]" position="attributes">
                 <attribute name="invisible">is_company</attribute>
                 <attribute name="readonly">not is_company</attribute>
                 <attribute name="required">type == 'contact' and is_company</attribute>
             </xpath>
-            <xpath expr="//field[@id='company']" position="attributes">
+            <xpath expr="//h1//field" position="attributes">
                 <attribute name="invisible">not is_company</attribute>
                 <attribute name="readonly">not is_company</attribute>
                 <attribute name="required">type == 'contact' and is_company</attribute>
             </xpath>
-            <xpath
-                expr="//div[hasclass('oe_title')]//field[@id='company']/.."
-                position="after"
-            >
+            <xpath expr="//h1//field/.." position="after">
                 <div class="oe_edit_only">
                     <group invisible="is_company">
                         <field

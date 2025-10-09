@@ -2,7 +2,7 @@
 # Copyright 2014 Agile Business Group (<http://www.agilebg.com>)
 # Copyright 2015 Grupo ESOC (<http://www.grupoesoc.es>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from odoo import _, api, models
+from odoo import api, models
 
 
 class ResUser(models.Model):
@@ -35,9 +35,9 @@ class ResUser(models.Model):
         self.ensure_one()
         default = dict(default or {})
         if ("name" not in default) and ("partner_id" not in default):
-            default["name"] = _("%(name)s (copy)", name=self.name)
+            default["name"] = self.env._("%(name)s (copy)", name=self.name)
         if "login" not in default:
-            default["login"] = _("%(login)s (copy)", login=self.login)
+            default["login"] = self.env._("%(login)s (copy)", login=self.login)
         if (
             ("firstname" not in default)
             and ("lastname" not in default)
