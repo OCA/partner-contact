@@ -49,16 +49,16 @@ To use this module, you need to:
 Known issues / Roadmap
 ======================
 
--  As is current now website comparasion as is now is need to be
-   extrictly the same but all these example of url should be consider
-   the same:
+- As is current now website comparasion as is now is need to be
+  extrictly the same but all these example of url should be consider the
+  same:
 
-   `www.test-deduplicate.com <http://www.test-deduplicate.com>`__
-   test-deduplicate.com http://test-deduplicate.com
-   https://test-deduplicate.com http://test-deduplicate.com/
-   https://test-deduplicate.com/ http://www.test-deduplicate.com
-   https://www.test-deduplicate.com http://www.test-deduplicate.com/
-   https://www.test-deduplicate.com/
+  `www.test-deduplicate.com <http://www.test-deduplicate.com>`__
+  test-deduplicate.com http://test-deduplicate.com
+  https://test-deduplicate.com http://test-deduplicate.com/
+  https://test-deduplicate.com/ http://www.test-deduplicate.com
+  https://www.test-deduplicate.com http://www.test-deduplicate.com/
+  https://www.test-deduplicate.com/
 
 Bug Tracker
 ===========
@@ -81,15 +81,15 @@ Authors
 Contributors
 ------------
 
--  `Tecnativa <https://www.tecnativa.com>`__:
+- `Tecnativa <https://www.tecnativa.com>`__:
 
-   -  Pedro M. Baeza
-   -  Vicent Cubells
-   -  Cristina Martin
-   -  Victor M.M. Torres
-   -  Carolina Fernandez
+  - Pedro M. Baeza
+  - Vicent Cubells
+  - Cristina Martin
+  - Victor M.M. Torres
+  - Carolina Fernandez
 
--  Kevin Khao <kevinkhao@gmail.com>
+- Kevin Khao <kevinkhao@gmail.com>
 
 Maintainers
 -----------

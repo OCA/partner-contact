@@ -18,7 +18,7 @@
     ],
     "maintainers": ["rafaelbn", "edlopen"],
     "images": ["images/new_fields.png"],
-    "author": "Tecnativa, " "Agile Business Group, " "Odoo Community Association (OCA)",
+    "author": "Tecnativa, Agile Business Group, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "license": "AGPL-3",
     "installable": True,

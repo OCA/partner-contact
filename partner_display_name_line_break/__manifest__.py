@@ -4,7 +4,7 @@
     "name": "Partner Display Name Line Break",
     "version": "17.0.1.0.1",
     "summary": "Split the company and the partner name on two different lines",
-    "author": "Camptocamp," "Odoo Community Association (OCA)",
+    "author": "Camptocamp,Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "category": "Partner",
     "website": "https://github.com/OCA/partner-contact",

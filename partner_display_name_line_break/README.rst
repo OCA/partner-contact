@@ -57,12 +57,12 @@ Authors
 Contributors
 ------------
 
--  Thomas Nowicki <thomas.nowicki@camptocamp.com>
--  Akim Juillerat <akim.juillerat@camptocamp.com>
--  Juan Miguel Sánchez Arce <juan.sanchez@camptocamp.com>
--  `Trobz <https://www.trobz.com>`__:
+- Thomas Nowicki <thomas.nowicki@camptocamp.com>
+- Akim Juillerat <akim.juillerat@camptocamp.com>
+- Juan Miguel Sánchez Arce <juan.sanchez@camptocamp.com>
+- `Trobz <https://www.trobz.com>`__:
 
-   -  Tris Doan <tridm@trobz.com>
+  - Tris Doan <tridm@trobz.com>
 
 Other credits
 -------------

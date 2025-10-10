@@ -60,8 +60,7 @@ class ResPartner(models.Model):
             return email
         if validate_email is None:
             _logger.warning(
-                "Can not validate email, "
-                'python dependency required "email_validator"'
+                'Can not validate email, python dependency required "email_validator"'
             )
             return email
 

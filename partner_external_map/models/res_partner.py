@@ -52,7 +52,7 @@ class ResPartner(models.Model):
         map_website = self.env.user.context_map_website_id
         if not map_website:
             raise UserError(
-                _("Missing map provider: " "you should set it in your preferences.")
+                _("Missing map provider: you should set it in your preferences.")
             )
         # Since v13, fields partner_latitude and partner_longitude are
         # in the "base" module
@@ -86,10 +86,7 @@ class ResPartner(models.Model):
         self.ensure_one()
         if not self.env.user.context_route_map_website_id:
             raise UserError(
-                _(
-                    "Missing route map website: "
-                    "you should set it in your preferences."
-                )
+                _("Missing route map website: you should set it in your preferences.")
             )
         map_website = self.env.user.context_route_map_website_id
         if not self.env.user.context_route_start_partner_id:

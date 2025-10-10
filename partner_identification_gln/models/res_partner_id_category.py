@@ -28,7 +28,7 @@ class ResPartnerIdCategory(models.Model):
             return True
 
         cat = self.env.ref(
-            "partner_identification_gln." "partner_identification_gln_number_category"
+            "partner_identification_gln.partner_identification_gln_number_category"
         ).id
         duplicate_gln = self._search_duplicate(cat, id_number, True)
 
@@ -46,7 +46,7 @@ class ResPartnerIdCategory(models.Model):
             return True
 
         cat = self.env.ref(
-            "partner_identification_gln." "partner_identification_gcp_number_category"
+            "partner_identification_gln.partner_identification_gcp_number_category"
         ).id
         duplicate_gln = self._search_duplicate(cat, id_number)
 

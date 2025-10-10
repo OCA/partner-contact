@@ -26,8 +26,7 @@ class ResPartnerIdCategory(models.Model):
     color = fields.Integer(string="Color Index", default=_get_default_color)
     code = fields.Char(
         required=True,
-        help="Abbreviation or acronym of this ID type. For example, "
-        "'driver_license'",
+        help="Abbreviation or acronym of this ID type. For example, 'driver_license'",
     )
     name = fields.Char(
         string="ID name",
