@@ -93,3 +93,20 @@ class TestPartnerTierValidation(common.SavepointCase):
         # Can move to confirmed state without approval
         contact.write({"stage_id": self.stage_confirmed.id})
         self.assertEqual(contact.state, "confirmed")
+
+    def test_create_partner_with_default_state(self):
+        new_partner = self.env["res.partner"].create(
+            {
+                "name": "Company bis for test",
+            }
+        )
+        self.assertEqual(new_partner.state, "draft")
+
+    def test_create_partner_with_stage_defined(self):
+        new_partner = self.env["res.partner"].create(
+            {
+                "name": "Not Company for test",
+                "stage_id": self.stage_confirmed.id,
+            }
+        )
+        self.assertEqual(new_partner.state, "confirmed")

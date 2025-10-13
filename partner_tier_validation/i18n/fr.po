@@ -6,20 +6,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-05-27 14:26+0000\n"
-"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"PO-Revision-Date: 2025-06-08 08:25+0000\n"
+"Last-Translator: Kévin Roche <kevin.roche@akretion.com>\n"
 "Language-Team: none\n"
-"Language: it\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 5.10.4\n"
 
 #. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__can_review
 msgid "Can Review"
-msgstr ""
+msgstr "A valider"
 
 #. module: partner_tier_validation
 #: model:ir.model,name:partner_tier_validation.model_res_partner
@@ -30,7 +30,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_tier_validation.field_tier_definition__display_name
 msgid "Display Name"
-msgstr "Nome visualizzato"
+msgstr ""
 
 #. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__has_comment
@@ -52,37 +52,37 @@ msgstr ""
 #. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__need_validation
 msgid "Need Validation"
-msgstr ""
+msgstr "Validation Requise"
 
 #. module: partner_tier_validation
 #: model_terms:ir.ui.view,arch_db:partner_tier_validation.partner_form_tier_filter
 msgid "Needs my Approval"
-msgstr ""
+msgstr "Besoin de ma Validation"
 
 #. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__next_review
 msgid "Next Review"
-msgstr ""
+msgstr "Revue suivante"
 
 #. module: partner_tier_validation
 #: model_terms:ir.ui.view,arch_db:partner_tier_validation.partner_form_tier_filter
 msgid "Partner(s) to Approve"
-msgstr ""
+msgstr "Contact(s) à Valider"
 
 #. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__rejected
 msgid "Rejected"
-msgstr ""
+msgstr "Rejeté"
 
 #. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__rejected_message
 msgid "Rejected Message"
-msgstr ""
+msgstr "Raison du rejet"
 
 #. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__reviewer_ids
 msgid "Reviewers"
-msgstr ""
+msgstr "Validateurs"
 
 #. module: partner_tier_validation
 #: model:ir.model,name:partner_tier_validation.model_tier_definition
@@ -107,7 +107,7 @@ msgstr ""
 #. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__validated
 msgid "Validated"
-msgstr ""
+msgstr "Validé"
 
 #. module: partner_tier_validation
 #: model:ir.model.fields,field_description:partner_tier_validation.field_res_partner__validated_message
