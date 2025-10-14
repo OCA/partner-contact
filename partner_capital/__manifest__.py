@@ -5,12 +5,10 @@
 
 {
     "name": "Partners Capital",
-    "version": "18.0.1.0.1",
+    "version": "19.0.1.0.1",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
-    "author": "Antiun Ingenier??a S.L., "
-    "Tecnativa, "
-    "Odoo Community Association (OCA)",
+    "author": "Antiun Ingenier??a S.L., Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "depends": ["contacts"],
     "data": [
