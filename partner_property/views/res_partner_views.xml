@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <notebook position="before">
+                <field name="properties_company_id" invisible="1" />
+                <field
+                    name="properties_type_company"
+                    columns="2"
+                    invisible="not is_company"
+                />
+                <field
+                    name="properties_type_person"
+                    columns="2"
+                    invisible="is_company"
+                />
+            </notebook>
+        </field>
+    </record>
+    <record id="res_partner_kanban_view" model="ir.ui.view">
+        <field name="name">res.partner.kanban</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='active']" position="after">
+                <field name="properties_company_id" />
+            </xpath>
+            <xpath expr="//footer" position="before">
+                <div>
+                    <t t-if="record.is_company.raw_value">
+                        <field name="properties_type_company" widget="properties" />
+                    </t>
+                    <t t-if="!record.is_company.raw_value">
+                        <field name="properties_type_person" widget="properties" />
+                    </t>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
