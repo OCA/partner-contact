@@ -20,3 +20,4 @@
 - Bjorn Billen \<<bjorn.billen@dynapps.be>\>
 - Aion Tech \<<https://aiontech.company/>\>:
   - Simone Rubino \<<simone.rubino@aion-tech.it>\>
+- XCG SAS, part of [Orbeet](https://orbeet.io)

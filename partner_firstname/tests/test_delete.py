@@ -34,5 +34,6 @@ class UserCase(CompanyCase, MailInstalled):
 
     def test_computing_after_unlink(self):
         # Cannot create users if ``mail`` is installed
-        if not self.mail_installed():
-            return super().test_computing_after_unlink()
+        return (
+            super().test_computing_after_unlink() if not self.mail_installed() else None
+        )

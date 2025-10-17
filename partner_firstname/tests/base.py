@@ -3,7 +3,7 @@
 
 from odoo.tests import TransactionCase
 
-from .. import exceptions as ex
+from .. import exceptions as ex  # noqa: TID252
 
 
 class MailInstalled:
@@ -44,7 +44,6 @@ class BaseCase(TransactionCase, MailInstalled):
                     getattr(self, field),
                     f"Test failed with wrong {field}",
                 )
-
         super().tearDown()
 
     def test_copy(self):
@@ -55,7 +54,7 @@ class BaseCase(TransactionCase, MailInstalled):
     def test_one_name(self):
         """Test what happens when only one name is given."""
         name = "Mönty"
-        self.expect(name, False, name)
+        self.expect(lastname=name, firstname=False, name=name)
         self.original.name = name
 
     def test_no_names(self):

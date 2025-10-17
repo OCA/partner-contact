@@ -6,28 +6,22 @@
             <xpath expr="//field[@id='individual']" position="attributes">
                 <attribute name="invisible">is_company</attribute>
                 <attribute name="readonly">not is_company</attribute>
-                <attribute name="required">type == 'contact' and is_company</attribute>
+                <attribute name="required">type == 'contract' and is_company</attribute>
             </xpath>
             <xpath expr="//field[@id='company']" position="attributes">
                 <attribute name="invisible">is_company == False</attribute>
                 <attribute name="readonly">not is_company</attribute>
-                <attribute name="required">type == 'contact' and is_company</attribute>
+                <attribute name="required">type == 'contract' and is_company</attribute>
             </xpath>
             <xpath expr="//h1//field[@id='company']/.." position="before">
                 <group invisible="is_company">
                     <field
-                        invisible="not form_has_lastname_first"
                         name="lastname"
-                        required="form_has_lastname_first and not firstname and not is_company and type == 'contact'"
+                        required="not firstname and not is_company and type == 'contact'"
                     />
                     <field
                         name="firstname"
                         required="not lastname and not is_company and type == 'contact'"
-                    />
-                    <field
-                        invisible="form_has_lastname_first"
-                        name="lastname"
-                        required="not form_has_lastname_first and not firstname and not is_company and type == 'contact'"
                     />
                 </group>
             </xpath>
@@ -37,35 +31,19 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@id='individual']" position="attributes">
-                <attribute name="invisible">is_company</attribute>
-                <attribute name="readonly">not is_company</attribute>
-                <attribute name="required">type == 'contact' and is_company</attribute>
-            </xpath>
-            <xpath expr="//field[@id='company']" position="attributes">
-                <attribute name="invisible">not is_company</attribute>
-                <attribute name="readonly">not is_company</attribute>
-                <attribute name="required">type == 'contact' and is_company</attribute>
-            </xpath>
             <xpath
-                expr="//div[hasclass('oe_title')]//field[@id='company']/.."
+                expr="//sheet//field[@name='company_type' and @widget='radio']"
                 position="after"
             >
-                <div class="oe_edit_only">
+                <div class="oe_edit_only" name="firstname_lastname_fields">
                     <group invisible="is_company">
                         <field
-                            invisible="not form_has_lastname_first"
                             name="lastname"
-                            required="form_has_lastname_first and not firstname and not is_company and type == 'contact'"
+                            required="not firstname and not is_company and type == 'contact'"
                         />
                         <field
                             name="firstname"
                             required="not lastname and not is_company and type == 'contact'"
-                        />
-                        <field
-                            invisible="form_has_lastname_first"
-                            name="lastname"
-                            required="not form_has_lastname_first and not firstname and not is_company and type == 'contact'"
                         />
                     </group>
                 </div>
@@ -86,18 +64,12 @@
                     <field name="is_company" invisible="True" />
                     <group invisible="is_company">
                         <field
-                            invisible="not form_has_lastname_first"
                             name="lastname"
-                            required="form_has_lastname_first and not firstname and not is_company and type == 'contact'"
+                            required="not firstname and not is_company and type == 'contact'"
                         />
                         <field
                             name="firstname"
                             required="not lastname and not is_company and type == 'contact'"
-                        />
-                        <field
-                            invisible="form_has_lastname_first"
-                            name="lastname"
-                            required="form_has_lastname_first and not firstname and not is_company and type == 'contact'"
                         />
                     </group>
                 </div>

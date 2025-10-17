@@ -5,9 +5,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 import logging
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
-from .. import exceptions
+from .. import exceptions  # noqa: TID252
 
 _logger = logging.getLogger(__name__)
 
@@ -27,22 +27,9 @@ class ResPartner(models.Model):
         readonly=False,
     )
 
-    form_has_lastname_first = fields.Boolean(compute="_compute_form_has_lastname_first")
-
-    def _compute_form_has_lastname_first(self):
-        default_order = (
-            self.env["res.config.settings"].sudo()._partner_names_order_default()
-        )
-        self.form_has_lastname_first = (
-            self.env["ir.config_parameter"]
-            .sudo()
-            .get_param("partner_names_order", default_order)
-            != "first_last"
-        )
-
     @api.model
     def name_fields_in_vals(self, vals):
-        """Method to check if any name fields are in `vals`."""
+        """Check if any name fields are in `vals`."""
         return vals.get("firstname") or vals.get("lastname")
 
     @api.model_create_multi
@@ -60,44 +47,65 @@ class ResPartner(models.Model):
         created_partners = self.browse()
         for vals in vals_list:
             partner_context = dict(self.env.context)
-            is_company = vals.get("company_type") == "company"
-            if not is_company and self.name_fields_in_vals(vals) and "name" in vals:
-                del vals["name"]
+            _logger.info("partner_firstname.create:" + str(vals))
+            _logger.info("self.env.context: " + str(self.env.context))
+            if (
+                not vals.get("company_type") == "company"
+                and self.name_fields_in_vals(vals)
+                and "name" in vals
+            ):
+                # this line is commented because it is not compatible with Odoo 19
+                # del vals["name"]
                 partner_context.pop("default_name", None)
             else:
+                _logger.info("name dans vals: " + str(vals.get("name")))
+                _logger.info(
+                    "default_name dans partner_context: "
+                    + str(partner_context.get("default_name"))
+                )
                 name = vals.get("name", partner_context.get("default_name"))
+                _logger.info("name2: " + str(name))
                 if name is not None:
                     # Calculate the split fields
+                    company_type = vals.get(
+                        "company_type",
+                        self.default_get(["company_type"]).get("company_type"),
+                    )
                     inverted = self._get_inverse_name(
-                        self._get_whitespace_cleaned_name(name), is_company
+                        self._get_whitespace_cleaned_name(name),
+                        company_type == "company",
                     )
                     for key, value in inverted.items():
                         if not vals.get(key) or partner_context.get("copy"):
                             vals[key] = value
 
                     # Remove the combined fields
-                    vals.pop("name", None)
+                    # this line is commented because it is not compatible with Odoo 19
+                    # vals.pop("name", None)
                     partner_context.pop("default_name", None)
+                    _logger.info("vals2: " + str(vals))
             # pylint: disable=W8121
+            _logger.info("vals3: " + str(vals))
+            _logger.info("partner_context: " + str(partner_context))
             created_partners |= super(
                 ResPartner, self.with_context(partner_context)
             ).create([vals])
+            _logger.info("created_partners: " + str(created_partners))
         return created_partners
 
     def get_extra_default_copy_values(self, order):
-        """Method to add '(copy)' suffix to lastname or firstname, depending on name
-        order configuration.
-        """
+        """Add '(copy)' suffix to lastname or firstname, depending on name order
+        configuration."""
         if order == "first_last":
             return {
-                "lastname": _("%s (copy)", self.lastname)
+                "lastname": self.env._("%s (copy)", self.lastname)
                 if self.lastname
-                else _("(copy)")
+                else self.env._("(copy)")
             }
         return {
-            "firstname": _("%s (copy)", self.firstname)
+            "firstname": self.env._("%s (copy)", self.firstname)
             if self.firstname
-            else _("(copy)")
+            else self.env._("(copy)")
         }
 
     def copy(self, default=None):
@@ -108,9 +116,10 @@ class ResPartner(models.Model):
         and lastname fields.
         """
         default = default or {}
-        order = self._get_names_order()
-        extra_default_values = self.get_extra_default_copy_values(order)
-        default.update(extra_default_values)
+        if not self.is_company:
+            order = self._get_names_order()
+            extra_default_values = self.get_extra_default_copy_values(order)
+            default.update(extra_default_values)
         return super(ResPartner, self.with_context(copy=True)).copy(default)
 
     @api.model
@@ -140,8 +149,10 @@ class ResPartner(models.Model):
     @api.model
     def _get_names_order(self):
         """Get names order configuration from system parameters.
+
         You can override this method to read configuration from language,
-        country, company or other"""
+        country, company or other
+        """
         return (
             self.env["ir.config_parameter"]
             .sudo()
@@ -151,8 +162,10 @@ class ResPartner(models.Model):
     @api.model
     def _get_computed_name(self, lastname, firstname):
         """Compute the 'name' field according to splitted data.
+
         You can override this method to change the order of lastname and
-        firstname the computed name"""
+        firstname the computed name
+        """
         order = self._get_names_order()
         if order == "last_first_comma":
             return ", ".join(p for p in (lastname, firstname) if p)
@@ -180,7 +193,7 @@ class ResPartner(models.Model):
             record._inverse_name()
 
     @api.model
-    def _get_whitespace_cleaned_name(self, name, comma=False):
+    def _get_whitespace_cleaned_name(self, name, comma=None):
         """Remove redundant whitespace from :param:`name`.
 
         Removes leading, trailing and duplicated whitespace.
@@ -207,7 +220,7 @@ class ResPartner(models.Model):
         return name
 
     @api.model
-    def _get_inverse_name(self, name, is_company=False):
+    def _get_inverse_name(self, name, is_company=None):
         """Compute the inverted name.
 
         - If the partner is a company, save it in the lastname.
@@ -232,10 +245,11 @@ class ResPartner(models.Model):
             )
             parts = name.split("," if order == "last_first_comma" else " ", 1)
             if len(parts) > 1:
-                if order == "first_last":
-                    parts = [" ".join(parts[1:]), parts[0]]
-                else:
-                    parts = [parts[0], " ".join(parts[1:])]
+                parts = (
+                    [" ".join(parts[1:]), parts[0]]
+                    if order == "first_last"
+                    else [parts[0], " ".join(parts[1:])]
+                )
             else:
                 while len(parts) < 2:
                     parts.append(False)
@@ -258,7 +272,7 @@ class ResPartner(models.Model):
                     not (record.firstname or record.lastname),
                 )
             ):
-                raise exceptions.EmptyNamesError(record, self.env)
+                raise exceptions.EmptyNamesError(record)
 
     @api.model
     def _install_partner_firstname(self):
