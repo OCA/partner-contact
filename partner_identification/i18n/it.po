@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2024-07-23 09:58+0000\n"
+"PO-Revision-Date: 2025-10-20 14:42+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: partner_identification
 #: code:addons/partner_identification/models/res_partner_id_category.py:34
@@ -133,7 +133,7 @@ msgstr "ID"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number_name
 msgid "ID Number"
-msgstr "Numero Documento"
+msgstr "Numero documento"
 
 #. module: partner_identification
 #: model:ir.ui.view,arch_db:partner_identification.view_partner_form
@@ -149,7 +149,8 @@ msgstr "Nome Documento"
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number_category_id
 msgid "ID type defined in configuration. For example, Driver License"
 msgstr ""
-"Tipo di documento definito in configurazione. Per esempio, Patente di Guida"
+"Tipo di documento definito nella configurazione. Per esempio, patente di "
+"guida"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_numbers
