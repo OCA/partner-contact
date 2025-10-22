@@ -1,7 +1,3 @@
-.. image:: https://odoo-community.org/readme-banner-image
-   :target: https://odoo-community.org/get-involved?utm_source=readme
-   :alt: Odoo Community Association
-
 ===================
 Partner Manual Rank
 ===================
@@ -17,7 +13,7 @@ Partner Manual Rank
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
@@ -40,6 +36,25 @@ user-friendly manner.
 
 .. contents::
    :local:
+
+Configuration
+=============
+
+This module introduces a System Parameter
+``partner_manual_rank.partner_rank_auto`` to enable or disable Odoo’s
+automatic updates of ``res.partner::customer_rank`` and
+``res.partner::supplier_rank``.
+
+When disabled, Odoo will not auto-increment these ranks during business
+flows (e.g., posting invoices/bills, placing orders). You remain free to
+set or adjust ranks manually.
+
+To enable/disable:
+
+Go to Settings → Contacts (or search for "rank" in Settings). Find
+"Automatically rank partners as customers or suppliers". Security: Only
+users in Settings / Administration (group base.group_system) may change
+it.
 
 Bug Tracker
 ===========
@@ -69,6 +84,7 @@ Contributors
 - Luis González <lgonzalez@vauxoo.com>
 - Le Dinh Tien <tien-ld@komit-consulting.com>
 - Cai Hoang Huynh <huynh-ch@komit-consulting.com>
+- Maksym Yankin <maksym.yankin@camptocamp.com>
 
 Other credits
 -------------
