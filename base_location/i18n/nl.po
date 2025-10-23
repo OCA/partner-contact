@@ -66,6 +66,11 @@ msgid "City/locations completion object"
 msgstr "Gemeente/locatie voltooiïngsobjects"
 
 #. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city__code
+msgid "Code"
+msgstr ""
+
+#. module: base_location
 #: model:ir.model,name:base_location.model_res_company
 msgid "Companies"
 msgstr "Bedrijven"
