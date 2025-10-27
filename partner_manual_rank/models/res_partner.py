@@ -2,8 +2,7 @@
 # Copyright 2022 Vauxoo, S.A.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from odoo import api, fields, models
 
 DOMAIN_SEARCH = {
     ("=", False): ("=", 0),
@@ -51,7 +50,7 @@ class ResPartner(models.Model):
 
     def _search_is_customer(self, operator, value):
         if operator not in ["=", "!="] or not isinstance(value, bool):
-            raise UserError(_("Operation not supported"))
+            return NotImplemented
         operator, value = DOMAIN_SEARCH.get((operator, value))
         return [("customer_rank", operator, value)]
 
@@ -63,7 +62,7 @@ class ResPartner(models.Model):
 
     def _search_is_supplier(self, operator, value):
         if operator not in ["=", "!="] or not isinstance(value, bool):
-            raise UserError(_("Operation not supported"))
+            return NotImplemented
         operator, value = DOMAIN_SEARCH.get((operator, value))
         return [("supplier_rank", operator, value)]
 
