@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
+from odoo.osv.expression import FALSE_DOMAIN, TRUE_DOMAIN
 
 
 class ResCompany(models.Model):
@@ -11,11 +12,13 @@ class ResCompany(models.Model):
         string="Partner Properties (company)",
         compute="_compute_partner_properties_definition_company",
         inverse="_inverse_partner_properties_definition_company",
+        search="_search_partner_properties_definition_company",
     )
     partner_properties_definition_person = fields.PropertiesDefinition(
         string="Partner Properties (person)",
         compute="_compute_partner_properties_definition_person",
         inverse="_inverse_partner_properties_definition_person",
+        search="_search_partner_properties_definition_person",
     )
 
     @api.depends_context("company")
@@ -55,6 +58,22 @@ class ResCompany(models.Model):
                 item.partner_properties_definition_person, item
             )
             ICP.sudo().set_param("partner_property.properties_definition_person", value)
+
+    def _search_partner_properties_definition_company(self, operator, value):
+        if operator not in ("=", "!=") or value is not False:  # pragma: no cover
+            raise NotImplementedError("Only = and != operators are supported")
+        ICP = self.env["ir.config_parameter"]
+        value = ICP.sudo().get_param("partner_property.properties_definition_company")
+        condition = operator == "!=" and bool(value) or not value
+        return condition and TRUE_DOMAIN or FALSE_DOMAIN
+
+    def _search_partner_properties_definition_person(self, operator, value):
+        if operator not in ("=", "!=") or value is not False:  # pragma: no cover
+            raise NotImplementedError("Only = and != operators are supported")
+        ICP = self.env["ir.config_parameter"]
+        value = ICP.sudo().get_param("partner_property.properties_definition_person")
+        condition = operator == "!=" and bool(value) or not value
+        return condition and TRUE_DOMAIN or FALSE_DOMAIN
 
     @api.model
     def web_search_read(
