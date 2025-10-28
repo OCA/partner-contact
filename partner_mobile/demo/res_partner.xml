@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2025 Akretion France (https://www.akretion.com/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo noupdate="1">
+    <record id="base.res_partner_address_1" model="res.partner">
+        <field name="mobile">+1 846 386 9844</field>
+    </record>
+
+    <record id="base.res_partner_address_2" model="res.partner">
+        <field name="mobile">+1 976 357 1597</field>
+    </record>
+
+    <record id="base.res_partner_address_3" model="res.partner">
+        <field name="mobile">+1 132 578 5793</field>
+    </record>
+
+    <record id="base.res_partner_address_4" model="res.partner">
+        <field name="mobile">+1 145 951 7763</field>
+    </record>
+
+    <record id="base.res_partner_address_7" model="res.partner">
+        <field name="mobile">+1 915 522 9644</field>
+    </record>
+
+    <record id="base.res_partner_address_15" model="res.partner">
+        <field name="mobile">+1 355 684 1265</field>
+    </record>
+
+    <record id="base.res_partner_address_16" model="res.partner">
+        <field name="mobile">+1 946 648 9678</field>
+    </record>
+
+    <record id="base.res_partner_address_28" model="res.partner">
+        <field name="mobile">+1 255 114 9724</field>
+    </record>
+</odoo>
