@@ -15,7 +15,7 @@
                 />
             </field>
             <field name="city" position="after">
-                <field name="country_enforce_cities" invisible="1" />
+                <field name="country_enforce_cities" invisible="1" /><!--technical field for below conditional-->
                 <field name='city_id' invisible="country_enforce_cities == False" />
             </field>
             <field name="city" position="attributes">
