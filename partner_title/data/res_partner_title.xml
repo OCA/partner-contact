@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <!-- As explained on https://www.sussex.ac.uk/informatics/punctuation/capsandabbr/abbr
+    British usage favours omitting the full stop in abbreviations which
+    include the first and last letters of a single word,
+    such as Mr, Mrs, Ms, Dr and St
+    American usage prefers Mr., Mrs., Ms., Dr. and St., with full stops.
+    -->
+    <record id="res_partner_title_madam" model="res.partner.title">
+        <field name="name">Madam</field>
+        <field name="shortcut">Mrs.</field>
+        <field name="sequence">10</field>
+    </record>
+    <!-- In English, there is no shortcut for "Miss"  -->
+    <record id="res_partner_title_miss" model="res.partner.title">
+        <field name="name">Miss</field>
+        <field name="sequence">20</field>
+    </record>
+    <record id="res_partner_title_mister" model="res.partner.title">
+        <field name="name">Mister</field>
+        <field name="shortcut">Mr.</field>
+        <field name="sequence">30</field>
+    </record>
+    <record id="res_partner_title_doctor" model="res.partner.title">
+        <field name="name">Doctor</field>
+        <field name="shortcut">Dr.</field>
+        <field name="sequence">40</field>
+    </record>
+    <record id="res_partner_title_prof" model="res.partner.title">
+        <field name="name">Professor</field>
+        <field name="shortcut">Prof.</field>
+        <field name="sequence">50</field>
+    </record>
+</odoo>
