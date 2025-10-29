@@ -1,0 +1,1 @@
+Sometimes you would like to ensure that the IBAN that you have entered in the partner bank settings is valid. However although Odoo has such validation mechanism, it never triggers an exception. This is done mostly to prevent possible exceptions when doing bulk partner data import.

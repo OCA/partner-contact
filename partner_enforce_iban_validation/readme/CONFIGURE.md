@@ -1,0 +1,3 @@
+- Go to "Settings > Contacts" and activate the "Raise exception on invalid IBAN" checkbox.
+- Use "Bank Countries" to validate only accounts of banks located in selected countries.
+- Use "Partner Countries" to validate only partners located in selected countries.

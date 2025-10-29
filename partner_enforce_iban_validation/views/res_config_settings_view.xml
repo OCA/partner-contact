@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_res_config_settings_partner_enforce_iban" model="ir.ui.view">
+        <field name="name">res.config.settings.partner.enforce.iban</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='contacts_setting_container']" position="inside">
+                <setting
+                    id="iban_enforce_setting"
+                    string="Enforce IBAN Validation"
+                    help="Validate partner IBANs and raise an error if incorrect."
+                >
+                    <field name="raise_exception_on_invalid_iban" />
+                </setting>
+
+                <setting
+                    id="iban_partner_country_setting"
+                    string="Partner Countries"
+                    help="Restrict IBAN validation only to partners from selected countries."
+                >
+                    <field
+                        name="iban_partner_country_ids"
+                        widget="many2many_tags"
+                        options="{'no_create': True, 'no_open': True}"
+                    />
+                </setting>
+
+                <setting
+                    id="iban_bank_country_setting"
+                    string="Bank Countries"
+                    help="Restrict IBAN validation only to banks from selected countries."
+                >
+                    <field
+                        name="iban_bank_country_ids"
+                        widget="many2many_tags"
+                        options="{'no_create': True, 'no_open': True}"
+                    />
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
