@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 Moduon Team S.L.
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/LGPL-3.0) -->
+<data>
+    <record id="res_partner_category_view_search" model="ir.ui.view">
+        <field name="model">res.partner.category</field>
+        <field name="inherit_id" ref="base.res_partner_category_view_search" />
+        <field name="arch" type="xml">
+            <field name="display_name" position="after">
+                <field name="description" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_partner_category_form" model="ir.ui.view">
+        <field name="model">res.partner.category</field>
+        <field name="inherit_id" ref="base.view_partner_category_form" />
+        <field name="arch" type="xml">
+            <group position="after">
+                <group>
+                    <field name="description" />
+                </group>
+            </group>
+        </field>
+    </record>
+
+    <record id="view_partner_category_list" model="ir.ui.view">
+        <field name="model">res.partner.category</field>
+        <field name="inherit_id" ref="base.view_partner_category_list" />
+        <field name="arch" type="xml">
+            <field name="display_name" position="after">
+                <field name="description" optional="show" />
+            </field>
+        </field>
+    </record>
+
+</data>
