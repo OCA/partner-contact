@@ -1,0 +1,1 @@
+This module introduces a constraint to ensure that a contact cannot simultaneously be both a customer and a supplier.
