@@ -5,46 +5,61 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <xpath expr="//sheet/group//field[@name='vat']" position="before">
-                <field name="allowed_nut_ids" invisible="1" />
-                <field
-                    name="nuts1_id"
-                    context="{'default_country_id': country_id, 'default_level': 1}"
-                />
-                <field
-                    name="nuts2_id"
-                    context="{'default_country_id': country_id, 'default_level': 2, 'default_parent_id': nuts1_id}"
-                />
-                <field
-                    name="nuts3_id"
-                    context="{'default_country_id': country_id, 'default_level': 3, 'default_parent_id': nuts2_id}"
-                />
-                <field
-                    name="nuts4_id"
-                    context="{'default_country_id': country_id, 'default_level': 4, 'default_parent_id': nuts3_id}"
-                />
+            <xpath
+                expr="//sheet/group//div[hasclass('o_address_format')]"
+                position="inside"
+            >
+                <div class="o_row">
+                    <field name="allowed_nut_ids" invisible="1" />
+                    <field
+                        name="nuts1_id"
+                        placeholder="NUTS L1"
+                        context="{'default_country_id': country_id, 'default_level': 1}"
+                    />
+                    <field
+                        name="nuts2_id"
+                        placeholder="NUTS L2"
+                        context="{'default_country_id': country_id, 'default_level': 2, 'default_parent_id': nuts1_id}"
+                    />
+                    <field
+                        name="nuts3_id"
+                        placeholder="NUTS L3"
+                        context="{'default_country_id': country_id, 'default_level': 3, 'default_parent_id': nuts2_id}"
+                    />
+                    <field
+                        name="nuts4_id"
+                        placeholder="NUTS L4"
+                        context="{'default_country_id': country_id, 'default_level': 4, 'default_parent_id': nuts3_id}"
+                    />
+                </div>
             </xpath>
             <xpath
-                expr="//field[@name='child_ids']/form//field[@name='country_id']/.."
-                position="after"
+                expr="//field[@name='child_ids']/form//div[hasclass('o_address_format')]"
+                position="inside"
             >
-                <field name="allowed_nut_ids" invisible="1" />
-                <field
-                    name="nuts1_id"
-                    context="{'default_country_id': country_id, 'default_level': 1}"
-                />
-                <field
-                    name="nuts2_id"
-                    context="{'default_country_id': country_id, 'default_level': 2, 'default_parent_id': nuts1_id}"
-                />
-                <field
-                    name="nuts3_id"
-                    context="{'default_country_id': country_id, 'default_level': 3, 'default_parent_id': nuts2_id}"
-                />
-                <field
-                    name="nuts4_id"
-                    context="{'default_country_id': country_id, 'default_level': 4, 'default_parent_id': nuts3_id}"
-                />
+                <div class="o_row">
+                    <field name="allowed_nut_ids" invisible="1" />
+                    <field
+                        name="nuts1_id"
+                        placeholder="NUTS L1"
+                        context="{'default_country_id': country_id, 'default_level': 1}"
+                    />
+                    <field
+                        name="nuts2_id"
+                        placeholder="NUTS L2"
+                        context="{'default_country_id': country_id, 'default_level': 2, 'default_parent_id': nuts1_id}"
+                    />
+                    <field
+                        name="nuts3_id"
+                        placeholder="NUTS L3"
+                        context="{'default_country_id': country_id, 'default_level': 3, 'default_parent_id': nuts2_id}"
+                    />
+                    <field
+                        name="nuts4_id"
+                        placeholder="NUTS L4"
+                        context="{'default_country_id': country_id, 'default_level': 4, 'default_parent_id': nuts3_id}"
+                    />
+                </div>
             </xpath>
         </field>
     </record>
