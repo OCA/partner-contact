@@ -1,0 +1,63 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_contact_address_default
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 07:35+0000\n"
+"PO-Revision-Date: 2024-03-11 07:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_contact_address_default
+#: model:ir.model,name:partner_contact_address_default.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_contact_address_default
+#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_contact_id
+#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_contact_id
+msgid "Default contact"
+msgstr "Contacto predeterminado"
+
+#. module: partner_contact_address_default
+#: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
+msgid "Force addresses"
+msgstr "Dirección de facturación"
+
+#. module: partner_contact_address_default
+#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_invoice_id
+#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_invoice_id
+msgid "Invoice address"
+msgstr "Dirección de facturación"
+
+#. module: partner_contact_address_default
+#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_delivery_id
+#: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_delivery_id
+msgid "Shipping address"
+msgstr "Dirección de envío"
+
+#. module: partner_contact_address_default
+#: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
+msgid ""
+"You can force contact, delivery and invoice address for this contact.\n"
+"                            If you keep these fields empty, Odoo's default "
+"behavior will apply."
+msgstr ""
+
+#~ msgid "If you keep empty this fields the Odoo's behavior will be normal"
+#~ msgstr ""
+#~ "Si mantiene vacíos estos campos el comportamiento de Odoo será normal"
+
+#~ msgid ""
+#~ "You can force contact, delivery and invoice address for this contacts."
+#~ msgstr ""
+#~ "Puede forzar el contacto y las direcciones de envío y facturación para "
+#~ "estos contactos."
