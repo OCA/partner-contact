@@ -3,12 +3,12 @@
     <menuitem
         id="menu_res_partner_relation"
         name="Relations"
-        sequence="3"
+        sequence="11"
         parent="contacts.menu_contacts"
     />
     <menuitem
         id="menu_res_partner_relation_all"
-        sequence="3"
+        sequence="10"
         parent="menu_res_partner_relation"
         action="action_res_partner_relation_all"
     />
@@ -22,5 +22,9 @@
         name="Relation Types"
         parent="menu_res_partner_relation"
         action="action_res_partner_relation_type"
+        sequence="20"
     />
+    <record id="contacts.res_partner_menu_config" model="ir.ui.menu">
+        <field name="sequence">20</field>
+    </record>
 </odoo>
