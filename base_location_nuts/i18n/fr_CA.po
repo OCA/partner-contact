@@ -149,6 +149,7 @@ msgstr ""
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts1_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__nuts1_id
+#: model_terms:ir.ui.view,arch_db:base_location_nuts.view_partner_form_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L1"
 msgstr ""
@@ -156,6 +157,7 @@ msgstr ""
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts2_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__nuts2_id
+#: model_terms:ir.ui.view,arch_db:base_location_nuts.view_partner_form_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L2"
 msgstr ""
@@ -163,6 +165,7 @@ msgstr ""
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts3_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__nuts3_id
+#: model_terms:ir.ui.view,arch_db:base_location_nuts.view_partner_form_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L3"
 msgstr ""
@@ -170,6 +173,7 @@ msgstr ""
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts4_id
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__nuts4_id
+#: model_terms:ir.ui.view,arch_db:base_location_nuts.view_partner_form_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L4"
 msgstr ""
@@ -197,7 +201,6 @@ msgstr ""
 #. module: base_location_nuts
 #. odoo-python
 #: code:addons/base_location_nuts/wizard/nuts_import.py:0
-#, python-format
 msgid "Partner NUTS by EU"
 msgstr ""
 
