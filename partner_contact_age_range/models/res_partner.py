@@ -16,18 +16,27 @@ class ResPartner(models.Model):
 
     @api.depends("age")
     def _compute_age_range_id(self):
-        age_ranges = self.env["res.partner.age.range"].search([])
-        for record in self:
-            if record.age >= 0:
-                age_range = age_ranges.filtered(
-                    lambda age_range, record_data=record: age_range.age_from
-                    <= record_data.age
-                    <= age_range.age_to
-                )
-            else:
-                age_range = self.env["res.partner.age.range"].browse()
-            if record.age_range_id != age_range:
-                record.age_range_id = age_range
+        with_age = self.filtered(lambda x: x.age >= 0)
+        ages = with_age.mapped("age")
+        domain = (
+            [
+                ("age_from", "<=", max(ages)),
+                ("age_to", ">=", min(ages)),
+            ]
+            if with_age
+            else False
+        )
+
+        age_ranges = self.env["res.partner.age.range"].search(domain)
+
+        for record in with_age:
+            record.age_range_id = age_ranges.filtered(
+                lambda age_range, record_data=record: age_range.age_from
+                <= record_data.age
+                <= age_range.age_to
+            )
+
+        (self - with_age).age_range_id = False
 
     @api.model
     def _cron_update_age_range_id(self):

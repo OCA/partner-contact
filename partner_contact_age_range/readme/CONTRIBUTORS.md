@@ -4,3 +4,4 @@
 - Andreas Hochuli \<<andreas.hochuli@camptocamp.com>\>
 - [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
   - Bhavesh Heliconia
+- Frederic Grall \<<fgr@apik.cloud>\>
