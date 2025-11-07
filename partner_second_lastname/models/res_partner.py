@@ -3,7 +3,7 @@
 # Copyright 2017 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 from odoo.addons.partner_firstname import exceptions
 
@@ -26,9 +26,9 @@ class ResPartner(models.Model):
         """Override to add '(copy)' suffix to lastname2 instead of lastname."""
         if order == "first_last":
             return {
-                "lastname2": _("%s (copy)", self.lastname2)
+                "lastname2": self.env._("%s (copy)", self.lastname2)
                 if self.lastname2
-                else _("(copy)")
+                else self.env._("(copy)")
             }
         return super().get_extra_default_copy_values(order)
 
@@ -131,10 +131,14 @@ class ResPartner(models.Model):
 
     @api.constrains("firstname", "lastname", "lastname2")
     def _check_name(self):
-        """Ensure at least one name is set."""
-        try:
-            return super()._check_name()
-        except exceptions.EmptyNamesError:
-            for partner in self:
-                if not partner.lastname2:
-                    raise
+        """
+        Override because we can no longer inherit constraints method.
+        """
+        for record in self:
+            if all(
+                (
+                    record.type == "contact" or record.is_company,
+                    not (record.firstname or record.lastname or record.lastname2),
+                )
+            ):
+                raise exceptions.EmptyNamesError(record, self.env)
