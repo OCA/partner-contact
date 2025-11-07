@@ -23,11 +23,13 @@ class ResPartnerIdCategory(models.Model):
     def _get_default_color(self):
         return randint(1, 11)
 
-    color = fields.Integer(string="Color Index", default=_get_default_color)
+    color = fields.Integer(
+        string="Color Index",
+        default=lambda self: self._get_default_color(),
+    )
     code = fields.Char(
         required=True,
-        help="Abbreviation or acronym of this ID type. For example, "
-        "'driver_license'",
+        help="Abbreviation or acronym of this ID type. For example, 'driver_license'",
     )
     name = fields.Char(
         string="ID name",
@@ -37,7 +39,8 @@ class ResPartnerIdCategory(models.Model):
     )
     active = fields.Boolean(default=True)
     validation_code = fields.Text(
-        "Python validation code", help="Python code called to validate an id number."
+        "Python validation code",
+        help="Python code called to validate an id number.",
     )
 
     @api.model
@@ -68,7 +71,7 @@ class ResPartnerIdCategory(models.Model):
             return
         eval_context = self._validation_eval_context(id_number)
         try:
-            safe_eval(self.validation_code, eval_context, mode="exec", nocopy=True)
+            safe_eval(self.validation_code, eval_context, mode="exec")
         except Exception as e:
             raise UserError(
                 self.env._(

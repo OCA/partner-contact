@@ -10,3 +10,4 @@
 - Marie Lejeune \<<marie.lejeune@acsone.eu>\>
 - Nils Coenen \<<nils.coenen@nico-solutions.de>\>
 - Chau Le \<<chaulb@trobz.com>\>
+- Frederic Grall \<<fgr@apik..cloud>\>
