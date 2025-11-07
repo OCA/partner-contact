@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ====================
 Partner Contact Role
 ====================
@@ -13,17 +17,17 @@ Partner Contact Role
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/18.0/partner_contact_role
+    :target: https://github.com/OCA/partner-contact/tree/19.0/partner_contact_role
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-18-0/partner-contact-18-0-partner_contact_role
+    :target: https://translation.odoo-community.org/projects/partner-contact-19-0/partner-contact-19-0-partner_contact_role
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=18.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=19.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -42,15 +46,15 @@ Configuration
 
 To configure roles, you need to:
 
-- Go to *Sales > Configuration > Address Book > Partner Roles*.
+-  Go to *Sales > Configuration > Address Book > Partner Roles*.
 
 Usage
 =====
 
 To use this module, you need to:
 
-- Go to any partner's form.
-- Use the new *Roles* field.
+-  Go to any partner's form.
+-  Use the new *Roles* field.
 
 Bug Tracker
 ===========
@@ -58,7 +62,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_contact_role%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_contact_role%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -73,13 +77,13 @@ Authors
 Contributors
 ------------
 
-- Simone Orsi <simone.orsi@camptocamp.com>
+-  Simone Orsi <simone.orsi@camptocamp.com>
 
-- `Trobz <https://trobz.com>`__:
+-  `Trobz <https://trobz.com>`__:
 
-  - Hai Lang <hailn@trobz.com>
+   -  Hai Lang <hailn@trobz.com>
 
-- Frederic Grall <fgr@apik.cloud>
+-  Frederic Grall <fgr@apik.cloud>
 
 Other credits
 -------------
@@ -100,6 +104,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/18.0/partner_contact_role>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/19.0/partner_contact_role>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
