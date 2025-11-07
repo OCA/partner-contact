@@ -1,9 +1,8 @@
 # Copyright 2017 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo_test_helper import FakeModelLoader
-
 from odoo.exceptions import ValidationError
+from odoo.orm.model_classes import add_to_registry
 from odoo.tests import common
 
 
@@ -12,11 +11,10 @@ class TestResPartner(common.TransactionCase):
     def setUpClass(cls):
         super().setUpClass()
 
-        cls.loader = FakeModelLoader(cls.env, cls.__module__)
-        cls.loader.backup_registry()
         from .fake_models import ResPartner
 
-        cls.loader.update_registry((ResPartner,))
+        add_to_registry(cls.registry, ResPartner)
+        cls.registry._setup_models__(cls.env.cr, ["res.partner"])
 
         bad_cat = cls.env["res.partner.id_category"].create(
             {"code": "another_code", "name": "another_name"}
@@ -39,11 +37,6 @@ class TestResPartner(common.TransactionCase):
                 "partner_id": cls.partner.id,
             }
         )
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.loader.restore_registry()
-        super().tearDownClass()
 
     def test_compute_identification(self):
         """It should set the proper field to the proper ID name."""
