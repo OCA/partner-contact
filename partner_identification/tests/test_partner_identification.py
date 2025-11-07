@@ -17,30 +17,52 @@ class TestPartnerIdentificationBase(common.TransactionCase):
 
     @mute_logger("odoo.sql_db")
     def test_update_partner_with_no_category(self):
-        partner_1 = self.env.ref("base.res_partner_1")
-        self.assertEqual(len(partner_1.id_numbers), 0)
+        partner = self.env["res.partner"].create(
+            {
+                "name": "Apik test",
+                "email": "apik@test.example.com",
+                "phone": "+33 601 020 304",
+                "street": "Rue de la mairie",
+                "city": "New York",
+                "zip": "97648",
+                "website": "https://test.exemple.com",
+            }
+        )
+
+        self.assertEqual(len(partner.id_numbers), 0)
         # create without required category
         with self.assertRaises(IntegrityError):
-            partner_1.write({"id_numbers": [(0, 0, {"name": "1234"})]})
+            partner.write({"id_numbers": [(0, 0, {"name": "1234"})]})
 
     def test_update_partner_with_category(self):
-        partner_1 = self.env.ref("base.res_partner_1")
+        partner = self.env["res.partner"].create(
+            {
+                "name": "Apik test",
+                "email": "apik@test.example.com",
+                "phone": "+33 601 020 304",
+                "street": "Rue de la mairie",
+                "city": "New York",
+                "zip": "97648",
+                "website": "https://test.exemple.com",
+            }
+        )
+
         partner_id_category = self.env["res.partner.id_category"].create(
             {"code": "new_code", "name": "new_name"}
         )
         # successful creation
-        partner_1.write(
+        partner.write(
             {
                 "id_numbers": [
                     (0, 0, {"name": "1234", "category_id": partner_id_category.id})
                 ]
             }
         )
-        self.assertEqual(len(partner_1.id_numbers), 1)
-        self.assertEqual(partner_1.id_numbers.name, "1234")
+        self.assertEqual(len(partner.id_numbers), 1)
+        self.assertEqual(partner.id_numbers.name, "1234")
         # delete
-        partner_1.write({"id_numbers": [(5, 0, 0)]})
-        self.assertEqual(len(partner_1.id_numbers), 0)
+        partner.write({"id_numbers": [(5, 0, 0)]})
+        self.assertEqual(len(partner.id_numbers), 0)
 
 
 class TestPartnerCategoryValidation(common.TransactionCase):
@@ -55,24 +77,34 @@ if id_number.name != '1234':
 """,
             }
         )
-        partner_1 = self.env.ref("base.res_partner_1")
+        partner = self.env["res.partner"].create(
+            {
+                "name": "Apik test",
+                "email": "apik@test.example.com",
+                "phone": "+33 601 020 304",
+                "street": "Rue de la mairie",
+                "city": "New York",
+                "zip": "97648",
+                "website": "https://test.exemple.com",
+            }
+        )
         with self.assertRaises(ValidationError), self.cr.savepoint():
-            partner_1.write(
+            partner.write(
                 {
                     "id_numbers": [
                         (0, 0, {"name": "01234", "category_id": partner_id_category.id})
                     ]
                 }
             )
-        partner_1.write(
+        partner.write(
             {
                 "id_numbers": [
                     (0, 0, {"name": "1234", "category_id": partner_id_category.id})
                 ]
             }
         )
-        self.assertEqual(len(partner_1.id_numbers), 1)
-        self.assertEqual(partner_1.id_numbers.name, "1234")
+        self.assertEqual(len(partner.id_numbers), 1)
+        self.assertEqual(partner.id_numbers.name, "1234")
 
         partner_id_category2 = self.env["res.partner.id_category"].create(
             {
@@ -87,7 +119,7 @@ if id_number.name != '1235':
         # check that the constrains is also checked when we change the
         # associated category
         with self.assertRaises(ValidationError), self.cr.savepoint():
-            partner_1.id_numbers.write({"category_id": partner_id_category2.id})
+            partner.id_numbers.write({"category_id": partner_id_category2.id})
 
     def test_bad_validation_code(self):
         partner_id_category = self.env["res.partner.id_category"].create(
@@ -100,9 +132,19 @@ if id_number.name != '1234' #  missing :
 """,
             }
         )
-        partner_1 = self.env.ref("base.res_partner_1")
+        partner = self.env["res.partner"].create(
+            {
+                "name": "Apik test",
+                "email": "apik@test.example.com",
+                "phone": "+33 601 020 304",
+                "street": "Rue de la mairie",
+                "city": "New York",
+                "zip": "97648",
+                "website": "https://test.exemple.com",
+            }
+        )
         with self.assertRaises(UserError):
-            partner_1.write(
+            partner.write(
                 {
                     "id_numbers": [
                         (0, 0, {"name": "1234", "category_id": partner_id_category.id})
@@ -122,8 +164,22 @@ if id_number.name != '1234' #  missing :
 """,
             }
         )
-        partner_1 = self.env.ref("base.res_partner_1").with_context(id_no_validate=True)
-        partner_1.write(
+        partner = (
+            self.env["res.partner"]
+            .create(
+                {
+                    "name": "Apik test",
+                    "email": "apik@test.example.com",
+                    "phone": "+33 601 020 304",
+                    "street": "Rue de la mairie",
+                    "city": "New York",
+                    "zip": "97648",
+                    "website": "https://test.exemple.com",
+                }
+            )
+            .with_context(id_no_validate=True)
+        )
+        partner.write(
             {
                 "id_numbers": [
                     (0, 0, {"name": "1234", "category_id": partner_id_category.id})
