@@ -35,9 +35,7 @@ class ResPartner(models.Model):
         query.add_where(
             SQL(
                 "%s %s %s",
-                self._field_to_sql(
-                    "properties_company_id", "properties_company_id", query
-                ),
+                self._field_to_sql(self._table, "properties_company_id", query),
                 SQL_OPERATORS[operator],
                 value,
             )
@@ -48,7 +46,8 @@ class ResPartner(models.Model):
         # OVERRIDE to allow to export the properties
         if fname == "properties_company_id":
             return SQL(
-                """COALESCE(company_id, %(env_company)s)""",
+                """COALESCE(%(company_column)s, %(env_company)s)""",
+                company_column=SQL.identifier(alias, "company_id"),
                 env_company=self.env.company.id,
             )
         return super()._field_to_sql(alias, fname, query, flush)

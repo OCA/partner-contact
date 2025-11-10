@@ -3,10 +3,11 @@
 
 import json
 
-from odoo.tests import HttpCase
+from odoo.tests import HttpCase, users
 
 
 class TextPartnerExport(HttpCase):
+    @users("admin")
     def test_export_get_fields(self):
         """Text the export wizard get_fields method.
 
@@ -28,7 +29,6 @@ class TextPartnerExport(HttpCase):
                 raise ValueError(f"Cannot convert {field} to SQL because it is not stored")
             ValueError: Cannot convert res.partner.properties_company_id to SQL because it is not stored
         """  # noqa: E501
-        self.authenticate("admin", "admin")
         self.url_open(
             "/web/export/get_fields",
             data=json.dumps(
@@ -37,6 +37,23 @@ class TextPartnerExport(HttpCase):
                         "model": "res.partner",
                         "import_compat": True,
                         "domain": [("id", "in", self.env.user.partner_id.ids)],
+                    }
+                }
+            ),
+            headers={"Content-Type": "application/json"},
+        ).raise_for_status()
+
+    @users("admin")
+    def test_export_get_fields_res_users(self):
+        """Test also the export of res.users"""
+        self.url_open(
+            "/web/export/get_fields",
+            data=json.dumps(
+                {
+                    "params": {
+                        "model": "res.users",
+                        "import_compat": True,
+                        "domain": [("id", "in", self.env.user.ids)],
                     }
                 }
             ),
