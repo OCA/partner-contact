@@ -100,7 +100,7 @@ class ResPartner(models.Model):
                     )
                     % (version_fields, partner.name)
                 )
-        return super(ResPartner, self).write(vals)
+        return super().write(vals)
 
     def _version_create(self):
         version_hash = self._version_hash()

@@ -8,7 +8,7 @@ class MergePartnerAutomatic(models.TransientModel):
     _inherit = "base.partner.merge.automatic.wizard"
 
     def _get_fk_on(self, table):
-        foreign_keys = super(MergePartnerAutomatic, self)._get_fk_on(table)
+        foreign_keys = super()._get_fk_on(table)
         if table == "res_partner" and self.env.context.get("address_version"):
             models = self.env["res.partner"]._version_impacted_tables()
             limited_fk = []
