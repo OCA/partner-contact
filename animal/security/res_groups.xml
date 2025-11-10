@@ -1,0 +1,11 @@
+<odoo>
+    <!-- Animal groups -->
+    <record id="group_animal_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="module_category_animal" />
+        <field
+            name="users"
+            eval="[Command.link(ref('base.user_root')), Command.link(ref('base.user_admin'))]"
+        />
+    </record>
+</odoo>
