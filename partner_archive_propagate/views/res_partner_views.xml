@@ -1,0 +1,23 @@
+<odoo>
+    <record id="view_partner_form_inherit_archive_propagate" model="ir.ui.view">
+        <field name="name">res.partner.form.archive.propagate</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <field name="show_prop_wizard_button" invisible="1" />
+                    <button
+                        name="action_archive_with_contacts"
+                        type="object"
+                        string="Archive Contact and Children"
+                        class="oe_highlight"
+                        attrs="{
+                            'invisible': ['|', ('active', '=', False), ('show_prop_wizard_button', '=', False)]
+                        }"
+                    />
+                </header>
+            </xpath>
+        </field>
+    </record>
+</odoo>

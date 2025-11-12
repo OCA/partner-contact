@@ -1,0 +1,40 @@
+<odoo>
+    <record id="view_archive_propagate_wizard_form" model="ir.ui.view">
+        <field name="name">res.partner.archive.propagate.wizard.form</field>
+        <field name="model">res.partner.archive.propagate.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Archive Contacts">
+                <group>
+                    <field name="partner_id" readonly="1" />
+                </group>
+
+                <group>
+                    <!-- bind label to the field to satisfy validator -->
+                    <label for="line_ids" />
+                    <div class="text-muted" colspan="2">
+                        The following contact-type descendants will be archived as well.
+                        Remove any you want to keep active.
+                    </div>
+                    <field name="line_ids" nolabel="1" colspan="2">
+                        <tree editable="bottom">
+                            <field name="partner_id" />
+                            <field name="name" readonly="1" />
+                            <field name="email" readonly="1" />
+                            <field name="phone" readonly="1" />
+                        </tree>
+                    </field>
+                </group>
+
+                <footer>
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                    <button
+                        string="Archive"
+                        name="action_confirm"
+                        type="object"
+                        class="btn-primary"
+                    />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

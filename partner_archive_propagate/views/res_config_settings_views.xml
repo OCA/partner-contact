@@ -1,0 +1,33 @@
+<odoo>
+    <record id="view_res_config_settings_partner_archive" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.partner.archive</field>
+        <field name="model">res.config.settings</field>
+        <!-- use BASE, not base_setup -->
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div
+                    class="app_settings_block"
+                    data-key="partner_archive_propagate"
+                    string="Partner Archive Propagate"
+                >
+                    <h2>Partner Archive Propagate</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-8 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="partner_archive_force_outside_ui" />
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="partner_archive_force_outside_ui" />
+                                <div class="text-muted">
+                                    When enabled, archiving a partner via imports/RPC/automation will also
+                                    archive all descendants and mark them as propagated.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
