@@ -80,7 +80,7 @@ addon | version | maintainers | summary
 [partner_readonly_security](partner_readonly_security/) | 18.0.1.0.0 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> | Partner Readonly Security
 [partner_ref_unique](partner_ref_unique/) | 18.0.1.0.0 |  | Add an unique constraint to partner ref field
 [partner_search_alias](partner_search_alias/) | 18.0.1.0.0 |  | Partner Search Alias
-[partner_second_lastname](partner_second_lastname/) | 18.0.1.0.0 |  | Have split first and second lastnames
+[partner_second_lastname](partner_second_lastname/) | 18.0.1.0.1 |  | Have split first and second lastnames
 [partner_shipping_policy](partner_shipping_policy/) | 18.0.1.0.0 |  | Define shipping policy at partners level.
 [partner_stage](partner_stage/) | 18.0.1.0.1 | <a href='https://github.com/dreispt'><img src='https://github.com/dreispt.png' width='32' height='32' style='border-radius:50%;' alt='dreispt'/></a> | Add lifecycle Stages to Partners
 [partner_supplier_ref](partner_supplier_ref/) | 18.0.1.0.1 |  | Adds a supplier reference to contacts
