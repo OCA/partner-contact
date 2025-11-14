@@ -1,0 +1,7 @@
+- Timon Tschanz \<<timon.tschanz@camptocamp.com>\>
+- Yannick Vaucher \<<yannick.vaucher@camptocamp.com>\>
+- [Tecnativa](https://www.tecnativa.com):
+  - Ernesto Tejeda
+- Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
+- Nguyen Minh Chien \<<chien@trobz.com>\>
+- Hudson Amadeus Leonardy \<<https://solusiaglis.co.id>\>
