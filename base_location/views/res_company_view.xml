@@ -15,12 +15,14 @@
                 />
             </field>
             <field name="city" position="after">
-                <field name='city_id' invisible="country_enforce_cities == False" />
+                <field
+                    name='city_id'
+                    placeholder="City"
+                    invisible="not country_enforce_cities"
+                />
             </field>
             <field name="city" position="attributes">
-                <attribute name="invisible">
-                    not country_enforce_cities
-                </attribute>
+                <attribute name="invisible">country_enforce_cities</attribute>
             </field>
         </field>
     </record>
