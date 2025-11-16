@@ -8,7 +8,7 @@
     "depends": [
         "partner_identification",
     ],
-    "author": "Open Source Integrators," "Odoo Community Association (OCA)",
+    "author": "Open Source Integrators,Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/partner-contact",
     "data": [
