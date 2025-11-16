@@ -11,7 +11,7 @@ class ResPartnerIdNumber(models.Model):
 
     @api.model
     def send_notification(self):
-        today = fields.date.today()
+        today = fields.Date.today()
         rec_ids = self.search(
             [
                 ("category_id.send_notification", "=", True),
