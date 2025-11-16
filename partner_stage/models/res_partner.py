@@ -15,12 +15,15 @@ class Partner(models.Model):
 
     @api.model
     def _read_group_stage_id(self, states, domain):
-        return states.search([])
+        # For group expansion, we typically return all stages, but limit to
+        # prevent performance issues
+        # The domain parameter here is not for filtering stages but for the relationship
+        return states.search([], limit=100)
 
     stage_id = fields.Many2one(
         comodel_name="res.partner.stage",
         group_expand="_read_group_stage_id",
-        default=_get_default_stage_id,
+        default=lambda self: self._get_default_stage_id(),
         copy=False,
         index=True,
         tracking=True,
