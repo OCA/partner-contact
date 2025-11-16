@@ -1,7 +1,7 @@
 # Copyright 2021 Open Source Integrators
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -24,11 +24,12 @@ class PartnerStage(models.Model):
         default="confirmed",
     )
 
-    _sql_constraints = [
-        ("res_partner_stage_code_unique", "UNIQUE(code)", "Stage Code must be unique.")
-    ]
+    _res_partner_stage_code_unique = models.Constraint(
+        "UNIQUE(code)",
+        "Stage Code must be unique.",
+    )
 
     @api.constrains("is_default")
     def _check_default(self):
         if self.search_count([("is_default", "=", True)]) > 1:
-            raise ValidationError(_("There should be only one default stage"))
+            raise ValidationError(self.env._("There should be only one default stage"))
