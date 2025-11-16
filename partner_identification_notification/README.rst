@@ -44,32 +44,32 @@ approaching their expiration dates.
 Features
 ~~~~~~~~
 
--  **Automated Expiration Notifications**: Automatically sends
-   notifications when partner IDs are approaching their expiry date
-   based on configurable thresholds
--  **Configurable Notification Settings**: Set custom notification
-   periods (days before expiration) per ID category
--  **Email Template Integration**: Uses customizable email templates for
-   professional notification messages
--  **Duplicate Prevention**: Ensures notifications are only sent once
-   per ID number to avoid spam
--  **Scheduled Processing**: Runs automatically via a cron job to check
-   and send notifications regularly
--  **Flexible Status Handling**: Only processes ID numbers with
-   appropriate statuses (open, pending)
+- **Automated Expiration Notifications**: Automatically sends
+  notifications when partner IDs are approaching their expiry date based
+  on configurable thresholds
+- **Configurable Notification Settings**: Set custom notification
+  periods (days before expiration) per ID category
+- **Email Template Integration**: Uses customizable email templates for
+  professional notification messages
+- **Duplicate Prevention**: Ensures notifications are only sent once per
+  ID number to avoid spam
+- **Scheduled Processing**: Runs automatically via a cron job to check
+  and send notifications regularly
+- **Flexible Status Handling**: Only processes ID numbers with
+  appropriate statuses (open, pending)
 
 Use Cases
 ~~~~~~~~~
 
 This module is particularly useful for:
 
--  Organizations that need to track employee ID validity for compliance
--  Companies that require customer identification documents to remain
-   current
--  Government or regulatory bodies that need to monitor document expiry
-   dates
--  Any business that maintains partner identification records with
-   expiration dates
+- Organizations that need to track employee ID validity for compliance
+- Companies that require customer identification documents to remain
+  current
+- Government or regulatory bodies that need to monitor document expiry
+  dates
+- Any business that maintains partner identification records with
+  expiration dates
 
 Integration
 ~~~~~~~~~~~
@@ -77,12 +77,12 @@ Integration
 The module seamlessly integrates with the existing partner
 identification framework by:
 
--  Extending the ``res.partner.id_number`` model with a notification
-   date field
--  Enhancing the ``res.partner.id_category`` model with notification
-   settings
--  Leveraging the existing email template system for notifications
--  Working with the existing partner management workflow
+- Extending the ``res.partner.id_number`` model with a notification date
+  field
+- Enhancing the ``res.partner.id_category`` model with notification
+  settings
+- Leveraging the existing email template system for notifications
+- Working with the existing partner management workflow
 
 **Table of contents**
 
@@ -102,15 +102,15 @@ Many organizations are required to maintain up-to-date identification
 documents for their partners, including employees, customers, vendors,
 and other stakeholders. This requirement often stems from:
 
--  **Regulatory Compliance**: Laws and regulations may mandate that
-   organizations maintain current identification documents for all
-   partners
--  **Security Requirements**: Ensuring that access rights and privileges
-   are only granted to individuals with valid identification
--  **Contractual Obligations**: Some business agreements require parties
-   to maintain current identification documentation
--  **Industry Standards**: Certain industries have specific requirements
-   for identity verification and document validity
+- **Regulatory Compliance**: Laws and regulations may mandate that
+  organizations maintain current identification documents for all
+  partners
+- **Security Requirements**: Ensuring that access rights and privileges
+  are only granted to individuals with valid identification
+- **Contractual Obligations**: Some business agreements require parties
+  to maintain current identification documentation
+- **Industry Standards**: Certain industries have specific requirements
+  for identity verification and document validity
 
 Common Challenges
 ~~~~~~~~~~~~~~~~~
@@ -118,32 +118,32 @@ Common Challenges
 Organizations often face these challenges without automated notification
 systems:
 
--  **Manual Tracking**: Teams spend considerable time manually checking
-   ID expiration dates across multiple systems
--  **Missed Expirations**: Forgotten expiration dates can lead to
-   compliance violations or security risks
--  **Last-Minute Renewals**: Discovering expiring IDs too late causes
-   rushed renewal processes
--  **Inconsistent Processes**: Without automated systems, different
-   teams may handle expirations inconsistently
--  **Resource Wastage**: Significant effort goes into maintaining
-   spreadsheets or manual tracking systems
+- **Manual Tracking**: Teams spend considerable time manually checking
+  ID expiration dates across multiple systems
+- **Missed Expirations**: Forgotten expiration dates can lead to
+  compliance violations or security risks
+- **Last-Minute Renewals**: Discovering expiring IDs too late causes
+  rushed renewal processes
+- **Inconsistent Processes**: Without automated systems, different teams
+  may handle expirations inconsistently
+- **Resource Wastage**: Significant effort goes into maintaining
+  spreadsheets or manual tracking systems
 
 Solution Approach
 ~~~~~~~~~~~~~~~~~
 
 This module addresses these challenges by:
 
--  **Automating the Monitoring Process**: No need for manual date
-   checking across numerous partner records
--  **Proactive Notifications**: Alerting stakeholders well in advance of
-   expiration dates to allow adequate time for renewals
--  **Consistent Application**: Applying the same notification logic
-   across all partners and ID types
--  **Reducing Administrative Burden**: Decreasing the manual effort
-   required to track ID validity
--  **Improving Compliance**: Ensuring identification documents are
-   renewed before expiration
+- **Automating the Monitoring Process**: No need for manual date
+  checking across numerous partner records
+- **Proactive Notifications**: Alerting stakeholders well in advance of
+  expiration dates to allow adequate time for renewals
+- **Consistent Application**: Applying the same notification logic
+  across all partners and ID types
+- **Reducing Administrative Burden**: Decreasing the manual effort
+  required to track ID validity
+- **Improving Compliance**: Ensuring identification documents are
+  renewed before expiration
 
 Typical Implementation Scenarios
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -201,10 +201,10 @@ Creating Partner IDs with Expiry Dates
 3. Click on **"ID Categories"** or **"Identity Documents"**
 4. Create a new ID record by:
 
-   -  Selecting the appropriate **ID Category** (one with notifications
-      enabled)
-   -  Entering the **ID Number**
-   -  Setting the **Valid From** and **Valid Until** dates
+   - Selecting the appropriate **ID Category** (one with notifications
+     enabled)
+   - Entering the **ID Number**
+   - Setting the **Valid From** and **Valid Until** dates
 
 5. The system will automatically check for expiring IDs based on your
    configuration
@@ -216,18 +216,23 @@ The module works through a scheduled action that:
 
 1. Searches for ID numbers that meet the following criteria:
 
-   -  The ID category has **"Send Notification"** enabled
-   -  The ID category has a **"Days Before Expiration"** value greater
-      than 0
-   -  The ID number status is either **"open"** or **"pending"**
-   -  The ID is expiring within the specified number of days
-   -  The ID hasn't been notified already (no **"Notification Date"**)
+   - The ID category has **"Send Notification"** enabled
+   - The ID category has a **"Days Before Expiration"** value greater
+     than 0
+   - The ID number status is either **"open"** or **"pending"**
+   - The ID has not expired yet and expires within the specified number
+     of days
+   - The ID hasn't been notified already (no **"Notification Date"**)
 
 2. For each matching ID number, it sends an email using the configured
    template
 
 3. Records the notification date to avoid sending duplicate
    notifications
+
+When an ID is renewed (its **"Valid Until"** date is changed), the
+notification date is cleared so a new notification is sent before the
+new expiry date.
 
 Testing Notifications
 ~~~~~~~~~~~~~~~~~~~~~
@@ -237,8 +242,8 @@ To test the notification system:
 1. Set up a test ID category with notification settings
 2. Create a test partner ID with an expiry date within the notification
    window
-3. Manually execute the scheduled action: **"Send Expiry
-   Notifications"**
+3. Manually execute the scheduled action: **"Partner Identification
+   Notification"**
 4. Check that the notification email is sent and the notification date
    is recorded
 
@@ -258,10 +263,10 @@ Scheduled Action
 
 The notification process runs automatically via a scheduled action:
 
--  **Name**: "Send Expiry Notifications"
--  **Interval**: Daily by default
--  **Next Execution**: Configurable in **Settings > Technical >
-   Automation > Scheduled Actions**
+- **Name**: "Partner Identification Notification"
+- **Interval**: Daily by default
+- **Next Execution**: Configurable in **Settings > Technical >
+  Automation > Scheduled Actions**
 
 You can modify the frequency of the scheduled action based on your
 requirements.
@@ -287,8 +292,8 @@ Authors
 Contributors
 ------------
 
--  Chankya Soni <csoni@opensourceintegrators.com>
--  Murtaza Mithaiwala <mmithaiwala@opensourceintegrators.com>
+- Chankya Soni <csoni@opensourceintegrators.com>
+- Murtaza Mithaiwala <mmithaiwala@opensourceintegrators.com>
 
 Maintainers
 -----------
