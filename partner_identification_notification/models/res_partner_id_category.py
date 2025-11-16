@@ -13,8 +13,7 @@ class ResPartnerIdCategory(models.Model):
     )
     email_template_id = fields.Many2one(
         "mail.template",
-        string="Email Template",
     )
     id_number_model_id = fields.Many2one(
-        "ir.model", default=_get_default_id_number_model
+        "ir.model", default=lambda self: self._get_default_id_number_model()
     )

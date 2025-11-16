@@ -3,7 +3,7 @@
 
 {
     "name": "Partner Identification Notification",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Contact",
     "depends": [
         "partner_identification",
@@ -15,6 +15,4 @@
         "data/ir_cron_data.xml",
         "views/res_partner_id_category_view.xml",
     ],
-    "installable": True,
-    "application": False,
 }
