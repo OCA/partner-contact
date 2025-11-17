@@ -52,8 +52,8 @@ class Base(models.AbstractModel):
         """
         # Retrieve value from context (which can be defined in views field by
         # field)
-        if "only_confirmed_partners" in self._context:
-            return bool(self._context["only_confirmed_partners"])
+        if "only_confirmed_partners" in self.env.context:
+            return bool(self.env.context["only_confirmed_partners"])
 
         # Retrieve value from system parameters
         val = (
