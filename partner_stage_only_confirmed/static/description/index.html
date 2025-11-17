@@ -375,28 +375,230 @@ ul.auto-toc {
 !! source digest: sha256:6798741b40f265ab2535dc965b0d110aa92306c31190a3fd93a60a9fc2cc6c67
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/license-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/partner-contact/tree/19.0/partner_stage_only_confirmed"><img alt="OCA/partner-contact" src="https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/partner-contact-19-0/partner-contact-19-0-partner_stage_only_confirmed"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&amp;target_branch=19.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
-<p>Automatic filtering of partners in form views’ Many2one fields with
-relation to “res.partner”. If enabled (which is the default behavior
-when the module is installed), only confirmed partners will be shown.</p>
+<p>This module extends the partner stage functionality by implementing a
+filtering mechanism that ensures only confirmed partners are displayed
+in Many2one fields on form views. This is particularly useful in
+business scenarios where you want to prevent users from selecting
+partners that are not yet confirmed in your system.</p>
+<div class="section" id="problem-solved">
+<h2>Problem Solved</h2>
+<p>In standard Odoo, when using Many2one fields that reference partners
+(like <tt class="docutils literal">parent_id</tt>, <tt class="docutils literal">contact_id</tt>, etc.), all partners are available
+for selection regardless of their state or confirmation status. This can
+lead to:</p>
+<ul class="simple">
+<li>Selection of partners that are not yet properly validated</li>
+<li>Accidental linking to partners that are in draft or unconfirmed
+states</li>
+<li>Data integrity issues when business processes require confirmed
+partners</li>
+</ul>
+</div>
+<div class="section" id="solution">
+<h2>Solution</h2>
+<p>The module automatically modifies form views at runtime to filter
+partner-related Many2one fields, showing only partners in the
+‘confirmed’ state. This filtering is configurable via:</p>
+<ul class="simple">
+<li>Context parameters</li>
+<li>System configuration parameters</li>
+<li>Default behavior that can be overridden as needed</li>
+</ul>
+<p>The filtering is applied transparently without requiring manual domain
+updates on individual views, making it a robust solution that works
+across the entire application for any partner-related Many2one field.</p>
 <p><strong>Table of contents</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#usage" id="toc-entry-1">Usage</a></li>
-<li><a class="reference internal" href="#bug-tracker" id="toc-entry-2">Bug Tracker</a></li>
-<li><a class="reference internal" href="#credits" id="toc-entry-3">Credits</a><ul>
-<li><a class="reference internal" href="#authors" id="toc-entry-4">Authors</a></li>
-<li><a class="reference internal" href="#contributors" id="toc-entry-5">Contributors</a></li>
-<li><a class="reference internal" href="#maintainers" id="toc-entry-6">Maintainers</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#use-cases-context" id="toc-entry-1">Use Cases / Context</a></li>
 </ul>
 </div>
+<div class="section" id="use-cases-context">
+<h3><a class="toc-backref" href="#toc-entry-1">Use Cases / Context</a></h3>
+</div>
+</div>
+<div class="section" id="business-context">
+<h2>Business Context</h2>
+<p>Many organizations implement partner lifecycle management where contacts
+move through various stages before being fully confirmed and eligible
+for business transactions. This workflow typically includes:</p>
+<ul class="simple">
+<li><strong>Draft Stage:</strong> Initial partner entry, possibly pending validation</li>
+<li><strong>Validation Stage:</strong> Partner details being verified</li>
+<li><strong>Confirmed Stage:</strong> Fully validated partner ready for business</li>
+<li><strong>Other Stages:</strong> Potentially archived or suspended partners</li>
+</ul>
+</div>
+<div class="section" id="problem-statement">
+<h2>Problem Statement</h2>
+<p>Without proper filtering mechanisms, users can accidentally select
+unconfirmed partners in critical business operations:</p>
+<ul class="simple">
+<li>Creating sales orders for draft partners</li>
+<li>Generating invoices for unverified contacts</li>
+<li>Assigning projects to partners not yet confirmed</li>
+<li>Linking transactions to partners that may not exist legally</li>
+</ul>
+<p>This leads to potential business disruption, data quality issues, and
+compliance problems.</p>
+</div>
+<div class="section" id="industry-scenarios">
+<h2>Industry Scenarios</h2>
+</div>
+<div class="section" id="financial-services">
+<h2>Financial Services</h2>
+<p>Banks and financial institutions must ensure that all customer
+references in transactions are to properly verified and confirmed
+clients. This filter prevents linking to customers who may not have
+completed the required KYC (Know Your Customer) processes.</p>
+</div>
+<div class="section" id="e-commerce-and-retail">
+<h2>E-commerce and Retail</h2>
+<p>Online retailers often have a customer validation process before
+allowing full purchasing capabilities. This module ensures that business
+transactions only reference validated customers.</p>
+</div>
+<div class="section" id="professional-services">
+<h2>Professional Services</h2>
+<p>Consulting firms and professional services often have a client
+onboarding process. This module ensures that only properly onboarded
+clients appear in selection lists for new projects or contracts.</p>
+</div>
+<div class="section" id="manufacturing-and-supply-chain">
+<h2>Manufacturing and Supply Chain</h2>
+<p>Manufacturers often have supplier qualification processes. The filtering
+ensures that only qualified suppliers appear in procurement operations.</p>
+</div>
+<div class="section" id="regulatory-compliance">
+<h2>Regulatory Compliance</h2>
+<p>In many jurisdictions, businesses must maintain proper verification of
+their partner relationships. This module supports:</p>
+<ul class="simple">
+<li><strong>GDPR Compliance:</strong> Ensuring personal data is properly validated
+before use</li>
+<li><strong>Financial Regulations:</strong> Meeting requirements for customer
+verification in financial transactions</li>
+<li><strong>Contract Law:</strong> Ensuring legal capacity of contracting partners</li>
+<li><strong>Industry Standards:</strong> Meeting sector-specific requirements for
+partner validation</li>
+</ul>
+</div>
+<div class="section" id="technical-context">
+<h2>Technical Context</h2>
+<p>The module addresses the gap between partner state management (handled
+by the <tt class="docutils literal">partner_stage</tt> module) and user interface behavior. While
+partner states may be properly managed in the backend, the user
+interface previously provided no automatic filtering mechanism.</p>
+</div>
+<div class="section" id="integration-considerations">
+<h2>Integration Considerations</h2>
+<p>This module works in conjunction with:</p>
+<ul class="simple">
+<li>The <tt class="docutils literal">partner_stage</tt> module for state management</li>
+<li>Standard Odoo partner management functionality</li>
+<li>Custom partner validation workflows</li>
+<li>Existing business processes that depend on partner confirmation
+status</li>
+</ul>
+</div>
+<div class="section" id="solution-scope">
+<h2>Solution Scope</h2>
+<p>The module provides an elegant solution that:</p>
+<ul class="simple">
+<li>Maintains data integrity without restricting functionality</li>
+<li>Provides configuration flexibility for different business needs</li>
+<li>Integrates seamlessly with existing user interfaces</li>
+<li>Supports both global and granular control over the filtering behavior</li>
+</ul>
 <div class="section" id="usage">
-<h2><a class="toc-backref" href="#toc-entry-1">Usage</a></h2>
-<p>See “Configuration”.</p>
+<h3>Usage</h3>
 </div>
+</div>
+<div class="section" id="default-behavior">
+<h2>Default Behavior</h2>
+<p>By default, the module applies the partner filtering automatically to
+all applicable Many2one fields that reference partners. When selecting a
+partner in any form view, only partners in the ‘confirmed’ state will be
+available.</p>
+</div>
+<div class="section" id="configuration-methods">
+<h2>Configuration Methods</h2>
+<p>The filtering behavior can be controlled in several ways:</p>
+</div>
+<div class="section" id="context-parameter">
+<h2>1. Context Parameter</h2>
+<p>You can disable the filtering for specific views by adding
+<tt class="docutils literal">only_confirmed_partners: false</tt> to the context:</p>
+<p><strong>In views (XML):</strong></p>
+<pre class="code xml literal-block">
+<span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;parent_id&quot;</span><span class="w"> </span><span class="na">context=</span><span class="s">&quot;{'only_confirmed_partners': false}&quot;</span><span class="nt">/&gt;</span>
+</pre>
+<p><strong>In Python code:</strong></p>
+<pre class="code python literal-block">
+<span class="n">record</span><span class="o">.</span><span class="n">with_context</span><span class="p">(</span><span class="n">only_confirmed_partners</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">get_view</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre>
+</div>
+<div class="section" id="system-configuration-parameter">
+<h2>2. System Configuration Parameter</h2>
+<p>You can set the global filtering behavior using system parameters:</p>
+<p><strong>Enable filtering:</strong></p>
+<ul class="simple">
+<li>Go to Settings &gt; Technical &gt; Parameters &gt; System Parameters</li>
+<li>Create or update parameter: <tt class="docutils literal">partner_stage.only_confirmed_partners</tt></li>
+<li>Set value to any non-false value (e.g., “True”, “1”, “yes”)</li>
+</ul>
+<p><strong>Disable filtering:</strong></p>
+<ul class="simple">
+<li>Set parameter value to: “False”, “false”, “0”, or empty string</li>
+</ul>
+</div>
+<div class="section" id="explicit-enable">
+<h2>3. Explicit Enable</h2>
+<p>To explicitly enable the filtering globally, set the system parameter to
+any true-like value.</p>
+</div>
+<div class="section" id="common-use-cases">
+<h2>Common Use Cases</h2>
+</div>
+<div class="section" id="case-1-sales-orders">
+<h2>Case 1: Sales Orders</h2>
+<p>When creating sales orders, ensure that only confirmed customers can be
+selected as the main partner, preventing orders from being created for
+unconfirmed/draft partners.</p>
+</div>
+<div class="section" id="case-2-invoicing">
+<h2>Case 2: Invoicing</h2>
+<p>When creating invoices, ensure that only confirmed partners are
+available as the billing address partner.</p>
+</div>
+<div class="section" id="case-3-project-management">
+<h2>Case 3: Project Management</h2>
+<p>When assigning projects to contacts, restrict the selection to only
+confirmed partners to maintain data quality.</p>
+</div>
+<div class="section" id="technical-implementation">
+<h2>Technical Implementation</h2>
+<p>The module uses the <tt class="docutils literal">get_view</tt> method override to dynamically modify
+form view architectures at runtime. This approach ensures that:</p>
+<ul class="simple">
+<li>Existing views don’t require modifications</li>
+<li>The filtering applies to all partner-related Many2one fields</li>
+<li>Performance impact is minimal and only affects form views</li>
+<li>The filtering is transparent to end users (they simply see fewer
+options)</li>
+</ul>
+</div>
+<div class="section" id="limitations">
+<h2>Limitations</h2>
+<ul class="simple">
+<li>The filtering only applies to form views</li>
+<li>Only affects Many2one fields with comodel_name “res.partner”</li>
+<li>Other view types (tree, search, kanban) are not affected</li>
+<li>Context and system parameters provide override mechanisms for
+exceptions</li>
+</ul>
 <div class="section" id="bug-tracker">
-<h2><a class="toc-backref" href="#toc-entry-2">Bug Tracker</a></h2>
+<h3>Bug Tracker</h3>
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/partner-contact/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
@@ -404,15 +606,15 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
-<h2><a class="toc-backref" href="#toc-entry-3">Credits</a></h2>
+<h3>Credits</h3>
 <div class="section" id="authors">
-<h3><a class="toc-backref" href="#toc-entry-4">Authors</a></h3>
+<h4>Authors</h4>
 <ul class="simple">
 <li>Camptocamp</li>
 </ul>
 </div>
 <div class="section" id="contributors">
-<h3><a class="toc-backref" href="#toc-entry-5">Contributors</a></h3>
+<h4>Contributors</h4>
 <ul class="simple">
 <li>Silvio Gregorini &lt;<a class="reference external" href="mailto:silvio.gregorini&#64;camptocamp.com">silvio.gregorini&#64;camptocamp.com</a>&gt;</li>
 <li>Maksym Yankin &lt;<a class="reference external" href="mailto:maksym.yankin&#64;camptocamp.com">maksym.yankin&#64;camptocamp.com</a>&gt;</li>
@@ -420,7 +622,7 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 </ul>
 </div>
 <div class="section" id="maintainers">
-<h3><a class="toc-backref" href="#toc-entry-6">Maintainers</a></h3>
+<h4>Maintainers</h4>
 <p>This module is maintained by the OCA.</p>
 <a class="reference external image-reference" href="https://odoo-community.org">
 <img alt="Odoo Community Association" src="https://odoo-community.org/logo.png" />
@@ -430,6 +632,7 @@ mission is to support the collaborative development of Odoo features and
 promote its widespread use.</p>
 <p>This module is part of the <a class="reference external" href="https://github.com/OCA/partner-contact/tree/19.0/partner_stage_only_confirmed">OCA/partner-contact</a> project on GitHub.</p>
 <p>You are welcome to contribute. To learn how please visit <a class="reference external" href="https://odoo-community.org/page/Contribute">https://odoo-community.org/page/Contribute</a>.</p>
+</div>
 </div>
 </div>
 </div>
