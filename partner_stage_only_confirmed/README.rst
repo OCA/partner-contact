@@ -32,19 +32,246 @@ Partner Stage - Display only confirmed partners
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-Automatic filtering of partners in form views' Many2one fields with
-relation to "res.partner". If enabled (which is the default behavior
-when the module is installed), only confirmed partners will be shown.
+This module extends the partner stage functionality by implementing a
+filtering mechanism that ensures only confirmed partners are displayed
+in Many2one fields on form views. This is particularly useful in
+business scenarios where you want to prevent users from selecting
+partners that are not yet confirmed in your system.
+
+Problem Solved
+~~~~~~~~~~~~~~
+
+In standard Odoo, when using Many2one fields that reference partners
+(like ``parent_id``, ``contact_id``, etc.), all partners are available
+for selection regardless of their state or confirmation status. This can
+lead to:
+
+-  Selection of partners that are not yet properly validated
+-  Accidental linking to partners that are in draft or unconfirmed
+   states
+-  Data integrity issues when business processes require confirmed
+   partners
+
+Solution
+~~~~~~~~
+
+The module automatically modifies form views at runtime to filter
+partner-related Many2one fields, showing only partners in the
+'confirmed' state. This filtering is configurable via:
+
+-  Context parameters
+-  System configuration parameters
+-  Default behavior that can be overridden as needed
+
+The filtering is applied transparently without requiring manual domain
+updates on individual views, making it a robust solution that works
+across the entire application for any partner-related Many2one field.
 
 **Table of contents**
 
 .. contents::
    :local:
 
+Use Cases / Context
+===================
+
+Business Context
+~~~~~~~~~~~~~~~~
+
+Many organizations implement partner lifecycle management where contacts
+move through various stages before being fully confirmed and eligible
+for business transactions. This workflow typically includes:
+
+-  **Draft Stage:** Initial partner entry, possibly pending validation
+-  **Validation Stage:** Partner details being verified
+-  **Confirmed Stage:** Fully validated partner ready for business
+-  **Other Stages:** Potentially archived or suspended partners
+
+Problem Statement
+~~~~~~~~~~~~~~~~~
+
+Without proper filtering mechanisms, users can accidentally select
+unconfirmed partners in critical business operations:
+
+-  Creating sales orders for draft partners
+-  Generating invoices for unverified contacts
+-  Assigning projects to partners not yet confirmed
+-  Linking transactions to partners that may not exist legally
+
+This leads to potential business disruption, data quality issues, and
+compliance problems.
+
+Industry Scenarios
+~~~~~~~~~~~~~~~~~~
+
+Financial Services
+~~~~~~~~~~~~~~~~~~
+
+Banks and financial institutions must ensure that all customer
+references in transactions are to properly verified and confirmed
+clients. This filter prevents linking to customers who may not have
+completed the required KYC (Know Your Customer) processes.
+
+E-commerce and Retail
+~~~~~~~~~~~~~~~~~~~~~
+
+Online retailers often have a customer validation process before
+allowing full purchasing capabilities. This module ensures that business
+transactions only reference validated customers.
+
+Professional Services
+~~~~~~~~~~~~~~~~~~~~~
+
+Consulting firms and professional services often have a client
+onboarding process. This module ensures that only properly onboarded
+clients appear in selection lists for new projects or contracts.
+
+Manufacturing and Supply Chain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Manufacturers often have supplier qualification processes. The filtering
+ensures that only qualified suppliers appear in procurement operations.
+
+Regulatory Compliance
+~~~~~~~~~~~~~~~~~~~~~
+
+In many jurisdictions, businesses must maintain proper verification of
+their partner relationships. This module supports:
+
+-  **GDPR Compliance:** Ensuring personal data is properly validated
+   before use
+-  **Financial Regulations:** Meeting requirements for customer
+   verification in financial transactions
+-  **Contract Law:** Ensuring legal capacity of contracting partners
+-  **Industry Standards:** Meeting sector-specific requirements for
+   partner validation
+
+Technical Context
+~~~~~~~~~~~~~~~~~
+
+The module addresses the gap between partner state management (handled
+by the ``partner_stage`` module) and user interface behavior. While
+partner states may be properly managed in the backend, the user
+interface previously provided no automatic filtering mechanism.
+
+Integration Considerations
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This module works in conjunction with:
+
+-  The ``partner_stage`` module for state management
+-  Standard Odoo partner management functionality
+-  Custom partner validation workflows
+-  Existing business processes that depend on partner confirmation
+   status
+
+Solution Scope
+~~~~~~~~~~~~~~
+
+The module provides an elegant solution that:
+
+-  Maintains data integrity without restricting functionality
+-  Provides configuration flexibility for different business needs
+-  Integrates seamlessly with existing user interfaces
+-  Supports both global and granular control over the filtering behavior
+
 Usage
 =====
 
-See "Configuration".
+Default Behavior
+~~~~~~~~~~~~~~~~
+
+By default, the module applies the partner filtering automatically to
+all applicable Many2one fields that reference partners. When selecting a
+partner in any form view, only partners in the 'confirmed' state will be
+available.
+
+Configuration Methods
+~~~~~~~~~~~~~~~~~~~~~
+
+The filtering behavior can be controlled in several ways:
+
+1. Context Parameter
+~~~~~~~~~~~~~~~~~~~~
+
+You can disable the filtering for specific views by adding
+``only_confirmed_partners: false`` to the context:
+
+**In views (XML):**
+
+.. code:: xml
+
+   <field name="parent_id" context="{'only_confirmed_partners': false}"/>
+
+**In Python code:**
+
+.. code:: python
+
+   record.with_context(only_confirmed_partners=False).get_view(...)
+
+2. System Configuration Parameter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can set the global filtering behavior using system parameters:
+
+**Enable filtering:**
+
+-  Go to Settings > Technical > Parameters > System Parameters
+-  Create or update parameter: ``partner_stage.only_confirmed_partners``
+-  Set value to any non-false value (e.g., "True", "1", "yes")
+
+**Disable filtering:**
+
+-  Set parameter value to: "False", "false", "0", or empty string
+
+3. Explicit Enable
+~~~~~~~~~~~~~~~~~~
+
+To explicitly enable the filtering globally, set the system parameter to
+any true-like value.
+
+Common Use Cases
+~~~~~~~~~~~~~~~~
+
+Case 1: Sales Orders
+~~~~~~~~~~~~~~~~~~~~
+
+When creating sales orders, ensure that only confirmed customers can be
+selected as the main partner, preventing orders from being created for
+unconfirmed/draft partners.
+
+Case 2: Invoicing
+~~~~~~~~~~~~~~~~~
+
+When creating invoices, ensure that only confirmed partners are
+available as the billing address partner.
+
+Case 3: Project Management
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When assigning projects to contacts, restrict the selection to only
+confirmed partners to maintain data quality.
+
+Technical Implementation
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The module uses the ``get_view`` method override to dynamically modify
+form view architectures at runtime. This approach ensures that:
+
+-  Existing views don't require modifications
+-  The filtering applies to all partner-related Many2one fields
+-  Performance impact is minimal and only affects form views
+-  The filtering is transparent to end users (they simply see fewer
+   options)
+
+Limitations
+~~~~~~~~~~~
+
+-  The filtering only applies to form views
+-  Only affects Many2one fields with comodel_name "res.partner"
+-  Other view types (tree, search, kanban) are not affected
+-  Context and system parameters provide override mechanisms for
+   exceptions
 
 Bug Tracker
 ===========
