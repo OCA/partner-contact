@@ -28,16 +28,13 @@ class Base(models.AbstractModel):
                             domain = node.get("domain")
                             if not domain:
                                 domain = "[('state', '=', 'confirmed')]"
-                            elif isinstance(domain, str):
+                            else:
+                                # domain is always a string due to XML parsing
                                 if domain in ("", "[]"):
                                     domain = "[('state', '=', 'confirmed')]"
                                 else:
                                     domain = domain[:-1]
                                     domain += ", ('state', '=', 'confirmed')]"
-                            else:
-                                domain = list(domain)
-                                domain.append(("state", "=", "confirmed"))
-                                domain = str(domain)
                             node.set("domain", domain)
             res["arch"] = etree.tostring(doc)
         return res
