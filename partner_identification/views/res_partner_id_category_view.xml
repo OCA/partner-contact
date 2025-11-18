@@ -7,11 +7,30 @@
         <field name="arch" type="xml">
             <form string="Partner Identification Categories">
                 <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="text-bg-danger"
+                        invisible="active"
+                    />
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                            <field name="name" placeholder="Category Name" />
+                        </h1>
+                    </div>
                     <group>
                         <group>
-                            <field name="name" />
                             <field name="code" />
-                            <field name="validation_code" />
+                            <field name="color" widget="color_picker" string="Color" />
+                            <field
+                                name="validation_code"
+                                widget="code"
+                                placeholder="# Enter your validation code here
+# Use variable 'id_number' for the ID number to validate
+# Set variable 'failed' to True if validation fails
+failed = not id_number.name.isdigit()"
+                            />
                         </group>
                         <group>
                             <div class="alert alert-primary" role="alert">
@@ -49,6 +68,27 @@ failed = not id_number.name.startswith(self.code) and True or False
             </form>
         </field>
     </record>
+    <record id="view_partner_id_category_search" model="ir.ui.view">
+        <field name="name">res.partner.id_category.search</field>
+        <field name="model">res.partner.id_category</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Partner ID Categories">
+                <field name="name" />
+                <field name="code" />
+
+                <separator />
+
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active','=',False)]"
+                    help="Include archived categories"
+                />
+            </search>
+        </field>
+    </record>
+
     <record id="view_partner_id_category_tree" model="ir.ui.view">
         <field name="name">res.partner.id_category.list</field>
         <field name="model">res.partner.id_category</field>
@@ -57,6 +97,7 @@ failed = not id_number.name.startswith(self.code) and True or False
             <list>
                 <field name="name" />
                 <field name="code" />
+                <field name="color" widget="color_picker" />
             </list>
         </field>
     </record>
@@ -64,10 +105,18 @@ failed = not id_number.name.startswith(self.code) and True or False
         <field name="name">Partner ID Categories</field>
         <field name="res_model">res.partner.id_category</field>
         <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_partner_id_category_search" />
     </record>
+    <menuitem
+        name="Partner ID Numbers"
+        id="menu_partner_id_numbers_main"
+        parent="contacts.res_partner_menu_config"
+        sequence="10"
+    />
     <menuitem
         action="action_partner_id_category"
         id="menu_partner_id_category"
-        parent="contacts.res_partner_menu_config"
+        parent="menu_partner_id_numbers_main"
+        sequence="10"
     />
 </odoo>
