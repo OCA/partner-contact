@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_id_numbers_kanban" model="ir.ui.view">
+        <field name="name">res.partner.id_number.kanban</field>
+        <field name="model">res.partner.id_number</field>
+        <field name="type">kanban</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column">
+                <field name="name" />
+                <field name="category_id" />
+                <field name="partner_id" />
+                <field name="status" />
+                <field name="valid_until" />
+                <field name="partner_issued_id" />
+                <field name="date_issued" />
+                <field name="valid_from" />
+                <field name="activity_ids" />
+                <templates>
+                    <t t-name="card">
+                        <div class="d-flex align-items-baseline mb-2">
+                            <field name="name" class="fw-bolder me-2" />
+                            <field name="category_id" class="ms-auto fw-bolder" />
+                        </div>
+                        <div class="oe_kanban_content mb-2">
+                            <div class="d-flex flex-column">
+                                <div class="d-flex justify-content-between">
+                                    <div class="text-muted">
+                                        <field name="partner_id" />
+                                    </div>
+                                    <div>
+                                        <field
+                                            name="partner_issued_id"
+                                            widget="many2one_avatar_user"
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                    class="d-flex justify-content-center small align-items-center"
+                                    t-if="record.valid_from.value or record.valid_until.value"
+                                >
+                                    <span
+                                        class="fa fa-clock-o me-2"
+                                        title="Validity Period"
+                                    />
+                                    <field
+                                        name="valid_from"
+                                        widget="daterange"
+                                        options="{'end_date_field': 'valid_until'}"
+                                    />
+                                </div>
+                                <div
+                                    class="text-center small mt-1"
+                                    t-if="record.date_issued.value"
+                                >
+                                    <span
+                                    class="fa fa-calendar-check me-1"
+                                    title="Issue Date"
+                                />
+                                    Issued on: <field name="date_issued" />
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="d-flex align-items-center">
+                            <field name="activity_ids" widget="kanban_activity" />
+                            <div class="flex-grow-1" />
+                            <field
+                                name="status"
+                                widget="badge"
+                                decoration-info="status == 'draft'"
+                                decoration-primary="status == 'open'"
+                                decoration-warning="status == 'pending'"
+                                decoration-danger="status == 'close'"
+                            />
+                        </footer>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>
