@@ -40,6 +40,7 @@ class ResPartnerIdNumber(models.Model):
         comodel_name="res.partner",
         help="Another partner, who issued this ID. For example, Traffic "
         "National Institution",
+        tracking=True,
     )
     place_issuance = fields.Char(
         string="Place of Issuance",
@@ -59,15 +60,19 @@ class ResPartnerIdNumber(models.Model):
         help="Expiration date. For example, date when person needs to renew "
         "his driver license, 21/10/2019",
     )
-    comment = fields.Text(string="Notes")
+    comment = fields.Html(string="Notes", sanitize=True)
     status = fields.Selection(
         [
             ("draft", "New"),
             ("open", "Running"),
             ("pending", "To Renew"),
             ("close", "Expired"),
-        ]
+        ],
+        tracking=True,
     )
+    valid_until = fields.Date(tracking=True)
+    valid_from = fields.Date(tracking=True)
+    date_issued = fields.Date(tracking=True)
     active = fields.Boolean(default=True)
 
     @api.model
