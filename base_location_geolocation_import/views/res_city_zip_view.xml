@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="city_zip_form" model="ir.ui.view">
+        <field name="name">res.city.zip.form - base_location_geolocation_import</field>
+        <field name="model">res.city.zip</field>
+        <field name="inherit_id" ref="base_location.city_zip_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form/group" position="inside">
+                <field name="latitude" />
+                <field name="longitude" />
+            </xpath>
+        </field>
+    </record>
+    <record id="city_zip_tree" model="ir.ui.view">
+        <field name="name">res.city.zip.tree - base_location_geolocation_import</field>
+        <field name="model">res.city.zip</field>
+        <field name="inherit_id" ref="base_location.city_zip_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="inside">
+                <field name="latitude" />
+                <field name="longitude" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
