@@ -20,11 +20,6 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: base_location
-#: model:res.city,name:base_location.demo_brussels_city
-msgid "Brussels"
-msgstr "Bruxelles"
-
-#. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__country_enforce_cities
 msgid ""
 "Check this box to ensure every address created in that country has a 'City' "
@@ -44,6 +39,7 @@ msgstr "Città"
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__city_id
 #: model:ir.model.fields,field_description:base_location.field_res_partner__city
 #: model:ir.model.fields,field_description:base_location.field_res_users__city
+#: model_terms:ir.ui.view,arch_db:base_location.view_company_form_city
 msgid "City"
 msgstr "Città"
 
@@ -94,7 +90,10 @@ msgid "Created on"
 msgstr "Creato il"
 
 #. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city__display_name
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__display_name
+#: model:ir.model.fields,field_description:base_location.field_res_company__display_name
+#: model:ir.model.fields,field_description:base_location.field_res_partner__display_name
 msgid "Display Name"
 msgstr "Nome visualizzato"
 
@@ -120,7 +119,10 @@ msgid "Enforce Cities"
 msgstr "Imponi città"
 
 #. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city__id
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__id
+#: model:ir.model.fields,field_description:base_location.field_res_company__id
+#: model:ir.model.fields,field_description:base_location.field_res_partner__id
 msgid "ID"
 msgstr "ID"
 
@@ -245,6 +247,9 @@ msgstr "CAP"
 #: model:ir.model.fields,field_description:base_location.field_res_city__zip_ids
 msgid "Zips in this city"
 msgstr "CAP in questa città"
+
+#~ msgid "Brussels"
+#~ msgstr "Bruxelles"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Ultima modifica il"
