@@ -32,4 +32,15 @@
         </field>
     </record>
 
+    <record id="view_partner_simple_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.simplified.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_simple_form" />
+        <field name="arch" type="xml">
+            <field name="zip" position="after">
+                <field name="review_ids" invisible="1" />
+            </field>
+        </field>
+    </record>
+
 </odoo>
