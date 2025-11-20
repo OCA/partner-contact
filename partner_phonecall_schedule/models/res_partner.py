@@ -61,17 +61,10 @@ class ResPartner(models.Model):
     def _phonecall_available_domain(self):
         """Get a domain to know if we are available to call a partner."""
         now = fields.Datetime.from_string(self.env.context.get("now", datetime.now()))
-        date = fields.Date.to_string(now)
         now_tz = fields.Datetime.context_timestamp(self, now)
         float_time = now_tz.hour + ((now_tz.minute / 60) + now_tz.second) / 60
         return [
             ("dayofweek", "=", str(now.weekday())),
-            "|",
-            ("date_from", "=", False),
-            ("date_from", "<=", date),
-            "|",
-            ("date_to", "=", False),
-            ("date_to", ">=", date),
             ("hour_from", "<=", float_time),
             ("hour_to", ">=", float_time),
         ]
