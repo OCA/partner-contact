@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_socialmedia
+# 	* partner_socialmedia
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,6 +34,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__forum
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__forum
 msgid "Forum"
+msgstr ""
+
+#. module: partner_socialmedia
+#: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__instagram
+#: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__instagram
+msgid "Instagram"
 msgstr ""
 
 #. module: partner_socialmedia
@@ -66,6 +72,12 @@ msgid "Social Media"
 msgstr ""
 
 #. module: partner_socialmedia
+#: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__tiktok
+#: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__tiktok
+msgid "Tiktok"
+msgstr ""
+
+#. module: partner_socialmedia
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__twitter
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__twitter
 msgid "Twitter"
@@ -76,4 +88,3 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__youtube
 msgid "Youtube"
 msgstr ""
-
