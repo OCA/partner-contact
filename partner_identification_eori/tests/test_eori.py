@@ -3,19 +3,25 @@
 
 from odoo import Command
 from odoo.exceptions import ValidationError
-from odoo.tests.common import TransactionCase
+from odoo.tests import tagged
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestEORI(TransactionCase):
+@tagged("post_install", "-at_install")
+class TestEORI(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        uk = cls.env.ref("base.uk")
+        state = cls.env["res.country.state"].search(
+            [("country_id", "=", uk.id)], limit=1
+        )
         cls.partner = cls.env["res.partner"].create(
-            {"name": "TestEORI", "country_id": cls.env.ref("base.uk").id}
+            {"name": "TestEORI", "country_id": uk.id, "state_id": state.id}
         )
         cls.partner2 = cls.env["res.partner"].create(
-            {"name": "TestEORI2", "country_id": cls.env.ref("base.uk").id}
+            {"name": "TestEORI2", "country_id": uk.id, "state_id": state.id}
         )
         pc = cls.env.ref(
             "partner_identification_eori.partner_identification_eori_number_category"
