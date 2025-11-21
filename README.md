@@ -26,6 +26,7 @@ addon | version | maintainers | summary
 [base_location_geonames_import](base_location_geonames_import/) | 19.0.1.0.0 |  | Import zip entries from Geonames
 [base_partner_company_group](base_partner_company_group/) | 19.0.1.1.0 |  | Adds the possibility to add a company group to a company
 [partner_contact_address_default](partner_contact_address_default/) | 19.0.1.0.0 |  | Set a default delivery address, invoice address and contact for contacts
+[partner_ref_unique](partner_ref_unique/) | 19.0.1.0.0 |  | Add an unique constraint to partner ref field
 
 [//]: # (end addons)
 
