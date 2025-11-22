@@ -69,6 +69,7 @@ class ResPartnerIdNumber(models.Model):
             ("close", "Expired"),
         ],
         tracking=True,
+        default="draft",
     )
     valid_until = fields.Date(tracking=True)
     valid_from = fields.Date(tracking=True)
