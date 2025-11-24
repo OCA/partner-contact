@@ -15,8 +15,8 @@ class ResPartner(models.Model):
     )
 
     affiliate_ids = fields.One2many(
-        "res.partner",
-        "parent_id",
+        comodel_name="res.partner",
+        inverse_name="parent_id",
         string="Affiliates",
         # Same than core's child_ids, but with is_company == True
         domain=[("active", "=", True), ("is_company", "=", True)],
