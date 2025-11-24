@@ -13,7 +13,9 @@
     "LasLabs, "
     "ACSONE SA/NV, "
     "DynApps NV, "
+    "GRAP, "
     "Odoo Community Association (OCA)",
+    "maintainers": ["legalsylvain"],
     "license": "AGPL-3",
     "maintainer": "Camptocamp, Acsone",
     "category": "Extra Tools",
