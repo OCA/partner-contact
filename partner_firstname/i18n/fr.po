@@ -107,7 +107,9 @@ msgstr "Nom de famille requis"
 #: model:ir.model,name:partner_firstname.model_firstname_mixin
 msgid ""
 "Manage common things needed for models that have firstname / lastname fields."
-msgstr "Gérer des éléments communs pour les modèles qui ont les champs noms de famille et prénom."
+msgstr ""
+"Gérer des éléments communs pour les modèles qui ont les champs noms de "
+"famille et prénom."
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__name
