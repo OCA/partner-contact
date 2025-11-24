@@ -1,0 +1,31 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_partner_sequence
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-28 03:45+0000\n"
+"PO-Revision-Date: 2024-07-18 15:30+0000\n"
+"Last-Translator: Nils Coenen <nils.coenen@nico-solutions.de>\n"
+"Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
+
+#. module: base_partner_sequence
+#: model:ir.model,name:base_partner_sequence.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: base_partner_sequence
+#. odoo-python
+#: code:addons/base_partner_sequence/models/partner.py:0
+msgid "Either field values or an id must be provided."
+msgstr "Es müssen entweder Feldwerte oder eine ID angegeben werden."

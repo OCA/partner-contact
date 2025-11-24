@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<odoo noupdate="1">
+    <record id="seq_res_partner" model="ir.sequence">
+        <field name="name">Partner code</field>
+        <field name="code">res.partner</field>
+        <field name="prefix">P/</field>
+        <field name="padding">5</field>
+    </record>
+</odoo>
