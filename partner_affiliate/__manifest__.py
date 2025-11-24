@@ -5,7 +5,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Partner Affiliates",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "author": "Camptocamp, "
     "Tecnativa, "
     "brain-tec AG, "
