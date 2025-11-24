@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: partner-contact (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-13 00:57+0000\n"
-"PO-Revision-Date: 2023-01-02 11:57+0000\n"
-"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"PO-Revision-Date: 2025-11-24 12:42+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-partner-contact-8-0/"
 "language/it/)\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: partner_contact_job_position
 #: field:res.partner,job_position_id:0
@@ -28,7 +28,7 @@ msgstr ""
 #. module: partner_contact_job_position
 #: field:res.partner.job_position,child_ids:0
 msgid "Children"
-msgstr "Figlio"
+msgstr "Figli"
 
 #. module: partner_contact_job_position
 #: field:res.partner.job_position,create_uid:0
