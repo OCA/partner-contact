@@ -59,6 +59,11 @@ msgid "Contacts require a name."
 msgstr "A kapcsolat nevének megadása kötelező."
 
 #. module: partner_firstname
+#: model:ir.model.fields,help:partner_firstname.field_res_config_settings__partner_names_required_fields
+msgid "Define which fields are required or not"
+msgstr ""
+
+#. module: partner_firstname
 #. odoo-python
 #: code:addons/partner_firstname/exceptions.py:0
 msgid "Error(s) with partner %d's name."
@@ -71,6 +76,14 @@ msgid "First name"
 msgstr "Utónév"
 
 #. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_firstname_mixin__firstname_required
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__firstname_required
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__firstname_required
+msgid "Firstname Required"
+msgstr ""
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_firstname_mixin__form_has_lastname_first
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__form_has_lastname_first
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__form_has_lastname_first
 msgid "Form Has Lastname First"
@@ -81,6 +94,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname
 msgid "Last name"
 msgstr "Családnév"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_firstname_mixin__lastname_required
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname_required
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname_required
+msgid "Lastname Required"
+msgstr ""
+
+#. module: partner_firstname
+#: model:ir.model,name:partner_firstname.model_firstname_mixin
+msgid ""
+"Manage common things needed for models that have firstname / lastname fields."
+msgstr ""
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__name
@@ -100,8 +126,12 @@ msgid "Order to compose partner fullname"
 msgstr "A partner teljes nevének összeállításához használt sorrend"
 
 #. module: partner_firstname
-#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
+msgid "Partner Names"
+msgstr ""
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order
 msgid "Partner Names Order"
 msgstr "Partner nevének sorrendje"
 
@@ -109,6 +139,11 @@ msgstr "Partner nevének sorrendje"
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order_changed
 msgid "Partner Names Order Changed"
 msgstr "Partner név sorrend megváltozott"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_required_fields
+msgid "Partner Names Required Fields"
+msgstr ""
 
 #. module: partner_firstname
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
