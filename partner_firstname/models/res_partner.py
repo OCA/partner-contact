@@ -4,8 +4,10 @@
 # Copyright 2024 Simone Rubino - Aion Tech
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 import logging
+from collections import defaultdict
 
 from odoo import _, api, fields, models
+from odoo.tools import frozendict
 
 from .. import exceptions
 
@@ -58,6 +60,7 @@ class ResPartner(models.Model):
         the correct context.
         """
         created_partners = self.browse()
+        vals_by_context = defaultdict(list)
         for vals in vals_list:
             partner_context = dict(self.env.context)
             is_company = vals.get("company_type") == "company"
@@ -78,10 +81,12 @@ class ResPartner(models.Model):
                     # Remove the combined fields
                     vals.pop("name", None)
                     partner_context.pop("default_name", None)
+            vals_by_context[frozendict(partner_context)].append(vals)
+        for partner_context, vals_list in vals_by_context.items():
             # pylint: disable=W8121
             created_partners |= super(
                 ResPartner, self.with_context(partner_context)
-            ).create([vals])
+            ).create(vals_list)
         return created_partners
 
     def get_extra_default_copy_values(self, order):
