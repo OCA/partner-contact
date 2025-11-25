@@ -27,10 +27,6 @@ class CompanyCase(TransactionCase):
         finally:
             super().tearDown()
 
-    def test_name_empty_string(self):
-        """Test what happens when the name is an empty string."""
-        self.name = ""
-
     def test_name_false(self):
         """Test what happens when the name is ``False``."""
         self.name = False

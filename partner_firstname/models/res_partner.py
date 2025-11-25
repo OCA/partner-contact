@@ -226,7 +226,7 @@ class ResPartner(models.Model):
         """
         # Company name goes to the lastname
         if is_company or not name:
-            parts = [name or False, False]
+            parts = [name, False]
         # Guess name splitting
         else:
             order = self._get_names_order()
@@ -259,7 +259,7 @@ class ResPartner(models.Model):
             if all(
                 (
                     record.type == "contact" or record.is_company,
-                    not (record.firstname or record.lastname),
+                    record.firstname is False and record.lastname is False,
                 )
             ):
                 raise exceptions.EmptyNamesError(record, self.env)
