@@ -1,7 +1,3 @@
-.. image:: https://odoo-community.org/readme-banner-image
-   :target: https://odoo-community.org/get-involved?utm_source=readme
-   :alt: Odoo Community Association
-
 ================================
 Partner first name and last name
 ================================
@@ -17,7 +13,7 @@ Partner first name and last name
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
@@ -43,12 +39,18 @@ support having separate last name and first name.
 Configuration
 =============
 
+**Fields Order**
+
 You can configure some common name patterns for the inverse function in
 Settings > General settings:
 
 - Lastname Firstname: For example 'Anderson Robert'
+
 - Lastname, Firstname: For example 'Anderson, Robert'
+
 - Firstname Lastname: For example 'Robert Anderson'
+
+  |partner_names_order|
 
 After applying the changes, you can recalculate all partners name
 clicking "Recalculate names" button. Note: This process could take so
@@ -58,6 +60,16 @@ You can use *\_get_inverse_name* method to get lastname and firstname
 from a simple string and also *\_get_computed_name* to get a name form
 the lastname and firstname. These methods can be overridden to change
 the format specified above.
+
+**Required Fields**
+
+you can configure if firstname and / or lastname are required, in
+"Settings > General Settings":
+
+|partner_names_required_fields|
+
+.. |partner_names_order| image:: https://raw.githubusercontent.com/OCA/partner-contact/18.0/partner_firstname/static/description/partner_names_order.png
+.. |partner_names_required_fields| image:: https://raw.githubusercontent.com/OCA/partner-contact/18.0/partner_firstname/static/description/partner_names_required_fields.png
 
 Usage
 =====
@@ -87,6 +99,9 @@ Maybe this configuration could depend on partner language, country or
 company, as discussed at `this OCA
 issue <https://github.com/OCA/partner-contact/issues/210>`__
 
+Move ``copy()`` functions defined at ``res.partner`` and ``res.users``
+level in firstname.mixin level, harmonizing different implementations.
+
 Bug Tracker
 ===========
 
@@ -109,6 +124,7 @@ Authors
 * LasLabs
 * ACSONE SA/NV
 * DynApps NV
+* GRAP
 
 Contributors
 ------------
@@ -149,6 +165,14 @@ This module is maintained by the OCA.
 OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
+
+.. |maintainer-legalsylvain| image:: https://github.com/legalsylvain.png?size=40px
+    :target: https://github.com/legalsylvain
+    :alt: legalsylvain
+
+Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+
+|maintainer-legalsylvain| 
 
 This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/18.0/partner_firstname>`_ project on GitHub.
 

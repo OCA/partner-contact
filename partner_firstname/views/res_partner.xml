@@ -18,16 +18,13 @@
                     <field
                         invisible="not form_has_lastname_first"
                         name="lastname"
-                        required="form_has_lastname_first and not firstname and not is_company and type == 'contact'"
+                        required="form_has_lastname_first and lastname_required"
                     />
-                    <field
-                        name="firstname"
-                        required="not lastname and not is_company and type == 'contact'"
-                    />
+                    <field name="firstname" required="firstname_required" />
                     <field
                         invisible="form_has_lastname_first"
                         name="lastname"
-                        required="not form_has_lastname_first and not firstname and not is_company and type == 'contact'"
+                        required="not form_has_lastname_first and lastname_required"
                     />
                 </group>
             </xpath>
@@ -56,16 +53,13 @@
                         <field
                             invisible="not form_has_lastname_first"
                             name="lastname"
-                            required="form_has_lastname_first and not firstname and not is_company and type == 'contact'"
+                            required="form_has_lastname_first and lastname_required"
                         />
-                        <field
-                            name="firstname"
-                            required="not lastname and not is_company and type == 'contact'"
-                        />
+                        <field name="firstname" required="firstname_required" />
                         <field
                             invisible="form_has_lastname_first"
                             name="lastname"
-                            required="not form_has_lastname_first and not firstname and not is_company and type == 'contact'"
+                            required="not form_has_lastname_first and lastname_required"
                         />
                     </group>
                 </div>
@@ -88,16 +82,13 @@
                         <field
                             invisible="not form_has_lastname_first"
                             name="lastname"
-                            required="form_has_lastname_first and not firstname and not is_company and type == 'contact'"
+                            required="form_has_lastname_first and lastname_required"
                         />
-                        <field
-                            name="firstname"
-                            required="not lastname and not is_company and type == 'contact'"
-                        />
+                        <field name="firstname" required="firstname_required" />
                         <field
                             invisible="form_has_lastname_first"
                             name="lastname"
-                            required="form_has_lastname_first and not firstname and not is_company and type == 'contact'"
+                            required="not form_has_lastname_first and lastname_required"
                         />
                     </group>
                 </div>
