@@ -13,6 +13,7 @@ class UserOnchangeCase(TransactionCase):
             user_form.login = login
             # Changes firstname, which triggers onchanges
             user_form.firstname = firstname
+            user_form.lastname = False
 
         self.assertEqual(user_form.lastname, False)
         self.assertEqual(user_form.firstname, firstname)

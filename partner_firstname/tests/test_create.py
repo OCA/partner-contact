@@ -52,6 +52,19 @@ class PersonCase(TransactionCase):
         self.context["default_name"] = "BÄD2"
 
 
+class PersonEmptyCase(TransactionCase):
+    context = {"default_is_company": False}
+    model = "res.partner"
+
+    def test_name_empty_string(self):
+        """Test what happens when the name is an empty string."""
+        self.record = (
+            self.env[self.model].with_context(**self.context).create({"name": ""})
+        )
+        for key, value in (("name", ""), ("lastname", "")):
+            self.assertEqual(self.record[key], value, f"Checking key {key}")
+
+
 class CompanyCase(PersonCase):
     """Test ``res.partner`` when it is a company."""
 
@@ -61,6 +74,12 @@ class CompanyCase(PersonCase):
         super().setUp()
         self.good_values.update(lastname=self.values["name"], firstname=False)
         self.values = self.good_values.copy()
+
+
+class CompanyEmptyCase(PersonEmptyCase):
+    """Test ``res.partner`` when it is a company."""
+
+    context = {"default_is_company": True}
 
 
 class UserCase(PersonCase, MailInstalled):
@@ -77,3 +96,10 @@ class UserCase(PersonCase, MailInstalled):
         else:
             # Run tests
             super().tearDown()
+
+
+class UserEmptyCase(PersonEmptyCase, MailInstalled):
+    """Test ``res.users``."""
+
+    model = "res.users"
+    context = {"default_login": "user@example.com"}

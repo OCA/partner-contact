@@ -8,8 +8,6 @@ The form operates in onchange mode, with its limitations.
 
 from odoo.tests import Form, TransactionCase
 
-from ..exceptions import EmptyNamesError
-
 
 class PartnerCompanyCase(TransactionCase):
     is_company = True
@@ -42,10 +40,13 @@ class PartnerCompanyCase(TransactionCase):
             self.assertEqual(partner_form.firstname, False)
             self.assertEqual(partner_form.lastname, name)
 
-            # User unsets name
+            # User empty name
             partner_form.name = ""
+            partner_form.save()
+            # User unsets name
+            partner_form.name = False
             # call save to  trigger the inverse and therefore raise an exception
-            with self.assertRaises(EmptyNamesError), self.env.cr.savepoint():
+            with self.assertRaises(AssertionError), self.env.cr.savepoint():
                 partner_form.save()
 
             name += " bis"
@@ -70,6 +71,7 @@ class PartnerContactCase(TransactionCase):
 
             # Changes firstname, which triggers compute
             partner_form.firstname = firstname
+            partner_form.lastname = False
 
         self.assertEqual(partner_form.lastname, False)
         self.assertEqual(partner_form.firstname, firstname)
