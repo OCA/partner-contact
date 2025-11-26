@@ -64,7 +64,7 @@ addon | version | maintainers | summary
 [partner_employee_quantity](partner_employee_quantity/) | 18.0.1.0.0 | <a href='https://github.com/pedrobaeza'><img src='https://github.com/pedrobaeza.png' width='32' height='32' style='border-radius:50%;' alt='pedrobaeza'/></a> <a href='https://github.com/rafaelbn'><img src='https://github.com/rafaelbn.png' width='32' height='32' style='border-radius:50%;' alt='rafaelbn'/></a> <a href='https://github.com/edlopen'><img src='https://github.com/edlopen.png' width='32' height='32' style='border-radius:50%;' alt='edlopen'/></a> | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 18.0.1.0.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 18.0.1.0.0 |  | Add fax number on partner
-[partner_firstname](partner_firstname/) | 18.0.2.0.0 |  | Split first name and last name for non company partners
+[partner_firstname](partner_firstname/) | 18.0.3.0.0 | <a href='https://github.com/legalsylvain'><img src='https://github.com/legalsylvain.png' width='32' height='32' style='border-radius:50%;' alt='legalsylvain'/></a> | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 18.0.1.0.0 |  | Partner Identification Numbers
 [partner_identification_gln](partner_identification_gln/) | 18.0.1.0.0 |  | This addon extends "Partner Identification Numbers" to provide a number category for GLN registration
 [partner_identification_unique_by_category](partner_identification_unique_by_category/) | 18.0.1.0.0 |  | Partner Identification Numbers Unique By Category
@@ -81,7 +81,7 @@ addon | version | maintainers | summary
 [partner_readonly_security](partner_readonly_security/) | 18.0.1.0.0 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> | Partner Readonly Security
 [partner_ref_unique](partner_ref_unique/) | 18.0.1.0.0 |  | Add an unique constraint to partner ref field
 [partner_search_alias](partner_search_alias/) | 18.0.1.0.0 |  | Partner Search Alias
-[partner_second_lastname](partner_second_lastname/) | 18.0.1.0.1 |  | Have split first and second lastnames
+[partner_second_lastname](partner_second_lastname/) | 18.0.2.0.0 |  | Have split first and second lastnames
 [partner_shipping_policy](partner_shipping_policy/) | 18.0.1.0.0 |  | Define shipping policy at partners level.
 [partner_stage](partner_stage/) | 18.0.1.0.1 | <a href='https://github.com/dreispt'><img src='https://github.com/dreispt.png' width='32' height='32' style='border-radius:50%;' alt='dreispt'/></a> | Add lifecycle Stages to Partners
 [partner_supplier_ref](partner_supplier_ref/) | 18.0.1.0.1 |  | Adds a supplier reference to contacts
