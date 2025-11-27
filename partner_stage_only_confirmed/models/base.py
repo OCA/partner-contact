@@ -29,11 +29,15 @@ class Base(models.AbstractModel):
                             if not domain:
                                 domain = "[('state', '=', 'confirmed')]"
                             elif isinstance(domain, str):
-                                if domain in ("", "[]"):
+                                dom = domain.strip()
+                                if dom in ("", "[]"):
                                     domain = "[('state', '=', 'confirmed')]"
+                                elif dom.startswith("["):
+                                    domain = dom[:-1] + ", ('state', '=', 'confirmed')]"
                                 else:
-                                    domain = domain[:-1]
-                                    domain += ", ('state', '=', 'confirmed')]"
+                                    # dynamic domain: partner_delivery_domain, etc.
+                                    # -> extend it as a list
+                                    domain = "%s + [('state', '=', 'confirmed')]" % dom
                             else:
                                 domain = list(domain)
                                 domain.append(("state", "=", "confirmed"))
