@@ -1,0 +1,35 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_purchase_manager
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-16 14:52+0000\n"
+"PO-Revision-Date: 2023-11-16 15:54+0100\n"
+"Last-Translator: Emilio Pascual <emilio@moduom.team>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4\n"
+
+#. module: partner_purchase_manager
+#: model:ir.model,name:partner_purchase_manager.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_purchase_manager
+#: model_terms:ir.ui.view,arch_db:partner_purchase_manager.view_res_partner_filter_inherit_partner_purchase_manager
+msgid "My Suppliers"
+msgstr "Mis proveedores"
+
+#. module: partner_purchase_manager
+#: model:ir.model.fields,field_description:partner_purchase_manager.field_res_partner__purchase_manager_id
+#: model:ir.model.fields,field_description:partner_purchase_manager.field_res_users__purchase_manager_id
+#: model_terms:ir.ui.view,arch_db:partner_purchase_manager.view_res_partner_filter_inherit_partner_purchase_manager
+msgid "Purchase Manager"
+msgstr "Responsable de compras"
