@@ -6,86 +6,88 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2025-12-01 09:59+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: partner_socialmedia
 #: model:ir.model,name:partner_socialmedia.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contatto"
 
 #. module: partner_socialmedia
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__discord
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__discord
 msgid "Discord"
-msgstr ""
+msgstr "Discord"
 
 #. module: partner_socialmedia
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__facebook
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__facebook
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #. module: partner_socialmedia
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__forum
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__forum
 msgid "Forum"
-msgstr ""
+msgstr "Forum"
 
 #. module: partner_socialmedia
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__instagram
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__instagram
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #. module: partner_socialmedia
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__linkedin
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__linkedin
 msgid "Linkedin"
-msgstr ""
+msgstr "Linkedin"
 
 #. module: partner_socialmedia
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__mastodon
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__mastodon
 msgid "Mastodon"
-msgstr ""
+msgstr "Mastodon"
 
 #. module: partner_socialmedia
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__reddit
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__reddit
 msgid "Reddit"
-msgstr ""
+msgstr "Reddit"
 
 #. module: partner_socialmedia
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__skype
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__skype
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 #. module: partner_socialmedia
 #: model_terms:ir.ui.view,arch_db:partner_socialmedia.view_partner_form_socialmedia
 msgid "Social Media"
-msgstr ""
+msgstr "Social media"
 
 #. module: partner_socialmedia
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__tiktok
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__tiktok
 msgid "Tiktok"
-msgstr ""
+msgstr "Tiktok"
 
 #. module: partner_socialmedia
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__twitter
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__twitter
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #. module: partner_socialmedia
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_partner__youtube
 #: model:ir.model.fields,field_description:partner_socialmedia.field_res_users__youtube
 msgid "Youtube"
-msgstr ""
+msgstr "Youtube"
