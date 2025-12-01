@@ -27,6 +27,11 @@ class ResPartner(models.Model):
         for partner in self:
             partner.show_prop_wizard_button = bool(partner.child_ids)
 
+    def _get_archive_propagation_candidates(self):
+        """To be overidden"""
+        self.ensure_one()
+        return self._get_descendants()
+
     def write(self, vals):
         """Enable (un)archiving propagation:
         - detect which partners are being (un)archived
@@ -58,7 +63,7 @@ class ResPartner(models.Model):
         # Wizard: only non-contact descendants are silently archived here.
         for partner in self:
             non_contacts = (
-                partner._get_descendants()
+                partner._get_archive_propagation_candidates()
                 .sudo()
                 .filtered(lambda p: p.active and p.type != "contact")
             )
@@ -80,7 +85,11 @@ class ResPartner(models.Model):
         """Archive descendants according to propagation rules."""
         # Non-UI: archive all children
         for partner in self:
-            descendants = partner._get_descendants().sudo().filtered(lambda p: p.active)
+            descendants = (
+                partner._get_archive_propagation_candidates()
+                .sudo()
+                .filtered(lambda p: p.active)
+            )
             if not descendants:
                 continue
             (
@@ -166,20 +175,26 @@ class ResPartner(models.Model):
           allowing the user to exclude some.
         """
         self.ensure_one()
-        descendants = self._get_descendants().filtered(lambda p: p.active)
-        contact_desc = descendants.filtered(lambda p: p.type == "contact")
-        if not contact_desc:
+        candidates = self._get_archive_propagation_candidates().filtered(
+            lambda p: p.active
+        )
+        contacts_to_show = candidates.filtered(lambda p: p.type == "contact")
+        if not contacts_to_show:
             # No wizard window opens, archive right away
             return self.with_context(partner_archive_propagate_ui=True).write(
                 {"active": False}
             )
-        archivable, unarchivable = contact_desc._split_archivable_unarchivable_user()
+        (
+            archivable,
+            unarchivable,
+        ) = contacts_to_show._split_archivable_unarchivable_user()
         wiz = self.env["res.partner.archive.propagate.wizard"].create(
             {
                 "partner_id": self.id,
                 "line_ids": [(0, 0, {"partner_id": p.id}) for p in archivable],
             }
         )
+        self._notify_skipped_partners(unarchivable)
         return {
             "type": "ir.actions.act_window",
             "name": _("Archive Contacts"),
