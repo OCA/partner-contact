@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-02 09:06+0000\n"
+"PO-Revision-Date: 2025-12-01 11:12+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,17 +14,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: partner_contact_address_default
 #: model:ir.model,name:partner_contact_address_default.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Aziende"
 
 #. module: partner_contact_address_default
 #: model:ir.model,name:partner_contact_address_default.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Impostazioni configurazione"
 
 #. module: partner_contact_address_default
 #: model:ir.model,name:partner_contact_address_default.model_res_partner
@@ -35,7 +35,7 @@ msgstr "Contatto"
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_company__contact_address_default_allow_all_partners
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_config_settings__contact_address_default_allow_all_partners
 msgid "Contact Address Default Allow All Partners"
-msgstr ""
+msgstr "Indirizzo contatto predefinito consente tutti i partner"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_contact_id
@@ -54,6 +54,8 @@ msgid ""
 "If enabled, the default delivery, invoice, and contact addresses are not "
 "limited to the partner’s child contacts—you can select any contact."
 msgstr ""
+"Se abilitata, la consegna, fattura e indirizzo contatto predefiniti non sono "
+"limitati ai contatti del partner, si può selezionare qualsiasi partner."
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_invoice_id
@@ -65,19 +67,19 @@ msgstr "Indirizzo di fatturazione"
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_contact_domain
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_contact_domain
 msgid "Partner Contact Domain"
-msgstr ""
+msgstr "Dominio contatto partner"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_delivery_domain
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_delivery_domain
 msgid "Partner Delivery Domain"
-msgstr ""
+msgstr "Dominio consegna partner"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_invoice_domain
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_invoice_domain
 msgid "Partner Invoice Domain"
-msgstr ""
+msgstr "Dominio fattura partner"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_delivery_id
