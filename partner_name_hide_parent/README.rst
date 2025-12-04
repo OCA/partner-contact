@@ -70,6 +70,14 @@ Authors
 
 * Quartile Limited
 
+Contributors
+------------
+
+- `Quartile Limited <https://www.quartile.co>`__
+- `Binhex <https://www.binhex.cloud>`__
+
+  - Ariel Barreiros (arielbarreiros96)
+
 Maintainers
 -----------
 

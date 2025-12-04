@@ -1,0 +1,3 @@
+- [Quartile Limited](https://www.quartile.co)
+- [Binhex](https://www.binhex.cloud)
+  - Ariel Barreiros (arielbarreiros96)
