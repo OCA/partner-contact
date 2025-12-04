@@ -22,4 +22,4 @@ class ResPartner(models.Model):
         "is_company", "name", "parent_id.name", "type", "company_name", "hide_parent"
     )
     def _compute_display_name(self):
-        return super(ResPartner, self)._compute_display_name()
+        return super()._compute_display_name()
