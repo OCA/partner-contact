@@ -1,4 +1,3 @@
-from odoo.exceptions import UserError
 from odoo.tests import common, tagged
 
 
@@ -6,8 +5,9 @@ from odoo.tests import common, tagged
 class TestResPartner(common.TransactionCase):
     def setUp(self):
         super().setUp()
-        self.partner = self.env["res.partner"].create({"name": "Microsoft Corporation"})
-        self.partner_2 = self.env["res.partner"].create({"name": "Apple Inc."})
+        self.Partner = self.env["res.partner"]
+        self.partner = self.Partner.create({"name": "Microsoft Corporation"})
+        self.partner_2 = self.Partner.create({"name": "Apple Inc."})
 
     def test_01_is_customer(self):
         partners = self.partner | self.partner_2
@@ -26,7 +26,7 @@ class TestResPartner(common.TransactionCase):
                 {"is_customer": False, "customer_rank": 0},
             ],
         )
-        partners_found = self.env["res.partner"].search([("is_customer", "=", True)])
+        partners_found = self.Partner.search([("is_customer", "=", True)])
         self.assertIn(self.partner, partners_found)
         partners.write({"is_customer": True})
         self.assertRecordValues(
@@ -52,8 +52,18 @@ class TestResPartner(common.TransactionCase):
                 {"is_customer": True, "customer_rank": 1},
             ],
         )
-        with self.assertRaisesRegex(UserError, "Operation not supported"):
-            self.env["res.partner"].search([("is_customer", "in", [True, False])])
+        # unsupported operator
+        res = self.Partner._search_is_customer("like", True)
+        self.assertIs(res, NotImplemented)
+
+        # unsupported value type
+        res = self.Partner._search_is_customer("=", "True")
+        self.assertIs(res, NotImplemented)
+
+        # supported
+        res = self.Partner._search_is_customer("=", True)
+        self.assertIsInstance(res, list)
+        self.assertTrue(res and isinstance(res[0], tuple))
 
     def test_02_is_supplier(self):
         partners = self.partner | self.partner_2
@@ -98,5 +108,13 @@ class TestResPartner(common.TransactionCase):
                 {"is_supplier": True, "supplier_rank": 1},
             ],
         )
-        with self.assertRaisesRegex(UserError, "Operation not supported"):
-            self.env["res.partner"].search([("is_supplier", "in", [True, False])])
+        # unsupported operator
+        res = self.Partner._search_is_supplier("like", True)
+        self.assertIs(res, NotImplemented)
+        # unsupported value type
+        res = self.Partner._search_is_supplier("=", "True")
+        self.assertIs(res, NotImplemented)
+        # supported
+        res = self.Partner._search_is_supplier("=", True)
+        self.assertIsInstance(res, list)
+        self.assertTrue(res and isinstance(res[0], tuple))
