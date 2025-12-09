@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-11-20 12:04+0000\n"
+"PO-Revision-Date: 2025-12-09 02:34+0000\n"
 "Last-Translator: Ryoko Tsuda <ryoko@quartile.co>\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -36,13 +36,13 @@ msgstr "住所を強制設定"
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_invoice_id
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_invoice_id
 msgid "Invoice address"
-msgstr "請求先住所"
+msgstr "請求先"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_delivery_id
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_delivery_id
 msgid "Shipping address"
-msgstr "配送先住所"
+msgstr "配送先"
 
 #. module: partner_contact_address_default
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
@@ -50,5 +50,5 @@ msgid ""
 "You can force contact, delivery and invoice address for this contact.\n"
 "                            If you keep these fields empty, Odoo's default behavior will apply."
 msgstr ""
-"この連絡先に対して、連絡先、配送先住所、請求先住所を強制的に設定できます。\n"
+"この連絡先に対して、連絡先、配送先、請求先を強制的に設定できます。\n"
 "これらのフィールドを空のままにすると、Odooのデフォルト動作が適用されます。"
