@@ -17,8 +17,13 @@ class Contact(models.Model):
                 )
 
     def _increase_rank(self, field, n=1):
-        # OVERRIDE: to check single rank
-        # Because of direct SQL update in the super method
+        # OVERRIDE: to ignore increasing the rank if the partner is already ranked
+        # in the opposite field
+        field_inverses = {
+            "customer_rank": "supplier_rank",
+            "supplier_rank": "customer_rank",
+        }
+        field_inverse = field_inverses[field]
+        self = self.filtered(lambda rec: not rec[field_inverse])
         res = super()._increase_rank(field, n=n)
-        self._constrains_single_rank()
         return res
