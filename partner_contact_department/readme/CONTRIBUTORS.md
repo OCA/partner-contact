@@ -9,3 +9,4 @@
 - Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
 - Aiendry Sarkar \<<aiendry@aktivsoftware.com>\>
 - Ruchir Shukla \<<ruchir@bizzappdev.com>\>
+- Julien Coux \<<julien.coux@camptocamp.com>\>

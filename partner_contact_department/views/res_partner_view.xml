@@ -15,6 +15,12 @@
             </xpath>
             <xpath
                 expr="//field[@name='child_ids']/form//field[@name='function']"
+                position="attributes"
+            >
+                <attribute name="class">w-50</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='function']"
                 position="after"
             >
                 <field name="is_company" invisible="True" />
@@ -23,6 +29,7 @@
                     placeholder="Department"
                     invisible="is_company"
                     options='{"no_open": True}'
+                    class="w-50"
                 />
             </xpath>
         </field>
