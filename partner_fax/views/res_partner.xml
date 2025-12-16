@@ -19,10 +19,18 @@
                 <field name="fax" placeholder="Fax..." widget="phone" />
             </field>
             <xpath
-                expr="//field[@name='child_ids']/form//field[@name='mobile']"
+                expr="//field[@name='child_ids']/form//div[field[@name='phone']]"
                 position="after"
             >
-                <field name="fax" placeholder="Fax..." widget="phone" />
+                <div class="d-flex align-items-baseline">
+                    <i class="fa fa-fw me-1 fa-phone text-primary" title="Fax" />
+                    <field
+                        name="fax"
+                        placeholder="Fax..."
+                        widget="phone"
+                        class="w-100"
+                    />
+                </div>
             </xpath>
         </field>
     </record>
