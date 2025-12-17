@@ -1,8 +1,8 @@
 # Copyright 2016 Acsone S.A.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-
 from odoo.exceptions import ValidationError
+from odoo.fields import Command
 from odoo.tests.common import TransactionCase
 
 
@@ -27,7 +27,7 @@ class TestGLN(TransactionCase):
         # Good GLN
         vals = {"name": "5450534005852", "category_id": self.partner_id_category.id}
 
-        self.partner.write({"id_numbers": [(0, 0, vals)]})
+        self.partner.write({"id_numbers": [Command.create(vals)]})
         id_number = self.partner.id_numbers[0]
 
         self.assertEqual(id_number.name, "5450534005852")
@@ -36,12 +36,12 @@ class TestGLN(TransactionCase):
         vals = {"name": "5450534005852", "category_id": self.partner_id_category.id}
 
         with self.assertRaises(ValidationError):
-            self.partner2.write({"id_numbers": [(0, 0, vals)]})
+            self.partner2.write({"id_numbers": [Command.create(vals)]})
 
         # Bad GLN
         vals = {"name": "5450534001716", "category_id": self.partner_id_category.id}
         with self.assertRaises(ValidationError):
-            self.partner.write({"id_numbers": [(0, 0, vals)]})
+            self.partner.write({"id_numbers": [Command.create(vals)]})
 
     def test_gln_with_no_number(self):
         self.assertFalse(
@@ -51,7 +51,7 @@ class TestGLN(TransactionCase):
     def test_gcp(self):
         # Good GLN
         vals = {"name": "545053", "category_id": self.partner_id_gcp_category.id}
-        self.partner.write({"id_numbers": [(0, 0, vals)]})
+        self.partner.write({"id_numbers": [Command.create(vals)]})
         id_number = self.partner.id_numbers[0]
 
         self.assertEqual(id_number.name, "545053")
@@ -60,12 +60,12 @@ class TestGLN(TransactionCase):
         vals = {"name": "545053", "category_id": self.partner_id_gcp_category.id}
 
         with self.assertRaises(ValidationError):
-            self.partner2.write({"id_numbers": [(0, 0, vals)]})
+            self.partner2.write({"id_numbers": [Command.create(vals)]})
 
         # Bad GLN
         vals = {"name": "5450534001716", "category_id": self.partner_id_gcp_category.id}
         with self.assertRaises(ValidationError):
-            self.partner.write({"id_numbers": [(0, 0, vals)]})
+            self.partner.write({"id_numbers": [Command.create(vals)]})
 
     def test_gcp_with_no_number(self):
         self.assertFalse(
