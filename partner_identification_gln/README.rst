@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ==========================
 Partner Identification GLN
 ==========================
@@ -13,25 +17,39 @@ Partner Identification GLN
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/18.0/partner_identification_gln
+    :target: https://github.com/OCA/partner-contact/tree/19.0/partner_identification_gln
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-18-0/partner-contact-18-0-partner_identification_gln
+    :target: https://translation.odoo-community.org/projects/partner-contact-19-0/partner-contact-19-0-partner_identification_gln
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=18.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=19.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This addon extends "Partner Identification Numbers" to provide a number
-category for GLN registration
+This addon extends "Partner Identification Numbers" to provide number
+categories for GLN and GCP registration.
 
-see: http://www.gs1.org/1/glnrules/en/
+A GLN (Global Location Number) is a GS1 identification key used to
+uniquely identify legal entities, functional entities, and physical
+locations involved in business processes. A GCP (GS1 Company Prefix) is
+the company-specific prefix issued by GS1 that is used as a building
+block to create GS1 identification keys, including GLNs.
+
+In this module, GLN values are validated as GS1/EAN-based identifiers,
+while GCP values are stored as company prefixes with a length between 1
+and 12 digits.
+
+See:
+
+- https://www.gs1.org/standards/id-keys/gln/physical-location
+- https://www.gs1.org/standards/id-keys/company-prefix
+- https://support.gs1.org/support/solutions/articles/43000734241-how-do-i-use-a-global-location-number-to-identify-a-physical-location-
 
 **Table of contents**
 
@@ -49,7 +67,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_identification_gln%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_identification_gln%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -75,8 +93,7 @@ Contributors
 Other credits
 -------------
 
-The migration of this module from 14.0 to 16.0 was financially supported
-by Camptocamp.
+
 
 Maintainers
 -----------
@@ -91,6 +108,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/18.0/partner_identification_gln>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/19.0/partner_identification_gln>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
