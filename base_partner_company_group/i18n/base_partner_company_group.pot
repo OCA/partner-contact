@@ -28,13 +28,13 @@ msgid "Company group members"
 msgstr ""
 
 #. module: base_partner_company_group
-#: model:ir.model,name:base_partner_company_group.model_res_partner
-msgid "Contact"
+#: model:ir.model.fields,field_description:base_partner_company_group.field_res_partner__display_name
+msgid "Display Name"
 msgstr ""
 
 #. module: base_partner_company_group
-#: model:ir.model.fields,field_description:base_partner_company_group.field_res_partner__display_name
-msgid "Display Name"
+#: model:ir.model,name:base_partner_company_group.model_res_partner
+msgid "Fake Model"
 msgstr ""
 
 #. module: base_partner_company_group
