@@ -28,6 +28,7 @@ addon | version | maintainers | summary
 [base_partner_sequence](base_partner_sequence/) | 19.0.1.0.0 |  | Sets customer's code from a sequence
 [partner_contact_access_link](partner_contact_access_link/) | 19.0.1.0.0 | <a href='https://github.com/Yajo'><img src='https://github.com/Yajo.png' width='32' height='32' style='border-radius:50%;' alt='Yajo'/></a> | Allow to visit the full contact form from a company
 [partner_contact_address_default](partner_contact_address_default/) | 19.0.1.0.0 |  | Set a default delivery address, invoice address and contact for contacts
+[partner_identification](partner_identification/) | 19.0.1.0.0 |  | Partner Identification Numbers
 [partner_ref_unique](partner_ref_unique/) | 19.0.1.0.0 |  | Add an unique constraint to partner ref field
 [partner_supplier_ref](partner_supplier_ref/) | 19.0.1.0.0 |  | Adds a supplier reference to contacts
 [partner_vat_unique](partner_vat_unique/) | 19.0.1.0.0 |  | Module to make the VAT number unique for customers and suppliers.
