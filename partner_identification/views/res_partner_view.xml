@@ -1,0 +1,53 @@
+<odoo>
+    <!-- Modification of Partner - Adding Tab for Idenification Numbers -->
+    <record model="ir.ui.view" id="view_partner_form">
+        <field name="name">res.partner.form.id_number</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority" eval="10" />
+        <field name="arch" type="xml">
+            <page name="sales_purchases" position="after">
+                <page string="ID Numbers" name="id_numbers">
+                    <field
+                        name="id_numbers"
+                        colspan="4"
+                        nolabel="1"
+                        widget="one2many_list"
+                        context="{'default_partner_id': id}"
+                    >
+                        <list
+                            string="ID Numbers"
+                            decoration-danger="status == 'close'"
+                            decoration-warning="status == 'pending'"
+                            decoration-success="status in ('draft','open')"
+                        >
+                            <field name="category_id" />
+                            <field name="name" />
+                            <field
+                                name="partner_issued_id"
+                                widget="many2one_avatar_user"
+                            />
+                            <field name="date_issued" />
+                            <field name="valid_from" />
+                            <field name="valid_until" widget="remaining_days" />
+                            <field
+                                name="status"
+                                widget="badge"
+                                decoration-info="status == 'draft'"
+                                decoration-primary="status == 'open'"
+                                decoration-warning="status == 'pending'"
+                                decoration-danger="status == 'close'"
+                            />
+                            <field name="partner_id" optional="hide" />
+                            <field
+                                name="activity_ids"
+                                widget="list_activity"
+                                optional="show"
+                            />
+                        </list>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>
