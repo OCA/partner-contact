@@ -14,13 +14,13 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_supplier_ref
-#: model:ir.model,name:partner_supplier_ref.model_res_partner
-msgid "Contact"
+#: model:ir.model.fields,field_description:partner_supplier_ref.field_res_partner__display_name
+msgid "Display Name"
 msgstr ""
 
 #. module: partner_supplier_ref
-#: model:ir.model.fields,field_description:partner_supplier_ref.field_res_partner__display_name
-msgid "Display Name"
+#: model:ir.model,name:partner_supplier_ref.model_res_partner
+msgid "Fake Model"
 msgstr ""
 
 #. module: partner_supplier_ref
