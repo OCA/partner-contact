@@ -32,6 +32,7 @@ addon | version | maintainers | summary
 [partner_identification](partner_identification/) | 19.0.1.0.0 |  | Partner Identification Numbers
 [partner_ref_unique](partner_ref_unique/) | 19.0.1.0.0 |  | Add an unique constraint to partner ref field
 [partner_supplier_ref](partner_supplier_ref/) | 19.0.1.0.0 |  | Adds a supplier reference to contacts
+[partner_title](partner_title/) | 19.0.1.0.0 | <a href='https://github.com/alexis-via'><img src='https://github.com/alexis-via.png' width='32' height='32' style='border-radius:50%;' alt='alexis-via'/></a> | Add title field on partner
 [partner_vat_unique](partner_vat_unique/) | 19.0.1.0.0 |  | Module to make the VAT number unique for customers and suppliers.
 
 [//]: # (end addons)
