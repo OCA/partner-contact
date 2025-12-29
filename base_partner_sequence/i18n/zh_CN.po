@@ -21,15 +21,28 @@ msgstr ""
 "X-Generator: Weblate 3.10\n"
 
 #. module: base_partner_sequence
-#: model:ir.model,name:base_partner_sequence.model_res_partner
-msgid "Contact"
-msgstr "联系人"
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
 
 #. module: base_partner_sequence
 #. odoo-python
 #: code:addons/base_partner_sequence/models/partner.py:0
 msgid "Either field values or an id must be provided."
 msgstr "客户编号字段必须提供一个值或ID。"
+
+#. module: base_partner_sequence
+#: model:ir.model,name:base_partner_sequence.model_res_partner
+msgid "Fake Model"
+msgstr ""
+
+#. module: base_partner_sequence
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#~ msgid "Contact"
+#~ msgstr "联系人"
 
 #~ msgid "Partner"
 #~ msgstr "业务伙伴"
