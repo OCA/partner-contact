@@ -83,6 +83,7 @@ addon | version | maintainers | summary
 [partner_tz](partner_tz/) | 15.0.1.0.0 |  | Remove partner timezone default value and display on form
 [partner_vat_unique](partner_vat_unique/) | 15.0.1.0.3 | <a href='https://github.com/luisg123v'><img src='https://github.com/luisg123v.png' width='32' height='32' style='border-radius:50%;' alt='luisg123v'/></a> | Module to make the VAT number unique for customers and suppliers.
 [portal_partner_data_no_edit](portal_partner_data_no_edit/) | 15.0.1.0.0 |  | Portal Partner Block Data Edit
+[portal_user_login_email_change](portal_user_login_email_change/) | 15.0.1.0.0 |  | Portal User Login Email Change
 [res_partner_journal_items_link](res_partner_journal_items_link/) | 15.0.1.0.0 |  | Adds a smart button to grant direct access to their accounting notes
 [sale_partner_company_group](sale_partner_company_group/) | 15.0.1.0.2 |  | Adds the possibility to add a company group to a company
 
