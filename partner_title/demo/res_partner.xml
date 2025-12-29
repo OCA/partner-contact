@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2025 Akretion France (https://www.akretion.com/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo noupdate="1">
+    <record id="base.res_partner_address_1" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_address_2" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_address_3" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_address_4" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_address_5" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_address_7" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_address_10" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_address_11" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_address_13" model="res.partner">
+        <field name="title_id" ref="res_partner_title_madam" />
+    </record>
+
+    <record id="base.res_partner_address_14" model="res.partner">
+        <field name="title_id" ref="res_partner_title_madam" />
+    </record>
+
+    <record id="base.res_partner_address_15" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_address_16" model="res.partner">
+        <field name="title_id" ref="res_partner_title_madam" />
+    </record>
+
+    <record id="base.res_partner_address_17" model="res.partner">
+        <field name="title_id" ref="res_partner_title_madam" />
+    </record>
+
+    <record id="base.res_partner_address_18" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_address_24" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_address_25" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_address_27" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_address_28" model="res.partner">
+        <field name="title_id" ref="res_partner_title_madam" />
+    </record>
+
+    <record id="base.res_partner_address_30" model="res.partner">
+        <field name="title_id" ref="res_partner_title_madam" />
+    </record>
+
+    <record id="base.res_partner_address_31" model="res.partner">
+        <field name="title_id" ref="res_partner_title_madam" />
+    </record>
+
+    <record id="base.res_partner_address_32" model="res.partner">
+        <field name="title_id" ref="res_partner_title_madam" />
+    </record>
+
+    <record id="base.res_partner_address_33" model="res.partner">
+        <field name="title_id" ref="res_partner_title_madam" />
+    </record>
+
+    <record id="base.res_partner_address_34" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_main1" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.res_partner_main2" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.partner_admin" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.partner_demo_portal" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+
+    <record id="base.partner_demo" model="res.partner">
+        <field name="title_id" ref="res_partner_title_mister" />
+    </record>
+</odoo>
