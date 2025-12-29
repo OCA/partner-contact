@@ -19,14 +19,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: base_partner_sequence
-#: model:ir.model,name:base_partner_sequence.model_res_partner
-msgid "Contact"
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_partner__display_name
+msgid "Display Name"
 msgstr ""
 
 #. module: base_partner_sequence
 #. odoo-python
 #: code:addons/base_partner_sequence/models/partner.py:0
 msgid "Either field values or an id must be provided."
+msgstr ""
+
+#. module: base_partner_sequence
+#: model:ir.model,name:base_partner_sequence.model_res_partner
+msgid "Fake Model"
+msgstr ""
+
+#. module: base_partner_sequence
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_partner__id
+msgid "ID"
 msgstr ""
 
 #~ msgid "Partner"
