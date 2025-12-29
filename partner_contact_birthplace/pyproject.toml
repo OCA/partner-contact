@@ -1,0 +1,10 @@
+[build-system]
+requires = ["whool"]
+build-backend = "whool.buildapi"
+
+[project]
+name = "odoo-addons-oca-partner-contact"
+version = "19.0.20251107.0"
+dependencies = [
+    "odoo-addon-partner_contact_personal_information_page @ git+https://github.com/OCA/partner-contact.git@refs/pull/2154/head#subdirectory=partner_contact_personal_information_page",
+]
