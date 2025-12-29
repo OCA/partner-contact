@@ -18,9 +18,36 @@ msgstr ""
 "X-Generator: Weblate 4.14.1\n"
 
 #. module: partner_vat_unique
+#: model_terms:ir.ui.view,arch_db:partner_vat_unique.res_config_settings_view_form
+msgid "Check this if you want to constrain VAT number to be unique"
+msgstr ""
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,help:partner_vat_unique.field_res_config_settings__partner_vat_unique
+msgid "Check this if you want to constrain VAT number to be unique."
+msgstr ""
+
+#. module: partner_vat_unique
+#: model:ir.model,name:partner_vat_unique.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_vat_unique
 #: model:ir.model,name:partner_vat_unique.model_res_partner
-msgid "Contact"
-msgstr "Contacto"
+msgid "Fake Model"
+msgstr ""
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_config_settings__id
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__id
+msgid "ID"
+msgstr ""
 
 #. module: partner_vat_unique
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_partner__vat
@@ -36,23 +63,34 @@ msgid ""
 "country format. You can use '/' to indicate that the partner is not subject "
 "to tax."
 msgstr ""
-"El n??mero de Identificaci??n Fiscal. Los valores aqu?? se validar??n en funci??n "
-"del formato de cada pa??s. Puedes usar '/' para indicar que el partner no "
-"est?? sujeto a tener una identificaci??n fiscal."
+"El n??mero de Identificaci??n Fiscal. Los valores aqu?? se validar??n en "
+"funci??n del formato de cada pa??s. Puedes usar '/' para indicar que el "
+"partner no est?? sujeto a tener una identificaci??n fiscal."
 
 #. module: partner_vat_unique
 #. odoo-python
 #: code:addons/partner_vat_unique/models/res_partner.py:0
+msgid "The VAT %(vat)s already exists in another partner."
+msgstr ""
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,field_description:partner_vat_unique.field_res_config_settings__partner_vat_unique
+msgid "Unique VAT Constraint"
+msgstr ""
+
+#~ msgid "Contact"
+#~ msgstr "Contacto"
+
 #, python-format
-msgid "The VAT %s already exists in another partner."
-msgstr "El NIF %s debe de ser ??nico por empresa."
+#~ msgid "The VAT %s already exists in another partner."
+#~ msgstr "El NIF %s debe de ser ??nico por empresa."
 
 #~ msgid ""
 #~ "The Tax Identification Number. Complete it if the contact is subjected to "
 #~ "government taxes. Used in some legal statements."
 #~ msgstr ""
-#~ "Complete el n??mero de identificaci??n fiscal si el contacto est?? sujeto a "
-#~ "impuestos gubernamentales. Utilizado en algunas declaraciones legales"
+#~ "Complete el n??mero de identificaci??n fiscal si el contacto est?? sujeto "
+#~ "a impuestos gubernamentales. Utilizado en algunas declaraciones legales"
 
 #~ msgid "Partner"
 #~ msgstr "Empresa"
