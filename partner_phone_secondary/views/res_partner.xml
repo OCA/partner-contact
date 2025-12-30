@@ -9,9 +9,17 @@ License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="priority" eval="1" />
         <field name="arch" type="xml">
-            <field name="phone" position="after">
-                <field name="phone2" widget="phone" />
-            </field>
+            <xpath expr="/form/sheet//field[@name='phone']/.." position="after">
+                <div class="d-flex align-items-baseline w-md-50" name="phone2">
+                    <i class="fa fa-fw me-1 fa-phone text-primary" title="Phone2" />
+                    <field
+                        name="phone2"
+                        class="w-100"
+                        widget="phone"
+                        placeholder="Phone2"
+                    />
+                </div>
+            </xpath>
         </field>
     </record>
 </odoo>
