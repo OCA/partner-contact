@@ -15,6 +15,27 @@ class TestBasePartnerSequence(BaseCommon):
             copy.ref, "A partner with ref created by copy has a ref by default."
         )
 
+    def test_ref_sequence_on_user(self):
+        # Test sequence on creating a user and copying it
+        user = self.env["res.users"].create(
+            {
+                "name": "user1@example.org",
+                "login": "user1@example.org",
+                "partner_id": self.partner.id,
+            }
+        )
+        user2 = user.copy(
+            {
+                "name": "user2@example.org",
+                "login": "user2@example.org",
+            }
+        )
+        # The new user has a partner with a ref
+        self.assertTrue(user2.partner_id.ref)
+        # This is a new partner with a distinct ref
+        self.assertNotEqual(user.partner_id, user2.partner_id)
+        self.assertNotEqual(user.partner_id.ref, user2.partner_id.ref)
+
     def test_ref_sequence_on_contact(self):
         # Test if sequence doesn't increase on creating a contact child
         contact = self.env["res.partner"].create(
