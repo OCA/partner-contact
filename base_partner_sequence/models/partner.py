@@ -4,13 +4,16 @@
 # Copyright 2016 Camptocamp - Akim Juillerat (<https://www.camptocamp.com>).
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, exceptions, models
+from odoo import api, exceptions, fields, models
 
 
 class ResPartner(models.Model):
     """Assigns 'ref' from a sequence on creation and copying"""
 
     _inherit = "res.partner"
+
+    # Configure field not to be copied by default
+    ref = fields.Char(copy=False)
 
     def _get_next_ref(self, vals=None):
         return self.env["ir.sequence"].next_by_code("res.partner")
@@ -50,7 +53,7 @@ class ResPartner(models.Model):
         """
         if not vals and not self:  # pragma: no cover
             raise exceptions.UserError(
-                _("Either field values or an id must be provided.")
+                self.env._("Either field values or an id must be provided.")
             )
         # only assign a 'ref' to commercial partners
         fields_for_check = ["is_company", "parent_id"]
