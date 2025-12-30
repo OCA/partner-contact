@@ -29,5 +29,11 @@ msgstr ""
 msgid "Either field values or an id must be provided."
 msgstr ""
 
+#. module: base_partner_sequence
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_partner__ref
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_users__ref
+msgid "Reference"
+msgstr ""
+
 #~ msgid "Partner"
 #~ msgstr "パートナ"

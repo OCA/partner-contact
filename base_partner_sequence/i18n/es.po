@@ -28,3 +28,9 @@ msgstr "Contacto"
 #: code:addons/base_partner_sequence/models/partner.py:0
 msgid "Either field values or an id must be provided."
 msgstr "Debe proveer algún valor o un ID."
+
+#. module: base_partner_sequence
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_partner__ref
+#: model:ir.model.fields,field_description:base_partner_sequence.field_res_users__ref
+msgid "Reference"
+msgstr ""
