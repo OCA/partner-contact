@@ -1,8 +1,8 @@
-# Copyright 2024 Therp BV <http://therp.nl>.
+# Copyright 2024-2025 Therp BV <http://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "name": "Partner Relation Functions",
-    "version": "16.0.1.1.0",
+    "version": "16.0.2.0.0",
     "author": "Therp BV,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "maintainers": ["NL66278"],
@@ -17,7 +17,7 @@
     ],
     "data": [
         "views/res_partner_views.xml",
-        "views/res_partner_relation_all_views.xml",
+        "views/res_partner_relation_views.xml",
         "views/res_partner_relation_type_views.xml",
     ],
     "auto_install": False,

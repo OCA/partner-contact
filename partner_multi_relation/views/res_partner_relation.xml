@@ -36,9 +36,9 @@
                     depending on a condition (column_invisibe), here
                     it will need a user action.
                 -->
-                <field name="this_partner_id" optional="show" />
+                <field name="left_partner_id" optional="show" />
                 <field name="type_id_display" string="Connection" />
-                <field name="other_partner_id" />
+                <field name="right_partner_id" />
                 <field name="date_start" string="Start" />
                 <field name="date_end" string="End" />
             </tree>
