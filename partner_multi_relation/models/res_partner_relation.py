@@ -438,3 +438,7 @@ class ResPartnerRelation(models.Model):
                         right_partner=record_name(record.right_partner_id),
                     )
                 )
+
+    def name_get(self):
+        """Name will consist of partner names and their connection."""
+        return [(this.id, this.display_name) for this in self]

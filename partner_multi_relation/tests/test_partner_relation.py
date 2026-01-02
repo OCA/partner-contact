@@ -67,6 +67,12 @@ class TestPartnerRelation(TestPartnerRelationCommon):
         # Partner should have one relation now:
         self.assertEqual(self.partner_04_volunteer.relation_count, 1)
 
+    def test_name_get(self):
+        relation = self.company2person_relation
+        names = relation.name_get()
+        self.assertEqual(names, [(relation.id, relation.display_name)])
+        self.assertEqual(names[0][1], "Test Company has contact Test User 1")
+
     def test_display_name(self):
         """Test display name"""
         relation = self.company2person_relation
