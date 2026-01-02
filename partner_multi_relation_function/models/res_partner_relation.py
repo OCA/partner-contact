@@ -1,4 +1,4 @@
-# Copyright 2024-2025 Therp BV <http://therp.nl>
+# Copyright 2024-2026 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
@@ -20,8 +20,10 @@ class ResPartnerRelation(models.Model):
         for this in self:
             if this.function and not this.type_id.allow_function:
                 raise ValidationError(
-                    _("You can not have a function on relations of type %(type)s."),
-                    {"type": this.type_id.display_name},
+                    _(
+                        "You can not have a function on relations of type %(type)s.",
+                        type=this.type_id.display_name,
+                    )
                 )
 
     def name_get(self):
