@@ -90,7 +90,7 @@ class ResPartnerRelationType(models.Model):
                 relation.write({"date_end": today})
 
     def check_existing(self, vals):
-        """Check wether records exist that do not fit new criteria."""
+        """Check whether records exist that do not fit new criteria."""
         Relation = self.env["res.partner.relation"]
 
         def get_type_condition(vals, side):

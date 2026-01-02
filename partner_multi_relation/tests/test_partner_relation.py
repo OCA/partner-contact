@@ -50,7 +50,7 @@ class TestPartnerRelation(TestPartnerRelationCommon):
 
     def test_create_with_active_id(self):
         """Test creation with left_partner_id from active_id."""
-        # Check wether we can create connection from company to person,
+        # Check whether we can create connection from company to person,
         # taking the particular company from the active records:
         relation = self.Relation.with_context(
             active_id=self.partner_02_company.id,
