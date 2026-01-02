@@ -18,6 +18,7 @@ class ResPartnerRelation(models.Model):
 
     _name = "res.partner.relation"
     _description = "Partner relation"
+    _rec_names_search = ["left_partner_id", "type_id", "right_partner_id"]
 
     left_partner_id = fields.Many2one(
         comodel_name="res.partner",
