@@ -110,7 +110,7 @@ class ResPartnerRelation(models.Model):
                 "right_partner_id": self.right_partner_id_domain,
             }
         }
-        # Check wether domain results in no choice or wrong choice of partners:
+        # Check whether domain results in no choice or wrong choice of partners:
         warning = (
             self._check_partner_domain(
                 self.left_partner_id, self.left_partner_id_domain, self.env._("left")
@@ -126,7 +126,7 @@ class ResPartnerRelation(models.Model):
 
     @api.model
     def _check_partner_domain(self, partner, partner_domain, side):
-        """Check wether partner_domain results in empty selection
+        """Check whether partner_domain results in empty selection
         for partner, or wrong selection of partner already selected.
         """
         test_domain = partner_domain
@@ -155,14 +155,14 @@ class ResPartnerRelation(models.Model):
                 "type_id": self.type_id_domain,
             }
         }
-        # Check wether domain results in no choice or wrong choice for type_id.
+        # Check whether domain results in no choice or wrong choice for type_id.
         warning = self._check_type_id_domain()
         if warning:
             result["warning"] = warning
         return result
 
     def _check_type_id_domain(self):
-        """If type_id already selected, check wether it
+        """If type_id already selected, check whether it
         is compatible with the computed type_id_domain. An empty
         selection can practically only occur in a practically empty
         database, and will not lead to problems. Therefore not tested.
