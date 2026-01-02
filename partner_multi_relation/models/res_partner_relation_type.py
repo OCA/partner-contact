@@ -7,18 +7,9 @@ from odoo.exceptions import ValidationError
 from odoo.osv.expression import AND, FALSE_LEAF, OR
 
 HANDLE_INVALID_ONCHANGE = [
-    (
-        "restrict",
-        "Do not allow change that will result in invalid relations",
-    ),
-    (
-        "ignore",
-        "Allow existing relations that do not fit changed conditions",
-    ),
-    (
-        "end",
-        "End relations per today, if they do not fit changed conditions",
-    ),
+    ("restrict", "Do not allow change that will result in invalid relations"),
+    ("ignore", "Allow existing relations that do not fit changed conditions"),
+    ("end", "End relations per today, if they do not fit changed conditions"),
     ("delete", "Delete relations that do not fit changed conditions"),
 ]
 
@@ -32,11 +23,6 @@ class ResPartnerRelationType(models.Model):
 
     name = fields.Char(required=True, translate=True)
     name_inverse = fields.Char(string="Inverse name", required=True, translate=True)
-    # TODO (on migration to 19.0?): rename fields:
-    # - contact_type_left => left_partner_type;
-    # - contact_type_right => right_partner_type;
-    # - partner_category_left => left_partner_category_id;
-    # - partner_category_right => right_partner_category_id.
     contact_type_left = fields.Selection(
         selection="get_partner_types", string="Left partner type"
     )

@@ -138,7 +138,7 @@ class ResPartner(models.Model):
         ]
 
     @api.model
-    def search(self, domain, offset=0, limit=None, order=None):
+    def search(self, domain, **kwargs):
         """Inject searching for current relation date if we search for
         relation properties and no explicit date was given.
         """
@@ -146,7 +146,7 @@ class ResPartner(models.Model):
         if relation_search:
             # Could be inline, but this is easier for unit test.
             domain = self._update_domain_relation_search(domain, relation_search)
-        return super().search(domain, offset=offset, limit=limit, order=order)
+        return super().search(domain, **kwargs)
 
     def _get_domain_relation_search(self, domain):
         """Check whether domain contains elements that search on relations."""
