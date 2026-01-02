@@ -38,6 +38,11 @@ msgid "Allow Function"
 msgstr ""
 
 #. module: partner_multi_relation_function
+#: model:ir.model,name:partner_multi_relation_function.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_multi_relation_function
 #: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner_relation__function
 #: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner_relation_all__function
 msgid "Function"
@@ -46,6 +51,12 @@ msgstr ""
 #. module: partner_multi_relation_function
 #: model:res.partner.relation.type,name:partner_multi_relation_function.rel_type_board_member
 msgid "Has board member"
+msgstr ""
+
+#. module: partner_multi_relation_function
+#: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner__search_relation_function
+#: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_users__search_relation_function
+msgid "Has relation function"
 msgstr ""
 
 #. module: partner_multi_relation_function
@@ -66,6 +77,13 @@ msgstr ""
 #. module: partner_multi_relation_function
 #: model:ir.model,name:partner_multi_relation_function.model_res_partner_relation
 msgid "Partner relation"
+msgstr ""
+
+#. module: partner_multi_relation_function
+#. odoo-python
+#: code:addons/partner_multi_relation_function/models/res_partner.py:0
+#, python-format
+msgid "Unsupported search operator \"%s\""
 msgstr ""
 
 #. module: partner_multi_relation_function
