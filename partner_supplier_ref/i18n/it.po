@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-10-02 21:43+0000\n"
+"PO-Revision-Date: 2026-01-05 21:43+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -19,17 +19,17 @@ msgstr ""
 #. module: partner_supplier_ref
 #: model:ir.model.fields,field_description:partner_supplier_ref.field_res_partner__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: partner_supplier_ref
 #: model:ir.model,name:partner_supplier_ref.model_res_partner
 msgid "Fake Model"
-msgstr ""
+msgstr "Modello finto"
 
 #. module: partner_supplier_ref
 #: model:ir.model.fields,field_description:partner_supplier_ref.field_res_partner__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_supplier_ref
 #: model:ir.model.fields,field_description:partner_supplier_ref.field_res_partner__supplier_ref
