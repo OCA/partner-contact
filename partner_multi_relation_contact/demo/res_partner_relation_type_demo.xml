@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="rel_type_lawyer" model="res.partner.relation.type">
+        <field name="name">Has lawyer</field>
+        <field name="name_inverse">Is lawyer for</field>
+        <field name="contact_type_left">c</field>
+        <field name="contact_type_right">p</field>
+        <field name="allow_email">True</field>
+        <field name="allow_phone">True</field>
+        <field name="set_contact_parent">True</field>
+    </record>
+</odoo>

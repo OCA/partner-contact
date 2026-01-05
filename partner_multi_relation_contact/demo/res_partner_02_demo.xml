@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="res_partner_demo_contact" model="res.partner">
+        <field name="relation_id" ref="demo_relation_company_lawyer" />
+        <field name="type">other</field>
+        <field name="parent_id" ref="res_partner_demo_lawyer" />
+        <field name="name">Joe Clever is head lawyer for Big Company</field>
+        <field name="is_company">0</field>
+        <field name="email">joeclever@legalcompany.example.com</field>
+        <field name="phone">+31 06 6461 7838</field>
+    </record>
+
+</odoo>
