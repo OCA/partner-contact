@@ -81,3 +81,14 @@ class TestPartnerContactAddressDefault(BaseCommon):
         self.assertEqual(self.partner.partner_delivery_domain, [])
         self.assertEqual(self.partner.partner_invoice_domain, [])
         self.assertEqual(self.partner.partner_contact_domain, [])
+        self.env.company.contact_shipping_address_delivery_partner_only = True
+        self.partner._compute_partner_domains()
+        expected_delivery = expression.OR(
+            [
+                [("id", "=", self.partner.commercial_partner_id.id)],
+                expression.AND([expected_base, [("type", "=", "delivery")]]),
+            ]
+        )
+        self.assertEqual(self.partner.partner_delivery_domain, expected_delivery)
+        self.assertEqual(self.partner.partner_invoice_domain, [])
+        self.assertEqual(self.partner.partner_contact_domain, [])

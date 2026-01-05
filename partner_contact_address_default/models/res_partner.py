@@ -28,16 +28,26 @@ class ResPartner(models.Model):
     @api.depends_context("company")
     @api.depends("commercial_partner_id")
     def _compute_partner_domains(self):
+        company = self.env.company
         for partner in self:
-            if self.env.company.contact_address_default_allow_all_partners:
+            base_domain = [("id", "child_of", partner.commercial_partner_id.id)]
+            if company.contact_shipping_address_delivery_partner_only:
+                partner.partner_delivery_domain = expression.OR(
+                    [
+                        [("id", "=", partner.commercial_partner_id.id)],
+                        expression.AND([base_domain, [("type", "=", "delivery")]]),
+                    ]
+                )
+            elif company.contact_address_default_allow_all_partners:
                 partner.partner_delivery_domain = []
+            else:
+                partner.partner_delivery_domain = expression.AND(
+                    [base_domain, [("type", "=", "delivery")]]
+                )
+            if company.contact_address_default_allow_all_partners:
                 partner.partner_invoice_domain = []
                 partner.partner_contact_domain = []
                 continue
-            base_domain = [("id", "child_of", partner.commercial_partner_id.id)]
-            partner.partner_delivery_domain = expression.AND(
-                [base_domain, [("type", "=", "delivery")]]
-            )
             partner.partner_invoice_domain = expression.AND(
                 [base_domain, [("type", "=", "invoice")]]
             )

@@ -11,3 +11,7 @@ class ResConfigSettings(models.TransientModel):
         related="company_id.contact_address_default_allow_all_partners",
         readonly=False,
     )
+    contact_shipping_address_delivery_partner_only = fields.Boolean(
+        related="company_id.contact_shipping_address_delivery_partner_only",
+        readonly=False,
+    )

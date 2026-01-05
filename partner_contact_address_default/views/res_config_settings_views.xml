@@ -12,6 +12,14 @@
                 >
                     <field name="contact_address_default_allow_all_partners" />
                 </setting>
+                <setting
+                    id="contact_shipping_address_delivery_partner_only"
+                    help="If enabled, the Shipping address field is limited to delivery-type
+                    contacts of the commercial partner and the partner itself. This setting
+                    takes precedence over allowing all partners for shipping addresses."
+                >
+                    <field name="contact_shipping_address_delivery_partner_only" />
+                </setting>
             </xpath>
         </field>
     </record>
