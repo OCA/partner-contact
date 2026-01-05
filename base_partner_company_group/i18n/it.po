@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-12-26 14:48+0000\n"
+"PO-Revision-Date: 2026-01-05 21:43+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: base_partner_company_group
 #: model:ir.model.fields,field_description:base_partner_company_group.field_res_partner__company_group_id
@@ -33,17 +33,17 @@ msgstr "Membri gruppo azienda"
 #. module: base_partner_company_group
 #: model:ir.model.fields,field_description:base_partner_company_group.field_res_partner__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: base_partner_company_group
 #: model:ir.model,name:base_partner_company_group.model_res_partner
 msgid "Fake Model"
-msgstr ""
+msgstr "Modello finto"
 
 #. module: base_partner_company_group
 #: model:ir.model.fields,field_description:base_partner_company_group.field_res_partner__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #~ msgid "Contact"
 #~ msgstr "Contatto"
