@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-28 03:45+0000\n"
-"PO-Revision-Date: 2023-12-27 09:37+0000\n"
+"PO-Revision-Date: 2026-01-05 21:43+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: base_partner_sequence
 #: model:ir.model.fields,field_description:base_partner_sequence.field_res_partner__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: base_partner_sequence
 #. odoo-python
@@ -33,18 +33,18 @@ msgstr "Devono essere forniti i valori dei campi o un ID."
 #. module: base_partner_sequence
 #: model:ir.model,name:base_partner_sequence.model_res_partner
 msgid "Fake Model"
-msgstr ""
+msgstr "Modello finto"
 
 #. module: base_partner_sequence
 #: model:ir.model.fields,field_description:base_partner_sequence.field_res_partner__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: base_partner_sequence
 #: model:ir.model.fields,field_description:base_partner_sequence.field_res_partner__ref
 #: model:ir.model.fields,field_description:base_partner_sequence.field_res_users__ref
 msgid "Reference"
-msgstr ""
+msgstr "Riferimento"
 
 #~ msgid "Contact"
 #~ msgstr "Contatto"
