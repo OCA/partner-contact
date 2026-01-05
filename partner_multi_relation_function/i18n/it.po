@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-09-18 17:42+0000\n"
+"PO-Revision-Date: 2026-01-05 20:43+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -43,7 +43,7 @@ msgstr "Consente funzione"
 #. module: partner_multi_relation_function
 #: model:ir.model,name:partner_multi_relation_function.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contatto"
 
 #. module: partner_multi_relation_function
 #: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner_relation__function
@@ -60,7 +60,7 @@ msgstr "Ha membro del board"
 #: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner__search_relation_function
 #: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_users__search_relation_function
 msgid "Has relation function"
-msgstr ""
+msgstr "Ha funzione relazione"
 
 #. module: partner_multi_relation_function
 #: model:res.partner.relation.type,name_inverse:partner_multi_relation_function.rel_type_board_member
@@ -88,7 +88,7 @@ msgstr "Relazione partner"
 #: code:addons/partner_multi_relation_function/models/res_partner.py:0
 #, python-format
 msgid "Unsupported search operator \"%s\""
-msgstr ""
+msgstr "Operatore di ricerca non supportato \"%s\""
 
 #. module: partner_multi_relation_function
 #. odoo-python
