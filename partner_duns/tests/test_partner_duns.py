@@ -10,7 +10,12 @@ class TestPartnerDuns(TransactionCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
-        cls.partner = cls.env.ref("base.res_partner_1")
+        cls.partner = cls.env["res.partner"].create(
+            {
+                "name": "Test Partner",
+                "is_company": True,
+            }
+        )
         cls.partner.duns = "123456789"
 
     def test_partner_duns_sanitized_on_create(self):
