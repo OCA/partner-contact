@@ -24,6 +24,12 @@ class TestPartnerSearch(TestPartnerRelationCommon):
         self.assertTrue(self.partner_01_person in partners)
         self.assertTrue(self.partner_02_company in partners)
         partners = self.Partner.search(
+            # Like 'has cont'.
+            [("search_relation_type_id", "ilike", self.type_company2person.name[:8])]
+        )
+        self.assertTrue(self.partner_01_person in partners)
+        self.assertTrue(self.partner_02_company in partners)
+        partners = self.Partner.search(
             [("search_relation_type_id", "=", "unknown relation")]
         )
         self.assertFalse(partners)

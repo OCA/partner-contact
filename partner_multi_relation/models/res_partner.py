@@ -1,10 +1,21 @@
 # Copyright 2013-2025 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Support connections between partners."""
-
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 from odoo.osv.expression import AND, FALSE_LEAF, is_leaf
+
+# Supported operators for _search_relation_<xxxx> functions.
+SUPPORTED_OPERATORS = (
+    "=",
+    "!=",
+    "like",
+    "not like",
+    "ilike",
+    "not ilike",
+    "in",
+    "not in",
+)
 
 
 class ResPartner(models.Model):
@@ -63,28 +74,18 @@ class ResPartner(models.Model):
     @api.model
     def _search_relation_type_id(self, operator, value):
         """Search partners based on their type of relations."""
-        SUPPORTED_OPERATORS = (
-            "=",
-            "!=",
-            "like",
-            "not like",
-            "ilike",
-            "not ilike",
-            "in",
-            "not in",
-        )
-        if operator not in SUPPORTED_OPERATORS:
-            raise ValidationError(_('Unsupported search operator "%s"', operator))
-        PartnerRelation = self.env["res.partner.relation"]
-        left_relations = PartnerRelation.search([("type_id", operator, value)])
-        right_relations = PartnerRelation.search([("type_id", operator, value)])
-        if not (left_relations or right_relations):
-            return [FALSE_LEAF]
+        self._check_supported_operator(operator)
         return [
             "|",
-            ("relation_left_ids", "in", left_relations.ids),
-            ("relation_right_ids", "in", right_relations.ids),
+            ("relation_left_ids.type_id", operator, value),
+            ("relation_right_ids.type_id", operator, value),
         ]
+
+    @api.model
+    def _check_supported_operator(self, operator):
+        """Many search operations only work with comparison operators or (not) in."""
+        if operator not in SUPPORTED_OPERATORS:
+            raise ValidationError(_('Unsupported search operator "%s"', operator))
 
     @api.model
     def _search_relation_partner_id(self, operator, value):
