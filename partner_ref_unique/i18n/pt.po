@@ -30,9 +30,23 @@ msgid "Companies"
 msgstr "Empresas"
 
 #. module: partner_ref_unique
+#: model:ir.model.fields,field_description:partner_ref_unique.field_base_partner_merge_automatic_wizard__display_name
+#: model:ir.model.fields,field_description:partner_ref_unique.field_res_company__display_name
+#: model:ir.model.fields,field_description:partner_ref_unique.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_ref_unique
 #: model:ir.model,name:partner_ref_unique.model_res_partner
-msgid "Contact"
-msgstr "Contacto"
+msgid "Fake Model"
+msgstr ""
+
+#. module: partner_ref_unique
+#: model:ir.model.fields,field_description:partner_ref_unique.field_base_partner_merge_automatic_wizard__id
+#: model:ir.model.fields,field_description:partner_ref_unique.field_res_company__id
+#: model:ir.model.fields,field_description:partner_ref_unique.field_res_partner__id
+msgid "ID"
+msgstr ""
 
 #. module: partner_ref_unique
 #: model:ir.model,name:partner_ref_unique.model_base_partner_merge_automatic_wizard
@@ -64,6 +78,9 @@ msgstr "Este referência é igual à do parceiro '%s'"
 #: model:ir.model.fields,field_description:partner_ref_unique.field_res_company__partner_ref_unique
 msgid "Unique partner reference for"
 msgstr "Referência de parceiro única para"
+
+#~ msgid "Contact"
+#~ msgstr "Contacto"
 
 #~ msgid "Partner"
 #~ msgstr "Entidade"

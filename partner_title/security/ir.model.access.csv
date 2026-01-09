@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_partner_title_user_read,Read access on title for Employees,model_res_partner_title,base.group_user,1,0,0,0
+access_res_partner_title_portal_read,Read access on title to Portal group,model_res_partner_title,base.group_portal,1,0,0,0
+access_res_partner_title_public_read,Read access on title to Public group,model_res_partner_title,base.group_public,1,0,0,0
+access_res_partner_title_partner_manager_full,Full access on title to Partner Manager,model_res_partner_title,base.group_partner_manager,1,1,1,1
+access_res_partner_title_system_full,Full access on title to Admin,model_res_partner_title,base.group_system,1,1,1,1

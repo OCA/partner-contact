@@ -1,0 +1,196 @@
+<odoo>
+    <record id="view_partner_id_numbers_search" model="ir.ui.view">
+        <field name="name">res.partner.id_number.search</field>
+        <field name="model">res.partner.id_number</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Partner ID Numbers">
+                <field name="name" />
+                <field name="partner_id" />
+                <field name="category_id" />
+                <field name="status" />
+                <field name="valid_from" />
+                <field name="valid_until" />
+                <field name="date_issued" />
+
+                <filter
+                    string="New"
+                    name="status_new"
+                    domain="[('status','=','draft')]"
+                />
+                <filter
+                    string="Running"
+                    name="status_running"
+                    domain="[('status','=','open')]"
+                />
+                <filter
+                    string="To Renew"
+                    name="status_renew"
+                    domain="[('status','=','pending')]"
+                />
+                <filter
+                    string="Expired"
+                    name="status_expired"
+                    domain="[('status','=','close')]"
+                />
+
+                <separator />
+
+                <filter
+                    string="Valid Until: Past"
+                    name="valid_until_past"
+                    domain="[('valid_until','&lt;',context_today())]"
+                />
+                <filter
+                    string="Valid Until: Today"
+                    name="valid_until_today"
+                    domain="[('valid_until','=',context_today())]"
+                />
+                <filter
+                    string="Valid Until: Future"
+                    name="valid_until_future"
+                    domain="[('valid_until','&gt;',context_today())]"
+                />
+
+                <separator />
+
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active','=',False)]"
+                    help="Include archived ID numbers"
+                />
+
+                <group>
+                    <filter
+                        string="Status"
+                        name="group_by_status"
+                        context="{'group_by':'status'}"
+                    />
+                    <filter
+                        string="Category"
+                        name="group_by_category"
+                        context="{'group_by':'category_id'}"
+                    />
+                    <filter
+                        string="Partner"
+                        name="group_by_partner"
+                        context="{'group_by':'partner_id'}"
+                    />
+                    <filter
+                        string="Issued on"
+                        name="group_by_date_issued"
+                        date="date_issued"
+                    />
+                    <filter
+                        string="Valid From"
+                        name="group_by_valid_from"
+                        date="valid_from"
+                    />
+                    <filter
+                        string="Valid Until"
+                        name="group_by_valid_until"
+                        date="valid_until"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_partner_id_numbers_form" model="ir.ui.view">
+        <field name="name">res.partner.id_number.form</field>
+        <field name="model">res.partner.id_number</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Partner ID Numbers">
+                <header>
+                    <field
+                        name="status"
+                        widget="statusbar"
+                        options="{'clickable': '1'}"
+                    />
+                </header>
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="text-bg-danger"
+                        invisible="active"
+                    />
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                            <field name="name" placeholder="ID Number" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id" />
+                            <field name="category_id" />
+                            <field name="partner_issued_id" />
+                            <field name="date_issued" />
+                            <field name="place_issuance" />
+                            <field name="valid_from" />
+                            <field name="valid_until" />
+                        </group>
+                        <group>
+                            <!-- Right column - empty to create proper layout spacing -->
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notes" name="notes_page">
+                            <field name="comment" nolabel="1" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <!-- Chatter -->
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <record id="view_partner_id_numbers_tree" model="ir.ui.view">
+        <field name="name">res.partner.id_number.list</field>
+        <field name="model">res.partner.id_number</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list
+                decoration-danger="status == 'close'"
+                decoration-warning="status == 'pending'"
+                decoration-success="status in ('draft','open')"
+            >
+                <field name="partner_id" />
+                <field name="category_id" />
+                <field name="name" />
+                <field name="partner_issued_id" />
+                <field name="date_issued" />
+                <field name="valid_from" />
+                <field name="valid_until" widget="remaining_days" />
+                <field
+                    name="status"
+                    widget="badge"
+                    decoration-info="status == 'draft'"
+                    decoration-primary="status == 'open'"
+                    decoration-warning="status == 'pending'"
+                    decoration-danger="status == 'close'"
+                />
+                <field name="activity_ids" widget="list_activity" optional="show" />
+            </list>
+        </field>
+    </record>
+
+    <record id="action_partner_id_numbers_form" model="ir.actions.act_window">
+        <field name="name">Partner ID Numbers</field>
+        <field name="res_model">res.partner.id_number</field>
+        <field name="view_mode">list,kanban,form</field>
+        <field name="search_view_id" ref="view_partner_id_numbers_search" />
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        action="action_partner_id_numbers_form"
+        id="menu_partner_id_numbers"
+        parent="menu_partner_id_numbers_main"
+        sequence="20"
+    />
+</odoo>

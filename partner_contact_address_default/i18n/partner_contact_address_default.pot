@@ -14,11 +14,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_contact_address_default
-#: model:ir.model,name:partner_contact_address_default.model_res_partner
-msgid "Contact"
-msgstr ""
-
-#. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_contact_id
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_contact_id
 msgid "Default contact"
@@ -27,6 +22,11 @@ msgstr ""
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__display_name
 msgid "Display Name"
+msgstr ""
+
+#. module: partner_contact_address_default
+#: model:ir.model,name:partner_contact_address_default.model_res_partner
+msgid "Fake Model"
 msgstr ""
 
 #. module: partner_contact_address_default

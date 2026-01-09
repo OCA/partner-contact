@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2025 Akretion France (https://www.akretion.com/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <record id="res_partner_title_form" model="ir.ui.view">
+        <field name="model">res.partner.title</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        invisible="active"
+                    />
+                    <group name="main">
+                        <field name="name" />
+                        <field name="shortcut" />
+                        <field name="active" invisible="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_partner_title_list" model="ir.ui.view">
+        <field name="model">res.partner.title</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="shortcut" />
+            </list>
+        </field>
+    </record>
+
+    <record id="res_partner_title_search" model="ir.ui.view">
+        <field name="model">res.partner.title</field>
+        <field name="arch" type="xml">
+            <search>
+                <field
+                    name="name"
+                    string="Title or Shortcut"
+                    filter_domain="['|', ('name', 'ilike', self), ('shortcut', 'ilike', self)]"
+                />
+                <separator />
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active', '=', False)]"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record id="res_partner_title_action" model="ir.actions.act_window">
+        <field name="name">Contact Titles</field>
+        <field name="res_model">res.partner.title</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="res_partner_title_parent_menu"
+        parent="base.menu_custom"
+        name="Contact Titles"
+        sequence="500"
+    />
+
+    <menuitem
+        id="res_partner_title_menu"
+        action="res_partner_title_action"
+        parent="res_partner_title_parent_menu"
+        sequence="10"
+    />
+</odoo>

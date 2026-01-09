@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_form_add_affiliate" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field eval="1" name="priority" />
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <!--
+                Always show parent_id.
+
+                In core, parent_id is invisible for companies.
+                Here we want it shown, in order to support nested companies structures.
+            -->
+            <field name="parent_id" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </field>
+            <!-- Add the affiliates page -->
+            <page name="contact_addresses" position="after">
+                <page string="Affiliates" invisible="not is_company">
+                    <field
+                        name="affiliate_ids"
+                        mode="kanban"
+                        context="{
+                            'form_view_ref': 'partner_affiliate.view_partner_form_without_type',
+                            'default_parent_id': id,
+                            'default_is_company': True,
+                            'default_type':'other',
+                        }"
+                    >
+                        <kanban
+                            color="color"
+                            action="open_commercial_entity"
+                            type="object"
+                        >
+                            <templates>
+                                <t t-name="card" class="flex-row">
+                                    <aside class="o_kanban_aside_full">
+                                        <field
+                                            name="avatar_128"
+                                            class="w-100"
+                                            widget="image"
+                                            options="{'img_class': 'object-fit-contain w-100 h-100'}"
+                                        />
+                                    </aside>
+                                    <main class="ps-2 ps-md-0">
+                                        <div class="mb-1">
+                                            <field
+                                                name="display_name"
+                                                class="mb-0 fw-bold fs-5"
+                                            />
+                                        </div>
+                                        <div
+                                            t-if="record.city.raw_value or record.country_id.raw_value"
+                                        >
+                                            <field name="city" />
+                                            <span
+                                                t-if="record.city.raw_value and record.country_id.raw_value"
+                                            >, </span>
+                                            <field name="country_id" />
+                                        </div>
+                                        <field name="email" class="text-truncate" />
+                                        <footer>
+                                            <div />
+                                        </footer>
+                                    </main>
+                                </t>
+                            </templates>
+                        </kanban>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="view_partner_form_without_type" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <!--
+                Hide the company_type field.
+
+                This view is used by the Affiliate kanban in the partner form.
+                As Affiliates are companies, we don't want to show the company_type field.
+            -->
+            <field name="company_type" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <!--
+                Hide the parent_id field.
+
+                This view is used by the Affiliate kanban in the partner form.
+                As we're editing or creating an Affiliate from the parent's form view,
+                the parent must not be editable here.
+            -->
+            <field name="parent_id" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>
