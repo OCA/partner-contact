@@ -31,6 +31,7 @@ addon | version | maintainers | summary
 [partner_contact_address_default](partner_contact_address_default/) | 19.0.1.0.0 |  | Set a default delivery address, invoice address and contact for contacts
 [partner_contact_birthplace](partner_contact_birthplace/) | 19.0.1.0.0 | <a href='https://github.com/legalsylvain'><img src='https://github.com/legalsylvain.png' width='32' height='32' style='border-radius:50%;' alt='legalsylvain'/></a> | This module allows to define a birthplace for partners.
 [partner_contact_department](partner_contact_department/) | 19.0.1.0.0 |  | Assign contacts to departments
+[partner_contact_job_position](partner_contact_job_position/) | 19.0.1.0.0 |  | Categorize job positions for contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 19.0.1.0.0 | <a href='https://github.com/Daemo00'><img src='https://github.com/Daemo00.png' width='32' height='32' style='border-radius:50%;' alt='Daemo00'/></a> | Add a page to contacts form to put personal information
 [partner_fax](partner_fax/) | 19.0.1.0.0 |  | Add fax number on partner
 [partner_identification](partner_identification/) | 19.0.1.0.0 |  | Partner Identification Numbers
