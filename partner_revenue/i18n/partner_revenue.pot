@@ -1,0 +1,115 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_revenue
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-14 11:12+0000\n"
+"PO-Revision-Date: 2026-01-14 11:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_revenue
+#: model:res.partner.revenue_range,name:partner_revenue.0_10k_range
+msgid "0 - 10 thousand"
+msgstr ""
+
+#. module: partner_revenue
+#: model:res.partner.revenue_range,name:partner_revenue.1m_10m_range
+msgid "1 - 10 million"
+msgstr ""
+
+#. module: partner_revenue
+#: model:res.partner.revenue_range,name:partner_revenue.10m_50m_range
+msgid "10 - 50 million"
+msgstr ""
+
+#. module: partner_revenue
+#: model:res.partner.revenue_range,name:partner_revenue.10k_50k_range
+msgid "10 - 50 thousand"
+msgstr ""
+
+#. module: partner_revenue
+#: model:res.partner.revenue_range,name:partner_revenue.100k_500k_range
+msgid "100 - 500 thousand"
+msgstr ""
+
+#. module: partner_revenue
+#: model:res.partner.revenue_range,name:partner_revenue.50k_100k_range
+msgid "50 - 100 thousand"
+msgstr ""
+
+#. module: partner_revenue
+#: model:res.partner.revenue_range,name:partner_revenue.500k_1m_range
+msgid "500 thousand - 1 million"
+msgstr ""
+
+#. module: partner_revenue
+#: model:ir.model,name:partner_revenue.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_revenue
+#: model:ir.model.fields,field_description:partner_revenue.field_res_partner_revenue_range__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: partner_revenue
+#: model:ir.model.fields,field_description:partner_revenue.field_res_partner_revenue_range__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: partner_revenue
+#: model:ir.model.fields,field_description:partner_revenue.field_res_partner_revenue_range__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_revenue
+#: model:ir.model.fields,field_description:partner_revenue.field_res_partner_revenue_range__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_revenue
+#: model:ir.model.fields,field_description:partner_revenue.field_res_partner_revenue_range__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_revenue
+#: model:ir.model.fields,field_description:partner_revenue.field_res_partner_revenue_range__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_revenue
+#: model:ir.model.fields,field_description:partner_revenue.field_res_partner_revenue_range__name
+msgid "Name"
+msgstr ""
+
+#. module: partner_revenue
+#: model:res.partner.revenue_range,name:partner_revenue.over_50m_range
+msgid "Over 50 million"
+msgstr ""
+
+#. module: partner_revenue
+#: model:ir.model,name:partner_revenue.model_res_partner_revenue_range
+#: model:ir.model.fields,field_description:partner_revenue.field_res_partner__revenue_range_id
+#: model:ir.model.fields,field_description:partner_revenue.field_res_users__revenue_range_id
+#: model_terms:ir.ui.view,arch_db:partner_revenue.view_res_partner_filter
+msgid "Revenue range"
+msgstr ""
+
+#. module: partner_revenue
+#: model:ir.actions.act_window,name:partner_revenue.res_partner_revenue_range_action
+#: model:ir.ui.menu,name:partner_revenue.menu_res_partner_revenue_range
+msgid "Revenue ranges"
+msgstr ""
+
+#. module: partner_revenue
+#: model:ir.model.constraint,message:partner_revenue.constraint_res_partner_revenue_range_unique_name
+msgid "The name must be unique!"
+msgstr ""

@@ -1,0 +1,26 @@
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">Partner form with revenue range</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="revenue_range_id" />
+            </xpath>
+        </field>
+    </record>
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">Partner search revenue range</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='group_by']" position="inside">
+                <filter
+                    string="Revenue range"
+                    name="revenue_country"
+                    context="{'group_by': 'revenue_range_id'}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="0_10k_range" model="res.partner.revenue_range">
+        <field name="name">0 - 10 thousand</field>
+    </record>
+    <record id="10k_50k_range" model="res.partner.revenue_range">
+        <field name="name">10 - 50 thousand</field>
+    </record>
+    <record id="50k_100k_range" model="res.partner.revenue_range">
+        <field name="name">50 - 100 thousand</field>
+    </record>
+    <record id="100k_500k_range" model="res.partner.revenue_range">
+        <field name="name">100 - 500 thousand</field>
+    </record>
+    <record id="500k_1m_range" model="res.partner.revenue_range">
+        <field name="name">500 thousand - 1 million</field>
+    </record>
+    <record id="1m_10m_range" model="res.partner.revenue_range">
+        <field name="name">1 - 10 million</field>
+    </record>
+    <record id="10m_50m_range" model="res.partner.revenue_range">
+        <field name="name">10 - 50 million</field>
+    </record>
+    <record id="over_50m_range" model="res.partner.revenue_range">
+        <field name="name">Over 50 million</field>
+    </record>
+</odoo>
