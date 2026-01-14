@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//setting[@id='partner_autocomplete']" position="after">
+                <setting
+                    help="If enabled, the default delivery, invoice, and contact addresses are not limited to the partner’s child contacts—you can select any contact."
+                    id="contact_address_default_allow_all_partners"
+                >
+                    <field name="contact_address_default_allow_all_partners" />
+                </setting>
+                <setting
+                    id="contact_shipping_address_delivery_partner_only"
+                    help="If enabled, the Shipping address field is limited to delivery-type
+                    contacts of the commercial partner and the partner itself. This setting
+                    takes precedence over allowing all partners for shipping addresses."
+                >
+                    <field name="contact_shipping_address_delivery_partner_only" />
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

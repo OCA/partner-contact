@@ -2,7 +2,8 @@
 # Copyright 2020 Tecnativa - Sergio Teruel
 # Copyright 2024 ForgeFlow S.L. (https://www.forgeflow.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import fields, models
+from odoo import api, fields, models
+from odoo.osv import expression
 
 
 class ResPartner(models.Model):
@@ -20,6 +21,39 @@ class ResPartner(models.Model):
         comodel_name="res.partner",
         string="Default contact",
     )
+    partner_delivery_domain = fields.Binary(compute="_compute_partner_domains")
+    partner_invoice_domain = fields.Binary(compute="_compute_partner_domains")
+    partner_contact_domain = fields.Binary(compute="_compute_partner_domains")
+
+    @api.depends_context("company")
+    @api.depends("commercial_partner_id")
+    def _compute_partner_domains(self):
+        company = self.env.company
+        for partner in self:
+            base_domain = [("id", "child_of", partner.commercial_partner_id.id)]
+            if company.contact_shipping_address_delivery_partner_only:
+                partner.partner_delivery_domain = expression.OR(
+                    [
+                        [("id", "=", partner.commercial_partner_id.id)],
+                        expression.AND([base_domain, [("type", "=", "delivery")]]),
+                    ]
+                )
+            elif company.contact_address_default_allow_all_partners:
+                partner.partner_delivery_domain = []
+            else:
+                partner.partner_delivery_domain = expression.AND(
+                    [base_domain, [("type", "=", "delivery")]]
+                )
+            if company.contact_address_default_allow_all_partners:
+                partner.partner_invoice_domain = []
+                partner.partner_contact_domain = []
+                continue
+            partner.partner_invoice_domain = expression.AND(
+                [base_domain, [("type", "=", "invoice")]]
+            )
+            partner.partner_contact_domain = expression.AND(
+                [base_domain, [("type", "=", "contact")]]
+            )
 
     def get_address_default_type(self):
         """This will be the extension method for other contact types"""
