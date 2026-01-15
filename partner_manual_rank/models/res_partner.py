@@ -72,9 +72,9 @@ class ResPartner(models.Model):
         ctx_supplier = search_partner_mode == "supplier"
 
         for vals in vals_list:
-            if ctx_customer:
+            if bool(vals.get("customer_rank", 0)) or ctx_customer:
                 vals["is_customer"] = True
-            if ctx_supplier:
+            if bool(vals.get("supplier_rank", 0)) or ctx_supplier:
                 vals["is_supplier"] = True
 
         return super().create(vals_list)
