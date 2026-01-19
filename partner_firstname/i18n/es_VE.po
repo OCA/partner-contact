@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2017-03-10 03:39+0000\n"
 "PO-Revision-Date: 2017-03-10 03:39+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Spanish (Venezuela) (https://www.transifex.com/oca/"
-"teams/23907/es_VE/)\n"
+"Language-Team: Spanish (Venezuela) (https://www.transifex.com/oca/teams/"
+"23907/es_VE/)\n"
 "Language: es_VE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,6 +87,18 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__form_has_lastname_first
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__form_has_lastname_first
 msgid "Form Has Lastname First"
+msgstr ""
+
+#. module: partner_firstname
+#: model:ir.model.fields,help:partner_firstname.field_res_partner__is_individual
+msgid "If true, the partner name is splitted."
+msgstr ""
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_firstname_mixin__is_individual
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__is_individual
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__is_individual
+msgid "Is Individual"
 msgstr ""
 
 #. module: partner_firstname
