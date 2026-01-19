@@ -12,11 +12,20 @@ class FirstNameMixin(models.AbstractModel):
         " that have firstname / lastname fields."
     )
 
+    is_individual = fields.Boolean(compute="_compute_is_individual")
+
     form_has_lastname_first = fields.Boolean(compute="_compute_form_has_lastname_first")
 
     firstname_required = fields.Boolean(compute="_compute_firstname_lastname_required")
 
     lastname_required = fields.Boolean(compute="_compute_firstname_lastname_required")
+
+    def _compute_is_individual(self):
+        # By default, models that inherit 'firstname.mixin' are individual
+        # (like hr.employee, for exemple)
+        # Overload this function for more complex model, like res.partner.
+        for item in self:
+            item.is_individual = True
 
     @api.depends(lambda self: self._get_fields_depend_firstname_lastname_required())
     def _compute_firstname_lastname_required(self):
@@ -25,25 +34,18 @@ class FirstNameMixin(models.AbstractModel):
             .sudo()
             .get_param("partner_names_required_fields")
         )
-        for partner in self:
-            partner.firstname_required = (
-                partner.is_individual
-                and not partner.lastname
-                or required_fields
-                in [
-                    "firstname",
-                    "firstname_lastname",
-                ]
-            )
-            partner.lastname_required = (
-                partner.is_individual
-                and not partner.firstname
-                or required_fields
-                in [
-                    "lastname",
-                    "firstname_lastname",
-                ]
-            )
+        for item in self.filtered(lambda x: not x.is_individual):
+            item.firstname_required = False
+            item.lastname_required = False
+        for item in self.filtered(lambda x: x.is_individual):
+            item.firstname_required = not item.lastname or required_fields in [
+                "firstname",
+                "firstname_lastname",
+            ]
+            item.lastname_required = not item.firstname or required_fields in [
+                "lastname",
+                "firstname_lastname",
+            ]
 
     def _compute_form_has_lastname_first(self):
         names_order = self._get_names_order()
@@ -131,7 +133,7 @@ class FirstNameMixin(models.AbstractModel):
     def _get_inverse_name(self, name, is_company=False):
         """Compute the inverted name.
 
-        - If the partner is a company, save it in the lastname.
+        - If the item is a company, save it in the lastname.
         - Otherwise, make a guess.
 
         This method can be easily overriden by other submodules.
