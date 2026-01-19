@@ -5,7 +5,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 import logging
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 _logger = logging.getLogger(__name__)
 
@@ -89,14 +89,14 @@ class ResPartner(models.Model):
         """
         if self._get_names_order() == "first_last":
             return {
-                "lastname": _("%s (copy)", self.lastname)
+                "lastname": self.env._("%s (copy)", self.lastname)
                 if self.lastname
-                else _("(copy)")
+                else self.env._("(copy)")
             }
         return {
-            "firstname": _("%s (copy)", self.firstname)
+            "firstname": self.env._("%s (copy)", self.firstname)
             if self.firstname
-            else _("(copy)")
+            else self.env._("(copy)")
         }
 
     def copy(self, default=None):
@@ -157,6 +157,9 @@ class ResPartner(models.Model):
         records._inverse_name()
         _logger.info("%d partners updated installing module.", len(records))
 
-    # Disabling SQL constraint givint a more explicit error using a Python
+    # Disabling constraint giving a more explicit error using a Python
     # contstraint
-    _sql_constraints = [("check_name", "CHECK( 1=1 )", "Contacts require a name.")]
+    _check_name = models.Constraint(
+        "CHECK( 1=1 )",
+        "Contacts require a name.",
+    )

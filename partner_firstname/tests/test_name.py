@@ -104,17 +104,6 @@ class UserCase(PartnerContactCase):
     def create_original(self):
         name = f"{self.firstname} {self.lastname}"
 
-        # Cannot create users if ``mail`` is installed
-        if self.mail_installed():
-            self.original = self.env.ref("base.user_demo")
-            self.original.name = name
-        else:
-            self.original = self.env["res.users"].create(
-                {"name": name, "login": "firstnametest@example.com"}
-            )
-
-    def test_copy(self):
-        """Copy the partner and compare the result."""
-        # Skip if ``mail`` is installed
-        if not self.mail_installed():
-            return super().test_copy()
+        self.original = self.env["res.users"].create(
+            {"name": name, "login": "firstnametest@example.com"}
+        )
