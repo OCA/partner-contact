@@ -44,7 +44,6 @@ msgstr ""
 
 #. module: partner_type_base
 #: model:ir.model.fields,help:partner_type_base.field_res_partner__is_individual
-#: model:ir.model.fields,help:partner_type_base.field_res_users__is_individual
 msgid "If true, the partner name is splitted."
 msgstr ""
 
@@ -62,6 +61,5 @@ msgstr ""
 
 #. module: partner_type_base
 #: model:ir.model.fields,field_description:partner_type_base.field_res_partner__is_individual
-#: model:ir.model.fields,field_description:partner_type_base.field_res_users__is_individual
 msgid "Is Individual"
 msgstr ""
