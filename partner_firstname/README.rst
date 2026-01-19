@@ -1,7 +1,3 @@
-.. image:: https://odoo-community.org/readme-banner-image
-   :target: https://odoo-community.org/get-involved?utm_source=readme
-   :alt: Odoo Community Association
-
 ================================
 Partner first name and last name
 ================================
@@ -17,7 +13,7 @@ Partner first name and last name
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
@@ -48,13 +44,14 @@ Configuration
 You can configure some common name patterns for the inverse function in
 Settings > General settings:
 
-- Lastname Firstname: For example 'Anderson Robert'
+-  Lastname Firstname: For example 'Anderson Robert'
 
-- Lastname, Firstname: For example 'Anderson, Robert'
+-  Lastname, Firstname: For example 'Anderson, Robert'
 
-- Firstname Lastname: For example 'Robert Anderson'
+-  Firstname Lastname: For example 'Robert Anderson'
 
-  |partner_names_order|
+   .. image:: https://raw.githubusercontent.com/OCA/partner-contact/18.0/partner_firstname/static/description/partner_names_order.png
+      :alt: partner_names_order
 
 After applying the changes, you can recalculate all partners name
 clicking "Recalculate names" button. Note: This process could take so
@@ -70,10 +67,8 @@ the format specified above.
 you can configure if firstname and / or lastname are required, in
 "Settings > General Settings":
 
-|partner_names_required_fields|
-
-.. |partner_names_order| image:: https://raw.githubusercontent.com/OCA/partner-contact/18.0/partner_firstname/static/description/partner_names_order.png
-.. |partner_names_required_fields| image:: https://raw.githubusercontent.com/OCA/partner-contact/18.0/partner_firstname/static/description/partner_names_required_fields.png
+.. image:: https://raw.githubusercontent.com/OCA/partner-contact/18.0/partner_firstname/static/description/partner_names_required_fields.png
+   :alt: partner_names_required_fields
 
 Usage
 =====
@@ -133,29 +128,29 @@ Authors
 Contributors
 ------------
 
-- Nicolas Bessi <nicolas.bessi@camptocamp.com>
-- Yannick Vaucher <yannick.vaucher@camptocamp.com>
-- Vincent Renaville <vincent.renaville@camptocamp.com>
-- Guewen Baconnier <guewen.baconnier@camptocamp.com>
-- Holger Brunn <hbrunn@terp.nl>
-- Jonathan Nemry <jonathan.nemry@acsone.eu>
-- Olivier Laurent <olivier.laurent@acsone.eu>
-- Sandy Carter <sandy.carter@savoirfairelinux.com>
-- Alexis de Lattre <alexis.delattre@akretion.fr>
-- Lorenzo Battistini <lorenzo.battistini@agilebg.com>
-- Hans Henrik Gabelgaard <hhg@gabelgaard.org>
-- Jairo Llopis <j.llopis@grupoesoc.es>
-- Adrien Peiffer <adrien.peiffer@acsone.eu>
-- Ronald Portier <ronald@therp.nl>
-- Sylvain Van Hoof
-- Pedro Baeza <pedro.baeza@serviciosbaeza.com>
-- Dave Lasley <dave@laslabs.com>
-- Graeme Gellatly <graeme@o4sb.com>
-- Laurent Mignon <laurent.mignon@acsone.eu>
-- Bjorn Billen <bjorn.billen@dynapps.be>
-- Aion Tech <https://aiontech.company/>:
+-  Nicolas Bessi <nicolas.bessi@camptocamp.com>
+-  Yannick Vaucher <yannick.vaucher@camptocamp.com>
+-  Vincent Renaville <vincent.renaville@camptocamp.com>
+-  Guewen Baconnier <guewen.baconnier@camptocamp.com>
+-  Holger Brunn <hbrunn@terp.nl>
+-  Jonathan Nemry <jonathan.nemry@acsone.eu>
+-  Olivier Laurent <olivier.laurent@acsone.eu>
+-  Sandy Carter <sandy.carter@savoirfairelinux.com>
+-  Alexis de Lattre <alexis.delattre@akretion.fr>
+-  Lorenzo Battistini <lorenzo.battistini@agilebg.com>
+-  Hans Henrik Gabelgaard <hhg@gabelgaard.org>
+-  Jairo Llopis <j.llopis@grupoesoc.es>
+-  Adrien Peiffer <adrien.peiffer@acsone.eu>
+-  Ronald Portier <ronald@therp.nl>
+-  Sylvain Van Hoof
+-  Pedro Baeza <pedro.baeza@serviciosbaeza.com>
+-  Dave Lasley <dave@laslabs.com>
+-  Graeme Gellatly <graeme@o4sb.com>
+-  Laurent Mignon <laurent.mignon@acsone.eu>
+-  Bjorn Billen <bjorn.billen@dynapps.be>
+-  Aion Tech <https://aiontech.company/>:
 
-  - Simone Rubino <simone.rubino@aion-tech.it>
+   -  Simone Rubino <simone.rubino@aion-tech.it>
 
 Maintainers
 -----------

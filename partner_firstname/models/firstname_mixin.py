@@ -26,14 +26,24 @@ class FirstNameMixin(models.AbstractModel):
             .get_param("partner_names_required_fields")
         )
         for partner in self:
-            partner.firstname_required = not partner.lastname or required_fields in [
-                "firstname",
-                "firstname_lastname",
-            ]
-            partner.lastname_required = not partner.firstname or required_fields in [
-                "lastname",
-                "firstname_lastname",
-            ]
+            partner.firstname_required = (
+                partner.is_individual
+                and not partner.lastname
+                or required_fields
+                in [
+                    "firstname",
+                    "firstname_lastname",
+                ]
+            )
+            partner.lastname_required = (
+                partner.is_individual
+                and not partner.firstname
+                or required_fields
+                in [
+                    "lastname",
+                    "firstname_lastname",
+                ]
+            )
 
     def _compute_form_has_lastname_first(self):
         names_order = self._get_names_order()
