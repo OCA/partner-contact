@@ -27,7 +27,8 @@ class FirstNameMixin(models.AbstractModel):
         )
         for partner in self:
             partner.firstname_required = (
-                partner.is_individual
+                "is_individual" in partner
+                and partner.is_individual
                 and not partner.lastname
                 or required_fields
                 in [
@@ -36,7 +37,8 @@ class FirstNameMixin(models.AbstractModel):
                 ]
             )
             partner.lastname_required = (
-                partner.is_individual
+                "is_individual" in partner
+                and partner.is_individual
                 and not partner.firstname
                 or required_fields
                 in [
@@ -51,7 +53,7 @@ class FirstNameMixin(models.AbstractModel):
             record.form_has_lastname_first = names_order != "first_last"
 
     def _get_fields_depend_firstname_lastname_required(self):
-        return ["lastname", "firstname"]
+        return ["lastname", "firstname", "is_individual"]
 
     @api.model
     def default_get(self, fields_list):
