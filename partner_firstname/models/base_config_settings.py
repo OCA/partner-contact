@@ -25,7 +25,6 @@ class ResConfigSettings(models.TransientModel):
         help="Define which fields are required or not",
         config_parameter="partner_firstname.required_fields",
         required=True,
-        default="no",
     )
 
     partner_names_order_changed = fields.Boolean(

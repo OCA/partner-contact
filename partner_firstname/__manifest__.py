@@ -6,7 +6,7 @@
 {
     "name": "Partner first name and last name",
     "summary": "Split first name and last name for non company partners",
-    "version": "18.0.4.0.0",
+    "version": "18.0.5.0.0",
     "author": "Camptocamp, "
     "Grupo ESOC Ingeniería de Servicios, "
     "Tecnativa, "
@@ -19,7 +19,7 @@
     "license": "AGPL-3",
     "category": "Extra Tools",
     "website": "https://github.com/OCA/partner-contact",
-    "depends": ["partner_type_base"],
+    "depends": ["base_setup"],
     "post_init_hook": "post_init_hook",
     "data": [
         "data/ir_config_parameter.xml",
