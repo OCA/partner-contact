@@ -89,6 +89,18 @@ msgid "Form Has Lastname First"
 msgstr ""
 
 #. module: partner_firstname
+#: model:ir.model.fields,help:partner_firstname.field_res_partner__is_individual
+msgid "If true, the partner name is splitted."
+msgstr ""
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_firstname_mixin__is_individual
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__is_individual
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__is_individual
+msgid "Is Individual"
+msgstr ""
+
+#. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname
 msgid "Last name"
