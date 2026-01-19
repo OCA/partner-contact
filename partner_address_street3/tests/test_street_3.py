@@ -8,6 +8,16 @@ from odoo.tests.common import TransactionCase
 
 
 class TestStreet3(TransactionCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(
+            context=dict(
+                cls.env.context,
+                tracking_disable=True,
+            )
+        )
+
     def test_partner(self):
         # Test address_format has been updated on existing countries
         us_country = self.env.ref("base.us")
