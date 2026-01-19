@@ -1,23 +1,10 @@
 # Copyright 2019 Komit <https://komit-consulting.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-import logging
+from email_validator import EmailSyntaxError, EmailUndeliverableError, validate_email
 
-from odoo import _, api, models
+from odoo import api, models
 from odoo.exceptions import UserError, ValidationError
-
-_logger = logging.getLogger(__name__)
-
-try:
-    from email_validator import (
-        EmailSyntaxError,
-        EmailUndeliverableError,
-        validate_email,
-    )
-except ImportError:
-    _logger.debug(_("Cannot import 'email_validator'."))
-
-    validate_email = None
 
 
 class ResPartner(models.Model):
@@ -58,12 +45,6 @@ class ResPartner(models.Model):
     def _normalize_email(self, email):
         if not self._should_check_syntax():
             return email
-        if validate_email is None:
-            _logger.warning(
-                'Can not validate email, python dependency required "email_validator"'
-            )
-            return email
-
         try:
             result = validate_email(
                 email,
