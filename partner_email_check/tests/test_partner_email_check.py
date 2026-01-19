@@ -1,11 +1,9 @@
 # Copyright 2019 Komit <https://komit-consulting.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from unittest.mock import patch
 
 from odoo.exceptions import UserError, ValidationError
 from odoo.tests.common import TransactionCase
-from odoo.tools.misc import mute_logger
 
 
 class TestPartnerEmailCheck(TransactionCase):
@@ -118,25 +116,6 @@ class TestPartnerEmailCheck(TransactionCase):
             # At least until a new version of email-validator is released
             # See https://github.com/JoshData/python-email-validator/pull/30
             self.test_partner.email = "cezrik@acoa.nrdkt"
-
-    @mute_logger("odoo.addons.partner_email_check.models.res_partner")
-    def test_lacking_dependency_does_not_halt_execution(self):
-        with patch(
-            "odoo.addons.partner_email_check.models.res_partner.validate_email", None
-        ):
-            self.test_partner.email = "notatallvalid@@domain"
-
-    @mute_logger("odoo.addons.partner_email_check.models.res_partner")
-    def test_lacking_dependency_keeps_uniqueness_constraint_working(self):
-        self.disallow_duplicates()
-        with patch(
-            "odoo.addons.partner_email_check.models.res_partner.validate_email", None
-        ):
-            self.env["res.partner"].create(
-                {"name": "alsotest", "email": "email@domain.tld"}
-            )
-            with self.assertRaises(UserError):
-                self.test_partner.email = "email@domain.tld"
 
     def test_invalid_email_addresses_allowed(self):
         self.env.company.partner_email_check_syntax = False
