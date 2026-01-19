@@ -122,7 +122,7 @@ class TestPartnerEmailCheck(TransactionCase):
     @mute_logger("odoo.addons.partner_email_check.models.res_partner")
     def test_lacking_dependency_does_not_halt_execution(self):
         with patch(
-            "odoo.addons.partner_email_check.models.res_partner." "validate_email", None
+            "odoo.addons.partner_email_check.models.res_partner.validate_email", None
         ):
             self.test_partner.email = "notatallvalid@@domain"
 
@@ -130,7 +130,7 @@ class TestPartnerEmailCheck(TransactionCase):
     def test_lacking_dependency_keeps_uniqueness_constraint_working(self):
         self.disallow_duplicates()
         with patch(
-            "odoo.addons.partner_email_check.models.res_partner." "validate_email", None
+            "odoo.addons.partner_email_check.models.res_partner.validate_email", None
         ):
             self.env["res.partner"].create(
                 {"name": "alsotest", "email": "email@domain.tld"}
