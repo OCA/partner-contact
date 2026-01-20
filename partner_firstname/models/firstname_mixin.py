@@ -12,20 +12,11 @@ class FirstNameMixin(models.AbstractModel):
         " that have firstname / lastname fields."
     )
 
-    is_individual = fields.Boolean(compute="_compute_is_individual")
-
     form_has_lastname_first = fields.Boolean(compute="_compute_form_has_lastname_first")
 
     firstname_required = fields.Boolean(compute="_compute_firstname_lastname_required")
 
     lastname_required = fields.Boolean(compute="_compute_firstname_lastname_required")
-
-    def _compute_is_individual(self):
-        # By default, models that inherit 'firstname.mixin' are individual
-        # (like hr.employee, for exemple)
-        # Overload this function for more complex model, like res.partner.
-        for item in self:
-            item.is_individual = True
 
     @api.depends(lambda self: self._get_fields_depend_firstname_lastname_required())
     def _compute_firstname_lastname_required(self):
@@ -34,10 +25,7 @@ class FirstNameMixin(models.AbstractModel):
             .sudo()
             .get_param("partner_names_required_fields")
         )
-        for item in self.filtered(lambda x: not x.is_individual):
-            item.firstname_required = False
-            item.lastname_required = False
-        for item in self.filtered(lambda x: x.is_individual):
+        for item in self:
             item.firstname_required = not item.lastname or required_fields in [
                 "firstname",
                 "firstname_lastname",
