@@ -517,3 +517,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until: Today"
 msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__website_message_ids
+msgid "Website communication history"
+msgstr ""
