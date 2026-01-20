@@ -28,14 +28,6 @@ class ResPartner(models.Model):
         readonly=False,
     )
 
-    @api.depends("is_company")
-    def _compute_is_individual(self):
-        # As a first approximation, individuals are
-        # just non-company partners.
-        # Overload this function to refine this algorithm.
-        for item in self:
-            item.is_individual = not item.is_company
-
     # @api.depends(lambda self: self._get_fields_depend_firstname_lastname_required())
     def _compute_firstname_lastname_required(self):
         for partner in self.filtered(lambda x: x.is_company or not x.type == "contact"):
