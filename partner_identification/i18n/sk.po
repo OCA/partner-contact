@@ -22,6 +22,14 @@ msgstr ""
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid ""
+"# Enter your validation code here # Use variable 'id_number' for the ID "
+"number to validate # Set variable 'failed' to True if validation fails "
+"failed = not id_number.name.isdigit()"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid ""
 "# Use failed = True to specify that the id number is not valid.\n"
 "# You can use the following variables :\n"
 "#  - self: browse_record of the current ID Category browse_record\n"
@@ -54,6 +62,18 @@ msgstr ""
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 msgid "%(id_name)s is not a valid %(cat_name)s identifier"
 msgstr "%(id_name)s nie je platný %(cat_name)s identifikátor"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_kanban
+msgid ""
+"<span class=\"fa fa-calendar-check me-1\" title=\"Issue Date\"/>\n"
+"                                    Issued on:"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_kanban
+msgid "<span class=\"fa fa-clock-o me-2\" title=\"Validity Period\"/>"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
@@ -99,14 +119,28 @@ msgid ""
 msgstr "Ďalší partner, ktorý vydal toto ID. Napríklad Ministerstvo dopravy"
 
 #. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Archived"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_attachment_count
 msgid "Attachment Count"
 msgstr "Počet príloh"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__category_id
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Category"
 msgstr "Kategória"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid "Category Name"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__code
@@ -114,14 +148,14 @@ msgid "Code"
 msgstr "Kód"
 
 #. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid "Color"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
 msgid "Color Index"
 msgstr "Index farby"
-
-#. module: partner_identification
-#: model:ir.model,name:partner_identification.model_res_partner
-msgid "Contact"
-msgstr "Kontakt"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_uid
@@ -136,6 +170,12 @@ msgid "Created on"
 msgstr "Vytvorené"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
+msgid "Date Issued"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__display_name
 msgid "Display Name"
@@ -154,18 +194,15 @@ msgstr ""
 "(%(error)s)"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_until
-msgid ""
-"Expiration date. For example, date when person needs to renew his driver "
-"license, 21/10/2019"
-msgstr ""
-"Dátum vypršania platnosti. Napríklad dátum, kedy si osoba potrebuje obnoviť "
-"vodičský preukaz, 21.10.2019"
-
-#. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Expired"
 msgstr "Vypršané"
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner
+msgid "Fake Model"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_follower_ids
@@ -188,6 +225,7 @@ msgid "Has Message"
 msgstr "Má správu"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__id
 msgid "ID"
@@ -195,6 +233,7 @@ msgstr "ID"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__name
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 msgid "ID Number"
 msgstr "ID číslo"
 
@@ -236,8 +275,19 @@ msgstr "Ak je začiarknuté, nové správy vyžadujú vašu pozornosť."
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_error
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Ak je začiarknuté, niektoré správy majú chybu doručenia."
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Include archived ID numbers"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
+msgid "Include archived categories"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_is_follower
@@ -250,14 +300,7 @@ msgid "Issued by"
 msgstr "Vydaný"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__date_issued
-msgid ""
-"Issued date. For example, date when person approved his driving exam, "
-"21/10/2009"
-msgstr "Dátum vydania. Napr. deň keď osoba vykonala vodičskú skúšku, 21.10.2009"
-
-#. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Issued on"
 msgstr "Vydané dňa"
 
@@ -295,13 +338,9 @@ msgstr "Názov ID tohto typu. Napríklad vodičský preukaz"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "New"
 msgstr "Nový"
-
-#. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
-msgstr "Ďalšia udalosť kalendára aktivít"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_date_deadline
@@ -346,12 +385,14 @@ msgstr "Počet správ s chybou doručenia"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_id
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Partner"
 msgstr "Partner"
 
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
 #: model:ir.ui.menu,name:partner_identification.menu_partner_id_category
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
 msgid "Partner ID Categories"
 msgstr "Kategórie ID partnera"
 
@@ -368,7 +409,9 @@ msgstr "Číslo ID partnera"
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
 #: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers_main
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Partner ID Numbers"
 msgstr "Čísla ID partnera"
 
@@ -404,11 +447,18 @@ msgstr "Zodpovedný používateľ"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Running"
 msgstr "Bežiaci"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Status"
 msgstr "Stav"
 
@@ -451,6 +501,7 @@ msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "To Renew"
 msgstr "Na obnovenie"
 
@@ -461,18 +512,30 @@ msgstr "Typ zaznamenanej aktivity výnimky."
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
-msgid "Valid from"
-msgstr "Platné od"
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid From"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_until
-msgid "Valid until"
-msgstr "Platné do"
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid Until"
+msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_from
-msgid "Validation period stating date."
-msgstr "Doba platnosti s uvedením dátumu."
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid Until: Future"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid Until: Past"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid Until: Today"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__website_message_ids
@@ -483,6 +546,34 @@ msgstr "Správy webovej stránky"
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__website_message_ids
 msgid "Website communication history"
 msgstr "História komunikácie webovej stránky"
+
+#~ msgid "Contact"
+#~ msgstr "Kontakt"
+
+#~ msgid ""
+#~ "Expiration date. For example, date when person needs to renew his driver "
+#~ "license, 21/10/2019"
+#~ msgstr ""
+#~ "Dátum vypršania platnosti. Napríklad dátum, kedy si osoba potrebuje "
+#~ "obnoviť vodičský preukaz, 21.10.2019"
+
+#~ msgid ""
+#~ "Issued date. For example, date when person approved his driving exam, "
+#~ "21/10/2009"
+#~ msgstr ""
+#~ "Dátum vydania. Napr. deň keď osoba vykonala vodičskú skúšku, 21.10.2009"
+
+#~ msgid "Next Activity Calendar Event"
+#~ msgstr "Ďalšia udalosť kalendára aktivít"
+
+#~ msgid "Valid from"
+#~ msgstr "Platné od"
+
+#~ msgid "Valid until"
+#~ msgstr "Platné do"
+
+#~ msgid "Validation period stating date."
+#~ msgstr "Doba platnosti s uvedením dátumu."
 
 #~ msgid "Last Modified on"
 #~ msgstr "Posledná modifikácia"

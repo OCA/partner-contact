@@ -21,6 +21,14 @@ msgstr ""
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid ""
+"# Enter your validation code here # Use variable 'id_number' for the ID "
+"number to validate # Set variable 'failed' to True if validation fails "
+"failed = not id_number.name.isdigit()"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid ""
 "# Use failed = True to specify that the id number is not valid.\n"
 "# You can use the following variables :\n"
 "#  - self: browse_record of the current ID Category browse_record\n"
@@ -52,6 +60,18 @@ msgstr ""
 #. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 msgid "%(id_name)s is not a valid %(cat_name)s identifier"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_kanban
+msgid ""
+"<span class=\"fa fa-calendar-check me-1\" title=\"Issue Date\"/>\n"
+"                                    Issued on:"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_kanban
+msgid "<span class=\"fa fa-clock-o me-2\" title=\"Validity Period\"/>"
 msgstr ""
 
 #. module: partner_identification
@@ -98,13 +118,27 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Archived"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_attachment_count
 msgid "Attachment Count"
 msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__category_id
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Category"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid "Category Name"
 msgstr ""
 
 #. module: partner_identification
@@ -113,13 +147,13 @@ msgid "Code"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
-msgid "Color Index"
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid "Color"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model,name:partner_identification.model_res_partner
-msgid "Contact"
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
+msgid "Color Index"
 msgstr ""
 
 #. module: partner_identification
@@ -135,6 +169,12 @@ msgid "Created on"
 msgstr "Oluşturuldu"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
+msgid "Date Issued"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__display_name
 msgid "Display Name"
@@ -150,15 +190,14 @@ msgid ""
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_until
-msgid ""
-"Expiration date. For example, date when person needs to renew his driver "
-"license, 21/10/2019"
+#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Expired"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
-msgid "Expired"
+#: model:ir.model,name:partner_identification.model_res_partner
+msgid "Fake Model"
 msgstr ""
 
 #. module: partner_identification
@@ -182,6 +221,7 @@ msgid "Has Message"
 msgstr ""
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__id
 msgid "ID"
@@ -189,6 +229,7 @@ msgstr "ID"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__name
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 msgid "ID Number"
 msgstr ""
 
@@ -230,7 +271,18 @@ msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_error
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Include archived ID numbers"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
+msgid "Include archived categories"
 msgstr ""
 
 #. module: partner_identification
@@ -244,14 +296,7 @@ msgid "Issued by"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__date_issued
-msgid ""
-"Issued date. For example, date when person approved his driving exam, "
-"21/10/2009"
-msgstr ""
-
-#. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Issued on"
 msgstr ""
 
@@ -289,12 +334,8 @@ msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "New"
-msgstr ""
-
-#. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
 msgstr ""
 
 #. module: partner_identification
@@ -340,12 +381,14 @@ msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_id
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Partner"
 msgstr "İş Ortağı"
 
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
 #: model:ir.ui.menu,name:partner_identification.menu_partner_id_category
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
 msgid "Partner ID Categories"
 msgstr ""
 
@@ -362,7 +405,9 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
 #: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers_main
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Partner ID Numbers"
 msgstr ""
 
@@ -398,11 +443,18 @@ msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Running"
 msgstr ""
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Status"
 msgstr ""
 
@@ -438,6 +490,7 @@ msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "To Renew"
 msgstr ""
 
@@ -448,17 +501,29 @@ msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
-msgid "Valid from"
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid From"
 msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_until
-msgid "Valid until"
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid Until"
 msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_from
-msgid "Validation period stating date."
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid Until: Future"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid Until: Past"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid Until: Today"
 msgstr ""
 
 #. module: partner_identification
