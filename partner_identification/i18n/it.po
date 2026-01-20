@@ -23,6 +23,14 @@ msgstr ""
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid ""
+"# Enter your validation code here # Use variable 'id_number' for the ID "
+"number to validate # Set variable 'failed' to True if validation fails "
+"failed = not id_number.name.isdigit()"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid ""
 "# Use failed = True to specify that the id number is not valid.\n"
 "# You can use the following variables :\n"
 "#  - self: browse_record of the current ID Category browse_record\n"
@@ -82,6 +90,18 @@ msgid "%(id_name)s is not a valid %(cat_name)s identifier"
 msgstr "%(id_name)s non è un identificatore %(cat_name)s valido"
 
 #. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_kanban
+msgid ""
+"<span class=\"fa fa-calendar-check me-1\" title=\"Issue Date\"/>\n"
+"                                    Issued on:"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_kanban
+msgid "<span class=\"fa fa-clock-o me-2\" title=\"Validity Period\"/>"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
 msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
 msgstr ""
@@ -129,14 +149,28 @@ msgstr ""
 "Motorizzazione Civile"
 
 #. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Archived"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_attachment_count
 msgid "Attachment Count"
 msgstr "Conteggio allegati"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__category_id
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Category"
 msgstr "Categoria"
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid "Category Name"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__code
@@ -144,14 +178,14 @@ msgid "Code"
 msgstr "Codice"
 
 #. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
+msgid "Color"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
 msgid "Color Index"
 msgstr "Indice colore"
-
-#. module: partner_identification
-#: model:ir.model,name:partner_identification.model_res_partner
-msgid "Contact"
-msgstr "Contatto"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_uid
@@ -166,6 +200,12 @@ msgid "Created on"
 msgstr "Creato il"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
+msgid "Date Issued"
+msgstr ""
+
+#. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__display_name
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__display_name
 msgid "Display Name"
@@ -184,18 +224,15 @@ msgstr ""
 "(%(error)s)"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_until
-msgid ""
-"Expiration date. For example, date when person needs to renew his driver "
-"license, 21/10/2019"
-msgstr ""
-"Data di scadenza. Per esempio, data in cui la persona deve rinnovare la sua "
-"patente di guida, 21/10/2019"
-
-#. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Expired"
 msgstr "Scaduto"
+
+#. module: partner_identification
+#: model:ir.model,name:partner_identification.model_res_partner
+msgid "Fake Model"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_follower_ids
@@ -218,6 +255,7 @@ msgid "Has Message"
 msgstr "Ha un messaggio"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__id
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__id
 msgid "ID"
@@ -225,6 +263,7 @@ msgstr "ID"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__name
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 msgid "ID Number"
 msgstr "Numero documento"
 
@@ -268,8 +307,19 @@ msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_error
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Include archived ID numbers"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
+msgid "Include archived categories"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_is_follower
@@ -282,16 +332,7 @@ msgid "Issued by"
 msgstr "Emesso da"
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__date_issued
-msgid ""
-"Issued date. For example, date when person approved his driving exam, "
-"21/10/2009"
-msgstr ""
-"Data di emissione. Per esempio, data in cui la persona ha superato l'esame "
-"di guida 21/10/2009"
-
-#. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Issued on"
 msgstr "Emesso il"
 
@@ -329,13 +370,9 @@ msgstr "Nome del tipo di documento. Per esempio, \"Patente di guida\""
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "New"
 msgstr "Nuovo"
-
-#. module: partner_identification
-#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
-msgstr "Evento calendario attività successiva"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_date_deadline
@@ -380,12 +417,14 @@ msgstr "Numero di messaggi con errore di consegna"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_id
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Partner"
 msgstr "Partner"
 
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
 #: model:ir.ui.menu,name:partner_identification.menu_partner_id_category
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
 msgid "Partner ID Categories"
 msgstr "Categorie documenti del partner"
 
@@ -402,7 +441,9 @@ msgstr "Numero ID partner"
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
 #: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers
+#: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers_main
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Partner ID Numbers"
 msgstr "Numeri documenti del partner"
 
@@ -438,11 +479,18 @@ msgstr "Utente responsabile"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Running"
 msgstr "Valido"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Errore consegna SMS"
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Status"
 msgstr "Stato"
 
@@ -489,6 +537,7 @@ msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "To Renew"
 msgstr "Da rinnovare"
 
@@ -499,18 +548,30 @@ msgstr "Tipo di attività eccezione sul record."
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
-msgid "Valid from"
-msgstr "Valido da"
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid From"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_until
-msgid "Valid until"
-msgstr "Valido fino a"
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid Until"
+msgstr ""
 
 #. module: partner_identification
-#: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_from
-msgid "Validation period stating date."
-msgstr "Data di inizio periodo di validità."
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid Until: Future"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid Until: Past"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Valid Until: Today"
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__website_message_ids
@@ -522,8 +583,34 @@ msgstr "Messaggi sito web"
 msgid "Website communication history"
 msgstr "Cronologia comunicazioni sito web"
 
-#~ msgid "SMS Delivery error"
-#~ msgstr "Errore consegna SMS"
+#~ msgid "Contact"
+#~ msgstr "Contatto"
+
+#~ msgid ""
+#~ "Expiration date. For example, date when person needs to renew his driver "
+#~ "license, 21/10/2019"
+#~ msgstr ""
+#~ "Data di scadenza. Per esempio, data in cui la persona deve rinnovare la "
+#~ "sua patente di guida, 21/10/2019"
+
+#~ msgid ""
+#~ "Issued date. For example, date when person approved his driving exam, "
+#~ "21/10/2009"
+#~ msgstr ""
+#~ "Data di emissione. Per esempio, data in cui la persona ha superato "
+#~ "l'esame di guida 21/10/2009"
+
+#~ msgid "Next Activity Calendar Event"
+#~ msgstr "Evento calendario attività successiva"
+
+#~ msgid "Valid from"
+#~ msgstr "Valido da"
+
+#~ msgid "Valid until"
+#~ msgstr "Valido fino a"
+
+#~ msgid "Validation period stating date."
+#~ msgstr "Data di inizio periodo di validità."
 
 #~ msgid "{%(id_name)s is not a valid %(cat_name)s identifier"
 #~ msgstr "{%(id_name)s non è un identificatore %(cat_name)s valido"
