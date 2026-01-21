@@ -12,20 +12,22 @@ class ResPartner(models.Model):
     )
 
     @api.model
-    def _search(self, domain, offset=0, limit=None, order=None):
+    def _search(self, domain, *args, **kwargs):
         # Substitute pricelist tuple
         partner_domain = [
-            (1, "=", 1)
-            if (
-                isinstance(cond, (list | tuple))
-                and cond[0] == "property_product_pricelist"
+            (
+                (1, "=", 1)
+                if (
+                    isinstance(cond, (list | tuple))
+                    and cond[0] == "property_product_pricelist"
+                )
+                else cond
             )
-            else cond
             for cond in domain
         ]
         return super(
             ResPartner, self.with_context(search_partner_domain=partner_domain)
-        )._search(domain, offset=offset, limit=limit, order=order)
+        )._search(domain, *args, **kwargs)
 
     def _search_property_product_pricelist(self, operator, value):
         domain = self.env.context.get("search_partner_domain", [])
