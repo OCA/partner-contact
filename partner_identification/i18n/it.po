@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2024-12-18 11:51+0000\n"
+"PO-Revision-Date: 2026-01-21 10:50+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
@@ -27,6 +27,9 @@ msgid ""
 "number to validate # Set variable 'failed' to True if validation fails "
 "failed = not id_number.name.isdigit()"
 msgstr ""
+"# Inserire qui il codice di convalida # Usare la variabile 'id_number' per "
+"il numero ID da convalidare # Impostare la variabile 'failed' su True se la "
+"convalida fallisce failed = not id_number.name.isdigit()"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
@@ -95,11 +98,13 @@ msgid ""
 "<span class=\"fa fa-calendar-check me-1\" title=\"Issue Date\"/>\n"
 "                                    Issued on:"
 msgstr ""
+"<span class=\"fa fa-calendar-check me-1\" title=\"Data rilevazione\"/>\n"
+"                                    Rilevato su:"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_kanban
 msgid "<span class=\"fa fa-clock-o me-2\" title=\"Validity Period\"/>"
-msgstr ""
+msgstr "<span class=\"fa fa-clock-o me-2\" title=\"Periodo validità\"/>"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
@@ -154,7 +159,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Archived"
-msgstr ""
+msgstr "In archivio"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_attachment_count
@@ -170,7 +175,7 @@ msgstr "Categoria"
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid "Category Name"
-msgstr ""
+msgstr "Nome categoria"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__code
@@ -180,7 +185,7 @@ msgstr "Codice"
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid "Color"
-msgstr ""
+msgstr "Colore"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
@@ -202,7 +207,7 @@ msgstr "Creato il"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
 msgid "Date Issued"
-msgstr ""
+msgstr "Data rilevamento"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner__display_name
@@ -232,7 +237,7 @@ msgstr "Scaduto"
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner
 msgid "Fake Model"
-msgstr ""
+msgstr "Modello finto"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_follower_ids
@@ -314,12 +319,12 @@ msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Include archived ID numbers"
-msgstr ""
+msgstr "Include numeri ID archiviati"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
 msgid "Include archived categories"
-msgstr ""
+msgstr "Include categorie archiviate"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_is_follower
@@ -550,28 +555,28 @@ msgstr "Tipo di attività eccezione sul record."
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid From"
-msgstr ""
+msgstr "Valido da"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_until
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until"
-msgstr ""
+msgstr "Valido fino a"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until: Future"
-msgstr ""
+msgstr "Valido fino a: futuro"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until: Past"
-msgstr ""
+msgstr "Valido fino a: passato"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until: Today"
-msgstr ""
+msgstr "Valido fino a: oggi"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__website_message_ids
