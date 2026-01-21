@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Partner Form View -->
+    <record id="view_partner_form_owner_company" model="ir.ui.view">
+        <field name="name">res.partner.form.owner_company</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field
+                    name="owner_company_id"
+                    options="{'no_create': True, 'no_create_edit': True}"
+                    groups="base.group_multi_company"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Partner Tree View -->
+    <record id="view_partner_tree_owner_company" model="ir.ui.view">
+        <field name="name">res.partner.tree.owner_company</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='display_name']" position="after">
+                <field
+                    name="owner_company_id"
+                    optional="hide"
+                    invisible="is_company"
+                    groups="base.group_multi_company"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Partner Search View -->
+    <record id="view_res_partner_filter_owner_company" model="ir.ui.view">
+        <field name="name">res.partner.search.owner_company</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//group" position="inside">
+                <filter
+                    string="Owner Company"
+                    name="group_owner_company"
+                    context="{'group_by': 'owner_company_id'}"
+                />
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
