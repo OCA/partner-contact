@@ -1,6 +1,10 @@
-==========================
-Partner Relation Functions
-==========================
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
+=====================================
+DEPRECATED Partner Relation Functions
+=====================================
 
 .. 
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -13,7 +17,7 @@ Partner Relation Functions
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
@@ -33,6 +37,13 @@ This module gives the posibility to have a relation between partners have a func
 Of course there is a function field on partner, but this ignores the fact that
 persons can have multiple functions depending on the relations they are in. For
 instance a person can be a CEO in one company and a volunteer in another organisation.
+
+This module is DEPRECATED. Use partner_relation_contact instead.
+
+Update this module to save information and remove some views before installing
+partner_multi_relation_contact.
+
+When partner_multi_relation_contact has been installed, this module can be removed.
 
 **Table of contents**
 

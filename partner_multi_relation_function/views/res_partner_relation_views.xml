@@ -11,7 +11,7 @@
             <field name="right_partner_id" position="after">
                 <field name="allow_function" invisible="1" />
                 <field
-                    name="function"
+                    name="contact_function"
                     optional="show"
                     attrs="{'readonly': [('allow_function','=',False)]}"
                 />
@@ -27,7 +27,7 @@
         />
         <field name="arch" type="xml">
             <field name="right_partner_id" position="after">
-                <field name="function" />
+                <field name="contact_function" />
             </field>
         </field>
     </record>
@@ -42,7 +42,7 @@
             <field name="right_partner_id" position="after">
                 <field name="allow_function" invisible="1" />
                 <field
-                    name="function"
+                    name="contact_function"
                     optional="show"
                     attrs="{
                     ' invisible': [('allow_function','=',False)],

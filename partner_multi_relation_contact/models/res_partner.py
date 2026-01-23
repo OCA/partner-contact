@@ -26,6 +26,9 @@ class ResPartner(models.Model):
     allow_phone = fields.Boolean(
         related="relation_id.type_id.allow_phone",
     )
+    allow_function = fields.Boolean(
+        related="relation_id.type_id.allow_function",
+    )
     search_relation_email = fields.Many2one(
         comodel_name="res.partner.relation",
         compute=lambda self: self.update({"search_relation_email": None}),
@@ -37,6 +40,12 @@ class ResPartner(models.Model):
         compute=lambda self: self.update({"search_relation_phone": None}),
         search="_search_relation_phone",
         string="Has relation phone",
+    )
+    search_relation_function = fields.Many2one(
+        comodel_name="res.partner.relation",
+        compute=lambda self: self.update({"search_relation_function": None}),
+        search="_search_relation_function",
+        string="Has relation function",
     )
 
     @api.model_create_multi
@@ -65,4 +74,14 @@ class ResPartner(models.Model):
             "|",
             ("relation_left_ids.contact_partner_id.phone", operator, value),
             ("relation_right_ids.contact_partner_id.phone", operator, value),
+        ]
+
+    @api.model
+    def _search_relation_function(self, operator, value):
+        """Search partners based on their relation function."""
+        self._check_supported_operator(operator)
+        return [
+            "|",
+            ("relation_left_ids.contact_partner_id.function", operator, value),
+            ("relation_right_ids.contact_partner_id.function", operator, value),
         ]

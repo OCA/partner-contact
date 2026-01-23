@@ -8,6 +8,7 @@
             <field name="search_relation_partner_id" position="before">
                 <field name="search_relation_email" />
                 <field name="search_relation_phone" />
+                <field name="search_relation_function" />
             </field>
         </field>
     </record>
@@ -20,6 +21,7 @@
                 <field name="allow_email" invisible="1" />
                 <field name="allow_phone" invisible="1" />
                 <field name="allow_address" invisible="1" />
+                <field name="allow_function" invisible="1" />
                 <sheet>
                     <group name="group_main" colspan="6" col="4">
                         <group name="group_main_left" colspan="2" col="2">
@@ -31,6 +33,10 @@
                             <field
                                 name="phone"
                                 attrs="{'invisible': [('allow_phone', '=', False)]}"
+                            />
+                            <field
+                                name="function"
+                                attrs="{'invisible': [('allow_function', '=', False)]}"
                             />
                         </group>
                         <group

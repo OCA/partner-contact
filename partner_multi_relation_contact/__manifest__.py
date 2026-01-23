@@ -13,7 +13,7 @@
     "demo": [
         "demo/res_partner_relation_type_demo.xml",
         "demo/res_partner_demo.xml",
-        "demo/res_partner_demo.xml",  # Must be after type and partner
+        "demo/res_partner_relation_demo.xml",  # Must be after type and partner
         "demo/res_partner_02_demo.xml",  # Create contact address for relation
     ],
     "data": [

@@ -35,7 +35,9 @@ class ResPartner(models.Model):
                 _('Unsupported search operator "%s"') % operator
             )
         Relation = self.env["res.partner.relation"]
-        relations_with_function = Relation.search([("function", operator, value)])
+        relations_with_function = Relation.search(
+            [("contact_function", operator, value)]
+        )
         if not relations_with_function:
             return [FALSE_LEAF]
         return [

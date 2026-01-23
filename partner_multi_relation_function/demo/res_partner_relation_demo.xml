@@ -8,7 +8,7 @@
         />
         <field name="right_partner_id" ref="res_partner_demo_the_big_guy" />
         <field name="type_id" ref="rel_type_board_member" />
-        <field name="function">CEO</field>
+        <field name="contact_function">CEO</field>
     </record>
 
 </odoo>

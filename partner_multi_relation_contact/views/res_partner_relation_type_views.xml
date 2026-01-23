@@ -19,6 +19,7 @@
                     <field name="preferred_contact" />
                     <field name="allow_email" />
                     <field name="allow_phone" />
+                    <field name="allow_function" />
                     <field name="allow_address" />
                     <field
                         name="set_contact_parent"

@@ -22,6 +22,9 @@ class ResPartnerRelationType(models.Model):
     allow_address = fields.Boolean(
         help="If set, allows to specify a specific address for this relation",
     )
+    allow_function = fields.Boolean(
+        help="If set, relations of this type can have a function specified",
+    )
     preferred_contact = fields.Selection(
         [
             ("left_partner", "Left Partner"),
@@ -39,10 +42,14 @@ class ResPartnerRelationType(models.Model):
     @api.depends(
         "allow_email",
         "allow_phone",
+        "allow_function",
         "allow_address",
     )
     def _compute_allow_contact_partner(self):
         for this in self:
             this.allow_contact_partner = (
-                this.allow_email or this.allow_phone or this.allow_address
+                this.allow_email
+                or this.allow_phone
+                or this.allow_address
+                or this.allow_function
             )

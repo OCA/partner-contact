@@ -51,26 +51,30 @@
                 <field name="left_partner_id_domain" invisible="1" />
                 <field name="right_partner_id_domain" invisible="1" />
                 <field name="type_id_domain" invisible="1" />
-                <group colspan="4" col="2">
-                    <field
-                        name="left_partner_id"
-                        required="True"
-                        options="{'no_create': True}"
-                        domain="left_partner_id_domain"
-                    />
-                    <field
-                        name="type_id"
-                        options="{'no_create': True}"
-                        domain="type_id_domain"
-                    />
-                    <field
-                        name="right_partner_id"
-                        required="True"
-                        options="{'no_create': True}"
-                        domain="right_partner_id_domain"
-                    />
-                    <field name="date_start" />
-                    <field name="date_end" />
+                <group name="group_main" colspan="4" col="4">
+                    <group name="group_partners" string="Partners" colspan="2" col="2">
+                        <field
+                            name="left_partner_id"
+                            required="True"
+                            options="{'no_create': True}"
+                            domain="left_partner_id_domain"
+                        />
+                        <field
+                            name="type_id"
+                            options="{'no_create': True}"
+                            domain="type_id_domain"
+                        />
+                        <field
+                            name="right_partner_id"
+                            required="True"
+                            options="{'no_create': True}"
+                            domain="right_partner_id_domain"
+                        />
+                    </group>
+                    <group name="group_validity" string="Valid" colspan="2" col="2">
+                        <field name="date_start" />
+                        <field name="date_end" />
+                    </group>
                 </group>
             </form>
         </field>
