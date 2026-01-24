@@ -23,7 +23,7 @@ class FirstNameMixin(models.AbstractModel):
         required_fields = (
             self.env["ir.config_parameter"]
             .sudo()
-            .get_param("partner_names_required_fields")
+            .get_param("partner_firstname.required_fields")
         )
         for item in self:
             item.firstname_required = not item.lastname or required_fields in [
