@@ -1,0 +1,49 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_gender
+#
+# Translators:
+# Peter Hageman <hageman.p@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-10 01:50+0000\n"
+"PO-Revision-Date: 2017-06-10 01:50+0000\n"
+"Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
+"Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/"
+"teams/23907/nl_NL/)\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_contact_gender
+#: model:ir.model,name:partner_contact_gender.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_contact_gender
+#: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__female
+msgid "Female"
+msgstr ""
+
+#. module: partner_contact_gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_partner__gender
+#: model:ir.model.fields,field_description:partner_contact_gender.field_res_users__gender
+msgid "Gender"
+msgstr "Geslacht"
+
+#. module: partner_contact_gender
+#: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__male
+msgid "Male"
+msgstr ""
+
+#. module: partner_contact_gender
+#: model:ir.model.fields.selection,name:partner_contact_gender.selection__res_partner__gender__other
+msgid "Other"
+msgstr ""
+
+#~ msgid "Partner"
+#~ msgstr "Relatie"
