@@ -43,7 +43,7 @@ class ResPartnerCategory(models.Model):
         "partner_id",
     )
 
-    tagged_partner_count = fields.Integer(compute="_compute_number_tags", stored=True)
+    tagged_partner_count = fields.Integer(compute="_compute_number_tags")
 
     author_id = fields.Many2one(
         "res.users", string="Author", default=lambda x: x.env.user
@@ -56,8 +56,7 @@ class ResPartnerCategory(models.Model):
     def create(self, vals):
         record = super().create(vals)
         record.with_delay(
-            channel="root.res_partner",
-            priority=100
+            channel="root.res_partner", priority=100
         ).update_partner_tags()
         return record
 
@@ -65,8 +64,7 @@ class ResPartnerCategory(models.Model):
         res = super().write(vals)
         if "tag_filter_condition_id" in vals or "model" in vals:
             self.with_delay(
-                channel="root.res_partner",
-                priority=100
+                channel="root.res_partner", priority=100
             ).update_partner_tags()
         return res
 
