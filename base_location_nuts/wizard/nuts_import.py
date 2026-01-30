@@ -119,7 +119,7 @@ class NutsImport(models.TransientModel):
             PREFIX spdx: <http://spdx.org/rdf/terms#>
             PREFIX tableDescriptions: <http://publications.europa.eu/ontology/euvoc/tableDescriptions#>
             PREFIX temporalDescriptions: <http://publications.europa.eu/ontology/euvoc/temporalDescriptions#>
-            PREFIX terms: <'http://purl.org/dc/terms/>
+            PREFIX terms: <http://purl.org/dc/terms/>
             PREFIX time: <http://www.w3.org/2006/time#>
             PREFIX vann: <http://purl.org/vocab/vann/>
             PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
