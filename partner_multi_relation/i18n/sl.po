@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2023-04-11 13:22+0000\n"
+"PO-Revision-Date: 2026-02-01 10:10+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -55,7 +55,7 @@ msgstr "Dovoli obstoječa razmerja, ki ne ustrezajo spremenjenim pogojem."
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Stik"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__create_uid
@@ -251,7 +251,7 @@ msgstr "Ni partnerja %s na voljo za tip odnosa."
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 msgid "No relation type specified in vals: %s."
-msgstr ""
+msgstr "V vrednostih ni določen noben tip odnosa: %s."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__this_partner_id
@@ -366,9 +366,8 @@ msgstr "Tip odnosa"
 
 #. module: partner_multi_relation
 #: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
-#, fuzzy
 msgid "Relation Types"
-msgstr "Tip odnosa"
+msgstr "Tipi odnosa"
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -398,12 +397,12 @@ msgstr "Tip odnosa"
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__res_id
 msgid "Resource ID"
-msgstr ""
+msgstr "ID vira"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__res_model
 msgid "Resource Model"
-msgstr ""
+msgstr "Model vira"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__partner_category_right
@@ -456,13 +455,13 @@ msgstr "Simetrični"
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "The %s partner does not have category %s."
-msgstr ""
+msgstr "Partner %s nima kategorije %s."
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "The %s partner is not applicable for this relation type."
-msgstr ""
+msgstr "Partner %s ni ustrezen za ta tip odnosa."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__res_model
@@ -514,9 +513,8 @@ msgstr "Tip"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__type_id
-#, fuzzy
 msgid "Underlying Relation Type"
-msgstr "Tip partnerskega odnosa"
+msgstr "Temeljni tip odnosa"
 
 #. module: partner_multi_relation
 #. odoo-python
