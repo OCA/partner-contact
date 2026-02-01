@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem
+        id="menu_res_partner_relation"
+        name="Relations"
+        sequence="3"
+        parent="contacts.menu_contacts"
+    />
+    <menuitem
+        id="menu_res_partner_relation_simple"
+        sequence="5"
+        parent="menu_res_partner_relation"
+        action="action_res_partner_relation"
+    />
+    <menuitem
+        id="menu_res_partner_relation_type"
+        name="Relation Types"
+        parent="menu_res_partner_relation"
+        action="action_res_partner_relation_type"
+    />
+</odoo>
