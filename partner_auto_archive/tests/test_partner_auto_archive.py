@@ -26,7 +26,11 @@ class TestPartnerAutoArchive(TransactionCase):
         )
 
     def test_partner_auto_archive(self):
-        self.cron.method_direct_trigger()
+        # Call the method directly instead of using cron trigger
+        # (cron trigger runs in separate transaction
+        # and can't see uncommitted test data)
+        self.env["res.partner"]._auto_archive_contacts()
+
         archived_contacts = self.env["res.partner"].search(
             [("active", "=", False), ("name", "ilike", "Partner Archive")]
         )
