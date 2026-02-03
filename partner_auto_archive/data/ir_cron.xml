@@ -7,7 +7,6 @@
         <field name="code">model._auto_archive_contacts()</field>
         <field name="interval_number">15</field>
         <field name="interval_type">days</field>
-        <field name="numbercall">-1</field>
         <field name="active">1</field>
     </record>
 </odoo>
