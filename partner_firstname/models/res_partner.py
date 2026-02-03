@@ -136,11 +136,20 @@ class ResPartner(models.Model):
             record._inverse_name()
 
     def _inverse_name(self):
-        """Try to revert the effect of :meth:`._compute_name`."""
+        """
+        Try to revert the effect of :meth:`._compute_name`.
+
+        NOTE:
+        Field write order matters here. Each assignment triggers ``write()`` and
+        ``_check_name``. Writing falsy values first can cause transient
+        ``EmptyNamesError`` and previously made the ``mail`` module fail to install
+        unless it was installed before ``partner_firstname``.
+
+        We therefore use update() to prevent this issue.
+        """
         for record in self:
             parts = record._get_inverse_name(record.name, record.is_company)
-            record.lastname = parts["lastname"]
-            record.firstname = parts["firstname"]
+            record.update(parts)
 
     @api.model
     def _install_partner_firstname(self):
