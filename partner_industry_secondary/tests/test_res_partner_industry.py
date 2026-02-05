@@ -16,7 +16,7 @@ class TestResPartnerIndustry(common.TransactionCase):
         cls.industry_child = cls.industry_model.create(
             {"name": "Test child", "parent_id": cls.industry_main.id}
         )
-        cls.env.user.groups_id = [
+        cls.env.user.group_ids = [
             (
                 4,
                 cls.env.ref(

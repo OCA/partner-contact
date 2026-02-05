@@ -24,7 +24,7 @@ class ResPartner(models.Model):
     def _compute_show_partner_industry_for_person(self):
         for partner in self:
             partner.show_partner_industry_for_person = self.env.user.has_group(
-                "partner_industry_secondary" ".group_use_partner_industry_for_person"
+                "partner_industry_secondary.group_use_partner_industry_for_person"
             )
 
     @api.constrains("industry_id", "secondary_industry_ids")
