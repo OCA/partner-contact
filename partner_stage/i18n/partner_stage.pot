@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -32,11 +32,6 @@ msgstr ""
 #. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__code
 msgid "Code"
-msgstr ""
-
-#. module: partner_stage
-#: model:ir.model,name:partner_stage.model_res_partner
-msgid "Contact"
 msgstr ""
 
 #. module: partner_stage
@@ -70,6 +65,7 @@ msgid "Description"
 msgstr ""
 
 #. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__display_name
 msgid "Display Name"
 msgstr ""
@@ -80,11 +76,17 @@ msgid "Draft"
 msgstr ""
 
 #. module: partner_stage
+#: model:ir.model,name:partner_stage.model_res_partner
+msgid "Fake Model"
+msgstr ""
+
+#. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__fold
 msgid "Fold"
 msgstr ""
 
 #. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__id
 msgid "ID"
 msgstr ""
