@@ -2,12 +2,15 @@
 # Copyright 2020 Tecnativa - João Marques
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
+
+    # Avoid unique error when duplicating
+    ref = fields.Char(copy=False)
 
     @api.constrains("ref", "is_company", "company_id")
     def _check_ref(self):
