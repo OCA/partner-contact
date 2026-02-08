@@ -8,7 +8,8 @@ import logging
 
 import requests
 
-from odoo import _, api, models
+from odoo import api, models
+from odoo.fields import Domain
 
 logger = logging.getLogger(__name__)
 
@@ -159,13 +160,14 @@ class NutsImport(models.TransientModel):
             ntd2 = nuts_to_delete.filtered(lambda nut: nut.level == level)  # noqa: B023
             ntd2.unlink()
             nuts_to_delete -= ntd2
-        logger.info("%d NUTS entries deleted" % len(nuts_to_delete))
+        logger.info(f"{len(nuts_to_delete)} NUTS entries deleted")
 
     def _create_partner_nuts(self, nuts_data):
         """Creates or updates NUTS regions from the given GET request."""
         nuts_ids = self.env["res.partner.nuts"]
         nuts_json = nuts_data.json()
         bindings = nuts_json.get("results", {}).get("bindings", [])
+        # pylint: disable=no-search-all
         all_nuts = nuts_ids.search_read([], ["code"])
         nuts_map = {nut.get("code"): nut.get("id") for nut in all_nuts}
         for binding in bindings:
@@ -225,10 +227,10 @@ class NutsImport(models.TransientModel):
         nuts_ids = self.import_update_partner_nuts()
         tree_view_id = self.env.ref("base_location_nuts.res_partner_nuts_tree").id
         return {
-            "name": _("Partner NUTS by EU"),
+            "name": self.env._("Partner NUTS by EU"),
             "view_mode": "list",
             "res_model": "res.partner.nuts",
             "view_id": tree_view_id,
             "type": "ir.actions.act_window",
-            "domain": [("id", "=", nuts_ids.ids)],
+            "domain": Domain("id", "=", nuts_ids.ids),
         }
