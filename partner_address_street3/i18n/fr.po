@@ -1,0 +1,74 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_address_street3
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+# leemannd <denis.leemann@camptocamp.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-21 01:48+0000\n"
+"PO-Revision-Date: 2023-11-03 11:39+0000\n"
+"Last-Translator: Alexis de Lattre <alexis@via.ecp.fr>\n"
+"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: partner_address_street3
+#: model:ir.model,name:partner_address_street3.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: partner_address_street3
+#: model:ir.model,name:partner_address_street3.model_res_country
+msgid "Country"
+msgstr "Pays"
+
+#. module: partner_address_street3
+#: model:ir.model.fields,help:partner_address_street3.field_res_country__address_format
+msgid ""
+"Display format to use for addresses belonging to this country.\n"
+"\n"
+"You can use python-style string pattern with all the fields of the address "
+"(for example, use '%(street)s' to display the field 'street') plus\n"
+"%(state_name)s: the name of the state\n"
+"%(state_code)s: the code of the state\n"
+"%(country_name)s: the name of the country\n"
+"%(country_code)s: the code of the country"
+msgstr ""
+"Formatage à utiliser pour les adresses de ce pays.\n"
+"\n"
+"Vous pouvez utiliser les mots-clés Python avec tous les champs associés à "
+"l'adresse (par exemple, utilisez '%(street)s' pour afficher le champ 'Rue') "
+"ainsi que les mots-clés suivants:\n"
+"%(state_name)s: le nom de l'État,\n"
+"%(state_code)s: le code de l'État,\n"
+"%(country_name)s: le nom du pays,\n"
+"%(country_code)s: le code du pays."
+
+#. module: partner_address_street3
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_country__address_format
+msgid "Layout in Reports"
+msgstr "Mise en forme dans les rapports"
+
+#. module: partner_address_street3
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_partner__street3
+#: model:ir.model.fields,field_description:partner_address_street3.field_res_users__street3
+msgid "Street 3"
+msgstr "Rue 3"
+
+#. module: partner_address_street3
+#: model_terms:ir.ui.view,arch_db:partner_address_street3.res_partner_view_form_private
+#: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_address_form
+#: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_form
+msgid "Street 3..."
+msgstr "Rue 3..."
+
+#~ msgid "Partner"
+#~ msgstr "Contact"
