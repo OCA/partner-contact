@@ -8,8 +8,7 @@ from .. import exceptions
 class FirstNameMixin(models.AbstractModel):
     _name = "firstname.mixin"
     _description = (
-        "Manage common things needed for models"
-        " that have firstname / lastname fields."
+        "Manage common things needed for models that have firstname / lastname fields."
     )
 
     form_has_lastname_first = fields.Boolean(compute="_compute_form_has_lastname_first")
