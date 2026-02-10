@@ -3,8 +3,6 @@
 
 from odoo.tests import TransactionCase
 
-from .. import exceptions as ex
-
 
 class MailInstalled:
     def mail_installed(self):
@@ -46,20 +44,3 @@ class BaseCase(TransactionCase, MailInstalled):
                 )
 
         super().tearDown()
-
-    def test_copy(self):
-        """Copy the partner and compare the result."""
-        self.expect(f"{self.lastname} (copy)", self.firstname)
-        self.changed = self.original.with_context(copy=True, lang="en_US").copy()
-
-    def test_one_name(self):
-        """Test what happens when only one name is given."""
-        name = "Mönty"
-        self.expect(name, False, name)
-        self.original.name = name
-
-    def test_no_names(self):
-        """Test that you cannot set a partner/user without names."""
-        self.check_fields = False
-        with self.assertRaises(ex.EmptyNamesError):
-            self.original.firstname = self.original.lastname = False

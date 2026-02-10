@@ -157,7 +157,7 @@ class FirstNameMixin(models.AbstractModel):
         return vals.get("firstname") or vals.get("lastname")
 
     @api.constrains("name", "firstname", "lastname")
-    def _check_name(self):
+    def _check_firstname_lastname(self):
         """Ensure that name, firstname and lastname are correctly set
         depending on the configuration and on the type of the record."""
         for record in self:

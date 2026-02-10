@@ -101,13 +101,11 @@ class UserCase(TransactionCase, MailInstalled):
         )
 
     def test_copy_multiple_partners(self):
-        partners = self.env.ref("base.partner_admin") | self.env.ref(
-            "base.partner_demo"
-        )
+        partners = self.original.partner_id | self.original_multinames.partner_id
         dupes = partners.copy()
         self.assertEqual(len(dupes), 2)
 
     def test_copy_multiple_users(self):
-        users = self.env.ref("base.user_admin") | self.env.ref("base.user_demo")
+        users = self.original | self.original_multinames
         dupes = users.copy()
         self.assertEqual(len(dupes), 2)
