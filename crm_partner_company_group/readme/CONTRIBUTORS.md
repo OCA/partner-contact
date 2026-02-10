@@ -3,3 +3,5 @@
 - [Tecnativa](https://www.tecnativa.com):
   - Ernesto Tejeda
 - Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
+- [Studio73](https://www.studio73.es):
+  - Vicent Castells
