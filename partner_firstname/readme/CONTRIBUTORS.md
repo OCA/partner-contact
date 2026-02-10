@@ -20,3 +20,5 @@
 - Bjorn Billen \<<bjorn.billen@dynapps.be>\>
 - Aion Tech \<<https://aiontech.company/>\>:
   - Simone Rubino \<<simone.rubino@aion-tech.it>\>
+- [Digiteasy](https://www.digiteasy.at/)
+  - Alvaro Estebanez

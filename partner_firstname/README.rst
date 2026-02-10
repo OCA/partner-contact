@@ -21,13 +21,13 @@ Partner first name and last name
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/18.0/partner_firstname
+    :target: https://github.com/OCA/partner-contact/tree/19.0/partner_firstname
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-18-0/partner-contact-18-0-partner_firstname
+    :target: https://translation.odoo-community.org/projects/partner-contact-19-0/partner-contact-19-0-partner_firstname
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=18.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=19.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -48,13 +48,13 @@ Configuration
 You can configure some common name patterns for the inverse function in
 Settings > General settings:
 
-- Lastname Firstname: For example 'Anderson Robert'
+-  Lastname Firstname: For example 'Anderson Robert'
 
-- Lastname, Firstname: For example 'Anderson, Robert'
+-  Lastname, Firstname: For example 'Anderson, Robert'
 
-- Firstname Lastname: For example 'Robert Anderson'
+-  Firstname Lastname: For example 'Robert Anderson'
 
-  |partner_names_order|
+   |partner_names_order|
 
 After applying the changes, you can recalculate all partners name
 clicking "Recalculate names" button. Note: This process could take so
@@ -72,8 +72,8 @@ you can configure if firstname and / or lastname are required, in
 
 |partner_names_required_fields|
 
-.. |partner_names_order| image:: https://raw.githubusercontent.com/OCA/partner-contact/18.0/partner_firstname/static/description/partner_names_order.png
-.. |partner_names_required_fields| image:: https://raw.githubusercontent.com/OCA/partner-contact/18.0/partner_firstname/static/description/partner_names_required_fields.png
+.. |partner_names_order| image:: https://raw.githubusercontent.com/OCA/partner-contact/19.0/partner_firstname/static/description/partner_names_order.png
+.. |partner_names_required_fields| image:: https://raw.githubusercontent.com/OCA/partner-contact/19.0/partner_firstname/static/description/partner_names_required_fields.png
 
 Usage
 =====
@@ -112,7 +112,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_firstname%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_firstname%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -133,29 +133,33 @@ Authors
 Contributors
 ------------
 
-- Nicolas Bessi <nicolas.bessi@camptocamp.com>
-- Yannick Vaucher <yannick.vaucher@camptocamp.com>
-- Vincent Renaville <vincent.renaville@camptocamp.com>
-- Guewen Baconnier <guewen.baconnier@camptocamp.com>
-- Holger Brunn <hbrunn@terp.nl>
-- Jonathan Nemry <jonathan.nemry@acsone.eu>
-- Olivier Laurent <olivier.laurent@acsone.eu>
-- Sandy Carter <sandy.carter@savoirfairelinux.com>
-- Alexis de Lattre <alexis.delattre@akretion.fr>
-- Lorenzo Battistini <lorenzo.battistini@agilebg.com>
-- Hans Henrik Gabelgaard <hhg@gabelgaard.org>
-- Jairo Llopis <j.llopis@grupoesoc.es>
-- Adrien Peiffer <adrien.peiffer@acsone.eu>
-- Ronald Portier <ronald@therp.nl>
-- Sylvain Van Hoof
-- Pedro Baeza <pedro.baeza@serviciosbaeza.com>
-- Dave Lasley <dave@laslabs.com>
-- Graeme Gellatly <graeme@o4sb.com>
-- Laurent Mignon <laurent.mignon@acsone.eu>
-- Bjorn Billen <bjorn.billen@dynapps.be>
-- Aion Tech <https://aiontech.company/>:
+-  Nicolas Bessi <nicolas.bessi@camptocamp.com>
+-  Yannick Vaucher <yannick.vaucher@camptocamp.com>
+-  Vincent Renaville <vincent.renaville@camptocamp.com>
+-  Guewen Baconnier <guewen.baconnier@camptocamp.com>
+-  Holger Brunn <hbrunn@terp.nl>
+-  Jonathan Nemry <jonathan.nemry@acsone.eu>
+-  Olivier Laurent <olivier.laurent@acsone.eu>
+-  Sandy Carter <sandy.carter@savoirfairelinux.com>
+-  Alexis de Lattre <alexis.delattre@akretion.fr>
+-  Lorenzo Battistini <lorenzo.battistini@agilebg.com>
+-  Hans Henrik Gabelgaard <hhg@gabelgaard.org>
+-  Jairo Llopis <j.llopis@grupoesoc.es>
+-  Adrien Peiffer <adrien.peiffer@acsone.eu>
+-  Ronald Portier <ronald@therp.nl>
+-  Sylvain Van Hoof
+-  Pedro Baeza <pedro.baeza@serviciosbaeza.com>
+-  Dave Lasley <dave@laslabs.com>
+-  Graeme Gellatly <graeme@o4sb.com>
+-  Laurent Mignon <laurent.mignon@acsone.eu>
+-  Bjorn Billen <bjorn.billen@dynapps.be>
+-  Aion Tech <https://aiontech.company/>:
 
-  - Simone Rubino <simone.rubino@aion-tech.it>
+   -  Simone Rubino <simone.rubino@aion-tech.it>
+
+-  `Digiteasy <https://www.digiteasy.at/>`__
+
+   -  Alvaro Estebanez
 
 Maintainers
 -----------
@@ -178,6 +182,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-legalsylvain| 
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/18.0/partner_firstname>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/19.0/partner_firstname>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.

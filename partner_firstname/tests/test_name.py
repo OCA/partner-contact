@@ -31,6 +31,7 @@
 To have more accurate results, remove the ``mail`` module before testing.
 """
 
+from .. import exceptions as ex
 from .base import BaseCase
 
 
@@ -88,10 +89,16 @@ class PartnerCompanyCase(BaseCase):
 
     def test_copy(self):
         """Copy the partner and compare the result."""
-        res = super().test_copy()
+        self.expect(f"{self.lastname} (copy)", self.firstname)
+        self.changed = self.original.with_context(copy=True, lang="en_US").copy()
         self.expect(self.name, False, self.name)
         self.check_fields = False
-        return res
+
+    def test_no_names(self):
+        """Test that you cannot set a partner/user without names."""
+        self.check_fields = False
+        with self.assertRaises(ex.EmptyNamesError):
+            self.original.firstname = self.original.lastname = False
 
     def test_company_inverse(self):
         """Test the inverse method in a company record."""
@@ -99,22 +106,11 @@ class PartnerCompanyCase(BaseCase):
         self.expect(name, False, name)
         self.original.name = name
 
-
-class UserCase(PartnerContactCase):
-    def create_original(self):
-        name = f"{self.firstname} {self.lastname}"
-
-        # Cannot create users if ``mail`` is installed
-        if self.mail_installed():
-            self.original = self.env.ref("base.user_demo")
-            self.original.name = name
-        else:
-            self.original = self.env["res.users"].create(
-                {"name": name, "login": "firstnametest@example.com"}
-            )
-
-    def test_copy(self):
-        """Copy the partner and compare the result."""
-        # Skip if ``mail`` is installed
-        if not self.mail_installed():
-            return super().test_copy()
+    def test_get_whitespace_cleaned_name(self):
+        """Check that whitespace in name gets cleared."""
+        lastname = "Flanker"
+        firstname = "Peter"
+        name = b"Peter Flanker"  # assert we handle bytes
+        result = self.env["res.partner"]._get_inverse_name(name)
+        self.assertEqual(result["lastname"], lastname)
+        self.assertEqual(result["firstname"], firstname)

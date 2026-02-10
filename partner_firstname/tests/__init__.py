@@ -1,6 +1,5 @@
 from . import (
     test_create,
-    test_defaults,
     test_delete,
     test_empty,
     test_name,

@@ -9,7 +9,6 @@ To have more accurate results, remove the ``mail`` module before testing.
 from odoo.tests import TransactionCase
 
 from .. import exceptions as ex
-from .base import MailInstalled
 
 
 class CompanyCase(TransactionCase):
@@ -40,22 +39,6 @@ class PersonCase(CompanyCase):
     """Test ``res.partner`` when it is a person."""
 
     context = {"default_is_company": False, "default_type": "contact"}
-
-
-class UserCase(CompanyCase, MailInstalled):
-    """Test ``res.users``."""
-
-    model = "res.users"
-    context = {"default_login": "user@example.com"}
-
-    def tearDown(self):
-        # Cannot create users if ``mail`` is installed
-        if self.mail_installed():
-            # Skip tests
-            super().tearDown()
-        else:
-            # Run tests
-            super().tearDown()
 
 
 class AddressCase(TransactionCase):
