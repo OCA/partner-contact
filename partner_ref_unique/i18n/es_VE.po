@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2017-01-25 03:42+0000\n"
 "PO-Revision-Date: 2017-01-25 03:42+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Spanish (Venezuela) (https://www.transifex.com/oca/"
-"teams/23907/es_VE/)\n"
+"Language-Team: Spanish (Venezuela) (https://www.transifex.com/oca/teams/"
+"23907/es_VE/)\n"
 "Language: es_VE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,6 +52,12 @@ msgstr ""
 #. module: partner_ref_unique
 #: model_terms:ir.ui.view,arch_db:partner_ref_unique.view_company_form
 msgid "Partners"
+msgstr ""
+
+#. module: partner_ref_unique
+#: model:ir.model.fields,field_description:partner_ref_unique.field_res_partner__ref
+#: model:ir.model.fields,field_description:partner_ref_unique.field_res_users__ref
+msgid "Reference"
 msgstr ""
 
 #. module: partner_ref_unique

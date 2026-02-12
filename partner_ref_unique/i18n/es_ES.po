@@ -56,6 +56,12 @@ msgid "Partners"
 msgstr ""
 
 #. module: partner_ref_unique
+#: model:ir.model.fields,field_description:partner_ref_unique.field_res_partner__ref
+#: model:ir.model.fields,field_description:partner_ref_unique.field_res_users__ref
+msgid "Reference"
+msgstr ""
+
+#. module: partner_ref_unique
 #. odoo-python
 #: code:addons/partner_ref_unique/models/res_partner.py:0
 #, python-format
