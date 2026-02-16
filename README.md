@@ -30,6 +30,7 @@ addon | version | maintainers | summary
 [base_partner_company_group](base_partner_company_group/) | 18.0.1.1.0 |  | Adds the possibility to add a company group to a company
 [base_partner_sequence](base_partner_sequence/) | 18.0.1.1.0 |  | Sets customer's code from a sequence
 [crm_partner_company_group](crm_partner_company_group/) | 18.0.1.1.0 |  | Adds the possibility to add a company group to a company
+[partner_address_split](partner_address_split/) | 18.0.1.0.0 |  | Add specific helper methods
 [partner_address_street3](partner_address_street3/) | 18.0.1.0.0 |  | Add a third address line on partners
 [partner_affiliate](partner_affiliate/) | 18.0.1.0.0 |  | Partner Affiliates
 [partner_bank_acc_holder_name](partner_bank_acc_holder_name/) | 18.0.1.0.0 |  | Show the account holder name field on bank accounts
