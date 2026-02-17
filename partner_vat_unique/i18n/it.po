@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-01-05 21:43+0000\n"
+"PO-Revision-Date: 2026-02-17 08:30+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_vat_unique
 #: model_terms:ir.ui.view,arch_db:partner_vat_unique.res_config_settings_view_form
@@ -65,7 +65,7 @@ msgid ""
 "to tax."
 msgstr ""
 "Il numero identificazione imposta. I valori verranno validati nel formato "
-"della nazione. Si pu?? utilizzare '/' per indicare che il partner non ?? "
+"della nazione. Si può utilizzare '/' per indicare che il partner non è "
 "soggetto all'imposta."
 
 #. module: partner_vat_unique
