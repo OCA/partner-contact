@@ -1,7 +1,7 @@
 # Copyright 2025 ForgeFlow S.L. (https://www.forgeflow.com)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import UserError
 
 
@@ -15,7 +15,9 @@ class ResPartner(models.Model):
 
     def _needs_supplier_ref(self, vals=None):
         if not vals and not self:
-            raise UserError(_("Either field values or an id must be provided."))
+            raise UserError(
+                self.env._("Either field values or an id must be provided.")
+            )
         fields_for_check = [
             "is_company",
             "parent_id",
