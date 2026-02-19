@@ -92,6 +92,7 @@ class TestResPartnerProperty(TransactionCase):
             partner.with_company(self.company_a.id).properties_company_id,
             self.company_a,
         )
+        partner.invalidate_recordset()  # Invalidate cache to force recomputation
         self.assertEqual(
             partner.with_company(self.company_b.id).properties_company_id,
             self.company_a,
