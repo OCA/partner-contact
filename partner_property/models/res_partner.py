@@ -1,8 +1,6 @@
 # Copyright 2024 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 from odoo import api, fields, models
-from odoo.osv.expression import SQL_OPERATORS
 from odoo.tools.sql import SQL
 
 
@@ -30,17 +28,11 @@ class ResPartner(models.Model):
             item.properties_company_id = item.company_id or self.env.company
 
     def _search_properties_company_id(self, operator, value):
-        self.flush_model(["company_id"])
-        query = self._where_calc([])
-        query.add_where(
-            SQL(
-                "%s %s %s",
-                self._field_to_sql(self._table, "properties_company_id", query),
-                SQL_OPERATORS[operator],
-                value,
-            )
-        )
-        return [("id", "in", query)]
+        explicit = self.sudo().search([("company_id", operator, value)])
+        if operator == "=" and value == self.env.company.id:
+            implicit = self.sudo().search([("company_id", "=", False)])
+            return [("id", "in", (explicit | implicit).ids)]
+        return [("id", "in", explicit.ids)]
 
     def _field_to_sql(self, alias, fname, query=None, flush: bool = True) -> SQL:
         # OVERRIDE to allow to export the properties
