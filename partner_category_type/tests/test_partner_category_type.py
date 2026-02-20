@@ -1,5 +1,6 @@
 # Copyright 2023 ForgeFlow, S.L.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+from unittest import mock
 
 from odoo.exceptions import ValidationError
 
@@ -64,23 +65,15 @@ class TestResPartnerCategory(BaseCommon):
         child2 = self.env["res.partner.category"].create(
             {"name": "Child 2", "parent_id": child1.id}
         )
-
-        def extended_selection(self):
-            return [("generic", "Generic"), ("test", "Test")]
-
-        original_selection = type(parent)._get_category_type_selection
-
-        try:
-            type(parent)._get_category_type_selection = extended_selection
+        # Replaces the selection in the field definition of category_type
+        with mock.patch.object(
+            type(parent),
+            "_get_category_type_selection",
+            [("generic", "Generic"), ("test", "Test")],
+        ):
             parent.category_type = "test"
             self.assertEqual(child1.category_type, "test")
             self.assertEqual(child2.category_type, "test")
-        finally:
-            type(
-                parent
-            )._get_category_type_selection = (
-                original_selection  # Ensure this always runs
-            )
 
     def test_05_compute_category_type(self):
         """Test computation of category type based on parent"""
