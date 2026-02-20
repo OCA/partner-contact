@@ -51,6 +51,9 @@ class TestRespartnerAgeRange(BaseCommon):
 
     @freeze_time("2024-02-07")
     def test_cron_update_age_range_id(self):
+        # We need to define a date earlier than the one defined in freeze_time so
+        # that the age field has a positive value.
+        self.partner.birthdate_date = "2023-02-10"
         self.partner_model._cron_update_age_range_id()
         self.assertEqual(self.partner.age_range_id, self.baby_range)
 
