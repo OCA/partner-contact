@@ -4,7 +4,7 @@
 {
     "name": "Partner Category Type",
     "summary": "Add a selection field 'Type' to classify Contact Tags.",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "category": "Partner Management",
     "website": "https://github.com/OCA/partner-contact",
     "author": "ForgeFlow, Odoo Community Association (OCA)",
