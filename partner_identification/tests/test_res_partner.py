@@ -8,42 +8,40 @@ from odoo.tests import common
 
 
 class TestResPartner(common.TransactionCase):
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
+    def setUp(self):
+        super().setUp()
 
-        cls.loader = FakeModelLoader(cls.env, cls.__module__)
-        cls.loader.backup_registry()
+        self.loader = FakeModelLoader(self.env, self.__module__)
+        self.loader.backup_registry()
         from .fake_models import ResPartner
 
-        cls.loader.update_registry((ResPartner,))
+        self.loader.update_registry((ResPartner,))
 
-        bad_cat = cls.env["res.partner.id_category"].create(
+        bad_cat = self.env["res.partner.id_category"].create(
             {"code": "another_code", "name": "another_name"}
         )
-        cls.env["res.partner.id_number"].create(
+        self.env["res.partner.id_number"].create(
             {
                 "name": "Bad ID",
                 "category_id": bad_cat.id,
-                "partner_id": cls.env.user.partner_id.id,
+                "partner_id": self.env.user.partner_id.id,
             }
         )
-        cls.partner_id_category = cls.env["res.partner.id_category"].create(
+        self.partner_id_category = self.env["res.partner.id_category"].create(
             {"code": "id_code", "name": "id_name"}
         )
-        cls.partner = cls.env.ref("base.main_partner")
-        cls.partner_id = cls.env["res.partner.id_number"].create(
+        self.partner = self.env.ref("base.main_partner")
+        self.partner_id = self.env["res.partner.id_number"].create(
             {
                 "name": "Good ID",
-                "category_id": cls.partner_id_category.id,
-                "partner_id": cls.partner.id,
+                "category_id": self.partner_id_category.id,
+                "partner_id": self.partner.id,
             }
         )
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.loader.restore_registry()
-        super().tearDownClass()
+    def tearDown(self):
+        self.loader.restore_registry()
+        return super().tearDown()
 
     def test_compute_identification(self):
         """It should set the proper field to the proper ID name."""
