@@ -19,34 +19,14 @@ msgstr ""
 #. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid "%s is an invalid email"
 msgstr "%s n'est pas un courriel valide"
 
 #. module: partner_email_check
-#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
-msgid ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" aria-label=\"Values set here are company-specific.\" groups="
-"\"base.group_multi_company\" role=\"img\"/>"
-msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Ces valeurs sont différentes "
-"par Société.\" aria-label=\"Ces valeurs sont différentes par Société.\" "
-"groups=\"base.group_multi_company\" role=\"img\"/>"
-
-#. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid "Cannot deliver to email address %s"
 msgstr "Impossible d'envoyer au courriel %s"
-
-#. module: partner_email_check
-#. odoo-python
-#: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
-msgid "Cannot import 'email_validator'."
-msgstr "Impossible d'importer le package 'email_validator'."
 
 #. module: partner_email_check
 #: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_check_deliverability
@@ -71,9 +51,11 @@ msgid "Config Settings"
 msgstr "Configuration"
 
 #. module: partner_email_check
-#: model:ir.model,name:partner_email_check.model_res_partner
-msgid "Contact"
-msgstr ""
+#: model:ir.model.fields,field_description:partner_email_check.field_res_company__display_name
+#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:partner_email_check.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
 
 #. module: partner_email_check
 #: model:ir.model.fields,help:partner_email_check.field_res_company__partner_email_check_check_deliverability
@@ -98,7 +80,6 @@ msgstr "Ne pas autoriser plusieurs contacts avec le même courriel."
 #. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid "Email '%s' is already in use."
 msgstr "Le courriel '%s' est déjà utilisé."
 
@@ -113,9 +94,13 @@ msgid "Ensure that partner email addresses can be delivered to"
 msgstr "S'assurer qu'un courriel peut être envoyé à cette adresse"
 
 #. module: partner_email_check
+#: model:ir.model,name:partner_email_check.model_res_partner
+msgid "Fake Model"
+msgstr ""
+
+#. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid ""
 "Field contains multiple email addresses. This is not supported when "
 "duplicate email addresses are not allowed."
@@ -130,6 +115,13 @@ msgid "Filter duplicate partner email addresses"
 msgstr "Filtrer les contacts avec des adresses de courriel identiques"
 
 #. module: partner_email_check
+#: model:ir.model.fields,field_description:partner_email_check.field_res_company__id
+#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__id
+#: model:ir.model.fields,field_description:partner_email_check.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_email_check
 #: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
 msgid "Require partner email addresses to be unique"
 msgstr "Forcer l'unicité des adresses de courriel sur les contacts"
@@ -139,8 +131,23 @@ msgstr "Forcer l'unicité des adresses de courriel sur les contacts"
 msgid "Require partner email addresses to have valid syntax"
 msgstr "Forcer la validité de la syntaxe des adresses de courriel"
 
-#~ msgid "Display Name"
-#~ msgstr "Nom affiché"
+#. module: partner_email_check
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+msgid "Values set here are company-specific."
+msgstr ""
+
+#~ msgid ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are "
+#~ "company-specific.\" aria-label=\"Values set here are company-specific.\" "
+#~ "groups=\"base.group_multi_company\" role=\"img\"/>"
+#~ msgstr ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Ces valeurs sont "
+#~ "différentes par Société.\" aria-label=\"Ces valeurs sont différentes par "
+#~ "Société.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+
+#, python-format
+#~ msgid "Cannot import 'email_validator'."
+#~ msgstr "Impossible d'importer le package 'email_validator'."
 
 #~ msgid "Last Modified on"
 #~ msgstr "Dernière modification le"
