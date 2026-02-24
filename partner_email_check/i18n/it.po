@@ -19,32 +19,18 @@ msgstr ""
 #. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid "%s is an invalid email"
 msgstr "%s non è una e-mail valida"
 
 #. module: partner_email_check
-#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
-msgid ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" aria-label=\"Values set here are company-specific.\" groups="
-"\"base.group_multi_company\" role=\"img\"/>"
-msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"I valori impostati qui sono "
-"specifici per azienda.\" aria-label=\"I valori impostati qui sono specifici "
-"per azienda.\" groups=\"base.group_multi_company\" role=\"img\"/>"
-
-#. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid "Cannot deliver to email address %s"
 msgstr "Impossibile recapitare all'indirizzo e-mail %s"
 
 #. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid "Cannot import 'email_validator'."
 msgstr "Impossibile importare 'email_validator'."
 
@@ -96,7 +82,6 @@ msgstr "Non consente di avere lo stesso indirizzo e-mail per più partner."
 #. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid "Email '%s' is already in use."
 msgstr "E-mail \"%s\" già in uso."
 
@@ -114,7 +99,6 @@ msgstr ""
 #. module: partner_email_check
 #. odoo-python
 #: code:addons/partner_email_check/models/res_partner.py:0
-#, python-format
 msgid ""
 "Field contains multiple email addresses. This is not supported when "
 "duplicate email addresses are not allowed."
@@ -137,6 +121,21 @@ msgstr "Richiesta di univocità per gli indirizzi e-mail del partner"
 #: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
 msgid "Require partner email addresses to have valid syntax"
 msgstr "Richiesta di una sintassi valida per gli indirizzi e-mail del partner"
+
+#. module: partner_email_check
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+msgid "Values set here are company-specific."
+msgstr ""
+
+#~ msgid ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are "
+#~ "company-specific.\" aria-label=\"Values set here are company-specific.\" "
+#~ "groups=\"base.group_multi_company\" role=\"img\"/>"
+#~ msgstr ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"I valori impostati qui "
+#~ "sono specifici per azienda.\" aria-label=\"I valori impostati qui sono "
+#~ "specifici per azienda.\" groups=\"base.group_multi_company\" role=\"img\"/"
+#~ ">"
 
 #~ msgid "Display Name"
 #~ msgstr "Nome visualizzato"
