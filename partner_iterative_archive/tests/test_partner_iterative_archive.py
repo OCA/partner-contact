@@ -20,27 +20,27 @@ class TestBase(TransactionCase):
         self.assertTrue(self.c2.active)
 
         # archive the parent partner, skip the archive of contacts
-        self.p1.with_context(skip_child_toggle_active=True).toggle_active()
+        self.p1.with_context(skip_child_toggle_active=True).action_archive()
         self.assertFalse(self.p1.active)
         self.assertTrue(self.c1.active)
         self.assertTrue(self.c11.active)
         self.assertTrue(self.c2.active)
 
         # unarchive the parent partner
-        self.p1.toggle_active()
+        self.p1.action_unarchive()
         self.assertTrue(self.c1.active)
         self.assertTrue(self.c11.active)
         self.assertTrue(self.c2.active)
 
         # archive the parent partner, automatically archive contacts
-        self.p1.toggle_active()
+        self.p1.action_archive()
         self.assertFalse(self.p1.active)
         self.assertFalse(self.c1.active)
         self.assertFalse(self.c11.active)
         self.assertFalse(self.c2.active)
 
         # unarchive the parent partner
-        self.p1.toggle_active()
+        self.p1.action_unarchive()
         self.assertTrue(self.p1.active)
         self.assertFalse(self.c1.active)
         self.assertFalse(self.c11.active)
