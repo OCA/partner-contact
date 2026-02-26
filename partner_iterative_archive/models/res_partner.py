@@ -7,10 +7,10 @@ from odoo import models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    def toggle_active(self):
-        res = super().toggle_active()
+    def action_archive(self):
+        res = super().action_archive()
         if self.env.context.get("skip_child_toggle_active"):
             return res
         for partner in self.filtered(lambda x: not x.active):
-            partner.child_ids.filtered(lambda x: x.active).toggle_active()
+            partner.child_ids.filtered(lambda x: x.active).action_archive()
         return res
