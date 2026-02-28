@@ -10,12 +10,22 @@
             <filter name="type_person" position="attributes">
                 <attribute
                     name="domain"
-                >[('is_company', '=', False), ('type', '=', 'contact')]</attribute>
+                    operation="domain_add"
+                >[('type', '=', 'contact')]</attribute>
             </filter>
 
-            <!-- Change string of Company filter to Organisations. -->
+            <!-- Change string of Company filter to Organizations. -->
             <filter name="type_company" position="attributes">
-                <attribute name="string">Organisations</attribute>
+                <attribute name="string">Organizations</attribute>
+            </filter>
+
+            <filter name="group_company" position="attributes">
+                <attribute name="string">Organization</attribute>
+            </filter>
+
+            <!-- Rename salesperson to responsible -->
+            <filter name="salesperson" position="attributes">
+                <attribute name="string">Responsible</attribute>
             </filter>
 
             <!-- Add extra filters. -->
@@ -41,12 +51,66 @@
                     string="City"
                     context="{'group_by': 'city'}"
                 />
-                <filter
-                    name="group_organisation"
-                    string="Organisation"
-                    context="{'group_by': 'commercial_partner_id'}"
-                />
             </filter>
+        </field>
+    </record>
+    <record id="view_partner_simple_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_simple_form" />
+        <field name="arch" type="xml">
+            <!-- Change placeholders -->
+            <field name="parent_id" position="attributes">
+                <attribute name="placeholder">Organization Name...</attribute>
+            </field>
+        </field>
+    </record>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <!-- Change placeholders -->
+            <xpath expr="//field[@id='company']" position="attributes">
+                <attribute name="placeholder">e.g. Unicef</attribute>
+            </xpath>
+            <field name="parent_id" position="attributes">
+                <attribute name="placeholder">Organization Name...</attribute>
+            </field>
+            <field name="function" position="attributes">
+                <attribute name="placeholder">e.g. Board Member</attribute>
+            </field>
+            <!-- Change tab titles -->
+            <page name="sales_purchases" position="attributes">
+                <attribute name="string">Details</attribute>
+            </page>
+            <!-- Change help texts of company types -->
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='type']/following-sibling::div[hasclass('oe_edit_only')]/p[@invisible=&quot;type != 'contact'&quot;]/span"
+                position="replace"
+            >
+                <span
+                >Use this to organize the contact details of members of a given organization</span>
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='type']/following-sibling::div[hasclass('oe_edit_only')]/p[@invisible=&quot;type != 'invoice'&quot;]/span"
+                position="replace"
+            >
+                <span
+                >Preferred address for all invoices. Selected by default when you invoice an order that belongs to this organization.</span>
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='type']/following-sibling::div[hasclass('oe_edit_only')]/p[@invisible=&quot;type != 'delivery'&quot;]/span"
+                position="replace"
+            >
+                <span
+                >Preferred address for all deliveries. Selected by default when you deliver an order that belongs to this organization.</span>
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='type']/following-sibling::div[hasclass('oe_edit_only')]/p[@invisible=&quot;type != 'other'&quot;]/span"
+                position="replace"
+            >
+                <span>Other address for the organization</span>
+            </xpath>
         </field>
     </record>
 </odoo>
