@@ -26,12 +26,12 @@ msgstr ""
 
 #. module: partner_noncommercial
 #: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
-msgid "Organisation"
+msgid "Organization"
 msgstr ""
 
 #. module: partner_noncommercial
 #: model_terms:ir.ui.view,arch_db:partner_noncommercial.view_res_partner_filter
-msgid "Organisations"
+msgid "Organizations"
 msgstr "Organizacije"
 
 #. module: partner_noncommercial

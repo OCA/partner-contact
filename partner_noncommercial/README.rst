@@ -29,7 +29,7 @@ Partner Non Commercial
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module changes menu and view descriptions to make partner
-management suitable for use in non commercial organisations.
+management suitable for use in non commercial organizations.
 
 **Table of contents**
 
@@ -39,17 +39,15 @@ management suitable for use in non commercial organisations.
 Configuration
 =============
 
-To configure this module, you need to:
-
-1. This module requires no special configuration.
+This module requires no special configuration.
 
 Usage
 =====
 
 This module changes some strings for partners to make them more
 appropiate for non-commercial context, especially renaming companies to
-organisations. It also adds some filters that are often used in
-non-commercial settings, although they can be usefull within companies
+organizations. It also adds some filters that are often used in
+non-commercial settings, although they can be useful within companies
 too.
 
 Bug Tracker
