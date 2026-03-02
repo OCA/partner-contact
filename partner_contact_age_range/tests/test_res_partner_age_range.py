@@ -22,13 +22,14 @@ class TestRespartnerAgeRange(TransactionCase):
         self.partner = self.partner_model.create(
             {
                 "name": "Test",
-                "birthdate_date": datetime.today() - relativedelta(years=1, days=10),
+                "birthdate_date": datetime(2024, 2, 7)
+                - relativedelta(years=1, days=10),
             }
         )
         self.partner2 = self.partner_model.create(
             {
                 "name": "Test2",
-                "birthdate_date": datetime.today() + relativedelta(years=1),
+                "birthdate_date": datetime(2024, 2, 7) + relativedelta(years=1),
             }
         )
 
