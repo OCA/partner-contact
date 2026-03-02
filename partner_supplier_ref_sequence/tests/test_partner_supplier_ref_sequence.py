@@ -37,8 +37,9 @@ class TestResPartnerSupplierRefSequence(TransactionCase):
             }
         )
         copy = original.copy()
-        self.assertNotEqual(original.supplier_ref, copy.supplier_ref)
-        self.assertTrue(copy.supplier_ref)
+        # is_supplier is not copied, so it does not make sense
+        # to set the supplier reference either
+        self.assertFalse(copy.supplier_ref)
 
     def test_supplier_ref_on_write(self):
         partner = self.partner_model.create(

@@ -8,7 +8,7 @@ from odoo.exceptions import UserError
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    supplier_ref = fields.Char(readonly=True)
+    supplier_ref = fields.Char(readonly=True, copy=False)
 
     def _get_next_supplier_ref(self, vals=None):
         return self.env["ir.sequence"].next_by_code("res.partner.supplier")
@@ -38,15 +38,11 @@ class ResPartner(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
-            if not vals.get("supplier_ref") and self._needs_supplier_ref(vals=vals):
+            if not vals.get("supplier_ref") and self.browse()._needs_supplier_ref(
+                vals=vals
+            ):
                 vals["supplier_ref"] = self._get_next_supplier_ref(vals=vals)
         return super().create(vals_list)
-
-    def copy(self, default=None):
-        default = default or {}
-        if self._needs_supplier_ref():
-            default["supplier_ref"] = self._get_next_supplier_ref()
-        return super().copy(default=default)
 
     def write(self, vals):
         for partner in self:
