@@ -88,32 +88,45 @@ class PersonCase(TransactionCase):
 
     def tearDown(self):
         try:
-            new = self.env[self.model].with_context(**self.context).create(self.params)
+            if hasattr(self, "params"):
+                new = (
+                    self.env[self.model]
+                    .with_context(**self.context)
+                    .create(self.params)
+                )
 
-            # Check that each individual field matches
-            self.assertEqual(self.firstname, new.firstname, "First name saved badly.")
-            self.assertEqual(self.lastname, new.lastname, "Last name 1 saved badly.")
-            self.assertEqual(self.lastname2, new.lastname2, "Last name 2 saved badly.")
+                # Check that each individual field matches
+                self.assertEqual(
+                    self.firstname, new.firstname, "First name saved badly."
+                )
+                self.assertEqual(
+                    self.lastname, new.lastname, "Last name 1 saved badly."
+                )
+                self.assertEqual(
+                    self.lastname2, new.lastname2, "Last name 2 saved badly."
+                )
 
-            # Check that name gets saved fine
-            self.assertEqual(
-                self.template
-                % (
-                    {
-                        "last1": self.lastname,
-                        "last2": self.lastname2,
-                        "first": self.firstname,
-                    }
-                ),
-                new.name,
-                "Name saved badly.",
-            )
+                # Check that name gets saved fine
+                self.assertEqual(
+                    self.template
+                    % (
+                        {
+                            "last1": self.lastname,
+                            "last2": self.lastname2,
+                            "first": self.firstname,
+                        }
+                    ),
+                    new.name,
+                    "Name saved badly.",
+                )
 
         finally:
             super().tearDown()
 
     def test_firstname_first(self):
         """Create a person setting his first name first."""
+        if "middlename" in self.env["res.partner"]._fields:
+            self.skipTest("partner_middlename changes 3-word parsing rules")
         self.env["ir.config_parameter"].set_param("partner_names_order", "first_last")
         self.template = "%(first)s %(last1)s %(last2)s"
         self.params = {
@@ -123,6 +136,8 @@ class PersonCase(TransactionCase):
 
     def test_firstname_last(self):
         """Create a person setting his first name last."""
+        if "middlename" in self.env["res.partner"]._fields:
+            self.skipTest("partner_middlename changes 3-word parsing rules")
         self.params = {
             "is_company": False,
             "name": f"{self.lastname} {self.lastname2}, {self.firstname}",
@@ -130,6 +145,8 @@ class PersonCase(TransactionCase):
 
     def test_firstname_last_wo_comma(self):
         """Create a person setting his first name last and the order as 'last_first'"""
+        if "middlename" in self.env["res.partner"]._fields:
+            self.skipTest("partner_middlename changes 3-word parsing rules")
         self.env["ir.config_parameter"].set_param("partner_names_order", "last_first")
         self.template = "%(last1)s %(last2)s %(first)s"
         self.params = {
