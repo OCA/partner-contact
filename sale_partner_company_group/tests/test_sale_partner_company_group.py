@@ -21,6 +21,7 @@ class TestSalePartnerCompanyGroup(TestBasePartnerCompanyGroup):
             {
                 "name": "Company Group 01",
                 "is_company": True,
+                "company_type": "company",
                 "property_product_pricelist": cls.pricelist1.id,
             }
         )
@@ -28,6 +29,7 @@ class TestSalePartnerCompanyGroup(TestBasePartnerCompanyGroup):
             {
                 "name": "Company Group 02",
                 "is_company": True,
+                "company_type": "company",
                 "property_product_pricelist": cls.pricelist2.id,
             }
         )
@@ -35,6 +37,7 @@ class TestSalePartnerCompanyGroup(TestBasePartnerCompanyGroup):
             {
                 "name": "Partner 01",
                 "is_company": True,
+                "company_type": "company",
                 "property_product_pricelist": cls.pricelist1.id,
                 "company_group_id": cls.company_group1.id,
             }
@@ -43,6 +46,7 @@ class TestSalePartnerCompanyGroup(TestBasePartnerCompanyGroup):
             {
                 "name": "Partner 02",
                 "is_company": True,
+                "company_type": "company",
                 "property_product_pricelist": cls.pricelist1.id,
                 "company_group_id": cls.company_group1.id,
             }
