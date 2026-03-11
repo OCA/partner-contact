@@ -342,6 +342,11 @@ msgid "New"
 msgstr "Nový"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Ďalšia udalosť kalendára aktivít"
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "Termín nasledujúcej aktivity"
@@ -556,9 +561,6 @@ msgstr "História komunikácie webovej stránky"
 #~ "21/10/2009"
 #~ msgstr ""
 #~ "Dátum vydania. Napr. deň keď osoba vykonala vodičskú skúšku, 21.10.2009"
-
-#~ msgid "Next Activity Calendar Event"
-#~ msgstr "Ďalšia udalosť kalendára aktivít"
 
 #~ msgid "Valid from"
 #~ msgstr "Platné od"

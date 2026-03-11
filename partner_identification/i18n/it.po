@@ -379,6 +379,11 @@ msgid "New"
 msgstr "Nuovo"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Evento calendario attività successiva"
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "Scadenza prossima attività"
@@ -601,9 +606,6 @@ msgstr "Cronologia comunicazioni sito web"
 #~ msgstr ""
 #~ "Data di emissione. Per esempio, data in cui la persona ha superato "
 #~ "l'esame di guida 21/10/2009"
-
-#~ msgid "Next Activity Calendar Event"
-#~ msgstr "Evento calendario attività successiva"
 
 #~ msgid "Valid from"
 #~ msgstr "Valido da"
