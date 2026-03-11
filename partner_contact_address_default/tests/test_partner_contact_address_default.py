@@ -1,6 +1,8 @@
 # Copyright 2020 Tecnativa - Carlos Dauden
 # Copyright 2020 Tecnativa - Sergio Teruel
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+
+from odoo import fields
 from odoo.tests import common
 
 
@@ -63,3 +65,24 @@ class TestPartnerContactAddressDefault(common.TransactionCase):
         self.assertEqual(res["delivery"], self.partner_child_delivery1.id)
         self.assertEqual(res["invoice"], self.partner.id)
         self.assertEqual(res["contact"], self.partner.id)
+
+    def test_partner_domains(self):
+        self.partner._compute_partner_domains()
+        expected_base = [("id", "child_of", self.partner.commercial_partner_id.ids)]
+        expected_delivery = fields.Domain.AND(
+            [expected_base, [("type", "=", "delivery")]]
+        )
+        expected_invoice = fields.Domain.AND(
+            [expected_base, [("type", "=", "invoice")]]
+        )
+        expected_contact = fields.Domain.AND(
+            [expected_base, [("type", "=", "contact")]]
+        )
+        self.assertEqual(self.partner.partner_delivery_domain, expected_delivery)
+        self.assertEqual(self.partner.partner_invoice_domain, expected_invoice)
+        self.assertEqual(self.partner.partner_contact_domain, expected_contact)
+        self.env.company.contact_address_default_allow_all_partners = True
+        self.partner._compute_partner_domains()
+        self.assertEqual(self.partner.partner_delivery_domain, [])
+        self.assertEqual(self.partner.partner_invoice_domain, [])
+        self.assertEqual(self.partner.partner_contact_domain, [])
