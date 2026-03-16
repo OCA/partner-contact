@@ -7,7 +7,7 @@
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "category": "Sales/CRM",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.1.0",
     "license": "AGPL-3",
     "depends": ["contacts"],
     "data": [
