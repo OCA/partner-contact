@@ -51,6 +51,7 @@ addon | version | maintainers | summary
 [partner_pricelist_search](partner_pricelist_search/) | 19.0.1.0.0 |  | Partner pricelist search
 [partner_priority](partner_priority/) | 19.0.1.0.0 | <a href='https://github.com/patrickrwilson'><img src='https://github.com/patrickrwilson.png' width='32' height='32' style='border-radius:50%;' alt='patrickrwilson'/></a> | Adds priority to partners.
 [partner_ref_unique](partner_ref_unique/) | 19.0.1.0.0 |  | Add an unique constraint to partner ref field
+[partner_shipping_policy](partner_shipping_policy/) | 19.0.1.0.0 |  | Define shipping policy at partners level.
 [partner_stage](partner_stage/) | 19.0.1.1.0 | <a href='https://github.com/dreispt'><img src='https://github.com/dreispt.png' width='32' height='32' style='border-radius:50%;' alt='dreispt'/></a> | Add lifecycle Stages to Partners
 [partner_supplier_ref](partner_supplier_ref/) | 19.0.1.0.0 |  | Adds a supplier reference to contacts
 [partner_title](partner_title/) | 19.0.1.0.0 | <a href='https://github.com/alexis-via'><img src='https://github.com/alexis-via.png' width='32' height='32' style='border-radius:50%;' alt='alexis-via'/></a> | Add title field on partner
