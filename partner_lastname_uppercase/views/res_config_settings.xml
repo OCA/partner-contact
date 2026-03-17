@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">Add convert_lastnames_to_uppercase config parameter</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='companies']" position='after'>
+                <block
+                    title="Uppercase Lastnames"
+                    name="convert_lastnames_to_uppercase"
+                >
+                    <setting string="Uppercase Lastnames">
+                        <field name="convert_lastnames_to_uppercase" />
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
