@@ -1,0 +1,82 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_accreditation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-12-27 11:42+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: partner_accreditation
+#: model:ir.actions.act_window,name:partner_accreditation.res_partner_accreditation_action
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner__accreditation_ids
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__name
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_users__accreditation_ids
+#: model:ir.ui.menu,name:partner_accreditation.menu_res_partner_accreditation
+#: model_terms:ir.ui.view,arch_db:partner_accreditation.res_partner_accreditation_form_view
+msgid "Accreditation"
+msgstr "Certificazione"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__active
+msgid "Active"
+msgstr "Attiva"
+
+#. module: partner_accreditation
+#: model:ir.model,name:partner_accreditation.model_res_partner_accreditation
+msgid "Configurable Accreditation for Partners"
+msgstr "Certificazione configurabile per i partner"
+
+#. module: partner_accreditation
+#: model:ir.model,name:partner_accreditation.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__partner_ids
+msgid "Partner"
+msgstr "Partner"

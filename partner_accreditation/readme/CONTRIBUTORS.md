@@ -1,0 +1,4 @@
+- [Coop IT Easy SC](https://coopiteasy.be):
+  - Victor Champonnois
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+  - Bhavesh Heliconia
