@@ -22,8 +22,8 @@ msgstr ""
 #. module: base_country_state_translatable
 #: model:ir.model.fields,help:base_country_state_translatable.field_res_country_state__name
 msgid ""
-"Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
-msgstr "Divisione amministrativa della nazione. Es. Stato, Regione, Provincia"
+"Administrative divisions of a country. E.g. Fed. State, Department, Canton"
+msgstr ""
 
 #. module: base_country_state_translatable
 #: model:ir.model,name:base_country_state_translatable.model_res_country_state
@@ -34,3 +34,9 @@ msgstr "Provincia Paese"
 #: model:ir.model.fields,field_description:base_country_state_translatable.field_res_country_state__name
 msgid "State Name"
 msgstr "Nome stato"
+
+#~ msgid ""
+#~ "Administrative divisions of a country. E.g. Fed. State, Departement, "
+#~ "Canton"
+#~ msgstr ""
+#~ "Divisione amministrativa della nazione. Es. Stato, Regione, Provincia"

@@ -19,7 +19,7 @@ msgstr ""
 #. module: base_country_state_translatable
 #: model:ir.model.fields,help:base_country_state_translatable.field_res_country_state__name
 msgid ""
-"Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+"Administrative divisions of a country. E.g. Fed. State, Department, Canton"
 msgstr ""
 
 #. module: base_country_state_translatable

@@ -19,8 +19,8 @@ msgstr ""
 #. module: base_country_state_translatable
 #: model:ir.model.fields,help:base_country_state_translatable.field_res_country_state__name
 msgid ""
-"Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
-msgstr "Bir ülkenin idari bölümleri. örn. Eyalet, Bölge, Kanton"
+"Administrative divisions of a country. E.g. Fed. State, Department, Canton"
+msgstr ""
 
 #. module: base_country_state_translatable
 #: model:ir.model,name:base_country_state_translatable.model_res_country_state
@@ -31,3 +31,8 @@ msgstr "Ülke İl/Eyaleti"
 #: model:ir.model.fields,field_description:base_country_state_translatable.field_res_country_state__name
 msgid "State Name"
 msgstr "İl/Eyalet Adı"
+
+#~ msgid ""
+#~ "Administrative divisions of a country. E.g. Fed. State, Departement, "
+#~ "Canton"
+#~ msgstr "Bir ülkenin idari bölümleri. örn. Eyalet, Bölge, Kanton"
