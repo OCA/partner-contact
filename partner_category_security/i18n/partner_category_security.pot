@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_category_security
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_category_security
+#: model:ir.model,name:partner_category_security.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_category_security
+#: model:ir.module.category,name:partner_category_security.category_partner_category
+#: model:ir.ui.menu,name:partner_category_security.menu_partner_category_custom
+msgid "Contact Tags"
+msgstr ""
+
+#. module: partner_category_security
+#: model:res.groups,name:partner_category_security.group_partner_category_manager
+msgid "Manager"
+msgstr ""
+
+#. module: partner_category_security
+#: model:ir.model,name:partner_category_security.model_ir_ui_menu
+msgid "Menu"
+msgstr ""
+
+#. module: partner_category_security
+#: model:res.groups,name:partner_category_security.group_partner_category_user
+msgid "Publisher"
+msgstr ""
