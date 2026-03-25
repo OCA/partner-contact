@@ -5,8 +5,8 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <xpath expr="/form/sheet/div/h1" position="after">
-                <div class="o_row">
+            <xpath expr="//field[@name='parent_id']" position="before">
+                <div colspan="2" class="d-flex gap-2">
                     <field name="utm_source_id" placeholder="Source..." />
                 </div>
             </xpath>
