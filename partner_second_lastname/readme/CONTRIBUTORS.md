@@ -4,3 +4,5 @@
 - Nikul Chaudhary \<<nikulchaudhary2112@gmail.com>\>
 - Manuel Regidor \<<manuel.regidor@sygel.es>\>
 - Eduardo de Miguel (`Moduon <https://www.moduon.team/>`__)
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+  - Bhavesh Heliconia
