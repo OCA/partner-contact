@@ -2,15 +2,7 @@
 # Copyright 2022 Vauxoo, S.A.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
-
-DOMAIN_SEARCH = {
-    ("=", False): ("=", 0),
-    ("=", True): (">=", 1),
-    ("!=", False): (">=", 1),
-    ("!=", True): ("=", 0),
-}
+from odoo import api, fields, models
 
 
 class ResPartner(models.Model):
@@ -19,15 +11,15 @@ class ResPartner(models.Model):
     is_customer = fields.Boolean(
         compute="_compute_is_customer",
         inverse="_inverse_is_customer",
-        search="_search_is_customer",
         string="Is a Customer",
+        store=True,
         default=lambda self: self._default_is_customer(),
     )
     is_supplier = fields.Boolean(
         compute="_compute_is_supplier",
         inverse="_inverse_is_supplier",
-        search="_search_is_supplier",
         string="Is a Supplier",
+        store=True,
         default=lambda self: self._default_is_supplier(),
     )
 
@@ -44,28 +36,18 @@ class ResPartner(models.Model):
                 partner.is_supplier = bool(partner.supplier_rank)
 
     def _inverse_is_customer(self):
-        self.filtered(lambda p: not p.is_customer).write({"customer_rank": 0})
-        self.filtered(lambda p: p.is_customer and not p.customer_rank).write(
-            {"customer_rank": 1}
-        )
-
-    def _search_is_customer(self, operator, value):
-        if operator not in ["=", "!="] or not isinstance(value, bool):
-            raise UserError(_("Operation not supported"))
-        operator, value = DOMAIN_SEARCH.get((operator, value))
-        return [("customer_rank", operator, value)]
+        for partner in self:
+            if partner.is_customer and partner.customer_rank < 1:
+                partner.customer_rank = 1
+            elif not partner.is_customer and partner.customer_rank > 0:
+                partner.customer_rank = 0
 
     def _inverse_is_supplier(self):
-        self.filtered(lambda p: not p.is_supplier).write({"supplier_rank": 0})
-        self.filtered(lambda p: p.is_supplier and not p.supplier_rank).write(
-            {"supplier_rank": 1}
-        )
-
-    def _search_is_supplier(self, operator, value):
-        if operator not in ["=", "!="] or not isinstance(value, bool):
-            raise UserError(_("Operation not supported"))
-        operator, value = DOMAIN_SEARCH.get((operator, value))
-        return [("supplier_rank", operator, value)]
+        for partner in self:
+            if partner.is_supplier and partner.supplier_rank < 1:
+                partner.supplier_rank = 1
+            elif not partner.is_supplier and partner.supplier_rank > 0:
+                partner.supplier_rank = 0
 
     def _default_is_customer(self):
         return self.env.context.get("res_partner_search_mode") == "customer"

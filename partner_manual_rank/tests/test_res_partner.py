@@ -1,4 +1,3 @@
-from odoo.exceptions import UserError
 from odoo.tests import common, tagged
 
 
@@ -52,8 +51,6 @@ class TestResPartner(common.TransactionCase):
                 {"is_customer": True, "customer_rank": 1},
             ],
         )
-        with self.assertRaisesRegex(UserError, "Operation not supported"):
-            self.env["res.partner"].search([("is_customer", "in", [True, False])])
 
     def test_02_is_supplier(self):
         partners = self.partner | self.partner_2
@@ -98,5 +95,51 @@ class TestResPartner(common.TransactionCase):
                 {"is_supplier": True, "supplier_rank": 1},
             ],
         )
-        with self.assertRaisesRegex(UserError, "Operation not supported"):
-            self.env["res.partner"].search([("is_supplier", "in", [True, False])])
+
+    def test_03_increase_rank(self):
+        partners = self.partner | self.partner_2
+
+        self.assertRecordValues(
+            partners,
+            [
+                {
+                    "is_customer": False,
+                    "customer_rank": 0,
+                    "is_supplier": False,
+                    "supplier_rank": 0,
+                },
+                {
+                    "is_customer": False,
+                    "customer_rank": 0,
+                    "is_supplier": False,
+                    "supplier_rank": 0,
+                },
+            ],
+        )
+
+        # Incrementing supplier_rank must flip is_supplier to True
+        self.partner._increase_rank("supplier_rank")
+        self.assertRecordValues(
+            partners,
+            [
+                {"is_supplier": True, "supplier_rank": 1},
+                {"is_supplier": False, "supplier_rank": 0},
+            ],
+        )
+
+        # Incrementing customer_rank must flip is_customer to True
+        self.partner_2._increase_rank("customer_rank")
+        self.assertRecordValues(
+            partners,
+            [
+                {"is_customer": False, "customer_rank": 0},
+                {"is_customer": True, "customer_rank": 1},
+            ],
+        )
+
+        # Multiple increments keep the flag True and accumulate the rank
+        self.partner._increase_rank("supplier_rank", n=2)
+        self.assertRecordValues(
+            self.partner,
+            [{"is_supplier": True, "supplier_rank": 3}],
+        )
