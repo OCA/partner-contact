@@ -14,6 +14,26 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_manual_rank
+#: model:ir.model.fields,field_description:partner_manual_rank.field_res_config_settings__partner_rank_auto
+msgid "Automatic Partner Rank Management"
+msgstr ""
+
+#. module: partner_manual_rank
+#: model_terms:ir.ui.view,arch_db:partner_manual_rank.res_config_settings_view_form
+msgid "Automatically rank partners as customers or suppliers"
+msgstr ""
+
+#. module: partner_manual_rank
+#: model_terms:ir.ui.view,arch_db:partner_manual_rank.res_config_settings_view_form
+msgid "Automatically rank partners when sale or purchase invoices are posted"
+msgstr ""
+
+#. module: partner_manual_rank
+#: model:ir.model,name:partner_manual_rank.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: partner_manual_rank
 #: model:ir.model,name:partner_manual_rank.model_res_partner
 msgid "Contact"
 msgstr ""
