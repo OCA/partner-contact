@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<templates>
+    <t t-name="partner_email_duplicate_warn.X2ManyLinks">
+        <div class="d-inline">
+            <t t-foreach="this.currentField.records" t-as="record" t-key="record.id">
+                <button
+                    class="btn btn-link p-0 align-baseline"
+                    type="button"
+                    t-on-click="() => this.openFormAndDiscard(record.resId)"
+                    t-out="record.data.display_name"
+                />
+                <span t-if="!record_last">, </span>
+            </t>
+        </div>
+    </t>
+</templates>
