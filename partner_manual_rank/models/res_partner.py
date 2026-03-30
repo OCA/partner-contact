@@ -1,9 +1,9 @@
 # Copyright 2021 ForgeFlow, S.L.
 # Copyright 2022 Vauxoo, S.A.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
+from odoo.tools.misc import str2bool
 
 DOMAIN_SEARCH = {
     ("=", False): ("=", 0),
@@ -72,3 +72,10 @@ class ResPartner(models.Model):
 
     def _default_is_supplier(self):
         return self.env.context.get("res_partner_search_mode") == "supplier"
+
+    def _increase_rank(self, field, n=1):
+        # OVERRIDE: to consider the auto rank management setting
+        ICP = self.env["ir.config_parameter"].sudo()
+        if not str2bool(ICP.get_param("partner_manual_rank.partner_rank_auto")):
+            return
+        return super()._increase_rank(field, n=n)

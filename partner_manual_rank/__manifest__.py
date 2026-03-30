@@ -13,5 +13,11 @@
     "installable": True,
     "maintainers": ["luisg123v", "frahikLV"],
     "depends": ["account"],
-    "data": ["views/res_partner.xml"],
+    "data": [
+        # Data
+        "data/ir_config_parameter.xml",
+        # Views
+        "views/res_partner.xml",
+        "views/res_config_settings_view.xml",
+    ],
 }

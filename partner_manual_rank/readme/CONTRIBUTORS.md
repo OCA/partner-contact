@@ -4,3 +4,4 @@
 - Luis González \<<lgonzalez@vauxoo.com>\>
 - Le Dinh Tien \<<tien-ld@komit-consulting.com>\>
 - Cai Hoang Huynh \<<huynh-ch@komit-consulting.com>\>
+- Maksym Yankin \<<maksym.yankin@camptocamp.com>\>
