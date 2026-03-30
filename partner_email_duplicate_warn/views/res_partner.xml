@@ -4,7 +4,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <xpath expr="//div[@name='warning_company']" position="after">
+            <xpath expr="//div[@name='warning_tax']" position="after">
                 <div
                     class="alert alert-warning"
                     role="alert"
@@ -12,7 +12,7 @@
                 >
                   Duplicate warning: partner(s) <field
                     name="same_email_partner_ids"
-                    widget="x2many_buttons"
+                    widget="x2many_links"
                 /> has/have the same <b>Email</b>.
                 </div>
             </xpath>

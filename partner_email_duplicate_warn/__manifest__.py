@@ -4,7 +4,7 @@
 
 {
     "name": "Partner Email Duplicate Warn",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Partner Management",
     "license": "AGPL-3",
     "summary": "Warning banner on partner form if other partners have the same email",
@@ -12,6 +12,12 @@
     "maintainers": ["alexis-via"],
     "website": "https://github.com/OCA/partner-contact",
     "depends": ["base"],
+    "assets": {
+        "web.assets_backend": [
+            "partner_email_duplicate_warn/static/src/components/x2many_links/x2many_links.esm.js",
+            "partner_email_duplicate_warn/static/src/components/x2many_links/x2many_links.xml",
+        ],
+    },
     "data": [
         "views/res_partner.xml",
     ],
