@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-12-26 14:48+0000\n"
+"PO-Revision-Date: 2026-03-31 10:45+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,27 +14,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_manual_rank
 #: model:ir.model.fields,field_description:partner_manual_rank.field_res_config_settings__partner_rank_auto
 msgid "Automatic Partner Rank Management"
-msgstr ""
+msgstr "Gestione valutazione partner automatica"
 
 #. module: partner_manual_rank
 #: model_terms:ir.ui.view,arch_db:partner_manual_rank.res_config_settings_view_form
 msgid "Automatically rank partners as customers or suppliers"
-msgstr ""
+msgstr "Valutazione automatica partner come clienti o fornitori"
 
 #. module: partner_manual_rank
 #: model_terms:ir.ui.view,arch_db:partner_manual_rank.res_config_settings_view_form
 msgid "Automatically rank partners when sale or purchase invoices are posted"
 msgstr ""
+"Valutazione automatica partner quando vengono inviate fatture di vendita o "
+"acquisto"
 
 #. module: partner_manual_rank
 #: model:ir.model,name:partner_manual_rank.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Impostazioni di configurazione"
 
 #. module: partner_manual_rank
 #: model:ir.model,name:partner_manual_rank.model_res_partner
