@@ -18,10 +18,8 @@ class PartnerFirstnameCustomerPortal(CustomerPortal):
                 .sudo()
                 .get_param("partner_firstname.required_fields")
             )
-            if config_required in ["firstname_lastname", "firstname"]:
-                result.append("firstname")
-            if config_required in ["firstname_lastname", "lastname"]:
-                result.append("lastname")
+            if config_required in ("firstname", "lastname", "firstname_lastname"):
+                result.extend(config_required.split("_"))
 
         return result
 
@@ -55,10 +53,14 @@ class PartnerFirstnameCustomerPortal(CustomerPortal):
             .sudo()
             .get_param("partner_firstname.required_fields")
         )
-        if config_required == "no":
-            if not data.get("firstname") and not data.get("lastname"):
-                error["firstname"] = "error"
-                error["lastname"] = "error"
-                error_message.append(_("Please enter your firstname or your lastname."))
+        if (
+            config_required == "no"
+            and not data.get("firstname")
+            and not data.get("lastname")
+            and not request.env.user.partner_id.is_company
+        ):
+            error["firstname"] = "error"
+            error["lastname"] = "error"
+            error_message.append(_("Please enter your firstname or your lastname."))
 
         return error, error_message
