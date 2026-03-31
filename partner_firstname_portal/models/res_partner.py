@@ -9,6 +9,5 @@ class ResPartner(models.Model):
 
     def write(self, vals):
         if self.env.context.get("name_field_pop_value"):
-            if vals.get("name"):
-                vals.pop("name")
+            vals.pop("name", None)
         return super().write(vals)
