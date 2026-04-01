@@ -7,17 +7,21 @@ from odoo.http import request, route
 from odoo.addons.portal.controllers.portal import CustomerPortal
 
 
+def get_config_required():
+    return (
+        request.env["ir.config_parameter"]
+        .sudo()
+        .get_param("partner_firstname.required_fields")
+    )
+
+
 class PartnerFirstnameCustomerPortal(CustomerPortal):
     def _get_mandatory_fields(self):
         result = super()._get_mandatory_fields()
         if not request.env.user.partner_id.is_company:
             result.remove("name")
 
-            config_required = (
-                request.env["ir.config_parameter"]
-                .sudo()
-                .get_param("partner_firstname.required_fields")
-            )
+            config_required = get_config_required()
             if config_required in ("firstname", "lastname", "firstname_lastname"):
                 result.extend(config_required.split("_"))
 
@@ -48,13 +52,8 @@ class PartnerFirstnameCustomerPortal(CustomerPortal):
             data, partner_creation=partner_creation
         )
 
-        config_required = (
-            request.env["ir.config_parameter"]
-            .sudo()
-            .get_param("partner_firstname.required_fields")
-        )
         if (
-            config_required == "no"
+            get_config_required() == "no"
             and not data.get("firstname")
             and not data.get("lastname")
             and not request.env.user.partner_id.is_company
