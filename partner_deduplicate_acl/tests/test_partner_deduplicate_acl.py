@@ -37,7 +37,7 @@ class TestPartnerDeduplicateAcl(BaseCommon):
         self.wizard.action_start_manual_process()
         with self.assertRaises(exceptions.UserError):
             self.wizard.action_merge()
-        self.user.groups_id = [
+        self.user.group_ids = [
             (4, self.env.ref("partner_deduplicate_acl.group_unrestricted").id)
         ]
         # Now there shouldn't be error
