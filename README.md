@@ -66,7 +66,7 @@ addon | version | maintainers | summary
 [partner_identification_gln](partner_identification_gln/) | 17.0.1.0.0 |  | This addon extends "Partner Identification Numbers" to provide a number category for GLN registration
 [partner_industry_secondary](partner_industry_secondary/) | 17.0.1.1.1 |  | Add secondary partner industries
 [partner_lastname_uppercase](partner_lastname_uppercase/) | 17.0.1.0.0 |  | Uppercases the the last names of partners
-[partner_manual_rank](partner_manual_rank/) | 17.0.1.0.0 | <a href='https://github.com/luisg123v'><img src='https://github.com/luisg123v.png' width='32' height='32' style='border-radius:50%;' alt='luisg123v'/></a> <a href='https://github.com/frahikLV'><img src='https://github.com/frahikLV.png' width='32' height='32' style='border-radius:50%;' alt='frahikLV'/></a> | Be able to manually flag partners as customer or supplier.
+[partner_manual_rank](partner_manual_rank/) | 17.0.1.1.0 | <a href='https://github.com/luisg123v'><img src='https://github.com/luisg123v.png' width='32' height='32' style='border-radius:50%;' alt='luisg123v'/></a> <a href='https://github.com/frahikLV'><img src='https://github.com/frahikLV.png' width='32' height='32' style='border-radius:50%;' alt='frahikLV'/></a> | Be able to manually flag partners as customer or supplier.
 [partner_multi_relation](partner_multi_relation/) | 17.0.1.0.0 |  | Partner Relations
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 17.0.1.0.0 |  | Track the time and days your partners expect phone calls
 [partner_pricelist_search](partner_pricelist_search/) | 17.0.1.0.0 |  | Partner pricelist search
