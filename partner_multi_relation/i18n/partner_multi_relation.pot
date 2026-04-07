@@ -457,6 +457,12 @@ msgstr ""
 
 #. module: partner_multi_relation
 #. odoo-python
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
+msgid "p"
+msgstr ""
+
+#. module: partner_multi_relation
+#. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "right"
 msgstr ""
