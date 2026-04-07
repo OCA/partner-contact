@@ -24,30 +24,14 @@ msgstr ""
 
 #. module: partner_multi_relation
 #. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "%s partner incompatible with relation type."
 msgstr "Le partenaire %s est incompatible avec le type de relation."
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__active
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__active
 msgid "Active"
 msgstr "Actif"
-
-#. module: partner_multi_relation
-#: model:ir.model,name:partner_multi_relation.model_res_partner_relation_all
-msgid "All (non-inverse + inverse) relations between partners"
-msgstr "Toutes les relations (non-inverse et inverse) entre partenaires"
-
-#. module: partner_multi_relation
-#: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type_selection
-msgid "All relation types"
-msgstr "Tous types de relations"
-
-#. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_all_ids
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_all_ids
-msgid "All relations with current partner"
-msgstr "Toutes les relations avec le partenaire courant"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__ignore
@@ -57,8 +41,14 @@ msgstr ""
 "modifiées."
 
 #. module: partner_multi_relation
-#: model:ir.model,name:partner_multi_relation.model_res_partner
-msgid "Contact"
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation.tree_res_partner_relation
+msgid "Connection"
+msgstr ""
+
+#. module: partner_multi_relation
+#. odoo-python
+#: code:addons/partner_multi_relation/models/res_partner.py:0
+msgid "Connections for current partner"
 msgstr ""
 
 #. module: partner_multi_relation
@@ -74,16 +64,6 @@ msgid "Created on"
 msgstr "Créé le"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__partner_category_this
-msgid "Current record's category"
-msgstr "Catégorie de l'enregistrement courant"
-
-#. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__partner_type_this
-msgid "Current record's partner type"
-msgstr "Type de partenaire de l'enregistrement courant"
-
-#. module: partner_multi_relation
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__delete
 msgid "Delete relations that do not fit changed conditions"
 msgstr "Supprimer les relations qui ne satisfont pas les conditions modifiées."
@@ -94,10 +74,9 @@ msgid "Destination Partner"
 msgstr "Partenaire destinataire"
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__display_name
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__display_name
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__display_name
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__display_name
 msgid "Display Name"
 msgstr "Nom affiché"
 
@@ -108,6 +87,11 @@ msgstr ""
 "Ne pas autoriser de modification qui résulterait en d'invalides relations."
 
 #. module: partner_multi_relation
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation.tree_res_partner_relation
+msgid "End"
+msgstr ""
+
+#. module: partner_multi_relation
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__end
 msgid "End relations per today, if they do not fit changed conditions"
 msgstr ""
@@ -116,30 +100,19 @@ msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__date_end
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__date_end
 msgid "Ending date"
 msgstr "Date de fin"
 
 #. module: partner_multi_relation
 #. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "Error!"
 msgstr "Erreur !"
 
 #. module: partner_multi_relation
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
-msgid "Group By"
-msgstr "Regrouper par"
-
-#. module: partner_multi_relation
-#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_assistant
-msgid "Has assistant"
-msgstr "A pour assistant"
-
-#. module: partner_multi_relation
-#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_has_worked_for
-msgid "Has former employee"
-msgstr "A pour précédent employé"
+#: model:ir.model,name:partner_multi_relation.model_res_partner
+msgid "Fake Model"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__search_relation_type_id
@@ -160,22 +133,16 @@ msgid "Has relation with a partner in category"
 msgstr "A une relation avec un partenaire dans la catégorie"
 
 #. module: partner_multi_relation
-#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_has_worked_for
-msgid "Has worked for"
-msgstr "A travaillé pour"
-
-#. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__id
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__id
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__id
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__id
 msgid "ID"
 msgstr "ID"
 
 #. module: partner_multi_relation
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
-msgid "Include past records"
-msgstr "Inclure les enregistrement précédents"
+#: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation__type_id_display
+msgid "In current context relation is inverse"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__handle_invalid_onchange
@@ -186,31 +153,6 @@ msgstr "Gestion des relations invalides"
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__name_inverse
 msgid "Inverse name"
 msgstr "Nom inverse"
-
-#. module: partner_multi_relation
-#: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__is_inverse
-#: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type_selection__is_inverse
-msgid "Inverse relations are from right to left partner."
-msgstr ""
-"Les relations inverses sont du partenaire destinataire (droite) vers le "
-"partenaire source (gauche)."
-
-#. module: partner_multi_relation
-#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_assistant
-msgid "Is assistant of"
-msgstr "Est assistant de"
-
-#. module: partner_multi_relation
-#: model:res.partner.relation.type,name:partner_multi_relation.rel_type_competitor
-#: model:res.partner.relation.type,name_inverse:partner_multi_relation.rel_type_competitor
-msgid "Is competitor of"
-msgstr "Est compétiteur de"
-
-#. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__is_inverse
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__is_inverse
-msgid "Is reverse type?"
-msgstr "Est de type inverse ?"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__write_uid
@@ -225,6 +167,16 @@ msgid "Last Updated on"
 msgstr "Dernière mise à jour le"
 
 #. module: partner_multi_relation
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation
+msgid "Left Partner"
+msgstr ""
+
+#. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__left_partner_id_domain
+msgid "Left Partner Id Domain"
+msgstr ""
+
+#. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__left_partner_category_id
 msgid "Left partner category"
 msgstr "Catégorie du partenaire de gauche"
@@ -235,38 +187,26 @@ msgid "Left partner type"
 msgstr "Type du partenaire de gauche"
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_left_ids
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_left_ids
+msgid "Left relations with current partner"
+msgstr ""
+
+#. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
 msgid "Left side of relation"
 msgstr "Côté gauche de la relation"
 
 #. module: partner_multi_relation
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
-msgid "Left to right"
-msgstr "De gauche à droite"
-
-#. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__name
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__name
 msgid "Name"
 msgstr "Nom"
 
 #. module: partner_multi_relation
 #. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "No %s partner available for relation type."
 msgstr "Pas de partenaire %s renseigné, nécessaire à ce type de relation."
-
-#. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-msgid "No relation type specified in vals: %s."
-msgstr ""
-
-#. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__this_partner_id
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
-msgid "One Partner"
-msgstr "Un partenaire"
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -275,23 +215,12 @@ msgid "Organisation"
 msgstr "Organisation"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__other_partner_id
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__other_partner_id
 msgid "Other Partner"
 msgstr "L'autre partenaire"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__partner_category_other
-msgid "Other record's category"
-msgstr "Catégorie de l'autre partenaire"
-
-#. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__partner_type_other
-msgid "Other record's partner type"
-msgstr "Type de l'autre partenaire"
-
-#. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__any_partner_id
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__any_partner_id
 msgid "Partner"
 msgstr "Partenaire"
 
@@ -311,6 +240,18 @@ msgid "Partner relation"
 msgstr "Relation de partenaires"
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation__this_partner_id
+msgid "Partner shown left when no currently active partner"
+msgstr ""
+
+#. module: partner_multi_relation
+#: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation__other_partner_id
+msgid ""
+"Partner shown right when no currently active partner, or connected partnes "
+"as seen from current partner."
+msgstr ""
+
+#. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "Partners cannot have a relation with themselves."
@@ -323,20 +264,12 @@ msgid "Person"
 msgstr "Individu"
 
 #. module: partner_multi_relation
-#. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-msgid ""
-"Programming error: Argument \"side\" of method \"_check_partner\" can just "
-"be called with a value of \"left\" or \"right\"."
-msgstr ""
-
-#. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
 msgid "Properties"
 msgstr "Propriétés"
 
 #. module: partner_multi_relation
-#: model_terms:ir.actions.act_window,help:partner_multi_relation.action_res_partner_relation_all
+#: model_terms:ir.actions.act_window,help:partner_multi_relation.action_res_partner_relation
 msgid ""
 "Record and track your partners' relations. Relations may\n"
 "                be linked to other partners with a type either directly\n"
@@ -344,13 +277,12 @@ msgid ""
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__active
-msgid "Records with date_end in the past are inactive"
-msgstr "Les enregistrements avec la date de fin dans le passé sont inactifs"
+#: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation__active
+msgid "Records with date_end in the past should be inactive"
+msgstr ""
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__allow_self
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__allow_self
 msgid "Reflexive"
 msgstr "Réflexive"
 
@@ -358,8 +290,9 @@ msgstr "Réflexive"
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
 msgid ""
-"Reflexivity could not be disabled for the relation type %s. There are "
-"existing reflexive relations defined for the following partners: %s"
+"Reflexivity could not be disabled for the relation type %(relation_type)s. "
+"There are existing reflexive relations defined for the following partners: %"
+"(partners)s"
 msgstr ""
 
 #. module: partner_multi_relation
@@ -369,11 +302,6 @@ msgid "Relation Count"
 msgstr "Nombre de relations"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__type_selection_id
-msgid "Relation Type"
-msgstr "Type de relation"
-
-#. module: partner_multi_relation
 #: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
 #, fuzzy
 msgid "Relation Types"
@@ -381,7 +309,7 @@ msgstr "Type de relation"
 
 #. module: partner_multi_relation
 #. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "Relation type incompatible with selected partner(s)."
 msgstr ""
 "Le type de relation est incompatible avec le(s) partenaire(s) sélectionné(s)."
@@ -393,26 +321,26 @@ msgid "Relation valid"
 msgstr "Relation valide"
 
 #. module: partner_multi_relation
-#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation_all
+#: model:ir.actions.act_window,name:partner_multi_relation.action_res_partner_relation
 #: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation
-#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_all
+#: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_simple
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.view_partner_form
 msgid "Relations"
 msgstr "Relations"
 
 #. module: partner_multi_relation
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation
 msgid "Relationship Type"
 msgstr "Type de relation"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__res_id
-msgid "Resource ID"
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation
+msgid "Right Partner"
 msgstr ""
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__res_model
-msgid "Resource Model"
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__right_partner_id_domain
+msgid "Right Partner Id Domain"
 msgstr ""
 
 #. module: partner_multi_relation
@@ -426,24 +354,20 @@ msgid "Right partner type"
 msgstr "Type du partenaire de droite"
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_right_ids
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_right_ids
+msgid "Right relations with current partner"
+msgstr ""
+
+#. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
 msgid "Right side of relation"
 msgstr "Côté droit de la relation"
 
 #. module: partner_multi_relation
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
-msgid "Right to left"
-msgstr "De droite à gauche"
-
-#. module: partner_multi_relation
-#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation_all
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation
 msgid "Search Relations"
 msgstr "Rechercher les relations"
-
-#. module: partner_multi_relation
-#: model:ir.actions.act_window,name:partner_multi_relation.action_show_partner_multi_relation
-msgid "Show partner's relations"
-msgstr "Montrer les relations du partenaire"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__left_partner_id
@@ -451,37 +375,30 @@ msgid "Source Partner"
 msgstr "Partenaire source"
 
 #. module: partner_multi_relation
+#: model_terms:ir.ui.view,arch_db:partner_multi_relation.tree_res_partner_relation
+msgid "Start"
+msgstr ""
+
+#. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__date_start
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__date_start
 msgid "Starting date"
 msgstr "Date de début"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__is_symmetric
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__is_symmetric
 msgid "Symmetric"
 msgstr "Symétrique"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
-msgid "The %s partner does not have category %s."
+msgid "The %(side)s partner does not have category %(category)s."
 msgstr ""
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "The %s partner is not applicable for this relation type."
-msgstr ""
-
-#. module: partner_multi_relation
-#: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__res_model
-msgid "The database object this relation is based on."
-msgstr ""
-
-#. module: partner_multi_relation
-#: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__res_id
-msgid "The id of the object in the model this relation is based on."
 msgstr ""
 
 #. module: partner_multi_relation
@@ -507,6 +424,11 @@ msgid "There is already a similar relation with overlapping dates"
 msgstr "Il existe déjà une relation similaire avec des dates se chevauchant."
 
 #. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__this_partner_id
+msgid "This Partner"
+msgstr ""
+
+#. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__allow_self
 msgid "This relation can be set up with the same partner left and right"
 msgstr "Cette relation peut avoir le même partenaire à gauche et à droite."
@@ -518,41 +440,24 @@ msgstr "Cette relation est la même de droite à gauche que de gauche à droite.
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__type_id
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__type_id
 msgid "Type"
 msgstr "Type"
 
 #. module: partner_multi_relation
-#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__type_id
-#, fuzzy
-msgid "Underlying Relation Type"
-msgstr "Type de relation de partenaire"
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__type_id_display
+msgid "Type Id Display"
+msgstr ""
+
+#. module: partner_multi_relation
+#: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__type_id_domain
+msgid "Type Id Domain"
+msgstr ""
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner.py:0
 msgid "Unsupported search operator \"%s\""
 msgstr "Opérateur de recherche non supporté \"%s\""
-
-#. module: partner_multi_relation
-#: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_0
-msgid "Washing Companies"
-msgstr "Sociétés de nettoyage"
-
-#. module: partner_multi_relation
-#: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_4
-msgid "Washing Gold"
-msgstr "Nettoyage Or"
-
-#. module: partner_multi_relation
-#: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_11
-msgid "Washing Services"
-msgstr "Services de nettoyage"
-
-#. module: partner_multi_relation
-#: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_5
-msgid "Washing Silver"
-msgstr "Nettoyage Argent"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__handle_invalid_onchange
@@ -570,15 +475,111 @@ msgstr ""
 
 #. module: partner_multi_relation
 #. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-msgid "other"
-msgstr "de droite"
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
+msgid "left"
+msgstr ""
 
 #. module: partner_multi_relation
 #. odoo-python
-#: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
-msgid "this"
-msgstr "de gauche"
+#: code:addons/partner_multi_relation/models/res_partner_relation_type.py:0
+msgid "p"
+msgstr ""
+
+#. module: partner_multi_relation
+#. odoo-python
+#: code:addons/partner_multi_relation/models/res_partner_relation.py:0
+msgid "right"
+msgstr ""
+
+#~ msgid "All (non-inverse + inverse) relations between partners"
+#~ msgstr "Toutes les relations (non-inverse et inverse) entre partenaires"
+
+#~ msgid "All relation types"
+#~ msgstr "Tous types de relations"
+
+#~ msgid "All relations with current partner"
+#~ msgstr "Toutes les relations avec le partenaire courant"
+
+#~ msgid "Current record's category"
+#~ msgstr "Catégorie de l'enregistrement courant"
+
+#~ msgid "Current record's partner type"
+#~ msgstr "Type de partenaire de l'enregistrement courant"
+
+#~ msgid "Group By"
+#~ msgstr "Regrouper par"
+
+#~ msgid "Has assistant"
+#~ msgstr "A pour assistant"
+
+#~ msgid "Has former employee"
+#~ msgstr "A pour précédent employé"
+
+#~ msgid "Has worked for"
+#~ msgstr "A travaillé pour"
+
+#~ msgid "Include past records"
+#~ msgstr "Inclure les enregistrement précédents"
+
+#~ msgid "Inverse relations are from right to left partner."
+#~ msgstr ""
+#~ "Les relations inverses sont du partenaire destinataire (droite) vers le "
+#~ "partenaire source (gauche)."
+
+#~ msgid "Is assistant of"
+#~ msgstr "Est assistant de"
+
+#~ msgid "Is competitor of"
+#~ msgstr "Est compétiteur de"
+
+#~ msgid "Is reverse type?"
+#~ msgstr "Est de type inverse ?"
+
+#~ msgid "Left to right"
+#~ msgstr "De gauche à droite"
+
+#~ msgid "One Partner"
+#~ msgstr "Un partenaire"
+
+#~ msgid "Other record's category"
+#~ msgstr "Catégorie de l'autre partenaire"
+
+#~ msgid "Other record's partner type"
+#~ msgstr "Type de l'autre partenaire"
+
+#~ msgid "Records with date_end in the past are inactive"
+#~ msgstr "Les enregistrements avec la date de fin dans le passé sont inactifs"
+
+#~ msgid "Relation Type"
+#~ msgstr "Type de relation"
+
+#~ msgid "Right to left"
+#~ msgstr "De droite à gauche"
+
+#~ msgid "Show partner's relations"
+#~ msgstr "Montrer les relations du partenaire"
+
+#, fuzzy
+#~ msgid "Underlying Relation Type"
+#~ msgstr "Type de relation de partenaire"
+
+#~ msgid "Washing Companies"
+#~ msgstr "Sociétés de nettoyage"
+
+#~ msgid "Washing Gold"
+#~ msgstr "Nettoyage Or"
+
+#~ msgid "Washing Services"
+#~ msgstr "Services de nettoyage"
+
+#~ msgid "Washing Silver"
+#~ msgstr "Nettoyage Argent"
+
+#~ msgid "other"
+#~ msgstr "de droite"
+
+#~ msgid "this"
+#~ msgstr "de gauche"
 
 #, python-format
 #~ msgid ""
