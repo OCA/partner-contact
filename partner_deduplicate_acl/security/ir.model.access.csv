@@ -1,0 +1,6 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_base_partner_merge_line_unrestricted","access.base.partner.merge.line.unrestricted","base.model_base_partner_merge_line","partner_deduplicate_acl.group_unrestricted",1,1,1,1
+"access_base_partner_merge_line_automatically","access.base.partner.merge.line.automatically","base.model_base_partner_merge_line","partner_deduplicate_acl.group_automatically",1,1,1,1
+"access_base_partner_merge_line_manually","access.base.partner.merge.line.manually","base.model_base_partner_merge_line","partner_deduplicate_acl.group_manually",1,1,1,0
+"access_base_partner_merge_automatic_wizard_unrestricted","access.base.partner.merge.automatic.wizard.unrestricted","base.model_base_partner_merge_automatic_wizard","partner_deduplicate_acl.group_unrestricted",1,1,1,0
+"access_base_partner_merge_automatic_wizard_automatically","access.base.partner.merge.automatic.wizard.automatically","base.model_base_partner_merge_automatic_wizard","partner_deduplicate_acl.group_automatically",1,1,1,0
