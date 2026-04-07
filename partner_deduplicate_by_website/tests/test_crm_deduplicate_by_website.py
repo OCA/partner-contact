@@ -10,29 +10,22 @@ class TestDeduplicateByWebsite(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.partner_1 = (
-            cls.env["res.partner"]
-            .with_context(tracking_disable=True)
-            .create(
-                {
-                    "name": "Partner 1",
-                    "website": "www.test-deduplicate.com",
-                    "email": "test@deduplicate.com",
-                }
-            )
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.partner_1 = cls.env["res.partner"].create(
+            {
+                "name": "Partner 1",
+                "website": "www.test-deduplicate.com",
+                "email": "test@deduplicate.com",
+            }
         )
 
     def test_deduplicate_by_website(self):
-        self.partner_2 = (
-            self.env["res.partner"]
-            .with_context(tracking_disable=True)
-            .create(
-                {
-                    "name": "Partner 2",
-                    "website": "www.test-deduplicate.com",
-                    "email": "test2@deduplicate.com",
-                }
-            )
+        self.partner_2 = self.env["res.partner"].create(
+            {
+                "name": "Partner 2",
+                "website": "www.test-deduplicate.com",
+                "email": "test2@deduplicate.com",
+            }
         )
         wizard = self.env["base.partner.merge.automatic.wizard"].create(
             {"group_by_website": True}
@@ -47,16 +40,13 @@ class TestDeduplicateByWebsite(TransactionCase):
         self.assertTrue(found_match)
 
     def test_deduplicate_by_website_and_is_company(self):
-        self.partner_2 = (
-            self.env["res.partner"]
-            .with_context(tracking_disable=True)
-            .create(
-                {
-                    "name": "Partner 2",
-                    "website": "www.test-deduplicate.com",
-                    "email": "test@deduplicate.com",
-                }
-            )
+        self.partner_2 = self.env["res.partner"].create(
+            {
+                "name": "Partner 2",
+                "website": "www.test-deduplicate.com",
+                "email": "test@deduplicate.com",
+                "is_company": True,
+            }
         )
         wizard = self.env["base.partner.merge.automatic.wizard"].create(
             {"group_by_website": True, "group_by_email": True}
