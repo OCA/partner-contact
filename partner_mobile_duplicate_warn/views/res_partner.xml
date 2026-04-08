@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <div invisible="not same_vat_partner_id" position="after">
+                <div
+                    class="alert alert-warning"
+                    role="alert"
+                    invisible="not same_mobile_partner_ids"
+                >
+                  Duplicate warning: partners <field
+                    name="same_mobile_partner_ids"
+                    widget="x2many_buttons"
+                /> has/have the same <strong>Mobile</strong>.
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>
