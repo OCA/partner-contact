@@ -83,23 +83,38 @@ class ResPartner(models.Model):
             ).create([vals])
         return created_partners
 
-    def get_extra_default_copy_values(self):
+    def get_extra_default_copy_values(self, default=None):
         """Method to add '(copy)' suffix to lastname or firstname, depending on name
         order configuration.
         """
-        if self._get_names_order() == "first_last":
-            return {
-                "lastname": _("%s (copy)", self.lastname)
-                if self.lastname
-                else _("(copy)")
+        default = default or {}
+        if default.get("name"):
+            values = self._get_inverse_name(default["name"], self.is_company)
+        else:
+            values = {
+                "firstname": default.get("firstname", self.firstname) or "",
+                "lastname": default.get("lastname", self.lastname) or "",
             }
-        return {
-            "firstname": _("%s (copy)", self.firstname)
-            if self.firstname
-            else _("(copy)")
-        }
+            if self._get_names_order() == "first_last":
+                if not default.get("lastname"):
+                    values["lastname"] = (
+                        _("%s (copy)", values["lastname"])
+                        if values["lastname"]
+                        else _("(copy)")
+                    )
+            else:
+                if not default.get("firstname"):
+                    values["firstname"] = (
+                        _("%s (copy)", values["firstname"])
+                        if values["firstname"]
+                        else _("(copy)")
+                    )
+            values["name"] = self._get_computed_name(
+                values["lastname"], values["firstname"]
+            )
+        return values
 
-    def copy(self, default=None):
+    def copy_data(self, default=None):
         """Ensure partners are copied right.
 
         Odoo adds ``(copy)`` to the end of :attr:`~.name`, but that would get
@@ -107,13 +122,11 @@ class ResPartner(models.Model):
         and lastname fields.
         """
         default = default or {}
-        records = self.browse()
-        for record in self:
-            extra_default_values = record.get_extra_default_copy_values()
-            records |= super(ResPartner, record.with_context(copy=True)).copy(
-                default | extra_default_values
-            )
-        return records
+        vals_list = super().copy_data(default=default)
+        return [
+            dict(vals, **partner.get_extra_default_copy_values(default))
+            for partner, vals in zip(self, vals_list, strict=False)
+        ]
 
     @api.depends("firstname", "lastname")
     def _compute_name(self):
