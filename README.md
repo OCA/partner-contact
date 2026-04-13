@@ -28,7 +28,7 @@ addon | version | maintainers | summary
 [base_location_geonames_import](base_location_geonames_import/) | 18.0.1.0.0 |  | Import zip entries from Geonames
 [base_location_nuts](base_location_nuts/) | 18.0.1.3.0 | <a href='https://github.com/rafaelbn'><img src='https://github.com/rafaelbn.png' width='32' height='32' style='border-radius:50%;' alt='rafaelbn'/></a> <a href='https://github.com/edlopen'><img src='https://github.com/edlopen.png' width='32' height='32' style='border-radius:50%;' alt='edlopen'/></a> <a href='https://github.com/Andrii9090'><img src='https://github.com/Andrii9090.png' width='32' height='32' style='border-radius:50%;' alt='Andrii9090'/></a> | NUTS Regions
 [base_partner_company_group](base_partner_company_group/) | 18.0.1.1.0 |  | Adds the possibility to add a company group to a company
-[base_partner_sequence](base_partner_sequence/) | 18.0.1.1.0 |  | Sets customer's code from a sequence
+[base_partner_sequence](base_partner_sequence/) | 18.0.1.2.0 |  | Sets customer's code from a sequence
 [crm_partner_company_group](crm_partner_company_group/) | 18.0.1.1.0 |  | Adds the possibility to add a company group to a company
 [partner_accreditation](partner_accreditation/) | 18.0.1.0.0 | <a href='https://github.com/victor-champonnois'><img src='https://github.com/victor-champonnois.png' width='32' height='32' style='border-radius:50%;' alt='victor-champonnois'/></a> | Add Accreditation to Partners
 [partner_address_split](partner_address_split/) | 18.0.1.0.0 |  | Add specific helper methods
@@ -69,7 +69,7 @@ addon | version | maintainers | summary
 [partner_employee_quantity](partner_employee_quantity/) | 18.0.1.0.0 | <a href='https://github.com/pedrobaeza'><img src='https://github.com/pedrobaeza.png' width='32' height='32' style='border-radius:50%;' alt='pedrobaeza'/></a> <a href='https://github.com/rafaelbn'><img src='https://github.com/rafaelbn.png' width='32' height='32' style='border-radius:50%;' alt='rafaelbn'/></a> <a href='https://github.com/edlopen'><img src='https://github.com/edlopen.png' width='32' height='32' style='border-radius:50%;' alt='edlopen'/></a> | Know how many employees a partner has
 [partner_external_map](partner_external_map/) | 18.0.1.0.0 |  | Add Map and Map Routing buttons on partner form to open GMaps, OSM, Bing and others
 [partner_fax](partner_fax/) | 18.0.1.0.0 |  | Add fax number on partner
-[partner_firstname](partner_firstname/) | 18.0.6.0.2 | <a href='https://github.com/legalsylvain'><img src='https://github.com/legalsylvain.png' width='32' height='32' style='border-radius:50%;' alt='legalsylvain'/></a> | Split first name and last name for non company partners
+[partner_firstname](partner_firstname/) | 18.0.6.1.0 | <a href='https://github.com/legalsylvain'><img src='https://github.com/legalsylvain.png' width='32' height='32' style='border-radius:50%;' alt='legalsylvain'/></a> | Split first name and last name for non company partners
 [partner_identification](partner_identification/) | 18.0.1.0.1 |  | Partner Identification Numbers
 [partner_identification_eori](partner_identification_eori/) | 18.0.1.0.0 |  | This addon extends "Partner Identification Numbers" to provide a number category for EORI Number
 [partner_identification_gln](partner_identification_gln/) | 18.0.1.0.0 |  | This addon extends "Partner Identification Numbers" to provide a number category for GLN registration
@@ -90,7 +90,7 @@ addon | version | maintainers | summary
 [partner_readonly_security](partner_readonly_security/) | 18.0.1.0.0 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> | Partner Readonly Security
 [partner_ref_unique](partner_ref_unique/) | 18.0.1.0.0 |  | Add an unique constraint to partner ref field
 [partner_search_alias](partner_search_alias/) | 18.0.1.0.0 |  | Partner Search Alias
-[partner_second_lastname](partner_second_lastname/) | 18.0.2.0.0 |  | Have split first and second lastnames
+[partner_second_lastname](partner_second_lastname/) | 18.0.2.1.0 |  | Have split first and second lastnames
 [partner_shipping_policy](partner_shipping_policy/) | 18.0.1.0.0 |  | Define shipping policy at partners level.
 [partner_stage](partner_stage/) | 18.0.1.0.1 | <a href='https://github.com/dreispt'><img src='https://github.com/dreispt.png' width='32' height='32' style='border-radius:50%;' alt='dreispt'/></a> | Add lifecycle Stages to Partners
 [partner_store](partner_store/) | 18.0.1.0.0 | <a href='https://github.com/wouitmil'><img src='https://github.com/wouitmil.png' width='32' height='32' style='border-radius:50%;' alt='wouitmil'/></a> | Add store type to Partners
