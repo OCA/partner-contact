@@ -3,7 +3,7 @@
 # Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class MapWebsite(models.Model):
@@ -35,3 +35,35 @@ class MapWebsite(models.Model):
     )
     active = fields.Boolean(default=True)
     sequence = fields.Integer(default=10)
+
+    @api.model
+    def get_default_map_website(self):
+        default_map_website_id = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("partner_external_map.default_map_website_id")
+        )
+        if default_map_website_id:
+            default_map_website = self.env["map.website"].browse(
+                int(default_map_website_id)
+            )
+            if default_map_website:
+                return default_map_website
+        # Don't return the first map website found, to allow
+        # prompting the user to choose one deliberately / consiously
+        return False
+
+    @api.model
+    def get_default_route_map_website(self):
+        default_route_map_website_id = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("partner_external_map.default_route_map_website_id")
+        )
+        if default_route_map_website_id:
+            default_route_map_website = self.env["map.website"].browse(
+                int(default_route_map_website_id)
+            )
+            if default_route_map_website:
+                return default_route_map_website
+        return False
