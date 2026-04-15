@@ -2,31 +2,58 @@
 # Copyright (C) 2020 NextERP Romania
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-import requests
-import werkzeug
-from requests import PreparedRequest, Session
+import re
+from unittest.mock import MagicMock, patch
+
+import isodate
 
 from odoo.tests.common import Form, TransactionCase
 
-_super_send = requests.Session.send
+_original_parse_date = isodate.parse_date
+
+
+def _patched_parse_date(datestring):
+    if isinstance(datestring, str) and re.match(
+        r"^\d{4}-\d{2}-\d{2}[+-]\d{2}:?\d{2}$", datestring
+    ):
+        datestring = datestring[:10]
+    return _original_parse_date(datestring)
+
+
+def mocked_check_vies(vat):
+    # Some versions of stdnum might expect a string, others might return an object
+    # We simulate a successful response for known test VATs
+    vat = str(vat).upper().replace(" ", "")
+    res = MagicMock()
+    res.valid = True
+    if vat == "BE0477472701":
+        res.name = "SA ODOO"
+        res.address = "Chaussée de Namur 40\n1367 Ramillies"
+        res.countryCode = "BE"
+    elif vat == "NL001172359B01":
+        res.name = "JUMBO SUPERMARKTEN B.V."
+        res.address = "RIJKSWEG 00015\n5462CE VEGHEL"
+        res.countryCode = "NL"
+    else:
+        # Default for other VATs to avoid hitting the real service
+        res.valid = False
+        res.name = "---"
+        res.address = "---"
+        res.countryCode = vat[:2] if len(vat) > 2 else ""
+    return res
 
 
 class TestPartnerCreateByVAT(TransactionCase):
     @classmethod
-    def _request_handler(cls, s: Session, r: PreparedRequest, /, **kw):
-        """
-        Override to allow requests to the VIES API
-        because odoo17 only permit calls to localhost
-        (see https://github.com/odoo/odoo/blob/17.0/odoo/tests/common.py#L279 )
-        """
-        url = werkzeug.urls.url_parse(r.url)
-        if url.host in ("ec.europa.eu",):
-            return _super_send(s, r, **kw)
-        return super()._request_handler(s=s, r=r, **kw)
-
-    @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        isodate.parse_date = _patched_parse_date
+        # Patch check_vies where it is imported in the model
+        cls.patcher = patch(
+            "odoo.addons.partner_data_vies_populator.models.res_partner.check_vies",
+            side_effect=mocked_check_vies,
+        )
+        cls.patcher.start()
         cls.partner_model = cls.env["res.partner"]
         cls.be_country_id = cls.env.ref("base.be").id
         cls.sample_1 = {
@@ -36,6 +63,12 @@ class TestPartnerCreateByVAT(TransactionCase):
             "city": "Ramillies",
             "country_code": "BE",
         }
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.patcher.stop()
+        isodate.parse_date = _original_parse_date
+        super().tearDownClass()
 
     def test_create_from_vat1(self):
         # Create an partner from VAT number field
