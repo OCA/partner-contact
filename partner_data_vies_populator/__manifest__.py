@@ -5,7 +5,7 @@
 {
     "name": "Partner Data VIES Populator",
     "summary": "Populate Partner name and address using the VIES webservice",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.1.0",
     "category": "Customer Relationship Management",
     "author": "NextERP Romania,"
     "Forest and Biomass Romania,"
