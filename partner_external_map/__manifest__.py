@@ -12,10 +12,11 @@
     "open GMaps, OSM, Bing and others",
     "author": "Akretion, Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
-    "depends": ["base"],
+    "depends": ["base", "base_setup"],
     "data": [
         "views/res_partner_view.xml",
         "views/map_website_view.xml",
+        "views/res_config_settings_view.xml",
         "data/map_website_data.xml",
         "views/res_users_view.xml",
         "security/ir.model.access.csv",

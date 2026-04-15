@@ -8,3 +8,6 @@
   - Manuel Regidor \<<manuel.regidor@sygel.es>\>
 - [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
   - Bhavesh Heliconia
+- [Onestein](https://onestein.nl)
+  - Dennis Sluijk
+
