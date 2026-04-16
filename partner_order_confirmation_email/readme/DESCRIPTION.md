@@ -1,0 +1,1 @@
+This module adds a specific email address for order confirmation emails on the partner form. It allows users to configure email templates for order confirmations and specify a different email address to receive these notifications.
