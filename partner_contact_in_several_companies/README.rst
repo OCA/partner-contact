@@ -36,14 +36,14 @@ contract developers, construction, etc.)
 
 Contacts are categorized as either:
 
-- **Standalone Contact** (default): A normal contact (either an
-  Individual or a Company), though only Individual Standalone contacts
-  can be linked to.
-- **Attached to existing Contact**: Usually used when adding a contact
-  under a Company, this contact is linked to a source Standalone
-  Contact. Source contacts can only be Individuals, not Companies, nor
-  can an Attached contact serve as the source of another Attached
-  contact.
+-  **Standalone Contact** (default): A normal contact (either an
+   Individual or a Company), though only Individual Standalone contacts
+   can be linked to.
+-  **Attached to existing Contact**: Usually used when adding a contact
+   under a Company, this contact is linked to a source Standalone
+   Contact. Source contacts can only be Individuals, not Companies, nor
+   can an Attached contact serve as the source of another Attached
+   contact.
 
 **Table of contents**
 
@@ -151,14 +151,14 @@ https://github.com/OCA/partner-contact/
 Known issues / Roadmap
 ======================
 
-- You can not add position directly from individual partner, you can
-  just see other positions and update them
+-  You can not add position directly from individual partner, you can
+   just see other positions and update them
 
 Improve:
 
-- Add an wizard / form to clean create new position from individual
-  partner form. In this cas you will have to select an existing company
-  (or create one on the fly)
+-  Add an wizard / form to clean create new position from individual
+   partner form. In this cas you will have to select an existing company
+   (or create one on the fly)
 
 Bug Tracker
 ===========
@@ -182,20 +182,18 @@ Authors
 Contributors
 ------------
 
-- Xavier ALT <xal@odoo.com> (original author)
-- El Hadji Dem <elhadji.dem@savoirfairelinux.com>
-- TheCloneMaster <the.clone.master@gmail.com>
-- Sandy Carter <bwrsandman@gmail.com>
-- Rudolf Schnapka <rs@techno-flex.de>
-- Sebastien Alix <sebastien.alix@osiell.com>
-- Jairo Llopis <j.llopis@grupoesoc.es>
-- Richard deMeester <richard@willowit.com.au>
-- Nicolas JEUDY
-  <`https://github.com/njeudy\\> <https://github.com/njeudy\>>`__
-- Franco Tampieri <franco@tampieri.info>
-- Rattapong Chokmasermkul <rattapongc@ecosoft.co.th>
-- Stéphan Sainléger
-  <`https://github.com/stephansainleger\\> <https://github.com/stephansainleger\>>`__
+-  Xavier ALT <xal@odoo.com> (original author)
+-  El Hadji Dem <elhadji.dem@savoirfairelinux.com>
+-  TheCloneMaster <the.clone.master@gmail.com>
+-  Sandy Carter <bwrsandman@gmail.com>
+-  Rudolf Schnapka <rs@techno-flex.de>
+-  Sebastien Alix <sebastien.alix@osiell.com>
+-  Jairo Llopis <j.llopis@grupoesoc.es>
+-  Richard deMeester <richard@willowit.com.au>
+-  Nicolas JEUDY <https://github.com/njeudy>
+-  Franco Tampieri <franco@tampieri.info>
+-  Rattapong Chokmasermkul <rattapongc@ecosoft.co.th>
+-  Stéphan Sainléger <https://github.com/stephansainleger>
 
 Maintainers
 -----------
