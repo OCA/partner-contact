@@ -76,6 +76,7 @@ addon | version | maintainers | summary
 [partner_identification_unique_by_category](partner_identification_unique_by_category/) | 18.0.1.0.0 |  | Partner Identification Numbers Unique By Category
 [partner_industry_parent](partner_industry_parent/) | 18.0.1.0.0 |  | This module add a parent relation to the partner industry
 [partner_industry_secondary](partner_industry_secondary/) | 18.0.1.0.1 |  | Add secondary partner industries
+[partner_label](partner_label/) | 18.0.1.0.0 |  | Print partner labels
 [partner_manual_rank](partner_manual_rank/) | 18.0.1.1.0 | <a href='https://github.com/luisg123v'><img src='https://github.com/luisg123v.png' width='32' height='32' style='border-radius:50%;' alt='luisg123v'/></a> <a href='https://github.com/frahikLV'><img src='https://github.com/frahikLV.png' width='32' height='32' style='border-radius:50%;' alt='frahikLV'/></a> | Be able to manually flag partners as customer or supplier.
 [partner_middlename](partner_middlename/) | 18.0.1.0.0 |  | Have split Middle
 [partner_mobile_duplicate_warn](partner_mobile_duplicate_warn/) | 18.0.1.0.0 | <a href='https://github.com/alexis-via'><img src='https://github.com/alexis-via.png' width='32' height='32' style='border-radius:50%;' alt='alexis-via'/></a> | Warning banner on partner form if another partner has the same mobile
