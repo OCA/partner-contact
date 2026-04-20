@@ -9,6 +9,9 @@
     "license": "AGPL-3",
     "depends": ["base_partner_company_group", "account"],
     "website": "https://github.com/OCA/partner-contact",
-    "data": ["views/account_move_views.xml"],
+    "data": [
+        "views/account_invoice_report_view.xml",
+        "views/account_move_views.xml",
+    ],
     "installable": True,
 }
