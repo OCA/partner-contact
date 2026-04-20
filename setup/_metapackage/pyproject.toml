@@ -1,8 +1,9 @@
 [project]
 name = "odoo-addons-oca-partner-contact"
-version = "17.0.20260415.0"
+version = "17.0.20260420.0"
 dependencies = [
     "odoo-addon-account_partner_company_group>=17.0dev,<17.1dev",
+    "odoo-addon-animal>=17.0dev,<17.1dev",
     "odoo-addon-base_country_state_translatable>=17.0dev,<17.1dev",
     "odoo-addon-base_location>=17.0dev,<17.1dev",
     "odoo-addon-base_location_geonames_import>=17.0dev,<17.1dev",
