@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -354,14 +354,6 @@ msgid "Labrador"
 msgstr ""
 
 #. module: animal
-#: model:ir.model.fields,field_description:animal.field_animal____last_update
-#: model:ir.model.fields,field_description:animal.field_animal_breed____last_update
-#: model:ir.model.fields,field_description:animal.field_animal_color____last_update
-#: model:ir.model.fields,field_description:animal.field_animal_species____last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: animal
 #: model:ir.model.fields,field_description:animal.field_animal__write_uid
 #: model:ir.model.fields,field_description:animal.field_animal_breed__write_uid
 #: model:ir.model.fields,field_description:animal.field_animal_color__write_uid
@@ -375,11 +367,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:animal.field_animal_color__write_date
 #: model:ir.model.fields,field_description:animal.field_animal_species__write_date
 msgid "Last Updated on"
-msgstr ""
-
-#. module: animal
-#: model:ir.model.fields,field_description:animal.field_animal__message_main_attachment_id
-msgid "Main Attachment"
 msgstr ""
 
 #. module: animal
