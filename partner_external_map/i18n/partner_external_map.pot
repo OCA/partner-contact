@@ -31,6 +31,11 @@ msgid "Archived"
 msgstr ""
 
 #. module: partner_external_map
+#: model:ir.model,name:partner_external_map.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_partner
 msgid "Contact"
 msgstr ""
@@ -43,6 +48,11 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__create_date
 msgid "Created on"
+msgstr ""
+
+#. module: partner_external_map
+#: model_terms:ir.ui.view,arch_db:partner_external_map.res_config_settings_view_form
+msgid "Default External Map"
 msgstr ""
 
 #. module: partner_external_map
@@ -99,6 +109,7 @@ msgstr ""
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_map_website
+#: model:ir.model.fields,field_description:partner_external_map.field_res_config_settings__map_website_id
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users__context_map_website_id
 #: model_terms:ir.ui.view,arch_db:partner_external_map.map_website_form
 msgid "Map Website"
@@ -165,6 +176,7 @@ msgid "Route Map"
 msgstr ""
 
 #. module: partner_external_map
+#: model:ir.model.fields,field_description:partner_external_map.field_res_config_settings__route_map_website_id
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users__context_route_map_website_id
 msgid "Route Map Website"
 msgstr ""
@@ -187,6 +199,11 @@ msgstr ""
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_res_users__context_route_start_partner_id
 msgid "Start Address for Route Map"
+msgstr ""
+
+#. module: partner_external_map
+#: model_terms:ir.ui.view,arch_db:partner_external_map.res_config_settings_view_form
+msgid "System wide default map providers."
 msgstr ""
 
 #. module: partner_external_map
