@@ -44,11 +44,15 @@ class ResPartner(models.Model):
 
     def open_map(self):
         self.ensure_one()
+        # First try to get the default map website defined in the system parameters,
+        # otherwise prompt the user to set one.
         map_website = self.env.user.context_map_website_id
+        if not map_website:
+            map_website = self.env["map.website"].get_default_map_website()
         if not map_website:
             raise UserError(
                 self.env._(
-                    "Missing map provider: " "you should set it in your preferences."
+                    "Missing map provider: you should set it in your preferences."
                 )
             )
         # Since v13, fields partner_latitude and partner_longitude are
@@ -81,14 +85,18 @@ class ResPartner(models.Model):
 
     def open_route_map(self):
         self.ensure_one()
-        if not self.env.user.context_route_map_website_id:
+        map_website = self.env.user.context_route_map_website_id
+        # First try to get the default route map website defined in the
+        # system parameters, otherwise prompt the user to set one.
+        if not map_website:
+            map_website = self.env["map.website"].get_default_route_map_website()
+        if not map_website:
             raise UserError(
                 self.env._(
                     "Missing route map website: "
                     "you should set it in your preferences."
                 )
             )
-        map_website = self.env.user.context_route_map_website_id
         if not self.env.user.context_route_start_partner_id:
             raise UserError(
                 self.env._(

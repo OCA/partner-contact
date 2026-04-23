@@ -111,3 +111,104 @@ class TestPartnerExternalMap(BaseCommon):
         self.user.context_map_website_id.route_address_url = False
         with self.assertRaises(UserError):
             self.partner.with_user(self.user.id).open_route_map()
+
+    def test_default_map_website(self):
+        # Unset the default map website for the user
+        self.user.context_map_website_id = False
+        self.user.context_route_map_website_id = False
+        config_param = self.env["ir.config_parameter"].sudo()
+        # Set a default map website in the system parameters
+        config_param.set_param(
+            "partner_external_map.default_map_website_id",
+            self.ref("partner_external_map.openstreetmap"),
+        )
+        # Set a default map website in the system parameters
+        config_param.set_param(
+            "partner_external_map.default_route_map_website_id",
+            self.ref("partner_external_map.mapquest"),
+        )
+        # The default map website should be used
+        action = self.partner.with_user(self.user.id).open_map()
+        self.assertIn(
+            "openstreetmap",
+            action["url"],
+        )
+        route_action = self.partner.with_user(self.user.id).open_route_map()
+        self.assertIn(
+            "mapquest",
+            route_action["url"],
+        )
+
+    def test_preference_over_default(self):
+        # Set google as preference
+        self.user.context_map_website_id = self.ref("partner_external_map.google_maps")
+        self.user.context_route_map_website_id = self.ref(
+            "partner_external_map.google_maps"
+        )
+        # Set a default map website in the system parameters
+        config_param = self.env["ir.config_parameter"].sudo()
+        config_param.set_param(
+            "partner_external_map.default_map_website_id",
+            self.ref("partner_external_map.openstreetmap"),
+        )
+        # Set a default map website in the system parameters
+        config_param.set_param(
+            "partner_external_map.default_route_map_website_id",
+            self.ref("partner_external_map.mapquest"),
+        )
+        # Even if there is a default map website, the user preference should be used
+        action = self.partner.with_user(self.user.id).open_map()
+        self.assertIn(
+            "google",
+            action["url"],
+        )
+        route_action = self.partner.with_user(self.user.id).open_route_map()
+        self.assertIn(
+            "google",
+            route_action["url"],
+        )
+
+    def test_exception_no_default_no_preference(self):
+        # Unset the default map website for the user
+        self.user.context_map_website_id = False
+        self.user.context_route_map_website_id = False
+        # Unset the default map website in the system parameters
+        config_param = self.env["ir.config_parameter"].sudo()
+        config_param.set_param("partner_external_map.default_map_website_id", False)
+        config_param.set_param(
+            "partner_external_map.default_route_map_website_id", False
+        )
+        # The user should be prompted to set a preference since we don't
+        # provide a default map website.
+        with self.assertRaises(UserError):
+            self.partner.with_user(self.user.id).open_map()
+        with self.assertRaises(UserError):
+            self.partner.with_user(self.user.id).open_route_map()
+
+    def test_new_user_default_map_website(self):
+        # Set a default map website in the system parameters
+        config_param = self.env["ir.config_parameter"].sudo()
+        config_param.set_param(
+            "partner_external_map.default_map_website_id",
+            self.ref("partner_external_map.openstreetmap"),
+        )
+        config_param.set_param(
+            "partner_external_map.default_route_map_website_id",
+            self.ref("partner_external_map.mapquest"),
+        )
+        # Create a new user without setting the map website
+        new_user = self.env["res.users"].create(
+            {
+                "name": "New test user",
+                "login": "new_test_login",
+            }
+        )
+        # The new user should have the default map website set in his preferences
+        self.assertEqual(
+            new_user.context_map_website_id.id,
+            self.ref("partner_external_map.openstreetmap"),
+        )
+        self.assertEqual(
+            new_user.context_route_map_website_id.id,
+            self.ref("partner_external_map.mapquest"),
+        )

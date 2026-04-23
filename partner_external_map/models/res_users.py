@@ -11,12 +11,24 @@ class ResUsers(models.Model):
 
     @api.model
     def _default_map_website(self):
+        # First try to get the default map website defined in the
+        # system parameters, then fallback on the first one found
+        # in the database
+        default_map = self.env["map.website"].get_default_map_website()
+        if default_map:
+            return default_map
         return self.env["map.website"].search(
             ["|", ("address_url", "!=", False), ("lat_lon_url", "!=", False)], limit=1
         )
 
     @api.model
     def _default_route_map_website(self):
+        # First try to get the default route map website defined in the
+        # system parameters, then fallback on the first one found
+        # in the database
+        default_route_map = self.env["map.website"].get_default_route_map_website()
+        if default_route_map:
+            return default_route_map
         return self.env["map.website"].search(
             [
                 "|",
