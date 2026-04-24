@@ -99,8 +99,9 @@
                             <div
                                 t-if="record.species_id.raw_value and record.breed_id.raw_value"
                             >
-                                <field name="species_id" />
-                                <field name="breed_id" />
+                                    <field name="species_id" />
+                                        -
+                                    <field name="breed_id" />
                             </div>
                             <div class="oe_kanban_partner_links" />
                         </main>
@@ -149,29 +150,25 @@
                     domain="[('active', '=', False)]"
                 />
                 <separator />
-                <group expand="0" string="Group By">
+                <group name="groupby">
                     <filter
                         name="gender"
                         string="Gender"
-                        domain=""
                         context="{'group_by': 'gender'}"
                     />
                     <filter
                         name="species_id"
                         string="Species"
-                        domain=""
                         context="{'group_by': 'species_id'}"
                     />
                     <filter
                         name="breed_id"
                         string="Breed"
-                        domain=""
                         context="{'group_by': 'breed_id'}"
                     />
                     <filter
                         name="color_id"
                         string="Color"
-                        domain=""
                         context="{'group_by': 'color_id'}"
                     />
                 </group>

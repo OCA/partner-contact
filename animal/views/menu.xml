@@ -23,7 +23,6 @@
     />
 
     <!-- Configuration -->
-    <menuitem id="menu_settings" name="Settings" sequence="10" parent="menu_config" />
     <menuitem
         id="menu_species"
         name="Species"
