@@ -21,13 +21,13 @@ Employee quantity in partners
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/18.0/partner_employee_quantity
+    :target: https://github.com/OCA/partner-contact/tree/19.0/partner_employee_quantity
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-18-0/partner-contact-18-0-partner_employee_quantity
+    :target: https://translation.odoo-community.org/projects/partner-contact-19-0/partner-contact-19-0-partner_employee_quantity
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=18.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=19.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -53,16 +53,16 @@ Usage
 
 To use this module, you need to:
 
-- Go to any partner's form.
-- Enable *Is company?*.
-- You will see a new group of fields called *Employee quantity*.
+-  Go to any partner's form.
+-  Enable *Is company?*.
+-  You will see a new group of fields called *Employee quantity*.
 
 Known issues / Roadmap
 ======================
 
-- Put in employee ranges numbers for low and upper limit for having a
-  numerical reference.
-- Don't allow to overlap ranges.
+-  Put in employee ranges numbers for low and upper limit for having a
+   numerical reference.
+-  Don't allow to overlap ranges.
 
 Bug Tracker
 ===========
@@ -70,7 +70,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_employee_quantity%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_employee_quantity%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -85,28 +85,28 @@ Authors
 Contributors
 ------------
 
-- `Tecnativa <https://www.tecnativa.com>`__:
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  - Antonio Espinosa
-  - Rafael Blasco
-  - Jairo Llopis
-  - David Vidal
-  - Pedro M. Baeza
-  - César A. Sánchez
+   -  Antonio Espinosa
+   -  Rafael Blasco
+   -  Jairo Llopis
+   -  David Vidal
+   -  Pedro M. Baeza
+   -  César A. Sánchez
 
-- Nikul Chaudhary <nikulchaudhary2112@gmail.com>
-- Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
-- `Pesol <https://www.pesol.es>`__:
+-  Nikul Chaudhary <nikulchaudhary2112@gmail.com>
+-  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+-  `Pesol <https://www.pesol.es>`__:
 
-  - Jonathan Oscategui Taza <info@pesol.es>
+   -  Jonathan Oscategui Taza <info@pesol.es>
 
-- `Moduon <https://www.moduon.es>`__:
+-  `Moduon <https://www.moduon.es>`__:
 
-  - Eduardo López Peñalver
+   -  Eduardo López Peñalver
 
-- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+-  `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
 
-  - Bhavesh Heliconia
+   -  Bhavesh Heliconia
 
 Maintainers
 -----------
@@ -135,6 +135,6 @@ Current `maintainers <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-pedrobaeza| |maintainer-rafaelbn| |maintainer-edlopen| 
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/18.0/partner_employee_quantity>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/19.0/partner_employee_quantity>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
