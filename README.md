@@ -40,6 +40,7 @@ addon | version | maintainers | summary
 [partner_contact_job_position](partner_contact_job_position/) | 19.0.1.0.0 |  | Categorize job positions for contacts
 [partner_contact_nationality](partner_contact_nationality/) | 19.0.1.0.0 |  | Add nationality field to contacts
 [partner_contact_personal_information_page](partner_contact_personal_information_page/) | 19.0.1.0.0 | <a href='https://github.com/Daemo00'><img src='https://github.com/Daemo00.png' width='32' height='32' style='border-radius:50%;' alt='Daemo00'/></a> | Add a page to contacts form to put personal information
+[partner_country_state_required](partner_country_state_required/) | 19.0.1.0.0 |  | Partner Country State Required
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 19.0.1.0.0 |  | Contact deduplication with fine-grained permission control
 [partner_deduplicate_by_website](partner_deduplicate_by_website/) | 19.0.1.0.0 |  | Deduplicate Contacts by Website
 [partner_email_check](partner_email_check/) | 19.0.1.0.0 |  | Validate email address field
