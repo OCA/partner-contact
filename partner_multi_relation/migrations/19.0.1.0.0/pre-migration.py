@@ -13,13 +13,24 @@ def migrate(env, version):
     env.cr.execute("DROP VIEW IF EXISTS res_partner_relation_all;")
     env.cr.execute("DROP VIEW IF EXISTS res_partner_relation_type_selection;")
     logger.info("Renaming res_partner_relation_type fields")
-    table_name = env["res.partner.relation.type"]._table
+    model_name = "res.partner.relation.type"
+    table_name = "res_partner_relation_type"
     openupgrade.rename_fields(
         env,
         [
-            (table_name, "contact_type_left", "left_partner_type"),
-            (table_name, "contact_type_right", "right_partner_type"),
-            (table_name, "partner_category_left", "left_partner_category_id"),
-            (table_name, "partner_category_right", "right_partner_category_id"),
+            (model_name, table_name, "contact_type_left", "left_partner_type"),
+            (model_name, table_name, "contact_type_right", "right_partner_type"),
+            (
+                model_name,
+                table_name,
+                "partner_category_left",
+                "left_partner_category_id",
+            ),
+            (
+                model_name,
+                table_name,
+                "partner_category_right",
+                "right_partner_category_id",
+            ),
         ],
     )
