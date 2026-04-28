@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,8 +20,20 @@ msgid "Company Group"
 msgstr ""
 
 #. module: sale_partner_company_group
+#: model:ir.model.fields,field_description:sale_partner_company_group.field_res_partner__display_name
+#: model:ir.model.fields,field_description:sale_partner_company_group.field_sale_order__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: sale_partner_company_group
 #: model:ir.model,name:sale_partner_company_group.model_res_partner
-msgid "Contact"
+msgid "Fake Model"
+msgstr ""
+
+#. module: sale_partner_company_group
+#: model:ir.model.fields,field_description:sale_partner_company_group.field_res_partner__id
+#: model:ir.model.fields,field_description:sale_partner_company_group.field_sale_order__id
+msgid "ID"
 msgstr ""
 
 #. module: sale_partner_company_group
@@ -35,6 +47,14 @@ msgstr ""
 msgid ""
 "The company group %(company_group)s has the pricelist %(pricelist)s, that is"
 " different than the pricelist set on this contact"
+msgstr ""
+
+#. module: sale_partner_company_group
+#. odoo-python
+#: code:addons/sale_partner_company_group/models/res_partner.py:0
+msgid ""
+"This contact has members of a company group with different pricelists, the members are:\n"
+"%(members_str)s"
 msgstr ""
 
 #. module: sale_partner_company_group
