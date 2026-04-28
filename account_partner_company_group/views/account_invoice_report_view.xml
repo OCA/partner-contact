@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_account_invoice_report_search" model="ir.ui.view">
+        <field name="name">account.invoice.report.search.company.group</field>
+        <field name="model">account.invoice.report</field>
+        <field name="inherit_id" ref="account.view_account_invoice_report_search" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="company_group_id" />
+            </field>
+            <filter name="partner_id" position="after">
+                <filter
+                    name="group_company_group"
+                    string="Company Group"
+                    context="{'group_by': 'company_group_id'}"
+                />
+            </filter>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_report_pivot" model="ir.ui.view">
+        <field name="name">account.invoice.report.pivot.company.group</field>
+        <field name="model">account.invoice.report</field>
+        <field name="inherit_id" ref="account.view_account_invoice_report_pivot" />
+        <field name="arch" type="xml">
+            <field name="product_categ_id" position="after">
+                <field name="company_group_id" />
+            </field>
+        </field>
+    </record>
+</odoo>
