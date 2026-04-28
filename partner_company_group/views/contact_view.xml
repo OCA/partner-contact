@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <function model="ir.model.data" name="_update_xmlids">
+        <value
+            model="base"
+            eval="[{
+            'xml_id': 'partner_company_group.view_partner_form',
+            'record': obj().env.ref('base_partner_company_group.view_partner_form'),
+        }]"
+        />
+    </function>
+    <function model="ir.model.data" name="_update_xmlids">
+        <value
+            model="base"
+            eval="[{
+            'xml_id': 'partner_company_group.view_res_partner_filter',
+            'record': obj().env.ref('base_partner_company_group.view_res_partner_filter'),
+        }]"
+        />
+    </function>
+    <function model="ir.model.data" name="_update_xmlids">
+        <value
+            model="base"
+            eval="[{
+            'xml_id': 'partner_company_group.action_open_group_members',
+            'record': obj().env.ref('base_partner_company_group.action_open_group_members'),
+        }]"
+        />
+    </function>
+</odoo>
