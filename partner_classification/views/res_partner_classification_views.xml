@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2026 Camptocamp SA (https://www.camptocamp.com).
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <record id="view_partner_classification_list" model="ir.ui.view">
+        <field name="name">res.partner.classification.list</field>
+        <field name="model">res.partner.classification</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="code" />
+                <field name="company_id" groups="base.group_multi_company" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_partner_classification_form" model="ir.ui.view">
+        <field name="name">res.partner.classification.form</field>
+        <field name="model">res.partner.classification</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        invisible="active"
+                    />
+                    <group>
+                        <field name="name" />
+                        <field name="code" />
+                        <field name="company_id" groups="base.group_multi_company" />
+                        <field name="active" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_partner_classification_search" model="ir.ui.view">
+        <field name="name">res.partner.classification.search</field>
+        <field name="model">res.partner.classification</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Partner Classifications">
+                <field name="name" />
+                <field name="code" />
+                <field name="company_id" />
+
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active','=',False)]"
+                    help="Show archived"
+                />
+            </search>
+        </field>
+    </record>
+    <record id="action_partner_classification" model="ir.actions.act_window">
+        <field name="name">Partner Classifications</field>
+        <field name="res_model">res.partner.classification</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_partner_classification_search" />
+    </record>
+
+    <menuitem
+        id="res_partner_classification_menu"
+        name="Classifications"
+        parent="contacts.res_partner_menu_config"
+        action="action_partner_classification"
+        sequence="4"
+    />
+</odoo>
