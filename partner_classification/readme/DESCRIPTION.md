@@ -1,0 +1,1 @@
+This module provides the classification structure for res_partner.
