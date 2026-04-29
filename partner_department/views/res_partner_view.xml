@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 ForgeFlow S.L. (https://www.forgeflow.com)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record model="ir.ui.view" id="view_partner_form_department">
+        <field name="name">Partner form with department</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <!-- Smart button with member count, only for department partners -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    type="object"
+                    name="action_view_department_members"
+                    class="oe_stat_button"
+                    icon="fa-users"
+                    invisible="type != 'department'"
+                >
+                    <field
+                        name="department_member_count"
+                        widget="statinfo"
+                        string="Members"
+                    />
+                </button>
+            </xpath>
+            <!-- department_id field for contact-type partners -->
+            <xpath expr="//sheet/group//field[@name='function']" position="after">
+                <field
+                    name="department_id"
+                    invisible="type != 'contact'"
+                    options='{"no_open": False}'
+                />
+            </xpath>
+            <!-- Same field inside the Contacts &amp; Addresses sub-form -->
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='function']"
+                position="after"
+            >
+                <field name="is_company" invisible="True" />
+                <field
+                    name="department_id"
+                    invisible="type != 'contact'"
+                    options='{"no_open": False}'
+                />
+            </xpath>
+            <!-- Members tab, only visible when this partner is a department -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Members" invisible="type != 'department'">
+                    <field name="department_member_ids">
+                        <list>
+                            <field name="name" />
+                            <field name="function" />
+                            <field name="phone" />
+                            <field name="email" />
+                        </list>
+                    </field>
+                </page>
+                <page string="Departments" invisible="not department_ids">
+                    <field name="department_ids">
+                        <list>
+                            <field name="name" />
+                            <field name="function" />
+                            <field name="phone" />
+                            <field name="email" />
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_res_partner_filter_department">
+        <field name="name">Partner search with department</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="department_id" />
+            </field>
+            <filter name="salesperson" position="after">
+                <filter
+                    name="department"
+                    string="Department"
+                    context="{'group_by': 'department_id'}"
+                />
+            </filter>
+        </field>
+    </record>
+</odoo>
