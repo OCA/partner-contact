@@ -12,6 +12,24 @@ class SaleOrder(models.Model):
         compute="_compute_picking_policy", store=True, readonly=False
     )
 
+    @api.model
+    def default_get(self, fields_list):
+        res = super().default_get(fields_list)
+        if "picking_policy" in fields_list:
+            if "default_picking_policy" not in self.env.context:
+                partner_id = self.env.context.get(
+                    "default_partner_id"
+                ) or self.env.context.get("active_id")
+                if partner_id:
+                    partner = self.env["res.partner"].browse(partner_id)
+                    partner_policy = (
+                        partner.commercial_partner_id.picking_policy
+                        or partner.picking_policy
+                    )
+                    if partner_policy:
+                        res["picking_policy"] = partner_policy
+        return res
+
     @api.depends("partner_id")
     def _compute_picking_policy(self):
         for this in self:

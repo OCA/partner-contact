@@ -56,3 +56,34 @@ class TestPartnerShippingPolicy(BaseCommon):
         )
         sale_form.partner_id = self.partner_3
         self.assertEqual(sale_form.picking_policy, self.partner_3.picking_policy)
+
+    def test_03_default_get_picking_policy(self):
+        # Test when default_partner_id is in context
+        res_default_partner = self.sale_order_model.with_context(
+            default_partner_id=self.partner.id
+        ).default_get(["picking_policy"])
+        self.assertEqual(res_default_partner.get("picking_policy"), "one")
+
+        # Test when active_id is in context
+        res_active_id = self.sale_order_model.with_context(
+            active_id=self.partner.id
+        ).default_get(["picking_policy"])
+        self.assertEqual(res_active_id.get("picking_policy"), "one")
+
+        # Test when partner has no picking policy (falls back to default)
+        res_no_policy = self.sale_order_model.with_context(
+            default_partner_id=self.partner_2.id
+        ).default_get(["picking_policy"])
+        self.assertEqual(res_no_policy.get("picking_policy"), "direct")
+
+        # Test when default_picking_policy is explicitly in context
+        res_explicit = self.sale_order_model.with_context(
+            default_partner_id=self.partner.id, default_picking_policy="direct"
+        ).default_get(["picking_policy"])
+        self.assertEqual(res_explicit.get("picking_policy"), "direct")
+
+        # Test when picking_policy is not requested in fields_list
+        res_no_field = self.sale_order_model.with_context(
+            default_partner_id=self.partner.id
+        ).default_get(["name"])
+        self.assertNotIn("picking_policy", res_no_field)
