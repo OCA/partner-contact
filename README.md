@@ -46,7 +46,7 @@ addon | version | maintainers | summary
 [partner_country_state_required](partner_country_state_required/) | 19.0.1.0.0 |  | Partner Country State Required
 [partner_deduplicate_acl](partner_deduplicate_acl/) | 19.0.1.0.0 |  | Contact deduplication with fine-grained permission control
 [partner_deduplicate_by_website](partner_deduplicate_by_website/) | 19.0.1.0.0 |  | Deduplicate Contacts by Website
-[partner_department](partner_department/) | 19.0.1.0.0 |  | Adds department as a partner type
+[partner_department](partner_department/) | 19.0.1.0.1 |  | Adds department as a partner type
 [partner_email_check](partner_email_check/) | 19.0.1.0.0 |  | Validate email address field
 [partner_email_duplicate_warn](partner_email_duplicate_warn/) | 19.0.1.0.0 | <a href='https://github.com/alexis-via'><img src='https://github.com/alexis-via.png' width='32' height='32' style='border-radius:50%;' alt='alexis-via'/></a> | Warning banner on partner form if other partners have the same email
 [partner_fax](partner_fax/) | 19.0.1.0.0 |  | Add fax number on partner
