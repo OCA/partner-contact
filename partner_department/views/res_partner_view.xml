@@ -43,10 +43,14 @@
                     options='{"no_open": False}'
                 />
             </xpath>
-            <!-- Members tab, only visible when this partner is a department -->
-            <xpath expr="//notebook" position="inside">
-                <page string="Members" invisible="type != 'department'">
-                    <field name="department_member_ids">
+            <!-- Exclude department-type partners from the Contacts tab -->
+            <xpath expr="//field[@name='child_ids']" position="attributes">
+                <attribute name="domain">[('type', '!=', 'department')]</attribute>
+            </xpath>
+            <!-- Departments tab, right after the Contacts tab -->
+            <xpath expr="//page[@name='contact_addresses']" position="after">
+                <page string="Departments" invisible="not department_ids">
+                    <field name="department_ids">
                         <list>
                             <field name="name" />
                             <field name="function" />
@@ -55,8 +59,11 @@
                         </list>
                     </field>
                 </page>
-                <page string="Departments" invisible="not department_ids">
-                    <field name="department_ids">
+            </xpath>
+            <!-- Members tab, only visible when this partner is a department -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Members" invisible="type != 'department'">
+                    <field name="department_member_ids">
                         <list>
                             <field name="name" />
                             <field name="function" />
