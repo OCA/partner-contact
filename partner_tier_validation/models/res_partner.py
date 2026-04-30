@@ -34,6 +34,10 @@ class ResPartner(models.Model):
         ]
 
     def write(self, vals):
+        # Only apply tier validation for res.partner, not for inheriting
+        # models like res.users which have a different state field.
+        if self._name != "res.partner":
+            return super().write(vals)
         # Changing certain fields requires a new validation process
         revalidate_fields = self._partner_tier_revalidation_fields(vals)
         if any(x in revalidate_fields for x in vals.keys()):
