@@ -25,7 +25,7 @@ class ResPartner(models.Model):
     partner_invoice_domain = fields.Binary(compute="_compute_partner_domains")
     partner_contact_domain = fields.Binary(compute="_compute_partner_domains")
 
-    @api.depends_context("company")
+    @api.depends_context("allowed_company_ids")
     @api.depends("commercial_partner_id")
     def _compute_partner_domains(self):
         for partner in self:
