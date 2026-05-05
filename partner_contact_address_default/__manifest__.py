@@ -5,7 +5,7 @@
     "name": "Partner Contact address default",
     "summary": "Set a default delivery address, "
     "invoice address and contact for contacts",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "development_status": "Beta",
     "category": "Generic Modules/Base",
     "website": "https://github.com/OCA/partner-contact",
