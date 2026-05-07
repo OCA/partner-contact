@@ -1,0 +1,49 @@
+<odoo>
+    <record id="view_partner_simple_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_simple_form" />
+        <field name="arch" type="xml">
+            <field name="parent_id" position="attributes">
+                <attribute name="invisible">not can_be_child</attribute>
+                <attribute name="domain">[('can_be_parent', '=', True)]</attribute>
+            </field>
+
+            <xpath expr="//field[@id='individual']" position="attributes">
+                <attribute name="invisible">is_company</attribute>
+                <attribute name="required">is_individual</attribute>
+            </xpath>
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="invisible">not is_individual</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="parent_id" position="attributes">
+                <attribute name="invisible">not can_be_child</attribute>
+                <attribute name="domain">[('can_be_parent', '=', True)]</attribute>
+            </field>
+            <xpath expr="//field[@invisible='is_company']" position="attributes">
+                <attribute name="required">is_individual</attribute>
+            </xpath>
+            <!-- Modify inner contact form of child_ids -->
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='name']"
+                position="attributes"
+            >
+                <attribute name="required">is_individual or is_company</attribute>
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='function']"
+                position="attributes"
+            >
+                <attribute name="invisible">not is_individual</attribute>
+            </xpath>
+            <xpath expr="//group[@name='other_info']" position="attributes">
+                <attribute name="invisible">is_address_readonly</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
