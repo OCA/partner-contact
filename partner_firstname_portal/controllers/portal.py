@@ -20,18 +20,14 @@ class PartnerFirstnameCustomerPortal(CustomerPortal):
         result = super()._get_mandatory_fields()
         if not request.env.user.partner_id.is_company:
             result.remove("name")
-
             config_required = get_config_required()
             if config_required in ("firstname", "lastname", "firstname_lastname"):
                 result.extend(config_required.split("_"))
-
         return result
 
     def _get_optional_fields(self):
         result = super()._get_optional_fields()
-
         result += ["is_company", "name", "firstname", "lastname", "_pop_name_"]
-
         return result
 
     @route(["/my/account"], type="http", auth="user", website=True)
@@ -51,7 +47,6 @@ class PartnerFirstnameCustomerPortal(CustomerPortal):
         error, error_message = super().details_form_validate(
             data, partner_creation=partner_creation
         )
-
         if (
             get_config_required() == "no"
             and not data.get("firstname")
@@ -61,5 +56,4 @@ class PartnerFirstnameCustomerPortal(CustomerPortal):
             error["firstname"] = "error"
             error["lastname"] = "error"
             error_message.append(_("Please enter your firstname or your lastname."))
-
         return error, error_message
