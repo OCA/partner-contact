@@ -1,6 +1,7 @@
 # Copyright 2026 ForgeFlow S.L. (https://www.forgeflow.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
+from odoo.exceptions import ValidationError
 from odoo.tests import common
 
 
@@ -44,9 +45,30 @@ class TestPartnerDepartment(common.TransactionCase):
         self.assertEqual(self.contact2.department_id, self.department)
 
     def test_department_member_ids(self):
-        """department_member_ids returns all contacts assigned to the department"""
+        """department_member_ids returns direct contacts (excluding sub-departments)"""
         self.assertIn(self.contact1, self.department.department_member_ids)
         self.assertIn(self.contact2, self.department.department_member_ids)
+
+    def test_department_all_member_ids_includes_sub_dept_members(self):
+        """department_all_member_ids includes members from sub-departments"""
+        sub_dept = self.Partner.create(
+            {
+                "name": "Frontend",
+                "type": "department",
+                "parent_id": self.company.id,
+                "department_id": self.department.id,
+            }
+        )
+        sub_contact = self.Partner.create(
+            {
+                "name": "Sub Contact",
+                "parent_id": self.company.id,
+                "department_id": sub_dept.id,
+            }
+        )
+        self.assertIn(sub_contact, self.department.department_all_member_ids)
+        self.assertNotIn(sub_contact, self.department.department_member_ids)
+        self.assertNotIn(sub_dept, self.department.department_all_member_ids)
 
     def test_search_by_department_type(self):
         """Can search partners filtered by type='department'"""
@@ -83,3 +105,29 @@ class TestPartnerDepartment(common.TransactionCase):
         )
         self.assertIn(contact, dept_sales.department_member_ids)
         self.assertNotIn(contact, self.department.department_member_ids)
+
+    def test_department_ids_contains_departments(self):
+        """department_ids contains only department-type children"""
+        self.assertIn(self.department, self.company.department_ids)
+        self.assertNotIn(self.contact1, self.company.department_ids)
+
+    def test_non_department_cannot_have_department_parent(self):
+        """A non-department partner cannot have a department as its parent_id"""
+        with self.assertRaises(ValidationError):
+            self.Partner.create(
+                {
+                    "name": "Bad Contact",
+                    "parent_id": self.department.id,
+                }
+            )
+
+    def test_department_cannot_have_department_parent(self):
+        """No partner, not even a department, can have a department as its parent_id"""
+        with self.assertRaises(ValidationError):
+            self.Partner.create(
+                {
+                    "name": "Frontend",
+                    "type": "department",
+                    "parent_id": self.department.id,
+                }
+            )
