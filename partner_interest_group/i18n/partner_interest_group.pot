@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -61,11 +61,6 @@ msgstr ""
 #: model:ir.ui.menu,name:partner_interest_group.menu_res_partner_interest_group
 #: model_terms:ir.ui.view,arch_db:partner_interest_group.res_partner_interest_group_form_view
 msgid "Interest Group"
-msgstr ""
-
-#. module: partner_interest_group
-#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group____last_update
-msgid "Last Modified on"
 msgstr ""
 
 #. module: partner_interest_group
