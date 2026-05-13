@@ -6,11 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-01 14:41+0000\n"
-"PO-Revision-Date: 2025-09-01 14:41+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -19,7 +16,7 @@ msgstr ""
 #. module: partner_firstname_portal
 #: model_terms:ir.ui.view,arch_db:partner_firstname_portal.portal_my_details_fields
 msgid "Company"
-msgstr "Personne morale"
+msgstr ""
 
 #. module: partner_firstname_portal
 #: model:ir.model,name:partner_firstname_portal.model_res_partner
@@ -29,20 +26,20 @@ msgstr ""
 #. module: partner_firstname_portal
 #: model_terms:ir.ui.view,arch_db:partner_firstname_portal.portal_my_details_fields
 msgid "First Name"
-msgstr "Prénom"
+msgstr ""
 
 #. module: partner_firstname_portal
 #: model_terms:ir.ui.view,arch_db:partner_firstname_portal.portal_my_details_fields
 msgid "Individual"
-msgstr "Particulier"
+msgstr ""
 
 #. module: partner_firstname_portal
 #: model_terms:ir.ui.view,arch_db:partner_firstname_portal.portal_my_details_fields
 msgid "Last Name"
-msgstr "Nom"
+msgstr ""
 
 #. module: partner_firstname_portal
 #. odoo-python
 #: code:addons/partner_firstname_portal/controllers/portal.py:0
 msgid "Please enter your firstname or your lastname."
-msgstr "Veuillez saisir votre prénom ou votre nom."
+msgstr ""
