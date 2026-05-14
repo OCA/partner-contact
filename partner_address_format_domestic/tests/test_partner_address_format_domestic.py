@@ -1,10 +1,10 @@
 # Copyright 2025 Quartile (https://www.quartile.co)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import TransactionCase
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestPartnerAddressFormatDomestic(TransactionCase):
+class TestPartnerAddressFormatDomestic(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -17,13 +17,15 @@ class TestPartnerAddressFormatDomestic(TransactionCase):
         cls.company_us = cls.env["res.company"].create(
             {"name": "Test Company", "country_id": cls.country_us.id}
         )
+        cls.env = cls.env(
+            context=dict(cls.env.context, allowed_company_ids=[cls.company_us.id])
+        )
         cls.partner_us = cls.env["res.partner"].create(
             {"name": "John Doe", "country_id": cls.country_us.id}
         )
         cls.partner_jp = cls.env["res.partner"].create(
             {"name": "Yamada Taro", "country_id": cls.country_jp.id}
         )
-        cls.env.company = cls.company_us
 
     def test_us_partner_uses_domestic_format(self):
         format_us = self.partner_us._get_address_format()

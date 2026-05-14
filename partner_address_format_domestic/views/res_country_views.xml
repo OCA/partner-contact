@@ -8,12 +8,9 @@
                 <field name="is_relevant_for_company" invisible="1" />
                 <label
                     for="address_format_domestic"
-                    attrs="{'invisible': [('is_relevant_for_company', '=', False)]}"
+                    invisible="not is_relevant_for_company"
                 />
-                <div
-                    class="o_row"
-                    attrs="{'invisible': [('is_relevant_for_company', '=', False)]}"
-                >
+                <div class="o_row" invisible="not is_relevant_for_company">
                     <field
                         name="address_format_domestic"
                         placeholder="Domestic Address format..."

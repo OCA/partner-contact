@@ -11,6 +11,8 @@ class ResCountry(models.Model):
     is_relevant_for_company = fields.Boolean(compute="_compute_is_relevant_for_company")
 
     def _compute_is_relevant_for_company(self):
-        company_countries = self.env["res.company"].search([]).mapped("country_id.id")
+        company_countries = (
+            self.env["res.company"].search([], limit=None).mapped("country_id.id")
+        )
         for country in self:
             country.is_relevant_for_company = country.id in company_countries
