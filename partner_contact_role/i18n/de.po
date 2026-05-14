@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-05-14 21:02+0000\n"
+"Last-Translator: Ben Brich <b.brich@humanilog.org>\n"
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_contact_role
 #: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__active
@@ -23,26 +25,28 @@ msgstr ""
 #: model:ir.model.fields,help:partner_contact_role.field_res_partner_role__active
 msgid "By unchecking the active field, you may hide a role you will not use."
 msgstr ""
+"Wenn Sie das Kontrollkästchen deaktivieren, können Sie eine Rolle "
+"ausblenden, die Sie nicht verwenden werden."
 
 #. module: partner_contact_role
 #: model:ir.model,name:partner_contact_role.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #. module: partner_contact_role
 #: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Erstellt von"
 
 #. module: partner_contact_role
 #: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Erstellt am"
 
 #. module: partner_contact_role
 #: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Anzeigename"
 
 #. module: partner_contact_role
 #: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__id
@@ -52,12 +56,12 @@ msgstr ""
 #. module: partner_contact_role
 #: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Zuletzt aktualisiert von"
 
 #. module: partner_contact_role
 #: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Zuletzt aktualisiert am"
 
 #. module: partner_contact_role
 #: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__name
@@ -68,15 +72,15 @@ msgstr ""
 #: model:ir.actions.act_window,name:partner_contact_role.res_partner_role_act_window
 #: model:ir.model,name:partner_contact_role.model_res_partner_role
 msgid "Partner Role"
-msgstr ""
+msgstr "Partner Rolle"
 
 #. module: partner_contact_role
 #: model:ir.ui.menu,name:partner_contact_role.res_partner_role_menu
 msgid "Partner Roles"
-msgstr ""
+msgstr "Partner Rollen"
 
 #. module: partner_contact_role
 #: model:ir.model.fields,field_description:partner_contact_role.field_res_partner__role_ids
 #: model:ir.model.fields,field_description:partner_contact_role.field_res_users__role_ids
 msgid "Roles"
-msgstr ""
+msgstr "Rollen"
