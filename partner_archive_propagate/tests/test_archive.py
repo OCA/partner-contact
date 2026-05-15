@@ -215,3 +215,29 @@ class TestPartnerArchivePropagate(TransactionCase):
         self.assertIn("Skipped contacts linked to active users", params["message"])
         # for partner B
         self.assertIn(self.B.name, params["message"])
+
+    def test_wizard_deleted_line_not_archived(self):
+        self.B.write({"type": "contact", "active": True, "propagated_from_id": False})
+        self.E.write({"type": "contact", "active": True, "propagated_from_id": False})
+        self.A.write({"active": True})
+        # Simulate user removing B from the list: only E remains in line_ids.
+        Wiz = (
+            self.env["res.partner.archive.propagate.wizard"]
+            .sudo()
+            .create(
+                {
+                    "partner_id": self.A.id,
+                    "line_ids": [(0, 0, {"partner_id": self.E.id})],
+                }
+            )
+        )
+        result = Wiz.action_confirm()
+        self.assertEqual(result, {"type": "ir.actions.act_window_close"})
+        # Organisation must be archived
+        self.assertFalse(self.A.active)
+        # E was in the list and must be archived
+        self.assertFalse(self.E.active)
+        self.assertEqual(self.E.propagated_from_id, self.A)
+        # B was removed from the list and must remain as it was
+        self.assertTrue(self.B.active)
+        self.assertFalse(bool(self.B.propagated_from_id))

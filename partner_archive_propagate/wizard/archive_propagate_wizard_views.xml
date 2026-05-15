@@ -16,7 +16,7 @@
                         Remove any you want to keep active.
                     </div>
                     <field name="line_ids" nolabel="1" colspan="2">
-                        <tree editable="bottom">
+                        <tree create="0">
                             <field name="partner_id" />
                             <field name="name" readonly="1" />
                             <field name="email" readonly="1" />
