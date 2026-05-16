@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[account_partner_company_group](account_partner_company_group/) | 18.0.1.0.0 |  | Adds the possibility to add a company group to a company
+[account_partner_company_group](account_partner_company_group/) | 18.0.2.0.0 |  | Adds the possibility to add a company group to a company
 [animal](animal/) | 18.0.1.0.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Manage animals information
 [base_country_state_translatable](base_country_state_translatable/) | 18.0.1.0.0 |  | Translate Country States
 [base_location](base_location/) | 18.0.1.1.1 | <a href='https://github.com/pedrobaeza'><img src='https://github.com/pedrobaeza.png' width='32' height='32' style='border-radius:50%;' alt='pedrobaeza'/></a> | Enhanced zip/npa management system
@@ -29,7 +29,7 @@ addon | version | maintainers | summary
 [base_location_nuts](base_location_nuts/) | 18.0.1.3.0 | <a href='https://github.com/rafaelbn'><img src='https://github.com/rafaelbn.png' width='32' height='32' style='border-radius:50%;' alt='rafaelbn'/></a> <a href='https://github.com/edlopen'><img src='https://github.com/edlopen.png' width='32' height='32' style='border-radius:50%;' alt='edlopen'/></a> <a href='https://github.com/Andrii9090'><img src='https://github.com/Andrii9090.png' width='32' height='32' style='border-radius:50%;' alt='Andrii9090'/></a> | NUTS Regions
 [base_partner_company_group](base_partner_company_group/) | 18.0.1.1.0 |  | Adds the possibility to add a company group to a company
 [base_partner_sequence](base_partner_sequence/) | 18.0.1.2.0 |  | Sets customer's code from a sequence
-[crm_partner_company_group](crm_partner_company_group/) | 18.0.1.1.0 |  | Adds the possibility to add a company group to a company
+[crm_partner_company_group](crm_partner_company_group/) | 18.0.2.0.0 |  | Adds the possibility to add a company group to a company
 [partner_accreditation](partner_accreditation/) | 18.0.1.0.0 | <a href='https://github.com/victor-champonnois'><img src='https://github.com/victor-champonnois.png' width='32' height='32' style='border-radius:50%;' alt='victor-champonnois'/></a> | Add Accreditation to Partners
 [partner_address_split](partner_address_split/) | 18.0.1.0.0 |  | Add specific helper methods
 [partner_address_street3](partner_address_street3/) | 18.0.1.0.0 |  | Add a third address line on partners
@@ -41,7 +41,6 @@ addon | version | maintainers | summary
 [partner_category_security](partner_category_security/) | 18.0.1.0.0 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> | Partner category security
 [partner_category_type](partner_category_type/) | 18.0.1.0.1 | <a href='https://github.com/JordiMForgeFlow'><img src='https://github.com/JordiMForgeFlow.png' width='32' height='32' style='border-radius:50%;' alt='JordiMForgeFlow'/></a> | Add a selection field 'Type' to classify Contact Tags.
 [partner_company_default](partner_company_default/) | 18.0.1.0.0 |  | Partner Company Default
-[partner_company_group](partner_company_group/) | 18.0.1.0.0 | <a href='https://github.com/luisg123v'><img src='https://github.com/luisg123v.png' width='32' height='32' style='border-radius:50%;' alt='luisg123v'/></a> | Adds the possibility to add a company group to a company
 [partner_company_type](partner_company_type/) | 18.0.1.0.0 |  | Adds a company type to partner that are companies
 [partner_contact_access_link](partner_contact_access_link/) | 18.0.1.0.0 | <a href='https://github.com/Yajo'><img src='https://github.com/Yajo.png' width='32' height='32' style='border-radius:50%;' alt='Yajo'/></a> | Allow to visit the full contact form from a company
 [partner_contact_address_default](partner_contact_address_default/) | 18.0.1.0.1 |  | Set a default delivery address, invoice address and contact for contacts
@@ -111,7 +110,14 @@ addon | version | maintainers | summary
 [partner_vat_unique](partner_vat_unique/) | 18.0.1.0.0 |  | Module to make the VAT number unique for customers and suppliers.
 [purchase_supplier_rank](purchase_supplier_rank/) | 18.0.1.0.0 |  | Update Supplier Rank when creating a Purchase Order
 [sale_customer_rank](sale_customer_rank/) | 18.0.1.0.0 |  | Update Customer Rank when creating a Sale Order
-[sale_partner_company_group](sale_partner_company_group/) | 18.0.1.0.0 |  | Adds the possibility to add a company group to a company
+[sale_partner_company_group](sale_partner_company_group/) | 18.0.2.0.0 |  | Adds the possibility to add a company group to a company
+
+
+Unported addons
+---------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[partner_company_group](partner_company_group/) | 18.0.1.0.0 (unported) | <a href='https://github.com/luisg123v'><img src='https://github.com/luisg123v.png' width='32' height='32' style='border-radius:50%;' alt='luisg123v'/></a> | Adds the possibility to add a company group to a company
 
 [//]: # (end addons)
 
