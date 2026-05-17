@@ -66,6 +66,15 @@ class TestPartnerContactAddressDefault(common.TransactionCase):
         self.assertEqual(res["invoice"], self.partner.id)
         self.assertEqual(res["contact"], self.partner.id)
 
+    def test_contact_address_archived_cache(self):
+        self.partner.partner_delivery_id = self.partner_child_delivery2
+        # Prime the cache by reading the field before archiving the child
+        _ = self.partner.partner_delivery_id.id
+        self.partner_child_delivery2.write({"active": False})
+        res = self.partner.address_get(["delivery"])
+        # Ensure no stale cached id from the archived child is returned
+        self.assertEqual(res["delivery"], self.partner_child_delivery1.id)
+
     def test_partner_domains(self):
         self.partner._compute_partner_domains()
         expected_base = [("id", "child_of", self.partner.commercial_partner_id.ids)]
