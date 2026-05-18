@@ -6,25 +6,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-10-09 07:40+0000\n"
-"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
+"PO-Revision-Date: 2026-05-18 18:21+0000\n"
+"Last-Translator: Ed-Spain <eduamoros@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_contact_role
 #: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__active
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 #. module: partner_contact_role
 #: model:ir.model.fields,help:partner_contact_role.field_res_partner_role__active
 msgid "By unchecking the active field, you may hide a role you will not use."
-msgstr ""
+msgstr "Desmarcando el campo activo, puede ocultar un rol que no usará."
 
 #. module: partner_contact_role
 #: model:ir.model,name:partner_contact_role.model_res_partner
