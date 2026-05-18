@@ -7,13 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-21 11:20+0000\n"
-"PO-Revision-Date: 2025-07-21 11:20+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2026-05-18 18:21+0000\n"
+"Last-Translator: Ed-Spain <eduamoros@gmail.com>\n"
 "Language-Team: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_supplier_ref_sequence
 #: model:ir.model,name:partner_supplier_ref_sequence.model_res_partner
@@ -23,8 +25,9 @@ msgstr "Contacto"
 #. module: partner_supplier_ref_sequence
 #. odoo-python
 #: code:addons/partner_supplier_ref_sequence/models/res_partner.py:0
+#, fuzzy
 msgid "Either field values or an id must be provided."
-msgstr ""
+msgstr "Debe proveer algún valor o un ID."
 
 #. module: partner_supplier_ref_sequence
 #: model:ir.model.fields,field_description:partner_supplier_ref_sequence.field_res_partner__supplier_ref
