@@ -7,24 +7,25 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-11 07:35+0000\n"
-"PO-Revision-Date: 2024-03-11 07:35+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2026-05-18 18:21+0000\n"
+"Last-Translator: Ed-Spain <eduamoros@gmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_contact_address_default
 #: model:ir.model,name:partner_contact_address_default.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Empresas"
 
 #. module: partner_contact_address_default
 #: model:ir.model,name:partner_contact_address_default.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Ajustes"
 
 #. module: partner_contact_address_default
 #: model:ir.model,name:partner_contact_address_default.model_res_partner
@@ -35,7 +36,7 @@ msgstr "Contacto"
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_company__contact_address_default_allow_all_partners
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_config_settings__contact_address_default_allow_all_partners
 msgid "Contact Address Default Allow All Partners"
-msgstr ""
+msgstr "Dirección de Contacto Predeterminada: Permitir Todos los Contactos"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_contact_id
@@ -54,6 +55,9 @@ msgid ""
 "If enabled, the default delivery, invoice, and contact addresses are not "
 "limited to the partner’s child contacts—you can select any contact."
 msgstr ""
+"Si está activado, las direcciones de entrega, factura y contacto "
+"predeterminadas no se limitan a los contactos secundarios del contacto; "
+"puede seleccionar cualquier contacto."
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_invoice_id
@@ -65,19 +69,20 @@ msgstr "Dirección de facturación"
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_contact_domain
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_contact_domain
 msgid "Partner Contact Domain"
-msgstr ""
+msgstr "Dominio de Contacto del Contacto"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_delivery_domain
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_delivery_domain
 msgid "Partner Delivery Domain"
-msgstr ""
+msgstr "Dominio de Dirección de Entrega"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_invoice_domain
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_invoice_domain
+#, fuzzy
 msgid "Partner Invoice Domain"
-msgstr ""
+msgstr "Dominio de facturación del contacto"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_delivery_id
@@ -92,6 +97,10 @@ msgid ""
 "                            If you keep these fields empty, Odoo's default "
 "behavior will apply."
 msgstr ""
+"Puede forzar la dirección de contacto, entrega y factura para este "
+"contacto.\n"
+"Si deja estos campos vacíos, se aplicará el comportamiento predeterminado de "
+"Odoo."
 
 #~ msgid "If you keep empty this fields the Odoo's behavior will be normal"
 #~ msgstr ""
