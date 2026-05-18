@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2026-05-18 18:21+0000\n"
+"PO-Revision-Date: 2026-05-18 18:23+0000\n"
 "Last-Translator: Ed-Spain <eduamoros@gmail.com>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
@@ -473,6 +473,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Estado basado en actividades\n"
+"Vencido: La fecha de vencimiento ya ha pasado\n"
+"Hoy: La actividad vence hoy\n"
+"Planificado: Actividades futuras."
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__name
@@ -498,6 +502,9 @@ msgid ""
 "write via the %(field_name)s field is not possible. In order to fix this, "
 "please use the IDs tab."
 msgstr ""
+"Este %(record_name)s tiene múltiples ID de este tipo (%(category_code)s), "
+"por lo que no es posible escribir a través del campo %(field_name)s. Para "
+"solucionar este problema, utilice la pestaña de IDs."
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
@@ -506,8 +513,9 @@ msgstr "A renovar"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_exception_decoration
+#, fuzzy
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo de actividad de la excepción en el registro."
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
@@ -526,13 +534,15 @@ msgstr "Fecha de inicio del período de validación."
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__website_message_ids
+#, fuzzy
 msgid "Website Messages"
-msgstr ""
+msgstr "Mensajes de la web"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__website_message_ids
+#, fuzzy
 msgid "Website communication history"
-msgstr ""
+msgstr "Historial de comunicación de la web"
 
 #~ msgid ""
 #~ "# Use failed = True to specify that the id number is not valid.\n"
