@@ -16,6 +16,7 @@ class ResPartner(models.Model):
         context = self.env.context
         if (
             context.get("creating_from_company")
+            or context.get("install_mode")
             or config["test_enable"]
             and not context.get("test_partner_company_default")
         ):
