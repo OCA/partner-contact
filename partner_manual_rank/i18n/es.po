@@ -7,34 +7,38 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-11 09:11+0000\n"
-"PO-Revision-Date: 2023-01-11 09:11+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2026-05-18 18:21+0000\n"
+"Last-Translator: Ed-Spain <eduamoros@gmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_manual_rank
 #: model:ir.model.fields,field_description:partner_manual_rank.field_res_config_settings__partner_rank_auto
 msgid "Automatic Partner Rank Management"
-msgstr ""
+msgstr "Gestión Automática de Rango de Contacto"
 
 #. module: partner_manual_rank
 #: model_terms:ir.ui.view,arch_db:partner_manual_rank.res_config_settings_view_form
 msgid "Automatically rank partners as customers or suppliers"
-msgstr ""
+msgstr "Clasificar automáticamente los contactos como clientes o proveedores"
 
 #. module: partner_manual_rank
 #: model_terms:ir.ui.view,arch_db:partner_manual_rank.res_config_settings_view_form
 msgid "Automatically rank partners when sale or purchase invoices are posted"
 msgstr ""
+"Clasificar automáticamente los contactos cuando se publican facturas de "
+"venta o compra"
 
 #. module: partner_manual_rank
 #: model:ir.model,name:partner_manual_rank.model_res_config_settings
+#, fuzzy
 msgid "Config Settings"
-msgstr ""
+msgstr "Ajustes de la configuración"
 
 #. module: partner_manual_rank
 #: model:ir.model,name:partner_manual_rank.model_res_partner
