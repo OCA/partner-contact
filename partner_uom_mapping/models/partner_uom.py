@@ -5,7 +5,6 @@ from odoo import api, fields, models
 
 
 class PartnerUom(models.Model):
-
     _name = "partner.uom"
     _description = "Partner Uom"
 
@@ -29,25 +28,14 @@ class PartnerUom(models.Model):
     )
 
     @api.depends("partner_id.name", "partner_uom", "uom_id.name")
-    def name_get(self):
-        return [
-            (
-                uom.id,
-                uom.partner_id.name
-                + " ("
-                + uom.partner_uom
-                + " > "
-                + uom.uom_id.name
-                + ")",
+    def _compute_display_name(self):
+        for rec in self:
+            rec.display_name = (
+                f"{rec.partner_id.name} ({rec.partner_uom} > {rec.uom_id.name})"
             )
-            for uom in self
-        ]
 
-    _sql_constraints = [
-        (
-            "unique_partner_uom",
-            "EXCLUDE (partner_id WITH =, uom_id WITH =, partner_uom WITH =)"
-            "WHERE (active=True)",
-            "Only one active partner unit of measure with the same value can be active.",
-        ),
-    ]
+    _unique_partner_uom = models.Constraint(
+        "EXCLUDE (partner_id WITH =, uom_id WITH =, partner_uom WITH =) "
+        "WHERE (active=True)",
+        "Only one active partner unit of measure with the same value can be active.",
+    )

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright 2022 ACSONE SA/NV
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
-
     <record model="ir.ui.view" id="partner_uom_form_view">
         <field name="name">partner.uom.form (in partner_uom_mapping)</field>
         <field name="model">partner.uom</field>
@@ -15,7 +12,6 @@
                         <field name="partner_uom" />
                     </group>
                 </sheet>
-                <div class="oe_chatter" />
             </form>
         </field>
     </record>
@@ -28,7 +24,12 @@
                 <field name="partner_id" />
                 <field name="uom_id" />
                 <field name="partner_uom" />
-                <group expand="0" string="Group By">
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active','=',False)]"
+                />
+                <group>
                     <filter
                         string="Partner"
                         name="group_by_partner"
@@ -44,19 +45,19 @@
         <field name="name">partner.uom.tree (in partner_uom_mapping)</field>
         <field name="model">partner.uom</field>
         <field name="arch" type="xml">
-            <tree editable="top" decoration-muted="active == False">
+            <list editable="top" decoration-muted="active == False">
                 <field name="partner_id" />
                 <field name="uom_id" />
                 <field name="partner_uom" />
                 <field name="active" invisible="1" />
-            </tree>
+            </list>
         </field>
     </record>
 
     <record model="ir.actions.act_window" id="partner_uom_act_window">
         <field name="name">Partner Units of Measure</field>
         <field name="res_model">partner.uom</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="domain">[]</field>
         <field name="context">{'search_default_group_by_partner': 1}</field>
     </record>
@@ -65,8 +66,7 @@
         <field name="name">Partner Uom</field>
         <field name="parent_id" ref="contacts.res_partner_menu_config" />
         <field name="action" ref="partner_uom_act_window" />
-        <field name="groups_id" eval="[(4, ref('group_partner_uom'))]" />
+        <field name="group_ids" eval="[Command.link(ref('group_partner_uom'))]" />
         <field name="sequence" eval="16" />
     </record>
-
 </odoo>
