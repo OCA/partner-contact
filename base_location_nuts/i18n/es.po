@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-24 03:46+0000\n"
-"PO-Revision-Date: 2023-10-12 13:36+0000\n"
-"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
+"PO-Revision-Date: 2026-05-18 18:21+0000\n"
+"Last-Translator: Ed-Spain <eduamoros@gmail.com>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__allowed_nut_ids
@@ -89,22 +89,23 @@ msgstr "Importar"
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
 msgid "Import NUTS 2013 from ShowVoc"
-msgstr ""
+msgstr "Importar NUTS 2013 desde ShowVoc"
 
 #. module: base_location_nuts
 #: model:ir.ui.menu,name:base_location_nuts.nuts_import_menu
 msgid "Import NUTS 2024"
-msgstr ""
+msgstr "Importar NUTS 2024"
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.nuts_import_action
 msgid "Import NUTS 2024 from SHOWVOC"
-msgstr ""
+msgstr "Importar NUTS 2024 desde SHOWVOC"
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_nuts_import
+#, fuzzy
 msgid "Import NUTS items from European ShowVoc service"
-msgstr ""
+msgstr "Importar elementos NUTS desde el servicio europeo ShowVoc"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__write_uid
@@ -202,7 +203,7 @@ msgstr "Ruta parental"
 #. odoo-python
 #: code:addons/base_location_nuts/wizard/nuts_import.py:0
 msgid "Partner NUTS by EU"
-msgstr ""
+msgstr "NUTS del Contacto por la UE"
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
@@ -231,6 +232,13 @@ msgid ""
 "                Update or deletion is prevented for NUTS entries with the "
 "flag 'Not updatable'."
 msgstr ""
+"Este asistente descargará la última versión de NUTS 2024 desde el servicio "
+"europeo ShowVoc. Actualizando o creando nuevas entradas NUTS si no se "
+"encuentran ya en el sistema, y ELIMINANDO LAS ENTRADAS FALTANTES del nuevo "
+"archivo descargado.\n"
+"\n"
+"La actualización o eliminación está impedida para las entradas NUTS con el "
+"indicador 'No actualizable'."
 
 #. module: base_location_nuts
 #: model_terms:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
@@ -239,6 +247,9 @@ msgid ""
 "        in Odoo database in:\n"
 "        Contacts &gt; Configuration &gt; Localization &gt; Import NUTS 2024"
 msgstr ""
+"Debe hacer clic en el asistente de importación para poblar los elementos "
+"NUTS en la base de datos de Odoo en:\n"
+"Contactos &gt; Configuración &gt; Localización &gt; Importar NUTS 2024"
 
 #~ msgid "Current Country"
 #~ msgstr "País actual"
