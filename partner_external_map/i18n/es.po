@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-13 03:42+0000\n"
-"PO-Revision-Date: 2023-08-31 08:13+0000\n"
-"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
+"PO-Revision-Date: 2026-05-18 18:21+0000\n"
+"Last-Translator: Ed-Spain <eduamoros@gmail.com>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__active
@@ -38,8 +38,9 @@ msgstr "Archivado"
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_config_settings
+#, fuzzy
 msgid "Config Settings"
-msgstr ""
+msgstr "Ajustes de la configuración"
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_partner
@@ -59,7 +60,7 @@ msgstr "Creado en"
 #. module: partner_external_map
 #: model_terms:ir.ui.view,arch_db:partner_external_map.res_config_settings_view_form
 msgid "Default External Map"
-msgstr ""
+msgstr "Mapa Externo Predeterminado"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__display_name
@@ -226,7 +227,7 @@ msgstr "Dirección de Origen para el Mapa de Ruta"
 #. module: partner_external_map
 #: model_terms:ir.ui.view,arch_db:partner_external_map.res_config_settings_view_form
 msgid "System wide default map providers."
-msgstr ""
+msgstr "Proveedores de mapas predeterminados del sistema."
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__lat_lon_url
