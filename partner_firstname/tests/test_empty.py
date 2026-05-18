@@ -72,3 +72,42 @@ class AddressCase(TransactionCase):
         self.original = self.env["res.partner"].create(
             {"is_company": False, "type": "delivery", "lastname": "", "firstname": ""}
         )
+
+
+class EmptyNameWithEmailCase(TransactionCase):
+    """A partner created with an empty name but an email uses the email.
+
+    The inverse split returns no name parts when ``name`` is empty. When an
+    email is available, the email becomes the lastname. Records with neither
+    name nor email keep raising ``EmptyNamesError``.
+    """
+
+    def test_create_empty_name_with_email(self):
+        """Empty ``name`` plus an ``email`` falls back to the email."""
+        partner = self.env["res.partner"].create(
+            {"type": "contact", "name": "", "email": "only.email@example.com"}
+        )
+        self.assertTrue(partner.exists())
+        self.assertEqual(partner.lastname, "only.email@example.com")
+
+    def test_create_empty_name_no_email(self):
+        """Empty ``name`` and no ``email`` still raises."""
+        with self.assertRaises(ex.EmptyNamesError):
+            self.env["res.partner"].create({"type": "contact", "name": ""})
+
+    def test_name_create_bare_email(self):
+        """``name_create`` with a bare email uses the email (regression)."""
+        partner_id, _display = self.env["res.partner"].name_create("user@example.com")
+        partner = self.env["res.partner"].browse(partner_id)
+        self.assertEqual(partner.email, "user@example.com")
+        self.assertEqual(partner.lastname, "user@example.com")
+
+    def test_name_create_formatted_email(self):
+        """``name_create`` with ``Name <email>`` keeps the split (regression)."""
+        partner_id, _display = self.env["res.partner"].name_create(
+            "Mario Rossi <mario.rossi@example.com>"
+        )
+        partner = self.env["res.partner"].browse(partner_id)
+        self.assertEqual(partner.email, "mario.rossi@example.com")
+        self.assertEqual(partner.firstname, "Mario")
+        self.assertEqual(partner.lastname, "Rossi")

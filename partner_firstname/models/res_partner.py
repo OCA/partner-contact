@@ -70,6 +70,17 @@ class ResPartner(models.Model):
                     inverted = self._get_inverse_name(
                         self._get_whitespace_cleaned_name(name), is_company
                     )
+                    # Fall back to the email when the split yields no usable
+                    # parts but an email is available (e.g. a partner created
+                    # with an empty ``name`` and an ``email``). Normal input
+                    # keeps the inverse split, and ``_check_name`` still
+                    # rejects records with neither name nor email.
+                    if (
+                        not inverted.get("lastname")
+                        and not inverted.get("firstname")
+                        and vals.get("email")
+                    ):
+                        inverted["lastname"] = vals["email"]
                     for key, value in inverted.items():
                         if not vals.get(key) or partner_context.get("copy"):
                             vals[key] = value
