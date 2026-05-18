@@ -2,7 +2,6 @@
 <!-- Copyright 2022 ACSONE SA/NV
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
-
     <record model="ir.model.access" id="partner_uom_read">
         <field name="name">partner.uom Read</field>
         <field name="model_id" ref="model_partner_uom" />
@@ -29,9 +28,8 @@
         <field name="name">Partner UOM</field>
         <field name="comment">Allow to see partner uoms</field>
         <field
-            name="users"
-            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+            name="user_ids"
+            eval="[Command.link(ref('base.user_root')), Command.link(ref('base.user_admin'))]"
         />
     </record>
-
 </odoo>

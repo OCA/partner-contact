@@ -2,11 +2,11 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from psycopg2 import IntegrityError
 
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 from odoo.tools.misc import mute_logger
 
 
-class TestPartnerUom(SavepointCase):
+class TestPartnerUom(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -26,9 +26,7 @@ class TestPartnerUom(SavepointCase):
         )
 
     def test_partner_uom(self):
-        self.assertEqual(
-            self.partner_uom.display_name, str("A good partner (Uni > Units)")
-        )
+        self.assertEqual(self.partner_uom.display_name, "A good partner (Uni > Units)")
 
     @mute_logger("odoo.sql_db")
     def test_partner_duplicate_uom(self):
@@ -44,7 +42,7 @@ class TestPartnerUom(SavepointCase):
     @mute_logger("odoo.sql_db")
     def test_partner_duplicate(self):
         self.partner_uom.active = False
-        self.partner_uom.flush()
+        self.partner_uom.flush_recordset()
         self.env["partner.uom"].create(
             {
                 "uom_id": self.env.ref("uom.product_uom_unit").id,
