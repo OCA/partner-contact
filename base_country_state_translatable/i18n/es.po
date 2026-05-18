@@ -9,21 +9,24 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:48+0000\n"
-"PO-Revision-Date: 2021-07-08 14:48+0000\n"
-"Last-Translator: Esteka Digital <social@esteka.com>\n"
+"PO-Revision-Date: 2026-05-18 18:21+0000\n"
+"Last-Translator: Ed-Spain <eduamoros@gmail.com>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.2\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: base_country_state_translatable
 #: model:ir.model.fields,help:base_country_state_translatable.field_res_country_state__name
+#, fuzzy
 msgid ""
 "Administrative divisions of a country. E.g. Fed. State, Department, Canton"
 msgstr ""
+"Divisiones administrativas de un país. Ej. Estado Federal, Departamento, "
+"Cantón"
 
 #. module: base_country_state_translatable
 #: model:ir.model,name:base_country_state_translatable.model_res_country_state
