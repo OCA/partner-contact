@@ -22,3 +22,5 @@
   - Simone Rubino \<<simone.rubino@aion-tech.it>\>
 - [Digiteasy](https://www.digiteasy.at/)
   - Alvaro Estebanez
+- Stesi Consulting srl \<<https://stesi.consulting/>\>:
+  - Michele Di Croce \<<dicroce.m@stesi.consulting>\>
