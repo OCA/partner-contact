@@ -84,3 +84,105 @@ class TestResPartner(common.TransactionCase):
         self.partner.social_security = "Test"
         partner = self.env["res.partner"].search([("social_security", "=", "Test")])
         self.assertEqual(partner, self.partner)
+
+    def test_compute_identification_skips_inactive(self):
+        """It should skip inactive/expired IDs when computing."""
+        category_ssn = self.env["res.partner.id_category"].create(
+            {"code": "SSN", "name": "SSN"}
+        )
+        self.env["res.partner.id_number"].create(
+            {
+                "name": "Expired-SSN",
+                "category_id": category_ssn.id,
+                "partner_id": self.partner.id,
+                "active": False,
+                "status": "close",
+            }
+        )
+        active_id = self.env["res.partner.id_number"].create(
+            {
+                "name": "Active-SSN",
+                "category_id": category_ssn.id,
+                "partner_id": self.partner.id,
+            }
+        )
+        self.partner._compute_identification("social_security", "SSN")
+        self.assertEqual(self.partner.social_security, active_id.name)
+
+    def test_inverse_identification_creates_new_when_expired(self):
+        """It should create a new ID when the existing one is expired."""
+        category_ssn = self.env["res.partner.id_category"].create(
+            {"code": "SSN", "name": "SSN"}
+        )
+        self.env["res.partner.id_number"].create(
+            {
+                "name": "Old-SSN",
+                "category_id": category_ssn.id,
+                "partner_id": self.partner.id,
+                "active": False,
+                "status": "close",
+            }
+        )
+        self.partner.social_security = "New-SSN"
+        active_ids = self.partner.id_numbers.filtered(
+            lambda r: r.category_id.code == "SSN" and r.active and r.status != "close"
+        )
+        self.assertEqual(len(active_ids), 1)
+        self.assertEqual(active_ids.name, "New-SSN")
+        old_ids = (
+            self.env["res.partner.id_number"]
+            .with_context(active_test=False)
+            .search(
+                [
+                    ("category_id.code", "=", "SSN"),
+                    ("partner_id", "=", self.partner.id),
+                    ("status", "=", "close"),
+                ]
+            )
+        )
+        self.assertEqual(len(old_ids), 1)
+        self.assertEqual(old_ids.name, "Old-SSN")
+
+    def test_inverse_identification_no_exception_when_one_active(self):
+        """It should not raise when multiple IDs exist but only one active."""
+        category_ssn = self.env["res.partner.id_category"].create(
+            {"code": "SSN", "name": "SSN"}
+        )
+        self.env["res.partner.id_number"].create(
+            {
+                "name": "Expired-SSN-1",
+                "category_id": category_ssn.id,
+                "partner_id": self.partner.id,
+                "active": False,
+                "status": "close",
+            }
+        )
+        self.env["res.partner.id_number"].create(
+            {
+                "name": "Active-SSN",
+                "category_id": category_ssn.id,
+                "partner_id": self.partner.id,
+            }
+        )
+        # Should not raise ValidationError
+        self.partner.social_security = "Updated-SSN"
+        self.assertEqual(self.partner.social_security, "Updated-SSN")
+
+    def test_search_identification_excludes_inactive(self):
+        """It should not return partners whose only matching ID is expired."""
+        category_ssn = self.env["res.partner.id_category"].create(
+            {"code": "SSN", "name": "SSN"}
+        )
+        self.env["res.partner.id_number"].create(
+            {
+                "name": "Unique-Expired",
+                "category_id": category_ssn.id,
+                "partner_id": self.partner.id,
+                "active": False,
+                "status": "close",
+            }
+        )
+        result = self.env["res.partner"].search(
+            [("social_security", "=", "Unique-Expired")]
+        )
+        self.assertFalse(result)
