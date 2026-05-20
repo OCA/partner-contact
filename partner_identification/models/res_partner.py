@@ -19,6 +19,14 @@ class ResPartner(models.Model):
         string="Identification Numbers",
     )
 
+    def _get_active_id_numbers(self, category_code):
+        """Return active (non-expired) ID numbers for the given category."""
+        return self.id_numbers.filtered(
+            lambda r: r.category_id.code == category_code
+            and r.active
+            and r.status != "close"
+        )
+
     @api.depends("id_numbers")
     def _compute_identification(self, field_name, category_code):
         """Compute a field that indicates a certain ID type.
@@ -50,9 +58,7 @@ class ResPartner(models.Model):
             category_code (str): Category code of the Identification type.
         """
         for record in self:
-            id_numbers = record.id_numbers.filtered(
-                lambda r: r.category_id.code == category_code
-            )
+            id_numbers = record._get_active_id_numbers(category_code)
             if not id_numbers:
                 # As this is used as a compute method
                 # we need to assign something
@@ -94,9 +100,7 @@ class ResPartner(models.Model):
             category_code (str): Category code of the Identification type.
         """
         for record in self:
-            id_number = record.id_numbers.filtered(
-                lambda r: r.category_id.code == category_code
-            )
+            id_number = record._get_active_id_numbers(category_code)
             record_len = len(id_number)
             # Record for category is not existent.
             if record_len == 0:
@@ -164,6 +168,11 @@ class ResPartner(models.Model):
             list: Domain to search with.
         """
         id_numbers = self.env["res.partner.id_number"].search(
-            [("name", operator, value), ("category_id.code", "=", category_code)]
+            [
+                ("name", operator, value),
+                ("category_id.code", "=", category_code),
+                ("active", "=", True),
+                ("status", "!=", "close"),
+            ]
         )
         return [("id_numbers.id", "in", id_numbers.ids)]
