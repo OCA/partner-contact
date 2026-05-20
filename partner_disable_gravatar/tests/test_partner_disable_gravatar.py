@@ -4,8 +4,18 @@ from odoo.tests import Form, common
 
 
 class TestPartnerDisableGravatar(common.TransactionCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+
     def test_disable_gravatar(self):
         with Form(self.env["res.partner"]) as f1:
             f1.name = "Support Gravatar"
             f1.email = "support@gravatar.com"
         self.assertFalse(f1.image_1920)
+
+    def test_get_gravatar_image_returns_false(self):
+        self.assertFalse(
+            self.env["res.partner"]._get_gravatar_image("anyone@example.com")
+        )
