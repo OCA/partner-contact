@@ -6,14 +6,18 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <xpath
-                expr="//notebook/page/field[@name='child_ids']/form/sheet//field[@name='mobile']"
+                expr="//notebook/page/field[@name='child_ids']/form/sheet//field[@name='phone']/parent::div"
                 position="after"
             >
-                <field
-                    name="category_id"
-                    widget="many2many_tags"
-                    options="{'color_field': 'color'}"
-                />
+                <div class="d-flex align-items-baseline">
+                    <i class="fa fa-fw me-1 fa-tags text-primary" title="Tags" />
+                    <field
+                        name="category_id"
+                        widget="many2many_tags"
+                        options="{'color_field': 'color'}"
+                        class="w-100"
+                    />
+                </div>
             </xpath>
         </field>
     </record>
