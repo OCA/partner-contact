@@ -5,19 +5,21 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <notebook position="before">
-                <field name="properties_company_id" invisible="1" />
-                <field
-                    name="properties_type_company"
-                    columns="2"
-                    invisible="not is_company"
-                />
-                <field
-                    name="properties_type_person"
-                    columns="2"
-                    invisible="is_company"
-                />
-            </notebook>
+            <xpath expr="//notebook" position="inside">
+                <page name="properties_by_type" string="Properties by Type">
+                    <field name="properties_company_id" invisible="1" />
+                    <field
+                        name="properties_type_company"
+                        columns="2"
+                        invisible="not is_company"
+                    />
+                    <field
+                        name="properties_type_person"
+                        columns="2"
+                        invisible="is_company"
+                    />
+                </page>
+            </xpath>
         </field>
     </record>
     <record id="res_partner_kanban_view" model="ir.ui.view">

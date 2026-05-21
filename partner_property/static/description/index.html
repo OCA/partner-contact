@@ -387,14 +387,94 @@ the person/company-type split — both unavailable in core.</p>
 <p><strong>Table of contents</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#usage" id="toc-entry-1">Usage</a></li>
-<li><a class="reference internal" href="#known-issues-roadmap" id="toc-entry-2">Known issues / Roadmap</a></li>
-<li><a class="reference internal" href="#bug-tracker" id="toc-entry-3">Bug Tracker</a></li>
-<li><a class="reference internal" href="#credits" id="toc-entry-4">Credits</a></li>
+<li><a class="reference internal" href="#use-cases-context" id="toc-entry-1">Use Cases / Context</a></li>
 </ul>
 </div>
+<div class="section" id="use-cases-context">
+<h3><a class="toc-backref" href="#toc-entry-1">Use Cases / Context</a></h3>
+<p>Odoo 19.0 introduced a single global <tt class="docutils literal">properties</tt> field on
+<tt class="docutils literal">res.partner</tt> via the <tt class="docutils literal">properties.base.definition.mixin</tt>. With core
+alone, every partner record — whether an individual or a company — draws
+from one shared definition list defined per <tt class="docutils literal">res.partner.category</tt> or
+similar parent context.</p>
+<p>This module remains relevant on 19.0 because it provides two
+capabilities the core mixin doesn’t:</p>
+</div>
+</div>
+<div class="section" id="person-company-type-split">
+<h2>1. Person/Company type split</h2>
+<p><tt class="docutils literal">res.partner</tt> records carry an <tt class="docutils literal">is_company</tt> flag that distinguishes
+companies from individuals. The two record subtypes typically need
+different property schemas — companies care about VAT registration,
+industry classification, ownership structure; individuals care about
+preferred contact channel, language, GDPR-consent state, marketing
+opt-ins, role within their company.</p>
+<p>This module exposes <strong>two separate ``Properties`` fields</strong> on
+<tt class="docutils literal">res.partner</tt> — <tt class="docutils literal">properties_type_company</tt> and
+<tt class="docutils literal">properties_type_person</tt> — with independent definition schemas. The
+form view shows the right one based on <tt class="docutils literal">is_company</tt>. Without this
+module, a multi-purpose property like “VAT exempt reason” applied to
+companies would also appear (uselessly) on every individual record, and
+a property like “preferred pronouns” would appear on every company
+record.</p>
+</div>
+<div class="section" id="per-company-definition-keying">
+<h2>2. Per-company definition keying</h2>
+<p>The two property definition schemas live on <tt class="docutils literal">res.company</tt>
+(<tt class="docutils literal">partner_properties_definition_company</tt> and
+<tt class="docutils literal">partner_properties_definition_person</tt>), not on a global
+<tt class="docutils literal">ir.config_parameter</tt>. In a multi-company tenant, each company can
+define its own set of partner properties without leaking schema changes
+across sibling companies.</p>
+<p>The form view resolves the active definition off <tt class="docutils literal">env.company</tt> at
+render time, so a user switching companies sees the property schema that
+company has configured. Without this module, the core <tt class="docutils literal">properties</tt>
+field falls back to a single schema for the whole database.</p>
+<p><strong>Configuration today:</strong> the definition fields exist on <tt class="docutils literal">res.company</tt>
+at the model layer but the stock company form view does not surface
+them. Definitions are configured via Developer mode (Settings →
+Technical → Models → Companies → field debug) or programmatically
+(XML-RPC / data files). Wiring a UI section on the company form is a
+reasonable follow-up <tt class="docutils literal">[IMP]</tt>.</p>
+</div>
+<div class="section" id="when-to-install-this-module">
+<h2>When to install this module</h2>
+<ul class="simple">
+<li>You distinguish between company-typed and individual-typed partner
+records and want different property schemas for each.</li>
+<li>You run multiple companies in one Odoo database and want per-company
+property schemas on partners.</li>
+<li>Either of the above; both reinforce the case.</li>
+</ul>
+</div>
+<div class="section" id="when-the-core-mixin-alone-is-sufficient">
+<h2>When the core mixin alone is sufficient</h2>
+<ul class="simple">
+<li>Single-company database, and you don’t need to distinguish company vs
+individual property schemas. The core <tt class="docutils literal">properties</tt> field on
+<tt class="docutils literal">res.partner</tt> covers it with less surface area.</li>
+</ul>
+</div>
+<div class="section" id="field-visibility">
+<h2>Field visibility</h2>
+<p>The view inheritance adds <strong>only</strong> this module’s two fields to the
+res.partner form, conditioned on <tt class="docutils literal">is_company</tt>:</p>
+<ul class="simple">
+<li><tt class="docutils literal">properties_type_company</tt> — rendered when <tt class="docutils literal">is_company</tt> is
+<tt class="docutils literal">True</tt>.</li>
+<li><tt class="docutils literal">properties_type_person</tt> — rendered when <tt class="docutils literal">is_company</tt> is
+<tt class="docutils literal">False</tt>.</li>
+</ul>
+<p>The core <tt class="docutils literal">properties</tt> field exists on the model (inherited from the
+mixin) but <strong>is not added to the form view by this module</strong>. In practice
+that means a partner records sees one Properties widget at a time — the
+company schema or the person schema, depending on its <tt class="docutils literal">is_company</tt>
+flag — with no visible overlap with the core mixin’s global field. If a
+deployment wants the core surface in addition, they can add
+<tt class="docutils literal">&lt;field <span class="pre">name=&quot;properties&quot;</span> <span class="pre">widget=&quot;properties&quot;/&gt;</span></tt> via a per-database
+view override.</p>
 <div class="section" id="usage">
-<h3><a class="toc-backref" href="#toc-entry-1">Usage</a></h3>
+<h3>Usage</h3>
 <p>Add property fields:</p>
 <ol class="arabic simple">
 <li>Go to Contacts and create or edit any record.</li>
@@ -412,7 +492,7 @@ Delete ‣ Delete.</li>
 </ol>
 </div>
 <div class="section" id="known-issues-roadmap">
-<h3><a class="toc-backref" href="#toc-entry-2">Known issues / Roadmap</a></h3>
+<h3>Known issues / Roadmap</h3>
 <ul class="simple">
 <li>The properties are shared between all the companies accessing the
 contact, as the properties fields in the ORM are very limited in
@@ -423,7 +503,7 @@ for not breaking the definition or losing data.</li>
 </ul>
 </div>
 <div class="section" id="bug-tracker">
-<h3><a class="toc-backref" href="#toc-entry-3">Bug Tracker</a></h3>
+<h3>Bug Tracker</h3>
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/partner-contact/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
@@ -431,7 +511,7 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
-<h3><a class="toc-backref" href="#toc-entry-4">Credits</a></h3>
+<h3>Credits</h3>
 </div>
 </div>
 <div class="section" id="authors">

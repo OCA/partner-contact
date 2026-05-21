@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
-from odoo.osv.expression import FALSE_DOMAIN, TRUE_DOMAIN
+from odoo.fields import Domain
 
 
 class ResCompany(models.Model):
@@ -60,20 +60,26 @@ class ResCompany(models.Model):
             ICP.sudo().set_param("partner_property.properties_definition_person", value)
 
     def _search_partner_properties_definition_company(self, operator, value):
-        if operator not in ("=", "!=") or value is not False:  # pragma: no cover
-            raise NotImplementedError("Only = and != operators are supported")
-        ICP = self.env["ir.config_parameter"]
-        value = ICP.sudo().get_param("partner_property.properties_definition_company")
-        condition = operator == "!=" and bool(value) or not value
-        return condition and TRUE_DOMAIN or FALSE_DOMAIN
+        return self._search_partner_properties_definition_fallback(
+            "partner_property.properties_definition_company", operator, value
+        )
 
     def _search_partner_properties_definition_person(self, operator, value):
-        if operator not in ("=", "!=") or value is not False:  # pragma: no cover
-            raise NotImplementedError("Only = and != operators are supported")
-        ICP = self.env["ir.config_parameter"]
-        value = ICP.sudo().get_param("partner_property.properties_definition_person")
-        condition = operator == "!=" and bool(value) or not value
-        return condition and TRUE_DOMAIN or FALSE_DOMAIN
+        return self._search_partner_properties_definition_fallback(
+            "partner_property.properties_definition_person", operator, value
+        )
+
+    def _search_partner_properties_definition_fallback(
+        self, param_key, operator, value
+    ):
+        # The Domain optimizer can normalise ('field', '=', False) to
+        # ('field', 'in', {False}) before reaching the search method, so accept
+        # both shapes. Domain.TRUE is falsy in bool context (sentinel quirk),
+        # so use a plain ternary, not `cond and Domain.TRUE or Domain.FALSE`.
+        negate = operator in ("!=", "not in")
+        stored = self.env["ir.config_parameter"].sudo().get_param(param_key)
+        empty = not stored
+        return Domain.TRUE if (empty ^ negate) else Domain.FALSE
 
     @api.model
     def web_search_read(

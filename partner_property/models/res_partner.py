@@ -29,17 +29,20 @@ class ResPartner(models.Model):
 
     def _search_properties_company_id(self, operator, value):
         explicit = self.sudo().search([("company_id", operator, value)])
-        if operator == "=" and value == self.env.company.id:
+        match_current = (operator == "=" and value == self.env.company.id) or (
+            operator == "in" and self.env.company.id in (value or ())
+        )
+        if match_current:
             implicit = self.sudo().search([("company_id", "=", False)])
             return [("id", "in", (explicit | implicit).ids)]
         return [("id", "in", explicit.ids)]
 
-    def _field_to_sql(self, alias, fname, query=None, flush: bool = True) -> SQL:
+    def _field_to_sql(self, alias, field_expr, query=None) -> SQL:
         # OVERRIDE to allow to export the properties
-        if fname == "properties_company_id":
+        if field_expr == "properties_company_id":
             return SQL(
                 """COALESCE(%(company_column)s, %(env_company)s)""",
                 company_column=SQL.identifier(alias, "company_id"),
                 env_company=self.env.company.id,
             )
-        return super()._field_to_sql(alias, fname, query, flush)
+        return super()._field_to_sql(alias, field_expr, query)
