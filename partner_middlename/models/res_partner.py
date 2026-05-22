@@ -110,10 +110,10 @@ class ResPartner(models.Model):
         return parts
 
     @api.constrains("firstname", "lastname", "middlename")
-    def _check_name(self):
+    def _check_firstname_lastname(self):
         """Ensure at least one name is set."""
         try:
-            return super()._check_name()
+            return super()._check_firstname_lastname()
         except exceptions.EmptyNamesError:
             for partner in self:
                 if not partner.middlename:

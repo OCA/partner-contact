@@ -3,3 +3,5 @@
   - Nikul Chaudhary \<<nchaudhary@opensourceintegrators.com>\>
 - [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
   - Bhavesh Heliconia
+- [ACSONE SA/NV](https://https://www.acsone.eu/)
+  - Maxime Franco \<<maxime.franco@acsone.eu>\>
