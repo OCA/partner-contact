@@ -21,7 +21,10 @@ class TestPartnerArchivePropagate(TransactionCase):
         cls.E = Partners.create({"name": "E", "parent_id": cls.B.id, "type": "contact"})
 
     def _create_active_user_for_partner(self, partner):
-        """Create an active user linked to given partner to test unarchivable situations"""
+        """
+        Create an active user linked to given
+        partner to test unarchivable situations
+        """
         return (
             self.env["res.users"]
             .sudo()
@@ -104,7 +107,8 @@ class TestPartnerArchivePropagate(TransactionCase):
         for p in (self.C, self.D):
             self.assertFalse(p.active)
             self.assertEqual(p.propagated_from_id, self.A)
-        # Unarchive parent: flagged ones E/C/D should become active, B stays active anyway
+        # Unarchive parent: flagged ones E/C/D should
+        # become active, B stays active anyway
         self.A.write({"active": True})
         for p in (self.E, self.C, self.D):
             self.assertTrue(p.active)
@@ -136,7 +140,10 @@ class TestPartnerArchivePropagate(TransactionCase):
         icp.set_param("partner_archive_propagate.force_outside_ui", "0")
 
     def test_manual_archive_does_not_toggle_flag(self):
-        """Archiving a partner manually should NOT toggle propagated_from_id on that record."""
+        """
+        Archiving a partner manually should NOT toggle
+        propagated_from_id on that record.
+        """
         # Ensure clean
         self.B.write({"active": True, "propagated_from_id": False})
         # Manual archive of B, force_outside_ui is off
@@ -241,3 +248,27 @@ class TestPartnerArchivePropagate(TransactionCase):
         # B was removed from the list and must remain as it was
         self.assertTrue(self.B.active)
         self.assertFalse(bool(self.B.propagated_from_id))
+
+    def test_unarchive_skips_already_active_partners(self):
+        """When writing active=True on a mixed recordset, only currently
+        inactive partners are processed — the filtered() branch is exercised."""
+        p1 = self.env["res.partner"].create({"name": "P1 parent"})
+        p2 = self.env["res.partner"].create({"name": "P2 child"})
+        # Archive both, p2 flagged as propagated from p1
+        p1.write({"active": False})
+        p2.write({"active": False, "propagated_from_id": p1.id})
+
+        # p3 is a red herring — already active, should be skipped by filtered()
+        p3 = self.env["res.partner"].create({"name": "P3 already active"})
+
+        # Write active=True on a mix: p3 (already active) + p1 (inactive)
+        # filtered() produces only p1 -> _unarchive_propagate runs on p1 -> restores p2
+        (p3 | p1).write({"active": True})
+
+        p1.invalidate_recordset()
+        p2.invalidate_recordset()
+        self.assertTrue(p1.active)
+        self.assertTrue(p2.active)
+        self.assertFalse(bool(p2.propagated_from_id))
+        # p3 remains active and untouched
+        self.assertTrue(p3.active)

@@ -9,19 +9,18 @@
                 </group>
 
                 <group>
-                    <!-- bind label to the field to satisfy validator -->
                     <label for="line_ids" />
                     <div class="text-muted" colspan="2">
                         The following contact-type descendants will be archived as well.
                         Remove any you want to keep active.
                     </div>
                     <field name="line_ids" nolabel="1" colspan="2">
-                        <tree create="0">
+                        <list create="0">
                             <field name="partner_id" />
                             <field name="name" readonly="1" />
                             <field name="email" readonly="1" />
                             <field name="phone" readonly="1" />
-                        </tree>
+                        </list>
                     </field>
                 </group>
 

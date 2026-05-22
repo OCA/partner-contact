@@ -137,7 +137,10 @@ class ResPartner(models.Model):
         )
 
     def _split_archivable_unarchivable_user(self):
-        """Find which partners are archivable (i.e., no active users) and unarchivable."""
+        """
+        Find which partners are archivable
+        (i.e., no active users) and unarchivable.
+        """
         archivable = self.browse()
         unarchivable = self.browse()
         for partner in self:

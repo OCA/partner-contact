@@ -12,9 +12,7 @@
                         type="object"
                         string="Archive Contact and Children"
                         class="oe_highlight"
-                        attrs="{
-                            'invisible': ['|', ('active', '=', False), ('show_prop_wizard_button', '=', False)]
-                        }"
+                        invisible="not active or not show_prop_wizard_button"
                     />
                 </header>
             </xpath>

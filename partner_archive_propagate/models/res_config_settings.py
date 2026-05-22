@@ -8,7 +8,8 @@ class ResConfigSettings(models.TransientModel):
 
     partner_archive_force_outside_ui = fields.Boolean(
         string="Force propagation outside UI",
-        help="If enabled, archiving a partner via any non-UI method (imports, RPC, automated) "
+        help="If enabled, archiving a partner via any non-UI method"
+        " (imports, RPC, automated) "
         "will also archive all descendants and mark them as propagated.",
         config_parameter="partner_archive_propagate.force_outside_ui",
         default=False,
