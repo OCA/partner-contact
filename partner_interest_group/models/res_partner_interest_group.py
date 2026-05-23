@@ -11,6 +11,6 @@ class ResPartnerInterestGroup(models.Model):
     company_id = fields.Many2one(
         "res.company",
         required=False,
-        domain=lambda self: [("id", "=", self.env.company.id)],
+        default=lambda self: self.env.company,
         string="Company",
     )
