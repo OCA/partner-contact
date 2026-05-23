@@ -9,42 +9,43 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-02 00:47+0000\n"
-"PO-Revision-Date: 2017-06-02 00:47+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2026-05-23 07:44+0000\n"
+"Last-Translator: Pablo Castelo <pablocv@gmx.es>\n"
 "Language-Team: Galician (https://www.transifex.com/oca/teams/23907/gl/)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_phone_extension
 #: model:ir.model,name:partner_phone_extension.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: partner_phone_extension
 #: model_terms:ir.ui.view,arch_db:partner_phone_extension.view_partner_form
 msgid "Ext:"
-msgstr ""
+msgstr "Ext."
 
 #. module: partner_phone_extension
 #: model_terms:ir.ui.view,arch_db:partner_phone_extension.view_partner_form
 #: model_terms:ir.ui.view,arch_db:partner_phone_extension.view_partner_simple_form
 msgid "Extn."
-msgstr ""
+msgstr "Extn"
 
 #. module: partner_phone_extension
 #: model:ir.model.fields,field_description:partner_phone_extension.field_res_partner__phone_extension
 #: model:ir.model.fields,field_description:partner_phone_extension.field_res_users__phone_extension
 msgid "Phone Extension"
-msgstr ""
+msgstr "Extensión telefónica"
 
 #. module: partner_phone_extension
 #: model:ir.model.fields,help:partner_phone_extension.field_res_partner__phone_extension
 #: model:ir.model.fields,help:partner_phone_extension.field_res_users__phone_extension
 msgid "Phone Number Extension."
-msgstr ""
+msgstr "Número de extensión telefónica."
 
 #~ msgid "Partner"
 #~ msgstr "Empresa"
