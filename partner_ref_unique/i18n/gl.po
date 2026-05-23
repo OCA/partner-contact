@@ -9,34 +9,35 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-25 03:42+0000\n"
-"PO-Revision-Date: 2017-01-25 03:42+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2026-05-23 07:44+0000\n"
+"Last-Translator: Pablo Castelo <pablocv@gmx.es>\n"
 "Language-Team: Galician (https://www.transifex.com/oca/teams/23907/gl/)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_ref_unique
 #: model:ir.model.fields.selection,name:partner_ref_unique.selection__res_company__partner_ref_unique__all
 msgid "All partners"
-msgstr ""
+msgstr "Todos os contactos"
 
 #. module: partner_ref_unique
 #: model:ir.model,name:partner_ref_unique.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Compañías"
 
 #. module: partner_ref_unique
 #: model:ir.model,name:partner_ref_unique.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: partner_ref_unique
 #: model:ir.model,name:partner_ref_unique.model_base_partner_merge_automatic_wizard
 msgid "Merge Partner Wizard"
-msgstr ""
+msgstr "Asistente para a fusión de socios"
 
 #. module: partner_ref_unique
 #: model:ir.model.fields.selection,name:partner_ref_unique.selection__res_company__partner_ref_unique__none
@@ -46,23 +47,23 @@ msgstr "Ningún"
 #. module: partner_ref_unique
 #: model:ir.model.fields.selection,name:partner_ref_unique.selection__res_company__partner_ref_unique__companies
 msgid "Only companies"
-msgstr ""
+msgstr "Só empresas"
 
 #. module: partner_ref_unique
 #: model_terms:ir.ui.view,arch_db:partner_ref_unique.view_company_form
 msgid "Partners"
-msgstr ""
+msgstr "Empresas"
 
 #. module: partner_ref_unique
 #: code:addons/partner_ref_unique/models/res_partner.py:0
 #, python-format
 msgid "This reference is equal to partner '%s'"
-msgstr ""
+msgstr "Esta referencia é igual ao socio '%s'"
 
 #. module: partner_ref_unique
 #: model:ir.model.fields,field_description:partner_ref_unique.field_res_company__partner_ref_unique
 msgid "Unique partner reference for"
-msgstr ""
+msgstr "Referencia de socio única para"
 
 #~ msgid "Partner"
 #~ msgstr "Empresa"
