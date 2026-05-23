@@ -9,92 +9,93 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-10 03:39+0000\n"
-"PO-Revision-Date: 2017-03-10 03:39+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2026-05-23 07:44+0000\n"
+"Last-Translator: Pablo Castelo <pablocv@gmx.es>\n"
 "Language-Team: Galician (https://www.transifex.com/oca/teams/23907/gl/)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
 msgid "%(login)s (copy)"
-msgstr ""
+msgstr "%(login)s (copiar)"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/models/res_users.py:0
 #, python-format
 msgid "%(name)s (copy)"
-msgstr ""
+msgstr "%(name)s (copiar)"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Configuración de Axustes"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: partner_firstname
 #: model:ir.model.constraint,message:partner_firstname.constraint_res_partner_check_name
 msgid "Contacts require a name."
-msgstr ""
+msgstr "Os contactos requiren un nome."
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:0
 #, python-format
 msgid "Error(s) with partner %d's name."
-msgstr ""
+msgstr "Erros co nome da empresa %d."
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__firstname
 msgid "First name"
-msgstr ""
+msgstr "Nome"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname
 msgid "Last name"
-msgstr ""
+msgstr "Apelido"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__name
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__name
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: partner_firstname
 #: code:addons/partner_firstname/exceptions.py:0
 #, python-format
 msgid "No name is set."
-msgstr ""
+msgstr "Non se estableceu ningún nome."
 
 #. module: partner_firstname
 #: model:ir.model.fields,help:partner_firstname.field_res_config_settings__partner_names_order
 msgid "Order to compose partner fullname"
-msgstr ""
+msgstr "Orde para xerar o nome completo"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
 msgid "Partner Names Order"
-msgstr ""
+msgstr "Orde dos nomes dos socios"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order_changed
 msgid "Partner Names Order Changed"
-msgstr ""
+msgstr "Cambiouse a Orde dos Nomes"
 
 #. module: partner_firstname
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
 msgid "Recalculate names"
-msgstr ""
+msgstr "Recalcular nomes"
 
 #. module: partner_firstname
 #: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
@@ -102,11 +103,13 @@ msgid ""
 "Recalculate names for all partners. This process could take so much time if "
 "there are more than 10,000 active partners"
 msgstr ""
+"Recalcular todos os nomes. Este proceso pode tardar se se teñen máis de "
+"10.000 persoas asociadas"
 
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_users
 msgid "Users"
-msgstr ""
+msgstr "Usuarios"
 
 #~ msgid "Partner"
 #~ msgstr "Empresa"
