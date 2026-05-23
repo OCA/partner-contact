@@ -9,24 +9,25 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-10 03:39+0000\n"
-"PO-Revision-Date: 2017-03-10 03:39+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2026-05-23 07:43+0000\n"
+"Last-Translator: Pablo Castelo <pablocv@gmx.es>\n"
 "Language-Team: Galician (https://www.transifex.com/oca/teams/23907/gl/)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_address_street3
 #: model:ir.model,name:partner_address_street3.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: partner_address_street3
 #: model:ir.model,name:partner_address_street3.model_res_country
 msgid "Country"
-msgstr ""
+msgstr "País"
 
 #. module: partner_address_street3
 #: model:ir.model.fields,help:partner_address_street3.field_res_country__address_format
@@ -40,24 +41,34 @@ msgid ""
 "%(country_name)s: the name of the country\n"
 "%(country_code)s: the code of the country"
 msgstr ""
+"Formato de visualización a utilizar para as direccións pertencentes a este "
+"país.\n"
+"\n"
+"Pode utilizar o patrón de cadeas estilo python con todos os campos da "
+"dirección (por exemplo, utilice '%(street)s' para mostrar o campo 'street') "
+"máis\n"
+"%(state_name)s: o nome do estado\n"
+"%(state_code)s: o código do estado\n"
+"%(country_name)s: o nome do país\n"
+"%(country_code)s: o código do país"
 
 #. module: partner_address_street3
 #: model:ir.model.fields,field_description:partner_address_street3.field_res_country__address_format
 msgid "Layout in Reports"
-msgstr ""
+msgstr "Deseño en Reportes"
 
 #. module: partner_address_street3
 #: model:ir.model.fields,field_description:partner_address_street3.field_res_partner__street3
 #: model:ir.model.fields,field_description:partner_address_street3.field_res_users__street3
 msgid "Street 3"
-msgstr ""
+msgstr "Rúa 3"
 
 #. module: partner_address_street3
 #: model_terms:ir.ui.view,arch_db:partner_address_street3.res_partner_view_form_private
 #: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_address_form
 #: model_terms:ir.ui.view,arch_db:partner_address_street3.view_partner_form
 msgid "Street 3..."
-msgstr ""
+msgstr "Rúa 3..."
 
 #~ msgid "Partner"
 #~ msgstr "Empresa"
