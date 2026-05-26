@@ -8,7 +8,10 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     def _has_propagating_relations(self):
-        """Return True if partner has at least one relation with propagate_archive=True."""
+        """
+        Return True if partner has at least
+        one relation with propagate_archive=True.
+        """
         self.ensure_one()
         Relation = self.env["res.partner.relation"].sudo()
         return bool(
@@ -23,7 +26,10 @@ class ResPartner(models.Model):
         )
 
     def _get_archive_propagation_candidates(self):
-        """Extend archive propagation candidates with propagating relations for companies"""
+        """
+        Extend archive propagation candidates
+        with propagating relations for companies
+        """
         self.ensure_one()
         res = super()._get_archive_propagation_candidates()
         if self.is_company:
@@ -62,8 +68,9 @@ class ResPartner(models.Model):
     def _archive_propagate_wizard(self):
         """
         Only organisational partners (is_company = True) propagate via relations.
-        -On archive: related partners (via relation types with propagate_archive = True)
-          are archived when possible and flagged with propagated_from_id = source company.
+        -On archive: related partners (with propagate_archive = True)
+        are archived when possible and flagged
+        with propagated_from_id = source company.
         """
         res = super()._archive_propagate_wizard()
         self._archive_multi_relation()
