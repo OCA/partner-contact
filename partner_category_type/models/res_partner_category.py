@@ -18,7 +18,7 @@ class ResPartnerCategory(models.Model):
         string="Type",
         selection="_get_category_type_selection",
         required=True,
-        default=_get_default_category_type,
+        default=lambda self: self._get_default_category_type(),
         compute="_compute_category_type",
         inverse="_inverse_category_type",
         store=True,
