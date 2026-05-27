@@ -203,3 +203,11 @@ class ResPartner(models.Model):
             "target": "new",
             "res_id": wiz.id,
         }
+
+    def action_archive(self):
+        """Archive only this partner via gear
+        Do not super, otherwise core odoo
+        archives children too
+        """
+        self.filtered("active").write({"active": False})
+        return False
