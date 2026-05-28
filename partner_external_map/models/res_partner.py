@@ -26,7 +26,7 @@ class ResPartner(models.Model):
         if self.country_id:
             addr.append(self.country_id.name)
         if not addr:
-            raise UserError(self.env._("Address missing on partner '%s'.") % self.name)
+            raise UserError(self.env._("Address missing on partner '%s'.", self.name))
         return " ".join(addr)
 
     @api.model
@@ -70,9 +70,9 @@ class ResPartner(models.Model):
                 raise UserError(
                     self.env._(
                         "Missing parameter 'URL that uses the address' "
-                        "for map website '%s'."
+                        "for map website '%s'.",
+                        map_website.name,
                     )
-                    % map_website.name
                 )
             url = self._prepare_url(
                 map_website.address_url, {"{ADDRESS}": self._address_as_string()}
@@ -93,8 +93,7 @@ class ResPartner(models.Model):
         if not map_website:
             raise UserError(
                 self.env._(
-                    "Missing route map website: "
-                    "you should set it in your preferences."
+                    "Missing route map website: you should set it in your preferences."
                 )
             )
         if not self.env.user.context_route_start_partner_id:
@@ -126,9 +125,9 @@ class ResPartner(models.Model):
                 raise UserError(
                     self.env._(
                         "Missing route URL that uses the addresses "
-                        "for the map website '%s'"
+                        "for the map website '%s'",
+                        map_website.name,
                     )
-                    % map_website.name
                 )
             url = self._prepare_url(
                 map_website.route_address_url,

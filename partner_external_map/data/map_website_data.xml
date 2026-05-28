@@ -7,16 +7,16 @@
         <field name="name">Google Maps</field>
         <field
             name="address_url"
-        >https://www.google.com/maps?ie=UTF8&amp;q={ADDRESS}</field>
+        >https://www.google.com/maps/search/?api=1&amp;query={ADDRESS}</field>
         <field
             name="lat_lon_url"
-        >https://www.google.com/maps?z=15&amp;q={LATITUDE},{LONGITUDE}</field>
+        >https://www.google.com/maps/search/?api=1&amp;query={LATITUDE},{LONGITUDE}</field>
         <field
             name="route_address_url"
-        >https://www.google.com/maps?saddr={START_ADDRESS}&amp;daddr={DEST_ADDRESS}&amp;directionsmode=driving</field>
+        >https://www.google.com/maps/dir/?api=1&amp;origin={START_ADDRESS}&amp;destination={DEST_ADDRESS}&amp;travelmode=driving</field>
         <field
             name="route_lat_lon_url"
-        >https://www.google.com/maps?saddr={START_LATITUDE},{START_LONGITUDE}&amp;daddr={DEST_LATITUDE},{DEST_LONGITUDE}&amp;directionsmode=driving</field>
+        >https://www.google.com/maps/dir/?api=1&amp;origin={START_LATITUDE},{START_LONGITUDE}&amp;destination={DEST_LATITUDE},{DEST_LONGITUDE}&amp;travelmode=driving</field>
     </record>
     <record id="openstreetmap" model="map.website">
         <field name="name">OpenStreetMap</field>

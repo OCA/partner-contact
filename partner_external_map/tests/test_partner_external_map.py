@@ -1,6 +1,8 @@
 # Copyright 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+from unittest.mock import patch
+
 from odoo.exceptions import UserError
 
 from odoo.addons.base.tests.common import BaseCommon
@@ -50,27 +52,29 @@ class TestPartnerExternalMap(BaseCommon):
         action = self.partner.with_user(self.user.id).open_map()
         self.assertEqual(
             action["url"],
-            "https://www.google.com/maps?ie=UTF8"
-            "&q=street_test street2_test Madrid Madrid Spain",
+            "https://www.google.com/maps/search/?api=1"
+            "&query=street_test street2_test Madrid Madrid Spain",
         )
 
     def test_open_route_map(self):
         action = self.partner.with_user(self.user.id).open_route_map()
         self.assertEqual(
             action["url"],
-            "https://www.google.com/maps?saddr=Tomelloso"
-            "&daddr=street_test street2_test Madrid Madrid "
-            "Spain&directionsmode=driving",
+            "https://www.google.com/maps/dir/?api=1&origin=Tomelloso"
+            "&destination=street_test street2_test Madrid Madrid "
+            "Spain&travelmode=driving",
         )
 
     def test_open_map_with_coordinates(self):
         # Simulate that we have the base_geolocalize module installed creating
         # by hand the variables - This can't be done with routes
         partner = self.partner.with_user(self.user.id)
-        partner.partner_latitude = 39.15837
-        partner.partner_longitude = -3.02145
+        partner.sudo().partner_latitude = 39.15837
+        partner.sudo().partner_longitude = -3.02145
         action = partner.open_map()
-        self.assertTrue(action["url"].startswith("https://www.google.com/maps?z="))
+        self.assertTrue(
+            action["url"].startswith("https://www.google.com/maps/search/?api=1&query=")
+        )
         self.assertIn("39.15837", action["url"])
         self.assertIn("-3.02145", action["url"])
 
@@ -212,3 +216,16 @@ class TestPartnerExternalMap(BaseCommon):
             new_user.context_route_map_website_id.id,
             self.ref("partner_external_map.mapquest"),
         )
+
+    def test_address_as_string_with_street3(self):
+        """Cover line 21: street3 present and truthy
+        (simulates partner_contact_address_extended)."""
+        with patch.object(type(self.partner), "street3", "street3_test", create=True):
+            addr = self.partner._address_as_string()
+        self.assertIn("street3_test", addr)
+
+    def test_prepare_url_non_string_non_float_value(self):
+        """Cover line 41: _prepare_url replace value is
+        neither str nor float (e.g. None)."""
+        url = self.partner._prepare_url("http://example.com/{KEY}", {"{KEY}": None})
+        self.assertEqual(url, "http://example.com/")
