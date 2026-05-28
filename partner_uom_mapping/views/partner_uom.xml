@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="partner_uom_form_view">
+        <field name="name">partner.uom.form (in partner_uom_mapping)</field>
+        <field name="model">partner.uom</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="partner_id" />
+                        <field name="uom_id" />
+                        <field name="partner_uom" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="partner_uom_search_view">
+        <field name="name">partner.uom.search (in partner_uom_mapping)</field>
+        <field name="model">partner.uom</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="partner_id" />
+                <field name="uom_id" />
+                <field name="partner_uom" />
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active','=',False)]"
+                />
+                <group>
+                    <filter
+                        string="Partner"
+                        name="group_by_partner"
+                        domain="[]"
+                        context="{'group_by': 'partner_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="partner_uom_tree_view">
+        <field name="name">partner.uom.tree (in partner_uom_mapping)</field>
+        <field name="model">partner.uom</field>
+        <field name="arch" type="xml">
+            <list editable="top" decoration-muted="active == False">
+                <field name="partner_id" />
+                <field name="uom_id" />
+                <field name="partner_uom" />
+                <field name="active" invisible="1" />
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="partner_uom_act_window">
+        <field name="name">Partner Units of Measure</field>
+        <field name="res_model">partner.uom</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{'search_default_group_by_partner': 1}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="partner_uom_menu">
+        <field name="name">Partner Uom</field>
+        <field name="parent_id" ref="contacts.res_partner_menu_config" />
+        <field name="action" ref="partner_uom_act_window" />
+        <field name="group_ids" eval="[Command.link(ref('group_partner_uom'))]" />
+        <field name="sequence" eval="16" />
+    </record>
+</odoo>
