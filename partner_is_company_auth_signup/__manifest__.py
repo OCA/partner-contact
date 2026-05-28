@@ -4,7 +4,7 @@
 {
     "name": "Partner Is Company - Auth Signup",
     "summary": "Asks users who register whether they are individuals or companies",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "author": "GRAP, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "maintainers": ["legalsylvain"],

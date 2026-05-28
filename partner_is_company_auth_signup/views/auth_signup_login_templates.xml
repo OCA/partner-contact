@@ -6,7 +6,7 @@
 <odoo>
     <template
         id="partner_is_company_auth_signup.fields"
-        inherit_id="auth_signup.fields"
+        inherit_id="auth_signup.signup"
     >
         <xpath expr="//div[hasclass('field-name')]" position="before">
             <div class="mb-3 field-company_type-person form-check o_radio_item">

@@ -58,3 +58,37 @@ class TestPartnerIscompanyAuthSignup(TestAuthSignupFlow):
         )
         self.assertTrue(new_user)
         self.assertFalse(new_user.is_company)
+
+    def test_signup_retrieve_info(self):
+        partner_dummy = self.env["res.partner"].create(
+            {
+                "name": "Dummy Partner",
+            }
+        )
+        partner_dummy.signup_prepare()
+        token_invalid = partner_dummy._generate_signup_token()
+        partner_dummy.signup_cancel()
+        res_invalid = self.env["res.partner"]._signup_retrieve_info(token_invalid)
+        self.assertFalse(res_invalid)
+
+        partner_company = self.env["res.partner"].create(
+            {
+                "name": "Test Company Partner",
+                "is_company": True,
+            }
+        )
+        partner_company.signup_prepare()
+        token_company = partner_company._generate_signup_token()
+        res_company = self.env["res.partner"]._signup_retrieve_info(token_company)
+        self.assertEqual(res_company.get("company_type"), "company")
+
+        partner_person = self.env["res.partner"].create(
+            {
+                "name": "Test Person Partner",
+                "is_company": False,
+            }
+        )
+        partner_person.signup_prepare()
+        token_person = partner_person._generate_signup_token()
+        res_person = self.env["res.partner"]._signup_retrieve_info(token_person)
+        self.assertEqual(res_person.get("company_type"), "person")
