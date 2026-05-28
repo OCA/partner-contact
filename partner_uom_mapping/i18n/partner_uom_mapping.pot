@@ -1,0 +1,97 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_uom_mapping
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_uom_mapping
+#: model:ir.model.fields,field_description:partner_uom_mapping.field_partner_uom__active
+msgid "Active"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:res.groups,comment:partner_uom_mapping.group_partner_uom
+msgid "Allow to see partner uoms"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model_terms:ir.ui.view,arch_db:partner_uom_mapping.partner_uom_search_view
+msgid "Archived"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:ir.model.fields,field_description:partner_uom_mapping.field_partner_uom__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:ir.model.fields,field_description:partner_uom_mapping.field_partner_uom__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:ir.model.fields,field_description:partner_uom_mapping.field_partner_uom__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:ir.model.fields,field_description:partner_uom_mapping.field_partner_uom__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:ir.model.fields,field_description:partner_uom_mapping.field_partner_uom__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:ir.model.fields,field_description:partner_uom_mapping.field_partner_uom__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:ir.model.constraint,message:partner_uom_mapping.constraint_partner_uom_unique_partner_uom
+msgid ""
+"Only one active partner unit of measure with the same value can be active."
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:ir.model.fields,field_description:partner_uom_mapping.field_partner_uom__partner_id
+#: model_terms:ir.ui.view,arch_db:partner_uom_mapping.partner_uom_search_view
+msgid "Partner"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:res.groups,name:partner_uom_mapping.group_partner_uom
+msgid "Partner UOM"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:ir.model.fields,field_description:partner_uom_mapping.field_partner_uom__partner_uom
+msgid "Partner Unit of Measure"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:ir.actions.act_window,name:partner_uom_mapping.partner_uom_act_window
+msgid "Partner Units of Measure"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:ir.model,name:partner_uom_mapping.model_partner_uom
+#: model:ir.ui.menu,name:partner_uom_mapping.partner_uom_menu
+msgid "Partner Uom"
+msgstr ""
+
+#. module: partner_uom_mapping
+#: model:ir.model.fields,field_description:partner_uom_mapping.field_partner_uom__uom_id
+msgid "Unit of Measure"
+msgstr ""
