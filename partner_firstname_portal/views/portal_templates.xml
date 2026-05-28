@@ -6,7 +6,7 @@
 <odoo>
     <template
         id="partner_firstname_portal.portal_my_details_fields"
-        inherit_id="portal.portal_my_details_fields"
+        inherit_id="portal.address_form_fields"
     >
         <!--
             display company_type in a similar way as in back-office
@@ -21,7 +21,7 @@
                     name="company_type"
                     value="person"
                     id="company_type_person"
-                    t-att-checked="not partner.is_company"
+                    t-att-checked="not partner_sudo.is_company"
                     disabled="disabled"
                 />
                 <label
@@ -36,7 +36,7 @@
                     name="company_type"
                     value="company"
                     id="company_type_company"
-                    t-att-checked="partner.is_company"
+                    t-att-checked="partner_sudo.is_company"
                     disabled="disabled"
                 />
                 <label
@@ -50,40 +50,42 @@
             If it's a company, hide 'company_name' field, that doesn't make sense
         -->
         <xpath expr="//input[@name='company_name']/.." position="attributes">
-            <attribute name="t-att-hidden">partner.is_company</attribute>
+            <attribute name="t-att-hidden">partner_sudo.is_company</attribute>
         </xpath>
 
         <!--
             If it's an individual, hide name field, and display firstname lastname fields
         -->
         <xpath expr="//input[@name='name']/.." position="attributes">
-            <attribute name="t-att-hidden">not partner.is_company</attribute>
+            <attribute name="t-att-hidden">not partner_sudo.is_company</attribute>
         </xpath>
 
         <xpath expr="//input[@name='name']/.." position="after">
             <div
-                t-attf-class="mb-3 #{error.get('firstname') and 'o_has_error' or ''} col-xl-6"
-                t-att-hidden="partner.is_company"
+                id="div_firstname"
+                class="col-lg-6 mb-2"
+                t-att-hidden="partner_sudo.is_company"
             >
                 <label class="col-form-label" for="firstname">First Name</label>
                 <input
                     type="text"
                     name="firstname"
-                    t-attf-class="form-control #{error.get('firstname') and 'is-invalid' or ''}"
-                    t-att-value="firstname or partner.firstname"
+                    class="form-control"
+                    t-att-value="partner_sudo.firstname"
                 />
             </div>
 
             <div
-                t-attf-class="mb-3 #{error.get('lastname') and 'o_has_error' or ''} col-xl-6"
-                t-att-hidden="partner.is_company"
+                id="div_lastname"
+                class="col-lg-6 mb-2"
+                t-att-hidden="partner_sudo.is_company"
             >
                 <label class="col-form-label" for="lastname">Last Name</label>
                 <input
                     type="text"
                     name="lastname"
-                    t-attf-class="form-control #{error.get('lastname') and 'is-invalid' or ''}"
-                    t-att-value="lastname or partner.lastname"
+                    class="form-control"
+                    t-att-value="partner_sudo.lastname"
                 />
             </div>
         </xpath>

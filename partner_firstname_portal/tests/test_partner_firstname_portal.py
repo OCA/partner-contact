@@ -3,6 +3,7 @@
 
 
 from odoo import http
+from odoo.fields import Command
 from odoo.tests.common import HttpCase
 
 
@@ -10,14 +11,35 @@ class TestPartnerFirstnamePortal(HttpCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.user = cls.env.ref("base.user_admin")
+        # Generated with https://www.fakenamegenerator.com
+        cls.partner_portal = cls.env["res.partner"].create(
+            {
+                "name": "Théodule Bernier",
+                "email": "theodule_bernier@jourrapide.com",
+                "country_id": cls.env.ref("base.be").id,
+                "phone": "0487 49 15 23",
+                "street": "Hooivelden 198",
+                "zip": "4720",
+                "city": "La calamine",
+            }
+        )
+        cls.user_portal = cls.env["res.users"].create(
+            {
+                "login": "portal",
+                "password": "portal",
+                "partner_id": cls.partner_portal.id,
+                "group_ids": [Command.set([cls.env.ref("base.group_portal").id])],
+            }
+        )
         cls.base_data = {
-            "name": "Mitchell Admin",
-            "country_id": cls.user.country_id.id,
-            "email": cls.user.email,
-            "phone": cls.user.phone,
-            "street": cls.user.street,
-            "city": cls.user.city,
+            "name": cls.user_portal.partner_id.name,
+            "partner_id": cls.user_portal.partner_id.id,
+            "country_id": cls.user_portal.country_id.id,
+            "email": cls.user_portal.email,
+            "phone": cls.user_portal.phone,
+            "street": cls.user_portal.street,
+            "city": cls.user_portal.city,
+            "zip": cls.user_portal.zip,
         }
 
     def _set_required_field(self, value):
@@ -26,9 +48,9 @@ class TestPartnerFirstnamePortal(HttpCase):
         )
 
     def _post_account_details(self, **data):
-        self.authenticate(self.user.login, "admin")
+        self.authenticate(self.user_portal.login, "admin")
         data["csrf_token"] = http.Request.csrf_token(self)
-        return self.url_open("/my/account", data=data)
+        return self.url_open("/my/address/submit", data=data)
 
     def test_edition_individual_missing_firstname(self):
         self._set_required_field("firstname")
@@ -37,8 +59,8 @@ class TestPartnerFirstnamePortal(HttpCase):
             lastname="MY LAST NAME portal",
         )
         self.assertEqual(
-            self.user.name,
-            "Mitchell Admin",
+            self.user_portal.name,
+            "Théodule Bernier",
             "Should not change name, if required firstname is missing",
         )
 
@@ -49,8 +71,8 @@ class TestPartnerFirstnamePortal(HttpCase):
             firstname="My First Name portal",
         )
         self.assertEqual(
-            self.user.name,
-            "Mitchell Admin",
+            self.user_portal.partner_id.name,
+            "Théodule Bernier",
             "Should not change name, if required lastname is missing",
         )
 
@@ -60,8 +82,8 @@ class TestPartnerFirstnamePortal(HttpCase):
             **self.base_data,
         )
         self.assertEqual(
-            self.user.name,
-            "Mitchell Admin",
+            self.user_portal.partner_id.name,
+            "Théodule Bernier",
             "Should not change name, if lastname and firstname is missing",
         )
 
@@ -71,15 +93,17 @@ class TestPartnerFirstnamePortal(HttpCase):
             firstname="My First Name portal",
             lastname="MY LAST NAME portal",
         )
-        self.assertEqual(self.user.name, "My First Name portal MY LAST NAME portal")
+        self.assertEqual(
+            self.user_portal.partner_id.name, "My First Name portal MY LAST NAME portal"
+        )
 
     def test_edition_company_missing_new_name(self):
-        self.user.partner_id.company_type = "company"
+        self.user_portal.partner_id.company_type = "company"
         self._post_account_details(**self.base_data)
-        self.assertEqual(self.user.name, "Mitchell Admin")
+        self.assertEqual(self.user_portal.partner_id.name, "Théodule Bernier")
 
     def test_edition_company_with_new_name(self):
-        self.user.partner_id.is_company = True
+        self.user_portal.partner_id.is_company = True
         self.base_data["name"] = "My New Company Name"
         self._post_account_details(**self.base_data)
-        self.assertEqual(self.user.name, "My New Company Name")
+        self.assertEqual(self.user_portal.partner_id.name, "My New Company Name")
