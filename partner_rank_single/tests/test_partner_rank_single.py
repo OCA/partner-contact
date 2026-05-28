@@ -3,21 +3,17 @@
 
 from odoo import Command, fields
 from odoo.exceptions import ValidationError
-from odoo.tests import common, tagged
+from odoo.tests import tagged
 
-from odoo.addons.base.tests.common import DISABLED_MAIL_CONTEXT
+from odoo.addons.base.tests.common import BaseCommon
 
 
 @tagged("res_partner")
-class TestPartnerRankSingle(common.TransactionCase):
+class TestPartnerRankSingle(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.env = cls.env(
-            context=dict(
-                cls.env.context, no_state_required=True, **DISABLED_MAIL_CONTEXT
-            )
-        )
+
         cls.customer = cls.env["res.partner"].create(
             {
                 "name": "Customer",
@@ -79,7 +75,15 @@ class TestPartnerRankSingle(common.TransactionCase):
             date=fields.Date.today(),
             partner_id=self.customer,
         )
-        self.assertEqual(self.customer.customer_rank, 2, "Rank increased")
+        self.customer.invalidate_recordset()
+        # In Odoo 19, rank > 0 deferred to postcommit (not run in tests)
+        self.assertEqual(self.customer.customer_rank, 1, "Rank deferred to postcommit")
+        postcommit_data = self.env.cr.postcommit.data.get(
+            "account.res.partner.increase_rank.customer_rank", {}
+        )
+        self.assertGreaterEqual(
+            postcommit_data.get(self.customer.id, 0), 1, "Rank increase scheduled"
+        )
         self.assertFalse(self.customer.supplier_rank, "Not ranked")
 
     def test_01_supplier_rank_single(self):
@@ -108,7 +112,15 @@ class TestPartnerRankSingle(common.TransactionCase):
             date=fields.Date.today(),
             partner_id=self.supplier,
         )
-        self.assertEqual(self.supplier.supplier_rank, 2, "Rank increased")
+        self.supplier.invalidate_recordset()
+        # In Odoo 19, rank > 0 deferred to postcommit (not run in tests)
+        self.assertEqual(self.supplier.supplier_rank, 1, "Rank deferred to postcommit")
+        postcommit_data = self.env.cr.postcommit.data.get(
+            "account.res.partner.increase_rank.supplier_rank", {}
+        )
+        self.assertGreaterEqual(
+            postcommit_data.get(self.supplier.id, 0), 1, "Rank increase scheduled"
+        )
         self.assertFalse(self.supplier.customer_rank, "Not ranked")
 
     def test_03_customer_rank_manual(self):
