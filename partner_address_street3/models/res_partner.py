@@ -20,8 +20,9 @@ class ResPartner(models.Model):
 
     @api.onchange("parent_id")
     def _onchange_parent_id_street3(self):
-        result = super().onchange_parent_id() or {}
+        result = super().onchange_parent_id()
         if self.parent_id:
+            result = result or {}
             result.setdefault("value", {})["street3"] = self.parent_id.street3
         return result
 

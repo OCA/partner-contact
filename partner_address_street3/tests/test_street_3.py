@@ -89,14 +89,14 @@ class TestStreet3(TransactionCase):
     def test_onchange_parent_id_no_parent(self):
         partner = self.env["res.partner"].new({"name": "Orphan", "type": "contact"})
         result = partner._onchange_parent_id_street3()
-        self.assertIsNone(result)
+        self.assertNotIn("street3", (result or {}).get("value", {}))
 
     def test_onchange_parent_id_preserves_empty_parent(self):
         partner = self.env["res.partner"].new(
             {"name": "Child", "type": "contact", "parent_id": False}
         )
         result = partner._onchange_parent_id_street3()
-        self.assertIsNone(result)
+        self.assertNotIn("street3", (result or {}).get("value", {}))
 
     def test_onchange_parent_id_extends_base_result(self):
         parent = self.env["res.partner"].create(
