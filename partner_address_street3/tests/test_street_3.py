@@ -92,7 +92,6 @@ class TestStreet3(TransactionCase):
         self.assertIsNone(result)
 
     def test_onchange_parent_id_preserves_empty_parent(self):
-        parent = self.env["res.partner"]
         partner = self.env["res.partner"].new(
             {"name": "Child", "type": "contact", "parent_id": False}
         )
