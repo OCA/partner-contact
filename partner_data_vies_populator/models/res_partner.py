@@ -73,4 +73,6 @@ class ResPartner(models.Model):
                     continue
                 result = self._get_vies_data(vat)
                 if result:
-                    partner.update(result)
+                    # Context needed for compatibility with
+                    # partner_country_state_required.
+                    partner.with_context(no_state_required=True).update(result)

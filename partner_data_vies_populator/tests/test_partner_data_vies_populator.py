@@ -54,7 +54,9 @@ class TestPartnerCreateByVAT(TransactionCase):
             side_effect=mocked_check_vies,
         )
         cls.patcher.start()
-        cls.partner_model = cls.env["res.partner"]
+        # Context needed for compatibility with
+        # partner_country_state_required.
+        cls.partner_model = cls.env["res.partner"].with_context(no_state_required=True)
         cls.be_country_id = cls.env.ref("base.be").id
         cls.sample_1 = {
             "name": "SA ODOO",
