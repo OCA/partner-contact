@@ -20,3 +20,5 @@
 - Bjorn Billen \<<bjorn.billen@dynapps.be>\>
 - Aion Tech \<<https://aiontech.company/>\>:
   - Simone Rubino \<<simone.rubino@aion-tech.it>\>
+- Stesi Consulting srl \<<https://stesi.consulting/>\>:
+  - Michele Di Croce \<<dicroce.m@stesi.consulting>\>
