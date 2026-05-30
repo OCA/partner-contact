@@ -14,6 +14,11 @@ class ResConfigSettings(models.TransientModel):
         readonly=False,
     )
 
+    partner_email_check_duplicate_scope = fields.Selection(
+        related="company_id.partner_email_check_duplicate_scope",
+        readonly=False,
+    )
+
     partner_email_check_check_deliverability = fields.Boolean(
         related="company_id.partner_email_check_check_deliverability",
         readonly=False,
