@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-13 03:42+0000\n"
-"PO-Revision-Date: 2026-02-01 10:10+0000\n"
+"PO-Revision-Date: 2026-05-31 18:40+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -40,7 +40,7 @@ msgstr "Arhivirano"
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Nastavitve"
 
 #. module: partner_external_map
 #: model:ir.model,name:partner_external_map.model_res_partner
@@ -60,7 +60,7 @@ msgstr "Ustvarjeno"
 #. module: partner_external_map
 #: model_terms:ir.ui.view,arch_db:partner_external_map.res_config_settings_view_form
 msgid "Default External Map"
-msgstr ""
+msgstr "Privzeti zunanji zemljevid"
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__display_name
@@ -223,7 +223,7 @@ msgstr "Začetni naslov za zemljevid proge"
 #. module: partner_external_map
 #: model_terms:ir.ui.view,arch_db:partner_external_map.res_config_settings_view_form
 msgid "System wide default map providers."
-msgstr ""
+msgstr "Sistemsko privzeti ponudniki zemljevidov."
 
 #. module: partner_external_map
 #: model:ir.model.fields,field_description:partner_external_map.field_map_website__lat_lon_url
