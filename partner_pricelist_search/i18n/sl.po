@@ -6,7 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-05-31 20:46+0000\n"
+"Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: none\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -14,23 +15,24 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_pricelist_search
 #: model:ir.model,name:partner_pricelist_search.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Stik"
 
 #. module: partner_pricelist_search
 #: model_terms:ir.ui.view,arch_db:partner_pricelist_search.product_pricelist_view
 msgid "Customers"
-msgstr ""
+msgstr "Kupci"
 
 #. module: partner_pricelist_search
 #: model:ir.model,name:partner_pricelist_search.model_product_pricelist
 #: model:ir.model.fields,field_description:partner_pricelist_search.field_res_partner__property_product_pricelist
 #: model:ir.model.fields,field_description:partner_pricelist_search.field_res_users__property_product_pricelist
 msgid "Pricelist"
-msgstr ""
+msgstr "Cenik"
 
 #. module: partner_pricelist_search
 #: model:ir.model.fields,help:partner_pricelist_search.field_res_partner__property_product_pricelist
@@ -39,3 +41,5 @@ msgid ""
 "This pricelist will be used, instead of the default one, for sales to the "
 "current partner"
 msgstr ""
+"Cenik, ki bo za trenutnega partnerja pri prodaji uporabljen namesto "
+"privzetega"
