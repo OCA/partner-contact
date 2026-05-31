@@ -8,12 +8,20 @@
                 <div
                     class="alert alert-warning"
                     role="alert"
-                    invisible="not same_email_partner_ids"
+                    invisible="not same_email_partner_ids and not same_email_inaccessible_count"
                 >
+                    <span invisible="not same_email_partner_ids">
                   Duplicate warning: partner(s) <field
-                    name="same_email_partner_ids"
-                    widget="x2many_links"
-                /> has/have the same <b>Email</b>.
+                        name="same_email_partner_ids"
+                        widget="x2many_links"
+                    /> has/have the same <b>Email</b>.
+                    </span>
+                    <span invisible="not same_email_inaccessible_count">
+                  <field
+                        name="same_email_inaccessible_count"
+                    /> partner(s) you do not have permission to view also use this <b
+                    >Email</b>. Please contact your administrator.
+                    </span>
                 </div>
             </xpath>
         </field>
