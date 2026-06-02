@@ -42,7 +42,7 @@ class ResPartner(models.Model):
         if "active" in vals:
             if vals["active"] is False:
                 archiving_partners = self.filtered(lambda self: self.active)
-            elif vals["active"] is True:
+            else:
                 unarchiving_partners = self.filtered(lambda self: not self.active)
         res = super().write(vals)
         from_wizard = self.env.context.get("partner_archive_propagate_ui")
@@ -206,3 +206,11 @@ class ResPartner(models.Model):
             "target": "new",
             "res_id": wiz.id,
         }
+
+    def action_archive(self):
+        """Archive only this partner via gear
+        Do not super, otherwise core odoo
+        archives children too
+        """
+        self.filtered("active").write({"active": False})
+        return False

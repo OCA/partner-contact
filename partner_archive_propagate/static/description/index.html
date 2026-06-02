@@ -410,19 +410,43 @@ propagation when partners are archived through automation or imports.</li>
 </div>
 <div class="section" id="usage">
 <h3><a class="toc-backref" href="#toc-entry-2">Usage</a></h3>
+<p>This module provides two distinct ways to archive a company or parent
+contact.</p>
+<p><strong>Archive via the action menu (gear icon)</strong></p>
+<p>Clicking <strong>Archive</strong> in the gear (⚙) menu archives <strong>only the company
+itself</strong>. Child contacts, invoice/delivery addresses, and related
+partners are left completely untouched. Use this when you want a quick
+archive without touching any of the company’s contacts.</p>
+<blockquote>
+<strong>Note:</strong> This behaviour is consistent regardless of the <em>Force
+propagation outside UI</em> system setting. The gear menu never
+propagates.</blockquote>
+<p><strong>Archive via the “Archive Contact and Children” button</strong></p>
 <ol class="arabic simple">
 <li>Open a partner (company or main contact).</li>
 <li>Click the <strong>“Archive Contact and Children”</strong> button.</li>
-<li>Review the list of child contacts to be archived.</li>
+<li>Review the list of child contacts to be archived. Remove any row to
+keep that contact active after archiving.</li>
 <li>Confirm the action.<ul>
 <li>Non-contact types (e.g., invoice/delivery addresses) are archived
-silently.</li>
+silently in the background — they do not appear in the list.</li>
 <li>Contact-type descendants appear in the wizard for review.</li>
+<li>Contacts linked to active users are automatically excluded from
+the list; a warning message is posted on the company.</li>
 </ul>
 </li>
 </ol>
+<p>If the company has no contact-type descendants, no wizard opens and the
+company (and its non-contact addresses) are archived immediately.</p>
+<p><strong>Unarchiving</strong></p>
 <p>Unarchiving also follows propagation rules: if a parent partner is
-unarchived, its propagated descendants are unarchived as well.</p>
+unarchived, its propagated descendants are unarchived as well. Partners
+that were independently archived are not affected.</p>
+<p><strong>System setting: Force propagation outside UI</strong></p>
+<p>When <strong>Force propagation outside UI</strong> is enabled (under <em>Settings</em>),
+archiving a company via any non-UI path (imports, RPC calls, automated
+jobs, etc.) will also propagate to descendants, just as the wizard
+button does. This setting has no effect on the gear menu action.</p>
 </div>
 <div class="section" id="bug-tracker">
 <h3><a class="toc-backref" href="#toc-entry-3">Bug Tracker</a></h3>

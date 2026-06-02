@@ -272,3 +272,30 @@ class TestPartnerArchivePropagate(TransactionCase):
         self.assertFalse(bool(p2.propagated_from_id))
         # p3 remains active and untouched
         self.assertTrue(p3.active)
+
+    def test_action_archive_gear_leaves_contacts_untouched(self):
+        """action_archive archives only self.
+        Contact-type children are left untouched ."""
+        for p in (self.A, self.B, self.C, self.D, self.E):
+            p.write({"active": True, "propagated_from_id": False})
+        result = self.A.action_archive()
+        self.assertFalse(result)
+        self.assertFalse(self.A.active)
+        # All descendants left untouched
+        self.assertTrue(self.B.active)
+        self.assertTrue(self.C.active)
+        self.assertTrue(self.D.active)
+        self.assertTrue(self.E.active)
+
+    def test_action_archive_gear_no_contacts_still_only_archives_company(self):
+        """action_archive archives only the company even when there
+        are no contact-type candidates."""
+        self.B.write({"active": False})
+        self.E.write({"active": False})
+        for p in (self.A, self.C, self.D):
+            p.write({"active": True, "propagated_from_id": False})
+        result = self.A.action_archive()
+        self.assertFalse(result)
+        self.assertFalse(self.A.active)
+        self.assertTrue(self.C.active)
+        self.assertTrue(self.D.active)
