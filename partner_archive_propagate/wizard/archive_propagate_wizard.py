@@ -19,9 +19,10 @@ class ArchivePropagateWizard(models.TransientModel):
         - skip descendants linked to active users and notify
         """
         self.ensure_one()
-        self.partner_id.with_context(partner_archive_propagate_ui=True).write(
-            {"active": False}
-        )
+        self.partner_id.with_context(
+            partner_archive_propagate_ui=True,
+            archive_propagate_wizard_line_ids=self.line_ids.mapped("partner_id").ids,
+        ).write({"active": False})
         partners = (
             self.line_ids.mapped("partner_id").sudo().filtered(lambda p: p.active)
         )
