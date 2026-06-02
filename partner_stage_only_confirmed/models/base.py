@@ -27,14 +27,14 @@ class Base(models.AbstractModel):
                         for node in doc.xpath(f"//field[@name='{fname}']"):
                             domain = node.get("domain")
                             if not domain:
-                                domain = "[('state', '=', 'confirmed')]"
+                                domain = "[('stage_state', '=', 'confirmed')]"
                             else:
                                 # domain is always a string due to XML parsing
                                 if domain in ("", "[]"):
-                                    domain = "[('state', '=', 'confirmed')]"
+                                    domain = "[('stage_state', '=', 'confirmed')]"
                                 else:
                                     domain = domain[:-1]
-                                    domain += ", ('state', '=', 'confirmed')]"
+                                    domain += ", ('stage_state', '=', 'confirmed')]"
                             node.set("domain", domain)
             res["arch"] = etree.tostring(doc)
         return res
