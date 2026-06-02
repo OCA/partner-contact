@@ -78,10 +78,15 @@ class ResPartner(models.Model):
         companies = self.filtered(lambda p: p.is_company)
         if not companies:
             return
+        wizard_line_ids = self.env.context.get("archive_propagate_wizard_line_ids")
         for company in companies:
             related = company._get_related_partners_for_archive_propagation().filtered(
                 lambda p: p.active
             )
+            # Check if wizard run
+            if wizard_line_ids is not None:
+                # only archive partners the user kept in the list
+                related = related.filtered(lambda p: p.id in wizard_line_ids)
             if not related:
                 continue
             archivable, unarchivable = related._split_archivable_unarchivable_user()

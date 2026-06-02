@@ -134,16 +134,11 @@ class TestPartnerMultiRelationArchivePropagate(TransactionCase):
         self.assertFalse(bool(self.rel1.propagated_from_id))
 
     def test_archive_propagate_wizard_archives_related(self):
-        """Wizard UI path: _archive_propagate_wizard archives related partners.
-
-        When action_confirm writes active=False with partner_archive_propagate_ui
-        context, _archive_propagate_wizard is called. The glue module's override
-        must invoke _archive_multi_relation so related partners are archived
-        alongside non-contact hierarchy descendants.
-        """
-        self.org.with_context(partner_archive_propagate_ui=True).write(
-            {"active": False}
-        )
+        """_archive_propagate_wizard archives related partners"""
+        self.org.with_context(
+            partner_archive_propagate_ui=True,
+            archive_propagate_wizard_line_ids=self.rel1.ids + self.rel2.ids,
+        ).write({"active": False})
         self.assertFalse(self.org.active)
         self.rel1.invalidate_recordset()
         self.assertFalse(self.rel1.active)
@@ -153,15 +148,15 @@ class TestPartnerMultiRelationArchivePropagate(TransactionCase):
         self.assertEqual(self.rel2.propagated_from_id, self.org)
 
     def test_archive_propagate_wizard_skips_related_with_active_user(self):
-        """Wizard UI path: related partner with an active user is skipped
+        """related partner with an active user is skipped
         and a notification is posted on the organisation."""
         user = self._create_active_user_for_partner(self.rel2, "rel2_user_wiz")
         self.addCleanup(user.unlink)
         before_msgs = len(self.org.message_ids)
-        self.org.with_context(partner_archive_propagate_ui=True).write(
-            {"active": False}
-        )
-
+        self.org.with_context(
+            partner_archive_propagate_ui=True,
+            archive_propagate_wizard_line_ids=self.rel1.ids + self.rel2.ids,
+        ).write({"active": False})
         self.assertFalse(self.org.active)
         self.rel1.invalidate_recordset()
         self.assertFalse(self.rel1.active)

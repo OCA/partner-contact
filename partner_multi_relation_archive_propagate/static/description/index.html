@@ -411,40 +411,54 @@ involved in relations with <tt class="docutils literal">propagate_archive = True
 </div>
 <div class="section" id="usage">
 <h2><a class="toc-backref" href="#toc-entry-1">Usage</a></h2>
-<ol class="arabic simple">
-<li>Install the following modules:<ul>
+<ol class="arabic">
+<li><p class="first">Install the following modules:</p>
+<ul class="simple">
 <li><tt class="docutils literal">partner_multi_relation</tt></li>
 <li><tt class="docutils literal">partner_archive_propagate</tt></li>
 <li><tt class="docutils literal">partner_multi_relation_archive_propagate</tt> (this module)</li>
 </ul>
 </li>
-<li>Configure relation types:<ul>
+<li><p class="first">Configure relation types:</p>
+<ul class="simple">
 <li>Go to <em>Relation Types</em> menu.</li>
 <li>Create or edit a relation type.</li>
 <li>Enable <strong>“Propagate archive”</strong> (<tt class="docutils literal">propagate_archive</tt>) on the
 relation type(s) where archiving should cascade.</li>
 </ul>
 </li>
-<li>Create relations:<ul>
+<li><p class="first">Create relations:</p>
+<ul class="simple">
 <li>Link a company partner to other partners using the configured
 relation types.</li>
 </ul>
 </li>
-<li>Archive a company:<ul>
-<li>Archive the company (via the UI wizard or via non-UI operations,
-depending on your configuration in
-<cite>partner_archive_propagate</cite>).</li>
+<li><p class="first">Archive a company:</p>
+<ul class="simple">
+<li>Use the <strong>“Archive Contact and Children”</strong> button (not the gear menu)
+to propagate archiving to related partners.</li>
+<li>The wizard lists both hierarchy contacts and contact-type relation
+partners. Remove any row to exclude that partner from the operation.</li>
 <li>All related partners reachable via relation types with
 <tt class="docutils literal">propagate_archive = True</tt> will be treated like propagated
-descendants:
-* archived if possible,
-* skipped (and mentioned) if they have active users,
-* marked with <tt class="docutils literal">propagated_from_id = &lt;company&gt;</tt>.</li>
+descendants:<ul>
+<li>archived if possible,</li>
+<li>skipped (and mentioned) if they have active users,</li>
+<li>marked with <tt class="docutils literal">propagated_from_id = &lt;company&gt;</tt>.</li>
 </ul>
 </li>
-<li>Unarchive the company:<ul>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The gear (⚙) <strong>Archive</strong> action archives only the company itself
+and never propagates to relation partners, regardless of the
+<em>Force propagation outside UI</em> setting.</p>
+</div>
+</li>
+<li><p class="first">Unarchive the company:</p>
+<ul class="simple">
 <li>Unarchiving the company triggers the base
-<cite>partner_archive_propagate</cite> logic.</li>
+<tt class="docutils literal">partner_archive_propagate</tt> logic.</li>
 <li>All partners (tree descendants or relation-based) that were archived
 because of this company (<tt class="docutils literal">propagated_from_id</tt>) are unarchived and
 have the field cleared.</li>
