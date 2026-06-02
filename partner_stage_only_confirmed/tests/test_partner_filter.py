@@ -55,7 +55,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
         is enabled
         """
         domain = self._get_parent_field_domain({"only_confirmed_partners": True})
-        self.assertIn("'state'", domain)
+        self.assertIn("'stage_state'", domain)
         self.assertIn("'confirmed'", domain)
 
     def test_confirmed_partner_filter_disabled(self):
@@ -64,11 +64,11 @@ class TestConfirmedPartnerFilter(BaseCommon):
         context
         """
         domain = self._get_parent_field_domain({"only_confirmed_partners": False})
-        self.assertNotIn("'state'", domain)
+        self.assertNotIn("'stage_state'", domain)
         self.assertNotIn("'confirmed'", domain)
 
     def test_domain_empty_string(self):
-        """Test field with domain='' gets replaced with [('state', '=', 'confirmed')]"""
+        """Empty domain='' is replaced with the stage_state confirmed filter."""
 
         result = self.Partner.with_context(only_confirmed_partners=True).get_view(
             view_id=self.view_1.id, view_type="form"
@@ -76,11 +76,11 @@ class TestConfirmedPartnerFilter(BaseCommon):
         xml = etree.XML(result["arch"])
         field = xml.xpath("//field[@name='parent_id']")[0]
         domain = field.get("domain")
-        self.assertEqual(domain, "[('state', '=', 'confirmed')]")
+        self.assertEqual(domain, "[('stage_state', '=', 'confirmed')]")
 
     def test_domain_empty_list_string(self):
         """Test field with domain='[]' gets replaced with
-        [('state', '=',''confirmed')]"""
+        [('stage_state', '=',''confirmed')]"""
 
         result = self.Partner.with_context(only_confirmed_partners=True).get_view(
             view_id=self.view_2.id, view_type="form"
@@ -88,7 +88,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
         xml = etree.XML(result["arch"])
         field = xml.xpath("//field[@name='parent_id']")[0]
         domain = field.get("domain")
-        self.assertEqual(domain, "[('state', '=', 'confirmed')]")
+        self.assertEqual(domain, "[('stage_state', '=', 'confirmed')]")
 
     def test_filter_respects_config_param_true(self):
         """Test system parameter enabling partner filter"""
@@ -102,7 +102,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
         self.assertTrue(parent_field, "Expected 'parent_id' field in partner form view")
 
         domain = parent_field[0].get("domain")
-        self.assertIn("'state'", domain)
+        self.assertIn("'stage_state'", domain)
         self.assertIn("'confirmed'", domain)
 
     def test_filter_respects_config_param_false(self):
@@ -117,7 +117,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
         self.assertTrue(parent_field, "Expected 'parent_id' field in partner form view")
 
         domain = parent_field[0].get("domain")
-        self.assertNotIn("'state'", domain)
+        self.assertNotIn("'stage_state'", domain)
         self.assertNotIn("'confirmed'", domain)
 
     def test_filter_respects_config_param_default(self):
@@ -132,7 +132,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
         self.assertTrue(parent_field, "Expected 'parent_id' field in partner form view")
 
         domain = parent_field[0].get("domain") or ""
-        self.assertIn("'state'", domain)
+        self.assertIn("'stage_state'", domain)
         self.assertIn("'confirmed'", domain)
 
     def test_filter_with_existing_domain(self):
@@ -163,7 +163,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
         # Should contain both the original domain and the state condition
         self.assertIn("'name'", domain)
         self.assertIn("'test'", domain)
-        self.assertIn("'state'", domain)
+        self.assertIn("'stage_state'", domain)
         self.assertIn("'confirmed'", domain)
 
     def test_filter_non_partner_many2one(self):
@@ -192,7 +192,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
         domain = field.get("domain") or ""
 
         # Should not contain state condition for non-partner field
-        self.assertNotIn("'state'", domain)
+        self.assertNotIn("'stage_state'", domain)
         self.assertNotIn("'confirmed'", domain)
 
     def test_filter_partner_many2one(self):
@@ -221,7 +221,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
         domain = field.get("domain")
 
         # Should contain state condition for partner field
-        self.assertIn("'state'", domain)
+        self.assertIn("'stage_state'", domain)
         self.assertIn("'confirmed'", domain)
 
     def test_filter_various_view_types(self):
@@ -234,7 +234,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
         parent_field_form = xml_form.xpath("//field[@name='parent_id']")
         self.assertTrue(parent_field_form)
         domain_form = parent_field_form[0].get("domain") or ""
-        self.assertIn("'state'", domain_form)
+        self.assertIn("'stage_state'", domain_form)
 
         # In Odoo 19.0, tree views are now called list views
         # We'll test that the method properly handles different view types by checking
@@ -271,7 +271,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
         if parent_field:  # If the field exists in the view
             domain = parent_field[0].get("domain") or ""
             # Should not contain the state condition if filtering is disabled
-            self.assertNotIn("'state'", domain)
+            self.assertNotIn("'stage_state'", domain)
             self.assertNotIn("'confirmed'", domain)
 
     def test_get_view_non_partner_many2one_field(self):
@@ -300,7 +300,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
         domain = field.get("domain") or ""
 
         # Should not contain state condition for non-partner field
-        self.assertNotIn("'state'", domain)
+        self.assertNotIn("'stage_state'", domain)
         self.assertNotIn("'confirmed'", domain)
 
     def test_get_view_domain_extension(self):
@@ -330,7 +330,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
 
         # Should contain both the original domain and the new condition
         self.assertIn("'name'", domain)
-        self.assertIn("'state'", domain)
+        self.assertIn("'stage_state'", domain)
         self.assertIn("'confirmed'", domain)
 
     def test_get_view_empty_domain_list(self):
@@ -358,7 +358,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
         domain = field.get("domain")
 
         # Should be replaced with the confirmed state condition
-        self.assertEqual(domain, "[('state', '=', 'confirmed')]")
+        self.assertEqual(domain, "[('stage_state', '=', 'confirmed')]")
 
     def test_get_view_no_domain(self):
         """Test field with no initial domain gets the state condition"""
@@ -385,7 +385,7 @@ class TestConfirmedPartnerFilter(BaseCommon):
         domain = field.get("domain")
 
         # Should have the confirmed state condition added
-        self.assertEqual(domain, "[('state', '=', 'confirmed')]")
+        self.assertEqual(domain, "[('stage_state', '=', 'confirmed')]")
 
     def test_filter_with_non_boolean_context_value(self):
         """Test behavior with non-boolean context value"""
