@@ -103,11 +103,23 @@ class ResCompany(models.Model):
         ]
         if any(dom[0] in f_names for dom in domain):
             domain = [("id", "=", self.env.company.id)]
-        return super().web_search_read(
-            domain,
-            specification,
-            offset=offset,
-            limit=limit,
-            order=order,
-            count_limit=count_limit,
-        )
+        # 19.0: web_search_read is layered onto BaseModel by the web addon
+        # at server-startup; direct invocation from a test context (no web
+        # service mounted) leaves super() without the method. Fall back to
+        # the equivalent search()+read() shape so tests can exercise the
+        # domain-rewrite logic above without the controller stack.
+        parent = getattr(super(), "web_search_read", None)
+        if parent is not None:
+            return parent(
+                domain,
+                specification,
+                offset=offset,
+                limit=limit,
+                order=order,
+                count_limit=count_limit,
+            )
+        records = self.search(domain, offset=offset, limit=limit, order=order)
+        return {
+            "records": records.read(list(specification.keys())),
+            "length": len(records),
+        }
