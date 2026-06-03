@@ -65,7 +65,14 @@ class TestStreet3(TransactionCase):
         us_country = self.env.ref("base.us")
         self.assertTrue("%(street3)s" not in us_country.address_format)
 
-    def test_onchange_parent_id_copies_street3(self):
+    def test_default_get_copies_street3_from_default_parent_id(self):
+        """Replicate the "Add in Contacts & Addresses" inline form context.
+
+        Odoo passes ``default_parent_id`` in the context when the inline
+        ``child_ids`` form is opened from a company contact, so ``default_get``
+        must pre-fill the address fields (including ``street3``) from that
+        parent.
+        """
         parent = self.env["res.partner"].create(
             {
                 "name": "Parent Company",
@@ -76,42 +83,34 @@ class TestStreet3(TransactionCase):
                 "country_id": self.env.ref("base.us").id,
             }
         )
-        partner = self.env["res.partner"].new(
-            {"name": "Child", "type": "contact", "parent_id": parent.id}
+        values = (
+            self.env["res.partner"]
+            .with_context(default_parent_id=parent.id, default_type="contact")
+            .default_get(["street", "street2", "street3", "city"])
         )
-        result = partner._onchange_parent_id_street3()
-        self.assertIsNotNone(result)
-        self.assertIn("value", result)
-        self.assertEqual(result["value"]["street3"], "Suite 100")
-        self.assertEqual(result["value"]["street2"], "Floor 2")
-        self.assertEqual(result["value"]["street"], "123 Main St")
+        self.assertEqual(values.get("street3"), "Suite 100")
+        self.assertEqual(values.get("street2"), "Floor 2")
+        self.assertEqual(values.get("street"), "123 Main St")
+        self.assertEqual(values.get("city"), "Springfield")
 
-    def test_onchange_parent_id_no_parent(self):
-        partner = self.env["res.partner"].new({"name": "Orphan", "type": "contact"})
-        result = partner._onchange_parent_id_street3()
-        self.assertNotIn("street3", (result or {}).get("value", {}))
-
-    def test_onchange_parent_id_preserves_empty_parent(self):
-        partner = self.env["res.partner"].new(
-            {"name": "Child", "type": "contact", "parent_id": False}
-        )
-        result = partner._onchange_parent_id_street3()
-        self.assertNotIn("street3", (result or {}).get("value", {}))
-
-    def test_onchange_parent_id_extends_base_result(self):
+    def test_default_get_does_not_overwrite_explicit_value(self):
+        """An explicit default must win over the parent's value."""
         parent = self.env["res.partner"].create(
-            {
-                "name": "Parent Company",
-                "street": "123 Main St",
-                "city": "Springfield",
-            }
+            {"name": "Parent", "street3": "From parent"}
         )
-        partner = self.env["res.partner"].new(
-            {"name": "Child", "type": "contact", "parent_id": parent.id}
+        values = (
+            self.env["res.partner"]
+            .with_context(
+                default_parent_id=parent.id,
+                default_type="contact",
+                default_street3="Explicit",
+            )
+            .default_get(["street3"])
         )
-        result = partner._onchange_parent_id_street3()
-        self.assertIsNotNone(result)
-        self.assertIn("value", result)
-        self.assertIn("street", result["value"])
-        self.assertIn("street3", result["value"])
-        self.assertIn("city", result["value"])
+        self.assertEqual(values.get("street3"), "Explicit")
+
+    def test_default_get_no_parent(self):
+        values = self.env["res.partner"].with_context(default_type="contact").default_get(
+            ["street3"]
+        )
+        self.assertNotIn("street3", values)
