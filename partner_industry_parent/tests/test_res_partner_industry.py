@@ -12,6 +12,12 @@ class TestResPartnerIndustry(TransactionCase):
         self.industry_3 = self.env.ref("base.res_partner_industry_Q")
 
     def test_res_partner_industry_complete_name(self):
+        industry = self.env["res.partner.industry"].create(
+            {
+                "name": "Manufacturing",
+            }
+        )
+        self.assertEqual(industry.complete_name, "Manufacturing")
         self.assertEqual(self.industry_1.complete_name, "Public Administration")
         self.industry_1.parent_id = self.industry_2
         self.assertEqual(
