@@ -110,7 +110,9 @@ class TestStreet3(TransactionCase):
         self.assertEqual(values.get("street3"), "Explicit")
 
     def test_default_get_no_parent(self):
-        values = self.env["res.partner"].with_context(default_type="contact").default_get(
-            ["street3"]
+        values = (
+            self.env["res.partner"]
+            .with_context(default_type="contact")
+            .default_get(["street3"])
         )
         self.assertNotIn("street3", values)
