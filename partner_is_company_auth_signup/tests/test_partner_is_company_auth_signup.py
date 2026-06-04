@@ -50,6 +50,11 @@ class TestPartnerIscompanyAuthSignup(TestAuthSignupFlow):
             "password": "mypassword",
             "confirm_password": "mypassword",
             "csrf_token": csrf_token,
+            # Useless values for testing this module
+            # but avoid error if 'partner_firstname_auth_signup'
+            # is installed
+            "firstname": "firstname",
+            "lastname": "lastname",
         }
         url_free_signup = self._get_free_signup_url()
         self.url_open(url_free_signup, data=payload)
