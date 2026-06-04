@@ -1,7 +1,7 @@
 # Copyright 2024 Therp BV <http://therp.nl>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, fields, models
+from odoo import _, api, fields, models
 
 
 class ResPartnerRelationAll(models.Model):
@@ -30,14 +30,11 @@ class ResPartnerRelationAll(models.Model):
         """Allow inherit models to add fields to view."""
         return super()._get_additional_view_fields() + ", typ.allow_function"
 
-    def name_get(self):
+    @api.depends("function")
+    def _compute_display_name(self):
         """Add function to name if present."""
+        res = super()._compute_display_name()
         wf = _(" with function ")  # Prevent repeated translation.
-        return [
-            (
-                this.id,
-                super(ResPartnerRelationAll, this).name_get()[0][1]
-                + (this.function and wf + this.function or ""),
-            )
-            for this in self
-        ]
+        for this in self.filtered("function"):
+            this.display_name = (this.display_name or "") + wf + this.function
+        return res

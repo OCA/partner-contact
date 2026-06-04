@@ -5,7 +5,6 @@
         <field name="is_company">0</field>
         <field name="city">Hilversum</field>
         <field name="zip">1222 EE</field>
-        <field name="country_id" ref="base.nl" />
         <field name="email">bigguy@yourcompany.example.com</field>
         <field name="phone">+31 06 6461 0401</field>
         <field name="street">Albert Einstein</field>

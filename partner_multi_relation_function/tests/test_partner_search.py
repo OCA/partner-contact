@@ -34,6 +34,17 @@ class TestPartnerSearch(common.TransactionCase):
             }
         )
         self.assertTrue(relation_with_function)
+        # Test display_name includes function on relation.all
+        relation_all = self.env["res.partner.relation.all"].search(
+            [
+                ("this_partner_id", "=", partner_project.id),
+                ("function", "=", "coordinator"),
+            ],
+            limit=1,
+        )
+        self.assertTrue(relation_all)
+        self.assertIn("coordinator", relation_all.display_name)
+        self.assertIn("with function", relation_all.display_name)
         domain = [("search_relation_function", "=", "coordinator")]
         partners = Partner.search(domain)
         self.assertEqual(len(partners), 2)

@@ -7,7 +7,7 @@
             ref="partner_multi_relation.tree_res_partner_relation_type"
         />
         <field type="xml" name="arch">
-            <xpath expr="//tree" position="inside">
+            <xpath expr="//list" position="inside">
                 <field name="allow_function" />
             </xpath>
         </field>
