@@ -4,7 +4,6 @@ from odoo import fields, models
 
 
 class ResPartnerRelationType(models.Model):
-
     _inherit = "res.partner.relation.type"
 
     allow_function = fields.Boolean(

@@ -5,7 +5,6 @@ from odoo.exceptions import ValidationError
 
 
 class ResPartnerRelation(models.Model):
-
     _inherit = "res.partner.relation"
 
     function = fields.Char()

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-
     <record id="demo_relation_ceo" model="res.partner.relation">
         <field
             name="left_partner_id"
@@ -10,5 +9,4 @@
         <field name="type_id" ref="rel_type_board_member" />
         <field name="function">CEO</field>
     </record>
-
 </odoo>
