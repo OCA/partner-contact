@@ -12,7 +12,7 @@ class ResPartner(models.Model):
             ("standalone", "Standalone Contact"),
             ("attached", "Attached to existing Contact"),
         ],
-        compute="_compute_contact_type",
+        compute="_compute_several_companies_contact_type",
         store=True,
         index=True,
         default="standalone",
@@ -27,9 +27,25 @@ class ResPartner(models.Model):
         "contact_id",
         string="Others Positions",
     )
+    other_contacts_count = fields.Integer(
+        compute="_compute_other_contacts_count",
+        store=True,
+    )
+
+    @api.depends("other_contact_ids")
+    def _compute_other_contacts_count(self):
+        # Stored count used by the kanban card. Reading it directly avoids
+        # declaring an (unrendered) one2many in the kanban, which Odoo 17+
+        # warns about ("Missing widget: one2many_list").
+        for rec in self:
+            rec.other_contacts_count = len(rec.other_contact_ids)
 
     @api.depends("contact_id")
-    def _compute_contact_type(self):
+    def _compute_several_companies_contact_type(self):
+        # NB: the method name is intentionally specific to this module. The
+        # sibling module ``partner_type_base`` also defines a
+        # ``_compute_contact_type`` (for its own fields); sharing the name would
+        # make one shadow the other when both are installed.
         for rec in self:
             rec.contact_type = "attached" if rec.contact_id else "standalone"
 
@@ -47,28 +63,60 @@ class ResPartner(models.Model):
             result = self
         return result
 
+    def _search_show_all_positions_domain(self, domain):
+        """Rewrite ``domain`` to show only standalone contacts, or standalone
+        contacts having an attached contact matching ``domain``, when the
+        ``search_show_all_positions`` context flag asks to hide attached
+        positions.
+
+        This is applied only on the view data paths (``search`` and
+        ``web_search_read``) and deliberately NOT on ``_search``: the latter
+        also backs record-rule access checks and relational (one2many)
+        prefetches, which must keep seeing attached contacts. Filtering there
+        would raise spurious AccessErrors and empty out ``other_contact_ids``.
+        """
+        flag = self.env.context.get("search_show_all_positions", {})
+        if not (flag.get("is_set") and not flag.get("set_value")):
+            return domain
+        domain = expression.normalize_domain(domain)
+        attached_contact_domain = expression.AND(
+            (domain, [("contact_type", "=", "attached")])
+        )
+        # Disable the filter for this inner search to avoid recursion.
+        attached_contacts = self.with_context(
+            search_show_all_positions={"is_set": False}
+        ).search(attached_contact_domain)
+        return expression.OR(
+            (
+                expression.AND(([("contact_type", "=", "standalone")], domain)),
+                [("other_contact_ids", "in", attached_contacts.ids)],
+            )
+        )
+
     @api.model
-    def search(self, args, offset=0, limit=None, order=None, count=False):
-        """Display only standalone contact matching ``args`` or having
-        attached contact matching ``args``"""
-        ctx = self.env.context
-        if (
-            ctx.get("search_show_all_positions", {}).get("is_set")
-            and not ctx["search_show_all_positions"]["set_value"]
-        ):
-            args = expression.normalize_domain(args)
-            attached_contact_args = expression.AND(
-                (args, [("contact_type", "=", "attached")])
-            )
-            attached_contacts = super(ResPartner, self).search(attached_contact_args)
-            args = expression.OR(
-                (
-                    expression.AND(([("contact_type", "=", "standalone")], args)),
-                    [("other_contact_ids", "in", attached_contacts.ids)],
-                )
-            )
-        return super(ResPartner, self).search(
-            args, offset=offset, limit=limit, order=order, count=count
+    def search(self, domain, offset=0, limit=None, order=None):
+        return super().search(
+            self._search_show_all_positions_domain(domain),
+            offset=offset,
+            limit=limit,
+            order=order,
+        )
+
+    @api.model
+    @api.readonly
+    def web_search_read(
+        self, domain, specification, offset=0, limit=None, order=None, count_limit=None
+    ):
+        """Hide attached contacts from the kanban/list views, which load their
+        records through ``web_search_read`` (bypassing ``search`` on Odoo 17+).
+        """
+        return super().web_search_read(
+            self._search_show_all_positions_domain(domain),
+            specification,
+            offset=offset,
+            limit=limit,
+            order=order,
+            count_limit=count_limit,
         )
 
     @api.model_create_multi
@@ -99,7 +147,7 @@ class ResPartner(models.Model):
         """Returns the partner that is considered the commercial
         entity of this partner. The commercial entity holds the master data
         for all commercial fields (see :py:meth:`~_commercial_fields`)"""
-        result = super(ResPartner, self)._compute_commercial_partner()
+        result = super()._compute_commercial_partner()
         for partner in self:
             if partner.contact_type == "attached" and not partner.parent_id:
                 partner.commercial_partner_id = partner.contact_id
@@ -135,7 +183,7 @@ class ResPartner(models.Model):
         fields.related to the parent
         """
         self.ensure_one()
-        res = super(ResPartner, self)._fields_sync(update_values)
+        res = super()._fields_sync(update_values)
         contact_fields = self._contact_fields()
         # 1. From UPSTREAM: sync from parent contact
         if update_values.get("contact_id"):

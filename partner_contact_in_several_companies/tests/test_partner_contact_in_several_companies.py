@@ -5,19 +5,19 @@ from odoo.tests import common
 class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
     def setUp(self):
         """*****setUp*****"""
-        super(PartnerContactInSeveralCompaniesCase, self).setUp()
+        super().setUp()
         self.partner = self.env["res.partner"]
         self.action = self.env["ir.actions.act_window"]
         current_module = "partner_contact_in_several_companies"
         # Get test records reference
         self.main_partner = self.env.ref("base.main_partner")
-        self.bob_contact = self.env.ref("%s.res_partner_contact1" % current_module)
+        self.bob_contact = self.env.ref(f"{current_module}.res_partner_contact1")
         self.bob_job1 = self.env.ref(
-            "%s.res_partner_contact1_work_position1" % current_module
+            f"{current_module}.res_partner_contact1_work_position1"
         )
         self.roger_contact = self.env.ref("base.res_partner_main2")
         self.roger_job2 = self.env.ref(
-            "%s.res_partner_main2_position_consultant" % current_module
+            f"{current_module}.res_partner_main2_position_consultant"
         )
 
     def test_00_show_only_standalone_contact(self):
@@ -194,3 +194,34 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
             new_contact.commercial_partner_id,
             self.bob_contact,
         )
+
+    def test_09_web_data_path_hides_attached_positions(self):
+        """Attached contacts must stay hidden on the web client data path.
+
+        Kanban and list views load their records through ``web_search_read``,
+        which bypasses the public ``search`` method on Odoo 17+. This is a
+        regression test for attached contacts leaking into the Contacts views.
+        """
+        ctx = {"search_show_all_positions": {"is_set": True, "set_value": False}}
+        partner = self.partner.with_context(**ctx)
+
+        result = partner.web_search_read([], {"id": {}, "contact_type": {}})
+        shown_ids = [record["id"] for record in result["records"]]
+        self.assertNotIn(self.bob_job1.id, shown_ids)
+        self.assertNotIn(self.roger_job2.id, shown_ids)
+        self.assertIn(self.bob_contact.id, shown_ids)
+
+    def test_10_filter_does_not_leak_into_access_checks(self):
+        """The hide filter must not leak into ``_search``: record-rule access
+        checks and ``other_contact_ids`` prefetches must still see attached
+        contacts under the hide context. Regression test for an AccessError
+        raised when opening a standalone contact's form.
+        """
+        ctx = {"search_show_all_positions": {"is_set": True, "set_value": False}}
+        # Relational prefetch must still return the attached contact.
+        self.assertIn(
+            self.bob_job1,
+            self.bob_contact.with_context(**ctx).other_contact_ids,
+        )
+        # Reading the attached contact must not be blocked by access checks.
+        self.bob_job1.with_context(**ctx).web_read({"id": {}, "display_name": {}})
