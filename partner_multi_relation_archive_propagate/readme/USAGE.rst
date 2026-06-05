@@ -18,20 +18,28 @@
 
 4. Archive a company:
 
-   * Archive the company (via the UI wizard or via non-UI operations,
-     depending on your configuration in
-     `partner_archive_propagate`).
+   * Use the **"Archive Contact and Children"** button (not the gear menu)
+     to propagate archiving to related partners.
+   * The wizard lists both hierarchy contacts and contact-type relation
+     partners. Remove any row to exclude that partner from the operation.
    * All related partners reachable via relation types with
      ``propagate_archive = True`` will be treated like propagated
      descendants:
+
      * archived if possible,
      * skipped (and mentioned) if they have active users,
      * marked with ``propagated_from_id = <company>``.
 
+   .. note::
+
+      The gear (⚙) **Archive** action archives only the company itself
+      and never propagates to relation partners, regardless of the
+      *Force propagation outside UI* setting.
+
 5. Unarchive the company:
 
    * Unarchiving the company triggers the base
-     `partner_archive_propagate` logic.
+     ``partner_archive_propagate`` logic.
    * All partners (tree descendants or relation-based) that were archived
      because of this company (``propagated_from_id``) are unarchived and
      have the field cleared.
