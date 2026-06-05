@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="rel_type_board_member" model="res.partner.relation.type">
+        <field name="name">Has board member</field>
+        <field name="name_inverse">Is board member of</field>
+        <field name="contact_type_left">c</field>
+        <field name="contact_type_right">p</field>
+        <field name="allow_function">True</field>
+    </record>
+</odoo>

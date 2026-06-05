@@ -1,0 +1,98 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_multi_relation_function
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-05-29 13:46+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: partner_multi_relation_function
+#. odoo-python
+#: code:addons/partner_multi_relation_function/models/res_partner_relation_all.py:0
+#, python-format
+msgid " with function "
+msgstr " con funzione "
+
+#. module: partner_multi_relation_function
+#: model:ir.model,name:partner_multi_relation_function.model_res_partner_relation_all
+msgid "All (non-inverse + inverse) relations between partners"
+msgstr "Tutte le relazioni tra partner (non-inverse e inverse)"
+
+#. module: partner_multi_relation_function
+#: model:ir.model,name:partner_multi_relation_function.model_res_partner_relation_type_selection
+msgid "All relation types"
+msgstr "Tutti i tipi di relazione"
+
+#. module: partner_multi_relation_function
+#: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner_relation_all__allow_function
+#: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner_relation_type__allow_function
+#: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner_relation_type_selection__allow_function
+msgid "Allow Function"
+msgstr "Consente funzione"
+
+#. module: partner_multi_relation_function
+#: model:ir.model,name:partner_multi_relation_function.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_multi_relation_function
+#: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner_relation__function
+#: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner_relation_all__function
+msgid "Function"
+msgstr "Funzione"
+
+#. module: partner_multi_relation_function
+#: model:res.partner.relation.type,name:partner_multi_relation_function.rel_type_board_member
+msgid "Has board member"
+msgstr "Ha membro del board"
+
+#. module: partner_multi_relation_function
+#: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner__search_relation_function
+#: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_users__search_relation_function
+msgid "Has relation function"
+msgstr "Ha funzione relazione"
+
+#. module: partner_multi_relation_function
+#: model:res.partner.relation.type,name_inverse:partner_multi_relation_function.rel_type_board_member
+msgid "Is board member of"
+msgstr "È membro del board di"
+
+#. module: partner_multi_relation_function
+#: model:ir.model.fields,help:partner_multi_relation_function.field_res_partner_relation_type__allow_function
+msgid "Is set, relations of this type can have a function specified"
+msgstr ""
+"Se impostata, le relazioni di questo tipo possono avere una funzione indicata"
+
+#. module: partner_multi_relation_function
+#: model:ir.model,name:partner_multi_relation_function.model_res_partner_relation_type
+msgid "Partner Relation Type"
+msgstr "Tipo di relazione del partner"
+
+#. module: partner_multi_relation_function
+#: model:ir.model,name:partner_multi_relation_function.model_res_partner_relation
+msgid "Partner relation"
+msgstr "Relazione partner"
+
+#. module: partner_multi_relation_function
+#. odoo-python
+#: code:addons/partner_multi_relation_function/models/res_partner.py:0
+#, python-format
+msgid "Unsupported search operator \"%s\""
+msgstr "Operatore di ricerca non supportato \"%s\""
+
+#. module: partner_multi_relation_function
+#. odoo-python
+#: code:addons/partner_multi_relation_function/models/res_partner_relation.py:0
+#, python-format
+msgid "You can not have a function on relations of type %(type)s."
+msgstr "Non si può avere una funzione in una relazione di tipo %(type)s."
