@@ -10,3 +10,4 @@
 - Franco Tampieri \<franco@tampieri.info\>
 - Rattapong Chokmasermkul \<rattapongc@ecosoft.co.th\>
 - Stéphan Sainléger \<https://github.com/stephansainleger\>
+- Ken Woychesko \<https://github.com/bpmi\>
