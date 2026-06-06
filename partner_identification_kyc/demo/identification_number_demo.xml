@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <!-- Demo partner records for KYC testing -->
+    <record id="demo_partner_for_kyc" model="res.partner">
+        <field name="name">Demo Partner for KYC Testing</field>
+        <field name="email">demo.kyc@example.com</field>
+        <field name="phone">+1 234 567 8900</field>
+    </record>
+    <!-- Demo issuer for KYC -->
+    <record id="demo_kyc_issuer" model="res.partner">
+        <field name="name">KYC Verification Authority</field>
+        <field name="is_company" eval="True" />
+        <field name="email">info@kyc-authority.example.com</field>
+    </record>
+
+    <!-- Demo partner for testing -->
+    <record id="demo_partner_kyc_request" model="res.partner">
+        <field name="name">John KYC Customer</field>
+        <field name="email">john.customer@example.com</field>
+    </record>
+
+    <!-- Demo partners in various KYC stages -->
+    <record id="demo_partner_kyc_running" model="res.partner">
+        <field name="name">Jane Running KYC</field>
+        <field name="email">jane.running@example.com</field>
+    </record>
+
+    <record id="demo_partner_kyc_to_renew" model="res.partner">
+        <field name="name">Bob To-Renew KYC</field>
+        <field name="email">bob.torenew@example.com</field>
+    </record>
+
+    <record id="demo_partner_kyc_expired" model="res.partner">
+        <field name="name">Alice Expired KYC</field>
+        <field name="email">alice.expired@example.com</field>
+    </record>
+
+    <!-- Demo identification records in various states -->
+    <!-- Draft status KYC record -->
+    <record id="demo_kyc_draft" model="res.partner.id_number">
+        <field name="partner_id" ref="demo_partner_kyc_request" />
+        <field name="category_id" ref="kyc_identification_category" />
+        <field name="name">KYC-001-DRAFT</field>
+        <field name="status">draft</field>
+        <field name="valid_from" eval="context_today().strftime('%Y-%m-01')" />
+        <field
+            name="valid_until"
+            eval="(context_today() + timedelta(days=365)).strftime('%Y-%m-%d')"
+        />
+        <field name="partner_issued_id" ref="demo_kyc_issuer" />
+    </record>
+
+    <!-- Running status KYC record -->
+    <record id="demo_kyc_running" model="res.partner.id_number">
+        <field name="partner_id" ref="demo_partner_kyc_running" />
+        <field name="category_id" ref="kyc_identification_category" />
+        <field name="name">KYC-002-RUNNING</field>
+        <field name="status">open</field>
+        <field
+            name="valid_from"
+            eval="(context_today() - timedelta(days=100)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="valid_until"
+            eval="(context_today() + timedelta(days=200)).strftime('%Y-%m-%d')"
+        />
+        <field name="partner_issued_id" ref="demo_kyc_issuer" />
+    </record>
+
+    <!-- To Renew status KYC record -->
+    <record id="demo_kyc_to_renew" model="res.partner.id_number">
+        <field name="partner_id" ref="demo_partner_kyc_to_renew" />
+        <field name="category_id" ref="kyc_identification_category" />
+        <field name="name">KYC-003-TORENEW</field>
+        <field name="status">pending</field>
+        <field
+            name="valid_from"
+            eval="(context_today() - timedelta(days=250)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="valid_until"
+            eval="(context_today() + timedelta(days=50)).strftime('%Y-%m-%d')"
+        />
+        <field name="partner_issued_id" ref="demo_kyc_issuer" />
+    </record>
+
+    <!-- Expired status KYC record -->
+    <record id="demo_kyc_expired" model="res.partner.id_number">
+        <field name="partner_id" ref="demo_partner_kyc_expired" />
+        <field name="category_id" ref="kyc_identification_category" />
+        <field name="name">KYC-004-EXPIRED</field>
+        <field name="status">close</field>
+        <field
+            name="valid_from"
+            eval="(context_today() - timedelta(days=500)).strftime('%Y-%m-%d')"
+        />
+        <field
+            name="valid_until"
+            eval="(context_today() - timedelta(days=100)).strftime('%Y-%m-%d')"
+        />
+        <field name="partner_issued_id" ref="demo_kyc_issuer" />
+    </record>
+</odoo>
