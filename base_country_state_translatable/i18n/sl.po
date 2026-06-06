@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:48+0000\n"
-"PO-Revision-Date: 2026-02-01 10:10+0000\n"
+"PO-Revision-Date: 2026-06-06 05:53+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: model:ir.model.fields,help:base_country_state_translatable.field_res_country_state__name
 msgid ""
 "Administrative divisions of a country. E.g. Fed. State, Department, Canton"
-msgstr ""
+msgstr "Upravne enote države. Npr. zvezna država, departma, kanton"
 
 #. module: base_country_state_translatable
 #: model:ir.model,name:base_country_state_translatable.model_res_country_state
