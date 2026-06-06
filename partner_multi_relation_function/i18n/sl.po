@@ -6,7 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-06-06 08:46+0000\n"
+"Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: none\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -14,80 +15,81 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_multi_relation_function
 #. odoo-python
 #: code:addons/partner_multi_relation_function/models/res_partner_relation_all.py:0
 msgid " with function "
-msgstr ""
+msgstr " s funkcijo "
 
 #. module: partner_multi_relation_function
 #: model:ir.model,name:partner_multi_relation_function.model_res_partner_relation_all
 msgid "All (non-inverse + inverse) relations between partners"
-msgstr ""
+msgstr "Vsi (ne inverzni in inverzni) odnosi med partnerji"
 
 #. module: partner_multi_relation_function
 #: model:ir.model,name:partner_multi_relation_function.model_res_partner_relation_type_selection
 msgid "All relation types"
-msgstr ""
+msgstr "Vsi tipi odnosov"
 
 #. module: partner_multi_relation_function
 #: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner_relation_all__allow_function
 #: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner_relation_type__allow_function
 #: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner_relation_type_selection__allow_function
 msgid "Allow Function"
-msgstr ""
+msgstr "Dovoli funkcije"
 
 #. module: partner_multi_relation_function
 #: model:ir.model,name:partner_multi_relation_function.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Stik"
 
 #. module: partner_multi_relation_function
 #: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner_relation__function
 #: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner_relation_all__function
 msgid "Function"
-msgstr ""
+msgstr "Funkcija"
 
 #. module: partner_multi_relation_function
 #: model:res.partner.relation.type,name:partner_multi_relation_function.rel_type_board_member
 msgid "Has board member"
-msgstr ""
+msgstr "Ima člana uprave"
 
 #. module: partner_multi_relation_function
 #: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_partner__search_relation_function
 #: model:ir.model.fields,field_description:partner_multi_relation_function.field_res_users__search_relation_function
 msgid "Has relation function"
-msgstr ""
+msgstr "Ima funkcijo odnosa"
 
 #. module: partner_multi_relation_function
 #: model:res.partner.relation.type,name_inverse:partner_multi_relation_function.rel_type_board_member
 msgid "Is board member of"
-msgstr ""
+msgstr "Je član uprave"
 
 #. module: partner_multi_relation_function
 #: model:ir.model.fields,help:partner_multi_relation_function.field_res_partner_relation_type__allow_function
 msgid "Is set, relations of this type can have a function specified"
-msgstr ""
+msgstr "Če nastavljeno, odnosi tega tipa lahko vsebujejo določeno funkcijo"
 
 #. module: partner_multi_relation_function
 #: model:ir.model,name:partner_multi_relation_function.model_res_partner_relation_type
 msgid "Partner Relation Type"
-msgstr ""
+msgstr "Tip partnerskega odnosa"
 
 #. module: partner_multi_relation_function
 #: model:ir.model,name:partner_multi_relation_function.model_res_partner_relation
 msgid "Partner relation"
-msgstr ""
+msgstr "Partnerski odnos"
 
 #. module: partner_multi_relation_function
 #. odoo-python
 #: code:addons/partner_multi_relation_function/models/res_partner.py:0
 msgid "Unsupported search operator \"%s\""
-msgstr ""
+msgstr "Nepodprt iskalni operand \"%s\""
 
 #. module: partner_multi_relation_function
 #. odoo-python
 #: code:addons/partner_multi_relation_function/models/res_partner_relation.py:0
 msgid "You can not have a function on relations of type %(type)s."
-msgstr ""
+msgstr "Na relacijah tipa %(type)s ni mogoče imeti funkcije."
