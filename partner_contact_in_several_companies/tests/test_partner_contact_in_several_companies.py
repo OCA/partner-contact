@@ -3,22 +3,69 @@ from odoo.tests import common
 
 
 class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
-    def setUp(self):
-        """*****setUp*****"""
-        super().setUp()
-        self.partner = self.env["res.partner"]
-        self.action = self.env["ir.actions.act_window"]
-        current_module = "partner_contact_in_several_companies"
-        # Get test records reference
-        self.main_partner = self.env.ref("base.main_partner")
-        self.bob_contact = self.env.ref(f"{current_module}.res_partner_contact1")
-        self.bob_job1 = self.env.ref(
-            f"{current_module}.res_partner_contact1_work_position1"
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.partner = cls.env["res.partner"]
+        cls.action = cls.env["ir.actions.act_window"]
+        # Build self-contained fixtures rather than relying on demo records:
+        # since 19.0 Odoo no longer loads demo data in CI databases, so any
+        # ``env.ref`` to a demo record would raise during setup.
+        cls.main_partner = cls.partner.create(
+            {"name": "YourCompany", "is_company": True}
         )
-        self.roger_contact = self.env.ref("base.res_partner_main2")
-        self.roger_job2 = self.env.ref(
-            f"{current_module}.res_partner_main2_position_consultant"
+        roger_company = cls.partner.create(
+            {"name": "Roger's Company", "is_company": True}
         )
+        # Bob: a standalone contact with a single attached work position.
+        cls.bob_contact = cls.partner.create(
+            {"name": "Bob Egnops", "email": "bob@hillenburg-oceaninstitute.com"}
+        )
+        cls.bob_job1 = cls.partner.create(
+            {
+                "name": "Bob Egnops",
+                "function": "Technician",
+                "email": "bob@yourcompany.com",
+                "parent_id": cls.main_partner.id,
+                "contact_id": cls.bob_contact.id,
+            }
+        )
+        # Roger: a standalone contact with a single attached work position.
+        cls.roger_contact = cls.partner.create({"name": "Roger Scott"})
+        cls.roger_job2 = cls.partner.create(
+            {
+                "name": "Roger Scott",
+                "function": "Consultant",
+                "parent_id": roger_company.id,
+                "contact_id": cls.roger_contact.id,
+            }
+        )
+        # A custom partner action that already opts into "show all positions".
+        # The module must NOT override its context (test_06). It ships as a demo
+        # record; recreate it under the same xml-id when demo data is absent
+        # (e.g. CI on 19.0) so ``_for_xml_id`` still resolves it.
+        action_xmlid = "partner_contact_in_several_companies.action_partner_form"
+        if not cls.env.ref(action_xmlid, raise_if_not_found=False):
+            custom_action = cls.action.create(
+                {
+                    "name": "All Customers in All Positions",
+                    "res_model": "res.partner",
+                    "view_mode": "kanban,list,form",
+                    "context": (
+                        "{'search_default_customer': 1, "
+                        "'search_show_all_positions': "
+                        "{'is_set': True, 'set_value': True}}"
+                    ),
+                }
+            )
+            cls.env["ir.model.data"].create(
+                {
+                    "module": "partner_contact_in_several_companies",
+                    "name": "action_partner_form",
+                    "model": "ir.actions.act_window",
+                    "res_id": custom_action.id,
+                }
+            )
 
     def test_00_show_only_standalone_contact(self):
         """Check that only standalone contact are shown if context
@@ -153,7 +200,7 @@ class PartnerContactInSeveralCompaniesCase(common.TransactionCase):
         """Check ir_action context is auto updated."""
 
         new_context_val = (
-            "'search_show_all_positions': " "{'is_set': True, 'set_value': False}"
+            "'search_show_all_positions': {'is_set': True, 'set_value': False}"
         )
 
         xmlid = "base.action_partner_form"

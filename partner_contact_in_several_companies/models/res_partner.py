@@ -1,7 +1,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, fields, models
-from odoo.osv import expression
+from odoo.fields import Domain
 
 
 class ResPartner(models.Model):
@@ -78,17 +78,19 @@ class ResPartner(models.Model):
         flag = self.env.context.get("search_show_all_positions", {})
         if not (flag.get("is_set") and not flag.get("set_value")):
             return domain
-        domain = expression.normalize_domain(domain)
-        attached_contact_domain = expression.AND(
+        # NB: no explicit normalize_domain() as in <=18.0. In 19.0 the Domain
+        # DSL replaced osv.expression; Domain.AND/OR wrap each item through the
+        # Domain(...) constructor, which parses raw list-form domains directly.
+        attached_contact_domain = Domain.AND(
             (domain, [("contact_type", "=", "attached")])
         )
         # Disable the filter for this inner search to avoid recursion.
         attached_contacts = self.with_context(
             search_show_all_positions={"is_set": False}
         ).search(attached_contact_domain)
-        return expression.OR(
+        return Domain.OR(
             (
-                expression.AND(([("contact_type", "=", "standalone")], domain)),
+                Domain.AND(([("contact_type", "=", "standalone")], domain)),
                 [("other_contact_ids", "in", attached_contacts.ids)],
             )
         )
@@ -156,7 +158,9 @@ class ResPartner(models.Model):
     def _contact_fields(self):
         """Returns the list of contact fields that are synced from the parent
         when a partner is attached to him."""
-        return ["name", "title"]
+        # NB: ``title`` (and the res.partner.title model) was dropped from
+        # res.partner in 19.0, so it is no longer part of the synced fields.
+        return ["name"]
 
     def _contact_sync_from_parent(self):
         """Handle sync of contact fields when a new parent contact entity
@@ -165,7 +169,9 @@ class ResPartner(models.Model):
         self.ensure_one()
         if self.contact_id:
             contact_fields = self._contact_fields()
-            sync_vals = self.contact_id._update_fields_values(contact_fields)
+            # _update_fields_values() was renamed to _convert_fields_to_values()
+            # on res.partner in 19.0 (same semantics: dict of write() values).
+            sync_vals = self.contact_id._convert_fields_to_values(contact_fields)
             self.write(sync_vals)
 
     def update_contact(self, vals):

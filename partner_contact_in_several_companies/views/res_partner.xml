@@ -43,20 +43,32 @@
                 <field name="contact_id" invisible="1" />
                 <field name="contact_type" invisible="1" />
             </field>
+            <!-- In 19.0 the base child_ids subform renders the contact name as
+                 an <h3> heading inside a flex avatar+name header. Keep the
+                 contact_type selector as a normal grouped field above it. -->
+            <xpath expr="//field[@name='child_ids']/form//h3" position="before">
+                <group>
+                    <field name="contact_type" readonly="0" />
+                </group>
+            </xpath>
+            <!-- For an attached contact, render contact_id AS the heading (same
+                 size as a standalone's name, no label) in place of the hidden
+                 name field. -->
             <xpath
-                expr="//field[@name='child_ids']/form//field[@name='name']"
-                position="before"
+                expr="//field[@name='child_ids']/form//h3/field[@name='name']"
+                position="after"
             >
-                <field name="contact_type" readonly="0" />
                 <field
                     name="contact_id"
-                    string="Contact"
+                    nolabel="1"
+                    class="d-block"
+                    placeholder="Contact"
                     invisible="contact_type != 'attached'"
                     required="contact_type == 'attached'"
                 />
             </xpath>
             <xpath
-                expr="//field[@name='child_ids']/form//field[@name='name']"
+                expr="//field[@name='child_ids']/form//h3/field[@name='name']"
                 position="attributes"
             >
                 <attribute name="invisible">contact_type == 'attached'</attribute>
@@ -99,10 +111,6 @@
                                             name="phone"
                                             widget="phone"
                                         />
-                                        </div>
-                                        <div
-                                            t-if="record.mobile.raw_value"
-                                        >Mobile: <field name="mobile" widget="phone" />
                                         </div>
                                     </main>
                                 </t>
@@ -168,18 +176,12 @@
                                             required="type == 'contact'"
                                         />
                                         <field
-                                            name="title"
-                                            placeholder="e.g. Mr."
-                                            invisible="type != 'contact'"
-                                        />
-                                        <field
                                             name="function"
                                             placeholder="e.g. Sales Director"
                                             invisible="type != 'contact'"
                                         />
                                         <field name="email" />
                                         <field name="phone" widget="phone" />
-                                        <field name="mobile" widget="phone" />
                                         <field
                                             name="comment"
                                             placeholder="internal note..."
