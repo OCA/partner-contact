@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -27,7 +27,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/partner_archive_propagate/models/res_partner.py:0
 #: model_terms:ir.ui.view,arch_db:partner_archive_propagate.view_archive_propagate_wizard_form
-#, python-format
 msgid "Archive Contacts"
 msgstr ""
 
@@ -87,6 +86,11 @@ msgid "Email"
 msgstr ""
 
 #. module: partner_archive_propagate
+#: model_terms:ir.ui.view,arch_db:partner_archive_propagate.view_res_config_settings_partner_archive
+msgid "Force partner archive propagation outside UI"
+msgstr ""
+
+#. module: partner_archive_propagate
 #: model:ir.model.fields,field_description:partner_archive_propagate.field_res_config_settings__partner_archive_force_outside_ui
 msgid "Force propagation outside UI"
 msgstr ""
@@ -99,15 +103,10 @@ msgstr ""
 
 #. module: partner_archive_propagate
 #: model:ir.model.fields,help:partner_archive_propagate.field_res_config_settings__partner_archive_force_outside_ui
+#: model_terms:ir.ui.view,arch_db:partner_archive_propagate.view_res_config_settings_partner_archive
 msgid ""
 "If enabled, archiving a partner via any non-UI method (imports, RPC, "
 "automated) will also archive all descendants and mark them as propagated."
-msgstr ""
-
-#. module: partner_archive_propagate
-#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_line____last_update
-#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_wizard____last_update
-msgid "Last Modified on"
 msgstr ""
 
 #. module: partner_archive_propagate
@@ -130,11 +129,6 @@ msgstr ""
 #. module: partner_archive_propagate
 #: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_wizard__partner_id
 msgid "Partner"
-msgstr ""
-
-#. module: partner_archive_propagate
-#: model_terms:ir.ui.view,arch_db:partner_archive_propagate.view_res_config_settings_partner_archive
-msgid "Partner Archive Propagate"
 msgstr ""
 
 #. module: partner_archive_propagate
@@ -162,7 +156,6 @@ msgstr ""
 #. module: partner_archive_propagate
 #. odoo-python
 #: code:addons/partner_archive_propagate/models/res_partner.py:0
-#, python-format
 msgid ""
 "Skipped archiving the following contacts because they are linked to active "
 "users: %s"
@@ -171,14 +164,12 @@ msgstr ""
 #. module: partner_archive_propagate
 #. odoo-python
 #: code:addons/partner_archive_propagate/wizard/archive_propagate_wizard.py:0
-#, python-format
 msgid "Skipped contacts linked to active users: %s"
 msgstr ""
 
 #. module: partner_archive_propagate
 #. odoo-python
 #: code:addons/partner_archive_propagate/wizard/archive_propagate_wizard.py:0
-#, python-format
 msgid "Some contacts were skipped"
 msgstr ""
 
@@ -196,13 +187,6 @@ msgstr ""
 msgid ""
 "The following contact-type descendants will be archived as well.\n"
 "                        Remove any you want to keep active."
-msgstr ""
-
-#. module: partner_archive_propagate
-#: model_terms:ir.ui.view,arch_db:partner_archive_propagate.view_res_config_settings_partner_archive
-msgid ""
-"When enabled, archiving a partner via imports/RPC/automation will also\n"
-"                                    archive all descendants and mark them as propagated."
 msgstr ""
 
 #. module: partner_archive_propagate
