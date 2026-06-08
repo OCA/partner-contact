@@ -753,7 +753,10 @@ class TestPartnerIdentificationKYC(common.TransactionCase):
 
         self.assertEqual(len(kyc_records), 1)
         self.assertEqual(kyc_records[0].status, "draft")
-        self.assertTrue(kyc_records[0].name.startswith("KYC-"))
+        # The ID Number is auto-assigned from the sequence and must not repeat
+        # the category name ("KYC").
+        self.assertTrue(kyc_records[0].name)
+        self.assertFalse(kyc_records[0].name.startswith("KYC-"))
 
     def test_ensure_kyc_record_when_none_exist(self):
         """Test ensure_kyc_record creates record when none exists."""
