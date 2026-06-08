@@ -9,7 +9,8 @@
         />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='code']" position="after">
-                <field name="enable_on_child_contacts" />
+                <field name="is_kyc" />
+                <field name="enable_on_child_contacts" invisible="not is_kyc" />
             </xpath>
         </field>
     </record>

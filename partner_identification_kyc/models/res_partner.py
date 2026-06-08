@@ -98,15 +98,12 @@ class ResPartner(models.Model):
         kyc_category = self.env.ref(
             "partner_identification_kyc.kyc_identification_category"
         )
-        identification_model = self.env["res.partner.id_number"]
-        sequence_code = (
-            self.env["ir.sequence"].next_by_code("kyc.identification") or "001"
-        )
-        return identification_model.create(
+        # The identification number (``name``) is auto-assigned from the
+        # ``kyc.identification`` sequence by ``res.partner.id_number.create``.
+        return self.env["res.partner.id_number"].create(
             {
                 "partner_id": self.id,
                 "category_id": kyc_category.id,
-                "name": f"KYC-{self.id}-{sequence_code}",
                 "status": "draft",
             }
         )
