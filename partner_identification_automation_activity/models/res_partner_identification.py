@@ -1,11 +1,12 @@
 from dateutil.relativedelta import relativedelta
 
-from odoo import models
+from odoo import api, models
 
 
 class ResPartnerIdNumber(models.Model):
     _inherit = "res.partner.id_number"
 
+    @api.model_create_multi
     def create(self, vals_list):
         """Override create to also create initial check activities when needed"""
         records = super().create(vals_list)
@@ -14,9 +15,6 @@ class ResPartnerIdNumber(models.Model):
         # for records that need initial activities
         activity_values_list = []
         model_id = self.env["ir.model"]._get("res.partner.id_number").id
-
-        # Reload records to ensure all fields are properly loaded from the database
-        records = self.browse(records.ids)
 
         for record in records:
             # Check if the category is configured to create initial activities
@@ -84,10 +82,7 @@ class ResPartnerIdNumber(models.Model):
         model_id = self.env["ir.model"]._get(self._name).id
         activities_vals = []
 
-        # Reload records to ensure related fields are properly loaded
-        records_to_process = self.browse(self.ids)
-
-        for record in records_to_process:
+        for record in self:
             # Only process records that have valid validity dates
             if not record.valid_until:
                 continue  # Skip records without expiry date since we can't
@@ -145,14 +140,11 @@ class ResPartnerIdNumber(models.Model):
             if existing_activity:
                 continue  # Skip if activity already exists
 
-            assigned_user = record.category_id.responsible_user_id or self.env.user
+            assigned_user = category.responsible_user_id or self.env.user
             deadline = record.valid_until
-            if (
-                record.category_id.renewal_lead_unit
-                and record.category_id.renewal_lead_number
-            ):
-                lead_unit = record.category_id.renewal_lead_unit
-                lead_number = record.category_id.renewal_lead_number
+            if category.renewal_lead_unit and category.renewal_lead_number:
+                lead_unit = category.renewal_lead_unit
+                lead_number = category.renewal_lead_number
                 if lead_unit and lead_number:
                     deadline -= relativedelta(**{lead_unit: lead_number})
 
@@ -183,16 +175,8 @@ class ResPartnerIdNumber(models.Model):
         old_values = {}
 
         if "status" in vals and vals["status"] == "pending":
-            # Get old status values before the write operation
-            self.env.cr.execute(
-                """
-                SELECT id, status
-                FROM res_partner_id_number
-                WHERE id = ANY(%s)
-                """,
-                [self.ids],
-            )
-            old_values = {row[0]: row[1] for row in self.env.cr.fetchall()}
+            # Capture old status values before the write operation
+            old_values = {record.id: record.status for record in self}
 
         # Execute the write operation
         result = super().write(vals)
