@@ -79,7 +79,32 @@ class TestPartnerIdentificationKYC(common.TransactionCase):
         )
 
         self.assertEqual(new_record.status, "draft")
-        self.assertTrue(new_record.name.startswith("KYC-"))
+        # The ID Number is auto-assigned from the sequence and must not repeat
+        # the category name ("KYC").
+        self.assertTrue(new_record.name)
+        self.assertFalse(new_record.name.startswith("KYC-"))
+
+    def test_manual_id_number_gets_sequence(self):
+        """A KYC ID record created manually (no name) gets the sequence."""
+        record = self.env["res.partner.id_number"].create(
+            {
+                "partner_id": self.test_partner.id,
+                "category_id": self.kyc_category.id,
+            }
+        )
+        self.assertTrue(record.name)
+        self.assertTrue(record.category_is_kyc)
+
+    def test_manual_id_number_keeps_provided_name(self):
+        """An explicit ID Number is not overwritten by the sequence."""
+        record = self.env["res.partner.id_number"].create(
+            {
+                "partner_id": self.test_partner.id,
+                "category_id": self.kyc_category.id,
+                "name": "MY-CUSTOM-ID",
+            }
+        )
+        self.assertEqual(record.name, "MY-CUSTOM-ID")
 
     def test_action_request_kyc_duplicate_prevention(self):
         """Test that action_request_kyc prevents duplicates when a 'draft' record
