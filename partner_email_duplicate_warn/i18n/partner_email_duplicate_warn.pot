@@ -46,6 +46,19 @@ msgid "Partners"
 msgstr ""
 
 #. module: partner_email_duplicate_warn
+#: model:ir.model.fields,field_description:partner_email_duplicate_warn.field_res_partner__same_email_inaccessible_count
+#: model:ir.model.fields,field_description:partner_email_duplicate_warn.field_res_users__same_email_inaccessible_count
+msgid "Partners with same e-mail you cannot access"
+msgstr ""
+
+#. module: partner_email_duplicate_warn
 #: model_terms:ir.ui.view,arch_db:partner_email_duplicate_warn.view_partner_form_with_email_warning
 msgid "has/have the same <b>Email</b>."
+msgstr ""
+
+#. module: partner_email_duplicate_warn
+#: model_terms:ir.ui.view,arch_db:partner_email_duplicate_warn.view_partner_form_with_email_warning
+msgid ""
+"partner(s) you do not have permission to view also use this <b>Email</b>. "
+"Please contact your administrator."
 msgstr ""
