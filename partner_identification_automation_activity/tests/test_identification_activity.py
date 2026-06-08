@@ -1,4 +1,5 @@
 from datetime import datetime
+from unittest.mock import patch
 
 from freezegun import freeze_time
 
@@ -3637,3 +3638,305 @@ class TestIdentificationActivity(BaseCommon):
         temp_activity_type.unlink()  # Now it doesn't exist
 
         # Create category with the now-deleted activity type
+
+    # ------------------------------------------------------------------
+    # Coverage for the activity-type fallback chains and renewal branches
+    # ------------------------------------------------------------------
+    def _ref_with_missing(self, missing_xmlids):
+        """Patch ``env.ref`` so the given xmlids resolve to an empty recordset.
+
+        Used to force the activity-type fallback chains in the model, which
+        would otherwise never run because the module's own data records always
+        exist.
+        """
+        real_ref = self.env.ref
+
+        def fake_ref(xml_id, raise_if_not_found=True):
+            if xml_id in missing_xmlids:
+                return self.env["mail.activity.type"].browse()
+            return real_ref(xml_id, raise_if_not_found=raise_if_not_found)
+
+        return patch.object(self.env.__class__, "ref", side_effect=fake_ref)
+
+    def test_create_initial_activity_falls_back_to_todo_ref(self):
+        """create() uses the generic To Do type when the module type is missing."""
+        category = self.env["res.partner.id_category"].create(
+            {
+                "name": "Fallback Todo Ref",
+                "code": "fb_todo_ref",
+                "create_activity_on_new": True,
+                "responsible_user_id": self.test_user.id,
+            }
+        )
+        todo = self.env.ref("mail.mail_activity_data_todo")
+        with self._ref_with_missing(
+            {
+                "partner_identification_automation_activity."
+                "mail_activity_type_initial_check_id",
+            }
+        ):
+            identification = self.env["res.partner.id_number"].create(
+                {
+                    "partner_id": self.test_partner.id,
+                    "category_id": category.id,
+                    "name": "FB_TODO_REF",
+                    "valid_until": "2024-12-31",
+                    "status": "draft",
+                }
+            )
+        activity = self.env["mail.activity"].search(
+            [
+                ("res_model", "=", "res.partner.id_number"),
+                ("res_id", "=", identification.id),
+            ],
+            limit=1,
+        )
+        self.assertTrue(activity.exists())
+        self.assertEqual(activity.activity_type_id, todo)
+
+    def test_create_initial_activity_falls_back_to_todo_search(self):
+        """create() searches the 'To Do' type when all activity-type refs fail."""
+        category = self.env["res.partner.id_category"].create(
+            {
+                "name": "Fallback Todo Search",
+                "code": "fb_todo_search",
+                "create_activity_on_new": True,
+                "responsible_user_id": self.test_user.id,
+            }
+        )
+        todo = self.env.ref("mail.mail_activity_data_todo")
+        with self._ref_with_missing(
+            {
+                "partner_identification_automation_activity."
+                "mail_activity_type_initial_check_id",
+                "mail.mail_activity_data_todo",
+            }
+        ):
+            identification = self.env["res.partner.id_number"].create(
+                {
+                    "partner_id": self.test_partner.id,
+                    "category_id": category.id,
+                    "name": "FB_TODO_SEARCH",
+                    "valid_until": "2024-12-31",
+                    "status": "draft",
+                }
+            )
+        activity = self.env["mail.activity"].search(
+            [
+                ("res_model", "=", "res.partner.id_number"),
+                ("res_id", "=", identification.id),
+            ],
+            limit=1,
+        )
+        self.assertTrue(activity.exists())
+        self.assertEqual(activity.activity_type_id, todo)
+
+    def test_create_initial_activity_no_type_available(self):
+        """create() creates no activity when no activity type can be resolved."""
+        category = self.env["res.partner.id_category"].create(
+            {
+                "name": "No Type Available",
+                "code": "no_type_avail",
+                "create_activity_on_new": True,
+                "responsible_user_id": self.test_user.id,
+            }
+        )
+        # Make the "To Do" name search return nothing as well.
+        self.env["mail.activity.type"].search([("name", "=", "To Do")]).write(
+            {"name": "Renamed Todo"}
+        )
+        with self._ref_with_missing(
+            {
+                "partner_identification_automation_activity."
+                "mail_activity_type_initial_check_id",
+                "mail.mail_activity_data_todo",
+            }
+        ):
+            identification = self.env["res.partner.id_number"].create(
+                {
+                    "partner_id": self.test_partner.id,
+                    "category_id": category.id,
+                    "name": "NO_TYPE_AVAIL",
+                    "valid_until": "2024-12-31",
+                    "status": "draft",
+                }
+            )
+        activity = self.env["mail.activity"].search(
+            [
+                ("res_model", "=", "res.partner.id_number"),
+                ("res_id", "=", identification.id),
+            ]
+        )
+        self.assertFalse(activity)
+
+    def test_renewal_activity_falls_back_to_todo_ref(self):
+        """_create_renewal_activities uses To Do when the module type is missing."""
+        category = self.env["res.partner.id_category"].create(
+            {
+                "name": "Renewal Fallback Ref",
+                "code": "rn_fb_ref",
+                "responsible_user_id": self.test_user.id,
+            }
+        )
+        identification = self.env["res.partner.id_number"].create(
+            {
+                "partner_id": self.test_partner.id,
+                "category_id": category.id,
+                "name": "RN_FB_REF",
+                "valid_until": "2024-12-31",
+            }
+        )
+        todo = self.env.ref("mail.mail_activity_data_todo")
+        with self._ref_with_missing(
+            {
+                "partner_identification_automation_activity."
+                "mail_activity_type_renew_id",
+            }
+        ):
+            identification._create_renewal_activities()
+        activity = self.env["mail.activity"].search(
+            [
+                ("res_model", "=", "res.partner.id_number"),
+                ("res_id", "=", identification.id),
+            ],
+            limit=1,
+        )
+        self.assertTrue(activity.exists())
+        self.assertEqual(activity.activity_type_id, todo)
+
+    def test_renewal_activity_falls_back_to_todo_search(self):
+        """_create_renewal_activities searches 'To Do' when all refs fail."""
+        category = self.env["res.partner.id_category"].create(
+            {
+                "name": "Renewal Fallback Search",
+                "code": "rn_fb_search",
+                "responsible_user_id": self.test_user.id,
+            }
+        )
+        identification = self.env["res.partner.id_number"].create(
+            {
+                "partner_id": self.test_partner.id,
+                "category_id": category.id,
+                "name": "RN_FB_SEARCH",
+                "valid_until": "2024-12-31",
+            }
+        )
+        todo = self.env.ref("mail.mail_activity_data_todo")
+        with self._ref_with_missing(
+            {
+                "partner_identification_automation_activity."
+                "mail_activity_type_renew_id",
+                "mail.mail_activity_data_todo",
+            }
+        ):
+            identification._create_renewal_activities()
+        activity = self.env["mail.activity"].search(
+            [
+                ("res_model", "=", "res.partner.id_number"),
+                ("res_id", "=", identification.id),
+            ],
+            limit=1,
+        )
+        self.assertTrue(activity.exists())
+        self.assertEqual(activity.activity_type_id, todo)
+
+    def test_renewal_activity_no_type_available(self):
+        """_create_renewal_activities skips when no activity type can be resolved."""
+        category = self.env["res.partner.id_category"].create(
+            {
+                "name": "Renewal No Type",
+                "code": "rn_no_type",
+                "responsible_user_id": self.test_user.id,
+            }
+        )
+        identification = self.env["res.partner.id_number"].create(
+            {
+                "partner_id": self.test_partner.id,
+                "category_id": category.id,
+                "name": "RN_NO_TYPE",
+                "valid_until": "2024-12-31",
+            }
+        )
+        self.env["mail.activity.type"].search([("name", "=", "To Do")]).write(
+            {"name": "Renamed Todo"}
+        )
+        with self._ref_with_missing(
+            {
+                "partner_identification_automation_activity."
+                "mail_activity_type_renew_id",
+                "mail.mail_activity_data_todo",
+            }
+        ):
+            identification._create_renewal_activities()
+        activity = self.env["mail.activity"].search(
+            [
+                ("res_model", "=", "res.partner.id_number"),
+                ("res_id", "=", identification.id),
+            ]
+        )
+        self.assertFalse(activity)
+
+    def test_renewal_deadline_without_renewal_lead(self):
+        """Renewal deadline equals valid_until when the category has no lead time."""
+        category = self.env["res.partner.id_category"].create(
+            {
+                "name": "No Lead Category",
+                "code": "no_lead",
+                "responsible_user_id": self.test_user.id,
+                "renewal_lead_number": 0,  # no lead -> deadline stays valid_until
+            }
+        )
+        identification = self.env["res.partner.id_number"].create(
+            {
+                "partner_id": self.test_partner.id,
+                "category_id": category.id,
+                "name": "NO_LEAD",
+                "valid_until": "2024-12-31",
+            }
+        )
+        identification._create_renewal_activities()
+        activity = self.env["mail.activity"].search(
+            [
+                ("res_model", "=", "res.partner.id_number"),
+                ("res_id", "=", identification.id),
+            ],
+            limit=1,
+        )
+        self.assertTrue(activity.exists())
+        self.assertEqual(activity.date_deadline, fields.Date.to_date("2024-12-31"))
+
+    def test_renewal_summary_already_contains_name(self):
+        """Renewal summary is not suffixed when it already contains the ID name."""
+        custom_activity_type = self.env["mail.activity.type"].create(
+            {
+                "name": "Renew Contains Name",
+                "summary": "Renew RN_IN_SUMMARY now",  # already contains the ID name
+            }
+        )
+        category = self.env["res.partner.id_category"].create(
+            {
+                "name": "Renew Summary Category",
+                "code": "rn_summary",
+                "responsible_user_id": self.test_user.id,
+                "renew_activity_type_id": custom_activity_type.id,
+            }
+        )
+        identification = self.env["res.partner.id_number"].create(
+            {
+                "partner_id": self.test_partner.id,
+                "category_id": category.id,
+                "name": "RN_IN_SUMMARY",
+                "valid_until": "2024-12-31",
+            }
+        )
+        identification._create_renewal_activities()
+        activity = self.env["mail.activity"].search(
+            [
+                ("res_model", "=", "res.partner.id_number"),
+                ("res_id", "=", identification.id),
+            ],
+            limit=1,
+        )
+        self.assertTrue(activity.exists())
+        # Summary kept as-is, name not appended a second time.
+        self.assertEqual(activity.summary, "Renew RN_IN_SUMMARY now")

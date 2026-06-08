@@ -143,10 +143,9 @@ class ResPartnerIdNumber(models.Model):
             assigned_user = category.responsible_user_id or self.env.user
             deadline = record.valid_until
             if category.renewal_lead_unit and category.renewal_lead_number:
-                lead_unit = category.renewal_lead_unit
-                lead_number = category.renewal_lead_number
-                if lead_unit and lead_number:
-                    deadline -= relativedelta(**{lead_unit: lead_number})
+                deadline -= relativedelta(
+                    **{category.renewal_lead_unit: category.renewal_lead_number}
+                )
 
             # Use the activity type's summary and include the ID number
             summary = record_activity_type.summary or "Renew identification document"
