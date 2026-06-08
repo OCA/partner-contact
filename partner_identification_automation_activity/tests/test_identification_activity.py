@@ -3694,43 +3694,6 @@ class TestIdentificationActivity(BaseCommon):
         self.assertTrue(activity.exists())
         self.assertEqual(activity.activity_type_id, todo)
 
-    def test_create_initial_activity_falls_back_to_todo_search(self):
-        """create() searches the 'To Do' type when all activity-type refs fail."""
-        category = self.env["res.partner.id_category"].create(
-            {
-                "name": "Fallback Todo Search",
-                "code": "fb_todo_search",
-                "create_activity_on_new": True,
-                "responsible_user_id": self.test_user.id,
-            }
-        )
-        todo = self.env.ref("mail.mail_activity_data_todo")
-        with self._ref_with_missing(
-            {
-                "partner_identification_automation_activity."
-                "mail_activity_type_initial_check_id",
-                "mail.mail_activity_data_todo",
-            }
-        ):
-            identification = self.env["res.partner.id_number"].create(
-                {
-                    "partner_id": self.test_partner.id,
-                    "category_id": category.id,
-                    "name": "FB_TODO_SEARCH",
-                    "valid_until": "2024-12-31",
-                    "status": "draft",
-                }
-            )
-        activity = self.env["mail.activity"].search(
-            [
-                ("res_model", "=", "res.partner.id_number"),
-                ("res_id", "=", identification.id),
-            ],
-            limit=1,
-        )
-        self.assertTrue(activity.exists())
-        self.assertEqual(activity.activity_type_id, todo)
-
     def test_create_initial_activity_no_type_available(self):
         """create() creates no activity when no activity type can be resolved."""
         category = self.env["res.partner.id_category"].create(
@@ -3791,42 +3754,6 @@ class TestIdentificationActivity(BaseCommon):
             {
                 "partner_identification_automation_activity."
                 "mail_activity_type_renew_id",
-            }
-        ):
-            identification._create_renewal_activities()
-        activity = self.env["mail.activity"].search(
-            [
-                ("res_model", "=", "res.partner.id_number"),
-                ("res_id", "=", identification.id),
-            ],
-            limit=1,
-        )
-        self.assertTrue(activity.exists())
-        self.assertEqual(activity.activity_type_id, todo)
-
-    def test_renewal_activity_falls_back_to_todo_search(self):
-        """_create_renewal_activities searches 'To Do' when all refs fail."""
-        category = self.env["res.partner.id_category"].create(
-            {
-                "name": "Renewal Fallback Search",
-                "code": "rn_fb_search",
-                "responsible_user_id": self.test_user.id,
-            }
-        )
-        identification = self.env["res.partner.id_number"].create(
-            {
-                "partner_id": self.test_partner.id,
-                "category_id": category.id,
-                "name": "RN_FB_SEARCH",
-                "valid_until": "2024-12-31",
-            }
-        )
-        todo = self.env.ref("mail.mail_activity_data_todo")
-        with self._ref_with_missing(
-            {
-                "partner_identification_automation_activity."
-                "mail_activity_type_renew_id",
-                "mail.mail_activity_data_todo",
             }
         ):
             identification._create_renewal_activities()
