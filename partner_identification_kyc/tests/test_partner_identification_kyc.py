@@ -79,10 +79,9 @@ class TestPartnerIdentificationKYC(common.TransactionCase):
         )
 
         self.assertEqual(new_record.status, "draft")
-        # The ID Number is auto-assigned from the sequence and must not repeat
-        # the category name ("KYC").
+        # The ID Number is auto-assigned from the KYC sequence (prefix "KYC").
         self.assertTrue(new_record.name)
-        self.assertFalse(new_record.name.startswith("KYC-"))
+        self.assertTrue(new_record.name.startswith("KYC"))
 
     def test_manual_id_number_gets_sequence(self):
         """A KYC ID record created manually (no name) gets the sequence."""
@@ -93,7 +92,18 @@ class TestPartnerIdentificationKYC(common.TransactionCase):
             }
         )
         self.assertTrue(record.name)
-        self.assertTrue(record.category_is_kyc)
+        self.assertTrue(record.name.startswith("KYC"))
+
+    def test_onchange_category_prefills_name(self):
+        """Selecting the KYC category in the form prefills the ID Number."""
+        form = common.Form(self.env["res.partner.id_number"])
+        form.partner_id = self.test_partner
+        form.category_id = self.kyc_category
+        # The required ID Number is filled automatically, so the form is savable.
+        self.assertTrue(form.name)
+        self.assertTrue(form.name.startswith("KYC"))
+        record = form.save()
+        self.assertEqual(record.name, form.name)
 
     def test_manual_id_number_keeps_provided_name(self):
         """An explicit ID Number is not overwritten by the sequence."""
@@ -753,10 +763,9 @@ class TestPartnerIdentificationKYC(common.TransactionCase):
 
         self.assertEqual(len(kyc_records), 1)
         self.assertEqual(kyc_records[0].status, "draft")
-        # The ID Number is auto-assigned from the sequence and must not repeat
-        # the category name ("KYC").
+        # The ID Number is auto-assigned from the KYC sequence (prefix "KYC").
         self.assertTrue(kyc_records[0].name)
-        self.assertFalse(kyc_records[0].name.startswith("KYC-"))
+        self.assertTrue(kyc_records[0].name.startswith("KYC"))
 
     def test_ensure_kyc_record_when_none_exist(self):
         """Test ensure_kyc_record creates record when none exists."""

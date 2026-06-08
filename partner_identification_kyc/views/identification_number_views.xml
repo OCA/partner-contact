@@ -19,22 +19,4 @@
             </filter>
         </field>
     </record>
-
-    <!-- Let the ID Number be auto-assigned from the sequence for KYC records -->
-    <record id="view_partner_id_numbers_form_kyc" model="ir.ui.view">
-        <field name="name">res.partner.id_number.form.kyc</field>
-        <field name="model">res.partner.id_number</field>
-        <field
-            name="inherit_id"
-            ref="partner_identification.view_partner_id_numbers_form"
-        />
-        <field name="arch" type="xml">
-            <field name="category_id" position="after">
-                <field name="category_is_kyc" invisible="1" />
-            </field>
-            <field name="name" position="attributes">
-                <attribute name="required">not category_is_kyc</attribute>
-            </field>
-        </field>
-    </record>
 </odoo>
