@@ -4,6 +4,7 @@
     <record id="seq_kyc_identification" model="ir.sequence">
         <field name="name">KYC Identification Sequence</field>
         <field name="code">kyc.identification</field>
+        <field name="prefix">KYC</field>
         <field name="padding">3</field>
     </record>
 
