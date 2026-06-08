@@ -3,15 +3,18 @@ import logging
 from odoo.tests.common import TransactionCase
 
 _logger = logging.getLogger(__name__)
+LONG_STREET = "278 route pitoresque de la vallee de l'ours qui fuit les chasseurs"
 
 
 class TestSplit(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.partnerX = cls.env.ref("base.res_partner_12")
-        cls.partnerX.street = (
-            "278 route pitoresque de la vallee de l'ours qui fuit les chasseurs"
+        cls.partnerX = cls.env["res.partner"].create(
+            {
+                "name": "Test Partner Address Split",
+                "street": LONG_STREET,
+            }
         )
 
     def test_split1(self):
