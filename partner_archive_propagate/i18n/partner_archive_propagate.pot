@@ -1,0 +1,211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_archive_propagate
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_archive_propagate
+#: model_terms:ir.ui.view,arch_db:partner_archive_propagate.view_archive_propagate_wizard_form
+msgid "Archive"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model_terms:ir.ui.view,arch_db:partner_archive_propagate.view_partner_form_inherit_archive_propagate
+msgid "Archive Contact and Children"
+msgstr ""
+
+#. module: partner_archive_propagate
+#. odoo-python
+#: code:addons/partner_archive_propagate/models/res_partner.py:0
+#: model_terms:ir.ui.view,arch_db:partner_archive_propagate.view_archive_propagate_wizard_form
+#, python-format
+msgid "Archive Contacts"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model,name:partner_archive_propagate.model_res_partner_archive_propagate_wizard
+msgid "Archive partner and children of partner "
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner__propagated_from_id
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_users__propagated_from_id
+msgid "Archived Due To"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model_terms:ir.ui.view,arch_db:partner_archive_propagate.view_archive_propagate_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model,name:partner_archive_propagate.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model,name:partner_archive_propagate.model_res_partner
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_line__partner_id
+msgid "Contact"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_wizard__line_ids
+msgid "Contacts to archive"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_line__create_uid
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_line__create_date
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_line__display_name
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_line__email
+msgid "Email"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_config_settings__partner_archive_force_outside_ui
+msgid "Force propagation outside UI"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_line__id
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,help:partner_archive_propagate.field_res_config_settings__partner_archive_force_outside_ui
+msgid ""
+"If enabled, archiving a partner via any non-UI method (imports, RPC, "
+"automated) will also archive all descendants and mark them as propagated."
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_line____last_update
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_line__write_uid
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_line__write_date
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_line__name
+msgid "Name"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_wizard__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model_terms:ir.ui.view,arch_db:partner_archive_propagate.view_res_config_settings_partner_archive
+msgid "Partner Archive Propagate"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model,name:partner_archive_propagate.model_res_partner_archive_propagate_line
+msgid "Partner Archive Propagate Line"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_line__phone
+msgid "Phone"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner__show_prop_wizard_button
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_users__show_prop_wizard_button
+msgid "Show Prop Wizard Button"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,help:partner_archive_propagate.field_res_partner__show_prop_wizard_button
+#: model:ir.model.fields,help:partner_archive_propagate.field_res_users__show_prop_wizard_button
+msgid "Show or hide the wizard button, depending on child_ids"
+msgstr ""
+
+#. module: partner_archive_propagate
+#. odoo-python
+#: code:addons/partner_archive_propagate/models/res_partner.py:0
+#, python-format
+msgid ""
+"Skipped archiving the following contacts because they are linked to active "
+"users: %s"
+msgstr ""
+
+#. module: partner_archive_propagate
+#. odoo-python
+#: code:addons/partner_archive_propagate/wizard/archive_propagate_wizard.py:0
+#, python-format
+msgid "Skipped contacts linked to active users: %s"
+msgstr ""
+
+#. module: partner_archive_propagate
+#. odoo-python
+#: code:addons/partner_archive_propagate/wizard/archive_propagate_wizard.py:0
+#, python-format
+msgid "Some contacts were skipped"
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,help:partner_archive_propagate.field_res_partner__propagated_from_id
+#: model:ir.model.fields,help:partner_archive_propagate.field_res_users__propagated_from_id
+msgid ""
+"Technical field. Set when this partner was archived automatically because "
+"the source partner was archived. Cleared again when it is unarchived by the "
+"opposite propagation."
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model_terms:ir.ui.view,arch_db:partner_archive_propagate.view_archive_propagate_wizard_form
+msgid ""
+"The following contact-type descendants will be archived as well.\n"
+"                        Remove any you want to keep active."
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model_terms:ir.ui.view,arch_db:partner_archive_propagate.view_res_config_settings_partner_archive
+msgid ""
+"When enabled, archiving a partner via imports/RPC/automation will also\n"
+"                                    archive all descendants and mark them as propagated."
+msgstr ""
+
+#. module: partner_archive_propagate
+#: model:ir.model.fields,field_description:partner_archive_propagate.field_res_partner_archive_propagate_line__wizard_id
+msgid "Wizard"
+msgstr ""

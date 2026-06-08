@@ -1,0 +1,17 @@
+<odoo>
+    <record id="view_res_config_settings_partner_archive" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.partner.archive</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <block name="contacts_setting_container" position="inside">
+                <setting
+                    string="Force partner archive propagation outside UI"
+                    help="If enabled, archiving a partner via any non-UI method (imports, RPC, automated) will also archive all descendants and mark them as propagated."
+                >
+                    <field name="partner_archive_force_outside_ui" />
+                </setting>
+            </block>
+        </field>
+    </record>
+</odoo>
