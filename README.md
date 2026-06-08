@@ -34,6 +34,7 @@ addon | version | maintainers | summary
 [partner_address_split](partner_address_split/) | 18.0.1.0.0 |  | Add specific helper methods
 [partner_address_street3](partner_address_street3/) | 18.0.1.0.0 |  | Add a third address line on partners
 [partner_affiliate](partner_affiliate/) | 18.0.1.0.0 |  | Partner Affiliates
+[partner_archive_propagate](partner_archive_propagate/) | 18.0.1.0.0 | <a href='https://github.com/ntsirintanis'><img src='https://github.com/ntsirintanis.png' width='32' height='32' style='border-radius:50%;' alt='ntsirintanis'/></a> | Archive/unarchive partner contacts hierarchically
 [partner_bank_acc_holder_name](partner_bank_acc_holder_name/) | 18.0.1.0.0 |  | Show the account holder name field on bank accounts
 [partner_bank_code](partner_bank_code/) | 18.0.1.0.0 |  | Add fields information in banks
 [partner_capital](partner_capital/) | 18.0.1.0.1 | <a href='https://github.com/EmilioPascual'><img src='https://github.com/EmilioPascual.png' width='32' height='32' style='border-radius:50%;' alt='EmilioPascual'/></a> | Partners Capital
