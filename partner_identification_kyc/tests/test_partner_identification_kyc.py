@@ -95,15 +95,18 @@ class TestPartnerIdentificationKYC(common.TransactionCase):
         self.assertTrue(record.name.startswith("KYC"))
 
     def test_onchange_category_prefills_name(self):
-        """Selecting the KYC category in the form prefills the ID Number."""
-        form = common.Form(self.env["res.partner.id_number"])
-        form.partner_id = self.test_partner
-        form.category_id = self.kyc_category
-        # The required ID Number is filled automatically, so the form is savable.
-        self.assertTrue(form.name)
-        self.assertTrue(form.name.startswith("KYC"))
-        record = form.save()
-        self.assertEqual(record.name, form.name)
+        """Selecting the KYC category prefills the (required) ID Number."""
+        record = self.env["res.partner.id_number"].new(
+            {
+                "partner_id": self.test_partner.id,
+                "category_id": self.kyc_category.id,
+            }
+        )
+        self.assertFalse(record.name)
+        record._onchange_category_id_kyc_name()
+        # The required ID Number is filled automatically, so the record is savable.
+        self.assertTrue(record.name)
+        self.assertTrue(record.name.startswith("KYC"))
 
     def test_manual_id_number_keeps_provided_name(self):
         """An explicit ID Number is not overwritten by the sequence."""
