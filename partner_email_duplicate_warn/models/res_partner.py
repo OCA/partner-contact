@@ -14,11 +14,17 @@ class ResPartner(models.Model):
         string="Partner with same e-mail",
         compute_sudo=True,
     )
+    same_email_inaccessible_count = fields.Integer(
+        compute="_compute_same_email_partner_ids",
+        string="Partners with same e-mail you cannot access",
+        compute_sudo=True,
+    )
 
     @api.depends("email", "company_id")
     def _compute_same_email_partner_ids(self):
         for partner in self:
             same_email_partner_ids = []
+            inaccessible_count = 0
             if partner.email and partner.email.strip():
                 partner_email = partner.email.strip().lower()
                 domain = [("email", "=ilike", "%" + partner_email + "%")]
@@ -38,13 +44,21 @@ class ResPartner(models.Model):
                         ("id", "parent_of", partner_id),
                     ]
                 search_partners = self.with_context(active_test=False).search(domain)
-                for search_partner in search_partners:
-                    if (
-                        search_partner.email
-                        and search_partner.email.strip().lower() == partner_email
-                    ):
-                        same_email_partner_ids.append(search_partner.id)
+                matches = search_partners.filtered(
+                    lambda p, email=partner_email: p.email
+                    and p.email.strip().lower() == email
+                )
+                # This field is computed as superuser (compute_sudo), so the
+                # match set may include partners the acting user cannot read.
+                # Only expose the readable ones as links; rendering the others
+                # would raise an AccessError when the web client fetches their
+                # display_name. The rest are merely counted so the banner can
+                # warn about them without disclosing their identity.
+                readable = matches.with_env(self.env(su=False))._filtered_access("read")
+                same_email_partner_ids = readable.ids
+                inaccessible_count = len(matches) - len(readable)
             partner.same_email_partner_ids = same_email_partner_ids or False
+            partner.same_email_inaccessible_count = inaccessible_count
 
     def action_open_business_doc(self):
         """Method called when you click on the link in the duplicate warning banner"""

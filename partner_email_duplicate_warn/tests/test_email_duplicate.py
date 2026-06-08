@@ -117,6 +117,46 @@ class TestResPartner(BaseCommon):
         partner_company2.write({"company_id": False})
         self.assertEqual(partner_company2.same_email_partner_ids, partner_company1)
 
+    def test_partner_duplicate_inaccessible(self):
+        """A duplicate the user cannot read is counted, not linked, and reading
+        the computed fields raises no AccessError."""
+        hidden_partner = self.env["res.partner"].create(
+            {"name": "Hidden", "email": "hidden@example.com"}
+        )
+        # Internal user allowed to create partners (so creation does not trip
+        # on unrelated access checks, e.g. base_partner_sequence reading
+        # ir.sequence) but blocked from reading the conflicting record.
+        groups = self.env.ref("base.group_user") | self.env.ref(
+            "base.group_partner_manager"
+        )
+        restricted_user = self.env["res.users"].create(
+            {
+                "name": "Restricted",
+                "login": "dup_warn_restricted_user",
+                "group_ids": [(6, 0, groups.ids)],
+            }
+        )
+        # Global rule (no groups) so it applies to every non-superuser
+        # regardless of the user's other groups; match by id to stay
+        # independent of fields other modules may populate.
+        self.env["ir.rule"].create(
+            {
+                "name": "Hide conflicting partner from everyone",
+                "model_id": self.env.ref("base.model_res_partner").id,
+                "groups": [(6, 0, [])],
+                "domain_force": f"[('id', '!=', {hidden_partner.id})]",
+            }
+        )
+        partner = (
+            self.env["res.partner"]
+            .with_user(restricted_user)
+            .create({"name": "New", "email": "hidden@example.com"})
+        )
+        # No link to the inaccessible partner, but it is counted, and no
+        # AccessError is raised while reading the computed fields.
+        self.assertFalse(partner.same_email_partner_ids)
+        self.assertEqual(partner.same_email_inaccessible_count, 1)
+
     def test_partner_duplicate_parent_child(self):
         parent_partner = self.env["res.partner"].create(
             {
