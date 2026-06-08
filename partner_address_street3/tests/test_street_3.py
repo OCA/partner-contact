@@ -64,3 +64,55 @@ class TestStreet3(TransactionCase):
         uninstall_hook(self.env)
         us_country = self.env.ref("base.us")
         self.assertTrue("%(street3)s" not in us_country.address_format)
+
+    def test_default_get_copies_street3_from_default_parent_id(self):
+        """Replicate the "Add in Contacts & Addresses" inline form context.
+
+        Odoo passes ``default_parent_id`` in the context when the inline
+        ``child_ids`` form is opened from a company contact, so ``default_get``
+        must pre-fill the address fields (including ``street3``) from that
+        parent.
+        """
+        parent = self.env["res.partner"].create(
+            {
+                "name": "Parent Company",
+                "street": "123 Main St",
+                "street2": "Floor 2",
+                "street3": "Suite 100",
+                "city": "Springfield",
+                "country_id": self.env.ref("base.us").id,
+            }
+        )
+        values = (
+            self.env["res.partner"]
+            .with_context(default_parent_id=parent.id, default_type="contact")
+            .default_get(["street", "street2", "street3", "city"])
+        )
+        self.assertEqual(values.get("street3"), "Suite 100")
+        self.assertEqual(values.get("street2"), "Floor 2")
+        self.assertEqual(values.get("street"), "123 Main St")
+        self.assertEqual(values.get("city"), "Springfield")
+
+    def test_default_get_does_not_overwrite_explicit_value(self):
+        """An explicit default must win over the parent's value."""
+        parent = self.env["res.partner"].create(
+            {"name": "Parent", "street3": "From parent"}
+        )
+        values = (
+            self.env["res.partner"]
+            .with_context(
+                default_parent_id=parent.id,
+                default_type="contact",
+                default_street3="Explicit",
+            )
+            .default_get(["street3"])
+        )
+        self.assertEqual(values.get("street3"), "Explicit")
+
+    def test_default_get_no_parent(self):
+        values = (
+            self.env["res.partner"]
+            .with_context(default_type="contact")
+            .default_get(["street3"])
+        )
+        self.assertNotIn("street3", values)
