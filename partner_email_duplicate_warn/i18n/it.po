@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-12-27 09:37+0000\n"
+"PO-Revision-Date: 2026-06-09 11:46+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,27 +14,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_email_duplicate_warn
 #: model:ir.model.fields,field_description:partner_email_duplicate_warn.field_res_partner__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: partner_email_duplicate_warn
 #: model_terms:ir.ui.view,arch_db:partner_email_duplicate_warn.view_partner_form_with_email_warning
 msgid "Duplicate warning: partner(s)"
-msgstr ""
+msgstr "Duplica avviso: partner"
 
 #. module: partner_email_duplicate_warn
 #: model:ir.model,name:partner_email_duplicate_warn.model_res_partner
 msgid "Fake Model"
-msgstr ""
+msgstr "Modello finto"
 
 #. module: partner_email_duplicate_warn
 #: model:ir.model.fields,field_description:partner_email_duplicate_warn.field_res_partner__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_email_duplicate_warn
 #: model:ir.model.fields,field_description:partner_email_duplicate_warn.field_res_partner__same_email_partner_ids
@@ -46,18 +46,18 @@ msgstr "Fornitori con la stessa e-mail"
 #. odoo-python
 #: code:addons/partner_email_duplicate_warn/models/res_partner.py:0
 msgid "Partners"
-msgstr ""
+msgstr "Partner"
 
 #. module: partner_email_duplicate_warn
 #: model:ir.model.fields,field_description:partner_email_duplicate_warn.field_res_partner__same_email_inaccessible_count
 #: model:ir.model.fields,field_description:partner_email_duplicate_warn.field_res_users__same_email_inaccessible_count
 msgid "Partners with same e-mail you cannot access"
-msgstr ""
+msgstr "Partner con la stessa e-mail che non si possono accedere"
 
 #. module: partner_email_duplicate_warn
 #: model_terms:ir.ui.view,arch_db:partner_email_duplicate_warn.view_partner_form_with_email_warning
 msgid "has/have the same <b>Email</b>."
-msgstr ""
+msgstr "ha/hanno la stessa <b>e-mail</b>."
 
 #. module: partner_email_duplicate_warn
 #: model_terms:ir.ui.view,arch_db:partner_email_duplicate_warn.view_partner_form_with_email_warning
@@ -65,6 +65,8 @@ msgid ""
 "partner(s) you do not have permission to view also use this <b>Email</b>. "
 "Please contact your administrator."
 msgstr ""
+"anche partner che non si ha il permesso di visualizzare usano questa <b>e-"
+"mail</b>. Contattare l'amministratore."
 
 #~ msgid "Contact"
 #~ msgstr "Contatto"
