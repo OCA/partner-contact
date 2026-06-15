@@ -10,13 +10,10 @@ class ResBank(models.Model):
     bank_code = fields.Char()
     bank_branch_code = fields.Char()
 
-    _sql_constraints = [
-        (
-            "bank_code_unique",
-            "unique(bank_code, bank_branch_code)",
-            "Bank and Branch Code should be unique.",
-        ),
-    ]
+    _bank_code_unique = models.Constraint(
+        "unique(bank_code, bank_branch_code)",
+        "Bank and Branch Code should be unique.",
+    )
 
     @api.depends("name", "bank_code", "bank_branch_code")
     def _compute_display_name(self):

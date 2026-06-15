@@ -31,9 +31,9 @@ class TestPartnerBankCode(TransactionCase):
         )
 
     def test_name_get(self):
-        self.assertEqual(self.bank1.display_name, "bank1 - some bic")
-        self.assertEqual(self.bank2.display_name, "bank2 - some bic [4242]")
-        self.assertEqual(self.bank3.display_name, "bank3 - some bic [4242/434343]")
+        self.assertEqual(self.bank1.display_name, "bank1 - SOME BIC")
+        self.assertEqual(self.bank2.display_name, "bank2 - SOME BIC [4242]")
+        self.assertEqual(self.bank3.display_name, "bank3 - SOME BIC [4242/434343]")
 
     def test_name_search(self):
         # Search with name
@@ -41,19 +41,19 @@ class TestPartnerBankCode(TransactionCase):
         self.assertEqual(len(found_recs), 3)
 
         # Search with name equal only
-        found_recs = self.env["res.bank"].name_search(name="some bic", operator="=")
+        found_recs = self.env["res.bank"].name_search(name="SOME BIC", operator="=")
         self.assertEqual(len(found_recs), 3)
 
         # Search with bank code
         found_recs = self.env["res.bank"].name_search(name="42")
         self.assertEqual(len(found_recs), 2)
 
-        # Search with bank code not ilike
-        # it should show 1 record because bank1, 2 don't have bank_branch_code
+        # Search not ilike "bank1" → only bank1 matches (by name), so bank2 and
+        # bank3 remain.
         found_recs = self.env["res.bank"].name_search(
             name="bank1", operator="not ilike"
         )
-        self.assertEqual(len(found_recs), 1)
+        self.assertEqual(len(found_recs), 2)
 
         # Search with bank branch code
         found_recs = self.env["res.bank"].name_search(name="43")
