@@ -9,28 +9,41 @@ from odoo import api, fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
+    # In this version we can only show one duplicate partner at the same time.
     same_mobile_partner_id = fields.Many2one(
         "res.partner",
         compute="_compute_same_mobile_partner_id",
         string="Partner with same mobile",
-        compute_sudo=True,
+    )
+    same_mobile_count = fields.Integer(
+        compute="_compute_same_mobile_partner_id",
+        string="Number of partners with the same mobile",
+    )
+    same_mobile_inaccessible_count = fields.Integer(
+        compute="_compute_same_mobile_partner_id",
+        string="Partners with same e-mail you cannot access",
     )
 
     @api.depends(lambda x: x._get_same_mobile_depends())
     def _compute_same_mobile_partner_id(self):
-        empty_recordset = self.env[self._name]
         for partner in self:
+            all_matches = partner.sudo()._find_same_mobile_partner()
+            accessible_matches = partner._find_same_mobile_partner()  # no sudo
+            partner.same_mobile_count = len(all_matches)
+            partner.same_mobile_inaccessible_count = partner.same_mobile_count - len(
+                accessible_matches
+            )
             partner.same_mobile_partner_id = (
-                partner._find_same_mobile_partner()
-                if partner.mobile
-                else empty_recordset
+                accessible_matches[0]
+                if accessible_matches
+                else accessible_matches  # the empty recordset
             )
 
     def _find_same_mobile_partner(self):
         """Find one partner with the same mobile."""
         self.ensure_one()
         domain = self._get_same_mobile_domain()
-        return self.with_context(active_test=False).search(domain, limit=1)
+        return self.with_context(active_test=False).search(domain)
 
     @api.model
     def _get_same_mobile_depends(self):
