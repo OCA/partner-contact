@@ -27,7 +27,7 @@ class ResPartner(models.Model):
 
     @api.model
     def create(self, vals):
-        record = super(ResPartner, self).create(vals)
+        record = super().create(vals)
         check_exceptions = any(
             field in vals for field in self._fields_trigger_check_exception()
         )
@@ -36,7 +36,7 @@ class ResPartner(models.Model):
         return record
 
     def write(self, vals):
-        result = super(ResPartner, self).write(vals)
+        result = super().write(vals)
         check_exceptions = any(
             field in vals for field in self._fields_trigger_check_exception()
         )
