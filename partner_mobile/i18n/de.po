@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-03-30 14:24+0000\n"
-"Last-Translator: jappi00 <jappi2000@ewetel.net>\n"
+"PO-Revision-Date: 2026-06-18 22:12+0000\n"
+"Last-Translator: intero-chd <c.dominiak@intero-technologies.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -25,17 +25,17 @@ msgstr "<i class=\"fa fa-fw me-1 fa-mobile text-primary\" title=\"Mobil\"/>"
 #. module: partner_mobile
 #: model:ir.model.fields,field_description:partner_mobile.field_res_partner__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Anzeigename"
 
 #. module: partner_mobile
 #: model:ir.model,name:partner_mobile.model_res_partner
 msgid "Fake Model"
-msgstr ""
+msgstr "Falsches Modell"
 
 #. module: partner_mobile
 #: model:ir.model.fields,field_description:partner_mobile.field_res_partner__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_mobile
 #: model:ir.model.fields,field_description:partner_mobile.field_res_partner__mobile
