@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-13 03:42+0000\n"
-"PO-Revision-Date: 2022-11-04 14:44+0000\n"
-"Last-Translator: Maria Sparenberg <maria.sparenberg@gmx.net>\n"
+"PO-Revision-Date: 2026-06-21 12:47+0000\n"
+"Last-Translator: intero-chd <c.dominiak@intero-technologies.de>\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__country_enforce_cities
@@ -102,6 +102,12 @@ msgid ""
 "            separately\n"
 "            to enforce any address of it to have a city in this list."
 msgstr ""
+"Zeigen Sie die Liste aller Städte an, die Ihren\n"
+"Partnersätzen zugeordnet werden können, und verwalten Sie diese. Beachten "
+"Sie, dass für jedes Land\n"
+"separat\n"
+"eine Option festgelegt werden kann, um sicherzustellen, dass jede Adresse in "
+"diesem Land eine Stadt aus dieser Liste enthält."
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company__country_enforce_cities
@@ -111,7 +117,7 @@ msgstr "Städte erzwingen"
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_partner
 msgid "Fake Model"
-msgstr ""
+msgstr "Falsches Modell"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city__id
@@ -161,7 +167,7 @@ msgid ""
 "%(location)s"
 msgstr ""
 "Die Stadt des Partners %(partner)s weicht von der des Standorts %(location)s "
-"ab."
+"ab"
 
 #. module: base_location
 #. odoo-python
@@ -205,7 +211,7 @@ msgid ""
 "a unique name within it's state and it's country"
 msgstr ""
 "Es gibt bereits eine Stadt mit diesem Namen in diesem Bundesland. Die Stadt "
-"muss einen eindeutigen Namen innerhalb des Bundeslands und des Lands haben."
+"muss einen eindeutigen Namen innerhalb des Bundeslands und des Lands haben"
 
 #. module: base_location
 #: model:ir.model.constraint,message:base_location.constraint_res_city_zip_name_city_uniq
@@ -214,7 +220,7 @@ msgid ""
 "unique within it's city"
 msgstr ""
 "Es gibt bereits eine PLZ mit diesem Code in dieser Stadt. Die PLZ muss "
-"innerhalb der Stadt eindeutig sein."
+"innerhalb der Stadt eindeutig sein"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__name
