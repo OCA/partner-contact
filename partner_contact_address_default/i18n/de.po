@@ -6,59 +6,61 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-06-21 13:12+0000\n"
+"Last-Translator: intero-chd <c.dominiak@intero-technologies.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_contact_address_default
 #: model:ir.model,name:partner_contact_address_default.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Unternehmen"
 
 #. module: partner_contact_address_default
 #: model:ir.model,name:partner_contact_address_default.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Konfigurationseinstellungen"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_company__contact_address_default_allow_all_partners
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_config_settings__contact_address_default_allow_all_partners
 msgid "Contact Address Default Allow All Partners"
-msgstr ""
+msgstr "Kontaktadresse Standard: Alle Partner zulassen"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_contact_id
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_contact_id
 msgid "Default contact"
-msgstr ""
+msgstr "Standardkontakt"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_company__display_name
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_config_settings__display_name
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Anzeigename"
 
 #. module: partner_contact_address_default
 #: model:ir.model,name:partner_contact_address_default.model_res_partner
 msgid "Fake Model"
-msgstr ""
+msgstr "Falsches Modell"
 
 #. module: partner_contact_address_default
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
 msgid "Force addresses"
-msgstr ""
+msgstr "Adressen erzwingen"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_company__id
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_config_settings__id
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_contact_address_default
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.res_config_settings_view_form
@@ -66,36 +68,39 @@ msgid ""
 "If enabled, the default delivery, invoice, and contact addresses are not "
 "limited to the partner’s child contacts—you can select any contact."
 msgstr ""
+"Wenn diese Option aktiviert ist, sind die Standardadressen für Lieferung, "
+"Rechnung und Kontakt nicht auf die untergeordneten Kontakte des Partners "
+"beschränkt – Sie können einen beliebigen Kontakt auswählen."
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_invoice_id
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_invoice_id
 msgid "Invoice address"
-msgstr ""
+msgstr "Rechnungsadresse"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_contact_domain
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_contact_domain
 msgid "Partner Contact Domain"
-msgstr ""
+msgstr "Partner-Kontaktbereich"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_delivery_domain
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_delivery_domain
 msgid "Partner Delivery Domain"
-msgstr ""
+msgstr "Partner-Lieferbereich"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_invoice_domain
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_invoice_domain
 msgid "Partner Invoice Domain"
-msgstr ""
+msgstr "Partner-Rechnungsbereich"
 
 #. module: partner_contact_address_default
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_partner__partner_delivery_id
 #: model:ir.model.fields,field_description:partner_contact_address_default.field_res_users__partner_delivery_id
 msgid "Shipping address"
-msgstr ""
+msgstr "Lieferadresse"
 
 #. module: partner_contact_address_default
 #: model_terms:ir.ui.view,arch_db:partner_contact_address_default.view_partner_form
@@ -103,3 +108,6 @@ msgid ""
 "You can force contact, delivery and invoice address for this contact.\n"
 "                            If you keep these fields empty, Odoo's default behavior will apply."
 msgstr ""
+"Sie können die Kontakt-, Liefer- und Rechnungsadresse für diesen Kontakt "
+"festlegen.\n"
+"Wenn Sie diese Felder leer lassen, gilt das Standardverhalten von Odoo."
