@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-31 03:41+0000\n"
-"PO-Revision-Date: 2026-06-22 18:49+0000\n"
+"PO-Revision-Date: 2026-06-22 21:46+0000\n"
 "Last-Translator: intero-chd <c.dominiak@intero-technologies.de>\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "Language: de\n"
@@ -209,12 +209,12 @@ msgstr "Falsches Modell"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Follower"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Follower (Partner)"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_type_icon
@@ -224,7 +224,7 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Hat eine Nachricht"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner__id
@@ -257,12 +257,12 @@ msgstr "In Einstellungen festgelegte Ausweis-Art. Zum Beispiel Führerschein"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Symbol"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Symbol zur Kennzeichnung einer Ausnahmeaktivität."
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner__id_numbers
@@ -274,26 +274,30 @@ msgstr "Ausweisnummern"
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_needaction
 msgid "If checked, new messages require your attention."
 msgstr ""
+"Wenn dieses Kontrollkästchen aktiviert ist, erfordern neue Nachrichten Ihre "
+"Aufmerksamkeit."
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
+"Wenn dieses Kontrollkästchen aktiviert ist, liegt bei einigen Nachrichten "
+"ein Zustellungsfehler vor."
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Include archived ID numbers"
-msgstr ""
+msgstr "Archivierte Ausweis-Nummern einbeziehen"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
 msgid "Include archived categories"
-msgstr ""
+msgstr "Archivierte Kategorien einbeziehen"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Ist Follower"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_issued_id
@@ -309,28 +313,28 @@ msgstr "Ausgestellt am"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_uid
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_uid
 msgid "Last Updated by"
-msgstr "zuletzt aktualisiert von"
+msgstr "Zuletzt aktualisiert von"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_date
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__write_date
 msgid "Last Updated on"
-msgstr "zuletzt aktualisiert am"
+msgstr "Zuletzt aktualisiert am"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Fehler bei der Nachrichtenübermittlung"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Nachrichten"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Meine Aktivitätsfrist"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__name
@@ -346,22 +350,22 @@ msgstr "Neu"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Nächster Termin im Kalender"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Frist für die nächste Aktivität"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Zusammenfassung der nächsten Aktivität"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Nächster Aktivitätstyp"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__comment
@@ -372,28 +376,28 @@ msgstr "Hinweise"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Anzahl der Aktionen"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Anzahl an Fehlern"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Anzahl der Nachrichten, die eine Bearbeitung erfordern"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Anzahl der Nachrichten mit Zustellungsfehler"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_id
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Partner"
-msgstr "Partner"
+msgstr "Kontakt"
 
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
@@ -404,13 +408,11 @@ msgstr "Ausweiskategorien von Partnern"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner_id_category
-#, fuzzy
 msgid "Partner ID Category"
 msgstr "Ausweiskategorien von Partnern"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner_id_number
-#, fuzzy
 msgid "Partner ID Number"
 msgstr "Ausweisnummern von Partnern"
 
@@ -436,7 +438,7 @@ msgstr "Ort der Ausstellung"
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid "Python Validation Code:"
-msgstr ""
+msgstr "Python-Validierungscode:"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__validation_code
@@ -451,7 +453,7 @@ msgstr "Pythoncode zur Gültigkeitsprüfung"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Verantwortlicher Benutzer"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
@@ -473,6 +475,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Status basierend auf Aktivitäten\n"
+"Überfällig: Das Fälligkeitsdatum ist bereits überschritten.\n"
+"Heute: Das Datum der Aktivität ist heute.\n"
+"Geplant: Zukünftige Aktivitäten."
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__name
@@ -496,54 +502,57 @@ msgid ""
 "write via the %(field_name)s field is not possible. In order to fix this, "
 "please use the IDs tab."
 msgstr ""
+"Dieser %(record_name)s enthält mehrere Ausweise dieses Typs (%(category_code)"
+"s), sodass ein Schreibvorgang über das Feld %(field_name)s nicht möglich "
+"ist. Um dies zu beheben, verwenden Sie bitte die Registerkarte „Ausweise“."
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "To Renew"
-msgstr "Zu verlängern"
+msgstr "Zu erneuern"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Typ der im Datensatz erfassten Ausnahmeaktivität."
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid From"
-msgstr ""
+msgstr "Gültig ab"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_until
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until"
-msgstr ""
+msgstr "Gültig bis"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until: Future"
-msgstr ""
+msgstr "Gültig bis: Zukünftig"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until: Past"
-msgstr ""
+msgstr "Gültig bis: abgelaufen"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until: Today"
-msgstr ""
+msgstr "Gültig bis: Heute"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Meldungen auf der Website"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Kommunikationsverlauf auf der Website"
 
 #~ msgid ""
 #~ "Expiration date. For example, date when person needs to renew his driver "
