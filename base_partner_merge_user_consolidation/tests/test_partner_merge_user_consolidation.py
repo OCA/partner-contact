@@ -44,7 +44,7 @@ class TestMergePartnerUsers(TransactionCase):
         )
 
         # Mimic login
-        older_log = cls.Log.with_user(cls.u1).create({})
+        older_log = cls.Log.with_user(cls.u1).sudo().create({})
         older = fields.Datetime.now() - timedelta(days=10)
         # needed to actually invoke raw sql for this
         cls.env.cr.execute(
@@ -52,7 +52,7 @@ class TestMergePartnerUsers(TransactionCase):
             (fields.Datetime.to_string(older), older_log.id),
         )
         # Data will be merged into Lore
-        cls.Log.with_user(cls.u2).create({})
+        cls.Log.with_user(cls.u2).sudo().create({})
 
     def _fresh(self):
         self.env.invalidate_all()
@@ -137,7 +137,7 @@ class TestMergePartnerUsers(TransactionCase):
         ua = self.User.create({"name": "A", "login": "a@a.a", "partner_id": pa.id})
         ub = self.User.create({"name": "B", "login": "b@b.b", "partner_id": pb.id})
         # Make ub newest by login
-        self.Log.with_user(ub).create({})
+        self.Log.with_user(ub).sudo().create({})
         wiz = self.Wizard.create({})
         wiz._merge([pa.id, pb.id])  # no dst_partner
         self.env.invalidate_all()
@@ -177,7 +177,7 @@ class TestMergePartnerUsers(TransactionCase):
             }
         )
         # user B is kept
-        self.Log.with_user(ub).create({})
+        self.Log.with_user(ub).sudo().create({})
         wiz = self.Wizard.create({})
         wiz._merge([pa.id, pb.id], dst_partner=pa)
         self.env.invalidate_all()
