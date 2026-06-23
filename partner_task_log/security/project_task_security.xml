@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="task_log_rule_project_user" model="ir.rule">
+        <field name="name">
+            Project/Task: project users: full access to partner task logs
+        </field>
+        <field name="model_id" ref="project.model_project_task" />
+        <field name="domain_force">
+                [
+                    ("active", "=", False),
+                    ("project_id", "=", False),
+                    ("parent_id", "=", False),
+                    ("partner_id", "!=", False),
+            ]
+        </field>
+        <field name="groups" eval="[(4, ref('project.group_project_user'))]" />
+    </record>
+</odoo>

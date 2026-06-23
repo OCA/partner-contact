@@ -1,0 +1,90 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_task_log
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-30 13:34+0000\n"
+"PO-Revision-Date: 2026-06-30 13:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_task_log
+#. odoo-python
+#: code:addons/partner_task_log/models/res_partner.py:0
+msgid "%(partner_name)s's Task Log"
+msgstr ""
+
+#. module: partner_task_log
+#: model_terms:ir.ui.view,arch_db:partner_task_log.project_task_log_view_form
+msgid "Add log entry details..."
+msgstr ""
+
+#. module: partner_task_log
+#: model:ir.model,name:partner_task_log.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_task_log
+#: model_terms:ir.ui.view,arch_db:partner_task_log.project_task_log_view_form
+msgid "Days"
+msgstr ""
+
+#. module: partner_task_log
+#: model_terms:ir.ui.view,arch_db:partner_task_log.project_task_log_view_form
+msgid "Description"
+msgstr ""
+
+#. module: partner_task_log
+#: model_terms:ir.ui.view,arch_db:partner_task_log.project_task_log_view_form
+msgid "Extra Info"
+msgstr ""
+
+#. module: partner_task_log
+#: model_terms:ir.ui.view,arch_db:partner_task_log.project_task_log_view_form
+msgid "Hours"
+msgstr ""
+
+#. module: partner_task_log
+#: model_terms:ir.ui.view,arch_db:partner_task_log.project_task_log_view_list
+msgid "Log Entries"
+msgstr ""
+
+#. module: partner_task_log
+#: model_terms:ir.ui.view,arch_db:partner_task_log.project_task_log_view_form
+msgid "Log Entry"
+msgstr ""
+
+#. module: partner_task_log
+#: model_terms:ir.ui.view,arch_db:partner_task_log.project_task_log_view_form
+msgid "Log Entry Title..."
+msgstr ""
+
+#. module: partner_task_log
+#: model:ir.actions.act_window,name:partner_task_log.action_partner_task_log
+#: model:ir.ui.menu,name:partner_task_log.menu_partner_task_log
+#: model_terms:ir.ui.view,arch_db:partner_task_log.view_partner_form
+msgid "Task Log"
+msgstr ""
+
+#. module: partner_task_log
+#: model:ir.model.fields,field_description:partner_task_log.field_res_partner__task_log_count
+#: model:ir.model.fields,field_description:partner_task_log.field_res_users__task_log_count
+msgid "Task Log Count"
+msgstr ""
+
+#. module: partner_task_log
+#: model_terms:ir.ui.view,arch_db:partner_task_log.project_task_log_view_form
+msgid "Working Time to Assign"
+msgstr ""
+
+#. module: partner_task_log
+#: model_terms:ir.ui.view,arch_db:partner_task_log.project_task_log_view_form
+msgid "Working Time to Close"
+msgstr ""

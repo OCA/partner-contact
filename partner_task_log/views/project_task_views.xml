@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="project_task_log_view_list" model="ir.ui.view">
+        <field name="name">project.task.log.list</field>
+        <field name="model">project.task</field>
+        <field name="arch" type="xml">
+            <list
+                string="Log Entries"
+                editable="bottom"
+                multi_edit="1"
+                open_form_view="True"
+                default_order="create_date desc"
+            >
+                <field name="create_date" readonly="1" />
+                <field name="priority" widget="priority" nolabel="1" width="20px" />
+                <field
+                    name="state"
+                    widget="project_task_state_selection"
+                    nolabel="1"
+                    width="20px"
+                    options="{'is_toggle_mode': false}"
+                />
+                <field name="name" />
+                <field name="user_ids" widget="many2many_avatar_user" optional="show" />
+                <field
+                    name="tag_ids"
+                    widget="many2many_tags"
+                    options="{'color_field': 'color'}"
+                />
+                <field name="partner_id" optional="hide" options="{'no_open': True}" />
+            </list>
+        </field>
+    </record>
+
+    <record id="project_task_log_view_form" model="ir.ui.view">
+        <field name="name">project.task.log.form</field>
+        <field name="model">project.task</field>
+        <field name="arch" type="xml">
+            <form string="Log Entry" class="o_form_project_tasks">
+                <field name="company_id" invisible="1" />
+                <field name="project_id" invisible="1" />
+                <field name="parent_id" invisible="1" />
+                <field name="is_closed" invisible="1" />
+                <sheet string="Log Entry">
+                    <div class="oe_title pe-0">
+                        <h1 class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex w-100">
+                                <field
+                                    name="priority"
+                                    widget="priority_switch"
+                                    class="me-3"
+                                />
+                                <field
+                                    name="name"
+                                    options="{'line_breaks': False}"
+                                    widget="text"
+                                    class="o_task_name text-truncate w-md-75 w-100 pe-2"
+                                    placeholder="Log Entry Title..."
+                                />
+                            </div>
+                            <div class="d-flex justify-content-end o_state_container">
+                                <field
+                                    name="state"
+                                    widget="project_task_state_selection"
+                                    class="o_task_state_widget"
+                                />
+                            </div>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field
+                                name="user_ids"
+                                class="o_task_user_field"
+                                options="{'no_open': True, 'no_quick_create': True}"
+                                required="1"
+                                widget="many2many_avatar_user"
+                            />
+                            <field
+                                name="tag_ids"
+                                widget="many2many_tags"
+                                options="{'color_field': 'color', 'no_create_edit': True}"
+                            />
+                        </group>
+                        <group>
+                            <field
+                                name="partner_id"
+                                widget="res_partner_many2one"
+                                class="o_task_customer_field"
+                            />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="description_page" string="Description">
+                            <field
+                                name="description"
+                                type="html"
+                                options="{'collaborative': true, 'resizable': false}"
+                                placeholder="Add log entry details..."
+                            />
+                        </page>
+                        <page
+                            name="extra_info"
+                            string="Extra Info"
+                            groups="base.group_no_one"
+                        >
+                            <group>
+                                <group>
+                                    <field
+                                        name="company_id"
+                                        groups="base.group_multi_company"
+                                        options="{'no_create': True}"
+                                    />
+                                    <field name="sequence" groups="base.group_no_one" />
+                                    <field name="email_cc" groups="base.group_no_one" />
+                                    <field
+                                        name="displayed_image_id"
+                                        groups="base.group_no_one"
+                                        options="{'no_create': True}"
+                                    />
+                                </group>
+                                <group>
+                                    <field
+                                        name="date_assign"
+                                        groups="base.group_no_one"
+                                    />
+                                    <field
+                                        name="date_last_stage_update"
+                                        groups="base.group_no_one"
+                                    />
+                                </group>
+                                <group
+                                    string="Working Time to Assign"
+                                    invisible="working_hours_open == 0.0"
+                                >
+                                    <field
+                                        name="working_hours_open"
+                                        widget="float_time"
+                                        string="Hours"
+                                    />
+                                    <field name="working_days_open" string="Days" />
+                                </group>
+                                <group
+                                    string="Working Time to Close"
+                                    invisible="working_hours_close == 0.0"
+                                >
+                                    <field
+                                        name="working_hours_close"
+                                        widget="float_time"
+                                        string="Hours"
+                                    />
+                                    <field name="working_days_close" string="Days" />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter reload_on_follower="True" />
+            </form>
+        </field>
+    </record>
+
+    <record id="action_partner_task_log" model="ir.actions.act_window">
+        <field name="name">Task Log</field>
+        <field name="path">partner-task-log</field>
+        <field name="res_model">project.task</field>
+        <field name="domain">
+            [
+                ("active", "=", False),
+                ("project_id", "=", False),
+                ("parent_id", "=", False),
+                ("partner_id", "!=", False),
+            ]
+        </field>
+        <field name="context">
+            {
+                "active_test": False,
+                "default_active": False,
+                "default_project_id": False,
+                "default_parent_id": False,
+                "default_user_ids": [(6, 0, [uid])],
+            }
+        </field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_partner_task_log"
+        name="Task Log"
+        parent="project.menu_project_management"
+        action="action_partner_task_log"
+        groups="project.group_project_user"
+        sequence="3"
+    />
+
+    <record id="action_partner_task_log_view_list" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1" />
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="project_task_log_view_list" />
+        <field name="act_window_id" ref="action_partner_task_log" />
+    </record>
+
+    <record id="action_partner_task_log_view_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2" />
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="project_task_log_view_form" />
+        <field name="act_window_id" ref="action_partner_task_log" />
+    </record>
+</odoo>
