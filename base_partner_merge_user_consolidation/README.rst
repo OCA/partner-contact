@@ -17,69 +17,69 @@ Partner Merge User Consolidation
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
-    :target: https://github.com/OCA/partner-contact/tree/16.0/base_partner_merge_user_consolidation
+    :target: https://github.com/OCA/partner-contact/tree/18.0/base_partner_merge_user_consolidation
     :alt: OCA/partner-contact
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/partner-contact-16-0/partner-contact-16-0-base_partner_merge_user_consolidation
+    :target: https://translation.odoo-community.org/projects/partner-contact-18-0/partner-contact-18-0-base_partner_merge_user_consolidation
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=18.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module extends the standard *Merge Contacts* wizard in Odoo
-(`base.partner.merge.automatic.wizard`) so that user accounts are also
-consolidated when you merge duplicate contacts.
-Odoo allows you to merge two (or more) contacts into one.
-This is great for deduplication.
+(base.partner.merge.automatic.wizard) so that user accounts are also
+consolidated when you merge duplicate contacts. Odoo allows you to merge
+two (or more) contacts into one. This is great for deduplication.
 
 However, when both of those contacts are linked to different users
-(`res.users`), Odoo does **not** merge or clean up those users.
-After the merge you can end up with:
+(res.users), Odoo does **not** merge or clean up those users. After the
+merge you can end up with:
 
-* Multiple logins pointing at the same final contact.
-* Confusing access rights: which login should this person actually use?
-* Compliance issues: inactive/old accounts still exist and could still log in.
+-  Multiple logins pointing at the same final contact.
+-  Confusing access rights: which login should this person actually use?
+-  Compliance issues: inactive/old accounts still exist and could still
+   log in.
 
 This module fixes that:
 
-
 When you merge contacts and Odoo finishes the normal merge:
 
-* If the resulting contact has **0 or 1** linked users:
-  
-  - Nothing extra happens.
+-  If the resulting contact has **0 or 1** linked users:
 
-* If the resulting contact has **2+** linked users:
-  
-  1. The module chooses one user account to keep:
-  
-     - The account with the most recent login date
-       (field ``login_date``, which reflects the last `res.users.log` record).
-     - If nobody has ever logged in, it falls back to the most recently created user.
+   -  Nothing extra happens.
 
-  2. That "kept" user is:
-  
-     - Forced to stay active.
-     - Explicitly linked to the surviving contact partner.
+-  If the resulting contact has **2+** linked users:
 
-  3. All *other* users are archived:
-  
-     - They are set inactive.
-     - Their ``login`` is scrambled to a unique value like
-       ``__merged_user_<id>_oldlogin``
-       so they can no longer authenticate and so their old
-       login can be reassigned if desired.
+   1. The module chooses one user account to keep:
 
-  4. Security groups are merged:
-  
-     - Any groups on the archived users are added to the kept user.
-     - Odoo's standard ``res.users`` write() logic will automatically:
-       
-       * add all implied groups,
-       * normalize mutually exclusive role groups,
-       * enforce "internal vs portal vs public" constraints.
+      -  The account with the most recent login date (field
+         ``login_date``, which reflects the last res.users.log record).
+      -  If nobody has ever logged in, it falls back to the most
+         recently created user.
+
+   2. That "kept" user is:
+
+      -  Forced to stay active.
+      -  Explicitly linked to the surviving contact partner.
+
+   3. All *other* users are archived:
+
+      -  They are set inactive.
+      -  Their ``login`` is scrambled to a unique value like
+         ``__merged_user_<id>_oldlogin`` so they can no longer
+         authenticate and so their old login can be reassigned if
+         desired.
+
+   4. Security groups are merged:
+
+      -  Any groups on the archived users are added to the kept user.
+      -  Odoo's standard ``res.users`` write() logic will automatically:
+
+         -  add all implied groups,
+         -  normalize mutually exclusive role groups,
+         -  enforce "internal vs portal vs public" constraints.
 
 **Table of contents**
 
@@ -92,7 +92,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20base_partner_merge_user_consolidation%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20base_partner_merge_user_consolidation%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -100,17 +100,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Therp BV
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Nikos Tsirintanis <ntsirintanis@therp.nl>
+-  Nikos Tsirintanis <ntsirintanis@therp.nl>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -130,6 +130,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-ntsirintanis| 
 
-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/16.0/base_partner_merge_user_consolidation>`_ project on GitHub.
+This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/18.0/base_partner_merge_user_consolidation>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
