@@ -32,10 +32,10 @@
             <field name="name" position="after">
                 <field name="partner_id" />
             </field>
-            <xpath expr="//div[hasclass('oe_kanban_details')]/ul" position="inside">
-                <li t-if="record.partner_id.raw_value">
+            <xpath expr="//div[hasclass('oe_kanban_partner_links')]" position="before">
+                <div t-if="record.partner_id.raw_value">
                     <field name="partner_id" />
-                </li>
+                </div>
             </xpath>
         </field>
     </record>
