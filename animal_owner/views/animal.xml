@@ -1,5 +1,4 @@
 <odoo>
-
     <!-- Animal Tree View -->
     <record id="view_animal_owner_tree" model="ir.ui.view">
         <field name="name">view.animal.owner.tree</field>
@@ -34,7 +33,9 @@
                 <field name="partner_id" />
             </field>
             <xpath expr="//div[hasclass('oe_kanban_details')]/ul" position="inside">
-                <li t-if="record.partner_id.raw_value"><field name="partner_id" /></li>
+                <li t-if="record.partner_id.raw_value">
+                    <field name="partner_id" />
+                </li>
             </xpath>
         </field>
     </record>
@@ -58,5 +59,4 @@
             </filter>
         </field>
     </record>
-
 </odoo>
