@@ -7,6 +7,10 @@ from odoo import api, fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
+    @property
+    def _rec_names_search(self):
+        return super()._rec_names_search + ["supplier_ref"]
+
     supplier_ref = fields.Char(
         string="Supplier Reference",
         help="Supplier reference given to this partner.",
