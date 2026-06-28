@@ -29,3 +29,7 @@ class TestResPartner(TransactionCase):
     def test_supplier_ref_not_copied(self):
         partner_copy = self.supplier.copy()
         self.assertFalse(partner_copy.supplier_ref)
+
+    def test_name_search_by_supplier_ref(self):
+        results = self.partner_model.name_search("1038")
+        self.assertIn(self.supplier.id, [res[0] for res in results])
