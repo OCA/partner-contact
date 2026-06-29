@@ -39,6 +39,12 @@ class ResPartner(models.Model):
         string="Right relations with current partner",
         copy=False,
     )
+    relation_all_ids = fields.One2many(
+        comodel_name="res.partner.relation",
+        compute="_compute_relation_all_ids",
+        string="Right relations with current partner",
+        copy=False,
+    )
     relation_count = fields.Integer(compute="_compute_relation_count")
     search_relation_type_id = fields.Many2one(
         comodel_name="res.partner.relation.type",
@@ -63,6 +69,11 @@ class ResPartner(models.Model):
         search="_search_relation_partner_category_id",
         string="Has relation with a partner in category",
     )
+
+    def _compute_relation_all_ids(self):
+        """All relations is a combination of left and right relations."""
+        for this in self:
+            this.relation_all_ids = this.relation_left_ids | this.relation_right_ids
 
     def _compute_relation_count(self):
         """Combined count for left and right partners."""
