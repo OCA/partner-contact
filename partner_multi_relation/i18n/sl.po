@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2026-06-30 10:30+0000\n"
+"PO-Revision-Date: 2026-06-30 10:38+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -50,7 +50,7 @@ msgstr "Vsi odnosi s trenutnim partnerjem"
 #. module: partner_multi_relation
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__ignore
 msgid "Allow existing relations that do not fit changed conditions"
-msgstr "Dovoli obstoječa razmerja, ki ne ustrezajo spremenjenim pogojem."
+msgstr "Dovoli obstoječa razmerja, ki ne ustrezajo spremenjenim pogojem"
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner
@@ -82,7 +82,7 @@ msgstr "Tip partnerja na trenutnem zapisu"
 #. module: partner_multi_relation
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__delete
 msgid "Delete relations that do not fit changed conditions"
-msgstr "Izbriši razmerja, ki ne ustrezajo spremenjenim pogojem."
+msgstr "Izbriši razmerja, ki ne ustrezajo spremenjenim pogojem"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__right_partner_id
@@ -342,7 +342,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_all__active
 msgid "Records with date_end in the past are inactive"
-msgstr "Zapisi z datumom zaključka v preteklosti so neaktivni."
+msgstr "Zapisi z datumom zaključka v preteklosti so neaktivni"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__allow_self
@@ -357,6 +357,8 @@ msgid ""
 "Reflexivity could not be disabled for the relation type %s. There are "
 "existing reflexive relations defined for the following partners: %s"
 msgstr ""
+"Povratnosti ni bilo mogoče onemogočiti za tip odnosa %s. Za naslednje "
+"partnerje so določeni obstoječi povratni odnosi: %s"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_count
@@ -498,17 +500,17 @@ msgstr ""
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "There is already a similar relation with overlapping dates"
-msgstr "Podoben odnos s prekrivajočimi se datumi že obstaja."
+msgstr "Podoben odnos s prekrivajočimi se datumi že obstaja"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__allow_self
 msgid "This relation can be set up with the same partner left and right"
-msgstr "Ta odnos se lahko nastavi z istim partnerjem na levi in desni."
+msgstr "Ta odnos se lahko nastavi z istim partnerjem na levi in desni"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__is_symmetric
 msgid "This relation is the same from right to left as from left to right"
-msgstr "Ta odnos je enak tako iz desne proti levi, kakor iz leve proti desni."
+msgstr "Ta odnos je enak tako iz desne proti levi, kakor iz leve proti desni"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__type_id
@@ -530,22 +532,22 @@ msgstr "Nepodprt iskalni operand \"%s\""
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_0
 msgid "Washing Companies"
-msgstr ""
+msgstr "Pralna podjetja"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_4
 msgid "Washing Gold"
-msgstr ""
+msgstr "Pranje zlato"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_11
 msgid "Washing Services"
-msgstr ""
+msgstr "Storitve pranja"
 
 #. module: partner_multi_relation
 #: model:res.partner.category,name:partner_multi_relation.res_partner_category_pmr_5
 msgid "Washing Silver"
-msgstr ""
+msgstr "Pranje srebro"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__handle_invalid_onchange
