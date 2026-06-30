@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-13 03:42+0000\n"
-"PO-Revision-Date: 2026-06-30 10:38+0000\n"
+"PO-Revision-Date: 2026-06-30 10:41+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -23,7 +23,7 @@ msgstr ""
 #. module: base_location
 #: model:res.city,name:base_location.demo_brussels_city
 msgid "Brussels"
-msgstr ""
+msgstr "Bruselj"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__country_enforce_cities
@@ -31,6 +31,8 @@ msgid ""
 "Check this box to ensure every address created in that country has a 'City' "
 "chosen in the list of the country's cities."
 msgstr ""
+"Označite to polje, da zagotovite, da ima vsak naslov, ustvarjen v tej "
+"državi, izbran kraj s seznama krajev te države."
 
 #. module: base_location
 #: model:ir.actions.act_window,name:base_location.action_res_city_full
@@ -112,11 +114,16 @@ msgid ""
 "            separately\n"
 "            to enforce any address of it to have a city in this list."
 msgstr ""
+"Prikažite in upravljajte seznam vseh krajev, ki jih je mogoče dodeliti\n"
+"            zapisom partnerjev. Upoštevajte, da je mogoče možnost nastaviti "
+"za vsako državo\n"
+"            posebej,\n"
+"            da se za vsak njen naslov zahteva kraj s tega seznama."
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company__country_enforce_cities
 msgid "Enforce Cities"
-msgstr ""
+msgstr "Vsili kraje"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__id
@@ -136,7 +143,7 @@ msgstr "Zadnjič posodobljeno"
 #. module: base_location
 #: model_terms:ir.ui.view,arch_db:base_location.view_partner_form
 msgid "Location completion"
-msgstr ""
+msgstr "Izpolnjevanje lokacije"
 
 #. module: base_location
 #: model:ir.actions.act_window,name:base_location.action_zip_tree
@@ -162,6 +169,7 @@ msgid ""
 "The city of the partner %(partner)s differs from that in location "
 "%(location)s"
 msgstr ""
+"Kraj partnerja %(partner)s se razlikuje od kraja na lokaciji %(location)s"
 
 #. module: base_location
 #. odoo-python
@@ -170,6 +178,7 @@ msgid ""
 "The country of the partner %(partner)s differs from that in location "
 "%(location)s"
 msgstr ""
+"Država partnerja %(partner)s se razlikuje od države na lokaciji %(location)s"
 
 #. module: base_location
 #. odoo-python
@@ -178,6 +187,8 @@ msgid ""
 "The state of the partner %(partner)s differs from that in location "
 "%(location)s"
 msgstr ""
+"Zvezna država partnerja %(partner)s se razlikuje od zvezne države na "
+"lokaciji %(location)s"
 
 #. module: base_location
 #. odoo-python
@@ -185,6 +196,8 @@ msgstr ""
 msgid ""
 "The zip of the partner %(partner)s differs from that in location %(location)s"
 msgstr ""
+"Poštna številka partnerja %(partner)s se razlikuje od poštne številke na "
+"lokaciji %(location)s"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__zip_id
@@ -197,6 +210,8 @@ msgid ""
 "You already have a city with that name in the same state.The city must have "
 "a unique name within it's state and it's country"
 msgstr ""
+"Kraj s tem imenom v isti zvezni državi že obstaja. Kraj mora imeti "
+"edinstveno ime znotraj svoje zvezne države in države"
 
 #. module: base_location
 #: model:ir.model.constraint,message:base_location.constraint_res_city_zip_name_city_uniq
@@ -204,6 +219,8 @@ msgid ""
 "You already have a zip with that code in the same city. The zip code must be "
 "unique within it's city"
 msgstr ""
+"Poštna številka s to kodo v istem kraju že obstaja. Poštna številka mora "
+"biti edinstvena znotraj svojega kraja"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__name
@@ -215,7 +232,7 @@ msgstr "Poštna številka"
 #: model:ir.model.fields,field_description:base_location.field_res_partner__zip_id
 #: model:ir.model.fields,field_description:base_location.field_res_users__zip_id
 msgid "ZIP Location"
-msgstr ""
+msgstr "Lokacija poštne številke"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_partner__zip
