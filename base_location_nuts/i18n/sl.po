@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-24 03:46+0000\n"
-"PO-Revision-Date: 2026-06-30 10:41+0000\n"
+"PO-Revision-Date: 2026-06-30 11:34+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__allowed_nut_ids
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_users__allowed_nut_ids
 msgid "Allowed nuts"
-msgstr ""
+msgstr "Dovoljeni NUTS"
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
@@ -90,22 +90,22 @@ msgstr "Uvoz"
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
 msgid "Import NUTS 2013 from ShowVoc"
-msgstr ""
+msgstr "Uvozi NUTS 2013 iz ShowVoc"
 
 #. module: base_location_nuts
 #: model:ir.ui.menu,name:base_location_nuts.nuts_import_menu
 msgid "Import NUTS 2024"
-msgstr ""
+msgstr "Uvozi NUTS 2024"
 
 #. module: base_location_nuts
 #: model:ir.actions.act_window,name:base_location_nuts.nuts_import_action
 msgid "Import NUTS 2024 from SHOWVOC"
-msgstr ""
+msgstr "Uvozi NUTS 2024 iz SHOWVOC"
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_nuts_import
 msgid "Import NUTS items from European ShowVoc service"
-msgstr ""
+msgstr "Uvoz postavk NUTS iz evropske storitve ShowVoc"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_nuts_import__write_uid
@@ -128,12 +128,12 @@ msgstr "Nivo"
 #. module: base_location_nuts
 #: model:ir.model.fields,help:base_location_nuts.field_res_country__state_level
 msgid "Level for the state NUTS category."
-msgstr ""
+msgstr "Nivo za kategorijo zvezne države NUTS."
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_country_form
 msgid "NUTS"
-msgstr ""
+msgstr "NUTS"
 
 #. module: base_location_nuts
 #: model:ir.model,name:base_location_nuts.model_res_partner_nuts
@@ -187,7 +187,7 @@ msgstr "Naziv"
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__not_updatable
 msgid "Not Updatable"
-msgstr ""
+msgstr "Ni posodobljivo"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__parent_id
@@ -203,7 +203,7 @@ msgstr "Nadrejena pot"
 #. odoo-python
 #: code:addons/base_location_nuts/wizard/nuts_import.py:0
 msgid "Partner NUTS by EU"
-msgstr ""
+msgstr "Partnerski NUTS po EU"
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_nuts_filter
@@ -218,7 +218,7 @@ msgstr "Zvezna država"
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_country__state_level
 msgid "State Level"
-msgstr ""
+msgstr "Nivo zvezne države"
 
 #. module: base_location_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.nuts_import_form
@@ -232,6 +232,14 @@ msgid ""
 "                Update or deletion is prevented for NUTS entries with the "
 "flag 'Not updatable'."
 msgstr ""
+"Ta čarovnik bo prenesel najnovejšo različico\n"
+"                NUTS 2024 iz evropske storitve ShowVoc.\n"
+"                Posodobil ali ustvaril bo nove vnose NUTS, če še\n"
+"                niso v sistemu, in IZBRISAL MANJKAJOČE\n"
+"                VNOSE iz novo prenesene datoteke.\n"
+"\n"
+"                Posodobitev ali izbris sta preprečena za vnose NUTS z oznako "
+"'Ni posodobljivo'."
 
 #. module: base_location_nuts
 #: model_terms:ir.actions.act_window,help:base_location_nuts.res_partner_nuts_action
@@ -240,6 +248,9 @@ msgid ""
 "        in Odoo database in:\n"
 "        Contacts &gt; Configuration &gt; Localization &gt; Import NUTS 2024"
 msgstr ""
+"Za zapolnitev postavk NUTS v podatkovni bazi Odoo\n"
+"        morate klikniti čarovnika za uvoz v:\n"
+"        Stiki &gt; Nastavitve &gt; Lokalizacija &gt; Uvozi NUTS 2024"
 
 #, python-format
 #~ msgid "Downloaded file is not a valid XML file"
