@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-24 03:46+0000\n"
-"PO-Revision-Date: 2023-03-31 19:10+0000\n"
+"PO-Revision-Date: 2026-06-30 10:41+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__allowed_nut_ids
@@ -153,7 +153,7 @@ msgstr "NUTS postavke"
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_partner_form_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L1"
-msgstr ""
+msgstr "NUTS L1"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts2_id
@@ -161,7 +161,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_partner_form_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L2"
-msgstr ""
+msgstr "NUTS L2"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts3_id
@@ -169,7 +169,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_partner_form_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L3"
-msgstr ""
+msgstr "NUTS L3"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner__nuts4_id
@@ -177,7 +177,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_partner_form_nuts
 #: model_terms:ir.ui.view,arch_db:base_location_nuts.view_res_partner_filter_nuts
 msgid "NUTS L4"
-msgstr ""
+msgstr "NUTS L4"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__name
@@ -192,13 +192,12 @@ msgstr ""
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__parent_id
 msgid "Parent"
-msgstr ""
+msgstr "Nadrejeni"
 
 #. module: base_location_nuts
 #: model:ir.model.fields,field_description:base_location_nuts.field_res_partner_nuts__parent_path
-#, fuzzy
 msgid "Parent Path"
-msgstr "Levo nadrejeni"
+msgstr "Nadrejena pot"
 
 #. module: base_location_nuts
 #. odoo-python
