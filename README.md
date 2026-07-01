@@ -88,6 +88,7 @@ addon | version | maintainers | summary
 [partner_multi_relation](partner_multi_relation/) | 18.0.1.0.0 |  | Partner Relations
 [partner_multi_relation_archive_propagate](partner_multi_relation_archive_propagate/) | 18.0.1.0.0 | <a href='https://github.com/ntsirintanis'><img src='https://github.com/ntsirintanis.png' width='32' height='32' style='border-radius:50%;' alt='ntsirintanis'/></a> | Propagate archiving via partner_multi_relation relations
 [partner_multi_relation_function](partner_multi_relation_function/) | 18.0.1.0.0 | <a href='https://github.com/NL66278'><img src='https://github.com/NL66278.png' width='32' height='32' style='border-radius:50%;' alt='NL66278'/></a> | Partner Relation Functions
+[partner_noncommercial](partner_noncommercial/) | 18.0.1.0.0 |  | Partner Non Commercial
 [partner_phone_secondary](partner_phone_secondary/) | 18.0.1.0.1 | <a href='https://github.com/ivantodorovich'><img src='https://github.com/ivantodorovich.png' width='32' height='32' style='border-radius:50%;' alt='ivantodorovich'/></a> | Adds a secondary phone number on partners
 [partner_phonecall_schedule](partner_phonecall_schedule/) | 18.0.1.0.0 |  | Track the time and days your partners expect phone calls
 [partner_pricelist_search](partner_pricelist_search/) | 18.0.1.0.0 |  | Partner pricelist search
