@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-10 01:50+0000\n"
-"PO-Revision-Date: 2024-06-05 16:35+0000\n"
-"Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
+"PO-Revision-Date: 2026-07-01 16:46+0000\n"
+"Last-Translator: Laura V <laura.valls@forgeflow.com>\n"
 "Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
@@ -26,6 +26,9 @@ msgid ""
 "number to validate # Set variable 'failed' to True if validation fails "
 "failed = not id_number.name.isdigit()"
 msgstr ""
+"# Ange din valideringskod här # Använd variabeln 'id_number' för det ID-"
+"nummer som ska valideras # Ange variabeln 'failed' till True om valideringen "
+"misslyckas failed = not id_number.name.isdigit()"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
@@ -56,12 +59,37 @@ msgid ""
 "                                </b>\n"
 "failed = not id_number.name.startswith(self.code) and True or False"
 msgstr ""
+"# Använd failed = True för att ange att ID-numret inte är giltigt.\n"
+"# Du kan använda följande variabler:\n"
+"#  - self: browse_record för aktuell ID-kategori\n"
+"#  - id_number: browse_record för det ID-nummer som ska valideras\n"
+"\n"
+"<b>\n"
+"                                    <i># Exempel 1: ID-numret får bara "
+"innehålla siffror</i>\n"
+"                                </b>\n"
+"if not id_number.name.isdigit():\n"
+"    failed = True\n"
+"else:\n"
+"    failed = False\n"
+"\n"
+"<b>\n"
+"                                    <i># Exempel 2: ID-numrets längd får "
+"inte överstiga 10 tecken</i>\n"
+"                                </b>\n"
+"failed = len(id_number.name) &gt; 10 and True or False\n"
+"\n"
+"<b>\n"
+"                                    <i># Exempel 3: ID-numret måste börja "
+"med kategorikoden</i>\n"
+"                                </b>\n"
+"failed = not id_number.name.startswith(self.code) and True or False"
 
 #. module: partner_identification
 #. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 msgid "%(id_name)s is not a valid %(cat_name)s identifier"
-msgstr ""
+msgstr "%(id_name)s är inte en giltig %(cat_name)s-identifierare"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_kanban
@@ -69,11 +97,13 @@ msgid ""
 "<span class=\"fa fa-calendar-check me-1\" title=\"Issue Date\"/>\n"
 "                                    Issued on:"
 msgstr ""
+"<span class=\"fa fa-calendar-check me-1\" title=\"Issue Date\"/>\n"
+"                                    Utfärdat den:"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_kanban
 msgid "<span class=\"fa fa-clock-o me-2\" title=\"Validity Period\"/>"
-msgstr ""
+msgstr "<span class=\"fa fa-clock-o me-2\" title=\"Validity Period\"/>"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
@@ -84,7 +114,7 @@ msgstr ""
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Åtgärd krävs"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__active
@@ -95,22 +125,22 @@ msgstr "Aktiv"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Aktiviteter"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Dekoration för aktivitetsundantag"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Aktivitetsstatus"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Aktivitetstypikon"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__partner_issued_id
@@ -127,12 +157,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Archived"
-msgstr ""
+msgstr "Arkiverad"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Antal bilagor"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__category_id
@@ -143,7 +173,7 @@ msgstr "Kategori"
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid "Category Name"
-msgstr ""
+msgstr "Kategorinamn"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__code
@@ -153,7 +183,7 @@ msgstr "Kod"
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid "Color"
-msgstr ""
+msgstr "Färg"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
@@ -175,7 +205,7 @@ msgstr "Skapad den"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
 msgid "Date Issued"
-msgstr ""
+msgstr "Utfärdandedatum"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner__display_name
@@ -192,6 +222,9 @@ msgid ""
 " %(name)s \n"
 "(%(error)s)"
 msgstr ""
+"Fel vid utvärdering av valideringskoden för id_category: \n"
+" %(name)s \n"
+"(%(error)s)"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
@@ -202,27 +235,27 @@ msgstr "Utgått"
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner
 msgid "Fake Model"
-msgstr ""
+msgstr "Fake Model"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Följare"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Följare (partners)"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Font Awesome-ikon, t.ex. fa-tasks"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Har meddelanden"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner__id
@@ -255,12 +288,12 @@ msgstr "ID-typ som definieras i konfigurationen. Till exempel körkort"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Ikon"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Ikon för att indikera en aktivitetsundantagsaktivitet."
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner__id_numbers
@@ -271,27 +304,27 @@ msgstr "Identifieringsnummer"
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Om markerat kräver nya meddelanden din uppmärksamhet."
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Om markerat har vissa meddelanden ett leveransfel."
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Include archived ID numbers"
-msgstr ""
+msgstr "Inkludera arkiverade ID-nummer"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
 msgid "Include archived categories"
-msgstr ""
+msgstr "Inkludera arkiverade kategorier"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Är följare"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_issued_id
@@ -318,17 +351,17 @@ msgstr "Senast uppdaterad"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Meddelandeleveransfel"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Meddelanden"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Min aktivitetsfrist"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__name
@@ -344,22 +377,22 @@ msgstr "Nya"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Nästa aktivitetskalenderhändelse"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Nästa aktivitetsfrist"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Nästa aktivitetssammanfattning"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Nästa aktivitetstyp"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__comment
@@ -370,22 +403,22 @@ msgstr "Anteckningar"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Antal åtgärder"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Antal fel"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Antal meddelanden som kräver åtgärd"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Antal meddelanden med leveransfel"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_id
@@ -447,7 +480,7 @@ msgstr "Python valideringskod"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Ansvarig användare"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
@@ -469,6 +502,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Status baserat på aktiviteter\n"
+"Försenad: Förfallodatum har redan passerat\n"
+"Idag: Aktivitetsdatum är idag\n"
+"Planerad: Framtida aktiviteter."
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__name
@@ -492,6 +529,9 @@ msgid ""
 "write via the %(field_name)s field is not possible. In order to fix this, "
 "please use the IDs tab."
 msgstr ""
+"Denna %(record_name)s har flera ID:n av den här typen (%(category_code)s), "
+"så en skrivning via fältet %(field_name)s är inte möjlig. För att åtgärda "
+"detta, använd fliken ID:n."
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
@@ -502,44 +542,44 @@ msgstr "Att förnya"
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Typ av aktivitetsundantag på posten."
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid From"
-msgstr ""
+msgstr "Giltig från"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_until
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until"
-msgstr ""
+msgstr "Giltig till"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until: Future"
-msgstr ""
+msgstr "Giltig till: Framtida"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until: Past"
-msgstr ""
+msgstr "Giltig till: Tidigare"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until: Today"
-msgstr ""
+msgstr "Giltig till: Idag"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Webbplatsmeddelanden"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Webbplatskommunikationshistorik"
 
 #~ msgid "Contact"
 #~ msgstr "Kontakt"
