@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Canarias Conectada
+     License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html -->
+<odoo>
+    <!-- Global (no ``groups``) rule: ANDs with any other rule on
+         res.partner (see ``ir.rule._compute_domain``), so it composes
+         cleanly with company-scoping rules such as
+         ``partner_multi_company_restrict``'s or the stock
+         ``base.res_partner_rule``, without editing them.
+
+         A contact is hidden if it is flagged as a system administrator's
+         contact (``is_system_admin_contact``, see ``models/res_partner.py``)
+         UNLESS the viewer holds ``base.group_system`` themselves, in which
+         case they see every contact, including other administrators. This
+         is unrelated to multi-company: it applies the same way with a
+         single company. -->
+    <record id="res_partner_rule_hide_admin_contact" model="ir.rule">
+        <field
+            name="name"
+        >res.partner: hide administrator contacts from regular users</field>
+        <field name="model_id" ref="base.model_res_partner" />
+        <field name="domain_force">
+            ['|', ('is_system_admin_contact', '=', False), (1, '=', 1) if user.has_group('base.group_system') else (0, '=', 1)]
+        </field>
+    </record>
+</odoo>
