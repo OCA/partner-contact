@@ -17,6 +17,28 @@ msgstr ""
 "X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_department
+#: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
+msgid "<i class=\"fa fa-fw me-1 fa-envelope text-primary\" title=\"Email\"/>"
+msgstr ""
+
+#. module: partner_department
+#: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
+msgid "<i class=\"fa fa-fw me-1 fa-phone text-primary\" title=\"Phone\"/>"
+msgstr ""
+
+#. module: partner_department
+#: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
+msgid ""
+"<i class=\"fa fa-fw me-1 fa-suitcase text-primary\" title=\"Position\"/>"
+msgstr ""
+
+#. module: partner_department
+#. odoo-python
+#: code:addons/partner_department/models/res_partner.py:0
+msgid "A partner contact/department cannot have a department as its parent."
+msgstr ""
+
+#. module: partner_department
 #: model:ir.model.fields,field_description:partner_department.field_res_partner__type
 #: model:ir.model.fields,field_description:partner_department.field_res_users__type
 msgid "Address Type"
@@ -28,9 +50,15 @@ msgid "Contact"
 msgstr "Kontakt"
 
 #. module: partner_department
+#: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
+msgid "Contact image"
+msgstr ""
+
+#. module: partner_department
 #: model:ir.model.fields,field_description:partner_department.field_res_partner__department_id
 #: model:ir.model.fields,field_description:partner_department.field_res_users__department_id
 #: model:ir.model.fields.selection,name:partner_department.selection__res_partner__type__department
+#: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
 #: model_terms:ir.ui.view,arch_db:partner_department.view_res_partner_filter_department
 msgid "Department"
 msgstr "Abteilung"
@@ -49,9 +77,20 @@ msgid "Departments"
 msgstr "Abteilungen"
 
 #. module: partner_department
+#: model:ir.model.fields,field_description:partner_department.field_res_partner__department_member_ids
+#: model:ir.model.fields,field_description:partner_department.field_res_users__department_member_ids
+msgid "Direct Members"
+msgstr ""
+
+#. module: partner_department
 #: model:ir.model.fields,field_description:partner_department.field_res_partner__display_name
 msgid "Display Name"
 msgstr "Anzeigename"
+
+#. module: partner_department
+#: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
+msgid "Email"
+msgstr ""
 
 #. module: partner_department
 #: model:ir.model.fields,field_description:partner_department.field_res_partner__id
@@ -59,8 +98,23 @@ msgid "ID"
 msgstr "ID"
 
 #. module: partner_department
-#: model:ir.model.fields,field_description:partner_department.field_res_partner__department_member_ids
-#: model:ir.model.fields,field_description:partner_department.field_res_users__department_member_ids
+#: model:ir.model.fields,field_description:partner_department.field_res_partner__department_all_member_ids
+#: model:ir.model.fields,field_description:partner_department.field_res_users__department_all_member_ids
 #: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
 msgid "Members"
 msgstr "Mitglieder"
+
+#. module: partner_department
+#: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
+msgid "Name"
+msgstr ""
+
+#. module: partner_department
+#: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
+msgid "Phone"
+msgstr ""
+
+#. module: partner_department
+#: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
+msgid "e.g. Engineering"
+msgstr ""
