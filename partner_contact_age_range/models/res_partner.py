@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
+from odoo.fields import Domain
 
 
 class ResPartner(models.Model):
@@ -16,7 +17,7 @@ class ResPartner(models.Model):
 
     @api.depends("age")
     def _compute_age_range_id(self):
-        age_ranges = self.env["res.partner.age.range"].search([])
+        age_ranges = self.env["res.partner.age.range"].search(Domain([]))
         for record in self:
             if record.age >= 0:
                 age_range = age_ranges.filtered(

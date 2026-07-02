@@ -24,7 +24,7 @@ class ResPartnerDateRange(models.Model):
     )
     age_to = fields.Integer(string="To", required=True)
 
-    _sql_constraints = [("name_uniq", "unique (name)", "A name must be unique !")]
+    _name_uniq = models.Constraint("unique (name)", "A name must be unique !")
 
     @api.constrains("age_from", "age_to")
     def _validate_range(self):
