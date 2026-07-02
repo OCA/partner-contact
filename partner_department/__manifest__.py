@@ -4,7 +4,7 @@
 {
     "name": "Partner Department",
     "summary": "Adds department as a partner type",
-    "version": "19.0.1.0.1",
+    "version": "19.0.1.1.0",
     "category": "Customer Relationship Management",
     "author": "Odoo Community Association (OCA), ForgeFlow S.L.",
     "license": "AGPL-3",
