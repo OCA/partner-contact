@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-06-21 12:53+0000\n"
+"PO-Revision-Date: 2026-07-06 06:15+0000\n"
 "Last-Translator: intero-chd <c.dominiak@intero-technologies.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -19,24 +19,27 @@ msgstr ""
 #. module: partner_department
 #: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
 msgid "<i class=\"fa fa-fw me-1 fa-envelope text-primary\" title=\"Email\"/>"
-msgstr ""
+msgstr "<i class=\"fa fa-fw me-1 fa-envelope text-primary\" title=\"Email\"/>"
 
 #. module: partner_department
 #: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
 msgid "<i class=\"fa fa-fw me-1 fa-phone text-primary\" title=\"Phone\"/>"
-msgstr ""
+msgstr "<i class=\"fa fa-fw me-1 fa-phone text-primary\" title=\"Phone\"/>"
 
 #. module: partner_department
 #: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
 msgid ""
 "<i class=\"fa fa-fw me-1 fa-suitcase text-primary\" title=\"Position\"/>"
 msgstr ""
+"<i class=\"fa fa-fw me-1 fa-suitcase text-primary\" title=\"Position\"/>"
 
 #. module: partner_department
 #. odoo-python
 #: code:addons/partner_department/models/res_partner.py:0
 msgid "A partner contact/department cannot have a department as its parent."
 msgstr ""
+"Ein Kontakt bzw. eine Abteilung kann keine Abteilung als übergeordnete "
+"Einheit haben."
 
 #. module: partner_department
 #: model:ir.model.fields,field_description:partner_department.field_res_partner__type
@@ -52,7 +55,7 @@ msgstr "Kontakt"
 #. module: partner_department
 #: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
 msgid "Contact image"
-msgstr ""
+msgstr "Kontaktbild"
 
 #. module: partner_department
 #: model:ir.model.fields,field_description:partner_department.field_res_partner__department_id
@@ -80,7 +83,7 @@ msgstr "Abteilungen"
 #: model:ir.model.fields,field_description:partner_department.field_res_partner__department_member_ids
 #: model:ir.model.fields,field_description:partner_department.field_res_users__department_member_ids
 msgid "Direct Members"
-msgstr ""
+msgstr "Mitglieder"
 
 #. module: partner_department
 #: model:ir.model.fields,field_description:partner_department.field_res_partner__display_name
@@ -90,7 +93,7 @@ msgstr "Anzeigename"
 #. module: partner_department
 #: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #. module: partner_department
 #: model:ir.model.fields,field_description:partner_department.field_res_partner__id
@@ -107,14 +110,14 @@ msgstr "Mitglieder"
 #. module: partner_department
 #: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #. module: partner_department
 #: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #. module: partner_department
 #: model_terms:ir.ui.view,arch_db:partner_department.view_partner_form_department
 msgid "e.g. Engineering"
-msgstr ""
+msgstr "z.B. Ingenieurwesen"
