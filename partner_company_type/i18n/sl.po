@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2026-06-30 11:34+0000\n"
+"PO-Revision-Date: 2026-07-09 06:13+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -23,24 +23,24 @@ msgstr ""
 #. module: partner_company_type
 #: model:res.partner.company.type,shortcut:partner_company_type.res_partner_company_type_sa
 msgid "AC"
-msgstr ""
+msgstr "AC"
 
 #. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__shortcut
 msgid "Abbreviation"
-msgstr ""
+msgstr "Okrajšava"
 
 #. module: partner_company_type
 #: model:res.partner.company.type,name:partner_company_type.res_partner_company_type_sa
 msgid "Anonymous Company"
-msgstr ""
+msgstr "Anonimna družba"
 
 #. module: partner_company_type
 #: model:ir.actions.act_window,name:partner_company_type.res_partner_company_type_act_window
 #: model:ir.ui.menu,name:partner_company_type.menu_partner_company_type
 #: model_terms:ir.ui.view,arch_db:partner_company_type.res_partner_company_type_form_view
 msgid "Company Types"
-msgstr ""
+msgstr "Tipi družb"
 
 #. module: partner_company_type
 #: model:ir.model,name:partner_company_type.model_res_partner
@@ -81,22 +81,22 @@ msgstr "Zadnjič posodobljeno"
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner__partner_company_type_id
 #: model:ir.model.fields,field_description:partner_company_type.field_res_users__partner_company_type_id
 msgid "Legal Form"
-msgstr ""
+msgstr "Pravna oblika"
 
 #. module: partner_company_type
 #: model:ir.model,name:partner_company_type.model_res_partner_company_type
 msgid "Partner Company Type"
-msgstr ""
+msgstr "Tip družbe partnerja"
 
 #. module: partner_company_type
 #: model:ir.model.constraint,message:partner_company_type.constraint_res_partner_company_type_name_uniq
 msgid "Partner Company Type already exists!"
-msgstr ""
+msgstr "Tip družbe partnerja že obstaja!"
 
 #. module: partner_company_type
 #: model:ir.model.fields,field_description:partner_company_type.field_res_partner_company_type__name
 msgid "Title"
-msgstr ""
+msgstr "Naslov"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Zadnjič spremenjeno"
