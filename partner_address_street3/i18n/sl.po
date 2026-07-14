@@ -9,20 +9,21 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-01 20:42+0000\n"
-"PO-Revision-Date: 2017-05-01 20:42+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"PO-Revision-Date: 2026-07-14 06:46+0000\n"
+"Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_address_street3
 #: model:ir.model,name:partner_address_street3.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Stik"
 
 #. module: partner_address_street3
 #: model:ir.model,name:partner_address_street3.model_res_country
@@ -41,11 +42,19 @@ msgid ""
 "%(country_name)s: the name of the country\n"
 "%(country_code)s: the code of the country"
 msgstr ""
+"Oblika prikaza, ki se uporablja za naslove v tej državi.\n"
+"\n"
+"Za vsa polja naslova lahko uporabite vzorec niza v slogu Python (na primer, "
+"uporabite '%(street)s' za prikaz polja 'street') ter\n"
+"%(state_name)s: naziv regije\n"
+"%(state_code)s: koda regije\n"
+"%(country_name)s: naziv države\n"
+"%(country_code)s: koda države"
 
 #. module: partner_address_street3
 #: model:ir.model.fields,field_description:partner_address_street3.field_res_country__address_format
 msgid "Layout in Reports"
-msgstr ""
+msgstr "Postavitev v poročilih"
 
 #. module: partner_address_street3
 #: model:ir.model.fields,field_description:partner_address_street3.field_res_partner__street3
