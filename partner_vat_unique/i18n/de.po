@@ -59,18 +59,6 @@ msgid "Tax ID"
 msgstr "USt-ID"
 
 #. module: partner_vat_unique
-#: model:ir.model.fields,help:partner_vat_unique.field_res_partner__vat
-#: model:ir.model.fields,help:partner_vat_unique.field_res_users__vat
-msgid ""
-"The Tax Identification Number. Values here will be validated based on the "
-"country format. You can use '/' to indicate that the partner is not subject "
-"to tax."
-msgstr ""
-"Die Steueridentifikationsnummer. Die hier eingegebenen Werte werden anhand "
-"des länderspezifischen Formats überprüft. Mit dem Zeichen „/“ können Sie "
-"angeben, dass der Geschäftspartner nicht steuerpflichtig ist."
-
-#. module: partner_vat_unique
 #. odoo-python
 #: code:addons/partner_vat_unique/models/res_partner.py:0
 msgid "The VAT %(vat)s already exists in another partner."
@@ -82,6 +70,21 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_config_settings__partner_vat_unique
 msgid "Unique VAT Constraint"
 msgstr "Einzigartige Umsatzsteuer-Einschränkung"
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,help:partner_vat_unique.field_res_partner__vat
+#: model:ir.model.fields,help:partner_vat_unique.field_res_users__vat
+msgid "You can use '/' to indicate that the customer has no Tax ID."
+msgstr ""
+
+#~ msgid ""
+#~ "The Tax Identification Number. Values here will be validated based on the "
+#~ "country format. You can use '/' to indicate that the partner is not "
+#~ "subject to tax."
+#~ msgstr ""
+#~ "Die Steueridentifikationsnummer. Die hier eingegebenen Werte werden "
+#~ "anhand des länderspezifischen Formats überprüft. Mit dem Zeichen „/“ "
+#~ "können Sie angeben, dass der Geschäftspartner nicht steuerpflichtig ist."
 
 #~ msgid "Contact"
 #~ msgstr "Kontakt"
