@@ -57,18 +57,6 @@ msgid "Tax ID"
 msgstr "Vergi No"
 
 #. module: partner_vat_unique
-#: model:ir.model.fields,help:partner_vat_unique.field_res_partner__vat
-#: model:ir.model.fields,help:partner_vat_unique.field_res_users__vat
-msgid ""
-"The Tax Identification Number. Values here will be validated based on the "
-"country format. You can use '/' to indicate that the partner is not subject "
-"to tax."
-msgstr ""
-"Vergi Kimlik Numaras??. Buradaki de??erler ??lke bi??imine g??re do??rulan??"
-"r. Orta????n vergiye tabi olmad??????n?? belirtmek i??in '/' "
-"kullanabilirsiniz."
-
-#. module: partner_vat_unique
 #. odoo-python
 #: code:addons/partner_vat_unique/models/res_partner.py:0
 msgid "The VAT %(vat)s already exists in another partner."
@@ -78,6 +66,21 @@ msgstr "Vergi %(vat)s zaten farkl?? bir i?? orta????nda mevcut."
 #: model:ir.model.fields,field_description:partner_vat_unique.field_res_config_settings__partner_vat_unique
 msgid "Unique VAT Constraint"
 msgstr "E??siz Vergi K??s??t??"
+
+#. module: partner_vat_unique
+#: model:ir.model.fields,help:partner_vat_unique.field_res_partner__vat
+#: model:ir.model.fields,help:partner_vat_unique.field_res_users__vat
+msgid "You can use '/' to indicate that the customer has no Tax ID."
+msgstr ""
+
+#~ msgid ""
+#~ "The Tax Identification Number. Values here will be validated based on the "
+#~ "country format. You can use '/' to indicate that the partner is not "
+#~ "subject to tax."
+#~ msgstr ""
+#~ "Vergi Kimlik Numaras??. Buradaki de??erler ??lke bi??imine g??re do??"
+#~ "rulan??r. Orta????n vergiye tabi olmad??????n?? belirtmek i??in '/' "
+#~ "kullanabilirsiniz."
 
 #~ msgid "Contact"
 #~ msgstr "Kontak"
