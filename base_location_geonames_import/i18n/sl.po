@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2026-02-01 10:10+0000\n"
+"PO-Revision-Date: 2026-07-14 06:46+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -24,7 +24,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/base_location_geonames_import/wizard/geonames_import.py:0
 msgid "%s could not be deleted"
-msgstr ""
+msgstr "%s ni bilo mogoče izbrisati"
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
@@ -32,6 +32,8 @@ msgid ""
 ", create new location entries if not found already in the system, and "
 "<b>delete missing entries</b> from new file."
 msgstr ""
+", ustvarite nove vnose lokacij, če jih sistem še ne najde, in <b>izbrišite "
+"manjkajoče vnose</b> iz nove datoteke."
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
@@ -44,12 +46,13 @@ msgid ""
 "Converts retreived city and state names to Title Case (upper case on each "
 "first letter of a word) or Upper Case (all letters upper case)."
 msgstr ""
+"Pretvori pridobljena imena mest in držav v velike začetnice (velike "
+"začetnice na vsaki prvi črki besede) ali velike začetnice (vse črke velike)."
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__country_ids
-#, fuzzy
 msgid "Countries"
-msgstr "Država"
+msgstr "Države"
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_res_country
@@ -77,16 +80,18 @@ msgid ""
 "For the selected country, this wizard will download the latest version of "
 "the list of cities from"
 msgstr ""
+"Za izbrano državo bo ta čarovnik prenesel najnovejšo različico seznama mest "
+"iz"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_code_column
 msgid "Geonames State Code Column"
-msgstr ""
+msgstr "Geonames - stolpec s kodo države"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_res_country__geonames_state_name_column
 msgid "Geonames State Name Column"
-msgstr ""
+msgstr "Geonames - stolpec z nazivom države"
 
 #. module: base_location_geonames_import
 #. odoo-python
@@ -106,9 +111,8 @@ msgstr "Uvozi"
 
 #. module: base_location_geonames_import
 #: model:ir.model,name:base_location_geonames_import.model_city_zip_geonames_import
-#, fuzzy
 msgid "Import City Zips from Geonames"
-msgstr "Uvozi Better Zip iz Geonames"
+msgstr "Uvozi krajevne poštne številke iz Geonames"
 
 #. module: base_location_geonames_import
 #: model:ir.actions.act_window,name:base_location_geonames_import.city_zip_geonames_import_action
@@ -130,7 +134,7 @@ msgstr "Zadnjič posodobljeno"
 #. module: base_location_geonames_import
 #: model:ir.model.fields,field_description:base_location_geonames_import.field_city_zip_geonames_import__letter_case
 msgid "Letter Case"
-msgstr ""
+msgstr "Velike/male črke"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields.selection,name:base_location_geonames_import.selection__city_zip_geonames_import__letter_case__title
@@ -140,17 +144,17 @@ msgstr "Velike začetnice besed"
 #. module: base_location_geonames_import
 #: model:ir.model.fields.selection,name:base_location_geonames_import.selection__city_zip_geonames_import__letter_case__unchanged
 msgid "Unchanged"
-msgstr ""
+msgstr "Nespremenjeno"
 
 #. module: base_location_geonames_import
 #: model:ir.model.fields.selection,name:base_location_geonames_import.selection__city_zip_geonames_import__letter_case__upper
 msgid "Upper Case"
-msgstr ""
+msgstr "Velike črke"
 
 #. module: base_location_geonames_import
 #: model_terms:ir.ui.view,arch_db:base_location_geonames_import.city_zip_geonames_import_form
 msgid "geonames.org"
-msgstr ""
+msgstr "geonames.org"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Zadnjič spremenjeno"
