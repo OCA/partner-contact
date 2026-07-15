@@ -71,7 +71,11 @@ class ResPartner(models.Model):
                         self._get_whitespace_cleaned_name(name), is_company
                     )
                     for key, value in inverted.items():
-                        if not vals.get(key) or partner_context.get("copy"):
+                        if (
+                            "name" in vals
+                            or not vals.get(key)
+                            or partner_context.get("copy")
+                        ):
                             vals[key] = value
 
                     # Remove the combined fields

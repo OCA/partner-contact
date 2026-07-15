@@ -24,6 +24,20 @@ class PartnerCompanyCase(TransactionCase):
         self.assertEqual(partner_form.firstname, False)
         self.assertEqual(partner_form.lastname, name)
 
+    def test_create_from_form_keeps_name_over_default_name(self):
+        """If the name is updated in the create dialog, it must be saved instead of the
+        search term
+        """
+        with Form(
+            self.env["res.partner"].with_context(default_name="Test")
+        ) as partner_form:
+            partner_form.company_type = "company"
+            partner_form.name = "Full Test"
+
+        self.assertEqual(partner_form.name, "Full Test")
+        self.assertEqual(partner_form.firstname, False)
+        self.assertEqual(partner_form.lastname, "Full Test")
+
     def test_empty_name(self):
         """If we empty the name and save the form, EmptyNamesError must
         be raised (firstname and lastname are reset...)
