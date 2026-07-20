@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-02-17 08:30+0000\n"
+"PO-Revision-Date: 2026-07-20 06:19+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -71,7 +71,7 @@ msgstr "Vincolo partita IVA univoca"
 #: model:ir.model.fields,help:partner_vat_unique.field_res_partner__vat
 #: model:ir.model.fields,help:partner_vat_unique.field_res_users__vat
 msgid "You can use '/' to indicate that the customer has no Tax ID."
-msgstr ""
+msgstr "Si può utilizzare '/' per indicare che il cliente non ha partita IVA."
 
 #~ msgid ""
 #~ "The Tax Identification Number. Values here will be validated based on the "
