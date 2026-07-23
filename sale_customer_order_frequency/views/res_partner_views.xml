@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sale']" position="inside">
+                <field name="average_order_duration" />
+                <field name="days_since_last_order" />
+                <field name="days_until_next_order" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_tree" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="average_order_duration" optional="hide" />
+                <field name="days_since_last_order" optional="hide" />
+                <field name="days_until_next_order" optional="show" />
+            </field>
+        </field>
+    </record>
+</odoo>
