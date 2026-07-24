@@ -69,13 +69,20 @@ class ResPartner(models.Model):
     def write(self, vals):
         """We want to prevent archived contacts as default addresses"""
         if vals.get("active") is False:
-            self.search([("partner_delivery_id", "in", self.ids)]).write(
-                {"partner_delivery_id": False}
-            )
-            self.search([("partner_invoice_id", "in", self.ids)]).write(
-                {"partner_invoice_id": False}
-            )
-            self.search([("partner_contact_id", "in", self.ids)]).write(
-                {"partner_contact_id": False}
+            parents_delivery = self.search([("partner_delivery_id", "in", self.ids)])
+            parents_invoice = self.search([("partner_invoice_id", "in", self.ids)])
+            parents_contact = self.search([("partner_contact_id", "in", self.ids)])
+            parents_delivery.write({"partner_delivery_id": False})
+            parents_invoice.write({"partner_invoice_id": False})
+            parents_contact.write({"partner_contact_id": False})
+            # Invalidate cache on parent partners so that stale values
+            # are not returned by address_get in multi-module contexts
+            all_parents = parents_delivery | parents_invoice | parents_contact
+            all_parents.invalidate_recordset(
+                fnames=[
+                    "partner_delivery_id",
+                    "partner_invoice_id",
+                    "partner_contact_id",
+                ]
             )
         return super().write(vals)
