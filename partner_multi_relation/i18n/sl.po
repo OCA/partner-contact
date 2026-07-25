@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2026-07-25 05:55+0000\n"
+"PO-Revision-Date: 2026-07-25 07:51+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -268,6 +268,9 @@ msgid ""
 "                be linked to other partners with a type either directly\n"
 "                or inversely."
 msgstr ""
+"Beležite in sledite odnosom svojih partnerjev. Odnosi so\n"
+"                lahko povezani z drugimi partnerji z določeno vrsto bodisi\n"
+"                neposredno ali obratno."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation__active
@@ -287,6 +290,8 @@ msgid ""
 "There are existing reflexive relations defined for the following partners: %"
 "(partners)s"
 msgstr ""
+"Povratnosti ni bilo mogoče onemogočiti za tip odnosa %(relation_type)s. Za "
+"naslednje partnerje so določeni obstoječi povratni odnosi: %(partners)s"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_count
@@ -296,9 +301,8 @@ msgstr "Števec relacij"
 
 #. module: partner_multi_relation
 #: model:ir.ui.menu,name:partner_multi_relation.menu_res_partner_relation_type
-#, fuzzy
 msgid "Relation Types"
-msgstr "Tip odnosa"
+msgstr "Tipi odnosa"
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -369,7 +373,7 @@ msgstr "Izvorni partner"
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.tree_res_partner_relation
 msgid "Start"
-msgstr ""
+msgstr "Začetek"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__date_start
@@ -391,7 +395,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "The %s partner is not applicable for this relation type."
-msgstr ""
+msgstr "Partner %s ni ustrezen za ta tip odnosa."
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -418,7 +422,7 @@ msgstr "Podoben odnos s prekrivajočimi se datumi že obstaja."
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__this_partner_id
 msgid "This Partner"
-msgstr ""
+msgstr "Ta partner"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__allow_self
