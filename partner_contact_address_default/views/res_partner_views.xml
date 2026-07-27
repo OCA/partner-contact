@@ -6,35 +6,29 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='child_ids']" position="before">
                 <group>
-                    <field name="partner_delivery_domain" invisible="1" />
-                    <field name="partner_invoice_domain" invisible="1" />
-                    <field name="partner_contact_domain" invisible="1" />
                     <group>
                         <field
                             name="partner_delivery_id"
                             domain="partner_delivery_domain"
-                            options="{'no_open': True, 'no_create': True}"
+                            options="{'no_create': True}"
                         />
                         <field
                             name="partner_invoice_id"
                             domain="partner_invoice_domain"
-                            options="{'no_open': True, 'no_create': True}"
+                            options="{'no_create': True}"
                         />
                     </group>
                     <group>
                         <field
                             name="partner_contact_id"
                             domain="partner_contact_domain"
-                            options="{'no_open': True, 'no_create': True}"
+                            options="{'no_create': True}"
                         />
                     </group>
                 </group>
             </xpath>
             <xpath expr="//field[@name='child_ids']//form//group" position="after">
                 <group string="Force addresses" invisible="type != 'contact'">
-                    <field name="partner_delivery_domain" invisible="1" />
-                    <field name="partner_invoice_domain" invisible="1" />
-                    <field name="partner_contact_domain" invisible="1" />
                     <group colspan="4">
                         <div class="oe_grey" colspan="4">
                             <p
