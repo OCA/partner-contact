@@ -7,7 +7,7 @@
     "author": "ForgeFlow,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "category": "Sales",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "license": "AGPL-3",
     "depends": ["sale_stock"],
     "data": ["views/res_partner_views.xml"],
