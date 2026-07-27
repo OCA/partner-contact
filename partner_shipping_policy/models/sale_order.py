@@ -12,7 +12,7 @@ class SaleOrder(models.Model):
         compute="_compute_picking_policy", store=True, readonly=False
     )
 
-    @api.depends("partner_id")
+    @api.depends("partner_shipping_id", "partner_id")
     def _compute_picking_policy(self):
         for this in self:
             picking_policy = (
