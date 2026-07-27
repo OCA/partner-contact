@@ -1,0 +1,56 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_customer_order_frequency
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: sale_customer_order_frequency
+#: model:ir.model.fields,field_description:sale_customer_order_frequency.field_res_partner__average_order_duration
+#: model:ir.model.fields,field_description:sale_customer_order_frequency.field_res_users__average_order_duration
+msgid "Average Duration Between Orders"
+msgstr ""
+
+#. module: sale_customer_order_frequency
+#: model:ir.model.fields,help:sale_customer_order_frequency.field_res_partner__average_order_duration
+#: model:ir.model.fields,help:sale_customer_order_frequency.field_res_users__average_order_duration
+msgid "Average number of days between orders"
+msgstr ""
+
+#. module: sale_customer_order_frequency
+#: model:ir.model,name:sale_customer_order_frequency.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: sale_customer_order_frequency
+#: model:ir.model.fields,field_description:sale_customer_order_frequency.field_res_partner__days_until_next_order
+#: model:ir.model.fields,field_description:sale_customer_order_frequency.field_res_users__days_until_next_order
+msgid "Days Before Next Order"
+msgstr ""
+
+#. module: sale_customer_order_frequency
+#: model:ir.model.fields,field_description:sale_customer_order_frequency.field_res_partner__days_since_last_order
+#: model:ir.model.fields,field_description:sale_customer_order_frequency.field_res_users__days_since_last_order
+msgid "Days Since Last Order"
+msgstr ""
+
+#. module: sale_customer_order_frequency
+#: model:ir.model.fields,help:sale_customer_order_frequency.field_res_partner__days_until_next_order
+#: model:ir.model.fields,help:sale_customer_order_frequency.field_res_users__days_until_next_order
+msgid "Number of days before the next theoretical order"
+msgstr ""
+
+#. module: sale_customer_order_frequency
+#: model:ir.model.fields,help:sale_customer_order_frequency.field_res_partner__days_since_last_order
+#: model:ir.model.fields,help:sale_customer_order_frequency.field_res_users__days_since_last_order
+msgid "Number of days since the last order"
+msgstr ""
