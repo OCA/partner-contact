@@ -31,24 +31,251 @@
                     options='{"no_open": False}'
                 />
             </xpath>
-            <!-- department_id inside the Contacts child_ids form -->
-            <xpath
-                expr="//field[@name='child_ids']/form//field[@name='function']"
-                position="after"
-            >
-                <field name="is_company" invisible="True" />
-                <field
-                    name="department_id"
-                    invisible="type != 'contact'"
-                    options='{"no_open": False}'
-                />
-            </xpath>
-            <!-- Exclude department-type partners from the Contacts tab -->
+            <!-- The `domain` attribute of an x2many is only used by the "Add"
+                 record selector, so it cannot filter out the department-type
+                 children from the Contacts tab. Hide `child_ids` and show
+                 `child_non_department_ids` instead, which is filtered by the
+                 domain of the field itself. -->
             <xpath
                 expr="//page[@name='contact_addresses']//field[@name='child_ids']"
                 position="attributes"
             >
-                <attribute name="domain">[('type', '!=', 'department')]</attribute>
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath
+                expr="//page[@name='contact_addresses']//field[@name='child_ids']"
+                position="after"
+            >
+                <field
+                    name="child_non_department_ids"
+                    mode="kanban"
+                    context="{'default_parent_id': id, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_lang': lang, 'default_user_id': user_id, 'default_type': is_company and 'contact' or 'other'}"
+                >
+                    <kanban color="color">
+                        <field name="color" />
+                        <field name="type" />
+                        <field name="is_company" />
+                        <templates>
+                            <t t-name="card" class="flex-row">
+                                <aside class="o_kanban_aside_full">
+                                    <field
+                                        name="avatar_128"
+                                        class="o_kanban_image_fill w-100"
+                                        widget="image"
+                                        options="{'img_class': 'object-fit-cover'}"
+                                        alt="Contact image"
+                                        invisible="type != 'contact'"
+                                    />
+                                    <field
+                                        name="avatar_128"
+                                        class="o_kanban_image_fill w-100"
+                                        widget="image"
+                                        options="{'img_class': 'object-fit-contain p-2'}"
+                                        alt="Contact image"
+                                        invisible="type == 'contact'"
+                                    />
+                                </aside>
+                                <main class="ps-2 ps-md-0">
+                                    <field
+                                        name="name"
+                                        invisible="not name"
+                                        class="fw-bold"
+                                    />
+                                    <field
+                                        name="type"
+                                        invisible="name"
+                                        class="fw-bold"
+                                    />
+                                    <div
+                                        t-if="record.email.raw_value"
+                                        class="text-truncate"
+                                    >
+                                        <i
+                                            class="fa fa-fw me-1 fa-envelope text-primary"
+                                            title="Email"
+                                        />
+                                        <field name="email" />
+                                    </div>
+                                    <div t-if="record.phone.raw_value">
+                                        <i
+                                            class="fa fa-fw me-1 fa-phone text-primary"
+                                            title="Phone"
+                                        />
+                                        <field name="phone" />
+                                    </div>
+                                    <div invisible="not function or is_company">
+                                        <i
+                                            class="fa fa-fw me-1 fa-suitcase text-primary"
+                                            title="Position"
+                                        />
+                                        <field name="function" />
+                                    </div>
+                                    <div
+                                        t-if="record.type.raw_value != 'contact' and (record.city.raw_value or record.country_id.raw_value)"
+                                    >
+                                        <i
+                                            class="fa fa-fw me-1 fa-map-marker text-primary"
+                                            title="Location"
+                                        />
+                                        <field name="city" />
+                                        <span
+                                            t-if="record.city.raw_value and record.country_id.raw_value"
+                                        >, </span>
+                                        <field name="country_id" />
+                                    </div>
+                                </main>
+                            </t>
+                        </templates>
+                    </kanban>
+                    <form string="Contact / Address">
+                        <sheet>
+                            <field
+                                name="type"
+                                required="1"
+                                widget="radio"
+                                options="{'horizontal': true}"
+                            />
+                            <field name="is_company" invisible="True" />
+                            <div class="d-flex align-items-center gap-3">
+                                <field
+                                    name="image_1920"
+                                    widget="contact_image"
+                                    nolabel="1"
+                                    options="{'preview_image': 'avatar_128', 'size': [100,100], 'img_class': 'rounded border'}"
+                                />
+                                <div class="flex-grow-1">
+                                    <h3>
+                                        <field
+                                            name="name"
+                                            class="d-block"
+                                            string="Name"
+                                            default_focus="1"
+                                            required="type == 'contact'"
+                                            placeholder="e.g. Brandon Freeman"
+                                        />
+                                    </h3>
+                                    <div class="row flex-row">
+                                        <div class="d-flex align-items-baseline">
+                                            <i
+                                                class="fa fa-fw me-1 fa-envelope text-primary"
+                                                title="Email"
+                                            />
+                                            <field
+                                                name="email"
+                                                widget="email"
+                                                class="w-100"
+                                                context="{'gravatar_image': True}"
+                                                required="user_ids"
+                                                placeholder="Email"
+                                            />
+                                        </div>
+                                        <div class="d-flex align-items-baseline">
+                                            <i
+                                                class="fa fa-fw me-1 fa-phone text-primary"
+                                                title="Phone"
+                                            />
+                                            <field
+                                                name="phone"
+                                                widget="phone"
+                                                class="w-100"
+                                                placeholder="Phone"
+                                            />
+                                        </div>
+                                        <div
+                                            invisible="is_company or type != 'contact'"
+                                            class="d-flex align-items-baseline"
+                                        >
+                                            <i
+                                                class="fa fa-fw me-1 fa-suitcase text-primary"
+                                                title="Position"
+                                            />
+                                            <field
+                                                name="function"
+                                                placeholder="Job title"
+                                            />
+                                        </div>
+                                        <div
+                                            invisible="type != 'contact'"
+                                            class="d-flex align-items-baseline"
+                                        >
+                                            <i
+                                                class="fa fa-fw me-1 fa-sitemap text-primary"
+                                                title="Department"
+                                            />
+                                            <field
+                                                name="department_id"
+                                                class="w-100"
+                                                options='{"no_open": False}'
+                                                placeholder="Department"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <group invisible="type == 'contact'" name="other_info">
+                                <group>
+                                    <span
+                                        class="o_form_label o_td_label o_address_type"
+                                    >
+                                        <field
+                                            name="type_address_label"
+                                            readonly="1"
+                                            class="fw-bold"
+                                        />
+                                    </span>
+                                    <div class="o_address_format" name="div_address">
+                                        <field
+                                            name="street"
+                                            placeholder="Street..."
+                                            class="o_address_street"
+                                        />
+                                        <field
+                                            name="street2"
+                                            placeholder="Street 2..."
+                                            class="o_address_street"
+                                        />
+                                        <field
+                                            name="city"
+                                            placeholder="City"
+                                            class="o_address_city"
+                                        />
+                                        <field
+                                            name="state_id"
+                                            class="o_address_state"
+                                            placeholder="State"
+                                            options="{'no_open': True, 'no_quick_create': True}"
+                                            context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}"
+                                        />
+                                        <field
+                                            name="zip"
+                                            placeholder="ZIP"
+                                            class="o_address_zip"
+                                        />
+                                        <field
+                                            name="country_id"
+                                            placeholder="Country"
+                                            class="o_address_country"
+                                            options='{"no_open": True, "no_create": True}'
+                                        />
+                                    </div>
+                                </group>
+                            </group>
+                            <group>
+                                <!-- Need to save value from parented record, cf onchange -->
+                                <field name="company_id" invisible="1" />
+                                <label for="comment" />
+                                <field
+                                    name="comment"
+                                    options="{'height': 100}"
+                                    placeholder="Internal notes..."
+                                    nolabel="1"
+                                />
+                            </group>
+                            <!-- Need to add lang to save default value from parented record -->
+                            <field name="lang" invisible="True" />
+                        </sheet>
+                    </form>
+                </field>
             </xpath>
             <!-- Members and Departments tabs, right after the Contacts tab -->
             <xpath expr="//page[@name='contact_addresses']" position="after">

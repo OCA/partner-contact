@@ -42,6 +42,16 @@ class ResPartner(models.Model):
         string="Departments",
     )
 
+    child_non_department_ids = fields.One2many(
+        "res.partner",
+        "parent_id",
+        domain=[("active", "=", True), ("type", "!=", "department")],
+        context={"active_test": False},
+        string="Contacts",
+        help="Children of this partner, excluding the department-type ones,"
+        " which are shown in their own tab.",
+    )
+
     @api.depends("department_member_ids")
     def _compute_department_all_member_ids(self):
         for dept in self:

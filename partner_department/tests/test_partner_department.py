@@ -111,6 +111,29 @@ class TestPartnerDepartment(common.TransactionCase):
         self.assertIn(self.department, self.company.department_ids)
         self.assertNotIn(self.contact1, self.company.department_ids)
 
+    def test_child_non_department_ids_excludes_departments(self):
+        """child_non_department_ids has the children but not the departments"""
+        self.assertIn(self.contact1, self.company.child_non_department_ids)
+        self.assertIn(self.contact2, self.company.child_non_department_ids)
+        self.assertNotIn(self.department, self.company.child_non_department_ids)
+        self.assertIn(self.department, self.company.child_ids)
+
+    def test_child_non_department_ids_excludes_archived(self):
+        """Archived children are not shown, just like in child_ids"""
+        self.contact1.action_archive()
+        self.assertNotIn(self.contact1, self.company.child_non_department_ids)
+
+    def test_child_non_department_ids_is_writable(self):
+        """A contact created through the field becomes a child of the partner"""
+        self.company.write(
+            {"child_non_department_ids": [(0, 0, {"name": "New Contact"})]}
+        )
+        contact = self.company.child_non_department_ids.filtered(
+            lambda p: p.name == "New Contact"
+        )
+        self.assertEqual(contact.parent_id, self.company)
+        self.assertIn(contact, self.company.child_ids)
+
     def test_non_department_cannot_have_department_parent(self):
         """A non-department partner cannot have a department as its parent_id"""
         with self.assertRaises(ValidationError):
