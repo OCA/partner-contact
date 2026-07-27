@@ -73,10 +73,12 @@ Authors
 Contributors
 ------------
 
-- Marina Alapont <marina.alapont@forgeflow.com>
-- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+-  Marina Alapont <marina.alapont@forgeflow.com>
+-  `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
 
-  - Bhavesh Heliconia
+   -  Bhavesh Heliconia
+
+-  Italo Lopes <italo.lopes@camptocamp.com>
 
 Maintainers
 -----------
