@@ -1,3 +1,4 @@
 - Marina Alapont \<<marina.alapont@forgeflow.com>\>
 - [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
   - Bhavesh Heliconia
+- Italo Lopes \<<italo.lopes@camptocamp.com>\>
