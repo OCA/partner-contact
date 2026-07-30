@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2025 Sylvain LE GAL (GRAP)
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <template
+        id="partner_firstname_auth_signup.fields"
+        inherit_id="partner_is_company_auth_signup.fields"
+    >
+        <xpath expr="//div[hasclass('field-name')]" position="attributes">
+            <attribute name="style">display: none</attribute>
+        </xpath>
+
+        <xpath expr="//div[hasclass('field-company_type-company')]" position="after">
+            <input
+                type="checkbox"
+                id="checkbox_config_lastname_required"
+                t-att-checked="lastname_required"
+                class="d-none"
+            />
+            <input
+                type="checkbox"
+                id="checkbox_config_firstname_required"
+                t-att-checked="firstname_required"
+                class="d-none"
+            />
+
+            <t t-if="not lastname_first">
+                <div class="mb-3 field-firstname">
+                    <label for="firstname">Your First Name</label>
+                    <input
+                        type="text"
+                        name="firstname"
+                        t-att-value="firstname"
+                        id="firstname"
+                        class="form-control form-control-sm"
+                        placeholder="e.g. John"
+                        t-att-required="'required' if firstname_required else None"
+                        t-att-readonly="'readonly' if only_passwords else None"
+                    />
+                </div>
+            </t>
+
+            <div class="mb-3 field-lastname">
+                <label for="lastname">Your Last Name</label>
+                <input
+                    type="text"
+                    name="lastname"
+                    t-att-value="lastname"
+                    id="lastname"
+                    class="form-control form-control-sm"
+                    placeholder="e.g. DOE"
+                    t-att-required="'required' if lastname_required else None"
+                    t-att-readonly="'readonly' if only_passwords else None"
+                />
+            </div>
+
+            <t t-if="lastname_first">
+                <div class="mb-3 field-firstname">
+                    <label for="firstname">Your First Name</label>
+                    <input
+                        type="text"
+                        name="firstname"
+                        t-att-value="firstname"
+                        id="firstname"
+                        class="form-control form-control-sm"
+                        placeholder="e.g. John"
+                        t-att-required="'required' if firstname_required else None"
+                        t-att-readonly="'readonly' if only_passwords else None"
+                    />
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>
