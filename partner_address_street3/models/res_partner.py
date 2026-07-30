@@ -18,6 +18,11 @@ class ResPartner(models.Model):
         res.append("street3")
         return res
 
+    @api.onchange("parent_id")
+    def _onchange_parent_id_street3(self):
+        if self.parent_id and self.type in ("contact", False):
+            self.street3 = self.parent_id.street3
+
     def _display_address(self, without_company=False):
         """Remove empty lines which can happen when street3 field is empty."""
         res = super()._display_address(without_company=without_company)
