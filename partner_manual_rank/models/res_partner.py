@@ -21,14 +21,12 @@ class ResPartner(models.Model):
         inverse="_inverse_is_customer",
         search="_search_is_customer",
         string="Is a Customer",
-        default=lambda self: self._default_is_customer(),
     )
     is_supplier = fields.Boolean(
         compute="_compute_is_supplier",
         inverse="_inverse_is_supplier",
         search="_search_is_supplier",
         string="Is a Supplier",
-        default=lambda self: self._default_is_supplier(),
     )
 
     @api.depends("customer_rank")
@@ -67,8 +65,16 @@ class ResPartner(models.Model):
         operator, value = DOMAIN_SEARCH.get((operator, value))
         return [("supplier_rank", operator, value)]
 
-    def _default_is_customer(self):
-        return self.env.context.get("res_partner_search_mode") == "customer"
+    @api.model_create_multi
+    def create(self, vals_list):
+        search_partner_mode = self.env.context.get("res_partner_search_mode")
+        ctx_customer = search_partner_mode == "customer"
+        ctx_supplier = search_partner_mode == "supplier"
 
-    def _default_is_supplier(self):
-        return self.env.context.get("res_partner_search_mode") == "supplier"
+        for vals in vals_list:
+            if bool(vals.get("customer_rank", 0)) or ctx_customer:
+                vals["is_customer"] = True
+            if bool(vals.get("supplier_rank", 0)) or ctx_supplier:
+                vals["is_supplier"] = True
+
+        return super().create(vals_list)
