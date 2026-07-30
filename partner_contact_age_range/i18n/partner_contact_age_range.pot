@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -43,11 +43,6 @@ msgid "Age Ranges"
 msgstr ""
 
 #. module: partner_contact_age_range
-#: model:ir.model,name:partner_contact_age_range.model_res_partner
-msgid "Contact"
-msgstr ""
-
-#. module: partner_contact_age_range
 #: model:ir.actions.server,name:partner_contact_age_range.ir_cron_partner_age_range_ir_actions_server
 msgid "Contact: Update Age Range"
 msgstr ""
@@ -63,8 +58,14 @@ msgid "Created on"
 msgstr ""
 
 #. module: partner_contact_age_range
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner_age_range__display_name
 msgid "Display Name"
+msgstr ""
+
+#. module: partner_contact_age_range
+#: model:ir.model,name:partner_contact_age_range.model_res_partner
+msgid "Fake Model"
 msgstr ""
 
 #. module: partner_contact_age_range
@@ -73,6 +74,7 @@ msgid "From"
 msgstr ""
 
 #. module: partner_contact_age_range
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner_age_range__id
 msgid "ID"
 msgstr ""
