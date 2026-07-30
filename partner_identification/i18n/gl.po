@@ -129,7 +129,7 @@ msgid ""
 msgstr ""
 "Erro ao avaliar o código de validación ide_category:\n"
 " {name}\n"
-"({erro})"
+"({error})"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__valid_until
@@ -347,4 +347,4 @@ msgstr "Data de inicio do período de validación."
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 #, python-format
 msgid "{id_name} is not a valid {cat_name} identifier"
-msgstr "{ide_name} non é un identificador {cat_name} válido"
+msgstr "{id_name} non é un identificador {cat_name} válido"
