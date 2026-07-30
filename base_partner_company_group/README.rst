@@ -60,13 +60,13 @@ Authors
 Contributors
 ------------
 
--  Timon Tschanz <timon.tschanz@camptocamp.com>
--  Yannick Vaucher <yannick.vaucher@camptocamp.com>
--  `Tecnativa <https://www.tecnativa.com>`__:
+- Timon Tschanz <timon.tschanz@camptocamp.com>
+- Yannick Vaucher <yannick.vaucher@camptocamp.com>
+- `Tecnativa <https://www.tecnativa.com>`__:
 
-   -  Ernesto Tejeda
+  - Ernesto Tejeda
 
--  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+- Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
 
 Maintainers
 -----------
