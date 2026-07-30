@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="demo_relation_company_lawyer" model="res.partner.relation">
+        <field
+            name="left_partner_id"
+            ref="partner_multi_relation.res_partner_pmr_great"
+        />
+        <field name="right_partner_id" ref="res_partner_demo_lawyer" />
+        <field name="type_id" ref="rel_type_lawyer" />
+    </record>
+
+</odoo>

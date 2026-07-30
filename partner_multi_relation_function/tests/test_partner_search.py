@@ -29,7 +29,7 @@ class TestPartnerSearch(common.TransactionCase):
             {
                 "left_partner_id": partner_project.id,
                 "type_id": type_with_function.id,
-                "function": "coordinator",
+                "contact_function": "coordinator",
                 "right_partner_id": partner_person.id,
             }
         )
