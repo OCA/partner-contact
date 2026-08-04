@@ -40,7 +40,10 @@ class TestEORI(BaseCommon):
         # Duplicate EORI
         vals = {"name": "GB941785887000", "category_id": self.partner_id_category.id}
 
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(
+            ValidationError,
+            "EORI Identification Number GB941785887000 is already used by TestEORI",
+        ):
             self.partner2.write({"id_numbers": [Command.create(vals)]})
 
         # Wrong EORI
