@@ -22,9 +22,6 @@ class ResPartnerIdCategory(models.Model):
         cat = self.env.ref(
             "partner_identification_eori.partner_identification_eori_number_category"
         ).id
-        duplicate_eori = self._search_duplicate(cat, id_number, True)
-
-        if duplicate_eori:
-            return True
+        self._check_duplicate(cat, id_number, True)
 
         return False
