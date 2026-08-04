@@ -121,6 +121,38 @@ if id_number.name != '1235':
         with self.assertRaises(ValidationError), self.cr.savepoint():
             partner.id_numbers.write({"category_id": partner_id_category2.id})
 
+    def test_validation_code_raising_its_own_error(self):
+        """Validation code can raise to explain why the ID number is refused."""
+        partner_id_category = self.env["res.partner.id_category"].create(
+            {
+                "code": "id_code",
+                "name": "id_name",
+                "validation_code": """
+if id_number.name != '1234':
+    raise ValidationError("%s is not '1234'" % id_number.name)
+""",
+            }
+        )
+        partner = self.env["res.partner"].create(
+            {
+                "name": "Apik test",
+                "email": "apik@test.example.com",
+                "phone": "+33 601 020 304",
+                "street": "Rue de la mairie",
+                "city": "New York",
+                "zip": "97648",
+                "website": "https://test.exemple.com",
+            }
+        )
+        with self.assertRaisesRegex(ValidationError, "01234 is not '1234'"):
+            partner.write(
+                {
+                    "id_numbers": [
+                        (0, 0, {"name": "01234", "category_id": partner_id_category.id})
+                    ]
+                }
+            )
+
     def test_bad_validation_code(self):
         partner_id_category = self.env["res.partner.id_category"].create(
             {
