@@ -153,6 +153,26 @@ if id_number.name != '1234':
                 }
             )
 
+    def test_check_duplicate(self):
+        """_check_duplicate names the partner already using the ID number."""
+        partner_id_category = self.env["res.partner.id_category"].create(
+            {
+                "code": "id_code",
+                "name": "id_name",
+                "validation_code": """
+self._check_duplicate(id_number.category_id.id, id_number)
+""",
+            }
+        )
+        partner = self.env["res.partner"].create({"name": "Partner 1"})
+        partner2 = self.env["res.partner"].create({"name": "Partner 2"})
+        vals = {"name": "1234", "category_id": partner_id_category.id}
+        partner.write({"id_numbers": [(0, 0, vals)]})
+        with self.assertRaisesRegex(
+            ValidationError, "id_name 1234 is already used by Partner 1"
+        ):
+            partner2.write({"id_numbers": [(0, 0, vals)]})
+
     def test_bad_validation_code(self):
         partner_id_category = self.env["res.partner.id_category"].create(
             {

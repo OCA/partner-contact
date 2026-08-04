@@ -57,6 +57,25 @@ class ResPartnerIdCategory(models.Model):
             domain.append(("partner_id.active", "=", True))
         return self.env["res.partner.id_number"].search(domain)
 
+    @api.model
+    def _check_duplicate(self, category_id, id_number, force_active=False):
+        """Raise if the given category and number are already used elsewhere.
+
+        Meant to be called from a validation code, so that all ID types report
+        duplicates with the same message.
+        """
+        duplicate = self._search_duplicate(category_id, id_number, force_active)
+        if not duplicate:
+            return
+        raise ValidationError(
+            self.env._(
+                "%(cat_name)s %(id_name)s is already used by %(partner_names)s",
+                cat_name=self.browse(category_id).name,
+                id_name=id_number.name,
+                partner_names=", ".join(duplicate.partner_id.mapped("display_name")),
+            )
+        )
+
     def _validation_eval_context(self, id_number):
         self.ensure_one()
         return {
