@@ -17,8 +17,8 @@ class TestPartnerIdentificationUniqueByCategory(BaseCommon):
         cls.category_2 = cls.env["res.partner.id_category"].create(
             {"code": "GID", "name": "User Id"}
         )
-        cls.partner_1 = cls.env.ref("base.res_partner_1")
-        cls.partner_2 = cls.env.ref("base.res_partner_2")
+        cls.partner_1 = cls.env["res.partner"].create({"name": "Test Partner 1"})
+        cls.partner_2 = cls.env["res.partner"].create({"name": "Test Partner 2"})
 
     def test_id_creation(self):
         """Check Id unique (or not) validation."""
