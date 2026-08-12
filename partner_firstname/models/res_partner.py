@@ -59,7 +59,9 @@ class ResPartner(models.Model):
         created_partners = self.browse()
         for vals in vals_list:
             partner_context = dict(self.env.context)
-            is_company = vals.get("company_type") == "company"
+            is_company = vals.get("company_type") == "company" or vals.get(
+                "is_company", False
+            )
             if not is_company and self.name_fields_in_vals(vals) and "name" in vals:
                 del vals["name"]
                 partner_context.pop("default_name", None)
