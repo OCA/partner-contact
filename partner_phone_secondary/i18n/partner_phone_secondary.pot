@@ -14,6 +14,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_phone_secondary
+#: model_terms:ir.ui.view,arch_db:partner_phone_secondary.res_partner_kanban_view
+#: model_terms:ir.ui.view,arch_db:partner_phone_secondary.view_partner_form
+msgid "<i class=\"fa fa-fw me-1 fa-phone text-primary\" title=\"Phone2\"/>"
+msgstr ""
+
+#. module: partner_phone_secondary
 #: model:ir.model.fields,field_description:partner_phone_secondary.field_res_partner__display_name
 msgid "Display Name"
 msgstr ""
@@ -32,4 +38,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_phone_secondary.field_res_partner__phone2
 #: model:ir.model.fields,field_description:partner_phone_secondary.field_res_users__phone2
 msgid "Phone (Secondary)"
+msgstr ""
+
+#. module: partner_phone_secondary
+#: model_terms:ir.ui.view,arch_db:partner_phone_secondary.view_partner_form
+msgid "Phone2"
 msgstr ""
