@@ -1,1 +1,2 @@
 - Iván Todorovich \<<ivan.todorovich@gmail.com>\>
+- Nils Coenen \<<nils.coenen@nico-solutions.de>\>

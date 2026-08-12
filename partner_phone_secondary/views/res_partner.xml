@@ -8,8 +8,9 @@ License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
         <field name="name">res.partner.simplified.form</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_simple_form" />
+        <field name="priority" eval="20" />
         <field name="arch" type="xml">
-            <field name="function" position="after">
+            <field name="phone" position="after">
                 <field name="phone2" widget="phone" />
             </field>
         </field>
@@ -18,17 +19,65 @@ License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
         <field name="name">res.partner.form</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
-        <field name="priority" eval="1" />
+        <field name="priority" eval="20" />
         <field name="arch" type="xml">
-            <field name="phone" position="after">
-                <field name="phone2" widget="phone" />
-            </field>
+            <xpath expr="/form/sheet//field[@name='phone']/.." position="after">
+                <div class="d-flex align-items-baseline w-md-50">
+                    <i class="fa fa-fw me-1 fa-phone text-primary" title="Phone2" />
+                    <field
+                        name="phone2"
+                        class="w-100"
+                        widget="phone"
+                        placeholder="Phone2"
+                    />
+                </div>
+            </xpath>
             <xpath
-                expr="//field[@name='child_ids']/form//field[@name='phone']"
+                expr="//field[@name='child_ids']/kanban/templates//div[@t-if='record.phone.raw_value']"
                 position="after"
             >
-                <field name="phone2" widget="phone" />
+                <div t-if="record.phone2.raw_value">
+                    <i class="fa fa-fw me-1 fa-phone text-primary" title="Phone2" />
+                    <field name="phone2" />
+                </div>
             </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form/sheet//field[@name='phone']/.."
+                position="after"
+            >
+                <div class="d-flex align-items-baseline" name="phone2">
+                    <i class="fa fa-fw me-1 fa-phone text-primary" title="Phone2" />
+                    <field
+                        name="phone2"
+                        widget="phone"
+                        class="w-100"
+                        placeholder="Phone2"
+                    />
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="res_partner_kanban_view" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view" />
+        <field name="priority" eval="20" />
+        <field name="arch" type="xml">
+            <div t-if="record.phone.raw_value" position="after">
+                <div t-if="record.phone2.raw_value">
+                    <i class="fa fa-fw me-1 fa-phone text-primary" title="Phone2" />
+                    <field name="phone2" />
+                </div>
+            </div>
+        </field>
+    </record>
+    <record id="view_partner_tree" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="priority" eval="20" />
+        <field name="arch" type="xml">
+            <field name="phone" position="after">
+                <field name="phone2" optional="hide" class="o_force_ltr" />
+            </field>
         </field>
     </record>
 </odoo>
