@@ -5,7 +5,7 @@
     "name": "Secondary phone number on partners",
     "summary": "Adds a secondary phone number on partners",
     "license": "AGPL-3",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "author": "Iván Todorovich, Odoo Community Association (OCA)",
     "maintainers": ["ivantodorovich"],
     "category": "Customer Relationship Management",
