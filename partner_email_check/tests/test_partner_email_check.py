@@ -121,3 +121,39 @@ class TestPartnerEmailCheck(TransactionCase):
         self.env.company.partner_email_check_syntax = False
         self.test_partner.email = "bad@email@domain..com"
         self.assertTrue(self.test_partner.email)
+
+    def test_nondeliverable_addresses_allowed_by_context(self):
+        """The check is bypassable for one operation, and only that one.
+
+        Mixed case in, lowercase out: skipping deliverability must not also skip
+        validation, so callers keep the normalization they came for.
+        """
+        self.check_deliverability()
+        partner = self.test_partner.with_context(
+            partner_email_check_skip_deliverability=True
+        )
+        partner.email = "Cezrik@ACOA.nrdkt"
+        self.assertEqual(partner.email, "cezrik@acoa.nrdkt")
+
+    def test_syntax_still_checked_when_deliverability_skipped(self):
+        """Bypassing one check must not quietly bypass the other."""
+        self.check_deliverability()
+        with self.assertRaises(ValidationError):
+            self.test_partner.with_context(
+                partner_email_check_skip_deliverability=True
+            ).email = "bad@email@domain..com"
+
+    def test_deliverability_still_checked_outside_the_context(self):
+        """The bypass does not persist onto the record's own environment."""
+        self.check_deliverability()
+        self.test_partner.with_context(
+            partner_email_check_skip_deliverability=True
+        ).email = "cezrik@acoa.nrdkt"
+        with self.assertRaises(ValidationError):
+            self.test_partner.email = "othercezrik@acoa.nrdkt"
+
+    def test_invalid_email_addresses_allowed_by_context(self):
+        self.assertTrue(self.env.company.partner_email_check_syntax)
+        partner = self.test_partner.with_context(partner_email_check_skip_syntax=True)
+        partner.email = "bad@email@domain..com"
+        self.assertEqual(partner.email, "bad@email@domain..com")
