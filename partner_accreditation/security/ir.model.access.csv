@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_res_partner_accreditation_public","res_partner_accreditation group_public","model_res_partner_accreditation","base.group_public",1,0,0,0
+"access_res_partner_accreditation_portal","res_partner_accreditation group_portal","model_res_partner_accreditation","base.group_portal",1,0,0,0
+"access_res_partner_accreditation_partner_manager","res_partner_accreditation group_partner_manager","model_res_partner_accreditation","base.group_partner_manager",1,1,1,1
+"access_res_partner_accreditation_user","res_partner_accreditation group_user","model_res_partner_accreditation","base.group_user",1,0,0,0
