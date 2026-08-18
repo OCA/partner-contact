@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_id_category_view_form_kyc" model="ir.ui.view">
+        <field name="name">res.partner.id_category.form.kyc</field>
+        <field name="model">res.partner.id_category</field>
+        <field
+            name="inherit_id"
+            ref="partner_identification.view_partner_id_category_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="is_kyc" />
+                <field name="enable_on_child_contacts" invisible="not is_kyc" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

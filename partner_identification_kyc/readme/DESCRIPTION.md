@@ -1,0 +1,1 @@
+This module adds Know Your Customer (KYC) identification functionality to the partner identification automation system. It provides a specialized KYC identification category with associated activities and workflows to manage customer verification processes.

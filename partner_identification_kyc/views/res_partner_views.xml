@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Add Request KYC button to the partner form -->
+    <record id="view_partner_form_kyc" model="ir.ui.view">
+        <field name="name">res.partner.form.kyc</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    class="oe_stat_button"
+                    name="action_view_kyc_records"
+                    type="object"
+                    string="KYC Records"
+                    icon="fa-user-secret"
+                >
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_text text-truncate">KYC:</span>
+                        <span class="o_stat_value">
+                            <field name="kyc_valid_until" widget="remaining_days" />
+                        </span>
+                    </div>
+                </button>
+            </xpath>
+            <sheet position="before">
+                <header>
+                    <button
+                        name="action_request_kyc"
+                        type="object"
+                        string="Request KYC"
+                        class="oe_highlight"
+                        icon="fa-user-secret"
+                        invisible="not show_kyc_button"
+                    />
+                </header>
+            </sheet>
+        </field>
+    </record>
+</odoo>
