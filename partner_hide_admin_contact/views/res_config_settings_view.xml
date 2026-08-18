@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Canarias Conectada
+     License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html -->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.partner.hide.admin.contact</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='contacts_setting_container']" position="inside">
+                <setting
+                    id="partner_hide_admin_contact_setting"
+                    string="Hide administrator contacts"
+                    help="Hide any system administrator's contact from regular internal users, in Contacts."
+                >
+                    <field name="partner_hide_admin_contact" />
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
