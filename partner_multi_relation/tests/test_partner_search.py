@@ -151,3 +151,53 @@ class TestPartnerSearch(TestPartnerRelationCommon):
             ]
         )
         self.assertTrue(self.partner_03_ngo in partners)
+
+    def test_search_this_other_partner_matches_compute(self):
+        """this/other_partner_id searches must return exactly the records
+        whose computed value matches, in every current_partner_id context."""
+        company = self.partner_02_company
+        person = self.partner_01_person
+        relation = self.company2person_relation
+
+        for context, label in (
+            ({}, "no context"),
+            ({"current_partner_id": company.id}, "current=left"),
+            ({"current_partner_id": person.id}, "current=right"),
+            ({"active_model": "res.partner", "active_id": person.id}, "active_id"),
+        ):
+            relations = self.Relation.with_context(**context)
+            for field in ("this_partner_id", "other_partner_id"):
+                for partner in (company, person):
+                    found = relations.search(
+                        [(field, "=", partner.id), ("id", "=", relation.id)]
+                    )
+                    computed = relations.browse(relation.id)[field]
+                    if computed == partner:
+                        self.assertEqual(
+                            found,
+                            relation,
+                            f"{label}: {field} computes to {partner.name}"
+                            " but searching for it misses the relation",
+                        )
+                    else:
+                        self.assertFalse(
+                            found,
+                            f"{label}: {field} computes to {computed.name}"
+                            f" but searching {partner.name} still matches",
+                        )
+
+    def test_search_this_other_partner_by_name(self):
+        """Non-equality operators go through the same side-aware domain."""
+        relation = self.company2person_relation
+        relations = self.Relation.with_context(
+            current_partner_id=self.partner_01_person.id
+        )
+        # current is the right side: this=right (person), other=left (company)
+        found = relations.search(
+            [("this_partner_id", "ilike", "User"), ("id", "=", relation.id)]
+        )
+        self.assertEqual(found, relation)
+        found = relations.search(
+            [("other_partner_id", "ilike", "User"), ("id", "=", relation.id)]
+        )
+        self.assertFalse(found)

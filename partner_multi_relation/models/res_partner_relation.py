@@ -70,11 +70,13 @@ class ResPartnerRelation(models.Model):
     this_partner_id = fields.Many2one(
         comodel_name="res.partner",
         compute="_compute_this_partner_id",
+        search="_search_this_partner_id",
         help="Partner shown left when no currently active partner",
     )
     other_partner_id = fields.Many2one(
         comodel_name="res.partner",
         compute="_compute_other_partner_id",
+        search="_search_other_partner_id",
         help="Partner shown right when no currently active partner"
         ", or connected partnes as seen from current partner.",
     )
@@ -276,7 +278,8 @@ class ResPartnerRelation(models.Model):
                 continue
             this.type_id_display = this.type_id.name
 
-    @api.depends_context("current_partner_id")
+    @api.depends("left_partner_id", "right_partner_id")
+    @api.depends_context("current_partner_id", "active_model", "active_id")
     def _compute_this_partner_id(self):
         """Show inverse type when coming from right partner."""
         current_partner = self._get_current_partner()
@@ -287,7 +290,8 @@ class ResPartnerRelation(models.Model):
                 else this.left_partner_id
             )
 
-    @api.depends_context("current_partner_id")
+    @api.depends("left_partner_id", "right_partner_id")
+    @api.depends_context("current_partner_id", "active_model", "active_id")
     def _compute_other_partner_id(self):
         """Show inverse type when coming from right partner."""
         current_partner = self._get_current_partner()
@@ -318,6 +322,46 @@ class ResPartnerRelation(models.Model):
         return [
             "|",
             ("left_partner_id", operator, value),
+            ("right_partner_id", operator, value),
+        ]
+
+    @api.model
+    def _search_this_partner_id(self, operator, value):
+        """Mirror _compute_this_partner_id for searches.
+
+        this_partner_id is right_partner_id when that side is the current
+        partner, left_partner_id otherwise.
+        """
+        current_partner = self._get_current_partner()
+        if not current_partner:
+            return [("left_partner_id", operator, value)]
+        return [
+            "|",
+            "&",
+            ("right_partner_id", "=", current_partner.id),
+            ("right_partner_id", operator, value),
+            "&",
+            ("right_partner_id", "!=", current_partner.id),
+            ("left_partner_id", operator, value),
+        ]
+
+    @api.model
+    def _search_other_partner_id(self, operator, value):
+        """Mirror _compute_other_partner_id for searches.
+
+        other_partner_id is left_partner_id when the right side is the
+        current partner, right_partner_id otherwise.
+        """
+        current_partner = self._get_current_partner()
+        if not current_partner:
+            return [("right_partner_id", operator, value)]
+        return [
+            "|",
+            "&",
+            ("right_partner_id", "=", current_partner.id),
+            ("left_partner_id", operator, value),
+            "&",
+            ("right_partner_id", "!=", current_partner.id),
             ("right_partner_id", operator, value),
         ]
 
