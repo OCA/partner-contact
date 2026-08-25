@@ -159,7 +159,16 @@ class FirstNameMixin(models.AbstractModel):
     @api.constrains("name", "firstname", "lastname")
     def _check_firstname_lastname(self):
         """Ensure that name, firstname and lastname are correctly set
-        depending on the configuration and on the type of the record."""
+        depending on the configuration and on the type of the record.
+
+        Records loaded from the data files of a module are exempt: the module
+        declaring them cannot know about this one, so one that creates a partner
+        passing only ``name`` would abort the whole registry load. See the note
+        about ``mail`` in ``res_partner._inverse_name`` for an earlier instance
+        of the same clash.
+        """
+        if self.env.context.get("install_mode"):
+            return
         for record in self:
             if any(
                 [
