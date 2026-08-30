@@ -1,0 +1,34 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_search_alias
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2025-02-25 15:06+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
+
+#. module: partner_search_alias
+#: model:ir.model,name:partner_search_alias.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_search_alias
+#: model:ir.model.fields,help:partner_search_alias.field_res_partner__search_alias
+#: model:ir.model.fields,help:partner_search_alias.field_res_users__search_alias
+msgid "Enter the name that is also used for name search."
+msgstr "Inserire il nome che è utilizzato anche per la ricerca del nome."
+
+#. module: partner_search_alias
+#: model:ir.model.fields,field_description:partner_search_alias.field_res_partner__search_alias
+#: model:ir.model.fields,field_description:partner_search_alias.field_res_users__search_alias
+msgid "Search Alias"
+msgstr "Alias ricerca"
