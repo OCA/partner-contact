@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 
+from odoo import Command
 from odoo.exceptions import UserError, ValidationError
 from odoo.tests.common import TransactionCase
 
@@ -99,6 +100,111 @@ class TestPartnerEmailCheck(TransactionCase):
             {"name": "alsotest", "email": "email@domain.tld"}
         )
         self.test_partner.email = "email@domain.tld"
+
+    def test_duplicate_per_company_scope_allows_other_company(self):
+        """Under per-company scope the same email may be reused by a partner of
+        another company."""
+        self.disallow_duplicates()
+        self.env.company.partner_email_check_duplicate_scope = "company"
+        company_b = self.env["res.company"].create({"name": "Company B"})
+        self.env["res.partner"].create(
+            {
+                "name": "company a partner",
+                "email": "shared@domain.tld",
+                "company_id": self.env.company.id,
+            }
+        )
+        # Same email in another company is allowed under per-company scope.
+        partner_b = self.env["res.partner"].create(
+            {
+                "name": "company b partner",
+                "email": "shared@domain.tld",
+                "company_id": company_b.id,
+            }
+        )
+        self.assertEqual(partner_b.email, "shared@domain.tld")
+
+    def test_duplicate_per_company_scope_blocks_same_company(self):
+        """Per-company scope still blocks duplicates inside one company."""
+        self.disallow_duplicates()
+        self.env.company.partner_email_check_duplicate_scope = "company"
+        self.env["res.partner"].create(
+            {
+                "name": "first",
+                "email": "shared@domain.tld",
+                "company_id": self.env.company.id,
+            }
+        )
+        with self.assertRaises(UserError):
+            self.env["res.partner"].create(
+                {
+                    "name": "second",
+                    "email": "shared@domain.tld",
+                    "company_id": self.env.company.id,
+                }
+            )
+
+    def test_duplicate_global_scope_blocks_other_company(self):
+        """Under global scope (default) the email must be unique across
+        companies."""
+        self.disallow_duplicates()
+        self.assertEqual(self.env.company.partner_email_check_duplicate_scope, "global")
+        company_b = self.env["res.company"].create({"name": "Company B"})
+        self.env["res.partner"].create(
+            {
+                "name": "company a partner",
+                "email": "shared@domain.tld",
+                "company_id": self.env.company.id,
+            }
+        )
+        with self.assertRaises(UserError):
+            self.env["res.partner"].create(
+                {
+                    "name": "company b partner",
+                    "email": "shared@domain.tld",
+                    "company_id": company_b.id,
+                }
+            )
+
+    def test_duplicate_in_inaccessible_record_disallowed(self):
+        """A duplicate hidden from the user by record rules is still blocked,
+        with a dedicated message that does not disclose the conflicting record.
+        """
+        self.disallow_duplicates()
+        hidden_partner = self.env["res.partner"].create(
+            {"name": "hidden", "email": "shared@domain.tld"}
+        )
+        # An internal user allowed to create partners (so creation does not
+        # trip on unrelated access checks, e.g. base_partner_sequence reading
+        # ir.sequence) but blocked from reading the conflicting record.
+        groups = self.env.ref("base.group_user") | self.env.ref(
+            "base.group_partner_manager"
+        )
+        restricted_user = self.env["res.users"].create(
+            {
+                "name": "Restricted",
+                "login": "restricted_user",
+                "group_ids": [Command.set(groups.ids)],
+            }
+        )
+        # Global rule (no groups) so it applies to every non-superuser
+        # regardless of the user's other groups; match by id to stay
+        # independent of fields other modules may populate.
+        self.env["ir.rule"].create(
+            {
+                "name": "Hide conflicting partner from everyone",
+                "model_id": self.env.ref("base.model_res_partner").id,
+                "groups": [Command.set([])],
+                "domain_force": f"[('id', '!=', {hidden_partner.id})]",
+            }
+        )
+        partner_model = self.env["res.partner"].with_user(restricted_user)
+        # The restricted user cannot see the flagged partner ...
+        self.assertFalse(partner_model.search([("email", "=", "shared@domain.tld")]))
+        # ... but creating a duplicate is still blocked with the access message.
+        with self.assertRaises(UserError) as catcher:
+            partner_model.create({"name": "dup", "email": "shared@domain.tld"})
+        self.assertIn("do not have access", str(catcher.exception))
 
     def check_deliverability(self):
         self.env.company.partner_email_check_check_deliverability = True
