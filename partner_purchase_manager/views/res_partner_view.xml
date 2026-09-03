@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 Moduon Team S.L.
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0) -->
+<odoo>
+    <record id="view_partner_form_inherit_partner_purchase_manager" model="ir.ui.view">
+        <field name="name">Partner Purchase Manager Form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='purchase']" position="inside">
+                <field
+                    name="purchase_manager_id"
+                    widget="many2one_avatar_user"
+                    domain="[('share', '=', False)]"
+                />
+            </xpath>
+        </field>
+    </record>
+    <record id="view_partner_tree_inherit_partner_purchase_manager" model="ir.ui.view">
+        <field name="name">Partner Purchase Manager Tree</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field
+                    name="purchase_manager_id"
+                    optional="hide"
+                    widget="many2one_avatar_user"
+                    domain="[('share', '=', False)]"
+                />
+            </xpath>
+        </field>
+    </record>
+    <record
+        id="view_res_partner_filter_inherit_partner_purchase_manager"
+        model="ir.ui.view"
+    >
+        <field name="name">Partner Purchase Manager Search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="purchase_manager_id" />
+            </xpath>
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <separator />
+                <filter
+                    name="my_suppliers"
+                    string="My Suppliers"
+                    domain="[('purchase_manager_id', '=', uid)]"
+                />
+            </xpath>
+            <xpath expr="//filter[@name='salesperson']" position="after">
+                <filter
+                    name="purchase_manager"
+                    string="Purchase Manager"
+                    context="{'group_by' : 'purchase_manager_id'}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
