@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2025 Sylvain LE GAL (GRAP)
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <template
+        id="partner_is_company_auth_signup.fields"
+        inherit_id="auth_signup.signup"
+    >
+        <xpath expr="//div[hasclass('field-name')]" position="before">
+            <div class="mb-3 field-company_type-person form-check o_radio_item">
+                <input
+                    class="form-check-input o_radio_input"
+                    type="radio"
+                    name="company_type"
+                    value="person"
+                    id="company_type_person"
+                    required="required"
+                    t-att-disabled="only_passwords"
+                    t-att-checked="company_type == 'person'"
+                />
+                <label
+                    for="company_type_person"
+                    class="form-check-label o_form_label"
+                >Individual</label>
+            </div>
+            <div class="mb-3 field-company_type-company form-check o_radio_item">
+                <input
+                    class="form-check-input o_radio_input"
+                    type="radio"
+                    name="company_type"
+                    value="company"
+                    id="company_type_company"
+                    required="required"
+                    t-att-disabled="only_passwords"
+                    t-att-checked="company_type == 'company'"
+                />
+                <label
+                    for="company_type_company"
+                    class="form-check-label o_form_label"
+                >Company</label>
+            </div>
+        </xpath>
+    </template>
+</odoo>
