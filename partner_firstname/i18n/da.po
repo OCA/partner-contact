@@ -80,9 +80,30 @@ msgid "First name"
 msgstr ""
 
 #. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/models/base_config_settings.py:0
+#, python-format
+msgid "Firstname Lastname"
+msgstr ""
+
+#. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname
 msgid "Last name"
+msgstr ""
+
+#. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/models/base_config_settings.py:0
+#, python-format
+msgid "Lastname Firstname"
+msgstr ""
+
+#. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/models/base_config_settings.py:0
+#, python-format
+msgid "Lastname, Firstname"
 msgstr ""
 
 #. module: partner_firstname

@@ -10,8 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-22 03:38+0000\n"
 "PO-Revision-Date: 2024-05-22 02:58+0000\n"
-"Last-Translator: Rodrigo Macedo <sottomaiormacedotec@users.noreply."
-"translation.odoo-community.org>\n"
+"Last-Translator: Rodrigo Macedo "
+"<sottomaiormacedotec@users.noreply.translation.odoo-community.org>\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
 "23907/pt_BR/)\n"
 "Language: pt_BR\n"
@@ -78,10 +78,31 @@ msgid "First name"
 msgstr "Nome"
 
 #. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/models/base_config_settings.py:0
+#, python-format
+msgid "Firstname Lastname"
+msgstr ""
+
+#. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname
 msgid "Last name"
 msgstr "Sobrenome"
+
+#. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/models/base_config_settings.py:0
+#, python-format
+msgid "Lastname Firstname"
+msgstr ""
+
+#. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/models/base_config_settings.py:0
+#, python-format
+msgid "Lastname, Firstname"
+msgstr ""
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__name
