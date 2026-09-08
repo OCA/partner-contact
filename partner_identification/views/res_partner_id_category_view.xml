@@ -11,6 +11,7 @@
                         <group>
                             <field name="name" />
                             <field name="code" />
+                            <field name="scheme" />
                             <field name="validation_code" />
                         </group>
                         <group>
