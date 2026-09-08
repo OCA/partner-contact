@@ -43,6 +43,36 @@ class TestPartnerIdentificationBase(common.TransactionCase):
         self.assertEqual(len(partner_1.id_numbers), 0)
 
 
+class TestPartnerIdCategorySchemeUnique(common.TransactionCase):
+    def test_duplicate_scheme_allowed_by_default(self):
+        # The check is off by default - duplicates are allowed.
+        self.assertFalse(self.env.company.id_category_scheme_unique_check)
+        self.env["res.partner.id_category"].create(
+            {"code": "cat1", "name": "Cat 1", "scheme": "TESTSCHEME"}
+        )
+        # Does not raise.
+        self.env["res.partner.id_category"].create(
+            {"code": "cat2", "name": "Cat 2", "scheme": "TESTSCHEME"}
+        )
+
+    def test_duplicate_scheme_blocked_when_enabled(self):
+        self.env.company.id_category_scheme_unique_check = True
+        self.env["res.partner.id_category"].create(
+            {"code": "cat1", "name": "Cat 1", "scheme": "TESTSCHEME"}
+        )
+        with self.assertRaises(ValidationError), self.cr.savepoint():
+            self.env["res.partner.id_category"].create(
+                {"code": "cat2", "name": "Cat 2", "scheme": "TESTSCHEME"}
+            )
+
+    def test_no_scheme_never_blocked(self):
+        # Categories with no `scheme` set never conflict, even when enabled.
+        self.env.company.id_category_scheme_unique_check = True
+        self.env["res.partner.id_category"].create({"code": "cat1", "name": "Cat 1"})
+        # Does not raise.
+        self.env["res.partner.id_category"].create({"code": "cat2", "name": "Cat 2"})
+
+
 class TestPartnerCategoryValidation(common.TransactionCase):
     def test_partner_id_number_validation(self):
         partner_id_category = self.env["res.partner.id_category"].create(
