@@ -37,6 +37,11 @@ class PersonCase(TransactionCase):
         """Name is calculated."""
         del self.values["name"]
 
+    def test_only_name(self):
+        """Name is inversed."""
+        del self.values["firstname"]
+        del self.values["lastname"]
+
     def test_wrong_name_value(self):
         """Wrong name value is ignored, name is calculated."""
         self.values["name"] = "BÄD"
