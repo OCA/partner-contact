@@ -35,7 +35,10 @@ class TestGLN(TransactionCase):
         # Duplicate GLN
         vals = {"name": "5450534005852", "category_id": self.partner_id_category.id}
 
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(
+            ValidationError,
+            "GLN Identification Number 5450534005852 is already used by TestGLN",
+        ):
             self.partner2.write({"id_numbers": [Command.create(vals)]})
 
         # Bad GLN
@@ -59,7 +62,10 @@ class TestGLN(TransactionCase):
         # Duplicate GLN
         vals = {"name": "545053", "category_id": self.partner_id_gcp_category.id}
 
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(
+            ValidationError,
+            "GCP Identification Number 545053 is already used by TestGLN",
+        ):
             self.partner2.write({"id_numbers": [Command.create(vals)]})
 
         # Bad GLN
