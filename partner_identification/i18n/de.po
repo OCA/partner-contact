@@ -60,6 +60,12 @@ msgstr ""
 #. module: partner_identification
 #. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
+msgid "%(cat_name)s %(id_name)s is already used by %(partner_names)s"
+msgstr ""
+
+#. module: partner_identification
+#. odoo-python
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
 msgid "%(id_name)s is not a valid %(cat_name)s identifier"
 msgstr ""
 
@@ -502,9 +508,10 @@ msgid ""
 "write via the %(field_name)s field is not possible. In order to fix this, "
 "please use the IDs tab."
 msgstr ""
-"Dieser %(record_name)s enthält mehrere Ausweise dieses Typs (%(category_code)"
-"s), sodass ein Schreibvorgang über das Feld %(field_name)s nicht möglich "
-"ist. Um dies zu beheben, verwenden Sie bitte die Registerkarte „Ausweise“."
+"Dieser %(record_name)s enthält mehrere Ausweise dieses Typs (%"
+"(category_code)s), sodass ein Schreibvorgang über das Feld %(field_name)s "
+"nicht möglich ist. Um dies zu beheben, verwenden Sie bitte die Registerkarte "
+"„Ausweise“."
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
