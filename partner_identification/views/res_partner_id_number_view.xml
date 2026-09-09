@@ -42,6 +42,28 @@
             </list>
         </field>
     </record>
+    <record id="view_partner_id_numbers_search" model="ir.ui.view">
+        <field name="name">res.partner.id_number.search</field>
+        <field name="model">res.partner.id_number</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Partner ID Numbers">
+                <field name="name" />
+                <field name="partner_id" />
+                <field name="category_id" />
+                <field
+                    name="name"
+                    string="Category Code"
+                    filter_domain="[('category_id.code', 'ilike', self)]"
+                />
+                <field
+                    name="name"
+                    string="Category Scheme"
+                    filter_domain="[('category_id.scheme', 'ilike', self)]"
+                />
+            </search>
+        </field>
+    </record>
     <record id="action_partner_id_numbers_form" model="ir.actions.act_window">
         <field name="name">Partner ID Numbers</field>
         <field name="res_model">res.partner.id_number</field>

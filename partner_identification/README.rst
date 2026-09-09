@@ -1,7 +1,3 @@
-.. image:: https://odoo-community.org/readme-banner-image
-   :target: https://odoo-community.org/get-involved?utm_source=readme
-   :alt: Odoo Community Association
-
 ==============================
 Partner Identification Numbers
 ==============================
@@ -17,7 +13,7 @@ Partner Identification Numbers
 .. |badge1| image:: https://img.shields.io/badge/maturity-Production%2FStable-green.png
     :target: https://odoo-community.org/page/development-status
     :alt: Production/Stable
-.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
@@ -60,6 +56,23 @@ Categories. For example, we create a category 'Driver License':
 | Code:
 | Code, abbreviation or acronym of this ID type. For example,
   'driver_license'
+
+| Scheme:
+| Optional code identifying this ID type in an external coding scheme
+  (for example the Peppol ICD code '0088' for GLN, used for EDI/UBL
+  output). Falls back to ``Code`` when not set - only needed when
+  ``Code`` (used for other purposes, e.g. internal categorization)
+  differs from the code an external system expects.
+
+By default, two different ID Categories can share the same ``Scheme``.
+To forbid this, set the
+``partner_identification.id_category_scheme_unique_check`` system
+parameter to ``True`` (Settings > Technical > Parameters > System
+Parameters, with developer mode active). ID Categories are a global
+model (not tied to a company), so this is a global setting, not a
+per-company one. Once enabled, saving an ID Category whose ``Scheme`` is
+already used by another one raises a validation error. Categories with
+no ``Scheme`` set never conflict, even when this is enabled.
 
 | Python validation code:
 | Optional python code called to validate ID numbers of this ID type.

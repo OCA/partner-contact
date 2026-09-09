@@ -43,6 +43,48 @@ class TestPartnerIdentificationBase(common.TransactionCase):
         self.assertEqual(len(partner_1.id_numbers), 0)
 
 
+class TestPartnerIdCategorySchemeUnique(common.TransactionCase):
+    def _set_check_enabled(self, enabled):
+        # Global config parameter - `res.partner.id_category` has no
+        # `company_id`, so this can't be a per-company setting.
+        self.env["ir.config_parameter"].sudo().set_param(
+            "partner_identification.id_category_scheme_unique_check", enabled
+        )
+
+    def test_duplicate_scheme_allowed_by_default(self):
+        # The check is off by default - duplicates are allowed.
+        param = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("partner_identification.id_category_scheme_unique_check")
+        )
+        self.assertFalse(param)
+        self.env["res.partner.id_category"].create(
+            {"code": "cat1", "name": "Cat 1", "scheme": "TESTSCHEME"}
+        )
+        # Does not raise.
+        self.env["res.partner.id_category"].create(
+            {"code": "cat2", "name": "Cat 2", "scheme": "TESTSCHEME"}
+        )
+
+    def test_duplicate_scheme_blocked_when_enabled(self):
+        self._set_check_enabled(True)
+        self.env["res.partner.id_category"].create(
+            {"code": "cat1", "name": "Cat 1", "scheme": "TESTSCHEME"}
+        )
+        with self.assertRaises(ValidationError), self.cr.savepoint():
+            self.env["res.partner.id_category"].create(
+                {"code": "cat2", "name": "Cat 2", "scheme": "TESTSCHEME"}
+            )
+
+    def test_no_scheme_never_blocked(self):
+        # Categories with no `scheme` set never conflict, even when enabled.
+        self._set_check_enabled(True)
+        self.env["res.partner.id_category"].create({"code": "cat1", "name": "Cat 1"})
+        # Does not raise.
+        self.env["res.partner.id_category"].create({"code": "cat2", "name": "Cat 2"})
+
+
 class TestPartnerCategoryValidation(common.TransactionCase):
     def test_partner_id_number_validation(self):
         partner_id_category = self.env["res.partner.id_category"].create(
