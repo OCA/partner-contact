@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -31,4 +31,14 @@ msgstr ""
 #. module: partner_bank_code
 #: model:ir.model.constraint,message:partner_bank_code.constraint_res_bank_bank_code_unique
 msgid "Bank and Branch Code should be unique."
+msgstr ""
+
+#. module: partner_bank_code
+#: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_bank_code
+#: model:ir.model.fields,field_description:partner_bank_code.field_res_bank__id
+msgid "ID"
 msgstr ""
