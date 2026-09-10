@@ -112,8 +112,8 @@
                                             <field name="name" />
                                             <div t-if="record.function.raw_value">
                                                 <field name="function" /> at <field
-                                                    name="parent_id"
-                                                />
+                                                name="parent_id"
+                                            />
                                             </div>
                                             <div t-if="record.email.raw_value">
                                                 <field name="email" />
@@ -243,12 +243,12 @@
                     attrs="{'invisible': [('contact_id','=',False)]}"
                 > To see personal information
                     about this contact, please go to to the this person form: <field
-                        name="contact_id"
-                        class="oe_inline"
-                        domain="[('contact_type','!=','attached')]"
-                        context="{'show_address': 1}"
-                        options="{'always_reload': True}"
-                    />
+                    name="contact_id"
+                    class="oe_inline"
+                    domain="[('contact_type','!=','attached')]"
+                    context="{'show_address': 1}"
+                    options="{'always_reload': True}"
+                />
                 </p>
             </xpath>
         </field>
@@ -273,11 +273,11 @@
                 <t t-if="record.other_contact_ids.raw_value.length &gt; 0">
                     <li>+ <t t-esc="record.other_contact_ids.raw_value.length" />
                         <t
-                            t-if="record.other_contact_ids.raw_value.length == 1"
-                        >other position</t>
+                        t-if="record.other_contact_ids.raw_value.length == 1"
+                    >other position</t>
                         <t
-                            t-if="record.other_contact_ids.raw_value.length &gt; 1"
-                        >other positions</t>
+                        t-if="record.other_contact_ids.raw_value.length &gt; 1"
+                    >other positions</t>
                     </li>
                 </t>
             </xpath>
