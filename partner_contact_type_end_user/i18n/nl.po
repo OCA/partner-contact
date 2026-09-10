@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_contact_type_end_user
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2025-12-03 17:42+0000\n"
+"Last-Translator: Bosd <c5e2fd43-d292-4c90-9d1f-74ff3436329a@anonaddy.me>\n"
+"Language-Team: none\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.4\n"
+
+#. module: partner_contact_type_end_user
+#: model:ir.model.fields,field_description:partner_contact_type_end_user.field_res_partner__type
+#: model:ir.model.fields,field_description:partner_contact_type_end_user.field_res_users__type
+msgid "Address Type"
+msgstr "Adres type"
+
+#. module: partner_contact_type_end_user
+#: model:ir.model,name:partner_contact_type_end_user.model_res_partner
+msgid "Contact"
+msgstr "contact"
+
+#. module: partner_contact_type_end_user
+#: model:ir.model.fields.selection,name:partner_contact_type_end_user.selection__res_partner__type__end_user
+msgid "End User"
+msgstr "Eindgebruiker"
