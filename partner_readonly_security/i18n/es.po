@@ -1,0 +1,39 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_readonly_security
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-30 12:08+0000\n"
+"PO-Revision-Date: 2024-05-30 14:09+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: partner_readonly_security
+#: model:ir.model,name:partner_readonly_security.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_readonly_security
+#: model:res.groups,name:partner_readonly_security.group_partner_edition
+msgid "Partner edition"
+msgstr "Edición de contactos"
+
+#. module: partner_readonly_security
+#. odoo-python
+#: code:addons/partner_readonly_security/models/res_partner.py:0
+#, python-format
+msgid ""
+"Sorry, you are not allowed to create/edit partners. Please contact your "
+"administrator for further information."
+msgstr ""
+"Lo sentimos, no tiene permiso para crear/editar contactos. Para más "
+"información, póngase en contacto con su administrador."
