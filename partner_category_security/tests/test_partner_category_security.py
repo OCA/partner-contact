@@ -51,7 +51,7 @@ class TestPartnerCategorySecurity(BaseCommon):
 
     def test_partner_model_fields_view_get_1(self):
         """Basic users can only read categories, but not set them."""
-        self.basic_user.groups_id |= self.browse_ref("base.group_partner_manager")
+        self.basic_user.group_ids |= self.browse_ref("base.group_partner_manager")
         with Form(self.partner.with_user(self.basic_user)) as partner_f:
             self.assertFalse(partner_f.category_id)
             with self.assertRaises(AssertionError):
@@ -59,7 +59,7 @@ class TestPartnerCategorySecurity(BaseCommon):
 
     def test_partner_model_fields_view_get_2(self):
         """Category users can set categories."""
-        self.partner_category_user.groups_id |= self.browse_ref(
+        self.partner_category_user.group_ids |= self.browse_ref(
             "base.group_partner_manager"
         )
         with Form(self.partner.with_user(self.partner_category_user)) as partner_f:
@@ -69,7 +69,7 @@ class TestPartnerCategorySecurity(BaseCommon):
 
     def test_partner_model_fields_view_get_3(self):
         """Managers can set categories."""
-        self.partner_category_manager.groups_id |= self.browse_ref(
+        self.partner_category_manager.group_ids |= self.browse_ref(
             "base.group_partner_manager"
         )
         with Form(self.partner.with_user(self.partner_category_manager)) as partner_f:
@@ -99,7 +99,7 @@ class TestPartnerCategorySecurity(BaseCommon):
         self.assertIn(menu_partner_category_custom.id, visible_ids)
         # Add system to partner_category_manager user
         self.partner_category_manager.write(
-            {"groups_id": [(4, self.env.ref("base.group_system").id)]}
+            {"group_ids": [(4, self.env.ref("base.group_system").id)]}
         )
         visible_ids = (
             self.env["ir.ui.menu"]
