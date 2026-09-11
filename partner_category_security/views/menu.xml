@@ -2,7 +2,7 @@
 <odoo>
     <record id="contacts.menu_partner_category_form" model="ir.ui.menu">
         <field
-            name="groups_id"
+            name="group_ids"
             eval="[(4, ref('partner_category_security.group_partner_category_manager'))]"
         />
     </record>
