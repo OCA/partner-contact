@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='contacts_setting_container']" position="inside">
+                <setting
+                    id="partner_external_map"
+                    string="Default External Map"
+                    help="System wide default map providers."
+                >
+                    <div class="content-group mt16">
+                        <label for="map_website_id" class="o_light_label mr8" />
+                        <field name="map_website_id" />
+                    </div>
+                    <div class="content-group">
+                        <label for="route_map_website_id" class="o_light_label mr8" />
+                        <field name="route_map_website_id" />
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
