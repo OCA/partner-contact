@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_category_security
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2025-06-21 13:27+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.4\n"
+
+#. module: partner_category_security
+#: model:ir.model,name:partner_category_security.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_category_security
+#: model:ir.module.category,name:partner_category_security.category_partner_category
+#: model:ir.ui.menu,name:partner_category_security.menu_partner_category_custom
+msgid "Contact Tags"
+msgstr "Etichette contatto"
+
+#. module: partner_category_security
+#: model:res.groups,name:partner_category_security.group_partner_category_manager
+msgid "Manager"
+msgstr "Supervisore"
+
+#. module: partner_category_security
+#: model:ir.model,name:partner_category_security.model_ir_ui_menu
+msgid "Menu"
+msgstr "Menu"
+
+#. module: partner_category_security
+#: model:res.groups,name:partner_category_security.group_partner_category_user
+msgid "Publisher"
+msgstr "Editore"
+
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
