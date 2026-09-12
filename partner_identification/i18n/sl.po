@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2026-07-25 07:51+0000\n"
+"PO-Revision-Date: 2026-09-12 07:46+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -92,7 +92,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 msgid "%(cat_name)s %(id_name)s is already used by %(partner_names)s"
-msgstr ""
+msgstr "%(cat_name)s %(id_name)s že uporabljajo %(partner_names)s"
 
 #. module: partner_identification
 #. odoo-python
