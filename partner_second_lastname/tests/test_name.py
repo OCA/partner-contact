@@ -194,6 +194,31 @@ class PersonCase(TransactionCase):
             "name": f"{self.lastname} {self.firstname}",
         }
 
+    def test_firstname_last_comma2(self):
+        """Create a person using the 'last_first_comma2' order.
+        Expected name format: Lastname, Firstname SecondLastname"""
+        self.env["ir.config_parameter"].set_param(
+            "partner_names_order", "last_first_comma2"
+        )
+        self.template = "%(last1)s, %(first)s %(last2)s"
+        self.params = {
+            "is_company": False,
+            "name": f"{self.lastname}, {self.firstname} {self.lastname2}",
+        }
+
+    def test_lastname_firstname_only_comma2(self):
+        """Create a person with only lastname and firstname under the
+        'last_first_comma2' order, i.e. no second lastname provided."""
+        self.env["ir.config_parameter"].set_param(
+            "partner_names_order", "last_first_comma2"
+        )
+        self.lastname2 = False
+        self.template = "%(last1)s, %(first)s"
+        self.params = {
+            "is_company": False,
+            "name": f"{self.lastname}, {self.firstname}",
+        }
+
     def test_separately(self):
         """Create a person setting separately all fields."""
         self.params = {

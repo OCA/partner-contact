@@ -23,21 +23,42 @@ class ResPartner(models.Model):
         return super().name_fields_in_vals(vals) or vals.get("lastname2")
 
     def get_extra_default_copy_values(self, default=None):
-        """Override to add '(copy)' suffix to lastname2 instead of lastname."""
-        if self._get_names_order() == "first_last":
-            return {
-                "lastname2": _("%s (copy)", self.lastname2)
-                if self.lastname2
-                else _("(copy)")
-            }
-        return super().get_extra_default_copy_values(default)
+        """Override to add '(copy)' suffix to lastname2 instead of lastname.
+
+        For formats where lastname2 is the trailing part of the displayed
+        name (first_last, last_first_comma2), the copy marker belongs there.
+        """
+        default = default or {}
+        if default.get("name"):
+            return self._get_inverse_name(default["name"], self.is_company)
+        values = super().get_extra_default_copy_values(default=default)
+        order = self._get_names_order()
+        if order in ("first_last", "last_first_comma2"):
+            if order == "first_last":
+                values["lastname"] = default.get("lastname", self.lastname) or ""
+            elif order == "last_first_comma2":
+                values["firstname"] = default.get("firstname", self.firstname) or ""
+            if not default.get("lastname2"):
+                values["lastname2"] = (
+                    _("%s (copy)", self.lastname2) if self.lastname2 else _("(copy)")
+                )
+            else:
+                values["lastname2"] = default.get("lastname2", self.lastname2) or ""
+        else:
+            values["lastname2"] = default.get("lastname2", self.lastname2) or ""
+        values["name"] = self._get_computed_name(
+            values.get("lastname"),
+            values.get("firstname"),
+            values.get("lastname2"),
+        )
+        return values
 
     @api.model
     def _get_computed_name(self, lastname, firstname, lastname2=None):
         """Compute the name combined with the second lastname too.
 
-        We have 2 lastnames, so lastnames and firstname will be separated by a
-        comma.
+        We have 2 lastnames, so lastnames and firstname will be separated
+        differently depending on the configured name order.
         """
         order = self._get_names_order()
         names = list()
@@ -46,6 +67,16 @@ class ResPartner(models.Model):
                 names.append(firstname)
             if lastname:
                 names.append(lastname)
+            if lastname2:
+                names.append(lastname2)
+        elif order == "last_first_comma2":
+            # Format: "Lastname, Firstname SecondLastname"
+            if lastname:
+                names.append(lastname)
+            if names and (firstname or lastname2):
+                names[0] = names[0] + ","
+            if firstname:
+                names.append(firstname)
             if lastname2:
                 names.append(lastname2)
         else:
@@ -100,6 +131,21 @@ class ResPartner(models.Model):
             return result
 
         order = self._get_names_order()
+
+        if order == "last_first_comma2":
+            # Expected input: "Lastname, Firstname SecondLastname"
+            # Split on comma to isolate the first lastname from the rest.
+            clean = self._get_whitespace_cleaned_name(name, comma=True)
+            parts = clean.split(",", 1)
+            result["lastname"] = parts[0].strip() or False
+            if len(parts) > 1:
+                rest = parts[1].strip()
+                rest_parts = rest.split(" ", 1)
+                result["firstname"] = rest_parts[0] or False
+                if len(rest_parts) > 1:
+                    result["lastname2"] = rest_parts[1] or False
+            return result
+
         result.update(super()._get_inverse_name(name, is_company))
 
         if order in ("first_last", "last_first_comma"):

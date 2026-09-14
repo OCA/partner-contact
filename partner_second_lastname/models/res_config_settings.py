@@ -14,7 +14,10 @@ class ResConfigSettings(models.TransientModel):
             "last_first_comma": "Lastname SecondLastname, Firstname",
             "first_last": "Firstname Lastname SecondLastname",
         }
-        return [(k, new_labels[k]) if k in new_labels else (k, v) for k, v in options]
+        result = [(k, new_labels[k]) if k in new_labels else (k, v) for k, v in options]
+        # Separate format where only the first lastname is followed by a comma
+        result.append(("last_first_comma2", "Lastname, Firstname SecondLastname"))
+        return result
 
     def _partners_for_recalculating(self):
         return self.env["res.partner"].search(
