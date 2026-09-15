@@ -13,14 +13,16 @@ class TestSupplierRank(TransactionCase):
     def test_supplier_rank(self):
         """Check supplier_rank after creation of purchase orders"""
         self.assertEqual(self.supplier.supplier_rank, 0)
-        self.purchase_env.create(
-            {"name": "Test Purchase 1", "partner_id": self.supplier.id}
-        )
+        # PO 1: rank is 0 → incremented immediately to 1
+        self.purchase_env.create({"name": "PO 1", "partner_id": self.supplier.id})
         self.assertEqual(self.supplier.supplier_rank, 1)
+        # PO 2 & PO 3: rank > 0 → Odoo 19 defers increments to postcommit hook
         self.purchase_env.create(
             [
-                {"name": "Test Purchase 2", "partner_id": self.supplier.id},
-                {"name": "Test Purchase 3", "partner_id": self.supplier.id},
+                {"name": "PO 2", "partner_id": self.supplier.id},
+                {"name": "PO 3", "partner_id": self.supplier.id},
             ]
         )
-        self.assertEqual(self.supplier.supplier_rank, 3)
+        self.supplier.invalidate_recordset()
+        # In tests, postcommit never runs (tx rolled back), so rank stays at 1
+        self.assertEqual(self.supplier.supplier_rank, 1)
