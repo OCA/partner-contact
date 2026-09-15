@@ -1,5 +1,8 @@
 # Copyright 2023 Álvaro Marcos <alvaro.marcos@factorlibre.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+import os
+from unittest import mock
+
 from odoo.tests.common import TransactionCase
 
 
@@ -8,6 +11,9 @@ class TestSupplierRank(TransactionCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.supplier = cls.env["res.partner"].create({"name": "Test Supplier"})
+        cls.child_supplier = cls.env["res.partner"].create(
+            {"name": "Child Supplier", "parent_id": cls.supplier.id}
+        )
         cls.purchase_env = cls.env["purchase.order"]
 
     def test_supplier_rank(self):
@@ -23,4 +29,17 @@ class TestSupplierRank(TransactionCase):
                 {"name": "Test Purchase 3", "partner_id": self.supplier.id},
             ]
         )
+        # Odoo 19 defers subsequent rank updates to postcommit
+        with self.enter_registry_test_mode():
+            self.env.cr.postcommit.run()
         self.assertEqual(self.supplier.supplier_rank, 3)
+
+    def test_post_init_hook(self):
+        """Verify post_init_hook increases supplier_rank for all purchase partners."""
+        from .. import post_init_hook
+
+        self.purchase_env.create(
+            {"name": "Test Purchase Child", "partner_id": self.child_supplier.id}
+        )
+        with mock.patch.dict(os.environ, {"ODOO_TEST_MODE": ""}):
+            post_init_hook(self.env)
