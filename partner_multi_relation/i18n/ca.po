@@ -9,20 +9,21 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2017-12-26 15:33+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2026-09-17 10:33+0000\n"
+"Last-Translator: Fher <porrino.fernando@gmail.com>\n"
 "Language-Team: Catalan (https://www.transifex.com/oca/teams/23907/ca/)\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_multi_relation
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation_all.py:0
 msgid "%s partner incompatible with relation type."
-msgstr ""
+msgstr "%s contacte incompatible amb el tipus de relació."
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_all__active
@@ -32,28 +33,30 @@ msgstr "Actiu"
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation_all
 msgid "All (non-inverse + inverse) relations between partners"
-msgstr ""
+msgstr "Totes les relacions (inverses + no inverses) entre contactes"
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner_relation_type_selection
 msgid "All relation types"
-msgstr ""
+msgstr "Tots els tipus de relacions"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_all_ids
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_all_ids
 msgid "All relations with current partner"
-msgstr ""
+msgstr "Totes les relacions amb el contacte actual"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__ignore
 msgid "Allow existing relations that do not fit changed conditions"
 msgstr ""
+"Totes les relacions existents que no compleixen amb les condicions "
+"establertes"
 
 #. module: partner_multi_relation
 #: model:ir.model,name:partner_multi_relation.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacte"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__create_uid
@@ -70,22 +73,22 @@ msgstr "Creat el"
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__partner_category_this
 msgid "Current record's category"
-msgstr ""
+msgstr "Categoria del registre actual"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type_selection__contact_type_this
 msgid "Current record's partner type"
-msgstr ""
+msgstr "Tipus de contacte del registre actual"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__delete
 msgid "Delete relations that do not fit changed conditions"
-msgstr ""
+msgstr "Eliminar les relacions que no compleixen amb les condicions establertes"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__right_partner_id
 msgid "Destination Partner"
-msgstr ""
+msgstr "Contacte de destí"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__display_name
@@ -98,7 +101,7 @@ msgstr "Veure el nom"
 #. module: partner_multi_relation
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__restrict
 msgid "Do not allow change that will result in invalid relations"
-msgstr ""
+msgstr "No permetre canvis que donin com a resultat relacions invàlides"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__end
