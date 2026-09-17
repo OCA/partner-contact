@@ -2,7 +2,17 @@
 # Copyright (C) 2020 NextERP Romania
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
+import datetime
+from collections import namedtuple
+
 from odoo.tests.common import Form, TransactionCase
+
+from odoo.addons.partner_data_vies_populator.models import res_partner
+
+MockViesResultType = namedtuple(
+    "MockViesResultType",
+    ["countryCode", "vatNumber", "requestDate", "valid", "name", "address"],
+)
 
 
 class TestPartnerCreateByVAT(TransactionCase):
@@ -18,6 +28,42 @@ class TestPartnerCreateByVAT(TransactionCase):
             "city": "Ramillies",
             "country_code": "BE",
         }
+
+    def setUp(self):
+        super().setUp()
+        self.patch(
+            res_partner,
+            "check_vies",
+            lambda *args, **kwargs: self._mock_check_vies(*args, **kwargs),
+        )
+
+    def _mock_check_vies(self, number, *args):
+        if number == "BE0477472701":
+            return MockViesResultType(
+                **{
+                    "countryCode": "BE",
+                    "vatNumber": "0477472701",
+                    "requestDate": datetime.date(2026, 9, 17),
+                    "valid": True,
+                    "name": "SA ODOO",
+                    "address": "Chaussée de Namur 40\n1367 Ramillies",
+                }
+            )
+        elif number == "NL001172359B01":
+            return MockViesResultType(
+                **{
+                    "countryCode": "NL",
+                    "vatNumber": "001172359B01",
+                    "requestDate": datetime.date(2026, 9, 17),
+                    "valid": True,
+                    "name": "JUMBO SUPERMARKTEN B.V.",
+                    "address": "\nRIJKSWEG 00015\n5462CE VEGHEL\n",
+                }
+            )
+        else:
+            raise Exception(
+                "You need to add an entry in _mock_check_vies for %s" % number
+            )
 
     def test_create_from_vat1(self):
         # Create an partner from VAT number field
