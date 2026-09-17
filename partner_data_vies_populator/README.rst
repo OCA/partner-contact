@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ===========================
 Partner Data VIES Populator
 ===========================
@@ -13,7 +17,7 @@ Partner Data VIES Populator
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
@@ -49,8 +53,8 @@ T he *Street* field will contain the remaining information.
 Installation
 ============
 
-This module require the `python-stdnum <https://pypi.org/project/python-stdnum/>`_ library.
-As Odoo itself depends on this librairy, it should already be installed on your system.
+This module requires the `python-stdnum <https://pypi.org/project/python-stdnum/>`_ library.
+As Odoo itself depends on this library, so it should already be installed on your system.
 
 Usage
 =====
