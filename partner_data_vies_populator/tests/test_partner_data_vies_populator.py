@@ -60,7 +60,18 @@ class TestPartnerCreateByVAT(TransactionCase):
                     "address": "\nRIJKSWEG 00015\n5462CE VEGHEL\n",
                 }
             )
-        else:
+        elif number == "NL856467534B01":
+            return MockViesResultType(
+                **{
+                    "countryCode": "NL",
+                    "vatNumber": "856467534B01",
+                    "requestDate": datetime.date(2026, 9, 17),
+                    "valid": True,
+                    "name": "---",
+                    "address": "---",
+                }
+            )
+        else:  # pragma: no cover
             raise Exception(
                 "You need to add an entry in _mock_check_vies for %s" % number
             )
@@ -144,3 +155,16 @@ class TestPartnerCreateByVAT(TransactionCase):
         with Form(partner) as partner_form:
             partner_form.vat = "GT1234567 - 1"
             self.assertEqual(partner_form.name, partner.name)
+
+    def test_empty_fields(self):
+        partner = self.partner_model.create(
+            {
+                "name": "Hunki Enterprises",
+                "street": "some street",
+                "is_company": True,
+            }
+        )
+        with Form(partner) as partner_form:
+            partner_form.vat = "NL856467534B01"
+            self.assertEqual(partner_form.name, partner.name)
+            self.assertEqual(partner_form.street, partner.street)
