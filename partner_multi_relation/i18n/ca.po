@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2026-09-17 10:33+0000\n"
+"PO-Revision-Date: 2026-09-17 11:26+0000\n"
 "Last-Translator: Fher <porrino.fernando@gmail.com>\n"
 "Language-Team: Catalan (https://www.transifex.com/oca/teams/23907/ca/)\n"
 "Language: ca\n"
@@ -433,7 +433,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.actions.act_window,name:partner_multi_relation.action_show_partner_multi_relation
 msgid "Show partner's relations"
-msgstr ""
+msgstr "Mostrar les relacions del contacte"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__left_partner_id
