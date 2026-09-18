@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2015-2017 ACSONE SA/NV
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_academic_title_form" model="ir.ui.view">
+        <field name="name">partner.academic.title.form</field>
+        <field name="model">partner.academic.title</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="sequence" />
+                        <field name="active" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_academic_title_list" model="ir.ui.view">
+        <field name="name">partner.academic.title.list</field>
+        <field name="model">partner.academic.title</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+            </list>
+        </field>
+    </record>
+    <record id="view_academic_title_search" model="ir.ui.view">
+        <field name="name">partner.academic.title.search</field>
+        <field name="model">partner.academic.title</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Title" />
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active', '=', False)]"
+                />
+                <separator />
+                <filter
+                    string="All"
+                    name="all"
+                    domain="['|', ('active', '=', True), ('active', '=', False)]"
+                />
+            </search>
+        </field>
+    </record>
+    <record id="open_academic_title" model="ir.actions.act_window">
+        <field name="name">Academic Titles</field>
+        <field name="res_model">partner.academic.title</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="open_academic_title_view_list" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1" />
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_academic_title_list" />
+        <field name="act_window_id" ref="open_academic_title" />
+    </record>
+    <record id="open_academic_title_view_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2" />
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_academic_title_form" />
+        <field name="act_window_id" ref="open_academic_title" />
+    </record>
+    <menuitem
+        id="menu_academic_title"
+        name="Academic Titles"
+        parent="contacts.res_partner_menu_config"
+        action="open_academic_title"
+        sequence="4"
+    />
+</odoo>
