@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_res_partner_filter_contact" model="ir.ui.view">
+        <field name="name">res.partner.select.contact</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <filter name="type_company" position="after">
+                <separator />
+                <filter
+                    string="All positions"
+                    name="type_otherpositions"
+                    context="{'search_show_all_positions': {'is_set': True, 'set_value': True}}"
+                    help="All partner positions"
+                />
+            </filter>
+            <xpath expr="/search/group[@name='group_by']" position="inside">
+                <filter
+                    string="Person"
+                    name="group_person"
+                    context="{'group_by': 'contact_id'}"
+                />
+            </xpath>
+        </field>
+    </record>
+    <record id="view_res_partner_tree_contact" model="ir.ui.view">
+        <field name="name">res.partner.list.contact</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="arch" type="xml">
+            <field name="display_name" position="after">
+                <field name="contact_id" invisible="1" />
+            </field>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_partner_form_inherit">
+        <field name="name">res.partner.form.contact</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="contact_id" invisible="1" />
+                <field name="contact_type" invisible="1" />
+            </field>
+            <!-- In 19.0 the base child_ids subform renders the contact name as
+                 an <h3> heading inside a flex avatar+name header. Keep the
+                 contact_type selector as a normal grouped field above it. -->
+            <xpath expr="//field[@name='child_ids']/form//h3" position="before">
+                <group>
+                    <field name="contact_type" readonly="0" />
+                </group>
+            </xpath>
+            <!-- For an attached contact, render contact_id AS the heading (same
+                 size as a standalone's name, no label) in place of the hidden
+                 name field. -->
+            <xpath
+                expr="//field[@name='child_ids']/form//h3/field[@name='name']"
+                position="after"
+            >
+                <field
+                    name="contact_id"
+                    nolabel="1"
+                    class="d-block"
+                    placeholder="Contact"
+                    invisible="contact_type != 'attached'"
+                    required="contact_type == 'attached'"
+                />
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//h3/field[@name='name']"
+                position="attributes"
+            >
+                <attribute name="invisible">contact_type == 'attached'</attribute>
+            </xpath>
+            <page name="internal_notes" position="before">
+                <page
+                    name="other_position"
+                    string="Other Positions"
+                    invisible="(is_company or contact_id)"
+                >
+                    <field
+                        name="other_contact_ids"
+                        context="{'default_contact_id': id, 'default_name': name, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id}"
+                        mode="kanban"
+                    >
+                        <kanban create="false" color="color">
+                            <field name="color" />
+                            <templates>
+                                <t t-name="card" class="flex-row">
+                                    <aside class="o_kanban_aside_full">
+                                        <field
+                                            name="avatar_128"
+                                            class="o_kanban_image_fill w-100"
+                                            widget="image"
+                                            options="{'img_class': 'object-fit-cover'}"
+                                            alt="Contact image"
+                                        />
+                                    </aside>
+                                    <main class="ps-2 ps-md-0">
+                                        <field name="name" class="fw-bold" />
+                                        <div t-if="record.function.raw_value">
+                                            <field name="function" /> at <field
+                                            name="parent_id"
+                                        />
+                                        </div>
+                                        <div t-if="record.email.raw_value">
+                                            <field name="email" widget="email" />
+                                        </div>
+                                        <div t-if="record.phone.raw_value">Phone: <field
+                                            name="phone"
+                                            widget="phone"
+                                        />
+                                        </div>
+                                    </main>
+                                </t>
+                            </templates>
+                        </kanban>
+                        <form string="Contact">
+                            <sheet>
+                                <field
+                                    name="type"
+                                    required="1"
+                                    widget="radio"
+                                    options="{'horizontal': true}"
+                                />
+                                <hr />
+                                <group>
+                                    <group invisible="type == 'contact'">
+                                        <label for="street" string="Address" />
+                                        <div>
+                                            <div
+                                                class="o_address_format"
+                                                name="div_address"
+                                            >
+                                                <field
+                                                    name="street"
+                                                    placeholder="Street..."
+                                                    class="o_address_street"
+                                                />
+                                                <field
+                                                    name="street2"
+                                                    placeholder="Street 2..."
+                                                    class="o_address_street"
+                                                />
+                                                <field
+                                                    name="city"
+                                                    placeholder="City"
+                                                    class="o_address_city"
+                                                />
+                                                <field
+                                                    name="state_id"
+                                                    class="o_address_state"
+                                                    placeholder="State"
+                                                    options="{&quot;no_open&quot;: True}"
+                                                    context="{'country_id': country_id, 'zip': zip}"
+                                                />
+                                                <field
+                                                    name="zip"
+                                                    placeholder="ZIP"
+                                                    class="o_address_zip"
+                                                />
+                                                <field
+                                                    name="country_id"
+                                                    placeholder="Country"
+                                                    class="o_address_country"
+                                                    options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"
+                                                />
+                                            </div>
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <field
+                                            name="name"
+                                            string="Contact Name"
+                                            required="type == 'contact'"
+                                        />
+                                        <field
+                                            name="function"
+                                            placeholder="e.g. Sales Director"
+                                            invisible="type != 'contact'"
+                                        />
+                                        <field name="email" />
+                                        <field name="phone" widget="phone" />
+                                        <field
+                                            name="comment"
+                                            placeholder="internal note..."
+                                        />
+                                    </group>
+                                </group>
+                                <field name="lang" invisible="True" />
+                            </sheet>
+                        </form>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+    <record id="personal_contact_information" model="ir.ui.view">
+        <field name="name">Contacts in several partners: personal info</field>
+        <field name="model">res.partner</field>
+        <field
+            name="inherit_id"
+            ref="partner_contact_personal_information_page.personal_information"
+        />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//page[@name='personal_information_page']/group[@name='personal_information_group']"
+                position="attributes"
+            >
+                <attribute name="invisible">contact_id</attribute>
+            </xpath>
+            <xpath
+                expr="//page[@name='personal_information_page']/group[@name='personal_information_group']"
+                position="after"
+            >
+                <p invisible="not contact_id"> To see personal information
+                    about this contact, please go to to the this person form: <field
+                    name="contact_id"
+                    class="oe_inline"
+                    domain="[('contact_type','!=','attached')]"
+                    context="{'show_address': 1}"
+                    options="{'always_reload': True}"
+                />
+                </p>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_res_partner_kanban_contact">
+        <field name="name">res.partner.kanban.contact</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view" />
+        <field name="arch" type="xml">
+            <field name="is_company" position="after">
+                <field name="other_contacts_count" />
+            </field>
+            <xpath expr="//main/footer" position="before">
+                <div
+                    t-if="record.other_contacts_count.raw_value &gt; 0"
+                    class="text-muted"
+                >+ <t t-out="record.other_contacts_count.raw_value" />
+                    <t
+                    t-if="record.other_contacts_count.raw_value == 1"
+                >other position</t>
+                    <t
+                    t-if="record.other_contacts_count.raw_value &gt; 1"
+                >other positions</t>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
