@@ -113,9 +113,28 @@ msgid "Category"
 msgstr "Catégorie"
 
 #. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Category Code"
+msgstr ""
+
+#. module: partner_identification
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
+msgid "Category Scheme"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__code
 msgid "Code"
 msgstr "Code"
+
+#. module: partner_identification
+#: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__scheme
+msgid ""
+"Code identifying this ID type in an external coding scheme (eg. the Peppol "
+"ICD code '0088' for GLN, for EDI/UBL output). Falls back to `code` when not "
+"set - only needed when `code` (used for other purposes, eg. internal "
+"categorization) differs from the code an external system expects."
+msgstr ""
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
@@ -355,6 +374,7 @@ msgstr "Contact"
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_category
 #: model:ir.ui.menu,name:partner_identification.menu_partner_id_category
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
 msgid "Partner ID Categories"
 msgstr "Catégorie d'identifiants"
 
@@ -374,6 +394,7 @@ msgstr "Identifiants"
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
 #: model:ir.ui.menu,name:partner_identification.menu_partner_id_numbers
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
+#: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Partner ID Numbers"
 msgstr "Identifiants"
 
@@ -413,6 +434,11 @@ msgid "Running"
 msgstr "En cours"
 
 #. module: partner_identification
+#: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__scheme
+msgid "Scheme"
+msgstr ""
+
+#. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
 msgid "Status"
 msgstr "Statut"
@@ -440,6 +466,14 @@ msgid ""
 msgstr ""
 "Le lieu où l'identifiant a été délivré. Par exemple, le pays pour un "
 "passeport ou un visa."
+
+#. module: partner_identification
+#. odoo-python
+#: code:addons/partner_identification/models/res_partner_id_category.py:0
+msgid ""
+"The scheme code '%(scheme)s' is already used by another ID category (%"
+"(other)s)."
+msgstr ""
 
 #. module: partner_identification
 #. odoo-python
