@@ -12,6 +12,7 @@ from random import randint
 
 from odoo import api, fields, models
 from odoo.exceptions import UserError, ValidationError
+from odoo.tools import str2bool
 from odoo.tools.safe_eval import safe_eval
 
 
@@ -29,6 +30,13 @@ class ResPartnerIdCategory(models.Model):
         help="Abbreviation or acronym of this ID type. For example, "
         "'driver_license'",
     )
+    scheme = fields.Char(
+        help="Code identifying this ID type in an external coding scheme "
+        "(eg. the Peppol ICD code '0088' for GLN, for EDI/UBL output). "
+        "Falls back to `code` when not set - only needed when `code` "
+        "(used for other purposes, eg. internal categorization) differs "
+        "from the code an external system expects.",
+    )
     name = fields.Char(
         string="ID name",
         required=True,
@@ -39,6 +47,34 @@ class ResPartnerIdCategory(models.Model):
     validation_code = fields.Text(
         "Python validation code", help="Python code called to validate an id number."
     )
+
+    @api.constrains("scheme")
+    def _check_scheme_unique(self):
+        if not self._check_scheme_unique_enabled():
+            return
+        for rec in self:
+            if not rec.scheme:
+                continue
+            duplicate = self.search(
+                [("scheme", "=", rec.scheme), ("id", "!=", rec.id)], limit=1
+            )
+            if duplicate:
+                raise ValidationError(
+                    self.env._(
+                        "The scheme code '%(scheme)s' is already used by "
+                        "another ID category (%(other)s).",
+                        scheme=rec.scheme,
+                        other=duplicate.display_name,
+                    )
+                )
+
+    def _check_scheme_unique_enabled(self):
+        param = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("partner_identification.id_category_scheme_unique_check")
+        )
+        return str2bool(param, bool(param))
 
     @api.model
     def _search_duplicate(self, category_id, id_number, force_active=False):
