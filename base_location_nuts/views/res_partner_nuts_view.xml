@@ -34,6 +34,7 @@
     </record>
     <record id="res_partner_nuts_action" model="ir.actions.act_window">
         <field name="name">NUTS Items</field>
+        <field name="path">nuts-items</field>
         <field name="res_model">res.partner.nuts</field>
         <field name="view_mode">list,form</field>
         <field name="help">You must click at import wizard to populate NUTS items
@@ -48,7 +49,7 @@
                 <field name="name" />
                 <field name="country_id" />
                 <field name="state_id" />
-                <group expand="0" string="Group By">
+                <group>
                     <filter
                         name="country"
                         string="Country"
