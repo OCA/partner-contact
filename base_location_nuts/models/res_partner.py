@@ -4,7 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, fields, models
-from odoo.osv.expression import AND, OR
+from odoo.fields import Domain
 
 
 class ResPartner(models.Model):
@@ -40,35 +40,34 @@ class ResPartner(models.Model):
     def _compute_allowed_nuts(self):
         Nuts = self.env["res.partner.nuts"]
         for partner in self:
-            domain = []
+            domain = Domain(Domain.TRUE)
             for level in range(1, 4):
-                nuts = partner["nuts%d_id" % level]
+                nuts = partner[f"nuts{level}_id"]
                 if nuts:
                     if not domain:
-                        domain = OR(
-                            [
-                                [
-                                    ("parent_id", "=", nuts.id),
-                                    ("level", "=", level + 1),
-                                ],
-                            ]
+                        domain = Domain(
+                            [("parent_id", "=", nuts.id), ("level", "=", level + 1)]
                         )
                     else:
-                        domain = OR(
+                        domain = Domain.OR(
                             [
-                                [
-                                    ("parent_id", "=", nuts.id),
-                                    ("level", "=", level + 1),
-                                ],
+                                Domain(
+                                    [
+                                        ("parent_id", "=", nuts.id),
+                                        ("level", "=", level + 1),
+                                    ]
+                                ),
                                 domain,
                             ]
                         )
             if partner.country_id:
-                domain = AND([[("country_id", "=", partner.country_id.id)], domain])
+                domain = Domain.AND(
+                    [Domain("country_id", "=", partner.country_id.id), domain]
+                )
             partner.allowed_nut_ids = Nuts.search(domain)
 
     def _onchange_nuts(self, level):
-        field = self["nuts%d_id" % level]
+        field = self[f"nuts{level}_id"]
         country_id = field.country_id
         state_id = field.state_id
         if country_id and self.country_id != country_id:
@@ -78,7 +77,7 @@ class ResPartner(models.Model):
         if level > 1:
             parent_id = field.parent_id
             if parent_id:
-                nuts_parent_level = "nuts%d_id" % (level - 1)
+                nuts_parent_level = f"nuts{level - 1}_id"
                 parent_field = self[nuts_parent_level]
                 if parent_field != parent_id:
                     self[nuts_parent_level] = parent_id
@@ -127,7 +126,7 @@ class ResPartner(models.Model):
                     limit=1,
                 )
                 if nuts_state:
-                    field = "nuts%d_id" % self.country_id.state_level
+                    field = f"nuts{self.country_id.state_level}_id"
                     self[field] = nuts_state
 
     @api.model

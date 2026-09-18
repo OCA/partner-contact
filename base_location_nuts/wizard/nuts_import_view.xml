@@ -28,7 +28,7 @@
     </record>
     <record id="nuts_import_action" model="ir.actions.act_window">
         <field name="name">Import NUTS 2024 from SHOWVOC</field>
-        <field name="type">ir.actions.act_window</field>
+        <field name="path">import-nuts</field>
         <field name="res_model">nuts.import</field>
         <field name="view_id" ref="nuts_import_form" />
         <field name="view_mode">form</field>
