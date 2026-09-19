@@ -2,15 +2,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 
-import odoo.tests
 from odoo import http
 
 from odoo.addons.auth_signup.tests.test_auth_signup import TestAuthSignupFlow
 
 
-@odoo.tests.tagged("post_install", "-at_install")
-class TestPartnerIscompanyAuthSignup(TestAuthSignupFlow):
-    def test_signup_workflow_company(self):
+class TestPartnerFirstnameAuthSignup(TestAuthSignupFlow):
+    def test_signup_workflow_correct_names_fields(self):
         # Activate free signup
         self._activate_free_signup()
 
@@ -20,9 +18,9 @@ class TestPartnerIscompanyAuthSignup(TestAuthSignupFlow):
 
         # 1. Check if user name is correctly computed
         payload = {
-            "login": "partner_is_company_auth_signup@example.com",
-            "name": "New Company",
-            "company_type": "company",
+            "login": "partner_firstname_auth_signup@example.com",
+            "firstname": "My First Name auth_signup",
+            "lastname": "MY LAST NAME auth_signup",
             "password": "mypassword",
             "confirm_password": "mypassword",
             "csrf_token": csrf_token,
@@ -30,12 +28,15 @@ class TestPartnerIscompanyAuthSignup(TestAuthSignupFlow):
         url_free_signup = self._get_free_signup_url()
         self.url_open(url_free_signup, data=payload)
         new_user = self.env["res.users"].search(
-            [("login", "=", "partner_is_company_auth_signup@example.com")]
+            [("login", "=", "partner_firstname_auth_signup@example.com")]
         )
         self.assertTrue(new_user)
-        self.assertTrue(new_user.is_company)
 
-    def test_signup_workflow_person(self):
+        self.assertEqual(
+            new_user.name, "My First Name auth_signup MY LAST NAME auth_signup"
+        )
+
+    def test_signup_workflow_incorrect_names_fields(self):
         # Activate free signup
         self._activate_free_signup()
 
@@ -44,22 +45,14 @@ class TestPartnerIscompanyAuthSignup(TestAuthSignupFlow):
         csrf_token = http.Request.csrf_token(self)
 
         payload = {
-            "login": "partner_is_company_auth_signup@example.com",
-            "name": "New Individual",
-            "company_type": "person",
+            "login": "partner_firstname_auth_signup@example.com",
             "password": "mypassword",
             "confirm_password": "mypassword",
             "csrf_token": csrf_token,
-            # Useless values for testing this module
-            # but avoid error if 'partner_firstname_auth_signup'
-            # is installed
-            "firstname": "firstname",
-            "lastname": "lastname",
         }
         url_free_signup = self._get_free_signup_url()
         self.url_open(url_free_signup, data=payload)
         new_user = self.env["res.users"].search(
-            [("login", "=", "partner_is_company_auth_signup@example.com")]
+            [("login", "=", "partner_firstname_auth_signup@example.com")]
         )
-        self.assertTrue(new_user)
-        self.assertFalse(new_user.is_company)
+        self.assertFalse(new_user)
