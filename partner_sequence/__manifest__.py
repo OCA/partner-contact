@@ -4,7 +4,7 @@
     "version": "18.0.1.0.0",
     "development_status": "Beta",
     "category": "Custom",
-    "depends": ["base", "hr", "contacts", "purchase", "sale", "purchase_request"],
+    "depends": ["base", "hr", "contacts"],
     "data": [
         "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",

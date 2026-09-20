@@ -9,10 +9,12 @@ class ResPartner(models.Model):
     x_vendor_id = fields.Char(string="Vendor ID", readonly=True, copy=False)
     is_customer = fields.Boolean(
         required=True,
+        default=False,
         help="This will assign sequence number for Customer",
     )
     is_vendor = fields.Boolean(
         required=True,
+        default=False,
         help="This will assign sequence number for Vendor",
     )
     has_tin = fields.Boolean(string="Has TIN No.", default=True)
