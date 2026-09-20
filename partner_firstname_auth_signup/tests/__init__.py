@@ -1,0 +1,1 @@
+from . import test_partner_firstname_auth_signup
