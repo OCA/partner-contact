@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="seq_res_partner_customer" model="ir.sequence">
+        <field name="name">Customer ID</field>
+        <field name="code">res.partner.customer</field>
+        <field name="prefix">C</field>
+        <field name="padding">7</field>
+        <field name="number_next">1</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+    <record id="seq_res_partner_vendor" model="ir.sequence">
+        <field name="name">Vendor ID</field>
+        <field name="code">res.partner.vendor</field>
+        <field name="prefix">V</field>
+        <field name="padding">7</field>
+        <field name="number_next">1</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+    <record id="seq_res_partner_customer_vendor" model="ir.sequence">
+        <field name="name">Customer-Vendor ID</field>
+        <field name="code">res.partner.customer_vendor</field>
+        <field name="prefix">CV</field>
+        <field name="padding">7</field>
+        <field name="number_next">1</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+    <record id="seq_hr_employee_custom" model="ir.sequence">
+        <field name="name">Employee ID</field>
+        <field name="code">hr.employee.custom</field>
+        <field name="prefix">E</field>
+        <field name="padding">7</field>
+        <field name="number_next">1</field>
+        <field name="company_id" eval="False"/>
+    </record>
+</odoo>

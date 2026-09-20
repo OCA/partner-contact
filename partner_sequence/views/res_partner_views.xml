@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_partner_form_custom" model="ir.ui.view">
+        <field name="name">res.partner.form.custom.ids</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <group>
+                    <field name="x_customer_id"/>
+                    <field name="x_vendor_id" />
+                    <field name="x_employee_id" invisible="1"/>
+                </group>
+            </xpath>
+            <!-- <xpath expr="//field[@name='vat']" position="after">
+                <attribute name="invisible">has_tin == False</attribute>
+                <attribute name="string">TIN No.</attribute>
+                <attribute name="placeholder">Enter TIN Number here</attribute>
+                <attribute name="required">True</attribute>
+                <field name="vat" string="TIN No." required="True" invisible="has_tin == False" placeholder="Enter TIN Number here"/>
+            </xpath> -->
+
+            <xpath expr="//field[@name='vat']" position="replace">
+                <group>
+                    <field name="has_tin"/>
+                    <field name="vat" string="TIN No." required="True" invisible="has_tin == False" placeholder="Enter TIN Number here"/>
+                    <field name="is_customer"/>
+                    <field name="is_vendor"/>
+                    <field name="is_employee" invisible="1"/>
+                </group>
+            </xpath>
+
+
+        </field>
+    </record>
+
+
+    <record id="view_partner_tree_custom" model="ir.ui.view">
+        <field name="name">res.partner.tree.custom.ids</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="inside">
+                <field name="x_customer_id"/>
+                <field name="x_vendor_id"/>
+                <field name="x_employee_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

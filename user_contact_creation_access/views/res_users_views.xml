@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_users_form_contact_creation_access" model="ir.ui.view">
+        <field name="name">res.users.form.contact.creation.access</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='access_rights']" position="inside">
+                <group string="Contact Management Rights" groups="base.group_system">
+                    <field name="can_create_contacts"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
