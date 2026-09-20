@@ -1,5 +1,5 @@
-from odoo import api, fields, models
-from odoo.exceptions import UserError, ValidationError
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class ResPartner(models.Model):
@@ -7,19 +7,16 @@ class ResPartner(models.Model):
 
     x_customer_id = fields.Char(string="Customer ID", readonly=True, copy=False)
     x_vendor_id = fields.Char(string="Vendor ID", readonly=True, copy=False)
-    # x_combined_id = fields.Char(string="Customer-Vendor ID", readonly=True, copy=False)
     is_customer = fields.Boolean(
-        string="Is Customer",
         required=True,
         help="This will assign sequence number for Customer",
     )
     is_vendor = fields.Boolean(
-        string="Is Vendor",
         required=True,
         help="This will assign sequence number for Vendor",
     )
     has_tin = fields.Boolean(string="Has TIN No.", default=True)
-    is_employee = fields.Boolean(string="Is Employee", required=False)
+    is_employee = fields.Boolean(required=False)
     x_employee_id = fields.Char(string="Employee ID", readonly=True, copy=False)
 
     # _sql_constraints = [
@@ -35,7 +32,10 @@ class ResPartner(models.Model):
                 )
                 if existing:
                     raise ValidationError(
-                        "The Tax ID must be unique! \nThere is a record already registered with this TIN number!"
+                        _(
+                            "The Tax ID must be unique! \n"
+                            "There is a record already registered with this TIN number!"
+                        )
                     )
 
     @api.model

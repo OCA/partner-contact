@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="seq_res_partner_customer" model="ir.sequence">
         <field name="name">Customer ID</field>
@@ -6,7 +6,7 @@
         <field name="prefix">C</field>
         <field name="padding">7</field>
         <field name="number_next">1</field>
-        <field name="company_id" eval="False"/>
+        <field name="company_id" eval="False" />
     </record>
 
     <record id="seq_res_partner_vendor" model="ir.sequence">
@@ -15,7 +15,7 @@
         <field name="prefix">V</field>
         <field name="padding">7</field>
         <field name="number_next">1</field>
-        <field name="company_id" eval="False"/>
+        <field name="company_id" eval="False" />
     </record>
 
     <record id="seq_res_partner_customer_vendor" model="ir.sequence">
@@ -24,7 +24,7 @@
         <field name="prefix">CV</field>
         <field name="padding">7</field>
         <field name="number_next">1</field>
-        <field name="company_id" eval="False"/>
+        <field name="company_id" eval="False" />
     </record>
 
     <record id="seq_hr_employee_custom" model="ir.sequence">
@@ -33,6 +33,6 @@
         <field name="prefix">E</field>
         <field name="padding">7</field>
         <field name="number_next">1</field>
-        <field name="company_id" eval="False"/>
+        <field name="company_id" eval="False" />
     </record>
 </odoo>

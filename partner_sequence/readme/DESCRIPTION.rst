@@ -1,1 +1,0 @@
-This module assigns unique sequence IDs to Partners (Customers and Vendors) and Employees. It automatically generates identifiers based on customizable sequences (`res.partner.customer`, `res.partner.vendor`, `hr.employee.custom`) when a partner or employee is created or modified. It also enforces uniqueness of Tax Identification Numbers (TIN) across all partners.
