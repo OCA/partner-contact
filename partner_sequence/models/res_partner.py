@@ -8,12 +8,10 @@ class ResPartner(models.Model):
     x_customer_id = fields.Char(string="Customer ID", readonly=True, copy=False)
     x_vendor_id = fields.Char(string="Vendor ID", readonly=True, copy=False)
     is_customer = fields.Boolean(
-        required=True,
         default=False,
         help="This will assign sequence number for Customer",
     )
     is_vendor = fields.Boolean(
-        required=True,
         default=False,
         help="This will assign sequence number for Vendor",
     )
@@ -40,31 +38,32 @@ class ResPartner(models.Model):
                         )
                     )
 
-    @api.model
-    def create(self, vals):
-        partner = super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        partners = super().create(vals_list)
 
-        updates = {}
+        for partner in partners:
+            updates = {}
 
-        if partner.is_customer and not partner.x_customer_id:
-            updates["x_customer_id"] = self.env["ir.sequence"].next_by_code(
-                "res.partner.customer"
-            )
+            if partner.is_customer and not partner.x_customer_id:
+                updates["x_customer_id"] = self.env["ir.sequence"].next_by_code(
+                    "res.partner.customer"
+                )
 
-        if partner.is_vendor and not partner.x_vendor_id:
-            updates["x_vendor_id"] = self.env["ir.sequence"].next_by_code(
-                "res.partner.vendor"
-            )
+            if partner.is_vendor and not partner.x_vendor_id:
+                updates["x_vendor_id"] = self.env["ir.sequence"].next_by_code(
+                    "res.partner.vendor"
+                )
 
-        if partner.is_employee and not partner.x_employee_id:
-            updates["x_employee_id"] = self.env["ir.sequence"].next_by_code(
-                "hr.employee.custom"
-            )
+            if partner.is_employee and not partner.x_employee_id:
+                updates["x_employee_id"] = self.env["ir.sequence"].next_by_code(
+                    "hr.employee.custom"
+                )
 
-        if updates:
-            super(ResPartner, partner).write(updates)
+            if updates:
+                super(ResPartner, partner).write(updates)
 
-        return partner
+        return partners
 
     def write(self, vals):
         result = super().write(vals)
