@@ -43,6 +43,21 @@ class TestResPartner(common.TransactionCase):
                 {"is_customer": False, "customer_rank": 0},
             ],
         )
+        created_partner_1 = (
+            self.env["res.partner"]
+            .with_context(res_partner_search_mode="customer")
+            .create({"name": "Odoo SA"})
+        )
+        created_partner_2 = self.env["res.partner"].create(
+            {"name": "Odoo Community Association", "customer_rank": 1}
+        )
+        self.assertRecordValues(
+            (created_partner_1 | created_partner_2),
+            [
+                {"is_customer": True, "customer_rank": 1},
+                {"is_customer": True, "customer_rank": 1},
+            ],
+        )
 
     def test_02_is_supplier(self):
         partners = self.partner | self.partner_2
@@ -77,5 +92,20 @@ class TestResPartner(common.TransactionCase):
             [
                 {"is_supplier": False, "supplier_rank": 0},
                 {"is_supplier": False, "supplier_rank": 0},
+            ],
+        )
+        created_partner_1 = (
+            self.env["res.partner"]
+            .with_context(res_partner_search_mode="supplier")
+            .create({"name": "Odoo SA"})
+        )
+        created_partner_2 = self.env["res.partner"].create(
+            {"name": "Odoo Community Association", "supplier_rank": 1}
+        )
+        self.assertRecordValues(
+            (created_partner_1 | created_partner_2),
+            [
+                {"is_supplier": True, "supplier_rank": 1},
+                {"is_supplier": True, "supplier_rank": 1},
             ],
         )
