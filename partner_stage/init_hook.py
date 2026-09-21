@@ -16,7 +16,7 @@ def post_init_hook(env):
         env.cr.execute(
             """
             UPDATE res_partner
-            SET stage_id = %(id)s, state = %(state)s
+            SET stage_id = %(id)s, stage_state = %(state)s
             WHERE stage_id IS NULL
             """,
             {"id": default_stage.id, "state": default_stage.state},
