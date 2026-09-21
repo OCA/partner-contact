@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_general_configuration" model="ir.ui.view">
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='companies']" position="after">
+                <div id="partner_labels">
+                    <block
+                        title="Labels Configuration"
+                        name="labels_configuration_container"
+                    >
+                        <setting id="partner_labels_size_setting" title="Label Size">
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <label
+                                        string="Width"
+                                        for="partner_labels_width"
+                                        class="col-lg-3 o_light_label"
+                                    />
+                                    <field
+                                        name="partner_labels_width"
+                                        class="oe_inline"
+                                    />
+                                    <span> mm</span>
+                                </div>
+                                <div class="mt16">
+                                    <label
+                                        string="Height"
+                                        for="partner_labels_height"
+                                        class="col-lg-3 o_light_label"
+                                    />
+                                    <field
+                                        name="partner_labels_height"
+                                        class="oe_inline"
+                                    />
+                                    <span> mm</span>
+                                </div>
+                                <div class="mt16">
+                                    <label
+                                        string="Padding"
+                                        for="partner_labels_padding"
+                                        class="col-lg-3 o_light_label"
+                                    />
+                                    <field
+                                        name="partner_labels_padding"
+                                        class="oe_inline"
+                                    />
+                                    <span> mm</span>
+                                </div>
+                                <div class="mt16">
+                                    <label
+                                        for="partner_labels_paperformat_id"
+                                        class="col-lg-3 o_light_label"
+                                    />
+                                    <field
+                                        name="partner_labels_paperformat_id"
+                                        class="oe_inline"
+                                    />
+                                </div>
+                                <button
+                                    type="object"
+                                    name="action_partner_labels_preview"
+                                    string="Preview"
+                                    class="oe_link"
+                                    icon="oi-arrow-right"
+                                />
+                            </div>
+                        </setting>
+                        <setting
+                            id="partner_labels_margin_setting"
+                            title="Label Margins"
+                        >
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <label
+                                        string="Margin Top"
+                                        for="partner_labels_margin_top"
+                                        class="col-lg-3 o_light_label"
+                                    />
+                                    <field
+                                        name="partner_labels_margin_top"
+                                        class="oe_inline"
+                                    />
+                                    <span> mm</span>
+                                </div>
+                                <div class="mt16">
+                                    <label
+                                        string="Margin Bottom"
+                                        for="partner_labels_margin_bottom"
+                                        class="col-lg-3 o_light_label"
+                                    />
+                                    <field
+                                        name="partner_labels_margin_bottom"
+                                        class="oe_inline"
+                                    />
+                                    <span> mm</span>
+                                </div>
+                                <div class="mt16">
+                                    <label
+                                        string="Margin Left"
+                                        for="partner_labels_margin_left"
+                                        class="col-lg-3 o_light_label"
+                                    />
+                                    <field
+                                        name="partner_labels_margin_left"
+                                        class="oe_inline"
+                                    />
+                                    <span> mm</span>
+                                </div>
+                                <div class="mt16">
+                                    <label
+                                        string="Margin Right"
+                                        for="partner_labels_margin_right"
+                                        class="col-lg-3 o_light_label"
+                                    />
+                                    <field
+                                        name="partner_labels_margin_right"
+                                        class="oe_inline"
+                                    />
+                                    <span> mm</span>
+                                </div>
+                            </div>
+                        </setting>
+                    </block>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
