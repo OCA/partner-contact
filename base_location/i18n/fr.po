@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2026-09-21 16:13+0000\n"
+"PO-Revision-Date: 2026-09-21 16:21+0000\n"
 "Last-Translator: Houzéfa Abbasbhay <houzefa.abba@xcg-consulting.fr>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
@@ -54,7 +54,7 @@ msgstr "Ville"
 #: model:ir.model.fields,field_description:base_location.field_res_partner__city_id
 #: model:ir.model.fields,field_description:base_location.field_res_users__city_id
 msgid "City ID"
-msgstr "Ville"
+msgstr "Ville (ID)"
 
 #. module: base_location
 #: model_terms:ir.ui.view,arch_db:base_location.view_company_form_city
@@ -65,7 +65,7 @@ msgstr "Complétion par ville"
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_city_zip
 msgid "City/locations completion object"
-msgstr "Objet de complétion ville/lieu"
+msgstr "Objet de complétion ville/localisation"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city__code
@@ -80,7 +80,7 @@ msgstr "Sociétés"
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_partner
 msgid "Contact"
-msgstr "Contacte"
+msgstr "Contact"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__country_id
@@ -103,7 +103,7 @@ msgstr "Créé le"
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__display_name
 msgid "Display Name"
-msgstr "Intitulé"
+msgstr "Nom d'affichage"
 
 #. module: base_location
 #: model_terms:ir.actions.act_window,help:base_location.action_res_city_full
@@ -125,12 +125,12 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company__country_enforce_cities
 msgid "Enforce Cities"
-msgstr "Appliquer la ville"
+msgstr "Forcer les villes"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__id
 msgid "ID"
-msgstr "Identifiant"
+msgstr "ID"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__write_uid
@@ -145,7 +145,7 @@ msgstr "Mis à jour le"
 #. module: base_location
 #: model_terms:ir.ui.view,arch_db:base_location.view_partner_form
 msgid "Location completion"
-msgstr "Complétion de la localisation"
+msgstr "Complétion de localisation"
 
 #. module: base_location
 #: model:ir.actions.act_window,name:base_location.action_zip_tree
@@ -155,14 +155,14 @@ msgstr "Localisation"
 #. module: base_location
 #: model_terms:ir.ui.view,arch_db:base_location.view_city_zip_filter
 msgid "Search zip"
-msgstr "Rechercher ville"
+msgstr "Recherche par CP"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__state_id
 #: model:ir.model.fields,field_description:base_location.field_res_partner__state_id
 #: model:ir.model.fields,field_description:base_location.field_res_users__state_id
 msgid "State"
-msgstr "Etat"
+msgstr "État"
 
 #. module: base_location
 #. odoo-python
@@ -171,8 +171,8 @@ msgid ""
 "The city of the partner %(partner)s differs from that in location "
 "%(location)s"
 msgstr ""
-"La ville du contact %(partner)s diffèrent de celle de la localisation "
-"%(location)s"
+"La ville du partenaire %(partner)s diffère de celle de la localisation %"
+"(location)s"
 
 #. module: base_location
 #. odoo-python
@@ -181,8 +181,8 @@ msgid ""
 "The country of the partner %(partner)s differs from that in location "
 "%(location)s"
 msgstr ""
-"Le pays du contact %(partner)s diffèrent de ce lui de la localisation "
-"%(location)s"
+"Le pays du partenaire %(partner)s diffère de celui de la localisation %"
+"(location)s"
 
 #. module: base_location
 #. odoo-python
@@ -191,8 +191,8 @@ msgid ""
 "The state of the partner %(partner)s differs from that in location "
 "%(location)s"
 msgstr ""
-"L'état du contact %(partner)s diffèrent de ce lui de la localisation "
-"%(location)s"
+"L'état du partenaire %(partner)s diffère de celui de la localisation %"
+"(location)s"
 
 #. module: base_location
 #. odoo-python
@@ -200,13 +200,13 @@ msgstr ""
 msgid ""
 "The zip of the partner %(partner)s differs from that in location %(location)s"
 msgstr ""
-"Le code ZIP du contact %(partner)s diffèrent de ce lui de la localisation "
+"Le code postal du partenaire %(partner)s diffère de celui de la localisation "
 "%(location)s"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__zip_id
 msgid "Use the city name or the zip code to search the location"
-msgstr "Utilisez le nom de la ville ou le zip lors des recherches"
+msgstr "Utiliser le nom de la ville ou le code postal lors des recherches"
 
 #. module: base_location
 #: model:ir.model.constraint,message:base_location.constraint_res_city_name_state_country_uniq
@@ -229,14 +229,14 @@ msgstr ""
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city_zip__name
 msgid "ZIP"
-msgstr "ZIP"
+msgstr "Code postal"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_company__zip_id
 #: model:ir.model.fields,field_description:base_location.field_res_partner__zip_id
 #: model:ir.model.fields,field_description:base_location.field_res_users__zip_id
 msgid "ZIP Location"
-msgstr "Code postal"
+msgstr "Localisation du code postal"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_partner__zip
@@ -250,12 +250,12 @@ msgstr "Code postal"
 #: model_terms:ir.ui.view,arch_db:base_location.view_city_form
 #: model_terms:ir.ui.view,arch_db:base_location.view_res_country_city_better_zip_form
 msgid "Zips"
-msgstr "Code postaux"
+msgstr "Codes postaux"
 
 #. module: base_location
 #: model:ir.model.fields,field_description:base_location.field_res_city__zip_ids
 msgid "Zips in this city"
-msgstr "Code postaux dans cette ville"
+msgstr "Codes postaux dans cette ville"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Dernière modification le"
