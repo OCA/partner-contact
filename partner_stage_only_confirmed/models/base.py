@@ -43,7 +43,8 @@ class Base(models.AbstractModel):
                                 domain.append(("state", "=", "confirmed"))
                                 domain = str(domain)
                             node.set("domain", domain)
-            res["arch"] = etree.tostring(doc)
+            # Same serialization as core ir.ui.view.get_view()
+            res["arch"] = etree.tostring(doc, encoding="unicode").replace("\t", "")
         return res
 
     @api.model
