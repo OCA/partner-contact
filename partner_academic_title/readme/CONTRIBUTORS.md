@@ -2,3 +2,4 @@
 - Adrien Peiffer \<adrien.peiffer@acsone.eu\>
 - Meyomesse Gilles \<meyomesse.gilles@gmail.com\>
 - Luis M. Ontalba \<luismaront@gmail.com\>
+- Florian Gruber \<florian.gruber@agfvector.at>

@@ -1,20 +1,22 @@
 # Copyright 2019 Luis M. Ontalba <luismaront@gmail.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
 
-from odoo.tests import common
+from odoo import Command
+from odoo.tests import TransactionCase, tagged
 
 
-class TestPartnerAcademicTitle(common.SavepointCase):
+@tagged("post_install", "-at_install")
+class TestPartnerAcademicTitle(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.partner_ac_tit_A = cls.env["partner.academic.title"].create(
+        cls.partner_ac_tit_a = cls.env["partner.academic.title"].create(
             {
                 "name": "A",
                 "sequence": 2,
             }
         )
-        cls.partner_ac_tit_B = cls.env["partner.academic.title"].create(
+        cls.partner_ac_tit_b = cls.env["partner.academic.title"].create(
             {
                 "name": "B",
                 "sequence": 1,
@@ -27,9 +29,8 @@ class TestPartnerAcademicTitle(common.SavepointCase):
         )
 
     def test_compute_academic_title_display(self):
-        partner = self.partner
-        partner.academic_title_ids = [
-            (4, self.partner_ac_tit_A.id, 0),
-            (4, self.partner_ac_tit_B.id, 0),
+        self.partner.academic_title_ids = [
+            Command.link(self.partner_ac_tit_a.id),
+            Command.link(self.partner_ac_tit_b.id),
         ]
-        self.assertEqual(partner.academic_title_display, "B, A")
+        self.assertEqual(self.partner.academic_title_display, "B, A")

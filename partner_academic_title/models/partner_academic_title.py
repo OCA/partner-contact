@@ -6,6 +6,7 @@ from odoo import fields, models
 
 class PartnerAcademicTitle(models.Model):
     _name = "partner.academic.title"
+    _description = "Partner Academic Title"
 
     name = fields.Char(required=True, translate=True)
     sequence = fields.Integer(
