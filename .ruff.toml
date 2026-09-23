@@ -12,6 +12,7 @@ extend-select = [
 ]
 extend-safe-fixes = ["UP008"]
 exclude = ["setup/*"]
+ignore = ["DTZ005"]
 
 [format]
 exclude = ["setup/*"]
