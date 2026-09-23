@@ -110,7 +110,7 @@ class ResPartner(models.Model):
         # For some reason Domain "optimization" morphs date values
         # into an OrderedSet. Undo this, as it will crash later on.
         if isinstance(value, OrderedSet):
-            value = list(value)[0]
+            value = next(iter(list(value)))
         PartnerRelation = self.env["res.partner.relation"]
         date_domain = [
             "&",
