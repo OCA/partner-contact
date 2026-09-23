@@ -1,0 +1,247 @@
+From a5a48af418912737b6aca5f958301c3b76718879 Mon Sep 17 00:00:00 2001
+From: bosd <c5e2fd43-d292-4c90-9d1f-74ff3436329a@anonaddy.me>
+Date: Sun, 16 Nov 2025 21:53:54 +0100
+Subject: [PATCH] [MIG] partner_stage: Migration to 19.0
+
+---
+ partner_stage/README.rst                    | 26 ++++++++++--------
+ partner_stage/__manifest__.py               |  2 +-
+ partner_stage/models/res_partner.py         |  7 +++--
+ partner_stage/models/res_partner_stage.py   | 11 ++++----
+ partner_stage/static/description/index.html | 30 ++++++++++++---------
+ 5 files changed, 45 insertions(+), 31 deletions(-)
+
+diff --git a/partner_stage/README.rst b/partner_stage/README.rst
+index ff7dea15e..1a6055fa2 100644
+--- a/partner_stage/README.rst
++++ b/partner_stage/README.rst
+@@ -1,3 +1,7 @@
++.. image:: https://odoo-community.org/readme-banner-image
++   :target: https://odoo-community.org/get-involved?utm_source=readme
++   :alt: Odoo Community Association
++
+ =============
+ Partner Stage
+ =============
+@@ -13,17 +17,17 @@ Partner Stage
+ .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
+     :target: https://odoo-community.org/page/development-status
+     :alt: Beta
+-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
++.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+     :alt: License: AGPL-3
+ .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
+-    :target: https://github.com/OCA/partner-contact/tree/18.0/partner_stage
++    :target: https://github.com/OCA/partner-contact/tree/19.0/partner_stage
+     :alt: OCA/partner-contact
+ .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
+-    :target: https://translation.odoo-community.org/projects/partner-contact-18-0/partner-contact-18-0-partner_stage
++    :target: https://translation.odoo-community.org/projects/partner-contact-19-0/partner-contact-19-0-partner_stage
+     :alt: Translate me on Weblate
+ .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
+-    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=18.0
++    :target: https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&target_branch=19.0
+     :alt: Try me on Runboat
+
+ |badge1| |badge2| |badge3| |badge4| |badge5|
+@@ -50,7 +54,7 @@ Bug Tracker
+ Bugs are tracked on `GitHub Issues <https://github.com/OCA/partner-contact/issues>`_.
+ In case of trouble, please check there if your issue has already been reported.
+ If you spotted it first, help us to smash it by providing a detailed and welcomed
+-`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_stage%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
++`feedback <https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_stage%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+
+ Do not contact contributors directly about support or help with technical issues.
+
+@@ -65,14 +69,14 @@ Authors
+ Contributors
+ ------------
+
+-- Daniel Reis <dreis@opensourceintegrators.com>
+-- Urvisha Desai <udesai@opensourceintegrators.com>
++-  Daniel Reis <dreis@opensourceintegrators.com>
++-  Urvisha Desai <udesai@opensourceintegrators.com>
+
+-- ``Camptocamp <https://www.camptocamp.com>``\ \_\_:
++-  ``Camptocamp <https://www.camptocamp.com>``\ \_\_:
+
+-  - Maksym Yankin maksym.yankin@camptocamp.com
++   -  Maksym Yankin maksym.yankin@camptocamp.com
+
+-- Bert Van Groenendael <bert.vangroenendael@dynapps.eu>
++-  Bert Van Groenendael <bert.vangroenendael@dynapps.eu>
+
+ Maintainers
+ -----------
+@@ -95,6 +99,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+
+ |maintainer-dreispt|
+
+-This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/18.0/partner_stage>`_ project on GitHub.
++This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/19.0/partner_stage>`_ project on GitHub.
+
+ You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
+diff --git a/partner_stage/__manifest__.py b/partner_stage/__manifest__.py
+index 12c6e9697..c8793c8cb 100644
+--- a/partner_stage/__manifest__.py
++++ b/partner_stage/__manifest__.py
+@@ -7,7 +7,7 @@
+     "author": "Open Source Integrators, Odoo Community Association (OCA)",
+     "website": "https://github.com/OCA/partner-contact",
+     "category": "Sales/CRM",
+-    "version": "18.0.1.0.1",
++    "version": "19.0.1.0.0",
+     "license": "AGPL-3",
+     "depends": ["contacts"],
+     "data": [
+diff --git a/partner_stage/models/res_partner.py b/partner_stage/models/res_partner.py
+index f038c42e9..4815874fe 100644
+--- a/partner_stage/models/res_partner.py
++++ b/partner_stage/models/res_partner.py
+@@ -15,12 +15,15 @@ class Partner(models.Model):
+
+     @api.model
+     def _read_group_stage_id(self, states, domain):
+-        return states.search([])
++        # For group expansion, we typically return all stages, but limit to
++        # prevent performance issues
++        # The domain parameter here is not for filtering stages but for the relationship
++        return states.search([], limit=100)
+
+     stage_id = fields.Many2one(
+         comodel_name="res.partner.stage",
+         group_expand="_read_group_stage_id",
+-        default=_get_default_stage_id,
++        default=lambda self: self._get_default_stage_id(),
+         copy=False,
+         index=True,
+         tracking=True,
+diff --git a/partner_stage/models/res_partner_stage.py b/partner_stage/models/res_partner_stage.py
+index 9740fde33..f4f180cd2 100644
+--- a/partner_stage/models/res_partner_stage.py
++++ b/partner_stage/models/res_partner_stage.py
+@@ -1,7 +1,7 @@
+ # Copyright 2021 Open Source Integrators
+ # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+
+-from odoo import _, api, fields, models
++from odoo import api, fields, models
+ from odoo.exceptions import ValidationError
+
+
+@@ -24,11 +24,12 @@ class PartnerStage(models.Model):
+         default="confirmed",
+     )
+
+-    _sql_constraints = [
+-        ("res_partner_stage_code_unique", "UNIQUE(code)", "Stage Code must be unique.")
+-    ]
++    _res_partner_stage_code_unique = models.Constraint(
++        "UNIQUE(code)",
++        "Stage Code must be unique.",
++    )
+
+     @api.constrains("is_default")
+     def _check_default(self):
+         if self.search_count([("is_default", "=", True)]) > 1:
+-            raise ValidationError(_("There should be only one default stage"))
++            raise ValidationError(self.env._("There should be only one default stage"))
+diff --git a/partner_stage/static/description/index.html b/partner_stage/static/description/index.html
+index b56a47bed..26d678eae 100644
+--- a/partner_stage/static/description/index.html
++++ b/partner_stage/static/description/index.html
+@@ -3,7 +3,7 @@
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Docutils: https://docutils.sourceforge.io/" />
+-<title>Partner Stage</title>
++<title>README.rst</title>
+ <style type="text/css">
+
+ /*
+@@ -360,16 +360,21 @@ ul.auto-toc {
+ </style>
+ </head>
+ <body>
+-<div class="document" id="partner-stage">
+-<h1 class="title">Partner Stage</h1>
++<div class="document">
+
++
++<a class="reference external image-reference" href="https://odoo-community.org/get-involved?utm_source=readme">
++<img alt="Odoo Community Association" src="https://odoo-community.org/readme-banner-image" />
++</a>
++<div class="section" id="partner-stage">
++<h1>Partner Stage</h1>
+ <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !! This file is generated by oca-gen-addon-readme !!
+ !! changes will be overwritten.                   !!
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !! source digest: sha256:9982f36842fb03610d50b843bf9787dbb5102c38e6f481989478286c546929d2
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+-<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/partner-contact/tree/18.0/partner_stage"><img alt="OCA/partner-contact" src="https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/partner-contact-18-0/partner-contact-18-0-partner_stage"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&amp;target_branch=18.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
++<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/license-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/partner-contact/tree/19.0/partner_stage"><img alt="OCA/partner-contact" src="https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/partner-contact-19-0/partner-contact-19-0-partner_stage"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&amp;target_branch=19.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
+ <p>Adds stages to Contacts allowing, for example, to setup a lifecycle
+ workflow. The default stages are: Draft, Active and Inactive.</p>
+ <p><strong>Table of contents</strong></p>
+@@ -386,29 +391,29 @@ workflow. The default stages are: Draft, Active and Inactive.</p>
+ </ul>
+ </div>
+ <div class="section" id="usage">
+-<h1><a class="toc-backref" href="#toc-entry-1">Usage</a></h1>
++<h2><a class="toc-backref" href="#toc-entry-1">Usage</a></h2>
+ <p>Open a Contact form to see the corresponding Stage. It is visible in the
+ stages bar, at the top right are of the form.</p>
+ <p>The contact stage can be changed clicking on the stages bar.</p>
+ </div>
+ <div class="section" id="bug-tracker">
+-<h1><a class="toc-backref" href="#toc-entry-2">Bug Tracker</a></h1>
++<h2><a class="toc-backref" href="#toc-entry-2">Bug Tracker</a></h2>
+ <p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/partner-contact/issues">GitHub Issues</a>.
+ In case of trouble, please check there if your issue has already been reported.
+ If you spotted it first, help us to smash it by providing a detailed and welcomed
+-<a class="reference external" href="https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_stage%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
++<a class="reference external" href="https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_stage%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
+ <p>Do not contact contributors directly about support or help with technical issues.</p>
+ </div>
+ <div class="section" id="credits">
+-<h1><a class="toc-backref" href="#toc-entry-3">Credits</a></h1>
++<h2><a class="toc-backref" href="#toc-entry-3">Credits</a></h2>
+ <div class="section" id="authors">
+-<h2><a class="toc-backref" href="#toc-entry-4">Authors</a></h2>
++<h3><a class="toc-backref" href="#toc-entry-4">Authors</a></h3>
+ <ul class="simple">
+ <li>Open Source Integrators</li>
+ </ul>
+ </div>
+ <div class="section" id="contributors">
+-<h2><a class="toc-backref" href="#toc-entry-5">Contributors</a></h2>
++<h3><a class="toc-backref" href="#toc-entry-5">Contributors</a></h3>
+ <ul class="simple">
+ <li>Daniel Reis &lt;<a class="reference external" href="mailto:dreis&#64;opensourceintegrators.com">dreis&#64;opensourceintegrators.com</a>&gt;</li>
+ <li>Urvisha Desai &lt;<a class="reference external" href="mailto:udesai&#64;opensourceintegrators.com">udesai&#64;opensourceintegrators.com</a>&gt;</li>
+@@ -420,7 +425,7 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
+ </ul>
+ </div>
+ <div class="section" id="maintainers">
+-<h2><a class="toc-backref" href="#toc-entry-6">Maintainers</a></h2>
++<h3><a class="toc-backref" href="#toc-entry-6">Maintainers</a></h3>
+ <p>This module is maintained by the OCA.</p>
+ <a class="reference external image-reference" href="https://odoo-community.org">
+ <img alt="Odoo Community Association" src="https://odoo-community.org/logo.png" />
+@@ -430,10 +435,11 @@ mission is to support the collaborative development of Odoo features and
+ promote its widespread use.</p>
+ <p>Current <a class="reference external" href="https://odoo-community.org/page/maintainer-role">maintainer</a>:</p>
+ <p><a class="reference external image-reference" href="https://github.com/dreispt"><img alt="dreispt" src="https://github.com/dreispt.png?size=40px" /></a></p>
+-<p>This module is part of the <a class="reference external" href="https://github.com/OCA/partner-contact/tree/18.0/partner_stage">OCA/partner-contact</a> project on GitHub.</p>
++<p>This module is part of the <a class="reference external" href="https://github.com/OCA/partner-contact/tree/19.0/partner_stage">OCA/partner-contact</a> project on GitHub.</p>
+ <p>You are welcome to contribute. To learn how please visit <a class="reference external" href="https://odoo-community.org/page/Contribute">https://odoo-community.org/page/Contribute</a>.</p>
+ </div>
+ </div>
+ </div>
++</div>
+ </body>
+ </html>
+--
+2.51.1

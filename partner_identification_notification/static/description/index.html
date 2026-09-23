@@ -1,0 +1,648 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils: https://docutils.sourceforge.io/" />
+<title>README.rst</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 9511 2024-01-13 09:50:07Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+Despite the name, some widely supported CSS2 features are used.
+
+See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: gray; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic, pre.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document">
+
+
+<a class="reference external image-reference" href="https://odoo-community.org/get-involved?utm_source=readme">
+<img alt="Odoo Community Association" src="https://odoo-community.org/readme-banner-image" />
+</a>
+<div class="section" id="partner-identification-notification">
+<h1>Partner Identification Notification</h1>
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! This file is generated by oca-gen-addon-readme !!
+!! changes will be overwritten.                   !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! source digest: sha256:4041da78ea7321f5d586f3d3885b5d2063befd790078127886a7ca122e507c84
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/license-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/partner-contact/tree/19.0/partner_identification_notification"><img alt="OCA/partner-contact" src="https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/partner-contact-19-0/partner-contact-19-0-partner_identification_notification"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&amp;target_branch=19.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
+<div class="section" id="description">
+<h2>Description</h2>
+<p>This module extends the partner identification functionality by adding
+automated notification capabilities for expiring identity documents. It
+helps organizations stay compliant with ID validity requirements by
+sending timely notifications when partner identification documents are
+approaching their expiration dates.</p>
+<div class="section" id="features">
+<h3>Features</h3>
+<ul class="simple">
+<li><strong>Automated Expiration Notifications</strong>: Automatically sends
+notifications when partner IDs are approaching their expiry date
+based on configurable thresholds</li>
+<li><strong>Configurable Notification Settings</strong>: Set custom notification
+periods (days before expiration) per ID category</li>
+<li><strong>Email Template Integration</strong>: Uses customizable email templates for
+professional notification messages</li>
+<li><strong>Duplicate Prevention</strong>: Ensures notifications are only sent once
+per ID number to avoid spam</li>
+<li><strong>Scheduled Processing</strong>: Runs automatically via a cron job to check
+and send notifications regularly</li>
+<li><strong>Flexible Status Handling</strong>: Only processes ID numbers with
+appropriate statuses (open, pending)</li>
+</ul>
+</div>
+<div class="section" id="use-cases">
+<h3>Use Cases</h3>
+<p>This module is particularly useful for:</p>
+<ul class="simple">
+<li>Organizations that need to track employee ID validity for compliance</li>
+<li>Companies that require customer identification documents to remain
+current</li>
+<li>Government or regulatory bodies that need to monitor document expiry
+dates</li>
+<li>Any business that maintains partner identification records with
+expiration dates</li>
+</ul>
+</div>
+<div class="section" id="integration">
+<h3>Integration</h3>
+<p>The module seamlessly integrates with the existing partner
+identification framework by:</p>
+<ul class="simple">
+<li>Extending the <tt class="docutils literal">res.partner.id_number</tt> model with a notification
+date field</li>
+<li>Enhancing the <tt class="docutils literal">res.partner.id_category</tt> model with notification
+settings</li>
+<li>Leveraging the existing email template system for notifications</li>
+<li>Working with the existing partner management workflow</li>
+</ul>
+<p><strong>Table of contents</strong></p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#use-cases-context" id="toc-entry-1">Use Cases / Context</a></li>
+</ul>
+</div>
+<div class="section" id="use-cases-context">
+<h4><a class="toc-backref" href="#toc-entry-1">Use Cases / Context</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="context">
+<h2>Context</h2>
+<div class="section" id="business-context">
+<h3>Business Context</h3>
+<p>Many organizations are required to maintain up-to-date identification
+documents for their partners, including employees, customers, vendors,
+and other stakeholders. This requirement often stems from:</p>
+<ul class="simple">
+<li><strong>Regulatory Compliance</strong>: Laws and regulations may mandate that
+organizations maintain current identification documents for all
+partners</li>
+<li><strong>Security Requirements</strong>: Ensuring that access rights and privileges
+are only granted to individuals with valid identification</li>
+<li><strong>Contractual Obligations</strong>: Some business agreements require parties
+to maintain current identification documentation</li>
+<li><strong>Industry Standards</strong>: Certain industries have specific requirements
+for identity verification and document validity</li>
+</ul>
+</div>
+<div class="section" id="common-challenges">
+<h3>Common Challenges</h3>
+<p>Organizations often face these challenges without automated notification
+systems:</p>
+<ul class="simple">
+<li><strong>Manual Tracking</strong>: Teams spend considerable time manually checking
+ID expiration dates across multiple systems</li>
+<li><strong>Missed Expirations</strong>: Forgotten expiration dates can lead to
+compliance violations or security risks</li>
+<li><strong>Last-Minute Renewals</strong>: Discovering expiring IDs too late causes
+rushed renewal processes</li>
+<li><strong>Inconsistent Processes</strong>: Without automated systems, different
+teams may handle expirations inconsistently</li>
+<li><strong>Resource Wastage</strong>: Significant effort goes into maintaining
+spreadsheets or manual tracking systems</li>
+</ul>
+</div>
+<div class="section" id="solution-approach">
+<h3>Solution Approach</h3>
+<p>This module addresses these challenges by:</p>
+<ul class="simple">
+<li><strong>Automating the Monitoring Process</strong>: No need for manual date
+checking across numerous partner records</li>
+<li><strong>Proactive Notifications</strong>: Alerting stakeholders well in advance of
+expiration dates to allow adequate time for renewals</li>
+<li><strong>Consistent Application</strong>: Applying the same notification logic
+across all partners and ID types</li>
+<li><strong>Reducing Administrative Burden</strong>: Decreasing the manual effort
+required to track ID validity</li>
+<li><strong>Improving Compliance</strong>: Ensuring identification documents are
+renewed before expiration</li>
+</ul>
+</div>
+<div class="section" id="typical-implementation-scenarios">
+<h3>Typical Implementation Scenarios</h3>
+<ol class="arabic simple">
+<li><strong>Human Resources</strong>: Tracking employee ID cards, driver’s licenses,
+professional certifications, and other employment-related
+identification</li>
+<li><strong>Financial Services</strong>: Maintaining customer identification documents
+as required by Know Your Customer (KYC) regulations</li>
+<li><strong>Supply Chain Management</strong>: Ensuring vendor and supplier
+documentation remains current for business continuity</li>
+<li><strong>Government and Public Sector</strong>: Managing citizen or contractor
+identification documents for access and compliance</li>
+<li><strong>Healthcare and Education</strong>: Tracking staff and contractor
+credentials, licenses, and certification validity</li>
+</ol>
+</div>
+<div class="section" id="integration-with-partner-identification">
+<h3>Integration with Partner Identification</h3>
+<p>This module extends the base partner identification functionality by
+adding temporal awareness to the identification management system. It
+assumes that organizations are already using the partner identification
+module to categorize and store identification documents, and adds the
+time-sensitive aspect of monitoring document expiration and renewal
+requirements.</p>
+<div class="section" id="usage">
+<h4>Usage</h4>
+</div>
+</div>
+</div>
+<div class="section" id="usage-1">
+<h2>Usage</h2>
+<div class="section" id="setting-up-id-category-notifications">
+<h3>Setting up ID Category Notifications</h3>
+<ol class="arabic simple">
+<li>Go to <strong>Contacts &gt; Configuration &gt; Partner ID Categories</strong></li>
+<li>Select an existing ID category or create a new one</li>
+<li>In the category form, enable the <strong>“Send Notification”</strong> checkbox</li>
+<li>Set the <strong>“Days Before Expiration”</strong> field to specify how many days
+before the ID expires the notification should be sent</li>
+<li>Select an <strong>“Email Template”</strong> to be used for sending the
+notification</li>
+<li>Save the category</li>
+</ol>
+</div>
+<div class="section" id="creating-partner-ids-with-expiry-dates">
+<h3>Creating Partner IDs with Expiry Dates</h3>
+<ol class="arabic simple">
+<li>Go to any <strong>Partner form</strong></li>
+<li>Navigate to the <strong>“Other Info”</strong> tab (or similar, depending on your
+localization)</li>
+<li>Click on <strong>“ID Categories”</strong> or <strong>“Identity Documents”</strong></li>
+<li>Create a new ID record by:<ul>
+<li>Selecting the appropriate <strong>ID Category</strong> (one with notifications
+enabled)</li>
+<li>Entering the <strong>ID Number</strong></li>
+<li>Setting the <strong>Valid From</strong> and <strong>Valid Until</strong> dates</li>
+</ul>
+</li>
+<li>The system will automatically check for expiring IDs based on your
+configuration</li>
+</ol>
+</div>
+<div class="section" id="how-notifications-work">
+<h3>How Notifications Work</h3>
+<p>The module works through a scheduled action that:</p>
+<ol class="arabic simple">
+<li>Searches for ID numbers that meet the following criteria:<ul>
+<li>The ID category has <strong>“Send Notification”</strong> enabled</li>
+<li>The ID category has a <strong>“Days Before Expiration”</strong> value greater
+than 0</li>
+<li>The ID number status is either <strong>“open”</strong> or <strong>“pending”</strong></li>
+<li>The ID is expiring within the specified number of days</li>
+<li>The ID hasn’t been notified already (no <strong>“Notification Date”</strong>)</li>
+</ul>
+</li>
+<li>For each matching ID number, it sends an email using the configured
+template</li>
+<li>Records the notification date to avoid sending duplicate
+notifications</li>
+</ol>
+</div>
+<div class="section" id="testing-notifications">
+<h3>Testing Notifications</h3>
+<p>To test the notification system:</p>
+<ol class="arabic simple">
+<li>Set up a test ID category with notification settings</li>
+<li>Create a test partner ID with an expiry date within the notification
+window</li>
+<li>Manually execute the scheduled action: <strong>“Send Expiry
+Notifications”</strong></li>
+<li>Check that the notification email is sent and the notification date
+is recorded</li>
+</ol>
+</div>
+<div class="section" id="email-templates">
+<h3>Email Templates</h3>
+<p>The module uses email templates to customize notification messages:</p>
+<ol class="arabic simple">
+<li>Go to <strong>Settings &gt; Technical &gt; Email &gt; Email Templates</strong></li>
+<li>Create or modify templates for the <strong>“res.partner.id_number”</strong> model</li>
+<li>Use placeholders like <tt class="docutils literal">{{ object.name }}</tt> for ID number and
+<tt class="docutils literal">{{ object.partner_id.name }}</tt> for partner name</li>
+<li>Set the template in your ID category configuration</li>
+</ol>
+</div>
+<div class="section" id="scheduled-action">
+<h3>Scheduled Action</h3>
+<p>The notification process runs automatically via a scheduled action:</p>
+<ul class="simple">
+<li><strong>Name</strong>: “Send Expiry Notifications”</li>
+<li><strong>Interval</strong>: Daily by default</li>
+<li><strong>Next Execution</strong>: Configurable in <strong>Settings &gt; Technical &gt;
+Automation &gt; Scheduled Actions</strong></li>
+</ul>
+<p>You can modify the frequency of the scheduled action based on your
+requirements.</p>
+<div class="section" id="bug-tracker">
+<h4>Bug Tracker</h4>
+<p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/partner-contact/issues">GitHub Issues</a>.
+In case of trouble, please check there if your issue has already been reported.
+If you spotted it first, help us to smash it by providing a detailed and welcomed
+<a class="reference external" href="https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_identification_notification%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
+<p>Do not contact contributors directly about support or help with technical issues.</p>
+</div>
+<div class="section" id="credits">
+<h4>Credits</h4>
+</div>
+</div>
+</div>
+<div class="section" id="authors">
+<h2>Authors</h2>
+<ul class="simple">
+<li>Open Source Integrators</li>
+</ul>
+</div>
+<div class="section" id="contributors">
+<h2>Contributors</h2>
+<ul class="simple">
+<li>Chankya Soni &lt;<a class="reference external" href="mailto:csoni&#64;opensourceintegrators.com">csoni&#64;opensourceintegrators.com</a>&gt;</li>
+<li>Murtaza Mithaiwala &lt;<a class="reference external" href="mailto:mmithaiwala&#64;opensourceintegrators.com">mmithaiwala&#64;opensourceintegrators.com</a>&gt;</li>
+</ul>
+</div>
+<div class="section" id="maintainers">
+<h2>Maintainers</h2>
+<p>This module is maintained by the OCA.</p>
+<a class="reference external image-reference" href="https://odoo-community.org">
+<img alt="Odoo Community Association" src="https://odoo-community.org/logo.png" />
+</a>
+<p>OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.</p>
+<p>This module is part of the <a class="reference external" href="https://github.com/OCA/partner-contact/tree/19.0/partner_identification_notification">OCA/partner-contact</a> project on GitHub.</p>
+<p>You are welcome to contribute. To learn how please visit <a class="reference external" href="https://odoo-community.org/page/Contribute">https://odoo-community.org/page/Contribute</a>.</p>
+</div>
+</div>
+</div>
+</body>
+</html>
