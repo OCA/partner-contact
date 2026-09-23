@@ -108,7 +108,7 @@ class ResPartnerRelationType(models.Model):
                 return None
             # If contact_type is 'p' company records are invalid.
             # If contact_type is 'c' person records are invalid.
-            is_company = True if contact_type == "p" else False
+            is_company = contact_type != "p"
             fieldname2 = f"{side}_partner_id.is_company"
             return Domain(fieldname2, "=", is_company)
 

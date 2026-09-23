@@ -1,9 +1,13 @@
 # Copyright 2013-2025 Therp BV <http://therp.nl>.
+# Copyright 2026 Open Eye Development <http://openeyedev.eu>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "name": "Partner Relations",
-    "version": "19.0.1.1.3",
-    "author": "Therp BV,Camptocamp,Odoo Community Association (OCA)",
+    "version": "20.0.1.0.0",
+    "author": "Therp BV"
+    ",Camptocamp"
+    ",Open Eye Development"
+    ",Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "complexity": "normal",
     "category": "Customer Relationship Management",
@@ -11,7 +15,7 @@
     "depends": ["contacts", "sales_team"],
     "demo": ["data/demo.xml"],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "views/res_partner_relation_type.xml",
         "views/res_partner_relation.xml",
         "views/res_partner.xml",
