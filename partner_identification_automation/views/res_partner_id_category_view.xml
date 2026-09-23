@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Inherit the partner ID category form view to add automation fields -->
+    <record id="view_res_partner_id_category_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.id_category.form.inherit.automation</field>
+        <field name="model">res.partner.id_category</field>
+        <field
+            name="inherit_id"
+            ref="partner_identification.view_partner_id_category_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group" position="after">
+                <group string="Automation">
+                    <group>
+                        <field name="default_issuer_id" />
+                    </group>
+                    <group>
+                        <label
+                            for="default_validity_number"
+                            string="Default validity duration"
+                        />
+                        <div class="o_row">
+                            <field name="default_validity_number" class="oe_inline" />
+                            <field name="default_validity_unit" class="oe_inline" />
+                        </div>
+                        <label for="renewal_lead_number" string="Renewal Lead Time" />
+                        <div class="o_row">
+                            <field name="renewal_lead_number" class="oe_inline" />
+                            <field name="renewal_lead_unit" class="oe_inline" />
+                        </div>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
