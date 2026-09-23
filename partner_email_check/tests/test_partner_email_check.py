@@ -12,7 +12,13 @@ class TestPartnerEmailCheck(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.env = cls.env(
+            context=dict(
+                cls.env.context,
+                tracking_disable=True,
+                partner_email_check_force=True,
+            )
+        )
         cls.test_partner = cls.env["res.partner"].create({"name": "test"})
         cls.env.company.partner_email_check_syntax = True
         cls.env.company.partner_email_check_filter_duplicates = False
@@ -142,3 +148,9 @@ class TestPartnerEmailCheck(TransactionCase):
         self.env.company.partner_email_check_syntax = False
         self.test_partner.email = "bad@email@domain..com"
         self.assertTrue(self.test_partner.email)
+
+    def test_disabled_by_default_in_test_mode(self):
+        """Without the force-context override, checks are off by default in test mode"""
+        partner = self.test_partner.with_context(partner_email_check_force=False)
+        partner.email = "bad@email@domain..com"
+        self.assertEqual(partner.email, "bad@email@domain..com")
