@@ -27,7 +27,6 @@ class ResPartner(models.Model):
         store=True,
     )
     medical_license = fields.Char(
-        string="Medical License",
         compute="_compute_dea_medical_license",
         store=True,
     )

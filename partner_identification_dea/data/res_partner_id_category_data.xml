@@ -3,7 +3,9 @@
     <record model="res.partner.id_category" id="res_partner_id_category_dea">
         <field name="name">DEA Number</field>
         <field name="code">DEA</field>
-        <field name="validation_code"><![CDATA[
+        <field
+            name="validation_code"
+        ><![CDATA[
 if len(str(id_number.name)) != 9:
     failed = True
 elif str(

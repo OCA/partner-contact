@@ -4,6 +4,7 @@
 from dateutil.relativedelta import relativedelta
 
 from odoo import fields
+from odoo.exceptions import ValidationError
 from odoo.tests import common
 
 
@@ -97,4 +98,62 @@ class TestResPartner(common.TransactionCase):
         self.assertIn("John", result[0][1])
 
     def test_send_expiration_date_notification(self):
+        self.partner_roy.email = "roy@example.com"
         self.partner_obj.send_expiration_date_notification()
+
+    def test_get_open_id_number_without_category(self):
+        self.assertFalse(self.partner_roy._get_open_id_number(False))
+
+    def test_name_search_empty_value(self):
+        result = self.partner_obj.name_search(name="")
+        self.assertTrue(result)
+
+    def test_dea_checksum_validation(self):
+        with self.assertRaises(ValidationError):
+            self.partner_number_obj.create(
+                {
+                    "partner_id": self.partner_roy.id,
+                    "category_id": self.dea_category_id.id,
+                    "status": "draft",
+                    "name": "AA1270539",
+                }
+            )
+
+    def test_create_open_id_closes_previous(self):
+        first = self.partner_roy.id_numbers.filtered(
+            lambda number: number.category_id == self.dea_category_id
+        )
+        self.assertEqual(first.status, "open")
+        second = self.partner_number_obj.create(
+            {
+                "partner_id": self.partner_roy.id,
+                "category_id": self.dea_category_id.id,
+                "status": "open",
+                "valid_until": self.date,
+                "name": "AB1234563",
+            }
+        )
+        self.assertEqual(second.status, "open")
+        self.assertEqual(first.status, "close")
+        self.assertEqual(self.partner_roy.dea_number, "AB1234563")
+
+    def test_search_id_number_limited_to_context_partner(self):
+        numbers = self.partner_number_obj.with_context(
+            partner_id=self.partner_roy.id
+        ).search([("category_id.code", "=", "DEA")])
+        self.assertTrue(numbers)
+        self.assertTrue(all(number.partner_id == self.partner_roy for number in numbers))
+        self.assertFalse(
+            numbers.filtered(lambda number: number.partner_id == self.partner_john)
+        )
+
+    def test_sale_order_onchange_dea_number(self):
+        dea = self.partner_roy.id_numbers.filtered(
+            lambda number: number.category_id == self.dea_category_id
+        )[:1]
+        order = self.env["sale.order"].new({"dea_number_id": dea.id})
+        order._onchange_dea_number_id()
+        self.assertEqual(order.partner_id, self.partner_roy)
+        empty_order = self.env["sale.order"].new({})
+        empty_order._onchange_dea_number_id()
+        self.assertFalse(empty_order.partner_id)

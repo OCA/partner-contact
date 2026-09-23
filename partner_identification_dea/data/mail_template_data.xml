@@ -9,10 +9,14 @@
         <field name="body_html" type="html">
             <div style="margin: 0px; padding: 0px;">
                 <p style="margin: 0px; padding: 0px; font-size: 13px;">
-                    Dear <b><t t-out="object.name or ''" /></b>,
+                    Dear <b>
+                    <t t-out="object.name or ''" />
+                </b>,
                     <br />
                     This notification is to inform you that your DEA Number expires on
-                    <b><t t-out="object.dea_expired_date or ''" /></b>.
+                    <b>
+                    <t t-out="object.dea_expired_date or ''" />
+                </b>.
                     <br />
                     Please provide an updated number as soon as possible.
                     <br />
@@ -33,10 +37,14 @@
         <field name="body_html" type="html">
             <div style="margin: 0px; padding: 0px;">
                 <p style="margin: 0px; padding: 0px; font-size: 13px;">
-                    Dear <b><t t-out="object.name or ''" /></b>,
+                    Dear <b>
+                    <t t-out="object.name or ''" />
+                </b>,
                     <br />
                     This notification is to inform you that your Medical License expires
-                    on <b><t t-out="object.medical_license_expired_date or ''" /></b>.
+                    on <b>
+                    <t t-out="object.medical_license_expired_date or ''" />
+                </b>.
                     <br />
                     Please provide an updated number as soon as possible.
                     <br />
