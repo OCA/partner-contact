@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2015-2017 ACSONE SA/NV
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
@@ -22,7 +22,7 @@
         <field name="model">partner.academic.title</field>
         <field name="arch" type="xml">
             <tree editable="bottom">
-                <field name="sequence"/>
+                <field name="sequence" />
                 <field name="name" />
             </tree>
         </field>
@@ -33,7 +33,11 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem id="menu_academic_title" name="Academic Titles"
+    <menuitem
+        id="menu_academic_title"
+        name="Academic Titles"
         parent="contacts.res_partner_menu_config"
-        action="open_academic_title" sequence="3"/>
+        action="open_academic_title"
+        sequence="3"
+    />
 </odoo>

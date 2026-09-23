@@ -7,18 +7,24 @@ from odoo.tests import common
 class TestPartnerAcademicTitle(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
-        super(TestPartnerAcademicTitle, cls).setUpClass()
-        cls.partner_ac_tit_A = cls.env['partner.academic.title'].create({
-            'name': 'A',
-            'sequence': 2,
-        })
-        cls.partner_ac_tit_B = cls.env['partner.academic.title'].create({
-            'name': 'B',
-            'sequence': 1,
-        })
-        cls.partner = cls.env['res.partner'].create({
-            'name': 'Test partner',
-        })
+        super().setUpClass()
+        cls.partner_ac_tit_A = cls.env["partner.academic.title"].create(
+            {
+                "name": "A",
+                "sequence": 2,
+            }
+        )
+        cls.partner_ac_tit_B = cls.env["partner.academic.title"].create(
+            {
+                "name": "B",
+                "sequence": 1,
+            }
+        )
+        cls.partner = cls.env["res.partner"].create(
+            {
+                "name": "Test partner",
+            }
+        )
 
     def test_compute_academic_title_display(self):
         partner = self.partner
