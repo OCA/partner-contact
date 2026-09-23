@@ -101,12 +101,22 @@ class TestResPartner(common.TransactionCase):
         self.partner_roy.email = "roy@example.com"
         self.partner_obj.send_expiration_date_notification()
 
+    def test_send_expiration_date_notification_without_template(self):
+        self.env.ref(
+            "partner_identification_dea.email_template_dea_notification"
+        ).unlink()
+        self.partner_obj.send_expiration_date_notification()
+
     def test_get_open_id_number_without_category(self):
         self.assertFalse(self.partner_roy._get_open_id_number(False))
 
     def test_name_search_empty_value(self):
         result = self.partner_obj.name_search(name="")
         self.assertTrue(result)
+
+    def test_search_display_name_without_like_operator(self):
+        domain = self.partner_obj._search_display_name("!=", "John")
+        self.assertTrue(domain)
 
     def test_dea_checksum_validation(self):
         with self.assertRaises(ValidationError):
@@ -142,7 +152,9 @@ class TestResPartner(common.TransactionCase):
             partner_id=self.partner_roy.id
         ).search([("category_id.code", "=", "DEA")])
         self.assertTrue(numbers)
-        self.assertTrue(all(number.partner_id == self.partner_roy for number in numbers))
+        self.assertTrue(
+            all(number.partner_id == self.partner_roy for number in numbers)
+        )
         self.assertFalse(
             numbers.filtered(lambda number: number.partner_id == self.partner_john)
         )
