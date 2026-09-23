@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="res.partner.id_category" id="res_partner_id_category_dea">
+        <field name="name">DEA Number</field>
+        <field name="code">DEA</field>
+        <field name="validation_code"><![CDATA[
+if len(str(id_number.name)) != 9:
+    failed = True
+elif str(
+    sum([
+        int(id_number.name[2]),
+        int(id_number.name[4]),
+        int(id_number.name[6]),
+    ]) + 2 * sum([
+        int(id_number.name[3]),
+        int(id_number.name[5]),
+        int(id_number.name[7]),
+    ])
+)[-1] != id_number.name[8]:
+    failed = True
+]]></field>
+    </record>
+    <record model="res.partner.id_category" id="res_partner_id_category_medical">
+        <field name="name">Medical License</field>
+        <field name="code">ML</field>
+    </record>
+    <record
+        model="res.partner.id_category"
+        id="res_partner_id_category_controlled_substance"
+    >
+        <field name="name">Controlled Substance</field>
+        <field name="code">CS</field>
+    </record>
+</odoo>
