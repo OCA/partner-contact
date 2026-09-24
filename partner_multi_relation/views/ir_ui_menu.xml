@@ -7,10 +7,10 @@
         parent="contacts.menu_contacts"
     />
     <menuitem
-        id="menu_res_partner_relation_all"
-        sequence="3"
+        id="menu_res_partner_relation_simple"
+        sequence="5"
         parent="menu_res_partner_relation"
-        action="action_res_partner_relation_all"
+        action="action_res_partner_relation"
     />
     <menuitem
         id="menu_res_partner_relation_type"

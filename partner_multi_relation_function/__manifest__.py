@@ -1,8 +1,8 @@
-# Copyright 2024 Therp BV <http://therp.nl>.
+# Copyright 2024-2026 Therp BV <http://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
-    "name": "Partner Relation Functions",
-    "version": "16.0.1.1.0",
+    "name": "DEPRECATED Partner Relation Functions",
+    "version": "16.0.2.0.1",
     "author": "Therp BV,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "maintainers": ["NL66278"],
@@ -16,10 +16,12 @@
         "demo/res_partner_relation_demo.xml",  # Must be after type and partner
     ],
     "data": [
-        "views/res_partner_views.xml",
-        "views/res_partner_relation_all_views.xml",
-        "views/res_partner_relation_type_views.xml",
+        # Already remove views that will clash with partner_multi_relation_contact
+        # "views/res_partner_views.xml",
+        "views/res_partner_relation_views.xml",
+        # "views/res_partner_relation_type_views.xml",
     ],
     "auto_install": False,
     "installable": True,
+    "uninstall_hook": "uninstall_hook",  # Save function data in relation_contact
 }

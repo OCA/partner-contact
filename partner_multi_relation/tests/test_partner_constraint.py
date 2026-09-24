@@ -5,16 +5,14 @@ from odoo.exceptions import ValidationError
 from .test_partner_relation_common import TestPartnerRelationCommon
 
 
-class TestPartnerContraint(TestPartnerRelationCommon):
+class TestPartnerConstraint(TestPartnerRelationCommon):
     def test_change_partner_type(self):
-        # Create relation between self.partner_02_company and self.partner_01_person
-        self._create_company2person_relation()
         with self.assertRaises(ValidationError):
             self.partner_02_company.write({"is_company": False})
         with self.assertRaises(ValidationError):
             self.partner_01_person.write({"is_company": True})
         # Create a relation where the type does not matter.
-        favorable_type = self.type_model.create(
+        favorable_type = self.RelationType.create(
             {
                 "name": "looks favorable on",
                 "name_inverse": "is looked on favorable by",
@@ -23,13 +21,13 @@ class TestPartnerContraint(TestPartnerRelationCommon):
             }
         )
         # Create two persons and connect them.
-        partner_shoe_shop = self.partner_model.create(
+        partner_shoe_shop = self.Partner.create(
             {"name": "Test Jan Shoe Shop", "is_company": False, "ref": "SS01"}
         )
-        partner_maria = self.partner_model.create(
+        partner_maria = self.Partner.create(
             {"name": "Maria Montenelli", "is_company": False, "ref": "MM01"}
         )
-        self.relation_model.create(
+        self.Relation.create(
             {
                 "left_partner_id": partner_shoe_shop.id,
                 "right_partner_id": partner_maria.id,
