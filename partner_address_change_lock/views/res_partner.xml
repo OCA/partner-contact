@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C) 2026 Akretion (<http://www.akretion.com>).
+@author Kévin Roche <kevin.roche@akretion.com>
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="view_partner_form_address_lock" model="ir.ui.view">
+        <field name="name">res.partner.form.address.lock</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page
+                    string="Address History"
+                    name="address_history"
+                    attrs="{'invisible': ['|', ('parent_id', '!=', False), ('address_history_html', '=', False)]}"
+                >
+                        <field
+                        name="address_history_html"
+                        widget="html"
+                        readonly="1"
+                        nolabel="1"
+                    />
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>
