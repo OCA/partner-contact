@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!--
     Copyright 2026 Camptocamp SA (https://www.camptocamp.com).
     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
@@ -58,6 +58,7 @@
             </search>
         </field>
     </record>
+
     <record id="action_partner_classification" model="ir.actions.act_window">
         <field name="name">Partner Classifications</field>
         <field name="res_model">res.partner.classification</field>
