@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="view_partner_simple_form_fax" model="ir.ui.view">
         <field name="name">Add fax on partner</field>
@@ -22,14 +22,14 @@
                 expr="//field[@name='child_ids']/form//div[field[@name='phone']]"
                 position="after"
             >
-                <div class="d-flex align-items-baseline">
-                    <i class="fa fa-fw me-1 fa-phone text-primary" title="Fax" />
-                    <field
-                        name="fax"
-                        placeholder="Fax..."
-                        widget="phone"
-                        class="w-100"
+                <label for="fax" class="d-md-none" />
+                <div class="d-flex align-items-baseline w-md-50 gap-2">
+                    <i
+                        class="oi oi-filled d-none d-md-block"
+                        data-icon="phone"
+                        title="Fax"
                     />
+                    <field name="fax" placeholder="Fax..." widget="phone" />
                 </div>
             </xpath>
         </field>
