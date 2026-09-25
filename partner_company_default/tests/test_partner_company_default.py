@@ -1,7 +1,7 @@
 # Copyright 2023 Quartile Limited
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-import odoo.tests.common as common
+from odoo.tests import common
 
 
 class TestPartnerCompanyDefault(common.TransactionCase):
