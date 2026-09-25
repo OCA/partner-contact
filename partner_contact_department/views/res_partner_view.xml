@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record model="ir.ui.view" id="view_partner_form_department">
+    <record id="view_partner_form_department" model="ir.ui.view">
         <field name="name">Partner form with department</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
@@ -34,7 +34,7 @@
             </xpath>
         </field>
     </record>
-    <record model="ir.ui.view" id="view_res_partner_filter_department">
+    <record id="view_res_partner_filter_department" model="ir.ui.view">
         <field name="name">Partner search with department</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_res_partner_filter" />

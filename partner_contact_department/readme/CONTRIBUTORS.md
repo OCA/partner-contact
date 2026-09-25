@@ -10,3 +10,4 @@
 - Aiendry Sarkar \<<aiendry@aktivsoftware.com>\>
 - Ruchir Shukla \<<ruchir@bizzappdev.com>\>
 - Julien Coux \<<julien.coux@camptocamp.com>\>
+- Sudhir Arya\<<sudhir@erpharbor.com>\>

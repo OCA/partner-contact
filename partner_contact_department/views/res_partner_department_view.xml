@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="res_partner_department_action" model="ir.actions.act_window">
         <field name="name">Departments</field>
@@ -29,8 +29,8 @@
         </field>
     </record>
     <menuitem
-        action="res_partner_department_action"
         id="menu_res_partner_department"
+        action="res_partner_department_action"
         parent="contacts.res_partner_menu_config"
     />
 </odoo>
