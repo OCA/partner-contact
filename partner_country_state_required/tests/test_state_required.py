@@ -2,15 +2,14 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo.exceptions import ValidationError
+from odoo.tests.common import TransactionCase
 
-from odoo.addons.base.tests.common import BaseCommon
 
-
-class TestCountryStateRequired(BaseCommon):
+class TestCountryStateRequired(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.partner_model = cls.env["res.partner"]
+        cls.partner_model = cls.env["res.partner"].with_context(tracking_disable=True)
         cls.spain = cls.env.ref("base.es")
         cls.state_bcn = cls.env.ref("base.state_es_b")
 
