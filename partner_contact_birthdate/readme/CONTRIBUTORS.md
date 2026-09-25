@@ -6,3 +6,4 @@
 - Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
 - Druidoo (\<<https://www.druidoo.io>\>)
 - Simone Rubino \<<daemo00@gmail.com>>
+- Sudhir Arya \<<sudhir@erpharbor.com>\>
