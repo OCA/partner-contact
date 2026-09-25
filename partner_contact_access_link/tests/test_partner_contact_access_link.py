@@ -8,9 +8,7 @@ class TestPartnerContactAccessLink(TransactionCase):
     def setUp(self):
         super().setUp()
         self.partner_model = self.env["res.partner"]
-        self.company = self.partner_model.create(
-            {"name": "Test Company", "company_type": "company"}
-        )
+        self.company = self.partner_model.create({"name": "Test Company"})
         self.contact = self.partner_model.create(
             {"name": "Test Contact", "type": "contact", "parent_id": self.company.id}
         )

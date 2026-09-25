@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!-- Copyright 2020 Tecnativa - Jairo Llopis
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <data>
@@ -9,8 +9,8 @@
         <field name="arch" type="xml">
             <!-- Make child kanban able to open form in full view -->
             <xpath
-                expr="//field[@name='child_ids']/kanban/templates//field[@name='name']"
-                position="after"
+                expr="//field[@name='child_ids']/kanban/templates//t[@t-name='card']"
+                position="inside"
             >
                 <button
                     class="btn btn-link"
@@ -19,8 +19,9 @@
                     title="Open full form"
                 >
                     <i
-                        class="fa fa-caret-right fa-2x"
-                        style="position:absolute;top:-4px;right:5px;transform:rotateY(0deg) rotate(-45deg);"
+                        class="oi"
+                        data-icon="arrow_forward"
+                        style="position:absolute; top:5px; right:5px; transform:rotate(-45deg);         font-size:22px;"
                     />
                 </button>
             </xpath>
