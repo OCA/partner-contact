@@ -5,6 +5,8 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestPartnerCountryLang(BaseCommon):
+    _test_user_groups = ("base.group_user", "base.group_partner_manager")
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
