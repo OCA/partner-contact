@@ -9,5 +9,5 @@ class ResCompany(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
-        self = self.with_context(creating_from_company=True)
-        return super().create(vals_list)
+        company = self.with_context(creating_from_company=True)
+        return super(ResCompany, company).create(vals_list)

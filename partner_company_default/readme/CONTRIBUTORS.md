@@ -1,1 +1,2 @@
 - `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`_
+- Sudhir Arya \<<sudhir@erpharbor.com>\>
