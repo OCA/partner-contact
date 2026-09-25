@@ -7,6 +7,7 @@
     "website": "https://github.com/OCA/partner-contact",
     "category": "Partner",
     "license": "AGPL-3",
+    "maintainers": ["AungKoKoLin1997"],
     "depends": ["base"],
     "data": [
         "views/res_partner_views.xml",
