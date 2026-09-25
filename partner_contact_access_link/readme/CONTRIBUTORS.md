@@ -1,0 +1,4 @@
+- Jairo Llopis ([Tecnativa](https://www.tecnativa.com/))
+- Harald Panten ([Sygel Technology](https://www.sygel.es/))
+- Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
+- Sudhir Arya \<<sudhir@erpharbor.com>\>
