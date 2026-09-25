@@ -3,9 +3,8 @@
 
 {
     "name": "Partner Category Description",
-    "summary": """Adds a description field to contact categories to improve
-    organization and managment of customer relationships.""",
-    "version": "19.0.1.0.1",
+    "summary": "Adds a description field to contact categories",
+    "version": "20.0.1.0.0",
     "development_status": "Alpha",
     "category": "Marketing",
     "website": "https://github.com/OCA/partner-contact",
