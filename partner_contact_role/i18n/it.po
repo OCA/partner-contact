@@ -1,0 +1,86 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_contact_role
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2024-08-14 17:58+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
+
+#. module: partner_contact_role
+#: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__active
+msgid "Active"
+msgstr "Attivo"
+
+#. module: partner_contact_role
+#: model:ir.model.fields,help:partner_contact_role.field_res_partner_role__active
+msgid "By unchecking the active field, you may hide a role you will not use."
+msgstr ""
+"Deselezionando il campo attivo, si può nascondere un ruolo che non si "
+"utilizzerà."
+
+#. module: partner_contact_role
+#: model:ir.model,name:partner_contact_role.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_contact_role
+#: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: partner_contact_role
+#: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: partner_contact_role
+#: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: partner_contact_role
+#: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_contact_role
+#: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: partner_contact_role
+#: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: partner_contact_role
+#: model:ir.model.fields,field_description:partner_contact_role.field_res_partner_role__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: partner_contact_role
+#: model:ir.actions.act_window,name:partner_contact_role.res_partner_role_act_window
+#: model:ir.model,name:partner_contact_role.model_res_partner_role
+msgid "Partner Role"
+msgstr "Ruolo partner"
+
+#. module: partner_contact_role
+#: model:ir.ui.menu,name:partner_contact_role.res_partner_role_menu
+msgid "Partner Roles"
+msgstr "Ruoli partner"
+
+#. module: partner_contact_role
+#: model:ir.model.fields,field_description:partner_contact_role.field_res_partner__role_ids
+#: model:ir.model.fields,field_description:partner_contact_role.field_res_users__role_ids
+msgid "Roles"
+msgstr "Ruoli"
