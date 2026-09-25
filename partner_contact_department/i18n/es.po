@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_department
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-26 15:32+0000\n"
+"PO-Revision-Date: 2019-11-10 17:34+0000\n"
+"Last-Translator: Galoperd <jvcsan@gmail.com>\n"
+"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.8\n"
+
+#. module: partner_contact_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__child_ids
+msgid "Child departments"
+msgstr "Departamentos hijo"
+
+#. module: partner_contact_department
+#: model:ir.model,name:partner_contact_department.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_contact_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: partner_contact_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: partner_contact_department
+#: model:ir.model,name:partner_contact_department.model_res_partner_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner__department_id
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_users__department_id
+#: model_terms:ir.ui.view,arch_db:partner_contact_department.view_partner_form_department
+#: model_terms:ir.ui.view,arch_db:partner_contact_department.view_res_partner_filter_department
+msgid "Department"
+msgstr "Departamento"
+
+#. module: partner_contact_department
+#: model:ir.actions.act_window,name:partner_contact_department.res_partner_department_action
+#: model:ir.ui.menu,name:partner_contact_department.menu_res_partner_department
+#: model_terms:ir.ui.view,arch_db:partner_contact_department.res_partner_department_tree_view
+msgid "Departments"
+msgstr "Departamentos"
+
+#. module: partner_contact_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: partner_contact_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_contact_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: partner_contact_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: partner_contact_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: partner_contact_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: partner_contact_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__parent_path
+msgid "Parent Path"
+msgstr "Ruta padre"
+
+#. module: partner_contact_department
+#: model:ir.model.fields,field_description:partner_contact_department.field_res_partner_department__parent_id
+msgid "Parent department"
+msgstr "Departamento padre"
+
+#~ msgid "Error! You cannot create recursive departments."
+#~ msgstr "Error. No puede crear departamentos recursivos."
+
+#, fuzzy
+#~ msgid "Parent Right"
+#~ msgstr "Padre derecho"
+
+#~ msgid "Partner"
+#~ msgstr "Empresa"
