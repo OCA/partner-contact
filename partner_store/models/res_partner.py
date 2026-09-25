@@ -11,6 +11,7 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     type = fields.Selection(selection_add=[("store", "Store Address")])
+    opening_hours = fields.Char(string="Opening hours")
 
     def _avatar_get_placeholder_path(self):
         if self.type == "store":
