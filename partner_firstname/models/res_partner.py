@@ -42,9 +42,9 @@ class ResPartner(models.Model):
 
         Note that, to avoid deleting the 'default_name' context for all partners when it's
         not appropriate, we must call `create` for each partner individually with the correct
-        context.
+        context, unless all partners need the same context.
         """
-        created_partners = self.browse()
+        contexts = []
         for vals in vals_list:
             partner_context = dict(self.env.context)
             if (
@@ -71,6 +71,14 @@ class ResPartner(models.Model):
                     # Remove the combined fields
                     vals.pop("name", None)
                     partner_context.pop("default_name", None)
+            contexts.append(partner_context)
+        # If all partners have the same context, create them in one batch. The
+        # contexts only differ in whether they still hold 'default_name'.
+        if len({"default_name" in context for context in contexts}) == 1:
+            # pylint: disable=W8121
+            return super(ResPartner, self.with_context(contexts[0])).create(vals_list)
+        created_partners = self.browse()
+        for vals, partner_context in zip(vals_list, contexts):
             # pylint: disable=W8121
             created_partners |= super(
                 ResPartner, self.with_context(partner_context)
