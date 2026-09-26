@@ -44,3 +44,17 @@ class TestPartnerCompanyDefault(common.TransactionCase):
             .create({"name": "Test Partner 2"})
         )
         self.assertEqual(partner.company_id, company_fr)
+
+    def test_explicit_company_is_respected(self):
+        # An explicit company passed to create() must never be replaced by
+        # the default (the default only fills in when no company
+        # information is provided at all).
+        company_2 = self.env["res.company"].create({"name": "Other company"})
+        self.user.company_ids = [(4, company_2.id)]
+        partner = (
+            self.env["res.partner"]
+            .with_user(self.user.id)
+            .with_context(test_partner_company_default=True)
+            .create({"name": "Test Partner explicit", "company_id": company_2.id})
+        )
+        self.assertEqual(partner.company_id, company_2)
