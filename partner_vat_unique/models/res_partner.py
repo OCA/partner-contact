@@ -16,7 +16,7 @@ class ResPartner(models.Model):
         if (
             not self.env["ir.config_parameter"]
             .sudo()
-            .get_param("partner_vat_unique.partner_vat_unique", default=False)
+            .get_bool("partner_vat_unique.partner_vat_unique", default=False)
         ):
             return
 

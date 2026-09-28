@@ -16,12 +16,12 @@ class TestVatUnique(TransactionCase):
         )
 
     def test_duplicated_vat_creation(self):
-        self.config_parameter.set_param("partner_vat_unique.partner_vat_unique", True)
+        self.config_parameter.set_bool("partner_vat_unique.partner_vat_unique", True)
 
         with self.assertRaises(ValidationError):
             self.partner_model.create({"name": "Second partner", "vat": "ESA12345674"})
 
-        self.config_parameter.set_param("partner_vat_unique.partner_vat_unique", False)
+        self.config_parameter.set_bool("partner_vat_unique.partner_vat_unique", False)
 
         partner_duplicated = self.partner_model.create(
             {"name": "Second partner", "vat": "ESA12345674"}
@@ -31,3 +31,20 @@ class TestVatUnique(TransactionCase):
     def test_duplicate_partner(self):
         partner_copied = self.partner.copy()
         self.assertFalse(partner_copied.vat)
+
+    def test_parent_id_or_no_vat(self):
+        self.config_parameter.set_bool("partner_vat_unique.partner_vat_unique", True)
+
+        # Test creation without VAT
+        partner_no_vat = self.partner_model.create({"name": "No VAT partner"})
+        self.assertFalse(partner_no_vat.vat)
+
+        # Test creation with parent_id and duplicated VAT
+        partner_with_parent = self.partner_model.create(
+            {
+                "name": "Child partner",
+                "parent_id": self.partner.id,
+                "vat": "ESA12345674",
+            }
+        )
+        self.assertEqual(partner_with_parent.vat, "ESA12345674")
