@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!-- Copyright 2017-2018 ACSONE SA/NV
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-    <record model="ir.ui.view" id="res_partner_company_type_form_view">
+    <record id="res_partner_company_type_form_view" model="ir.ui.view">
         <field name="name">
             res.partner.company.type.form (in partner_company_type)
         </field>
@@ -16,7 +16,7 @@
             </form>
         </field>
     </record>
-    <record model="ir.ui.view" id="res_partner_company_type_search_view">
+    <record id="res_partner_company_type_search_view" model="ir.ui.view">
         <field name="name">
             res.partner.company.type.search (in partner_company_type)
         </field>
@@ -27,7 +27,7 @@
             </search>
         </field>
     </record>
-    <record model="ir.ui.view" id="res_partner_company_type_list_view">
+    <record id="res_partner_company_type_list_view" model="ir.ui.view">
         <field name="name">
             res.partner.company.type.list (in partner_company_type)
         </field>
@@ -39,7 +39,7 @@
             </list>
         </field>
     </record>
-    <record model="ir.actions.act_window" id="res_partner_company_type_act_window">
+    <record id="res_partner_company_type_act_window" model="ir.actions.act_window">
         <field name="name">Company Types</field>
         <field name="res_model">res.partner.company.type</field>
         <field name="view_mode">list,form</field>
@@ -47,8 +47,8 @@
         <field name="context">{}</field>
     </record>
     <menuitem
-        action="res_partner_company_type_act_window"
         id="menu_partner_company_type"
+        action="res_partner_company_type_act_window"
         name="Company Types"
         parent="contacts.res_partner_menu_config"
     />
