@@ -6,6 +6,8 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestBasePartnerSequence(BaseCommon):
+    _test_user_groups = ("base.group_system", "base.group_partner_manager")
+
     def test_ref_sequence_on_partner(self):
         # Test sequence on creating partner and copying it
         self.assertTrue(self.partner.ref, "A partner has always a ref.")
