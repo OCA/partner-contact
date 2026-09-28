@@ -23,12 +23,6 @@
         <field name="inherit_id" ref="crm.crm_lead_view_form" />
         <field name="arch" type="xml">
             <xpath
-                expr="//group[@name='opportunity_partner']/field[@name='partner_id']"
-                position="after"
-            >
-                <field name="company_group_id" invisible="not company_group_id" />
-            </xpath>
-            <xpath
                 expr="//group[@name='lead_partner']/field[@name='partner_id']"
                 position="after"
             >
