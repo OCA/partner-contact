@@ -14,3 +14,4 @@
 - Daniel Reis \<<dreis@opensourceintegrators.com>\>
 - Nikul Chaudhary \<<nchaudhary@opensourceintegrators.com>\>
 - Khoi (Kien Kim) \<<khoikk@trobz.com>\>
+- Sudhir Arya\<<sudhir@erpharbor.com>\>
