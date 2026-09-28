@@ -38,11 +38,6 @@ msgid "Code"
 msgstr "Codice"
 
 #. module: partner_stage
-#: model:ir.model,name:partner_stage.model_res_partner
-msgid "Contact"
-msgstr "Contatto"
-
-#. module: partner_stage
 #: model:ir.model,name:partner_stage.model_res_partner_stage
 msgid "Contact Stage"
 msgstr "Fase contatto"
@@ -73,6 +68,7 @@ msgid "Description"
 msgstr "Descrizione"
 
 #. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__display_name
 msgid "Display Name"
 msgstr "Nome visualizzato"
@@ -83,11 +79,17 @@ msgid "Draft"
 msgstr "Bozza"
 
 #. module: partner_stage
+#: model:ir.model,name:partner_stage.model_res_partner
+msgid "Fake Model"
+msgstr ""
+
+#. module: partner_stage
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__fold
 msgid "Fold"
 msgstr "Chiuso"
 
 #. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__id
 msgid "ID"
 msgstr "ID"
@@ -113,8 +115,9 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: partner_stage
-#: model:ir.model.fields,field_description:partner_stage.field_res_partner__state
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__stage_state
 #: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__state
+#: model:ir.model.fields,field_description:partner_stage.field_res_users__stage_state
 msgid "Related State"
 msgstr "Stato correlato"
 
@@ -151,6 +154,9 @@ msgstr "Da approvare"
 #: model:ir.model.fields,help:partner_stage.field_res_partner_stage__sequence
 msgid "Used to order the stages"
 msgstr "Utilizzato per ordinare le fasi"
+
+#~ msgid "Contact"
+#~ msgstr "Contatto"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Ultima modifica il"
