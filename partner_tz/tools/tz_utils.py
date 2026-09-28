@@ -1,10 +1,9 @@
 # Copyright 2020 Camptocamp SA
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
-from datetime import date, datetime
+import zoneinfo
+from datetime import datetime
 
-import pytz
-
-UTC_TZ = pytz.timezone("UTC")
+UTC_TZ = zoneinfo.ZoneInfo("UTC")
 
 
 def tz_to_tz_naive_datetime(from_tz, to_tz, date_time):
@@ -17,10 +16,10 @@ def tz_to_tz_naive_datetime(from_tz, to_tz, date_time):
     :return: tz-naive datetime.datetime object
     """
     if isinstance(from_tz, str):
-        from_tz = pytz.timezone(from_tz)
+        from_tz = zoneinfo.ZoneInfo(from_tz)
     if isinstance(to_tz, str):
-        to_tz = pytz.timezone(to_tz)
-    return from_tz.localize(date_time).astimezone(to_tz).replace(tzinfo=None)
+        to_tz = zoneinfo.ZoneInfo(to_tz)
+    return date_time.replace(tzinfo=from_tz).astimezone(to_tz).replace(tzinfo=None)
 
 
 def tz_to_utc_naive_datetime(from_tz, date_time):
@@ -44,7 +43,7 @@ def tz_to_tz_time(from_tz, to_tz, time, base_date=None):
     """
     # Combine time with a date
     if base_date is None:
-        base_date = date.today()
+        base_date = datetime.now(tz=UTC_TZ).date()
     date_time = datetime.combine(base_date, time)
     new_date_time = tz_to_tz_naive_datetime(from_tz, to_tz, date_time)
     return new_date_time.time()
