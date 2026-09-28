@@ -3,10 +3,8 @@
 
 {
     "name": "Partner Uom Mapping",
-    "summary": """
-        This module adds a mapping table between the unit of measure defined in
-         Odoo and a partner side one.""",
-    "version": "19.0.1.0.0",
+    "summary": "Map Odoo UoM to partner-specific UoM.",
+    "version": "20.0.1.0.0",
     "license": "AGPL-3",
     "author": "ACSONE SA/NV,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
