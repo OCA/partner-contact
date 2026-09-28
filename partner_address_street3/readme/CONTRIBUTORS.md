@@ -3,3 +3,4 @@
 - Huy Ly \<<huyly0909@gmail.com>\>
 - Alexis de Lattre \<<alexis.delattre@akretion.com>\>
 - Nhan Tran \<<nhant@trobz.com>\>
+- Sudhir Arya\<<sudhir@erpharbor.com>\>
