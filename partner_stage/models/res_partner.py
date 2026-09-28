@@ -28,4 +28,8 @@ class Partner(models.Model):
         index=True,
         tracking=True,
     )
-    state = fields.Selection(related="stage_id.state", store=True, readonly=True)
+    stage_state = fields.Selection(
+        related="stage_id.state",
+        store=True,
+        readonly=True,
+    )
