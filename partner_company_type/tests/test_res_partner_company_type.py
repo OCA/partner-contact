@@ -9,6 +9,8 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestResPartnerCompanyType(BaseCommon):
+    _test_user_groups = ("base.group_partner_manager",)
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -23,4 +25,4 @@ class TestResPartnerCompanyType(BaseCommon):
         # Test Duplicate Company type
 
         with self.assertRaises(IntegrityError), tools.mute_logger("odoo.sql_db"):
-            self.company_type.create(dict(name=self.company_type.name))
+            self.company_type.create({"name": self.company_type.name})
