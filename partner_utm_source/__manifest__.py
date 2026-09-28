@@ -3,7 +3,7 @@
 {
     "name": "Partner UTM Source",
     "summary": "This module adds the use of utm source in partners",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "category": "Contacts",
     "author": "Trobz, Odoo Community Association (OCA)",
     "license": "AGPL-3",
