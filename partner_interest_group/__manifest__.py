@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2022 Coop IT Easy SC
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+{
+    "name": "Partner Interest Group",
+    "summary": "Add Interest Group to Partners",
+    "version": "20.0.1.0.0",
+    "category": "Partner",
+    "website": "https://github.com/OCA/partner-contact",
+    "author": "Coop IT Easy SC, Odoo Community Association (OCA)",
+    "maintainers": ["victor-champonnois"],
+    "license": "AGPL-3",
+    "installable": True,
+    "depends": ["contacts"],
+    "data": [
+        "views/res_partner_interest_group_view.xml",
+        "views/res_partner_view.xml",
+        "security/ir.access.csv",
+    ],
+}
