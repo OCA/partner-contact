@@ -12,5 +12,4 @@ class ResPartnerInterestGroup(models.Model):
         "res.company",
         required=False,
         default=lambda self: self.env.company,
-        string="Company",
     )
