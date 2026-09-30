@@ -52,12 +52,12 @@
             to enforce any address of it to have a city in this list.
         </field>
     </record>
-    <record model="ir.ui.menu" id="base_address_extended.menu_res_city">
+    <record id="base_address_extended.menu_res_city" model="ir.ui.menu">
         <field name="active" eval="False" />
     </record>
     <menuitem
-        name="Cities"
         id="locations_menu_cities"
+        name="Cities"
         parent="contacts.menu_localisation"
         action="action_res_city_full"
         sequence="4"
