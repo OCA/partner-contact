@@ -34,48 +34,54 @@ class ResPartner(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
-        """Add inverted names at creation if unavailable. Also, remove the full name
-        from `vals` and context if the partner is an individual and is being created
-        with any name fields, as the name must be computed from the provided name parts;
-        otherwise, the name fields will be computed from the `name` again, when calling
-        its inverse method.
+        """Create the partners with name parts matching their full name.
 
-        Note that, to avoid deleting the 'default_name' context for all partners when it's
-        not appropriate, we must call `create` for each partner individually with the correct
-        context.
+        Each partner falls in one of two cases:
+
+        - A person created with name parts and a full name: the name parts win,
+          the full name is removed from the values and computed from them.
+        - Any other partner: the name parts are split from the full name, or from
+          the 'default_name' of the context when the values give no name. Name
+          parts given in the values are kept, except for a copy. When the values
+          set "name" to None, there is nothing to split and they are kept as they
+          are.
+
+        All partners are created in one batch, without the 'default_name' of the
+        context: where the name is computed from the name parts, the default name
+        would otherwise become the name of the partner, and its inverse would split
+        it again.
         """
-        created_partners = self.browse()
+        default_name = self.env.context.get("default_name")
+        copy = self.env.context.get("copy")
         for vals in vals_list:
-            partner_context = dict(self.env.context)
             if (
                 not vals.get("is_company")
                 and self.name_fields_in_vals(vals)
                 and "name" in vals
             ):
                 del vals["name"]
-                partner_context.pop("default_name", None)
-            else:
-                name = vals.get("name", partner_context.get("default_name"))
-                if name is not None:
-                    # Calculate the split fields
-                    inverted = self._get_inverse_name(
-                        self._get_whitespace_cleaned_name(name),
-                        vals.get(
-                            "is_company", self.default_get(["is_company"])["is_company"]
-                        ),
-                    )
-                    for key, value in inverted.items():
-                        if not vals.get(key) or partner_context.get("copy"):
-                            vals[key] = value
-
-                    # Remove the combined fields
-                    vals.pop("name", None)
-                    partner_context.pop("default_name", None)
-            # pylint: disable=W8121
-            created_partners |= super(
-                ResPartner, self.with_context(partner_context)
-            ).create([vals])
-        return created_partners
+                continue
+            name = vals.get("name", default_name)
+            if name is None:
+                continue
+            vals.pop("name", None)
+            inverted = self._get_inverse_name(
+                self._get_whitespace_cleaned_name(name),
+                vals.get("is_company", self.default_get(["is_company"])["is_company"]),
+            )
+            # A copy takes its name parts from its name, which carries the "(copy)"
+            # suffix, as its values hold the name parts of the original.
+            for key, value in inverted.items():
+                if not vals.get(key) or copy:
+                    vals[key] = value
+        # Dropping the default name is safe for every partner: without a name of
+        # its own, a partner already had the default name split into its name
+        # parts, and a partner with no name to split sets "name" to None, which a
+        # default does not override.
+        context = dict(self.env.context)
+        context.pop("default_name", None)
+        # pylint: disable=W8121
+        return super(ResPartner, self.with_context(context)).create(vals_list)
 
     def get_extra_default_copy_values(self, order):
         """Method to add '(copy)' suffix to lastname or firstname, depending on name
