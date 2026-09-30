@@ -4,7 +4,7 @@
 
 {
     "name": "Location management (aka Better ZIP)",
-    "version": "19.0.1.0.1",
+    "version": "20.0.1.0.1",
     "development_status": "Mature",
     "depends": ["base_address_extended", "contacts"],
     "author": (
@@ -19,7 +19,7 @@
     "summary": """Enhanced zip/npa management system""",
     "website": "https://github.com/OCA/partner-contact",
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "views/res_city_zip_view.xml",
         "views/res_city_view.xml",
         "views/res_country_view.xml",
