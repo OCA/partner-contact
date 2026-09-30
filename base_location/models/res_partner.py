@@ -63,17 +63,15 @@ class ResPartner(models.Model):
     def _compute_city(self):
         if hasattr(super(), "_compute_city"):
             return super()._compute_city()  # pragma: no cover
-        for record in self:
-            if record.zip_id:
-                record.city = record.zip_id.city_id.name
+        for record in self.filtered("zip_id"):
+            record.city = record.zip_id.city_id.name
 
     @api.depends("zip_id")
     def _compute_zip(self):
         if hasattr(super(), "_compute_zip"):
             return super()._compute_zip()  # pragma: no cover
-        for record in self:
-            if record.zip_id:
-                record.zip = record.zip_id.name
+        for record in self.filtered("zip_id"):
+            record.zip = record.zip_id.name
 
     @api.depends("zip_id", "state_id")
     def _compute_country_id(self):

@@ -55,12 +55,14 @@ class ResCompany(models.Model):
             company.partner_id.zip_id = company.zip_id
 
     def _inverse_state(self):
-        self = self.with_context(skip_check_zip=True)
-        return super()._inverse_state()
+        return super(
+            ResCompany, self.with_context(skip_check_zip=True)
+        )._inverse_state()
 
     def _inverse_country(self):
-        self = self.with_context(skip_check_zip=True)
-        return super()._inverse_country()
+        return super(
+            ResCompany, self.with_context(skip_check_zip=True)
+        )._inverse_country()
 
     @api.onchange("zip_id")
     def _onchange_zip_id(self):
