@@ -1,0 +1,576 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* animal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2024-09-05 09:06+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__message_needaction
+msgid "Action Needed"
+msgstr "Azione richiesta"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__active
+msgid "Active"
+msgstr "Attivo"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__activity_ids
+msgid "Activities"
+msgstr "Attività"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decorazione eccezione attività"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__activity_state
+msgid "Activity State"
+msgstr "Stato attività"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icona tipo attività"
+
+#. module: animal
+#: model:ir.model,name:animal.model_animal
+#: model:ir.module.category,name:animal.module_category_animal
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_form
+msgid "Animal"
+msgstr "Animale"
+
+#. module: animal
+#: model:ir.model,name:animal.model_animal_breed
+msgid "Animal Breeds"
+msgstr "Razze animale"
+
+#. module: animal
+#: model:ir.model,name:animal.model_animal_color
+msgid "Animal Colors"
+msgstr "Colori animale"
+
+#. module: animal
+#: model:ir.model,name:animal.model_animal_species
+msgid "Animal Species"
+msgstr "Specie animale"
+
+#. module: animal
+#: model:ir.actions.act_window,name:animal.action_animal
+#: model:ir.ui.menu,name:animal.menu_animal
+#: model:ir.ui.menu,name:animal.menu_root
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+msgid "Animals"
+msgstr "Animali"
+
+#. module: animal
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_form
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+msgid "Archived"
+msgstr "In archivio"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteggio allegati"
+
+#. module: animal
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_kanban
+msgid "Avatar"
+msgstr "Avatar"
+
+#. module: animal
+#: model:animal.breed,name:animal.beagle
+msgid "Beagle"
+msgstr "Beagle"
+
+#. module: animal
+#: model:animal.species,name:animal.bird
+msgid "Bird"
+msgstr "Uccello"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__birth_date
+msgid "Birth Date"
+msgstr "Data di nascita"
+
+#. module: animal
+#: model:animal.breed,name:animal.boxer
+msgid "Boxer"
+msgstr "Boxer"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__breed_id
+#: model:ir.model.fields,field_description:animal.field_animal_color__breed_id
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_breed_form
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+msgid "Breed"
+msgstr "Razza"
+
+#. module: animal
+#: model:ir.actions.act_window,name:animal.action_animal_breed
+#: model:ir.model.fields,field_description:animal.field_animal_species__breed_ids
+#: model:ir.ui.menu,name:animal.menu_breed
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
+msgid "Breeds"
+msgstr "Razze"
+
+#. module: animal
+#: model:animal.breed,name:animal.bull_terrier
+msgid "Bull Terrier"
+msgstr "Bull Terrier"
+
+#. module: animal
+#: model:animal.breed,name:animal.bulldog
+msgid "Bulldog"
+msgstr "Bulldog"
+
+#. module: animal
+#: model:animal.species,name:animal.cat
+msgid "Cat"
+msgstr "Gatto"
+
+#. module: animal
+#: model:animal.breed,name:animal.chihuahua
+msgid "Chihuahua"
+msgstr "Chihuahua"
+
+#. module: animal
+#: model:animal.breed,name:animal.cocker
+msgid "Cocker"
+msgstr "Cocker"
+
+#. module: animal
+#: model:animal.breed,name:animal.collie
+msgid "Collie"
+msgstr "Collie"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__color_id
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_color_form
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+msgid "Color"
+msgstr "Colore"
+
+#. module: animal
+#: model:ir.actions.act_window,name:animal.action_animal_color
+#: model:ir.ui.menu,name:animal.menu_color
+msgid "Colors"
+msgstr "Colori"
+
+#. module: animal
+#: model:ir.ui.menu,name:animal.menu_config
+msgid "Configuration"
+msgstr "Configurazione"
+
+#. module: animal
+#: model_terms:ir.actions.act_window,help:animal.action_animal_breed
+msgid "Create a breed."
+msgstr "Crea una razza."
+
+#. module: animal
+#: model_terms:ir.actions.act_window,help:animal.action_animal_color
+msgid "Create a color."
+msgstr "Crea un colore."
+
+#. module: animal
+#: model_terms:ir.actions.act_window,help:animal.action_animal_species
+msgid "Create a species."
+msgstr "Crea una specie."
+
+#. module: animal
+#: model_terms:ir.actions.act_window,help:animal.action_animal
+msgid "Create an animal"
+msgstr "Crea un animale"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__create_uid
+#: model:ir.model.fields,field_description:animal.field_animal_breed__create_uid
+#: model:ir.model.fields,field_description:animal.field_animal_color__create_uid
+#: model:ir.model.fields,field_description:animal.field_animal_species__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__create_date
+#: model:ir.model.fields,field_description:animal.field_animal_breed__create_date
+#: model:ir.model.fields,field_description:animal.field_animal_color__create_date
+#: model:ir.model.fields,field_description:animal.field_animal_species__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: animal
+#: model:animal.breed,name:animal.dachshund
+msgid "Dachshund"
+msgstr "Dachshund"
+
+#. module: animal
+#: model:animal.breed,name:animal.dalmatian
+msgid "Dalmatian"
+msgstr "Dalmata"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__display_name
+#: model:ir.model.fields,field_description:animal.field_animal_breed__display_name
+#: model:ir.model.fields,field_description:animal.field_animal_color__display_name
+#: model:ir.model.fields,field_description:animal.field_animal_species__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: animal
+#: model:animal.breed,name:animal.doberman
+msgid "Doberman"
+msgstr "Doberman"
+
+#. module: animal
+#: model:animal.species,name:animal.dog
+msgid "Dog"
+msgstr "Cane"
+
+#. module: animal
+#: model:animal.breed,name:animal.english_cocker_spaniel
+msgid "English Cocker Spaniel"
+msgstr "Cocker Spaniel inglese"
+
+#. module: animal
+#: model:ir.model.fields.selection,name:animal.selection__animal__gender__female
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+msgid "Female"
+msgstr "Femmina"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__message_follower_ids
+msgid "Followers"
+msgstr "Seguito da"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguito da (partner)"
+
+#. module: animal
+#: model:ir.model.fields,help:animal.field_animal__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icona Font Awesome es. fa-tasks"
+
+#. module: animal
+#: model:animal.breed,name:animal.french_bulldog
+msgid "French Bulldog"
+msgstr "Bulldog francese"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__gender
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+msgid "Gender"
+msgstr "Genere"
+
+#. module: animal
+#: model:animal.breed,name:animal.german_shepard
+msgid "German Shepard"
+msgstr "Shepard tedesco"
+
+#. module: animal
+#: model:animal.breed,name:animal.golden_retriever
+msgid "Golden Retriever"
+msgstr "Golden Retriever"
+
+#. module: animal
+#: model:animal.breed,name:animal.great_dane
+msgid "Great Dane"
+msgstr "Alano"
+
+#. module: animal
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+msgid "Group By"
+msgstr "Raggruppa per"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__has_message
+msgid "Has Message"
+msgstr "Ha un messaggio"
+
+#. module: animal
+#: model:ir.model.fields.selection,name:animal.selection__animal__gender__hermaphrodite
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+msgid "Hermaphrodite"
+msgstr "Ermafrodita"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__id
+#: model:ir.model.fields,field_description:animal.field_animal_breed__id
+#: model:ir.model.fields,field_description:animal.field_animal_color__id
+#: model:ir.model.fields,field_description:animal.field_animal_species__id
+msgid "ID"
+msgstr "ID"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__activity_exception_icon
+msgid "Icon"
+msgstr "Icona"
+
+#. module: animal
+#: model:ir.model.fields,help:animal.field_animal__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icona per indicare un'attività eccezione."
+
+#. module: animal
+#: model:ir.model.fields,help:animal.field_animal__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
+
+#. module: animal
+#: model:ir.model.fields,help:animal.field_animal__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__image
+msgid "Image"
+msgstr "Immagine"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__message_is_follower
+msgid "Is Follower"
+msgstr "Segue"
+
+#. module: animal
+#: model:animal.breed,name:animal.jack_russell
+msgid "Jack Russell"
+msgstr "Jack Russell"
+
+#. module: animal
+#: model:animal.breed,name:animal.labrador
+msgid "Labrador"
+msgstr "Labrador"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal____last_update
+#: model:ir.model.fields,field_description:animal.field_animal_breed____last_update
+#: model:ir.model.fields,field_description:animal.field_animal_color____last_update
+#: model:ir.model.fields,field_description:animal.field_animal_species____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__write_uid
+#: model:ir.model.fields,field_description:animal.field_animal_breed__write_uid
+#: model:ir.model.fields,field_description:animal.field_animal_color__write_uid
+#: model:ir.model.fields,field_description:animal.field_animal_species__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__write_date
+#: model:ir.model.fields,field_description:animal.field_animal_breed__write_date
+#: model:ir.model.fields,field_description:animal.field_animal_color__write_date
+#: model:ir.model.fields,field_description:animal.field_animal_species__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Allegato principale"
+
+#. module: animal
+#: model:ir.model.fields.selection,name:animal.selection__animal__gender__male
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+msgid "Male"
+msgstr "Maschio"
+
+#. module: animal
+#: model:res.groups,name:animal.group_animal_manager
+msgid "Manager"
+msgstr "Responsabile"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__message_has_error
+msgid "Message Delivery error"
+msgstr "Errore di consegna messaggio"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__message_ids
+msgid "Messages"
+msgstr "Messaggi"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Scadenza mia attività"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__name
+#: model:ir.model.fields,field_description:animal.field_animal_breed__name
+#: model:ir.model.fields,field_description:animal.field_animal_color__name
+#: model:ir.model.fields,field_description:animal.field_animal_species__name
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+msgid "Name"
+msgstr "Nome"
+
+#. module: animal
+#: model:ir.model.fields.selection,name:animal.selection__animal__gender__neutered
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+msgid "Neutered"
+msgstr "Sterilizzato"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Evento calendario attività successiva"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Scadenza prossima attività"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__activity_summary
+msgid "Next Activity Summary"
+msgstr "Riepilogo prossima attività"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo prossima attività"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Numero di azioni"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__message_has_error_counter
+msgid "Number of errors"
+msgstr "Numero di errori"
+
+#. module: animal
+#: model:ir.model.fields,help:animal.field_animal__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Numero di messaggi che richiedono un'azione"
+
+#. module: animal
+#: model:ir.model.fields,help:animal.field_animal__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Numero di messaggi con errore di consegna"
+
+#. module: animal
+#: model:animal.breed,name:animal.pomeranian
+msgid "Pomeranian"
+msgstr "Pomerania"
+
+#. module: animal
+#: model:animal.breed,name:animal.pug
+msgid "Pug"
+msgstr "Carlino"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__ref
+msgid "Reference"
+msgstr "Riferimento"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__activity_user_id
+msgid "Responsible User"
+msgstr "Utente responsabile"
+
+#. module: animal
+#: model:animal.breed,name:animal.rottweiler
+msgid "Rottweiler"
+msgstr "Rottweiler"
+
+#. module: animal
+#: model:animal.color,name:animal.salt
+msgid "Salt and pepper"
+msgstr "Sale e pepe"
+
+#. module: animal
+#: model:animal.breed,name:animal.schnauzer
+msgid "Schnauzer"
+msgstr "Schnauzer"
+
+#. module: animal
+#: model:ir.ui.menu,name:animal.menu_settings
+msgid "Settings"
+msgstr "Impostazioni"
+
+#. module: animal
+#: model:animal.breed,name:animal.shih_tzu
+msgid "Shih Tzu"
+msgstr "Shih Tzu"
+
+#. module: animal
+#: model:animal.breed,name:animal.siberian_husky
+msgid "Siberian Husky"
+msgstr "Husky siberiano"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__size
+msgid "Size"
+msgstr "Dimensione"
+
+#. module: animal
+#: model:ir.actions.act_window,name:animal.action_animal_species
+#: model:ir.model.fields,field_description:animal.field_animal__species_id
+#: model:ir.model.fields,field_description:animal.field_animal_breed__species_id
+#: model:ir.model.fields,field_description:animal.field_animal_color__species_id
+#: model:ir.ui.menu,name:animal.menu_species
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_search
+#: model_terms:ir.ui.view,arch_db:animal.view_animal_species_form
+msgid "Species"
+msgstr "Specie"
+
+#. module: animal
+#: model:ir.model.fields,help:animal.field_animal__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Stato in base alle attività\n"
+"Scaduto: la data richiesta è trascorsa\n"
+"Oggi: la data attività è oggi\n"
+"Pianificato: attività future."
+
+#. module: animal
+#: model:ir.model.fields,help:animal.field_animal__image
+msgid "This field holds the photo of the animal."
+msgstr "Questo campo contiene la foto dell'animale."
+
+#. module: animal
+#: model:ir.model.fields,help:animal.field_animal__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo di attività eccezione sul record."
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__website_message_ids
+msgid "Website Messages"
+msgstr "Messaggi sito web"
+
+#. module: animal
+#: model:ir.model.fields,help:animal.field_animal__website_message_ids
+msgid "Website communication history"
+msgstr "Cronologia comunicazioni sito web"
+
+#. module: animal
+#: model:ir.model.fields,field_description:animal.field_animal__weight
+msgid "Weight (in kg)"
+msgstr "Peso (in kg)"
+
+#. module: animal
+#: model:animal.breed,name:animal.yorkshire_terrier
+msgid "Yorkshire Terrier"
+msgstr "Yorkshire Terrier"
