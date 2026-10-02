@@ -21,7 +21,7 @@ class TestBaseLocationGeonamesImport(common.TransactionCase):
             {"country_ids": [(6, 0, [cls.country.id])]}
         )
         cls.wrong_country = cls.env["res.country"].create(
-            {"name": "Wrong country", "code": "ZZYYXX"}
+            {"name": "Wrong country", "code": "ZZ"}
         )
         cls.wrong_wizard = cls.env["city.zip.geonames.import"].create(
             {"country_ids": [(6, 0, [cls.wrong_country.id])]}
