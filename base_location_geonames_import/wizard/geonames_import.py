@@ -97,7 +97,7 @@ class CityZipGeonamesImport(models.TransientModel):
     @api.model
     def get_and_parse_csv(self, country):
         country_code = country.code
-        config_url = self.env["ir.config_parameter"].get_param(
+        config_url = self.env["ir.config_parameter"].get_str(
             "geonames.url", default="http://download.geonames.org/export/zip/%s.zip"
         )
         url = config_url % country_code
@@ -117,11 +117,11 @@ class CityZipGeonamesImport(models.TransientModel):
         tempdir = tempfile.mkdtemp(prefix="odoo")
         f_geonames.extract(f"{country_code}.txt", tempdir)
 
-        data_file = open(os.path.join(tempdir, f"{country_code}.txt"), encoding="utf-8")
-        data_file.seek(0)
-        reader = csv.reader(data_file, delimiter="	")
-        parsed_csv = [row for i, row in enumerate(reader)]
-        data_file.close()
+        with open(
+            os.path.join(tempdir, f"{country_code}.txt"), encoding="utf-8"
+        ) as data_file:
+            reader = csv.reader(data_file, delimiter="	")
+            parsed_csv = [row for i, row in enumerate(reader)]
         logger.info("The geonames zipfile has been decompressed")
         return parsed_csv
 
@@ -208,11 +208,11 @@ class CityZipGeonamesImport(models.TransientModel):
             logger.info(
                 "%d entries deleted for country %s", len(old_records), country.name
             )
-        except Exception:
+        except UserError:
             for item in items:
                 try:
                     item.unlink()
-                except Exception:
+                except UserError:
                     logger.info(self.env._("%s could not be deleted", item.name))
 
     def _process_csv(self, parsed_csv, country):

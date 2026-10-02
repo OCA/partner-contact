@@ -6,7 +6,7 @@
 
 {
     "name": "Base Location Geonames Import",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "development_status": "Mature",
     "category": "Partner Management",
     "license": "AGPL-3",
@@ -21,7 +21,7 @@
     "website": "https://github.com/OCA/partner-contact",
     "depends": ["base_location"],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "data/res_country_data.xml",
         "views/res_country_view.xml",
         "wizard/geonames_import_view.xml",
