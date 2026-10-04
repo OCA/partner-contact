@@ -28,12 +28,15 @@ The module works through a scheduled action that:
    - The ID category has **"Send Notification"** enabled
    - The ID category has a **"Days Before Expiration"** value greater than 0
    - The ID number status is either **"open"** or **"pending"**
-   - The ID is expiring within the specified number of days
+   - The ID has not expired yet and expires within the specified number of days
    - The ID hasn't been notified already (no **"Notification Date"**)
 
 2. For each matching ID number, it sends an email using the configured template
 
 3. Records the notification date to avoid sending duplicate notifications
+
+When an ID is renewed (its **"Valid Until"** date is changed), the notification
+date is cleared so a new notification is sent before the new expiry date.
 
 ### Testing Notifications
 
@@ -41,7 +44,7 @@ To test the notification system:
 
 1. Set up a test ID category with notification settings
 2. Create a test partner ID with an expiry date within the notification window
-3. Manually execute the scheduled action: **"Send Expiry Notifications"** 
+3. Manually execute the scheduled action: **"Partner Identification Notification"**
 4. Check that the notification email is sent and the notification date is recorded
 
 ### Email Templates
@@ -56,7 +59,7 @@ The module uses email templates to customize notification messages:
 ### Scheduled Action
 
 The notification process runs automatically via a scheduled action:
-- **Name**: "Send Expiry Notifications"
+- **Name**: "Partner Identification Notification"
 - **Interval**: Daily by default
 - **Next Execution**: Configurable in **Settings > Technical > Automation > Scheduled Actions**
 

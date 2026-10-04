@@ -386,14 +386,14 @@ approaching their expiration dates.</p>
 <h3>Features</h3>
 <ul class="simple">
 <li><strong>Automated Expiration Notifications</strong>: Automatically sends
-notifications when partner IDs are approaching their expiry date
-based on configurable thresholds</li>
+notifications when partner IDs are approaching their expiry date based
+on configurable thresholds</li>
 <li><strong>Configurable Notification Settings</strong>: Set custom notification
 periods (days before expiration) per ID category</li>
 <li><strong>Email Template Integration</strong>: Uses customizable email templates for
 professional notification messages</li>
-<li><strong>Duplicate Prevention</strong>: Ensures notifications are only sent once
-per ID number to avoid spam</li>
+<li><strong>Duplicate Prevention</strong>: Ensures notifications are only sent once per
+ID number to avoid spam</li>
 <li><strong>Scheduled Processing</strong>: Runs automatically via a cron job to check
 and send notifications regularly</li>
 <li><strong>Flexible Status Handling</strong>: Only processes ID numbers with
@@ -418,8 +418,8 @@ expiration dates</li>
 <p>The module seamlessly integrates with the existing partner
 identification framework by:</p>
 <ul class="simple">
-<li>Extending the <tt class="docutils literal">res.partner.id_number</tt> model with a notification
-date field</li>
+<li>Extending the <tt class="docutils literal">res.partner.id_number</tt> model with a notification date
+field</li>
 <li>Enhancing the <tt class="docutils literal">res.partner.id_category</tt> model with notification
 settings</li>
 <li>Leveraging the existing email template system for notifications</li>
@@ -466,8 +466,8 @@ ID expiration dates across multiple systems</li>
 compliance violations or security risks</li>
 <li><strong>Last-Minute Renewals</strong>: Discovering expiring IDs too late causes
 rushed renewal processes</li>
-<li><strong>Inconsistent Processes</strong>: Without automated systems, different
-teams may handle expirations inconsistently</li>
+<li><strong>Inconsistent Processes</strong>: Without automated systems, different teams
+may handle expirations inconsistently</li>
 <li><strong>Resource Wastage</strong>: Significant effort goes into maintaining
 spreadsheets or manual tracking systems</li>
 </ul>
@@ -559,7 +559,8 @@ configuration</li>
 <li>The ID category has a <strong>“Days Before Expiration”</strong> value greater
 than 0</li>
 <li>The ID number status is either <strong>“open”</strong> or <strong>“pending”</strong></li>
-<li>The ID is expiring within the specified number of days</li>
+<li>The ID has not expired yet and expires within the specified number
+of days</li>
 <li>The ID hasn’t been notified already (no <strong>“Notification Date”</strong>)</li>
 </ul>
 </li>
@@ -568,6 +569,9 @@ template</li>
 <li>Records the notification date to avoid sending duplicate
 notifications</li>
 </ol>
+<p>When an ID is renewed (its <strong>“Valid Until”</strong> date is changed), the
+notification date is cleared so a new notification is sent before the
+new expiry date.</p>
 </div>
 <div class="section" id="testing-notifications">
 <h3>Testing Notifications</h3>
@@ -576,8 +580,8 @@ notifications</li>
 <li>Set up a test ID category with notification settings</li>
 <li>Create a test partner ID with an expiry date within the notification
 window</li>
-<li>Manually execute the scheduled action: <strong>“Send Expiry
-Notifications”</strong></li>
+<li>Manually execute the scheduled action: <strong>“Partner Identification
+Notification”</strong></li>
 <li>Check that the notification email is sent and the notification date
 is recorded</li>
 </ol>
@@ -597,7 +601,7 @@ is recorded</li>
 <h3>Scheduled Action</h3>
 <p>The notification process runs automatically via a scheduled action:</p>
 <ul class="simple">
-<li><strong>Name</strong>: “Send Expiry Notifications”</li>
+<li><strong>Name</strong>: “Partner Identification Notification”</li>
 <li><strong>Interval</strong>: Daily by default</li>
 <li><strong>Next Execution</strong>: Configurable in <strong>Settings &gt; Technical &gt;
 Automation &gt; Scheduled Actions</strong></li>
