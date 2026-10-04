@@ -86,7 +86,6 @@ class TestIdentificationAutomation(BaseCommon):
             self.identification._run_automatic_status_update()
 
         # Check that the document is marked as expired
-        self.identification = self.identification.browse(self.identification.id)
         self.assertEqual(self.identification.status, "close")  # Use 'close' not 'exp'
 
     def test_status_to_renew(self):
@@ -110,7 +109,6 @@ class TestIdentificationAutomation(BaseCommon):
             self.identification._run_automatic_status_update()
 
         # Check that the document is marked as pending
-        self.identification = self.identification.browse(self.identification.id)
         self.assertEqual(self.identification.status, "pending")  # Use 'pend' not 'tor'
 
     def test_status_running(self):
@@ -125,7 +123,6 @@ class TestIdentificationAutomation(BaseCommon):
             self.identification._run_automatic_status_update()
 
         # Check that the document is marked as running (open)
-        self.identification = self.identification.browse(self.identification.id)
         self.assertEqual(self.identification.status, "open")  # Use 'open' not 'running'
 
     def test_status_not_updated_for_final_states(self):
@@ -143,7 +140,6 @@ class TestIdentificationAutomation(BaseCommon):
             self.identification._run_automatic_status_update()
 
         # Check that status remains close
-        self.identification = self.identification.browse(self.identification.id)
         self.assertEqual(self.identification.status, "close")
 
         # Mark doc as cancelled - orig module doesn't have 'cancelled' status,
@@ -155,7 +151,6 @@ class TestIdentificationAutomation(BaseCommon):
             self.identification._run_automatic_status_update()
 
         # Check that status remains close
-        self.identification = self.identification.browse(self.identification.id)
         self.assertEqual(self.identification.status, "close")
 
     def test_onchange_defaults_without_validity_start(self):
@@ -425,8 +420,7 @@ class TestIdentificationAutomation(BaseCommon):
         with freeze_time("2023-01-02"):
             identification._run_automatic_status_update()
 
-        # Refresh the record and check status
-        identification = identification.browse(identification.id)
+        # Check status
         self.assertEqual(identification.status, "pending")
 
     def test_renewal_calculation_months_edge_case(self):
@@ -460,7 +454,6 @@ class TestIdentificationAutomation(BaseCommon):
         with freeze_time("2023-02-20"):
             identification._run_automatic_status_update()
 
-        identification = identification.browse(identification.id)
         self.assertEqual(identification.status, "pending")
 
     def test_expired_but_already_pending(self):
@@ -478,8 +471,7 @@ class TestIdentificationAutomation(BaseCommon):
         with freeze_time("2023-02-01"):
             self.identification._run_automatic_status_update()
 
-        # Refresh the record and check status - should be 'close' now
-        self.identification = self.identification.browse(self.identification.id)
+        # Check status - should be 'close' now
         self.assertEqual(self.identification.status, "close")
 
     def test_running_to_pending_transition(self):
@@ -501,8 +493,7 @@ class TestIdentificationAutomation(BaseCommon):
         with freeze_time("2023-02-06"):
             self.identification._run_automatic_status_update()
 
-        # Refresh the record and check status - should be 'pending'
-        self.identification = self.identification.browse(self.identification.id)
+        # Check status - should be 'pending'
         self.assertEqual(self.identification.status, "pending")
 
     def test_no_renewal_settings(self):
@@ -540,7 +531,6 @@ class TestIdentificationAutomation(BaseCommon):
         with freeze_time("2023-02-05"):  # Within validity but before expiry
             identification._run_automatic_status_update()
 
-        identification = identification.browse(identification.id)
         # Should be 'open' since 2023-02-05 is within validity range
         # and not in renewal window (renewal_cutoff = expiry when no renewal settings)
         self.assertEqual(identification.status, "open")
@@ -563,10 +553,7 @@ class TestIdentificationAutomation(BaseCommon):
         with freeze_time("2023-01-01"):
             identification_no_dates._run_automatic_status_update()
 
-        # Refresh and check: should remain in original status since no validity dates
-        identification_no_dates = identification_no_dates.browse(
-            identification_no_dates.id
-        )
+        # Check: should remain in original status since no validity dates
         self.assertEqual(identification_no_dates.status, "draft")
 
     def test_renewal_cutoff_calculation_months_edge_cases(self):
@@ -601,10 +588,9 @@ class TestIdentificationAutomation(BaseCommon):
         with freeze_time("2022-12-01"):  # After the calculated renewal cutoff date
             identification._run_automatic_status_update()
 
-        # Refresh and check status - should be 'pending' because renewal cutoff is
+        # Check status - should be 'pending' because renewal cutoff is
         # 2023-02-15 minus 15 months = May 15, 2022. So 2022-12-01 > 2022-05-15
         # and < 2023-02-15
-        identification = identification.browse(identification.id)
         self.assertEqual(identification.status, "pending")
 
     def test_renewal_cutoff_calculation_years_edge_cases(self):
@@ -639,8 +625,7 @@ class TestIdentificationAutomation(BaseCommon):
         with freeze_time("2023-03-01"):  # After the renewal cutoff date
             identification_leap._run_automatic_status_update()
 
-        # Refresh and check: should be 'pending' because today is after renewal cutoff
-        identification_leap = identification_leap.browse(identification_leap.id)
+        # Check: should be 'pending' because today is after renewal cutoff
         self.assertEqual(identification_leap.status, "pending")
 
         # Also test a normal case without leap year issues
@@ -659,7 +644,6 @@ class TestIdentificationAutomation(BaseCommon):
         with freeze_time("2023-03-20"):  # After the renewal cutoff
             identification_normal._run_automatic_status_update()
 
-        identification_normal = identification_normal.browse(identification_normal.id)
         self.assertEqual(identification_normal.status, "pending")
 
     def test_renewal_calculation_with_category_without_settings(self):
@@ -690,8 +674,7 @@ class TestIdentificationAutomation(BaseCommon):
         with freeze_time("2023-06-01"):
             identification._run_automatic_status_update()
 
-        # Refresh and check: should still be open since no renewal window is defined
-        identification = identification.browse(identification.id)
+        # Check: should still be open since no renewal window is defined
         self.assertEqual(identification.status, "open")
 
     def test_status_transitions_priority_correctness(self):
@@ -727,7 +710,6 @@ class TestIdentificationAutomation(BaseCommon):
             identification._run_automatic_status_update()
 
         # Should be 'pending' because in renewal window and not expired
-        identification = identification.browse(identification.id)
         self.assertEqual(identification.status, "pending")
 
         # Change time to after expiry - should now be 'close' regardless of previous
@@ -735,7 +717,6 @@ class TestIdentificationAutomation(BaseCommon):
         with freeze_time("2023-07-01"):
             identification._run_automatic_status_update()
 
-        identification = identification.browse(identification.id)
         self.assertEqual(identification.status, "close")
 
     def test_running_status_when_not_in_renewal_window(self):
@@ -756,14 +737,12 @@ class TestIdentificationAutomation(BaseCommon):
         with freeze_time("2023-06-01"):
             identification._run_automatic_status_update()
 
-        identification = identification.browse(identification.id)
         self.assertEqual(identification.status, "open")
 
         # Run again - should remain open since not in renewal window or expired
         with freeze_time("2023-06-02"):
             identification._run_automatic_status_update()
 
-        identification = identification.browse(identification.id)
         self.assertEqual(identification.status, "open")
 
     def test_category_with_default_validity_settings_years(self):
@@ -850,7 +829,6 @@ class TestIdentificationAutomation(BaseCommon):
             identification._run_automatic_status_update()
 
         # Verify that the status was updated correctly by the automated system
-        identification = identification.browse(identification.id)
         self.assertEqual(identification.status, "pending")
 
     def test_renewal_calculation_with_weeks_lead_time(self):
@@ -883,7 +861,6 @@ class TestIdentificationAutomation(BaseCommon):
             identification._run_automatic_status_update()
 
         # Verify that the status was updated correctly by the automated system
-        identification = identification.browse(identification.id)
         self.assertEqual(identification.status, "pending")
 
     def test_renewal_calculation_with_days_lead_time(self):
@@ -916,7 +893,6 @@ class TestIdentificationAutomation(BaseCommon):
             identification._run_automatic_status_update()
 
         # Verify that the status was updated correctly by the automated system
-        identification = identification.browse(identification.id)
         self.assertEqual(identification.status, "pending")
 
     def test_no_renewal_calculation_when_lead_number_is_zero(self):
@@ -953,7 +929,6 @@ class TestIdentificationAutomation(BaseCommon):
 
         # Verify that the status remains unchanged because
         # renewal is disabled (lead number is 0)
-        identification = identification.browse(identification.id)
         self.assertEqual(identification.status, "open")  # Should remain open
 
     def test_onchange_method_with_different_validity_units(self):

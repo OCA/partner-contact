@@ -5,23 +5,15 @@ from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models
 
 
-def _get_new_date(base_date, number, unit):
-    """Helper function to calculate new date based on number and unit."""
-    if number is None or not unit:
-        return base_date
-    if unit == "days":
-        return base_date + relativedelta(days=number)
-    if unit == "weeks":
-        return base_date + relativedelta(weeks=number)
-    if unit == "months":
-        return base_date + relativedelta(months=number)
-    if unit == "years":
-        return base_date + relativedelta(years=number)
-    return base_date
-
-
 class ResPartnerIdNumber(models.Model):
     _inherit = "res.partner.id_number"
+
+    @staticmethod
+    def _get_new_date(base_date, number, unit):
+        """Calculate a new date by adding number of units to base_date."""
+        if number is None or unit not in ("days", "weeks", "months", "years"):
+            return base_date
+        return base_date + relativedelta(**{unit: number})
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -42,15 +34,14 @@ class ResPartnerIdNumber(models.Model):
                     and category.default_validity_unit
                 ):
                     start_date = fields.Date.from_string(vals["valid_from"])
-                    end_date = _get_new_date(
+                    end_date = self._get_new_date(
                         start_date,
                         category.default_validity_number,
                         category.default_validity_unit,
                     )
                     vals["valid_until"] = end_date
 
-        records = super().create(vals_list)
-        return records
+        return super().create(vals_list)
 
     @api.onchange("category_id", "valid_from")
     def _onchange_category_defaults(self):
@@ -67,7 +58,7 @@ class ResPartnerIdNumber(models.Model):
                 and self.category_id.default_validity_unit
             ):
                 start_date = self.valid_from
-                end_date = _get_new_date(
+                end_date = self._get_new_date(
                     start_date,
                     self.category_id.default_validity_number,
                     self.category_id.default_validity_unit,
@@ -77,18 +68,17 @@ class ResPartnerIdNumber(models.Model):
     def _run_automatic_status_update(self):
         """Run automatic status updates for identification documents."""
         today = fields.Date.context_today(self)
-        today_str = fields.Date.to_string(today)
 
         # Priority 1: Expired documents - documents with valid_until < today
         docs_to_expire = self.search(
-            [["status", "!=", "close"], ["valid_until", "<", today_str]]
+            [["status", "!=", "close"], ["valid_until", "<", today]]
         )
         if docs_to_expire:
             docs_to_expire.write({"status": "close"})
 
         # Priority 2: To Renew documents - documents that are in the renewal window
         # Fetch only documents from categories with renewal settings
-        docs_to_set_pending = self.env[self._name].browse()
+        docs_to_set_pending = self.browse()
 
         # Get categories that have renewal settings configured
         categories_with_renewal = self.env["res.partner.id_category"].search(
@@ -108,10 +98,7 @@ class ResPartnerIdNumber(models.Model):
 
         # Perform one search per group of categories with the same renewal settings
         for (number, unit), categories in categories_by_renewal_key.items():
-            renewal_expiry_upper_bound = _get_new_date(today, number, unit)
-            renewal_expiry_upper_bound_str = fields.Date.to_string(
-                renewal_expiry_upper_bound
-            )
+            renewal_expiry_upper_bound = self._get_new_date(today, number, unit)
 
             # Search for documents for all categories with the same renewal settings
             category_docs_to_renew = self.search(
@@ -121,14 +108,14 @@ class ResPartnerIdNumber(models.Model):
                     [
                         "valid_until",
                         ">",
-                        today_str,
+                        today,
                     ],  # Not expired (today < valid_until)
                     [
                         "valid_until",
                         "<",
-                        renewal_expiry_upper_bound_str,
+                        renewal_expiry_upper_bound,
                     ],  # valid_until < (today + renewal_period)
-                    ["valid_from", "<=", today_str],  # Has started
+                    ["valid_from", "<=", today],  # Has started
                 ]
             )
 
@@ -142,8 +129,8 @@ class ResPartnerIdNumber(models.Model):
         docs_to_open = self.search(
             [
                 ["status", "not in", ("open", "pending", "close")],
-                ["valid_from", "<=", today_str],
-                ["valid_until", ">=", today_str],
+                ["valid_from", "<=", today],
+                ["valid_until", ">=", today],
             ]
         )
         if docs_to_open:

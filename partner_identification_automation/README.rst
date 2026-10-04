@@ -35,11 +35,11 @@ Partner Identification Numbers Automation
 This module extends the partner identification numbers functionality to
 provide:
 
--  Automatic default values for identification numbers based on category
-   configuration
--  Scheduled status updates (open, pending, close) based on validity
-   dates
--  Flexible configuration for validity periods and renewal lead times
+- Automatic default values for identification numbers based on category
+  configuration
+- Scheduled status updates (open, pending, close) based on validity
+  dates
+- Flexible configuration for validity periods and renewal lead times
 
 **Table of contents**
 
@@ -52,10 +52,10 @@ Configuration
 After installation, you can configure default values for each
 identification category:
 
--  Default issuer partner
--  Default validity duration (number and unit)
--  Renewal lead time (number and unit) to mark ID numbers as "To Renew"
-   before expiry
+- Default issuer partner
+- Default validity duration (number and unit)
+- Renewal lead time (number and unit) to mark ID numbers as "To Renew"
+  before expiry
 
 Bug Tracker
 ===========
@@ -78,10 +78,10 @@ Authors
 Contributors
 ------------
 
--  OCA https://odoo-community.org/
--  Odoo Community Association (OCA) https://odoo-community.org/
--  Emiel van Bokhoven - OBS SOLUTIONS NETHERLANDS
-   https://obs-solutions.com/nl/
+- OCA https://odoo-community.org/
+- Odoo Community Association (OCA) https://odoo-community.org/
+- Emiel van Bokhoven - OBS SOLUTIONS NETHERLANDS
+  https://obs-solutions.com/nl/
 
 Maintainers
 -----------
