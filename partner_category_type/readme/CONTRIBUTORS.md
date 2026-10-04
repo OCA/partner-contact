@@ -1,0 +1,4 @@
+- Jordi Masvidal \<<jordi.masvidal@forgeflow.com>\>
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+  - Bhavesh Heliconia
+- Hudson Amadeus Leonardy (https://solusiaglis.co.id)
