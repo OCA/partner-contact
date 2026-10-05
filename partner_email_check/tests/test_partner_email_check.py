@@ -138,7 +138,7 @@ class TestPartnerEmailCheck(TransactionCase):
     def test_syntax_still_checked_when_deliverability_skipped(self):
         """Bypassing one check must not quietly bypass the other."""
         self.check_deliverability()
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(ValidationError, "is an invalid email"):
             self.test_partner.with_context(
                 partner_email_check_skip_deliverability=True
             ).email = "bad@email@domain..com"
@@ -149,7 +149,7 @@ class TestPartnerEmailCheck(TransactionCase):
         self.test_partner.with_context(
             partner_email_check_skip_deliverability=True
         ).email = "cezrik@acoa.nrdkt"
-        with self.assertRaises(ValidationError):
+        with self.assertRaisesRegex(ValidationError, "Cannot deliver to email address"):
             self.test_partner.email = "othercezrik@acoa.nrdkt"
 
     def test_invalid_email_addresses_allowed_by_context(self):
