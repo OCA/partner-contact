@@ -82,7 +82,7 @@ addon | version | maintainers | summary
 [partner_identification_eori](partner_identification_eori/) | 16.0.1.0.0 |  | This addon extends "Partner Identification Numbers" to provide a number category for EORI Number
 [partner_identification_gln](partner_identification_gln/) | 16.0.1.0.1 |  | This addon extends "Partner Identification Numbers" to provide a number category for GLN registration
 [partner_industry_parent](partner_industry_parent/) | 16.0.1.0.0 |  | This module add a parent relation to the partner industry
-[partner_industry_secondary](partner_industry_secondary/) | 16.0.1.1.0 |  | Add secondary partner industries
+[partner_industry_secondary](partner_industry_secondary/) | 16.0.1.1.1 |  | Add secondary partner industries
 [partner_interest_group](partner_interest_group/) | 16.0.1.2.0 | <a href='https://github.com/victor-champonnois'><img src='https://github.com/victor-champonnois.png' width='32' height='32' style='border-radius:50%;' alt='victor-champonnois'/></a> | Add Interest Group to Partners
 [partner_iterative_archive](partner_iterative_archive/) | 16.0.1.0.0 |  | Archive all contacts when parent is archived
 [partner_label](partner_label/) | 16.0.1.0.0 |  | Print partner labels
