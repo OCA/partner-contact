@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_name_hide_parent
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_name_hide_parent
+#: model:ir.model,name:partner_name_hide_parent.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_name_hide_parent
+#: model:ir.model.fields,field_description:partner_name_hide_parent.field_res_partner__hide_parent
+#: model:ir.model.fields,field_description:partner_name_hide_parent.field_res_users__hide_parent
+msgid "Hide Parent"
+msgstr ""
+
+#. module: partner_name_hide_parent
+#: model:ir.model.fields,help:partner_name_hide_parent.field_res_partner__hide_parent
+#: model:ir.model.fields,help:partner_name_hide_parent.field_res_users__hide_parent
+msgid ""
+"If selected, the parent's name will not be included in the display name of "
+"self."
+msgstr ""
