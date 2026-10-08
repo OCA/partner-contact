@@ -53,9 +53,7 @@ class ResConfigSettings(models.TransientModel):
         current = (
             self.env["ir.config_parameter"]
             .sudo()
-            .get_param(
-                "partner_names_order", default=self._partner_names_order_default()
-            )
+            .get_str("partner_names_order", default=self._partner_names_order_default())
         )
         for record in self:
             record.partner_names_order_changed = bool(
@@ -72,7 +70,7 @@ class ResConfigSettings(models.TransientModel):
         )
 
     def action_recalculate_partners_name(self):
-        self.env["ir.config_parameter"].sudo().set_param(
+        self.env["ir.config_parameter"].sudo().set_str(
             "partner_names_order", self.partner_names_order
         )
         partners = self._partners_for_recalculating()

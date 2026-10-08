@@ -5,11 +5,11 @@
         <field name="model">res.users</field>
         <field name="inherit_id" ref="base.view_users_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='name']" position="attributes">
+            <xpath expr="//h1//field[@name='name']" position="attributes">
                 <attribute name="readonly">True</attribute>
                 <attribute name="required">False</attribute>
             </xpath>
-            <xpath expr="//field[@name='email']" position="after">
+            <xpath expr="//h1//field[@name='name']/.." position="after">
                 <group>
                     <field
                         name="lastname"

@@ -14,7 +14,7 @@ class ResPartner(models.Model):
     """Adds last name and first name; name becomes a stored function field."""
 
     _name = "res.partner"
-    _inherit = ["res.partner", "firstname.mixin"]
+    _inherit = ["res.partner", "firstname.mixin"]  # noqa: RUF012
 
     firstname = fields.Char("First name", index=True)
 
@@ -30,7 +30,7 @@ class ResPartner(models.Model):
 
     # @api.depends(lambda self: self._get_fields_depend_firstname_lastname_required())
     def _compute_firstname_lastname_required(self):
-        for partner in self.filtered(lambda x: x.is_company or not x.type == "contact"):
+        for partner in self.filtered(lambda x: x.is_company or x.type != "contact"):
             partner.firstname_required = False
             partner.lastname_required = False
 
@@ -59,7 +59,7 @@ class ResPartner(models.Model):
         created_partners = self.browse()
         for vals in vals_list:
             partner_context = dict(self.env.context)
-            is_company = vals.get("company_type") == "company"
+            is_company = self._get_is_company_from_vals(vals)
             if not is_company and self.name_fields_in_vals(vals) and "name" in vals:
                 del vals["name"]
                 partner_context.pop("default_name", None)
@@ -86,6 +86,17 @@ class ResPartner(models.Model):
                 ResPartner, self.with_context(partner_context)
             ).create([vals])
         return created_partners
+
+    @api.model
+    def _get_is_company_from_vals(self, vals):
+        """Since Odoo 20.0, ``is_company`` can not be set anymore: a partner is a
+        company if it is its own commercial entity and has a Tax ID (see
+        ``_compute_is_company``). Guess it from ``vals``, so names are split the same
+        way as once the partner is saved.
+        """
+        if vals.get("parent_id"):
+            return False
+        return self.new({"vat": vals.get("vat")}).has_vat
 
     def get_extra_default_copy_values(self):
         """Method to add '(copy)' suffix to lastname or firstname, depending on name

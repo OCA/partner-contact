@@ -22,7 +22,7 @@ class FirstNameMixin(models.AbstractModel):
         required_fields = (
             self.env["ir.config_parameter"]
             .sudo()
-            .get_param("partner_firstname.required_fields")
+            .get_str("partner_firstname.required_fields")
         )
         for item in self:
             item.firstname_required = not item.lastname or required_fields in [
@@ -53,7 +53,7 @@ class FirstNameMixin(models.AbstractModel):
 
         inverted = self._get_inverse_name(
             self._get_whitespace_cleaned_name(result.get("name", "")),
-            result.get("is_company", False),
+            self._get_is_company_from_vals(result),
         )
 
         for field in list(inverted.keys()):
@@ -61,6 +61,11 @@ class FirstNameMixin(models.AbstractModel):
                 result[field] = inverted.get(field)
 
         return result
+
+    @api.model
+    def _get_is_company_from_vals(self, vals):
+        """Return whether the record built from ``vals`` is a company."""
+        return bool(vals.get("is_company"))
 
     @api.model
     def _get_names_order(self):
@@ -73,7 +78,7 @@ class FirstNameMixin(models.AbstractModel):
         return (
             self.env["ir.config_parameter"]
             .sudo()
-            .get_param("partner_names_order", default_order)
+            .get_str("partner_names_order", default_order)
         )
 
     @api.model

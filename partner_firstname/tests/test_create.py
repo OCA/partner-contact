@@ -9,7 +9,7 @@ from odoo.tests import TransactionCase
 class PersonCase(TransactionCase):
     """Test ``res.partner`` when it is a person."""
 
-    context = {"default_is_company": False}
+    context = {"default_is_company": False}  # noqa: RUF012
     model = "res.partner"
 
     def setUp(self):
@@ -52,3 +52,28 @@ class PersonCase(TransactionCase):
         self.values["name"] = "BÄD1"
         self.context["default_name"] = "BÄD2"
         self.common_operations()
+
+
+class CompanyCase(TransactionCase):
+    """Test ``res.partner`` when it is a company."""
+
+    def test_create_company(self):
+        """A partner with a Tax ID is a company: its name is not split."""
+        name = "Sôme Company"
+        partner = self.env["res.partner"].create({"name": name, "vat": "BE0477472701"})
+        self.assertTrue(partner.is_company)
+        self.assertEqual(partner.name, name)
+        self.assertEqual(partner.lastname, name)
+        self.assertFalse(partner.firstname)
+
+    def test_create_company_contact(self):
+        """A contact of a company is never a company, its name is split."""
+        company = self.env["res.partner"].create(
+            {"name": "Sôme Company", "vat": "BE0477472701"}
+        )
+        partner = self.env["res.partner"].create(
+            {"name": "Fïrst Läst", "vat": "BE0477472701", "parent_id": company.id}
+        )
+        self.assertFalse(partner.is_company)
+        self.assertEqual(partner.firstname, "Fïrst")
+        self.assertEqual(partner.lastname, "Läst")

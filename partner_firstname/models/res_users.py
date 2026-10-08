@@ -7,7 +7,7 @@ from odoo import models
 
 class ResUsers(models.Model):
     _name = "res.users"
-    _inherit = ["res.users", "firstname.mixin"]
+    _inherit = ["res.users", "firstname.mixin"]  # noqa: RUF012
 
     def copy(self, default=None):
         default_ = default or {}

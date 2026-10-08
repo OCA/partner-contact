@@ -84,7 +84,8 @@ class PartnerContactCase(BaseCase):
 class PartnerCompanyCase(BaseCase):
     def create_original(self):
         res = super().create_original()
-        self.original.is_company = True
+        # Since Odoo 20.0, a partner is a company when it has a Tax ID
+        self.original.vat = "BE0477472701"
         return res
 
     def test_copy(self):

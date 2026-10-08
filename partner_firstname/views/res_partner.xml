@@ -4,17 +4,12 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_simple_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@id='individual']" position="attributes">
-                <attribute name="invisible">is_company</attribute>
+            <xpath expr="//field[@id='contact']" position="attributes">
                 <attribute name="readonly">not is_company</attribute>
                 <attribute name="required">type == 'contact' and is_company</attribute>
             </xpath>
-            <xpath expr="//field[@id='company']" position="attributes">
-                <attribute name="invisible">is_company == False</attribute>
-                <attribute name="readonly">not is_company</attribute>
-                <attribute name="required">type == 'contact' and is_company</attribute>
-            </xpath>
-            <xpath expr="//h1//field[@id='company']/.." position="before">
+            <xpath expr="//h1//field[@id='contact']/.." position="after">
+                <field name="is_company" invisible="1" />
                 <group invisible="is_company">
                     <field
                         invisible="not form_has_lastname_first"
@@ -35,32 +30,25 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <xpath expr="//h1//field[last()]" position="attributes">
-                <attribute name="invisible">is_company</attribute>
+            <xpath expr="//h1//field[@name='name']" position="attributes">
                 <attribute name="readonly">not is_company</attribute>
                 <attribute name="required">type == 'contact' and is_company</attribute>
             </xpath>
-            <xpath expr="//h1//field" position="attributes">
-                <attribute name="invisible">not is_company</attribute>
-                <attribute name="readonly">not is_company</attribute>
-                <attribute name="required">type == 'contact' and is_company</attribute>
-            </xpath>
-            <xpath expr="//h1//field/.." position="after">
-                <div class="oe_edit_only">
-                    <group invisible="is_company">
-                        <field
-                            invisible="not form_has_lastname_first"
-                            name="lastname"
-                            required="form_has_lastname_first and lastname_required"
-                        />
-                        <field name="firstname" required="firstname_required" />
-                        <field
-                            invisible="form_has_lastname_first"
-                            name="lastname"
-                            required="not form_has_lastname_first and lastname_required"
-                        />
-                    </group>
-                </div>
+            <xpath expr="//h1//field[@name='name']/.." position="after">
+                <field name="is_company" invisible="1" />
+                <group invisible="is_company" colspan="2">
+                    <field
+                        invisible="not form_has_lastname_first"
+                        name="lastname"
+                        required="form_has_lastname_first and lastname_required"
+                    />
+                    <field name="firstname" required="firstname_required" />
+                    <field
+                        invisible="form_has_lastname_first"
+                        name="lastname"
+                        required="not form_has_lastname_first and lastname_required"
+                    />
+                </group>
             </xpath>
             <!-- Modify inner contact form of child_ids -->
             <xpath
@@ -71,25 +59,23 @@
                 <attribute name="required">is_company</attribute>
             </xpath>
             <xpath
-                expr="//field[@name='child_ids']/form//field[@name='name']"
+                expr="//field[@name='child_ids']/form//field[@name='name']/.."
                 position="after"
             >
-                <div class="oe_edit_only" colspan="2">
-                    <field name="is_company" invisible="True" />
-                    <group invisible="is_company">
-                        <field
-                            invisible="not form_has_lastname_first"
-                            name="lastname"
-                            required="form_has_lastname_first and lastname_required"
-                        />
-                        <field name="firstname" required="firstname_required" />
-                        <field
-                            invisible="form_has_lastname_first"
-                            name="lastname"
-                            required="not form_has_lastname_first and lastname_required"
-                        />
-                    </group>
-                </div>
+                <field name="is_company" invisible="1" />
+                <group invisible="is_company" colspan="2">
+                    <field
+                        invisible="not form_has_lastname_first"
+                        name="lastname"
+                        required="form_has_lastname_first and lastname_required"
+                    />
+                    <field name="firstname" required="firstname_required" />
+                    <field
+                        invisible="form_has_lastname_first"
+                        name="lastname"
+                        required="not form_has_lastname_first and lastname_required"
+                    />
+                </group>
             </xpath>
         </field>
     </record>

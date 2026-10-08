@@ -14,3 +14,7 @@ For the same reason, after installing, previous names for contacts will
 stay in the *name* field, and the first time you edit any of them you
 will be asked to supply the *last name* and *first name* (just once per
 contact).
+
+Since Odoo 20.0, a contact is a company when it is its own commercial
+entity and has a Tax ID. In that case, its *name* is not split and is
+fully stored in the *last name*.

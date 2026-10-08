@@ -45,7 +45,7 @@ class UserOnchangeCase(TransactionCase):
 
         self.assertEqual(user_form.lastname, lastname)
         self.assertEqual(user_form.firstname, firstname)
-        self.assertEqual(user_form.name, " ".join((firstname, lastname)))
+        self.assertEqual(user_form.name, f"{firstname} {lastname}")
 
     def get_user_form(self):
         return Form(self.env["res.users"], view="partner_firstname.view_users_form")

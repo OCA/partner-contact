@@ -11,13 +11,21 @@ from odoo.tests import Form, TransactionCase
 from ..exceptions import EmptyNamesError
 
 
-class PartnerCompanyCase(TransactionCase):
+class PartnerFormCase(TransactionCase):
+    is_company = False
+
+    def set_partner_type(self, partner_form):
+        """Since Odoo 20.0, a partner is a company when it has a Tax ID."""
+        partner_form.vat = "BE0477472701" if self.is_company else False
+
+
+class PartnerCompanyCase(PartnerFormCase):
     is_company = True
 
     def test_create_from_form(self):
         name = "Sôme company"
         with Form(self.env["res.partner"]) as partner_form:
-            partner_form.company_type = "company" if self.is_company else "person"
+            self.set_partner_type(partner_form)
             partner_form.name = name
 
         self.assertEqual(partner_form.name, name)
@@ -31,7 +39,7 @@ class PartnerCompanyCase(TransactionCase):
         with Form(
             self.env["res.partner"].with_context(default_name="Test")
         ) as partner_form:
-            partner_form.company_type = "company"
+            self.set_partner_type(partner_form)
             partner_form.name = "Full Test"
 
         self.assertEqual(partner_form.name, "Full Test")
@@ -45,7 +53,7 @@ class PartnerCompanyCase(TransactionCase):
         with Form(
             self.env["res.partner"], view="base.view_partner_form"
         ) as partner_form:
-            partner_form.company_type = "company" if self.is_company else "person"
+            self.set_partner_type(partner_form)
 
             name = "Foó"
             # User sets a name
@@ -73,14 +81,14 @@ class PartnerCompanyCase(TransactionCase):
             # self.assertEqual(partner_form.lastname, name)
 
 
-class PartnerContactCase(TransactionCase):
+class PartnerContactCase(PartnerFormCase):
     is_company = False
 
     def test_create_from_form_only_firstname(self):
         """A user creates a contact with only the firstname from the form."""
         firstname = "Fïrst"
         with Form(self.env["res.partner"]) as partner_form:
-            partner_form.company_type = "company" if self.is_company else "person"
+            self.set_partner_type(partner_form)
 
             # Changes firstname, which triggers compute
             partner_form.firstname = firstname
@@ -93,7 +101,7 @@ class PartnerContactCase(TransactionCase):
         """A user creates a contact with only the lastname from the form."""
         lastname = "Läst"
         with Form(self.env["res.partner"]) as partner_form:
-            partner_form.company_type = "company" if self.is_company else "person"
+            self.set_partner_type(partner_form)
 
             # Changes lastname, which triggers compute
             partner_form.lastname = lastname
@@ -107,7 +115,7 @@ class PartnerContactCase(TransactionCase):
         firstname = "Fïrst"
         lastname = "Läst"
         with Form(self.env["res.partner"]) as partner_form:
-            partner_form.company_type = "company" if self.is_company else "person"
+            self.set_partner_type(partner_form)
 
             # Changes firstname, which triggers compute
             partner_form.firstname = firstname
@@ -117,4 +125,4 @@ class PartnerContactCase(TransactionCase):
 
         self.assertEqual(partner_form.lastname, lastname)
         self.assertEqual(partner_form.firstname, firstname)
-        self.assertEqual(partner_form.name, " ".join((firstname, lastname)))
+        self.assertEqual(partner_form.name, f"{firstname} {lastname}")

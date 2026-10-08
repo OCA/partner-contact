@@ -22,3 +22,5 @@
   - Simone Rubino \<<simone.rubino@aion-tech.it>\>
 - [Digiteasy](https://www.digiteasy.at/)
   - Alvaro Estebanez
+- [Adgents](https://github.com/adgents):
+  - Vincent Garcies \<<vincent.garcies@gmail.com>\>
