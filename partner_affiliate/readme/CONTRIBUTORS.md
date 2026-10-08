@@ -6,5 +6,5 @@
 - Stephan Rozendaal \<<stephan.rozendaal@neobis.net>\>
 - Achraf Mhadhbi \<<machraf@bloopark.de>\>
 - Alberto Martínez \<<alberto.martinez@sygel.es>\>
-- [Binhex Systems Solutions](https://binhex.cloud/):
+- [Binhex](https://binhex.cloud/):
   - Deriman Alonso \<<d.alonso@binhex.cloud>\>
