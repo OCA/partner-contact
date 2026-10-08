@@ -1,0 +1,168 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_firstname
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-10 03:39+0000\n"
+"PO-Revision-Date: 2026-09-01 10:46+0000\n"
+"Last-Translator: Dante5657 <mert.orsman@icloud.com>\n"
+"Language-Team: Turkish (https://www.transifex.com/oca/teams/23907/tr/)\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/models/res_users.py:0
+msgid "%(login)s (copy)"
+msgstr "%(login)s (Kopya)"
+
+#. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/models/res_users.py:0
+msgid "%(name)s (copy)"
+msgstr "%(name)s (Kopya)"
+
+#. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/models/res_partner.py:0
+msgid "%s (copy)"
+msgstr "%s (Kopya)"
+
+#. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/models/res_partner.py:0
+msgid "(copy)"
+msgstr "(Kopya)"
+
+#. module: partner_firstname
+#: model:ir.model,name:partner_firstname.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ayarlar"
+
+#. module: partner_firstname
+#: model:ir.model,name:partner_firstname.model_res_partner
+msgid "Contact"
+msgstr "Kontak"
+
+#. module: partner_firstname
+#: model:ir.model.constraint,message:partner_firstname.constraint_res_partner_check_name
+msgid "Contacts require a name."
+msgstr "Kontaklar için ad gereklidir."
+
+#. module: partner_firstname
+#: model:ir.model.fields,help:partner_firstname.field_res_config_settings__partner_names_required_fields
+msgid "Define which fields are required or not"
+msgstr "Hangi alanların zorunlu olup olmadığını seçin"
+
+#. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/exceptions.py:0
+msgid "Error(s) with partner %d's name."
+msgstr "Partner %d'in adıyla ilgili hata."
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__firstname
+msgid "First name"
+msgstr "İsim"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_firstname_mixin__firstname_required
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__firstname_required
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__firstname_required
+msgid "Firstname Required"
+msgstr "İsim zorunlu"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_firstname_mixin__form_has_lastname_first
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__form_has_lastname_first
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__form_has_lastname_first
+msgid "Form Has Lastname First"
+msgstr "Form: Soyisim, İsim"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname
+msgid "Last name"
+msgstr "Soyisim"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_firstname_mixin__lastname_required
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname_required
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__lastname_required
+msgid "Lastname Required"
+msgstr "Soyisim zorunlu"
+
+#. module: partner_firstname
+#: model:ir.model,name:partner_firstname.model_firstname_mixin
+msgid ""
+"Manage common things needed for models that have firstname / lastname fields."
+msgstr "İsim / Soyisim alanı içeren modeller için ortak alanları düzenle."
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__name
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__name
+msgid "Name"
+msgstr "İsim"
+
+#. module: partner_firstname
+#. odoo-python
+#: code:addons/partner_firstname/exceptions.py:0
+msgid "No name is set."
+msgstr "İsim yazılmamış."
+
+#. module: partner_firstname
+#: model:ir.model.fields,help:partner_firstname.field_res_config_settings__partner_names_order
+msgid "Order to compose partner fullname"
+msgstr "Partnerin ismini gösterme sırası"
+
+#. module: partner_firstname
+#: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
+msgid "Partner Names"
+msgstr "Partner isimleri"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order
+msgid "Partner Names Order"
+msgstr "Partner isim sırası"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_order_changed
+msgid "Partner Names Order Changed"
+msgstr "Partner isim sırası değiştirildi"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__partner_names_required_fields
+msgid "Partner Names Required Fields"
+msgstr "Partner isminde gerekli alanlar"
+
+#. module: partner_firstname
+#: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
+msgid "Recalculate names"
+msgstr "İsimleri yeniden oluştur"
+
+#. module: partner_firstname
+#: model_terms:ir.ui.view,arch_db:partner_firstname.res_config_settings_view_form
+msgid ""
+"Recalculate names for all partners. This process could take so much time if "
+"there are more than 10,000 active partners"
+msgstr ""
+"Tüm partnerler için isimleri yeniden oluştur. Bu süreç eğer 10.000 den fazla "
+"aktif partner varsa çok uzun sürebilir"
+
+#. module: partner_firstname
+#: model:ir.model,name:partner_firstname.model_res_users
+msgid "User"
+msgstr "Kullanıcı"
+
+#~ msgid "Partner"
+#~ msgstr "İş Ortağı"
