@@ -72,7 +72,7 @@ Contributors
   - Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
 
 - Moaad Bourhim <moaad.bourhim@gmail.com>
-- `Binhex Systems Solutions <https://binhex.cloud/>`__:
+- `Binhex <https://binhex.cloud/>`__:
 
   - Deriman Alonso <d.alonso@binhex.cloud>
 
