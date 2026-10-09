@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+        <record id="ir_cron_archive_contacts" model="ir.cron">
+            <field name="name">Contact: Archive Contacts</field>
+            <field name="model_id" ref="base.model_res_partner" />
+            <field name="state">code</field>
+            <field name="code">model._auto_archive_contacts()</field>
+            <field name="interval_number">15</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">1</field>
+        </record>
+</odoo>
