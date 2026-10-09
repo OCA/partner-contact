@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_form_contacts_list" model="ir.ui.view">
+        <field name="name">res.partner.form.contacts.list</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='child_ids']" position="attributes">
+                <attribute name="mode">list</attribute>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/kanban" position="before">
+                <list
+                    string="Contacts"
+                    editable="bottom"
+                    default_order="name asc"
+                    open_form_view="True"
+                >
+                    <field name="name" string="Name" />
+                    <field name="type" string="Type" optional="show" />
+                    <field name="function" string="Function" optional="show" />
+                    <field name="phone" string="Phone" optional="show" />
+                    <field name="email" string="Email" optional="show" />
+                    <field
+                        name="role_ids"
+                        string="Roles"
+                        widget="many2many_tags"
+                        optional="show"
+                    />
+                </list>
+            </xpath>
+        </field>
+    </record>
+</odoo>
