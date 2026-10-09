@@ -1,1 +1,3 @@
 - Hadrien Huvelle \<<hadrien.huvelle@camptocamp.com>\>
+- [CIT-Services](https://cit-services.in/):
+  - Linto Antony \<<l.antony@cit-services.eu>\>
