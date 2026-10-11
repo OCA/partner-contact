@@ -1,0 +1,1 @@
+This module depends on `partner_identification_automation_activity` which must be installed first. The module will automatically create the KYC identification category and activity type during installation.
