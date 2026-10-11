@@ -47,7 +47,7 @@
         <field name="name">Company group members</field>
         <field name="res_model">res.partner</field>
         <field name="binding_model_id" ref="model_res_partner" />
-        <field name="view_mode">tree</field>
+        <field name="view_mode">tree,form</field>
         <field name="target">current</field>
         <field name="context">{'create': False}</field>
         <field
