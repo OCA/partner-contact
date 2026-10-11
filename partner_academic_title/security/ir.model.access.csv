@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_partner_academic_title_system,access_academic_title_system,model_partner_academic_title,base.group_system,1,1,1,1
+access_partner_academic_title_user,access_academic_title_user,model_partner_academic_title,base.group_user,1,0,0,0
