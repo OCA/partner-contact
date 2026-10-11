@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Inherit the partner ID category form view to add activity type selection field -->
+    <record id="view_res_partner_id_category_form_inherit_activity" model="ir.ui.view">
+        <field
+            name="name"
+        >res.partner.id_category.form.inherit.activity.automation</field>
+        <field name="model">res.partner.id_category</field>
+        <field
+            name="inherit_id"
+            ref="partner_identification.view_partner_id_category_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group[last()]" position="after">
+                <group string="Activity Automation">
+                    <group>
+                        <field name="create_activity_on_new" />
+                        <field
+                            name="initial_activity_type_id"
+                            invisible="not create_activity_on_new"
+                        />
+                    </group>
+                    <group>
+                        <field name="responsible_user_id" />
+                        <field name="renew_activity_type_id" />
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
