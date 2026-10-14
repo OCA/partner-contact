@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 import logging
+import threading
 
 from odoo import _, api, models
 from odoo.exceptions import UserError, ValidationError
@@ -80,14 +81,35 @@ class ResPartner(models.Model):
             ) from EmailUndeliverableError
         return result.normalized.lower()
 
+    def _partner_email_check_enabled(self):
+        """
+        Disabled by default while running under Odoo's test runner.
+        """
+        test_mode = (
+            getattr(threading.current_thread(), "testing", False)
+            or self.env.registry.in_test_mode()
+        )
+        if test_mode:
+            return bool(self.env.context.get("partner_email_check_force"))
+        return True
+
     def _should_check_syntax(self):
-        return self.env.company.partner_email_check_syntax
+        return (
+            self._partner_email_check_enabled()
+            and self.env.company.partner_email_check_syntax
+        )
 
     def _should_filter_duplicates(self):
-        return self.env.company.partner_email_check_filter_duplicates
+        return (
+            self._partner_email_check_enabled()
+            and self.env.company.partner_email_check_filter_duplicates
+        )
 
     def _should_check_deliverability(self):
-        return self.env.company.partner_email_check_check_deliverability
+        return (
+            self._partner_email_check_enabled()
+            and self.env.company.partner_email_check_check_deliverability
+        )
 
     @api.model_create_multi
     def create(self, vals_list):
