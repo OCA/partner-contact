@@ -7,6 +7,8 @@ Settings \> Configuration \> General settings:
   Robert'
 - Firstname Lastname SecondLastname: For example 'Robert Anderson
   Lavarge'
+- Lastname, Firstname SecondLastname: For example 'Anderson, Robert
+  Lavarge'
 
 After applying the changes, you can recalculate all partners name
 clicking "Recalculate names" button. Note: This process could take so
