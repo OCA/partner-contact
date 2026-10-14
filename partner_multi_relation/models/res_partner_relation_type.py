@@ -1,9 +1,9 @@
-# Copyright 2013-2022 Therp BV <https://therp.nl>.
+# Copyright 2013-2025 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 """Define the type of relations that can exist between partners."""
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
-from odoo.osv.expression import AND, OR
+from odoo.osv.expression import AND, FALSE_LEAF, OR
 
 HANDLE_INVALID_ONCHANGE = [
     ("restrict", _("Do not allow change that will result in invalid relations")),
@@ -23,6 +23,11 @@ class ResPartnerRelationType(models.Model):
     name = fields.Char(required=True, translate=True)
     name_inverse = fields.Char(string="Inverse name", required=True, translate=True)
     active = fields.Boolean(default=True)
+    # TODO (on migration to 19.0?): rename fields:
+    # - contact_type_left => left_partner_type;
+    # - contact_type_right => right_partner_type;
+    # - partner_category_left => left_partner_category_id;
+    # - partner_category_right => right_partner_category_id.
     contact_type_left = fields.Selection(
         selection="get_partner_types", string="Left partner type"
     )
@@ -86,30 +91,29 @@ class ResPartnerRelationType(models.Model):
 
     def check_existing(self, vals):
         """Check whether records exist that do not fit new criteria."""
-        relation_model = self.env["res.partner.relation"]
+        Relation = self.env["res.partner.relation"]
 
         def get_type_condition(vals, side):
             """Add if needed check for contact type."""
-            fieldname1 = "contact_type_%s" % side
-            fieldname2 = "%s_partner_id.is_company" % side
-            contact_type = fieldname1 in vals and vals[fieldname1] or False
-            if contact_type == "c":
-                # Records that are not companies are invalid:
-                return [(fieldname2, "=", False)]
-            if contact_type == "p":
-                # Records that are companies are invalid:
-                return [(fieldname2, "=", True)]
-            return []
+            fieldname1 = f"contact_type_{side}"
+            contact_type = vals.get(fieldname1, False)
+            if not contact_type:
+                return None
+            # If contact_type is 'p' company records are invalid.
+            # If contact_type is 'c' person records are invalid.
+            is_company = True if contact_type == "p" else False
+            fieldname2 = f"{side}_partner_id.is_company"
+            return [(fieldname2, "=", is_company)]
 
         def get_category_condition(vals, side):
             """Add if needed check for partner category."""
-            fieldname1 = "partner_category_%s" % side
-            fieldname2 = "%s_partner_id.category_id" % side
-            category_id = fieldname1 in vals and vals[fieldname1] or False
-            if category_id:
-                # Records that do not have the specified category are invalid:
-                return [(fieldname2, "not in", [category_id])]
-            return []
+            fieldname1 = f"partner_category_{side}"
+            category_id = vals.get(fieldname1, False)
+            if not category_id:
+                return None
+            # Records that do not have the specified category are invalid:
+            fieldname2 = f"{side}_partner_id.category_id"
+            return [(fieldname2, "!=", category_id)]
 
         for this in self:
             handling = (
@@ -119,19 +123,19 @@ class ResPartnerRelationType(models.Model):
             )
             if handling == "ignore":
                 continue
-            invalid_conditions = []
+            invalid_conditions = [FALSE_LEAF]
             for side in ["left", "right"]:
-                invalid_conditions = OR(
-                    [invalid_conditions, get_type_condition(vals, side)]
-                )
-                invalid_conditions = OR(
-                    [invalid_conditions, get_category_condition(vals, side)]
-                )
-            if not invalid_conditions:
-                return
+                type_condition = get_type_condition(vals, side)
+                if type_condition:
+                    invalid_conditions = OR([invalid_conditions, type_condition])
+                category_condition = get_category_condition(vals, side)
+                if category_condition:
+                    invalid_conditions = OR([invalid_conditions, category_condition])
+            if invalid_conditions == [FALSE_LEAF]:
+                continue
             # only look at relations for this type
             invalid_domain = AND([[("type_id", "=", this.id)], invalid_conditions])
-            invalid_relations = relation_model.with_context(active_test=False).search(
+            invalid_relations = Relation.with_context(active_test=False).search(
                 invalid_domain
             )
             if invalid_relations:
@@ -249,11 +253,9 @@ class ResPartnerRelationType(models.Model):
 
         Relations can be deleted if relation type allows it.
         """
-        relation_model = self.env["res.partner.relation"]
-        for rec in self:
-            if rec.handle_invalid_onchange == "delete":
-                # Automatically delete relations, so existing relations
-                # do not prevent unlink of relation type:
-                relations = relation_model.search([("type_id", "=", rec.id)])
-                relations.unlink()
+        delete_enabled = self.filtered(lambda r: r.handle_invalid_onchange == "delete")
+        if delete_enabled:
+            Relation = self.env["res.partner.relation"]
+            to_delete = Relation.search([("type_id", "in", delete_enabled.ids)])
+            to_delete.unlink()
         return super().unlink()
