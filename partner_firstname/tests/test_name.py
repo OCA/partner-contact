@@ -96,7 +96,7 @@ class PartnerCompanyCase(BaseCase):
     def test_company_inverse(self):
         """Test the inverse method in a company record."""
         name = "Thïs is a Companŷ"
-        self.expect(name, False, name)
+        self.expect(name, "", name)
         self.original.name = name
 
 
