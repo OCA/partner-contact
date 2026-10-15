@@ -1,0 +1,1 @@
+odoo-addon-web_many2one_color @ git+https://github.com/OCA/web.git@refs/pull/3720/head#subdirectory=web_many2one_color
