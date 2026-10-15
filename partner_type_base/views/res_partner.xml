@@ -28,6 +28,62 @@
             <xpath expr="//field[@invisible='is_company']" position="attributes">
                 <attribute name="required">is_individual</attribute>
             </xpath>
+            <!-- Re-add the address type selection, replaced by a readonly label in Odoo 19 -->
+            <xpath
+                expr="//span[@name='address_name']/field[@name='type_address_label']"
+                position="attributes"
+            >
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath
+                expr="//span[@name='address_name']/field[@name='type_address_label']"
+                position="after"
+            >
+                <field
+                    name="type"
+                    invisible="is_company"
+                    readonly="user_ids"
+                    required="not is_company"
+                    class="fw-bold"
+                />
+            </xpath>
+            <!-- Address fields are readonly only when is_address_readonly is set -->
+            <xpath
+                expr="//span[@name='address_name']/following-sibling::div[hasclass('o_address_format')]/field[@name='street']"
+                position="attributes"
+            >
+                <attribute name="readonly">is_address_readonly</attribute>
+            </xpath>
+            <xpath
+                expr="//span[@name='address_name']/following-sibling::div[hasclass('o_address_format')]/field[@name='street2']"
+                position="attributes"
+            >
+                <attribute name="readonly">is_address_readonly</attribute>
+            </xpath>
+            <xpath
+                expr="//span[@name='address_name']/following-sibling::div[hasclass('o_address_format')]/field[@name='city']"
+                position="attributes"
+            >
+                <attribute name="readonly">is_address_readonly</attribute>
+            </xpath>
+            <xpath
+                expr="//span[@name='address_name']/following-sibling::div[hasclass('o_address_format')]/field[@name='state_id']"
+                position="attributes"
+            >
+                <attribute name="readonly">is_address_readonly</attribute>
+            </xpath>
+            <xpath
+                expr="//span[@name='address_name']/following-sibling::div[hasclass('o_address_format')]/field[@name='zip']"
+                position="attributes"
+            >
+                <attribute name="readonly">is_address_readonly</attribute>
+            </xpath>
+            <xpath
+                expr="//span[@name='address_name']/following-sibling::div[hasclass('o_address_format')]//field[@name='country_id']"
+                position="attributes"
+            >
+                <attribute name="readonly">is_address_readonly</attribute>
+            </xpath>
             <!-- Modify inner contact form of child_ids -->
             <xpath
                 expr="//field[@name='child_ids']/form//field[@name='name']"
