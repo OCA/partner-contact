@@ -6,9 +6,10 @@
 The form operates in onchange mode, with its limitations.
 """
 
-from odoo.tests import Form, TransactionCase
+from psycopg2 import IntegrityError
 
-from ..exceptions import EmptyNamesError
+from odoo.tests import Form, TransactionCase
+from odoo.tools import mute_logger
 
 
 class PartnerCompanyCase(TransactionCase):
@@ -39,8 +40,8 @@ class PartnerCompanyCase(TransactionCase):
         self.assertEqual(partner_form.lastname, "Full Test")
 
     def test_empty_name(self):
-        """If we empty the name and save the form, EmptyNamesError must
-        be raised (firstname and lastname are reset...)
+        """If we empty the name and save the form, the core constraint on
+        the name must be raised (firstname and lastname are reset...)
         """
         with Form(
             self.env["res.partner"], view="base.view_partner_form"
@@ -59,7 +60,11 @@ class PartnerCompanyCase(TransactionCase):
             # User unsets name
             partner_form.name = ""
             # call save to  trigger the inverse and therefore raise an exception
-            with self.assertRaises(EmptyNamesError), self.env.cr.savepoint():
+            with (
+                self.assertRaises(IntegrityError),
+                mute_logger("odoo.sql_db"),
+                self.env.cr.savepoint(),
+            ):
                 partner_form.save()
 
             name += " bis"

@@ -6,7 +6,10 @@
 To have more accurate results, remove the ``mail`` module before testing.
 """
 
+from psycopg2 import IntegrityError
+
 from odoo.tests import TransactionCase
+from odoo.tools import mute_logger
 
 from .. import exceptions as ex
 
@@ -16,12 +19,13 @@ class CompanyCase(TransactionCase):
 
     model = "res.partner"
     context = {"default_is_company": True}
+    exception = IntegrityError
 
     def tearDown(self):
         try:
             data = {"name": self.name}
             model = self.env[self.model].with_context(**self.context)
-            with self.assertRaises(ex.EmptyNamesError):
+            with self.assertRaises(self.exception), mute_logger("odoo.sql_db"):
                 model.create(data)
         finally:
             super().tearDown()
@@ -39,6 +43,7 @@ class PersonCase(CompanyCase):
     """Test ``res.partner`` when it is a person."""
 
     context = {"default_is_company": False, "default_type": "contact"}
+    exception = ex.EmptyNamesError
 
 
 class AddressCase(TransactionCase):
@@ -49,6 +54,7 @@ class AddressCase(TransactionCase):
         self.original = self.env["res.partner"].create(
             {"is_company": False, "type": "invoice", "lastname": "", "firstname": ""}
         )
+        self.assertIs(self.original.name, False)
 
     def test_new_empty_shipping_address(self):
         """Create an shipping patner without name."""
