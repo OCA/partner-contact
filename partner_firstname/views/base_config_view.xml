@@ -8,7 +8,6 @@
                 <block title="Partner Names" name="partner_names_setting_container">
                     <setting>
                         <field name="partner_names_order" />
-                        <field name="partner_names_order_changed" invisible="1" />
                         <button
                             name="action_recalculate_partners_name"
                             string="Recalculate names"
