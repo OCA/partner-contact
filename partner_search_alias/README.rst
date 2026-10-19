@@ -1,7 +1,3 @@
-.. image:: https://odoo-community.org/readme-banner-image
-   :target: https://odoo-community.org/get-involved?utm_source=readme
-   :alt: Odoo Community Association
-
 ====================
 Partner Search Alias
 ====================
@@ -17,7 +13,7 @@ Partner Search Alias
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github
@@ -75,6 +71,14 @@ This module is maintained by the OCA.
 OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
+
+.. |maintainer-AungKoKoLin1997| image:: https://github.com/AungKoKoLin1997.png?size=40px
+    :target: https://github.com/AungKoKoLin1997
+    :alt: AungKoKoLin1997
+
+Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+
+|maintainer-AungKoKoLin1997| 
 
 This module is part of the `OCA/partner-contact <https://github.com/OCA/partner-contact/tree/17.0/partner_search_alias>`_ project on GitHub.
 
