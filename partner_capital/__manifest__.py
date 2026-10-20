@@ -5,7 +5,7 @@
 
 {
     "name": "Partners Capital",
-    "version": "18.0.1.0.1",
+    "version": "20.0.1.0.0",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
     "author": "Antiun Ingeniería S.L., Tecnativa, Odoo Community Association (OCA)",
@@ -14,7 +14,7 @@
     "data": [
         "views/res_partner_turnover_range_view.xml",
         "views/res_partner_view.xml",
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
     ],
     "installable": True,
     "maintainers": ["EmilioPascual"],
