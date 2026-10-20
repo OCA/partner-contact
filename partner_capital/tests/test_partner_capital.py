@@ -43,3 +43,15 @@ class TestResPartner(BaseCommon):
     def test_turnover_range_fields(self):
         """Test ResPartnerTurnoverRange fields"""
         self.assertEqual(self.turnover_range_2.name, "10M-50M")
+
+    def test_capital_fields_in_form_view(self):
+        """Capital fields are in the form and filters apply without VAT."""
+        view = self.env["res.partner"].get_view(
+            self.env.ref("base.view_partner_form").id
+        )
+        self.assertIn("capital_amount", view["arch"])
+        self.assertFalse(self.partner.vat)
+        self.assertIn(
+            self.partner,
+            self.env["res.partner"].search([("parent_id", "=", False)]),
+        )
