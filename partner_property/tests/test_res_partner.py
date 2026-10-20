@@ -1,122 +1,78 @@
 # Copyright 2024 Tecnativa - Pilar Vargas
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import TransactionCase
+import json
+
+from odoo.tests import HttpCase, tagged
 
 
-class TestResPartnerProperty(TransactionCase):
+@tagged("post_install", "-at_install")
+class TestResPartnerProperty(HttpCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.company_a = cls.env["res.company"].create(
-            {
-                "name": "Company A",
-            }
+        cls.companies = cls.env["res.partner"].create(
+            [
+                {"name": "Company A", "vat": "ESA58818501"},
+                {"name": "Company B", "vat": "ESB99286320"},
+            ]
         )
-        cls.company_b = cls.env["res.company"].create(
-            {
-                "name": "Company B",
-            }
-        )
-
-    # Test that properties_company_id is set correctly using the company in context.
-    def test_properties_company_A(self):
-        partner = (
-            self.env["res.partner"]
-            .with_company(self.company_a.id)
-            .create(
+        cls.individuals = cls.env["res.partner"].create(
+            [
                 {
-                    "name": "Partner Test with company A",
+                    "name": f"Individual {company.name}",
+                    "parent_id": company.id,
                 }
-            )
+                for company in cls.companies
+            ]
         )
-        self.assertEqual(
-            partner.properties_company_id,
-            self.company_a,
-        )
+        container = cls.companies[:1].properties_base_definition_id
+        container.properties_definition = [
+            {"name": "scope_global", "string": "Global", "type": "char"},
+            {
+                "name": "scope_company",
+                "string": "Company",
+                "type": "char",
+                "partner_scope": "companies",
+            },
+            {
+                "name": "scope_individual",
+                "string": "Individual",
+                "type": "char",
+                "partner_scope": "individuals",
+            },
+        ]
 
-    def test_properties_company_B(self):
-        partner = (
-            self.env["res.partner"]
-            .with_company(self.company_b.id)
-            .create(
-                {
-                    "name": "Partner Test with company B",
+    def test_property_visibility(self):
+        for partner in self.companies | self.individuals:
+            with self.subTest(partner=partner.name):
+                expected = {
+                    "scope_global": True,
+                    "scope_company": partner in self.companies,
+                    "scope_individual": partner in self.individuals,
                 }
-            )
-        )
-        self.assertEqual(
-            partner.properties_company_id,
-            self.company_b,
-        )
-
-    def test_properties_company_id(self):
-        partner = self.env["res.partner"].create({"name": "Partner Test"})
-        # The partner has no company set, so the properties_company_id should
-        # always match the current context company.
-        self.assertEqual(
-            partner.with_company(self.company_a.id).properties_company_id,
-            self.company_a,
-        )
-        self.assertEqual(
-            partner.with_company(self.company_b.id).properties_company_id,
-            self.company_b,
-        )
-        # Searching should also work..
-        self.assertEqual(
-            self.env["res.partner"]
-            .with_company(self.company_a.id)
-            .search(
-                [
-                    ("properties_company_id", "=", self.company_a.id),
-                    ("id", "=", partner.id),
-                ]
-            ),
-            partner,
-        )
-        self.assertEqual(
-            self.env["res.partner"]
-            .with_company(self.company_b.id)
-            .search(
-                [
-                    ("properties_company_id", "=", self.company_b.id),
-                    ("id", "=", partner.id),
-                ]
-            ),
-            partner,
-        )
-        # Except if we set an explicit company.. then it should match that
-        # company regardless of the context company.
-        partner.company_id = self.company_a
-        self.assertEqual(
-            partner.with_company(self.company_a.id).properties_company_id,
-            self.company_a,
-        )
-        partner.invalidate_recordset()  # Invalidate cache to force recomputation
-        self.assertEqual(
-            partner.with_company(self.company_b.id).properties_company_id,
-            self.company_a,
-        )
-        # Searching should also work..
-        self.assertEqual(
-            self.env["res.partner"]
-            .with_company(self.company_a.id)
-            .search(
-                [
-                    ("properties_company_id", "=", self.company_a.id),
-                    ("id", "=", partner.id),
-                ]
-            ),
-            partner,
-        )
-        self.assertFalse(
-            self.env["res.partner"]
-            .with_company(self.company_b.id)
-            .search(
-                [
-                    ("properties_company_id", "=", self.company_b.id),
-                    ("id", "=", partner.id),
-                ]
-            ),
-            partner,
-        )
+                self.browser_js(
+                    f"/odoo/contacts/{partner.id}",
+                    "const expected = "
+                    + json.dumps(expected)
+                    + ";\n"
+                    + """
+                    for (const [name, visible] of Object.entries(expected)) {
+                        const element = document.querySelector(
+                            `.o_form_view .o_property_field[property-name="${name}"]`
+                        );
+                        const displayed = Boolean(element?.getClientRects().length);
+                        if (displayed !== visible) {
+                            throw new Error(
+                                `${name}: expected visible=${visible}, got ${displayed}`
+                            );
+                        }
+                    }
+                    console.log("test successful");
+                    """,
+                    ready=(
+                        "Boolean(document.querySelector("
+                        "'.o_form_view .o_property_field'))"
+                    ),
+                    login="admin",
+                )
