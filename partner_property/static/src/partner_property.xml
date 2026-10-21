@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t
+        t-name="partner_property.PropertyDefinition"
+        t-inherit="web.PropertyDefinition"
+        t-inherit-mode="extension"
+    >
+        <xpath
+            expr="//div[hasclass('o_field_property_definition_type')]/.."
+            position="after"
+        >
+            <div
+                t-if="this.props.record?.resModel === 'res.partner' and this.props.fieldName === 'properties' and this.state.propertyDefinition.type !== 'separator'"
+                class="d-contents mb-3 mb-sm-0"
+            >
+                <label
+                    t-att-for="this.getUniqueDomID('partner_scope')"
+                    class="o_form_label align-self-center text-900"
+                >Applies to</label>
+                <select
+                    t-att-id="this.getUniqueDomID('partner_scope')"
+                    class="o_input o_partner_property_scope"
+                    t-att-disabled="this.props.readonly || !this.props.canChangeDefinition"
+                    t-on-change="(ev) => this.onAttributeChange('partner_scope', ev.target.value)"
+                >
+                    <option
+                        value="all"
+                        t-att-selected="!this.state.propertyDefinition.partner_scope || this.state.propertyDefinition.partner_scope === 'all'"
+                    >All</option>
+                    <option
+                        value="companies"
+                        t-att-selected="this.state.propertyDefinition.partner_scope === 'companies'"
+                    >Companies</option>
+                    <option
+                        value="individuals"
+                        t-att-selected="this.state.propertyDefinition.partner_scope === 'individuals'"
+                    >Individuals</option>
+                </select>
+            </div>
+        </xpath>
+    </t>
+    <t
+        t-name="partner_property.PropertiesField"
+        t-inherit="web.PropertiesField"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//div[@t-as='propertyConfiguration']" position="attributes">
+            <attribute name="t-if">!propertyConfiguration.hidden and (
+                this.props.record.resModel !== 'res.partner'
+                or this.props.name !== 'properties'
+                or !propertyConfiguration.partner_scope
+                or propertyConfiguration.partner_scope === 'all'
+                or propertyConfiguration.partner_scope === (
+                    this.props.record.data.is_company ? 'companies' : 'individuals'
+                )
+            )</attribute>
+        </xpath>
+    </t>
+    <t
+        t-name="partner_property.CardPropertiesField"
+        t-inherit="web.CardPropertiesField"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//div[@t-as='propertyConfiguration']" position="attributes">
+            <attribute
+                name="t-if"
+            >propertyConfiguration.value and propertyConfiguration.view_in_cards and (
+                this.props.record.resModel !== 'res.partner'
+                or this.props.name !== 'properties'
+                or !propertyConfiguration.partner_scope
+                or propertyConfiguration.partner_scope === 'all'
+                or propertyConfiguration.partner_scope === (
+                    this.props.record.data.is_company ? 'companies' : 'individuals'
+                )
+            )</attribute>
+        </xpath>
+    </t>
+</templates>
