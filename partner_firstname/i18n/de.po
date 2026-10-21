@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2025-02-25 15:06+0000\n"
-"Last-Translator: davidbeckercbl <becker@cbl-computer.de>\n"
+"PO-Revision-Date: 2026-10-21 13:46+0000\n"
+"Last-Translator: Erik Lichius <lichiuserik@gmail.com>\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_firstname
 #. odoo-python
@@ -78,9 +78,9 @@ msgstr "Vorname"
 #. module: partner_firstname
 #. odoo-python
 #: code:addons/partner_firstname/models/base_config_settings.py:0
-#, python-format
+#, fuzzy, python-format
 msgid "Firstname Lastname"
-msgstr ""
+msgstr "Vorname Nachname"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
@@ -93,14 +93,14 @@ msgstr "Nachname"
 #: code:addons/partner_firstname/models/base_config_settings.py:0
 #, python-format
 msgid "Lastname Firstname"
-msgstr ""
+msgstr "Nachname Vorname"
 
 #. module: partner_firstname
 #. odoo-python
 #: code:addons/partner_firstname/models/base_config_settings.py:0
 #, python-format
 msgid "Lastname, Firstname"
-msgstr ""
+msgstr "Nachname, Vorname"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__name
