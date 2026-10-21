@@ -23,4 +23,7 @@
         <field name="privilege_id" ref="res_groups_privilege_deduplicate_contacts" />
         <field name="implied_ids" eval="[Command.link(ref('group_automatically'))]" />
     </record>
+    <record id="base.group_system" model="res.groups">
+        <field name="implied_ids" eval="[Command.link(ref('group_unrestricted'))]" />
+    </record>
 </odoo>
