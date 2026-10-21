@@ -1,7 +1,7 @@
 # Copyright 2017-2019 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import exceptions
+from odoo import Command, exceptions
 from odoo.tests import new_test_user
 
 from odoo.addons.base.tests.common import BaseCommon
@@ -34,11 +34,11 @@ class TestPartnerDeduplicateAcl(BaseCommon):
         )
 
     def test_same_email_restriction(self):
-        self.wizard.action_start_manual_process()
+        self.wizard.with_user(self.user).action_start_manual_process()
         with self.assertRaises(exceptions.UserError):
             self.wizard.action_merge()
-        self.user.group_ids = [
-            (4, self.env.ref("partner_deduplicate_acl.group_unrestricted").id)
+        self.user.sudo().group_ids = [
+            Command.link(self.env.ref("partner_deduplicate_acl.group_unrestricted").id)
         ]
         # Now there shouldn't be error
         # Although it should not be necessary, we apply sudo() because in some cases

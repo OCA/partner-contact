@@ -7,7 +7,7 @@
 {
     "name": "Deduplicate Contacts ACL",
     "summary": "Contact deduplication with fine-grained permission control",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "category": "Tools",
     "website": "https://github.com/OCA/partner-contact",
     "author": "Tecnativa, Odoo Community Association (OCA)",
@@ -17,7 +17,7 @@
     "depends": ["contacts"],
     "data": [
         "security/partner_deduplicate_acl_security.xml",
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "wizards/partner_merge_view.xml",
         "views/base_partner_merge_view.xml",
     ],
