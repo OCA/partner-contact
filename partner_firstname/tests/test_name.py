@@ -31,7 +31,10 @@
 To have more accurate results, remove the ``mail`` module before testing.
 """
 
-from .. import exceptions as ex
+from psycopg2 import IntegrityError
+
+from odoo.tools import mute_logger
+
 from .base import BaseCase
 
 
@@ -94,11 +97,13 @@ class PartnerCompanyCase(BaseCase):
         self.expect(self.name, False, self.name)
         self.check_fields = False
 
+    @mute_logger("odoo.sql_db")
     def test_no_names(self):
-        """Test that you cannot set a partner/user without names."""
+        """Test that you cannot set a company without names."""
         self.check_fields = False
-        with self.assertRaises(ex.EmptyNamesError):
+        with self.assertRaises(IntegrityError):
             self.original.firstname = self.original.lastname = False
+            self.env.flush_all()
 
     def test_company_inverse(self):
         """Test the inverse method in a company record."""
