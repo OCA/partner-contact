@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="view_partner_id_numbers_search" model="ir.ui.view">
         <field name="name">res.partner.id_number.search</field>
@@ -188,8 +189,8 @@
     </record>
 
     <menuitem
-        action="action_partner_id_numbers_form"
         id="menu_partner_id_numbers"
+        action="action_partner_id_numbers_form"
         parent="menu_partner_id_numbers_main"
         sequence="20"
     />

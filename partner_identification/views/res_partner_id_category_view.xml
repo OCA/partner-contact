@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- Partner Identification Number Categories -->
     <record id="view_partner_id_category_form" model="ir.ui.view">
@@ -108,14 +109,14 @@ failed = not id_number.name.startswith(self.code) and True or False
         <field name="search_view_id" ref="view_partner_id_category_search" />
     </record>
     <menuitem
-        name="Partner ID Numbers"
         id="menu_partner_id_numbers_main"
+        name="Partner ID Numbers"
         parent="contacts.res_partner_menu_config"
         sequence="10"
     />
     <menuitem
-        action="action_partner_id_category"
         id="menu_partner_id_category"
+        action="action_partner_id_category"
         parent="menu_partner_id_numbers_main"
         sequence="10"
     />

@@ -22,9 +22,9 @@ class ResPartner(models.Model):
     def _get_active_id_numbers(self, category_code):
         """Return active (non-expired) ID numbers for the given category."""
         return self.id_numbers.filtered(
-            lambda r: r.category_id.code == category_code
-            and r.active
-            and r.status != "close"
+            lambda r: (
+                r.category_id.code == category_code and r.active and r.status != "close"
+            )
         )
 
     @api.depends("id_numbers")
