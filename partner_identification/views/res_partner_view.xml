@@ -30,7 +30,7 @@
                             />
                             <field name="date_issued" />
                             <field name="valid_from" />
-                            <field name="valid_until" widget="remaining_days" />
+                            <field name="valid_until" widget="relative_date" />
                             <field
                                 name="status"
                                 widget="badge"
