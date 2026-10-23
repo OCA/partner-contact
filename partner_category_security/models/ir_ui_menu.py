@@ -1,13 +1,13 @@
 # Copyright 2024 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-from odoo import api, models, tools
+from odoo import api, models
 
 
 class IrUiMenu(models.Model):
     _inherit = "ir.ui.menu"
 
     @api.model
-    @tools.ormcache("frozenset(self.env.user._get_group_ids())", "debug")
+    @api.ormcache("frozenset(self.env.user._get_group_ids())", "debug")
     def _visible_menu_ids(self, debug=False):
         """It is not possible to set !groups in menu items, we do not return the record
         if the user has base.group_system (to avoid the 'duplicate' menu)."""
