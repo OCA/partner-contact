@@ -1,0 +1,54 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_manual_rank
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-07-09 07:25+0000\n"
+"Last-Translator: Laura V <laura.valls@forgeflow.com>\n"
+"Language-Team: none\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: partner_manual_rank
+#: model_terms:ir.ui.view,arch_db:partner_manual_rank.view_res_partner_filter
+msgid "Customers"
+msgstr "Kunder"
+
+#. module: partner_manual_rank
+#: model:ir.model.fields,field_description:partner_manual_rank.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Visningsnamn"
+
+#. module: partner_manual_rank
+#: model:ir.model,name:partner_manual_rank.model_res_partner
+msgid "Fake Model"
+msgstr "Fiktiv modell"
+
+#. module: partner_manual_rank
+#: model:ir.model.fields,field_description:partner_manual_rank.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_manual_rank
+#: model:ir.model.fields,field_description:partner_manual_rank.field_res_partner__is_customer
+#: model:ir.model.fields,field_description:partner_manual_rank.field_res_users__is_customer
+msgid "Is a Customer"
+msgstr "Är en kund"
+
+#. module: partner_manual_rank
+#: model:ir.model.fields,field_description:partner_manual_rank.field_res_partner__is_supplier
+#: model:ir.model.fields,field_description:partner_manual_rank.field_res_users__is_supplier
+msgid "Is a Supplier"
+msgstr "Är en leverantör"
+
+#. module: partner_manual_rank
+#: model_terms:ir.ui.view,arch_db:partner_manual_rank.view_res_partner_filter
+msgid "Suppliers"
+msgstr "Leverantörer"
