@@ -4,7 +4,7 @@
 
 {
     "name": "Partner Title",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "category": "Extra Tools",
     "license": "AGPL-3",
     "summary": "Add title field on partner",
@@ -14,7 +14,7 @@
     "website": "https://github.com/OCA/partner-contact",
     "depends": ["base"],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "views/res_partner_title.xml",
         "views/res_partner.xml",
         "data/res_partner_title.xml",
