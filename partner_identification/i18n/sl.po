@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-21 01:49+0000\n"
-"PO-Revision-Date: 2026-07-09 06:13+0000\n"
+"PO-Revision-Date: 2026-10-24 12:49+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -138,12 +138,12 @@ msgstr "Kategorija"
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Category Code"
-msgstr ""
+msgstr "Koda kategorije"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Category Scheme"
-msgstr ""
+msgstr "Shema kategorij"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__code
@@ -462,7 +462,7 @@ msgstr "V teku"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__scheme
 msgid "Scheme"
-msgstr ""
+msgstr "Shema"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
