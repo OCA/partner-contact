@@ -8,13 +8,20 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     phone2 = fields.Char("Phone (Secondary)")
+    # Companion fields read by the phone widget (see phone_validation):
+    # phone2 keeps the raw input, display/dial use these.
+    phone2_sanitized = fields.Char(
+        compute="_compute_phone2_companion_fields", export_string_translation=False
+    )
+    phone2_formatted = fields.Char(
+        compute="_compute_phone2_companion_fields", export_string_translation=False
+    )
 
-    @api.onchange("phone2", "country_id", "company_id")
-    def _onchange_phone2_validation(self):
-        # This is done in onchange to keep consistent with phone_validation
-        # phone and mobile validation
-        if self.phone2 and hasattr(self, "_phone_format"):
-            self.phone2 = (
-                self._phone_format(fname="phone2", force_format="INTERNATIONAL")
-                or self.phone2
-            )
+    @api.depends("phone2", "country_id", "company_id")
+    def _compute_phone2_companion_fields(self):
+        if hasattr(self, "_phone_update_companion_fields"):
+            self._phone_update_companion_fields(["phone2"])
+        else:
+            # phone_validation not installed: widget falls back to raw phone2
+            self.phone2_sanitized = False
+            self.phone2_formatted = False
