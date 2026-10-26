@@ -80,13 +80,13 @@ class TestResPartnerRefUnique(common.TransactionCase):
         self.company.partner_ref_unique = (
             "none"  # Ensure no constraint is applied at beginning
         )
-        self.partner1.is_company = True
-        self.partner2.is_company = True
+        self.partner1.vat = "VAT123"  # is_company is compute fields
+        self.partner2.vat = "VAT456"  # is_company is compute fields
         # Test that we can create/modify company partners
         # with same ref in current situation
         self.partner1.ref = "same_ref"
         partner3 = self.partner_obj.create(
-            {"name": "Company3", "ref": "same_ref", "is_company": True}
+            {"name": "Company3", "ref": "same_ref", "vat": "VAT789"}
         )
         # Try to activate restriction
         with self.assertRaisesRegex(
@@ -104,12 +104,10 @@ class TestResPartnerRefUnique(common.TransactionCase):
             ValidationError, "This reference is equal to partner"
         ):
             self.partner_obj.create(
-                {"is_company": True, "name": "other", "ref": "same_ref"}
+                {"vat": "VAT1211", "name": "other", "ref": "same_ref"}
             )
         # Here there shouldn't be any problem
-        self.partner_obj.create(
-            {"is_company": False, "name": "other", "ref": "same_ref"}
-        )
+        self.partner_obj.create({"name": "other", "ref": "same_ref"})
 
     def test_merge(self):
         self.company.partner_ref_unique = "all"
