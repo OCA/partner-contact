@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_partner_main2_position_consultant" model="res.partner">
+        <field name="name">Roger Scott</field>
+        <field name="function">Consultant</field>
+        <field name="parent_id" ref="base.res_partner_4" />
+        <field name="contact_id" ref="base.res_partner_main2" />
+    </record>
+    <record id="res_partner_contact1" model="res.partner">
+        <field name="name">Bob Egnops</field>
+        <field name="email">bob@hillenburg-oceaninstitute.com</field>
+    </record>
+    <record id="res_partner_contact1_work_position1" model="res.partner">
+        <field name="name">Bob Egnops</field>
+        <field name="function">Technician</field>
+        <field name="email">bob@yourcompany.com</field>
+        <field name="parent_id" ref="base.main_partner" />
+        <field name="contact_id" ref="res_partner_contact1" />
+    </record>
+</odoo>
