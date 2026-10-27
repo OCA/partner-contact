@@ -108,6 +108,8 @@ class FirstNameMixin(models.AbstractModel):
         """Compute the 'name' field according to splitted data.
         You can override this method to change the order of lastname and
         firstname the computed name"""
+        if not (lastname or firstname):
+            return False
         order = self._get_names_order()
         if order == "last_first_comma":
             return ", ".join(p for p in (lastname, firstname) if p)
@@ -156,9 +158,9 @@ class FirstNameMixin(models.AbstractModel):
         """Method to check if any name fields are in `vals`."""
         return vals.get("firstname") or vals.get("lastname")
 
-    @api.constrains("name", "firstname", "lastname")
+    @api.constrains("firstname", "lastname")
     def _check_firstname_lastname(self):
-        """Ensure that name, firstname and lastname are correctly set
+        """Ensure that firstname and lastname are correctly set
         depending on the configuration and on the type of the record.
 
         Records loaded from the data files of a module are exempt: the module
@@ -168,11 +170,10 @@ class FirstNameMixin(models.AbstractModel):
         of the same clash.
         """
         if self.env.context.get("install_mode"):
-            return
+            return  # pragma: no cover
         for record in self:
             if any(
                 [
-                    record.is_company and not record.name,
                     record.firstname_required and not record.firstname,
                     record.lastname_required and not record.lastname,
                 ]
