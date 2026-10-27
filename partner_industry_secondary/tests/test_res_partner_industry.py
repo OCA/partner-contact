@@ -4,10 +4,13 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo.exceptions import UserError, ValidationError
-from odoo.tests import common
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestResPartnerIndustry(common.TransactionCase):
+class TestResPartnerIndustry(BaseCommon):
+    _test_user_groups = None
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -52,7 +55,7 @@ class TestResPartnerIndustry(common.TransactionCase):
 
     def test_03_check_recursion(self):
         """Checks that a recursive hierarchy among industries is not allowed."""
-        with self.assertRaisesRegex(UserError, "Recursion Detected."):
+        with self.assertRaisesRegex(UserError, "You are creating a loop"):
             self.industry_main.parent_id = self.industry_child.id
 
     def test_04_name(self):
