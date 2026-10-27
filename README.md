@@ -30,7 +30,7 @@ addon | version | maintainers | summary
 [base_partner_sequence](base_partner_sequence/) | 19.0.1.1.0 |  | Sets customer's code from a sequence
 [crm_partner_company_group](crm_partner_company_group/) | 19.0.1.0.0 |  | Adds the possibility to add a company group to a company
 [partner_address_street3](partner_address_street3/) | 19.0.1.1.0 |  | Add a third address line on partners
-[partner_affiliate](partner_affiliate/) | 19.0.1.0.0 |  | Partner Affiliates
+[partner_affiliate](partner_affiliate/) | 19.0.1.0.1 |  | Partner Affiliates
 [partner_auto_archive](partner_auto_archive/) | 19.0.1.0.0 |  | Archive periodically all contacts marked as auto-archive.
 [partner_bank_code](partner_bank_code/) | 19.0.1.0.0 |  | Add fields information in banks
 [partner_category_description](partner_category_description/) | 19.0.1.0.1 | <a href='https://github.com/edlopen'><img src='https://github.com/edlopen.png' width='32' height='32' style='border-radius:50%;' alt='edlopen'/></a> <a href='https://github.com/rafaelbn'><img src='https://github.com/rafaelbn.png' width='32' height='32' style='border-radius:50%;' alt='rafaelbn'/></a> | Adds a description field to contact categories to improve organization and managment of customer relationships.
