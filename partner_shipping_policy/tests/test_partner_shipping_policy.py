@@ -48,11 +48,38 @@ class TestPartnerShippingPolicy(BaseCommon):
         sale_form.partner_id = self.partner
         self.assertEqual(sale_form.picking_policy, self.delivery_address.picking_policy)
         sale_form.partner_id = self.partner_2
-        self.assertEqual(
-            sale_form.picking_policy,
-            self.env["sale.order"]
-            .default_get(["picking_policy"])
-            .get("picking_policy"),
-        )
+        self.assertEqual(sale_form.picking_policy, "direct")
         sale_form.partner_id = self.partner_3
         self.assertEqual(sale_form.picking_policy, self.partner_3.picking_policy)
+
+    def test_03_create_with_partner(self):
+        order = self.sale_order_model.create({"partner_id": self.partner_3.id})
+        self.assertEqual(order.picking_policy, "one")
+
+    def test_04_form_with_default_partner(self):
+        sale_form = Form(
+            self.sale_order_model.with_context(default_partner_id=self.partner_3.id)
+        )
+        self.assertEqual(sale_form.picking_policy, "one")
+
+    def test_05_create_explicit_value_kept(self):
+        order = self.sale_order_model.create(
+            {"partner_id": self.partner_3.id, "picking_policy": "direct"}
+        )
+        self.assertEqual(order.picking_policy, "direct")
+
+    def test_06_create_context_default_kept(self):
+        order = self.sale_order_model.with_context(
+            default_picking_policy="direct"
+        ).create({"partner_id": self.partner_3.id})
+        self.assertEqual(order.picking_policy, "direct")
+
+    def test_07_settings_default_without_partner_policy(self):
+        self.env["ir.default"].set("sale.order", "picking_policy", "one")
+        order = self.sale_order_model.create({"partner_id": self.partner_2.id})
+        self.assertEqual(order.picking_policy, "one")
+
+    def test_08_partner_policy_over_settings_default(self):
+        self.env["ir.default"].set("sale.order", "picking_policy", "direct")
+        order = self.sale_order_model.create({"partner_id": self.partner_3.id})
+        self.assertEqual(order.picking_policy, "one")
