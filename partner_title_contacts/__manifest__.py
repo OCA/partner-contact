@@ -4,7 +4,7 @@
 
 {
     "name": "Partner Title Contacts",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "category": "Extra Tools",
     "license": "AGPL-3",
     "summary": "Glue module between contacts and partner_title",
