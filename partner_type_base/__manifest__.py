@@ -3,7 +3,7 @@
 {
     "name": "Partner Address Types",
     "summary": "Base implementation to improve the address type customization.",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "author": "glueckkanja AG, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "category": "Extra Tools",
