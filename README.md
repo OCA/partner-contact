@@ -82,7 +82,7 @@ addon | version | maintainers | summary
 [partner_supplier_ref](partner_supplier_ref/) | 19.0.1.0.2 |  | Adds a supplier reference to contacts
 [partner_title](partner_title/) | 19.0.1.0.0 | <a href='https://github.com/alexis-via'><img src='https://github.com/alexis-via.png' width='32' height='32' style='border-radius:50%;' alt='alexis-via'/></a> | Add title field on partner
 [partner_title_contacts](partner_title_contacts/) | 19.0.1.0.0 | <a href='https://github.com/alexis-via'><img src='https://github.com/alexis-via.png' width='32' height='32' style='border-radius:50%;' alt='alexis-via'/></a> | Glue module between contacts and partner_title
-[partner_type_base](partner_type_base/) | 19.0.1.0.0 | <a href='https://github.com/CRogos'><img src='https://github.com/CRogos.png' width='32' height='32' style='border-radius:50%;' alt='CRogos'/></a> | Base implementation to improve the address type customization.
+[partner_type_base](partner_type_base/) | 19.0.1.0.1 | <a href='https://github.com/CRogos'><img src='https://github.com/CRogos.png' width='32' height='32' style='border-radius:50%;' alt='CRogos'/></a> | Base implementation to improve the address type customization.
 [partner_tz](partner_tz/) | 19.0.1.0.0 |  | Remove partner timezone default value and display on form
 [partner_uom_mapping](partner_uom_mapping/) | 19.0.1.0.0 |  | This module adds a mapping table between the unit of measure defined in Odoo and a partner side one.
 [partner_utm_source](partner_utm_source/) | 19.0.1.0.0 |  | This module adds the use of utm source in partners
