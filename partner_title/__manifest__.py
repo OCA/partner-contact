@@ -14,7 +14,7 @@
     "website": "https://github.com/OCA/partner-contact",
     "depends": ["base"],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "views/res_partner_title.xml",
         "views/res_partner.xml",
         "data/res_partner_title.xml",

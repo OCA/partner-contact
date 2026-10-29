@@ -20,8 +20,17 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <xpath expr="/form/sheet//field[@name='email']/.." position="before">
-                <div class="d-flex align-items-baseline w-md-50" invisible="is_company">
-                    <i class="fa fa-fw me-1 fa-user text-primary" title="Title" />
+                <label for="title_id" class="d-md-none" />
+                <div
+                    class="d-flex align-items-baseline w-md-50 gap-2"
+                    invisible="is_company"
+                    name="title_id"
+                >
+                    <i
+                        class="oi oi-filled d-none d-md-inline-flex"
+                        data-icon="person"
+                        title="Title"
+                    />
                     <field
                         name="title_id"
                         options="{'no_open': True, 'no_create': True, 'no_create_edit': True}"
@@ -30,11 +39,16 @@
                 </div>
             </xpath>
             <xpath
-                expr="//field[@name='child_ids']/form/sheet//field[@name='email']/.."
+                expr="//field[@name='child_ids']/form/sheet//label[@for='email']"
                 position="before"
             >
-                <div class="d-flex align-items-baseline" name="title">
-                    <i class="fa fa-fw me-1 fa-user text-primary" title="Title" />
+                <label for="title_id" class="d-md-none" />
+                <div class="d-flex align-items-baseline w-md-50 gap-2" name="title">
+                    <i
+                        class="oi oi-filled d-none d-md-block"
+                        data-icon="person"
+                        title="Title"
+                    />
                     <field
                         name="title_id"
                         invisible="type not in ('contact', 'other')"
