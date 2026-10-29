@@ -224,8 +224,8 @@ The module works through a scheduled action that:
      of days
    - The ID hasn't been notified already (no **"Notification Date"**)
 
-2. For each matching ID number, it sends an email using the configured
-   template
+2. For each matching ID number, it queues an email using the configured
+   template (sent by the outgoing mail queue)
 
 3. Records the notification date to avoid sending duplicate
    notifications

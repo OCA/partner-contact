@@ -56,10 +56,13 @@ class ResPartnerIdNumber(models.Model):
                     self._name,
                 )
                 continue
-            # One failing record must not roll back the whole cron run
+            # One failing record must not roll back the whole cron run. The
+            # mail is queued (no force_send): it only leaves after the cron
+            # commits, together with notification_date, so a rolled back run
+            # cannot have sent mails that are sent again on the next run.
             try:
                 with self.env.cr.savepoint():
-                    template.send_mail(rec.id, force_send=True)
+                    template.send_mail(rec.id)
                     rec.notification_date = today
             except Exception:
                 _logger.exception("Failed to send expiry notification for %s", rec)
