@@ -1,0 +1,3 @@
+- [Coop IT Easy SC](https://coopiteasy.be):
+  - Victor Champonnois
+- Frederic Grall
