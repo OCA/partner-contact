@@ -13,6 +13,7 @@
     "development_status": "Beta",
     "website": "https://github.com/OCA/partner-contact",
     "depends": ["partner_mobile", "phone_validation"],
+    "data": ["views/res_partner.xml"],
     "installable": True,
     "auto_install": True,
 }

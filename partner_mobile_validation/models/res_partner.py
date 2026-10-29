@@ -8,13 +8,9 @@ from odoo import api, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    @api.onchange("mobile", "country_id", "company_id")
-    def _onchange_mobile_validation(self):
-        if self.mobile:
-            self.mobile = (
-                self._phone_format(fname="mobile", force_format="INTERNATIONAL")
-                or self.mobile
-            )
-
-    # no need to inherit the method _phone_get_number_fields() because by default
-    # it has 'phone' and 'mobile' if the 2 fields exist on self
+    @api.model
+    def _phone_get_number_fields(self):
+        # by default, it returns ['phone', 'mobile']
+        # only return 'phone', otherwise when you update the 'mobile'
+        # field, the 'phone' field is with the value of the mobile number!
+        return ["phone"]
