@@ -5,12 +5,20 @@
   License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 -->
 <odoo>
+    <!-- odoo adds the widget="phone" for list and kanban views in the module 'phone_validation',
+    which adds an unnecessary inherit... so we do it here directly -->
     <record id="view_partner_tree" model="ir.ui.view">
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_tree" />
         <field name="arch" type="xml">
             <field name="phone" position="after">
-                <field name="mobile" optional="show" class="o_force_ltr" />
+                <field
+                    name="mobile"
+                    optional="show"
+                    class="o_force_ltr"
+                    widget="phone"
+                    options="{'formatted_field': 'mobile_formatted', 'dial_field': 'mobile_sanitized'}"
+                />
             </field>
         </field>
     </record>
@@ -20,13 +28,19 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <xpath expr="/form/sheet//field[@name='phone']/.." position="after">
-                <div class="d-flex align-items-baseline w-md-50" name="mobile">
-                    <i class="fa fa-fw me-1 fa-mobile text-primary" title="Mobile" />
+                <label for="phone" class="d-md-none" />
+                <div class="d-flex align-items-baseline w-md-50 gap-2" name="mobile">
+                    <i
+                        class="oi oi-filled d-none d-md-inline-flex"
+                        data-icon="smartphone"
+                        title="Mobile"
+                    />
                     <field
                         name="mobile"
-                        class="w-100"
                         widget="phone"
                         placeholder="Mobile"
+                        formatted_field="mobile_formatted"
+                        dial_field="mobile_sanitized"
                     />
                 </div>
             </xpath>
@@ -35,22 +49,40 @@
                 expr="//field[@name='child_ids']/kanban/templates//div[@t-if='record.phone.raw_value']"
                 position="after"
             >
-                <div t-if="record.mobile.raw_value">
-                    <i class="fa fa-fw me-1 fa-mobile text-primary" title="Mobile" />
-                    <field name="mobile" />
+                <div t-if="record.mobile.raw_value" name="mobile-child-kanban">
+                    <i
+                        class="oi oi-fw oi-filled me-1"
+                        data-icon="smartphone"
+                        title="Mobile"
+                    />
+                    <field
+                        name="mobile"
+                        widget="phone"
+                        placeholder="Mobile"
+                        options="{'formatted_field': 'mobile_formatted', 'dial_field': 'mobile_sanitized'}"
+                    />
                 </div>
             </xpath>
             <xpath
                 expr="//field[@name='child_ids']/form/sheet//field[@name='phone']/.."
                 position="after"
             >
-                <div class="d-flex align-items-baseline" name="mobile">
-                    <i class="fa fa-fw me-1 fa-mobile text-primary" title="Mobile" />
+                <label for="mobile" class="d-md-none" />
+                <div
+                    class="d-flex align-items-baseline w-md-50 gap-2"
+                    name="mobile-child-form"
+                >
+                    <i
+                        class="oi oi-filled d-none d-md-block"
+                        data-icon="smartphone"
+                        title="Mobile"
+                    />
                     <field
                         name="mobile"
                         widget="phone"
-                        class="w-100"
                         placeholder="Mobile"
+                        formatted_field="mobile_formatted"
+                        dial_field="mobile_sanitized"
                     />
                 </div>
             </xpath>
@@ -68,9 +100,18 @@
         <field name="inherit_id" ref="base.res_partner_kanban_view" />
         <field name="arch" type="xml">
             <div t-if="record.phone.raw_value" position="after">
-                <div t-if="record.mobile.raw_value">
-                    <i class="fa fa-fw me-1 fa-mobile text-primary" title="Mobile" />
-                    <field name="mobile" />
+                <div t-if="record.mobile.raw_value" class="d-flex align-items-baseline">
+                    <i
+                        class="oi oi-fw oi-filled me-1 text-muted"
+                        data-icon="smartphone"
+                        title="Mobile"
+                    />
+                    <field
+                        name="mobile"
+                        widget="phone"
+                        placeholder="Mobile"
+                        options="{'formatted_field': 'mobile_formatted', 'dial_field': 'mobile_sanitized'}"
+                    />
                 </div>
             </div>
         </field>
@@ -81,7 +122,12 @@
         <field name="inherit_id" ref="base.view_partner_simple_form" />
         <field name="arch" type="xml">
             <field name="phone" position="after">
-                <field name="mobile" widget="phone" />
+                <field
+                    name="mobile"
+                    widget="phone"
+                    formatted_field="mobile_formatted"
+                    dial_field="mobile_sanitized"
+                />
             </field>
         </field>
     </record>
