@@ -2,8 +2,10 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from datetime import timedelta
+from unittest.mock import patch
 
 from odoo import fields
+from odoo.exceptions import ValidationError
 from odoo.tests.common import TransactionCase
 
 
@@ -146,3 +148,69 @@ class TestPartnerIdentificationNotification(TransactionCase):
             self.today + timedelta(days=3), notification_date=self.today
         )
         self.assertFalse(id_number.copy().notification_date)
+
+    def test_notification_sends_mail_to_id_number(self):
+        """The template is rendered on the ID number record"""
+        id_number = self._create_id_number(self.today + timedelta(days=3))
+        self.IdNumber.send_notification()
+        mail = self.env["mail.mail"].search(
+            [("model", "=", "res.partner.id_number"), ("res_id", "=", id_number.id)]
+        )
+        self.assertTrue(mail)
+
+    def test_template_of_other_model_rejected(self):
+        partner_template = self.env["mail.template"].create(
+            {
+                "name": "Partner Template",
+                "model_id": self.env["ir.model"]._get_id("res.partner"),
+            }
+        )
+        with self.assertRaises(ValidationError):
+            self.id_category.email_template_id = partner_template
+
+    def test_template_of_other_model_skipped(self):
+        """A misconfigured template never renders an unrelated record"""
+        partner_template = self.env["mail.template"].create(
+            {
+                "name": "Partner Template",
+                "model_id": self.env["ir.model"]._get_id("res.partner"),
+            }
+        )
+        # Bypass the constraint, as for data created before it existed
+        self.env.cr.execute(
+            "UPDATE res_partner_id_category SET email_template_id = %s WHERE id = %s",
+            (partner_template.id, self.id_category.id),
+        )
+        self.id_category.invalidate_recordset(["email_template_id"])
+        id_number = self._create_id_number(self.today + timedelta(days=3))
+        with (
+            patch.object(type(partner_template), "send_mail") as send_mail,
+            self.assertLogs(
+                "odoo.addons.partner_identification_notification", level="WARNING"
+            ) as logs,
+        ):
+            self.IdNumber.send_notification()
+        send_mail.assert_not_called()
+        self.assertIn("is defined on model res.partner", logs.output[0])
+        self.assertFalse(id_number.notification_date)
+
+    def test_failing_record_does_not_block_others(self):
+        """A rendering error on one ID does not stop the others"""
+        failing = self._create_id_number(self.today + timedelta(days=2))
+        working = self._create_id_number(self.today + timedelta(days=3))
+        send_mail = type(self.email_template).send_mail
+
+        def _send_mail(template, res_id, *args, **kwargs):
+            if res_id == failing.id:
+                raise ValueError("Rendering failed")
+            return send_mail(template, res_id, *args, **kwargs)
+
+        with (
+            patch.object(type(self.email_template), "send_mail", _send_mail),
+            self.assertLogs(
+                "odoo.addons.partner_identification_notification", level="ERROR"
+            ),
+        ):
+            self.IdNumber.send_notification()
+        self.assertFalse(failing.notification_date)
+        self.assertEqual(working.notification_date, self.today)

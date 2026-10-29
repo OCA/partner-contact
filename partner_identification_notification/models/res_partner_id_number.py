@@ -1,6 +1,10 @@
+import logging
+
 from dateutil.relativedelta import relativedelta
 
 from odoo import api, fields, models
+
+_logger = logging.getLogger(__name__)
 
 
 class ResPartnerIdNumber(models.Model):
@@ -37,9 +41,25 @@ class ResPartnerIdNumber(models.Model):
         )
         for rec in rec_ids:
             days_before_expire = rec.category_id.days_before_expire
-            if rec.valid_until <= today + relativedelta(days=days_before_expire):
-                rec.notification_date = today
-                rec.category_id.email_template_id.send_mail(
-                    rec.id,
-                    force_send=True,
+            if rec.valid_until > today + relativedelta(days=days_before_expire):
+                continue
+            template = rec.category_id.email_template_id
+            if template.model != self._name:
+                # Rendering a template of another model with this record's id
+                # would mail (or crash on) an unrelated record
+                _logger.warning(
+                    "Skipping notification for %s: email template %s is "
+                    "defined on model %s instead of %s",
+                    rec,
+                    template,
+                    template.model,
+                    self._name,
                 )
+                continue
+            # One failing record must not roll back the whole cron run
+            try:
+                with self.env.cr.savepoint():
+                    template.send_mail(rec.id, force_send=True)
+                    rec.notification_date = today
+            except Exception:
+                _logger.exception("Failed to send expiry notification for %s", rec)

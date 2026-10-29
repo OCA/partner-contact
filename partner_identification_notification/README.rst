@@ -258,6 +258,11 @@ The module uses email templates to customize notification messages:
    ``{{ object.partner_id.name }}`` for partner name
 4. Set the template in your ID category configuration
 
+Only templates of the **"res.partner.id_number"** model can be selected.
+A template of another model (e.g. a contact template) would be rendered
+with the ID number's database id on an unrelated record, so the
+scheduled action skips it and logs a warning instead.
+
 Scheduled Action
 ~~~~~~~~~~~~~~~~
 

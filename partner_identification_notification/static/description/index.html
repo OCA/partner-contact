@@ -596,6 +596,10 @@ is recorded</li>
 <tt class="docutils literal">{{ object.partner_id.name }}</tt> for partner name</li>
 <li>Set the template in your ID category configuration</li>
 </ol>
+<p>Only templates of the <strong>“res.partner.id_number”</strong> model can be selected.
+A template of another model (e.g. a contact template) would be rendered
+with the ID number’s database id on an unrelated record, so the
+scheduled action skips it and logs a warning instead.</p>
 </div>
 <div class="section" id="scheduled-action">
 <h3>Scheduled Action</h3>
