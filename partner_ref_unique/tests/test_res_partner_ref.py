@@ -123,3 +123,9 @@ class TestResPartnerRefUnique(common.TransactionCase):
         )
         # this shouldn't raise error
         wizard.action_merge()
+
+    def test_copy(self):
+        self.company.partner_ref_unique = "all"
+        self.partner1.ref = "ref_to_copy"
+        partner = self.partner1.copy()
+        self.assertFalse(partner.ref)
