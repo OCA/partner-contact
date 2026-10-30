@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="search_res_partner_relation" model="ir.ui.view">
+        <field name="model">res.partner.relation</field>
+        <field name="arch" type="xml">
+            <search string="Search Relations">
+                <field name="any_partner_id" widget="many2one" />
+                <field name="left_partner_id" />
+                <field name="right_partner_id" />
+                <field name="type_id" />
+                <group>
+                    <filter
+                        name="group_by_left_partner_id"
+                        string="Left Partner"
+                        context="{'group_by': 'left_partner_id'}"
+                    />
+                    <filter
+                        name="group_by_type_id"
+                        string="Relationship Type"
+                        context="{'group_by': 'type_id'}"
+                    />
+                    <filter
+                        name="group_by_right_partner_id"
+                        string="Right Partner"
+                        context="{'group_by': 'right_partner_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="tree_res_partner_relation" model="ir.ui.view">
+        <field name="model">res.partner.relation</field>
+        <field name="arch" type="xml">
+            <list>
+                <field
+                    name="this_partner_id"
+                    column_invisible="context.get('current_partner_id', False)"
+                />
+                <field name="type_id_display" string="Connection" />
+                <field name="other_partner_id" />
+                <field name="date_start" string="Start" />
+                <field name="date_end" string="End" />
+            </list>
+        </field>
+    </record>
+    <record id="form_res_partner_relation" model="ir.ui.view">
+        <field name="model">res.partner.relation</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="left_partner_id_domain" invisible="1" />
+                <field name="right_partner_id_domain" invisible="1" />
+                <field name="type_id_domain" invisible="1" />
+                <group colspan="4" col="2">
+                    <field
+                        name="left_partner_id"
+                        required="True"
+                        options="{'no_create': True}"
+                        domain="left_partner_id_domain"
+                    />
+                    <field
+                        name="type_id"
+                        options="{'no_create': True}"
+                        domain="type_id_domain"
+                    />
+                    <field
+                        name="right_partner_id"
+                        required="True"
+                        options="{'no_create': True}"
+                        domain="right_partner_id_domain"
+                    />
+                    <field name="date_start" />
+                    <field name="date_end" />
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>
