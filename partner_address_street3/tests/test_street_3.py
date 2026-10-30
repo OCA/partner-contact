@@ -41,6 +41,20 @@ class TestStreet3(TransactionCase):
         homer.write({"street3": "in OCA we trust"})
         self.assertEqual(bart.street3, "in OCA we trust")
 
+    def test_street3_copied_via_onchange_parent_id(self):
+        """street3 must be copied from parent when parent_id is set via onchange."""
+        company = self.env["res.partner"].create(
+            {
+                "name": "ACME Corp",
+                "is_company": True,
+                "street3": "Building C",
+            }
+        )
+        contact = self.env["res.partner"].new({"type": "contact"})
+        contact.parent_id = company
+        contact._onchange_parent_id_street3()
+        self.assertEqual(contact.street3, "Building C")
+
     def test_post_init_hook(self):
         from ..hooks import post_init_hook
 
