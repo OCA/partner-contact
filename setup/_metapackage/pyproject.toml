@@ -1,0 +1,11 @@
+[project]
+name = "odoo-addons-oca-partner-contact"
+version = "20.0.20261030.0"
+dependencies = [
+    "odoo-addon-partner_contact_department==20.0.*",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 20.0",
+]
