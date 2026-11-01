@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="form_res_partner_relation_type" model="ir.ui.view">
+        <field name="model">res.partner.relation.type</field>
+        <field
+            name="inherit_id"
+            ref="partner_multi_relation.form_res_partner_relation_type"
+        />
+        <field type="xml" name="arch">
+            <group name="properties" position="after">
+                <group
+                    name="group_contact_address"
+                    string="Contact Address"
+                    colspan="6"
+                    col="4"
+                >
+                    <field name="allow_contact_partner" />
+                    <field name="preferred_contact" />
+                    <field name="allow_email" />
+                    <field name="allow_phone" />
+                    <field name="allow_function" />
+                    <field name="allow_address" />
+                    <field
+                        name="set_contact_parent"
+                        attrs="{'invisible': [('allow_contact_partner', '=', False)]}"
+                    />
+                </group>
+            </group>
+        </field>
+    </record>
+
+</odoo>

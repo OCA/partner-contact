@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="tree_res_partner_relation" model="ir.ui.view">
+        <field name="model">res.partner.relation</field>
+        <field
+            name="inherit_id"
+            ref="partner_multi_relation.tree_res_partner_relation"
+        />
+        <field name="arch" type="xml">
+            <field name="right_partner_id" position="after">
+                <field name="email" optional="hide" />
+                <field name="phone" optional="hide" />
+            </field>
+        </field>
+    </record>
+
+    <record id="search_res_partner_relation" model="ir.ui.view">
+        <field name="model">res.partner.relation</field>
+        <field
+            name="inherit_id"
+            ref="partner_multi_relation.search_res_partner_relation"
+        />
+        <field name="arch" type="xml">
+            <field name="right_partner_id" position="after">
+                <field name="email" />
+                <field name="phone" />
+                <field name="function" />
+            </field>
+        </field>
+    </record>
+
+    <record id="form_res_partner_relation" model="ir.ui.view">
+        <field name="model">res.partner.relation</field>
+        <field
+            name="inherit_id"
+            ref="partner_multi_relation.form_res_partner_relation"
+        />
+        <field name="arch" type="xml">
+            <group name="group_main" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button
+                        name="action_contact_address"
+                        string="Contact address"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-users"
+                    />
+                </div>
+            </group>
+            <group name="group_main" position="after">
+                <group name="group_contact_main" colspan="4" col="4">
+                    <field name="allow_contact_partner" invisible="1" />
+                    <group
+                        name="group_contact_partner"
+                        string="Contact Partner"
+                        colspan="2"
+                        col="2"
+                    >
+                        <field
+                            name="contact_partner_id"
+                            attrs="{
+                            ' invisible': [('allow_contact_partner','=',False)],
+                            ' readonly': [('allow_contact_partner','=',True)]}"
+                        />
+                    </group>
+                    <group
+                        name="group_contact_details"
+                        string="Contact Info"
+                        colspan="2"
+                        col="2"
+                    >
+                        <field
+                            name="email"
+                            attrs="{
+                            ' invisible': [('allow_contact_partner','=',False)],
+                            ' readonly': [('allow_contact_partner','=',True)]}"
+                        />
+                        <field
+                            name="phone"
+                            attrs="{
+                            ' invisible': [('allow_contact_partner','=',False)],
+                            ' readonly': [('allow_contact_partner','=',True)]}"
+                        />
+                        <field
+                            name="function"
+                            attrs="{
+                            ' invisible': [('allow_contact_partner','=',False)],
+                            ' readonly': [('allow_contact_partner','=',True)]}"
+                        />
+                    </group>
+                </group>
+            </group>
+        </field>
+    </record>
+
+</odoo>

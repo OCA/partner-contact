@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">partner_multi_relation_email.view_partner_filter</field>
+        <field name="inherit_id" ref="partner_multi_relation.view_res_partner_filter" />
+        <field name="model">res.partner</field>
+        <field type="xml" name="arch">
+            <field name="search_relation_partner_id" position="before">
+                <field name="search_relation_email" />
+                <field name="search_relation_phone" />
+                <field name="search_relation_function" />
+            </field>
+        </field>
+    </record>
+    <record id="form_res_partner_contact_address" model="ir.ui.view">
+        <field name="name">form.res.partner.contact.address</field>
+        <field name="model">res.partner</field>
+        <field name="priority">999</field>
+        <field type="xml" name="arch">
+            <form>
+                <field name="allow_email" invisible="1" />
+                <field name="allow_phone" invisible="1" />
+                <field name="allow_address" invisible="1" />
+                <field name="allow_function" invisible="1" />
+                <sheet>
+                    <group name="group_main" colspan="6" col="4">
+                        <group name="group_main_left" colspan="2" col="2">
+                            <field name="name" />
+                            <field
+                                name="email"
+                                attrs="{'invisible': [('allow_email', '=', False)]}"
+                            />
+                            <field
+                                name="phone"
+                                attrs="{'invisible': [('allow_phone', '=', False)]}"
+                            />
+                            <field
+                                name="function"
+                                attrs="{'invisible': [('allow_function', '=', False)]}"
+                            />
+                        </group>
+                        <group
+                            name="group_main_right"
+                            colspan="2"
+                            col="2"
+                            attrs="{'invisible': [('allow_address', '=', False)]}"
+                        >
+                            <field name="street" />
+                            <field name="zip" />
+                            <field name="city" />
+                            <field name="country_id" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

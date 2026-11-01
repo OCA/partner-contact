@@ -11,7 +11,7 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     search_relation_function = fields.Many2one(
-        comodel_name="res.partner.relation.all",
+        comodel_name="res.partner.relation",
         compute=lambda self: self.update({"search_relation_function": None}),
         search="_search_relation_function",
         string="Has relation function",
@@ -34,15 +34,14 @@ class ResPartner(models.Model):
             raise exceptions.ValidationError(
                 _('Unsupported search operator "%s"') % operator
             )
-        relation_model = self.env["res.partner.relation.all"]
-        relation_function_selection = relation_model.search(
-            [
-                ("function", operator, value),
-            ]
+        Relation = self.env["res.partner.relation"]
+        relations_with_function = Relation.search(
+            [("contact_function", operator, value)]
         )
-        if not relation_function_selection:
+        if not relations_with_function:
             return [FALSE_LEAF]
-        # Collect both partners, user can apply
-        # additional type filter for separating contacts
-        # and companies
-        return [("relation_all_ids", "in", relation_function_selection.ids)]
+        return [
+            "|",
+            ("relation_left_ids", "in", relations_with_function.ids),
+            ("relation_right_ids", "in", relations_with_function.ids),
+        ]
