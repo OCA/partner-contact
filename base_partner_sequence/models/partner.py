@@ -25,11 +25,12 @@ class ResPartner(models.Model):
                 vals["ref"] = self._get_next_ref(vals=vals)
         return super().create(vals_list)
 
-    def copy(self, default=None):
-        default = default or {}
-        if self._needs_ref():
-            default["ref"] = self._get_next_ref()
-        return super().copy(default=default)
+    def copy_data(self, default=None):
+        vals_list = super().copy_data(default=default)
+        for record, vals in zip(self, vals_list, strict=False):
+            if record._needs_ref():
+                vals["ref"] = record._get_next_ref()
+        return vals_list
 
     def write(self, vals):
         for partner in self:

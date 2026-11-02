@@ -161,6 +161,10 @@ Contributors
 
   - Alvaro Estebanez
 
+- Stesi Consulting srl <https://stesi.consulting/>:
+
+  - Michele Di Croce <dicroce.m@stesi.consulting>
+
 Maintainers
 -----------
 

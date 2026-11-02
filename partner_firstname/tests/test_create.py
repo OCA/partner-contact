@@ -52,3 +52,26 @@ class PersonCase(TransactionCase):
         self.values["name"] = "BÄD1"
         self.context["default_name"] = "BÄD2"
         self.common_operations()
+
+
+class CompanyFromValsCase(TransactionCase):
+    """Company detection from the ``is_company`` key in the create values.
+
+    ``create()`` used to look only at ``company_type``, so a partner created
+    with ``is_company=True`` (and no ``company_type``) had its name split
+    into firstname/lastname as if it were a person.
+    """
+
+    def test_is_company_in_vals_keeps_name_unsplit(self):
+        partner = self.env["res.partner"].create(
+            {"name": "dummy company", "is_company": True}
+        )
+        self.assertEqual(partner.lastname, "dummy company")
+        self.assertFalse(partner.firstname)
+
+    def test_company_type_in_vals_still_works(self):
+        partner = self.env["res.partner"].create(
+            {"name": "other company", "company_type": "company"}
+        )
+        self.assertEqual(partner.lastname, "other company")
+        self.assertFalse(partner.firstname)
