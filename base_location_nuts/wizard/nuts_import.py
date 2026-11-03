@@ -5,6 +5,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 import logging
+from typing import ClassVar
 
 import requests
 
@@ -34,7 +35,7 @@ class NutsImport(models.TransientModel):
 
     _name = "nuts.import"
     _description = "Import NUTS items from European ShowVoc service"
-    _countries = {
+    _countries: ClassVar[dict[str, bool]] = {
         "BE": False,
         "BG": False,
         "CZ": False,
@@ -219,7 +220,7 @@ class NutsImport(models.TransientModel):
                 error.response.status_code,
                 error.response.text,
             )
-            raise error
+            raise
         nuts_ids = self._create_partner_nuts(response)
         return nuts_ids
 

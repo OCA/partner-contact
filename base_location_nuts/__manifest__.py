@@ -7,14 +7,14 @@
 {
     "name": "NUTS Regions",
     "category": "Localization/Europe",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "depends": ["contacts"],
     "data": [
         "views/res_country_view.xml",
         "views/res_partner_nuts_view.xml",
         "views/res_partner_view.xml",
         "wizard/nuts_import_view.xml",
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
     ],
     "maintainers": ["rafaelbn", "edlopen", "Andrii9090"],
     "images": ["images/new_fields.png"],
