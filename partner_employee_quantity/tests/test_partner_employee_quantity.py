@@ -32,7 +32,7 @@ class TestResPartnerEmployeeQuantityRange(BaseCommon):
 
     def test_update_employee_quantity_range(self):
         """Test updating the employee quantity range"""
-        self.partner.write(
+        self.partner.sudo().write(
             {
                 "employee_quantity": 5,
                 "employee_quantity_range_id": self.employee_range1.id,
