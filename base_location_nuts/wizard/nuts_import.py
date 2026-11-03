@@ -219,7 +219,7 @@ class NutsImport(models.TransientModel):
                 error.response.status_code,
                 error.response.text,
             )
-            raise error
+            raise
         nuts_ids = self._create_partner_nuts(response)
         return nuts_ids
 

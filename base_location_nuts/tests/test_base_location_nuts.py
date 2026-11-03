@@ -68,6 +68,16 @@ class TestBaseLocationNuts(TransactionCase):
         with self.assertRaises(AccessError):
             Form(self.env["nuts.import"].with_user(user))
 
+    def test_internal_user_can_read_nuts(self):
+        user = new_test_user(
+            self.env,
+            login="test-internal-user",
+            groups="base.group_user",
+        )
+        self.assertTrue(self.nuts_model.with_user(user).search([], limit=1))
+        with self.assertRaises(AccessError):
+            self.nuts_model.with_user(user).create({"name": "X", "code": "X"})
+
     def test_onchange_nuts_country(self):
         self.partner.nuts1_id = self.nuts1_2
         self.partner._onchange_nuts1_id()

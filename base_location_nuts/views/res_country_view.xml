@@ -5,13 +5,9 @@
         <field name="model">res.country</field>
         <field name="inherit_id" ref="base.view_country_form" />
         <field name="arch" type="xml">
-            <xpath expr="//form/sheet">
-                <group name="nuts" string="NUTS">
-                    <group>
-                        <field name="state_level" />
-                    </group>
-                </group>
-            </xpath>
+            <field name="state_required" position="after">
+                <field name="state_level" />
+            </field>
         </field>
     </record>
 </odoo>
