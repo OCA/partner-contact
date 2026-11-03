@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils: https://docutils.sourceforge.io/" />
-<title>README.rst</title>
+<title>Employee quantity in partners</title>
 <style type="text/css">
 
 /*
@@ -374,7 +374,7 @@ ul.auto-toc {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !! source digest: sha256:f0df60e25cb861159eb3ccfb34fee6790add38f874ec3e7b94b305a4430033bb
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Mature" src="https://img.shields.io/badge/maturity-Mature-brightgreen.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/license-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/partner-contact/tree/19.0/partner_employee_quantity"><img alt="OCA/partner-contact" src="https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/partner-contact-19-0/partner-contact-19-0-partner_employee_quantity"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&amp;target_branch=19.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Mature" src="https://img.shields.io/badge/maturity-Mature-brightgreen.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/license-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/partner-contact/tree/20.0/partner_employee_quantity"><img alt="OCA/partner-contact" src="https://img.shields.io/badge/github-OCA%2Fpartner--contact-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/partner-contact-20-0/partner-contact-20-0-partner_employee_quantity"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/partner-contact&amp;target_branch=20.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
 <p>This module allows to set employee quantity for partners, and categorize
 them by ranges.</p>
 <p><strong>Table of contents</strong></p>
@@ -402,12 +402,28 @@ them by ranges.</p>
 </div>
 <div class="section" id="usage">
 <h2><a class="toc-backref" href="#toc-entry-2">Usage</a></h2>
-<p>To use this module, you need to:</p>
+<p>To record how many employees a company has:</p>
+<ol class="arabic">
+<li><p class="first">Go to <em>Contacts</em> and open a company.</p>
+<p>In Odoo 20.0 a contact is considered a company when it has a <em>Tax ID</em>
+and is not a contact of another company. Individuals and the contacts
+of a company do not show the employee fields.</p>
+</li>
+<li><p class="first">Open the <em>Notes</em> tab. In the <em>Employee quantity</em> section, fill in:</p>
 <ul class="simple">
-<li>Go to any partner’s form.</li>
-<li>Enable <em>Is company?</em>.</li>
-<li>You will see a new group of fields called <em>Employee quantity</em>.</li>
+<li><em>Employee Quantity</em>: the number of employees.</li>
+<li><em>Employee quantity range</em>: the range this company belongs to (for
+example <em>11-50 Employees</em>). Ranges are defined in <em>Contacts &gt;
+Configuration &gt; Ranges by quantity of employees</em>.</li>
 </ul>
+</li>
+</ol>
+<p>To see your companies by size:</p>
+<ol class="arabic simple">
+<li>Go to <em>Contacts</em> and open the list view.</li>
+<li>In the search box, open the filter menu and choose <em>Group By &gt;
+Employee Quantity</em>.</li>
+</ol>
 </div>
 <div class="section" id="known-issues-roadmap">
 <h2><a class="toc-backref" href="#toc-entry-3">Known issues / Roadmap</a></h2>
@@ -422,7 +438,7 @@ numerical reference.</li>
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/partner-contact/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-<a class="reference external" href="https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_employee_quantity%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
+<a class="reference external" href="https://github.com/OCA/partner-contact/issues/new?body=module:%20partner_employee_quantity%0Aversion:%2020.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
@@ -472,7 +488,7 @@ mission is to support the collaborative development of Odoo features and
 promote its widespread use.</p>
 <p>Current <a class="reference external" href="https://odoo-community.org/page/maintainer-role">maintainers</a>:</p>
 <p><a class="reference external image-reference" href="https://github.com/pedrobaeza"><img alt="pedrobaeza" src="https://github.com/pedrobaeza.png?size=40px" /></a> <a class="reference external image-reference" href="https://github.com/rafaelbn"><img alt="rafaelbn" src="https://github.com/rafaelbn.png?size=40px" /></a> <a class="reference external image-reference" href="https://github.com/edlopen"><img alt="edlopen" src="https://github.com/edlopen.png?size=40px" /></a></p>
-<p>This module is part of the <a class="reference external" href="https://github.com/OCA/partner-contact/tree/19.0/partner_employee_quantity">OCA/partner-contact</a> project on GitHub.</p>
+<p>This module is part of the <a class="reference external" href="https://github.com/OCA/partner-contact/tree/20.0/partner_employee_quantity">OCA/partner-contact</a> project on GitHub.</p>
 <p>You are welcome to contribute. To learn how please visit <a class="reference external" href="https://odoo-community.org/page/Contribute">https://odoo-community.org/page/Contribute</a>.</p>
 </div>
 </div>
