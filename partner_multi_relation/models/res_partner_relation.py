@@ -411,24 +411,39 @@ class ResPartnerRelation(models.Model):
         :param str side: left or right
         :raises ValidationError: When constraint is violated
         """
+
+        def get_error_prefix(record, partner, side):
+            return self.env._(
+                "Type = %(name)s, but %(side)s partner %(partner)s",
+                name=record.type_id.name,
+                side=side,
+                partner=partner.name,
+            )
+
         for record in self:
             assert side in ["left", "right"]  # pragma no cover
             ptype = getattr(record.type_id, f"{side}_partner_type")
             partner = getattr(record, f"{side}_partner_id")
-            if (ptype == "c" and not partner.is_company) or (
-                ptype == "p" and partner.is_company
-            ):
+            if ptype == "c" and not partner.is_company:
                 raise ValidationError(
                     self.env._(
-                        "The %s partner is not applicable for this relation type.", side
+                        "%(prefix)s is not a company",
+                        prefix=get_error_prefix(record, partner, side),
+                    )
+                )
+            if ptype == "p" and partner.is_company:
+                raise ValidationError(
+                    self.env._(
+                        "%(prefix)s is not a person.",
+                        prefix=get_error_prefix(record, partner, side),
                     )
                 )
             category = getattr(record.type_id, f"{side}_partner_category_id")
             if category and category.id not in partner.category_id.ids:
                 raise ValidationError(
                     self.env._(
-                        "The %(side)s partner does not have category %(category)s.",
-                        side=side,
+                        "%(prefix)s does not have category %(category)s.",
+                        prefix=get_error_prefix(record, partner, side),
                         category=category.name,
                     )
                 )
