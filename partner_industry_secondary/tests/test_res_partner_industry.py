@@ -74,3 +74,39 @@ class TestResPartnerIndustry(common.TransactionCase):
         for individuals, based on user group."""
         self.partner._compute_show_partner_industry_for_person()
         self.assertEqual(self.partner.show_partner_industry_for_person, True)
+
+    def test_07_search_by_parent_name_returns_children(self):
+        """Searching by a parent industry name must also return its children."""
+        result_ids = {
+            r[0] for r in self.industry_model.name_search("Test", operator="ilike")
+        }
+        self.assertIn(self.industry_main.id, result_ids)
+        self.assertIn(self.industry_child.id, result_ids)
+
+    def test_08_search_by_child_name_does_not_return_parent(self):
+        """Searching by a child industry name must not return its parent."""
+        result_ids = {
+            r[0]
+            for r in self.industry_model.name_search("Test child", operator="ilike")
+        }
+        self.assertIn(self.industry_child.id, result_ids)
+        self.assertNotIn(self.industry_main.id, result_ids)
+
+    def test_09_search_by_grandparent_name_returns_all_descendants(self):
+        """Searching by a grandparent name must return all descendants."""
+        industry_grandchild = self.industry_model.create(
+            {"name": "Test grandchild", "parent_id": self.industry_child.id}
+        )
+        result_ids = {
+            r[0] for r in self.industry_model.name_search("Test", operator="ilike")
+        }
+        self.assertIn(self.industry_main.id, result_ids)
+        self.assertIn(self.industry_child.id, result_ids)
+        self.assertIn(industry_grandchild.id, result_ids)
+
+    def test_10_search_no_match_returns_empty(self):
+        """Searching for a non-existent name must return an empty result."""
+        result = self.industry_model.name_search(
+            "NonExistentIndustry", operator="ilike"
+        )
+        self.assertFalse(result)

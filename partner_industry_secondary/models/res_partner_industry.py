@@ -6,6 +6,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, exceptions, fields, models
+from odoo.osv import expression
 
 
 class ResPartnerIndustry(models.Model):
@@ -43,6 +44,14 @@ class ResPartnerIndustry(models.Model):
             raise exceptions.ValidationError(
                 self.env._("Error! Industry with same name and parent already exists.")
             )
+
+    def _search_display_name(self, operator, value):
+        if operator in ("ilike", "like", "=", "=ilike", "=like") and value:
+            matching = self.search([("name", operator, value)])
+            if matching:
+                return [("id", "child_of", matching.ids)]
+            return expression.FALSE_DOMAIN
+        return super()._search_display_name(operator, value)
 
     def copy(self, default=None):
         default = default or {}
