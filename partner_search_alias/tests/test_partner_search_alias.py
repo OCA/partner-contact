@@ -30,6 +30,8 @@ class TestPartnerAlias(TransactionCase):
     def test_get_view_search_filter_domain_modified(self):
         # Ensure that search filter include the search_alias.
         view = self.partner.get_view(view_type="search")
+        # get_view() must return the arch as a string, as the base method does.
+        self.assertIsInstance(view["arch"], str)
         xml = etree.XML(view["arch"])
         name_field = xml.xpath("//field[@name='name']")
         self.assertTrue(name_field, "Search view must contain name field")
