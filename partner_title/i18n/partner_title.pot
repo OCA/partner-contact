@@ -1,0 +1,163 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_title
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_title
+#: model_terms:ir.ui.view,arch_db:partner_title.view_partner_form
+msgid "<i class=\"fa fa-fw me-1 fa-user text-primary\" title=\"Title\"/>"
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model.fields,field_description:partner_title.field_res_partner_title__shortcut
+msgid "Abbreviation"
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model.fields,field_description:partner_title.field_res_partner_title__active
+msgid "Active"
+msgstr ""
+
+#. module: partner_title
+#: model_terms:ir.ui.view,arch_db:partner_title.res_partner_title_form
+#: model_terms:ir.ui.view,arch_db:partner_title.res_partner_title_search
+msgid "Archived"
+msgstr ""
+
+#. module: partner_title
+#: model:ir.actions.act_window,name:partner_title.res_partner_title_action
+#: model:ir.ui.menu,name:partner_title.res_partner_title_menu
+#: model:ir.ui.menu,name:partner_title.res_partner_title_parent_menu
+msgid "Contact Titles"
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model.fields,field_description:partner_title.field_res_partner_title__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model.fields,field_description:partner_title.field_res_partner_title__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model.fields,field_description:partner_title.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_title.field_res_partner_title__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_title
+#: model:res.partner.title,name:partner_title.res_partner_title_doctor
+msgid "Doctor"
+msgstr ""
+
+#. module: partner_title
+#: model:res.partner.title,shortcut:partner_title.res_partner_title_doctor
+msgid "Dr."
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model,name:partner_title.model_res_partner
+msgid "Fake Model"
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model.fields,field_description:partner_title.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_title.field_res_partner_title__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model.fields,field_description:partner_title.field_res_partner_title__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model.fields,field_description:partner_title.field_res_partner_title__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_title
+#: model:res.partner.title,name:partner_title.res_partner_title_madam
+msgid "Madam"
+msgstr ""
+
+#. module: partner_title
+#: model_terms:ir.ui.view,arch_db:partner_title.view_partner_form
+#: model_terms:ir.ui.view,arch_db:partner_title.view_partner_simple_form
+msgid "Madam, Mister, ..."
+msgstr ""
+
+#. module: partner_title
+#: model:res.partner.title,name:partner_title.res_partner_title_miss
+msgid "Miss"
+msgstr ""
+
+#. module: partner_title
+#: model:res.partner.title,name:partner_title.res_partner_title_mister
+msgid "Mister"
+msgstr ""
+
+#. module: partner_title
+#: model:res.partner.title,shortcut:partner_title.res_partner_title_mister
+msgid "Mr."
+msgstr ""
+
+#. module: partner_title
+#: model:res.partner.title,shortcut:partner_title.res_partner_title_madam
+msgid "Mrs."
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model.fields,field_description:partner_title.field_res_partner__name_with_title
+#: model:ir.model.fields,field_description:partner_title.field_res_users__name_with_title
+msgid "Name With Title"
+msgstr ""
+
+#. module: partner_title
+#: model:res.partner.title,shortcut:partner_title.res_partner_title_prof
+msgid "Prof."
+msgstr ""
+
+#. module: partner_title
+#: model:res.partner.title,name:partner_title.res_partner_title_prof
+msgid "Professor"
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model.fields,field_description:partner_title.field_res_partner_title__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model.constraint,message:partner_title.constraint_res_partner_title_name_unique
+msgid "This title already exists."
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model.fields,field_description:partner_title.field_res_partner__title_id
+#: model:ir.model.fields,field_description:partner_title.field_res_partner_title__name
+#: model:ir.model.fields,field_description:partner_title.field_res_users__title_id
+msgid "Title"
+msgstr ""
+
+#. module: partner_title
+#: model:ir.model,name:partner_title.model_res_partner_title
+msgid "Title on Partners"
+msgstr ""
+
+#. module: partner_title
+#: model_terms:ir.ui.view,arch_db:partner_title.res_partner_title_search
+msgid "Title or Shortcut"
+msgstr ""
