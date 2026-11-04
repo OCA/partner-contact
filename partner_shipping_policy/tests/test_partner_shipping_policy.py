@@ -7,6 +7,8 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestPartnerShippingPolicy(BaseCommon):
+    _test_user_groups = None
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -30,9 +32,7 @@ class TestPartnerShippingPolicy(BaseCommon):
             {"name": "Test Partner 3", "picking_policy": "one"}
         )
 
-        cls.env["ir.config_parameter"].sudo().set_param(
-            "sale_stock.default_picking_policy", "direct"
-        )
+        cls.env.company.picking_policy = "direct"
 
     def test_01_partner_picking_policy(self):
         sale_selection = self.env["sale.order"].fields_get(["picking_policy"])[
