@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_general_configuration" model="ir.ui.view">
+        <field name="name">partner_email_check</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='companies']" position='after'>
+                <block title="Email validation" name="partner_email_check">
+                    <setting
+                        id="partner_email_check_syntax_setting"
+                        company_dependent="1"
+                        help="Require partner email addresses to have valid syntax"
+                    >
+                        <field name="partner_email_check_syntax" />
+                    </setting>
+                    <setting
+                        id="partner_email_check_filter_duplicates_setting"
+                        company_dependent="1"
+                        help="Require partner email addresses to be unique"
+                    >
+                        <field name="partner_email_check_filter_duplicates" />
+                    </setting>
+                    <setting
+                        id="partner_email_check_check_deliverability_setting"
+                        company_dependent="1"
+                        help="Ensure that partner email addresses can be delivered to"
+                    >
+                        <field name="partner_email_check_check_deliverability" />
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
