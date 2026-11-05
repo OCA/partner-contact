@@ -10,8 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-22 03:38+0000\n"
 "PO-Revision-Date: 2024-09-04 17:06+0000\n"
-"Last-Translator: Esteve Blanch Sanmartí <3501974+esteveblanch@users.noreply."
-"github.com>\n"
+"Last-Translator: Esteve Blanch Sanmartí "
+"<3501974+esteveblanch@users.noreply.github.com>\n"
 "Language-Team: Catalan (https://www.transifex.com/oca/teams/23907/ca/)\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -61,6 +61,11 @@ msgstr "Autocompletat de la població"
 #: model:ir.model,name:base_location.model_res_city_zip
 msgid "City/locations completion object"
 msgstr "Autocompletat d'objectes a partir de ciutats/ubicacions"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city__code
+msgid "Code"
+msgstr ""
 
 #. module: base_location
 #: model:ir.model,name:base_location.model_res_company
@@ -164,8 +169,8 @@ msgstr "Estat"
 #. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
 msgid ""
-"The city of the partner %(partner)s differs from that in location "
-"%(location)s"
+"The city of the partner %(partner)s differs from that in location %"
+"(location)s"
 msgstr ""
 "La ciutat del soci %(partner)s és diferent de la de la ubicació %(location)s"
 
@@ -173,8 +178,8 @@ msgstr ""
 #. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
 msgid ""
-"The country of the partner %(partner)s differs from that in location "
-"%(location)s"
+"The country of the partner %(partner)s differs from that in location %"
+"(location)s"
 msgstr ""
 "El país del soci %(partner)s és diferent de la de la ubicació %(location)s"
 
@@ -182,8 +187,8 @@ msgstr ""
 #. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
 msgid ""
-"The state of the partner %(partner)s differs from that in location "
-"%(location)s"
+"The state of the partner %(partner)s differs from that in location %"
+"(location)s"
 msgstr ""
 "L'Estat del soci %(partner)s és diferent de la de la ubicació %(location)s"
 
@@ -193,8 +198,8 @@ msgstr ""
 msgid ""
 "The zip of the partner %(partner)s differs from that in location %(location)s"
 msgstr ""
-"El codi postal del soci %(partner)s és diferent de la de la ubicació "
-"%(location)s"
+"El codi postal del soci %(partner)s és diferent de la de la ubicació %"
+"(location)s"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__zip_id

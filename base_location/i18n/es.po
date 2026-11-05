@@ -62,6 +62,11 @@ msgid "City/locations completion object"
 msgstr "Autocompletado de objetos a partir de ciudades/ubicaciones"
 
 #. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city__code
+msgid "Code"
+msgstr ""
+
+#. module: base_location
 #: model:ir.model,name:base_location.model_res_company
 msgid "Companies"
 msgstr "Compañías"
@@ -160,8 +165,8 @@ msgstr "Provincia"
 #. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
 msgid ""
-"The city of the partner %(partner)s differs from that in location "
-"%(location)s"
+"The city of the partner %(partner)s differs from that in location %"
+"(location)s"
 msgstr ""
 "La ciudad del contacto %(partner)s difiere de la de la ubicación %(location)s"
 
@@ -169,8 +174,8 @@ msgstr ""
 #. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
 msgid ""
-"The country of the partner %(partner)s differs from that in location "
-"%(location)s"
+"The country of the partner %(partner)s differs from that in location %"
+"(location)s"
 msgstr ""
 "El país del contacto %(partner)s difiere del de la ubicación %(location)s"
 
@@ -178,11 +183,11 @@ msgstr ""
 #. odoo-python
 #: code:addons/base_location/models/res_partner.py:0
 msgid ""
-"The state of the partner %(partner)s differs from that in location "
-"%(location)s"
+"The state of the partner %(partner)s differs from that in location %"
+"(location)s"
 msgstr ""
-"La provincia del contacto %(partner)s difiere de la de la ubicación "
-"%(location)s"
+"La provincia del contacto %(partner)s difiere de la de la ubicación %"
+"(location)s"
 
 #. module: base_location
 #. odoo-python
@@ -190,8 +195,8 @@ msgstr ""
 msgid ""
 "The zip of the partner %(partner)s differs from that in location %(location)s"
 msgstr ""
-"El código postal del contacto %(partner)s difiere del de la ubicación "
-"%(location)s"
+"El código postal del contacto %(partner)s difiere del de la ubicación %"
+"(location)s"
 
 #. module: base_location
 #: model:ir.model.fields,help:base_location.field_res_company__zip_id
