@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="group_partner_edition" model="res.groups">
+        <field name="name">Partner edition</field>
+        <field name="user_ids" eval="[Command.link(ref('base.user_admin'))]" />
+    </record>
+</odoo>
