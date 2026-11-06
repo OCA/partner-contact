@@ -6,10 +6,12 @@
     "author": "Camptocamp, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "category": "",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.1.0",
     "license": "AGPL-3",
     "depends": ["contacts"],
-    "data": [],
+    "data": [
+        "views/res_partner_views.xml",
+    ],
     "installable": True,
     "maintainers": ["wouitmil"],
 }
