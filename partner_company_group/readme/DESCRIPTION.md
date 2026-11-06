@@ -1,3 +1,3 @@
-This Module adds a company group field to companies, which is also
-propagated to contacts and allows to search and group for the company
-group in contact, leads, sale orders and invoices.
+> [!WARNING]
+> This module is deprecated and will be removed in the future.
+> Please use the `base_partner_company_group` module instead.
