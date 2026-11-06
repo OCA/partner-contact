@@ -1,0 +1,83 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_accreditation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-02-15 19:22+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>\n"
+"Language-Team: none\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#. module: partner_accreditation
+#: model:ir.actions.act_window,name:partner_accreditation.res_partner_accreditation_action
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner__accreditation_ids
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__name
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_users__accreditation_ids
+#: model:ir.ui.menu,name:partner_accreditation.menu_res_partner_accreditation
+#: model_terms:ir.ui.view,arch_db:partner_accreditation.res_partner_accreditation_form_view
+msgid "Accreditation"
+msgstr "Akreditacija"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__active
+msgid "Active"
+msgstr "Aktivno"
+
+#. module: partner_accreditation
+#: model:ir.model,name:partner_accreditation.model_res_partner_accreditation
+msgid "Configurable Accreditation for Partners"
+msgstr "Configurabilna akreditacija za partnera"
+
+#. module: partner_accreditation
+#: model:ir.model,name:partner_accreditation.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__create_uid
+msgid "Created by"
+msgstr "Kreirao"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__create_date
+msgid "Created on"
+msgstr "Kreirano"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__display_name
+msgid "Display Name"
+msgstr "Prikazani naziv"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation____last_update
+msgid "Last Modified on"
+msgstr "Zadnje modificirano"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__write_uid
+msgid "Last Updated by"
+msgstr "Zadnji ažurirao"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__write_date
+msgid "Last Updated on"
+msgstr "Zadnje ažuriranje"
+
+#. module: partner_accreditation
+#: model:ir.model.fields,field_description:partner_accreditation.field_res_partner_accreditation__partner_ids
+msgid "Partner"
+msgstr "Partner"
