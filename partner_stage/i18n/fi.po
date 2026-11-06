@@ -1,0 +1,156 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_stage
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-04-16 07:45+0000\n"
+"Last-Translator: painkin <pasi.inkinen@iodo.fi>\n"
+"Language-Team: none\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__active
+#: model:res.partner.stage,name:partner_stage.partner_stage_active
+msgid "Active"
+msgstr "Aktiivinen"
+
+#. module: partner_stage
+#: model:ir.model.fields.selection,name:partner_stage.selection__res_partner_stage__state__confirmed
+msgid "Approved"
+msgstr "Hyväksytty"
+
+#. module: partner_stage
+#: model:ir.model.fields.selection,name:partner_stage.selection__res_partner_stage__state__cancel
+msgid "Archived"
+msgstr "Arkistoitu"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__code
+msgid "Code"
+msgstr "Koodi"
+
+#. module: partner_stage
+#: model:ir.model,name:partner_stage.model_res_partner_stage
+msgid "Contact Stage"
+msgstr "Yhteystiedon vaihe"
+
+#. module: partner_stage
+#: model:ir.ui.menu,name:partner_stage.menu_partner_stage
+msgid "Contact Stages"
+msgstr "Yhteystiedon vaiheet"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__create_uid
+msgid "Created by"
+msgstr "Luonut"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__create_date
+msgid "Created on"
+msgstr "Luotu"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__is_default
+msgid "Default state"
+msgstr "Oletusvaihe"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__description
+msgid "Description"
+msgstr "Kuvaus"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: partner_stage
+#: model:res.partner.stage,name:partner_stage.partner_stage_draft
+msgid "Draft"
+msgstr "Luonnos"
+
+#. module: partner_stage
+#: model:ir.model,name:partner_stage.model_res_partner
+msgid "Fake Model"
+msgstr "Väärennetty malli"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__fold
+msgid "Fold"
+msgstr "Laskostettu"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_stage
+#: model:res.partner.stage,name:partner_stage.partner_stage_inactive
+msgid "Inactive"
+msgstr "Passiivinen"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__write_uid
+msgid "Last Updated by"
+msgstr "Viimeksi päivittänyt"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__write_date
+msgid "Last Updated on"
+msgstr "Viimeksi päivitetty"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__name
+msgid "Name"
+msgstr "Nimi"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__stage_state
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__state
+#: model:ir.model.fields,field_description:partner_stage.field_res_users__stage_state
+msgid "Related State"
+msgstr "Liittyvä vaihe"
+
+#. module: partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner_stage__sequence
+msgid "Sequence"
+msgstr "Järjestys"
+
+#. module: partner_stage
+#: model:ir.actions.act_window,name:partner_stage.action_partner_stage
+#: model:ir.model.fields,field_description:partner_stage.field_res_partner__stage_id
+#: model:ir.model.fields,field_description:partner_stage.field_res_users__stage_id
+#: model_terms:ir.ui.view,arch_db:partner_stage.view_partner_search
+msgid "Stage"
+msgstr "Vaihe"
+
+#. module: partner_stage
+#: model:ir.model.constraint,message:partner_stage.constraint_res_partner_stage_res_partner_stage_code_unique
+msgid "Stage Code must be unique."
+msgstr "Vaiheen koodi pitää olla yksilöllinen."
+
+#. module: partner_stage
+#. odoo-python
+#: code:addons/partner_stage/models/res_partner_stage.py:0
+msgid "There should be only one default stage"
+msgstr "Oletusarvoisia vaiheita tulisi olla vain yksi"
+
+#. module: partner_stage
+#: model:ir.model.fields.selection,name:partner_stage.selection__res_partner_stage__state__draft
+msgid "To Approve"
+msgstr "Hyväksyttäväksi"
+
+#. module: partner_stage
+#: model:ir.model.fields,help:partner_stage.field_res_partner_stage__sequence
+msgid "Used to order the stages"
+msgstr "Käytetään vaiheiden järjestämiseen"
