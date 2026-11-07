@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: partner-contact (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-20 23:45+0000\n"
-"PO-Revision-Date: 2020-12-13 03:55+0000\n"
+"PO-Revision-Date: 2026-11-07 10:35+0000\n"
 "Last-Translator: Bosd <c5e2fd43-d292-4c90-9d1f-74ff3436329a@anonaddy.me>\n"
 "Language-Team: Dutch (http://www.transifex.com/oca/OCA-partner-contact-9-0/"
 "language/nl/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
@@ -29,6 +29,9 @@ msgid ""
 "number to validate # Set variable 'failed' to True if validation fails "
 "failed = not id_number.name.isdigit()"
 msgstr ""
+"# Voer hier uw validatiecode in # Gebruik variabele 'id_number' voor het te "
+"valideren ID-nummer # Stel variabele 'failed' in op True als validatie "
+"mislukt failed = not id_number.name.isdigit()"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
@@ -59,18 +62,43 @@ msgid ""
 "                                </b>\n"
 "failed = not id_number.name.startswith(self.code) and True or False"
 msgstr ""
+"# Gebruik failed = True om aan te geven dat het ID-nummer niet geldig is.\n"
+"# U kunt de volgende variabelen gebruiken:\n"
+"#  - self: browse_record van de huidige ID-categorie\n"
+"#  - id_number: browse_record van het te valideren ID-nummer\n"
+"\n"
+"<b>\n"
+"                                    <i># Voorbeeld 1: ID-nummer bevat alleen "
+"cijfers</i>\n"
+"                                </b>\n"
+"if not id_number.name.isdigit():\n"
+"    failed = True\n"
+"else:\n"
+"    failed = False\n"
+"\n"
+"<b>\n"
+"                                    <i># Voorbeeld 2: Lengte van ID-nummer "
+"mag niet langer zijn dan 10 tekens</i>\n"
+"                                </b>\n"
+"failed = len(id_number.name) &gt; 10 and True or False\n"
+"\n"
+"<b>\n"
+"                                    <i># Voorbeeld 3: ID-nummer moet "
+"beginnen met de categoriecode</i>\n"
+"                                </b>\n"
+"failed = not id_number.name.startswith(self.code) and True or False"
 
 #. module: partner_identification
 #. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 msgid "%(cat_name)s %(id_name)s is already used by %(partner_names)s"
-msgstr ""
+msgstr "%(cat_name)s %(id_name)s wordt al gebruikt door %(partner_names)s"
 
 #. module: partner_identification
 #. odoo-python
 #: code:addons/partner_identification/models/res_partner_id_category.py:0
 msgid "%(id_name)s is not a valid %(cat_name)s identifier"
-msgstr ""
+msgstr "%(id_name)s is geen geldige identificatie voor %(cat_name)s"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_kanban
@@ -78,21 +106,23 @@ msgid ""
 "<span class=\"fa fa-calendar-check me-1\" title=\"Issue Date\"/>\n"
 "                                    Issued on:"
 msgstr ""
+"<span class=\"fa fa-calendar-check me-1\" title=\"Uitgiftedatum\"/>\n"
+"                                    Uitgegeven op:"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_kanban
 msgid "<span class=\"fa fa-clock-o me-2\" title=\"Validity Period\"/>"
-msgstr ""
+msgstr "<span class=\"fa fa-clock-o me-2\" title=\"Geldigheidsduur\"/>"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__code
 msgid "Abbreviation or acronym of this ID type. For example, 'driver_license'"
-msgstr ""
+msgstr "Afkorting of acroniem van dit ID-type. Bijvoorbeeld 'driver_license'"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Actie vereist"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__active
@@ -103,22 +133,22 @@ msgstr "Actief"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Activiteiten"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Decoratie activiteit-uitzondering"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Activiteitenstatus"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icoon activiteitstype"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__partner_issued_id
@@ -126,6 +156,8 @@ msgid ""
 "Another partner, who issued this ID. For example, Traffic National "
 "Institution"
 msgstr ""
+"Een andere relatie die dit ID heeft uitgegeven. Bijvoorbeeld de nationale "
+"verkeersinstantie"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
@@ -133,23 +165,23 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Archived"
-msgstr ""
+msgstr "Gearchiveerd"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Aantal bijlagen"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__category_id
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Category"
-msgstr ""
+msgstr "Categorie"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid "Category Name"
-msgstr ""
+msgstr "Categorienaam"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__code
@@ -159,12 +191,12 @@ msgstr "Code"
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid "Color"
-msgstr ""
+msgstr "Kleur"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__color
 msgid "Color Index"
-msgstr ""
+msgstr "Kleurindex"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__create_uid
@@ -181,7 +213,7 @@ msgstr "Aangemaakt op"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__date_issued
 msgid "Date Issued"
-msgstr ""
+msgstr "Uitgiftedatum"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner__display_name
@@ -198,37 +230,40 @@ msgid ""
 " %(name)s \n"
 "(%(error)s)"
 msgstr ""
+"Fout bij het evalueren van de id_category-validatiecode: \n"
+" %(name)s \n"
+"(%(error)s)"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__close
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Expired"
-msgstr ""
+msgstr "Verlopen"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner
 msgid "Fake Model"
-msgstr ""
+msgstr "Nepmodel"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Volgers"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Volgers (Relaties)"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Font Awesome-icoon bijv. fa-tasks"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Heeft bericht"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner__id
@@ -241,73 +276,73 @@ msgstr "ID"
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__name
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 msgid "ID Number"
-msgstr ""
+msgstr "ID-nummer"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_form
 msgid "ID Numbers"
-msgstr ""
+msgstr "ID-nummers"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__name
 msgid "ID name"
-msgstr ""
+msgstr "ID-naam"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__category_id
 msgid "ID type defined in configuration. For example, Driver License"
-msgstr ""
+msgstr "ID-type gedefinieerd in configuratie. Bijvoorbeeld Rijbewijs"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Icoon"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icoon om een uitzonderingsactiviteit aan te geven."
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner__id_numbers
 #: model:ir.model.fields,field_description:partner_identification.field_res_users__id_numbers
 msgid "Identification Numbers"
-msgstr ""
+msgstr "Identificatienummers"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Indien aangevinkt vereisen nieuwe berichten uw aandacht."
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Indien aangevinkt hebben sommige berichten een afleveringsfout."
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Include archived ID numbers"
-msgstr ""
+msgstr "Gearchiveerde ID-nummers opnemen"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
 msgid "Include archived categories"
-msgstr ""
+msgstr "Gearchiveerde categorieën opnemen"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Is volger"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_issued_id
 msgid "Issued by"
-msgstr ""
+msgstr "Uitgegeven door"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Issued on"
-msgstr ""
+msgstr "Uitgegeven op"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__write_uid
@@ -324,74 +359,74 @@ msgstr "Laatst bijgewerkt op"
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Fout bij aflevering van bericht"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Berichten"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Sleuteldatum mijn activiteit"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__name
 msgid "Name of this ID type. For example, 'Driver License'"
-msgstr ""
+msgstr "Naam van dit ID-type. Bijvoorbeeld 'Rijbewijs'"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__draft
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "New"
-msgstr ""
+msgstr "Nieuw"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Volgende activiteit agenda-afspraak"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Volgende activiteit deadline"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Volgende activiteit omschrijving"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Volgende activiteitstype"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__comment
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 msgid "Notes"
-msgstr ""
+msgstr "Notities"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Aantal acties"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Aantal fouten"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Aantal berichten die actie vereisen"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Aantal berichten met leveringsfout"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__partner_id
@@ -404,17 +439,17 @@ msgstr "Relatie"
 #: model:ir.ui.menu,name:partner_identification.menu_partner_id_category
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_search
 msgid "Partner ID Categories"
-msgstr ""
+msgstr "ID-categorieën relatie"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner_id_category
 msgid "Partner ID Category"
-msgstr ""
+msgstr "ID-categorie relatie"
 
 #. module: partner_identification
 #: model:ir.model,name:partner_identification.model_res_partner_id_number
 msgid "Partner ID Number"
-msgstr ""
+msgstr "ID-nummer relatie"
 
 #. module: partner_identification
 #: model:ir.actions.act_window,name:partner_identification.action_partner_id_numbers_form
@@ -423,49 +458,49 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_form
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Partner ID Numbers"
-msgstr ""
+msgstr "ID-nummers relatie"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid "Partner Identification Categories"
-msgstr ""
+msgstr "Relatie-identificatiecategorieën"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__place_issuance
 msgid "Place of Issuance"
-msgstr ""
+msgstr "Plaats van afgifte"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_category_form
 msgid "Python Validation Code:"
-msgstr ""
+msgstr "Python-validatiecode:"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_category__validation_code
 msgid "Python code called to validate an id number."
-msgstr ""
+msgstr "Python-code die wordt aangeroepen om een ID-nummer te valideren."
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_category__validation_code
 msgid "Python validation code"
-msgstr ""
+msgstr "Python-validatiecode"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Verantwoordelijke gebruiker"
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__open
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Running"
-msgstr ""
+msgstr "Lopend"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__status
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_state
@@ -475,11 +510,15 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Status gebaseerd op activiteiten\n"
+"Te laat: Vervaldatum is al verstreken\n"
+"Vandaag: Activiteitdatum is vandaag\n"
+"Gepland: Toekomstige activiteiten."
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__name
 msgid "The ID itself. For example, Driver License number of this person"
-msgstr ""
+msgstr "Het ID zelf. Bijvoorbeeld het rijbewijsnummer van deze persoon"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__place_issuance
@@ -487,6 +526,8 @@ msgid ""
 "The place where the ID has been issued. For example the country for "
 "passports and visa"
 msgstr ""
+"De plaats waar het ID is afgegeven. Bijvoorbeeld het land voor paspoorten en "
+"visa"
 
 #. module: partner_identification
 #. odoo-python
@@ -496,54 +537,57 @@ msgid ""
 "write via the %(field_name)s field is not possible. In order to fix this, "
 "please use the IDs tab."
 msgstr ""
+"Deze %(record_name)s heeft meerdere ID's van dit type (%(category_code)s), "
+"waardoor wijzigen via het %(field_name)s-veld niet mogelijk is. Gebruik het "
+"tabblad ID's om dit op te lossen."
 
 #. module: partner_identification
 #: model:ir.model.fields.selection,name:partner_identification.selection__res_partner_id_number__status__pending
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "To Renew"
-msgstr ""
+msgstr "Te vernieuwen"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Type van de uitzonderingsactiviteit in het record."
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_from
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid From"
-msgstr ""
+msgstr "Geldig vanaf"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__valid_until
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until"
-msgstr ""
+msgstr "Geldig tot"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until: Future"
-msgstr ""
+msgstr "Geldig tot: Toekomst"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until: Past"
-msgstr ""
+msgstr "Geldig tot: Verleden"
 
 #. module: partner_identification
 #: model_terms:ir.ui.view,arch_db:partner_identification.view_partner_id_numbers_search
 msgid "Valid Until: Today"
-msgstr ""
+msgstr "Geldig tot: Vandaag"
 
 #. module: partner_identification
 #: model:ir.model.fields,field_description:partner_identification.field_res_partner_id_number__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Websiteberichten"
 
 #. module: partner_identification
 #: model:ir.model.fields,help:partner_identification.field_res_partner_id_number__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Website communicatiegeschiedenis"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Laatst bijgewerkt op"
