@@ -1,0 +1,1 @@
+from . import test_partner_address_format_domestic

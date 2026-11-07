@@ -1,0 +1,50 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_address_format_domestic
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-01-05 20:43+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.4\n"
+
+#. module: partner_address_format_domestic
+#: model_terms:ir.ui.view,arch_db:partner_address_format_domestic.view_country_form
+msgid ""
+"Change the way addresses are displayed in reports for domestic transactions"
+msgstr ""
+"Modifica il modo in cui gli indirizzi vengono visualizzati nei resoconti per "
+"le transazioni nazionali"
+
+#. module: partner_address_format_domestic
+#: model:ir.model,name:partner_address_format_domestic.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_address_format_domestic
+#: model:ir.model,name:partner_address_format_domestic.model_res_country
+msgid "Country"
+msgstr "Nazione"
+
+#. module: partner_address_format_domestic
+#: model:ir.model.fields,field_description:partner_address_format_domestic.field_res_country__address_format_domestic
+msgid "Domestic Address Format"
+msgstr "Formato indirizzo nazionale"
+
+#. module: partner_address_format_domestic
+#: model_terms:ir.ui.view,arch_db:partner_address_format_domestic.view_country_form
+msgid "Domestic Address format..."
+msgstr "Formato indirizzo nazionale..."
+
+#. module: partner_address_format_domestic
+#: model:ir.model.fields,field_description:partner_address_format_domestic.field_res_country__is_relevant_for_company
+msgid "Is Relevant For Company"
+msgstr "È rilevante per l'azienda"
