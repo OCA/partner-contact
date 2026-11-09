@@ -16,7 +16,6 @@ class ResCityZip(models.Model):
     name = fields.Char("ZIP", required=True)
     city_id = fields.Many2one(
         "res.city",
-        "City",
         required=True,
         bypass_search_access=True,
         ondelete="cascade",

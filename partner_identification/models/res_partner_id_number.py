@@ -27,13 +27,12 @@ class ResPartnerIdNumber(models.Model):
         help="The ID itself. For example, Driver License number of this person",
     )
     category_id = fields.Many2one(
-        string="Category",
         required=True,
         comodel_name="res.partner.id_category",
         help="ID type defined in configuration. For example, Driver License",
     )
     partner_id = fields.Many2one(
-        string="Partner", required=True, comodel_name="res.partner", ondelete="cascade"
+        required=True, comodel_name="res.partner", ondelete="cascade"
     )
     partner_issued_id = fields.Many2one(
         string="Issued by",
