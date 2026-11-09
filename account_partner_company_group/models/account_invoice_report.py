@@ -8,9 +8,7 @@ from odoo.tools import SQL
 class AccountInvoiceReport(models.Model):
     _inherit = "account.invoice.report"
 
-    company_group_id = fields.Many2one(
-        "res.partner", string="Company Group", readonly=True
-    )
+    company_group_id = fields.Many2one("res.partner", readonly=True)
 
     _depends = {
         "account.move": ["company_group_id"],
