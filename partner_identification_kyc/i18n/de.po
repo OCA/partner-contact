@@ -1,0 +1,20 @@
+# German translation for partner_identification_kyc
+# Copyright (C) 2025
+# This file is distributed under the same license as the partner_identification_kyc module.
+#, fuzzy
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Language: de\n"
+
+#. module: partner_identification_kyc
+msgid "Request KYC"
+msgstr "KYC anfordern"
+
+#. module: partner_identification_kyc
+msgid "Perform KYC Check"
+msgstr "KYC-Prüfung durchführen"
+
+#. module: partner_identification_kyc
+msgid "KYC"
+msgstr "KYC"

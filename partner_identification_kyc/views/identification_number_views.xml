@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Add KYC category filter to the identification number search view -->
+    <record id="view_identification_number_kyc_filter" model="ir.ui.view">
+        <field name="name">res.partner.id_number.search.kyc</field>
+        <field name="model">res.partner.id_number</field>
+        <field
+            name="inherit_id"
+            ref="partner_identification.view_partner_id_numbers_search"
+        />
+        <field name="arch" type="xml">
+            <filter name="status_expired" position="after">
+                <separator />
+                <filter
+                    name="kyc_category_filter"
+                    string="KYC"
+                    domain="[('category_id.is_kyc', '=', True)]"
+                />
+            </filter>
+        </field>
+    </record>
+</odoo>
