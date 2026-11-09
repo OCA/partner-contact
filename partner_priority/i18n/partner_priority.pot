@@ -1,0 +1,97 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_priority
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_priority
+#: model:ir.model,name:partner_priority.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_priority
+#: model:ir.model.fields,field_description:partner_priority.field_partner_priority__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: partner_priority
+#: model:ir.model.fields,field_description:partner_priority.field_partner_priority__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: partner_priority
+#: model:ir.model.fields,field_description:partner_priority.field_partner_priority__description
+msgid "Description"
+msgstr ""
+
+#. module: partner_priority
+#: model:ir.model.fields,field_description:partner_priority.field_partner_priority__display_name
+#: model:ir.model.fields,field_description:partner_priority.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_priority
+#: model:ir.model.fields,field_description:partner_priority.field_partner_priority__id
+#: model:ir.model.fields,field_description:partner_priority.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_priority
+#: model:ir.model.fields,field_description:partner_priority.field_partner_priority____last_update
+#: model:ir.model.fields,field_description:partner_priority.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_priority
+#: model:ir.model.fields,field_description:partner_priority.field_partner_priority__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_priority
+#: model:ir.model.fields,field_description:partner_priority.field_partner_priority__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_priority
+#: model_terms:ir.ui.view,arch_db:partner_priority.partner_priority_view_form
+msgid "Name"
+msgstr ""
+
+#. module: partner_priority
+#: model:ir.model,name:partner_priority.model_partner_priority
+msgid "Partner Priority"
+msgstr ""
+
+#. module: partner_priority
+#: model:ir.ui.menu,name:partner_priority.res_partner_priority_menu
+msgid "Priorities"
+msgstr ""
+
+#. module: partner_priority
+#: model:ir.model.fields,field_description:partner_priority.field_partner_priority__name
+#: model:ir.model.fields,field_description:partner_priority.field_res_partner__priority_id
+#: model:ir.model.fields,field_description:partner_priority.field_res_users__priority_id
+#: model_terms:ir.ui.view,arch_db:partner_priority.partner_priority_view_form
+#: model_terms:ir.ui.view,arch_db:partner_priority.partner_priority_view_list
+#: model_terms:ir.ui.view,arch_db:partner_priority.view_res_partner_filter
+msgid "Priority"
+msgstr ""
+
+#. module: partner_priority
+#: model:ir.actions.act_window,name:partner_priority.partner_priority_action
+msgid "Priority Action"
+msgstr ""
+
+#. module: partner_priority
+#: model:ir.model.fields,field_description:partner_priority.field_partner_priority__sequence
+msgid "Sequence"
+msgstr ""
