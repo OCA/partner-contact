@@ -1,0 +1,4 @@
+- Enable developer mode, and go to *Contacts \> Configuration \>
+  Countries*.
+- Select a country associated with a company in your database.
+- Fill in the Domestic Address Format.
