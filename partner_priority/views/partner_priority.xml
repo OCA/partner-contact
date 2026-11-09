@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <!-- Copyright 2019 Patrick Wilson <patrickraymondwilson@gmail.com>
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
@@ -37,8 +38,8 @@
         <field name="view_mode">list,form</field>
     </record>
     <menuitem
-        name="Contact Priorities"
         id="res_partner_priority_menu"
+        name="Contact Priorities"
         parent="contacts.res_partner_menu_config"
         action="partner_priority_action"
         sequence="3"
