@@ -10,7 +10,6 @@ class ResPartner(models.Model):
 
     age_range_id = fields.Many2one(
         "res.partner.age.range",
-        "Age Range",
         compute="_compute_age_range_id",
         store=True,
     )

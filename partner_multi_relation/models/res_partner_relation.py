@@ -44,7 +44,6 @@ class ResPartnerRelation(models.Model):
     )
     type_id = fields.Many2one(
         comodel_name="res.partner.relation.type",
-        string="Type",
         required=True,
         bypass_search_access=True,
     )

@@ -7,4 +7,4 @@ from odoo import fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    nationality_id = fields.Many2one("res.country", "Nationality")
+    nationality_id = fields.Many2one("res.country")

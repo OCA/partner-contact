@@ -9,7 +9,6 @@ class ResPartner(models.Model):
 
     classification_id = fields.Many2one(
         "res.partner.classification",
-        string="Classification",
         tracking=True,
         check_company=True,
     )
