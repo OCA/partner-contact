@@ -8,9 +8,7 @@
     "version": "18.0.1.0.1",
     "category": "Customer Relationship Management",
     "license": "AGPL-3",
-    "author": "Antiun Ingeniería S.L., "
-    "Tecnativa, "
-    "Odoo Community Association (OCA)",
+    "author": "Antiun Ingeniería S.L., Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/partner-contact",
     "depends": ["contacts"],
     "data": [
