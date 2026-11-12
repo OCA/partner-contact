@@ -43,11 +43,6 @@ msgid "Config Settings"
 msgstr ""
 
 #. module: partner_firstname
-#: model:ir.model.constraint,message:partner_firstname.constraint_res_partner_check_name
-msgid "Contacts require a name."
-msgstr ""
-
-#. module: partner_firstname
 #: model:ir.model.fields,help:partner_firstname.field_res_config_settings__partner_names_required_fields
 msgid "Define which fields are required or not"
 msgstr ""
