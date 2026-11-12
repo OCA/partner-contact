@@ -49,25 +49,28 @@ msgid "Config Settings"
 msgstr "Ayarlar"
 
 #. module: partner_firstname
-#: model:ir.model,name:partner_firstname.model_res_partner
-msgid "Contact"
-msgstr "Kontak"
-
-#. module: partner_firstname
-#: model:ir.model.constraint,message:partner_firstname.constraint_res_partner_check_name
-msgid "Contacts require a name."
-msgstr "Kontaklar için ad gereklidir."
-
-#. module: partner_firstname
 #: model:ir.model.fields,help:partner_firstname.field_res_config_settings__partner_names_required_fields
 msgid "Define which fields are required or not"
 msgstr "Hangi alanların zorunlu olup olmadığını seçin"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_firstname_mixin__display_name
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__display_name
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__display_name
+msgid "Display Name"
+msgstr ""
 
 #. module: partner_firstname
 #. odoo-python
 #: code:addons/partner_firstname/exceptions.py:0
 msgid "Error(s) with partner %d's name."
 msgstr "Partner %d'in adıyla ilgili hata."
+
+#. module: partner_firstname
+#: model:ir.model,name:partner_firstname.model_res_partner
+msgid "Fake Model"
+msgstr ""
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__firstname
@@ -88,6 +91,14 @@ msgstr "İsim zorunlu"
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__form_has_lastname_first
 msgid "Form Has Lastname First"
 msgstr "Form: Soyisim, İsim"
+
+#. module: partner_firstname
+#: model:ir.model.fields,field_description:partner_firstname.field_firstname_mixin__id
+#: model:ir.model.fields,field_description:partner_firstname.field_res_config_settings__id
+#: model:ir.model.fields,field_description:partner_firstname.field_res_partner__id
+#: model:ir.model.fields,field_description:partner_firstname.field_res_users__id
+msgid "ID"
+msgstr ""
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
@@ -163,6 +174,12 @@ msgstr ""
 #: model:ir.model,name:partner_firstname.model_res_users
 msgid "User"
 msgstr "Kullanıcı"
+
+#~ msgid "Contact"
+#~ msgstr "Kontak"
+
+#~ msgid "Contacts require a name."
+#~ msgstr "Kontaklar için ad gereklidir."
 
 #~ msgid "Partner"
 #~ msgstr "İş Ortağı"
