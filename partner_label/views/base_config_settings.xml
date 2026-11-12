@@ -63,7 +63,7 @@
                                     name="action_partner_labels_preview"
                                     string="Preview"
                                     class="oe_link"
-                                    icon="oi-arrow-right"
+                                    icon="east"
                                 />
                             </div>
                         </setting>

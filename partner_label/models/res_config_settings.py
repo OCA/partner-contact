@@ -45,9 +45,9 @@ class ResConfigSettings(models.TransientModel):
         "report.paperformat",
         string="Paperformat",
         required=True,
-        default=lambda self: self.env.ref(
-            "partner_label.report_res_partner_label"
-        ).paperformat_id,
+        default=lambda self: (
+            self.env.ref("partner_label.report_res_partner_label").paperformat_id
+        ),
         compute="_compute_partner_labels_paperformat_id",
         inverse="_inverse_partner_labels_paperformat_id",
     )
