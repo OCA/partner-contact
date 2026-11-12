@@ -23,9 +23,9 @@ class ResPartner(models.Model):
     name = fields.Char(
         compute="_compute_name",
         inverse="_inverse_name_after_cleaning_whitespace",
-        required=False,
         store=True,
         readonly=False,
+        precompute=True,
     )
 
     # @api.depends(lambda self: self._get_fields_depend_firstname_lastname_required())
@@ -136,7 +136,7 @@ class ResPartner(models.Model):
         for record in self:
             # Remove unneeded whitespace
             clean = record._get_whitespace_cleaned_name(record.name)
-            record.name = clean
+            record.name = clean or False
             record._inverse_name()
 
     def _inverse_name(self):
@@ -169,10 +169,3 @@ class ResPartner(models.Model):
         # Force calculations there
         records._inverse_name()
         _logger.info("%d partners updated installing module.", len(records))
-
-    # Disabling SQL constraint givint a more explicit error using a Python
-    # contstraint
-    _check_name = models.Constraint(
-        "CHECK( 1=1 )",
-        "Contacts require a name.",
-    )
