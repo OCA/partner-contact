@@ -187,7 +187,7 @@ class ResPartner(models.Model):
             "type": "ir.actions.act_window",
             "res_model": "res.partner.relation",
             "name": self.env._("Connections for current partner"),
-            "view_mode": "tree,form",
+            "view_mode": "list,form",
             # For the moment default views.
             "views": [(False, "list"), (False, "form")],
             "domain": [
