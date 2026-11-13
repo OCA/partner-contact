@@ -1,0 +1,138 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_email_check
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-06-22 18:34+0000\n"
+"Last-Translator: intero-chd <c.dominiak@intero-technologies.de>\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: partner_email_check
+#. odoo-python
+#: code:addons/partner_email_check/models/res_partner.py:0
+msgid "%s is an invalid email"
+msgstr "%s ist eine ungültige E-Mail-Adresse"
+
+#. module: partner_email_check
+#. odoo-python
+#: code:addons/partner_email_check/models/res_partner.py:0
+msgid "Cannot deliver to email address %s"
+msgstr "Der Versand an die E-Mail-Adresse %s konnte nicht erfolgen"
+
+#. module: partner_email_check
+#: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_check_deliverability
+#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__partner_email_check_check_deliverability
+msgid "Check deliverability of email addresses"
+msgstr "Zustellbarkeit von E-Mail-Adressen prüfen"
+
+#. module: partner_email_check
+#: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_syntax
+#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__partner_email_check_syntax
+msgid "Check syntax of email addresses"
+msgstr "Syntax der E-Mail-Adressen prüfen"
+
+#. module: partner_email_check
+#: model:ir.model,name:partner_email_check.model_res_company
+msgid "Companies"
+msgstr "Unternehmen"
+
+#. module: partner_email_check
+#: model:ir.model,name:partner_email_check.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfigurationseinstellungen"
+
+#. module: partner_email_check
+#: model:ir.model.fields,field_description:partner_email_check.field_res_company__display_name
+#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:partner_email_check.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: partner_email_check
+#: model:ir.model.fields,help:partner_email_check.field_res_company__partner_email_check_check_deliverability
+#: model:ir.model.fields,help:partner_email_check.field_res_config_settings__partner_email_check_check_deliverability
+msgid "Don't allow email addresses with providers that don't exist"
+msgstr "E-Mail-Adressen von nicht existierenden Anbietern nicht zulassen"
+
+#. module: partner_email_check
+#: model:ir.model.fields,help:partner_email_check.field_res_company__partner_email_check_syntax
+#: model:ir.model.fields,help:partner_email_check.field_res_config_settings__partner_email_check_syntax
+msgid "Don't allow email addresses with wrong syntax"
+msgstr "E-Mail-Adressen mit falscher Syntax nicht zulassen"
+
+#. module: partner_email_check
+#: model:ir.model.fields,help:partner_email_check.field_res_company__partner_email_check_filter_duplicates
+#: model:ir.model.fields,help:partner_email_check.field_res_config_settings__partner_email_check_filter_duplicates
+msgid "Don't allow multiple partners to have the same email address."
+msgstr ""
+"Es darf nicht vorkommen, dass mehrere Partner dieselbe E-Mail-Adresse haben."
+
+#. module: partner_email_check
+#. odoo-python
+#: code:addons/partner_email_check/models/res_partner.py:0
+msgid "Email '%s' is already in use."
+msgstr "Die E-Mail-Adresse „%s“ wird bereits verwendet."
+
+#. module: partner_email_check
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+msgid "Email validation"
+msgstr "E-Mail-Überprüfung"
+
+#. module: partner_email_check
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+msgid "Ensure that partner email addresses can be delivered to"
+msgstr ""
+"Stellen Sie sicher, dass E-Mails an die E-Mail-Adressen der Partner "
+"zugestellt werden können"
+
+#. module: partner_email_check
+#: model:ir.model,name:partner_email_check.model_res_partner
+msgid "Fake Model"
+msgstr "Falsches Modell"
+
+#. module: partner_email_check
+#. odoo-python
+#: code:addons/partner_email_check/models/res_partner.py:0
+msgid ""
+"Field contains multiple email addresses. This is not supported when "
+"duplicate email addresses are not allowed."
+msgstr ""
+"Das Feld enthält mehrere E-Mail-Adressen. Dies wird nicht unterstützt, wenn "
+"doppelte E-Mail-Adressen nicht zulässig sind."
+
+#. module: partner_email_check
+#: model:ir.model.fields,field_description:partner_email_check.field_res_company__partner_email_check_filter_duplicates
+#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__partner_email_check_filter_duplicates
+msgid "Filter duplicate partner email addresses"
+msgstr "Doppelte E-Mail-Adressen von Partnern filtern"
+
+#. module: partner_email_check
+#: model:ir.model.fields,field_description:partner_email_check.field_res_company__id
+#: model:ir.model.fields,field_description:partner_email_check.field_res_config_settings__id
+#: model:ir.model.fields,field_description:partner_email_check.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_email_check
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+msgid "Require partner email addresses to be unique"
+msgstr "E-Mail-Adressen von Partnern müssen eindeutig sein"
+
+#. module: partner_email_check
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+msgid "Require partner email addresses to have valid syntax"
+msgstr "E-Mail-Adressen von Partnern müssen eine gültige Syntax aufweisen"
+
+#. module: partner_email_check
+#: model_terms:ir.ui.view,arch_db:partner_email_check.view_general_configuration
+msgid "Values set here are company-specific."
+msgstr "Die hier festgelegten Werte sind unternehmensspezifisch."
