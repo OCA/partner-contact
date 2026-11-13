@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-03 20:26+0000\n"
-"PO-Revision-Date: 2026-01-20 08:28+0000\n"
+"PO-Revision-Date: 2026-11-13 13:46+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -59,7 +59,7 @@ msgstr "Definire quali campo sono richiesti o meno"
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__display_name
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: partner_firstname
 #. odoo-python
@@ -70,7 +70,7 @@ msgstr "Errore/i con il nome del partner %d."
 #. module: partner_firstname
 #: model:ir.model,name:partner_firstname.model_res_partner
 msgid "Fake Model"
-msgstr ""
+msgstr "Modello finto"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__firstname
@@ -98,7 +98,7 @@ msgstr "Il modulo ha prima il cognome"
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_firstname.field_res_users__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: partner_firstname
 #: model:ir.model.fields,field_description:partner_firstname.field_res_partner__lastname
