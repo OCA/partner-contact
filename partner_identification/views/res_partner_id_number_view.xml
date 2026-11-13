@@ -39,17 +39,17 @@
                 <filter
                     string="Valid Until: Past"
                     name="valid_until_past"
-                    domain="[('valid_until','&lt;',context_today())]"
+                    domain="[('valid_until', '&lt;', 'today')]"
                 />
                 <filter
                     string="Valid Until: Today"
                     name="valid_until_today"
-                    domain="[('valid_until','=',context_today())]"
+                    domain="[('valid_until', '=', 'today')]"
                 />
                 <filter
                     string="Valid Until: Future"
                     name="valid_until_future"
-                    domain="[('valid_until','&gt;',context_today())]"
+                    domain="[('valid_until', '&gt;', 'today')]"
                 />
 
                 <separator />
