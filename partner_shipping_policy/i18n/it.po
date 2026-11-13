@@ -1,0 +1,58 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_shipping_policy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2024-08-26 12:06+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
+
+#. module: partner_shipping_policy
+#: model:ir.model,name:partner_shipping_policy.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_shipping_policy
+#: model:ir.model.fields,help:partner_shipping_policy.field_sale_order__picking_policy
+msgid ""
+"If you deliver all products at once, the delivery order will be scheduled "
+"based on the greatest product lead time. Otherwise, it will be based on the "
+"shortest."
+msgstr ""
+"Se tutti i prodotti vengono consegnati insieme, l'ordine di consegna verrà "
+"pianificato in base al tempo di attraversamento maggiore. Altrimenti, verrà "
+"utilizzato il più corto."
+
+#. module: partner_shipping_policy
+#: model:ir.model,name:partner_shipping_policy.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: partner_shipping_policy
+#: model:ir.model.fields,field_description:partner_shipping_policy.field_res_partner__picking_policy
+#: model:ir.model.fields,field_description:partner_shipping_policy.field_res_users__picking_policy
+#: model:ir.model.fields,field_description:partner_shipping_policy.field_sale_order__picking_policy
+msgid "Shipping Policy"
+msgstr "Politica di spedizione"
+
+#. module: partner_shipping_policy
+#: model:ir.model.fields,help:partner_shipping_policy.field_res_partner__picking_policy
+#: model:ir.model.fields,help:partner_shipping_policy.field_res_users__picking_policy
+msgid ""
+"Shipping policy to use in this partner's sales orders. If you deliver all "
+"products at once, the delivery order will be scheduled based on the greatest"
+" product lead time. Otherwise, it will be based on the shortest."
+msgstr ""
+"La politica di spedizione da utilizzare negli ordini di vendita di questo "
+"partner. Se si consegnano tutti i prodotti in una volta, l'ordine di "
+"consegna verrà pianificato in base al lead time del prodotto più lungo. In "
+"caso contrario, verrà basato sul più breve."
