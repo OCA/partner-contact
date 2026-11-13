@@ -416,6 +416,23 @@ Categories. For example, we create a category ‘Driver License’:</p>
 ‘driver_license’</div>
 </div>
 <div class="line-block">
+<div class="line">Scheme:</div>
+<div class="line">Optional code identifying this ID type in an external coding scheme
+(for example the Peppol ICD code ‘0088’ for GLN, used for EDI/UBL
+output). Falls back to <tt class="docutils literal">Code</tt> when not set - only needed when
+<tt class="docutils literal">Code</tt> (used for other purposes, e.g. internal categorization)
+differs from the code an external system expects.</div>
+</div>
+<p>By default, two different ID Categories can share the same <tt class="docutils literal">Scheme</tt>.
+To forbid this, set the
+<tt class="docutils literal">partner_identification.id_category_scheme_unique_check</tt> system
+parameter to <tt class="docutils literal">True</tt> (Settings &gt; Technical &gt; Parameters &gt; System
+Parameters, with developer mode active). ID Categories are a global
+model (not tied to a company), so this is a global setting, not a
+per-company one. Once enabled, saving an ID Category whose <tt class="docutils literal">Scheme</tt> is
+already used by another one raises a validation error. Categories with
+no <tt class="docutils literal">Scheme</tt> set never conflict, even when this is enabled.</p>
+<div class="line-block">
 <div class="line">Python validation code:</div>
 <div class="line">Optional python code called to validate ID numbers of this ID type.
 Set <tt class="docutils literal">failed</tt> to <tt class="docutils literal">True</tt> to reject the ID number with a generic
