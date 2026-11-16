@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2025 Sylvain LE GAL (GRAP)
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <template
+        id="partner_firstname_portal.portal_my_details_fields"
+        inherit_id="portal.address_form_fields"
+    >
+        <!--
+            display company_type in a similar way as in back-office
+            Note, the customer / supplier doesn't have the possibility to change this field,
+            because it can generate huge problem in term of invoices, etc.
+        -->
+        <xpath expr="//input[@name='name']/.." position="before">
+            <div class="mb-3 col-xl-6 form-check o_radio_item">
+                <input
+                    class="form-check-input o_radio_input"
+                    type="radio"
+                    name="company_type"
+                    value="person"
+                    id="company_type_person"
+                    t-att-checked="not partner_sudo.is_company"
+                    disabled="disabled"
+                />
+                <label
+                    for="company_type_person"
+                    class="form-check-label o_form_label"
+                >Individual</label>
+            </div>
+            <div class="mb-3 col-xl-6 form-check o_radio_item">
+                <input
+                    class="form-check-input o_radio_input"
+                    type="radio"
+                    name="company_type"
+                    value="company"
+                    id="company_type_company"
+                    t-att-checked="partner_sudo.is_company"
+                    disabled="disabled"
+                />
+                <label
+                    for="company_type_company"
+                    class="form-check-label o_form_label"
+                >Company</label>
+            </div>
+        </xpath>
+
+        <!--
+            If it's a company, hide 'company_name' field, that doesn't make sense
+        -->
+        <xpath expr="//input[@name='company_name']/.." position="attributes">
+            <attribute name="t-att-hidden">partner_sudo.is_company</attribute>
+        </xpath>
+
+        <!--
+            If it's an individual, hide name field, and display firstname lastname fields
+        -->
+        <xpath expr="//input[@name='name']/.." position="attributes">
+            <attribute name="t-att-hidden">not partner_sudo.is_company</attribute>
+        </xpath>
+
+        <xpath expr="//input[@name='name']/.." position="after">
+            <div
+                id="div_firstname"
+                class="col-lg-6 mb-2"
+                t-att-hidden="partner_sudo.is_company"
+            >
+                <label class="col-form-label" for="firstname">First Name</label>
+                <input
+                    type="text"
+                    name="firstname"
+                    class="form-control"
+                    t-att-value="partner_sudo.firstname"
+                />
+            </div>
+
+            <div
+                id="div_lastname"
+                class="col-lg-6 mb-2"
+                t-att-hidden="partner_sudo.is_company"
+            >
+                <label class="col-form-label" for="lastname">Last Name</label>
+                <input
+                    type="text"
+                    name="lastname"
+                    class="form-control"
+                    t-att-value="partner_sudo.lastname"
+                />
+            </div>
+        </xpath>
+    </template>
+</odoo>
