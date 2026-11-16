@@ -17,11 +17,12 @@ class TestDeduplicateFilter(BaseCommon):
             {
                 "name": "Partner 1",
                 "email": "partner1@example.org",
+                "vat": "BE0477472701",
                 "is_company": True,
                 "parent_id": False,
             }
         )
-        cls.partner_1.copy()
+        cls.partner_1.copy({"vat": "BE0477472701"})
         cls.partner_2 = cls.env["res.partner"].create(
             {
                 "name": "Partner 2",
