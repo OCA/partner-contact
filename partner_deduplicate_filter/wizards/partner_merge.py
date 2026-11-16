@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import fields, models
+from odoo.tools import SQL
 
 
 class BasePartnerMergeAutomaticWizard(models.TransientModel):
@@ -20,12 +21,16 @@ class BasePartnerMergeAutomaticWizard(models.TransientModel):
                 filters.append("parent_id IS NOT NULL")
             if self.exclude_parent:
                 filters.append("parent_id IS NULL")
-            index_where = query.find("WHERE")
-            index_group_by = query.find("GROUP BY")
-            subquery = "{}".format(" AND ".join(filters))
-            if index_where > 0:
+            code, params, to_flush = query._sql_tuple
+            index_where = code.find("WHERE")
+            index_group_by = code.find("GROUP BY")
+            subquery = " AND ".join(filters)
+            if index_where > 0 and code[index_where + 5 : index_group_by].strip():
                 subquery = f"AND ({subquery}) "
+            elif index_where > 0:  # pragma: no cover
+                subquery = f"{subquery} "
             else:  # pragma: no cover
                 subquery = f"WHERE {subquery} "
-            query = query[:index_group_by] + subquery + query[index_group_by:]
+            code = code[:index_group_by] + subquery + code[index_group_by:]
+            query = SQL(code, *params, to_flush=to_flush)  # pylint: disable=sql-injection
         return super()._process_query(query)
