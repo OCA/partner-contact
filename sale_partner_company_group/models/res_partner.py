@@ -42,8 +42,9 @@ class Contact(models.Model):
             - self.property_product_pricelist
         ):
             company_members = self.company_group_member_ids.filtered(
-                lambda cm: cm.property_product_pricelist
-                != self.property_product_pricelist
+                lambda cm: (
+                    cm.property_product_pricelist != self.property_product_pricelist
+                )
             )
             members_str = ""
             for member in company_members.sorted(key="display_name"):
