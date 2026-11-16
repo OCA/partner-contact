@@ -9,6 +9,8 @@ from odoo.addons.base.tests.common import BaseCommon
 
 @tagged("post_install", "-at_install")
 class TestResPartner(BaseCommon):
+    _test_user_groups = None
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -139,12 +141,13 @@ class TestResPartner(BaseCommon):
         # Global rule (no groups) so it applies to every non-superuser
         # regardless of the user's other groups; match by id to stay
         # independent of fields other modules may populate.
-        self.env["ir.rule"].create(
+        self.env["ir.access"].create(
             {
                 "name": "Hide conflicting partner from everyone",
                 "model_id": self.env.ref("base.model_res_partner").id,
-                "groups": [(6, 0, [])],
-                "domain_force": f"[('id', '!=', {hidden_partner.id})]",
+                "group_id": False,
+                "operation": "crud",
+                "domain": f"[('id', '!=', {hidden_partner.id})]",
             }
         )
         partner = (
