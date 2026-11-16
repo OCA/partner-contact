@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- KYC Identification Category -->
+    <record id="kyc_identification_category" model="res.partner.id_category">
+        <field name="name">KYC</field>
+        <field name="code">KYC</field>
+        <field name="is_kyc" eval="True" />
+        <field name="initial_activity_type_id" ref="activity_type_kyc_check" />
+        <field name="renew_activity_type_id" ref="activity_type_kyc_check" />
+        <field name="create_activity_on_new" eval="True" />
+        <field name="default_validity_number">1</field>
+        <field name="default_validity_unit">years</field>
+        <field name="renewal_lead_number">2</field>
+        <field name="renewal_lead_unit">months</field>
+        <field name="enable_on_child_contacts" eval="True" />
+    </record>
+</odoo>
