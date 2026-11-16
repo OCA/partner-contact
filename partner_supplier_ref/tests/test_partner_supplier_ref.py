@@ -31,5 +31,7 @@ class TestResPartner(TransactionCase):
         self.assertFalse(partner_copy.supplier_ref)
 
     def test_name_search_by_supplier_ref(self):
-        results = self.partner_model.name_search("1038")
-        self.assertIn(self.supplier.id, [res[0] for res in results])
+        results = self.partner_model.search_fetch(
+            [("display_name", "ilike", "1038")], ["display_name"]
+        )
+        self.assertIn(self.supplier, results)

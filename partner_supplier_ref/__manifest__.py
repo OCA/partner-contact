@@ -4,7 +4,7 @@
 {
     "name": "Partner Supplier Reference",
     "summary": "Adds a supplier reference to contacts",
-    "version": "19.0.1.0.2",
+    "version": "20.0.1.0.0",
     "category": "Customer Relationship Management",
     "website": "https://github.com/OCA/partner-contact",
     "author": "ForgeFlow, Odoo Community Association (OCA)",

@@ -9,7 +9,7 @@ class ResPartner(models.Model):
 
     @property
     def _rec_names_search(self):
-        return super()._rec_names_search + ["supplier_ref"]
+        return (*super()._rec_names_search, "supplier_ref")
 
     supplier_ref = fields.Char(
         string="Supplier Reference",
