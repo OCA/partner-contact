@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="view_partner_form_add_affiliate" model="ir.ui.view">
         <field name="model">res.partner</field>
@@ -77,15 +77,6 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="mode">primary</field>
         <field name="arch" type="xml">
-            <!--
-                Hide the company_type field.
-
-                This view is used by the Affiliate kanban in the partner form.
-                As Affiliates are companies, we don't want to show the company_type field.
-            -->
-            <field name="company_type" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </field>
             <!--
                 Hide the parent_id field.
 
