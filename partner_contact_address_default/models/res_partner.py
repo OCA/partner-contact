@@ -20,28 +20,28 @@ class ResPartner(models.Model):
         comodel_name="res.partner",
         string="Default contact",
     )
-    partner_delivery_domain = fields.Binary(compute="_compute_partner_domains")
-    partner_invoice_domain = fields.Binary(compute="_compute_partner_domains")
-    partner_contact_domain = fields.Binary(compute="_compute_partner_domains")
+    partner_delivery_domain = fields.Char(compute="_compute_partner_domains")
+    partner_invoice_domain = fields.Char(compute="_compute_partner_domains")
+    partner_contact_domain = fields.Char(compute="_compute_partner_domains")
 
     @api.depends_context("company")
     @api.depends("commercial_partner_id")
     def _compute_partner_domains(self):
         for partner in self:
             if self.env.company.contact_address_default_allow_all_partners:
-                partner.partner_delivery_domain = []
-                partner.partner_invoice_domain = []
-                partner.partner_contact_domain = []
+                partner.partner_delivery_domain = "[]"
+                partner.partner_invoice_domain = "[]"
+                partner.partner_contact_domain = "[]"
                 continue
             base_domain = [("id", "child_of", partner.commercial_partner_id.ids)]
-            partner.partner_delivery_domain = fields.Domain.AND(
-                [base_domain, [("type", "=", "delivery")]]
+            partner.partner_delivery_domain = str(
+                fields.Domain.AND([base_domain, [("type", "=", "delivery")]])
             )
-            partner.partner_invoice_domain = fields.Domain.AND(
-                [base_domain, [("type", "=", "invoice")]]
+            partner.partner_invoice_domain = str(
+                fields.Domain.AND([base_domain, [("type", "=", "invoice")]])
             )
-            partner.partner_contact_domain = fields.Domain.AND(
-                [base_domain, [("type", "=", "contact")]]
+            partner.partner_contact_domain = str(
+                fields.Domain.AND([base_domain, [("type", "=", "contact")]])
             )
 
     def get_address_default_type(self):

@@ -78,11 +78,11 @@ class TestPartnerContactAddressDefault(common.TransactionCase):
         expected_contact = fields.Domain.AND(
             [expected_base, [("type", "=", "contact")]]
         )
-        self.assertEqual(self.partner.partner_delivery_domain, expected_delivery)
-        self.assertEqual(self.partner.partner_invoice_domain, expected_invoice)
-        self.assertEqual(self.partner.partner_contact_domain, expected_contact)
+        self.assertEqual(self.partner.partner_delivery_domain, str(expected_delivery))
+        self.assertEqual(self.partner.partner_invoice_domain, str(expected_invoice))
+        self.assertEqual(self.partner.partner_contact_domain, str(expected_contact))
         self.env.company.contact_address_default_allow_all_partners = True
         self.partner._compute_partner_domains()
-        self.assertEqual(self.partner.partner_delivery_domain, [])
-        self.assertEqual(self.partner.partner_invoice_domain, [])
-        self.assertEqual(self.partner.partner_contact_domain, [])
+        self.assertEqual(self.partner.partner_delivery_domain, "[]")
+        self.assertEqual(self.partner.partner_invoice_domain, "[]")
+        self.assertEqual(self.partner.partner_contact_domain, "[]")
