@@ -6,7 +6,7 @@
 
 {
     "name": "Deduplicate Contacts by Website",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "category": "Tools",
     "website": "https://github.com/OCA/partner-contact",
     "author": "Tecnativa, Odoo Community Association (OCA)",

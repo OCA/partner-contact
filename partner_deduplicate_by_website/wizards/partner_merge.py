@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import fields, models
+from odoo.tools import SQL
 
 
 class BasePartnerMergeAutomaticWizard(models.TransientModel):
@@ -17,12 +18,12 @@ class BasePartnerMergeAutomaticWizard(models.TransientModel):
         """
         query = super()._generate_query(fields, maximum_group=maximum_group)
         if "website" in fields:
-            if "WHERE" in query:
-                index = query.find("WHERE")
-                query = (
-                    query[: index + 6] + "website IS NOT NULL AND " + query[index + 6 :]
-                )
+            code, params, to_flush = query._sql_tuple
+            where_idx = code.find("WHERE") + 5
+            group_idx = code.find("GROUP BY")
+            if code[where_idx:group_idx].strip():
+                code = code[:where_idx] + " website IS NOT NULL AND" + code[where_idx:]
             else:
-                index = query.find(" GROUP BY")
-                query = query[:index] + " WHERE website IS NOT NULL" + query[index:]
+                code = code[:where_idx] + " website IS NOT NULL " + code[group_idx:]
+            query = SQL(code, *params, to_flush=to_flush)  # pylint: disable=sql-injection
         return query
