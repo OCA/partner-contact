@@ -10,7 +10,12 @@ class TestResPartner(TransactionCase):
         cls.ResPartner = cls.env["res.partner"]
 
         cls.Partner_company = cls.ResPartner.create(
-            {"name": "Company Partner", "is_company": True, "type": "contact"}
+            {
+                "name": "Company Partner",
+                "vat": "BE0477472701",
+                "is_company": True,
+                "type": "contact",
+            }
         )
         cls.Partner_contact = cls.ResPartner.create(
             {"name": "Individual Partner", "is_company": False, "type": "contact"}

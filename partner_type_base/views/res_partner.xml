@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="view_partner_simple_form" model="ir.ui.view">
         <field name="model">res.partner</field>
@@ -8,7 +9,7 @@
                 <attribute name="domain">[('can_be_parent', '=', True)]</attribute>
             </field>
 
-            <xpath expr="//field[@id='individual']" position="attributes">
+            <xpath expr="//field[@id='contact']" position="attributes">
                 <attribute name="invisible">is_company</attribute>
                 <attribute name="required">is_individual</attribute>
             </xpath>
@@ -25,7 +26,7 @@
                 <attribute name="invisible">not can_be_child</attribute>
                 <attribute name="domain">[('can_be_parent', '=', True)]</attribute>
             </field>
-            <xpath expr="//field[@invisible='is_company']" position="attributes">
+            <xpath expr="//h1/field[@name='name']" position="attributes">
                 <attribute name="required">is_individual</attribute>
             </xpath>
             <!-- Re-add the address type selection, replaced by a readonly label in Odoo 19 -->
