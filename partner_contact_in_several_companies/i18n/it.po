@@ -1,0 +1,211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_in_several_companies
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-03 20:26+0000\n"
+"PO-Revision-Date: 2025-08-25 15:25+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.4\n"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model,name:partner_contact_in_several_companies.model_ir_actions_act_window
+msgid "Action Window"
+msgstr "Azione finestra"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Address"
+msgstr "Indirizzo"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.actions.act_window,name:partner_contact_in_several_companies.action_partner_form
+msgid "All Customers in All Positions"
+msgstr "Tutti i clienti in tutte le posizioni"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
+msgid "All partner positions"
+msgstr "Tutte le posizioni del partner"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
+msgid "All positions"
+msgstr "Tutte le posizioni"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model.fields.selection,name:partner_contact_in_several_companies.selection__res_partner__contact_type__attached
+msgid "Attached to existing Contact"
+msgstr "Allega a contatto esistente"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Avatar"
+msgstr "Avatar"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "City"
+msgstr "Città"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model,name:partner_contact_in_several_companies.model_res_partner
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Contact Image"
+msgstr "Immagine contatto"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Contact Name"
+msgstr "Nome contatto"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner__contact_type
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_users__contact_type
+msgid "Contact Type"
+msgstr "Tipo contatto"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Country"
+msgstr "Nazione"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Delete Contact"
+msgstr "Cancella contatto"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_ir_actions_act_window__display_name
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_ir_actions_act_window__id
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_ir_actions_act_window____last_update
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Logo"
+msgstr "Logo"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner__contact_id
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_users__contact_id
+msgid "Main Contact"
+msgstr "Contatto principale"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Mobile:"
+msgstr "Cellulare:"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Other Positions"
+msgstr "Altre posizioni"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_partner__other_contact_ids
+#: model:ir.model.fields,field_description:partner_contact_in_several_companies.field_res_users__other_contact_ids
+msgid "Others Positions"
+msgstr "Altre posizioni"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_filter_contact
+msgid "Person"
+msgstr "Persona"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Phone:"
+msgstr "Telefono:"
+
+#. module: partner_contact_in_several_companies
+#: model:ir.model.fields.selection,name:partner_contact_in_several_companies.selection__res_partner__contact_type__standalone
+msgid "Standalone Contact"
+msgstr "Contatto autonomo"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "State"
+msgstr "Provincia"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Street 2..."
+msgstr "Indirizzo 2..."
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "Street..."
+msgstr "Indirizzo..."
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.personal_contact_information
+msgid ""
+"To see personal information about this contact, please\n"
+"                    go to to the this person form:"
+msgstr ""
+"Per visualizzare le informazioni personali di questo contatto, \n"
+"                    andare nella maschera di questa persona:"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "ZIP"
+msgstr "CAP"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "at"
+msgstr "a"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "e.g. Mr."
+msgstr "es. Sig."
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "e.g. Sales Director"
+msgstr "es. Responsabile vendite"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_partner_form_inherit
+msgid "internal note..."
+msgstr "nota interna..."
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_kanban_contact
+msgid "other position"
+msgstr "altre posizioni"
+
+#. module: partner_contact_in_several_companies
+#: model_terms:ir.ui.view,arch_db:partner_contact_in_several_companies.view_res_partner_kanban_contact
+msgid "other positions"
+msgstr "Altre posizioni"
