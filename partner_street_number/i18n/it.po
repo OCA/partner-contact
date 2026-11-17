@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-07-16 08:46+0000\n"
+"PO-Revision-Date: 2026-11-17 17:46+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.2\n"
+"X-Generator: Weblate 2026.11.2\n"
 
 #. module: partner_street_number
 #: model_terms:ir.ui.view,arch_db:partner_street_number.view_country_form
@@ -189,7 +189,7 @@ msgstr "Aggiorna partner"
 #. module: partner_street_number
 #: model:ir.model,name:partner_street_number.model_partner_street_number_wizard
 msgid "Update street components/street"
-msgstr "Aggiorna i componenti via/via"
+msgstr "Aggiorna i componenti indirizzo/indirizzo"
 
 #. module: partner_street_number
 #: model:ir.model.fields,field_description:partner_street_number.field_res_config_settings__group_partner_street_number
