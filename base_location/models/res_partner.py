@@ -2,6 +2,8 @@
 # Copyright 2018 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+from lxml import etree
+
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
@@ -152,9 +154,48 @@ class ResPartner(models.Model):
         # views, odoo won't let us use it in zip_id's domain.
         # For this reason we need to set the domain here.
         arch = super()._view_get_address(arch)
+        self._view_add_zip_id(arch)
         for node in arch.xpath("//field[@name='zip_id']"):
             node.attrib["domain"] = self._zip_id_domain()
         return arch
+
+    def _view_add_zip_id(self, arch):
+        """Keep the ZIP completion field on country specific address views.
+
+        When the country of the company defines an address view
+        (``res.country.address_view_id``), the standard replaces the whole
+        address block of the form, dropping the ``zip_id`` field this module
+        adds to it. Put the field back, before the city, on every address
+        block that lost it.
+        """
+        if (
+            self.env.context.get("no_address_format")
+            or not self.env.company.country_id.address_view_id
+        ):
+            return
+        # take the field from the view of this module, so its attributes and
+        # the translation of its placeholder are kept
+        view = self.env.ref("base_location.view_partner_form", raise_if_not_found=False)
+        zip_nodes = view and etree.fromstring(view.arch).xpath(
+            "//field[@name='zip_id']"
+        )
+        if not zip_nodes:
+            return
+        for address_node in arch.xpath("//div[hasclass('o_address_format')]"):
+            if address_node.xpath(".//field[@name='zip_id']"):
+                continue
+            anchors = address_node.xpath(
+                ".//field[@name='city_id'] | .//field[@name='city']"
+            )
+            if not anchors:
+                continue
+            anchor = anchors[0]
+            zip_node = etree.fromstring(etree.tostring(zip_nodes[0]))
+            zip_node.tail = None
+            zip_node.attrib.pop("readonly", None)
+            if anchor.get("readonly"):
+                zip_node.set("readonly", anchor.get("readonly"))
+            anchor.addprevious(zip_node)
 
     @api.model
     def _address_fields(self):
