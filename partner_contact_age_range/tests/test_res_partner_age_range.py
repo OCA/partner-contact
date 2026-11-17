@@ -2,17 +2,18 @@
 # Copyright 2020 Ecosoft Co., Ltd (http://ecosoft.co.th/)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from datetime import datetime
-
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
+from odoo import fields
 from odoo.exceptions import ValidationError
 
 from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestRespartnerAgeRange(BaseCommon):
+    _test_user_groups = None
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -24,13 +25,13 @@ class TestRespartnerAgeRange(BaseCommon):
         cls.partner = cls.partner_model.create(
             {
                 "name": "Test",
-                "birthdate_date": datetime.today() - relativedelta(years=1, days=10),
+                "birthdate_date": fields.Date.today() - relativedelta(years=1, days=10),
             }
         )
         cls.partner2 = cls.partner_model.create(
             {
                 "name": "Test2",
-                "birthdate_date": datetime.today() + relativedelta(years=1),
+                "birthdate_date": fields.Date.today() + relativedelta(years=1),
             }
         )
 
