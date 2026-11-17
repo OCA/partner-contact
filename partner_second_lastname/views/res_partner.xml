@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2015 Tecnativa - Jairo Llopis
+     Copyright 2017 Tecnativa - Pedro M. Baeza
+     Copyright 2025 Moduon Team
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="partner_simple_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_firstname.view_partner_simple_form" />
+        <field name="arch" type="xml">
+            <!-- Main form -->
+            <field name="firstname" position="attributes">
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </field>
+            <!-- First lastname field -->
+            <xpath expr="//field[@name='lastname'][1]" position="attributes">
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </xpath>
+            <xpath expr="//field[@name='lastname'][1]" position="after">
+                <field
+                    invisible="not form_has_lastname_first"
+                    name="lastname2"
+                    required="not firstname and not lastname and not is_company and type == 'contact'"
+                />
+            </xpath>
+            <!-- Second lastname field -->
+            <xpath expr="//field[@name='lastname'][2]" position="attributes">
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </xpath>
+            <xpath expr="//field[@name='lastname'][2]" position="after">
+                <field
+                    invisible="form_has_lastname_first"
+                    name="lastname2"
+                    required="not firstname and not lastname and not is_company and type == 'contact'"
+                />
+            </xpath>
+        </field>
+    </record>
+    <record id="partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_firstname.view_partner_form" />
+        <field name="arch" type="xml">
+            <!-- Main form -->
+            <field name="firstname" position="attributes">
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </field>
+            <!-- First lastname field -->
+            <xpath expr="//field[@name='lastname'][1]" position="attributes">
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </xpath>
+            <xpath expr="//field[@name='lastname'][1]" position="after">
+                <field
+                    invisible="not form_has_lastname_first"
+                    name="lastname2"
+                    required="not firstname and not lastname and not is_company and type == 'contact'"
+                />
+            </xpath>
+            <!-- Second lastname field -->
+            <xpath expr="//field[@name='lastname'][2]" position="attributes">
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </xpath>
+            <xpath expr="//field[@name='lastname'][2]" position="after">
+                <field
+                    invisible="form_has_lastname_first"
+                    name="lastname2"
+                    required="not firstname and not lastname and not is_company and type == 'contact'"
+                />
+            </xpath>
+            <!-- Inner contact form of child_ids -->
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='firstname']"
+                position="attributes"
+            >
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </xpath>
+            <!-- First lastname field -->
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='lastname'][1]"
+                position="attributes"
+            >
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='lastname'][1]"
+                position="after"
+            >
+                <field
+                    invisible="not form_has_lastname_first"
+                    name="lastname2"
+                    required="not firstname and not lastname and not is_company and type == 'contact'"
+                />
+            </xpath>
+            <!-- Second lastname field -->
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='lastname'][2]"
+                position="attributes"
+            >
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//field[@name='lastname'][2]"
+                position="after"
+            >
+                <field
+                    invisible="form_has_lastname_first"
+                    name="lastname2"
+                    required="not firstname and not lastname and not is_company and type == 'contact'"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
