@@ -1,0 +1,49 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_contact_birthplace
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2022-05-11 01:05+0000\n"
+"Last-Translator: pere-aquarian <pere@aquarian.tech>\n"
+"Language-Team: none\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
+
+#. module: partner_contact_birthplace
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__birth_city
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_users__birth_city
+msgid "Birth City"
+msgstr "Ciutat de naixement"
+
+#. module: partner_contact_birthplace
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__birth_country_id
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_users__birth_country_id
+msgid "Birth country"
+msgstr "País de naixement"
+
+#. module: partner_contact_birthplace
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_partner__birth_state_id
+#: model:ir.model.fields,field_description:partner_contact_birthplace.field_res_users__birth_state_id
+msgid "Birth state"
+msgstr "Província/estat de naixement"
+
+#. module: partner_contact_birthplace
+#: model:ir.model,name:partner_contact_birthplace.model_res_partner
+msgid "Contact"
+msgstr "Contacte"
+
+#~ msgid "Display Name"
+#~ msgstr "Nom a mostrar"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Darrera modificació el"

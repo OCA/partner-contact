@@ -1,0 +1,5 @@
+-  Simone Rubino \<<simone.rubino@agilebg.com>\> (\<<<http://www.agilebg.com/>\>)
+-  Nicolò Crisafulli \<<nicolo.crisafulli@agilebg.com>\> (\<<<http://www.agilebg.com/>\>)
+-  Giuseppe Borruso \<<gborruso@dinamicheaziendali.it>\> (\<<<https://www.dinamicheaziendali.it/>\>)
+-  Frederic Grall \<<fgr@apik.cloud>\>
+- Sudhir Arya\<<sudhir@erpharbor.com>\>
