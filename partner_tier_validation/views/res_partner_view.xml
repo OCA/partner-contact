@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="partner_form_tier_filter" model="ir.ui.view">
+        <field name="name">partner.form.tier.filter</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <filter name="inactive" position="before">
+                <filter
+                    name="needs_review"
+                    string="Needs my Approval"
+                    domain="[('reviewer_ids', 'in', uid), ('stage_state', '=', 'draft')]"
+                    help="Partner(s) to Approve"
+                />
+            </filter>
+        </field>
+    </record>
+</odoo>
