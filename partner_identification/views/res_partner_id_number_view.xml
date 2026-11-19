@@ -8,6 +8,16 @@
                 <field name="name" />
                 <field name="partner_id" />
                 <field name="category_id" />
+                <field
+                    name="name"
+                    string="Category Code"
+                    filter_domain="[('category_id.code', 'ilike', self)]"
+                />
+                <field
+                    name="name"
+                    string="Category Scheme"
+                    filter_domain="[('category_id.scheme', 'ilike', self)]"
+                />
                 <field name="status" />
                 <field name="valid_from" />
                 <field name="valid_until" />
