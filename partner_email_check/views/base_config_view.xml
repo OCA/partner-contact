@@ -42,6 +42,15 @@
                             <div class="text-muted">
                                 Require partner email addresses to be unique
                             </div>
+                            <div
+                                class="mt8"
+                                invisible="not partner_email_check_filter_duplicates"
+                            >
+                                <field
+                                    name="partner_email_check_duplicate_scope"
+                                    widget="radio"
+                                />
+                            </div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-6 o_setting_box">

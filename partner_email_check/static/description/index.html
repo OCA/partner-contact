@@ -405,6 +405,15 @@ supported in such cases.</p>
 <p>To not allow multiple partners to have the same email address, use the
 “Filter duplicate email
 addresses”/<tt class="docutils literal">partner_email_check_filter_duplicates</tt> setting.</p>
+<p>When duplicate filtering is enabled, the “Duplicate email
+scope”/<tt class="docutils literal">partner_email_check_duplicate_scope</tt> setting controls how
+widely addresses must be unique:</p>
+<ul class="simple">
+<li><em>Across all companies</em> (default): an email address may only be used
+once in the whole database.</li>
+<li><em>Within the same company</em>: the same email address may be reused by a
+partner of another company, but must stay unique inside each company.</li>
+</ul>
 <p>To validate that email addresses are deliverable (that the hostname
 exists), use the “Check deliverability of email
 addresses”/<tt class="docutils literal">partner_email_check_check_deliverability</tt> setting.</p>
