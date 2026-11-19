@@ -4,7 +4,7 @@
 
 import logging
 
-from odoo import _, api, models
+from odoo import api, models
 from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
@@ -35,10 +35,10 @@ class ResPartner(models.Model):
         try:
             result = check_vies(vat)
         except Exception as e:
-            _logger.warning(f"Failed to query VIES: {e}")
+            _logger.warning("Failed to query VIES: %s", e)
             if raise_if_fail:
                 raise UserError(
-                    _(f"Failed to query VIES.\nTechnical error: {e}.")
+                    self.env._("Failed to query VIES.\nTechnical error: %s.", e)
                 ) from None
             return res
         _logger.debug(result)
