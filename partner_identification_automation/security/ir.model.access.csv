@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_res_partner_id_category_automation_public","res.partner.id_category automation public","model_res_partner_id_category","base.group_public",1,0,0,0
+"access_res_partner_id_category_automation_portal","res.partner.id_category automation portal","model_res_partner_id_category","base.group_portal",1,0,0,0
