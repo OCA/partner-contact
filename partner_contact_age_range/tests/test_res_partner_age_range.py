@@ -60,3 +60,10 @@ class TestRespartnerAgeRange(BaseCommon):
     @freeze_time("2024-02-07")
     def test_partner_norange(self):
         self.assertFalse(self.partner2.age_range_id)
+
+    def test_partner_without_birthdate(self):
+        """A partner without birthdate is not put in the range that holds age 0."""
+        partner = self.partner_model.create({"name": "No birthdate"})
+        self.assertFalse(partner.age_range_id)
+        self.partner.birthdate_date = False
+        self.assertFalse(self.partner.age_range_id)
