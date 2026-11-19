@@ -1,0 +1,2 @@
+- XCG SAS, part of [Orbeet](https://orbeet.io/):
+  - Awa Ndiaye
