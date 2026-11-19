@@ -1,6 +1,6 @@
 # Copyright 2025 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-from psycopg2.errors import ForeignKeyViolation
+from psycopg2.errors import ForeignKeyViolation, RestrictViolation
 
 from odoo.exceptions import ValidationError
 from odoo.tools.misc import mute_logger
@@ -14,7 +14,14 @@ class TestPartnerRelationType(TestPartnerRelationCommon):
         """Unlink should fail if existing relations are not unlinked also."""
         relation_type = self.type_company2person
         relation = self.company2person_relation
-        with self.assertRaises(ForeignKeyViolation):
+        # Use assertRaisesRegex with empty error message, rather than
+        # assertRaises, to be able to manage two exception types.
+        # Use a savepoint to roll back after the check, for roll back is not
+        # automatic with assertRaisesRegex.
+        with (
+            self.assertRaisesRegex((ForeignKeyViolation, RestrictViolation), ""),
+            self.env.cr.savepoint(),
+        ):
             relation_type.unlink()
         relation_type.write({"handle_invalid_onchange": "delete"})
         self.assertTrue(relation_type.unlink())
