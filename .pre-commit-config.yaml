@@ -21,7 +21,7 @@ exclude: |
   # You don't usually want a bot to modify your legal texts
   (LICENSE.*|COPYING.*)
 default_language_version:
-  python: python3.12
+  python: python3.13
   node: "22.23.2"
 repos:
   - repo: local

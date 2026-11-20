@@ -15,6 +15,7 @@ extend-ignore = [
     "RUF012",  # mutable-class-default
 ]
 exclude = ["setup/*"]
+ignore = ["DTZ005"]
 
 [format]
 exclude = ["setup/*"]
