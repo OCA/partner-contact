@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  Copyright 2026 Akretion France (https://www.akretion.com/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <record id="view_partner_tree" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_mobile.view_partner_tree" />
+        <field name="arch" type="xml">
+            <field name="mobile" position="after">
+                <field name="mobile_formatted" column_invisible="1" />
+                <field name="mobile_sanitized" column_invisible="1" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_mobile.view_partner_form" />
+        <field name="arch" type="xml">
+            <div name="mobile" position="inside">
+                <field name="mobile_formatted" invisible="1" />
+                <field name="mobile_sanitized" invisible="1" />
+            </div>
+            <div name="mobile-child-form" position="inside">
+                <field name="mobile_formatted" invisible="1" />
+                <field name="mobile_sanitized" invisible="1" />
+            </div>
+        </field>
+    </record>
+
+    <record id="res_partner_kanban_view" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_mobile.res_partner_kanban_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//templates" position="before">
+                <field name="mobile_sanitized" />
+                <field name="mobile_formatted" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_simple_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_mobile.view_partner_simple_form" />
+        <field name="arch" type="xml">
+            <field name="mobile" position="after">
+                <field name="mobile_formatted" invisible="1" />
+                <field name="mobile_sanitized" invisible="1" />
+            </field>
+        </field>
+    </record>
+</odoo>
