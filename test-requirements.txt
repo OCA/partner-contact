@@ -1,0 +1,1 @@
+odoo-addon-partner_deduplicate_acl @ git+https://github.com/OCA/partner-contact@refs/pull/2495/head#subdirectory=partner_deduplicate_acl
