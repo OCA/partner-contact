@@ -16,6 +16,25 @@ class ResPartner(models.Model):
         index=True,
     )
 
+    @api.onchange("parent_id")
+    def _onchange_owner_company_parent(self):
+        if self.parent_id:
+            self.owner_company_id = self.parent_id.owner_company_id
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        # Apply ownership inheritance to UI, import, and RPC creations alike.
+        partners = super().create(vals_list)
+        partners._sync_owner_company()
+        return partners
+
+    def write(self, vals):
+        # A child cannot override the owner inherited from its parent.
+        result = super().write(vals)
+        if "parent_id" in vals or "owner_company_id" in vals:
+            self._sync_owner_company()
+        return result
+
     @api.model
     def name_search(self, name="", args=None, operator="ilike", limit=100):
         """
@@ -71,3 +90,25 @@ class ResPartner(models.Model):
             res = super().name_search(name, exact_match_domain + args, operator, limit)
 
         return res
+
+    def _sync_owner_company(self):
+        """Synchronize ownership from the root, one generation at a time."""
+        roots = self
+        if not self.env.context.get("_partner_owner_company_propagating"):
+            roots = self.browse()
+            # commercial_partner_id stops at child companies; ownership follows
+            # the full parent hierarchy, including companies with a parent.
+            for partner in self:
+                root = partner
+                while root.parent_id:
+                    root = root.parent_id
+                roots |= root
+        for root in roots:
+            children = self.with_context(active_test=False).search(
+                [("parent_id", "=", root.id)]
+            )
+            if children:
+                # Continue downward without restarting from the root on each write.
+                children.with_context(_partner_owner_company_propagating=True).write(
+                    {"owner_company_id": root.owner_company_id.id}
+                )

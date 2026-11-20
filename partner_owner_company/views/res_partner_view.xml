@@ -11,6 +11,7 @@
                 <field
                     name="owner_company_id"
                     options="{'no_create': True, 'no_create_edit': True}"
+                    readonly="parent_id"
                     groups="base.group_multi_company"
                 />
             </xpath>
@@ -28,6 +29,7 @@
                     name="owner_company_id"
                     optional="hide"
                     invisible="is_company"
+                    readonly="parent_id"
                     groups="base.group_multi_company"
                 />
             </xpath>
