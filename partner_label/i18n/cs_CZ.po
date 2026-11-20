@@ -1,0 +1,159 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_label
+#
+# Translators:
+# Lukáš Spurný <lukasspurny8@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-21 03:59+0000\n"
+"PO-Revision-Date: 2018-02-21 03:59+0000\n"
+"Last-Translator: Lukáš Spurný <lukasspurny8@gmail.com>, 2018\n"
+"Language-Team: Czech (Czech Republic) (https://www.transifex.com/oca/"
+"teams/23907/cs_CZ/)\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. module: partner_label
+#: model:ir.model,name:partner_label.model_res_company
+msgid "Companies"
+msgstr "Společnosti"
+
+#. module: partner_label
+#: model:ir.model,name:partner_label.model_res_config_settings
+#, fuzzy
+msgid "Config Settings"
+msgstr "base.config.settings"
+
+#. module: partner_label
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_height
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_height
+msgid "Height"
+msgstr "Výška"
+
+#. module: partner_label
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_height
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_height
+msgid "Height in millimeters"
+msgstr "Výška v milimetrech"
+
+#. module: partner_label
+#: model_terms:ir.ui.view,arch_db:partner_label.view_general_configuration
+msgid "Labels configuration"
+msgstr "Konfigurace štítků"
+
+#. module: partner_label
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_bottom
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_bottom
+#, fuzzy
+msgid "Margin Bottom"
+msgstr "Okraj"
+
+#. module: partner_label
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_left
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_left
+#, fuzzy
+msgid "Margin Left"
+msgstr "Okraj"
+
+#. module: partner_label
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_right
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_right
+#, fuzzy
+msgid "Margin Right"
+msgstr "Okraj"
+
+#. module: partner_label
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_margin_top
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_margin_top
+#, fuzzy
+msgid "Margin Top"
+msgstr "Okraj"
+
+#. module: partner_label
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_margin_bottom
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_margin_bottom
+#, fuzzy
+msgid "Margin bottom in millimeters"
+msgstr "Okraj v milimetrech"
+
+#. module: partner_label
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_margin_left
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_margin_left
+#, fuzzy
+msgid "Margin left in millimeters"
+msgstr "Okraj v milimetrech"
+
+#. module: partner_label
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_margin_right
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_margin_right
+#, fuzzy
+msgid "Margin right in millimeters"
+msgstr "Okraj v milimetrech"
+
+#. module: partner_label
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_margin_top
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_margin_top
+#, fuzzy
+msgid "Margin top in millimeters"
+msgstr "Okraj v milimetrech"
+
+#. module: partner_label
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_padding
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_padding
+msgid "Padding"
+msgstr "Polstrování"
+
+#. module: partner_label
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_padding
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_padding
+msgid "Padding in millimeters"
+msgstr "Padání v milimetrech"
+
+#. module: partner_label
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_paperformat_id
+msgid "Paperformat"
+msgstr "Formát papíru"
+
+#. module: partner_label
+#: model:ir.actions.report,name:partner_label.report_res_partner_label
+#, fuzzy
+msgid "Partner Labels"
+msgstr "Štítky"
+
+#. module: partner_label
+#: model_terms:ir.ui.view,arch_db:partner_label.view_general_configuration
+msgid "Preview"
+msgstr "Náhled"
+
+#. module: partner_label
+#: model:ir.model.fields,field_description:partner_label.field_res_company__partner_labels_width
+#: model:ir.model.fields,field_description:partner_label.field_res_config_settings__partner_labels_width
+msgid "Width"
+msgstr "Šířka"
+
+#. module: partner_label
+#: model:ir.model.fields,help:partner_label.field_res_company__partner_labels_width
+#: model:ir.model.fields,help:partner_label.field_res_config_settings__partner_labels_width
+msgid "Width in millimeters"
+msgstr "Šířka v milimetrech"
+
+#. module: partner_label
+#: model_terms:ir.ui.view,arch_db:partner_label.view_general_configuration
+msgid "mm"
+msgstr "mm"
+
+#~ msgid "&lt;!DOCTYPE html&gt;"
+#~ msgstr "&lt;!DOCTYPE html&gt;"
+
+#~ msgid "Margin"
+#~ msgstr "Okraj"
+
+#, fuzzy
+#~ msgid "Right"
+#~ msgstr "Výška"
