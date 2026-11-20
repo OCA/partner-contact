@@ -1,0 +1,1 @@
+odoo-addon-partner_title @ git+https://github.com/OCA/partner-contact.git@refs/pull/2500/head#subdirectory=partner_title
