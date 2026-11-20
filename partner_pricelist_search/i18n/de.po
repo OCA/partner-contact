@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_pricelist_search
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-06-22 18:20+0000\n"
+"Last-Translator: intero-chd <c.dominiak@intero-technologies.de>\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: partner_pricelist_search
+#: model_terms:ir.ui.view,arch_db:partner_pricelist_search.product_pricelist_view
+msgid "Customers"
+msgstr "Kunden"
+
+#. module: partner_pricelist_search
+#: model:ir.model.fields,field_description:partner_pricelist_search.field_product_pricelist__display_name
+#: model:ir.model.fields,field_description:partner_pricelist_search.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: partner_pricelist_search
+#: model:ir.model,name:partner_pricelist_search.model_res_partner
+msgid "Fake Model"
+msgstr "Falsches Modell"
+
+#. module: partner_pricelist_search
+#: model:ir.model.fields,field_description:partner_pricelist_search.field_product_pricelist__id
+#: model:ir.model.fields,field_description:partner_pricelist_search.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_pricelist_search
+#: model:ir.model,name:partner_pricelist_search.model_product_pricelist
+#: model:ir.model.fields,field_description:partner_pricelist_search.field_res_partner__property_product_pricelist
+#: model:ir.model.fields,field_description:partner_pricelist_search.field_res_users__property_product_pricelist
+msgid "Pricelist"
+msgstr "Preisliste"
+
+#. module: partner_pricelist_search
+#: model:ir.model.fields,help:partner_pricelist_search.field_res_partner__property_product_pricelist
+#: model:ir.model.fields,help:partner_pricelist_search.field_res_users__property_product_pricelist
+msgid "Used for sales to the current partner"
+msgstr "Wird für Verkäufe an den aktuellen Partner verwendet"
