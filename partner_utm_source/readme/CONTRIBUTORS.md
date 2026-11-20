@@ -1,0 +1,3 @@
+- Tuan Nguyen Anh <tuanna@trobz.com>
+- [Studio73](https://studio73.es/):
+  - Eugenio Micó <eugenio@studio73.es>
