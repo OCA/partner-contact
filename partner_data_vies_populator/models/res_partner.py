@@ -20,7 +20,7 @@ class ResPartner(models.Model):
 
     def _parse_vies_address(self, address):
         res = {}
-        if address != "---":
+        if address and address != "---":
             address_parts = [x for x in address.split("\n") if x]
             if len(address_parts) > 1 and " " in address_parts[-1]:
                 # Last line can be "ZipCode City"

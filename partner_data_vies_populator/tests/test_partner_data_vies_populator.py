@@ -34,6 +34,11 @@ def mocked_check_vies(vat):
         res.name = "JUMBO SUPERMARKTEN B.V."
         res.address = "RIJKSWEG 00015\n5462CE VEGHEL"
         res.countryCode = "NL"
+    elif vat == "FR23334175221":
+        # VIES may return a valid entry with no address
+        res.name = "NO ADDRESS SA"
+        res.address = None
+        res.countryCode = "FR"
     else:
         # Default for other VATs to avoid hitting the real service
         res.valid = False
@@ -138,6 +143,22 @@ class TestPartnerCreateByVAT(TransactionCase):
             self.assertEqual(partner_form.name, partner.name)
             self.assertEqual(partner_form.street, False)
             self.assertEqual(partner_form.country_id.id, partner.country_id.id)
+
+    def test_vies_missing_address(self):
+        # A valid VIES response without an address must not fail
+        # and must leave the address fields untouched
+        partner = self.partner_model.create(
+            {
+                "name": "No Address",
+                "is_company": True,
+                "street": "Keep Me 1",
+            }
+        )
+        with Form(partner) as partner_form:
+            partner_form.vat = "FR23334175221"
+            self.assertEqual(partner_form.name, "NO ADDRESS SA")
+            self.assertEqual(partner_form.street, "Keep Me 1")
+            self.assertEqual(partner_form.country_id.code, "FR")
 
     def test_non_eu_vat_change(self):
         non_eu_country_id = self.env.ref("base.sc").id
