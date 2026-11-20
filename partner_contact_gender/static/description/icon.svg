@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg 
+    xmlns="http://www.w3.org/2000/svg"
+    width="300"
+    height="200"
+>
+<title property="dc:title">Non-binary flag</title>
+<desc property="dc:creator">Kye Rowan</desc>
+<metadata>
+    <rdf:RDF
+        xmlns:rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs = "http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:dc = "http://purl.org/dc/elements/1.1/" >
+        <rdf:Description about="https://commons.wikimedia.org/wiki/File:Nonbinary_flag.svg"
+            dc:title="Non-binary flag"
+            dc:description="$non-binary $flag $pride $gender"
+            dc:format="image/svg+xml"
+            dc:language="en"
+        >
+            <dc:creator>
+                <rdf:Bag>
+                    <rdf:li>Irving Bird</rdf:li>
+                    <rdf:li>Mary Lambert</rdf:li>
+                </rdf:Bag>
+            </dc:creator>
+        </rdf:Description>
+    </rdf:RDF>
+</metadata>
+<path fill="#2D2D2D" d="m0,0h300v200H0"/>
+<path fill="#9B59D0" d="m0,0h300v150H0"/>
+<path fill="#FFFFFF" d="m0,0h300v100H0"/>
+<path fill="#FFF433" d="m0,0h300v50H0"/>
+</svg>
