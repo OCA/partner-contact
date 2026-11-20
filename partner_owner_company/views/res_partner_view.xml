@@ -28,7 +28,6 @@
                 <field
                     name="owner_company_id"
                     optional="hide"
-                    invisible="is_company"
                     readonly="parent_id"
                     groups="base.group_multi_company"
                 />
