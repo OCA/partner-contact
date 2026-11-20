@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_partner_form_with_email_warning" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='warning_tax']" position="after">
+                <div
+                    class="alert alert-warning"
+                    role="alert"
+                    invisible="not same_email_partner_ids and not same_email_inaccessible_count"
+                >
+                    <span invisible="not same_email_partner_ids">
+                  Duplicate warning: partner(s) <field
+                        name="same_email_partner_ids"
+                        widget="x2many_links"
+                    /> has/have the same <b>Email</b>.
+                    </span>
+                    <span invisible="not same_email_inaccessible_count">
+                  <field
+                        name="same_email_inaccessible_count"
+                    /> partner(s) you do not have permission to view also use this <b
+                    >Email</b>. Please contact your administrator.
+                    </span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
