@@ -1,0 +1,6 @@
+id,name,model_id,group_id/id,operation,domain
+access_base_partner_merge_line_unrestricted,access.base.partner.merge.line.unrestricted,base.partner.merge.line,partner_deduplicate_acl.group_unrestricted,crud,
+access_base_partner_merge_line_automatically,access.base.partner.merge.line.automatically,base.partner.merge.line,partner_deduplicate_acl.group_automatically,crud,
+access_base_partner_merge_line_manually,access.base.partner.merge.line.manually,base.partner.merge.line,partner_deduplicate_acl.group_manually,cru,
+access_base_partner_merge_automatic_wizard_unrestricted,access.base.partner.merge.automatic.wizard.unrestricted,base.partner.merge.automatic.wizard,partner_deduplicate_acl.group_unrestricted,cru,
+access_base_partner_merge_automatic_wizard_automatically,access.base.partner.merge.automatic.wizard.automatically,base.partner.merge.automatic.wizard,partner_deduplicate_acl.group_automatically,cru,
