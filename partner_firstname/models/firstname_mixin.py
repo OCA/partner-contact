@@ -133,7 +133,7 @@ class FirstNameMixin(models.AbstractModel):
         """
         # Company name goes to the lastname
         if is_company or not name:
-            parts = [name or False, False]
+            parts = [name or "", ""]
         # Guess name splitting
         else:
             order = self._get_names_order()
@@ -164,9 +164,9 @@ class FirstNameMixin(models.AbstractModel):
         for record in self:
             if any(
                 [
-                    record.is_company and not record.name,
-                    record.firstname_required and not record.firstname,
-                    record.lastname_required and not record.lastname,
+                    record.is_company and type(record.name) is not str,
+                    record.firstname_required and type(record.firstname) is not str,
+                    record.lastname_required and type(record.lastname) is not str,
                 ]
             ):
                 raise exceptions.EmptyNamesError(record, self.env)
