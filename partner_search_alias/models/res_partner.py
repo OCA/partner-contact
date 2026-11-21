@@ -28,5 +28,5 @@ class ResPartner(models.Model):
                     "[", "['|', ('search_alias', 'ilike', self), "
                 )
                 name.set("filter_domain", filter_domain)
-                res["arch"] = etree.tostring(xml)
+                res["arch"] = etree.tostring(xml, encoding="unicode")
         return res
