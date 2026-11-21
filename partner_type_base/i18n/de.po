@@ -1,0 +1,80 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_type_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-06-22 18:01+0000\n"
+"Last-Translator: intero-chd <c.dominiak@intero-technologies.de>\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: partner_type_base
+#: model:ir.model.fields,field_description:partner_type_base.field_res_partner__can_be_child
+#: model:ir.model.fields,field_description:partner_type_base.field_res_users__can_be_child
+msgid "Can Be Child"
+msgstr "Kann ein Kind sein"
+
+#. module: partner_type_base
+#: model:ir.model.fields,field_description:partner_type_base.field_res_partner__can_be_parent
+#: model:ir.model.fields,field_description:partner_type_base.field_res_users__can_be_parent
+msgid "Can Be Parent"
+msgstr "Kann ein Elternteil sein"
+
+#. module: partner_type_base
+#: model:ir.model.fields,field_description:partner_type_base.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: partner_type_base
+#: model:ir.model,name:partner_type_base.model_res_partner
+msgid "Fake Model"
+msgstr "Falsches Modell"
+
+#. module: partner_type_base
+#: model:ir.model.fields,field_description:partner_type_base.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_type_base
+#: model:ir.model.fields,help:partner_type_base.field_res_partner__is_address_readonly
+#: model:ir.model.fields,help:partner_type_base.field_res_users__is_address_readonly
+msgid "If true, the address fields are readonly."
+msgstr "Falls zutreffend, sind die Adressfelder schreibgeschützt."
+
+#. module: partner_type_base
+#: model:ir.model.fields,help:partner_type_base.field_res_partner__can_be_parent
+#: model:ir.model.fields,help:partner_type_base.field_res_users__can_be_parent
+msgid "If true, the partner is available as parent."
+msgstr "Falls zutreffend, steht der Partner als Elternteil zur Verfügung."
+
+#. module: partner_type_base
+#: model:ir.model.fields,help:partner_type_base.field_res_partner__is_individual
+#: model:ir.model.fields,help:partner_type_base.field_res_users__is_individual
+msgid "If true, the partner name is splitted."
+msgstr "Falls zutreffend, wird der Name des Partners aufgeteilt."
+
+#. module: partner_type_base
+#: model:ir.model.fields,help:partner_type_base.field_res_partner__can_be_child
+#: model:ir.model.fields,help:partner_type_base.field_res_users__can_be_child
+msgid "If true, the partner_id field is available."
+msgstr "Falls zutreffend, steht die Partner-ID zur Verfügung."
+
+#. module: partner_type_base
+#: model:ir.model.fields,field_description:partner_type_base.field_res_partner__is_address_readonly
+#: model:ir.model.fields,field_description:partner_type_base.field_res_users__is_address_readonly
+msgid "Is Address Readonly"
+msgstr "Ist Adresse schreibgeschützt"
+
+#. module: partner_type_base
+#: model:ir.model.fields,field_description:partner_type_base.field_res_partner__is_individual
+#: model:ir.model.fields,field_description:partner_type_base.field_res_users__is_individual
+msgid "Is Individual"
+msgstr "Ist eine Einzelperson"
