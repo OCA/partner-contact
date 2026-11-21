@@ -13,6 +13,7 @@
     "website": "https://github.com/OCA/partner-contact",
     "license": "AGPL-3",
     "depends": ["base_vat"],
-    "external_dependencies": {"python": ["python-stdnum"]},
+    # python-stdnum uses zeep as its SOAP client for the VIES API calls
+    "external_dependencies": {"python": ["python-stdnum", "zeep"]},
     "installable": True,
 }

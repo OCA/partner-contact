@@ -2,22 +2,9 @@
 # Copyright (C) 2020 NextERP Romania
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-import re
 from unittest.mock import MagicMock, patch
 
-import isodate
-
 from odoo.tests import Form, TransactionCase
-
-_original_parse_date = isodate.parse_date
-
-
-def _patched_parse_date(datestring):
-    if isinstance(datestring, str) and re.match(
-        r"^\d{4}-\d{2}-\d{2}[+-]\d{2}:?\d{2}$", datestring
-    ):
-        datestring = datestring[:10]
-    return _original_parse_date(datestring)
 
 
 def mocked_check_vies(vat):
@@ -52,7 +39,6 @@ class TestPartnerCreateByVAT(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        isodate.parse_date = _patched_parse_date
         # Patch check_vies where it is imported in the model
         cls.patcher = patch(
             "odoo.addons.partner_data_vies_populator.models.res_partner.check_vies",
@@ -74,7 +60,6 @@ class TestPartnerCreateByVAT(TransactionCase):
     @classmethod
     def tearDownClass(cls):
         cls.patcher.stop()
-        isodate.parse_date = _original_parse_date
         super().tearDownClass()
 
     def test_create_from_vat1(self):
