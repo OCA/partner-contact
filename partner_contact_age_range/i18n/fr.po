@@ -1,0 +1,124 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_contact_age_range
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-11-06 15:39+0000\n"
+"Last-Translator: Rémi <remi@le-filament.com>\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: partner_contact_age_range
+#. odoo-python
+#: code:addons/partner_contact_age_range/models/res_partner_age_range.py:0
+#, python-format
+msgid "%(name)s is not a valid range (%(age_from)s >= %(age_to)s)"
+msgstr "%(name)s n'est pas un intervalle valide (%(age_from)s >= %(age_to)s)"
+
+#. module: partner_contact_age_range
+#. odoo-python
+#: code:addons/partner_contact_age_range/models/res_partner_age_range.py:0
+#, python-format
+msgid "%(name)s is overalapping with range %(age_from)s"
+msgstr "%(name)s se chevauche avec l'intervalle %(age_from)s"
+
+#. module: partner_contact_age_range
+#: model:ir.model.constraint,message:partner_contact_age_range.constraint_res_partner_age_range_name_uniq
+msgid "A name must be unique !"
+msgstr "Un nom doit être unique !"
+
+#. module: partner_contact_age_range
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner__age_range_id
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_users__age_range_id
+msgid "Age Range"
+msgstr "Intervalle d'âge"
+
+#. module: partner_contact_age_range
+#: model:ir.actions.act_window,name:partner_contact_age_range.action_partner_age_range
+#: model:ir.ui.menu,name:partner_contact_age_range.menu_partner_age_range
+msgid "Age Ranges"
+msgstr "Intervalles d'âge"
+
+#. module: partner_contact_age_range
+#: model:ir.model,name:partner_contact_age_range.model_res_partner
+msgid "Contact"
+msgstr "Partenaire"
+
+#. module: partner_contact_age_range
+#: model:ir.actions.server,name:partner_contact_age_range.ir_cron_partner_age_range_ir_actions_server
+#: model:ir.cron,cron_name:partner_contact_age_range.ir_cron_partner_age_range
+msgid "Contact: Update Age Range"
+msgstr "Partenaire : Mise à jour de l'intervalle d'âge"
+
+#. module: partner_contact_age_range
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner_age_range__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: partner_contact_age_range
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner_age_range__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: partner_contact_age_range
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner_age_range__display_name
+msgid "Display Name"
+msgstr "Nom Affiché"
+
+#. module: partner_contact_age_range
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner_age_range__age_from
+msgid "From"
+msgstr "De"
+
+#. module: partner_contact_age_range
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner_age_range__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_contact_age_range
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner_age_range____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: partner_contact_age_range
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner_age_range__write_uid
+msgid "Last Updated by"
+msgstr "Mis à jour par"
+
+#. module: partner_contact_age_range
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner_age_range__write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
+
+#. module: partner_contact_age_range
+#: model_terms:ir.actions.act_window,help:partner_contact_age_range.action_partner_age_range
+msgid ""
+"Manage the contact age range you want to have available in your system.\n"
+"            For eg: 0-10, 11-20"
+msgstr ""
+"Gèrer les intervalles d'âge des partenaire disponibles sur votre système.\n"
+"            Par exemple : 0-10, 11-20"
+
+#. module: partner_contact_age_range
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner_age_range__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: partner_contact_age_range
+#: model:ir.model,name:partner_contact_age_range.model_res_partner_age_range
+#: model_terms:ir.ui.view,arch_db:partner_contact_age_range.view_partner_age_range_form
+msgid "Partner Age Range"
+msgstr "Intervalle d'âge du partenaire"
+
+#. module: partner_contact_age_range
+#: model:ir.model.fields,field_description:partner_contact_age_range.field_res_partner_age_range__age_to
+msgid "To"
+msgstr "À"
