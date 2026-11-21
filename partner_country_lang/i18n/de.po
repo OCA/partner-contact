@@ -1,0 +1,67 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_country_lang
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-06-22 18:12+0000\n"
+"Last-Translator: intero-chd <c.dominiak@intero-technologies.de>\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: partner_country_lang
+#: model:ir.model.fields,help:partner_country_lang.field_res_partner__lang
+#: model:ir.model.fields,help:partner_country_lang.field_res_users__lang
+msgid ""
+"All the emails and documents sent to this contact will be translated in this"
+" language."
+msgstr ""
+"Alle E-Mails und Dokumente, die an diesen Kontakt gesendet werden, werden in "
+"diese Sprache übersetzt."
+
+#. module: partner_country_lang
+#: model:ir.model,name:partner_country_lang.model_res_country
+msgid "Country"
+msgstr "Land"
+
+#. module: partner_country_lang
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_country__display_name
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: partner_country_lang
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_country__lang
+msgid "Enforce language"
+msgstr "Sprache erzwingen"
+
+#. module: partner_country_lang
+#: model:ir.model,name:partner_country_lang.model_res_partner
+msgid "Fake Model"
+msgstr "Falsches Modell"
+
+#. module: partner_country_lang
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_country__id
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_country_lang
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_partner__lang
+#: model:ir.model.fields,field_description:partner_country_lang.field_res_users__lang
+msgid "Language"
+msgstr "Sprache"
+
+#. module: partner_country_lang
+#: model:ir.model.fields,help:partner_country_lang.field_res_country__lang
+msgid "This country partners' language will be set to this value by default"
+msgstr ""
+"Die Sprache der Kontakte dieses Landes wird standardmäßig auf diesen Wert "
+"gesetzt"
