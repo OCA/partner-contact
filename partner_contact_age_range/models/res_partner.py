@@ -14,11 +14,12 @@ class ResPartner(models.Model):
         store=True,
     )
 
-    @api.depends("age")
+    @api.depends("age", "birthdate_date")
     def _compute_age_range_id(self):
         age_ranges = self.env["res.partner.age.range"].search([])
         for record in self:
-            if record.age >= 0:
+            # Without a birthdate the age is 0, which is not a real age
+            if record.birthdate_date and record.age >= 0:
                 age_range = age_ranges.filtered(
                     lambda age_range, record_data=record: age_range.age_from
                     <= record_data.age
