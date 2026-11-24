@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2026-11-24 12:46+0000\n"
+"PO-Revision-Date: 2026-11-24 15:46+0000\n"
 "Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
 "Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
 "Language: sv\n"
@@ -319,6 +319,8 @@ msgid ""
 "Programming error: Argument \"side\" of method \"_check_partner\" can just "
 "be called with a value of \"left\" or \"right\"."
 msgstr ""
+"Programmeringsfel: argumentet \"side\" i metoden \"_check_partner\" kan bara "
+"ha värdet \"left\" eller \"right\"."
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
@@ -354,6 +356,8 @@ msgid ""
 "Reflexivity could not be disabled for the relation type %s. There are "
 "existing reflexive relations defined for the following partners: %s"
 msgstr ""
+"Reflexivitet kunde inte stängas av för relationstypen %s. Det finns "
+"befintliga reflexiva relationer för följande kontakter: %s"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_count
@@ -457,7 +461,7 @@ msgstr "Symmetrisk"
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "The %s partner does not have category %s."
-msgstr ""
+msgstr "Kontakten %s har inte kategorin %s."
 
 #. module: partner_multi_relation
 #. odoo-python
