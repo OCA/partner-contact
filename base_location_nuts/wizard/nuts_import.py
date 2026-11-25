@@ -208,8 +208,12 @@ class NutsImport(models.TransientModel):
     def import_update_partner_nuts(self):
         self._load_countries()
         query = self._get_query()
+        # The EU endpoint rejects the default python-requests User-Agent (403)
         response = requests.get(
-            ENDPOINT, params={"format": "json", "query": query}, timeout=120
+            ENDPOINT,
+            params={"format": "json", "query": query},
+            headers={"User-Agent": "Odoo"},
+            timeout=120,
         )
         try:
             response.raise_for_status()

@@ -68,6 +68,11 @@ class TestBaseLocationNuts(TransactionCase):
         with self.assertRaises(AccessError):
             Form(self.env["nuts.import"].with_user(user))
 
+    def test_nuts_import_user_agent(self):
+        with patch(MOCK_PATH, return_value=create_response_ok()) as mock_get:
+            self.nut_wizard.import_update_partner_nuts()
+        self.assertEqual(mock_get.call_args.kwargs["headers"], {"User-Agent": "Odoo"})
+
     def test_internal_user_can_read_nuts(self):
         user = new_test_user(
             self.env,
