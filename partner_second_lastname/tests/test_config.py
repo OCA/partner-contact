@@ -30,3 +30,9 @@ class TestConfig(TransactionCase):
         self.wizard.set_values()
         self.wizard.action_recalculate_partners_name()
         self.assertEqual(self.partner.name, "First Last Second")
+
+    def test_last_first_comma2(self):
+        self.wizard.partner_names_order = "last_first_comma2"
+        self.wizard.set_values()
+        self.wizard.action_recalculate_partners_name()
+        self.assertEqual(self.partner.name, "Last, First Second")

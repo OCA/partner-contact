@@ -39,3 +39,10 @@ class TestMultipleNames(TransactionCase):
             "last_first_comma",
             f"{lastname} {lastname2}, {firstname}",
         )
+        self.assert_name(
+            config_settings,
+            partner,
+            vals,
+            "last_first_comma2",
+            f"{lastname}, {firstname} {lastname2}",
+        )
