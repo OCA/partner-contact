@@ -195,3 +195,10 @@ class ResPartner(models.Model):
     # Disabling SQL constraint givint a more explicit error using a Python
     # contstraint
     _sql_constraints = [("check_name", "CHECK( 1=1 )", "Contacts require a name.")]
+
+    @api.model
+    def name_create(self, name):
+        if not name:
+            record = self.create(self._get_inverse_name(name))
+            return record.id, record.display_name
+        return super().name_create(name)
