@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2026-09-12 07:46+0000\n"
+"PO-Revision-Date: 2026-11-25 12:46+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 5.15.2\n"
+"X-Generator: Weblate 2026.11.2\n"
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -34,7 +34,7 @@ msgstr "Aktivno"
 #. module: partner_multi_relation
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__ignore
 msgid "Allow existing relations that do not fit changed conditions"
-msgstr "Dovoli obstoječa razmerja, ki ne ustrezajo spremenjenim pogojem."
+msgstr "Dovoli obstoječa razmerja, ki ne ustrezajo spremenjenim pogojem"
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.tree_res_partner_relation
@@ -62,7 +62,7 @@ msgstr "Ustvarjeno"
 #. module: partner_multi_relation
 #: model:ir.model.fields.selection,name:partner_multi_relation.selection__res_partner_relation_type__handle_invalid_onchange__delete
 msgid "Delete relations that do not fit changed conditions"
-msgstr "Izbriši razmerja, ki ne ustrezajo spremenjenim pogojem."
+msgstr "Izbriši razmerja, ki ne ustrezajo spremenjenim pogojem"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__right_partner_id
@@ -135,7 +135,7 @@ msgstr "ID"
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation__type_id_display
 msgid "In current context relation is inverse"
-msgstr ""
+msgstr "V trenutnem kontekstu je relacija inverzna"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__handle_invalid_onchange
@@ -162,12 +162,12 @@ msgstr "Zadnjič posodobljeno"
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation
 msgid "Left Partner"
-msgstr ""
+msgstr "Levi partner"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__left_partner_id_domain
 msgid "Left Partner Id Domain"
-msgstr ""
+msgstr "Domena ID levi partner"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__left_partner_category_id
@@ -183,7 +183,7 @@ msgstr "Tip levega partnerja"
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_left_ids
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_left_ids
 msgid "Left relations with current partner"
-msgstr ""
+msgstr "Odnosi levo s trenutnim partnerjem"
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
@@ -275,7 +275,7 @@ msgstr ""
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation__active
 msgid "Records with date_end in the past should be inactive"
-msgstr ""
+msgstr "Zapisi z datumom zaključka v preteklosti so neaktivni"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__allow_self
@@ -332,12 +332,12 @@ msgstr "Tip odnosa"
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.search_res_partner_relation
 msgid "Right Partner"
-msgstr ""
+msgstr "Desni partner"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__right_partner_id_domain
 msgid "Right Partner Id Domain"
-msgstr ""
+msgstr "Domena ID desni partner"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation_type__right_partner_category_id
@@ -353,7 +353,7 @@ msgstr "Tip desnega partnerja"
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner__relation_right_ids
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_users__relation_right_ids
 msgid "Right relations with current partner"
-msgstr ""
+msgstr "Odnosi desno s trenutnim partnerjem"
 
 #. module: partner_multi_relation
 #: model_terms:ir.ui.view,arch_db:partner_multi_relation.form_res_partner_relation_type
@@ -389,7 +389,7 @@ msgstr "Simetrični"
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "The %(side)s partner does not have category %(category)s."
-msgstr ""
+msgstr "%(side)s partner nima kategorije %(category)s."
 
 #. module: partner_multi_relation
 #. odoo-python
@@ -417,7 +417,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/partner_multi_relation/models/res_partner_relation.py:0
 msgid "There is already a similar relation with overlapping dates"
-msgstr "Podoben odnos s prekrivajočimi se datumi že obstaja."
+msgstr "Podoben odnos s prekrivajočimi se datumi že obstaja"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__this_partner_id
@@ -427,12 +427,12 @@ msgstr "Ta partner"
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__allow_self
 msgid "This relation can be set up with the same partner left and right"
-msgstr "Ta odnos se lahko nastavi z istim partnerjem na levi in desni."
+msgstr "Ta odnos se lahko nastavi z istim partnerjem na levi in desni"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,help:partner_multi_relation.field_res_partner_relation_type__is_symmetric
 msgid "This relation is the same from right to left as from left to right"
-msgstr "Ta odnos je enak tako iz desne proti levi, kakor iz leve proti desni."
+msgstr "Ta odnos je enak tako iz desne proti levi, kakor iz leve proti desni"
 
 #. module: partner_multi_relation
 #: model:ir.model.fields,field_description:partner_multi_relation.field_res_partner_relation__type_id
