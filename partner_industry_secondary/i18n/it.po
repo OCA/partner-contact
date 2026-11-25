@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-26 15:33+0000\n"
-"PO-Revision-Date: 2023-10-13 10:36+0000\n"
+"PO-Revision-Date: 2026-11-25 10:46+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 2026.11.2\n"
 
 #. module: partner_industry_secondary
 #: model:ir.model.fields,field_description:partner_industry_secondary.field_res_partner_industry__child_ids
@@ -28,7 +28,7 @@ msgstr "Figlio"
 #. module: partner_industry_secondary
 #: model:ir.model,name:partner_industry_secondary.model_res_config_settings
 msgid "Config Settings"
-msgstr "Impostazioni di configurazione"
+msgstr "Impostazioni configurazione"
 
 #. module: partner_industry_secondary
 #: model:ir.model,name:partner_industry_secondary.model_res_partner
