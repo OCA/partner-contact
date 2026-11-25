@@ -13,10 +13,24 @@
                     class="alert alert-warning"
                     role="alert"
                     attrs="{'invisible': [('same_mobile_partner_id', '=', False)]}"
-                >
-                  Duplicate warning: partner <field
-                        name="same_mobile_partner_id"
-                    /> has the same <b>Mobile</b>.
+                >Duplicate warning: partner <field name="same_mobile_partner_id" />
+                    has the same <b>Mobile</b>.
+                </div>
+                <div
+                    class="alert alert-warning"
+                    role="alert"
+                    attrs="{'invisible': [('same_mobile_count', '&lt;=', 1)]}"
+                >There are <field name="same_mobile_count" />
+                    partners with the same Mobile.
+                </div>
+                <div
+                    class="alert alert-warning"
+                    role="alert"
+                    attrs="{'invisible': [('same_mobile_inaccessible_count', '&lt;=', 0)]}"
+                >You do not have access to <field
+                        name="same_mobile_inaccessible_count"
+                    />
+                    of those partners.
                 </div>
             </div>
         </field>
