@@ -25,6 +25,7 @@ class ResPartner(models.Model):
         required=False,
         store=True,
         readonly=False,
+        precompute=True,
     )
 
     @api.model

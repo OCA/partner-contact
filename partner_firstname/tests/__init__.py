@@ -10,4 +10,5 @@ from . import (
     test_order,
     test_copy,
     test_config_settings,
+    test_core_constraint,
 )
