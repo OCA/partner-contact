@@ -16,12 +16,12 @@ class TestVatUnique(TransactionCase):
         )
 
     def test_duplicated_vat_creation(self):
-        self.config_parameter.set_param("partner_vat_unique.partner_vat_unique", True)
+        self.config_parameter.set_bool("partner_vat_unique.partner_vat_unique", True)
 
         with self.assertRaises(ValidationError):
             self.partner_model.create({"name": "Second partner", "vat": "ESA12345674"})
 
-        self.config_parameter.set_param("partner_vat_unique.partner_vat_unique", False)
+        self.config_parameter.set_bool("partner_vat_unique.partner_vat_unique", False)
 
         partner_duplicated = self.partner_model.create(
             {"name": "Second partner", "vat": "ESA12345674"}
