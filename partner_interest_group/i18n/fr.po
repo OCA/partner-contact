@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_interest_group
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-06-02 15:08+0000\n"
+"Last-Translator: Victor Champonnois <victor@coopiteasy.be>\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: partner_interest_group
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__active
+msgid "Active"
+msgstr "Actif"
+
+#. module: partner_interest_group
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__company_id
+msgid "Company"
+msgstr ""
+
+#. module: partner_interest_group
+#: model:ir.model,name:partner_interest_group.model_res_partner_interest_group
+msgid "Configurable Interest Group for Partners"
+msgstr "Groupes d'intérêts configurables pour les contacts"
+
+#. module: partner_interest_group
+#: model:ir.model,name:partner_interest_group.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_interest_group
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: partner_interest_group
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: partner_interest_group
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: partner_interest_group
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_interest_group
+#: model:ir.actions.act_window,name:partner_interest_group.res_partner_interest_group_action
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner__interest_group_ids
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__name
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_users__interest_group_ids
+#: model:ir.ui.menu,name:partner_interest_group.menu_res_partner_interest_group
+#: model_terms:ir.ui.view,arch_db:partner_interest_group.res_partner_interest_group_form_view
+msgid "Interest Group"
+msgstr "Groupe d'intérêt"
+
+#. module: partner_interest_group
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group____last_update
+msgid "Last Modified on"
+msgstr "Dernière mofidication le"
+
+#. module: partner_interest_group
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: partner_interest_group
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: partner_interest_group
+#: model:ir.model.fields,field_description:partner_interest_group.field_res_partner_interest_group__partner_id
+msgid "Partner"
+msgstr "Contact"
