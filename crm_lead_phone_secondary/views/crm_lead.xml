@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="crm_lead_view_form" model="ir.ui.view">
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//group[@name='opportunity_partner']//div[field[@name='phone']]"
+                position="after"
+            >
+                <label for="phone2" class="oe_inline" />
+                <div class="o_row o_row_readonly">
+                    <field name="phone2" widget="phone" />
+                </div>
+            </xpath>
+            <xpath
+                expr="//group[@name='lead_info']//div[field[@name='phone']]"
+                position="after"
+            >
+                <label for="phone2" class="oe_inline" />
+                <div class="o_row o_row_readonly">
+                    <field name="phone2" widget="phone" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
