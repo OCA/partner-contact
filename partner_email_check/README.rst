@@ -58,6 +58,10 @@ To validate that email addresses are deliverable (that the hostname
 exists), use the "Check deliverability of email
 addresses"/``partner_email_check_check_deliverability`` setting.
 
+To save ``"Name" <address>`` as ``address`` instead of rejecting it, use
+the "Clean display name from email
+addresses"/``partner_email_check_clean_display_name`` setting.
+
 Usage
 =====
 
@@ -88,6 +92,9 @@ Contributors
 - Jean-Charles Drubay <jc@komit-consulting.com>
 - Diogo Cordeiro <dcordeiro@opensourceintegrators.com>
 - Khoi (Kien Kim) <khoikk@trobz.com>
+- `Camptocamp <https://www.camptocamp.com>`__:
+
+  - David Gallay
 
 Other credits
 -------------

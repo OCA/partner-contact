@@ -19,6 +19,11 @@ class ResConfigSettings(models.TransientModel):
         readonly=False,
     )
 
+    partner_email_check_clean_display_name = fields.Boolean(
+        related="company_id.partner_email_check_clean_display_name",
+        readonly=False,
+    )
+
     @api.onchange(
         "partner_email_check_syntax", "partner_email_check_check_deliverability"
     )

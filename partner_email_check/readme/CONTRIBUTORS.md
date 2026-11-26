@@ -2,3 +2,5 @@
 - Jean-Charles Drubay \<<jc@komit-consulting.com>\>
 - Diogo Cordeiro \<<dcordeiro@opensourceintegrators.com>\>
 - Khoi (Kien Kim) \<<khoikk@trobz.com>\>
+- [Camptocamp](https://www.camptocamp.com):
+  - David Gallay
