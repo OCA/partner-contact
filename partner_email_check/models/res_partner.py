@@ -61,12 +61,32 @@ class ResPartner(models.Model):
         return result.normalized.lower()
 
     def _should_check_syntax(self):
+        """Whether to validate the address, and so also normalize it.
+
+        ``partner_email_check_skip_syntax`` in the context turns this off for a
+        single operation, for the same reason as
+        ``_should_check_deliverability``. It skips normalization too, exactly as
+        disabling the company setting does.
+        """
+        if self.env.context.get("partner_email_check_skip_syntax"):
+            return False
         return self.env.company.partner_email_check_syntax
 
     def _should_filter_duplicates(self):
         return self.env.company.partner_email_check_filter_duplicates
 
     def _should_check_deliverability(self):
+        """Whether to require that the address' domain accepts mail.
+
+        ``partner_email_check_skip_deliverability`` in the context turns this
+        off for a single operation. Code that stores addresses it did not
+        collect from a user needs that: the incoming mail gateway creates a
+        partner for the sender of every message, and bulk senders routinely send
+        from a subdomain that publishes no MX record, so a hard check there
+        discards the message rather than improving anyone's data.
+        """
+        if self.env.context.get("partner_email_check_skip_deliverability"):
+            return False
         return self.env.company.partner_email_check_check_deliverability
 
     @api.model_create_multi
