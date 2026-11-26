@@ -78,6 +78,12 @@
         <field name="mode">primary</field>
         <field name="arch" type="xml">
             <!--
+                Keep default_type in nested saves: automatically added fields are readonly.
+            -->
+            <xpath expr="/form" position="inside">
+                <field name="type" invisible="1" />
+            </xpath>
+            <!--
                 Hide the company_type field.
 
                 This view is used by the Affiliate kanban in the partner form.
