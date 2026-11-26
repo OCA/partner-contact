@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 glueckkanja AG
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form.many2one.color</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <group name="warnings" position="inside">
+                <group name="many2one_color" col="2">
+                    <separator string="Highlight in Selection Fields" colspan="2" />
+                    <field name="own_many2one_color" />
+                    <field
+                        name="own_many2one_color_message"
+                        nolabel="1"
+                        colspan="2"
+                        invisible="not own_many2one_color"
+                        placeholder="e.g. Payment issues, check with accounting before accepting new orders."
+                    />
+                    <field
+                        name="many2one_color"
+                        string="Inherited Color State"
+                        readonly="1"
+                        invisible="own_many2one_color or not many2one_color"
+                    />
+                    <field
+                        name="many2one_color_message"
+                        nolabel="1"
+                        colspan="2"
+                        readonly="1"
+                        invisible="own_many2one_color or not many2one_color_message"
+                    />
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>
