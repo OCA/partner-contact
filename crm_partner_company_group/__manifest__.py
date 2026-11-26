@@ -11,4 +11,5 @@
     "website": "https://github.com/OCA/partner-contact",
     "data": ["views/opportunity_view.xml"],
     "installable": True,
+    "auto_install": True,
 }
