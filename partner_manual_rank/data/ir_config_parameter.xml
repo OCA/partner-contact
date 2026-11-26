@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <record id="partner_rank_auto" model="ir.config_parameter" forcecreate="0">
+        <field name="key">partner_manual_rank.partner_rank_auto</field>
+        <field name="value">True</field>
+    </record>
+</odoo>
