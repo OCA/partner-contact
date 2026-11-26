@@ -83,3 +83,22 @@ class TestPartnerShippingPolicy(BaseCommon):
         self.env["ir.default"].set("sale.order", "picking_policy", "direct")
         order = self.sale_order_model.create({"partner_id": self.partner_3.id})
         self.assertEqual(order.picking_policy, "one")
+
+    def test_09_delivery_address_picking_policy(self):
+        # Show the delivery address on sale orders
+        self.env.user.group_ids |= self.env.ref(
+            "account.group_delivery_invoice_address"
+        )
+        sale_form = Form(self.sale_order_model)
+        sale_form.partner_id = self.partner
+        self.assertEqual(sale_form.partner_shipping_id, self.delivery_address)
+        self.assertEqual(sale_form.picking_policy, "direct")
+        sale_form.partner_shipping_id = self.partner
+        self.assertEqual(sale_form.picking_policy, self.partner.picking_policy)
+
+    def test_10_change_to_partner_without_policy(self):
+        sale_form = Form(self.sale_order_model)
+        sale_form.partner_id = self.partner_3
+        self.assertEqual(sale_form.picking_policy, "one")
+        sale_form.partner_id = self.partner_2
+        self.assertEqual(sale_form.picking_policy, "direct")
