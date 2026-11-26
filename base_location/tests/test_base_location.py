@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import psycopg2
+from lxml import etree
 
 from odoo.exceptions import ValidationError
 from odoo.tests import Form, common
@@ -269,3 +270,93 @@ class TestBaseLocation(common.TransactionCase):
                     "country_id": self.ref("base.es"),
                 }
             )
+
+    def _create_address_view(self):
+        return self.env["ir.ui.view"].create(
+            {
+                "name": "Test country address view",
+                "model": "res.partner",
+                "type": "form",
+                "priority": 900,
+                "arch": """
+                    <form>
+                        <div class="o_address_format">
+                            <field name="type" invisible="1"/>
+                            <field name="parent_id" invisible="1"/>
+                            <field name="street"/>
+                            <field name="city"
+                                   readonly="type == 'contact' and parent_id"/>
+                            <field name="state_id"/>
+                            <field name="zip"/>
+                            <field name="country_id"/>
+                        </div>
+                    </form>
+                """,
+            }
+        )
+
+    def _set_company_address_view(self, address_view):
+        """Move the company to a country that uses the given address view.
+
+        The country has no states, so the test does not depend on the
+        modules that make the state of an address required.
+        """
+        country = self.env["res.country"].create(
+            {"name": "Address view country", "code": "ZV"}
+        )
+        country.address_view_id = address_view
+        self.company.country_id = country
+
+    def test_country_address_view_keeps_zip_id(self):
+        """The ZIP completion survives a country specific address view."""
+        self._set_company_address_view(self._create_address_view())
+        view = self.env.ref("base.view_partner_form")
+        arch = etree.fromstring(
+            self.partner_obj.get_view(view.id, "form")["arch"].encode()
+        )
+        address_nodes = arch.xpath("//div[hasclass('o_address_format')]")
+        self.assertTrue(address_nodes)
+        for address_node in address_nodes:
+            zip_nodes = address_node.xpath(".//field[@name='zip_id']")
+            self.assertEqual(len(zip_nodes), 1)
+            zip_node = zip_nodes[0]
+            self.assertEqual(zip_node.getnext().get("name"), "city")
+            self.assertEqual(
+                zip_node.get("readonly"), "type == 'contact' and parent_id"
+            )
+            self.assertIn("city_id", zip_node.get("domain"))
+            self.assertEqual(zip_node.get("placeholder"), "Location completion")
+
+    def test_address_view_without_country_view(self):
+        """Nothing is added when the country has no address view."""
+        self._set_company_address_view(False)
+        address_view = self._create_address_view()
+        arch = etree.fromstring(
+            self.partner_obj.get_view(address_view.id, "form")["arch"].encode()
+        )
+        self.assertFalse(arch.xpath("//field[@name='zip_id']"))
+
+    def test_country_address_view_with_zip_id(self):
+        """The field is not duplicated when the address view already has it."""
+        address_view = self._create_address_view()
+        address_view.arch = address_view.arch.replace(
+            '<field name="zip"/>', '<field name="zip"/><field name="zip_id"/>'
+        )
+        self._set_company_address_view(address_view)
+        view = self.env.ref("base.view_partner_form")
+        arch = etree.fromstring(
+            self.partner_obj.get_view(view.id, "form")["arch"].encode()
+        )
+        for address_node in arch.xpath("//div[hasclass('o_address_format')]"):
+            self.assertEqual(len(address_node.xpath(".//field[@name='zip_id']")), 1)
+
+    def test_country_address_view_form(self):
+        """The completion still fills the address with a country address view."""
+        self._set_company_address_view(self._create_address_view())
+        # not saved, like the other completion tests: the name of the partner
+        # may be read-only when other modules are installed
+        partner_form = Form(self.partner_obj)
+        partner_form.zip_id = self.barcelona
+        self.assertEqual(partner_form.zip, self.barcelona.name)
+        self.assertEqual(partner_form.city, self.city_bcn.name)
+        self.assertEqual(partner_form.state_id, self.state_bcn)
