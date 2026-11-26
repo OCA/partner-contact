@@ -1,0 +1,154 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_academic_title
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-14 00:44+0000\n"
+"PO-Revision-Date: 2017-06-14 00:44+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+
+#. module: partner_academic_title
+#: model:ir.actions.act_window,name:partner_academic_title.open_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_res_partner_academic_title_display
+#: model:ir.model.fields,field_description:partner_academic_title.field_res_partner_academic_title_ids
+#: model:ir.model.fields,field_description:partner_academic_title.field_res_users_academic_title_display
+#: model:ir.model.fields,field_description:partner_academic_title.field_res_users_academic_title_ids
+#: model:ir.ui.menu,name:partner_academic_title.menu_academic_title
+#: model:ir.ui.view,arch_db:partner_academic_title.view_partner_form
+msgid "Academic Titles"
+msgstr "Akademski nazivi"
+
+#. module: partner_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_active
+msgid "Active"
+msgstr "Aktivno"
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_bs
+msgid "B.S."
+msgstr "Dipl.ing."
+
+#. module: partner_academic_title
+#: model:ir.model,name:partner_academic_title.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_create_uid
+msgid "Created by"
+msgstr "Ustvaril"
+
+#. module: partner_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_create_date
+msgid "Created on"
+msgstr "Ustvarjeno"
+
+#. module: partner_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_display_name
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_edd
+msgid "Ed.D"
+msgstr "dr. docent"
+
+#. module: partner_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_jd
+msgid "J.D."
+msgstr "dr. prava"
+
+#. module: partner_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title___last_update
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
+
+#. module: partner_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_write_uid
+msgid "Last Updated by"
+msgstr "Zadnji posodobil"
+
+#. module: partner_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_write_date
+msgid "Last Updated on"
+msgstr "Zadnjič posodobljeno"
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_mba
+msgid "M.B.A."
+msgstr "M.B.A."
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_md
+msgid "M.D."
+msgstr "dr.med."
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_mph
+msgid "M.P.H."
+msgstr "mag.jav.zdr."
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_ms
+msgid "M.S."
+msgstr "mag.znan."
+
+#. module: partner_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_name
+msgid "Name"
+msgstr "Naziv"
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_phd
+msgid "Ph.D."
+msgstr "dr. filoz."
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_pharmd
+msgid "Pharm.D."
+msgstr "dr. farm."
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_psyd
+msgid "Psy.D."
+msgstr "dr. psih."
+
+#. module: partner_academic_title
+#: model:ir.model.fields,field_description:partner_academic_title.field_partner_academic_title_sequence
+msgid "Sequence"
+msgstr "Zaporedje"
+
+#. module: partner_academic_title
+#: model:partner.academic.title,name:partner_academic_title.academic_title_thd
+msgid "Th.D."
+msgstr "dr. teolog."
+
+#. module: partner_academic_title
+#: model:ir.model.fields,help:partner_academic_title.field_partner_academic_title_sequence
+msgid "defines the order to display titles"
+msgstr "določi zaporedje prikaza nazivov"
+
+#. module: partner_academic_title
+#: model:ir.model,name:partner_academic_title.model_partner_academic_title
+msgid "partner.academic.title"
+msgstr ""
+
+#~ msgid "Partner"
+#~ msgstr "Partner"
