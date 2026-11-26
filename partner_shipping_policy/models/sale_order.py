@@ -43,7 +43,10 @@ class SaleOrder(models.Model):
         # only override their result with the partner's policy, and fall back
         # on the default when nothing set a value.
         res = None
-        if hasattr(super(), "_compute_picking_policy"):
+        # Without another compute, a value already on the order comes from the
+        # previous customer: it must not be kept when the new one has no policy.
+        keep_value = hasattr(super(), "_compute_picking_policy")
+        if keep_value:
             res = super()._compute_picking_policy()
         default_policy = (
             self.with_context(clear_picking_policy_default=False)
@@ -57,6 +60,6 @@ class SaleOrder(models.Model):
             )
             if partner_policy:
                 order.picking_policy = partner_policy
-            elif not order.picking_policy:
+            elif not keep_value or not order.picking_policy:
                 order.picking_policy = default_policy
         return res

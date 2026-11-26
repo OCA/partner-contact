@@ -95,3 +95,10 @@ class TestPartnerShippingPolicy(BaseCommon):
         self.assertEqual(sale_form.picking_policy, "direct")
         sale_form.partner_shipping_id = self.partner
         self.assertEqual(sale_form.picking_policy, self.partner.picking_policy)
+
+    def test_10_change_to_partner_without_policy(self):
+        sale_form = Form(self.sale_order_model)
+        sale_form.partner_id = self.partner_3
+        self.assertEqual(sale_form.picking_policy, "one")
+        sale_form.partner_id = self.partner_2
+        self.assertEqual(sale_form.picking_policy, "direct")
