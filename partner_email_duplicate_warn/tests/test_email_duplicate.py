@@ -2,6 +2,7 @@
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from odoo.fields import Command
 from odoo.tests import tagged
 
 from odoo.addons.base.tests.common import BaseCommon
@@ -9,6 +10,8 @@ from odoo.addons.base.tests.common import BaseCommon
 
 @tagged("post_install", "-at_install")
 class TestResPartner(BaseCommon):
+    _test_user_groups = None
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -129,22 +132,26 @@ class TestResPartner(BaseCommon):
         groups = self.env.ref("base.group_user") | self.env.ref(
             "base.group_partner_manager"
         )
-        restricted_user = self.env["res.users"].create(
-            {
-                "name": "Restricted",
-                "login": "dup_warn_restricted_user",
-                "group_ids": [(6, 0, groups.ids)],
-            }
+        restricted_user = (
+            self.env["res.users"]
+            .sudo()
+            .create(
+                {
+                    "name": "Restricted",
+                    "login": "dup_warn_restricted_user",
+                    "group_ids": [Command.set(groups.ids)],
+                }
+            )
         )
-        # Global rule (no groups) so it applies to every non-superuser
-        # regardless of the user's other groups; match by id to stay
+        # Global restriction (no group) so it applies to every non-superuser
+        # regardless of the user's groups; match by id to stay
         # independent of fields other modules may populate.
-        self.env["ir.rule"].create(
+        self.env["ir.access"].sudo().create(
             {
                 "name": "Hide conflicting partner from everyone",
                 "model_id": self.env.ref("base.model_res_partner").id,
-                "groups": [(6, 0, [])],
-                "domain_force": f"[('id', '!=', {hidden_partner.id})]",
+                "operation": "r",
+                "domain": f"[('id', '!=', {hidden_partner.id})]",
             }
         )
         partner = (

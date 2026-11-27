@@ -1,13 +1,13 @@
-import {Component} from "@odoo/owl";
+import {Component, useProps} from "@odoo/owl";
 import {registry} from "@web/core/registry";
 import {standardFieldProps} from "@web/views/fields/standard_field_props";
 import {useService} from "@web/core/utils/hooks";
 
 class X2ManyLinks extends Component {
     static template = "partner_email_duplicate_warn.X2ManyLinks";
-    static props = {
+    props = useProps({
         ...standardFieldProps,
-    };
+    });
 
     setup() {
         this.orm = useService("orm");

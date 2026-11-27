@@ -45,8 +45,9 @@ class ResPartner(models.Model):
                     ]
                 search_partners = self.with_context(active_test=False).search(domain)
                 matches = search_partners.filtered(
-                    lambda p, email=partner_email: p.email
-                    and p.email.strip().lower() == email
+                    lambda p, email=partner_email: (
+                        p.email and p.email.strip().lower() == email
+                    )
                 )
                 # This field is computed as superuser (compute_sudo), so the
                 # match set may include partners the acting user cannot read.
