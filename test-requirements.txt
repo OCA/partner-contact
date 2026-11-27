@@ -1,0 +1,1 @@
+odoo-addon-partner_firstname @ git+https://github.com/OCA/partner-contact.git@refs/pull/2485/head#subdirectory=partner_firstname
