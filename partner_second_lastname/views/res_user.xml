@@ -11,12 +11,28 @@
             <field name="firstname" position="attributes">
                 <attribute name="required" add="(not lastname2)" separator=" and " />
             </field>
-            <field name="lastname" position="attributes">
+            <!-- First lastname field -->
+            <xpath expr="//field[@name='lastname'][1]" position="attributes">
                 <attribute name="required" add="(not lastname2)" separator=" and " />
-            </field>
-            <field name="lastname" position="after">
-                <field name="lastname2" required="not firstname and not lastname" />
-            </field>
+            </xpath>
+            <xpath expr="//field[@name='lastname'][1]" position="after">
+                <field
+                    invisible="not form_has_lastname_first"
+                    name="lastname2"
+                    required="not firstname and not lastname"
+                />
+            </xpath>
+            <!-- Second lastname field -->
+            <xpath expr="//field[@name='lastname'][2]" position="attributes">
+                <attribute name="required" add="(not lastname2)" separator=" and " />
+            </xpath>
+            <xpath expr="//field[@name='lastname'][2]" position="after">
+                <field
+                    invisible="form_has_lastname_first"
+                    name="lastname2"
+                    required="not firstname and not lastname"
+                />
+            </xpath>
         </field>
     </record>
 </odoo>

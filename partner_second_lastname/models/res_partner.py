@@ -3,7 +3,7 @@
 # Copyright 2017 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 from odoo.addons.partner_firstname import exceptions
 
@@ -22,15 +22,15 @@ class ResPartner(models.Model):
         """Override to check if `lastname2` is in vals."""
         return super().name_fields_in_vals(vals) or vals.get("lastname2")
 
-    def get_extra_default_copy_values(self, default=None):
+    def get_extra_default_copy_values(self):
         """Override to add '(copy)' suffix to lastname2 instead of lastname."""
         if self._get_names_order() == "first_last":
             return {
-                "lastname2": _("%s (copy)", self.lastname2)
+                "lastname2": self.env._("%s (copy)", self.lastname2)
                 if self.lastname2
-                else _("(copy)")
+                else self.env._("(copy)")
             }
-        return super().get_extra_default_copy_values(default)
+        return super().get_extra_default_copy_values()
 
     @api.model
     def _get_computed_name(self, lastname, firstname, lastname2=None):
@@ -40,7 +40,7 @@ class ResPartner(models.Model):
         comma.
         """
         order = self._get_names_order()
-        names = list()
+        names = []
         if order == "first_last":
             if firstname:
                 names.append(firstname)
@@ -73,13 +73,13 @@ class ResPartner(models.Model):
         """Try to revert the effect of :meth:`._compute_name`."""
         self.ensure_one()
         parts = self._get_inverse_name(self.name, self.is_company)
-        # Avoid to hit :meth:`~._check_name` with all 3 fields being ``False``
+        # Avoid hitting _check_firstname_lastname with all 3 fields being False
         before, after = {}, {}
         for key, value in parts.items():
             (before if value else after)[key] = value
-        if any([before[k] != self[k] for k in list(before.keys())]):
+        if any(before[k] != self[k] for k in before):
             self.update(before)
-        if any([after[k] != self[k] for k in list(after.keys())]):
+        if any(after[k] != self[k] for k in after):
             self.update(after)
 
     @api.model
@@ -129,11 +129,11 @@ class ResPartner(models.Model):
             return False
         return parts
 
-    @api.constrains("firstname", "lastname", "lastname2")
-    def _check_name(self):
+    @api.constrains("name", "firstname", "lastname", "lastname2")
+    def _check_firstname_lastname(self):
         """Ensure at least one name is set."""
         try:
-            return super()._check_name()
+            return super()._check_firstname_lastname()
         except exceptions.EmptyNamesError:
             for partner in self:
                 if not partner.lastname2:

@@ -2,22 +2,24 @@
 # Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L.U.
 # Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
 
-from odoo.tests.common import TransactionCase
-
+from odoo.addons.base.tests.common import BaseCommon
 from odoo.addons.partner_firstname.tests.base import MailInstalled
 
 
-class CompanyCase(TransactionCase):
+class CompanyCase(BaseCommon):
     """Test ``res.partner`` when it is a company."""
+
+    _test_user_groups = None
 
     def setUp(self):
         super().setUp()
-        self.env["ir.config_parameter"].set_param("partner_names_order", "first_last")
+        self.env["ir.config_parameter"].set_str("partner_names_order", "first_last")
 
     def tearDown(self):
         try:
+            # A partner without parent and with a VAT is a company
             new = self.env["res.partner"].create(
-                {"company_type": "company", "name": self.name}
+                {"vat": "ES12345678Z", "name": self.name}
             )
 
             # Name should be cleaned of unneeded whitespace
@@ -69,15 +71,17 @@ class CompanyCase(TransactionCase):
         self.name = "  A  lot  öf    whitespace   "
 
 
-class PersonCase(TransactionCase):
+class PersonCase(BaseCommon):
     """Test ``res.partner`` when it is a person."""
 
+    _test_user_groups = None
+
     model = "res.partner"
-    context = dict()
+    context = {}
 
     def setUp(self):
         super().setUp()
-        self.env["ir.config_parameter"].set_param(
+        self.env["ir.config_parameter"].set_str(
             "partner_names_order", "last_first_comma"
         )
 
@@ -127,10 +131,9 @@ class PersonCase(TransactionCase):
         """Create a person setting his first name first."""
         if "middlename" in self.env["res.partner"]._fields:
             self.skipTest("partner_middlename changes 3-word parsing rules")
-        self.env["ir.config_parameter"].set_param("partner_names_order", "first_last")
+        self.env["ir.config_parameter"].set_str("partner_names_order", "first_last")
         self.template = "%(first)s %(last1)s %(last2)s"
         self.params = {
-            "is_company": False,
             "name": f"{self.firstname} {self.lastname} {self.lastname2}",
         }
 
@@ -139,7 +142,6 @@ class PersonCase(TransactionCase):
         if "middlename" in self.env["res.partner"]._fields:
             self.skipTest("partner_middlename changes 3-word parsing rules")
         self.params = {
-            "is_company": False,
             "name": f"{self.lastname} {self.lastname2}, {self.firstname}",
         }
 
@@ -147,30 +149,27 @@ class PersonCase(TransactionCase):
         """Create a person setting his first name last and the order as 'last_first'"""
         if "middlename" in self.env["res.partner"]._fields:
             self.skipTest("partner_middlename changes 3-word parsing rules")
-        self.env["ir.config_parameter"].set_param("partner_names_order", "last_first")
+        self.env["ir.config_parameter"].set_str("partner_names_order", "last_first")
         self.template = "%(last1)s %(last2)s %(first)s"
         self.params = {
-            "is_company": False,
             "name": f"{self.lastname} {self.lastname2} {self.firstname}",
         }
 
     def test_firstname_only(self):
         """Create a person setting his first name only."""
-        self.env["ir.config_parameter"].set_param("partner_names_order", "first_last")
+        self.env["ir.config_parameter"].set_str("partner_names_order", "first_last")
         self.firstname = self.lastname2 = False
         self.template = "%(last1)s"
         self.params = {
-            "is_company": False,
             "name": self.lastname,
         }
 
     def test_firstname_lastname_only(self):
         """Create a person setting his first name and last name 1 only."""
-        self.env["ir.config_parameter"].set_param("partner_names_order", "first_last")
+        self.env["ir.config_parameter"].set_str("partner_names_order", "first_last")
         self.lastname2 = False
         self.template = "%(first)s %(last1)s"
         self.params = {
-            "is_company": False,
             "name": f"{self.firstname} {self.lastname}",
         }
 
@@ -179,25 +178,22 @@ class PersonCase(TransactionCase):
         self.lastname2 = False
         self.template = "%(last1)s, %(first)s"
         self.params = {
-            "is_company": False,
             "name": f"{self.lastname}, {self.firstname}",
         }
 
     def test_lastname_firstname_only_wo_comma(self):
         """Create a person setting his last name 1 and first name only.
         Set order to 'last_first' to test name split without comma"""
-        self.env["ir.config_parameter"].set_param("partner_names_order", "last_first")
+        self.env["ir.config_parameter"].set_str("partner_names_order", "last_first")
         self.lastname2 = False
         self.template = "%(last1)s %(first)s"
         self.params = {
-            "is_company": False,
             "name": f"{self.lastname} {self.firstname}",
         }
 
     def test_separately(self):
         """Create a person setting separately all fields."""
         self.params = {
-            "is_company": False,
             "firstname": self.firstname,
             "lastname": self.lastname,
             "lastname2": self.lastname2,

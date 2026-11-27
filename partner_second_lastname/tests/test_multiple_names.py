@@ -1,7 +1,9 @@
-from odoo.tests.common import TransactionCase
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestMultipleNames(TransactionCase):
+class TestMultipleNames(BaseCommon):
+    _test_user_groups = None
+
     def assert_name(self, config_settings, partner, vals, order, expected_name):
         config_settings.partner_names_order = order
         config_settings.action_recalculate_partners_name()
