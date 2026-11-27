@@ -23,6 +23,15 @@ class TestPartnerEmailCheck(TransactionCase):
         with self.assertRaises(ValidationError):
             self.test_partner.email = "bad@email@domain..com"
 
+    def test_display_name_refused_by_default(self):
+        with self.assertRaises(ValidationError):
+            self.test_partner.email = '"Name" <name@domain.com>'
+
+    def test_display_name_cleaned(self):
+        self.env.company.partner_email_check_clean_display_name = True
+        self.test_partner.email = '"Name" <name@domain.com>'
+        self.assertEqual(self.test_partner.email, "name@domain.com")
+
     def test_good_email(self):
         """Test acceptance of good"""
         self.test_partner.email = "goodemail@domain.com"

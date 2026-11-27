@@ -62,6 +62,24 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="partner_email_check_clean_display_name" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="partner_email_check_clean_display_name" />
+                            <span
+                                class="fa fa-lg fa-building-o"
+                                title="Values set here are company-specific."
+                                aria-label="Values set here are company-specific."
+                                groups="base.group_multi_company"
+                                role="img"
+                            />
+                            <div class="text-muted">
+                                Save "Name" &lt;address&gt; as address
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </xpath>
         </field>

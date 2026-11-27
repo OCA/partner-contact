@@ -8,3 +8,7 @@ addresses"/`partner_email_check_filter_duplicates` setting.
 To validate that email addresses are deliverable (that the hostname
 exists), use the "Check deliverability of email
 addresses"/`partner_email_check_check_deliverability` setting.
+
+To save `"Name" <address>` as `address` instead of rejecting it, use the
+"Clean display name from email addresses"/`partner_email_check_clean_display_name`
+setting.

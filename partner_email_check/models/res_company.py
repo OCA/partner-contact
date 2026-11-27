@@ -20,3 +20,7 @@ class ResCompany(models.Model):
         string="Check deliverability of email addresses",
         help="Don't allow email addresses with providers that don't exist",
     )
+    partner_email_check_clean_display_name = fields.Boolean(
+        string="Clean display name from email addresses",
+        help='Save "Name" <address> as address.',
+    )
